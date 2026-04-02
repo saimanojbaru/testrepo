@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    {
+      "name": "claude-equity-research",
+      "source": "quant-sentiment-ai/claude-equity-research",
+      "version": "latest",
+      "installedAt": "2026-04-02"
+    }
+  ]
+}
