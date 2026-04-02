@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "equity-research-mcp"
+version = "0.1.0"
+description = "Claude MCP server for equity research — US, NSE (India), BSE (India), Nifty 50, Sensex"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "yfinance>=0.2.40",
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+equity-research-mcp = "equity_research_mcp.server:mcp.run"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["equity_research_mcp*"]
