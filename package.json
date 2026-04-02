@@ -1,0 +1,16 @@
+{
+  "name": "ccpi-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "pnpm --recursive run build",
+    "dev:api": "pnpm --filter api dev",
+    "dev:cli": "pnpm --filter cli dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

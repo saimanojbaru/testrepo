@@ -1,0 +1,47 @@
+[
+  {
+    "name": "devops-automation-pack",
+    "version": "1.2.0",
+    "description": "Automates common DevOps workflows: CI/CD pipeline generation, Dockerfile scaffolding, and deployment scripts.",
+    "author": "intentsolutionsio",
+    "tags": ["devops", "ci-cd", "docker", "automation"],
+    "downloads": 8420,
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "name": "test-generator",
+    "version": "0.9.1",
+    "description": "Automatically generates unit and integration tests for TypeScript and JavaScript projects.",
+    "author": "testcraft",
+    "tags": ["testing", "typescript", "javascript"],
+    "downloads": 3150,
+    "createdAt": "2024-02-20T14:30:00Z"
+  },
+  {
+    "name": "code-review-assistant",
+    "version": "2.0.0",
+    "description": "Provides AI-powered code review suggestions with security and performance analysis.",
+    "author": "reviewbot",
+    "tags": ["review", "security", "performance", "ai"],
+    "downloads": 12800,
+    "createdAt": "2023-11-05T09:00:00Z"
+  },
+  {
+    "name": "db-migration-helper",
+    "version": "1.0.3",
+    "description": "Generates and manages database migration scripts for PostgreSQL, MySQL, and SQLite.",
+    "author": "dbtools",
+    "tags": ["database", "migrations", "postgres", "mysql"],
+    "downloads": 5670,
+    "createdAt": "2024-03-01T08:00:00Z"
+  },
+  {
+    "name": "api-scaffolder",
+    "version": "1.5.0",
+    "description": "Scaffolds REST and GraphQL APIs from OpenAPI specs or schema definitions.",
+    "author": "apifactory",
+    "tags": ["api", "rest", "graphql", "scaffold"],
+    "downloads": 9340,
+    "createdAt": "2024-01-28T11:00:00Z"
+  }
+]
