@@ -5,6 +5,7 @@ import { uninstallCommand } from "./commands/uninstall";
 import { searchCommand } from "./commands/search";
 import { listCommand } from "./commands/list";
 import { infoCommand } from "./commands/info";
+import { updateCommand } from "./commands/update";
 
 const program = new Command();
 
@@ -18,5 +19,6 @@ program.addCommand(uninstallCommand());
 program.addCommand(searchCommand());
 program.addCommand(listCommand());
 program.addCommand(infoCommand());
+program.addCommand(updateCommand());
 
 program.parse(process.argv);

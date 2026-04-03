@@ -5,6 +5,7 @@ import { readStore } from "../lib/store";
 export function listCommand(): Command {
   return new Command("list")
     .description("List all locally installed plugins")
+    .option("--installed", "Show only installed plugins (default behavior)")
     .action(() => {
       const installed = readStore();
 

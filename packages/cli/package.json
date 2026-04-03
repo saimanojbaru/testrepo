@@ -1,5 +1,5 @@
 {
-  "name": "ccpi",
+  "name": "@intentsolutionsio/ccpi",
   "version": "1.0.0",
   "description": "Claude Code Plugin Installer — CLI for managing Claude Code plugins",
   "bin": {
