@@ -6,9 +6,10 @@ export function searchCommand(): Command {
   return new Command("search")
     .argument("[query]", "Search term (name, description, or tag)")
     .description("Search for plugins in the registry")
-    .action(async (query?: string) => {
+    .option("--channel <channel>", "Filter results by channel (e.g. claude-code-plugins-plus, community)")
+    .action(async (query: string | undefined, opts: { channel?: string }) => {
       try {
-        const plugins = await fetchPlugins(query);
+        const plugins = await fetchPlugins(query, opts.channel);
 
         if (plugins.length === 0) {
           console.log(chalk.yellow("No plugins found."));
@@ -18,9 +19,10 @@ export function searchCommand(): Command {
         console.log(chalk.bold(`\nFound ${plugins.length} plugin(s):\n`));
         for (const p of plugins) {
           const tags = p.tags.length > 0 ? chalk.gray(`[${p.tags.join(", ")}]`) : "";
+          const channelBadge = chalk.magenta(`${p.channel}`);
           console.log(`  ${chalk.cyan(p.name)}@${chalk.white(p.version)} ${tags}`);
           console.log(`    ${p.description}`);
-          console.log(`    ${chalk.gray(`by ${p.author} · ${p.downloads} installs`)}`);
+          console.log(`    ${chalk.gray(`by ${p.author} · ${p.downloads} installs`)} · channel: ${channelBadge}`);
           console.log();
         }
       } catch (err: unknown) {

@@ -7,6 +7,7 @@ export interface Plugin {
   version: string;
   description: string;
   author: string;
+  channel: string;
   tags: string[];
   downloads: number;
   createdAt: string;
@@ -14,14 +15,17 @@ export interface Plugin {
 
 const client = axios.create({ baseURL: BASE_URL });
 
-export async function fetchPlugins(query?: string): Promise<Plugin[]> {
-  const params = query ? { q: query } : undefined;
+export async function fetchPlugins(query?: string, channel?: string): Promise<Plugin[]> {
+  const params: Record<string, string> = {};
+  if (query) params.q = query;
+  if (channel) params.channel = channel;
   const { data } = await client.get<Plugin[]>("/plugins", { params });
   return data;
 }
 
-export async function fetchPlugin(name: string): Promise<Plugin> {
-  const { data } = await client.get<Plugin>(`/plugins/${name}`);
+export async function fetchPlugin(name: string, channel?: string): Promise<Plugin> {
+  const params = channel ? { channel } : undefined;
+  const { data } = await client.get<Plugin>(`/plugins/${name}`, { params });
   return data;
 }
 

@@ -9,6 +9,7 @@ interface Plugin {
   version: string;
   description: string;
   author: string;
+  channel: string;
   tags: string[];
   downloads: number;
   createdAt: string;
@@ -24,27 +25,42 @@ function writePlugins(plugins: Plugin[]): void {
 }
 
 export function listPlugins(req: Request, res: Response): void {
-  const plugins = readPlugins();
+  let plugins = readPlugins();
+
   const q = req.query.q as string | undefined;
+  const channel = req.query.channel as string | undefined;
+
+  if (channel) {
+    plugins = plugins.filter((p) => p.channel === channel);
+  }
+
   if (q) {
     const query = q.toLowerCase();
-    const filtered = plugins.filter(
+    plugins = plugins.filter(
       (p) =>
         p.name.toLowerCase().includes(query) ||
         p.description.toLowerCase().includes(query) ||
         p.tags.some((t) => t.toLowerCase().includes(query))
     );
-    res.json(filtered);
-    return;
   }
+
   res.json(plugins);
 }
 
 export function getPlugin(req: Request, res: Response): void {
   const plugins = readPlugins();
-  const plugin = plugins.find((p) => p.name === req.params.name);
+  const { name } = req.params;
+  const channel = req.query.channel as string | undefined;
+
+  let plugin = plugins.find((p) => p.name === name && (!channel || p.channel === channel));
+
+  // Fall back to any channel if not found in specified channel
+  if (!plugin && channel) {
+    plugin = plugins.find((p) => p.name === name);
+  }
+
   if (!plugin) {
-    res.status(404).json({ error: `Plugin '${req.params.name}' not found` });
+    res.status(404).json({ error: `Plugin '${name}' not found` });
     return;
   }
   res.json(plugin);
@@ -59,8 +75,8 @@ export function publishPlugin(req: Request, res: Response): void {
     return;
   }
 
-  if (plugins.find((p) => p.name === body.name)) {
-    res.status(409).json({ error: `Plugin '${body.name}' already exists` });
+  if (plugins.find((p) => p.name === body.name && p.channel === (body.channel ?? "community"))) {
+    res.status(409).json({ error: `Plugin '${body.name}' already exists in channel '${body.channel ?? "community"}'` });
     return;
   }
 
@@ -69,6 +85,7 @@ export function publishPlugin(req: Request, res: Response): void {
     version: body.version,
     description: body.description,
     author: body.author,
+    channel: body.channel ?? "community",
     tags: body.tags ?? [],
     downloads: 0,
     createdAt: new Date().toISOString(),

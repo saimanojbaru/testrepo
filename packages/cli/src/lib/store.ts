@@ -10,6 +10,7 @@ export interface InstalledPlugin {
   version: string;
   description: string;
   author: string;
+  channel: string;
   installedAt: string;
 }
 

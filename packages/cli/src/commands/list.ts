@@ -17,7 +17,8 @@ export function listCommand(): Command {
       console.log(chalk.bold(`\nInstalled plugins (${installed.length}):\n`));
       for (const p of installed) {
         const date = new Date(p.installedAt).toLocaleDateString();
-        console.log(`  ${chalk.cyan(p.name)}@${chalk.white(p.version)}`);
+        const channelBadge = chalk.magenta(`[${p.channel ?? "community"}]`);
+        console.log(`  ${chalk.cyan(p.name)}@${chalk.white(p.version)} ${channelBadge}`);
         console.log(`    ${p.description}`);
         console.log(`    ${chalk.gray(`by ${p.author} · installed ${date}`)}`);
         console.log();
