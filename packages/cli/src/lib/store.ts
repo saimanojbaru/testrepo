@@ -11,6 +11,7 @@ export interface InstalledPlugin {
   description: string;
   author: string;
   channel: string;
+  skillPath?: string;
   installedAt: string;
 }
 

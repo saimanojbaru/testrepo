@@ -13,6 +13,7 @@ interface Plugin {
   tags: string[];
   downloads: number;
   createdAt: string;
+  skillContent?: string;
 }
 
 function readPlugins(): Plugin[] {
@@ -22,6 +23,13 @@ function readPlugins(): Plugin[] {
 
 function writePlugins(plugins: Plugin[]): void {
   fs.writeFileSync(DATA_FILE, JSON.stringify(plugins, null, 2), "utf-8");
+}
+
+function findPlugin(plugins: Plugin[], name: string, channel?: string): Plugin | undefined {
+  let plugin = plugins.find((p) => p.name === name && (!channel || p.channel === channel));
+  // Fall back to any channel if not found in specified channel
+  if (!plugin && channel) plugin = plugins.find((p) => p.name === name);
+  return plugin;
 }
 
 export function listPlugins(req: Request, res: Response): void {
@@ -44,26 +52,33 @@ export function listPlugins(req: Request, res: Response): void {
     );
   }
 
-  res.json(plugins);
+  // Omit skillContent from list responses to keep payloads small
+  res.json(plugins.map(({ skillContent: _sc, ...rest }) => rest));
 }
 
 export function getPlugin(req: Request, res: Response): void {
   const plugins = readPlugins();
-  const { name } = req.params;
   const channel = req.query.channel as string | undefined;
-
-  let plugin = plugins.find((p) => p.name === name && (!channel || p.channel === channel));
-
-  // Fall back to any channel if not found in specified channel
-  if (!plugin && channel) {
-    plugin = plugins.find((p) => p.name === name);
-  }
+  const plugin = findPlugin(plugins, req.params.name, channel);
 
   if (!plugin) {
-    res.status(404).json({ error: `Plugin '${name}' not found` });
+    res.status(404).json({ error: `Plugin '${req.params.name}' not found` });
     return;
   }
-  res.json(plugin);
+  const { skillContent: _sc, ...rest } = plugin;
+  res.json(rest);
+}
+
+export function getPluginSkill(req: Request, res: Response): void {
+  const plugins = readPlugins();
+  const channel = req.query.channel as string | undefined;
+  const plugin = findPlugin(plugins, req.params.name, channel);
+
+  if (!plugin || !plugin.skillContent) {
+    res.status(404).json({ error: `Skill for '${req.params.name}' not found` });
+    return;
+  }
+  res.type("text/plain").send(plugin.skillContent);
 }
 
 export function publishPlugin(req: Request, res: Response): void {
@@ -75,8 +90,9 @@ export function publishPlugin(req: Request, res: Response): void {
     return;
   }
 
-  if (plugins.find((p) => p.name === body.name && p.channel === (body.channel ?? "community"))) {
-    res.status(409).json({ error: `Plugin '${body.name}' already exists in channel '${body.channel ?? "community"}'` });
+  const targetChannel = body.channel ?? "community";
+  if (plugins.find((p) => p.name === body.name && p.channel === targetChannel)) {
+    res.status(409).json({ error: `Plugin '${body.name}' already exists in channel '${targetChannel}'` });
     return;
   }
 
@@ -85,15 +101,17 @@ export function publishPlugin(req: Request, res: Response): void {
     version: body.version,
     description: body.description,
     author: body.author,
-    channel: body.channel ?? "community",
+    channel: targetChannel,
     tags: body.tags ?? [],
     downloads: 0,
     createdAt: new Date().toISOString(),
+    skillContent: body.skillContent,
   };
 
   plugins.push(newPlugin);
   writePlugins(plugins);
-  res.status(201).json(newPlugin);
+  const { skillContent: _sc, ...rest } = newPlugin;
+  res.status(201).json(rest);
 }
 
 export function deletePlugin(req: Request, res: Response): void {

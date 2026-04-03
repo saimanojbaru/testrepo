@@ -29,6 +29,15 @@ export async function fetchPlugin(name: string, channel?: string): Promise<Plugi
   return data;
 }
 
+export async function fetchPluginSkill(name: string, channel?: string): Promise<string> {
+  const params = channel ? { channel } : undefined;
+  const { data } = await client.get<string>(`/plugins/${name}/skill`, {
+    params,
+    responseType: "text",
+  });
+  return data;
+}
+
 export async function publishPlugin(plugin: Omit<Plugin, "downloads" | "createdAt">): Promise<Plugin> {
   const { data } = await client.post<Plugin>("/plugins", plugin);
   return data;
