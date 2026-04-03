@@ -1,7 +1,18 @@
 import { Command } from "commander";
 import chalk from "chalk";
-import { fetchPlugin } from "../lib/api-client";
+import fs from "fs";
+import path from "path";
+import os from "os";
+import { fetchPlugin, fetchPluginSkill } from "../lib/api-client";
 import { readStore, addToStore } from "../lib/store";
+
+function writeSkillFile(pluginName: string, skillContent: string): string {
+  const skillDir = path.join(os.homedir(), ".claude", "skills", pluginName);
+  fs.mkdirSync(skillDir, { recursive: true });
+  const skillPath = path.join(skillDir, "SKILL.md");
+  fs.writeFileSync(skillPath, skillContent, "utf-8");
+  return skillPath;
+}
 
 export function updateCommand(): Command {
   return new Command("update")
@@ -20,13 +31,24 @@ export function updateCommand(): Command {
 
       for (const local of installed) {
         try {
-          const remote = await fetchPlugin(local.name);
+          const remote = await fetchPlugin(local.name, local.channel);
           if (remote.version !== local.version) {
+            // Re-fetch and re-write the SKILL.md for the updated version
+            let skillPath: string | undefined = local.skillPath;
+            try {
+              const skillContent = await fetchPluginSkill(remote.name, remote.channel);
+              skillPath = writeSkillFile(remote.name, skillContent);
+            } catch {
+              // Skill update is best-effort; keep existing skillPath
+            }
+
             addToStore({
               name: remote.name,
               version: remote.version,
               description: remote.description,
               author: remote.author,
+              channel: remote.channel,
+              skillPath,
             });
             console.log(
               `  ${chalk.cyan(local.name)}: ${chalk.gray(local.version)} → ${chalk.green(remote.version)}`
