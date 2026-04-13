@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>graphify - graphify-out/graph.html</title>
+<script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f0f1a; color: #e0e0e0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; display: flex; height: 100vh; overflow: hidden; }
+  #graph { flex: 1; }
+  #sidebar { width: 280px; background: #1a1a2e; border-left: 1px solid #2a2a4e; display: flex; flex-direction: column; overflow: hidden; }
+  #search-wrap { padding: 12px; border-bottom: 1px solid #2a2a4e; }
+  #search { width: 100%; background: #0f0f1a; border: 1px solid #3a3a5e; color: #e0e0e0; padding: 7px 10px; border-radius: 6px; font-size: 13px; outline: none; }
+  #search:focus { border-color: #4E79A7; }
+  #search-results { max-height: 140px; overflow-y: auto; padding: 4px 12px; border-bottom: 1px solid #2a2a4e; display: none; }
+  .search-item { padding: 4px 6px; cursor: pointer; border-radius: 4px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .search-item:hover { background: #2a2a4e; }
+  #info-panel { padding: 14px; border-bottom: 1px solid #2a2a4e; min-height: 140px; }
+  #info-panel h3 { font-size: 13px; color: #aaa; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  #info-content { font-size: 13px; color: #ccc; line-height: 1.6; }
+  #info-content .field { margin-bottom: 5px; }
+  #info-content .field b { color: #e0e0e0; }
+  #info-content .empty { color: #555; font-style: italic; }
+  .neighbor-link { display: block; padding: 2px 6px; margin: 2px 0; border-radius: 3px; cursor: pointer; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-left: 3px solid #333; }
+  .neighbor-link:hover { background: #2a2a4e; }
+  #neighbors-list { max-height: 160px; overflow-y: auto; margin-top: 4px; }
+  #legend-wrap { flex: 1; overflow-y: auto; padding: 12px; }
+  #legend-wrap h3 { font-size: 13px; color: #aaa; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .legend-item { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; border-radius: 4px; font-size: 12px; }
+  .legend-item:hover { background: #2a2a4e; padding-left: 4px; }
+  .legend-item.dimmed { opacity: 0.35; }
+  .legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+  .legend-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .legend-count { color: #666; font-size: 11px; }
+  #stats { padding: 10px 14px; border-top: 1px solid #2a2a4e; font-size: 11px; color: #555; }
+</style>
+</head>
+<body>
+<div id="graph"></div>
+<div id="sidebar">
+  <div id="search-wrap">
+    <input id="search" type="text" placeholder="Search nodes..." autocomplete="off">
+    <div id="search-results"></div>
+  </div>
+  <div id="info-panel">
+    <h3>Node Info</h3>
+    <div id="info-content"><span class="empty">Click a node to inspect it</span></div>
+  </div>
+  <div id="legend-wrap">
+    <h3>Communities</h3>
+    <div id="legend"></div>
+  </div>
+  <div id="stats">42 nodes &middot; 39 edges &middot; 11 communities</div>
+</div>
+<script>
+const RAW_NODES = [{"id": "claude_md_graphify_skill_ref", "label": "Graphify Skill Reference in CLAUDE.md", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Graphify Skill Reference in CLAUDE.md", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/CLAUDE.md", "file_type": "document", "degree": 2}, {"id": "graphify_skill", "label": "Graphify Skill", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Graphify Skill", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 4}, {"id": "graphify_pipeline", "label": "Graphify Pipeline (9-Step Workflow)", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 40.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Graphify Pipeline (9-Step Workflow)", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 10}, {"id": "graphify_detect", "label": "File Detection (graphify.detect)", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "File Detection (graphify.detect)", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 2}, {"id": "graphify_ast_extraction", "label": "AST Structural Extraction (graphify.extract)", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "AST Structural Extraction (graphify.extract)", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_semantic_extraction", "label": "Semantic Extraction via Subagents", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Semantic Extraction via Subagents", "community": 3, "community_name": "Semantic Extraction & Caching", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 4}, {"id": "graphify_community_detection", "label": "Community Detection and Clustering (graphify.cluster)", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Community Detection and Clustering (graphify.cluster)", "community": 4, "community_name": "Graph Analysis & Queries", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 4}, {"id": "graphify_community_labeling", "label": "Community Labeling", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Community Labeling", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_html_viz", "label": "HTML Visualization (graphify.export.to_html)", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "HTML Visualization (graphify.export.to_html)", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_obsidian_export", "label": "Obsidian Vault Export (graphify.export.to_obsidian)", "color": {"background": "#B07AA1", "border": "#B07AA1", "highlight": {"background": "#ffffff", "border": "#B07AA1"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Obsidian Vault Export (graphify.export.to_obsidian)", "community": 6, "community_name": "Obsidian Export", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 0}, {"id": "graphify_neo4j_export", "label": "Neo4j Export (graphify.export.to_cypher/push_to_neo4j)", "color": {"background": "#FF9DA7", "border": "#FF9DA7", "highlight": {"background": "#ffffff", "border": "#FF9DA7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Neo4j Export (graphify.export.to_cypher/push_to_neo4j)", "community": 7, "community_name": "Neo4j Export", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 0}, {"id": "graphify_svg_export", "label": "SVG Export (graphify.export.to_svg)", "color": {"background": "#9C755F", "border": "#9C755F", "highlight": {"background": "#ffffff", "border": "#9C755F"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "SVG Export (graphify.export.to_svg)", "community": 8, "community_name": "SVG Export", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 0}, {"id": "graphify_graphml_export", "label": "GraphML Export (graphify.export.to_graphml)", "color": {"background": "#BAB0AC", "border": "#BAB0AC", "highlight": {"background": "#ffffff", "border": "#BAB0AC"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "GraphML Export (graphify.export.to_graphml)", "community": 9, "community_name": "GraphML Export", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 0}, {"id": "graphify_mcp_server", "label": "MCP Stdio Server (graphify.serve)", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "MCP Stdio Server (graphify.serve)", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_token_benchmark", "label": "Token Reduction Benchmark (graphify.benchmark)", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Token Reduction Benchmark (graphify.benchmark)", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_graph_report", "label": "GRAPH_REPORT.md Output", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "GRAPH_REPORT.md Output", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_audit_trail", "label": "Honest Audit Trail (EXTRACTED/INFERRED/AMBIGUOUS)", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Honest Audit Trail (EXTRACTED/INFERRED/AMBIGUOUS)", "community": 5, "community_name": "Audit Trail", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_query", "label": "Graph Query (BFS/DFS Traversal)", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Graph Query (BFS/DFS Traversal)", "community": 4, "community_name": "Graph Analysis & Queries", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_incremental_update", "label": "Incremental Update (--update)", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Incremental Update (--update)", "community": 3, "community_name": "Semantic Extraction & Caching", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_cache", "label": "Semantic Extraction Cache (graphify.cache)", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 19.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Semantic Extraction Cache (graphify.cache)", "community": 3, "community_name": "Semantic Extraction & Caching", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 3}, {"id": "graphify_whisper_transcription", "label": "Whisper Transcription (graphify.transcribe)", "color": {"background": "#F28E2B", "border": "#F28E2B", "highlight": {"background": "#ffffff", "border": "#F28E2B"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Whisper Transcription (graphify.transcribe)", "community": 1, "community_name": "Graphify Core Pipeline", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_god_nodes", "label": "God Nodes Analysis (graphify.analyze.god_nodes)", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "God Nodes Analysis (graphify.analyze.god_nodes)", "community": 4, "community_name": "Graph Analysis & Queries", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "graphify_surprising_connections", "label": "Surprising Connections Analysis", "color": {"background": "#59A14F", "border": "#59A14F", "highlight": {"background": "#ffffff", "border": "#59A14F"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Surprising Connections Analysis", "community": 4, "community_name": "Graph Analysis & Queries", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "karpathy_raw_folder", "label": "Andrej Karpathy's /raw Folder Workflow", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Andrej Karpathy&#x27;s /raw Folder Workflow", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "session_start_hook_skill", "label": "Session Start Hook Skill", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 22.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Session Start Hook Skill", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 4}, {"id": "session_start_hook_workflow", "label": "SessionStart Hook Workflow (8-Step)", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 25.0, "font": {"size": 12, "color": "#ffffff"}, "title": "SessionStart Hook Workflow (8-Step)", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 5}, {"id": "session_start_async_mode", "label": "Async Hook Mode", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Async Hook Mode", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 2}, {"id": "session_start_env_vars", "label": "SessionStart Environment Variables (CLAUDE_PROJECT_DIR, CLAUDE_ENV_FILE, CLAUDE_CODE_REMOTE)", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "SessionStart Environment Variables (CLAUDE_PROJECT_DIR, CLAUDE_ENV_FILE, CLAUDE_CODE_REMOTE)", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 1}, {"id": "claude_code_web", "label": "Claude Code on the Web", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Claude Code on the Web", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 1}, {"id": "claude_code_settings_json", "label": "Claude Code Settings JSON (.claude/settings.json)", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Claude Code Settings JSON (.claude/settings.json)", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 1}, {"id": "claude_code_docs_map", "label": "Claude Code Documentation Map", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 28.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Claude Code Documentation Map", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 6}, {"id": "claude_code_hooks", "label": "Claude Code Hooks System", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Claude Code Hooks System", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 2}, {"id": "claude_code_skills", "label": "Claude Code Skills System", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 19.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Claude Code Skills System", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 3}, {"id": "claude_code_subagents", "label": "Claude Code Sub-agents System", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Claude Code Sub-agents System", "community": 3, "community_name": "Semantic Extraction & Caching", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 2}, {"id": "claude_code_mcp", "label": "Claude Code MCP Integration", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Claude Code MCP Integration", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 2}, {"id": "claude_code_memory", "label": "Claude Code Memory (CLAUDE.md and Auto Memory)", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 16.0, "font": {"size": 12, "color": "#ffffff"}, "title": "Claude Code Memory (CLAUDE.md and Auto Memory)", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 2}, {"id": "claude_code_agent_loop", "label": "Claude Code Agent Loop", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 10.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Claude Code Agent Loop", "community": 10, "community_name": "Agent Loop", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 0}, {"id": "claude_code_plugins", "label": "Claude Code Plugins System", "color": {"background": "#4E79A7", "border": "#4E79A7", "highlight": {"background": "#ffffff", "border": "#4E79A7"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Claude Code Plugins System", "community": 0, "community_name": "Claude Code & Skill Integration", "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt", "file_type": "document", "degree": 1}, {"id": "rationale_async_tradeoffs", "label": "Rationale: Async Mode Latency vs Race Condition Tradeoff", "color": {"background": "#E15759", "border": "#E15759", "highlight": {"background": "#ffffff", "border": "#E15759"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Rationale: Async Mode Latency vs Race Condition Tradeoff", "community": 2, "community_name": "Session Hooks & Config", "source_file": "~/.claude/skills/session-start-hook/SKILL.md", "file_type": "document", "degree": 1}, {"id": "rationale_graphify_audit_trail", "label": "Rationale: Why Honest Audit Trail Matters", "color": {"background": "#EDC948", "border": "#EDC948", "highlight": {"background": "#ffffff", "border": "#EDC948"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Rationale: Why Honest Audit Trail Matters", "community": 5, "community_name": "Audit Trail", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "rationale_parallel_subagents", "label": "Rationale: Why Parallel Subagent Dispatch is Mandatory", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Rationale: Why Parallel Subagent Dispatch is Mandatory", "community": 3, "community_name": "Semantic Extraction & Caching", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}, {"id": "rationale_cache_first", "label": "Rationale: Check Cache Before Dispatching Subagents", "color": {"background": "#76B7B2", "border": "#76B7B2", "highlight": {"background": "#ffffff", "border": "#76B7B2"}}, "size": 13.0, "font": {"size": 0, "color": "#ffffff"}, "title": "Rationale: Check Cache Before Dispatching Subagents", "community": 3, "community_name": "Semantic Extraction & Caching", "source_file": "~/.claude/skills/graphify/SKILL.md", "file_type": "document", "degree": 1}];
+const RAW_EDGES = [{"from": "claude_md_graphify_skill_ref", "to": "graphify_skill", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_md_graphify_skill_ref", "to": "claude_code_memory", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "graphify_skill", "to": "graphify_pipeline", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_skill", "to": "karpathy_raw_folder", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_skill", "to": "claude_code_skills", "label": "implements", "title": "implements [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "graphify_pipeline", "to": "graphify_detect", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_ast_extraction", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_semantic_extraction", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_community_detection", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_community_labeling", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_html_viz", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_token_benchmark", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "graphify_graph_report", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_pipeline", "to": "session_start_hook_workflow", "label": "semantically_similar_to", "title": "semantically_similar_to [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "graphify_detect", "to": "graphify_whisper_transcription", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_semantic_extraction", "to": "graphify_cache", "label": "shares_data_with", "title": "shares_data_with [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_semantic_extraction", "to": "claude_code_subagents", "label": "conceptually_related_to", "title": "conceptually_related_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_semantic_extraction", "to": "rationale_parallel_subagents", "label": "rationale_for", "title": "rationale_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_community_detection", "to": "graphify_god_nodes", "label": "shares_data_with", "title": "shares_data_with [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_community_detection", "to": "graphify_surprising_connections", "label": "shares_data_with", "title": "shares_data_with [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_community_detection", "to": "graphify_query", "label": "shares_data_with", "title": "shares_data_with [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_mcp_server", "to": "claude_code_mcp", "label": "conceptually_related_to", "title": "conceptually_related_to [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_audit_trail", "to": "rationale_graphify_audit_trail", "label": "rationale_for", "title": "rationale_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "graphify_incremental_update", "to": "graphify_cache", "label": "shares_data_with", "title": "shares_data_with [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "graphify_cache", "to": "rationale_cache_first", "label": "rationale_for", "title": "rationale_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_hook_skill", "to": "session_start_hook_workflow", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_hook_skill", "to": "claude_code_web", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_hook_skill", "to": "claude_code_hooks", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_hook_skill", "to": "claude_code_skills", "label": "implements", "title": "implements [INFERRED]", "dashes": true, "width": 1, "color": {"opacity": 0.35}, "confidence": "INFERRED"}, {"from": "session_start_hook_workflow", "to": "session_start_env_vars", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_hook_workflow", "to": "claude_code_settings_json", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_hook_workflow", "to": "session_start_async_mode", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "session_start_async_mode", "to": "rationale_async_tradeoffs", "label": "rationale_for", "title": "rationale_for [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_code_docs_map", "to": "claude_code_hooks", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_code_docs_map", "to": "claude_code_skills", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_code_docs_map", "to": "claude_code_subagents", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_code_docs_map", "to": "claude_code_mcp", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_code_docs_map", "to": "claude_code_memory", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}, {"from": "claude_code_docs_map", "to": "claude_code_plugins", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": {"opacity": 0.7}, "confidence": "EXTRACTED"}];
+const LEGEND = [{"cid": 0, "color": "#4E79A7", "label": "Claude Code &amp; Skill Integration", "count": 9}, {"cid": 1, "color": "#F28E2B", "label": "Graphify Core Pipeline", "count": 8}, {"cid": 2, "color": "#E15759", "label": "Session Hooks &amp; Config", "count": 8}, {"cid": 3, "color": "#76B7B2", "label": "Semantic Extraction &amp; Caching", "count": 6}, {"cid": 4, "color": "#59A14F", "label": "Graph Analysis &amp; Queries", "count": 4}, {"cid": 5, "color": "#EDC948", "label": "Audit Trail", "count": 2}, {"cid": 6, "color": "#B07AA1", "label": "Obsidian Export", "count": 1}, {"cid": 7, "color": "#FF9DA7", "label": "Neo4j Export", "count": 1}, {"cid": 8, "color": "#9C755F", "label": "SVG Export", "count": 1}, {"cid": 9, "color": "#BAB0AC", "label": "GraphML Export", "count": 1}, {"cid": 10, "color": "#4E79A7", "label": "Agent Loop", "count": 1}];
+
+// HTML-escape helper — prevents XSS when injecting graph data into innerHTML
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// Build vis datasets
+const nodesDS = new vis.DataSet(RAW_NODES.map(n => ({
+  id: n.id, label: n.label, color: n.color, size: n.size,
+  font: n.font, title: n.title,
+  _community: n.community, _community_name: n.community_name,
+  _source_file: n.source_file, _file_type: n.file_type, _degree: n.degree,
+})));
+
+const edgesDS = new vis.DataSet(RAW_EDGES.map((e, i) => ({
+  id: i, from: e.from, to: e.to,
+  label: '',
+  title: e.title,
+  dashes: e.dashes,
+  width: e.width,
+  color: e.color,
+  arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+})));
+
+const container = document.getElementById('graph');
+const network = new vis.Network(container, { nodes: nodesDS, edges: edgesDS }, {
+  physics: {
+    enabled: true,
+    solver: 'forceAtlas2Based',
+    forceAtlas2Based: {
+      gravitationalConstant: -60,
+      centralGravity: 0.005,
+      springLength: 120,
+      springConstant: 0.08,
+      damping: 0.4,
+      avoidOverlap: 0.8,
+    },
+    stabilization: { iterations: 200, fit: true },
+  },
+  interaction: {
+    hover: true,
+    tooltipDelay: 100,
+    hideEdgesOnDrag: true,
+    navigationButtons: false,
+    keyboard: false,
+  },
+  nodes: { shape: 'dot', borderWidth: 1.5 },
+  edges: { smooth: { type: 'continuous', roundness: 0.2 }, selectionWidth: 3 },
+});
+
+network.once('stabilizationIterationsDone', () => {
+  network.setOptions({ physics: { enabled: false } });
+});
+
+function showInfo(nodeId) {
+  const n = nodesDS.get(nodeId);
+  if (!n) return;
+  const neighborIds = network.getConnectedNodes(nodeId);
+  const neighborItems = neighborIds.map(nid => {
+    const nb = nodesDS.get(nid);
+    const color = nb ? nb.color.background : '#555';
+    return `<span class="neighbor-link" style="border-left-color:${esc(color)}" onclick="focusNode(${JSON.stringify(nid)})">${esc(nb ? nb.label : nid)}</span>`;
+  }).join('');
+  document.getElementById('info-content').innerHTML = `
+    <div class="field"><b>${esc(n.label)}</b></div>
+    <div class="field">Type: ${esc(n._file_type || 'unknown')}</div>
+    <div class="field">Community: ${esc(n._community_name)}</div>
+    <div class="field">Source: ${esc(n._source_file || '-')}</div>
+    <div class="field">Degree: ${n._degree}</div>
+    ${neighborIds.length ? `<div class="field" style="margin-top:8px;color:#aaa;font-size:11px">Neighbors (${neighborIds.length})</div><div id="neighbors-list">${neighborItems}</div>` : ''}
+  `;
+}
+
+function focusNode(nodeId) {
+  network.focus(nodeId, { scale: 1.4, animation: true });
+  network.selectNodes([nodeId]);
+  showInfo(nodeId);
+}
+
+// Track hovered node — hover detection is more reliable than click params
+let hoveredNodeId = null;
+network.on('hoverNode', params => {
+  hoveredNodeId = params.node;
+  container.style.cursor = 'pointer';
+});
+network.on('blurNode', () => {
+  hoveredNodeId = null;
+  container.style.cursor = 'default';
+});
+container.addEventListener('click', () => {
+  if (hoveredNodeId !== null) {
+    showInfo(hoveredNodeId);
+    network.selectNodes([hoveredNodeId]);
+  }
+});
+network.on('click', params => {
+  if (params.nodes.length > 0) {
+    showInfo(params.nodes[0]);
+  } else if (hoveredNodeId === null) {
+    document.getElementById('info-content').innerHTML = '<span class="empty">Click a node to inspect it</span>';
+  }
+});
+
+const searchInput = document.getElementById('search');
+const searchResults = document.getElementById('search-results');
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.toLowerCase().trim();
+  searchResults.innerHTML = '';
+  if (!q) { searchResults.style.display = 'none'; return; }
+  const matches = RAW_NODES.filter(n => n.label.toLowerCase().includes(q)).slice(0, 20);
+  if (!matches.length) { searchResults.style.display = 'none'; return; }
+  searchResults.style.display = 'block';
+  matches.forEach(n => {
+    const el = document.createElement('div');
+    el.className = 'search-item';
+    el.textContent = n.label;
+    el.style.borderLeft = `3px solid ${n.color.background}`;
+    el.style.paddingLeft = '8px';
+    el.onclick = () => {
+      network.focus(n.id, { scale: 1.5, animation: true });
+      network.selectNodes([n.id]);
+      showInfo(n.id);
+      searchResults.style.display = 'none';
+      searchInput.value = '';
+    };
+    searchResults.appendChild(el);
+  });
+});
+document.addEventListener('click', e => {
+  if (!searchResults.contains(e.target) && e.target !== searchInput)
+    searchResults.style.display = 'none';
+});
+
+const hiddenCommunities = new Set();
+const legendEl = document.getElementById('legend');
+LEGEND.forEach(c => {
+  const item = document.createElement('div');
+  item.className = 'legend-item';
+  item.innerHTML = `<div class="legend-dot" style="background:${c.color}"></div>
+    <span class="legend-label">${c.label}</span>
+    <span class="legend-count">${c.count}</span>`;
+  item.onclick = () => {
+    if (hiddenCommunities.has(c.cid)) {
+      hiddenCommunities.delete(c.cid);
+      item.classList.remove('dimmed');
+    } else {
+      hiddenCommunities.add(c.cid);
+      item.classList.add('dimmed');
+    }
+    const updates = RAW_NODES
+      .filter(n => n.community === c.cid)
+      .map(n => ({ id: n.id, hidden: hiddenCommunities.has(c.cid) }));
+    nodesDS.update(updates);
+  };
+  legendEl.appendChild(item);
+});
+</script>
+<script>
+// Render hyperedges as shaded regions
+const hyperedges = [{"id": "graphify_extraction_pipeline", "label": "Graphify Extraction Pipeline (AST + Semantic + Cache)", "nodes": ["graphify_ast_extraction", "graphify_semantic_extraction", "graphify_cache", "graphify_detect", "graphify_whisper_transcription"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "~/.claude/skills/graphify/SKILL.md"}, {"id": "graphify_output_formats", "label": "Graphify Multi-Format Export System", "nodes": ["graphify_html_viz", "graphify_obsidian_export", "graphify_neo4j_export", "graphify_svg_export", "graphify_graphml_export", "graphify_mcp_server"], "relation": "implement", "confidence": "EXTRACTED", "confidence_score": 0.9, "source_file": "~/.claude/skills/graphify/SKILL.md"}, {"id": "claude_code_extensibility", "label": "Claude Code Extensibility Framework", "nodes": ["claude_code_skills", "claude_code_hooks", "claude_code_plugins", "claude_code_mcp", "claude_code_subagents"], "relation": "form", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "~/.claude/projects/-home-user-testrepo/dda2ba3a-00d7-4fbb-b2ee-dab2bce661cd/tool-results/toolu_01LMfepSMo3UMX2eVuvmmdSw.txt"}];
+function drawHyperedges() {
+    const canvas = network.canvas.frame.canvas;
+    const ctx = canvas.getContext('2d');
+    hyperedges.forEach(h => {
+        const positions = h.nodes
+            .map(nid => network.getPositions([nid])[nid])
+            .filter(p => p !== undefined);
+        if (positions.length < 2) return;
+        // Draw convex hull as filled polygon
+        ctx.save();
+        ctx.globalAlpha = 0.12;
+        ctx.fillStyle = '#6366f1';
+        ctx.strokeStyle = '#6366f1';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        const scale = network.getScale();
+        const offset = network.getViewPosition();
+        const toCanvas = (p) => ({
+            x: (p.x - offset.x) * scale + canvas.width / 2,
+            y: (p.y - offset.y) * scale + canvas.height / 2
+        });
+        const pts = positions.map(toCanvas);
+        // Expand hull slightly
+        const cx = pts.reduce((s, p) => s + p.x, 0) / pts.length;
+        const cy = pts.reduce((s, p) => s + p.y, 0) / pts.length;
+        const expanded = pts.map(p => ({
+            x: cx + (p.x - cx) * 1.15,
+            y: cy + (p.y - cy) * 1.15
+        }));
+        ctx.moveTo(expanded[0].x, expanded[0].y);
+        expanded.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+        ctx.closePath();
+        ctx.fill();
+        ctx.globalAlpha = 0.4;
+        ctx.stroke();
+        // Label
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = '#4f46e5';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(h.label, cx, cy - 5);
+        ctx.restore();
+    });
+}
+network.on('afterDrawing', drawHyperedges);
+</script>
+</body>
+</html>
