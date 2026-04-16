@@ -1,0 +1,25 @@
+# AI Frameworks and Agent Libraries
+
+# OpenClaw - Viral AI agent, persistent multi-channel, writes its own skills
+# https://github.com/openclaw/openclaw
+openclaw==2026.3.20
+
+# AutoGPT - Full agent platform for long-running tasks
+# https://github.com/Significant-Gravitas/AutoGPT
+autogpt==0.0.1.dev0
+
+# LangGraph - Agents as graphs, multi-agent orchestration
+# https://github.com/langchain-ai/langgraph
+langgraph==1.1.6
+
+# OWL (camel-ai) - Multi-agent cooperation, tops GAIA benchmark
+# https://github.com/camel-ai/owl
+camel-ai==0.2.90
+
+# Dify - Open-source LLM app builder: workflows, RAG, agents
+# https://github.com/langgenius/dify
+dify-client==0.1.10
+
+# CrewAI - Multi-agent with roles, goals, backstories
+# https://github.com/crewAIInc/crewAI
+crewai==1.14.1
