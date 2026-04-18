@@ -14,7 +14,7 @@ Loop on each bar (or tick):
 import logging
 from dataclasses import dataclass
 from datetime import datetime
-from typing import Optional, Dict
+from typing import Callable, Optional, Dict
 import pandas as pd
 
 from regime.classifier import MarketRegimeClassifier
@@ -54,15 +54,25 @@ class TradingAgent:
         risk_engine: RiskEngine,
         broker: Broker,
         config: AgentConfig = None,
+        event_hook: Optional[Callable[[str, dict], None]] = None,
     ):
         self.regime_classifier = regime_classifier
         self.strategy_registry = strategy_registry
         self.risk_engine = risk_engine
         self.broker = broker
         self.config = config or AgentConfig()
+        self._event_hook = event_hook
 
         self.decision_log = []
         self.current_position_id: Optional[str] = None
+
+    def _emit(self, kind: str, payload: dict) -> None:
+        if self._event_hook is None:
+            return
+        try:
+            self._event_hook(kind, payload)
+        except Exception:
+            logger.exception("event_hook failed")
 
     def on_bar(self, df: pd.DataFrame, current_index: int) -> Optional[Order]:
         """
@@ -136,6 +146,18 @@ class TradingAgent:
         )
 
         placed = self.broker.place_order(order)
+
+        self._emit(
+            "fill",
+            {
+                "symbol": self.config.symbol,
+                "side": signal.action,
+                "quantity": placed.filled_quantity,
+                "price": placed.filled_price,
+                "regime": regime_label,
+                "strategy": signal.strategy_name if signal else None,
+            },
+        )
 
         # 8. Update state
         if placed.status == "filled":

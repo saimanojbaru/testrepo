@@ -11,7 +11,7 @@ Hard guarantees:
 from dataclasses import dataclass, field
 from datetime import datetime, date
 from pathlib import Path
-from typing import Optional, List
+from typing import Callable, Optional, List
 
 
 @dataclass
@@ -44,10 +44,23 @@ class RiskEngine:
     Every order must pass risk checks.
     """
 
-    def __init__(self, config: RiskConfig = None):
+    def __init__(
+        self,
+        config: RiskConfig = None,
+        event_hook: Optional[Callable[[str, dict], None]] = None,
+    ):
         self.config = config or RiskConfig()
         self.daily_pnl = DailyPnL(trading_date=datetime.now().date())
         self.open_positions: List[dict] = []
+        self._event_hook = event_hook
+
+    def _emit(self, kind: str, payload: dict) -> None:
+        if self._event_hook is None:
+            return
+        try:
+            self._event_hook(kind, payload)
+        except Exception:
+            pass
 
     def reset_daily(self):
         """Reset daily P&L tracking (call at start of each trading day)."""
@@ -62,6 +75,7 @@ class RiskEngine:
         Path(self.config.kill_switch_file).write_text(reason)
         self.daily_pnl.halted = True
         self.daily_pnl.halt_reason = reason
+        self._emit("kill_switch", {"reason": reason})
 
     def clear_kill_switch(self):
         """Remove kill-switch file (manual intervention only)."""
@@ -73,6 +87,7 @@ class RiskEngine:
         """Record a closed trade."""
         self.daily_pnl.realized_pnl += pnl
         self.daily_pnl.trades_count += 1
+        self._emit("trade_recorded", {"pnl": pnl, "daily_pnl": self.daily_pnl.realized_pnl})
 
         # Check daily loss limit
         if self._exceeds_daily_loss():
