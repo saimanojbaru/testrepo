@@ -1,1 +1,27 @@
 node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Env + secrets
+.env
+.env.*
+!.env.example
+
+# Data caches
+data/cache/
+*.sqlite
+*.db
+
+# Artifacts
+discovered_strategies.json
+backtest_runs/
