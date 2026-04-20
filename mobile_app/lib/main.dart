@@ -4,10 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'fcm/fcm_service.dart';
 import 'screens/dashboard.dart';
-import 'screens/paper_trade.dart';
 import 'screens/positions.dart';
 import 'screens/settings.dart';
 import 'screens/splash.dart';
+import 'screens/strategies.dart';
+import 'screens/trade.dart';
 import 'screens/trade_feed.dart';
 
 void main() async {
@@ -61,7 +62,8 @@ class _MainNavState extends State<_MainNav> {
   int _idx = 0;
 
   static const _screens = [
-    PaperTradeScreen(),
+    TradeScreen(),
+    StrategiesScreen(),
     DashboardScreen(),
     PositionsScreen(),
     TradeFeedScreen(),
@@ -71,14 +73,19 @@ class _MainNavState extends State<_MainNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_idx],
+      body: IndexedStack(index: _idx, children: _screens),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _idx,
         onDestinationSelected: (i) => setState(() => _idx = i),
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.candlestick_chart), label: 'Paper'),
-          NavigationDestination(icon: Icon(Icons.dashboard), label: 'Dashboard'),
-          NavigationDestination(icon: Icon(Icons.account_balance_wallet), label: 'Positions'),
+          NavigationDestination(
+              icon: Icon(Icons.candlestick_chart), label: 'Trade'),
+          NavigationDestination(
+              icon: Icon(Icons.auto_graph), label: 'Strategies'),
+          NavigationDestination(
+              icon: Icon(Icons.dashboard), label: 'Dashboard'),
+          NavigationDestination(
+              icon: Icon(Icons.account_balance_wallet), label: 'Positions'),
           NavigationDestination(icon: Icon(Icons.timeline), label: 'Feed'),
           NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
         ],

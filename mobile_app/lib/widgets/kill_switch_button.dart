@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../api/client.dart';
-import '../state/agent_state.dart';
 
 class KillSwitchButton extends ConsumerStatefulWidget {
   const KillSwitchButton({super.key, required this.engaged});
