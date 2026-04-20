@@ -40,6 +40,42 @@ jobs:
             --platforms android \
             .
 
+      # flutter create generates settings.gradle without the google-services plugin.
+      # Rewrite it so 'com.google.gms.google-services' resolves at build time.
+      - name: Restore android/settings.gradle (add Google Services plugin)
+        working-directory: mobile_app
+        run: |
+          cat > android/settings.gradle << 'SETTINGS'
+          pluginManagement {
+              def flutterSdkPath = {
+                  def properties = new Properties()
+                  file("local.properties").withInputStream { properties.load(it) }
+                  def flutterSdkPath = properties.getProperty("flutter.sdk")
+                  assert flutterSdkPath != null, "flutter.sdk not set in local.properties"
+                  return flutterSdkPath
+              }()
+              includeBuild("$flutterSdkPath/packages/flutter_tools/gradle")
+              repositories {
+                  google()
+                  mavenCentral()
+                  gradlePluginPortal()
+              }
+          }
+          plugins {
+              id "dev.flutter.flutter-gradle-plugin" version "1.0.0" apply false
+              id "com.google.gms.google-services" version "4.4.2" apply false
+          }
+          dependencyResolutionManagement {
+              repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+              repositories {
+                  google()
+                  mavenCentral()
+              }
+          }
+          rootProject.name = "scalping_agent"
+          include ":app"
+          SETTINGS
+
       # Our custom android/app/build.gradle (with FCM + correct namespace) must win
       # over the one flutter create just generated.
       - name: Restore custom android/app/build.gradle
