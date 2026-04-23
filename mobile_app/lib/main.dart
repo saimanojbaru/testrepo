@@ -12,6 +12,8 @@ import 'screens/trade.dart';
 import 'screens/trade_feed.dart';
 import 'state/broker_controller.dart';
 import 'state/market_controller.dart';
+import 'update/update_controller.dart';
+import 'update/update_sheet.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -72,6 +74,8 @@ class _MainNavState extends ConsumerState<_MainNav> {
     SettingsScreen(),
   ];
 
+  bool _didUpdateCheck = false;
+
   @override
   Widget build(BuildContext context) {
     // Auto-swap to live feed whenever broker becomes (re)connected.
@@ -83,6 +87,21 @@ class _MainNavState extends ConsumerState<_MainNav> {
         }
       }
     });
+
+    // Silent update check on first build; prompt if newer APK available.
+    ref.listen<UpdateController>(updateControllerProvider, (prev, next) {
+      if (next.phase == UpdatePhase.available && next.info != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted) UpdateSheet.maybeShow(context, ref);
+        });
+      }
+    });
+    if (!_didUpdateCheck) {
+      _didUpdateCheck = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        ref.read(updateControllerProvider).check(silent: true);
+      });
+    }
     // Fire once on first build in case the bootstrap already completed.
     final bc = ref.read(brokerControllerProvider);
     if (bc.isConnected &&

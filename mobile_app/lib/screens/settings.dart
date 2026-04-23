@@ -5,6 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import '../api/client.dart';
 import '../state/agent_state.dart';
 import '../state/broker_controller.dart';
+import '../update/update_controller.dart';
+import '../update/update_service.dart';
+import '../update/update_sheet.dart';
 import 'broker_connect.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
@@ -71,6 +74,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         padding: const EdgeInsets.all(16),
         children: [
           _UpstoxTile(),
+          const SizedBox(height: 12),
+          _UpdateTile(),
           const SizedBox(height: 16),
           _Section(title: 'Connection', children: [
             TextField(
@@ -206,6 +211,96 @@ class _UpstoxTile extends ConsumerWidget {
                       fontWeight: FontWeight.bold,
                       color: connected ? Colors.black : Colors.white)),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _UpdateTile extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ctrl = ref.watch(updateControllerProvider);
+    final busy = ctrl.phase == UpdatePhase.checking ||
+        ctrl.phase == UpdatePhase.downloading ||
+        ctrl.phase == UpdatePhase.installing;
+    final hasUpdate = ctrl.phase == UpdatePhase.available;
+    final border = hasUpdate
+        ? const Color(0xFF22D3EE)
+        : const Color(0xFF334155);
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: busy
+          ? null
+          : () async {
+              if (hasUpdate) {
+                await UpdateSheet.maybeShow(context, ref);
+              } else {
+                await ctrl.check();
+                if (context.mounted &&
+                    ctrl.phase == UpdatePhase.available) {
+                  await UpdateSheet.maybeShow(context, ref);
+                } else if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('You are up to date.')),
+                  );
+                }
+              }
+            },
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF111827),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: border),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: border.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(
+                hasUpdate ? Icons.new_releases : Icons.system_update,
+                color: border,
+              ),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('APP UPDATE',
+                      style: GoogleFonts.jetBrainsMono(
+                          fontSize: 12,
+                          letterSpacing: 1.5,
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 2),
+                  Text(
+                    hasUpdate
+                        ? 'New build ${ctrl.info?.shortLatest ?? ''} ready to install'
+                        : 'Current build ${UpdateService.buildSha.length >= 7 ? UpdateService.buildSha.substring(0, 7) : UpdateService.buildSha} — tap to check GitHub releases',
+                    style: GoogleFonts.jetBrainsMono(
+                        fontSize: 10, color: Colors.white70),
+                  ),
+                ],
+              ),
+            ),
+            if (busy)
+              const SizedBox(
+                width: 18,
+                height: 18,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+            else
+              Icon(
+                hasUpdate ? Icons.download : Icons.chevron_right,
+                color: border,
+              ),
           ],
         ),
       ),

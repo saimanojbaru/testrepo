@@ -57,7 +57,17 @@ jobs:
         working-directory: mobile_app
         run: |
           if ! grep -q "<queries>" android/app/src/main/AndroidManifest.xml; then
-            sed -i 's|</manifest>|    <queries>\n        <intent>\n            <action android:name="android.intent.action.VIEW" />\n            <data android:scheme="https" />\n        </intent>\n    </queries>\n</manifest>|' \
+            sed -i 's|</manifest>|    <queries>\n        <intent>\n            <action android:name="android.intent.action.VIEW" />\n            <data android:scheme="https" />\n        </intent>\n        <intent>\n            <action android:name="android.intent.action.VIEW" />\n            <data android:mimeType="application/vnd.android.package-archive" />\n        </intent>\n    </queries>\n</manifest>|' \
+              android/app/src/main/AndroidManifest.xml
+          fi
+
+      # In-app updater needs REQUEST_INSTALL_PACKAGES to fire the system
+      # installer on the downloaded APK.
+      - name: Add REQUEST_INSTALL_PACKAGES permission
+        working-directory: mobile_app
+        run: |
+          if ! grep -q "REQUEST_INSTALL_PACKAGES" android/app/src/main/AndroidManifest.xml; then
+            sed -i 's|<application|<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>\n    <application|' \
               android/app/src/main/AndroidManifest.xml
           fi
 
@@ -87,7 +97,9 @@ jobs:
 
       - name: Build release APK
         working-directory: mobile_app
-        run: flutter build apk --release --no-tree-shake-icons --verbose
+        run: |
+          flutter build apk --release --no-tree-shake-icons --verbose \
+            --dart-define=BUILD_SHA=${{ github.sha }}
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
