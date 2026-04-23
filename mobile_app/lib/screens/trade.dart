@@ -73,7 +73,12 @@ class _TradeScreenState extends ConsumerState<TradeScreen> {
             onSelect: mc.selectSymbol,
           ),
           const SizedBox(height: 8),
-          _HeaderBlock(symbol: mc.selectedSymbol, price: price, inst: inst),
+          _HeaderBlock(
+              symbol: mc.selectedSymbol,
+              price: price,
+              inst: inst,
+              isLive: mc.isLiveFeed,
+              feedError: mc.feedError),
           const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -153,10 +158,14 @@ class _HeaderBlock extends StatelessWidget {
     required this.symbol,
     required this.price,
     required this.inst,
+    required this.isLive,
+    this.feedError,
   });
   final String symbol;
   final double price;
   final Instrument inst;
+  final bool isLive;
+  final String? feedError;
 
   @override
   Widget build(BuildContext context) {
@@ -164,6 +173,12 @@ class _HeaderBlock extends StatelessWidget {
     final pct = change / inst.basePrice * 100;
     final up = change >= 0;
     final color = up ? const Color(0xFF10B981) : const Color(0xFFF43F5E);
+    final badgeColor = feedError != null
+        ? const Color(0xFFF43F5E)
+        : (isLive ? const Color(0xFF10B981) : const Color(0xFF64748B));
+    final badgeText = feedError != null
+        ? 'FEED ERROR'
+        : (isLive ? 'UPSTOX LIVE' : 'SIMULATED');
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12),
       padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
@@ -184,13 +199,15 @@ class _HeaderBlock extends StatelessWidget {
                 children: [
                   Container(
                     width: 7, height: 7,
-                    decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+                    decoration: BoxDecoration(
+                        color: badgeColor, shape: BoxShape.circle),
                   ),
                   const SizedBox(width: 6),
                   Text(
-                    'LIVE · SIMULATED',
+                    badgeText,
                     style: GoogleFonts.jetBrainsMono(
-                      fontSize: 9, letterSpacing: 2, color: Colors.white54,
+                      fontSize: 9, letterSpacing: 2, color: badgeColor,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],

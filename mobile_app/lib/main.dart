@@ -10,6 +10,8 @@ import 'screens/splash.dart';
 import 'screens/strategies.dart';
 import 'screens/trade.dart';
 import 'screens/trade_feed.dart';
+import 'state/broker_controller.dart';
+import 'state/market_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,14 +53,14 @@ class _ScalpingAgentAppState extends State<ScalpingAgentApp> {
   }
 }
 
-class _MainNav extends StatefulWidget {
+class _MainNav extends ConsumerStatefulWidget {
   const _MainNav();
 
   @override
-  State<_MainNav> createState() => _MainNavState();
+  ConsumerState<_MainNav> createState() => _MainNavState();
 }
 
-class _MainNavState extends State<_MainNav> {
+class _MainNavState extends ConsumerState<_MainNav> {
   int _idx = 0;
 
   static const _screens = [
@@ -72,6 +74,24 @@ class _MainNavState extends State<_MainNav> {
 
   @override
   Widget build(BuildContext context) {
+    // Auto-swap to live feed whenever broker becomes (re)connected.
+    ref.listen<BrokerController>(brokerControllerProvider, (prev, next) {
+      if (next.isConnected && !(prev?.isConnected ?? false)) {
+        final client = next.client;
+        if (client != null) {
+          ref.read(marketControllerProvider).useLiveUpstox(client);
+        }
+      }
+    });
+    // Fire once on first build in case the bootstrap already completed.
+    final bc = ref.read(brokerControllerProvider);
+    if (bc.isConnected &&
+        !ref.read(marketControllerProvider).isLiveFeed &&
+        bc.client != null) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        ref.read(marketControllerProvider).useLiveUpstox(bc.client!);
+      });
+    }
     return Scaffold(
       body: IndexedStack(index: _idx, children: _screens),
       bottomNavigationBar: NavigationBar(

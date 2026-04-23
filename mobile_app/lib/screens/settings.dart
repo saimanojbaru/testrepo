@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../api/client.dart';
 import '../state/agent_state.dart';
+import '../state/broker_controller.dart';
+import 'broker_connect.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
@@ -68,6 +70,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
+          _UpstoxTile(),
+          const SizedBox(height: 16),
           _Section(title: 'Connection', children: [
             TextField(
               controller: _urlCtrl,
@@ -128,6 +132,84 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     _urlCtrl.dispose();
     _secretCtrl.dispose();
     super.dispose();
+  }
+}
+
+class _UpstoxTile extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bc = ref.watch(brokerControllerProvider);
+    final connected = bc.isConnected;
+    final color =
+        connected ? const Color(0xFF10B981) : const Color(0xFF334155);
+    final label = switch (bc.status) {
+      BrokerStatus.connected => 'CONNECTED',
+      BrokerStatus.connecting => 'CONNECTING',
+      BrokerStatus.error => 'RECONNECT',
+      _ => 'DISCONNECTED',
+    };
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => const BrokerConnectScreen()),
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF111827),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(Icons.link, color: color),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('UPSTOX LIVE FEED',
+                      style: GoogleFonts.jetBrainsMono(
+                          fontSize: 12,
+                          letterSpacing: 1.5,
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 2),
+                  Text(
+                    connected
+                        ? 'Streaming Nifty / BankNifty / FinNifty / Sensex'
+                        : 'Tap to authorize — live prices will replace simulated feed',
+                    style: GoogleFonts.jetBrainsMono(
+                        fontSize: 10, color: Colors.white70),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(label,
+                  style: GoogleFonts.jetBrainsMono(
+                      fontSize: 9,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.bold,
+                      color: connected ? Colors.black : Colors.white)),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

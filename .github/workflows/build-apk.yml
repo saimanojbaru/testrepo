@@ -50,6 +50,17 @@ jobs:
               android/app/src/main/AndroidManifest.xml
           fi
 
+      # Android 11+ package visibility: url_launcher needs a <queries> element
+      # listing the https VIEW intent so it can resolve the user's browser
+      # for the Upstox OAuth redirect. Without this, launchUrl silently fails.
+      - name: Add <queries> block for browser launch
+        working-directory: mobile_app
+        run: |
+          if ! grep -q "<queries>" android/app/src/main/AndroidManifest.xml; then
+            sed -i 's|</manifest>|    <queries>\n        <intent>\n            <action android:name="android.intent.action.VIEW" />\n            <data android:scheme="https" />\n        </intent>\n    </queries>\n</manifest>|' \
+              android/app/src/main/AndroidManifest.xml
+          fi
+
       - name: Show Flutter/Dart versions + project layout
         working-directory: mobile_app
         run: |

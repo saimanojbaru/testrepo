@@ -58,7 +58,16 @@ class Tick {
   final DateTime ts;
 }
 
-class MarketFeed {
+abstract class FeedSource {
+  Stream<Tick> get stream;
+  double priceOf(String symbol);
+  Stream<Tick> streamFor(String symbol) =>
+      stream.where((t) => t.symbol == symbol);
+  void start();
+  void dispose();
+}
+
+class MarketFeed implements FeedSource {
   MarketFeed({this.tickMs = 300, int? seed})
       : _rng = Random(seed),
         _prices = {for (final i in Instrument.all) i.symbol: i.basePrice};
@@ -69,13 +78,17 @@ class MarketFeed {
   Timer? _timer;
   final _ctrl = StreamController<Tick>.broadcast();
 
+  @override
   Stream<Tick> get stream => _ctrl.stream;
 
+  @override
   double priceOf(String symbol) => _prices[symbol] ?? 0;
 
+  @override
   Stream<Tick> streamFor(String symbol) =>
       _ctrl.stream.where((t) => t.symbol == symbol);
 
+  @override
   void start() {
     _timer ??= Timer.periodic(Duration(milliseconds: tickMs), (_) {
       final now = DateTime.now();
@@ -95,6 +108,7 @@ class MarketFeed {
     });
   }
 
+  @override
   void dispose() {
     _timer?.cancel();
     _ctrl.close();
