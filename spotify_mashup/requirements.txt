@@ -1,0 +1,51 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Spotify Mashup Generator — Python dependencies
+#
+# Install everything with:
+#   pip install -r spotify_mashup/requirements.txt
+#
+# System prerequisites (install separately BEFORE pip install):
+#
+#   ffmpeg         — audio conversion used by pydub and yt-dlp
+#     macOS:   brew install ffmpeg
+#     Ubuntu:  sudo apt install ffmpeg
+#     Windows: https://ffmpeg.org/download.html  (add to PATH)
+#
+#   rubberband-cli — time-stretching engine used by pyrubberband
+#     macOS:   brew install rubberband
+#     Ubuntu:  sudo apt install rubberband-cli
+#     Windows: https://breakfastquay.com/rubberband/  (add to PATH)
+#
+#   PyTorch        — required by demucs for stem separation
+#     Install the right build for your hardware FIRST:
+#     https://pytorch.org/get-started/locally/
+#     CPU-only example:
+#       pip install torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Spotify API ───────────────────────────────────────────────────────────────
+spotipy>=2.23.0
+
+# ── YouTube download ──────────────────────────────────────────────────────────
+yt-dlp>=2024.1.1
+
+# ── Stem separation ───────────────────────────────────────────────────────────
+demucs>=4.0.0          # default backend (requires PyTorch — see above)
+# spleeter>=2.4.0      # optional lighter backend; uncomment to enable
+
+# ── Audio analysis & beat detection ──────────────────────────────────────────
+librosa>=0.10.1
+soundfile>=0.12.1
+audioread>=3.0.0
+
+# ── Time-stretching / pitch-shifting ─────────────────────────────────────────
+pyrubberband>=0.3.0    # Python binding for rubberband-cli (must be in PATH)
+
+# ── Mixing and export ─────────────────────────────────────────────────────────
+pydub>=0.25.1
+
+# ── CLI ───────────────────────────────────────────────────────────────────────
+click>=8.1.0
+
+# ── Numerics ──────────────────────────────────────────────────────────────────
+numpy>=1.24.0
