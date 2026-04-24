@@ -10,7 +10,11 @@ iterate the registry.
 """
 
 from .base import Strategy, StrategyContext
+from .donchian_break import DonchianBreak
+from .inside_bar import InsideBarBreak
+from .macd_flip import MacdFlip
 from .momentum_breakout import MomentumBreakout
+from .momentum_burst import MomentumBurst
 from .range_breakout import RangeBreakout
 from .reversal_scalp import ReversalScalp
 
@@ -18,6 +22,10 @@ STRATEGIES: list[type[Strategy]] = [
     MomentumBreakout,
     ReversalScalp,
     RangeBreakout,
+    MacdFlip,
+    DonchianBreak,
+    MomentumBurst,
+    InsideBarBreak,
 ]
 
 
@@ -31,6 +39,10 @@ __all__ = [
     "MomentumBreakout",
     "ReversalScalp",
     "RangeBreakout",
+    "MacdFlip",
+    "DonchianBreak",
+    "MomentumBurst",
+    "InsideBarBreak",
     "STRATEGIES",
     "build_all",
 ]

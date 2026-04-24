@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:scalping_agent/paper/market.dart';
 import 'package:scalping_agent/strategies/base.dart';
 import 'package:scalping_agent/strategies/concrete.dart';
+import 'package:scalping_agent/strategies/concrete_extra.dart';
 
 Candle _c(DateTime ts, double open, double high, double low, double close) =>
     Candle(ts: ts, open: open, high: high, low: low, close: close);
@@ -151,18 +152,148 @@ void main() {
   });
 
   group('StrategyRegistry', () {
-    test('exposes exactly 5 strategies covering 3 regimes', () {
+    test('exposes 15 strategies covering 3 regimes', () {
       final all = StrategyRegistry.all;
-      expect(all, hasLength(5));
+      expect(all, hasLength(15));
       final regimes = all.map((s) => s.regime).toSet();
       expect(regimes, containsAll(['TRENDING', 'RANGING', 'VOLATILE']));
     });
 
-    test('all strategies default to disabled', () {
+    test('all strategies default to disabled and have unique ids', () {
+      final ids = <String>{};
       for (final s in StrategyRegistry.all) {
         expect(s.enabled, isFalse,
             reason: '${s.id} should default to disabled');
+        expect(ids.add(s.id), isTrue,
+            reason: 'duplicate strategy id: ${s.id}');
       }
     });
   });
+
+  group('indicator helpers', () {
+    test('sma returns arithmetic mean', () {
+      expect(sma([1, 2, 3, 4, 5], 5), closeTo(3, 1e-9));
+    });
+
+    test('atr on flat bars is zero', () {
+      final base = DateTime(2025, 1, 1, 9, 15);
+      final bars = [
+        for (int i = 0; i < 20; i++)
+          Candle(
+            ts: base.add(Duration(seconds: i * 5)),
+            open: 100,
+            high: 100,
+            low: 100,
+            close: 100,
+          ),
+      ];
+      expect(atr(bars, 14), closeTo(0, 1e-9));
+    });
+
+    test('donchian picks highest high and lowest low', () {
+      final base = DateTime(2025, 1, 1, 9, 15);
+      final bars = [
+        for (int i = 0; i < 10; i++)
+          Candle(
+            ts: base.add(Duration(seconds: i * 5)),
+            open: 100.0 + i,
+            high: 100.5 + i,
+            low: 99.5 + i,
+            close: 100.0 + i,
+          ),
+      ];
+      final d = donchian(bars, 10);
+      expect(d.high, closeTo(109.5, 1e-9));
+      expect(d.low, closeTo(99.5, 1e-9));
+    });
+
+    test('heikinAshi open is midpoint of prior HA bar', () {
+      final base = DateTime(2025, 1, 1, 9, 15);
+      final raw1 = Candle(
+          ts: base, open: 100, high: 102, low: 99, close: 101);
+      final raw2 = Candle(
+          ts: base.add(const Duration(seconds: 5)),
+          open: 101, high: 103, low: 100, close: 102.5);
+      final ha1 = heikinAshi(raw1, null);
+      final ha2 = heikinAshi(raw2, ha1);
+      expect(ha2.open, closeTo((ha1.open + ha1.close) / 2, 1e-9));
+    });
+  });
+
+  group('new strategies fire signals', () {
+    test('DonchianBreak fires on 20-bar high break', () {
+      final s = DonchianBreak();
+      // 21 flat bars at 100, then one bar above all prior highs
+      final closes = [
+        ...List.filled(21, 100.0),
+        101.5,
+      ];
+      final sig = _runSeries(s, closes);
+      expect(sig?.side, SignalSide.long);
+    });
+
+    test('InsideBarBreak fires on break of mother bar', () {
+      final s = InsideBarBreak();
+      final base = DateTime(2025, 1, 1, 9, 15);
+      // mother range 99-102, inside 100-101, break bar closes 103
+      final bars = [
+        Candle(ts: base, open: 100, high: 102, low: 99, close: 101),
+        Candle(
+            ts: base.add(const Duration(seconds: 5)),
+            open: 100.5, high: 101, low: 100, close: 100.8),
+        Candle(
+            ts: base.add(const Duration(seconds: 10)),
+            open: 101, high: 103.2, low: 100.9, close: 103),
+      ];
+      final sig = s.onCandles('NIFTY', bars);
+      expect(sig?.side, SignalSide.long);
+    });
+
+    test('PinBarReversal fires on long lower wick', () {
+      final s = PinBarReversal();
+      final base = DateTime(2025, 1, 1, 9, 15);
+      // tiny body 100-100.2, long lower wick to 97 → bullish pin
+      final bar = Candle(
+          ts: base, open: 100, high: 100.3, low: 97, close: 100.2);
+      final sig = s.onCandles('NIFTY', [bar]);
+      expect(sig?.side, SignalSide.long);
+    });
+
+    test('MomentumBurst fires on 5-bar ROC > threshold', () {
+      final s = MomentumBurst();
+      final closes = [100.0, 100.0, 100.0, 100.0, 100.0, 101.0];
+      final sig = _runSeries(s, closes);
+      expect(sig?.side, SignalSide.long);
+    });
+  });
+}
+
+Signal? _runSeries(Strategy s, List<double> closes) {
+  final base = DateTime(2025, 1, 1, 9, 15);
+  Signal? out;
+  for (int i = 0; i < closes.length; i++) {
+    out = s.onCandles('NIFTY', _prefix(closes, base, i)) ?? out;
+  }
+  return out;
+}
+
+List<Candle> _prefix(List<double> closes, DateTime base, int upto) {
+  return [
+    for (int j = 0; j <= upto; j++)
+      Candle(
+        ts: base.add(Duration(seconds: j * 5)),
+        open: j == 0 ? closes[j] : closes[j - 1],
+        high: [
+              if (j == 0) closes[j] else closes[j - 1],
+              closes[j]
+            ].reduce((a, b) => a > b ? a : b) +
+            0.05,
+        low: [
+              if (j == 0) closes[j] else closes[j - 1],
+              closes[j]
+            ].reduce((a, b) => a < b ? a : b) -
+            0.05,
+        close: closes[j],
+      ),
+  ];
 }

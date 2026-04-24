@@ -12,10 +12,18 @@ def test_lab_runs_all_strategies_over_sample_csv():
     path = Path(__file__).parent.parent / "data" / "sample_ohlcv.csv"
     result = run_lab(csv_path=str(path), instrument="NIFTY")
     assert result.candle_count > 30
-    # 3 strategies registered
-    assert len(result.strategy_metrics) == 3
+    # Strategy registry now includes the expanded set
+    assert len(result.strategy_metrics) == 7
     names = {m.strategy for m in result.strategy_metrics}
-    assert names == {"momentum_breakout", "reversal_scalp", "range_breakout"}
+    assert {
+        "momentum_breakout",
+        "reversal_scalp",
+        "range_breakout",
+        "macd_flip",
+        "donchian_break",
+        "momentum_burst",
+        "inside_bar_break",
+    }.issubset(names)
 
 
 def test_claude_analyst_heuristic_fallback_without_key():

@@ -114,6 +114,13 @@ class _BrokerConnectScreenState extends ConsumerState<BrokerConnectScreen> {
         backgroundColor: Colors.transparent,
         title: Text('Connect Upstox',
             style: GoogleFonts.jetBrainsMono(fontWeight: FontWeight.w700)),
+        actions: [
+          IconButton(
+            tooltip: 'How to get API credentials',
+            icon: const Icon(Icons.help_outline),
+            onPressed: () => _showHowTo(context),
+          ),
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -203,6 +210,18 @@ class _BrokerConnectScreenState extends ConsumerState<BrokerConnectScreen> {
           ],
         ],
       ),
+    );
+  }
+
+  void _showHowTo(BuildContext ctx) {
+    showModalBottomSheet<void>(
+      context: ctx,
+      isScrollControlled: true,
+      backgroundColor: const Color(0xFF0B1220),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(18)),
+      ),
+      builder: (_) => const _HowToSheet(),
     );
   }
 
@@ -308,5 +327,148 @@ class _StatusBanner extends StatelessWidget {
     final d = DateTime.now().difference(t);
     if (d.inHours > 0) return '${d.inHours}h ${d.inMinutes % 60}m';
     return '${d.inMinutes}m';
+  }
+}
+
+class _HowToSheet extends StatelessWidget {
+  const _HowToSheet();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 18,
+        right: 18,
+        top: 18,
+        bottom: MediaQuery.of(context).viewInsets.bottom + 24,
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.bolt, color: Color(0xFF22D3EE)),
+              const SizedBox(width: 8),
+              Text('UPSTOX SETUP — 5 MINUTES',
+                  style: GoogleFonts.jetBrainsMono(
+                    color: const Color(0xFF22D3EE),
+                    fontSize: 12,
+                    letterSpacing: 2,
+                    fontWeight: FontWeight.bold,
+                  )),
+            ],
+          ),
+          const SizedBox(height: 14),
+          _howStep(
+            '1',
+            'Open Upstox Developer Console',
+            'Go to https://account.upstox.com/developer/apps in a browser on your PC or phone.',
+          ),
+          _howStep(
+            '2',
+            'Create a new app',
+            'Click "New App". App name: anything (e.g. Scalping Agent). App type: Production.',
+          ),
+          _howStep(
+            '3',
+            'Redirect URI',
+            'Enter a dummy HTTPS URL you control — e.g. https://localhost/callback. The page will not actually load; you only need Upstox to redirect to it so you can copy the code from the URL.',
+          ),
+          _howStep(
+            '4',
+            'Copy API Key + Secret',
+            'Once the app is created, Upstox shows you the API Key and API Secret. Keep this tab open.',
+          ),
+          _howStep(
+            '5',
+            'Back in this app',
+            'Close this sheet. Paste the API Key, Secret, and the exact Redirect URI into the form.',
+          ),
+          _howStep(
+            '6',
+            'Tap OPEN UPSTOX LOGIN',
+            'Your browser opens. Sign in. Upstox then tries to send you to your redirect URI — the browser will show "unable to reach" or a blank page — this is expected.',
+          ),
+          _howStep(
+            '7',
+            'Copy the code from the URL bar',
+            'The address bar will look like https://localhost/callback?code=XXX...  Select and copy the XXX... part (everything after code= up to the next & if present).',
+          ),
+          _howStep(
+            '8',
+            'Paste and Exchange',
+            'Paste into the "Authorization code" box, tap EXCHANGE & CONNECT. Done — live Nifty / BankNifty / FinNifty / Sensex prices start streaming.',
+          ),
+          const SizedBox(height: 10),
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: const Color(0xFFF59E0B).withOpacity(0.12),
+              border: Border.all(color: const Color(0xFFF59E0B)),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              'Note · Upstox access tokens expire daily at 03:30 AM IST. You\'ll need to repeat steps 6–8 each morning (credentials stay saved).',
+              style: GoogleFonts.jetBrainsMono(
+                  fontSize: 10, color: Colors.white, height: 1.5),
+            ),
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+            onPressed: () => Navigator.of(context).pop(),
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(44),
+            ),
+            child: const Text('GOT IT'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _howStep(String n, String title, String body) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 22,
+            height: 22,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: const Color(0xFF22D3EE).withOpacity(0.18),
+              borderRadius: BorderRadius.circular(6),
+              border: Border.all(color: const Color(0xFF22D3EE)),
+            ),
+            child: Text(n,
+                style: GoogleFonts.jetBrainsMono(
+                    color: const Color(0xFF22D3EE),
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold)),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title,
+                    style: GoogleFonts.jetBrainsMono(
+                        color: Colors.white,
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold)),
+                const SizedBox(height: 2),
+                Text(body,
+                    style: GoogleFonts.jetBrainsMono(
+                        color: Colors.white70,
+                        fontSize: 10,
+                        height: 1.45)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

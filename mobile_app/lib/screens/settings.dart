@@ -5,10 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import '../api/client.dart';
 import '../state/agent_state.dart';
 import '../state/broker_controller.dart';
+import '../state/telegram_controller.dart';
 import '../update/update_controller.dart';
 import '../update/update_service.dart';
 import '../update/update_sheet.dart';
 import 'broker_connect.dart';
+import 'telegram_setup.dart';
 
 class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
@@ -74,6 +76,8 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
         padding: const EdgeInsets.all(16),
         children: [
           _UpstoxTile(),
+          const SizedBox(height: 12),
+          _TelegramTile(),
           const SizedBox(height: 12),
           _UpdateTile(),
           const SizedBox(height: 16),
@@ -210,6 +214,79 @@ class _UpstoxTile extends ConsumerWidget {
                       letterSpacing: 1.2,
                       fontWeight: FontWeight.bold,
                       color: connected ? Colors.black : Colors.white)),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _TelegramTile extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ctrl = ref.watch(telegramControllerProvider);
+    final configured = ctrl.configured;
+    final color = configured
+        ? const Color(0xFF22D3EE)
+        : const Color(0xFF334155);
+    final label = configured ? 'ON' : 'OFF';
+    return InkWell(
+      borderRadius: BorderRadius.circular(12),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(builder: (_) => const TelegramSetupScreen()),
+      ),
+      child: Container(
+        padding: const EdgeInsets.all(14),
+        decoration: BoxDecoration(
+          color: const Color(0xFF111827),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(color: color),
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: color.withOpacity(0.15),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Icon(Icons.send, color: color),
+            ),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('TELEGRAM ALERTS',
+                      style: GoogleFonts.jetBrainsMono(
+                          fontSize: 12,
+                          letterSpacing: 1.5,
+                          fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 2),
+                  Text(
+                    configured
+                        ? 'Hourly + daily reports → your chat'
+                        : 'Tap to set up a bot for P&L alerts',
+                    style: GoogleFonts.jetBrainsMono(
+                        fontSize: 10, color: Colors.white70),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(6),
+              ),
+              child: Text(label,
+                  style: GoogleFonts.jetBrainsMono(
+                      fontSize: 9,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.bold,
+                      color: configured ? Colors.black : Colors.white)),
             ),
           ],
         ),

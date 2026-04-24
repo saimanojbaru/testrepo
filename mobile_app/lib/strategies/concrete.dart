@@ -1,5 +1,6 @@
 import '../paper/market.dart';
 import 'base.dart';
+import 'concrete_extra.dart';
 
 class EmaCross extends Strategy {
   EmaCross()
@@ -269,5 +270,15 @@ class StrategyRegistry {
     OpeningRangeBreakout(),
     RsiFade(),
     BollingerSqueeze(),
+    MacdFlip(),
+    SupertrendFlip(),
+    KeltnerBreakout(),
+    StochasticReversal(),
+    DonchianBreak(),
+    HeikinAshiTrend(),
+    TemaMomentum(),
+    MomentumBurst(),
+    InsideBarBreak(),
+    PinBarReversal(),
   ];
 }
