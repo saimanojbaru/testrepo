@@ -6,7 +6,6 @@ recognise, sing along to, or use in a short-form video.  We score every
 candidate region with a weighted blend of signals:
 
     score = w_spotify * spotify_section_score
-          + w_tiktok  * tiktok_clip_density      (if available)
           + w_youtube * youtube_timestamp_density (if available)
           + w_lyric   * lyric_chorus_score       (if available)
 
@@ -17,8 +16,8 @@ The Spotify signal uses the AudioAnalysis API's segment/section/beat data:
 high-confidence boundaries with rising loudness and stable timbre tend to
 align with choruses and drops.
 
-External signals (TikTok, YouTube comments) are best-effort scrapes; failures
-are caught and treated as "signal unavailable", never fatal.
+External signals (YouTube timestamps, Genius chorus markers) are best-effort
+scrapes; failures are caught and treated as "signal unavailable", never fatal.
 """
 
 from __future__ import annotations
@@ -75,26 +74,67 @@ class TrendingHookDetector:
     """
 
     _DEFAULT_WEIGHTS = {
-        "spotify": 0.55,
-        "tiktok": 0.25,
-        "youtube": 0.15,
-        "lyric": 0.05,
+        "spotify": 0.65,
+        "youtube": 0.25,
+        "lyric": 0.10,
     }
 
     def __init__(
         self,
-        spotify_client,
+        spotify_client=None,
         *,
         min_hook_seconds: float = 12.0,
         max_hook_seconds: float = 30.0,
         weights: Optional[dict[str, float]] = None,
     ) -> None:
-        self._sp = spotify_client
+        self._sp = spotify_client  # may be None; detect_from_metadata works without it
         self.min_ms = int(min_hook_seconds * 1000)
         self.max_ms = int(max_hook_seconds * 1000)
         self.weights = weights or self._DEFAULT_WEIGHTS
 
     # ── Public ────────────────────────────────────────────────────────────────
+
+    def detect_from_metadata(
+        self,
+        title: str,
+        artist: str,
+        duration_s: float,
+        *,
+        top_k: int = 5,
+    ) -> list[ViralHook]:
+        """
+        Produce hooks using only YouTube timestamps + Genius markers — no
+        Spotify audio analysis required.  Used when the track comes from
+        YouTube or when Spotify credentials are absent.
+        """
+        youtube = self._youtube_density(title, artist, duration_s)
+        lyric = self._lyric_chorus_density(title, artist, duration_s)
+
+        # Divide the track into equal-width candidate windows of ~24 s.
+        step_s = 24.0
+        n_windows = max(1, int(duration_s / step_s))
+        candidates: list[ViralHook] = []
+        for i in range(n_windows):
+            start = i * step_s
+            end = min(start + step_s, duration_s)
+            position = (start + step_s / 2) / max(duration_s, 1.0)
+            position_boost = 0.6 + 0.4 * math.sin(math.pi * position)
+            hook = ViralHook(
+                start_ms=int(start * 1000),
+                end_ms=int(end * 1000),
+                score=position_boost * 50.0,
+                confidence=0.3,
+                label="Section",
+                reasons=["YouTube-based estimate"],
+                signals={},
+            )
+            candidates.append(hook)
+
+        for hook in candidates:
+            self._mix_external(hook, youtube, lyric)
+
+        candidates.sort(key=lambda h: h.score, reverse=True)
+        return self._dedupe(candidates)[:top_k]
 
     def detect(self, track_id: str, *, top_k: int = 5) -> list[ViralHook]:
         """Return the top-k ranked hooks for a Spotify track."""
@@ -111,12 +151,12 @@ class TrendingHookDetector:
         title = track["name"]
         artist = track["artists"][0]["name"]
 
-        tiktok = self._tiktok_density(title, artist, analysis.get("track", {}).get("duration", 0))
-        youtube = self._youtube_density(title, artist, analysis.get("track", {}).get("duration", 0))
-        lyric = self._lyric_chorus_density(title, artist, analysis.get("track", {}).get("duration", 0))
+        dur = analysis.get("track", {}).get("duration", 0)
+        youtube = self._youtube_density(title, artist, dur)
+        lyric = self._lyric_chorus_density(title, artist, dur)
 
         for hook in candidates:
-            self._mix_external(hook, tiktok, youtube, lyric)
+            self._mix_external(hook, youtube, lyric)
 
         candidates.sort(key=lambda h: h.score, reverse=True)
         return candidates[:top_k]
@@ -252,7 +292,7 @@ class TrendingHookDetector:
 
     # ── External signals (best-effort, no API keys required) ─────────────────
 
-    def _http_get(self, url: str, *, timeout: float = 6.0) -> Optional[str]:
+    def _http_get(self, url: str, *, timeout: float = 8.0) -> Optional[str]:
         req = urllib.request.Request(
             url,
             headers={
@@ -270,25 +310,6 @@ class TrendingHookDetector:
         except Exception as e:
             logger.debug("HTTP get failed for %s: %s", url, e)
             return None
-
-    def _tiktok_density(self, title: str, artist: str, duration_s: float) -> Optional[list[float]]:
-        """
-        Returns a density curve over the song's duration (one float per ~1s
-        bucket) where higher values = more TikTok clips reference that part
-        of the song. Returns None if no signal can be obtained.
-        """
-        if duration_s <= 0:
-            return None
-        query = urllib.parse.quote_plus(f"{title} {artist}")
-        # TikTok's discover endpoint returns JSON-in-HTML; we just look for
-        # any time markers like "0:23" / "1:12" inside captions/comments.
-        html = self._http_get(f"https://www.tiktok.com/search?q={query}")
-        if not html:
-            return None
-        timestamps = self._extract_timestamps(html, duration_s)
-        if not timestamps:
-            return None
-        return self._density_curve(timestamps, duration_s)
 
     def _youtube_density(self, title: str, artist: str, duration_s: float) -> Optional[list[float]]:
         if duration_s <= 0:
@@ -361,7 +382,6 @@ class TrendingHookDetector:
     def _mix_external(
         self,
         hook: ViralHook,
-        tiktok: Optional[list[float]],
         youtube: Optional[list[float]],
         lyric: Optional[list[float]],
     ) -> None:
@@ -370,7 +390,7 @@ class TrendingHookDetector:
         s = float(self.weights["spotify"]) * spotify_score
         weight_used = float(self.weights["spotify"])
 
-        for name, curve in (("tiktok", tiktok), ("youtube", youtube), ("lyric", lyric)):
+        for name, curve in (("youtube", youtube), ("lyric", lyric)):
             if not curve:
                 continue
             avg = self._average_in_window(curve, hook.start_ms, hook.end_ms)

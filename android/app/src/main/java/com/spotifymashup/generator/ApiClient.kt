@@ -6,15 +6,9 @@ import java.io.OutputStreamWriter
 import java.net.HttpURLConnection
 import java.net.URL
 
-/**
- * Lightweight HTTP client for the Mashup Studio backend.
- * Uses only the Android framework — no Retrofit, no OkHttp.
- *
- * Set [baseUrl] from the UI before any call.
- */
 object ApiClient {
 
-    var baseUrl: String = "http://10.0.2.2:8000"
+    var baseUrl: String = ""
 
     // ── DTOs ─────────────────────────────────────────────────────────────────
 
@@ -59,16 +53,57 @@ object ApiClient {
         val suggestedTempoRatio: Float?,
     )
 
+    data class SearchResult(
+        val id: String,
+        val title: String,
+        val artist: String,
+        val durationMs: Int,
+        val thumbnailUrl: String,
+        val previewUrl: String?,
+        val source: String,   // "spotify" | "youtube"
+        val url: String,
+    )
+
+    data class TrackInput(
+        val url: String,
+        val role: String = "full",
+        val hookStartMs: Int? = null,
+        val hookEndMs: Int? = null,
+        val bpmOverride: Float? = null,
+        val pitchShift: Int = 0,
+        val volume: Float = 1.0f,
+    )
+
     // ── Public API ───────────────────────────────────────────────────────────
 
     fun health(): Boolean = try {
         val conn = (URL("$baseUrl/health").openConnection() as HttpURLConnection).apply {
-            connectTimeout = 5_000
-            readTimeout = 5_000
+            connectTimeout = 5_000; readTimeout = 5_000
         }
         conn.responseCode in 200..299
-    } catch (_: Exception) {
-        false
+    } catch (_: Exception) { false }
+
+    fun search(query: String, source: String = "spotify", limit: Int = 8): List<SearchResult> {
+        val body = JSONObject().apply {
+            put("query", query)
+            put("source", source)
+            put("limit", limit)
+        }
+        val j = postJson("/api/search", body)
+        val arr = j.getJSONArray("results")
+        return (0 until arr.length()).map { i ->
+            val r = arr.getJSONObject(i)
+            SearchResult(
+                id = r.getString("id"),
+                title = r.getString("title"),
+                artist = r.getString("artist"),
+                durationMs = r.getInt("duration_ms"),
+                thumbnailUrl = r.optString("thumbnail_url", ""),
+                previewUrl = r.optString("preview_url").takeIf { it.isNotEmpty() },
+                source = r.getString("source"),
+                url = r.getString("url"),
+            )
+        }
     }
 
     fun trendingHook(spotifyUrl: String, topK: Int = 5): TrendingHooks {
@@ -76,8 +111,7 @@ object ApiClient {
             put("spotify_url", spotifyUrl)
             put("top_k", topK)
         }
-        val json = postJson("/api/trending-hook", body)
-        return parseTrendingHooks(json)
+        return parseTrendingHooks(postJson("/api/trending-hook", body))
     }
 
     fun compatibility(urlA: String, urlB: String): Compatibility {
@@ -100,44 +134,54 @@ object ApiClient {
         )
     }
 
+    /** Multi-track mashup (2–4 tracks with roles). */
+    fun createMultiMashup(tracks: List<TrackInput>, applyPitchShift: Boolean): JobResult {
+        val tracksArr = JSONArray()
+        tracks.forEach { t ->
+            val obj = JSONObject().apply {
+                put("url", t.url)
+                put("role", t.role)
+                put("pitch_shift", t.pitchShift)
+                put("volume", t.volume)
+                if (t.bpmOverride != null) put("bpm_override", t.bpmOverride)
+                if (t.hookStartMs != null) put("hook_start_ms", t.hookStartMs)
+                if (t.hookEndMs != null) put("hook_end_ms", t.hookEndMs)
+            }
+            tracksArr.put(obj)
+        }
+        val body = JSONObject().apply {
+            put("tracks", tracksArr)
+            put("apply_pitch_shift", applyPitchShift)
+            put("stem_backend", "demucs")
+        }
+        return parseJobResult(postJson("/api/mashup/multi", body))
+    }
+
+    /** Legacy 2-track mashup kept for compatibility. */
     fun createMashup(
-        trackA: String,
-        trackB: String,
-        youtubeOnly: Boolean,
-        bpmA: Double?,
-        bpmB: Double?,
+        trackA: String, trackB: String,
+        youtubeOnly: Boolean, bpmA: Double?, bpmB: Double?,
         applyPitchShift: Boolean,
-        hookA: Hook? = null,
-        hookB: Hook? = null,
+        hookA: Hook? = null, hookB: Hook? = null,
     ): JobResult {
         val body = JSONObject().apply {
-            put("track_a", trackA)
-            put("track_b", trackB)
+            put("track_a", trackA); put("track_b", trackB)
             put("youtube_only", youtubeOnly)
             if (bpmA != null) put("bpm_a", bpmA)
             if (bpmB != null) put("bpm_b", bpmB)
             put("apply_pitch_shift", applyPitchShift)
             put("stem_backend", "demucs")
-            if (hookA != null) {
-                put("hook_a_start_ms", hookA.startMs)
-                put("hook_a_end_ms", hookA.endMs)
-            }
-            if (hookB != null) {
-                put("hook_b_start_ms", hookB.startMs)
-                put("hook_b_end_ms", hookB.endMs)
-            }
+            if (hookA != null) { put("hook_a_start_ms", hookA.startMs); put("hook_a_end_ms", hookA.endMs) }
+            if (hookB != null) { put("hook_b_start_ms", hookB.startMs); put("hook_b_end_ms", hookB.endMs) }
         }
-        val j = postJson("/api/mashup", body)
-        return parseJobResult(j)
+        return parseJobResult(postJson("/api/mashup", body))
     }
 
     fun getJob(jobId: String): JobResult {
         val conn = (URL("$baseUrl/api/mashup/$jobId").openConnection() as HttpURLConnection).apply {
-            connectTimeout = 15_000
-            readTimeout = 15_000
+            connectTimeout = 15_000; readTimeout = 15_000
         }
-        val response = conn.inputStream.bufferedReader().use { it.readText() }
-        return parseJobResult(JSONObject(response))
+        return parseJobResult(JSONObject(conn.inputStream.bufferedReader().use { it.readText() }))
     }
 
     fun downloadUrl(jobId: String): String = "$baseUrl/api/mashup/$jobId/download"
@@ -145,14 +189,11 @@ object ApiClient {
     // ── Helpers ──────────────────────────────────────────────────────────────
 
     private fun postJson(path: String, body: JSONObject): JSONObject {
-        val url = URL("$baseUrl$path")
-        val conn = (url.openConnection() as HttpURLConnection).apply {
-            requestMethod = "POST"
-            doOutput = true
+        val conn = (URL("$baseUrl$path").openConnection() as HttpURLConnection).apply {
+            requestMethod = "POST"; doOutput = true
             setRequestProperty("Content-Type", "application/json; charset=utf-8")
             setRequestProperty("Accept", "application/json")
-            connectTimeout = 15_000
-            readTimeout = 60_000
+            connectTimeout = 15_000; readTimeout = 60_000
         }
         OutputStreamWriter(conn.outputStream, Charsets.UTF_8).use { it.write(body.toString()) }
         val code = conn.responseCode
@@ -184,14 +225,12 @@ object ApiClient {
                 so.keys().forEach { k -> signals[k] = so.getDouble(k).toFloat() }
             }
             Hook(
-                startMs = h.getInt("start_ms"),
-                endMs = h.getInt("end_ms"),
+                startMs = h.getInt("start_ms"), endMs = h.getInt("end_ms"),
                 durationMs = h.getInt("duration_ms"),
                 score = h.getDouble("score").toFloat(),
                 confidence = h.getDouble("confidence").toFloat(),
                 label = h.getString("label"),
-                reasons = reasons,
-                signals = signals,
+                reasons = reasons, signals = signals,
             )
         }
         return TrendingHooks(

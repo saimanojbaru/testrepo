@@ -17,6 +17,7 @@
     <color name="text_primary">#F2F4F8</color>
     <color name="text_secondary">#A8B0BD</color>
     <color name="text_tertiary">#5C6370</color>
+    <color name="text_hint">#4A5260</color>
 
     <!-- Hook label colours -->
     <color name="status_drop">#FF4D9D</color>

@@ -1,478 +1,452 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rootScroll"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/surface_0"
-    android:fillViewport="true"
-    android:fitsSystemWindows="false"
-    android:scrollbars="none">
+    android:background="@color/surface_0">
 
-    <LinearLayout
-        android:id="@+id/rootContainer"
+    <!-- ═══════════════════ INPUT SECTION ═══════════════════ -->
+    <ScrollView
+        android:id="@+id/layoutInput"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="20dp"
-        android:paddingEnd="20dp"
-        android:paddingTop="48dp"
-        android:paddingBottom="48dp">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:fitsSystemWindows="false">
 
-        <!-- ─────────────── HERO HEADER ─────────────── -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textColor="@color/text_primary"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            android:letterSpacing="-0.02"
-            android:paddingTop="4dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/app_tagline"
-            android:textColor="@color/text_secondary"
-            android:textSize="13sp"
-            android:lineSpacingExtra="3dp"
-            android:paddingTop="6dp"
-            android:paddingBottom="22dp" />
-
-        <!-- ─────────────── BACKEND URL ─────────────── -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bg_card"
-            android:padding="16dp"
-            android:layout_marginBottom="14dp">
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:paddingTop="52dp"
+            android:paddingBottom="36dp">
+
+            <!-- ── Hero header ── -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/server_label"
+                android:text="@string/app_name"
+                android:textColor="@color/text_primary"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:letterSpacing="-0.02" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_tagline"
                 android:textColor="@color/text_secondary"
-                android:textSize="11sp"
-                android:letterSpacing="0.10"
-                android:paddingBottom="6dp" />
-            <EditText
-                android:id="@+id/etBaseUrl"
+                android:textSize="13sp"
+                android:lineSpacingExtra="3dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="26dp" />
+
+            <!-- ── Dynamic track cards go here ── -->
+            <LinearLayout
+                android:id="@+id/llTracks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/server_hint"
-                android:inputType="textUri"
-                android:textSize="14sp" />
-        </LinearLayout>
+                android:orientation="vertical" />
 
-        <!-- ─────────────── INPUT SECTION ─────────────── -->
-        <LinearLayout
-            android:id="@+id/layoutInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Track A card -->
+            <!-- ── Add track button ── -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_card_hero"
-                android:padding="20dp"
-                android:layout_marginBottom="14dp">
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="18dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <View
-                        android:layout_width="6dp"
-                        android:layout_height="22dp"
-                        android:background="@color/brand_primary"
-                        android:layout_marginEnd="10dp" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/track_a_label"
-                        android:textColor="@color/text_primary"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.10" />
-                    <TextView
-                        android:id="@+id/tvHookASummary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:textColor="@color/brand_primary"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <EditText
-                    android:id="@+id/etTrackA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/track_input_hint"
-                    android:textSize="14sp"
-                    android:layout_marginTop="14dp" />
-
-                <Button
-                    android:id="@+id/btnFindHooksA"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="🔥  Find viral hooks"
-                    android:textSize="14sp"
-                    android:layout_marginTop="12dp" />
-
-                <LinearLayout
-                    android:id="@+id/hooksContainerA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="14dp"
-                    android:visibility="gone" />
+                <TextView
+                    android:id="@+id/btnAddTrack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="42dp"
+                    android:gravity="center"
+                    android:text="＋  Add another track"
+                    android:textColor="@color/brand_primary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:background="@drawable/bg_button_secondary" />
             </LinearLayout>
 
-            <!-- Track B card -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_card_hero"
-                android:padding="20dp"
-                android:layout_marginBottom="14dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <View
-                        android:layout_width="6dp"
-                        android:layout_height="22dp"
-                        android:background="@color/brand_secondary"
-                        android:layout_marginEnd="10dp" />
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/track_b_label"
-                        android:textColor="@color/text_primary"
-                        android:textSize="13sp"
-                        android:textStyle="bold"
-                        android:letterSpacing="0.10" />
-                    <TextView
-                        android:id="@+id/tvHookBSummary"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:textColor="@color/brand_secondary"
-                        android:textSize="11sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <EditText
-                    android:id="@+id/etTrackB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/track_input_hint"
-                    android:textSize="14sp"
-                    android:layout_marginTop="14dp" />
-
-                <Button
-                    android:id="@+id/btnFindHooksB"
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:text="🔥  Find viral hooks"
-                    android:textSize="14sp"
-                    android:layout_marginTop="12dp" />
-
-                <LinearLayout
-                    android:id="@+id/hooksContainerB"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="14dp"
-                    android:visibility="gone" />
-            </LinearLayout>
-
-            <!-- Compatibility card (filled in after both tracks set) -->
+            <!-- ── Compatibility card ── -->
             <LinearLayout
                 android:id="@+id/cardCompat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/bg_card"
-                android:padding="20dp"
+                android:padding="18dp"
                 android:layout_marginBottom="14dp"
                 android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/compat_title"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:letterSpacing="0.10"
+                    android:paddingBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvCompatBpm"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_bpm" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvCompatKey"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_key" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvCompatEnergy"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="16sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_energy" android:textColor="@color/text_secondary" android:textSize="10sp" />
+                    </LinearLayout>
+
+                    <!-- Overall score pill -->
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center">
+                        <TextView android:id="@+id/tvCompatScore"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:background="@drawable/bg_pill_score"
+                            android:paddingStart="10dp" android:paddingEnd="10dp"
+                            android:paddingTop="6dp" android:paddingBottom="6dp"
+                            android:textColor="#FFFFFF" android:textSize="15sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_overall" android:textColor="@color/text_secondary" android:textSize="10sp"
+                            android:paddingTop="4dp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvCompatHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="2dp" />
+            </LinearLayout>
+
+            <!-- ── Manual sync section ── -->
+            <LinearLayout
+                android:id="@+id/cardManualSync"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card"
+                android:padding="18dp"
+                android:layout_marginBottom="14dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
+
                     <TextView
+                        android:id="@+id/btnSyncToggle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/compat_title"
-                        android:textColor="@color/text_primary"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:text="▾  Manual Sync"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.06" />
+
                     <TextView
-                        android:id="@+id/tvCompatScore"
+                        android:id="@+id/tvSyncBadge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_pill_score"
-                        android:paddingStart="12dp"
-                        android:paddingEnd="12dp"
-                        android:paddingTop="4dp"
-                        android:paddingBottom="4dp"
-                        android:text="--%"
-                        android:textColor="#FFFFFF"
-                        android:textSize="13sp"
-                        android:textStyle="bold" />
+                        android:text="POWER USER"
+                        android:textColor="@color/brand_secondary"
+                        android:textSize="9sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.08" />
                 </LinearLayout>
 
+                <!-- Manual sync controls — shown when expanded -->
                 <LinearLayout
+                    android:id="@+id/llSyncControls"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="14dp">
-                    <LinearLayout
-                        android:layout_width="0dp" android:layout_weight="1"
-                        android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="@string/compat_bpm" android:textColor="@color/text_secondary"
-                            android:textSize="11sp" android:letterSpacing="0.08" />
-                        <TextView android:id="@+id/tvCompatBpm"
-                            android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:textColor="@color/text_primary" android:textSize="14sp"
-                            android:textStyle="bold" android:paddingTop="2dp" android:text="—" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp" android:layout_weight="1"
-                        android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="@string/compat_key" android:textColor="@color/text_secondary"
-                            android:textSize="11sp" android:letterSpacing="0.08" />
-                        <TextView android:id="@+id/tvCompatKey"
-                            android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:textColor="@color/text_primary" android:textSize="14sp"
-                            android:textStyle="bold" android:paddingTop="2dp" android:text="—" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="0dp" android:layout_weight="1"
-                        android:layout_height="wrap_content" android:orientation="vertical">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="@string/compat_energy" android:textColor="@color/text_secondary"
-                            android:textSize="11sp" android:letterSpacing="0.08" />
-                        <TextView android:id="@+id/tvCompatEnergy"
-                            android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:textColor="@color/text_primary" android:textSize="14sp"
-                            android:textStyle="bold" android:paddingTop="2dp" android:text="—" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <TextView android:id="@+id/tvCompatHint"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" android:textColor="@color/text_secondary"
-                    android:textSize="12sp" android:lineSpacingExtra="2dp"
-                    android:text="" />
-            </LinearLayout>
-
-            <!-- Advanced collapsible -->
-            <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_card"
-                android:padding="16dp"
-                android:layout_marginBottom="18dp">
-                <TextView
-                    android:id="@+id/btnAdvToggle"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:text="▾  Advanced"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    android:padding="6dp"
-                    android:clickable="true"
-                    android:focusable="true" />
-                <LinearLayout
-                    android:id="@+id/layoutAdvanced"
-                    android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    android:paddingTop="10dp">
-                    <CheckBox
-                        android:id="@+id/cbYoutubeOnly"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/youtube_only"
-                        android:textColor="@color/text_primary"
-                        android:buttonTint="@color/brand_primary" />
+                    android:layout_marginTop="14dp">
+
+                    <com.spotifymashup.generator.ManualSyncView
+                        android:id="@+id/manualSyncView"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="14dp" />
+
+                    <LinearLayout
+                        android:id="@+id/llSyncPerTrack"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── Advanced section ── -->
+            <LinearLayout
+                android:id="@+id/cardAdvanced"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card"
+                android:padding="18dp"
+                android:layout_marginBottom="18dp">
+
+                <TextView
+                    android:id="@+id/btnAdvToggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="▾  Advanced"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.06" />
+
+                <LinearLayout
+                    android:id="@+id/layoutAdvanced"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:paddingTop="12dp">
+
                     <CheckBox
                         android:id="@+id/cbPitchShift"
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/auto_pitch_shift"
                         android:textColor="@color/text_primary"
                         android:checked="true"
                         android:buttonTint="@color/brand_primary" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:orientation="horizontal" android:layout_marginTop="8dp">
-                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
-                            android:layout_height="wrap_content" android:orientation="vertical"
-                            android:paddingEnd="6dp">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                android:text="@string/bpm_a_label" android:textColor="@color/text_secondary"
-                                android:textSize="11sp" android:letterSpacing="0.08" android:paddingBottom="2dp" />
-                            <EditText android:id="@+id/etBpmA"
-                                android:layout_width="match_parent" android:layout_height="wrap_content"
-                                android:hint="@string/bpm_hint" android:inputType="numberDecimal"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
-                            android:layout_height="wrap_content" android:orientation="vertical"
-                            android:paddingStart="6dp">
-                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                                android:text="@string/bpm_b_label" android:textColor="@color/text_secondary"
-                                android:textSize="11sp" android:letterSpacing="0.08" android:paddingBottom="2dp" />
-                            <EditText android:id="@+id/etBpmB"
-                                android:layout_width="match_parent" android:layout_height="wrap_content"
-                                android:hint="@string/bpm_hint" android:inputType="numberDecimal"
-                                android:textSize="14sp" />
-                        </LinearLayout>
+
+                    <!-- Server URL (buried in advanced — users enter it via setup dialog) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="BACKEND URL"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.10"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <EditText
+                            android:id="@+id/etBaseUrl"
+                            android:layout_width="0dp"
+                            android:layout_height="46dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_input"
+                            android:hint="https://your-space.hf.space"
+                            android:textColorHint="@color/text_hint"
+                            android:textColor="@color/text_primary"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:textSize="13sp"
+                            android:inputType="textUri"
+                            android:singleLine="true"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:id="@+id/btnChangeServer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="46dp"
+                            android:gravity="center"
+                            android:text="Change"
+                            android:textColor="@color/brand_primary"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:background="@drawable/bg_button_secondary" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
+            <!-- ── Generate button ── -->
             <Button
                 android:id="@+id/btnGenerate"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_button_primary"
                 android:text="@string/generate_mashup"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <!-- ─────────────── PROGRESS ─────────────── -->
-        <LinearLayout
-            android:id="@+id/layoutProgress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/bg_card"
-            android:padding="22dp"
-            android:layout_marginBottom="18dp"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Crafting your mashup"
-                android:textColor="@color/text_primary"
-                android:textSize="16sp"
+                android:textColor="@color/surface_0"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:max="100"
-                android:progressDrawable="@drawable/bg_progress"
-                android:layout_marginTop="14dp" />
-
-            <TextView
-                android:id="@+id/tvProgress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_secondary"
-                android:textSize="13sp"
-                android:layout_marginTop="10dp"
-                android:text="Connecting…" />
-
-            <TextView
-                android:id="@+id/tvProgressHint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_tertiary"
-                android:textSize="11sp"
-                android:layout_marginTop="8dp"
-                android:text="Stem separation runs once per song; cached on subsequent runs." />
         </LinearLayout>
+    </ScrollView>
 
-        <!-- ─────────────── RESULT ─────────────── -->
+    <!-- ═══════════════════ PROGRESS SECTION ═══════════════════ -->
+    <LinearLayout
+        android:id="@+id/layoutProgress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/surface_0"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crafting your mashup"
+            android:textColor="@color/text_primary"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="28dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_progress"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tvProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Connecting…"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stem separation is cached after the first run."
+            android:textColor="@color/text_hint"
+            android:textSize="12sp"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- ═══════════════════ RESULT SECTION ═══════════════════ -->
+    <ScrollView
+        android:id="@+id/layoutResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/surface_0"
+        android:scrollbars="none"
+        android:visibility="gone">
+
         <LinearLayout
-            android:id="@+id/layoutResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bg_card_hero"
-            android:padding="24dp"
-            android:visibility="gone">
+            android:paddingStart="22dp"
+            android:paddingEnd="22dp"
+            android:paddingTop="52dp"
+            android:paddingBottom="40dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/result_title"
                 android:textColor="@color/text_primary"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
 
             <TextView
                 android:id="@+id/tvResultFile"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp"
-                android:layout_marginTop="2dp" />
+                android:layout_marginBottom="24dp" />
 
             <com.spotifymashup.generator.WaveformView
                 android:id="@+id/waveform"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginTop="18dp" />
+                android:layout_height="90dp"
+                android:layout_marginBottom="20dp" />
 
             <Button
                 android:id="@+id/btnPlay"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_button_primary"
                 android:text="@string/play_preview"
-                android:textSize="15sp" />
+                android:textColor="@color/surface_0"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp" />
 
             <LinearLayout
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:layout_marginTop="10dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
                 <Button
                     android:id="@+id/btnDownload"
-                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:text="@string/save_mp3"
-                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
                     android:background="@drawable/bg_button_secondary"
+                    android:text="@string/save_mp3"
                     android:textColor="@color/text_primary"
-                    android:layout_marginEnd="6dp" />
+                    android:textSize="13sp" />
+
                 <Button
                     android:id="@+id/btnShare"
-                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:text="@string/share"
-                    android:textSize="14sp"
+                    android:layout_weight="1"
                     android:background="@drawable/bg_button_secondary"
+                    android:text="@string/share"
                     android:textColor="@color/text_primary"
-                    android:layout_marginStart="6dp" />
+                    android:textSize="13sp" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/btnReset"
-                android:layout_width="match_parent" android:layout_height="44dp"
-                android:layout_marginTop="14dp"
-                android:text="@string/start_over"
-                android:textSize="13sp"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
                 android:background="@android:color/transparent"
-                android:textColor="@color/text_tertiary" />
+                android:text="@string/start_over"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+
+</FrameLayout>

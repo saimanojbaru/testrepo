@@ -59,28 +59,44 @@ class SpotifyFetcher:
         r"https?://open\.spotify\.com/track/([A-Za-z0-9]+)"
     )
 
+    #: True when Spotify credentials were successfully loaded.
+    available: bool = False
+
     def __init__(
         self,
         client_id: str = SPOTIFY_CLIENT_ID,
         client_secret: str = SPOTIFY_CLIENT_SECRET,
     ) -> None:
-        if client_id == "YOUR_CLIENT_ID_HERE" or client_secret == "YOUR_CLIENT_SECRET_HERE":
-            raise EnvironmentError(
-                "Spotify credentials not set. "
-                "Export SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET, "
-                "or edit the constants at the top of spotify_fetcher.py."
+        if client_id in ("", "YOUR_CLIENT_ID_HERE") or client_secret in ("", "YOUR_CLIENT_SECRET_HERE"):
+            logger.warning(
+                "Spotify credentials not set — Spotify features will be unavailable. "
+                "Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET env vars."
             )
-        auth = SpotifyClientCredentials(
-            client_id=client_id,
-            client_secret=client_secret,
-        )
-        self._sp = spotipy.Spotify(auth_manager=auth)
-        logger.debug("Spotify client initialised.")
+            self._sp = None
+            self.available = False
+            return
+        try:
+            auth = SpotifyClientCredentials(
+                client_id=client_id,
+                client_secret=client_secret,
+            )
+            self._sp = spotipy.Spotify(auth_manager=auth)
+            self.available = True
+            logger.debug("Spotify client initialised.")
+        except Exception as exc:
+            logger.warning("Spotify client init failed: %s", exc)
+            self._sp = None
+            self.available = False
 
     # ── public ────────────────────────────────────────────────────────────────
 
     def fetch(self, spotify_url: str) -> TrackMetadata:
         """Return a TrackMetadata for the given Spotify track URL."""
+        if not self.available or self._sp is None:
+            raise RuntimeError(
+                "Spotify credentials not configured. "
+                "Set SPOTIFY_CLIENT_ID and SPOTIFY_CLIENT_SECRET env vars."
+            )
         track_id = self._parse_track_id(spotify_url)
         logger.info("Fetching Spotify metadata for track ID: %s", track_id)
 
