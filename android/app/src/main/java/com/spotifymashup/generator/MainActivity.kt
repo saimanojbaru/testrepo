@@ -52,17 +52,17 @@ class MainActivity : Activity() {
 
     private lateinit var prefs: SharedPreferences
     private lateinit var mainHandler: Handler
-    private lateinit var layoutInput: ScrollView
-    private lateinit var layoutProgress: LinearLayout
-    private lateinit var layoutResult: ScrollView
+    private lateinit var layoutInput: View
+    private lateinit var layoutProgress: View
+    private lateinit var layoutResult: View
     private lateinit var llTracks: LinearLayout
     private lateinit var btnAddTrack: TextView
-    private lateinit var cardCompat: LinearLayout
+    private lateinit var cardCompat: View
     private lateinit var btnGenerate: Button
     private lateinit var btnAdvToggle: TextView
-    private lateinit var layoutAdvanced: LinearLayout
+    private lateinit var layoutAdvanced: View
     private lateinit var btnSyncToggle: TextView
-    private lateinit var llSyncControls: LinearLayout
+    private lateinit var llSyncControls: View
     private lateinit var manualSyncView: ManualSyncView
     private lateinit var etBaseUrl: EditText
     private lateinit var tvProgress: TextView
@@ -165,7 +165,7 @@ class MainActivity : Activity() {
         btnReset.setOnClickListener { reset() }
     }
 
-    private fun toggleSection(v: LinearLayout) {
+    private fun toggleSection(v: View) {
         v.visibility = if (v.visibility == View.GONE) View.VISIBLE else View.GONE
     }
 
