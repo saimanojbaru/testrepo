@@ -54,7 +54,7 @@ class MainActivity : Activity() {
     private lateinit var mainHandler: Handler
     private lateinit var layoutInput: ScrollView
     private lateinit var layoutProgress: LinearLayout
-    private lateinit var layoutResult: LinearLayout
+    private lateinit var layoutResult: ScrollView
     private lateinit var llTracks: LinearLayout
     private lateinit var btnAddTrack: TextView
     private lateinit var cardCompat: LinearLayout
