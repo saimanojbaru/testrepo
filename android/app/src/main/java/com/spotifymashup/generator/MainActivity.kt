@@ -191,8 +191,9 @@ class MainActivity : Activity() {
             toast("Paste a Spotify URL or song name first")
             return
         }
-        ApiClient.baseUrl = etBaseUrl.text.toString().trim()
-            .ifEmpty { "http://10.0.2.2:8000" }
+        val url = etBaseUrl.text.toString().trim()
+        if (url.isEmpty()) { toast("Enter your backend server URL first"); return }
+        ApiClient.baseUrl = url
         val container = if (forA) hooksContainerA else hooksContainerB
         val btn = if (forA) btnFindHooksA else btnFindHooksB
 
@@ -206,6 +207,13 @@ class MainActivity : Activity() {
                 val result = ApiClient.trendingHook(track, topK = 4)
                 mainHandler.post {
                     if (forA) trackADuration = result.durationMs else trackBDuration = result.durationMs
+                    // Auto-fill BPM from analysis if the field is empty
+                    result.bpm?.let { bpm ->
+                        val bpmField = if (forA) etBpmA else etBpmB
+                        if (bpmField.text.isNullOrEmpty()) {
+                            bpmField.setText(bpm.toInt().toString())
+                        }
+                    }
                     renderHooks(container, result, forA)
                     btn.text = "🔥  Find viral hooks"
                     btn.isEnabled = true
@@ -328,7 +336,7 @@ class MainActivity : Activity() {
 
     // ── Generate ─────────────────────────────────────────────────────────────
     private fun startGeneration() {
-        val baseUrl = etBaseUrl.text.toString().trim().ifEmpty { "http://10.0.2.2:8000" }
+        val baseUrl = etBaseUrl.text.toString().trim()
         val trackA = etTrackA.text.toString().trim()
         val trackB = etTrackB.text.toString().trim()
         val youtubeOnly = cbYoutubeOnly.isChecked
@@ -336,11 +344,14 @@ class MainActivity : Activity() {
         val bpmB = etBpmB.text.toString().toDoubleOrNull()
         val pitchShift = cbPitchShift.isChecked
 
+        if (baseUrl.isEmpty()) {
+            toast("Enter your backend server URL first"); return
+        }
         if (trackA.isEmpty() || trackB.isEmpty()) {
             toast("Please fill in both track fields"); return
         }
         if (youtubeOnly && bpmB == null) {
-            toast("BPM B is required in YouTube-only mode"); return
+            toast("BPM B is required in YouTube-only mode — tap 🔥 Find viral hooks first to auto-detect it"); return
         }
 
         ApiClient.baseUrl = baseUrl

@@ -3,7 +3,7 @@
     <string name="app_name">Mashup Studio</string>
     <string name="app_tagline">AI-picked viral hooks · auto BPM &amp; key match · multi-track mashups</string>
 
-    <string name="server_label">Backend server</string>
+    <string name="server_label">Backend server  ·  enter your PC\'s local IP</string>
     <string name="server_hint">http://192.168.1.x:8000</string>
 
     <string name="track_a_label">TRACK A · Vocals</string>

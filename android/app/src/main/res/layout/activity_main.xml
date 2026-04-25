@@ -61,7 +61,6 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/server_hint"
                 android:inputType="textUri"
-                android:text="http://10.0.2.2:8000"
                 android:textSize="14sp" />
         </LinearLayout>
 
