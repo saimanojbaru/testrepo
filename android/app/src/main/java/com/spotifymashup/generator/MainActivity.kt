@@ -1,37 +1,73 @@
 package com.spotifymashup.generator
 
+import android.app.Activity
 import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.os.Environment
+import android.os.Handler
+import android.os.Looper
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
-import androidx.lifecycle.lifecycleScope
-import com.spotifymashup.generator.BuildConfig
-import com.spotifymashup.generator.databinding.ActivityMainBinding
-import kotlinx.coroutines.launch
+import android.widget.*
+import android.media.MediaScannerConnection
+import java.io.File
+import java.net.HttpURLConnection
+import java.net.URL
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : Activity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private val viewModel: MashupViewModel by viewModels()
-    private var mediaPlayer: MediaPlayer? = null
+    // ── Views ─────────────────────────────────────────────────────────────────
+    private lateinit var etBaseUrl: EditText
+    private lateinit var etTrackA: EditText
+    private lateinit var etTrackB: EditText
+    private lateinit var cbYoutubeOnly: CheckBox
+    private lateinit var etBpmA: EditText
+    private lateinit var etBpmB: EditText
+    private lateinit var cbPitchShift: CheckBox
+    private lateinit var btnGenerate: Button
+    private lateinit var layoutInput: LinearLayout
+    private lateinit var layoutProgress: LinearLayout
+    private lateinit var progressBar: ProgressBar
+    private lateinit var tvProgress: TextView
+    private lateinit var layoutResult: LinearLayout
+    private lateinit var tvResultFile: TextView
+    private lateinit var btnPlay: Button
+    private lateinit var btnDownload: Button
+    private lateinit var btnReset: Button
 
-    // Current completed job (for streaming preview before saving)
+    private val mainHandler = Handler(Looper.getMainLooper())
     private var currentJobId: String? = null
     private var currentFileName: String? = null
+    private var mediaPlayer: MediaPlayer? = null
+
+    // ── Lifecycle ─────────────────────────────────────────────────────────────
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        setupStemBackendSpinner()
-        setupClickListeners()
-        observeState()
+        etBaseUrl      = findViewById(R.id.etBaseUrl)      as EditText
+        etTrackA       = findViewById(R.id.etTrackA)       as EditText
+        etTrackB       = findViewById(R.id.etTrackB)       as EditText
+        cbYoutubeOnly  = findViewById(R.id.cbYoutubeOnly)  as CheckBox
+        etBpmA         = findViewById(R.id.etBpmA)         as EditText
+        etBpmB         = findViewById(R.id.etBpmB)         as EditText
+        cbPitchShift   = findViewById(R.id.cbPitchShift)   as CheckBox
+        btnGenerate    = findViewById(R.id.btnGenerate)    as Button
+        layoutInput    = findViewById(R.id.layoutInput)    as LinearLayout
+        layoutProgress = findViewById(R.id.layoutProgress) as LinearLayout
+        progressBar    = findViewById(R.id.progressBar)    as ProgressBar
+        tvProgress     = findViewById(R.id.tvProgress)     as TextView
+        layoutResult   = findViewById(R.id.layoutResult)   as LinearLayout
+        tvResultFile   = findViewById(R.id.tvResultFile)   as TextView
+        btnPlay        = findViewById(R.id.btnPlay)        as Button
+        btnDownload    = findViewById(R.id.btnDownload)    as Button
+        btnReset       = findViewById(R.id.btnReset)       as Button
+
+        btnGenerate.setOnClickListener { startGeneration() }
+        btnPlay.setOnClickListener    { togglePlay() }
+        btnDownload.setOnClickListener { downloadFile() }
+        btnReset.setOnClickListener   { reset() }
     }
 
     override fun onDestroy() {
@@ -39,91 +75,81 @@ class MainActivity : AppCompatActivity() {
         releasePlayer()
     }
 
-    // ── UI setup ──────────────────────────────────────────────────────────────
+    // ── Generate ──────────────────────────────────────────────────────────────
 
-    private fun setupStemBackendSpinner() {
-        val options = listOf("demucs (recommended)", "spleeter (faster)")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spinnerStemBackend.adapter = adapter
-    }
-
-    private fun setupClickListeners() {
-        binding.btnGenerate.setOnClickListener { onGenerateClicked() }
-        binding.btnReset.setOnClickListener { viewModel.reset() }
-        binding.btnDownload.setOnClickListener { onDownloadClicked() }
-        binding.btnPlay.setOnClickListener { onPlayClicked() }
-
-        // Show/hide advanced options
-        binding.tvAdvancedToggle.setOnClickListener {
-            val visible = !binding.layoutAdvanced.isVisible
-            binding.layoutAdvanced.isVisible = visible
-            binding.tvAdvancedToggle.text = if (visible) "Hide advanced options ▲" else "Show advanced options ▼"
-        }
-    }
-
-    // ── Actions ───────────────────────────────────────────────────────────────
-
-    private fun onGenerateClicked() {
-        val trackA = binding.etTrackA.text.toString().trim()
-        val trackB = binding.etTrackB.text.toString().trim()
+    private fun startGeneration() {
+        val baseUrl     = etBaseUrl.text.toString().trim().ifEmpty { "http://10.0.2.2:8000" }
+        val trackA      = etTrackA.text.toString().trim()
+        val trackB      = etTrackB.text.toString().trim()
+        val youtubeOnly = cbYoutubeOnly.isChecked
+        val bpmA        = etBpmA.text.toString().toDoubleOrNull()
+        val bpmB        = etBpmB.text.toString().toDoubleOrNull()
+        val pitchShift  = cbPitchShift.isChecked
 
         if (trackA.isEmpty() || trackB.isEmpty()) {
-            Toast.makeText(this, "Please fill in both track fields", Toast.LENGTH_SHORT).show()
-            return
+            toast("Please fill in both track fields"); return
         }
-
-        val youtubeOnly = binding.switchYoutubeOnly.isChecked
-        val bpmA = binding.etBpmA.text.toString().toFloatOrNull()
-        val bpmB = binding.etBpmB.text.toString().toFloatOrNull()
-        val keyA = binding.etKeyA.text.toString().toIntOrNull()
-        val keyB = binding.etKeyB.text.toString().toIntOrNull()
-        val pitchShift = binding.switchPitchShift.isChecked
-        val backend = if (binding.spinnerStemBackend.selectedItemPosition == 0) "demucs" else "spleeter"
-
         if (youtubeOnly && bpmB == null) {
-            Toast.makeText(this, "BPM B is required in YouTube-only mode", Toast.LENGTH_LONG).show()
-            return
+            toast("BPM B is required in YouTube-only mode"); return
         }
 
-        viewModel.generateMashup(
-            trackA = trackA,
-            trackB = trackB,
-            youtubeOnly = youtubeOnly,
-            bpmA = bpmA,
-            bpmB = bpmB,
-            keyA = keyA,
-            keyB = keyB,
-            applyPitchShift = pitchShift,
-            stemBackend = backend,
-        )
+        ApiClient.baseUrl = baseUrl
+        currentFileName = buildFileName(trackA, trackB)
+        setSection(Section.PROGRESS)
+        updateProgress("Connecting to backend…", 0)
+        btnGenerate.isEnabled = false
+
+        Thread {
+            try {
+                val job = ApiClient.createMashup(trackA, trackB, youtubeOnly, bpmB, bpmA, pitchShift)
+                currentJobId = job.jobId
+                pollLoop(job.jobId)
+            } catch (e: Exception) {
+                mainHandler.post { showError("Connection failed: ${e.message}") }
+            }
+        }.start()
     }
 
-    private fun onDownloadClicked() {
-        val jobId = currentJobId ?: return
-        val fileName = currentFileName ?: return
-        viewModel.downloadMashup(this, jobId, fileName)
+    private fun pollLoop(jobId: String) {
+        while (true) {
+            try {
+                val job = ApiClient.getJob(jobId)
+                mainHandler.post {
+                    when (job.status) {
+                        "done"   -> showResult()
+                        "failed" -> showError(job.message)
+                        else     -> updateProgress(job.message, job.progress)
+                    }
+                }
+                if (job.status == "done" || job.status == "failed") break
+                Thread.sleep(3_000)
+            } catch (e: Exception) {
+                mainHandler.post { showError("Network error: ${e.message}") }
+                break
+            }
+        }
     }
 
-    private fun onPlayClicked() {
+    // ── Play ──────────────────────────────────────────────────────────────────
+
+    private fun togglePlay() {
         val jobId = currentJobId ?: return
 
         if (mediaPlayer?.isPlaying == true) {
             mediaPlayer?.pause()
-            binding.btnPlay.text = getString(R.string.play)
+            btnPlay.text = "▶  Play Preview"
             return
         }
 
         if (mediaPlayer != null) {
             mediaPlayer?.start()
-            binding.btnPlay.text = getString(R.string.pause)
+            btnPlay.text = "⏸  Pause"
             return
         }
 
         // First play — stream from server
-        val streamUrl = "${BuildConfig.BASE_URL}/api/mashup/$jobId/download"
-        binding.btnPlay.isEnabled = false
-        binding.btnPlay.text = getString(R.string.buffering)
+        btnPlay.isEnabled = false
+        btnPlay.text = "Buffering…"
 
         mediaPlayer = MediaPlayer().apply {
             setAudioAttributes(
@@ -132,19 +158,20 @@ class MainActivity : AppCompatActivity() {
                     .setUsage(AudioAttributes.USAGE_MEDIA)
                     .build()
             )
-            setDataSource(streamUrl)
+            setDataSource(ApiClient.downloadUrl(jobId))
             setOnPreparedListener { mp ->
                 mp.start()
-                binding.btnPlay.isEnabled = true
-                binding.btnPlay.text = getString(R.string.pause)
+                mainHandler.post { btnPlay.isEnabled = true; btnPlay.text = "⏸  Pause" }
             }
             setOnCompletionListener {
-                binding.btnPlay.text = getString(R.string.play)
+                mainHandler.post { btnPlay.text = "▶  Play Preview" }
             }
             setOnErrorListener { _, _, _ ->
-                Toast.makeText(this@MainActivity, "Playback error — try downloading instead", Toast.LENGTH_LONG).show()
-                binding.btnPlay.text = getString(R.string.play)
-                binding.btnPlay.isEnabled = true
+                mainHandler.post {
+                    toast("Playback failed — try Download instead")
+                    btnPlay.text = "▶  Play Preview"
+                    btnPlay.isEnabled = true
+                }
                 releasePlayer()
                 false
             }
@@ -152,81 +179,94 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // ── Download ──────────────────────────────────────────────────────────────
+
+    private fun downloadFile() {
+        val jobId    = currentJobId ?: return
+        val fileName = currentFileName ?: return
+
+        btnDownload.isEnabled = false
+        btnDownload.text = "Downloading…"
+
+        Thread {
+            try {
+                val url  = URL(ApiClient.downloadUrl(jobId))
+                val conn = (url.openConnection() as HttpURLConnection).apply {
+                    connectTimeout = 15_000
+                    readTimeout    = 120_000
+                }
+
+                val musicDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC)
+                val dir = File(musicDir, "Mashups").apply { mkdirs() }
+                val file = File(dir, fileName)
+
+                conn.inputStream.use { src -> file.outputStream().use { dst -> src.copyTo(dst) } }
+
+                MediaScannerConnection.scanFile(this, arrayOf(file.absolutePath), null, null)
+
+                mainHandler.post {
+                    btnDownload.text = "✓  Saved"
+                    toast("Saved → ${file.absolutePath}")
+                }
+            } catch (e: Exception) {
+                mainHandler.post {
+                    btnDownload.isEnabled = true
+                    btnDownload.text = "⬇  Save MP3"
+                    toast("Download failed: ${e.message}")
+                }
+            }
+        }.start()
+    }
+
+    // ── UI state helpers ──────────────────────────────────────────────────────
+
+    private enum class Section { INPUT, PROGRESS, RESULT }
+
+    private fun setSection(s: Section) {
+        layoutInput.visibility    = if (s == Section.INPUT)    View.VISIBLE else View.GONE
+        layoutProgress.visibility = if (s == Section.PROGRESS) View.VISIBLE else View.GONE
+        layoutResult.visibility   = if (s == Section.RESULT)   View.VISIBLE else View.GONE
+    }
+
+    private fun updateProgress(msg: String, pct: Int) {
+        tvProgress.text   = msg
+        progressBar.progress = pct
+    }
+
+    private fun showResult() {
+        setSection(Section.RESULT)
+        tvResultFile.text     = currentFileName ?: "mashup.mp3"
+        btnPlay.isEnabled     = true
+        btnPlay.text          = "▶  Play Preview"
+        btnDownload.isEnabled = true
+        btnDownload.text      = "⬇  Save MP3"
+        releasePlayer()
+    }
+
+    private fun showError(msg: String) {
+        setSection(Section.INPUT)
+        btnGenerate.isEnabled = true
+        toast("Error: $msg")
+    }
+
+    private fun reset() {
+        releasePlayer()
+        setSection(Section.INPUT)
+        btnGenerate.isEnabled = true
+        currentJobId          = null
+        currentFileName       = null
+    }
+
     private fun releasePlayer() {
         mediaPlayer?.release()
         mediaPlayer = null
     }
 
-    // ── State observation ─────────────────────────────────────────────────────
+    private fun toast(msg: String) =
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
 
-    private fun observeState() {
-        lifecycleScope.launch {
-            viewModel.state.collect { state ->
-                when (state) {
-                    is MashupUiState.Idle -> showInputSection()
-
-                    is MashupUiState.Loading -> {
-                        showProgressSection()
-                        binding.progressBar.progress = state.progress
-                        binding.tvProgressMessage.text = state.message
-                    }
-
-                    is MashupUiState.Ready -> {
-                        currentJobId = state.jobId
-                        currentFileName = state.fileName
-                        releasePlayer()
-                        showResultSection(state.fileName)
-                    }
-
-                    is MashupUiState.Downloading -> {
-                        showProgressSection()
-                        binding.progressBar.progress = 0
-                        binding.progressBar.isIndeterminate = true
-                        binding.tvProgressMessage.text = "Saving ${state.fileName} to Music/Mashups…"
-                    }
-
-                    is MashupUiState.Downloaded -> {
-                        binding.progressBar.isIndeterminate = false
-                        val path = state.savedPath
-                        Toast.makeText(this@MainActivity, "Saved: $path", Toast.LENGTH_LONG).show()
-                        // Stay on result section so user can play again
-                        showResultSection(currentFileName ?: "mashup.mp3")
-                        binding.btnDownload.text = getString(R.string.saved)
-                        binding.btnDownload.isEnabled = false
-                    }
-
-                    is MashupUiState.Error -> {
-                        showInputSection()
-                        Toast.makeText(this@MainActivity, "Error: ${state.message}", Toast.LENGTH_LONG).show()
-                    }
-                }
-            }
-        }
-    }
-
-    // ── Section visibility helpers ────────────────────────────────────────────
-
-    private fun showInputSection() {
-        binding.layoutInput.isVisible = true
-        binding.layoutProgress.isVisible = false
-        binding.layoutResult.isVisible = false
-        binding.progressBar.isIndeterminate = false
-        binding.btnDownload.isEnabled = true
-        binding.btnDownload.text = getString(R.string.download_mp3)
-        binding.btnPlay.text = getString(R.string.play)
-        releasePlayer()
-    }
-
-    private fun showProgressSection() {
-        binding.layoutInput.isVisible = false
-        binding.layoutProgress.isVisible = true
-        binding.layoutResult.isVisible = false
-    }
-
-    private fun showResultSection(fileName: String) {
-        binding.layoutInput.isVisible = false
-        binding.layoutProgress.isVisible = false
-        binding.layoutResult.isVisible = true
-        binding.tvResultTitle.text = fileName
+    private fun buildFileName(a: String, b: String): String {
+        fun safe(s: String) = s.replace(Regex("[^A-Za-z0-9 ]"), "").trim().replace(' ', '_').take(28)
+        return "Mashup_${safe(a)}_vs_${safe(b)}.mp3"
     }
 }

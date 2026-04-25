@@ -1,41 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mashup Generator</string>
-    <string name="subtitle">Vocals from Track A · Instrumental from Track B</string>
-
-    <!-- Input labels -->
-    <string name="track_a_label">TRACK A — VOCALS</string>
-    <string name="track_a_hint_label">Vocals source</string>
-    <string name="track_b_label">TRACK B — INSTRUMENTAL</string>
-    <string name="track_b_hint_label">Instrumental source</string>
-    <string name="hint_track_a">Spotify URL or "Artist - Song" for YouTube search</string>
-    <string name="hint_track_b">Spotify URL or "Artist - Song" for YouTube search</string>
-
-    <!-- Options -->
-    <string name="youtube_only_label">YouTube-only mode</string>
-    <string name="youtube_only_desc">Skip Spotify API — search YouTube directly</string>
-    <string name="show_advanced">Show advanced options ▼</string>
-    <string name="hide_advanced">Hide advanced options ▲</string>
-    <string name="bpm_a_hint">BPM A (optional)</string>
-    <string name="bpm_b_hint">BPM B (required in YT mode)</string>
-    <string name="key_a_hint">Key A (0–11)</string>
-    <string name="key_b_hint">Key B (0–11)</string>
-    <string name="stem_backend_hint">Stem backend</string>
-    <string name="pitch_shift_label">Auto key-compatibility pitch shift</string>
-
-    <!-- Buttons -->
-    <string name="generate_button">Generate Mashup</string>
-    <string name="play">▶  Play Preview</string>
-    <string name="pause">⏸  Pause</string>
-    <string name="buffering">Buffering…</string>
-    <string name="download_mp3">⬇  Save MP3 to Music</string>
-    <string name="saved">✓  Saved to Music/Mashups</string>
-    <string name="start_over">Start Over</string>
-
-    <!-- Progress -->
-    <string name="processing">Processing…</string>
-    <string name="progress_note">Stem separation can take 3–10 minutes on the first run.\nSubsequent runs use cached stems.</string>
-
-    <!-- Result -->
-    <string name="mashup_ready">Your mashup is ready!</string>
 </resources>

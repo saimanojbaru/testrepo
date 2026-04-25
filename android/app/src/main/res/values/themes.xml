@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <style name="Theme.SpotifyMashupGenerator" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/spotify_green</item>
-        <item name="colorPrimaryVariant">@color/spotify_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorSecondary">@color/accent_blue</item>
-        <item name="colorOnSecondary">@color/white</item>
-        <item name="android:statusBarColor">@color/spotify_dark</item>
+    <!-- Uses only built-in Android Material theme — no external library needed -->
+    <style name="Theme.SpotifyMashupGenerator" parent="android:Theme.Material.NoActionBar">
         <item name="android:windowBackground">@color/background</item>
+        <item name="android:colorPrimary">@color/spotify_green</item>
+        <item name="android:statusBarColor">@color/background</item>
     </style>
-
 </resources>
