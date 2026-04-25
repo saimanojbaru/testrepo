@@ -1,261 +1,479 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootScroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"
-    android:fillViewport="true">
+    android:background="@color/surface_0"
+    android:fillViewport="true"
+    android:fitsSystemWindows="false"
+    android:scrollbars="none">
 
     <LinearLayout
+        android:id="@+id/rootContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="48dp">
 
-        <!-- Header -->
+        <!-- ─────────────── HERO HEADER ─────────────── -->
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mashup Generator"
-            android:textColor="#1DB954"
-            android:textSize="28sp"
+            android:text="@string/app_name"
+            android:textColor="@color/text_primary"
+            android:textSize="34sp"
             android:textStyle="bold"
-            android:paddingTop="12dp"
-            android:paddingBottom="2dp" />
+            android:letterSpacing="-0.02"
+            android:paddingTop="4dp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Vocals from Track A  ·  Instrumental from Track B"
-            android:textColor="#888888"
+            android:text="@string/app_tagline"
+            android:textColor="@color/text_secondary"
             android:textSize="13sp"
-            android:paddingBottom="20dp" />
+            android:lineSpacingExtra="3dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="22dp" />
 
-        <!-- ══════════════════════════════════════════════════════════════════ -->
-        <!-- INPUT SECTION                                                      -->
-        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- ─────────────── BACKEND URL ─────────────── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card"
+            android:padding="16dp"
+            android:layout_marginBottom="14dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/server_label"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:letterSpacing="0.10"
+                android:paddingBottom="6dp" />
+            <EditText
+                android:id="@+id/etBaseUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/server_hint"
+                android:inputType="textUri"
+                android:text="http://10.0.2.2:8000"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- ─────────────── INPUT SECTION ─────────────── -->
         <LinearLayout
             android:id="@+id/layoutInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Backend URL -->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Backend server URL" android:textColor="#AAAAAA" android:textSize="12sp"
-                android:paddingBottom="2dp" />
-            <EditText
-                android:id="@+id/etBaseUrl"
+            <!-- Track A card -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="http://10.0.2.2:8000"
-                android:textColor="#FFFFFF"
-                android:background="#1E1E1E"
-                android:padding="10dp"
-                android:inputType="textUri"
-                android:layout_marginBottom="18dp" />
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_hero"
+                android:padding="20dp"
+                android:layout_marginBottom="14dp">
 
-            <!-- Track A -->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="TRACK A — VOCALS" android:textColor="#1DB954"
-                android:textStyle="bold" android:textSize="12sp" android:letterSpacing="0.08"
-                android:paddingBottom="4dp" />
-            <EditText
-                android:id="@+id/etTrackA"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Spotify URL  or  YouTube search query"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#555555"
-                android:background="#1E1E1E"
-                android:padding="10dp"
-                android:inputType="text"
-                android:layout_marginBottom="18dp" />
-
-            <!-- Track B -->
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="TRACK B — INSTRUMENTAL" android:textColor="#2196F3"
-                android:textStyle="bold" android:textSize="12sp" android:letterSpacing="0.08"
-                android:paddingBottom="4dp" />
-            <EditText
-                android:id="@+id/etTrackB"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Spotify URL  or  YouTube search query"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#555555"
-                android:background="#1E1E1E"
-                android:padding="10dp"
-                android:inputType="text"
-                android:layout_marginBottom="14dp" />
-
-            <!-- YouTube-only -->
-            <CheckBox
-                android:id="@+id/cbYoutubeOnly"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YouTube-only mode  (no Spotify credentials needed)"
-                android:textColor="#CCCCCC"
-                android:buttonTint="#1DB954"
-                android:layout_marginBottom="10dp" />
-
-            <!-- BPM row -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:layout_marginBottom="10dp">
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:orientation="vertical" android:paddingEnd="6dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="BPM A (optional)" android:textColor="#AAAAAA" android:textSize="12sp" />
-                    <EditText
-                        android:id="@+id/etBpmA"
-                        android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <View
+                        android:layout_width="6dp"
+                        android:layout_height="22dp"
+                        android:background="@color/brand_primary"
+                        android:layout_marginEnd="10dp" />
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="e.g. 128"
-                        android:textColor="#FFFFFF"
-                        android:textColorHint="#555555"
-                        android:background="#1E1E1E"
-                        android:padding="8dp"
-                        android:inputType="numberDecimal" />
+                        android:layout_weight="1"
+                        android:text="@string/track_a_label"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.10" />
+                    <TextView
+                        android:id="@+id/tvHookASummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textColor="@color/brand_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
-                    android:layout_weight="1" android:orientation="vertical" android:paddingStart="6dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="BPM B (required in YT mode)" android:textColor="#AAAAAA" android:textSize="12sp" />
-                    <EditText
-                        android:id="@+id/etBpmB"
-                        android:layout_width="match_parent"
+
+                <EditText
+                    android:id="@+id/etTrackA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/track_input_hint"
+                    android:textSize="14sp"
+                    android:layout_marginTop="14dp" />
+
+                <Button
+                    android:id="@+id/btnFindHooksA"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="🔥  Find viral hooks"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/hooksContainerA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="14dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Track B card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_hero"
+                android:padding="20dp"
+                android:layout_marginBottom="14dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <View
+                        android:layout_width="6dp"
+                        android:layout_height="22dp"
+                        android:background="@color/brand_secondary"
+                        android:layout_marginEnd="10dp" />
+                    <TextView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="e.g. 171"
+                        android:layout_weight="1"
+                        android:text="@string/track_b_label"
+                        android:textColor="@color/text_primary"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.10" />
+                    <TextView
+                        android:id="@+id/tvHookBSummary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:textColor="@color/brand_secondary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etTrackB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/track_input_hint"
+                    android:textSize="14sp"
+                    android:layout_marginTop="14dp" />
+
+                <Button
+                    android:id="@+id/btnFindHooksB"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="🔥  Find viral hooks"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/hooksContainerB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="14dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- Compatibility card (filled in after both tracks set) -->
+            <LinearLayout
+                android:id="@+id/cardCompat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card"
+                android:padding="20dp"
+                android:layout_marginBottom="14dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/compat_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tvCompatScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_pill_score"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="--%"
                         android:textColor="#FFFFFF"
-                        android:textColorHint="#555555"
-                        android:background="#1E1E1E"
-                        android:padding="8dp"
-                        android:inputType="numberDecimal" />
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp">
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_bpm" android:textColor="@color/text_secondary"
+                            android:textSize="11sp" android:letterSpacing="0.08" />
+                        <TextView android:id="@+id/tvCompatBpm"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" android:paddingTop="2dp" android:text="—" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_key" android:textColor="@color/text_secondary"
+                            android:textSize="11sp" android:letterSpacing="0.08" />
+                        <TextView android:id="@+id/tvCompatKey"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" android:paddingTop="2dp" android:text="—" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp" android:layout_weight="1"
+                        android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/compat_energy" android:textColor="@color/text_secondary"
+                            android:textSize="11sp" android:letterSpacing="0.08" />
+                        <TextView android:id="@+id/tvCompatEnergy"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:textColor="@color/text_primary" android:textSize="14sp"
+                            android:textStyle="bold" android:paddingTop="2dp" android:text="—" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView android:id="@+id/tvCompatHint"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" android:textColor="@color/text_secondary"
+                    android:textSize="12sp" android:lineSpacingExtra="2dp"
+                    android:text="" />
+            </LinearLayout>
+
+            <!-- Advanced collapsible -->
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card"
+                android:padding="16dp"
+                android:layout_marginBottom="18dp">
+                <TextView
+                    android:id="@+id/btnAdvToggle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="▾  Advanced"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:padding="6dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+                <LinearLayout
+                    android:id="@+id/layoutAdvanced"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:paddingTop="10dp">
+                    <CheckBox
+                        android:id="@+id/cbYoutubeOnly"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/youtube_only"
+                        android:textColor="@color/text_primary"
+                        android:buttonTint="@color/brand_primary" />
+                    <CheckBox
+                        android:id="@+id/cbPitchShift"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/auto_pitch_shift"
+                        android:textColor="@color/text_primary"
+                        android:checked="true"
+                        android:buttonTint="@color/brand_primary" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="horizontal" android:layout_marginTop="8dp">
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:orientation="vertical"
+                            android:paddingEnd="6dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/bpm_a_label" android:textColor="@color/text_secondary"
+                                android:textSize="11sp" android:letterSpacing="0.08" android:paddingBottom="2dp" />
+                            <EditText android:id="@+id/etBpmA"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:hint="@string/bpm_hint" android:inputType="numberDecimal"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="0dp" android:layout_weight="1"
+                            android:layout_height="wrap_content" android:orientation="vertical"
+                            android:paddingStart="6dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/bpm_b_label" android:textColor="@color/text_secondary"
+                                android:textSize="11sp" android:letterSpacing="0.08" android:paddingBottom="2dp" />
+                            <EditText android:id="@+id/etBpmB"
+                                android:layout_width="match_parent" android:layout_height="wrap_content"
+                                android:hint="@string/bpm_hint" android:inputType="numberDecimal"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Pitch shift -->
-            <CheckBox
-                android:id="@+id/cbPitchShift"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Auto key-compatibility pitch shift"
-                android:textColor="#CCCCCC"
-                android:buttonTint="#1DB954"
-                android:checked="true"
-                android:layout_marginBottom="20dp" />
-
-            <!-- Generate button -->
             <Button
                 android:id="@+id/btnGenerate"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="GENERATE MASHUP"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:background="#1DB954" />
-
+                android:layout_height="58dp"
+                android:text="@string/generate_mashup"
+                android:textSize="16sp" />
         </LinearLayout>
 
-        <!-- ══════════════════════════════════════════════════════════════════ -->
-        <!-- PROGRESS SECTION                                                   -->
-        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- ─────────────── PROGRESS ─────────────── -->
         <LinearLayout
             android:id="@+id/layoutProgress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:paddingTop="40dp"
+            android:background="@drawable/bg_card"
+            android:padding="22dp"
+            android:layout_marginBottom="18dp"
             android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Crafting your mashup"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
-                style="@android:style/Widget.ProgressBar.Horizontal"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="10dp"
                 android:max="100"
-                android:progressTint="#1DB954"
-                android:layout_marginBottom="14dp" />
+                android:progressDrawable="@drawable/bg_progress"
+                android:layout_marginTop="14dp" />
 
             <TextView
                 android:id="@+id/tvProgress"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Processing…"
-                android:textColor="#AAAAAA"
-                android:textSize="14sp"
-                android:gravity="center"
-                android:layout_marginBottom="8dp" />
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                android:text="Connecting…" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/tvProgressHint"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Stem separation takes 3–10 minutes on first run.\nSubsequent runs use cached stems."
-                android:textColor="#555555"
-                android:textSize="12sp"
-                android:gravity="center" />
-
+                android:textColor="@color/text_tertiary"
+                android:textSize="11sp"
+                android:layout_marginTop="8dp"
+                android:text="Stem separation runs once per song; cached on subsequent runs." />
         </LinearLayout>
 
-        <!-- ══════════════════════════════════════════════════════════════════ -->
-        <!-- RESULT SECTION                                                     -->
-        <!-- ══════════════════════════════════════════════════════════════════ -->
+        <!-- ─────────────── RESULT ─────────────── -->
         <LinearLayout
             android:id="@+id/layoutResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:paddingTop="32dp"
+            android:background="@drawable/bg_card_hero"
+            android:padding="24dp"
             android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your mashup is ready!"
-                android:textColor="#1DB954"
+                android:text="@string/result_title"
+                android:textColor="@color/text_primary"
                 android:textSize="22sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="6dp" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvResultFile"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#888888"
+                android:textColor="@color/text_secondary"
                 android:textSize="13sp"
-                android:gravity="center"
-                android:layout_marginBottom="24dp" />
+                android:layout_marginTop="2dp" />
+
+            <com.spotifymashup.generator.WaveformView
+                android:id="@+id/waveform"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="18dp" />
 
             <Button
                 android:id="@+id/btnPlay"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="▶  Play Preview"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:background="#1DB954"
-                android:layout_marginBottom="10dp" />
+                android:layout_height="54dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/play_preview"
+                android:textSize="15sp" />
 
-            <Button
-                android:id="@+id/btnDownload"
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:text="⬇  Save MP3"
-                android:textColor="#1DB954"
-                android:background="#1E2A1E"
-                android:layout_marginBottom="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="10dp">
+                <Button
+                    android:id="@+id/btnDownload"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:text="@string/save_mp3"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_button_secondary"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginEnd="6dp" />
+                <Button
+                    android:id="@+id/btnShare"
+                    android:layout_width="0dp" android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:text="@string/share"
+                    android:textSize="14sp"
+                    android:background="@drawable/bg_button_secondary"
+                    android:textColor="@color/text_primary"
+                    android:layout_marginStart="6dp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btnReset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Start Over"
-                android:textColor="#666666"
-                android:background="@android:color/transparent" />
-
+                android:layout_width="match_parent" android:layout_height="44dp"
+                android:layout_marginTop="14dp"
+                android:text="@string/start_over"
+                android:textSize="13sp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/text_tertiary" />
         </LinearLayout>
-
     </LinearLayout>
-
 </ScrollView>

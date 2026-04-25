@@ -35,6 +35,8 @@ from spotify_mashup.audio_downloader import AudioDownloader
 from spotify_mashup.stem_separator import StemSeparator
 from spotify_mashup.audio_manipulator import AudioManipulator
 from spotify_mashup.audio_mixer import AudioMixer
+from spotify_mashup.spotify_fetcher import SpotifyFetcher
+from spotify_mashup.trending_detector import TrendingHookDetector, ViralHook
 
 logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -82,6 +84,11 @@ class MashupRequest(BaseModel):
     key_b: Optional[int] = None
     apply_pitch_shift: bool = True
     stem_backend: str = "demucs"
+    # New: optional trim windows so the mashup uses just the viral hook of each track.
+    hook_a_start_ms: Optional[int] = None
+    hook_a_end_ms: Optional[int] = None
+    hook_b_start_ms: Optional[int] = None
+    hook_b_end_ms: Optional[int] = None
 
     @field_validator("stem_backend")
     @classmethod
@@ -96,6 +103,50 @@ class JobResponse(BaseModel):
     status: str      # pending | running | done | failed
     message: str
     progress: int    # 0–100
+
+
+class TrendingHookRequest(BaseModel):
+    spotify_url: str
+    top_k: int = 5
+
+
+class HookDto(BaseModel):
+    start_ms: int
+    end_ms: int
+    duration_ms: int
+    score: float
+    confidence: float
+    label: str
+    reasons: list[str]
+    signals: dict[str, float]
+
+
+class TrendingHookResponse(BaseModel):
+    track_id: str
+    track_name: str
+    artist_name: str
+    duration_ms: int
+    bpm: Optional[float]
+    key_label: Optional[str]
+    hooks: list[HookDto]
+
+
+class CompatibilityRequest(BaseModel):
+    spotify_url_a: str
+    spotify_url_b: str
+
+
+class CompatibilityResponse(BaseModel):
+    bpm_a: Optional[float]
+    bpm_b: Optional[float]
+    key_a_label: Optional[str]
+    key_b_label: Optional[str]
+    bpm_score: float          # 0-1 — how close the tempos are
+    key_score: float          # 0-1 — Camelot-wheel compatibility
+    energy_score: float       # 0-1 — danceability/energy overlap
+    overall_score: float      # 0-1 — combined
+    suggested_pitch_shift: Optional[int]   # semitones, A toward B
+    suggested_tempo_ratio: Optional[float] # tempo of B / tempo of A
 
 
 # ── Endpoints ─────────────────────────────────────────────────────────────────
@@ -132,6 +183,90 @@ def download_mashup(job_id: str):
         media_type="audio/mpeg",
         filename=path.name,
         headers={"Content-Disposition": f'attachment; filename="{path.name}"'},
+    )
+
+
+# ── Trending hook detection ──────────────────────────────────────────────────
+
+@app.post("/api/trending-hook", response_model=TrendingHookResponse)
+def trending_hook(req: TrendingHookRequest):
+    """
+    Returns the most viral candidate hooks of a track, ranked by a blend
+    of Spotify audio analysis (loudness/section confidence/position) and
+    best-effort external signals (TikTok / YouTube comment timestamps,
+    Genius chorus markers).
+    """
+    fetcher = SpotifyFetcher()
+    metadata = fetcher.fetch(req.spotify_url)
+    detector = TrendingHookDetector(fetcher._sp)
+    hooks = detector.detect(metadata.track_id, top_k=req.top_k)
+    return TrendingHookResponse(
+        track_id=metadata.track_id,
+        track_name=metadata.track_name,
+        artist_name=metadata.artist_name,
+        duration_ms=metadata.duration_ms,
+        bpm=metadata.bpm,
+        key_label=metadata.key_label,
+        hooks=[HookDto(**h.as_dict()) for h in hooks],
+    )
+
+
+# ── Track-vs-track compatibility ─────────────────────────────────────────────
+
+@app.post("/api/compatibility", response_model=CompatibilityResponse)
+def compatibility(req: CompatibilityRequest):
+    """Score how well two Spotify tracks will blend, with concrete suggestions."""
+    fetcher = SpotifyFetcher()
+    a = fetcher.fetch(req.spotify_url_a)
+    b = fetcher.fetch(req.spotify_url_b)
+
+    # BPM closeness — full score within ±2 BPM, falls off to 0 at ±20 BPM.
+    bpm_score = 0.0
+    if a.bpm and b.bpm:
+        diff = abs(a.bpm - b.bpm)
+        bpm_score = max(0.0, 1.0 - (max(diff - 2.0, 0.0) / 18.0))
+
+    # Camelot-wheel compatibility: same key (1.0), ±1 semitone (0.7), relative maj/min (0.85), else 0.3.
+    key_score = 0.5
+    if a.key is not None and b.key is not None and a.key >= 0 and b.key >= 0:
+        if a.key == b.key and a.mode == b.mode:
+            key_score = 1.0
+        elif (a.key - b.key) % 12 in (1, 11):
+            key_score = 0.7
+        elif a.mode != b.mode and ((a.key - b.key) % 12 == 9 if a.mode == 1 else (b.key - a.key) % 12 == 9):
+            key_score = 0.85
+        else:
+            key_score = 0.3
+
+    # Energy overlap is approximate — Spotify's "energy" feature normalises 0-1.
+    try:
+        feats = fetcher._sp.audio_features([a.track_id, b.track_id])
+        e_a = float(feats[0].get("energy", 0.5)) if feats and feats[0] else 0.5
+        e_b = float(feats[1].get("energy", 0.5)) if feats and feats[1] else 0.5
+        energy_score = 1.0 - abs(e_a - e_b)
+    except Exception:
+        energy_score = 0.5
+
+    overall = 0.45 * bpm_score + 0.35 * key_score + 0.20 * energy_score
+
+    pitch_shift = None
+    if a.key is not None and b.key is not None and a.key >= 0 and b.key >= 0:
+        diff = (b.key - a.key) % 12
+        pitch_shift = diff if diff <= 6 else diff - 12
+
+    tempo_ratio = (b.bpm / a.bpm) if (a.bpm and b.bpm) else None
+
+    return CompatibilityResponse(
+        bpm_a=a.bpm,
+        bpm_b=b.bpm,
+        key_a_label=a.key_label,
+        key_b_label=b.key_label,
+        bpm_score=bpm_score,
+        key_score=key_score,
+        energy_score=energy_score,
+        overall_score=overall,
+        suggested_pitch_shift=pitch_shift,
+        suggested_tempo_ratio=tempo_ratio,
     )
 
 

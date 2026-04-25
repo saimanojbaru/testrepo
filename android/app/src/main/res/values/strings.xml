@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mashup Generator</string>
+    <string name="app_name">Mashup Studio</string>
+    <string name="app_tagline">AI-picked viral hooks · auto BPM &amp; key match · multi-track mashups</string>
+
+    <string name="server_label">Backend server</string>
+    <string name="server_hint">http://192.168.1.x:8000</string>
+
+    <string name="track_a_label">TRACK A · Vocals</string>
+    <string name="track_b_label">TRACK B · Instrumental</string>
+    <string name="track_input_hint">Paste a Spotify URL or describe a song</string>
+
+    <string name="find_hooks">Find viral hooks</string>
+    <string name="finding_hooks">Analysing track…</string>
+    <string name="check_compatibility">Check compatibility</string>
+    <string name="generate_mashup">Generate mashup</string>
+    <string name="play_preview">▶  Play preview</string>
+    <string name="pause">⏸  Pause</string>
+    <string name="save_mp3">⬇  Save MP3</string>
+    <string name="share">⤴  Share</string>
+    <string name="start_over">Start over</string>
+
+    <string name="adv_options">Advanced</string>
+    <string name="youtube_only">YouTube-only mode (skip Spotify lookup)</string>
+    <string name="auto_pitch_shift">Auto key-compatibility pitch shift</string>
+    <string name="bpm_a_label">Override BPM A</string>
+    <string name="bpm_b_label">Override BPM B</string>
+    <string name="bpm_hint">e.g. 128</string>
+
+    <string name="hook_picker_title">Pick a hook</string>
+    <string name="select_hook">Use this</string>
+    <string name="hook_selected">✓ Selected</string>
+
+    <string name="compat_title">Compatibility</string>
+    <string name="compat_overall">Overall match</string>
+    <string name="compat_bpm">Tempo</string>
+    <string name="compat_key">Key</string>
+    <string name="compat_energy">Energy</string>
+
+    <string name="result_title">Your mashup is ready</string>
 </resources>
