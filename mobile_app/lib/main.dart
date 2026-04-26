@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'fcm/fcm_service.dart';
 import 'screens/dashboard.dart';
 import 'screens/positions.dart';
+import 'screens/reconciliation.dart';
 import 'screens/settings.dart';
 import 'screens/splash.dart';
 import 'screens/strategies.dart';
@@ -68,6 +69,7 @@ class _MainNavState extends ConsumerState<_MainNav> {
   static const _screens = [
     TradeScreen(),
     StrategiesScreen(),
+    ReconciliationScreen(),
     DashboardScreen(),
     PositionsScreen(),
     TradeFeedScreen(),
@@ -121,6 +123,8 @@ class _MainNavState extends ConsumerState<_MainNav> {
               icon: Icon(Icons.candlestick_chart), label: 'Trade'),
           NavigationDestination(
               icon: Icon(Icons.auto_graph), label: 'Strategies'),
+          NavigationDestination(
+              icon: Icon(Icons.receipt_long), label: 'Audit'),
           NavigationDestination(
               icon: Icon(Icons.dashboard), label: 'Dashboard'),
           NavigationDestination(

@@ -19,8 +19,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from loguru import logger
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .api import routes_lab, routes_performance, routes_signals
+from .api import (
+    routes_audit,
+    routes_connectors,
+    routes_lab,
+    routes_performance,
+    routes_signals,
+)
 from .api.deps import set_engine
+from .audit import audit_log as _audit_log_mod  # noqa: F401  (registers AuditLogRow)
 from .config import settings
 from .db.repositories import insert_signal, insert_trade
 from .db.session import init_db, session_scope
@@ -103,6 +110,8 @@ app.add_middleware(
 app.include_router(routes_signals.router)
 app.include_router(routes_lab.router)
 app.include_router(routes_performance.router)
+app.include_router(routes_connectors.router)
+app.include_router(routes_audit.router)
 
 
 @app.get("/health")

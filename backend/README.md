@@ -1,8 +1,20 @@
 # Scalping Backend
 
 Real-time signal engine, event-driven backtester, strategy lab, risk manager,
-paper trader, Telegram reporter, and Claude-powered analyst for the Indian F&O
-scalping agent.
+paper trader, **CA-precision reconciliation + audit trail**, multi-persona
+Claude analyst, Telegram reporter, and a **pluggable data-connector
+framework** (Fincept-style) for the Indian F&O scalping agent.
+
+## What's new in this revision (Fincept-inspired)
+
+| Addition | Where | Purpose |
+|---|---|---|
+| `DataConnector` ABC + registry | `app/connectors/` | Pluggable sources: Upstox V3 WS, Yahoo poll, CSV replay |
+| Indian F&O cost calculator | `app/costs/india_fno.py` | Paisa-precision STT / brokerage / GST / SEBI / stamp duty |
+| Reconciliation engine | `app/audit/reconciliation.py` | Diff broker contract note vs internal ledger |
+| Audit-trail event log | `app/audit/audit_log.py` | Append-only record of every signal, fill, risk decision |
+| Multi-persona analyst | `app/reporting/personas.py` | Technical / Risk / Reconciliation / Quant analyst lenses |
+| Connector + audit API | `app/api/routes_connectors.py`, `routes_audit.py` | `/connectors`, `/costs/*`, `/reconciliation/upload`, `/audit-trail*`, `/personas/*` |
 
 The Flutter mobile app (in `../mobile_app`) consumes this backend over
 REST + WebSocket.

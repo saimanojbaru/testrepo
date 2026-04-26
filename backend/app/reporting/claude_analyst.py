@@ -26,7 +26,7 @@ except Exception:  # pragma: no cover
     Anthropic = None  # type: ignore
 
 
-SYSTEM = """You are a quantitative trading analyst. Your job is to explain the
+DEFAULT_SYSTEM = """You are a quantitative trading analyst. Your job is to explain the
 results of today's scalping strategy backtests to a human trader.
 
 STRICT RULES:
@@ -60,20 +60,54 @@ class ClaudeAnalyst:
         self,
         metrics: list[Metrics],
         trades_by_strategy: dict[str, list[ClosedTrade]] | None = None,
+        *,
+        system_prompt: str | None = None,
+        user_prompt_override: str | None = None,
     ) -> AnalystReport:
         if not self.configured:
             md = self._heuristic_fallback(metrics, trades_by_strategy or {})
             return AnalystReport(markdown=md, model="heuristic", stub=True)
-        return self._ask_claude(metrics, trades_by_strategy or {})
+        return self._ask_claude(
+            metrics,
+            trades_by_strategy or {},
+            system_prompt=system_prompt,
+            user_prompt_override=user_prompt_override,
+        )
+
+    def analyze_freeform(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+    ) -> AnalystReport:
+        """Drive Claude with arbitrary prompts (used by reconciliation persona)."""
+        if not self.configured:
+            return AnalystReport(
+                markdown="_ANTHROPIC_API_KEY not set — set it for AI commentary._",
+                model="heuristic",
+                stub=True,
+            )
+        client = Anthropic(api_key=self.api_key)
+        resp = client.messages.create(
+            model=self.model,
+            max_tokens=1024,
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_prompt}],
+        )
+        text = "".join(block.text for block in resp.content if block.type == "text")
+        return AnalystReport(markdown=text, model=self.model, stub=False)
 
     def _ask_claude(
         self,
         metrics: list[Metrics],
         trades: dict[str, list[ClosedTrade]],
+        *,
+        system_prompt: str | None = None,
+        user_prompt_override: str | None = None,
     ) -> AnalystReport:
         client = Anthropic(api_key=self.api_key)
         summary = _metrics_summary(metrics, trades)
-        user = textwrap.dedent(
+        user = user_prompt_override or textwrap.dedent(
             f"""
             Analyze today's scalping strategy results and produce:
               1. **Best & worst**: name them and explain why with specific numbers.
@@ -90,7 +124,7 @@ class ClaudeAnalyst:
         resp = client.messages.create(
             model=self.model,
             max_tokens=1024,
-            system=SYSTEM,
+            system=system_prompt or DEFAULT_SYSTEM,
             messages=[{"role": "user", "content": user}],
         )
         text = "".join(block.text for block in resp.content if block.type == "text")
