@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Slides the moonwalk figure from right to left, looping endlessly -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillAfter="true">
+
+    <translate
+        android:fromXDelta="110%p"
+        android:toXDelta="-110%p"
+        android:duration="2800"
+        android:repeatCount="infinite"
+        android:repeatMode="restart"
+        android:interpolator="@android:anim/linear_interpolator" />
+
+</set>

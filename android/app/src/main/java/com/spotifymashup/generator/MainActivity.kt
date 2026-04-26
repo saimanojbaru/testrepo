@@ -16,23 +16,23 @@ import android.os.Looper
 import android.provider.MediaStore
 import android.view.View
 import android.view.WindowInsets
-import android.view.animation.AlphaAnimation
-import android.view.animation.AnimationSet
-import android.view.animation.TranslateAnimation
+import android.view.animation.AnimationUtils
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.ScrollView
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import org.json.JSONArray
+import org.json.JSONObject
 import java.io.File
-import java.io.OutputStream
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlin.concurrent.thread
@@ -52,9 +52,12 @@ class MainActivity : Activity() {
 
     private lateinit var prefs: SharedPreferences
     private lateinit var mainHandler: Handler
+
+    // Section roots — declared as View to avoid ClassCastException on section switch
     private lateinit var layoutInput: View
     private lateinit var layoutProgress: View
     private lateinit var layoutResult: View
+
     private lateinit var llTracks: LinearLayout
     private lateinit var btnAddTrack: TextView
     private lateinit var cardCompat: View
@@ -65,6 +68,7 @@ class MainActivity : Activity() {
     private lateinit var llSyncControls: View
     private lateinit var manualSyncView: ManualSyncView
     private lateinit var etBaseUrl: EditText
+    private lateinit var ivMoonwalk: ImageView
     private lateinit var tvProgress: TextView
     private lateinit var progressBar: ProgressBar
     private lateinit var tvResultFile: TextView
@@ -77,9 +81,8 @@ class MainActivity : Activity() {
     private val tracks = mutableListOf<TrackCardState>()
     private var currentJobId: String? = null
     private var currentFileName: String? = null
-    private var savedUri: Uri? = null
+    private var savedUri: android.net.Uri? = null
     private var mediaPlayer: MediaPlayer? = null
-    private var playheadAnimator: Runnable? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,25 +92,48 @@ class MainActivity : Activity() {
 
         applyEdgeToEdge()
         bindViews()
-
-        // First-launch setup dialog
-        if (!prefs.contains("backend_url")) {
-            showSetupDialog()
-        } else {
-            ApiClient.baseUrl = prefs.getString("backend_url", "") ?: ""
-        }
-
-        // Initialize with 2 empty tracks
+        restoreBackendUrl()
         addTrack("Vocals")
         addTrack("Instrumental")
         updateAddTrackButton()
-
         wireUp()
+
+        // Reconnect to service if a job was running before Activity was killed
+        val storedJob = prefs.getString("running_job_id", null)
+        if (storedJob != null) {
+            currentJobId = storedJob
+            currentFileName = prefs.getString("running_job_name", "mashup.mp3")
+            setSection(Section.Progress)
+            startMoonwalk()
+            registerServiceCallback()
+            pollForResult(storedJob)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        registerServiceCallback()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        MashupService.onProgress = null
     }
 
     override fun onDestroy() {
         super.onDestroy()
         releasePlayer()
+    }
+
+    // ── Setup ─────────────────────────────────────────────────────────────────
+
+    private fun restoreBackendUrl() {
+        // ApiClient already has the hardcoded default; only override if user manually changed it
+        val saved = prefs.getString("backend_url", null)
+        if (!saved.isNullOrEmpty()) {
+            ApiClient.baseUrl = saved
+        }
+        etBaseUrl.setText(ApiClient.baseUrl)
     }
 
     private fun applyEdgeToEdge() {
@@ -128,46 +154,44 @@ class MainActivity : Activity() {
     }
 
     private fun bindViews() {
-        layoutInput = findViewById(R.id.layoutInput)
+        layoutInput    = findViewById(R.id.layoutInput)
         layoutProgress = findViewById(R.id.layoutProgress)
-        layoutResult = findViewById(R.id.layoutResult)
-        llTracks = findViewById(R.id.llTracks)
-        btnAddTrack = findViewById(R.id.btnAddTrack)
-        cardCompat = findViewById(R.id.cardCompat)
-        btnGenerate = findViewById(R.id.btnGenerate)
-        btnAdvToggle = findViewById(R.id.btnAdvToggle)
+        layoutResult   = findViewById(R.id.layoutResult)
+        llTracks       = findViewById(R.id.llTracks)
+        btnAddTrack    = findViewById(R.id.btnAddTrack)
+        cardCompat     = findViewById(R.id.cardCompat)
+        btnGenerate    = findViewById(R.id.btnGenerate)
+        btnAdvToggle   = findViewById(R.id.btnAdvToggle)
         layoutAdvanced = findViewById(R.id.layoutAdvanced)
-        btnSyncToggle = findViewById(R.id.btnSyncToggle)
+        btnSyncToggle  = findViewById(R.id.btnSyncToggle)
         llSyncControls = findViewById(R.id.llSyncControls)
         manualSyncView = findViewById(R.id.manualSyncView)
-        etBaseUrl = findViewById(R.id.etBaseUrl)
-        tvProgress = findViewById(R.id.tvProgress)
-        progressBar = findViewById(R.id.progressBar)
-        tvResultFile = findViewById(R.id.tvResultFile)
-        waveform = findViewById(R.id.waveform)
-        btnPlay = findViewById(R.id.btnPlay)
-        btnDownload = findViewById(R.id.btnDownload)
-        btnShare = findViewById(R.id.btnShare)
-        btnReset = findViewById(R.id.btnReset)
-
-        etBaseUrl.setText(ApiClient.baseUrl)
+        etBaseUrl      = findViewById(R.id.etBaseUrl)
+        ivMoonwalk     = findViewById(R.id.ivMoonwalk)
+        tvProgress     = findViewById(R.id.tvProgress)
+        progressBar    = findViewById(R.id.progressBar)
+        tvResultFile   = findViewById(R.id.tvResultFile)
+        waveform       = findViewById(R.id.waveform)
+        btnPlay        = findViewById(R.id.btnPlay)
+        btnDownload    = findViewById(R.id.btnDownload)
+        btnShare       = findViewById(R.id.btnShare)
+        btnReset       = findViewById(R.id.btnReset)
     }
 
     private fun wireUp() {
         btnAddTrack.setOnClickListener { if (tracks.size < 4) addTrack("Track ${tracks.size + 1}") }
         btnAdvToggle.setOnClickListener { toggleSection(layoutAdvanced) }
         btnSyncToggle.setOnClickListener { toggleSection(llSyncControls) }
-        findViewById<TextView>(R.id.btnChangeServer).setOnClickListener { showSetupDialog() }
         btnGenerate.setOnClickListener { startGeneration() }
         btnPlay.setOnClickListener { togglePlay() }
         btnDownload.setOnClickListener { downloadFile() }
         btnShare.setOnClickListener { shareFile() }
         btnReset.setOnClickListener { reset() }
+        // "Change" button in advanced section lets power users override the backend URL
+        findViewById<TextView>(R.id.btnChangeServer).setOnClickListener { saveCustomUrl() }
     }
 
-    private fun toggleSection(v: View) {
-        v.visibility = if (v.visibility == View.GONE) View.VISIBLE else View.GONE
-    }
+    // ── Track cards ───────────────────────────────────────────────────────────
 
     private fun addTrack(role: String) {
         val card = layoutInflater.inflate(R.layout.card_track, llTracks, false)
@@ -181,7 +205,11 @@ class MainActivity : Activity() {
         spRole.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, roles).apply {
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         }
-        spRole.setSelection(if (role == "Vocals") 0 else if (role == "Instrumental") 1 else 4)
+        spRole.setSelection(when (role) {
+            "Vocals"       -> 0
+            "Instrumental" -> 1
+            else           -> 4
+        })
         spRole.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) { state.role = roles[p2].lowercase() }
             override fun onNothingSelected(p0: AdapterView<*>?) {}
@@ -195,16 +223,14 @@ class MainActivity : Activity() {
         }
 
         val etSearch = card.findViewById<EditText>(R.id.etSearch)
-        val spSource = card.findViewById<Spinner>(R.id.spSource)
-        spSource.adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayOf("YouTube")).apply {
-            setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        }
-
+        card.findViewById<Spinner>(R.id.spSource).adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_item, arrayOf("YouTube")).apply {
+                setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            }
         card.findViewById<TextView>(R.id.btnSearch).setOnClickListener {
             val q = etSearch.text.toString().trim()
             if (q.isNotEmpty()) searchTracks(idx, q, "youtube")
         }
-
         card.findViewById<TextView>(R.id.btnFindHooks).setOnClickListener { findHooks(idx) }
 
         llTracks.addView(card)
@@ -222,6 +248,8 @@ class MainActivity : Activity() {
         btnAddTrack.visibility = if (tracks.size < 4) View.VISIBLE else View.GONE
     }
 
+    // ── Search ────────────────────────────────────────────────────────────────
+
     private fun searchTracks(trackIdx: Int, query: String, source: String) {
         val card = llTracks.getChildAt(trackIdx)
         val resultsContainer = card.findViewById<LinearLayout>(R.id.llSearchResults)
@@ -238,16 +266,17 @@ class MainActivity : Activity() {
                         item.findViewById<TextView>(R.id.tvSourceBadge).text = if (r.source == "spotify") "SP" else "YT"
                         item.findViewById<TextView>(R.id.tvResultTitle).text = r.title
                         item.findViewById<TextView>(R.id.tvResultArtist).text = r.artist
-                        item.findViewById<TextView>(R.id.tvResultDuration).text = "${r.durationMs / 60000}:${(r.durationMs % 60000) / 1000}"
-                        // Instant preview — launches YouTube directly
+                        val mins = r.durationMs / 60000
+                        val secs = (r.durationMs % 60000) / 1000
+                        item.findViewById<TextView>(R.id.tvResultDuration).text = "$mins:${secs.toString().padStart(2, '0')}"
                         item.findViewById<TextView>(R.id.btnResultPreview).setOnClickListener {
                             previewAtTime(r.url, 0)
                         }
                         item.findViewById<TextView>(R.id.btnResultSelect).setOnClickListener {
-                            tracks[trackIdx].url = r.url
-                            tracks[trackIdx].title = r.title
-                            tracks[trackIdx].artist = r.artist
-                            tracks[trackIdx].durationMs = r.durationMs
+                            tracks[trackIdx].apply {
+                                url = r.url; title = r.title
+                                artist = r.artist; durationMs = r.durationMs
+                            }
                             showSelectedTrack(trackIdx)
                             resultsContainer.visibility = View.GONE
                         }
@@ -266,8 +295,12 @@ class MainActivity : Activity() {
         card.findViewById<LinearLayout>(R.id.llSelected).visibility = View.VISIBLE
         card.findViewById<TextView>(R.id.tvSelectedTitle).text = t.title
         card.findViewById<TextView>(R.id.tvSelectedArtist).text = t.artist
-        card.findViewById<TextView>(R.id.tvSelectedDuration).text = "${t.durationMs / 60000}:${(t.durationMs % 60000) / 1000}"
+        val mins = t.durationMs / 60000
+        val secs = (t.durationMs % 60000) / 1000
+        card.findViewById<TextView>(R.id.tvSelectedDuration).text = "$mins:${secs.toString().padStart(2, '0')}"
     }
+
+    // ── Hooks ─────────────────────────────────────────────────────────────────
 
     private fun findHooks(idx: Int) {
         val t = tracks[idx]
@@ -276,11 +309,10 @@ class MainActivity : Activity() {
         val card = llTracks.getChildAt(idx)
         val hooksContainer = card.findViewById<LinearLayout>(R.id.llHooks)
         hooksContainer.removeAllViews()
-
         card.findViewById<TextView>(R.id.tvHookSummary).visibility = View.GONE
+
         val btn = card.findViewById<Button>(R.id.btnFindHooks)
-        btn.isEnabled = false
-        btn.text = "Analysing…"
+        btn.isEnabled = false; btn.text = "Analysing…"
 
         thread {
             try {
@@ -289,7 +321,8 @@ class MainActivity : Activity() {
                     hooks.forEach { h ->
                         val hookCard = layoutInflater.inflate(R.layout.card_hook, hooksContainer, false)
                         hookCard.findViewById<TextView>(R.id.tvLabel).text = h.label.uppercase()
-                        hookCard.findViewById<TextView>(R.id.tvTime).text = "${formatMs(h.startMs)}–${formatMs(h.endMs)} · ${h.durationMs / 1000}s"
+                        hookCard.findViewById<TextView>(R.id.tvTime).text =
+                            "${formatMs(h.startMs)}–${formatMs(h.endMs)} · ${h.durationMs / 1000}s"
                         hookCard.findViewById<TextView>(R.id.tvScore).text = "${h.score.toInt()}%"
                         hookCard.findViewById<TextView>(R.id.tvReasons).text = h.reasons.joinToString("  ·  ")
                         hookCard.findViewById<Button>(R.id.btnSelect).setOnClickListener {
@@ -299,73 +332,116 @@ class MainActivity : Activity() {
                                 text = "✓ ${h.label} ${formatMs(h.startMs)}"
                             }
                         }
-                        // Quick preview: launch YouTube/browser at the hook timestamp — instant
                         hookCard.findViewById<Button>(R.id.btnPreview).setOnClickListener {
                             previewAtTime(t.url, h.startMs / 1000)
                         }
                         hooksContainer.addView(hookCard)
                     }
-                    btn.text = "🔥  Find viral hooks"
-                    btn.isEnabled = true
+                    btn.text = "🔥  Find viral hooks"; btn.isEnabled = true
                 }
             } catch (e: Exception) {
-                mainHandler.post { toast("Hook analysis failed: ${e.message?.take(80)}") }
-                btn.text = "🔥  Find viral hooks"
-                btn.isEnabled = true
+                mainHandler.post {
+                    toast("Hook analysis failed: ${e.message?.take(80)}")
+                    btn.text = "🔥  Find viral hooks"; btn.isEnabled = true
+                }
             }
         }
     }
+
+    // ── Generation — uses Foreground Service ──────────────────────────────────
 
     private fun startGeneration() {
         if (tracks.any { it.url.isEmpty() }) { toast("Fill in all tracks first"); return }
-        if (ApiClient.baseUrl.isEmpty()) { toast("Enter backend URL first"); return }
+
+        // Serialize tracks for the service
+        val arr = JSONArray()
+        tracks.forEach { t ->
+            val obj = JSONObject().apply {
+                put("url", t.url)
+                put("role", t.role)
+                t.selectedHook?.let { h ->
+                    put("hook_start_ms", h.startMs)
+                    put("hook_end_ms", h.endMs)
+                }
+            }
+            arr.put(obj)
+        }
+        val tracksJson = arr.toString()
+        currentFileName = buildFileName(tracks.map { it.title })
+
+        prefs.edit()
+            .putString("running_job_id", null)
+            .putString("running_job_name", currentFileName)
+            .apply()
 
         setSection(Section.Progress)
+        startMoonwalk()
         updateProgress("Connecting to backend…", 0)
         btnGenerate.isEnabled = false
 
-        val trackInputs = tracks.map { t ->
-            ApiClient.TrackInput(
-                url = t.url,
-                role = t.role,
-                hookStartMs = t.selectedHook?.startMs,
-                hookEndMs = t.selectedHook?.endMs,
-            )
-        }
+        registerServiceCallback()
+        MashupService.start(this, tracksJson, applyPitchShift = true)
+    }
 
+    private fun registerServiceCallback() {
+        MashupService.onProgress = { status, message, progress, jobId ->
+            mainHandler.post {
+                if (jobId != null) currentJobId = jobId
+                updateProgress(message, progress)
+                when (status) {
+                    "done"   -> {
+                        prefs.edit().remove("running_job_id").apply()
+                        showResult()
+                    }
+                    "failed" -> {
+                        prefs.edit().remove("running_job_id").apply()
+                        showError(message)
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Called when Activity restarts while a job is still running in the service.
+     * Falls back to polling the job endpoint directly.
+     */
+    private fun pollForResult(jobId: String) {
         thread {
             try {
-                val job = ApiClient.createMultiMashup(trackInputs, applyPitchShift = true)
-                currentJobId = job.jobId
-                currentFileName = buildFileName(tracks.map { it.title })
-                pollLoop(job.jobId)
+                while (true) {
+                    val r = ApiClient.getJob(jobId)
+                    mainHandler.post { updateProgress(r.message, r.progress) }
+                    when (r.status) {
+                        "done"   -> { mainHandler.post { prefs.edit().remove("running_job_id").apply(); showResult() }; break }
+                        "failed" -> { mainHandler.post { prefs.edit().remove("running_job_id").apply(); showError(r.message) }; break }
+                        else     -> Thread.sleep(2500)
+                    }
+                }
             } catch (e: Exception) {
-                mainHandler.post { showError("Connection failed: ${e.message}") }
+                mainHandler.post { showError("Poll error: ${e.message}") }
             }
         }
     }
 
-    private fun pollLoop(jobId: String) {
-        while (true) {
-            try {
-                val job = ApiClient.getJob(jobId)
-                mainHandler.post { updateProgress(job.message, job.progress) }
-                when (job.status) {
-                    "done" -> { mainHandler.post { showResult() }; break }
-                    "failed" -> { mainHandler.post { showError(job.message) }; break }
-                    else -> Thread.sleep(2000)
-                }
-            } catch (e: Exception) {
-                mainHandler.post { showError("Poll failed: ${e.message}") }
-                break
-            }
-        }
+    // ── Animation ─────────────────────────────────────────────────────────────
+
+    private fun startMoonwalk() {
+        val anim = AnimationUtils.loadAnimation(this, R.anim.moonwalk_slide)
+        ivMoonwalk.startAnimation(anim)
     }
+
+    private fun stopMoonwalk() {
+        ivMoonwalk.clearAnimation()
+    }
+
+    // ── Playback ──────────────────────────────────────────────────────────────
 
     private fun togglePlay() {
         if (mediaPlayer == null) {
             mediaPlayer = MediaPlayer().apply {
-                setAudioAttributes(AudioAttributes.Builder().setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build())
+                setAudioAttributes(AudioAttributes.Builder()
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC).build())
                 setDataSource(ApiClient.downloadUrl(currentJobId ?: ""))
                 prepareAsync()
                 setOnPreparedListener { start(); btnPlay.text = "⏸  Pause" }
@@ -377,10 +453,16 @@ class MainActivity : Activity() {
     }
 
     private fun downloadFile() {
-        saveToMusic(currentFileName ?: "mashup.mp3")?.let { savedUri = it }
+        thread {
+            val uri = saveToMusic(currentFileName ?: "mashup.mp3")
+            mainHandler.post {
+                if (uri != null) { savedUri = uri; toast("Saved to Music") }
+                else toast("Save failed")
+            }
+        }
     }
 
-    private fun saveToMusic(fileName: String): Uri? {
+    private fun saveToMusic(fileName: String): android.net.Uri? {
         return try {
             val conn = (URL(ApiClient.downloadUrl(currentJobId ?: "")).openConnection() as HttpURLConnection).apply { connect() }
             if (conn.responseCode !in 200..299) return null
@@ -394,8 +476,7 @@ class MainActivity : Activity() {
                 val uri = contentResolver.insert(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, cv)
                 if (uri != null) {
                     contentResolver.openOutputStream(uri)?.use { conn.inputStream.copyTo(it) }
-                    cv.clear()
-                    cv.put(MediaStore.Audio.Media.IS_PENDING, 0)
+                    cv.clear(); cv.put(MediaStore.Audio.Media.IS_PENDING, 0)
                     contentResolver.update(uri, cv, null, null)
                     uri
                 } else null
@@ -405,11 +486,9 @@ class MainActivity : Activity() {
                 dir.mkdirs()
                 val file = File(dir, fileName)
                 file.outputStream().use { conn.inputStream.copyTo(it) }
-                Uri.fromFile(file)
+                android.net.Uri.fromFile(file)
             }
-        } catch (e: Exception) {
-            null
-        }
+        } catch (_: Exception) { null }
     }
 
     private fun shareFile() {
@@ -420,65 +499,86 @@ class MainActivity : Activity() {
         })
     }
 
+    // ── Section management ────────────────────────────────────────────────────
+
     private fun setSection(s: Section) {
-        layoutInput.visibility = if (s == Section.Input) View.VISIBLE else View.GONE
+        layoutInput.visibility    = if (s == Section.Input)    View.VISIBLE else View.GONE
         layoutProgress.visibility = if (s == Section.Progress) View.VISIBLE else View.GONE
-        layoutResult.visibility = if (s == Section.Result) View.VISIBLE else View.GONE
+        layoutResult.visibility   = if (s == Section.Result)   View.VISIBLE else View.GONE
+        if (s != Section.Progress) stopMoonwalk()
     }
 
-    private fun updateProgress(msg: String, pct: Int) { tvProgress.text = msg; progressBar.progress = pct }
+    private fun toggleSection(v: View) {
+        v.visibility = if (v.visibility == View.GONE) View.VISIBLE else View.GONE
+    }
 
-    private fun showResult() { setSection(Section.Result) }
+    private fun updateProgress(msg: String, pct: Int) {
+        tvProgress.text = msg
+        progressBar.progress = pct
+    }
 
-    private fun showError(msg: String) { setSection(Section.Input); toast("Error: ${msg.take(120)}") }
+    private fun showResult() {
+        stopMoonwalk()
+        if (currentJobId == null) currentJobId = prefs.getString("running_job_id", null)
+        tvResultFile.text = currentFileName ?: ""
+        btnGenerate.isEnabled = true
+        setSection(Section.Result)
+    }
 
-    private fun reset() { setSection(Section.Input); mediaPlayer?.release(); mediaPlayer = null; btnPlay.text = "▶  Play preview" }
+    private fun showError(msg: String) {
+        btnGenerate.isEnabled = true
+        setSection(Section.Input)
+        toast("Error: ${msg.take(120)}")
+    }
+
+    private fun reset() {
+        setSection(Section.Input)
+        mediaPlayer?.release(); mediaPlayer = null
+        btnPlay.text = "▶  Play preview"
+    }
 
     private fun releasePlayer() { mediaPlayer?.release(); mediaPlayer = null }
 
-    private fun toast(msg: String) { Toast.makeText(this, msg, Toast.LENGTH_LONG).show() }
+    // ── Advanced: custom server URL ───────────────────────────────────────────
 
-    /** Open YouTube (or browser) at the given second — instant preview, no streaming wait. */
-    private fun previewAtTime(url: String, startSeconds: Int) {
-        try {
-            val previewUrl = if (url.contains("youtu")) {
-                if (url.contains("?")) "$url&t=${startSeconds}s" else "$url?t=${startSeconds}s"
-            } else url
-            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(previewUrl)))
-        } catch (e: Exception) {
-            toast("Couldn't open preview")
-        }
-    }
-
-    private fun buildFileName(titles: List<String>) = titles.take(2).joinToString(" + ").replace(Regex("[^A-Za-z0-9 +]"), "").take(40) + ".mp3"
-
-    private fun formatMs(ms: Int): String = "${ms / 60000}:${(ms % 60000) / 1000}".replace(Regex(":(\\d)$"), ":0$1")
-
-    private fun showSetupDialog() {
-        val dialog = Dialog(this, android.R.style.Theme_Black_NoTitleBar).apply {
-            setContentView(layoutInflater.inflate(R.layout.dialog_setup, null))
-            setCancelable(false)
-            window?.setBackgroundDrawable(getDrawable(android.R.color.transparent))
-        }
-        dialog.findViewById<EditText>(R.id.etSetupUrl).setText(ApiClient.baseUrl)
-        dialog.findViewById<Button>(R.id.btnSetupConnect).setOnClickListener {
-            val url = dialog.findViewById<EditText>(R.id.etSetupUrl).text.toString().trim()
-            if (url.isEmpty()) { toast("Enter a URL"); return@setOnClickListener }
-            dialog.findViewById<TextView>(R.id.tvSetupStatus).apply { visibility = View.VISIBLE; text = "Testing…" }
-            thread {
-                try {
-                    ApiClient.baseUrl = url
-                    if (ApiClient.health()) {
-                        prefs.edit().putString("backend_url", url).apply()
-                        mainHandler.post { dialog.dismiss() }
-                    } else {
-                        mainHandler.post { dialog.findViewById<TextView>(R.id.tvSetupStatus).text = "Connection failed. Check URL." }
-                    }
-                } catch (e: Exception) {
-                    mainHandler.post { dialog.findViewById<TextView>(R.id.tvSetupStatus).text = "Error: ${e.message?.take(40)}" }
+    private fun saveCustomUrl() {
+        val url = etBaseUrl.text.toString().trim()
+        if (url.isEmpty()) return
+        thread {
+            try {
+                ApiClient.baseUrl = url
+                if (ApiClient.health()) {
+                    prefs.edit().putString("backend_url", url).apply()
+                    mainHandler.post { toast("Connected to $url") }
+                } else {
+                    mainHandler.post { toast("Connection failed — check URL") }
                 }
+            } catch (e: Exception) {
+                mainHandler.post { toast("Error: ${e.message?.take(60)}") }
             }
         }
-        dialog.show()
     }
+
+    // ── Helpers ───────────────────────────────────────────────────────────────
+
+    private fun previewAtTime(url: String, startSeconds: Int) {
+        try {
+            val preview = if (url.contains("youtu")) {
+                if (url.contains("?")) "$url&t=${startSeconds}s" else "$url?t=${startSeconds}s"
+            } else url
+            startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse(preview)))
+        } catch (_: Exception) { toast("Couldn't open preview") }
+    }
+
+    private fun buildFileName(titles: List<String>) =
+        titles.take(2).joinToString(" + ")
+            .replace(Regex("[^A-Za-z0-9 +]"), "").take(40) + ".mp3"
+
+    private fun formatMs(ms: Int): String {
+        val m = ms / 60000
+        val s = (ms % 60000) / 1000
+        return "$m:${s.toString().padStart(2, '0')}"
+    }
+
+    private fun toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
 }

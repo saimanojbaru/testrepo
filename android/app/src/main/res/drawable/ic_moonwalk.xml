@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  MJ moonwalk silhouette — person facing right, back leg flat, front leg on tiptoe  -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="120">
+
+    <!-- Fedora hat crown -->
+    <path
+        android:fillColor="#1DE782"
+        android:pathData="M 40,13 L 42,2 L 68,2 L 70,13 Z" />
+
+    <!-- Fedora hat brim -->
+    <path
+        android:fillColor="#1DE782"
+        android:pathData="M 34,13 L 76,13 L 73,19 L 37,19 Z" />
+
+    <!-- Head -->
+    <path
+        android:fillColor="#1DE782"
+        android:pathData="M 55,21 A 8,8 0,1,0 55.01,21 Z" />
+
+    <!-- Body (leaning slightly forward toward right) -->
+    <path
+        android:strokeColor="#1DE782"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:pathData="M 55,29 L 50,58" />
+
+    <!-- Right arm — forward and up -->
+    <path
+        android:strokeColor="#1DE782"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M 52,40 L 70,26" />
+
+    <!-- Left arm — back and down -->
+    <path
+        android:strokeColor="#1DE782"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="M 52,42 L 36,54" />
+
+    <!-- Back leg (left): straight, slides backward (flat foot) -->
+    <path
+        android:strokeColor="#1DE782"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 50,58 L 32,90 L 14,90" />
+
+    <!-- Front leg (right): bent at knee, on tiptoe -->
+    <path
+        android:strokeColor="#1DE782"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 50,58 L 64,76 L 70,90 L 70,98" />
+
+</vector>

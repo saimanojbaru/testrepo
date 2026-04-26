@@ -8,7 +8,7 @@ import java.net.URL
 
 object ApiClient {
 
-    var baseUrl: String = ""
+    var baseUrl: String = "https://aggdynamo-mashup.hf.space"
 
     // ── DTOs ─────────────────────────────────────────────────────────────────
 
