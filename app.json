@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Offline UPI Capture",
+    "slug": "offline-upi-capture",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.example.offlineupicapture"
+    },
+    "android": {
+      "package": "com.example.offlineupicapture",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.ACCESS_NETWORK_STATE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera to scan UPI QR codes."
+        }
+      ]
+    ]
+  }
+}
