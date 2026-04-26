@@ -1,1 +1,13 @@
 node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Generated mashup output files
+mashup_output/
+
+# Build artifacts
+android/.build_out/
+*.tmp
