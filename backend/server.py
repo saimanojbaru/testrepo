@@ -531,8 +531,12 @@ def _sync_multi_run(job_id: str, req: MultiMashupRequest) -> Path:
         if "youtube.com" in track.url or "youtu.be" in track.url:
             # Download by URL directly — avoids re-searching and is 3× faster
             wav = dl.download_url(track.url, f"track_{i}", clip_seconds=clip)
-            title, artist, _, _ = _resolve_youtube_meta(track.url)
-            names.append(title or f"Track{i + 1}")
+            # Best-effort title from oEmbed (non-fatal if it fails)
+            try:
+                title, artist, _, _ = _resolve_youtube_meta(track.url)
+                names.append(title or f"Track{i + 1}")
+            except Exception:
+                names.append(f"Track{i + 1}")
         elif "spotify.com" in track.url:
             fetcher = SpotifyFetcher()
             meta = fetcher.fetch(track.url)

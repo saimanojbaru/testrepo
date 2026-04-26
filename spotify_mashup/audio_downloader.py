@@ -115,6 +115,7 @@ class AudioDownloader:
             "--quiet",
             "--socket-timeout", "20",   # bail out fast if YouTube stalls
             "--retries", "2",
+            "--no-check-certificate",
         ]
         if pick_index is not None:
             cmd += ["--playlist-items", str(pick_index + 1)]
