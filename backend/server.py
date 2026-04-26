@@ -105,7 +105,8 @@ class MultiMashupRequest(BaseModel):
     apply_pitch_shift: bool = True
     youtube_only: bool = False
     stem_backend: str = "demucs"
-    clip_seconds: int = 45           # only process first N seconds — 4x speedup
+    clip_seconds: int = 30           # only process first N seconds — 4x speedup
+    quick_mix: bool = True           # True = skip demucs, overlay raw audio (~50s total)
 
     @field_validator("tracks")
     @classmethod
@@ -505,84 +506,69 @@ def _sync_run(job_id: str, req: MashupRequest) -> Path:
 
 def _sync_multi_run(job_id: str, req: MultiMashupRequest) -> Path:
     """
-    Multi-track pipeline: downloads and separates each track by role, then
-    mixes them all together. Roles:
-      vocals      → extract vocals stem
-      instrumental → extract instrumental (no vocals)
-      drums       → extract drums stem (demucs 4-stem only)
-      melody      → extract other/melody stem
-      full        → use full track without separation
+    Multi-track pipeline: downloads each track, optionally separates stems,
+    then mixes together.
+
+    quick_mix=True (default): skips demucs entirely → ~50 s total on HF free tier
+    quick_mix=False: runs demucs per-track → best quality, ~5-15 min on CPU
     """
     import tempfile
 
     work = Path(tempfile.mkdtemp(prefix=f"mashup_{job_id[:8]}_"))
     dl = AudioDownloader(work / "downloads")
-    sep = StemSeparator(work / "stems", backend=Backend(req.stem_backend))
     mixer = AudioMixer(OUTPUT_DIR)
 
     n = len(req.tracks)
-    stems: list[Path] = []
+    wavs: list[Path] = []
     names: list[str] = []
 
+    # ── Step 1: download all tracks ──────────────────────────────────────────
     for i, track in enumerate(req.tracks):
-        pct_base = 15 + (i * 50 // n)
-        _set_job(job_id, message=f"Downloading track {i + 1}/{n}…", progress=pct_base)
+        _set_job(job_id, message=f"Downloading track {i + 1}/{n}…",
+                 progress=10 + (i * 35 // n))
 
-        # Resolve URL → local WAV (clip to first N seconds for speed)
         clip = req.clip_seconds
         if "youtube.com" in track.url or "youtu.be" in track.url:
-            parts = track.url.split("?v=")
-            vid_id = parts[1][:11] if len(parts) > 1 else track.url[-11:]
-            wav = dl.download(vid_id, "", f"track_{i}", clip_seconds=clip)
-            names.append(f"Track{i + 1}")
+            # Download by URL directly — avoids re-searching and is 3× faster
+            wav = dl.download_url(track.url, f"track_{i}", clip_seconds=clip)
+            title, artist, _, _ = _resolve_youtube_meta(track.url)
+            names.append(title or f"Track{i + 1}")
         elif "spotify.com" in track.url:
             fetcher = SpotifyFetcher()
             meta = fetcher.fetch(track.url)
             wav = dl.download(meta.track_name, meta.artist_name, f"track_{i}", clip_seconds=clip)
             names.append(meta.track_name)
         else:
-            # Treat as search query
             wav = dl.download(track.url, "", f"track_{i}", clip_seconds=clip)
             names.append(track.url[:20])
 
-        _set_job(job_id, message=f"Separating track {i + 1}/{n} ({track.role})…",
-                 progress=pct_base + (25 // n))
+        wavs.append(wav)
 
-        if track.role == "vocals":
-            stem = sep.extract_vocals(wav)
-        elif track.role == "instrumental":
-            stem = sep.extract_instrumental(wav)
-        elif track.role == "drums":
-            stem = sep.extract_stem(wav, "drums") if hasattr(sep, "extract_stem") else sep.extract_instrumental(wav)
-        elif track.role == "melody":
-            stem = sep.extract_stem(wav, "other") if hasattr(sep, "extract_stem") else sep.extract_vocals(wav)
-        else:
-            stem = wav  # "full" — use as-is
+    # ── Step 2: stem separation (skipped in quick_mix mode) ──────────────────
+    stems: list[Path] = []
+    if req.quick_mix:
+        # Fast path: use raw audio, no neural-network stem separation
+        _set_job(job_id, message="Mixing tracks…", progress=70)
+        stems = wavs
+    else:
+        sep = StemSeparator(work / "stems", backend=Backend(req.stem_backend))
+        for i, (wav, track) in enumerate(zip(wavs, req.tracks)):
+            _set_job(job_id, message=f"Separating track {i + 1}/{n} ({track.role})…",
+                     progress=45 + (i * 20 // n))
+            if track.role == "vocals":
+                stems.append(sep.extract_vocals(wav))
+            elif track.role == "instrumental":
+                stems.append(sep.extract_instrumental(wav))
+            elif track.role == "drums" and hasattr(sep, "extract_stem"):
+                stems.append(sep.extract_stem(wav, "drums"))
+            elif track.role == "melody" and hasattr(sep, "extract_stem"):
+                stems.append(sep.extract_stem(wav, "other"))
+            else:
+                stems.append(wav)
 
-        stems.append(stem)
-
-    _set_job(job_id, message="Beat-matching and mixing…", progress=75)
-
-    # Mix all stems together using the first track's BPM as reference
-    ref_bpm = req.tracks[0].bpm_override
-    manip = AudioManipulator(work / "processed")
-    processed = []
-    for stem, track in zip(stems, req.tracks):
-        if track.bpm_override or track.pitch_shift:
-            p = manip.beat_match(
-                stem,
-                target_bpm=ref_bpm or track.bpm_override or 120.0,
-                source_bpm=track.bpm_override,
-                apply_pitch_shift=req.apply_pitch_shift,
-            )
-        else:
-            p = stem
-        processed.append(p)
-
-    _set_job(job_id, message="Final mix…", progress=90)
-    return mixer.mix_multi(processed, names) if hasattr(mixer, "mix_multi") else mixer.mix(
-        processed[0], processed[1], names[0], names[1]
-    )
+    # ── Step 3: final mix & export ───────────────────────────────────────────
+    _set_job(job_id, message="Exporting mashup…", progress=88)
+    return mixer.mix_multi(stems, names)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────

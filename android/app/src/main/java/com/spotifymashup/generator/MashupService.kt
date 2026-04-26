@@ -83,16 +83,20 @@ class MashupService : Service() {
                 getSharedPreferences("mashup_prefs", MODE_PRIVATE)
                     .edit().putString("running_job_id", job.jobId).apply()
 
-                // Poll until complete
-                while (true) {
+                // Poll until complete — hard 5-minute timeout
+                val deadline = System.currentTimeMillis() + 5 * 60 * 1000L
+                while (System.currentTimeMillis() < deadline) {
                     val r = ApiClient.getJob(job.jobId)
                     postProgress(r.status, r.message, r.progress, job.jobId)
                     pushNotification(r.message)
                     when (r.status) {
                         "done"   -> break
                         "failed" -> break
-                        else     -> Thread.sleep(2000)
+                        else     -> Thread.sleep(2500)
                     }
+                }
+                if (System.currentTimeMillis() >= deadline) {
+                    postProgress("failed", "Timed out after 5 minutes. Try again.", 0, null)
                 }
             } catch (e: Exception) {
                 postProgress("failed", "Error: ${e.message?.take(80) ?: "unknown"}", 0, null)

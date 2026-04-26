@@ -106,6 +106,44 @@ class AudioMixer:
         logger.info("Export complete: %s", out_path)
         return out_path
 
+    def mix_multi(
+        self,
+        stem_paths: list,
+        track_names: list,
+    ) -> Path:
+        """
+        Overlay 2-4 stems together and export as 320 kbps MP3.
+        Each stem is normalised and volume-balanced to avoid clipping.
+        """
+        segments = [normalize(AudioSegment.from_wav(str(p))) for p in stem_paths]
+
+        # Align all segments to the same length
+        max_len = max(len(s) for s in segments)
+        aligned = []
+        for s in segments:
+            if len(s) < max_len:
+                s = s + AudioSegment.silent(duration=max_len - len(s), frame_rate=s.frame_rate)
+            aligned.append(s)
+
+        # Reduce each track's level so layering doesn't clip
+        n = len(aligned)
+        db_cut = -3.0 * (n - 1)
+        adjusted = [s + db_cut for s in aligned]
+
+        mixed = adjusted[0]
+        for s in adjusted[1:]:
+            mixed = mixed.overlay(s)
+
+        mixed = mixed.fade_in(FADE_MS).fade_out(FADE_MS)
+        mixed = normalize(mixed)
+
+        name_a = track_names[0] if track_names else "Track1"
+        name_b = track_names[1] if len(track_names) > 1 else "Mix"
+        out_path = self.output_dir / _make_output_name(name_a, name_b)
+        mixed.export(str(out_path), format="mp3", bitrate="320k")
+        logger.info("mix_multi export complete: %s", out_path)
+        return out_path
+
     # ── private helpers ───────────────────────────────────────────────────────
 
     @staticmethod

@@ -14,7 +14,7 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
-MAX_SEARCH_RESULTS = 5   # how many YouTube candidates to try before giving up
+MAX_SEARCH_RESULTS = 2   # how many YouTube candidates to try before giving up
 
 
 class AudioDownloader:
@@ -26,6 +26,24 @@ class AudioDownloader:
         self._check_ytdlp()
 
     # ── public ────────────────────────────────────────────────────────────────
+
+    def download_url(
+        self,
+        url: str,
+        label: str,
+        *,
+        clip_seconds: Optional[int] = None,
+    ) -> Path:
+        """Download audio from a direct YouTube URL (no search needed)."""
+        safe_label = _sanitise_filename(label)
+        suffix = f"_{clip_seconds}s" if clip_seconds else ""
+        out_path = self.output_dir / f"{safe_label}{suffix}.wav"
+        if out_path.exists():
+            return out_path
+        logger.info("Direct URL download: %s (clip=%ss)", url, clip_seconds or "full")
+        if self._run_ytdlp(url, out_path, pick_index=None, clip_seconds=clip_seconds) and out_path.exists():
+            return out_path
+        raise RuntimeError(f"Download failed for URL: {url}")
 
     def download(
         self,
@@ -81,16 +99,13 @@ class AudioDownloader:
         self,
         search_url: str,
         out_path: Path,
-        pick_index: int,
+        pick_index: Optional[int],   # None = direct URL (no playlist-items flag)
         clip_seconds: Optional[int] = None,
     ) -> bool:
         """Run yt-dlp and return True if the output file was created."""
-        playlist_items = str(pick_index + 1)
-
         cmd = [
             sys.executable, "-m", "yt_dlp",
             "--no-playlist",
-            "--playlist-items", playlist_items,
             "--format", "bestaudio/best",
             "--audio-quality", "0",
             "--extract-audio",
@@ -98,8 +113,11 @@ class AudioDownloader:
             "--output", str(out_path.with_suffix("")),
             "--no-warnings",
             "--quiet",
+            "--socket-timeout", "20",   # bail out fast if YouTube stalls
+            "--retries", "2",
         ]
-        # 30-second cut optimization — speeds up download + downstream processing 3-4x
+        if pick_index is not None:
+            cmd += ["--playlist-items", str(pick_index + 1)]
         if clip_seconds and clip_seconds > 0:
             cmd += ["--download-sections", f"*0-{clip_seconds}", "--force-keyframes-at-cuts"]
         cmd.append(search_url)
@@ -109,7 +127,7 @@ class AudioDownloader:
                 cmd,
                 capture_output=True,
                 text=True,
-                timeout=300,   # 5-minute cap per download
+                timeout=90,    # 90-second hard cap per attempt
             )
             if result.returncode != 0:
                 logger.debug("yt-dlp stderr: %s", result.stderr.strip())

@@ -153,6 +153,8 @@ object ApiClient {
             put("tracks", tracksArr)
             put("apply_pitch_shift", applyPitchShift)
             put("stem_backend", "demucs")
+            put("quick_mix", true)   // skip demucs → ~50s total on free HF tier
+            put("clip_seconds", 30)
         }
         return parseJobResult(postJson("/api/mashup/multi", body))
     }
@@ -193,7 +195,7 @@ object ApiClient {
             requestMethod = "POST"; doOutput = true
             setRequestProperty("Content-Type", "application/json; charset=utf-8")
             setRequestProperty("Accept", "application/json")
-            connectTimeout = 15_000; readTimeout = 60_000
+            connectTimeout = 20_000; readTimeout = 120_000
         }
         OutputStreamWriter(conn.outputStream, Charsets.UTF_8).use { it.write(body.toString()) }
         val code = conn.responseCode
