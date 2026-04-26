@@ -1,0 +1,108 @@
+name: Build Android APK
+
+on:
+  push:
+    branches:
+      - claude/offline-upi-payment-app-WMuOl
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    name: Lint + Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run test suite
+        run: npm test --silent -- --ci
+
+  build:
+    name: Build APK
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Expo prebuild (android)
+        run: npx expo prebuild --platform android --clean --non-interactive
+        env:
+          EXPO_NO_TELEMETRY: 1
+
+      - name: Make gradlew executable
+        run: chmod +x android/gradlew
+
+      - name: Gradle assembleRelease
+        working-directory: android
+        run: ./gradlew assembleRelease --no-daemon --stacktrace
+
+      - name: Locate APK
+        id: locate
+        run: |
+          set -e
+          APK=$(find android/app/build/outputs/apk -type f -name "*.apk" | head -n1)
+          echo "Found APK: $APK"
+          test -n "$APK"
+          BASENAME="offline-upi-capture-${GITHUB_SHA::7}.apk"
+          mkdir -p out
+          cp "$APK" "out/$BASENAME"
+          echo "apk_path=out/$BASENAME" >> "$GITHUB_OUTPUT"
+          echo "apk_name=$BASENAME" >> "$GITHUB_OUTPUT"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.locate.outputs.apk_name }}
+          path: ${{ steps.locate.outputs.apk_path }}
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish APK to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk-${{ github.ref_name }}-${{ github.run_number }}
+          name: Offline UPI Capture (build ${{ github.run_number }})
+          body: |
+            Automated debug-signed release APK built from `${{ github.ref_name }}` @ ${{ github.sha }}.
+
+            Install on Android:
+            1. Download `${{ steps.locate.outputs.apk_name }}` below.
+            2. On your device enable **Install unknown apps** for your browser / file manager.
+            3. Open the APK and follow the install prompt.
+
+            Note: this APK is signed with the Android debug key (the default for `expo prebuild`). Suitable for internal testing, not for the Play Store.
+          files: ${{ steps.locate.outputs.apk_path }}
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

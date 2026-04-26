@@ -19,7 +19,7 @@ const Shell = () => {
   const { theme, isOffline } = useNetwork();
   return (
     <SafeAreaView style={[styles.safe, { backgroundColor: theme.bannerBg }]} edges={['top']}>
-      <StatusBar style={isOffline ? 'dark' : 'light'} />
+      <StatusBar style="light" backgroundColor={theme.bannerBg} />
       <NetworkBanner />
       <View style={[styles.body, { backgroundColor: theme.background }]}>
         <NavigationContainer
@@ -28,7 +28,7 @@ const Shell = () => {
             colors: {
               primary: theme.primary,
               background: theme.background,
-              card: theme.surface,
+              card: theme.background,
               text: theme.text,
               border: theme.border,
               notification: theme.warning,
@@ -37,15 +37,21 @@ const Shell = () => {
         >
           <Stack.Navigator
             screenOptions={{
-              headerStyle: { backgroundColor: theme.surface },
-              headerTitleStyle: { color: theme.text, fontWeight: '700' },
+              headerStyle: { backgroundColor: theme.background },
+              headerTitleStyle: { color: theme.text, fontWeight: '700', letterSpacing: 0.2 },
               headerTintColor: theme.text,
+              headerShadowVisible: false,
               contentStyle: { backgroundColor: theme.background },
+              animation: 'slide_from_right',
             }}
           >
-            <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Home' }} />
+            <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ headerShown: false }} />
             <Stack.Screen name="PaymentEntry" component={PaymentEntryScreen} options={{ title: 'New Payment' }} />
-            <Stack.Screen name="QRScanner" component={QRScannerScreen} options={{ title: 'Scan QR' }} />
+            <Stack.Screen
+              name="QRScanner"
+              component={QRScannerScreen}
+              options={{ title: 'Scan UPI QR', headerStyle: { backgroundColor: '#000' }, headerTintColor: '#fff', headerTitleStyle: { color: '#fff', fontWeight: '700' } }}
+            />
             <Stack.Screen
               name="Success"
               component={SuccessScreen}

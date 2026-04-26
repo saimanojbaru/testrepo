@@ -59,6 +59,28 @@ src/
     format.js                   Currency, timestamp, id helpers
 ```
 
+## Where to get the APK
+
+Every push to `claude/offline-upi-payment-app-WMuOl` triggers
+`.github/workflows/build-apk.yml`, which:
+
+1. Runs the Jest test suite (logic + UI render tests).
+2. Runs `npx expo prebuild -p android` to generate the native Android project.
+3. Builds a release APK with `./gradlew assembleRelease`.
+4. Uploads the APK as a workflow artifact.
+5. Publishes a pre-release on the repo with the APK attached
+   (`apk-<branch>-<run-number>`).
+
+Download options once a build finishes:
+
+- **Releases tab**: <https://github.com/saimanojbaru/testrepo/releases> — pick
+  the latest `Offline UPI Capture (build N)` and grab the `.apk`.
+- **Actions artifact**: open the workflow run and download the
+  `offline-upi-capture-<sha>.apk` artifact.
+
+The APK is signed with the Android debug key (Expo's prebuild default), which
+is fine for sideload testing but not for Play Store distribution.
+
 ## Build instructions
 
 ### 1. Initialize (only if starting from scratch elsewhere)
