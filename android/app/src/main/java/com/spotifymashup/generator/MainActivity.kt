@@ -239,6 +239,10 @@ class MainActivity : Activity() {
                         item.findViewById<TextView>(R.id.tvResultTitle).text = r.title
                         item.findViewById<TextView>(R.id.tvResultArtist).text = r.artist
                         item.findViewById<TextView>(R.id.tvResultDuration).text = "${r.durationMs / 60000}:${(r.durationMs % 60000) / 1000}"
+                        // Instant preview — launches YouTube directly
+                        item.findViewById<TextView>(R.id.btnResultPreview).setOnClickListener {
+                            previewAtTime(r.url, 0)
+                        }
                         item.findViewById<TextView>(R.id.btnResultSelect).setOnClickListener {
                             tracks[trackIdx].url = r.url
                             tracks[trackIdx].title = r.title
@@ -294,6 +298,10 @@ class MainActivity : Activity() {
                                 visibility = View.VISIBLE
                                 text = "✓ ${h.label} ${formatMs(h.startMs)}"
                             }
+                        }
+                        // Quick preview: launch YouTube/browser at the hook timestamp — instant
+                        hookCard.findViewById<Button>(R.id.btnPreview).setOnClickListener {
+                            previewAtTime(t.url, h.startMs / 1000)
                         }
                         hooksContainer.addView(hookCard)
                     }
@@ -429,6 +437,18 @@ class MainActivity : Activity() {
     private fun releasePlayer() { mediaPlayer?.release(); mediaPlayer = null }
 
     private fun toast(msg: String) { Toast.makeText(this, msg, Toast.LENGTH_LONG).show() }
+
+    /** Open YouTube (or browser) at the given second — instant preview, no streaming wait. */
+    private fun previewAtTime(url: String, startSeconds: Int) {
+        try {
+            val previewUrl = if (url.contains("youtu")) {
+                if (url.contains("?")) "$url&t=${startSeconds}s" else "$url?t=${startSeconds}s"
+            } else url
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(previewUrl)))
+        } catch (e: Exception) {
+            toast("Couldn't open preview")
+        }
+    }
 
     private fun buildFileName(titles: List<String>) = titles.take(2).joinToString(" + ").replace(Regex("[^A-Za-z0-9 +]"), "").take(40) + ".mp3"
 

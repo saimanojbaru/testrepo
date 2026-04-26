@@ -1,0 +1,19 @@
+# Viral Mashup Bot — local dependencies
+# These run on YOUR machine; the heavy stem separation happens on HF Spaces.
+#
+# Install with:
+#   pip install -r viral_bot_requirements.txt
+
+# YouTube discovery + clipped download
+yt-dlp>=2024.1.1
+
+# Server communication
+requests>=2.31.0
+
+# Audio analysis (BPM detection, key estimation, time-stretch, pitch-shift)
+librosa>=0.10.1
+soundfile>=0.12.1
+numpy>=1.24.0
+
+# Mixing + MP3 export (requires ffmpeg in PATH)
+pydub>=0.25.1

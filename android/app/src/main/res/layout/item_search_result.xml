@@ -62,6 +62,18 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp" />
 
+    <!-- Quick preview (launches YouTube directly — instant) -->
+    <TextView
+        android:id="@+id/btnResultPreview"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="▶"
+        android:textColor="@color/brand_secondary"
+        android:textSize="14sp"
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/bg_button_secondary" />
+
     <!-- Select button -->
     <TextView
         android:id="@+id/btnResultSelect"

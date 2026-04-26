@@ -105,6 +105,7 @@ class MultiMashupRequest(BaseModel):
     apply_pitch_shift: bool = True
     youtube_only: bool = False
     stem_backend: str = "demucs"
+    clip_seconds: int = 45           # only process first N seconds — 4x speedup
 
     @field_validator("tracks")
     @classmethod
@@ -172,6 +173,13 @@ class CompatibilityResponse(BaseModel):
     suggested_tempo_ratio: Optional[float]
 
 
+class StemRequest(BaseModel):
+    """For the Viral Mashup Bot: get a single separated stem fast."""
+    url: str                              # YouTube URL or "Artist - Title" query
+    stem: str = "vocals"                  # "vocals" | "instrumental" | "drums" | "other"
+    clip_seconds: Optional[int] = 45      # only process first N seconds for speed
+
+
 class SearchRequest(BaseModel):
     query: str
     source: str = "spotify"   # "spotify" | "youtube" | "both"
@@ -198,6 +206,53 @@ class SearchResponse(BaseModel):
 @app.get("/health")
 def health():
     return {"status": "ok", "version": "2.0.0"}
+
+
+# ── Stem extraction (fast — for the Viral Mashup Bot) ──────────────────────
+
+@app.post("/api/stem")
+def get_stem(req: StemRequest):
+    """
+    Download an audio track, separate one stem, and return the WAV file.
+    Optimized for speed via the `clip_seconds` parameter (default 45s).
+    """
+    import tempfile
+    work = Path(tempfile.mkdtemp(prefix="stem_"))
+    try:
+        dl = AudioDownloader(work / "downloads")
+        # Resolve URL or query into a track query
+        if "youtube.com/watch" in req.url or "youtu.be/" in req.url:
+            title, artist, _, _ = _resolve_youtube_meta(req.url)
+            query = f"{title} {artist}"
+        else:
+            query = req.url
+
+        # Parse "Artist - Title"
+        parts = query.split(" - ", 1)
+        if len(parts) == 2:
+            artist, title = parts[0].strip(), parts[1].strip()
+        else:
+            title, artist = query, ""
+
+        wav = dl.download(title, artist, "stem_track", clip_seconds=req.clip_seconds)
+
+        sep = StemSeparator(work / "stems", backend=Backend("demucs"))
+        if req.stem == "vocals":
+            stem_path = sep.extract_vocals(wav)
+        elif req.stem == "instrumental":
+            stem_path = sep.extract_instrumental(wav)
+        elif hasattr(sep, "extract_stem"):
+            stem_path = sep.extract_stem(wav, req.stem)
+        else:
+            stem_path = sep.extract_instrumental(wav)
+
+        return FileResponse(
+            str(stem_path),
+            media_type="audio/wav",
+            filename=f"{req.stem}_{title[:20]}.wav",
+        )
+    except Exception as exc:
+        raise HTTPException(500, str(exc))
 
 
 # ── Search ───────────────────────────────────────────────────────────────────
@@ -412,8 +467,8 @@ def _sync_run(job_id: str, req: MashupRequest) -> Path:
 
         name_a, artist_a = _split(req.track_a)
         name_b, artist_b = _split(req.track_b)
-        wav_a = dl.download(name_a, artist_a, "track_a")
-        wav_b = dl.download(name_b, artist_b, "track_b")
+        wav_a = dl.download(name_a, artist_a, "track_a", clip_seconds=45)
+        wav_b = dl.download(name_b, artist_b, "track_b", clip_seconds=45)
 
         _set_job(job_id, message="Separating stems…", progress=35)
         sep = StemSeparator(work / "stems", backend=Backend(req.stem_backend))
@@ -473,20 +528,21 @@ def _sync_multi_run(job_id: str, req: MultiMashupRequest) -> Path:
         pct_base = 15 + (i * 50 // n)
         _set_job(job_id, message=f"Downloading track {i + 1}/{n}…", progress=pct_base)
 
-        # Resolve URL → local WAV
+        # Resolve URL → local WAV (clip to first N seconds for speed)
+        clip = req.clip_seconds
         if "youtube.com" in track.url or "youtu.be" in track.url:
             parts = track.url.split("?v=")
             vid_id = parts[1][:11] if len(parts) > 1 else track.url[-11:]
-            wav = dl.download(vid_id, "", f"track_{i}")
+            wav = dl.download(vid_id, "", f"track_{i}", clip_seconds=clip)
             names.append(f"Track{i + 1}")
         elif "spotify.com" in track.url:
             fetcher = SpotifyFetcher()
             meta = fetcher.fetch(track.url)
-            wav = dl.download(meta.track_name, meta.artist_name, f"track_{i}")
+            wav = dl.download(meta.track_name, meta.artist_name, f"track_{i}", clip_seconds=clip)
             names.append(meta.track_name)
         else:
             # Treat as search query
-            wav = dl.download(track.url, "", f"track_{i}")
+            wav = dl.download(track.url, "", f"track_{i}", clip_seconds=clip)
             names.append(track.url[:20])
 
         _set_job(job_id, message=f"Separating track {i + 1}/{n} ({track.role})…",
