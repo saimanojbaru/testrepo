@@ -40,6 +40,17 @@ jobs:
             --platforms android \
             .
 
+      # Bump Kotlin from the Flutter 3.22.2 default (1.7.10) to 1.8.22 — required by
+      # several modern plugins (flutter_secure_storage, package_info_plus 6+, open_filex).
+      # AGP 7.4.2 stays compatible with Java 17 and Gradle 7.6 generated here.
+      - name: Bump Kotlin + AGP versions
+        working-directory: mobile_app
+        run: |
+          sed -i 's|"org.jetbrains.kotlin.android" version "1.7.10"|"org.jetbrains.kotlin.android" version "1.8.22"|' \
+            android/settings.gradle
+          sed -i 's|"com.android.application" version "7.3.0"|"com.android.application" version "7.4.2"|' \
+            android/settings.gradle
+
       # Ensure INTERNET permission in the release manifest (flutter create only adds it
       # to debug/profile manifests). Needed for backend API + GoogleFonts.
       - name: Add INTERNET permission to release manifest
@@ -50,19 +61,7 @@ jobs:
               android/app/src/main/AndroidManifest.xml
           fi
 
-      # Android 11+ package visibility: url_launcher needs a <queries> element
-      # listing the https VIEW intent so it can resolve the user's browser
-      # for the Upstox OAuth redirect. Without this, launchUrl silently fails.
-      - name: Add <queries> block for browser launch
-        working-directory: mobile_app
-        run: |
-          if ! grep -q "<queries>" android/app/src/main/AndroidManifest.xml; then
-            sed -i 's|</manifest>|    <queries>\n        <intent>\n            <action android:name="android.intent.action.VIEW" />\n            <data android:scheme="https" />\n        </intent>\n        <intent>\n            <action android:name="android.intent.action.VIEW" />\n            <data android:mimeType="application/vnd.android.package-archive" />\n        </intent>\n    </queries>\n</manifest>|' \
-              android/app/src/main/AndroidManifest.xml
-          fi
-
-      # In-app updater needs REQUEST_INSTALL_PACKAGES to fire the system
-      # installer on the downloaded APK.
+      # In-app updater needs REQUEST_INSTALL_PACKAGES to fire the system installer.
       - name: Add REQUEST_INSTALL_PACKAGES permission
         working-directory: mobile_app
         run: |
@@ -71,27 +70,50 @@ jobs:
               android/app/src/main/AndroidManifest.xml
           fi
 
-      - name: Show Flutter/Dart versions + project layout
+      # Android 11+ package visibility: url_launcher needs <intent>s for browser launch
+      # and the in-app installer needs the package-archive intent. The default Flutter
+      # manifest ALREADY contains a <queries> block (PROCESS_TEXT) — we MERGE into it
+      # rather than skipping (the previous skip-if-exists check was a bug).
+      - name: Merge browser + apk-install intents into <queries>
+        working-directory: mobile_app
+        run: |
+          MANIFEST=android/app/src/main/AndroidManifest.xml
+          if ! grep -q 'android:scheme="https"' "$MANIFEST"; then
+            python3 - <<'PY'
+          import re, pathlib
+          p = pathlib.Path("android/app/src/main/AndroidManifest.xml")
+          src = p.read_text()
+          extra = """    <intent>
+                  <action android:name="android.intent.action.VIEW" />
+                  <data android:scheme="https" />
+              </intent>
+              <intent>
+                  <action android:name="android.intent.action.VIEW" />
+                  <data android:mimeType="application/vnd.android.package-archive" />
+              </intent>
+          """
+          if "<queries>" in src and 'scheme="https"' not in src:
+              src = src.replace("<queries>", "<queries>\n        " + extra.strip() + "\n        ", 1)
+          p.write_text(src)
+          PY
+          fi
+
+      - name: Show Flutter/Dart versions + final manifest + gradle
         working-directory: mobile_app
         run: |
           flutter --version
-          echo "--- mobile_app tree (top 3 levels) ---"
-          find . -maxdepth 3 -not -path '*/\.*' | sort
           echo "--- android/settings.gradle ---"
           cat android/settings.gradle
           echo "--- android/app/build.gradle ---"
           cat android/app/build.gradle
           echo "--- android/app/src/main/AndroidManifest.xml ---"
           cat android/app/src/main/AndroidManifest.xml
-          echo "--- MainActivity path ---"
-          find android/app/src/main/kotlin -name '*.kt' 2>/dev/null || true
-          find android/app/src/main/java -name '*.kt' 2>/dev/null || true
 
       - name: Flutter pub get
         working-directory: mobile_app
         run: flutter pub get
 
-      - name: Analyze (non-fatal — warnings allowed)
+      - name: Analyze (non-fatal)
         working-directory: mobile_app
         run: flutter analyze --no-fatal-infos --no-fatal-warnings || true
 
@@ -101,15 +123,26 @@ jobs:
           flutter build apk --release --no-tree-shake-icons --verbose \
             --dart-define=BUILD_SHA=${{ github.sha }}
 
+      # Always show what's in the build dir, even when the build fails — makes it
+      # obvious whether we got an APK or whether we hit an earlier compile error.
+      - name: Show build output tree (always)
+        if: always()
+        working-directory: mobile_app
+        run: |
+          echo "--- build/app/outputs (if it exists) ---"
+          find build/app/outputs -type f 2>/dev/null || echo "(no outputs directory — build never produced files)"
+
       - name: Upload APK artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: scalping-agent-apk
           path: mobile_app/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: warn
           retention-days: 30
 
       - name: Create GitHub release on main
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && success()
         uses: softprops/action-gh-release@v2
         with:
           tag_name: apk-${{ github.sha }}
