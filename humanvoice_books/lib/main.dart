@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:just_audio_background/just_audio_background.dart';
 
 import 'bloc/book_bloc.dart';
 import 'ui/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await JustAudioBackground.init(
-    androidNotificationChannelId: 'com.humanvoice.books.channel.audio',
-    androidNotificationChannelName: 'HumanVoice Playback',
-    androidNotificationOngoing: true,
-  );
   runApp(const HumanVoiceApp());
 }
 

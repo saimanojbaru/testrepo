@@ -10,7 +10,13 @@ class ModelAsset {
   final String url;
   final String relativePath; // path under the model root
   final String? sha256; // optional integrity check
-  const ModelAsset(this.url, this.relativePath, {this.sha256});
+  final bool optional; // a 404 on this asset is non-fatal
+  const ModelAsset(
+    this.url,
+    this.relativePath, {
+    this.sha256,
+    this.optional = false,
+  });
 }
 
 class ModelManifest {
@@ -24,17 +30,18 @@ class ModelManifest {
   });
 }
 
-/// Manages download + on-disk layout for the two on-device models:
-///   1. Kokoro-82M (TTS) — ONNX, Opset 15, served via sherpa_onnx
-///   2. Qwen2.5-1.5B-Instruct Q4_K_M (Director LLM) — GGUF, served via fllama (llama.cpp)
+/// Manages download + on-disk layout for on-device models.
 ///
-/// Models live under `getApplicationSupportDirectory()` so they survive
-/// app upgrades but are excluded from cloud backup (see manifest rules).
+/// v1 only ships the Kokoro-82M TTS bundle (~330 MB). The LLM Director was
+/// removed in favour of a heuristic dialogue parser; if/when we add an
+/// on-device LLM back, register a second [ModelManifest] here.
+///
+/// Models live under `getApplicationSupportDirectory()` so they survive app
+/// upgrades but stay excluded from cloud backup (see data_extraction_rules).
 class ModelService {
   ModelService._();
   static final ModelService instance = ModelService._();
 
-  // ---- Kokoro-82M (Opset 15, sherpa-onnx packaging) ----
   static const _kokoro = ModelManifest(
     name: 'kokoro-82m',
     rootDirName: 'kokoro-multi-lang-v1_0',
@@ -59,27 +66,17 @@ class ModelService {
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/lexicon-gb-en.txt',
         'lexicon-gb-en.txt',
       ),
-      // Speaker name -> integer sid mapping (canonical, ships with the model).
+      // Optional: not all sherpa-onnx-kokoro releases publish voices.json. If
+      // missing we fall back to a hard-coded sid map in TtsService.
       ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/voices.json',
         'voices.json',
+        optional: true,
       ),
       // espeak-ng data is bundled as a tarball; extracted on first run.
       ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/espeak-ng-data.tar.bz2',
         'espeak-ng-data.tar.bz2',
-      ),
-    ],
-  );
-
-  // ---- Qwen2.5-1.5B-Instruct (Q4_K_M GGUF, served via sherpa-onnx OfflineLlm) ----
-  static const _qwen = ModelManifest(
-    name: 'qwen2.5-1.5b-instruct',
-    rootDirName: 'qwen2_5-1_5b-instruct',
-    assets: [
-      ModelAsset(
-        'https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf',
-        'qwen2.5-1.5b-instruct-q4_k_m.gguf',
       ),
     ],
   );
@@ -96,29 +93,23 @@ class ModelService {
     return Directory('${root.path}/${_kokoro.rootDirName}');
   }
 
-  Future<Directory> qwenDir() async {
-    final root = await _modelsRoot();
-    return Directory('${root.path}/${_qwen.rootDirName}');
-  }
-
   Future<bool> kokoroReady() => _manifestComplete(_kokoro);
-  Future<bool> qwenReady() => _manifestComplete(_qwen);
 
   Future<bool> _manifestComplete(ModelManifest m) async {
     final root = await _modelsRoot();
     for (final a in m.assets) {
+      if (a.optional) continue;
       final f = File('${root.path}/${m.rootDirName}/${a.relativePath}');
       if (!await f.exists()) return false;
-      if (await f.length() < 1024) return false; // failed/partial
+      if (await f.length() < 1024) return false;
     }
     return true;
   }
 
-  /// Streams (received, total) tuples while downloading. `total` may be -1
-  /// when the server omits Content-Length.
+  /// Streams `(received, total, label)` tuples while downloading. `total` may
+  /// be -1 when the server omits Content-Length.
   Stream<(int received, int total, String label)> ensureAll() async* {
     yield* _ensure(_kokoro);
-    yield* _ensure(_qwen);
   }
 
   Stream<(int, int, String)> _ensure(ModelManifest m) async* {
@@ -134,37 +125,51 @@ class ModelService {
       final tmp = File('${dest.path}.part');
       if (await tmp.exists()) await tmp.delete();
 
-      final req = http.Request('GET', Uri.parse(a.url));
-      final resp = await http.Client().send(req);
-      if (resp.statusCode != 200) {
-        throw HttpException('HF download failed [${resp.statusCode}] ${a.url}');
-      }
-      final total = resp.contentLength ?? -1;
-      var received = 0;
-      final sink = tmp.openWrite();
       try {
-        await for (final chunk in resp.stream) {
-          sink.add(chunk);
-          received += chunk.length;
-          yield (received, total, label);
+        final req = http.Request('GET', Uri.parse(a.url));
+        final resp = await http.Client().send(req);
+        if (resp.statusCode != 200) {
+          if (a.optional) {
+            // Drain the body and skip silently.
+            await resp.stream.drain();
+            continue;
+          }
+          throw HttpException('HF download failed [${resp.statusCode}] ${a.url}');
         }
-      } finally {
-        await sink.flush();
-        await sink.close();
-      }
-
-      if (a.sha256 != null) {
-        final actual = await _sha256(tmp);
-        if (actual != a.sha256) {
-          await tmp.delete();
-          throw StateError('sha256 mismatch for $label: $actual');
+        final total = resp.contentLength ?? -1;
+        var received = 0;
+        final sink = tmp.openWrite();
+        try {
+          await for (final chunk in resp.stream) {
+            sink.add(chunk);
+            received += chunk.length;
+            yield (received, total, label);
+          }
+        } finally {
+          await sink.flush();
+          await sink.close();
         }
-      }
-      await tmp.rename(dest.path);
 
-      // Auto-extract espeak-ng tarball.
-      if (a.relativePath.endsWith('.tar.bz2')) {
-        await _extractTarBz2(dest, modelDir);
+        if (a.sha256 != null) {
+          final actual = await _sha256(tmp);
+          if (actual != a.sha256) {
+            await tmp.delete();
+            throw StateError('sha256 mismatch for $label: $actual');
+          }
+        }
+        await tmp.rename(dest.path);
+
+        // Auto-extract espeak-ng tarball.
+        if (a.relativePath.endsWith('.tar.bz2')) {
+          await _extractTarBz2(dest, modelDir);
+        }
+      } catch (e) {
+        if (a.optional) {
+          // ignore: avoid_print
+          print('[ModelService] skipping optional asset $label: $e');
+          continue;
+        }
+        rethrow;
       }
     }
   }
@@ -175,10 +180,8 @@ class ModelService {
   }
 
   Future<void> _extractTarBz2(File archive, Directory into) async {
-    // Avoid pulling another package: shell out to busybox/tar if present,
-    // otherwise leave the archive — sherpa-onnx will read it lazily on some
-    // builds, or the user can re-run extraction. On API 26+ Android ships
-    // a usable `tar` via toybox.
+    // Avoid pulling another package: shell out to busybox/tar if present.
+    // Android API 26+ ships a usable `tar` via toybox.
     final result = await Process.run(
       'tar',
       ['-xjf', archive.path, '-C', into.path],

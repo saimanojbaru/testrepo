@@ -147,9 +147,11 @@ class BookBloc extends Bloc<BookEvent, BookState> {
       emit(state.copyWith(stage: Stage.error, message: 'Pick an EPUB first'));
       return;
     }
-    if (!await ModelService.instance.kokoroReady() ||
-        !await ModelService.instance.qwenReady()) {
-      emit(state.copyWith(stage: Stage.error, message: 'Models not downloaded'));
+    if (!await ModelService.instance.kokoroReady()) {
+      emit(state.copyWith(
+        stage: Stage.error,
+        message: 'Kokoro model not downloaded. Tap Initialize Models first.',
+      ));
       return;
     }
 
