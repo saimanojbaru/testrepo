@@ -11,8 +11,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # TTS + on-device LLM (both via sherpa-onnx)
-  sherpa_onnx: ^1.10.30
+  # On-device TTS (Kokoro-82M / Matcha / Vits) via ONNX Runtime FFI.
+  # Note: sherpa_onnx is TTS/ASR/VAD only — it does NOT generate text from a GGUF.
+  sherpa_onnx: ^1.13.0
+
+  # On-device LLM (Qwen 2.5 GGUF via llama.cpp under the hood).
+  # Used by the Director to tag each paragraph with voice_id + emotion.
+  fllama: ^0.0.1
 
   # Audio muxing (m4b chapter container) - audio-only build to keep APK lean
   ffmpeg_kit_flutter_audio: ^6.0.3

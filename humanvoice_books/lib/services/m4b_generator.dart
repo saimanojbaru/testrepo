@@ -68,7 +68,8 @@ class M4bGenerator {
     await metadata.writeAsString(mb.toString());
 
     // 3. Run ffmpeg: concat WAVs -> AAC LC, attach chapter metadata, .m4b container.
-    final cmd = [
+    // Pass arguments as a list so we don't depend on the kit's shell parsing.
+    final args = <String>[
       '-y',
       '-f', 'concat',
       '-safe', '0',
@@ -82,11 +83,12 @@ class M4bGenerator {
       '-movflags', '+faststart',
       '-f', 'mp4',
       out.path,
-    ].map(_quote).join(' ');
+    ];
 
     final completer = Completer<File>();
-    FFmpegKit.executeAsync(
-      cmd,
+    final totalMs = cursorMs;
+    FFmpegKit.executeWithArgumentsAsync(
+      args,
       (session) async {
         final code = await session.getReturnCode();
         if (ReturnCode.isSuccess(code)) {
@@ -96,13 +98,11 @@ class M4bGenerator {
           completer.completeError(StateError('ffmpeg failed: $logs'));
         }
       },
-      (log) {/* swallow */},
+      null,
       (stat) {
-        if (onProgress != null) {
+        if (onProgress != null && totalMs > 0) {
           final timeMs = stat.getTime();
-          if (cursorMs > 0) {
-            onProgress((timeMs / cursorMs).clamp(0.0, 1.0));
-          }
+          onProgress((timeMs / totalMs).clamp(0.0, 1.0));
         }
       },
     );
@@ -127,11 +127,6 @@ class M4bGenerator {
     final cleaned = s.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '_');
     final trimmed = cleaned.replaceAll(RegExp(r'^_+|_+$'), '');
     return trimmed.isEmpty ? 'audiobook' : trimmed;
-  }
-
-  static String _quote(String arg) {
-    if (RegExp(r'^[A-Za-z0-9_./:-]+$').hasMatch(arg)) return arg;
-    return "'${arg.replaceAll("'", r"'\''")}'";
   }
 
   static String _escapeMeta(String s) =>

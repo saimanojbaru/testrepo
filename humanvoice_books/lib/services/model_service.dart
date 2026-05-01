@@ -6,18 +6,17 @@ import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
 /// Describes a single asset we have to fetch from HuggingFace.
-class _Asset {
+class ModelAsset {
   final String url;
   final String relativePath; // path under the model root
-  final int? expectedBytes; // for progress; null = unknown
   final String? sha256; // optional integrity check
-  const _Asset(this.url, this.relativePath, {this.expectedBytes, this.sha256});
+  const ModelAsset(this.url, this.relativePath, {this.sha256});
 }
 
 class ModelManifest {
   final String name;
   final String rootDirName;
-  final List<_Asset> assets;
+  final List<ModelAsset> assets;
   const ModelManifest({
     required this.name,
     required this.rootDirName,
@@ -26,8 +25,8 @@ class ModelManifest {
 }
 
 /// Manages download + on-disk layout for the two on-device models:
-///   1. Kokoro-82M (TTS) — ONNX, Opset 15
-///   2. Qwen2.5-1.5B-Instruct Q4_K_M (Director LLM) — sherpa-onnx GGUF wrapper
+///   1. Kokoro-82M (TTS) — ONNX, Opset 15, served via sherpa_onnx
+///   2. Qwen2.5-1.5B-Instruct Q4_K_M (Director LLM) — GGUF, served via fllama (llama.cpp)
 ///
 /// Models live under `getApplicationSupportDirectory()` so they survive
 /// app upgrades but are excluded from cloud backup (see manifest rules).
@@ -40,28 +39,33 @@ class ModelService {
     name: 'kokoro-82m',
     rootDirName: 'kokoro-multi-lang-v1_0',
     assets: [
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/model.onnx',
         'model.onnx',
       ),
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/voices.bin',
         'voices.bin',
       ),
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/tokens.txt',
         'tokens.txt',
       ),
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/lexicon-us-en.txt',
         'lexicon-us-en.txt',
       ),
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/lexicon-gb-en.txt',
         'lexicon-gb-en.txt',
       ),
+      // Speaker name -> integer sid mapping (canonical, ships with the model).
+      ModelAsset(
+        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/voices.json',
+        'voices.json',
+      ),
       // espeak-ng data is bundled as a tarball; extracted on first run.
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/espeak-ng-data.tar.bz2',
         'espeak-ng-data.tar.bz2',
       ),
@@ -73,7 +77,7 @@ class ModelService {
     name: 'qwen2.5-1.5b-instruct',
     rootDirName: 'qwen2_5-1_5b-instruct',
     assets: [
-      _Asset(
+      ModelAsset(
         'https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct-GGUF/resolve/main/qwen2.5-1.5b-instruct-q4_k_m.gguf',
         'qwen2.5-1.5b-instruct-q4_k_m.gguf',
       ),

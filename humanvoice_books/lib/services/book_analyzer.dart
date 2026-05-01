@@ -1,23 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
-import 'dart:isolate';
 
 import 'package:epubx/epubx.dart' as epub;
-import 'package:sherpa_onnx/sherpa_onnx.dart' as so;
+import 'package:fllama/fllama.dart';
+import 'package:fllama/fllama_type.dart';
 
 import '../models/segment.dart';
 import 'model_service.dart';
 
-/// Director-side message passed into the analyzer isolate.
-class _AnalyzeRequest {
-  final SendPort reply;
-  final String epubPath;
-  final String qwenModelDir;
-  const _AnalyzeRequest(this.reply, this.epubPath, this.qwenModelDir);
-}
-
-/// Output messages the analyzer pushes back to the UI isolate.
 sealed class AnalyzerEvent {}
 
 class AnalyzerProgress extends AnalyzerEvent {
@@ -39,85 +30,153 @@ class AnalyzerError extends AnalyzerEvent {
   AnalyzerError(this.message);
 }
 
-/// Director: parses the EPUB and asks Qwen2.5-1.5B to assign voice + emotion
-/// to each paragraph, streaming the results back as [Chapter] objects.
+/// Director: parses an EPUB and asks Qwen2.5-1.5B-Instruct (Q4_K_M GGUF, via
+/// fllama → llama.cpp) to assign a voice + emotion to each paragraph.
 ///
-/// Runs in a separate Isolate so the UI thread stays at 60fps even while
-/// the LLM crunches through a long book.
+/// Unlike the Enactor's TTS work, this stays on the root isolate because
+/// fllama is platform-channel-based; running it inside a spawned Isolate
+/// would require BackgroundIsolateBinaryMessenger setup that isn't worth
+/// the complexity here. The actual llama.cpp inference happens off the UI
+/// thread anyway via the platform plugin's native thread pool.
 class BookAnalyzer {
-  /// Returns a broadcast stream of analyzer events. The underlying isolate
-  /// is spawned on first listen and shut down when the stream is cancelled.
+  /// Approximate per-paragraph token budget. Once we cross this many tokens
+  /// since the last reset we release the llama context and create a new one
+  /// to keep the KV cache from ballooning on long books.
+  static const _kvResetTokens = 2000;
+
+  /// Streams analyzer events as the LLM walks the book.
   static Stream<AnalyzerEvent> analyze(String epubPath) async* {
     final qwen = await ModelService.instance.qwenDir();
-    final rx = ReceivePort();
-    final iso = await Isolate.spawn<_AnalyzeRequest>(
-      _entry,
-      _AnalyzeRequest(rx.sendPort, epubPath, qwen.path),
-      errorsAreFatal: false,
-    );
-    try {
-      await for (final msg in rx) {
-        if (msg is AnalyzerEvent) {
-          yield msg;
-          if (msg is AnalyzerDone || msg is AnalyzerError) break;
-        }
-      }
-    } finally {
-      iso.kill(priority: Isolate.immediate);
-      rx.close();
+    final modelPath = '${qwen.path}/qwen2.5-1.5b-instruct-q4_k_m.gguf';
+    if (!await File(modelPath).exists()) {
+      yield AnalyzerError('Qwen model missing at $modelPath');
+      return;
     }
-  }
 
-  // ===== isolate entry point =====
-  static Future<void> _entry(_AnalyzeRequest req) async {
-    final tx = req.reply;
+    final fllama = Fllama.instance();
+    if (fllama == null) {
+      yield AnalyzerError('fllama plugin failed to initialise');
+      return;
+    }
+
+    double? ctxId = await _bootContext(fllama, modelPath);
+    if (ctxId == null) {
+      yield AnalyzerError('initContext returned null');
+      return;
+    }
+
     try {
-      // 1. Parse the EPUB.
-      final bytes = await File(req.epubPath).readAsBytes();
+      final bytes = await File(epubPath).readAsBytes();
       final book = await epub.EpubReader.readBook(bytes);
-      final rawChapters = book.Chapters ?? <epub.EpubChapter>[];
-      final flat = _flattenChapters(rawChapters);
+      final flat = _flattenChapters(book.Chapters ?? const <epub.EpubChapter>[]);
 
-      // 2. Boot the on-device LLM (Qwen2.5-1.5B Q4_K_M via sherpa-onnx).
-      final llm = _bootLlm(req.qwenModelDir);
+      var tokensSinceReset = 0;
 
-      // 3. Walk chapters; for each, stream paragraphs to the LLM.
       for (var i = 0; i < flat.length; i++) {
         final c = flat[i];
         final title = (c.Title ?? 'Chapter ${i + 1}').trim();
-        tx.send(AnalyzerProgress(i, flat.length, title));
+        yield AnalyzerProgress(i, flat.length, title);
 
         final paragraphs = _splitParagraphs(_stripHtml(c.HtmlContent ?? ''));
         final segments = <Segment>[];
-        var tokensSinceFlush = 0;
 
         for (final p in paragraphs) {
           if (p.trim().isEmpty) continue;
-          final out = _direct(llm, p);
-          segments.addAll(out);
 
-          // Approximate token count: ~1 token per 4 chars. Flush every 2K tokens.
-          tokensSinceFlush += (p.length / 4).ceil();
-          if (tokensSinceFlush >= 2000) {
-            // Reset KV cache to keep RAM bounded on low-end devices.
-            llm.reset();
-            tokensSinceFlush = 0;
+          if (tokensSinceReset >= _kvResetTokens) {
+            await fllama.releaseContext(ctxId!);
+            ctxId = await _bootContext(fllama, modelPath);
+            if (ctxId == null) {
+              yield AnalyzerError('failed to reboot llama context');
+              return;
+            }
+            tokensSinceReset = 0;
           }
+
+          final out = await _direct(fllama, ctxId!, p);
+          segments.addAll(out);
+          tokensSinceReset += (p.length / 4).ceil();
         }
 
-        tx.send(AnalyzerChapter(Chapter(
+        yield AnalyzerChapter(Chapter(
           index: i,
           title: title,
           segments: segments,
-        )));
+        ));
       }
-
-      llm.free();
-      tx.send(AnalyzerDone());
+      yield AnalyzerDone();
     } catch (e, st) {
-      tx.send(AnalyzerError('$e\n$st'));
+      yield AnalyzerError('$e\n$st');
+    } finally {
+      if (ctxId != null) {
+        await fllama.releaseContext(ctxId);
+      }
     }
   }
+
+  static Future<double?> _bootContext(Fllama f, String modelPath) async {
+    final m = await f.initContext(
+      modelPath,
+      nCtx: 2048,
+      nBatch: 256,
+      nThreads: 2,
+      useMmap: true,
+      useMlock: false,
+    );
+    final id = m?['contextId'];
+    if (id is num) return id.toDouble();
+    if (id is double) return id;
+    return null;
+  }
+
+  static const _systemPrompt = '''
+You are the Director of an audiobook. For each paragraph the user gives you,
+return ONLY a JSON array of acted lines. No prose, no code fences.
+
+Each element MUST be:
+{"text": "...", "voice_id": "af_bella"|"am_adam"|"af_nicole"|"am_michael",
+ "emotion": "neutral"|"whisper"|"shout"|"sad"|"excited", "speed": 1.0}
+
+Rules:
+- Narration -> af_bella by default.
+- Male dialogue -> am_adam (or am_michael for variety).
+- Female dialogue -> af_nicole.
+- Whispers / asides -> emotion "whisper", speed 0.92.
+- Yelling / exclamations -> emotion "shout", speed 1.05.
+- Keep "text" as a verbatim slice of the input.
+''';
+
+  static Future<List<Segment>> _direct(
+    Fllama f,
+    double ctxId,
+    String paragraph,
+  ) async {
+    final formatted = await f.getFormattedChat(
+      ctxId,
+      messages: [
+        RoleContent(role: 'system', content: _systemPrompt),
+        RoleContent(role: 'user', content: paragraph),
+      ],
+    );
+    final prompt = formatted ??
+        '<|im_start|>system\n$_systemPrompt<|im_end|>\n'
+            '<|im_start|>user\n$paragraph<|im_end|>\n'
+            '<|im_start|>assistant\n';
+
+    final result = await f.completion(
+      ctxId,
+      prompt: prompt,
+      temperature: 0.2,
+      nPredict: 384,
+      topP: 0.9,
+      stop: ['<|im_end|>', '<|endoftext|>'],
+    );
+
+    final text = result?['text']?.toString() ?? result?['content']?.toString() ?? '';
+    return _parseDirectorOutput(text, fallback: paragraph);
+  }
+
+  // ---- helpers ----
 
   static List<epub.EpubChapter> _flattenChapters(List<epub.EpubChapter> roots) {
     final out = <epub.EpubChapter>[];
@@ -134,7 +193,6 @@ class BookAnalyzer {
   }
 
   static String _stripHtml(String html) {
-    // Lightweight HTML stripper — full html parser would bloat the APK.
     final noTags = html.replaceAll(RegExp(r'<[^>]+>'), ' ');
     return noTags
         .replaceAll('&nbsp;', ' ')
@@ -147,8 +205,6 @@ class BookAnalyzer {
   }
 
   static List<String> _splitParagraphs(String text) {
-    // Split on double newlines first (paragraph breaks), then on sentence
-    // boundaries inside long paragraphs so each LLM prompt stays small.
     final paras = text.split(RegExp(r'\n{2,}|\r\n\r\n'));
     final out = <String>[];
     for (final p in paras) {
@@ -178,46 +234,7 @@ class BookAnalyzer {
     return out;
   }
 
-  // ====== LLM glue ======
-
-  static so.OfflineLM _bootLlm(String dir) {
-    // sherpa-onnx supports llama.cpp-style GGUF via OfflineLM.
-    final cfg = so.OfflineLMConfig(
-      model: '$dir/qwen2.5-1.5b-instruct-q4_k_m.gguf',
-      numThreads: 2,
-      provider: 'cpu',
-      // Conservative context to keep peak RAM under ~700MB on a 4GB device.
-      contextLength: 2048,
-    );
-    return so.OfflineLM(config: cfg);
-  }
-
-  static const _systemPrompt = '''
-You are the Director of an audiobook. For each paragraph, decide which lines
-are narration vs. dialogue, who is speaking, and the emotion. Output ONLY a
-JSON array of objects with this exact shape:
-[{"text": "...", "voice_id": "af_bella" | "am_adam" | "af_nicole" | "am_michael",
-  "emotion": "neutral" | "whisper" | "shout" | "sad" | "excited", "speed": 1.0}]
-Rules:
-- Narration -> af_bella (calm female) by default.
-- Male speaker dialogue -> am_adam or am_michael.
-- Female speaker dialogue -> af_nicole.
-- Whispers, asides -> emotion "whisper", speed 0.9.
-- Yelling, exclamations -> emotion "shout", speed 1.05.
-- Do NOT include any prose outside the JSON array.
-''';
-
-  static List<Segment> _direct(so.OfflineLM llm, String paragraph) {
-    final prompt = '<|im_start|>system\n$_systemPrompt<|im_end|>\n'
-        '<|im_start|>user\n$paragraph<|im_end|>\n'
-        '<|im_start|>assistant\n';
-    final out = llm.generate(prompt: prompt, maxTokens: 512, temperature: 0.2);
-    return _parseDirectorOutput(out, fallback: paragraph);
-  }
-
   static List<Segment> _parseDirectorOutput(String raw, {required String fallback}) {
-    // Pull the first JSON array out of the LLM response. The model occasionally
-    // wraps it in code fences or trailing prose despite the system prompt.
     final start = raw.indexOf('[');
     final end = raw.lastIndexOf(']');
     if (start < 0 || end <= start) {

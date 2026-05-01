@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 import 'dart:isolate';
 import 'dart:typed_data';
@@ -9,16 +10,6 @@ import 'package:sherpa_onnx/sherpa_onnx.dart' as so;
 import '../models/segment.dart';
 import 'model_service.dart';
 
-/// Static voice mapping from Kokoro speaker names to integer IDs.
-/// (Kokoro v1.0 ships ~54 voices in a single voices.bin matrix.)
-const Map<String, int> kKokoroVoiceIds = {
-  'af_bella': 0,
-  'af_nicole': 4,
-  'af_sarah': 5,
-  'am_adam': 14,
-  'am_michael': 19,
-};
-
 class TtsRenderResult {
   final File wavFile;
   final Duration duration;
@@ -28,18 +19,30 @@ class TtsRenderResult {
 
 /// Enactor: turns a list of [Segment]s into one WAV file per chapter.
 ///
-/// Background pipelining:
-///   - while Chapter 1 plays, the [renderChapterInBackground] call kicks
-///     off a fresh Isolate that pre-renders Chapter 2 into the cache.
+/// Background pipelining: while chapter N plays, [renderChapterInBackground]
+/// spawns a fresh Isolate that renders chapter N+1 into the same cache
+/// directory. The next foreground render then picks up the prebaked file.
 class TtsService {
   TtsService._();
   static final TtsService instance = TtsService._();
 
+  static bool _bindingsReady = false;
   so.OfflineTts? _tts;
+  Map<String, int> _voiceMap = const {'af_bella': 0};
+
+  /// Speaker name → integer sid. Populated from `voices.json` once the model
+  /// is downloaded; falls back to a defensive map containing only `af_bella`.
+  Map<String, int> get voiceMap => _voiceMap;
 
   Future<void> init() async {
     if (_tts != null) return;
+    if (!_bindingsReady) {
+      so.initBindings();
+      _bindingsReady = true;
+    }
     final dir = await ModelService.instance.kokoroDir();
+    _voiceMap = await _loadVoiceMap(dir);
+
     final cfg = so.OfflineTtsConfig(
       model: so.OfflineTtsModelConfig(
         kokoro: so.OfflineTtsKokoroModelConfig(
@@ -47,17 +50,17 @@ class TtsService {
           voices: '${dir.path}/voices.bin',
           tokens: '${dir.path}/tokens.txt',
           dataDir: '${dir.path}/espeak-ng-data',
+          lexicon: '${dir.path}/lexicon-us-en.txt',
           lengthScale: 1.0,
         ),
         numThreads: 2,
-        provider: 'cpu',
         debug: false,
+        provider: 'cpu',
       ),
-      ruleFsts: '',
-      ruleFars: '',
-      maxNumSentences: 4,
+      // Note: the upstream plugin spells this 'maxNumSenetences' (typo).
+      maxNumSenetences: 4,
     );
-    _tts = so.OfflineTts(config: cfg);
+    _tts = so.OfflineTts(cfg);
   }
 
   void dispose() {
@@ -65,9 +68,9 @@ class TtsService {
     _tts = null;
   }
 
-  /// Render a chapter into a single WAV file. Each segment is generated
-  /// independently then concatenated in-memory before writing — this lets
-  /// us swap voices/emotions across the chapter.
+  /// Render a chapter into a single WAV. Each segment is generated independently
+  /// so we can swap voices/emotions across the chapter, then concatenated with
+  /// a quarter-second silence between segments to breathe.
   Future<TtsRenderResult> renderChapter({
     required Chapter chapter,
     required Directory outputDir,
@@ -78,49 +81,75 @@ class TtsService {
 
     final pcmChunks = <Float32List>[];
     int sr = tts.sampleRate;
+    final defaultSid = _voiceMap['af_bella'] ?? 0;
 
     for (final seg in chapter.segments) {
-      final voiceId = kKokoroVoiceIds[seg.voiceId] ?? 0;
+      final sid = _voiceMap[seg.voiceId] ?? defaultSid;
       final speed = _emotionToSpeed(seg.emotion, seg.speed);
-      final result = tts.generate(
-        text: seg.text,
-        sid: voiceId,
-        speed: speed,
-      );
-      pcmChunks.add(result.samples);
-      sr = result.sampleRate;
-      // Quarter-second beat between segments to breathe.
+      final audio = tts.generate(text: seg.text, sid: sid, speed: speed);
+      pcmChunks.add(audio.samples);
+      sr = audio.sampleRate;
       pcmChunks.add(Float32List(sr ~/ 4));
     }
 
     final merged = _concat(pcmChunks);
-    final wav = File('${outputDir.path}/chapter_${chapter.index.toString().padLeft(4, '0')}.wav');
+    final wav = File(
+      '${outputDir.path}/chapter_${chapter.index.toString().padLeft(4, '0')}.wav',
+    );
     await _writeWav(wav, merged, sr);
     final dur = Duration(milliseconds: (merged.length * 1000) ~/ sr);
     return TtsRenderResult(wav, dur, sr);
   }
 
-  /// Spawns an isolate that renders [chapter] in the background while the
-  /// caller plays a different chapter. Returns the future WAV path.
+  /// Spawns an isolate that renders [chapter] to disk. Returns the absolute
+  /// path of the resulting WAV. sherpa_onnx is FFI, so the isolate just
+  /// needs its own [so.initBindings] call before constructing the engine.
   Future<String> renderChapterInBackground(Chapter chapter) async {
-    final outDir = await _chapterCacheDir();
+    await init(); // ensure voiceMap is loaded
+    final outDir = await chapterCacheDir();
     final kokoro = await ModelService.instance.kokoroDir();
     final rx = ReceivePort();
     await Isolate.spawn<_BgRequest>(
       _bgEntry,
-      _BgRequest(rx.sendPort, chapter, outDir.path, kokoro.path),
+      _BgRequest(rx.sendPort, chapter, outDir.path, kokoro.path, _voiceMap),
     );
     final result = await rx.first;
     rx.close();
-    if (result is String) return result;
+    if (result is String && !result.startsWith('error:')) return result;
     throw StateError('Background render failed: $result');
   }
 
-  Future<Directory> _chapterCacheDir() async {
+  Future<Directory> chapterCacheDir() async {
     final base = await getApplicationSupportDirectory();
     final dir = Directory('${base.path}/audiobook_cache');
     if (!await dir.exists()) await dir.create(recursive: true);
     return dir;
+  }
+
+  // -------- helpers --------
+
+  static Future<Map<String, int>> _loadVoiceMap(Directory modelDir) async {
+    final f = File('${modelDir.path}/voices.json');
+    if (!await f.exists()) return const {'af_bella': 0};
+    try {
+      final raw = jsonDecode(await f.readAsString());
+      // Two known layouts: {"af_bella": 2, ...} or {"speakers": ["af_alloy", "af_aoede", ...]}.
+      if (raw is Map) {
+        final m = <String, int>{};
+        raw.forEach((k, v) {
+          if (k is String && v is num) m[k] = v.toInt();
+        });
+        if (m.isNotEmpty) return m;
+      }
+      if (raw is Map && raw['speakers'] is List) {
+        final list = (raw['speakers'] as List).cast<Object?>();
+        return {
+          for (var i = 0; i < list.length; i++)
+            if (list[i] is String) list[i] as String: i,
+        };
+      }
+    } catch (_) {/* fall through to default */}
+    return const {'af_bella': 0};
   }
 
   static double _emotionToSpeed(String emotion, double base) {
@@ -149,8 +178,6 @@ class TtsService {
     return out;
   }
 
-  // 16-bit PCM WAV writer. Kept self-contained — sherpa-onnx returns float32
-  // PCM and we want a real on-disk WAV that ffmpeg can mux.
   static Future<void> _writeWav(File f, Float32List samples, int sampleRate) async {
     final byteRate = sampleRate * 2;
     final dataSize = samples.length * 2;
@@ -175,11 +202,10 @@ class TtsService {
     writeU32(sampleRate);
     writeU32(byteRate);
     writeU16(2); // block align
-    writeU16(16); // bits per sample
+    writeU16(16); // bits/sample
     writeStr('data');
     writeU32(dataSize);
 
-    // float32 -> int16 with clipping
     final pcm = Int16List(samples.length);
     for (var i = 0; i < samples.length; i++) {
       var v = (samples[i] * 32767).round();
@@ -192,11 +218,11 @@ class TtsService {
     await f.writeAsBytes(buf.takeBytes(), flush: true);
   }
 
-  // ===== background isolate =====
+  // -------- background isolate entry --------
 
   static Future<void> _bgEntry(_BgRequest req) async {
     try {
-      // Re-init TtsService inside this isolate (sherpa-onnx state is per-iso).
+      so.initBindings();
       final cfg = so.OfflineTtsConfig(
         model: so.OfflineTtsModelConfig(
           kokoro: so.OfflineTtsKokoroModelConfig(
@@ -204,25 +230,25 @@ class TtsService {
             voices: '${req.kokoroDir}/voices.bin',
             tokens: '${req.kokoroDir}/tokens.txt',
             dataDir: '${req.kokoroDir}/espeak-ng-data',
+            lexicon: '${req.kokoroDir}/lexicon-us-en.txt',
             lengthScale: 1.0,
           ),
           numThreads: 2,
-          provider: 'cpu',
           debug: false,
+          provider: 'cpu',
         ),
-        ruleFsts: '',
-        ruleFars: '',
-        maxNumSentences: 4,
+        maxNumSenetences: 4,
       );
-      final tts = so.OfflineTts(config: cfg);
+      final tts = so.OfflineTts(cfg);
 
       final pcm = <Float32List>[];
       int sr = tts.sampleRate;
+      final defaultSid = req.voiceMap['af_bella'] ?? 0;
       for (final s in req.chapter.segments) {
-        final voiceId = kKokoroVoiceIds[s.voiceId] ?? 0;
+        final sid = req.voiceMap[s.voiceId] ?? defaultSid;
         final r = tts.generate(
           text: s.text,
-          sid: voiceId,
+          sid: sid,
           speed: _emotionToSpeed(s.emotion, s.speed),
         );
         pcm.add(r.samples);
@@ -231,12 +257,14 @@ class TtsService {
       }
 
       final merged = _concat(pcm);
-      final wav = File('${req.outDir}/chapter_${req.chapter.index.toString().padLeft(4, '0')}.wav');
+      final wav = File(
+        '${req.outDir}/chapter_${req.chapter.index.toString().padLeft(4, '0')}.wav',
+      );
       await _writeWav(wav, merged, sr);
       tts.free();
       req.reply.send(wav.path);
-    } catch (e) {
-      req.reply.send('error:$e');
+    } catch (e, st) {
+      req.reply.send('error:$e\n$st');
     }
   }
 }
@@ -246,5 +274,6 @@ class _BgRequest {
   final Chapter chapter;
   final String outDir;
   final String kokoroDir;
-  _BgRequest(this.reply, this.chapter, this.outDir, this.kokoroDir);
+  final Map<String, int> voiceMap;
+  _BgRequest(this.reply, this.chapter, this.outDir, this.kokoroDir, this.voiceMap);
 }

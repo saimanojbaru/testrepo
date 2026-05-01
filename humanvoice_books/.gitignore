@@ -15,6 +15,7 @@ android/.gradle/
 android/app/.cxx/
 android/key.properties
 android/**/keystore.jks
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 ios/
 macos/
 linux/
