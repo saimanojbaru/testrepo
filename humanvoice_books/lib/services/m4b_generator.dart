@@ -123,6 +123,20 @@ class M4bGenerator {
     return dir;
   }
 
+  /// Returns every previously-generated .m4b in the library directory,
+  /// newest first. Safe to call before any audiobook has been generated.
+  Future<List<File>> listLibrary() async {
+    final dir = await _outputDir();
+    final files = <File>[];
+    await for (final entry in dir.list()) {
+      if (entry is File && entry.path.toLowerCase().endsWith('.m4b')) {
+        files.add(entry);
+      }
+    }
+    files.sort((a, b) => b.statSync().modified.compareTo(a.statSync().modified));
+    return files;
+  }
+
   static String _slug(String s) {
     final cleaned = s.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '_');
     final trimmed = cleaned.replaceAll(RegExp(r'^_+|_+$'), '');

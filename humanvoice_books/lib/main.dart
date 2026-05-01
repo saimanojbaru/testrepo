@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 
 import 'bloc/book_bloc.dart';
-import 'ui/home_page.dart';
+import 'ui/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,7 +39,7 @@ class HumanVoiceApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (_) => BookBloc(),
-        child: const HomePage(),
+        child: const HomeScreen(),
       ),
     );
   }

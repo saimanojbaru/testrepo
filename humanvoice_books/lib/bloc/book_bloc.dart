@@ -36,6 +36,10 @@ class StartProduction extends BookEvent {
   List<Object?> get props => [title, author];
 }
 
+class RefreshLibrary extends BookEvent {
+  const RefreshLibrary();
+}
+
 // ===== state =====
 enum Stage {
   idle,
@@ -54,6 +58,8 @@ class BookState extends Equatable {
   final String message;
   final List<Chapter> chapters;
   final File? outputM4b;
+  final List<File> library;
+  final String? loadedEpubName;
 
   const BookState({
     this.stage = Stage.idle,
@@ -61,6 +67,8 @@ class BookState extends Equatable {
     this.message = '',
     this.chapters = const [],
     this.outputM4b,
+    this.library = const [],
+    this.loadedEpubName,
   });
 
   BookState copyWith({
@@ -69,6 +77,8 @@ class BookState extends Equatable {
     String? message,
     List<Chapter>? chapters,
     File? outputM4b,
+    List<File>? library,
+    String? loadedEpubName,
   }) =>
       BookState(
         stage: stage ?? this.stage,
@@ -76,10 +86,20 @@ class BookState extends Equatable {
         message: message ?? this.message,
         chapters: chapters ?? this.chapters,
         outputM4b: outputM4b ?? this.outputM4b,
+        library: library ?? this.library,
+        loadedEpubName: loadedEpubName ?? this.loadedEpubName,
       );
 
   @override
-  List<Object?> get props => [stage, progress, message, chapters, outputM4b];
+  List<Object?> get props => [
+        stage,
+        progress,
+        message,
+        chapters,
+        outputM4b,
+        library,
+        loadedEpubName,
+      ];
 }
 
 // ===== bloc =====
@@ -90,6 +110,12 @@ class BookBloc extends Bloc<BookEvent, BookState> {
     on<EnsureModels>(_onEnsureModels);
     on<ImportEpub>(_onImport);
     on<StartProduction>(_onStart);
+    on<RefreshLibrary>(_onRefreshLibrary);
+  }
+
+  Future<void> _onRefreshLibrary(RefreshLibrary _, Emitter<BookState> emit) async {
+    final files = await M4bGenerator.instance.listLibrary();
+    emit(state.copyWith(library: files));
   }
 
   Future<void> _onEnsureModels(EnsureModels e, Emitter<BookState> emit) async {
@@ -107,7 +133,12 @@ class BookBloc extends Bloc<BookEvent, BookState> {
 
   Future<void> _onImport(ImportEpub e, Emitter<BookState> emit) async {
     _epubPath = e.path;
-    emit(state.copyWith(message: 'Loaded: ${e.path.split('/').last}', chapters: const []));
+    final name = e.path.split('/').last;
+    emit(state.copyWith(
+      message: 'Loaded: $name',
+      chapters: const [],
+      loadedEpubName: name,
+    ));
   }
 
   Future<void> _onStart(StartProduction e, Emitter<BookState> emit) async {
@@ -181,11 +212,13 @@ class BookBloc extends Bloc<BookEvent, BookState> {
         chapters: assets,
         onProgress: (p) => emit(state.copyWith(progress: p)),
       );
+      final library = await M4bGenerator.instance.listLibrary();
       emit(state.copyWith(
         stage: Stage.done,
         progress: 1,
         message: 'Saved: ${m4b.path}',
         outputM4b: m4b,
+        library: library,
       ));
     } catch (err) {
       emit(state.copyWith(stage: Stage.error, message: '$err'));
