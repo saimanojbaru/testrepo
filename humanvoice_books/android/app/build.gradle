@@ -1,0 +1,105 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader -> localProperties.load(reader) }
+}
+
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode") ?: "1"
+def flutterVersionName = localProperties.getProperty("flutter.versionName") ?: "0.1.0"
+
+android {
+    namespace "com.humanvoice.books"
+    compileSdk 35
+    ndkVersion "27.0.12077973"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        applicationId "com.humanvoice.books"
+        // sherpa-onnx ships prebuilt JNI for arm64-v8a / armeabi-v7a / x86_64
+        minSdk 26          // Android 8.0 — required for ONNX runtime + scoped storage helpers
+        targetSdk 35       // Android 15
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+
+        ndk {
+            // Drop x86 entirely; keep 64-bit for modern devices and 32-bit ARM for older ones.
+            abiFilters "arm64-v8a", "armeabi-v7a", "x86_64"
+        }
+
+        // sherpa-onnx is loaded via System.loadLibrary("sherpa-onnx-jni") inside the plugin;
+        // we only need to make sure the .so is packaged (handled by the plugin's AAR).
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++17 -O3"
+            }
+        }
+    }
+
+    // Native bridge stub so Gradle wires CMake even when we don't ship custom C++.
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.22.1"
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = false
+            // Keep sherpa-onnx-jni unstripped for clean stack traces in release-debug builds.
+            keepDebugSymbols += ["**/libsherpa-onnx-jni.so", "**/libonnxruntime.so"]
+        }
+        resources {
+            excludes += [
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1",
+                "META-INF/DEPENDENCIES",
+            ]
+        }
+    }
+
+    buildTypes {
+        release {
+            // Disable shrinking — sherpa-onnx-jni and ffmpeg use reflection/JNI lookups
+            // that R8 can mistakenly strip on aggressive minify.
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    // Models are too large to ship as APK assets; we download to ApplicationSupportDir.
+    // Make sure abi splits stay off so a single universal APK contains all native libs.
+    splits {
+        abi { enable false }
+        density { enable false }
+    }
+}
+
+flutter {
+    source "../.."
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:1.13.1"
+    implementation "androidx.multidex:multidex:2.0.1"
+}
