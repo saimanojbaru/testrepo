@@ -26,8 +26,8 @@ dependencies:
   # EPUB parsing
   epubx: ^4.0.0
 
-  # State management
-  flutter_bloc: ^8.1.6
+  # State (lightweight: ValueNotifier + StatefulWidget for UI; the Bloc
+  # layer was removed in the UX rewrite — services own their own state).
   equatable: ^2.0.5
 
   # HTTP for HuggingFace downloads + integrity hashing
@@ -38,6 +38,15 @@ dependencies:
   # across vendors (some lack --strip-components, some choke on bz2);
   # going pure-Dart eliminates that whole class of silent failure.
   archive: ^3.6.1
+
+  # Reader UX
+  google_fonts: ^6.2.1
+  flutter_html: ^3.0.0-beta.2
+  shared_preferences: ^2.3.2
+  animations: ^2.0.11
+
+  # In-app audio playback for the "Read to Me" bridge.
+  just_audio: ^0.9.40
 
   cupertino_icons: ^1.0.8
 

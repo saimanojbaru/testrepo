@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'bloc/book_bloc.dart';
-import 'ui/home_screen.dart';
+import 'ui/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Soft-edge status bar; reader screen will go full immersive on its own.
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    systemNavigationBarColor: Colors.transparent,
+  ));
   runApp(const HumanVoiceApp());
 }
 
@@ -14,27 +19,31 @@ class HumanVoiceApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lightScheme = ColorScheme.fromSeed(
+      seedColor: const Color(0xFF7E3FB0),
+      brightness: Brightness.light,
+    );
+    final darkScheme = ColorScheme.fromSeed(
+      seedColor: const Color(0xFF7E3FB0),
+      brightness: Brightness.dark,
+    );
+
     return MaterialApp(
       title: 'HumanVoice Books',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6750A4),
-          brightness: Brightness.light,
-        ),
         useMaterial3: true,
+        colorScheme: lightScheme,
+        scaffoldBackgroundColor: lightScheme.surface,
+        textTheme: GoogleFonts.interTextTheme(),
       ),
       darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF6750A4),
-          brightness: Brightness.dark,
-        ),
         useMaterial3: true,
+        colorScheme: darkScheme,
+        scaffoldBackgroundColor: darkScheme.surface,
+        textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme),
       ),
-      home: BlocProvider(
-        create: (_) => BookBloc(),
-        child: const HomeScreen(),
-      ),
+      home: const SplashScreen(),
     );
   }
 }
