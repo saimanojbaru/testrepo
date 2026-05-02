@@ -4,6 +4,10 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        // Arthenica retired ffmpeg-kit binaries from Maven Central / dl.google.com
+        // in 2025. This community archive serves the same artifacts under
+        // standard Maven layout (com/arthenica/ffmpeg-kit-audio/6.0-2/...).
+        maven { url 'https://raw.githubusercontent.com/DucLQ92/ffmpeg-kit-audio/main/' }
     }
 }
 

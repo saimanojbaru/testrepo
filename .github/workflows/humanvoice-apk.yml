@@ -44,7 +44,9 @@ jobs:
             tools
             platform-tools
             platforms;android-34
+            platforms;android-35
             build-tools;34.0.0
+            build-tools;35.0.0
             ndk;26.3.11579264
 
       - name: Cache Gradle wrapper + caches
@@ -107,7 +109,7 @@ jobs:
           grep -qi 'flutter demo home page' lib/main.dart && {
             echo "::error::lib/main.dart is the counter-app demo"; exit 1;
           } || true
-          grep -q 'compileSdk 34'  android/app/build.gradle
+          grep -q 'compileSdk 35'  android/app/build.gradle
           grep -q 'sherpa_onnx'    pubspec.yaml
 
       - name: flutter pub get

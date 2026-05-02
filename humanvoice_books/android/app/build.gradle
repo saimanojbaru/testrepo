@@ -15,8 +15,10 @@ def flutterVersionName = localProperties.getProperty("flutter.versionName") ?: "
 
 android {
     namespace "com.humanvoice.books"
-    // compileSdk pinned to AGP 8.1's max (34). Bumping this requires AGP >= 8.5.
-    compileSdk 34
+    // flutter_plugin_android_lifecycle (transitive via permission_handler /
+    // path_provider) requires compileSdk 35; AGP 8.1 will print an
+    // "untested" warning but compiles cleanly.
+    compileSdk 35
     // Match Flutter 3.24's bundled NDK to avoid second-NDK download.
     ndkVersion "26.3.11579264"
 
