@@ -30,8 +30,8 @@ flutter build apk --release --target-platform android-arm64,android-arm,android-
 
 After install, the app will:
 1. Request notification + microphone permissions.
-2. Download Kokoro + Qwen from HuggingFace into `getApplicationSupportDirectory()`
-   (~600 MB total, one-time).
+2. Download Kokoro-82M from HuggingFace into `getApplicationSupportDirectory()`
+   (~330 MB, one-time).
 3. Let you pick an EPUB and produce a `.m4b` saved under
    `appSupportDir/audiobooks/<slug>.m4b`.
 

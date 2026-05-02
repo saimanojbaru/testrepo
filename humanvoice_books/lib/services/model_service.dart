@@ -47,35 +47,35 @@ class ModelService {
     rootDirName: 'kokoro-multi-lang-v1_0',
     assets: [
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/model.onnx',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/model.onnx',
         'model.onnx',
       ),
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/voices.bin',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/voices.bin',
         'voices.bin',
       ),
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/tokens.txt',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/tokens.txt',
         'tokens.txt',
       ),
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/lexicon-us-en.txt',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/lexicon-us-en.txt',
         'lexicon-us-en.txt',
       ),
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/lexicon-gb-en.txt',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/lexicon-gb-en.txt',
         'lexicon-gb-en.txt',
       ),
       // Optional: not all sherpa-onnx-kokoro releases publish voices.json. If
       // missing we fall back to a hard-coded sid map in TtsService.
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/voices.json',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/voices.json',
         'voices.json',
         optional: true,
       ),
       // espeak-ng data is bundled as a tarball; extracted on first run.
       ModelAsset(
-        'https://huggingface.co/csukuangfj/sherpa-onnx-kokoro-multi-lang-v1_0/resolve/main/espeak-ng-data.tar.bz2',
+        'https://huggingface.co/csukuangfj/kokoro-multi-lang-v1_0/resolve/main/espeak-ng-data.tar.bz2',
         'espeak-ng-data.tar.bz2',
       ),
     ],

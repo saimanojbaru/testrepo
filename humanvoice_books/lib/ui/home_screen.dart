@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   state.stage == Stage.modelsReady ||
                           state.stage == Stage.done
                       ? 'Models ready (re-verify)'
-                      : 'Initialize models (Kokoro + Qwen, ~600 MB)',
+                      : 'Initialize models (Kokoro-82M, ~330 MB)',
                 ),
               ),
               const SizedBox(height: 24),
