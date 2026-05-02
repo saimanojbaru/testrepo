@@ -41,12 +41,13 @@ class TtsService {
       _bindingsReady = true;
     }
     final dir = await ModelService.instance.kokoroDir();
+    final modelFile = ModelService.instance.kokoroModelFile;
     _voiceMap = await _loadVoiceMap(dir);
 
     final cfg = so.OfflineTtsConfig(
       model: so.OfflineTtsModelConfig(
         kokoro: so.OfflineTtsKokoroModelConfig(
-          model: '${dir.path}/model.onnx',
+          model: '${dir.path}/$modelFile',
           voices: '${dir.path}/voices.bin',
           tokens: '${dir.path}/tokens.txt',
           dataDir: '${dir.path}/espeak-ng-data',
@@ -108,10 +109,11 @@ class TtsService {
     await init(); // ensure voiceMap is loaded
     final outDir = await chapterCacheDir();
     final kokoro = await ModelService.instance.kokoroDir();
+    final modelFile = ModelService.instance.kokoroModelFile;
     final rx = ReceivePort();
     await Isolate.spawn<_BgRequest>(
       _bgEntry,
-      _BgRequest(rx.sendPort, chapter, outDir.path, kokoro.path, _voiceMap),
+      _BgRequest(rx.sendPort, chapter, outDir.path, kokoro.path, modelFile, _voiceMap),
     );
     final result = await rx.first;
     rx.close();
@@ -226,7 +228,7 @@ class TtsService {
       final cfg = so.OfflineTtsConfig(
         model: so.OfflineTtsModelConfig(
           kokoro: so.OfflineTtsKokoroModelConfig(
-            model: '${req.kokoroDir}/model.onnx',
+            model: '${req.kokoroDir}/${req.modelFile}',
             voices: '${req.kokoroDir}/voices.bin',
             tokens: '${req.kokoroDir}/tokens.txt',
             dataDir: '${req.kokoroDir}/espeak-ng-data',
@@ -274,6 +276,14 @@ class _BgRequest {
   final Chapter chapter;
   final String outDir;
   final String kokoroDir;
+  final String modelFile;
   final Map<String, int> voiceMap;
-  _BgRequest(this.reply, this.chapter, this.outDir, this.kokoroDir, this.voiceMap);
+  _BgRequest(
+    this.reply,
+    this.chapter,
+    this.outDir,
+    this.kokoroDir,
+    this.modelFile,
+    this.voiceMap,
+  );
 }
