@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'dart:io';
+import 'dart:isolate';
 
-import 'package:archive/archive.dart';
+import 'package:archive/archive_io.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
@@ -25,29 +26,32 @@ class ModelAsset {
 class ModelManifest {
   final String name;
   final String rootDirName; // the on-disk dir relative to /models
-  final String sentinelFile; // file used to decide if model is ready
+  final String modelFile; // file sherpa_onnx loads
+  final List<String> requiredFiles; // verified post-extract before stamping ready
+  final List<String> requiredDirs; // dirs that must exist post-extract
   final List<ModelAsset> assets;
+  final int version; // bump to invalidate any prior partial state
   const ModelManifest({
     required this.name,
     required this.rootDirName,
-    required this.sentinelFile,
+    required this.modelFile,
+    required this.requiredFiles,
+    required this.requiredDirs,
     required this.assets,
+    this.version = 1,
   });
 }
 
 /// Manages download + on-disk layout for on-device models.
 ///
-/// v1 ships the Kokoro-82M INT8 bundle from sherpa-onnx's k2-fsa GitHub
-/// release. One tarball (~80 MB compressed, ~300 MB extracted) contains
-/// everything Kokoro needs: model.int8.onnx, tokens.txt, voices.bin,
-/// lexicons, and espeak-ng-data/. We deliberately avoid Hugging Face here
-/// because the kokoro-multi-lang-v1_0 HF repo doesn't ship espeak-ng-data
-/// as a tarball — it stores it as a flat directory of ~200 small files,
-/// which would mean ~200 sequential HTTP requests on first launch.
-///
-/// Models live under `getApplicationSupportDirectory()` so they survive
-/// app upgrades but stay excluded from cloud backup
-/// (see android/.../data_extraction_rules.xml).
+/// Atomicity model:
+///   - "<rootDir>/.ready_v$version" is the ONLY readiness signal.
+///   - It's written exactly once, after every required file/dir is verified.
+///   - On launch, if the rootDir exists but the marker doesn't, we treat the
+///     extraction as botched (e.g. process killed mid-extract by Android LMK)
+///     and wipe the rootDir before redoing the work.
+///   - This protects against the "false sentinel" trap where a partial
+///     extract leaves model.int8.onnx on disk but tokens.txt missing.
 class ModelService {
   ModelService._();
   static final ModelService instance = ModelService._();
@@ -55,17 +59,24 @@ class ModelService {
   static const _kokoro = ModelManifest(
     name: 'kokoro-int8-82m',
     rootDirName: 'kokoro-int8-multi-lang-v1_0',
-    sentinelFile: 'model.int8.onnx',
+    modelFile: 'model.int8.onnx',
+    requiredFiles: [
+      'model.int8.onnx',
+      'tokens.txt',
+      'voices.bin',
+      'lexicon-us-en.txt',
+      'lexicon-gb-en.txt',
+    ],
+    requiredDirs: ['espeak-ng-data'],
+    // Bumped from v1 -> v2 alongside the streaming-extract rewrite so any
+    // device carrying a corrupted partial extract from before is auto-wiped.
+    version: 2,
     assets: [
       ModelAsset(
-        // Single bundled archive. If this URL ever 404s (release rename),
-        // the FP32 fallback is:
-        //   https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-multi-lang-v1_0.tar.bz2
-        // (~330 MB compressed, also includes espeak-ng-data/).
+        // Single bundled archive. FP32 fallback (also includes espeak-ng-data):
+        // https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-multi-lang-v1_0.tar.bz2
         'https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/kokoro-int8-multi-lang-v1_0.tar.bz2',
         '_archives/kokoro-int8-multi-lang-v1_0.tar.bz2',
-        // Tarball wraps everything in a top-level dir matching its name; we
-        // strip that and extract directly into rootDirName.
         stripComponents: 1,
       ),
     ],
@@ -84,75 +95,96 @@ class ModelService {
   }
 
   /// Filename of the Kokoro ONNX model, relative to [kokoroDir].
-  String get kokoroModelFile => _kokoro.sentinelFile;
+  String get kokoroModelFile => _kokoro.modelFile;
 
   Future<bool> kokoroReady() => _manifestReady(_kokoro);
 
   Future<bool> _manifestReady(ModelManifest m) async {
     final root = await _modelsRoot();
-    final sentinel = File('${root.path}/${m.rootDirName}/${m.sentinelFile}');
-    if (!await sentinel.exists()) return false;
-    return await sentinel.length() > 1024 * 1024; // model is many MB
+    final marker = File('${root.path}/${m.rootDirName}/.ready_v${m.version}');
+    return marker.exists();
+  }
+
+  Future<void> _wipeIfPartial(ModelManifest m) async {
+    final root = await _modelsRoot();
+    final dir = Directory('${root.path}/${m.rootDirName}');
+    if (!await dir.exists()) return;
+    if (await _manifestReady(m)) return; // valid existing extract
+    // ignore: avoid_print
+    print('[ModelService] partial extract detected at ${dir.path}; wiping');
+    try {
+      await dir.delete(recursive: true);
+    } catch (e) {
+      // ignore: avoid_print
+      print('[ModelService] wipe failed: $e (continuing; extract will overwrite)');
+    }
+  }
+
+  Future<void> _markReady(ModelManifest m) async {
+    final root = await _modelsRoot();
+    final modelDir = Directory('${root.path}/${m.rootDirName}');
+
+    // Verify every required file is present and non-empty BEFORE stamping.
+    for (final relPath in m.requiredFiles) {
+      final f = File('${modelDir.path}/$relPath');
+      if (!await f.exists()) {
+        throw StateError('post-extract verify: missing $relPath');
+      }
+      if (await f.length() < 100) {
+        throw StateError('post-extract verify: $relPath is empty');
+      }
+    }
+    for (final relDir in m.requiredDirs) {
+      final d = Directory('${modelDir.path}/$relDir');
+      if (!await d.exists()) {
+        throw StateError('post-extract verify: missing dir $relDir');
+      }
+    }
+
+    final marker = File('${modelDir.path}/.ready_v${m.version}');
+    await marker.writeAsString(DateTime.now().toIso8601String());
+    // ignore: avoid_print
+    print('[ModelService] sentinel written: ${marker.path}');
   }
 
   /// Streams `(received, total, label)` tuples while downloading.
-  /// `total` may be -1 when the server omits Content-Length.
   Stream<(int received, int total, String label)> ensureAll() async* {
     yield* _ensure(_kokoro);
   }
 
   Stream<(int, int, String)> _ensure(ModelManifest m) async* {
-    final root = await _modelsRoot();
-    final modelDir = Directory('${root.path}/${m.rootDirName}');
-    if (!await modelDir.exists()) await modelDir.create(recursive: true);
-
-    // Short-circuit if already extracted from a previous run.
+    await _wipeIfPartial(m);
     if (await _manifestReady(m)) {
       yield (1, 1, '${m.name}: already on device');
       return;
     }
+
+    final root = await _modelsRoot();
+    final modelDir = Directory('${root.path}/${m.rootDirName}');
+    if (!await modelDir.exists()) await modelDir.create(recursive: true);
 
     for (final a in m.assets) {
       final dest = File('${root.path}/${a.relativePath}');
       if (!await dest.parent.exists()) {
         await dest.parent.create(recursive: true);
       }
-      if (await dest.exists() && await dest.length() > 1024) {
-        // Already downloaded, skip to extract step below.
-      } else {
+      if (!(await dest.exists() && await dest.length() > 1024)) {
         yield* _download(a, dest, '${m.name}:${a.relativePath}');
       }
 
       if (a.relativePath.endsWith('.tar.bz2')) {
+        yield (0, 1, '${m.name}: extracting…');
         await _extractTarBz2(dest, modelDir, a.stripComponents);
-        // Reclaim ~80 MB once extraction succeeds.
-        if (await _manifestReady(m)) {
-          try {
-            await dest.delete();
-          } catch (_) {}
-        }
+        // Reclaim ~80 MB once extraction succeeded; re-download on next
+        // ensureAll if anything goes wrong (the marker won't be there).
+        try {
+          await dest.delete();
+        } catch (_) {}
       }
     }
 
-    if (!await _manifestReady(m)) {
-      // Dump what we DID end up with so the error message is actionable.
-      final inventory = <String>[];
-      try {
-        await for (final entry in modelDir.list(recursive: true)) {
-          final stat = await entry.stat();
-          inventory.add('  ${entry.path} (${stat.size}B)');
-          if (inventory.length >= 50) {
-            inventory.add('  …truncated');
-            break;
-          }
-        }
-      } catch (_) {}
-      throw StateError(
-        'Model "${m.name}" not ready after extract.\n'
-        'Expected sentinel: ${m.rootDirName}/${m.sentinelFile}\n'
-        'Files actually on disk:\n${inventory.isEmpty ? "  (none)" : inventory.join("\n")}',
-      );
-    }
+    // Will throw with a precise message if any required file is missing.
+    await _markReady(m);
   }
 
   Stream<(int, int, String)> _download(
@@ -211,37 +243,65 @@ class ModelService {
     return digest.toString();
   }
 
+  /// Two-stage streaming extract. Runs inside a worker isolate so the heavy
+  /// allocations are isolated from the UI heap and the OS LMK gets a clean
+  /// target if memory pressure spikes (the marker file is the only thing
+  /// that says "we're done"; if the worker dies, nothing rolls forward).
   Future<void> _extractTarBz2(
     File archive,
     Directory into,
     int stripComponents,
   ) async {
-    final bytes = await archive.readAsBytes();
-    // Decode bzip2, then untar in pure Dart. Avoids the toybox tar
-    // inconsistencies across Android vendors (some lack --strip-components,
-    // some choke on bz2). Done synchronously — for an ~80 MB tarball this
-    // is a few seconds; if it grows we can move it to a compute() isolate.
-    final tarBytes = BZip2Decoder().decodeBytes(bytes);
-    final tarArchive = TarDecoder().decodeBytes(tarBytes);
+    final archivePath = archive.path;
+    final intoPath = into.path;
+    await Isolate.run(
+      () => _streamingExtract(archivePath, intoPath, stripComponents),
+    );
+  }
 
+  static Future<void> _streamingExtract(
+    String archivePath,
+    String intoPath,
+    int strip,
+  ) async {
+    // Stage 1: bz2 -> sibling .tar on disk.
+    // Avoids the 300 MB peak heap that BZip2Decoder.decodeBytes would need.
+    final tarPath = '$archivePath.tar';
+    final inputBz = InputFileStream(archivePath);
+    final outputTar = OutputFileStream(tarPath);
+    try {
+      BZip2Decoder().decodeStream(inputBz, outputTar);
+    } finally {
+      inputBz.close();
+      outputTar.close();
+    }
+
+    // Stage 2: stream-untar from disk into the target dir, one file at a time.
+    final tarStream = InputFileStream(tarPath);
     var written = 0;
-    for (final entry in tarArchive) {
-      if (!entry.isFile) continue;
+    try {
+      final ar = TarDecoder().decodeBuffer(tarStream);
+      for (final entry in ar) {
+        if (!entry.isFile) continue;
+        final parts = entry.name.split('/');
+        if (parts.length <= strip) continue;
+        final rel = parts.sublist(strip).join('/');
+        if (rel.isEmpty) continue;
 
-      // Strip leading path components per the manifest.
-      final parts = entry.name.split('/');
-      if (parts.length <= stripComponents) continue;
-      final relPath = parts.sublist(stripComponents).join('/');
-      if (relPath.isEmpty) continue;
-
-      final out = File('${into.path}/$relPath');
-      if (!await out.parent.exists()) {
+        final out = File('$intoPath/$rel');
         await out.parent.create(recursive: true);
+        await out.writeAsBytes(entry.content as List<int>, flush: true);
+        written++;
       }
-      await out.writeAsBytes(entry.content as List<int>, flush: false);
-      written++;
+    } finally {
+      tarStream.close();
     }
     // ignore: avoid_print
-    print('[ModelService] extracted $written files into ${into.path}');
+    print('[ModelService] streamed $written files into $intoPath');
+
+    // Stage 3: drop the intermediate uncompressed tar (~300 MB).
+    try {
+      await File(tarPath).delete();
+    } catch (_) {}
   }
 }
