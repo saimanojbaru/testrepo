@@ -44,6 +44,18 @@ class TtsService {
     final modelFile = ModelService.instance.kokoroModelFile;
     _voiceMap = await _loadVoiceMap(dir);
 
+    // Pre-flight: native sherpa-onnx will SIGSEGV in the background isolate
+    // (silent hang via Future never completing) if any of these are missing.
+    // Surface a Dart exception instead so the BLoC error banner shows the bug.
+    await _assertExists('${dir.path}/$modelFile', 'kokoro model');
+    await _assertExists('${dir.path}/voices.bin', 'kokoro voices');
+    await _assertExists('${dir.path}/tokens.txt', 'kokoro tokens');
+    await _assertExists('${dir.path}/lexicon-us-en.txt', 'kokoro lexicon');
+    await _assertDir('${dir.path}/espeak-ng-data', 'espeak-ng data');
+
+    // ignore: avoid_print
+    print('[TtsService] init kokoro=${dir.path}/$modelFile voices=${_voiceMap.length}');
+
     final cfg = so.OfflineTtsConfig(
       model: so.OfflineTtsModelConfig(
         kokoro: so.OfflineTtsKokoroModelConfig(
@@ -61,7 +73,33 @@ class TtsService {
       // Note: the upstream plugin spells this 'maxNumSenetences' (typo).
       maxNumSenetences: 4,
     );
-    _tts = so.OfflineTts(cfg);
+    try {
+      _tts = so.OfflineTts(cfg);
+    } catch (e, st) {
+      // ignore: avoid_print
+      print('[TtsService] OfflineTts construction failed: $e\n$st');
+      rethrow;
+    }
+    // ignore: avoid_print
+    print('[TtsService] OfflineTts ready, sampleRate=${_tts!.sampleRate}');
+  }
+
+  static Future<void> _assertExists(String path, String label) async {
+    final f = File(path);
+    if (!await f.exists()) {
+      throw StateError('Missing $label at $path');
+    }
+    final len = await f.length();
+    if (len < 1024) {
+      throw StateError('$label at $path is suspiciously small ($len bytes)');
+    }
+  }
+
+  static Future<void> _assertDir(String path, String label) async {
+    final d = Directory(path);
+    if (!await d.exists()) {
+      throw StateError('Missing $label directory at $path');
+    }
   }
 
   void dispose() {

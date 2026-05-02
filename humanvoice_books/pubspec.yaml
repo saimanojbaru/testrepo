@@ -34,6 +34,11 @@ dependencies:
   http: ^1.2.2
   crypto: ^3.0.5
 
+  # Pure-Dart tar.bz2 extraction. Toybox tar on Android is inconsistent
+  # across vendors (some lack --strip-components, some choke on bz2);
+  # going pure-Dart eliminates that whole class of silent failure.
+  archive: ^3.6.1
+
   cupertino_icons: ^1.0.8
 
 dev_dependencies:

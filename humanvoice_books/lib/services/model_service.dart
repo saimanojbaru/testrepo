@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:archive/archive.dart';
 import 'package:crypto/crypto.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
@@ -134,9 +135,22 @@ class ModelService {
     }
 
     if (!await _manifestReady(m)) {
+      // Dump what we DID end up with so the error message is actionable.
+      final inventory = <String>[];
+      try {
+        await for (final entry in modelDir.list(recursive: true)) {
+          final stat = await entry.stat();
+          inventory.add('  ${entry.path} (${stat.size}B)');
+          if (inventory.length >= 50) {
+            inventory.add('  …truncated');
+            break;
+          }
+        }
+      } catch (_) {}
       throw StateError(
-        'Model still not ready after download/extract for ${m.name}. '
-        'Check the URL and that the device has sufficient free space.',
+        'Model "${m.name}" not ready after extract.\n'
+        'Expected sentinel: ${m.rootDirName}/${m.sentinelFile}\n'
+        'Files actually on disk:\n${inventory.isEmpty ? "  (none)" : inventory.join("\n")}',
       );
     }
   }
@@ -202,20 +216,32 @@ class ModelService {
     Directory into,
     int stripComponents,
   ) async {
-    // Android API 26+ ships a usable `tar` via toybox. On the rare device
-    // where it isn't on PATH, the manifest still has the .tar.bz2 around
-    // for a manual fix.
-    final args = <String>[
-      '-xjf',
-      archive.path,
-      '-C',
-      into.path,
-      if (stripComponents > 0) '--strip-components=$stripComponents',
-    ];
-    final result = await Process.run('tar', args, runInShell: true);
-    if (result.exitCode != 0) {
-      // ignore: avoid_print
-      print('[ModelService] tar extract failed: ${result.stderr}');
+    final bytes = await archive.readAsBytes();
+    // Decode bzip2, then untar in pure Dart. Avoids the toybox tar
+    // inconsistencies across Android vendors (some lack --strip-components,
+    // some choke on bz2). Done synchronously — for an ~80 MB tarball this
+    // is a few seconds; if it grows we can move it to a compute() isolate.
+    final tarBytes = BZip2Decoder().decodeBytes(bytes);
+    final tarArchive = TarDecoder().decodeBytes(tarBytes);
+
+    var written = 0;
+    for (final entry in tarArchive) {
+      if (!entry.isFile) continue;
+
+      // Strip leading path components per the manifest.
+      final parts = entry.name.split('/');
+      if (parts.length <= stripComponents) continue;
+      final relPath = parts.sublist(stripComponents).join('/');
+      if (relPath.isEmpty) continue;
+
+      final out = File('${into.path}/$relPath');
+      if (!await out.parent.exists()) {
+        await out.parent.create(recursive: true);
+      }
+      await out.writeAsBytes(entry.content as List<int>, flush: false);
+      written++;
     }
+    // ignore: avoid_print
+    print('[ModelService] extracted $written files into ${into.path}');
   }
 }

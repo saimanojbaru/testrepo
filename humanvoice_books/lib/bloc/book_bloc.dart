@@ -175,33 +175,46 @@ class BookBloc extends Bloc<BookEvent, BookState> {
       }
     }
 
-    // ---- Phase B: Enactor (render) with chapter pipelining ----
+    // ---- Phase B: Enactor (render) ----
+    // Background-isolate prefetch is intentionally disabled in v1: a native
+    // SIGSEGV inside sherpa_onnx (e.g. wrong file path, OOM) kills the
+    // spawned isolate without sending a message back, and the foreground
+    // `await rx.first` then hangs forever — that's the "stuck at Rendering"
+    // symptom users would see. Sequential rendering on the root isolate
+    // surfaces the same crash as a Dart exception via try/catch and lets
+    // the BLoC put the error in the UI banner.
     emit(state.copyWith(stage: Stage.rendering, progress: 0, message: 'Rendering chapters'));
     final tts = TtsService.instance;
-    await tts.init();
+    try {
+      await tts.init().timeout(
+            const Duration(seconds: 60),
+            onTimeout: () => throw TimeoutException('TtsService.init timed out (model load)'),
+          );
+    } catch (err) {
+      emit(state.copyWith(stage: Stage.error, message: 'TTS init: $err'));
+      return;
+    }
+
     final cacheDir = await _cacheDir();
     final assets = <ChapterAsset>[];
     for (var i = 0; i < analyzed.length; i++) {
       final c = analyzed[i];
       emit(state.copyWith(
         progress: i / analyzed.length,
-        message: 'Rendering ${c.title}',
+        message: 'Rendering ${c.title} (${i + 1}/${analyzed.length})',
       ));
 
-      // Background-render the next chapter while we finalize this one.
-      Future<String>? next;
-      if (i + 1 < analyzed.length) {
-        next = tts.renderChapterInBackground(analyzed[i + 1]);
-      }
-
-      final r = await tts.renderChapter(chapter: c, outputDir: cacheDir);
-      assets.add(ChapterAsset(c, r.wavFile, r.duration));
-
-      if (next != null) {
-        // Wait for the prefetch so it doesn't pile up GPU/CPU work — its WAV
-        // is now cached and the next iteration's renderChapter will skip
-        // re-doing work because the file is already on disk.
-        await next;
+      try {
+        final r = await tts.renderChapter(chapter: c, outputDir: cacheDir).timeout(
+              Duration(seconds: 30 + 5 * c.segments.length),
+              onTimeout: () => throw TimeoutException(
+                'renderChapter timed out for "${c.title}" (${c.segments.length} segments)',
+              ),
+            );
+        assets.add(ChapterAsset(c, r.wavFile, r.duration));
+      } catch (err) {
+        emit(state.copyWith(stage: Stage.error, message: 'Render ${c.title}: $err'));
+        return;
       }
     }
 
