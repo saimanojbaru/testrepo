@@ -1,0 +1,14 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
+  exclude:
+    - build/**
+    - "**/*.g.dart"
+
+linter:
+  rules:
+    avoid_print: false
+    prefer_const_constructors: true
+    use_super_parameters: true

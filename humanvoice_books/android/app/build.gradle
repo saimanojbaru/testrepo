@@ -1,0 +1,102 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader -> localProperties.load(reader) }
+}
+
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode") ?: "1"
+def flutterVersionName = localProperties.getProperty("flutter.versionName") ?: "0.1.0"
+
+android {
+    namespace "com.humanvoice.books"
+    // flutter_plugin_android_lifecycle (transitive via permission_handler /
+    // path_provider) requires compileSdk 35; AGP 8.1 will print an
+    // "untested" warning but compiles cleanly.
+    compileSdk 35
+    // Match Flutter 3.24's bundled NDK to avoid second-NDK download.
+    ndkVersion "26.3.11579264"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    defaultConfig {
+        applicationId "com.humanvoice.books"
+        // ONNX Runtime + sherpa-onnx prebuilts target API 21+; we lift to 26
+        // to get scoped storage + READ_MEDIA_AUDIO without legacy fallbacks.
+        minSdk 26
+        targetSdk 34
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+
+        // sherpa_onnx and ffmpeg_kit ship prebuilt JNI libs for these ABIs.
+        // We deliberately drop x86 (32-bit) which neither plugin publishes.
+        ndk {
+            abiFilters "arm64-v8a", "armeabi-v7a", "x86_64"
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging false
+            // Keep symbols in unstripped libs so a SIGSEGV from native code
+            // gives us a usable stack trace.
+            keepDebugSymbols += [
+                "**/libsherpa-onnx-jni.so",
+                "**/libsherpa-onnx-c-api.so",
+                "**/libsherpa-onnx-cxx-api.so",
+                "**/libonnxruntime.so",
+            ]
+        }
+        resources {
+            excludes += [
+                "META-INF/AL2.0",
+                "META-INF/LGPL2.1",
+                "META-INF/DEPENDENCIES",
+                "META-INF/proguard/**",
+            ]
+        }
+    }
+
+    buildTypes {
+        release {
+            // sherpa_onnx + ffmpeg_kit use reflection / JNI lookups that R8
+            // strips on aggressive minify; keep shrinking off until we add
+            // a dedicated keep-rules file.
+            minifyEnabled false
+            shrinkResources false
+            // Flutter scaffold's debug.keystore is fine for sideloading.
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    splits {
+        abi { enable false }
+        density { enable false }
+    }
+}
+
+flutter {
+    source "../.."
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:1.13.1"
+    implementation "androidx.multidex:multidex:2.0.1"
+}
