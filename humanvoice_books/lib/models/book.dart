@@ -60,7 +60,8 @@ class Book {
 
   static List<Book> decodeAll(String raw) {
     final list = jsonDecode(raw);
-    if (list is! List) return const [];
+    if (list is! List) return <Book>[];
+    // .toList() returns a growable list by default; importers will mutate it.
     return list
         .whereType<Map<String, dynamic>>()
         .map(Book.fromJson)

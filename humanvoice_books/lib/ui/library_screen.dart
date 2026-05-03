@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../models/book.dart';
@@ -79,19 +80,49 @@ class _LibraryScreenState extends State<LibraryScreen> {
   }
 
   Future<void> _importEpub() async {
+    // Accept the common EPUB-family extensions. Some Android file managers
+    // serve the raw bytes through a content:// URI without a usable path —
+    // withData ensures we always get the bytes back, which we'll spool to
+    // app-private storage before parsing.
     final r = await FilePicker.platform.pickFiles(
       type: FileType.custom,
-      allowedExtensions: ['epub'],
+      allowedExtensions: const ['epub', 'epub3', 'kepub'],
+      withData: true,
     );
-    final path = r?.files.single.path;
-    if (path == null) return;
+    if (r == null || r.files.isEmpty) return;
+    final picked = r.files.single;
 
     if (!mounted) return;
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('Importing…')));
     try {
+      // Prefer the OS path if file_picker resolved one. Otherwise spool
+      // the bytes (or read from openReadStream) into app-private storage
+      // and import from there — gives us a stable absolute path the
+      // reader can re-open later.
+      String path;
+      if (picked.path != null && picked.path!.isNotEmpty) {
+        path = picked.path!;
+      } else {
+        final bytes = picked.bytes;
+        if (bytes == null) {
+          throw StateError('File picker returned neither path nor bytes');
+        }
+        final dir = await getApplicationSupportDirectory();
+        final inbox = Directory('${dir.path}/inbox');
+        if (!await inbox.exists()) await inbox.create(recursive: true);
+        final safeName = picked.name.replaceAll(RegExp(r'[^A-Za-z0-9._-]'), '_');
+        final out = File('${inbox.path}/$safeName');
+        await out.writeAsBytes(bytes, flush: true);
+        path = out.path;
+      }
       await LibraryService.instance.import(path);
       await _refresh();
+    } on FormatException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text('Not a valid EPUB: $e'),
+      ));
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context)

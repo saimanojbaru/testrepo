@@ -22,11 +22,11 @@ class LibraryService {
   Future<List<Book>> loadAll() async {
     final prefs = await SharedPreferences.getInstance();
     final raw = prefs.getString(_kPrefsKey);
-    if (raw == null || raw.isEmpty) return const [];
+    if (raw == null || raw.isEmpty) return <Book>[];
     try {
       return Book.decodeAll(raw);
     } catch (_) {
-      return const [];
+      return <Book>[];
     }
   }
 
