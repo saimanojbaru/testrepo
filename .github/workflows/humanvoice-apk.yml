@@ -104,13 +104,29 @@ jobs:
       - name: Sanity-check our code wasn't replaced
         run: |
           set -eux
-          grep -q 'HumanVoiceApp'  lib/main.dart
-          grep -q 'home_screen'    lib/main.dart
-          grep -qi 'flutter demo home page' lib/main.dart && {
-            echo "::error::lib/main.dart is the counter-app demo"; exit 1;
-          } || true
-          grep -q 'compileSdk 35'  android/app/build.gradle
-          grep -q 'sherpa_onnx'    pubspec.yaml
+          # main.dart should still wire HumanVoiceApp -> SplashScreen.
+          grep -q 'HumanVoiceApp'         lib/main.dart
+          grep -q 'SplashScreen'          lib/main.dart
+          grep -q 'ui/splash_screen.dart' lib/main.dart
+
+          # The premium reader UI screens must all be present.
+          test -f lib/ui/splash_screen.dart
+          test -f lib/ui/library_screen.dart
+          test -f lib/ui/reader_screen.dart
+
+          # Locked-backend tripwire: services we are not allowed to modify.
+          test -f lib/services/tts_service.dart
+          test -f lib/services/model_service.dart
+
+          # Belt-and-suspenders: any drift back to the Flutter counter-app demo
+          # (e.g. accidental `flutter create --overwrite`) will fail loudly.
+          if grep -qi 'flutter demo home page' lib/main.dart; then
+            echo "::error::lib/main.dart is the counter-app demo"
+            exit 1
+          fi
+
+          grep -q 'compileSdk 35' android/app/build.gradle
+          grep -q 'sherpa_onnx'   pubspec.yaml
 
       - name: flutter pub get
         run: flutter pub get

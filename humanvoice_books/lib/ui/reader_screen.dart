@@ -11,6 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/book.dart';
 import '../services/audio_service.dart';
 import '../services/library_service.dart';
+import '../services/model_service.dart';
 
 enum ReaderTheme { light, sepia, dark }
 
@@ -182,6 +183,32 @@ class _ReaderScreenState extends State<ReaderScreen> {
     final ch = _chapters?[_currentPage];
     if (ch == null) return;
     if (ch.plainText.trim().isEmpty) return;
+
+    // Don't re-synthesize while a render or playback is already underway —
+    // the mini-player owns those controls. Re-entry would silently spawn
+    // a parallel TTS render and double-bill the CPU.
+    final stage = AudioService.instance.state.value.stage;
+    if (stage == AudioStage.preparing ||
+        stage == AudioStage.playing ||
+        stage == AudioStage.paused) {
+      return;
+    }
+
+    // Model gate: surface a clear snackbar instead of letting TtsService.init
+    // throw a "missing kokoro model" StateError that ends up in the mini-player.
+    final ready = await ModelService.instance.kokoroReady();
+    if (!mounted) return;
+    if (!ready) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            'Voice engine not installed. Tap the Library card to download.',
+          ),
+        ),
+      );
+      return;
+    }
+
     await AudioService.instance.playRawText(
       text: ch.plainText,
       chapterTitle: ch.title,
@@ -494,13 +521,34 @@ class _BottomOverlay extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
-                FloatingActionButton.small(
-                  heroTag: 'play_audio_fab',
-                  backgroundColor: theme.accent,
-                  foregroundColor: Colors.white,
-                  elevation: 0,
-                  onPressed: onPlay,
-                  child: const Icon(Icons.play_arrow),
+                ValueListenableBuilder<AudioState>(
+                  valueListenable: AudioService.instance.state,
+                  builder: (ctx, s, _) {
+                    // Mini-player owns controls once audio is live; the FAB is
+                    // only the "kick off rendering" affordance.
+                    if (s.stage == AudioStage.playing ||
+                        s.stage == AudioStage.paused) {
+                      return const SizedBox.shrink();
+                    }
+                    final preparing = s.stage == AudioStage.preparing;
+                    return FloatingActionButton.small(
+                      heroTag: 'play_audio_fab',
+                      backgroundColor: theme.accent,
+                      foregroundColor: Colors.white,
+                      elevation: 0,
+                      onPressed: preparing ? null : onPlay,
+                      child: preparing
+                          ? const SizedBox(
+                              width: 18,
+                              height: 18,
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2.2,
+                                color: Colors.white,
+                              ),
+                            )
+                          : const Icon(Icons.play_arrow),
+                    );
+                  },
                 ),
               ],
             ),

@@ -81,14 +81,15 @@ class AudioService {
     });
   }
 
-  /// Render [text] (typically a chapter or paragraph) via TtsService and
-  /// play it. The render itself is synchronous in the locked backend, so we
-  /// surface a `preparing` stage while it runs and `playing` when audio
-  /// actually begins.
+  /// Render [text] (typically a chapter) via TtsService and play it.
+  /// Surfaces a `preparing` stage while sherpa-onnx synthesizes (can take
+  /// 30–60 s for a long chapter) and `playing` once just_audio actually
+  /// begins. Caching by chapter is intentionally not implemented yet —
+  /// we re-synthesize on every Play tap.
   Future<void> playRawText({
     required String text,
     required String chapterTitle,
-    required String cacheTag,
+    String? cacheTag, // reserved for future per-chapter WAV caching
   }) async {
     _wirePlayerListeners();
     state.value = AudioState(
