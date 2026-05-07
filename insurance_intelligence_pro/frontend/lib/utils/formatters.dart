@@ -3,8 +3,6 @@ import 'package:intl/intl.dart';
 class Formatters {
   Formatters._();
 
-  static final NumberFormat _percent =
-      NumberFormat.decimalPattern('en_US')..maximumFractionDigits = 2;
   static final NumberFormat _signed =
       NumberFormat.decimalPattern('en_US')..maximumFractionDigits = 2;
   static final NumberFormat _compact = NumberFormat.compactSimpleCurrency();

@@ -12,6 +12,7 @@ pubspec.lock
 # Android
 android/.gradle/
 android/local.properties
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
 android/key.properties
 android/captures/
 android/gradle/

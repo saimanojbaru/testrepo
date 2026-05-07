@@ -8,7 +8,6 @@ import '../utils/formatters.dart';
 import '../widgets/animated_loader.dart';
 import '../widgets/error_card.dart';
 import '../widgets/glass_card.dart';
-import '../widgets/section_header.dart';
 
 class UpdatesScreen extends StatefulWidget {
   const UpdatesScreen({super.key});
