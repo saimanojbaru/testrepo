@@ -1,0 +1,110 @@
+{
+  "_note": "Realistic-but-illustrative fallback financials used if SEC EDGAR is unreachable. Values are USD millions.",
+  "metrics": {
+    "PGR": {
+      "insurer_type": "P&C",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 41737, "losses": 30855, "expenses": 5670, "investment_income": 1130, "net_income": 5704, "reserves": 18582, "equity": 13948},
+        {"fy": 2021, "premiums": 46365, "losses": 35100, "expenses": 6220, "investment_income": 1240, "net_income": 3353, "reserves": 21210, "equity": 15246},
+        {"fy": 2022, "premiums": 49591, "losses": 38420, "expenses": 7080, "investment_income": 1565, "net_income": 721,  "reserves": 24025, "equity": 14463},
+        {"fy": 2023, "premiums": 58659, "losses": 41020, "expenses": 7720, "investment_income": 2660, "net_income": 3902, "reserves": 27885, "equity": 20299},
+        {"fy": 2024, "premiums": 71477, "losses": 47200, "expenses": 8810, "investment_income": 3340, "net_income": 8480, "reserves": 31490, "equity": 26900}
+      ]
+    },
+    "TRV": {
+      "insurer_type": "P&C",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 28920, "losses": 18960, "expenses": 8520, "investment_income": 2200, "net_income": 2697, "reserves": 56692, "equity": 29234},
+        {"fy": 2021, "premiums": 30878, "losses": 19980, "expenses": 9120, "investment_income": 2802, "net_income": 3662, "reserves": 58950, "equity": 28886},
+        {"fy": 2022, "premiums": 33706, "losses": 22890, "expenses": 9730, "investment_income": 2536, "net_income": 2842, "reserves": 60902, "equity": 23673},
+        {"fy": 2023, "premiums": 38939, "losses": 25470, "expenses": 10510, "investment_income": 2814, "net_income": 2991, "reserves": 64011, "equity": 24995},
+        {"fy": 2024, "premiums": 41434, "losses": 26210, "expenses": 11120, "investment_income": 3322, "net_income": 5004, "reserves": 67225, "equity": 27913}
+      ]
+    },
+    "ALL": {
+      "insurer_type": "P&C",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 39185, "losses": 26900, "expenses": 8400, "investment_income": 2828, "net_income": 5460, "reserves": 32117, "equity": 26022},
+        {"fy": 2021, "premiums": 44697, "losses": 33170, "expenses": 9280, "investment_income": 2872, "net_income": 1597, "reserves": 35190, "equity": 23973},
+        {"fy": 2022, "premiums": 49612, "losses": 39810, "expenses": 9810, "investment_income": 2403, "net_income": -1397, "reserves": 38330, "equity": 16940},
+        {"fy": 2023, "premiums": 53206, "losses": 41980, "expenses": 10220, "investment_income": 2747, "net_income": -188, "reserves": 41880, "equity": 17791},
+        {"fy": 2024, "premiums": 57100, "losses": 41540, "expenses": 11020, "investment_income": 3310, "net_income": 4900, "reserves": 44900, "equity": 21340}
+      ]
+    },
+    "CB": {
+      "insurer_type": "P&C",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 33820, "losses": 21450, "expenses": 9160, "investment_income": 3357, "net_income": 3533, "reserves": 64779, "equity": 55331},
+        {"fy": 2021, "premiums": 37666, "losses": 22020, "expenses": 9710, "investment_income": 3324, "net_income": 8539, "reserves": 67780, "equity": 59456},
+        {"fy": 2022, "premiums": 41763, "losses": 24260, "expenses": 10170, "investment_income": 3670, "net_income": 5246, "reserves": 70915, "equity": 50266},
+        {"fy": 2023, "premiums": 47810, "losses": 26900, "expenses": 11020, "investment_income": 4842, "net_income": 9430, "reserves": 75200, "equity": 56747},
+        {"fy": 2024, "premiums": 52030, "losses": 28960, "expenses": 12060, "investment_income": 5680, "net_income": 9272, "reserves": 81030, "equity": 62270}
+      ]
+    },
+    "MET": {
+      "insurer_type": "Life",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 41524, "losses": 29050, "expenses": 9030, "investment_income": 16310, "net_income": 5379, "reserves": 286350, "equity": 58471},
+        {"fy": 2021, "premiums": 45891, "losses": 30940, "expenses": 9450, "investment_income": 17712, "net_income": 6549, "reserves": 296470, "equity": 65394},
+        {"fy": 2022, "premiums": 51112, "losses": 33780, "expenses": 9710, "investment_income": 17600, "net_income": 3522, "reserves": 305810, "equity": 33877},
+        {"fy": 2023, "premiums": 53910, "losses": 35420, "expenses": 10010, "investment_income": 19920, "net_income": 1487, "reserves": 312985, "equity": 31130},
+        {"fy": 2024, "premiums": 56230, "losses": 36470, "expenses": 10240, "investment_income": 21210, "net_income": 4216, "reserves": 318420, "equity": 32940}
+      ]
+    },
+    "PRU": {
+      "insurer_type": "Life",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 33715, "losses": 24520, "expenses": 7610, "investment_income": 14210, "net_income": -374, "reserves": 412130, "equity": 67054},
+        {"fy": 2021, "premiums": 36190, "losses": 25920, "expenses": 7860, "investment_income": 14920, "net_income": 7724, "reserves": 421070, "equity": 68352},
+        {"fy": 2022, "premiums": 38150, "losses": 27360, "expenses": 8090, "investment_income": 14110, "net_income": -1645, "reserves": 425890, "equity": 25372},
+        {"fy": 2023, "premiums": 39060, "losses": 27940, "expenses": 8260, "investment_income": 16030, "net_income": 2488, "reserves": 432010, "equity": 27272},
+        {"fy": 2024, "premiums": 41020, "losses": 28890, "expenses": 8470, "investment_income": 17340, "net_income": 2810, "reserves": 438600, "equity": 28910}
+      ]
+    },
+    "AFL": {
+      "insurer_type": "Life",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 19783, "losses": 11820, "expenses": 3780, "investment_income": 3552, "net_income": 4778, "reserves": 105320, "equity": 33082},
+        {"fy": 2021, "premiums": 19808, "losses": 11410, "expenses": 3960, "investment_income": 3679, "net_income": 4283, "reserves": 102140, "equity": 31840},
+        {"fy": 2022, "premiums": 17783, "losses": 10180, "expenses": 4070, "investment_income": 3620, "net_income": 4419, "reserves": 96250,  "equity": 25693},
+        {"fy": 2023, "premiums": 17800, "losses": 9870,  "expenses": 4150, "investment_income": 3990, "net_income": 4660, "reserves": 95030,  "equity": 25800},
+        {"fy": 2024, "premiums": 18620, "losses": 10210, "expenses": 4260, "investment_income": 4480, "net_income": 5230, "reserves": 96420,  "equity": 27340}
+      ]
+    },
+    "DEFAULT_PC": {
+      "insurer_type": "P&C",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 5000, "losses": 3300, "expenses": 1450, "investment_income": 200, "net_income": 220, "reserves": 6500, "equity": 2200},
+        {"fy": 2021, "premiums": 5400, "losses": 3700, "expenses": 1530, "investment_income": 215, "net_income": 240, "reserves": 6800, "equity": 2300},
+        {"fy": 2022, "premiums": 5700, "losses": 4150, "expenses": 1610, "investment_income": 220, "net_income": 80,  "reserves": 7100, "equity": 2280},
+        {"fy": 2023, "premiums": 6100, "losses": 4250, "expenses": 1700, "investment_income": 290, "net_income": 320, "reserves": 7400, "equity": 2450},
+        {"fy": 2024, "premiums": 6500, "losses": 4400, "expenses": 1780, "investment_income": 360, "net_income": 460, "reserves": 7700, "equity": 2640}
+      ]
+    },
+    "DEFAULT_LIFE": {
+      "insurer_type": "Life",
+      "fiscal_year": 2024,
+      "fiscal_history": [
+        {"fy": 2020, "premiums": 8000, "losses": 5400, "expenses": 1500, "investment_income": 2400, "net_income": 540,  "reserves": 48000, "equity": 6800},
+        {"fy": 2021, "premiums": 8400, "losses": 5650, "expenses": 1560, "investment_income": 2520, "net_income": 600,  "reserves": 49500, "equity": 7000},
+        {"fy": 2022, "premiums": 8700, "losses": 5800, "expenses": 1600, "investment_income": 2480, "net_income": 420,  "reserves": 50800, "equity": 6300},
+        {"fy": 2023, "premiums": 9000, "losses": 5950, "expenses": 1640, "investment_income": 2700, "net_income": 560,  "reserves": 52100, "equity": 6700},
+        {"fy": 2024, "premiums": 9400, "losses": 6050, "expenses": 1690, "investment_income": 2920, "net_income": 720,  "reserves": 53400, "equity": 7100}
+      ]
+    }
+  },
+  "industry_benchmarks": {
+    "P&C":         {"loss_ratio": 67.5, "expense_ratio": 27.0, "combined_ratio": 96.0, "investment_yield": 4.2},
+    "Life":        {"persistency": 92.0, "investment_yield": 4.6, "premium_growth": 4.0},
+    "Health":      {"medical_loss_ratio": 86.5, "expense_ratio": 11.0},
+    "Reinsurance": {"loss_ratio": 64.0, "expense_ratio": 31.0, "combined_ratio": 92.0}
+  }
+}

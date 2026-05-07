@@ -1,0 +1,42 @@
+{
+  "_note": "Curated insurance-sector ticker -> CIK fallback (used when SEC EDGAR ticker file is unavailable). CIKs are 10-digit zero-padded.",
+  "companies": [
+    {"ticker": "BRK.B", "cik": "0001067983", "name": "Berkshire Hathaway Inc.", "type": "Multiline"},
+    {"ticker": "PGR",   "cik": "0000080661", "name": "Progressive Corp.",       "type": "P&C"},
+    {"ticker": "TRV",   "cik": "0000086312", "name": "Travelers Companies Inc.","type": "P&C"},
+    {"ticker": "ALL",   "cik": "0000899051", "name": "Allstate Corp.",           "type": "P&C"},
+    {"ticker": "CB",    "cik": "0000896159", "name": "Chubb Limited",            "type": "P&C"},
+    {"ticker": "AIG",   "cik": "0000005272", "name": "American International Group Inc.", "type": "Multiline"},
+    {"ticker": "HIG",   "cik": "0000874766", "name": "Hartford Financial Services Group", "type": "P&C"},
+    {"ticker": "CINF",  "cik": "0000020286", "name": "Cincinnati Financial Corp.", "type": "P&C"},
+    {"ticker": "WRB",   "cik": "0000011544", "name": "W. R. Berkley Corp.",       "type": "P&C"},
+    {"ticker": "MKL",   "cik": "0000062709", "name": "Markel Group Inc.",         "type": "P&C"},
+    {"ticker": "RLI",   "cik": "0000084129", "name": "RLI Corp.",                 "type": "P&C"},
+    {"ticker": "EG",    "cik": "0001056903", "name": "Everest Group Ltd.",        "type": "Reinsurance"},
+    {"ticker": "RNR",   "cik": "0000913144", "name": "RenaissanceRe Holdings",    "type": "Reinsurance"},
+    {"ticker": "ACGL",  "cik": "0000947484", "name": "Arch Capital Group",        "type": "P&C"},
+    {"ticker": "MET",   "cik": "0001099219", "name": "MetLife Inc.",              "type": "Life"},
+    {"ticker": "PRU",   "cik": "0001137774", "name": "Prudential Financial Inc.", "type": "Life"},
+    {"ticker": "AFL",   "cik": "0000004977", "name": "Aflac Inc.",                "type": "Life"},
+    {"ticker": "LNC",   "cik": "0000059558", "name": "Lincoln National Corp.",    "type": "Life"},
+    {"ticker": "PFG",   "cik": "0001126328", "name": "Principal Financial Group", "type": "Life"},
+    {"ticker": "GL",    "cik": "0000320335", "name": "Globe Life Inc.",           "type": "Life"},
+    {"ticker": "UNM",   "cik": "0000005513", "name": "Unum Group",                "type": "Life"},
+    {"ticker": "VOYA",  "cik": "0001535929", "name": "Voya Financial Inc.",       "type": "Life"},
+    {"ticker": "CNO",   "cik": "0001224608", "name": "CNO Financial Group",       "type": "Life"},
+    {"ticker": "AEL",   "cik": "0001039828", "name": "American Equity Inv. Life", "type": "Life"},
+    {"ticker": "UNH",   "cik": "0000731766", "name": "UnitedHealth Group",        "type": "Health"},
+    {"ticker": "ELV",   "cik": "0001156039", "name": "Elevance Health Inc.",      "type": "Health"},
+    {"ticker": "CI",    "cik": "0001739940", "name": "Cigna Group",               "type": "Health"},
+    {"ticker": "HUM",   "cik": "0000049071", "name": "Humana Inc.",               "type": "Health"},
+    {"ticker": "CNC",   "cik": "0001071739", "name": "Centene Corporation",       "type": "Health"},
+    {"ticker": "MOH",   "cik": "0001179929", "name": "Molina Healthcare Inc.",    "type": "Health"}
+  ],
+  "peer_groups": {
+    "P&C":          ["PGR", "TRV", "ALL", "CB", "HIG", "CINF", "WRB", "MKL", "RLI", "ACGL"],
+    "Life":         ["MET", "PRU", "AFL", "LNC", "PFG", "GL", "UNM", "VOYA", "CNO"],
+    "Health":       ["UNH", "ELV", "CI", "HUM", "CNC", "MOH"],
+    "Reinsurance":  ["EG", "RNR", "ACGL"],
+    "Multiline":    ["BRK.B", "AIG"]
+  }
+}
