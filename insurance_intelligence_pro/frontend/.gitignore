@@ -7,20 +7,8 @@
 .pub/
 build/
 .fvm/
-pubspec.lock
 
-# Android
-android/.gradle/
-android/local.properties
-android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
-android/key.properties
-android/captures/
-android/gradle/
-android/gradlew
-android/gradlew.bat
-android/app/debug
-android/app/profile
-android/app/release
+# Android (project-level overrides live in android/.gitignore)
 
 # iOS / macOS
 ios/Pods/
