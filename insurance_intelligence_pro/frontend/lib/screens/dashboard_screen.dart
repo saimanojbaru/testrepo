@@ -7,81 +7,22 @@ import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 import '../widgets/glass_card.dart';
 import '../services/api_service.dart';
+import '../services/live_news_service.dart';
 import '../widgets/insight_card.dart';
 import '../widgets/section_header.dart';
 import '../widgets/sparkline.dart';
 import 'news_detail_screen.dart';
 import 'settings_screen.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final pulse = AnalyticsService.instance.pulse();
-    final mp = MarketPulse.fromJson(pulse);
-    final headlines = AnalyticsService.instance
-        .topNews(limit: 5)
-        .map((e) => NewsItem.fromJson(e))
-        .toList();
-
-    return SafeArea(
-      bottom: false,
-      child: ListView(
-        padding: const EdgeInsets.fromLTRB(20, 24, 20, 120),
-        children: [
-          const _DashboardHeader(),
-          const SizedBox(height: 24),
-          _PulseHero(headline: mp.headline),
-          const SizedBox(height: 20),
-          const SectionHeader(
-            title: 'Market Pulse',
-            subtitle: 'Insurance-specific signals updated continuously',
-          ),
-          _Indicators(indicators: mp.indicators, sparklines: mp.sparklines),
-          const SizedBox(height: 24),
-          const SectionHeader(
-            title: 'Today\'s Insights',
-            subtitle: 'Conclusions, not data — pick your move',
-          ),
-          ...List.generate(
-            mp.insights.length,
-            (i) => Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: InsightCard(
-                insight: mp.insights[i],
-                index: i,
-                onTap: () => _showInsightDetail(context, mp.insights[i]),
-              ),
-            ),
-          ),
-          const SizedBox(height: 8),
-          const SectionHeader(
-            title: 'Top Headlines',
-            subtitle: 'Curated from public industry sources',
-          ),
-          ...List.generate(
-            headlines.length,
-            (i) => Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: _NewsTile(item: headlines[i], index: i),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-class _DashboardHeader extends StatefulWidget {
-  const _DashboardHeader();
-
-  @override
-  State<_DashboardHeader> createState() => _DashboardHeaderState();
-}
-
-class _DashboardHeaderState extends State<_DashboardHeader> {
-  bool? _live;
+class _DashboardScreenState extends State<DashboardScreen> {
+  List<NewsItem> _liveHeadlines = const [];
 
   @override
   void initState() {
@@ -90,22 +31,121 @@ class _DashboardHeaderState extends State<_DashboardHeader> {
   }
 
   Future<void> _refresh() async {
-    if (!ApiService.instance.isConfigured) {
-      if (mounted) setState(() => _live = false);
-      return;
-    }
-    final ok = await ApiService.instance.probe();
-    if (mounted) setState(() => _live = ok);
+    final live = await LiveNewsService.instance.fetchAll();
+    if (!mounted) return;
+    setState(() => _liveHeadlines = live.take(6).toList());
   }
 
   @override
   Widget build(BuildContext context) {
-    final isConfigured = ApiService.instance.isConfigured;
-    final live = _live == true && isConfigured;
+    final pulse = AnalyticsService.instance.pulse();
+    final mp = MarketPulse.fromJson(pulse);
+    // Live headlines first; curated baseline appended for resilience.
+    final curated = AnalyticsService.instance
+        .topNews(limit: 5)
+        .map((e) => NewsItem.fromJson(e))
+        .toList();
+    final seen = <String>{};
+    final headlines = <NewsItem>[];
+    for (final n in [..._liveHeadlines, ...curated]) {
+      final k = n.title.trim().toLowerCase();
+      if (seen.contains(k)) continue;
+      seen.add(k);
+      headlines.add(n);
+      if (headlines.length >= 6) break;
+    }
+    final isLive = _liveHeadlines.isNotEmpty;
+
+    return SafeArea(
+      bottom: false,
+      child: RefreshIndicator(
+        onRefresh: _refresh,
+        color: AppColors.accent,
+        backgroundColor: AppColors.surface,
+        child: ListView(
+          padding: const EdgeInsets.fromLTRB(20, 24, 20, 120),
+          children: [
+            _DashboardHeader(isLive: isLive),
+            const SizedBox(height: 24),
+            _PulseHero(headline: mp.headline),
+            const SizedBox(height: 20),
+            const SectionHeader(
+              title: 'Market Pulse',
+              subtitle: 'Tap any indicator for the rationale',
+            ),
+            _Indicators(
+                indicators: mp.indicators, sparklines: mp.sparklines),
+            const SizedBox(height: 24),
+            const SectionHeader(
+              title: 'Today\'s Insights',
+              subtitle: 'Tap a card for full context',
+            ),
+            ...List.generate(
+              mp.insights.length,
+              (i) => Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: InsightCard(
+                  insight: mp.insights[i],
+                  index: i,
+                  onTap: () =>
+                      _showInsightDetail(context, mp.insights[i]),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            SectionHeader(
+              title: 'Top Headlines',
+              subtitle: isLive
+                  ? 'Live · ${_liveHeadlines.length} fresh from RSS · tap a card for full source'
+                  : 'Loading live feed… curated baseline visible',
+            ),
+            ...List.generate(
+              headlines.length,
+              (i) => Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: _NewsTile(item: headlines[i], index: i),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _DashboardHeader extends StatefulWidget {
+  final bool isLive;
+  const _DashboardHeader({this.isLive = false});
+
+  @override
+  State<_DashboardHeader> createState() => _DashboardHeaderState();
+}
+
+class _DashboardHeaderState extends State<_DashboardHeader> {
+  bool _backendReachable = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshBackend();
+  }
+
+  Future<void> _refreshBackend() async {
+    if (!ApiService.instance.isConfigured) {
+      if (mounted) setState(() => _backendReachable = false);
+      return;
+    }
+    final ok = await ApiService.instance.probe();
+    if (mounted) setState(() => _backendReachable = ok);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // The pill is LIVE if either the on-device RSS pull succeeded OR
+    // a configured backend is responding.
+    final live = widget.isLive || _backendReachable;
     final color = live ? AppColors.positive : AppColors.warning;
-    final label = live
-        ? 'LIVE'
-        : (isConfigured ? 'OFFLINE' : 'CURATED');
+    final label = live ? 'LIVE' : 'LOADING';
     return Row(
       children: [
         Container(
@@ -146,7 +186,7 @@ class _DashboardHeaderState extends State<_DashboardHeader> {
           onTap: () async {
             await Navigator.of(context).push(MaterialPageRoute(
                 builder: (_) => const SettingsScreen()));
-            _refresh();
+            _refreshBackend();
           },
           child: Container(
             padding:
@@ -391,6 +431,9 @@ class _NewsTile extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(width: 8),
+          const Icon(Icons.arrow_forward_ios_rounded,
+              color: AppColors.accent, size: 12),
         ],
       ),
     ).animate().fadeIn(duration: 350.ms, delay: (60 * index).ms);

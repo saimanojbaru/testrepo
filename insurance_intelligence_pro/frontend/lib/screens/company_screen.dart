@@ -7,6 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../models/company.dart';
 import '../models/kpi.dart';
 import '../services/analytics_service.dart';
+import '../services/live_sec_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 import '../widgets/glass_card.dart';
@@ -32,12 +33,27 @@ class _CompanyScreenState extends State<CompanyScreen> {
   CompanyAnalysis? _analysis;
   List<Map<String, dynamic>> _suggestions = [];
   final Set<int> _visibleSeries = {0, 1, 4};
+  FilingSource? _liveFilingSource;
 
   @override
   void initState() {
     super.initState();
     _analysis = AnalyticsService.instance.analyzeCompany('PGR');
     _controller.addListener(_onChanged);
+    _enrichWithLiveSec();
+  }
+
+  /// Hit SEC EDGAR for the real most-recent 10-K accession + filed
+  /// date. Result is overlaid on top of the curated analysis.
+  Future<void> _enrichWithLiveSec() async {
+    final a = _analysis;
+    if (a == null || a.company.cik.isEmpty) return;
+    final src = await LiveSecService.instance.latestAnnualReport(
+      cik: a.company.cik,
+      ticker: a.company.ticker,
+    );
+    if (!mounted || src == null) return;
+    setState(() => _liveFilingSource = src);
   }
 
   @override
@@ -66,7 +82,9 @@ class _CompanyScreenState extends State<CompanyScreen> {
     setState(() {
       _analysis = AnalyticsService.instance.analyzeCompany(query);
       _suggestions = [];
+      _liveFilingSource = null;
     });
+    _enrichWithLiveSec();
   }
 
   @override
@@ -94,6 +112,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
           if (_analysis != null)
             _AnalysisBody(
               analysis: _analysis!,
+              liveFilingSource: _liveFilingSource,
               visible: _visibleSeries,
               onToggleSeries: (i) {
                 setState(() {
@@ -290,10 +309,12 @@ class _SuggestionTile extends StatelessWidget {
 
 class _AnalysisBody extends StatelessWidget {
   final CompanyAnalysis analysis;
+  final FilingSource? liveFilingSource;
   final Set<int> visible;
   final ValueChanged<int> onToggleSeries;
   const _AnalysisBody({
     required this.analysis,
+    this.liveFilingSource,
     required this.visible,
     required this.onToggleSeries,
   });
@@ -365,13 +386,17 @@ class _AnalysisBody extends StatelessWidget {
         if (analysis.rawMetrics.isNotEmpty) ...[
           SectionHeader(
             title: 'Latest filing snapshot',
-            subtitle:
-                'Source · Form 10-K · FY${analysis.lastFiscalYear ?? "-"} · filed Q1 ${(analysis.lastFiscalYear ?? 0) + 1} · SEC EDGAR',
+            subtitle: liveFilingSource != null
+                ? 'Live from SEC EDGAR · ${liveFilingSource!.form} · ${liveFilingSource!.fiscalYear} · filed ${liveFilingSource!.filedDate}'
+                : 'Source · Form 10-K · FY${analysis.lastFiscalYear ?? "-"} · filed Q1 ${(analysis.lastFiscalYear ?? 0) + 1} · SEC EDGAR',
           ),
           _RawMetricsTable(
-              metrics: analysis.rawMetrics,
-              fiscalYear: analysis.lastFiscalYear,
-              ticker: analysis.company.ticker),
+            metrics: analysis.rawMetrics,
+            fiscalYear: analysis.lastFiscalYear,
+            ticker: analysis.company.ticker,
+            liveSource: liveFilingSource,
+            cik: analysis.company.cik,
+          ),
           const SizedBox(height: 16),
         ],
         Center(
@@ -585,16 +610,22 @@ class _RawMetricsTable extends StatelessWidget {
   final Map<String, dynamic> metrics;
   final int? fiscalYear;
   final String? ticker;
+  final String? cik;
+  final FilingSource? liveSource;
   const _RawMetricsTable({
     required this.metrics,
     this.fiscalYear,
     this.ticker,
+    this.cik,
+    this.liveSource,
   });
 
   Future<void> _openEdgar() async {
-    if (ticker == null) return;
-    final uri = Uri.parse(
-        'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=$ticker&type=10-K');
+    final url = liveSource?.url ?? (cik == null
+        ? 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=${ticker ?? ""}&type=10-K'
+        : 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=$cik&type=10-K');
+    final uri = Uri.tryParse(url);
+    if (uri == null) return;
     try {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     } catch (_) {}
@@ -604,8 +635,13 @@ class _RawMetricsTable extends StatelessWidget {
   Widget build(BuildContext context) {
     final rows = metrics.entries.where((e) => e.value != null).toList()
       ..sort((a, b) => a.key.compareTo(b.key));
-    final fyLabel = fiscalYear == null ? '–' : 'FY$fiscalYear';
-    final filed = fiscalYear == null ? '' : 'Filed Q1 ${fiscalYear! + 1}';
+    final isLive = liveSource != null;
+    final form = liveSource?.form ?? '10-K';
+    final fyLabel = liveSource?.fiscalYear ??
+        (fiscalYear == null ? '–' : 'FY$fiscalYear');
+    final filed = liveSource?.filedDate.isNotEmpty == true
+        ? 'Filed ${liveSource!.filedDate}'
+        : (fiscalYear == null ? '' : 'Filed Q1 ${fiscalYear! + 1}');
     return GlassCard(
       padding: EdgeInsets.zero,
       child: Column(
@@ -635,11 +671,35 @@ class _RawMetricsTable extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Form 10-K · $fyLabel',
-                          style: const TextStyle(
-                              color: AppColors.textPrimary,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 12)),
+                      Row(
+                        children: [
+                          Text('Form $form · $fyLabel',
+                              style: const TextStyle(
+                                  color: AppColors.textPrimary,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 12)),
+                          const SizedBox(width: 6),
+                          if (isLive)
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 6, vertical: 2),
+                              decoration: BoxDecoration(
+                                color: AppColors.positive
+                                    .withValues(alpha: 0.18),
+                                borderRadius: BorderRadius.circular(4),
+                                border: Border.all(
+                                    color: AppColors.positive
+                                        .withValues(alpha: 0.5)),
+                              ),
+                              child: const Text('LIVE',
+                                  style: TextStyle(
+                                      color: AppColors.positive,
+                                      fontSize: 9,
+                                      letterSpacing: 1.2,
+                                      fontWeight: FontWeight.w800)),
+                            )
+                        ],
+                      ),
                       const SizedBox(height: 2),
                       Text(
                         filed.isEmpty

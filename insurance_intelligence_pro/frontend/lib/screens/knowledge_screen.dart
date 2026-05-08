@@ -370,6 +370,32 @@ class _ArticleCard extends StatelessWidget {
                   .toList(),
             ),
           ],
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              if (article.fsliTable.isNotEmpty)
+                Text(
+                  '${article.fsliTable.length} FSLI rows · ${article.references.length} sources',
+                  style: const TextStyle(
+                      color: AppColors.textMuted, fontSize: 10.5),
+                )
+              else if (article.references.isNotEmpty)
+                Text(
+                  '${article.references.length} sources',
+                  style: const TextStyle(
+                      color: AppColors.textMuted, fontSize: 10.5),
+                ),
+              const Spacer(),
+              const Text('Open',
+                  style: TextStyle(
+                      color: AppColors.accent,
+                      fontSize: 11.5,
+                      fontWeight: FontWeight.w700)),
+              const SizedBox(width: 4),
+              const Icon(Icons.arrow_forward_ios_rounded,
+                  color: AppColors.accent, size: 11),
+            ],
+          ),
         ],
       ),
     ).animate().fadeIn(duration: 350.ms, delay: (40 * index).ms);

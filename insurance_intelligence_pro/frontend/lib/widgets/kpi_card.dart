@@ -126,28 +126,57 @@ class KpiCard extends StatelessWidget {
           ],
           if (kpi.source != null) ...[
             const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: AppColors.accent.withValues(alpha: 0.10),
+                borderRadius: BorderRadius.circular(6),
+                border: Border.all(
+                    color: AppColors.accent.withValues(alpha: 0.30)),
+              ),
+              child: Row(
+                children: [
+                  const Icon(Icons.description_outlined,
+                      color: AppColors.accent, size: 11),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Text(
+                      kpi.source!.displayLabel,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                          color: AppColors.accent,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.4),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+          if (onTap != null) ...[
+            const SizedBox(height: 8),
             Row(
               children: [
-                const Icon(Icons.description_outlined,
-                    color: AppColors.accent, size: 11),
+                const Icon(Icons.tune_rounded,
+                    color: AppColors.textMuted, size: 11),
                 const SizedBox(width: 4),
-                Expanded(
+                const Expanded(
                   child: Text(
-                    kpi.source!.displayLabel,
+                    'Tap · formula · source · peer rank',
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        color: AppColors.accent,
+                    style: TextStyle(
+                        color: AppColors.textMuted,
                         fontSize: 10,
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 0.4),
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 0.2),
                   ),
                 ),
-                if (onTap != null) ...[
-                  const SizedBox(width: 4),
-                  const Icon(Icons.arrow_forward_ios_rounded,
-                      color: AppColors.textMuted, size: 9),
-                ],
+                const Icon(Icons.arrow_forward_ios_rounded,
+                    color: AppColors.accent, size: 10),
               ],
             ),
           ],

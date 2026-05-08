@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../models/insight.dart';
 import '../services/analytics_service.dart';
-import '../services/api_service.dart';
+import '../services/live_news_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 import '../widgets/glass_card.dart';
@@ -24,23 +24,21 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
   @override
   void initState() {
     super.initState();
-    _refreshLive();
+    _refreshLive(refresh: false);
   }
 
-  /// Fire-and-forget: try the configured backend for fresh news.
-  /// Curated headlines stay visible while we wait; if the request
-  /// succeeds, live items are merged on top.
-  Future<void> _refreshLive() async {
-    if (!ApiService.instance.isConfigured) {
-      if (mounted) setState(() => _live = const []);
-      return;
-    }
+  /// Pulls live RSS from the half-dozen industry feeds wired into
+  /// LiveNewsService.  No backend deployment required — runs on-device.
+  /// Curated headlines stay visible while the network call completes.
+  Future<void> _refreshLive({bool refresh = true}) async {
     setState(() => _liveLoading = true);
-    final raw = await ApiService.instance.liveNews(
-        category: _selected == 'All' ? null : _selected, limit: 30);
+    final items = await LiveNewsService.instance.fetchByCategory(
+      _selected,
+      refresh: refresh,
+    );
     if (!mounted) return;
     setState(() {
-      _live = raw.map((m) => NewsItem.fromJson(Map<String, dynamic>.from(m))).toList();
+      _live = items;
       _liveLoading = false;
     });
   }
@@ -81,17 +79,50 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
           const SizedBox(height: 6),
           Row(
             children: [
+              if (isLive)
+                Container(
+                  margin: const EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: AppColors.positive.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                        color: AppColors.positive.withValues(alpha: 0.5)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 6,
+                        height: 6,
+                        decoration: const BoxDecoration(
+                            color: AppColors.positive,
+                            shape: BoxShape.circle),
+                      ),
+                      const SizedBox(width: 6),
+                      const Text(
+                        'LIVE',
+                        style: TextStyle(
+                            color: AppColors.positive,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 1.4),
+                      ),
+                    ],
+                  ),
+                ),
               Expanded(
                 child: Text(
                   isLive
-                      ? 'Live: ${_live.length} fresh + curated baseline'
-                      : 'Curated regulatory, market, and rating-agency signals.',
+                      ? '${_live.length} live + curated baseline · pulled from public RSS'
+                      : 'Pulling live RSS from Insurance Journal / SEC / NAIC / AM Best / Artemis / Reinsurance News…',
                   style: const TextStyle(
-                      color: AppColors.textMuted, fontSize: 13),
+                      color: AppColors.textMuted, fontSize: 12.5, height: 1.35),
                 ),
               ),
               IconButton(
-                onPressed: _liveLoading ? null : _refreshLive,
+                onPressed: _liveLoading ? null : () => _refreshLive(refresh: true),
                 icon: _liveLoading
                     ? const SizedBox(
                         width: 14,
@@ -284,6 +315,15 @@ class _UpdateCard extends StatelessWidget {
               Text(Formatters.date(item.published),
                   style: const TextStyle(
                       color: AppColors.textMuted, fontSize: 11)),
+              const Spacer(),
+              const Text('Tap for full source',
+                  style: TextStyle(
+                      color: AppColors.accent,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700)),
+              const SizedBox(width: 4),
+              const Icon(Icons.arrow_forward_ios_rounded,
+                  color: AppColors.accent, size: 11),
             ],
           ),
         ],
