@@ -42,7 +42,7 @@ class RiskRadarChart extends StatelessWidget {
           ),
           dataSets: [
             RadarDataSet(
-              fillColor: AppColors.accent.withOpacity(0.18),
+              fillColor: AppColors.accent.withValues(alpha: 0.18),
               borderColor: AppColors.accent,
               borderWidth: 2,
               entryRadius: 4,
@@ -53,8 +53,8 @@ class RiskRadarChart extends StatelessWidget {
           ],
           radarBackgroundColor: Colors.transparent,
         ),
-        swapAnimationDuration: const Duration(milliseconds: 700),
-        swapAnimationCurve: Curves.easeOutCubic,
+        duration: const Duration(milliseconds: 700),
+        curve: Curves.easeOutCubic,
       ),
     );
   }

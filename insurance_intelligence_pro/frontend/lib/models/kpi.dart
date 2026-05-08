@@ -9,7 +9,7 @@ class Kpi {
   final String status;
   final String? description;
 
-  Kpi({
+  const Kpi({
     required this.code,
     required this.label,
     required this.value,
@@ -39,7 +39,8 @@ class KpiSet {
   final List<Kpi> primary;
   final List<Kpi> secondary;
 
-  KpiSet({required this.insurerType, required this.primary, required this.secondary});
+  const KpiSet(
+      {required this.insurerType, required this.primary, required this.secondary});
 
   factory KpiSet.fromJson(Map<String, dynamic> j) => KpiSet(
         insurerType: j['insurer_type'] ?? 'Unknown',
@@ -57,7 +58,8 @@ class RiskFactor {
   final double score;
   final String band;
   final String? note;
-  RiskFactor({required this.label, required this.score, required this.band, this.note});
+  const RiskFactor(
+      {required this.label, required this.score, required this.band, this.note});
 
   factory RiskFactor.fromJson(Map<String, dynamic> j) => RiskFactor(
         label: j['label'] ?? '',
@@ -70,7 +72,7 @@ class RiskFactor {
 class RiskRadar {
   final double overall;
   final List<RiskFactor> factors;
-  RiskRadar({required this.overall, required this.factors});
+  const RiskRadar({required this.overall, required this.factors});
 
   factory RiskRadar.fromJson(Map<String, dynamic> j) => RiskRadar(
         overall: (j['overall'] as num? ?? 50).toDouble(),

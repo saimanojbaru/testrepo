@@ -43,7 +43,7 @@ class GlassCard extends StatelessWidget {
         boxShadow: shadows ??
             [
               BoxShadow(
-                color: Colors.black.withOpacity(0.35),
+                color: Colors.black.withValues(alpha: 0.35),
                 blurRadius: 24,
                 offset: const Offset(0, 12),
               ),
@@ -62,8 +62,8 @@ class GlassCard extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(radius),
                 onTap: onTap,
-                splashColor: AppColors.accent.withOpacity(0.07),
-                highlightColor: AppColors.accent.withOpacity(0.05),
+                splashColor: AppColors.accent.withValues(alpha: 0.07),
+                highlightColor: AppColors.accent.withValues(alpha: 0.05),
                 child: card,
               ),
             ),

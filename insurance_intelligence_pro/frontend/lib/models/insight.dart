@@ -5,7 +5,7 @@ class Insight {
   final String icon;
   final List<String> tags;
 
-  Insight({
+  const Insight({
     required this.title,
     this.detail,
     required this.level,

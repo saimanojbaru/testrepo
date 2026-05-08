@@ -4,10 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../models/insight.dart';
-import '../services/api_service.dart';
+import '../services/analytics_service.dart';
 import '../theme/app_colors.dart';
-import '../widgets/animated_loader.dart';
-import '../widgets/error_card.dart';
 import '../widgets/glass_card.dart';
 import '../widgets/section_header.dart';
 
@@ -22,16 +20,12 @@ class _KnowledgeScreenState extends State<KnowledgeScreen> {
   final TextEditingController _search = TextEditingController();
   Timer? _debounce;
   String _framework = 'All';
-  List<KnowledgeArticle> _articles = [];
-  List<String> _frameworks = ['All'];
-  bool _loading = true;
-  String? _error;
+  String _query = '';
 
   @override
   void initState() {
     super.initState();
-    _load();
-    _search.addListener(_onSearchChanged);
+    _search.addListener(_onChanged);
   }
 
   @override
@@ -41,57 +35,24 @@ class _KnowledgeScreenState extends State<KnowledgeScreen> {
     super.dispose();
   }
 
-  Future<void> _load() async {
-    setState(() {
-      _loading = true;
-      _error = null;
-    });
-    try {
-      final r =
-          await ApiService.instance.knowledgeList(framework: _framework);
-      if (!mounted) return;
-      final list = ((r['articles'] as List?) ?? [])
-          .map((e) => KnowledgeArticle.fromJson(e as Map<String, dynamic>))
-          .toList();
-      setState(() {
-        _articles = list;
-        _frameworks =
-            ((r['frameworks'] as List?) ?? ['All']).cast<String>();
-      });
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _error = e.toString());
-    } finally {
-      if (mounted) setState(() => _loading = false);
-    }
-  }
-
-  void _onSearchChanged() {
+  void _onChanged() {
     _debounce?.cancel();
-    final q = _search.text.trim();
-    if (q.isEmpty) {
-      _load();
-      return;
-    }
-    _debounce = Timer(const Duration(milliseconds: 250), () => _searchNow(q));
-  }
-
-  Future<void> _searchNow(String q) async {
-    setState(() => _loading = true);
-    try {
-      final list = await ApiService.instance.knowledgeSearch(q);
-      if (!mounted) return;
-      setState(() => _articles = list);
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _error = e.toString());
-    } finally {
-      if (mounted) setState(() => _loading = false);
-    }
+    _debounce = Timer(const Duration(milliseconds: 120), () {
+      setState(() => _query = _search.text.trim());
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    final svc = AnalyticsService.instance;
+    final frameworks = svc.knowledgeFrameworks();
+    final List<KnowledgeArticle> articles = (_query.isEmpty
+            ? svc.knowledge(framework: _framework)
+            : svc.knowledgeSearch(_query))
+        .map((m) =>
+            KnowledgeArticle.fromJson(Map<String, dynamic>.from(m)))
+        .toList();
+
     return SafeArea(
       bottom: false,
       child: ListView(
@@ -106,8 +67,8 @@ class _KnowledgeScreenState extends State<KnowledgeScreen> {
                 letterSpacing: -0.4),
           ),
           const SizedBox(height: 6),
-          Text(
-            'Insurance accounting, demystified. ASC 944, FAS 60/97/133, and SAP — at a glance.',
+          const Text(
+            'Insurance accounting, demystified. ASC 944, FAS 60/97/133, SAP.',
             style: TextStyle(color: AppColors.textMuted, fontSize: 13),
           ),
           const SizedBox(height: 14),
@@ -115,65 +76,86 @@ class _KnowledgeScreenState extends State<KnowledgeScreen> {
             controller: _search,
             decoration: const InputDecoration(
               hintText: 'Search standards, FSLI, GAAP vs STAT…',
-              prefixIcon: Icon(Icons.search_rounded,
-                  color: AppColors.textMuted),
+              prefixIcon:
+                  Icon(Icons.search_rounded, color: AppColors.textMuted),
             ),
           ),
           const SizedBox(height: 14),
           SizedBox(
-            height: 38,
+            height: 36,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                for (final f in _frameworks)
+                for (final f in frameworks)
                   Padding(
                     padding: const EdgeInsets.only(right: 8),
-                    child: ChoiceChip(
-                      label: Text(f),
+                    child: _FrameworkChip(
+                      label: f,
                       selected: f == _framework,
-                      onSelected: (_) {
-                        setState(() => _framework = f);
+                      onTap: () {
                         _search.clear();
-                        _load();
+                        setState(() {
+                          _framework = f;
+                          _query = '';
+                        });
                       },
-                      selectedColor: AppColors.primary.withOpacity(0.32),
-                      labelStyle: TextStyle(
-                        color: f == _framework
-                            ? AppColors.textPrimary
-                            : AppColors.textMuted,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12,
-                      ),
-                      backgroundColor: AppColors.surfaceElevated,
-                      side: BorderSide(
-                        color: f == _framework
-                            ? AppColors.accent
-                            : AppColors.border,
-                      ),
                     ),
                   )
               ],
             ),
           ),
           const SizedBox(height: 16),
-          if (_loading)
-            const ShimmerList(itemCount: 4, itemHeight: 130)
-          else if (_error != null)
-            ErrorCard(message: _error!, onRetry: _load)
-          else if (_articles.isEmpty)
+          if (articles.isEmpty)
             GlassCard(
-              child: Text('No articles match.',
+              child: const Text('No articles match.',
                   style: TextStyle(color: AppColors.textMuted)),
             )
           else
             ...List.generate(
-              _articles.length,
+              articles.length,
               (i) => Padding(
                 padding: const EdgeInsets.only(bottom: 12),
-                child: _ArticleCard(article: _articles[i], index: i),
+                child: _ArticleCard(article: articles[i], index: i),
               ),
             ),
         ],
+      ),
+    );
+  }
+}
+
+class _FrameworkChip extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  const _FrameworkChip(
+      {required this.label, required this.selected, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(20),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+          decoration: BoxDecoration(
+            gradient: selected ? AppColors.primaryGradient : null,
+            color: selected ? null : AppColors.surfaceElevated,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+                color: selected ? Colors.transparent : AppColors.border),
+          ),
+          child: Text(label,
+              style: TextStyle(
+                color: selected ? Colors.white : AppColors.textSecondary,
+                fontWeight: FontWeight.w700,
+                fontSize: 11.5,
+                letterSpacing: 0.6,
+              )),
+        ),
       ),
     );
   }
@@ -213,7 +195,7 @@ class _ArticleCard extends StatelessWidget {
                   child: Text(article.fsli!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColors.textMuted, fontSize: 11)),
                 ),
             ],
@@ -229,7 +211,7 @@ class _ArticleCard extends StatelessWidget {
           Text(article.summary,
               maxLines: 3,
               overflow: TextOverflow.ellipsis,
-              style: TextStyle(
+              style: const TextStyle(
                   color: AppColors.textSecondary,
                   fontSize: 12.5,
                   height: 1.45)),
@@ -248,7 +230,7 @@ class _ArticleCard extends StatelessWidget {
                           border: Border.all(color: AppColors.border),
                         ),
                         child: Text(t,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: AppColors.textMuted,
                                 fontSize: 10,
                                 letterSpacing: 0.8,
@@ -268,8 +250,7 @@ class _ArticleCard extends StatelessWidget {
       backgroundColor: AppColors.background,
       isScrollControlled: true,
       shape: const RoundedRectangleBorder(
-        borderRadius:
-            BorderRadius.vertical(top: Radius.circular(28)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
       ),
       builder: (ctx) {
         return DraggableScrollableSheet(
@@ -317,12 +298,13 @@ class _ArticleCard extends StatelessWidget {
                         height: 1.2)),
                 const SizedBox(height: 12),
                 Text(a.summary,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: AppColors.textSecondary,
                         fontSize: 13.5,
                         height: 1.5)),
                 const SizedBox(height: 18),
-                if ((a.gaapView ?? '').isNotEmpty || (a.statView ?? '').isNotEmpty)
+                if ((a.gaapView ?? '').isNotEmpty ||
+                    (a.statView ?? '').isNotEmpty)
                   _GaapStatTable(
                       gaap: a.gaapView ?? '–',
                       stat: a.statView ?? '–'),
@@ -381,14 +363,14 @@ class _Pane extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(label,
-            style: TextStyle(
+            style: const TextStyle(
                 color: AppColors.accent,
                 fontSize: 11,
                 fontWeight: FontWeight.w800,
                 letterSpacing: 1.4)),
         const SizedBox(height: 6),
         Text(body,
-            style: TextStyle(
+            style: const TextStyle(
                 color: AppColors.textSecondary,
                 fontSize: 12.5,
                 height: 1.5)),
@@ -437,8 +419,8 @@ class _MarkdownBody extends StatelessWidget {
                             shape: BoxShape.circle))),
               ),
               Expanded(
-                child: Text(l.substring(2),
-                    style: TextStyle(
+                child: Text(l.substring(2).replaceAll('**', ''),
+                    style: const TextStyle(
                         color: AppColors.textSecondary,
                         fontSize: 13,
                         height: 1.5)),
@@ -447,13 +429,12 @@ class _MarkdownBody extends StatelessWidget {
           ),
         ));
       } else if (l.startsWith('```')) {
-        // Skip code-fence markers; render block as text below.
         continue;
       } else {
         widgets.add(Padding(
           padding: const EdgeInsets.symmetric(vertical: 4),
-          child: Text(_stripBold(l),
-              style: TextStyle(
+          child: Text(l.replaceAll('**', '').replaceAll('`', ''),
+              style: const TextStyle(
                   color: AppColors.textSecondary,
                   fontSize: 13,
                   height: 1.55)),
@@ -465,7 +446,4 @@ class _MarkdownBody extends StatelessWidget {
       children: widgets,
     );
   }
-
-  String _stripBold(String s) =>
-      s.replaceAll('**', '').replaceAll('`', '');
 }

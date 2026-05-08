@@ -2,124 +2,65 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../models/insight.dart';
-import '../services/api_service.dart';
+import '../services/analytics_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
-import '../widgets/animated_loader.dart';
-import '../widgets/error_card.dart';
 import '../widgets/glass_card.dart';
 import '../widgets/insight_card.dart';
 import '../widgets/section_header.dart';
 import '../widgets/sparkline.dart';
 
-class DashboardScreen extends StatefulWidget {
+class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   @override
-  State<DashboardScreen> createState() => _DashboardScreenState();
-}
-
-class _DashboardScreenState extends State<DashboardScreen> {
-  late Future<({MarketPulse pulse, List<NewsItem> news})> _future;
-
-  @override
-  void initState() {
-    super.initState();
-    _future = _load();
-  }
-
-  Future<({MarketPulse pulse, List<NewsItem> news})> _load(
-      {bool refresh = false}) async {
-    final pulse = await ApiService.instance.dashboardPulse(refresh: refresh);
-    final news = await ApiService.instance.dashboardTopNews(limit: 5);
-    return (pulse: pulse, news: news);
-  }
-
-  Future<void> _refresh() async {
-    final fut = _load(refresh: true);
-    setState(() => _future = fut);
-    await fut;
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final pulse = AnalyticsService.instance.pulse();
+    final mp = MarketPulse.fromJson(pulse);
+    final headlines = AnalyticsService.instance
+        .topNews(limit: 5)
+        .map((e) => NewsItem.fromJson(e))
+        .toList();
+
     return SafeArea(
       bottom: false,
-      child: RefreshIndicator(
-        color: AppColors.accent,
-        backgroundColor: AppColors.surface,
-        onRefresh: _refresh,
-        child: FutureBuilder<({MarketPulse pulse, List<NewsItem> news})>(
-          future: _future,
-          builder: (context, snap) {
-            if (snap.connectionState == ConnectionState.waiting) {
-              return ListView(
-                padding: const EdgeInsets.fromLTRB(20, 24, 20, 120),
-                children: const [
-                  _DashboardHeader(),
-                  SizedBox(height: 28),
-                  ShimmerCard(height: 120),
-                  SizedBox(height: 16),
-                  ShimmerCard(height: 220),
-                  SizedBox(height: 16),
-                  ShimmerCard(height: 220),
-                ],
-              );
-            }
-            if (snap.hasError) {
-              return ListView(
-                padding: const EdgeInsets.fromLTRB(20, 24, 20, 120),
-                children: [
-                  const _DashboardHeader(),
-                  const SizedBox(height: 24),
-                  ErrorCard(message: '${snap.error}', onRetry: _refresh),
-                ],
-              );
-            }
-            final pulse = snap.data!.pulse;
-            final news = snap.data!.news;
-            return ListView(
-              padding: const EdgeInsets.fromLTRB(20, 24, 20, 120),
-              children: [
-                const _DashboardHeader(),
-                const SizedBox(height: 24),
-                _PulseHero(headline: pulse.headline),
-                const SizedBox(height: 20),
-                const SectionHeader(
-                  title: 'Market Pulse',
-                  subtitle: 'Insurance-specific signals updated continuously',
-                ),
-                _Indicators(
-                    indicators: pulse.indicators, sparklines: pulse.sparklines),
-                const SizedBox(height: 24),
-                const SectionHeader(
-                  title: 'Today\'s Insights',
-                  subtitle: 'Conclusions, not data — pick your move',
-                ),
-                ...List.generate(
-                  pulse.insights.length,
-                  (i) => Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
-                    child:
-                        InsightCard(insight: pulse.insights[i], index: i),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const SectionHeader(
-                  title: 'Top Headlines',
-                  subtitle: 'Curated from public industry feeds',
-                ),
-                ...List.generate(
-                  news.length,
-                  (i) => Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: _NewsTile(item: news[i], index: i),
-                  ),
-                ),
-              ],
-            );
-          },
-        ),
+      child: ListView(
+        padding: const EdgeInsets.fromLTRB(20, 24, 20, 120),
+        children: [
+          const _DashboardHeader(),
+          const SizedBox(height: 24),
+          _PulseHero(headline: mp.headline),
+          const SizedBox(height: 20),
+          const SectionHeader(
+            title: 'Market Pulse',
+            subtitle: 'Insurance-specific signals updated continuously',
+          ),
+          _Indicators(indicators: mp.indicators, sparklines: mp.sparklines),
+          const SizedBox(height: 24),
+          const SectionHeader(
+            title: 'Today\'s Insights',
+            subtitle: 'Conclusions, not data — pick your move',
+          ),
+          ...List.generate(
+            mp.insights.length,
+            (i) => Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: InsightCard(insight: mp.insights[i], index: i),
+            ),
+          ),
+          const SizedBox(height: 8),
+          const SectionHeader(
+            title: 'Top Headlines',
+            subtitle: 'Curated from public industry sources',
+          ),
+          ...List.generate(
+            headlines.length,
+            (i) => Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: _NewsTile(item: headlines[i], index: i),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -181,7 +122,7 @@ class _DashboardHeader extends StatelessWidget {
                     color: AppColors.positive, shape: BoxShape.circle),
               ),
               const SizedBox(width: 6),
-              Text('LIVE',
+              const Text('OFFLINE',
                   style: TextStyle(
                       color: AppColors.positive,
                       fontSize: 10,
@@ -213,7 +154,7 @@ class _PulseHero extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'TODAY\'S TAKE',
                   style: TextStyle(
                     color: AppColors.accent,
@@ -228,7 +169,7 @@ class _PulseHero extends StatelessWidget {
                   style: const TextStyle(
                     color: AppColors.textPrimary,
                     fontWeight: FontWeight.w700,
-                    fontSize: 18,
+                    fontSize: 17,
                     height: 1.35,
                   ),
                 ),
@@ -243,9 +184,10 @@ class _PulseHero extends StatelessWidget {
               gradient: AppColors.primaryGradient,
               boxShadow: [
                 BoxShadow(
-                    color: AppColors.primary.withOpacity(0.4),
-                    blurRadius: 18,
-                    spreadRadius: 1),
+                  color: AppColors.primary.withValues(alpha: 0.4),
+                  blurRadius: 18,
+                  spreadRadius: 1,
+                ),
               ],
             ),
             child: const Icon(Icons.auto_graph_rounded,
@@ -292,7 +234,7 @@ class _Indicators extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(ind.label,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: AppColors.textMuted,
                       fontSize: 10.5,
                       letterSpacing: 0.6,
@@ -301,7 +243,6 @@ class _Indicators extends StatelessWidget {
                   overflow: TextOverflow.ellipsis),
               const SizedBox(height: 6),
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(ind.value,
                       style: const TextStyle(
@@ -327,7 +268,8 @@ class _Indicators extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              if (spark.isNotEmpty) Sparkline(data: spark, color: color, height: 24),
+              if (spark.isNotEmpty)
+                Sparkline(data: spark, color: color, height: 24),
             ],
           ),
         ).animate().fadeIn(duration: 300.ms, delay: (60 * i).ms);
@@ -375,18 +317,18 @@ class _NewsTile extends StatelessWidget {
                 Row(
                   children: [
                     Text(item.source.toUpperCase(),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: AppColors.accent,
                             fontSize: 10,
                             letterSpacing: 1.2,
                             fontWeight: FontWeight.w700)),
                     const SizedBox(width: 8),
                     Text(item.category,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: AppColors.textMuted, fontSize: 10.5)),
                     const Spacer(),
                     Text(Formatters.date(item.published),
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: AppColors.textMuted, fontSize: 10.5)),
                   ],
                 ),

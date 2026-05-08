@@ -55,8 +55,8 @@ class Sparkline extends StatelessWidget {
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          lineColor.withOpacity(0.32),
-                          lineColor.withOpacity(0.0),
+                          lineColor.withValues(alpha: 0.32),
+                          lineColor.withValues(alpha: 0.0),
                         ],
                       ),
                     )

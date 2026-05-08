@@ -84,7 +84,7 @@ class _RingPainter extends CustomPainter {
     final shader = SweepGradient(
       startAngle: -math.pi / 2,
       endAngle: math.pi * 1.5,
-      colors: [color.withOpacity(0.8), color],
+      colors: [color.withValues(alpha: 0.8), color],
     ).createShader(Rect.fromCircle(center: center, radius: radius));
 
     final fg = Paint()

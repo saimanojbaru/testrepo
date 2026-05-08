@@ -5,11 +5,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../models/company.dart';
 import '../models/kpi.dart';
-import '../services/api_service.dart';
+import '../services/analytics_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
-import '../widgets/animated_loader.dart';
-import '../widgets/error_card.dart';
 import '../widgets/glass_card.dart';
 import '../widgets/insight_card.dart';
 import '../widgets/kpi_card.dart';
@@ -30,14 +28,13 @@ class _CompanyScreenState extends State<CompanyScreen> {
   final FocusNode _focus = FocusNode();
   Timer? _debounce;
   CompanyAnalysis? _analysis;
-  String? _error;
-  bool _loading = false;
   List<Map<String, dynamic>> _suggestions = [];
-  Set<int> _visibleSeries = {0, 1, 4};
+  final Set<int> _visibleSeries = {0, 1, 4};
 
   @override
   void initState() {
     super.initState();
+    _analysis = AnalyticsService.instance.analyzeCompany('PGR');
     _controller.addListener(_onChanged);
   }
 
@@ -56,37 +53,18 @@ class _CompanyScreenState extends State<CompanyScreen> {
       setState(() => _suggestions = []);
       return;
     }
-    _debounce = Timer(const Duration(milliseconds: 280), () => _suggest(q));
+    _debounce = Timer(const Duration(milliseconds: 150), () {
+      setState(() => _suggestions =
+          AnalyticsService.instance.suggest(q, limit: 8));
+    });
   }
 
-  Future<void> _suggest(String q) async {
-    try {
-      final res = await ApiService.instance.searchCompanies(q);
-      final list = ((res['suggestions'] as List?) ?? [])
-          .map<Map<String, dynamic>>((e) => Map<String, dynamic>.from(e))
-          .toList();
-      if (!mounted) return;
-      setState(() => _suggestions = list);
-    } catch (_) {}
-  }
-
-  Future<void> _analyze(String query) async {
+  void _analyze(String query) {
     _focus.unfocus();
     setState(() {
-      _loading = true;
-      _error = null;
+      _analysis = AnalyticsService.instance.analyzeCompany(query);
       _suggestions = [];
     });
-    try {
-      final result = await ApiService.instance.analyzeCompany(query);
-      if (!mounted) return;
-      setState(() => _analysis = result);
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _error = e.toString());
-    } finally {
-      if (mounted) setState(() => _loading = false);
-    }
   }
 
   @override
@@ -102,34 +80,29 @@ class _CompanyScreenState extends State<CompanyScreen> {
             onSubmit: _analyze,
           ),
           const SizedBox(height: 12),
-          if (_suggestions.isNotEmpty) _Suggestions(
-            suggestions: _suggestions,
-            onTap: (q) {
-              _controller.text = q;
-              _analyze(q);
-            },
-          ),
+          if (_suggestions.isNotEmpty)
+            _Suggestions(
+              suggestions: _suggestions,
+              onTap: (q) {
+                _controller.text = q;
+                _analyze(q);
+              },
+            ),
           const SizedBox(height: 16),
-          if (_loading) const ShimmerList(itemCount: 4, itemHeight: 110),
-          if (_error != null)
-            ErrorCard(
-                message: _error!,
-                onRetry: () => _analyze(_controller.text)),
-          if (_analysis != null) _AnalysisBody(
-            analysis: _analysis!,
-            visible: _visibleSeries,
-            onToggleSeries: (i) {
-              setState(() {
-                if (_visibleSeries.contains(i)) {
-                  if (_visibleSeries.length > 1) _visibleSeries.remove(i);
-                } else {
-                  _visibleSeries.add(i);
-                }
-              });
-            },
-          ),
-          if (_analysis == null && !_loading && _error == null)
-            const _EmptyState(),
+          if (_analysis != null)
+            _AnalysisBody(
+              analysis: _analysis!,
+              visible: _visibleSeries,
+              onToggleSeries: (i) {
+                setState(() {
+                  if (_visibleSeries.contains(i)) {
+                    if (_visibleSeries.length > 1) _visibleSeries.remove(i);
+                  } else {
+                    _visibleSeries.add(i);
+                  }
+                });
+              },
+            ),
         ],
       ),
     );
@@ -161,7 +134,7 @@ class _SearchHeader extends StatelessWidget {
               letterSpacing: -0.4),
         ),
         const SizedBox(height: 6),
-        Text('Type a ticker or name. We\'ll do the rest.',
+        const Text('Type a ticker or name. Instant offline analysis.',
             style: TextStyle(color: AppColors.textMuted, fontSize: 13)),
         const SizedBox(height: 16),
         TextField(
@@ -184,8 +157,54 @@ class _SearchHeader extends StatelessWidget {
                 : null,
           ),
         ),
+        const SizedBox(height: 12),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            for (final t in const ['PGR', 'TRV', 'CB', 'MET', 'AFL', 'UNH'])
+              _QuickPick(
+                label: t,
+                onTap: () {
+                  controller.text = t;
+                  onSubmit(t);
+                },
+              ),
+          ],
+        ),
       ],
     ).animate().fadeIn(duration: 300.ms);
+  }
+}
+
+class _QuickPick extends StatelessWidget {
+  final String label;
+  final VoidCallback onTap;
+  const _QuickPick({required this.label, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 7),
+          decoration: BoxDecoration(
+            color: AppColors.surfaceElevated,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Text(label,
+              style: const TextStyle(
+                  color: AppColors.accent,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.2,
+                  fontSize: 11.5)),
+        ),
+      ),
+    );
   }
 }
 
@@ -256,84 +275,13 @@ class _SuggestionTile extends StatelessWidget {
                 child: Text(entry['name']?.toString() ?? '',
                     style: const TextStyle(color: AppColors.textPrimary)),
               ),
-              Text(entry['insurer_type']?.toString() ?? 'Unknown',
-                  style:
-                      TextStyle(color: AppColors.textMuted, fontSize: 11)),
+              Text(entry['type']?.toString() ?? 'Unknown',
+                  style: const TextStyle(
+                      color: AppColors.textMuted, fontSize: 11)),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class _EmptyState extends StatelessWidget {
-  const _EmptyState();
-
-  @override
-  Widget build(BuildContext context) {
-    return GlassCard(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 36),
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(18),
-            decoration: BoxDecoration(
-              gradient: AppColors.primaryGradient,
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(Icons.business_center_rounded,
-                color: Colors.white, size: 28),
-          ),
-          const SizedBox(height: 14),
-          const Text(
-            'Run an instant analysis',
-            style: TextStyle(
-                color: AppColors.textPrimary,
-                fontWeight: FontWeight.w700,
-                fontSize: 16),
-          ),
-          const SizedBox(height: 6),
-          Text(
-            'KPIs, peer benchmarks, risk radar, and rule-based insights — all from public filings.',
-            textAlign: TextAlign.center,
-            style:
-                TextStyle(color: AppColors.textSecondary, fontSize: 12.5, height: 1.4),
-          ),
-          const SizedBox(height: 18),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 8,
-            runSpacing: 8,
-            children: ['PGR', 'TRV', 'CB', 'MET', 'AFL', 'CINF']
-                .map((t) => _SuggestChip(label: t))
-                .toList(),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SuggestChip extends StatelessWidget {
-  final String label;
-  const _SuggestChip({required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: AppColors.surfaceElevated,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: AppColors.border),
-      ),
-      child: Text(label,
-          style: const TextStyle(
-              color: AppColors.accent,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 1.2,
-              fontSize: 12)),
     );
   }
 }
@@ -355,51 +303,64 @@ class _AnalysisBody extends StatelessWidget {
       children: [
         _Header(analysis: analysis),
         const SizedBox(height: 16),
-        const SectionHeader(title: 'Headline KPIs'),
-        _KpiGrid(kpis: analysis.kpis.primary),
-        const SizedBox(height: 24),
-        const SectionHeader(title: 'Risk Radar'),
-        GlassCard(child: RiskRadarChart(radar: analysis.riskRadar))
-            .animate().fadeIn(duration: 400.ms),
-        const SizedBox(height: 24),
-        SectionHeader(
-          title: '5-Year Trend',
-          subtitle: 'Tap a metric to toggle the line',
-        ),
-        GlassCard(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _SeriesLegend(
-                  series: analysis.series,
-                  visible: visible,
-                  onToggle: onToggleSeries),
-              const SizedBox(height: 12),
-              TrendChart(
-                  series: analysis.series, visibleIndices: visible.toList()),
-            ],
+        if (analysis.kpis.primary.isNotEmpty) ...[
+          const SectionHeader(title: 'Headline KPIs'),
+          _KpiGrid(kpis: analysis.kpis.primary),
+          const SizedBox(height: 24),
+        ],
+        if (analysis.riskRadar.factors.isNotEmpty) ...[
+          const SectionHeader(title: 'Risk Radar'),
+          GlassCard(child: RiskRadarChart(radar: analysis.riskRadar))
+              .animate()
+              .fadeIn(duration: 400.ms),
+          const SizedBox(height: 24),
+        ],
+        if (analysis.series.isNotEmpty) ...[
+          const SectionHeader(
+            title: '5-Year Trend',
+            subtitle: 'Tap a metric to toggle the line',
           ),
-        ),
-        const SizedBox(height: 24),
-        const SectionHeader(title: 'Insights'),
-        ...List.generate(
-          analysis.insights.length,
-          (i) => Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: InsightCard(insight: analysis.insights[i], index: i),
+          GlassCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _SeriesLegend(
+                    series: analysis.series,
+                    visible: visible,
+                    onToggle: onToggleSeries),
+                const SizedBox(height: 12),
+                TrendChart(
+                    series: analysis.series, visibleIndices: visible.toList()),
+              ],
+            ),
           ),
-        ),
-        const SizedBox(height: 16),
-        const SectionHeader(title: 'Secondary KPIs'),
-        _KpiGrid(kpis: analysis.kpis.secondary),
-        const SizedBox(height: 24),
-        const SectionHeader(title: 'Latest filing snapshot'),
-        _RawMetricsTable(metrics: analysis.rawMetrics),
-        const SizedBox(height: 16),
+          const SizedBox(height: 24),
+        ],
+        if (analysis.insights.isNotEmpty) ...[
+          const SectionHeader(title: 'Insights'),
+          ...List.generate(
+            analysis.insights.length,
+            (i) => Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: InsightCard(insight: analysis.insights[i], index: i),
+            ),
+          ),
+          const SizedBox(height: 16),
+        ],
+        if (analysis.kpis.secondary.isNotEmpty) ...[
+          const SectionHeader(title: 'Secondary KPIs'),
+          _KpiGrid(kpis: analysis.kpis.secondary),
+          const SizedBox(height: 24),
+        ],
+        if (analysis.rawMetrics.isNotEmpty) ...[
+          const SectionHeader(title: 'Latest filing snapshot'),
+          _RawMetricsTable(metrics: analysis.rawMetrics),
+          const SizedBox(height: 16),
+        ],
         Center(
           child: Text(
-            'Source: ${analysis.dataSource}${analysis.isEstimated ? " · estimated" : ""}',
-            style: TextStyle(color: AppColors.textMuted, fontSize: 11),
+            'Source: ${analysis.dataSource}',
+            style: const TextStyle(color: AppColors.textMuted, fontSize: 11),
           ),
         ),
       ],
@@ -421,8 +382,10 @@ class _Header extends StatelessWidget {
       ),
       child: Row(
         children: [
-          ScoreRing(score: analysis.score),
-          const SizedBox(width: 18),
+          if (analysis.score > 0) ...[
+            ScoreRing(score: analysis.score),
+            const SizedBox(width: 18),
+          ],
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -457,7 +420,7 @@ class _Header extends StatelessWidget {
                       ),
                       child: Text(
                         analysis.company.insurerType.toUpperCase(),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: AppColors.textSecondary,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 1.2,
@@ -468,7 +431,7 @@ class _Header extends StatelessWidget {
                     if (analysis.lastFiscalYear != null) ...[
                       const SizedBox(width: 8),
                       Text('FY${analysis.lastFiscalYear}',
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: AppColors.textMuted,
                               fontSize: 11,
                               fontWeight: FontWeight.w600)),
@@ -486,7 +449,7 @@ class _Header extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(analysis.headline,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: AppColors.textSecondary,
                         fontSize: 12.5,
                         height: 1.45)),
@@ -506,8 +469,8 @@ class _KpiGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (kpis.isEmpty) {
-      return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12),
+      return const Padding(
+        padding: EdgeInsets.symmetric(vertical: 12),
         child: Text('No metrics available.',
             style: TextStyle(color: AppColors.textMuted)),
       );
@@ -543,7 +506,8 @@ class _SeriesLegend extends StatelessWidget {
       spacing: 8,
       runSpacing: 6,
       children: List.generate(series.length, (i) {
-        final color = AppColors.seriesPalette[i % AppColors.seriesPalette.length];
+        final color =
+            AppColors.seriesPalette[i % AppColors.seriesPalette.length];
         final isOn = visible.contains(i);
         return GestureDetector(
           onTap: () => onToggle(i),
@@ -553,11 +517,11 @@ class _SeriesLegend extends StatelessWidget {
                 const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
             decoration: BoxDecoration(
               color: isOn
-                  ? color.withOpacity(0.13)
+                  ? color.withValues(alpha: 0.13)
                   : AppColors.surfaceElevated,
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                  color: isOn ? color.withOpacity(0.6) : AppColors.border),
+                  color: isOn ? color.withValues(alpha: 0.6) : AppColors.border),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -571,7 +535,9 @@ class _SeriesLegend extends StatelessWidget {
                 const SizedBox(width: 6),
                 Text(series[i].label,
                     style: TextStyle(
-                        color: isOn ? AppColors.textPrimary : AppColors.textMuted,
+                        color: isOn
+                            ? AppColors.textPrimary
+                            : AppColors.textMuted,
                         fontWeight: FontWeight.w600,
                         fontSize: 11.5)),
               ],
@@ -589,9 +555,7 @@ class _RawMetricsTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final rows = metrics.entries
-        .where((e) => e.value != null)
-        .toList()
+    final rows = metrics.entries.where((e) => e.value != null).toList()
       ..sort((a, b) => a.key.compareTo(b.key));
     return GlassCard(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
@@ -602,7 +566,8 @@ class _RawMetricsTable extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
               decoration: BoxDecoration(
                 border: i != rows.length - 1
-                    ? const Border(bottom: BorderSide(color: AppColors.divider))
+                    ? const Border(
+                        bottom: BorderSide(color: AppColors.divider))
                     : null,
               ),
               child: Row(
@@ -610,7 +575,7 @@ class _RawMetricsTable extends StatelessWidget {
                   Expanded(
                     child: Text(
                       _label(rows[i].key),
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColors.textSecondary, fontSize: 12.5),
                     ),
                   ),

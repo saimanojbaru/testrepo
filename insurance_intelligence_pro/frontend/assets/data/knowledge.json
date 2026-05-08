@@ -1,0 +1,81 @@
+{
+  "articles": [
+    {
+      "slug": "asc-944-overview",
+      "title": "ASC 944 — Financial Services: Insurance",
+      "framework": "ASC944",
+      "summary": "Top-level US GAAP standard governing insurance accounting. Codifies recognition, measurement, and disclosure for insurance contracts.",
+      "body_md": "## ASC 944 in 60 seconds\n\n**Scope.** Applies to entities that issue insurance contracts (life, P&C, health, reinsurance, financial guaranty).\n\n**Key sub-topics.**\n- 944-20: Insurance Activities (general)\n- 944-30: Acquisition Costs (DAC)\n- 944-40: Claim Costs and Liabilities for Future Policy Benefits\n- 944-50: Policyholder Dividends\n- 944-60: Premium Deficiency and Loss Recognition\n- 944-80: Separate Accounts\n\n**ASU 2018-12 (LDTI)** materially changed long-duration contract accounting (effective 2023 for SEC filers): annual assumption review, market-consistent rate for liability for future policy benefits, market risk benefits at fair value, simplified DAC amortization.",
+      "fsli": "All insurance balances",
+      "gaap_view": "Principles-based, going-concern measurement; emphasizes matching of premiums and benefits.",
+      "stat_view": "Conservative, liquidity/solvency-focused; benefits recognized using statutory mortality/morbidity tables.",
+      "tags": ["GAAP", "Insurance", "Standards"]
+    },
+    {
+      "slug": "fas-60",
+      "title": "FAS 60 — Short-Duration Contracts",
+      "framework": "FAS60",
+      "summary": "Original P&C accounting model. Premiums earned over the coverage period; losses recognized as incurred.",
+      "body_md": "## Snapshot\n\n**Scope.** Most P&C policies and short-duration health.\n\n**Premium recognition.** Earned ratably over the coverage period (typically 12 months).\n\n**Loss reserves.** Best estimate of unpaid claims (case + IBNR), undiscounted.\n\n**DAC.** Capitalized; amortized in proportion to premium revenue.\n\n**Premium deficiency.** Test at the end of each period — if expected losses + LAE + maintenance > unearned premium, recognize a deficiency.",
+      "fsli": "Unearned Premium / Loss Reserves",
+      "gaap_view": "Undiscounted loss reserves; DAC asset; premium deficiency test.",
+      "stat_view": "Schedule P loss development; SAP requires full IBNR but with some line-specific conservatism.",
+      "tags": ["P&C", "Short-Duration"]
+    },
+    {
+      "slug": "fas-97",
+      "title": "FAS 97 — Universal Life & Investment Contracts",
+      "framework": "FAS97",
+      "summary": "Establishes account-balance accounting for universal life, deferred annuities, and limited-pay contracts.",
+      "body_md": "## Snapshot\n\n**Scope.** Universal life, variable UL, deferred annuities (investment contracts).\n\n**Liability.** Account balance + unearned revenue liability for front-end loads.\n\n**Revenue.** Mortality & expense charges, surrender charges, and investment spread.\n\n**DAC.** Amortized in proportion to estimated gross profits (EGPs) — periodically unlocked.\n\n**Note.** LDTI (ASU 2018-12) simplified DAC amortization to a constant level basis; EGP unlocking is largely retired.",
+      "fsli": "Policyholder Account Balances",
+      "gaap_view": "Deposit accounting; revenue from charges; EGP-based DAC (pre-LDTI).",
+      "stat_view": "Commissioners' Annuity Reserve Valuation Method (CARVM); separate account reporting under SSAP 56.",
+      "tags": ["Life", "Annuity", "DAC"]
+    },
+    {
+      "slug": "fas-133",
+      "title": "FAS 133 — Derivatives & Hedging (ASC 815)",
+      "framework": "FAS133",
+      "summary": "Governs derivative accounting and hedge designation. Heavily used by life insurers managing interest rate, credit, and equity risk.",
+      "body_md": "## Snapshot\n\n**Scope.** All derivatives — futures, swaps, options, embedded derivatives in host contracts.\n\n**Measurement.** Fair value through P&L by default.\n\n**Hedge accounting (optional).**\n- Fair value hedge: changes in hedged item & derivative both in P&L\n- Cash flow hedge: derivative effective portion in OCI, reclassified when hedged item hits earnings\n- Net investment hedge: similar to cash flow hedge for foreign operations\n\n**Insurance relevance.** Variable annuity guarantees (GMxB riders) often contain embedded derivatives bifurcated under ASC 815.",
+      "fsli": "Derivative Assets/Liabilities",
+      "gaap_view": "Fair value with optional hedge designation reducing P&L volatility.",
+      "stat_view": "SSAP 86 — limited hedge accounting; many derivatives carried at amortized cost when used in qualifying hedges.",
+      "tags": ["Derivatives", "Hedging", "ASC815"]
+    },
+    {
+      "slug": "sap-overview",
+      "title": "Statutory Accounting Principles (SAP)",
+      "framework": "SAP",
+      "summary": "Regulator-driven framework focused on solvency and policyholder protection. Codified in NAIC's Accounting Practices & Procedures Manual.",
+      "body_md": "## Why two sets of books?\n\nU.S. insurers prepare both **GAAP** (for investors) and **STAT** (for regulators) financials. Statutory accounting is intentionally conservative — it answers *can the company pay claims if it stopped writing tomorrow?*\n\n**Key SAP traits.**\n- Non-admitted assets (e.g., furniture, prepaid expenses) excluded from surplus\n- DAC is **expensed** when incurred (no GAAP-style asset)\n- Investments at amortized cost for high-quality bonds (NAIC 1-2)\n- Dividends require regulatory approval if exceeding ordinary thresholds\n- Schedules P, F, BA, and D drive risk-based capital (RBC)\n\n**RBC ratio.** Total Adjusted Capital / Authorized Control Level. <200% triggers regulatory action.",
+      "fsli": "Surplus, Reserves, Investments",
+      "gaap_view": "Going-concern, asset-rich, deferred-cost emphasis.",
+      "stat_view": "Liquidation-basis, conservative reserves, non-admitted assets, RBC-driven.",
+      "tags": ["STAT", "Solvency", "RBC"]
+    },
+    {
+      "slug": "ldti-asu-2018-12",
+      "title": "LDTI (ASU 2018-12) — Long-Duration Contract Reform",
+      "framework": "ASC944",
+      "summary": "The most significant US GAAP insurance change in decades. Effective 2023 for SEC filers; reshapes life and long-term care reporting.",
+      "body_md": "## What changed\n\n1. **LFPB cohorts.** Liability for future policy benefits computed at the issue-year cohort level; assumptions reviewed annually with retrospective unlocking through P&L.\n2. **Discount rate.** Upper-medium grade fixed-income yield (single-A-equivalent), updated each period; rate changes flow through OCI.\n3. **Market risk benefits (MRBs).** GMxB-type guarantees measured at fair value; non-performance risk in OCI.\n4. **DAC.** Amortized on a constant-level basis; no more EGP unlocking.\n5. **Disclosures.** Enhanced rollforwards by issue-year cohort.",
+      "fsli": "LFPB / DAC / MRB",
+      "gaap_view": "Annual unlocking, cohort-level LFPB, MRBs at fair value, constant-level DAC.",
+      "stat_view": "Largely unchanged — SAP retains principle-based reserves (PBR) framework.",
+      "tags": ["Life", "LDTI", "ASU2018-12"]
+    },
+    {
+      "slug": "combined-ratio",
+      "title": "Combined Ratio — The P&C scoreboard",
+      "framework": "ASC944",
+      "summary": "Combined Ratio = Loss Ratio + Expense Ratio. Below 100% means underwriting profit; above 100% means underwriting loss (offset by investment income).",
+      "body_md": "## Formula\n\n```\nLoss Ratio       = Incurred Losses & LAE / Earned Premium\nExpense Ratio    = Underwriting Expenses / Earned Premium  (GAAP)\n                 = Underwriting Expenses / Written Premium (STAT)\nCombined Ratio   = Loss Ratio + Expense Ratio\n```\n\n## Reading it\n- < 95%   = strong underwriting\n- 95-100% = profitable\n- 100-105% = breakeven; relying on investment income\n- > 105%  = underwriting loss; sustainability concern if persistent\n\n## Why GAAP vs STAT differ\nGAAP uses earned premium in the denominator of the expense ratio; SAP uses written premium. The two ratios can differ by 1-3 points in a fast-growing book.",
+      "fsli": "Underwriting Result",
+      "gaap_view": "Earned-premium denominator across both ratios.",
+      "stat_view": "Written-premium denominator for expense ratio; reported as 'trade ratio' in Schedule P.",
+      "tags": ["KPI", "P&C"]
+    }
+  ]
+}

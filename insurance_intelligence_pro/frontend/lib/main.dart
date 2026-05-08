@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'data/local_data.dart';
 import 'screens/home_screen.dart';
 import 'theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
@@ -12,10 +13,12 @@ void main() {
     systemNavigationBarColor: Color(0xFF050B18),
     systemNavigationBarIconBrightness: Brightness.light,
   ));
-  SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+  // Load all bundled datasets before first frame so screens have data ready.
+  await LocalData.instance.load();
   runApp(const InsuranceIntelligenceApp());
 }
 

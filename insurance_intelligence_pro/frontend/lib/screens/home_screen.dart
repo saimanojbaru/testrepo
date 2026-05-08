@@ -77,12 +77,12 @@ class _NavBar extends StatelessWidget {
         margin: const EdgeInsets.fromLTRB(16, 0, 16, 12),
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
         decoration: BoxDecoration(
-          color: AppColors.surface.withOpacity(0.85),
+          color: AppColors.surface.withValues(alpha: 0.85),
           borderRadius: BorderRadius.circular(28),
           border: Border.all(color: AppColors.border),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.4),
+              color: Colors.black.withValues(alpha: 0.4),
               blurRadius: 24,
               offset: const Offset(0, 12),
             ),
@@ -114,13 +114,20 @@ class _NavBar extends StatelessWidget {
                         size: 20,
                       ),
                       const SizedBox(height: 2),
-                      Text(
-                        tabs[i].label,
-                        style: TextStyle(
-                          fontSize: 10.5,
-                          fontWeight: FontWeight.w600,
-                          color: selected ? Colors.white : AppColors.textMuted,
-                          letterSpacing: 0.3,
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text(
+                          tabs[i].label,
+                          maxLines: 1,
+                          softWrap: false,
+                          overflow: TextOverflow.fade,
+                          style: TextStyle(
+                            fontSize: 10.5,
+                            fontWeight: FontWeight.w600,
+                            color:
+                                selected ? Colors.white : AppColors.textMuted,
+                            letterSpacing: 0.2,
+                          ),
                         ),
                       ),
                     ],
@@ -153,7 +160,7 @@ class _AmbientBackground extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    AppColors.primary.withOpacity(0.35),
+                    AppColors.primary.withValues(alpha: 0.35),
                     Colors.transparent
                   ],
                 ),
@@ -171,7 +178,7 @@ class _AmbientBackground extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: RadialGradient(
                   colors: [
-                    AppColors.accent.withOpacity(0.18),
+                    AppColors.accent.withValues(alpha: 0.18),
                     Colors.transparent
                   ],
                 ),

@@ -50,7 +50,7 @@ class TrendChart extends StatelessWidget {
             show: true,
             drawVerticalLine: false,
             getDrawingHorizontalLine: (_) => FlLine(
-              color: AppColors.divider.withOpacity(0.7),
+              color: AppColors.divider.withValues(alpha: 0.7),
               strokeWidth: 0.6,
               dashArray: [4, 6],
             ),
@@ -142,7 +142,7 @@ class TrendChart extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [color.withOpacity(0.22), color.withOpacity(0.0)],
+          colors: [color.withValues(alpha: 0.22), color.withValues(alpha: 0.0)],
         ),
       ),
     );

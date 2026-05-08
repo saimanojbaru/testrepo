@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import '../services/api_service.dart';
+import '../services/analytics_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
-import '../widgets/animated_loader.dart';
-import '../widgets/error_card.dart';
 import '../widgets/glass_card.dart';
 import '../widgets/section_header.dart';
 
@@ -17,73 +15,49 @@ class CompareScreen extends StatefulWidget {
 }
 
 class _CompareScreenState extends State<CompareScreen> {
-  final TextEditingController _input = TextEditingController(text: 'PGR');
+  final TextEditingController _input = TextEditingController();
   final List<String> _selected = ['PGR', 'TRV', 'CB'];
-  Map<String, dynamic>? _result;
-  String? _error;
-  bool _loading = false;
+  late Map<String, dynamic> _result;
 
   @override
   void initState() {
     super.initState();
-    _runCompare();
+    _result = AnalyticsService.instance.compare(_selected);
   }
 
-  Future<void> _runCompare({bool refresh = false}) async {
-    setState(() {
-      _loading = true;
-      _error = null;
-    });
-    try {
-      final r = await ApiService.instance
-          .compare(_selected, refresh: refresh);
-      if (!mounted) return;
-      setState(() => _result = r);
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _error = e.toString());
-    } finally {
-      if (mounted) setState(() => _loading = false);
-    }
-  }
+  void _runCompare() =>
+      setState(() => _result = AnalyticsService.instance.compare(_selected));
 
-  Future<void> _autoPeers(String anchor) async {
+  void _autoPeers(String anchor) {
+    final r = AnalyticsService.instance.autoCompare(anchor);
+    final companies = ((r['companies'] as List?) ?? [])
+        .map<String>((c) => (c['company']?['ticker'] ?? '').toString())
+        .where((t) => t.isNotEmpty)
+        .toList();
     setState(() {
-      _loading = true;
-      _error = null;
+      _result = r;
+      _selected
+        ..clear()
+        ..addAll(companies);
     });
-    try {
-      final r = await ApiService.instance.autoCompare(anchor);
-      final companies = ((r['companies'] as List?) ?? [])
-          .map<String>((c) => (c['company']?['ticker'] ?? '').toString())
-          .where((t) => t.isNotEmpty)
-          .toList();
-      if (!mounted) return;
-      setState(() {
-        _result = r;
-        _selected
-          ..clear()
-          ..addAll(companies);
-      });
-    } catch (e) {
-      if (!mounted) return;
-      setState(() => _error = e.toString());
-    } finally {
-      if (mounted) setState(() => _loading = false);
-    }
   }
 
   void _addTicker(String t) {
     final upper = t.trim().toUpperCase();
-    if (upper.isEmpty || _selected.contains(upper) || _selected.length >= 6) return;
-    setState(() => _selected.add(upper));
+    if (upper.isEmpty || _selected.contains(upper) || _selected.length >= 6) {
+      return;
+    }
+    final resolved = AnalyticsService.instance.resolveCompany(upper);
+    if (resolved == null) return;
+    setState(() => _selected.add(resolved['ticker'].toString()));
     _input.clear();
     _runCompare();
   }
 
   void _removeTicker(String t) {
+    if (_selected.length <= 1) return;
     setState(() => _selected.remove(t));
-    if (_selected.isNotEmpty) _runCompare();
+    _runCompare();
   }
 
   @override
@@ -102,8 +76,8 @@ class _CompareScreenState extends State<CompareScreen> {
                 letterSpacing: -0.4),
           ),
           const SizedBox(height: 6),
-          Text(
-            'Pick a peer set or add tickers — we\'ll rank them on the metrics that matter.',
+          const Text(
+            'Pick a peer set or add tickers — ranked on metrics that matter.',
             style: TextStyle(color: AppColors.textMuted, fontSize: 13),
           ),
           const SizedBox(height: 14),
@@ -127,6 +101,7 @@ class _CompareScreenState extends State<CompareScreen> {
                       child: TextField(
                         controller: _input,
                         textInputAction: TextInputAction.done,
+                        textCapitalization: TextCapitalization.characters,
                         onSubmitted: _addTicker,
                         decoration: const InputDecoration(
                           hintText: 'Add ticker (e.g. ALL)',
@@ -135,48 +110,59 @@ class _CompareScreenState extends State<CompareScreen> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                    FilledButton(
-                      style: FilledButton.styleFrom(
-                        backgroundColor: AppColors.primary,
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 14),
+                    GestureDetector(
+                      onTap: () => _addTicker(_input.text),
+                      child: Container(
+                        height: 48,
+                        width: 48,
+                        decoration: BoxDecoration(
+                          gradient: AppColors.primaryGradient,
+                          borderRadius: BorderRadius.circular(14),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.primary.withValues(alpha: 0.4),
+                              blurRadius: 16,
+                              offset: const Offset(0, 6),
+                            ),
+                          ],
+                        ),
+                        child: const Icon(Icons.add_rounded,
+                            color: Colors.white, size: 22),
                       ),
-                      onPressed: () => _addTicker(_input.text),
-                      child: const Icon(Icons.add),
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
+                const Text('AUTO PEER SETS',
+                    style: TextStyle(
+                        color: AppColors.textMuted,
+                        fontSize: 10,
+                        letterSpacing: 1.4,
+                        fontWeight: FontWeight.w700)),
+                const SizedBox(height: 8),
                 Wrap(
                   spacing: 8,
-                  runSpacing: 6,
+                  runSpacing: 8,
                   children: [
-                    for (final pre in [
-                      'PGR',
-                      'MET',
-                      'CB',
-                      'AFL',
-                      'UNH'
+                    for (final pre in const [
+                      ['PGR', 'P&C'],
+                      ['MET', 'Life'],
+                      ['CB', 'P&C'],
+                      ['AFL', 'Life'],
+                      ['UNH', 'Health']
                     ])
-                      OutlinedButton(
-                        onPressed: () => _autoPeers(pre),
-                        style: OutlinedButton.styleFrom(
-                          foregroundColor: AppColors.accent,
-                          side: const BorderSide(color: AppColors.border),
-                          padding:
-                              const EdgeInsets.symmetric(horizontal: 12),
-                        ),
-                        child: Text('Peer set: $pre'),
-                      )
+                      _PeerSetButton(
+                        ticker: pre[0],
+                        type: pre[1],
+                        onTap: () => _autoPeers(pre[0]),
+                      ),
                   ],
                 ),
               ],
             ),
           ),
           const SizedBox(height: 18),
-          if (_loading) const ShimmerCard(height: 240),
-          if (_error != null) ErrorCard(message: _error!, onRetry: _runCompare),
-          if (_result != null && !_loading) _ResultBody(result: _result!),
+          _ResultBody(result: _result),
         ],
       ),
     );
@@ -191,7 +177,7 @@ class _SelectedChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
       decoration: BoxDecoration(
         gradient: AppColors.primaryGradient,
         borderRadius: BorderRadius.circular(20),
@@ -205,7 +191,7 @@ class _SelectedChip extends StatelessWidget {
                   fontWeight: FontWeight.w700,
                   letterSpacing: 1.2,
                   fontSize: 11.5)),
-          const SizedBox(width: 6),
+          const SizedBox(width: 8),
           GestureDetector(
             onTap: onRemove,
             child: const Icon(Icons.close_rounded,
@@ -217,20 +203,71 @@ class _SelectedChip extends StatelessWidget {
   }
 }
 
+class _PeerSetButton extends StatelessWidget {
+  final String ticker;
+  final String type;
+  final VoidCallback onTap;
+  const _PeerSetButton(
+      {required this.ticker, required this.type, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(
+            color: AppColors.surfaceElevated,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(color: AppColors.border),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 6,
+                height: 6,
+                decoration: const BoxDecoration(
+                    color: AppColors.accent, shape: BoxShape.circle),
+              ),
+              const SizedBox(width: 6),
+              Text(ticker,
+                  style: const TextStyle(
+                      color: AppColors.accent,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 11,
+                      letterSpacing: 1.2)),
+              const SizedBox(width: 6),
+              Text(type,
+                  style: const TextStyle(
+                      color: AppColors.textMuted, fontSize: 10.5)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class _ResultBody extends StatelessWidget {
   final Map<String, dynamic> result;
   const _ResultBody({required this.result});
 
   @override
   Widget build(BuildContext context) {
-    final companies = (result['companies'] as List?) ?? [];
-    final metrics = (result['metrics'] as List?) ?? [];
+    final companies = ((result['companies'] as List?) ?? [])
+        .cast<Map<String, dynamic>>();
+    final metrics =
+        ((result['metrics'] as List?) ?? []).cast<Map<String, dynamic>>();
     final verdict = result['verdict']?.toString() ?? '';
     final type = result['insurer_type']?.toString() ?? '';
 
     if (companies.isEmpty) {
       return GlassCard(
-        child: Text('No comparable companies resolved.',
+        child: const Text('Add at least two tickers to compare.',
             style: TextStyle(color: AppColors.textMuted)),
       );
     }
@@ -252,9 +289,13 @@ class _ResultBody extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: AppColors.primaryGradient,
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [Color(0xFF1F4FFF), Color(0xFF00E0C7)],
+                  ),
                 ),
                 child: const Icon(Icons.emoji_events_rounded,
                     color: Colors.white, size: 20),
@@ -272,14 +313,10 @@ class _ResultBody extends StatelessWidget {
         ).animate().fadeIn(duration: 400.ms),
         const SizedBox(height: 18),
         const SectionHeader(title: 'Composite Scores'),
-        _ScoreList(
-            companies: companies.cast<Map<String, dynamic>>().toList()),
+        _ScoreList(companies: companies),
         const SizedBox(height: 18),
         const SectionHeader(title: 'Metric-by-metric'),
-        _MetricsTable(
-          metrics: metrics.cast<Map<String, dynamic>>().toList(),
-          companies: companies.cast<Map<String, dynamic>>().toList(),
-        ),
+        _MetricsTable(metrics: metrics, companies: companies),
       ],
     );
   }
@@ -292,8 +329,7 @@ class _ScoreList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sorted = [...companies]
-      ..sort((a, b) =>
-          (b['score'] as num).compareTo(a['score'] as num));
+      ..sort((a, b) => (b['score'] as num).compareTo(a['score'] as num));
     final topScore = (sorted.first['score'] as num).toDouble();
     return GlassCard(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
@@ -317,7 +353,7 @@ class _ScoreList extends StatelessWidget {
                 SizedBox(
                   width: 22,
                   child: Text('#${i + 1}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: AppColors.textMuted,
                           fontWeight: FontWeight.w700,
                           fontSize: 11)),
@@ -394,14 +430,13 @@ class _MetricsTable extends StatelessWidget {
               Container(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: AppColors.surfaceElevated,
-                  borderRadius: const BorderRadius.vertical(
-                      top: Radius.circular(22)),
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(22)),
                 ),
                 child: Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 140,
                       child: Text('METRIC',
                           style: TextStyle(
@@ -449,8 +484,7 @@ class _MetricRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final values =
-        ((metric['values'] as List?) ?? []).cast<Map<String, dynamic>>();
+    final values = ((metric['values'] as List?) ?? []).cast<Map<String, dynamic>>();
     final byTicker = {for (final v in values) v['ticker'].toString(): v};
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -475,7 +509,6 @@ class _MetricRow extends StatelessWidget {
               child: _ValueCell(
                 value: byTicker[t]?['value'] as num?,
                 rank: byTicker[t]?['rank'] as int?,
-                lowerIsBetter: metric['lower_is_better'] == true,
               ),
             ),
         ],
@@ -487,17 +520,12 @@ class _MetricRow extends StatelessWidget {
 class _ValueCell extends StatelessWidget {
   final num? value;
   final int? rank;
-  final bool lowerIsBetter;
-  const _ValueCell({
-    required this.value,
-    required this.rank,
-    required this.lowerIsBetter,
-  });
+  const _ValueCell({required this.value, required this.rank});
 
   @override
   Widget build(BuildContext context) {
     if (value == null) {
-      return Text('–',
+      return const Text('–',
           textAlign: TextAlign.right,
           style: TextStyle(color: AppColors.textMuted));
     }
