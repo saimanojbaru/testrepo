@@ -8,8 +8,14 @@ import 'glass_card.dart';
 class InsightCard extends StatelessWidget {
   final Insight insight;
   final int index;
+  final VoidCallback? onTap;
 
-  const InsightCard({super.key, required this.insight, this.index = 0});
+  const InsightCard({
+    super.key,
+    required this.insight,
+    this.index = 0,
+    this.onTap,
+  });
 
   Color _color() {
     switch (insight.level) {
@@ -62,6 +68,7 @@ class InsightCard extends StatelessWidget {
     final color = _color();
     return GlassCard(
       padding: const EdgeInsets.fromLTRB(16, 16, 18, 16),
+      onTap: onTap,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

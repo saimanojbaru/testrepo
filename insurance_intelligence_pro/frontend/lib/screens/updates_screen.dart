@@ -3,9 +3,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../models/insight.dart';
 import '../services/analytics_service.dart';
+import '../services/api_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 import '../widgets/glass_card.dart';
+import 'news_detail_screen.dart';
 
 class UpdatesScreen extends StatefulWidget {
   const UpdatesScreen({super.key});
@@ -16,15 +18,52 @@ class UpdatesScreen extends StatefulWidget {
 
 class _UpdatesScreenState extends State<UpdatesScreen> {
   String _selected = 'All';
+  List<NewsItem> _live = const [];
+  bool _liveLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _refreshLive();
+  }
+
+  /// Fire-and-forget: try the configured backend for fresh news.
+  /// Curated headlines stay visible while we wait; if the request
+  /// succeeds, live items are merged on top.
+  Future<void> _refreshLive() async {
+    if (!ApiService.instance.isConfigured) {
+      if (mounted) setState(() => _live = const []);
+      return;
+    }
+    setState(() => _liveLoading = true);
+    final raw = await ApiService.instance.liveNews(
+        category: _selected == 'All' ? null : _selected, limit: 30);
+    if (!mounted) return;
+    setState(() {
+      _live = raw.map((m) => NewsItem.fromJson(Map<String, dynamic>.from(m))).toList();
+      _liveLoading = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final result = AnalyticsService.instance.news(category: _selected);
-    final items = ((result['items'] as List?) ?? [])
+    final curated = ((result['items'] as List?) ?? [])
         .map((e) =>
             NewsItem.fromJson(Map<String, dynamic>.from(e as Map)))
         .toList();
+    // Merge live first, then curated, dedupe by title.
+    final seen = <String>{};
+    final merged = <NewsItem>[];
+    for (final n in [..._live, ...curated]) {
+      final key = n.title.trim().toLowerCase();
+      if (seen.contains(key)) continue;
+      seen.add(key);
+      merged.add(n);
+    }
+    final items = merged;
     final categories = ((result['categories'] as List?) ?? ['All']).cast<String>();
+    final isLive = _live.isNotEmpty;
 
     return SafeArea(
       bottom: false,
@@ -40,11 +79,32 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                 letterSpacing: -0.4),
           ),
           const SizedBox(height: 6),
-          const Text(
-            'Curated regulatory, market, and rating-agency signals.',
-            style: TextStyle(color: AppColors.textMuted, fontSize: 13),
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  isLive
+                      ? 'Live: ${_live.length} fresh + curated baseline'
+                      : 'Curated regulatory, market, and rating-agency signals.',
+                  style: const TextStyle(
+                      color: AppColors.textMuted, fontSize: 13),
+                ),
+              ),
+              IconButton(
+                onPressed: _liveLoading ? null : _refreshLive,
+                icon: _liveLoading
+                    ? const SizedBox(
+                        width: 14,
+                        height: 14,
+                        child: CircularProgressIndicator(
+                            strokeWidth: 2, color: AppColors.accent))
+                    : const Icon(Icons.refresh_rounded,
+                        color: AppColors.accent, size: 18),
+                tooltip: 'Refresh live feed',
+              )
+            ],
           ),
-          const SizedBox(height: 14),
+          const SizedBox(height: 4),
           SizedBox(
             height: 36,
             child: ListView(
@@ -56,7 +116,10 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                     child: _CategoryChip(
                       label: c,
                       selected: c == _selected,
-                      onTap: () => setState(() => _selected = c),
+                      onTap: () {
+                        setState(() => _selected = c);
+                        _refreshLive();
+                      },
                     ),
                   ),
               ],
@@ -73,7 +136,14 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
               items.length,
               (i) => Padding(
                 padding: const EdgeInsets.only(bottom: 10),
-                child: _UpdateCard(item: items[i], index: i),
+                child: _UpdateCard(
+                  item: items[i],
+                  index: i,
+                  related: items
+                      .where((n) => n.title != items[i].title)
+                      .take(4)
+                      .toList(),
+                ),
               ),
             ),
         ],
@@ -122,7 +192,12 @@ class _CategoryChip extends StatelessWidget {
 class _UpdateCard extends StatelessWidget {
   final NewsItem item;
   final int index;
-  const _UpdateCard({required this.item, required this.index});
+  final List<NewsItem> related;
+  const _UpdateCard({
+    required this.item,
+    required this.index,
+    this.related = const [],
+  });
 
   Color _impactColor() {
     switch (item.impact) {
@@ -139,6 +214,9 @@ class _UpdateCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final color = _impactColor();
     return GlassCard(
+      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) =>
+              NewsDetailScreen(item: item, related: related))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

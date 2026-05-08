@@ -1,81 +1,721 @@
 {
+  "_note": "Insurance accounting standards & FSLI-level GAAP-vs-STAT explainers. Each article ships sections, fsli_table, references, last_updated. Every field is search-indexed.",
   "articles": [
+    {
+      "slug": "cash-and-equivalents",
+      "title": "Cash & Cash Equivalents",
+      "framework": "ASC 230 / SSAP 2R",
+      "depth": "deep",
+      "fsli": "Cash & Cash Equivalents",
+      "summary": "Cash on hand, demand deposits, and short-term highly-liquid instruments with original maturities of 90 days or less. Identical concept under GAAP and STAT, but admissibility rules diverge sharply.",
+      "key_difference": "STAT non-admits restricted, foreign-bank, and concentration-excess cash. GAAP recognizes everything but discloses restrictions.",
+      "gaap_view": "Recognized at face value; restricted balances disclosed separately. Money-market funds with redemption-on-demand qualify as cash equivalents.",
+      "stat_view": "Reported on Schedule E Part 1 (cash) and Part 2 (cash equivalents). Non-admitted if held in unauthorized banks, restricted/escrow, or in excess of FDIC concentration limits.",
+      "body_md": "## What it is\n\nCash & cash equivalents represent the most liquid asset class on an insurer's balance sheet. The line includes:\n\n- Demand deposits at banks\n- Petty cash and undeposited receipts\n- Money-market mutual funds (Class 1 NAIC)\n- Treasury bills with original maturity ≤ 90 days\n- Repurchase agreements with maturity ≤ 90 days\n- Commercial paper (top-tier, ≤ 90-day maturity)\n\n## Why insurers care\n\nCash is the immediate-loss-paying asset. Property-cat insurers stress-test liquidity assuming a 1-in-100-year event drains the operating account in 5–10 days.\n\n## Admissibility under SAP\n\nNon-admitted cash reduces statutory surplus dollar-for-dollar. Statutory accounting disallows: cash in non-licensed foreign banks, restricted balances, bank balances exceeding FDIC limits at non-A-rated institutions.",
+      "sections": [
+        {"heading": "Recognition", "kind": "text", "content": "Recognize when the insurer obtains the right to use the funds. Demand deposits → on settlement; cash equivalents → on trade date."},
+        {"heading": "Common pitfalls", "kind": "list", "items": ["Treating 6-month CDs as cash equivalents (wrong — that's a short-term investment).", "Ignoring restricted cash (must be disclosed and may be non-admitted under STAT).", "Excluding bank overdrafts from operating cash flows."]}
+      ],
+      "fsli_table": [
+        {"line_item": "Demand deposits", "gaap": "At face; net of bank overdrafts", "stat": "Admitted at face if at authorized US banks", "delta": "Foreign-bank cash often non-admitted"},
+        {"line_item": "Money-market funds (NAIC 1)", "gaap": "Cash equivalent at NAV", "stat": "Admitted; NAV from Schedule D Pt 2", "delta": "Same NAV; STAT requires NAIC designation"},
+        {"line_item": "Repos (≤ 90 days)", "gaap": "Cash equivalent at amortized cost", "stat": "Schedule DA Pt 1; admitted lower of cost or FV", "delta": "STAT haircut for non-IG collateral"},
+        {"line_item": "Restricted cash (collateral)", "gaap": "Disclosed separately", "stat": "Non-admitted unless statutorily required deposit", "delta": "Direct surplus haircut under STAT"},
+        {"line_item": "Foreign-bank deposits", "gaap": "Translated at spot FX; gains in OCI", "stat": "Non-admitted unless bank authorized in writing", "delta": "Largest divergence for global re/insurers"}
+      ],
+      "references": [
+        {"label": "FASB ASC 230 — Statement of Cash Flows", "url": "https://asc.fasb.org/topic&trid=2196817"},
+        {"label": "NAIC SSAP No. 2R", "url": "https://content.naic.org/sites/default/files/inline-files/SSAP%2002R.pdf"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Cash", "GAAP", "STAT", "ASC230", "SSAP2", "Liquidity", "Schedule E"]
+    },
+    {
+      "slug": "bonds-and-mbs",
+      "title": "Bonds & Mortgage-Backed Securities",
+      "framework": "ASC 320 / SSAP 26R / SSAP 43R",
+      "depth": "deep",
+      "fsli": "Investments — Fixed Maturities",
+      "summary": "Largest asset class for most insurers (60–80% of invested assets). GAAP classifies as HTM/AFS/Trading; STAT carries NAIC 1–2 at amortized cost regardless of intent. CECL applies under GAAP only.",
+      "key_difference": "GAAP: classification-driven measurement. STAT: NAIC designation drives carrying value.",
+      "gaap_view": "ASC 326 (CECL) requires expected-loss provision on amortized-cost bonds. AFS bonds use OCI with credit-loss allowance through P&L.",
+      "stat_view": "SSAP 26R (corporate bonds) at amortized cost if NAIC 1–2 designation. SSAP 43R (RMBS/CMBS) uses modeling-based designation.",
+      "body_md": "## Inventory\n\nA typical US life insurer's bond book: Treasuries / Agencies 10–15%, Corporate IG 50–60%, Corporate HY 5–8%, Structured (CMBS, RMBS, CLO) 15–20%, Munis 5–10%.\n\n## STAT designations & carrying value\n\n- NAIC 1–2: amortized cost\n- NAIC 3: amortized cost (with AVR provision)\n- NAIC 4–5: lower of amortized cost or fair value\n- NAIC 6: fair value\n\n## Asset Valuation Reserve (AVR)\n\nLife insurers post AVR — a contingency reserve absorbing realized and unrealized credit losses on the bond portfolio. AVR builds via formula component plus voluntary contribution and reduces surplus.",
+      "sections": [
+        {"heading": "Classification", "kind": "text", "content": "GAAP requires positive intent + ability for HTM. AFS is the default for most insurer bond books. Trading is rare except for hedge-fund-style portfolios."},
+        {"heading": "Impairment", "kind": "text", "content": "GAAP: CECL ECL allowance. STAT: write-down to fair value when 'other than temporarily impaired' under SSAP 43R modeling."}
+      ],
+      "fsli_table": [
+        {"line_item": "Treasuries (HTM intent)", "gaap": "HTM amortized cost; CECL ECL allowance", "stat": "NAIC 1; amortized cost", "delta": "GAAP carries CECL allowance; STAT does not"},
+        {"line_item": "Corporate IG (NAIC 1–2)", "gaap": "AFS fair value w/ OCI", "stat": "Amortized cost", "delta": "STAT smooths rate-driven volatility"},
+        {"line_item": "Corporate HY (NAIC 3–5)", "gaap": "AFS fair value w/ OCI", "stat": "Lower of amortized cost or fair value", "delta": "STAT may carry below cost; AVR captures expected losses"},
+        {"line_item": "Non-agency RMBS", "gaap": "AFS fair value; CECL ECL", "stat": "SSAP 43R modeled NAIC", "delta": "GAAP and STAT designations can differ"},
+        {"line_item": "CLOs", "gaap": "AFS or Trading; CECL applies", "stat": "Modeled designation per SSAP 43R", "delta": "NAIC has tightened CLO equity designations"}
+      ],
+      "references": [
+        {"label": "ASC 320 — Investments – Debt Securities", "url": "https://asc.fasb.org/topic&trid=2127092"},
+        {"label": "ASC 326 — Credit Losses (CECL)", "url": "https://asc.fasb.org/topic&trid=77869569"},
+        {"label": "NAIC SSAP No. 26R", "url": "https://content.naic.org/sites/default/files/inline-files/SSAP%2026R.pdf"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Investments", "Bonds", "MBS", "CMBS", "RMBS", "CLO", "ASC320", "ASC326", "SSAP26R", "SSAP43R", "CECL", "AVR", "GAAP", "STAT"]
+    },
+    {
+      "slug": "equity-investments",
+      "title": "Equity Investments",
+      "framework": "ASC 321 / SSAP 30 / SSAP 32",
+      "depth": "deep",
+      "fsli": "Investments — Equity Securities",
+      "summary": "Common, preferred, and partnership interests. GAAP measures all equities at fair value through P&L. STAT splits common (FV through surplus) from perpetual preferred (amortized cost if NAIC 1–2).",
+      "key_difference": "GAAP marks all equities to market through P&L. STAT routes most fair-value movements through surplus.",
+      "gaap_view": "ASC 321: fair value through net income. ASU 2016-01 eliminated AFS for equities.",
+      "stat_view": "SSAP 30 (common) at fair value, with unrealized through surplus. SSAP 32 (preferred): NAIC 1–2 at amortized cost.",
+      "body_md": "## Why this matters\n\nPost-ASU 2016-01, GAAP earnings are far more volatile for insurers with large equity portfolios. Berkshire Hathaway's quarterly net income now swings hundreds of billions on equity mark-to-market.\n\n## Statutory smoothing\n\nSTAT routes equity unrealized gains directly through surplus. Statutory surplus is much less volatile than GAAP equity for the same portfolio.",
+      "sections": [
+        {"heading": "Limited partnership accounting", "kind": "list", "items": ["Equity method when significant influence (>20%) under both GAAP and STAT.", "STAT requires audited LP financials to recognize undistributed earnings.", "Look-through to underlying assets is required for risk-based capital."]}
+      ],
+      "fsli_table": [
+        {"line_item": "Common stock (non-affiliated)", "gaap": "Fair value through P&L (ASC 321)", "stat": "Fair value through surplus (SSAP 30)", "delta": "GAAP P&L volatility vs STAT surplus volatility"},
+        {"line_item": "Perpetual preferred (NAIC 1–2)", "gaap": "Fair value through P&L", "stat": "Amortized cost (SSAP 32)", "delta": "STAT smooths preferred-stock movements"},
+        {"line_item": "Limited partnership", "gaap": "Equity method or NAV expedient", "stat": "Equity method (SSAP 48)", "delta": "STAT may exclude undistributed earnings without audit"}
+      ],
+      "references": [
+        {"label": "ASC 321", "url": "https://asc.fasb.org/topic&trid=77866858"},
+        {"label": "NAIC SSAP No. 30R", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Investments", "Equity", "Stock", "Preferred", "ASC321", "SSAP30", "SSAP32", "GAAP", "STAT"]
+    },
+    {
+      "slug": "mortgage-loans",
+      "title": "Commercial & Residential Mortgage Loans",
+      "framework": "ASC 310 / SSAP 37",
+      "depth": "deep",
+      "fsli": "Investments — Mortgage Loans",
+      "summary": "Direct mortgage loans on income-producing properties. Life insurers hold ~10–20% of invested assets in CMLs. GAAP applies CECL; STAT uses SSAP 37 reserves and Schedule B reporting.",
+      "key_difference": "GAAP: CECL day-one. STAT: SSAP 37 mortgage-loan valuation reserve plus haircut for delinquent loans.",
+      "gaap_view": "ASC 310-20 amortized cost net of CECL allowance.",
+      "stat_view": "SSAP 37 — admitted at unpaid principal less mortgage-loan valuation reserve. Loans 90+ days delinquent are non-admitted unless adequately secured.",
+      "body_md": "## Why insurers love CMLs\n\nCommercial mortgage loans deliver duration-matched cash flows for long-tail liabilities, with ~50–100 bps of yield pickup over comparable corporate bonds.\n\n## Underwriting filters\n\n- LTV ≤ 65–70%\n- Debt service coverage ratio (DSCR) ≥ 1.30x\n- Property types: office, multifamily, industrial, retail (selectively)\n\n## CECL on CMLs (GAAP)\n\nASC 326-20 requires an expected-credit-loss allowance. Office CECL allowances surged 2023–2024 as work-from-home pressured CRE.",
+      "sections": [
+        {"heading": "Risk-based capital", "kind": "list", "items": ["Life RBC for CMLs uses CM1 (best) through CM5 (worst).", "Office in 2024 was placed under enhanced surveillance.", "Mezzanine and B-piece loans treated separately under SSAP 37."]}
+      ],
+      "fsli_table": [
+        {"line_item": "Performing CML (LTV<70%)", "gaap": "Amortized cost less CECL allowance", "stat": "Unpaid principal admitted; small MLVR", "delta": "GAAP holds CECL day-one"},
+        {"line_item": "90+ delinquent CML", "gaap": "Higher allowance; nonaccrual", "stat": "Non-admitted unless adequately secured", "delta": "STAT can zero-out the asset"},
+        {"line_item": "Mezzanine / B-piece", "gaap": "Same as senior with higher CECL", "stat": "Higher RBC factor", "delta": "RBC charge much higher under STAT"}
+      ],
+      "references": [
+        {"label": "ASC 310 — Receivables", "url": "https://asc.fasb.org/topic&trid=2126998"},
+        {"label": "NAIC SSAP No. 37 (Mortgage Loans)", "url": "https://content.naic.org/sites/default/files/inline-files/SSAP%2037.pdf"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Investments", "Mortgage", "CRE", "CML", "ASC310", "ASC326", "SSAP37", "CECL", "GAAP", "STAT", "Schedule B"]
+    },
+    {
+      "slug": "derivatives-asc815",
+      "title": "Derivatives & Hedging (ASC 815)",
+      "framework": "ASC 815 / SSAP 86",
+      "depth": "deep",
+      "fsli": "Derivative Assets / Liabilities",
+      "summary": "Futures, forwards, swaps, options, and embedded derivatives. Used heavily by life insurers managing interest-rate, equity, and FX risk on annuity guarantees.",
+      "key_difference": "GAAP defaults to fair value through P&L with optional hedge accounting. STAT permits more hedge accounting flexibility.",
+      "gaap_view": "ASC 815: derivative at fair value through P&L. Hedge accounting reduces P&L volatility.",
+      "stat_view": "SSAP 86: replicates GAAP for non-hedging; hedge accounting available with simpler effectiveness tests.",
+      "body_md": "## Insurer use cases\n\n- Interest-rate swaps — duration-match annuity liabilities\n- Currency swaps — hedge foreign bond exposure\n- Equity total-return swaps / options — hedge variable-annuity GMxB benefits\n- Inflation swaps — long-tail P&C liability hedging\n- Credit default swaps — synthetic credit exposure\n\n## Embedded derivatives\n\nVariable-annuity guarantees (GMxB) often contain embedded derivatives that must be bifurcated under ASC 815-15. Post-LDTI, most market-risk benefits move to fair-value-through-P&L with non-performance risk in OCI.",
+      "sections": [
+        {"heading": "MRBs vs embedded derivatives", "kind": "text", "content": "Pre-LDTI: GMAB/GMWB riders bifurcated as embedded derivatives. Post-LDTI: same riders measured as Market Risk Benefits at fair value with non-performance risk in OCI."}
+      ],
+      "fsli_table": [
+        {"line_item": "Pay-fixed receive-floating IRS", "gaap": "FV through P&L", "stat": "Amortized cost when designated as hedge", "delta": "STAT permits cleaner P&L"},
+        {"line_item": "Cash-flow hedge of forecasted bond purchase", "gaap": "Effective portion in OCI", "stat": "Mirror — effective in surplus", "delta": "Largely aligned"},
+        {"line_item": "Equity put hedging GMxB", "gaap": "FV through P&L (or part of MRB)", "stat": "FV through surplus", "delta": "Major P&L volatility under GAAP"},
+        {"line_item": "Embedded derivative in EIA host", "gaap": "Bifurcate; FV through P&L", "stat": "Bifurcate; FV through surplus", "delta": "Aligned mechanism"}
+      ],
+      "references": [
+        {"label": "ASC 815 — Derivatives & Hedging", "url": "https://asc.fasb.org/topic&trid=2229140"},
+        {"label": "NAIC SSAP No. 86", "url": "https://content.naic.org/sites/default/files/inline-files/SSAP%2086.pdf"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Derivatives", "Hedging", "ASC815", "SSAP86", "Swap", "Option", "Embedded", "GAAP", "STAT", "LDTI", "MRB"]
+    },
+    {
+      "slug": "dac-deferred-acquisition-costs",
+      "title": "Deferred Acquisition Costs (DAC)",
+      "framework": "ASC 944-30 / SAP (non-admitted)",
+      "depth": "deep",
+      "fsli": "Deferred Acquisition Costs",
+      "summary": "Capitalized incremental, direct costs of acquiring insurance contracts. The single largest GAAP-vs-STAT divergence: GAAP capitalizes; STAT expenses immediately.",
+      "key_difference": "GAAP DAC asset → amortized over policy life. STAT: no DAC asset.",
+      "gaap_view": "ASC 944-30 (post-LDTI): capitalize incremental direct costs; amortize on a constant-level basis over expected contract term.",
+      "stat_view": "All acquisition costs expensed when incurred under SAP — no DAC asset.",
+      "body_md": "## What qualifies for capitalization\n\nUnder ASC 944-30-25 (post-ASU 2018-12):\n\n- First-year commissions ≥ ultimate renewal rate (incremental portion only)\n- Underwriting expenses directly tied to successful issuance\n- Medical exams, credit checks, contract-issuance costs\n\nNon-incremental costs (general overhead, marketing without traceability) cannot be deferred.\n\n## LDTI amortization\n\nASU 2018-12 swept away EGP-based amortization. Now: constant-level basis tied to a denominator (e.g. inforce face), no interest accrual, annual review prospective only.\n\n## New-business strain\n\n```\nGAAP earnings on a new sale = First-year profit + DAC asset\nSTAT surplus impact = -(First-year acquisition costs)\n```\n\nA fast-growing life writer can show GAAP profits while burning statutory surplus.",
+      "sections": [
+        {"heading": "Capitalization criteria", "kind": "list", "items": ["Incremental: would not have been incurred absent the contract.", "Direct: traceable to contract acquisition.", "Successful: only deferred for issued/booked contracts."]}
+      ],
+      "fsli_table": [
+        {"line_item": "First-year commissions", "gaap": "Capitalized as DAC", "stat": "Expensed immediately", "delta": "Largest single GAAP-STAT difference"},
+        {"line_item": "Underwriting / medical exams", "gaap": "Capitalized if traceable", "stat": "Expensed", "delta": "Same as commissions"},
+        {"line_item": "Marketing / advertising", "gaap": "Expensed", "stat": "Expensed", "delta": "Aligned"},
+        {"line_item": "DAC asset balance", "gaap": "Amortized constant-level", "stat": "N/A — non-existent", "delta": "Pure GAAP construct"}
+      ],
+      "references": [
+        {"label": "ASC 944-30 — Acquisition Costs", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "ASU 2018-12 (LDTI)", "url": "https://www.fasb.org/page/PageContent?pageId=/projects/asu/asu201812.html"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "DAC", "Acquisition", "ASC944", "SAP", "LDTI", "GAAP", "STAT"]
+    },
+    {
+      "slug": "unpaid-claims-loss-reserves",
+      "title": "Unpaid Claims & Loss Reserves (P&C)",
+      "framework": "ASC 944-40 / SSAP 55",
+      "depth": "deep",
+      "fsli": "Liability for Unpaid Claims & LAE",
+      "summary": "P&C reserve for known and incurred-but-not-reported (IBNR) claims plus loss adjustment expense. Largest liability for P&C insurers; principal source of earnings volatility.",
+      "key_difference": "GAAP and STAT both undiscounted best estimate (with limited tabular exception); STAT adds appointed actuary opinion + Schedule P.",
+      "gaap_view": "ASC 944-40-30: best estimate of incurred-but-not-paid + IBNR + LAE, undiscounted.",
+      "stat_view": "SSAP 55 mirror; Schedule P discloses ten-accident-year loss development. Tabular discount permitted on workers' comp tabular indemnity.",
+      "body_md": "## Components\n\n```\nUnpaid claims liability\n  = Case reserves\n  + Bulk reserves\n  + IBNR\n  + ALAE\n  + ULAE\n```\n\nIBNR is computed actuarially using chain-ladder, Bornhuetter-Ferguson, expected-loss-ratio, or stochastic methods.\n\n## Reserve adequacy & development\n\nFavorable development: prior accident-year reserves released back through P&L. Adverse development: reserves strengthened, hitting current period.\n\n## Loss ratio\n\n```\nIncurred losses = Paid losses + Δ Unpaid claims liability\nLoss ratio = Incurred losses / Earned premium\n```",
+      "sections": [
+        {"heading": "Reserving methods", "kind": "list", "items": ["Chain-ladder — extrapolate paid/incurred development factors.", "Bornhuetter-Ferguson — blends expected losses with actual emergence.", "Expected loss ratio — apply prior-period loss ratios to current earned premium.", "Stochastic — Mack, Bootstrap, Bayesian models."]},
+        {"heading": "Reserve adequacy review", "kind": "text", "content": "Quarterly under GAAP for SEC filers. STAT requires Statement of Actuarial Opinion at year-end signed by qualified appointed actuary."}
+      ],
+      "fsli_table": [
+        {"line_item": "Case reserves", "gaap": "Best estimate; undiscounted", "stat": "Best estimate; undiscounted (Schedule P)", "delta": "Aligned"},
+        {"line_item": "IBNR", "gaap": "Best estimate from actuarial methods", "stat": "Same; appointed actuary opinion required", "delta": "Aligned"},
+        {"line_item": "ALAE", "gaap": "Included in unpaid claims liability", "stat": "Included; reported separately on Schedule P", "delta": "Aligned"},
+        {"line_item": "ULAE", "gaap": "Best estimate (often % of paid)", "stat": "Best estimate; SSAP 55 paragraph 9", "delta": "Aligned"},
+        {"line_item": "Tabular reserve discount (WC)", "gaap": "Permitted on indemnity tabular cases", "stat": "Permitted with commissioner approval", "delta": "STAT discount rate set by domiciliary state"}
+      ],
+      "references": [
+        {"label": "ASC 944-40", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "ASU 2015-09 (Disclosure)", "url": "https://www.fasb.org/page/PageContent?pageId=/projects/asu/asu201509.html"},
+        {"label": "NAIC SSAP No. 55", "url": "https://content.naic.org/sites/default/files/inline-files/SSAP%2055.pdf"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Reserves", "Loss Reserves", "IBNR", "LAE", "P&C", "Schedule P", "ASC944", "SSAP55", "GAAP", "STAT", "ASU2015-09"]
+    },
+    {
+      "slug": "lfpb-future-policy-benefits",
+      "title": "Liability for Future Policy Benefits (LDTI)",
+      "framework": "ASC 944-40 (LDTI) / SSAP 51",
+      "depth": "deep",
+      "fsli": "Future Policy Benefits",
+      "summary": "Reserve for long-duration insurance contracts. Reformed by ASU 2018-12 (LDTI), the largest GAAP insurance overhaul in 40 years.",
+      "key_difference": "GAAP post-LDTI: cohort-level LFPB with annual unlocking and current upper-medium-grade discount. STAT: principle-based reserves (PBR / VM-20) for life; CARVM for annuities.",
+      "gaap_view": "Annual review of cash-flow assumptions; retrospective unlocking through P&L. Discount rate updated each period.",
+      "stat_view": "VM-20 PBR uses prescribed mortality / lapse / yield assumptions and a deterministic + stochastic floor. CARVM (SSAP 51) for annuities.",
+      "body_md": "## What LDTI changed\n\nFor SEC filers, LDTI (ASU 2018-12) became effective Jan 1, 2023:\n\n1. Cohort-level LFPB\n2. Annual unlocking with retrospective P&L impact\n3. Discount rate: single-A-equivalent updated each period\n4. Market Risk Benefits separately measured at fair value\n5. DAC simplification — constant-level amortization\n\n## The LFPB calculation\n\n```\nLFPB(t) = PV[future benefits] - PV[future net premiums]\n        — measured at the cohort level, single-A discount rate\n```\n\n## Statutory contrast (PBR / CARVM)\n\nLife insurers under VM-20 PBR compute reserves as the maximum of NPR, Deterministic Reserve, Stochastic Reserve.",
+      "sections": [
+        {"heading": "Cohort definition", "kind": "list", "items": ["Issue year (calendar year of policy issuance).", "Product / contract type.", "Underwriting class.", "Benefit feature."]}
+      ],
+      "fsli_table": [
+        {"line_item": "Term-life LFPB", "gaap": "Cohort-level; annual unlocking; A-rate discount", "stat": "VM-20 PBR (max of NPR, DR, SR)", "delta": "GAAP earnings move with rates"},
+        {"line_item": "Whole-life LFPB", "gaap": "Cohort-level LFPB w/ DAC", "stat": "VM-20 PBR with mortality + lapse stress", "delta": "STAT typically more conservative"},
+        {"line_item": "Payout-annuity reserve", "gaap": "Cohort LFPB; A-rate discount", "stat": "CARVM (SSAP 51)", "delta": "GAAP volatility from rates; STAT constant"},
+        {"line_item": "Long-term care LFPB", "gaap": "Cohort LFPB; significant LTC re-measurement charges", "stat": "Active life / disabled life reserves under SSAP 54", "delta": "Major industry pain point"}
+      ],
+      "references": [
+        {"label": "ASC 944-40 — LDTI", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "ASU 2018-12 (LDTI)", "url": "https://www.fasb.org/page/PageContent?pageId=/projects/asu/asu201812.html"},
+        {"label": "NAIC Valuation Manual (VM-20)", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Reserves", "Life", "LFPB", "LDTI", "ASU2018-12", "ASC944", "VM-20", "PBR", "CARVM", "SSAP51", "GAAP", "STAT"]
+    },
+    {
+      "slug": "mrb-market-risk-benefits",
+      "title": "Market Risk Benefits (MRBs)",
+      "framework": "ASC 944-40-30-19A (LDTI)",
+      "depth": "deep",
+      "fsli": "Market Risk Benefits",
+      "summary": "Separately measured reserve for variable-annuity guarantees (GMxB). Created by ASU 2018-12 to replace embedded-derivative bifurcation.",
+      "key_difference": "GAAP MRB at fair value with non-performance risk in OCI. STAT continues VM-21 methodology.",
+      "gaap_view": "Fair-value measurement; changes attributable to insurer's own credit (NPR) flow through OCI; remainder through P&L.",
+      "stat_view": "VM-21 reserves; stochastic CTE-70-based reserve under prescribed scenarios.",
+      "body_md": "## What is an MRB?\n\nA contractual feature that compels the insurer to make a payment based on a market event AND exposes the insurer to other-than-nominal capital-market risk.\n\nClassic examples — variable-annuity rider guarantees: GMDB, GMAB, GMWB, GMIB.\n\n## GAAP measurement\n\nMRB liability = present value of expected guaranteed benefit payments over expected fees, computed under risk-neutral stochastic scenarios with the insurer's own credit spread.\n\n## STAT (VM-21)\n\nVM-21 calculates a stochastic reserve at CTE 70 under prescribed scenarios, with a clearly-defined hedging-credit framework.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "GMDB (death benefit)", "gaap": "MRB at fair value (P&L for market; OCI for own credit)", "stat": "VM-21 stochastic reserve; CTE 70", "delta": "GAAP shows market-driven volatility"},
+        {"line_item": "GMAB / GMWB", "gaap": "MRB at fair value", "stat": "VM-21; VAGLB component", "delta": "Aligned identification"},
+        {"line_item": "Index-credit annuity (FIA)", "gaap": "Embedded derivative, FV through P&L", "stat": "CARVM with prescribed crediting", "delta": "Index credit bifurcated under GAAP"}
+      ],
+      "references": [
+        {"label": "ASC 944-40-30-19A (MRBs)", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "NAIC VM-21", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "MRB", "LDTI", "Variable Annuity", "GMDB", "GMWB", "GMIB", "ASC944", "VM-21", "GAAP", "STAT"]
+    },
+    {
+      "slug": "universal-life-account-balances",
+      "title": "Universal Life & Annuity Account Balances",
+      "framework": "ASC 944 (FAS 97 origin) / SSAP 51",
+      "depth": "deep",
+      "fsli": "Policyholder Account Balances",
+      "summary": "Deposit-basis liability for universal-life and deferred-annuity contracts. Equals the policyholder's notional account balance plus any unearned-revenue liability.",
+      "key_difference": "GAAP and STAT both use deposit accounting; differences at the margins (DAC, secondary guarantees).",
+      "gaap_view": "Account balance + unearned-revenue liability for amortizable front loads.",
+      "stat_view": "Account balance under SSAP 51 + secondary-guarantee reserve under VM-20 if applicable.",
+      "body_md": "## Mechanics\n\n```\nAccount balance(t) = Account balance(t-1) + Premium paid - Withdrawals\n                   - Cost-of-insurance charge - Expense load\n                   + Interest credited\n```\n\n## Secondary guarantees\n\nNo-lapse universal-life (NLG) features promise the policy stays in force even if the account balance drops to zero. Secondary-guarantee reserves can be far larger than the account balance.\n\n## Interest crediting\n\n- UL: declared rate set by insurer, often with floor (3%, 2%, 1%, 0%)\n- Indexed UL: cap/participation/floor on index linked to S&P 500\n- Variable UL: separate-account performance flows directly to policyholder",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Universal-life account balance", "gaap": "Account value", "stat": "Account value + secondary-guarantee reserve", "delta": "STAT adds secondary-guarantee reserves"},
+        {"line_item": "Front-end-load unearned revenue", "gaap": "Liability; amortized alongside DAC", "stat": "Recognized immediately as revenue", "delta": "GAAP defers; STAT does not"},
+        {"line_item": "Secondary-guarantee reserve (NLG)", "gaap": "Separate liability under ASC 944", "stat": "VM-20 deterministic + stochastic component", "delta": "Both substantial; STAT typically larger"}
+      ],
+      "references": [
+        {"label": "ASC 944 — sub-topics 30, 40, 605", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "Original FAS 97", "url": "https://www.fasb.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "UL", "Universal Life", "Annuity", "Account Balance", "FAS97", "ASC944", "SSAP51", "GAAP", "STAT"]
+    },
+    {
+      "slug": "premium-revenue-recognition",
+      "title": "Premium Revenue Recognition",
+      "framework": "ASC 944-605 / FAS 60 / SSAP 53",
+      "depth": "deep",
+      "fsli": "Premium Revenue & Unearned Premium",
+      "summary": "Earning of insurance premium across the policy coverage period. Short-duration earns ratably; long-duration earns when due; deposit contracts bypass premium revenue.",
+      "key_difference": "ASC 606 explicitly excludes insurance contracts. STAT mirrors GAAP with separate written-vs-earned tracking in Schedule P.",
+      "gaap_view": "Short-duration: pro-rata over coverage period. Long-duration: when due. Deposit contracts: no premium revenue.",
+      "stat_view": "Mirror of GAAP; written premium tracked separately for premium-deficiency and Schedule P loss-development analysis.",
+      "body_md": "## Short-duration premium earning\n\nA 12-month P&C policy with $1,200 annual premium written Jan 1:\n- Written premium (Jan 1): $1,200\n- Earned premium per month: $100\n- Unearned premium (Jan 31): $1,100\n\n## Long-duration premium earning\n\nA whole-life policy: premium recognized as revenue when *due*, with the LFPB construct absorbing future benefits.\n\n## Deposit accounting\n\nFor universal-life and deferred annuities, the entire premium is treated as a deposit — no premium revenue. Revenue comes from COI charges, expense loads, surrender charges, and investment-spread.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "P&C 12-month policy", "gaap": "Pro-rata earning over coverage period", "stat": "Same; Schedule P tracks written and earned", "delta": "Aligned"},
+        {"line_item": "Whole-life premium", "gaap": "When due (long-duration)", "stat": "When due", "delta": "Aligned"},
+        {"line_item": "Universal-life premium", "gaap": "Deposit (no premium revenue)", "stat": "Deposit", "delta": "Aligned"},
+        {"line_item": "Reinstatement premium", "gaap": "Earned over remaining coverage", "stat": "Same", "delta": "Aligned"}
+      ],
+      "references": [
+        {"label": "ASC 944-605", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "NAIC SSAP No. 53", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Premium", "Revenue", "Unearned Premium", "Earning Pattern", "ASC944", "FAS60", "SSAP53", "GAAP", "STAT"]
+    },
+    {
+      "slug": "premium-deficiency-reserve",
+      "title": "Premium Deficiency Reserve (PDR)",
+      "framework": "ASC 944-60 / SSAP 53",
+      "depth": "deep",
+      "fsli": "Premium Deficiency Reserve",
+      "summary": "Recognized when expected future losses + LAE + maintenance costs exceed unearned premium reserve plus expected investment income.",
+      "key_difference": "Aligned trigger; STAT reports gross of reinsurance vs GAAP net.",
+      "gaap_view": "ASC 944-60-25: when PV of expected future costs exceeds UPR + DAC + investment income, recognize the shortfall.",
+      "stat_view": "SSAP 53 / SSAP 65 mirror; aggregation typically at line of business.",
+      "body_md": "## Trigger formula\n\n```\nPDR = max(0,\n  PV(future losses + LAE + maintenance) -\n  Unearned premium reserve -\n  DAC -\n  Anticipated investment income on UPR cash flows\n)\n```\n\n## DAC offset\n\nWhen a deficiency exists, first write off DAC on the affected portfolio; if still deficient, recognize PDR.\n\n## Examples\n\n- Workers' comp 2009–2010: declining payroll exposures + medical inflation\n- Long-term care 2017–2019: morbidity/lapse divergence triggered industry-wide PDRs",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "P&C single line PDR", "gaap": "DAC writedown first, then PDR", "stat": "Same; SSAP 53 par 4", "delta": "Aligned"},
+        {"line_item": "LTC PDR", "gaap": "Triggers when LFPB net premium ratio cap", "stat": "Active life reserve adequacy under SSAP 54", "delta": "Different mechanism; same intent"}
+      ],
+      "references": [
+        {"label": "ASC 944-60", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "NAIC SSAP No. 53", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "PDR", "Premium Deficiency", "Loss Recognition", "ASC944", "SSAP53", "GAAP", "STAT"]
+    },
+    {
+      "slug": "reinsurance-recoverables",
+      "title": "Reinsurance Recoverables",
+      "framework": "ASC 944-310 / SSAP 61R / SSAP 62R",
+      "depth": "deep",
+      "fsli": "Reinsurance Recoverable on Paid & Unpaid Losses",
+      "summary": "Asset reflecting amounts due (paid) or expected (unpaid) from reinsurers. Separate asset on the balance sheet — never netted against gross liabilities.",
+      "key_difference": "GAAP requires CECL on reinsurance recoverables. STAT non-admits unauthorized + unsecured reinsurer recoverables.",
+      "gaap_view": "Recoverable at net realizable value with CECL allowance.",
+      "stat_view": "Admitted at expected amount; non-admitted to extent reinsurer is unauthorized + unsecured (SSAP 61R Schedule F).",
+      "body_md": "## Why it's a separate asset\n\nReinsurance is treated as an indemnity contract — the cedent remains primarily liable. The reinsurer's promise creates an asset; the cedent's obligation remains a liability.\n\n## CECL on reinsurance recoverables\n\nSince Jan 2023, GAAP filers compute an expected-credit-loss allowance.\n\n## Schedule F (STAT)\n\nFor each reinsurer, the cedent reports premium ceded, recoverables, authorized status, collateral, and slow-pay provision.\n\n## Slow-pay provision\n\nIf a reinsurer is more than 90 days past-due, a 20% provision is recognized on the entire recoverable balance.",
+      "sections": [
+        {"heading": "Collateral and credit", "kind": "list", "items": ["Letters of credit from rated banks reduce both GAAP CECL and STAT non-admission.", "Funds withheld are functionally equivalent collateral.", "Trust accounts (Section 114 trusts) common for unauthorized US reinsurers."]}
+      ],
+      "fsli_table": [
+        {"line_item": "Recoverable on paid (authorized RI)", "gaap": "Net of CECL allowance", "stat": "Admitted; minimal RBC charge", "delta": "GAAP shows credit deterioration earlier"},
+        {"line_item": "Recoverable on unpaid (authorized RI)", "gaap": "Net of CECL", "stat": "Admitted; RBC charge per rating", "delta": "Same direction"},
+        {"line_item": "Recoverable (unauthorized + unsecured)", "gaap": "Net of CECL", "stat": "Non-admitted (Schedule F)", "delta": "STAT zero-out"},
+        {"line_item": "Slow-pay reinsurer", "gaap": "Higher CECL allowance", "stat": "20% provision per SSAP 62R", "delta": "STAT formula-driven"}
+      ],
+      "references": [
+        {"label": "ASC 944-310", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "ASU 2016-13 (CECL)", "url": "https://www.fasb.org/"},
+        {"label": "NAIC SSAP No. 61R", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Reinsurance", "Recoverable", "Schedule F", "CECL", "ASC944", "ASU2016-13", "SSAP61R", "SSAP62R", "GAAP", "STAT", "Authorized", "Unauthorized"]
+    },
+    {
+      "slug": "reinsurance-ceded-accounting",
+      "title": "Reinsurance Ceded — Prospective vs Retrospective",
+      "framework": "ASC 944-20 / SSAP 62R",
+      "depth": "deep",
+      "fsli": "Reinsurance Premium Ceded; Funds Held",
+      "summary": "How a cedent recognizes premium and benefit when transferring risk. Bifurcation between prospective and retrospective is critical.",
+      "key_difference": "Largely aligned post-SSAP 62R Revisions.",
+      "gaap_view": "ASC 944-20-25-21: prospective recognized prospectively; retrospective requires deferral of any gain.",
+      "stat_view": "SSAP 62R mirrors GAAP for prospective; LPT/ADC accounting deposits any economic transfer not meeting risk-transfer test.",
+      "body_md": "## Prospective reinsurance\n\nCovers losses arising from events that occur **after** the contract effective date. Premium ceded recognized over coverage period.\n\n## Retrospective reinsurance\n\nCovers losses from events that occurred **before** the contract effective date — typically LPTs.\n\n## Common contract types\n\n- Quota share\n- Excess of loss\n- Stop loss\n- Catastrophe XOL\n- LPT (loss-portfolio transfer)\n- ADC (adverse-development cover)",
+      "sections": [
+        {"heading": "Funds-withheld accounting", "kind": "text", "content": "The cedent retains the premium asset and records a corresponding funds-withheld liability. Investment income belongs to the reinsurer."}
+      ],
+      "fsli_table": [
+        {"line_item": "Quota-share prospective", "gaap": "Premium ceded over coverage period", "stat": "Mirror; Schedule F by reinsurer", "delta": "Aligned"},
+        {"line_item": "Loss-portfolio transfer", "gaap": "Ceded reserves recognized; gain deferred", "stat": "SSAP 62R par 36 — same", "delta": "Aligned post-2020"},
+        {"line_item": "Failed-RT contract", "gaap": "Deposit accounting", "stat": "Deposit accounting", "delta": "Aligned"},
+        {"line_item": "Coinsurance with funds withheld", "gaap": "Funds-withheld liability", "stat": "Same; admitted asset under SSAP 61R", "delta": "Aligned"}
+      ],
+      "references": [
+        {"label": "ASC 944-20", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "NAIC SSAP No. 62R", "url": "https://content.naic.org/sites/default/files/inline-files/SSAP%2062R.pdf"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Reinsurance", "Prospective", "Retrospective", "LPT", "ADC", "Risk Transfer", "Funds Withheld", "ASC944", "SSAP62R", "GAAP", "STAT"]
+    },
+    {
+      "slug": "risk-transfer-test",
+      "title": "Risk Transfer Test (10/10 and beyond)",
+      "framework": "ASC 944-20-15-41",
+      "depth": "deep",
+      "fsli": "Reinsurance — Recognition vs Deposit",
+      "summary": "Test that determines whether a contract receives reinsurance accounting or deposit accounting.",
+      "key_difference": "Aligned post-2020.",
+      "gaap_view": "Significant insurance risk + reasonable possibility of significant loss → reinsurance accounting.",
+      "stat_view": "SSAP 62R Appendix A — risk-transfer assertions required; appointed actuary certification.",
+      "body_md": "## Two prongs\n\n**Prong 1 — Significant insurance risk**\n\nThe reinsurer must assume both timing and underwriting risk.\n\n**Prong 2 — Reasonable possibility of significant loss**\n\nInformal '10/10 rule': 10% probability of 10% economic loss.\n\n## Failure modes\n\nA reinsurance contract may fail when it has aggregate caps too low, profit-sharing reversing reinsurer losses, or experience-rating mechanisms returning gains to the cedent.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Quota share with no caps", "gaap": "Risk transfer assumed", "stat": "Same", "delta": "Aligned"},
+        {"line_item": "Multi-year aggregate stop-loss", "gaap": "Often passes; caps tested", "stat": "Same", "delta": "Aligned"},
+        {"line_item": "Captive transaction with profit-sharing", "gaap": "Often deposit accounting", "stat": "Often deposit", "delta": "Aligned"}
+      ],
+      "references": [
+        {"label": "ASC 944-20-15-41", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "NAIC SSAP No. 62R, Appendix A", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["Reinsurance", "Risk Transfer", "10/10 Rule", "Deposit Accounting", "ASC944", "SSAP62R", "GAAP", "STAT"]
+    },
+    {
+      "slug": "statutory-surplus-rbc",
+      "title": "Statutory Surplus & Risk-Based Capital",
+      "framework": "NAIC RBC Formula / SSAP 72",
+      "depth": "deep",
+      "fsli": "Surplus & RBC",
+      "summary": "Statutory surplus = admitted assets - liabilities. RBC = formulaic calculation of required capital.",
+      "key_difference": "GAAP's analog is shareholders' equity. RBC is a uniquely statutory construct.",
+      "gaap_view": "Equity = total assets - total liabilities. No regulatory action levels.",
+      "stat_view": "Surplus = admitted assets - liabilities - AVR - IMR. RBC ratio = Total Adjusted Capital / Authorized Control Level RBC.",
+      "body_md": "## RBC components (Life)\n\n- C-0 Affiliate / off-balance-sheet risk\n- C-1cs Stock asset risk\n- C-1o Other asset risk (bonds, mortgages)\n- C-2 Insurance risk (mortality, morbidity)\n- C-3 Interest-rate risk\n- C-4 Business risk\n\n## Action levels\n\nRBC ratio = TAC / ACL\n- ≥ 200% — No action\n- 150-200% — Company action\n- 100-150% — Regulatory action\n- 70-100% — Authorized control\n- < 70% — Mandatory control\n\n## AVR and IMR (Life)\n\n- Asset Valuation Reserve — contingency reserve absorbing credit losses\n- Interest Maintenance Reserve — defers rate-driven realized gains on bonds",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Admitted assets", "gaap": "All assets recorded", "stat": "Excludes non-admitted (DAC, prepaid, restricted)", "delta": "Statutory surplus more conservative"},
+        {"line_item": "Surplus / Equity", "gaap": "Equity = Assets - Liabilities", "stat": "Surplus = Admitted - Liabilities - AVR - IMR", "delta": "STAT < GAAP typically"},
+        {"line_item": "RBC ratio", "gaap": "N/A", "stat": "TAC / ACL", "delta": "STAT-only construct"}
+      ],
+      "references": [
+        {"label": "NAIC RBC formula", "url": "https://content.naic.org/cipr-topics/risk-based-capital"},
+        {"label": "NAIC SSAP No. 72", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["STAT", "Surplus", "RBC", "AVR", "IMR", "NAIC", "Capital", "Solvency", "SSAP72"]
+    },
+    {
+      "slug": "asc-326-cecl",
+      "title": "Current Expected Credit Losses (CECL)",
+      "framework": "ASC 326",
+      "depth": "deep",
+      "fsli": "Credit-Loss Allowance",
+      "summary": "ASU 2016-13's expected-credit-loss model replaced the incurred-loss approach for most financial instruments.",
+      "key_difference": "STAT does not adopt CECL.",
+      "gaap_view": "Day-one expected credit loss allowance covering the contractual life.",
+      "stat_view": "Bonds: SSAP 26R/43R OTTI write-downs. Receivables: non-admission rules.",
+      "body_md": "## What CECL covers\n\n1. HTM bonds (ASC 326-20) — full lifetime ECL\n2. AFS bonds (ASC 326-30) — only when FV < AC AND credit deterioration\n3. Mortgage loans\n4. Reinsurance recoverables\n5. Premium receivables\n6. Loan commitments and standby letters of credit\n\n## Methods\n\n- Vintage analysis\n- Probability-weighted scenarios\n- Discounted cash flow\n- WARM (weighted-average remaining maturity)",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "HTM corporate bonds", "gaap": "ASC 326-20 lifetime ECL", "stat": "OTTI when impairment evident", "delta": "GAAP recognizes ECL day-one"},
+        {"line_item": "Mortgage loans", "gaap": "ASC 326-20 lifetime ECL", "stat": "MLVR; non-admit 90+ delinquent", "delta": "GAAP earlier; STAT through admit/non-admit"},
+        {"line_item": "Reinsurance recoverables", "gaap": "ASC 326-20 lifetime ECL", "stat": "Schedule F authorized vs unauthorized", "delta": "GAAP CECL; STAT non-admission"},
+        {"line_item": "Premium receivables", "gaap": "ASC 326-20 lifetime ECL", "stat": "Non-admit 90+ days past due", "delta": "GAAP early reserve; STAT cliff"}
+      ],
+      "references": [
+        {"label": "ASC 326", "url": "https://asc.fasb.org/topic&trid=77869569"},
+        {"label": "ASU 2016-13", "url": "https://www.fasb.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "CECL", "Credit Loss", "Allowance", "ASC326", "ASU2016-13", "GAAP", "STAT"]
+    },
     {
       "slug": "asc-944-overview",
       "title": "ASC 944 — Financial Services: Insurance",
-      "framework": "ASC944",
-      "summary": "Top-level US GAAP standard governing insurance accounting. Codifies recognition, measurement, and disclosure for insurance contracts.",
-      "body_md": "## ASC 944 in 60 seconds\n\n**Scope.** Applies to entities that issue insurance contracts (life, P&C, health, reinsurance, financial guaranty).\n\n**Key sub-topics.**\n- 944-20: Insurance Activities (general)\n- 944-30: Acquisition Costs (DAC)\n- 944-40: Claim Costs and Liabilities for Future Policy Benefits\n- 944-50: Policyholder Dividends\n- 944-60: Premium Deficiency and Loss Recognition\n- 944-80: Separate Accounts\n\n**ASU 2018-12 (LDTI)** materially changed long-duration contract accounting (effective 2023 for SEC filers): annual assumption review, market-consistent rate for liability for future policy benefits, market risk benefits at fair value, simplified DAC amortization.",
+      "framework": "ASC 944",
+      "depth": "overview",
       "fsli": "All insurance balances",
-      "gaap_view": "Principles-based, going-concern measurement; emphasizes matching of premiums and benefits.",
-      "stat_view": "Conservative, liquidity/solvency-focused; benefits recognized using statutory mortality/morbidity tables.",
-      "tags": ["GAAP", "Insurance", "Standards"]
+      "summary": "Top-level US GAAP standard governing insurance accounting.",
+      "key_difference": "Principles-based, going-concern measurement vs conservative STAT.",
+      "gaap_view": "Principles-based with bright-line classification (short-duration vs long-duration vs investment / deposit).",
+      "stat_view": "Conservative, liquidity/solvency-focused.",
+      "body_md": "## Sub-topics roadmap\n\n- 944-10 Overall\n- 944-20 Insurance Activities\n- 944-30 Acquisition Costs (DAC)\n- 944-40 Claim Costs and Future Policy Benefits\n- 944-50 Policyholder Dividends\n- 944-60 Premium Deficiency\n- 944-80 Separate Accounts\n- 944-310 Receivables (reinsurance)\n- 944-605 Premium Revenue",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "DAC", "gaap": "Capitalized; constant-level amortization", "stat": "Expensed", "delta": "See dedicated DAC article"},
+        {"line_item": "LFPB", "gaap": "Cohort-level; A-rate discount; annual unlock", "stat": "VM-20 PBR / CARVM", "delta": "See LFPB article"},
+        {"line_item": "MRB", "gaap": "Fair value; OCI for own credit", "stat": "VM-21", "delta": "See MRB article"}
+      ],
+      "references": [
+        {"label": "ASC 944", "url": "https://asc.fasb.org/topic&trid=2156436"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["GAAP", "Standards", "ASC944", "Insurance"]
     },
     {
-      "slug": "fas-60",
-      "title": "FAS 60 — Short-Duration Contracts",
-      "framework": "FAS60",
-      "summary": "Original P&C accounting model. Premiums earned over the coverage period; losses recognized as incurred.",
-      "body_md": "## Snapshot\n\n**Scope.** Most P&C policies and short-duration health.\n\n**Premium recognition.** Earned ratably over the coverage period (typically 12 months).\n\n**Loss reserves.** Best estimate of unpaid claims (case + IBNR), undiscounted.\n\n**DAC.** Capitalized; amortized in proportion to premium revenue.\n\n**Premium deficiency.** Test at the end of each period — if expected losses + LAE + maintenance > unearned premium, recognize a deficiency.",
-      "fsli": "Unearned Premium / Loss Reserves",
-      "gaap_view": "Undiscounted loss reserves; DAC asset; premium deficiency test.",
-      "stat_view": "Schedule P loss development; SAP requires full IBNR but with some line-specific conservatism.",
-      "tags": ["P&C", "Short-Duration"]
+      "slug": "ldti-asu-2018-12",
+      "title": "LDTI (ASU 2018-12) — Long-Duration Reform",
+      "framework": "ASU 2018-12 / ASC 944",
+      "depth": "overview",
+      "fsli": "LFPB / DAC / MRB",
+      "summary": "Most significant US GAAP insurance change in decades. Effective 2023 for SEC filers.",
+      "key_difference": "Annual unlocking, cohort-level LFPB, MRBs at fair value, constant-level DAC.",
+      "gaap_view": "Cohort-level LFPB with annual review; MRBs at fair value; DAC simplified.",
+      "stat_view": "VM-20 PBR + CARVM continue.",
+      "body_md": "## Five major changes\n\n1. LFPB cohorts\n2. Annual unlocking with retrospective P&L impact\n3. Discount rate updated each period\n4. MRBs separately measured at fair value\n5. DAC simplified to constant-level amortization\n\n## Industry impact\n\n- Heavy implementation costs ($50M–$200M per major insurer)\n- Earnings volatility increased materially\n- LTC unlockings 2023–2024: $200M–$2B per insurer",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Long-duration LFPB", "gaap": "Cohort-level; annual unlock", "stat": "Largely unchanged", "delta": "GAAP modernized"},
+        {"line_item": "DAC", "gaap": "Constant-level amortization", "stat": "Expensed", "delta": "GAAP simplified"},
+        {"line_item": "MRBs", "gaap": "Fair value", "stat": "VM-21", "delta": "GAAP fully market-driven"}
+      ],
+      "references": [
+        {"label": "ASU 2018-12", "url": "https://www.fasb.org/page/PageContent?pageId=/projects/asu/asu201812.html"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["GAAP", "LDTI", "ASU2018-12", "Life", "LFPB", "DAC", "MRB"]
     },
     {
-      "slug": "fas-97",
-      "title": "FAS 97 — Universal Life & Investment Contracts",
-      "framework": "FAS97",
-      "summary": "Establishes account-balance accounting for universal life, deferred annuities, and limited-pay contracts.",
-      "body_md": "## Snapshot\n\n**Scope.** Universal life, variable UL, deferred annuities (investment contracts).\n\n**Liability.** Account balance + unearned revenue liability for front-end loads.\n\n**Revenue.** Mortality & expense charges, surrender charges, and investment spread.\n\n**DAC.** Amortized in proportion to estimated gross profits (EGPs) — periodically unlocked.\n\n**Note.** LDTI (ASU 2018-12) simplified DAC amortization to a constant level basis; EGP unlocking is largely retired.",
-      "fsli": "Policyholder Account Balances",
-      "gaap_view": "Deposit accounting; revenue from charges; EGP-based DAC (pre-LDTI).",
-      "stat_view": "Commissioners' Annuity Reserve Valuation Method (CARVM); separate account reporting under SSAP 56.",
-      "tags": ["Life", "Annuity", "DAC"]
+      "slug": "fas-60-short-duration",
+      "title": "FAS 60 — Short-Duration Contracts (legacy)",
+      "framework": "ASC 944 (originally FAS 60)",
+      "depth": "overview",
+      "fsli": "P&C balances",
+      "summary": "Original P&C accounting model. Premium earned ratably over coverage; losses recognized as incurred.",
+      "key_difference": "Aligned to STAT for most short-duration items.",
+      "gaap_view": "Pro-rata premium earning; undiscounted loss reserves; DAC asset; premium-deficiency test.",
+      "stat_view": "Same earning pattern; Schedule P loss-development triangles required.",
+      "body_md": "## Snapshot\n\n**Scope.** Most P&C policies and short-duration health.\n\n**Premium recognition.** Earned ratably over the coverage period.\n\n**Loss reserves.** Best estimate of unpaid claims (case + IBNR), undiscounted.\n\n**DAC.** Capitalized; amortized in proportion to premium revenue.\n\n## Key disclosures\n\nASU 2015-09 added disclosures: paid loss triangle, incurred loss triangle, claim count triangle for the most recent ten accident years.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Unearned premium", "gaap": "Pro-rata accrual", "stat": "Same", "delta": "Aligned"},
+        {"line_item": "Loss reserves", "gaap": "Undiscounted best estimate", "stat": "Same", "delta": "Aligned"},
+        {"line_item": "DAC", "gaap": "Capitalized; amortized to earned premium", "stat": "Expensed", "delta": "Major"}
+      ],
+      "references": [
+        {"label": "ASC 944 — Short-Duration", "url": "https://asc.fasb.org/topic&trid=2156436"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["GAAP", "P&C", "Short-Duration", "FAS60", "ASC944"]
     },
     {
-      "slug": "fas-133",
-      "title": "FAS 133 — Derivatives & Hedging (ASC 815)",
-      "framework": "FAS133",
-      "summary": "Governs derivative accounting and hedge designation. Heavily used by life insurers managing interest rate, credit, and equity risk.",
-      "body_md": "## Snapshot\n\n**Scope.** All derivatives — futures, swaps, options, embedded derivatives in host contracts.\n\n**Measurement.** Fair value through P&L by default.\n\n**Hedge accounting (optional).**\n- Fair value hedge: changes in hedged item & derivative both in P&L\n- Cash flow hedge: derivative effective portion in OCI, reclassified when hedged item hits earnings\n- Net investment hedge: similar to cash flow hedge for foreign operations\n\n**Insurance relevance.** Variable annuity guarantees (GMxB riders) often contain embedded derivatives bifurcated under ASC 815.",
-      "fsli": "Derivative Assets/Liabilities",
-      "gaap_view": "Fair value with optional hedge designation reducing P&L volatility.",
-      "stat_view": "SSAP 86 — limited hedge accounting; many derivatives carried at amortized cost when used in qualifying hedges.",
-      "tags": ["Derivatives", "Hedging", "ASC815"]
+      "slug": "fas-97-universal-life",
+      "title": "FAS 97 — Universal Life & Investment Contracts (legacy)",
+      "framework": "ASC 944 (originally FAS 97)",
+      "depth": "overview",
+      "fsli": "Account balances; UL/Annuity",
+      "summary": "Established account-balance (deposit) accounting for universal life and deferred annuities.",
+      "key_difference": "Aligned with STAT account-balance treatment; major divergence at DAC and secondary-guarantee reserves.",
+      "gaap_view": "Account balance + unearned-revenue liability for front loads.",
+      "stat_view": "Account balance under SSAP 51; secondary-guarantee reserve under VM-20.",
+      "body_md": "Snapshot — see Universal Life article for full FSLI-level detail.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "UL account balance", "gaap": "Account value", "stat": "Account value + secondary guarantee", "delta": "STAT adds NLG reserve"},
+        {"line_item": "Annuity account balance", "gaap": "Account value", "stat": "CARVM", "delta": "STAT adds CARVM minimum"}
+      ],
+      "references": [
+        {"label": "Original FAS 97", "url": "https://www.fasb.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["GAAP", "FAS97", "UL", "Annuity", "Account Balance"]
+    },
+    {
+      "slug": "fas-133-derivatives",
+      "title": "FAS 133 — Derivatives & Hedging (legacy)",
+      "framework": "ASC 815 (originally FAS 133)",
+      "depth": "overview",
+      "fsli": "Derivative assets / liabilities",
+      "summary": "Original derivative-and-hedging standard. Modernized into ASC 815 with ASU 2017-12 simplifications.",
+      "key_difference": "Aligned to ASC 815 article.",
+      "gaap_view": "Fair value + hedge designation framework.",
+      "stat_view": "SSAP 86 — more flexible hedge accounting.",
+      "body_md": "See ASC 815 article for full derivatives & hedging detail.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Standalone derivative", "gaap": "Fair value, P&L", "stat": "Fair value, surplus", "delta": "GAAP earnings; STAT surplus"}
+      ],
+      "references": [
+        {"label": "Original FAS 133", "url": "https://www.fasb.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["GAAP", "FAS133", "ASC815", "Derivatives"]
     },
     {
       "slug": "sap-overview",
       "title": "Statutory Accounting Principles (SAP)",
-      "framework": "SAP",
-      "summary": "Regulator-driven framework focused on solvency and policyholder protection. Codified in NAIC's Accounting Practices & Procedures Manual.",
-      "body_md": "## Why two sets of books?\n\nU.S. insurers prepare both **GAAP** (for investors) and **STAT** (for regulators) financials. Statutory accounting is intentionally conservative — it answers *can the company pay claims if it stopped writing tomorrow?*\n\n**Key SAP traits.**\n- Non-admitted assets (e.g., furniture, prepaid expenses) excluded from surplus\n- DAC is **expensed** when incurred (no GAAP-style asset)\n- Investments at amortized cost for high-quality bonds (NAIC 1-2)\n- Dividends require regulatory approval if exceeding ordinary thresholds\n- Schedules P, F, BA, and D drive risk-based capital (RBC)\n\n**RBC ratio.** Total Adjusted Capital / Authorized Control Level. <200% triggers regulatory action.",
-      "fsli": "Surplus, Reserves, Investments",
+      "framework": "NAIC AP&P Manual",
+      "depth": "overview",
+      "fsli": "All — STAT lens",
+      "summary": "Regulator-driven framework focused on solvency and policyholder protection.",
+      "key_difference": "Conservative, liquidation-oriented vs going-concern GAAP.",
       "gaap_view": "Going-concern, asset-rich, deferred-cost emphasis.",
       "stat_view": "Liquidation-basis, conservative reserves, non-admitted assets, RBC-driven.",
-      "tags": ["STAT", "Solvency", "RBC"]
-    },
-    {
-      "slug": "ldti-asu-2018-12",
-      "title": "LDTI (ASU 2018-12) — Long-Duration Contract Reform",
-      "framework": "ASC944",
-      "summary": "The most significant US GAAP insurance change in decades. Effective 2023 for SEC filers; reshapes life and long-term care reporting.",
-      "body_md": "## What changed\n\n1. **LFPB cohorts.** Liability for future policy benefits computed at the issue-year cohort level; assumptions reviewed annually with retrospective unlocking through P&L.\n2. **Discount rate.** Upper-medium grade fixed-income yield (single-A-equivalent), updated each period; rate changes flow through OCI.\n3. **Market risk benefits (MRBs).** GMxB-type guarantees measured at fair value; non-performance risk in OCI.\n4. **DAC.** Amortized on a constant-level basis; no more EGP unlocking.\n5. **Disclosures.** Enhanced rollforwards by issue-year cohort.",
-      "fsli": "LFPB / DAC / MRB",
-      "gaap_view": "Annual unlocking, cohort-level LFPB, MRBs at fair value, constant-level DAC.",
-      "stat_view": "Largely unchanged — SAP retains principle-based reserves (PBR) framework.",
-      "tags": ["Life", "LDTI", "ASU2018-12"]
+      "body_md": "## Why two sets of books?\n\nU.S. insurers prepare both **GAAP** (for investors) and **STAT** (for regulators) financials. Statutory accounting is intentionally conservative — it answers *can the company pay claims if it stopped writing tomorrow?*\n\n## Key SAP traits\n\n- Non-admitted assets (DAC, furniture, prepaid) excluded from surplus\n- DAC is **expensed** when incurred\n- Investments at amortized cost for high-quality bonds\n- Dividends require regulatory approval if exceeding ordinary thresholds\n\n## Statutory schedules\n\n- A — Real estate\n- B — Mortgage loans\n- BA — Other long-term invested assets\n- D — Bonds and stocks\n- DA — Short-term investments\n- DB — Derivatives\n- E — Cash & equivalents\n- F — Reinsurance\n- P — Loss development triangles\n- SI — Permitted/prescribed practices\n- T — Premium by state",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Furniture / prepaid", "gaap": "Asset", "stat": "Non-admitted", "delta": "Direct surplus haircut"},
+        {"line_item": "DAC", "gaap": "Asset", "stat": "Non-existent", "delta": "Largest single difference"},
+        {"line_item": "Bonds (NAIC 1-2)", "gaap": "FV (AFS) or amortized cost (HTM)", "stat": "Amortized cost", "delta": "STAT smoother"}
+      ],
+      "references": [
+        {"label": "NAIC AP&P Manual", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["STAT", "SAP", "Surplus", "RBC", "NAIC"]
     },
     {
       "slug": "combined-ratio",
-      "title": "Combined Ratio — The P&C scoreboard",
-      "framework": "ASC944",
-      "summary": "Combined Ratio = Loss Ratio + Expense Ratio. Below 100% means underwriting profit; above 100% means underwriting loss (offset by investment income).",
-      "body_md": "## Formula\n\n```\nLoss Ratio       = Incurred Losses & LAE / Earned Premium\nExpense Ratio    = Underwriting Expenses / Earned Premium  (GAAP)\n                 = Underwriting Expenses / Written Premium (STAT)\nCombined Ratio   = Loss Ratio + Expense Ratio\n```\n\n## Reading it\n- < 95%   = strong underwriting\n- 95-100% = profitable\n- 100-105% = breakeven; relying on investment income\n- > 105%  = underwriting loss; sustainability concern if persistent\n\n## Why GAAP vs STAT differ\nGAAP uses earned premium in the denominator of the expense ratio; SAP uses written premium. The two ratios can differ by 1-3 points in a fast-growing book.",
+      "title": "Combined Ratio — The P&C Scoreboard",
+      "framework": "Operating metric",
+      "depth": "overview",
       "fsli": "Underwriting Result",
+      "summary": "Combined Ratio = Loss Ratio + Expense Ratio. Below 100% means underwriting profit; above 100% means underwriting loss.",
+      "key_difference": "GAAP uses earned premium in expense-ratio denominator; STAT uses written premium.",
       "gaap_view": "Earned-premium denominator across both ratios.",
-      "stat_view": "Written-premium denominator for expense ratio; reported as 'trade ratio' in Schedule P.",
-      "tags": ["KPI", "P&C"]
+      "stat_view": "Written-premium denominator for expense ratio.",
+      "body_md": "## Formula\n\n```\nLoss Ratio       = Incurred Losses & LAE / Earned Premium\nExpense Ratio    = Underwriting Expenses / Earned Premium  (GAAP)\n                 = Underwriting Expenses / Written Premium (STAT)\nCombined Ratio   = Loss Ratio + Expense Ratio\n```\n\n## Reading it\n\n- < 95%   = strong underwriting\n- 95-100% = profitable\n- 100-105% = breakeven; relying on investment income\n- > 105%  = underwriting loss",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Combined ratio", "gaap": "Both ratios on earned premium", "stat": "Loss on earned; expense on written", "delta": "1-3 point divergence in growing book"}
+      ],
+      "references": [
+        {"label": "NAIC P&C Manual", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["KPI", "P&C", "Combined Ratio", "Loss Ratio", "Expense Ratio"]
+    },
+    {
+      "slug": "schedule-p",
+      "title": "Schedule P — Loss Development",
+      "framework": "NAIC Annual Statement",
+      "depth": "overview",
+      "fsli": "P&C reserves",
+      "summary": "Triangle of paid and incurred losses by accident year for the most recent 10 years.",
+      "key_difference": "STAT-only schedule, mirrored in part by GAAP's ASU 2015-09 development triangles.",
+      "gaap_view": "ASU 2015-09 disclosure for SEC filers.",
+      "stat_view": "Schedule P parts 1-7 detail each line of business.",
+      "body_md": "## Parts of Schedule P\n\n- Part 1 — Loss summary by line\n- Part 2 — Incurred losses & ALAE (triangle)\n- Part 3 — Cumulative paid losses & ALAE (triangle)\n- Part 4 — Bulk + IBNR (triangle)\n- Part 5 — Claim counts (triangle)\n- Part 6 — Premium history\n- Part 7 — Reinsurance",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Schedule P triangle", "gaap": "ASU 2015-09 mirror", "stat": "Schedule P (full)", "delta": "Aligned data, different format"}
+      ],
+      "references": [
+        {"label": "NAIC Annual Statement Instructions", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["STAT", "Schedule P", "P&C", "Reserve Development", "Loss Triangle"]
+    },
+    {
+      "slug": "schedule-f",
+      "title": "Schedule F — Reinsurance",
+      "framework": "NAIC Annual Statement",
+      "depth": "overview",
+      "fsli": "Reinsurance recoverables",
+      "summary": "By-reinsurer ledger of premium ceded, recoverables, collateral, authorized status, and slow-pay provisions.",
+      "key_difference": "STAT-only schedule.",
+      "gaap_view": "Concentration disclosure required under ASC 944-310.",
+      "stat_view": "Schedule F Parts 1-9 provide reinsurer-level detail.",
+      "body_md": "## Parts of Schedule F\n\n- Part 1 — Premium ceded\n- Part 2 — Premium assumed\n- Part 3 — Recoverable on paid losses\n- Part 4 — Recoverable on unpaid losses\n- Part 5 — Reinsurance collateral analysis\n- Part 6 — Authorized vs unauthorized + slow-pay calculation\n- Part 7 — Restatement of prior year amounts\n- Part 8 — Reinsurance treaty terms\n- Part 9 — Captive reinsurance",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Authorized RI recoverable", "gaap": "Net of CECL", "stat": "Admitted", "delta": "GAAP earlier credit recognition"},
+        {"line_item": "Unauthorized RI without collateral", "gaap": "Net of CECL", "stat": "Non-admitted", "delta": "STAT zeros out"}
+      ],
+      "references": [
+        {"label": "NAIC SSAP No. 62R", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["STAT", "Schedule F", "Reinsurance", "Authorized", "Slow Pay"]
+    },
+    {
+      "slug": "asc-740-income-taxes",
+      "title": "Income Taxes for Insurers (ASC 740)",
+      "framework": "ASC 740 / SSAP 101",
+      "depth": "deep",
+      "fsli": "Deferred Tax Assets / Liabilities",
+      "summary": "Insurers operate with substantial DTAs from loss reserves, DAC tax-deferral, and net operating losses.",
+      "key_difference": "GAAP recognizes all DTAs net of valuation allowance. STAT admits DTAs subject to a three-bucket test.",
+      "gaap_view": "Recognize DTAs at enacted rates; reduce by valuation allowance when realization is not more-likely-than-not.",
+      "stat_view": "SSAP 101: admitted DTA = sum of three buckets; excess non-admitted.",
+      "body_md": "## Insurer-specific DTA sources\n\n- Loss-reserve discount under §846\n- DAC §848 — proxy DAC amortization for tax\n- Long-tail loss reserves generate large temporary differences\n- NOL carryforwards (post-2017 TCJA: 80% offset)\n\n## SSAP 101 admitted DTA\n\n1. Bucket 1: Federal income taxes recoverable from prior years\n2. Bucket 2: DTAs reversing within 1-3 years\n3. Bucket 3: DTAs offsetting DTLs of the same character",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "DTA — loss-reserve discount", "gaap": "Recognized", "stat": "Bucket 2 / 3 admission", "delta": "STAT admission limited"},
+        {"line_item": "DTA — NOL carryforward", "gaap": "Recognized at enacted rate", "stat": "Admission per SSAP 101", "delta": "STAT often partial"},
+        {"line_item": "DTA — DAC §848", "gaap": "Recognized", "stat": "Bucket-test admission", "delta": "STAT admission limited"}
+      ],
+      "references": [
+        {"label": "ASC 740", "url": "https://asc.fasb.org/topic&trid=2156429"},
+        {"label": "NAIC SSAP No. 101", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Tax", "DTA", "DTL", "ASC740", "SSAP101", "GAAP", "STAT"]
+    },
+    {
+      "slug": "policyholder-dividends",
+      "title": "Policyholder Dividends",
+      "framework": "ASC 944-50 / SSAP 65",
+      "depth": "overview",
+      "fsli": "Policyholder Dividends Liability",
+      "summary": "Distributions to participating-policy holders. Mutual-life insurers typically declare a substantial annual policyholder dividend.",
+      "key_difference": "Aligned: liability accrues over the policy year and is recognized as expense.",
+      "gaap_view": "ASC 944-50: accrue dividend over the policy year.",
+      "stat_view": "SSAP 65 mirror — dividends declared from divisible surplus.",
+      "body_md": "## Mutual companies\n\nNorthwestern Mutual, MassMutual, New York Life distribute hundreds of millions to billions in annual policyholder dividends — driven by favorable mortality, investment yield above credited rate, and expense savings.",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "Declared dividend", "gaap": "Liability + expense", "stat": "Liability + reduces divisible surplus", "delta": "Aligned"}
+      ],
+      "references": [
+        {"label": "ASC 944-50", "url": "https://asc.fasb.org/topic&trid=2156436"},
+        {"label": "NAIC SSAP No. 65", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "Dividend", "Participating", "Mutual", "ASC944", "SSAP65"]
+    },
+    {
+      "slug": "asc-805-business-combinations",
+      "title": "Business Combinations — Insurer Specifics (VOBA)",
+      "framework": "ASC 805 / SSAP 68",
+      "depth": "deep",
+      "fsli": "VOBA / Goodwill / Intangibles",
+      "summary": "Insurance M&A creates Value of Business Acquired (VOBA) — present value of future profits embedded in acquired contracts.",
+      "key_difference": "GAAP fully recognizes VOBA. STAT generally writes off target's DAC; goodwill admission severely limited.",
+      "gaap_view": "Identify and value VOBA at fair value; amortize on a basis consistent with original DAC method.",
+      "stat_view": "SSAP 68 limits goodwill admission to 10% of subsidiary capital; amortized over 10 years.",
+      "body_md": "## VOBA mechanics\n\nAt the acquisition date:\n\n1. Determine fair value of acquired contracts using actuarial appraisal\n2. Recognize VOBA at this fair value\n3. Amortize over expected contract term\n4. The target's pre-existing DAC is written off\n\n## STAT goodwill\n\n- Recognized goodwill = excess of investment in subsidiary over its statutory equity\n- Admitted only to lesser of 10% of acquirer's capital, OR amortizable amount\n- Amortized over not more than 10 years",
+      "sections": [],
+      "fsli_table": [
+        {"line_item": "VOBA", "gaap": "Recognized; amortized", "stat": "Effectively N/A", "delta": "Major"},
+        {"line_item": "Goodwill", "gaap": "Recognized; impairment-tested", "stat": "10% admission cap; 10-year amortization", "delta": "STAT severely limits"},
+        {"line_item": "Customer-list intangibles", "gaap": "Recognized at FV; amortized", "stat": "Generally non-admitted", "delta": "Direct surplus haircut"}
+      ],
+      "references": [
+        {"label": "ASC 805", "url": "https://asc.fasb.org/topic&trid=2127082"},
+        {"label": "NAIC SSAP No. 68", "url": "https://content.naic.org/"}
+      ],
+      "last_updated": "2026-04-30",
+      "tags": ["FSLI", "M&A", "VOBA", "Goodwill", "ASC805", "SSAP68", "GAAP", "STAT"]
     }
   ]
 }

@@ -3,7 +3,9 @@ import '../models/kpi.dart';
 /// Dart port of the Python `kpi_engine.py`.
 ///
 /// Computes insurance-specific KPIs, status banding, and risk-radar
-/// factors directly from a fiscal history list. No network involved.
+/// factors directly from a fiscal history list. Each KPI is annotated
+/// with formula provenance, source-filing metadata, and a knowledge-tab
+/// slug so the drill-down screen can show "what does this mean".
 class KpiEngine {
   KpiEngine._();
 
@@ -11,6 +13,7 @@ class KpiEngine {
     required String insurerType,
     required List<Map<String, dynamic>> history,
     required Map<String, dynamic> benchmarks,
+    String? ticker,
   }) {
     if (history.isEmpty) {
       return KpiSet(insurerType: insurerType, primary: const [], secondary: const []);
@@ -18,10 +21,216 @@ class KpiEngine {
     final latest = history.last;
     final prev = history.length >= 2 ? history[history.length - 2] : <String, dynamic>{};
     final bench = (benchmarks[insurerType] as Map?) ?? <String, dynamic>{};
+    final fy = (latest['fy'] as num?)?.toInt();
+    final source = _filingSource(fy, ticker);
 
-    if (insurerType == 'Life') return _life(latest, prev, bench);
-    if (insurerType == 'Health') return _health(latest, prev, bench);
-    return _pc(latest, prev, bench);
+    if (insurerType == 'Life') return _attachSource(_life(latest, prev, bench), source, latest, prev);
+    if (insurerType == 'Health') return _attachSource(_health(latest, prev, bench), source, latest, prev);
+    return _attachSource(_pc(latest, prev, bench), source, latest, prev);
+  }
+
+  /// Build the synthetic filing source for FY annual snapshots.
+  ///
+  /// US insurers with calendar fiscal years file their 10-K in
+  /// February–April of the following year. The placeholder accession
+  /// is replaced when the optional online backend serves real EDGAR
+  /// metadata.
+  static FilingSource? _filingSource(int? fy, String? ticker) {
+    if (fy == null) return null;
+    return FilingSource(
+      form: '10-K',
+      fiscalYear: 'FY$fy',
+      filedDate: 'Q1 ${fy + 1}',
+      url: ticker == null
+          ? 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=10-K'
+          : 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=$ticker&type=10-K',
+    );
+  }
+
+  /// Walk the produced KpiSet and stamp `source` + `formula` +
+  /// `methodology` + `knowledgeSlug` onto each KPI.  Done after the
+  /// per-type branches so we don't have to thread those into every
+  /// KPI builder call.
+  static KpiSet _attachSource(
+    KpiSet set,
+    FilingSource? source,
+    Map latest,
+    Map prev,
+  ) {
+    Kpi enrich(Kpi k) {
+      final f = _formulaFor(k.code, latest, prev);
+      return Kpi(
+        code: k.code,
+        label: k.label,
+        value: k.value,
+        unit: k.unit,
+        direction: k.direction,
+        deltaYoy: k.deltaYoy,
+        benchmark: k.benchmark,
+        status: k.status,
+        description: k.description,
+        source: source,
+        formula: f,
+        methodology: _methodologyFor(k.code),
+        knowledgeSlug: _slugFor(k.code),
+      );
+    }
+
+    return KpiSet(
+      insurerType: set.insurerType,
+      primary: set.primary.map(enrich).toList(),
+      secondary: set.secondary.map(enrich).toList(),
+    );
+  }
+
+  static KpiFormula? _formulaFor(String code, Map latest, Map prev) {
+    String fmt(dynamic v) {
+      if (v == null) return '–';
+      if (v is num) return '\$${v.toStringAsFixed(0)}M';
+      return v.toString();
+    }
+
+    switch (code) {
+      case 'loss_ratio':
+        return KpiFormula(
+          expression: 'Incurred Losses / Earned Premium × 100',
+          numerator: 'Incurred Losses & LAE',
+          denominator: 'Earned Premium',
+          numeratorValue: fmt(latest['losses']),
+          denominatorValue: fmt(latest['premiums']),
+        );
+      case 'expense_ratio':
+        return KpiFormula(
+          expression: 'Underwriting Expenses / Earned Premium × 100',
+          numerator: 'Underwriting Expenses',
+          denominator: 'Earned Premium',
+          numeratorValue: fmt(latest['expenses']),
+          denominatorValue: fmt(latest['premiums']),
+        );
+      case 'combined_ratio':
+        return const KpiFormula(
+          expression: 'Loss Ratio + Expense Ratio',
+          numerator: 'Loss Ratio',
+          denominator: 'Expense Ratio',
+          numeratorValue: 'computed above',
+          denominatorValue: 'computed above',
+        );
+      case 'underwriting_profit':
+        return KpiFormula(
+          expression: 'Earned Premium × (1 − Combined Ratio)',
+          numerator: 'Earned Premium',
+          denominator: 'Combined Ratio',
+          numeratorValue: fmt(latest['premiums']),
+          denominatorValue: 'computed above',
+        );
+      case 'investment_yield':
+        return KpiFormula(
+          expression: 'Net Investment Income / Reserves × 100',
+          numerator: 'Net Investment Income',
+          denominator: 'Policy / Loss Reserves',
+          numeratorValue: fmt(latest['investment_income']),
+          denominatorValue: fmt(latest['reserves']),
+        );
+      case 'premium_growth':
+        return KpiFormula(
+          expression: '(Earned Premium FYₜ − FYₜ₋₁) / FYₜ₋₁ × 100',
+          numerator: 'Earned Premium (current FY)',
+          denominator: 'Earned Premium (prior FY)',
+          numeratorValue: fmt(latest['premiums']),
+          denominatorValue: fmt(prev['premiums']),
+        );
+      case 'leverage':
+        return KpiFormula(
+          expression: 'Reserves / Equity',
+          numerator: 'Policy / Loss Reserves',
+          denominator: 'Stockholders\' Equity',
+          numeratorValue: fmt(latest['reserves']),
+          denominatorValue: fmt(latest['equity']),
+        );
+      case 'roe':
+        return KpiFormula(
+          expression: 'Net Income / Stockholders\' Equity × 100',
+          numerator: 'Net Income',
+          denominator: 'Stockholders\' Equity',
+          numeratorValue: fmt(latest['net_income']),
+          denominatorValue: fmt(latest['equity']),
+        );
+      case 'medical_loss_ratio':
+        return KpiFormula(
+          expression: 'Medical Claims Incurred / Earned Premium × 100',
+          numerator: 'Medical Claims Incurred',
+          denominator: 'Earned Premium',
+          numeratorValue: fmt(latest['losses']),
+          denominatorValue: fmt(latest['premiums']),
+        );
+      case 'persistency':
+        return KpiFormula(
+          expression: '100 − max(0, (1 − Reservesₜ / Reservesₜ₋₁) × 100)',
+          numerator: 'Δ Policy Reserves',
+          denominator: 'Prior-year Policy Reserves',
+          numeratorValue: fmt(latest['reserves']),
+          denominatorValue: fmt(prev['reserves']),
+        );
+      case 'benefit_ratio':
+        return KpiFormula(
+          expression: 'Policyholder Benefits / Premium × 100',
+          numerator: 'Policyholder Benefits',
+          denominator: 'Premium Earned',
+          numeratorValue: fmt(latest['losses']),
+          denominatorValue: fmt(latest['premiums']),
+        );
+    }
+    return null;
+  }
+
+  static String? _methodologyFor(String code) {
+    switch (code) {
+      case 'loss_ratio':
+      case 'expense_ratio':
+      case 'combined_ratio':
+      case 'underwriting_profit':
+        return 'P&C industry-standard ratio. GAAP uses earned premium in the denominator; STAT uses written premium for the expense ratio. Source data: 10-K Income Statement plus footnote disclosure on incurred losses & LAE (ASC 944-40 / ASU 2015-09).';
+      case 'investment_yield':
+        return 'Approximate book yield computed as net investment income divided by mean policy/loss reserves. A truer yield would use mean invested-asset balance, which is not extracted from companyfacts.';
+      case 'premium_growth':
+        return 'Year-over-year change in earned premium. Reflects rate, exposure, and mix changes; for life, also reflects new sales and lapse activity.';
+      case 'roe':
+        return 'Return on Equity: net income / period-end stockholders\' equity. Trailing 12-month measure based on the latest filed 10-K.';
+      case 'persistency':
+        return 'Estimated retention proxy from policy-reserve continuity. Note: this is a derived approximation — actual persistency is disclosed by line of business in the 10-K Statistical Supplement, not in companyfacts XBRL.';
+      case 'medical_loss_ratio':
+        return 'Medical claims incurred as % of premium. ACA Section 2718 imposes minimum thresholds (85% large group / 80% individual) — failure triggers rebates.';
+      case 'leverage':
+        return 'Reserves-to-equity multiple. A coarse but widely watched solvency proxy. Watch alongside RBC ratio for full picture.';
+      case 'benefit_ratio':
+        return 'Life-insurer analog of the P&C loss ratio. Includes policyholder benefits (death claims, surrenders, withdrawals) over premium.';
+    }
+    return null;
+  }
+
+  static String? _slugFor(String code) {
+    switch (code) {
+      case 'loss_ratio':
+      case 'expense_ratio':
+      case 'combined_ratio':
+      case 'underwriting_profit':
+        return 'combined-ratio';
+      case 'medical_loss_ratio':
+        return 'combined-ratio';
+      case 'investment_yield':
+        return 'bonds-and-mbs';
+      case 'persistency':
+        return 'lfpb-future-policy-benefits';
+      case 'benefit_ratio':
+        return 'lfpb-future-policy-benefits';
+      case 'leverage':
+        return 'statutory-surplus-rbc';
+      case 'roe':
+        return 'asc-944-overview';
+      case 'premium_growth':
+        return 'premium-revenue-recognition';
+    }
+    return null;
   }
 
   // ---- P&C / Reinsurance / Multiline ---------------------------------------

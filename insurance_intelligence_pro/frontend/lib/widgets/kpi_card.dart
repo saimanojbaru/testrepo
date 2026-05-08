@@ -9,8 +9,10 @@ import 'glass_card.dart';
 class KpiCard extends StatelessWidget {
   final Kpi kpi;
   final int index;
+  final VoidCallback? onTap;
 
-  const KpiCard({super.key, required this.kpi, this.index = 0});
+  const KpiCard(
+      {super.key, required this.kpi, this.index = 0, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class KpiCard extends StatelessWidget {
     final isPercent = kpi.unit == '%';
     return GlassCard(
       padding: const EdgeInsets.all(16),
+      onTap: onTap,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -119,6 +122,33 @@ class KpiCard extends StatelessWidget {
               style: TextStyle(color: AppColors.textMuted, fontSize: 11.5, height: 1.4),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
+            ),
+          ],
+          if (kpi.source != null) ...[
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                const Icon(Icons.description_outlined,
+                    color: AppColors.accent, size: 11),
+                const SizedBox(width: 4),
+                Expanded(
+                  child: Text(
+                    kpi.source!.displayLabel,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        color: AppColors.accent,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0.4),
+                  ),
+                ),
+                if (onTap != null) ...[
+                  const SizedBox(width: 4),
+                  const Icon(Icons.arrow_forward_ios_rounded,
+                      color: AppColors.textMuted, size: 9),
+                ],
+              ],
             ),
           ],
         ],

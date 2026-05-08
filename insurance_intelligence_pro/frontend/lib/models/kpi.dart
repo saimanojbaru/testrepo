@@ -1,3 +1,43 @@
+class FilingSource {
+  final String form;
+  final String fiscalYear;
+  final String filedDate;
+  final String url;
+
+  const FilingSource({
+    required this.form,
+    required this.fiscalYear,
+    required this.filedDate,
+    required this.url,
+  });
+
+  factory FilingSource.fromJson(Map<String, dynamic> j) => FilingSource(
+        form: j['form']?.toString() ?? '10-K',
+        fiscalYear: j['fiscal_year']?.toString() ?? '',
+        filedDate: j['filed_date']?.toString() ?? '',
+        url: j['url']?.toString() ?? '',
+      );
+
+  String get displayLabel =>
+      '$form · $fiscalYear${filedDate.isEmpty ? "" : " · filed $filedDate"}';
+}
+
+class KpiFormula {
+  final String expression;
+  final String numerator;
+  final String denominator;
+  final String numeratorValue;
+  final String denominatorValue;
+
+  const KpiFormula({
+    required this.expression,
+    required this.numerator,
+    required this.denominator,
+    required this.numeratorValue,
+    required this.denominatorValue,
+  });
+}
+
 class Kpi {
   final String code;
   final String label;
@@ -8,6 +48,10 @@ class Kpi {
   final double? benchmark;
   final String status;
   final String? description;
+  final FilingSource? source;
+  final KpiFormula? formula;
+  final String? methodology;
+  final String? knowledgeSlug;
 
   const Kpi({
     required this.code,
@@ -19,6 +63,10 @@ class Kpi {
     required this.benchmark,
     required this.status,
     required this.description,
+    this.source,
+    this.formula,
+    this.methodology,
+    this.knowledgeSlug,
   });
 
   factory Kpi.fromJson(Map<String, dynamic> j) => Kpi(
@@ -31,6 +79,9 @@ class Kpi {
         benchmark: (j['benchmark'] as num?)?.toDouble(),
         status: j['status'] ?? 'neutral',
         description: j['description'],
+        source: j['source'] is Map
+            ? FilingSource.fromJson(Map<String, dynamic>.from(j['source']))
+            : null,
       );
 }
 

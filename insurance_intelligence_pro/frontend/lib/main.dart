@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import 'data/local_data.dart';
 import 'screens/home_screen.dart';
+import 'services/api_service.dart';
 import 'theme/app_theme.dart';
 
 Future<void> main() async {
@@ -19,6 +20,8 @@ Future<void> main() async {
   ]);
   // Load all bundled datasets before first frame so screens have data ready.
   await LocalData.instance.load();
+  // Load any persisted backend URL so online mode starts up automatically.
+  await ApiService.instance.load();
   runApp(const InsuranceIntelligenceApp());
 }
 

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/company.dart';
 import '../models/kpi.dart';
@@ -15,6 +16,7 @@ import '../widgets/risk_radar_chart.dart';
 import '../widgets/score_ring.dart';
 import '../widgets/section_header.dart';
 import '../widgets/trend_chart.dart';
+import 'kpi_detail_screen.dart';
 
 class CompanyScreen extends StatefulWidget {
   const CompanyScreen({super.key});
@@ -305,7 +307,11 @@ class _AnalysisBody extends StatelessWidget {
         const SizedBox(height: 16),
         if (analysis.kpis.primary.isNotEmpty) ...[
           const SectionHeader(title: 'Headline KPIs'),
-          _KpiGrid(kpis: analysis.kpis.primary),
+          _KpiGrid(
+            kpis: analysis.kpis.primary,
+            company: analysis.company,
+            fiscalYear: analysis.lastFiscalYear,
+          ),
           const SizedBox(height: 24),
         ],
         if (analysis.riskRadar.factors.isNotEmpty) ...[
@@ -349,12 +355,23 @@ class _AnalysisBody extends StatelessWidget {
         ],
         if (analysis.kpis.secondary.isNotEmpty) ...[
           const SectionHeader(title: 'Secondary KPIs'),
-          _KpiGrid(kpis: analysis.kpis.secondary),
+          _KpiGrid(
+            kpis: analysis.kpis.secondary,
+            company: analysis.company,
+            fiscalYear: analysis.lastFiscalYear,
+          ),
           const SizedBox(height: 24),
         ],
         if (analysis.rawMetrics.isNotEmpty) ...[
-          const SectionHeader(title: 'Latest filing snapshot'),
-          _RawMetricsTable(metrics: analysis.rawMetrics),
+          SectionHeader(
+            title: 'Latest filing snapshot',
+            subtitle:
+                'Source · Form 10-K · FY${analysis.lastFiscalYear ?? "-"} · filed Q1 ${(analysis.lastFiscalYear ?? 0) + 1} · SEC EDGAR',
+          ),
+          _RawMetricsTable(
+              metrics: analysis.rawMetrics,
+              fiscalYear: analysis.lastFiscalYear,
+              ticker: analysis.company.ticker),
           const SizedBox(height: 16),
         ],
         Center(
@@ -464,7 +481,13 @@ class _Header extends StatelessWidget {
 
 class _KpiGrid extends StatelessWidget {
   final List<Kpi> kpis;
-  const _KpiGrid({required this.kpis});
+  final Company company;
+  final int? fiscalYear;
+  const _KpiGrid({
+    required this.kpis,
+    required this.company,
+    this.fiscalYear,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -483,9 +506,18 @@ class _KpiGrid extends StatelessWidget {
         crossAxisCount: 2,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
-        childAspectRatio: 1.05,
+        childAspectRatio: 0.95,
       ),
-      itemBuilder: (context, i) => KpiCard(kpi: kpis[i], index: i),
+      itemBuilder: (context, i) => KpiCard(
+        kpi: kpis[i],
+        index: i,
+        onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => KpiDetailScreen(
+                  kpi: kpis[i],
+                  company: company,
+                  fiscalYear: fiscalYear,
+                ))),
+      ),
     );
   }
 }
@@ -551,16 +583,84 @@ class _SeriesLegend extends StatelessWidget {
 
 class _RawMetricsTable extends StatelessWidget {
   final Map<String, dynamic> metrics;
-  const _RawMetricsTable({required this.metrics});
+  final int? fiscalYear;
+  final String? ticker;
+  const _RawMetricsTable({
+    required this.metrics,
+    this.fiscalYear,
+    this.ticker,
+  });
+
+  Future<void> _openEdgar() async {
+    if (ticker == null) return;
+    final uri = Uri.parse(
+        'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=$ticker&type=10-K');
+    try {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } catch (_) {}
+  }
 
   @override
   Widget build(BuildContext context) {
     final rows = metrics.entries.where((e) => e.value != null).toList()
       ..sort((a, b) => a.key.compareTo(b.key));
+    final fyLabel = fiscalYear == null ? '–' : 'FY$fiscalYear';
+    final filed = fiscalYear == null ? '' : 'Filed Q1 ${fiscalYear! + 1}';
     return GlassCard(
-      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+      padding: EdgeInsets.zero,
       child: Column(
         children: [
+          // Source banner
+          Container(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+            decoration: const BoxDecoration(
+              color: AppColors.surfaceElevated,
+              borderRadius:
+                  BorderRadius.vertical(top: Radius.circular(22)),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(6),
+                  decoration: BoxDecoration(
+                    color: AppColors.accent.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: const Icon(Icons.description_outlined,
+                      color: AppColors.accent, size: 14),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Form 10-K · $fyLabel',
+                          style: const TextStyle(
+                              color: AppColors.textPrimary,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 12)),
+                      const SizedBox(height: 2),
+                      Text(
+                        filed.isEmpty
+                            ? 'SEC EDGAR · Annual Report'
+                            : '$filed · SEC EDGAR · Annual Report',
+                        style: const TextStyle(
+                            color: AppColors.textMuted, fontSize: 10.5),
+                      ),
+                    ],
+                  ),
+                ),
+                if (ticker != null)
+                  IconButton(
+                    onPressed: _openEdgar,
+                    icon: const Icon(Icons.open_in_new_rounded,
+                        color: AppColors.accent, size: 16),
+                    tooltip: 'Open EDGAR filings',
+                  ),
+              ],
+            ),
+          ),
           for (var i = 0; i < rows.length; i++)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
@@ -573,10 +673,24 @@ class _RawMetricsTable extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    child: Text(
-                      _label(rows[i].key),
-                      style: const TextStyle(
-                          color: AppColors.textSecondary, fontSize: 12.5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          _label(rows[i].key),
+                          style: const TextStyle(
+                              color: AppColors.textSecondary,
+                              fontSize: 12.5,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          _xbrlTag(rows[i].key),
+                          style: const TextStyle(
+                              color: AppColors.textMuted,
+                              fontSize: 10),
+                        ),
+                      ],
                     ),
                   ),
                   Text(
@@ -591,6 +705,29 @@ class _RawMetricsTable extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String _xbrlTag(String key) {
+    switch (key) {
+      case 'premiums':
+        return 'us-gaap:PremiumsEarnedNet · 10-K Income Statement';
+      case 'losses':
+        return 'us-gaap:PolicyholderBenefitsAndClaimsIncurredNet';
+      case 'expenses':
+        return 'us-gaap:OperatingExpenses · 10-K Income Statement';
+      case 'investment_income':
+        return 'us-gaap:NetInvestmentIncome';
+      case 'net_income':
+        return 'us-gaap:NetIncomeLoss';
+      case 'reserves':
+        return 'us-gaap:LiabilityForUnpaidClaimsAndClaimsAdjustmentExpense';
+      case 'equity':
+        return 'us-gaap:StockholdersEquity';
+      case 'assets':
+        return 'us-gaap:Assets';
+      default:
+        return 'XBRL · 10-K';
+    }
   }
 
   num? _asNum(dynamic v) {

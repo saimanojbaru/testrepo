@@ -6,9 +6,12 @@ import '../services/analytics_service.dart';
 import '../theme/app_colors.dart';
 import '../utils/formatters.dart';
 import '../widgets/glass_card.dart';
+import '../services/api_service.dart';
 import '../widgets/insight_card.dart';
 import '../widgets/section_header.dart';
 import '../widgets/sparkline.dart';
+import 'news_detail_screen.dart';
+import 'settings_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -45,7 +48,11 @@ class DashboardScreen extends StatelessWidget {
             mp.insights.length,
             (i) => Padding(
               padding: const EdgeInsets.only(bottom: 12),
-              child: InsightCard(insight: mp.insights[i], index: i),
+              child: InsightCard(
+                insight: mp.insights[i],
+                index: i,
+                onTap: () => _showInsightDetail(context, mp.insights[i]),
+              ),
             ),
           ),
           const SizedBox(height: 8),
@@ -66,11 +73,39 @@ class DashboardScreen extends StatelessWidget {
   }
 }
 
-class _DashboardHeader extends StatelessWidget {
+class _DashboardHeader extends StatefulWidget {
   const _DashboardHeader();
 
   @override
+  State<_DashboardHeader> createState() => _DashboardHeaderState();
+}
+
+class _DashboardHeaderState extends State<_DashboardHeader> {
+  bool? _live;
+
+  @override
+  void initState() {
+    super.initState();
+    _refresh();
+  }
+
+  Future<void> _refresh() async {
+    if (!ApiService.instance.isConfigured) {
+      if (mounted) setState(() => _live = false);
+      return;
+    }
+    final ok = await ApiService.instance.probe();
+    if (mounted) setState(() => _live = ok);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final isConfigured = ApiService.instance.isConfigured;
+    final live = _live == true && isConfigured;
+    final color = live ? AppColors.positive : AppColors.warning;
+    final label = live
+        ? 'LIVE'
+        : (isConfigured ? 'OFFLINE' : 'CURATED');
     return Row(
       children: [
         Container(
@@ -106,29 +141,41 @@ class _DashboardHeader extends StatelessWidget {
             ],
           ),
         ),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-          decoration: BoxDecoration(
-            color: AppColors.surfaceElevated,
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.border),
-          ),
-          child: Row(
-            children: [
-              Container(
-                width: 6,
-                height: 6,
-                decoration: const BoxDecoration(
-                    color: AppColors.positive, shape: BoxShape.circle),
-              ),
-              const SizedBox(width: 6),
-              const Text('OFFLINE',
-                  style: TextStyle(
-                      color: AppColors.positive,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 1.6)),
-            ],
+        InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () async {
+            await Navigator.of(context).push(MaterialPageRoute(
+                builder: (_) => const SettingsScreen()));
+            _refresh();
+          },
+          child: Container(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+            decoration: BoxDecoration(
+              color: AppColors.surfaceElevated,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: AppColors.border),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 6,
+                  height: 6,
+                  decoration: BoxDecoration(
+                      color: color, shape: BoxShape.circle),
+                ),
+                const SizedBox(width: 6),
+                Text(label,
+                    style: TextStyle(
+                        color: color,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.6)),
+                const SizedBox(width: 6),
+                const Icon(Icons.settings_outlined,
+                    color: AppColors.textMuted, size: 12),
+              ],
+            ),
           ),
         ),
       ],
@@ -230,6 +277,7 @@ class _Indicators extends StatelessWidget {
             : <double>[];
         return GlassCard(
           padding: const EdgeInsets.fromLTRB(14, 12, 14, 12),
+          onTap: () => _showIndicatorDetail(context, ind, spark, color),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -298,6 +346,8 @@ class _NewsTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GlassCard(
       padding: const EdgeInsets.fromLTRB(14, 14, 14, 14),
+      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+          builder: (_) => NewsDetailScreen(item: item))),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -345,4 +395,172 @@ class _NewsTile extends StatelessWidget {
       ),
     ).animate().fadeIn(duration: 350.ms, delay: (60 * index).ms);
   }
+}
+
+void _showInsightDetail(BuildContext context, Insight insight) {
+  showModalBottomSheet<void>(
+    context: context,
+    backgroundColor: AppColors.background,
+    isScrollControlled: true,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+    ),
+    builder: (_) => SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                width: 40,
+                height: 4,
+                margin: const EdgeInsets.only(bottom: 18),
+                decoration: BoxDecoration(
+                  color: AppColors.surfaceHigh,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            Text(insight.title,
+                style: const TextStyle(
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 19,
+                    height: 1.25)),
+            if ((insight.detail ?? '').isNotEmpty) ...[
+              const SizedBox(height: 10),
+              Text(insight.detail!,
+                  style: const TextStyle(
+                      color: AppColors.textSecondary,
+                      fontSize: 13.5,
+                      height: 1.55)),
+            ],
+            if (insight.tags.isNotEmpty) ...[
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 6,
+                runSpacing: 6,
+                children: insight.tags
+                    .map((t) => Container(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                            color: AppColors.surfaceElevated,
+                            borderRadius: BorderRadius.circular(20),
+                            border: Border.all(color: AppColors.border),
+                          ),
+                          child: Text(t.toUpperCase(),
+                              style: const TextStyle(
+                                  color: AppColors.textMuted,
+                                  fontSize: 10,
+                                  letterSpacing: 1.2,
+                                  fontWeight: FontWeight.w700)),
+                        ))
+                    .toList(),
+              ),
+            ],
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+void _showIndicatorDetail(BuildContext context, TrendIndicator ind,
+    List<double> spark, Color color) {
+  showModalBottomSheet<void>(
+    context: context,
+    backgroundColor: AppColors.background,
+    isScrollControlled: true,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+    ),
+    builder: (_) => SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 16, 20, 28),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: Container(
+                width: 40,
+                height: 4,
+                margin: const EdgeInsets.only(bottom: 18),
+                decoration: BoxDecoration(
+                  color: AppColors.surfaceHigh,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+            ),
+            Text(ind.label,
+                style: const TextStyle(
+                    color: AppColors.textPrimary,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 19)),
+            const SizedBox(height: 8),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.baseline,
+              textBaseline: TextBaseline.alphabetic,
+              children: [
+                Text(ind.value,
+                    style: const TextStyle(
+                        color: AppColors.textPrimary,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 28)),
+                const SizedBox(width: 10),
+                if (ind.delta != null)
+                  Text(
+                    Formatters.signedPct(ind.delta! * 100),
+                    style: TextStyle(
+                        color: color,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 14),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 14),
+            if (spark.isNotEmpty)
+              SizedBox(
+                  height: 80,
+                  child: Sparkline(data: spark, color: color, height: 80)),
+            const SizedBox(height: 14),
+            Text(
+              _indicatorRationale(ind.label),
+              style: const TextStyle(
+                  color: AppColors.textSecondary,
+                  fontSize: 13,
+                  height: 1.55),
+            ),
+            const SizedBox(height: 14),
+            const Text(
+              'Source · Treasury / NAIC / industry trade publications · Updated daily.',
+              style: TextStyle(color: AppColors.textMuted, fontSize: 11),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+String _indicatorRationale(String label) {
+  if (label.contains('10Y Treasury')) {
+    return 'The 10-year Treasury yield is the dominant driver of life-insurer book yields and the discount rate underlying GAAP LDTI Liability for Future Policy Benefits. Higher rates lift investment income and lower LFPB through OCI.';
+  }
+  if (label.contains('Claims Inflation')) {
+    return 'P&C claims inflation reflects severity in repair, medical, and litigation costs. Sustained elevation pressures combined ratios and forces rate filings.';
+  }
+  if (label.contains('Auto Severity')) {
+    return 'Auto severity captures the rising cost per claim driven by vehicle complexity, medical inflation, and litigation finance. The single largest driver of personal-lines combined ratio in 2022–2024.';
+  }
+  if (label.contains('Cat Bond')) {
+    return 'Catastrophe-bond issuance is a leading indicator of reinsurance capacity. Strong issuance signals investor appetite for insurance risk and softer retro pricing.';
+  }
+  if (label.contains('MA Star')) {
+    return 'Medicare Advantage Star Ratings determine ~5% bonus payments and marketing limits. Falling 4+ Star share compresses Medicare-Advantage carrier margins and triggers rebate exposure.';
+  }
+  return 'Macro indicator influencing insurance-industry economics. Watch for trend changes — they typically lag into combined ratios with a 1–2 quarter delay.';
 }

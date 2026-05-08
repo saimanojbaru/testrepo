@@ -5,6 +5,12 @@ import '../models/company.dart';
 import '../models/insight.dart';
 import '../models/kpi.dart';
 
+class _ScoredArticle {
+  final Map<String, dynamic> article;
+  final int score;
+  _ScoredArticle(this.article, this.score);
+}
+
 /// Offline-first analytics facade.
 ///
 /// All five tabs talk to this. There is no network call, no backend
@@ -68,6 +74,7 @@ class AnalyticsService {
       insurerType: insurerType,
       history: history,
       benchmarks: _data.industryBenchmarks,
+      ticker: resolved['ticker']?.toString(),
     );
     final radar = KpiEngine.computeRisk(insurerType: insurerType, kpis: kpis);
     final score = KpiEngine.compositeScore(kpis, radar);
@@ -130,6 +137,7 @@ class AnalyticsService {
         insurerType: type,
         history: history,
         benchmarks: _data.industryBenchmarks,
+        ticker: c['ticker']?.toString(),
       );
       final radar = KpiEngine.computeRisk(insurerType: type, kpis: kpis);
       payloads.add({
@@ -202,22 +210,39 @@ class AnalyticsService {
     return ['All', ...list];
   }
 
+  /// Deep search across every field in every article — including
+  /// sections, FSLI table rows, and references.  Tokens (whitespace-
+  /// separated) are AND-combined so "cash gaap" matches an article
+  /// that mentions both terms anywhere.
   List<Map<String, dynamic>> knowledgeSearch(String query) {
-    final q = query.trim().toLowerCase();
-    if (q.isEmpty) return _data.knowledgeArticles;
-    return _data.knowledgeArticles.where((a) {
-      final hay = [
-        a['title'],
-        a['framework'],
-        a['summary'],
-        a['body_md'] ?? '',
-        a['fsli'] ?? '',
-        a['gaap_view'] ?? '',
-        a['stat_view'] ?? '',
-        ...((a['tags'] as List?) ?? []),
-      ].map((e) => e.toString().toLowerCase()).join(' ');
-      return hay.contains(q);
-    }).toList();
+    final tokens = query
+        .trim()
+        .toLowerCase()
+        .split(RegExp(r'\s+'))
+        .where((t) => t.isNotEmpty)
+        .toList();
+    if (tokens.isEmpty) return _data.knowledgeArticles;
+    final scored = <_ScoredArticle>[];
+    for (final raw in _data.knowledgeArticles) {
+      final article = KnowledgeArticle.fromJson(Map<String, dynamic>.from(raw));
+      final corpus = article.searchCorpus;
+      final allMatch = tokens.every((t) => corpus.contains(t));
+      if (!allMatch) continue;
+      // Lightly rank: title hits and FSLI hits beat body-only matches.
+      final titleHits = tokens
+          .where((t) => article.title.toLowerCase().contains(t))
+          .length;
+      final fsliHits = tokens
+          .where((t) =>
+              (article.fsli ?? '').toLowerCase().contains(t) ||
+              article.fsliTable.any((r) =>
+                  r.lineItem.toLowerCase().contains(t)))
+          .length;
+      final score = titleHits * 4 + fsliHits * 2 + tokens.length;
+      scored.add(_ScoredArticle(raw, score));
+    }
+    scored.sort((a, b) => b.score.compareTo(a.score));
+    return scored.map((s) => s.article).toList();
   }
 
   // ---- Updates / news ------------------------------------------------------

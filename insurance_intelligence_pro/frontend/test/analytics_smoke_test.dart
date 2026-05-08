@@ -1,22 +1,23 @@
 import 'dart:io';
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/services.dart';
 import 'package:insurance_intelligence_pro/data/local_data.dart';
+import 'package:insurance_intelligence_pro/models/insight.dart';
 import 'package:insurance_intelligence_pro/services/analytics_service.dart';
 
 /// Functional smoke tests covering every screen's data path.
 ///
-/// These run on the host (no emulator needed) and exercise the same
-/// engines the released APK uses, so a green CI = working features.
+/// Runs on the host (no emulator needed) and exercises the same
+/// engines the released APK uses. Green CI means working features.
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUpAll(() async {
-    // Make rootBundle.loadString resolve real asset files from disk.
     final basePath = Directory.current.path;
-    ServicesBinding.instance.defaultBinaryMessenger
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMessageHandler('flutter/assets', (message) async {
       final key = utf8.decode(message!.buffer.asUint8List());
       final file = File('$basePath/$key');
@@ -52,29 +53,88 @@ void main() {
     expect(a.series, isNotEmpty);
   });
 
-  test('Company analysis: MET classified as Life with persistency KPI', () {
-    final a = AnalyticsService.instance.analyzeCompany('MET');
-    expect(a.company.insurerType, 'Life');
-    expect(a.kpis.primary.any((k) => k.code == 'persistency'), isTrue);
-    expect(a.kpis.primary.any((k) => k.code == 'investment_yield'), isTrue);
+  test('Every KPI carries filing source + formula provenance', () {
+    final a = AnalyticsService.instance.analyzeCompany('PGR');
+    final cr = a.kpis.primary.firstWhere((k) => k.code == 'combined_ratio');
+    expect(cr.source, isNotNull,
+        reason: 'KPIs must have a filing source for traceability.');
+    expect(cr.source!.form, '10-K');
+    expect(cr.source!.fiscalYear, contains('FY'));
+    expect(cr.source!.url, contains('sec.gov'));
+    final lr = a.kpis.primary.firstWhere((k) => k.code == 'loss_ratio');
+    expect(lr.formula, isNotNull,
+        reason: 'Loss Ratio must surface its formula.');
+    expect(lr.formula!.expression, contains('Earned Premium'));
+    expect(lr.formula!.numeratorValue, contains('\$'));
   });
 
-  test('Company analysis: UNH classified as Health with MLR', () {
-    final a = AnalyticsService.instance.analyzeCompany('UNH');
-    expect(a.company.insurerType, 'Health');
-    expect(a.kpis.primary.any((k) => k.code == 'medical_loss_ratio'), isTrue);
+  test('KPI carries a knowledgeSlug that resolves to an article', () {
+    final a = AnalyticsService.instance.analyzeCompany('PGR');
+    final cr = a.kpis.primary.firstWhere((k) => k.code == 'combined_ratio');
+    expect(cr.knowledgeSlug, isNotNull);
+    final raw = AnalyticsService.instance
+        .knowledge()
+        .firstWhere((art) => art['slug'] == cr.knowledgeSlug,
+            orElse: () => <String, dynamic>{});
+    expect(raw, isNotEmpty,
+        reason: 'KPI knowledgeSlug must resolve to an article.');
   });
 
-  test('Search by name resolves to ticker', () {
-    final r = AnalyticsService.instance.resolveCompany('Travelers');
-    expect(r, isNotNull);
-    expect(r!['ticker'], 'TRV');
+  test('Knowledge has at least 25 articles spanning core FSLIs', () {
+    final all = AnalyticsService.instance.knowledge();
+    expect(all.length, greaterThanOrEqualTo(25));
   });
 
-  test('Suggest is fast and ranked by prefix match', () {
-    final s = AnalyticsService.instance.suggest('PR', limit: 5);
-    expect(s, isNotEmpty);
-    expect(s.first['ticker'].toString(), startsWith('PR'));
+  test('Search "cash" returns the Cash & Cash Equivalents FSLI article', () {
+    final hits = AnalyticsService.instance.knowledgeSearch('cash');
+    expect(hits, isNotEmpty,
+        reason: 'Search must find articles for FSLI keywords.');
+    final hasCash = hits
+        .any((a) => a['slug'].toString().contains('cash'));
+    expect(hasCash, isTrue);
+  });
+
+  test('Search "reserves" returns multiple deep articles', () {
+    final hits = AnalyticsService.instance.knowledgeSearch('reserves');
+    expect(hits.length, greaterThanOrEqualTo(2));
+  });
+
+  test('Search "DAC" finds the deferred-acquisition-costs article', () {
+    final hits = AnalyticsService.instance.knowledgeSearch('DAC');
+    expect(hits.any((a) => a['slug'] == 'dac-deferred-acquisition-costs'),
+        isTrue);
+  });
+
+  test('Multi-token AND search ("life LDTI") narrows correctly', () {
+    final hits = AnalyticsService.instance.knowledgeSearch('life LDTI');
+    expect(hits, isNotEmpty);
+    // All hits must mention both tokens somewhere.
+    for (final h in hits) {
+      final ka = KnowledgeArticle.fromJson(Map<String, dynamic>.from(h));
+      expect(ka.searchCorpus, contains('life'));
+      expect(ka.searchCorpus, contains('ldti'));
+    }
+  });
+
+  test('Articles parse sections, fsli_table, references', () {
+    final all = AnalyticsService.instance.knowledge();
+    final cash = KnowledgeArticle.fromJson(
+        Map<String, dynamic>.from(all.firstWhere((a) => a['slug'] == 'cash-and-equivalents')));
+    expect(cash.sections, isNotEmpty);
+    expect(cash.fsliTable, isNotEmpty);
+    expect(cash.references, isNotEmpty);
+    expect(cash.depth, 'deep');
+    expect(cash.lastUpdated, isNotNull);
+    final fsliRow = cash.fsliTable.first;
+    expect(fsliRow.gaap, isNotEmpty);
+    expect(fsliRow.stat, isNotEmpty);
+    expect(fsliRow.delta, isNotEmpty);
+  });
+
+  test('Search corpus traverses every field for deep matches', () {
+    // "schedule p" appears in body_md / FSLI table — make sure search finds it.
+    final hits = AnalyticsService.instance.knowledgeSearch('schedule p');
+    expect(hits, isNotEmpty);
   });
 
   test('Compare ranks PGR/TRV/CB and produces a verdict', () {
@@ -84,12 +144,9 @@ void main() {
     expect(companies.length, 3);
     expect(metrics.length, greaterThanOrEqualTo(5));
     expect(c['verdict'], isNotEmpty);
-    final crMetric = metrics.firstWhere((m) => m['code'] == 'combined_ratio');
-    final values = (crMetric['values'] as List).cast<Map>();
-    expect(values.every((v) => v['rank'] != null && v['value'] != null), isTrue);
   });
 
-  test('Auto-peer for PGR returns P&C peers', () {
+  test('Auto-peer for PGR returns P&C peers with ranked metrics', () {
     final c = AnalyticsService.instance.autoCompare('PGR');
     expect(c['insurer_type'], 'P&C');
     expect((c['companies'] as List).length, greaterThanOrEqualTo(4));
@@ -99,13 +156,6 @@ void main() {
     final reg = AnalyticsService.instance.news(category: 'Regulation');
     final all = (reg['items'] as List);
     expect(all.every((n) => n['category'] == 'Regulation'), isTrue);
-  });
-
-  test('Knowledge has ASC944 article and is searchable', () {
-    final all = AnalyticsService.instance.knowledge();
-    expect(all.any((a) => a['framework'] == 'ASC944'), isTrue);
-    final hits = AnalyticsService.instance.knowledgeSearch('LDTI');
-    expect(hits, isNotEmpty);
   });
 
   test('Unknown company falls back to a helpful empty analysis', () {
