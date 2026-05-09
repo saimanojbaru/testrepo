@@ -2,11 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../models/standard.dart';
+
 /// Loads bundled JSON datasets once and caches them in memory.
-///
-/// The app ships entirely offline — every datum (tickers, sample
-/// financials, knowledge articles, dashboard pulse) lives in
-/// `assets/data/*.json` and is parsed at startup.
 class LocalData {
   LocalData._();
   static final LocalData instance = LocalData._();
@@ -15,6 +13,9 @@ class LocalData {
   late Map<String, dynamic> _tickers;
   late Map<String, dynamic> _sample;
   late Map<String, dynamic> _knowledge;
+  late StandardsCatalog _ssap;
+  late StandardsCatalog _asc944;
+  late StandardsCatalog _pcaob;
 
   Future<void> load() async {
     if (_loaded) return;
@@ -22,9 +23,17 @@ class LocalData {
     final sample = await rootBundle.loadString('assets/data/sample_data.json');
     final knowledge =
         await rootBundle.loadString('assets/data/knowledge.json');
+    final ssap = await rootBundle.loadString('assets/data/ssap.json');
+    final asc944 = await rootBundle.loadString('assets/data/asc944.json');
+    final pcaob = await rootBundle.loadString('assets/data/pcaob.json');
     _tickers = jsonDecode(tickers) as Map<String, dynamic>;
     _sample = jsonDecode(sample) as Map<String, dynamic>;
     _knowledge = jsonDecode(knowledge) as Map<String, dynamic>;
+    _ssap = StandardsCatalog.fromJson(jsonDecode(ssap) as Map<String, dynamic>);
+    _asc944 =
+        StandardsCatalog.fromJson(jsonDecode(asc944) as Map<String, dynamic>);
+    _pcaob =
+        StandardsCatalog.fromJson(jsonDecode(pcaob) as Map<String, dynamic>);
     _loaded = true;
   }
 
@@ -81,4 +90,18 @@ class LocalData {
 
   List<String> peerTickersFor(String insurerType) =>
       peerGroups[insurerType] ?? const [];
+
+  /// Standard catalog accessor by framework key.
+  StandardsCatalog catalogFor(String framework) {
+    switch (framework) {
+      case 'SSAP':
+        return _ssap;
+      case 'ASC944':
+        return _asc944;
+      case 'PCAOB':
+        return _pcaob;
+      default:
+        throw ArgumentError('Unknown framework: $framework');
+    }
+  }
 }

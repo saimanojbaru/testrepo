@@ -21,7 +21,7 @@ from fastapi.responses import JSONResponse
 from .cache import memory_stats
 from .config import settings
 from .database import disk_cache_purge_expired, init_db
-from .routers import company, compare, dashboard, knowledge, updates
+from .routers import company, compare, dashboard, knowledge, standards, updates
 from .services.http_client import close_client
 
 
@@ -103,3 +103,4 @@ app.include_router(company.router)
 app.include_router(compare.router)
 app.include_router(updates.router)
 app.include_router(knowledge.router)
+app.include_router(standards.router)

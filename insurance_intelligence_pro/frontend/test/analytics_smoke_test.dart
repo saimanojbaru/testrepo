@@ -164,4 +164,76 @@ void main() {
     expect(a.headline, contains('NOTAREALCO'));
     expect(a.insights, isNotEmpty);
   });
+
+  // -------- Standards catalog (SSAP / ASC 944 / PCAOB) ---------------------
+
+  test('SSAP catalog loads with 25 chapters from 2026 NAIC manual', () {
+    final cat = LocalData.instance.catalogFor('SSAP');
+    expect(cat.framework, 'SSAP');
+    expect(cat.standards.length, greaterThanOrEqualTo(20));
+    expect(cat.manual, contains('2026 NAIC'));
+    expect(cat.publisher, contains('NAIC'));
+  });
+
+  test('SSAP 2R deep dive matches the reference schema example', () {
+    final cat = LocalData.instance.catalogFor('SSAP');
+    final ssap2r = cat.standards.firstWhere((s) => s.id == 'SSAP-2R');
+    // Section 1
+    expect(ssap2r.chapterContent, contains('SSAP'));
+    // Section 2 — need
+    expect(ssap2r.need, contains('Liquidity'));
+    // Section 3 — evolution (must include 2026 update)
+    expect(
+        ssap2r.evolution.any((e) =>
+            e.year == '2026' && e.change.contains('Working Capital')),
+        isTrue);
+    // Section 4 — GAAP comparison must include the three exemplar rows
+    final aspects = ssap2r.gaapComparison.map((r) => r.aspect).toList();
+    expect(aspects, contains('Goal'));
+    expect(aspects, contains('Cash Equivalents definition'));
+    expect(aspects, contains('Bank Overdrafts'));
+  });
+
+  test('ASC 944 catalog covers all sub-topics', () {
+    final cat = LocalData.instance.catalogFor('ASC944');
+    expect(cat.framework, 'ASC944');
+    expect(cat.standards.length, greaterThanOrEqualTo(12));
+    final ids = cat.standards.map((s) => s.id).toList();
+    expect(ids, contains('ASC-944-30')); // DAC
+    expect(ids, contains('ASC-944-40')); // Reserves
+    expect(ids, contains('ASC-944-605')); // Premium revenue
+  });
+
+  test('PCAOB catalog includes core insurance-audit AS', () {
+    final cat = LocalData.instance.catalogFor('PCAOB');
+    expect(cat.framework, 'PCAOB');
+    expect(cat.standards.length, greaterThanOrEqualTo(10));
+    final ids = cat.standards.map((s) => s.id).toList();
+    expect(ids, contains('PCAOB-AS-2501')); // Estimates / fair value
+    expect(ids, contains('PCAOB-AS-1210')); // Specialists
+    expect(ids, contains('PCAOB-AS-3101')); // Auditor's report w/ CAMs
+  });
+
+  test('Every standard has the four required sections populated', () {
+    for (final framework in ['SSAP', 'ASC944', 'PCAOB']) {
+      final cat = LocalData.instance.catalogFor(framework);
+      for (final s in cat.standards) {
+        expect(s.chapterContent, isNotEmpty,
+            reason: '${s.id} missing chapter content');
+        expect(s.need, isNotEmpty, reason: '${s.id} missing need');
+        expect(s.evolution, isNotEmpty,
+            reason: '${s.id} missing evolution');
+        expect(s.gaapComparison, isNotEmpty,
+            reason: '${s.id} missing gaap comparison');
+      }
+    }
+  });
+
+  test('Standard searchCorpus matches text in all four sections', () {
+    final cat = LocalData.instance.catalogFor('SSAP');
+    final ssap2r = cat.standards.firstWhere((s) => s.id == 'SSAP-2R');
+    expect(ssap2r.searchCorpus, contains('liquidity'));
+    expect(ssap2r.searchCorpus, contains('working capital finance'));
+    expect(ssap2r.searchCorpus, contains('overdraft'));
+  });
 }

@@ -1,0 +1,237 @@
+{
+  "_note": "PCAOB Auditing Standards relevant to insurance-company audits. Each entry follows the four-section schema: chapter_content / need / evolution / gaap_comparison.",
+  "framework": "PCAOB",
+  "manual": "PCAOB Auditing Standards",
+  "publisher": "Public Company Accounting Oversight Board (PCAOB)",
+  "source_url": "https://pcaobus.org/oversight/standards/auditing-standards",
+  "standards": [
+    {
+      "id": "PCAOB-AS-1001",
+      "number": "AS 1001",
+      "title": "Responsibilities and Functions of the Independent Auditor",
+      "fsli": "Audit Framework",
+      "summary": "Foundational responsibilities of the auditor — independence, due professional care, and reasonable assurance.",
+      "chapter_content": "AS 1001 establishes the auditor's overarching responsibility to plan and perform the audit to obtain reasonable assurance that the financial statements are free of material misstatement, whether caused by error or fraud. Independence in fact and appearance is required throughout. For insurance audits, this includes scrutiny of complex actuarial estimates and reinsurance arrangements with related parties.",
+      "need": "Defines the bedrock standards every audit engagement must meet. Without AS 1001, downstream standards on planning, evidence, and reporting would lack a foundational framework.",
+      "evolution": [
+        {"year": "2003", "change": "Original PCAOB inception standards adopted (PCAOB AS 1)."},
+        {"year": "2015", "change": "Reorganization into AS 1001 numbering."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Audit objective", "gaap": "Reasonable assurance financial statements free of material misstatement", "stat": "Statutory financial statement audit follows AICPA standards (similar)", "delta": "Aligned principle; PCAOB enforced for SEC issuers"}
+      ],
+      "tags": ["Audit", "Independence", "Reasonable Assurance"]
+    },
+    {
+      "id": "PCAOB-AS-1015",
+      "number": "AS 1015",
+      "title": "Due Professional Care in the Performance of Work",
+      "fsli": "Audit Framework",
+      "summary": "Auditor must exercise due professional care including professional skepticism throughout the engagement.",
+      "chapter_content": "AS 1015 requires due professional care, including a critical assessment of audit evidence — auditors must not assume management is honest or dishonest, but instead approach evidence with professional skepticism. For insurance audits, this is particularly relevant in evaluating actuarial reserves where management has substantial latitude.",
+      "need": "Ensures auditors do not become rubber-stamps for management. Professional skepticism is the auditor's cognitive defense against fraud.",
+      "evolution": [
+        {"year": "2003", "change": "Original adoption."},
+        {"year": "2012", "change": "PCAOB Staff Audit Practice Alert No. 10 reinforced skepticism in actuarial-estimate audits."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Professional skepticism", "gaap": "Required throughout", "stat": "Same under AICPA standards", "delta": "Aligned"}
+      ],
+      "tags": ["Audit", "Skepticism", "Due Care"]
+    },
+    {
+      "id": "PCAOB-AS-2110",
+      "number": "AS 2110",
+      "title": "Identifying and Assessing Risks of Material Misstatement",
+      "fsli": "Risk Assessment",
+      "summary": "Risk-assessment procedures including understanding the entity, environment, and internal control. Insurance-specific risks include actuarial reserves, reinsurance, and investment valuation.",
+      "chapter_content": "AS 2110 requires the auditor to obtain a sufficient understanding of the entity and its environment, including internal control, to identify and assess the risks of material misstatement at the financial-statement and assertion levels. For insurance audits, the auditor must understand the actuarial-reserving process, reinsurance program, and investment valuation methodologies. Significant risks (typically including LFPB / loss reserves and complex investment instruments) require special attention.",
+      "need": "A risk-based audit approach concentrates audit effort on the areas most likely to contain material misstatement. For insurers, this is typically reserves and investments.",
+      "evolution": [
+        {"year": "2010", "change": "Adopted as part of PCAOB's risk-assessment standards (AS 8-15)."},
+        {"year": "2015", "change": "Reorganization into AS 2110 numbering."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Risk assessment", "gaap": "AS 2110 — significant risks including reserves", "stat": "AICPA AU-C 315 — same framework", "delta": "Aligned"}
+      ],
+      "tags": ["Audit", "Risk Assessment", "Internal Control"]
+    },
+    {
+      "id": "PCAOB-AS-2201",
+      "number": "AS 2201",
+      "title": "An Audit of Internal Control Over Financial Reporting Integrated with an Audit of Financial Statements",
+      "fsli": "ICFR",
+      "summary": "Integrated audit of internal control and financial statements — required for accelerated and large accelerated SEC filers.",
+      "chapter_content": "AS 2201 governs the integrated audit of internal control over financial reporting (ICFR) and the financial statements. The auditor identifies key controls over significant financial-statement accounts and disclosures, tests design and operating effectiveness, and concludes on whether ICFR is effective as of the balance-sheet date. For insurers, ICFR scope includes controls over actuarial reserve setting, reinsurance accounting, investment valuation, and tax provision.",
+      "need": "Provides users with assurance that the company's reported financial controls are sufficient to prevent and detect material misstatement, supplementing the financial-statement opinion.",
+      "evolution": [
+        {"year": "2007", "change": "AS 5 issued; replaced AS 2 with a more risk-based, top-down approach."},
+        {"year": "2015", "change": "Reorganization into AS 2201 numbering."},
+        {"year": "2024", "change": "Increased PCAOB scrutiny of ICFR over LDTI implementation controls."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "ICFR audit", "gaap": "Required for SEC accelerated filers", "stat": "MAR (Model Audit Rule) — required for large insurers", "delta": "Both apply to large insurers; STAT version follows AICPA"}
+      ],
+      "tags": ["Audit", "ICFR", "SOX", "Internal Control"]
+    },
+    {
+      "id": "PCAOB-AS-2301",
+      "number": "AS 2301",
+      "title": "The Auditor's Responses to the Risks of Material Misstatement",
+      "fsli": "Audit Response",
+      "summary": "Procedures the auditor performs to respond to risks identified in AS 2110 — including substantive procedures and tests of controls.",
+      "chapter_content": "AS 2301 requires the auditor to design and implement responses (overall and at the assertion level) to address assessed risks. For insurers, common responses include actuarial-specialist involvement on reserves, IT-specialist involvement on investment systems, and substantive testing of large reinsurance contracts.",
+      "need": "Translates risk assessment into concrete audit procedures, ensuring effort matches the magnitude of risk.",
+      "evolution": [
+        {"year": "2010", "change": "Adopted with AS 2110."},
+        {"year": "2015", "change": "Reorganization into AS 2301 numbering."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Response to risk", "gaap": "AS 2301", "stat": "AICPA AU-C 330", "delta": "Aligned"}
+      ],
+      "tags": ["Audit", "Risk Response", "Substantive Procedures"]
+    },
+    {
+      "id": "PCAOB-AS-2401",
+      "number": "AS 2401",
+      "title": "Consideration of Fraud in a Financial Statement Audit",
+      "fsli": "Fraud",
+      "summary": "Auditor's responsibility to consider fraud risk and respond to identified risks.",
+      "chapter_content": "AS 2401 requires the auditor to identify, assess, and respond to risks of fraud — both fraudulent financial reporting and misappropriation of assets. The auditor presumes fraud risk in revenue recognition. For insurers, common fraud-risk areas include reserve manipulation (smoothing earnings), reinsurance side-letters, and investment valuation overrides.",
+      "need": "Without explicit fraud consideration, audits would default to error-detection only — missing intentional misstatement which is harder to detect.",
+      "evolution": [
+        {"year": "2002", "change": "SAS 99 issued in response to Enron / WorldCom; later adopted by PCAOB."},
+        {"year": "2015", "change": "Reorganization into AS 2401 numbering."},
+        {"year": "2024", "change": "PCAOB inspections increasingly cite reserve-manipulation concerns at insurers."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Fraud consideration", "gaap": "AS 2401 — required throughout audit", "stat": "AICPA AU-C 240 — same standard", "delta": "Aligned"}
+      ],
+      "tags": ["Fraud", "AS 2401", "Risk Assessment"]
+    },
+    {
+      "id": "PCAOB-AS-2501",
+      "number": "AS 2501",
+      "title": "Auditing Accounting Estimates, Including Fair Value Measurements",
+      "fsli": "Accounting Estimates",
+      "summary": "Audit procedures for management's accounting estimates — heart of insurance auditing given reserves and fair-value-based investments.",
+      "chapter_content": "AS 2501 governs auditor procedures for accounting estimates, including fair value. The auditor must (1) obtain an understanding of how management makes the estimate, (2) identify and assess risks of material misstatement, (3) test management's process or develop an independent estimate, (4) evaluate the reasonableness. For insurance, this is the dominant audit standard — actuarial reserves, MRBs, and Level 3 investments all fall under AS 2501.",
+      "need": "Insurance financial statements consist largely of estimates. Without rigorous audit standards for estimates, an audit opinion on insurance statements would be hollow.",
+      "evolution": [
+        {"year": "2003", "change": "AS 14 / AU 342 originated."},
+        {"year": "2018", "change": "PCAOB AS 2501 substantially revised — replaces older AS 14, AS 18, AS 13, AS 14."},
+        {"year": "2020", "change": "Effective for audits of fiscal years ending Dec 15, 2020 and later."},
+        {"year": "2024", "change": "Inspections cite weak auditor pushback on LDTI cohort assumptions."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Reserve audit", "gaap": "AS 2501 — independent estimate or management process testing", "stat": "AICPA AU-C 540 — same framework", "delta": "Aligned"},
+        {"aspect": "Fair value audit", "gaap": "AS 2501 + AS 1210 (specialist)", "stat": "Same", "delta": "Aligned"}
+      ],
+      "tags": ["Estimates", "Reserves", "Fair Value", "MRB", "Level 3"]
+    },
+    {
+      "id": "PCAOB-AS-1210",
+      "number": "AS 1210",
+      "title": "Using the Work of an Auditor-Engaged Specialist",
+      "fsli": "Specialists",
+      "summary": "Standards for using actuarial, valuation, and other specialists in the audit. Critical for insurance audits.",
+      "chapter_content": "AS 1210 (effective 2022) governs the auditor's use of specialists — including actuaries valuing reserves, valuation specialists pricing Level 3 investments, and tax specialists. The auditor must evaluate the specialist's competence, capabilities, objectivity, and obtain an understanding of their work, methods, and assumptions.",
+      "need": "Insurance audits cannot be performed without specialists. Without rigorous standards on specialist use, audit firms could simply outsource judgment without accountability.",
+      "evolution": [
+        {"year": "2003", "change": "AU 336 originated."},
+        {"year": "2018", "change": "PCAOB amended specialist standards — issued new AS 1210."},
+        {"year": "2022", "change": "Effective for audits of fiscal years ending Dec 15, 2022 and later."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Use of actuarial specialist", "gaap": "AS 1210 — formal evaluation required", "stat": "AICPA AU-C 620", "delta": "Aligned"}
+      ],
+      "tags": ["Specialists", "Actuaries", "Valuation"]
+    },
+    {
+      "id": "PCAOB-AS-2502",
+      "number": "AS 2502",
+      "title": "Auditing Fair Value Measurements",
+      "fsli": "Fair Value",
+      "summary": "Specific guidance on auditing fair-value measurements, particularly relevant for Level 3 investments and MRBs.",
+      "chapter_content": "AS 2502 (consolidated into AS 2501 in 2018) provided detailed guidance on auditing fair-value measurements. For insurance, this includes Level 3 investments (private placements, LP interests valued at NAV, structured securities), MRBs valued under risk-neutral stochastic models, and embedded derivatives.",
+      "need": "Fair-value measurements rely heavily on unobservable inputs and modeling assumptions. Without specific audit standards, valuation manipulation would be hard to detect.",
+      "evolution": [
+        {"year": "2003", "change": "Original AS 18 issued."},
+        {"year": "2018", "change": "Consolidated into AS 2501; AS 2502 superseded."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Fair-value audit", "gaap": "AS 2501 (incl. former AS 2502)", "stat": "AICPA AU-C 540", "delta": "Aligned"}
+      ],
+      "tags": ["Fair Value", "Level 3", "MRB"]
+    },
+    {
+      "id": "PCAOB-AS-3101",
+      "number": "AS 3101",
+      "title": "The Auditor's Report on an Audit of Financial Statements When the Auditor Expresses an Unqualified Opinion",
+      "fsli": "Audit Report",
+      "summary": "Form and content of the auditor's report; introduced Critical Audit Matters (CAMs) for large filers.",
+      "chapter_content": "AS 3101 governs the form and content of the auditor's report for unqualified opinions. Most significantly, it introduced Critical Audit Matters (CAMs) — matters communicated or required to be communicated to the audit committee that involved especially challenging, subjective, or complex auditor judgment. For insurance audits, common CAMs include LFPB / loss reserves, MRB valuation, LTC reserves, and goodwill / VOBA.",
+      "need": "Provides users of financial statements with insight into the most challenging audit areas — improving transparency without compromising the auditor's confidentiality obligations.",
+      "evolution": [
+        {"year": "2017", "change": "AS 3101 final issued — CAM communication required."},
+        {"year": "2019", "change": "CAMs effective for large accelerated filers; full effective by 2020."},
+        {"year": "2023", "change": "LDTI implementation drove new CAMs across life-insurance auditor reports."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Auditor's report content", "gaap": "AS 3101 with CAMs", "stat": "AICPA AU-C 700 — Key Audit Matters analog (KAMs)", "delta": "Both communicate critical audit matters"}
+      ],
+      "tags": ["Audit Report", "CAMs", "KAMs"]
+    },
+    {
+      "id": "PCAOB-AS-2810",
+      "number": "AS 2810",
+      "title": "Evaluating Audit Results",
+      "fsli": "Audit Conclusion",
+      "summary": "Auditor's procedures to evaluate audit results and conclude on the audit.",
+      "chapter_content": "AS 2810 requires the auditor to evaluate the sufficiency and appropriateness of audit evidence, evaluate uncorrected misstatements both individually and in aggregate, and form a conclusion on the financial statements. For insurance, evaluating uncorrected misstatements in reserves is particularly delicate — small individual misstatements can aggregate to material amounts across multiple lines of business.",
+      "need": "Provides the structured framework for the auditor to step back and reach an overall conclusion at the end of the audit.",
+      "evolution": [
+        {"year": "2010", "change": "Adopted as part of risk-assessment suite."},
+        {"year": "2015", "change": "Reorganization into AS 2810 numbering."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Evaluation of misstatements", "gaap": "AS 2810", "stat": "AICPA AU-C 450", "delta": "Aligned"}
+      ],
+      "tags": ["Audit Evaluation", "Misstatements"]
+    },
+    {
+      "id": "PCAOB-AS-1301",
+      "number": "AS 1301",
+      "title": "Communications with Audit Committees",
+      "fsli": "Governance",
+      "summary": "Required and recommended communications between the auditor and audit committee.",
+      "chapter_content": "AS 1301 establishes communications between the auditor and audit committee on significant audit matters — overall audit strategy, significant risks, significant accounting policies, judgments, estimates, control deficiencies, and CAMs. Frequency includes pre-audit (planning), interim, and final.",
+      "need": "Strong audit committee oversight is the principal governance defense against fraudulent financial reporting; AS 1301 ensures the committee has the information needed for that oversight.",
+      "evolution": [
+        {"year": "2012", "change": "AS 16 issued; significantly expanded required communications."},
+        {"year": "2015", "change": "Reorganization into AS 1301 numbering."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Audit-committee communication", "gaap": "AS 1301", "stat": "AICPA AU-C 260", "delta": "Aligned"}
+      ],
+      "tags": ["Governance", "Audit Committee"]
+    },
+    {
+      "id": "PCAOB-AS-2601",
+      "number": "AS 2601",
+      "title": "Consideration of an Entity's Use of a Service Organization",
+      "fsli": "Service Organizations",
+      "summary": "Auditor's consideration of the impact of a service organization on the audit. Common in insurance for outsourced claims, investment, and policy administration.",
+      "chapter_content": "AS 2601 addresses auditor procedures when the entity uses a service organization (e.g., third-party claims administrator, investment manager, policy administration provider). The auditor relies on a Service Organization Control (SOC) report — typically SOC 1 Type 2 — to obtain comfort on controls at the service organization.",
+      "need": "Modern insurers outsource substantial back-office and even policy-administration functions. Without explicit audit guidance, controls at these outsourced functions would fall outside the audit scope.",
+      "evolution": [
+        {"year": "2003", "change": "AS 12 / AU 324 originated."},
+        {"year": "2015", "change": "Reorganization into AS 2601 numbering."}
+      ],
+      "gaap_comparison": [
+        {"aspect": "Service org audit", "gaap": "AS 2601 with SOC 1 reliance", "stat": "AICPA AU-C 402", "delta": "Aligned"}
+      ],
+      "tags": ["Service Organization", "SOC 1", "TPA"]
+    }
+  ]
+}
