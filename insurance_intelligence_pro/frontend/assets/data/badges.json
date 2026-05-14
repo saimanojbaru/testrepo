@@ -1,0 +1,27 @@
+{
+  "_note": "Auditor achievement badges. Each badge has an unlock_rule (XP threshold, event count, or named event). Rendered in the Trophy Case.",
+  "badges": [
+    {"id": "first-checklist", "name": "First Steps", "icon": "footsteps", "rarity": "common", "description": "Complete your first audit checklist item.", "xp_reward": 25, "unlock": {"event": "checklist_item_completed", "count": 1}},
+    {"id": "triangle-tamer", "name": "Triangle Tamer", "icon": "triangle", "rarity": "rare", "description": "Open and analyze a loss-development triangle.", "xp_reward": 75, "unlock": {"event": "triangle_viewed", "count": 1}},
+    {"id": "sap-slayer", "name": "SAP Slayer", "icon": "swords", "rarity": "epic", "description": "Complete 10 GAAP↔SAP bridge adjustments.", "xp_reward": 150, "unlock": {"event": "bridge_adjustment", "count": 10}},
+    {"id": "kam-killer", "name": "KAM Killer", "icon": "doc_check", "rarity": "epic", "description": "Generate 5 KAM drafts in the AI Assistant.", "xp_reward": 150, "unlock": {"event": "ai_kam_drafted", "count": 5}},
+    {"id": "risk-radar-master", "name": "Risk Radar Master", "icon": "radar", "rarity": "rare", "description": "Run a what-if scenario in the Enhanced Risk Radar.", "xp_reward": 100, "unlock": {"event": "radar_scenario_run", "count": 1}},
+    {"id": "duel-rookie", "name": "Duel Rookie", "icon": "trophy", "rarity": "common", "description": "Win your first quiz duel.", "xp_reward": 50, "unlock": {"event": "quiz_won", "count": 1}},
+    {"id": "reserve-grandmaster", "name": "Reserve Grandmaster", "icon": "crown", "rarity": "legendary", "description": "Maintain a 10-question win streak on Loss Reserves quizzes.", "xp_reward": 500, "unlock": {"event": "quiz_streak_loss_reserves", "count": 10}},
+    {"id": "perfect-phase", "name": "Phase Perfectionist", "icon": "checkmark", "rarity": "rare", "description": "Complete every item in a single audit phase.", "xp_reward": 100, "unlock": {"event": "phase_completed", "count": 1}},
+    {"id": "streak-7", "name": "Week-Long Warrior", "icon": "fire", "rarity": "rare", "description": "Maintain a 7-day login streak.", "xp_reward": 100, "unlock": {"event": "daily_streak", "count": 7}},
+    {"id": "streak-30", "name": "Catastrophe Legend", "icon": "fire", "rarity": "legendary", "description": "Maintain a 30-day login streak.", "xp_reward": 500, "unlock": {"event": "daily_streak", "count": 30}},
+    {"id": "ssap-scholar", "name": "SSAP Scholar", "icon": "book", "rarity": "rare", "description": "Open 25 different SSAP chapters.", "xp_reward": 100, "unlock": {"event": "standard_viewed_ssap", "count": 25}},
+    {"id": "asc-scholar", "name": "ASC Scholar", "icon": "book", "rarity": "rare", "description": "Open 15 different ASC 944 sub-topics.", "xp_reward": 100, "unlock": {"event": "standard_viewed_asc", "count": 15}},
+    {"id": "product-explorer", "name": "Product Explorer", "icon": "compass", "rarity": "common", "description": "Open 10 products in the Product Library.", "xp_reward": 50, "unlock": {"event": "product_viewed", "count": 10}}
+  ],
+  "levels": [
+    {"level": 1, "title": "Junior Auditor", "min_xp": 0},
+    {"level": 2, "title": "Senior Auditor", "min_xp": 250},
+    {"level": 3, "title": "Reserve Titan", "min_xp": 750},
+    {"level": 4, "title": "Reinsurance Wizard", "min_xp": 1500},
+    {"level": 5, "title": "Risk Radar Master", "min_xp": 3000},
+    {"level": 6, "title": "GAAP-SAP Sage", "min_xp": 5000},
+    {"level": 7, "title": "Catastrophe Legend", "min_xp": 8000}
+  ]
+}

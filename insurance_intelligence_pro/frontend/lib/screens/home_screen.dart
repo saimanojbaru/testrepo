@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import '../features/ai/screens/ai_assistant_screen.dart';
+import '../features/audit/screens/audit_tools_screen.dart';
+import '../features/bridge/screens/gaap_sap_bridge_screen.dart';
+import '../features/gamification/services/xp_service.dart';
+import '../features/gamification/screens/trophy_case_screen.dart';
+import '../features/gamification/widgets/level_chip.dart';
+import '../features/quiz/screens/quiz_arena_screen.dart';
+import '../features/reserve/screens/reserve_toolkit_screen.dart';
 import '../theme/app_colors.dart';
 import 'company_screen.dart';
 import 'compare_screen.dart';
@@ -63,6 +71,43 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => const SettingsScreen()));
         },
+        onAuditTools: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const AuditToolsScreen()));
+        },
+        onAiAssistant: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const AIAssistantScreen()));
+        },
+        onBridge: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const GaapSapBridgeScreen()));
+        },
+        onReserveToolkit: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const ReserveToolkitScreen()));
+        },
+        onQuizArena: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const QuizArenaScreen()));
+        },
+        onTrophyCase: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const TrophyCaseScreen()));
+        },
+      ),
+      floatingActionButton: FloatingActionButton.small(
+        backgroundColor: AppColors.accent,
+        foregroundColor: Colors.white,
+        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (_) => const AIAssistantScreen())),
+        child: const Icon(Icons.auto_awesome),
       ),
       appBar: AppBar(
         backgroundColor: AppColors.background,
@@ -103,12 +148,24 @@ class _AppDrawer extends StatelessWidget {
   final ValueChanged<String> onStandardsSelected;
   final VoidCallback onProductLibrary;
   final VoidCallback onSettings;
+  final VoidCallback onAuditTools;
+  final VoidCallback onAiAssistant;
+  final VoidCallback onBridge;
+  final VoidCallback onReserveToolkit;
+  final VoidCallback onQuizArena;
+  final VoidCallback onTrophyCase;
   const _AppDrawer({
     required this.selected,
     required this.onTabSelected,
     required this.onStandardsSelected,
     required this.onProductLibrary,
     required this.onSettings,
+    required this.onAuditTools,
+    required this.onAiAssistant,
+    required this.onBridge,
+    required this.onReserveToolkit,
+    required this.onQuizArena,
+    required this.onTrophyCase,
   });
 
   @override
@@ -149,6 +206,56 @@ class _AppDrawer extends StatelessWidget {
               label: 'Updates',
               selected: selected == _Tab.updates,
               onTap: () => onTabSelected(_Tab.updates),
+            ),
+            const SizedBox(height: 4),
+            const Divider(color: AppColors.divider, height: 1),
+            // ----- Audit Tools / AI / Bridge / Reserve / Quiz ---------------
+            _DrawerTile(
+              icon: Icons.fact_check_outlined,
+              label: 'Audit Tools',
+              selected: false,
+              onTap: onAuditTools,
+            ),
+            _DrawerTile(
+              icon: Icons.auto_awesome_outlined,
+              label: 'AI Auditor',
+              selected: false,
+              onTap: onAiAssistant,
+            ),
+            _DrawerTile(
+              icon: Icons.compare_arrows_outlined,
+              label: 'GAAP ↔ SAP Bridge',
+              selected: false,
+              onTap: onBridge,
+            ),
+            _DrawerTile(
+              icon: Icons.change_history_outlined,
+              label: 'Reserve Toolkit',
+              selected: false,
+              onTap: onReserveToolkit,
+            ),
+            // Fun Mode-gated entries (Quiz Arena + Trophy Case)
+            AnimatedBuilder(
+              animation: XpService.instance,
+              builder: (context, _) {
+                if (!XpService.instance.funMode) return const SizedBox.shrink();
+                return Column(
+                  children: [
+                    _DrawerTile(
+                      icon: Icons.flash_on_rounded,
+                      label: 'Quiz Arena',
+                      selected: false,
+                      onTap: onQuizArena,
+                    ),
+                    _DrawerTile(
+                      icon: Icons.emoji_events_rounded,
+                      label: 'Trophy Case',
+                      selected: false,
+                      onTap: onTrophyCase,
+                    ),
+                  ],
+                );
+              },
             ),
             const SizedBox(height: 4),
             const Divider(color: AppColors.divider, height: 1),
@@ -265,10 +372,10 @@ class _DrawerHeader extends StatelessWidget {
                 color: Colors.white, size: 18),
           ),
           const SizedBox(width: 12),
-          const Expanded(
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   'Insurance Intelligence',
                   style: TextStyle(
@@ -278,15 +385,8 @@ class _DrawerHeader extends StatelessWidget {
                     letterSpacing: -0.4,
                   ),
                 ),
-                SizedBox(height: 2),
-                Text(
-                  'Pro · v1.0',
-                  style: TextStyle(
-                      color: AppColors.textMuted,
-                      fontSize: 10.5,
-                      letterSpacing: 1.4,
-                      fontWeight: FontWeight.w600),
-                ),
+                SizedBox(height: 4),
+                LevelChip(dense: true),
               ],
             ),
           ),

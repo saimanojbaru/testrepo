@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'data/local_data.dart';
+import 'features/audit/state/checklist_state.dart';
+import 'features/gamification/services/xp_service.dart';
+import 'features/quiz/state/quiz_state.dart';
 import 'screens/home_screen.dart';
 import 'services/api_service.dart';
 import 'theme/app_theme.dart';
@@ -22,6 +25,12 @@ Future<void> main() async {
   await LocalData.instance.load();
   // Load any persisted backend URL so online mode starts up automatically.
   await ApiService.instance.load();
+  // Load gamification + audit + quiz state from SharedPreferences.
+  await Future.wait([
+    XpService.instance.load(),
+    ChecklistState.instance.load(),
+    QuizState.instance.load(),
+  ]);
   runApp(const InsuranceIntelligenceApp());
 }
 

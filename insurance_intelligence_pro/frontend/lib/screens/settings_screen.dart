@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../features/gamification/services/xp_service.dart';
 import '../services/api_service.dart';
 import '../theme/app_colors.dart';
 import '../widgets/glass_card.dart';
@@ -81,6 +82,67 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         padding: const EdgeInsets.fromLTRB(20, 8, 20, 36),
         children: [
+          const SectionHeader(
+              title: 'Fun Mode',
+              subtitle: 'Quiz Arena, XP, badges, streaks'),
+          GlassCard(
+            child: AnimatedBuilder(
+              animation: XpService.instance,
+              builder: (context, _) {
+                final on = XpService.instance.funMode;
+                return Row(
+                  children: [
+                    Container(
+                      width: 36,
+                      height: 36,
+                      decoration: BoxDecoration(
+                        color: (on ? AppColors.accent : AppColors.textMuted)
+                            .withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Icon(
+                          on
+                              ? Icons.celebration_rounded
+                              : Icons.work_outline_rounded,
+                          color:
+                              on ? AppColors.accent : AppColors.textMuted,
+                          size: 18),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(on ? 'Fun Mode is ON' : 'Professional Mode',
+                              style: const TextStyle(
+                                  color: AppColors.textPrimary,
+                                  fontWeight: FontWeight.w800,
+                                  fontSize: 13)),
+                          const SizedBox(height: 2),
+                          Text(
+                            on
+                                ? 'Quiz Arena, Trophy Case, XP, streaks and celebratory animations are visible.'
+                                : 'Hide gamification UI. XP & badges are still tracked silently.',
+                            style: const TextStyle(
+                                color: AppColors.textMuted,
+                                fontSize: 11.5,
+                                height: 1.4),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Switch(
+                      value: on,
+                      activeThumbColor: AppColors.accent,
+                      onChanged: (v) =>
+                          XpService.instance.setFunMode(v),
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+          const SizedBox(height: 18),
           const SectionHeader(
               title: 'Real-time backend',
               subtitle: 'Connect your FastAPI deployment to overlay live data'),
