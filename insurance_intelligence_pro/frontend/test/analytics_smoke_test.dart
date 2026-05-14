@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:insurance_intelligence_pro/data/local_data.dart';
 import 'package:insurance_intelligence_pro/models/insight.dart';
 import 'package:insurance_intelligence_pro/services/analytics_service.dart';
+import 'package:insurance_intelligence_pro/widgets/hyperlinked_text.dart';
 
 /// Functional smoke tests covering every screen's data path.
 ///
@@ -235,5 +236,143 @@ void main() {
     expect(ssap2r.searchCorpus, contains('liquidity'));
     expect(ssap2r.searchCorpus, contains('working capital finance'));
     expect(ssap2r.searchCorpus, contains('overdraft'));
+  });
+
+  // -------- Expansion: SSAP 1-122, full ASC 944, full PCAOB --------------
+
+  test('SSAP catalog covers the full 1-122 range with deep entries', () {
+    final cat = LocalData.instance.catalogFor('SSAP');
+    expect(cat.standards.length, greaterThanOrEqualTo(90));
+    final numbers = cat.standards.map((s) => s.number).toList();
+    // Sanity checks across the range
+    expect(numbers, contains('1'));
+    expect(numbers, contains('2R'));
+    expect(numbers, contains('51R'));
+    expect(numbers, contains('72'));
+    expect(numbers, contains('101'));
+    expect(numbers, contains('105R'));
+    expect(numbers, contains('117'));
+    expect(numbers, contains('120'));
+    expect(numbers, contains('122'));
+  });
+
+  test('ASC 944 expanded with 27+ sub-topics', () {
+    final cat = LocalData.instance.catalogFor('ASC944');
+    expect(cat.standards.length, greaterThanOrEqualTo(25));
+  });
+
+  test('PCAOB covers 24+ standards including AS 2410 (Related Parties)', () {
+    final cat = LocalData.instance.catalogFor('PCAOB');
+    expect(cat.standards.length, greaterThanOrEqualTo(22));
+    expect(cat.standards.any((s) => s.number == 'AS 2410'), isTrue);
+  });
+
+  test('Every standard carries a source_link to authoritative source', () {
+    for (final framework in ['SSAP', 'ASC944', 'PCAOB']) {
+      final cat = LocalData.instance.catalogFor(framework);
+      for (final s in cat.standards) {
+        expect(s.sourceLink, isNotNull,
+            reason: '${s.id} missing source_link');
+        expect(s.sourceLink!.startsWith('http'), isTrue,
+            reason: '${s.id} source_link must be external URL');
+      }
+    }
+  });
+
+  test('PCAOB badgeNumber strips the "AS " prefix (icon shows number only)', () {
+    final cat = LocalData.instance.catalogFor('PCAOB');
+    final as2201 =
+        cat.standards.firstWhere((s) => s.number == 'AS 2201');
+    expect(as2201.badgeNumber, '2201');
+    final as2501 =
+        cat.standards.firstWhere((s) => s.number == 'AS 2501');
+    expect(as2501.badgeNumber, '2501');
+  });
+
+  test('SSAP badgeNumber unchanged (no "AS" prefix to strip)', () {
+    final cat = LocalData.instance.catalogFor('SSAP');
+    final ssap2r =
+        cat.standards.firstWhere((s) => s.number == '2R');
+    expect(ssap2r.badgeNumber, '2R');
+  });
+
+  // -------- Product Library ----------------------------------------------
+
+  test('Product Library loads 16 products across 5 categories', () {
+    final lib = LocalData.instance.productLibrary;
+    expect(lib.products.length, greaterThanOrEqualTo(16));
+    expect(lib.categories.length, greaterThanOrEqualTo(5));
+  });
+
+  test('Product Library has full scope: life, annuity, institutional, PC', () {
+    final lib = LocalData.instance.productLibrary;
+    final names =
+        lib.products.map((p) => p.name.toLowerCase()).toList();
+    expect(names.any((n) => n.contains('term life')), isTrue);
+    expect(names.any((n) => n.contains('whole life')), isTrue);
+    expect(names.any((n) => n.contains('universal life')), isTrue);
+    expect(names.any((n) => n.contains('variable universal')), isTrue);
+    expect(names.any((n) => n.contains('indexed universal')), isTrue);
+    expect(names.any((n) => n.contains('fixed deferred annuity')), isTrue);
+    expect(names.any((n) => n.contains('variable annuity')), isTrue);
+    expect(names.any((n) => n.contains('fixed indexed annuity')), isTrue);
+    expect(names.any((n) => n.contains('pension risk transfer') && n.contains('buy-out')), isTrue);
+    expect(names.any((n) => n.contains('pension risk transfer') && n.contains('buy-in')), isTrue);
+    expect(names.any((n) => n.contains('funding agreement')), isTrue);
+    expect(names.any((n) => n.contains('guaranteed investment')), isTrue);
+    expect(names.any((n) => n.contains('homeowners')), isTrue);
+    expect(names.any((n) => n.contains('personal auto')), isTrue);
+    expect(names.any((n) => n.contains('workers')), isTrue);
+    expect(names.any((n) => n.contains('general liability')), isTrue);
+  });
+
+  test('Each product has classification, brief intro, and guidance refs', () {
+    final lib = LocalData.instance.productLibrary;
+    for (final p in lib.products) {
+      expect(p.classification, isNotEmpty);
+      expect(
+          p.classification == 'Insurance Contract' ||
+              p.classification == 'Investment-Type Contract',
+          isTrue,
+          reason: '${p.id} classification must be one of the two values');
+      expect(p.briefIntro, isNotEmpty);
+      expect(p.guidance, isNotEmpty,
+          reason: '${p.id} must map to at least one SSAP / ASC standard');
+      for (final g in p.guidance) {
+        expect(g.id, isNotEmpty);
+        expect(g.framework, isIn(['SSAP', 'ASC944', 'PCAOB']));
+      }
+      expect(p.sourceLink, isNotEmpty);
+    }
+  });
+
+  test('Term Life maps to FAS 60 / SSAP 51R; classifications correct', () {
+    final lib = LocalData.instance.productLibrary;
+    final term = lib.products.firstWhere((p) => p.id == 'term-life');
+    expect(term.classification, 'Insurance Contract');
+    expect(term.guidance.any((g) => g.id == 'SSAP-51R'), isTrue);
+    final ids = term.guidance.map((g) => g.id).toList();
+    expect(ids, contains('ASC-944-40'));
+  });
+
+  test('Fixed Deferred Annuity is classified as Investment-Type', () {
+    final lib = LocalData.instance.productLibrary;
+    final fa = lib.products.firstWhere((p) => p.id == 'fixed-annuity');
+    expect(fa.classification, 'Investment-Type Contract');
+    expect(fa.isInsuranceContract, isFalse);
+  });
+
+  test('HyperlinkResolver decodes SSAP / ASC / AS / FAS references', () {
+    expect(HyperlinkResolver.resolve('SSAP 2R')?.id, 'SSAP-2R');
+    expect(HyperlinkResolver.resolve('SSAP No. 51R')?.id, 'SSAP-51R');
+    expect(HyperlinkResolver.resolve('ASC 944-30')?.id, 'ASC-944-30');
+    expect(HyperlinkResolver.resolve('AS 2201')?.id, 'PCAOB-AS-2201');
+    expect(HyperlinkResolver.resolve('AS 2501')?.id, 'PCAOB-AS-2501');
+    // FAS 60 should map to ASC 944-605 (premium revenue)
+    expect(HyperlinkResolver.resolve('FAS 60')?.id, 'ASC-944-605');
+    // FAS 97 → ASC 944-405 (UL / investment contracts)
+    expect(HyperlinkResolver.resolve('FAS 97')?.id, 'ASC-944-405');
+    // FAS 133 → ASC 944-815 (derivatives)
+    expect(HyperlinkResolver.resolve('FAS 133')?.id, 'ASC-944-815');
   });
 }

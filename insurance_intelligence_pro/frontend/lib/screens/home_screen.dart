@@ -6,6 +6,7 @@ import 'company_screen.dart';
 import 'compare_screen.dart';
 import 'dashboard_screen.dart';
 import 'knowledge_screen.dart';
+import 'products_index_screen.dart';
 import 'settings_screen.dart';
 import 'standards_index_screen.dart';
 import 'updates_screen.dart';
@@ -52,6 +53,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => StandardsIndexScreen(framework: framework)));
         },
+        onProductLibrary: () {
+          Navigator.of(context).pop();
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const ProductsIndexScreen()));
+        },
         onSettings: () {
           Navigator.of(context).pop();
           Navigator.of(context).push(MaterialPageRoute(
@@ -95,11 +101,13 @@ class _AppDrawer extends StatelessWidget {
   final _Tab selected;
   final ValueChanged<_Tab> onTabSelected;
   final ValueChanged<String> onStandardsSelected;
+  final VoidCallback onProductLibrary;
   final VoidCallback onSettings;
   const _AppDrawer({
     required this.selected,
     required this.onTabSelected,
     required this.onStandardsSelected,
+    required this.onProductLibrary,
     required this.onSettings,
   });
 
@@ -185,6 +193,11 @@ class _AppDrawer extends StatelessWidget {
                 ),
                 children: [
                   _SubTile(
+                    label: 'Product Library',
+                    helper: '16 products · Life · Annuity · Institutional · P&C',
+                    onTap: onProductLibrary,
+                  ),
+                  _SubTile(
                     label: 'Knowledge Library',
                     helper: '37 FSLI articles',
                     onTap: () => onTabSelected(_Tab.knowledge),
@@ -192,17 +205,17 @@ class _AppDrawer extends StatelessWidget {
                   ),
                   _SubTile(
                     label: 'SSAP',
-                    helper: '25 chapters · 2026 NAIC AP&P',
+                    helper: '96 chapters · 2026 NAIC AP&P (1 → 122)',
                     onTap: () => onStandardsSelected('SSAP'),
                   ),
                   _SubTile(
                     label: 'ASC 944',
-                    helper: '13 sub-topics · FASB Codification',
+                    helper: '27 sub-topics · FASB Codification',
                     onTap: () => onStandardsSelected('ASC944'),
                   ),
                   _SubTile(
                     label: 'PCAOB Guidelines',
-                    helper: '13 auditing standards',
+                    helper: '24 auditing standards',
                     onTap: () => onStandardsSelected('PCAOB'),
                   ),
                 ],

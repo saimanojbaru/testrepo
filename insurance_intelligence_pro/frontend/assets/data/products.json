@@ -1,0 +1,464 @@
+{
+  "_note": "US insurance product taxonomy — each entry classifies the product as an Insurance Contract (mortality/morbidity risk) or Investment-Type Contract (deposit-type), with explicit guidance mapping to SSAP / ASC standards.",
+  "categories": [
+    {"key": "life", "label": "Life Insurance"},
+    {"key": "annuity", "label": "Annuities"},
+    {"key": "institutional", "label": "Institutional"},
+    {"key": "pc", "label": "Property & Casualty"},
+    {"key": "health", "label": "Health & Disability"}
+  ],
+  "products": [
+    {
+      "id": "term-life",
+      "name": "Term Life Insurance",
+      "category": "life",
+      "classification": "Insurance Contract",
+      "risk_type": "Mortality",
+      "duration": "Long-duration",
+      "brief_intro": "Term life provides a death benefit if the insured dies within a fixed coverage period (typically 10-30 years). Pure protection product — no cash value accumulates. Premiums are level for the initial term and re-rate to attained-age rates thereafter.",
+      "description": "Term life is the most economical permanent-mortality-risk transfer vehicle. Insurers price using mortality tables, persistency assumptions, and a target investment yield. Post-LDTI (ASC 944 / ASU 2018-12), the liability for future policy benefits is measured at cohort level with annual unlocking and an upper-medium-grade A-rated discount. Statutory reserves follow VM-20 PBR under SSAP 51R.",
+      "key_features": [
+        "Level premium for initial term (e.g., 10, 20, 30 years)",
+        "Death benefit only — no cash value or surrender benefit",
+        "Convertibility option to permanent life (term-conversion features)",
+        "Re-entry/renewability at attained age after term expires"
+      ],
+      "guidance": [
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "LFPB cohort-level measurement (post-LDTI)"},
+        {"label": "ASC 944-30", "framework": "ASC944", "id": "ASC-944-30", "note": "DAC constant-level amortization"},
+        {"label": "ASC 944-605", "framework": "ASC944", "id": "ASC-944-605", "note": "Premium recognized when due"},
+        {"label": "FAS 60", "framework": "ASC944", "id": "ASC-944-40", "note": "Legacy long-duration framework"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "Statutory reserves under VM-20 PBR"},
+        {"label": "SSAP 50", "framework": "SSAP", "id": "SSAP-50", "note": "Long-duration contract classification"}
+      ],
+      "kpis": ["Mortality experience vs assumed", "Persistency", "Investment yield on backing assets", "DAC amortization rate"],
+      "market_size_usd": 850e9,
+      "market_note": "US in-force face amount approximately $850B+ on term blocks across major carriers",
+      "source_link": "https://www.naic.org/cipr_topics/topic_life_insurance.htm",
+      "tags": ["Life", "Mortality", "Long-Duration", "FSLI: Future Policy Benefits"]
+    },
+    {
+      "id": "whole-life",
+      "name": "Whole Life Insurance",
+      "category": "life",
+      "classification": "Insurance Contract",
+      "risk_type": "Mortality",
+      "duration": "Long-duration",
+      "brief_intro": "Whole life provides lifetime mortality coverage with a guaranteed cash-value buildup and (for participating contracts) annual policyholder dividends. Premiums are level for life. The contract combines pure mortality risk with a guaranteed-interest savings element.",
+      "description": "Issued primarily by mutual insurers (Northwestern Mutual, MassMutual, New York Life, Guardian), participating whole life pays annual dividends out of divisible surplus, sourced from favorable mortality, expense, and investment experience. Cash-value accumulates on a guaranteed basis with a contractual minimum interest rate. Reserves follow VM-20 PBR (SSAP 51R) or pre-2017 commissioners' reserve methods.",
+      "key_features": [
+        "Lifetime coverage with level premiums",
+        "Guaranteed cash-value accumulation",
+        "Participating: annual policyholder dividends (mutual carriers)",
+        "Policy loans against cash value (SSAP 49)",
+        "Non-forfeiture options at lapse"
+      ],
+      "guidance": [
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "LFPB measurement"},
+        {"label": "ASC 944-50", "framework": "ASC944", "id": "ASC-944-50", "note": "Policyholder dividend accrual"},
+        {"label": "FAS 60", "framework": "ASC944", "id": "ASC-944-40", "note": "Legacy whole-life framework"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "Statutory reserves"},
+        {"label": "SSAP 49", "framework": "SSAP", "id": "SSAP-49", "note": "Policy loans"}
+      ],
+      "kpis": ["Persistency", "Dividend scale", "Investment spread", "Cash-value growth rate"],
+      "market_size_usd": 1.2e12,
+      "market_note": "US in-force face amount approximately $1.2T+ across the major mutual life carriers",
+      "source_link": "https://www.naic.org/cipr_topics/topic_life_insurance.htm",
+      "tags": ["Life", "Mortality", "Participating", "Mutual", "Long-Duration"]
+    },
+    {
+      "id": "universal-life",
+      "name": "Universal Life (UL)",
+      "category": "life",
+      "classification": "Insurance Contract",
+      "risk_type": "Mortality",
+      "duration": "Long-duration (deposit-style)",
+      "brief_intro": "Universal life combines a flexible-premium savings account with a death benefit. Premiums and death benefit can be adjusted within contractual limits. The account is credited interest above a contractual minimum; cost-of-insurance (COI) charges are deducted monthly.",
+      "description": "Originally introduced by SSAP 51R / FAS 97 (now ASC 944-405). The account balance is the principal liability; COI and expense loads represent insurer revenue. Many UL contracts carry secondary guarantees (no-lapse UL or NLG) — the policy stays in force even if account balance drops to zero, provided minimum premiums were paid. Secondary-guarantee reserves under VM-20 can substantially exceed the account balance.",
+      "key_features": [
+        "Flexible premium and adjustable death benefit",
+        "Account balance grows at credited rate (with contractual minimum)",
+        "Monthly COI charges scale with attained age",
+        "Optional no-lapse guarantee rider (NLG)",
+        "Surrender charges typically apply for first 10-20 years"
+      ],
+      "guidance": [
+        {"label": "ASC 944-405", "framework": "ASC944", "id": "ASC-944-405", "note": "Account-balance liability"},
+        {"label": "ASC 944-30", "framework": "ASC944", "id": "ASC-944-30", "note": "DAC for UL"},
+        {"label": "FAS 97", "framework": "ASC944", "id": "ASC-944-405", "note": "Legacy UL framework"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "Statutory reserves; VM-20 secondary guarantees"}
+      ],
+      "kpis": ["Credited-rate spread", "Persistency", "COI margin", "NLG reserve adequacy"],
+      "market_size_usd": 950e9,
+      "market_note": "US UL in-force ~$950B across major carriers including Lincoln, Pacific Life, Prudential, John Hancock",
+      "source_link": "https://content.naic.org/cipr-topics/universal-life-insurance",
+      "tags": ["Life", "UL", "Deposit-Style", "NLG", "FAS97"]
+    },
+    {
+      "id": "variable-life",
+      "name": "Variable Universal Life (VUL)",
+      "category": "life",
+      "classification": "Insurance Contract",
+      "risk_type": "Mortality + Market",
+      "duration": "Long-duration (separate account)",
+      "brief_intro": "Variable universal life combines UL flexibility with separate-account investment funds chosen by the policyholder. Account performance reflects underlying-fund returns directly — the policyholder bears the market risk. Death benefit can be face-only or face-plus-account.",
+      "description": "Issued by carriers like Lincoln, Prudential, Nationwide, AXA/Equitable. Separate accounts are presented at fair value on the balance sheet under ASC 944-80 / SSAP 56. The insurer retains contingent obligations through any guaranteed minimum death benefit (GMDB) rider, which is now an MRB under LDTI. SEC variable insurance products are also registered securities — dual-regulated by SEC and state insurance departments.",
+      "key_features": [
+        "Policyholder selects from registered fund choices (typically 30-100 options)",
+        "Separate-account assets segregated from general account",
+        "Optional GMDB / GMxB riders (now MRBs)",
+        "Dual SEC + state regulation",
+        "Tax-deferred inside-buildup"
+      ],
+      "guidance": [
+        {"label": "ASC 944-80", "framework": "ASC944", "id": "ASC-944-80", "note": "Separate-account presentation"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "MRB measurement for GMxB riders"},
+        {"label": "FAS 97", "framework": "ASC944", "id": "ASC-944-405", "note": "Legacy variable-life framework"},
+        {"label": "SSAP 56", "framework": "SSAP", "id": "SSAP-56", "note": "Separate accounts"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "General-account reserves"}
+      ],
+      "kpis": ["Separate-account NAV", "GMDB MRB rollforward", "Hedge effectiveness on MRB", "M&E charges"],
+      "market_size_usd": 480e9,
+      "market_note": "US VUL separate-account assets approximately $480B",
+      "source_link": "https://www.sec.gov/investor/pubs/varlife.htm",
+      "tags": ["Life", "VUL", "Separate Account", "MRB", "SEC-Registered"]
+    },
+    {
+      "id": "indexed-universal-life",
+      "name": "Indexed Universal Life (IUL)",
+      "category": "life",
+      "classification": "Insurance Contract",
+      "risk_type": "Mortality + Indexed Crediting",
+      "duration": "Long-duration",
+      "brief_intro": "IUL credits the policyholder account based on a participation rate in an external index (typically S&P 500), subject to a cap and floor. The floor is typically 0% — policyholder never loses principal due to market drops, but participation is capped (e.g., 8-12%).",
+      "description": "Hybrid product blending UL flexibility with bond-like floor + capped index participation. The embedded index-credit feature is typically bifurcated under ASC 815-15 as an embedded derivative measured at fair value through P&L, while the host UL contract continues at account balance. Carriers (Allianz Life, Nationwide, Pacific Life, John Hancock, Lincoln) hedge the index-credit obligation with S&P 500 call-option strategies.",
+      "key_features": [
+        "Index-linked credited rate (S&P 500 typically) with cap and floor",
+        "Bifurcated embedded derivative for the index-credit feature",
+        "Annual reset for index measurement",
+        "Multi-index strategy options",
+        "Persistency bonus or charge structures vary by carrier"
+      ],
+      "guidance": [
+        {"label": "ASC 944-405", "framework": "ASC944", "id": "ASC-944-405", "note": "Host UL account balance"},
+        {"label": "ASC 944-815", "framework": "ASC944", "id": "ASC-944-815", "note": "Embedded-derivative bifurcation"},
+        {"label": "ASC 815", "framework": "ASC944", "id": "ASC-944-815", "note": "Derivative fair-value measurement"},
+        {"label": "SSAP 86", "framework": "SSAP", "id": "SSAP-86", "note": "Statutory derivative accounting"}
+      ],
+      "kpis": ["Cap rate", "Participation rate", "Index credit spread", "Hedge P&L variance"],
+      "market_size_usd": 280e9,
+      "market_note": "US IUL annual premium grew ~10% CAGR 2018-2024; in-force ~$280B",
+      "source_link": "https://content.naic.org/cipr-topics/indexed-universal-life-insurance",
+      "tags": ["Life", "IUL", "Indexed", "Embedded Derivative", "ASC815"]
+    },
+    {
+      "id": "fixed-annuity",
+      "name": "Fixed Deferred Annuity",
+      "category": "annuity",
+      "classification": "Investment-Type Contract",
+      "risk_type": "Deposit / Spread",
+      "duration": "Long-duration (deposit accounting)",
+      "brief_intro": "A deferred-annuity contract where the insurer credits a declared interest rate above a contractual minimum. The policyholder bears no market risk; the insurer earns the spread between investment yield and credited rate. Tax-deferred accumulation.",
+      "description": "Pure investment-type contract — no significant mortality risk in the accumulation phase. Accounted for as a deposit (ASC 944 / SSAP 52). Statutory reserves under CARVM (SSAP 51R). Largest US fixed-annuity carriers include New York Life, MassMutual, Athene, MetLife, AIG. Many fixed annuities offer multi-year guaranteed-rate (MYGA) options locking in the credited rate.",
+      "key_features": [
+        "Declared crediting rate above contractual minimum",
+        "Surrender-charge schedule (typically 5-10 years)",
+        "Free-withdrawal corridor (often 10% per year)",
+        "Optional MYGA — multi-year guaranteed rate",
+        "Tax-deferred accumulation"
+      ],
+      "guidance": [
+        {"label": "ASC 944-405", "framework": "ASC944", "id": "ASC-944-405", "note": "Account-balance liability"},
+        {"label": "FAS 97", "framework": "ASC944", "id": "ASC-944-405", "note": "Legacy investment-contract framework"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "CARVM statutory reserves"},
+        {"label": "SSAP 52", "framework": "SSAP", "id": "SSAP-52", "note": "Deposit-type contract"}
+      ],
+      "kpis": ["Investment-credited spread", "Surrender rate", "MYGA market share", "New-money rates"],
+      "market_size_usd": 600e9,
+      "market_note": "US fixed-annuity in-force ~$600B; record 2023-2024 sales driven by elevated interest rates",
+      "source_link": "https://content.naic.org/cipr-topics/annuities",
+      "tags": ["Annuity", "Fixed", "Deposit", "CARVM", "MYGA"]
+    },
+    {
+      "id": "variable-annuity",
+      "name": "Variable Annuity (VA)",
+      "category": "annuity",
+      "classification": "Investment-Type Contract",
+      "risk_type": "Market + Guarantee",
+      "duration": "Long-duration (separate account)",
+      "brief_intro": "Variable annuity offers tax-deferred investment in registered separate-account funds with optional living-benefit (GMxB) and death-benefit (GMDB) guarantees. Account performance reflects fund returns; guarantees create insurer obligations under stress scenarios.",
+      "description": "Hybrid product carrying both investment characteristics and embedded insurance guarantees. Separate accounts at fair value (ASC 944-80 / SSAP 56). The GMxB riders — GMDB, GMAB, GMWB, GMIB — are Market Risk Benefits under LDTI (ASC 944-40-30-19A), measured at fair value with non-performance risk in OCI. Statutory reserves use VM-21 stochastic CTE-70 scenarios. Major writers: Equitable, Prudential, Brighthouse, Jackson, Lincoln.",
+      "key_features": [
+        "Tax-deferred separate-account investment",
+        "Living-benefit riders: GMAB, GMWB, GMIB",
+        "Death-benefit rider: GMDB (return-of-premium / ratchet)",
+        "M&E and rider fees",
+        "Optional fixed-rate sub-account"
+      ],
+      "guidance": [
+        {"label": "ASC 944-80", "framework": "ASC944", "id": "ASC-944-80", "note": "Separate-account presentation"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "MRB measurement at fair value"},
+        {"label": "ASC 815-15", "framework": "ASC944", "id": "ASC-944-815", "note": "Pre-LDTI embedded-derivative bifurcation"},
+        {"label": "SSAP 56", "framework": "SSAP", "id": "SSAP-56", "note": "Separate accounts"},
+        {"label": "SSAP 108", "framework": "SSAP", "id": "SSAP-108", "note": "Hedging-relief for VA guarantees"}
+      ],
+      "kpis": ["MRB rollforward", "Hedge effectiveness", "GMxB utilization rate", "Net flows"],
+      "market_size_usd": 2.0e12,
+      "market_note": "US VA separate-account assets approximately $2.0T",
+      "source_link": "https://www.sec.gov/investor/pubs/varannty.htm",
+      "tags": ["Annuity", "Variable", "MRB", "Separate Account", "LDTI", "VM-21"]
+    },
+    {
+      "id": "indexed-annuity",
+      "name": "Fixed Indexed Annuity (FIA)",
+      "category": "annuity",
+      "classification": "Investment-Type Contract",
+      "risk_type": "Indexed Crediting",
+      "duration": "Long-duration",
+      "brief_intro": "FIA credits the contract based on participation in an external index (S&P 500, S&P MARC 5, custom volatility-controlled indices) with a floor of 0%. Principal is guaranteed against market drops. Surrender charges apply for first 7-12 years.",
+      "description": "The dominant retail annuity product since 2018. Embedded index-credit feature is bifurcated as a derivative under ASC 815-15 and measured at fair value through P&L. Statutory reserves via CARVM. Major writers: Athene, Allianz Life, Equitable, AIG, F&G. Many FIAs include optional Guaranteed Lifetime Withdrawal Benefit (GLWB) riders for income certainty.",
+      "key_features": [
+        "Indexed crediting with cap, participation rate, and floor (typically 0%)",
+        "Multiple crediting strategies (point-to-point, monthly cap, etc.)",
+        "Optional GLWB / GMWB rider for guaranteed income",
+        "Surrender charges 7-12 years; 10% free withdrawal typical",
+        "Tax-deferred accumulation"
+      ],
+      "guidance": [
+        {"label": "ASC 944-405", "framework": "ASC944", "id": "ASC-944-405", "note": "Host contract account balance"},
+        {"label": "ASC 944-815", "framework": "ASC944", "id": "ASC-944-815", "note": "Embedded-derivative bifurcation"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "CARVM statutory reserves"},
+        {"label": "SSAP 86", "framework": "SSAP", "id": "SSAP-86", "note": "Statutory derivative accounting"}
+      ],
+      "kpis": ["Cap / participation rates", "Spread vs. index", "GLWB utilization", "New sales"],
+      "market_size_usd": 950e9,
+      "market_note": "US FIA in-force ~$950B; annual sales above $90B since 2022",
+      "source_link": "https://content.naic.org/cipr-topics/annuities",
+      "tags": ["Annuity", "Indexed", "FIA", "Embedded Derivative", "GLWB"]
+    },
+    {
+      "id": "prt-buy-out",
+      "name": "Pension Risk Transfer (PRT) — Buy-Out",
+      "category": "annuity",
+      "classification": "Insurance Contract",
+      "risk_type": "Longevity + Mortality",
+      "duration": "Long-duration",
+      "brief_intro": "In a PRT buy-out, an employer pension plan transfers the entire obligation to pay future pension benefits to an insurance company in exchange for a single premium. The plan is settled from the sponsor's perspective; the insurer pays retirees directly under group annuity contracts.",
+      "description": "Booming market post-LDTI. Major writers: Prudential, MetLife, Athene, Pacific Life, Mass Mutual, RGA. Liabilities measured as LFPB under LDTI (ASC 944-40) at cohort level with annual unlocking. Statutory reserves under SSAP 51R / VM-22. Single-premium revenue recognized fully at contract inception; profit emerges over the lifetime as actual mortality experience unwinds the reserve. Deal sizes range from $50M to $20B+.",
+      "key_features": [
+        "Single-premium group annuity contract",
+        "Insurer assumes longevity + mortality risk",
+        "Sponsor exits from pension liability (full settlement)",
+        "May include lump-sum and continuing-annuity sub-cohorts",
+        "Frequently bundled with reinsurance to manage capital"
+      ],
+      "guidance": [
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "Cohort LFPB measurement"},
+        {"label": "FAS 60", "framework": "ASC944", "id": "ASC-944-40", "note": "Legacy long-duration"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "CARVM / VM-22"},
+        {"label": "SSAP 61R", "framework": "SSAP", "id": "SSAP-61R", "note": "Reinsurance of PRT obligations"}
+      ],
+      "kpis": ["Single-premium revenue", "Pension-mortality experience", "Investment yield on backing assets", "Reinsurance ceded ratio"],
+      "market_size_usd": 350e9,
+      "market_note": "US PRT premium written 2022-2024 averaged ~$50B/year; cumulative in-force ~$350B",
+      "source_link": "https://www.prudential.com/links/about/pension-risk-transfer",
+      "tags": ["Annuity", "PRT", "Longevity", "Buy-Out", "Pension"]
+    },
+    {
+      "id": "prt-buy-in",
+      "name": "Pension Risk Transfer (PRT) — Buy-In",
+      "category": "annuity",
+      "classification": "Insurance Contract",
+      "risk_type": "Longevity + Mortality (Pension Plan asset)",
+      "duration": "Long-duration",
+      "brief_intro": "A PRT buy-in is an insurance contract held by the pension plan as a plan asset. Unlike a buy-out, the plan does not settle the obligation — it holds the buy-in contract as an asset that exactly matches the benefit cash flows.",
+      "description": "Useful as a step toward eventual buy-out, or as a risk-management overlay without triggering settlement accounting. The plan continues to pay retirees and the insurer reimburses the plan. From the insurer's perspective, identical accounting to a buy-out — LFPB under ASC 944-40. From the plan-sponsor perspective, the buy-in is a plan asset valued under ASC 715.",
+      "key_features": [
+        "Insurance contract held by the plan as an asset",
+        "Plan continues to pay retirees; insurer reimburses",
+        "Does not trigger ASC 715 settlement accounting",
+        "Often a precursor to buy-out conversion"
+      ],
+      "guidance": [
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "Insurer-side LFPB"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R", "note": "Insurer statutory reserve"},
+        {"label": "SSAP 92", "framework": "SSAP", "id": "SSAP-92", "note": "Sponsor-side OPEB"}
+      ],
+      "kpis": ["Cash-flow match accuracy", "Investment yield on backing assets", "Settlement-conversion timing"],
+      "market_size_usd": 80e9,
+      "market_note": "US PRT buy-in market is smaller than buy-out but growing as a transitional risk-management tool",
+      "source_link": "https://content.naic.org/cipr-topics/annuities",
+      "tags": ["Annuity", "PRT", "Buy-In", "Longevity"]
+    },
+    {
+      "id": "fabn",
+      "name": "Funding Agreement-Backed Notes (FABN / FABS)",
+      "category": "institutional",
+      "classification": "Investment-Type Contract",
+      "risk_type": "Spread",
+      "duration": "Medium to long duration",
+      "brief_intro": "FABNs are debt-like securities issued by a special-purpose entity backed by an insurance funding agreement. Used by life insurers to raise institutional capital at attractive funding costs while deploying proceeds into spread-based investments.",
+      "description": "Major issuers include MetLife, New York Life, MassMutual, Pacific Life, Prudential, Athene, Brighthouse. Funding agreements are deposit-type contracts under SSAP 52 / ASC 944-405 — no insurance risk. The SPE issues registered notes (FABNs) to institutional buyers; proceeds are invested in spread-earning assets. The funding agreement is the SPE's offsetting asset. FABS-FHLB (Federal Home Loan Bank) advances are a related funding mechanism.",
+      "key_features": [
+        "Funding agreement at insurer = deposit-type liability",
+        "SPE issues FABNs as registered debt to institutional buyers",
+        "Spread monetization for insurer",
+        "Match-funded against high-quality fixed income",
+        "FHLB advances are a related funding channel"
+      ],
+      "guidance": [
+        {"label": "ASC 944-405", "framework": "ASC944", "id": "ASC-944-405", "note": "Funding-agreement deposit"},
+        {"label": "FAS 97", "framework": "ASC944", "id": "ASC-944-405", "note": "Legacy investment-contract framework"},
+        {"label": "SSAP 52", "framework": "SSAP", "id": "SSAP-52", "note": "Deposit-type contracts"},
+        {"label": "SSAP 41R", "framework": "SSAP", "id": "SSAP-41R", "note": "Surplus-note structures (related)"},
+        {"label": "SSAP 110", "framework": "SSAP", "id": "SSAP-110", "note": "VIE consolidation analysis"}
+      ],
+      "kpis": ["Spread earned vs funding cost", "Issuance volume", "FHLB advance utilization", "Match-funding gap"],
+      "market_size_usd": 350e9,
+      "market_note": "US FABN / FHLB advance outstanding approximately $350B+",
+      "source_link": "https://content.naic.org/",
+      "tags": ["Institutional", "FABN", "Funding Agreement", "Deposit", "Spread"]
+    },
+    {
+      "id": "gic",
+      "name": "Guaranteed Investment Contract (GIC)",
+      "category": "institutional",
+      "classification": "Investment-Type Contract",
+      "risk_type": "Spread",
+      "duration": "Medium duration (typically 1-5 years)",
+      "brief_intro": "A GIC is a contract issued by a life insurer guaranteeing principal and a fixed (or floating) crediting rate over a stated maturity. Typically sold to retirement plans (401(k) stable-value options), corporate cash managers, and municipalities.",
+      "description": "Deposit-type contract (SSAP 52 / ASC 944-405). Two flavors: traditional GIC (single-deposit, fixed rate, defined maturity) and synthetic GIC / stable-value wrap (insurer guarantees book value on a participant-directed investment portfolio). Major writers: New York Life, MetLife, Prudential, Pacific Life.",
+      "key_features": [
+        "Traditional GIC: single deposit, fixed rate, maturity 1-5 years",
+        "Synthetic GIC: book-value wrap over participant-directed bond portfolio",
+        "Used heavily in stable-value 401(k) options",
+        "Insurer earns the investment-credit spread"
+      ],
+      "guidance": [
+        {"label": "ASC 944-405", "framework": "ASC944", "id": "ASC-944-405", "note": "GIC as deposit"},
+        {"label": "SSAP 52", "framework": "SSAP", "id": "SSAP-52", "note": "Deposit-type"},
+        {"label": "SSAP 86", "framework": "SSAP", "id": "SSAP-86", "note": "Synthetic GIC wrap"}
+      ],
+      "kpis": ["Credit spread", "Maturity ladder match", "Renewals", "Stable-value participation"],
+      "market_size_usd": 320e9,
+      "market_note": "US stable-value AUM ~$320B; GIC component approximately 60%",
+      "source_link": "https://content.naic.org/cipr-topics/annuities",
+      "tags": ["Institutional", "GIC", "Stable Value", "Deposit"]
+    },
+    {
+      "id": "homeowners",
+      "name": "Homeowners Insurance",
+      "category": "pc",
+      "classification": "Insurance Contract",
+      "risk_type": "Property + Liability",
+      "duration": "Short-duration (12-month policy)",
+      "brief_intro": "Multi-peril package covering dwelling, personal property, additional living expenses, and personal liability. The largest residential-property line in the US with approximately $130B in annual direct written premium.",
+      "description": "Standard ISO HO-3 policy covers all perils except those excluded (most notably flood — separately insured via NFIP — and earthquake — separately insured). Premium recognized pro-rata under SSAP 53 / FAS 60 (ASC 944-605). Loss reserves under SSAP 55 / ASC 944-40 — undiscounted; case + IBNR + LAE. Property-catastrophe exposure managed through reinsurance and cat bonds.",
+      "key_features": [
+        "Multi-peril dwelling + personal property coverage",
+        "Personal liability section (up to $300K-$500K)",
+        "Additional living expenses coverage",
+        "Optional water-backup, scheduled jewelry, ordinance-and-law riders",
+        "Property cat exposure heavily reinsured"
+      ],
+      "guidance": [
+        {"label": "ASC 944-605", "framework": "ASC944", "id": "ASC-944-605", "note": "Premium recognition pro-rata"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "Loss reserves"},
+        {"label": "FAS 60", "framework": "ASC944", "id": "ASC-944-605", "note": "Legacy short-duration framework"},
+        {"label": "SSAP 53", "framework": "SSAP", "id": "SSAP-53", "note": "P&C premium income"},
+        {"label": "SSAP 55", "framework": "SSAP", "id": "SSAP-55", "note": "Unpaid claims"},
+        {"label": "SSAP 62R", "framework": "SSAP", "id": "SSAP-62R", "note": "Reinsurance of cat exposure"}
+      ],
+      "kpis": ["Combined ratio", "Cat losses", "Reinsurance ceded ratio", "Premium-to-surplus leverage"],
+      "market_size_usd": 130e9,
+      "market_note": "US homeowners direct written premium ~$130B; largest writers: State Farm, Allstate, USAA, Liberty Mutual, Farmers, Travelers",
+      "source_link": "https://content.naic.org/cipr-topics/property-and-casualty-insurance",
+      "tags": ["P&C", "Homeowners", "Multi-Peril", "Short-Duration", "Catastrophe"]
+    },
+    {
+      "id": "personal-auto",
+      "name": "Personal Auto Insurance",
+      "category": "pc",
+      "classification": "Insurance Contract",
+      "risk_type": "Liability + Physical Damage",
+      "duration": "Short-duration (6 or 12-month policy)",
+      "brief_intro": "Personal auto is the largest P&C line in the US, with $300B+ in annual direct written premium. Covers liability (bodily injury, property damage), physical damage (comprehensive, collision), medical payments, and uninsured motorist.",
+      "description": "Short-duration; premium earned pro-rata. The defining 2022-2024 industry challenge: severity inflation outpacing rate adequacy, driving combined ratios above 105% across major personal-auto writers. Reserve development typically modest in private auto due to short claim tail. Loss reserves under SSAP 55 / ASC 944-40.",
+      "key_features": [
+        "Liability: bodily injury and property damage to others",
+        "Physical damage: comprehensive (theft/fire) and collision",
+        "Medical payments coverage",
+        "Uninsured / underinsured motorist",
+        "Rideshare endorsements available"
+      ],
+      "guidance": [
+        {"label": "ASC 944-605", "framework": "ASC944", "id": "ASC-944-605", "note": "Premium recognition"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "Loss reserves; ASU 2015-09 disclosures"},
+        {"label": "SSAP 53", "framework": "SSAP", "id": "SSAP-53", "note": "P&C premium"},
+        {"label": "SSAP 55", "framework": "SSAP", "id": "SSAP-55", "note": "Unpaid claims & LAE"}
+      ],
+      "kpis": ["Combined ratio", "Frequency", "Severity", "Loss-cost trend", "Rate adequacy"],
+      "market_size_usd": 320e9,
+      "market_note": "US personal auto direct premium ~$320B; largest writers: State Farm, GEICO, Progressive, Allstate, USAA",
+      "source_link": "https://content.naic.org/cipr-topics/auto-insurance",
+      "tags": ["P&C", "Auto", "Short-Duration", "Personal Lines"]
+    },
+    {
+      "id": "workers-comp",
+      "name": "Workers' Compensation",
+      "category": "pc",
+      "classification": "Insurance Contract",
+      "risk_type": "Indemnity + Medical",
+      "duration": "Short-duration premium; long-tail liabilities",
+      "brief_intro": "Workers' compensation pays indemnity and medical benefits to employees injured on the job, regardless of fault. Statutory in every US state (Texas optional). Long tail — indemnity claims can pay for decades.",
+      "description": "Premium pro-rata earned (short-duration revenue) but loss reserves run to 30+ year tails for permanent-disability indemnity claims. Tabular discount permitted on indemnity tabular reserves with commissioner approval. Loss reserves under SSAP 55 / ASC 944-40. Schedule P loss-development analysis is critical for reserve adequacy. Major writers: Travelers, Liberty Mutual, AIG, Berkshire Hathaway, Zurich.",
+      "key_features": [
+        "Statutory benefits: indemnity (lost wages) + medical",
+        "No-fault coverage with regulatory rate schedules",
+        "Long-tail indemnity claims",
+        "Tabular discount permitted",
+        "Heavy actuarial-specialist involvement under PCAOB AS 2501"
+      ],
+      "guidance": [
+        {"label": "ASC 944-605", "framework": "ASC944", "id": "ASC-944-605", "note": "Premium recognition"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "Loss reserves + tabular discount"},
+        {"label": "FAS 60", "framework": "ASC944", "id": "ASC-944-40", "note": "Legacy P&C framework"},
+        {"label": "SSAP 55", "framework": "SSAP", "id": "SSAP-55", "note": "Loss reserves; Schedule P"},
+        {"label": "AS 2501", "framework": "PCAOB", "id": "PCAOB-AS-2501", "note": "Audit of reserve estimates"}
+      ],
+      "kpis": ["Combined ratio", "Loss-development factor", "Medical inflation", "Indemnity duration", "Discount-rate sensitivity"],
+      "market_size_usd": 60e9,
+      "market_note": "US workers' comp direct premium ~$60B; competitive market with stable combined ratios sub-95%",
+      "source_link": "https://content.naic.org/cipr-topics/workers-compensation",
+      "tags": ["P&C", "Workers Comp", "Long-Tail", "Indemnity", "Medical"]
+    },
+    {
+      "id": "general-liability",
+      "name": "General Liability (GL) / Commercial GL",
+      "category": "pc",
+      "classification": "Insurance Contract",
+      "risk_type": "Liability",
+      "duration": "Short-duration premium; long-tail liabilities",
+      "brief_intro": "Commercial general liability protects businesses against bodily-injury and property-damage claims arising from operations, products, and premises. Long tail similar to workers' comp due to occurrence-basis trigger and litigation timing.",
+      "description": "Two primary coverage triggers: occurrence (claim payable if covered event occurred during policy period) and claims-made (claim payable if reported during policy period). Long-tail liabilities exposed to social inflation — jury verdicts trending higher have driven adverse development across the industry. Loss reserves under SSAP 55 / ASC 944-40; Schedule P disclosure critical.",
+      "key_features": [
+        "Bodily-injury and property-damage coverage",
+        "Products and completed-operations coverage",
+        "Occurrence or claims-made trigger",
+        "Personal and advertising injury coverage",
+        "Defense costs typically within limits"
+      ],
+      "guidance": [
+        {"label": "ASC 944-605", "framework": "ASC944", "id": "ASC-944-605", "note": "Premium recognition"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40", "note": "Long-tail loss reserves"},
+        {"label": "SSAP 55", "framework": "SSAP", "id": "SSAP-55", "note": "Reserves; Schedule P long-tail lines"},
+        {"label": "SSAP 62R", "framework": "SSAP", "id": "SSAP-62R", "note": "Reinsurance ceded"}
+      ],
+      "kpis": ["Combined ratio", "Adverse development on prior accident years", "Social-inflation trend", "Defense-cost ratio"],
+      "market_size_usd": 70e9,
+      "market_note": "US GL direct premium ~$70B; significant 2022-2024 adverse development on liability lines",
+      "source_link": "https://content.naic.org/cipr-topics/property-and-casualty-insurance",
+      "tags": ["P&C", "Liability", "Long-Tail", "Commercial", "Social Inflation"]
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import '../data/local_data.dart';
 import '../models/standard.dart';
 import '../theme/app_colors.dart';
 import '../widgets/glass_card.dart';
+import '../widgets/hyperlinked_text.dart';
 import '../widgets/section_header.dart';
 
 /// Level 2 — Comprehensive detail screen for a single standard.
@@ -76,7 +77,7 @@ class StandardDetailScreen extends StatelessWidget {
             subtitle: 'Full text of the standard',
           ),
           GlassCard(
-            child: Text(
+            child: HyperlinkedText(
               standard.chapterContent,
               style: const TextStyle(
                   color: AppColors.textSecondary,
@@ -113,7 +114,7 @@ class StandardDetailScreen extends StatelessWidget {
                 ),
                 const SizedBox(width: 14),
                 Expanded(
-                  child: Text(
+                  child: HyperlinkedText(
                     standard.need,
                     style: const TextStyle(
                         color: AppColors.textPrimary,
@@ -197,23 +198,58 @@ class StandardDetailScreen extends StatelessWidget {
             const SizedBox(height: 18),
           ],
 
-          // Source footer
-          Center(
-            child: Column(
+          // External authoritative source link — bottom of every standard
+          GlassCard(
+            onTap: () async {
+              final link =
+                  (standard.sourceLink ?? '').isNotEmpty
+                      ? standard.sourceLink!
+                      : catalog.sourceUrl;
+              final uri = Uri.tryParse(link);
+              if (uri != null) {
+                await launchUrl(uri, mode: LaunchMode.externalApplication);
+              }
+            },
+            child: Row(
               children: [
-                Text(
-                  catalog.publisher,
-                  style: const TextStyle(
-                      color: AppColors.textMuted,
-                      fontSize: 11,
-                      fontWeight: FontWeight.w600),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: AppColors.accent.withValues(alpha: 0.14),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                        color: AppColors.accent.withValues(alpha: 0.4)),
+                  ),
+                  child: const Icon(Icons.public,
+                      color: AppColors.accent, size: 18),
                 ),
-                const SizedBox(height: 2),
-                Text(
-                  catalog.manual,
-                  style: const TextStyle(
-                      color: AppColors.textMuted, fontSize: 10),
+                const SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('SOURCE & AUTHORITY',
+                          style: TextStyle(
+                              color: AppColors.accent,
+                              fontSize: 10,
+                              letterSpacing: 1.4,
+                              fontWeight: FontWeight.w800)),
+                      const SizedBox(height: 4),
+                      Text(catalog.publisher,
+                          style: const TextStyle(
+                              color: AppColors.textPrimary,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 13)),
+                      const SizedBox(height: 2),
+                      Text(catalog.manual,
+                          style: const TextStyle(
+                              color: AppColors.textMuted,
+                              fontSize: 11)),
+                    ],
+                  ),
                 ),
+                const Icon(Icons.open_in_new_rounded,
+                    color: AppColors.accent, size: 16),
               ],
             ),
           ),
@@ -342,7 +378,7 @@ class _TimelineEntry extends StatelessWidget {
                           fontSize: 12,
                           letterSpacing: 1.2)),
                   const SizedBox(height: 4),
-                  Text(entry.change,
+                  HyperlinkedText(entry.change,
                       style: const TextStyle(
                           color: AppColors.textSecondary,
                           fontSize: 12.5,
@@ -459,7 +495,7 @@ class _Pane extends StatelessWidget {
                   fontWeight: FontWeight.w700)),
         ),
         Expanded(
-          child: Text(body,
+          child: HyperlinkedText(body,
               style: TextStyle(
                   color: accent
                       ? AppColors.textPrimary

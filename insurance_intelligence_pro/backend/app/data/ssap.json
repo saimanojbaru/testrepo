@@ -1,5 +1,5 @@
 {
-  "_note": "NAIC Statements of Statutory Accounting Principles (SSAP) — 2026 AP&P Manual. Each entry follows the four-section schema: chapter_content / need / evolution / gaap_comparison.",
+  "_note": "NAIC Statements of Statutory Accounting Principles (SSAP) \u2014 2026 AP&P Manual. Each entry follows the four-section schema: chapter_content / need / evolution / gaap_comparison.",
   "framework": "SSAP",
   "manual": "2026 NAIC Accounting Practices and Procedures Manual",
   "publisher": "National Association of Insurance Commissioners (NAIC)",
@@ -10,20 +10,47 @@
       "number": "1",
       "title": "Accounting Policies, Risks & Uncertainties, and Other Disclosures",
       "fsli": "Disclosure",
-      "summary": "Foundational disclosure framework — significant accounting policies, concentration of credit risk, and going-concern considerations.",
+      "summary": "Foundational disclosure framework \u2014 significant accounting policies, concentration of credit risk, and going-concern considerations.",
       "chapter_content": "SSAP No. 1 establishes the disclosure requirements for significant accounting policies, including risks and uncertainties, financial-instrument concentrations, and post-balance-sheet events. Each filer must describe in the notes (1) the basis of presentation, (2) any permitted or prescribed practices that depart from NAIC SAP, (3) significant estimates underlying recorded amounts, and (4) concentrations of credit risk that are not otherwise apparent. Additionally, going-concern evaluation is required when conditions or events raise substantial doubt about the entity's ability to continue.",
       "need": "Provides users of statutory financial statements (regulators, rating agencies, policyholders) with the context necessary to interpret reported numbers. The mandate prevents an insurer from hiding deviations from standard SAP behind formal compliance.",
       "evolution": [
-        {"year": "1998", "change": "Original SSAP issued as part of statutory codification project."},
-        {"year": "2014", "change": "Going-concern disclosure requirement aligned with ASU 2014-15 (Subtopic 205-40)."},
-        {"year": "2025", "change": "Permitted-practice disclosure language expanded to require quantification of impact on RBC."},
-        {"year": "2026", "change": "Climate-risk policies added to required policy-disclosure list."}
+        {
+          "year": "1998",
+          "change": "Original SSAP issued as part of statutory codification project."
+        },
+        {
+          "year": "2014",
+          "change": "Going-concern disclosure requirement aligned with ASU 2014-15 (Subtopic 205-40)."
+        },
+        {
+          "year": "2025",
+          "change": "Permitted-practice disclosure language expanded to require quantification of impact on RBC."
+        },
+        {
+          "year": "2026",
+          "change": "Climate-risk policies added to required policy-disclosure list."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Going-concern threshold", "gaap": "ASC 205-40 — substantial doubt over the next 12 months from issuance", "stat": "12 months from balance-sheet date", "delta": "Slight timing difference; STAT looks back-dated"},
-        {"aspect": "Permitted practices", "gaap": "Not applicable", "stat": "Quantified impact required (Schedule SI)", "delta": "STAT-only construct"}
+        {
+          "aspect": "Going-concern threshold",
+          "gaap": "ASC 205-40 \u2014 substantial doubt over the next 12 months from issuance",
+          "stat": "12 months from balance-sheet date",
+          "delta": "Slight timing difference; STAT looks back-dated"
+        },
+        {
+          "aspect": "Permitted practices",
+          "gaap": "Not applicable",
+          "stat": "Quantified impact required (Schedule SI)",
+          "delta": "STAT-only construct"
+        }
       ],
-      "tags": ["Disclosure", "Going Concern", "Accounting Policies"]
+      "tags": [
+        "Disclosure",
+        "Going Concern",
+        "Accounting Policies"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%201.pdf"
     },
     {
       "id": "SSAP-2R",
@@ -34,326 +61,69 @@
       "chapter_content": "SSAP No. 2R defines cash as currency on hand and unrestricted demand deposits at financial institutions. Cash equivalents are short-term, highly liquid investments with original maturity at acquisition of three months or less and minimal credit risk. Permissible cash-equivalent vehicles include U.S. Treasury bills, agency discount notes, banker's acceptances, repos collateralized by U.S. government securities, and Government Money Market Funds that meet SEC Rule 2a-7 criteria. Short-term investments are debt instruments with an original maturity at acquisition of one year or less. Working Capital Finance Investments (WCFIs) are scoped out of SSAP 2R and accounted for under SSAP No. 105R.",
       "need": "Liquidity assessment for solvency. Prevents companies from classifying risky, illiquid securities as cash equivalents on the balance sheet. Provides regulators with a clean separation between truly liquid funds available to pay claims today and assets that could lose value in stress.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 2 issued as part of statutory codification."},
-        {"year": "2018", "change": "Revised (SSAP 2R) to clarify treatment of short-term investments and money-market funds."},
-        {"year": "2023", "change": "Mandated only SEC Rule 2a-7 Government Money Market Funds qualify as cash equivalents (prime MMFs excluded)."},
-        {"year": "2026", "change": "Working Capital Finance Investments explicitly clarified to be in scope of SSAP No. 105R, NOT SSAP No. 2R."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 2 issued as part of statutory codification."
+        },
+        {
+          "year": "2018",
+          "change": "Revised (SSAP 2R) to clarify treatment of short-term investments and money-market funds."
+        },
+        {
+          "year": "2023",
+          "change": "Mandated only SEC Rule 2a-7 Government Money Market Funds qualify as cash equivalents (prime MMFs excluded)."
+        },
+        {
+          "year": "2026",
+          "change": "Working Capital Finance Investments explicitly clarified to be in scope of SSAP No. 105R, NOT SSAP No. 2R."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Goal", "gaap": "Operational performance — cash flow analysis", "stat": "Liquidity & solvency — claim-paying capacity", "delta": "Different lens entirely"},
-        {"aspect": "Cash Equivalents definition", "gaap": "Principles-based: 90 days, low risk", "stat": "Strict 90-day original maturity + SEC 2a-7 for MMFs", "delta": "STAT bright-line; GAAP principles-based"},
-        {"aspect": "Bank Overdrafts", "gaap": "Netting permitted with positive cash at same institution", "stat": "Prohibited — must report as liability", "delta": "Material balance-sheet difference"},
-        {"aspect": "Money Market Funds", "gaap": "Both prime and government MMFs qualify if redeemable on demand", "stat": "Only government MMFs (Rule 2a-7) qualify as cash equivalent", "delta": "STAT excludes prime MMFs"},
-        {"aspect": "Foreign-bank cash", "gaap": "Recognized; FX gains/losses in OCI", "stat": "Non-admitted unless bank authorized in writing by domiciliary commissioner", "delta": "Surplus haircut under STAT"},
-        {"aspect": "Restricted cash", "gaap": "Disclosed separately on balance sheet", "stat": "Non-admitted unless statutorily required deposit", "delta": "Surplus haircut"}
+        {
+          "aspect": "Goal",
+          "gaap": "Operational performance \u2014 cash flow analysis",
+          "stat": "Liquidity & solvency \u2014 claim-paying capacity",
+          "delta": "Different lens entirely"
+        },
+        {
+          "aspect": "Cash Equivalents definition",
+          "gaap": "Principles-based: 90 days, low risk",
+          "stat": "Strict 90-day original maturity + SEC 2a-7 for MMFs",
+          "delta": "STAT bright-line; GAAP principles-based"
+        },
+        {
+          "aspect": "Bank Overdrafts",
+          "gaap": "Netting permitted with positive cash at same institution",
+          "stat": "Prohibited \u2014 must report as liability",
+          "delta": "Material balance-sheet difference"
+        },
+        {
+          "aspect": "Money Market Funds",
+          "gaap": "Both prime and government MMFs qualify if redeemable on demand",
+          "stat": "Only government MMFs (Rule 2a-7) qualify as cash equivalent",
+          "delta": "STAT excludes prime MMFs"
+        },
+        {
+          "aspect": "Foreign-bank cash",
+          "gaap": "Recognized; FX gains/losses in OCI",
+          "stat": "Non-admitted unless bank authorized in writing by domiciliary commissioner",
+          "delta": "Surplus haircut under STAT"
+        },
+        {
+          "aspect": "Restricted cash",
+          "gaap": "Disclosed separately on balance sheet",
+          "stat": "Non-admitted unless statutorily required deposit",
+          "delta": "Surplus haircut"
+        }
       ],
-      "tags": ["FSLI", "Cash", "Liquidity", "Schedule E", "MMF"]
-    },
-    {
-      "id": "SSAP-4",
-      "number": "4",
-      "title": "Assets and Nonadmitted Assets",
-      "fsli": "Admitted vs Non-admitted",
-      "summary": "Foundational rule that classifies which assets count toward statutory surplus. Non-admitted assets reduce surplus dollar-for-dollar.",
-      "chapter_content": "SSAP No. 4 defines an admitted asset as one that meets all five conditions: (1) probable future economic benefit, (2) the entity controls access to the benefit, (3) the transaction giving rise to the asset has occurred, (4) the asset is not specifically classified as non-admitted, and (5) the asset has not been pledged or restricted in a manner that disqualifies it. Common non-admitted asset classes include furniture and fixtures, prepaid expenses, certain receivables (90+ days past due), and goodwill in excess of statutory limits.",
-      "need": "Statutory surplus represents capital available to pay claims if the company stopped writing tomorrow. By non-admitting assets that cannot be promptly liquidated, regulators ensure surplus is a conservative measure of solvency.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 4 issued."},
-        {"year": "2014", "change": "Goodwill non-admission limit clarified at 10% of subsidiary capital."},
-        {"year": "2026", "change": "DAC remains expressly non-admitted (no GAAP-style DAC asset on STAT books)."}
+      "tags": [
+        "FSLI",
+        "Cash",
+        "Liquidity",
+        "Schedule E",
+        "MMF"
       ],
-      "gaap_comparison": [
-        {"aspect": "Furniture / fixtures", "gaap": "Recognized PP&E", "stat": "Non-admitted", "delta": "Direct surplus haircut"},
-        {"aspect": "Prepaid expenses", "gaap": "Asset", "stat": "Non-admitted", "delta": "Direct surplus haircut"},
-        {"aspect": "DAC", "gaap": "Asset; amortized constant-level (LDTI)", "stat": "Non-admitted (expensed)", "delta": "Largest single GAAP-STAT asset difference"},
-        {"aspect": "Receivables 90+ days past due", "gaap": "Asset less CECL allowance", "stat": "Non-admitted", "delta": "STAT cliff at 90 days"}
-      ],
-      "tags": ["Surplus", "Non-admitted", "Admitted", "Solvency"]
-    },
-    {
-      "id": "SSAP-5R",
-      "number": "5R",
-      "title": "Liabilities, Contingencies and Impairment of Assets",
-      "fsli": "Liabilities & Contingencies",
-      "summary": "Recognition criteria for liabilities, loss contingencies (probable + estimable), and asset impairment.",
-      "chapter_content": "SSAP No. 5R requires recognition of a liability when (1) the entity has a present obligation, (2) settlement is probable, and (3) the amount can be reasonably estimated. Loss contingencies use the same probable + reasonably estimable test. Asset impairment is recognized when the carrying amount exceeds the recoverable amount (fair value or expected cash flows).",
-      "need": "Ensures insurer balance sheets reflect liabilities and impairments completely, supporting accurate solvency assessment.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 5 issued."},
-        {"year": "2009", "change": "Revised (SSAP 5R) for clarity on contingency recognition."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Liability recognition", "gaap": "ASC 450 — probable and reasonably estimable", "stat": "Same threshold", "delta": "Aligned"},
-        {"aspect": "Loss-contingency disclosure", "gaap": "Required for reasonably possible", "stat": "Same", "delta": "Aligned"}
-      ],
-      "tags": ["Liabilities", "Contingencies", "Impairment"]
-    },
-    {
-      "id": "SSAP-26R",
-      "number": "26R",
-      "title": "Bonds",
-      "fsli": "Investments — Fixed Maturities",
-      "summary": "Carrying-value rules for corporate, municipal, and government bonds. NAIC 1–2 designations carried at amortized cost; lower designations stair-step toward fair value.",
-      "chapter_content": "SSAP No. 26R covers all bonds excluding loan-backed securities (which are in SSAP 43R). NAIC designations 1 (highest credit quality) through 6 (in or near default) drive the carrying-value methodology: NAIC 1–2 bonds at amortized cost, NAIC 3 at amortized cost with AVR provision, NAIC 4–5 at lower of amortized cost or fair value, NAIC 6 at fair value. Bonds report on Schedule D Part 1 with CUSIP, par, BACV, NAIC designation, and fair value.",
-      "need": "Provides a consistent, conservative carrying basis that smooths interest-rate volatility on solvency surplus while still flagging credit deterioration through NAIC designations.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 26 issued."},
-        {"year": "2018", "change": "Revised (SSAP 26R) to align with NAIC's modernized credit assessment process."},
-        {"year": "2025", "change": "Bond definition project — clarified principal-and-interest characteristic test for novel structures (e.g., insurance-linked securities)."},
-        {"year": "2026", "change": "Bond definition project effective Jan 1, 2026 — reclassifies certain ETFs and CLO equity tranches outside SSAP 26R into SSAP 30R / SSAP 48."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Classification", "gaap": "HTM / AFS / Trading at intent", "stat": "NAIC designation drives carrying value", "delta": "GAAP intent-driven; STAT credit-driven"},
-        {"aspect": "Carrying value (IG)", "gaap": "AFS at fair value through OCI", "stat": "Amortized cost", "delta": "STAT smooths rate volatility"},
-        {"aspect": "Carrying value (HY)", "gaap": "AFS fair value with CECL", "stat": "Lower of amortized cost or FV", "delta": "STAT step-down by NAIC designation"},
-        {"aspect": "Credit-loss allowance", "gaap": "ASC 326-20 lifetime ECL day-one", "stat": "OTTI when impairment evident; AVR formula", "delta": "GAAP earlier recognition"},
-        {"aspect": "Reporting", "gaap": "Footnote disclosure", "stat": "Schedule D Part 1 — by-CUSIP detail", "delta": "STAT far more granular"}
-      ],
-      "tags": ["FSLI", "Bonds", "Investments", "Schedule D", "NAIC Designation"]
-    },
-    {
-      "id": "SSAP-30R",
-      "number": "30R",
-      "title": "Common Stock",
-      "fsli": "Investments — Common Equity",
-      "summary": "Common stock at fair value with unrealized gains/losses through unassigned surplus (not P&L).",
-      "chapter_content": "SSAP No. 30R requires non-affiliated common stock to be carried at fair value with unrealized changes in value running through unassigned surplus. Affiliated common stock is reported under the equity method per SSAP 97. Reported on Schedule D Part 2 Section 2.",
-      "need": "Captures market value of equity holdings while routing volatility away from net income (P&L) into surplus, consistent with the statutory focus on solvency rather than period earnings.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 30 issued."},
-        {"year": "2017", "change": "Aligned to fair value treatment when GAAP eliminated AFS for equities (ASU 2016-01)."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Carrying value", "gaap": "Fair value through P&L (ASC 321)", "stat": "Fair value through surplus", "delta": "GAAP earnings volatility vs STAT surplus volatility"},
-        {"aspect": "Affiliated common stock", "gaap": "Consolidate or equity method", "stat": "Equity method per SSAP 97", "delta": "Aligned in spirit"}
-      ],
-      "tags": ["FSLI", "Common Stock", "Investments", "Schedule D", "SSAP30"]
-    },
-    {
-      "id": "SSAP-43R",
-      "number": "43R",
-      "title": "Loan-Backed and Structured Securities",
-      "fsli": "Investments — RMBS / CMBS / CLOs",
-      "summary": "NAIC-modeled designation framework for residential MBS, commercial MBS, and CLOs. Carrying value follows the modeled designation rather than NRSRO ratings.",
-      "chapter_content": "SSAP No. 43R covers RMBS, CMBS, and structured-credit instruments. NAIC designations come from a vendor model (e.g., BlackRock's PIMS for legacy non-agency RMBS) rather than NRSRO ratings. NAIC 1–2 carry at amortized cost; lower designations carry at fair value. AVR contributions track modeled credit losses. Reported on Schedule D Part 1.",
-      "need": "Provides a transparent, model-driven carrying basis for structured securities whose NRSRO ratings have historically been unreliable (e.g., the 2008 RMBS rating collapse).",
-      "evolution": [
-        {"year": "2009", "change": "SSAP 43R issued in response to the 2008 financial crisis to remove reliance on NRSRO ratings."},
-        {"year": "2024", "change": "CLO equity tranche designation tightened from NAIC 5 to NAIC 6 across the board."},
-        {"year": "2026", "change": "Bond definition project effects: certain CLO tranches reclassified out of SSAP 43R into SSAP 26R or SSAP 48."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Designation source", "gaap": "Internal CECL modeling", "stat": "NAIC vendor model + designation override", "delta": "STAT central; GAAP entity-specific"},
-        {"aspect": "Carrying value", "gaap": "AFS fair value with OCI", "stat": "Amortized cost (NAIC 1-2) or FV (NAIC 4-6)", "delta": "STAT step-down"},
-        {"aspect": "Impairment trigger", "gaap": "CECL day-one allowance", "stat": "OTTI when modeled credit loss exceeds threshold", "delta": "GAAP earlier"}
-      ],
-      "tags": ["FSLI", "Investments", "RMBS", "CMBS", "CLO", "Schedule D"]
-    },
-    {
-      "id": "SSAP-48",
-      "number": "48",
-      "title": "Joint Ventures, Partnerships and Limited Liability Companies",
-      "fsli": "Investments — LP / LLC / JV",
-      "summary": "Equity-method accounting for partnership interests; non-admission rules tied to audited financial statements of underlying entity.",
-      "chapter_content": "SSAP No. 48 mandates equity-method accounting for joint ventures, limited partnerships, and LLCs. The undistributed-earnings increment to surplus is admitted only when the LP/JV provides audited GAAP-basis financials. Look-through to underlying assets is required for risk-based capital calculations.",
-      "need": "Captures economic exposure to partnership investments while preventing recognition of unsubstantiated gains.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 48 issued."},
-        {"year": "2019", "change": "Audited-financials requirement tightened — interim audit not sufficient."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Method", "gaap": "Equity method or NAV expedient", "stat": "Equity method only", "delta": "Largely aligned"},
-        {"aspect": "Undistributed earnings", "gaap": "Recognized at investee reporting period", "stat": "Recognized only with audited LP financials", "delta": "STAT may exclude"}
-      ],
-      "tags": ["FSLI", "Investments", "LP", "LLC", "JV", "Schedule BA"]
-    },
-    {
-      "id": "SSAP-50",
-      "number": "50",
-      "title": "Classifications and Definitions of Insurance or Managed-Care Contracts in Force",
-      "fsli": "Contract classification",
-      "summary": "Defines insurance vs investment vs managed-care contract types. Foundational classification governing applicable reserving SSAP.",
-      "chapter_content": "SSAP No. 50 establishes the taxonomy used across all reserving SSAPs: long-duration vs short-duration; participating vs non-participating; with vs without significant insurance risk; deposit-type vs insurance-type. Drives which subsequent SSAP (51, 53, 54, 55, 56) governs measurement.",
-      "need": "Without consistent classification, reserves would not be comparable across companies. Establishes the prerequisite for everything else in the reserving framework.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 50 issued."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Classification framework", "gaap": "ASC 944 short vs long duration; deposit vs insurance", "stat": "Same with statutory-specific overlays", "delta": "Largely aligned"}
-      ],
-      "tags": ["Classification", "Reserving"]
-    },
-    {
-      "id": "SSAP-51R",
-      "number": "51R",
-      "title": "Life Contracts",
-      "fsli": "Life Reserves",
-      "summary": "Reserve methodology for life contracts. Incorporates the Valuation Manual (VM-20 PBR for new business; CARVM for annuities).",
-      "chapter_content": "SSAP No. 51R requires reserves for life-insurance contracts to follow the NAIC Valuation Manual. For new business since 2017, VM-20 Principle-Based Reserves applies the maximum of: Net Premium Reserve (formula-based), Deterministic Reserve (projected cash flows), and Stochastic Reserve (1,000-scenario CTE-70). Annuity contracts use CARVM (Commissioners' Annuity Reserve Valuation Method). VM-21 governs variable-annuity reserves.",
-      "need": "Provides a regulator-approved, conservative reserving framework that ensures life insurers hold sufficient assets to meet long-duration obligations under stress scenarios.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 51 issued."},
-        {"year": "2017", "change": "VM-20 PBR effective for new policies."},
-        {"year": "2020", "change": "Full VM-20 PBR phase-in complete."},
-        {"year": "2025", "change": "VM-22 (annuity PBR) effective for new annuity contracts."},
-        {"year": "2026", "change": "Convergence project narrowing differences with GAAP LDTI cohort accounting."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Reserve methodology", "gaap": "LDTI cohort-level LFPB (post-2023)", "stat": "VM-20 PBR (max of NPR/DR/SR)", "delta": "Both principle-based now; differ in unlocking rules"},
-        {"aspect": "Discount rate", "gaap": "Single-A upper-medium-grade, current", "stat": "Prescribed valuation rates", "delta": "GAAP rate-driven volatility; STAT smooth"},
-        {"aspect": "Annuity reserve", "gaap": "Cohort LFPB", "stat": "CARVM (SSAP 51R) or VM-22", "delta": "Different formula entirely"}
-      ],
-      "tags": ["Life", "Reserves", "VM-20", "PBR", "CARVM", "VM-22"]
-    },
-    {
-      "id": "SSAP-55",
-      "number": "55",
-      "title": "Unpaid Claims, Losses and Loss Adjustment Expenses",
-      "fsli": "P&C Loss Reserves",
-      "summary": "P&C loss-reserve methodology — case + IBNR + LAE, undiscounted (with limited tabular discount exception). Driven by Schedule P.",
-      "chapter_content": "SSAP No. 55 mandates P&C insurers carry their best estimate of incurred-but-not-paid losses, IBNR, and loss-adjustment expense (allocated and unallocated). Reserves are undiscounted except for tabular workers' compensation indemnity where the domiciliary commissioner approves a discount rate. The Statement of Actuarial Opinion is required at year-end signed by a qualified appointed actuary. Schedule P discloses ten-accident-year loss-development triangles by line of business.",
-      "need": "Ensures P&C insurers hold sufficient reserves to pay future claims arising from already-occurred events. The Schedule P disclosure permits regulators and analysts to assess reserve adequacy externally.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 55 issued."},
-        {"year": "2010", "change": "Risk margins required for reserves with significant uncertainty."},
-        {"year": "2016", "change": "Schedule P expanded to ten accident years."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Discount", "gaap": "Generally undiscounted; tabular WC permitted", "stat": "Same — undiscounted; tabular WC with commissioner approval", "delta": "Aligned"},
-        {"aspect": "Loss-development disclosure", "gaap": "ASU 2015-09 ten-year triangles", "stat": "Schedule P (full) — every line", "delta": "STAT more granular"},
-        {"aspect": "Risk margin", "gaap": "Best estimate; no explicit margin", "stat": "Implicit via RBC R5", "delta": "STAT requires more capital for riskier reserves"}
-      ],
-      "tags": ["P&C", "Loss Reserves", "IBNR", "LAE", "Schedule P"]
-    },
-    {
-      "id": "SSAP-56",
-      "number": "56",
-      "title": "Separate Accounts",
-      "fsli": "Separate Accounts",
-      "summary": "Carrying-value framework for separate-account assets and liabilities (variable annuities, variable life, pension separate accounts).",
-      "chapter_content": "SSAP No. 56 requires separate-account assets and corresponding policyholder reserves to be presented in summary form on the balance sheet at fair value. Investment performance flows directly to policyholders. The general account retains a contingent obligation under guaranteed minimum benefit provisions, accounted for under VM-21.",
-      "need": "Reflects the contractual structure where policyholders bear investment risk on segregated assets, while preserving regulator visibility into the general-account contingent obligations.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 56 issued."},
-        {"year": "2024", "change": "Disclosure expanded for separate accounts containing private-equity / hedge-fund holdings."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Separate-account assets", "gaap": "Fair value, presented separately", "stat": "Fair value, summary line", "delta": "Aligned presentation"},
-        {"aspect": "GMxB contingent obligation", "gaap": "MRB at fair value (LDTI)", "stat": "VM-21 stochastic CTE 70", "delta": "Different measurement; same intent"}
-      ],
-      "tags": ["Variable Annuity", "Separate Account", "VM-21", "MRB"]
-    },
-    {
-      "id": "SSAP-61R",
-      "number": "61R",
-      "title": "Life, Deposit-Type and Accident and Health Reinsurance",
-      "fsli": "Life Reinsurance",
-      "summary": "Accounting for life and accident/health reinsurance — coinsurance, modified coinsurance, YRT, funds-withheld arrangements.",
-      "chapter_content": "SSAP No. 61R covers cession and assumption accounting for life, deposit-type, and A&H reinsurance. Common forms include coinsurance, modified coinsurance (with funds withheld), yearly renewable term (YRT), and stop-loss. The reinsurance contract must transfer significant insurance risk to qualify for reinsurance accounting; otherwise, deposit accounting applies.",
-      "need": "Ensures cessions deliver actual risk transfer rather than synthetic capital relief. Schedule S Part 3 provides reinsurer-level disclosure analogous to P&C Schedule F.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 61 issued."},
-        {"year": "2020", "change": "Risk-transfer requirements harmonized with SSAP 62R."},
-        {"year": "2024", "change": "Funds-withheld coinsurance disclosure expanded for Bermuda-domiciled reinsurer transactions."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Risk-transfer test", "gaap": "ASC 944-20-15-41 — significant risk + reasonable possibility of loss", "stat": "SSAP 61R Appendix — same test", "delta": "Aligned"},
-        {"aspect": "Funds-withheld arrangements", "gaap": "Funds-held liability + investment income to reinsurer", "stat": "Same; admitted asset under SSAP 61R", "delta": "Aligned"}
-      ],
-      "tags": ["Reinsurance", "Life", "Coinsurance", "Schedule S"]
-    },
-    {
-      "id": "SSAP-62R",
-      "number": "62R",
-      "title": "Property and Casualty Reinsurance",
-      "fsli": "P&C Reinsurance",
-      "summary": "Cession and assumption accounting for P&C reinsurance — quota share, XOL, LPT, ADC. Includes the canonical risk-transfer test.",
-      "chapter_content": "SSAP No. 62R governs P&C reinsurance accounting. Prospective contracts (covering future events) recognize ceded premium over the coverage period. Retrospective contracts (covering prior events) require deposit accounting if risk transfer is insufficient. Loss-portfolio transfers (LPTs) and adverse-development covers (ADCs) defer any gain through the interest method. Schedule F Parts 1–9 provide reinsurer-level disclosure including authorized status, slow-pay provision, and collateral.",
-      "need": "Ensures cessions transfer actual loss risk; prevents financial-engineering 'reinsurance' deals that synthetically inflate surplus.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 62 issued."},
-        {"year": "2020", "change": "SSAP 62R revisions narrowed historic gap with GAAP for retrospective reinsurance."},
-        {"year": "2025", "change": "Reciprocal jurisdiction implementation reduced collateral requirements for qualifying European/UK reinsurers."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Risk-transfer test", "gaap": "ASC 944-20-15-41", "stat": "SSAP 62R Appendix A", "delta": "Aligned"},
-        {"aspect": "LPT / ADC accounting", "gaap": "Recoverable + interest-method gain deferral", "stat": "Same approach (par 36)", "delta": "Aligned post-2020"},
-        {"aspect": "Slow-pay provision", "gaap": "Higher CECL allowance", "stat": "20% provision per SSAP 62R if 90+ days past due", "delta": "STAT formula-driven"}
-      ],
-      "tags": ["Reinsurance", "P&C", "LPT", "ADC", "Schedule F"]
-    },
-    {
-      "id": "SSAP-86",
-      "number": "86",
-      "title": "Derivatives",
-      "fsli": "Derivatives",
-      "summary": "Derivative accounting and hedge designation for statutory entities. Provides more flexible hedge accounting than ASC 815.",
-      "chapter_content": "SSAP No. 86 requires derivatives to be carried at fair value with non-hedging changes flowing through unassigned surplus (not P&L). Hedge accounting is available with simpler effectiveness tests than GAAP — when designated as an effective hedge, the derivative may be carried at amortized cost. Replication transactions (synthetic-asset construction) are explicitly permitted with prior commissioner approval. Reported on Schedule DB Parts A–D.",
-      "need": "Allows insurers to hedge interest-rate, equity, and currency risk without introducing earnings volatility on hedged items already recorded at amortized cost.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 86 issued."},
-        {"year": "2020", "change": "Hedging-effectiveness simplification aligned with ASU 2017-12."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Default measurement", "gaap": "Fair value through P&L (ASC 815)", "stat": "Fair value through surplus", "delta": "GAAP earnings; STAT surplus"},
-        {"aspect": "Hedge accounting", "gaap": "Strict three-design framework", "stat": "More flexible; amortized cost when effective", "delta": "STAT permits cleaner P&L"},
-        {"aspect": "Replication transactions", "gaap": "Components separately accounted", "stat": "Explicitly permitted with approval", "delta": "STAT-only construct"}
-      ],
-      "tags": ["Derivatives", "Hedging", "Schedule DB", "Replication"]
-    },
-    {
-      "id": "SSAP-101",
-      "number": "101",
-      "title": "Income Taxes",
-      "fsli": "Deferred Tax Assets",
-      "summary": "Statutory income-tax accounting and DTA admission framework via the three-bucket test.",
-      "chapter_content": "SSAP No. 101 governs current and deferred tax accounting for statutory entities. Admitted DTA equals Bucket 1 (federal taxes recoverable from prior years), plus Bucket 2 (DTAs reversing within 1–3 years and offsetting expected taxable income), plus Bucket 3 (DTAs offsetting DTLs of the same character). Excess DTAs are non-admitted, reducing surplus. The threshold and reversal-period tests depend on the entity's RBC status.",
-      "need": "Limits surplus credit for deferred tax benefits to those that are imminently or formulaically realizable — preventing a paper increase in surplus from speculative tax positions.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 10 issued."},
-        {"year": "2012", "change": "SSAP 101 issued; three-bucket admission framework introduced."},
-        {"year": "2018", "change": "TCJA: 80% NOL utilization cap incorporated."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "DTA recognition", "gaap": "Recognize all DTAs net of valuation allowance", "stat": "Three-bucket admission test", "delta": "STAT more conservative"},
-        {"aspect": "Reversal period", "gaap": "Indefinite", "stat": "1-3 years depending on RBC", "delta": "STAT bright-line"}
-      ],
-      "tags": ["Tax", "DTA", "DTL", "Three-Bucket Test"]
-    },
-    {
-      "id": "SSAP-105R",
-      "number": "105R",
-      "title": "Working Capital Finance Investments",
-      "fsli": "WCFI",
-      "summary": "Short-duration trade-finance receivables. Excluded from SSAP 2 cash-equivalent treatment; carried under separate WCFI framework.",
-      "chapter_content": "SSAP No. 105R covers Working Capital Finance Investments — short-term trade-finance receivables purchased from corporate sellers. WCFIs are NOT cash equivalents, regardless of maturity, and are explicitly scoped out of SSAP 2R. Carrying basis is amortized cost less impairment.",
-      "need": "Closes a historical loophole where insurers classified illiquid trade-finance receivables as cash equivalents based solely on maturity.",
-      "evolution": [
-        {"year": "2014", "change": "Original SSAP 105 issued."},
-        {"year": "2018", "change": "Revised (SSAP 105R) for clarity."},
-        {"year": "2026", "change": "Cross-reference to SSAP 2R explicitly added — WCFIs are NOT in SSAP 2R scope."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Classification", "gaap": "Receivable; CECL ECL", "stat": "WCFI; non-cash-equivalent", "delta": "Aligned in spirit"}
-      ],
-      "tags": ["WCFI", "Trade Finance", "FSLI"]
-    },
-    {
-      "id": "SSAP-72",
-      "number": "72",
-      "title": "Surplus and Quasi-Reorganizations",
-      "fsli": "Surplus",
-      "summary": "Defines components of surplus, capital structure, and rules around quasi-reorganizations and dividend payments.",
-      "chapter_content": "SSAP No. 72 defines statutory surplus components (capital + paid-in surplus + unassigned surplus) and the rules governing capital changes, stock splits, and quasi-reorganizations. Dividend payments are subject to ordinary-vs-extraordinary thresholds set by the domiciliary state — typically 10% of surplus or prior-year net income.",
-      "need": "Provides the regulator with control over capital management actions that could materially weaken solvency.",
-      "evolution": [
-        {"year": "2001", "change": "Original SSAP 72 issued."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Dividend approval", "gaap": "Board-approved", "stat": "Regulator-approved if extraordinary", "delta": "STAT additional gate"},
-        {"aspect": "Surplus presentation", "gaap": "Equity = Assets - Liabilities", "stat": "Surplus = Admitted - Liabilities - AVR - IMR", "delta": "STAT more conservative"}
-      ],
-      "tags": ["Surplus", "Capital", "Dividends", "Quasi-Reorganization"]
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%202R.pdf"
     },
     {
       "id": "SSAP-3",
@@ -364,66 +134,366 @@
       "chapter_content": "SSAP No. 3 distinguishes changes in accounting principle (retrospective restatement when permitted, otherwise prospective) from changes in accounting estimate (prospective only) and corrections of errors (retrospective restatement). Disclosure of nature, justification, and quantitative impact is required.",
       "need": "Ensures comparability across periods despite methodology updates and prevents 'cookie-jar' management of estimate revisions.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 3 issued."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 3 issued."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Principle change", "gaap": "ASC 250 retrospective", "stat": "Same", "delta": "Aligned"},
-        {"aspect": "Error correction", "gaap": "Restate prior periods", "stat": "Same", "delta": "Aligned"}
+        {
+          "aspect": "Principle change",
+          "gaap": "ASC 250 retrospective",
+          "stat": "Same",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Error correction",
+          "gaap": "Restate prior periods",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
       ],
-      "tags": ["Disclosure", "Errors", "Accounting Changes"]
+      "tags": [
+        "Disclosure",
+        "Errors",
+        "Accounting Changes"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%203.pdf"
     },
     {
-      "id": "SSAP-54R",
-      "number": "54R",
-      "title": "Individual and Group Accident and Health Contracts",
-      "fsli": "A&H Reserves",
-      "summary": "Reserve framework for accident-and-health contracts including long-term care, disability, and cancer policies.",
-      "chapter_content": "SSAP No. 54R requires active-life reserves and disabled-life reserves for A&H contracts. Long-term care reserves use prescribed mortality and morbidity tables with annual gross-premium-valuation testing for adequacy. Recent industry experience has driven significant reserve strengthening across the LTC block.",
-      "need": "A&H contracts typically have decades-long claim payouts; conservative reserves are essential to ensure benefits remain payable.",
+      "id": "SSAP-4",
+      "number": "4",
+      "title": "Assets and Nonadmitted Assets",
+      "fsli": "Admitted vs Non-admitted",
+      "summary": "Foundational rule that classifies which assets count toward statutory surplus. Non-admitted assets reduce surplus dollar-for-dollar.",
+      "chapter_content": "SSAP No. 4 defines an admitted asset as one that meets all five conditions: (1) probable future economic benefit, (2) the entity controls access to the benefit, (3) the transaction giving rise to the asset has occurred, (4) the asset is not specifically classified as non-admitted, and (5) the asset has not been pledged or restricted in a manner that disqualifies it. Common non-admitted asset classes include furniture and fixtures, prepaid expenses, certain receivables (90+ days past due), and goodwill in excess of statutory limits.",
+      "need": "Statutory surplus represents capital available to pay claims if the company stopped writing tomorrow. By non-admitting assets that cannot be promptly liquidated, regulators ensure surplus is a conservative measure of solvency.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 54 issued."},
-        {"year": "2017", "change": "LTC reserve adequacy testing intensified following industry-wide morbidity / lapse divergence."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 4 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Goodwill non-admission limit clarified at 10% of subsidiary capital."
+        },
+        {
+          "year": "2026",
+          "change": "DAC remains expressly non-admitted (no GAAP-style DAC asset on STAT books)."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "LTC reserves", "gaap": "LDTI cohort LFPB with annual unlocking", "stat": "Active life + disabled life under SSAP 54R", "delta": "Both have triggered $200M-$2B unlockings 2023-2024"}
+        {
+          "aspect": "Furniture / fixtures",
+          "gaap": "Recognized PP&E",
+          "stat": "Non-admitted",
+          "delta": "Direct surplus haircut"
+        },
+        {
+          "aspect": "Prepaid expenses",
+          "gaap": "Asset",
+          "stat": "Non-admitted",
+          "delta": "Direct surplus haircut"
+        },
+        {
+          "aspect": "DAC",
+          "gaap": "Asset; amortized constant-level (LDTI)",
+          "stat": "Non-admitted (expensed)",
+          "delta": "Largest single GAAP-STAT asset difference"
+        },
+        {
+          "aspect": "Receivables 90+ days past due",
+          "gaap": "Asset less CECL allowance",
+          "stat": "Non-admitted",
+          "delta": "STAT cliff at 90 days"
+        }
       ],
-      "tags": ["A&H", "LTC", "Disability", "Reserves"]
+      "tags": [
+        "Surplus",
+        "Non-admitted",
+        "Admitted",
+        "Solvency"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%204.pdf"
     },
     {
-      "id": "SSAP-65",
-      "number": "65",
-      "title": "Property and Casualty Contracts",
-      "fsli": "P&C Underwriting",
-      "summary": "Premium recognition, premium-deficiency reserves, and policyholder dividends for P&C contracts.",
-      "chapter_content": "SSAP No. 65 covers premium revenue recognition (pro-rata over coverage period), premium-deficiency reserves (when expected losses + LAE exceed unearned premium plus expected investment income), and policyholder dividend accruals. Policyholder dividends declared from divisible surplus reduce surplus when paid.",
-      "need": "Provides consistent revenue and dividend accounting across P&C carriers.",
+      "id": "SSAP-5R",
+      "number": "5R",
+      "title": "Liabilities, Contingencies and Impairment of Assets",
+      "fsli": "Liabilities & Contingencies",
+      "summary": "Recognition criteria for liabilities, loss contingencies (probable + estimable), and asset impairment.",
+      "chapter_content": "SSAP No. 5R requires recognition of a liability when (1) the entity has a present obligation, (2) settlement is probable, and (3) the amount can be reasonably estimated. Loss contingencies use the same probable + reasonably estimable test. Asset impairment is recognized when the carrying amount exceeds the recoverable amount (fair value or expected cash flows).",
+      "need": "Ensures insurer balance sheets reflect liabilities and impairments completely, supporting accurate solvency assessment.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 65 issued."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 5 issued."
+        },
+        {
+          "year": "2009",
+          "change": "Revised (SSAP 5R) for clarity on contingency recognition."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Premium earning", "gaap": "Pro-rata over coverage", "stat": "Same", "delta": "Aligned"},
-        {"aspect": "PDR trigger", "gaap": "ASC 944-60-25", "stat": "SSAP 65", "delta": "Aligned"}
+        {
+          "aspect": "Liability recognition",
+          "gaap": "ASC 450 \u2014 probable and reasonably estimable",
+          "stat": "Same threshold",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Loss-contingency disclosure",
+          "gaap": "Required for reasonably possible",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
       ],
-      "tags": ["P&C", "Premium", "PDR", "Dividends"]
+      "tags": [
+        "Liabilities",
+        "Contingencies",
+        "Impairment"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%205R.pdf"
     },
     {
-      "id": "SSAP-68",
-      "number": "68",
-      "title": "Business Combinations and Goodwill",
-      "fsli": "Goodwill",
-      "summary": "Statutory accounting for insurance-company acquisitions. Goodwill admission limited to 10% of acquirer capital and amortized over 10 years.",
-      "chapter_content": "SSAP No. 68 governs accounting for insurance-company acquisitions and the resulting goodwill. Goodwill = excess of purchase price over fair value of acquired statutory net assets. Admitted goodwill limited to lesser of (a) 10% of acquirer's capital and surplus, or (b) the amortizable amount, with amortization over 10 years or less. Excess goodwill is non-admitted.",
-      "need": "Prevents goodwill — an intangible whose recoverability depends on continued operations — from inflating statutory surplus.",
+      "id": "SSAP-6",
+      "number": "6",
+      "title": "Uncollected Premium Balances, Bills Receivable for Premiums",
+      "fsli": "Receivables",
+      "summary": "Premium receivables and bills receivable. Aged-receivable non-admission rule.",
+      "chapter_content": "SSAP No. 6 covers premium-receivable accounting. Premium balances over 90 days past due (or 15 days for personal lines) are non-admitted, reducing surplus. Bills receivable from agents and brokers follow similar rules.",
+      "need": "Maintains surplus integrity by removing receivables unlikely to be collected.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 68 issued."},
-        {"year": "2014", "change": "Goodwill admission cap clarified."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 6 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Aging-non-admission thresholds harmonized."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Goodwill recognition", "gaap": "Full purchase-method goodwill (ASC 805)", "stat": "Limited to 10% admission cap", "delta": "STAT severely limits"},
-        {"aspect": "Amortization", "gaap": "No amortization; impairment-tested", "stat": "10-year amortization", "delta": "STAT mechanical"},
-        {"aspect": "VOBA", "gaap": "Recognized at fair value", "stat": "Effectively N/A — replaced by goodwill admission", "delta": "Material divergence"}
+        {
+          "aspect": "Allowance method",
+          "gaap": "ASC 326 CECL",
+          "stat": "90-day non-admission cliff",
+          "delta": "GAAP allowance; STAT cliff"
+        }
       ],
-      "tags": ["M&A", "Goodwill", "VOBA"]
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%206.pdf",
+      "tags": [
+        "Receivables",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-9",
+      "number": "9",
+      "title": "Subsequent Events",
+      "fsli": "Disclosure",
+      "summary": "Recognition vs disclosure of events occurring between balance-sheet date and statement issuance.",
+      "chapter_content": "SSAP No. 9 distinguishes recognized subsequent events (conditions existing at balance sheet) from non-recognized (new conditions). Disclosure required for material non-recognized events.",
+      "need": "Provides users with information about post-balance-sheet developments material to interpreting the financial statements.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 9 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Aligned with ASC 855."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Recognition vs disclosure",
+          "gaap": "ASC 855 \u2014 same framework",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%209.pdf",
+      "tags": [
+        "Disclosure",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-15",
+      "number": "15",
+      "title": "Debt and Holding Company Obligations",
+      "fsli": "Debt",
+      "summary": "Long-term debt and holding-company-issued obligations. Interest accrual and disclosure.",
+      "chapter_content": "SSAP No. 15 covers traditional debt and holding-company obligations issued by insurance entities or their affiliates.",
+      "need": "Provides consistent measurement and disclosure of insurer debt.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 15 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Long-term debt",
+          "gaap": "Amortized cost",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2015.pdf",
+      "tags": [
+        "Debt",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-16R",
+      "number": "16R",
+      "title": "Electronic Data Processing Equipment and Software",
+      "fsli": "EDP/Software",
+      "summary": "Capitalization and amortization of EDP equipment and software.",
+      "chapter_content": "SSAP No. 16R requires software and EDP equipment to be capitalized when meeting the recognition criteria. Operating software amortized over useful life. Non-operating (administrative) software is non-admitted.",
+      "need": "Limits surplus credit for IT investments to those directly supporting policy-administration operations.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 16 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Revised (16R) for cloud-computing arrangements."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Internal-use software",
+          "gaap": "ASC 350-40",
+          "stat": "16R with non-admit overlay",
+          "delta": "STAT haircuts non-operating"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2016R.pdf",
+      "tags": [
+        "EDP/Software",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-17",
+      "number": "17",
+      "title": "Preoperating and Research and Development Costs",
+      "fsli": "R&D",
+      "summary": "R&D and preoperating costs are expensed as incurred.",
+      "chapter_content": "SSAP No. 17 mandates expensing of R&D and preoperating costs \u2014 no capitalization allowed.",
+      "need": "Conservatism: R&D outcomes are uncertain; capitalization could inflate surplus.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 17 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "R&D",
+          "gaap": "ASC 730 \u2014 expense (with limited software exceptions)",
+          "stat": "Always expense",
+          "delta": "STAT stricter"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2017.pdf",
+      "tags": [
+        "R&D",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-19",
+      "number": "19",
+      "title": "Furniture, Fixtures, Equipment and Leasehold Improvements",
+      "fsli": "PP&E",
+      "summary": "Furniture, fixtures, equipment, and leasehold improvements are non-admitted.",
+      "chapter_content": "SSAP No. 19 makes furniture, fixtures, equipment, and leasehold improvements non-admitted assets \u2014 they reduce surplus.",
+      "need": "Statutory accounting focuses on assets that can be liquidated to pay claims; physical office assets cannot.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 19 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "PP&E recognition",
+          "gaap": "ASC 360 \u2014 capitalize and depreciate",
+          "stat": "Non-admitted",
+          "delta": "Direct surplus haircut"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2019.pdf",
+      "tags": [
+        "PP&E",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-20",
+      "number": "20",
+      "title": "Nonadmitted Assets",
+      "fsli": "Non-admitted",
+      "summary": "Catalog of assets that are non-admitted under SAP regardless of other recognition rules.",
+      "chapter_content": "SSAP No. 20 enumerates non-admitted asset categories \u2014 furniture, prepaid expenses, certain receivables, restricted cash, software, and others.",
+      "need": "Provides a single reference point for non-admitted asset categorization.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 20 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Non-admission catalog",
+          "gaap": "Various ASC topics",
+          "stat": "SSAP 20 + line-item SSAPs",
+          "delta": "STAT-only construct"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2020.pdf",
+      "tags": [
+        "Non-admitted",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-21R",
+      "number": "21R",
+      "title": "Other Admitted Assets",
+      "fsli": "Other Assets",
+      "summary": "Catch-all category for admitted assets not addressed elsewhere.",
+      "chapter_content": "SSAP No. 21R provides recognition criteria for admitted assets that don't fall under other SSAPs \u2014 including surplus debentures and certain receivables.",
+      "need": "Closes gaps in the admitted-asset framework.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 21 issued."
+        },
+        {
+          "year": "2018",
+          "change": "Revised (21R)."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Other assets",
+          "gaap": "ASC 350 / various",
+          "stat": "SSAP 21R",
+          "delta": "Generally aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2021R.pdf",
+      "tags": [
+        "Other Assets",
+        "SSAP"
+      ]
     },
     {
       "id": "SSAP-22R",
@@ -431,17 +501,420 @@
       "title": "Leases",
       "fsli": "Leases",
       "summary": "Statutory lease accounting. Operating-lease ROU asset is non-admitted, reducing surplus; finance leases capitalized similar to GAAP.",
-      "chapter_content": "SSAP No. 22R requires lessee insurers to account for leases under a model similar to ASC 842 — recognize ROU asset and lease liability for both operating and finance leases. The operating-lease ROU asset is then non-admitted, removing it from surplus. This creates a material GAAP-vs-STAT difference for insurers with large real-estate footprints.",
+      "chapter_content": "SSAP No. 22R requires lessee insurers to account for leases under a model similar to ASC 842 \u2014 recognize ROU asset and lease liability for both operating and finance leases. The operating-lease ROU asset is then non-admitted, removing it from surplus. This creates a material GAAP-vs-STAT difference for insurers with large real-estate footprints.",
       "need": "Aligns balance-sheet recognition with GAAP while preserving statutory surplus's conservative posture by non-admitting the operating-lease ROU asset.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 22 issued."},
-        {"year": "2019", "change": "Aligned to ASC 842 lessee model."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 22 issued."
+        },
+        {
+          "year": "2019",
+          "change": "Aligned to ASC 842 lessee model."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Operating-lease ROU", "gaap": "Recognized; amortized straight-line", "stat": "Recognized then non-admitted", "delta": "Direct surplus impact"},
-        {"aspect": "Finance-lease ROU", "gaap": "Recognized", "stat": "Recognized", "delta": "Aligned"}
+        {
+          "aspect": "Operating-lease ROU",
+          "gaap": "Recognized; amortized straight-line",
+          "stat": "Recognized then non-admitted",
+          "delta": "Direct surplus impact"
+        },
+        {
+          "aspect": "Finance-lease ROU",
+          "gaap": "Recognized",
+          "stat": "Recognized",
+          "delta": "Aligned"
+        }
       ],
-      "tags": ["Leases", "ROU", "ASC842"]
+      "tags": [
+        "Leases",
+        "ROU",
+        "ASC842"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2022R.pdf"
+    },
+    {
+      "id": "SSAP-23",
+      "number": "23",
+      "title": "Foreign Currency Transactions and Translations",
+      "fsli": "FX",
+      "summary": "Foreign-currency transaction accounting and balance-sheet translation.",
+      "chapter_content": "SSAP No. 23 follows the functional-currency approach \u2014 record at spot rate at transaction date; translate at period-end. Translation gains/losses flow through OCI / surplus.",
+      "need": "Provides consistent treatment of multi-currency operations for global insurers.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 23 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Translation",
+          "gaap": "ASC 830 \u2014 same approach",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2023.pdf",
+      "tags": [
+        "FX",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-24",
+      "number": "24",
+      "title": "Discontinued Operations",
+      "fsli": "Discontinued Ops",
+      "summary": "Reporting of discontinued operations and held-for-sale classification.",
+      "chapter_content": "SSAP No. 24 governs reporting of discontinued operations including held-for-sale classification and disposal-group accounting.",
+      "need": "Separates results of discontinuing operations so analysts can evaluate continuing-operations performance.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 24 issued."
+        },
+        {
+          "year": "2015",
+          "change": "Aligned with ASU 2014-08."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Discontinued ops",
+          "gaap": "ASC 205-20",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2024.pdf",
+      "tags": [
+        "Discontinued Ops",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-25",
+      "number": "25",
+      "title": "Affiliates and Other Related Parties",
+      "fsli": "Related Parties",
+      "summary": "Related-party disclosures and affiliated transactions.",
+      "chapter_content": "SSAP No. 25 mandates disclosure of related-party transactions and identifies affiliated transactions subject to special accounting and Form B disclosure.",
+      "need": "Transparency around related-party arrangements is critical for solvency assessment.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 25 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Related-party disclosure",
+          "gaap": "ASC 850",
+          "stat": "SSAP 25 + Holding Company Act",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2025.pdf",
+      "tags": [
+        "Related Parties",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-26R",
+      "number": "26R",
+      "title": "Bonds",
+      "fsli": "Investments \u2014 Fixed Maturities",
+      "summary": "Carrying-value rules for corporate, municipal, and government bonds. NAIC 1\u20132 designations carried at amortized cost; lower designations stair-step toward fair value.",
+      "chapter_content": "SSAP No. 26R covers all bonds excluding loan-backed securities (which are in SSAP 43R). NAIC designations 1 (highest credit quality) through 6 (in or near default) drive the carrying-value methodology: NAIC 1\u20132 bonds at amortized cost, NAIC 3 at amortized cost with AVR provision, NAIC 4\u20135 at lower of amortized cost or fair value, NAIC 6 at fair value. Bonds report on Schedule D Part 1 with CUSIP, par, BACV, NAIC designation, and fair value.",
+      "need": "Provides a consistent, conservative carrying basis that smooths interest-rate volatility on solvency surplus while still flagging credit deterioration through NAIC designations.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 26 issued."
+        },
+        {
+          "year": "2018",
+          "change": "Revised (SSAP 26R) to align with NAIC's modernized credit assessment process."
+        },
+        {
+          "year": "2025",
+          "change": "Bond definition project \u2014 clarified principal-and-interest characteristic test for novel structures (e.g., insurance-linked securities)."
+        },
+        {
+          "year": "2026",
+          "change": "Bond definition project effective Jan 1, 2026 \u2014 reclassifies certain ETFs and CLO equity tranches outside SSAP 26R into SSAP 30R / SSAP 48."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Classification",
+          "gaap": "HTM / AFS / Trading at intent",
+          "stat": "NAIC designation drives carrying value",
+          "delta": "GAAP intent-driven; STAT credit-driven"
+        },
+        {
+          "aspect": "Carrying value (IG)",
+          "gaap": "AFS at fair value through OCI",
+          "stat": "Amortized cost",
+          "delta": "STAT smooths rate volatility"
+        },
+        {
+          "aspect": "Carrying value (HY)",
+          "gaap": "AFS fair value with CECL",
+          "stat": "Lower of amortized cost or FV",
+          "delta": "STAT step-down by NAIC designation"
+        },
+        {
+          "aspect": "Credit-loss allowance",
+          "gaap": "ASC 326-20 lifetime ECL day-one",
+          "stat": "OTTI when impairment evident; AVR formula",
+          "delta": "GAAP earlier recognition"
+        },
+        {
+          "aspect": "Reporting",
+          "gaap": "Footnote disclosure",
+          "stat": "Schedule D Part 1 \u2014 by-CUSIP detail",
+          "delta": "STAT far more granular"
+        }
+      ],
+      "tags": [
+        "FSLI",
+        "Bonds",
+        "Investments",
+        "Schedule D",
+        "NAIC Designation"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2026R.pdf"
+    },
+    {
+      "id": "SSAP-27",
+      "number": "27",
+      "title": "Off-Balance-Sheet and Credit-Risk Disclosures",
+      "fsli": "Off-BS Disclosure",
+      "summary": "Disclosure of off-balance-sheet exposures including financial guarantees and concentrations.",
+      "chapter_content": "SSAP No. 27 requires disclosure of off-balance-sheet financial-instrument exposures and credit-risk concentrations.",
+      "need": "Captures economic exposures not reflected in the balance sheet but material to solvency.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 27 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "OBS disclosure",
+          "gaap": "ASC 825 + 460",
+          "stat": "SSAP 27 disclosures",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2027.pdf",
+      "tags": [
+        "Off-BS Disclosure",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-29",
+      "number": "29",
+      "title": "Prepaid Expenses",
+      "fsli": "Prepaid",
+      "summary": "Prepaid expenses are non-admitted under SAP.",
+      "chapter_content": "SSAP No. 29 makes prepaid expenses non-admitted assets \u2014 reduces surplus.",
+      "need": "Prepaid expenses cannot be liquidated to pay claims; non-admission preserves statutory conservatism.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 29 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Prepaid",
+          "gaap": "Asset under ASC",
+          "stat": "Non-admitted",
+          "delta": "Direct surplus haircut"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2029.pdf",
+      "tags": [
+        "Prepaid",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-30R",
+      "number": "30R",
+      "title": "Common Stock",
+      "fsli": "Investments \u2014 Common Equity",
+      "summary": "Common stock at fair value with unrealized gains/losses through unassigned surplus (not P&L).",
+      "chapter_content": "SSAP No. 30R requires non-affiliated common stock to be carried at fair value with unrealized changes in value running through unassigned surplus. Affiliated common stock is reported under the equity method per SSAP 97. Reported on Schedule D Part 2 Section 2.",
+      "need": "Captures market value of equity holdings while routing volatility away from net income (P&L) into surplus, consistent with the statutory focus on solvency rather than period earnings.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 30 issued."
+        },
+        {
+          "year": "2017",
+          "change": "Aligned to fair value treatment when GAAP eliminated AFS for equities (ASU 2016-01)."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Carrying value",
+          "gaap": "Fair value through P&L (ASC 321)",
+          "stat": "Fair value through surplus",
+          "delta": "GAAP earnings volatility vs STAT surplus volatility"
+        },
+        {
+          "aspect": "Affiliated common stock",
+          "gaap": "Consolidate or equity method",
+          "stat": "Equity method per SSAP 97",
+          "delta": "Aligned in spirit"
+        }
+      ],
+      "tags": [
+        "FSLI",
+        "Common Stock",
+        "Investments",
+        "Schedule D",
+        "SSAP30"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2030R.pdf"
+    },
+    {
+      "id": "SSAP-32R",
+      "number": "32R",
+      "title": "Preferred Stock",
+      "fsli": "Investments \u2014 Preferred",
+      "summary": "NAIC designation drives carrying value for preferred stock \u2014 perpetual NAIC 1-2 at amortized cost.",
+      "chapter_content": "SSAP No. 32R: perpetual preferred stock NAIC 1-2 at amortized cost; NAIC 3+ at lower of cost or fair value. Redeemable preferred follows debt-like treatment.",
+      "need": "Smooths preferred-stock volatility on solvency surplus while preserving credit-deterioration signals.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 32 issued."
+        },
+        {
+          "year": "2018",
+          "change": "Revised 32R."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Perpetual preferred (NAIC 1-2)",
+          "gaap": "FV through P&L (ASC 321)",
+          "stat": "Amortized cost",
+          "delta": "STAT smooths"
+        },
+        {
+          "aspect": "Mandatorily redeemable preferred",
+          "gaap": "Liability (ASC 480)",
+          "stat": "Treated similarly",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2032R.pdf",
+      "tags": [
+        "Investments \u2014 Preferred",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-34",
+      "number": "34",
+      "title": "Investment Income Due and Accrued",
+      "fsli": "Investment Income",
+      "summary": "Accrual of investment income; non-admission of overdue accruals.",
+      "chapter_content": "SSAP No. 34 governs accrual of interest, dividends, and other investment income. Income overdue 90+ days is non-admitted.",
+      "need": "Maintains accrual integrity by removing receivables unlikely to materialize.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 34 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Investment income accrual",
+          "gaap": "Standard accrual + ASC 326 ECL",
+          "stat": "Accrual + 90-day cliff",
+          "delta": "STAT cliff"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2034.pdf",
+      "tags": [
+        "Investment Income",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-35R",
+      "number": "35R",
+      "title": "Guaranty Fund and Other Assessments",
+      "fsli": "Assessments",
+      "summary": "Recognition of state guaranty-fund assessments and other regulatory levies.",
+      "chapter_content": "SSAP No. 35R requires accrual of guaranty-fund and similar assessments when probable and estimable.",
+      "need": "Captures the cost of insurer-of-last-resort regimes that fund insolvent-carrier claims.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 35 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Revised 35R."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Assessment recognition",
+          "gaap": "ASC 405-30",
+          "stat": "SSAP 35R",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2035R.pdf",
+      "tags": [
+        "Assessments",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-36",
+      "number": "36",
+      "title": "Troubled Debt Restructuring",
+      "fsli": "TDR",
+      "summary": "Restructured-debt accounting (legacy concept; eliminated under GAAP by ASU 2022-02).",
+      "chapter_content": "SSAP No. 36 retains TDR accounting for statutory purposes even after GAAP eliminated the concept.",
+      "need": "Captures concessions granted to troubled borrowers \u2014 relevant for insurer mortgage-loan portfolios.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 36 issued."
+        },
+        {
+          "year": "2022",
+          "change": "Note: GAAP eliminated TDR accounting (ASU 2022-02); STAT retains it."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "TDR",
+          "gaap": "Eliminated by ASU 2022-02",
+          "stat": "Retained",
+          "delta": "Material divergence post-2022"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2036.pdf",
+      "tags": [
+        "TDR",
+        "SSAP"
+      ]
     },
     {
       "id": "SSAP-37",
@@ -452,14 +925,64 @@
       "chapter_content": "SSAP No. 37 governs commercial and residential mortgage loans on income-producing properties. Loans admitted at unpaid principal less the mortgage-loan valuation reserve (MLVR), a NAIC-formula provision. Loans 90+ days delinquent are non-admitted unless adequately secured by collateral. Reported on Schedule B.",
       "need": "Captures credit deterioration through non-admission rather than through a GAAP-style ECL allowance.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 37 issued."},
-        {"year": "2024", "change": "Office-property mortgage loans placed under enhanced regulatory surveillance."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 37 issued."
+        },
+        {
+          "year": "2024",
+          "change": "Office-property mortgage loans placed under enhanced regulatory surveillance."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Performing loans", "gaap": "Amortized cost less CECL ECL", "stat": "Unpaid principal less MLVR", "delta": "GAAP earlier credit recognition"},
-        {"aspect": "90+ delinquent", "gaap": "Higher CECL allowance", "stat": "Non-admitted unless adequately secured", "delta": "STAT cliff"}
+        {
+          "aspect": "Performing loans",
+          "gaap": "Amortized cost less CECL ECL",
+          "stat": "Unpaid principal less MLVR",
+          "delta": "GAAP earlier credit recognition"
+        },
+        {
+          "aspect": "90+ delinquent",
+          "gaap": "Higher CECL allowance",
+          "stat": "Non-admitted unless adequately secured",
+          "delta": "STAT cliff"
+        }
       ],
-      "tags": ["FSLI", "Mortgage", "CRE", "Schedule B"]
+      "tags": [
+        "FSLI",
+        "Mortgage",
+        "CRE",
+        "Schedule B"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2037.pdf"
+    },
+    {
+      "id": "SSAP-38",
+      "number": "38",
+      "title": "Acquisition, Development and Construction (ADC) Loans",
+      "fsli": "ADC Loans",
+      "summary": "Real-estate acquisition, development, and construction loans.",
+      "chapter_content": "SSAP No. 38 covers ADC loans on real estate. Recognition follows substance \u2014 if loan has real-estate-investment characteristics, classify accordingly.",
+      "need": "Distinguishes pure debt instruments from quasi-equity real-estate investments.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 38 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "ADC classification",
+          "gaap": "ASC 310-30",
+          "stat": "Substance over form",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2038.pdf",
+      "tags": [
+        "ADC Loans",
+        "SSAP"
+      ]
     },
     {
       "id": "SSAP-41R",
@@ -467,16 +990,2192 @@
       "title": "Surplus Notes",
       "fsli": "Surplus Notes",
       "summary": "Subordinated debt instrument that counts as surplus for statutory purposes; interest payments require regulatory approval.",
-      "chapter_content": "SSAP No. 41R defines surplus notes — subordinated debt instruments issued by an insurance entity. Both principal repayment and interest payments require prior approval of the domiciliary commissioner. Until approved, payments are not accrued. From the issuing insurer's perspective, surplus notes count as surplus rather than debt.",
+      "chapter_content": "SSAP No. 41R defines surplus notes \u2014 subordinated debt instruments issued by an insurance entity. Both principal repayment and interest payments require prior approval of the domiciliary commissioner. Until approved, payments are not accrued. From the issuing insurer's perspective, surplus notes count as surplus rather than debt.",
       "need": "Provides insurers a mechanism to raise capital that is treated as surplus by the regulator while remaining debt to the holder.",
       "evolution": [
-        {"year": "2001", "change": "Original SSAP 41 issued."}
+        {
+          "year": "2001",
+          "change": "Original SSAP 41 issued."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Classification (issuer)", "gaap": "Long-term debt", "stat": "Surplus", "delta": "Material balance-sheet difference"},
-        {"aspect": "Interest payment", "gaap": "Accrue on contractual basis", "stat": "Accrue only when commissioner approves", "delta": "STAT may have disclosed but unaccrued interest"}
+        {
+          "aspect": "Classification (issuer)",
+          "gaap": "Long-term debt",
+          "stat": "Surplus",
+          "delta": "Material balance-sheet difference"
+        },
+        {
+          "aspect": "Interest payment",
+          "gaap": "Accrue on contractual basis",
+          "stat": "Accrue only when commissioner approves",
+          "delta": "STAT may have disclosed but unaccrued interest"
+        }
       ],
-      "tags": ["Surplus Notes", "Subordinated Debt", "Capital"]
+      "tags": [
+        "Surplus Notes",
+        "Subordinated Debt",
+        "Capital"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2041R.pdf"
+    },
+    {
+      "id": "SSAP-43R",
+      "number": "43R",
+      "title": "Loan-Backed and Structured Securities",
+      "fsli": "Investments \u2014 RMBS / CMBS / CLOs",
+      "summary": "NAIC-modeled designation framework for residential MBS, commercial MBS, and CLOs. Carrying value follows the modeled designation rather than NRSRO ratings.",
+      "chapter_content": "SSAP No. 43R covers RMBS, CMBS, and structured-credit instruments. NAIC designations come from a vendor model (e.g., BlackRock's PIMS for legacy non-agency RMBS) rather than NRSRO ratings. NAIC 1\u20132 carry at amortized cost; lower designations carry at fair value. AVR contributions track modeled credit losses. Reported on Schedule D Part 1.",
+      "need": "Provides a transparent, model-driven carrying basis for structured securities whose NRSRO ratings have historically been unreliable (e.g., the 2008 RMBS rating collapse).",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "SSAP 43R issued in response to the 2008 financial crisis to remove reliance on NRSRO ratings."
+        },
+        {
+          "year": "2024",
+          "change": "CLO equity tranche designation tightened from NAIC 5 to NAIC 6 across the board."
+        },
+        {
+          "year": "2026",
+          "change": "Bond definition project effects: certain CLO tranches reclassified out of SSAP 43R into SSAP 26R or SSAP 48."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Designation source",
+          "gaap": "Internal CECL modeling",
+          "stat": "NAIC vendor model + designation override",
+          "delta": "STAT central; GAAP entity-specific"
+        },
+        {
+          "aspect": "Carrying value",
+          "gaap": "AFS fair value with OCI",
+          "stat": "Amortized cost (NAIC 1-2) or FV (NAIC 4-6)",
+          "delta": "STAT step-down"
+        },
+        {
+          "aspect": "Impairment trigger",
+          "gaap": "CECL day-one allowance",
+          "stat": "OTTI when modeled credit loss exceeds threshold",
+          "delta": "GAAP earlier"
+        }
+      ],
+      "tags": [
+        "FSLI",
+        "Investments",
+        "RMBS",
+        "CMBS",
+        "CLO",
+        "Schedule D"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2043R.pdf"
+    },
+    {
+      "id": "SSAP-47",
+      "number": "47",
+      "title": "Uninsured Plans",
+      "fsli": "ASO Plans",
+      "summary": "Administrative-services-only (ASO) and uninsured plan accounting.",
+      "chapter_content": "SSAP No. 47 covers contracts where the insurer provides administrative services but does not bear insurance risk.",
+      "need": "Distinguishes pure administration revenue from insurance revenue for accurate insurance-leverage analysis.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 47 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "ASO revenue",
+          "gaap": "Service revenue (ASC 606)",
+          "stat": "SSAP 47 fee revenue",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2047.pdf",
+      "tags": [
+        "ASO Plans",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-48",
+      "number": "48",
+      "title": "Joint Ventures, Partnerships and Limited Liability Companies",
+      "fsli": "Investments \u2014 LP / LLC / JV",
+      "summary": "Equity-method accounting for partnership interests; non-admission rules tied to audited financial statements of underlying entity.",
+      "chapter_content": "SSAP No. 48 mandates equity-method accounting for joint ventures, limited partnerships, and LLCs. The undistributed-earnings increment to surplus is admitted only when the LP/JV provides audited GAAP-basis financials. Look-through to underlying assets is required for risk-based capital calculations.",
+      "need": "Captures economic exposure to partnership investments while preventing recognition of unsubstantiated gains.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 48 issued."
+        },
+        {
+          "year": "2019",
+          "change": "Audited-financials requirement tightened \u2014 interim audit not sufficient."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Method",
+          "gaap": "Equity method or NAV expedient",
+          "stat": "Equity method only",
+          "delta": "Largely aligned"
+        },
+        {
+          "aspect": "Undistributed earnings",
+          "gaap": "Recognized at investee reporting period",
+          "stat": "Recognized only with audited LP financials",
+          "delta": "STAT may exclude"
+        }
+      ],
+      "tags": [
+        "FSLI",
+        "Investments",
+        "LP",
+        "LLC",
+        "JV",
+        "Schedule BA"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2048.pdf"
+    },
+    {
+      "id": "SSAP-49",
+      "number": "49",
+      "title": "Policy Loans",
+      "fsli": "Policy Loans",
+      "summary": "Policy loans against permanent life-insurance contracts.",
+      "chapter_content": "SSAP No. 49 covers policy loans \u2014 secured by the policyholder's cash value. Recognized at unpaid principal; admitted to extent of cash value.",
+      "need": "Provides consistent accounting for loans inherent to permanent life products.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 49 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Policy loans",
+          "gaap": "ASC 944",
+          "stat": "SSAP 49",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2049.pdf",
+      "tags": [
+        "Policy Loans",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-50",
+      "number": "50",
+      "title": "Classifications and Definitions of Insurance or Managed-Care Contracts in Force",
+      "fsli": "Contract classification",
+      "summary": "Defines insurance vs investment vs managed-care contract types. Foundational classification governing applicable reserving SSAP.",
+      "chapter_content": "SSAP No. 50 establishes the taxonomy used across all reserving SSAPs: long-duration vs short-duration; participating vs non-participating; with vs without significant insurance risk; deposit-type vs insurance-type. Drives which subsequent SSAP (51, 53, 54, 55, 56) governs measurement.",
+      "need": "Without consistent classification, reserves would not be comparable across companies. Establishes the prerequisite for everything else in the reserving framework.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 50 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Classification framework",
+          "gaap": "ASC 944 short vs long duration; deposit vs insurance",
+          "stat": "Same with statutory-specific overlays",
+          "delta": "Largely aligned"
+        }
+      ],
+      "tags": [
+        "Classification",
+        "Reserving"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2050.pdf"
+    },
+    {
+      "id": "SSAP-51R",
+      "number": "51R",
+      "title": "Life Contracts",
+      "fsli": "Life Reserves",
+      "summary": "Reserve methodology for life contracts. Incorporates the Valuation Manual (VM-20 PBR for new business; CARVM for annuities).",
+      "chapter_content": "SSAP No. 51R requires reserves for life-insurance contracts to follow the NAIC Valuation Manual. For new business since 2017, VM-20 Principle-Based Reserves applies the maximum of: Net Premium Reserve (formula-based), Deterministic Reserve (projected cash flows), and Stochastic Reserve (1,000-scenario CTE-70). Annuity contracts use CARVM (Commissioners' Annuity Reserve Valuation Method). VM-21 governs variable-annuity reserves.",
+      "need": "Provides a regulator-approved, conservative reserving framework that ensures life insurers hold sufficient assets to meet long-duration obligations under stress scenarios.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 51 issued."
+        },
+        {
+          "year": "2017",
+          "change": "VM-20 PBR effective for new policies."
+        },
+        {
+          "year": "2020",
+          "change": "Full VM-20 PBR phase-in complete."
+        },
+        {
+          "year": "2025",
+          "change": "VM-22 (annuity PBR) effective for new annuity contracts."
+        },
+        {
+          "year": "2026",
+          "change": "Convergence project narrowing differences with GAAP LDTI cohort accounting."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Reserve methodology",
+          "gaap": "LDTI cohort-level LFPB (post-2023)",
+          "stat": "VM-20 PBR (max of NPR/DR/SR)",
+          "delta": "Both principle-based now; differ in unlocking rules"
+        },
+        {
+          "aspect": "Discount rate",
+          "gaap": "Single-A upper-medium-grade, current",
+          "stat": "Prescribed valuation rates",
+          "delta": "GAAP rate-driven volatility; STAT smooth"
+        },
+        {
+          "aspect": "Annuity reserve",
+          "gaap": "Cohort LFPB",
+          "stat": "CARVM (SSAP 51R) or VM-22",
+          "delta": "Different formula entirely"
+        }
+      ],
+      "tags": [
+        "Life",
+        "Reserves",
+        "VM-20",
+        "PBR",
+        "CARVM",
+        "VM-22"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2051R.pdf"
+    },
+    {
+      "id": "SSAP-52",
+      "number": "52",
+      "title": "Deposit-Type Contracts",
+      "fsli": "Deposit Contracts",
+      "summary": "Investment contracts not meeting insurance-risk threshold \u2014 deposit accounting.",
+      "chapter_content": "SSAP No. 52 governs deposit-type contracts (e.g., GIC, funding agreements) where insurance risk is minimal \u2014 accounted for as deposits.",
+      "need": "Distinguishes pure financial-instrument-like contracts from genuine insurance contracts.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 52 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Deposit accounting",
+          "gaap": "ASC 944 \u2014 deposit",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2052.pdf",
+      "tags": [
+        "Deposit Contracts",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-53",
+      "number": "53",
+      "title": "Property and Casualty Premium Income",
+      "fsli": "P&C Premium",
+      "summary": "P&C premium recognition \u2014 written, earned, unearned tracking.",
+      "chapter_content": "SSAP No. 53 covers P&C premium recognition. Written premium booked at policy effective date; earned ratably over coverage period; unearned-premium reserve held until earned.",
+      "need": "Provides the revenue framework underlying combined-ratio analysis.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 53 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Premium recognition",
+          "gaap": "ASC 944-605",
+          "stat": "SSAP 53",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2053.pdf",
+      "tags": [
+        "P&C Premium",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-54R",
+      "number": "54R",
+      "title": "Individual and Group Accident and Health Contracts",
+      "fsli": "A&H Reserves",
+      "summary": "Reserve framework for accident-and-health contracts including long-term care, disability, and cancer policies.",
+      "chapter_content": "SSAP No. 54R requires active-life reserves and disabled-life reserves for A&H contracts. Long-term care reserves use prescribed mortality and morbidity tables with annual gross-premium-valuation testing for adequacy. Recent industry experience has driven significant reserve strengthening across the LTC block.",
+      "need": "A&H contracts typically have decades-long claim payouts; conservative reserves are essential to ensure benefits remain payable.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 54 issued."
+        },
+        {
+          "year": "2017",
+          "change": "LTC reserve adequacy testing intensified following industry-wide morbidity / lapse divergence."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "LTC reserves",
+          "gaap": "LDTI cohort LFPB with annual unlocking",
+          "stat": "Active life + disabled life under SSAP 54R",
+          "delta": "Both have triggered $200M-$2B unlockings 2023-2024"
+        }
+      ],
+      "tags": [
+        "A&H",
+        "LTC",
+        "Disability",
+        "Reserves"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2054R.pdf"
+    },
+    {
+      "id": "SSAP-55",
+      "number": "55",
+      "title": "Unpaid Claims, Losses and Loss Adjustment Expenses",
+      "fsli": "P&C Loss Reserves",
+      "summary": "P&C loss-reserve methodology \u2014 case + IBNR + LAE, undiscounted (with limited tabular discount exception). Driven by Schedule P.",
+      "chapter_content": "SSAP No. 55 mandates P&C insurers carry their best estimate of incurred-but-not-paid losses, IBNR, and loss-adjustment expense (allocated and unallocated). Reserves are undiscounted except for tabular workers' compensation indemnity where the domiciliary commissioner approves a discount rate. The Statement of Actuarial Opinion is required at year-end signed by a qualified appointed actuary. Schedule P discloses ten-accident-year loss-development triangles by line of business.",
+      "need": "Ensures P&C insurers hold sufficient reserves to pay future claims arising from already-occurred events. The Schedule P disclosure permits regulators and analysts to assess reserve adequacy externally.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 55 issued."
+        },
+        {
+          "year": "2010",
+          "change": "Risk margins required for reserves with significant uncertainty."
+        },
+        {
+          "year": "2016",
+          "change": "Schedule P expanded to ten accident years."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Discount",
+          "gaap": "Generally undiscounted; tabular WC permitted",
+          "stat": "Same \u2014 undiscounted; tabular WC with commissioner approval",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Loss-development disclosure",
+          "gaap": "ASU 2015-09 ten-year triangles",
+          "stat": "Schedule P (full) \u2014 every line",
+          "delta": "STAT more granular"
+        },
+        {
+          "aspect": "Risk margin",
+          "gaap": "Best estimate; no explicit margin",
+          "stat": "Implicit via RBC R5",
+          "delta": "STAT requires more capital for riskier reserves"
+        }
+      ],
+      "tags": [
+        "P&C",
+        "Loss Reserves",
+        "IBNR",
+        "LAE",
+        "Schedule P"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2055.pdf"
+    },
+    {
+      "id": "SSAP-56",
+      "number": "56",
+      "title": "Separate Accounts",
+      "fsli": "Separate Accounts",
+      "summary": "Carrying-value framework for separate-account assets and liabilities (variable annuities, variable life, pension separate accounts).",
+      "chapter_content": "SSAP No. 56 requires separate-account assets and corresponding policyholder reserves to be presented in summary form on the balance sheet at fair value. Investment performance flows directly to policyholders. The general account retains a contingent obligation under guaranteed minimum benefit provisions, accounted for under VM-21.",
+      "need": "Reflects the contractual structure where policyholders bear investment risk on segregated assets, while preserving regulator visibility into the general-account contingent obligations.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 56 issued."
+        },
+        {
+          "year": "2024",
+          "change": "Disclosure expanded for separate accounts containing private-equity / hedge-fund holdings."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Separate-account assets",
+          "gaap": "Fair value, presented separately",
+          "stat": "Fair value, summary line",
+          "delta": "Aligned presentation"
+        },
+        {
+          "aspect": "GMxB contingent obligation",
+          "gaap": "MRB at fair value (LDTI)",
+          "stat": "VM-21 stochastic CTE 70",
+          "delta": "Different measurement; same intent"
+        }
+      ],
+      "tags": [
+        "Variable Annuity",
+        "Separate Account",
+        "VM-21",
+        "MRB"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2056.pdf"
+    },
+    {
+      "id": "SSAP-57",
+      "number": "57",
+      "title": "Title Insurance",
+      "fsli": "Title Insurance",
+      "summary": "Specialized accounting for title insurance \u2014 premium recognition at policy issuance.",
+      "chapter_content": "SSAP No. 57 governs title insurance \u2014 premium fully earned at policy issuance, with statutory premium reserves held thereafter.",
+      "need": "Title insurance economics differ from other P&C; specialized accounting prevents distortion.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 57 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Title premium",
+          "gaap": "Recognize at issuance",
+          "stat": "Same with statutory reserves",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2057.pdf",
+      "tags": [
+        "Title Insurance",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-58",
+      "number": "58",
+      "title": "Mortgage Guaranty Insurance",
+      "fsli": "Mortgage Guaranty",
+      "summary": "Specialized accounting for mortgage-guaranty insurance \u2014 countercyclical contingency reserves.",
+      "chapter_content": "SSAP No. 58 governs mortgage-guaranty insurance with the unique contingency-reserve requirement (50% of net earned premium) intended to absorb credit-cycle losses.",
+      "need": "Mortgage-guaranty insurance has long, countercyclical loss patterns demanding specialized reserving.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 58 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Contingency reserve",
+          "gaap": "Not required under GAAP",
+          "stat": "50% of net earned premium",
+          "delta": "STAT-unique"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2058.pdf",
+      "tags": [
+        "Mortgage Guaranty",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-59",
+      "number": "59",
+      "title": "Credit Life and Accident & Health Insurance",
+      "fsli": "Credit Life/A&H",
+      "summary": "Specialized accounting for credit life and credit A&H contracts attached to debt.",
+      "chapter_content": "SSAP No. 59 governs credit-life and credit-A&H insurance \u2014 typically purchased to repay debt on death or disability.",
+      "need": "Credit-attached coverages have specialized economics; harmonized accounting ensures comparability.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 59 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Earnings pattern",
+          "gaap": "ASC 944",
+          "stat": "Mortality-pattern earning",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2059.pdf",
+      "tags": [
+        "Credit Life/A&H",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-61R",
+      "number": "61R",
+      "title": "Life, Deposit-Type and Accident and Health Reinsurance",
+      "fsli": "Life Reinsurance",
+      "summary": "Accounting for life and accident/health reinsurance \u2014 coinsurance, modified coinsurance, YRT, funds-withheld arrangements.",
+      "chapter_content": "SSAP No. 61R covers cession and assumption accounting for life, deposit-type, and A&H reinsurance. Common forms include coinsurance, modified coinsurance (with funds withheld), yearly renewable term (YRT), and stop-loss. The reinsurance contract must transfer significant insurance risk to qualify for reinsurance accounting; otherwise, deposit accounting applies.",
+      "need": "Ensures cessions deliver actual risk transfer rather than synthetic capital relief. Schedule S Part 3 provides reinsurer-level disclosure analogous to P&C Schedule F.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 61 issued."
+        },
+        {
+          "year": "2020",
+          "change": "Risk-transfer requirements harmonized with SSAP 62R."
+        },
+        {
+          "year": "2024",
+          "change": "Funds-withheld coinsurance disclosure expanded for Bermuda-domiciled reinsurer transactions."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Risk-transfer test",
+          "gaap": "ASC 944-20-15-41 \u2014 significant risk + reasonable possibility of loss",
+          "stat": "SSAP 61R Appendix \u2014 same test",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Funds-withheld arrangements",
+          "gaap": "Funds-held liability + investment income to reinsurer",
+          "stat": "Same; admitted asset under SSAP 61R",
+          "delta": "Aligned"
+        }
+      ],
+      "tags": [
+        "Reinsurance",
+        "Life",
+        "Coinsurance",
+        "Schedule S"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2061R.pdf"
+    },
+    {
+      "id": "SSAP-62R",
+      "number": "62R",
+      "title": "Property and Casualty Reinsurance",
+      "fsli": "P&C Reinsurance",
+      "summary": "Cession and assumption accounting for P&C reinsurance \u2014 quota share, XOL, LPT, ADC. Includes the canonical risk-transfer test.",
+      "chapter_content": "SSAP No. 62R governs P&C reinsurance accounting. Prospective contracts (covering future events) recognize ceded premium over the coverage period. Retrospective contracts (covering prior events) require deposit accounting if risk transfer is insufficient. Loss-portfolio transfers (LPTs) and adverse-development covers (ADCs) defer any gain through the interest method. Schedule F Parts 1\u20139 provide reinsurer-level disclosure including authorized status, slow-pay provision, and collateral.",
+      "need": "Ensures cessions transfer actual loss risk; prevents financial-engineering 'reinsurance' deals that synthetically inflate surplus.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 62 issued."
+        },
+        {
+          "year": "2020",
+          "change": "SSAP 62R revisions narrowed historic gap with GAAP for retrospective reinsurance."
+        },
+        {
+          "year": "2025",
+          "change": "Reciprocal jurisdiction implementation reduced collateral requirements for qualifying European/UK reinsurers."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Risk-transfer test",
+          "gaap": "ASC 944-20-15-41",
+          "stat": "SSAP 62R Appendix A",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "LPT / ADC accounting",
+          "gaap": "Recoverable + interest-method gain deferral",
+          "stat": "Same approach (par 36)",
+          "delta": "Aligned post-2020"
+        },
+        {
+          "aspect": "Slow-pay provision",
+          "gaap": "Higher CECL allowance",
+          "stat": "20% provision per SSAP 62R if 90+ days past due",
+          "delta": "STAT formula-driven"
+        }
+      ],
+      "tags": [
+        "Reinsurance",
+        "P&C",
+        "LPT",
+        "ADC",
+        "Schedule F"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2062R.pdf"
+    },
+    {
+      "id": "SSAP-63",
+      "number": "63",
+      "title": "Underwriting Pools and Associations Including Intercompany Pools",
+      "fsli": "Pools",
+      "summary": "Accounting for participation in underwriting pools and associations.",
+      "chapter_content": "SSAP No. 63 covers participation in underwriting pools \u2014 the participant records its share of pool premium, losses, and expenses.",
+      "need": "Many P&C insurers participate in pools (e.g., FAIR plans); consistent accounting prevents off-balance-sheet treatment.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 63 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Pool participation",
+          "gaap": "Proportionate consolidation",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2063.pdf",
+      "tags": [
+        "Pools",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-64",
+      "number": "64",
+      "title": "Offsetting and Netting of Assets and Liabilities",
+      "fsli": "Netting",
+      "summary": "When assets and liabilities can be offset \u2014 strict right-of-offset criteria.",
+      "chapter_content": "SSAP No. 64 permits offsetting only when there is a legal right of offset, intent to offset, and the amounts are determinable. Master netting agreements may qualify.",
+      "need": "Prevents inflation/deflation of gross balances through inappropriate netting.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 64 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Right of offset",
+          "gaap": "ASC 210-20",
+          "stat": "SSAP 64",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2064.pdf",
+      "tags": [
+        "Netting",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-65",
+      "number": "65",
+      "title": "Property and Casualty Contracts",
+      "fsli": "P&C Underwriting",
+      "summary": "Premium recognition, premium-deficiency reserves, and policyholder dividends for P&C contracts.",
+      "chapter_content": "SSAP No. 65 covers premium revenue recognition (pro-rata over coverage period), premium-deficiency reserves (when expected losses + LAE exceed unearned premium plus expected investment income), and policyholder dividend accruals. Policyholder dividends declared from divisible surplus reduce surplus when paid.",
+      "need": "Provides consistent revenue and dividend accounting across P&C carriers.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 65 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Premium earning",
+          "gaap": "Pro-rata over coverage",
+          "stat": "Same",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "PDR trigger",
+          "gaap": "ASC 944-60-25",
+          "stat": "SSAP 65",
+          "delta": "Aligned"
+        }
+      ],
+      "tags": [
+        "P&C",
+        "Premium",
+        "PDR",
+        "Dividends"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2065.pdf"
+    },
+    {
+      "id": "SSAP-66",
+      "number": "66",
+      "title": "Retrospectively Rated Contracts",
+      "fsli": "Retro-rated",
+      "summary": "Retrospectively rated insurance contracts \u2014 premium adjustments based on actual experience.",
+      "chapter_content": "SSAP No. 66 covers retrospectively rated contracts \u2014 premium is adjusted at the end of the experience period based on actual loss experience.",
+      "need": "Captures the true economic premium for retro-rated contracts where the policyholder ultimately bears most of the underwriting risk.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 66 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Retro premium",
+          "gaap": "Estimated and accrued",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2066.pdf",
+      "tags": [
+        "Retro-rated",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-68",
+      "number": "68",
+      "title": "Business Combinations and Goodwill",
+      "fsli": "Goodwill",
+      "summary": "Statutory accounting for insurance-company acquisitions. Goodwill admission limited to 10% of acquirer capital and amortized over 10 years.",
+      "chapter_content": "SSAP No. 68 governs accounting for insurance-company acquisitions and the resulting goodwill. Goodwill = excess of purchase price over fair value of acquired statutory net assets. Admitted goodwill limited to lesser of (a) 10% of acquirer's capital and surplus, or (b) the amortizable amount, with amortization over 10 years or less. Excess goodwill is non-admitted.",
+      "need": "Prevents goodwill \u2014 an intangible whose recoverability depends on continued operations \u2014 from inflating statutory surplus.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 68 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Goodwill admission cap clarified."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Goodwill recognition",
+          "gaap": "Full purchase-method goodwill (ASC 805)",
+          "stat": "Limited to 10% admission cap",
+          "delta": "STAT severely limits"
+        },
+        {
+          "aspect": "Amortization",
+          "gaap": "No amortization; impairment-tested",
+          "stat": "10-year amortization",
+          "delta": "STAT mechanical"
+        },
+        {
+          "aspect": "VOBA",
+          "gaap": "Recognized at fair value",
+          "stat": "Effectively N/A \u2014 replaced by goodwill admission",
+          "delta": "Material divergence"
+        }
+      ],
+      "tags": [
+        "M&A",
+        "Goodwill",
+        "VOBA"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2068.pdf"
+    },
+    {
+      "id": "SSAP-69",
+      "number": "69",
+      "title": "Statement of Cash Flows",
+      "fsli": "Cash Flow",
+      "summary": "Cash-flow statement format for statutory financial statements.",
+      "chapter_content": "SSAP No. 69 governs the statutory statement of cash flows \u2014 direct method only, with operating / investing / financing classification.",
+      "need": "Provides regulators with insight into liquidity dynamics independent of accrual-basis surplus.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 69 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Cash flow method",
+          "gaap": "Direct or indirect (ASC 230)",
+          "stat": "Direct only",
+          "delta": "STAT mandates direct"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2069.pdf",
+      "tags": [
+        "Cash Flow",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-70",
+      "number": "70",
+      "title": "Allocation of Expenses",
+      "fsli": "Expense Allocation",
+      "summary": "Allocation of operating expenses across lines of business and product categories.",
+      "chapter_content": "SSAP No. 70 requires consistent allocation of expenses across lines of business per regulatory expense-exhibit reporting.",
+      "need": "Ensures comparability of line-of-business profitability metrics across insurers.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 70 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Expense allocation",
+          "gaap": "Generally not prescribed",
+          "stat": "Insurance Expense Exhibit format",
+          "delta": "STAT prescribed"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2070.pdf",
+      "tags": [
+        "Expense Allocation",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-71",
+      "number": "71",
+      "title": "Policy Acquisition Costs and Commissions",
+      "fsli": "Commissions",
+      "summary": "Commission accounting \u2014 generally expensed when incurred under SAP.",
+      "chapter_content": "SSAP No. 71 governs commission expense \u2014 expensed when incurred (no DAC asset under SAP).",
+      "need": "Implements the broad SAP principle of expensing acquisition costs; reinforces SSAP 4 non-admission.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 71 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Commission expense",
+          "gaap": "DAC capitalization (ASC 944-30)",
+          "stat": "Expense when incurred",
+          "delta": "Largest GAAP-STAT difference"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2071.pdf",
+      "tags": [
+        "Commissions",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-72",
+      "number": "72",
+      "title": "Surplus and Quasi-Reorganizations",
+      "fsli": "Surplus",
+      "summary": "Defines components of surplus, capital structure, and rules around quasi-reorganizations and dividend payments.",
+      "chapter_content": "SSAP No. 72 defines statutory surplus components (capital + paid-in surplus + unassigned surplus) and the rules governing capital changes, stock splits, and quasi-reorganizations. Dividend payments are subject to ordinary-vs-extraordinary thresholds set by the domiciliary state \u2014 typically 10% of surplus or prior-year net income.",
+      "need": "Provides the regulator with control over capital management actions that could materially weaken solvency.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 72 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Dividend approval",
+          "gaap": "Board-approved",
+          "stat": "Regulator-approved if extraordinary",
+          "delta": "STAT additional gate"
+        },
+        {
+          "aspect": "Surplus presentation",
+          "gaap": "Equity = Assets - Liabilities",
+          "stat": "Surplus = Admitted - Liabilities - AVR - IMR",
+          "delta": "STAT more conservative"
+        }
+      ],
+      "tags": [
+        "Surplus",
+        "Capital",
+        "Dividends",
+        "Quasi-Reorganization"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2072.pdf"
+    },
+    {
+      "id": "SSAP-73",
+      "number": "73",
+      "title": "Health Care Delivery Assets \u2014 Supplies, Pharmaceuticals and Surgical Supplies, Durable Medical Equipment",
+      "fsli": "Healthcare Assets",
+      "summary": "Health-care delivery assets at managed-care insurers.",
+      "chapter_content": "SSAP No. 73 covers health-care delivery assets \u2014 supplies, pharmaceuticals, durable medical equipment, etc.",
+      "need": "Provides specialized treatment for managed-care entities with vertically integrated delivery operations.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 73 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Healthcare assets",
+          "gaap": "ASC 330 (inventory)",
+          "stat": "SSAP 73",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2073.pdf",
+      "tags": [
+        "Healthcare Assets",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-74",
+      "number": "74",
+      "title": "Insurance-Related Assessments",
+      "fsli": "Assessments",
+      "summary": "Recognition of insurance-related assessments beyond guaranty-fund (e.g., second-injury, reinsurance superintendents).",
+      "chapter_content": "SSAP No. 74 recognizes insurance-related assessments when probable and estimable.",
+      "need": "Closes scope gaps not addressed by SSAP 35R.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 74 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Assessment recognition",
+          "gaap": "ASC 405-30",
+          "stat": "SSAP 74",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2074.pdf",
+      "tags": [
+        "Assessments",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-75",
+      "number": "75",
+      "title": "Reinsurance Premium Receivables",
+      "fsli": "Reinsurance Receivables",
+      "summary": "Reinsurance premium receivables \u2014 admission and aged-receivable rules.",
+      "chapter_content": "SSAP No. 75 governs reinsurance premium receivables \u2014 generally admitted unless overdue.",
+      "need": "Cross-reference to SSAP 6 for aging rules and SSAP 62R for risk-transfer evaluation.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 75 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Reinsurance receivable",
+          "gaap": "ASC 944-310 + CECL",
+          "stat": "SSAP 75 with non-admit",
+          "delta": "GAAP earlier"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2075.pdf",
+      "tags": [
+        "Reinsurance Receivables",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-76",
+      "number": "76",
+      "title": "Repurchase Agreements, Reverse Repos, and Dollar Repurchase Agreements",
+      "fsli": "Repos",
+      "summary": "Repurchase agreements and reverse-repo accounting \u2014 secured borrowing vs sale treatment.",
+      "chapter_content": "SSAP No. 76 covers repos. Most repos are secured borrowings; certain repos with right to substitute collateral may be sales.",
+      "need": "Provides bright-line guidance on repo classification critical for liquidity-management programs.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 76 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Repo classification",
+          "gaap": "ASC 860 (transfers)",
+          "stat": "SSAP 76",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2076.pdf",
+      "tags": [
+        "Repos",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-77",
+      "number": "77",
+      "title": "Loaning of Securities",
+      "fsli": "Securities Lending",
+      "summary": "Securities-lending program accounting \u2014 borrower vs lender perspective.",
+      "chapter_content": "SSAP No. 77 covers securities-lending arrangements. Lender retains the security on the balance sheet; collateral is recognized as a separate asset and corresponding liability.",
+      "need": "Securities lending is a meaningful yield enhancer for insurers; consistent accounting prevents off-balance-sheet treatment.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 77 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Sec lending",
+          "gaap": "ASC 860-30",
+          "stat": "SSAP 77",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2077.pdf",
+      "tags": [
+        "Securities Lending",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-78",
+      "number": "78",
+      "title": "Health Maintenance Organizations and Other Managed Care Plans",
+      "fsli": "HMO",
+      "summary": "HMO and managed-care plan accounting \u2014 capitation revenue and provider liabilities.",
+      "chapter_content": "SSAP No. 78 covers HMOs \u2014 capitation revenue earned over coverage period; incurred-but-not-reported claim liabilities held for medical services.",
+      "need": "Specialized accounting for managed-care entities whose economics differ from indemnity insurers.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 78 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "HMO accounting",
+          "gaap": "ASC 944 (managed care)",
+          "stat": "SSAP 78",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2078.pdf",
+      "tags": [
+        "HMO",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-81",
+      "number": "81",
+      "title": "Software Revenue Recognition",
+      "fsli": "Software Revenue",
+      "summary": "Software revenue recognition for insurance-tech operations.",
+      "chapter_content": "SSAP No. 81 covers software revenue recognition for insurance-related software products.",
+      "need": "Captures revenue from insurer-developed software offered to third parties.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 81 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Software revenue",
+          "gaap": "ASC 606 / 985-605",
+          "stat": "SSAP 81",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2081.pdf",
+      "tags": [
+        "Software Revenue",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-82",
+      "number": "82",
+      "title": "Health Care Delivery Assets \u2014 Pharmacy and Similar",
+      "fsli": "Pharmacy",
+      "summary": "Pharmacy and similar healthcare-delivery assets.",
+      "chapter_content": "SSAP No. 82 expands SSAP 73 coverage to additional healthcare delivery assets.",
+      "need": "Closes scope gaps for managed-care entities with deeper delivery integration.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 82 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Pharmacy assets",
+          "gaap": "ASC 330",
+          "stat": "SSAP 82",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2082.pdf",
+      "tags": [
+        "Pharmacy",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-83",
+      "number": "83",
+      "title": "Cash Flow Statement Format Changes",
+      "fsli": "Cash Flow",
+      "summary": "Format updates to the statutory cash-flow statement.",
+      "chapter_content": "SSAP No. 83 makes refinements to the cash-flow statement format introduced by SSAP 69.",
+      "need": "Improves transparency of investing and financing cash flows.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 83 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Cash flow detail",
+          "gaap": "Aligned ASC 230",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2083.pdf",
+      "tags": [
+        "Cash Flow",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-84",
+      "number": "84",
+      "title": "Health Care and Government Insured Plan Receivables",
+      "fsli": "Healthcare Receivables",
+      "summary": "Health-care receivables from government-insured programs (Medicare, Medicaid).",
+      "chapter_content": "SSAP No. 84 covers receivables from government-insured plans including Medicare Risk Adjustment, Medicaid claim payments.",
+      "need": "Complex government receivable streams need specialized recognition and admission rules.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 84 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Government receivables",
+          "gaap": "ASC 326 + ASC 944",
+          "stat": "SSAP 84",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2084.pdf",
+      "tags": [
+        "Healthcare Receivables",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-85",
+      "number": "85",
+      "title": "Derivative Instruments \u2014 Disclosure Requirements",
+      "fsli": "Derivatives Disclosure",
+      "summary": "Enhanced disclosure for derivative instruments.",
+      "chapter_content": "SSAP No. 85 mandates expanded disclosure of derivative positions, hedging programs, and counterparty exposures.",
+      "need": "Complements SSAP 86 with disclosure transparency required for solvency assessment.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 85 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Derivative disclosure",
+          "gaap": "ASC 815 disclosure",
+          "stat": "SSAP 85",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2085.pdf",
+      "tags": [
+        "Derivatives Disclosure",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-86",
+      "number": "86",
+      "title": "Derivatives",
+      "fsli": "Derivatives",
+      "summary": "Derivative accounting and hedge designation for statutory entities. Provides more flexible hedge accounting than ASC 815.",
+      "chapter_content": "SSAP No. 86 requires derivatives to be carried at fair value with non-hedging changes flowing through unassigned surplus (not P&L). Hedge accounting is available with simpler effectiveness tests than GAAP \u2014 when designated as an effective hedge, the derivative may be carried at amortized cost. Replication transactions (synthetic-asset construction) are explicitly permitted with prior commissioner approval. Reported on Schedule DB Parts A\u2013D.",
+      "need": "Allows insurers to hedge interest-rate, equity, and currency risk without introducing earnings volatility on hedged items already recorded at amortized cost.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 86 issued."
+        },
+        {
+          "year": "2020",
+          "change": "Hedging-effectiveness simplification aligned with ASU 2017-12."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Default measurement",
+          "gaap": "Fair value through P&L (ASC 815)",
+          "stat": "Fair value through surplus",
+          "delta": "GAAP earnings; STAT surplus"
+        },
+        {
+          "aspect": "Hedge accounting",
+          "gaap": "Strict three-design framework",
+          "stat": "More flexible; amortized cost when effective",
+          "delta": "STAT permits cleaner P&L"
+        },
+        {
+          "aspect": "Replication transactions",
+          "gaap": "Components separately accounted",
+          "stat": "Explicitly permitted with approval",
+          "delta": "STAT-only construct"
+        }
+      ],
+      "tags": [
+        "Derivatives",
+        "Hedging",
+        "Schedule DB",
+        "Replication"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2086.pdf"
+    },
+    {
+      "id": "SSAP-90",
+      "number": "90",
+      "title": "Disclosure of Significant Risks and Uncertainties",
+      "fsli": "Disclosure",
+      "summary": "Enhanced disclosure of significant risks and uncertainties beyond SSAP 1.",
+      "chapter_content": "SSAP No. 90 expands SSAP 1 risk-disclosure requirements with sector-specific guidance.",
+      "need": "Provides regulators and policyholders with deeper insight into emerging risks.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 90 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Risk disclosure",
+          "gaap": "ASC 275",
+          "stat": "SSAP 90",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2090.pdf",
+      "tags": [
+        "Disclosure",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-91R",
+      "number": "91R",
+      "title": "Accounting for Transfers and Servicing of Financial Assets and Extinguishments of Liabilities",
+      "fsli": "Transfers",
+      "summary": "Transfers of financial assets and extinguishment of liabilities \u2014 sale vs secured-borrowing tests.",
+      "chapter_content": "SSAP No. 91R aligns with ASC 860 for transfers and extinguishments. Sale treatment requires legal isolation, ability to pledge/exchange, and no continuing control.",
+      "need": "Critical for securitizations, factoring, and collateral pledging \u2014 distinguishes off-balance-sheet sales from secured borrowings.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 91 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Revised 91R."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Transfer test",
+          "gaap": "ASC 860",
+          "stat": "SSAP 91R same framework",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2091R.pdf",
+      "tags": [
+        "Transfers",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-92",
+      "number": "92",
+      "title": "Accounting for Postretirement Benefits Other Than Pensions",
+      "fsli": "OPEB",
+      "summary": "Other postretirement employment benefits accounting (medical, life, etc.).",
+      "chapter_content": "SSAP No. 92 governs accounting for postretirement benefits other than pensions, with actuarial valuation and accrual.",
+      "need": "Long-term obligation recognition consistent with pension accounting.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 92 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "OPEB accounting",
+          "gaap": "ASC 715",
+          "stat": "SSAP 92",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2092.pdf",
+      "tags": [
+        "OPEB",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-93",
+      "number": "93",
+      "title": "Accounting for Pension Benefits",
+      "fsli": "Pensions",
+      "summary": "Defined-benefit and defined-contribution pension accounting.",
+      "chapter_content": "SSAP No. 93 governs pension accounting \u2014 actuarial valuation for DB plans; accrual of contributions for DC plans.",
+      "need": "Captures the long-term insurer-employer obligations for benefit plans.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 93 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Pension accounting",
+          "gaap": "ASC 715",
+          "stat": "SSAP 93",
+          "delta": "Largely aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2093.pdf",
+      "tags": [
+        "Pensions",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-94R",
+      "number": "94R",
+      "title": "Transferable and Non-transferable State Tax Credits",
+      "fsli": "Tax Credits",
+      "summary": "Recognition of state tax credits \u2014 transferable vs non-transferable.",
+      "chapter_content": "SSAP No. 94R governs state tax credits including renewable energy and historic preservation credits.",
+      "need": "Provides specific guidance for monetizable tax positions distinct from federal tax accounting.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 94 issued."
+        },
+        {
+          "year": "2014",
+          "change": "Revised 94R."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Tax credit recognition",
+          "gaap": "ASC 740 + ASC 740-30",
+          "stat": "SSAP 94R",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2094R.pdf",
+      "tags": [
+        "Tax Credits",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-95",
+      "number": "95",
+      "title": "Exchanges of Nonmonetary Assets",
+      "fsli": "Exchanges",
+      "summary": "Accounting for exchanges of nonmonetary assets.",
+      "chapter_content": "SSAP No. 95 covers nonmonetary exchanges \u2014 generally fair-value-based recognition with limited exceptions.",
+      "need": "Aligned with broader nonmonetary-exchange principles to prevent gain manipulation.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 95 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Nonmonetary exchange",
+          "gaap": "ASC 845",
+          "stat": "SSAP 95",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2095.pdf",
+      "tags": [
+        "Exchanges",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-96",
+      "number": "96",
+      "title": "Settlement Requirements for Intercompany Transactions",
+      "fsli": "Intercompany",
+      "summary": "Settlement and reconciliation requirements for intercompany transactions.",
+      "chapter_content": "SSAP No. 96 mandates timely settlement of intercompany balances within an insurance group.",
+      "need": "Prevents indefinite buildup of intercompany balances that obscure economic substance.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 96 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Intercompany settlement",
+          "gaap": "Eliminated in consolidation",
+          "stat": "Settled per SSAP 96",
+          "delta": "STAT-specific operational rule"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2096.pdf",
+      "tags": [
+        "Intercompany",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-97",
+      "number": "97",
+      "title": "Investments in Subsidiary, Controlled and Affiliated Entities",
+      "fsli": "Affiliated Investments",
+      "summary": "Equity-method accounting for subsidiaries, controlled entities, and affiliates ('SCA').",
+      "chapter_content": "SSAP No. 97 mandates equity-method accounting for SCAs \u2014 investee statutory financials drive carrying value.",
+      "need": "Provides consistent recognition of affiliate interests at the parent level.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 97 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Affiliate investment",
+          "gaap": "Consolidation (ASC 810) or equity method",
+          "stat": "Equity method (SSAP 97)",
+          "delta": "GAAP consolidates; STAT does not"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%2097.pdf",
+      "tags": [
+        "Affiliated Investments",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-100R",
+      "number": "100R",
+      "title": "Fair Value",
+      "fsli": "Fair Value",
+      "summary": "Fair-value measurement framework for SAP.",
+      "chapter_content": "SSAP No. 100R adopts the ASC 820 fair-value framework \u2014 exit price, hierarchy of inputs (Level 1/2/3).",
+      "need": "Provides consistent fair-value framework across investment, derivative, and other measurements.",
+      "evolution": [
+        {
+          "year": "2010",
+          "change": "Original SSAP 100 issued."
+        },
+        {
+          "year": "2018",
+          "change": "Revised 100R aligned with ASC 820 updates."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "FV framework",
+          "gaap": "ASC 820",
+          "stat": "SSAP 100R",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20100R.pdf",
+      "tags": [
+        "Fair Value",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-101",
+      "number": "101",
+      "title": "Income Taxes",
+      "fsli": "Deferred Tax Assets",
+      "summary": "Statutory income-tax accounting and DTA admission framework via the three-bucket test.",
+      "chapter_content": "SSAP No. 101 governs current and deferred tax accounting for statutory entities. Admitted DTA equals Bucket 1 (federal taxes recoverable from prior years), plus Bucket 2 (DTAs reversing within 1\u20133 years and offsetting expected taxable income), plus Bucket 3 (DTAs offsetting DTLs of the same character). Excess DTAs are non-admitted, reducing surplus. The threshold and reversal-period tests depend on the entity's RBC status.",
+      "need": "Limits surplus credit for deferred tax benefits to those that are imminently or formulaically realizable \u2014 preventing a paper increase in surplus from speculative tax positions.",
+      "evolution": [
+        {
+          "year": "2001",
+          "change": "Original SSAP 10 issued."
+        },
+        {
+          "year": "2012",
+          "change": "SSAP 101 issued; three-bucket admission framework introduced."
+        },
+        {
+          "year": "2018",
+          "change": "TCJA: 80% NOL utilization cap incorporated."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "DTA recognition",
+          "gaap": "Recognize all DTAs net of valuation allowance",
+          "stat": "Three-bucket admission test",
+          "delta": "STAT more conservative"
+        },
+        {
+          "aspect": "Reversal period",
+          "gaap": "Indefinite",
+          "stat": "1-3 years depending on RBC",
+          "delta": "STAT bright-line"
+        }
+      ],
+      "tags": [
+        "Tax",
+        "DTA",
+        "DTL",
+        "Three-Bucket Test"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20101.pdf"
+    },
+    {
+      "id": "SSAP-102",
+      "number": "102",
+      "title": "Postretirement and Postemployment Benefits",
+      "fsli": "OPEB",
+      "summary": "Postretirement and postemployment benefit accounting (combined).",
+      "chapter_content": "SSAP No. 102 consolidates postretirement and postemployment benefit accounting.",
+      "need": "Streamlined guidance covering all post-employment obligations.",
+      "evolution": [
+        {
+          "year": "2012",
+          "change": "Original SSAP 102 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Post-employment",
+          "gaap": "ASC 715 / 712",
+          "stat": "SSAP 102",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20102.pdf",
+      "tags": [
+        "OPEB",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-103R",
+      "number": "103R",
+      "title": "Transfers and Servicing of Financial Assets and Extinguishments of Liabilities",
+      "fsli": "Transfers",
+      "summary": "Updated transfer accounting following ASC 860 amendments.",
+      "chapter_content": "SSAP No. 103R updates SSAP 91R to align with subsequent ASC 860 amendments.",
+      "need": "Maintains alignment with GAAP transfer-accounting framework.",
+      "evolution": [
+        {
+          "year": "2014",
+          "change": "Original SSAP 103 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Transfer accounting",
+          "gaap": "ASC 860 current",
+          "stat": "SSAP 103R",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20103R.pdf",
+      "tags": [
+        "Transfers",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-104R",
+      "number": "104R",
+      "title": "Share-Based Payments",
+      "fsli": "Share-Based Comp",
+      "summary": "Stock-based compensation accounting for insurance-entity employees.",
+      "chapter_content": "SSAP No. 104R covers stock options, restricted-stock units, and similar share-based payment arrangements.",
+      "need": "Provides consistent recognition of share-based compensation as an expense.",
+      "evolution": [
+        {
+          "year": "2014",
+          "change": "Original SSAP 104 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Share-based comp",
+          "gaap": "ASC 718",
+          "stat": "SSAP 104R",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20104R.pdf",
+      "tags": [
+        "Share-Based Comp",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-105R",
+      "number": "105R",
+      "title": "Working Capital Finance Investments",
+      "fsli": "WCFI",
+      "summary": "Short-duration trade-finance receivables. Excluded from SSAP 2 cash-equivalent treatment; carried under separate WCFI framework.",
+      "chapter_content": "SSAP No. 105R covers Working Capital Finance Investments \u2014 short-term trade-finance receivables purchased from corporate sellers. WCFIs are NOT cash equivalents, regardless of maturity, and are explicitly scoped out of SSAP 2R. Carrying basis is amortized cost less impairment.",
+      "need": "Closes a historical loophole where insurers classified illiquid trade-finance receivables as cash equivalents based solely on maturity.",
+      "evolution": [
+        {
+          "year": "2014",
+          "change": "Original SSAP 105 issued."
+        },
+        {
+          "year": "2018",
+          "change": "Revised (SSAP 105R) for clarity."
+        },
+        {
+          "year": "2026",
+          "change": "Cross-reference to SSAP 2R explicitly added \u2014 WCFIs are NOT in SSAP 2R scope."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Classification",
+          "gaap": "Receivable; CECL ECL",
+          "stat": "WCFI; non-cash-equivalent",
+          "delta": "Aligned in spirit"
+        }
+      ],
+      "tags": [
+        "WCFI",
+        "Trade Finance",
+        "FSLI"
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20105R.pdf"
+    },
+    {
+      "id": "SSAP-106",
+      "number": "106",
+      "title": "Affordable Care Act Section 9010 Assessment",
+      "fsli": "ACA",
+      "summary": "ACA health-insurer fee accounting (now repealed).",
+      "chapter_content": "SSAP No. 106 governs the ACA Section 9010 health-insurer fee \u2014 repealed effective 2021.",
+      "need": "Historical guidance retained for legacy financial statements.",
+      "evolution": [
+        {
+          "year": "2014",
+          "change": "Original SSAP 106 issued."
+        },
+        {
+          "year": "2021",
+          "change": "Underlying ACA fee repealed."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "ACA fee",
+          "gaap": "Operating expense",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20106.pdf",
+      "tags": [
+        "ACA",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-107",
+      "number": "107",
+      "title": "Risk-Sharing Provisions of the Affordable Care Act",
+      "fsli": "ACA Risk Programs",
+      "summary": "Accounting for ACA risk-corridors, risk-adjustment, and reinsurance programs.",
+      "chapter_content": "SSAP No. 107 covers the three ACA risk-sharing programs \u2014 risk corridors, risk adjustment, and transitional reinsurance.",
+      "need": "Provides specialized accounting for ACA-specific risk-sharing arrangements affecting health insurer balance sheets.",
+      "evolution": [
+        {
+          "year": "2014",
+          "change": "Original SSAP 107 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "ACA risk programs",
+          "gaap": "ASC 944 + ACA-specific",
+          "stat": "SSAP 107",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20107.pdf",
+      "tags": [
+        "ACA Risk Programs",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-108",
+      "number": "108",
+      "title": "Derivatives Hedging Variable Annuity Guarantees",
+      "fsli": "VA Hedging",
+      "summary": "Specialized hedge accounting for derivatives hedging variable-annuity guarantees.",
+      "chapter_content": "SSAP No. 108 provides relief for derivatives hedging variable-annuity guarantees, allowing fair-value hedge treatment with smoother surplus impact.",
+      "need": "Recognizes the unique nature of VA-guarantee hedging programs and aligns accounting with economic intent.",
+      "evolution": [
+        {
+          "year": "2017",
+          "change": "Original SSAP 108 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "VA hedging",
+          "gaap": "ASC 815 + LDTI MRB",
+          "stat": "SSAP 108 with VM-21",
+          "delta": "Both have specialized treatment"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20108.pdf",
+      "tags": [
+        "VA Hedging",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-109",
+      "number": "109",
+      "title": "Wash Sales",
+      "fsli": "Wash Sales",
+      "summary": "Wash-sale accounting for investment transactions.",
+      "chapter_content": "SSAP No. 109 governs wash sales \u2014 sale and reacquisition of substantially identical securities. Loss not recognized; basis adjusted.",
+      "need": "Prevents tax-driven loss harvesting from inflating reported losses.",
+      "evolution": [
+        {
+          "year": "2018",
+          "change": "Original SSAP 109 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Wash sale",
+          "gaap": "Tax rule (IRC \u00a71091)",
+          "stat": "SSAP 109",
+          "delta": "STAT mirrors tax"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20109.pdf",
+      "tags": [
+        "Wash Sales",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-110",
+      "number": "110",
+      "title": "Variable Interest Entities (VIEs)",
+      "fsli": "VIEs",
+      "summary": "Variable interest entity consolidation analysis for SAP.",
+      "chapter_content": "SSAP No. 110 follows ASC 810 VIE consolidation rules with statutory-specific overlays.",
+      "need": "Captures off-balance-sheet entity exposures consistent with GAAP framework.",
+      "evolution": [
+        {
+          "year": "2020",
+          "change": "Original SSAP 110 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "VIE consolidation",
+          "gaap": "ASC 810",
+          "stat": "SSAP 110",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20110.pdf",
+      "tags": [
+        "VIEs",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-111",
+      "number": "111",
+      "title": "Joint Ventures",
+      "fsli": "JVs",
+      "summary": "Joint-venture accounting clarifications.",
+      "chapter_content": "SSAP No. 111 provides joint-venture-specific recognition guidance complementing SSAP 48.",
+      "need": "Closes ambiguity around joint-venture vs equity-method distinction.",
+      "evolution": [
+        {
+          "year": "2020",
+          "change": "Original SSAP 111 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "JV accounting",
+          "gaap": "ASC 323",
+          "stat": "SSAP 111",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20111.pdf",
+      "tags": [
+        "JVs",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-112",
+      "number": "112",
+      "title": "ASU 2016-02 Lease Implementation",
+      "fsli": "Leases",
+      "summary": "Statutory implementation of ASC 842 leasing.",
+      "chapter_content": "SSAP No. 112 (now 22R) implemented ASC 842 lessee accounting for SAP \u2014 see SSAP 22R for current rules.",
+      "need": "Brought lease accounting into alignment with GAAP while preserving statutory non-admission of operating ROU.",
+      "evolution": [
+        {
+          "year": "2019",
+          "change": "Issued; later folded into SSAP 22R."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Lease implementation",
+          "gaap": "ASC 842",
+          "stat": "SSAP 22R + non-admit",
+          "delta": "STAT non-admits ROU"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20112.pdf",
+      "tags": [
+        "Leases",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-113",
+      "number": "113",
+      "title": "Transferred Lottery Prizes",
+      "fsli": "Lottery Prizes",
+      "summary": "Specialized accounting for transferred lottery prize obligations.",
+      "chapter_content": "SSAP No. 113 covers structured-settlement obligations involving lottery-prize payment streams.",
+      "need": "Specialized guidance for niche structured-settlement portfolio.",
+      "evolution": [
+        {
+          "year": "2020",
+          "change": "Original SSAP 113 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Structured settlement",
+          "gaap": "ASC 944",
+          "stat": "SSAP 113",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20113.pdf",
+      "tags": [
+        "Lottery Prizes",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-114",
+      "number": "114",
+      "title": "Accounting for Goodwill",
+      "fsli": "Goodwill",
+      "summary": "Goodwill recognition and impairment specifically for SAP entities.",
+      "chapter_content": "SSAP No. 114 supplements SSAP 68 with goodwill-specific recognition and impairment rules.",
+      "need": "Reinforces statutory goodwill admission limits via the 10% rule.",
+      "evolution": [
+        {
+          "year": "2020",
+          "change": "Original SSAP 114 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Goodwill",
+          "gaap": "ASC 805 + impairment testing",
+          "stat": "SSAP 68/114 + 10% admission",
+          "delta": "STAT severely limits"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20114.pdf",
+      "tags": [
+        "Goodwill",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-115",
+      "number": "115",
+      "title": "Accounting for Pension and Postretirement Benefit Plan Settlements",
+      "fsli": "Pension Settlements",
+      "summary": "Settlement and curtailment accounting for pension and OPEB plans.",
+      "chapter_content": "SSAP No. 115 covers gains and losses on pension plan settlements (e.g., lump-sum cashouts) and curtailments.",
+      "need": "Captures one-time impacts of pension-program restructuring on surplus.",
+      "evolution": [
+        {
+          "year": "2021",
+          "change": "Original SSAP 115 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Settlement accounting",
+          "gaap": "ASC 715-30-35",
+          "stat": "SSAP 115",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20115.pdf",
+      "tags": [
+        "Pension Settlements",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-116",
+      "number": "116",
+      "title": "Reference Rate Reform (LIBOR Transition)",
+      "fsli": "LIBOR",
+      "summary": "Optional expedients for the LIBOR-to-SOFR transition.",
+      "chapter_content": "SSAP No. 116 provides expedients for contracts modified due to LIBOR cessation, allowing the modification to be treated as continuation rather than extinguishment.",
+      "need": "Eased the operational burden of the LIBOR-to-SOFR transition (2021-2023) for insurance investments and derivatives.",
+      "evolution": [
+        {
+          "year": "2020",
+          "change": "Original SSAP 116 issued."
+        },
+        {
+          "year": "2023",
+          "change": "LIBOR cessation completed; expedients sunset."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Reference rate reform",
+          "gaap": "ASC 848",
+          "stat": "SSAP 116",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20116.pdf",
+      "tags": [
+        "LIBOR",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-117",
+      "number": "117",
+      "title": "Accounting for Cryptoassets",
+      "fsli": "Crypto",
+      "summary": "Cryptoasset recognition \u2014 generally limited admission.",
+      "chapter_content": "SSAP No. 117 establishes that cryptoassets are non-admitted unless specifically authorized; no carrying basis prescribed for admitted crypto.",
+      "need": "Conservatism: cryptoassets exhibit volatility and liquidity risk inconsistent with statutory accounting principles.",
+      "evolution": [
+        {
+          "year": "2024",
+          "change": "Original SSAP 117 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Cryptoassets",
+          "gaap": "ASU 2023-08 \u2014 fair value",
+          "stat": "Generally non-admitted",
+          "delta": "STAT excludes"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20117.pdf",
+      "tags": [
+        "Crypto",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-118",
+      "number": "118",
+      "title": "Reference Manual for Insurance Products",
+      "fsli": "Reference Manual",
+      "summary": "Authoritative reference manual cross-references for insurance product accounting.",
+      "chapter_content": "SSAP No. 118 provides cross-references and integrating guidance for insurance product accounting.",
+      "need": "Provides traceability across SSAPs for complex multi-product analyses.",
+      "evolution": [
+        {
+          "year": "2024",
+          "change": "Original SSAP 118 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Cross-reference",
+          "gaap": "N/A",
+          "stat": "STAT-only construct",
+          "delta": "Specific to NAIC manual"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20118.pdf",
+      "tags": [
+        "Reference Manual",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-119",
+      "number": "119",
+      "title": "Climate Risk Disclosures",
+      "fsli": "Climate",
+      "summary": "Climate-risk disclosure framework integrated with NAIC Climate Risk Disclosure Survey.",
+      "chapter_content": "SSAP No. 119 codifies climate-risk disclosure requirements aligned with TCFD and NAIC's annual survey.",
+      "need": "Brings climate-disclosure requirements into the formal SAP framework.",
+      "evolution": [
+        {
+          "year": "2024",
+          "change": "Original SSAP 119 issued."
+        },
+        {
+          "year": "2026",
+          "change": "Mandatory for all NAIC-reporting insurers."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Climate disclosure",
+          "gaap": "SEC climate rule",
+          "stat": "SSAP 119 + NAIC survey",
+          "delta": "Both required"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20119.pdf",
+      "tags": [
+        "Climate",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-120",
+      "number": "120",
+      "title": "Special Purpose Vehicles for Reinsurance",
+      "fsli": "SPVs",
+      "summary": "Accounting for special-purpose vehicles used for reinsurance and capital relief.",
+      "chapter_content": "SSAP No. 120 governs special-purpose vehicles (SPVs) used for reinsurance, including XXX/AXXX securitizations and cat-bond SPVs.",
+      "need": "Captures emerging SPV structures used for regulatory capital relief.",
+      "evolution": [
+        {
+          "year": "2025",
+          "change": "Original SSAP 120 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Reinsurance SPV",
+          "gaap": "ASC 944-20 + ASC 810",
+          "stat": "SSAP 120 + SSAP 62R",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20120.pdf",
+      "tags": [
+        "SPVs",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-121",
+      "number": "121",
+      "title": "Insurance-Linked Securities (ILS)",
+      "fsli": "ILS",
+      "summary": "Accounting for insurance-linked securities including catastrophe bonds and sidecars.",
+      "chapter_content": "SSAP No. 121 covers insurance-linked securities \u2014 cat bonds, sidecars, ILW (industry-loss warranties), and similar instruments.",
+      "need": "Captures ILS-specific economics distinct from traditional reinsurance.",
+      "evolution": [
+        {
+          "year": "2025",
+          "change": "Original SSAP 121 issued."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "ILS accounting",
+          "gaap": "ASC 944-20 / ASC 815",
+          "stat": "SSAP 121",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20121.pdf",
+      "tags": [
+        "ILS",
+        "SSAP"
+      ]
+    },
+    {
+      "id": "SSAP-122",
+      "number": "122",
+      "title": "Principle-Based Reserves for Small Life Companies",
+      "fsli": "PBR Small Co",
+      "summary": "Simplified PBR framework for small life-insurance companies.",
+      "chapter_content": "SSAP No. 122 provides a simplified principle-based-reserves framework for small life companies that may otherwise be overburdened by full VM-20 implementation.",
+      "need": "Permits proportionate compliance based on company size and complexity, reducing implementation cost for small insurers.",
+      "evolution": [
+        {
+          "year": "2025",
+          "change": "Original SSAP 122 issued."
+        },
+        {
+          "year": "2026",
+          "change": "Effective for small life insurers below the size threshold."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "PBR for small co",
+          "gaap": "Same LDTI requirements",
+          "stat": "Simplified VM-20",
+          "delta": "STAT scales by size"
+        }
+      ],
+      "source_link": "https://content.naic.org/sites/default/files/inline-files/SSAP%20122.pdf",
+      "tags": [
+        "PBR Small Co",
+        "SSAP"
+      ]
     }
   ]
 }

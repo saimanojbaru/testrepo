@@ -1,47 +1,300 @@
 {
-  "_note": "FASB ASC Topic 944 — Financial Services: Insurance. Each sub-topic follows the four-section schema: chapter_content / need / evolution / gaap_comparison.",
+  "_note": "FASB ASC Topic 944 \u2014 Financial Services: Insurance. Each sub-topic follows the four-section schema: chapter_content / need / evolution / gaap_comparison.",
   "framework": "ASC944",
-  "manual": "FASB Accounting Standards Codification Topic 944 — Financial Services: Insurance",
+  "manual": "FASB Accounting Standards Codification Topic 944 \u2014 Financial Services: Insurance",
   "publisher": "Financial Accounting Standards Board (FASB)",
   "source_url": "https://asc.fasb.org/topic&trid=2156436",
   "standards": [
     {
       "id": "ASC-944-10",
       "number": "944-10",
-      "title": "Overall — Scope and Objectives",
+      "title": "Overall \u2014 Scope and Objectives",
       "fsli": "Insurance contracts",
       "summary": "Scope, objectives, and overall organization of ASC 944.",
-      "chapter_content": "ASC 944-10 establishes the scope of the topic — applicable to entities that issue insurance contracts, including life, P&C, health, financial-guaranty, mortgage-guaranty, and title insurance. It also covers reinsurance contracts. Excluded: warranty contracts (covered by ASC 460), service contracts not having insurance characteristics, and self-insurance.",
+      "chapter_content": "ASC 944-10 establishes the scope of the topic \u2014 applicable to entities that issue insurance contracts, including life, P&C, health, financial-guaranty, mortgage-guaranty, and title insurance. It also covers reinsurance contracts. Excluded: warranty contracts (covered by ASC 460), service contracts not having insurance characteristics, and self-insurance.",
       "need": "Defines what falls under insurance accounting versus other revenue/contract accounting standards. Without a clear scope, multi-line entities (e.g., a manufacturer offering extended warranties) would face ambiguity.",
       "evolution": [
-        {"year": "2009", "change": "Original codification of legacy FAS 60, FAS 97, FAS 113, FAS 120, FAS 91, etc. into Topic 944."},
-        {"year": "2018", "change": "ASU 2018-12 (LDTI) introduced significant updates to long-duration sub-topics 30 and 40."},
-        {"year": "2023", "change": "LDTI effective for SEC filers."}
+        {
+          "year": "2009",
+          "change": "Original codification of legacy FAS 60, FAS 97, FAS 113, FAS 120, FAS 91, etc. into Topic 944."
+        },
+        {
+          "year": "2018",
+          "change": "ASU 2018-12 (LDTI) introduced significant updates to long-duration sub-topics 30 and 40."
+        },
+        {
+          "year": "2023",
+          "change": "LDTI effective for SEC filers."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Scope", "gaap": "ASC 944 — insurance contracts only", "stat": "NAIC AP&P Manual — broader, covers entire entity", "delta": "GAAP contract-by-contract; STAT entity-wide"}
+        {
+          "aspect": "Scope",
+          "gaap": "ASC 944 \u2014 insurance contracts only",
+          "stat": "NAIC AP&P Manual \u2014 broader, covers entire entity",
+          "delta": "GAAP contract-by-contract; STAT entity-wide"
+        }
       ],
-      "tags": ["Insurance", "Scope", "ASC944"]
+      "tags": [
+        "Insurance",
+        "Scope",
+        "ASC944"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#10"
     },
     {
       "id": "ASC-944-20",
       "number": "944-20",
       "title": "Insurance Activities (Reinsurance)",
       "fsli": "Reinsurance",
-      "summary": "Reinsurance accounting — the canonical risk-transfer test in 944-20-15-41 and prospective vs retrospective bifurcation.",
+      "summary": "Reinsurance accounting \u2014 the canonical risk-transfer test in 944-20-15-41 and prospective vs retrospective bifurcation.",
       "chapter_content": "ASC 944-20 covers all reinsurance accounting. Section 15-41 sets the risk-transfer test: a contract receives reinsurance accounting only if the reinsurer assumes significant insurance risk with reasonable possibility of significant loss. Failed risk transfer triggers deposit accounting. Prospective contracts (covering future events) recognize ceded premium over the coverage period. Retrospective contracts (covering prior events) defer any gain through the interest method.",
       "need": "Prevents financial-engineering 'reinsurance' that synthetically inflates earnings or surplus without real risk transfer.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 113."},
-        {"year": "2014", "change": "Risk-transfer interpretation refined post-AIG/Gen Re finite-reinsurance scandal."},
-        {"year": "2025", "change": "SEC comment letters increasingly challenge multi-year aggregate covers."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 113."
+        },
+        {
+          "year": "2014",
+          "change": "Risk-transfer interpretation refined post-AIG/Gen Re finite-reinsurance scandal."
+        },
+        {
+          "year": "2025",
+          "change": "SEC comment letters increasingly challenge multi-year aggregate covers."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Risk-transfer test", "gaap": "ASC 944-20-15-41 — significant insurance risk + reasonable possibility of loss", "stat": "SSAP 62R Appendix A — same test", "delta": "Aligned"},
-        {"aspect": "LPT / ADC accounting", "gaap": "Recoverable + interest-method gain deferral", "stat": "Same approach (SSAP 62R par 36)", "delta": "Aligned post-2020"},
-        {"aspect": "Failed RT consequence", "gaap": "Deposit accounting", "stat": "Deposit accounting", "delta": "Aligned"}
+        {
+          "aspect": "Risk-transfer test",
+          "gaap": "ASC 944-20-15-41 \u2014 significant insurance risk + reasonable possibility of loss",
+          "stat": "SSAP 62R Appendix A \u2014 same test",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "LPT / ADC accounting",
+          "gaap": "Recoverable + interest-method gain deferral",
+          "stat": "Same approach (SSAP 62R par 36)",
+          "delta": "Aligned post-2020"
+        },
+        {
+          "aspect": "Failed RT consequence",
+          "gaap": "Deposit accounting",
+          "stat": "Deposit accounting",
+          "delta": "Aligned"
+        }
       ],
-      "tags": ["Reinsurance", "Risk Transfer", "LPT", "ADC"]
+      "tags": [
+        "Reinsurance",
+        "Risk Transfer",
+        "LPT",
+        "ADC"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#20"
+    },
+    {
+      "id": "ASC-944-205",
+      "number": "944-205",
+      "title": "Presentation of Financial Statements",
+      "fsli": "Presentation",
+      "summary": "Insurance-specific income-statement and balance-sheet presentation requirements.",
+      "chapter_content": "ASC 944-205 establishes the presentation of insurance-entity financial statements \u2014 separate captions for premium revenue, benefits & claims, DAC amortization, and reinsurance impacts.",
+      "need": "Provides users with comparable, standardized financial-statement presentation across insurance entities.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from prior guidance."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Presentation",
+          "gaap": "ASC 944-205",
+          "stat": "Insurance Annual Statement format",
+          "delta": "Different formats; same elements"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-205",
+      "tags": [
+        "Presentation",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-210",
+      "number": "944-210",
+      "title": "Balance Sheet",
+      "fsli": "Balance Sheet",
+      "summary": "Insurance balance-sheet classification and presentation.",
+      "chapter_content": "ASC 944-210 specifies balance-sheet classification \u2014 separate accounts, policyholder reserves, DAC, reinsurance recoverables, and insurance-related receivables.",
+      "need": "Standardized line-item presentation.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60 / 97."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Balance sheet",
+          "gaap": "ASC 944-210",
+          "stat": "Annual Statement format",
+          "delta": "Different formats; aligned content"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-210",
+      "tags": [
+        "Balance Sheet",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-225",
+      "number": "944-225",
+      "title": "Income Statement",
+      "fsli": "Income Statement",
+      "summary": "Insurance-specific income-statement classification.",
+      "chapter_content": "ASC 944-225 specifies income-statement classification \u2014 premium revenue, benefits, DAC amortization, investment income, and reinsurance impacts.",
+      "need": "Standardized income-statement format for insurance entities.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Income statement",
+          "gaap": "ASC 944-225",
+          "stat": "Different STAT format",
+          "delta": "Different formats; aligned elements"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-225",
+      "tags": [
+        "Income Statement",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-235",
+      "number": "944-235",
+      "title": "Notes to Financial Statements",
+      "fsli": "Notes",
+      "summary": "Insurance-specific note disclosures.",
+      "chapter_content": "ASC 944-235 mandates insurance-specific note disclosures \u2014 reserve rollforwards, reinsurance disclosure, MRB rollforward, and DAC rollforward.",
+      "need": "Provides users with the granular disclosure needed to evaluate insurer performance and risk.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        },
+        {
+          "year": "2018",
+          "change": "ASU 2018-12 expanded LDTI disclosures."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Note disclosures",
+          "gaap": "ASC 944-235 + ASU 2018-12",
+          "stat": "Annual Statement notes",
+          "delta": "Both extensive; different formats"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-235",
+      "tags": [
+        "Notes",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-250",
+      "number": "944-250",
+      "title": "Accounting Changes and Error Corrections",
+      "fsli": "Accounting Changes",
+      "summary": "Accounting-change and error-correction guidance specific to insurance.",
+      "chapter_content": "ASC 944-250 provides insurance-specific guidance on accounting changes (e.g., LDTI transition) and error corrections.",
+      "need": "Coordinates broad ASC 250 with insurance-specific transition mechanics.",
+      "evolution": [
+        {
+          "year": "2018",
+          "change": "ASU 2018-12 transition guidance issued."
+        },
+        {
+          "year": "2023",
+          "change": "Effective for SEC filers."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Accounting changes",
+          "gaap": "ASC 944-250 + ASC 250",
+          "stat": "SSAP 3 framework",
+          "delta": "Aligned principle"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-250",
+      "tags": [
+        "Accounting Changes",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-255",
+      "number": "944-255",
+      "title": "Changing Prices",
+      "fsli": "Inflation",
+      "summary": "Inflation-adjusted disclosure (largely historical).",
+      "chapter_content": "ASC 944-255 covers historical changing-price disclosures (largely retired).",
+      "need": "Historical guidance retained for legacy reporting.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Inflation disclosure",
+          "gaap": "Largely historical",
+          "stat": "N/A",
+          "delta": "Historical"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-255",
+      "tags": [
+        "Inflation",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-275",
+      "number": "944-275",
+      "title": "Risks and Uncertainties",
+      "fsli": "Risks",
+      "summary": "Risk-and-uncertainty disclosures for insurers.",
+      "chapter_content": "ASC 944-275 mandates disclosure of significant risks and uncertainties including catastrophe exposure, concentration of insured risks, and reserve estimation uncertainty.",
+      "need": "Provides users with insight into the inherent uncertainty in insurance financial statements.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from FAS 5."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Risk disclosure",
+          "gaap": "ASC 944-275 + ASC 275",
+          "stat": "SSAP 1 / 90",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-275",
+      "tags": [
+        "Risks",
+        "ASC 944"
+      ]
     },
     {
       "id": "ASC-944-30",
@@ -49,93 +302,47 @@
       "title": "Acquisition Costs (DAC)",
       "fsli": "Deferred Acquisition Costs",
       "summary": "Capitalization and amortization of incremental, direct contract-acquisition costs. Post-LDTI: constant-level amortization replaces EGP unlocking.",
-      "chapter_content": "ASC 944-30 defines DAC as the incremental, direct costs of acquiring an insurance contract — first-year commissions exceeding renewal rates, underwriting expenses traceable to issued contracts, and direct contract-issuance costs. Marketing and overhead are excluded. Post-ASU 2018-12 (LDTI), DAC amortizes on a constant-level basis tied to a denominator (e.g., inforce face, policy count). No interest accrual; annual review of denominator assumption is prospective only.",
+      "chapter_content": "ASC 944-30 defines DAC as the incremental, direct costs of acquiring an insurance contract \u2014 first-year commissions exceeding renewal rates, underwriting expenses traceable to issued contracts, and direct contract-issuance costs. Marketing and overhead are excluded. Post-ASU 2018-12 (LDTI), DAC amortizes on a constant-level basis tied to a denominator (e.g., inforce face, policy count). No interest accrual; annual review of denominator assumption is prospective only.",
       "need": "Matches acquisition costs against the revenue stream they generate, providing a more representative income statement than expensing all costs at issuance.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 60 and FAS 97."},
-        {"year": "2010", "change": "ASU 2010-26 narrowed capitalizable costs to incremental and direct."},
-        {"year": "2018", "change": "ASU 2018-12 (LDTI) replaced EGP-based amortization with constant-level."},
-        {"year": "2023", "change": "LDTI effective for SEC filers."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60 and FAS 97."
+        },
+        {
+          "year": "2010",
+          "change": "ASU 2010-26 narrowed capitalizable costs to incremental and direct."
+        },
+        {
+          "year": "2018",
+          "change": "ASU 2018-12 (LDTI) replaced EGP-based amortization with constant-level."
+        },
+        {
+          "year": "2023",
+          "change": "LDTI effective for SEC filers."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Recognition", "gaap": "Capitalized as DAC asset", "stat": "Expensed (non-admitted)", "delta": "Largest single GAAP-STAT difference"},
-        {"aspect": "Amortization (post-LDTI)", "gaap": "Constant-level over expected term", "stat": "N/A — no asset", "delta": "Pure GAAP construct"}
+        {
+          "aspect": "Recognition",
+          "gaap": "Capitalized as DAC asset",
+          "stat": "Expensed (non-admitted)",
+          "delta": "Largest single GAAP-STAT difference"
+        },
+        {
+          "aspect": "Amortization (post-LDTI)",
+          "gaap": "Constant-level over expected term",
+          "stat": "N/A \u2014 no asset",
+          "delta": "Pure GAAP construct"
+        }
       ],
-      "tags": ["DAC", "FSLI", "ASU2018-12", "LDTI"]
-    },
-    {
-      "id": "ASC-944-40",
-      "number": "944-40",
-      "title": "Claim Costs and Liabilities for Future Policy Benefits",
-      "fsli": "Reserves (Loss + LFPB + MRB)",
-      "summary": "Combines short-duration unpaid claims, long-duration LFPB (LDTI-revised), and MRBs. The single largest sub-topic for insurers.",
-      "chapter_content": "ASC 944-40 spans three measurement worlds: (1) short-duration unpaid claims & LAE measured at best estimate, undiscounted; (2) long-duration LFPB measured at the cohort level under LDTI with annual unlocking and current upper-medium-grade discount; (3) market risk benefits (MRBs) at fair value with non-performance risk in OCI. The 30-19A paragraph specifically defines MRBs.",
-      "need": "Provides the principal liability framework for insurance contracts. Reserves accuracy is the cornerstone of insurer earnings quality and regulatory solvency.",
-      "evolution": [
-        {"year": "2009", "change": "Codified from FAS 60 / 97 / 120 / 113."},
-        {"year": "2015", "change": "ASU 2015-09 added short-duration loss-development triangle disclosure."},
-        {"year": "2018", "change": "ASU 2018-12 (LDTI) overhauled long-duration measurement."},
-        {"year": "2023", "change": "LDTI effective for SEC filers."},
-        {"year": "2024", "change": "Long-term care portfolios across the industry triggered $200M-$2B unlockings."}
+      "tags": [
+        "DAC",
+        "FSLI",
+        "ASU2018-12",
+        "LDTI"
       ],
-      "gaap_comparison": [
-        {"aspect": "Short-duration loss reserves", "gaap": "Best estimate; undiscounted", "stat": "Same (SSAP 55)", "delta": "Aligned"},
-        {"aspect": "Long-duration LFPB", "gaap": "Cohort-level; annual unlocking; A-rate discount", "stat": "VM-20 PBR (SSAP 51R)", "delta": "Both principle-based; differ in unlocking rules"},
-        {"aspect": "MRBs", "gaap": "Fair value; OCI for own credit", "stat": "VM-21 stochastic CTE 70", "delta": "Different measurement; same intent"}
-      ],
-      "tags": ["Reserves", "LFPB", "MRB", "Loss Reserves", "LDTI"]
-    },
-    {
-      "id": "ASC-944-50",
-      "number": "944-50",
-      "title": "Policyholder Dividends",
-      "fsli": "Policyholder Dividends",
-      "summary": "Liability accrual for participating-policy dividends.",
-      "chapter_content": "ASC 944-50 requires liability accrual for policyholder dividends as the entity becomes obligated. For mutual-life insurers, annual dividend declarations from divisible surplus drive the year-end accrual. Stock companies issuing participating contracts apply the same model.",
-      "need": "Matches dividend expense to the period in which the obligation arises — typically over the policy year on participating contracts.",
-      "evolution": [
-        {"year": "2009", "change": "Codified from FAS 120."},
-        {"year": "2018", "change": "Aligned with LDTI cohort granularity for participating-contract dividends."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Dividend liability", "gaap": "Accrue over policy year", "stat": "Same (SSAP 65)", "delta": "Aligned"}
-      ],
-      "tags": ["Dividends", "Participating", "FAS120"]
-    },
-    {
-      "id": "ASC-944-60",
-      "number": "944-60",
-      "title": "Premium Deficiency and Loss Recognition",
-      "fsli": "Premium Deficiency",
-      "summary": "Trigger for recognizing additional reserve when expected costs exceed unearned premium plus DAC plus expected investment income.",
-      "chapter_content": "ASC 944-60-25 establishes the premium deficiency reserve trigger: when the present value of expected future losses, LAE, and maintenance costs exceeds unearned premium reserve plus DAC plus expected investment income, recognize the shortfall. Aggregation level is consistent with how the entity manages and measures profitability — typically line of business.",
-      "need": "Loss-recognition mechanism that prevents the balance sheet from showing a profitable book that is in fact economically deficient.",
-      "evolution": [
-        {"year": "2009", "change": "Codified from FAS 60."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "PDR formula", "gaap": "PV(losses+LAE+maint) − UPR − DAC − II", "stat": "Same (SSAP 53)", "delta": "Aligned"},
-        {"aspect": "Aggregation", "gaap": "Line of business (typically)", "stat": "Same", "delta": "Aligned"}
-      ],
-      "tags": ["PDR", "Premium Deficiency", "Loss Recognition"]
-    },
-    {
-      "id": "ASC-944-80",
-      "number": "944-80",
-      "title": "Separate Accounts",
-      "fsli": "Separate Accounts",
-      "summary": "Presentation and measurement of separate-account assets and liabilities for variable annuities, variable life, and pension separate accounts.",
-      "chapter_content": "ASC 944-80 requires separate-account assets and corresponding policyholder liabilities to be presented in summary form on the balance sheet at fair value. Investment performance flows directly to policyholders. The general account retains contingent obligations under guaranteed minimum benefit provisions, accounted for under MRB rules (post-LDTI).",
-      "need": "Reflects the contractual structure where policyholders bear investment risk on segregated assets.",
-      "evolution": [
-        {"year": "2009", "change": "Codified from SOP 03-1."},
-        {"year": "2018", "change": "MRB framework introduced for general-account guarantees."}
-      ],
-      "gaap_comparison": [
-        {"aspect": "Separate-account presentation", "gaap": "Summary line at fair value", "stat": "Same (SSAP 56)", "delta": "Aligned"},
-        {"aspect": "Guaranteed benefit reserve", "gaap": "MRB at fair value (post-LDTI)", "stat": "VM-21 stochastic", "delta": "Different measurement"}
-      ],
-      "tags": ["Separate Account", "Variable Annuity", "MRB"]
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#30"
     },
     {
       "id": "ASC-944-310",
@@ -146,15 +353,40 @@
       "chapter_content": "ASC 944-310 governs reinsurance recoverables on paid and unpaid losses. Recoverables are presented as separate assets on the balance sheet (never netted against gross liabilities) and carry a CECL allowance per ASC 326-20. Concentration disclosures are required when one reinsurer represents a material portion of total recoverables.",
       "need": "Maintains the indemnity-contract principle (cedent remains primarily liable) while recognizing credit deterioration on long-dated recoverables.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 113."},
-        {"year": "2016", "change": "ASU 2016-13 (CECL) added the lifetime expected-credit-loss allowance."},
-        {"year": "2023", "change": "CECL effective for SEC filers."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 113."
+        },
+        {
+          "year": "2016",
+          "change": "ASU 2016-13 (CECL) added the lifetime expected-credit-loss allowance."
+        },
+        {
+          "year": "2023",
+          "change": "CECL effective for SEC filers."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Allowance", "gaap": "CECL — lifetime ECL", "stat": "Schedule F authorized vs unauthorized non-admission", "delta": "GAAP earlier credit recognition"},
-        {"aspect": "Concentration", "gaap": "Disclosure required", "stat": "Schedule F by reinsurer", "delta": "STAT more granular"}
+        {
+          "aspect": "Allowance",
+          "gaap": "CECL \u2014 lifetime ECL",
+          "stat": "Schedule F authorized vs unauthorized non-admission",
+          "delta": "GAAP earlier credit recognition"
+        },
+        {
+          "aspect": "Concentration",
+          "gaap": "Disclosure required",
+          "stat": "Schedule F by reinsurer",
+          "delta": "STAT more granular"
+        }
       ],
-      "tags": ["Reinsurance", "Recoverables", "CECL", "Schedule F"]
+      "tags": [
+        "Reinsurance",
+        "Recoverables",
+        "CECL",
+        "Schedule F"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#310"
     },
     {
       "id": "ASC-944-340",
@@ -162,53 +394,328 @@
       "title": "Other Assets and Deferred Costs",
       "fsli": "Other Assets",
       "summary": "Catch-all guidance for assets and deferred costs not addressed in other 944 sub-topics, including VOBA from business combinations.",
-      "chapter_content": "ASC 944-340 provides accounting for other assets and deferred costs unique to insurance, most notably Value of Business Acquired (VOBA) — the present value of future profits embedded in acquired insurance contracts. VOBA is amortized on a basis consistent with the acquired contract's DAC method (constant-level under LDTI).",
+      "chapter_content": "ASC 944-340 provides accounting for other assets and deferred costs unique to insurance, most notably Value of Business Acquired (VOBA) \u2014 the present value of future profits embedded in acquired insurance contracts. VOBA is amortized on a basis consistent with the acquired contract's DAC method (constant-level under LDTI).",
       "need": "Captures the economic value of an in-force insurance book at acquisition without leaving the acquirer's balance sheet asymmetric.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 141 / SOP 03-1."},
-        {"year": "2018", "change": "VOBA amortization aligned with LDTI constant-level approach."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 141 / SOP 03-1."
+        },
+        {
+          "year": "2018",
+          "change": "VOBA amortization aligned with LDTI constant-level approach."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "VOBA", "gaap": "Recognized at fair value; amortized constant-level", "stat": "Effectively N/A — replaced by goodwill admission limits", "delta": "Major divergence"}
+        {
+          "aspect": "VOBA",
+          "gaap": "Recognized at fair value; amortized constant-level",
+          "stat": "Effectively N/A \u2014 replaced by goodwill admission limits",
+          "delta": "Major divergence"
+        }
       ],
-      "tags": ["VOBA", "M&A", "Other Assets"]
+      "tags": [
+        "VOBA",
+        "M&A",
+        "Other Assets"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#340"
+    },
+    {
+      "id": "ASC-944-40",
+      "number": "944-40",
+      "title": "Claim Costs and Liabilities for Future Policy Benefits",
+      "fsli": "Reserves (Loss + LFPB + MRB)",
+      "summary": "Combines short-duration unpaid claims, long-duration LFPB (LDTI-revised), and MRBs. The single largest sub-topic for insurers.",
+      "chapter_content": "ASC 944-40 spans three measurement worlds: (1) short-duration unpaid claims & LAE measured at best estimate, undiscounted; (2) long-duration LFPB measured at the cohort level under LDTI with annual unlocking and current upper-medium-grade discount; (3) market risk benefits (MRBs) at fair value with non-performance risk in OCI. The 30-19A paragraph specifically defines MRBs.",
+      "need": "Provides the principal liability framework for insurance contracts. Reserves accuracy is the cornerstone of insurer earnings quality and regulatory solvency.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60 / 97 / 120 / 113."
+        },
+        {
+          "year": "2015",
+          "change": "ASU 2015-09 added short-duration loss-development triangle disclosure."
+        },
+        {
+          "year": "2018",
+          "change": "ASU 2018-12 (LDTI) overhauled long-duration measurement."
+        },
+        {
+          "year": "2023",
+          "change": "LDTI effective for SEC filers."
+        },
+        {
+          "year": "2024",
+          "change": "Long-term care portfolios across the industry triggered $200M-$2B unlockings."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Short-duration loss reserves",
+          "gaap": "Best estimate; undiscounted",
+          "stat": "Same (SSAP 55)",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Long-duration LFPB",
+          "gaap": "Cohort-level; annual unlocking; A-rate discount",
+          "stat": "VM-20 PBR (SSAP 51R)",
+          "delta": "Both principle-based; differ in unlocking rules"
+        },
+        {
+          "aspect": "MRBs",
+          "gaap": "Fair value; OCI for own credit",
+          "stat": "VM-21 stochastic CTE 70",
+          "delta": "Different measurement; same intent"
+        }
+      ],
+      "tags": [
+        "Reserves",
+        "LFPB",
+        "MRB",
+        "Loss Reserves",
+        "LDTI"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#40"
     },
     {
       "id": "ASC-944-405",
       "number": "944-405",
-      "title": "Liabilities — Other (Universal Life)",
+      "title": "Liabilities \u2014 Other (Universal Life)",
       "fsli": "Account Balances",
       "summary": "Account-balance liability for universal life and deferred annuities; post-LDTI alignment with deposit-style accounting.",
       "chapter_content": "ASC 944-405 addresses other long-duration liabilities, principally the policyholder account balance for universal life and deferred annuity contracts. Balance equals deposits plus interest credited less withdrawals, COI charges, and expense loads. Front-end loads create an unearned-revenue liability amortized alongside DAC.",
       "need": "Accurate reflection of insurer obligations to policyholders under deposit-style contracts.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 97."},
-        {"year": "2018", "change": "Front-end-load mechanics simplified under LDTI."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 97."
+        },
+        {
+          "year": "2018",
+          "change": "Front-end-load mechanics simplified under LDTI."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Account balance", "gaap": "Deposit basis: account value", "stat": "Same: account value + secondary-guarantee reserve", "delta": "STAT adds NLG reserve"},
-        {"aspect": "Front-end load", "gaap": "Liability; amortized", "stat": "Recognized immediately as revenue", "delta": "GAAP defers"}
+        {
+          "aspect": "Account balance",
+          "gaap": "Deposit basis: account value",
+          "stat": "Same: account value + secondary-guarantee reserve",
+          "delta": "STAT adds NLG reserve"
+        },
+        {
+          "aspect": "Front-end load",
+          "gaap": "Liability; amortized",
+          "stat": "Recognized immediately as revenue",
+          "delta": "GAAP defers"
+        }
       ],
-      "tags": ["UL", "Account Balance", "FAS97"]
+      "tags": [
+        "UL",
+        "Account Balance",
+        "FAS97"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#405"
+    },
+    {
+      "id": "ASC-944-440",
+      "number": "944-440",
+      "title": "Commitments",
+      "fsli": "Commitments",
+      "summary": "Insurance-specific commitments and contingencies.",
+      "chapter_content": "ASC 944-440 covers insurance-specific commitments \u2014 investment commitments, reinsurance commitments, and lease commitments specific to insurance operations.",
+      "need": "Captures off-balance-sheet commitments material to solvency.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Commitments",
+          "gaap": "ASC 944-440 + ASC 440",
+          "stat": "SSAP 5R + 27",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-440",
+      "tags": [
+        "Commitments",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-470",
+      "number": "944-470",
+      "title": "Debt",
+      "fsli": "Debt",
+      "summary": "Insurance-entity debt classification and presentation.",
+      "chapter_content": "ASC 944-470 covers debt issued by insurance entities \u2014 long-term debt, surplus notes (where applicable), and trust-preferred securities.",
+      "need": "Standardizes debt presentation across insurance issuers.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Insurer debt",
+          "gaap": "ASC 470",
+          "stat": "SSAP 15 / 41R for surplus notes",
+          "delta": "Surplus notes are STAT-specific"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-470",
+      "tags": [
+        "Debt",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-50",
+      "number": "944-50",
+      "title": "Policyholder Dividends",
+      "fsli": "Policyholder Dividends",
+      "summary": "Liability accrual for participating-policy dividends.",
+      "chapter_content": "ASC 944-50 requires liability accrual for policyholder dividends as the entity becomes obligated. For mutual-life insurers, annual dividend declarations from divisible surplus drive the year-end accrual. Stock companies issuing participating contracts apply the same model.",
+      "need": "Matches dividend expense to the period in which the obligation arises \u2014 typically over the policy year on participating contracts.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from FAS 120."
+        },
+        {
+          "year": "2018",
+          "change": "Aligned with LDTI cohort granularity for participating-contract dividends."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Dividend liability",
+          "gaap": "Accrue over policy year",
+          "stat": "Same (SSAP 65)",
+          "delta": "Aligned"
+        }
+      ],
+      "tags": [
+        "Dividends",
+        "Participating",
+        "FAS120"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#50"
+    },
+    {
+      "id": "ASC-944-505",
+      "number": "944-505",
+      "title": "Equity",
+      "fsli": "Equity",
+      "summary": "Insurance-entity equity classification and dividend mechanics.",
+      "chapter_content": "ASC 944-505 covers equity classification and dividend mechanics specific to insurance entities \u2014 dividend restrictions, retained earnings analysis, and AOCI components.",
+      "need": "Captures the regulatory dividend restrictions applicable to insurance entities.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Equity / surplus",
+          "gaap": "ASC 944-505 + ASC 505",
+          "stat": "SSAP 72",
+          "delta": "GAAP equity vs STAT surplus differ materially"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-505",
+      "tags": [
+        "Equity",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-60",
+      "number": "944-60",
+      "title": "Premium Deficiency and Loss Recognition",
+      "fsli": "Premium Deficiency",
+      "summary": "Trigger for recognizing additional reserve when expected costs exceed unearned premium plus DAC plus expected investment income.",
+      "chapter_content": "ASC 944-60-25 establishes the premium deficiency reserve trigger: when the present value of expected future losses, LAE, and maintenance costs exceeds unearned premium reserve plus DAC plus expected investment income, recognize the shortfall. Aggregation level is consistent with how the entity manages and measures profitability \u2014 typically line of business.",
+      "need": "Loss-recognition mechanism that prevents the balance sheet from showing a profitable book that is in fact economically deficient.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "PDR formula",
+          "gaap": "PV(losses+LAE+maint) \u2212 UPR \u2212 DAC \u2212 II",
+          "stat": "Same (SSAP 53)",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Aggregation",
+          "gaap": "Line of business (typically)",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
+      ],
+      "tags": [
+        "PDR",
+        "Premium Deficiency",
+        "Loss Recognition"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#60"
     },
     {
       "id": "ASC-944-605",
       "number": "944-605",
       "title": "Revenue Recognition (Premium)",
       "fsli": "Premium Revenue & UPR",
-      "summary": "Premium recognition rules — short-duration ratably; long-duration when due; deposit contracts no premium revenue.",
-      "chapter_content": "ASC 944-605 specifies premium revenue recognition (insurance contracts are excluded from ASC 606). Short-duration policies earn premium pro-rata over the coverage period. Long-duration policies recognize revenue when due. Deposit contracts (UL, deferred annuities) have no premium revenue — premium is recorded as a deposit and revenue comes from charges.",
+      "summary": "Premium recognition rules \u2014 short-duration ratably; long-duration when due; deposit contracts no premium revenue.",
+      "chapter_content": "ASC 944-605 specifies premium revenue recognition (insurance contracts are excluded from ASC 606). Short-duration policies earn premium pro-rata over the coverage period. Long-duration policies recognize revenue when due. Deposit contracts (UL, deferred annuities) have no premium revenue \u2014 premium is recorded as a deposit and revenue comes from charges.",
       "need": "Provides line-by-line revenue recognition consistent with the economics of each contract type.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 60 / 97."},
-        {"year": "2014", "change": "ASC 606 explicitly excluded insurance contracts; ASC 944-605 retained for them."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60 / 97."
+        },
+        {
+          "year": "2014",
+          "change": "ASC 606 explicitly excluded insurance contracts; ASC 944-605 retained for them."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Short-duration earning", "gaap": "Pro-rata over coverage", "stat": "Same (SSAP 65)", "delta": "Aligned"},
-        {"aspect": "Long-duration earning", "gaap": "When due", "stat": "Same (SSAP 51)", "delta": "Aligned"},
-        {"aspect": "Deposit contracts", "gaap": "No premium revenue", "stat": "Same", "delta": "Aligned"}
+        {
+          "aspect": "Short-duration earning",
+          "gaap": "Pro-rata over coverage",
+          "stat": "Same (SSAP 65)",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Long-duration earning",
+          "gaap": "When due",
+          "stat": "Same (SSAP 51)",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Deposit contracts",
+          "gaap": "No premium revenue",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
       ],
-      "tags": ["Premium", "Revenue", "ASC606", "FAS60"]
+      "tags": [
+        "Premium",
+        "Revenue",
+        "ASC606",
+        "FAS60"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#605"
     },
     {
       "id": "ASC-944-720",
@@ -216,33 +723,237 @@
       "title": "Other Expenses",
       "fsli": "Other Expenses",
       "summary": "Insurance-specific expense categories including premium taxes, guaranty-fund assessments, and policyholder dividends payable.",
-      "chapter_content": "ASC 944-720 addresses expense categories unique to insurance — premium taxes, guaranty-fund assessments (recognized when probable and estimable), and policyholder dividends payable. Premium taxes accrue as premium is earned.",
+      "chapter_content": "ASC 944-720 addresses expense categories unique to insurance \u2014 premium taxes, guaranty-fund assessments (recognized when probable and estimable), and policyholder dividends payable. Premium taxes accrue as premium is earned.",
       "need": "Provides consistent treatment for insurer-specific expense categories that don't fit cleanly into other expense topics.",
       "evolution": [
-        {"year": "2009", "change": "Codified from FAS 60."}
+        {
+          "year": "2009",
+          "change": "Codified from FAS 60."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Premium tax accrual", "gaap": "As premium earned", "stat": "Same", "delta": "Aligned"},
-        {"aspect": "Guaranty-fund assessment", "gaap": "Probable + estimable", "stat": "Same", "delta": "Aligned"}
+        {
+          "aspect": "Premium tax accrual",
+          "gaap": "As premium earned",
+          "stat": "Same",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Guaranty-fund assessment",
+          "gaap": "Probable + estimable",
+          "stat": "Same",
+          "delta": "Aligned"
+        }
       ],
-      "tags": ["Expenses", "Premium Tax", "Guaranty Fund"]
+      "tags": [
+        "Expenses",
+        "Premium Tax",
+        "Guaranty Fund"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#720"
+    },
+    {
+      "id": "ASC-944-740",
+      "number": "944-740",
+      "title": "Income Taxes",
+      "fsli": "Tax",
+      "summary": "Insurance-specific income-tax considerations.",
+      "chapter_content": "ASC 944-740 covers insurance-specific income-tax matters including IRC \u00a7846 loss-reserve discounting, IRC \u00a7848 DAC tax-amortization, and FBE/non-FBE life-insurance company classification.",
+      "need": "Captures the unique tax-accounting issues facing insurance entities.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        },
+        {
+          "year": "2017",
+          "change": "TCJA \u2014 material insurer-specific changes."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Insurer tax",
+          "gaap": "ASC 944-740 + ASC 740",
+          "stat": "SSAP 101",
+          "delta": "Both leverage federal tax basis with admission overlay"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-740",
+      "tags": [
+        "Tax",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-80",
+      "number": "944-80",
+      "title": "Separate Accounts",
+      "fsli": "Separate Accounts",
+      "summary": "Presentation and measurement of separate-account assets and liabilities for variable annuities, variable life, and pension separate accounts.",
+      "chapter_content": "ASC 944-80 requires separate-account assets and corresponding policyholder liabilities to be presented in summary form on the balance sheet at fair value. Investment performance flows directly to policyholders. The general account retains contingent obligations under guaranteed minimum benefit provisions, accounted for under MRB rules (post-LDTI).",
+      "need": "Reflects the contractual structure where policyholders bear investment risk on segregated assets.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified from SOP 03-1."
+        },
+        {
+          "year": "2018",
+          "change": "MRB framework introduced for general-account guarantees."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Separate-account presentation",
+          "gaap": "Summary line at fair value",
+          "stat": "Same (SSAP 56)",
+          "delta": "Aligned"
+        },
+        {
+          "aspect": "Guaranteed benefit reserve",
+          "gaap": "MRB at fair value (post-LDTI)",
+          "stat": "VM-21 stochastic",
+          "delta": "Different measurement"
+        }
+      ],
+      "tags": [
+        "Separate Account",
+        "Variable Annuity",
+        "MRB"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#80"
+    },
+    {
+      "id": "ASC-944-805",
+      "number": "944-805",
+      "title": "Business Combinations",
+      "fsli": "Business Combinations",
+      "summary": "Business combinations involving insurance entities \u2014 VOBA recognition.",
+      "chapter_content": "ASC 944-805 governs business combinations involving insurance entities, with the unique requirement to recognize VOBA at fair value.",
+      "need": "Addresses the asymmetry that would otherwise occur when an acquirer takes on insurance liabilities at fair value but no offsetting asset.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        },
+        {
+          "year": "2018",
+          "change": "VOBA amortization aligned with LDTI."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Insurance M&A",
+          "gaap": "ASC 944-805 + ASC 805",
+          "stat": "SSAP 68 with goodwill cap",
+          "delta": "GAAP recognizes VOBA; STAT does not"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-805",
+      "tags": [
+        "Business Combinations",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-815",
+      "number": "944-815",
+      "title": "Derivatives and Hedging",
+      "fsli": "Derivatives",
+      "summary": "Insurance-specific derivative and hedging considerations.",
+      "chapter_content": "ASC 944-815 cross-references ASC 815 with insurance-specific overlays \u2014 embedded derivatives in insurance hosts, MRB hedging, and replication transactions.",
+      "need": "Captures insurance-specific derivative use cases distinct from general financial-instrument framework.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        },
+        {
+          "year": "2018",
+          "change": "ASU 2018-12 introduced MRBs."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Derivatives",
+          "gaap": "ASC 944-815 + ASC 815",
+          "stat": "SSAP 86",
+          "delta": "STAT permits more hedge-accounting flexibility"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-815",
+      "tags": [
+        "Derivatives",
+        "ASC 944"
+      ]
+    },
+    {
+      "id": "ASC-944-820",
+      "number": "944-820",
+      "title": "Fair Value Measurement",
+      "fsli": "Fair Value",
+      "summary": "Insurance-specific fair-value-measurement considerations.",
+      "chapter_content": "ASC 944-820 cross-references ASC 820 with insurance-specific overlays for Level 3 valuations and unique insurance-contract fair values.",
+      "need": "Captures the fair-value-measurement challenges unique to insurance \u2014 MRBs, illiquid insurance receivables, and Level 3 investment portfolios.",
+      "evolution": [
+        {
+          "year": "2009",
+          "change": "Codified."
+        },
+        {
+          "year": "2011",
+          "change": "Aligned with ASC 820 modernization."
+        }
+      ],
+      "gaap_comparison": [
+        {
+          "aspect": "Fair value framework",
+          "gaap": "ASC 944-820 + ASC 820",
+          "stat": "SSAP 100R",
+          "delta": "Aligned"
+        }
+      ],
+      "source_link": "https://asc.fasb.org/944/944-820",
+      "tags": [
+        "Fair Value",
+        "ASC 944"
+      ]
     },
     {
       "id": "ASC-944-825",
       "number": "944-825",
-      "title": "Financial Instruments — Insurance",
+      "title": "Financial Instruments \u2014 Insurance",
       "fsli": "Financial Instruments",
       "summary": "Cross-references to ASC 825 for fair-value option and ASC 815 for embedded derivatives, with insurance-specific overlays for MRB classification.",
       "chapter_content": "ASC 944-825 connects insurance accounting to the broader financial-instrument framework. Embedded derivatives in insurance host contracts are bifurcated under ASC 815-15. The fair-value option (ASC 825-10-25) is available for certain financial instruments including some long-duration contracts. Post-LDTI, MRBs replace embedded derivative bifurcation for most variable-annuity guarantees.",
       "need": "Avoids redundancy by leveraging the general financial-instrument framework while accommodating insurance-specific structures.",
       "evolution": [
-        {"year": "2018", "change": "MRB designation introduced under LDTI for variable-annuity guarantees."}
+        {
+          "year": "2018",
+          "change": "MRB designation introduced under LDTI for variable-annuity guarantees."
+        }
       ],
       "gaap_comparison": [
-        {"aspect": "Embedded derivatives", "gaap": "Bifurcate under ASC 815-15", "stat": "Same (SSAP 86)", "delta": "Aligned mechanism"},
-        {"aspect": "MRB classification", "gaap": "Fair value with OCI for own credit", "stat": "VM-21", "delta": "Material divergence"}
+        {
+          "aspect": "Embedded derivatives",
+          "gaap": "Bifurcate under ASC 815-15",
+          "stat": "Same (SSAP 86)",
+          "delta": "Aligned mechanism"
+        },
+        {
+          "aspect": "MRB classification",
+          "gaap": "Fair value with OCI for own credit",
+          "stat": "VM-21",
+          "delta": "Material divergence"
+        }
       ],
-      "tags": ["Financial Instruments", "Embedded Derivatives", "MRB", "Fair Value"]
+      "tags": [
+        "Financial Instruments",
+        "Embedded Derivatives",
+        "MRB",
+        "Fair Value"
+      ],
+      "source_link": "https://asc.fasb.org/944/topic&trid=2156436#825"
     }
   ]
 }

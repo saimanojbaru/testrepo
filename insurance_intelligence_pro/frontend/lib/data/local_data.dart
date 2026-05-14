@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../models/product.dart';
 import '../models/standard.dart';
 
 /// Loads bundled JSON datasets once and caches them in memory.
@@ -16,6 +17,7 @@ class LocalData {
   late StandardsCatalog _ssap;
   late StandardsCatalog _asc944;
   late StandardsCatalog _pcaob;
+  late ProductLibrary _products;
 
   Future<void> load() async {
     if (_loaded) return;
@@ -26,6 +28,8 @@ class LocalData {
     final ssap = await rootBundle.loadString('assets/data/ssap.json');
     final asc944 = await rootBundle.loadString('assets/data/asc944.json');
     final pcaob = await rootBundle.loadString('assets/data/pcaob.json');
+    final products =
+        await rootBundle.loadString('assets/data/products.json');
     _tickers = jsonDecode(tickers) as Map<String, dynamic>;
     _sample = jsonDecode(sample) as Map<String, dynamic>;
     _knowledge = jsonDecode(knowledge) as Map<String, dynamic>;
@@ -34,6 +38,8 @@ class LocalData {
         StandardsCatalog.fromJson(jsonDecode(asc944) as Map<String, dynamic>);
     _pcaob =
         StandardsCatalog.fromJson(jsonDecode(pcaob) as Map<String, dynamic>);
+    _products =
+        ProductLibrary.fromJson(jsonDecode(products) as Map<String, dynamic>);
     _loaded = true;
   }
 
@@ -104,4 +110,7 @@ class LocalData {
         throw ArgumentError('Unknown framework: $framework');
     }
   }
+
+  /// Returns the full product library (Life / Annuity / Institutional / P&C).
+  ProductLibrary get productLibrary => _products;
 }

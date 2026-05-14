@@ -43,6 +43,7 @@ class Standard {
   final List<StandardEvolution> evolution;
   final List<GaapComparisonRow> gaapComparison;
   final List<String> tags;
+  final String? sourceLink;
 
   Standard({
     required this.id,
@@ -56,6 +57,7 @@ class Standard {
     required this.evolution,
     required this.gaapComparison,
     required this.tags,
+    this.sourceLink,
   });
 
   factory Standard.fromJson(Map<String, dynamic> j, {String? frameworkOverride}) {
@@ -77,10 +79,20 @@ class Standard {
               GaapComparisonRow.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       tags: ((j['tags'] as List?) ?? []).map((e) => e.toString()).toList(),
+      sourceLink: j['source_link']?.toString(),
     );
   }
 
   String get displayLabel => '$number — $title';
+
+  /// Number rendered for the icon badge — strips the "AS " prefix on
+  /// PCAOB so the user sees "1001" / "2201" / "2301" cleanly.
+  String get badgeNumber {
+    if (framework == 'PCAOB') {
+      return number.replaceAll(RegExp(r'^AS\s*', caseSensitive: false), '');
+    }
+    return number;
+  }
 
   String get searchCorpus => [
         id,

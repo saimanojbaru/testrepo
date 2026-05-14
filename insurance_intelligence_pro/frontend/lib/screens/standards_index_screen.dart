@@ -188,14 +188,16 @@ class _StandardTile extends StatelessWidget {
             ),
             alignment: Alignment.center,
             child: Text(
-              standard.number,
+              // PCAOB tiles show the 4-digit number only ("2201", "2301")
+              // — no "AS" prefix. SSAP / ASC tiles keep their identifier.
+              standard.badgeNumber,
               maxLines: 1,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
-                  fontSize: 12,
-                  letterSpacing: 0.6),
+                  fontSize: standard.framework == 'PCAOB' ? 14 : 12,
+                  letterSpacing: 0.4),
             ),
           ),
           const SizedBox(width: 12),
