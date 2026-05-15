@@ -1,0 +1,141 @@
+{
+  "_note": "Audit checklist templates organized by FSLI / topic, each broken into the five canonical phases. Sample carrier names: Chubb, Progressive, Travelers, MetLife.",
+  "phases": [
+    {"key": "planning", "label": "Planning", "icon": "planning"},
+    {"key": "risk", "label": "Risk Assessment", "icon": "risk"},
+    {"key": "controls", "label": "Controls", "icon": "controls"},
+    {"key": "substantive", "label": "Substantive Testing", "icon": "substantive"},
+    {"key": "completion", "label": "Completion", "icon": "completion"}
+  ],
+  "templates": [
+    {
+      "id": "loss-lae-reserves",
+      "name": "Loss & LAE Reserves",
+      "subtitle": "P&C unpaid claims, IBNR, LAE — Schedule P alignment",
+      "tags": ["P&C", "Reserves", "Schedule P"],
+      "relevant_carriers": ["Progressive (PGR)", "Travelers (TRV)", "Chubb (CB)"],
+      "guidance": [
+        {"label": "SSAP 55", "framework": "SSAP", "id": "SSAP-55"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40"},
+        {"label": "AS 2501", "framework": "PCAOB", "id": "PCAOB-AS-2501"}
+      ],
+      "items": [
+        {"phase": "planning", "id": "loss-p1", "task": "Identify lines of business with material reserve exposure (Auto, GL, WC).", "guidance": "ASC 944-40"},
+        {"phase": "planning", "id": "loss-p2", "task": "Document the appointed actuary and any external reviewer engagement.", "guidance": "SSAP 55"},
+        {"phase": "planning", "id": "loss-p3", "task": "Obtain prior-period Statement of Actuarial Opinion and management's reserve range.", "guidance": "SSAP 55"},
+        {"phase": "risk", "id": "loss-r1", "task": "Assess inherent risk for long-tail vs short-tail lines.", "guidance": "AS 2110"},
+        {"phase": "risk", "id": "loss-r2", "task": "Identify fraud risk factors in reserve estimation (e.g. earnings smoothing).", "guidance": "AS 2401"},
+        {"phase": "risk", "id": "loss-r3", "task": "Evaluate prior-year reserve development for adverse trend signals.", "guidance": "ASU 2015-09"},
+        {"phase": "controls", "id": "loss-c1", "task": "Walk through case-reserve setting process for largest claims segments.", "guidance": "AS 2201"},
+        {"phase": "controls", "id": "loss-c2", "task": "Test IT general controls over actuarial models and claim systems.", "guidance": "AS 2201"},
+        {"phase": "controls", "id": "loss-c3", "task": "Test management review controls over actuarial central estimate.", "guidance": "AS 2201"},
+        {"phase": "substantive", "id": "loss-s1", "task": "Recompute paid loss & ALAE development factors from Schedule P data.", "guidance": "SSAP 55"},
+        {"phase": "substantive", "id": "loss-s2", "task": "Perform independent IBNR projection using chain-ladder + Bornhuetter-Ferguson.", "guidance": "AS 2501"},
+        {"phase": "substantive", "id": "loss-s3", "task": "Test ULAE provisioning (typically a % of paid losses).", "guidance": "SSAP 55"},
+        {"phase": "substantive", "id": "loss-s4", "task": "Reconcile gross/ceded/net reserves to general ledger and Schedule P.", "guidance": "SSAP 55"},
+        {"phase": "completion", "id": "loss-x1", "task": "Compare booked reserve to actuarial central estimate; document margin.", "guidance": "AS 2810"},
+        {"phase": "completion", "id": "loss-x2", "task": "Conclude on reserve adequacy and assess CAM disclosure.", "guidance": "AS 3101"},
+        {"phase": "completion", "id": "loss-x3", "task": "Obtain management representation letter covering reserve estimates.", "guidance": "AS 2410"}
+      ]
+    },
+    {
+      "id": "reinsurance",
+      "name": "Reinsurance",
+      "subtitle": "Risk transfer, Schedule F, slow-pay provision, ceded reserves",
+      "tags": ["Reinsurance", "Schedule F"],
+      "relevant_carriers": ["Chubb (CB)", "Travelers (TRV)", "AIG"],
+      "guidance": [
+        {"label": "SSAP 62R", "framework": "SSAP", "id": "SSAP-62R"},
+        {"label": "ASC 944-20", "framework": "ASC944", "id": "ASC-944-20"},
+        {"label": "AS 2410", "framework": "PCAOB", "id": "PCAOB-AS-2410"}
+      ],
+      "items": [
+        {"phase": "planning", "id": "ri-p1", "task": "Map reinsurance program — quota share, XOL, cat XOL, LPT/ADC.", "guidance": "SSAP 62R"},
+        {"phase": "planning", "id": "ri-p2", "task": "Identify affiliated vs unaffiliated reinsurer concentrations.", "guidance": "AS 2410"},
+        {"phase": "risk", "id": "ri-r1", "task": "Risk-transfer assessment on retrospective contracts (LPT/ADC).", "guidance": "ASC 944-20-15-41"},
+        {"phase": "risk", "id": "ri-r2", "task": "Evaluate counterparty credit risk and collateralization.", "guidance": "SSAP 62R"},
+        {"phase": "controls", "id": "ri-c1", "task": "Test contract review controls for new/amended reinsurance.", "guidance": "AS 2201"},
+        {"phase": "controls", "id": "ri-c2", "task": "Test slow-pay monitoring process.", "guidance": "SSAP 62R"},
+        {"phase": "substantive", "id": "ri-s1", "task": "Reconcile ceded premium and recoverables to Schedule F.", "guidance": "SSAP 62R"},
+        {"phase": "substantive", "id": "ri-s2", "task": "Test CECL allowance on reinsurance recoverables (ASC 326-20).", "guidance": "ASC 944-310"},
+        {"phase": "substantive", "id": "ri-s3", "task": "Confirm balances directly with major reinsurers.", "guidance": "AS 1105"},
+        {"phase": "completion", "id": "ri-x1", "task": "Conclude on authorized/unauthorized non-admission impact.", "guidance": "SSAP 62R"},
+        {"phase": "completion", "id": "ri-x2", "task": "Evaluate CAM disclosure for material reinsurance arrangements.", "guidance": "AS 3101"}
+      ]
+    },
+    {
+      "id": "investments",
+      "name": "Investments",
+      "subtitle": "Bonds, equities, derivatives, fair-value testing",
+      "tags": ["Investments", "ASC 326", "SSAP 26R/43R"],
+      "relevant_carriers": ["MetLife (MET)", "Prudential (PRU)", "Travelers (TRV)"],
+      "guidance": [
+        {"label": "SSAP 26R", "framework": "SSAP", "id": "SSAP-26R"},
+        {"label": "SSAP 43R", "framework": "SSAP", "id": "SSAP-43R"},
+        {"label": "AS 2501", "framework": "PCAOB", "id": "PCAOB-AS-2501"}
+      ],
+      "items": [
+        {"phase": "planning", "id": "inv-p1", "task": "Inventory investment portfolio by asset class and NAIC designation.", "guidance": "SSAP 26R"},
+        {"phase": "planning", "id": "inv-p2", "task": "Identify Level 3 / illiquid positions (private placements, CLO equity).", "guidance": "ASC 820"},
+        {"phase": "risk", "id": "inv-r1", "task": "Assess CECL ECL allowance methodology and inputs.", "guidance": "ASC 326-20"},
+        {"phase": "risk", "id": "inv-r2", "task": "Evaluate impairment / OTTI process for SSAP 43R structured securities.", "guidance": "SSAP 43R"},
+        {"phase": "controls", "id": "inv-c1", "task": "Test pricing and valuation controls (vendor reconciliation, broker quotes).", "guidance": "AS 2201"},
+        {"phase": "controls", "id": "inv-c2", "task": "Test trade-capture, custody, and reconciliation controls.", "guidance": "AS 2601"},
+        {"phase": "substantive", "id": "inv-s1", "task": "Independent price-test sample of bonds + structured securities.", "guidance": "AS 2501"},
+        {"phase": "substantive", "id": "inv-s2", "task": "Recompute amortized cost on high-quality bonds.", "guidance": "SSAP 26R"},
+        {"phase": "substantive", "id": "inv-s3", "task": "Test AVR + IMR rollforwards for life insurers.", "guidance": "SSAP 26R"},
+        {"phase": "completion", "id": "inv-x1", "task": "Conclude on Level 3 valuation, including sensitivities.", "guidance": "ASC 820"},
+        {"phase": "completion", "id": "inv-x2", "task": "Assess disclosure of credit-loss allowance and AOCI rollforward.", "guidance": "ASC 326"}
+      ]
+    },
+    {
+      "id": "dac-long-duration",
+      "name": "DAC & Long-Duration Contracts (LDTI)",
+      "subtitle": "Cohort LFPB, constant-level DAC, MRB fair value",
+      "tags": ["Life", "LDTI", "DAC", "LFPB", "MRB"],
+      "relevant_carriers": ["MetLife (MET)", "Prudential (PRU)", "Aflac (AFL)"],
+      "guidance": [
+        {"label": "ASC 944-30", "framework": "ASC944", "id": "ASC-944-30"},
+        {"label": "ASC 944-40", "framework": "ASC944", "id": "ASC-944-40"},
+        {"label": "SSAP 51R", "framework": "SSAP", "id": "SSAP-51R"}
+      ],
+      "items": [
+        {"phase": "planning", "id": "dac-p1", "task": "Inventory cohorts by issue year × product × benefit feature.", "guidance": "ASC 944-40"},
+        {"phase": "planning", "id": "dac-p2", "task": "Document discount-rate (upper-medium-grade A) sourcing.", "guidance": "ASC 944-40"},
+        {"phase": "risk", "id": "dac-r1", "task": "Identify LTC cohorts at risk of net-premium-ratio cap breach.", "guidance": "ASC 944-60"},
+        {"phase": "risk", "id": "dac-r2", "task": "Assess MRB fair-value model and hedging program.", "guidance": "ASC 944-40-30-19A"},
+        {"phase": "controls", "id": "dac-c1", "task": "Test annual assumption-review process for cohort LFPB.", "guidance": "AS 2201"},
+        {"phase": "controls", "id": "dac-c2", "task": "Test DAC capitalization criteria (incremental + direct + successful).", "guidance": "ASC 944-30"},
+        {"phase": "substantive", "id": "dac-s1", "task": "Recompute net premium ratio for a sample of cohorts.", "guidance": "ASC 944-40"},
+        {"phase": "substantive", "id": "dac-s2", "task": "Test constant-level DAC amortization on inforce denominator.", "guidance": "ASC 944-30"},
+        {"phase": "substantive", "id": "dac-s3", "task": "Independent MRB valuation on a sample of contracts.", "guidance": "ASC 944-40-30-19A"},
+        {"phase": "substantive", "id": "dac-s4", "task": "Reconcile rollforwards by cohort to general ledger.", "guidance": "ASC 944-40"},
+        {"phase": "completion", "id": "dac-x1", "task": "Conclude on LFPB cohort-level disclosure adequacy.", "guidance": "ASC 944-40"},
+        {"phase": "completion", "id": "dac-x2", "task": "Evaluate CAM for LDTI implementation and LTC unlockings.", "guidance": "AS 3101"}
+      ]
+    },
+    {
+      "id": "rbc-orsa",
+      "name": "RBC / ORSA",
+      "subtitle": "Risk-based capital, ORSA report, Group Capital Calculation",
+      "tags": ["RBC", "ORSA", "Surplus", "Solvency"],
+      "relevant_carriers": ["MetLife (MET)", "Travelers (TRV)", "AIG"],
+      "guidance": [
+        {"label": "SSAP 72", "framework": "SSAP", "id": "SSAP-72"},
+        {"label": "NAIC RBC formula", "framework": "SSAP", "id": "SSAP-72"}
+      ],
+      "items": [
+        {"phase": "planning", "id": "rbc-p1", "task": "Map RBC charge components: R-0 through R-5 (P&C) or C-0 through C-4 (Life).", "guidance": "NAIC RBC"},
+        {"phase": "planning", "id": "rbc-p2", "task": "Identify permitted / prescribed practices affecting surplus.", "guidance": "SSAP 1"},
+        {"phase": "risk", "id": "rbc-r1", "task": "Assess concentration risks (asset class, reinsurer, geography).", "guidance": "AS 2110"},
+        {"phase": "risk", "id": "rbc-r2", "task": "Evaluate stress scenarios run by management vs ORSA framework.", "guidance": "ORSA Model Act"},
+        {"phase": "controls", "id": "rbc-c1", "task": "Test ORSA governance & sign-off controls.", "guidance": "ORSA"},
+        {"phase": "controls", "id": "rbc-c2", "task": "Test RBC factor inputs from Schedule D / P / F feeds.", "guidance": "AS 2201"},
+        {"phase": "substantive", "id": "rbc-s1", "task": "Recompute aggregate RBC at year-end with covariance adjustment.", "guidance": "NAIC RBC"},
+        {"phase": "substantive", "id": "rbc-s2", "task": "Reconcile Schedule SI permitted practices to RBC impact.", "guidance": "SSAP 1"},
+        {"phase": "completion", "id": "rbc-x1", "task": "Conclude on RBC headroom and action-level proximity.", "guidance": "NAIC RBC"},
+        {"phase": "completion", "id": "rbc-x2", "task": "Document Group Capital Calculation reconciliation.", "guidance": "NAIC GCC"}
+      ]
+    }
+  ]
+}

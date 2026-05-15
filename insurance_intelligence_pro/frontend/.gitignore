@@ -1,0 +1,25 @@
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+.fvm/
+
+# Android (project-level overrides live in android/.gitignore)
+
+# iOS / macOS
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/Flutter.framework
+ios/Runner/GeneratedPluginRegistrant.*
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Misc
+*.log
