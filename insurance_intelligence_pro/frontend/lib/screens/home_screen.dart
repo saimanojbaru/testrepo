@@ -3,12 +3,10 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../features/ai/screens/ai_assistant_screen.dart';
 import '../features/audit/screens/audit_tools_screen.dart';
-import '../features/bridge/screens/gaap_sap_bridge_screen.dart';
 import '../features/gamification/services/xp_service.dart';
 import '../features/gamification/screens/trophy_case_screen.dart';
 import '../features/gamification/widgets/level_chip.dart';
 import '../features/quiz/screens/quiz_arena_screen.dart';
-import '../features/reserve/screens/reserve_toolkit_screen.dart';
 import '../theme/app_colors.dart';
 import 'company_screen.dart';
 import 'compare_screen.dart';
@@ -76,21 +74,6 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).push(MaterialPageRoute(
               builder: (_) => const AuditToolsScreen()));
         },
-        onAiAssistant: () {
-          Navigator.of(context).pop();
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => const AIAssistantScreen()));
-        },
-        onBridge: () {
-          Navigator.of(context).pop();
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => const GaapSapBridgeScreen()));
-        },
-        onReserveToolkit: () {
-          Navigator.of(context).pop();
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (_) => const ReserveToolkitScreen()));
-        },
         onQuizArena: () {
           Navigator.of(context).pop();
           Navigator.of(context).push(MaterialPageRoute(
@@ -102,12 +85,18 @@ class _HomeScreenState extends State<HomeScreen> {
               builder: (_) => const TrophyCaseScreen()));
         },
       ),
-      floatingActionButton: FloatingActionButton.small(
-        backgroundColor: AppColors.accent,
-        foregroundColor: Colors.white,
-        onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (_) => const AIAssistantScreen())),
-        child: const Icon(Icons.auto_awesome),
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          boxShadow: AppColors.glow(AppColors.accent, radius: 20),
+        ),
+        child: FloatingActionButton.small(
+          backgroundColor: AppColors.accent,
+          foregroundColor: Colors.black,
+          onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+              builder: (_) => const AIAssistantScreen())),
+          child: const Icon(Icons.auto_awesome),
+        ),
       ),
       appBar: AppBar(
         backgroundColor: AppColors.background,
@@ -149,9 +138,6 @@ class _AppDrawer extends StatelessWidget {
   final VoidCallback onProductLibrary;
   final VoidCallback onSettings;
   final VoidCallback onAuditTools;
-  final VoidCallback onAiAssistant;
-  final VoidCallback onBridge;
-  final VoidCallback onReserveToolkit;
   final VoidCallback onQuizArena;
   final VoidCallback onTrophyCase;
   const _AppDrawer({
@@ -161,9 +147,6 @@ class _AppDrawer extends StatelessWidget {
     required this.onProductLibrary,
     required this.onSettings,
     required this.onAuditTools,
-    required this.onAiAssistant,
-    required this.onBridge,
-    required this.onReserveToolkit,
     required this.onQuizArena,
     required this.onTrophyCase,
   });
@@ -201,60 +184,19 @@ class _AppDrawer extends StatelessWidget {
               selected: selected == _Tab.compare,
               onTap: () => onTabSelected(_Tab.compare),
             ),
-            _DrawerTile(
-              icon: Icons.bolt_rounded,
-              label: 'Updates',
-              selected: selected == _Tab.updates,
-              onTap: () => onTabSelected(_Tab.updates),
-            ),
-            const SizedBox(height: 4),
-            const Divider(color: AppColors.divider, height: 1),
-            // ----- Audit Tools / AI / Bridge / Reserve / Quiz ---------------
+            // ----- Audit Tools (with GAAP↔SAP Bridge + Reserve Toolkit inside) ---
             _DrawerTile(
               icon: Icons.fact_check_outlined,
               label: 'Audit Tools',
               selected: false,
               onTap: onAuditTools,
             ),
-            _DrawerTile(
-              icon: Icons.auto_awesome_outlined,
-              label: 'AI Auditor',
-              selected: false,
-              onTap: onAiAssistant,
-            ),
-            _DrawerTile(
-              icon: Icons.compare_arrows_outlined,
-              label: 'GAAP ↔ SAP Bridge',
-              selected: false,
-              onTap: onBridge,
-            ),
-            _DrawerTile(
-              icon: Icons.change_history_outlined,
-              label: 'Reserve Toolkit',
-              selected: false,
-              onTap: onReserveToolkit,
-            ),
-            // Fun Mode-gated entries (Quiz Arena + Trophy Case)
+            // ----- Quiz Arena — visually prominent, Fun Mode-gated -------------
             AnimatedBuilder(
               animation: XpService.instance,
               builder: (context, _) {
                 if (!XpService.instance.funMode) return const SizedBox.shrink();
-                return Column(
-                  children: [
-                    _DrawerTile(
-                      icon: Icons.flash_on_rounded,
-                      label: 'Quiz Arena',
-                      selected: false,
-                      onTap: onQuizArena,
-                    ),
-                    _DrawerTile(
-                      icon: Icons.emoji_events_rounded,
-                      label: 'Trophy Case',
-                      selected: false,
-                      onTap: onTrophyCase,
-                    ),
-                  ],
-                );
+                return _QuizDrawerTile(onTap: onQuizArena);
               },
             ),
             const SizedBox(height: 4),
@@ -328,6 +270,28 @@ class _AppDrawer extends StatelessWidget {
                 ],
               ),
             ),
+            const Divider(color: AppColors.divider, height: 1),
+            // Updates
+            _DrawerTile(
+              icon: Icons.bolt_rounded,
+              label: 'Updates',
+              selected: selected == _Tab.updates,
+              onTap: () => onTabSelected(_Tab.updates),
+            ),
+            // Trophy Case — Fun Mode-gated
+            AnimatedBuilder(
+              animation: XpService.instance,
+              builder: (context, _) {
+                if (!XpService.instance.funMode) return const SizedBox.shrink();
+                return _DrawerTile(
+                  icon: Icons.emoji_events_rounded,
+                  label: 'Trophy Case',
+                  selected: false,
+                  onTap: onTrophyCase,
+                );
+              },
+            ),
+            const SizedBox(height: 4),
             const Divider(color: AppColors.divider, height: 1),
             const SizedBox(height: 4),
             _DrawerTile(
@@ -586,6 +550,76 @@ class _AmbientBackground extends StatelessWidget {
                 .fadeIn(duration: 5000.ms),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// Visually-prominent Quiz Arena entry in the drawer — gradient pill
+/// with glow halo and "FUN" chip. Drives engagement.
+class _QuizDrawerTile extends StatelessWidget {
+  final VoidCallback onTap;
+  const _QuizDrawerTile({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      child: Material(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(14),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: onTap,
+          child: Container(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+            decoration: BoxDecoration(
+              gradient: AppColors.primaryGradient,
+              borderRadius: BorderRadius.circular(14),
+              boxShadow: AppColors.glow(AppColors.accent, radius: 16),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 36,
+                  height: 36,
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.18),
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                        color: Colors.white.withValues(alpha: 0.35)),
+                  ),
+                  child: const Icon(Icons.flash_on_rounded,
+                      color: Colors.white, size: 18),
+                ),
+                const SizedBox(width: 12),
+                const Expanded(
+                  child: Text('Quiz Arena',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w800,
+                          fontSize: 14,
+                          letterSpacing: 0.3)),
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 8, vertical: 3),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withValues(alpha: 0.25),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: const Text('FUN',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w900,
+                          letterSpacing: 1.4)),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

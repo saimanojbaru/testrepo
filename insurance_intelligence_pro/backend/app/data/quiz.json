@@ -1,14 +1,18 @@
 {
   "_note": "Auditor-relevant quiz questions. Each question references at least one SSAP/ASC/AS standard so the explanation is tappable.",
   "categories": [
-    {"key": "asc-944", "label": "ASC 944", "icon": "book", "description": "FASB insurance topic — DAC, LFPB, MRBs, reinsurance."},
-    {"key": "ssap", "label": "SSAPs", "icon": "shield", "description": "NAIC AP&P Manual chapters."},
-    {"key": "reserves", "label": "Loss Reserves", "icon": "warehouse", "description": "P&C reserves, IBNR, LAE, Schedule P."},
-    {"key": "reinsurance", "label": "Reinsurance", "icon": "swap", "description": "Risk transfer, recoverables, Schedule F."},
-    {"key": "investments", "label": "Investments & RBC", "icon": "trend", "description": "NAIC designations, AVR, IMR, RBC."},
-    {"key": "gaap-vs-sap", "label": "GAAP vs SAP", "icon": "scale", "description": "Reconciling differences."},
-    {"key": "audit", "label": "PCAOB Audit", "icon": "check", "description": "Insurance-audit PCAOB standards."},
-    {"key": "emerging", "label": "Emerging Risks", "icon": "bolt", "description": "Cyber, climate, AI, crypto."}
+    {"key": "basics",        "label": "Basics",            "icon": "book",      "tier": "Beginner",     "description": "Insurance accounting fundamentals: contracts, premiums, reserves."},
+    {"key": "products",      "label": "Products",          "icon": "warehouse", "tier": "Beginner",     "description": "Life, annuity, P&C, institutional — classification and economics."},
+    {"key": "terminology",   "label": "Terminology",       "icon": "book",      "tier": "Beginner",     "description": "FSLI vocabulary every auditor must know."},
+    {"key": "asc-944",       "label": "ASC 944",           "icon": "book",      "tier": "Intermediate", "description": "FASB insurance topic — DAC, LFPB, MRBs, reinsurance."},
+    {"key": "gaap-vs-sap",   "label": "GAAP vs SAP",       "icon": "scale",     "tier": "Intermediate", "description": "Reconciling differences and bridging surplus."},
+    {"key": "investments",   "label": "Investments & RBC", "icon": "trend",     "tier": "Intermediate", "description": "NAIC designations, AVR, IMR, RBC formula."},
+    {"key": "reserves",      "label": "Loss Reserves",     "icon": "warehouse", "tier": "Advanced",     "description": "P&C reserves, IBNR, LAE, Schedule P, chain-ladder."},
+    {"key": "reinsurance",   "label": "Reinsurance",       "icon": "swap",      "tier": "Advanced",     "description": "Risk transfer, recoverables, Schedule F, LPT/ADC."},
+    {"key": "ssap",          "label": "SSAPs",             "icon": "shield",    "tier": "Advanced",     "description": "NAIC AP&P Manual chapters in depth."},
+    {"key": "audit",         "label": "PCAOB / KAMs",      "icon": "check",     "tier": "Expert",       "description": "AS 2501 estimates, AS 1210 specialists, AS 3101 CAMs."},
+    {"key": "emerging",      "label": "Emerging Risks",    "icon": "bolt",      "tier": "Expert",       "description": "Cyber, climate, AI, crypto, private credit."},
+    {"key": "zumble",        "label": "Zumble Mode",       "icon": "flash",     "tier": "Adaptive",     "description": "Adaptive mixed-difficulty round drawn from every topic."}
   ],
   "questions": [
     {"id": "q1", "category": "asc-944", "type": "mc", "prompt": "Which sub-topic of ASC 944 introduces Market Risk Benefits (MRBs)?", "choices": ["944-30", "944-40-30-19A", "944-605", "944-80"], "answer": 1, "explanation": "MRBs are defined in ASC 944-40-30-19A — introduced by ASU 2018-12 (LDTI).", "difficulty": "easy"},

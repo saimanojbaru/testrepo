@@ -52,11 +52,48 @@ class QuizState extends ChangeNotifier {
     }
   }
 
-  List<QuizQuestion> questionsFor(String categoryKey) =>
-      _questions.where((q) => q.category == categoryKey).toList();
+  List<QuizQuestion> questionsFor(String categoryKey) {
+    // Zumble Mode: adaptive mixed-difficulty draw from all topics.
+    if (categoryKey == 'zumble') return _questions.toList();
+    return _questions.where((q) => q.category == categoryKey).toList();
+  }
 
   /// Builds a 5-question round, randomly drawn from the category.
+  /// For Zumble Mode the draw blends easy / medium / hard.
   List<QuizQuestion> buildRound(String categoryKey, {int size = 5}) {
+    if (categoryKey == 'zumble') {
+      final easy = _questions
+          .where((q) => q.difficulty == 'easy')
+          .toList()
+        ..shuffle(Random());
+      final medium = _questions
+          .where((q) => q.difficulty == 'medium')
+          .toList()
+        ..shuffle(Random());
+      final hard = _questions
+          .where((q) => q.difficulty == 'hard')
+          .toList()
+        ..shuffle(Random());
+      final mix = <QuizQuestion>[];
+      void take(List<QuizQuestion> from, int n) {
+        for (var i = 0; i < n && i < from.length; i++) {
+          mix.add(from[i]);
+        }
+      }
+      // Adaptive: 2 easy, 2 medium, 1 hard (fallback to whatever's available).
+      take(easy, 2);
+      take(medium, 2);
+      take(hard, 1);
+      // Top up if any tier was short.
+      while (mix.length < size) {
+        final all = _questions.toList()..shuffle(Random());
+        for (final q in all) {
+          if (mix.length >= size) break;
+          if (!mix.contains(q)) mix.add(q);
+        }
+      }
+      return mix.take(size).toList();
+    }
     final pool = questionsFor(categoryKey).toList()..shuffle(Random());
     return pool.take(size).toList();
   }
@@ -89,16 +126,20 @@ class QuizCategory {
   final String label;
   final String icon;
   final String description;
-  const QuizCategory(
-      {required this.key,
-      required this.label,
-      required this.icon,
-      required this.description});
+  final String tier; // Beginner / Intermediate / Advanced / Expert / Adaptive
+  const QuizCategory({
+    required this.key,
+    required this.label,
+    required this.icon,
+    required this.description,
+    required this.tier,
+  });
   factory QuizCategory.fromJson(Map<String, dynamic> j) => QuizCategory(
         key: j['key'] as String,
         label: j['label'] as String,
         icon: j['icon']?.toString() ?? 'book',
         description: j['description']?.toString() ?? '',
+        tier: j['tier']?.toString() ?? 'Beginner',
       );
 }
 

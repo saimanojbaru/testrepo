@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../theme/app_colors.dart';
 import '../../../widgets/glass_card.dart';
+import '../../bridge/screens/gaap_sap_bridge_screen.dart';
+import '../../reserve/screens/reserve_toolkit_screen.dart';
 import '../state/checklist_state.dart';
 import 'checklist_screen.dart';
 
@@ -45,6 +47,33 @@ class AuditToolsScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
+              // Quick-access toolkit row
+              Row(
+                children: [
+                  Expanded(
+                    child: _ToolkitButton(
+                      icon: Icons.compare_arrows_rounded,
+                      label: 'GAAP ↔ SAP Bridge',
+                      onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  const GaapSapBridgeScreen())),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: _ToolkitButton(
+                      icon: Icons.change_history_rounded,
+                      label: 'Reserve Toolkit',
+                      onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (_) =>
+                                  const ReserveToolkitScreen())),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
               ...templates.map((t) {
                 final stats = ChecklistState.instance.stats(t);
                 final i = templates.indexOf(t);
@@ -57,6 +86,50 @@ class AuditToolsScreen extends StatelessWidget {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class _ToolkitButton extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
+  const _ToolkitButton(
+      {required this.icon, required this.label, required this.onTap});
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(14),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(14),
+        onTap: onTap,
+        child: Container(
+          padding:
+              const EdgeInsets.symmetric(horizontal: 12, vertical: 14),
+          decoration: BoxDecoration(
+            gradient: AppColors.primaryGradient,
+            borderRadius: BorderRadius.circular(14),
+            boxShadow: AppColors.glow(AppColors.accent, radius: 12),
+          ),
+          child: Row(
+            children: [
+              Icon(icon, color: Colors.white, size: 18),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 12.5,
+                        letterSpacing: 0.3)),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
