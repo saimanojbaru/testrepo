@@ -1,0 +1,6 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" fill="#f7ecc6"/>
+  <path d="M20 90 Q 40 50 64 70 Q 88 90 108 50" fill="none" stroke="#c2410c" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="98" cy="48" r="6" fill="#c2410c"/>
+  <text x="64" y="118" text-anchor="middle" font-family="serif" font-size="14" fill="#5a3a1a">Dragon</text>
+</svg>

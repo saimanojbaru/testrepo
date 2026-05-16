@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/main_menu.gd" id="1_menu"]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.97, 0.93, 0.84, 1)
+
+[node name="Title" type="Label" parent="."]
+anchor_top = 0.12
+anchor_right = 1.0
+anchor_bottom = 0.28
+text = "Corporate Dragon
+Middle-Class Odyssey"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 56
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.15
+anchor_top = 0.45
+anchor_right = 0.85
+anchor_bottom = 0.92
+theme_override_constants/separation = 24
+
+[node name="NewGame" type="Button" parent="VBox"]
+text = "New Game"
+custom_minimum_size = Vector2(0, 104)
+theme_override_font_sizes/font_size = 32
+
+[node name="Continue" type="Button" parent="VBox"]
+text = "Continue"
+custom_minimum_size = Vector2(0, 104)
+theme_override_font_sizes/font_size = 32
+
+[node name="Stats" type="Button" parent="VBox"]
+text = "Stats"
+custom_minimum_size = Vector2(0, 104)
+theme_override_font_sizes/font_size = 32
+
+[node name="Journal" type="Button" parent="VBox"]
+text = "Journal"
+custom_minimum_size = Vector2(0, 104)
+theme_override_font_sizes/font_size = 32

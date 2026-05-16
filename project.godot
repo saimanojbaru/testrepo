@@ -1,0 +1,35 @@
+; Godot 4 project file — Corporate Dragon: Middle-Class Odyssey
+; Run with Godot 4.3+ (Compatibility renderer for max Android device coverage).
+
+config_version=5
+
+[application]
+
+config/name="Corporate Dragon: Middle-Class Odyssey"
+config/description="Narrative life-sim for middle-class Indian professionals."
+run/main_scene="res://ui/main_menu.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+ShaderGlobals="*res://core/shader_globals/shader_globals.gd"
+StatEngine="*res://core/stat_engine/stat_engine.gd"
+SaveManager="*res://core/save_manager/save_manager.gd"
+AudioDirector="*res://core/audio_director/audio_director.gd"
+MoodController="*res://core/mood_controller/mood_controller.gd"
+InkBridge="*res://core/narrative_runner/ink_bridge.gd"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

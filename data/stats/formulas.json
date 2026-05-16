@@ -1,0 +1,13 @@
+[
+  {
+    "id": "burnout_risk",
+    "expr": "(stress * 0.7) + ((100.0 - mental_health) * 0.3)",
+    "range": [0, 100]
+  },
+  {
+    "id": "net_worth",
+    "expr": "savings - debt",
+    "range": [-100000000, 100000000],
+    "unit": "INR"
+  }
+]

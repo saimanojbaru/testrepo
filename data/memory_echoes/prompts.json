@@ -1,0 +1,27 @@
+{
+  "parent_sacrifice": {
+    "trigger": "ch1/power_cut_study_night",
+    "prompt": "What is your earliest memory of your parents sacrificing something for your education?",
+    "min_chars": 20
+  },
+  "first_salary": {
+    "trigger": "ch3/first_paycheck",
+    "prompt": "What was the first thing you bought for your parents with your own money?",
+    "min_chars": 20
+  },
+  "stillness": {
+    "trigger": "ch5/balcony_night",
+    "prompt": "If your 18-year-old self could see you now, what would they ask first?",
+    "min_chars": 30
+  },
+  "first_friend": {
+    "trigger": "ch1/walk_to_school",
+    "prompt": "Who was your first real friend, and what game did you play with them?",
+    "min_chars": 15
+  },
+  "letting_go": {
+    "trigger": "ch5/quit_decision",
+    "prompt": "What is one thing you held onto for too long because you were afraid to disappoint someone?",
+    "min_chars": 30
+  }
+}

@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ui/game_scene.gd" id="1_game"]
+
+[node name="GameScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_game")
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.96, 0.92, 0.82, 1)
+
+[node name="DialoguePanel" type="PanelContainer" parent="."]
+anchor_top = 0.62
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialoguePanel"]
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialoguePanel/MarginContainer"]
+theme_override_constants/separation = 12
+
+[node name="Speaker" type="Label" parent="DialoguePanel/MarginContainer/VBoxContainer"]
+text = ""
+theme_override_font_sizes/font_size = 34
+
+[node name="Body" type="RichTextLabel" parent="DialoguePanel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 240)
+bbcode_enabled = true
+fit_content = true
+text = ""
+
+[node name="ContinueHint" type="Label" parent="DialoguePanel/MarginContainer/VBoxContainer"]
+text = "Tap to continue"
+horizontal_alignment = 2
+modulate = Color(1, 1, 1, 0.6)
+
+[node name="ChoicesPanel" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.05
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 0.58
+
+[node name="MarginContainer" type="MarginContainer" parent="ChoicesPanel"]
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Choices" type="VBoxContainer" parent="ChoicesPanel/MarginContainer"]
+theme_override_constants/separation = 16

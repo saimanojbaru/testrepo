@@ -1,1 +1,13 @@
 node_modules/
+
+# Godot
+.godot/
+*.import
+.import/
+.tmp/
+export_presets.cfg
+*.pck
+*.apk
+*.aab
+android/build/
+android/.gradle/
