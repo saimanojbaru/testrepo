@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://ui/game_scene.gd" id="1_game"]
 [ext_resource type="Theme" path="res://ui/theme/main_theme.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="dialogue_box"]
+bg_color = Color(0.09, 0.06, 0.05, 0.90)
+border_width_left = 0
+border_width_top = 4
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color(0.96, 0.72, 0.42, 0.75)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_left = 0
+corner_radius_bottom_right = 0
+shadow_color = Color(0, 0, 0, 0.7)
+shadow_size = 24
+shadow_offset = Vector2(0, -6)
+content_margin_left = 42.0
+content_margin_top = 30.0
+content_margin_right = 42.0
+content_margin_bottom = 28.0
+
+[sub_resource type="StyleBoxLine" id="speaker_underline"]
+color = Color(0.96, 0.72, 0.42, 0.5)
+thickness = 2
+
+[sub_resource type="Gradient" id="top_gradient"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0, 0, 0, 0.55, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="top_grad_tex"]
+gradient = SubResource("top_gradient")
+
+[sub_resource type="Gradient" id="mid_gradient"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.45)
+
+[sub_resource type="GradientTexture1D" id="mid_grad_tex"]
+gradient = SubResource("mid_gradient")
 
 [node name="GameScene" type="Control"]
 anchor_right = 1.0
@@ -10,79 +47,104 @@ mouse_filter = 1
 theme = ExtResource("2_theme")
 script = ExtResource("1_game")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="BackgroundA" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+modulate = Color(1, 1, 1, 1)
+
+[node name="BackgroundB" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+modulate = Color(1, 1, 1, 0)
+
+[node name="FallbackBackground" type="ColorRect" parent="."]
+visible = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0.11, 0.08, 0.06, 1)
 
-[node name="Vignette" type="ColorRect" parent="."]
+[node name="TopShade" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.18
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+texture = SubResource("top_grad_tex")
+flip_v = true
+
+[node name="BottomShade" type="TextureRect" parent="."]
+anchor_top = 0.55
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color(0, 0, 0, 0.25)
+expand_mode = 1
+stretch_mode = 6
+texture = SubResource("mid_grad_tex")
 
 [node name="DialoguePanel" type="PanelContainer" parent="."]
-anchor_left = 0.04
-anchor_top = 0.55
-anchor_right = 0.96
-anchor_bottom = 0.96
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -60.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("dialogue_box")
 
-[node name="MarginContainer" type="MarginContainer" parent="DialoguePanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="DialoguePanel"]
 mouse_filter = 2
-theme_override_constants/margin_left = 36
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 36
-theme_override_constants/margin_bottom = 28
+theme_override_constants/separation = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DialoguePanel/MarginContainer"]
-mouse_filter = 2
-theme_override_constants/separation = 18
-
-[node name="Speaker" type="Label" parent="DialoguePanel/MarginContainer/VBoxContainer"]
+[node name="SpeakerLabel" type="Label" parent="DialoguePanel/VBoxContainer"]
+visible = false
 text = ""
 mouse_filter = 2
 theme_override_font_sizes/font_size = 46
-theme_override_colors/font_color = Color(0.96, 0.72, 0.42, 1)
+theme_override_colors/font_color = Color(1, 0.82, 0.52, 1)
 
-[node name="Body" type="RichTextLabel" parent="DialoguePanel/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 420)
+[node name="SpeakerDivider" type="HSeparator" parent="DialoguePanel/VBoxContainer"]
+visible = false
+mouse_filter = 2
+theme_override_styles/separator = SubResource("speaker_underline")
+
+[node name="Body" type="RichTextLabel" parent="DialoguePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 0)
 mouse_filter = 2
 bbcode_enabled = true
 fit_content = true
+autowrap_mode = 3
 text = ""
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 58
+theme_override_font_sizes/italics_font_size = 58
+theme_override_colors/default_color = Color(0.98, 0.94, 0.86, 1)
 
-[node name="ContinueHint" type="Label" parent="DialoguePanel/MarginContainer/VBoxContainer"]
-text = "Tap to continue"
+[node name="ContinueHint" type="Label" parent="DialoguePanel/VBoxContainer"]
+text = "tap to continue  ›"
 horizontal_alignment = 2
 mouse_filter = 2
-theme_override_font_sizes/font_size = 32
-theme_override_colors/font_color = Color(0.96, 0.79, 0.55, 0.65)
+theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 0.85, 0.55, 0.72)
 
-[node name="ChoicesPanel" type="PanelContainer" parent="."]
+[node name="ChoicesContainer" type="VBoxContainer" parent="."]
 visible = false
-anchor_left = 0.04
-anchor_top = 0.10
-anchor_right = 0.96
-anchor_bottom = 0.94
+anchor_left = 0.05
+anchor_top = 1.0
+anchor_right = 0.95
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = -120.0
+offset_right = 0.0
+offset_bottom = -40.0
+grow_vertical = 0
 mouse_filter = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="ChoicesPanel"]
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ChoicesPanel/MarginContainer"]
-theme_override_constants/separation = 24
-
-[node name="Header" type="Label" parent="ChoicesPanel/MarginContainer/VBoxContainer"]
-text = "Choose"
-horizontal_alignment = 1
-theme_override_font_sizes/font_size = 50
-theme_override_colors/font_color = Color(0.96, 0.72, 0.42, 1)
-
-[node name="Choices" type="VBoxContainer" parent="ChoicesPanel/MarginContainer/VBoxContainer"]
 theme_override_constants/separation = 22

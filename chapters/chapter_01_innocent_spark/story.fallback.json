@@ -1,13 +1,15 @@
 {
   "chapter_id": "chapter_01_innocent_spark",
   "start": "morning_routine",
+  "next_chapter": "chapter_02_engineering_the_dream",
   "knots": {
     "morning_routine": {
+      "background": "morning_bedroom.jpg",
       "lines": [
-        { "mood": "ch1_innocent", "mood_fade": 1.5, "speaker": "", "text": "Tier-2 city. Early morning. Sunlight slants through a wooden window grill." },
-        { "speaker": "Maa", "text": "Beta, uth jao! School ki bus aane wali hai." },
-        { "speaker": "", "text": "Maa hands you a steel tiffin box, still warm." },
-        { "speaker": "Maa", "text": "Aloo paratha. Tumhara favourite." }
+        { "mood": "ch1_innocent", "mood_fade": 1.5, "background": "morning_bedroom.jpg", "speaker": "", "text": "Tier-2 city. Early morning. Sunlight slants through a wooden window grill." },
+        { "background": "morning_bedroom.jpg", "speaker": "Maa", "text": "Beta, uth jao! School ki bus aane wali hai." },
+        { "background": "kitchen_tiffin.jpg", "speaker": "", "text": "Maa hands you a steel tiffin box, still warm." },
+        { "background": "kitchen_tiffin.jpg", "speaker": "Maa", "text": "Aloo paratha. Tumhara favourite." }
       ],
       "choices": [
         { "text": "Thanks Maa!",            "effects": [{"stat":"family_bond","delta":3},{"stat":"happiness","delta":2}], "goto": "papa_asks_about_test" },
@@ -15,8 +17,9 @@
       ]
     },
     "papa_asks_about_test": {
+      "background": "family_living_room.jpg",
       "lines": [
-        { "speaker": "", "text": "Papa lowers his newspaper." },
+        { "background": "family_living_room.jpg", "speaker": "", "text": "Papa lowers his newspaper." },
         { "speaker": "Papa", "text": "Aaj test hai na? Tayyari ho gayi?" }
       ],
       "choices": [
@@ -32,30 +35,34 @@
       ]
     },
     "walk_to_school": {
+      "background": "morning_bedroom.jpg",
       "lines": [
-        { "mood": "ch1_innocent", "speaker": "", "text": "The morning is warm. Pollen drifts through slanted sunlight." },
+        { "mood": "ch1_innocent", "background": "morning_bedroom.jpg", "speaker": "", "text": "The morning is warm. Pollen drifts through slanted sunlight." },
         { "speaker": "", "text": "You walk to the bus stop, tiffin clutched tight." }
       ],
       "goto": "first_big_test"
     },
     "first_big_test": {
+      "background": "family_living_room.jpg",
       "lines": [
-        { "mood": "ch1_exam_focus", "mood_fade": 2.0, "speaker": "", "text": "Exam Hall. Ceiling fan ticks overhead. Pencils scratch." },
-        { "speaker": "", "text": "[Mini-game: Exam Puzzle — placeholder. Press continue.]" }
+        { "mood": "ch1_exam_focus", "mood_fade": 2.0, "background": "family_living_room.jpg", "speaker": "", "text": "Exam Hall. Ceiling fan ticks overhead. Pencils scratch." },
+        { "speaker": "", "text": "[Tap to advance through the exam puzzle.]" }
       ],
       "goto": "power_cut_study_night"
     },
     "power_cut_study_night": {
+      "background": "memory_echo.jpg",
       "lines": [
-        { "mood": "ch1_power_cut", "mood_fade": 6.0, "speaker": "", "text": "The lights cut out at 8:47 PM." },
+        { "mood": "ch1_power_cut", "mood_fade": 6.0, "background": "memory_echo.jpg", "speaker": "", "text": "The lights cut out at 8:47 PM." },
         { "speaker": "", "text": "You light the emergency lamp. Moths gather almost instantly." },
         { "speaker": "Maa", "text": "Beta, doodh leke aayi hoon. Thoda break le lo." }
       ],
       "goto": "family_financial_strain"
     },
     "family_financial_strain": {
+      "background": "family_living_room.jpg",
       "lines": [
-        { "mood": "ch1_family_strain", "mood_fade": 5.0, "speaker": "", "text": "Papa is sitting on the floor with the household account book." },
+        { "mood": "ch1_family_strain", "mood_fade": 5.0, "background": "family_living_room.jpg", "speaker": "", "text": "Papa is sitting on the floor with the household account book." },
         { "speaker": "", "text": "Maa is folding clothes nearby, very quietly." },
         { "speaker": "Papa", "text": "Is mahine thoda tight hai. Naya school bag agle mahine." }
       ],
@@ -72,8 +79,9 @@
       ]
     },
     "chapter_end": {
+      "background": "memory_echo.jpg",
       "lines": [
-        { "mood": "ch1_innocent", "mood_fade": 8.0, "speaker": "", "text": "Years pass in a blur of textbooks, tuition classes, and evenings on the balcony watching kites cut each other down." },
+        { "mood": "ch1_innocent", "mood_fade": 8.0, "background": "memory_echo.jpg", "speaker": "", "text": "Years pass in a blur of textbooks, tuition classes, and evenings on the balcony watching kites cut each other down." },
         { "speaker": "", "text": "At 15, you crack the entrance exam." },
         { "speaker": "", "text": "The family hugs you. Maa cries. Papa pretends he isn't." }
       ]
