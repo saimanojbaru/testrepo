@@ -4,8 +4,9 @@
   "next_chapter": null,
   "knots": {
     "the_pivot": {
+      "background": "morning_after.jpg",
       "lines": [
-        { "mood": "ch6_resolution", "speaker": "", "text": "A year on from the abyss. Coffee is hotter than it used to be." },
+        { "mood": "ch6_resolution", "background": "morning_after.jpg", "speaker": "", "text": "[pulse color=#ffd28a freq=1.4]A year on from the abyss.[/pulse] Coffee is hotter than it used to be." },
         { "speaker": "Mentor", "text": "You've seen the dragon up close. Do you want to kill it, ride it, or walk away?" }
       ],
       "choices": [

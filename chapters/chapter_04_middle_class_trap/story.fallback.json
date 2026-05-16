@@ -4,8 +4,9 @@
   "next_chapter": "chapter_05_the_abyss",
   "knots": {
     "wedding_year": {
+      "background": "balcony_night.jpg",
       "lines": [
-        { "mood": "ch4_trap", "speaker": "", "text": "The wedding photos are already framed. The honeymoon is one suitcase away." },
+        { "mood": "ch4_trap", "background": "balcony_night.jpg", "speaker": "", "text": "The wedding photos are already framed. The honeymoon is one suitcase away." },
         { "speaker": "Spouse", "text": "You promised you'd be home by 8. Third time this week." }
       ],
       "choices": [

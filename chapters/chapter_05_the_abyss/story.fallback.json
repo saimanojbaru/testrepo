@@ -4,10 +4,11 @@
   "next_chapter": "chapter_06_taming_the_dragon",
   "knots": {
     "wake_up_call": {
+      "background": "rain_window_bg.jpg",
       "lines": [
-        { "mood": "ch5_abyss", "mood_fade": 6.0, "speaker": "", "text": "Conference call. Chest tightens. The cursor stops blinking." },
+        { "mood": "ch5_abyss", "mood_fade": 6.0, "background": "rain_window_bg.jpg", "speaker": "", "text": "[shake rate=18 level=4 connected=1]Conference call. Chest tightens. The cursor stops blinking.[/shake]" },
         { "speaker": "", "text": "Someone says your name three times before you hear it." },
-        { "speaker": "Doctor", "text": "Panic attack. Lifestyle change is not optional now." }
+        { "speaker": "Doctor", "text": "Panic attack. [color=#e8786e]Lifestyle change is not optional now.[/color]" }
       ],
       "choices": [
         { "text": "Push through with medication.",     "effects": [{"stat":"stress","delta":25},{"stat":"mental_health","delta":-20}], "goto": "ai_disruption" },
@@ -39,9 +40,9 @@
     },
     "dragon_dream": {
       "lines": [
-        { "mood": "ch5_dragon_dream", "mood_fade": 4.0, "speaker": "", "text": "You dream of a dragon made of paper rupees and ringing clocks." },
-        { "speaker": "", "text": "It is beautiful. It eats your years one by one and asks for more." },
-        { "speaker": "", "text": "You wake at 4:11 AM." }
+        { "mood": "ch5_dragon_dream", "mood_fade": 4.0, "speaker": "", "text": "[fade start=0 length=24]You dream of a dragon made of paper rupees and ringing clocks.[/fade]" },
+        { "speaker": "", "text": "[tornado radius=4 freq=2]It is beautiful. It eats your years one by one and asks for more.[/tornado]" },
+        { "speaker": "", "text": "[shake rate=10 level=2 connected=1]You wake at 4:11 AM.[/shake]" }
       ],
       "goto": "rock_bottom"
     },

@@ -37,6 +37,8 @@ func _ready() -> void:
 	_refresh_remaining()
 	$Submit.pressed.connect(_on_submit)
 	$Cancel.pressed.connect(_on_cancel)
+	ButtonFX.attach($Submit)
+	ButtonFX.attach($Cancel)
 
 
 func _build_row(label: String, initial: float) -> Node:

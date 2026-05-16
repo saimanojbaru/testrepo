@@ -22,6 +22,8 @@ func _ready() -> void:
 	_tenure_slider.value_changed.connect(func(_v): _recalc())
 	$Submit.pressed.connect(_on_submit)
 	$Cancel.pressed.connect(_on_cancel)
+	ButtonFX.attach($Submit)
+	ButtonFX.attach($Cancel)
 	_recalc()
 
 

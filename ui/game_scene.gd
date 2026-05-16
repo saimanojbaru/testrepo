@@ -1,15 +1,32 @@
 extends Control
-## GameScene — visual-novel-style playback with auto-sizing dialogue,
-## floating speaker nameplate, cross-faded scene backgrounds.
+## GameScene — primary playback. Top-anchored dialogue panel, cross-faded
+## scene backgrounds, BBCode-aware typewriter, floating stat-delta toasts,
+## drag-and-drop tactile micro-interactions.
 
 @export var chapter_id: String = "chapter_01_innocent_spark"
 
 const TYPEWRITER_CHARS_PER_SEC := 48.0
 const BG_FADE_SEC := 0.9
+const TRANSITION_FADE_SEC := 2.5
+const DELTA_STACK_RESET_SEC := 0.85
+const DELTA_STACK_STEP := 64.0
+
 const CHOICE_BUTTON := preload("res://ui/choice_button.tscn")
+const STAT_DELTA_TOAST := preload("res://ui/stat_delta_toast.tscn")
 const BUDGET_ALLOCATOR := preload("res://minigames/budget_allocator/budget_allocator.tscn")
 const MEETING_SURVIVAL := preload("res://minigames/meeting_survival/meeting_survival.tscn")
 const EMI_SIMULATOR := preload("res://minigames/emi_simulator/emi_simulator.tscn")
+
+const TACTILE_SCENES := {
+	"pack_tiffin":          "res://minigames/tactile/pack_tiffin/pack_tiffin.tscn",
+}
+
+const SILENT_DELTA_SOURCES := {
+	"daily_decay": true,
+	"budget_allocator": true,
+	"emi_simulator": true,
+	"meeting_survival": true,
+}
 
 @onready var _bg_a: TextureRect           = $BackgroundA
 @onready var _bg_b: TextureRect           = $BackgroundB
@@ -20,13 +37,17 @@ const EMI_SIMULATOR := preload("res://minigames/emi_simulator/emi_simulator.tscn
 @onready var _speaker_label: Label        = $DialoguePanel/VBoxContainer/SpeakerLabel
 @onready var _speaker_divider: HSeparator = $DialoguePanel/VBoxContainer/SpeakerDivider
 @onready var _choices_root: VBoxContainer = $ChoicesContainer
+@onready var _delta_overlay: Control      = $DeltaOverlay
 
-var _full_text: String = ""
-var _typewriter_t: float = 0.0
+var _visible_chars_target: int = 0
+var _visible_chars_t: float = 0.0
 var _typewriter_done: bool = true
 var _minigame_active: bool = false
+var _transitioning: bool = false
 var _current_bg_path: String = ""
 var _bg_tween: Tween = null
+var _delta_stack_y: float = 0.0
+var _delta_stack_reset_timer: float = 0.0
 
 
 func _ready() -> void:
@@ -34,7 +55,7 @@ func _ready() -> void:
 	_continue_hint.visible = false
 	_speaker_label.visible = false
 	_speaker_divider.visible = false
-	_fallback_bg.visible = true   # until first background loads
+	_fallback_bg.visible = true
 
 	InkBridge.dialogue_line.connect(_on_dialogue_line)
 	InkBridge.choices_offered.connect(_on_choices_offered)
@@ -42,6 +63,8 @@ func _ready() -> void:
 	InkBridge.knot_entered.connect(_on_knot_entered)
 	InkBridge.story_finished.connect(_on_story_finished)
 	InkBridge.chapter_finished.connect(_on_chapter_finished)
+	StatEngine.stat_changed.connect(_on_stat_changed)
+
 	set_process(true)
 	call_deferred("_start_story")
 
@@ -50,8 +73,8 @@ func _start_story() -> void:
 	InkBridge.load_story(chapter_id)
 
 
-func _input(event: InputEvent) -> void:
-	if _choices_root.visible or _minigame_active:
+func _unhandled_input(event: InputEvent) -> void:
+	if _choices_root.visible or _minigame_active or _transitioning:
 		return
 	var consume := false
 	if event is InputEventScreenTouch and event.pressed:
@@ -68,32 +91,35 @@ func _input(event: InputEvent) -> void:
 func _advance_or_continue() -> void:
 	if not _typewriter_done:
 		_typewriter_done = true
-		_body.visible_ratio = 1.0
+		_body.visible_characters = _visible_chars_target
 		_continue_hint.visible = true
 		return
 	InkBridge.continue_story()
 
 
 func _process(delta: float) -> void:
+	if _delta_stack_reset_timer > 0.0:
+		_delta_stack_reset_timer = max(0.0, _delta_stack_reset_timer - delta)
+		if _delta_stack_reset_timer == 0.0:
+			_delta_stack_y = 0.0
 	if _typewriter_done:
 		return
-	_typewriter_t += delta * TYPEWRITER_CHARS_PER_SEC
-	var total: int = _full_text.length()
-	if total <= 0:
-		_typewriter_done = true
+	if _visible_chars_target <= 0:
 		return
-	_body.visible_ratio = clamp(_typewriter_t / float(total), 0.0, 1.0)
-	if _body.visible_ratio >= 1.0:
+	_visible_chars_t += delta * TYPEWRITER_CHARS_PER_SEC
+	var shown: int = min(int(_visible_chars_t), _visible_chars_target)
+	_body.visible_characters = shown
+	if shown >= _visible_chars_target:
 		_typewriter_done = true
 		_continue_hint.visible = true
 
 
 func _on_dialogue_line(speaker: String, text: String, meta: Dictionary) -> void:
-	# Background swap.
+	# Background swap (per-line override beats knot).
 	if meta.has("background"):
 		_set_background(String(meta["background"]))
 
-	# Speaker name as the first row of the dialogue panel.
+	# Speaker header.
 	if speaker.is_empty():
 		_speaker_label.visible = false
 		_speaker_divider.visible = false
@@ -102,15 +128,24 @@ func _on_dialogue_line(speaker: String, text: String, meta: Dictionary) -> void:
 		_speaker_label.visible = true
 		_speaker_divider.visible = true
 
-	_full_text = text
 	_body.text = text
-	_body.visible_ratio = 0.0
-	_typewriter_t = 0.0
+	_body.visible_characters = 0
+	_visible_chars_t = 0.0
 	_typewriter_done = false
 	_continue_hint.visible = false
 
+	# BBCode parsing needs a frame before character count is correct.
+	await get_tree().process_frame
+	_visible_chars_target = _body.get_total_character_count()
+	if _visible_chars_target <= 0:
+		# Empty / whitespace-only line — skip typewriter, allow immediate continue.
+		_typewriter_done = true
+		_continue_hint.visible = true
+
 	if meta.has("minigame"):
 		_launch_minigame(String(meta["minigame"]))
+	if meta.has("tactile"):
+		_launch_tactile(String(meta["tactile"]))
 	if meta.has("memory_echo"):
 		_offer_memory_echo(String(meta["memory_echo"]))
 
@@ -124,15 +159,13 @@ func _on_choices_offered(choices: Array) -> void:
 		var idx: int = i
 		btn.pressed.connect(func(): _on_choice_pressed(idx))
 		_choices_root.add_child(btn)
-	# Re-anchor choices container so it grows upward to fit content.
 	_choices_root.visible = true
 	_continue_hint.visible = false
-	# Hide dialogue while choosing.
 	_dialogue.visible = false
 	await get_tree().process_frame
-	var needed: float = _choices_root.size.y + 40.0
-	_choices_root.offset_top = -needed
-	_choices_root.offset_bottom = -40.0
+	# Container at top of screen; grow downward to fit content.
+	var needed: float = _choices_root.size.y
+	_choices_root.offset_bottom = needed
 
 
 func _on_choice_pressed(index: int) -> void:
@@ -150,11 +183,15 @@ func _on_knot_entered(knot: String) -> void:
 
 
 func _on_story_finished() -> void:
+	if _transitioning:
+		return
+	_transitioning = true
 	_speaker_label.visible = false
 	_speaker_divider.visible = false
 	_body.text = "[i]Your story is complete.\nTap to return to the main menu.[/i]"
-	_full_text = _body.text
-	_body.visible_ratio = 1.0
+	await get_tree().process_frame
+	_visible_chars_target = _body.get_total_character_count()
+	_body.visible_characters = _visible_chars_target
 	_typewriter_done = true
 	_continue_hint.visible = true
 	_choices_root.visible = false
@@ -163,17 +200,23 @@ func _on_story_finished() -> void:
 
 
 func _on_chapter_finished(_finished_id: String, next_chapter_id: String) -> void:
+	if _transitioning:
+		return
+	_transitioning = true
 	chapter_id = next_chapter_id
 	_speaker_label.visible = false
 	_speaker_divider.visible = false
 	_body.text = "[i]Chapter complete.\nLoading next chapter...[/i]"
-	_full_text = _body.text
-	_body.visible_ratio = 1.0
+	await get_tree().process_frame
+	_visible_chars_target = _body.get_total_character_count()
+	_body.visible_characters = _visible_chars_target
 	_typewriter_done = true
 	_continue_hint.visible = false
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(TRANSITION_FADE_SEC).timeout
 	InkBridge.load_story(next_chapter_id)
 	SaveManager.save_now()
+	await get_tree().process_frame
+	_transitioning = false
 
 
 func _set_background(filename: String) -> void:
@@ -188,7 +231,6 @@ func _set_background(filename: String) -> void:
 		return
 	_current_bg_path = filename
 	_fallback_bg.visible = false
-	# Cross-fade from A→B then swap.
 	_bg_b.texture = tex
 	_bg_b.modulate.a = 0.0
 	if _bg_tween != null and _bg_tween.is_valid():
@@ -219,6 +261,44 @@ func _launch_minigame(id: String) -> void:
 	if inst.has_signal("completed"):
 		inst.completed.connect(func(_score): _minigame_active = false)
 	inst.tree_exited.connect(func(): _minigame_active = false)
+
+
+func _launch_tactile(id: String) -> void:
+	if not TACTILE_SCENES.has(id):
+		push_warning("GameScene: unknown tactile '%s'" % id)
+		return
+	var path: String = TACTILE_SCENES[id]
+	if not ResourceLoader.exists(path):
+		push_warning("GameScene: tactile scene missing %s" % path)
+		return
+	var scene: PackedScene = load(path)
+	var inst: Control = scene.instantiate()
+	_minigame_active = true
+	add_child(inst)
+	if inst.has_signal("completed"):
+		inst.completed.connect(func(_s):
+			_minigame_active = false
+			InkBridge.continue_story()
+		)
+	inst.tree_exited.connect(func(): _minigame_active = false)
+
+
+func _on_stat_changed(id: String, old_v: float, new_v: float, source: String) -> void:
+	if _transitioning:
+		return
+	if SILENT_DELTA_SOURCES.has(source):
+		return
+	var delta: float = new_v - old_v
+	if abs(delta) < 0.5:
+		return
+	var toast: Control = STAT_DELTA_TOAST.instantiate()
+	_delta_overlay.add_child(toast)
+	if _delta_stack_reset_timer <= 0.0:
+		_delta_stack_y = 0.0
+	_delta_stack_reset_timer = DELTA_STACK_RESET_SEC
+	toast.position = Vector2(0, _delta_stack_y)
+	_delta_stack_y += DELTA_STACK_STEP
+	toast.show_delta(id, delta, source)
 
 
 func _offer_memory_echo(echo_id: String) -> void:

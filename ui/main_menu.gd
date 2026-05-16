@@ -15,6 +15,7 @@ func _ready() -> void:
 	$VBox/Stats.pressed.connect(_on_stats)
 	$VBox/Journal.pressed.connect(_on_journal)
 	$VBox/Continue.disabled = not SaveManager.has_save(0)
+	ButtonFX.attach_all(self)
 
 
 func _on_new_game() -> void:

@@ -6,21 +6,21 @@
 [sub_resource type="StyleBoxFlat" id="dialogue_box"]
 bg_color = Color(0.09, 0.06, 0.05, 0.90)
 border_width_left = 0
-border_width_top = 4
+border_width_top = 0
 border_width_right = 0
-border_width_bottom = 0
+border_width_bottom = 4
 border_color = Color(0.96, 0.72, 0.42, 0.75)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_left = 0
-corner_radius_bottom_right = 0
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_left = 32
+corner_radius_bottom_right = 32
 shadow_color = Color(0, 0, 0, 0.7)
 shadow_size = 24
-shadow_offset = Vector2(0, -6)
+shadow_offset = Vector2(0, 6)
 content_margin_left = 42.0
-content_margin_top = 30.0
+content_margin_top = 32.0
 content_margin_right = 42.0
-content_margin_bottom = 28.0
+content_margin_bottom = 30.0
 
 [sub_resource type="StyleBoxLine" id="speaker_underline"]
 color = Color(0.96, 0.72, 0.42, 0.5)
@@ -28,17 +28,17 @@ thickness = 2
 
 [sub_resource type="Gradient" id="top_gradient"]
 offsets = PackedFloat32Array(0, 1)
-colors = PackedColorArray(0, 0, 0, 0.55, 0, 0, 0, 0)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.45)
 
 [sub_resource type="GradientTexture1D" id="top_grad_tex"]
 gradient = SubResource("top_gradient")
 
-[sub_resource type="Gradient" id="mid_gradient"]
+[sub_resource type="Gradient" id="bot_gradient"]
 offsets = PackedFloat32Array(0, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.45)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.35)
 
-[sub_resource type="GradientTexture1D" id="mid_grad_tex"]
-gradient = SubResource("mid_gradient")
+[sub_resource type="GradientTexture1D" id="bot_grad_tex"]
+gradient = SubResource("bot_gradient")
 
 [node name="GameScene" type="Control"]
 anchor_right = 1.0
@@ -70,46 +70,45 @@ anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0.11, 0.08, 0.06, 1)
 
-[node name="TopShade" type="TextureRect" parent="."]
+[node name="TopShadeBehindDialogue" type="TextureRect" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.18
+anchor_bottom = 0.30
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 6
 texture = SubResource("top_grad_tex")
-flip_v = true
 
 [node name="BottomShade" type="TextureRect" parent="."]
-anchor_top = 0.55
+anchor_top = 0.72
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 6
-texture = SubResource("mid_grad_tex")
+texture = SubResource("bot_grad_tex")
 
 [node name="DialoguePanel" type="PanelContainer" parent="."]
 anchor_left = 0.0
-anchor_top = 1.0
+anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.0
 offset_left = 0.0
-offset_top = -60.0
+offset_top = 0.0
 offset_right = 0.0
-offset_bottom = 0.0
-grow_vertical = 0
+offset_bottom = 60.0
+grow_vertical = 1
 mouse_filter = 2
 theme_override_styles/panel = SubResource("dialogue_box")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialoguePanel"]
 mouse_filter = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 12
 
 [node name="SpeakerLabel" type="Label" parent="DialoguePanel/VBoxContainer"]
 visible = false
 text = ""
 mouse_filter = 2
-theme_override_font_sizes/font_size = 46
+theme_override_font_sizes/font_size = 48
 theme_override_colors/font_color = Color(1, 0.82, 0.52, 1)
 
 [node name="SpeakerDivider" type="HSeparator" parent="DialoguePanel/VBoxContainer"]
@@ -118,7 +117,7 @@ mouse_filter = 2
 theme_override_styles/separator = SubResource("speaker_underline")
 
 [node name="Body" type="RichTextLabel" parent="DialoguePanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 0)
+custom_minimum_size = Vector2(0, 240)
 mouse_filter = 2
 bbcode_enabled = true
 fit_content = true
@@ -138,13 +137,20 @@ theme_override_colors/font_color = Color(1, 0.85, 0.55, 0.72)
 [node name="ChoicesContainer" type="VBoxContainer" parent="."]
 visible = false
 anchor_left = 0.05
-anchor_top = 1.0
+anchor_top = 0.0
 anchor_right = 0.95
-anchor_bottom = 1.0
+anchor_bottom = 0.0
 offset_left = 0.0
-offset_top = -120.0
+offset_top = 80.0
 offset_right = 0.0
-offset_bottom = -40.0
-grow_vertical = 0
+offset_bottom = 80.0
+grow_vertical = 1
 mouse_filter = 1
 theme_override_constants/separation = 22
+
+[node name="DeltaOverlay" type="Control" parent="."]
+anchor_left = 0.55
+anchor_top = 0.40
+anchor_right = 0.98
+anchor_bottom = 0.78
+mouse_filter = 2

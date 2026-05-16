@@ -14,6 +14,7 @@ const CATEGORY_COLORS := {
 
 func _ready() -> void:
 	$Back.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/main_menu.tscn"))
+	ButtonFX.attach($Back)
 	_populate()
 	StatEngine.stat_changed.connect(func(_a, _b, _c, _d): _populate())
 

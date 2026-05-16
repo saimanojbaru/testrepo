@@ -4,8 +4,9 @@
   "next_chapter": "chapter_03_dragons_den",
   "knots": {
     "college_orientation": {
+      "background": "college_hostel.jpg",
       "lines": [
-        { "mood": "ch2_college", "speaker": "", "text": "Suitcase. Hostel block. Smell of phenyl and old books." },
+        { "mood": "ch2_college", "background": "college_hostel.jpg", "speaker": "", "text": "[fade start=0 length=18]Suitcase. Hostel block. Smell of phenyl and old books.[/fade]" },
         { "speaker": "", "text": "A senior with a clipboard squints at you." },
         { "speaker": "Senior", "text": "Oye fresher! Sing a song or do 50 push-ups." }
       ],

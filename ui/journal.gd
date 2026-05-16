@@ -12,6 +12,8 @@ var _entries: Dictionary = {}
 func _ready() -> void:
 	$Back.pressed.connect(func(): get_tree().change_scene_to_file("res://ui/main_menu.tscn"))
 	$Save.pressed.connect(_on_save)
+	ButtonFX.attach($Back)
+	ButtonFX.attach($Save)
 	_load_prompts()
 	_load_entries()
 	_pick_prompt()

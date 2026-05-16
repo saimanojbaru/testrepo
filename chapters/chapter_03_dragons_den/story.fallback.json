@@ -4,8 +4,9 @@
   "next_chapter": "chapter_04_middle_class_trap",
   "knots": {
     "first_review": {
+      "background": "cubicle_dawn.jpg",
       "lines": [
-        { "mood": "ch3_corporate", "speaker": "", "text": "Six months in. The automation script you built has been merged." },
+        { "mood": "ch3_corporate", "background": "cubicle_dawn.jpg", "speaker": "", "text": "Six months in. The automation script you built has been merged." },
         { "speaker": "", "text": "Your skip-level adjusts his collar." },
         { "speaker": "Boss", "text": "Your teammate said the script was mainly his idea. Good team effort." }
       ],

@@ -25,6 +25,7 @@ var _current_knot: String = ""
 var _line_index: int = 0
 var _visited_knots: Array = []
 var _waiting_for_choice: bool = false
+var _chapter_finished_fired: bool = false
 var _ink_player: Object = null  # populated only if inkgd is present
 
 
@@ -72,6 +73,8 @@ func _load_with_fallback(chapter_id: String) -> void:
 		return
 	_story = parsed
 	_visited_knots.clear()
+	_waiting_for_choice = false
+	_chapter_finished_fired = false
 	_jump_to_knot(String(_story.get("start", "")))
 
 
@@ -146,6 +149,10 @@ func _present_choices_or_goto(knot_data: Dictionary) -> void:
 		return
 	var next_chap: String = String(_story.get("next_chapter", ""))
 	if not next_chap.is_empty() and next_chap != "null":
+		if _chapter_finished_fired:
+			return
+		_chapter_finished_fired = true
+		_waiting_for_choice = true   # block further continue_story() until reset
 		chapter_finished.emit(String(_story.get("chapter_id", "")), next_chap)
 	else:
 		story_finished.emit()
