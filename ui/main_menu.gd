@@ -9,13 +9,21 @@ const JOURNAL_SCENE := "res://ui/journal.tscn"
 var _start_chapter: String = "chapter_01_innocent_spark"
 
 
+const ROOM_SCENE := "res://room/childhood_bedroom.tscn"
+
+
 func _ready() -> void:
 	$VBox/NewGame.pressed.connect(_on_new_game)
 	$VBox/Continue.pressed.connect(_on_continue)
 	$VBox/Stats.pressed.connect(_on_stats)
 	$VBox/Journal.pressed.connect(_on_journal)
+	$VBox/FreeTime.pressed.connect(_on_free_time)
 	$VBox/Continue.disabled = not SaveManager.has_save(0)
 	ButtonFX.attach_all(self)
+
+
+func _on_free_time() -> void:
+	get_tree().change_scene_to_file(ROOM_SCENE)
 
 
 func _on_new_game() -> void:
