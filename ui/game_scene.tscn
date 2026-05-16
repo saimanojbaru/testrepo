@@ -6,21 +6,21 @@
 [sub_resource type="StyleBoxFlat" id="dialogue_box"]
 bg_color = Color(0.09, 0.06, 0.05, 0.90)
 border_width_left = 0
-border_width_top = 0
+border_width_top = 3
 border_width_right = 0
-border_width_bottom = 4
+border_width_bottom = 3
 border_color = Color(0.96, 0.72, 0.42, 0.75)
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_left = 32
-corner_radius_bottom_right = 32
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_left = 24
+corner_radius_bottom_right = 24
 shadow_color = Color(0, 0, 0, 0.7)
-shadow_size = 24
-shadow_offset = Vector2(0, 6)
+shadow_size = 22
+shadow_offset = Vector2(0, 0)
 content_margin_left = 42.0
 content_margin_top = 32.0
 content_margin_right = 42.0
-content_margin_bottom = 30.0
+content_margin_bottom = 28.0
 
 [sub_resource type="StyleBoxLine" id="speaker_underline"]
 color = Color(0.96, 0.72, 0.42, 0.5)
@@ -52,7 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 modulate = Color(1, 1, 1, 1)
 
 [node name="BackgroundB" type="TextureRect" parent="."]
@@ -60,7 +60,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 expand_mode = 1
-stretch_mode = 6
+stretch_mode = 5
 modulate = Color(1, 1, 1, 0)
 
 [node name="FallbackBackground" type="ColorRect" parent="."]
@@ -88,15 +88,15 @@ stretch_mode = 6
 texture = SubResource("bot_grad_tex")
 
 [node name="DialoguePanel" type="PanelContainer" parent="."]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 0.0
+anchor_left = 0.04
+anchor_top = 1.0
+anchor_right = 0.96
+anchor_bottom = 1.0
 offset_left = 0.0
-offset_top = 0.0
+offset_top = -200.0
 offset_right = 0.0
-offset_bottom = 60.0
-grow_vertical = 1
+offset_bottom = -150.0
+grow_vertical = 0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("dialogue_box")
 
@@ -136,17 +136,18 @@ theme_override_colors/font_color = Color(1, 0.85, 0.55, 0.72)
 
 [node name="ChoicesContainer" type="VBoxContainer" parent="."]
 visible = false
-anchor_left = 0.05
-anchor_top = 0.0
-anchor_right = 0.95
-anchor_bottom = 0.0
+anchor_left = 0.04
+anchor_top = 1.0
+anchor_right = 0.96
+anchor_bottom = 1.0
 offset_left = 0.0
-offset_top = 80.0
+offset_top = -200.0
 offset_right = 0.0
-offset_bottom = 80.0
-grow_vertical = 1
+offset_bottom = -150.0
+grow_vertical = 0
 mouse_filter = 1
-theme_override_constants/separation = 22
+theme_override_constants/separation = 18
+size_flags_horizontal = 3
 
 [node name="DeltaOverlay" type="Control" parent="."]
 anchor_left = 0.55

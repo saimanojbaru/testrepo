@@ -1,10 +1,11 @@
 [gd_scene load_steps=30 format=3]
 
 [ext_resource type="Script" path="res://room/childhood_bedroom.gd" id="1_room"]
-[ext_resource type="Script" path="res://room/character_evolution.gd" id="2_char"]
-[ext_resource type="Script" path="res://room/character_anim_controller.gd" id="3_anim"]
+[ext_resource type="Script" path="res://room/fake_evolution.gd" id="2_char"]
+[ext_resource type="Script" path="res://room/tween_animator.gd" id="3_anim"]
 [ext_resource type="Script" path="res://room/room_interactor.gd" id="4_cam"]
 [ext_resource type="Script" path="res://room/interactive_object_3d.gd" id="5_obj"]
+[ext_resource type="Script" path="res://room/palette_manager.gd" id="7_pal"]
 [ext_resource type="Theme" path="res://ui/theme/main_theme.tres" id="6_theme"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
@@ -41,28 +42,22 @@ albedo_color = Color(0.72, 0.62, 0.50, 1)
 roughness = 0.92
 
 [sub_resource type="StandardMaterial3D" id="mat_skin"]
-albedo_color = Color(0.85, 0.65, 0.45, 1)
-roughness = 0.65
+albedo_color = Color(1.0, 0.90, 0.85, 1)
 
 [sub_resource type="StandardMaterial3D" id="mat_shirt"]
 albedo_color = Color(0.96, 0.72, 0.42, 1)
-roughness = 0.75
 
 [sub_resource type="StandardMaterial3D" id="mat_pants"]
 albedo_color = Color(0.32, 0.40, 0.55, 1)
-roughness = 0.78
 
 [sub_resource type="StandardMaterial3D" id="mat_hair"]
 albedo_color = Color(0.18, 0.10, 0.06, 1)
-roughness = 0.55
 
 [sub_resource type="StandardMaterial3D" id="mat_bed"]
 albedo_color = Color(0.75, 0.46, 0.46, 1)
-roughness = 0.85
 
 [sub_resource type="StandardMaterial3D" id="mat_desk"]
-albedo_color = Color(0.55, 0.36, 0.22, 1)
-roughness = 0.78
+albedo_color = Color(0.71, 0.51, 0.35, 1)
 
 [sub_resource type="StandardMaterial3D" id="mat_lamp"]
 albedo_color = Color(1.0, 0.85, 0.55, 1)
@@ -77,8 +72,7 @@ emission = Color(1, 0.92, 0.72, 1)
 emission_energy_multiplier = 0.8
 
 [sub_resource type="StandardMaterial3D" id="mat_books"]
-albedo_color = Color(0.36, 0.55, 0.42, 1)
-roughness = 0.82
+albedo_color = Color(0.40, 0.58, 0.45, 1)
 
 [sub_resource type="BoxShape3D" id="shape_bed"]
 size = Vector3(2.4, 0.5, 1.2)
@@ -105,7 +99,7 @@ height = 0.36
 
 [sub_resource type="SphereMesh" id="mesh_hair"]
 radius = 0.19
-height = 0.38
+height = 0.32
 
 [sub_resource type="CapsuleMesh" id="mesh_limb"]
 radius = 0.07
@@ -228,55 +222,61 @@ size = Vector3(0.7, 0.5, 0.5)
 material = SubResource("mat_books")
 
 [node name="Character" type="Node3D" parent="."]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
 script = ExtResource("2_char")
+head_mesh_path = NodePath("CharacterRoot/HeadPivot/Head")
+torso_mesh_path = NodePath("CharacterRoot/TorsoPivot/Body")
+limbs_container_path = NodePath("CharacterRoot/TorsoPivot")
 
 [node name="CharacterRoot" type="Node3D" parent="Character"]
 
-[node name="Body" type="MeshInstance3D" parent="Character/CharacterRoot"]
+[node name="TorsoPivot" type="Node3D" parent="Character/CharacterRoot"]
+
+[node name="Body" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = SubResource("mesh_body")
 surface_material_override/0 = SubResource("mat_shirt")
 
-[node name="Head" type="MeshInstance3D" parent="Character/CharacterRoot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
-mesh = SubResource("mesh_head")
-surface_material_override/0 = SubResource("mat_skin")
-
-[node name="Hair" type="MeshInstance3D" parent="Character/CharacterRoot/Head"]
-transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1, 0, 0.08, 0)
-mesh = SubResource("mesh_hair")
-surface_material_override/0 = SubResource("mat_hair")
-
-[node name="LeftLeg" type="MeshInstance3D" parent="Character/CharacterRoot"]
+[node name="LeftLeg" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.2, 0)
 mesh = SubResource("mesh_limb")
 surface_material_override/0 = SubResource("mat_pants")
 
-[node name="RightLeg" type="MeshInstance3D" parent="Character/CharacterRoot"]
+[node name="RightLeg" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.2, 0)
 mesh = SubResource("mesh_limb")
 surface_material_override/0 = SubResource("mat_pants")
 
-[node name="LeftArm" type="MeshInstance3D" parent="Character/CharacterRoot"]
+[node name="LeftArm" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27, 0.85, 0)
 mesh = SubResource("mesh_limb")
 surface_material_override/0 = SubResource("mat_shirt")
 
-[node name="RightArm" type="MeshInstance3D" parent="Character/CharacterRoot"]
+[node name="RightArm" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27, 0.85, 0)
 mesh = SubResource("mesh_limb")
 surface_material_override/0 = SubResource("mat_shirt")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Character"]
+[node name="HeadPivot" type="Node3D" parent="Character/CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
 
-[node name="AnimationTree" type="AnimationTree" parent="Character"]
-anim_player = NodePath("../AnimationPlayer")
+[node name="Head" type="MeshInstance3D" parent="Character/CharacterRoot/HeadPivot"]
+mesh = SubResource("mesh_head")
+surface_material_override/0 = SubResource("mat_skin")
 
-[node name="AnimController" type="Node" parent="Character"]
+[node name="Hair" type="MeshInstance3D" parent="Character/CharacterRoot/HeadPivot/Head"]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1, 0, 0.08, 0)
+mesh = SubResource("mesh_hair")
+surface_material_override/0 = SubResource("mat_hair")
+
+[node name="TweenAnimator" type="Node" parent="Character"]
 script = ExtResource("3_anim")
-anim_tree_path = NodePath("../AnimationTree")
-animation_player_path = NodePath("../AnimationPlayer")
+torso_pivot_path = NodePath("../CharacterRoot/TorsoPivot")
+head_pivot_path = NodePath("../CharacterRoot/HeadPivot")
+stress_threshold = 50.0
+
+[node name="PaletteManager" type="Node" parent="."]
+script = ExtResource("7_pal")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.707, -0.408, 0.577, 0, 0.816, 0.577, -0.707, -0.408, 0.577, 6, 6, 6)
@@ -284,7 +284,6 @@ projection = 1
 size = 7.0
 script = ExtResource("4_cam")
 character_path = NodePath("../Character")
-anim_controller_path = NodePath("../Character/AnimController")
 
 [node name="Hud" type="Control" parent="."]
 anchor_right = 1.0

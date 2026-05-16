@@ -1,23 +1,19 @@
 extends Camera3D
 class_name RoomInteractor
-## Isometric camera + click handler. Casts a ray on player taps and runs
-## the InteractiveObject3D action under the cursor / finger.
+## Isometric camera + click handler. Casts a ray on player taps, runs the
+## InteractiveObject3D action, asks the scene for a pose update, spawns a
+## floating Label3D reward.
 
 @export_flags_3d_physics var interactive_layer_mask: int = 1
 @export var character_path: NodePath = NodePath("../Character")
-@export var anim_controller_path: NodePath = NodePath("../Character/AnimController")
 
-var character: CharacterEvolution
-var anim_controller: CharacterAnimController
+var character: FakeEvolution
 
 
 func _ready() -> void:
 	var c: Node = get_node_or_null(character_path)
-	if c is CharacterEvolution:
+	if c is FakeEvolution:
 		character = c
-	var a: Node = get_node_or_null(anim_controller_path)
-	if a is CharacterAnimController:
-		anim_controller = a
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -47,10 +43,10 @@ func _perform_isometric_raycast(mouse_pos: Vector2) -> void:
 
 func _execute_object_action(object: InteractiveObject3D) -> void:
 	object.apply_to_engine()
-	if anim_controller:
-		var stress: float = StatEngine.get_stat("stress")
-		var energy: float = StatEngine.get_stat("energy")
-		anim_controller.evaluate_character_vitals(stress, energy)
+	# Ask the scene to refresh the character pose (hysteresis logic lives there).
+	var scene_root: Node = get_tree().current_scene
+	if scene_root and scene_root.has_method("request_pose_update"):
+		scene_root.request_pose_update()
 	_spawn_3d_reward_text(
 		object.global_position + Vector3(0, 1.2, 0),
 		object.reward_text,

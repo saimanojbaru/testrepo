@@ -162,10 +162,8 @@ func _on_choices_offered(choices: Array) -> void:
 	_choices_root.visible = true
 	_continue_hint.visible = false
 	_dialogue.visible = false
-	await get_tree().process_frame
-	# Container at top of screen; grow downward to fit content.
-	var needed: float = _choices_root.size.y
-	_choices_root.offset_bottom = needed
+	# Container is anchored bottom + grow_vertical=BEGIN, so it auto-sizes
+	# upward from the screen bottom to fit its children.
 
 
 func _on_choice_pressed(index: int) -> void:
