@@ -28,6 +28,11 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=1
 
+[gui]
+
+theme/custom="res://ui/theme/main_theme.tres"
+theme/custom_font="res://fonts/LiberationSerif-Regular.ttf"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

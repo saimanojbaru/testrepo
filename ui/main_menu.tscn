@@ -1,50 +1,76 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_menu"]
+[ext_resource type="Theme" path="res://ui/theme/main_theme.tres" id="2_theme"]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource("2_theme")
 script = ExtResource("1_menu")
 
 [node name="Background" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color(0.97, 0.93, 0.84, 1)
+mouse_filter = 2
+color = Color(0.11, 0.08, 0.06, 1)
 
 [node name="Title" type="Label" parent="."]
-anchor_top = 0.12
-anchor_right = 1.0
-anchor_bottom = 0.28
-text = "Corporate Dragon
-Middle-Class Odyssey"
+anchor_left = 0.04
+anchor_top = 0.10
+anchor_right = 0.96
+anchor_bottom = 0.20
+text = "Corporate Dragon"
 horizontal_alignment = 1
 vertical_alignment = 1
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 84
+theme_override_colors/font_color = Color(0.96, 0.79, 0.55, 1)
+
+[node name="Subtitle" type="Label" parent="."]
+anchor_left = 0.04
+anchor_top = 0.20
+anchor_right = 0.96
+anchor_bottom = 0.27
+text = "Middle-Class Odyssey"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.83, 0.68, 0.50, 1)
+
+[node name="Tagline" type="Label" parent="."]
+anchor_left = 0.04
+anchor_top = 0.31
+anchor_right = 0.96
+anchor_bottom = 0.36
+text = "From innocent dreams to corporate wars."
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_font_sizes/font_size = 32
+theme_override_colors/font_color = Color(0.78, 0.66, 0.52, 0.85)
 
 [node name="VBox" type="VBoxContainer" parent="."]
-anchor_left = 0.15
+anchor_left = 0.10
 anchor_top = 0.45
-anchor_right = 0.85
+anchor_right = 0.90
 anchor_bottom = 0.92
-theme_override_constants/separation = 24
+theme_override_constants/separation = 32
 
 [node name="NewGame" type="Button" parent="VBox"]
 text = "New Game"
-custom_minimum_size = Vector2(0, 104)
-theme_override_font_sizes/font_size = 32
+custom_minimum_size = Vector2(0, 130)
+theme_override_font_sizes/font_size = 44
 
 [node name="Continue" type="Button" parent="VBox"]
 text = "Continue"
-custom_minimum_size = Vector2(0, 104)
-theme_override_font_sizes/font_size = 32
+custom_minimum_size = Vector2(0, 130)
+theme_override_font_sizes/font_size = 44
 
 [node name="Stats" type="Button" parent="VBox"]
 text = "Stats"
-custom_minimum_size = Vector2(0, 104)
-theme_override_font_sizes/font_size = 32
+custom_minimum_size = Vector2(0, 130)
+theme_override_font_sizes/font_size = 44
 
 [node name="Journal" type="Button" parent="VBox"]
 text = "Journal"
-custom_minimum_size = Vector2(0, 104)
-theme_override_font_sizes/font_size = 32
+custom_minimum_size = Vector2(0, 130)
+theme_override_font_sizes/font_size = 44
