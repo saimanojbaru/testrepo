@@ -33,7 +33,7 @@ func _load_moods() -> void:
 		push_error("MoodController: missing %s" % MOODS_FILE)
 		return
 	var f := FileAccess.open(MOODS_FILE, FileAccess.READ)
-	var parsed = JSON.parse_string(f.get_as_text())
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	f.close()
 	if typeof(parsed) == TYPE_DICTIONARY:
 		_moods = parsed
@@ -82,10 +82,10 @@ func _apply_immediate(mood: Dictionary, mood_id: String) -> void:
 
 
 func _apply_blend(from: Dictionary, to: Dictionary, t: float) -> void:
-	var vibrancy := lerp(float(from.get("vibrancy", 1.0)), float(to.get("vibrancy", 1.0)), t)
-	var warmth   := lerp(float(from.get("warmth", 1.0)),   float(to.get("warmth", 1.0)),   t)
-	var density  := lerp(float(from.get("density", 0.5)),  float(to.get("density", 0.5)),  t)
-	var tempo    := lerp(float(from.get("tempo", 0.6)),    float(to.get("tempo", 0.6)),    t)
+	var vibrancy: float = lerp(float(from.get("vibrancy", 1.0)), float(to.get("vibrancy", 1.0)), t)
+	var warmth: float   = lerp(float(from.get("warmth", 1.0)),   float(to.get("warmth", 1.0)),   t)
+	var density: float  = lerp(float(from.get("density", 0.5)),  float(to.get("density", 0.5)),  t)
+	var tempo: float    = lerp(float(from.get("tempo", 0.6)),    float(to.get("tempo", 0.6)),    t)
 
 	ShaderGlobals.set_uniform("global_mood_vibrancy", vibrancy)
 	ShaderGlobals.set_uniform("global_mood_warmth", warmth)

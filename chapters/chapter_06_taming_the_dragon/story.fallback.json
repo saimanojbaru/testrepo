@@ -1,0 +1,88 @@
+{
+  "chapter_id": "chapter_06_taming_the_dragon",
+  "start": "the_pivot",
+  "next_chapter": null,
+  "knots": {
+    "the_pivot": {
+      "lines": [
+        { "mood": "ch6_resolution", "speaker": "", "text": "A year on from the abyss. Coffee is hotter than it used to be." },
+        { "speaker": "Mentor", "text": "You've seen the dragon up close. Do you want to kill it, ride it, or walk away?" }
+      ],
+      "choices": [
+        { "text": "Change the system from inside. Director track.",  "effects": [{"stat":"leadership","delta":18},{"stat":"reputation","delta":14}], "goto": "family_legacy" },
+        { "text": "Start my own thing. No more reporting.",          "effects": [{"stat":"creativity","delta":22},{"stat":"stress","delta":14},{"stat":"savings","delta":-400000}], "goto": "family_legacy" },
+        { "text": "Consulting. Teaching. Half time. Family time.",   "effects": [{"stat":"wisdom","delta":14},{"stat":"relationship_satisfaction","delta":16},{"stat":"happiness","delta":16}], "goto": "family_legacy" }
+      ]
+    },
+    "family_legacy": {
+      "lines": [
+        { "mood": "ch6_resolution", "speaker": "", "text": "Your child, now seventeen, slumps onto the sofa." },
+        { "speaker": "Child", "text": "Everyone says I should do engineering. But I want to do design." }
+      ],
+      "choices": [
+        { "text": "Safe job first. Passion later.",                                "effects": [{"stat":"family_bond","delta":-6},{"stat":"wisdom","delta":-4}], "goto": "dragon_battle" },
+        { "text": "I followed the safe path. Don't repeat my mistakes.",           "effects": [{"stat":"family_bond","delta":18},{"stat":"wisdom","delta":12},{"stat":"parenting_skill","delta":12}], "goto": "dragon_battle" },
+        { "text": "Here is my full story. You decide.",                             "effects": [{"stat":"family_bond","delta":22},{"stat":"wisdom","delta":18},{"stat":"parenting_skill","delta":16}], "goto": "dragon_battle" }
+      ]
+    },
+    "dragon_battle": {
+      "lines": [
+        { "mood": "ch5_dragon_dream", "mood_fade": 3.0, "speaker": "", "text": "The dragon. Smaller now. Or you are larger. Or both." },
+        { "speaker": "", "text": "You sit across from it like an old colleague at a farewell dinner." }
+      ],
+      "choices": [
+        { "text": "I built you. I can let you go.",         "effects": [{"stat":"wisdom","delta":20},{"stat":"mental_health","delta":14}], "goto": "the_reckoning" },
+        { "text": "You taught me. Now I leave.",            "effects": [{"stat":"wisdom","delta":14},{"stat":"happiness","delta":10}], "goto": "the_reckoning" },
+        { "text": "I'll teach others to recognise you sooner.","effects": [{"stat":"wisdom","delta":24},{"stat":"leadership","delta":12}], "goto": "the_reckoning" }
+      ]
+    },
+    "the_reckoning": {
+      "lines": [
+        { "mood": "ch6_resolution", "mood_fade": 8.0, "speaker": "", "text": "The last office goodbye. Or the first day of something new." },
+        { "speaker": "", "text": "A child's wedding. A parent's anniversary. A book you finally read." }
+      ],
+      "branch_on_stats": [
+        { "when": "wisdom > 80",                                "goto": "ending_legacy_builder" },
+        { "when": "happiness > 70 and family_bond > 70",        "goto": "ending_balanced_fulfillment" },
+        { "when": "savings > 5000000 and family_bond < 50",     "goto": "ending_corporate_sovereign" },
+        { "when": "mental_health < 35",                          "goto": "ending_tragic_regret" }
+      ],
+      "goto": "ending_simple_redemption"
+    },
+    "ending_legacy_builder": {
+      "lines": [
+        { "mood": "ch6_resolution", "speaker": "", "text": "You opened a small school for kids who could not afford coaching." },
+        { "speaker": "", "text": "Your old colleagues call sometimes. Some of them have quit." },
+        { "speaker": "", "text": "[Ending: Legacy Builder]" }
+      ]
+    },
+    "ending_balanced_fulfillment": {
+      "lines": [
+        { "mood": "ch6_resolution", "speaker": "", "text": "The flat is smaller. The mornings are slower. Your spouse is reading on the same sofa." },
+        { "speaker": "", "text": "Your child sends you a meme. You laugh out loud." },
+        { "speaker": "", "text": "[Ending: Balanced Fulfillment]" }
+      ]
+    },
+    "ending_corporate_sovereign": {
+      "lines": [
+        { "mood": "ch4_balcony", "speaker": "", "text": "The corner office. The car. The corporate award on the shelf." },
+        { "speaker": "", "text": "You eat dinner alone more nights than not." },
+        { "speaker": "", "text": "[Ending: Corporate Sovereign]" }
+      ]
+    },
+    "ending_tragic_regret": {
+      "lines": [
+        { "mood": "ch5_abyss", "speaker": "", "text": "The doctor uses the word maintenance, not recovery." },
+        { "speaker": "", "text": "You write a long letter to your younger self. You actually send it, to your kid." },
+        { "speaker": "", "text": "[Ending: Tragic Regret]" }
+      ]
+    },
+    "ending_simple_redemption": {
+      "lines": [
+        { "mood": "ch6_resolution", "speaker": "", "text": "You moved. New town. Slower internet. Better mangoes." },
+        { "speaker": "", "text": "You started teaching local kids on Saturdays without quite meaning to." },
+        { "speaker": "", "text": "[Ending: Simple Redemption]" }
+      ]
+    }
+  }
+}

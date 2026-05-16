@@ -12,6 +12,8 @@ extends Control
 
 const CHOICE_BUTTON := preload("res://ui/choice_button.tscn")
 const BUDGET_ALLOCATOR := preload("res://minigames/budget_allocator/budget_allocator.tscn")
+const MEETING_SURVIVAL := preload("res://minigames/meeting_survival/meeting_survival.tscn")
+const EMI_SIMULATOR := preload("res://minigames/emi_simulator/emi_simulator.tscn")
 
 
 func _ready() -> void:
@@ -21,6 +23,7 @@ func _ready() -> void:
 	InkBridge.mood_requested.connect(_on_mood_requested)
 	InkBridge.knot_entered.connect(_on_knot_entered)
 	InkBridge.story_finished.connect(_on_story_finished)
+	InkBridge.chapter_finished.connect(_on_chapter_finished)
 	InkBridge.load_story(chapter_id)
 
 
@@ -51,7 +54,7 @@ func _on_choices_offered(choices: Array) -> void:
 		c.queue_free()
 	for i in choices.size():
 		var btn := CHOICE_BUTTON.instantiate()
-		btn.set_text(String(choices[i]))
+		btn.set_choice_text(String(choices[i]))
 		var idx := i
 		btn.pressed.connect(func(): _on_choice_pressed(idx))
 		_choices_panel.add_child(btn)
@@ -74,8 +77,19 @@ func _on_knot_entered(knot: String) -> void:
 
 func _on_story_finished() -> void:
 	_speaker.visible = false
-	_text.text = "[i]Chapter complete. Tap to return to main menu.[/i]"
+	_text.text = "[i]Your story is complete.\nTap to return to the main menu.[/i]"
 	_choices_panel_root.visible = false
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://ui/main_menu.tscn")
+
+
+func _on_chapter_finished(_finished_id: String, next_chapter_id: String) -> void:
+	chapter_id = next_chapter_id
+	_speaker.visible = false
+	_text.text = "[i]Chapter complete.\nLoading next chapter...[/i]"
+	await get_tree().create_timer(2.5).timeout
+	InkBridge.load_story(next_chapter_id)
+	SaveManager.save_now()
 
 
 func _launch_minigame(id: String) -> void:
@@ -83,6 +97,10 @@ func _launch_minigame(id: String) -> void:
 	match id:
 		"budget_allocator":
 			inst = BUDGET_ALLOCATOR.instantiate()
+		"meeting_survival":
+			inst = MEETING_SURVIVAL.instantiate()
+		"emi_simulator":
+			inst = EMI_SIMULATOR.instantiate()
 		_:
 			push_warning("GameScene: unknown minigame '%s'" % id)
 			return

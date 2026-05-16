@@ -62,7 +62,7 @@ func load_slot(slot: int) -> bool:
 		load_completed.emit(slot, false)
 		return false
 	var f := FileAccess.open(path, FileAccess.READ)
-	var parsed = JSON.parse_string(f.get_as_text())
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	f.close()
 	if typeof(parsed) != TYPE_DICTIONARY:
 		load_completed.emit(slot, false)

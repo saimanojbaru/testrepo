@@ -5,9 +5,12 @@ node_modules/
 *.import
 .import/
 .tmp/
-export_presets.cfg
-*.pck
+
+# Build artifacts and signing material
+build/
+*.keystore
 *.apk
 *.aab
+*.idsig
 android/build/
 android/.gradle/

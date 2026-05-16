@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 func _load_definitions() -> void:
-	var raw := _read_json(STATS_FILE)
+	var raw: Variant = _read_json(STATS_FILE)
 	if typeof(raw) != TYPE_DICTIONARY:
 		push_error("StatEngine: stats.json is malformed")
 		return
@@ -36,12 +36,12 @@ func _load_definitions() -> void:
 
 
 func _load_formulas() -> void:
-	var raw := _read_json(FORMULAS_FILE)
+	var raw: Variant = _read_json(FORMULAS_FILE)
 	_formulas = raw if typeof(raw) == TYPE_ARRAY else []
 
 
 func _load_consequences() -> void:
-	var raw := _read_json(CONSEQUENCES_FILE)
+	var raw: Variant = _read_json(CONSEQUENCES_FILE)
 	_consequences = raw if typeof(raw) == TYPE_ARRAY else []
 
 
@@ -50,10 +50,9 @@ func _read_json(path: String) -> Variant:
 		push_warning("StatEngine: missing %s" % path)
 		return null
 	var f := FileAccess.open(path, FileAccess.READ)
-	var text := f.get_as_text()
+	var text: String = f.get_as_text()
 	f.close()
-	var parsed = JSON.parse_string(text)
-	return parsed
+	return JSON.parse_string(text)
 
 
 func _reset_to_defaults() -> void:
@@ -131,10 +130,10 @@ func _evaluate_condition(expr: String) -> bool:
 	if expr.is_empty():
 		return false
 	var e := Expression.new()
-	var err := e.parse(expr, _values.keys())
+	var err: int = e.parse(expr, _values.keys())
 	if err != OK:
 		return false
-	var result = e.execute(_values.values(), self, false)
+	var result: Variant = e.execute(_values.values(), self, false)
 	return bool(result)
 
 

@@ -1,0 +1,71 @@
+{
+  "chapter_id": "chapter_02_engineering_the_dream",
+  "start": "college_orientation",
+  "next_chapter": "chapter_03_dragons_den",
+  "knots": {
+    "college_orientation": {
+      "lines": [
+        { "mood": "ch2_college", "speaker": "", "text": "Suitcase. Hostel block. Smell of phenyl and old books." },
+        { "speaker": "", "text": "A senior with a clipboard squints at you." },
+        { "speaker": "Senior", "text": "Oye fresher! Sing a song or do 50 push-ups." }
+      ],
+      "choices": [
+        { "text": "Sing softly.",                       "effects": [{"stat":"discipline","delta":8},{"stat":"family_bond","delta":3},{"stat":"happiness","delta":-4}], "goto": "first_semester" },
+        { "text": "Only if you join me, sir!",          "effects": [{"stat":"social_charm","delta":10},{"stat":"happiness","delta":4}], "goto": "first_semester" },
+        { "text": "This is stupid. I'm leaving.",       "effects": [{"stat":"social_charm","delta":-8},{"stat":"discipline","delta":4}], "goto": "first_semester" }
+      ]
+    },
+    "first_semester": {
+      "lines": [
+        { "mood": "ch2_college", "speaker": "", "text": "Lectures blur. The canteen samosas are warm. You learn what 'attendance shortage' means." },
+        { "speaker": "", "text": "Mid-sem results arrive. You are nowhere near top, nowhere near failing." }
+      ],
+      "choices": [
+        { "text": "Grind harder for next sem.",         "effects": [{"stat":"discipline","delta":8},{"stat":"technical_skills","delta":6},{"stat":"happiness","delta":-3}], "goto": "first_crush" },
+        { "text": "Get into a club. Make friends.",     "effects": [{"stat":"social_charm","delta":10},{"stat":"happiness","delta":6}], "goto": "first_crush" },
+        { "text": "Try a side project on your laptop.", "effects": [{"stat":"technical_skills","delta":12},{"stat":"creativity","delta":6}], "goto": "first_crush" }
+      ]
+    },
+    "first_crush": {
+      "lines": [
+        { "mood": "ch2_college", "speaker": "", "text": "A face across the library. A casual hello. A WhatsApp." },
+        { "speaker": "", "text": "Time you don't have to spend is the only kind worth spending." },
+        { "speaker": "Crush", "text": "We study only on weekends? I feel you're too busy." }
+      ],
+      "choices": [
+        { "text": "Studies first. Sorry.",                "effects": [{"stat":"technical_skills","delta":8},{"stat":"happiness","delta":-8},{"stat":"discipline","delta":4}], "goto": "education_loan" },
+        { "text": "Let's make time. Life isn't only marks.","effects": [{"stat":"happiness","delta":14},{"stat":"social_charm","delta":6},{"stat":"discipline","delta":-4}], "goto": "education_loan" },
+        { "text": "I'm confused. Can we slow down?",      "effects": [{"stat":"happiness","delta":4},{"stat":"wisdom","delta":2}], "goto": "education_loan" }
+      ]
+    },
+    "education_loan": {
+      "lines": [
+        { "mood": "ch2_college", "speaker": "", "text": "Third year. The fee structure has gone up. Papa calls." },
+        { "speaker": "Papa", "text": "Beta, we're considering a loan. Just for the placement coaching." }
+      ],
+      "choices": [
+        { "text": "Take the bank loan. I'll repay from my first job.", "effects": [{"stat":"debt","delta":900000},{"stat":"financial_awareness","delta":8},{"stat":"family_bond","delta":4}], "goto": "placements" },
+        { "text": "I'll do part-time tuition. No loan.",                "effects": [{"stat":"financial_awareness","delta":14},{"stat":"discipline","delta":8},{"stat":"happiness","delta":-8},{"stat":"technical_skills","delta":-4}], "goto": "placements" },
+        { "text": "Ask chacha for help.",                                "effects": [{"stat":"family_bond","delta":2},{"stat":"financial_awareness","delta":4}], "goto": "placements" }
+      ]
+    },
+    "placements": {
+      "lines": [
+        { "mood": "ch2_college", "speaker": "", "text": "Placement season. Pressed shirts. Aptitude tests at 8 AM." },
+        { "speaker": "Interviewer", "text": "5.2 LPA. Bangalore. Joining next month." }
+      ],
+      "choices": [
+        { "text": "Accept, with thanks.",            "effects": [{"stat":"technical_skills","delta":12},{"stat":"happiness","delta":18},{"stat":"stress","delta":6}], "goto": "first_day" },
+        { "text": "Hold out for a better offer.",    "effects": [{"stat":"stress","delta":18},{"stat":"technical_skills","delta":8},{"stat":"financial_awareness","delta":4}], "goto": "first_day" },
+        { "text": "Reject. Try a non-IT path.",      "effects": [{"stat":"creativity","delta":14},{"stat":"stress","delta":12},{"stat":"social_charm","delta":4}], "goto": "first_day" }
+      ]
+    },
+    "first_day": {
+      "lines": [
+        { "mood": "ch3_corporate", "mood_fade": 6.0, "speaker": "", "text": "A shiny ID card. A cubicle with someone else's nameplate still under the glass." },
+        { "speaker": "", "text": "A team lunch where everyone is louder than they need to be." },
+        { "speaker": "", "text": "Inner voice: This is it. My new life." }
+      ]
+    }
+  }
+}

@@ -33,3 +33,11 @@ window/handheld/orientation=1
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+
+[debug]
+
+gdscript/warnings/treat_warnings_as_errors=false
+gdscript/warnings/untyped_declaration=0
+gdscript/warnings/inferred_declaration=0
+gdscript/warnings/unsafe_call_argument=0
+gdscript/warnings/native_method_override=0

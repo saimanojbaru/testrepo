@@ -1,0 +1,67 @@
+{
+  "chapter_id": "chapter_05_the_abyss",
+  "start": "wake_up_call",
+  "next_chapter": "chapter_06_taming_the_dragon",
+  "knots": {
+    "wake_up_call": {
+      "lines": [
+        { "mood": "ch5_abyss", "mood_fade": 6.0, "speaker": "", "text": "Conference call. Chest tightens. The cursor stops blinking." },
+        { "speaker": "", "text": "Someone says your name three times before you hear it." },
+        { "speaker": "Doctor", "text": "Panic attack. Lifestyle change is not optional now." }
+      ],
+      "choices": [
+        { "text": "Push through with medication.",     "effects": [{"stat":"stress","delta":25},{"stat":"mental_health","delta":-20}], "goto": "ai_disruption" },
+        { "text": "Medical leave. Reflect.",           "effects": [{"stat":"mental_health","delta":15},{"stat":"reputation","delta":-15},{"stat":"wisdom","delta":12}], "goto": "ai_disruption" },
+        { "text": "Hybrid. Lifestyle while working.",  "effects": [{"stat":"discipline","delta":10},{"stat":"mental_health","delta":6}], "goto": "ai_disruption" }
+      ]
+    },
+    "ai_disruption": {
+      "lines": [
+        { "mood": "ch5_abyss", "speaker": "", "text": "All-hands. Slide 14. 'Automation Roadmap.'" },
+        { "speaker": "Boss", "text": "We need to do more with less. AI will handle routine work." }
+      ],
+      "choices": [
+        { "text": "I'll learn the new tools immediately, sir.", "effects": [{"stat":"technical_skills","delta":15},{"stat":"stress","delta":20}], "goto": "family_peak" },
+        { "text": "What if we use AI to free us for innovation?","effects": [{"stat":"creativity","delta":18},{"stat":"leadership","delta":10},{"stat":"wisdom","delta":6}], "goto": "family_peak" },
+        { "text": "Quietly explore exit options.",               "effects": [{"stat":"creativity","delta":12},{"stat":"wisdom","delta":10},{"stat":"stress","delta":8}], "goto": "family_peak" }
+      ]
+    },
+    "family_peak": {
+      "lines": [
+        { "mood": "ch5_abyss", "speaker": "", "text": "The kitchen at 11 PM. Spouse across the table. A teenager's door closed." },
+        { "speaker": "Spouse", "text": "You're physically here but mentally absent for years. I'm tired." }
+      ],
+      "choices": [
+        { "text": "I did all this for us!",                       "effects": [{"stat":"relationship_satisfaction","delta":-20},{"stat":"stress","delta":15}], "goto": "dragon_dream" },
+        { "text": "You're right. I don't know how to fix this.", "effects": [{"stat":"relationship_satisfaction","delta":18},{"stat":"wisdom","delta":12},{"stat":"mental_health","delta":8}], "goto": "dragon_dream" },
+        { "text": "Maybe I should quit.",                         "effects": [{"stat":"relationship_satisfaction","delta":8},{"stat":"stress","delta":12},{"stat":"wisdom","delta":10}], "goto": "dragon_dream" }
+      ]
+    },
+    "dragon_dream": {
+      "lines": [
+        { "mood": "ch5_dragon_dream", "mood_fade": 4.0, "speaker": "", "text": "You dream of a dragon made of paper rupees and ringing clocks." },
+        { "speaker": "", "text": "It is beautiful. It eats your years one by one and asks for more." },
+        { "speaker": "", "text": "You wake at 4:11 AM." }
+      ],
+      "goto": "rock_bottom"
+    },
+    "rock_bottom": {
+      "lines": [
+        { "mood": "ch5_abyss", "memory_echo": "stillness", "speaker": "", "text": "Layoff letter. Hospital bill. A teenager's school complaint. Same week." }
+      ],
+      "choices": [
+        { "text": "Accept any job. Stability first.",                       "effects": [{"stat":"reputation","delta":6},{"stat":"wisdom","delta":-4},{"stat":"happiness","delta":-14}], "goto": "abyss_end" },
+        { "text": "Quit. Sabbatical. Therapy. Pivot.",                       "effects": [{"stat":"savings","delta":-300000},{"stat":"mental_health","delta":20},{"stat":"wisdom","delta":20},{"stat":"stress","delta":-18}], "goto": "abyss_end" },
+        { "text": "Start the side business you've talked about for years.","effects": [{"stat":"creativity","delta":25},{"stat":"stress","delta":15},{"stat":"wisdom","delta":15}], "goto": "abyss_end" },
+        { "text": "Sell the city flat. Move smaller.",                       "effects": [{"stat":"debt","delta":-2000000},{"stat":"stress","delta":-22},{"stat":"wisdom","delta":18}], "goto": "abyss_end" }
+      ]
+    },
+    "abyss_end": {
+      "lines": [
+        { "mood": "ch5_abyss", "mood_fade": 8.0, "speaker": "", "text": "A crossroads. Literal: highway, exit signs in two languages." },
+        { "speaker": "", "text": "Symbolic: a phone call to your father in your head that you've rehearsed for years." },
+        { "speaker": "", "text": "The dragon is smaller. Or maybe you have grown." }
+      ]
+    }
+  }
+}

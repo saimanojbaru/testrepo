@@ -13,6 +13,7 @@ extends Node
 signal dialogue_line(speaker: String, text: String, meta: Dictionary)
 signal choices_offered(choices: Array)
 signal story_finished()
+signal chapter_finished(chapter_id: String, next_chapter_id: String)
 signal knot_entered(knot: String)
 signal mood_requested(mood_id: String, duration: float)
 
@@ -59,12 +60,12 @@ func _load_with_inkgd(chapter_id: String) -> void:
 
 
 func _load_with_fallback(chapter_id: String) -> void:
-	var path := "%s/%s/story.fallback.json" % [STORY_FALLBACK_DIR, chapter_id]
+	var path: String = "%s/%s/story.fallback.json" % [STORY_FALLBACK_DIR, chapter_id]
 	if not FileAccess.file_exists(path):
 		push_error("InkBridge: missing fallback story %s" % path)
 		return
 	var f := FileAccess.open(path, FileAccess.READ)
-	var parsed = JSON.parse_string(f.get_as_text())
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	f.close()
 	if typeof(parsed) != TYPE_DICTIONARY:
 		push_error("InkBridge: malformed story %s" % path)
@@ -134,10 +135,41 @@ func _present_choices_or_goto(knot_data: Dictionary) -> void:
 		_waiting_for_choice = true
 		choices_offered.emit(choices.map(func(c): return String(c.get("text", ""))))
 		return
+	# Stat-conditional branching (multiple endings).
+	if knot_data.has("branch_on_stats"):
+		for rule in knot_data["branch_on_stats"]:
+			if _evaluate_stat_condition(String(rule.get("when", ""))):
+				_jump_to_knot(String(rule.get("goto", "")))
+				return
 	if knot_data.has("goto"):
 		_jump_to_knot(String(knot_data["goto"]))
+		return
+	var next_chap: String = String(_story.get("next_chapter", ""))
+	if not next_chap.is_empty() and next_chap != "null":
+		chapter_finished.emit(String(_story.get("chapter_id", "")), next_chap)
 	else:
 		story_finished.emit()
+
+
+func _evaluate_stat_condition(expr: String) -> bool:
+	if expr.is_empty():
+		return false
+	var stats := StatEngine.get_all()
+	var keys: Array = stats.keys()
+	var values: Array = []
+	for k in keys:
+		values.append(stats[k])
+	var e := Expression.new()
+	if e.parse(expr, keys) != OK:
+		return false
+	var result: Variant = e.execute(values, null, false)
+	return bool(result)
+
+
+func load_next_chapter() -> void:
+	var next_chap: String = String(_story.get("next_chapter", ""))
+	if not next_chap.is_empty() and next_chap != "null":
+		load_story(next_chap)
 
 
 func _apply_effects(effects: Array) -> void:

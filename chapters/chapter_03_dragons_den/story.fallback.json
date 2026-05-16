@@ -1,0 +1,68 @@
+{
+  "chapter_id": "chapter_03_dragons_den",
+  "start": "first_review",
+  "next_chapter": "chapter_04_middle_class_trap",
+  "knots": {
+    "first_review": {
+      "lines": [
+        { "mood": "ch3_corporate", "speaker": "", "text": "Six months in. The automation script you built has been merged." },
+        { "speaker": "", "text": "Your skip-level adjusts his collar." },
+        { "speaker": "Boss", "text": "Your teammate said the script was mainly his idea. Good team effort." }
+      ],
+      "choices": [
+        { "text": "Thank you, sir. I'll do better.",                "effects": [{"stat":"reputation","delta":4},{"stat":"stress","delta":18},{"stat":"happiness","delta":-10}], "goto": "first_crunch" },
+        { "text": "Actually sir, here is the commit history.",      "effects": [{"stat":"reputation","delta":12},{"stat":"soft_skills","delta":8},{"stat":"stress","delta":6}], "goto": "first_crunch" },
+        { "text": "Confront colleague privately later.",            "effects": [{"stat":"social_charm","delta":-4},{"stat":"wisdom","delta":4},{"stat":"leadership","delta":4}], "goto": "first_crunch" }
+      ]
+    },
+    "first_crunch": {
+      "lines": [
+        { "mood": "ch3_corporate", "minigame": "meeting_survival", "speaker": "", "text": "Conference room. Twelve people. Your laptop blinks 11 percent." },
+        { "speaker": "Boss", "text": "Team, this has to go live by Sunday. Client is important." }
+      ],
+      "choices": [
+        { "text": "I'll stay back, sir.",                                  "effects": [{"stat":"technical_skills","delta":12},{"stat":"reputation","delta":10},{"stat":"stress","delta":25},{"stat":"happiness","delta":-8}], "goto": "family_call" },
+        { "text": "I can deliver Monday EOD if we re-prioritise.",         "effects": [{"stat":"soft_skills","delta":10},{"stat":"reputation","delta":4},{"stat":"stress","delta":8}], "goto": "family_call" },
+        { "text": "Sir, I have a family commitment this weekend.",         "effects": [{"stat":"family_bond","delta":8},{"stat":"happiness","delta":6},{"stat":"reputation","delta":-12}], "goto": "family_call" }
+      ]
+    },
+    "family_call": {
+      "lines": [
+        { "mood": "ch3_corporate", "speaker": "", "text": "Mother on the phone, against a kitchen exhaust fan." },
+        { "speaker": "Maa", "text": "Beta, your cousin got married last month. When are we doing yours?" }
+      ],
+      "choices": [
+        { "text": "Maa, I'm too young.",                          "effects": [{"stat":"family_bond","delta":-4},{"stat":"happiness","delta":4}], "goto": "emi_pressure" },
+        { "text": "Let me focus on work for two more years.",     "effects": [{"stat":"family_bond","delta":2},{"stat":"wisdom","delta":2}], "goto": "emi_pressure" },
+        { "text": "Okay. Start looking.",                         "effects": [{"stat":"family_bond","delta":12},{"stat":"stress","delta":8}], "goto": "emi_pressure" }
+      ]
+    },
+    "emi_pressure": {
+      "lines": [
+        { "mood": "ch3_corporate", "minigame": "emi_simulator", "speaker": "", "text": "First salary hike, ten percent. Family asks about a bigger bike. Bank suggests a personal loan." }
+      ],
+      "choices": [
+        { "text": "Send more home. Take the loan.",       "effects": [{"stat":"debt","delta":600000},{"stat":"family_bond","delta":14},{"stat":"happiness","delta":4}], "goto": "switch_offer" },
+        { "text": "Save the hike. Build an emergency fund.","effects": [{"stat":"financial_awareness","delta":16},{"stat":"family_bond","delta":-4},{"stat":"wisdom","delta":4}], "goto": "switch_offer" },
+        { "text": "Balance both honestly.",                "effects": [{"stat":"financial_awareness","delta":8},{"stat":"family_bond","delta":6},{"stat":"social_charm","delta":4}], "goto": "switch_offer" }
+      ]
+    },
+    "switch_offer": {
+      "lines": [
+        { "mood": "ch3_corporate", "speaker": "", "text": "LinkedIn message. Twenty-five percent hike. New domain. Better Glassdoor reviews." }
+      ],
+      "choices": [
+        { "text": "Stay loyal.",                          "effects": [{"stat":"reputation","delta":12},{"stat":"happiness","delta":2}], "goto": "promotion" },
+        { "text": "Switch.",                              "effects": [{"stat":"technical_skills","delta":10},{"stat":"stress","delta":14},{"stat":"reputation","delta":-6}], "goto": "promotion" },
+        { "text": "Counter-offer using the email.",       "effects": [{"stat":"soft_skills","delta":12},{"stat":"financial_awareness","delta":8}], "goto": "promotion" }
+      ]
+    },
+    "promotion": {
+      "lines": [
+        { "mood": "ch3_corporate", "mood_fade": 6.0, "speaker": "", "text": "Senior Engineer. Team Lead. Some title with three words." },
+        { "speaker": "", "text": "You order dosa at midnight to celebrate alone." },
+        { "speaker": "", "text": "Inner voice: I'm climbing. Why does it feel heavier?" }
+      ]
+    }
+  }
+}

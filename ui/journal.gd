@@ -30,7 +30,7 @@ func _load_entries() -> void:
 		_entries = {}
 		return
 	var f := FileAccess.open(ENTRIES_FILE, FileAccess.READ)
-	var parsed = JSON.parse_string(f.get_as_text())
+	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	_entries = parsed if typeof(parsed) == TYPE_DICTIONARY else {}
 	f.close()
 
@@ -61,15 +61,15 @@ func _show(key: String, prompt: Dictionary) -> void:
 
 
 func _on_save() -> void:
-	var key: String = $Save.get_meta("key", "")
+	var key: String = String($Save.get_meta("key", ""))
 	if key.is_empty():
 		return
-	var text: String = $Entry.text
-	if text.strip_edges().length() < int(_prompts[key].get("min_chars", 10)):
+	var entry_text: String = $Entry.text
+	if entry_text.strip_edges().length() < int(_prompts[key].get("min_chars", 10)):
 		$Status.text = "A few more words..."
 		return
 	_entries[key] = {
-		"text": text,
+		"text": entry_text,
 		"saved_at": Time.get_unix_time_from_system(),
 	}
 	_save_entries()
