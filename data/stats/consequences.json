@@ -1,0 +1,7 @@
+[
+  { "if": "stress > 80",                          "streak_days": 14, "fire_event": "ch5/health_scare",     "weight": 1.0 },
+  { "if": "happiness < 30 and stress > 70",       "streak_days": 7,  "fire_event": "ch5/breakdown_hint",   "weight": 0.7 },
+  { "if": "debt > 5000000",                       "streak_days": 1,  "fire_event": "ch4/loan_pressure",    "weight": 1.0 },
+  { "if": "family_bond < 30",                     "streak_days": 21, "fire_event": "ch4/family_strain",    "weight": 0.8 },
+  { "if": "mental_health < 25",                   "streak_days": 5,  "fire_event": "ch5/therapy_offer",    "weight": 0.9 }
+]

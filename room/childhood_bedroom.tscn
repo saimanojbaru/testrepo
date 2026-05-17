@@ -1,0 +1,317 @@
+[gd_scene load_steps=30 format=3]
+
+[ext_resource type="Script" path="res://room/childhood_bedroom.gd" id="1_room"]
+[ext_resource type="Script" path="res://room/fake_evolution.gd" id="2_char"]
+[ext_resource type="Script" path="res://room/tween_animator.gd" id="3_anim"]
+[ext_resource type="Script" path="res://room/room_interactor.gd" id="4_cam"]
+[ext_resource type="Script" path="res://room/interactive_object_3d.gd" id="5_obj"]
+[ext_resource type="Script" path="res://room/palette_manager.gd" id="7_pal"]
+[ext_resource type="Theme" path="res://ui/theme/main_theme.tres" id="6_theme"]
+
+[sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
+sky_top_color = Color(0.86, 0.66, 0.40, 1)
+sky_horizon_color = Color(0.95, 0.78, 0.55, 1)
+ground_horizon_color = Color(0.55, 0.40, 0.30, 1)
+ground_bottom_color = Color(0.30, 0.22, 0.16, 1)
+sun_angle_max = 60.0
+
+[sub_resource type="Sky" id="sky_res"]
+sky_material = SubResource("sky_mat")
+
+[sub_resource type="Environment" id="env"]
+background_mode = 2
+sky = SubResource("sky_res")
+ambient_light_source = 3
+ambient_light_color = Color(1, 0.85, 0.65, 1)
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.6
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 0.4
+
+[sub_resource type="StandardMaterial3D" id="mat_floor"]
+albedo_color = Color(0.65, 0.45, 0.30, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="mat_wall_back"]
+albedo_color = Color(0.86, 0.74, 0.58, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="mat_wall_left"]
+albedo_color = Color(0.72, 0.62, 0.50, 1)
+roughness = 0.92
+
+[sub_resource type="StandardMaterial3D" id="mat_skin"]
+albedo_color = Color(1.0, 0.90, 0.85, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_shirt"]
+albedo_color = Color(0.96, 0.72, 0.42, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_pants"]
+albedo_color = Color(0.32, 0.40, 0.55, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_hair"]
+albedo_color = Color(0.18, 0.10, 0.06, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_bed"]
+albedo_color = Color(0.75, 0.46, 0.46, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_desk"]
+albedo_color = Color(0.71, 0.51, 0.35, 1)
+
+[sub_resource type="StandardMaterial3D" id="mat_lamp"]
+albedo_color = Color(1.0, 0.85, 0.55, 1)
+emission_enabled = true
+emission = Color(1, 0.85, 0.55, 1)
+emission_energy_multiplier = 1.4
+
+[sub_resource type="StandardMaterial3D" id="mat_window"]
+albedo_color = Color(0.55, 0.78, 0.92, 1)
+emission_enabled = true
+emission = Color(1, 0.92, 0.72, 1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="StandardMaterial3D" id="mat_books"]
+albedo_color = Color(0.40, 0.58, 0.45, 1)
+
+[sub_resource type="BoxShape3D" id="shape_bed"]
+size = Vector3(2.4, 0.5, 1.2)
+
+[sub_resource type="BoxShape3D" id="shape_desk"]
+size = Vector3(1.6, 0.9, 0.8)
+
+[sub_resource type="BoxShape3D" id="shape_lamp"]
+size = Vector3(0.5, 0.9, 0.5)
+
+[sub_resource type="BoxShape3D" id="shape_window"]
+size = Vector3(1.6, 1.2, 0.2)
+
+[sub_resource type="BoxShape3D" id="shape_books"]
+size = Vector3(0.7, 0.5, 0.5)
+
+[sub_resource type="CapsuleMesh" id="mesh_body"]
+radius = 0.18
+height = 0.7
+
+[sub_resource type="SphereMesh" id="mesh_head"]
+radius = 0.18
+height = 0.36
+
+[sub_resource type="SphereMesh" id="mesh_hair"]
+radius = 0.19
+height = 0.32
+
+[sub_resource type="CapsuleMesh" id="mesh_limb"]
+radius = 0.07
+height = 0.5
+
+[node name="ChildhoodBedroom" type="Node3D"]
+script = ExtResource("1_room")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 6, 0)
+light_color = Color(1, 0.92, 0.78, 1)
+light_energy = 1.1
+shadow_enabled = true
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+size = Vector3(8, 0.1, 6)
+material = SubResource("mat_floor")
+
+[node name="WallBack" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3)
+size = Vector3(8, 3.2, 0.15)
+material = SubResource("mat_wall_back")
+
+[node name="WallLeft" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0)
+size = Vector3(0.15, 3.2, 6)
+material = SubResource("mat_wall_left")
+
+[node name="Furniture" type="Node3D" parent="."]
+
+[node name="Bed" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4, 0.3, 1.5)
+script = ExtResource("5_obj")
+object_name = "Bed"
+reward_text = "+18 Energy
+-10 Stress"
+reward_color = Color(0.55, 0.85, 0.65, 1)
+stat_effects = [{"stat": "energy", "delta": 18}, {"stat": "stress", "delta": -10}, {"stat": "happiness", "delta": 4}]
+
+[node name="Shape" type="CollisionShape3D" parent="Furniture/Bed"]
+shape = SubResource("shape_bed")
+
+[node name="Mesh" type="CSGBox3D" parent="Furniture/Bed"]
+size = Vector3(2.4, 0.5, 1.2)
+material = SubResource("mat_bed")
+
+[node name="Pillow" type="CSGBox3D" parent="Furniture/Bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 0.35, 0)
+size = Vector3(0.5, 0.2, 0.8)
+material = SubResource("mat_wall_back")
+
+[node name="Desk" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.45, -2.2)
+script = ExtResource("5_obj")
+object_name = "Study Desk"
+reward_text = "+12 Discipline
++6 Technical
++15 Stress"
+reward_color = Color(0.98, 0.78, 0.42, 1)
+stat_effects = [{"stat": "discipline", "delta": 12}, {"stat": "technical_skills", "delta": 6}, {"stat": "stress", "delta": 15}, {"stat": "energy", "delta": -10}]
+
+[node name="Shape" type="CollisionShape3D" parent="Furniture/Desk"]
+shape = SubResource("shape_desk")
+
+[node name="Mesh" type="CSGBox3D" parent="Furniture/Desk"]
+size = Vector3(1.6, 0.9, 0.8)
+material = SubResource("mat_desk")
+
+[node name="Lamp" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.4, -2.2)
+script = ExtResource("5_obj")
+object_name = "Reading Lamp"
+reward_text = "+8 Curiosity
++5 Discipline"
+reward_color = Color(1, 0.85, 0.55, 1)
+stat_effects = [{"stat": "curiosity", "delta": 8}, {"stat": "discipline", "delta": 5}]
+
+[node name="Shape" type="CollisionShape3D" parent="Furniture/Lamp"]
+shape = SubResource("shape_lamp")
+
+[node name="Mesh" type="CSGCylinder3D" parent="Furniture/Lamp"]
+radius = 0.18
+height = 0.9
+material = SubResource("mat_lamp")
+
+[node name="Window" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.8, -2.92)
+script = ExtResource("5_obj")
+object_name = "Window"
+reward_text = "+12 Happiness
++4 Creativity"
+reward_color = Color(0.72, 0.92, 0.78, 1)
+stat_effects = [{"stat": "happiness", "delta": 12}, {"stat": "creativity", "delta": 4}, {"stat": "stress", "delta": -6}]
+
+[node name="Shape" type="CollisionShape3D" parent="Furniture/Window"]
+shape = SubResource("shape_window")
+
+[node name="Mesh" type="CSGBox3D" parent="Furniture/Window"]
+size = Vector3(1.6, 1.2, 0.05)
+material = SubResource("mat_window")
+
+[node name="Books" type="StaticBody3D" parent="Furniture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.25, -2.2)
+script = ExtResource("5_obj")
+object_name = "Storybook"
+reward_text = "+10 Creativity
++6 Curiosity"
+reward_color = Color(0.55, 0.85, 0.55, 1)
+stat_effects = [{"stat": "creativity", "delta": 10}, {"stat": "curiosity", "delta": 6}, {"stat": "happiness", "delta": 3}]
+
+[node name="Shape" type="CollisionShape3D" parent="Furniture/Books"]
+shape = SubResource("shape_books")
+
+[node name="Mesh" type="CSGBox3D" parent="Furniture/Books"]
+size = Vector3(0.7, 0.5, 0.5)
+material = SubResource("mat_books")
+
+[node name="Character" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
+script = ExtResource("2_char")
+head_mesh_path = NodePath("CharacterRoot/HeadPivot/Head")
+torso_mesh_path = NodePath("CharacterRoot/TorsoPivot/Body")
+limbs_container_path = NodePath("CharacterRoot/TorsoPivot")
+
+[node name="CharacterRoot" type="Node3D" parent="Character"]
+
+[node name="TorsoPivot" type="Node3D" parent="Character/CharacterRoot"]
+
+[node name="Body" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("mesh_body")
+surface_material_override/0 = SubResource("mat_shirt")
+
+[node name="LeftLeg" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.2, 0)
+mesh = SubResource("mesh_limb")
+surface_material_override/0 = SubResource("mat_pants")
+
+[node name="RightLeg" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 0.2, 0)
+mesh = SubResource("mesh_limb")
+surface_material_override/0 = SubResource("mat_pants")
+
+[node name="LeftArm" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27, 0.85, 0)
+mesh = SubResource("mesh_limb")
+surface_material_override/0 = SubResource("mat_shirt")
+
+[node name="RightArm" type="MeshInstance3D" parent="Character/CharacterRoot/TorsoPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27, 0.85, 0)
+mesh = SubResource("mesh_limb")
+surface_material_override/0 = SubResource("mat_shirt")
+
+[node name="HeadPivot" type="Node3D" parent="Character/CharacterRoot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35, 0)
+
+[node name="Head" type="MeshInstance3D" parent="Character/CharacterRoot/HeadPivot"]
+mesh = SubResource("mesh_head")
+surface_material_override/0 = SubResource("mat_skin")
+
+[node name="Hair" type="MeshInstance3D" parent="Character/CharacterRoot/HeadPivot/Head"]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1, 0, 0.08, 0)
+mesh = SubResource("mesh_hair")
+surface_material_override/0 = SubResource("mat_hair")
+
+[node name="TweenAnimator" type="Node" parent="Character"]
+script = ExtResource("3_anim")
+torso_pivot_path = NodePath("../CharacterRoot/TorsoPivot")
+head_pivot_path = NodePath("../CharacterRoot/HeadPivot")
+stress_threshold = 50.0
+
+[node name="PaletteManager" type="Node" parent="."]
+script = ExtResource("7_pal")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.707, -0.408, 0.577, 0, 0.816, 0.577, -0.707, -0.408, 0.577, 6, 6, 6)
+projection = 1
+size = 7.0
+script = ExtResource("4_cam")
+character_path = NodePath("../Character")
+
+[node name="Hud" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+theme = ExtResource("6_theme")
+
+[node name="AgeLabel" type="Label" parent="Hud"]
+anchor_left = 0.04
+anchor_top = 0.04
+anchor_right = 0.5
+anchor_bottom = 0.10
+text = "Age: 5.0 years"
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_color = Color(1, 0.92, 0.78, 1)
+
+[node name="AgeButton" type="Button" parent="Hud"]
+anchor_left = 0.55
+anchor_top = 0.03
+anchor_right = 0.96
+anchor_bottom = 0.10
+text = "Skip a year ›"
+theme_override_font_sizes/font_size = 32
+
+[node name="BackButton" type="Button" parent="Hud"]
+anchor_left = 0.55
+anchor_top = 0.92
+anchor_right = 0.96
+anchor_bottom = 0.98
+text = "‹ Back to menu"
+theme_override_font_sizes/font_size = 32

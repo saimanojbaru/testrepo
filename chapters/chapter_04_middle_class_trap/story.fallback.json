@@ -1,0 +1,67 @@
+{
+  "chapter_id": "chapter_04_middle_class_trap",
+  "start": "wedding_year",
+  "next_chapter": "chapter_05_the_abyss",
+  "knots": {
+    "wedding_year": {
+      "background": "balcony_night.jpg",
+      "lines": [
+        { "mood": "ch4_trap", "background": "balcony_night.jpg", "speaker": "", "text": "The wedding photos are already framed. The honeymoon is one suitcase away." },
+        { "speaker": "Spouse", "text": "You promised you'd be home by 8. Third time this week." }
+      ],
+      "choices": [
+        { "text": "Deadlines are tight. Try to understand.",            "effects": [{"stat":"relationship_satisfaction","delta":-18},{"stat":"reputation","delta":6},{"stat":"stress","delta":10}], "goto": "home_purchase" },
+        { "text": "I'm sorry. Let's plan tomorrow together.",            "effects": [{"stat":"relationship_satisfaction","delta":14},{"stat":"happiness","delta":8}], "goto": "home_purchase" },
+        { "text": "I hate this job sometimes. But we need the money.",    "effects": [{"stat":"relationship_satisfaction","delta":6},{"stat":"wisdom","delta":4},{"stat":"happiness","delta":-4}], "goto": "home_purchase" }
+      ]
+    },
+    "home_purchase": {
+      "lines": [
+        { "mood": "ch4_trap", "minigame": "budget_allocator", "speaker": "", "text": "A 2BHK in a half-finished tower. The builder smiles too much." }
+      ],
+      "choices": [
+        { "text": "Aggressive loan. Big house. Looks good for family.",   "effects": [{"stat":"debt","delta":5500000},{"stat":"family_bond","delta":6},{"stat":"stress","delta":14}], "goto": "first_child" },
+        { "text": "Modest home. Keep some buffer.",                       "effects": [{"stat":"debt","delta":3500000},{"stat":"financial_awareness","delta":12},{"stat":"wisdom","delta":4}], "goto": "first_child" },
+        { "text": "Keep renting. Invest the difference.",                 "effects": [{"stat":"savings","delta":800000},{"stat":"financial_awareness","delta":20},{"stat":"family_bond","delta":-8}], "goto": "first_child" }
+      ]
+    },
+    "first_child": {
+      "lines": [
+        { "mood": "ch4_trap", "speaker": "", "text": "Tiny fingers. A song you hum without remembering where you learned it." },
+        { "speaker": "", "text": "And then back to the laptop because the on-call rotation does not pause." }
+      ],
+      "choices": [
+        { "text": "Take parental leave seriously.",      "effects": [{"stat":"parenting_skill","delta":18},{"stat":"reputation","delta":-8},{"stat":"happiness","delta":12}], "goto": "team_lead" },
+        { "text": "Just work harder. Provide better.",    "effects": [{"stat":"parenting_skill","delta":-4},{"stat":"reputation","delta":10},{"stat":"relationship_satisfaction","delta":-10}], "goto": "team_lead" },
+        { "text": "Negotiate flexible hours.",           "effects": [{"stat":"parenting_skill","delta":10},{"stat":"soft_skills","delta":8},{"stat":"reputation","delta":2}], "goto": "team_lead" }
+      ]
+    },
+    "team_lead": {
+      "lines": [
+        { "mood": "ch4_trap", "speaker": "", "text": "You manage three engineers now. One is brilliant and burning out. One is invisible. One is loud." }
+      ],
+      "choices": [
+        { "text": "Push the team for results.",                  "effects": [{"stat":"leadership","delta":12},{"stat":"reputation","delta":14},{"stat":"wisdom","delta":-4}], "goto": "health_warning" },
+        { "text": "Supportive: ask each one what they need.",    "effects": [{"stat":"leadership","delta":16},{"stat":"soft_skills","delta":10},{"stat":"reputation","delta":4}], "goto": "health_warning" },
+        { "text": "Play politics. Favour boss's favourites.",     "effects": [{"stat":"reputation","delta":18},{"stat":"wisdom","delta":-8},{"stat":"happiness","delta":-8}], "goto": "health_warning" }
+      ]
+    },
+    "health_warning": {
+      "lines": [
+        { "mood": "ch4_balcony", "mood_fade": 8.0, "speaker": "", "text": "Doctor's office. Beige tube light. Numbers on a printout." },
+        { "speaker": "Doctor", "text": "Your BP and sugar are elevated. Stress is the main issue." }
+      ],
+      "choices": [
+        { "text": "Doctor, I have EMIs and responsibilities.",   "effects": [{"stat":"stress","delta":18},{"stat":"mental_health","delta":-12}], "goto": "trap_closes" },
+        { "text": "What would actually change my life?",         "effects": [{"stat":"wisdom","delta":12},{"stat":"mental_health","delta":4}], "goto": "trap_closes" },
+        { "text": "Lifestyle changes. I'll try.",                "effects": [{"stat":"discipline","delta":8},{"stat":"stress","delta":-4}], "goto": "trap_closes" }
+      ]
+    },
+    "trap_closes": {
+      "lines": [
+        { "mood": "ch4_balcony", "mood_fade": 8.0, "speaker": "", "text": "The new balcony. Loan statement in one hand. Family photo wallpaper on the phone in the other." },
+        { "speaker": "", "text": "Inner voice: I have everything I was supposed to want. Why does it feel like a golden cage?" }
+      ]
+    }
+  }
+}

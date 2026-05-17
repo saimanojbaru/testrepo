@@ -1,0 +1,13 @@
+{
+  "ch1_innocent":     { "vibrancy": 1.00, "warmth": 0.95, "density": 0.30, "tempo": 0.55, "lut": "ghibli_sunkissed" },
+  "ch1_power_cut":    { "vibrancy": 0.95, "warmth": 1.00, "density": 0.40, "tempo": 0.35, "lut": "warm_lamp_orange" },
+  "ch1_exam_focus":   { "vibrancy": 0.85, "warmth": 0.80, "density": 0.60, "tempo": 0.75, "lut": "ghibli_sunkissed" },
+  "ch1_family_strain":{ "vibrancy": 0.65, "warmth": 0.85, "density": 0.55, "tempo": 0.45, "lut": "dusty_evening" },
+  "ch2_college":      { "vibrancy": 0.90, "warmth": 0.85, "density": 0.55, "tempo": 0.70, "lut": "warm_hostel" },
+  "ch3_corporate":    { "vibrancy": 0.70, "warmth": 0.60, "density": 0.80, "tempo": 0.75, "lut": "fluorescent_soft" },
+  "ch4_trap":         { "vibrancy": 0.55, "warmth": 0.55, "density": 0.85, "tempo": 0.60, "lut": "tired_dusk" },
+  "ch4_balcony":      { "vibrancy": 0.30, "warmth": 0.50, "density": 0.90, "tempo": 0.35, "lut": "loan_statement_blue" },
+  "ch5_abyss":        { "vibrancy": 0.35, "warmth": 0.40, "density": 0.95, "tempo": 0.45, "lut": "rain_window" },
+  "ch5_dragon_dream": { "vibrancy": 0.50, "warmth": 0.30, "density": 1.00, "tempo": 0.80, "lut": "dragon_smoke_red" },
+  "ch6_resolution":   { "vibrancy": 0.80, "warmth": 0.85, "density": 0.50, "tempo": 0.60, "lut": "morning_after" }
+}

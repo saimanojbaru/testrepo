@@ -1,1 +1,16 @@
 node_modules/
+
+# Godot
+.godot/
+*.import
+.import/
+.tmp/
+
+# Build artifacts and signing material
+build/
+*.keystore
+*.apk
+*.aab
+*.idsig
+android/build/
+android/.gradle/

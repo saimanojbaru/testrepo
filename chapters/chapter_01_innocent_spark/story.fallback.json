@@ -1,0 +1,90 @@
+{
+  "chapter_id": "chapter_01_innocent_spark",
+  "start": "morning_routine",
+  "next_chapter": "chapter_02_engineering_the_dream",
+  "knots": {
+    "morning_routine": {
+      "background": "morning_bedroom.jpg",
+      "lines": [
+        { "mood": "ch1_innocent", "mood_fade": 1.5, "background": "morning_bedroom.jpg", "speaker": "", "text": "[fade start=2 length=12]Tier-2 city. Early morning. Sunlight slants through a wooden window grill.[/fade]" },
+        { "background": "morning_bedroom.jpg", "speaker": "Maa", "text": "[wave amp=14 freq=3 connected=1]Beta, uth jao! School ki bus aane wali hai.[/wave]" },
+        { "background": "kitchen_tiffin.jpg", "speaker": "", "text": "Maa hands you a steel tiffin box, still warm." },
+        { "background": "kitchen_tiffin.jpg", "speaker": "Maa", "text": "Aloo paratha. [color=#f5b87d]Tumhara favourite.[/color]", "tactile": "pack_tiffin" }
+      ],
+      "choices": [
+        { "text": "Thanks Maa!",            "effects": [{"stat":"family_bond","delta":3},{"stat":"happiness","delta":2}], "goto": "papa_asks_about_test" },
+        { "text": "Not aloo paratha again?", "effects": [{"stat":"social_charm","delta":2},{"stat":"family_bond","delta":-2}], "goto": "papa_asks_about_test" }
+      ]
+    },
+    "papa_asks_about_test": {
+      "background": "family_living_room.jpg",
+      "lines": [
+        { "background": "family_living_room.jpg", "speaker": "", "text": "Papa lowers his newspaper." },
+        { "speaker": "Papa", "text": "Aaj test hai na? [color=#f5b87d]Tayyari ho gayi?[/color]" }
+      ],
+      "choices": [
+        { "text": "I'll make you proud, Papa!",
+          "effects": [{"stat":"discipline","delta":12},{"stat":"happiness","delta":-4}],
+          "goto": "walk_to_school" },
+        { "text": "I studied... mostly.",
+          "effects": [{"stat":"discipline","delta":4},{"stat":"social_charm","delta":3}],
+          "goto": "walk_to_school" },
+        { "text": "I want to invent something new today!",
+          "effects": [{"stat":"creativity","delta":10},{"stat":"curiosity","delta":6},{"stat":"discipline","delta":-4}],
+          "goto": "walk_to_school" }
+      ]
+    },
+    "walk_to_school": {
+      "background": "morning_bedroom.jpg",
+      "lines": [
+        { "mood": "ch1_innocent", "background": "morning_bedroom.jpg", "speaker": "", "text": "[wave amp=8 freq=2 connected=1]The morning is warm. Pollen drifts through slanted sunlight.[/wave]" },
+        { "speaker": "", "text": "You walk to the bus stop, tiffin clutched tight." }
+      ],
+      "goto": "first_big_test"
+    },
+    "first_big_test": {
+      "background": "family_living_room.jpg",
+      "lines": [
+        { "mood": "ch1_exam_focus", "mood_fade": 2.0, "background": "family_living_room.jpg", "speaker": "", "text": "Exam Hall. [shake rate=15 level=3 connected=1]Ceiling fan ticks overhead. Pencils scratch.[/shake]" },
+        { "speaker": "", "text": "[Tap to continue past the exam.]" }
+      ],
+      "goto": "power_cut_study_night"
+    },
+    "power_cut_study_night": {
+      "background": "memory_echo.jpg",
+      "lines": [
+        { "mood": "ch1_power_cut", "mood_fade": 6.0, "background": "memory_echo.jpg", "speaker": "", "text": "[fade start=0 length=20]The lights cut out at 8:47 PM.[/fade]" },
+        { "speaker": "", "text": "You light the emergency lamp. [wave amp=6 freq=1.5 connected=1]Moths gather almost instantly.[/wave]" },
+        { "speaker": "Maa", "text": "Beta, doodh leke aayi hoon. Thoda break le lo." }
+      ],
+      "goto": "family_financial_strain"
+    },
+    "family_financial_strain": {
+      "background": "family_living_room.jpg",
+      "lines": [
+        { "mood": "ch1_family_strain", "mood_fade": 5.0, "background": "family_living_room.jpg", "speaker": "", "text": "Papa is sitting on the floor with the household account book." },
+        { "speaker": "", "text": "[shake rate=8 level=2 connected=1]Maa is folding clothes nearby, very quietly.[/shake]" },
+        { "speaker": "Papa", "text": "[shake rate=12 level=3 connected=1]Is mahine thoda tight hai.[/shake] Naya school bag agle mahine." }
+      ],
+      "choices": [
+        { "text": "I understand. I'll study harder so I get a scholarship.",
+          "effects": [{"stat":"family_bond","delta":15},{"stat":"discipline","delta":8},{"stat":"financial_awareness","delta":5}],
+          "goto": "chapter_end" },
+        { "text": "Okay, Papa. [Stay silent.]",
+          "effects": [{"stat":"happiness","delta":6},{"stat":"family_bond","delta":-2}],
+          "goto": "chapter_end" },
+        { "text": "Papa, can we start a small shop like uncle?",
+          "effects": [{"stat":"curiosity","delta":12},{"stat":"financial_awareness","delta":10},{"stat":"creativity","delta":5}],
+          "goto": "chapter_end" }
+      ]
+    },
+    "chapter_end": {
+      "background": "memory_echo.jpg",
+      "lines": [
+        { "mood": "ch1_innocent", "mood_fade": 8.0, "background": "memory_echo.jpg", "speaker": "", "text": "[fade start=0 length=30]Years pass in a blur of textbooks, tuition classes, and evenings on the balcony watching kites cut each other down.[/fade]" },
+        { "speaker": "", "text": "At 15, you crack the entrance exam." },
+        { "speaker": "", "text": "[pulse color=#ffd28a freq=1.6]The family hugs you. Maa cries. Papa pretends he isn't.[/pulse]" }
+      ]
+    }
+  }
+}

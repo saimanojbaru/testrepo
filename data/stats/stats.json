@@ -1,0 +1,21 @@
+{
+  "discipline":              { "min": 0, "max": 100, "start": 40, "decay_per_day": -0.05, "category": "core" },
+  "curiosity":               { "min": 0, "max": 100, "start": 50, "decay_per_day": 0.0,   "category": "core" },
+  "creativity":              { "min": 0, "max": 100, "start": 45, "decay_per_day": -0.02, "category": "core" },
+  "social_charm":            { "min": 0, "max": 100, "start": 50, "decay_per_day": -0.02, "category": "core" },
+  "technical_skills":        { "min": 0, "max": 100, "start": 0,  "decay_per_day": -0.10, "category": "career" },
+  "soft_skills":             { "min": 0, "max": 100, "start": 0,  "decay_per_day": -0.05, "category": "career" },
+  "leadership":              { "min": 0, "max": 100, "start": 0,  "decay_per_day": -0.03, "category": "career" },
+  "reputation":              { "min": 0, "max": 100, "start": 50, "decay_per_day": -0.05, "category": "career" },
+  "financial_awareness":     { "min": 0, "max": 100, "start": 10, "decay_per_day": 0.0,   "category": "career" },
+  "family_bond":             { "min": 0, "max": 100, "start": 70, "decay_per_day": -0.05, "category": "relationships" },
+  "relationship_satisfaction":{"min": 0, "max": 100, "start": 0,  "decay_per_day": -0.10, "category": "relationships" },
+  "parenting_skill":         { "min": 0, "max": 100, "start": 0,  "decay_per_day": 0.0,   "category": "relationships" },
+  "stress":                  { "min": 0, "max": 100, "start": 15, "decay_per_day": -0.30, "category": "wellbeing" },
+  "happiness":               { "min": 0, "max": 100, "start": 85, "decay_per_day": -0.10, "category": "wellbeing" },
+  "mental_health":           { "min": 0, "max": 100, "start": 80, "decay_per_day": -0.05, "category": "wellbeing" },
+  "energy":                  { "min": 0, "max": 100, "start": 80, "decay_per_day": 0.0,   "category": "wellbeing" },
+  "wisdom":                  { "min": 0, "max": 100, "start": 0,  "decay_per_day": 0.0,   "category": "meta" },
+  "savings":                 { "min": 0, "max": 100000000, "start": 0, "category": "financial", "unit": "INR" },
+  "debt":                    { "min": 0, "max": 100000000, "start": 0, "category": "financial", "unit": "INR" }
+}
