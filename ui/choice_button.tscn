@@ -51,7 +51,7 @@ content_margin_right = 32.0
 content_margin_bottom = 22.0
 
 [node name="ChoiceButton" type="Button"]
-custom_minimum_size = Vector2(0, 0)
+custom_minimum_size = Vector2(0, 72)
 size_flags_horizontal = 2
 size_flags_vertical = 0
 clip_text = false
@@ -60,6 +60,4 @@ theme_override_styles/normal = SubResource("ch_normal")
 theme_override_styles/hover = SubResource("ch_hover")
 theme_override_styles/pressed = SubResource("ch_pressed")
 theme_override_styles/focus = SubResource("ch_hover")
-theme_override_colors/font_color = Color(0.98, 0.94, 0.86, 1)
-theme_override_colors/font_hover_color = Color(1, 0.97, 0.85, 1)
 script = ExtResource("1_choice")

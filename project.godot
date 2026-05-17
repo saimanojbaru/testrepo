@@ -14,18 +14,20 @@ config/icon="res://icon.svg"
 [autoload]
 
 ShaderGlobals="*res://core/shader_globals/shader_globals.gd"
+VersionInfo="*res://core/version_info.gd"
 StatEngine="*res://core/stat_engine/stat_engine.gd"
 SaveManager="*res://core/save_manager/save_manager.gd"
 AudioDirector="*res://core/audio_director/audio_director.gd"
 MoodController="*res://core/mood_controller/mood_controller.gd"
 InkBridge="*res://core/narrative_runner/ink_bridge.gd"
+OTAManager="*res://core/ota_manager/ota_manager.gd"
 
 [display]
 
 window/size/viewport_width=1080
 window/size/viewport_height=1920
 window/stretch/mode="canvas_items"
-window/stretch/aspect="keep_width"
+window/stretch/aspect="keep"
 window/handheld/orientation=1
 
 [gui]

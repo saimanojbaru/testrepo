@@ -46,10 +46,11 @@ func _load_consequences() -> void:
 
 
 func _read_json(path: String) -> Variant:
-	if not FileAccess.file_exists(path):
-		push_warning("StatEngine: missing %s" % path)
+	var resolved: String = ContentPath.resolve(path)
+	if not FileAccess.file_exists(resolved):
+		push_warning("StatEngine: missing %s" % resolved)
 		return null
-	var f := FileAccess.open(path, FileAccess.READ)
+	var f := FileAccess.open(resolved, FileAccess.READ)
 	var text: String = f.get_as_text()
 	f.close()
 	return JSON.parse_string(text)

@@ -38,6 +38,7 @@ const SILENT_DELTA_SOURCES := {
 @onready var _speaker_divider: HSeparator = $DialoguePanel/VBoxContainer/SpeakerDivider
 @onready var _choices_root: VBoxContainer = $ChoicesContainer
 @onready var _delta_overlay: Control      = $DeltaOverlay
+@onready var _metric_dashboard: Control   = $HUDLayer/MetricDashboard
 
 var _visible_chars_target: int = 0
 var _visible_chars_t: float = 0.0
@@ -65,8 +66,23 @@ func _ready() -> void:
 	InkBridge.chapter_finished.connect(_on_chapter_finished)
 	StatEngine.stat_changed.connect(_on_stat_changed)
 
+	_apply_safe_area()
 	set_process(true)
 	call_deferred("_start_story")
+
+
+func _apply_safe_area() -> void:
+	if not OS.has_feature("mobile"):
+		return
+	var safe := DisplayServer.get_display_safe_area()
+	var screen := DisplayServer.screen_get_size()
+	var top_pad: float = max(0.0, float(safe.position.y))
+	var bottom_pad: float = max(0.0, float(screen.y - (safe.position.y + safe.size.y)))
+	if _metric_dashboard:
+		_metric_dashboard.offset_top    += top_pad
+		_metric_dashboard.offset_bottom += top_pad
+	if _dialogue:
+		_dialogue.offset_bottom -= bottom_pad
 
 
 func _start_story() -> void:
@@ -141,6 +157,11 @@ func _on_dialogue_line(speaker: String, text: String, meta: Dictionary) -> void:
 		# Empty / whitespace-only line — skip typewriter, allow immediate continue.
 		_typewriter_done = true
 		_continue_hint.visible = true
+
+	# Hide HUD during reflective / climactic beats; show otherwise.
+	var hide_hud := bool(meta.get("cinematic", false)) or meta.has("memory_echo")
+	if _metric_dashboard and _metric_dashboard.has_method("set_hud_visible"):
+		_metric_dashboard.set_hud_visible(not hide_hud)
 
 	if meta.has("minigame"):
 		_launch_minigame(String(meta["minigame"]))

@@ -1,7 +1,12 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://ui/game_scene.gd" id="1_game"]
 [ext_resource type="Theme" path="res://ui/theme/main_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://ui/top_metric_dashboard.gd" id="3_dash"]
+[ext_resource type="PackedScene" path="res://ui/metric_status_icon.tscn" id="4_icon"]
+[ext_resource type="Texture2D" path="res://data/sprites/hud/icon_family.png" id="5_fam"]
+[ext_resource type="Texture2D" path="res://data/sprites/hud/icon_career.png" id="6_car"]
+[ext_resource type="Texture2D" path="res://data/sprites/hud/icon_finance.png" id="7_fin"]
 
 [sub_resource type="StyleBoxFlat" id="dialogue_box"]
 bg_color = Color(0.09, 0.06, 0.05, 0.90)
@@ -155,3 +160,33 @@ anchor_top = 0.40
 anchor_right = 0.98
 anchor_bottom = 0.78
 mouse_filter = 2
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="MetricDashboard" type="Control" parent="HUDLayer"]
+anchor_left = 0.04
+anchor_top = 0.01
+anchor_right = 0.96
+anchor_bottom = 0.10
+mouse_filter = 2
+script = ExtResource("3_dash")
+
+[node name="HBox" type="HBoxContainer" parent="HUDLayer/MetricDashboard"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 1
+theme_override_constants/separation = 32
+
+[node name="FamilyIcon" parent="HUDLayer/MetricDashboard/HBox" instance=ExtResource("4_icon")]
+stat_id = "family_bond"
+icon_texture = ExtResource("5_fam")
+
+[node name="CareerIcon" parent="HUDLayer/MetricDashboard/HBox" instance=ExtResource("4_icon")]
+stat_id = "discipline"
+icon_texture = ExtResource("6_car")
+
+[node name="FinanceIcon" parent="HUDLayer/MetricDashboard/HBox" instance=ExtResource("4_icon")]
+stat_id = "financial_awareness"
+icon_texture = ExtResource("7_fin")

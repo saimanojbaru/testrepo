@@ -14,10 +14,12 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 HERE = os.path.dirname(__file__)
 SPRITES_DIR = os.path.join(HERE, "..", "data", "sprites")
+HUD_DIR = os.path.join(HERE, "..", "data", "sprites", "hud")
 CHAPTERS_DIR = os.path.join(HERE, "..", "chapters")
 FONT_PATH = os.path.join(HERE, "..", "fonts", "LiberationSerif-Bold.ttf")
 
 SPRITE_SIZE = 256
+HUD_SIZE = 128
 BG_W, BG_H = 1080, 1920
 
 GODOT_IMPORT = """[remap]
@@ -243,6 +245,71 @@ def gen_tray(label: str, warm: bool) -> None:
 	save_sprite(img, f"tray_{label.lower().replace(' ', '_')}")
 
 
+def save_hud_icon(img: Image.Image, name: str) -> None:
+	img = bleed_edges(img)
+	path = os.path.join(HUD_DIR, f"{name}.png")
+	img.save(path, "PNG", optimize=True, compress_level=9)
+	uid = abs(hash("hud_" + name)) % (2 ** 60)
+	hash_placeholder = "%016x" % (abs(hash(name + "_hud_h")) % (2 ** 64))
+	import_text = GODOT_IMPORT.format(uid=uid, name=name, hash_placeholder=hash_placeholder)
+	import_text = import_text.replace(
+		'source_file="res://data/sprites/{name}.png"'.format(name=name),
+		'source_file="res://data/sprites/hud/{name}.png"'.format(name=name),
+	)
+	with open(path + ".import", "w") as f:
+		f.write(import_text)
+	print(f"hud: {path}")
+
+
+def _hud_canvas() -> Image.Image:
+	return Image.new("RGBA", (HUD_SIZE, HUD_SIZE), (0, 0, 0, 0))
+
+
+IVORY = (250, 245, 230, 255)
+IVORY_DIM = (220, 210, 188, 255)
+
+
+def gen_hud_family() -> None:
+	img = _hud_canvas()
+	d = ImageDraw.Draw(img)
+	# Adult silhouette (left), taller
+	d.ellipse([20, 18, 52, 50], fill=IVORY)                       # head
+	d.rounded_rectangle([16, 50, 56, 108], radius=14, fill=IVORY) # body
+	# Child silhouette (right), shorter + bigger head proportion
+	d.ellipse([72, 32, 100, 60], fill=IVORY)                      # head
+	d.rounded_rectangle([72, 60, 104, 108], radius=12, fill=IVORY)# body
+	# Holding hands — small bar connecting
+	d.rectangle([54, 78, 74, 84], fill=IVORY_DIM)
+	save_hud_icon(img, "icon_family")
+
+
+def gen_hud_career() -> None:
+	img = _hud_canvas()
+	d = ImageDraw.Draw(img)
+	# Open book (lower half)
+	d.polygon([(16, 92), (60, 80), (60, 110), (16, 116)], fill=IVORY)   # left page
+	d.polygon([(60, 80), (108, 92), (108, 116), (60, 110)], fill=IVORY) # right page
+	d.line([(60, 80), (60, 110)], fill=(110, 90, 60, 255), width=2)
+	# Upward arrow above book
+	d.polygon([(62, 18), (78, 40), (68, 40), (68, 64), (56, 64), (56, 40), (46, 40)], fill=IVORY)
+	save_hud_icon(img, "icon_career")
+
+
+def gen_hud_finance() -> None:
+	img = _hud_canvas()
+	d = ImageDraw.Draw(img)
+	# Coin stack — 3 ellipses
+	for i, y in enumerate([88, 70, 52]):
+		shade = IVORY if i % 2 == 0 else IVORY_DIM
+		d.ellipse([26, y, 102, y + 22], fill=shade, outline=(120, 95, 50, 220), width=2)
+	# Rupee glyph on top coin — simplified ₹ as two horizontal bars + a curved stroke
+	cx = 64
+	d.rectangle([cx - 14, 58, cx + 14, 62], fill=(120, 80, 30, 255))
+	d.rectangle([cx - 14, 65, cx + 14, 69], fill=(120, 80, 30, 255))
+	d.line([(cx - 10, 58), (cx + 8, 76)], fill=(120, 80, 30, 255), width=3)
+	save_hud_icon(img, "icon_finance")
+
+
 def gen_exam_paper() -> None:
 	img = new_sprite()
 	d = ImageDraw.Draw(img)
@@ -314,6 +381,10 @@ def gen_chapter_bg(chapter: str, filename: str, top_rgb, bot_rgb, title: str) ->
 
 def main() -> None:
 	os.makedirs(SPRITES_DIR, exist_ok=True)
+	os.makedirs(HUD_DIR, exist_ok=True)
+	gen_hud_family()
+	gen_hud_career()
+	gen_hud_finance()
 	gen_paratha()
 	gen_tiffin(closed=False)
 	gen_tiffin(closed=True)

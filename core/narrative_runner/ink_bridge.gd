@@ -62,10 +62,11 @@ func _load_with_inkgd(chapter_id: String) -> void:
 
 func _load_with_fallback(chapter_id: String) -> void:
 	var path: String = "%s/%s/story.fallback.json" % [STORY_FALLBACK_DIR, chapter_id]
-	if not FileAccess.file_exists(path):
-		push_error("InkBridge: missing fallback story %s" % path)
+	var resolved: String = ContentPath.resolve(path)
+	if not FileAccess.file_exists(resolved):
+		push_error("InkBridge: missing fallback story %s" % resolved)
 		return
-	var f := FileAccess.open(path, FileAccess.READ)
+	var f := FileAccess.open(resolved, FileAccess.READ)
 	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	f.close()
 	if typeof(parsed) != TYPE_DICTIONARY:

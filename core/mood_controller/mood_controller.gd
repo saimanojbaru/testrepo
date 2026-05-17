@@ -29,10 +29,11 @@ func _ready() -> void:
 
 
 func _load_moods() -> void:
-	if not FileAccess.file_exists(MOODS_FILE):
-		push_error("MoodController: missing %s" % MOODS_FILE)
+	var resolved: String = ContentPath.resolve(MOODS_FILE)
+	if not FileAccess.file_exists(resolved):
+		push_error("MoodController: missing %s" % resolved)
 		return
-	var f := FileAccess.open(MOODS_FILE, FileAccess.READ)
+	var f := FileAccess.open(resolved, FileAccess.READ)
 	var parsed: Variant = JSON.parse_string(f.get_as_text())
 	f.close()
 	if typeof(parsed) == TYPE_DICTIONARY:

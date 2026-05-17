@@ -110,3 +110,10 @@ custom_minimum_size = Vector2(0, 0)
 size_flags_vertical = 0
 alignment = 0
 theme_override_font_sizes/font_size = 44
+
+[node name="CheckUpdates" type="Button" parent="VBox"]
+text = "  ›  Check for Updates"
+custom_minimum_size = Vector2(0, 0)
+size_flags_vertical = 0
+alignment = 0
+theme_override_font_sizes/font_size = 40

@@ -6,7 +6,7 @@ extends Object
 
 const HOVER_SCALE := Vector2(1.03, 1.03)
 const PRESS_SCALE := Vector2(0.97, 0.97)
-const HOVER_TINT  := Color(1.10, 1.04, 0.92, 1.0)
+const HOVER_TINT  := Color(1.0, 1.0, 1.0, 1.0)
 const HOVER_DUR   := 0.18
 const PRESS_DUR   := 0.10
 
