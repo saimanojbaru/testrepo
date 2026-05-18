@@ -1,0 +1,12 @@
+{
+  "stats": [
+    { "key": "discipline",      "label": "Discipline" },
+    { "key": "creativity",      "label": "Creativity" },
+    { "key": "financialWisdom", "label": "Financial Wisdom" },
+    { "key": "familyBond",      "label": "Family Bond" },
+    { "key": "mentalHealth",    "label": "Mental Health" },
+    { "key": "charisma",        "label": "Charisma" },
+    { "key": "politics",        "label": "Politics" },
+    { "key": "wisdom",          "label": "Wisdom" }
+  ]
+}

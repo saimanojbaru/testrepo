@@ -1,0 +1,48 @@
+{
+  "actions": [
+    {
+      "id": "grind",
+      "name": "Deep Grind",
+      "cost": 30,
+      "effects": [
+        { "key": "discipline",   "delta": 12 },
+        { "key": "mentalHealth", "delta": -6 }
+      ],
+      "retainer": "",
+      "flavor": "+Discipline, -Mental Health"
+    },
+    {
+      "id": "family",
+      "name": "Family Time",
+      "cost": 20,
+      "effects": [
+        { "key": "familyBond",   "delta": 14 },
+        { "key": "mentalHealth", "delta": 10 }
+      ],
+      "retainer": "maa",
+      "flavor": "+Family Bond, +Mental Health"
+    },
+    {
+      "id": "train",
+      "name": "Skill Training",
+      "cost": 25,
+      "effects": [
+        { "key": "creativity", "delta": 10 },
+        { "key": "charisma",   "delta": 4 }
+      ],
+      "retainer": "",
+      "flavor": "+Creativity, +Charisma"
+    },
+    {
+      "id": "rest",
+      "name": "Rest & Reflect",
+      "cost": 15,
+      "effects": [
+        { "key": "mentalHealth", "delta": 16 },
+        { "key": "wisdom",       "delta": 4 }
+      ],
+      "retainer": "",
+      "flavor": "+Mental Health, +Wisdom"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "retainers": [
+    { "id": "maa",  "name": "Maa",  "emoji": "M", "initialAffinity": 4 },
+    { "id": "papa", "name": "Papa", "emoji": "P", "initialAffinity": 3 },
+    { "id": "nani", "name": "Nani", "emoji": "N", "initialAffinity": 2 }
+  ]
+}

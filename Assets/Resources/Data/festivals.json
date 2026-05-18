@@ -1,0 +1,64 @@
+{
+  "festivals": [
+    {
+      "id": "raksha", "name": "Raksha Bandhan", "emoji": "RB",
+      "month": 8, "day": 9,
+      "byYear": [
+        { "year": 2026, "month": 8, "day": 9 },
+        { "year": 2027, "month": 8, "day": 28 }
+      ]
+    },
+    {
+      "id": "ganesh", "name": "Ganesh Chaturthi", "emoji": "GC",
+      "month": 9, "day": 14,
+      "byYear": [
+        { "year": 2026, "month": 9, "day": 14 },
+        { "year": 2027, "month": 9, "day": 4 }
+      ]
+    },
+    {
+      "id": "navratri", "name": "Navratri Begins", "emoji": "NB",
+      "month": 9, "day": 22,
+      "byYear": [
+        { "year": 2026, "month": 9, "day": 22 },
+        { "year": 2027, "month": 10, "day": 11 }
+      ]
+    },
+    {
+      "id": "dussehra", "name": "Dussehra", "emoji": "DH",
+      "month": 10, "day": 1,
+      "byYear": [
+        { "year": 2026, "month": 10, "day": 1 },
+        { "year": 2027, "month": 10, "day": 20 }
+      ]
+    },
+    {
+      "id": "diwali", "name": "Diwali", "emoji": "DW",
+      "month": 11, "day": 8,
+      "byYear": [
+        { "year": 2026, "month": 11, "day": 8 },
+        { "year": 2027, "month": 10, "day": 29 }
+      ]
+    },
+    { "id": "christmas", "name": "Christmas",  "emoji": "XM", "month": 12, "day": 25, "byYear": [] },
+    { "id": "newyear",   "name": "New Year",   "emoji": "NY", "month": 1,  "day": 1,  "byYear": [] },
+    { "id": "republic",  "name": "Republic Day","emoji": "RD", "month": 1,  "day": 26, "byYear": [] },
+    {
+      "id": "holi", "name": "Holi", "emoji": "HO",
+      "month": 3, "day": 4,
+      "byYear": [
+        { "year": 2027, "month": 3, "day": 23 },
+        { "year": 2028, "month": 3, "day": 12 }
+      ]
+    },
+    {
+      "id": "eid", "name": "Eid ul-Fitr", "emoji": "EF",
+      "month": 3, "day": 21,
+      "byYear": [
+        { "year": 2026, "month": 3, "day": 21 },
+        { "year": 2027, "month": 3, "day": 10 },
+        { "year": 2028, "month": 2, "day": 28 }
+      ]
+    }
+  ]
+}

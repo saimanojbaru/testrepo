@@ -1,0 +1,240 @@
+{
+  "episodes": [
+    {
+      "id": "ch1_e1", "chapter": 1, "episode": 1, "age": 5,
+      "title": "Morning Tiffin", "bg": "morning", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "Golden sunlight slips through the wooden window grill. Dust motes float in warm air.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Beta, uth jao! School ki bus aane wali hai.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Yeh tiffin abhi-abhi bana hai. Aaj aloo paratha.", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Thanks Maa! It smells amazing.",
+          "effects": [ {"key":"familyBond","delta":12}, {"key":"mentalHealth","delta":8} ],
+          "flags": ["HighFamilyWarmth"], "memory": "tiffin_glow" },
+        { "text": "Aloo paratha again?",
+          "effects": [ {"key":"creativity","delta":9}, {"key":"wisdom","delta":3} ],
+          "flags": ["PlayfulRebel"], "memory": "tiffin_glow" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e2", "chapter": 1, "episode": 2, "age": 7,
+      "title": "Summer at Nani's House", "bg": "village", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "Mango trees, kites in a hot blue sky, cousins shrieking on the terrace.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Nani", "text": "Arre waah! Kitne din baad aaya hai mera laal!", "ifFlag": "HighFamilyWarmth", "ifNotFlag": "" },
+        { "speaker": "Nani", "text": "Aa gaya tu! Cousins kab se intezaar kar rahe the.", "ifFlag": "", "ifNotFlag": "HighFamilyWarmth" }
+      ],
+      "choices": [
+        { "text": "Help Nani in the kitchen",
+          "effects": [ {"key":"familyBond","delta":15}, {"key":"wisdom","delta":5} ],
+          "flags": ["TraditionalKid"], "memory": "mango_tree" },
+        { "text": "Run out with cousins to fly kites",
+          "effects": [ {"key":"creativity","delta":12}, {"key":"charisma","delta":10} ],
+          "flags": ["SocialKid"], "memory": "mango_tree" },
+        { "text": "Curl up with Nani's old story books",
+          "effects": [ {"key":"wisdom","delta":14}, {"key":"creativity","delta":6} ],
+          "flags": ["BookishKid"], "memory": "mango_tree" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e3", "chapter": 1, "episode": 3, "age": 8,
+      "title": "Rainy Day Homecoming", "bg": "rain", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "Rain hammering on the tin roof. You squelch home, uniform clinging.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Arre kitna bheeg gaya hai! Jaldi andar aa, change kar le.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Pakode bana rahi hoon. Tea bhi.", "ifFlag": "HighFamilyWarmth", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Sorry Maa, I forgot the raincoat.",
+          "effects": [ {"key":"familyBond","delta":10}, {"key":"mentalHealth","delta":4} ],
+          "flags": ["PeoplePleaserSeed"], "memory": "monsoon_pakora" },
+        { "text": "It was so fun jumping in puddles!",
+          "effects": [ {"key":"creativity","delta":12}, {"key":"mentalHealth","delta":8} ],
+          "flags": ["DreamerSeed"], "memory": "monsoon_pakora" },
+        { "text": "Just change quietly and sit down.",
+          "effects": [ {"key":"discipline","delta":6}, {"key":"mentalHealth","delta":-2} ],
+          "flags": ["Reserved"], "memory": "monsoon_pakora" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e4", "chapter": 1, "episode": 4, "age": 10,
+      "title": "Papa's Test Question", "bg": "morning", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "Papa is on the floor with the household account book, pencil tapping.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Papa", "text": "Aaj test hai na? Tayyari ho gayi, beta?", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "I'll make you proud, Papa.",
+          "effects": [ {"key":"discipline","delta":16}, {"key":"mentalHealth","delta":-3} ],
+          "flags": ["GrinderPath"], "memory": "papa_accounts" },
+        { "text": "I studied... mostly.",
+          "effects": [ {"key":"wisdom","delta":6}, {"key":"mentalHealth","delta":4} ],
+          "flags": ["BalancedKid"], "memory": "papa_accounts" },
+        { "text": "I want to invent something new today!",
+          "effects": [ {"key":"creativity","delta":18}, {"key":"discipline","delta":-4} ],
+          "flags": ["DreamerPath"], "memory": "papa_accounts" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e5", "chapter": 1, "episode": 5, "age": 11,
+      "title": "Power Cut Evening", "bg": "night", "charEmoji": "C", "mood": "stressed",
+      "lines": [
+        { "speaker": "Narrator", "text": "A candle flame, the smell of warm milk. Papa squints at numbers in lamplight.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Beta, doodh leke aayi hoon. Thoda break le lo.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Papa", "text": "Aage padh. Mujhe pareshaan mat dekh.", "ifFlag": "GrinderPath", "ifNotFlag": "" },
+        { "speaker": "Papa", "text": "Beta, kabhi-kabhi sapne hi raasta dikhaate hain.", "ifFlag": "DreamerPath", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "I'll study harder so we don't worry.",
+          "effects": [ {"key":"discipline","delta":14}, {"key":"financialWisdom","delta":10}, {"key":"mentalHealth","delta":-8} ],
+          "flags": ["GrinderPath","GuiltMemory"], "memory": "powercut_lamp" },
+        { "text": "One day I'll buy us a big house, Papa.",
+          "effects": [ {"key":"creativity","delta":14}, {"key":"charisma","delta":8}, {"key":"financialWisdom","delta":4} ],
+          "flags": ["DreamerPath"], "memory": "powercut_lamp" },
+        { "text": "Sit quietly and keep studying.",
+          "effects": [ {"key":"discipline","delta":8}, {"key":"mentalHealth","delta":-4} ],
+          "flags": ["Reserved"], "memory": "powercut_lamp" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e6", "chapter": 1, "episode": 6, "age": 11,
+      "title": "Festival Shopping Tension", "bg": "festival", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "The market is loud with lanterns and crowds. Papa's wallet feels thin.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Is baar achhe kapde toh lene hi padenge... log kya kahenge?", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Let's buy good ones for everyone.",
+          "effects": [ {"key":"familyBond","delta":12}, {"key":"financialWisdom","delta":-4} ],
+          "flags": ["FamilyFirst"], "memory": "festival_shop" },
+        { "text": "I don't need new clothes.",
+          "effects": [ {"key":"financialWisdom","delta":14}, {"key":"familyBond","delta":4}, {"key":"mentalHealth","delta":-4} ],
+          "flags": ["EarlySaver","GuiltMemory"], "memory": "festival_shop" },
+        { "text": "I want that expensive shirt!",
+          "effects": [ {"key":"creativity","delta":8}, {"key":"charisma","delta":6}, {"key":"financialWisdom","delta":-8} ],
+          "flags": ["RiskTaker"], "memory": "festival_shop" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e7", "chapter": 1, "episode": 7, "age": 12,
+      "title": "School Annual Day", "bg": "classroom", "charEmoji": "C", "mood": "happy",
+      "lines": [
+        { "speaker": "Narrator", "text": "Hot spotlight, painted backdrop. Parents craning their necks in the audience.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Teacher", "text": "Beta, tumhara turn aa gaya.", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Walk on confidently and deliver.",
+          "effects": [ {"key":"charisma","delta":14}, {"key":"mentalHealth","delta":4} ],
+          "flags": ["Stagey"], "memory": "stage_light" },
+        { "text": "Nervous, but push through.",
+          "effects": [ {"key":"discipline","delta":8}, {"key":"charisma","delta":6} ],
+          "flags": ["BalancedKid"], "memory": "stage_light" },
+        { "text": "Add your own creative twist.",
+          "effects": [ {"key":"creativity","delta":16}, {"key":"charisma","delta":8} ],
+          "flags": ["DreamerPath"], "memory": "stage_light" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e8", "chapter": 1, "episode": 8, "age": 9,
+      "title": "Learning the Bicycle", "bg": "village", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "Gravel scrape. A wobble, a fall. Scraped elbow stings.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Papa", "text": "Uth ja. Phir try kar.", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Get up. Try again immediately.",
+          "effects": [ {"key":"discipline","delta":14}, {"key":"mentalHealth","delta":6} ],
+          "flags": ["Resilient"], "memory": "bicycle_fall" },
+        { "text": "Ask Papa to hold the seat.",
+          "effects": [ {"key":"familyBond","delta":8}, {"key":"mentalHealth","delta":4} ],
+          "flags": ["PeoplePleaserSeed"], "memory": "bicycle_fall" },
+        { "text": "Tinker with the chain — make it smoother.",
+          "effects": [ {"key":"creativity","delta":12}, {"key":"wisdom","delta":4} ],
+          "flags": ["DreamerPath"], "memory": "bicycle_fall" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e9", "chapter": 1, "episode": 9, "age": 13,
+      "title": "When Money is Tight", "bg": "evening", "charEmoji": "C", "mood": "stressed",
+      "lines": [
+        { "speaker": "Narrator", "text": "Late at night you hear them through the door — half-whispered numbers, sighs.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Bachhon ko pata nahi chalna chahiye.", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Offer to skip new toys this month.",
+          "effects": [ {"key":"financialWisdom","delta":14}, {"key":"familyBond","delta":8} ],
+          "flags": ["FamilyFirst","EarlySaver"], "memory": "helping_hands" },
+        { "text": "Ask Papa to explain the household budget.",
+          "effects": [ {"key":"financialWisdom","delta":16}, {"key":"wisdom","delta":8} ],
+          "flags": ["MoneyAware"], "memory": "helping_hands" },
+        { "text": "Promise yourself you'll earn so much one day.",
+          "effects": [ {"key":"creativity","delta":8}, {"key":"charisma","delta":6} ],
+          "flags": ["DreamerPath","GuiltMemory"], "memory": "helping_hands" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e10", "chapter": 1, "episode": 10, "age": 13,
+      "title": "Terrace Stories", "bg": "night", "charEmoji": "C", "mood": "",
+      "lines": [
+        { "speaker": "Narrator", "text": "Charpai on the terrace. Stars. Nani begins another story.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Nani", "text": "Sun, ek raja tha jo apne dil ki sunta tha...", "ifFlag": "", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Listen carefully to every word.",
+          "effects": [ {"key":"wisdom","delta":14}, {"key":"familyBond","delta":10} ],
+          "flags": ["BookishKid"], "memory": "terrace_stories" },
+        { "text": "Ask Nani a hundred questions.",
+          "effects": [ {"key":"wisdom","delta":10}, {"key":"creativity","delta":8} ],
+          "flags": ["Curious"], "memory": "terrace_stories" },
+        { "text": "Tell Nani your own dream-stories instead.",
+          "effects": [ {"key":"creativity","delta":14}, {"key":"charisma","delta":6} ],
+          "flags": ["DreamerPath"], "memory": "terrace_stories" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e11", "chapter": 1, "episode": 11, "age": 14,
+      "title": "Final Exam Preparation", "bg": "night", "charEmoji": "B", "mood": "stressed",
+      "lines": [
+        { "speaker": "Narrator", "text": "Tube light hum. Notebooks stacked like a fortress. The clock keeps moving.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Bas thoda aur. Phir aram karenge.", "ifFlag": "HighFamilyWarmth", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Strict schedule. Hour by hour.",
+          "effects": [ {"key":"discipline","delta":16}, {"key":"mentalHealth","delta":-8} ],
+          "flags": ["GrinderPath"], "memory": "tubelight_study" },
+        { "text": "Mind-map everything. Make it visual.",
+          "effects": [ {"key":"creativity","delta":14}, {"key":"discipline","delta":8} ],
+          "flags": ["DreamerPath"], "memory": "tubelight_study" }
+      ],
+      "endsChapter": false
+    },
+    {
+      "id": "ch1_e12", "chapter": 1, "episode": 12, "age": 15,
+      "title": "Result Day", "bg": "morning", "charEmoji": "H", "mood": "happy",
+      "lines": [
+        { "speaker": "Narrator", "text": "Phone rings. Result is up. You scroll, hand shaking...", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Narrator", "text": "You cracked it. You actually cracked the entrance.", "ifFlag": "", "ifNotFlag": "" },
+        { "speaker": "Maa", "text": "Beta...", "ifFlag": "HighFamilyWarmth", "ifNotFlag": "" },
+        { "speaker": "Papa", "text": "Mujhe pata tha. Mujhe pata tha tu kar lega.", "ifFlag": "GrinderPath", "ifNotFlag": "" },
+        { "speaker": "Papa", "text": "Dekho zara... sapne dekhne wala mera ladka.", "ifFlag": "DreamerPath", "ifNotFlag": "" }
+      ],
+      "choices": [
+        { "text": "Hug them. Don't say anything.",
+          "effects": [ {"key":"familyBond","delta":24}, {"key":"mentalHealth","delta":20}, {"key":"charisma","delta":8} ],
+          "flags": ["Ch1Complete"], "memory": "family_hug" }
+      ],
+      "endsChapter": true
+    }
+  ]
+}

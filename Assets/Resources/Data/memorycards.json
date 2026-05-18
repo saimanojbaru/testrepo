@@ -1,0 +1,16 @@
+{
+  "memoryCards": [
+    { "id": "tiffin_glow",     "name": "Morning Tiffin Glow",  "emoji": "T", "desc": "The warmth of a steel tiffin in small hands." },
+    { "id": "mango_tree",      "name": "Mango Tree Summer",     "emoji": "M", "desc": "Cousins, kites, kachha aam with salt." },
+    { "id": "monsoon_pakora",  "name": "Monsoon Pakoras",       "emoji": "R", "desc": "Wet uniform, hot pakoras, rain on tin." },
+    { "id": "papa_accounts",   "name": "Papa's Account Book",   "emoji": "A", "desc": "Pencil tap. Numbers. A long quiet look." },
+    { "id": "powercut_lamp",   "name": "Power Cut Lamp Night",  "emoji": "L", "desc": "Candle, warm milk, the smell of kerosene." },
+    { "id": "festival_shop",   "name": "Festival Market",       "emoji": "F", "desc": "Lanterns, prices, log-kya-kahenge." },
+    { "id": "stage_light",     "name": "Stage Spotlight",       "emoji": "S", "desc": "Hot light, parents craning, a single line nailed." },
+    { "id": "bicycle_fall",    "name": "First Bicycle",         "emoji": "B", "desc": "Scraped elbow. The exact moment of balance." },
+    { "id": "helping_hands",   "name": "Helping Hands",         "emoji": "H", "desc": "Half-whispered numbers behind a door." },
+    { "id": "terrace_stories", "name": "Terrace Stories",       "emoji": "*", "desc": "Charpai, stars, a story that took decades to land." },
+    { "id": "tubelight_study", "name": "Tube Light Study",      "emoji": "I", "desc": "Notebooks like a fortress. The clock kept moving." },
+    { "id": "family_hug",      "name": "Family Hug, Golden",    "emoji": "+", "desc": "Maa cried. Papa pretended he didn't." }
+  ]
+}
