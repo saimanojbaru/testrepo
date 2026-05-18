@@ -1,1 +1,12 @@
 node_modules/
+
+# Android / Gradle
+.gradle/
+build/
+app/build/
+local.properties
+*.apk
+*.aab
+*.idea/
+captures/
+.cxx/
