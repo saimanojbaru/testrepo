@@ -1,1 +1,42 @@
 node_modules/
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Generated
+**/generated_plugin_registrant.dart
+
+# Android
+android/.gradle/
+android/captures/
+android/gradlew
+android/gradlew.bat
+android/local.properties
+android/**/GeneratedPluginRegistrant.java
+
+# iOS / macOS
+ios/Flutter/.last_build_id
+ios/Pods/
+ios/Runner.xcworkspace/xcuserdata/
+ios/Runner.xcodeproj/xcuserdata/
+ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/Flutter.podspec
+**/Flutter/ephemeral/
+**/Pods/
+
+# Misc
+*.lock
+!pubspec.lock
+.DS_Store
