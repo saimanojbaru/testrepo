@@ -470,8 +470,8 @@ class _StudioHeaderGradient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: const BoxDecoration(
+    return const DecoratedBox(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
@@ -532,7 +532,7 @@ class PhilosophyCard extends StatelessWidget {
             child: LayoutBuilder(
               builder: (context, constraints) {
                 final wide = constraints.maxWidth > 560;
-                final pillars = const [
+                const pillars = [
                   _Pillar(
                     icon: Icons.bolt_rounded,
                     title: 'Zero Friction',
