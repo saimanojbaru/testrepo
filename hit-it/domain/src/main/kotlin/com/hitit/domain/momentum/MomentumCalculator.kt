@@ -1,6 +1,8 @@
 package com.hitit.domain.momentum
 
-/** Decides how much Momentum (XP) a single hit awards. */
+import com.hitit.domain.model.Priority
+
+/** Decides how much Momentum (XP) an action awards. */
 object MomentumCalculator {
     const val BASE = 10
     const val STREAK_BONUS_CAP = 20
@@ -11,4 +13,14 @@ object MomentumCalculator {
      */
     fun awardForHit(currentStreak: Int): Int =
         BASE + currentStreak.coerceIn(0, STREAK_BONUS_CAP)
+
+    /**
+     * Momentum awarded for completing a Hit (task), scaled by its priority.
+     * HIGH = 20, MEDIUM = 15, LOW = 10.
+     */
+    fun awardForTask(priority: Priority): Int = BASE + when (priority) {
+        Priority.HIGH -> 10
+        Priority.MEDIUM -> 5
+        Priority.LOW -> 0
+    }
 }

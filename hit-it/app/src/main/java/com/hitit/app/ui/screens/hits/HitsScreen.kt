@@ -1,4 +1,4 @@
-package com.hitit.app.ui.screens.today
+package com.hitit.app.ui.screens.hits
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -35,16 +35,14 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hitit.app.ui.components.EmptyState
-import com.hitit.app.ui.components.MomentumHeader
-import com.hitit.app.ui.components.RepRow
 import com.hitit.app.ui.components.ScreenHeader
 import com.hitit.app.ui.components.SectionLabel
 
 @Composable
-fun TodayScreen(
-    onAddRep: () -> Unit,
-    onOpenRep: (Long) -> Unit,
-    viewModel: TodayViewModel = hiltViewModel(),
+fun HitsScreen(
+    onAddHit: () -> Unit,
+    onOpenHit: (Long) -> Unit,
+    viewModel: HitsViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
 
@@ -54,42 +52,39 @@ fun TodayScreen(
             .verticalScroll(rememberScrollState()),
     ) {
         ScreenHeader(
-            title = "Today",
-            subtitle = state.dateLabel,
+            title = "Hits",
+            subtitle = "${state.open.size} to do",
             action = {
-                IconButton(onClick = onAddRep) {
-                    Icon(Icons.Filled.Add, contentDescription = "Add Rep")
+                IconButton(onClick = onAddHit) {
+                    Icon(Icons.Filled.Add, contentDescription = "Add Hit")
                 }
             },
         )
 
-        MomentumHeader(
-            tier = state.tier,
-            level = state.level,
-            progress = state.progress,
-            momentum = state.momentum,
-        )
-
-        state.mainTarget?.let { target ->
-            SectionLabel("Main Target")
-            MainTargetCard(target = target, onToggle = { viewModel.toggleMainTarget(target) })
+        if (state.open.isEmpty() && state.done.isEmpty() && !state.loading) {
+            EmptyState("No hits yet.\nTap + to capture a task.")
         }
 
-        SectionLabel("Today's reps")
+        if (state.open.isNotEmpty()) {
+            SectionLabel("To do")
+            state.open.forEach { hit ->
+                HitRow(
+                    hit = hit,
+                    onToggleDone = { viewModel.toggleDone(hit) },
+                    onToggleMainTarget = { viewModel.toggleMainTarget(hit) },
+                    onClick = { onOpenHit(hit.id) },
+                )
+            }
+        }
 
-        if (state.reps.isEmpty() && !state.loading) {
-            EmptyState("No reps scheduled today.\nTap + to add your first one.")
-        } else {
-            state.reps.forEach { rep ->
-                RepRow(
-                    emoji = rep.emoji,
-                    name = rep.name,
-                    colorHex = rep.colorHex,
-                    streak = rep.streak,
-                    progressText = rep.progressText,
-                    met = rep.met,
-                    onToggle = { viewModel.toggle(rep) },
-                    onClick = { onOpenRep(rep.id) },
+        if (state.done.isNotEmpty()) {
+            SectionLabel("Done")
+            state.done.forEach { hit ->
+                HitRow(
+                    hit = hit,
+                    onToggleDone = { viewModel.toggleDone(hit) },
+                    onToggleMainTarget = { viewModel.toggleMainTarget(hit) },
+                    onClick = { onOpenHit(hit.id) },
                 )
             }
         }
@@ -99,11 +94,18 @@ fun TodayScreen(
 }
 
 @Composable
-private fun MainTargetCard(target: MainTargetUi, onToggle: () -> Unit) {
+private fun HitRow(
+    hit: HitUi,
+    onToggleDone: () -> Unit,
+    onToggleMainTarget: () -> Unit,
+    onClick: () -> Unit,
+) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 6.dp),
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
         color = MaterialTheme.colorScheme.surface,
     ) {
@@ -114,19 +116,18 @@ private fun MainTargetCard(target: MainTargetUi, onToggle: () -> Unit) {
         ) {
             Surface(
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(36.dp)
                     .clip(CircleShape)
-                    .clickable(onClick = onToggle),
+                    .clickable(onClick = onToggleDone),
                 shape = CircleShape,
-                color = if (target.done) MaterialTheme.colorScheme.secondary
-                else MaterialTheme.colorScheme.surfaceVariant,
+                color = if (hit.done) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.surfaceVariant,
             ) {
-                if (target.done) {
+                if (hit.done) {
                     Box(contentAlignment = Alignment.Center) {
                         Icon(
                             Icons.Filled.Check,
                             contentDescription = "Completed",
-                            tint = MaterialTheme.colorScheme.onSecondary,
+                            tint = MaterialTheme.colorScheme.onPrimary,
                         )
                     }
                 }
@@ -134,24 +135,27 @@ private fun MainTargetCard(target: MainTargetUi, onToggle: () -> Unit) {
 
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    text = target.title,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Bold,
+                    text = hit.title,
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.onSurface,
-                    textDecoration = if (target.done) TextDecoration.LineThrough else null,
+                    textDecoration = if (hit.done) TextDecoration.LineThrough else null,
                 )
                 Text(
-                    text = target.priority.lowercase().replaceFirstChar { it.uppercase() } + " priority",
+                    text = hit.subtitle,
                     style = MaterialTheme.typography.bodySmall,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
 
-            Icon(
-                imageVector = Icons.Filled.Star,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.secondary,
-            )
+            IconButton(onClick = onToggleMainTarget) {
+                Icon(
+                    imageVector = Icons.Filled.Star,
+                    contentDescription = "Main Target",
+                    tint = if (hit.isMainTarget) MaterialTheme.colorScheme.secondary
+                    else MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
         }
     }
 }

@@ -5,17 +5,13 @@ import com.hitit.app.data.local.HitItDatabase
 import com.hitit.app.data.local.dao.MomentumTxnDao
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.app.data.local.dao.RepHitDao
-import com.hitit.app.data.local.dao.UserProfileDao
 import com.hitit.app.data.local.entity.MomentumTxnEntity
 import com.hitit.app.data.local.entity.RepEntity
 import com.hitit.app.data.local.entity.RepHitEntity
-import com.hitit.app.data.local.entity.UserProfileEntity
 import com.hitit.app.data.mapper.toCore
 import com.hitit.app.data.mapper.toHitDay
 import com.hitit.domain.model.StreakResult
-import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.MomentumCalculator
-import com.hitit.domain.momentum.TierLadder
 import com.hitit.domain.streak.StreakCalculator
 import kotlinx.coroutines.flow.Flow
 import java.time.Instant
@@ -33,9 +29,9 @@ class RepRepository @Inject constructor(
     private val db: HitItDatabase,
     private val repDao: RepDao,
     private val hitDao: RepHitDao,
-    private val profileDao: UserProfileDao,
     private val momentumDao: MomentumTxnDao,
     private val streakCalculator: StreakCalculator,
+    private val profileRepository: ProfileRepository,
 ) {
     fun observeActiveReps(): Flow<List<RepEntity>> = repDao.observeActive()
     fun observeAllReps(): Flow<List<RepEntity>> = repDao.observeAll()
@@ -85,7 +81,7 @@ class RepRepository @Inject constructor(
                 val streak = streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
                 val award = MomentumCalculator.awardForHit(streak.currentStreak)
                 momentumDao.insert(MomentumTxnEntity(amount = award, reason = REASON_HIT, repId = repId))
-                recomputeProfile(today)
+                profileRepository.recompute(today)
             }
         }
     }
@@ -104,24 +100,8 @@ class RepRepository @Inject constructor(
                 momentumDao.insert(MomentumTxnEntity(amount = -refund, reason = REASON_UNDO, repId = repId))
             }
             hitDao.deleteForRepOnDate(repId, today)
-            recomputeProfile(today)
+            profileRepository.recompute(today)
         }
-    }
-
-    private suspend fun recomputeProfile(today: LocalDate) {
-        val total = momentumDao.total().coerceAtLeast(0)
-        val level = LevelCurve.levelFor(total)
-        val tier = TierLadder.tierFor(level).name
-        val joinDate = profileDao.get()?.joinDate ?: today
-        profileDao.upsert(
-            UserProfileEntity(
-                id = UserProfileEntity.ID,
-                momentum = total,
-                level = level,
-                tier = tier,
-                joinDate = joinDate,
-            ),
-        )
     }
 
     private companion object {

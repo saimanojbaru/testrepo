@@ -3,6 +3,7 @@ package com.hitit.app.di
 import android.content.Context
 import androidx.room.Room
 import com.hitit.app.data.local.HitItDatabase
+import com.hitit.app.data.local.dao.HitTaskDao
 import com.hitit.app.data.local.dao.MomentumTxnDao
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.app.data.local.dao.RepHitDao
@@ -36,4 +37,7 @@ object DatabaseModule {
 
     @Provides
     fun provideMomentumTxnDao(db: HitItDatabase): MomentumTxnDao = db.momentumTxnDao()
+
+    @Provides
+    fun provideHitTaskDao(db: HitItDatabase): HitTaskDao = db.hitTaskDao()
 }

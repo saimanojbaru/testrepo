@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.hitit.app.data.mapper.toCore
 import com.hitit.app.data.repository.ProfileRepository
 import com.hitit.app.data.repository.RepRepository
+import com.hitit.app.data.repository.TaskRepository
 import com.hitit.app.ui.model.RepUi
 import com.hitit.domain.model.ScheduleEvaluator
 import com.hitit.domain.momentum.LevelCurve
@@ -29,12 +30,20 @@ data class TodayRepUi(
     val met: Boolean,
 )
 
+data class MainTargetUi(
+    val id: Long,
+    val title: String,
+    val priority: String,
+    val done: Boolean,
+)
+
 data class TodayUiState(
     val tier: String = "Rookie",
     val level: Int = 1,
     val progress: Float = 0f,
     val momentum: Long = 0,
     val dateLabel: String = "",
+    val mainTarget: MainTargetUi? = null,
     val reps: List<TodayRepUi> = emptyList(),
     val loading: Boolean = true,
 )
@@ -42,6 +51,7 @@ data class TodayUiState(
 @HiltViewModel
 class TodayViewModel @Inject constructor(
     private val repRepository: RepRepository,
+    private val taskRepository: TaskRepository,
     profileRepository: ProfileRepository,
 ) : ViewModel() {
 
@@ -52,7 +62,8 @@ class TodayViewModel @Inject constructor(
         repRepository.observeActiveReps(),
         repRepository.observeHitsBetween(today.minusDays(WINDOW_DAYS), today),
         profileRepository.observeMomentumTotal(),
-    ) { reps, hits, momentum ->
+        taskRepository.observeMainTarget(today),
+    ) { reps, hits, momentum, mainTarget ->
         val hitsByRep = hits.groupBy { it.repId }
         val todayReps = reps
             .filter { ScheduleEvaluator.isActiveOn(it.toCore(), today) }
@@ -76,6 +87,9 @@ class TodayViewModel @Inject constructor(
             progress = LevelCurve.progressToNext(momentum),
             momentum = momentum,
             dateLabel = today.format(dateFormat),
+            mainTarget = mainTarget?.let {
+                MainTargetUi(id = it.id, title = it.title, priority = it.priority, done = it.isDone)
+            },
             reps = todayReps,
             loading = false,
         )
@@ -85,6 +99,10 @@ class TodayViewModel @Inject constructor(
         viewModelScope.launch {
             if (rep.met) repRepository.clearHit(rep.id, today) else repRepository.logHit(rep.id, today)
         }
+    }
+
+    fun toggleMainTarget(target: MainTargetUi) {
+        viewModelScope.launch { taskRepository.setDone(target.id, !target.done, today) }
     }
 
     private companion object {

@@ -10,23 +10,26 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phase 1 MVP)
+## 0. What is built right now (Phases 1–2)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (36 tests in `:domain`).
+  weekly targets — **fully unit-tested** (37 tests in `:domain`).
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas` (overall + per-rep).
-- **Momentum** gamification: earn XP per hit, 100 Levels on a smooth curve, 12-tier ladder
+- **Momentum** gamification: earn XP per hit/task, 100 Levels on a smooth curve, 12-tier ladder
   (Rookie → G.O.A.T.), and a starter set of computed Trophies.
-- Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **The Grid**, **Profile**, with a
-  dark + neon Material 3 theme and bottom navigation.
-- Room persistence (offline-first) wired through Hilt.
+- **Hits** (tasks) — *Phase 2*: priorities (High/Med/Low), quick due dates, optional link to a Rep,
+  and a single daily **Main Target** surfaced on Today. Completing a Hit awards Momentum by priority
+  (and reverses it on undo), all in one transaction.
+- Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**, **Add/Edit Hit**,
+  **The Grid**, **Profile**, with a dark + neon Material 3 theme and bottom navigation.
+- Room persistence (offline-first, DB v2) wired through Hilt.
 
-🔜 **Not built yet (see roadmap):** Hits (tasks), Lock In (focus timer), Check-In (journal),
-Big Plays (goals), The Locker (notes), reminders, widgets, cloud sync.
+🔜 **Not built yet (see roadmap):** Lock In (focus timer), Check-In (journal), Big Plays (goals),
+The Locker (notes), reminders, widgets, cloud sync.
 
 > The `:domain` logic is verified by running `./gradlew :domain:test -PskipApp`. The `:app` module
 > needs the Android SDK (Android Studio) to build — it was authored against a verified, mutually
@@ -138,9 +141,14 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
 - **`rep_hits`**: `id`, `repId` (FK→reps, CASCADE), `date: LocalDate`, `hitCount`, `loggedZone`,
   `timestamp`. **Unique index (repId, date)** + index on `date`.
 - **`momentum_txns`** (append-only ledger): `id`, `amount`, `reason`, `repId?`, `timestamp`.
+- **`hit_tasks`** (Phase 2): `id`, `title`, `notes`, `priority` (HIGH/MEDIUM/LOW), `dueDate?`,
+  `tagsCsv`, `isDone`, `completedAt?`, `mainTargetDate?` (the day it is the Main Target), `repId?`
+  (optional link, no FK), `sortOrder`, `createdAt`.
+
+Database version: **2** (`fallbackToDestructiveMigration` is on for development).
 
 ### Future tables (add per phase)
-`hit_tasks`, `lock_in_sessions`, `check_ins`, `big_plays`, `checkpoints`, `locker_notes`,
+`lock_in_sessions`, `check_ins`, `big_plays`, `checkpoints`, `locker_notes`,
 `trophies` (when trophy unlocks become persistent rather than computed).
 
 ---
@@ -209,8 +217,8 @@ You can always run the `:domain` tests in Termux.
 
 | Phase | Theme | Key deliverables |
 |---|---|---|
-| **P1 ✅** | Reps + Streaks + Grid + Momentum | done (this repo) |
-| **P2** | **Hits** (tasks) | task entity, priorities/tags, **Main Target** of the day, link to reps; Momentum on completion |
+| **P1 ✅** | Reps + Streaks + Grid + Momentum | done |
+| **P2 ✅** | **Hits** (tasks) | done — task entity, priorities, quick due dates, **Main Target**, optional Rep link, Momentum on completion |
 | **P3** | **Lock In** (focus timer) | Pomodoro presets, foreground service, **Zones** (themes), link a session to a rep/hit, Momentum for focus minutes |
 | **P4** | **Check-In** (journal) | morning/evening prompts, mood + energy sliders, feeds The Grid |
 | **P5** | **Big Plays** (goals) + **The Locker** (notes) | goals with **Checkpoints** across horizons; hierarchical rich notes |

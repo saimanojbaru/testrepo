@@ -3,6 +3,7 @@ package com.hitit.app.ui
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarToday
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.GridView
 import androidx.compose.material.icons.filled.Repeat
@@ -25,6 +26,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.hitit.app.ui.navigation.Dest
 import com.hitit.app.ui.screens.grid.GridScreen
+import com.hitit.app.ui.screens.hits.HitEditScreen
+import com.hitit.app.ui.screens.hits.HitsScreen
 import com.hitit.app.ui.screens.profile.ProfileScreen
 import com.hitit.app.ui.screens.reps.RepDetailScreen
 import com.hitit.app.ui.screens.reps.RepEditScreen
@@ -36,7 +39,8 @@ private data class BottomItem(val route: String, val label: String, val icon: Im
 private val bottomItems = listOf(
     BottomItem(Dest.TODAY, "Today", Icons.Filled.CalendarToday),
     BottomItem(Dest.REPS, "Reps", Icons.Filled.Repeat),
-    BottomItem(Dest.GRID, "The Grid", Icons.Filled.GridView),
+    BottomItem(Dest.HITS, "Hits", Icons.Filled.CheckCircle),
+    BottomItem(Dest.GRID, "Grid", Icons.Filled.GridView),
     BottomItem(Dest.PROFILE, "Profile", Icons.Filled.EmojiEvents),
 )
 
@@ -87,6 +91,12 @@ fun HitItApp() {
                     onOpenRep = { navController.navigate(Dest.repDetail(it)) },
                 )
             }
+            composable(Dest.HITS) {
+                HitsScreen(
+                    onAddHit = { navController.navigate(Dest.hitEdit()) },
+                    onOpenHit = { navController.navigate(Dest.hitEdit(it)) },
+                )
+            }
             composable(Dest.GRID) { GridScreen() }
             composable(Dest.PROFILE) { ProfileScreen() }
             composable(
@@ -108,6 +118,17 @@ fun HitItApp() {
                 ),
             ) {
                 RepEditScreen(onDone = { navController.popBackStack() })
+            }
+            composable(
+                route = Dest.HIT_EDIT,
+                arguments = listOf(
+                    navArgument(Dest.ARG_TASK_ID) {
+                        type = NavType.LongType
+                        defaultValue = Dest.NEW_TASK_ID
+                    },
+                ),
+            ) {
+                HitEditScreen(onDone = { navController.popBackStack() })
             }
         }
     }

@@ -1,5 +1,6 @@
 package com.hitit.domain.momentum
 
+import com.hitit.domain.model.Priority
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -26,5 +27,12 @@ class MomentumCalculatorTest {
     @Test
     fun negativeStreakClampsToBase() {
         assertEquals(MomentumCalculator.BASE, MomentumCalculator.awardForHit(-3))
+    }
+
+    @Test
+    fun taskAwardScalesByPriority() {
+        assertEquals(20, MomentumCalculator.awardForTask(Priority.HIGH))
+        assertEquals(15, MomentumCalculator.awardForTask(Priority.MEDIUM))
+        assertEquals(10, MomentumCalculator.awardForTask(Priority.LOW))
     }
 }
