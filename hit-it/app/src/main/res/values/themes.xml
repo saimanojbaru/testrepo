@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base platform theme (no AppCompat dependency needed; UI is Compose-driven). -->
+    <style name="Theme.HitIt" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/hitit_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Neon lightning bolt — the "Hit it" energy mark. -->
+    <path
+        android:fillColor="#FF33E1FF"
+        android:pathData="M62,28 L40,60 L53,60 L46,82 L72,49 L58,49 Z" />
+</vector>
