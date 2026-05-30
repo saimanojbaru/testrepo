@@ -24,8 +24,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.hitit.app.ui.components.Heatmap
 import com.hitit.app.ui.components.HeatmapLegend
+import com.hitit.app.ui.components.HeatmapWithMonths
 import com.hitit.app.ui.components.ScreenHeader
 import java.time.format.DateTimeFormatter
 
@@ -55,7 +55,7 @@ fun GridScreen(
         }
 
         Spacer(Modifier.height(8.dp))
-        Heatmap(
+        HeatmapWithMonths(
             columns = state.columns,
             modifier = Modifier.padding(horizontal = 20.dp),
             onCellClick = { cell ->

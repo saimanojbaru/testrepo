@@ -16,11 +16,15 @@ import com.hitit.domain.momentum.MomentumCalculator
 import com.hitit.domain.streak.StreakCalculator
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 import javax.inject.Inject
 import javax.inject.Singleton
+
+/** Compact view of today's progress for the home-screen widget. */
+data class TodaySnapshot(val total: Int, val done: Int)
 
 /**
  * Source of truth for Reps and their hits. Hit logging and Momentum awarding happen in a single
@@ -72,6 +76,17 @@ class RepRepository @Inject constructor(
     /** Compute a streak from already-loaded data (pure-domain engine). */
     fun streakFor(rep: RepEntity, hits: List<RepHitEntity>, today: LocalDate): StreakResult =
         streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
+
+    /** A compact snapshot of today's active Reps for the home-screen widget. */
+    suspend fun todaySnapshot(today: LocalDate): TodaySnapshot {
+        val reps = repDao.observeActive().first()
+        val hitsToday = hitDao.getForDate(today).associateBy { it.repId }
+        val active = reps.filter {
+            com.hitit.domain.model.ScheduleEvaluator.isActiveOn(it.toCore(), today)
+        }
+        val done = active.count { (hitsToday[it.id]?.hitCount ?: 0) >= it.targetCount }
+        return TodaySnapshot(total = active.size, done = done)
+    }
 
     /** Best (longest) streak across all active Reps — used for streak Trophies. */
     fun observeBestStreak(today: LocalDate): Flow<Int> = combine(

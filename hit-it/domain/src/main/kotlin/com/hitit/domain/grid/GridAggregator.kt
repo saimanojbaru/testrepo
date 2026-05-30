@@ -61,4 +61,30 @@ object GridAggregator {
         }
         return columns
     }
+
+    /** A month label anchored to the column index where that month first appears. */
+    data class MonthLabel(val columnIndex: Int, val label: String)
+
+    private val MONTHS = listOf(
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+    )
+
+    /**
+     * For a grid produced by [yearColumns], returns one label per month, anchored to the first
+     * column whose in-year top cell (the column's Monday week) falls in that month. Used to render
+     * the month axis above The Grid.
+     */
+    fun monthLabels(columns: List<List<GridCell>>): List<MonthLabel> {
+        val labels = ArrayList<MonthLabel>()
+        var lastMonth = -1
+        columns.forEachIndexed { index, column ->
+            val firstInYear = column.firstOrNull { it.inYear } ?: return@forEachIndexed
+            val month = firstInYear.date.monthValue
+            if (month != lastMonth) {
+                labels.add(MonthLabel(index, MONTHS[month - 1]))
+                lastMonth = month
+            }
+        }
+        return labels
+    }
 }

@@ -62,4 +62,22 @@ class GridAggregatorTest {
         assertTrue(dec31.isFuture)
         assertEquals(0, dec31.intensity)
     }
+
+    @Test
+    fun monthLabelsStartWithJanAndAreOrdered() {
+        val columns = GridAggregator.yearColumns(2026, emptyMap(), LocalDate.of(2026, 12, 31))
+        val labels = GridAggregator.monthLabels(columns)
+        assertEquals(12, labels.size)
+        assertEquals("Jan", labels.first().label)
+        assertEquals("Dec", labels.last().label)
+        // Column indices are strictly increasing.
+        val indices = labels.map { it.columnIndex }
+        assertEquals(indices.sorted(), indices)
+        assertEquals(indices.toSet().size, indices.size)
+    }
+
+    @Test
+    fun monthLabelsEmptyForNoColumns() {
+        assertTrue(GridAggregator.monthLabels(emptyList()).isEmpty())
+    }
 }

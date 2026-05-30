@@ -10,6 +10,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -22,9 +23,16 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.drawText
+import androidx.compose.ui.text.rememberTextMeasurer
 import com.hitit.app.ui.theme.heatColor
+import com.hitit.domain.grid.GridAggregator
 import com.hitit.domain.grid.GridAggregator.GridCell
 
 /**
@@ -40,6 +48,80 @@ fun Heatmap(
     onCellClick: ((GridCell) -> Unit)? = null,
 ) {
     if (columns.isEmpty()) return
+    HeatmapCanvas(
+        columns = columns,
+        modifier = modifier.horizontalScroll(rememberScrollState()),
+        cell = cell,
+        gap = gap,
+        onCellClick = onCellClick,
+    )
+}
+
+/**
+ * The Grid with an aligned month-label axis above it. Labels and cells share one scroll state, so
+ * they stay aligned while scrolling horizontally.
+ */
+@Composable
+fun HeatmapWithMonths(
+    columns: List<List<GridCell>>,
+    modifier: Modifier = Modifier,
+    cell: Dp = 13.dp,
+    gap: Dp = 3.dp,
+    onCellClick: ((GridCell) -> Unit)? = null,
+) {
+    if (columns.isEmpty()) return
+    val scrollState = rememberScrollState()
+    val density = LocalDensity.current
+    val stepPx = with(density) { (cell + gap).toPx() }
+    val months = remember(columns) { GridAggregator.monthLabels(columns) }
+    val labelColor = MaterialTheme.colorScheme.onSurfaceVariant
+    val textMeasurer = rememberTextMeasurer()
+    val labelStyle = MaterialTheme.typography.labelSmall
+
+    Column(modifier = modifier) {
+        Canvas(
+            modifier = Modifier
+                .horizontalScroll(scrollState)
+                .height(16.dp)
+                .size(width = cell * columns.size + gap * (columns.size - 1), height = 16.dp),
+        ) {
+            drawMonthLabels(months, stepPx, textMeasurer, labelStyle, labelColor)
+        }
+        HeatmapCanvas(
+            columns = columns,
+            modifier = Modifier.horizontalScroll(scrollState),
+            cell = cell,
+            gap = gap,
+            onCellClick = onCellClick,
+        )
+    }
+}
+
+private fun DrawScope.drawMonthLabels(
+    months: List<GridAggregator.MonthLabel>,
+    stepPx: Float,
+    textMeasurer: androidx.compose.ui.text.TextMeasurer,
+    style: TextStyle,
+    color: Color,
+) {
+    months.forEach { label ->
+        val result = textMeasurer.measure(label.label, style)
+        drawText(
+            textLayoutResult = result,
+            color = color,
+            topLeft = Offset(label.columnIndex * stepPx, 0f),
+        )
+    }
+}
+
+@Composable
+private fun HeatmapCanvas(
+    columns: List<List<GridCell>>,
+    modifier: Modifier,
+    cell: Dp,
+    gap: Dp,
+    onCellClick: ((GridCell) -> Unit)?,
+) {
     val density = LocalDensity.current
     val cellPx = with(density) { cell.toPx() }
     val gapPx = with(density) { gap.toPx() }
@@ -53,7 +135,6 @@ fun Heatmap(
 
     Canvas(
         modifier = modifier
-            .horizontalScroll(rememberScrollState())
             .size(width = widthDp, height = heightDp)
             .let { base ->
                 if (onCellClick == null) base else base.pointerInput(columns) {

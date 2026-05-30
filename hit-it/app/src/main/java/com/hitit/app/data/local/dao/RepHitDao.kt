@@ -23,6 +23,9 @@ interface RepHitDao {
     @Query("SELECT * FROM rep_hits WHERE repId = :repId AND date = :date LIMIT 1")
     suspend fun getForRepOnDate(repId: Long, date: LocalDate): RepHitEntity?
 
+    @Query("SELECT * FROM rep_hits WHERE date = :date")
+    suspend fun getForDate(date: LocalDate): List<RepHitEntity>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert(hit: RepHitEntity): Long
 

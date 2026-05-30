@@ -79,4 +79,7 @@ dependencies {
     implementation(libs.work.runtime.ktx)
     implementation(libs.androidx.hilt.work)
     ksp(libs.androidx.hilt.compiler)
+
+    implementation(libs.glance.appwidget)
+    implementation(libs.glance.material3)
 }
