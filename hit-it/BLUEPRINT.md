@@ -10,14 +10,14 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phases 1–8)
+## 0. What is built right now (Phases 1–9)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (60 tests in `:domain`).
+  weekly targets — **fully unit-tested** (70 tests in `:domain`).
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas`; intensity now combines Reps
   hit and Check-Ins per day.
 - **Momentum** gamification: earn XP per hit/task/focus minute/check-in/checkpoint/goal, 100 Levels
@@ -47,12 +47,17 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Polish & widget** — *Phase 8*: a first-run **onboarding** pager (gated by a SharedPreferences
   flag), **month labels** on The Grid (aligned, shared-scroll axis), and a **Glance home-screen
   widget** showing today's "done / total reps" that deep-links into the app.
+- **Tests** — *Phase 9*: 70 pure-domain JUnit tests (streak edge cases, level-curve invariants, all
+  engines) runnable anywhere via `./gradlew :domain:test -PskipApp`, plus **instrumented Room DAO
+  tests** (`src/androidTest`) covering the unique-index upsert, FK cascade deletes, the
+  BigPlay↔Checkpoint `@Relation`, and reminder/rest-mode queries (run on a device/emulator via
+  `./gradlew :app:connectedDebugAndroidTest`).
 - Screens: **Onboarding**, **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**,
   **Add/Edit Hit**, **Lock In**, **Check-In**, **Big Plays** (+ detail/edit), **The Locker**,
   **The Grid**, **Profile**, dark + neon Material 3, bottom navigation.
 - Room persistence (offline-first, DB v7) wired through Hilt.
 
-🔜 **Not built yet (see roadmap):** broader automated tests (P9), Play Store prep (P10), cloud sync.
+🔜 **Not built yet (see roadmap):** Play Store prep (P10), cloud sync.
 Linking Reps/Hits to a Big Play with automatic rollup, and Lock In ambient sounds (audio assets),
 are also deferred.
 
@@ -283,7 +288,7 @@ You can always run the `:domain` tests in Termux.
 | **P6 ✅** | Gamification depth | done — persistent Trophies table + pure-domain unlock catalog (12 Trophies w/ Momentum bonuses), Profile Stats section |
 | **P7 ✅** | Reminders | done — per-Rep daily reminders via WorkManager + Hilt (self-rescheduling worker, rest-mode aware, re-armed on app start) |
 | **P8 ✅** | Polish | done — onboarding pager, month labels on The Grid, Glance home-screen widget (Glance 1.1.1) |
-| **P9** | Testing & hardening | repository/DAO tests, Compose UI tests, edge-case sweeps |
+| **P9 ✅** | Testing & hardening | done — 70 domain unit tests (streak/level edge cases) + instrumented Room DAO tests (upsert, cascade, @Relation). Compose UI tests deferred to a device-CI setup |
 | **P10** | Publish | signing keystore, Play Console listing, privacy policy, staged rollout |
 
 ---
