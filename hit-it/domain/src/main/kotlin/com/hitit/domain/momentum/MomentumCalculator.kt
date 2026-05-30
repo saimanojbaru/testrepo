@@ -30,4 +30,10 @@ object MomentumCalculator {
     /** Flat Momentum awarded for a journal entry (a morning or an evening Check-In). */
     const val CHECK_IN = 8
     fun awardForCheckIn(): Int = CHECK_IN
+
+    /** Momentum for completing a Big Play checkpoint, and for completing the whole Big Play. */
+    const val CHECKPOINT = 15
+    const val BIG_PLAY = 50
+    fun awardForCheckpoint(): Int = CHECKPOINT
+    fun awardForBigPlay(): Int = BIG_PLAY
 }

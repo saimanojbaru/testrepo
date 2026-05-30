@@ -10,18 +10,18 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phases 1–4)
+## 0. What is built right now (Phases 1–5)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (44 tests in `:domain`).
+  weekly targets — **fully unit-tested** (48 tests in `:domain`).
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas`; intensity now combines Reps
   hit and Check-Ins per day.
-- **Momentum** gamification: earn XP per hit/task/focus minute/check-in, 100 Levels on a smooth
-  curve, 12-tier ladder (Rookie → G.O.A.T.), and a starter set of computed Trophies.
+- **Momentum** gamification: earn XP per hit/task/focus minute/check-in/checkpoint/goal, 100 Levels
+  on a smooth curve, 12-tier ladder (Rookie → G.O.A.T.), and a starter set of computed Trophies.
 - **Hits** (tasks) — *Phase 2*: priorities (High/Med/Low), quick due dates, optional link to a Rep,
   and a single daily **Main Target** surfaced on Today. Completing a Hit awards Momentum by priority
   (and reverses it on undo), all in one transaction.
@@ -31,12 +31,18 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Check-In** (journal) — *Phase 4*: a daily entry with morning/evening reflections and mood +
   energy (1–10) sliders, surfaced as a card on Today; awards Momentum the first time the morning and
   evening entries get content, and counts toward The Grid.
+- **Big Plays** (goals) — *Phase 5*: long-term goals with category + horizon (Quarter/Year/2-Year/
+  3-Year), numeric target/current progress, and **Checkpoints**; completing a checkpoint or the whole
+  goal awards Momentum. Reached from Profile → Library.
+- **The Locker** (notes) — *Phase 5*: a hierarchical note tree (a note with children acts as a
+  folder), with title/body editing and cascade delete. Reached from Profile → Library.
 - Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**, **Add/Edit Hit**,
-  **Lock In**, **Check-In**, **The Grid**, **Profile**, dark + neon Material 3, bottom navigation.
-- Room persistence (offline-first, DB v4) wired through Hilt.
+  **Lock In**, **Check-In**, **Big Plays** (+ detail/edit), **The Locker**, **The Grid**,
+  **Profile**, dark + neon Material 3, bottom navigation.
+- Room persistence (offline-first, DB v5) wired through Hilt.
 
-🔜 **Not built yet (see roadmap):** Big Plays (goals), The Locker (notes), reminders, widgets,
-cloud sync. Lock In ambient sounds (audio assets) are also deferred.
+🔜 **Not built yet (see roadmap):** reminders, widgets, cloud sync. Linking Reps/Hits to a Big Play
+with automatic rollup, and Lock In ambient sounds (audio assets), are also deferred.
 
 > The `:domain` logic is verified by running `./gradlew :domain:test -PskipApp`. The `:app` module
 > needs the Android SDK (Android Studio) to build — it was authored against a verified, mutually
@@ -156,10 +162,16 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
 - **`check_ins`** (Phase 4): `date` (PK), `morning`, `evening`, `mood?`, `energy?`, `morningAwarded`,
   `eveningAwarded`, `updatedAt`.
 
-Database version: **4** (`fallbackToDestructiveMigration` is on for development).
+- **`big_plays`** (Phase 5): `id`, `title`, `notes`, `category`, `horizon`, `targetValue?`,
+  `currentValue`, `unit`, `deadline?`, `isCompleted`, `completedAt?`, `sortOrder`, `createdAt`.
+- **`checkpoints`** (Phase 5): `id`, `bigPlayId` (FK→big_plays, CASCADE), `title`, `isDone`,
+  `doneAt?`, `sortOrder`.
+- **`locker_notes`** (Phase 5): `id`, `parentId?` (self-FK, CASCADE), `title`, `body`, `sortOrder`,
+  `updatedAt`, `createdAt`.
+
+Database version: **5** (`fallbackToDestructiveMigration` is on for development).
 
 ### Future tables (add per phase)
-`big_plays`, `checkpoints`, `locker_notes`,
 `trophies` (when trophy unlocks become persistent rather than computed).
 
 ---
@@ -234,7 +246,7 @@ You can always run the `:domain` tests in Termux.
 | **P2 ✅** | **Hits** (tasks) | done — task entity, priorities, quick due dates, **Main Target**, optional Rep link, Momentum on completion |
 | **P3 ✅** | **Lock In** (focus timer) | done — presets, foreground Service, **Zones**, Rep link, pause/resume/stop, Momentum per focused minute (ambient sounds deferred) |
 | **P4 ✅** | **Check-In** (journal) | done — morning/evening reflections, mood + energy sliders, Momentum per entry, feeds The Grid |
-| **P5** | **Big Plays** (goals) + **The Locker** (notes) | goals with **Checkpoints** across horizons; hierarchical rich notes |
+| **P5 ✅** | **Big Plays** (goals) + **The Locker** (notes) | done — goals + checkpoints + numeric progress; hierarchical notes (Rep/Hit→goal linking deferred) |
 | **P6** | Gamification depth | persistent Trophies table + unlock engine, richer Momentum rules, stats |
 | **P7** | Reminders | WorkManager + notifications per rep (catalog already includes `work` + `hilt-work`) |
 | **P8** | Polish | home-screen widgets (Glance), themes, accessibility, onboarding, month labels on The Grid |

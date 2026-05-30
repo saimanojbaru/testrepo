@@ -3,9 +3,11 @@ package com.hitit.app.di
 import android.content.Context
 import androidx.room.Room
 import com.hitit.app.data.local.HitItDatabase
+import com.hitit.app.data.local.dao.BigPlayDao
 import com.hitit.app.data.local.dao.CheckInDao
 import com.hitit.app.data.local.dao.HitTaskDao
 import com.hitit.app.data.local.dao.LockInSessionDao
+import com.hitit.app.data.local.dao.LockerNoteDao
 import com.hitit.app.data.local.dao.MomentumTxnDao
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.app.data.local.dao.RepHitDao
@@ -48,4 +50,10 @@ object DatabaseModule {
 
     @Provides
     fun provideCheckInDao(db: HitItDatabase): CheckInDao = db.checkInDao()
+
+    @Provides
+    fun provideBigPlayDao(db: HitItDatabase): BigPlayDao = db.bigPlayDao()
+
+    @Provides
+    fun provideLockerNoteDao(db: HitItDatabase): LockerNoteDao = db.lockerNoteDao()
 }

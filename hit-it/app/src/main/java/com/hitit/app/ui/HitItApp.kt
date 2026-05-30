@@ -25,10 +25,14 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.hitit.app.ui.navigation.Dest
+import com.hitit.app.ui.screens.bigplays.BigPlayDetailScreen
+import com.hitit.app.ui.screens.bigplays.BigPlayEditScreen
+import com.hitit.app.ui.screens.bigplays.BigPlaysScreen
 import com.hitit.app.ui.screens.checkin.CheckInScreen
 import com.hitit.app.ui.screens.grid.GridScreen
 import com.hitit.app.ui.screens.hits.HitEditScreen
 import com.hitit.app.ui.screens.hits.HitsScreen
+import com.hitit.app.ui.screens.locker.LockerScreen
 import com.hitit.app.ui.screens.lockin.LockInScreen
 import com.hitit.app.ui.screens.profile.ProfileScreen
 import com.hitit.app.ui.screens.reps.RepDetailScreen
@@ -102,7 +106,12 @@ fun HitItApp() {
                 )
             }
             composable(Dest.GRID) { GridScreen() }
-            composable(Dest.PROFILE) { ProfileScreen() }
+            composable(Dest.PROFILE) {
+                ProfileScreen(
+                    onOpenBigPlays = { navController.navigate(Dest.BIG_PLAYS) },
+                    onOpenLocker = { navController.navigate(Dest.locker()) },
+                )
+            }
             composable(Dest.LOCK_IN) {
                 LockInScreen(onBack = { navController.popBackStack() })
             }
@@ -139,6 +148,47 @@ fun HitItApp() {
                 ),
             ) {
                 HitEditScreen(onDone = { navController.popBackStack() })
+            }
+            composable(Dest.BIG_PLAYS) {
+                BigPlaysScreen(
+                    onBack = { navController.popBackStack() },
+                    onAddPlay = { navController.navigate(Dest.bigPlayEdit()) },
+                    onOpenPlay = { navController.navigate(Dest.bigPlayDetail(it)) },
+                )
+            }
+            composable(
+                route = Dest.BIG_PLAY_DETAIL,
+                arguments = listOf(navArgument(Dest.ARG_PLAN_ID) { type = NavType.LongType }),
+            ) {
+                BigPlayDetailScreen(
+                    onBack = { navController.popBackStack() },
+                    onEdit = { navController.navigate(Dest.bigPlayEdit(it)) },
+                )
+            }
+            composable(
+                route = Dest.BIG_PLAY_EDIT,
+                arguments = listOf(
+                    navArgument(Dest.ARG_PLAN_ID) {
+                        type = NavType.LongType
+                        defaultValue = Dest.NEW_PLAN_ID
+                    },
+                ),
+            ) {
+                BigPlayEditScreen(onDone = { navController.popBackStack() })
+            }
+            composable(
+                route = Dest.LOCKER,
+                arguments = listOf(
+                    navArgument(Dest.ARG_NOTE_ID) {
+                        type = NavType.LongType
+                        defaultValue = Dest.ROOT_NOTE_ID
+                    },
+                ),
+            ) {
+                LockerScreen(
+                    onOpenNote = { navController.navigate(Dest.locker(it)) },
+                    onBack = { navController.popBackStack() },
+                )
             }
         }
     }

@@ -48,4 +48,10 @@ class MomentumCalculatorTest {
         assertEquals(MomentumCalculator.CHECK_IN, MomentumCalculator.awardForCheckIn())
         assertEquals(8, MomentumCalculator.awardForCheckIn())
     }
+
+    @Test
+    fun goalAwardsAreFlat() {
+        assertEquals(15, MomentumCalculator.awardForCheckpoint())
+        assertEquals(50, MomentumCalculator.awardForBigPlay())
+    }
 }
