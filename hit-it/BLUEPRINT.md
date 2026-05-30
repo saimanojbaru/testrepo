@@ -10,14 +10,14 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phases 1–6)
+## 0. What is built right now (Phases 1–7)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (54 tests in `:domain`).
+  weekly targets — **fully unit-tested** (58 tests in `:domain`).
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas`; intensity now combines Reps
   hit and Check-Ins per day.
 - **Momentum** gamification: earn XP per hit/task/focus minute/check-in/checkpoint/goal, 100 Levels
@@ -40,12 +40,16 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
   (12 Trophies across level/focus/check-in/task/goal/streak milestones); earning a Trophy awards a
   one-time Momentum bonus. Profile shows a **Stats** section (focus minutes, best streak, hits done,
   check-ins) and the Trophy grid reflects real unlock state.
+- **Reminders** — *Phase 7*: per-Rep daily reminders via **WorkManager + Hilt**. Each reminder is a
+  one-shot `ReminderWorker` delayed to the next HH:mm that re-schedules itself for the next day;
+  reminders are skipped during rest mode, cancelled on archive/delete, and re-armed on app start
+  (survives reboot/process death). Set the time in Add/Edit Rep.
 - Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**, **Add/Edit Hit**,
   **Lock In**, **Check-In**, **Big Plays** (+ detail/edit), **The Locker**, **The Grid**,
   **Profile**, dark + neon Material 3, bottom navigation.
-- Room persistence (offline-first, DB v6) wired through Hilt.
+- Room persistence (offline-first, DB v7) wired through Hilt.
 
-🔜 **Not built yet (see roadmap):** reminders, widgets, cloud sync. Linking Reps/Hits to a Big Play
+🔜 **Not built yet (see roadmap):** widgets, cloud sync. Linking Reps/Hits to a Big Play
 with automatic rollup, and Lock In ambient sounds (audio assets), are also deferred.
 
 > The `:domain` logic is verified by running `./gradlew :domain:test -PskipApp`. The `:app` module
@@ -154,7 +158,8 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
   correct before this row exists.
 - **`reps`**: `id`, `name`, `emoji`, `colorHex`, `scheduleType` (DAILY/WEEKDAYS/CUSTOM/WEEKLY),
   `customDaysCsv` ("1,3,5"), `weeklyTarget`, `targetCount`, `restDaysAllowed`, `restModeStart?`,
-  `restModeEnd?`, `isArchived`, `sortOrder`, `createdDate`.
+  `restModeEnd?`, `reminderEnabled`/`reminderHour`/`reminderMinute` (Phase 7), `isArchived`,
+  `sortOrder`, `createdDate`.
 - **`rep_hits`**: `id`, `repId` (FK→reps, CASCADE), `date: LocalDate`, `hitCount`, `loggedZone`,
   `timestamp`. **Unique index (repId, date)** + index on `date`.
 - **`momentum_txns`** (append-only ledger): `id`, `amount`, `reason`, `repId?`, `timestamp`.
@@ -173,8 +178,20 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
 - **`locker_notes`** (Phase 5): `id`, `parentId?` (self-FK, CASCADE), `title`, `body`, `sortOrder`,
   `updatedAt`, `createdAt`.
 - **`trophies`** (Phase 6): `id` (String PK, matches a domain `TrophyDef` id), `unlockedAt`.
+- *(Phase 7 adds no new table — reminder fields live on `reps`.)*
 
-Database version: **6** (`fallbackToDestructiveMigration` is on for development).
+Database version: **7** (`fallbackToDestructiveMigration` is on for development).
+
+### Reminders (Phase 7)
+Per-Rep daily reminders use **WorkManager + Hilt**. `HitItApplication` implements
+`Configuration.Provider` with an injected `HiltWorkerFactory`, and the manifest removes the default
+`WorkManagerInitializer` (androidx.startup). The domain `reminder/ReminderSchedule.millisUntilNext`
+computes the delay to the next HH:mm; `ReminderScheduler` enqueues a unique one-shot
+`ReminderWorker` per Rep (`enqueueUniqueWork`, REPLACE). The worker posts the notification (skipping
+rest mode) and re-schedules tomorrow's, so the exact time stays precise across days.
+`MainActivity` calls `rescheduleAll()` on start to survive reboots/process death. Reminders are
+cancelled on archive/delete. `POST_NOTIFICATIONS` (API 33+) is requested when the user opens Lock In;
+the reminder still enqueues if denied — the notification just won't show.
 
 ### Trophies & Stats (Phase 6)
 The domain `trophy/` package holds `TrophyStats` (the cross-feature snapshot) and `TrophyCatalog`
@@ -259,7 +276,7 @@ You can always run the `:domain` tests in Termux.
 | **P4 ✅** | **Check-In** (journal) | done — morning/evening reflections, mood + energy sliders, Momentum per entry, feeds The Grid |
 | **P5 ✅** | **Big Plays** (goals) + **The Locker** (notes) | done — goals + checkpoints + numeric progress; hierarchical notes (Rep/Hit→goal linking deferred) |
 | **P6 ✅** | Gamification depth | done — persistent Trophies table + pure-domain unlock catalog (12 Trophies w/ Momentum bonuses), Profile Stats section |
-| **P7** | Reminders | WorkManager + notifications per rep (catalog already includes `work` + `hilt-work`) |
+| **P7 ✅** | Reminders | done — per-Rep daily reminders via WorkManager + Hilt (self-rescheduling worker, rest-mode aware, re-armed on app start) |
 | **P8** | Polish | home-screen widgets (Glance), themes, accessibility, onboarding, month labels on The Grid |
 | **P9** | Testing & hardening | repository/DAO tests, Compose UI tests, edge-case sweeps |
 | **P10** | Publish | signing keystore, Play Console listing, privacy policy, staged rollout |
@@ -321,9 +338,8 @@ You can always run the `:domain` tests in Termux.
 - The `:app` module could not be compiled in the authoring environment (no Android SDK), so the first
   Android Studio sync may surface a minor tweak (e.g., an icon import). Versions are pinned to
   minimize this.
-- Trophies are currently **computed** from level/momentum (not persisted); P6 makes them persistent.
 - Clearing a hit posts an approximate compensating Momentum entry (it reverses the standard award for
-  the current streak), so the ledger stays close to balanced; P6 can make this exact.
+  the current streak), so the ledger stays close to balanced.
 - Schedule/target edits apply retroactively to history (simplest correct behavior for now).
 - **Lock In** keeps the timer running across navigation and while backgrounded (foreground Service),
   but it does not yet survive full process death (the countdown isn't reconstructed from a saved
@@ -332,3 +348,10 @@ You can always run the `:domain` tests in Termux.
   for development; for a Play release confirm Google accepts it or switch to a more specific type.
   `POST_NOTIFICATIONS` is requested when opening Lock In; the timer still runs if it's denied (the
   notification just won't show).
+- **Reminders** are exact-ish via WorkManager one-shot delays; WorkManager may defer firing under
+  Doze/battery optimization (acceptable for habit nudges, not alarm-grade). The worker re-schedules
+  the next day on each fire, and `MainActivity` re-arms all on start, so opening the app keeps them
+  on track even if a fire was deferred or the device rebooted. `POST_NOTIFICATIONS` shares the prompt
+  triggered from Lock In; if a user only uses reminders they may need to enable notifications in
+  system settings. Phase 7 adds the `androidx.hilt:hilt-work` + `hilt-compiler` (KSP) deps and the
+  manifest `WorkManagerInitializer` removal — the most likely first-sync touch-points.

@@ -39,7 +39,7 @@ import com.hitit.app.data.local.entity.UserProfileEntity
         LockerNoteEntity::class,
         TrophyEntity::class,
     ],
-    version = 6,
+    version = 7,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)

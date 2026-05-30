@@ -40,6 +40,10 @@ data class RepEntity(
     val restDaysAllowed: Int = 2,
     val restModeStart: LocalDate? = null,
     val restModeEnd: LocalDate? = null,
+    /** Daily reminder: enabled flag + local time-of-day. */
+    val reminderEnabled: Boolean = false,
+    val reminderHour: Int = 9,
+    val reminderMinute: Int = 0,
     val isArchived: Boolean = false,
     val sortOrder: Int = 0,
     val createdDate: LocalDate = LocalDate.now(),

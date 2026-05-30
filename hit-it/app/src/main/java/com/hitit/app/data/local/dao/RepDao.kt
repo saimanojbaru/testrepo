@@ -24,6 +24,9 @@ interface RepDao {
     @Query("SELECT * FROM reps WHERE id = :id")
     suspend fun getById(id: Long): RepEntity?
 
+    @Query("SELECT * FROM reps WHERE reminderEnabled = 1 AND isArchived = 0")
+    suspend fun getReminderEnabled(): List<RepEntity>
+
     @Insert
     suspend fun insert(rep: RepEntity): Long
 

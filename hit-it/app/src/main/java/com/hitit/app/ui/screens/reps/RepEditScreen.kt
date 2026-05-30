@@ -28,6 +28,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -175,6 +176,44 @@ fun RepEditScreen(
             max = 7,
             onChange = viewModel::onRestDays,
         )
+
+        SectionLabel("Reminder")
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
+            Text(
+                text = "Daily reminder",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onBackground,
+            )
+            Switch(checked = state.reminderEnabled, onCheckedChange = viewModel::onReminderEnabled)
+        }
+        if (state.reminderEnabled) {
+            Stepper(
+                label = "Hour",
+                value = state.reminderHour,
+                min = 0,
+                max = 23,
+                onChange = { viewModel.onReminderTime(it, state.reminderMinute) },
+            )
+            Stepper(
+                label = "Minute",
+                value = state.reminderMinute,
+                min = 0,
+                max = 59,
+                onChange = { viewModel.onReminderTime(state.reminderHour, it) },
+            )
+            Text(
+                text = "Reminds you at %02d:%02d each day.".format(state.reminderHour, state.reminderMinute),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(horizontal = 20.dp),
+            )
+        }
 
         Spacer(Modifier.height(24.dp))
         Button(

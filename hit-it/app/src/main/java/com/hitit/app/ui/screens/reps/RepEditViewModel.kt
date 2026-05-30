@@ -30,6 +30,9 @@ data class RepEditState(
     val weeklyTarget: Int = 3,
     val targetCount: Int = 1,
     val restDaysAllowed: Int = 2,
+    val reminderEnabled: Boolean = false,
+    val reminderHour: Int = 9,
+    val reminderMinute: Int = 0,
     val saved: Boolean = false,
 ) {
     val canSave: Boolean get() = name.isNotBlank() &&
@@ -62,6 +65,9 @@ class RepEditViewModel @Inject constructor(
                         weeklyTarget = rep.weeklyTarget,
                         targetCount = rep.targetCount,
                         restDaysAllowed = rep.restDaysAllowed,
+                        reminderEnabled = rep.reminderEnabled,
+                        reminderHour = rep.reminderHour,
+                        reminderMinute = rep.reminderMinute,
                     )
                 }
             }
@@ -82,6 +88,9 @@ class RepEditViewModel @Inject constructor(
     fun onWeeklyTarget(value: Int) = update { it.copy(weeklyTarget = value.coerceIn(1, 21)) }
     fun onTargetCount(value: Int) = update { it.copy(targetCount = value.coerceIn(1, 20)) }
     fun onRestDays(value: Int) = update { it.copy(restDaysAllowed = value.coerceIn(0, 7)) }
+    fun onReminderEnabled(value: Boolean) = update { it.copy(reminderEnabled = value) }
+    fun onReminderTime(hour: Int, minute: Int) =
+        update { it.copy(reminderHour = hour.coerceIn(0, 23), reminderMinute = minute.coerceIn(0, 59)) }
 
     fun save() {
         val s = _state.value
@@ -102,6 +111,9 @@ class RepEditViewModel @Inject constructor(
                 restDaysAllowed = s.restDaysAllowed,
                 restModeStart = existing?.restModeStart,
                 restModeEnd = existing?.restModeEnd,
+                reminderEnabled = s.reminderEnabled,
+                reminderHour = s.reminderHour,
+                reminderMinute = s.reminderMinute,
                 isArchived = existing?.isArchived ?: false,
                 sortOrder = existing?.sortOrder ?: 0,
                 createdDate = existing?.createdDate ?: LocalDate.now(),

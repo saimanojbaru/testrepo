@@ -10,6 +10,7 @@ import com.hitit.app.data.local.entity.RepEntity
 import com.hitit.app.data.local.entity.RepHitEntity
 import com.hitit.app.data.mapper.toCore
 import com.hitit.app.data.mapper.toHitDay
+import com.hitit.app.reminder.ReminderScheduler
 import com.hitit.domain.model.StreakResult
 import com.hitit.domain.momentum.MomentumCalculator
 import com.hitit.domain.streak.StreakCalculator
@@ -33,6 +34,7 @@ class RepRepository @Inject constructor(
     private val momentumDao: MomentumTxnDao,
     private val streakCalculator: StreakCalculator,
     private val profileRepository: ProfileRepository,
+    private val reminderScheduler: ReminderScheduler,
 ) {
     fun observeActiveReps(): Flow<List<RepEntity>> = repDao.observeActive()
     fun observeAllReps(): Flow<List<RepEntity>> = repDao.observeAll()
@@ -43,15 +45,29 @@ class RepRepository @Inject constructor(
 
     suspend fun getRep(id: Long): RepEntity? = repDao.getById(id)
 
-    suspend fun saveRep(rep: RepEntity): Long =
-        if (rep.id == 0L) repDao.insert(rep) else { repDao.update(rep); rep.id }
+    suspend fun saveRep(rep: RepEntity): Long {
+        val id = if (rep.id == 0L) repDao.insert(rep) else { repDao.update(rep); rep.id }
+        reminderScheduler.applyForRep(id, rep.reminderEnabled, rep.reminderHour, rep.reminderMinute)
+        return id
+    }
 
-    suspend fun setArchived(id: Long, archived: Boolean) = repDao.setArchived(id, archived)
+    suspend fun setArchived(id: Long, archived: Boolean) {
+        repDao.setArchived(id, archived)
+        // Archived reps shouldn't nag; re-arm when unarchived if the reminder is on.
+        if (archived) {
+            reminderScheduler.cancel(id)
+        } else {
+            repDao.getById(id)?.let { reminderScheduler.applyForRep(it.id, it.reminderEnabled, it.reminderHour, it.reminderMinute) }
+        }
+    }
 
     suspend fun setRestMode(id: Long, start: LocalDate?, end: LocalDate?) =
         repDao.setRestMode(id, start, end)
 
-    suspend fun deleteRep(rep: RepEntity) = repDao.delete(rep)
+    suspend fun deleteRep(rep: RepEntity) {
+        reminderScheduler.cancel(rep.id)
+        repDao.delete(rep)
+    }
 
     /** Compute a streak from already-loaded data (pure-domain engine). */
     fun streakFor(rep: RepEntity, hits: List<RepHitEntity>, today: LocalDate): StreakResult =
