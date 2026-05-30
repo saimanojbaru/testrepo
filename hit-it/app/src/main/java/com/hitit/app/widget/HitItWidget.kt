@@ -1,6 +1,7 @@
 package com.hitit.app.widget
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.glance.GlanceId
 import androidx.glance.GlanceModifier
@@ -44,20 +45,21 @@ class HitItWidget : GlanceAppWidget() {
             .fromApplication(context.applicationContext, WidgetEntryPoint::class.java)
             .repRepository()
         val snapshot = repo.todaySnapshot(LocalDate.now())
+        val launchIntent = Intent(context, MainActivity::class.java)
 
         provideContent {
-            WidgetContent(done = snapshot.done, total = snapshot.total)
+            WidgetContent(done = snapshot.done, total = snapshot.total, launchIntent = launchIntent)
         }
     }
 
     @Composable
-    private fun WidgetContent(done: Int, total: Int) {
+    private fun WidgetContent(done: Int, total: Int, launchIntent: Intent) {
         Column(
             modifier = GlanceModifier
                 .fillMaxSize()
                 .background(ColorProvider(Color(0xFF16161D)))
                 .padding(16.dp)
-                .clickable(actionStartActivity<MainActivity>()),
+                .clickable(actionStartActivity(launchIntent)),
             verticalAlignment = Alignment.CenterVertically,
             horizontalAlignment = Alignment.Start,
         ) {
