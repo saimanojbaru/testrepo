@@ -1,1 +1,4 @@
 node_modules/
+
+# Claude Code session scratch (plans, local working notes)
+.claude/
