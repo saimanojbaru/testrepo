@@ -10,18 +10,18 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phases 1–5)
+## 0. What is built right now (Phases 1–6)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (48 tests in `:domain`).
+  weekly targets — **fully unit-tested** (54 tests in `:domain`).
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas`; intensity now combines Reps
   hit and Check-Ins per day.
 - **Momentum** gamification: earn XP per hit/task/focus minute/check-in/checkpoint/goal, 100 Levels
-  on a smooth curve, 12-tier ladder (Rookie → G.O.A.T.), and a starter set of computed Trophies.
+  on a smooth curve, 12-tier ladder (Rookie → G.O.A.T.), and persistent Trophies (see Phase 6).
 - **Hits** (tasks) — *Phase 2*: priorities (High/Med/Low), quick due dates, optional link to a Rep,
   and a single daily **Main Target** surfaced on Today. Completing a Hit awards Momentum by priority
   (and reverses it on undo), all in one transaction.
@@ -36,10 +36,14 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
   goal awards Momentum. Reached from Profile → Library.
 - **The Locker** (notes) — *Phase 5*: a hierarchical note tree (a note with children acts as a
   folder), with title/body editing and cascade delete. Reached from Profile → Library.
+- **Trophies + Stats** — *Phase 6*: a persistent `trophies` table with a pure-domain unlock catalog
+  (12 Trophies across level/focus/check-in/task/goal/streak milestones); earning a Trophy awards a
+  one-time Momentum bonus. Profile shows a **Stats** section (focus minutes, best streak, hits done,
+  check-ins) and the Trophy grid reflects real unlock state.
 - Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**, **Add/Edit Hit**,
   **Lock In**, **Check-In**, **Big Plays** (+ detail/edit), **The Locker**, **The Grid**,
   **Profile**, dark + neon Material 3, bottom navigation.
-- Room persistence (offline-first, DB v5) wired through Hilt.
+- Room persistence (offline-first, DB v6) wired through Hilt.
 
 🔜 **Not built yet (see roadmap):** reminders, widgets, cloud sync. Linking Reps/Hits to a Big Play
 with automatic rollup, and Lock In ambient sounds (audio assets), are also deferred.
