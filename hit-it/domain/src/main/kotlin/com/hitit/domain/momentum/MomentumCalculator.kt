@@ -23,4 +23,7 @@ object MomentumCalculator {
         Priority.MEDIUM -> 5
         Priority.LOW -> 0
     }
+
+    /** Momentum awarded for a Lock In session: 1 per focused minute. */
+    fun awardForFocus(focusedMinutes: Int): Int = focusedMinutes.coerceAtLeast(0)
 }

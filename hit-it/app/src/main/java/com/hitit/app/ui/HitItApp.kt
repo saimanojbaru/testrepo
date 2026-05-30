@@ -28,6 +28,7 @@ import com.hitit.app.ui.navigation.Dest
 import com.hitit.app.ui.screens.grid.GridScreen
 import com.hitit.app.ui.screens.hits.HitEditScreen
 import com.hitit.app.ui.screens.hits.HitsScreen
+import com.hitit.app.ui.screens.lockin.LockInScreen
 import com.hitit.app.ui.screens.profile.ProfileScreen
 import com.hitit.app.ui.screens.reps.RepDetailScreen
 import com.hitit.app.ui.screens.reps.RepEditScreen
@@ -83,6 +84,7 @@ fun HitItApp() {
                 TodayScreen(
                     onAddRep = { navController.navigate(Dest.repEdit()) },
                     onOpenRep = { navController.navigate(Dest.repDetail(it)) },
+                    onLockIn = { navController.navigate(Dest.LOCK_IN) },
                 )
             }
             composable(Dest.REPS) {
@@ -99,6 +101,9 @@ fun HitItApp() {
             }
             composable(Dest.GRID) { GridScreen() }
             composable(Dest.PROFILE) { ProfileScreen() }
+            composable(Dest.LOCK_IN) {
+                LockInScreen(onBack = { navController.popBackStack() })
+            }
             composable(
                 route = Dest.REP_DETAIL,
                 arguments = listOf(navArgument(Dest.ARG_REP_ID) { type = NavType.LongType }),

@@ -35,4 +35,11 @@ class MomentumCalculatorTest {
         assertEquals(15, MomentumCalculator.awardForTask(Priority.MEDIUM))
         assertEquals(10, MomentumCalculator.awardForTask(Priority.LOW))
     }
+
+    @Test
+    fun focusAwardIsOnePerMinute() {
+        assertEquals(25, MomentumCalculator.awardForFocus(25))
+        assertEquals(0, MomentumCalculator.awardForFocus(0))
+        assertEquals(0, MomentumCalculator.awardForFocus(-5))
+    }
 }

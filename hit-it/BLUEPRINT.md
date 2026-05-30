@@ -10,26 +10,29 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phases 1–2)
+## 0. What is built right now (Phases 1–3)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (37 tests in `:domain`).
+  weekly targets — **fully unit-tested** (43 tests in `:domain`).
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas` (overall + per-rep).
-- **Momentum** gamification: earn XP per hit/task, 100 Levels on a smooth curve, 12-tier ladder
-  (Rookie → G.O.A.T.), and a starter set of computed Trophies.
+- **Momentum** gamification: earn XP per hit/task/focus minute, 100 Levels on a smooth curve, 12-tier
+  ladder (Rookie → G.O.A.T.), and a starter set of computed Trophies.
 - **Hits** (tasks) — *Phase 2*: priorities (High/Med/Low), quick due dates, optional link to a Rep,
   and a single daily **Main Target** surfaced on Today. Completing a Hit awards Momentum by priority
   (and reverses it on undo), all in one transaction.
+- **Lock In** (focus timer) — *Phase 3*: presets 15/25/45/60/90 min, selectable **Zones**, optional
+  link to a Rep, a real **foreground Service** so the countdown survives navigation/backgrounding,
+  pause/resume/stop, and Momentum awarded per focused minute on finish.
 - Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**, **Add/Edit Hit**,
-  **The Grid**, **Profile**, with a dark + neon Material 3 theme and bottom navigation.
-- Room persistence (offline-first, DB v2) wired through Hilt.
+  **Lock In**, **The Grid**, **Profile**, with a dark + neon Material 3 theme and bottom navigation.
+- Room persistence (offline-first, DB v3) wired through Hilt.
 
-🔜 **Not built yet (see roadmap):** Lock In (focus timer), Check-In (journal), Big Plays (goals),
-The Locker (notes), reminders, widgets, cloud sync.
+🔜 **Not built yet (see roadmap):** Check-In (journal), Big Plays (goals), The Locker (notes),
+reminders, widgets, cloud sync. Lock In ambient sounds (audio assets) are also deferred.
 
 > The `:domain` logic is verified by running `./gradlew :domain:test -PskipApp`. The `:app` module
 > needs the Android SDK (Android Studio) to build — it was authored against a verified, mutually
@@ -144,11 +147,13 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
 - **`hit_tasks`** (Phase 2): `id`, `title`, `notes`, `priority` (HIGH/MEDIUM/LOW), `dueDate?`,
   `tagsCsv`, `isDone`, `completedAt?`, `mainTargetDate?` (the day it is the Main Target), `repId?`
   (optional link, no FK), `sortOrder`, `createdAt`.
+- **`lock_in_sessions`** (Phase 3): `id`, `startTime`, `endTime`, `plannedMinutes`, `focusedMinutes`,
+  `repId?`, `taskId?`, `zone`, `completed`, `date`.
 
-Database version: **2** (`fallbackToDestructiveMigration` is on for development).
+Database version: **3** (`fallbackToDestructiveMigration` is on for development).
 
 ### Future tables (add per phase)
-`lock_in_sessions`, `check_ins`, `big_plays`, `checkpoints`, `locker_notes`,
+`check_ins`, `big_plays`, `checkpoints`, `locker_notes`,
 `trophies` (when trophy unlocks become persistent rather than computed).
 
 ---
@@ -219,7 +224,7 @@ You can always run the `:domain` tests in Termux.
 |---|---|---|
 | **P1 ✅** | Reps + Streaks + Grid + Momentum | done |
 | **P2 ✅** | **Hits** (tasks) | done — task entity, priorities, quick due dates, **Main Target**, optional Rep link, Momentum on completion |
-| **P3** | **Lock In** (focus timer) | Pomodoro presets, foreground service, **Zones** (themes), link a session to a rep/hit, Momentum for focus minutes |
+| **P3 ✅** | **Lock In** (focus timer) | done — presets, foreground Service, **Zones**, Rep link, pause/resume/stop, Momentum per focused minute (ambient sounds deferred) |
 | **P4** | **Check-In** (journal) | morning/evening prompts, mood + energy sliders, feeds The Grid |
 | **P5** | **Big Plays** (goals) + **The Locker** (notes) | goals with **Checkpoints** across horizons; hierarchical rich notes |
 | **P6** | Gamification depth | persistent Trophies table + unlock engine, richer Momentum rules, stats |
@@ -289,3 +294,10 @@ You can always run the `:domain` tests in Termux.
 - Clearing a hit posts an approximate compensating Momentum entry (it reverses the standard award for
   the current streak), so the ledger stays close to balanced; P6 can make this exact.
 - Schedule/target edits apply retroactively to history (simplest correct behavior for now).
+- **Lock In** keeps the timer running across navigation and while backgrounded (foreground Service),
+  but it does not yet survive full process death (the countdown isn't reconstructed from a saved
+  start time). Ambient sounds are deferred (no audio assets).
+- The Lock In service declares `foregroundServiceType="specialUse"` (subtype `focus_timer`) — fine
+  for development; for a Play release confirm Google accepts it or switch to a more specific type.
+  `POST_NOTIFICATIONS` is requested when opening Lock In; the timer still runs if it's denied (the
+  notification just won't show).

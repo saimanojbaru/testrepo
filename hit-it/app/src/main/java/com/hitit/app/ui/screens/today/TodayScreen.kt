@@ -19,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.filled.Timer
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -44,6 +45,7 @@ import com.hitit.app.ui.components.SectionLabel
 fun TodayScreen(
     onAddRep: () -> Unit,
     onOpenRep: (Long) -> Unit,
+    onLockIn: () -> Unit,
     viewModel: TodayViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -57,8 +59,13 @@ fun TodayScreen(
             title = "Today",
             subtitle = state.dateLabel,
             action = {
-                IconButton(onClick = onAddRep) {
-                    Icon(Icons.Filled.Add, contentDescription = "Add Rep")
+                Row {
+                    IconButton(onClick = onLockIn) {
+                        Icon(Icons.Filled.Timer, contentDescription = "Lock In")
+                    }
+                    IconButton(onClick = onAddRep) {
+                        Icon(Icons.Filled.Add, contentDescription = "Add Rep")
+                    }
                 }
             },
         )

@@ -8,6 +8,8 @@ object Dest {
     const val GRID = "grid"
     const val PROFILE = "profile"
 
+    const val LOCK_IN = "lock_in"
+
     const val REP_DETAIL = "rep_detail/{repId}"
     const val REP_EDIT = "rep_edit?repId={repId}"
     const val HIT_EDIT = "hit_edit?taskId={taskId}"
