@@ -3,6 +3,7 @@ package com.hitit.app.di
 import android.content.Context
 import androidx.room.Room
 import com.hitit.app.data.local.HitItDatabase
+import com.hitit.app.data.local.dao.CheckInDao
 import com.hitit.app.data.local.dao.HitTaskDao
 import com.hitit.app.data.local.dao.LockInSessionDao
 import com.hitit.app.data.local.dao.MomentumTxnDao
@@ -44,4 +45,7 @@ object DatabaseModule {
 
     @Provides
     fun provideLockInSessionDao(db: HitItDatabase): LockInSessionDao = db.lockInSessionDao()
+
+    @Provides
+    fun provideCheckInDao(db: HitItDatabase): CheckInDao = db.checkInDao()
 }

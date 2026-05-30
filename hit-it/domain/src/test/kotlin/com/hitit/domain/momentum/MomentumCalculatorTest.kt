@@ -42,4 +42,10 @@ class MomentumCalculatorTest {
         assertEquals(0, MomentumCalculator.awardForFocus(0))
         assertEquals(0, MomentumCalculator.awardForFocus(-5))
     }
+
+    @Test
+    fun checkInAwardIsFlat() {
+        assertEquals(MomentumCalculator.CHECK_IN, MomentumCalculator.awardForCheckIn())
+        assertEquals(8, MomentumCalculator.awardForCheckIn())
+    }
 }

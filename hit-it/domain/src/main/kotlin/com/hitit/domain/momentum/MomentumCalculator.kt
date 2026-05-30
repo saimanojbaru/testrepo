@@ -26,4 +26,8 @@ object MomentumCalculator {
 
     /** Momentum awarded for a Lock In session: 1 per focused minute. */
     fun awardForFocus(focusedMinutes: Int): Int = focusedMinutes.coerceAtLeast(0)
+
+    /** Flat Momentum awarded for a journal entry (a morning or an evening Check-In). */
+    const val CHECK_IN = 8
+    fun awardForCheckIn(): Int = CHECK_IN
 }

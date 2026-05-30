@@ -9,6 +9,7 @@ object Dest {
     const val PROFILE = "profile"
 
     const val LOCK_IN = "lock_in"
+    const val CHECK_IN = "check_in"
 
     const val REP_DETAIL = "rep_detail/{repId}"
     const val REP_EDIT = "rep_edit?repId={repId}"

@@ -10,29 +10,33 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 
 ---
 
-## 0. What is built right now (Phases 1–3)
+## 0. What is built right now (Phases 1–4)
 
 ✅ **Built and shipping in this repo:**
 - Two-module Gradle project: `:domain` (pure Kotlin) + `:app` (Android).
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (43 tests in `:domain`).
-- **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas` (overall + per-rep).
-- **Momentum** gamification: earn XP per hit/task/focus minute, 100 Levels on a smooth curve, 12-tier
-  ladder (Rookie → G.O.A.T.), and a starter set of computed Trophies.
+  weekly targets — **fully unit-tested** (44 tests in `:domain`).
+- **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas`; intensity now combines Reps
+  hit and Check-Ins per day.
+- **Momentum** gamification: earn XP per hit/task/focus minute/check-in, 100 Levels on a smooth
+  curve, 12-tier ladder (Rookie → G.O.A.T.), and a starter set of computed Trophies.
 - **Hits** (tasks) — *Phase 2*: priorities (High/Med/Low), quick due dates, optional link to a Rep,
   and a single daily **Main Target** surfaced on Today. Completing a Hit awards Momentum by priority
   (and reverses it on undo), all in one transaction.
 - **Lock In** (focus timer) — *Phase 3*: presets 15/25/45/60/90 min, selectable **Zones**, optional
   link to a Rep, a real **foreground Service** so the countdown survives navigation/backgrounding,
   pause/resume/stop, and Momentum awarded per focused minute on finish.
+- **Check-In** (journal) — *Phase 4*: a daily entry with morning/evening reflections and mood +
+  energy (1–10) sliders, surfaced as a card on Today; awards Momentum the first time the morning and
+  evening entries get content, and counts toward The Grid.
 - Screens: **Today**, **Reps**, **Rep detail**, **Add/Edit Rep**, **Hits**, **Add/Edit Hit**,
-  **Lock In**, **The Grid**, **Profile**, with a dark + neon Material 3 theme and bottom navigation.
-- Room persistence (offline-first, DB v3) wired through Hilt.
+  **Lock In**, **Check-In**, **The Grid**, **Profile**, dark + neon Material 3, bottom navigation.
+- Room persistence (offline-first, DB v4) wired through Hilt.
 
-🔜 **Not built yet (see roadmap):** Check-In (journal), Big Plays (goals), The Locker (notes),
-reminders, widgets, cloud sync. Lock In ambient sounds (audio assets) are also deferred.
+🔜 **Not built yet (see roadmap):** Big Plays (goals), The Locker (notes), reminders, widgets,
+cloud sync. Lock In ambient sounds (audio assets) are also deferred.
 
 > The `:domain` logic is verified by running `./gradlew :domain:test -PskipApp`. The `:app` module
 > needs the Android SDK (Android Studio) to build — it was authored against a verified, mutually
@@ -149,11 +153,13 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
   (optional link, no FK), `sortOrder`, `createdAt`.
 - **`lock_in_sessions`** (Phase 3): `id`, `startTime`, `endTime`, `plannedMinutes`, `focusedMinutes`,
   `repId?`, `taskId?`, `zone`, `completed`, `date`.
+- **`check_ins`** (Phase 4): `date` (PK), `morning`, `evening`, `mood?`, `energy?`, `morningAwarded`,
+  `eveningAwarded`, `updatedAt`.
 
-Database version: **3** (`fallbackToDestructiveMigration` is on for development).
+Database version: **4** (`fallbackToDestructiveMigration` is on for development).
 
 ### Future tables (add per phase)
-`check_ins`, `big_plays`, `checkpoints`, `locker_notes`,
+`big_plays`, `checkpoints`, `locker_notes`,
 `trophies` (when trophy unlocks become persistent rather than computed).
 
 ---
@@ -192,9 +198,11 @@ applies retroactively (documented MVP simplification).
 - `TierLadder`: 12 contiguous brackets over levels 1–100.
 
 ### 6.3 The Grid (`GridAggregator`)
-`bucket(distinctRepsThatDay)` → intensity 0–4. `yearColumns(year, intensityByDate, today)` lays the
+`bucket(activityThatDay)` → intensity 0–4. `yearColumns(year, intensityByDate, today)` lays the
 year out as ISO-week columns of 7 cells (Mon–Sun), flagging out-of-year and future cells. The UI
-(`ui/components/Heatmap.kt`) renders it on a single horizontally-scrolling `Canvas`.
+(`ui/components/Heatmap.kt`) renders it on a single horizontally-scrolling `Canvas`. Per-day activity
+is combined in `GridViewModel` from distinct Reps hit + a point for a Check-In that day (focus
+sessions can be folded in later).
 
 ---
 
@@ -225,7 +233,7 @@ You can always run the `:domain` tests in Termux.
 | **P1 ✅** | Reps + Streaks + Grid + Momentum | done |
 | **P2 ✅** | **Hits** (tasks) | done — task entity, priorities, quick due dates, **Main Target**, optional Rep link, Momentum on completion |
 | **P3 ✅** | **Lock In** (focus timer) | done — presets, foreground Service, **Zones**, Rep link, pause/resume/stop, Momentum per focused minute (ambient sounds deferred) |
-| **P4** | **Check-In** (journal) | morning/evening prompts, mood + energy sliders, feeds The Grid |
+| **P4 ✅** | **Check-In** (journal) | done — morning/evening reflections, mood + energy sliders, Momentum per entry, feeds The Grid |
 | **P5** | **Big Plays** (goals) + **The Locker** (notes) | goals with **Checkpoints** across horizons; hierarchical rich notes |
 | **P6** | Gamification depth | persistent Trophies table + unlock engine, richer Momentum rules, stats |
 | **P7** | Reminders | WorkManager + notifications per rep (catalog already includes `work` + `hilt-work`) |

@@ -46,6 +46,7 @@ fun TodayScreen(
     onAddRep: () -> Unit,
     onOpenRep: (Long) -> Unit,
     onLockIn: () -> Unit,
+    onCheckIn: () -> Unit,
     viewModel: TodayViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -77,6 +78,12 @@ fun TodayScreen(
             momentum = state.momentum,
         )
 
+        CheckInCard(
+            checkedIn = state.checkedIn,
+            mood = state.checkInMood,
+            onClick = onCheckIn,
+        )
+
         state.mainTarget?.let { target ->
             SectionLabel("Main Target")
             MainTargetCard(target = target, onToggle = { viewModel.toggleMainTarget(target) })
@@ -103,6 +110,52 @@ fun TodayScreen(
 
         Spacer(Modifier.height(24.dp))
     }
+}
+
+@Composable
+private fun CheckInCard(checkedIn: Boolean, mood: Int?, onClick: () -> Unit) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .clip(RoundedCornerShape(16.dp))
+            .clickable(onClick = onClick),
+        shape = RoundedCornerShape(16.dp),
+        color = MaterialTheme.colorScheme.surface,
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Text(
+                text = if (checkedIn) moodEmoji(mood ?: 5) else "📝",
+                style = MaterialTheme.typography.titleLarge,
+            )
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = if (checkedIn) "Checked in" else "Check-In",
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.SemiBold,
+                    color = MaterialTheme.colorScheme.onSurface,
+                )
+                Text(
+                    text = if (checkedIn) "Tap to update today's reflection"
+                    else "How are you today? Tap to reflect.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
+    }
+}
+
+private fun moodEmoji(mood: Int): String = when {
+    mood <= 2 -> "😞"
+    mood <= 4 -> "😕"
+    mood <= 6 -> "😐"
+    mood <= 8 -> "🙂"
+    else -> "😄"
 }
 
 @Composable

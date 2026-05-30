@@ -3,6 +3,7 @@ package com.hitit.app.ui.screens.today
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hitit.app.data.mapper.toCore
+import com.hitit.app.data.repository.CheckInRepository
 import com.hitit.app.data.repository.ProfileRepository
 import com.hitit.app.data.repository.RepRepository
 import com.hitit.app.data.repository.TaskRepository
@@ -43,6 +44,8 @@ data class TodayUiState(
     val progress: Float = 0f,
     val momentum: Long = 0,
     val dateLabel: String = "",
+    val checkedIn: Boolean = false,
+    val checkInMood: Int? = null,
     val mainTarget: MainTargetUi? = null,
     val reps: List<TodayRepUi> = emptyList(),
     val loading: Boolean = true,
@@ -53,6 +56,7 @@ class TodayViewModel @Inject constructor(
     private val repRepository: RepRepository,
     private val taskRepository: TaskRepository,
     profileRepository: ProfileRepository,
+    checkInRepository: CheckInRepository,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
@@ -63,7 +67,8 @@ class TodayViewModel @Inject constructor(
         repRepository.observeHitsBetween(today.minusDays(WINDOW_DAYS), today),
         profileRepository.observeMomentumTotal(),
         taskRepository.observeMainTarget(today),
-    ) { reps, hits, momentum, mainTarget ->
+        checkInRepository.observeForDate(today),
+    ) { reps, hits, momentum, mainTarget, checkIn ->
         val hitsByRep = hits.groupBy { it.repId }
         val todayReps = reps
             .filter { ScheduleEvaluator.isActiveOn(it.toCore(), today) }
@@ -81,12 +86,16 @@ class TodayViewModel @Inject constructor(
                 )
             }
         val level = LevelCurve.levelFor(momentum)
+        val checkedIn = checkIn != null &&
+            (checkIn.morning.isNotBlank() || checkIn.evening.isNotBlank() || checkIn.mood != null)
         TodayUiState(
             tier = TierLadder.tierFor(level).name,
             level = level,
             progress = LevelCurve.progressToNext(momentum),
             momentum = momentum,
             dateLabel = today.format(dateFormat),
+            checkedIn = checkedIn,
+            checkInMood = checkIn?.mood,
             mainTarget = mainTarget?.let {
                 MainTargetUi(id = it.id, title = it.title, priority = it.priority, done = it.isDone)
             },

@@ -25,6 +25,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.hitit.app.ui.navigation.Dest
+import com.hitit.app.ui.screens.checkin.CheckInScreen
 import com.hitit.app.ui.screens.grid.GridScreen
 import com.hitit.app.ui.screens.hits.HitEditScreen
 import com.hitit.app.ui.screens.hits.HitsScreen
@@ -85,6 +86,7 @@ fun HitItApp() {
                     onAddRep = { navController.navigate(Dest.repEdit()) },
                     onOpenRep = { navController.navigate(Dest.repDetail(it)) },
                     onLockIn = { navController.navigate(Dest.LOCK_IN) },
+                    onCheckIn = { navController.navigate(Dest.CHECK_IN) },
                 )
             }
             composable(Dest.REPS) {
@@ -103,6 +105,9 @@ fun HitItApp() {
             composable(Dest.PROFILE) { ProfileScreen() }
             composable(Dest.LOCK_IN) {
                 LockInScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Dest.CHECK_IN) {
+                CheckInScreen(onBack = { navController.popBackStack() })
             }
             composable(
                 route = Dest.REP_DETAIL,
