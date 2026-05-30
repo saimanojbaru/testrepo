@@ -11,6 +11,7 @@ import com.hitit.app.data.local.dao.LockerNoteDao
 import com.hitit.app.data.local.dao.MomentumTxnDao
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.app.data.local.dao.RepHitDao
+import com.hitit.app.data.local.dao.TrophyDao
 import com.hitit.app.data.local.dao.UserProfileDao
 import com.hitit.app.data.local.entity.BigPlayEntity
 import com.hitit.app.data.local.entity.CheckInEntity
@@ -21,6 +22,7 @@ import com.hitit.app.data.local.entity.LockerNoteEntity
 import com.hitit.app.data.local.entity.MomentumTxnEntity
 import com.hitit.app.data.local.entity.RepEntity
 import com.hitit.app.data.local.entity.RepHitEntity
+import com.hitit.app.data.local.entity.TrophyEntity
 import com.hitit.app.data.local.entity.UserProfileEntity
 
 @Database(
@@ -35,8 +37,9 @@ import com.hitit.app.data.local.entity.UserProfileEntity
         BigPlayEntity::class,
         CheckpointEntity::class,
         LockerNoteEntity::class,
+        TrophyEntity::class,
     ],
-    version = 5,
+    version = 6,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)
@@ -50,4 +53,5 @@ abstract class HitItDatabase : RoomDatabase() {
     abstract fun checkInDao(): CheckInDao
     abstract fun bigPlayDao(): BigPlayDao
     abstract fun lockerNoteDao(): LockerNoteDao
+    abstract fun trophyDao(): TrophyDao
 }

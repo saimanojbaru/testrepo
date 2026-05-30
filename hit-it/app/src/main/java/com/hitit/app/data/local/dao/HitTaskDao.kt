@@ -16,6 +16,9 @@ interface HitTaskDao {
     @Query("SELECT * FROM hit_tasks ORDER BY isDone, sortOrder, id")
     fun observeAll(): Flow<List<HitTaskEntity>>
 
+    @Query("SELECT COUNT(*) FROM hit_tasks WHERE isDone = 1")
+    fun observeCompletedCount(): Flow<Int>
+
     @Query("SELECT * FROM hit_tasks WHERE mainTargetDate = :date LIMIT 1")
     fun observeMainTarget(date: LocalDate): Flow<HitTaskEntity?>
 

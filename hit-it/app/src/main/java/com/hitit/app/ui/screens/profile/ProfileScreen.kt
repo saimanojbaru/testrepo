@@ -61,6 +61,26 @@ fun ProfileScreen(
             modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
         )
 
+        SectionLabel("Stats")
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 6.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            StatCard(value = "${state.focusMinutes}", label = "Focus min", modifier = Modifier.weight(1f))
+            StatCard(value = "🔥 ${state.bestStreak}", label = "Best streak", modifier = Modifier.weight(1f))
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 6.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            StatCard(value = "${state.tasksCompleted}", label = "Hits done", modifier = Modifier.weight(1f))
+            StatCard(value = "${state.checkInCount}", label = "Check-Ins", modifier = Modifier.weight(1f))
+        }
+
         SectionLabel("Library")
         NavRow(title = "🎯 Big Plays", subtitle = "Long-term goals & checkpoints", onClick = onOpenBigPlays)
         NavRow(title = "🗄️ The Locker", subtitle = "Your notes", onClick = onOpenLocker)
@@ -143,6 +163,29 @@ private fun NavRow(title: String, subtitle: String, onClick: () -> Unit) {
                 Icons.AutoMirrored.Filled.KeyboardArrowRight,
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+    }
+}
+
+@Composable
+private fun StatCard(value: String, label: String, modifier: Modifier = Modifier) {
+    Surface(
+        modifier = modifier,
+        shape = RoundedCornerShape(16.dp),
+        color = MaterialTheme.colorScheme.surface,
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                text = value,
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.onSurface,
+            )
+            Text(
+                text = label,
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }

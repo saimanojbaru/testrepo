@@ -2,14 +2,18 @@ package com.hitit.app.ui.screens.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hitit.app.data.repository.ProfileRepository
+import com.hitit.app.data.repository.StatsRepository
+import com.hitit.app.data.repository.TrophyRepository
 import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.TierLadder
+import com.hitit.domain.trophy.TrophyCatalog
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
+import java.time.LocalDate
 import javax.inject.Inject
 
 data class TrophyUi(
@@ -32,6 +36,10 @@ data class ProfileUiState(
     val progress: Float = 0f,
     val momentum: Long = 0,
     val momentumToNext: Long = 0,
+    val focusMinutes: Int = 0,
+    val checkInCount: Int = 0,
+    val tasksCompleted: Int = 0,
+    val bestStreak: Int = 0,
     val trophies: List<TrophyUi> = emptyList(),
     val tiers: List<TierRowUi> = emptyList(),
     val loading: Boolean = true,
@@ -39,50 +47,48 @@ data class ProfileUiState(
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    profileRepository: ProfileRepository,
+    private val statsRepository: StatsRepository,
+    private val trophyRepository: TrophyRepository,
 ) : ViewModel() {
 
-    val state: StateFlow<ProfileUiState> = profileRepository
-        .observeMomentumTotal()
-        .map { momentum ->
-            val level = LevelCurve.levelFor(momentum)
-            ProfileUiState(
-                tier = TierLadder.tierFor(level).name,
-                level = level,
-                progress = LevelCurve.progressToNext(momentum),
-                momentum = momentum,
-                momentumToNext = LevelCurve.momentumToNext(momentum),
-                trophies = TROPHIES.map { def ->
-                    TrophyUi(def.emoji, def.name, def.description, def.predicate(level, momentum))
-                },
-                tiers = TierLadder.TIERS.map { tier ->
-                    TierRowUi(
-                        name = tier.name,
-                        range = "Lv ${tier.minLevel}–${tier.maxLevel}",
-                        reached = level >= tier.minLevel,
-                        current = level in tier.minLevel..tier.maxLevel,
-                    )
-                },
-                loading = false,
-            )
+    private val today: LocalDate = LocalDate.now()
+
+    init {
+        // Persist any newly-earned Trophies whenever the stats change (idempotent).
+        viewModelScope.launch {
+            statsRepository.observeStats(today).collect { stats ->
+                trophyRepository.sync(stats, today)
+            }
         }
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), ProfileUiState())
-
-    private data class TrophyDef(
-        val emoji: String,
-        val name: String,
-        val description: String,
-        val predicate: (level: Int, momentum: Long) -> Boolean,
-    )
-
-    private companion object {
-        val TROPHIES = listOf(
-            TrophyDef("🌱", "First Step", "Earn your first Momentum") { _, m -> m > 0 },
-            TrophyDef("🔥", "Warmed Up", "Reach Level 5") { l, _ -> l >= 5 },
-            TrophyDef("💪", "Contender", "Reach Level 26") { l, _ -> l >= 26 },
-            TrophyDef("⭐", "All-Star", "Reach Level 51") { l, _ -> l >= 51 },
-            TrophyDef("👑", "Champion", "Reach Level 76") { l, _ -> l >= 76 },
-            TrophyDef("🐐", "G.O.A.T.", "Reach Level 100") { l, _ -> l >= 100 },
-        )
     }
+
+    val state: StateFlow<ProfileUiState> = combine(
+        statsRepository.observeStats(today),
+        trophyRepository.observeUnlocked(),
+    ) { stats, unlocked ->
+        val unlockedIds = unlocked.map { it.id }.toSet()
+        ProfileUiState(
+            tier = TierLadder.tierFor(stats.level).name,
+            level = stats.level,
+            progress = LevelCurve.progressToNext(stats.momentum),
+            momentum = stats.momentum,
+            momentumToNext = LevelCurve.momentumToNext(stats.momentum),
+            focusMinutes = stats.totalFocusMinutes,
+            checkInCount = stats.checkInCount,
+            tasksCompleted = stats.tasksCompleted,
+            bestStreak = stats.bestStreak,
+            trophies = TrophyCatalog.ALL.map { def ->
+                TrophyUi(def.emoji, def.name, def.description, def.id in unlockedIds)
+            },
+            tiers = TierLadder.TIERS.map { tier ->
+                TierRowUi(
+                    name = tier.name,
+                    range = "Lv ${tier.minLevel}–${tier.maxLevel}",
+                    reached = stats.level >= tier.minLevel,
+                    current = stats.level in tier.minLevel..tier.maxLevel,
+                )
+            },
+            loading = false,
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), ProfileUiState())
 }

@@ -25,6 +25,9 @@ interface BigPlayDao {
     @Query("SELECT * FROM big_plays WHERE id = :id")
     suspend fun getById(id: Long): BigPlayEntity?
 
+    @Query("SELECT COUNT(*) FROM big_plays WHERE isCompleted = 1")
+    fun observeCompletedCount(): Flow<Int>
+
     @Insert
     suspend fun insert(play: BigPlayEntity): Long
 

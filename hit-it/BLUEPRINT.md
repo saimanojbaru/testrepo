@@ -168,11 +168,18 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
   `doneAt?`, `sortOrder`.
 - **`locker_notes`** (Phase 5): `id`, `parentId?` (self-FK, CASCADE), `title`, `body`, `sortOrder`,
   `updatedAt`, `createdAt`.
+- **`trophies`** (Phase 6): `id` (String PK, matches a domain `TrophyDef` id), `unlockedAt`.
 
-Database version: **5** (`fallbackToDestructiveMigration` is on for development).
+Database version: **6** (`fallbackToDestructiveMigration` is on for development).
 
-### Future tables (add per phase)
-`trophies` (when trophy unlocks become persistent rather than computed).
+### Trophies & Stats (Phase 6)
+The domain `trophy/` package holds `TrophyStats` (the cross-feature snapshot) and `TrophyCatalog`
+(12 `TrophyDef`s with pure `predicate: (TrophyStats) -> Boolean` rules + a one-time Momentum `bonus`).
+`StatsRepository.observeStats(today)` combines the Momentum total, focus minutes, check-in count,
+completed-hit count, completed-Big-Play count, and best streak into a `TrophyStats`.
+`TrophyRepository.sync(stats, today)` is idempotent (insert-IGNORE + id diff) — it persists newly
+earned Trophies, awards their bonus once, and recomputes the profile. `ProfileViewModel` drives
+`sync` while Profile is observed.
 
 ---
 
@@ -247,7 +254,7 @@ You can always run the `:domain` tests in Termux.
 | **P3 ✅** | **Lock In** (focus timer) | done — presets, foreground Service, **Zones**, Rep link, pause/resume/stop, Momentum per focused minute (ambient sounds deferred) |
 | **P4 ✅** | **Check-In** (journal) | done — morning/evening reflections, mood + energy sliders, Momentum per entry, feeds The Grid |
 | **P5 ✅** | **Big Plays** (goals) + **The Locker** (notes) | done — goals + checkpoints + numeric progress; hierarchical notes (Rep/Hit→goal linking deferred) |
-| **P6** | Gamification depth | persistent Trophies table + unlock engine, richer Momentum rules, stats |
+| **P6 ✅** | Gamification depth | done — persistent Trophies table + pure-domain unlock catalog (12 Trophies w/ Momentum bonuses), Profile Stats section |
 | **P7** | Reminders | WorkManager + notifications per rep (catalog already includes `work` + `hilt-work`) |
 | **P8** | Polish | home-screen widgets (Glance), themes, accessibility, onboarding, month labels on The Grid |
 | **P9** | Testing & hardening | repository/DAO tests, Compose UI tests, edge-case sweeps |

@@ -14,6 +14,7 @@ import com.hitit.domain.model.StreakResult
 import com.hitit.domain.momentum.MomentumCalculator
 import com.hitit.domain.streak.StreakCalculator
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.combine
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -55,6 +56,18 @@ class RepRepository @Inject constructor(
     /** Compute a streak from already-loaded data (pure-domain engine). */
     fun streakFor(rep: RepEntity, hits: List<RepHitEntity>, today: LocalDate): StreakResult =
         streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
+
+    /** Best (longest) streak across all active Reps — used for streak Trophies. */
+    fun observeBestStreak(today: LocalDate): Flow<Int> = combine(
+        repDao.observeActive(),
+        hitDao.observeBetween(today.minusDays(STREAK_WINDOW_DAYS), today),
+    ) { reps, hits ->
+        val hitsByRep = hits.groupBy { it.repId }
+        reps.maxOfOrNull { rep ->
+            streakCalculator.calculate(rep.toCore(), hitsByRep[rep.id].orEmpty().map { it.toHitDay() }, today)
+                .longestStreak
+        } ?: 0
+    }
 
     /** Log one hit for [repId] on [today], up to the Rep's target. Awards Momentum on becoming met. */
     suspend fun logHit(repId: Long, today: LocalDate) {
@@ -107,5 +120,6 @@ class RepRepository @Inject constructor(
     private companion object {
         const val REASON_HIT = "rep_hit"
         const val REASON_UNDO = "rep_hit_undo"
+        const val STREAK_WINDOW_DAYS = 400L
     }
 }
