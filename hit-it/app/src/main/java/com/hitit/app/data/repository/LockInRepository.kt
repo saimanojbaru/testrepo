@@ -25,6 +25,7 @@ class LockInRepository @Inject constructor(
     private val profileRepository: ProfileRepository,
 ) {
     fun observeTotalFocusMinutes(): Flow<Int> = sessionDao.observeTotalFocusMinutes()
+    fun observeFocusMinutesOn(date: java.time.LocalDate): Flow<Int> = sessionDao.observeFocusMinutesOn(date)
     fun observeSessionCount(): Flow<Int> = sessionDao.observeSessionCount()
     fun observeRecent(limit: Int = 10): Flow<List<LockInSessionEntity>> = sessionDao.observeRecent(limit)
 

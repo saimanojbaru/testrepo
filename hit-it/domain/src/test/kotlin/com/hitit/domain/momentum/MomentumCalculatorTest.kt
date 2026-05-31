@@ -2,6 +2,8 @@ package com.hitit.domain.momentum
 
 import com.hitit.domain.model.Priority
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class MomentumCalculatorTest {
@@ -53,5 +55,18 @@ class MomentumCalculatorTest {
     fun goalAwardsAreFlat() {
         assertEquals(15, MomentumCalculator.awardForCheckpoint())
         assertEquals(50, MomentumCalculator.awardForBigPlay())
+    }
+
+    @Test
+    fun perfectDayDetection() {
+        assertTrue(MomentumCalculator.completesPerfectDay(repsScheduled = 4, repsMetBefore = 3))
+        assertFalse(MomentumCalculator.completesPerfectDay(repsScheduled = 4, repsMetBefore = 2))
+        assertFalse(MomentumCalculator.completesPerfectDay(repsScheduled = 0, repsMetBefore = 0))
+    }
+
+    @Test
+    fun perfectDayMultiplierApplied() {
+        assertEquals(15, MomentumCalculator.applyPerfectDay(10, perfect = true)) // 10 * 1.5
+        assertEquals(10, MomentumCalculator.applyPerfectDay(10, perfect = false))
     }
 }

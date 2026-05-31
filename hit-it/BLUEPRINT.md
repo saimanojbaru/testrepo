@@ -17,7 +17,12 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (70 tests in `:domain`).
+  weekly targets — **fully unit-tested** (78 tests in `:domain`).
+- **Energy Pass (visual + mechanics)**: layered dark surfaces + cyan/violet/magenta hero gradient,
+  bold athletic typography, a **Dashboard** home screen (0–100 **Momentum Score**, quick-stats row,
+  Main Target, reps, recent-momentum mini-grid), **Perfect Day** 1.5× multiplier with confetti +
+  haptics on the rep that completes the day, and **first-launch demo seed** (3 Reps + ~30 days of
+  history so The Grid glows; clearable via Profile → "Clear sample data").
 - **The Grid** — GitHub-style year heatmap drawn on a Compose `Canvas`; intensity now combines Reps
   hit and Check-Ins per day.
 - **Momentum** gamification: earn XP per hit/task/focus minute/check-in/checkpoint/goal, 100 Levels
@@ -288,8 +293,34 @@ You can always run the `:domain` tests in Termux.
 | **P6 ✅** | Gamification depth | done — persistent Trophies table + pure-domain unlock catalog (12 Trophies w/ Momentum bonuses), Profile Stats section |
 | **P7 ✅** | Reminders | done — per-Rep daily reminders via WorkManager + Hilt (self-rescheduling worker, rest-mode aware, re-armed on app start) |
 | **P8 ✅** | Polish | done — onboarding pager, month labels on The Grid, Glance home-screen widget (Glance 1.1.1) |
-| **P9 ✅** | Testing & hardening | done — 70 domain unit tests (streak/level edge cases) + instrumented Room DAO tests (upsert, cascade, @Relation). Compose UI tests deferred to a device-CI setup |
+| **P9 ✅** | Testing & hardening | done — domain unit tests (streak/level edge cases) + instrumented Room DAO tests (upsert, cascade, @Relation). Compose UI tests deferred to a device-CI setup |
+| **EP ✅** | Energy Pass | done — Dashboard + Momentum Score, Perfect Day multiplier + confetti/haptics, demo seed, bold theme, app-icon refresh |
 | **P10** | Publish | signing keystore, Play Console listing, privacy policy, staged rollout |
+
+### Reviewer feature backlog (sequenced, on-brand, offline-safe)
+Built so far from reviewer feedback: Dashboard, Momentum Score, Perfect Day, demo seed, energetic theme,
+haptics, mini-grid, "clean slate". Remaining, in priority order (each is mostly pure-`:domain` logic +
+a thin UI, so each is independently testable):
+1. **PR Trophy Case additions** — "Iron Lung" (30-day physical streak), "Comeback Kid" (restore a
+   broken streak 7 days running); extend `TrophyCatalog`.
+2. **Active Recovery** — small Recovery Momentum for logging a light task on a rest-mode day.
+3. **Sudden Death reps** — opt-in flag; missing one deducts Momentum. New `Rep.isSuddenDeath` + a
+   daily reconciler Worker; pulsing red card.
+4. **The Gauntlet** — monthly time-boxed challenge (e.g. "50 reps in June"); `Gauntlet` table + progress.
+5. **Notification engine upgrade** — interactive "HIT IT ⚡" lock-screen action (mark done from the
+   notification via a BroadcastReceiver), positive-reframing copy, separate channels, Perfect-Day
+   evening wrap-up. Builds on the Phase-7 WorkManager scheduler.
+6. **Interactive spotlight onboarding** — replace the static pager with a spotlight overlay on the
+   seeded Dashboard; tie the `POST_NOTIFICATIONS` prompt to the first logged Hit.
+7. **Rep → Big Play linking with rollup** (carried over from P5 deferral).
+
+### Explicitly NOT built (require infra we agreed to avoid — flag before starting)
+These contradict the offline-first, no-account design and need a deliberate decision:
+- **Social leaderboards / accountability buddies / share-to-story** — need a backend + accounts.
+- **Real-time multi-device sync** — needs a backend.
+- **AI Coach / AI insights** — needs a network LLM (Claude API key) or on-device model; adds a
+  network dependency. Can be added as an opt-in if desired.
+- **Ambient soundscapes** — need licensed audio assets.
 
 ---
 

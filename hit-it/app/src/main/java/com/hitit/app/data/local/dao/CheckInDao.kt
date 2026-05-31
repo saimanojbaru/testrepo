@@ -26,4 +26,7 @@ interface CheckInDao {
 
     @Query("SELECT COUNT(*) FROM check_ins WHERE morning != '' OR evening != '' OR mood IS NOT NULL")
     fun observeCount(): Flow<Int>
+
+    @Query("DELETE FROM check_ins")
+    suspend fun deleteAll()
 }

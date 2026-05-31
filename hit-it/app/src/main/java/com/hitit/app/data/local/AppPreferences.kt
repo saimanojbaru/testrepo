@@ -16,7 +16,13 @@ class AppPreferences @Inject constructor(
         get() = prefs.getBoolean(KEY_ONBOARDING, false)
         set(value) = prefs.edit().putBoolean(KEY_ONBOARDING, value).apply()
 
+    /** True once we've seeded (or deliberately skipped) the first-launch demo data. */
+    var demoSeeded: Boolean
+        get() = prefs.getBoolean(KEY_DEMO_SEEDED, false)
+        set(value) = prefs.edit().putBoolean(KEY_DEMO_SEEDED, value).apply()
+
     private companion object {
         const val KEY_ONBOARDING = "onboarding_complete"
+        const val KEY_DEMO_SEEDED = "demo_seeded"
     }
 }

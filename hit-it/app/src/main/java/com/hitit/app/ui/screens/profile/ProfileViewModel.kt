@@ -49,6 +49,7 @@ data class ProfileUiState(
 class ProfileViewModel @Inject constructor(
     private val statsRepository: StatsRepository,
     private val trophyRepository: TrophyRepository,
+    private val demoSeeder: com.hitit.app.data.DemoSeeder,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
@@ -60,6 +61,11 @@ class ProfileViewModel @Inject constructor(
                 trophyRepository.sync(stats, today)
             }
         }
+    }
+
+    /** Wipe all demo/sample data for a clean slate (the "Clean Slate" reviewer flow). */
+    fun clearAllData() {
+        viewModelScope.launch { demoSeeder.clear() }
     }
 
     val state: StateFlow<ProfileUiState> = combine(

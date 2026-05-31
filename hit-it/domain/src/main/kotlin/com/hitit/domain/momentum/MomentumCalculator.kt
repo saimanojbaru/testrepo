@@ -36,4 +36,18 @@ object MomentumCalculator {
     const val BIG_PLAY = 50
     fun awardForCheckpoint(): Int = CHECKPOINT
     fun awardForBigPlay(): Int = BIG_PLAY
+
+    /** Bonus multiplier applied to a hit's award when it completes a "Perfect Day". */
+    const val PERFECT_DAY_MULTIPLIER = 1.5
+
+    /**
+     * Whether completing one more scheduled rep makes today perfect: every scheduled rep met.
+     * [repsScheduled] must be > 0 and [repsMetBefore] is the count met before this completion.
+     */
+    fun completesPerfectDay(repsScheduled: Int, repsMetBefore: Int): Boolean =
+        repsScheduled > 0 && repsMetBefore + 1 >= repsScheduled
+
+    /** A hit's award with the Perfect Day multiplier applied when [perfect] is true. */
+    fun applyPerfectDay(baseAward: Int, perfect: Boolean): Int =
+        if (perfect) (baseAward * PERFECT_DAY_MULTIPLIER).toInt() else baseAward
 }

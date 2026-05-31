@@ -41,4 +41,10 @@ interface RepDao {
 
     @Delete
     suspend fun delete(rep: RepEntity)
+
+    @Query("SELECT COUNT(*) FROM reps")
+    suspend fun count(): Int
+
+    @Query("DELETE FROM reps")
+    suspend fun deleteAll()
 }

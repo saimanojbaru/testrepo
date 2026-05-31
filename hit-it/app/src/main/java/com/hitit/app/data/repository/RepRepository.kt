@@ -26,6 +26,14 @@ import javax.inject.Singleton
 /** Compact view of today's progress for the home-screen widget. */
 data class TodaySnapshot(val total: Int, val done: Int)
 
+/** Outcome of logging a hit, so the UI can celebrate (haptics / confetti). */
+data class LogResult(
+    val logged: Boolean = false,
+    val met: Boolean = false,
+    val perfectDay: Boolean = false,
+    val momentumAwarded: Int = 0,
+)
+
 /**
  * Source of truth for Reps and their hits. Hit logging and Momentum awarding happen in a single
  * Room transaction so the ledger and profile never drift from the hit records.
@@ -100,13 +108,17 @@ class RepRepository @Inject constructor(
         } ?: 0
     }
 
-    /** Log one hit for [repId] on [today], up to the Rep's target. Awards Momentum on becoming met. */
-    suspend fun logHit(repId: Long, today: LocalDate) {
-        db.withTransaction {
-            val rep = repDao.getById(repId) ?: return@withTransaction
+    /**
+     * Log one hit for [repId] on [today], up to the Rep's target. Awards Momentum on becoming met,
+     * applying the Perfect Day 1.5x multiplier when this completion makes every scheduled rep met.
+     * Returns a [LogResult] so the UI can celebrate (confetti + haptics).
+     */
+    suspend fun logHit(repId: Long, today: LocalDate): LogResult {
+        return db.withTransaction {
+            val rep = repDao.getById(repId) ?: return@withTransaction LogResult()
             val existing = hitDao.getForRepOnDate(repId, today)
             val previousCount = existing?.hitCount ?: 0
-            if (previousCount >= rep.targetCount) return@withTransaction // already met; nothing to add
+            if (previousCount >= rep.targetCount) return@withTransaction LogResult()
 
             val newCount = (previousCount + 1).coerceAtMost(rep.targetCount)
             hitDao.upsert(
@@ -120,13 +132,32 @@ class RepRepository @Inject constructor(
                 ),
             )
 
-            if (newCount >= rep.targetCount) {
-                val hits = hitDao.getForRep(repId)
-                val streak = streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
-                val award = MomentumCalculator.awardForHit(streak.currentStreak)
-                momentumDao.insert(MomentumTxnEntity(amount = award, reason = REASON_HIT, repId = repId))
-                profileRepository.recompute(today)
+            if (newCount < rep.targetCount) return@withTransaction LogResult(logged = true)
+
+            // This rep is now met. Determine whether it completes a Perfect Day.
+            val active = repDao.observeActive().first()
+                .filter { com.hitit.domain.model.ScheduleEvaluator.isActiveOn(it.toCore(), today) }
+            val hitsToday = hitDao.getForDate(today).associateBy { it.repId }
+            val metBefore = active.count { r ->
+                r.id != repId && (hitsToday[r.id]?.hitCount ?: 0) >= r.targetCount
             }
+            val perfect = MomentumCalculator.completesPerfectDay(active.size, metBefore)
+
+            val hits = hitDao.getForRep(repId)
+            val streak = streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
+            val award = MomentumCalculator.applyPerfectDay(
+                MomentumCalculator.awardForHit(streak.currentStreak),
+                perfect,
+            )
+            momentumDao.insert(
+                MomentumTxnEntity(
+                    amount = award,
+                    reason = if (perfect) REASON_PERFECT else REASON_HIT,
+                    repId = repId,
+                ),
+            )
+            profileRepository.recompute(today)
+            LogResult(logged = true, met = true, perfectDay = perfect, momentumAwarded = award)
         }
     }
 
@@ -150,6 +181,7 @@ class RepRepository @Inject constructor(
 
     private companion object {
         const val REASON_HIT = "rep_hit"
+        const val REASON_PERFECT = "rep_hit_perfect"
         const val REASON_UNDO = "rep_hit_undo"
         const val STREAK_WINDOW_DAYS = 400L
     }

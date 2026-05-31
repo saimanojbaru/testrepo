@@ -126,6 +126,16 @@ fun ProfileScreen(
             }
         }
 
+        SectionLabel("Data")
+        androidx.compose.material3.OutlinedButton(
+            onClick = { viewModel.clearAllData() },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 6.dp),
+        ) {
+            Text("Clear sample data (clean slate)")
+        }
+
         Spacer(Modifier.height(32.dp))
     }
 }

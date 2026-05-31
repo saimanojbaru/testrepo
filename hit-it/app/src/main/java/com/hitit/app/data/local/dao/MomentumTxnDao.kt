@@ -20,4 +20,7 @@ interface MomentumTxnDao {
 
     @Query("SELECT * FROM momentum_txns ORDER BY timestamp DESC, id DESC LIMIT :limit")
     fun observeRecent(limit: Int): Flow<List<MomentumTxnEntity>>
+
+    @Query("DELETE FROM momentum_txns")
+    suspend fun deleteAll()
 }

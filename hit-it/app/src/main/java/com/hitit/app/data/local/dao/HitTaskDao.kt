@@ -46,4 +46,7 @@ interface HitTaskDao {
 
     @Query("UPDATE hit_tasks SET mainTargetDate = :date WHERE id = :id")
     suspend fun setMainTargetDate(id: Long, date: LocalDate?)
+
+    @Query("DELETE FROM hit_tasks")
+    suspend fun deleteAll()
 }

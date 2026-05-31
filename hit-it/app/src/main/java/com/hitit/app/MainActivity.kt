@@ -9,6 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.lifecycleScope
+import com.hitit.app.data.DemoSeeder
 import com.hitit.app.data.local.AppPreferences
 import com.hitit.app.reminder.ReminderScheduler
 import com.hitit.app.ui.HitItApp
@@ -23,11 +24,15 @@ class MainActivity : ComponentActivity() {
 
     @Inject lateinit var reminderScheduler: ReminderScheduler
     @Inject lateinit var appPreferences: AppPreferences
+    @Inject lateinit var demoSeeder: DemoSeeder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Re-arm any enabled reminders so they survive reboots / process death.
-        lifecycleScope.launch { reminderScheduler.rescheduleAll() }
+        // Seed demo data on first launch, then re-arm reminders (survive reboot/process death).
+        lifecycleScope.launch {
+            demoSeeder.seedIfNeeded()
+            reminderScheduler.rescheduleAll()
+        }
         enableEdgeToEdge()
         setContent {
             HitItTheme {

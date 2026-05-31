@@ -43,4 +43,16 @@ class ProfileRepository @Inject constructor(
             ),
         )
     }
+
+    /** Post a Momentum ledger entry and recompute the profile (used by the demo seeder). */
+    suspend fun addMomentum(amount: Long, reason: String, today: LocalDate) {
+        momentumDao.insert(MomentumTxnEntity(amount = amount.toInt(), reason = reason))
+        recompute(today)
+    }
+
+    /** Clear the entire Momentum ledger and reset the profile to level 1 (used by demo clear). */
+    suspend fun resetAll(today: LocalDate) {
+        momentumDao.deleteAll()
+        recompute(today)
+    }
 }

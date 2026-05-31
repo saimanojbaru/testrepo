@@ -43,7 +43,7 @@ import com.hitit.app.ui.screens.today.TodayScreen
 private data class BottomItem(val route: String, val label: String, val icon: ImageVector)
 
 private val bottomItems = listOf(
-    BottomItem(Dest.TODAY, "Today", Icons.Filled.CalendarToday),
+    BottomItem(Dest.TODAY, "Home", Icons.Filled.CalendarToday),
     BottomItem(Dest.REPS, "Reps", Icons.Filled.Repeat),
     BottomItem(Dest.HITS, "Hits", Icons.Filled.CheckCircle),
     BottomItem(Dest.GRID, "Grid", Icons.Filled.GridView),
