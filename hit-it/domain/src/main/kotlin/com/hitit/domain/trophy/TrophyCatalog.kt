@@ -25,6 +25,8 @@ object TrophyCatalog {
         TrophyDef("closer", "Closer", "Complete 25 Hits", "✅", 20) { it.tasksCompleted >= 25 },
         TrophyDef("visionary", "Visionary", "Complete a Big Play", "🎯", 30) { it.bigPlaysCompleted >= 1 },
         TrophyDef("streak_master", "Streak Master", "Hit a 30-day streak", "⚡", 50) { it.bestStreak >= 30 },
+        TrophyDef("iron_lung", "Iron Lung", "Hit a 60-day streak", "🫁", 80) { it.bestStreak >= 60 },
+        TrophyDef("centurion", "Centurion", "Complete 100 Hits", "🛡️", 60) { it.tasksCompleted >= 100 },
     )
 
     private val byId: Map<String, TrophyDef> = ALL.associateBy { it.id }

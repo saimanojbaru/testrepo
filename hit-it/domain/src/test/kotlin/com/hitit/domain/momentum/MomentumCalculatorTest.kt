@@ -58,6 +58,12 @@ class MomentumCalculatorTest {
     }
 
     @Test
+    fun recoveryAndSuddenDeathConstants() {
+        assertEquals(4, MomentumCalculator.awardForRecovery())
+        assertEquals(30, MomentumCalculator.suddenDeathPenalty())
+    }
+
+    @Test
     fun perfectDayDetection() {
         assertTrue(MomentumCalculator.completesPerfectDay(repsScheduled = 4, repsMetBefore = 3))
         assertFalse(MomentumCalculator.completesPerfectDay(repsScheduled = 4, repsMetBefore = 2))

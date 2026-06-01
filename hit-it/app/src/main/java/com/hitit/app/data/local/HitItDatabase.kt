@@ -11,6 +11,7 @@ import com.hitit.app.data.local.dao.LockerNoteDao
 import com.hitit.app.data.local.dao.MomentumTxnDao
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.app.data.local.dao.RepHitDao
+import com.hitit.app.data.local.dao.SuddenDeathDao
 import com.hitit.app.data.local.dao.TrophyDao
 import com.hitit.app.data.local.dao.UserProfileDao
 import com.hitit.app.data.local.entity.BigPlayEntity
@@ -22,6 +23,7 @@ import com.hitit.app.data.local.entity.LockerNoteEntity
 import com.hitit.app.data.local.entity.MomentumTxnEntity
 import com.hitit.app.data.local.entity.RepEntity
 import com.hitit.app.data.local.entity.RepHitEntity
+import com.hitit.app.data.local.entity.SuddenDeathPenaltyEntity
 import com.hitit.app.data.local.entity.TrophyEntity
 import com.hitit.app.data.local.entity.UserProfileEntity
 
@@ -38,8 +40,9 @@ import com.hitit.app.data.local.entity.UserProfileEntity
         CheckpointEntity::class,
         LockerNoteEntity::class,
         TrophyEntity::class,
+        SuddenDeathPenaltyEntity::class,
     ],
-    version = 7,
+    version = 8,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)
@@ -54,4 +57,5 @@ abstract class HitItDatabase : RoomDatabase() {
     abstract fun bigPlayDao(): BigPlayDao
     abstract fun lockerNoteDao(): LockerNoteDao
     abstract fun trophyDao(): TrophyDao
+    abstract fun suddenDeathDao(): SuddenDeathDao
 }

@@ -50,4 +50,16 @@ object MomentumCalculator {
     /** A hit's award with the Perfect Day multiplier applied when [perfect] is true. */
     fun applyPerfectDay(baseAward: Int, perfect: Boolean): Int =
         if (perfect) (baseAward * PERFECT_DAY_MULTIPLIER).toInt() else baseAward
+
+    /** Reduced Momentum for an Active Recovery action (logging something light on a rest day). */
+    const val RECOVERY = 4
+    fun awardForRecovery(): Int = RECOVERY
+
+    /**
+     * The Momentum penalty for missing a Sudden Death rep on a scheduled day. Loss aversion: a
+     * miss costs roughly a full day's solid effort. Returned as a positive magnitude; callers post
+     * it as a negative ledger entry.
+     */
+    const val SUDDEN_DEATH_PENALTY = 30
+    fun suddenDeathPenalty(): Int = SUDDEN_DEATH_PENALTY
 }

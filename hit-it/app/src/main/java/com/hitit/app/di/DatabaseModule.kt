@@ -11,6 +11,7 @@ import com.hitit.app.data.local.dao.LockerNoteDao
 import com.hitit.app.data.local.dao.MomentumTxnDao
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.app.data.local.dao.RepHitDao
+import com.hitit.app.data.local.dao.SuddenDeathDao
 import com.hitit.app.data.local.dao.TrophyDao
 import com.hitit.app.data.local.dao.UserProfileDao
 import dagger.Module
@@ -60,4 +61,7 @@ object DatabaseModule {
 
     @Provides
     fun provideTrophyDao(db: HitItDatabase): TrophyDao = db.trophyDao()
+
+    @Provides
+    fun provideSuddenDeathDao(db: HitItDatabase): SuddenDeathDao = db.suddenDeathDao()
 }

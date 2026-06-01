@@ -51,6 +51,18 @@ class TrophyCatalogTest {
     }
 
     @Test
+    fun highStreakAndVolumeTrophies() {
+        val elite = TrophyStats(momentum = 5, level = 2, tasksCompleted = 100, bestStreak = 60)
+        val unlocked = TrophyCatalog.evaluate(elite)
+        assertTrue(unlocked.containsAll(listOf("iron_lung", "centurion", "streak_master", "closer")))
+
+        // A 30-day streak earns streak_master but NOT the 60-day Iron Lung.
+        val mid = TrophyStats(momentum = 5, level = 2, bestStreak = 30)
+        assertTrue("streak_master" in TrophyCatalog.evaluate(mid))
+        assertTrue("iron_lung" !in TrophyCatalog.evaluate(mid))
+    }
+
+    @Test
     fun idsAreUniqueAndLookupWorks() {
         assertEquals(TrophyCatalog.ALL.size, TrophyCatalog.ALL.map { it.id }.toSet().size)
         assertEquals("G.O.A.T.", TrophyCatalog.byId("goat")?.name)

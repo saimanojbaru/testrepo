@@ -44,6 +44,8 @@ data class RepEntity(
     val reminderEnabled: Boolean = false,
     val reminderHour: Int = 9,
     val reminderMinute: Int = 0,
+    /** Sudden Death: high-stakes mode — a missed scheduled day costs Momentum (no skip protection). */
+    val isSuddenDeath: Boolean = false,
     val isArchived: Boolean = false,
     val sortOrder: Int = 0,
     val createdDate: LocalDate = LocalDate.now(),
@@ -82,4 +84,27 @@ data class MomentumTxnEntity(
     val reason: String,
     val repId: Long? = null,
     val timestamp: Instant = Instant.now(),
+)
+
+/**
+ * Records that a Sudden Death miss has already been penalized for a given Rep+date, so the
+ * background evaluator stays idempotent (never double-charges). Unique on (repId, date).
+ */
+@Entity(
+    tableName = "sudden_death_penalties",
+    foreignKeys = [
+        ForeignKey(
+            entity = RepEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["repId"],
+            onDelete = ForeignKey.CASCADE,
+        ),
+    ],
+    indices = [Index(value = ["repId", "date"], unique = true)],
+)
+data class SuddenDeathPenaltyEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val repId: Long,
+    val date: LocalDate,
+    val penalizedAt: Instant = Instant.now(),
 )

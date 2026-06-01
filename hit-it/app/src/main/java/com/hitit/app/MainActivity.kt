@@ -32,6 +32,8 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             demoSeeder.seedIfNeeded()
             reminderScheduler.rescheduleAll()
+            reminderScheduler.runSuddenDeathNow()
+            reminderScheduler.scheduleSuddenDeathDaily()
         }
         enableEdgeToEdge()
         setContent {

@@ -61,15 +61,15 @@ fun ProfileScreen(
             modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp),
         )
 
-        SectionLabel("Stats")
+        SectionLabel("Personal Records 🏆")
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp, vertical = 6.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StatCard(value = "${state.focusMinutes}", label = "Focus min", modifier = Modifier.weight(1f))
-            StatCard(value = "🔥 ${state.bestStreak}", label = "Best streak", modifier = Modifier.weight(1f))
+            StatCard(value = "🔥 ${state.bestStreak}", label = "Longest streak", modifier = Modifier.weight(1f))
+            StatCard(value = "${state.focusMinutes / 60}h ${state.focusMinutes % 60}m", label = "Focus logged", modifier = Modifier.weight(1f))
         }
         Row(
             modifier = Modifier
@@ -77,8 +77,17 @@ fun ProfileScreen(
                 .padding(horizontal = 20.dp, vertical = 6.dp),
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            StatCard(value = "${state.tasksCompleted}", label = "Hits done", modifier = Modifier.weight(1f))
+            StatCard(value = "${state.tasksCompleted}", label = "Hits crushed", modifier = Modifier.weight(1f))
             StatCard(value = "${state.checkInCount}", label = "Check-Ins", modifier = Modifier.weight(1f))
+        }
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 6.dp),
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            StatCard(value = "${state.momentum}", label = "Lifetime Momentum", modifier = Modifier.weight(1f))
+            StatCard(value = state.tier, label = "Current tier", modifier = Modifier.weight(1f))
         }
 
         SectionLabel("Library")

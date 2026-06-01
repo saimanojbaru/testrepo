@@ -134,6 +134,15 @@ class RepRepository @Inject constructor(
 
             if (newCount < rep.targetCount) return@withTransaction LogResult(logged = true)
 
+            // Active Recovery: logging during this rep's rest-mode window earns reduced "recovery"
+            // Momentum and skips streak/Perfect-Day logic (the streak stays frozen during rest mode).
+            if (isResting(rep.restModeStart, rep.restModeEnd, today)) {
+                val recovery = MomentumCalculator.awardForRecovery()
+                momentumDao.insert(MomentumTxnEntity(amount = recovery, reason = REASON_RECOVERY, repId = repId))
+                profileRepository.recompute(today)
+                return@withTransaction LogResult(logged = true, met = true, momentumAwarded = recovery)
+            }
+
             // This rep is now met. Determine whether it completes a Perfect Day.
             val active = repDao.observeActive().first()
                 .filter { com.hitit.domain.model.ScheduleEvaluator.isActiveOn(it.toCore(), today) }
@@ -179,9 +188,16 @@ class RepRepository @Inject constructor(
         }
     }
 
+    private fun isResting(start: LocalDate?, end: LocalDate?, today: LocalDate): Boolean {
+        if (start == null) return false
+        val effectiveEnd = end ?: today
+        return !today.isBefore(start) && !today.isAfter(effectiveEnd)
+    }
+
     private companion object {
         const val REASON_HIT = "rep_hit"
         const val REASON_PERFECT = "rep_hit_perfect"
+        const val REASON_RECOVERY = "active_recovery"
         const val REASON_UNDO = "rep_hit_undo"
         const val STREAK_WINDOW_DAYS = 400L
     }

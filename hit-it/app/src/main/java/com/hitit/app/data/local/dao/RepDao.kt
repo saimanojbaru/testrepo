@@ -15,6 +15,9 @@ interface RepDao {
     @Query("SELECT * FROM reps WHERE isArchived = 0 ORDER BY sortOrder, id")
     fun observeActive(): Flow<List<RepEntity>>
 
+    @Query("SELECT * FROM reps WHERE isArchived = 0 ORDER BY sortOrder, id")
+    suspend fun activeSnapshot(): List<RepEntity>
+
     @Query("SELECT * FROM reps ORDER BY isArchived, sortOrder, id")
     fun observeAll(): Flow<List<RepEntity>>
 

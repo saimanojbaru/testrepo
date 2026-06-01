@@ -2,8 +2,10 @@ package com.hitit.app.reminder
 
 import android.content.Context
 import androidx.work.Data
+import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.hitit.app.data.local.dao.RepDao
 import com.hitit.domain.reminder.ReminderSchedule
@@ -53,6 +55,26 @@ class ReminderScheduler @Inject constructor(
         repDao.getReminderEnabled().forEach { rep ->
             schedule(rep.id, rep.reminderHour, rep.reminderMinute)
         }
+    }
+
+    /** Run a one-shot Sudden Death evaluation now (e.g. on app open) to catch up missed days. */
+    fun runSuddenDeathNow() {
+        val request = OneTimeWorkRequestBuilder<SuddenDeathWorker>().build()
+        workManager.enqueueUniqueWork(
+            SuddenDeathWorker.WORK_NAME,
+            ExistingWorkPolicy.REPLACE,
+            request,
+        )
+    }
+
+    /** Schedule a daily-ish Sudden Death evaluation (WorkManager's min period is 15 min). */
+    fun scheduleSuddenDeathDaily() {
+        val request = PeriodicWorkRequestBuilder<SuddenDeathWorker>(1, TimeUnit.DAYS).build()
+        workManager.enqueueUniquePeriodicWork(
+            SuddenDeathWorker.WORK_NAME + "_periodic",
+            ExistingPeriodicWorkPolicy.KEEP,
+            request,
+        )
     }
 
     private companion object {

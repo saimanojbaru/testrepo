@@ -17,7 +17,7 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (78 tests in `:domain`).
+  weekly targets — **fully unit-tested** (86 tests in `:domain`).
 - **Energy Pass (visual + mechanics)**: layered dark surfaces + cyan/violet/magenta hero gradient,
   bold athletic typography, a **Dashboard** home screen (0–100 **Momentum Score**, quick-stats row,
   Main Target, reps, recent-momentum mini-grid), **Perfect Day** 1.5× multiplier with confetti +
@@ -194,8 +194,11 @@ All `LocalDate` stored as ISO strings; all `Instant` as epoch millis (see `Conve
   `updatedAt`, `createdAt`.
 - **`trophies`** (Phase 6): `id` (String PK, matches a domain `TrophyDef` id), `unlockedAt`.
 - *(Phase 7 adds no new table — reminder fields live on `reps`.)*
+- **`sudden_death_penalties`** (High-Stakes Engine): `id`, `repId` (FK→reps, CASCADE), `date`,
+  `penalizedAt`; unique (repId, date) so penalties are charged at most once. `reps` also gains
+  `isSuddenDeath`.
 
-Database version: **7** (`fallbackToDestructiveMigration` is on for development).
+Database version: **8** (`fallbackToDestructiveMigration` is on for development).
 
 ### Reminders (Phase 7)
 Per-Rep daily reminders use **WorkManager + Hilt**. `HitItApplication` implements
@@ -298,21 +301,30 @@ You can always run the `:domain` tests in Termux.
 | **P10** | Publish | signing keystore, Play Console listing, privacy policy, staged rollout |
 
 ### Reviewer feature backlog (sequenced, on-brand, offline-safe)
-Built so far from reviewer feedback: Dashboard, Momentum Score, Perfect Day, demo seed, energetic theme,
-haptics, mini-grid, "clean slate". Remaining, in priority order (each is mostly pure-`:domain` logic +
-a thin UI, so each is independently testable):
-1. **PR Trophy Case additions** — "Iron Lung" (30-day physical streak), "Comeback Kid" (restore a
-   broken streak 7 days running); extend `TrophyCatalog`.
-2. **Active Recovery** — small Recovery Momentum for logging a light task on a rest-mode day.
-3. **Sudden Death reps** — opt-in flag; missing one deducts Momentum. New `Rep.isSuddenDeath` + a
-   daily reconciler Worker; pulsing red card.
-4. **The Gauntlet** — monthly time-boxed challenge (e.g. "50 reps in June"); `Gauntlet` table + progress.
-5. **Notification engine upgrade** — interactive "HIT IT ⚡" lock-screen action (mark done from the
-   notification via a BroadcastReceiver), positive-reframing copy, separate channels, Perfect-Day
-   evening wrap-up. Builds on the Phase-7 WorkManager scheduler.
-6. **Interactive spotlight onboarding** — replace the static pager with a spotlight overlay on the
+Built so far: Dashboard, Momentum Score, Perfect Day, demo seed, energetic theme, haptics, mini-grid,
+"clean slate" (Energy Pass); **Sudden Death, Active Recovery, PR Trophy Case (High-Stakes Engine)**.
+
+✅ **High-Stakes Engine (done):**
+- **Sudden Death** — `Rep.isSuddenDeath` flag (toggle in Add/Edit Rep). A missed scheduled day costs
+  `MomentumCalculator.suddenDeathPenalty()` (30). Pure `SuddenDeathEvaluator` finds unpenalized
+  misses (idempotent via the `sudden_death_penalties` table); `SuddenDeathWorker` runs it on app
+  open + daily and fires a "heartbeat" alert on its own high-importance notification channel.
+- **Active Recovery** — logging a rep during its Rest-mode window earns reduced recovery Momentum
+  (`awardForRecovery()` = 4) and keeps the streak frozen.
+- **PR Trophy Case** — Profile "Personal Records 🏆" section (longest streak, focus logged, hits
+  crushed, check-ins, lifetime Momentum, tier) + new trophies **Iron Lung** (60-day streak) and
+  **Centurion** (100 hits).
+
+Remaining, in priority order:
+1. **The Gauntlet** — monthly time-boxed challenge (e.g. "50 reps in June"); `Gauntlet` table +
+   screen + countdown + bonus. (Largest remaining piece — its own build.)
+2. **Interactive spotlight onboarding** — replace the static pager with a spotlight overlay on the
    seeded Dashboard; tie the `POST_NOTIFICATIONS` prompt to the first logged Hit.
-7. **Rep → Big Play linking with rollup** (carried over from P5 deferral).
+3. **Notification engine upgrade** — interactive "HIT IT ⚡" lock-screen action (mark done from the
+   notification via a BroadcastReceiver), positive-reframing copy, Perfect-Day evening wrap-up.
+4. **"Comeback Kid" trophy** — needs streak-history persistence (restore a broken streak 7 days
+   running); deferred until we track streak breaks, not just the current best.
+5. **Rep → Big Play linking with rollup** (carried over from P5 deferral).
 
 ### Explicitly NOT built (require infra we agreed to avoid — flag before starting)
 These contradict the offline-first, no-account design and need a deliberate decision:

@@ -215,6 +215,29 @@ fun RepEditScreen(
             )
         }
 
+        SectionLabel("Sudden Death 🔥")
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "High-stakes mode",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onBackground,
+                )
+                Text(
+                    text = "No skip protection. Miss a scheduled day and you lose Momentum.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                )
+            }
+            Switch(checked = state.isSuddenDeath, onCheckedChange = viewModel::onSuddenDeath)
+        }
+
         Spacer(Modifier.height(24.dp))
         Button(
             onClick = viewModel::save,

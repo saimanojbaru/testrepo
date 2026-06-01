@@ -33,6 +33,7 @@ data class RepEditState(
     val reminderEnabled: Boolean = false,
     val reminderHour: Int = 9,
     val reminderMinute: Int = 0,
+    val isSuddenDeath: Boolean = false,
     val saved: Boolean = false,
 ) {
     val canSave: Boolean get() = name.isNotBlank() &&
@@ -68,6 +69,7 @@ class RepEditViewModel @Inject constructor(
                         reminderEnabled = rep.reminderEnabled,
                         reminderHour = rep.reminderHour,
                         reminderMinute = rep.reminderMinute,
+                        isSuddenDeath = rep.isSuddenDeath,
                     )
                 }
             }
@@ -91,6 +93,7 @@ class RepEditViewModel @Inject constructor(
     fun onReminderEnabled(value: Boolean) = update { it.copy(reminderEnabled = value) }
     fun onReminderTime(hour: Int, minute: Int) =
         update { it.copy(reminderHour = hour.coerceIn(0, 23), reminderMinute = minute.coerceIn(0, 59)) }
+    fun onSuddenDeath(value: Boolean) = update { it.copy(isSuddenDeath = value) }
 
     fun save() {
         val s = _state.value
@@ -114,6 +117,7 @@ class RepEditViewModel @Inject constructor(
                 reminderEnabled = s.reminderEnabled,
                 reminderHour = s.reminderHour,
                 reminderMinute = s.reminderMinute,
+                isSuddenDeath = s.isSuddenDeath,
                 isArchived = existing?.isArchived ?: false,
                 sortOrder = existing?.sortOrder ?: 0,
                 createdDate = existing?.createdDate ?: LocalDate.now(),
