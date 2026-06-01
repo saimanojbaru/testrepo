@@ -115,6 +115,7 @@ fun TodayScreen(
                 level = state.level,
                 levelProgress = state.progress,
                 momentum = state.momentum,
+                flameLevel = state.flameLevel,
             )
 
             // Quick stats row.

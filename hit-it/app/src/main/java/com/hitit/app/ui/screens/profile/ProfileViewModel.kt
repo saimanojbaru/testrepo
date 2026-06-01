@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hitit.app.data.repository.StatsRepository
 import com.hitit.app.data.repository.TrophyRepository
+import com.hitit.domain.flame.LifeFlame
 import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.TierLadder
 import com.hitit.domain.trophy.TrophyCatalog
@@ -40,6 +41,7 @@ data class ProfileUiState(
     val checkInCount: Int = 0,
     val tasksCompleted: Int = 0,
     val bestStreak: Int = 0,
+    val flameLevel: Int = 1,
     val trophies: List<TrophyUi> = emptyList(),
     val tiers: List<TierRowUi> = emptyList(),
     val loading: Boolean = true,
@@ -83,6 +85,7 @@ class ProfileViewModel @Inject constructor(
             checkInCount = stats.checkInCount,
             tasksCompleted = stats.tasksCompleted,
             bestStreak = stats.bestStreak,
+            flameLevel = LifeFlame.levelFor(score = 0, bestStreak = stats.bestStreak),
             trophies = TrophyCatalog.ALL.map { def ->
                 TrophyUi(def.emoji, def.name, def.description, def.id in unlockedIds)
             },

@@ -8,6 +8,7 @@ import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.TierLadder
 import kotlinx.coroutines.flow.Flow
 import java.time.LocalDate
+import java.time.ZoneId
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -54,5 +55,19 @@ class ProfileRepository @Inject constructor(
     suspend fun resetAll(today: LocalDate) {
         momentumDao.deleteAll()
         recompute(today)
+    }
+
+    /**
+     * Net Momentum earned on each of the last [days] days (most-recent first), in the device zone.
+     * Feeds [com.hitit.domain.flame.LifeFlame.isFading].
+     */
+    suspend fun recentDailyMomentum(today: LocalDate, days: Int): List<Int> {
+        val zone = ZoneId.systemDefault()
+        return (0 until days).map { offset ->
+            val day = today.minusDays(offset.toLong())
+            val start = day.atStartOfDay(zone).toInstant().toEpochMilli()
+            val end = day.plusDays(1).atStartOfDay(zone).toInstant().toEpochMilli()
+            momentumDao.sumBetween(start, end)
+        }
     }
 }

@@ -23,4 +23,8 @@ interface MomentumTxnDao {
 
     @Query("DELETE FROM momentum_txns")
     suspend fun deleteAll()
+
+    /** Net Momentum earned within [startEpochMs, endEpochMs) — used per-day by the flame check. */
+    @Query("SELECT COALESCE(SUM(amount), 0) FROM momentum_txns WHERE timestamp >= :startEpochMs AND timestamp < :endEpochMs")
+    suspend fun sumBetween(startEpochMs: Long, endEpochMs: Long): Int
 }

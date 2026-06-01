@@ -77,6 +77,16 @@ class ReminderScheduler @Inject constructor(
         )
     }
 
+    /** Schedule a daily Life Flame check (gentle "flame fading" nudge). */
+    fun scheduleFlameCheckDaily() {
+        val request = PeriodicWorkRequestBuilder<FlameCheckWorker>(1, TimeUnit.DAYS).build()
+        workManager.enqueueUniquePeriodicWork(
+            FlameCheckWorker.WORK_NAME + "_periodic",
+            ExistingPeriodicWorkPolicy.KEEP,
+            request,
+        )
+    }
+
     private companion object {
         const val TAG = "rep_reminder"
     }

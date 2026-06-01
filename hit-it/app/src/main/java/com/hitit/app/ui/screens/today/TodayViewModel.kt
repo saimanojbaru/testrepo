@@ -9,6 +9,7 @@ import com.hitit.app.data.repository.ProfileRepository
 import com.hitit.app.data.repository.RepRepository
 import com.hitit.app.data.repository.TaskRepository
 import com.hitit.app.ui.model.RepUi
+import com.hitit.domain.flame.LifeFlame
 import com.hitit.domain.grid.GridAggregator
 import com.hitit.domain.grid.GridAggregator.GridCell
 import com.hitit.domain.model.ScheduleEvaluator
@@ -49,6 +50,7 @@ data class TodayUiState(
     val momentum: Long = 0,
     val momentumScore: Int = 0,
     val momentumLabel: String = "",
+    val flameLevel: Int = 1,
     val dateLabel: String = "",
     val checkedIn: Boolean = false,
     val checkInMood: Int? = null,
@@ -125,6 +127,7 @@ class TodayViewModel @Inject constructor(
             hitsCompletedToday = hitsDoneToday,
             focusMinutesToday = focusMin,
         )
+        val bestStreak = todayReps.maxOfOrNull { it.streak } ?: 0
 
         TodayUiState(
             tier = TierLadder.tierFor(level).name,
@@ -133,6 +136,7 @@ class TodayViewModel @Inject constructor(
             momentum = momentum,
             momentumScore = score,
             momentumLabel = MomentumScore.label(score),
+            flameLevel = LifeFlame.levelFor(score, bestStreak),
             dateLabel = today.format(dateFormat),
             checkedIn = checkedIn,
             checkInMood = checkIn?.mood,

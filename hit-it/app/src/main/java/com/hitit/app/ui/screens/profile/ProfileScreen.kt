@@ -27,9 +27,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.hitit.app.ui.components.LifeFlame
 import com.hitit.app.ui.components.MomentumHeader
 import com.hitit.app.ui.components.ScreenHeader
 import com.hitit.app.ui.components.SectionLabel
+import com.hitit.domain.flame.LifeFlame as FlameModel
 
 @Composable
 fun ProfileScreen(
@@ -52,6 +54,26 @@ fun ProfileScreen(
             progress = state.progress,
             momentum = state.momentum,
         )
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            LifeFlame(level = state.flameLevel, size = 88.dp)
+            Text(
+                text = FlameModel.label(state.flameLevel),
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Black,
+                color = MaterialTheme.colorScheme.primary,
+            )
+            Text(
+                text = FlameModel.tagline(state.flameLevel),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
 
         Text(
             text = if (state.level >= 100) "Max level reached — you're the G.O.A.T."

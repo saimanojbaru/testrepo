@@ -17,7 +17,11 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (86 tests in `:domain`).
+  weekly targets — **fully unit-tested** (93 tests in `:domain`).
+- **Life Flame** — a single animated flame (5 states Dying→Inferno) driven by today's Momentum Score
+  + best streak (pure `domain/.../flame/LifeFlame.kt`), shown on the Dashboard hero and Profile;
+  count-up Momentum number + animated level bar + column-by-column Grid reveal; a daily WorkManager
+  "flame fading" nudge.
 - **Energy Pass (visual + mechanics)**: layered dark surfaces + cyan/violet/magenta hero gradient,
   bold athletic typography, a **Dashboard** home screen (0–100 **Momentum Score**, quick-stats row,
   Main Target, reps, recent-momentum mini-grid), **Perfect Day** 1.5× multiplier with confetti +

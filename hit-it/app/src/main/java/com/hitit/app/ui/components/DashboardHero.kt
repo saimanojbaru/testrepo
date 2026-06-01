@@ -1,5 +1,8 @@
 package com.hitit.app.ui.components
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.animateIntAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,6 +16,7 @@ import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -34,8 +38,15 @@ fun DashboardHero(
     level: Int,
     levelProgress: Float,
     momentum: Long,
+    flameLevel: Int,
     modifier: Modifier = Modifier,
 ) {
+    val animatedScore by animateIntAsState(targetValue = score, animationSpec = tween(700), label = "score")
+    val animatedProgress by animateFloatAsState(
+        targetValue = levelProgress.coerceIn(0f, 1f),
+        animationSpec = tween(700),
+        label = "levelProgress",
+    )
     Box(
         modifier = modifier
             .fillMaxWidth()
@@ -44,6 +55,11 @@ fun DashboardHero(
             .background(HeroGradient)
             .padding(20.dp),
     ) {
+        LifeFlame(
+            level = flameLevel,
+            size = 96.dp,
+            modifier = Modifier.align(Alignment.CenterEnd),
+        )
         Column {
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -58,7 +74,7 @@ fun DashboardHero(
                         fontWeight = FontWeight.Black,
                     )
                     Row(verticalAlignment = Alignment.Bottom) {
-                        Text(text = "$score", style = StatNumberStyle, color = Color.White)
+                        Text(text = "$animatedScore", style = StatNumberStyle, color = Color.White)
                         Text(
                             text = "/100",
                             style = MaterialTheme.typography.titleMedium,
@@ -94,7 +110,7 @@ fun DashboardHero(
                 }
             }
             LinearProgressIndicator(
-                progress = { levelProgress.coerceIn(0f, 1f) },
+                progress = { animatedProgress },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 16.dp)

@@ -9,7 +9,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -133,6 +137,13 @@ private fun HeatmapCanvas(
     val heightDp = cell * 7 + gap * 6
     val emptyColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.5f)
 
+    // One-shot column-by-column reveal on first composition.
+    val reveal = remember(columns) { Animatable(0f) }
+    LaunchedEffect(columns) {
+        reveal.snapTo(0f)
+        reveal.animateTo(1f, animationSpec = tween(durationMillis = 700, easing = LinearEasing))
+    }
+
     Canvas(
         modifier = modifier
             .size(width = widthDp, height = heightDp)
@@ -146,7 +157,11 @@ private fun HeatmapCanvas(
                 }
             },
     ) {
+        val revealedCols = reveal.value * cols
         columns.forEachIndexed { ci, column ->
+            // Fade each column in as the sweep reaches it (1-column-wide ramp).
+            val colAlpha = (revealedCols - ci).coerceIn(0f, 1f)
+            if (colAlpha <= 0f) return@forEachIndexed
             column.forEachIndexed { ri, gridCell ->
                 val x = ci * step
                 val y = ri * step
@@ -156,7 +171,7 @@ private fun HeatmapCanvas(
                     heatColor(gridCell.intensity)
                 }
                 drawRoundRect(
-                    color = color,
+                    color = color.copy(alpha = color.alpha * colAlpha),
                     topLeft = Offset(x, y),
                     size = Size(cellPx, cellPx),
                     cornerRadius = CornerRadius(radius, radius),

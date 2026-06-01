@@ -82,4 +82,27 @@ object ReminderNotifier {
             NotificationManagerCompat.from(context).notify(repId.toInt(), notification)
         }
     }
+
+    /** Gentle nudge when the Life Flame is fading — reuses the low-importance reminders channel. */
+    fun notifyFlameFading(context: Context) {
+        ensureChannel(context)
+        val pendingIntent = android.app.PendingIntent.getActivity(
+            context,
+            FLAME_NOTIF_ID,
+            Intent(context, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP),
+            android.app.PendingIntent.FLAG_IMMUTABLE or android.app.PendingIntent.FLAG_UPDATE_CURRENT,
+        )
+        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setContentTitle("🔥 Your flame is fading")
+            .setContentText("Log one rep to reignite your momentum.")
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+        if (NotificationManagerCompat.from(context).areNotificationsEnabled()) {
+            NotificationManagerCompat.from(context).notify(FLAME_NOTIF_ID, notification)
+        }
+    }
+
+    private const val FLAME_NOTIF_ID = 8888
 }

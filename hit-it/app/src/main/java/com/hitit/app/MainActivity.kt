@@ -34,6 +34,7 @@ class MainActivity : ComponentActivity() {
             reminderScheduler.rescheduleAll()
             reminderScheduler.runSuddenDeathNow()
             reminderScheduler.scheduleSuddenDeathDaily()
+            reminderScheduler.scheduleFlameCheckDaily()
         }
         enableEdgeToEdge()
         setContent {
