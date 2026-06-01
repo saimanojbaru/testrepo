@@ -1,6 +1,10 @@
 package com.hitit.app.ui.screens.today
 
+import android.Manifest
+import android.os.Build
 import android.view.HapticFeedbackConstants
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -62,6 +66,12 @@ fun TodayScreen(
     val celebration by viewModel.celebration.collectAsStateWithLifecycle()
     val view = LocalView.current
 
+    // After the first logged hit, ask for notification permission (Android 13+) once — at the
+    // moment the user has just felt the app's core reward, so opt-in is far more likely.
+    val notifPermissionLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.RequestPermission(),
+    ) { }
+
     // Haptics on celebrations: a heavy thunk for a Perfect Day, a light tick otherwise.
     LaunchedEffect(celebration) {
         celebration?.let {
@@ -69,6 +79,9 @@ fun TodayScreen(
             else HapticFeedbackConstants.CONFIRM
             @Suppress("DEPRECATION")
             view.performHapticFeedback(constant)
+            if (Build.VERSION.SDK_INT >= 33 && viewModel.shouldAskNotificationPermission()) {
+                notifPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS)
+            }
         }
     }
 

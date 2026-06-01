@@ -13,7 +13,6 @@ import com.hitit.app.data.DemoSeeder
 import com.hitit.app.data.local.AppPreferences
 import com.hitit.app.reminder.ReminderScheduler
 import com.hitit.app.ui.HitItApp
-import com.hitit.app.ui.screens.onboarding.OnboardingScreen
 import com.hitit.app.ui.theme.HitItTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -39,12 +38,16 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HitItTheme {
-                var onboarded by remember { mutableStateOf(appPreferences.onboardingComplete) }
-                if (onboarded) {
-                    HitItApp()
-                } else {
-                    OnboardingScreen(onFinish = { onboarded = true })
-                }
+                // First run shows the real (seeded) app with a spotlight coachmark overlaid;
+                // the gate is the existing onboardingComplete flag, flipped on finish/skip.
+                var showSpotlight by remember { mutableStateOf(!appPreferences.onboardingComplete) }
+                HitItApp(
+                    showSpotlight = showSpotlight,
+                    onSpotlightFinished = {
+                        appPreferences.onboardingComplete = true
+                        showSpotlight = false
+                    },
+                )
             }
         }
     }

@@ -1,5 +1,7 @@
 package com.hitit.app.ui
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarToday
@@ -24,6 +26,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hitit.app.ui.components.SpotlightOverlay
+import com.hitit.app.ui.components.SpotlightStep
+import com.hitit.app.ui.components.rememberSpotlightState
+import com.hitit.app.ui.components.spotlightTarget
 import com.hitit.app.ui.navigation.Dest
 import com.hitit.app.ui.screens.bigplays.BigPlayDetailScreen
 import com.hitit.app.ui.screens.bigplays.BigPlayEditScreen
@@ -51,12 +57,18 @@ private val bottomItems = listOf(
 )
 
 @Composable
-fun HitItApp() {
+fun HitItApp(
+    showSpotlight: Boolean = false,
+    onSpotlightFinished: () -> Unit = {},
+) {
     val navController = rememberNavController()
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = backStackEntry?.destination
-    val showBottomBar = currentDestination?.route in bottomItems.map { it.route }
+    val currentRoute = currentDestination?.route
+    val showBottomBar = currentRoute in bottomItems.map { it.route }
+    val spotlight = rememberSpotlightState()
 
+    Box(modifier = Modifier.fillMaxSize()) {
     Scaffold(
         bottomBar = {
             if (showBottomBar) {
@@ -64,6 +76,11 @@ fun HitItApp() {
                     bottomItems.forEach { item ->
                         val selected = currentDestination?.hierarchy?.any { it.route == item.route } == true
                         NavigationBarItem(
+                            modifier = if (item.route == Dest.GRID) {
+                                Modifier.spotlightTarget("grid_tab", spotlight)
+                            } else {
+                                Modifier
+                            },
                             selected = selected,
                             onClick = {
                                 navController.navigate(item.route) {
@@ -192,4 +209,32 @@ fun HitItApp() {
             }
         }
     }
+
+        // First-run coachmarks, overlaid on the real (seeded) app. Only on the Home route.
+        if (showSpotlight && currentRoute == Dest.TODAY) {
+            SpotlightOverlay(
+                state = spotlight,
+                steps = ONBOARDING_STEPS,
+                onFinish = onSpotlightFinished,
+            )
+        }
+    }
 }
+
+private val ONBOARDING_STEPS = listOf(
+    SpotlightStep(
+        targetKey = "intro",
+        title = "Welcome to Hit it ⚡",
+        body = "Your flame and Momentum sit up top. Every rep you log feeds them.",
+    ),
+    SpotlightStep(
+        targetKey = "intro",
+        title = "Hit your reps",
+        body = "Tap a rep's circle to log it. Finish them all for a Perfect Day bonus.",
+    ),
+    SpotlightStep(
+        targetKey = "grid_tab",
+        title = "Watch your year fill in",
+        body = "The Grid lights up every day you show up. Tap here anytime.",
+    ),
+)

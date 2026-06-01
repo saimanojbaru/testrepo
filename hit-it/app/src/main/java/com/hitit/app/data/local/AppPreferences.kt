@@ -21,8 +21,14 @@ class AppPreferences @Inject constructor(
         get() = prefs.getBoolean(KEY_DEMO_SEEDED, false)
         set(value) = prefs.edit().putBoolean(KEY_DEMO_SEEDED, value).apply()
 
+    /** True once we've asked for POST_NOTIFICATIONS (after the first logged hit) so we never re-prompt. */
+    var notifPermissionAsked: Boolean
+        get() = prefs.getBoolean(KEY_NOTIF_ASKED, false)
+        set(value) = prefs.edit().putBoolean(KEY_NOTIF_ASKED, value).apply()
+
     private companion object {
         const val KEY_ONBOARDING = "onboarding_complete"
         const val KEY_DEMO_SEEDED = "demo_seeded"
+        const val KEY_NOTIF_ASKED = "notif_permission_asked"
     }
 }

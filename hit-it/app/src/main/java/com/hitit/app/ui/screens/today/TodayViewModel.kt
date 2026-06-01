@@ -74,6 +74,7 @@ class TodayViewModel @Inject constructor(
     profileRepository: ProfileRepository,
     private val checkInRepository: CheckInRepository,
     lockInRepository: LockInRepository,
+    private val appPreferences: com.hitit.app.data.local.AppPreferences,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
@@ -169,6 +170,16 @@ class TodayViewModel @Inject constructor(
     }
 
     fun consumeCelebration() { _celebration.value = null }
+
+    /**
+     * Whether the UI should request POST_NOTIFICATIONS now (true at most once, after a first hit).
+     * Marks it asked so we never prompt again.
+     */
+    fun shouldAskNotificationPermission(): Boolean {
+        if (appPreferences.notifPermissionAsked) return false
+        appPreferences.notifPermissionAsked = true
+        return true
+    }
 
     fun toggleMainTarget(target: MainTargetUi) {
         viewModelScope.launch { taskRepository.setDone(target.id, !target.done, today) }

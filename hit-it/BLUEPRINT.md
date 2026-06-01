@@ -22,6 +22,10 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
   + best streak (pure `domain/.../flame/LifeFlame.kt`), shown on the Dashboard hero and Profile;
   count-up Momentum number + animated level bar + column-by-column Grid reveal; a daily WorkManager
   "flame fading" nudge.
+- **Interactive onboarding** — first launch drops onto the real seeded Dashboard with a Compose
+  **spotlight overlay** (`ui/components/SpotlightOverlay.kt`: scrim + BlendMode.Clear hole + caption,
+  always Skippable) instead of a static pager; `POST_NOTIFICATIONS` is requested after the first
+  logged hit (gated by `AppPreferences.notifPermissionAsked`).
 - **Energy Pass (visual + mechanics)**: layered dark surfaces + cyan/violet/magenta hero gradient,
   bold athletic typography, a **Dashboard** home screen (0–100 **Momentum Score**, quick-stats row,
   Main Target, reps, recent-momentum mini-grid), **Perfect Day** 1.5× multiplier with confetti +
