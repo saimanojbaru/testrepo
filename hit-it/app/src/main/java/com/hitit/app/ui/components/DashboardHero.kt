@@ -102,8 +102,9 @@ fun DashboardHero(
                         color = Color.White,
                         fontWeight = FontWeight.Black,
                     )
-                    Text(
-                        text = "$momentum ⚡",
+                    OdometerText(
+                        value = momentum.toInt(),
+                        suffix = " ⚡",
                         style = MaterialTheme.typography.labelMedium,
                         color = Color.White.copy(alpha = 0.9f),
                     )
