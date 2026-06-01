@@ -32,6 +32,11 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
   `MomentumCalculator.hitAward`. Persistent `identities` table (DB **v9**), `IdentityRepository.sync`,
   shown in Profile. `clearHit` now reverses the **exact** awarded amount from the ledger
   (`MomentumTxnDao.sumAwardsForRepSince`) so undo never drifts.
+- **Visual polish pass (D/E/F)**: tactile rep toggle (press-physics + overshoot checkmark + haptic +
+  animated accent border when met) and an **odometer** XP roll-up (`OdometerText`); reusable bordered
+  `HitCard` + a pulsing `glowingBorder` on the Main Target + subtle 1dp borders on stat/check-in/rep
+  cards for depth; gradient typography (`GradientText`), a segmented reps gauge (`SegmentedGauge`),
+  and a 7-day consistency `MomentumSparkline` on the dashboard.
 - **Energy Pass (visual + mechanics)**: layered dark surfaces + cyan/violet/magenta hero gradient,
   bold athletic typography, a **Dashboard** home screen (0–100 **Momentum Score**, quick-stats row,
   Main Target, reps, recent-momentum mini-grid), **Perfect Day** 1.5× multiplier with confetti +

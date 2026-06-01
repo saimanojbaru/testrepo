@@ -59,6 +59,7 @@ data class TodayUiState(
     val hitsDoneToday: Int = 0,
     val focusMinutesToday: Int = 0,
     val miniGrid: List<List<GridCell>> = emptyList(),
+    val last7Intensity: List<Int> = emptyList(),
     val mainTarget: MainTargetUi? = null,
     val reps: List<TodayRepUi> = emptyList(),
     val loading: Boolean = true,
@@ -120,6 +121,8 @@ class TodayViewModel @Inject constructor(
         )
         val allColumns = GridAggregator.yearColumns(today.year, intensity, today)
         val mini = allColumns.takeLast(MINI_WEEKS)
+        // Last 7 days (oldest -> today) for the dashboard sparkline.
+        val last7 = (6 downTo 0).map { offset -> intensity[today.minusDays(offset.toLong())] ?: 0 }
 
         val score = MomentumScore.score(
             repsScheduled = active.size,
@@ -146,6 +149,7 @@ class TodayViewModel @Inject constructor(
             hitsDoneToday = hitsDoneToday,
             focusMinutesToday = focusMin,
             miniGrid = mini,
+            last7Intensity = last7,
             mainTarget = mainTarget?.let {
                 MainTargetUi(id = it.id, title = it.title, priority = it.priority, done = it.isDone)
             },

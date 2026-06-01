@@ -47,8 +47,10 @@ import com.hitit.app.ui.components.ConfettiOverlay
 import com.hitit.app.ui.components.DashboardHero
 import com.hitit.app.ui.components.EmptyState
 import com.hitit.app.ui.components.Heatmap
+import com.hitit.app.ui.components.MomentumSparkline
 import com.hitit.app.ui.components.RepRow
 import com.hitit.app.ui.components.SectionLabel
+import com.hitit.app.ui.components.SegmentedGauge
 import com.hitit.app.ui.components.StatTile
 import com.hitit.app.ui.components.glowingBorder
 import com.hitit.app.ui.theme.NeonAmber
@@ -159,6 +161,13 @@ fun TodayScreen(
             }
 
             SectionLabel("Today's reps")
+            if (state.repsTotal > 0) {
+                SegmentedGauge(
+                    completed = state.repsDone,
+                    total = state.repsTotal,
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 4.dp),
+                )
+            }
             if (state.reps.isEmpty() && !state.loading) {
                 EmptyState("No reps scheduled today.\nTap + to add your first one.")
             } else {
@@ -174,6 +183,14 @@ fun TodayScreen(
                         onClick = { onOpenRep(rep.id) },
                     )
                 }
+            }
+
+            if (state.last7Intensity.isNotEmpty()) {
+                SectionLabel("Last 7 days")
+                MomentumSparkline(
+                    intensities = state.last7Intensity,
+                    modifier = Modifier.padding(horizontal = 20.dp, vertical = 4.dp),
+                )
             }
 
             if (state.miniGrid.isNotEmpty()) {

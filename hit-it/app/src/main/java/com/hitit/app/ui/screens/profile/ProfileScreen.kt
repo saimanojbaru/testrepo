@@ -27,6 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.hitit.app.ui.components.GradientText
 import com.hitit.app.ui.components.LifeFlame
 import com.hitit.app.ui.components.MomentumHeader
 import com.hitit.app.ui.components.ScreenHeader
@@ -62,11 +63,9 @@ fun ProfileScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             LifeFlame(level = state.flameLevel, size = 88.dp)
-            Text(
-                text = FlameModel.label(state.flameLevel),
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Black,
-                color = MaterialTheme.colorScheme.primary,
+            GradientText(
+                text = FlameModel.label(state.flameLevel).uppercase(),
+                style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Black),
             )
             Text(
                 text = FlameModel.tagline(state.flameLevel),
