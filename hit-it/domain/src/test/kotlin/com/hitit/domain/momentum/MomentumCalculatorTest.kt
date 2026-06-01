@@ -75,4 +75,24 @@ class MomentumCalculatorTest {
         assertEquals(15, MomentumCalculator.applyPerfectDay(10, perfect = true)) // 10 * 1.5
         assertEquals(10, MomentumCalculator.applyPerfectDay(10, perfect = false))
     }
+
+    @Test
+    fun identityBonusAppliedToBase() {
+        assertEquals(11, MomentumCalculator.applyIdentityBonus(10, 10)) // +10%
+        assertEquals(13, MomentumCalculator.applyIdentityBonus(10, 30)) // +30%
+        assertEquals(10, MomentumCalculator.applyIdentityBonus(10, 0))
+    }
+
+    @Test
+    fun hitAwardIsDeterministicForUndoSymmetry() {
+        // Same inputs => same number, so clearHit reverses logHit exactly (no ledger drift).
+        val streak = 5
+        val a = MomentumCalculator.hitAward(streak, identityBonusPercent = 20, perfectDay = true)
+        val b = MomentumCalculator.hitAward(streak, identityBonusPercent = 20, perfectDay = true)
+        assertEquals(a, b)
+        // Order: base(10+5=15) -> identity +20% (=18) -> perfect 1.5x (=27).
+        assertEquals(27, a)
+        // Without bonus/perfect it's just the base award.
+        assertEquals(MomentumCalculator.awardForHit(streak), MomentumCalculator.hitAward(streak, 0, false))
+    }
 }

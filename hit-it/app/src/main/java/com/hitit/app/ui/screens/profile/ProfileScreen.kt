@@ -131,6 +131,11 @@ fun ProfileScreen(
             }
         }
 
+        SectionLabel("Identities")
+        state.identities.forEach { identity ->
+            IdentityRow(identity)
+        }
+
         SectionLabel("Tier ladder")
         state.tiers.forEach { tier ->
             Row(
@@ -227,6 +232,46 @@ private fun StatCard(value: String, label: String, modifier: Modifier = Modifier
                 text = label,
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+        }
+    }
+}
+
+@Composable
+private fun IdentityRow(identity: IdentityUi) {
+    val alpha = if (identity.unlocked) 1f else 0.4f
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 5.dp),
+        shape = RoundedCornerShape(16.dp),
+        color = MaterialTheme.colorScheme.surface,
+    ) {
+        Row(
+            modifier = Modifier.padding(14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Text(text = identity.emoji, style = MaterialTheme.typography.headlineSmall)
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = identity.name,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = alpha),
+                )
+                Text(
+                    text = if (identity.unlocked) identity.description else "🔒 ${identity.description}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = alpha),
+                )
+            }
+            Text(
+                text = "+${identity.bonusPercent}%",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Black,
+                color = if (identity.unlocked) MaterialTheme.colorScheme.secondary
+                else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = alpha),
             )
         }
     }

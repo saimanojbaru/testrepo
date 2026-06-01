@@ -51,6 +51,24 @@ object MomentumCalculator {
     fun applyPerfectDay(baseAward: Int, perfect: Boolean): Int =
         if (perfect) (baseAward * PERFECT_DAY_MULTIPLIER).toInt() else baseAward
 
+    /**
+     * Apply an Identity Cards bonus to a base award: `base * (1 + percent/100)`, floored.
+     * Order is fixed and documented: identity bonus is applied to the BASE award FIRST, then the
+     * Perfect Day multiplier (see [hitAward]). [bonusPercent] is clamped to a sane 0..100 here.
+     */
+    fun applyIdentityBonus(baseAward: Int, bonusPercent: Int): Int {
+        val pct = bonusPercent.coerceIn(0, 100)
+        return baseAward + (baseAward * pct / 100)
+    }
+
+    /**
+     * The single source of truth for a met-rep's award, so `logHit` and `clearHit` stay symmetric:
+     * base from streak → identity bonus → Perfect Day. Same inputs always yield the same number, so
+     * an undo reverses exactly (no ledger drift).
+     */
+    fun hitAward(currentStreak: Int, identityBonusPercent: Int, perfectDay: Boolean): Int =
+        applyPerfectDay(applyIdentityBonus(awardForHit(currentStreak), identityBonusPercent), perfectDay)
+
     /** Reduced Momentum for an Active Recovery action (logging something light on a rest day). */
     const val RECOVERY = 4
     fun awardForRecovery(): Int = RECOVERY

@@ -12,6 +12,7 @@ import com.hitit.app.data.mapper.toCore
 import com.hitit.app.data.mapper.toHitDay
 import com.hitit.app.reminder.ReminderScheduler
 import com.hitit.domain.model.StreakResult
+import com.hitit.domain.identity.IdentityCatalog
 import com.hitit.domain.momentum.MomentumCalculator
 import com.hitit.domain.streak.StreakCalculator
 import kotlinx.coroutines.flow.Flow
@@ -47,6 +48,7 @@ class RepRepository @Inject constructor(
     private val streakCalculator: StreakCalculator,
     private val profileRepository: ProfileRepository,
     private val reminderScheduler: ReminderScheduler,
+    private val identityDao: com.hitit.app.data.local.dao.IdentityDao,
 ) {
     fun observeActiveReps(): Flow<List<RepEntity>> = repDao.observeActive()
     fun observeAllReps(): Flow<List<RepEntity>> = repDao.observeAll()
@@ -154,10 +156,9 @@ class RepRepository @Inject constructor(
 
             val hits = hitDao.getForRep(repId)
             val streak = streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
-            val award = MomentumCalculator.applyPerfectDay(
-                MomentumCalculator.awardForHit(streak.currentStreak),
-                perfect,
-            )
+            // Identity Cards: apply the combined +X% bonus on top of the base award (then Perfect Day).
+            val identityBonus = IdentityCatalog.totalBonusPercent(identityDao.unlockedIds().toSet())
+            val award = MomentumCalculator.hitAward(streak.currentStreak, identityBonus, perfect)
             momentumDao.insert(
                 MomentumTxnEntity(
                     amount = award,
@@ -178,10 +179,17 @@ class RepRepository @Inject constructor(
             val wasMet = existing.hitCount >= rep.targetCount
 
             if (wasMet) {
-                val hits = hitDao.getForRep(repId)
-                val streak = streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
-                val refund = MomentumCalculator.awardForHit(streak.currentStreak)
-                momentumDao.insert(MomentumTxnEntity(amount = -refund, reason = REASON_UNDO, repId = repId))
+                // Reverse EXACTLY what was awarded today for this rep (base + identity bonus +
+                // perfect-day), read back from the ledger — so undo never drifts the total.
+                val startOfToday = today.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()
+                val awarded = momentumDao.sumAwardsForRepSince(
+                    repId = repId,
+                    reasons = listOf(REASON_HIT, REASON_PERFECT),
+                    sinceEpochMs = startOfToday,
+                )
+                if (awarded > 0) {
+                    momentumDao.insert(MomentumTxnEntity(amount = -awarded, reason = REASON_UNDO, repId = repId))
+                }
             }
             hitDao.deleteForRepOnDate(repId, today)
             profileRepository.recompute(today)

@@ -64,4 +64,7 @@ object DatabaseModule {
 
     @Provides
     fun provideSuddenDeathDao(db: HitItDatabase): SuddenDeathDao = db.suddenDeathDao()
+
+    @Provides
+    fun provideIdentityDao(db: HitItDatabase): com.hitit.app.data.local.dao.IdentityDao = db.identityDao()
 }

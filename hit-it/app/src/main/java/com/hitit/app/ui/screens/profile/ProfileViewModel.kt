@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.hitit.app.data.repository.StatsRepository
 import com.hitit.app.data.repository.TrophyRepository
 import com.hitit.domain.flame.LifeFlame
+import com.hitit.domain.identity.IdentityCatalog
 import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.TierLadder
 import com.hitit.domain.trophy.TrophyCatalog
@@ -31,6 +32,14 @@ data class TierRowUi(
     val current: Boolean,
 )
 
+data class IdentityUi(
+    val emoji: String,
+    val name: String,
+    val description: String,
+    val bonusPercent: Int,
+    val unlocked: Boolean,
+)
+
 data class ProfileUiState(
     val tier: String = "Rookie",
     val level: Int = 1,
@@ -43,6 +52,7 @@ data class ProfileUiState(
     val bestStreak: Int = 0,
     val flameLevel: Int = 1,
     val trophies: List<TrophyUi> = emptyList(),
+    val identities: List<IdentityUi> = emptyList(),
     val tiers: List<TierRowUi> = emptyList(),
     val loading: Boolean = true,
 )
@@ -51,16 +61,18 @@ data class ProfileUiState(
 class ProfileViewModel @Inject constructor(
     private val statsRepository: StatsRepository,
     private val trophyRepository: TrophyRepository,
+    private val identityRepository: com.hitit.app.data.repository.IdentityRepository,
     private val demoSeeder: com.hitit.app.data.DemoSeeder,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
 
     init {
-        // Persist any newly-earned Trophies whenever the stats change (idempotent).
+        // Persist any newly-earned Trophies and Identities whenever the stats change (idempotent).
         viewModelScope.launch {
             statsRepository.observeStats(today).collect { stats ->
                 trophyRepository.sync(stats, today)
+                identityRepository.sync(stats, today)
             }
         }
     }
@@ -73,8 +85,10 @@ class ProfileViewModel @Inject constructor(
     val state: StateFlow<ProfileUiState> = combine(
         statsRepository.observeStats(today),
         trophyRepository.observeUnlocked(),
-    ) { stats, unlocked ->
+        identityRepository.observeUnlocked(),
+    ) { stats, unlocked, unlockedIdentities ->
         val unlockedIds = unlocked.map { it.id }.toSet()
+        val identityIds = unlockedIdentities.map { it.id }.toSet()
         ProfileUiState(
             tier = TierLadder.tierFor(stats.level).name,
             level = stats.level,
@@ -88,6 +102,9 @@ class ProfileViewModel @Inject constructor(
             flameLevel = LifeFlame.levelFor(score = 0, bestStreak = stats.bestStreak),
             trophies = TrophyCatalog.ALL.map { def ->
                 TrophyUi(def.emoji, def.name, def.description, def.id in unlockedIds)
+            },
+            identities = IdentityCatalog.ALL.map { def ->
+                IdentityUi(def.emoji, def.name, def.description, def.bonusPercent, def.id in identityIds)
             },
             tiers = TierLadder.TIERS.map { tier ->
                 TierRowUi(

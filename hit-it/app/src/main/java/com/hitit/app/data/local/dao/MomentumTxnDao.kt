@@ -27,4 +27,14 @@ interface MomentumTxnDao {
     /** Net Momentum earned within [startEpochMs, endEpochMs) — used per-day by the flame check. */
     @Query("SELECT COALESCE(SUM(amount), 0) FROM momentum_txns WHERE timestamp >= :startEpochMs AND timestamp < :endEpochMs")
     suspend fun sumBetween(startEpochMs: Long, endEpochMs: Long): Int
+
+    /**
+     * Sum of positive award entries for [repId] with [reasons] since [sinceEpochMs] — used by
+     * clearHit to reverse EXACTLY what logHit awarded (bonus/perfect included), no drift.
+     */
+    @Query(
+        "SELECT COALESCE(SUM(amount), 0) FROM momentum_txns " +
+            "WHERE repId = :repId AND amount > 0 AND reason IN (:reasons) AND timestamp >= :sinceEpochMs",
+    )
+    suspend fun sumAwardsForRepSince(repId: Long, reasons: List<String>, sinceEpochMs: Long): Int
 }
