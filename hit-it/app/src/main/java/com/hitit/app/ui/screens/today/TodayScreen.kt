@@ -5,6 +5,7 @@ import android.os.Build
 import android.view.HapticFeedbackConstants
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -49,6 +50,7 @@ import com.hitit.app.ui.components.Heatmap
 import com.hitit.app.ui.components.RepRow
 import com.hitit.app.ui.components.SectionLabel
 import com.hitit.app.ui.components.StatTile
+import com.hitit.app.ui.components.glowingBorder
 import com.hitit.app.ui.theme.NeonAmber
 import com.hitit.app.ui.theme.NeonCyan
 import com.hitit.app.ui.theme.NeonLime
@@ -195,6 +197,7 @@ private fun CheckInCard(checkedIn: Boolean, mood: Int?, onClick: () -> Unit) {
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .clip(RoundedCornerShape(20.dp))
+            .border(1.dp, MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(20.dp))
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(20.dp),
         color = MaterialTheme.colorScheme.surface,
@@ -239,7 +242,8 @@ private fun MainTargetCard(target: MainTargetUi, onToggle: () -> Unit) {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = 16.dp, vertical = 6.dp),
+            .padding(horizontal = 16.dp, vertical = 6.dp)
+            .glowingBorder(cornerRadius = 20.dp),
         shape = RoundedCornerShape(20.dp),
         color = MaterialTheme.colorScheme.surface,
     ) {
