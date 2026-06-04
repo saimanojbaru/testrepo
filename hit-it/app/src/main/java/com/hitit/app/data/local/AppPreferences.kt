@@ -26,9 +26,21 @@ class AppPreferences @Inject constructor(
         get() = prefs.getBoolean(KEY_NOTIF_ASKED, false)
         set(value) = prefs.edit().putBoolean(KEY_NOTIF_ASKED, value).apply()
 
+    /** Whether the user opted in to the on-device LLM coach (off by default — rule-based always works). */
+    var llmCoachEnabled: Boolean
+        get() = prefs.getBoolean(KEY_LLM_ENABLED, false)
+        set(value) = prefs.edit().putBoolean(KEY_LLM_ENABLED, value).apply()
+
+    /** Absolute path to a user-supplied .task/.litertlm model file (null until set). */
+    var llmModelPath: String?
+        get() = prefs.getString(KEY_LLM_MODEL_PATH, null)
+        set(value) = prefs.edit().putString(KEY_LLM_MODEL_PATH, value).apply()
+
     private companion object {
         const val KEY_ONBOARDING = "onboarding_complete"
         const val KEY_DEMO_SEEDED = "demo_seeded"
         const val KEY_NOTIF_ASKED = "notif_permission_asked"
+        const val KEY_LLM_ENABLED = "llm_coach_enabled"
+        const val KEY_LLM_MODEL_PATH = "llm_model_path"
     }
 }

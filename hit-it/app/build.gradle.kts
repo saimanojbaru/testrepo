@@ -20,6 +20,9 @@ android {
         versionName = "0.1.0"
         vectorDrawables { useSupportLibrary = true }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // MediaPipe ships native libs per-ABI; keep the APK small by shipping arm64 only (covers
+        // essentially all modern physical devices). A Play release would use an App Bundle instead.
+        ndk { abiFilters += "arm64-v8a" }
     }
 
     buildTypes {
@@ -83,6 +86,10 @@ dependencies {
 
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material3)
+
+    // Optional on-device LLM for the Coach (rephraser). Safe when no model is present — the app
+    // falls back to the rule-based coach. ~5-6MB native libs; no INTERNET permission needed.
+    implementation(libs.tasks.genai)
 
     // Instrumented tests (src/androidTest) — Room DAO tests; require a device/emulator.
     androidTestImplementation(libs.androidx.test.ext.junit)

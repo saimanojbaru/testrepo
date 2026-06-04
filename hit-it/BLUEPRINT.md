@@ -25,8 +25,13 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Your Coach** (*Phase H* — rule-based): pure `domain/.../coach/CoachEngine` reads the ledger and
   produces a brutally-honest **weekly review** (verdict + consistency / weekday-vs-weekend / check-in
   gap / debt-trend / best-pillar findings, each toned) and a single prioritized **daily nudge**.
-  Offline, no dependency, on every device; reached from Profile → Your Coach. Designed as the
-  structured insight layer an on-device LLM rephrases in Phase I.
+  Offline, no dependency, on every device; reached from Profile → Your Coach.
+- **On-device LLM Coach** (*Phase I*, optional): `MediaPipeCoachRephraser` (MediaPipe `tasks-genai`
+  0.10.29) can **rephrase** the rule-based insights generatively from a user-supplied model file
+  (`AppPreferences.llmModelPath`), gated behind `llmCoachEnabled`. NO bundled model, NO INTERNET
+  permission (offline-first preserved); ABI-filtered to arm64. Strictly additive via the pure
+  `domain/.../coach/CoachRephraser` interface (`NoOpCoachRephraser` default) — any failure falls back
+  to the rule-based text. **Compile-verified only** (the model can't be exercised without a device).
 - **Life Flame** — a single animated flame (5 states Dying→Inferno) driven by today's Momentum Score
   + best streak (pure `domain/.../flame/LifeFlame.kt`), shown on the Dashboard hero and Profile;
   count-up Momentum number + animated level bar + column-by-column Grid reveal; a daily WorkManager
