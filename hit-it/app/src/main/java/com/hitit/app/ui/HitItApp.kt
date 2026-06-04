@@ -35,6 +35,7 @@ import com.hitit.app.ui.screens.bigplays.BigPlayDetailScreen
 import com.hitit.app.ui.screens.bigplays.BigPlayEditScreen
 import com.hitit.app.ui.screens.bigplays.BigPlaysScreen
 import com.hitit.app.ui.screens.checkin.CheckInScreen
+import com.hitit.app.ui.screens.coach.CoachScreen
 import com.hitit.app.ui.screens.grid.GridScreen
 import com.hitit.app.ui.screens.hits.HitEditScreen
 import com.hitit.app.ui.screens.hits.HitsScreen
@@ -127,6 +128,7 @@ fun HitItApp(
                 ProfileScreen(
                     onOpenBigPlays = { navController.navigate(Dest.BIG_PLAYS) },
                     onOpenLocker = { navController.navigate(Dest.locker()) },
+                    onOpenCoach = { navController.navigate(Dest.COACH) },
                 )
             }
             composable(Dest.LOCK_IN) {
@@ -134,6 +136,9 @@ fun HitItApp(
             }
             composable(Dest.CHECK_IN) {
                 CheckInScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Dest.COACH) {
+                CoachScreen(onBack = { navController.popBackStack() })
             }
             composable(
                 route = Dest.REP_DETAIL,

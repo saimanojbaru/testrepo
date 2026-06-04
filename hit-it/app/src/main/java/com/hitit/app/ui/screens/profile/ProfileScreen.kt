@@ -38,6 +38,7 @@ import com.hitit.domain.flame.LifeFlame as FlameModel
 fun ProfileScreen(
     onOpenBigPlays: () -> Unit,
     onOpenLocker: () -> Unit,
+    onOpenCoach: () -> Unit,
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -112,6 +113,7 @@ fun ProfileScreen(
         }
 
         SectionLabel("Library")
+        NavRow(title = "🧠 Your Coach", subtitle = "Private, brutally honest weekly review", onClick = onOpenCoach)
         NavRow(title = "🎯 Big Plays", subtitle = "Long-term goals & checkpoints", onClick = onOpenBigPlays)
         NavRow(title = "🗄️ The Locker", subtitle = "Your notes", onClick = onOpenLocker)
 

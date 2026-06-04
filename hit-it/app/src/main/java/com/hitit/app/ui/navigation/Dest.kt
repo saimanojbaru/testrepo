@@ -11,6 +11,7 @@ object Dest {
     const val LOCK_IN = "lock_in"
     const val CHECK_IN = "check_in"
     const val BIG_PLAYS = "big_plays"
+    const val COACH = "coach"
 
     const val REP_DETAIL = "rep_detail/{repId}"
     const val REP_EDIT = "rep_edit?repId={repId}"
