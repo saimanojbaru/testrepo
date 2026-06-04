@@ -67,4 +67,8 @@ object DatabaseModule {
 
     @Provides
     fun provideIdentityDao(db: HitItDatabase): com.hitit.app.data.local.dao.IdentityDao = db.identityDao()
+
+    @Provides
+    fun provideDailyLedgerDao(db: HitItDatabase): com.hitit.app.data.local.dao.DailyLedgerDao =
+        db.dailyLedgerDao()
 }

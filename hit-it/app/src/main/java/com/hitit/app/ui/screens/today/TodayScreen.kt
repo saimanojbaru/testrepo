@@ -135,6 +135,10 @@ fun TodayScreen(
                 flameLevel = state.flameLevel,
             )
 
+            if (state.outstandingDebt > 0) {
+                DebtBanner(debt = state.outstandingDebt, suggestion = state.reconciliationSuggestion)
+            }
+
             // Quick stats row.
             Row(
                 modifier = Modifier
@@ -204,6 +208,42 @@ fun TodayScreen(
         // Confetti burst on a completion (driven by the celebration seq).
         ConfettiOverlay(trigger = celebration?.seq?.plus(1) ?: 0L)
         LaunchedEffect(celebration) { if (celebration != null) viewModel.consumeCelebration() }
+    }
+}
+
+private val DebtAmber = androidx.compose.ui.graphics.Color(0xFFFFB300)
+
+@Composable
+private fun DebtBanner(debt: Int, suggestion: String) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp, vertical = 6.dp)
+            .clip(RoundedCornerShape(20.dp))
+            .border(1.5.dp, DebtAmber.copy(alpha = 0.85f), RoundedCornerShape(20.dp)),
+        shape = RoundedCornerShape(20.dp),
+        color = DebtAmber.copy(alpha = 0.10f),
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Text(text = "⚠️", style = MaterialTheme.typography.headlineSmall)
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "Momentum debt: $debt",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Black,
+                    color = DebtAmber,
+                )
+                Text(
+                    text = suggestion,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+            }
+        }
     }
 }
 

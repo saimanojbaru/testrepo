@@ -49,4 +49,8 @@ interface HitTaskDao {
 
     @Query("DELETE FROM hit_tasks")
     suspend fun deleteAll()
+
+    /** Count of Hits completed within [startMs, endMs) by `completedAt` (epoch millis). */
+    @Query("SELECT COUNT(*) FROM hit_tasks WHERE isDone = 1 AND completedAt >= :startMs AND completedAt < :endMs")
+    suspend fun completedCountBetween(startMs: Long, endMs: Long): Int
 }

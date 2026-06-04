@@ -17,7 +17,11 @@ phased roadmap. Each future phase has a copy-paste prompt you can hand to Claude
 - **Reps** (habits) with flexible schedules: Daily / Weekdays / Custom days / Weekly target, plus
   multi-hit-per-day targets.
 - **Streak engine** with rest-day skip protection, rest mode (vacation), and week-based streaks for
-  weekly targets — **fully unit-tested** (100 tests in `:domain`).
+  weekly targets — **fully unit-tested** (106 tests in `:domain`).
+- **Strict Ledger + Momentum Debt** (*Phase G* — Coach foundation): each past day is finalized into
+  an immutable `daily_ledger` row on app open (DB **v10**, insert-IGNORE so history can't be
+  rewritten); the pure `domain/.../ledger/MomentumDebtEngine` turns an underperforming day into debt
+  + a reconciliation suggestion, surfaced as an amber debt banner on the dashboard.
 - **Life Flame** — a single animated flame (5 states Dying→Inferno) driven by today's Momentum Score
   + best streak (pure `domain/.../flame/LifeFlame.kt`), shown on the Dashboard hero and Profile;
   count-up Momentum number + animated level bar + column-by-column Grid reveal; a daily WorkManager

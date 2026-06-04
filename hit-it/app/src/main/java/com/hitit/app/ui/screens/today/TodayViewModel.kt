@@ -12,6 +12,7 @@ import com.hitit.app.ui.model.RepUi
 import com.hitit.domain.flame.LifeFlame
 import com.hitit.domain.grid.GridAggregator
 import com.hitit.domain.grid.GridAggregator.GridCell
+import com.hitit.domain.ledger.MomentumDebtEngine
 import com.hitit.domain.model.ScheduleEvaluator
 import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.MomentumScore
@@ -60,6 +61,8 @@ data class TodayUiState(
     val focusMinutesToday: Int = 0,
     val miniGrid: List<List<GridCell>> = emptyList(),
     val last7Intensity: List<Int> = emptyList(),
+    val outstandingDebt: Int = 0,
+    val reconciliationSuggestion: String = "",
     val mainTarget: MainTargetUi? = null,
     val reps: List<TodayRepUi> = emptyList(),
     val loading: Boolean = true,
@@ -75,11 +78,19 @@ class TodayViewModel @Inject constructor(
     profileRepository: ProfileRepository,
     private val checkInRepository: CheckInRepository,
     lockInRepository: LockInRepository,
+    ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
     private val appPreferences: com.hitit.app.data.local.AppPreferences,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
     private val dateFormat = DateTimeFormatter.ofPattern("EEE, MMM d")
+
+    private data class Extras(
+        val checkIn: com.hitit.app.data.local.entity.CheckInEntity?,
+        val tasks: List<com.hitit.app.data.local.entity.HitTaskEntity>,
+        val focusMin: Int,
+        val debt: Int,
+    )
 
     val state: StateFlow<TodayUiState> = combine(
         repRepository.observeActiveReps(),
@@ -90,10 +101,14 @@ class TodayViewModel @Inject constructor(
             checkInRepository.observeForDate(today),
             taskRepository.observeAll(),
             lockInRepository.observeFocusMinutesOn(today),
-        ) { checkIn, tasks, focusMin ->
-            Triple(checkIn, tasks, focusMin)
+            ledgerRepository.observeOutstandingDebt(),
+        ) { checkIn, tasks, focusMin, debt ->
+            Extras(checkIn, tasks, focusMin, debt)
         },
-    ) { reps, hits, momentum, mainTarget, (checkIn, tasks, focusMin) ->
+    ) { reps, hits, momentum, mainTarget, extras ->
+        val checkIn = extras.checkIn
+        val tasks = extras.tasks
+        val focusMin = extras.focusMin
         val hitsByRep = hits.groupBy { it.repId }
         val active = reps.filter { ScheduleEvaluator.isActiveOn(it.toCore(), today) }
         val todayReps = active.map { rep ->
@@ -150,6 +165,8 @@ class TodayViewModel @Inject constructor(
             focusMinutesToday = focusMin,
             miniGrid = mini,
             last7Intensity = last7,
+            outstandingDebt = extras.debt,
+            reconciliationSuggestion = MomentumDebtEngine.reconciliationSuggestion(extras.debt),
             mainTarget = mainTarget?.let {
                 MainTargetUi(id = it.id, title = it.title, priority = it.priority, done = it.isDone)
             },

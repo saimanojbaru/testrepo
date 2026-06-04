@@ -19,6 +19,9 @@ interface LockInSessionDao {
     @Query("SELECT COALESCE(SUM(focusedMinutes), 0) FROM lock_in_sessions WHERE date = :date")
     fun observeFocusMinutesOn(date: LocalDate): Flow<Int>
 
+    @Query("SELECT COALESCE(SUM(focusedMinutes), 0) FROM lock_in_sessions WHERE date = :date")
+    suspend fun focusMinutesOn(date: LocalDate): Int
+
     @Query("SELECT COUNT(*) FROM lock_in_sessions")
     fun observeSessionCount(): Flow<Int>
 

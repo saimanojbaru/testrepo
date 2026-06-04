@@ -28,6 +28,7 @@ class DemoSeeder @Inject constructor(
     private val taskDao: HitTaskDao,
     private val checkInDao: CheckInDao,
     private val profileRepository: ProfileRepository,
+    private val ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
     private val prefs: AppPreferences,
 ) {
     suspend fun seedIfNeeded() {
@@ -106,6 +107,7 @@ class DemoSeeder @Inject constructor(
         repDao.deleteAll()
         taskDao.deleteAll()
         checkInDao.deleteAll()
+        ledgerRepository.clearAll()
         profileRepository.resetAll(LocalDate.now())
     }
 

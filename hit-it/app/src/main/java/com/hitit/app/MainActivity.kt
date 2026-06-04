@@ -24,12 +24,15 @@ class MainActivity : ComponentActivity() {
     @Inject lateinit var reminderScheduler: ReminderScheduler
     @Inject lateinit var appPreferences: AppPreferences
     @Inject lateinit var demoSeeder: DemoSeeder
+    @Inject lateinit var ledgerRepository: com.hitit.app.data.repository.LedgerRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Seed demo data on first launch, then re-arm reminders (survive reboot/process death).
+        // Seed demo data on first launch, finalize the strict ledger for any past days, then
+        // re-arm reminders (survive reboot/process death).
         lifecycleScope.launch {
             demoSeeder.seedIfNeeded()
+            ledgerRepository.finalizePastDays()
             reminderScheduler.rescheduleAll()
             reminderScheduler.runSuddenDeathNow()
             reminderScheduler.scheduleSuddenDeathDaily()
