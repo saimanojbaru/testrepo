@@ -41,6 +41,24 @@ private val HitItTypography = base.copy(
 /** A heavy, condensed style for big numbers (Momentum score, level, streak counts). */
 val StatNumberStyle = TextStyle(fontWeight = FontWeight.Black, fontSize = 40.sp, letterSpacing = (-1.5).sp)
 
+/** Wide-tracked condensed label for metric headers ("CURRENT MOMENTUM", "LV.5"). */
+val AthleticLabelStyle = TextStyle(
+    fontWeight = FontWeight.Bold,
+    fontSize = 11.sp,
+    letterSpacing = 1.8.sp,
+)
+
+/**
+ * Tabular-figures number style: `tnum` freezes digit widths so rolling/odometer numbers don't
+ * jitter the layout as they change. Used for the hero metrics.
+ */
+val TabularNumberStyle = TextStyle(
+    fontWeight = FontWeight.Black,
+    fontSize = 38.sp,
+    letterSpacing = (-1).sp,
+    fontFeatureSettings = "tnum",
+)
+
 @Composable
 fun HitItTheme(content: @Composable () -> Unit) {
     MaterialTheme(

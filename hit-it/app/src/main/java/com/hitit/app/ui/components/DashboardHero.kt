@@ -24,8 +24,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.hitit.app.ui.theme.AthleticLabelStyle
 import com.hitit.app.ui.theme.HeroGradient
 import com.hitit.app.ui.theme.StatNumberStyle
+import com.hitit.app.ui.theme.TabularNumberStyle
 
 /**
  * The dashboard hero: a vibrant gradient card with the big Momentum Score, tier/level, and the
@@ -67,20 +69,20 @@ fun DashboardHero(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.Top,
             ) {
+                // Left: today's daily Momentum score (the big, changing number).
                 Column {
                     Text(
-                        text = "MOMENTUM",
-                        style = MaterialTheme.typography.labelMedium,
+                        text = "CURRENT MOMENTUM",
+                        style = AthleticLabelStyle,
                         color = Color.White.copy(alpha = 0.85f),
-                        fontWeight = FontWeight.Black,
                     )
                     Row(verticalAlignment = Alignment.Bottom) {
-                        Text(text = "$animatedScore", style = StatNumberStyle, color = Color.White)
+                        Text(text = "$animatedScore", style = TabularNumberStyle, color = Color.White)
                         Text(
                             text = "/100",
                             style = MaterialTheme.typography.titleMedium,
-                            color = Color.White.copy(alpha = 0.8f),
-                            modifier = Modifier.padding(bottom = 8.dp, start = 2.dp),
+                            color = Color.White.copy(alpha = 0.7f),
+                            modifier = Modifier.padding(bottom = 7.dp, start = 2.dp),
                         )
                     }
                     Text(
@@ -90,24 +92,19 @@ fun DashboardHero(
                         fontWeight = FontWeight.Bold,
                     )
                 }
+                // Right: permanent identity stats (tier/level + lifetime XP), de-cluttered.
                 Column(horizontalAlignment = Alignment.End) {
                     Text(
-                        text = tier.uppercase(),
-                        style = MaterialTheme.typography.labelLarge,
+                        text = "${tier.uppercase()} LV.$level",
+                        style = AthleticLabelStyle,
                         color = Color.White,
-                        fontWeight = FontWeight.Black,
-                    )
-                    Text(
-                        text = "Lv $level",
-                        style = MaterialTheme.typography.headlineSmall,
-                        color = Color.White,
-                        fontWeight = FontWeight.Black,
                     )
                     OdometerText(
                         value = momentum.toInt(),
                         suffix = " ⚡",
-                        style = MaterialTheme.typography.labelMedium,
-                        color = Color.White.copy(alpha = 0.9f),
+                        style = MaterialTheme.typography.titleMedium.copy(fontFeatureSettings = "tnum"),
+                        color = Color.White.copy(alpha = 0.95f),
+                        modifier = Modifier.padding(top = 4.dp),
                     )
                 }
             }

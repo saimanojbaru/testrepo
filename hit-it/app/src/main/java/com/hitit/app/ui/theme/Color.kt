@@ -21,12 +21,13 @@ val NeonAmber = Color(0xFFFFC857)
 // Hero gradient (cyan -> violet -> magenta) for the dashboard momentum hero.
 val HeroGradient = Brush.linearGradient(listOf(Color(0xFF00E5C0), Color(0xFF7C5CFF), Color(0xFFFF4D8D)))
 
-// Heatmap intensity ramp for "The Grid" (0..4)
-val Heat0 = Color(0xFF1C1C24)
-val Heat1 = Color(0xFF0E5A3A)
-val Heat2 = Color(0xFF13855A)
-val Heat3 = Color(0xFF21C07E)
-val Heat4 = Color(0xFF59F0A8)
+// Heatmap intensity ramp for "The Grid" (0..4) — a cohesive 2026 "tech-glow" ladder:
+// charcoal base -> calm recovery teal -> rich emerald -> electric cyan -> peak cyber-purple.
+val Heat0 = Color(0xFF16161E)
+val Heat1 = Color(0xFF0E6E78)
+val Heat2 = Color(0xFF12A36B)
+val Heat3 = Color(0xFF00E5C0)
+val Heat4 = Color(0xFF9D5BFF)
 
 /** Heatmap color for an intensity bucket 0..4. */
 fun heatColor(intensity: Int): Color = when (intensity.coerceIn(0, 4)) {
