@@ -114,7 +114,8 @@ fun DashboardHero(
                     .fillMaxWidth()
                     .padding(top = 16.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .size(width = 0.dp, height = 8.dp),
+                    .size(width = 0.dp, height = 8.dp)
+                    .shimmer(color = Color.White.copy(alpha = 0.5f), durationMillis = 2200),
                 color = Color.White,
                 trackColor = Color.White.copy(alpha = 0.25f),
             )

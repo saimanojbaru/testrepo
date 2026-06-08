@@ -17,6 +17,7 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -53,6 +54,7 @@ fun SegmentedGauge(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(6.dp),
     ) {
+        val allDone = completed >= safeTotal
         for (i in 0 until safeTotal) {
             val on = i < completed
             androidx.compose.foundation.layout.Box(
@@ -60,7 +62,9 @@ fun SegmentedGauge(
                     .weight(1f)
                     .height(height)
                     .clip(RoundedCornerShape(4.dp))
-                    .background(if (on) accent else SurfaceVariant),
+                    .background(if (on) accent else SurfaceVariant)
+                    // Lit cells shimmer; a perfect gauge shimmers a touch brighter.
+                    .shimmer(active = on, color = Color.White.copy(alpha = if (allDone) 0.45f else 0.3f)),
             )
         }
     }

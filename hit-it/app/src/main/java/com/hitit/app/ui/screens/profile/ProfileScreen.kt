@@ -1,6 +1,9 @@
 package com.hitit.app.ui.screens.profile
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -267,13 +270,23 @@ private fun IdentityRow(identity: IdentityUi) {
                     color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = alpha),
                 )
             }
-            Text(
-                text = "+${identity.bonusPercent}%",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Black,
-                color = if (identity.unlocked) MaterialTheme.colorScheme.secondary
-                else MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = alpha),
-            )
+            // Glowing "active multiplier perk" chip when unlocked; muted when locked.
+            val chipColor = if (identity.unlocked) MaterialTheme.colorScheme.secondary
+            else MaterialTheme.colorScheme.onSurfaceVariant
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(chipColor.copy(alpha = if (identity.unlocked) 0.14f else 0.06f))
+                    .border(1.dp, chipColor.copy(alpha = if (identity.unlocked) 0.5f else 0.2f), RoundedCornerShape(12.dp))
+                    .padding(horizontal = 12.dp, vertical = 6.dp),
+            ) {
+                Text(
+                    text = "+${identity.bonusPercent}%",
+                    style = MaterialTheme.typography.titleMedium.copy(fontFeatureSettings = "tnum"),
+                    fontWeight = FontWeight.Black,
+                    color = chipColor.copy(alpha = alpha),
+                )
+            }
         }
     }
 }
