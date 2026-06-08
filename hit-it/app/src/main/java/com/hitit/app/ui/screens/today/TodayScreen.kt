@@ -48,6 +48,7 @@ import com.hitit.app.ui.components.DashboardHero
 import com.hitit.app.ui.components.EmptyState
 import com.hitit.app.ui.components.Heatmap
 import com.hitit.app.ui.components.MomentumSparkline
+import com.hitit.app.ui.components.PremiumGlassCard
 import com.hitit.app.ui.components.RepRow
 import com.hitit.app.ui.components.SectionLabel
 import com.hitit.app.ui.components.SegmentedGauge
@@ -249,18 +250,14 @@ private fun DebtBanner(debt: Int, suggestion: String) {
 
 @Composable
 private fun CheckInCard(checkedIn: Boolean, mood: Int?, onClick: () -> Unit) {
-    Surface(
+    PremiumGlassCard(
         modifier = Modifier
-            .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp)
-            .clip(RoundedCornerShape(20.dp))
-            .border(1.dp, MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(20.dp))
             .clickable(onClick = onClick),
-        shape = RoundedCornerShape(20.dp),
-        color = MaterialTheme.colorScheme.surface,
+        cornerRadius = 22.dp,
+        contentPadding = 18.dp,
     ) {
         Row(
-            modifier = Modifier.padding(18.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(14.dp),
         ) {

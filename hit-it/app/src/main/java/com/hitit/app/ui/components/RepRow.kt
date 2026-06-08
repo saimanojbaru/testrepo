@@ -65,28 +65,17 @@ fun RepRow(
         animationSpec = spring(dampingRatio = Spring.DampingRatioMediumBouncy, stiffness = Spring.StiffnessLow),
         label = "rowScale",
     )
-    val cardColor by animateColorAsState(
-        targetValue = if (met) accent.copy(alpha = 0.12f) else MaterialTheme.colorScheme.surface,
-        label = "cardColor",
-    )
-    val borderColor by animateColorAsState(
-        targetValue = if (met) accent.copy(alpha = 0.6f) else Color.Transparent,
-        label = "borderColor",
-    )
 
-    Surface(
+    PremiumGlassCard(
         modifier = modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .padding(horizontal = 16.dp, vertical = 6.dp)
             .graphicsLayer { scaleX = rowScale; scaleY = rowScale }
-            .clip(RoundedCornerShape(16.dp))
-            .border(1.5.dp, borderColor, RoundedCornerShape(16.dp))
             .let { if (onClick != null) it.clickable(onClick = onClick) else it },
-        shape = RoundedCornerShape(16.dp),
-        color = cardColor,
+        cornerRadius = 18.dp,
+        contentPadding = 14.dp,
+        accent = if (met) accent else null,
     ) {
         Row(
-            modifier = Modifier.padding(14.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(12.dp),
         ) {
