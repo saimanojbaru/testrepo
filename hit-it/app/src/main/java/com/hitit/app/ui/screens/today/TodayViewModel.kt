@@ -17,6 +17,8 @@ import com.hitit.domain.model.ScheduleEvaluator
 import com.hitit.domain.momentum.LevelCurve
 import com.hitit.domain.momentum.MomentumScore
 import com.hitit.domain.momentum.TierLadder
+import com.hitit.domain.surge.Surge
+import com.hitit.domain.surge.SurgeMetrics
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -52,6 +54,8 @@ data class TodayUiState(
     val momentumScore: Int = 0,
     val momentumLabel: String = "",
     val flameLevel: Int = 1,
+    val bestStreakToday: Int = 0,
+    val surge: Surge? = null,
     val dateLabel: String = "",
     val checkedIn: Boolean = false,
     val checkInMood: Int? = null,
@@ -79,6 +83,7 @@ class TodayViewModel @Inject constructor(
     private val checkInRepository: CheckInRepository,
     lockInRepository: LockInRepository,
     ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
+    private val surgeRepository: com.hitit.app.data.repository.SurgeRepository,
     private val appPreferences: com.hitit.app.data.local.AppPreferences,
 ) : ViewModel() {
 
@@ -92,7 +97,7 @@ class TodayViewModel @Inject constructor(
         val debt: Int,
     )
 
-    val state: StateFlow<TodayUiState> = combine(
+    private val baseState: StateFlow<TodayUiState> = combine(
         repRepository.observeActiveReps(),
         repRepository.observeHitsBetween(today.minusDays(WINDOW_DAYS), today),
         profileRepository.observeMomentumTotal(),
@@ -156,6 +161,7 @@ class TodayViewModel @Inject constructor(
             momentumScore = score,
             momentumLabel = MomentumScore.label(score),
             flameLevel = LifeFlame.levelFor(score, bestStreak),
+            bestStreakToday = bestStreak,
             dateLabel = today.format(dateFormat),
             checkedIn = checkedIn,
             checkInMood = checkIn?.mood,
@@ -175,6 +181,38 @@ class TodayViewModel @Inject constructor(
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), TodayUiState())
 
+    /**
+     * The UI state, with the live high-stakes Surge folded in. The banked debt penalty (from a
+     * surge that expired unmet) is added on top of the ledger's own debt for display; surge
+     * *evaluation* always reads the raw ledger debt from [baseState] so penalties can't compound.
+     */
+    val state: StateFlow<TodayUiState> = combine(
+        baseState,
+        surgeRepository.active,
+        surgeRepository.penalty,
+    ) { base, surge, penalty ->
+        base.copy(surge = surge, outstandingDebt = base.outstandingDebt + penalty)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), TodayUiState())
+
+    init {
+        // Re-evaluate the surge rules whenever the day's facts change (deploy / preserve / bank).
+        viewModelScope.launch {
+            baseState.collect { s -> if (!s.loading) surgeRepository.refresh(metricsFrom(s)) }
+        }
+    }
+
+    /** Build the surge metrics from the *base* facts (ledger debt, not the penalty-inflated total). */
+    private fun metricsFrom(s: TodayUiState) = SurgeMetrics(
+        currentStreak = s.bestStreakToday,
+        outstandingDebt = s.outstandingDebt,
+        recentCompletionRate = (s.momentumScore / 100f).coerceIn(0f, 1f),
+    )
+
+    /** The countdown hit zero — re-evaluate so the coordinator banks the consequence and clears it. */
+    fun onSurgeExpired() {
+        surgeRepository.refresh(metricsFrom(baseState.value))
+    }
+
     private val _celebration = kotlinx.coroutines.flow.MutableStateFlow<Celebration?>(null)
     val celebration: StateFlow<Celebration?> = _celebration
     private var seq = 0L
@@ -185,6 +223,8 @@ class TodayViewModel @Inject constructor(
                 repRepository.clearHit(rep.id, today)
             } else {
                 val result = repRepository.logHit(rep.id, today)
+                // Landing a rep wins an open Surge window (no debt penalty banked).
+                if (surgeRepository.active.value != null) surgeRepository.resolve()
                 if (result.met) _celebration.value = Celebration(result.perfectDay, seq++)
             }
         }

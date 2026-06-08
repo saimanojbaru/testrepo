@@ -53,6 +53,7 @@ import com.hitit.app.ui.components.RepRow
 import com.hitit.app.ui.components.SectionLabel
 import com.hitit.app.ui.components.SegmentedGauge
 import com.hitit.app.ui.components.StatTile
+import com.hitit.app.ui.components.SurgeBanner
 import com.hitit.app.ui.components.glowingBorder
 import com.hitit.app.ui.theme.NeonAmber
 import com.hitit.app.ui.theme.NeonCyan
@@ -135,6 +136,11 @@ fun TodayScreen(
                 momentum = state.momentum,
                 flameLevel = state.flameLevel,
             )
+
+            // High-stakes window: a live countdown demanding a rep before time runs out.
+            state.surge?.let { surge ->
+                SurgeBanner(surge = surge, onExpired = { viewModel.onSurgeExpired() })
+            }
 
             if (state.outstandingDebt > 0) {
                 DebtBanner(debt = state.outstandingDebt, suggestion = state.reconciliationSuggestion)

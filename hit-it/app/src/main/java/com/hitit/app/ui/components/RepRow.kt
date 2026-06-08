@@ -70,6 +70,8 @@ fun RepRow(
         modifier = modifier
             .padding(horizontal = 16.dp, vertical = 6.dp)
             .graphicsLayer { scaleX = rowScale; scaleY = rowScale }
+            // Elastic drag-to-complete with composition haptics (only while still open).
+            .kineticDragToComplete(enabled = !met) { onToggle() }
             .let { if (onClick != null) it.clickable(onClick = onClick) else it },
         cornerRadius = 18.dp,
         contentPadding = 14.dp,
