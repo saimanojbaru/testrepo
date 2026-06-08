@@ -20,9 +20,22 @@ android {
         versionName = "0.1.0"
         vectorDrawables { useSupportLibrary = true }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        // MediaPipe ships native libs per-ABI; keep the APK small by shipping arm64 only (covers
-        // essentially all modern physical devices). A Play release would use an App Bundle instead.
-        ndk { abiFilters += "arm64-v8a" }
+    }
+
+    // Two distributions:
+    //  - lite: no on-device LLM, so NO large native libs and NO ABI filter — a small, UNIVERSAL APK
+    //          that installs on any device/ABI. The Coach runs its always-on rule-based engine.
+    //  - full: bundles the optional MediaPipe on-device LLM. Its native libs are big, so we ship
+    //          arm64-only to keep size down (a Play release would use an App Bundle instead).
+    flavorDimensions += "distribution"
+    productFlavors {
+        create("lite") {
+            dimension = "distribution"
+        }
+        create("full") {
+            dimension = "distribution"
+            ndk { abiFilters += "arm64-v8a" }
+        }
     }
 
     buildTypes {
@@ -87,9 +100,10 @@ dependencies {
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material3)
 
-    // Optional on-device LLM for the Coach (rephraser). Safe when no model is present — the app
-    // falls back to the rule-based coach. ~5-6MB native libs; no INTERNET permission needed.
-    implementation(libs.tasks.genai)
+    // Optional on-device LLM for the Coach (rephraser) — FULL flavor only. Safe when no model is
+    // present (app falls back to the rule-based coach). The lite flavor omits it entirely, which is
+    // what keeps that build small and free of per-ABI native libs. No INTERNET permission needed.
+    "fullImplementation"(libs.tasks.genai)
 
     // Instrumented tests (src/androidTest) — Room DAO tests; require a device/emulator.
     androidTestImplementation(libs.androidx.test.ext.junit)
