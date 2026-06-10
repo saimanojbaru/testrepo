@@ -21,6 +21,25 @@ val NeonAmber = Color(0xFFFFC857)
 // Hero gradient (cyan -> violet -> magenta) for the dashboard momentum hero.
 val HeroGradient = Brush.linearGradient(listOf(Color(0xFF00E5C0), Color(0xFF7C5CFF), Color(0xFFFF4D8D)))
 
+// ── Bright Aurora ("Aurora Glass" light theme) ───────────────────────────────────────────────
+// A near-white canvas the drifting aurora paints onto, deep-but-soft ink for text, and vivid
+// accents that pop on light. Frosted glass = translucent white over the aurora (no real blur on
+// minSdk 26 — the milky fill reads as frost in light mode).
+val AuroraBase = Color(0xFFF7F7FE)    // app background (the aurora's canvas)
+val AuroraInk = Color(0xFF1B1C30)     // primary text — soft indigo-charcoal, not pure black
+val AuroraMuted = Color(0xFF73758F)   // secondary text
+val AuroraMist = Color(0xFFECEDF8)    // low surfaces / dividers / tracks
+val AuroraViolet = Color(0xFF7C5CFF)  // primary accent
+val AuroraCyan = Color(0xFF00C2A8)    // secondary accent (deepened for contrast on white)
+val AuroraPink = Color(0xFFFF4D8D)    // tertiary accent
+val AuroraAmber = Color(0xFFFF9E3D)
+
+// Soft aurora blob tints (drawn as big radial gradients on the near-white base, drifting slowly).
+val AuroraBlobCyan = Color(0xFF5BE9D5)
+val AuroraBlobViolet = Color(0xFFB49BFF)
+val AuroraBlobPink = Color(0xFFFF9DC0)
+val AuroraBlobPeach = Color(0xFFFFD3A8)
+
 // Heatmap intensity ramp for "The Grid" (0..4) — a cohesive 2026 "tech-glow" ladder:
 // charcoal base -> calm recovery teal -> rich emerald -> electric cyan -> peak cyber-purple.
 val Heat0 = Color(0xFF16161E)

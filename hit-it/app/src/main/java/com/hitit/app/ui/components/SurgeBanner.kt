@@ -97,7 +97,7 @@ fun SurgeBanner(
             Text(
                 text = countdown,
                 style = TabularNumberStyle.copy(fontSize = MaterialTheme.typography.headlineSmall.fontSize),
-                color = Color.White,
+                color = accent,
             )
         }
     }

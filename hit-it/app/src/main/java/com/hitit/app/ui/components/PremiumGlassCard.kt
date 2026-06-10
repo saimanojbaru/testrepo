@@ -8,51 +8,43 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.composed
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawWithContent
-import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import kotlin.random.Random
-
-/** Premium glass surface — a hair lifted off the canvas so cards read as carbon, not voids. */
-private val GlassSurface = Color(0xFF14141C)
+import com.hitit.app.ui.theme.AuroraInk
 
 /**
- * Subtle micro-grain so surfaces don't look sterile. The points are remembered once (fixed seed),
- * so per-frame drawing is cheap and stable (no recomposition jitter). Drawn at very low alpha.
+ * Frosted-glass surface for the Aurora (light) theme: a translucent white pane that lets the aurora
+ * glow through, a soft top-lit rim, and a gentle lift shadow so it floats on the canvas. Real blur
+ * needs API 31; in light mode a milky translucent fill reads as frost without it. When [accent] is
+ * set the pane is faintly tinted and its lift shadow takes the accent's colour.
  */
-fun Modifier.subtleNoise(alpha: Float = 0.022f): Modifier = composed {
-    val points = remember {
-        val rng = Random(42)
-        List(220) { Triple(rng.nextFloat(), rng.nextFloat(), rng.nextBoolean()) }
-    }
-    drawWithContent {
-        drawContent()
-        points.forEach { (fx, fy, white) ->
-            drawCircle(
-                color = (if (white) Color.White else Color.Black).copy(alpha = alpha),
-                radius = 1.1f,
-                center = Offset(fx * size.width, fy * size.height),
-            )
-        }
-    }
+fun Modifier.frostedGlass(
+    cornerRadius: Dp = 24.dp,
+    accent: Color? = null,
+    elevation: Dp = 10.dp,
+): Modifier {
+    val shape = RoundedCornerShape(cornerRadius)
+    val glow = accent ?: AuroraInk
+    return this
+        .shadow(elevation = elevation, shape = shape, ambientColor = glow.copy(alpha = 0.18f), spotColor = glow.copy(alpha = 0.22f))
+        .clip(shape)
+        .background(Color.White.copy(alpha = 0.66f))
+        .then(if (accent != null) Modifier.background(accent.copy(alpha = 0.10f)) else Modifier)
+        .border(
+            width = 1.dp,
+            brush = Brush.verticalGradient(listOf(Color.White.copy(alpha = 0.95f), Color.White.copy(alpha = 0.25f))),
+            shape = shape,
+        )
 }
 
-/** Asymmetric "rim light" border: bright at the top edge, fading toward the bottom. */
-fun glassRimBrush(tint: Color = Color.White): Brush = Brush.verticalGradient(
-    colors = listOf(tint.copy(alpha = 0.16f), tint.copy(alpha = 0.02f)),
-)
-
 /**
- * The canonical premium surface: translucent carbon backing + micro-grain + an asymmetric metallic
- * rim that looks like it's catching light from above. When [accent] is set (e.g. a completed rep),
- * the whole card lights up in that accent — a cohesive ambient look instead of disjoint status dots.
+ * The canonical full-width frosted card. Keeps the prior call sites working; now rendered in the
+ * Aurora light style. When [accent] is set (e.g. a completed rep) the whole card lights up in it.
  */
 @Composable
 fun PremiumGlassCard(
@@ -63,15 +55,10 @@ fun PremiumGlassCard(
     rimTint: Color = Color.White,
     content: @Composable BoxScope.() -> Unit,
 ) {
-    val shape = RoundedCornerShape(cornerRadius)
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .clip(shape)
-            .background(GlassSurface)
-            .then(if (accent != null) Modifier.background(accent.copy(alpha = 0.10f)) else Modifier)
-            .subtleNoise()
-            .border(1.dp, if (accent != null) glassRimBrush(accent) else glassRimBrush(rimTint), shape)
+            .frostedGlass(cornerRadius = cornerRadius, accent = accent)
             .padding(contentPadding),
         content = content,
     )

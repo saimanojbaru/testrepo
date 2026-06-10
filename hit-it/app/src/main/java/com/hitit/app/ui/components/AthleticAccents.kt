@@ -21,9 +21,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.hitit.app.ui.theme.AuroraMist
 import com.hitit.app.ui.theme.HeroGradient
 import com.hitit.app.ui.theme.NeonCyan
-import com.hitit.app.ui.theme.SurfaceVariant
 import com.hitit.app.ui.theme.heatColor
 
 /** Big number / header text painted with the energy gradient so it jumps off the dark canvas. */
@@ -62,7 +62,7 @@ fun SegmentedGauge(
                     .weight(1f)
                     .height(height)
                     .clip(RoundedCornerShape(4.dp))
-                    .background(if (on) accent else SurfaceVariant)
+                    .background(if (on) accent else AuroraMist)
                     // Lit cells shimmer; a perfect gauge shimmers a touch brighter.
                     .shimmer(active = on, color = Color.White.copy(alpha = if (allDone) 0.45f else 0.3f)),
             )

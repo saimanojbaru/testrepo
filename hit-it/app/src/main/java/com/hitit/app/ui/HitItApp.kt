@@ -17,7 +17,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavType
@@ -26,6 +28,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.hitit.app.ui.components.AuroraBackground
 import com.hitit.app.ui.components.SpotlightOverlay
 import com.hitit.app.ui.components.SpotlightStep
 import com.hitit.app.ui.components.rememberSpotlightState
@@ -69,11 +72,13 @@ fun HitItApp(
     val showBottomBar = currentRoute in bottomItems.map { it.route }
     val spotlight = rememberSpotlightState()
 
+    AuroraBackground(modifier = Modifier.fillMaxSize()) {
     Box(modifier = Modifier.fillMaxSize()) {
     Scaffold(
+        containerColor = Color.Transparent,
         bottomBar = {
             if (showBottomBar) {
-                NavigationBar {
+                NavigationBar(containerColor = Color.White.copy(alpha = 0.78f), tonalElevation = 0.dp) {
                     bottomItems.forEach { item ->
                         val selected = currentDestination?.hierarchy?.any { it.route == item.route } == true
                         NavigationBarItem(
@@ -223,6 +228,7 @@ fun HitItApp(
                 onFinish = onSpotlightFinished,
             )
         }
+    }
     }
 }
 

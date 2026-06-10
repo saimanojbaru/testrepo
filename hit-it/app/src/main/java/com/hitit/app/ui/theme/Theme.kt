@@ -2,26 +2,29 @@ package com.hitit.app.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
-import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-private val HitItColors = darkColorScheme(
-    primary = NeonCyan,
-    onPrimary = Color(0xFF042029),
-    secondary = NeonLime,
-    onSecondary = Color(0xFF18260A),
-    tertiary = NeonMagenta,
-    background = Background,
-    onBackground = OnDark,
-    surface = Surface,
-    onSurface = OnDark,
-    surfaceVariant = SurfaceVariant,
-    onSurfaceVariant = OnDarkMuted,
-    error = NeonMagenta,
+// Bright "Aurora Glass" — a light, airy canvas with vivid accents and frosted-glass surfaces.
+private val HitItColors = lightColorScheme(
+    primary = AuroraViolet,
+    onPrimary = Color.White,
+    secondary = AuroraCyan,
+    onSecondary = Color.White,
+    tertiary = AuroraPink,
+    onTertiary = Color.White,
+    background = AuroraBase,
+    onBackground = AuroraInk,
+    surface = Color.White,
+    onSurface = AuroraInk,
+    surfaceVariant = AuroraMist,
+    onSurfaceVariant = AuroraMuted,
+    outline = AuroraMuted,
+    error = AuroraPink,
 )
 
 // Punchy, athletic type scale: tight, bold, oversized display/headlines; readable body.
