@@ -48,6 +48,8 @@ data class RepEntity(
     val isSuddenDeath: Boolean = false,
     val isArchived: Boolean = false,
     val sortOrder: Int = 0,
+    /** Streak Sacrifice: hits on/before this date are ignored by the LIVE streak (records keep them). */
+    val streakResetAt: LocalDate? = null,
     val createdDate: LocalDate = LocalDate.now(),
 )
 

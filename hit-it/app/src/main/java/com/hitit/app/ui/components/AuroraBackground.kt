@@ -46,6 +46,12 @@ fun AuroraBackground(
         animationSpec = infiniteRepeatable(tween(16000, easing = LinearEasing), RepeatMode.Restart),
         label = "flow",
     )
+    // VibeShift: a continuously-cycling hue for the psychedelic easter-egg mode (cheap when unused).
+    val hue by transition.animateFloat(
+        initialValue = 0f, targetValue = 360f,
+        animationSpec = infiniteRepeatable(tween(9000, easing = LinearEasing), RepeatMode.Restart),
+        label = "hue",
+    )
 
     // A fixed particle field (remembered once) — positions, sizes, speeds, twinkle phase.
     val particles = remember {
@@ -80,18 +86,31 @@ fun AuroraBackground(
                         ),
                     )
                 }
-                nebula(NebulaViolet, w * (0.22f + 0.10f * drift), h * (0.18f + 0.05f * drift), w * 0.95f)
-                nebula(NebulaTeal, w * (0.85f - 0.10f * drift), h * (0.30f + 0.06f * (1 - drift)), w * 0.85f)
-                nebula(NebulaMagenta, w * (0.70f + 0.08f * drift), h * (0.82f - 0.05f * drift), w * 0.80f)
+                // VibeShift (triple-tap the flame): hue-cycling psychedelic nebulas + hyper particles.
+                val shifted = VibeShiftState.active.value
+                if (shifted) {
+                    nebula(Color.hsv(hue % 360f, 0.85f, 0.62f), w * (0.22f + 0.10f * drift), h * (0.18f + 0.05f * drift), w * 0.95f)
+                    nebula(Color.hsv((hue + 120f) % 360f, 0.85f, 0.58f), w * (0.85f - 0.10f * drift), h * (0.30f + 0.06f * (1 - drift)), w * 0.85f)
+                    nebula(Color.hsv((hue + 240f) % 360f, 0.85f, 0.55f), w * (0.70f + 0.08f * drift), h * (0.82f - 0.05f * drift), w * 0.80f)
+                } else {
+                    nebula(NebulaViolet, w * (0.22f + 0.10f * drift), h * (0.18f + 0.05f * drift), w * 0.95f)
+                    nebula(NebulaTeal, w * (0.85f - 0.10f * drift), h * (0.30f + 0.06f * (1 - drift)), w * 0.85f)
+                    nebula(NebulaMagenta, w * (0.70f + 0.08f * drift), h * (0.82f - 0.05f * drift), w * 0.80f)
+                }
 
                 // Particle flow — each rises slowly and twinkles; wraps around the top.
                 particles.forEach { p ->
-                    val y = ((p.y - flow * p.speed * 0.6f) % 1f + 1f) % 1f
+                    val speedScale = if (shifted) 3f else 0.6f
+                    val y = ((p.y - flow * p.speed * speedScale) % 1f + 1f) % 1f
                     val twinkle = 0.25f + 0.55f * (0.5f + 0.5f * sin((flow * 6.283f * p.speed) + p.twinkle * 6.283f))
-                    val color = if (p.warm) Color(0xFFB98BFF) else Color(0xFF6FE9FF)
+                    val color = when {
+                        shifted -> Color.hsv((hue + p.twinkle * 360f) % 360f, 0.7f, 1f)
+                        p.warm -> Color(0xFFB98BFF)
+                        else -> Color(0xFF6FE9FF)
+                    }
                     drawCircle(
-                        color = color.copy(alpha = twinkle * 0.5f),
-                        radius = p.radius,
+                        color = color.copy(alpha = twinkle * if (shifted) 0.85f else 0.5f),
+                        radius = p.radius * if (shifted) 1.7f else 1f,
                         center = Offset(p.x * w, y * h),
                     )
                 }

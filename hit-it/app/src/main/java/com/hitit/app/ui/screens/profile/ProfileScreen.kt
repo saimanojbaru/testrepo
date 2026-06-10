@@ -132,6 +132,33 @@ fun ProfileScreen(
         NavRow(title = "🎯 Big Plays", subtitle = "Long-term goals & checkpoints", onClick = onOpenBigPlays)
         NavRow(title = "🗄️ The Locker", subtitle = "Your notes", onClick = onOpenLocker)
 
+        if (state.relics.isNotEmpty()) {
+            SectionLabel("Relics of the Void")
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 20.dp, vertical = 4.dp),
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                state.relics.forEach { relic ->
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(14.dp))
+                            .background(MaterialTheme.colorScheme.tertiary.copy(alpha = 0.12f))
+                            .border(1.dp, MaterialTheme.colorScheme.tertiary.copy(alpha = 0.45f), RoundedCornerShape(14.dp))
+                            .padding(horizontal = 12.dp, vertical = 8.dp),
+                    ) {
+                        Text(
+                            text = relic,
+                            style = MaterialTheme.typography.labelMedium,
+                            fontWeight = FontWeight.Bold,
+                            color = MaterialTheme.colorScheme.tertiary,
+                        )
+                    }
+                }
+            }
+        }
+
         SectionLabel("Trophies")
         state.trophies.chunked(2).forEach { rowItems ->
             Row(

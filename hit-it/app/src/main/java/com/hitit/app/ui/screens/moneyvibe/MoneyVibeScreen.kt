@@ -45,6 +45,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hitit.app.ui.components.frostedGlass
 import com.hitit.app.ui.theme.AthleticLabelStyle
 import com.hitit.app.ui.theme.AuroraAmber
+import com.hitit.app.ui.theme.AuroraCyan
 import com.hitit.app.ui.theme.AuroraInk
 import com.hitit.app.ui.theme.AuroraMist
 import com.hitit.app.ui.theme.AuroraMuted
@@ -107,6 +108,10 @@ fun MoneyVibeScreen(
             utilization = state.burnerUtilization,
             onSetBudget = { viewModel.setBurnerBudget(it) },
         )
+
+        if (state.started) {
+            FutureSelfCard(brokeLine = state.futureBrokeLine, glowLine = state.futureGlowLine)
+        }
 
         if (state.expenses.isNotEmpty()) {
             Text(
@@ -290,6 +295,46 @@ private fun BurnerBudgetCard(
                 }
             }
         }
+    }
+}
+
+/** Two timelines, one choice: future broke self vs future glowing self (same money, compounding). */
+@Composable
+private fun FutureSelfCard(brokeLine: String, glowLine: String) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 8.dp)
+            .frostedGlass(cornerRadius = 24.dp)
+            .padding(16.dp),
+    ) {
+        Text(text = "🔮 FUTURE SELF", style = AthleticLabelStyle, color = AuroraMuted)
+        Spacer(Modifier.height(10.dp))
+        Row(verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Text(text = "😵", style = MaterialTheme.typography.headlineSmall)
+            Text(
+                text = brokeLine,
+                style = MaterialTheme.typography.bodySmall,
+                color = AuroraPink,
+                modifier = Modifier.weight(1f),
+            )
+        }
+        Spacer(Modifier.height(10.dp))
+        Row(verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Text(text = "🤑", style = MaterialTheme.typography.headlineSmall)
+            Text(
+                text = glowLine,
+                style = MaterialTheme.typography.bodySmall,
+                color = AuroraCyan,
+                modifier = Modifier.weight(1f),
+            )
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(
+            text = "Projection only, not financial advice — but the math is the math.",
+            style = MaterialTheme.typography.labelSmall,
+            color = AuroraMuted,
+        )
     }
 }
 

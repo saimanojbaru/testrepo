@@ -12,6 +12,7 @@ import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
@@ -50,6 +51,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.text.TextStyle
@@ -62,6 +64,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hitit.app.ui.components.ConfettiOverlay
 import com.hitit.app.ui.components.LifeFlame
+import com.hitit.app.ui.components.RealityGlitchOverlay
+import com.hitit.app.ui.components.VibeShiftState
 import com.hitit.app.ui.components.MomentumSparkline
 import com.hitit.app.ui.components.OdometerText
 import com.hitit.app.ui.components.SurgeBanner
@@ -184,6 +188,8 @@ fun TodayScreen(
         }
 
         ConfettiOverlay(trigger = celebration?.seq?.plus(1) ?: 0L)
+        // Reality Glitch: at extreme momentum, reality artifacts with praise (overlay-only).
+        RealityGlitchOverlay(momentumScore = state.momentumScore)
         LaunchedEffect(celebration) { if (celebration != null) viewModel.consumeCelebration() }
     }
 }
@@ -264,7 +270,25 @@ private fun AuroraHero(
                 )
             }
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                LifeFlame(level = flameLevel, size = 96.dp)
+                // Easter egg: triple-tap the flame to VibeShift the whole cosmos.
+                val shiftHaptics = LocalHapticFeedback.current
+                val tapTimes = remember { longArrayOf(0L, 0L) }
+                LifeFlame(
+                    level = flameLevel,
+                    size = 96.dp,
+                    modifier = Modifier.pointerInput(Unit) {
+                        detectTapGestures(onTap = {
+                            val now = System.currentTimeMillis()
+                            if (now - tapTimes[0] < 700) {
+                                tapTimes[0] = 0L; tapTimes[1] = 0L
+                                shiftHaptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                                VibeShiftState.toggle()
+                            } else {
+                                tapTimes[0] = tapTimes[1]; tapTimes[1] = now
+                            }
+                        })
+                    },
+                )
                 Text(
                     text = "${tier.uppercase()} · LV.$level",
                     style = AthleticLabelStyle,

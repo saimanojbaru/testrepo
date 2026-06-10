@@ -39,6 +39,9 @@ interface RepDao {
     @Query("UPDATE reps SET isArchived = :archived WHERE id = :id")
     suspend fun setArchived(id: Long, archived: Boolean)
 
+    @Query("UPDATE reps SET streakResetAt = :date WHERE id = :id")
+    suspend fun setStreakReset(id: Long, date: java.time.LocalDate)
+
     @Query("UPDATE reps SET restModeStart = :start, restModeEnd = :end WHERE id = :id")
     suspend fun setRestMode(id: Long, start: LocalDate?, end: LocalDate?)
 

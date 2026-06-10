@@ -31,11 +31,16 @@ data class RepDetailState(
     val isResting: Boolean = false,
     val columns: List<List<GridCell>> = emptyList(),
     val isArchived: Boolean = false,
+    val sacrificeEligible: Boolean = false,
+    val sacrificeXp: Long = 0,
+    val sacrificeRelicEmoji: String = "",
+    val sacrificeRitualCopy: String = "",
 )
 
 @HiltViewModel
 class RepDetailViewModel @Inject constructor(
     private val repRepository: RepRepository,
+    private val sacrificeRepository: com.hitit.app.data.repository.SacrificeRepository,
     savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
 
@@ -47,7 +52,8 @@ class RepDetailViewModel @Inject constructor(
     val state: StateFlow<RepDetailState> = combine(
         repRepository.observeRep(repId),
         repRepository.observeHits(repId),
-    ) { rep, hits ->
+        sacrificeRepository.lastSacrificeMonth,
+    ) { rep, hits, _ ->
         latestRep = rep
         if (rep == null) {
             RepDetailState(loaded = true, exists = false)
@@ -69,6 +75,13 @@ class RepDetailViewModel @Inject constructor(
                 isResting = streak.isResting,
                 columns = GridAggregator.yearColumns(today.year, intensityByDate, today),
                 isArchived = rep.isArchived,
+                sacrificeEligible = sacrificeRepository.isEligible(streak.currentStreak, today),
+                sacrificeXp = com.hitit.domain.sacrifice.SacrificeEngine.offerFor(streak.currentStreak).xp,
+                sacrificeRelicEmoji = com.hitit.domain.sacrifice.SacrificeEngine.offerFor(streak.currentStreak).relicEmoji,
+                sacrificeRitualCopy = com.hitit.domain.sacrifice.SacrificeEngine.ritualCopy(
+                    streak.currentStreak,
+                    com.hitit.domain.sacrifice.SacrificeEngine.offerFor(streak.currentStreak),
+                ),
             )
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), RepDetailState())
@@ -80,6 +93,13 @@ class RepDetailViewModel @Inject constructor(
                 (rep.restModeEnd == null || !today.isAfter(rep.restModeEnd))
             if (active) repRepository.setRestMode(rep.id, null, null)
             else repRepository.setRestMode(rep.id, today, null)
+        }
+    }
+
+    fun sacrifice() {
+        val rep = latestRep ?: return
+        viewModelScope.launch {
+            sacrificeRepository.sacrifice(rep.id, state.value.currentStreak, today)
         }
     }
 

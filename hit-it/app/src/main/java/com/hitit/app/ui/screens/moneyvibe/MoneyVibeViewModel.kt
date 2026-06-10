@@ -33,6 +33,8 @@ data class MoneyVibeUiState(
     val burnerBudgetRupees: Long = 0,
     val burnerUtilization: Float? = null,
     val spendDaysLast7: Int = 0,
+    val futureBrokeLine: String = "",
+    val futureGlowLine: String = "",
     val expenses: List<ExpenseUi> = emptyList(),
     val started: Boolean = false,
     val loading: Boolean = true,
@@ -56,6 +58,7 @@ class MoneyVibeViewModel @Inject constructor(
         val burner = burnerSpend ?: 0L
         val utilization = if (budget > 0) burner.toFloat() / budget else null
         val pulse = VibeScore.moneyPulse(days7, utilization)
+        val vision = com.hitit.domain.money.FutureSelf.vision(burner)
         MoneyVibeUiState(
             moneyPulse = pulse,
             pulseLabel = VibeScore.label(pulse),
@@ -64,6 +67,8 @@ class MoneyVibeViewModel @Inject constructor(
             burnerBudgetRupees = budget / 100,
             burnerUtilization = utilization,
             spendDaysLast7 = days7,
+            futureBrokeLine = vision.brokeLine,
+            futureGlowLine = vision.glowLine,
             expenses = recent.map { e ->
                 val cat = runCatching { SpendCategory.valueOf(e.category) }.getOrDefault(SpendCategory.OTHER)
                 ExpenseUi(

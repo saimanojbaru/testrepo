@@ -41,6 +41,16 @@ class AppPreferences @Inject constructor(
         get() = prefs.getLong(KEY_BURNER_BUDGET, 0L)
         set(value) = prefs.edit().putLong(KEY_BURNER_BUDGET, value).apply()
 
+    /** Streak Sacrifice: month key ("2026-06") of the last ritual — one per calendar month. */
+    var lastSacrificeMonth: String?
+        get() = prefs.getString(KEY_SACRIFICE_MONTH, null)
+        set(value) = prefs.edit().putString(KEY_SACRIFICE_MONTH, value).apply()
+
+    /** Relic ids earned from sacrifices, comma-separated. */
+    var relicsCsv: String
+        get() = prefs.getString(KEY_RELICS, "") ?: ""
+        set(value) = prefs.edit().putString(KEY_RELICS, value).apply()
+
     private companion object {
         const val KEY_ONBOARDING = "onboarding_complete"
         const val KEY_DEMO_SEEDED = "demo_seeded"
@@ -48,5 +58,7 @@ class AppPreferences @Inject constructor(
         const val KEY_LLM_ENABLED = "llm_coach_enabled"
         const val KEY_LLM_MODEL_PATH = "llm_model_path"
         const val KEY_BURNER_BUDGET = "burner_budget_paise"
+        const val KEY_SACRIFICE_MONTH = "last_sacrifice_month"
+        const val KEY_RELICS = "relics_csv"
     }
 }

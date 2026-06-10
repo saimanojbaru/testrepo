@@ -84,8 +84,12 @@ class RepRepository @Inject constructor(
     }
 
     /** Compute a streak from already-loaded data (pure-domain engine). */
-    fun streakFor(rep: RepEntity, hits: List<RepHitEntity>, today: LocalDate): StreakResult =
-        streakCalculator.calculate(rep.toCore(), hits.map { it.toHitDay() }, today)
+    fun streakFor(rep: RepEntity, hits: List<RepHitEntity>, today: LocalDate): StreakResult {
+        // Streak Sacrifice: the LIVE streak ignores hits on/before the reset date. Personal records
+        // (observeBestStreak / trophies) deliberately keep the full history.
+        val counted = rep.streakResetAt?.let { reset -> hits.filter { it.date.isAfter(reset) } } ?: hits
+        return streakCalculator.calculate(rep.toCore(), counted.map { it.toHitDay() }, today)
+    }
 
     /** A compact snapshot of today's active Reps for the home-screen widget. */
     suspend fun todaySnapshot(today: LocalDate): TodaySnapshot {

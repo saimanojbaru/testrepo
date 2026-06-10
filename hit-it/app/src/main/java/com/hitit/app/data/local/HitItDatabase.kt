@@ -54,7 +54,7 @@ import com.hitit.app.data.local.entity.UserProfileEntity
         FoodEntryEntity::class,
         ExpenseEntity::class,
     ],
-    version = 11,
+    version = 12,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)

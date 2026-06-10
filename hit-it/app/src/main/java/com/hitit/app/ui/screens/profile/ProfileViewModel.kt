@@ -57,6 +57,7 @@ data class ProfileUiState(
     val tasksCompleted: Int = 0,
     val bestStreak: Int = 0,
     val flameLevel: Int = 1,
+    val relics: List<String> = emptyList(),
     val trophies: List<TrophyUi> = emptyList(),
     val identities: List<IdentityUi> = emptyList(),
     val tiers: List<TierRowUi> = emptyList(),
@@ -69,6 +70,7 @@ class ProfileViewModel @Inject constructor(
     private val trophyRepository: TrophyRepository,
     private val identityRepository: com.hitit.app.data.repository.IdentityRepository,
     private val demoSeeder: com.hitit.app.data.DemoSeeder,
+    sacrificeRepository: com.hitit.app.data.repository.SacrificeRepository,
     ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
     bodyRepository: com.hitit.app.data.repository.BodyRepository,
     moneyRepository: com.hitit.app.data.repository.MoneyRepository,
@@ -129,7 +131,8 @@ class ProfileViewModel @Inject constructor(
         trophyRepository.observeUnlocked(),
         identityRepository.observeUnlocked(),
         pillars,
-    ) { stats, unlocked, unlockedIdentities, vibe ->
+        sacrificeRepository.relics,
+    ) { stats, unlocked, unlockedIdentities, vibe, relicIds ->
         val unlockedIds = unlocked.map { it.id }.toSet()
         val identityIds = unlockedIdentities.map { it.id }.toSet()
         val vibeScore = com.hitit.domain.vibe.VibeScore.compose(vibe.habit, vibe.body, vibe.money)
@@ -137,6 +140,7 @@ class ProfileViewModel @Inject constructor(
             vibeScore = vibeScore,
             vibeAvatar = com.hitit.domain.vibe.VibeScore.avatarFor(vibeScore),
             vibeLabel = com.hitit.domain.vibe.VibeScore.label(vibeScore),
+            relics = relicIds.mapNotNull { RELIC_NAMES[it] },
             habitPulse = vibe.habit,
             bodyPulse = vibe.body,
             moneyPulse = vibe.money,
@@ -167,4 +171,12 @@ class ProfileViewModel @Inject constructor(
             loading = false,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), ProfileUiState())
+
+    private companion object {
+        val RELIC_NAMES = mapOf(
+            "relic_ember" to "\ud83d\udf02 Ember Relic",
+            "relic_blade" to "\ud83d\udde1\ufe0f Blade Relic",
+            "relic_eclipse" to "\ud83c\udf11 Eclipse Relic",
+        )
+    }
 }

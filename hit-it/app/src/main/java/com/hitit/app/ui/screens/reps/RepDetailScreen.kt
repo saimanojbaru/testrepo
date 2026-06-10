@@ -22,6 +22,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -33,6 +34,7 @@ import com.hitit.app.ui.components.EmptyState
 import com.hitit.app.ui.components.Heatmap
 import com.hitit.app.ui.components.HeatmapLegend
 import com.hitit.app.ui.components.SectionLabel
+import com.hitit.app.ui.components.frostedGlass
 
 @Composable
 fun RepDetailScreen(
@@ -103,6 +105,16 @@ fun RepDetailScreen(
             Switch(checked = state.isResting, onCheckedChange = { viewModel.toggleRestMode() })
         }
 
+        // Streak Sacrifice — the once-a-month ritual, shown only when the altar will accept.
+        if (state.sacrificeEligible) {
+            SacrificeAltar(
+                relicEmoji = state.sacrificeRelicEmoji,
+                xp = state.sacrificeXp,
+                ritualCopy = state.sacrificeRitualCopy,
+                onSacrifice = { viewModel.sacrifice() },
+            )
+        }
+
         SectionLabel("This year")
         Heatmap(
             columns = state.columns,
@@ -120,6 +132,52 @@ fun RepDetailScreen(
             Text(if (state.isArchived) "Unarchive" else "Archive")
         }
         Spacer(Modifier.height(32.dp))
+    }
+}
+
+/** The void's storefront: arm with one tap, feed the streak with the second. No refunds. */
+@Composable
+private fun SacrificeAltar(
+    relicEmoji: String,
+    xp: Long,
+    ritualCopy: String,
+    onSacrifice: () -> Unit,
+) {
+    var armed by androidx.compose.runtime.remember { androidx.compose.runtime.mutableStateOf(false) }
+    val pink = com.hitit.app.ui.theme.AuroraPink
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 8.dp)
+            .frostedGlass(cornerRadius = 24.dp, accent = pink)
+            .padding(16.dp),
+    ) {
+        Text(
+            text = "🕳️ STREAK SACRIFICE",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = androidx.compose.ui.text.font.FontWeight.Black,
+            color = pink,
+        )
+        Spacer(Modifier.height(6.dp))
+        Text(
+            text = ritualCopy,
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Spacer(Modifier.height(12.dp))
+        OutlinedButton(
+            onClick = {
+                if (!armed) armed = true else onSacrifice()
+            },
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Text(
+                text = if (!armed) "$relicEmoji  Approach the altar (+$xp ⚡)"
+                else "⚠️ FEED THE VOID — this kills the streak",
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Black,
+                color = if (armed) pink else MaterialTheme.colorScheme.onSurface,
+            )
+        }
     }
 }
 
