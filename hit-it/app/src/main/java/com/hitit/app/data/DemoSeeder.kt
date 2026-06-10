@@ -31,6 +31,7 @@ class DemoSeeder @Inject constructor(
     private val ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
     private val bodyRepository: com.hitit.app.data.repository.BodyRepository,
     private val moneyRepository: com.hitit.app.data.repository.MoneyRepository,
+    private val yogaRepository: com.hitit.app.data.repository.YogaRepository,
     private val prefs: AppPreferences,
 ) {
     suspend fun seedIfNeeded() {
@@ -112,6 +113,7 @@ class DemoSeeder @Inject constructor(
         ledgerRepository.clearAll()
         bodyRepository.clearAll()
         moneyRepository.clearAll()
+        yogaRepository.clearAll()
         profileRepository.resetAll(LocalDate.now())
     }
 

@@ -18,6 +18,8 @@ import com.hitit.app.data.local.dao.RepHitDao
 import com.hitit.app.data.local.dao.SuddenDeathDao
 import com.hitit.app.data.local.dao.TrophyDao
 import com.hitit.app.data.local.dao.UserProfileDao
+import com.hitit.app.data.local.dao.YogaPoseDao
+import com.hitit.app.data.local.dao.YogaSessionDao
 import com.hitit.app.data.local.entity.BigPlayEntity
 import com.hitit.app.data.local.entity.CheckInEntity
 import com.hitit.app.data.local.entity.CheckpointEntity
@@ -34,6 +36,8 @@ import com.hitit.app.data.local.entity.RepHitEntity
 import com.hitit.app.data.local.entity.SuddenDeathPenaltyEntity
 import com.hitit.app.data.local.entity.TrophyEntity
 import com.hitit.app.data.local.entity.UserProfileEntity
+import com.hitit.app.data.local.entity.YogaPoseEntity
+import com.hitit.app.data.local.entity.YogaSessionEntity
 
 @Database(
     entities = [
@@ -53,8 +57,10 @@ import com.hitit.app.data.local.entity.UserProfileEntity
         DailyLedgerEntity::class,
         FoodEntryEntity::class,
         ExpenseEntity::class,
+        YogaPoseEntity::class,
+        YogaSessionEntity::class,
     ],
-    version = 12,
+    version = 13,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)
@@ -74,4 +80,6 @@ abstract class HitItDatabase : RoomDatabase() {
     abstract fun dailyLedgerDao(): DailyLedgerDao
     abstract fun foodEntryDao(): FoodEntryDao
     abstract fun expenseDao(): ExpenseDao
+    abstract fun yogaPoseDao(): YogaPoseDao
+    abstract fun yogaSessionDao(): YogaSessionDao
 }

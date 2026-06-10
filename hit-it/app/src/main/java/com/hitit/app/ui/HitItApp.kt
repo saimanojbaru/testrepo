@@ -124,9 +124,30 @@ fun HitItApp(
                 )
             }
             composable(Dest.BODYFLOW) {
-                BodyFlowScreen(onCheckIn = { navController.navigate(Dest.CHECK_IN) })
+                BodyFlowScreen(
+                    onCheckIn = { navController.navigate(Dest.CHECK_IN) },
+                    onOpenYoga = { navController.navigate(Dest.YOGA) },
+                )
             }
             composable(Dest.MONEYVIBE) { MoneyVibeScreen() }
+            composable(Dest.YOGA) {
+                com.hitit.app.ui.screens.yoga.YogaScreen(
+                    onBack = { navController.popBackStack() },
+                    onCapturePose = { navController.navigate(Dest.poseStudio()) },
+                    onPractice = { navController.navigate(Dest.poseStudio(it)) },
+                )
+            }
+            composable(
+                route = Dest.POSE_STUDIO,
+                arguments = listOf(
+                    navArgument(Dest.ARG_POSE_ID) {
+                        type = NavType.LongType
+                        defaultValue = Dest.NEW_POSE_ID
+                    },
+                ),
+            ) {
+                com.hitit.app.ui.screens.yoga.PoseStudioScreen(onDone = { navController.popBackStack() })
+            }
             composable(Dest.REPS) {
                 RepsScreen(
                     onAddRep = { navController.navigate(Dest.repEdit()) },

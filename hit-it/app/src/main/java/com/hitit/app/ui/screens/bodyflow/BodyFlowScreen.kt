@@ -55,6 +55,7 @@ import com.hitit.domain.body.FoodEstimator
 @Composable
 fun BodyFlowScreen(
     onCheckIn: () -> Unit,
+    onOpenYoga: () -> Unit = {},
     viewModel: BodyFlowViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -105,6 +106,33 @@ fun BodyFlowScreen(
             onDelete = { viewModel.deleteEntry(it) },
         )
 
+        // Pose Freak — the autonomous yoga form-checker.
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 8.dp)
+                .frostedGlass(cornerRadius = 22.dp, accent = AuroraViolet)
+                .clickable(onClick = onOpenYoga)
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(14.dp),
+        ) {
+            Text(text = "🧘", style = MaterialTheme.typography.headlineSmall)
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "Pose Freak",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = AuroraInk,
+                )
+                Text(
+                    text = "Teach it a pose once — it grades your form live and calls out the joint that's off.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = AuroraMuted,
+                )
+            }
+        }
+
         // Honest roadmap teaser — real integrations land in the next drops, no fake UI.
         Column(
             modifier = Modifier
@@ -116,7 +144,7 @@ fun BodyFlowScreen(
             Text(text = "NEXT DROPS", style = AthleticLabelStyle, color = AuroraMuted)
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "👟 Steps, sleep & heart rate via Health Connect\n🧘 Yoga flows with streaks\n📸 Photo food diary",
+                text = "👟 Steps, sleep & heart rate via Health Connect\n📸 Photo food diary",
                 style = MaterialTheme.typography.bodyMedium,
                 color = AuroraInk,
                 lineHeight = MaterialTheme.typography.bodyLarge.lineHeight,

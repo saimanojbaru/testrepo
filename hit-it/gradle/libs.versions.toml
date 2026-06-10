@@ -38,6 +38,8 @@ glance = "1.1.1"          # latest stable Glance; Compose BOM overrides its olde
 
 # --- On-device LLM (optional Coach rephraser) ---
 tasksGenai = "0.10.29"    # MediaPipe LLM Inference; proven sample pin. ~5-6MB native libs, safe when model absent
+tasksVision = "0.10.29"   # MediaPipe Pose Landmarker; pinned to match genai. Ships arm64+v7a+x86(64) natives
+camerax = "1.6.1"         # latest stable (verified on Google Maven 2026-06)
 
 # --- Testing ---
 junit4 = "4.13.2"
@@ -97,6 +99,11 @@ glance-material3 = { group = "androidx.glance", name = "glance-material3", versi
 
 # On-device LLM
 tasks-genai = { group = "com.google.mediapipe", name = "tasks-genai", version.ref = "tasksGenai" }
+tasks-vision = { group = "com.google.mediapipe", name = "tasks-vision", version.ref = "tasksVision" }
+camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "camerax" }
+camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camerax" }
+camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camerax" }
+camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "camerax" }
 
 # Testing
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }

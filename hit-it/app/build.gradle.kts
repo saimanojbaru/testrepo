@@ -34,7 +34,10 @@ android {
         }
         create("full") {
             dimension = "distribution"
-            ndk { abiFilters += "arm64-v8a" }
+            // arm64 + 32-bit ARM so real phones of both kinds can run the AI features. The LLM
+            // (tasks-genai) ships arm64-only natives — on a v7a install it self-disables via the
+            // existing null-fallback; pose detection (tasks-vision) works on both.
+            ndk { abiFilters += listOf("arm64-v8a", "armeabi-v7a") }
         }
     }
 
@@ -104,6 +107,15 @@ dependencies {
     // present (app falls back to the rule-based coach). The lite flavor omits it entirely, which is
     // what keeps that build small and free of per-ABI native libs. No INTERNET permission needed.
     "fullImplementation"(libs.tasks.genai)
+
+    // Pose Freak (FULL flavor only): on-device pose detection + live camera. The 5.5MB landmarker
+    // model is bundled in src/full/assets. tasks-vision ships v7a natives, so 32-bit phones get
+    // the judge too (the LLM stays arm64-only and self-disables elsewhere).
+    "fullImplementation"(libs.tasks.vision)
+    "fullImplementation"(libs.camera.core)
+    "fullImplementation"(libs.camera.camera2)
+    "fullImplementation"(libs.camera.lifecycle)
+    "fullImplementation"(libs.camera.view)
 
     // Instrumented tests (src/androidTest) — Room DAO tests; require a device/emulator.
     androidTestImplementation(libs.androidx.test.ext.junit)
