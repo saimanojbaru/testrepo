@@ -1,12 +1,14 @@
 package com.hitit.app.ui.navigation
 
-/** Navigation routes for "Hit it". */
+/** Navigation routes for VibeOS. */
 object Dest {
     const val TODAY = "today"
     const val REPS = "reps"
     const val HITS = "hits"
     const val GRID = "grid"
     const val PROFILE = "profile"
+    const val BODYFLOW = "bodyflow"
+    const val MONEYVIBE = "moneyvibe"
 
     const val LOCK_IN = "lock_in"
     const val CHECK_IN = "check_in"

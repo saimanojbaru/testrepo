@@ -5,10 +5,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarToday
-import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.EmojiEvents
+import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.GridView
-import androidx.compose.material.icons.filled.Repeat
+import androidx.compose.material.icons.filled.Paid
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -37,6 +37,8 @@ import com.hitit.app.ui.navigation.Dest
 import com.hitit.app.ui.screens.bigplays.BigPlayDetailScreen
 import com.hitit.app.ui.screens.bigplays.BigPlayEditScreen
 import com.hitit.app.ui.screens.bigplays.BigPlaysScreen
+import com.hitit.app.ui.screens.bodyflow.BodyFlowScreen
+import com.hitit.app.ui.screens.moneyvibe.MoneyVibeScreen
 import com.hitit.app.ui.screens.checkin.CheckInScreen
 import com.hitit.app.ui.screens.coach.CoachScreen
 import com.hitit.app.ui.screens.grid.GridScreen
@@ -52,10 +54,12 @@ import com.hitit.app.ui.screens.today.TodayScreen
 
 private data class BottomItem(val route: String, val label: String, val icon: ImageVector)
 
+// The five pillars of VibeOS. Reps + Hits stay one tap away from Home (rail "see all" links),
+// keeping the bar at Material's 5-item sweet spot instead of a cramped 7.
 private val bottomItems = listOf(
     BottomItem(Dest.TODAY, "Home", Icons.Filled.CalendarToday),
-    BottomItem(Dest.REPS, "Reps", Icons.Filled.Repeat),
-    BottomItem(Dest.HITS, "Hits", Icons.Filled.CheckCircle),
+    BottomItem(Dest.BODYFLOW, "Body", Icons.Filled.FavoriteBorder),
+    BottomItem(Dest.MONEYVIBE, "Money", Icons.Filled.Paid),
     BottomItem(Dest.GRID, "Grid", Icons.Filled.GridView),
     BottomItem(Dest.PROFILE, "Profile", Icons.Filled.EmojiEvents),
 )
@@ -69,7 +73,8 @@ fun HitItApp(
     val backStackEntry by navController.currentBackStackEntryAsState()
     val currentDestination = backStackEntry?.destination
     val currentRoute = currentDestination?.route
-    val showBottomBar = currentRoute in bottomItems.map { it.route }
+    // Reps/Hits left the bar but are still top-level lists — keep the bar visible there.
+    val showBottomBar = currentRoute in bottomItems.map { it.route } + listOf(Dest.REPS, Dest.HITS)
     val spotlight = rememberSpotlightState()
 
     AuroraBackground(modifier = Modifier.fillMaxSize()) {
@@ -114,8 +119,14 @@ fun HitItApp(
                     onOpenRep = { navController.navigate(Dest.repDetail(it)) },
                     onLockIn = { navController.navigate(Dest.LOCK_IN) },
                     onCheckIn = { navController.navigate(Dest.CHECK_IN) },
+                    onSeeAllReps = { navController.navigate(Dest.REPS) },
+                    onSeeAllHits = { navController.navigate(Dest.HITS) },
                 )
             }
+            composable(Dest.BODYFLOW) {
+                BodyFlowScreen(onCheckIn = { navController.navigate(Dest.CHECK_IN) })
+            }
+            composable(Dest.MONEYVIBE) { MoneyVibeScreen() }
             composable(Dest.REPS) {
                 RepsScreen(
                     onAddRep = { navController.navigate(Dest.repEdit()) },

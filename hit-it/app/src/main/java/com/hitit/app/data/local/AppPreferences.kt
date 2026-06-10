@@ -36,11 +36,17 @@ class AppPreferences @Inject constructor(
         get() = prefs.getString(KEY_LLM_MODEL_PATH, null)
         set(value) = prefs.edit().putString(KEY_LLM_MODEL_PATH, value).apply()
 
+    /** Weekly "Burner Budget" (fun-money cap) in paise; 0 = off. */
+    var burnerBudgetPaise: Long
+        get() = prefs.getLong(KEY_BURNER_BUDGET, 0L)
+        set(value) = prefs.edit().putLong(KEY_BURNER_BUDGET, value).apply()
+
     private companion object {
         const val KEY_ONBOARDING = "onboarding_complete"
         const val KEY_DEMO_SEEDED = "demo_seeded"
         const val KEY_NOTIF_ASKED = "notif_permission_asked"
         const val KEY_LLM_ENABLED = "llm_coach_enabled"
         const val KEY_LLM_MODEL_PATH = "llm_model_path"
+        const val KEY_BURNER_BUDGET = "burner_budget_paise"
     }
 }

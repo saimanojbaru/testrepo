@@ -35,6 +35,7 @@ import com.hitit.app.ui.components.LifeFlame
 import com.hitit.app.ui.components.MomentumHeader
 import com.hitit.app.ui.components.ScreenHeader
 import com.hitit.app.ui.components.SectionLabel
+import com.hitit.app.ui.components.frostedGlass
 import com.hitit.domain.flame.LifeFlame as FlameModel
 
 @Composable
@@ -52,6 +53,15 @@ fun ProfileScreen(
             .verticalScroll(rememberScrollState()),
     ) {
         ScreenHeader(title = "Profile")
+
+        VibeScoreCard(
+            avatar = state.vibeAvatar,
+            score = state.vibeScore,
+            label = state.vibeLabel,
+            habit = state.habitPulse,
+            body = state.bodyPulse,
+            money = state.moneyPulse,
+        )
 
         MomentumHeader(
             tier = state.tier,
@@ -177,6 +187,74 @@ fun ProfileScreen(
         }
 
         Spacer(Modifier.height(32.dp))
+    }
+}
+
+/** The face of VibeOS: evolving avatar + composite Vibe Score with the three pillar pulses. */
+@Composable
+private fun VibeScoreCard(
+    avatar: String,
+    score: Int,
+    label: String,
+    habit: Int?,
+    body: Int?,
+    money: Int?,
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .frostedGlass(cornerRadius = 26.dp)
+            .padding(18.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
+    ) {
+        Text(text = avatar, style = MaterialTheme.typography.displayMedium)
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = "VIBE SCORE",
+                style = MaterialTheme.typography.labelMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Row(verticalAlignment = Alignment.Bottom) {
+                Text(
+                    text = "$score",
+                    style = MaterialTheme.typography.displaySmall,
+                    fontWeight = FontWeight.Black,
+                    color = MaterialTheme.colorScheme.primary,
+                )
+                Text(
+                    text = "  $label",
+                    style = MaterialTheme.typography.titleSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.padding(bottom = 6.dp),
+                )
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                PillarChip("⚡", habit)
+                PillarChip("🫀", body)
+                PillarChip("💸", money)
+            }
+        }
+    }
+}
+
+@Composable
+private fun PillarChip(emoji: String, pulse: Int?) {
+    Box(
+        modifier = Modifier
+            .clip(RoundedCornerShape(10.dp))
+            .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.6f))
+            .padding(horizontal = 8.dp, vertical = 4.dp),
+    ) {
+        Text(
+            text = "$emoji ${pulse?.toString() ?: "—"}",
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            color = if (pulse != null) MaterialTheme.colorScheme.onSurface
+            else MaterialTheme.colorScheme.onSurfaceVariant,
+        )
     }
 }
 

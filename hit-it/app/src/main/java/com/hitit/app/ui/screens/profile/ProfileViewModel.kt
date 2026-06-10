@@ -41,6 +41,12 @@ data class IdentityUi(
 )
 
 data class ProfileUiState(
+    val vibeScore: Int = 0,
+    val vibeAvatar: String = "😴",
+    val vibeLabel: String = "",
+    val habitPulse: Int? = null,
+    val bodyPulse: Int? = null,
+    val moneyPulse: Int? = null,
     val tier: String = "Rookie",
     val level: Int = 1,
     val progress: Float = 0f,
@@ -63,9 +69,45 @@ class ProfileViewModel @Inject constructor(
     private val trophyRepository: TrophyRepository,
     private val identityRepository: com.hitit.app.data.repository.IdentityRepository,
     private val demoSeeder: com.hitit.app.data.DemoSeeder,
+    ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
+    bodyRepository: com.hitit.app.data.repository.BodyRepository,
+    moneyRepository: com.hitit.app.data.repository.MoneyRepository,
+    checkInRepository: com.hitit.app.data.repository.CheckInRepository,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
+
+    /** The three Vibe pillars; a pillar is null until the user has touched it (weight redistributes). */
+    private data class Pillars(val habit: Int?, val body: Int?, val money: Int?)
+
+    private val pillars = combine(
+        // Habit pulse: average finalized Momentum over the last week of the strict ledger.
+        ledgerRepository.observeRecent(7, today),
+        combine(
+            bodyRepository.observeFoodDaysLast7(today),
+            bodyRepository.observeHasAnyLogs(),
+            checkInRepository.observeForDate(today),
+        ) { days7, anyFood, checkIn ->
+            val checkedIn = checkIn != null &&
+                (checkIn.morning.isNotBlank() || checkIn.evening.isNotBlank() || checkIn.mood != null)
+            if (anyFood == 0 && !checkedIn) null else com.hitit.domain.vibe.VibeScore.bodyPulse(days7, checkedIn)
+        },
+        combine(
+            moneyRepository.observeSpendDaysLast7(today),
+            moneyRepository.observeWeekBurnerSpend(today),
+            moneyRepository.observeHasAnyLogs(),
+        ) { days7, burnerSpend, anySpend ->
+            if (anySpend == 0) null
+            else {
+                val budget = moneyRepository.burnerBudgetPaise
+                val utilization = if (budget > 0) (burnerSpend ?: 0L).toFloat() / budget else null
+                com.hitit.domain.vibe.VibeScore.moneyPulse(days7, utilization)
+            }
+        },
+    ) { ledger, body, money ->
+        val habit = if (ledger.isEmpty()) null else ledger.map { it.momentumScore }.average().toInt()
+        Pillars(habit, body, money)
+    }
 
     init {
         // Persist any newly-earned Trophies and Identities whenever the stats change (idempotent).
@@ -86,10 +128,18 @@ class ProfileViewModel @Inject constructor(
         statsRepository.observeStats(today),
         trophyRepository.observeUnlocked(),
         identityRepository.observeUnlocked(),
-    ) { stats, unlocked, unlockedIdentities ->
+        pillars,
+    ) { stats, unlocked, unlockedIdentities, vibe ->
         val unlockedIds = unlocked.map { it.id }.toSet()
         val identityIds = unlockedIdentities.map { it.id }.toSet()
+        val vibeScore = com.hitit.domain.vibe.VibeScore.compose(vibe.habit, vibe.body, vibe.money)
         ProfileUiState(
+            vibeScore = vibeScore,
+            vibeAvatar = com.hitit.domain.vibe.VibeScore.avatarFor(vibeScore),
+            vibeLabel = com.hitit.domain.vibe.VibeScore.label(vibeScore),
+            habitPulse = vibe.habit,
+            bodyPulse = vibe.body,
+            moneyPulse = vibe.money,
             tier = TierLadder.tierFor(stats.level).name,
             level = stats.level,
             progress = LevelCurve.progressToNext(stats.momentum),

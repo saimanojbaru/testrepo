@@ -6,6 +6,8 @@ import androidx.room.TypeConverters
 import com.hitit.app.data.local.dao.BigPlayDao
 import com.hitit.app.data.local.dao.CheckInDao
 import com.hitit.app.data.local.dao.DailyLedgerDao
+import com.hitit.app.data.local.dao.ExpenseDao
+import com.hitit.app.data.local.dao.FoodEntryDao
 import com.hitit.app.data.local.dao.HitTaskDao
 import com.hitit.app.data.local.dao.IdentityDao
 import com.hitit.app.data.local.dao.LockInSessionDao
@@ -20,6 +22,8 @@ import com.hitit.app.data.local.entity.BigPlayEntity
 import com.hitit.app.data.local.entity.CheckInEntity
 import com.hitit.app.data.local.entity.CheckpointEntity
 import com.hitit.app.data.local.entity.DailyLedgerEntity
+import com.hitit.app.data.local.entity.ExpenseEntity
+import com.hitit.app.data.local.entity.FoodEntryEntity
 import com.hitit.app.data.local.entity.HitTaskEntity
 import com.hitit.app.data.local.entity.IdentityEntity
 import com.hitit.app.data.local.entity.LockInSessionEntity
@@ -47,8 +51,10 @@ import com.hitit.app.data.local.entity.UserProfileEntity
         SuddenDeathPenaltyEntity::class,
         IdentityEntity::class,
         DailyLedgerEntity::class,
+        FoodEntryEntity::class,
+        ExpenseEntity::class,
     ],
-    version = 10,
+    version = 11,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)
@@ -66,4 +72,6 @@ abstract class HitItDatabase : RoomDatabase() {
     abstract fun suddenDeathDao(): SuddenDeathDao
     abstract fun identityDao(): IdentityDao
     abstract fun dailyLedgerDao(): DailyLedgerDao
+    abstract fun foodEntryDao(): FoodEntryDao
+    abstract fun expenseDao(): ExpenseDao
 }

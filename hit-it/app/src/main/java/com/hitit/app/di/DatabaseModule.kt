@@ -71,4 +71,10 @@ object DatabaseModule {
     @Provides
     fun provideDailyLedgerDao(db: HitItDatabase): com.hitit.app.data.local.dao.DailyLedgerDao =
         db.dailyLedgerDao()
+
+    @Provides
+    fun provideFoodEntryDao(db: HitItDatabase): com.hitit.app.data.local.dao.FoodEntryDao = db.foodEntryDao()
+
+    @Provides
+    fun provideExpenseDao(db: HitItDatabase): com.hitit.app.data.local.dao.ExpenseDao = db.expenseDao()
 }

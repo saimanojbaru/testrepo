@@ -84,6 +84,8 @@ fun TodayScreen(
     onOpenRep: (Long) -> Unit,
     onLockIn: () -> Unit,
     onCheckIn: () -> Unit,
+    onSeeAllReps: () -> Unit = {},
+    onSeeAllHits: () -> Unit = {},
     viewModel: TodayViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -132,10 +134,12 @@ fun TodayScreen(
                 hits = "${state.hitsDoneToday}",
                 focus = "${state.focusMinutesToday}m",
                 mood = state.checkInMood?.let { "$it" } ?: "—",
+                onRepsTap = onSeeAllReps,
+                onHitsTap = onSeeAllHits,
             )
 
             // Reps as a horizontal swipe rail — the dashboard's core, no endless vertical stack.
-            RailHeader(title = "Today's reps", trailing = "${state.repsDone}/${state.repsTotal} done")
+            RailHeader(title = "Today's reps", trailing = "See all →", onTrailingClick = onSeeAllReps)
             LazyRow(
                 modifier = Modifier.fillMaxWidth(),
                 contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 20.dp),
@@ -195,7 +199,7 @@ private fun AuroraTopBar(dateLabel: String, onLockIn: () -> Unit, onAddRep: () -
     ) {
         Column {
             Text(
-                text = "Hit it",
+                text = "VibeOS",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Black,
                 color = AuroraInk,
@@ -297,7 +301,14 @@ private fun AuroraHero(
 }
 
 @Composable
-private fun StatStrip(reps: String, hits: String, focus: String, mood: String) {
+private fun StatStrip(
+    reps: String,
+    hits: String,
+    focus: String,
+    mood: String,
+    onRepsTap: () -> Unit = {},
+    onHitsTap: () -> Unit = {},
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -306,9 +317,9 @@ private fun StatStrip(reps: String, hits: String, focus: String, mood: String) {
             .padding(vertical = 16.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        StatCell("Reps", reps, AuroraViolet, Modifier.weight(1f))
+        StatCell("Reps", reps, AuroraViolet, Modifier.weight(1f).clickable(onClick = onRepsTap))
         StatDivider()
-        StatCell("Hits", hits, AuroraCyan, Modifier.weight(1f))
+        StatCell("Hits", hits, AuroraCyan, Modifier.weight(1f).clickable(onClick = onHitsTap))
         StatDivider()
         StatCell("Focus", focus, AuroraPink, Modifier.weight(1f))
         StatDivider()
@@ -340,7 +351,7 @@ private fun StatDivider() {
 }
 
 @Composable
-private fun RailHeader(title: String, trailing: String) {
+private fun RailHeader(title: String, trailing: String, onTrailingClick: (() -> Unit)? = null) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -350,7 +361,13 @@ private fun RailHeader(title: String, trailing: String) {
     ) {
         Text(text = title, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Black, color = AuroraInk)
         if (trailing.isNotEmpty()) {
-            Text(text = trailing, style = MaterialTheme.typography.labelMedium, color = AuroraMuted)
+            Text(
+                text = trailing,
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = if (onTrailingClick != null) FontWeight.Bold else null,
+                color = if (onTrailingClick != null) AuroraViolet else AuroraMuted,
+                modifier = if (onTrailingClick != null) Modifier.clickable(onClick = onTrailingClick) else Modifier,
+            )
         }
     }
 }
