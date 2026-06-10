@@ -459,7 +459,7 @@ private fun AddRepTile(onClick: () -> Unit) {
             .width(156.dp)
             .height(166.dp)
             .clip(RoundedCornerShape(24.dp))
-            .background(Color.White.copy(alpha = 0.35f))
+            .background(AuroraMist.copy(alpha = 0.5f))
             .clickable(onClick = onClick),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,

@@ -15,37 +15,37 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.hitit.app.ui.theme.AuroraInk
+import com.hitit.app.ui.theme.AuroraViolet
+import com.hitit.app.ui.theme.CyberGlass
 
 /**
- * Frosted-glass surface for the Aurora (light) theme: a translucent white pane that lets the aurora
- * glow through, a soft top-lit rim, and a gentle lift shadow so it floats on the canvas. Real blur
- * needs API 31; in light mode a milky translucent fill reads as frost without it. When [accent] is
- * set the pane is faintly tinted and its lift shadow takes the accent's colour.
+ * Cyber-Dreamcore glass: a smoky translucent panel over the cosmic nebula with a neon rim and a soft
+ * coloured glow shadow (which reads as outer-glow on the dark canvas — real blur needs API 31). When
+ * [accent] is set the rim + glow take that colour and the fill is faintly tinted; otherwise a calm
+ * violet glow. Eye-friendly: the surface is dark, the neon is only on the 1px edge + glow.
  */
 fun Modifier.frostedGlass(
     cornerRadius: Dp = 24.dp,
     accent: Color? = null,
-    elevation: Dp = 10.dp,
+    elevation: Dp = 12.dp,
 ): Modifier {
     val shape = RoundedCornerShape(cornerRadius)
-    val glow = accent ?: AuroraInk
+    val glow = accent ?: AuroraViolet
     return this
-        .shadow(elevation = elevation, shape = shape, ambientColor = glow.copy(alpha = 0.18f), spotColor = glow.copy(alpha = 0.22f))
+        .shadow(elevation = elevation, shape = shape, ambientColor = glow.copy(alpha = 0.55f), spotColor = glow.copy(alpha = 0.65f))
         .clip(shape)
-        .background(Color.White.copy(alpha = 0.66f))
-        .then(if (accent != null) Modifier.background(accent.copy(alpha = 0.10f)) else Modifier)
+        .background(CyberGlass.copy(alpha = 0.72f))
+        .then(if (accent != null) Modifier.background(accent.copy(alpha = 0.12f)) else Modifier)
         .border(
             width = 1.dp,
-            brush = Brush.verticalGradient(listOf(Color.White.copy(alpha = 0.95f), Color.White.copy(alpha = 0.25f))),
+            brush = Brush.verticalGradient(
+                listOf(glow.copy(alpha = 0.55f), glow.copy(alpha = 0.12f)),
+            ),
             shape = shape,
         )
 }
 
-/**
- * The canonical full-width frosted card. Keeps the prior call sites working; now rendered in the
- * Aurora light style. When [accent] is set (e.g. a completed rep) the whole card lights up in it.
- */
+/** Full-width Cyber-Dreamcore glass card. When [accent] is set the whole card glows in it. */
 @Composable
 fun PremiumGlassCard(
     modifier: Modifier = Modifier,

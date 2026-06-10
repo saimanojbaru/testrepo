@@ -43,6 +43,7 @@ fun ProfileScreen(
     onOpenBigPlays: () -> Unit,
     onOpenLocker: () -> Unit,
     onOpenCoach: () -> Unit,
+    onOpenShadow: () -> Unit = {},
     viewModel: ProfileViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -127,6 +128,7 @@ fun ProfileScreen(
 
         SectionLabel("Library")
         NavRow(title = "🧠 Your Coach", subtitle = "Private, brutally honest weekly review", onClick = onOpenCoach)
+        NavRow(title = "🕶️ Shadow Self", subtitle = "Your unhinged dark mirror — enter if you dare", onClick = onOpenShadow)
         NavRow(title = "🎯 Big Plays", subtitle = "Long-term goals & checkpoints", onClick = onOpenBigPlays)
         NavRow(title = "🗄️ The Locker", subtitle = "Your notes", onClick = onOpenLocker)
 

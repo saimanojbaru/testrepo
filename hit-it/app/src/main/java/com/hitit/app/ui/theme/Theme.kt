@@ -2,24 +2,24 @@ package com.hitit.app.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Typography
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Bright "Aurora Glass" — a light, airy canvas with vivid accents and frosted-glass surfaces.
-private val HitItColors = lightColorScheme(
+// Cyber-Dreamcore — a dark cosmic canvas with electric neon accents (used sparingly + glow).
+private val HitItColors = darkColorScheme(
     primary = AuroraViolet,
     onPrimary = Color.White,
     secondary = AuroraCyan,
-    onSecondary = Color.White,
+    onSecondary = Color(0xFF04201F),
     tertiary = AuroraPink,
     onTertiary = Color.White,
     background = AuroraBase,
     onBackground = AuroraInk,
-    surface = Color.White,
+    surface = CyberGlass,
     onSurface = AuroraInk,
     surfaceVariant = AuroraMist,
     onSurfaceVariant = AuroraMuted,

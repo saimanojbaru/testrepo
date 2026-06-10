@@ -83,7 +83,7 @@ fun HitItApp(
         containerColor = Color.Transparent,
         bottomBar = {
             if (showBottomBar) {
-                NavigationBar(containerColor = Color.White.copy(alpha = 0.78f), tonalElevation = 0.dp) {
+                NavigationBar(containerColor = Color(0xFF14102E).copy(alpha = 0.88f), tonalElevation = 0.dp) {
                     bottomItems.forEach { item ->
                         val selected = currentDestination?.hierarchy?.any { it.route == item.route } == true
                         NavigationBarItem(
@@ -145,7 +145,11 @@ fun HitItApp(
                     onOpenBigPlays = { navController.navigate(Dest.BIG_PLAYS) },
                     onOpenLocker = { navController.navigate(Dest.locker()) },
                     onOpenCoach = { navController.navigate(Dest.COACH) },
+                    onOpenShadow = { navController.navigate(Dest.SHADOW) },
                 )
+            }
+            composable(Dest.SHADOW) {
+                com.hitit.app.ui.screens.shadow.ShadowSelfScreen(onBack = { navController.popBackStack() })
             }
             composable(Dest.LOCK_IN) {
                 LockInScreen(onBack = { navController.popBackStack() })

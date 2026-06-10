@@ -21,24 +21,30 @@ val NeonAmber = Color(0xFFFFC857)
 // Hero gradient (cyan -> violet -> magenta) for the dashboard momentum hero.
 val HeroGradient = Brush.linearGradient(listOf(Color(0xFF00E5C0), Color(0xFF7C5CFF), Color(0xFFFF4D8D)))
 
-// ── Bright Aurora ("Aurora Glass" light theme) ───────────────────────────────────────────────
-// A near-white canvas the drifting aurora paints onto, deep-but-soft ink for text, and vivid
-// accents that pop on light. Frosted glass = translucent white over the aurora (no real blur on
-// minSdk 26 — the milky fill reads as frost in light mode).
-val AuroraBase = Color(0xFFF7F7FE)    // app background (the aurora's canvas)
-val AuroraInk = Color(0xFF1B1C30)     // primary text — soft indigo-charcoal, not pure black
-val AuroraMuted = Color(0xFF73758F)   // secondary text
-val AuroraMist = Color(0xFFECEDF8)    // low surfaces / dividers / tracks
-val AuroraViolet = Color(0xFF7C5CFF)  // primary accent
-val AuroraCyan = Color(0xFF00C2A8)    // secondary accent (deepened for contrast on white)
-val AuroraPink = Color(0xFFFF4D8D)    // tertiary accent
-val AuroraAmber = Color(0xFFFF9E3D)
+// ── Cyber-Dreamcore (dark cosmic theme) ──────────────────────────────────────────────────────
+// Deep navy → midnight-purple base with electric neon accents used sparingly + glow. Eye-friendly:
+// the canvas is dark and desaturated, contrast lives only on key interactive elements. The Aurora*
+// names are kept (every screen reads them) but now carry the dark-cosmic values, so the whole app
+// re-themes from here. Glass = dark translucent fill over the nebula with a neon rim + glow shadow.
+val AuroraBase = Color(0xFF0C0A1F)    // deep cosmic base (gradient bottom is CosmicTop below)
+val AuroraInk = Color(0xFFEDEBFF)     // primary text — soft white-lilac, not harsh white
+val AuroraMuted = Color(0xFF9A97C2)   // secondary text
+val AuroraMist = Color(0xFF2A2550)    // dark surfaces / dividers / progress tracks
+val AuroraViolet = Color(0xFF8B5CF6)  // primary accent (electric violet)
+val AuroraCyan = Color(0xFF2DE2E2)    // secondary accent (electric cyan)
+val AuroraPink = Color(0xFFFF2E97)    // tertiary accent (hot magenta)
+val AuroraAmber = Color(0xFFFFB23E)   // warm accent (mood/energy)
+val ToxicGreen = Color(0xFF7CFF4F)    // rare "peak" accent, used very sparingly
 
-// Soft aurora blob tints (drawn as big radial gradients on the near-white base, drifting slowly).
-val AuroraBlobCyan = Color(0xFF5BE9D5)
-val AuroraBlobViolet = Color(0xFFB49BFF)
-val AuroraBlobPink = Color(0xFFFF9DC0)
-val AuroraBlobPeach = Color(0xFFFFD3A8)
+// Cosmic backdrop: a vertical nebula gradient + drifting desaturated blobs + particle flow.
+val CosmicTop = Color(0xFF0C0A1F)
+val CosmicBottom = Color(0xFF1A1633)
+val NebulaViolet = Color(0xFF3A2A6E)
+val NebulaTeal = Color(0xFF14414A)
+val NebulaMagenta = Color(0xFF4A1E48)
+
+// Dark glass surface (translucent fill over the nebula reads as smoky glass without real blur).
+val CyberGlass = Color(0xFF1C1838)
 
 // Heatmap intensity ramp for "The Grid" (0..4) — a cohesive 2026 "tech-glow" ladder:
 // charcoal base -> calm recovery teal -> rich emerald -> electric cyan -> peak cyber-purple.
