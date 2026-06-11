@@ -2,7 +2,6 @@ package com.hitit.app.ui.screens.today
 
 import android.Manifest
 import android.os.Build
-import android.view.HapticFeedbackConstants
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.Spring
@@ -10,6 +9,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.animateIntAsState
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -18,6 +18,7 @@ import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,11 +51,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.hapticfeedback.HapticFeedbackType
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
@@ -64,13 +68,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hitit.app.ui.components.ConfettiOverlay
 import com.hitit.app.ui.components.LifeFlame
-import com.hitit.app.ui.components.RealityGlitchOverlay
-import com.hitit.app.ui.components.VibeShiftState
 import com.hitit.app.ui.components.MomentumSparkline
 import com.hitit.app.ui.components.OdometerText
+import com.hitit.app.ui.components.RealityGlitchOverlay
+import com.hitit.app.ui.components.SegmentedGauge
 import com.hitit.app.ui.components.SurgeBanner
+import com.hitit.app.ui.components.VibeShiftState
 import com.hitit.app.ui.components.frostedGlass
-import com.hitit.app.ui.components.shimmer
 import com.hitit.app.ui.theme.AthleticLabelStyle
 import com.hitit.app.ui.theme.AuroraAmber
 import com.hitit.app.ui.theme.AuroraCyan
@@ -79,9 +83,15 @@ import com.hitit.app.ui.theme.AuroraMist
 import com.hitit.app.ui.theme.AuroraMuted
 import com.hitit.app.ui.theme.AuroraPink
 import com.hitit.app.ui.theme.AuroraViolet
-import com.hitit.app.ui.theme.HeroGradient
+import com.hitit.app.ui.theme.ToxicGreen
 import com.hitit.app.ui.theme.parseHexColor
+import com.hitit.domain.flame.LifeFlame as FlameModel
 
+/**
+ * Home as a bento dashboard (per the reference video): a dense mosaic of compact glass tiles —
+ * momentum ring, flame, tier, reps, hits, body, money, focus, mood, 7-day chart — everything at a
+ * glance, every tile a door into its pillar. The reps rail below keeps one-tap completion.
+ */
 @Composable
 fun TodayScreen(
     onAddRep: () -> Unit,
@@ -90,6 +100,8 @@ fun TodayScreen(
     onCheckIn: () -> Unit,
     onSeeAllReps: () -> Unit = {},
     onSeeAllHits: () -> Unit = {},
+    onOpenBody: () -> Unit = {},
+    onOpenMoney: () -> Unit = {},
     viewModel: TodayViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -119,34 +131,132 @@ fun TodayScreen(
         ) {
             AuroraTopBar(dateLabel = state.dateLabel, onLockIn = onLockIn, onAddRep = onAddRep)
 
-            AuroraHero(
-                score = state.momentumScore,
-                scoreLabel = state.momentumLabel,
-                tier = state.tier,
-                level = state.level,
-                levelProgress = state.progress,
-                lifetimeMomentum = state.momentum,
-                flameLevel = state.flameLevel,
-            )
-
             state.surge?.let { surge ->
                 SurgeBanner(surge = surge, onExpired = { viewModel.onSurgeExpired() })
             }
 
-            StatStrip(
-                reps = "${state.repsDone}/${state.repsTotal}",
-                hits = "${state.hitsDoneToday}",
-                focus = "${state.focusMinutesToday}m",
-                mood = state.checkInMood?.let { "$it" } ?: "—",
-                onRepsTap = onSeeAllReps,
-                onHitsTap = onSeeAllHits,
-            )
+            // ── The bento grid ────────────────────────────────────────────────────────────
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    MomentumRingTile(
+                        score = state.momentumScore,
+                        label = state.momentumLabel,
+                        levelProgress = state.progress,
+                        level = state.level,
+                        debt = state.outstandingDebt,
+                        modifier = Modifier
+                            .weight(1f)
+                            .height(196.dp),
+                    )
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        verticalArrangement = Arrangement.spacedBy(10.dp),
+                    ) {
+                        FlameTile(
+                            flameLevel = state.flameLevel,
+                            streak = state.bestStreakToday,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(93.dp),
+                        )
+                        TierTile(
+                            tier = state.tier,
+                            level = state.level,
+                            momentum = state.momentum,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(93.dp),
+                        )
+                    }
+                }
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    StatTile(
+                        label = "REPS",
+                        value = "${state.repsDone}/${state.repsTotal}",
+                        accent = AuroraViolet,
+                        onClick = onSeeAllReps,
+                        modifier = Modifier.weight(1f),
+                    ) {
+                        if (state.repsTotal > 0) {
+                            SegmentedGauge(
+                                completed = state.repsDone,
+                                total = state.repsTotal,
+                                modifier = Modifier.padding(top = 6.dp),
+                            )
+                        }
+                    }
+                    StatTile(
+                        label = "HITS",
+                        value = "${state.hitsDoneToday}",
+                        accent = AuroraCyan,
+                        caption = "crushed today",
+                        onClick = onSeeAllHits,
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    StatTile(
+                        label = "BODY",
+                        value = state.steps?.let { compact(it) } ?: "—",
+                        accent = ToxicGreen,
+                        caption = if (state.kcalToday > 0) "👟 steps · ${state.kcalToday} kcal" else "👟 steps · log fuel",
+                        onClick = onOpenBody,
+                        modifier = Modifier.weight(1f),
+                    )
+                    StatTile(
+                        label = "MONEY",
+                        value = "₹${state.weekSpendRupees}",
+                        accent = AuroraAmber,
+                        caption = "this week",
+                        onClick = onOpenMoney,
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+                Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    StatTile(
+                        label = "FOCUS",
+                        value = "${state.focusMinutesToday}m",
+                        accent = AuroraPink,
+                        caption = "lock in →",
+                        onClick = onLockIn,
+                        modifier = Modifier.weight(1f),
+                    )
+                    StatTile(
+                        label = "MOOD",
+                        value = if (state.checkedIn) moodEmoji(state.checkInMood ?: 5) else "📝",
+                        accent = AuroraAmber,
+                        caption = if (state.checkedIn) "vibe checked" else "check in →",
+                        onClick = onCheckIn,
+                        modifier = Modifier.weight(1f),
+                    )
+                }
+                if (state.last7Intensity.isNotEmpty()) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .frostedGlass(cornerRadius = 20.dp)
+                            .padding(12.dp),
+                    ) {
+                        Text(text = "LAST 7 DAYS", style = AthleticLabelStyle, color = AuroraMuted)
+                        Spacer(Modifier.height(8.dp))
+                        MomentumSparkline(
+                            intensities = state.last7Intensity,
+                            modifier = Modifier.fillMaxWidth(),
+                        )
+                    }
+                }
+            }
 
-            // Reps as a horizontal swipe rail — the dashboard's core, no endless vertical stack.
+            // ── Reps rail: the one-tap completion strip ──────────────────────────────────
             RailHeader(title = "Today's reps", trailing = "See all →", onTrailingClick = onSeeAllReps)
             LazyRow(
                 modifier = Modifier.fillMaxWidth(),
-                contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 20.dp),
+                contentPadding = PaddingValues(horizontal = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 items(state.reps, key = { it.id }) { rep ->
@@ -162,36 +272,30 @@ fun TodayScreen(
                 item { AddRepTile(onClick = onAddRep) }
             }
 
-            // Check-in + Main target as two compact frosted pills (or check-in full width).
-            TodayDuo(
-                checkedIn = state.checkedIn,
-                mood = state.checkInMood,
-                onCheckIn = onCheckIn,
-                mainTarget = state.mainTarget,
-                onToggleTarget = { state.mainTarget?.let { viewModel.toggleMainTarget(it) } },
-            )
-
-            if (state.last7Intensity.isNotEmpty()) {
-                RailHeader(title = "Last 7 days", trailing = "")
-                Box(
+            state.mainTarget?.let { target ->
+                TargetPill(
+                    target = target,
+                    onToggle = { viewModel.toggleMainTarget(target) },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(horizontal = 20.dp, vertical = 4.dp)
-                        .frostedGlass(cornerRadius = 22.dp)
-                        .padding(16.dp),
-                ) {
-                    MomentumSparkline(intensities = state.last7Intensity, modifier = Modifier.fillMaxWidth())
-                }
+                        .padding(horizontal = 16.dp, vertical = 8.dp),
+                )
             }
 
             Spacer(Modifier.height(28.dp))
         }
 
         ConfettiOverlay(trigger = celebration?.seq?.plus(1) ?: 0L)
-        // Reality Glitch: at extreme momentum, reality artifacts with praise (overlay-only).
         RealityGlitchOverlay(momentumScore = state.momentumScore)
         LaunchedEffect(celebration) { if (celebration != null) viewModel.consumeCelebration() }
     }
+}
+
+/** 8,243 → "8.2k" so step counts fit a tile. */
+private fun compact(n: Long): String = when {
+    n >= 10_000 -> "${n / 1000}k"
+    n >= 1_000 -> "%.1fk".format(n / 1000f)
+    else -> "$n"
 }
 
 @Composable
@@ -199,7 +303,7 @@ private fun AuroraTopBar(dateLabel: String, onLockIn: () -> Unit, onAddRep: () -
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 22.dp, end = 8.dp, top = 14.dp),
+            .padding(start = 18.dp, end = 8.dp, top = 14.dp, bottom = 10.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
@@ -223,155 +327,196 @@ private fun AuroraTopBar(dateLabel: String, onLockIn: () -> Unit, onAddRep: () -
     }
 }
 
-/** Borderless hero floating on the aurora: huge gradient momentum number + glowing flame + progress. */
+/** The hero tile: a momentum ring with the live score, level progress and a debt warning. */
 @Composable
-private fun AuroraHero(
+private fun MomentumRingTile(
     score: Int,
-    scoreLabel: String,
-    tier: String,
-    level: Int,
+    label: String,
     levelProgress: Float,
-    lifetimeMomentum: Long,
-    flameLevel: Int,
+    level: Int,
+    debt: Int,
+    modifier: Modifier = Modifier,
 ) {
     val animatedScore by animateIntAsState(targetValue = score, animationSpec = tween(700), label = "score")
-    val animatedProgress by animateFloatAsState(
-        targetValue = levelProgress.coerceIn(0f, 1f),
-        animationSpec = tween(700),
-        label = "progress",
+    val animatedSweep by animateFloatAsState(
+        targetValue = score.coerceIn(0, 100) / 100f,
+        animationSpec = tween(900),
+        label = "sweep",
     )
-    Column(modifier = Modifier.padding(horizontal = 22.dp, vertical = 6.dp)) {
-        Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(text = "MOMENTUM TODAY", style = AthleticLabelStyle, color = AuroraMuted)
-                Row(verticalAlignment = Alignment.Bottom) {
-                    Text(
-                        text = "$animatedScore",
-                        style = TextStyle(
-                            brush = HeroGradient,
-                            fontSize = 76.sp,
-                            fontWeight = FontWeight.Black,
-                            letterSpacing = (-2).sp,
-                            fontFeatureSettings = "tnum",
-                        ),
-                    )
-                    Text(
-                        text = "/100",
-                        style = MaterialTheme.typography.titleMedium,
-                        color = AuroraMuted,
-                        modifier = Modifier.padding(bottom = 14.dp, start = 2.dp),
-                    )
-                }
-                Text(
-                    text = scoreLabel,
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Black,
-                    color = AuroraViolet,
+    val ringColor = when {
+        score >= 90 -> ToxicGreen
+        score >= 70 -> AuroraCyan
+        else -> AuroraViolet
+    }
+    Column(
+        modifier = modifier
+            .frostedGlass(cornerRadius = 22.dp)
+            .padding(12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(text = "MOMENTUM", style = AthleticLabelStyle, color = AuroraMuted)
+        Box(contentAlignment = Alignment.Center, modifier = Modifier.weight(1f)) {
+            Canvas(modifier = Modifier.size(116.dp)) {
+                val stroke = 11.dp.toPx()
+                val arcSize = Size(size.width - stroke, size.height - stroke)
+                val topLeft = Offset(stroke / 2, stroke / 2)
+                drawArc(
+                    color = AuroraMist,
+                    startAngle = 135f,
+                    sweepAngle = 270f,
+                    useCenter = false,
+                    topLeft = topLeft,
+                    size = arcSize,
+                    style = Stroke(stroke, cap = StrokeCap.Round),
+                )
+                drawArc(
+                    color = ringColor,
+                    startAngle = 135f,
+                    sweepAngle = 270f * animatedSweep,
+                    useCenter = false,
+                    topLeft = topLeft,
+                    size = arcSize,
+                    style = Stroke(stroke, cap = StrokeCap.Round),
                 )
             }
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                // Easter egg: triple-tap the flame to VibeShift the whole cosmos.
-                val shiftHaptics = LocalHapticFeedback.current
-                val tapTimes = remember { longArrayOf(0L, 0L) }
-                LifeFlame(
-                    level = flameLevel,
-                    size = 96.dp,
-                    modifier = Modifier.pointerInput(Unit) {
-                        detectTapGestures(onTap = {
-                            val now = System.currentTimeMillis()
-                            if (now - tapTimes[0] < 700) {
-                                tapTimes[0] = 0L; tapTimes[1] = 0L
-                                shiftHaptics.performHapticFeedback(HapticFeedbackType.LongPress)
-                                VibeShiftState.toggle()
-                            } else {
-                                tapTimes[0] = tapTimes[1]; tapTimes[1] = now
-                            }
-                        })
-                    },
-                )
                 Text(
-                    text = "${tier.uppercase()} · LV.$level",
-                    style = AthleticLabelStyle,
-                    color = AuroraInk,
+                    text = "$animatedScore",
+                    style = MaterialTheme.typography.displaySmall.copy(fontSize = 38.sp),
+                    fontWeight = FontWeight.Black,
+                    color = ringColor,
                 )
-                OdometerText(
-                    value = lifetimeMomentum.toInt(),
-                    suffix = " ⚡",
-                    style = MaterialTheme.typography.labelLarge.copy(fontFeatureSettings = "tnum"),
-                    color = AuroraMuted,
-                    modifier = Modifier.padding(top = 2.dp),
-                )
+                Text(text = "/100", style = MaterialTheme.typography.labelSmall, color = AuroraMuted)
             }
         }
-        Row(
-            modifier = Modifier.fillMaxWidth().padding(top = 14.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-        ) {
-            Text("LV $level", style = AthleticLabelStyle, color = AuroraMuted)
-            LinearProgressIndicator(
-                progress = { animatedProgress },
-                modifier = Modifier
-                    .weight(1f)
-                    .height(10.dp)
-                    .clip(RoundedCornerShape(6.dp))
-                    .shimmer(color = Color.White.copy(alpha = 0.7f), durationMillis = 2200),
-                color = AuroraViolet,
-                trackColor = AuroraMist,
+        Text(
+            text = if (debt > 0) "⚠ debt $debt · $label" else label,
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            color = if (debt > 0) AuroraAmber else AuroraMuted,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+        )
+        LinearProgressIndicator(
+            progress = { levelProgress.coerceIn(0f, 1f) },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 6.dp)
+                .height(6.dp)
+                .clip(RoundedCornerShape(4.dp)),
+            color = AuroraViolet,
+            trackColor = AuroraMist,
+        )
+        Text(
+            text = "LV $level",
+            style = MaterialTheme.typography.labelSmall,
+            color = AuroraMuted,
+            modifier = Modifier.padding(top = 2.dp),
+        )
+    }
+}
+
+/** Flame tile — triple-tap it for VibeShift (the cosmos remembers). */
+@Composable
+private fun FlameTile(flameLevel: Int, streak: Int, modifier: Modifier = Modifier) {
+    val haptics = LocalHapticFeedback.current
+    val tapTimes = remember { longArrayOf(0L, 0L) }
+    Row(
+        modifier = modifier
+            .frostedGlass(cornerRadius = 22.dp)
+            .padding(horizontal = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+    ) {
+        LifeFlame(
+            level = flameLevel,
+            size = 58.dp,
+            modifier = Modifier.pointerInput(Unit) {
+                detectTapGestures(onTap = {
+                    val now = System.currentTimeMillis()
+                    if (now - tapTimes[0] < 700) {
+                        tapTimes[0] = 0L; tapTimes[1] = 0L
+                        haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                        VibeShiftState.toggle()
+                    } else {
+                        tapTimes[0] = tapTimes[1]; tapTimes[1] = now
+                    }
+                })
+            },
+        )
+        Column {
+            Text(
+                text = FlameModel.label(flameLevel).uppercase(),
+                style = AthleticLabelStyle,
+                color = AuroraInk,
             )
-            Text("LV ${level + 1}", style = AthleticLabelStyle, color = AuroraMuted)
+            Text(
+                text = "🔥 $streak",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Black,
+                color = AuroraAmber,
+            )
         }
     }
 }
 
 @Composable
-private fun StatStrip(
-    reps: String,
-    hits: String,
-    focus: String,
-    mood: String,
-    onRepsTap: () -> Unit = {},
-    onHitsTap: () -> Unit = {},
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 10.dp)
-            .frostedGlass(cornerRadius = 24.dp)
-            .padding(vertical = 16.dp),
-        verticalAlignment = Alignment.CenterVertically,
+private fun TierTile(tier: String, level: Int, momentum: Long, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .frostedGlass(cornerRadius = 22.dp)
+            .padding(12.dp),
+        verticalArrangement = Arrangement.Center,
     ) {
-        StatCell("Reps", reps, AuroraViolet, Modifier.weight(1f).clickable(onClick = onRepsTap))
-        StatDivider()
-        StatCell("Hits", hits, AuroraCyan, Modifier.weight(1f).clickable(onClick = onHitsTap))
-        StatDivider()
-        StatCell("Focus", focus, AuroraPink, Modifier.weight(1f))
-        StatDivider()
-        StatCell("Mood", mood, AuroraAmber, Modifier.weight(1f))
+        Text(text = "${tier.uppercase()} · LV.$level", style = AthleticLabelStyle, color = AuroraInk)
+        OdometerText(
+            value = momentum.toInt(),
+            suffix = " ⚡",
+            style = MaterialTheme.typography.titleLarge.copy(fontFeatureSettings = "tnum"),
+            color = AuroraViolet,
+            modifier = Modifier.padding(top = 4.dp),
+        )
+        Text(text = "lifetime momentum", style = MaterialTheme.typography.labelSmall, color = AuroraMuted)
     }
 }
 
+/** Compact bento stat tile: label, big value, optional caption / slot, tap-through. */
 @Composable
-private fun StatCell(label: String, value: String, accent: Color, modifier: Modifier = Modifier) {
-    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+private fun StatTile(
+    label: String,
+    value: String,
+    accent: Color,
+    modifier: Modifier = Modifier,
+    caption: String? = null,
+    onClick: (() -> Unit)? = null,
+    extra: @Composable () -> Unit = {},
+) {
+    Column(
+        modifier = modifier
+            .frostedGlass(cornerRadius = 20.dp)
+            .let { if (onClick != null) it.clickable(onClick = onClick) else it }
+            .padding(12.dp),
+    ) {
+        Text(text = label, style = AthleticLabelStyle, color = AuroraMuted)
         Text(
             text = value,
             style = MaterialTheme.typography.headlineSmall,
             fontWeight = FontWeight.Black,
             color = accent,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
         )
-        Text(text = label.uppercase(), style = AthleticLabelStyle, color = AuroraMuted)
+        caption?.let {
+            Text(
+                text = it,
+                style = MaterialTheme.typography.labelSmall,
+                color = AuroraMuted,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+        extra()
     }
-}
-
-@Composable
-private fun StatDivider() {
-    Box(
-        modifier = Modifier
-            .height(34.dp)
-            .width(1.dp)
-            .background(AuroraMist),
-    )
 }
 
 @Composable
@@ -379,7 +524,7 @@ private fun RailHeader(title: String, trailing: String, onTrailingClick: (() -> 
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 22.dp, end = 22.dp, top = 14.dp, bottom = 6.dp),
+            .padding(start = 18.dp, end = 18.dp, top = 16.dp, bottom = 6.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -503,78 +648,24 @@ private fun AddRepTile(onClick: () -> Unit) {
 }
 
 @Composable
-private fun TodayDuo(
-    checkedIn: Boolean,
-    mood: Int?,
-    onCheckIn: () -> Unit,
-    mainTarget: MainTargetUi?,
-    onToggleTarget: () -> Unit,
-) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 6.dp),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
-    ) {
-        CheckInPill(checkedIn = checkedIn, mood = mood, onClick = onCheckIn, modifier = Modifier.weight(1f))
-        if (mainTarget != null) {
-            TargetPill(target = mainTarget, onToggle = onToggleTarget, modifier = Modifier.weight(1f))
-        }
-    }
-}
-
-@Composable
-private fun CheckInPill(checkedIn: Boolean, mood: Int?, onClick: () -> Unit, modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier
-            .height(96.dp)
-            .frostedGlass(cornerRadius = 22.dp, accent = if (checkedIn) AuroraAmber else null)
-            .clickable(onClick = onClick)
-            .padding(14.dp),
-        verticalArrangement = Arrangement.SpaceBetween,
-    ) {
-        Text(text = if (checkedIn) moodEmoji(mood ?: 5) else "📝", style = MaterialTheme.typography.headlineSmall)
-        Column {
-            Text(
-                text = if (checkedIn) "Checked in" else "Check in",
-                style = MaterialTheme.typography.titleSmall,
-                fontWeight = FontWeight.Bold,
-                color = AuroraInk,
-            )
-            Text(
-                text = if (checkedIn) "Tap to update" else "How are you?",
-                style = MaterialTheme.typography.labelSmall,
-                color = AuroraMuted,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
-            )
-        }
-    }
-}
-
-@Composable
 private fun TargetPill(target: MainTargetUi, onToggle: () -> Unit, modifier: Modifier = Modifier) {
     Row(
         modifier = modifier
-            .height(96.dp)
             .frostedGlass(cornerRadius = 22.dp, accent = if (target.done) AuroraViolet else null)
             .padding(14.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(10.dp),
     ) {
+        Icon(Icons.Filled.Star, contentDescription = null, tint = AuroraViolet, modifier = Modifier.size(18.dp))
         Column(modifier = Modifier.weight(1f)) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                Icon(Icons.Filled.Star, contentDescription = null, tint = AuroraViolet, modifier = Modifier.size(16.dp))
-                Text("MAIN TARGET", style = AthleticLabelStyle, color = AuroraMuted)
-            }
-            Spacer(Modifier.height(4.dp))
+            Text(text = "MAIN TARGET", style = AthleticLabelStyle, color = AuroraMuted)
             Text(
                 text = target.title,
                 style = MaterialTheme.typography.titleSmall,
                 fontWeight = FontWeight.Bold,
                 color = AuroraInk,
                 textDecoration = if (target.done) TextDecoration.LineThrough else null,
-                maxLines = 2,
+                maxLines = 1,
                 overflow = TextOverflow.Ellipsis,
             )
         }

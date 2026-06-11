@@ -65,5 +65,37 @@ class MoneyRepository @Inject constructor(
 
     suspend fun delete(id: Long) = expenseDao.delete(id)
 
+    /**
+     * Log a notification-captured spend, deduplicated: the same amount + merchant within
+     * [DEDUPE_WINDOW_MS] is dropped (apps often post several notifications per order — confirm,
+     * prepare, deliver). Returns true when a new row was written.
+     */
+    suspend fun logCaptured(
+        captured: com.hitit.domain.money.CapturedSpend,
+        date: LocalDate = LocalDate.now(),
+        hourOfDay: Int = LocalTime.now().hour,
+        nowMillis: Long = System.currentTimeMillis(),
+    ): Boolean {
+        val merchant = captured.merchant.trim()
+        if (expenseDao.countSimilarSince(captured.amountPaise, merchant, nowMillis - DEDUPE_WINDOW_MS) > 0) {
+            return false
+        }
+        expenseDao.insert(
+            ExpenseEntity(
+                date = date,
+                amountPaise = captured.amountPaise,
+                description = merchant,
+                category = captured.category.name,
+                impulse = ExpenseCategorizer.isImpulse(captured.category, hourOfDay),
+                auto = true,
+            ),
+        )
+        return true
+    }
+
+    private companion object {
+        const val DEDUPE_WINDOW_MS = 30 * 60_000L // 30 min — covers an order's notification volley
+    }
+
     suspend fun clearAll() = expenseDao.deleteAll()
 }

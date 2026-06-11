@@ -63,6 +63,9 @@ data class TodayUiState(
     val repsTotal: Int = 0,
     val hitsDoneToday: Int = 0,
     val focusMinutesToday: Int = 0,
+    val kcalToday: Int = 0,
+    val weekSpendRupees: Long = 0,
+    val steps: Long? = null,
     val miniGrid: List<List<GridCell>> = emptyList(),
     val last7Intensity: List<Int> = emptyList(),
     val outstandingDebt: Int = 0,
@@ -85,7 +88,36 @@ class TodayViewModel @Inject constructor(
     ledgerRepository: com.hitit.app.data.repository.LedgerRepository,
     private val surgeRepository: com.hitit.app.data.repository.SurgeRepository,
     private val appPreferences: com.hitit.app.data.local.AppPreferences,
+    bodyRepository: com.hitit.app.data.repository.BodyRepository,
+    moneyRepository: com.hitit.app.data.repository.MoneyRepository,
+    private val healthRepository: com.hitit.app.data.repository.HealthRepository,
 ) : ViewModel() {
+
+    /** Steps from Health Connect, read once per dashboard session (null until granted/available). */
+    private val stepsFlow = kotlinx.coroutines.flow.MutableStateFlow<Long?>(null)
+
+    init {
+        viewModelScope.launch {
+            runCatching {
+                if (healthRepository.sdkStatus() == androidx.health.connect.client.HealthConnectClient.SDK_AVAILABLE &&
+                    healthRepository.hasAllPermissions()
+                ) {
+                    stepsFlow.value = healthRepository.readSignals().stepsToday
+                }
+            }
+        }
+    }
+
+    /** Cross-pillar glance data for the bento tiles (kcal, money, steps). */
+    private data class Cross(val kcal: Int, val weekSpendRupees: Long, val steps: Long?)
+
+    private val cross = combine(
+        bodyRepository.observeToday(),
+        moneyRepository.observeWeekSpend(),
+        stepsFlow,
+    ) { entries, week, steps ->
+        Cross(entries.sumOf { it.kcal }, (week ?: 0L) / 100, steps)
+    }
 
     private val today: LocalDate = LocalDate.now()
     private val dateFormat = DateTimeFormatter.ofPattern("EEE, MMM d")
@@ -103,14 +135,17 @@ class TodayViewModel @Inject constructor(
         profileRepository.observeMomentumTotal(),
         taskRepository.observeMainTarget(today),
         combine(
-            checkInRepository.observeForDate(today),
-            taskRepository.observeAll(),
-            lockInRepository.observeFocusMinutesOn(today),
-            ledgerRepository.observeOutstandingDebt(),
-        ) { checkIn, tasks, focusMin, debt ->
-            Extras(checkIn, tasks, focusMin, debt)
-        },
-    ) { reps, hits, momentum, mainTarget, extras ->
+            combine(
+                checkInRepository.observeForDate(today),
+                taskRepository.observeAll(),
+                lockInRepository.observeFocusMinutesOn(today),
+                ledgerRepository.observeOutstandingDebt(),
+            ) { checkIn, tasks, focusMin, debt ->
+                Extras(checkIn, tasks, focusMin, debt)
+            },
+            cross,
+        ) { e, c -> e to c },
+    ) { reps, hits, momentum, mainTarget, (extras, crossData) ->
         val checkIn = extras.checkIn
         val tasks = extras.tasks
         val focusMin = extras.focusMin
@@ -169,6 +204,9 @@ class TodayViewModel @Inject constructor(
             repsTotal = active.size,
             hitsDoneToday = hitsDoneToday,
             focusMinutesToday = focusMin,
+            kcalToday = crossData.kcal,
+            weekSpendRupees = crossData.weekSpendRupees,
+            steps = crossData.steps,
             miniGrid = mini,
             last7Intensity = last7,
             outstandingDebt = extras.debt,

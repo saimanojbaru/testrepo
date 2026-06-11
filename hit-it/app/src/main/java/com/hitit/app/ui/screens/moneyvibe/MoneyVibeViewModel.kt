@@ -30,6 +30,7 @@ data class ExpenseUi(
     val categoryLabel: String,
     val categoryEmoji: String,
     val impulse: Boolean,
+    val auto: Boolean,
     val dateLabel: String,
 )
 
@@ -143,6 +144,7 @@ class MoneyVibeViewModel @Inject constructor(
                     categoryLabel = cat.label,
                     categoryEmoji = cat.emoji,
                     impulse = e.impulse,
+                    auto = e.auto,
                     dateLabel = if (e.date == today) "today" else "${e.date.dayOfMonth}/${e.date.monthValue}",
                 )
             },

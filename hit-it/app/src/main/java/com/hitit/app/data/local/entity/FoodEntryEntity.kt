@@ -11,5 +11,7 @@ data class FoodEntryEntity(
     val date: LocalDate,
     val description: String,
     val kcal: Int,
+    /** App-private copy of an attached photo (absolute path), null when text-only. */
+    val photoPath: String? = null,
     val createdAt: Long = System.currentTimeMillis(),
 )

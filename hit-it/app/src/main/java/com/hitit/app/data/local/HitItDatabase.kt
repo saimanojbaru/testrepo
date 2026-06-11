@@ -60,7 +60,7 @@ import com.hitit.app.data.local.entity.YogaSessionEntity
         YogaPoseEntity::class,
         YogaSessionEntity::class,
     ],
-    version = 13,
+    version = 14,
     exportSchema = false,
 )
 @TypeConverters(Converters::class)

@@ -21,6 +21,7 @@ data class FoodEntryUi(
     val id: Long,
     val description: String,
     val kcal: Int,
+    val photoPath: String? = null,
 )
 
 /** Health Connect connection states the card renders. */
@@ -56,6 +57,16 @@ class BodyFlowViewModel @Inject constructor(
     private val today: LocalDate = LocalDate.now()
     private val signals = MutableStateFlow(BodySignalsUi())
 
+    /** Photo staged for the NEXT food log (app-private copy already made). */
+    val pendingPhotoPath = MutableStateFlow<String?>(null)
+
+    /** Copy a picked gallery photo into private storage and stage it for the next log. */
+    fun attachPhoto(uri: android.net.Uri) {
+        viewModelScope.launch { pendingPhotoPath.value = bodyRepository.importPhoto(uri) }
+    }
+
+    fun clearPendingPhoto() { pendingPhotoPath.value = null }
+
     /** The HC permission set, for the screen's request launcher. */
     val healthPermissions: Set<String> get() = healthRepository.permissions
 
@@ -75,7 +86,7 @@ class BodyFlowViewModel @Inject constructor(
             checkedInToday = checkedIn,
             mood = checkIn?.mood,
             todayKcal = entries.sumOf { it.kcal },
-            entries = entries.map { FoodEntryUi(it.id, it.description, it.kcal) },
+            entries = entries.map { FoodEntryUi(it.id, it.description, it.kcal, it.photoPath) },
             foodDaysLast7 = days7,
             signals = hc,
             started = total > 0,
@@ -108,7 +119,9 @@ class BodyFlowViewModel @Inject constructor(
 
     fun logFood(description: String, kcal: Int) {
         if (description.isBlank() || kcal <= 0) return
-        viewModelScope.launch { bodyRepository.log(description, kcal, today) }
+        val photo = pendingPhotoPath.value
+        pendingPhotoPath.value = null
+        viewModelScope.launch { bodyRepository.log(description, kcal, today, photo) }
     }
 
     fun deleteEntry(id: Long) {

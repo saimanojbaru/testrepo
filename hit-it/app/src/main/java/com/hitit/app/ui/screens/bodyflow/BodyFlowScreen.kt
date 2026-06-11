@@ -1,6 +1,10 @@
 package com.hitit.app.ui.screens.bodyflow
 
+import android.graphics.BitmapFactory
 import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.health.connect.client.PermissionController
 import androidx.compose.foundation.clickable
@@ -21,6 +25,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.PhotoCamera
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -30,12 +35,15 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
@@ -49,6 +57,8 @@ import com.hitit.app.ui.theme.AuroraMuted
 import com.hitit.app.ui.theme.AuroraPink
 import com.hitit.app.ui.theme.AuroraViolet
 import com.hitit.domain.body.FoodEstimator
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * BodyFlow v1 — the health pillar: today's Body Pulse, a Vibe Check tie-in, and smart food logging
@@ -110,9 +120,18 @@ fun BodyFlowScreen(
             onConnect = { hcLauncher.launch(viewModel.healthPermissions) },
         )
 
+        val pendingPhoto by viewModel.pendingPhotoPath.collectAsStateWithLifecycle()
+        val photoPicker = rememberLauncherForActivityResult(
+            ActivityResultContracts.PickVisualMedia(),
+        ) { uri -> uri?.let { viewModel.attachPhoto(it) } }
         FuelSection(
             todayKcal = state.todayKcal,
             entries = state.entries,
+            pendingPhoto = pendingPhoto,
+            onPickPhoto = {
+                photoPicker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+            },
+            onClearPhoto = { viewModel.clearPendingPhoto() },
             onLog = { desc, kcal -> viewModel.logFood(desc, kcal) },
             onDelete = { viewModel.deleteEntry(it) },
         )
@@ -155,7 +174,7 @@ fun BodyFlowScreen(
             Text(text = "NEXT DROPS", style = AthleticLabelStyle, color = AuroraMuted)
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "📸 Photo food diary\n🔔 Opt-in spend auto-capture from notifications",
+                text = "⌚ Wear OS companion\n🏆 Shareable aesthetic progress cards",
                 style = MaterialTheme.typography.bodyMedium,
                 color = AuroraInk,
                 lineHeight = MaterialTheme.typography.bodyLarge.lineHeight,
@@ -284,6 +303,9 @@ private fun VibeCheckCard(checkedIn: Boolean, mood: Int?, onClick: () -> Unit) {
 private fun FuelSection(
     todayKcal: Int,
     entries: List<FoodEntryUi>,
+    pendingPhoto: String?,
+    onPickPhoto: () -> Unit,
+    onClearPhoto: () -> Unit,
     onLog: (String, Int) -> Unit,
     onDelete: (Long) -> Unit,
 ) {
@@ -408,7 +430,11 @@ private fun FuelSection(
                     .padding(horizontal = 14.dp, vertical = 10.dp),
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Text(text = "🍽️", style = MaterialTheme.typography.titleMedium)
+                if (entry.photoPath != null) {
+                    FoodThumb(path = entry.photoPath)
+                } else {
+                    Text(text = "🍽️", style = MaterialTheme.typography.titleMedium)
+                }
                 Column(modifier = Modifier.weight(1f).padding(start = 10.dp)) {
                     Text(
                         text = entry.description,
@@ -436,4 +462,33 @@ private fun moodEmoji(mood: Int): String = when {
     mood <= 6 -> "😐"
     mood <= 8 -> "🙂"
     else -> "😄"
+}
+
+
+/** Downsampled thumbnail for a diary photo (decoded off the main thread, ~96px target). */
+@Composable
+private fun FoodThumb(path: String) {
+    val bitmap by produceState<android.graphics.Bitmap?>(initialValue = null, key1 = path) {
+        value = withContext(Dispatchers.IO) {
+            runCatching {
+                val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
+                BitmapFactory.decodeFile(path, bounds)
+                val sample = (minOf(bounds.outWidth, bounds.outHeight) / 96).coerceAtLeast(1)
+                BitmapFactory.decodeFile(path, BitmapFactory.Options().apply { inSampleSize = sample })
+            }.getOrNull()
+        }
+    }
+    val bmp = bitmap
+    if (bmp != null) {
+        Image(
+            bitmap = bmp.asImageBitmap(),
+            contentDescription = "Food photo",
+            modifier = Modifier
+                .size(40.dp)
+                .clip(RoundedCornerShape(10.dp)),
+            contentScale = ContentScale.Crop,
+        )
+    } else {
+        Text(text = "🍽️", style = MaterialTheme.typography.titleMedium)
+    }
 }

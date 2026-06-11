@@ -14,5 +14,7 @@ data class ExpenseEntity(
     /** [com.hitit.domain.money.SpendCategory.name] — stored as the enum name string. */
     val category: String,
     val impulse: Boolean = false,
+    /** True when auto-captured from a notification (vs typed by hand). */
+    val auto: Boolean = false,
     val createdAt: Long = System.currentTimeMillis(),
 )

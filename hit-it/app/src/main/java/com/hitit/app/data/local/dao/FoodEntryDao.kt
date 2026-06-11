@@ -15,6 +15,9 @@ interface FoodEntryDao {
     @Query("SELECT * FROM food_entries WHERE date = :date ORDER BY createdAt DESC")
     fun observeForDate(date: LocalDate): Flow<List<FoodEntryEntity>>
 
+    @Query("SELECT * FROM food_entries WHERE id = :id")
+    suspend fun getById(id: Long): FoodEntryEntity?
+
     @Query("SELECT COUNT(DISTINCT date) FROM food_entries WHERE date >= :since")
     fun observeDistinctDaysSince(since: LocalDate): Flow<Int>
 

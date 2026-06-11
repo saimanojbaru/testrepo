@@ -29,6 +29,11 @@ interface ExpenseDao {
     @Query("SELECT COUNT(*) FROM expenses")
     fun observeCount(): Flow<Int>
 
+    @Query(
+        "SELECT COUNT(*) FROM expenses WHERE amountPaise = :amountPaise AND description = :description AND createdAt >= :sinceMillis",
+    )
+    suspend fun countSimilarSince(amountPaise: Long, description: String, sinceMillis: Long): Int
+
     @Query("DELETE FROM expenses WHERE id = :id")
     suspend fun delete(id: Long)
 

@@ -121,6 +121,8 @@ fun HitItApp(
                     onCheckIn = { navController.navigate(Dest.CHECK_IN) },
                     onSeeAllReps = { navController.navigate(Dest.REPS) },
                     onSeeAllHits = { navController.navigate(Dest.HITS) },
+                    onOpenBody = { navController.navigate(Dest.BODYFLOW) },
+                    onOpenMoney = { navController.navigate(Dest.MONEYVIBE) },
                 )
             }
             composable(Dest.BODYFLOW) {
