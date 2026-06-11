@@ -7,4 +7,19 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+    <application>
+        <!-- Spend auto-capture (full flavor only): a NotificationListenerService is a Play Protect
+             stalkerware signal on sideloaded apps, so it's kept out of the default download. OS-gated
+             behind explicit Notification Access; only known shopping/UPI apps are parsed; on-device. -->
+        <service
+            android:name=".money.SpendCaptureService"
+            android:exported="false"
+            android:label="VibeOS spend capture"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+    </application>
+
 </manifest>

@@ -57,16 +57,8 @@
             </intent-filter>
         </activity-alias>
 
-        <!-- Spend auto-capture: OS-gated behind explicit Notification Access (opt-in in Settings). -->
-        <service
-            android:name=".money.SpendCaptureService"
-            android:exported="false"
-            android:label="VibeOS spend capture"
-            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
-            <intent-filter>
-                <action android:name="android.service.notification.NotificationListenerService" />
-            </intent-filter>
-        </service>
+        <!-- Spend auto-capture lives in the FULL flavor only: a NotificationListenerService trips
+             Play Protect on sideloaded builds, so the default download stays clean. -->
 
         <service
             android:name=".lockin.LockInService"
