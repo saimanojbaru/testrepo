@@ -40,6 +40,7 @@ glance = "1.1.1"          # latest stable Glance; Compose BOM overrides its olde
 tasksGenai = "0.10.29"    # MediaPipe LLM Inference; proven sample pin. ~5-6MB native libs, safe when model absent
 tasksVision = "0.10.29"   # MediaPipe Pose Landmarker; pinned to match genai. Ships arm64+v7a+x86(64) natives
 camerax = "1.6.1"         # latest stable (verified on Google Maven 2026-06)
+healthConnect = "1.1.0"   # latest stable connect-client; pure IPC lib (no natives/INTERNET), minSdk 26
 
 # --- Testing ---
 junit4 = "4.13.2"
@@ -104,6 +105,7 @@ camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "
 camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "camerax" }
 camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "camerax" }
 camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "camerax" }
+health-connect-client = { group = "androidx.health.connect", name = "connect-client", version.ref = "healthConnect" }
 
 # Testing
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }

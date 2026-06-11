@@ -1,6 +1,8 @@
 package com.hitit.app.ui.screens.bodyflow
 
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.background
+import androidx.health.connect.client.PermissionController
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -99,6 +101,15 @@ fun BodyFlowScreen(
 
         VibeCheckCard(checkedIn = state.checkedInToday, mood = state.mood, onClick = onCheckIn)
 
+        // Live body signals from Health Connect (read-only, on-device, opt-in).
+        val hcLauncher = rememberLauncherForActivityResult(
+            PermissionController.createRequestPermissionResultContract(),
+        ) { viewModel.refreshSignals() }
+        BodySignalsCard(
+            signals = state.signals,
+            onConnect = { hcLauncher.launch(viewModel.healthPermissions) },
+        )
+
         FuelSection(
             todayKcal = state.todayKcal,
             entries = state.entries,
@@ -144,7 +155,7 @@ fun BodyFlowScreen(
             Text(text = "NEXT DROPS", style = AthleticLabelStyle, color = AuroraMuted)
             Spacer(Modifier.height(6.dp))
             Text(
-                text = "👟 Steps, sleep & heart rate via Health Connect\n📸 Photo food diary",
+                text = "📸 Photo food diary\n🔔 Opt-in spend auto-capture from notifications",
                 style = MaterialTheme.typography.bodyMedium,
                 color = AuroraInk,
                 lineHeight = MaterialTheme.typography.bodyLarge.lineHeight,
@@ -152,6 +163,87 @@ fun BodyFlowScreen(
         }
 
         Spacer(Modifier.height(28.dp))
+    }
+}
+
+/** Steps / sleep / heart-rate from Health Connect, with connect/unavailable fallbacks. */
+@Composable
+private fun BodySignalsCard(signals: BodySignalsUi, onConnect: () -> Unit) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .frostedGlass(cornerRadius = 22.dp, accent = if (signals.hcState == HcState.CONNECTED) AuroraCyan else null)
+            .padding(16.dp),
+    ) {
+        Text(text = "BODY SIGNALS", style = AthleticLabelStyle, color = AuroraMuted)
+        Spacer(Modifier.height(8.dp))
+        when (signals.hcState) {
+            HcState.CONNECTED -> {
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    SignalCell("👟", signals.steps?.toString() ?: "—", "steps", Modifier.weight(1f))
+                    SignalCell(
+                        "😴",
+                        signals.sleepMinutes?.let { "${it / 60}h ${it % 60}m" } ?: "—",
+                        "last night",
+                        Modifier.weight(1f),
+                    )
+                    SignalCell("❤️", signals.bpm?.let { "$it" } ?: "—", "bpm", Modifier.weight(1f))
+                }
+                Text(
+                    text = "Read live from Health Connect — never stored, never leaves the phone.",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = AuroraMuted,
+                    modifier = Modifier.padding(top = 8.dp),
+                )
+            }
+            HcState.DISCONNECTED -> {
+                Text(
+                    text = "Pull steps, sleep & heart rate from Health Connect into your Body Pulse.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = AuroraInk,
+                )
+                Spacer(Modifier.height(10.dp))
+                Box(
+                    modifier = Modifier
+                        .clip(RoundedCornerShape(14.dp))
+                        .background(AuroraCyan)
+                        .clickable(onClick = onConnect)
+                        .padding(horizontal = 16.dp, vertical = 10.dp),
+                ) {
+                    Text(
+                        text = "Connect Health Connect",
+                        style = MaterialTheme.typography.labelLarge,
+                        fontWeight = FontWeight.Black,
+                        color = androidx.compose.ui.graphics.Color(0xFF04201F),
+                    )
+                }
+            }
+            HcState.UPDATE_REQUIRED -> Text(
+                text = "Health Connect needs an update from the Play Store before signals can flow.",
+                style = MaterialTheme.typography.bodySmall,
+                color = AuroraMuted,
+            )
+            HcState.UNAVAILABLE -> Text(
+                text = "Health Connect isn't available on this device (needs Android 9+ with the Health Connect app).",
+                style = MaterialTheme.typography.bodySmall,
+                color = AuroraMuted,
+            )
+        }
+    }
+}
+
+@Composable
+private fun SignalCell(emoji: String, value: String, label: String, modifier: Modifier = Modifier) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(text = emoji, style = MaterialTheme.typography.titleMedium)
+        Text(
+            text = value,
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Black,
+            color = AuroraInk,
+        )
+        Text(text = label, style = MaterialTheme.typography.labelSmall, color = AuroraMuted)
     }
 }
 

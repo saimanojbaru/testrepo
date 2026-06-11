@@ -103,6 +103,10 @@ dependencies {
     implementation(libs.glance.appwidget)
     implementation(libs.glance.material3)
 
+    // Health Connect (BOTH flavors): tiny IPC client, no natives, no INTERNET — reads steps/sleep/
+    // heart rate that other apps wrote, opt-in at runtime. Unavailable below Android 9 (handled).
+    implementation(libs.health.connect.client)
+
     // Optional on-device LLM for the Coach (rephraser) — FULL flavor only. Safe when no model is
     // present (app falls back to the rule-based coach). The lite flavor omits it entirely, which is
     // what keeps that build small and free of per-ABI native libs. No INTERNET permission needed.

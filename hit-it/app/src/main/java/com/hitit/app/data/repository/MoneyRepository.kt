@@ -22,6 +22,10 @@ class MoneyRepository @Inject constructor(
     fun observeWeekSpend(today: LocalDate = LocalDate.now()): Flow<Long?> =
         expenseDao.observeSpendBetween(today.minusDays(6), today)
 
+    /** The 7 days before this week's window — for the week-over-week trend. */
+    fun observePrevWeekSpend(today: LocalDate = LocalDate.now()): Flow<Long?> =
+        expenseDao.observeSpendBetween(today.minusDays(13), today.minusDays(7))
+
     /** This week's spend in burner ("fun money") categories — what the Burner Budget tracks. */
     fun observeWeekBurnerSpend(today: LocalDate = LocalDate.now()): Flow<Long?> =
         expenseDao.observeSpendBetweenFor(

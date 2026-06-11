@@ -129,7 +129,9 @@ fun HitItApp(
                     onOpenYoga = { navController.navigate(Dest.YOGA) },
                 )
             }
-            composable(Dest.MONEYVIBE) { MoneyVibeScreen() }
+            composable(Dest.MONEYVIBE) {
+                MoneyVibeScreen(onOpenShadow = { navController.navigate(Dest.SHADOW) })
+            }
             composable(Dest.YOGA) {
                 com.hitit.app.ui.screens.yoga.YogaScreen(
                     onBack = { navController.popBackStack() },

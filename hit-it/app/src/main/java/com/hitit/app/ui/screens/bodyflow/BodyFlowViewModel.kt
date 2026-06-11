@@ -1,11 +1,14 @@
 package com.hitit.app.ui.screens.bodyflow
 
+import androidx.health.connect.client.HealthConnectClient
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.hitit.app.data.repository.BodyRepository
 import com.hitit.app.data.repository.CheckInRepository
+import com.hitit.app.data.repository.HealthRepository
 import com.hitit.domain.vibe.VibeScore
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
@@ -20,6 +23,16 @@ data class FoodEntryUi(
     val kcal: Int,
 )
 
+/** Health Connect connection states the card renders. */
+enum class HcState { UNAVAILABLE, UPDATE_REQUIRED, DISCONNECTED, CONNECTED }
+
+data class BodySignalsUi(
+    val hcState: HcState = HcState.UNAVAILABLE,
+    val steps: Long? = null,
+    val sleepMinutes: Long? = null,
+    val bpm: Long? = null,
+)
+
 data class BodyFlowUiState(
     val bodyPulse: Int = 0,
     val pulseLabel: String = "",
@@ -28,6 +41,7 @@ data class BodyFlowUiState(
     val todayKcal: Int = 0,
     val entries: List<FoodEntryUi> = emptyList(),
     val foodDaysLast7: Int = 0,
+    val signals: BodySignalsUi = BodySignalsUi(),
     val started: Boolean = false,
     val loading: Boolean = true,
 )
@@ -35,17 +49,23 @@ data class BodyFlowUiState(
 @HiltViewModel
 class BodyFlowViewModel @Inject constructor(
     private val bodyRepository: BodyRepository,
+    private val healthRepository: HealthRepository,
     checkInRepository: CheckInRepository,
 ) : ViewModel() {
 
     private val today: LocalDate = LocalDate.now()
+    private val signals = MutableStateFlow(BodySignalsUi())
+
+    /** The HC permission set, for the screen's request launcher. */
+    val healthPermissions: Set<String> get() = healthRepository.permissions
 
     val state: StateFlow<BodyFlowUiState> = combine(
         bodyRepository.observeToday(today),
         bodyRepository.observeFoodDaysLast7(today),
         bodyRepository.observeHasAnyLogs(),
         checkInRepository.observeForDate(today),
-    ) { entries, days7, total, checkIn ->
+        signals,
+    ) { entries, days7, total, checkIn, hc ->
         val checkedIn = checkIn != null &&
             (checkIn.morning.isNotBlank() || checkIn.evening.isNotBlank() || checkIn.mood != null)
         val pulse = VibeScore.bodyPulse(days7, checkedIn)
@@ -57,10 +77,34 @@ class BodyFlowViewModel @Inject constructor(
             todayKcal = entries.sumOf { it.kcal },
             entries = entries.map { FoodEntryUi(it.id, it.description, it.kcal) },
             foodDaysLast7 = days7,
+            signals = hc,
             started = total > 0,
             loading = false,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), BodyFlowUiState())
+
+    init {
+        refreshSignals()
+    }
+
+    /** Re-check HC availability/permissions and read fresh signals (also called after a grant). */
+    fun refreshSignals() {
+        viewModelScope.launch {
+            val status = healthRepository.sdkStatus()
+            signals.value = when (status) {
+                HealthConnectClient.SDK_AVAILABLE -> {
+                    if (healthRepository.hasAllPermissions()) {
+                        val s = healthRepository.readSignals(today)
+                        BodySignalsUi(HcState.CONNECTED, s.stepsToday, s.sleepMinutesLastNight, s.latestBpm)
+                    } else {
+                        BodySignalsUi(HcState.DISCONNECTED)
+                    }
+                }
+                HealthConnectClient.SDK_UNAVAILABLE_PROVIDER_UPDATE_REQUIRED -> BodySignalsUi(HcState.UPDATE_REQUIRED)
+                else -> BodySignalsUi(HcState.UNAVAILABLE)
+            }
+        }
+    }
 
     fun logFood(description: String, kcal: Int) {
         if (description.isBlank() || kcal <= 0) return

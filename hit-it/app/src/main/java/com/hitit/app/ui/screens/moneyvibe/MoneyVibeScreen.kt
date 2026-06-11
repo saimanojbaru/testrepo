@@ -2,6 +2,7 @@ package com.hitit.app.ui.screens.moneyvibe
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -36,12 +37,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.hitit.app.ui.components.VibeShiftState
 import com.hitit.app.ui.components.frostedGlass
 import com.hitit.app.ui.theme.AthleticLabelStyle
 import com.hitit.app.ui.theme.AuroraAmber
@@ -51,15 +58,19 @@ import com.hitit.app.ui.theme.AuroraMist
 import com.hitit.app.ui.theme.AuroraMuted
 import com.hitit.app.ui.theme.AuroraPink
 import com.hitit.app.ui.theme.AuroraViolet
+import com.hitit.app.ui.theme.ToxicGreen
 import com.hitit.domain.money.ExpenseCategorizer
 
 /**
- * MoneyVibe v1 — mindful fun-money: log a spend in one line (auto-categorized offline), watch the
- * weekly Burner Budget, and see impulse buys called out. Bank/notification auto-capture is a later
+ * MoneyVibe, amplified — the wealth psyche companion: hero pulse with week trend (and a hidden
+ * Money Glitch on triple-tap), one-line spend capture, burner budget, the Wealth Analyzer brain,
+ * Impulse Demons with roasts, the Vibe Tax jar, the Future Self mirror, and the weekly Burn Ritual
+ * door into Shadow Self. All rule-based + on-device; notification auto-capture stays a later
  * opt-in drop.
  */
 @Composable
 fun MoneyVibeScreen(
+    onOpenShadow: () -> Unit = {},
     viewModel: MoneyVibeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
@@ -69,36 +80,27 @@ fun MoneyVibeScreen(
             .fillMaxSize()
             .verticalScroll(rememberScrollState()),
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 22.dp, vertical = 14.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.Bottom,
-        ) {
-            Column {
-                Text(
-                    text = "MoneyVibe",
-                    style = MaterialTheme.typography.headlineMedium,
-                    fontWeight = FontWeight.Black,
-                    color = AuroraInk,
-                )
-                Text(
-                    text = if (state.started) "₹${state.weekSpendRupees} this week" else "Mindful money, zero spreadsheets",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = AuroraMuted,
-                )
-            }
-            Column(horizontalAlignment = Alignment.End) {
-                Text(text = "MONEY PULSE", style = AthleticLabelStyle, color = AuroraMuted)
-                Text(
-                    text = "${state.moneyPulse}",
-                    style = MaterialTheme.typography.displaySmall,
-                    fontWeight = FontWeight.Black,
-                    color = AuroraAmber,
-                )
-            }
-        }
+        Text(
+            text = "MoneyVibe",
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Black,
+            color = AuroraInk,
+            modifier = Modifier.padding(start = 22.dp, top = 14.dp),
+        )
+        Text(
+            text = "your wealth psyche, on-device",
+            style = MaterialTheme.typography.bodySmall,
+            color = AuroraMuted,
+            modifier = Modifier.padding(start = 22.dp, bottom = 4.dp),
+        )
+
+        MoneyHeroPulse(
+            pulse = state.moneyPulse,
+            pulseLabel = state.pulseLabel,
+            weekSpendRupees = state.weekSpendRupees,
+            trendLine = state.trendLine,
+            trendIsGood = state.trendIsGood,
+        )
 
         SpendInput(onLog = { amount, desc -> viewModel.logExpense(amount, desc) })
 
@@ -110,7 +112,11 @@ fun MoneyVibeScreen(
         )
 
         if (state.started) {
-            FutureSelfCard(brokeLine = state.futureBrokeLine, glowLine = state.futureGlowLine)
+            WealthAnalyzerCard(insights = state.insights)
+            if (state.vibeJarRupees > 0) VibeTaxJar(rupees = state.vibeJarRupees)
+            if (state.demons.isNotEmpty()) ImpulseDemonsSection(demons = state.demons)
+            FutureSelfMirror(brokeLine = state.futureBrokeLine, glowLine = state.futureGlowLine)
+            BurnRitualCard(onClick = onOpenShadow)
         }
 
         if (state.expenses.isNotEmpty()) {
@@ -134,6 +140,267 @@ fun MoneyVibeScreen(
         }
 
         Spacer(Modifier.height(28.dp))
+    }
+}
+
+/** Hero: huge pulse + week trend. Triple-tap the number for the hidden Money Glitch. */
+@Composable
+private fun MoneyHeroPulse(
+    pulse: Int,
+    pulseLabel: String,
+    weekSpendRupees: Long,
+    trendLine: String,
+    trendIsGood: Boolean,
+) {
+    val haptics = LocalHapticFeedback.current
+    val tapTimes = remember { longArrayOf(0L, 0L) }
+    val pulseColor = when {
+        pulse >= 70 -> ToxicGreen
+        pulse >= 45 -> AuroraAmber
+        else -> AuroraPink
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 8.dp)
+            .frostedGlass(cornerRadius = 26.dp)
+            .padding(vertical = 18.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(text = "MONEY PULSE", style = AthleticLabelStyle, color = AuroraMuted)
+        Text(
+            text = "$pulse",
+            style = MaterialTheme.typography.displayLarge.copy(fontSize = 72.sp, fontWeight = FontWeight.Black),
+            color = pulseColor,
+            modifier = Modifier.pointerInput(Unit) {
+                detectTapGestures(onTap = {
+                    val now = System.currentTimeMillis()
+                    if (now - tapTimes[0] < 700) {
+                        tapTimes[0] = 0L; tapTimes[1] = 0L
+                        haptics.performHapticFeedback(HapticFeedbackType.LongPress)
+                        VibeShiftState.toggle() // Money Glitch — same cosmos, different dimension
+                    } else {
+                        tapTimes[0] = tapTimes[1]; tapTimes[1] = now
+                    }
+                })
+            },
+        )
+        Text(
+            text = pulseLabel,
+            style = MaterialTheme.typography.titleSmall,
+            fontWeight = FontWeight.Bold,
+            color = pulseColor,
+        )
+        if (trendLine.isNotEmpty()) {
+            Spacer(Modifier.height(6.dp))
+            Text(
+                text = "₹$weekSpendRupees this week · $trendLine",
+                style = MaterialTheme.typography.labelMedium,
+                color = if (trendIsGood) AuroraCyan else AuroraPink,
+            )
+        }
+    }
+}
+
+@Composable
+private fun WealthAnalyzerCard(insights: List<InsightUi>) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 8.dp)
+            .frostedGlass(cornerRadius = 24.dp, accent = if (insights.any { it.severity >= 5 }) AuroraPink else null)
+            .padding(16.dp),
+    ) {
+        Text(
+            text = "🧠 WEALTH ANALYZER",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.Black,
+            color = AuroraCyan,
+        )
+        Spacer(Modifier.height(8.dp))
+        insights.forEach { insight ->
+            val accent = when {
+                insight.severity >= 5 -> AuroraPink
+                insight.severity >= 3 -> AuroraAmber
+                insight.severity >= 1 -> AuroraViolet
+                else -> AuroraCyan
+            }
+            Row(
+                modifier = Modifier.padding(vertical = 6.dp),
+                verticalAlignment = Alignment.Top,
+                horizontalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                Text(text = insight.emoji, style = MaterialTheme.typography.titleMedium)
+                Column {
+                    Text(
+                        text = insight.headline,
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Black,
+                        color = accent,
+                    )
+                    Text(
+                        text = insight.detail,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = AuroraInk,
+                    )
+                }
+            }
+        }
+        Text(
+            text = "Rule-based, fully on-device. The full build's LLM can rephrase these — the analysis never needs it.",
+            style = MaterialTheme.typography.labelSmall,
+            color = AuroraMuted,
+            modifier = Modifier.padding(top = 6.dp),
+        )
+    }
+}
+
+@Composable
+private fun VibeTaxJar(rupees: Long) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .frostedGlass(cornerRadius = 22.dp, accent = AuroraCyan)
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(14.dp),
+    ) {
+        Text(text = "🫙", style = MaterialTheme.typography.headlineMedium)
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = "Future Self Jar",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Black,
+                color = AuroraInk,
+            )
+            Text(
+                text = "Every impulse buy auto-rounds up to the next ₹10 — the skim lands here.",
+                style = MaterialTheme.typography.labelSmall,
+                color = AuroraMuted,
+            )
+        }
+        Text(
+            text = "₹$rupees",
+            style = MaterialTheme.typography.headlineSmall,
+            fontWeight = FontWeight.Black,
+            color = AuroraCyan,
+        )
+    }
+}
+
+@Composable
+private fun ImpulseDemonsSection(demons: List<DemonUi>) {
+    Text(
+        text = "👹 IMPULSE DEMONS THIS WEEK",
+        style = AthleticLabelStyle,
+        color = AuroraPink,
+        modifier = Modifier.padding(start = 24.dp, top = 10.dp, bottom = 4.dp),
+    )
+    demons.forEach { demon ->
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 20.dp, vertical = 4.dp)
+                .frostedGlass(cornerRadius = 18.dp, accent = AuroraPink)
+                .padding(horizontal = 14.dp, vertical = 10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "${demon.description} · ₹${demon.amountRupees}",
+                    style = MaterialTheme.typography.bodyMedium,
+                    fontWeight = FontWeight.Bold,
+                    color = AuroraInk,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+                Text(
+                    text = "“${demon.roast}”",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = AuroraPink,
+                )
+            }
+        }
+    }
+}
+
+/** Two timelines, two avatars: broke-you vs glowing-you, from the same week of fun money. */
+@Composable
+private fun FutureSelfMirror(brokeLine: String, glowLine: String) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 8.dp)
+            .frostedGlass(cornerRadius = 24.dp)
+            .padding(16.dp),
+    ) {
+        Text(text = "🔮 FUTURE SELF MIRROR", style = AthleticLabelStyle, color = AuroraMuted)
+        Spacer(Modifier.height(10.dp))
+        Row(modifier = Modifier.fillMaxWidth()) {
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Text(text = "😵", style = MaterialTheme.typography.displaySmall)
+                Text(
+                    text = brokeLine,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = AuroraPink,
+                    textAlign = TextAlign.Center,
+                )
+            }
+            Spacer(Modifier.size(16.dp))
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Text(text = "🤑", style = MaterialTheme.typography.displaySmall)
+                Text(
+                    text = glowLine,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = ToxicGreen,
+                    textAlign = TextAlign.Center,
+                )
+            }
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(
+            text = "Same money, two timelines. Projection, not financial advice — but the math is the math.",
+            style = MaterialTheme.typography.labelSmall,
+            color = AuroraMuted,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth(),
+        )
+    }
+}
+
+@Composable
+private fun BurnRitualCard(onClick: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp, vertical = 6.dp)
+            .frostedGlass(cornerRadius = 22.dp, accent = AuroraViolet)
+            .clickable(onClick = onClick)
+            .padding(16.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(14.dp),
+    ) {
+        Text(text = "🔥", style = MaterialTheme.typography.headlineSmall)
+        Column(modifier = Modifier.weight(1f)) {
+            Text(
+                text = "Weekly Burn Ritual",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Black,
+                color = AuroraInk,
+            )
+            Text(
+                text = "Face Shadow Self with this week's spending. It already knows about the demons.",
+                style = MaterialTheme.typography.labelSmall,
+                color = AuroraMuted,
+            )
+        }
     }
 }
 
@@ -235,22 +502,14 @@ private fun BurnerBudgetCard(
             .frostedGlass(cornerRadius = 24.dp, accent = if (utilization != null && utilization > 1f) AuroraPink else null)
             .padding(16.dp),
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Column {
-                Text(text = "🔥 BURNER BUDGET", style = AthleticLabelStyle, color = AuroraMuted)
-                Text(
-                    text = if (budgetRupees > 0) "₹$spentRupees of ₹$budgetRupees fun money this week"
-                    else "Cap your weekly fun money",
-                    style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.SemiBold,
-                    color = AuroraInk,
-                )
-            }
-        }
+        Text(text = "🔥 BURNER BUDGET", style = AthleticLabelStyle, color = AuroraMuted)
+        Text(
+            text = if (budgetRupees > 0) "₹$spentRupees of ₹$budgetRupees fun money this week"
+            else "Cap your weekly fun money",
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = FontWeight.SemiBold,
+            color = AuroraInk,
+        )
         if (budgetRupees > 0 && utilization != null) {
             LinearProgressIndicator(
                 progress = { utilization.coerceIn(0f, 1f) },
@@ -295,46 +554,6 @@ private fun BurnerBudgetCard(
                 }
             }
         }
-    }
-}
-
-/** Two timelines, one choice: future broke self vs future glowing self (same money, compounding). */
-@Composable
-private fun FutureSelfCard(brokeLine: String, glowLine: String) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 20.dp, vertical = 8.dp)
-            .frostedGlass(cornerRadius = 24.dp)
-            .padding(16.dp),
-    ) {
-        Text(text = "🔮 FUTURE SELF", style = AthleticLabelStyle, color = AuroraMuted)
-        Spacer(Modifier.height(10.dp))
-        Row(verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Text(text = "😵", style = MaterialTheme.typography.headlineSmall)
-            Text(
-                text = brokeLine,
-                style = MaterialTheme.typography.bodySmall,
-                color = AuroraPink,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Spacer(Modifier.height(10.dp))
-        Row(verticalAlignment = Alignment.Top, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Text(text = "🤑", style = MaterialTheme.typography.headlineSmall)
-            Text(
-                text = glowLine,
-                style = MaterialTheme.typography.bodySmall,
-                color = AuroraCyan,
-                modifier = Modifier.weight(1f),
-            )
-        }
-        Spacer(Modifier.height(8.dp))
-        Text(
-            text = "Projection only, not financial advice — but the math is the math.",
-            style = MaterialTheme.typography.labelSmall,
-            color = AuroraMuted,
-        )
     }
 }
 
