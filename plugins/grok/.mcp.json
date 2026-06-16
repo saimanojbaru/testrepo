@@ -1,10 +1,5 @@
 {
   "mcpServers": {
-    "excel": {
-      "command": "excel-mcp-server",
-      "args": ["stdio"],
-      "type": "stdio"
-    },
     "grok": {
       "command": "npx",
       "args": ["-y", "grok-build-x-search-mcp"]
