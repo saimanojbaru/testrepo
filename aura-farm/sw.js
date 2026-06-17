@@ -4,7 +4,7 @@
    you're cooked with no signal 📡💀✨
    ═══════════════════════════════════════════════════ */
 
-const CACHE_NAME = 'aura-farm-v17';
+const CACHE_NAME = 'aura-farm-v18';
 
 const ASSETS = [
   './',
@@ -38,6 +38,9 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
+
+  // never cache the live leaderboard / API — always go to network
+  if (new URL(req.url).pathname.startsWith('/api/')) return;
 
   const isNav = req.mode === 'navigate' ||
     (req.headers.get('accept') || '').includes('text/html');

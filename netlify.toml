@@ -1,4 +1,8 @@
 [build]
   base = "aura-farm"
   publish = "."
-  command = "echo done"
+  command = "npm install"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
