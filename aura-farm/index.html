@@ -21,7 +21,7 @@
       <span class="header-logo glitch">🧠</span>
       <div>
         <div class="header-title">AURA FARM</div>
-        <div class="header-version">v1.0 — brain rot slayer, aura whore</div>
+        <div class="header-version">v2.0 — brain rot slayer, aura whore</div>
       </div>
     </div>
     <div class="header-right" id="headerRight">
@@ -48,6 +48,9 @@
   <!-- ═══════════ TOAST CONTAINER ═══════════ -->
   <div class="toast-container" id="toastContainer"></div>
 
+  <!-- ═══════════ CONFETTI CANVAS ═══════════ -->
+  <canvas id="confettiCanvas"></canvas>
+
   <!-- ═══════════ LANDING PAGE ═══════════ -->
   <div class="screen active" id="screenLanding">
     <div class="container">
@@ -66,8 +69,10 @@
           <em>Starve that fucking Brain Rot.</em><br>
           <strong>Farm your Aura, no cap.</strong> 🔥
         </p>
-        <button class="btn btn-accent btn-block mt-2" onclick="enterApp()" style="font-size:0.9rem; padding:14px;">
-          Enter your Zone, lock the fuck in → 🔒🔥
+        <button class="btn-cta" onclick="enterApp()">
+          <span class="btn-cta-text">Enter your Zone, lock the fuck in →</span>
+          <span class="btn-cta-icons">🔒🔥</span>
+          <span class="btn-cta-glow"></span>
         </button>
       </div>
 
@@ -181,7 +186,7 @@
       <!-- Stats -->
       <div class="stats-row" id="statsRow"></div>
 
-      <!-- Tab: Den (Home) -->
+      <!-- Tab: Den (Home — overview + commit log) -->
       <div class="screen active" id="tabDen">
         <div class="section-title">💀 // STARVE THE BRAIN ROT</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch 🚫💀</p>
@@ -198,22 +203,46 @@
         </button>
       </div>
 
-      <!-- Tab: Quit (Brain Rot Focus) -->
-      <div class="screen" id="tabQuit">
-        <div class="section-title">🚫 // QUIT TIMER — BRAIN ROT DETOX</div>
+      <!-- Tab: Starve (Brain Rot Focus + Quit Timers) -->
+      <div class="screen" id="tabStarve">
+        <div class="section-title">💀 // BRAIN ROT HIT LIST</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch into extinction 🚫💀</p>
+        <div id="starveList"></div>
+        <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">
+          + add brain rot to starve 💀
+        </button>
+
+        <div class="section-title mt-2">🚫 // QUIT TIMER — BRAIN ROT DETOX</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">track how long you've been starving each degenerate habit — the longer the filthier the flex 💀🔥</p>
         <div id="quitTimerList"></div>
       </div>
 
-      <!-- Tab: Commit -->
-      <div class="screen" id="tabCommit">
-        <div class="section-title">📝 // DAILY COMMIT LOG</div>
+      <!-- Tab: Farm (Aura Habits + Commit Log) -->
+      <div class="screen" id="tabFarm">
+        <div class="section-title">✨ // AURA FARM HABITS</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i did this shit today, i'm THAT bitch" — farm it like the slut for progress you are 🔥✅</p>
+        <div id="farmList"></div>
+        <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
+          + add aura habit ✨
+        </button>
+
+        <div class="section-title mt-2">📝 // DAILY COMMIT LOG</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">what did you lock in today? spill the tea, document the grind, no cap ✍️🔥</p>
         <div class="input-row">
           <input type="text" id="commitInput" placeholder="today i locked tf in and didn't act like a degenerate because...">
           <button class="btn btn-accent" onclick="addCommit()">log it 🔥</button>
         </div>
         <div id="commitLog"></div>
+      </div>
+
+      <!-- Tab: Squad -->
+      <div class="screen" id="tabSquad">
+        <div class="section-title">👥 // THE SQUAD FEED</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">your fellow degenerate sluts for progress, all grinding their asses off 🫡🔥</p>
+        <div class="card" id="squadFeed"></div>
+        <button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquadFeed()">
+          refresh the feed, see who's grinding 🔄
+        </button>
       </div>
 
       <!-- Tab: Reward (Shop) -->
@@ -243,13 +272,6 @@
         </div>
       </div>
 
-      <!-- Tab: Squad -->
-      <div class="screen" id="tabSquad">
-        <div class="section-title">👥 // THE SQUAD FEED</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">your fellow degenerate sluts for progress, all grinding their asses off 🫡🔥</p>
-        <div class="card" id="squadFeed"></div>
-      </div>
-
     </div>
   </div>
 
@@ -258,20 +280,20 @@
     <button class="nav-item active" data-tab="tabDen" onclick="switchTab('tabDen',this)">
       <span class="nav-icon">🏠</span> Den
     </button>
-    <button class="nav-item" data-tab="tabQuit" onclick="switchTab('tabQuit',this)">
-      <span class="nav-icon">🚫</span> Quit
+    <button class="nav-item" data-tab="tabStarve" onclick="switchTab('tabStarve',this)">
+      <span class="nav-icon">💀</span> Starve
     </button>
-    <button class="nav-item" data-tab="tabCommit" onclick="switchTab('tabCommit',this)">
-      <span class="nav-icon">📝</span> Commit
+    <button class="nav-item" data-tab="tabFarm" onclick="switchTab('tabFarm',this)">
+      <span class="nav-icon">✨</span> Farm
+    </button>
+    <button class="nav-item" data-tab="tabSquad" onclick="switchTab('tabSquad',this)">
+      <span class="nav-icon">👥</span> Squad
     </button>
     <button class="nav-item" data-tab="tabReward" onclick="switchTab('tabReward',this)">
       <span class="nav-icon">🛒</span> Shop
     </button>
     <button class="nav-item" data-tab="tabCalendar" onclick="switchTab('tabCalendar',this)">
       <span class="nav-icon">📅</span> Cal
-    </button>
-    <button class="nav-item" data-tab="tabSquad" onclick="switchTab('tabSquad',this)">
-      <span class="nav-icon">👥</span> Squad
     </button>
   </nav>
 

@@ -288,6 +288,71 @@ function sfx(type) {
 }
 function haptic(ms) { try { navigator.vibrate(ms || 12); } catch {} }
 
+// ─── CONFETTI SYSTEM ───
+const confettiParticles = [];
+let confettiCanvas = null;
+let confettiCtx = null;
+let confettiRAF = null;
+
+function initConfetti() {
+  confettiCanvas = document.getElementById('confettiCanvas');
+  if (!confettiCanvas) return;
+  confettiCtx = confettiCanvas.getContext('2d');
+  resizeConfetti();
+  window.addEventListener('resize', resizeConfetti);
+}
+function resizeConfetti() {
+  if (!confettiCanvas) return;
+  confettiCanvas.width = window.innerWidth;
+  confettiCanvas.height = window.innerHeight;
+}
+function spawnConfetti(count) {
+  if (!confettiCtx) return;
+  const colors = ['#c8ff00', '#ff3e6c', '#b388ff', '#00e5ff', '#ff9100', '#ffd700', '#ff8fd6'];
+  for (let i = 0; i < count; i++) {
+    confettiParticles.push({
+      x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+      y: window.innerHeight * 0.35,
+      vx: (Math.random() - 0.5) * 12,
+      vy: -(Math.random() * 8 + 4),
+      w: Math.random() * 8 + 4,
+      h: Math.random() * 6 + 3,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rotation: Math.random() * 360,
+      rotSpeed: (Math.random() - 0.5) * 15,
+      life: 1,
+      decay: 0.008 + Math.random() * 0.008
+    });
+  }
+  if (!confettiRAF) animateConfetti();
+}
+function animateConfetti() {
+  if (!confettiCtx) return;
+  confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+  for (let i = confettiParticles.length - 1; i >= 0; i--) {
+    const p = confettiParticles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.18;
+    p.vx *= 0.99;
+    p.rotation += p.rotSpeed;
+    p.life -= p.decay;
+    if (p.life <= 0) { confettiParticles.splice(i, 1); continue; }
+    confettiCtx.save();
+    confettiCtx.translate(p.x, p.y);
+    confettiCtx.rotate((p.rotation * Math.PI) / 180);
+    confettiCtx.globalAlpha = p.life;
+    confettiCtx.fillStyle = p.color;
+    confettiCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    confettiCtx.restore();
+  }
+  if (confettiParticles.length > 0) {
+    confettiRAF = requestAnimationFrame(animateConfetti);
+  } else {
+    confettiRAF = null;
+  }
+}
+
 // ─── STATE ───
 let data = {};
 let currentTab = 'tabDen';
@@ -425,6 +490,8 @@ function updateAuraDisplay() {
 function renderHabits() {
   renderHabitList('starve', 'brainRotList');
   renderHabitList('farm', 'auraFarmList');
+  renderHabitList('starve', 'starveList');
+  renderHabitList('farm', 'farmList');
   renderQuitTimers();
   updateStats();
   updateAuraDisplay();
@@ -519,6 +586,7 @@ function tapHabit(type, id, evt) {
     showAuraChange(total);
     floatPoints(btn, total);
     spawnRing(btn, type === 'starve');
+    spawnConfetti(total > 30 ? 40 : 20);
     sfx('tap'); haptic(12);
     toast(rand(type === 'starve' ? STARVE_ROASTS : FARM_HYPES), 'good');
   }
@@ -863,6 +931,7 @@ function buyItem(category, id) {
   updateAuraDisplay();
   renderRewards();
   applyEquipped();
+  spawnConfetti(30);
   sfx('buy'); haptic(15);
   toast(rand(REDEEM_HYPE), 'good');
 }
@@ -885,6 +954,7 @@ function claimReward(id) {
   data.rewards.push(id);
   save();
   renderRewards();
+  spawnConfetti(50);
   sfx('buy'); haptic(15);
   toast(`🏆 ${r.name} CLAIMED — ${r.desc} you filthy grinder`, 'good');
 }
@@ -1177,8 +1247,9 @@ function switchTab(tabId, btn) {
   if (tabId === 'tabCalendar') renderCalendar('appCalendar');
   if (tabId === 'tabSquad') renderSquadFeed();
   if (tabId === 'tabReward') renderRewards();
-  if (tabId === 'tabCommit') renderCommitLog();
-  if (tabId === 'tabQuit') renderQuitTimers();
+  if (tabId === 'tabFarm') renderCommitLog();
+  if (tabId === 'tabStarve') renderQuitTimers();
+  if (tabId === 'tabDen') renderHabits();
 }
 
 // ─── APP ENTRY ───
@@ -1359,6 +1430,7 @@ function init() {
 
   initPWA();
   initOfflineWatch();
+  initConfetti();
 
   document.getElementById('commitInput')?.addEventListener('keydown', e => {
     if (e.key === 'Enter') addCommit();
