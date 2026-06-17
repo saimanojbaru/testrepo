@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Starve your Brain Rot. Farm your Aura, no cap.">
+<title>Aura Farm</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;
+--fg:#e0e0e0;--fg2:#888;
+--accent:#b388ff;--danger:#ff3e6c;--purple:#b388ff;--cyan:#00e5ff;
+--border:#2a2a2a;
+--glow-a:rgba(179,136,255,.5);--glow-d:rgba(255,62,108,.5);
+--r:8px;
+--mono:'SF Mono','Fira Code','Cascadia Code','JetBrains Mono',Consolas,monospace;
+}
+html{font-size:17px;-webkit-text-size-adjust:100%}
+body{font-family:var(--mono);background:radial-gradient(ellipse 90% 55% at 50% -12%,rgba(122,47,255,.22),rgba(0,229,255,.05) 38%,transparent 60%),var(--bg);
+background-attachment:fixed;color:var(--fg);min-height:100dvh;line-height:1.6;
+-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:72px;
+-webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;
+background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.015) 2px,rgba(255,255,255,.015) 4px);mix-blend-mode:overlay}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.container{max-width:640px;margin:0 auto;padding:0 16px}
+/* HEADER */
+.header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.9);backdrop-filter:blur(16px);
+border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.header-left{display:flex;align-items:center;gap:10px}
+.header-logo{font-size:1.4rem;animation:logoBr 3s ease-in-out infinite;filter:drop-shadow(0 0 8px var(--glow-a))}
+@keyframes logoBr{0%,100%{transform:scale(1);filter:drop-shadow(0 0 6px var(--glow-a))}50%{transform:scale(1.06);filter:drop-shadow(0 0 16px var(--glow-a))}}
+.header-title{font-size:.95rem;font-weight:700;color:var(--accent);letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.header-sub{font-size:.74rem;color:var(--fg2)}
+/* BUTTONS */
+.btn{font-family:var(--mono);font-size:.88rem;padding:8px 16px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);
+border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn:active{transform:scale(.95)}
+.btn-accent{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700;box-shadow:0 0 14px rgba(179,136,255,.2)}
+.btn-danger{border-color:var(--danger);color:var(--danger);background:transparent}
+.btn-sm{padding:4px 10px;font-size:.82rem}
+.btn-block{width:100%;text-align:center}
+.glow-btn{box-shadow:0 0 15px rgba(0,255,159,.5);transition:all .2s}
+.glow-btn:hover{box-shadow:0 0 25px rgba(0,255,159,.6)}
+/* CARDS */
+.card{background:rgba(17,17,17,.7);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin:10px 0;
+backdrop-filter:blur(8px);transition:border-color .3s,box-shadow .3s}
+.card:hover{border-color:rgba(0,255,159,.3);box-shadow:0 0 16px rgba(0,255,159,.08)}
+/* SECTION TITLES */
+.sec-title{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--fg);font-weight:700;text-transform:uppercase;
+letter-spacing:1.5px;margin:22px 0 10px;padding-left:10px;border-left:3px solid var(--accent)}
+.sec-title.neon-a{border-left-color:var(--accent)}
+.sec-title.neon-r{border-left-color:var(--danger)}
+/* AURA DISPLAY */
+.aura-display{text-align:center;padding:20px 0 10px;position:relative}
+.aura-display::before{content:'';position:absolute;left:50%;top:46%;width:min(300px,80vw);height:min(300px,80vw);
+transform:translate(-50%,-50%);z-index:-1;pointer-events:none;border-radius:50%;
+background:radial-gradient(circle,rgba(179,136,255,.28),rgba(0,229,255,.10) 42%,transparent 68%);
+filter:blur(6px);animation:auraBreath 5s ease-in-out infinite}
+@keyframes auraBreath{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(.88)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
+.aura-num{font-size:3.2rem;font-weight:900;color:var(--accent);line-height:1;display:inline-block;
+text-shadow:0 0 10px var(--glow-a),0 0 40px rgba(179,136,255,.25);animation:cPulse 4s ease-in-out infinite}
+@keyframes cPulse{0%,100%{text-shadow:0 0 10px var(--glow-a),0 0 40px rgba(179,136,255,.25)}
+50%{text-shadow:0 0 30px var(--glow-a),0 0 80px rgba(179,136,255,.4),0 0 140px rgba(179,136,255,.15)}}
+.aura-num.glow-gain{animation:aGlow .8s ease}
+.aura-num.glow-loss{animation:aLoss .6s ease}
+@keyframes aGlow{0%{transform:scale(1)}30%{transform:scale(1.2);color:#fff;text-shadow:0 0 20px #fff,0 0 60px var(--accent)}100%{transform:scale(1);color:var(--accent)}}
+@keyframes aLoss{0%{transform:scale(1)}15%{transform:translateX(-6px);color:var(--danger)}40%{transform:translateX(6px)}70%{transform:translateX(-3px)}100%{transform:scale(1);color:var(--accent)}}
+.aura-label{font-size:.82rem;color:var(--fg2);text-transform:uppercase;letter-spacing:3px;margin-top:4px}
+.aura-change{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.82rem;font-weight:700;margin-top:6px;animation:fadeUp .4s ease}
+.aura-change.gain{background:rgba(179,136,255,.15);color:var(--accent)}
+.aura-change.loss{background:rgba(255,62,108,.15);color:var(--danger)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.stat-box{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:10px 6px;text-align:center}
+.stat-n{font-size:1.3rem;font-weight:900;color:var(--accent);text-shadow:0 0 8px var(--glow-a)}
+.stat-l{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+/* LEVEL CARD */
+.lvl-card{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin:10px 0}
+.lvl-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.lvl-icon{font-size:1.8rem;filter:drop-shadow(0 0 8px var(--glow-a));animation:logoBr 3s ease-in-out infinite}
+.lvl-title{font-size:.9rem;font-weight:900;color:var(--accent);text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.lvl-name{font-size:.9rem;color:var(--purple);font-style:italic;text-shadow:0 0 8px rgba(179,136,255,.4)}
+.lvl-bar-wrap{height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
+.lvl-bar{height:100%;background:linear-gradient(90deg,var(--accent),#00e5ff);border-radius:3px;transition:width .6s;box-shadow:0 0 8px var(--glow-a)}
+.lvl-next{font-size:.84rem;color:var(--fg2);margin-top:5px;text-align:right}
+/* HABIT ITEMS */
+.habit{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(26,26,26,.8);border:1px solid var(--border);
+border-radius:var(--r);margin:6px 0;transition:border-color .2s,box-shadow .3s,transform .2s}
+.habit:hover{border-color:rgba(0,255,159,.3);box-shadow:0 0 14px rgba(0,255,159,.08);transform:translateY(-1px)}
+.habit-emoji{font-size:1.2rem;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.habit-emoji svg,.icon-inline{width:1.2em;height:1.2em;display:inline-block;vertical-align:middle;fill:currentColor;flex-shrink:0}
+.icon-sm svg,.icon-sm{width:.9em;height:.9em}
+.icon-lg svg,.icon-lg{width:1.6em;height:1.6em}
+.icon-xl svg,.icon-xl{width:2.4em;height:2.4em}
+.icon-xxl svg,.icon-xxl{width:3.4em;height:3.4em}
+.icon-pill{display:inline-flex;align-items:center;gap:4px}
+/* ANIMATED ICON CLASSES */
+.icon-pulse{animation:iconPulse 2s ease-in-out infinite}
+@keyframes iconPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.85}}
+.icon-spin{animation:iconSpin 2.5s linear infinite}
+@keyframes iconSpin{to{transform:rotate(360deg)}}
+.icon-bounce{animation:iconBounce 1.5s ease infinite}
+@keyframes iconBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.icon-glow-a{filter:drop-shadow(0 0 6px var(--accent))}
+.icon-glow-d{filter:drop-shadow(0 0 6px var(--danger))}
+.icon-glow-c{filter:drop-shadow(0 0 6px var(--cyan))}
+.icon-pop{animation:iconPop .4s cubic-bezier(.34,1.56,.64,1)}
+@keyframes iconPop{0%{transform:scale(0)}60%{transform:scale(1.3)}100%{transform:scale(1)}}
+.icon-shake{animation:iconShake .5s ease}
+@keyframes iconShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}75%{transform:rotate(-6deg)}}
+.icon-float{animation:iconFloat 3s ease-in-out infinite}
+@keyframes iconFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-4px) rotate(3deg)}}
+.sec-title .icon-inline{filter:drop-shadow(0 0 4px currentColor);transition:transform .2s}
+.sec-title:hover .icon-inline{transform:scale(1.15) rotate(-5deg)}
+.tap-btn .icon-inline{transition:transform .2s}
+.tap-btn:hover .icon-inline{transform:scale(1.15)}
+.tap-btn.tapped .icon-inline,.tap-btn.tapped-bad .icon-inline{animation:iconPop .35s cubic-bezier(.34,1.56,.64,1)}
+.lb-rank .icon-inline{filter:drop-shadow(0 0 5px currentColor)}
+.lb-rank.top .icon-inline{animation:iconFloat 3s ease-in-out infinite}
+.demon-emoji .icon-inline{animation:iconPulse 2s ease-in-out infinite;filter:drop-shadow(0 0 10px currentColor)}
+.pentagram .icon-inline{animation:iconSpin 3s linear infinite,iconPulse 2s ease-in-out infinite;filter:drop-shadow(0 0 14px var(--accent))}
+.pb-em .icon-inline{animation:iconShake 2s ease infinite}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;vertical-align:middle}
+.status-dot.live{background:var(--accent);box-shadow:0 0 8px var(--accent);animation:dotPulse 1.5s ease infinite}
+.status-dot.ended{background:var(--fg2);opacity:.5}
+@keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 4px var(--accent)}50%{opacity:.6;box-shadow:0 0 12px var(--accent)}}
+.habit-info{flex:1;min-width:0}
+.habit-name{font-size:.9rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.habit-streak{font-size:.88rem;color:var(--fg2)}
+.tap-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:transparent;color:var(--fg);
+font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+transition:all .15s cubic-bezier(.34,1.56,.64,1);touch-action:manipulation;-webkit-user-select:none;user-select:none;position:relative}
+.tap-btn:hover{border-color:var(--accent);background:rgba(179,136,255,.08)}
+.tap-btn:active{transform:scale(.85);box-shadow:0 0 40px currentColor}
+.tap-btn.tapped{border-color:var(--accent);background:var(--accent);color:var(--bg);
+box-shadow:0 0 22px var(--glow-a);animation:tapPop .35s cubic-bezier(.34,1.56,.64,1)}
+.tap-btn.tapped-bad{border-color:var(--danger);background:var(--danger);color:#fff;
+box-shadow:0 0 22px var(--glow-d);animation:tapPop .35s,rotGlitch .3s}
+@keyframes tapPop{0%{transform:scale(1)}45%{transform:scale(1.35) rotate(-8deg)}70%{transform:scale(.92) rotate(4deg)}100%{transform:scale(1)}}
+@keyframes rotGlitch{0%,100%{filter:none}20%{filter:hue-rotate(30deg) brightness(1.5)}60%{filter:hue-rotate(-20deg) brightness(.8);transform:translateX(-2px)}}
+.del-btn{background:none;border:none;color:var(--fg2);cursor:pointer;font-size:.82rem;padding:4px;opacity:0;transition:opacity .2s,color .2s}
+.del-btn:hover{color:var(--danger)}
+.del-btn .icon-inline{transition:transform .2s}
+.del-btn:hover .icon-inline{transform:scale(1.3) rotate(90deg)}
+.habit:hover .del-btn{opacity:1}
+#headerRight .btn .icon-inline{transition:transform .3s}
+#headerRight .btn:hover .icon-inline{transform:rotate(90deg);filter:drop-shadow(0 0 6px var(--accent))}
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);
+border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom,0)}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px;
+color:var(--fg2);font-size:.9rem;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:none;
+font-family:var(--mono);gap:2px;touch-action:manipulation;-webkit-user-select:none;user-select:none;transition:color .2s;position:relative}
+.nav-btn:active{transform:scale(.92)}
+.nav-btn.active{color:var(--accent)}
+.nav-btn.active::after{content:'';position:absolute;top:0;left:15%;right:15%;height:3px;background:var(--accent);
+border-radius:0 0 3px 3px;box-shadow:0 0 12px var(--glow-a)}
+.nav-icon{font-size:1.1rem;line-height:0}
+.nav-icon svg{width:22px;height:22px;display:block;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.nav-btn.active .nav-icon svg{filter:drop-shadow(0 0 6px var(--glow-a));animation:navIconPop .3s cubic-bezier(.34,1.56,.64,1)}
+@keyframes navIconPop{0%{transform:scale(1)}50%{transform:scale(1.2) translateY(-2px)}100%{transform:scale(1)}}
+/* TOAST */
+.toast-wrap{position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:999;display:flex;flex-direction:column;gap:8px;
+pointer-events:none;width:90%;max-width:400px}
+.toast{background:rgba(17,17,17,.95);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:.84rem;
+color:var(--fg);animation:tIn .25s ease,tOut .3s ease 2.5s forwards;pointer-events:auto;backdrop-filter:blur(8px)}
+.toast.good{border-color:var(--accent);box-shadow:0 0 12px rgba(179,136,255,.1)}
+.toast.bad{border-color:var(--danger);box-shadow:0 0 12px rgba(255,62,108,.1)}
+@keyframes tIn{from{opacity:0;transform:translateY(-12px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes tOut{from{opacity:1}to{opacity:0;transform:translateY(-12px)}}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:none;align-items:flex-end;justify-content:center;
+animation:fadeIn .2s;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal{background:rgba(17,17,17,.95);border:1px solid var(--border);border-top:1px solid rgba(179,136,255,.15);
+border-radius:14px 14px 0 0;width:100%;max-width:640px;max-height:80vh;overflow-y:auto;padding:20px;
+animation:slideUp .25s cubic-bezier(.22,1,.36,1);backdrop-filter:blur(16px)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal h3{font-size:.95rem;color:var(--accent);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.modal input{width:100%;font-family:var(--mono);font-size:.8rem;padding:10px 12px;background:var(--bg);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);margin-bottom:12px;outline:none;transition:border-color .2s}
+.modal input:focus{border-color:var(--accent);box-shadow:0 0 10px rgba(179,136,255,.1)}
+.modal-actions{display:flex;gap:8px;margin-top:8px}.modal-actions .btn{flex:1}
+/* TAB CONTENT */
+.tab{display:none}.tab.active{display:block;animation:tabIn .2s ease}
+@keyframes tabIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* FLOATING +AP */
+.ap-float{position:fixed;z-index:998;font-family:var(--mono);font-weight:900;font-size:1.1rem;pointer-events:none;animation:apF 1s ease-out forwards}
+.ap-float.gain{color:var(--accent);text-shadow:0 0 12px var(--glow-a)}
+.ap-float.loss{color:var(--danger);text-shadow:0 0 12px var(--glow-d)}
+@keyframes apF{0%{opacity:0;transform:translate(-50%,0) scale(.6)}20%{opacity:1;transform:translate(-50%,-16px) scale(1.15)}100%{opacity:0;transform:translate(-50%,-90px) scale(.85)}}
+/* CONFETTI CANVAS */
+#confettiCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:997}
+/* ICON PICKER */
+.emoji-grid{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.emoji-opt{cursor:pointer;padding:6px;border-radius:6px;border:2px solid transparent;background:none;transition:all .2s;touch-action:manipulation;
+color:var(--fg);display:flex;align-items:center;justify-content:center;width:36px;height:36px}
+.emoji-opt svg{width:20px;height:20px;fill:currentColor}
+.emoji-opt.sel{border-color:var(--accent);color:var(--accent);box-shadow:0 0 8px rgba(179,136,255,.2)}
+/* SUGG CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:5px;max-height:140px;overflow-y:auto;padding:2px}
+.chip{font-family:var(--mono);font-size:.9rem;padding:5px 9px;border:1px solid var(--border);background:var(--bg3);color:var(--fg);
+border-radius:14px;cursor:pointer;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;touch-action:manipulation}
+.chip:active{transform:scale(.92)}
+.chip.s:hover,.chip.s.picked{border-color:var(--danger);color:var(--danger);background:rgba(255,62,108,.1)}
+.chip.f:hover,.chip.f.picked{border-color:var(--accent);color:var(--accent);background:rgba(179,136,255,.1)}
+/* SQUAD */
+.sq-item{display:flex;gap:10px;align-items:flex-start;padding:10px 6px;border-bottom:1px solid var(--border);font-size:.84rem;
+animation:sqIn .5s ease backwards;transition:transform .2s,background .2s;border-radius:4px}
+.sq-item:nth-child(1){animation-delay:0s}.sq-item:nth-child(2){animation-delay:.08s}.sq-item:nth-child(3){animation-delay:.16s}
+.sq-item:nth-child(4){animation-delay:.24s}.sq-item:nth-child(5){animation-delay:.32s}.sq-item:nth-child(6){animation-delay:.4s}
+@keyframes sqIn{from{opacity:0;transform:translateY(24px)}60%{opacity:1;transform:translateY(-2px)}to{transform:translateY(0)}}
+.sq-item:hover{transform:translateY(-2px);background:rgba(179,136,255,.02)}
+.sq-item:last-child{border-bottom:none}
+.sq-av{font-size:1.3rem;flex-shrink:0}
+.sq-name{color:var(--purple);font-weight:600;text-shadow:0 0 8px rgba(179,136,255,.4)}
+.sq-time{color:var(--fg2);font-size:.84rem}
+.sq-msg{color:var(--fg);margin-top:2px}
+/* SHOP */
+.shop-bal{font-size:.95rem;font-weight:700;padding:8px 0;text-align:center;text-shadow:0 0 8px var(--glow-a)}
+.shop-tabs{display:flex;gap:6px;margin-bottom:12px}
+.shop-tab{flex:1;padding:7px 4px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg3);color:var(--fg2);
+font-family:var(--mono);font-size:.8rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.shop-tab.active{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
+.shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.shop-card{background:rgba(26,26,26,.8);border:1px solid var(--border);border-radius:var(--r);padding:12px 8px;text-align:center;
+transition:all .2s;touch-action:manipulation}
+.shop-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.shop-card.owned{border-color:var(--purple)}
+.shop-card.equipped{border-color:var(--accent);box-shadow:0 0 14px rgba(179,136,255,.15)}
+.shop-card.locked{opacity:.4}
+.shop-av{font-size:2rem;margin-bottom:5px}
+.shop-nm{font-size:.82rem;font-weight:700;margin-bottom:2px}
+.shop-ds{font-size:.84rem;color:var(--fg2);margin-bottom:6px;min-height:22px}
+/* CALENDAR */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:8px}
+.cal-h{font-size:.84rem;color:var(--fg2);text-align:center;padding:4px 0}
+.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.88rem;border-radius:5px;color:var(--fg2);
+cursor:pointer;transition:transform .12s,box-shadow .2s,background .2s;border:1px solid transparent;touch-action:manipulation}
+.cal-d:not(.empty):hover{transform:scale(1.15);z-index:2}
+.cal-d.empty{opacity:0;cursor:default}
+.cal-d.a1{background:rgba(179,136,255,.14);color:var(--accent)}
+.cal-d.a2{background:rgba(179,136,255,.3);color:#d6c2ff;font-weight:600;box-shadow:0 0 8px rgba(179,136,255,.3)}
+.cal-d.a3{background:rgba(179,136,255,.55);color:#0a0a0a;font-weight:800;box-shadow:0 0 14px rgba(179,136,255,.6)}
+.cal-d.rot{background:rgba(255,62,108,.25);color:var(--danger);font-weight:600;box-shadow:0 0 8px var(--glow-d)}
+.cal-d.frozen{background:rgba(0,229,255,.18);color:var(--cyan);border:1px solid rgba(0,229,255,.4)}
+.cal-d.today{border:2px solid var(--accent);color:var(--fg);font-weight:700;box-shadow:0 0 12px var(--glow-a);animation:todayG 2s ease-in-out infinite}
+@keyframes todayG{0%,100%{box-shadow:0 0 12px var(--glow-a)}50%{box-shadow:0 0 20px var(--glow-a),inset 0 0 10px rgba(179,136,255,.1)}}
+.cal-d.sel{outline:2px solid var(--purple);outline-offset:1px;transform:scale(1.15);z-index:3}
+.cal-legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.84rem;color:var(--fg2);margin-top:8px;justify-content:center}
+.cal-legend span{display:inline-flex;align-items:center;gap:4px}
+.ldot{width:10px;height:10px;border-radius:3px;display:inline-block}
+.ldot.a{background:rgba(179,136,255,.55)}.ldot.r{background:rgba(255,62,108,.5)}.ldot.i{background:rgba(0,229,255,.5)}
+.day-sum{margin-top:12px;border-top:1px dashed var(--border);padding-top:10px;animation:fadeIn .25s;font-size:.84rem}
+.day-sum .ds-date{font-size:.88rem;font-weight:700;color:var(--purple);margin-bottom:6px}
+.day-sum .ds-row{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0;font-size:.82rem}
+.ds-tag{display:inline-flex;align-items:center;gap:3px;padding:3px 7px;border-radius:12px;font-size:.9rem;
+border:1px solid var(--border);background:rgba(26,26,26,.8)}
+.ds-tag.good{border-color:var(--accent);color:var(--accent)}.ds-tag.rot{border-color:var(--danger);color:var(--danger)}
+/* CHALLENGE */
+.ch-card{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:8px 0;transition:all .2s}
+.ch-card:hover{border-color:rgba(179,136,255,.35);box-shadow:0 0 12px rgba(179,136,255,.1);transform:translateY(-1px)}
+.ch-card.done{border-color:var(--accent);box-shadow:0 0 10px rgba(179,136,255,.12)}
+.ch-card.claimed{opacity:.45}
+.ch-head{display:flex;align-items:flex-start;gap:8px}
+.ch-icon{font-size:1.3rem;flex-shrink:0}
+.ch-info{flex:1;min-width:0}
+.ch-nm{font-size:.88rem;font-weight:700}.ch-ds{font-size:.74rem;color:var(--fg2);margin-top:2px}
+.ch-bar-w{height:4px;background:var(--bg);border-radius:2px;overflow:hidden;margin:8px 0 3px}
+.ch-bar{height:100%;background:linear-gradient(90deg,var(--purple),#ff00ff);border-radius:2px;transition:width .5s;box-shadow:0 0 6px rgba(179,136,255,.5)}
+.ch-prog{font-size:.84rem;color:var(--fg2)}.ch-rw{font-size:.84rem;color:var(--accent);margin-top:4px}
+/* ANALYTICS */
+.an-bars{display:flex;align-items:flex-end;gap:5px;height:90px}
+.an-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%}
+.an-val{font-size:.84rem;color:var(--fg2);font-weight:700}
+.an-track{flex:1;width:100%;display:flex;align-items:flex-end}
+.an-bar{width:100%;background:linear-gradient(180deg,var(--accent),rgba(179,136,255,.4));border-radius:3px 3px 0 0;min-height:3px;
+transition:height .5s;box-shadow:0 0 6px rgba(179,136,255,.3)}
+.an-bar.today{background:linear-gradient(180deg,#00e5ff,var(--accent));box-shadow:0 0 12px rgba(0,255,159,.5)}
+.an-bar.empty{background:rgba(255,62,108,.3);box-shadow:0 0 4px rgba(255,62,108,.2)}
+.an-lbl{font-size:.9rem;color:var(--fg2);text-transform:uppercase}
+.an-lbl.today{color:var(--accent);font-weight:700}
+.an-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.an-stat{text-align:center;padding:6px 3px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
+.an-sn{display:block;font-size:.95rem;font-weight:900;color:var(--accent);text-shadow:0 0 6px var(--glow-a)}
+.an-sl{display:block;font-size:.48rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:1px}
+.an-roast{font-size:.82rem;padding:8px 10px;background:rgba(179,136,255,.04);border-left:3px solid var(--accent);
+border-radius:0 var(--r) var(--r) 0;margin-top:8px;line-height:1.5}
+/* ACTIVITY */
+.act-item{display:flex;align-items:center;gap:7px;padding:7px 8px;font-size:.8rem;border-bottom:1px solid rgba(42,42,42,.5)}
+.act-item:last-child{border-bottom:none}
+.act-icon{font-size:.95rem;flex-shrink:0}
+.act-msg{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.act-time{flex-shrink:0;font-size:.84rem;color:var(--fg2)}
+/* CHECKIN */
+.ck-btn{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;background:rgba(26,26,26,.8);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);font-family:var(--mono);font-size:.9rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.ck-btn:hover{border-color:var(--accent);background:rgba(179,136,255,.05);transform:translateX(4px)}
+.ck-btn:active{transform:scale(.97);box-shadow:0 0 20px rgba(179,136,255,.2)}
+.ck-emoji{font-size:1.4rem}.ck-label{flex:1;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.ck-pts{font-size:.88rem;color:var(--accent);font-weight:700}
+/* INPUT */
+.input-row{display:flex;gap:8px;margin:10px 0}
+.input-row input{flex:1;font-family:var(--mono);font-size:.8rem;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);outline:none;transition:border-color .2s}
+.input-row input:focus{border-color:var(--accent)}
+/* REWARD */
+.rw-item{display:flex;align-items:center;gap:10px;padding:10px;background:rgba(26,26,26,.8);border:1px solid var(--border);
+border-radius:var(--r);margin:5px 0;transition:all .2s}
+.rw-item.locked{opacity:.4}
+.rw-item.unlocked{border-color:var(--accent);box-shadow:0 0 8px rgba(179,136,255,.08)}
+.rw-icon{font-size:1.4rem}.rw-info{flex:1}.rw-nm{font-size:.9rem;font-weight:600}
+.rw-ds{font-size:.88rem;color:var(--fg2)}.rw-cost{font-size:.8rem;color:var(--accent);font-weight:700}
+/* GREETING */
+.greeting{padding:16px 0 6px;font-size:.88rem}
+.greeting-name{color:var(--accent);font-weight:700;text-shadow:0 0 8px var(--glow-a)}
+.greeting-sub{font-size:.8rem;color:var(--fg2);margin-top:3px}
+.greeting-title{font-size:.88rem;color:var(--purple);margin-top:2px;font-style:italic}
+/* MISC */
+.text-accent{color:var(--accent)}.text-danger{color:var(--danger)}.text-muted{color:var(--fg2)}.text-purple{color:var(--purple)}.text-cyan{color:var(--cyan)}
+.text-center{text-align:center}.mt-1{margin-top:8px}.mt-2{margin-top:16px}.mb-1{margin-bottom:8px}
+.flex-between{display:flex;justify-content:space-between;align-items:center}
+/* FREEZE BTN */
+.freeze-btn{width:36px;height:36px;border-radius:50%;border:2px solid var(--cyan);background:rgba(0,229,255,.08);color:var(--cyan);
+font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;
+animation:fPulse 1.8s ease-in-out infinite;touch-action:manipulation}
+.freeze-btn:hover{background:var(--cyan);color:var(--bg)}
+.freeze-btn:active{transform:scale(.88)}
+@keyframes fPulse{0%,100%{box-shadow:0 0 0 rgba(0,229,255,0)}50%{box-shadow:0 0 12px rgba(0,229,255,.5)}}
+/* LOADING */
+.loading{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+background:var(--bg);transition:opacity .4s}
+.loading.hidden{opacity:0;pointer-events:none}
+.loading-text{font-size:1rem;color:var(--accent);text-transform:uppercase;letter-spacing:3px;text-shadow:0 0 10px var(--glow-a);animation:ldGlitch 2s infinite}
+.loading-sub{font-size:.84rem;color:var(--fg2);letter-spacing:2px}
+@keyframes ldGlitch{0%,90%,100%{opacity:1;transform:none}91%{opacity:.7;transform:translateX(-4px) skewX(3deg)}93%{opacity:1;transform:translateX(3px) skewX(-2deg)}95%{opacity:.8;transform:translateX(-2px)}97%{opacity:.6;transform:translateX(1px) skewX(1deg)}}
+/* GLITCH */
+.glitch{animation:glitch 3s infinite}
+@keyframes glitch{0%,92%,100%{opacity:1;transform:none}93%{opacity:.8;transform:translate(-3px,1px) skewX(2deg);filter:hue-rotate(40deg)}94%{opacity:1;transform:translate(2px,-1px);filter:hue-rotate(-20deg)}96%{opacity:.7;transform:translate(1px,2px) skewX(1deg)}97%{opacity:1;transform:none;filter:none}}
+/* QUIT TIMER */
+.qt-card{margin:6px 0;padding:10px 12px}
+.qt-bar{height:4px;background:var(--bg);border-radius:2px;overflow:hidden;margin-top:6px}
+.qt-fill{height:100%;border-radius:2px;transition:width .3s}
+/* COMMIT LOG */
+.commit{padding:8px 10px;margin:5px 0;background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);font-size:.84rem}
+.commit .cm-date{color:var(--fg2);font-size:.74rem}.commit .cm-text{color:var(--accent)}
+@media(min-width:480px){.stats-row,.an-stats{grid-template-columns:repeat(4,1fr)}}
+/* TODAY PROGRESS */
+.tp-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(26,26,26,.6);border:1px solid var(--border);
+border-radius:var(--r);margin:4px 0;font-size:.84rem;transition:all .2s;cursor:pointer;touch-action:manipulation}
+.tp-row:hover{border-color:rgba(179,136,255,.2);transform:translateX(3px)}
+.tp-row.done{opacity:.5;text-decoration:line-through}
+.tp-row .tp-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;
+justify-content:center;font-size:.9rem;flex-shrink:0;transition:all .2s}
+.tp-row.done .tp-check{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+.tp-pct{font-size:2rem;font-weight:900;color:var(--accent);text-shadow:0 0 10px var(--glow-a)}
+/* SQUAD REACTIONS */
+.sq-react{display:flex;gap:4px;margin-top:4px}
+.sq-react button{background:rgba(26,26,26,.6);border:1px solid var(--border);border-radius:12px;padding:2px 7px;font-size:.8rem;
+cursor:pointer;color:var(--fg2);transition:all .15s;touch-action:manipulation}
+.sq-react button:active{transform:scale(.9)}
+.sq-react button.hyped{border-color:var(--accent);color:var(--accent);background:rgba(179,136,255,.08)}
+.sq-you{border-left:2px solid var(--accent)!important;background:rgba(179,136,255,.03)!important}
+/* INSTALL BANNER */
+.install-card{background:linear-gradient(135deg,rgba(179,136,255,.08),rgba(179,136,255,.06));border:1px dashed var(--accent);
+border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:pointer;transition:all .2s}
+.install-card:hover{border-style:solid;box-shadow:0 0 20px rgba(179,136,255,.1)}
+/* SETTINGS */
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.84rem}
+.settings-row:last-child{border-bottom:none}
+/* ONBOARDING */
+.onb{position:fixed;inset:0;z-index:1100;background:var(--bg);display:flex;flex-direction:column;align-items:center;
+justify-content:center;padding:32px 24px;text-align:center;transition:opacity .4s}
+.onb.hidden{opacity:0;pointer-events:none}
+.onb-slide{max-width:380px;animation:onbIn .4s ease}
+@keyframes onbIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.onb-icon{font-size:4rem;margin-bottom:16px;filter:drop-shadow(0 0 20px var(--glow-a));animation:logoBr 3s ease-in-out infinite}
+.onb-title{font-size:1.4rem;font-weight:900;color:var(--accent);text-shadow:0 0 16px var(--glow-a);margin-bottom:10px;line-height:1.2}
+.onb-text{font-size:.82rem;color:var(--fg);line-height:1.6;margin-bottom:8px}
+.onb-sub{font-size:.82rem;color:var(--fg2);line-height:1.5}
+.onb-dots{display:flex;gap:8px;justify-content:center;margin:24px 0}
+.onb-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
+.onb-dot.active{background:var(--accent);width:24px;border-radius:4px;box-shadow:0 0 10px var(--glow-a)}
+.onb-nav{display:flex;gap:10px;width:100%;max-width:380px}
+.onb-input{width:100%;font-family:var(--mono);font-size:.9rem;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);margin:12px 0;outline:none;text-align:center;transition:border-color .2s}
+.onb-input:focus{border-color:var(--accent);box-shadow:0 0 12px rgba(179,136,255,.15)}
+/* STREAK RING */
+.ring-wrap{display:flex;align-items:center;gap:16px;padding:4px 0}
+.ring{position:relative;width:84px;height:84px;flex-shrink:0}
+.ring svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--bg);stroke-width:7}
+.ring-fg{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;
+filter:drop-shadow(0 0 6px var(--glow-a));transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-num{font-size:1.5rem;font-weight:900;color:var(--accent);line-height:1;text-shadow:0 0 8px var(--glow-a)}
+.ring-lbl{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
+.ring-info{flex:1;min-width:0}
+.ring-info .ri-big{font-size:.95rem;font-weight:700;color:var(--fg)}
+.ring-info .ri-sub{font-size:.9rem;color:var(--fg2);margin-top:3px}
+/* SHARE */
+.share-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+.share-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border:1px solid var(--border);
+background:var(--bg2);color:var(--fg);border-radius:var(--r);font-family:var(--mono);font-size:.84rem;font-weight:700;
+cursor:pointer;transition:all .2s;touch-action:manipulation}
+.share-btn:active{transform:scale(.96)}
+.share-btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);box-shadow:0 0 14px rgba(179,136,255,.25)}
+.share-btn.primary:hover{box-shadow:0 0 22px rgba(179,136,255,.4)}
+.share-btn.alt{border-color:var(--purple);color:var(--purple)}
+.share-preview{width:100%;border-radius:var(--r);border:1px solid var(--border);margin:8px 0;display:block}
+/* LEADERBOARD */
+.lb-row{display:flex;align-items:center;gap:10px;padding:8px 8px;border-bottom:1px solid var(--border);font-size:.74rem}
+.lb-row:last-child{border-bottom:none}
+.lb-row.me{background:rgba(179,136,255,.06);border-left:3px solid var(--accent);border-radius:4px}
+.lb-rank{font-weight:900;min-width:26px;text-align:center;color:var(--fg2);font-size:.9rem}
+.lb-rank.top{font-size:1rem}
+.lb-av{font-size:1.2rem;flex-shrink:0}
+.lb-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.lb-aura{font-weight:900;color:var(--accent);text-shadow:0 0 6px var(--glow-a);line-height:1.1}
+.lb-streak{font-size:.84rem;color:var(--fg2);text-align:right}
+/* HEAD TO HEAD */
+.h2h{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:14px 0}
+.h2h-side{text-align:center;padding:12px 8px;background:rgba(26,26,26,.8);border:1px solid var(--border);border-radius:var(--r)}
+.h2h-side.win{border-color:var(--accent);box-shadow:0 0 16px rgba(179,136,255,.15)}
+.h2h-side.lose{opacity:.65}
+.h2h-av{font-size:2rem}
+.h2h-name{font-size:.82rem;font-weight:700;color:var(--purple);margin:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h2h-aura{font-size:1.4rem;font-weight:900;color:var(--accent);text-shadow:0 0 8px var(--glow-a)}
+.h2h-lbl{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
+.h2h-vs{font-size:1rem;font-weight:900;color:var(--danger);text-shadow:0 0 10px var(--glow-d)}
+.h2h-stat{font-size:.88rem;color:var(--fg2);margin-top:6px}
+/* CAL STATS */
+.cal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+.cal-stat{text-align:center;padding:8px 4px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
+.cal-stat-n{font-size:1.2rem;font-weight:900;line-height:1}
+.cal-stat-l{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+/* RITUAL / POSSESSION */
+@keyframes flick{0%,100%{opacity:1}45%{opacity:.82}48%{opacity:.55}51%{opacity:.9}}
+.rc-unlock{background:radial-gradient(circle at 50% 0%,rgba(255,62,108,.12),rgba(17,17,17,.7));border:1px dashed var(--danger);
+border-radius:var(--r);padding:16px;text-align:center;margin:10px 0;cursor:pointer;transition:all .2s}
+.rc-unlock:hover{border-style:solid;box-shadow:0 0 22px rgba(255,62,108,.2)}
+.rc-unlock.locked{opacity:.55;cursor:not-allowed;border-color:var(--border)}
+#ritualChamber{position:fixed;inset:0;z-index:1050;background:radial-gradient(circle at 50% 25%,#1a0008,#070003 72%);
+display:none;flex-direction:column;overflow-y:auto;padding:24px 16px 48px}
+#ritualChamber.show{display:flex;animation:fadeIn .35s}
+#ritualChamber .rc-close{position:fixed;top:12px;right:14px;z-index:2;background:rgba(0,0,0,.5);border:1px solid var(--danger);
+color:var(--danger);border-radius:8px;padding:6px 12px;font-family:var(--mono);font-size:.8rem;cursor:pointer}
+.rc-h{text-align:center;color:#ff3e6c;text-shadow:0 0 18px #ff0033,0 0 40px rgba(255,0,51,.4);font-size:1.4rem;font-weight:900;
+letter-spacing:3px;margin:34px 0 2px;animation:flick 3.5s infinite}
+.rc-sub{text-align:center;color:#a55;font-size:.88rem;letter-spacing:1px;margin-bottom:18px}
+.pentagram{width:120px;height:120px;margin:8px auto 16px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;
+border-radius:50%;border:2px solid rgba(255,62,108,.4);box-shadow:0 0 30px rgba(255,0,51,.3),inset 0 0 30px rgba(255,0,51,.2);
+animation:spinPulse 6s linear infinite}
+@keyframes spinPulse{0%{transform:rotate(0);box-shadow:0 0 24px rgba(255,0,51,.25),inset 0 0 24px rgba(255,0,51,.15)}
+50%{box-shadow:0 0 44px rgba(255,0,51,.5),inset 0 0 40px rgba(255,0,51,.3)}100%{transform:rotate(360deg);box-shadow:0 0 24px rgba(255,0,51,.25),inset 0 0 24px rgba(255,0,51,.15)}}
+.rc-card{max-width:420px;margin:0 auto;width:100%}
+.summon-btn{width:100%;padding:16px;background:linear-gradient(135deg,#8b0000,#ff003c);color:#fff;border:none;border-radius:var(--r);
+font-family:var(--mono);font-weight:900;font-size:.95rem;letter-spacing:1px;cursor:pointer;box-shadow:0 0 24px rgba(255,0,60,.4);
+transition:transform .15s;touch-action:manipulation}
+.summon-btn:active{transform:scale(.96)}
+.summon-btn:disabled{opacity:.4;box-shadow:none;cursor:not-allowed}
+.dur-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.dur-opt{padding:10px 4px;border:1px solid rgba(255,62,108,.3);background:rgba(40,0,12,.5);color:#e0a0b0;border-radius:var(--r);
+font-family:var(--mono);font-size:.88rem;cursor:pointer;text-align:center;transition:all .15s;touch-action:manipulation}
+.dur-opt.sel{border-color:#ff3e6c;background:rgba(255,62,108,.18);color:#fff;box-shadow:0 0 12px rgba(255,0,51,.3)}
+.dur-opt b{display:block;font-size:.9rem}
+.demon-card{background:linear-gradient(160deg,rgba(40,0,16,.9),rgba(10,0,4,.95));border:1px solid #ff3e6c;border-radius:12px;
+padding:18px;text-align:center;margin:14px auto;max-width:420px;box-shadow:0 0 30px rgba(255,0,51,.25);animation:fadeUp .4s}
+.demon-emoji{font-size:3.4rem;filter:drop-shadow(0 0 14px rgba(255,0,51,.6));animation:flick 2.5s infinite;display:flex;align-items:center;justify-content:center}
+.demon-emoji svg{width:3.4rem;height:3.4rem;fill:currentColor}
+.demon-name{font-size:1.05rem;font-weight:900;color:#ff6b8c;text-shadow:0 0 12px rgba(255,0,51,.5);margin:6px 0 2px}
+.demon-power{font-size:.9rem;color:#c98;margin-bottom:8px}
+.demon-stat{display:inline-block;font-size:.74rem;color:#e0a0b0;border:1px solid rgba(255,62,108,.3);border-radius:10px;padding:2px 8px;margin:2px}
+.owned-demon{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid var(--border);border-radius:var(--r);margin:5px 0;
+background:rgba(20,0,8,.5);font-size:.84rem}
+.owned-demon .od-em{font-size:1.4rem}
+/* possession across the app */
+.possess-vignette{position:fixed;inset:0;pointer-events:none;z-index:889;display:none;
+box-shadow:inset 0 0 140px 36px rgba(180,0,40,.32)}
+body.possessed .possess-vignette{display:block;animation:flick 5s infinite}
+.possess-banner{position:sticky;top:0;z-index:95;display:none;align-items:center;gap:8px;padding:7px 12px;
+background:linear-gradient(90deg,rgba(60,0,20,.96),rgba(20,0,8,.96));border-bottom:1px solid #ff3e6c;
+backdrop-filter:blur(8px);font-size:.9rem}
+body.possessed .possess-banner{display:flex}
+.possess-banner .pb-em{font-size:1.1rem;animation:flick 2s infinite}
+.possess-banner .pb-txt{flex:1;min-width:0;color:#ffb3c4}
+.possess-banner .pb-time{color:#ff6b8c;font-weight:700;white-space:nowrap}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div class="loading" id="loadingScreen">
+<div style="margin-bottom:12px"><svg class="icon-inline icon-xxl icon-spin" style="color:var(--accent);filter:drop-shadow(0 0 12px var(--accent))" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9c0 3 1.5 5.2 3.5 6.5V20h11v-2.5C19.5 16.2 21 14 21 11a9 9 0 0 0-9-9zM9 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5 4h4"/></svg></div>
+<div class="loading-text">farming aura...</div>
+<div class="loading-sub">starving brain rot since 2026</div>
+</div>
+
+<!-- ONBOARDING -->
+<div class="onb hidden" id="onboarding"></div>
+
+<!-- HEADER -->
+<header class="header">
+<div class="header-left">
+<span class="header-logo glitch" id="headerLogo"></span>
+<div><div class="header-title">AURA FARM</div><div class="header-sub" id="headerSub">v3.0 — brain rot slayer, aura demon</div></div>
+</div>
+<div id="headerRight" style="display:flex;gap:6px;align-items:center">
+<button class="btn btn-sm" id="installBtn" style="display:none;border-color:var(--accent);color:var(--accent)" onclick="installPWA()"><span class="icon-inline icon-sm" style="display:inline-block"><svg viewBox="0 0 24 24"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg></span></button>
+<button class="btn btn-sm" onclick="openSettings()"><span class="icon-inline icon-sm" style="display:inline-block"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span></button>
+</div>
+</header>
+
+<!-- POSSESSION BANNER -->
+<div class="possess-banner" id="possessBanner"></div>
+
+<!-- POSSESSION VIGNETTE -->
+<div class="possess-vignette"></div>
+
+<!-- TOAST -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<!-- CONFETTI -->
+<canvas id="confettiCanvas"></canvas>
+
+<!-- RITUAL CHAMBER -->
+<div id="ritualChamber">
+<button class="rc-close" onclick="closeRitual()"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg> leave</button>
+<div id="ritualBody"></div>
+</div>
+
+<!-- ═══════════ APP ═══════════ -->
+<div class="container" id="appContainer">
+
+<!-- GREETING + AURA -->
+<div class="greeting" id="greetingEl"></div>
+<div class="aura-display">
+<div class="aura-num" id="auraNum">---</div>
+<div class="aura-label neon-a" style="text-shadow:0 0 8px #00e5ff">aura points</div>
+<div id="auraChangeSlot"></div>
+</div>
+<div class="stats-row" id="statsRow"></div>
+
+<!-- TAB: DEN -->
+<div class="tab active" id="tabDen">
+<div id="denDash"></div>
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg> TODAY'S GRIND</div>
+<div id="todayProgress"></div>
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M14.5 3L21 9.5 9.5 21 3 14.5z"/><path d="M14 7l3 3M3 21l4-4"/></svg> ACTIVE CHALLENGES</div>
+<div id="challengesList"></div>
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M10 16V8M14 16v-6M18 16V6"/></svg> YOUR RECEIPTS</div>
+<div id="analyticsEl"></div>
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M2 20h2v-4H2zM7 20h2v-8H7zM12 20h2V8h-2zM17 20h2V4h-2z"/></svg> RECENT ACTIVITY</div>
+<div id="activityEl"></div>
+</div>
+
+<!-- TAB: STARVE -->
+<div class="tab" id="tabStarve">
+<div class="sec-title neon-r"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9c0 3 1.5 5.2 3.5 6.5V20h11v-2.5C19.5 16.2 21 14 21 11a9 9 0 0 0-9-9zM9 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5 4h4"/></svg> STARVE THE BRAIN ROT</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">tap = "i didn't do this today" — starve that rot</p>
+<div id="starveList"></div>
+<button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">+ add brain rot to starve</button>
+<div class="sec-title mt-2 neon-r"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/></svg> QUIT TIMER — DETOX TRACKER</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">how long you've stayed clean off each habit — longer = bigger flex</p>
+<div id="quitTimerList"></div>
+</div>
+
+<!-- TAB: FARM -->
+<div class="tab" id="tabFarm">
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg> FARM THE AURA</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">tap = "i did this today, i'm THAT person" — farm it</p>
+<div id="farmList"></div>
+<button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">+ add aura habit</button>
+<div class="sec-title mt-2 neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg> DAILY COMMIT LOG</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">what did you lock in today? document the grind</p>
+<div class="input-row">
+<input type="text" id="commitInput" placeholder="today i locked tf in because...">
+<button class="btn btn-accent" onclick="addCommit()">log it</button>
+</div>
+<div id="commitLog"></div>
+</div>
+
+<!-- TAB: SQUAD -->
+<div class="tab" id="tabSquad">
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M6 4h12v6a6 6 0 0 1-12 0V4z"/><path d="M6 8H3v2a3 3 0 0 0 3 3M18 8h3v2a3 3 0 0 1-3 3"/><path d="M9 16h6v4H9z"/></svg> GLOBAL LEADERBOARD</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">real players, real aura, ranked worldwide. where you stack up?</p>
+<div id="leaderboard"></div>
+<div class="sec-title neon-a mt-2"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M14.5 3L21 9.5 9.5 21 3 14.5z"/><path d="M14 7l3 3M3 21l4-4"/></svg> MULTIPLAYER CHALLENGES</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">create a challenge, share the code, race your friends for real</p>
+<div id="mpChallenges"></div>
+<div class="sec-title neon-a mt-2"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.7-4.8-4-5.6"/></svg> THE SQUAD FEED</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">your real wins + a demo squad to vibe with. want real friends in here? challenge them</p>
+<div class="card" style="margin-bottom:8px">
+<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
+<div class="input-row" style="margin:0">
+<input type="text" id="squadPostInput" placeholder="i just hit a 7-day streak, i'm HIM...">
+<button class="btn btn-accent" onclick="postSquadWin()">flex</button>
+</div>
+<button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple)" onclick="openChallenge()">challenge a friend to beat your aura</button>
+</div>
+<div id="squadFeed"></div>
+<button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquad()">refresh the feed</button>
+</div>
+
+<!-- TAB: SHOP -->
+<div class="tab" id="tabShop">
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg> AURA SHOP</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">spend aura on avatars, sick themes & wild titles. drip or drown bestie</p>
+<div id="shopContent"></div>
+</div>
+
+<!-- TAB: CALENDAR -->
+<div class="tab" id="tabCal">
+<div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg> YOUR GRIND CALENDAR</div>
+<p class="text-muted mb-1" style="font-size:.8rem;">green = aura farmed. red = COOKED. tap a day for receipts</p>
+<div class="card">
+<div class="flex-between mb-1">
+<button class="btn btn-sm" onclick="calNav(-1)">← prev</button>
+<span id="calLabel" style="font-size:.84rem;color:var(--accent)"></span>
+<button class="btn btn-sm" onclick="calNav(1)">next →</button>
+</div>
+<div id="calGrid"></div>
+<div class="cal-legend">
+<span><i class="ldot a"></i> aura day</span>
+<span><i class="ldot r"></i> cooked</span>
+<span><i class="ldot i"></i> frozen</span>
+</div>
+<div id="daySummary"></div>
+</div>
+</div>
+
+</div><!-- /container -->
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" id="bottomNav">
+<button class="nav-btn active" data-tab="tabDen" onclick="switchTab('tabDen',this)"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span>Den</button>
+<button class="nav-btn" data-tab="tabStarve" onclick="switchTab('tabStarve',this)"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3a8 8 0 0 0-8 8c0 2.6 1.3 4.5 3 5.6V20h10v-3.4c1.7-1.1 3-3 3-5.6a8 8 0 0 0-8-8z"/><circle cx="9" cy="11" r="1.7"/><circle cx="15" cy="11" r="1.7"/><path d="M11 15h2"/></svg></span>Starve</button>
+<button class="nav-btn" data-tab="tabFarm" onclick="switchTab('tabFarm',this)"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.3L20 11l-5.8 1.7L12 19l-2.2-6.3L4 11l5.8-1.7z"/></svg></span>Farm</button>
+<button class="nav-btn" data-tab="tabSquad" onclick="switchTab('tabSquad',this)"><span class="nav-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5"/><path d="M21 20c0-2.6-1.7-4.8-4-5.6"/></svg></span>Squad</button>
+<button class="nav-btn" data-tab="tabShop" onclick="switchTab('tabShop',this)"><span class="nav-icon"><svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span>Shop</button>
+<button class="nav-btn" data-tab="tabCal" onclick="switchTab('tabCal',this)"><span class="nav-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg></span>Cal</button>
+</nav>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+<div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+   AURA FARM v3 — Single File PWA
+   ═══════════════════════════════════════ */
+
+const IC={
+skull:'<svg viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9c0 3 1.5 5.2 3.5 6.5V20h11v-2.5C19.5 16.2 21 14 21 11a9 9 0 0 0-9-9zM9 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5 4h4"/>',
+fire:'<svg viewBox="0 0 24 24"><path d="M12 23c-4.4 0-8-3.1-8-7.5 0-3 1.8-5.2 3.5-7L12 4l4.5 4.5c1.7 1.8 3.5 4 3.5 7C20 19.9 16.4 23 12 23zm0-14l-3 3.5c-1 1.2-2 2.8-2 4.5 0 2.8 2.2 5 5 5s5-2.2 5-5c0-1.7-1-3.3-2-4.5z"/>',
+spark:'<svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/>',
+phone:'<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M10 18h4"/>',
+nophone:'<svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M10 18h4"/><path d="M4 4l16 16" stroke="currentColor" stroke-width="2"/>',
+bed:'<svg viewBox="0 0 24 24"><path d="M3 17V7h3v4h12V7h3v10"/><path d="M3 11h18"/>',
+smoke:'<svg viewBox="0 0 24 24"><rect x="2" y="16" width="16" height="4" rx="1"/><path d="M20 16v4M22 16v4M20 8c0-2 1-3 3-3M20 12c0-2 1-3 3-3"/>',
+burger:'<svg viewBox="0 0 24 24"><path d="M4 15h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0-4h16c1 0 2-1.5 0-3C18 6 14 5 12 5S6 6 4 8c-2 1.5-1 3 0 3zm0 2h16v1H4z"/>',
+gym:'<svg viewBox="0 0 24 24"><path d="M6 7v10M18 7v10M2 9v6M22 9v6M6 12h12"/>',
+book:'<svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/><path d="M12 4v16M7 8h2M7 12h2"/>',
+ice:'<svg viewBox="0 0 24 24"><path d="M12 2v20M5 5l14 14M19 5L5 19M2 12h20"/>',
+mew:'<svg viewBox="0 0 24 24"><path d="M12 2C8 2 5 6 5 10c0 3 2 5 4 6l-1 6h8l-1-6c2-1 4-3 4-6 0-4-3-8-7-8z"/><path d="M9 9h1M14 9h1"/>',
+sleep:'<svg viewBox="0 0 24 24"><path d="M3 12h3l3-8 4 16 3-8h5"/><path d="M17 4h4l-4 4h4"/>',
+trophy:'<svg viewBox="0 0 24 24"><path d="M6 4h12v6a6 6 0 0 1-12 0V4z"/><path d="M6 8H3v2a3 3 0 0 0 3 3M18 8h3v2a3 3 0 0 1-3 3"/><path d="M9 16h6v4H9z"/>',
+chart:'<svg viewBox="0 0 24 24"><path d="M3 20h18M6 16v-4M10 16V8M14 16v-6M18 16V6"/>',
+signal:'<svg viewBox="0 0 24 24"><path d="M2 20h2v-4H2zM7 20h2v-8H7zM12 20h2V8h-2zM17 20h2V4h-2z"/>',
+bolt:'<svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/>',
+sword:'<svg viewBox="0 0 24 24"><path d="M14.5 3L21 9.5 9.5 21 3 14.5z"/><path d="M14 7l3 3M3 21l4-4"/>',
+crown:'<svg viewBox="0 0 24 24"><path d="M2 18L5 8l4 4 3-6 3 6 4-4 3 10z"/>',
+shield:'<svg viewBox="0 0 24 24"><path d="M12 2l8 4v5c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12V6z"/><path d="M9 12l2 2 4-4"/>',
+star:'<svg viewBox="0 0 24 24"><path d="M12 2l3.1 6.3L22 9.3l-5 4.8L18.2 21 12 17.7 5.8 21 7 14.1 2 9.3l6.9-1z"/>',
+lock:'<svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+eye:'<svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+run:'<svg viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="M7 22l3-7 3 2v5M10 15l-3-3 5-4 3 3"/>',
+water:'<svg viewBox="0 0 24 24"><path d="M12 2c-4 6-7 9-7 13a7 7 0 0 0 14 0c0-4-3-7-7-13z"/>',
+journal:'<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/>',
+brain:'<svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-4 2 4 4 0 0 0-4 3.5A4 4 0 0 0 2 11a4 4 0 0 0 2 3.5 4 4 0 0 0 1.5 5A3.5 3.5 0 0 0 9 22h6a3.5 3.5 0 0 0 3.5-2.5 4 4 0 0 0 1.5-5A4 4 0 0 0 22 11a4 4 0 0 0-2-3.5A4 4 0 0 0 16 4a5 5 0 0 0-4-2z"/><path d="M12 2v20"/>',
+flex:'<svg viewBox="0 0 24 24"><path d="M4 15c0-3 2-5 4-5 1 0 2 .5 2.5 1.5.5-1 1.5-1.5 2.5-1.5 2 0 4 2 4 5"/><path d="M4 15c-1 0-2-.5-2-2s1-3 3-3c1 0 1.5.5 2 1M20 15c1 0 2-.5 2-2s-1-3-3-3c-1 0-1.5.5-2 1"/>',
+sunrise:'<svg viewBox="0 0 24 24"><path d="M12 2v4M4.9 7.9l2.8 2.8M2 16h4M18 16h4M16.3 10.7l2.8-2.8"/><path d="M7 16a5 5 0 0 1 10 0"/><path d="M2 20h20"/>',
+seed:'<svg viewBox="0 0 24 24"><path d="M12 22V10"/><path d="M7 10c0-3 2.5-5 5-5s5 2 5 5"/><path d="M4 15c0-4 3.6-7 8-7s8 3 8 7"/>',
+target:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+no:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/>',
+check:'<svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/>',
+clock:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+coin:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M9 9h4.5a1.5 1.5 0 0 1 0 3H9m0 0h5.5a1.5 1.5 0 0 1 0 3H9"/>',
+gear:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',
+download:'<svg viewBox="0 0 24 24"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/>',
+camera:'<svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>',
+link:'<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.5-1.5"/>',
+medal:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2L5 22l3.5-1.5L12 22l3.5-1.5L19 22l-3.2-8.8"/>',
+users:'<svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.7-4.8-4-5.6"/>',
+bag:'<svg viewBox="0 0 24 24"><path d="M6 8h12l1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/>',
+cal:'<svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/>',
+crystal:'<svg viewBox="0 0 24 24"><path d="M6 3l-4 8 10 11L22 11 18 3z"/><path d="M6 3l6 8 6-8M2 11h20"/>',
+chain:'<svg viewBox="0 0 24 24"><path d="M10 13a4 4 0 0 1-1-6l3-3a4 4 0 0 1 6 6"/><path d="M14 11a4 4 0 0 1 1 6l-3 3a4 4 0 0 1-6-6"/>',
+candle:'<svg viewBox="0 0 24 24"><path d="M12 4c-1 2-2 3-2 5a2 2 0 0 0 4 0c0-2-1-3-2-5z"/><rect x="9" y="10" width="6" height="12" rx="1"/>',
+ghost:'<svg viewBox="0 0 24 24"><path d="M12 2C7 2 3 6 3 11v9l3-2.5L9 20l3-2.5L15 20l3-2.5L21 20v-9c0-5-4-9-9-9z"/><circle cx="9" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/>',
+ninja:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M4 14h16"/><path d="M8 10h8"/>',
+dance:'<svg viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="M6 20l4-8 3 2-2 6M13 14l4-6 3 3"/>',
+moai:'<svg viewBox="0 0 24 24"><path d="M8 22V12l-2-4V4l3-2h6l3 2v4l-2 4v10"/><path d="M9 10h1M14 10h1"/><path d="M10 15h4"/>',
+ban:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><rect x="6" y="10" width="12" height="4" rx="1"/>',
+imp:'<svg viewBox="0 0 24 24"><path d="M12 2C7 2 4 6 4 10c0 3 2 5 4 6l-1 6h10l-1-6c2-1 4-3 4-6 0-4-3-8-8-8z"/><path d="M4 7L1 3M20 7l3-4"/><circle cx="9" cy="10" r="1.5"/><circle cx="15" cy="10" r="1.5"/>',
+goat:'<svg viewBox="0 0 24 24"><path d="M4 4l4 6M20 4l-4 6"/><ellipse cx="12" cy="12" rx="7" ry="6"/><circle cx="9" cy="11" r="1"/><circle cx="15" cy="11" r="1"/><path d="M10 19v3M14 19v3"/>',
+paint:'<svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/><path d="M12 9v3"/><circle cx="12" cy="17" r="5"/>',
+tag:'<svg viewBox="0 0 24 24"><path d="M20.6 11.4L12 2.8 3.4 11.4a2 2 0 0 0 0 2.8l6.4 6.4a2 2 0 0 0 2.8 0l8-8a2 2 0 0 0 0-2.8z"/><circle cx="10" cy="10" r="1"/>',
+clown:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="14" r="2.5" fill="currentColor"/><circle cx="8" cy="9" r="1.5"/><circle cx="16" cy="9" r="1.5"/><path d="M8 17c2 2 6 2 8 0"/>',
+peach:'<svg viewBox="0 0 24 24"><path d="M12 4c-3 0-5 2-6 5-2 4-1 9 3 11a5 5 0 0 0 6 0c4-2 5-7 3-11-1-3-3-5-6-5z"/><path d="M12 4V2"/>',
+hot:'<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M8 14c1.3 2 5 2 6.5 0" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 9l2 1M16 9l-2 1"/>',
+game:'<svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M8 10v4M6 12h4M15 10h.01M18 12h.01"/>',
+gram:'<svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/>',
+letter:'<svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/>',
+dice:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.2"/><circle cx="16" cy="8" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="8" cy="16" r="1.2"/><circle cx="16" cy="16" r="1.2"/>',
+tv:'<svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 3l4 4 4-4"/>',
+cart:'<svg viewBox="0 0 24 24"><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/><circle cx="10" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/>',
+mirror:'<svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="7"/><path d="M12 16v6M8 22h8"/>',
+chat:'<svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>',
+cool:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M6 10h4l1-1.5L12 10M14 10h4l-1-1.5L16 10"/><path d="M8 15c1.5 2 5 2 7 0"/>',
+salad:'<svg viewBox="0 0 24 24"><path d="M3 14h18v2a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6z"/><path d="M6 14c0-3 2-5 4-6M12 14V6M18 14c0-3-2-5-4-6"/>',
+focus:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>',
+drop:'<svg viewBox="0 0 24 24"><path d="M12 2c-4 6-7 9-7 13a7 7 0 0 0 14 0c0-4-3-7-7-13z"/>',
+moon:'<svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+owl:'<svg viewBox="0 0 24 24"><circle cx="12" cy="11" r="9"/><circle cx="9" cy="10" r="2.5"/><circle cx="15" cy="10" r="2.5"/><path d="M12 15l-1.5 2h3z"/><path d="M7 3l2 4M17 3l-2 4"/>',
+up:'<svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>',
+face_blank:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M9 15h6"/>',
+face_mid:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M8 15h8"/>',
+face_sad:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M8 16c1.5-1.5 5-1.5 7 0"/>',
+face_angry:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/><path d="M7 8l4 1M17 8l-4 1M9 16h6"/>',
+megaphone:'<svg viewBox="0 0 24 24"><path d="M18 3v18l-6-3H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h7l6-3z"/><path d="M21 9v6"/>',
+plus:'<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/>',
+pin:'<svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/>',
+globe:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/>',
+key:'<svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="5"/><path d="M13 10l4-4M15 8l2 2M21 2l-6 6"/>',
+flag:'<svg viewBox="0 0 24 24"><path d="M4 22V2"/><path d="M4 2h12l-3 4 3 4H4"/>',
+cloud:'<svg viewBox="0 0 24 24"><path d="M18 10a6 6 0 0 0-12 0A4 4 0 0 0 2 14a4 4 0 0 0 4 4h12a4 4 0 0 0 0-8z"/>',
+save:'<svg viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M7 3v5h8V3M7 21v-8h10v8"/>',
+folder:'<svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>',
+refresh:'<svg viewBox="0 0 24 24"><path d="M1 4v6h6"/><path d="M3.5 15A9 9 0 0 0 21 12M23 20v-6h-6"/><path d="M20.5 9A9 9 0 0 0 3 12"/>',
+trash:'<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M5 6l1 14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2l1-14"/>',
+warn:'<svg viewBox="0 0 24 24"><path d="M12 2L1 21h22z"/><path d="M12 9v4M12 17h.01"/>',
+logout:'<svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/>',
+dna:'<svg viewBox="0 0 24 24"><path d="M7 4h10M12 4v2M8 8c4 2 4 6 0 8M16 8c-4 2-4 6 0 8M7 20h10M12 18v2"/>',
+rocket:'<svg viewBox="0 0 24 24"><path d="M12 2C9 6 8 10 8 14l-3 2v4h14v-4l-3-2c0-4-1-8-4-12z"/><circle cx="12" cy="12" r="2"/>',
+baby:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><circle cx="10" cy="7" r="1"/><circle cx="14" cy="7" r="1"/><path d="M10 11c1 1 3 1 4 0"/><path d="M8 14c-2 2-3 5-3 8h14c0-3-1-6-3-8"/>',
+galaxy:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)"/><circle cx="12" cy="12" r="2"/>',
+question:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 3-3 5"/><circle cx="12" cy="17" r=".5"/>',
+food:'<svg viewBox="0 0 24 24"><path d="M3 11h18v2a8 8 0 0 1-8 8H11a8 8 0 0 1-8-8z"/><path d="M12 3v5M8 5l4 3M16 5l-4 3"/>',
+zap:'<svg viewBox="0 0 24 24"><path d="M13 2L3 14h8l-1 8 10-12h-8z"/>',
+xmark:'<svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/>',
+hourglass:'<svg viewBox="0 0 24 24"><path d="M5 3h14M5 21h14M6 3v4l4 4-4 4v4M18 3v4l-4 4 4 4v4M8 3h8M8 21h8"/>',
+wave:'<svg viewBox="0 0 24 24"><path d="M2 12c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/><path d="M2 18c2-3 4-3 6 0s4 3 6 0 4-3 6 0" opacity=".5"/>'
+};
+function icon(key,cls){if(!key||!IC[key])return key||'';return (IC[key]).replace('<svg','<svg class="icon-inline'+(cls?' '+cls:'')+'"')}
+function iconOrEmoji(val,cls){if(IC[val])return icon(val,cls);return val||''}
+
+const DB_KEY='aura_farm_data';
+
+const DEFAULT_DATA={
+  packName:'',auraPoints:420,freezes:3,
+  habits:{
+    starve:[
+      {id:'s1',emoji:'phone',name:'Doomscrolling',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s2',emoji:'phone',name:'Doom Tweeting',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s3',emoji:'bed',name:'Rotting in Bed',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s4',emoji:'smoke',name:'Vaping',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s5',emoji:'burger',name:'Binge Eating',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
+    ],
+    farm:[
+      {id:'f1',emoji:'gym',name:'Gym',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f2',emoji:'book',name:'Reading',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f3',emoji:'ice',name:'Cold Shower',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f4',emoji:'mew',name:'Mewing',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f5',emoji:'sleep',name:'8hr Sleep',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
+    ]
+  },
+  commits:[],rewards:[],squadPosts:[],playerId:null,leaderboardOptOut:false,account:null,demons:{owned:[],active:null,log:[]},owned:['av_brain','th_default'],
+  equipped:{avatar:'av_brain',theme:'th_default',title:null},
+  lastCheckIn:null,activityLog:[],joinedChallenges:{},claimedChallenges:[],
+  calMonth:new Date().getMonth(),calYear:new Date().getFullYear()
+};
+
+// ─── MESSAGES ───
+const STARVE_ROASTS=["starved that brain rot, you absolute menace","another day not being cooked, no cap","your brain rot is SHOOK rn","imagine being this disciplined... oh wait, you are","that brain rot is getting starved tf out","one more day of not being cooked, slay","your future self is literally thanking you rn","brain rot: defeated. aura: increased. hotel: trivago","you chose violence against your bad habits","NOT TODAY, brain rot. NOT. TODAY."];
+const FARM_HYPES=["ATE THAT, you absolute legend","aura points go BRRRR, you're literally unhinged","the grind is GRINDING, keep farming bestie","gigachad energy detected, aura levels UNGODLY","you really said 'lock tf in' and MEANT it","the algorithm can't handle your aura rn","im literally screaming, this grind is BUSSIN","your aura just went through the roof","rizz levels: ASTRONOMICAL after that one","you just gained +10 main character energy, no cap"];
+const RELAPSE_MSGS=["undo detected... you fell off, get back up","slipped? it happens bestie. tomorrow we lock back in","brain rot won this round. don't let it win the war","took an L on this one. your aura took a hit ngl"];
+const FREEZE_SAVES=["streak FROZEN, your aura's safe this time bestie","freeze used — chain protected. don't make slacking a habit","saved your streak from the void, you owe me one"];
+const FREEZE_BROKE=["out of freeze tokens, you're cooked","no freezes left — your streak's toast if you slip","freeze inventory: empty. natural selection time bestie"];
+const STREAK_BROKEN=["'{n}' streak BROKE. all that grind, gone. you fumbled the bag fr","'{n}' chain snapped. the NPCs are laughing rn","'{n}' streak reset to 0. hope that slip was worth it bestie"];
+const REDEEM_HYPE=["REDEEMED — spent aura like a high roller","purchase made, drip acquired, aura demolished","ka-ching, your drip levels just went up a tier","bought it. flexed it. you absolute menace"];
+const BROKE_ROASTS=["broke alert — farm more aura","you can't afford that, grind harder","insufficient aura, NPC. tap some habits"];
+const GREETINGS=["sup {name}, ready to grind?","look who's back, {name} you legend","rise and grind, {name}. lock tf in","{name} is in the building. aura: immeasurable","oh snap, it's {name}. time to farm some aura","welcome back {name}, you absolute menace"];
+
+const LEVELS=[
+{min:0,name:'Certified NPC',icon:'face_blank'},{min:50,name:'Baby Degenerate',icon:'baby'},
+{min:150,name:'Aura Apprentice',icon:'seed'},{min:300,name:'Discipline Demon',icon:'shield'},
+{min:500,name:'Brain Rot Bully',icon:'face_angry'},{min:800,name:'Aura Fiend',icon:'fire'},
+{min:1200,name:'Sigma in Training',icon:'flex'},{min:1800,name:'Certified Menace',icon:'imp'},
+{min:2500,name:'Glow Up Demon',icon:'dna'},{min:3500,name:'Aura Overlord',icon:'crown'},
+{min:5000,name:'Transcended Gigachad',icon:'galaxy'},{min:7500,name:'Aura God',icon:'bolt'},
+{min:10000,name:'Final Form Degenerate',icon:'skull'}
+];
+
+const CHALLENGES=[
+{id:'ch1',icon:'fire',name:'7-Day Lock-In',desc:'tap ALL habits 7 days straight, no excuses',target:7,type:'all_taps',reward:200},
+{id:'ch2',icon:'skull',name:'Brain Rot Funeral',desc:'starve every brain rot for 14 days',target:14,type:'starve_streak',reward:400},
+{id:'ch3',icon:'spark',name:'Aura Farmer Supreme',desc:'hit 500 total aura points',target:500,type:'total_aura',reward:150},
+{id:'ch4',icon:'journal',name:'Journal Fiend',desc:'log 10 commit entries',target:10,type:'total_commits',reward:100},
+{id:'ch5',icon:'gym',name:'30-Day Sigma Arc',desc:'any single streak for 30 days',target:30,type:'single_streak',reward:750},
+{id:'ch6',icon:'crown',name:'Aura Millionaire',desc:'stack 2000 aura points',target:2000,type:'total_aura',reward:500}
+];
+
+const CHECKIN_MOODS=[
+{emoji:'fire',label:'on fire',pts:5,resp:"LET'S GOOO, main character energy IMMACULATE"},
+{emoji:'face_angry',label:'locked in',pts:5,resp:"sigma grindset engaged, brain rot is TREMBLING"},
+{emoji:'face_mid',label:'mid',pts:3,resp:"mid energy... at least you showed up, NPC"},
+{emoji:'skull',label:'cooked',pts:2,resp:"cooked af but self-aware, that's something"},
+{emoji:'face_sad',label:'down bad',pts:2,resp:"down astronomical... tomorrow you lock tf back in"}
+];
+
+const SHOP={
+avatars:[
+{id:'av_brain',preview:'skull',name:'Void Skull',desc:'cracked aura, default drip',cost:0},
+{id:'av_clown',preview:'clown',name:'Clown Era',desc:'for when you fumbled the bag fr',cost:80},
+{id:'av_skull',preview:'skull',name:'Cooked Skull',desc:'certified down bad. own it.',cost:120},
+{id:'av_peach',preview:'peach',name:'Main Character',desc:'all aura, all vibes, no cap',cost:250},
+{id:'av_devil',preview:'imp',name:'Lil Menace',desc:'horns OUT, aura unhinged',cost:300},
+{id:'av_hot',preview:'hot',name:'Insufferably Cool',desc:'you a whole vibe and you know it',cost:400},
+{id:'av_goat',preview:'goat',name:'Literal GOAT',desc:'greatest aura farmer ever',cost:1500}
+],
+themes:[
+{id:'th_default',name:'Void Violet',desc:'cracked-skull aura grindset',vars:{},cost:0},
+{id:'th_slut',name:'Demon Red',desc:'paint the town red you menace',vars:{'--accent':'#ff2d55','--purple':'#ff7eb6'},cost:250},
+{id:'th_goon',name:'Shadow Purple',desc:'lights off, aura on',vars:{'--accent':'#b388ff','--bg':'#0c0716','--bg2':'#140d22'},cost:350},
+{id:'th_cyber',name:'Cyber Rizz',desc:'neon teal rizz from 3024',vars:{'--accent':'#00ffe0','--danger':'#ff4d6d'},cost:450},
+{id:'th_sigma',name:'Sigma Gold',desc:'drip so loud it has a sound',vars:{'--accent':'#ffd700','--purple':'#ffe98a'},cost:600}
+],
+titles:[
+{id:'ti_npc',name:'Reformed NPC',desc:'barely sentient but trying',cost:60},
+{id:'ti_goon',name:'Certified Grinder',desc:'built different, not built weird',cost:120},
+{id:'ti_slut',name:'Locked In',desc:'down astronomical for gains',cost:220},
+{id:'ti_rizz',name:'Rizzler Supreme',desc:'unspoken rizz, spoken aura',cost:400},
+{id:'ti_sigma',name:'Sigma Overlord',desc:'touched grass, touched god',cost:1200}
+]};
+
+const REWARDS=[
+{id:'r1',icon:'seed',name:'Aura Seedling',desc:"you exist and that's something i guess",cost:50},
+{id:'r2',icon:'fire',name:'Aura Initiate',desc:'not a total NPC anymore, barely',cost:100},
+{id:'r3',icon:'star',name:'Main Character Energy',desc:'POV: you actually have discipline',cost:250},
+{id:'r4',icon:'imp',name:'Rizz Certified',desc:'your rizz is no longer hypothetical',cost:500},
+{id:'r5',icon:'crown',name:'Sigma Grindset',desc:"you've out-grinded 99% of NPCs",cost:1000},
+{id:'r6',icon:'dna',name:'Glow Up Unlocked',desc:'main character status: ASCENDED',cost:2000},
+{id:'r7',icon:'galaxy',name:'Sigma Overlord',desc:"transcended NPC existence entirely",cost:5000},
+{id:'r8',icon:'skull',name:'Final Boss',desc:'aura so high it\'s illegal in 47 states',cost:10000}
+];
+
+const SQUAD_NAMES=[{av:'skull',n:'xX_RizzLord_Xx'},{av:'crown',n:'GigaChadSophie'},{av:'peach',n:'NPC_Slayer'},{av:'mew',n:'MewingQueen'},{av:'ice',n:'ColdShowerKing'},{av:'imp',n:'SigmaSarah'},{av:'fire',n:'AuraDemon'},{av:'star',n:'MainCharVibes'},{av:'brain',n:'FocusNaruto'},{av:'spark',n:'GlowUpGoblin'}];
+const SQUAD_ACTS=["hit a {n} day streak on {h}, absolutely unhinged","just starved {h} for {n} days straight, no cap","farmed {h} today. aura levels: astronomical","relapsed on {h}... cooked beyond repair","cold shower at 5am, my aura is ungodly high rn","3am gym session, these gains are bussin","caught myself doomscrolling and chose violence","i am become aura, destroyer of brain rot"];
+
+const HABIT_SUGG={
+starve:[{e:'phone',n:'Doomscrolling'},{e:'bed',n:'Rotting in Bed'},{e:'game',n:'Rage Gaming'},{e:'gram',n:'Clout Chasing'},{e:'letter',n:'Texting the Ex'},{e:'eye',n:'Stalking Socials'},{e:'smoke',n:'Vaping'},{e:'food',n:'Drinking'},{e:'dice',n:'Gambling'},{e:'burger',n:'Binge Eating'},{e:'tv',n:'Binge Watching'},{e:'cart',n:'Impulse Buying'},{e:'face_angry',n:'Rage Tweeting'}],
+farm:[{e:'mew',n:'Mewing'},{e:'lock',n:'Digital Detox'},{e:'cool',n:'Cold Approach'},{e:'chat',n:'Socializing IRL'},{e:'mirror',n:'Looksmaxxing'},{e:'gym',n:'Gym'},{e:'ice',n:'Cold Shower'},{e:'book',n:'Reading'},{e:'journal',n:'Journaling'},{e:'sunrise',n:'5AM Wake Up'},{e:'sleep',n:'8hr Sleep'},{e:'water',n:'Hydrating'},{e:'run',n:'Running'},{e:'brain',n:'Deep Work'}]
+};
+
+const ICON_KEYS=['phone','nophone','bed','smoke','burger','game','gram','letter','eye','dice','tv','cart','food','lock','cool','chat','mirror','gym','book','ice','mew','sleep','run','water','salad','journal','brain','flex','sunrise','seed','target','fire','skull','spark','bolt','crown','shield','star'];
+const BASE_THEME={'--bg':'#0a0a0a','--bg2':'#111111','--bg3':'#1a1a1a','--accent':'#b388ff','--danger':'#ff3e6c','--purple':'#b388ff','--cyan':'#00e5ff'};
+
+// ─── STATE ───
+let data={},currentTab='tabDen',shopTab='avatars',selectedCalDay=null,selectedEmoji=ICON_KEYS[0];
+
+function dateKey(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function todayKey(){return dateKey(new Date())}
+function yesterdayKey(){const d=new Date();d.setDate(d.getDate()-1);return dateKey(d)}
+function rand(a){return a[Math.floor(Math.random()*a.length)]}
+function uid(){return '_'+Math.random().toString(36).slice(2,9)}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+// ─── PERSISTENCE ───
+function load(){
+  try{
+    const raw=localStorage.getItem(DB_KEY);
+    if(raw){
+      data=JSON.parse(raw);
+      if(!data.habits)data.habits=DEFAULT_DATA.habits;
+      if(!data.commits)data.commits=[];
+      if(typeof data.freezes!=='number')data.freezes=3;
+      if(data.calMonth===undefined){data.calMonth=new Date().getMonth();data.calYear=new Date().getFullYear()}
+      if(!Array.isArray(data.owned))data.owned=[];
+      if(!data.equipped)data.equipped={avatar:'av_brain',theme:'th_default',title:null};
+      if(!data.owned.includes('av_brain'))data.owned.push('av_brain');
+      if(!data.owned.includes('th_default'))data.owned.push('th_default');
+      if(!data.activityLog)data.activityLog=[];
+      if(!data.joinedChallenges)data.joinedChallenges={};
+      if(!Array.isArray(data.claimedChallenges))data.claimedChallenges=[];
+      if(!Array.isArray(data.rewards))data.rewards=[];
+      if(!Array.isArray(data.squadPosts))data.squadPosts=[];
+      if(data.account===undefined)data.account=null;
+      if(!data.demons||typeof data.demons!=='object')data.demons={owned:[],active:null,log:[]};
+      if(!Array.isArray(data.demons.owned))data.demons.owned=[];
+      if(!Array.isArray(data.demons.log))data.demons.log=[];
+      if(data.packName&&data.onboarded===undefined)data.onboarded=true;
+    }else{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
+  }catch{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
+}
+function save(){localStorage.setItem(DB_KEY,JSON.stringify(data));if(typeof scheduleCloudPush==='function')scheduleCloudPush()}
+
+// ─── SOUND ───
+let audioCtx=null;
+function getAC(){if(!audioCtx)try{audioCtx=new(window.AudioContext||window.webkitAudioContext)}catch{};return audioCtx}
+function sfx(type){
+  const ctx=getAC();if(!ctx)return;
+  const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);const t=ctx.currentTime;
+  if(type==='tap'){o.type='sine';o.frequency.setValueAtTime(600,t);o.frequency.exponentialRampToValueAtTime(1200,t+.08);g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+.12);o.start(t);o.stop(t+.12)}
+  else if(type==='untap'){o.type='sine';o.frequency.setValueAtTime(800,t);o.frequency.exponentialRampToValueAtTime(300,t+.12);g.gain.setValueAtTime(.15,t);g.gain.exponentialRampToValueAtTime(.001,t+.15);o.start(t);o.stop(t+.15)}
+  else if(type==='buy'){o.type='square';o.frequency.setValueAtTime(523,t);o.frequency.setValueAtTime(659,t+.08);o.frequency.setValueAtTime(784,t+.16);g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+.28);o.start(t);o.stop(t+.28)}
+  else if(type==='error'){o.type='sawtooth';o.frequency.setValueAtTime(200,t);g.gain.setValueAtTime(.1,t);g.gain.exponentialRampToValueAtTime(.001,t+.18);o.start(t);o.stop(t+.18)}
+}
+function haptic(ms){try{navigator.vibrate(ms||12)}catch{}}
+
+// ─── CONFETTI ───
+const cParts=[];let cCanvas,cCtx,cRAF;
+function initConfetti(){cCanvas=document.getElementById('confettiCanvas');if(!cCanvas)return;cCtx=cCanvas.getContext('2d');resizeC();window.addEventListener('resize',resizeC)}
+function resizeC(){if(!cCanvas)return;cCanvas.width=window.innerWidth;cCanvas.height=window.innerHeight}
+function spawnConfetti(count){
+  if(!cCtx)return;
+  const colors=['#b388ff','#ff3e6c','#00e5ff','#ff9100','#ffd700','#ff8fd6','#7a2fff'];
+  for(let i=0;i<count;i++){
+    cParts.push({x:window.innerWidth/2+(Math.random()-.5)*200,y:window.innerHeight*.35,vx:(Math.random()-.5)*12,vy:-(Math.random()*8+4),
+    w:Math.random()*8+4,h:Math.random()*6+3,color:colors[Math.floor(Math.random()*colors.length)],
+    rot:Math.random()*360,rs:(Math.random()-.5)*15,life:1,decay:.008+Math.random()*.008})
+  }
+  if(!cRAF)animC()
+}
+function animC(){
+  if(!cCtx)return;cCtx.clearRect(0,0,cCanvas.width,cCanvas.height);
+  for(let i=cParts.length-1;i>=0;i--){
+    const p=cParts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.vx*=.99;p.rot+=p.rs;p.life-=p.decay;
+    if(p.life<=0){cParts.splice(i,1);continue}
+    cCtx.save();cCtx.translate(p.x,p.y);cCtx.rotate(p.rot*Math.PI/180);cCtx.globalAlpha=p.life;
+    cCtx.fillStyle=p.color;cCtx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+    cCtx.restore()
+  }
+  if(cParts.length>0)cRAF=requestAnimationFrame(animC);else cRAF=null
+}
+function launchConfetti(){
+  const colors=['#b388ff','#00e5ff','#ff3e6c','#ffd700','#7a2fff'];
+  for(let i=0;i<30;i++){
+    const c=document.createElement('div');
+    const clr=colors[Math.floor(Math.random()*colors.length)];
+    const sz=Math.random()*8+4;
+    c.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-10px;width:${sz}px;height:${sz*1.5}px;background:${clr};border-radius:1px;pointer-events:none;z-index:998;transition:all 3s ease;box-shadow:0 0 6px ${clr};`;
+    document.body.appendChild(c);
+    setTimeout(()=>{c.style.top='100vh';c.style.transform=`rotate(${Math.random()*720}deg)`;setTimeout(()=>c.remove(),3000)},50)
+  }
+}
+
+// ─── TOAST ───
+function toast(msg,type='good'){
+  const wrap=document.getElementById('toastWrap');const el=document.createElement('div');
+  const ti=type==='good'?icon('check','icon-sm icon-pop'):icon('warn','icon-sm icon-shake');
+  el.className=`toast ${type}`;el.innerHTML=`<span style="display:inline-flex;align-items:center;gap:6px">${ti} ${msg}</span>`;wrap.appendChild(el);setTimeout(()=>el.remove(),3000)
+}
+
+// ─── AURA DISPLAY ───
+function showAuraChange(amt){
+  const slot=document.getElementById('auraChangeSlot');
+  if(slot){const el=document.createElement('div');el.className=`aura-change ${amt>0?'gain':'loss'}`;
+  el.textContent=amt>0?`+${amt} AP, ate that shit`:`${amt} AP, fumbled the bag`;slot.innerHTML='';slot.appendChild(el);setTimeout(()=>el.remove(),2000)}
+  const num=document.getElementById('auraNum');
+  if(num){num.classList.remove('glow-gain','glow-loss');void num.offsetWidth;num.classList.add(amt>0?'glow-gain':'glow-loss');setTimeout(()=>num.classList.remove('glow-gain','glow-loss'),800)}
+}
+function floatPts(el,amt){
+  if(!el)return;const r=el.getBoundingClientRect();const f=document.createElement('div');
+  f.className=`ap-float ${amt>0?'gain':'loss'}`;f.textContent=amt>0?`+${amt}`:`${amt}`;
+  f.style.left=(r.left+r.width/2)+'px';f.style.top=(r.top-8)+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),1000)
+}
+function updateAura(){const el=document.getElementById('auraNum');if(el)el.textContent=data.auraPoints.toLocaleString()}
+
+// ─── STREAKS ───
+function calcStreak(h){
+  let s=0,d=new Date();if(!h.taps[dateKey(d)])d.setDate(d.getDate()-1);
+  while(h.taps[dateKey(d)]){s++;d.setDate(d.getDate()-1)}
+  h.streak=s;if(s>h.bestStreak)h.bestStreak=s;return s
+}
+function frozenInStreak(h){
+  let f=0,d=new Date();if(!h.taps[dateKey(d)])d.setDate(d.getDate()-1);
+  while(h.taps[dateKey(d)]){if(h.taps[dateKey(d)]==='frozen')f++;d.setDate(d.getDate()-1)};return f
+}
+
+// ─── ACTIVITY LOG ───
+function logAct(type,msg){
+  if(!data.activityLog)data.activityLog=[];
+  data.activityLog.unshift({type,msg,time:Date.now()});
+  if(data.activityLog.length>50)data.activityLog.length=50
+}
+function timeAgo(ts){const d=Date.now()-ts,m=Math.floor(d/60000);if(m<1)return'just now';if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago'}
+
+// ─── RENDER HABITS ───
+function renderHabits(type,cid){
+  const c=document.getElementById(cid);if(!c)return;
+  const habits=data.habits[type]||[];const today=todayKey();
+  if(!habits.length){c.innerHTML=`<div class="text-center text-muted" style="padding:18px;font-size:.84rem;">${type==='starve'?"no brain rot tracked?? be real with yourself":"no aura habits?? add something you NPC"}</div>`;return}
+  c.innerHTML=habits.map(h=>{
+    const tapped=!!h.taps[today],streak=calcStreak(h),frozen=frozenInStreak(h);
+    const tc=tapped?(type==='starve'?'tapped-bad':'tapped'):'';
+    const frozenTag=frozen>0?` <span class="text-cyan">${icon('ice','icon-sm')}x${frozen}</span>`:'';
+    const stText=streak>0?`${icon('fire','icon-sm')} ${streak}d streak — locked in fr`:(type==='starve'?'0d streak, getting cooked alive':'0d streak, start tapping lazy bones');
+    const dby=new Date();dby.setDate(dby.getDate()-2);
+    const atRisk=!h.taps[yesterdayKey()]&&!!h.taps[dateKey(dby)];
+    return `<div class="habit">
+      <span class="habit-emoji">${iconOrEmoji(h.emoji)}</span>
+      <div class="habit-info"><div class="habit-name">${h.name}</div><div class="habit-streak">${stText}${frozenTag} · best: ${h.bestStreak}d</div></div>
+      ${atRisk?`<button class="freeze-btn" onclick="freezeStreak('${type}','${h.id}')" title="freeze (${data.freezes} left)">${icon('ice','icon-sm')}</button>`:''}
+      <button class="tap-btn ${tc}" onclick="tapHabit('${type}','${h.id}',event)">${tapped?icon('check','icon-sm icon-pop'):(type==='starve'?icon('no','icon-sm'):icon('spark','icon-sm'))}</button>
+      <button class="del-btn" onclick="deleteHabit('${type}','${h.id}')">${icon('no','icon-sm')}</button>
+    </div>`
+  }).join('')
+}
+
+// ─── TAP HABIT ───
+function tapHabit(type,id,evt){
+  const h=(data.habits[type]||[]).find(x=>x.id===id);if(!h)return;
+  const today=todayKey(),btn=evt?evt.currentTarget:null;
+  if(h.taps[today]){
+    delete h.taps[today];calcStreak(h);const loss=type==='starve'?5:10;
+    data.auraPoints=Math.max(0,data.auraPoints-loss);showAuraChange(-loss);floatPts(btn,-loss);
+    logAct('untap',`undid ${h.name}`);sfx('untap');haptic(30);toast(rand(RELAPSE_MSGS),'bad')
+  }else{
+    h.taps[today]=true;const gain=type==='starve'?10:15;const sb=Math.min(calcStreak(h)*2,50);const total=gain+sb;
+    const prev=data.auraPoints;data.auraPoints+=total;showAuraChange(total);floatPts(btn,total);
+    const c50=Math.floor(data.auraPoints/50)>Math.floor(prev/50);
+    const sm=[7,14,21,30,50,60,90,100,150,200,365].includes(h.streak);
+    if(c50||sm){spawnConfetti(sm?50:30);launchConfetti()}
+    logAct('tap',`${type==='starve'?'starved':'farmed'} ${h.name} +${total} AP`);
+    sfx('tap');haptic(12);toast(rand(type==='starve'?STARVE_ROASTS:FARM_HYPES),'good')
+  }
+  calcStreak(h);h.lastStreak=h.streak;save();renderAll()
+}
+
+// ─── FREEZE ───
+function freezeStreak(type,id){
+  const h=(data.habits[type]||[]).find(x=>x.id===id);if(!h)return;
+  const yKey=yesterdayKey();
+  if(h.taps[yKey]){sfx('error');toast("nothing to freeze here bestie",'good');return}
+  if(data.freezes<=0){sfx('error');haptic(50);toast(rand(FREEZE_BROKE),'bad');return}
+  h.taps[yKey]='frozen';data.freezes--;calcStreak(h);h.lastStreak=h.streak;
+  logAct('freeze',`froze ${h.name} streak`);save();renderAll();sfx('tap');haptic(20);toast(rand(FREEZE_SAVES),'good')
+}
+
+// ─── DELETE HABIT ───
+function deleteHabit(type,id){
+  data.habits[type]=data.habits[type].filter(h=>h.id!==id);save();renderAll();sfx('untap');haptic(20);
+  toast('habit yeeted into the void, gone forever bestie','bad')
+}
+
+// ─── ADD HABIT MODAL ───
+function openAddHabit(type){
+  const m=document.getElementById('modalContent');
+  const title=type==='starve'?`${icon('skull')} STARVE THAT BRAIN ROT`:`${icon('spark')} FARM THAT AURA`;
+  const suggs=HABIT_SUGG[type]||[];
+  m.innerHTML=`<h3>${title}</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">${type==='starve'?'pick a degenerate habit to starve':'pick a habit to farm aura with'}</p>
+    <div class="chips">${suggs.map((s,i)=>`<button class="chip ${type==='starve'?'s':'f'}" onclick="fillSugg('${type}',${i})">${icon(s.e,'icon-sm')} ${s.n}</button>`).join('')}</div>
+    <p style="font-size:.74rem;color:var(--fg2);margin:10px 0 6px;">// or roll your own — pick an icon</p>
+    <div class="emoji-grid" id="emojiPicker">${ICON_KEYS.map((k,i)=>`<button class="emoji-opt ${i===0?'sel':''}" onclick="pickEmoji(this,'${k}')">${icon(k)}</button>`).join('')}</div>
+    <input type="text" id="habitNameInput" placeholder="${type==='starve'?'doomscrolling, rage gaming...':'mewing, cold approach...'}" maxlength="40">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="addHabit('${type}')">add it</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('habitNameInput')?.focus(),100)
+}
+function pickEmoji(btn,e){selectedEmoji=e;document.querySelectorAll('.emoji-opt').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel')}
+function fillSugg(type,idx){
+  const s=HABIT_SUGG[type][idx];if(!s)return;selectedEmoji=s.e;
+  const inp=document.getElementById('habitNameInput');if(inp)inp.value=s.n;
+  const allOpts=document.querySelectorAll('.emoji-opt');
+  allOpts.forEach((x,i)=>x.classList.toggle('sel',ICON_KEYS[i]===s.e));
+  document.querySelectorAll('.chip').forEach((c,i)=>c.classList.toggle('picked',i===idx))
+}
+function addHabit(type){
+  const name=document.getElementById('habitNameInput')?.value.trim();
+  if(!name){sfx('error');toast("name it something you braindead NPC",'bad');return}
+  data.habits[type].push({id:uid(),emoji:selectedEmoji,name,streak:0,bestStreak:0,taps:{},createdAt:Date.now()});
+  logAct('habit',`added ${name} to ${type==='starve'?'kill list':'aura farm'}`);
+  save();renderAll();closeModal();sfx('tap');haptic(12);
+  toast(type==='starve'?`"${name}" added to the brain rot kill list`:`"${name}" added to the aura farm, grind it bestie`,'good');
+  selectedEmoji=ICON_KEYS[0]
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('show')}
+
+// ─── COMMIT LOG ───
+function addCommit(){
+  const inp=document.getElementById('commitInput'),text=inp?.value.trim();
+  if(!text){sfx('error');toast("write something you braindead NPC",'bad');return}
+  data.commits.unshift({id:uid(),text,date:todayKey(),time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})});
+  data.auraPoints+=5;showAuraChange(5);logAct('commit',`logged: "${text.slice(0,35)}"`);save();inp.value='';renderAll();
+  sfx('tap');haptic(12);toast("commit logged, the glow up is REAL",'good')
+}
+function renderCommitLog(){
+  const c=document.getElementById('commitLog');if(!c)return;
+  if(!data.commits.length){c.innerHTML='<div class="text-center text-muted mt-1" style="font-size:.84rem;">commit log is bone dry... just like your discipline</div>';return}
+  c.innerHTML=data.commits.slice(0,20).map(x=>`<div class="commit"><span class="cm-date">// ${x.date} @ ${x.time}</span><br><span class="cm-text">"${escHtml(x.text)}"</span>
+    <button class="del-btn" style="opacity:1;float:right" onclick="delCommit('${x.id}')">${icon('no','icon-sm')}</button></div>`).join('')
+}
+function delCommit(id){data.commits=data.commits.filter(c=>c.id!==id);save();renderCommitLog()}
+
+// ─── QUIT TIMERS ───
+function renderQuitTimers(){
+  const c=document.getElementById('quitTimerList');if(!c)return;
+  const habits=data.habits.starve||[];
+  if(!habits.length){c.innerHTML='<div class="text-center text-muted" style="padding:16px;font-size:.84rem;">no brain rot to detox from?? add your demons bestie</div>';return}
+  c.innerHTML=habits.map(h=>{
+    const days=calcStreak(h);let mot;
+    if(days===0)mot="zero days clean you degenerate, start NOW";
+    else if(days<3)mot="barely breathing, don't fumble this";
+    else if(days<7)mot="brain rot starving but still kicking, smother that rot";
+    else if(days<30)mot="unhinged discipline ngl, brain rot getting BODIED";
+    else mot="GIGACHAD, brain rot on life support";
+    return `<div class="card qt-card"><div class="flex-between"><div><span style="font-size:1.1rem;display:inline-flex;vertical-align:middle">${iconOrEmoji(h.emoji)}</span> <strong style="font-size:.82rem">${h.name}</strong></div>
+      <span class="text-accent" style="font-size:.84rem;font-weight:700">${days}d</span></div>
+      <div class="text-muted mt-1" style="font-size:.8rem">${mot}</div>
+      <div class="qt-bar"><div class="qt-fill" style="width:${Math.min(100,days/30*100)}%;background:${days>0?'var(--accent)':'var(--danger)'}"></div></div></div>`
+  }).join('')
+}
+
+// ─── STATS ───
+function renderStats(){
+  const c=document.getElementById('statsRow');if(!c)return;
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  const today=todayKey(),tapped=all.filter(h=>h.taps[today]).length,total=all.length;
+  const best=all.reduce((m,h)=>Math.max(m,h.bestStreak),0);
+  const days=new Set();all.forEach(h=>Object.keys(h.taps).forEach(k=>days.add(k)));
+  c.innerHTML=`<div class="stat-box"><div class="stat-n">${tapped}/${total}</div><div class="stat-l">tapped today</div></div>
+    <div class="stat-box"><div class="stat-n">${best}</div><div class="stat-l">filthiest streak</div></div>
+    <div class="stat-box"><div class="stat-n">${days.size}</div><div class="stat-l">days not cooked</div></div>
+    <div class="stat-box"><div class="stat-n text-cyan">${icon('ice','icon-sm')}${data.freezes??0}</div><div class="stat-l">freeze tokens</div></div>`
+}
+
+// ─── LEVEL SYSTEM ───
+function getLevel(){let l=0;for(let i=LEVELS.length-1;i>=0;i--)if(data.auraPoints>=LEVELS[i].min){l=i;break};return{...LEVELS[l],idx:l}}
+function getLvlProg(){const l=getLevel(),nx=LEVELS[l.idx+1];if(!nx)return{cur:l,next:null,pct:100};return{cur:l,next:nx,pct:Math.min(100,(data.auraPoints-l.min)/(nx.min-l.min)*100)}}
+
+// ─── DEN DASHBOARD ───
+function renderDen(){
+  const el=document.getElementById('denDash');if(!el)return;
+  const{cur,next,pct}=getLvlProg();const ln=cur.idx+1;const ck=data.lastCheckIn===todayKey();
+  // best active streak for the ring
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  let topStreak=0,topHabit=null;all.forEach(h=>{const s=calcStreak(h);if(s>topStreak){topStreak=s;topHabit=h}});
+  const ringTarget=topStreak>=30?(topStreak>=100?365:100):30;
+  const C=232.5,off=C-Math.min(1,topStreak/ringTarget)*C;
+  el.innerHTML=`<div class="lvl-card">
+    <div class="ring-wrap">
+      <div class="ring"><svg width="84" height="84" viewBox="0 0 84 84">
+        <circle class="ring-bg" cx="42" cy="42" r="37"></circle>
+        <circle class="ring-fg" cx="42" cy="42" r="37" stroke-dasharray="${C}" stroke-dashoffset="${off}"></circle>
+        </svg><div class="ring-center"><div class="ring-num">${topStreak}</div><div class="ring-lbl">day${topStreak===1?'':'s'}</div></div></div>
+      <div class="ring-info">
+        <div class="lvl-head" style="margin-bottom:4px"><span class="lvl-icon" style="font-size:1.4rem">${icon(cur.icon)}</span>
+          <div><div class="lvl-title" style="font-size:.82rem">Level ${ln}</div><div class="lvl-name">${cur.name}</div></div></div>
+        <div class="ri-sub">${topHabit?`${icon('fire','icon-sm')} best active streak: ${iconOrEmoji(topHabit.emoji,'icon-sm')} ${topHabit.name}`:'no active streaks — start tapping'}</div>
+      </div>
+    </div>
+    <div class="lvl-bar-wrap" style="margin-top:12px"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
+    ${next?`<div class="lvl-next">${data.auraPoints.toLocaleString()} / ${next.min.toLocaleString()} AP → ${icon(next.icon,'icon-sm')} ${next.name}</div>`:`<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute legend ${icon('crown','icon-sm')}</div>`}
+    </div>
+    <div style="margin:10px 0 10px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?`${icon('check','icon-sm')} checked in today, go farm`:`${icon('question','icon-sm')} daily check-in — how cooked are you?`}</button></div>
+    <div class="share-row">
+      <button class="share-btn primary" onclick="openShare()">${icon('camera','icon-sm')} flex my aura</button>
+      <button class="share-btn alt" onclick="openChallenge()">${icon('sword','icon-sm')} challenge a friend</button>
+    </div>
+    ${renderRitualUnlock()}
+    ${deferredInstallPrompt?`<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">${icon('download')}</div><div style="font-size:.88rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.74rem;color:var(--fg2)">add to home screen — farm aura offline, no cap</div></div>`:''}`
+}
+function renderRitualUnlock(){
+  const a=activeDemon();
+  if(a)return `<div class="rc-unlock" onclick="openRitual()" style="border-color:${a.color}">
+    <div style="font-size:1.6rem">${iconOrEmoji(a.emoji)}</div>
+    <div style="font-size:.9rem;font-weight:900;color:${a.color}">${a.name} ${a.epithet} is loose</div>
+    <div style="font-size:.74rem;color:var(--fg2)">${a.questDone?`decree fulfilled ${icon('check','icon-sm icon-glow-a')}`:'tap to see the demon\'s decree'} · ${msLeft(a.expiresAt)} left</div></div>`;
+  if(ritualUnlocked())return `<div class="rc-unlock" onclick="openRitual()">
+    <div style="font-size:1.6rem">${icon('crystal')} ${icon('skull')}</div>
+    <div style="font-size:.9rem;font-weight:900;color:var(--danger)">ENTER THE RITUAL CHAMBER</div>
+    <div style="font-size:.74rem;color:var(--fg2)">spend aura to summon a demon that possesses your app</div></div>`;
+  return `<div class="rc-unlock locked">
+    <div style="font-size:1.6rem">${icon('lock')} ${icon('crystal')}</div>
+    <div style="font-size:.9rem;font-weight:900;color:var(--fg2)">RITUAL CHAMBER — LOCKED</div>
+    <div style="font-size:.74rem;color:var(--fg2)">reach ${RITUAL_UNLOCK_AURA.toLocaleString()} aura or level ${RITUAL_UNLOCK_LVL} to unlock summoning</div></div>`;
+}
+
+// ─── CHECK-IN ───
+function openCheckIn(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('question')} HOW COOKED ARE YOU TODAY?</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:12px;">be honest you degenerate</p>
+    ${CHECKIN_MOODS.map((x,i)=>`<button class="ck-btn" onclick="submitCheckIn(${i})"><span class="ck-emoji">${icon(x.emoji)}</span><span class="ck-label">${x.label}</span><span class="ck-pts">+${x.pts} AP</span></button>`).join('')}
+    <div class="modal-actions" style="margin-top:12px"><button class="btn" onclick="closeModal()">nah</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function submitCheckIn(i){
+  const m=CHECKIN_MOODS[i];data.lastCheckIn=todayKey();data.auraPoints+=m.pts;
+  logAct('checkin',`checked in: ${m.label}`);save();closeModal();updateAura();showAuraChange(m.pts);renderAll();
+  sfx('tap');haptic(12);toast(m.resp,'good')
+}
+
+// ─── CHALLENGES ───
+function getChProg(ch){
+  if(!data.joinedChallenges||!data.joinedChallenges[ch.id])return{joined:false,prog:0,pct:0};
+  let p=0;
+  if(ch.type==='all_taps'){let s=0,d=new Date();const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];if(!all.length)return{joined:true,prog:0,pct:0};
+    if(!all.every(h=>h.taps[dateKey(d)]))d.setDate(d.getDate()-1);while(all.every(h=>h.taps[dateKey(d)])){s++;d.setDate(d.getDate()-1)};p=s}
+  else if(ch.type==='starve_streak'){let s=0,d=new Date();const sh=data.habits.starve||[];if(!sh.length)return{joined:true,prog:0,pct:0};
+    if(!sh.every(h=>h.taps[dateKey(d)]))d.setDate(d.getDate()-1);while(sh.every(h=>h.taps[dateKey(d)])){s++;d.setDate(d.getDate()-1)};p=s}
+  else if(ch.type==='total_aura')p=data.auraPoints;
+  else if(ch.type==='total_commits')p=(data.commits||[]).length;
+  else if(ch.type==='single_streak'){const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];p=all.reduce((m,h)=>Math.max(m,calcStreak(h)),0)}
+  return{joined:true,prog:p,pct:Math.min(100,p/ch.target*100)}
+}
+function renderChallenges(){
+  const el=document.getElementById('challengesList');if(!el)return;
+  el.innerHTML=CHALLENGES.map(ch=>{
+    const{joined,prog,pct}=getChProg(ch);const done=joined&&prog>=ch.target;const claimed=(data.claimedChallenges||[]).includes(ch.id);
+    let act;
+    if(claimed)act=`<span class="text-accent" style="font-size:.88rem">${icon('check','icon-sm')} done</span>`;
+    else if(done)act=`<button class="btn btn-accent btn-sm" onclick="claimCh('${ch.id}')">claim</button>`;
+    else if(joined)act=`<span class="text-muted" style="font-size:.88rem">${prog}/${ch.target}</span>`;
+    else act=`<button class="btn btn-sm" style="border-color:var(--purple);color:var(--purple)" onclick="joinCh('${ch.id}')">join ${icon('sword','icon-sm')}</button>`;
+    return `<div class="ch-card ${done&&!claimed?'done':''} ${claimed?'claimed':''}">
+      <div class="ch-head"><span class="ch-icon">${icon(ch.icon)}</span><div class="ch-info"><div class="ch-nm">${ch.name}</div><div class="ch-ds">${ch.desc}</div></div><div>${act}</div></div>
+      ${joined&&!claimed?`<div class="ch-bar-w"><div class="ch-bar" style="width:${pct}%"></div></div><div class="ch-prog">${prog}/${ch.target}${done?' — claim it bestie':''}</div>`:''}
+      <div class="ch-rw">${icon('trophy','icon-sm')} ${ch.reward} AP</div></div>`
+  }).join('')
+}
+function joinCh(id){if(!data.joinedChallenges)data.joinedChallenges={};data.joinedChallenges[id]={date:todayKey()};
+  logAct('challenge',`joined: ${(CHALLENGES.find(c=>c.id===id)||{}).name}`);save();renderChallenges();sfx('tap');haptic(12);toast("challenge ACCEPTED — don't embarrass yourself",'good')}
+function claimCh(id){
+  const ch=CHALLENGES.find(c=>c.id===id);if(!ch)return;if(!data.claimedChallenges)data.claimedChallenges=[];if(data.claimedChallenges.includes(id))return;
+  data.claimedChallenges.push(id);data.auraPoints+=ch.reward;logAct('claim',`completed "${ch.name}" +${ch.reward} AP`);
+  save();updateAura();showAuraChange(ch.reward);renderAll();spawnConfetti(40);launchConfetti();sfx('buy');haptic(15);
+  toast(`CHALLENGE DONE +${ch.reward} AP, sigma menace`,'good')
+}
+
+// ─── ANALYTICS ───
+function dayStats(key){
+  const fd=(data.habits.farm||[]).filter(h=>h.taps[key]===true);
+  const sd=(data.habits.starve||[]).filter(h=>h.taps[key]===true);
+  const frozen=[...(data.habits.starve||[]),...(data.habits.farm||[])].filter(h=>h.taps[key]==='frozen');
+  const total=fd.length+sd.length;return{fd,sd,frozen,total,aura:fd.length*15+sd.length*10}
+}
+function trackingStart(){let m=null;['starve','farm'].forEach(t=>(data.habits[t]||[]).forEach(h=>Object.keys(h.taps).forEach(k=>{if(!m||k<m)m=k})));return m}
+
+function renderAnalytics(){
+  const el=document.getElementById('analyticsEl');if(!el)return;
+  const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const k=dateKey(d),st=dayStats(k);
+    days.push({lbl:d.toLocaleDateString('en',{weekday:'short'}),taps:st.total,isToday:i===0})}
+  const mx=Math.max(...days.map(d=>d.taps),1);
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  const totalTaps=all.reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
+  const daysActive=new Set();all.forEach(h=>Object.keys(h.taps).forEach(k=>{if(h.taps[k])daysActive.add(k)}));
+  const avg=daysActive.size>0?(totalTaps/daysActive.size).toFixed(1):'0';
+  const sc=(data.habits.starve||[]).reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
+  const fc=(data.habits.farm||[]).reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
+  let roast;
+  if(daysActive.size===0)roast="you haven't done anything yet. zero data, zero aura, zero progress";
+  else if(daysActive.size>=30)roast=`${daysActive.size} days grinding, you absolute LEGEND. DISGUSTING discipline (compliment)`;
+  else if(daysActive.size>=7)roast=`${daysActive.size} days in, ${totalTaps} taps. not bad, don't get comfortable`;
+  else roast=`${daysActive.size} day${daysActive.size>1?'s':''} active, ${totalTaps} taps. baby numbers, pump them up`;
+  el.innerHTML=`<div class="card">
+    <div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">last 7 days — taps/day</div>
+    <div class="an-bars">${days.map(d=>`<div class="an-col"><div class="an-val">${d.taps}</div><div class="an-track">
+      <div class="an-bar ${d.taps>0?(d.isToday?'today':''):'empty'}" style="height:${d.taps>0?Math.max(8,d.taps/mx*100):4}%"></div></div>
+      <div class="an-lbl ${d.isToday?'today':''}">${d.lbl}</div></div>`).join('')}</div>
+    <div class="an-stats"><div class="an-stat"><span class="an-sn">${totalTaps}</span><span class="an-sl">total taps</span></div>
+      <div class="an-stat"><span class="an-sn">${daysActive.size}</span><span class="an-sl">days active</span></div>
+      <div class="an-stat"><span class="an-sn">${avg}</span><span class="an-sl">avg/day</span></div>
+      <div class="an-stat"><span class="an-sn">${sc}/${fc}</span><span class="an-sl">starve/farm</span></div></div>
+    <div class="an-roast">${roast}</div></div>`
+}
+
+// ─── ACTIVITY FEED ───
+function renderActivity(){
+  const el=document.getElementById('activityEl');if(!el)return;
+  if(!data.activityLog||!data.activityLog.length){el.innerHTML='<div class="text-center text-muted" style="padding:14px;font-size:.82rem;">no activity yet... tap something</div>';return}
+  const actIcons={tap:'spark',untap:'skull',buy:'coin',claim:'trophy',freeze:'ice',commit:'journal',checkin:'question',habit:'plus',challenge:'sword',squad:'megaphone',demon:'crystal'};
+  el.innerHTML=data.activityLog.slice(0,12).map(a=>`<div class="act-item"><span class="act-icon">${icon(actIcons[a.type]||'pin')}</span><span class="act-msg">${escHtml(a.msg)}</span><span class="act-time">${timeAgo(a.time)}</span></div>`).join('')
+}
+
+// ─── SQUAD ───
+function renderSquad(){
+  const c=document.getElementById('squadFeed');if(!c)return;
+  const habits=['doomscrolling','doom tweeting','gym','mewing','cold showers','reading','vaping'];
+  const times=['just now','2m ago','5m ago','12m ago','23m ago','1h ago','2h ago','3h ago'];
+  const items=[];
+  const myName=data.packName||'You';
+  const myAvKey=SHOP.avatars.find(a=>a.id===data.equipped?.avatar)?.preview||'skull';const myAv=iconOrEmoji(myAvKey);
+  const myPosts=(data.squadPosts||[]).slice(0,3);
+  myPosts.forEach((p,i)=>{
+    items.push({html:`<div class="sq-item sq-you" style="animation-delay:${i*.08}s"><span class="sq-av">${myAv}</span><div style="flex:1">
+      <div><span class="sq-name" style="color:var(--accent)">${escHtml(myName)}</span> <span class="sq-time">${timeAgo(p.time)}</span></div>
+      <div class="sq-msg">${escHtml(p.text)}</div>
+      <div class="sq-react"><button class="hyped" onclick="this.dataset.c=parseInt(this.dataset.c||'0')+1;this.innerHTML='${icon('fire','icon-sm').replace(/'/g,"\\'")} '+this.dataset.c" data-c="${p.hypes||0}">${icon('fire','icon-sm')} ${p.hypes||0}</button></div>
+      </div></div>`,time:p.time,isMine:true})
+  });
+  const recentActs=(data.activityLog||[]).slice(0,3);
+  recentActs.forEach(a=>{
+    items.push({html:`<div class="sq-item sq-you" style="animation-delay:.1s"><span class="sq-av">${myAv}</span><div style="flex:1">
+      <div><span class="sq-name" style="color:var(--accent)">${escHtml(myName)}</span> <span class="sq-time">${timeAgo(a.time)}</span></div>
+      <div class="sq-msg">${escHtml(a.msg)}</div>
+      <div class="sq-react"><button onclick="hypeReact(this)" data-k="fire">${icon('fire','icon-sm')} 0</button><button onclick="hypeReact(this)" data-k="skull">${icon('skull','icon-sm')} 0</button><button onclick="hypeReact(this)" data-k="crown">${icon('crown','icon-sm')} 0</button></div>
+      </div></div>`,time:a.time,isMine:true})
+  });
+  for(let i=0;i<6;i++){const p=rand(SQUAD_NAMES);let act=rand(SQUAD_ACTS).replace('{n}',Math.floor(Math.random()*60)+1).replace('{h}',rand(habits));
+    const fakeTime=Date.now()-Math.floor(Math.random()*7200000);
+    items.push({html:`<div class="sq-item" style="animation-delay:${(items.length+i)*.06}s"><span class="sq-av">${iconOrEmoji(p.av)}</span><div style="flex:1">
+      <div><span class="sq-name">${p.n}</span> <span class="sq-time">${times[i]||rand(times)}</span></div><div class="sq-msg">${act}</div>
+      <div class="sq-react"><button onclick="hypeReact(this)" data-k="fire">${icon('fire','icon-sm')} ${Math.floor(Math.random()*12)}</button><button onclick="hypeReact(this)" data-k="skull">${icon('skull','icon-sm')} ${Math.floor(Math.random()*5)}</button><button onclick="hypeReact(this)" data-k="crown">${icon('crown','icon-sm')} ${Math.floor(Math.random()*3)}</button></div>
+      </div></div>`,time:fakeTime,isMine:false})
+  }
+  items.sort((a,b)=>(b.time||0)-(a.time||0));
+  c.innerHTML=items.map(x=>x.html).join('')
+}
+function hypeReact(btn){
+  const cur=parseInt(btn.dataset.c||btn.textContent.replace(/[^\d]/g,''))||0;const nv=cur+1;
+  const k=btn.dataset.k||'fire';btn.innerHTML=icon(k,'icon-sm')+' '+nv;btn.dataset.c=nv;btn.classList.add('hyped');sfx('tap');haptic(6)
+}
+
+// ─── SHOP ───
+function renderShop(){
+  const c=document.getElementById('shopContent');if(!c)return;
+  const tabs=[{k:'avatars',i:'skull',l:'Avatars'},{k:'themes',i:'paint',l:'Themes'},{k:'titles',i:'tag',l:'Titles'}];
+  let h=`<div class="shop-bal">${icon('coin','icon-sm')} <span class="text-accent">${data.auraPoints.toLocaleString()}</span> aura to blow</div>`;
+  h+=`<div class="shop-tabs">${tabs.map(t=>`<button class="shop-tab ${shopTab===t.k?'active':''}" onclick="setShopTab('${t.k}')">${icon(t.i,'icon-sm')} ${t.l}</button>`).join('')}</div>`;
+  const items=SHOP[shopTab]||[];
+  h+='<div class="shop-grid">';
+  items.forEach(item=>{
+    const owned=data.owned.includes(item.id),equipped=data.equipped[shopTab.slice(0,-1)]===item.id,afford=data.auraPoints>=item.cost;
+    let btn;
+    if(equipped)btn=`<button class="btn btn-sm" disabled style="opacity:.6;border-color:var(--accent);color:var(--accent)">equipped ${icon('crown','icon-sm')}</button>`;
+    else if(owned)btn=`<button class="btn btn-sm btn-accent" onclick="equipItem('${shopTab}','${item.id}')">equip</button>`;
+    else if(afford)btn=`<button class="btn btn-sm btn-accent" onclick="buyItem('${shopTab}','${item.id}')">${item.cost} AP</button>`;
+    else btn=`<button class="btn btn-sm" disabled style="opacity:.4">${icon('lock','icon-sm')} ${item.cost} AP</button>`;
+    let prev='';
+    if(shopTab==='avatars')prev=`<div class="shop-av">${iconOrEmoji(item.preview)}</div>`;
+    else if(shopTab==='themes'){const v={...BASE_THEME,...(item.vars||{})};prev=`<div style="display:flex;justify-content:center;gap:5px;margin-bottom:6px">
+      <span style="width:20px;height:20px;border-radius:50%;display:inline-block;background:${v['--accent']}"></span>
+      <span style="width:20px;height:20px;border-radius:50%;display:inline-block;background:${v['--bg']||'#0a0a0a'}"></span></div>`}
+    else prev=`<div style="font-size:.8rem;color:var(--accent);margin-bottom:5px;font-style:italic">"${item.name}"</div>`;
+    h+=`<div class="shop-card ${owned?'owned':''} ${equipped?'equipped':''} ${!owned&&!afford?'locked':''}">${prev}
+      <div class="shop-nm">${item.name}</div><div class="shop-ds">${item.desc}</div>${btn}</div>`
+  });
+  h+='</div>';
+  h+=`<div class="sec-title" style="margin-top:18px">${icon('medal','icon-sm')} MILESTONES</div>`;
+  h+=REWARDS.map(r=>{const unlocked=data.auraPoints>=r.cost,claimed=(data.rewards||[]).includes(r.id);
+    return `<div class="rw-item ${unlocked?'unlocked':'locked'}"><span class="rw-icon">${unlocked?icon(r.icon):icon('lock')}</span>
+      <div class="rw-info"><div class="rw-nm">${r.name} ${claimed?'<span class="text-accent">'+icon('check','icon-sm')+'</span>':''}</div><div class="rw-ds">${r.desc}</div></div>
+      <div style="text-align:right"><div class="rw-cost">${r.cost>=1000?(r.cost/1000)+'K':r.cost} AP</div>
+      ${unlocked&&!claimed?`<button class="btn btn-accent btn-sm" style="margin-top:3px" onclick="claimReward('${r.id}')">claim</button>`:''}</div></div>`}).join('');
+  c.innerHTML=h
+}
+function setShopTab(t){shopTab=t;renderShop()}
+function buyItem(cat,id){
+  const item=SHOP[cat].find(x=>x.id===id);if(!item)return;
+  if(data.auraPoints<item.cost){sfx('error');haptic(50);toast(rand(BROKE_ROASTS),'bad');return}
+  data.auraPoints-=item.cost;data.owned.push(id);data.equipped[cat.slice(0,-1)]=id;
+  logAct('buy',`bought "${item.name}" for ${item.cost} AP`);save();updateAura();renderShop();applyEquipped();
+  spawnConfetti(30);launchConfetti();sfx('buy');haptic(15);toast(rand(REDEEM_HYPE),'good')
+}
+function equipItem(cat,id){
+  data.equipped[cat.slice(0,-1)]=id;save();renderShop();applyEquipped();sfx('tap');haptic(12);
+  toast("equipped — drip leveled up, aura recalibrated",'good')
+}
+function claimReward(id){
+  if(!data.rewards)data.rewards=[];if(data.rewards.includes(id))return;
+  const r=REWARDS.find(x=>x.id===id);if(!r||data.auraPoints<r.cost)return;
+  data.rewards.push(id);logAct('claim',`claimed "${r.name}"`);save();renderShop();
+  spawnConfetti(50);launchConfetti();sfx('buy');haptic(15);toast(`${r.name} CLAIMED — ${r.desc}`,'good')
+}
+function applyTheme(){
+  const tid=data.equipped?.theme||'th_default',theme=SHOP.themes.find(t=>t.id===tid);
+  const vars={...BASE_THEME,...(theme?theme.vars:{})};
+  Object.entries(vars).forEach(([k,v])=>document.documentElement.style.setProperty(k,v))
+}
+function applyEquipped(){
+  applyTheme();const av=SHOP.avatars.find(a=>a.id===data.equipped?.avatar);
+  const logo=document.getElementById('headerLogo');if(logo)logo.innerHTML=iconOrEmoji(av?av.preview:'skull','icon-lg');renderGreeting();
+  if(typeof refreshPossession==='function')refreshPossession()
+}
+
+// ─── CALENDAR ───
+function renderCal(){
+  const c=document.getElementById('calGrid');if(!c)return;
+  const month=data.calMonth,year=data.calYear;
+  const lbl=document.getElementById('calLabel');if(lbl)lbl.textContent=new Date(year,month).toLocaleDateString('en',{month:'long',year:'numeric'});
+  const fd=new Date(year,month,1).getDay(),dim=new Date(year,month+1,0).getDate(),tKey=todayKey(),start=trackingStart();
+  // monthly summary
+  let auraDays=0,cookedDays=0,monthAura=0;
+  for(let d=1;d<=dim;d++){
+    const key=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const st=dayStats(key);
+    if(st.total>0){auraDays++;monthAura+=st.aura}
+    else if(start&&key>=start&&key<tKey&&st.frozen.length===0)cookedDays++
+  }
+  let h=`<div class="cal-stats">
+    <div class="cal-stat"><div class="cal-stat-n text-accent">${auraDays}</div><div class="cal-stat-l">aura days</div></div>
+    <div class="cal-stat"><div class="cal-stat-n text-danger">${cookedDays}</div><div class="cal-stat-l">cooked days</div></div>
+    <div class="cal-stat"><div class="cal-stat-n text-accent">${monthAura}</div><div class="cal-stat-l">AP this month</div></div></div>`;
+  const hds=['Su','Mo','Tu','We','Th','Fr','Sa'];
+  h+='<div class="cal-grid">';hds.forEach(x=>{h+=`<div class="cal-h">${x}</div>`});
+  for(let i=0;i<fd;i++)h+='<div class="cal-d empty"></div>';
+  for(let d=1;d<=dim;d++){
+    const key=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday=key===tKey,st=dayStats(key);const cls=['cal-d'];let glyph=d;
+    if(isToday)cls.push('today');if(key===selectedCalDay)cls.push('sel');
+    if(st.total>0){if(st.total>=5)cls.push('a3');else if(st.total>=3)cls.push('a2');else cls.push('a1')}
+    else if(st.frozen.length>0){cls.push('frozen');glyph='*'}
+    else if(start&&key>=start&&key<tKey)cls.push('rot');
+    h+=`<div class="${cls.join(' ')}" onclick="showDay('${key}')">${glyph}</div>`
+  }
+  h+='</div>';c.innerHTML=h;if(selectedCalDay)renderDaySum(selectedCalDay)
+}
+function showDay(key){selectedCalDay=key;renderCal();renderDaySum(key)}
+function renderDaySum(key){
+  const el=document.getElementById('daySummary');if(!el)return;
+  const[y,m,dd]=key.split('-').map(Number);const dObj=new Date(y,m-1,dd);
+  const dl=dObj.toLocaleDateString('en',{weekday:'long',month:'short',day:'numeric'});
+  const st=dayStats(key),tKey=todayKey(),start=trackingStart(),isToday=key===tKey;
+  let verdict;
+  if(key>tKey)verdict=`<span class="text-muted">${icon('crystal','icon-sm')} the future, can't farm in advance bestie</span>`;
+  else if(st.total===0&&st.frozen.length>0)verdict=`<span class="text-cyan">${icon('ice','icon-sm')} frozen day. streak survived.</span>`;
+  else if(st.total===0){
+    if(isToday)verdict=`<span class="text-danger">${icon('eye','icon-sm')} nothing yet today. lock tf in.</span>`;
+    else if(start&&key>=start)verdict=`<span class="text-danger">${icon('skull','icon-sm')} COOKED this day. brain rot won.</span>`;
+    else verdict=`<span class="text-muted">${icon('face_blank','icon-sm')} before your time on the farm.</span>`
+  }else if(st.total>=5)verdict=`<span class="text-accent">${icon('fire','icon-sm')} ATE this day. ${st.total} taps, +${st.aura} aura — sigma menace.</span>`;
+  else verdict=`<span class="text-accent">${icon('spark','icon-sm')} showed up (${st.total} tap${st.total>1?'s':''}). decent.</span>`;
+  let htm=`<div class="day-sum"><div class="ds-date">› ${dl}${isToday?' <span class="text-accent">(today)</span>':''}</div><div style="font-size:.84rem;margin-bottom:8px">${verdict}</div>`;
+  if(st.fd.length)htm+=`<div class="ds-row">${st.fd.map(h=>`<span class="ds-tag good">${iconOrEmoji(h.emoji,'icon-sm')} ${h.name}</span>`).join('')}</div>`;
+  if(st.sd.length)htm+=`<div class="ds-row">${st.sd.map(h=>`<span class="ds-tag good">${iconOrEmoji(h.emoji,'icon-sm')} ${h.name} ${icon('no','icon-sm')}</span>`).join('')}</div>`;
+  if(st.total>0)htm+=`<div class="ds-row"><span class="ds-tag good">${icon('coin','icon-sm')} +${st.aura} AP</span></div>`;
+  htm+='</div>';el.innerHTML=htm
+}
+function calNav(dir){
+  data.calMonth+=dir;if(data.calMonth>11){data.calMonth=0;data.calYear++}if(data.calMonth<0){data.calMonth=11;data.calYear--}
+  selectedCalDay=null;document.getElementById('daySummary').innerHTML='';save();renderCal()
+}
+
+// ─── GREETING ───
+function renderGreeting(){
+  const el=document.getElementById('greetingEl');if(!el)return;
+  const name=data.packName||'Anon';const tmpl=rand(GREETINGS).replace('{name}',name);
+  const hr=new Date().getHours();let tm;
+  if(hr<5)tm="it's late af, go to sleep degenerate";else if(hr<9)tm="early bird, farming before NPCs wake";
+  else if(hr<12)tm="morning grind activated";else if(hr<17)tm="afternoon check-in, don't slip";
+  else if(hr<21)tm="evening session, starve that brain rot";else tm="night owl, don't let brain rot creep in";
+  const title=data.equipped?.title?SHOP.titles.find(x=>x.id===data.equipped.title):null;
+  const av=SHOP.avatars.find(a=>a.id===data.equipped?.avatar);
+  el.innerHTML=`<div class="greeting-name"><span class="text-purple">${av?iconOrEmoji(av.preview):icon('skull')}</span> ${tmpl}</div>
+    ${title?`<div class="greeting-title">「${title.name}」</div>`:''}
+    <div class="greeting-sub"># ${tm}</div>`
+}
+
+// ─── TAB SWITCHING ───
+function switchTab(tabId,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(tabId)?.classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(n=>n.classList.remove('active'));
+  if(btn)btn.classList.add('active');currentTab=tabId;
+  if(tabId==='tabDen'){renderDen();renderTodayProgress();renderChallenges();renderAnalytics();renderActivity()}
+  if(tabId==='tabStarve'){renderHabits('starve','starveList');renderQuitTimers()}
+  if(tabId==='tabFarm'){renderHabits('farm','farmList');renderCommitLog()}
+  if(tabId==='tabSquad'){renderLeaderboard();renderMpChallenges();renderSquad()}
+  if(tabId==='tabShop')renderShop();
+  if(tabId==='tabCal')renderCal()
+}
+
+// ─── RENDER ALL ───
+function renderAll(){
+  updateAura();renderStats();renderGreeting();
+  renderHabits('starve','starveList');renderHabits('farm','farmList');
+  renderQuitTimers();renderCommitLog();
+  renderDen();renderTodayProgress();renderChallenges();renderAnalytics();renderActivity()
+}
+
+// ─── RESET ───
+function resetApp(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('skull')} RESET EVERYTHING?</h3>
+    <p style="font-size:.84rem;color:var(--fg2);margin-bottom:14px;">this will NUKE all your shit. streaks, aura, habits — everything gone. are you sure??</p>
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nah</button>
+    <button class="btn btn-danger" onclick="confirmReset()">nuke it all</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function confirmReset(){
+  localStorage.removeItem(DB_KEY);data=JSON.parse(JSON.stringify(DEFAULT_DATA));save();closeModal();renderAll();applyEquipped();
+  sfx('untap');haptic(40);toast("everything nuked. fresh start, zero aura, back to nobody",'bad')
+}
+
+// ─── ONBOARDING ───
+const ONB_SLIDES=[
+  {icon:'brain',title:'welcome to Aura Farm',text:'a habit tracker for people who are extremely online.',sub:'starve your brain rot. farm your aura. become the main character. no cap.'},
+  {icon:'skull',title:'starve the brain rot',text:'track the bad habits you want to quit — doomscrolling, vaping, rage gaming.',sub:'every day you DON\'T do it, you tap it and earn aura. watch the streak grow.'},
+  {icon:'spark',title:'farm the aura',text:'track the good habits you want to build — gym, reading, cold showers.',sub:'do it, tap it, stack aura points. level up from Certified NPC to Aura God.'},
+  {icon:'bag',title:'spend your aura',text:'unlock avatars, themes & titles in the shop. join challenges. flex on the squad.',sub:'it all saves on your device — no account, no login, fully offline.'}
+];
+let onbStep=0;
+function startOnboarding(){
+  onbStep=0;const el=document.getElementById('onboarding');if(!el)return;
+  el.classList.remove('hidden');renderOnbSlide()
+}
+function renderOnbSlide(){
+  const el=document.getElementById('onboarding');if(!el)return;
+  const isLast=onbStep===ONB_SLIDES.length;
+  if(isLast){
+    el.innerHTML=`<div class="onb-slide">
+      <div class="onb-icon">${icon('fire','icon-xxl')}</div>
+      <div class="onb-title">what's your name?</div>
+      <div class="onb-sub">pick a name that goes hard. you can change it later.</div>
+      <input type="text" class="onb-input" id="onbNameInput" placeholder="RizzLord, GigaChad, anon..." maxlength="20">
+      <div class="onb-nav"><button class="btn btn-accent btn-block" onclick="finishOnboarding()">lock tf in →</button></div>
+    </div>`;
+    setTimeout(()=>document.getElementById('onbNameInput')?.focus(),100);
+    return
+  }
+  const s=ONB_SLIDES[onbStep];
+  el.innerHTML=`<div class="onb-slide">
+    <div class="onb-icon">${icon(s.icon,'icon-xxl')}</div>
+    <div class="onb-title">${s.title}</div>
+    <div class="onb-text">${s.text}</div>
+    <div class="onb-sub">${s.sub}</div>
+    <div class="onb-dots">${ONB_SLIDES.map((_,i)=>`<span class="onb-dot ${i===onbStep?'active':''}"></span>`).join('')}</div>
+    <div class="onb-nav">
+      ${onbStep>0?'<button class="btn" onclick="onbPrev()">← back</button>':'<button class="btn" onclick="skipOnboarding()">skip</button>'}
+      <button class="btn btn-accent" style="flex:1" onclick="onbNext()">${onbStep===ONB_SLIDES.length-1?'let\'s go':'next →'}</button>
+    </div>
+  </div>`
+}
+function onbNext(){onbStep++;sfx('tap');haptic(8);renderOnbSlide()}
+function onbPrev(){if(onbStep>0)onbStep--;sfx('tap');haptic(8);renderOnbSlide()}
+function skipOnboarding(){onbStep=ONB_SLIDES.length;renderOnbSlide()}
+function finishOnboarding(){
+  const name=document.getElementById('onbNameInput')?.value.trim()||'Anon';
+  data.packName=name;data.onboarded=true;save();
+  const el=document.getElementById('onboarding');if(el){el.classList.add('hidden');setTimeout(()=>el.remove(),400)}
+  renderAll();sfx('buy');haptic(15);spawnConfetti(40);launchConfetti();
+  toast(`welcome to the farm, ${name}`,'good');
+  submitScore()
+}
+
+// ─── NAME PROMPT ───
+function promptName(){
+  if(data.packName)return;
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('brain')} WHAT'S YOUR NAME, DEGENERATE?</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">this is your pack name. make it go hard af</p>
+    <input type="text" id="packNameInput" placeholder="e.g. RizzLord, GigaChad, BrainRotSlayer..." maxlength="20">
+    <div class="modal-actions"><button class="btn btn-accent btn-block" onclick="setName()">lock tf in →</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('packNameInput')?.focus(),100)
+}
+function setName(){
+  const name=document.getElementById('packNameInput')?.value.trim();
+  if(!name){sfx('error');toast("name yourself you coward",'bad');return}
+  data.packName=name;save();closeModal();renderAll();sfx('buy');haptic(15);
+  toast(`welcome to the farm, ${name} you degenerate`,'good')
+}
+
+// ─── TODAY'S PROGRESS ───
+function renderTodayProgress(){
+  const el=document.getElementById('todayProgress');if(!el)return;
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  if(!all.length){el.innerHTML='<div class="text-center text-muted" style="padding:12px;font-size:.84rem;">no habits yet, add some first you NPC</div>';return}
+  const today=todayKey(),done=all.filter(h=>h.taps[today]),left=all.filter(h=>!h.taps[today]);
+  const pct=all.length>0?Math.round(done.length/all.length*100):0;
+  let msg;
+  if(pct===0)msg="zero taps. brain rot is winning rn. TAP SOMETHING";
+  else if(pct<50)msg="barely started, pick up the pace degenerate";
+  else if(pct<100)msg="over halfway, don't stop now you legend";
+  else msg="CLEAN SWEEP — every habit tapped, you absolute MENACE";
+  let h=`<div class="card"><div class="flex-between" style="margin-bottom:8px">
+    <div><span class="tp-pct">${pct}%</span><span class="text-muted" style="font-size:.74rem;margin-left:6px">${done.length}/${all.length} tapped</span></div>
+    <div style="font-size:.88rem;color:var(--fg2);text-align:right;max-width:160px">${msg}</div></div>
+    <div class="lvl-bar-wrap" style="height:6px;margin-bottom:10px"><div class="lvl-bar" style="width:${pct}%;${pct===100?'background:linear-gradient(90deg,#b388ff,#00e5ff,#00e5ff);box-shadow:0 0 16px rgba(179,136,255,.6)':''}"></div></div>`;
+  if(left.length>0){
+    h+='<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">still need to tap:</div>';
+    h+=left.map(hab=>{const type=data.habits.starve.includes(hab)?'starve':'farm';
+      return `<div class="tp-row" onclick="quickTap('${type}','${hab.id}',this)">
+        <span class="tp-check">${type==='starve'?icon('no','icon-sm'):icon('spark','icon-sm')}</span>
+        <span>${iconOrEmoji(hab.emoji,'icon-sm')} ${hab.name}</span>
+        <span class="text-muted" style="font-size:.74rem;margin-left:auto">${type==='starve'?'starve it':'farm it'}</span></div>`}).join('')
+  }
+  if(done.length>0){
+    h+='<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px">done today:</div>';
+    h+=done.slice(0,5).map(hab=>`<div class="tp-row done"><span class="tp-check">${icon('check','icon-sm')}</span><span>${iconOrEmoji(hab.emoji,'icon-sm')} ${hab.name}</span></div>`).join('');
+    if(done.length>5)h+=`<div class="text-muted text-center" style="font-size:.74rem;padding:4px">+${done.length-5} more</div>`
+  }
+  h+='</div>';el.innerHTML=h
+}
+function quickTap(type,id,row){
+  const h=(data.habits[type]||[]).find(x=>x.id===id);if(!h)return;
+  const today=todayKey();if(h.taps[today])return;
+  h.taps[today]=true;const gain=type==='starve'?10:15;const sb=Math.min(calcStreak(h)*2,50);const total=gain+sb;
+  data.auraPoints+=total;showAuraChange(total);floatPts(row,total);
+  logAct('tap',`${type==='starve'?'starved':'farmed'} ${h.name} +${total} AP`);
+  sfx('tap');haptic(12);toast(rand(type==='starve'?STARVE_ROASTS:FARM_HYPES),'good');
+  calcStreak(h);h.lastStreak=h.streak;save();renderAll()
+}
+
+// ─── SQUAD POST ───
+function postSquadWin(){
+  const inp=document.getElementById('squadPostInput'),text=inp?.value.trim();
+  if(!text){sfx('error');toast("write something or shut up",'bad');return}
+  if(!data.squadPosts)data.squadPosts=[];
+  data.squadPosts.unshift({text,time:Date.now(),hypes:0});
+  if(data.squadPosts.length>20)data.squadPosts.length=20;
+  data.auraPoints+=3;showAuraChange(3);logAct('squad',`flexed: "${text.slice(0,30)}"`);
+  save();inp.value='';renderSquad();sfx('tap');haptic(12);
+  toast("flex posted, the squad can see your grind now",'good')
+}
+
+// ─── SETTINGS ───
+function openSettings(){
+  const m=document.getElementById('modalContent');
+  const sz=new Blob([JSON.stringify(data)]).size;
+  const kb=(sz/1024).toFixed(1);
+  const acctRow=isLoggedIn()
+    ?`<div class="settings-row"><span>${icon('cloud','icon-sm')} Account</span><span class="text-accent">@${data.account.handle}</span></div>
+      <div class="settings-row"><span>${icon('refresh','icon-sm')} Cloud Sync</span><button class="btn btn-sm btn-accent" onclick="pushCloud(false)">sync now</button></div>
+      <div class="settings-row"><span>${icon('logout','icon-sm')} Log Out</span><button class="btn btn-sm" onclick="closeModal();logout()">log out</button></div>`
+    :`<div class="settings-row"><span>${icon('cloud','icon-sm')} Account</span><button class="btn btn-sm btn-accent" onclick="closeModal();openAuth('signup')">sign up / log in</button></div>`;
+  m.innerHTML=`<h3>${icon('gear')} SETTINGS</h3>
+    ${acctRow}
+    <div class="settings-row"><span>${icon('tag','icon-sm')} Pack Name</span><span class="text-accent">${data.packName||'not set'}</span></div>
+    <div class="settings-row"><span>${icon('chart','icon-sm')} Data Size</span><span class="text-muted">${kb} KB in localStorage</span></div>
+    <div class="settings-row"><span>${icon('save','icon-sm')} Export Data</span><button class="btn btn-sm" onclick="exportData()">download JSON</button></div>
+    <div class="settings-row"><span>${icon('folder','icon-sm')} Import Data</span><button class="btn btn-sm" onclick="importData()">upload JSON</button></div>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="handleImport(event)">
+    <div class="settings-row"><span>${icon('tag','icon-sm')} Change Name</span><button class="btn btn-sm" onclick="closeModal();promptNameForce()">rename</button></div>
+    <div class="settings-row"><span>${icon('trophy','icon-sm')} Global Leaderboard</span><button class="btn btn-sm ${data.leaderboardOptOut?'':'btn-accent'}" onclick="toggleLeaderboard(${!!data.leaderboardOptOut});openSettings()">${data.leaderboardOptOut?'join':'visible '+icon('check','icon-sm')}</button></div>
+    <div class="settings-row"><span>${icon('trash','icon-sm')} Reset All</span><button class="btn btn-sm btn-danger" onclick="closeModal();resetApp()">nuke everything</button></div>
+    <div class="modal-actions" style="margin-top:12px"><button class="btn btn-block" onclick="closeModal()">close</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');
+  a.href=url;a.download=`aura-farm-backup-${todayKey()}.json`;a.click();URL.revokeObjectURL(url);
+  sfx('buy');toast("data exported, your grind is backed up",'good')
+}
+function importData(){document.getElementById('importFile')?.click()}
+function handleImport(evt){
+  const file=evt.target.files?.[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{const imported=JSON.parse(e.target.result);
+      if(!imported.habits||!imported.auraPoints&&imported.auraPoints!==0){toast("invalid file, that ain't aura farm data",'bad');return}
+      data=imported;save();renderAll();applyEquipped();renderCal();closeModal();
+      sfx('buy');haptic(15);toast("data imported, your grind is restored",'good')
+    }catch{sfx('error');toast("corrupted file, can't import that trash",'bad')}
+  };reader.readAsText(file);evt.target.value=''
+}
+function promptNameForce(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('tag')} RENAME YOURSELF, DEGENERATE</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">current name: <span class="text-accent">${data.packName||'none'}</span></p>
+    <input type="text" id="renameInput" placeholder="new name..." maxlength="20" value="${data.packName||''}">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nah</button><button class="btn btn-accent" onclick="doRename()">lock it in</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('renameInput')?.focus(),100)
+}
+function doRename(){
+  const name=document.getElementById('renameInput')?.value.trim();
+  if(!name){sfx('error');toast("name yourself something you coward",'bad');return}
+  data.packName=name;save();closeModal();renderAll();sfx('tap');haptic(12);toast(`renamed to ${name}, new era unlocked`,'good')
+}
+
+// ─── PWA INSTALL ───
+let deferredInstallPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferredInstallPrompt=e;
+  const btn=document.getElementById('installBtn');if(btn)btn.style.display='inline-flex'
+});
+function installPWA(){
+  if(!deferredInstallPrompt)return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then(r=>{
+    if(r.outcome==='accepted'){toast("INSTALLED — aura farm is on your home screen, no cap",'good');sfx('buy');haptic(15);spawnConfetti(50);launchConfetti()}
+    deferredInstallPrompt=null;const btn=document.getElementById('installBtn');if(btn)btn.style.display='none'
+  })
+}
+
+// ─── SHARING / VIRALITY ───
+const APP_URL='https://aura-farm-pwa.netlify.app';
+function myStats(){
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  let best=0;all.forEach(h=>{const s=calcStreak(h);if(s>best)best=s});
+  const lvl=getLevel();
+  return{name:data.packName||'Anon',aura:data.auraPoints,level:lvl.idx+1,levelName:lvl.name,icon:lvl.icon,streak:best,
+    avatar:SHOP.avatars.find(a=>a.id===data.equipped?.avatar)?.preview||'skull'}
+}
+// draw a shareable stat card to canvas, return as a Promise<Blob>
+function drawShareCard(){
+  const s=myStats();const W=1080,H=1080;
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+  // bg
+  x.fillStyle='#0a0a0a';x.fillRect(0,0,W,H);
+  // subtle scanlines
+  x.fillStyle='rgba(255,255,255,.02)';for(let y=0;y<H;y+=4)x.fillRect(0,y,W,2);
+  // border glow
+  x.strokeStyle='#b388ff';x.lineWidth=6;x.shadowColor='#b388ff';x.shadowBlur=30;x.strokeRect(40,40,W-80,H-80);x.shadowBlur=0;
+  x.textAlign='center';
+  // header
+  x.fillStyle='#888';x.font='600 34px monospace';x.fillText('AURA FARM', W/2, 140);
+  // level icon text
+  x.font='700 80px monospace';x.fillStyle='#b388ff';x.fillText(s.name.slice(0,3).toUpperCase(), W/2, 310);
+  // name
+  x.fillStyle='#b388ff';x.font='900 56px monospace';x.fillText(s.name, W/2, 420);
+  // aura big number
+  x.fillStyle='#b388ff';x.shadowColor='#b388ff';x.shadowBlur=40;x.font='900 200px monospace';
+  x.fillText(s.aura.toLocaleString(), W/2, 640);x.shadowBlur=0;
+  x.fillStyle='#888';x.font='600 40px monospace';x.fillText('AURA POINTS', W/2, 700);
+  // level + streak row
+  x.fillStyle='#e0e0e0';x.font='700 44px monospace';
+  x.fillText(`${s.icon} Lvl ${s.level} · ${s.levelName}`, W/2, 810);
+  x.fillStyle='#b388ff';x.font='900 64px monospace';x.fillText(`${s.streak} DAY STREAK`, W/2, 900);
+  // footer cta
+  x.fillStyle='#888';x.font='600 32px monospace';x.fillText('starve the brain rot. farm your aura.', W/2, 985);
+  x.fillStyle='#b388ff';x.font='700 34px monospace';x.fillText('aura-farm-pwa.netlify.app', W/2, 1030);
+  return new Promise(res=>cv.toBlob(res,'image/png'));
+}
+function openShare(){
+  const s=myStats();
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('camera')} FLEX YOUR AURA</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:6px;">share your stats. make the NPCs jealous</p>
+    <div id="sharePreviewWrap" style="text-align:center;padding:20px 0;font-size:.84rem;color:var(--fg2)">generating your flex card...</div>
+    <div class="share-row">
+      <button class="share-btn primary" onclick="shareCard()">${icon('download','icon-sm')} share card</button>
+      <button class="share-btn" onclick="downloadCard()">${icon('save','icon-sm')} save image</button>
+    </div>
+    <div class="share-row" style="grid-template-columns:1fr">
+      <button class="share-btn alt" onclick="shareText()">${icon('link','icon-sm')} share link + brag</button>
+    </div>
+    <div class="modal-actions" style="margin-top:10px"><button class="btn btn-block" onclick="closeModal()">close</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  drawShareCard().then(blob=>{
+    shareBlobCache=blob;const url=URL.createObjectURL(blob);
+    const wrap=document.getElementById('sharePreviewWrap');
+    if(wrap)wrap.innerHTML=`<img src="${url}" class="share-preview" alt="your aura card" style="max-width:240px;margin:0 auto">`;
+  })
+}
+let shareBlobCache=null;
+function bragText(){const s=myStats();return `I'm at ${s.aura.toLocaleString()} aura — Lvl ${s.level} ${s.levelName} with a ${s.streak}-day streak. think you can beat me? ${APP_URL}`}
+async function shareCard(){
+  if(!shareBlobCache){toast("card still cooking, hold up",'bad');return}
+  const file=new File([shareBlobCache],'aura-flex.png',{type:'image/png'});
+  const s=myStats();
+  if(navigator.canShare&&navigator.canShare({files:[file]})){
+    try{await navigator.share({files:[file],title:'My Aura Farm stats',text:bragText()});sfx('buy');haptic(15)}catch(e){}
+  }else{downloadCard();toast("sharing images not supported here — saved it instead",'good')}
+}
+function downloadCard(){
+  if(!shareBlobCache)return;
+  const url=URL.createObjectURL(shareBlobCache);const a=document.createElement('a');
+  a.href=url;a.download=`aura-flex-${todayKey()}.png`;a.click();URL.revokeObjectURL(url);
+  sfx('buy');haptic(12);toast("flex card saved — post it everywhere",'good')
+}
+async function shareText(){
+  const text=bragText();
+  if(navigator.share){try{await navigator.share({title:'Aura Farm',text});sfx('tap');haptic(12);return}catch(e){}}
+  try{await navigator.clipboard.writeText(text);toast("brag + link copied — paste it anywhere",'good');sfx('tap')}
+  catch(e){toast("couldn't copy, screenshot it instead",'bad')}
+}
+
+// ─── CHALLENGE A FRIEND ───
+function genChallengeLink(){
+  const s=myStats();
+  const payload={n:s.name,a:s.aura,l:s.level,ln:s.levelName,i:s.icon,s:s.streak,av:s.avatar};
+  const enc=btoa(encodeURIComponent(JSON.stringify(payload)));
+  return `${APP_URL}/#vs=${enc}`;
+}
+function openChallenge(){
+  const link=genChallengeLink();
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('sword')} CHALLENGE A FRIEND</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">send this link. when they open it they'll see YOUR stats vs THEIRS — head to head. winner takes the bragging rights</p>
+    <input type="text" id="challengeLink" readonly value="${link}" style="width:100%;font-family:var(--mono);font-size:.88rem;padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);color:var(--accent);margin-bottom:10px">
+    <div class="share-row">
+      <button class="share-btn primary" onclick="shareChallenge()">${icon('download','icon-sm')} send challenge</button>
+      <button class="share-btn" onclick="copyChallenge()">${icon('link','icon-sm')} copy link</button>
+    </div>
+    <div class="modal-actions" style="margin-top:10px"><button class="btn btn-block" onclick="closeModal()">close</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+async function shareChallenge(){
+  const link=genChallengeLink();const s=myStats();
+  const text=`I challenge you on Aura Farm — I'm at ${s.aura.toLocaleString()} aura with a ${s.streak}-day streak. beat me if you can.`;
+  if(navigator.share){try{await navigator.share({title:'Aura Farm Challenge',text,url:link});sfx('buy');haptic(15);return}catch(e){}}
+  copyChallenge()
+}
+async function copyChallenge(){
+  const link=genChallengeLink();
+  try{await navigator.clipboard.writeText(link);toast("challenge link copied — go humble someone",'good');sfx('tap');haptic(12)}
+  catch(e){const inp=document.getElementById('challengeLink');if(inp){inp.select();document.execCommand('copy');toast("link copied",'good')}}
+}
+// when opened via a challenge link, show head-to-head
+function checkChallengeLink(){
+  const hash=location.hash||'';
+  const m=hash.match(/vs=([^&]+)/);if(!m)return;
+  let opp;try{opp=JSON.parse(decodeURIComponent(atob(m[1])))}catch(e){return}
+  history.replaceState(null,'',location.pathname);
+  setTimeout(()=>showHeadToHead(opp),900)
+}
+function showHeadToHead(opp){
+  const me=myStats();
+  const m=document.getElementById('modalContent');
+  const iWin=me.aura>=opp.a;
+  const auraDiff=Math.abs(me.aura-opp.a);
+  const verdict=iWin?`you're ahead by ${auraDiff.toLocaleString()} aura — don't get comfortable`:`${escHtml(opp.n)} is beating you by ${auraDiff.toLocaleString()} aura — lock tf in and catch up`;
+  m.innerHTML=`<h3>${icon('sword')} ${escHtml(opp.n)} CHALLENGED YOU</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:4px;">head to head. who's got more aura?</p>
+    <div class="h2h">
+      <div class="h2h-side ${iWin?'win':'lose'}"><div class="h2h-av">${iconOrEmoji(me.avatar,'icon-lg')}</div><div class="h2h-name">${escHtml(me.name)} (you)</div>
+        <div class="h2h-aura">${me.aura.toLocaleString()}</div><div class="h2h-lbl">aura</div>
+        <div class="h2h-stat">${iconOrEmoji(me.icon,'icon-sm')} Lvl ${me.level} · ${icon('fire','icon-sm')}${me.streak}d</div></div>
+      <div class="h2h-vs">VS</div>
+      <div class="h2h-side ${!iWin?'win':'lose'}"><div class="h2h-av">${iconOrEmoji(opp.av||'skull','icon-lg')}</div><div class="h2h-name">${escHtml(opp.n)}</div>
+        <div class="h2h-aura">${(opp.a||0).toLocaleString()}</div><div class="h2h-lbl">aura</div>
+        <div class="h2h-stat">${iconOrEmoji(opp.i||'skull','icon-sm')} Lvl ${opp.l||1} · ${icon('fire','icon-sm')}${opp.s||0}d</div></div>
+    </div>
+    <div style="font-size:.74rem;text-align:center;margin:10px 0;color:${iWin?'var(--accent)':'var(--danger)'}">${verdict}</div>
+    <div class="share-row"><button class="share-btn primary" onclick="closeModal();switchTabById('tabFarm')">${icon('fire','icon-sm')} farm more aura</button>
+      <button class="share-btn alt" onclick="closeModal();openChallenge()">${icon('sword','icon-sm')} challenge them back</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  if(iWin){spawnConfetti(30);launchConfetti()}
+  sfx(iWin?'buy':'error');haptic(20)
+}
+function switchTabById(id){const btn=document.querySelector(`.nav-btn[data-tab="${id}"]`);if(btn)switchTab(id,btn)}
+
+// ─── GLOBAL LEADERBOARD (backend) ───
+const LB_API='/api/leaderboard';
+let lbCache=null;
+function ensurePlayerId(){
+  if(!data.playerId){data.playerId='p_'+Math.random().toString(36).slice(2,11)+Date.now().toString(36);save()}
+  return data.playerId
+}
+async function submitScore(){
+  if(data.leaderboardOptOut)return null;
+  const s=myStats();
+  try{
+    const res=await fetch(LB_API,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id:ensurePlayerId(),name:s.name,aura:s.aura,level:s.level,levelName:s.levelName,icon:s.icon,avatar:s.avatar,streak:s.streak})});
+    if(res.ok){const j=await res.json();if(j.rank)data.myRank=j.rank;return j}
+  }catch(e){}
+  return null
+}
+async function fetchLeaderboard(){
+  try{const res=await fetch(LB_API);if(res.ok){lbCache=await res.json();return lbCache}}catch(e){}
+  return null
+}
+async function renderLeaderboard(){
+  const el=document.getElementById('leaderboard');if(!el)return;
+  if(data.leaderboardOptOut){
+    el.innerHTML=`<div class="card text-center" style="font-size:.82rem;padding:16px"><div class="text-muted">you're hidden from the leaderboard</div>
+      <button class="btn btn-sm btn-accent mt-1" onclick="toggleLeaderboard(true)">${icon('trophy','icon-sm')} join the leaderboard</button></div>`;return
+  }
+  if(!el.dataset.loaded)el.innerHTML=`<div class="card text-center text-muted" style="font-size:.82rem;padding:16px">loading the global rankings... ${icon('globe','icon-sm')}</div>`;
+  await submitScore();
+  const lb=await fetchLeaderboard();
+  if(!lb){el.innerHTML=`<div class="card text-center" style="font-size:.82rem;padding:16px"><div class="text-muted">couldn't reach the leaderboard — you offline?</div>
+    <button class="btn btn-sm mt-1" onclick="renderLeaderboard()">${icon('refresh','icon-sm')} retry</button></div>`;return}
+  el.dataset.loaded='1';
+  const me=ensurePlayerId();const inTop=lb.top.some(e=>e.id===me);
+  let h=`<div class="card" style="padding:8px 6px">`;
+  h+=`<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;padding:2px 6px 8px">${lb.total} player${lb.total===1?'':'s'} farming worldwide ${icon('globe','icon-sm')}</div>`;
+  if(!lb.top.length)h+=`<div class="text-center text-muted" style="font-size:.82rem;padding:10px">no one's on the board yet. be the first</div>`;
+  lb.top.forEach((e,i)=>{
+    const rank=i+1,isMe=e.id===me;
+    const medal=rank===1?icon('crown','icon-sm'):rank===2?icon('medal','icon-sm'):rank===3?icon('star','icon-sm'):rank;
+    h+=`<div class="lb-row ${isMe?'me':''}">
+      <span class="lb-rank ${rank<=3?'top':''}">${medal}</span>
+      <span class="lb-av">${iconOrEmoji(e.avatar||'skull','icon-sm')}</span>
+      <span class="lb-name">${escHtml(e.name)}${isMe?' <span class="text-accent">(you)</span>':''}</span>
+      <div><div class="lb-aura">${(e.aura||0).toLocaleString()}</div><div class="lb-streak">${icon('fire','icon-sm')}${e.streak||0}d</div></div>
+    </div>`
+  });
+  if(!inTop&&data.myRank){const s=myStats();
+    h+=`<div style="border-top:1px dashed var(--border)">
+      <div class="lb-row me"><span class="lb-rank">#${data.myRank}</span><span class="lb-av">${iconOrEmoji(s.avatar,'icon-sm')}</span>
+      <span class="lb-name">${escHtml(s.name)} <span class="text-accent">(you)</span></span>
+      <div><div class="lb-aura">${s.aura.toLocaleString()}</div><div class="lb-streak">${icon('fire','icon-sm')}${s.streak}d</div></div></div></div>`}
+  h+=`</div><div class="share-row" style="margin-top:6px"><button class="share-btn" onclick="renderLeaderboard()">${icon('refresh','icon-sm')} refresh</button>
+    <button class="share-btn alt" onclick="openChallenge()">${icon('sword','icon-sm')} challenge a friend</button></div>`;
+  el.innerHTML=h
+}
+function toggleLeaderboard(on){
+  data.leaderboardOptOut=!on;save();
+  const el=document.getElementById('leaderboard');if(el)el.dataset.loaded='';
+  if(on){renderLeaderboard();toast("you're on the global leaderboard now",'good')}
+  else{
+    fetch(LB_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:ensurePlayerId(),remove:true})}).catch(()=>{});
+    renderLeaderboard();toast("hidden from the leaderboard",'good')
+  }
+}
+
+// ─── ACCOUNTS + CLOUD SYNC (backend) ───
+const API={account:'/api/account',sync:'/api/sync',challenge:'/api/challenge'};
+function isLoggedIn(){return !!(data.account&&data.account.token)}
+
+function openAuth(mode){
+  mode=mode||'signup';
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('cloud')} ${mode==='signup'?'CREATE ACCOUNT':'LOG IN'}</h3>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">${mode==='signup'?'claim a handle so your aura syncs across devices + you can play multiplayer':'welcome back — log in to sync your grind'}</p>
+    <input type="text" id="authHandle" placeholder="handle (3-20 letters/numbers)" maxlength="20" autocapitalize="off" autocomplete="username">
+    <input type="password" id="authPin" placeholder="pin / passphrase (min 4 chars)" maxlength="64" autocomplete="${mode==='signup'?'new-password':'current-password'}">
+    <div class="modal-actions"><button class="btn" onclick="openAuth('${mode==='signup'?'login':'signup'}')">${mode==='signup'?'i have an account':'make one instead'}</button>
+      <button class="btn btn-accent" onclick="doAuth('${mode}')">${mode==='signup'?'sign up →':'log in →'}</button></div>
+    <p style="font-size:.8rem;color:var(--fg2);margin-top:10px;text-align:center">${icon('warn','icon-sm')} no email = no recovery. remember your pin</p>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('authHandle')?.focus(),100)
+}
+async function doAuth(mode){
+  const handle=document.getElementById('authHandle')?.value.trim();
+  const pin=document.getElementById('authPin')?.value||'';
+  if(!handle||!pin){sfx('error');toast("fill both fields you NPC",'bad');return}
+  try{
+    const res=await fetch(API.account,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:mode,handle,pin})});
+    if(!res.ok){const t=await res.text();sfx('error');haptic(40);toast(t||'auth failed','bad');return}
+    const j=await res.json();
+    data.account={accountId:j.accountId,token:j.token,handle:j.handle};save();
+    sfx('buy');haptic(15);spawnConfetti(30);closeModal();
+    if(mode==='login')await pullCloudOnLogin();
+    else{await pushCloud(true);toast(`account created — you're @${j.handle} now`,'good')}
+    renderAll()
+  }catch(e){sfx('error');toast("couldn't reach the server — you online?",'bad')}
+}
+function logout(){data.account=null;save();renderAll();sfx('untap');toast("logged out — local data stays on this device",'good')}
+
+let _cloudPending=null;
+async function cloudGet(){
+  if(!isLoggedIn())return null;
+  try{const res=await fetch(`${API.sync}?accountId=${encodeURIComponent(data.account.accountId)}&token=${encodeURIComponent(data.account.token)}`);
+    if(res.ok)return await res.json()}catch(e){}
+  return null
+}
+async function pullCloudOnLogin(){
+  const cloud=await cloudGet();
+  if(cloud&&cloud.data&&cloud.data.habits){
+    _cloudPending=cloud.data;
+    const a=cloud.data.auraPoints;
+    const m=document.getElementById('modalContent');
+    m.innerHTML=`<h3>${icon('cloud')} CLOUD SAVE FOUND</h3>
+      <p style="font-size:.82rem;color:var(--fg2);margin-bottom:12px">your cloud has a saved grind${typeof a==='number'?` (${a.toLocaleString()} aura)`:''}. restore it? this replaces what's on this device.</p>
+      <div class="modal-actions"><button class="btn" onclick="keepLocalAfterLogin()">keep this device</button>
+      <button class="btn btn-accent" onclick="restoreCloud()">restore cloud</button></div>`;
+    document.getElementById('modalOverlay').classList.add('show')
+  }else{await pushCloud(true);toast(`logged in as @${data.account.handle}`,'good')}
+}
+function keepLocalAfterLogin(){_cloudPending=null;closeModal();pushCloud(true);toast(`logged in as @${data.account.handle} — this device kept`,'good')}
+function restoreCloud(){
+  if(_cloudPending){const acct=data.account;data=_cloudPending;data.account=acct;
+    if(!data.habits)data.habits=JSON.parse(JSON.stringify(DEFAULT_DATA.habits));
+    save();applyEquipped();renderAll();renderCal()}
+  _cloudPending=null;closeModal();sfx('buy');toast("cloud save restored",'good')
+}
+let _cloudTimer=null;
+function scheduleCloudPush(){if(!isLoggedIn())return;clearTimeout(_cloudTimer);_cloudTimer=setTimeout(()=>pushCloud(true),2500)}
+async function pushCloud(silent){
+  if(!isLoggedIn())return;
+  const payload=JSON.parse(JSON.stringify(data));delete payload.account;
+  try{
+    const res=await fetch(API.sync,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({accountId:data.account.accountId,token:data.account.token,data:payload})});
+    if(res.ok){data.lastCloudSync=Date.now();localStorage.setItem(DB_KEY,JSON.stringify(data));if(!silent){sfx('tap');toast("synced to cloud",'good')}}
+    else if(res.status===401){data.account=null;localStorage.setItem(DB_KEY,JSON.stringify(data));toast("session expired, log back in",'bad')}
+  }catch(e){if(!silent)toast("sync failed",'bad')}
+}
+
+// ─── MULTIPLAYER CHALLENGES (backend) ───
+function computeMetric(metric){
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  if(metric==='aura')return data.auraPoints;
+  if(metric==='streak'){let b=0;all.forEach(h=>{const s=calcStreak(h);if(s>b)b=s});return b}
+  return all.reduce((s,h)=>s+Object.keys(h.taps||{}).filter(k=>h.taps[k]===true).length,0)
+}
+async function mpCall(payload){
+  if(!isLoggedIn()){openAuth('signup');return null}
+  try{const res=await fetch(API.challenge,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({...payload,accountId:data.account.accountId,token:data.account.token})});
+    if(!res.ok){const t=await res.text();sfx('error');toast(t||'failed','bad');return null}
+    return await res.json()}catch(e){toast("server unreachable",'bad');return null}
+}
+async function mpMine(){
+  if(!isLoggedIn())return null;
+  try{const res=await fetch(`${API.challenge}?mine=1&accountId=${encodeURIComponent(data.account.accountId)}&token=${encodeURIComponent(data.account.token)}`);
+    if(res.ok)return (await res.json()).challenges}catch(e){}
+  return null
+}
+async function mpGet(code){try{const res=await fetch(`${API.challenge}?code=${encodeURIComponent(code)}`);if(res.ok)return await res.json()}catch(e){}return null}
+async function renderMpChallenges(){
+  const el=document.getElementById('mpChallenges');if(!el)return;
+  if(!isLoggedIn()){
+    el.innerHTML=`<div class="card text-center" style="font-size:.82rem;padding:16px">
+      <div class="text-muted">log in to create & join real multiplayer challenges</div>
+      <button class="btn btn-sm btn-accent mt-1" onclick="openAuth('signup')">${icon('cloud','icon-sm')} sign up / log in</button></div>`;return
+  }
+  el.innerHTML=`<div class="share-row"><button class="share-btn primary" onclick="openCreateChallenge()">+ create challenge</button>
+    <button class="share-btn alt" onclick="openJoinChallenge()">${icon('key','icon-sm')} join by code</button></div>
+    <div id="mpList" class="text-center text-muted" style="font-size:.82rem;padding:10px">loading your challenges...</div>`;
+  const list=await mpMine();const lc=document.getElementById('mpList');if(!lc)return;
+  if(!list||!list.length){lc.innerHTML='<div class="card text-center text-muted" style="font-size:.82rem;padding:14px">no challenges yet. create one & share the code</div>';return}
+  lc.innerHTML=list.map(renderChallengeCard).join('')
+}
+function renderChallengeCard(ch){
+  const myId=data.account.accountId;
+  const metricLbl={aura:'aura points',streak:'best streak (days)',taps:'total taps'}[ch.metric]||ch.metric;
+  const rows=ch.standings.map(s=>{
+    const pct=Math.min(100,s.progress/ch.target*100),isMe=s.accountId===myId;
+    const medal=s.rank===1?icon('crown','icon-sm'):s.rank===2?icon('medal','icon-sm'):s.rank===3?icon('star','icon-sm'):('#'+s.rank);
+    return `<div class="lb-row ${isMe?'me':''}"><span class="lb-rank">${medal}</span><span class="lb-av">${s.avatar}</span>
+      <span class="lb-name">${escHtml(s.name)}${isMe?' <span class="text-accent">(you)</span>':''}</span>
+      <div style="flex:0 0 92px"><div class="ch-bar-w" style="margin:0 0 2px"><div class="ch-bar" style="width:${pct}%"></div></div>
+      <div class="lb-streak">${s.progress.toLocaleString()}/${ch.target.toLocaleString()}</div></div></div>`
+  }).join('');
+  return `<div class="card">
+    <div class="flex-between"><strong style="font-size:.8rem">${escHtml(ch.title)}</strong>
+      <span style="font-size:.84rem;color:${ch.active?'var(--accent)':'var(--fg2)'}">${ch.active?'<span class="status-dot live"></span>live':'<span class="status-dot ended"></span>ended'}</span></div>
+    <div class="text-muted" style="font-size:.74rem;margin:2px 0 8px">race to ${ch.target.toLocaleString()} ${metricLbl} · code <strong class="text-accent">${ch.code}</strong></div>
+    ${rows}
+    <div class="share-row" style="margin-top:8px"><button class="share-btn" onclick="pushChallengeProgress('${ch.code}')">${icon('up','icon-sm')} update my progress</button>
+      <button class="share-btn alt" onclick="shareChallengeCode('${ch.code}')">${icon('download','icon-sm')} share code</button></div></div>`
+}
+let _chMetric='taps';
+function openCreateChallenge(){
+  _chMetric='taps';
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('sword')} CREATE A CHALLENGE</h3>
+    <input type="text" id="chTitle" placeholder="challenge name (e.g. Gym Wars)" maxlength="40">
+    <div style="font-size:.74rem;color:var(--fg2);margin:6px 0 4px">what are we racing on?</div>
+    <div class="chips" id="chMetric">
+      <button class="chip f picked" data-m="taps" onclick="pickMetric(this)">${icon('check','icon-sm')} total taps</button>
+      <button class="chip f" data-m="aura" onclick="pickMetric(this)">${icon('spark','icon-sm')} aura points</button>
+      <button class="chip f" data-m="streak" onclick="pickMetric(this)">${icon('fire','icon-sm')} best streak</button></div>
+    <input type="number" id="chTarget" placeholder="target to hit (e.g. 50)" min="1">
+    <input type="number" id="chDays" placeholder="days it runs (default 7)" min="1" max="90">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="createChallenge()">${icon('flag','icon-sm')} create</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function pickMetric(btn){_chMetric=btn.dataset.m;document.querySelectorAll('#chMetric .chip').forEach(c=>c.classList.remove('picked'));btn.classList.add('picked')}
+async function createChallenge(){
+  const title=document.getElementById('chTitle')?.value.trim()||'Aura Showdown';
+  const target=parseInt(document.getElementById('chTarget')?.value)||50;
+  const days=parseInt(document.getElementById('chDays')?.value)||7;
+  const s=myStats();
+  const j=await mpCall({action:'create',title,metric:_chMetric,target,days,name:s.name,avatar:s.avatar});
+  if(j){await mpCall({action:'progress',code:j.code,progress:computeMetric(j.metric)});
+    closeModal();spawnConfetti(30);sfx('buy');haptic(15);toast(`challenge live — code: ${j.code} — share it!`,'good');
+    renderMpChallenges();setTimeout(()=>shareChallengeCode(j.code),500)}
+}
+function openJoinChallenge(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>${icon('key')} JOIN A CHALLENGE</h3><p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px">enter the code your friend sent you</p>
+    <input type="text" id="joinCode" placeholder="e.g. K7M2QX" maxlength="8" autocapitalize="characters" style="text-transform:uppercase">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="joinChallenge()">${icon('sword','icon-sm')} join</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('joinCode')?.focus(),100)
+}
+async function joinChallenge(){
+  const code=(document.getElementById('joinCode')?.value||'').trim().toUpperCase();
+  if(!code){sfx('error');toast("enter a code",'bad');return}
+  const s=myStats();
+  const j=await mpCall({action:'join',code,name:s.name,avatar:s.avatar});
+  if(j){await mpCall({action:'progress',code,progress:computeMetric(j.metric)});
+    closeModal();sfx('buy');haptic(15);toast(`joined "${j.title}"`,'good');renderMpChallenges()}
+}
+async function pushChallengeProgress(code){
+  const ch=await mpGet(code);if(!ch)return;
+  const j=await mpCall({action:'progress',code,progress:computeMetric(ch.metric)});
+  if(j){sfx('tap');haptic(10);toast("progress updated",'good');renderMpChallenges()}
+}
+async function shareChallengeCode(code){
+  const text=`join my Aura Farm challenge — code: ${code} — ${APP_URL}`;
+  if(navigator.share){try{await navigator.share({title:'Aura Farm Challenge',text});sfx('tap');return}catch(e){}}
+  try{await navigator.clipboard.writeText(text);toast("challenge invite copied — go recruit",'good');sfx('tap')}
+  catch(e){toast(`code: ${code}`,'good')}
+}
+
+// ═══════════ AURA POSSESSION — RITUAL CHAMBER ═══════════
+const RITUAL_UNLOCK_AURA=2500, RITUAL_UNLOCK_LVL=7;
+const DEMON_ROSTER=[
+  {id:'d_exec',name:'Brain Rot Executioner',emoji:'skull',color:'#ff003c',power:'hunts every doomscroll urge'},
+  {id:'d_wraith',name:'Cold Shower Wraith',emoji:'ice',color:'#00b3ff',power:'drags you into the cold'},
+  {id:'d_sigma',name:'Sigma Shadow Overlord',emoji:'ninja',color:'#9d4dff',power:'enforces total lock-in'},
+  {id:'d_reaper',name:'Rizz Reaper',emoji:'dance',color:'#ff2d9b',power:'reaps social aura'},
+  {id:'d_abyss',name:'Mewing Abyss Lord',emoji:'moai',color:'#5b6cff',power:'jawline or oblivion'},
+  {id:'d_slayer',name:'Dopamine Demon Slayer',emoji:'sword',color:'#ffae00',power:'severs the cheap dopamine'},
+  {id:'d_doom',name:'Doomscroll Slayer',emoji:'ban',color:'#ff4d4d',power:'guards your feed'},
+  {id:'d_ghoul',name:'Gym Ghoul',emoji:'gym',color:'#00e0a8',power:'demands the pump'},
+  {id:'d_lich',name:'Lock-In Lich',emoji:'lock',color:'#7dff00',power:'seals away distraction'},
+  {id:'d_gremlin',name:'Aura Gremlin',emoji:'imp',color:'#ff6b00',power:'gnaws on your bad habits'},
+  {id:'d_void',name:'Vape Void Lord',emoji:'smoke',color:'#8aa0b5',power:'swallows the cravings'},
+  {id:'d_phantom',name:'Focus Phantom',emoji:'ghost',color:'#b0b0ff',power:'haunts you into deep work'}
+];
+const DEMON_EPITHETS=['the Eternal','of the Abyss','Prime','the Unhinged','MAX','the Undying','XXL','the Relentless'];
+const DEMON_QUESTS=[
+  'do 50 pushups, then log the count in your commit log',
+  'send one friend a "lock in" voice note',
+  'go 2 hours with zero social apps (honor system)',
+  'take a cold shower, no negotiation',
+  'read 10 pages of literally anything',
+  'tap every single habit before this demon leaves',
+  'touch grass for 15 real minutes',
+  'no doomscrolling until the exorcism',
+  'make your bed and drink a full glass of water',
+  'write down 3 things you locked in on today'
+];
+// duration tiers: hours -> [aura cost, multiplier]
+const POSSESS_TIERS=[
+  {h:1,cost:200,mult:1.5},{h:4,cost:350,mult:2},{h:12,cost:500,mult:3},{h:24,cost:666,mult:4}
+];
+let _selTier=0;
+
+function ritualUnlocked(){return data.auraPoints>=RITUAL_UNLOCK_AURA||(getLevel().idx+1)>=RITUAL_UNLOCK_LVL}
+function activeDemon(){const a=data.demons&&data.demons.active;if(a&&a.expiresAt>Date.now())return a;return null}
+
+function genDemon(ownedId){
+  const base=ownedId?DEMON_ROSTER.find(d=>d.id===ownedId):rand(DEMON_ROSTER);
+  const b=base||rand(DEMON_ROSTER);
+  let best=0;[...(data.habits.starve||[]),...(data.habits.farm||[])].forEach(h=>{const s=calcStreak(h);if(s>best)best=s});
+  const powerLvl=Math.min(99,10+best*3+Math.floor(data.auraPoints/200));
+  return{id:b.id,name:b.name,emoji:b.emoji,color:b.color,power:b.power,
+    epithet:rand(DEMON_EPITHETS),powerLvl}
+}
+
+function openRitual(){
+  if(!ritualUnlocked()){sfx('error');haptic(40);toast(`ritual chamber locked — reach ${RITUAL_UNLOCK_AURA.toLocaleString()} aura or level ${RITUAL_UNLOCK_LVL}`,'bad');return}
+  _selTier=0;renderRitual();document.getElementById('ritualChamber').classList.add('show');sfx('buy');haptic(20)
+}
+function closeRitual(){document.getElementById('ritualChamber').classList.remove('show')}
+function renderRitual(){
+  const el=document.getElementById('ritualBody');if(!el)return;
+  const act=activeDemon();
+  let h=`<div class="rc-h">RITUAL CHAMBER</div><div class="rc-sub">spend aura. summon chaos. become possessed.</div>`;
+  if(act){
+    const left=msLeft(act.expiresAt);
+    h+=`<div class="demon-card" style="border-color:${act.color}">
+      <div class="demon-emoji">${iconOrEmoji(act.emoji,'icon-xxl')}</div>
+      <div class="demon-name" style="color:${act.color}">${act.name} ${act.epithet}</div>
+      <div class="demon-power">${act.power}</div>
+      <span class="demon-stat">${icon('clock','icon-sm')} ${left} left</span><span class="demon-stat">${icon('bolt','icon-sm')} ${act.mult}x aura</span><span class="demon-stat">lvl ${act.powerLvl}</span>
+      <div style="margin-top:12px;font-size:.82rem;color:#ffb3c4">${icon('journal','icon-sm')} today's decree:</div>
+      <div style="font-size:.74rem;color:#fff;margin:4px 0 10px">"${act.quest}"</div>
+      ${act.questDone?'<div class="demon-stat" style="border-color:#7dff00;color:#7dff00">'+icon('check','icon-sm')+' decree fulfilled</div>'
+        :`<button class="summon-btn" onclick="completeQuest()">${icon('check','icon-sm')} i did it — claim ${Math.round(50*act.mult)} aura</button>`}
+      <button class="dur-opt" style="width:100%;margin-top:10px" onclick="exorcise(true)">${icon('candle','icon-sm')} exorcise early</button>
+    </div>`;
+  }else{
+    const owned=(data.demons&&data.demons.owned)||[];
+    h+=`<div class="pentagram">${icon('crystal','icon-xxl')}</div><div class="rc-card">
+      <div style="text-align:center;color:#e0a0b0;font-size:.84rem;margin-bottom:6px">choose the binding duration</div>
+      <div class="dur-row">${POSSESS_TIERS.map((t,i)=>`<div class="dur-opt ${i===_selTier?'sel':''}" onclick="pickTier(${i})">
+        <b>${t.h}h</b>${t.cost} aura<br>${t.mult}x</div>`).join('')}</div>
+      <button class="summon-btn" onclick="summonDemon()" ${data.auraPoints<POSSESS_TIERS[_selTier].cost?'disabled':''}>
+        ${icon('skull','icon-sm')} SUMMON DEMON (${POSSESS_TIERS[_selTier].cost} aura)</button>
+      <div style="text-align:center;font-size:.84rem;color:#a55;margin-top:8px">you have ${data.auraPoints.toLocaleString()} aura · this only transforms THIS app, your phone is safe</div>`;
+    if(ritualUnlockedMP())h+=`<button class="dur-opt" style="width:100%;margin-top:14px;border-color:#9d4dff;color:#c9a0ff" onclick="startDemonWar()">${icon('sword','icon-sm')} START A DEMON WAR (multiplayer)</button>`;
+    if(owned.length){h+=`<div style="margin-top:18px;font-size:.9rem;color:#a55;text-transform:uppercase;letter-spacing:1px">bound demons (${owned.length})</div>`;
+      h+=owned.map(id=>{const d=DEMON_ROSTER.find(x=>x.id===id);if(!d)return'';
+        return `<div class="owned-demon"><span class="od-em">${iconOrEmoji(d.emoji,'icon-lg')}</span><span style="flex:1">${d.name}</span>
+          <button class="dur-opt" onclick="summonDemon('${id}')" ${data.auraPoints<Math.round(POSSESS_TIERS[_selTier].cost/2)?'disabled':''}>resummon ½ price</button></div>`}).join('')}
+    h+=`</div>`;
+  }
+  el.innerHTML=h
+}
+function pickTier(i){_selTier=i;renderRitual()}
+function ritualUnlockedMP(){return isLoggedIn()}
+
+function summonDemon(ownedId){
+  const tier=POSSESS_TIERS[_selTier];const cost=ownedId?Math.round(tier.cost/2):tier.cost;
+  if(data.auraPoints<cost){sfx('error');haptic(40);toast(rand(BROKE_ROASTS),'bad');return}
+  data.auraPoints-=cost;
+  const d=genDemon(ownedId);
+  if(!data.demons)data.demons={owned:[],active:null,log:[]};
+  data.demons.active={...d,mult:tier.mult,hours:tier.h,startedAt:Date.now(),expiresAt:Date.now()+tier.h*3600000,
+    quest:rand(DEMON_QUESTS),questDone:false};
+  logAct('demon',`summoned ${d.name} ${d.epithet}`);
+  save();updateAura();
+  const el=document.getElementById('ritualBody');
+  if(el)el.innerHTML=`<div class="rc-h">SUMMONING…</div><div class="pentagram" style="animation-duration:1.2s">${iconOrEmoji(d.emoji,'icon-xxl')}</div>
+    <div class="rc-sub">incanting ${d.name}…</div>`;
+  sfx('buy');haptic(30);spawnConfetti(40);
+  setTimeout(()=>{applyPossession();renderRitual();renderAll();sfx('tap');haptic(20);
+    toast(`${d.name} ${d.epithet} has POSSESSED your app`,'good')},1300)
+}
+function completeQuest(){
+  const a=activeDemon();if(!a||a.questDone)return;
+  a.questDone=true;const reward=Math.round(50*a.mult);data.auraPoints+=reward;
+  // bind the demon permanently on first cleared decree
+  if(!data.demons.owned.includes(a.id)){data.demons.owned.push(a.id);
+    toast(`${a.name} BOUND — resummon it anytime`,'good')}
+  logAct('demon',`fulfilled ${a.name}'s decree +${reward} aura`);
+  save();updateAura();showAuraChange(reward);spawnConfetti(40);launchConfetti();sfx('buy');haptic(20);
+  toast(`decree fulfilled — +${reward} aura (${a.mult}x)`,'good');renderRitual();renderAll()
+}
+function exorcise(manual){
+  const a=data.demons&&data.demons.active;if(!a)return;
+  data.demons.log=data.demons.log||[];data.demons.log.unshift({name:a.name,icon:a.emoji,questDone:!!a.questDone,at:Date.now()});
+  if(data.demons.log.length>20)data.demons.log.length=20;
+  data.demons.active=null;clearPossession();save();renderAll();
+  if(document.getElementById('ritualChamber').classList.contains('show'))renderRitual();
+  sfx('untap');haptic(30);
+  toast(manual?`${a.name} exorcised early`:`${a.name} has left your app${a.questDone?' — decree complete':' — decree unfulfilled'}`,a.questDone?'good':'bad')
+}
+
+// visuals
+function applyPossession(){
+  const a=activeDemon();if(!a)return;
+  document.documentElement.style.setProperty('--accent',a.color);
+  document.documentElement.style.setProperty('--glow-a',a.color);
+  document.body.classList.add('possessed');
+  const logo=document.getElementById('headerLogo');if(logo)logo.innerHTML=iconOrEmoji(a.emoji,'icon-lg');
+  document.title=`${a.name} is in control`;
+  renderPossessBanner()
+}
+function clearPossession(){
+  document.body.classList.remove('possessed');document.title='Aura Farm';
+  applyEquipped();renderPossessBanner()
+}
+function renderPossessBanner(){
+  const el=document.getElementById('possessBanner');if(!el)return;
+  const a=activeDemon();
+  if(!a){el.innerHTML='';return}
+  el.innerHTML=`<span class="pb-em">${iconOrEmoji(a.emoji,'icon-lg')}</span><span class="pb-txt"><b>${a.name}</b> · decree: ${a.questDone?icon('check','icon-sm')+' done':escHtml(a.quest)}</span>
+    <span class="pb-time">${icon('clock','icon-sm')}${msLeft(a.expiresAt)}</span>`
+}
+function refreshPossession(){
+  // called after applyEquipped so possession colors win while active
+  if(activeDemon()){const a=data.demons.active;
+    document.documentElement.style.setProperty('--accent',a.color);
+    document.documentElement.style.setProperty('--glow-a',a.color);
+    document.body.classList.add('possessed');
+    const logo=document.getElementById('headerLogo');if(logo)logo.innerHTML=iconOrEmoji(a.emoji,'icon-lg')}
+  renderPossessBanner()
+}
+function msLeft(ts){const d=ts-Date.now();if(d<=0)return'0m';const h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000);return h>0?`${h}h ${m}m`:`${m}m`}
+function checkPossession(){
+  const a=data.demons&&data.demons.active;
+  if(a&&a.expiresAt<=Date.now()){exorcise(false);return}
+  if(a)applyPossession();
+  renderPossessBanner()
+}
+// demon wars = themed multiplayer challenge on the existing backend
+async function startDemonWar(){
+  if(!isLoggedIn()){closeRitual();openAuth('signup');return}
+  const a=activeDemon();const s=myStats();
+  const title=a?`${a.name}'s Demon War`:'Aura Demon War';
+  const avatar=a?a.emoji:s.avatar;
+  const j=await mpCall({action:'create',title,metric:'aura',target:Math.max(500,data.auraPoints+500),days:3,name:s.name,avatar});
+  if(j){await mpCall({action:'progress',code:j.code,progress:data.auraPoints});
+    closeRitual();spawnConfetti(30);sfx('buy');toast(`Demon War live — code ${j.code}, recruit your victims`,'good');
+    switchTabById('tabSquad');renderMpChallenges();setTimeout(()=>shareChallengeCode(j.code),500)}
+}
+
+// ─── RECALC STREAKS ───
+function recalcAll(){
+  const broken=[];
+  ['starve','farm'].forEach(type=>(data.habits[type]||[]).forEach(h=>{
+    if(!h.taps)h.taps={};if(typeof h.bestStreak!=='number')h.bestStreak=0;
+    const prev=typeof h.lastStreak==='number'?h.lastStreak:0;calcStreak(h);
+    if(prev>=2&&h.streak===0)broken.push(h);h.lastStreak=h.streak
+  }));save();return broken
+}
+
+// ─── INIT ───
+function init(){
+  load();
+  const broken=recalcAll();
+  renderAll();applyEquipped();renderCal();
+
+  if(!data.onboarded&&!data.packName)setTimeout(startOnboarding,700);
+  else if(broken.length){
+    setTimeout(()=>broken.slice(0,3).forEach((h,i)=>setTimeout(()=>toast(rand(STREAK_BROKEN).replace('{n}',h.name),'bad'),i*600)),900)
+  }
+
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw.js?v=24').then(reg=>{
+      if(reg.waiting)reg.waiting.postMessage('skipWaiting');
+      reg.addEventListener('updatefound',()=>{
+        const nw=reg.installing;
+        if(nw)nw.addEventListener('statechange',()=>{if(nw.state==='installed'&&navigator.serviceWorker.controller)nw.postMessage('skipWaiting')});
+      });
+    }).catch(()=>{});
+    navigator.serviceWorker.addEventListener('controllerchange',()=>location.reload());
+  }
+  initConfetti();
+  checkChallengeLink();
+  if(data.onboarded||data.packName)submitScore();
+  if(isLoggedIn())pushCloud(true);
+  checkPossession();
+  setInterval(()=>{const a=data.demons&&data.demons.active;if(!a)return;
+    if(a.expiresAt<=Date.now())exorcise(false);else renderPossessBanner()},30000);
+
+  document.getElementById('commitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')addCommit()});
+  document.getElementById('squadPostInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')postSquadWin()});
+
+  const loader=document.getElementById('loadingScreen');
+  if(loader){setTimeout(()=>{loader.classList.add('hidden');setTimeout(()=>loader.remove(),400)},600)}
+}
+
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>

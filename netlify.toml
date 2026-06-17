@@ -1,0 +1,15 @@
+[build]
+  base = "aura-farm"
+  publish = "."
+  command = "npm install"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# serve the TWA Digital Asset Links file with the correct content type
+[[headers]]
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"
+    Cache-Control = "public, max-age=600"
