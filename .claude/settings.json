@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "claude plugin marketplace add EveryInc/compound-engineering-plugin 2>/dev/null; claude plugin install compound-engineering 2>/dev/null; true"
+          }
+        ]
+      }
+    ]
+  }
+}
