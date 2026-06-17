@@ -645,9 +645,11 @@ function addHabit(type) {
 }
 
 // ─── MODAL ───
-function closeModal(e) {
-  if (e && e.target !== document.getElementById('modalOverlay')) return;
+function closeModal() {
   document.getElementById('modalOverlay').style.display = 'none';
+}
+function closeModalBackdrop(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
 }
 
 // ─── QUIT TIMERS ───
