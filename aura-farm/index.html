@@ -306,6 +306,29 @@ background:var(--bg);transition:opacity .4s}
 .commit{padding:8px 10px;margin:5px 0;background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);font-size:.72rem}
 .commit .cm-date{color:var(--fg2);font-size:.6rem}.commit .cm-text{color:var(--accent)}
 @media(min-width:480px){.stats-row,.an-stats{grid-template-columns:repeat(4,1fr)}}
+/* TODAY PROGRESS */
+.tp-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(26,26,26,.6);border:1px solid var(--border);
+border-radius:var(--r);margin:4px 0;font-size:.72rem;transition:all .2s;cursor:pointer;touch-action:manipulation}
+.tp-row:hover{border-color:rgba(200,255,0,.2);transform:translateX(3px)}
+.tp-row.done{opacity:.5;text-decoration:line-through}
+.tp-row .tp-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;
+justify-content:center;font-size:.65rem;flex-shrink:0;transition:all .2s}
+.tp-row.done .tp-check{border-color:var(--accent);background:var(--accent);color:var(--bg)}
+.tp-pct{font-size:2rem;font-weight:900;color:var(--accent);text-shadow:0 0 10px var(--glow-a)}
+/* SQUAD REACTIONS */
+.sq-react{display:flex;gap:4px;margin-top:4px}
+.sq-react button{background:rgba(26,26,26,.6);border:1px solid var(--border);border-radius:12px;padding:2px 7px;font-size:.68rem;
+cursor:pointer;color:var(--fg2);transition:all .15s;touch-action:manipulation}
+.sq-react button:active{transform:scale(.9)}
+.sq-react button.hyped{border-color:var(--accent);color:var(--accent);background:rgba(200,255,0,.08)}
+.sq-you{border-left:2px solid var(--accent)!important;background:rgba(200,255,0,.03)!important}
+/* INSTALL BANNER */
+.install-card{background:linear-gradient(135deg,rgba(200,255,0,.08),rgba(179,136,255,.06));border:1px dashed var(--accent);
+border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:pointer;transition:all .2s}
+.install-card:hover{border-style:solid;box-shadow:0 0 20px rgba(200,255,0,.1)}
+/* SETTINGS */
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.73rem}
+.settings-row:last-child{border-bottom:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -323,8 +346,9 @@ background:var(--bg);transition:opacity .4s}
 <span class="header-logo glitch" id="headerLogo">🧠</span>
 <div><div class="header-title">AURA FARM</div><div class="header-sub" id="headerSub">v3.0 — brain rot slayer, aura whore</div></div>
 </div>
-<div id="headerRight">
-<button class="btn btn-sm" onclick="resetApp()">🗑️</button>
+<div id="headerRight" style="display:flex;gap:6px;align-items:center">
+<button class="btn btn-sm" id="installBtn" style="display:none;border-color:var(--accent);color:var(--accent)" onclick="installPWA()">📲</button>
+<button class="btn btn-sm" onclick="openSettings()">⚙️</button>
 </div>
 </header>
 
@@ -340,7 +364,7 @@ background:var(--bg);transition:opacity .4s}
 <!-- GREETING + AURA -->
 <div class="greeting" id="greetingEl"></div>
 <div class="aura-display">
-<div class="aura-num" id="auraNum">0</div>
+<div class="aura-num" id="auraNum">---</div>
 <div class="aura-label neon-a" style="text-shadow:0 0 8px #00ff9f">aura points</div>
 <div id="auraChangeSlot"></div>
 </div>
@@ -349,6 +373,8 @@ background:var(--bg);transition:opacity .4s}
 <!-- TAB: DEN -->
 <div class="tab active" id="tabDen">
 <div id="denDash"></div>
+<div class="sec-title neon-a">📋 // TODAY'S GRIND</div>
+<div id="todayProgress"></div>
 <div class="sec-title neon-a">⚔️ // ACTIVE CHALLENGES</div>
 <div id="challengesList"></div>
 <div class="sec-title neon-a">📊 // YOUR RECEIPTS</div>
@@ -386,8 +412,15 @@ background:var(--bg);transition:opacity .4s}
 <!-- TAB: SQUAD -->
 <div class="tab" id="tabSquad">
 <div class="sec-title neon-a">👥 // THE SQUAD FEED</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">your fellow degenerate sluts for progress, all grinding their asses off 🫡🔥</p>
-<div class="card" id="squadFeed"></div>
+<p class="text-muted mb-1" style="font-size:.68rem;">your grind + the squad's grind, all mixed. flex or get flexed on 🫡🔥</p>
+<div class="card" style="margin-bottom:8px">
+<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
+<div class="input-row" style="margin:0">
+<input type="text" id="squadPostInput" placeholder="i just hit a 7-day streak, i'm HIM...">
+<button class="btn btn-accent" onclick="postSquadWin()">flex 🔥</button>
+</div>
+</div>
+<div id="squadFeed"></div>
 <button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquad()">refresh the feed 🔄</button>
 </div>
 
@@ -460,7 +493,7 @@ const DEFAULT_DATA={
       {id:'f5',emoji:'💤',name:'8hr Sleep',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
     ]
   },
-  commits:[],rewards:[],owned:['av_brain','th_default'],
+  commits:[],rewards:[],squadPosts:[],owned:['av_brain','th_default'],
   equipped:{avatar:'av_brain',theme:'th_default',title:null},
   lastCheckIn:null,activityLog:[],joinedChallenges:{},claimedChallenges:[],
   calMonth:new Date().getMonth(),calYear:new Date().getFullYear()
@@ -579,6 +612,7 @@ function load(){
       if(!data.joinedChallenges)data.joinedChallenges={};
       if(!Array.isArray(data.claimedChallenges))data.claimedChallenges=[];
       if(!Array.isArray(data.rewards))data.rewards=[];
+      if(!Array.isArray(data.squadPosts))data.squadPosts=[];
     }else{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
   }catch{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
 }
@@ -827,7 +861,8 @@ function renderDen(){
     <div class="lvl-bar-wrap"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
     ${next?`<div class="lvl-next">next: ${next.icon} ${next.name} at ${next.min.toLocaleString()} AP</div>`:'<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute god 👑</div>'}
     </div>
-    <div style="margin:10px 0 14px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ already checked in today, go farm':'🤔 How cooked are you today? (daily check-in)'}</button></div>`
+    <div style="margin:10px 0 14px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ already checked in today, go farm':'🤔 How cooked are you today? (daily check-in)'}</button></div>
+    ${deferredInstallPrompt?'<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">📲</div><div style="font-size:.75rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.6rem;color:var(--fg2)">add to home screen — farm aura offline, no cap 🔥</div></div>':''}`
 }
 
 // ─── CHECK-IN ───
@@ -933,10 +968,37 @@ function renderSquad(){
   const habits=['doomscrolling','gooning','gym','mewing','cold showers','reading','vaping'];
   const times=['just now','2m ago','5m ago','12m ago','23m ago','1h ago','2h ago','3h ago'];
   const items=[];
-  for(let i=0;i<8;i++){const p=rand(SQUAD_NAMES);let act=rand(SQUAD_ACTS).replace('{n}',Math.floor(Math.random()*60)+1).replace('{h}',rand(habits));
-    items.push(`<div class="sq-item" style="animation-delay:${i*.08}s"><span class="sq-av">${p.av}</span><div>
-      <div><span class="sq-name">${p.n}</span> <span class="sq-time">${times[i]||rand(times)}</span></div><div class="sq-msg">${act}</div></div></div>`)}
-  c.innerHTML=items.join('')
+  const myName=data.packName||'You';
+  const myAv=SHOP.avatars.find(a=>a.id===data.equipped?.avatar)?.preview||'🧠';
+  const myPosts=(data.squadPosts||[]).slice(0,3);
+  myPosts.forEach((p,i)=>{
+    items.push({html:`<div class="sq-item sq-you" style="animation-delay:${i*.08}s"><span class="sq-av">${myAv}</span><div style="flex:1">
+      <div><span class="sq-name" style="color:var(--accent)">${escHtml(myName)}</span> <span class="sq-time">${timeAgo(p.time)}</span></div>
+      <div class="sq-msg">${escHtml(p.text)}</div>
+      <div class="sq-react"><button class="hyped" onclick="this.textContent='🔥 '+(parseInt(this.dataset.c||'0')+1);this.dataset.c=parseInt(this.dataset.c||'0')+1" data-c="${p.hypes||0}">🔥 ${p.hypes||0}</button></div>
+      </div></div>`,time:p.time,isMine:true})
+  });
+  const recentActs=(data.activityLog||[]).slice(0,3);
+  recentActs.forEach(a=>{
+    items.push({html:`<div class="sq-item sq-you" style="animation-delay:.1s"><span class="sq-av">${myAv}</span><div style="flex:1">
+      <div><span class="sq-name" style="color:var(--accent)">${escHtml(myName)}</span> <span class="sq-time">${timeAgo(a.time)}</span></div>
+      <div class="sq-msg">${escHtml(a.msg)}</div>
+      <div class="sq-react"><button onclick="hypeReact(this)">🔥 0</button><button onclick="hypeReact(this)">💀 0</button><button onclick="hypeReact(this)">👑 0</button></div>
+      </div></div>`,time:a.time,isMine:true})
+  });
+  for(let i=0;i<6;i++){const p=rand(SQUAD_NAMES);let act=rand(SQUAD_ACTS).replace('{n}',Math.floor(Math.random()*60)+1).replace('{h}',rand(habits));
+    const fakeTime=Date.now()-Math.floor(Math.random()*7200000);
+    items.push({html:`<div class="sq-item" style="animation-delay:${(items.length+i)*.06}s"><span class="sq-av">${p.av}</span><div style="flex:1">
+      <div><span class="sq-name">${p.n}</span> <span class="sq-time">${times[i]||rand(times)}</span></div><div class="sq-msg">${act}</div>
+      <div class="sq-react"><button onclick="hypeReact(this)">🔥 ${Math.floor(Math.random()*12)}</button><button onclick="hypeReact(this)">💀 ${Math.floor(Math.random()*5)}</button><button onclick="hypeReact(this)">👑 ${Math.floor(Math.random()*3)}</button></div>
+      </div></div>`,time:fakeTime,isMine:false})
+  }
+  items.sort((a,b)=>(b.time||0)-(a.time||0));
+  c.innerHTML=items.map(x=>x.html).join('')
+}
+function hypeReact(btn){
+  const parts=btn.textContent.trim().split(' ');const emoji=parts[0];const cur=parseInt(parts[1])||0;
+  btn.textContent=emoji+' '+(cur+1);btn.classList.add('hyped');sfx('tap');haptic(6)
 }
 
 // ─── SHOP ───
@@ -1067,7 +1129,7 @@ function switchTab(tabId,btn){
   document.getElementById(tabId)?.classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(n=>n.classList.remove('active'));
   if(btn)btn.classList.add('active');currentTab=tabId;
-  if(tabId==='tabDen'){renderDen();renderChallenges();renderAnalytics();renderActivity()}
+  if(tabId==='tabDen'){renderDen();renderTodayProgress();renderChallenges();renderAnalytics();renderActivity()}
   if(tabId==='tabStarve'){renderHabits('starve','starveList');renderQuitTimers()}
   if(tabId==='tabFarm'){renderHabits('farm','farmList');renderCommitLog()}
   if(tabId==='tabSquad')renderSquad();
@@ -1080,7 +1142,7 @@ function renderAll(){
   updateAura();renderStats();renderGreeting();
   renderHabits('starve','starveList');renderHabits('farm','farmList');
   renderQuitTimers();renderCommitLog();
-  renderDen();renderChallenges();renderAnalytics();renderActivity()
+  renderDen();renderTodayProgress();renderChallenges();renderAnalytics();renderActivity()
 }
 
 // ─── RESET ───
@@ -1113,6 +1175,123 @@ function setName(){
   if(!name){sfx('error');toast("name yourself you coward 💀",'bad');return}
   data.packName=name;save();closeModal();renderAll();sfx('buy');haptic(15);
   toast(`welcome to the farm, ${name} you degenerate 🔥✨`,'good')
+}
+
+// ─── TODAY'S PROGRESS ───
+function renderTodayProgress(){
+  const el=document.getElementById('todayProgress');if(!el)return;
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  if(!all.length){el.innerHTML='<div class="text-center text-muted" style="padding:12px;font-size:.72rem;">no habits yet, add some first you lazy bitch 💀</div>';return}
+  const today=todayKey(),done=all.filter(h=>h.taps[today]),left=all.filter(h=>!h.taps[today]);
+  const pct=all.length>0?Math.round(done.length/all.length*100):0;
+  let msg;
+  if(pct===0)msg="zero taps. brain rot is winning rn. TAP SOMETHING 💀";
+  else if(pct<50)msg="barely started, pick up the pace degenerate 👀";
+  else if(pct<100)msg="over halfway, don't stop now you slut for progress 🔥";
+  else msg="CLEAN SWEEP 🧹✨ every habit tapped, you absolute MENACE";
+  let h=`<div class="card"><div class="flex-between" style="margin-bottom:8px">
+    <div><span class="tp-pct">${pct}%</span><span class="text-muted" style="font-size:.6rem;margin-left:6px">${done.length}/${all.length} tapped</span></div>
+    <div style="font-size:.62rem;color:var(--fg2);text-align:right;max-width:160px">${msg}</div></div>
+    <div class="lvl-bar-wrap" style="height:6px;margin-bottom:10px"><div class="lvl-bar" style="width:${pct}%;${pct===100?'background:linear-gradient(90deg,#c8ff00,#00ff9f,#00e5ff);box-shadow:0 0 16px rgba(200,255,0,.6)':''}"></div></div>`;
+  if(left.length>0){
+    h+='<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">still need to tap:</div>';
+    h+=left.map(hab=>{const type=data.habits.starve.includes(hab)?'starve':'farm';
+      return `<div class="tp-row" onclick="quickTap('${type}','${hab.id}',this)">
+        <span class="tp-check">${type==='starve'?'🚫':'✨'}</span>
+        <span>${hab.emoji} ${hab.name}</span>
+        <span class="text-muted" style="font-size:.6rem;margin-left:auto">${type==='starve'?'starve it':'farm it'}</span></div>`}).join('')
+  }
+  if(done.length>0){
+    h+='<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px">done today:</div>';
+    h+=done.slice(0,5).map(hab=>`<div class="tp-row done"><span class="tp-check">✓</span><span>${hab.emoji} ${hab.name}</span></div>`).join('');
+    if(done.length>5)h+=`<div class="text-muted text-center" style="font-size:.6rem;padding:4px">+${done.length-5} more</div>`
+  }
+  h+='</div>';el.innerHTML=h
+}
+function quickTap(type,id,row){
+  const h=(data.habits[type]||[]).find(x=>x.id===id);if(!h)return;
+  const today=todayKey();if(h.taps[today])return;
+  h.taps[today]=true;const gain=type==='starve'?10:15;const sb=Math.min(calcStreak(h)*2,50);const total=gain+sb;
+  data.auraPoints+=total;showAuraChange(total);floatPts(row,total);
+  logAct('tap',`${type==='starve'?'starved':'farmed'} ${h.emoji} ${h.name} +${total} AP`);
+  sfx('tap');haptic(12);toast(rand(type==='starve'?STARVE_ROASTS:FARM_HYPES),'good');
+  calcStreak(h);h.lastStreak=h.streak;save();renderAll()
+}
+
+// ─── SQUAD POST ───
+function postSquadWin(){
+  const inp=document.getElementById('squadPostInput'),text=inp?.value.trim();
+  if(!text){sfx('error');toast("write something or shut up 💀",'bad');return}
+  if(!data.squadPosts)data.squadPosts=[];
+  data.squadPosts.unshift({text,time:Date.now(),hypes:0});
+  if(data.squadPosts.length>20)data.squadPosts.length=20;
+  data.auraPoints+=3;showAuraChange(3);logAct('squad',`flexed: "${text.slice(0,30)}"`);
+  save();inp.value='';renderSquad();sfx('tap');haptic(12);
+  toast("flex posted, the squad can see your grind now 🫡🔥",'good')
+}
+
+// ─── SETTINGS ───
+function openSettings(){
+  const m=document.getElementById('modalContent');
+  const sz=new Blob([JSON.stringify(data)]).size;
+  const kb=(sz/1024).toFixed(1);
+  m.innerHTML=`<h3>⚙️ SETTINGS</h3>
+    <div class="settings-row"><span>📛 Pack Name</span><span class="text-accent">${data.packName||'not set'}</span></div>
+    <div class="settings-row"><span>📊 Data Size</span><span class="text-muted">${kb} KB in localStorage</span></div>
+    <div class="settings-row"><span>💾 Export Data</span><button class="btn btn-sm" onclick="exportData()">download JSON 📥</button></div>
+    <div class="settings-row"><span>📂 Import Data</span><button class="btn btn-sm" onclick="importData()">upload JSON 📤</button></div>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="handleImport(event)">
+    <div class="settings-row"><span>📛 Change Name</span><button class="btn btn-sm" onclick="closeModal();promptNameForce()">rename 📝</button></div>
+    <div class="settings-row"><span>🗑️ Reset All</span><button class="btn btn-sm btn-danger" onclick="closeModal();resetApp()">nuke everything 💀</button></div>
+    <div class="modal-actions" style="margin-top:12px"><button class="btn btn-block" onclick="closeModal()">close</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function exportData(){
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob);const a=document.createElement('a');
+  a.href=url;a.download=`aura-farm-backup-${todayKey()}.json`;a.click();URL.revokeObjectURL(url);
+  sfx('buy');toast("data exported, your grind is backed up 💾✨",'good')
+}
+function importData(){document.getElementById('importFile')?.click()}
+function handleImport(evt){
+  const file=evt.target.files?.[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{const imported=JSON.parse(e.target.result);
+      if(!imported.habits||!imported.auraPoints&&imported.auraPoints!==0){toast("invalid file, that ain't aura farm data 💀",'bad');return}
+      data=imported;save();renderAll();applyEquipped();renderCal();closeModal();
+      sfx('buy');haptic(15);toast("data imported, your grind is restored 📂🔥",'good')
+    }catch{sfx('error');toast("corrupted file, can't import that trash 💀",'bad')}
+  };reader.readAsText(file);evt.target.value=''
+}
+function promptNameForce(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>📛 RENAME YOURSELF, DEGENERATE</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">current name: <span class="text-accent">${data.packName||'none'}</span></p>
+    <input type="text" id="renameInput" placeholder="new name..." maxlength="20" value="${data.packName||''}">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nah</button><button class="btn btn-accent" onclick="doRename()">lock it in 🔒</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('renameInput')?.focus(),100)
+}
+function doRename(){
+  const name=document.getElementById('renameInput')?.value.trim();
+  if(!name){sfx('error');toast("name yourself something you coward 💀",'bad');return}
+  data.packName=name;save();closeModal();renderAll();sfx('tap');haptic(12);toast(`renamed to ${name}, new era unlocked 📛🔥`,'good')
+}
+
+// ─── PWA INSTALL ───
+let deferredInstallPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferredInstallPrompt=e;
+  const btn=document.getElementById('installBtn');if(btn)btn.style.display='inline-flex'
+});
+function installPWA(){
+  if(!deferredInstallPrompt)return;
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then(r=>{
+    if(r.outcome==='accepted'){toast("INSTALLED 📲 aura farm is on your home screen, no cap 🔥",'good');sfx('buy');haptic(15);spawnConfetti(50);launchConfetti()}
+    deferredInstallPrompt=null;const btn=document.getElementById('installBtn');if(btn)btn.style.display='none'
+  })
 }
 
 // ─── RECALC STREAKS ───
