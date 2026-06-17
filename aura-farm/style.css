@@ -312,7 +312,10 @@ body.is-offline .offline-banner { display: block; }
   will-change: transform;
 }
 .habit-tap:hover { border-color: var(--accent); background: rgba(200,255,0,0.08); box-shadow: 0 0 10px rgba(200,255,0,0.15); }
-.habit-tap:active { transform: scale(0.85); }
+.habit-tap:active, .tap-btn:active {
+  transform: scale(0.85);
+  box-shadow: 0 0 40px currentColor;
+}
 .habit-tap.tapped {
   border-color: var(--accent);
   background: var(--accent);
@@ -1193,47 +1196,26 @@ body.cta-flash {
 /* ─── Neon Utility Classes ─── */
 .neon-aura {
   text-shadow:
-    0 0 5px #00ff9f,
-    0 0 10px #00ff9f,
-    0 0 20px #00ffff,
-    0 0 40px #ff00ff;
-  animation: aura-pulse 2s infinite alternate;
+    0 0 8px #00ff9f,
+    0 0 16px #00ffff,
+    0 0 32px #ff00ff;
+  animation: auraPulse 1.5s infinite alternate ease-in-out;
 }
 .neon-rot {
   text-shadow:
-    0 0 5px #ff0044,
-    0 0 10px #bb00ff;
-  animation: neon-rot-pulse 2.5s infinite alternate;
+    0 0 8px #ff0044,
+    0 0 20px #c300ff;
+  animation: neonRotShake 0.4s linear infinite;
 }
-@keyframes neon-rot-pulse {
-  from {
-    text-shadow:
-      0 0 3px #ff0044,
-      0 0 6px #bb00ff;
-  }
-  to {
-    text-shadow:
-      0 0 8px #ff0044,
-      0 0 18px #ff0044,
-      0 0 30px #c300ff,
-      0 0 50px rgba(195,0,255,0.4);
-  }
+@keyframes auraPulse {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.4); }
 }
-@keyframes aura-pulse {
-  from {
-    text-shadow:
-      0 0 4px #00ff9f,
-      0 0 8px #00ff9f,
-      0 0 14px #00ffff,
-      0 0 28px #ff00ff;
-  }
-  to {
-    text-shadow:
-      0 0 8px #00ff9f,
-      0 0 18px #00ff9f,
-      0 0 30px #00ffff,
-      0 0 60px #ff00ff;
-  }
+@keyframes neonRotShake {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 3px); }
+  40% { transform: translate(3px, -3px); }
+  100% { transform: translate(0); }
 }
 .glow-button {
   transition: all 0.2s ease;
@@ -1242,9 +1224,9 @@ body.cta-flash {
 .glow-button:hover {
   box-shadow: 0 0 22px #00ff9f, 0 0 44px rgba(0,255,159,0.3);
 }
-.glow-button:active {
-  transform: scale(0.92);
-  box-shadow: 0 0 30px #00ffff;
+.glow-button:active, .tap-btn:active {
+  transform: scale(0.85);
+  box-shadow: 0 0 40px currentColor;
 }
 
 /* ─── Confetti Canvas ─── */
