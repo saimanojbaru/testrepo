@@ -1,0 +1,71 @@
+# YouTube Automation Pipeline Configuration
+
+channel:
+  niche: "technology"  # Change to your niche
+  name: "My Channel"
+  target_audience: "18-35 tech enthusiasts"
+
+video:
+  target_duration: 600  # seconds (10 minutes)
+  shorts_duration: 45   # seconds
+  format: "mp4"
+  resolution: "1920x1080"
+  fps: 30
+
+voice:
+  provider: "elevenlabs"
+  voice_id: ""  # Set in .env or override here
+  model_id: "eleven_multilingual_v2"
+  stability: 0.5
+  similarity_boost: 0.75
+  style: 0.0
+  speed: 1.0
+
+script:
+  model: "claude-sonnet-4-6"
+  max_tokens: 4096
+  temperature: 0.7
+  sections:
+    - hook
+    - intro
+    - main_content
+    - recap
+    - cta
+
+subtitles:
+  enabled: true
+  font: "Arial"
+  font_size: 48
+  color: "white"
+  outline_color: "black"
+  outline_width: 2
+  position: "bottom"  # bottom, center
+  max_chars_per_line: 42
+
+footage:
+  source: "pexels"  # pexels, local, none
+  clip_duration: 6  # seconds per clip
+  local_footage_dir: "context/footage"
+
+discovery:
+  sources:
+    - manual
+    - reddit
+    - google_trends
+  reddit_subreddits:
+    - "technology"
+    - "Futurology"
+    - "science"
+  max_topics: 5
+
+upload:
+  auto_upload: false
+  privacy_status: "private"  # private, unlisted, public
+  category_id: "28"  # Science & Technology
+  default_language: "en"
+
+pipeline:
+  dry_run: false
+  log_level: "INFO"
+  output_dir: "output"
+  cleanup_temp: true
