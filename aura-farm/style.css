@@ -142,6 +142,11 @@ a:hover { text-decoration: underline; }
   padding-bottom: 6px;
   border-bottom: 1px solid var(--border);
 }
+.section-title::before {
+  content: '## ';
+  color: var(--purple);
+  font-weight: 700;
+}
 
 /* ─── Habit Items ─── */
 .habit-item {
@@ -169,26 +174,46 @@ a:hover { text-decoration: underline; }
   font-size: 1rem;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  transition: all 0.2s;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s, box-shadow 0.3s;
   flex-shrink: 0;
+  position: relative;
+  overflow: visible;
 }
 .habit-tap:hover { border-color: var(--accent); background: rgba(200,255,0,0.08); }
+.habit-tap:active { transform: scale(0.88); }
 .habit-tap.tapped {
   border-color: var(--accent);
   background: var(--accent);
   color: var(--bg);
-  animation: tapPop 0.3s ease;
+  box-shadow: 0 0 18px rgba(200,255,0,0.55);
+  animation: tapPop 0.4s cubic-bezier(.34,1.56,.64,1);
 }
 .habit-tap.tapped-bad {
   border-color: var(--danger);
   background: var(--danger);
   color: #fff;
-  animation: tapPop 0.3s ease;
+  box-shadow: 0 0 18px rgba(255,62,108,0.5);
+  animation: tapPop 0.4s cubic-bezier(.34,1.56,.64,1);
 }
 @keyframes tapPop {
   0% { transform: scale(1); }
-  50% { transform: scale(1.25); }
-  100% { transform: scale(1); }
+  45% { transform: scale(1.35) rotate(-8deg); }
+  70% { transform: scale(0.92) rotate(4deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+/* expanding ring on tap */
+.tap-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  pointer-events: none;
+  animation: tapRing 0.6s ease-out forwards;
+}
+.tap-ring.bad { border-color: var(--danger); }
+@keyframes tapRing {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.4); opacity: 0; }
 }
 .habit-delete {
   background: none; border: none;
@@ -205,11 +230,52 @@ a:hover { text-decoration: underline; }
   margin: 16px 0;
 }
 .aura-number {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 900;
   color: var(--accent);
   line-height: 1;
   text-shadow: 0 0 30px rgba(200,255,0,0.3);
+  transition: text-shadow 0.3s, transform 0.3s;
+  display: inline-block;
+}
+.aura-number.glow-gain {
+  animation: auraGlow 0.8s ease;
+}
+.aura-number.glow-loss {
+  animation: auraLoss 0.8s ease;
+}
+@keyframes auraGlow {
+  0% { transform: scale(1); text-shadow: 0 0 30px rgba(200,255,0,0.3); }
+  30% {
+    transform: scale(1.18);
+    color: #fff;
+    text-shadow: 0 0 60px rgba(200,255,0,0.95), 0 0 100px rgba(200,255,0,0.6), 0 0 20px #fff;
+  }
+  100% { transform: scale(1); color: var(--accent); text-shadow: 0 0 30px rgba(200,255,0,0.3); }
+}
+@keyframes auraLoss {
+  0% { transform: scale(1); }
+  20% { transform: translateX(-6px); color: var(--danger); text-shadow: 0 0 40px rgba(255,62,108,0.8); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+  100% { transform: scale(1); color: var(--accent); text-shadow: 0 0 30px rgba(200,255,0,0.3); }
+}
+/* radial glow burst behind aura number on gain */
+.aura-display { position: relative; }
+.aura-burst {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,255,0,0.6) 0%, transparent 70%);
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  animation: burst 0.8s ease forwards;
+}
+@keyframes burst {
+  0% { width: 10px; height: 10px; opacity: 0.9; }
+  100% { width: 320px; height: 320px; opacity: 0; }
 }
 .aura-label {
   font-size: 0.7rem;
@@ -491,6 +557,25 @@ a:hover { text-decoration: underline; }
 }
 
 .fade-in { animation: fadeIn 0.3s ease; }
+
+/* floating +AP particle that flies up on tap */
+.ap-float {
+  position: fixed;
+  z-index: 998;
+  font-family: var(--mono);
+  font-weight: 900;
+  font-size: 1rem;
+  pointer-events: none;
+  animation: apFloat 1s ease-out forwards;
+  text-shadow: 0 0 12px currentColor;
+}
+.ap-float.gain { color: var(--accent); }
+.ap-float.loss { color: var(--danger); }
+@keyframes apFloat {
+  0% { opacity: 0; transform: translate(-50%, 0) scale(0.6); }
+  20% { opacity: 1; transform: translate(-50%, -16px) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -80px) scale(0.9); }
+}
 
 .emoji-picker {
   display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0;

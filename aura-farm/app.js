@@ -176,13 +176,46 @@ function toast(msg, type = 'good') {
 // ─── AURA POINT ANIMATION ───
 function showAuraChange(amount) {
   const slot = document.getElementById('auraChangeSlot');
-  if (!slot) return;
+  if (slot) {
+    const el = document.createElement('div');
+    el.className = `aura-change ${amount > 0 ? 'gain' : 'loss'}`;
+    el.textContent = amount > 0 ? `+${amount} AP, ate that shit 🔥` : `${amount} AP, you fell tf off 💀`;
+    slot.innerHTML = '';
+    slot.appendChild(el);
+    setTimeout(() => el.remove(), 2000);
+  }
+
+  // glow pulse + radial burst on the big number
+  const num = document.getElementById('auraNumber');
+  if (num) {
+    num.classList.remove('glow-gain', 'glow-loss');
+    void num.offsetWidth; // reflow to restart animation
+    num.classList.add(amount > 0 ? 'glow-gain' : 'glow-loss');
+    setTimeout(() => num.classList.remove('glow-gain', 'glow-loss'), 800);
+
+    if (amount > 0) {
+      const display = num.closest('.aura-display');
+      if (display) {
+        const burst = document.createElement('div');
+        burst.className = 'aura-burst';
+        display.appendChild(burst);
+        setTimeout(() => burst.remove(), 800);
+      }
+    }
+  }
+}
+
+// floating +AP particle flying up from a tapped element
+function floatPoints(srcEl, amount) {
+  if (!srcEl) return;
+  const rect = srcEl.getBoundingClientRect();
   const el = document.createElement('div');
-  el.className = `aura-change ${amount > 0 ? 'gain' : 'loss'}`;
-  el.textContent = amount > 0 ? `+${amount} AP 🔥` : `${amount} AP 💀`;
-  slot.innerHTML = '';
-  slot.appendChild(el);
-  setTimeout(() => el.remove(), 2000);
+  el.className = `ap-float ${amount > 0 ? 'gain' : 'loss'}`;
+  el.textContent = amount > 0 ? `+${amount}` : `${amount}`;
+  el.style.left = (rect.left + rect.width / 2) + 'px';
+  el.style.top = (rect.top - 8) + 'px';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 1000);
 }
 
 function updateAuraDisplay() {
@@ -216,7 +249,9 @@ function renderHabitList(type, containerId) {
     const tapped = !!h.taps[today];
     const streak = calcStreak(h);
     const tapClass = tapped ? (type === 'starve' ? 'tapped-bad' : 'tapped') : '';
-    const streakText = streak > 0 ? `🔥 ${streak} day streak` : 'no streak yet, get on it';
+    const streakText = streak > 0
+      ? `🔥 ${streak}d streak, you slut for progress`
+      : (type === 'starve' ? 'no streak, you cooked 💀' : 'no streak, lock tf in 🔒');
     return `
       <div class="habit-item">
         <span class="habit-emoji">${h.emoji}</span>
@@ -224,26 +259,32 @@ function renderHabitList(type, containerId) {
           <div class="habit-name">${h.name}</div>
           <div class="habit-streak">${streakText} · best: ${h.bestStreak}d</div>
         </div>
-        <button class="habit-tap ${tapClass}" onclick="tapHabit('${type}','${h.id}')" title="${tapped ? 'undo tap' : 'tap it'}">
+        <button class="habit-tap ${tapClass}" data-tap="${h.id}" onclick="tapHabit('${type}','${h.id}',event)" title="${tapped ? 'undo, you fell off' : 'tap it, lock in'}">
           ${tapped ? '✓' : (type === 'starve' ? '🚫' : '✨')}
         </button>
-        <button class="habit-delete" onclick="deleteHabit('${type}','${h.id}')" title="delete">✕</button>
+        <button class="habit-delete" onclick="deleteHabit('${type}','${h.id}')" title="yeet this habit">✕</button>
       </div>
     `;
   }).join('');
 }
 
 // ─── TAP HABIT ───
-function tapHabit(type, id) {
+function tapHabit(type, id, evt) {
   const habit = data.habits[type].find(h => h.id === id);
   if (!habit) return;
   const today = todayKey();
 
+  // grab the button that was tapped for ring + particle fx
+  const btn = evt ? evt.currentTarget : document.querySelector(`[data-tap="${id}"]`);
+
   if (habit.taps[today]) {
     delete habit.taps[today];
+    calcStreak(habit);
     const loss = type === 'starve' ? 5 : 10;
     data.auraPoints = Math.max(0, data.auraPoints - loss);
     showAuraChange(-loss);
+    floatPoints(btn, -loss);
+    spawnRing(btn, true);
     toast(rand(RELAPSE_MSGS), 'bad');
   } else {
     habit.taps[today] = true;
@@ -252,12 +293,32 @@ function tapHabit(type, id) {
     const total = gain + streakBonus;
     data.auraPoints += total;
     showAuraChange(total);
+    floatPoints(btn, total);
+    spawnRing(btn, type === 'starve');
     toast(rand(type === 'starve' ? STARVE_ROASTS : FARM_HYPES), 'good');
   }
 
   calcStreak(habit);
   save();
   renderHabits();
+}
+
+// expanding ring fx over the tapped button (body-anchored so the
+// list re-render doesn't nuke the animation mid-play)
+function spawnRing(btn, isBad) {
+  if (!btn) return;
+  const r = btn.getBoundingClientRect();
+  const ring = document.createElement('span');
+  ring.className = 'tap-ring' + (isBad ? ' bad' : '');
+  ring.style.position = 'fixed';
+  ring.style.left = r.left + 'px';
+  ring.style.top = r.top + 'px';
+  ring.style.width = r.width + 'px';
+  ring.style.height = r.height + 'px';
+  ring.style.inset = 'auto';
+  ring.style.zIndex = '998';
+  document.body.appendChild(ring);
+  setTimeout(() => ring.remove(), 600);
 }
 
 // ─── DELETE HABIT ───
@@ -416,7 +477,7 @@ function renderCommitLog() {
     <div class="code-block" style="padding:10px;margin:6px 0;">
       <span class="comment">// ${c.date} @ ${c.time}</span><br>
       <span class="string">"${escapeHtml(c.text)}"</span>
-      <button class="habit-delete" style="opacity:1;float:right;" onclick="deleteCommit('${c.id}')" title="delete">✕</button>
+      <button class="habit-delete" style="opacity:1;float:right;" onclick="deleteCommit('${c.id}')" title="yeet this">✕</button>
     </div>
   `).join('');
 }
@@ -533,7 +594,7 @@ function updateStats() {
   container.innerHTML = `
     <div class="stat-box">
       <div class="stat-num">${todayTaps}/${totalHabits}</div>
-      <div class="stat-label">today</div>
+      <div class="stat-label">locked in today</div>
     </div>
     <div class="stat-box">
       <div class="stat-num">${bestStreak}</div>
@@ -541,7 +602,7 @@ function updateStats() {
     </div>
     <div class="stat-box">
       <div class="stat-num">${totalDays.size}</div>
-      <div class="stat-label">active days</div>
+      <div class="stat-label">days grinding</div>
     </div>
   `;
 }
@@ -595,8 +656,8 @@ function renderGreeting() {
   else timeMsg = "night owl mode, don't let the brain rot creep in 🦉";
 
   el.innerHTML = `
-    <div class="greeting-name">${greeting}</div>
-    <div class="greeting-sub">${timeMsg}</div>
+    <div class="greeting-name"><span class="text-purple">$</span> ${greeting}</div>
+    <div class="greeting-sub"># ${timeMsg}</div>
   `;
 }
 
@@ -650,8 +711,8 @@ function activateApp() {
   document.getElementById('screenApp').classList.add('active');
   document.getElementById('bottomNav').style.display = 'flex';
   document.getElementById('headerRight').innerHTML = `
-    <button class="btn btn-sm" onclick="resetApp()" title="reset everything">🗑️</button>
-    <button class="btn btn-sm" onclick="goLanding()" title="back to landing">←</button>
+    <button class="btn btn-sm" onclick="resetApp()" title="nuke it all, you masochist">🗑️</button>
+    <button class="btn btn-sm" onclick="goLanding()" title="dip out to the landing">←</button>
   `;
   renderGreeting();
   renderHabits();
@@ -740,9 +801,22 @@ function renderLandingCalendar() {
   container.innerHTML = html;
 }
 
+// recalc every streak/bestStreak from tap history & persist (fixes streaks not saving on load)
+function recalcAllStreaks() {
+  ['starve', 'farm'].forEach(type => {
+    (data.habits[type] || []).forEach(h => {
+      if (!h.taps) h.taps = {};
+      if (typeof h.bestStreak !== 'number') h.bestStreak = 0;
+      calcStreak(h);
+    });
+  });
+  save();
+}
+
 // ─── INIT ───
 function init() {
   load();
+  recalcAllStreaks();
   renderLandingCalendar();
 
   if (data.packName) {
