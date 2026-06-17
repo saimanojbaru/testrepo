@@ -499,7 +499,7 @@ a:hover { text-decoration: underline; }
 /* ─── Stats Row ─── */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   margin: 12px 0;
 }
@@ -539,6 +539,7 @@ a:hover { text-decoration: underline; }
 .text-danger { color: var(--danger); }
 .text-muted { color: var(--fg2); }
 .text-purple { color: var(--purple); }
+.text-cyan { color: var(--cyan); }
 .text-center { text-align: center; }
 .mt-1 { margin-top: 8px; }
 .mt-2 { margin-top: 16px; }
@@ -588,6 +589,63 @@ a:hover { text-decoration: underline; }
   transition: border-color 0.15s;
 }
 .emoji-opt:hover, .emoji-opt.selected { border-color: var(--accent); }
+
+/* ─── Suggestion Chips (habit creation) ─── */
+.sugg-chips {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  max-height: 152px; overflow-y: auto;
+  padding: 2px;
+}
+.sugg-chip {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--fg);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.sugg-chip.starve:hover, .sugg-chip.starve.picked {
+  border-color: var(--danger); color: var(--danger);
+  background: rgba(255,62,108,0.1);
+}
+.sugg-chip.farm:hover, .sugg-chip.farm.picked {
+  border-color: var(--accent); color: var(--accent);
+  background: rgba(200,255,0,0.1);
+}
+.sugg-chip:active { transform: scale(0.94); }
+
+/* ─── Freeze Button (habit row) ─── */
+.habit-freeze {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--cyan);
+  background: rgba(0,229,255,0.08);
+  color: var(--cyan);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.15s;
+  animation: freezePulse 1.8s ease-in-out infinite;
+}
+.habit-freeze:hover { background: var(--cyan); color: var(--bg); }
+.habit-freeze:active { transform: scale(0.88); }
+@keyframes freezePulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(0,229,255,0); }
+  50% { box-shadow: 0 0 14px rgba(0,229,255,0.5); }
+}
+
+/* frozen day marker on calendar */
+.cal-day.frozen {
+  background: rgba(0,229,255,0.18);
+  color: var(--cyan);
+  border: 1px solid rgba(0,229,255,0.4);
+}
 
 @media (min-width: 480px) {
   .stats-row { grid-template-columns: repeat(4, 1fr); }

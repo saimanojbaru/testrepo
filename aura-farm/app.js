@@ -9,6 +9,7 @@ const DB_KEY = 'aura_farm_data';
 const DEFAULT_DATA = {
   packName: '',
   auraPoints: 0,
+  freezes: 3,
   habits: {
     starve: [
       { id: 's1', emoji: '📱', name: 'Doomscrolling', streak: 0, bestStreak: 0, taps: {}, createdAt: Date.now() },
@@ -68,6 +69,72 @@ const FARM_HYPES = [
   "you just gained +10 fuckability, no cap 🍑✨"
 ];
 
+// ─── STREAK FREEZE + BROKEN-STREAK ROASTS ───
+const FREEZE_SAVES = [
+  "🧊 streak FROZEN, your aura's safe this time you lucky bitch",
+  "🧊 freeze token spent — chain protected. don't make slacking a habit",
+  "🧊 saved your streak from the void, you owe me one degenerate",
+  "🧊 cryo-locked that streak. now lock tf back in tomorrow, slut",
+  "🧊 brain rot ALMOST won, but we froze that L. clutch af"
+];
+const FREEZE_BROKE = [
+  "out of freeze tokens, you broke bitch 💀 go farm some aura",
+  "no freezes left — your streak's cooked if you slip, degenerate 🧊❌",
+  "freeze inventory: empty. natural selection time bestie 💀",
+  "you fumbled all your freezes already? skill issue fr 🧊💀"
+];
+const FREEZE_NOTNEEDED = [
+  "yesterday's already locked in, save your freeze you hoarder 🧊",
+  "no gap to freeze bestie, you're already on streak ✨",
+  "nothing to save here, you're not even cooked yet 😌"
+];
+const STREAK_BROKEN_ROASTS = [
+  "💀 your '{name}' streak BROKE. all that grind, gone. you fumbled the bag fr",
+  "💀 '{name}' chain snapped. the NPCs are laughing at you rn",
+  "💀 '{name}' streak reset to 0. hope that slip was worth it bestie",
+  "💀 you let '{name}' die. embarrassing. lock back in immediately, degenerate"
+];
+
+// ─── HABIT SUGGESTIONS (suggestive examples) ───
+const HABIT_SUGGESTIONS = {
+  starve: [
+    { emoji: '🍆', name: 'Gooning' },
+    { emoji: '🥵', name: 'Edging' },
+    { emoji: '💦', name: 'Breaking No-Nut' },
+    { emoji: '🥺', name: 'Simp Behavior' },
+    { emoji: '📸', name: 'Thirst Trapping' },
+    { emoji: '💌', name: 'Sliding into DMs' },
+    { emoji: '🔞', name: 'Watching Porn' },
+    { emoji: '💸', name: 'Subbing to OnlyFans' },
+    { emoji: '📱', name: 'Doomscrolling' },
+    { emoji: '👀', name: 'Stalking the Ex' },
+    { emoji: '🛏️', name: 'Rotting in Bed' },
+    { emoji: '🚬', name: 'Vaping' },
+    { emoji: '🍺', name: 'Drinking' },
+    { emoji: '🎰', name: 'Gambling' },
+    { emoji: '🍔', name: 'Binge Eating' },
+    { emoji: '🎮', name: 'Rage Gaming' }
+  ],
+  farm: [
+    { emoji: '🧘', name: 'Mewing' },
+    { emoji: '🔒', name: 'No-Nut Streak' },
+    { emoji: '😎', name: 'Cold Approach Practice' },
+    { emoji: '💬', name: 'Rizz Practice' },
+    { emoji: '🪞', name: 'Looksmaxxing' },
+    { emoji: '🏋️', name: 'Gym' },
+    { emoji: '🧊', name: 'Cold Shower' },
+    { emoji: '📖', name: 'Reading' },
+    { emoji: '📝', name: 'Journaling' },
+    { emoji: '🌅', name: '5AM Wake Up' },
+    { emoji: '💤', name: '8hr Sleep' },
+    { emoji: '🌱', name: 'Touching Grass' },
+    { emoji: '💧', name: 'Hydrating' },
+    { emoji: '🥗', name: 'Eating Clean' },
+    { emoji: '🏃', name: 'Running' },
+    { emoji: '🧠', name: 'Deep Work' }
+  ]
+};
+
 const RELAPSE_MSGS = [
   "undo detected... you fell off, get back up you degenerate 💀",
   "slipped? it happens bestie. tomorrow we lock back in 😤",
@@ -101,7 +168,7 @@ const SQUAD_ACTIONS = [
   "i am become aura, destroyer of brain rot 💀🔥"
 ];
 
-const EMOJI_OPTIONS = ['📱','🍆','🛏️','🚬','🍔','🎮','🍺','💊','🎰','🤡','🏋️','📖','🧊','🧘','💤','🏃','💧','🥗','📝','🧠','💪','🌅','🎯','🔥'];
+const EMOJI_OPTIONS = ['📱','🍆','🥵','💦','🥺','📸','💌','🔞','💸','👀','🛏️','🚬','🍺','🎰','🍔','🎮','🔒','😎','💬','🪞','🏋️','📖','🧊','🧘','💤','🏃','💧','🥗','📝','🧠','💪','🌅','🌱','🎯','🔥'];
 
 const GREETINGS = [
   "sup {name}, you thirsty bitch 💦",
@@ -116,9 +183,14 @@ const GREETINGS = [
 let data = {};
 let currentTab = 'tabDen';
 
-function todayKey() {
-  const d = new Date();
+function dateKey(d) {
   return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function todayKey() { return dateKey(new Date()); }
+function yesterdayKey() {
+  const d = new Date();
+  d.setDate(d.getDate() - 1);
+  return dateKey(d);
 }
 
 function load() {
@@ -128,6 +200,7 @@ function load() {
       data = JSON.parse(raw);
       if (!data.habits) data.habits = DEFAULT_DATA.habits;
       if (!data.commits) data.commits = [];
+      if (typeof data.freezes !== 'number') data.freezes = 3;
       if (data.calMonth === undefined) { data.calMonth = new Date().getMonth(); data.calYear = new Date().getFullYear(); }
     } else {
       data = JSON.parse(JSON.stringify(DEFAULT_DATA));
@@ -145,22 +218,34 @@ function rand(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 function uid() { return '_' + Math.random().toString(36).slice(2, 9); }
 
 // ─── STREAKS ───
+// A day "counts" if it's tapped (true) OR frozen ('frozen').
+// Today is a grace period: not tapping today yet doesn't nuke the streak —
+// we start counting from yesterday until a full day is actually missed.
 function calcStreak(habit) {
-  const today = new Date();
   let streak = 0;
-  let d = new Date(today);
-  while (true) {
-    const key = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
-    if (habit.taps[key]) {
-      streak++;
-      d.setDate(d.getDate() - 1);
-    } else {
-      break;
-    }
+  let d = new Date();
+  if (!habit.taps[dateKey(d)]) {
+    d.setDate(d.getDate() - 1); // today still in progress, count from yesterday
+  }
+  while (habit.taps[dateKey(d)]) {
+    streak++;
+    d.setDate(d.getDate() - 1);
   }
   habit.streak = streak;
   if (streak > habit.bestStreak) habit.bestStreak = streak;
   return streak;
+}
+
+// count how many days in the current streak were saved by a freeze
+function frozenInStreak(habit) {
+  let frozen = 0;
+  let d = new Date();
+  if (!habit.taps[dateKey(d)]) d.setDate(d.getDate() - 1);
+  while (habit.taps[dateKey(d)]) {
+    if (habit.taps[dateKey(d)] === 'frozen') frozen++;
+    d.setDate(d.getDate() - 1);
+  }
+  return frozen;
 }
 
 // ─── TOAST SYSTEM ───
@@ -248,17 +333,24 @@ function renderHabitList(type, containerId) {
   container.innerHTML = habits.map(h => {
     const tapped = !!h.taps[today];
     const streak = calcStreak(h);
+    const frozen = frozenInStreak(h);
     const tapClass = tapped ? (type === 'starve' ? 'tapped-bad' : 'tapped') : '';
+    const frozenTag = frozen > 0 ? ` <span class="text-cyan">🧊x${frozen}</span>` : '';
     const streakText = streak > 0
       ? `🔥 ${streak}d streak, you slut for progress`
       : (type === 'starve' ? 'no streak, you cooked 💀' : 'no streak, lock tf in 🔒');
+    // freeze is offered when yesterday is a gap but there WAS a chain before it
+    // (the day before yesterday was kept) — i.e. a real streak is salvageable
+    const dby = new Date(); dby.setDate(dby.getDate() - 2);
+    const atRisk = !h.taps[yesterdayKey()] && !!h.taps[dateKey(dby)];
     return `
       <div class="habit-item">
         <span class="habit-emoji">${h.emoji}</span>
         <div class="habit-info">
           <div class="habit-name">${h.name}</div>
-          <div class="habit-streak">${streakText} · best: ${h.bestStreak}d</div>
+          <div class="habit-streak">${streakText}${frozenTag} · best: ${h.bestStreak}d</div>
         </div>
+        ${atRisk ? `<button class="habit-freeze" onclick="freezeStreak('${type}','${h.id}')" title="freeze yesterday's gap (${data.freezes} left)">🧊</button>` : ''}
         <button class="habit-tap ${tapClass}" data-tap="${h.id}" onclick="tapHabit('${type}','${h.id}',event)" title="${tapped ? 'undo, you fell off' : 'tap it, lock in'}">
           ${tapped ? '✓' : (type === 'starve' ? '🚫' : '✨')}
         </button>
@@ -266,6 +358,23 @@ function renderHabitList(type, containerId) {
       </div>
     `;
   }).join('');
+}
+
+// ─── STREAK FREEZE ───
+function freezeStreak(type, id) {
+  const habit = data.habits[type].find(h => h.id === id);
+  if (!habit) return;
+  const yKey = yesterdayKey();
+  if (habit.taps[yKey]) { toast(rand(FREEZE_NOTNEEDED), 'good'); return; }
+  if (data.freezes <= 0) { toast(rand(FREEZE_BROKE), 'bad'); return; }
+
+  habit.taps[yKey] = 'frozen';
+  data.freezes--;
+  calcStreak(habit);
+  habit.lastStreak = habit.streak;
+  save();
+  renderHabits();
+  toast(rand(FREEZE_SAVES), 'good');
 }
 
 // ─── TAP HABIT ───
@@ -299,6 +408,7 @@ function tapHabit(type, id, evt) {
   }
 
   calcStreak(habit);
+  habit.lastStreak = habit.streak;
   save();
   renderHabits();
 }
@@ -332,12 +442,30 @@ function deleteHabit(type, id) {
 // ─── ADD HABIT MODAL ───
 function openAddHabit(type) {
   const modal = document.getElementById('modalContent');
-  const title = type === 'starve' ? '💀 ADD BRAIN ROT TO STARVE' : '✨ ADD AURA HABIT TO FARM';
-  const placeholder = type === 'starve' ? 'e.g. doomscrolling, vaping...' : 'e.g. gym, reading, mewing...';
+  const title = type === 'starve' ? '💀 STARVE THAT BRAIN ROT' : '✨ FARM THAT AURA';
+  const subtitle = type === 'starve'
+    ? 'pick a degenerate habit to starve, or name your own poison 🚫'
+    : 'pick a habit to farm aura with, or write your own grind ✨';
+  const placeholder = type === 'starve'
+    ? 'or type it... gooning, simp behavior, thirst trapping...'
+    : 'or type it... mewing, cold approach, no-nut streak...';
+  const suggestions = HABIT_SUGGESTIONS[type] || [];
 
   modal.innerHTML = `
     <h3>${title}</h3>
-    <label style="font-size:0.7rem;color:var(--fg2);margin-bottom:4px;display:block;">pick an emoji, bestie</label>
+    <p style="font-size:0.7rem;color:var(--fg2);margin-bottom:10px;">${subtitle}</p>
+
+    <label style="font-size:0.65rem;color:var(--fg2);margin-bottom:6px;display:block;">
+      ${type === 'starve' ? '// tap a brain rot to add it 💀' : '// tap a habit to add it ✨'}
+    </label>
+    <div class="sugg-chips">
+      ${suggestions.map((s, i) => `
+        <button class="sugg-chip ${type}" onclick="fillSuggestion('${type}',${i})">
+          <span>${s.emoji}</span> ${s.name}
+        </button>`).join('')}
+    </div>
+
+    <label style="font-size:0.65rem;color:var(--fg2);margin:12px 0 6px;display:block;">// or roll your own — pick an emoji bestie</label>
     <div class="emoji-picker" id="emojiPicker">
       ${EMOJI_OPTIONS.map((e, i) => `<button class="emoji-opt ${i===0?'selected':''}" onclick="pickEmoji(this,'${e}')" data-emoji="${e}">${e}</button>`).join('')}
     </div>
@@ -356,6 +484,23 @@ function pickEmoji(btn, emoji) {
   selectedEmoji = emoji;
   document.querySelectorAll('.emoji-opt').forEach(e => e.classList.remove('selected'));
   btn.classList.add('selected');
+}
+
+// pre-fill the form from a suggestion chip
+function fillSuggestion(type, idx) {
+  const s = HABIT_SUGGESTIONS[type][idx];
+  if (!s) return;
+  selectedEmoji = s.emoji;
+  const input = document.getElementById('habitNameInput');
+  if (input) input.value = s.name;
+  // sync the emoji picker highlight if this emoji is in the grid
+  document.querySelectorAll('.emoji-opt').forEach(e => {
+    e.classList.toggle('selected', e.dataset.emoji === s.emoji);
+  });
+  // highlight the chosen chip
+  document.querySelectorAll('.sugg-chip').forEach(c => c.classList.remove('picked'));
+  const chips = document.querySelectorAll('.sugg-chip');
+  if (chips[idx]) chips[idx].classList.add('picked');
 }
 
 function addHabit(type) {
@@ -542,9 +687,13 @@ function renderCalendar(containerId) {
   const today = new Date();
 
   const allTapDays = new Set();
+  const frozenDays = new Set();
   ['starve', 'farm'].forEach(type => {
     (data.habits[type] || []).forEach(h => {
-      Object.keys(h.taps).forEach(k => allTapDays.add(k));
+      Object.entries(h.taps).forEach(([k, v]) => {
+        if (v === 'frozen') frozenDays.add(k);
+        else allTapDays.add(k);
+      });
     });
   });
 
@@ -560,10 +709,12 @@ function renderCalendar(containerId) {
     const key = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
     const isToday = d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
     const hasTaps = allTapDays.has(key);
+    const isFrozen = frozenDays.has(key) && !hasTaps;
     const classes = ['cal-day'];
     if (isToday) classes.push('today');
     if (hasTaps) classes.push('has-taps');
-    html += `<div class="${classes.join(' ')}">${d}</div>`;
+    else if (isFrozen) classes.push('frozen');
+    html += `<div class="${classes.join(' ')}">${isFrozen ? '🧊' : d}</div>`;
   }
 
   html += '</div>';
@@ -603,6 +754,10 @@ function updateStats() {
     <div class="stat-box">
       <div class="stat-num">${totalDays.size}</div>
       <div class="stat-label">days grinding</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num text-cyan">🧊${data.freezes ?? 0}</div>
+      <div class="stat-label">freeze tokens</div>
     </div>
   `;
 }
@@ -801,26 +956,40 @@ function renderLandingCalendar() {
   container.innerHTML = html;
 }
 
-// recalc every streak/bestStreak from tap history & persist (fixes streaks not saving on load)
+// recalc every streak/bestStreak from tap history & persist (fixes streaks not
+// saving on load). Returns habits whose streak just died since last session.
 function recalcAllStreaks() {
+  const broken = [];
   ['starve', 'farm'].forEach(type => {
     (data.habits[type] || []).forEach(h => {
       if (!h.taps) h.taps = {};
       if (typeof h.bestStreak !== 'number') h.bestStreak = 0;
+      const prev = typeof h.lastStreak === 'number' ? h.lastStreak : 0;
       calcStreak(h);
+      if (prev >= 2 && h.streak === 0) broken.push(h);
+      h.lastStreak = h.streak;
     });
   });
   save();
+  return broken;
 }
 
 // ─── INIT ───
 function init() {
   load();
-  recalcAllStreaks();
+  const broken = recalcAllStreaks();
   renderLandingCalendar();
 
   if (data.packName) {
     activateApp();
+    // roast the user for any streak they let die since last time
+    if (broken.length) {
+      setTimeout(() => {
+        broken.slice(0, 3).forEach((h, i) => {
+          setTimeout(() => toast(rand(STREAK_BROKEN_ROASTS).replace('{name}', h.name), 'bad'), i * 600);
+        });
+      }, 900);
+    }
   }
 
   if ('serviceWorker' in navigator) {
