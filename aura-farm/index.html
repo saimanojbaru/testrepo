@@ -1,331 +1,1151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Starve that fucking Brain Rot. Farm your Aura, no cap.">
-  <title>Aura Farm</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icons/icon-192.svg">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Starve that fucking Brain Rot. Farm your Aura, no cap.">
+<title>Aura Farm</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;
+--fg:#e0e0e0;--fg2:#888;
+--accent:#c8ff00;--danger:#ff3e6c;--purple:#b388ff;--cyan:#00e5ff;
+--border:#2a2a2a;
+--glow-a:rgba(200,255,0,.5);--glow-d:rgba(255,62,108,.5);
+--r:8px;
+--mono:'SF Mono','Fira Code','Cascadia Code','JetBrains Mono',Consolas,monospace;
+}
+html{font-size:15px;-webkit-text-size-adjust:100%}
+body{font-family:var(--mono);background:var(--bg);color:var(--fg);min-height:100dvh;line-height:1.6;
+-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:72px;
+-webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;
+background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.015) 2px,rgba(255,255,255,.015) 4px);mix-blend-mode:overlay}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.container{max-width:640px;margin:0 auto;padding:0 16px}
+/* HEADER */
+.header{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.9);backdrop-filter:blur(16px);
+border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items:center;justify-content:space-between}
+.header-left{display:flex;align-items:center;gap:10px}
+.header-logo{font-size:1.4rem;animation:logoBr 3s ease-in-out infinite;filter:drop-shadow(0 0 8px var(--glow-a))}
+@keyframes logoBr{0%,100%{transform:scale(1);filter:drop-shadow(0 0 6px var(--glow-a))}50%{transform:scale(1.06);filter:drop-shadow(0 0 16px var(--glow-a))}}
+.header-title{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.header-sub{font-size:.6rem;color:var(--fg2)}
+/* BUTTONS */
+.btn{font-family:var(--mono);font-size:.75rem;padding:8px 16px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);
+border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn:active{transform:scale(.95)}
+.btn-accent{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700;box-shadow:0 0 14px rgba(200,255,0,.2)}
+.btn-danger{border-color:var(--danger);color:var(--danger);background:transparent}
+.btn-sm{padding:4px 10px;font-size:.7rem}
+.btn-block{width:100%;text-align:center}
+.glow-btn{box-shadow:0 0 15px rgba(0,255,159,.5);transition:all .2s}
+.glow-btn:hover{box-shadow:0 0 25px rgba(0,255,159,.6)}
+/* CARDS */
+.card{background:rgba(17,17,17,.7);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin:10px 0;
+backdrop-filter:blur(8px);transition:border-color .3s,box-shadow .3s}
+.card:hover{border-color:rgba(0,255,159,.3);box-shadow:0 0 16px rgba(0,255,159,.08)}
+/* SECTION TITLES */
+.sec-title{font-size:.7rem;color:var(--fg2);text-transform:uppercase;letter-spacing:2px;margin:20px 0 8px;
+padding-bottom:6px;border-bottom:1px solid var(--border)}
+.sec-title::before{content:'## ';color:var(--purple);font-weight:700;text-shadow:0 0 10px rgba(179,136,255,.4)}
+.sec-title.neon-a{text-shadow:0 0 8px #00ff9f,0 0 16px #00ffff;animation:auraPulse 1.5s infinite alternate ease-in-out}
+.sec-title.neon-r{text-shadow:0 0 8px #ff0044,0 0 20px #c300ff;animation:rotShake .4s linear infinite}
+@keyframes auraPulse{from{filter:brightness(1)}to{filter:brightness(1.4)}}
+@keyframes rotShake{0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(2px,-2px)}100%{transform:translate(0)}}
+/* AURA DISPLAY */
+.aura-display{text-align:center;padding:20px 0 10px;position:relative}
+.aura-num{font-size:3.2rem;font-weight:900;color:var(--accent);line-height:1;display:inline-block;
+text-shadow:0 0 10px var(--glow-a),0 0 40px rgba(200,255,0,.25);animation:cPulse 4s ease-in-out infinite}
+@keyframes cPulse{0%,100%{text-shadow:0 0 10px var(--glow-a),0 0 40px rgba(200,255,0,.25)}
+50%{text-shadow:0 0 30px var(--glow-a),0 0 80px rgba(200,255,0,.4),0 0 140px rgba(200,255,0,.15)}}
+.aura-num.glow-gain{animation:aGlow .8s ease}
+.aura-num.glow-loss{animation:aLoss .6s ease}
+@keyframes aGlow{0%{transform:scale(1)}30%{transform:scale(1.2);color:#fff;text-shadow:0 0 20px #fff,0 0 60px var(--accent)}100%{transform:scale(1);color:var(--accent)}}
+@keyframes aLoss{0%{transform:scale(1)}15%{transform:translateX(-6px);color:var(--danger)}40%{transform:translateX(6px)}70%{transform:translateX(-3px)}100%{transform:scale(1);color:var(--accent)}}
+.aura-label{font-size:.7rem;color:var(--fg2);text-transform:uppercase;letter-spacing:3px;margin-top:4px}
+.aura-change{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700;margin-top:6px;animation:fadeUp .4s ease}
+.aura-change.gain{background:rgba(200,255,0,.15);color:var(--accent)}
+.aura-change.loss{background:rgba(255,62,108,.15);color:var(--danger)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* STATS ROW */
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.stat-box{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:10px 6px;text-align:center}
+.stat-n{font-size:1.3rem;font-weight:900;color:var(--accent);text-shadow:0 0 8px var(--glow-a)}
+.stat-l{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+/* LEVEL CARD */
+.lvl-card{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin:10px 0}
+.lvl-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.lvl-icon{font-size:1.8rem;filter:drop-shadow(0 0 8px var(--glow-a));animation:logoBr 3s ease-in-out infinite}
+.lvl-title{font-size:.9rem;font-weight:900;color:var(--accent);text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.lvl-name{font-size:.65rem;color:var(--purple);font-style:italic;text-shadow:0 0 8px rgba(179,136,255,.4)}
+.lvl-bar-wrap{height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
+.lvl-bar{height:100%;background:linear-gradient(90deg,var(--accent),#00ff9f);border-radius:3px;transition:width .6s;box-shadow:0 0 8px var(--glow-a)}
+.lvl-next{font-size:.58rem;color:var(--fg2);margin-top:5px;text-align:right}
+/* HABIT ITEMS */
+.habit{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(26,26,26,.8);border:1px solid var(--border);
+border-radius:var(--r);margin:6px 0;transition:border-color .2s,box-shadow .3s,transform .2s}
+.habit:hover{border-color:rgba(0,255,159,.3);box-shadow:0 0 14px rgba(0,255,159,.08);transform:translateY(-1px)}
+.habit-emoji{font-size:1.2rem;flex-shrink:0}
+.habit-info{flex:1;min-width:0}
+.habit-name{font-size:.78rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.habit-streak{font-size:.62rem;color:var(--fg2)}
+.tap-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:transparent;color:var(--fg);
+font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+transition:all .15s cubic-bezier(.34,1.56,.64,1);touch-action:manipulation;-webkit-user-select:none;user-select:none;position:relative}
+.tap-btn:hover{border-color:var(--accent);background:rgba(200,255,0,.08)}
+.tap-btn:active{transform:scale(.85);box-shadow:0 0 40px currentColor}
+.tap-btn.tapped{border-color:var(--accent);background:var(--accent);color:var(--bg);
+box-shadow:0 0 22px var(--glow-a);animation:tapPop .35s cubic-bezier(.34,1.56,.64,1)}
+.tap-btn.tapped-bad{border-color:var(--danger);background:var(--danger);color:#fff;
+box-shadow:0 0 22px var(--glow-d);animation:tapPop .35s,rotGlitch .3s}
+@keyframes tapPop{0%{transform:scale(1)}45%{transform:scale(1.35) rotate(-8deg)}70%{transform:scale(.92) rotate(4deg)}100%{transform:scale(1)}}
+@keyframes rotGlitch{0%,100%{filter:none}20%{filter:hue-rotate(30deg) brightness(1.5)}60%{filter:hue-rotate(-20deg) brightness(.8);transform:translateX(-2px)}}
+.del-btn{background:none;border:none;color:var(--fg2);cursor:pointer;font-size:.7rem;padding:4px;opacity:0;transition:opacity .2s}
+.habit:hover .del-btn{opacity:1}
+/* BOTTOM NAV */
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);
+border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom,0)}
+.nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px;
+color:var(--fg2);font-size:.5rem;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:none;
+font-family:var(--mono);gap:2px;touch-action:manipulation;-webkit-user-select:none;user-select:none;transition:color .2s;position:relative}
+.nav-btn:active{transform:scale(.92)}
+.nav-btn.active{color:var(--accent)}
+.nav-btn.active::after{content:'';position:absolute;top:0;left:15%;right:15%;height:3px;background:var(--accent);
+border-radius:0 0 3px 3px;box-shadow:0 0 12px var(--glow-a)}
+.nav-icon{font-size:1.1rem}
+/* TOAST */
+.toast-wrap{position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:999;display:flex;flex-direction:column;gap:8px;
+pointer-events:none;width:90%;max-width:400px}
+.toast{background:rgba(17,17,17,.95);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:.73rem;
+color:var(--fg);animation:tIn .25s ease,tOut .3s ease 2.5s forwards;pointer-events:auto;backdrop-filter:blur(8px)}
+.toast.good{border-color:var(--accent);box-shadow:0 0 12px rgba(200,255,0,.1)}
+.toast.bad{border-color:var(--danger);box-shadow:0 0 12px rgba(255,62,108,.1)}
+@keyframes tIn{from{opacity:0;transform:translateY(-12px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes tOut{from{opacity:1}to{opacity:0;transform:translateY(-12px)}}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;display:none;align-items:flex-end;justify-content:center;
+animation:fadeIn .2s;backdrop-filter:blur(4px)}
+.modal-overlay.show{display:flex}
+.modal{background:rgba(17,17,17,.95);border:1px solid var(--border);border-top:1px solid rgba(200,255,0,.15);
+border-radius:14px 14px 0 0;width:100%;max-width:640px;max-height:80vh;overflow-y:auto;padding:20px;
+animation:slideUp .25s cubic-bezier(.22,1,.36,1);backdrop-filter:blur(16px)}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal h3{font-size:.85rem;color:var(--accent);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.modal input{width:100%;font-family:var(--mono);font-size:.8rem;padding:10px 12px;background:var(--bg);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);margin-bottom:12px;outline:none;transition:border-color .2s}
+.modal input:focus{border-color:var(--accent);box-shadow:0 0 10px rgba(200,255,0,.1)}
+.modal-actions{display:flex;gap:8px;margin-top:8px}.modal-actions .btn{flex:1}
+/* TAB CONTENT */
+.tab{display:none}.tab.active{display:block;animation:tabIn .2s ease}
+@keyframes tabIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* FLOATING +AP */
+.ap-float{position:fixed;z-index:998;font-family:var(--mono);font-weight:900;font-size:1.1rem;pointer-events:none;animation:apF 1s ease-out forwards}
+.ap-float.gain{color:var(--accent);text-shadow:0 0 12px var(--glow-a)}
+.ap-float.loss{color:var(--danger);text-shadow:0 0 12px var(--glow-d)}
+@keyframes apF{0%{opacity:0;transform:translate(-50%,0) scale(.6)}20%{opacity:1;transform:translate(-50%,-16px) scale(1.15)}100%{opacity:0;transform:translate(-50%,-90px) scale(.85)}}
+/* CONFETTI CANVAS */
+#confettiCanvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:997}
+/* EMOJI PICKER */
+.emoji-grid{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}
+.emoji-opt{font-size:1.2rem;cursor:pointer;padding:5px;border-radius:6px;border:2px solid transparent;background:none;transition:all .2s;touch-action:manipulation}
+.emoji-opt.sel{border-color:var(--accent);box-shadow:0 0 8px rgba(200,255,0,.2)}
+/* SUGG CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:5px;max-height:140px;overflow-y:auto;padding:2px}
+.chip{font-family:var(--mono);font-size:.65rem;padding:5px 9px;border:1px solid var(--border);background:var(--bg3);color:var(--fg);
+border-radius:14px;cursor:pointer;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;touch-action:manipulation}
+.chip:active{transform:scale(.92)}
+.chip.s:hover,.chip.s.picked{border-color:var(--danger);color:var(--danger);background:rgba(255,62,108,.1)}
+.chip.f:hover,.chip.f.picked{border-color:var(--accent);color:var(--accent);background:rgba(200,255,0,.1)}
+/* SQUAD */
+.sq-item{display:flex;gap:10px;align-items:flex-start;padding:10px 6px;border-bottom:1px solid var(--border);font-size:.73rem;
+animation:sqIn .5s ease backwards;transition:transform .2s,background .2s;border-radius:4px}
+.sq-item:nth-child(1){animation-delay:0s}.sq-item:nth-child(2){animation-delay:.08s}.sq-item:nth-child(3){animation-delay:.16s}
+.sq-item:nth-child(4){animation-delay:.24s}.sq-item:nth-child(5){animation-delay:.32s}.sq-item:nth-child(6){animation-delay:.4s}
+@keyframes sqIn{from{opacity:0;transform:translateY(24px)}60%{opacity:1;transform:translateY(-2px)}to{transform:translateY(0)}}
+.sq-item:hover{transform:translateY(-2px);background:rgba(200,255,0,.02)}
+.sq-item:last-child{border-bottom:none}
+.sq-av{font-size:1.3rem;flex-shrink:0}
+.sq-name{color:var(--purple);font-weight:600;text-shadow:0 0 8px rgba(179,136,255,.4)}
+.sq-time{color:var(--fg2);font-size:.58rem}
+.sq-msg{color:var(--fg);margin-top:2px}
+/* SHOP */
+.shop-bal{font-size:.85rem;font-weight:700;padding:8px 0;text-align:center;text-shadow:0 0 8px var(--glow-a)}
+.shop-tabs{display:flex;gap:6px;margin-bottom:12px}
+.shop-tab{flex:1;padding:7px 4px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg3);color:var(--fg2);
+font-family:var(--mono);font-size:.68rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.shop-tab.active{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
+.shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.shop-card{background:rgba(26,26,26,.8);border:1px solid var(--border);border-radius:var(--r);padding:12px 8px;text-align:center;
+transition:all .2s;touch-action:manipulation}
+.shop-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.shop-card.owned{border-color:var(--purple)}
+.shop-card.equipped{border-color:var(--accent);box-shadow:0 0 14px rgba(200,255,0,.15)}
+.shop-card.locked{opacity:.4}
+.shop-av{font-size:2rem;margin-bottom:5px}
+.shop-nm{font-size:.7rem;font-weight:700;margin-bottom:2px}
+.shop-ds{font-size:.58rem;color:var(--fg2);margin-bottom:6px;min-height:22px}
+/* CALENDAR */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:8px}
+.cal-h{font-size:.58rem;color:var(--fg2);text-align:center;padding:4px 0}
+.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.63rem;border-radius:5px;color:var(--fg2);
+cursor:pointer;transition:transform .12s,box-shadow .2s,background .2s;border:1px solid transparent;touch-action:manipulation}
+.cal-d:not(.empty):hover{transform:scale(1.15);z-index:2}
+.cal-d.empty{opacity:0;cursor:default}
+.cal-d.a1{background:rgba(200,255,0,.14);color:var(--accent)}
+.cal-d.a2{background:rgba(200,255,0,.3);color:#eaff7a;font-weight:600;box-shadow:0 0 8px rgba(200,255,0,.3)}
+.cal-d.a3{background:rgba(200,255,0,.55);color:#0a0a0a;font-weight:800;box-shadow:0 0 14px rgba(200,255,0,.6)}
+.cal-d.rot{background:rgba(255,62,108,.25);color:var(--danger);font-weight:600;box-shadow:0 0 8px var(--glow-d)}
+.cal-d.frozen{background:rgba(0,229,255,.18);color:var(--cyan);border:1px solid rgba(0,229,255,.4)}
+.cal-d.today{border:2px solid var(--accent);color:var(--fg);font-weight:700;box-shadow:0 0 12px var(--glow-a);animation:todayG 2s ease-in-out infinite}
+@keyframes todayG{0%,100%{box-shadow:0 0 12px var(--glow-a)}50%{box-shadow:0 0 20px var(--glow-a),inset 0 0 10px rgba(200,255,0,.1)}}
+.cal-d.sel{outline:2px solid var(--purple);outline-offset:1px;transform:scale(1.15);z-index:3}
+.cal-legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.58rem;color:var(--fg2);margin-top:8px;justify-content:center}
+.cal-legend span{display:inline-flex;align-items:center;gap:4px}
+.ldot{width:10px;height:10px;border-radius:3px;display:inline-block}
+.ldot.a{background:rgba(200,255,0,.55)}.ldot.r{background:rgba(255,62,108,.5)}.ldot.i{background:rgba(0,229,255,.5)}
+.day-sum{margin-top:12px;border-top:1px dashed var(--border);padding-top:10px;animation:fadeIn .25s;font-size:.72rem}
+.day-sum .ds-date{font-size:.76rem;font-weight:700;color:var(--purple);margin-bottom:6px}
+.day-sum .ds-row{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0;font-size:.7rem}
+.ds-tag{display:inline-flex;align-items:center;gap:3px;padding:3px 7px;border-radius:12px;font-size:.66rem;
+border:1px solid var(--border);background:rgba(26,26,26,.8)}
+.ds-tag.good{border-color:var(--accent);color:var(--accent)}.ds-tag.rot{border-color:var(--danger);color:var(--danger)}
+/* CHALLENGE */
+.ch-card{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:12px;margin:8px 0;transition:all .2s}
+.ch-card:hover{border-color:rgba(179,136,255,.35);box-shadow:0 0 12px rgba(179,136,255,.1);transform:translateY(-1px)}
+.ch-card.done{border-color:var(--accent);box-shadow:0 0 10px rgba(200,255,0,.12)}
+.ch-card.claimed{opacity:.45}
+.ch-head{display:flex;align-items:flex-start;gap:8px}
+.ch-icon{font-size:1.3rem;flex-shrink:0}
+.ch-info{flex:1;min-width:0}
+.ch-nm{font-size:.75rem;font-weight:700}.ch-ds{font-size:.6rem;color:var(--fg2);margin-top:2px}
+.ch-bar-w{height:4px;background:var(--bg);border-radius:2px;overflow:hidden;margin:8px 0 3px}
+.ch-bar{height:100%;background:linear-gradient(90deg,var(--purple),#ff00ff);border-radius:2px;transition:width .5s;box-shadow:0 0 6px rgba(179,136,255,.5)}
+.ch-prog{font-size:.58rem;color:var(--fg2)}.ch-rw{font-size:.58rem;color:var(--accent);margin-top:4px}
+/* ANALYTICS */
+.an-bars{display:flex;align-items:flex-end;gap:5px;height:90px}
+.an-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%}
+.an-val{font-size:.58rem;color:var(--fg2);font-weight:700}
+.an-track{flex:1;width:100%;display:flex;align-items:flex-end}
+.an-bar{width:100%;background:linear-gradient(180deg,var(--accent),rgba(200,255,0,.4));border-radius:3px 3px 0 0;min-height:3px;
+transition:height .5s;box-shadow:0 0 6px rgba(200,255,0,.3)}
+.an-bar.today{background:linear-gradient(180deg,#00ff9f,var(--accent));box-shadow:0 0 12px rgba(0,255,159,.5)}
+.an-bar.empty{background:rgba(255,62,108,.3);box-shadow:0 0 4px rgba(255,62,108,.2)}
+.an-lbl{font-size:.5rem;color:var(--fg2);text-transform:uppercase}
+.an-lbl.today{color:var(--accent);font-weight:700}
+.an-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.an-stat{text-align:center;padding:6px 3px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
+.an-sn{display:block;font-size:.95rem;font-weight:900;color:var(--accent);text-shadow:0 0 6px var(--glow-a)}
+.an-sl{display:block;font-size:.48rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:1px}
+.an-roast{font-size:.7rem;padding:8px 10px;background:rgba(200,255,0,.04);border-left:3px solid var(--accent);
+border-radius:0 var(--r) var(--r) 0;margin-top:8px;line-height:1.5}
+/* ACTIVITY */
+.act-item{display:flex;align-items:center;gap:7px;padding:7px 8px;font-size:.68rem;border-bottom:1px solid rgba(42,42,42,.5)}
+.act-item:last-child{border-bottom:none}
+.act-icon{font-size:.95rem;flex-shrink:0}
+.act-msg{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.act-time{flex-shrink:0;font-size:.58rem;color:var(--fg2)}
+/* CHECKIN */
+.ck-btn{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;background:rgba(26,26,26,.8);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);font-family:var(--mono);font-size:.78rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
+.ck-btn:hover{border-color:var(--accent);background:rgba(200,255,0,.05);transform:translateX(4px)}
+.ck-btn:active{transform:scale(.97);box-shadow:0 0 20px rgba(200,255,0,.2)}
+.ck-emoji{font-size:1.4rem}.ck-label{flex:1;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.ck-pts{font-size:.63rem;color:var(--accent);font-weight:700}
+/* INPUT */
+.input-row{display:flex;gap:8px;margin:10px 0}
+.input-row input{flex:1;font-family:var(--mono);font-size:.8rem;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);outline:none;transition:border-color .2s}
+.input-row input:focus{border-color:var(--accent)}
+/* REWARD */
+.rw-item{display:flex;align-items:center;gap:10px;padding:10px;background:rgba(26,26,26,.8);border:1px solid var(--border);
+border-radius:var(--r);margin:5px 0;transition:all .2s}
+.rw-item.locked{opacity:.4}
+.rw-item.unlocked{border-color:var(--accent);box-shadow:0 0 8px rgba(200,255,0,.08)}
+.rw-icon{font-size:1.4rem}.rw-info{flex:1}.rw-nm{font-size:.78rem;font-weight:600}
+.rw-ds{font-size:.62rem;color:var(--fg2)}.rw-cost{font-size:.68rem;color:var(--accent);font-weight:700}
+/* GREETING */
+.greeting{padding:16px 0 6px;font-size:.88rem}
+.greeting-name{color:var(--accent);font-weight:700;text-shadow:0 0 8px var(--glow-a)}
+.greeting-sub{font-size:.68rem;color:var(--fg2);margin-top:3px}
+.greeting-title{font-size:.63rem;color:var(--purple);margin-top:2px;font-style:italic}
+/* MISC */
+.text-accent{color:var(--accent)}.text-danger{color:var(--danger)}.text-muted{color:var(--fg2)}.text-purple{color:var(--purple)}.text-cyan{color:var(--cyan)}
+.text-center{text-align:center}.mt-1{margin-top:8px}.mt-2{margin-top:16px}.mb-1{margin-bottom:8px}
+.flex-between{display:flex;justify-content:space-between;align-items:center}
+/* FREEZE BTN */
+.freeze-btn{width:36px;height:36px;border-radius:50%;border:2px solid var(--cyan);background:rgba(0,229,255,.08);color:var(--cyan);
+font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;
+animation:fPulse 1.8s ease-in-out infinite;touch-action:manipulation}
+.freeze-btn:hover{background:var(--cyan);color:var(--bg)}
+.freeze-btn:active{transform:scale(.88)}
+@keyframes fPulse{0%,100%{box-shadow:0 0 0 rgba(0,229,255,0)}50%{box-shadow:0 0 12px rgba(0,229,255,.5)}}
+/* LOADING */
+.loading{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+background:var(--bg);transition:opacity .4s}
+.loading.hidden{opacity:0;pointer-events:none}
+.loading-text{font-size:1rem;color:var(--accent);text-transform:uppercase;letter-spacing:3px;text-shadow:0 0 10px var(--glow-a);animation:ldGlitch 2s infinite}
+.loading-sub{font-size:.58rem;color:var(--fg2);letter-spacing:2px}
+@keyframes ldGlitch{0%,90%,100%{opacity:1;transform:none}91%{opacity:.7;transform:translateX(-4px) skewX(3deg)}93%{opacity:1;transform:translateX(3px) skewX(-2deg)}95%{opacity:.8;transform:translateX(-2px)}97%{opacity:.6;transform:translateX(1px) skewX(1deg)}}
+/* GLITCH */
+.glitch{animation:glitch 3s infinite}
+@keyframes glitch{0%,92%,100%{opacity:1;transform:none}93%{opacity:.8;transform:translate(-3px,1px) skewX(2deg);filter:hue-rotate(40deg)}94%{opacity:1;transform:translate(2px,-1px);filter:hue-rotate(-20deg)}96%{opacity:.7;transform:translate(1px,2px) skewX(1deg)}97%{opacity:1;transform:none;filter:none}}
+/* QUIT TIMER */
+.qt-card{margin:6px 0;padding:10px 12px}
+.qt-bar{height:4px;background:var(--bg);border-radius:2px;overflow:hidden;margin-top:6px}
+.qt-fill{height:100%;border-radius:2px;transition:width .3s}
+/* COMMIT LOG */
+.commit{padding:8px 10px;margin:5px 0;background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);font-size:.72rem}
+.commit .cm-date{color:var(--fg2);font-size:.6rem}.commit .cm-text{color:var(--accent)}
+@media(min-width:480px){.stats-row,.an-stats{grid-template-columns:repeat(4,1fr)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body>
 
-  <!-- ═══════════ LOADING SCREEN ═══════════ -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-text">farming aura...</div>
-    <div class="loading-sub">starving brain rot since 2026 💀</div>
-  </div>
+<!-- LOADING -->
+<div class="loading" id="loadingScreen">
+<div class="loading-text">farming aura...</div>
+<div class="loading-sub">starving brain rot since 2026 💀</div>
+</div>
 
-  <!-- ═══════════ HEADER ═══════════ -->
-  <header class="header">
-    <div class="header-left">
-      <span class="header-logo glitch">🧠</span>
-      <div>
-        <div class="header-title neon-aura">AURA FARM</div>
-        <div class="header-version">v2.0 — brain rot slayer, aura whore</div>
-      </div>
-    </div>
-    <div class="header-right" id="headerRight">
-      <button class="btn btn-sm" id="btnSignIn" onclick="showSignIn()">sign in</button>
-    </div>
-  </header>
+<!-- HEADER -->
+<header class="header">
+<div class="header-left">
+<span class="header-logo glitch" id="headerLogo">🧠</span>
+<div><div class="header-title">AURA FARM</div><div class="header-sub" id="headerSub">v3.0 — brain rot slayer, aura whore</div></div>
+</div>
+<div id="headerRight">
+<button class="btn btn-sm" onclick="resetApp()">🗑️</button>
+</div>
+</header>
 
-  <!-- ═══════════ OFFLINE BANNER ═══════════ -->
-  <div class="offline-banner" id="offlineBanner">
-    📡💀 offline mode — even when you're cooked offline, your aura still farms ✨
-  </div>
+<!-- TOAST -->
+<div class="toast-wrap" id="toastWrap"></div>
 
-  <!-- ═══════════ INSTALL BANNER ═══════════ -->
-  <div class="install-banner" id="installBanner">
-    <div class="install-text">
-      📲 <strong>slap this on your home screen</strong>, farm aura like a real degenerate (works offline) 🔥
-    </div>
-    <div class="install-actions">
-      <button class="btn btn-accent btn-sm glow-button" id="installBtn" onclick="triggerInstall()">install it 😈</button>
-      <button class="btn btn-sm" onclick="dismissInstall()">nah 💀</button>
-    </div>
-  </div>
+<!-- CONFETTI -->
+<canvas id="confettiCanvas"></canvas>
 
-  <!-- ═══════════ TOAST CONTAINER ═══════════ -->
-  <div class="toast-container" id="toastContainer"></div>
+<!-- ═══════════ APP ═══════════ -->
+<div class="container" id="appContainer">
 
-  <!-- ═══════════ CONFETTI CANVAS ═══════════ -->
-  <canvas id="confettiCanvas"></canvas>
+<!-- GREETING + AURA -->
+<div class="greeting" id="greetingEl"></div>
+<div class="aura-display">
+<div class="aura-num" id="auraNum">0</div>
+<div class="aura-label neon-a" style="text-shadow:0 0 8px #00ff9f">aura points</div>
+<div id="auraChangeSlot"></div>
+</div>
+<div class="stats-row" id="statsRow"></div>
 
-  <!-- ═══════════ LANDING PAGE ═══════════ -->
-  <div class="screen active" id="screenLanding">
-    <div class="container">
-      <div class="landing-hero">
-        <pre class="ascii-art">
-    ╔══════════════════════════════════╗
-    ║   🧠  A U R A   F A R M  🧠    ║
-    ║──────────────────────────────────║
-    ║  STARVE THE BRAIN ROT 💀        ║
-    ║  FARM YOUR AURA ✨               ║
-    ║                                  ║
-    ║  > no cap, you degenerate        ║
-    ╚══════════════════════════════════╝
-        </pre>
-        <p class="landing-tagline">
-          <em>Starve that fucking Brain Rot.</em><br>
-          <strong>Farm your Aura, no cap.</strong> 🔥
-        </p>
-        <button class="btn-cta glow-button" onclick="enterApp()">
-          <span class="btn-cta-text">Enter your Zone, lock the fuck in →</span>
-          <span class="btn-cta-icons">🔒🔥</span>
-          <span class="btn-cta-glow"></span>
-        </button>
-      </div>
+<!-- TAB: DEN -->
+<div class="tab active" id="tabDen">
+<div id="denDash"></div>
+<div class="sec-title neon-a">⚔️ // ACTIVE CHALLENGES</div>
+<div id="challengesList"></div>
+<div class="sec-title neon-a">📊 // YOUR RECEIPTS</div>
+<div id="analyticsEl"></div>
+<div class="sec-title neon-a">📡 // RECENT ACTIVITY</div>
+<div id="activityEl"></div>
+</div>
 
-      <!-- Landing Demo Sections -->
-      <div class="section-title neon-rot">💀 // STARVE THE BRAIN ROT</div>
-      <div class="code-block" data-lang="brain-rot">
-<span class="comment">// daily taps to quit your degenerate habits</span>
-<span class="comment">// starve that brain rot, you absolute goon</span>
+<!-- TAB: STARVE -->
+<div class="tab" id="tabStarve">
+<div class="sec-title neon-r">💀 // STARVE THE BRAIN ROT</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i didn't do this shit today" — starve that bitch 🚫💀</p>
+<div id="starveList"></div>
+<button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">+ add brain rot to starve 💀</button>
+<div class="sec-title mt-2 neon-r">🚫 // QUIT TIMER — DETOX TRACKER</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">how long you've been starving each degenerate habit — the longer the filthier the flex 💀🔥</p>
+<div id="quitTimerList"></div>
+</div>
 
-<span class="keyword">const</span> <span class="fn">brainRot</span> = [
-  <span class="string">"📱 Doomscrolling"</span>,     <span class="comment">// cooked af</span>
-  <span class="string">"🍆 Gooning"</span>,            <span class="comment">// down astronomical</span>
-  <span class="string">"🛏️ Rotting in Bed"</span>,     <span class="comment">// npc behavior</span>
-  <span class="string">"🍔 Binge Eating"</span>,       <span class="comment">// emotional damage</span>
-  <span class="string">"🚬 Vaping"</span>,             <span class="comment">// lungs are mid</span>
+<!-- TAB: FARM -->
+<div class="tab" id="tabFarm">
+<div class="sec-title neon-a">✨ // FARM THE AURA</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i did this shit today, i'm THAT bitch" — farm it 🔥✅</p>
+<div id="farmList"></div>
+<button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">+ add aura habit ✨</button>
+<div class="sec-title mt-2 neon-a">📝 // DAILY COMMIT LOG</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">what did you lock in today? document the grind ✍️🔥</p>
+<div class="input-row">
+<input type="text" id="commitInput" placeholder="today i locked tf in because...">
+<button class="btn btn-accent" onclick="addCommit()">log it 🔥</button>
+</div>
+<div id="commitLog"></div>
+</div>
+
+<!-- TAB: SQUAD -->
+<div class="tab" id="tabSquad">
+<div class="sec-title neon-a">👥 // THE SQUAD FEED</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">your fellow degenerate sluts for progress, all grinding their asses off 🫡🔥</p>
+<div class="card" id="squadFeed"></div>
+<button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquad()">refresh the feed 🔄</button>
+</div>
+
+<!-- TAB: SHOP -->
+<div class="tab" id="tabShop">
+<div class="sec-title neon-a">🛍️ // AURA SHOP</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">spend aura on avatars, slutty themes & degenerate titles. drip or drown bestie 💸✨</p>
+<div id="shopContent"></div>
+</div>
+
+<!-- TAB: CALENDAR -->
+<div class="tab" id="tabCal">
+<div class="sec-title neon-a">📅 // YOUR GRIND CALENDAR</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">green = aura farmed. red = COOKED 💀. tap a day for receipts 👀</p>
+<div class="card">
+<div class="flex-between mb-1">
+<button class="btn btn-sm" onclick="calNav(-1)">← prev</button>
+<span id="calLabel" style="font-size:.73rem;color:var(--accent)"></span>
+<button class="btn btn-sm" onclick="calNav(1)">next →</button>
+</div>
+<div id="calGrid"></div>
+<div class="cal-legend">
+<span><i class="ldot a"></i> aura day</span>
+<span><i class="ldot r"></i> cooked</span>
+<span><i class="ldot i"></i> frozen</span>
+</div>
+<div id="daySummary"></div>
+</div>
+</div>
+
+</div><!-- /container -->
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" id="bottomNav">
+<button class="nav-btn active" data-tab="tabDen" onclick="switchTab('tabDen',this)"><span class="nav-icon">🏠</span>Den</button>
+<button class="nav-btn" data-tab="tabStarve" onclick="switchTab('tabStarve',this)"><span class="nav-icon">💀</span>Starve</button>
+<button class="nav-btn" data-tab="tabFarm" onclick="switchTab('tabFarm',this)"><span class="nav-icon">✨</span>Farm</button>
+<button class="nav-btn" data-tab="tabSquad" onclick="switchTab('tabSquad',this)"><span class="nav-icon">👥</span>Squad</button>
+<button class="nav-btn" data-tab="tabShop" onclick="switchTab('tabShop',this)"><span class="nav-icon">🛍️</span>Shop</button>
+<button class="nav-btn" data-tab="tabCal" onclick="switchTab('tabCal',this)"><span class="nav-icon">📅</span>Cal</button>
+</nav>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+<div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════
+   AURA FARM v3 — Single File PWA
+   ═══════════════════════════════════════ */
+
+const DB_KEY='aura_farm_data';
+
+const DEFAULT_DATA={
+  packName:'',auraPoints:420,freezes:3,
+  habits:{
+    starve:[
+      {id:'s1',emoji:'📱',name:'Doomscrolling',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s2',emoji:'🍆',name:'Gooning',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s3',emoji:'🛏️',name:'Rotting in Bed',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s4',emoji:'🚬',name:'Vaping',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s5',emoji:'🍔',name:'Binge Eating',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
+    ],
+    farm:[
+      {id:'f1',emoji:'🏋️',name:'Gym',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f2',emoji:'📖',name:'Reading',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f3',emoji:'🧊',name:'Cold Shower',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f4',emoji:'🧘',name:'Mewing',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'f5',emoji:'💤',name:'8hr Sleep',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
+    ]
+  },
+  commits:[],rewards:[],owned:['av_brain','th_default'],
+  equipped:{avatar:'av_brain',theme:'th_default',title:null},
+  lastCheckIn:null,activityLog:[],joinedChallenges:{},claimedChallenges:[],
+  calMonth:new Date().getMonth(),calYear:new Date().getFullYear()
+};
+
+// ─── MESSAGES ───
+const STARVE_ROASTS=["starved that brain rot, you absolute menace 🔥","another day not being a degenerate, no cap 💀","your brain rot is SHOOK rn 😈","imagine being this disciplined... oh wait, you are 👑","that brain rot is getting starved tf out 🚫","one more day of not being cooked, slay 💅","your future self is literally simping for you rn ✨","brain rot: defeated. aura: increased. hotel: trivago 🧠","you chose violence against your bad habits 🫡","NOT TODAY, brain rot. NOT. TODAY. 🔥💀"];
+const FARM_HYPES=["ATE THAT SHIT, you absolute slut for progress 🔥✨","aura points go BRRRR, you're literally unhinged 💅","the grind is GRINDING, keep farming bestie 🌾","gigachad energy detected, aura levels UNGODLY 💪","you really said 'lock tf in' and MEANT it 😤🔥","the algorithm can't handle your aura rn 🧠✨","im literally screaming, this grind is BUSSIN 🗣️","your aura just went through the goddamn roof 📈💀","rizz levels: ASTRONOMICAL after that one 🚀","you just gained +10 fuckability, no cap 🍑✨"];
+const RELAPSE_MSGS=["undo detected... you fell off, get back up degenerate 💀","slipped? it happens bestie. tomorrow we lock back in 😤","brain rot won this round. don't let it win the war 🚫","took an L on this one. your aura took a hit ngl 📉"];
+const FREEZE_SAVES=["🧊 streak FROZEN, your aura's safe this time you lucky bitch","🧊 freeze used — chain protected. don't make slacking a habit","🧊 saved your streak from the void, you owe me one"];
+const FREEZE_BROKE=["out of freeze tokens, you broke bitch 💀","no freezes left — your streak's cooked if you slip 🧊❌","freeze inventory: empty. natural selection time bestie 💀"];
+const STREAK_BROKEN=["💀 '{n}' streak BROKE. all that grind, gone. you fumbled the bag fr","💀 '{n}' chain snapped. the NPCs are laughing rn","💀 '{n}' streak reset to 0. hope that slip was worth it bestie"];
+const REDEEM_HYPE=["REDEEMED 🔥 spent aura like a high roller","purchase made, drip acquired, aura demolished 💸✨","ka-ching 🤑 your fuckability just went up a tier","bought it. flexed it. you absolute menace 😈"];
+const BROKE_ROASTS=["broke bitch alert 🚨 farm more aura 💀","you can't afford that, grind harder 😭","insufficient aura, NPC. tap some habits 💸💀"];
+const GREETINGS=["sup {name}, you thirsty bitch 💦","look who's back, {name} you degenerate 👀","rise and grind, {name}. lock the fuck in 🔒","{name} is in the building. aura: immeasurable 🧠","oh shit, it's {name}. time to farm some aura ✨","welcome back {name}, you absolute menace 😈"];
+
+const LEVELS=[
+{min:0,name:'Certified NPC',icon:'🫥'},{min:50,name:'Baby Degenerate',icon:'👶'},
+{min:150,name:'Aura Apprentice',icon:'🌱'},{min:300,name:'Discipline Slut',icon:'💅'},
+{min:500,name:'Brain Rot Bully',icon:'😤'},{min:800,name:'Aura Whore',icon:'🔥'},
+{min:1200,name:'Sigma in Training',icon:'💪'},{min:1800,name:'Certified Menace',icon:'😈'},
+{min:2500,name:'Glow Up Demon',icon:'🧬'},{min:3500,name:'Aura Overlord',icon:'👑'},
+{min:5000,name:'Transcended Gigachad',icon:'🌌'},{min:7500,name:'Aura God',icon:'⚡'},
+{min:10000,name:'Final Form Degenerate',icon:'💀'}
 ];
 
-<span class="keyword">function</span> <span class="fn">starve</span>() {
-  <span class="keyword">return</span> <span class="string">"lock the fuck in"</span>;
-}
-      </div>
-
-      <div class="section-title neon-aura">✨ // FARM THE AURA</div>
-      <div class="code-block" data-lang="aura">
-<span class="comment">// stack those aura points king/queen</span>
-<span class="comment">// you absolute slut for progress</span>
-
-<span class="keyword">const</span> <span class="fn">auraHabits</span> = [
-  <span class="string">"🏋️ Gym (ate that shit)"</span>,
-  <span class="string">"📖 Reading (big brain energy)"</span>,
-  <span class="string">"🧊 Cold Shower (gigachad)"</span>,
-  <span class="string">"🧘 Mewing (jawline arc)"</span>,
-  <span class="string">"💤 8hr Sleep (recovery king)"</span>,
+const CHALLENGES=[
+{id:'ch1',icon:'🔥',name:'7-Day Lock-In',desc:'tap ALL habits 7 days straight you slut',target:7,type:'all_taps',reward:200},
+{id:'ch2',icon:'💀',name:'Brain Rot Funeral',desc:'starve every brain rot for 14 days',target:14,type:'starve_streak',reward:400},
+{id:'ch3',icon:'✨',name:'Aura Farmer Supreme',desc:'hit 500 total aura points',target:500,type:'total_aura',reward:150},
+{id:'ch4',icon:'📝',name:'Journal Slut',desc:'log 10 commit entries',target:10,type:'total_commits',reward:100},
+{id:'ch5',icon:'🏋️',name:'30-Day Sigma Arc',desc:'any single streak for 30 days',target:30,type:'single_streak',reward:750},
+{id:'ch6',icon:'👑',name:'Aura Millionaire',desc:'stack 2000 aura points',target:2000,type:'total_aura',reward:500}
 ];
 
-<span class="keyword">function</span> <span class="fn">farm</span>() {
-  <span class="keyword">return</span> <span class="string">"aura += 9000"</span>;
+const CHECKIN_MOODS=[
+{emoji:'🔥',label:'on fire',pts:5,resp:"LET'S GOOO, main character energy IMMACULATE 🔥✨"},
+{emoji:'😤',label:'locked in',pts:5,resp:"sigma grindset engaged, brain rot is TREMBLING 😤💪"},
+{emoji:'😐',label:'mid',pts:3,resp:"mid energy... at least you showed up, NPC 😐"},
+{emoji:'💀',label:'cooked',pts:2,resp:"cooked af but self-aware, that's something 💀"},
+{emoji:'😭',label:'down bad',pts:2,resp:"down astronomical... tomorrow you lock tf back in 😭🔥"}
+];
+
+const SHOP={
+avatars:[
+{id:'av_brain',preview:'🧠',name:'Default NPC Brain',desc:'the broke starter look. mid.',cost:0},
+{id:'av_clown',preview:'🤡',name:'Simp Clown',desc:'for when you fumbled the bag fr',cost:80},
+{id:'av_skull',preview:'💀',name:'Cooked Skull',desc:'certified down bad. own it.',cost:120},
+{id:'av_peach',preview:'🍑',name:'Certified Cake',desc:'all aura, all ass, no cap',cost:250},
+{id:'av_devil',preview:'😈',name:'Horny Lil Devil',desc:'horns OUT, aura unhinged 🔥',cost:300},
+{id:'av_hot',preview:'🥵',name:'Insufferably Hot',desc:'you a whole snack and you know it',cost:400},
+{id:'av_goat',preview:'🐐',name:'Literal GOAT',desc:'greatest aura farmer ever',cost:1500}
+],
+themes:[
+{id:'th_default',name:'Degenerate Default',desc:'OG lime-green grindset',vars:{},cost:0},
+{id:'th_slut',name:'Slutty Red 💋',desc:'paint the town red you menace',vars:{'--accent':'#ff2d55','--purple':'#ff7eb6'},cost:250},
+{id:'th_goon',name:'Goon Cave Purple 🍆',desc:'lights off, aura on',vars:{'--accent':'#b388ff','--bg':'#0c0716','--bg2':'#140d22'},cost:350},
+{id:'th_cyber',name:'Cyber Rizz 🤖',desc:'neon teal rizz from 3024',vars:{'--accent':'#00ffe0','--danger':'#ff4d6d'},cost:450},
+{id:'th_sigma',name:'Sigma Gold 👑',desc:'drip so loud it has a sound',vars:{'--accent':'#ffd700','--purple':'#ffe98a'},cost:600}
+],
+titles:[
+{id:'ti_npc',name:'Reformed NPC',desc:'barely sentient but trying',cost:60},
+{id:'ti_goon',name:'Certified Goon',desc:'wear the shame with pride',cost:120},
+{id:'ti_slut',name:'Slut for Progress',desc:'down astronomical for gains',cost:220},
+{id:'ti_rizz',name:'Rizzler Supreme',desc:'unspoken rizz, spoken aura',cost:400},
+{id:'ti_sigma',name:'Sigma Overlord',desc:'touched grass, touched god',cost:1200}
+]};
+
+const REWARDS=[
+{id:'r1',icon:'🌱',name:'Aura Seedling',desc:"you exist and that's something i guess 💀",cost:50},
+{id:'r2',icon:'🔥',name:'Aura Initiate',desc:'not a total NPC anymore, barely',cost:100},
+{id:'r3',icon:'💅',name:'Main Character Energy',desc:'POV: you actually have discipline',cost:250},
+{id:'r4',icon:'😈',name:'Rizz Certified',desc:'your rizz is no longer hypothetical',cost:500},
+{id:'r5',icon:'👑',name:'Sigma Grindset',desc:"you've out-grinded 99% of NPCs",cost:1000},
+{id:'r6',icon:'🧬',name:'Glow Up Unlocked',desc:'fuckability status: ASCENDED',cost:2000},
+{id:'r7',icon:'🌌',name:'Sigma Overlord',desc:"transcended NPC existence entirely",cost:5000},
+{id:'r8',icon:'💀',name:'Final Boss',desc:'aura so high it\'s illegal in 47 states',cost:10000}
+];
+
+const SQUAD_NAMES=[{av:'💀',n:'xX_RizzLord_Xx'},{av:'👑',n:'GigaChadSophie'},{av:'🍑',n:'NPC_Slayer_420'},{av:'🦊',n:'MewingQueen'},{av:'🧊',n:'ColdShowerKing'},{av:'😈',n:'SigmaSarah'},{av:'🔥',n:'AuraDemon69'},{av:'💅',n:'MainCharVibes'},{av:'🧠',n:'NoFap_Naruto'},{av:'✨',n:'GlowUpGoblin'}];
+const SQUAD_ACTS=["hit a {n} day streak on {h}, absolutely unhinged 🔥","just starved {h} for {n} days straight, no cap 💀","farmed {h} today. aura levels: astronomical 📈","relapsed on {h}... cooked beyond repair 😭💀","cold shower at 5am, my aura is ungodly high rn 🧊✨","3am gym session, these gains are bussin 🏋️","caught myself doomscrolling and chose violence 🚫📱","i am become aura, destroyer of brain rot 💀🔥"];
+
+const HABIT_SUGG={
+starve:[{e:'🍆',n:'Gooning'},{e:'🥵',n:'Edging'},{e:'📸',n:'Thirst Trapping'},{e:'💌',n:'Sliding into DMs'},{e:'🔞',n:'Watching Porn'},{e:'📱',n:'Doomscrolling'},{e:'👀',n:'Stalking the Ex'},{e:'🛏️',n:'Rotting in Bed'},{e:'🚬',n:'Vaping'},{e:'🍺',n:'Drinking'},{e:'🎰',n:'Gambling'},{e:'🍔',n:'Binge Eating'},{e:'🎮',n:'Rage Gaming'}],
+farm:[{e:'🧘',n:'Mewing'},{e:'🔒',n:'No-Nut Streak'},{e:'😎',n:'Cold Approach'},{e:'💬',n:'Rizz Practice'},{e:'🪞',n:'Looksmaxxing'},{e:'🏋️',n:'Gym'},{e:'🧊',n:'Cold Shower'},{e:'📖',n:'Reading'},{e:'📝',n:'Journaling'},{e:'🌅',n:'5AM Wake Up'},{e:'💤',n:'8hr Sleep'},{e:'💧',n:'Hydrating'},{e:'🏃',n:'Running'},{e:'🧠',n:'Deep Work'}]
+};
+
+const EMOJIS=['📱','🍆','🥵','💦','🥺','📸','💌','🔞','💸','👀','🛏️','🚬','🍺','🎰','🍔','🎮','🔒','😎','💬','🪞','🏋️','📖','🧊','🧘','💤','🏃','💧','🥗','📝','🧠','💪','🌅','🌱','🎯','🔥'];
+const BASE_THEME={'--bg':'#0a0a0a','--bg2':'#111111','--bg3':'#1a1a1a','--accent':'#c8ff00','--danger':'#ff3e6c','--purple':'#b388ff','--cyan':'#00e5ff'};
+
+// ─── STATE ───
+let data={},currentTab='tabDen',shopTab='avatars',selectedCalDay=null,selectedEmoji=EMOJIS[0];
+
+function dateKey(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function todayKey(){return dateKey(new Date())}
+function yesterdayKey(){const d=new Date();d.setDate(d.getDate()-1);return dateKey(d)}
+function rand(a){return a[Math.floor(Math.random()*a.length)]}
+function uid(){return '_'+Math.random().toString(36).slice(2,9)}
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+// ─── PERSISTENCE ───
+function load(){
+  try{
+    const raw=localStorage.getItem(DB_KEY);
+    if(raw){
+      data=JSON.parse(raw);
+      if(!data.habits)data.habits=DEFAULT_DATA.habits;
+      if(!data.commits)data.commits=[];
+      if(typeof data.freezes!=='number')data.freezes=3;
+      if(data.calMonth===undefined){data.calMonth=new Date().getMonth();data.calYear=new Date().getFullYear()}
+      if(!Array.isArray(data.owned))data.owned=[];
+      if(!data.equipped)data.equipped={avatar:'av_brain',theme:'th_default',title:null};
+      if(!data.owned.includes('av_brain'))data.owned.push('av_brain');
+      if(!data.owned.includes('th_default'))data.owned.push('th_default');
+      if(!data.activityLog)data.activityLog=[];
+      if(!data.joinedChallenges)data.joinedChallenges={};
+      if(!Array.isArray(data.claimedChallenges))data.claimedChallenges=[];
+      if(!Array.isArray(data.rewards))data.rewards=[];
+    }else{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
+  }catch{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
 }
-      </div>
+function save(){localStorage.setItem(DB_KEY,JSON.stringify(data))}
 
-      <div class="section-title neon-aura">👥 // THE SQUAD</div>
-      <div class="card">
-        <div class="squad-item">
-          <span class="squad-avatar">💀</span>
-          <div>
-            <div><span class="squad-name">xX_RizzLord_Xx</span> <span class="squad-time">2m ago</span></div>
-            <div class="squad-msg">hit a 30 day no-doomscroll streak, im literally unhinged rn 🔥</div>
-          </div>
-        </div>
-        <div class="squad-item">
-          <span class="squad-avatar">👑</span>
-          <div>
-            <div><span class="squad-name">GigaChadSophie</span> <span class="squad-time">15m ago</span></div>
-            <div class="squad-msg">cold shower at 5am, my aura is ungodly high rn 🧊✨</div>
-          </div>
-        </div>
-        <div class="squad-item">
-          <span class="squad-avatar">🍑</span>
-          <div>
-            <div><span class="squad-name">NPC_Slayer_420</span> <span class="squad-time">1h ago</span></div>
-            <div class="squad-msg">relapsed on doomscrolling for 3hrs... cooked beyond repair 💀</div>
-          </div>
-        </div>
-        <div class="squad-item">
-          <span class="squad-avatar">🦊</span>
-          <div>
-            <div><span class="squad-name">MewingQueen</span> <span class="squad-time">3h ago</span></div>
-            <div class="squad-msg">7 day gym streak, these gains are literally bussin 🏋️</div>
-          </div>
-        </div>
-      </div>
+// ─── SOUND ───
+let audioCtx=null;
+function getAC(){if(!audioCtx)try{audioCtx=new(window.AudioContext||window.webkitAudioContext)}catch{};return audioCtx}
+function sfx(type){
+  const ctx=getAC();if(!ctx)return;
+  const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);const t=ctx.currentTime;
+  if(type==='tap'){o.type='sine';o.frequency.setValueAtTime(600,t);o.frequency.exponentialRampToValueAtTime(1200,t+.08);g.gain.setValueAtTime(.18,t);g.gain.exponentialRampToValueAtTime(.001,t+.12);o.start(t);o.stop(t+.12)}
+  else if(type==='untap'){o.type='sine';o.frequency.setValueAtTime(800,t);o.frequency.exponentialRampToValueAtTime(300,t+.12);g.gain.setValueAtTime(.15,t);g.gain.exponentialRampToValueAtTime(.001,t+.15);o.start(t);o.stop(t+.15)}
+  else if(type==='buy'){o.type='square';o.frequency.setValueAtTime(523,t);o.frequency.setValueAtTime(659,t+.08);o.frequency.setValueAtTime(784,t+.16);g.gain.setValueAtTime(.12,t);g.gain.exponentialRampToValueAtTime(.001,t+.28);o.start(t);o.stop(t+.28)}
+  else if(type==='error'){o.type='sawtooth';o.frequency.setValueAtTime(200,t);g.gain.setValueAtTime(.1,t);g.gain.exponentialRampToValueAtTime(.001,t+.18);o.start(t);o.stop(t+.18)}
+}
+function haptic(ms){try{navigator.vibrate(ms||12)}catch{}}
 
-      <div class="section-title neon-aura">🛒 // AURA SHOP</div>
-      <div class="card">
-        <p class="text-muted" style="font-size:0.7rem;margin-bottom:10px;">blow your aura on degenerate drip, slutty themes & filthy titles 💸🔥</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <div class="shop-preview-landing">🤡 <span>Simp Clown</span></div>
-          <div class="shop-preview-landing">😈 <span>Horny Lil Devil</span></div>
-          <div class="shop-preview-landing">🐐 <span>Literal GOAT</span></div>
-          <div class="shop-preview-landing">💋 <span>Slutty Red</span></div>
-          <div class="shop-preview-landing">🍆 <span>Goon Cave</span></div>
-        </div>
-      </div>
+// ─── CONFETTI ───
+const cParts=[];let cCanvas,cCtx,cRAF;
+const C_EMOJIS=['🔥','🍑','✨','💀','😈','👑','💅','💦'];
+function initConfetti(){cCanvas=document.getElementById('confettiCanvas');if(!cCanvas)return;cCtx=cCanvas.getContext('2d');resizeC();window.addEventListener('resize',resizeC)}
+function resizeC(){if(!cCanvas)return;cCanvas.width=window.innerWidth;cCanvas.height=window.innerHeight}
+function spawnConfetti(count){
+  if(!cCtx)return;
+  const colors=['#c8ff00','#ff3e6c','#b388ff','#00e5ff','#ff9100','#ffd700','#ff8fd6'];
+  for(let i=0;i<count;i++){
+    const isE=Math.random()<.3;
+    cParts.push({x:window.innerWidth/2+(Math.random()-.5)*200,y:window.innerHeight*.35,vx:(Math.random()-.5)*12,vy:-(Math.random()*8+4),
+    w:Math.random()*8+4,h:Math.random()*6+3,color:colors[Math.floor(Math.random()*colors.length)],
+    emoji:isE?C_EMOJIS[Math.floor(Math.random()*C_EMOJIS.length)]:null,rot:Math.random()*360,rs:(Math.random()-.5)*15,life:1,decay:.008+Math.random()*.008})
+  }
+  if(!cRAF)animC()
+}
+function animC(){
+  if(!cCtx)return;cCtx.clearRect(0,0,cCanvas.width,cCanvas.height);
+  for(let i=cParts.length-1;i>=0;i--){
+    const p=cParts[i];p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.vx*=.99;p.rot+=p.rs;p.life-=p.decay;
+    if(p.life<=0){cParts.splice(i,1);continue}
+    cCtx.save();cCtx.translate(p.x,p.y);cCtx.rotate(p.rot*Math.PI/180);cCtx.globalAlpha=p.life;
+    if(p.emoji){cCtx.font=`${14+p.w}px serif`;cCtx.textAlign='center';cCtx.textBaseline='middle';cCtx.fillText(p.emoji,0,0)}
+    else{cCtx.fillStyle=p.color;cCtx.fillRect(-p.w/2,-p.h/2,p.w,p.h)}
+    cCtx.restore()
+  }
+  if(cParts.length>0)cRAF=requestAnimationFrame(animC);else cRAF=null
+}
+function launchConfetti(){
+  const e=['🔥','✨','🍑','💦'];
+  for(let i=0;i<30;i++){
+    const c=document.createElement('div');c.textContent=e[Math.floor(Math.random()*e.length)];
+    c.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-10px;font-size:18px;pointer-events:none;z-index:998;transition:all 3s ease;`;
+    document.body.appendChild(c);
+    setTimeout(()=>{c.style.top='100vh';c.style.transform=`rotate(${Math.random()*720}deg)`;setTimeout(()=>c.remove(),3000)},50)
+  }
+}
 
-      <div class="section-title neon-aura">📅 // CALENDAR</div>
-      <div class="card">
-        <div id="landingCalendar"></div>
-      </div>
+// ─── TOAST ───
+function toast(msg,type='good'){
+  const wrap=document.getElementById('toastWrap');const el=document.createElement('div');
+  el.className=`toast ${type}`;el.textContent=msg;wrap.appendChild(el);setTimeout(()=>el.remove(),3000)
+}
 
-      <p class="text-center text-muted mt-2 mb-2" style="font-size:0.65rem;">
-        built different. no frameworks. no bullshit. no excuses. pure fucking vanilla. 🫡<br>
-        © 2026 aura farm — lock in or fuck off, your choice bestie
-      </p>
+// ─── AURA DISPLAY ───
+function showAuraChange(amt){
+  const slot=document.getElementById('auraChangeSlot');
+  if(slot){const el=document.createElement('div');el.className=`aura-change ${amt>0?'gain':'loss'}`;
+  el.textContent=amt>0?`+${amt} AP, ate that shit 🔥`:`${amt} AP, fumbled the bag 💀`;slot.innerHTML='';slot.appendChild(el);setTimeout(()=>el.remove(),2000)}
+  const num=document.getElementById('auraNum');
+  if(num){num.classList.remove('glow-gain','glow-loss');void num.offsetWidth;num.classList.add(amt>0?'glow-gain':'glow-loss');setTimeout(()=>num.classList.remove('glow-gain','glow-loss'),800)}
+}
+function floatPts(el,amt){
+  if(!el)return;const r=el.getBoundingClientRect();const f=document.createElement('div');
+  f.className=`ap-float ${amt>0?'gain':'loss'}`;f.textContent=amt>0?`+${amt}`:`${amt}`;
+  f.style.left=(r.left+r.width/2)+'px';f.style.top=(r.top-8)+'px';document.body.appendChild(f);setTimeout(()=>f.remove(),1000)
+}
+function updateAura(){const el=document.getElementById('auraNum');if(el)el.textContent=data.auraPoints.toLocaleString()}
+
+// ─── STREAKS ───
+function calcStreak(h){
+  let s=0,d=new Date();if(!h.taps[dateKey(d)])d.setDate(d.getDate()-1);
+  while(h.taps[dateKey(d)]){s++;d.setDate(d.getDate()-1)}
+  h.streak=s;if(s>h.bestStreak)h.bestStreak=s;return s
+}
+function frozenInStreak(h){
+  let f=0,d=new Date();if(!h.taps[dateKey(d)])d.setDate(d.getDate()-1);
+  while(h.taps[dateKey(d)]){if(h.taps[dateKey(d)]==='frozen')f++;d.setDate(d.getDate()-1)};return f
+}
+
+// ─── ACTIVITY LOG ───
+function logAct(type,msg){
+  if(!data.activityLog)data.activityLog=[];
+  data.activityLog.unshift({type,msg,time:Date.now()});
+  if(data.activityLog.length>50)data.activityLog.length=50
+}
+function timeAgo(ts){const d=Date.now()-ts,m=Math.floor(d/60000);if(m<1)return'just now';if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago'}
+
+// ─── RENDER HABITS ───
+function renderHabits(type,cid){
+  const c=document.getElementById(cid);if(!c)return;
+  const habits=data.habits[type]||[];const today=todayKey();
+  if(!habits.length){c.innerHTML=`<div class="text-center text-muted" style="padding:18px;font-size:.72rem;">${type==='starve'?"no brain rot tracked?? lying ass bitch 🤨💀":"no aura habits?? add something you NPC 💀🔥"}</div>`;return}
+  c.innerHTML=habits.map(h=>{
+    const tapped=!!h.taps[today],streak=calcStreak(h),frozen=frozenInStreak(h);
+    const tc=tapped?(type==='starve'?'tapped-bad':'tapped'):'';
+    const frozenTag=frozen>0?` <span class="text-cyan">🧊x${frozen}</span>`:'';
+    const stText=streak>0?`🔥 ${streak}d streak — slut for discipline`:(type==='starve'?"0d streak, getting cooked alive 💀":"0d streak, do something lazy bitch 🔒");
+    const dby=new Date();dby.setDate(dby.getDate()-2);
+    const atRisk=!h.taps[yesterdayKey()]&&!!h.taps[dateKey(dby)];
+    return `<div class="habit">
+      <span class="habit-emoji">${h.emoji}</span>
+      <div class="habit-info"><div class="habit-name">${h.name}</div><div class="habit-streak">${stText}${frozenTag} · best: ${h.bestStreak}d</div></div>
+      ${atRisk?`<button class="freeze-btn" onclick="freezeStreak('${type}','${h.id}')" title="freeze (${data.freezes} left)">🧊</button>`:''}
+      <button class="tap-btn ${tc}" onclick="tapHabit('${type}','${h.id}',event)">${tapped?'✓':(type==='starve'?'🚫':'✨')}</button>
+      <button class="del-btn" onclick="deleteHabit('${type}','${h.id}')">✕</button>
+    </div>`
+  }).join('')
+}
+
+// ─── TAP HABIT ───
+function tapHabit(type,id,evt){
+  const h=(data.habits[type]||[]).find(x=>x.id===id);if(!h)return;
+  const today=todayKey(),btn=evt?evt.currentTarget:null;
+  if(h.taps[today]){
+    delete h.taps[today];calcStreak(h);const loss=type==='starve'?5:10;
+    data.auraPoints=Math.max(0,data.auraPoints-loss);showAuraChange(-loss);floatPts(btn,-loss);
+    logAct('untap',`undid ${h.emoji} ${h.name}`);sfx('untap');haptic(30);toast(rand(RELAPSE_MSGS),'bad')
+  }else{
+    h.taps[today]=true;const gain=type==='starve'?10:15;const sb=Math.min(calcStreak(h)*2,50);const total=gain+sb;
+    const prev=data.auraPoints;data.auraPoints+=total;showAuraChange(total);floatPts(btn,total);
+    const c50=Math.floor(data.auraPoints/50)>Math.floor(prev/50);
+    const sm=[7,14,21,30,50,60,90,100,150,200,365].includes(h.streak);
+    if(c50||sm){spawnConfetti(sm?50:30);launchConfetti()}
+    logAct('tap',`${type==='starve'?'starved':'farmed'} ${h.emoji} ${h.name} +${total} AP`);
+    sfx('tap');haptic(12);toast(rand(type==='starve'?STARVE_ROASTS:FARM_HYPES),'good')
+  }
+  calcStreak(h);h.lastStreak=h.streak;save();renderAll()
+}
+
+// ─── FREEZE ───
+function freezeStreak(type,id){
+  const h=(data.habits[type]||[]).find(x=>x.id===id);if(!h)return;
+  const yKey=yesterdayKey();
+  if(h.taps[yKey]){sfx('error');toast("nothing to freeze here bestie ✨",'good');return}
+  if(data.freezes<=0){sfx('error');haptic(50);toast(rand(FREEZE_BROKE),'bad');return}
+  h.taps[yKey]='frozen';data.freezes--;calcStreak(h);h.lastStreak=h.streak;
+  logAct('freeze',`froze ${h.emoji} ${h.name} streak 🧊`);save();renderAll();sfx('tap');haptic(20);toast(rand(FREEZE_SAVES),'good')
+}
+
+// ─── DELETE HABIT ───
+function deleteHabit(type,id){
+  data.habits[type]=data.habits[type].filter(h=>h.id!==id);save();renderAll();sfx('untap');haptic(20);
+  toast('habit yeeted into the void, gone forever bestie 🕳️💀','bad')
+}
+
+// ─── ADD HABIT MODAL ───
+function openAddHabit(type){
+  const m=document.getElementById('modalContent');
+  const title=type==='starve'?'💀 STARVE THAT BRAIN ROT':'✨ FARM THAT AURA';
+  const suggs=HABIT_SUGG[type]||[];
+  m.innerHTML=`<h3>${title}</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">${type==='starve'?'pick a degenerate habit to starve 🚫':'pick a habit to farm aura with ✨'}</p>
+    <div class="chips">${suggs.map((s,i)=>`<button class="chip ${type==='starve'?'s':'f'}" onclick="fillSugg('${type}',${i})">${s.e} ${s.n}</button>`).join('')}</div>
+    <p style="font-size:.6rem;color:var(--fg2);margin:10px 0 6px;">// or roll your own — pick an emoji</p>
+    <div class="emoji-grid" id="emojiPicker">${EMOJIS.map((e,i)=>`<button class="emoji-opt ${i===0?'sel':''}" onclick="pickEmoji(this,'${e}')">${e}</button>`).join('')}</div>
+    <input type="text" id="habitNameInput" placeholder="${type==='starve'?'gooning, simp behavior...':'mewing, cold approach...'}" maxlength="40">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm 💀</button><button class="btn btn-accent" onclick="addHabit('${type}')">add it 🔥</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('habitNameInput')?.focus(),100)
+}
+function pickEmoji(btn,e){selectedEmoji=e;document.querySelectorAll('.emoji-opt').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel')}
+function fillSugg(type,idx){
+  const s=HABIT_SUGG[type][idx];if(!s)return;selectedEmoji=s.e;
+  const inp=document.getElementById('habitNameInput');if(inp)inp.value=s.n;
+  document.querySelectorAll('.emoji-opt').forEach(x=>x.classList.toggle('sel',x.textContent===s.e));
+  document.querySelectorAll('.chip').forEach((c,i)=>c.classList.toggle('picked',i===idx))
+}
+function addHabit(type){
+  const name=document.getElementById('habitNameInput')?.value.trim();
+  if(!name){sfx('error');toast("name it something you braindead NPC 💀",'bad');return}
+  data.habits[type].push({id:uid(),emoji:selectedEmoji,name,streak:0,bestStreak:0,taps:{},createdAt:Date.now()});
+  logAct('habit',`added ${selectedEmoji} ${name} to ${type==='starve'?'kill list':'aura farm'}`);
+  save();renderAll();closeModal();sfx('tap');haptic(12);
+  toast(type==='starve'?`"${name}" added to the brain rot kill list 💀🔥`:`"${name}" added to the aura farm, grind it you slut ✨🔥`,'good');
+  selectedEmoji=EMOJIS[0]
+}
+function closeModal(){document.getElementById('modalOverlay').classList.remove('show')}
+
+// ─── COMMIT LOG ───
+function addCommit(){
+  const inp=document.getElementById('commitInput'),text=inp?.value.trim();
+  if(!text){sfx('error');toast("write something you braindead NPC 💀",'bad');return}
+  data.commits.unshift({id:uid(),text,date:todayKey(),time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})});
+  data.auraPoints+=5;showAuraChange(5);logAct('commit',`logged: "${text.slice(0,35)}"`);save();inp.value='';renderAll();
+  sfx('tap');haptic(12);toast("commit logged, the glow up is REAL 📝✨",'good')
+}
+function renderCommitLog(){
+  const c=document.getElementById('commitLog');if(!c)return;
+  if(!data.commits.length){c.innerHTML='<div class="text-center text-muted mt-1" style="font-size:.72rem;">commit log is bone dry... just like your discipline 💀📭</div>';return}
+  c.innerHTML=data.commits.slice(0,20).map(x=>`<div class="commit"><span class="cm-date">// ${x.date} @ ${x.time}</span><br><span class="cm-text">"${escHtml(x.text)}"</span>
+    <button class="del-btn" style="opacity:1;float:right" onclick="delCommit('${x.id}')">✕</button></div>`).join('')
+}
+function delCommit(id){data.commits=data.commits.filter(c=>c.id!==id);save();renderCommitLog()}
+
+// ─── QUIT TIMERS ───
+function renderQuitTimers(){
+  const c=document.getElementById('quitTimerList');if(!c)return;
+  const habits=data.habits.starve||[];
+  if(!habits.length){c.innerHTML='<div class="text-center text-muted" style="padding:16px;font-size:.72rem;">no brain rot to detox from?? add your demons bestie 🤨💀</div>';return}
+  c.innerHTML=habits.map(h=>{
+    const days=calcStreak(h);let mot;
+    if(days===0)mot="zero days clean you degenerate, start NOW 💀";
+    else if(days<3)mot="barely breathing, don't fuck this up 👶🔥";
+    else if(days<7)mot="brain rot starving but still kicking, smother that bitch 🔥";
+    else if(days<30)mot="unhinged discipline ngl, brain rot getting BODIED 😤💀";
+    else mot="GIGACHAD, brain rot on life support 💀🔥";
+    return `<div class="card qt-card"><div class="flex-between"><div><span style="font-size:1.1rem">${h.emoji}</span> <strong style="font-size:.82rem">${h.name}</strong></div>
+      <span class="text-accent" style="font-size:.73rem;font-weight:700">${days}d</span></div>
+      <div class="text-muted mt-1" style="font-size:.68rem">${mot}</div>
+      <div class="qt-bar"><div class="qt-fill" style="width:${Math.min(100,days/30*100)}%;background:${days>0?'var(--accent)':'var(--danger)'}"></div></div></div>`
+  }).join('')
+}
+
+// ─── STATS ───
+function renderStats(){
+  const c=document.getElementById('statsRow');if(!c)return;
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  const today=todayKey(),tapped=all.filter(h=>h.taps[today]).length,total=all.length;
+  const best=all.reduce((m,h)=>Math.max(m,h.bestStreak),0);
+  const days=new Set();all.forEach(h=>Object.keys(h.taps).forEach(k=>days.add(k)));
+  c.innerHTML=`<div class="stat-box"><div class="stat-n">${tapped}/${total}</div><div class="stat-l">tapped today</div></div>
+    <div class="stat-box"><div class="stat-n">${best}</div><div class="stat-l">filthiest streak</div></div>
+    <div class="stat-box"><div class="stat-n">${days.size}</div><div class="stat-l">days not cooked</div></div>
+    <div class="stat-box"><div class="stat-n text-cyan">🧊${data.freezes??0}</div><div class="stat-l">freeze tokens</div></div>`
+}
+
+// ─── LEVEL SYSTEM ───
+function getLevel(){let l=0;for(let i=LEVELS.length-1;i>=0;i--)if(data.auraPoints>=LEVELS[i].min){l=i;break};return{...LEVELS[l],idx:l}}
+function getLvlProg(){const l=getLevel(),nx=LEVELS[l.idx+1];if(!nx)return{cur:l,next:null,pct:100};return{cur:l,next:nx,pct:Math.min(100,(data.auraPoints-l.min)/(nx.min-l.min)*100)}}
+
+// ─── DEN DASHBOARD ───
+function renderDen(){
+  const el=document.getElementById('denDash');if(!el)return;
+  const{cur,next,pct}=getLvlProg();const ln=cur.idx+1;const ck=data.lastCheckIn===todayKey();
+  el.innerHTML=`<div class="lvl-card"><div class="lvl-head"><span class="lvl-icon">${cur.icon}</span><div>
+    <div class="lvl-title">Aura Slut Level ${ln}</div><div class="lvl-name">${cur.name}</div></div></div>
+    <div class="lvl-bar-wrap"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
+    ${next?`<div class="lvl-next">next: ${next.icon} ${next.name} at ${next.min.toLocaleString()} AP</div>`:'<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute god 👑</div>'}
     </div>
-  </div>
+    <div style="margin:10px 0 14px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ already checked in today, go farm':'🤔 How cooked are you today? (daily check-in)'}</button></div>`
+}
 
-  <!-- ═══════════ MAIN APP ═══════════ -->
-  <div class="screen" id="screenApp">
-    <div class="container">
+// ─── CHECK-IN ───
+function openCheckIn(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>🤔 HOW COOKED ARE YOU TODAY?</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:12px;">be honest you degenerate 💀</p>
+    ${CHECKIN_MOODS.map((x,i)=>`<button class="ck-btn" onclick="submitCheckIn(${i})"><span class="ck-emoji">${x.emoji}</span><span class="ck-label">${x.label}</span><span class="ck-pts">+${x.pts} AP</span></button>`).join('')}
+    <div class="modal-actions" style="margin-top:12px"><button class="btn" onclick="closeModal()">nah 💀</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function submitCheckIn(i){
+  const m=CHECKIN_MOODS[i];data.lastCheckIn=todayKey();data.auraPoints+=m.pts;
+  logAct('checkin',`checked in: ${m.emoji} ${m.label}`);save();closeModal();updateAura();showAuraChange(m.pts);renderAll();
+  sfx('tap');haptic(12);toast(m.resp,'good')
+}
 
-      <!-- Greeting -->
-      <div class="greeting" id="appGreeting"></div>
+// ─── CHALLENGES ───
+function getChProg(ch){
+  if(!data.joinedChallenges||!data.joinedChallenges[ch.id])return{joined:false,prog:0,pct:0};
+  let p=0;
+  if(ch.type==='all_taps'){let s=0,d=new Date();const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];if(!all.length)return{joined:true,prog:0,pct:0};
+    if(!all.every(h=>h.taps[dateKey(d)]))d.setDate(d.getDate()-1);while(all.every(h=>h.taps[dateKey(d)])){s++;d.setDate(d.getDate()-1)};p=s}
+  else if(ch.type==='starve_streak'){let s=0,d=new Date();const sh=data.habits.starve||[];if(!sh.length)return{joined:true,prog:0,pct:0};
+    if(!sh.every(h=>h.taps[dateKey(d)]))d.setDate(d.getDate()-1);while(sh.every(h=>h.taps[dateKey(d)])){s++;d.setDate(d.getDate()-1)};p=s}
+  else if(ch.type==='total_aura')p=data.auraPoints;
+  else if(ch.type==='total_commits')p=(data.commits||[]).length;
+  else if(ch.type==='single_streak'){const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];p=all.reduce((m,h)=>Math.max(m,calcStreak(h)),0)}
+  return{joined:true,prog:p,pct:Math.min(100,p/ch.target*100)}
+}
+function renderChallenges(){
+  const el=document.getElementById('challengesList');if(!el)return;
+  el.innerHTML=CHALLENGES.map(ch=>{
+    const{joined,prog,pct}=getChProg(ch);const done=joined&&prog>=ch.target;const claimed=(data.claimedChallenges||[]).includes(ch.id);
+    let act;
+    if(claimed)act='<span class="text-accent" style="font-size:.63rem">✅ done</span>';
+    else if(done)act=`<button class="btn btn-accent btn-sm" onclick="claimCh('${ch.id}')">claim 🔥</button>`;
+    else if(joined)act=`<span class="text-muted" style="font-size:.63rem">${prog}/${ch.target}</span>`;
+    else act=`<button class="btn btn-sm" style="border-color:var(--purple);color:var(--purple)" onclick="joinCh('${ch.id}')">join ⚔️</button>`;
+    return `<div class="ch-card ${done&&!claimed?'done':''} ${claimed?'claimed':''}">
+      <div class="ch-head"><span class="ch-icon">${ch.icon}</span><div class="ch-info"><div class="ch-nm">${ch.name}</div><div class="ch-ds">${ch.desc}</div></div><div>${act}</div></div>
+      ${joined&&!claimed?`<div class="ch-bar-w"><div class="ch-bar" style="width:${pct}%"></div></div><div class="ch-prog">${prog}/${ch.target}${done?' — claim it you slut 🔥':''}</div>`:''}
+      <div class="ch-rw">🏆 ${ch.reward} AP</div></div>`
+  }).join('')
+}
+function joinCh(id){if(!data.joinedChallenges)data.joinedChallenges={};data.joinedChallenges[id]={date:todayKey()};
+  logAct('challenge',`joined: ${(CHALLENGES.find(c=>c.id===id)||{}).name}`);save();renderChallenges();sfx('tap');haptic(12);toast("challenge ACCEPTED ⚔️🔥 don't embarrass yourself",'good')}
+function claimCh(id){
+  const ch=CHALLENGES.find(c=>c.id===id);if(!ch)return;if(!data.claimedChallenges)data.claimedChallenges=[];if(data.claimedChallenges.includes(id))return;
+  data.claimedChallenges.push(id);data.auraPoints+=ch.reward;logAct('claim',`completed "${ch.name}" +${ch.reward} AP`);
+  save();updateAura();showAuraChange(ch.reward);renderAll();spawnConfetti(40);launchConfetti();sfx('buy');haptic(15);
+  toast(`CHALLENGE DONE 🏆🔥 +${ch.reward} AP, sigma menace`,'good')
+}
 
-      <!-- Aura Points -->
-      <div class="aura-display">
-        <div class="aura-number" id="auraNumber">0</div>
-        <div class="aura-label neon-aura">aura points</div>
-        <div id="auraChangeSlot"></div>
-      </div>
+// ─── ANALYTICS ───
+function dayStats(key){
+  const fd=(data.habits.farm||[]).filter(h=>h.taps[key]===true);
+  const sd=(data.habits.starve||[]).filter(h=>h.taps[key]===true);
+  const frozen=[...(data.habits.starve||[]),...(data.habits.farm||[])].filter(h=>h.taps[key]==='frozen');
+  const total=fd.length+sd.length;return{fd,sd,frozen,total,aura:fd.length*15+sd.length*10}
+}
+function trackingStart(){let m=null;['starve','farm'].forEach(t=>(data.habits[t]||[]).forEach(h=>Object.keys(h.taps).forEach(k=>{if(!m||k<m)m=k})));return m}
 
-      <!-- Stats -->
-      <div class="stats-row" id="statsRow"></div>
+function renderAnalytics(){
+  const el=document.getElementById('analyticsEl');if(!el)return;
+  const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const k=dateKey(d),st=dayStats(k);
+    days.push({lbl:d.toLocaleDateString('en',{weekday:'short'}),taps:st.total,isToday:i===0})}
+  const mx=Math.max(...days.map(d=>d.taps),1);
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  const totalTaps=all.reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
+  const daysActive=new Set();all.forEach(h=>Object.keys(h.taps).forEach(k=>{if(h.taps[k])daysActive.add(k)}));
+  const avg=daysActive.size>0?(totalTaps/daysActive.size).toFixed(1):'0';
+  const sc=(data.habits.starve||[]).reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
+  const fc=(data.habits.farm||[]).reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
+  let roast;
+  if(daysActive.size===0)roast="you haven't done SHIT yet. zero data, zero aura, zero bitches 💀";
+  else if(daysActive.size>=30)roast=`${daysActive.size} days grinding, you absolute slut for progress. DISGUSTING discipline (compliment) 🔥👑`;
+  else if(daysActive.size>=7)roast=`${daysActive.size} days in, ${totalTaps} taps. not bad, don't get comfortable 👀🔥`;
+  else roast=`${daysActive.size} day${daysActive.size>1?'s':''} active, ${totalTaps} taps. baby numbers, pump them up 📈💀`;
+  el.innerHTML=`<div class="card">
+    <div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">last 7 days — taps/day</div>
+    <div class="an-bars">${days.map(d=>`<div class="an-col"><div class="an-val">${d.taps}</div><div class="an-track">
+      <div class="an-bar ${d.taps>0?(d.isToday?'today':''):'empty'}" style="height:${d.taps>0?Math.max(8,d.taps/mx*100):4}%"></div></div>
+      <div class="an-lbl ${d.isToday?'today':''}">${d.lbl}</div></div>`).join('')}</div>
+    <div class="an-stats"><div class="an-stat"><span class="an-sn">${totalTaps}</span><span class="an-sl">total taps</span></div>
+      <div class="an-stat"><span class="an-sn">${daysActive.size}</span><span class="an-sl">days active</span></div>
+      <div class="an-stat"><span class="an-sn">${avg}</span><span class="an-sl">avg/day</span></div>
+      <div class="an-stat"><span class="an-sn">${sc}/${fc}</span><span class="an-sl">starve/farm</span></div></div>
+    <div class="an-roast">${roast}</div></div>`
+}
 
-      <!-- Tab: Den (Home — dashboard + habits) -->
-      <div class="screen active" id="tabDen">
-        <!-- Level + Check-in Dashboard -->
-        <div id="denDashboard"></div>
+// ─── ACTIVITY FEED ───
+function renderActivity(){
+  const el=document.getElementById('activityEl');if(!el)return;
+  if(!data.activityLog||!data.activityLog.length){el.innerHTML='<div class="text-center text-muted" style="padding:14px;font-size:.7rem;">no activity yet... tap something 💀</div>';return}
+  const icons={tap:'✨',untap:'💀',buy:'💸',claim:'🏆',freeze:'🧊',commit:'📝',checkin:'🤔',habit:'➕',challenge:'⚔️'};
+  el.innerHTML=data.activityLog.slice(0,12).map(a=>`<div class="act-item"><span class="act-icon">${icons[a.type]||'📌'}</span><span class="act-msg">${escHtml(a.msg)}</span><span class="act-time">${timeAgo(a.time)}</span></div>`).join('')
+}
 
-        <div class="section-title neon-rot">💀 // STARVE THE BRAIN ROT</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch 🚫💀</p>
-        <div id="brainRotList"></div>
-        <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">
-          + add brain rot to starve 💀
-        </button>
+// ─── SQUAD ───
+function renderSquad(){
+  const c=document.getElementById('squadFeed');if(!c)return;
+  const habits=['doomscrolling','gooning','gym','mewing','cold showers','reading','vaping'];
+  const times=['just now','2m ago','5m ago','12m ago','23m ago','1h ago','2h ago','3h ago'];
+  const items=[];
+  for(let i=0;i<8;i++){const p=rand(SQUAD_NAMES);let act=rand(SQUAD_ACTS).replace('{n}',Math.floor(Math.random()*60)+1).replace('{h}',rand(habits));
+    items.push(`<div class="sq-item" style="animation-delay:${i*.08}s"><span class="sq-av">${p.av}</span><div>
+      <div><span class="sq-name">${p.n}</span> <span class="sq-time">${times[i]||rand(times)}</span></div><div class="sq-msg">${act}</div></div></div>`)}
+  c.innerHTML=items.join('')
+}
 
-        <div class="section-title mt-2 neon-aura">✨ // FARM THE AURA</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i did this shit today, i'm THAT bitch" — farm it 🔥✅</p>
-        <div id="auraFarmList"></div>
-        <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
-          + add aura habit ✨
-        </button>
+// ─── SHOP ───
+function renderShop(){
+  const c=document.getElementById('shopContent');if(!c)return;
+  const tabs=[{k:'avatars',i:'🤡',l:'Avatars'},{k:'themes',i:'🎨',l:'Themes'},{k:'titles',i:'🏷️',l:'Titles'}];
+  let h=`<div class="shop-bal">💰 <span class="text-accent">${data.auraPoints.toLocaleString()}</span> aura to blow</div>`;
+  h+=`<div class="shop-tabs">${tabs.map(t=>`<button class="shop-tab ${shopTab===t.k?'active':''}" onclick="setShopTab('${t.k}')">${t.i} ${t.l}</button>`).join('')}</div>`;
+  const items=SHOP[shopTab]||[];
+  h+='<div class="shop-grid">';
+  items.forEach(item=>{
+    const owned=data.owned.includes(item.id),equipped=data.equipped[shopTab.slice(0,-1)]===item.id,afford=data.auraPoints>=item.cost;
+    let btn;
+    if(equipped)btn='<button class="btn btn-sm" disabled style="opacity:.6;border-color:var(--accent);color:var(--accent)">equipped 👑</button>';
+    else if(owned)btn=`<button class="btn btn-sm btn-accent" onclick="equipItem('${shopTab}','${item.id}')">equip</button>`;
+    else if(afford)btn=`<button class="btn btn-sm btn-accent" onclick="buyItem('${shopTab}','${item.id}')">${item.cost} AP</button>`;
+    else btn=`<button class="btn btn-sm" disabled style="opacity:.4">🔒 ${item.cost} AP</button>`;
+    let prev='';
+    if(shopTab==='avatars')prev=`<div class="shop-av">${item.preview}</div>`;
+    else if(shopTab==='themes'){const v={...BASE_THEME,...(item.vars||{})};prev=`<div style="display:flex;justify-content:center;gap:5px;margin-bottom:6px">
+      <span style="width:20px;height:20px;border-radius:50%;display:inline-block;background:${v['--accent']}"></span>
+      <span style="width:20px;height:20px;border-radius:50%;display:inline-block;background:${v['--bg']||'#0a0a0a'}"></span></div>`}
+    else prev=`<div style="font-size:.68rem;color:var(--accent);margin-bottom:5px;font-style:italic">"${item.name}"</div>`;
+    h+=`<div class="shop-card ${owned?'owned':''} ${equipped?'equipped':''} ${!owned&&!afford?'locked':''}">${prev}
+      <div class="shop-nm">${item.name}</div><div class="shop-ds">${item.desc}</div>${btn}</div>`
+  });
+  h+='</div>';
+  h+=`<div class="sec-title" style="margin-top:18px">🏅 // MILESTONES</div>`;
+  h+=REWARDS.map(r=>{const unlocked=data.auraPoints>=r.cost,claimed=(data.rewards||[]).includes(r.id);
+    return `<div class="rw-item ${unlocked?'unlocked':'locked'}"><span class="rw-icon">${unlocked?r.icon:'🔒'}</span>
+      <div class="rw-info"><div class="rw-nm">${r.name} ${claimed?'<span class="text-accent">✓</span>':''}</div><div class="rw-ds">${r.desc}</div></div>
+      <div style="text-align:right"><div class="rw-cost">${r.cost>=1000?(r.cost/1000)+'K':r.cost} AP</div>
+      ${unlocked&&!claimed?`<button class="btn btn-accent btn-sm" style="margin-top:3px" onclick="claimReward('${r.id}')">claim</button>`:''}</div></div>`}).join('');
+  c.innerHTML=h
+}
+function setShopTab(t){shopTab=t;renderShop()}
+function buyItem(cat,id){
+  const item=SHOP[cat].find(x=>x.id===id);if(!item)return;
+  if(data.auraPoints<item.cost){sfx('error');haptic(50);toast(rand(BROKE_ROASTS),'bad');return}
+  data.auraPoints-=item.cost;data.owned.push(id);data.equipped[cat.slice(0,-1)]=id;
+  logAct('buy',`bought "${item.name}" for ${item.cost} AP 💸`);save();updateAura();renderShop();applyEquipped();
+  spawnConfetti(30);launchConfetti();sfx('buy');haptic(15);toast(rand(REDEEM_HYPE),'good')
+}
+function equipItem(cat,id){
+  data.equipped[cat.slice(0,-1)]=id;save();renderShop();applyEquipped();sfx('tap');haptic(12);
+  toast("equipped 👑 drip leveled up, aura recalibrated ✨",'good')
+}
+function claimReward(id){
+  if(!data.rewards)data.rewards=[];if(data.rewards.includes(id))return;
+  const r=REWARDS.find(x=>x.id===id);if(!r||data.auraPoints<r.cost)return;
+  data.rewards.push(id);logAct('claim',`claimed "${r.name}" 🏆`);save();renderShop();
+  spawnConfetti(50);launchConfetti();sfx('buy');haptic(15);toast(`🏆 ${r.name} CLAIMED — ${r.desc}`,'good')
+}
+function applyTheme(){
+  const tid=data.equipped?.theme||'th_default',theme=SHOP.themes.find(t=>t.id===tid);
+  const vars={...BASE_THEME,...(theme?theme.vars:{})};
+  Object.entries(vars).forEach(([k,v])=>document.documentElement.style.setProperty(k,v))
+}
+function applyEquipped(){
+  applyTheme();const av=SHOP.avatars.find(a=>a.id===data.equipped?.avatar);
+  const logo=document.getElementById('headerLogo');if(logo&&av)logo.textContent=av.preview;renderGreeting()
+}
 
-        <!-- Challenges -->
-        <div class="section-title mt-2 neon-aura">⚔️ // ACTIVE CHALLENGES</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">join a challenge and prove you're not just another cooked NPC 🫡🔥</p>
-        <div id="challengesList"></div>
+// ─── CALENDAR ───
+function renderCal(){
+  const c=document.getElementById('calGrid');if(!c)return;
+  const month=data.calMonth,year=data.calYear;
+  const lbl=document.getElementById('calLabel');if(lbl)lbl.textContent=new Date(year,month).toLocaleDateString('en',{month:'long',year:'numeric'});
+  const fd=new Date(year,month,1).getDay(),dim=new Date(year,month+1,0).getDate(),tKey=todayKey(),start=trackingStart();
+  const hds=['Su','Mo','Tu','We','Th','Fr','Sa'];
+  let h='<div class="cal-grid">';hds.forEach(x=>{h+=`<div class="cal-h">${x}</div>`});
+  for(let i=0;i<fd;i++)h+='<div class="cal-d empty"></div>';
+  for(let d=1;d<=dim;d++){
+    const key=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const isToday=key===tKey,st=dayStats(key);const cls=['cal-d'];let glyph=d;
+    if(isToday)cls.push('today');if(key===selectedCalDay)cls.push('sel');
+    if(st.total>0){if(st.total>=5)cls.push('a3');else if(st.total>=3)cls.push('a2');else cls.push('a1')}
+    else if(st.frozen.length>0){cls.push('frozen');glyph='🧊'}
+    else if(start&&key>=start&&key<tKey)cls.push('rot');
+    h+=`<div class="${cls.join(' ')}" onclick="showDay('${key}')">${glyph}</div>`
+  }
+  h+='</div>';c.innerHTML=h;if(selectedCalDay)renderDaySum(selectedCalDay)
+}
+function showDay(key){selectedCalDay=key;renderCal();renderDaySum(key)}
+function renderDaySum(key){
+  const el=document.getElementById('daySummary');if(!el)return;
+  const[y,m,dd]=key.split('-').map(Number);const dObj=new Date(y,m-1,dd);
+  const dl=dObj.toLocaleDateString('en',{weekday:'long',month:'short',day:'numeric'});
+  const st=dayStats(key),tKey=todayKey(),start=trackingStart(),isToday=key===tKey;
+  let verdict;
+  if(key>tKey)verdict='<span class="text-muted">🔮 the future, can\'t farm in advance bestie</span>';
+  else if(st.total===0&&st.frozen.length>0)verdict='<span class="text-cyan">🧊 frozen day. streak survived.</span>';
+  else if(st.total===0){
+    if(isToday)verdict='<span class="text-danger">👀 nothing yet today. lock tf in.</span>';
+    else if(start&&key>=start)verdict='<span class="text-danger">💀 COOKED this day. brain rot won.</span>';
+    else verdict='<span class="text-muted">😶 before your time on the farm.</span>'
+  }else if(st.total>=5)verdict=`<span class="text-accent">🔥 ATE this day. ${st.total} taps, +${st.aura} aura — sigma menace.</span>`;
+  else verdict=`<span class="text-accent">✨ showed up (${st.total} tap${st.total>1?'s':''}). decent.</span>`;
+  let htm=`<div class="day-sum"><div class="ds-date">› ${dl}${isToday?' <span class="text-accent">(today)</span>':''}</div><div style="font-size:.72rem;margin-bottom:8px">${verdict}</div>`;
+  if(st.fd.length)htm+=`<div class="ds-row">${st.fd.map(h=>`<span class="ds-tag good">${h.emoji} ${h.name}</span>`).join('')}</div>`;
+  if(st.sd.length)htm+=`<div class="ds-row">${st.sd.map(h=>`<span class="ds-tag good">${h.emoji} ${h.name} 🚫</span>`).join('')}</div>`;
+  if(st.total>0)htm+=`<div class="ds-row"><span class="ds-tag good">💰 +${st.aura} AP</span></div>`;
+  htm+='</div>';el.innerHTML=htm
+}
+function calNav(dir){
+  data.calMonth+=dir;if(data.calMonth>11){data.calMonth=0;data.calYear++}if(data.calMonth<0){data.calMonth=11;data.calYear--}
+  selectedCalDay=null;document.getElementById('daySummary').innerHTML='';save();renderCal()
+}
 
-        <!-- Analytics -->
-        <div class="section-title mt-2 neon-aura">📊 // YOUR RECEIPTS</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">the data doesn't lie bestie, here's how down bad (or up good) you really are 📈💀</p>
-        <div id="analyticsSection"></div>
+// ─── GREETING ───
+function renderGreeting(){
+  const el=document.getElementById('greetingEl');if(!el)return;
+  const name=data.packName||'Anon';const tmpl=rand(GREETINGS).replace('{name}',name);
+  const hr=new Date().getHours();let tm;
+  if(hr<5)tm="it's late af, go to sleep degenerate 🌙";else if(hr<9)tm="early bird, farming before NPCs wake 🌅";
+  else if(hr<12)tm="morning grind activated 🔥";else if(hr<17)tm="afternoon check-in, don't slip 👀";
+  else if(hr<21)tm="evening session, starve that brain rot 🧠";else tm="night owl, don't let brain rot creep in 🦉";
+  const title=data.equipped?.title?SHOP.titles.find(x=>x.id===data.equipped.title):null;
+  const av=SHOP.avatars.find(a=>a.id===data.equipped?.avatar);
+  el.innerHTML=`<div class="greeting-name"><span class="text-purple">${av?av.preview:'🧠'}</span> ${tmpl}</div>
+    ${title?`<div class="greeting-title">「${title.name}」</div>`:''}
+    <div class="greeting-sub"># ${tm}</div>`
+}
 
-        <!-- Activity Feed -->
-        <div class="section-title mt-2 neon-aura">📡 // RECENT ACTIVITY</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">a timeline of your degenerate-to-sigma arc, updated in real time 👀</p>
-        <div id="activityFeed"></div>
-      </div>
+// ─── TAB SWITCHING ───
+function switchTab(tabId,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(tabId)?.classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(n=>n.classList.remove('active'));
+  if(btn)btn.classList.add('active');currentTab=tabId;
+  if(tabId==='tabDen'){renderDen();renderChallenges();renderAnalytics();renderActivity()}
+  if(tabId==='tabStarve'){renderHabits('starve','starveList');renderQuitTimers()}
+  if(tabId==='tabFarm'){renderHabits('farm','farmList');renderCommitLog()}
+  if(tabId==='tabSquad')renderSquad();
+  if(tabId==='tabShop')renderShop();
+  if(tabId==='tabCal')renderCal()
+}
 
-      <!-- Tab: Starve (Brain Rot Focus + Quit Timers) -->
-      <div class="screen" id="tabStarve">
-        <div class="section-title neon-rot">💀 // BRAIN ROT HIT LIST</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch into extinction 🚫💀</p>
-        <div id="starveList"></div>
-        <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">
-          + add brain rot to starve 💀
-        </button>
+// ─── RENDER ALL ───
+function renderAll(){
+  updateAura();renderStats();renderGreeting();
+  renderHabits('starve','starveList');renderHabits('farm','farmList');
+  renderQuitTimers();renderCommitLog();
+  renderDen();renderChallenges();renderAnalytics();renderActivity()
+}
 
-        <div class="section-title mt-2 neon-rot">🚫 // QUIT TIMER — BRAIN ROT DETOX</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">track how long you've been starving each degenerate habit — the longer the filthier the flex 💀🔥</p>
-        <div id="quitTimerList"></div>
-      </div>
+// ─── RESET ───
+function resetApp(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>💀 RESET EVERYTHING?</h3>
+    <p style="font-size:.72rem;color:var(--fg2);margin-bottom:14px;">this will NUKE all your shit. streaks, aura, habits — everything gone. are you sure?? 🗑️💀</p>
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nah</button>
+    <button class="btn btn-danger" onclick="confirmReset()">nuke it all 💀</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function confirmReset(){
+  localStorage.removeItem(DB_KEY);data=JSON.parse(JSON.stringify(DEFAULT_DATA));save();closeModal();renderAll();applyEquipped();
+  sfx('untap');haptic(40);toast("everything nuked. fresh start, zero aura, back to nobody 💀🔥",'bad')
+}
 
-      <!-- Tab: Farm (Aura Habits + Commit Log) -->
-      <div class="screen" id="tabFarm">
-        <div class="section-title neon-aura">✨ // AURA FARM HABITS</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i did this shit today, i'm THAT bitch" — farm it like the slut for progress you are 🔥✅</p>
-        <div id="farmList"></div>
-        <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
-          + add aura habit ✨
-        </button>
+// ─── NAME PROMPT ───
+function promptName(){
+  if(data.packName)return;
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>🧠 WHAT'S YOUR NAME, DEGENERATE?</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">this is your pack name. make it go hard af 🔥💀</p>
+    <input type="text" id="packNameInput" placeholder="e.g. RizzLord, GigaChad, BrainRotSlayer..." maxlength="20">
+    <div class="modal-actions"><button class="btn btn-accent btn-block" onclick="setName()">lock the fuck in → 🔒🔥</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('packNameInput')?.focus(),100)
+}
+function setName(){
+  const name=document.getElementById('packNameInput')?.value.trim();
+  if(!name){sfx('error');toast("name yourself you coward 💀",'bad');return}
+  data.packName=name;save();closeModal();renderAll();sfx('buy');haptic(15);
+  toast(`welcome to the farm, ${name} you degenerate 🔥✨`,'good')
+}
 
-        <div class="section-title mt-2 neon-aura">📝 // DAILY COMMIT LOG</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">what did you lock in today? spill the tea, document the grind, no cap ✍️🔥</p>
-        <div class="input-row">
-          <input type="text" id="commitInput" placeholder="today i locked tf in and didn't act like a degenerate because...">
-          <button class="btn btn-accent glow-button" onclick="addCommit()">log it 🔥</button>
-        </div>
-        <div id="commitLog"></div>
-      </div>
+// ─── RECALC STREAKS ───
+function recalcAll(){
+  const broken=[];
+  ['starve','farm'].forEach(type=>(data.habits[type]||[]).forEach(h=>{
+    if(!h.taps)h.taps={};if(typeof h.bestStreak!=='number')h.bestStreak=0;
+    const prev=typeof h.lastStreak==='number'?h.lastStreak:0;calcStreak(h);
+    if(prev>=2&&h.streak===0)broken.push(h);h.lastStreak=h.streak
+  }));save();return broken
+}
 
-      <!-- Tab: Squad -->
-      <div class="screen" id="tabSquad">
-        <div class="section-title neon-aura">👥 // THE SQUAD FEED</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">your fellow degenerate sluts for progress, all grinding their asses off 🫡🔥</p>
-        <div class="card" id="squadFeed"></div>
-        <button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquadFeed()">
-          refresh the feed, see who's grinding 🔄
-        </button>
-      </div>
+// ─── INIT ───
+function init(){
+  load();
+  const broken=recalcAll();
+  renderAll();applyEquipped();renderCal();
 
-      <!-- Tab: Reward (Shop) -->
-      <div class="screen" id="tabReward">
-        <div class="section-title neon-aura">🛒 // AURA SHOP</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">spend aura on avatars, slutty themes & degenerate titles. drip or drown bestie 💸✨</p>
-        <div id="rewardsList"></div>
-      </div>
+  if(!data.packName)setTimeout(promptName,800);
+  else if(broken.length){
+    setTimeout(()=>broken.slice(0,3).forEach((h,i)=>setTimeout(()=>toast(rand(STREAK_BROKEN).replace('{n}',h.name),'bad'),i*600)),900)
+  }
 
-      <!-- Tab: Calendar -->
-      <div class="screen" id="tabCalendar">
-        <div class="section-title neon-aura">📅 // YOUR GRIND CALENDAR</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">green = aura farmed like a slut for progress. red = COOKED, brain rot ate your ass 💀. tap a day for receipts 👀</p>
-        <div class="card">
-          <div class="flex-between mb-1">
-            <button class="btn btn-sm" onclick="calNav(-1)">← prev</button>
-            <span id="calMonthLabel" style="font-size:0.75rem; color:var(--accent);"></span>
-            <button class="btn btn-sm" onclick="calNav(1)">next →</button>
-          </div>
-          <div id="appCalendar"></div>
-          <div class="cal-legend">
-            <span><i class="legend-dot aura"></i> aura day</span>
-            <span><i class="legend-dot rot"></i> cooked</span>
-            <span><i class="legend-dot ice"></i> frozen</span>
-          </div>
-          <div id="daySummary"></div>
-        </div>
-      </div>
+  if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+  initConfetti();
 
-    </div>
-  </div>
+  document.getElementById('commitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')addCommit()});
 
-  <!-- ═══════════ BOTTOM NAV ═══════════ -->
-  <nav class="bottom-nav" id="bottomNav" style="display:none;">
-    <button class="nav-item active" data-tab="tabDen" onclick="switchTab('tabDen',this)">
-      <span class="nav-icon">🏠</span> Den
-    </button>
-    <button class="nav-item" data-tab="tabStarve" onclick="switchTab('tabStarve',this)">
-      <span class="nav-icon">💀</span> Starve
-    </button>
-    <button class="nav-item" data-tab="tabFarm" onclick="switchTab('tabFarm',this)">
-      <span class="nav-icon">✨</span> Farm
-    </button>
-    <button class="nav-item" data-tab="tabSquad" onclick="switchTab('tabSquad',this)">
-      <span class="nav-icon">👥</span> Squad
-    </button>
-    <button class="nav-item" data-tab="tabReward" onclick="switchTab('tabReward',this)">
-      <span class="nav-icon">🛒</span> Shop
-    </button>
-    <button class="nav-item" data-tab="tabCalendar" onclick="switchTab('tabCalendar',this)">
-      <span class="nav-icon">📅</span> Cal
-    </button>
-  </nav>
+  const loader=document.getElementById('loadingScreen');
+  if(loader){setTimeout(()=>{loader.classList.add('hidden');setTimeout(()=>loader.remove(),400)},600)}
+}
 
-  <!-- ═══════════ MODAL ═══════════ -->
-  <div id="modalOverlay" class="modal-overlay" style="display:none;" onclick="closeModalBackdrop(event)">
-    <div class="modal" id="modalContent"></div>
-  </div>
-
-  <script src="app.js"></script>
+document.addEventListener('DOMContentLoaded',init);
+</script>
 </body>
 </html>

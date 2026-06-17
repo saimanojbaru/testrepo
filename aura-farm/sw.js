@@ -4,14 +4,11 @@
    you're cooked with no signal 📡💀✨
    ═══════════════════════════════════════════════════ */
 
-const CACHE_NAME = 'aura-farm-v13';
+const CACHE_NAME = 'aura-farm-v14';
 
-// relative to the SW's own location — works no matter where the app is hosted
 const ASSETS = [
   './',
   './index.html',
-  './style.css',
-  './app.js',
   './manifest.json',
   './icons/icon-192.svg',
   './icons/icon-512.svg'
