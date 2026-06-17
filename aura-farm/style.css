@@ -1120,6 +1120,48 @@ body.is-offline .offline-banner { display: block; }
   100% { transform: translateX(100%); }
 }
 
+/* ─── Neon Utility Classes ─── */
+.neon-aura {
+  text-shadow:
+    0 0 5px #00ff9f,
+    0 0 10px #00ff9f,
+    0 0 20px #00ffff,
+    0 0 40px #ff00ff;
+  animation: aura-pulse 2s infinite alternate;
+}
+.neon-rot {
+  text-shadow:
+    0 0 5px #ff0044,
+    0 0 10px #bb00ff;
+}
+@keyframes aura-pulse {
+  from {
+    text-shadow:
+      0 0 4px #00ff9f,
+      0 0 8px #00ff9f,
+      0 0 14px #00ffff,
+      0 0 28px #ff00ff;
+  }
+  to {
+    text-shadow:
+      0 0 8px #00ff9f,
+      0 0 18px #00ff9f,
+      0 0 30px #00ffff,
+      0 0 60px #ff00ff;
+  }
+}
+.glow-button {
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px #00ff9f;
+}
+.glow-button:hover {
+  box-shadow: 0 0 22px #00ff9f, 0 0 44px rgba(0,255,159,0.3);
+}
+.glow-button:active {
+  transform: scale(0.92);
+  box-shadow: 0 0 30px #00ffff;
+}
+
 /* ─── Confetti Canvas ─── */
 #confettiCanvas {
   position: fixed;

@@ -20,7 +20,7 @@
     <div class="header-left">
       <span class="header-logo glitch">🧠</span>
       <div>
-        <div class="header-title">AURA FARM</div>
+        <div class="header-title neon-aura">AURA FARM</div>
         <div class="header-version">v2.0 — brain rot slayer, aura whore</div>
       </div>
     </div>
@@ -40,7 +40,7 @@
       📲 <strong>slap this on your home screen</strong>, farm aura like a real degenerate (works offline) 🔥
     </div>
     <div class="install-actions">
-      <button class="btn btn-accent btn-sm" id="installBtn" onclick="triggerInstall()">install it 😈</button>
+      <button class="btn btn-accent btn-sm glow-button" id="installBtn" onclick="triggerInstall()">install it 😈</button>
       <button class="btn btn-sm" onclick="dismissInstall()">nah 💀</button>
     </div>
   </div>
@@ -69,7 +69,7 @@
           <em>Starve that fucking Brain Rot.</em><br>
           <strong>Farm your Aura, no cap.</strong> 🔥
         </p>
-        <button class="btn-cta" onclick="enterApp()">
+        <button class="btn-cta glow-button" onclick="enterApp()">
           <span class="btn-cta-text">Enter your Zone, lock the fuck in →</span>
           <span class="btn-cta-icons">🔒🔥</span>
           <span class="btn-cta-glow"></span>
@@ -77,7 +77,7 @@
       </div>
 
       <!-- Landing Demo Sections -->
-      <div class="section-title">💀 // STARVE THE BRAIN ROT</div>
+      <div class="section-title neon-rot">💀 // STARVE THE BRAIN ROT</div>
       <div class="code-block" data-lang="brain-rot">
 <span class="comment">// daily taps to quit your degenerate habits</span>
 <span class="comment">// starve that brain rot, you absolute goon</span>
@@ -95,7 +95,7 @@
 }
       </div>
 
-      <div class="section-title">✨ // FARM THE AURA</div>
+      <div class="section-title neon-aura">✨ // FARM THE AURA</div>
       <div class="code-block" data-lang="aura">
 <span class="comment">// stack those aura points king/queen</span>
 <span class="comment">// you absolute slut for progress</span>
@@ -113,7 +113,7 @@
 }
       </div>
 
-      <div class="section-title">👥 // THE SQUAD</div>
+      <div class="section-title neon-aura">👥 // THE SQUAD</div>
       <div class="card">
         <div class="squad-item">
           <span class="squad-avatar">💀</span>
@@ -145,7 +145,7 @@
         </div>
       </div>
 
-      <div class="section-title">🛒 // AURA SHOP</div>
+      <div class="section-title neon-aura">🛒 // AURA SHOP</div>
       <div class="card">
         <p class="text-muted" style="font-size:0.7rem;margin-bottom:10px;">blow your aura on degenerate drip, slutty themes & filthy titles 💸🔥</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
@@ -157,7 +157,7 @@
         </div>
       </div>
 
-      <div class="section-title">📅 // CALENDAR</div>
+      <div class="section-title neon-aura">📅 // CALENDAR</div>
       <div class="card">
         <div id="landingCalendar"></div>
       </div>
@@ -179,7 +179,7 @@
       <!-- Aura Points -->
       <div class="aura-display">
         <div class="aura-number" id="auraNumber">0</div>
-        <div class="aura-label">aura points</div>
+        <div class="aura-label neon-aura">aura points</div>
         <div id="auraChangeSlot"></div>
       </div>
 
@@ -188,14 +188,14 @@
 
       <!-- Tab: Den (Home — overview + commit log) -->
       <div class="screen active" id="tabDen">
-        <div class="section-title">💀 // STARVE THE BRAIN ROT</div>
+        <div class="section-title neon-rot">💀 // STARVE THE BRAIN ROT</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch 🚫💀</p>
         <div id="brainRotList"></div>
         <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">
           + add brain rot to starve 💀
         </button>
 
-        <div class="section-title mt-2">✨ // FARM THE AURA</div>
+        <div class="section-title mt-2 neon-aura">✨ // FARM THE AURA</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i did this shit today, i'm THAT bitch" — farm it 🔥✅</p>
         <div id="auraFarmList"></div>
         <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
@@ -205,39 +205,39 @@
 
       <!-- Tab: Starve (Brain Rot Focus + Quit Timers) -->
       <div class="screen" id="tabStarve">
-        <div class="section-title">💀 // BRAIN ROT HIT LIST</div>
+        <div class="section-title neon-rot">💀 // BRAIN ROT HIT LIST</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch into extinction 🚫💀</p>
         <div id="starveList"></div>
         <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">
           + add brain rot to starve 💀
         </button>
 
-        <div class="section-title mt-2">🚫 // QUIT TIMER — BRAIN ROT DETOX</div>
+        <div class="section-title mt-2 neon-rot">🚫 // QUIT TIMER — BRAIN ROT DETOX</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">track how long you've been starving each degenerate habit — the longer the filthier the flex 💀🔥</p>
         <div id="quitTimerList"></div>
       </div>
 
       <!-- Tab: Farm (Aura Habits + Commit Log) -->
       <div class="screen" id="tabFarm">
-        <div class="section-title">✨ // AURA FARM HABITS</div>
+        <div class="section-title neon-aura">✨ // AURA FARM HABITS</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i did this shit today, i'm THAT bitch" — farm it like the slut for progress you are 🔥✅</p>
         <div id="farmList"></div>
         <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
           + add aura habit ✨
         </button>
 
-        <div class="section-title mt-2">📝 // DAILY COMMIT LOG</div>
+        <div class="section-title mt-2 neon-aura">📝 // DAILY COMMIT LOG</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">what did you lock in today? spill the tea, document the grind, no cap ✍️🔥</p>
         <div class="input-row">
           <input type="text" id="commitInput" placeholder="today i locked tf in and didn't act like a degenerate because...">
-          <button class="btn btn-accent" onclick="addCommit()">log it 🔥</button>
+          <button class="btn btn-accent glow-button" onclick="addCommit()">log it 🔥</button>
         </div>
         <div id="commitLog"></div>
       </div>
 
       <!-- Tab: Squad -->
       <div class="screen" id="tabSquad">
-        <div class="section-title">👥 // THE SQUAD FEED</div>
+        <div class="section-title neon-aura">👥 // THE SQUAD FEED</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">your fellow degenerate sluts for progress, all grinding their asses off 🫡🔥</p>
         <div class="card" id="squadFeed"></div>
         <button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquadFeed()">
@@ -247,14 +247,14 @@
 
       <!-- Tab: Reward (Shop) -->
       <div class="screen" id="tabReward">
-        <div class="section-title">🛒 // AURA SHOP</div>
+        <div class="section-title neon-aura">🛒 // AURA SHOP</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">spend aura on avatars, slutty themes & degenerate titles. drip or drown bestie 💸✨</p>
         <div id="rewardsList"></div>
       </div>
 
       <!-- Tab: Calendar -->
       <div class="screen" id="tabCalendar">
-        <div class="section-title">📅 // YOUR GRIND CALENDAR</div>
+        <div class="section-title neon-aura">📅 // YOUR GRIND CALENDAR</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">green = aura farmed like a slut for progress. red = COOKED, brain rot ate your ass 💀. tap a day for receipts 👀</p>
         <div class="card">
           <div class="flex-between mb-1">
