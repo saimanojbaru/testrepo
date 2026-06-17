@@ -28,6 +28,8 @@ const DEFAULT_DATA = {
   },
   commits: [],
   rewards: [],
+  owned: [],
+  equipped: { avatar: 'av_brain', theme: 'th_default', title: null },
   calMonth: new Date().getMonth(),
   calYear: new Date().getFullYear()
 };
@@ -41,6 +43,59 @@ const REWARDS = [
   { id: 'r6', icon: '🧬', name: 'Glow Up Unlocked', desc: "glow up your fuckability status: ASCENDED", cost: 2000 },
   { id: 'r7', icon: '🌌', name: 'Sigma Overlord', desc: "you've transcended NPC existence entirely", cost: 5000 },
   { id: 'r8', icon: '💀', name: 'Final Boss', desc: "aura so high it's illegal in 47 states", cost: 10000 }
+];
+
+// ─── THEME BASE VARS (defaults that themes override) ───
+const BASE_THEME = {
+  '--bg': '#0a0a0a', '--bg2': '#111111', '--bg3': '#1a1a1a',
+  '--accent': '#c8ff00', '--danger': '#ff3e6c', '--purple': '#b388ff', '--cyan': '#00e5ff'
+};
+
+// ─── SHOP: redeem aura points for explicit customizations ───
+const SHOP = {
+  avatars: [
+    { id: 'av_brain',  preview: '🧠',  name: 'Default NPC Brain',    desc: 'the broke starter look. mid.',                      cost: 0 },
+    { id: 'av_clown',  preview: '🤡',  name: 'Simp Clown',           desc: 'for when you fumbled the bag fr',                   cost: 80 },
+    { id: 'av_skull',  preview: '💀',  name: 'Cooked Skull',         desc: 'certified down bad. own it.',                       cost: 120 },
+    { id: 'av_drool',  preview: '🤤',  name: 'Down Bad Drooler',     desc: 'thirsty lil menace energy',                         cost: 180 },
+    { id: 'av_peach',  preview: '🍑',  name: 'Certified Cake',       desc: 'all aura, all ass, no cap',                         cost: 250 },
+    { id: 'av_devil',  preview: '😈',  name: 'Horny Lil Devil',      desc: 'horns OUT, aura unhinged 🔥',                       cost: 300 },
+    { id: 'av_hot',    preview: '🥵',  name: 'Insufferably Hot',     desc: 'you a whole snack and you know it',                  cost: 400 },
+    { id: 'av_demon',  preview: '👹',  name: 'Goon Demon Boss',      desc: 'final form of a reformed degenerate',               cost: 600 },
+    { id: 'av_alien',  preview: '👽',  name: 'Sigma Alien',          desc: 'aura not even from this dimension',                 cost: 900 },
+    { id: 'av_goat',   preview: '🐐',  name: 'Literal GOAT',         desc: 'greatest aura farmer of all time',                  cost: 1500 }
+  ],
+  themes: [
+    { id: 'th_default', name: 'Degenerate Default',  desc: 'the OG lime-green grindset', vars: {},                                                              cost: 0 },
+    { id: 'th_slut',    name: 'Slutty Red 💋',        desc: 'paint the town red you menace', vars: { '--accent': '#ff2d55', '--purple': '#ff7eb6' },              cost: 250 },
+    { id: 'th_femboy',  name: 'Femboy Pink 🎀',       desc: 'soft but feral, ate that look', vars: { '--accent': '#ff8fd6', '--cyan': '#ffc1f0' },                cost: 300 },
+    { id: 'th_goon',    name: 'Goon Cave Purple 🍆',  desc: 'lights off, aura on', vars: { '--accent': '#b388ff', '--bg': '#0c0716', '--bg2': '#140d22' },        cost: 350 },
+    { id: 'th_cyber',   name: 'Cyber Rizz 🤖',        desc: 'neon teal, rizz from 3024', vars: { '--accent': '#00ffe0', '--danger': '#ff4d6d' },               cost: 450 },
+    { id: 'th_sigma',   name: 'Sigma Gold 👑',        desc: 'drip so loud it has a sound', vars: { '--accent': '#ffd700', '--purple': '#ffe98a' },               cost: 600 },
+    { id: 'th_demon',   name: 'Demon Mode 😈',        desc: 'blood-red, zero chill', vars: { '--accent': '#ff2030', '--bg': '#160000', '--bg2': '#220404', '--danger': '#ff5c5c' }, cost: 900 }
+  ],
+  titles: [
+    { id: 'ti_npc',    name: 'Reformed NPC',        desc: 'barely sentient but trying', cost: 60 },
+    { id: 'ti_goon',   name: 'Certified Goon',      desc: 'wear the shame with pride',  cost: 120 },
+    { id: 'ti_slut',   name: 'Slut for Progress',   desc: 'down astronomical for gains', cost: 220 },
+    { id: 'ti_rizz',   name: 'Rizzler Supreme',     desc: 'unspoken rizz, spoken aura', cost: 400 },
+    { id: 'ti_demon',  name: 'Aura Demon',          desc: 'feeds on brain rot corpses', cost: 650 },
+    { id: 'ti_sigma',  name: 'Sigma Overlord',      desc: 'touched grass, touched god',  cost: 1200 }
+  ]
+};
+
+
+const REDEEM_HYPE = [
+  "REDEEMED 🔥 you spent aura like a high roller, respect",
+  "purchase made, drip acquired, aura demolished 💸✨",
+  "ka-ching 🤑 your fuckability just went up a tier",
+  "bought it. flexed it. you absolute menace 😈"
+];
+const BROKE_ROASTS = [
+  "broke bitch alert 🚨 farm more aura before you window shop 💀",
+  "you can't afford that, go starve some brain rot first 😭",
+  "insufficient aura, NPC. grind harder you degenerate 💸💀",
+  "lmao you're aura-broke. tap some habits and come back 🫵"
 ];
 
 const STARVE_ROASTS = [
@@ -202,6 +257,10 @@ function load() {
       if (!data.commits) data.commits = [];
       if (typeof data.freezes !== 'number') data.freezes = 3;
       if (data.calMonth === undefined) { data.calMonth = new Date().getMonth(); data.calYear = new Date().getFullYear(); }
+      if (!Array.isArray(data.owned)) data.owned = [];
+      if (!data.equipped) data.equipped = { avatar: 'av_brain', theme: 'th_default', title: null };
+      if (!data.owned.includes('av_brain')) data.owned.push('av_brain');
+      if (!data.owned.includes('th_default')) data.owned.push('th_default');
     } else {
       data = JSON.parse(JSON.stringify(DEFAULT_DATA));
     }
@@ -637,28 +696,120 @@ function escapeHtml(s) {
   return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ─── REWARDS ───
+// ─── SHOP / REWARDS ───
+let shopTab = 'avatars';
+
 function renderRewards() {
   const container = document.getElementById('rewardsList');
   if (!container) return;
 
-  container.innerHTML = REWARDS.map(r => {
+  const tabs = [
+    { key: 'avatars', icon: '🤡', label: 'Avatars' },
+    { key: 'themes',  icon: '🎨', label: 'Themes' },
+    { key: 'titles',  icon: '🏷️', label: 'Titles' }
+  ];
+
+  let html = `<div class="shop-balance">💰 <span class="text-accent">${data.auraPoints}</span> aura points to blow</div>`;
+  html += `<div class="shop-tabs">`;
+  tabs.forEach(t => {
+    html += `<button class="shop-tab ${shopTab === t.key ? 'active' : ''}" onclick="setShopTab('${t.key}')">${t.icon} ${t.label}</button>`;
+  });
+  html += `</div>`;
+
+  const items = SHOP[shopTab] || [];
+  html += `<div class="shop-grid">`;
+  items.forEach(item => {
+    const owned = data.owned.includes(item.id);
+    const equipped = data.equipped[shopTab.slice(0, -1)] === item.id;
+    const canAfford = data.auraPoints >= item.cost;
+
+    let actionBtn;
+    if (equipped) {
+      actionBtn = `<button class="btn btn-sm shop-equipped" disabled>equipped 👑</button>`;
+    } else if (owned) {
+      actionBtn = `<button class="btn btn-sm btn-accent" onclick="equipItem('${shopTab}','${item.id}')">equip</button>`;
+    } else if (canAfford) {
+      actionBtn = `<button class="btn btn-sm btn-accent" onclick="buyItem('${shopTab}','${item.id}')">${item.cost} AP</button>`;
+    } else {
+      actionBtn = `<button class="btn btn-sm shop-broke" disabled>🔒 ${item.cost} AP</button>`;
+    }
+
+    let preview = '';
+    if (shopTab === 'avatars') {
+      preview = `<div class="shop-preview-avatar">${item.preview}</div>`;
+    } else if (shopTab === 'themes') {
+      const vars = { ...BASE_THEME, ...item.vars };
+      preview = `<div class="shop-preview-theme">
+        <span class="swatch" style="background:${vars['--accent']}"></span>
+        <span class="swatch" style="background:${vars['--bg'] || BASE_THEME['--bg']}"></span>
+        <span class="swatch" style="background:${vars['--danger'] || BASE_THEME['--danger']}"></span>
+      </div>`;
+    } else {
+      preview = `<div class="shop-preview-title">"${item.name}"</div>`;
+    }
+
+    html += `
+      <div class="shop-card ${owned ? 'owned' : ''} ${equipped ? 'is-equipped' : ''} ${!owned && !canAfford ? 'locked' : ''}">
+        ${preview}
+        <div class="shop-card-name">${item.name}</div>
+        <div class="shop-card-desc">${item.desc}</div>
+        ${actionBtn}
+      </div>`;
+  });
+  html += `</div>`;
+
+  // milestone badges
+  html += `<div class="section-title" style="margin-top:20px;">🏅 // MILESTONES</div>`;
+  html += REWARDS.map(r => {
     const unlocked = data.auraPoints >= r.cost;
     const claimed = (data.rewards || []).includes(r.id);
     return `
       <div class="reward-item ${unlocked ? 'unlocked' : 'locked'}">
         <span class="reward-icon">${unlocked ? r.icon : '🔒'}</span>
         <div class="reward-info">
-          <div class="reward-name">${r.name} ${claimed ? '<span class="text-accent">✓ claimed</span>' : ''}</div>
+          <div class="reward-name">${r.name} ${claimed ? '<span class="text-accent">✓</span>' : ''}</div>
           <div class="reward-desc">${r.desc}</div>
         </div>
         <div style="text-align:right;">
           <div class="reward-cost">${r.cost >= 1000 ? (r.cost/1000)+'K' : r.cost} AP</div>
           ${unlocked && !claimed ? `<button class="btn btn-accent btn-sm" style="margin-top:4px;" onclick="claimReward('${r.id}')">claim</button>` : ''}
         </div>
-      </div>
-    `;
+      </div>`;
   }).join('');
+
+  container.innerHTML = html;
+}
+
+function setShopTab(tab) {
+  shopTab = tab;
+  renderRewards();
+}
+
+function buyItem(category, id) {
+  const item = SHOP[category].find(x => x.id === id);
+  if (!item) return;
+  if (data.auraPoints < item.cost) {
+    toast(rand(BROKE_ROASTS), 'bad');
+    return;
+  }
+  data.auraPoints -= item.cost;
+  data.owned.push(id);
+  const catKey = category.slice(0, -1);
+  data.equipped[catKey] = id;
+  save();
+  updateAuraDisplay();
+  renderRewards();
+  applyEquipped();
+  toast(rand(REDEEM_HYPE), 'good');
+}
+
+function equipItem(category, id) {
+  const catKey = category.slice(0, -1);
+  data.equipped[catKey] = id;
+  save();
+  renderRewards();
+  applyEquipped();
+  toast("equipped 👑 drip upgraded, aura recalibrated ✨", 'good');
 }
 
 function claimReward(id) {
@@ -670,6 +821,29 @@ function claimReward(id) {
   save();
   renderRewards();
   toast(`🏆 ${r.name} CLAIMED — ${r.desc}`, 'good');
+}
+
+function applyTheme() {
+  const themeId = data.equipped.theme || 'th_default';
+  const theme = SHOP.themes.find(t => t.id === themeId);
+  const vars = { ...BASE_THEME, ...(theme ? theme.vars : {}) };
+  Object.entries(vars).forEach(([k, v]) => {
+    document.documentElement.style.setProperty(k, v);
+  });
+}
+
+function applyEquipped() {
+  applyTheme();
+  const avatar = SHOP.avatars.find(a => a.id === data.equipped.avatar);
+  const logo = document.querySelector('.header-logo');
+  if (logo && avatar) logo.textContent = avatar.preview;
+  renderGreeting();
+}
+
+function getEquippedTitle() {
+  if (!data.equipped.title) return null;
+  const t = SHOP.titles.find(x => x.id === data.equipped.title);
+  return t ? t.name : null;
 }
 
 // ─── CALENDAR ───
@@ -915,8 +1089,13 @@ function renderGreeting() {
   else if (hour < 21) timeMsg = "evening session, starve that brain rot before bed 🧠";
   else timeMsg = "night owl mode, don't let the brain rot creep in 🦉";
 
+  const title = getEquippedTitle();
+  const avatar = SHOP.avatars.find(a => a.id === (data.equipped && data.equipped.avatar));
+  const avatarEmoji = avatar ? avatar.preview : '🧠';
+
   el.innerHTML = `
-    <div class="greeting-name"><span class="text-purple">$</span> ${greeting}</div>
+    <div class="greeting-name"><span class="text-purple">${avatarEmoji}</span> ${greeting}</div>
+    ${title ? `<div class="greeting-title">「${title}」</div>` : ''}
     <div class="greeting-sub"># ${timeMsg}</div>
   `;
 }
@@ -974,7 +1153,7 @@ function activateApp() {
     <button class="btn btn-sm" onclick="resetApp()" title="nuke it all, you masochist">🗑️</button>
     <button class="btn btn-sm" onclick="goLanding()" title="dip out to the landing">←</button>
   `;
-  renderGreeting();
+  applyEquipped();
   renderHabits();
   renderCommitLog();
   renderRewards();

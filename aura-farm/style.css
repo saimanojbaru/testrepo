@@ -581,7 +581,62 @@ body.is-offline .offline-banner { display: block; }
 .squad-time { color: var(--fg2); font-size: 0.6rem; }
 .squad-msg { color: var(--fg); margin-top: 2px; }
 
-/* ─── Rewards ─── */
+/* ─── Shop ─── */
+.shop-balance {
+  font-family: var(--mono); font-size: 0.85rem; font-weight: 700;
+  padding: 10px 0; text-align: center;
+}
+.shop-tabs {
+  display: flex; gap: 6px; margin-bottom: 14px;
+}
+.shop-tab {
+  flex: 1; padding: 8px 4px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg3); color: var(--fg2); font-family: var(--mono);
+  font-size: 0.7rem; cursor: pointer; transition: all 0.15s;
+}
+.shop-tab.active { border-color: var(--accent); color: var(--accent); background: var(--bg2); }
+.shop-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+}
+.shop-card {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 14px 10px; text-align: center; transition: all 0.2s;
+}
+.shop-card.owned { border-color: var(--purple); }
+.shop-card.is-equipped { border-color: var(--accent); box-shadow: 0 0 12px rgba(200,255,0,0.15); }
+.shop-card.locked { opacity: 0.45; }
+.shop-preview-avatar { font-size: 2.2rem; margin-bottom: 6px; }
+.shop-preview-theme { display: flex; justify-content: center; gap: 6px; margin-bottom: 8px; }
+.shop-preview-theme .swatch {
+  width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--border);
+}
+.shop-preview-title {
+  font-family: var(--mono); font-size: 0.7rem; color: var(--accent);
+  margin-bottom: 6px; font-style: italic;
+}
+.shop-card-name { font-size: 0.72rem; font-weight: 700; margin-bottom: 2px; }
+.shop-card-desc { font-size: 0.6rem; color: var(--fg2); margin-bottom: 8px; min-height: 24px; }
+.shop-card .btn-sm { font-size: 0.6rem; padding: 4px 10px; }
+.shop-equipped {
+  background: transparent !important; color: var(--accent) !important;
+  border-color: var(--accent) !important; opacity: 0.8; font-size: 0.6rem;
+  padding: 4px 10px;
+}
+.shop-broke {
+  background: transparent !important; color: var(--fg2) !important;
+  border-color: var(--border) !important; font-size: 0.6rem; padding: 4px 10px;
+}
+.shop-preview-landing {
+  background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 6px 10px; font-size: 0.7rem; display: flex; align-items: center; gap: 4px;
+}
+.shop-preview-landing span { color: var(--fg2); font-size: 0.6rem; }
+.greeting-title {
+  font-family: var(--mono); font-size: 0.65rem; color: var(--purple);
+  margin-top: 2px; font-style: italic;
+}
+
+/* ─── Rewards / Milestones ─── */
 .reward-item {
   display: flex; align-items: center; gap: 12px;
   padding: 12px;
