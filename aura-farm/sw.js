@@ -4,7 +4,7 @@
    you're cooked with no signal 📡💀✨
    ═══════════════════════════════════════════════════ */
 
-const CACHE_NAME = 'aura-farm-v9';
+const CACHE_NAME = 'aura-farm-v10';
 
 // relative to the SW's own location — works no matter where the app is hosted
 const ASSETS = [

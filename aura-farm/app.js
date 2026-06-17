@@ -363,6 +363,21 @@ function animateConfetti() {
   }
 }
 
+function launchConfetti() {
+  const emojis = ['🔥','✨','🍑','💦'];
+  for (let i = 0; i < 50; i++) {
+    const conf = document.createElement('div');
+    conf.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    conf.style.cssText = `position:fixed;left:${Math.random()*100}vw;top:-10px;font-size:20px;pointer-events:none;z-index:998;transition:all 3s ease;`;
+    document.body.appendChild(conf);
+    setTimeout(() => {
+      conf.style.top = '100vh';
+      conf.style.transform = `rotate(${Math.random()*720}deg)`;
+      setTimeout(() => conf.remove(), 3000);
+    }, 50);
+  }
+}
+
 // ─── STATE ───
 let data = {};
 let currentTab = 'tabDen';
@@ -597,6 +612,7 @@ function tapHabit(type, id, evt) {
     floatPoints(btn, total);
     spawnRing(btn, type === 'starve');
     spawnConfetti(total > 30 ? 40 : 20);
+    launchConfetti();
     sfx('tap'); haptic(12);
     toast(rand(type === 'starve' ? STARVE_ROASTS : FARM_HYPES), 'good');
   }
@@ -942,6 +958,7 @@ function buyItem(category, id) {
   renderRewards();
   applyEquipped();
   spawnConfetti(30);
+  launchConfetti();
   sfx('buy'); haptic(15);
   toast(rand(REDEEM_HYPE), 'good');
 }
@@ -965,6 +982,7 @@ function claimReward(id) {
   save();
   renderRewards();
   spawnConfetti(50);
+  launchConfetti();
   sfx('buy'); haptic(15);
   toast(`🏆 ${r.name} CLAIMED — ${r.desc} you filthy grinder`, 'good');
 }
