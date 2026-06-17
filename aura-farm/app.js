@@ -1110,9 +1110,80 @@ function init() {
     navigator.serviceWorker.register('sw.js').catch(() => {});
   }
 
+  initPWA();
+  initOfflineWatch();
+
   document.getElementById('commitInput')?.addEventListener('keydown', e => {
     if (e.key === 'Enter') addCommit();
   });
+}
+
+// ─── PWA INSTALL PROMPT ───
+let deferredInstallPrompt = null;
+const INSTALL_DISMISS_KEY = 'aura_install_dismissed';
+
+function initPWA() {
+  // browser fires this when the app is installable — stash it & show our banner
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredInstallPrompt = e;
+    if (localStorage.getItem(INSTALL_DISMISS_KEY) !== '1') {
+      const banner = document.getElementById('installBanner');
+      if (banner) banner.classList.add('show');
+    }
+  });
+
+  // already installed / launched standalone → never nag
+  window.addEventListener('appinstalled', () => {
+    deferredInstallPrompt = null;
+    const banner = document.getElementById('installBanner');
+    if (banner) banner.classList.remove('show');
+    toast("installed, you absolute degenerate 🔥 now farm aura even offline ✨", 'good');
+  });
+}
+
+function triggerInstall() {
+  const banner = document.getElementById('installBanner');
+  if (!deferredInstallPrompt) {
+    // iOS Safari & co. don't support the prompt API — tell em how
+    toast("no auto-install here bestie — hit Share → 'Add to Home Screen' 📲", 'good');
+    if (banner) banner.classList.remove('show');
+    return;
+  }
+  deferredInstallPrompt.prompt();
+  deferredInstallPrompt.userChoice.then(choice => {
+    if (choice.outcome === 'accepted') {
+      toast("let's gooo, aura farm is on your home screen 😈🔥", 'good');
+    } else {
+      toast("you really said no to free aura? cooked 💀", 'bad');
+    }
+    deferredInstallPrompt = null;
+    if (banner) banner.classList.remove('show');
+  });
+}
+
+function dismissInstall() {
+  localStorage.setItem(INSTALL_DISMISS_KEY, '1');
+  const banner = document.getElementById('installBanner');
+  if (banner) banner.classList.remove('show');
+  toast("aight, install it later when you stop being mid 🙄", 'bad');
+}
+
+// ─── OFFLINE MODE WATCH ───
+function initOfflineWatch() {
+  const apply = () => {
+    const offline = !navigator.onLine;
+    document.body.classList.toggle('is-offline', offline);
+  };
+  window.addEventListener('online', () => {
+    apply();
+    toast("back online 📡✨ the algorithm missed your aura", 'good');
+  });
+  window.addEventListener('offline', () => {
+    apply();
+    toast("you're offline 💀 even when you're cooked offline, your aura still farms ✨", 'bad');
+  });
+  apply(); // set initial state on load
 }
 
 document.addEventListener('DOMContentLoaded', init);

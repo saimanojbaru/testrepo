@@ -55,6 +55,40 @@ a:hover { text-decoration: underline; }
 .header-version { font-size: 0.65rem; color: var(--fg2); }
 .header-right { display: flex; gap: 8px; }
 
+/* ─── Offline Banner ─── */
+.offline-banner {
+  display: none;
+  background: linear-gradient(90deg, rgba(255,62,108,0.18), rgba(255,145,0,0.18));
+  border-bottom: 1px solid var(--danger);
+  color: var(--danger);
+  font-size: 0.7rem;
+  text-align: center;
+  padding: 8px 12px;
+  animation: slideDownBanner 0.3s ease;
+}
+body.is-offline .offline-banner { display: block; }
+@keyframes slideDownBanner {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ─── Install Banner ─── */
+.install-banner {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--accent);
+  padding: 10px 16px;
+  animation: slideDownBanner 0.35s ease;
+}
+.install-banner.show { display: flex; }
+.install-text { font-size: 0.72rem; flex: 1; min-width: 160px; line-height: 1.4; }
+.install-text strong { color: var(--accent); }
+.install-actions { display: flex; gap: 6px; flex-shrink: 0; }
+
 /* ─── Buttons ─── */
 .btn {
   font-family: var(--mono);
