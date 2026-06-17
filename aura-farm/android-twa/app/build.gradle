@@ -1,0 +1,63 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.aurafarm.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.aurafarm.app"
+        minSdk 19
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        // Enable multidex for minSdk 19
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation 'androidx.browser:browser:1.8.0'
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Force consistent kotlin-stdlib version to resolve duplicate class errors
+    constraints {
+        implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk7') {
+            version { strictly '1.8.22' }
+        }
+        implementation('org.jetbrains.kotlin:kotlin-stdlib-jdk8') {
+            version { strictly '1.8.22' }
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'
+    }
+}
