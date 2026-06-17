@@ -25,28 +25,126 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
+from torch import nn
+import torch.nn.functional as F
 from PIL import Image
 from torchvision.transforms.functional import to_tensor, to_pil_image
 from tqdm import tqdm
 
 STYLES = ["face_paint_512_v2", "celeba_distill", "paprika"]
 
+ANIMEGAN_REPO = os.environ.get("ANIMEGAN_REPO", "/tmp/animegan2-pytorch")
+
+
+class ConvNormLReLU(nn.Sequential):
+    def __init__(self, in_ch, out_ch, kernel_size=3, stride=1, padding=1, pad_mode="reflect", groups=1, bias=False):
+        pad_layer = {"zero": nn.ZeroPad2d, "same": nn.ReplicationPad2d, "reflect": nn.ReflectionPad2d}
+        super().__init__(
+            pad_layer[pad_mode](padding),
+            nn.Conv2d(in_ch, out_ch, kernel_size=kernel_size, stride=stride, padding=0, groups=groups, bias=bias),
+            nn.GroupNorm(num_groups=1, num_channels=out_ch, affine=True),
+            nn.LeakyReLU(0.2, inplace=True),
+        )
+
+
+class InvertedResBlock(nn.Module):
+    def __init__(self, in_ch, out_ch, expansion_ratio=2):
+        super().__init__()
+        self.use_res_connect = in_ch == out_ch
+        bottleneck = int(round(in_ch * expansion_ratio))
+        layers = []
+        if expansion_ratio != 1:
+            layers.append(ConvNormLReLU(in_ch, bottleneck, kernel_size=1, padding=0))
+        layers.append(ConvNormLReLU(bottleneck, bottleneck, groups=bottleneck, bias=True))
+        layers.append(nn.Conv2d(bottleneck, out_ch, kernel_size=1, padding=0, bias=False))
+        layers.append(nn.GroupNorm(num_groups=1, num_channels=out_ch, affine=True))
+        self.layers = nn.Sequential(*layers)
+
+    def forward(self, input):
+        out = self.layers(input)
+        if self.use_res_connect:
+            out = input + out
+        return out
+
+
+class Generator(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.block_a = nn.Sequential(
+            ConvNormLReLU(3, 32, kernel_size=7, padding=3),
+            ConvNormLReLU(32, 64, stride=2, padding=(0, 1, 0, 1)),
+            ConvNormLReLU(64, 64),
+        )
+        self.block_b = nn.Sequential(
+            ConvNormLReLU(64, 128, stride=2, padding=(0, 1, 0, 1)),
+            ConvNormLReLU(128, 128),
+        )
+        self.block_c = nn.Sequential(
+            ConvNormLReLU(128, 128),
+            InvertedResBlock(128, 256, 2),
+            InvertedResBlock(256, 256, 2),
+            InvertedResBlock(256, 256, 2),
+            InvertedResBlock(256, 256, 2),
+            ConvNormLReLU(256, 128),
+        )
+        self.block_d = nn.Sequential(ConvNormLReLU(128, 128), ConvNormLReLU(128, 128))
+        self.block_e = nn.Sequential(
+            ConvNormLReLU(128, 64),
+            ConvNormLReLU(64, 64),
+            ConvNormLReLU(64, 32, kernel_size=7, padding=3),
+        )
+        self.out_layer = nn.Sequential(nn.Conv2d(32, 3, kernel_size=1, stride=1, padding=0, bias=False), nn.Tanh())
+
+    def forward(self, input, align_corners=True):
+        out = self.block_a(input)
+        half_size = out.size()[-2:]
+        out = self.block_b(out)
+        out = self.block_c(out)
+        if align_corners:
+            out = F.interpolate(out, half_size, mode="bilinear", align_corners=True)
+        else:
+            out = F.interpolate(out, scale_factor=2, mode="bilinear", align_corners=False)
+        out = self.block_d(out)
+        if align_corners:
+            out = F.interpolate(out, input.size()[-2:], mode="bilinear", align_corners=True)
+        else:
+            out = F.interpolate(out, scale_factor=2, mode="bilinear", align_corners=False)
+        out = self.block_e(out)
+        return self.out_layer(out)
+
 
 def load_model(style: str, device: torch.device):
-    model = torch.hub.load(
-        "bryandlee/animegan2-pytorch:main",
-        "generator",
-        pretrained=style,
-        trust_repo=True,
-    )
-    model = model.to(device).eval()
-    face2paint = torch.hub.load(
-        "bryandlee/animegan2-pytorch:main",
-        "face2paint",
-        size=512,
-        trust_repo=True,
-    )
-    return model, face2paint
+    weights_path = os.path.join(ANIMEGAN_REPO, "weights", f"{style}.pt")
+    if not os.path.isfile(weights_path):
+        raise FileNotFoundError(
+            f"Model weights not found at {weights_path}. "
+            f"Clone the repo: git clone https://github.com/bryandlee/animegan2-pytorch.git {ANIMEGAN_REPO}"
+        )
+
+    model = Generator().to(device)
+    model.load_state_dict(torch.load(weights_path, map_location=device, weights_only=True))
+    model.eval()
+
+    def face2paint_fn(
+        model: torch.nn.Module,
+        img: Image.Image,
+        size: int = 512,
+        side_by_side: bool = False,
+        device=device,
+    ) -> Image.Image:
+        w, h = img.size
+        s = min(w, h)
+        img = img.crop(((w - s) // 2, (h - s) // 2, (w + s) // 2, (h + s) // 2))
+        img = img.resize((size, size), Image.LANCZOS)
+        with torch.no_grad():
+            input_tensor = to_tensor(img).unsqueeze(0) * 2 - 1
+            output = model(input_tensor.to(device)).cpu()[0]
+            if side_by_side:
+                output = torch.cat([input_tensor[0], output], dim=2)
+            output = (output * 0.5 + 0.5).clip(0, 1)
+        return to_pil_image(output)
+
+    return model, face2paint_fn
 
 
 def process_frame(frame_bgr: np.ndarray, model, face2paint, device: torch.device) -> np.ndarray:
