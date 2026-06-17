@@ -673,6 +673,31 @@ function claimReward(id) {
 }
 
 // ─── CALENDAR ───
+let selectedCalDay = null;
+
+// per-day breakdown of what went down
+function dayStats(key) {
+  const farmDone = (data.habits.farm || []).filter(h => h.taps[key] === true);
+  const starveDone = (data.habits.starve || []).filter(h => h.taps[key] === true);
+  const frozen = [...(data.habits.starve || []), ...(data.habits.farm || [])]
+    .filter(h => h.taps[key] === 'frozen');
+  const total = farmDone.length + starveDone.length;
+  // aura earned that day: farm +15, starve +10 (matches tapHabit base values)
+  const auraEarned = farmDone.length * 15 + starveDone.length * 10;
+  return { farmDone, starveDone, frozen, total, auraEarned };
+}
+
+// earliest day we started tracking (first tap of any kind) — days before this stay neutral
+function trackingStart() {
+  let min = null;
+  ['starve', 'farm'].forEach(type => {
+    (data.habits[type] || []).forEach(h => {
+      Object.keys(h.taps).forEach(k => { if (!min || k < min) min = k; });
+    });
+  });
+  return min;
+}
+
 function renderCalendar(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -685,17 +710,8 @@ function renderCalendar(containerId) {
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
   const today = new Date();
-
-  const allTapDays = new Set();
-  const frozenDays = new Set();
-  ['starve', 'farm'].forEach(type => {
-    (data.habits[type] || []).forEach(h => {
-      Object.entries(h.taps).forEach(([k, v]) => {
-        if (v === 'frozen') frozenDays.add(k);
-        else allTapDays.add(k);
-      });
-    });
-  });
+  const tKey = todayKey();
+  const start = trackingStart();
 
   const headers = ['Su','Mo','Tu','We','Th','Fr','Sa'];
   let html = '<div class="calendar-grid">';
@@ -707,24 +723,113 @@ function renderCalendar(containerId) {
 
   for (let d = 1; d <= daysInMonth; d++) {
     const key = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-    const isToday = d === today.getDate() && month === today.getMonth() && year === today.getFullYear();
-    const hasTaps = allTapDays.has(key);
-    const isFrozen = frozenDays.has(key) && !hasTaps;
+    const isToday = key === tKey;
+    const st = dayStats(key);
     const classes = ['cal-day'];
+    let glyph = d;
+
     if (isToday) classes.push('today');
-    if (hasTaps) classes.push('has-taps');
-    else if (isFrozen) classes.push('frozen');
-    html += `<div class="${classes.join(' ')}">${isFrozen ? '🧊' : d}</div>`;
+    if (key === selectedCalDay) classes.push('selected');
+
+    if (st.total > 0) {
+      // green heat tiered by how much you locked in
+      if (st.total >= 5) classes.push('aura-3');
+      else if (st.total >= 3) classes.push('aura-2');
+      else classes.push('aura-1');
+    } else if (st.frozen.length > 0) {
+      classes.push('frozen');
+      glyph = '🧊';
+    } else if (start && key >= start && key < tKey) {
+      // a past day inside your active window with nothing logged = brain rot won
+      classes.push('rot');
+    }
+
+    html += `<div class="${classes.join(' ')}" onclick="showDaySummary('${key}')">${glyph}</div>`;
   }
 
   html += '</div>';
   container.innerHTML = html;
+
+  if (selectedCalDay) renderDaySummary(selectedCalDay);
+}
+
+// ─── DAY SUMMARY (explicit receipts) ───
+function showDaySummary(key) {
+  selectedCalDay = key;
+  renderCalendar('appCalendar');
+  renderDaySummary(key);
+}
+
+function renderDaySummary(key) {
+  const el = document.getElementById('daySummary');
+  if (!el) return;
+
+  const [y, m, dd] = key.split('-').map(Number);
+  const dateObj = new Date(y, m - 1, dd);
+  const dateLabel = dateObj.toLocaleDateString('en', { weekday: 'long', month: 'short', day: 'numeric' });
+  const st = dayStats(key);
+  const tKey = todayKey();
+  const start = trackingStart();
+  const isToday = key === tKey;
+  const isFuture = key > tKey;
+  const isPast = key < tKey;
+
+  // verdict line, explicit slang depending on the day's vibe
+  let verdict;
+  if (isFuture) {
+    verdict = `<span class="text-muted">🔮 the future, bestie. can't farm aura in advance — manifest it then lock tf in.</span>`;
+  } else if (st.total === 0 && st.frozen.length > 0) {
+    verdict = `<span class="text-cyan">🧊 you froze this one. streak survived, but don't make slacking a personality.</span>`;
+  } else if (st.total === 0) {
+    if (isToday) {
+      verdict = `<span class="text-danger">👀 nothing logged yet today. day ain't over — lock the fuck in before you get cooked.</span>`;
+    } else if (start && key >= start) {
+      verdict = `<span class="text-danger">💀 you were COOKED this day. zero aura, brain rot won. embarrassing fr.</span>`;
+    } else {
+      verdict = `<span class="text-muted">😶 before your time on the farm. nothing tracked, no shame.</span>`;
+    }
+  } else if (st.total >= 5) {
+    verdict = `<span class="text-accent">🔥 absolutely ATE this day. ${st.total} taps, +${st.auraEarned} aura — you sigma menace.</span>`;
+  } else if (st.total >= 3) {
+    verdict = `<span class="text-accent">💪 solid grind, ${st.total} taps. aura farmed, brain rot starved. keep that energy.</span>`;
+  } else {
+    verdict = `<span class="text-accent">✨ you showed up (${st.total} tap${st.total>1?'s':''}). mid but it counts, don't get comfortable.</span>`;
+  }
+
+  let html = `<div class="day-summary">
+    <div class="ds-date">› ${dateLabel}${isToday ? ' <span class="text-accent">(today)</span>' : ''}</div>
+    <div class="ds-verdict">${verdict}</div>`;
+
+  if (st.farmDone.length) {
+    html += `<div class="ds-label">✨ aura farmed</div><div class="ds-row">`;
+    html += st.farmDone.map(h => `<span class="ds-tag good">${h.emoji} ${h.name}</span>`).join('');
+    html += `</div>`;
+  }
+  if (st.starveDone.length) {
+    html += `<div class="ds-label">💀 brain rot starved</div><div class="ds-row">`;
+    html += st.starveDone.map(h => `<span class="ds-tag good">${h.emoji} ${h.name} 🚫</span>`).join('');
+    html += `</div>`;
+  }
+  if (st.frozen.length) {
+    html += `<div class="ds-label">🧊 frozen</div><div class="ds-row">`;
+    html += st.frozen.map(h => `<span class="ds-tag ice">${h.emoji} ${h.name}</span>`).join('');
+    html += `</div>`;
+  }
+  if (st.total > 0) {
+    html += `<div class="ds-row" style="margin-top:10px;"><span class="ds-tag good">💰 +${st.auraEarned} aura points this day</span></div>`;
+  }
+
+  html += `</div>`;
+  el.innerHTML = html;
 }
 
 function calNav(dir) {
   data.calMonth += dir;
   if (data.calMonth > 11) { data.calMonth = 0; data.calYear++; }
   if (data.calMonth < 0) { data.calMonth = 11; data.calYear--; }
+  selectedCalDay = null;
+  const ds = document.getElementById('daySummary');
+  if (ds) ds.innerHTML = '';
   save();
   renderCalendar('appCalendar');
 }
@@ -944,15 +1049,24 @@ function renderLandingCalendar() {
   html += '<div class="calendar-grid">';
   headers.forEach(h => { html += `<div class="cal-header">${h}</div>`; });
   for (let i = 0; i < firstDay; i++) html += '<div class="cal-day empty"></div>';
+  const heat = ['aura-3','aura-2','aura-1','aura-2','rot','aura-1','aura-3','rot','aura-2'];
   for (let d = 1; d <= daysInMonth; d++) {
     const isToday = d === now.getDate();
-    const fakeActive = d <= now.getDate() && Math.random() > 0.3;
     const classes = ['cal-day'];
     if (isToday) classes.push('today');
-    if (fakeActive && d < now.getDate()) classes.push('has-taps');
+    else if (d < now.getDate()) {
+      // deterministic-ish demo heat so the landing looks like a real grind
+      const pick = heat[(d * 7) % heat.length];
+      classes.push(pick);
+    }
     html += `<div class="${classes.join(' ')}">${d}</div>`;
   }
   html += '</div>';
+  html += `<div class="cal-legend">
+    <span><i class="legend-dot aura"></i> aura day</span>
+    <span><i class="legend-dot rot"></i> cooked</span>
+    <span><i class="legend-dot ice"></i> frozen</span>
+  </div>`;
   container.innerHTML = html;
 }
 

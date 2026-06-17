@@ -226,7 +226,7 @@
       <!-- Tab: Calendar -->
       <div class="screen" id="tabCalendar">
         <div class="section-title">📅 // YOUR GRIND CALENDAR</div>
-        <p class="text-muted mb-1" style="font-size:0.7rem;">green = you locked in. empty = you were cooked 💀</p>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">brighter green = more aura farmed. red = you were COOKED 💀. tap a day for the receipts 👀</p>
         <div class="card">
           <div class="flex-between mb-1">
             <button class="btn btn-sm" onclick="calNav(-1)">← prev</button>
@@ -234,6 +234,12 @@
             <button class="btn btn-sm" onclick="calNav(1)">next →</button>
           </div>
           <div id="appCalendar"></div>
+          <div class="cal-legend">
+            <span><i class="legend-dot aura"></i> aura day</span>
+            <span><i class="legend-dot rot"></i> cooked</span>
+            <span><i class="legend-dot ice"></i> frozen</span>
+          </div>
+          <div id="daySummary"></div>
         </div>
       </div>
 

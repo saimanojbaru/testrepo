@@ -450,13 +450,89 @@ a:hover { text-decoration: underline; }
   aspect-ratio: 1;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.65rem;
-  border-radius: 4px;
+  border-radius: 5px;
   color: var(--fg2);
   position: relative;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.2s, background 0.2s;
+  border: 1px solid transparent;
 }
-.cal-day.today { color: var(--fg); font-weight: 700; border: 1px solid var(--accent); }
-.cal-day.has-taps { background: rgba(200,255,0,0.15); color: var(--accent); }
-.cal-day.empty { opacity: 0; }
+.cal-day:not(.empty):hover { transform: scale(1.12); z-index: 2; }
+.cal-day.empty { opacity: 0; cursor: default; }
+
+/* ── HEAT-MAP: green glow for aura days (tiered by intensity) ── */
+.cal-day.aura-1 { background: rgba(200,255,0,0.14); color: var(--accent); }
+.cal-day.aura-2 {
+  background: rgba(200,255,0,0.28); color: #eaff7a; font-weight: 600;
+  box-shadow: 0 0 8px rgba(200,255,0,0.35);
+}
+.cal-day.aura-3 {
+  background: rgba(200,255,0,0.55); color: #0a0a0a; font-weight: 800;
+  box-shadow: 0 0 16px rgba(200,255,0,0.7), 0 0 4px rgba(200,255,0,0.9);
+}
+/* ── HEAT-MAP: red glow for brain rot / cooked days ── */
+.cal-day.rot {
+  background: rgba(255,62,108,0.22); color: var(--danger); font-weight: 600;
+  box-shadow: 0 0 10px rgba(255,62,108,0.35);
+}
+/* frozen day */
+.cal-day.frozen {
+  background: rgba(0,229,255,0.18);
+  color: var(--cyan);
+  border: 1px solid rgba(0,229,255,0.4);
+}
+.cal-day.today { border: 1px solid var(--accent); color: var(--fg); font-weight: 700; }
+.cal-day.selected {
+  outline: 2px solid var(--purple);
+  outline-offset: 1px;
+  transform: scale(1.12);
+  z-index: 3;
+}
+
+/* ── Day summary panel ── */
+.day-summary {
+  margin-top: 14px;
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  animation: fadeIn 0.25s ease;
+}
+.day-summary .ds-date {
+  font-size: 0.78rem; font-weight: 700; color: var(--purple);
+  margin-bottom: 8px;
+}
+.day-summary .ds-verdict {
+  font-size: 0.75rem; margin-bottom: 10px; line-height: 1.5;
+}
+.day-summary .ds-row {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  font-size: 0.72rem; margin: 6px 0;
+}
+.day-summary .ds-label {
+  font-size: 0.62rem; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--fg2); width: 100%; margin-top: 6px;
+}
+.ds-tag {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 8px; border-radius: 12px; font-size: 0.68rem;
+  border: 1px solid var(--border); background: var(--bg3);
+}
+.ds-tag.good { border-color: var(--accent); color: var(--accent); }
+.ds-tag.rot { border-color: var(--danger); color: var(--danger); }
+.ds-tag.ice { border-color: var(--cyan); color: var(--cyan); }
+
+/* calendar legend */
+.cal-legend {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  font-size: 0.6rem; color: var(--fg2);
+  margin-top: 10px; justify-content: center;
+}
+.cal-legend span { display: inline-flex; align-items: center; gap: 4px; }
+.legend-dot {
+  width: 10px; height: 10px; border-radius: 3px; display: inline-block;
+}
+.legend-dot.aura { background: rgba(200,255,0,0.55); box-shadow: 0 0 6px rgba(200,255,0,0.6); }
+.legend-dot.rot { background: rgba(255,62,108,0.5); box-shadow: 0 0 6px rgba(255,62,108,0.5); }
+.legend-dot.ice { background: rgba(0,229,255,0.5); }
 
 /* ─── Squad Feed ─── */
 .squad-item {
