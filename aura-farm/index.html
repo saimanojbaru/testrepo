@@ -53,13 +53,10 @@ border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap;touc
 backdrop-filter:blur(8px);transition:border-color .3s,box-shadow .3s}
 .card:hover{border-color:rgba(0,255,159,.3);box-shadow:0 0 16px rgba(0,255,159,.08)}
 /* SECTION TITLES */
-.sec-title{font-size:.7rem;color:var(--fg2);text-transform:uppercase;letter-spacing:2px;margin:20px 0 8px;
-padding-bottom:6px;border-bottom:1px solid var(--border)}
-.sec-title::before{content:'## ';color:var(--purple);font-weight:700;text-shadow:0 0 10px rgba(179,136,255,.4)}
-.sec-title.neon-a{text-shadow:0 0 8px #00ff9f,0 0 16px #00ffff;animation:auraPulse 1.5s infinite alternate ease-in-out}
-.sec-title.neon-r{text-shadow:0 0 8px #ff0044,0 0 20px #c300ff;animation:rotShake .4s linear infinite}
-@keyframes auraPulse{from{filter:brightness(1)}to{filter:brightness(1.4)}}
-@keyframes rotShake{0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(2px,-2px)}100%{transform:translate(0)}}
+.sec-title{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--fg);font-weight:700;text-transform:uppercase;
+letter-spacing:1.5px;margin:22px 0 10px;padding-left:10px;border-left:3px solid var(--accent)}
+.sec-title.neon-a{border-left-color:var(--accent)}
+.sec-title.neon-r{border-left-color:var(--danger)}
 /* AURA DISPLAY */
 .aura-display{text-align:center;padding:20px 0 10px;position:relative}
 .aura-num{font-size:3.2rem;font-weight:900;color:var(--accent);line-height:1;display:inline-block;
@@ -329,6 +326,41 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 /* SETTINGS */
 .settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.73rem}
 .settings-row:last-child{border-bottom:none}
+/* ONBOARDING */
+.onb{position:fixed;inset:0;z-index:1100;background:var(--bg);display:flex;flex-direction:column;align-items:center;
+justify-content:center;padding:32px 24px;text-align:center;transition:opacity .4s}
+.onb.hidden{opacity:0;pointer-events:none}
+.onb-slide{max-width:380px;animation:onbIn .4s ease}
+@keyframes onbIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.onb-icon{font-size:4rem;margin-bottom:16px;filter:drop-shadow(0 0 20px var(--glow-a));animation:logoBr 3s ease-in-out infinite}
+.onb-title{font-size:1.4rem;font-weight:900;color:var(--accent);text-shadow:0 0 16px var(--glow-a);margin-bottom:10px;line-height:1.2}
+.onb-text{font-size:.82rem;color:var(--fg);line-height:1.6;margin-bottom:8px}
+.onb-sub{font-size:.7rem;color:var(--fg2);line-height:1.5}
+.onb-dots{display:flex;gap:8px;justify-content:center;margin:24px 0}
+.onb-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
+.onb-dot.active{background:var(--accent);width:24px;border-radius:4px;box-shadow:0 0 10px var(--glow-a)}
+.onb-nav{display:flex;gap:10px;width:100%;max-width:380px}
+.onb-input{width:100%;font-family:var(--mono);font-size:.9rem;padding:14px 16px;background:var(--bg2);border:1px solid var(--border);
+border-radius:var(--r);color:var(--fg);margin:12px 0;outline:none;text-align:center;transition:border-color .2s}
+.onb-input:focus{border-color:var(--accent);box-shadow:0 0 12px rgba(200,255,0,.15)}
+/* STREAK RING */
+.ring-wrap{display:flex;align-items:center;gap:16px;padding:4px 0}
+.ring{position:relative;width:84px;height:84px;flex-shrink:0}
+.ring svg{transform:rotate(-90deg)}
+.ring-bg{fill:none;stroke:var(--bg);stroke-width:7}
+.ring-fg{fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;
+filter:drop-shadow(0 0 6px var(--glow-a));transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-num{font-size:1.5rem;font-weight:900;color:var(--accent);line-height:1;text-shadow:0 0 8px var(--glow-a)}
+.ring-lbl{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
+.ring-info{flex:1;min-width:0}
+.ring-info .ri-big{font-size:.85rem;font-weight:700;color:var(--fg)}
+.ring-info .ri-sub{font-size:.65rem;color:var(--fg2);margin-top:3px}
+/* CAL STATS */
+.cal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+.cal-stat{text-align:center;padding:8px 4px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
+.cal-stat-n{font-size:1.2rem;font-weight:900;line-height:1}
+.cal-stat-l{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -339,6 +371,9 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <div class="loading-text">farming aura...</div>
 <div class="loading-sub">starving brain rot since 2026 💀</div>
 </div>
+
+<!-- ONBOARDING -->
+<div class="onb hidden" id="onboarding"></div>
 
 <!-- HEADER -->
 <header class="header">
@@ -373,34 +408,34 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <!-- TAB: DEN -->
 <div class="tab active" id="tabDen">
 <div id="denDash"></div>
-<div class="sec-title neon-a">📋 // TODAY'S GRIND</div>
+<div class="sec-title neon-a">📋 TODAY'S GRIND</div>
 <div id="todayProgress"></div>
-<div class="sec-title neon-a">⚔️ // ACTIVE CHALLENGES</div>
+<div class="sec-title neon-a">⚔️ ACTIVE CHALLENGES</div>
 <div id="challengesList"></div>
-<div class="sec-title neon-a">📊 // YOUR RECEIPTS</div>
+<div class="sec-title neon-a">📊 YOUR RECEIPTS</div>
 <div id="analyticsEl"></div>
-<div class="sec-title neon-a">📡 // RECENT ACTIVITY</div>
+<div class="sec-title neon-a">📡 RECENT ACTIVITY</div>
 <div id="activityEl"></div>
 </div>
 
 <!-- TAB: STARVE -->
 <div class="tab" id="tabStarve">
-<div class="sec-title neon-r">💀 // STARVE THE BRAIN ROT</div>
+<div class="sec-title neon-r">💀 STARVE THE BRAIN ROT</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">tap = "i didn't do this today" — starve that rot 🚫💀</p>
 <div id="starveList"></div>
 <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">+ add brain rot to starve 💀</button>
-<div class="sec-title mt-2 neon-r">🚫 // QUIT TIMER — DETOX TRACKER</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">how long you've been starving each degenerate habit — the longer the filthier the flex 💀🔥</p>
+<div class="sec-title mt-2 neon-r">🚫 QUIT TIMER — DETOX TRACKER</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">how long you've stayed clean off each habit — longer = bigger flex 🔥</p>
 <div id="quitTimerList"></div>
 </div>
 
 <!-- TAB: FARM -->
 <div class="tab" id="tabFarm">
-<div class="sec-title neon-a">✨ // FARM THE AURA</div>
+<div class="sec-title neon-a">✨ FARM THE AURA</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">tap = "i did this today, i'm THAT person" — farm it 🔥✅</p>
 <div id="farmList"></div>
 <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">+ add aura habit ✨</button>
-<div class="sec-title mt-2 neon-a">📝 // DAILY COMMIT LOG</div>
+<div class="sec-title mt-2 neon-a">📝 DAILY COMMIT LOG</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">what did you lock in today? document the grind ✍️🔥</p>
 <div class="input-row">
 <input type="text" id="commitInput" placeholder="today i locked tf in because...">
@@ -411,7 +446,7 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 
 <!-- TAB: SQUAD -->
 <div class="tab" id="tabSquad">
-<div class="sec-title neon-a">👥 // THE SQUAD FEED</div>
+<div class="sec-title neon-a">👥 THE SQUAD FEED</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">your grind + the squad's grind, all mixed together. flex or get flexed on 🫡🔥</p>
 <div class="card" style="margin-bottom:8px">
 <div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
@@ -426,14 +461,14 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 
 <!-- TAB: SHOP -->
 <div class="tab" id="tabShop">
-<div class="sec-title neon-a">🛍️ // AURA SHOP</div>
+<div class="sec-title neon-a">🛍️ AURA SHOP</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">spend aura on avatars, sick themes & wild titles. drip or drown bestie 💸✨</p>
 <div id="shopContent"></div>
 </div>
 
 <!-- TAB: CALENDAR -->
 <div class="tab" id="tabCal">
-<div class="sec-title neon-a">📅 // YOUR GRIND CALENDAR</div>
+<div class="sec-title neon-a">📅 YOUR GRIND CALENDAR</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">green = aura farmed. red = COOKED 💀. tap a day for receipts 👀</p>
 <div class="card">
 <div class="flex-between mb-1">
@@ -613,6 +648,7 @@ function load(){
       if(!Array.isArray(data.claimedChallenges))data.claimedChallenges=[];
       if(!Array.isArray(data.rewards))data.rewards=[];
       if(!Array.isArray(data.squadPosts))data.squadPosts=[];
+      if(data.packName&&data.onboarded===undefined)data.onboarded=true;
     }else{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
   }catch{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
 }
@@ -856,12 +892,27 @@ function getLvlProg(){const l=getLevel(),nx=LEVELS[l.idx+1];if(!nx)return{cur:l,
 function renderDen(){
   const el=document.getElementById('denDash');if(!el)return;
   const{cur,next,pct}=getLvlProg();const ln=cur.idx+1;const ck=data.lastCheckIn===todayKey();
-  el.innerHTML=`<div class="lvl-card"><div class="lvl-head"><span class="lvl-icon">${cur.icon}</span><div>
-    <div class="lvl-title">Aura Level ${ln}</div><div class="lvl-name">${cur.name}</div></div></div>
-    <div class="lvl-bar-wrap"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
-    ${next?`<div class="lvl-next">next: ${next.icon} ${next.name} at ${next.min.toLocaleString()} AP</div>`:'<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute god 👑</div>'}
+  // best active streak for the ring
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  let topStreak=0,topHabit=null;all.forEach(h=>{const s=calcStreak(h);if(s>topStreak){topStreak=s;topHabit=h}});
+  const ringTarget=topStreak>=30?(topStreak>=100?365:100):30;
+  const C=232.5,off=C-Math.min(1,topStreak/ringTarget)*C;
+  el.innerHTML=`<div class="lvl-card">
+    <div class="ring-wrap">
+      <div class="ring"><svg width="84" height="84" viewBox="0 0 84 84">
+        <circle class="ring-bg" cx="42" cy="42" r="37"></circle>
+        <circle class="ring-fg" cx="42" cy="42" r="37" stroke-dasharray="${C}" stroke-dashoffset="${off}"></circle>
+        </svg><div class="ring-center"><div class="ring-num">${topStreak}</div><div class="ring-lbl">day${topStreak===1?'':'s'}</div></div></div>
+      <div class="ring-info">
+        <div class="lvl-head" style="margin-bottom:4px"><span class="lvl-icon" style="font-size:1.4rem">${cur.icon}</span>
+          <div><div class="lvl-title" style="font-size:.82rem">Level ${ln}</div><div class="lvl-name">${cur.name}</div></div></div>
+        <div class="ri-sub">${topHabit?`🔥 best active streak: ${topHabit.emoji} ${topHabit.name}`:'no active streaks — start tapping 💀'}</div>
+      </div>
     </div>
-    <div style="margin:10px 0 14px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ already checked in today, go farm':'🤔 How cooked are you today? (daily check-in)'}</button></div>
+    <div class="lvl-bar-wrap" style="margin-top:12px"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
+    ${next?`<div class="lvl-next">${data.auraPoints.toLocaleString()} / ${next.min.toLocaleString()} AP → ${next.icon} ${next.name}</div>`:'<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute legend 👑</div>'}
+    </div>
+    <div style="margin:10px 0 14px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ checked in today, go farm':'🤔 daily check-in — how cooked are you?'}</button></div>
     ${deferredInstallPrompt?'<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">📲</div><div style="font-size:.75rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.6rem;color:var(--fg2)">add to home screen — farm aura offline, no cap 🔥</div></div>':''}`
 }
 
@@ -1026,7 +1077,7 @@ function renderShop(){
       <div class="shop-nm">${item.name}</div><div class="shop-ds">${item.desc}</div>${btn}</div>`
   });
   h+='</div>';
-  h+=`<div class="sec-title" style="margin-top:18px">🏅 // MILESTONES</div>`;
+  h+=`<div class="sec-title" style="margin-top:18px">🏅 MILESTONES</div>`;
   h+=REWARDS.map(r=>{const unlocked=data.auraPoints>=r.cost,claimed=(data.rewards||[]).includes(r.id);
     return `<div class="rw-item ${unlocked?'unlocked':'locked'}"><span class="rw-icon">${unlocked?r.icon:'🔒'}</span>
       <div class="rw-info"><div class="rw-nm">${r.name} ${claimed?'<span class="text-accent">✓</span>':''}</div><div class="rw-ds">${r.desc}</div></div>
@@ -1068,8 +1119,19 @@ function renderCal(){
   const month=data.calMonth,year=data.calYear;
   const lbl=document.getElementById('calLabel');if(lbl)lbl.textContent=new Date(year,month).toLocaleDateString('en',{month:'long',year:'numeric'});
   const fd=new Date(year,month,1).getDay(),dim=new Date(year,month+1,0).getDate(),tKey=todayKey(),start=trackingStart();
+  // monthly summary
+  let auraDays=0,cookedDays=0,monthAura=0;
+  for(let d=1;d<=dim;d++){
+    const key=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const st=dayStats(key);
+    if(st.total>0){auraDays++;monthAura+=st.aura}
+    else if(start&&key>=start&&key<tKey&&st.frozen.length===0)cookedDays++
+  }
+  let h=`<div class="cal-stats">
+    <div class="cal-stat"><div class="cal-stat-n text-accent">${auraDays}</div><div class="cal-stat-l">aura days</div></div>
+    <div class="cal-stat"><div class="cal-stat-n text-danger">${cookedDays}</div><div class="cal-stat-l">cooked days</div></div>
+    <div class="cal-stat"><div class="cal-stat-n text-accent">${monthAura}</div><div class="cal-stat-l">AP this month</div></div></div>`;
   const hds=['Su','Mo','Tu','We','Th','Fr','Sa'];
-  let h='<div class="cal-grid">';hds.forEach(x=>{h+=`<div class="cal-h">${x}</div>`});
+  h+='<div class="cal-grid">';hds.forEach(x=>{h+=`<div class="cal-h">${x}</div>`});
   for(let i=0;i<fd;i++)h+='<div class="cal-d empty"></div>';
   for(let d=1;d<=dim;d++){
     const key=`${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
@@ -1157,6 +1219,56 @@ function resetApp(){
 function confirmReset(){
   localStorage.removeItem(DB_KEY);data=JSON.parse(JSON.stringify(DEFAULT_DATA));save();closeModal();renderAll();applyEquipped();
   sfx('untap');haptic(40);toast("everything nuked. fresh start, zero aura, back to nobody 💀🔥",'bad')
+}
+
+// ─── ONBOARDING ───
+const ONB_SLIDES=[
+  {icon:'🧠',title:'welcome to Aura Farm',text:'a habit tracker for people who are extremely online.',sub:'starve your brain rot. farm your aura. become the main character. no cap.'},
+  {icon:'💀',title:'starve the brain rot',text:'track the bad habits you want to quit — doomscrolling, vaping, rage gaming.',sub:'every day you DON\'T do it, you tap it and earn aura. watch the streak grow.'},
+  {icon:'✨',title:'farm the aura',text:'track the good habits you want to build — gym, reading, cold showers.',sub:'do it, tap it, stack aura points. level up from Certified NPC to Aura God.'},
+  {icon:'🛍️',title:'spend your aura',text:'unlock avatars, themes & titles in the shop. join challenges. flex on the squad.',sub:'it all saves on your device — no account, no login, fully offline.'}
+];
+let onbStep=0;
+function startOnboarding(){
+  onbStep=0;const el=document.getElementById('onboarding');if(!el)return;
+  el.classList.remove('hidden');renderOnbSlide()
+}
+function renderOnbSlide(){
+  const el=document.getElementById('onboarding');if(!el)return;
+  const isLast=onbStep===ONB_SLIDES.length;
+  if(isLast){
+    el.innerHTML=`<div class="onb-slide">
+      <div class="onb-icon">🔥</div>
+      <div class="onb-title">what's your name?</div>
+      <div class="onb-sub">pick a name that goes hard. you can change it later.</div>
+      <input type="text" class="onb-input" id="onbNameInput" placeholder="RizzLord, GigaChad, anon..." maxlength="20">
+      <div class="onb-nav"><button class="btn btn-accent btn-block" onclick="finishOnboarding()">lock tf in → 🔒</button></div>
+    </div>`;
+    setTimeout(()=>document.getElementById('onbNameInput')?.focus(),100);
+    return
+  }
+  const s=ONB_SLIDES[onbStep];
+  el.innerHTML=`<div class="onb-slide">
+    <div class="onb-icon">${s.icon}</div>
+    <div class="onb-title">${s.title}</div>
+    <div class="onb-text">${s.text}</div>
+    <div class="onb-sub">${s.sub}</div>
+    <div class="onb-dots">${ONB_SLIDES.map((_,i)=>`<span class="onb-dot ${i===onbStep?'active':''}"></span>`).join('')}</div>
+    <div class="onb-nav">
+      ${onbStep>0?'<button class="btn" onclick="onbPrev()">← back</button>':'<button class="btn" onclick="skipOnboarding()">skip</button>'}
+      <button class="btn btn-accent" style="flex:1" onclick="onbNext()">${onbStep===ONB_SLIDES.length-1?'let\'s go 🚀':'next →'}</button>
+    </div>
+  </div>`
+}
+function onbNext(){onbStep++;sfx('tap');haptic(8);renderOnbSlide()}
+function onbPrev(){if(onbStep>0)onbStep--;sfx('tap');haptic(8);renderOnbSlide()}
+function skipOnboarding(){onbStep=ONB_SLIDES.length;renderOnbSlide()}
+function finishOnboarding(){
+  const name=document.getElementById('onbNameInput')?.value.trim()||'Anon';
+  data.packName=name;data.onboarded=true;save();
+  const el=document.getElementById('onboarding');if(el){el.classList.add('hidden');setTimeout(()=>el.remove(),400)}
+  renderAll();sfx('buy');haptic(15);spawnConfetti(40);launchConfetti();
+  toast(`welcome to the farm, ${name} 🔥✨`,'good')
 }
 
 // ─── NAME PROMPT ───
@@ -1310,7 +1422,7 @@ function init(){
   const broken=recalcAll();
   renderAll();applyEquipped();renderCal();
 
-  if(!data.packName)setTimeout(promptName,800);
+  if(!data.onboarded&&!data.packName)setTimeout(startOnboarding,700);
   else if(broken.length){
     setTimeout(()=>broken.slice(0,3).forEach((h,i)=>setTimeout(()=>toast(rand(STREAK_BROKEN).replace('{n}',h.name),'bad'),i*600)),900)
   }
@@ -1319,6 +1431,7 @@ function init(){
   initConfetti();
 
   document.getElementById('commitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')addCommit()});
+  document.getElementById('squadPostInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')postSquadWin()});
 
   const loader=document.getElementById('loadingScreen');
   if(loader){setTimeout(()=>{loader.classList.add('hidden');setTimeout(()=>loader.remove(),400)},600)}
