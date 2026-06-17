@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#0a0a0a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="Starve that fucking Brain Rot. Farm your Aura, no cap.">
+<meta name="description" content="Starve your Brain Rot. Farm your Aura, no cap.">
 <title>Aura Farm</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
@@ -344,7 +344,7 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <header class="header">
 <div class="header-left">
 <span class="header-logo glitch" id="headerLogo">🧠</span>
-<div><div class="header-title">AURA FARM</div><div class="header-sub" id="headerSub">v3.0 — brain rot slayer, aura whore</div></div>
+<div><div class="header-title">AURA FARM</div><div class="header-sub" id="headerSub">v3.0 — brain rot slayer, aura demon</div></div>
 </div>
 <div id="headerRight" style="display:flex;gap:6px;align-items:center">
 <button class="btn btn-sm" id="installBtn" style="display:none;border-color:var(--accent);color:var(--accent)" onclick="installPWA()">📲</button>
@@ -386,7 +386,7 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <!-- TAB: STARVE -->
 <div class="tab" id="tabStarve">
 <div class="sec-title neon-r">💀 // STARVE THE BRAIN ROT</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i didn't do this shit today" — starve that bitch 🚫💀</p>
+<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i didn't do this today" — starve that rot 🚫💀</p>
 <div id="starveList"></div>
 <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">+ add brain rot to starve 💀</button>
 <div class="sec-title mt-2 neon-r">🚫 // QUIT TIMER — DETOX TRACKER</div>
@@ -397,7 +397,7 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <!-- TAB: FARM -->
 <div class="tab" id="tabFarm">
 <div class="sec-title neon-a">✨ // FARM THE AURA</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i did this shit today, i'm THAT bitch" — farm it 🔥✅</p>
+<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i did this today, i'm THAT person" — farm it 🔥✅</p>
 <div id="farmList"></div>
 <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">+ add aura habit ✨</button>
 <div class="sec-title mt-2 neon-a">📝 // DAILY COMMIT LOG</div>
@@ -412,7 +412,7 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <!-- TAB: SQUAD -->
 <div class="tab" id="tabSquad">
 <div class="sec-title neon-a">👥 // THE SQUAD FEED</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">your grind + the squad's grind, all mixed. flex or get flexed on 🫡🔥</p>
+<p class="text-muted mb-1" style="font-size:.68rem;">your grind + the squad's grind, all mixed together. flex or get flexed on 🫡🔥</p>
 <div class="card" style="margin-bottom:8px">
 <div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
 <div class="input-row" style="margin:0">
@@ -427,7 +427,7 @@ border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:point
 <!-- TAB: SHOP -->
 <div class="tab" id="tabShop">
 <div class="sec-title neon-a">🛍️ // AURA SHOP</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">spend aura on avatars, slutty themes & degenerate titles. drip or drown bestie 💸✨</p>
+<p class="text-muted mb-1" style="font-size:.68rem;">spend aura on avatars, sick themes & wild titles. drip or drown bestie 💸✨</p>
 <div id="shopContent"></div>
 </div>
 
@@ -480,7 +480,7 @@ const DEFAULT_DATA={
   habits:{
     starve:[
       {id:'s1',emoji:'📱',name:'Doomscrolling',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
-      {id:'s2',emoji:'🍆',name:'Gooning',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
+      {id:'s2',emoji:'📱',name:'Doom Tweeting',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
       {id:'s3',emoji:'🛏️',name:'Rotting in Bed',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
       {id:'s4',emoji:'🚬',name:'Vaping',streak:0,bestStreak:0,taps:{},createdAt:Date.now()},
       {id:'s5',emoji:'🍔',name:'Binge Eating',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
@@ -500,20 +500,20 @@ const DEFAULT_DATA={
 };
 
 // ─── MESSAGES ───
-const STARVE_ROASTS=["starved that brain rot, you absolute menace 🔥","another day not being a degenerate, no cap 💀","your brain rot is SHOOK rn 😈","imagine being this disciplined... oh wait, you are 👑","that brain rot is getting starved tf out 🚫","one more day of not being cooked, slay 💅","your future self is literally simping for you rn ✨","brain rot: defeated. aura: increased. hotel: trivago 🧠","you chose violence against your bad habits 🫡","NOT TODAY, brain rot. NOT. TODAY. 🔥💀"];
-const FARM_HYPES=["ATE THAT SHIT, you absolute slut for progress 🔥✨","aura points go BRRRR, you're literally unhinged 💅","the grind is GRINDING, keep farming bestie 🌾","gigachad energy detected, aura levels UNGODLY 💪","you really said 'lock tf in' and MEANT it 😤🔥","the algorithm can't handle your aura rn 🧠✨","im literally screaming, this grind is BUSSIN 🗣️","your aura just went through the goddamn roof 📈💀","rizz levels: ASTRONOMICAL after that one 🚀","you just gained +10 fuckability, no cap 🍑✨"];
-const RELAPSE_MSGS=["undo detected... you fell off, get back up degenerate 💀","slipped? it happens bestie. tomorrow we lock back in 😤","brain rot won this round. don't let it win the war 🚫","took an L on this one. your aura took a hit ngl 📉"];
-const FREEZE_SAVES=["🧊 streak FROZEN, your aura's safe this time you lucky bitch","🧊 freeze used — chain protected. don't make slacking a habit","🧊 saved your streak from the void, you owe me one"];
-const FREEZE_BROKE=["out of freeze tokens, you broke bitch 💀","no freezes left — your streak's cooked if you slip 🧊❌","freeze inventory: empty. natural selection time bestie 💀"];
+const STARVE_ROASTS=["starved that brain rot, you absolute menace 🔥","another day not being cooked, no cap 💀","your brain rot is SHOOK rn 😈","imagine being this disciplined... oh wait, you are 👑","that brain rot is getting starved tf out 🚫","one more day of not being cooked, slay 💅","your future self is literally thanking you rn ✨","brain rot: defeated. aura: increased. hotel: trivago 🧠","you chose violence against your bad habits 🫡","NOT TODAY, brain rot. NOT. TODAY. 🔥💀"];
+const FARM_HYPES=["ATE THAT, you absolute legend 🔥✨","aura points go BRRRR, you're literally unhinged 💅","the grind is GRINDING, keep farming bestie 🌾","gigachad energy detected, aura levels UNGODLY 💪","you really said 'lock tf in' and MEANT it 😤🔥","the algorithm can't handle your aura rn 🧠✨","im literally screaming, this grind is BUSSIN 🗣️","your aura just went through the roof 📈💀","rizz levels: ASTRONOMICAL after that one 🚀","you just gained +10 main character energy, no cap ✨🔥"];
+const RELAPSE_MSGS=["undo detected... you fell off, get back up 💀","slipped? it happens bestie. tomorrow we lock back in 😤","brain rot won this round. don't let it win the war 🚫","took an L on this one. your aura took a hit ngl 📉"];
+const FREEZE_SAVES=["🧊 streak FROZEN, your aura's safe this time bestie","🧊 freeze used — chain protected. don't make slacking a habit","🧊 saved your streak from the void, you owe me one"];
+const FREEZE_BROKE=["out of freeze tokens, you're cooked 💀","no freezes left — your streak's toast if you slip 🧊❌","freeze inventory: empty. natural selection time bestie 💀"];
 const STREAK_BROKEN=["💀 '{n}' streak BROKE. all that grind, gone. you fumbled the bag fr","💀 '{n}' chain snapped. the NPCs are laughing rn","💀 '{n}' streak reset to 0. hope that slip was worth it bestie"];
-const REDEEM_HYPE=["REDEEMED 🔥 spent aura like a high roller","purchase made, drip acquired, aura demolished 💸✨","ka-ching 🤑 your fuckability just went up a tier","bought it. flexed it. you absolute menace 😈"];
-const BROKE_ROASTS=["broke bitch alert 🚨 farm more aura 💀","you can't afford that, grind harder 😭","insufficient aura, NPC. tap some habits 💸💀"];
-const GREETINGS=["sup {name}, you thirsty bitch 💦","look who's back, {name} you degenerate 👀","rise and grind, {name}. lock the fuck in 🔒","{name} is in the building. aura: immeasurable 🧠","oh shit, it's {name}. time to farm some aura ✨","welcome back {name}, you absolute menace 😈"];
+const REDEEM_HYPE=["REDEEMED 🔥 spent aura like a high roller","purchase made, drip acquired, aura demolished 💸✨","ka-ching 🤑 your drip levels just went up a tier","bought it. flexed it. you absolute menace 😈"];
+const BROKE_ROASTS=["broke alert 🚨 farm more aura 💀","you can't afford that, grind harder 😭","insufficient aura, NPC. tap some habits 💸💀"];
+const GREETINGS=["sup {name}, ready to grind? 💪","look who's back, {name} you legend 👀","rise and grind, {name}. lock tf in 🔒","{name} is in the building. aura: immeasurable 🧠","oh snap, it's {name}. time to farm some aura ✨","welcome back {name}, you absolute menace 😈"];
 
 const LEVELS=[
 {min:0,name:'Certified NPC',icon:'🫥'},{min:50,name:'Baby Degenerate',icon:'👶'},
-{min:150,name:'Aura Apprentice',icon:'🌱'},{min:300,name:'Discipline Slut',icon:'💅'},
-{min:500,name:'Brain Rot Bully',icon:'😤'},{min:800,name:'Aura Whore',icon:'🔥'},
+{min:150,name:'Aura Apprentice',icon:'🌱'},{min:300,name:'Discipline Demon',icon:'💅'},
+{min:500,name:'Brain Rot Bully',icon:'😤'},{min:800,name:'Aura Fiend',icon:'🔥'},
 {min:1200,name:'Sigma in Training',icon:'💪'},{min:1800,name:'Certified Menace',icon:'😈'},
 {min:2500,name:'Glow Up Demon',icon:'🧬'},{min:3500,name:'Aura Overlord',icon:'👑'},
 {min:5000,name:'Transcended Gigachad',icon:'🌌'},{min:7500,name:'Aura God',icon:'⚡'},
@@ -521,10 +521,10 @@ const LEVELS=[
 ];
 
 const CHALLENGES=[
-{id:'ch1',icon:'🔥',name:'7-Day Lock-In',desc:'tap ALL habits 7 days straight you slut',target:7,type:'all_taps',reward:200},
+{id:'ch1',icon:'🔥',name:'7-Day Lock-In',desc:'tap ALL habits 7 days straight, no excuses',target:7,type:'all_taps',reward:200},
 {id:'ch2',icon:'💀',name:'Brain Rot Funeral',desc:'starve every brain rot for 14 days',target:14,type:'starve_streak',reward:400},
 {id:'ch3',icon:'✨',name:'Aura Farmer Supreme',desc:'hit 500 total aura points',target:500,type:'total_aura',reward:150},
-{id:'ch4',icon:'📝',name:'Journal Slut',desc:'log 10 commit entries',target:10,type:'total_commits',reward:100},
+{id:'ch4',icon:'📝',name:'Journal Fiend',desc:'log 10 commit entries',target:10,type:'total_commits',reward:100},
 {id:'ch5',icon:'🏋️',name:'30-Day Sigma Arc',desc:'any single streak for 30 days',target:30,type:'single_streak',reward:750},
 {id:'ch6',icon:'👑',name:'Aura Millionaire',desc:'stack 2000 aura points',target:2000,type:'total_aura',reward:500}
 ];
@@ -540,24 +540,24 @@ const CHECKIN_MOODS=[
 const SHOP={
 avatars:[
 {id:'av_brain',preview:'🧠',name:'Default NPC Brain',desc:'the broke starter look. mid.',cost:0},
-{id:'av_clown',preview:'🤡',name:'Simp Clown',desc:'for when you fumbled the bag fr',cost:80},
+{id:'av_clown',preview:'🤡',name:'Clown Era',desc:'for when you fumbled the bag fr',cost:80},
 {id:'av_skull',preview:'💀',name:'Cooked Skull',desc:'certified down bad. own it.',cost:120},
-{id:'av_peach',preview:'🍑',name:'Certified Cake',desc:'all aura, all ass, no cap',cost:250},
-{id:'av_devil',preview:'😈',name:'Horny Lil Devil',desc:'horns OUT, aura unhinged 🔥',cost:300},
-{id:'av_hot',preview:'🥵',name:'Insufferably Hot',desc:'you a whole snack and you know it',cost:400},
+{id:'av_peach',preview:'🍑',name:'Main Character',desc:'all aura, all vibes, no cap',cost:250},
+{id:'av_devil',preview:'😈',name:'Lil Menace',desc:'horns OUT, aura unhinged 🔥',cost:300},
+{id:'av_hot',preview:'🥵',name:'Insufferably Cool',desc:'you a whole vibe and you know it',cost:400},
 {id:'av_goat',preview:'🐐',name:'Literal GOAT',desc:'greatest aura farmer ever',cost:1500}
 ],
 themes:[
 {id:'th_default',name:'Degenerate Default',desc:'OG lime-green grindset',vars:{},cost:0},
-{id:'th_slut',name:'Slutty Red 💋',desc:'paint the town red you menace',vars:{'--accent':'#ff2d55','--purple':'#ff7eb6'},cost:250},
-{id:'th_goon',name:'Goon Cave Purple 🍆',desc:'lights off, aura on',vars:{'--accent':'#b388ff','--bg':'#0c0716','--bg2':'#140d22'},cost:350},
+{id:'th_slut',name:'Demon Red 💋',desc:'paint the town red you menace',vars:{'--accent':'#ff2d55','--purple':'#ff7eb6'},cost:250},
+{id:'th_goon',name:'Shadow Purple 🔮',desc:'lights off, aura on',vars:{'--accent':'#b388ff','--bg':'#0c0716','--bg2':'#140d22'},cost:350},
 {id:'th_cyber',name:'Cyber Rizz 🤖',desc:'neon teal rizz from 3024',vars:{'--accent':'#00ffe0','--danger':'#ff4d6d'},cost:450},
 {id:'th_sigma',name:'Sigma Gold 👑',desc:'drip so loud it has a sound',vars:{'--accent':'#ffd700','--purple':'#ffe98a'},cost:600}
 ],
 titles:[
 {id:'ti_npc',name:'Reformed NPC',desc:'barely sentient but trying',cost:60},
-{id:'ti_goon',name:'Certified Goon',desc:'wear the shame with pride',cost:120},
-{id:'ti_slut',name:'Slut for Progress',desc:'down astronomical for gains',cost:220},
+{id:'ti_goon',name:'Certified Grinder',desc:'built different, not built weird',cost:120},
+{id:'ti_slut',name:'Locked In',desc:'down astronomical for gains',cost:220},
 {id:'ti_rizz',name:'Rizzler Supreme',desc:'unspoken rizz, spoken aura',cost:400},
 {id:'ti_sigma',name:'Sigma Overlord',desc:'touched grass, touched god',cost:1200}
 ]};
@@ -568,17 +568,17 @@ const REWARDS=[
 {id:'r3',icon:'💅',name:'Main Character Energy',desc:'POV: you actually have discipline',cost:250},
 {id:'r4',icon:'😈',name:'Rizz Certified',desc:'your rizz is no longer hypothetical',cost:500},
 {id:'r5',icon:'👑',name:'Sigma Grindset',desc:"you've out-grinded 99% of NPCs",cost:1000},
-{id:'r6',icon:'🧬',name:'Glow Up Unlocked',desc:'fuckability status: ASCENDED',cost:2000},
+{id:'r6',icon:'🧬',name:'Glow Up Unlocked',desc:'main character status: ASCENDED',cost:2000},
 {id:'r7',icon:'🌌',name:'Sigma Overlord',desc:"transcended NPC existence entirely",cost:5000},
 {id:'r8',icon:'💀',name:'Final Boss',desc:'aura so high it\'s illegal in 47 states',cost:10000}
 ];
 
-const SQUAD_NAMES=[{av:'💀',n:'xX_RizzLord_Xx'},{av:'👑',n:'GigaChadSophie'},{av:'🍑',n:'NPC_Slayer_420'},{av:'🦊',n:'MewingQueen'},{av:'🧊',n:'ColdShowerKing'},{av:'😈',n:'SigmaSarah'},{av:'🔥',n:'AuraDemon69'},{av:'💅',n:'MainCharVibes'},{av:'🧠',n:'NoFap_Naruto'},{av:'✨',n:'GlowUpGoblin'}];
+const SQUAD_NAMES=[{av:'💀',n:'xX_RizzLord_Xx'},{av:'👑',n:'GigaChadSophie'},{av:'🍑',n:'NPC_Slayer'},{av:'🦊',n:'MewingQueen'},{av:'🧊',n:'ColdShowerKing'},{av:'😈',n:'SigmaSarah'},{av:'🔥',n:'AuraDemon'},{av:'💅',n:'MainCharVibes'},{av:'🧠',n:'FocusNaruto'},{av:'✨',n:'GlowUpGoblin'}];
 const SQUAD_ACTS=["hit a {n} day streak on {h}, absolutely unhinged 🔥","just starved {h} for {n} days straight, no cap 💀","farmed {h} today. aura levels: astronomical 📈","relapsed on {h}... cooked beyond repair 😭💀","cold shower at 5am, my aura is ungodly high rn 🧊✨","3am gym session, these gains are bussin 🏋️","caught myself doomscrolling and chose violence 🚫📱","i am become aura, destroyer of brain rot 💀🔥"];
 
 const HABIT_SUGG={
-starve:[{e:'🍆',n:'Gooning'},{e:'🥵',n:'Edging'},{e:'📸',n:'Thirst Trapping'},{e:'💌',n:'Sliding into DMs'},{e:'🔞',n:'Watching Porn'},{e:'📱',n:'Doomscrolling'},{e:'👀',n:'Stalking the Ex'},{e:'🛏️',n:'Rotting in Bed'},{e:'🚬',n:'Vaping'},{e:'🍺',n:'Drinking'},{e:'🎰',n:'Gambling'},{e:'🍔',n:'Binge Eating'},{e:'🎮',n:'Rage Gaming'}],
-farm:[{e:'🧘',n:'Mewing'},{e:'🔒',n:'No-Nut Streak'},{e:'😎',n:'Cold Approach'},{e:'💬',n:'Rizz Practice'},{e:'🪞',n:'Looksmaxxing'},{e:'🏋️',n:'Gym'},{e:'🧊',n:'Cold Shower'},{e:'📖',n:'Reading'},{e:'📝',n:'Journaling'},{e:'🌅',n:'5AM Wake Up'},{e:'💤',n:'8hr Sleep'},{e:'💧',n:'Hydrating'},{e:'🏃',n:'Running'},{e:'🧠',n:'Deep Work'}]
+starve:[{e:'📱',n:'Doomscrolling'},{e:'🛏️',n:'Rotting in Bed'},{e:'🎮',n:'Rage Gaming'},{e:'📸',n:'Clout Chasing'},{e:'💌',n:'Texting the Ex'},{e:'👀',n:'Stalking Socials'},{e:'🚬',n:'Vaping'},{e:'🍺',n:'Drinking'},{e:'🎰',n:'Gambling'},{e:'🍔',n:'Binge Eating'},{e:'📺',n:'Binge Watching'},{e:'🛒',n:'Impulse Buying'},{e:'😤',n:'Rage Tweeting'}],
+farm:[{e:'🧘',n:'Mewing'},{e:'🔒',n:'Digital Detox'},{e:'😎',n:'Cold Approach'},{e:'💬',n:'Socializing IRL'},{e:'🪞',n:'Looksmaxxing'},{e:'🏋️',n:'Gym'},{e:'🧊',n:'Cold Shower'},{e:'📖',n:'Reading'},{e:'📝',n:'Journaling'},{e:'🌅',n:'5AM Wake Up'},{e:'💤',n:'8hr Sleep'},{e:'💧',n:'Hydrating'},{e:'🏃',n:'Running'},{e:'🧠',n:'Deep Work'}]
 };
 
 const EMOJIS=['📱','🍆','🥵','💦','🥺','📸','💌','🔞','💸','👀','🛏️','🚬','🍺','🎰','🍔','🎮','🔒','😎','💬','🪞','🏋️','📖','🧊','🧘','💤','🏃','💧','🥗','📝','🧠','💪','🌅','🌱','🎯','🔥'];
@@ -713,12 +713,12 @@ function timeAgo(ts){const d=Date.now()-ts,m=Math.floor(d/60000);if(m<1)return'j
 function renderHabits(type,cid){
   const c=document.getElementById(cid);if(!c)return;
   const habits=data.habits[type]||[];const today=todayKey();
-  if(!habits.length){c.innerHTML=`<div class="text-center text-muted" style="padding:18px;font-size:.72rem;">${type==='starve'?"no brain rot tracked?? lying ass bitch 🤨💀":"no aura habits?? add something you NPC 💀🔥"}</div>`;return}
+  if(!habits.length){c.innerHTML=`<div class="text-center text-muted" style="padding:18px;font-size:.72rem;">${type==='starve'?"no brain rot tracked?? be real with yourself 🤨💀":"no aura habits?? add something you NPC 💀🔥"}</div>`;return}
   c.innerHTML=habits.map(h=>{
     const tapped=!!h.taps[today],streak=calcStreak(h),frozen=frozenInStreak(h);
     const tc=tapped?(type==='starve'?'tapped-bad':'tapped'):'';
     const frozenTag=frozen>0?` <span class="text-cyan">🧊x${frozen}</span>`:'';
-    const stText=streak>0?`🔥 ${streak}d streak — slut for discipline`:(type==='starve'?"0d streak, getting cooked alive 💀":"0d streak, do something lazy bitch 🔒");
+    const stText=streak>0?`🔥 ${streak}d streak — locked in fr`:(type==='starve'?"0d streak, getting cooked alive 💀":"0d streak, start tapping lazy bones 🔒");
     const dby=new Date();dby.setDate(dby.getDate()-2);
     const atRisk=!h.taps[yesterdayKey()]&&!!h.taps[dateKey(dby)];
     return `<div class="habit">
@@ -777,7 +777,7 @@ function openAddHabit(type){
     <div class="chips">${suggs.map((s,i)=>`<button class="chip ${type==='starve'?'s':'f'}" onclick="fillSugg('${type}',${i})">${s.e} ${s.n}</button>`).join('')}</div>
     <p style="font-size:.6rem;color:var(--fg2);margin:10px 0 6px;">// or roll your own — pick an emoji</p>
     <div class="emoji-grid" id="emojiPicker">${EMOJIS.map((e,i)=>`<button class="emoji-opt ${i===0?'sel':''}" onclick="pickEmoji(this,'${e}')">${e}</button>`).join('')}</div>
-    <input type="text" id="habitNameInput" placeholder="${type==='starve'?'gooning, simp behavior...':'mewing, cold approach...'}" maxlength="40">
+    <input type="text" id="habitNameInput" placeholder="${type==='starve'?'doomscrolling, rage gaming...':'mewing, cold approach...'}" maxlength="40">
     <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm 💀</button><button class="btn btn-accent" onclick="addHabit('${type}')">add it 🔥</button></div>`;
   document.getElementById('modalOverlay').classList.add('show');
   setTimeout(()=>document.getElementById('habitNameInput')?.focus(),100)
@@ -795,7 +795,7 @@ function addHabit(type){
   data.habits[type].push({id:uid(),emoji:selectedEmoji,name,streak:0,bestStreak:0,taps:{},createdAt:Date.now()});
   logAct('habit',`added ${selectedEmoji} ${name} to ${type==='starve'?'kill list':'aura farm'}`);
   save();renderAll();closeModal();sfx('tap');haptic(12);
-  toast(type==='starve'?`"${name}" added to the brain rot kill list 💀🔥`:`"${name}" added to the aura farm, grind it you slut ✨🔥`,'good');
+  toast(type==='starve'?`"${name}" added to the brain rot kill list 💀🔥`:`"${name}" added to the aura farm, grind it bestie ✨🔥`,'good');
   selectedEmoji=EMOJIS[0]
 }
 function closeModal(){document.getElementById('modalOverlay').classList.remove('show')}
@@ -824,8 +824,8 @@ function renderQuitTimers(){
   c.innerHTML=habits.map(h=>{
     const days=calcStreak(h);let mot;
     if(days===0)mot="zero days clean you degenerate, start NOW 💀";
-    else if(days<3)mot="barely breathing, don't fuck this up 👶🔥";
-    else if(days<7)mot="brain rot starving but still kicking, smother that bitch 🔥";
+    else if(days<3)mot="barely breathing, don't fumble this 👶🔥";
+    else if(days<7)mot="brain rot starving but still kicking, smother that rot 🔥";
     else if(days<30)mot="unhinged discipline ngl, brain rot getting BODIED 😤💀";
     else mot="GIGACHAD, brain rot on life support 💀🔥";
     return `<div class="card qt-card"><div class="flex-between"><div><span style="font-size:1.1rem">${h.emoji}</span> <strong style="font-size:.82rem">${h.name}</strong></div>
@@ -857,7 +857,7 @@ function renderDen(){
   const el=document.getElementById('denDash');if(!el)return;
   const{cur,next,pct}=getLvlProg();const ln=cur.idx+1;const ck=data.lastCheckIn===todayKey();
   el.innerHTML=`<div class="lvl-card"><div class="lvl-head"><span class="lvl-icon">${cur.icon}</span><div>
-    <div class="lvl-title">Aura Slut Level ${ln}</div><div class="lvl-name">${cur.name}</div></div></div>
+    <div class="lvl-title">Aura Level ${ln}</div><div class="lvl-name">${cur.name}</div></div></div>
     <div class="lvl-bar-wrap"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
     ${next?`<div class="lvl-next">next: ${next.icon} ${next.name} at ${next.min.toLocaleString()} AP</div>`:'<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute god 👑</div>'}
     </div>
@@ -904,7 +904,7 @@ function renderChallenges(){
     else act=`<button class="btn btn-sm" style="border-color:var(--purple);color:var(--purple)" onclick="joinCh('${ch.id}')">join ⚔️</button>`;
     return `<div class="ch-card ${done&&!claimed?'done':''} ${claimed?'claimed':''}">
       <div class="ch-head"><span class="ch-icon">${ch.icon}</span><div class="ch-info"><div class="ch-nm">${ch.name}</div><div class="ch-ds">${ch.desc}</div></div><div>${act}</div></div>
-      ${joined&&!claimed?`<div class="ch-bar-w"><div class="ch-bar" style="width:${pct}%"></div></div><div class="ch-prog">${prog}/${ch.target}${done?' — claim it you slut 🔥':''}</div>`:''}
+      ${joined&&!claimed?`<div class="ch-bar-w"><div class="ch-bar" style="width:${pct}%"></div></div><div class="ch-prog">${prog}/${ch.target}${done?' — claim it bestie 🔥':''}</div>`:''}
       <div class="ch-rw">🏆 ${ch.reward} AP</div></div>`
   }).join('')
 }
@@ -938,8 +938,8 @@ function renderAnalytics(){
   const sc=(data.habits.starve||[]).reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
   const fc=(data.habits.farm||[]).reduce((s,h)=>s+Object.keys(h.taps).filter(k=>h.taps[k]===true).length,0);
   let roast;
-  if(daysActive.size===0)roast="you haven't done SHIT yet. zero data, zero aura, zero bitches 💀";
-  else if(daysActive.size>=30)roast=`${daysActive.size} days grinding, you absolute slut for progress. DISGUSTING discipline (compliment) 🔥👑`;
+  if(daysActive.size===0)roast="you haven't done anything yet. zero data, zero aura, zero progress 💀";
+  else if(daysActive.size>=30)roast=`${daysActive.size} days grinding, you absolute LEGEND. DISGUSTING discipline (compliment) 🔥👑`;
   else if(daysActive.size>=7)roast=`${daysActive.size} days in, ${totalTaps} taps. not bad, don't get comfortable 👀🔥`;
   else roast=`${daysActive.size} day${daysActive.size>1?'s':''} active, ${totalTaps} taps. baby numbers, pump them up 📈💀`;
   el.innerHTML=`<div class="card">
@@ -965,7 +965,7 @@ function renderActivity(){
 // ─── SQUAD ───
 function renderSquad(){
   const c=document.getElementById('squadFeed');if(!c)return;
-  const habits=['doomscrolling','gooning','gym','mewing','cold showers','reading','vaping'];
+  const habits=['doomscrolling','doom tweeting','gym','mewing','cold showers','reading','vaping'];
   const times=['just now','2m ago','5m ago','12m ago','23m ago','1h ago','2h ago','3h ago'];
   const items=[];
   const myName=data.packName||'You';
@@ -1166,7 +1166,7 @@ function promptName(){
   m.innerHTML=`<h3>🧠 WHAT'S YOUR NAME, DEGENERATE?</h3>
     <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">this is your pack name. make it go hard af 🔥💀</p>
     <input type="text" id="packNameInput" placeholder="e.g. RizzLord, GigaChad, BrainRotSlayer..." maxlength="20">
-    <div class="modal-actions"><button class="btn btn-accent btn-block" onclick="setName()">lock the fuck in → 🔒🔥</button></div>`;
+    <div class="modal-actions"><button class="btn btn-accent btn-block" onclick="setName()">lock tf in → 🔒🔥</button></div>`;
   document.getElementById('modalOverlay').classList.add('show');
   setTimeout(()=>document.getElementById('packNameInput')?.focus(),100)
 }
@@ -1181,13 +1181,13 @@ function setName(){
 function renderTodayProgress(){
   const el=document.getElementById('todayProgress');if(!el)return;
   const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
-  if(!all.length){el.innerHTML='<div class="text-center text-muted" style="padding:12px;font-size:.72rem;">no habits yet, add some first you lazy bitch 💀</div>';return}
+  if(!all.length){el.innerHTML='<div class="text-center text-muted" style="padding:12px;font-size:.72rem;">no habits yet, add some first you NPC 💀</div>';return}
   const today=todayKey(),done=all.filter(h=>h.taps[today]),left=all.filter(h=>!h.taps[today]);
   const pct=all.length>0?Math.round(done.length/all.length*100):0;
   let msg;
   if(pct===0)msg="zero taps. brain rot is winning rn. TAP SOMETHING 💀";
   else if(pct<50)msg="barely started, pick up the pace degenerate 👀";
-  else if(pct<100)msg="over halfway, don't stop now you slut for progress 🔥";
+  else if(pct<100)msg="over halfway, don't stop now you legend 🔥";
   else msg="CLEAN SWEEP 🧹✨ every habit tapped, you absolute MENACE";
   let h=`<div class="card"><div class="flex-between" style="margin-bottom:8px">
     <div><span class="tp-pct">${pct}%</span><span class="text-muted" style="font-size:.6rem;margin-left:6px">${done.length}/${all.length} tapped</span></div>
