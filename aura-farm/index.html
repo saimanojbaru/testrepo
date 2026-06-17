@@ -21,7 +21,7 @@
 --r:8px;
 --mono:'SF Mono','Fira Code','Cascadia Code','JetBrains Mono',Consolas,monospace;
 }
-html{font-size:15px;-webkit-text-size-adjust:100%}
+html{font-size:17px;-webkit-text-size-adjust:100%}
 body{font-family:var(--mono);background:radial-gradient(ellipse 90% 55% at 50% -12%,rgba(122,47,255,.22),rgba(0,229,255,.05) 38%,transparent 60%),var(--bg);
 background-attachment:fixed;color:var(--fg);min-height:100dvh;line-height:1.6;
 -webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:72px;
@@ -36,16 +36,16 @@ border-bottom:1px solid var(--border);padding:12px 16px;display:flex;align-items
 .header-left{display:flex;align-items:center;gap:10px}
 .header-logo{font-size:1.4rem;animation:logoBr 3s ease-in-out infinite;filter:drop-shadow(0 0 8px var(--glow-a))}
 @keyframes logoBr{0%,100%{transform:scale(1);filter:drop-shadow(0 0 6px var(--glow-a))}50%{transform:scale(1.06);filter:drop-shadow(0 0 16px var(--glow-a))}}
-.header-title{font-size:.85rem;font-weight:700;color:var(--accent);letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
-.header-sub{font-size:.6rem;color:var(--fg2)}
+.header-title{font-size:.95rem;font-weight:700;color:var(--accent);letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.header-sub{font-size:.74rem;color:var(--fg2)}
 /* BUTTONS */
-.btn{font-family:var(--mono);font-size:.75rem;padding:8px 16px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);
+.btn{font-family:var(--mono);font-size:.88rem;padding:8px 16px;border:1px solid var(--border);background:var(--bg2);color:var(--fg);
 border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap;touch-action:manipulation;-webkit-user-select:none;user-select:none}
 .btn:hover{border-color:var(--accent);color:var(--accent)}
 .btn:active{transform:scale(.95)}
 .btn-accent{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:700;box-shadow:0 0 14px rgba(179,136,255,.2)}
 .btn-danger{border-color:var(--danger);color:var(--danger);background:transparent}
-.btn-sm{padding:4px 10px;font-size:.7rem}
+.btn-sm{padding:4px 10px;font-size:.82rem}
 .btn-block{width:100%;text-align:center}
 .glow-btn{box-shadow:0 0 15px rgba(0,255,159,.5);transition:all .2s}
 .glow-btn:hover{box-shadow:0 0 25px rgba(0,255,159,.6)}
@@ -54,7 +54,7 @@ border-radius:var(--r);cursor:pointer;transition:all .2s;white-space:nowrap;touc
 backdrop-filter:blur(8px);transition:border-color .3s,box-shadow .3s}
 .card:hover{border-color:rgba(0,255,159,.3);box-shadow:0 0 16px rgba(0,255,159,.08)}
 /* SECTION TITLES */
-.sec-title{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--fg);font-weight:700;text-transform:uppercase;
+.sec-title{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--fg);font-weight:700;text-transform:uppercase;
 letter-spacing:1.5px;margin:22px 0 10px;padding-left:10px;border-left:3px solid var(--accent)}
 .sec-title.neon-a{border-left-color:var(--accent)}
 .sec-title.neon-r{border-left-color:var(--danger)}
@@ -73,8 +73,8 @@ text-shadow:0 0 10px var(--glow-a),0 0 40px rgba(179,136,255,.25);animation:cPul
 .aura-num.glow-loss{animation:aLoss .6s ease}
 @keyframes aGlow{0%{transform:scale(1)}30%{transform:scale(1.2);color:#fff;text-shadow:0 0 20px #fff,0 0 60px var(--accent)}100%{transform:scale(1);color:var(--accent)}}
 @keyframes aLoss{0%{transform:scale(1)}15%{transform:translateX(-6px);color:var(--danger)}40%{transform:translateX(6px)}70%{transform:translateX(-3px)}100%{transform:scale(1);color:var(--accent)}}
-.aura-label{font-size:.7rem;color:var(--fg2);text-transform:uppercase;letter-spacing:3px;margin-top:4px}
-.aura-change{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700;margin-top:6px;animation:fadeUp .4s ease}
+.aura-label{font-size:.82rem;color:var(--fg2);text-transform:uppercase;letter-spacing:3px;margin-top:4px}
+.aura-change{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.82rem;font-weight:700;margin-top:6px;animation:fadeUp .4s ease}
 .aura-change.gain{background:rgba(179,136,255,.15);color:var(--accent)}
 .aura-change.loss{background:rgba(255,62,108,.15);color:var(--danger)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -82,16 +82,16 @@ text-shadow:0 0 10px var(--glow-a),0 0 40px rgba(179,136,255,.25);animation:cPul
 .stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
 .stat-box{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:10px 6px;text-align:center}
 .stat-n{font-size:1.3rem;font-weight:900;color:var(--accent);text-shadow:0 0 8px var(--glow-a)}
-.stat-l{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.stat-l{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
 /* LEVEL CARD */
 .lvl-card{background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);padding:14px;margin:10px 0}
 .lvl-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .lvl-icon{font-size:1.8rem;filter:drop-shadow(0 0 8px var(--glow-a));animation:logoBr 3s ease-in-out infinite}
 .lvl-title{font-size:.9rem;font-weight:900;color:var(--accent);text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
-.lvl-name{font-size:.65rem;color:var(--purple);font-style:italic;text-shadow:0 0 8px rgba(179,136,255,.4)}
+.lvl-name{font-size:.9rem;color:var(--purple);font-style:italic;text-shadow:0 0 8px rgba(179,136,255,.4)}
 .lvl-bar-wrap{height:5px;background:var(--bg);border-radius:3px;overflow:hidden}
 .lvl-bar{height:100%;background:linear-gradient(90deg,var(--accent),#00e5ff);border-radius:3px;transition:width .6s;box-shadow:0 0 8px var(--glow-a)}
-.lvl-next{font-size:.58rem;color:var(--fg2);margin-top:5px;text-align:right}
+.lvl-next{font-size:.84rem;color:var(--fg2);margin-top:5px;text-align:right}
 /* HABIT ITEMS */
 .habit{display:flex;align-items:center;gap:10px;padding:10px 12px;background:rgba(26,26,26,.8);border:1px solid var(--border);
 border-radius:var(--r);margin:6px 0;transition:border-color .2s,box-shadow .3s,transform .2s}
@@ -134,8 +134,8 @@ border-radius:var(--r);margin:6px 0;transition:border-color .2s,box-shadow .3s,t
 .status-dot.ended{background:var(--fg2);opacity:.5}
 @keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 4px var(--accent)}50%{opacity:.6;box-shadow:0 0 12px var(--accent)}}
 .habit-info{flex:1;min-width:0}
-.habit-name{font-size:.78rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.habit-streak{font-size:.62rem;color:var(--fg2)}
+.habit-name{font-size:.9rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.habit-streak{font-size:.88rem;color:var(--fg2)}
 .tap-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:transparent;color:var(--fg);
 font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;
 transition:all .15s cubic-bezier(.34,1.56,.64,1);touch-action:manipulation;-webkit-user-select:none;user-select:none;position:relative}
@@ -147,7 +147,7 @@ box-shadow:0 0 22px var(--glow-a);animation:tapPop .35s cubic-bezier(.34,1.56,.6
 box-shadow:0 0 22px var(--glow-d);animation:tapPop .35s,rotGlitch .3s}
 @keyframes tapPop{0%{transform:scale(1)}45%{transform:scale(1.35) rotate(-8deg)}70%{transform:scale(.92) rotate(4deg)}100%{transform:scale(1)}}
 @keyframes rotGlitch{0%,100%{filter:none}20%{filter:hue-rotate(30deg) brightness(1.5)}60%{filter:hue-rotate(-20deg) brightness(.8);transform:translateX(-2px)}}
-.del-btn{background:none;border:none;color:var(--fg2);cursor:pointer;font-size:.7rem;padding:4px;opacity:0;transition:opacity .2s,color .2s}
+.del-btn{background:none;border:none;color:var(--fg2);cursor:pointer;font-size:.82rem;padding:4px;opacity:0;transition:opacity .2s,color .2s}
 .del-btn:hover{color:var(--danger)}
 .del-btn .icon-inline{transition:transform .2s}
 .del-btn:hover .icon-inline{transform:scale(1.3) rotate(90deg)}
@@ -158,7 +158,7 @@ box-shadow:0 0 22px var(--glow-d);animation:tapPop .35s,rotGlitch .3s}
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:rgba(10,10,10,.92);backdrop-filter:blur(16px);
 border-top:1px solid var(--border);display:flex;z-index:100;padding-bottom:env(safe-area-inset-bottom,0)}
 .nav-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 2px;
-color:var(--fg2);font-size:.5rem;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:none;
+color:var(--fg2);font-size:.9rem;text-transform:uppercase;letter-spacing:1px;cursor:pointer;border:none;background:none;
 font-family:var(--mono);gap:2px;touch-action:manipulation;-webkit-user-select:none;user-select:none;transition:color .2s;position:relative}
 .nav-btn:active{transform:scale(.92)}
 .nav-btn.active{color:var(--accent)}
@@ -171,7 +171,7 @@ border-radius:0 0 3px 3px;box-shadow:0 0 12px var(--glow-a)}
 /* TOAST */
 .toast-wrap{position:fixed;top:60px;left:50%;transform:translateX(-50%);z-index:999;display:flex;flex-direction:column;gap:8px;
 pointer-events:none;width:90%;max-width:400px}
-.toast{background:rgba(17,17,17,.95);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:.73rem;
+.toast{background:rgba(17,17,17,.95);border:1px solid var(--border);border-radius:var(--r);padding:10px 14px;font-size:.84rem;
 color:var(--fg);animation:tIn .25s ease,tOut .3s ease 2.5s forwards;pointer-events:auto;backdrop-filter:blur(8px)}
 .toast.good{border-color:var(--accent);box-shadow:0 0 12px rgba(179,136,255,.1)}
 .toast.bad{border-color:var(--danger);box-shadow:0 0 12px rgba(255,62,108,.1)}
@@ -186,7 +186,7 @@ border-radius:14px 14px 0 0;width:100%;max-width:640px;max-height:80vh;overflow-
 animation:slideUp .25s cubic-bezier(.22,1,.36,1);backdrop-filter:blur(16px)}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
-.modal h3{font-size:.85rem;color:var(--accent);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
+.modal h3{font-size:.95rem;color:var(--accent);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;text-shadow:0 0 10px var(--glow-a)}
 .modal input{width:100%;font-family:var(--mono);font-size:.8rem;padding:10px 12px;background:var(--bg);border:1px solid var(--border);
 border-radius:var(--r);color:var(--fg);margin-bottom:12px;outline:none;transition:border-color .2s}
 .modal input:focus{border-color:var(--accent);box-shadow:0 0 10px rgba(179,136,255,.1)}
@@ -209,13 +209,13 @@ color:var(--fg);display:flex;align-items:center;justify-content:center;width:36p
 .emoji-opt.sel{border-color:var(--accent);color:var(--accent);box-shadow:0 0 8px rgba(179,136,255,.2)}
 /* SUGG CHIPS */
 .chips{display:flex;flex-wrap:wrap;gap:5px;max-height:140px;overflow-y:auto;padding:2px}
-.chip{font-family:var(--mono);font-size:.65rem;padding:5px 9px;border:1px solid var(--border);background:var(--bg3);color:var(--fg);
+.chip{font-family:var(--mono);font-size:.9rem;padding:5px 9px;border:1px solid var(--border);background:var(--bg3);color:var(--fg);
 border-radius:14px;cursor:pointer;transition:all .2s;white-space:nowrap;display:inline-flex;align-items:center;gap:4px;touch-action:manipulation}
 .chip:active{transform:scale(.92)}
 .chip.s:hover,.chip.s.picked{border-color:var(--danger);color:var(--danger);background:rgba(255,62,108,.1)}
 .chip.f:hover,.chip.f.picked{border-color:var(--accent);color:var(--accent);background:rgba(179,136,255,.1)}
 /* SQUAD */
-.sq-item{display:flex;gap:10px;align-items:flex-start;padding:10px 6px;border-bottom:1px solid var(--border);font-size:.73rem;
+.sq-item{display:flex;gap:10px;align-items:flex-start;padding:10px 6px;border-bottom:1px solid var(--border);font-size:.84rem;
 animation:sqIn .5s ease backwards;transition:transform .2s,background .2s;border-radius:4px}
 .sq-item:nth-child(1){animation-delay:0s}.sq-item:nth-child(2){animation-delay:.08s}.sq-item:nth-child(3){animation-delay:.16s}
 .sq-item:nth-child(4){animation-delay:.24s}.sq-item:nth-child(5){animation-delay:.32s}.sq-item:nth-child(6){animation-delay:.4s}
@@ -224,13 +224,13 @@ animation:sqIn .5s ease backwards;transition:transform .2s,background .2s;border
 .sq-item:last-child{border-bottom:none}
 .sq-av{font-size:1.3rem;flex-shrink:0}
 .sq-name{color:var(--purple);font-weight:600;text-shadow:0 0 8px rgba(179,136,255,.4)}
-.sq-time{color:var(--fg2);font-size:.58rem}
+.sq-time{color:var(--fg2);font-size:.84rem}
 .sq-msg{color:var(--fg);margin-top:2px}
 /* SHOP */
-.shop-bal{font-size:.85rem;font-weight:700;padding:8px 0;text-align:center;text-shadow:0 0 8px var(--glow-a)}
+.shop-bal{font-size:.95rem;font-weight:700;padding:8px 0;text-align:center;text-shadow:0 0 8px var(--glow-a)}
 .shop-tabs{display:flex;gap:6px;margin-bottom:12px}
 .shop-tab{flex:1;padding:7px 4px;border:1px solid var(--border);border-radius:var(--r);background:var(--bg3);color:var(--fg2);
-font-family:var(--mono);font-size:.68rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
+font-family:var(--mono);font-size:.8rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
 .shop-tab.active{border-color:var(--accent);color:var(--accent);background:var(--bg2)}
 .shop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
 .shop-card{background:rgba(26,26,26,.8);border:1px solid var(--border);border-radius:var(--r);padding:12px 8px;text-align:center;
@@ -240,12 +240,12 @@ transition:all .2s;touch-action:manipulation}
 .shop-card.equipped{border-color:var(--accent);box-shadow:0 0 14px rgba(179,136,255,.15)}
 .shop-card.locked{opacity:.4}
 .shop-av{font-size:2rem;margin-bottom:5px}
-.shop-nm{font-size:.7rem;font-weight:700;margin-bottom:2px}
-.shop-ds{font-size:.58rem;color:var(--fg2);margin-bottom:6px;min-height:22px}
+.shop-nm{font-size:.82rem;font-weight:700;margin-bottom:2px}
+.shop-ds{font-size:.84rem;color:var(--fg2);margin-bottom:6px;min-height:22px}
 /* CALENDAR */
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:8px}
-.cal-h{font-size:.58rem;color:var(--fg2);text-align:center;padding:4px 0}
-.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.63rem;border-radius:5px;color:var(--fg2);
+.cal-h{font-size:.84rem;color:var(--fg2);text-align:center;padding:4px 0}
+.cal-d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:.88rem;border-radius:5px;color:var(--fg2);
 cursor:pointer;transition:transform .12s,box-shadow .2s,background .2s;border:1px solid transparent;touch-action:manipulation}
 .cal-d:not(.empty):hover{transform:scale(1.15);z-index:2}
 .cal-d.empty{opacity:0;cursor:default}
@@ -257,14 +257,14 @@ cursor:pointer;transition:transform .12s,box-shadow .2s,background .2s;border:1p
 .cal-d.today{border:2px solid var(--accent);color:var(--fg);font-weight:700;box-shadow:0 0 12px var(--glow-a);animation:todayG 2s ease-in-out infinite}
 @keyframes todayG{0%,100%{box-shadow:0 0 12px var(--glow-a)}50%{box-shadow:0 0 20px var(--glow-a),inset 0 0 10px rgba(179,136,255,.1)}}
 .cal-d.sel{outline:2px solid var(--purple);outline-offset:1px;transform:scale(1.15);z-index:3}
-.cal-legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.58rem;color:var(--fg2);margin-top:8px;justify-content:center}
+.cal-legend{display:flex;flex-wrap:wrap;gap:8px;font-size:.84rem;color:var(--fg2);margin-top:8px;justify-content:center}
 .cal-legend span{display:inline-flex;align-items:center;gap:4px}
 .ldot{width:10px;height:10px;border-radius:3px;display:inline-block}
 .ldot.a{background:rgba(179,136,255,.55)}.ldot.r{background:rgba(255,62,108,.5)}.ldot.i{background:rgba(0,229,255,.5)}
-.day-sum{margin-top:12px;border-top:1px dashed var(--border);padding-top:10px;animation:fadeIn .25s;font-size:.72rem}
-.day-sum .ds-date{font-size:.76rem;font-weight:700;color:var(--purple);margin-bottom:6px}
-.day-sum .ds-row{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0;font-size:.7rem}
-.ds-tag{display:inline-flex;align-items:center;gap:3px;padding:3px 7px;border-radius:12px;font-size:.66rem;
+.day-sum{margin-top:12px;border-top:1px dashed var(--border);padding-top:10px;animation:fadeIn .25s;font-size:.84rem}
+.day-sum .ds-date{font-size:.88rem;font-weight:700;color:var(--purple);margin-bottom:6px}
+.day-sum .ds-row{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0;font-size:.82rem}
+.ds-tag{display:inline-flex;align-items:center;gap:3px;padding:3px 7px;border-radius:12px;font-size:.9rem;
 border:1px solid var(--border);background:rgba(26,26,26,.8)}
 .ds-tag.good{border-color:var(--accent);color:var(--accent)}.ds-tag.rot{border-color:var(--danger);color:var(--danger)}
 /* CHALLENGE */
@@ -275,40 +275,40 @@ border:1px solid var(--border);background:rgba(26,26,26,.8)}
 .ch-head{display:flex;align-items:flex-start;gap:8px}
 .ch-icon{font-size:1.3rem;flex-shrink:0}
 .ch-info{flex:1;min-width:0}
-.ch-nm{font-size:.75rem;font-weight:700}.ch-ds{font-size:.6rem;color:var(--fg2);margin-top:2px}
+.ch-nm{font-size:.88rem;font-weight:700}.ch-ds{font-size:.74rem;color:var(--fg2);margin-top:2px}
 .ch-bar-w{height:4px;background:var(--bg);border-radius:2px;overflow:hidden;margin:8px 0 3px}
 .ch-bar{height:100%;background:linear-gradient(90deg,var(--purple),#ff00ff);border-radius:2px;transition:width .5s;box-shadow:0 0 6px rgba(179,136,255,.5)}
-.ch-prog{font-size:.58rem;color:var(--fg2)}.ch-rw{font-size:.58rem;color:var(--accent);margin-top:4px}
+.ch-prog{font-size:.84rem;color:var(--fg2)}.ch-rw{font-size:.84rem;color:var(--accent);margin-top:4px}
 /* ANALYTICS */
 .an-bars{display:flex;align-items:flex-end;gap:5px;height:90px}
 .an-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;height:100%}
-.an-val{font-size:.58rem;color:var(--fg2);font-weight:700}
+.an-val{font-size:.84rem;color:var(--fg2);font-weight:700}
 .an-track{flex:1;width:100%;display:flex;align-items:flex-end}
 .an-bar{width:100%;background:linear-gradient(180deg,var(--accent),rgba(179,136,255,.4));border-radius:3px 3px 0 0;min-height:3px;
 transition:height .5s;box-shadow:0 0 6px rgba(179,136,255,.3)}
 .an-bar.today{background:linear-gradient(180deg,#00e5ff,var(--accent));box-shadow:0 0 12px rgba(0,255,159,.5)}
 .an-bar.empty{background:rgba(255,62,108,.3);box-shadow:0 0 4px rgba(255,62,108,.2)}
-.an-lbl{font-size:.5rem;color:var(--fg2);text-transform:uppercase}
+.an-lbl{font-size:.9rem;color:var(--fg2);text-transform:uppercase}
 .an-lbl.today{color:var(--accent);font-weight:700}
 .an-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
 .an-stat{text-align:center;padding:6px 3px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
 .an-sn{display:block;font-size:.95rem;font-weight:900;color:var(--accent);text-shadow:0 0 6px var(--glow-a)}
 .an-sl{display:block;font-size:.48rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-top:1px}
-.an-roast{font-size:.7rem;padding:8px 10px;background:rgba(179,136,255,.04);border-left:3px solid var(--accent);
+.an-roast{font-size:.82rem;padding:8px 10px;background:rgba(179,136,255,.04);border-left:3px solid var(--accent);
 border-radius:0 var(--r) var(--r) 0;margin-top:8px;line-height:1.5}
 /* ACTIVITY */
-.act-item{display:flex;align-items:center;gap:7px;padding:7px 8px;font-size:.68rem;border-bottom:1px solid rgba(42,42,42,.5)}
+.act-item{display:flex;align-items:center;gap:7px;padding:7px 8px;font-size:.8rem;border-bottom:1px solid rgba(42,42,42,.5)}
 .act-item:last-child{border-bottom:none}
 .act-icon{font-size:.95rem;flex-shrink:0}
 .act-msg{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.act-time{flex-shrink:0;font-size:.58rem;color:var(--fg2)}
+.act-time{flex-shrink:0;font-size:.84rem;color:var(--fg2)}
 /* CHECKIN */
 .ck-btn{display:flex;align-items:center;gap:10px;width:100%;padding:12px 14px;background:rgba(26,26,26,.8);border:1px solid var(--border);
-border-radius:var(--r);color:var(--fg);font-family:var(--mono);font-size:.78rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
+border-radius:var(--r);color:var(--fg);font-family:var(--mono);font-size:.9rem;cursor:pointer;transition:all .2s;touch-action:manipulation}
 .ck-btn:hover{border-color:var(--accent);background:rgba(179,136,255,.05);transform:translateX(4px)}
 .ck-btn:active{transform:scale(.97);box-shadow:0 0 20px rgba(179,136,255,.2)}
 .ck-emoji{font-size:1.4rem}.ck-label{flex:1;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.ck-pts{font-size:.63rem;color:var(--accent);font-weight:700}
+.ck-pts{font-size:.88rem;color:var(--accent);font-weight:700}
 /* INPUT */
 .input-row{display:flex;gap:8px;margin:10px 0}
 .input-row input{flex:1;font-family:var(--mono);font-size:.8rem;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);
@@ -319,13 +319,13 @@ border-radius:var(--r);color:var(--fg);outline:none;transition:border-color .2s}
 border-radius:var(--r);margin:5px 0;transition:all .2s}
 .rw-item.locked{opacity:.4}
 .rw-item.unlocked{border-color:var(--accent);box-shadow:0 0 8px rgba(179,136,255,.08)}
-.rw-icon{font-size:1.4rem}.rw-info{flex:1}.rw-nm{font-size:.78rem;font-weight:600}
-.rw-ds{font-size:.62rem;color:var(--fg2)}.rw-cost{font-size:.68rem;color:var(--accent);font-weight:700}
+.rw-icon{font-size:1.4rem}.rw-info{flex:1}.rw-nm{font-size:.9rem;font-weight:600}
+.rw-ds{font-size:.88rem;color:var(--fg2)}.rw-cost{font-size:.8rem;color:var(--accent);font-weight:700}
 /* GREETING */
 .greeting{padding:16px 0 6px;font-size:.88rem}
 .greeting-name{color:var(--accent);font-weight:700;text-shadow:0 0 8px var(--glow-a)}
-.greeting-sub{font-size:.68rem;color:var(--fg2);margin-top:3px}
-.greeting-title{font-size:.63rem;color:var(--purple);margin-top:2px;font-style:italic}
+.greeting-sub{font-size:.8rem;color:var(--fg2);margin-top:3px}
+.greeting-title{font-size:.88rem;color:var(--purple);margin-top:2px;font-style:italic}
 /* MISC */
 .text-accent{color:var(--accent)}.text-danger{color:var(--danger)}.text-muted{color:var(--fg2)}.text-purple{color:var(--purple)}.text-cyan{color:var(--cyan)}
 .text-center{text-align:center}.mt-1{margin-top:8px}.mt-2{margin-top:16px}.mb-1{margin-bottom:8px}
@@ -342,7 +342,7 @@ animation:fPulse 1.8s ease-in-out infinite;touch-action:manipulation}
 background:var(--bg);transition:opacity .4s}
 .loading.hidden{opacity:0;pointer-events:none}
 .loading-text{font-size:1rem;color:var(--accent);text-transform:uppercase;letter-spacing:3px;text-shadow:0 0 10px var(--glow-a);animation:ldGlitch 2s infinite}
-.loading-sub{font-size:.58rem;color:var(--fg2);letter-spacing:2px}
+.loading-sub{font-size:.84rem;color:var(--fg2);letter-spacing:2px}
 @keyframes ldGlitch{0%,90%,100%{opacity:1;transform:none}91%{opacity:.7;transform:translateX(-4px) skewX(3deg)}93%{opacity:1;transform:translateX(3px) skewX(-2deg)}95%{opacity:.8;transform:translateX(-2px)}97%{opacity:.6;transform:translateX(1px) skewX(1deg)}}
 /* GLITCH */
 .glitch{animation:glitch 3s infinite}
@@ -352,21 +352,21 @@ background:var(--bg);transition:opacity .4s}
 .qt-bar{height:4px;background:var(--bg);border-radius:2px;overflow:hidden;margin-top:6px}
 .qt-fill{height:100%;border-radius:2px;transition:width .3s}
 /* COMMIT LOG */
-.commit{padding:8px 10px;margin:5px 0;background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);font-size:.72rem}
-.commit .cm-date{color:var(--fg2);font-size:.6rem}.commit .cm-text{color:var(--accent)}
+.commit{padding:8px 10px;margin:5px 0;background:rgba(17,17,17,.8);border:1px solid var(--border);border-radius:var(--r);font-size:.84rem}
+.commit .cm-date{color:var(--fg2);font-size:.74rem}.commit .cm-text{color:var(--accent)}
 @media(min-width:480px){.stats-row,.an-stats{grid-template-columns:repeat(4,1fr)}}
 /* TODAY PROGRESS */
 .tp-row{display:flex;align-items:center;gap:8px;padding:7px 10px;background:rgba(26,26,26,.6);border:1px solid var(--border);
-border-radius:var(--r);margin:4px 0;font-size:.72rem;transition:all .2s;cursor:pointer;touch-action:manipulation}
+border-radius:var(--r);margin:4px 0;font-size:.84rem;transition:all .2s;cursor:pointer;touch-action:manipulation}
 .tp-row:hover{border-color:rgba(179,136,255,.2);transform:translateX(3px)}
 .tp-row.done{opacity:.5;text-decoration:line-through}
 .tp-row .tp-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;
-justify-content:center;font-size:.65rem;flex-shrink:0;transition:all .2s}
+justify-content:center;font-size:.9rem;flex-shrink:0;transition:all .2s}
 .tp-row.done .tp-check{border-color:var(--accent);background:var(--accent);color:var(--bg)}
 .tp-pct{font-size:2rem;font-weight:900;color:var(--accent);text-shadow:0 0 10px var(--glow-a)}
 /* SQUAD REACTIONS */
 .sq-react{display:flex;gap:4px;margin-top:4px}
-.sq-react button{background:rgba(26,26,26,.6);border:1px solid var(--border);border-radius:12px;padding:2px 7px;font-size:.68rem;
+.sq-react button{background:rgba(26,26,26,.6);border:1px solid var(--border);border-radius:12px;padding:2px 7px;font-size:.8rem;
 cursor:pointer;color:var(--fg2);transition:all .15s;touch-action:manipulation}
 .sq-react button:active{transform:scale(.9)}
 .sq-react button.hyped{border-color:var(--accent);color:var(--accent);background:rgba(179,136,255,.08)}
@@ -376,7 +376,7 @@ cursor:pointer;color:var(--fg2);transition:all .15s;touch-action:manipulation}
 border-radius:var(--r);padding:14px;text-align:center;margin:10px 0;cursor:pointer;transition:all .2s}
 .install-card:hover{border-style:solid;box-shadow:0 0 20px rgba(179,136,255,.1)}
 /* SETTINGS */
-.settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.73rem}
+.settings-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.84rem}
 .settings-row:last-child{border-bottom:none}
 /* ONBOARDING */
 .onb{position:fixed;inset:0;z-index:1100;background:var(--bg);display:flex;flex-direction:column;align-items:center;
@@ -387,7 +387,7 @@ justify-content:center;padding:32px 24px;text-align:center;transition:opacity .4
 .onb-icon{font-size:4rem;margin-bottom:16px;filter:drop-shadow(0 0 20px var(--glow-a));animation:logoBr 3s ease-in-out infinite}
 .onb-title{font-size:1.4rem;font-weight:900;color:var(--accent);text-shadow:0 0 16px var(--glow-a);margin-bottom:10px;line-height:1.2}
 .onb-text{font-size:.82rem;color:var(--fg);line-height:1.6;margin-bottom:8px}
-.onb-sub{font-size:.7rem;color:var(--fg2);line-height:1.5}
+.onb-sub{font-size:.82rem;color:var(--fg2);line-height:1.5}
 .onb-dots{display:flex;gap:8px;justify-content:center;margin:24px 0}
 .onb-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s}
 .onb-dot.active{background:var(--accent);width:24px;border-radius:4px;box-shadow:0 0 10px var(--glow-a)}
@@ -404,14 +404,14 @@ border-radius:var(--r);color:var(--fg);margin:12px 0;outline:none;text-align:cen
 filter:drop-shadow(0 0 6px var(--glow-a));transition:stroke-dashoffset 1s cubic-bezier(.22,1,.36,1)}
 .ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .ring-num{font-size:1.5rem;font-weight:900;color:var(--accent);line-height:1;text-shadow:0 0 8px var(--glow-a)}
-.ring-lbl{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
+.ring-lbl{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
 .ring-info{flex:1;min-width:0}
-.ring-info .ri-big{font-size:.85rem;font-weight:700;color:var(--fg)}
-.ring-info .ri-sub{font-size:.65rem;color:var(--fg2);margin-top:3px}
+.ring-info .ri-big{font-size:.95rem;font-weight:700;color:var(--fg)}
+.ring-info .ri-sub{font-size:.9rem;color:var(--fg2);margin-top:3px}
 /* SHARE */
 .share-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
 .share-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border:1px solid var(--border);
-background:var(--bg2);color:var(--fg);border-radius:var(--r);font-family:var(--mono);font-size:.72rem;font-weight:700;
+background:var(--bg2);color:var(--fg);border-radius:var(--r);font-family:var(--mono);font-size:.84rem;font-weight:700;
 cursor:pointer;transition:all .2s;touch-action:manipulation}
 .share-btn:active{transform:scale(.96)}
 .share-btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);box-shadow:0 0 14px rgba(179,136,255,.25)}
@@ -422,28 +422,28 @@ cursor:pointer;transition:all .2s;touch-action:manipulation}
 .lb-row{display:flex;align-items:center;gap:10px;padding:8px 8px;border-bottom:1px solid var(--border);font-size:.74rem}
 .lb-row:last-child{border-bottom:none}
 .lb-row.me{background:rgba(179,136,255,.06);border-left:3px solid var(--accent);border-radius:4px}
-.lb-rank{font-weight:900;min-width:26px;text-align:center;color:var(--fg2);font-size:.78rem}
+.lb-rank{font-weight:900;min-width:26px;text-align:center;color:var(--fg2);font-size:.9rem}
 .lb-rank.top{font-size:1rem}
 .lb-av{font-size:1.2rem;flex-shrink:0}
 .lb-name{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
 .lb-aura{font-weight:900;color:var(--accent);text-shadow:0 0 6px var(--glow-a);line-height:1.1}
-.lb-streak{font-size:.58rem;color:var(--fg2);text-align:right}
+.lb-streak{font-size:.84rem;color:var(--fg2);text-align:right}
 /* HEAD TO HEAD */
 .h2h{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:14px 0}
 .h2h-side{text-align:center;padding:12px 8px;background:rgba(26,26,26,.8);border:1px solid var(--border);border-radius:var(--r)}
 .h2h-side.win{border-color:var(--accent);box-shadow:0 0 16px rgba(179,136,255,.15)}
 .h2h-side.lose{opacity:.65}
 .h2h-av{font-size:2rem}
-.h2h-name{font-size:.7rem;font-weight:700;color:var(--purple);margin:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h2h-name{font-size:.82rem;font-weight:700;color:var(--purple);margin:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .h2h-aura{font-size:1.4rem;font-weight:900;color:var(--accent);text-shadow:0 0 8px var(--glow-a)}
-.h2h-lbl{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
+.h2h-lbl{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
 .h2h-vs{font-size:1rem;font-weight:900;color:var(--danger);text-shadow:0 0 10px var(--glow-d)}
-.h2h-stat{font-size:.62rem;color:var(--fg2);margin-top:6px}
+.h2h-stat{font-size:.88rem;color:var(--fg2);margin-top:6px}
 /* CAL STATS */
 .cal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
 .cal-stat{text-align:center;padding:8px 4px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
 .cal-stat-n{font-size:1.2rem;font-weight:900;line-height:1}
-.cal-stat-l{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+.cal-stat-l{font-size:.9rem;color:var(--fg2);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
 /* RITUAL / POSSESSION */
 @keyframes flick{0%,100%{opacity:1}45%{opacity:.82}48%{opacity:.55}51%{opacity:.9}}
 .rc-unlock{background:radial-gradient(circle at 50% 0%,rgba(255,62,108,.12),rgba(17,17,17,.7));border:1px dashed var(--danger);
@@ -457,7 +457,7 @@ display:none;flex-direction:column;overflow-y:auto;padding:24px 16px 48px}
 color:var(--danger);border-radius:8px;padding:6px 12px;font-family:var(--mono);font-size:.8rem;cursor:pointer}
 .rc-h{text-align:center;color:#ff3e6c;text-shadow:0 0 18px #ff0033,0 0 40px rgba(255,0,51,.4);font-size:1.4rem;font-weight:900;
 letter-spacing:3px;margin:34px 0 2px;animation:flick 3.5s infinite}
-.rc-sub{text-align:center;color:#a55;font-size:.62rem;letter-spacing:1px;margin-bottom:18px}
+.rc-sub{text-align:center;color:#a55;font-size:.88rem;letter-spacing:1px;margin-bottom:18px}
 .pentagram{width:120px;height:120px;margin:8px auto 16px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;
 border-radius:50%;border:2px solid rgba(255,62,108,.4);box-shadow:0 0 30px rgba(255,0,51,.3),inset 0 0 30px rgba(255,0,51,.2);
 animation:spinPulse 6s linear infinite}
@@ -471,18 +471,18 @@ transition:transform .15s;touch-action:manipulation}
 .summon-btn:disabled{opacity:.4;box-shadow:none;cursor:not-allowed}
 .dur-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
 .dur-opt{padding:10px 4px;border:1px solid rgba(255,62,108,.3);background:rgba(40,0,12,.5);color:#e0a0b0;border-radius:var(--r);
-font-family:var(--mono);font-size:.62rem;cursor:pointer;text-align:center;transition:all .15s;touch-action:manipulation}
+font-family:var(--mono);font-size:.88rem;cursor:pointer;text-align:center;transition:all .15s;touch-action:manipulation}
 .dur-opt.sel{border-color:#ff3e6c;background:rgba(255,62,108,.18);color:#fff;box-shadow:0 0 12px rgba(255,0,51,.3)}
-.dur-opt b{display:block;font-size:.78rem}
+.dur-opt b{display:block;font-size:.9rem}
 .demon-card{background:linear-gradient(160deg,rgba(40,0,16,.9),rgba(10,0,4,.95));border:1px solid #ff3e6c;border-radius:12px;
 padding:18px;text-align:center;margin:14px auto;max-width:420px;box-shadow:0 0 30px rgba(255,0,51,.25);animation:fadeUp .4s}
 .demon-emoji{font-size:3.4rem;filter:drop-shadow(0 0 14px rgba(255,0,51,.6));animation:flick 2.5s infinite;display:flex;align-items:center;justify-content:center}
 .demon-emoji svg{width:3.4rem;height:3.4rem;fill:currentColor}
 .demon-name{font-size:1.05rem;font-weight:900;color:#ff6b8c;text-shadow:0 0 12px rgba(255,0,51,.5);margin:6px 0 2px}
-.demon-power{font-size:.66rem;color:#c98;margin-bottom:8px}
-.demon-stat{display:inline-block;font-size:.6rem;color:#e0a0b0;border:1px solid rgba(255,62,108,.3);border-radius:10px;padding:2px 8px;margin:2px}
+.demon-power{font-size:.9rem;color:#c98;margin-bottom:8px}
+.demon-stat{display:inline-block;font-size:.74rem;color:#e0a0b0;border:1px solid rgba(255,62,108,.3);border-radius:10px;padding:2px 8px;margin:2px}
 .owned-demon{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid var(--border);border-radius:var(--r);margin:5px 0;
-background:rgba(20,0,8,.5);font-size:.72rem}
+background:rgba(20,0,8,.5);font-size:.84rem}
 .owned-demon .od-em{font-size:1.4rem}
 /* possession across the app */
 .possess-vignette{position:fixed;inset:0;pointer-events:none;z-index:889;display:none;
@@ -490,7 +490,7 @@ box-shadow:inset 0 0 140px 36px rgba(180,0,40,.32)}
 body.possessed .possess-vignette{display:block;animation:flick 5s infinite}
 .possess-banner{position:sticky;top:0;z-index:95;display:none;align-items:center;gap:8px;padding:7px 12px;
 background:linear-gradient(90deg,rgba(60,0,20,.96),rgba(20,0,8,.96));border-bottom:1px solid #ff3e6c;
-backdrop-filter:blur(8px);font-size:.66rem}
+backdrop-filter:blur(8px);font-size:.9rem}
 body.possessed .possess-banner{display:flex}
 .possess-banner .pb-em{font-size:1.1rem;animation:flick 2s infinite}
 .possess-banner .pb-txt{flex:1;min-width:0;color:#ffb3c4}
@@ -568,22 +568,22 @@ body.possessed .possess-banner{display:flex}
 <!-- TAB: STARVE -->
 <div class="tab" id="tabStarve">
 <div class="sec-title neon-r"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 2a9 9 0 0 0-9 9c0 3 1.5 5.2 3.5 6.5V20h11v-2.5C19.5 16.2 21 14 21 11a9 9 0 0 0-9-9zM9 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm6 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-5 4h4"/></svg> STARVE THE BRAIN ROT</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i didn't do this today" — starve that rot</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">tap = "i didn't do this today" — starve that rot</p>
 <div id="starveList"></div>
 <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">+ add brain rot to starve</button>
 <div class="sec-title mt-2 neon-r"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M4.9 4.9l14.2 14.2"/></svg> QUIT TIMER — DETOX TRACKER</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">how long you've stayed clean off each habit — longer = bigger flex</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">how long you've stayed clean off each habit — longer = bigger flex</p>
 <div id="quitTimerList"></div>
 </div>
 
 <!-- TAB: FARM -->
 <div class="tab" id="tabFarm">
 <div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8z"/></svg> FARM THE AURA</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">tap = "i did this today, i'm THAT person" — farm it</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">tap = "i did this today, i'm THAT person" — farm it</p>
 <div id="farmList"></div>
 <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">+ add aura habit</button>
 <div class="sec-title mt-2 neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg> DAILY COMMIT LOG</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">what did you lock in today? document the grind</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">what did you lock in today? document the grind</p>
 <div class="input-row">
 <input type="text" id="commitInput" placeholder="today i locked tf in because...">
 <button class="btn btn-accent" onclick="addCommit()">log it</button>
@@ -594,15 +594,15 @@ body.possessed .possess-banner{display:flex}
 <!-- TAB: SQUAD -->
 <div class="tab" id="tabSquad">
 <div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M6 4h12v6a6 6 0 0 1-12 0V4z"/><path d="M6 8H3v2a3 3 0 0 0 3 3M18 8h3v2a3 3 0 0 1-3 3"/><path d="M9 16h6v4H9z"/></svg> GLOBAL LEADERBOARD</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">real players, real aura, ranked worldwide. where you stack up?</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">real players, real aura, ranked worldwide. where you stack up?</p>
 <div id="leaderboard"></div>
 <div class="sec-title neon-a mt-2"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M14.5 3L21 9.5 9.5 21 3 14.5z"/><path d="M14 7l3 3M3 21l4-4"/></svg> MULTIPLAYER CHALLENGES</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">create a challenge, share the code, race your friends for real</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">create a challenge, share the code, race your friends for real</p>
 <div id="mpChallenges"></div>
 <div class="sec-title neon-a mt-2"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.5a3 3 0 0 1 0 5.5M21 20c0-2.6-1.7-4.8-4-5.6"/></svg> THE SQUAD FEED</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">your real wins + a demo squad to vibe with. want real friends in here? challenge them</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">your real wins + a demo squad to vibe with. want real friends in here? challenge them</p>
 <div class="card" style="margin-bottom:8px">
-<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
+<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
 <div class="input-row" style="margin:0">
 <input type="text" id="squadPostInput" placeholder="i just hit a 7-day streak, i'm HIM...">
 <button class="btn btn-accent" onclick="postSquadWin()">flex</button>
@@ -616,18 +616,18 @@ body.possessed .possess-banner{display:flex}
 <!-- TAB: SHOP -->
 <div class="tab" id="tabShop">
 <div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><path d="M6 8h12l1 12H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg> AURA SHOP</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">spend aura on avatars, sick themes & wild titles. drip or drown bestie</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">spend aura on avatars, sick themes & wild titles. drip or drown bestie</p>
 <div id="shopContent"></div>
 </div>
 
 <!-- TAB: CALENDAR -->
 <div class="tab" id="tabCal">
 <div class="sec-title neon-a"><svg class="icon-inline icon-sm" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg> YOUR GRIND CALENDAR</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">green = aura farmed. red = COOKED. tap a day for receipts</p>
+<p class="text-muted mb-1" style="font-size:.8rem;">green = aura farmed. red = COOKED. tap a day for receipts</p>
 <div class="card">
 <div class="flex-between mb-1">
 <button class="btn btn-sm" onclick="calNav(-1)">← prev</button>
-<span id="calLabel" style="font-size:.73rem;color:var(--accent)"></span>
+<span id="calLabel" style="font-size:.84rem;color:var(--accent)"></span>
 <button class="btn btn-sm" onclick="calNav(1)">next →</button>
 </div>
 <div id="calGrid"></div>
@@ -1012,7 +1012,7 @@ function timeAgo(ts){const d=Date.now()-ts,m=Math.floor(d/60000);if(m<1)return'j
 function renderHabits(type,cid){
   const c=document.getElementById(cid);if(!c)return;
   const habits=data.habits[type]||[];const today=todayKey();
-  if(!habits.length){c.innerHTML=`<div class="text-center text-muted" style="padding:18px;font-size:.72rem;">${type==='starve'?"no brain rot tracked?? be real with yourself":"no aura habits?? add something you NPC"}</div>`;return}
+  if(!habits.length){c.innerHTML=`<div class="text-center text-muted" style="padding:18px;font-size:.84rem;">${type==='starve'?"no brain rot tracked?? be real with yourself":"no aura habits?? add something you NPC"}</div>`;return}
   c.innerHTML=habits.map(h=>{
     const tapped=!!h.taps[today],streak=calcStreak(h),frozen=frozenInStreak(h);
     const tc=tapped?(type==='starve'?'tapped-bad':'tapped'):'';
@@ -1072,9 +1072,9 @@ function openAddHabit(type){
   const title=type==='starve'?`${icon('skull')} STARVE THAT BRAIN ROT`:`${icon('spark')} FARM THAT AURA`;
   const suggs=HABIT_SUGG[type]||[];
   m.innerHTML=`<h3>${title}</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">${type==='starve'?'pick a degenerate habit to starve':'pick a habit to farm aura with'}</p>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">${type==='starve'?'pick a degenerate habit to starve':'pick a habit to farm aura with'}</p>
     <div class="chips">${suggs.map((s,i)=>`<button class="chip ${type==='starve'?'s':'f'}" onclick="fillSugg('${type}',${i})">${icon(s.e,'icon-sm')} ${s.n}</button>`).join('')}</div>
-    <p style="font-size:.6rem;color:var(--fg2);margin:10px 0 6px;">// or roll your own — pick an icon</p>
+    <p style="font-size:.74rem;color:var(--fg2);margin:10px 0 6px;">// or roll your own — pick an icon</p>
     <div class="emoji-grid" id="emojiPicker">${ICON_KEYS.map((k,i)=>`<button class="emoji-opt ${i===0?'sel':''}" onclick="pickEmoji(this,'${k}')">${icon(k)}</button>`).join('')}</div>
     <input type="text" id="habitNameInput" placeholder="${type==='starve'?'doomscrolling, rage gaming...':'mewing, cold approach...'}" maxlength="40">
     <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="addHabit('${type}')">add it</button></div>`;
@@ -1110,7 +1110,7 @@ function addCommit(){
 }
 function renderCommitLog(){
   const c=document.getElementById('commitLog');if(!c)return;
-  if(!data.commits.length){c.innerHTML='<div class="text-center text-muted mt-1" style="font-size:.72rem;">commit log is bone dry... just like your discipline</div>';return}
+  if(!data.commits.length){c.innerHTML='<div class="text-center text-muted mt-1" style="font-size:.84rem;">commit log is bone dry... just like your discipline</div>';return}
   c.innerHTML=data.commits.slice(0,20).map(x=>`<div class="commit"><span class="cm-date">// ${x.date} @ ${x.time}</span><br><span class="cm-text">"${escHtml(x.text)}"</span>
     <button class="del-btn" style="opacity:1;float:right" onclick="delCommit('${x.id}')">${icon('no','icon-sm')}</button></div>`).join('')
 }
@@ -1120,7 +1120,7 @@ function delCommit(id){data.commits=data.commits.filter(c=>c.id!==id);save();ren
 function renderQuitTimers(){
   const c=document.getElementById('quitTimerList');if(!c)return;
   const habits=data.habits.starve||[];
-  if(!habits.length){c.innerHTML='<div class="text-center text-muted" style="padding:16px;font-size:.72rem;">no brain rot to detox from?? add your demons bestie</div>';return}
+  if(!habits.length){c.innerHTML='<div class="text-center text-muted" style="padding:16px;font-size:.84rem;">no brain rot to detox from?? add your demons bestie</div>';return}
   c.innerHTML=habits.map(h=>{
     const days=calcStreak(h);let mot;
     if(days===0)mot="zero days clean you degenerate, start NOW";
@@ -1129,8 +1129,8 @@ function renderQuitTimers(){
     else if(days<30)mot="unhinged discipline ngl, brain rot getting BODIED";
     else mot="GIGACHAD, brain rot on life support";
     return `<div class="card qt-card"><div class="flex-between"><div><span style="font-size:1.1rem;display:inline-flex;vertical-align:middle">${iconOrEmoji(h.emoji)}</span> <strong style="font-size:.82rem">${h.name}</strong></div>
-      <span class="text-accent" style="font-size:.73rem;font-weight:700">${days}d</span></div>
-      <div class="text-muted mt-1" style="font-size:.68rem">${mot}</div>
+      <span class="text-accent" style="font-size:.84rem;font-weight:700">${days}d</span></div>
+      <div class="text-muted mt-1" style="font-size:.8rem">${mot}</div>
       <div class="qt-bar"><div class="qt-fill" style="width:${Math.min(100,days/30*100)}%;background:${days>0?'var(--accent)':'var(--danger)'}"></div></div></div>`
   }).join('')
 }
@@ -1182,29 +1182,29 @@ function renderDen(){
       <button class="share-btn alt" onclick="openChallenge()">${icon('sword','icon-sm')} challenge a friend</button>
     </div>
     ${renderRitualUnlock()}
-    ${deferredInstallPrompt?`<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">${icon('download')}</div><div style="font-size:.75rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.6rem;color:var(--fg2)">add to home screen — farm aura offline, no cap</div></div>`:''}`
+    ${deferredInstallPrompt?`<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">${icon('download')}</div><div style="font-size:.88rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.74rem;color:var(--fg2)">add to home screen — farm aura offline, no cap</div></div>`:''}`
 }
 function renderRitualUnlock(){
   const a=activeDemon();
   if(a)return `<div class="rc-unlock" onclick="openRitual()" style="border-color:${a.color}">
     <div style="font-size:1.6rem">${iconOrEmoji(a.emoji)}</div>
-    <div style="font-size:.78rem;font-weight:900;color:${a.color}">${a.name} ${a.epithet} is loose</div>
-    <div style="font-size:.6rem;color:var(--fg2)">${a.questDone?`decree fulfilled ${icon('check','icon-sm icon-glow-a')}`:'tap to see the demon\'s decree'} · ${msLeft(a.expiresAt)} left</div></div>`;
+    <div style="font-size:.9rem;font-weight:900;color:${a.color}">${a.name} ${a.epithet} is loose</div>
+    <div style="font-size:.74rem;color:var(--fg2)">${a.questDone?`decree fulfilled ${icon('check','icon-sm icon-glow-a')}`:'tap to see the demon\'s decree'} · ${msLeft(a.expiresAt)} left</div></div>`;
   if(ritualUnlocked())return `<div class="rc-unlock" onclick="openRitual()">
     <div style="font-size:1.6rem">${icon('crystal')} ${icon('skull')}</div>
-    <div style="font-size:.78rem;font-weight:900;color:var(--danger)">ENTER THE RITUAL CHAMBER</div>
-    <div style="font-size:.6rem;color:var(--fg2)">spend aura to summon a demon that possesses your app</div></div>`;
+    <div style="font-size:.9rem;font-weight:900;color:var(--danger)">ENTER THE RITUAL CHAMBER</div>
+    <div style="font-size:.74rem;color:var(--fg2)">spend aura to summon a demon that possesses your app</div></div>`;
   return `<div class="rc-unlock locked">
     <div style="font-size:1.6rem">${icon('lock')} ${icon('crystal')}</div>
-    <div style="font-size:.78rem;font-weight:900;color:var(--fg2)">RITUAL CHAMBER — LOCKED</div>
-    <div style="font-size:.6rem;color:var(--fg2)">reach ${RITUAL_UNLOCK_AURA.toLocaleString()} aura or level ${RITUAL_UNLOCK_LVL} to unlock summoning</div></div>`;
+    <div style="font-size:.9rem;font-weight:900;color:var(--fg2)">RITUAL CHAMBER — LOCKED</div>
+    <div style="font-size:.74rem;color:var(--fg2)">reach ${RITUAL_UNLOCK_AURA.toLocaleString()} aura or level ${RITUAL_UNLOCK_LVL} to unlock summoning</div></div>`;
 }
 
 // ─── CHECK-IN ───
 function openCheckIn(){
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('question')} HOW COOKED ARE YOU TODAY?</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:12px;">be honest you degenerate</p>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:12px;">be honest you degenerate</p>
     ${CHECKIN_MOODS.map((x,i)=>`<button class="ck-btn" onclick="submitCheckIn(${i})"><span class="ck-emoji">${icon(x.emoji)}</span><span class="ck-label">${x.label}</span><span class="ck-pts">+${x.pts} AP</span></button>`).join('')}
     <div class="modal-actions" style="margin-top:12px"><button class="btn" onclick="closeModal()">nah</button></div>`;
   document.getElementById('modalOverlay').classList.add('show')
@@ -1233,9 +1233,9 @@ function renderChallenges(){
   el.innerHTML=CHALLENGES.map(ch=>{
     const{joined,prog,pct}=getChProg(ch);const done=joined&&prog>=ch.target;const claimed=(data.claimedChallenges||[]).includes(ch.id);
     let act;
-    if(claimed)act=`<span class="text-accent" style="font-size:.63rem">${icon('check','icon-sm')} done</span>`;
+    if(claimed)act=`<span class="text-accent" style="font-size:.88rem">${icon('check','icon-sm')} done</span>`;
     else if(done)act=`<button class="btn btn-accent btn-sm" onclick="claimCh('${ch.id}')">claim</button>`;
-    else if(joined)act=`<span class="text-muted" style="font-size:.63rem">${prog}/${ch.target}</span>`;
+    else if(joined)act=`<span class="text-muted" style="font-size:.88rem">${prog}/${ch.target}</span>`;
     else act=`<button class="btn btn-sm" style="border-color:var(--purple);color:var(--purple)" onclick="joinCh('${ch.id}')">join ${icon('sword','icon-sm')}</button>`;
     return `<div class="ch-card ${done&&!claimed?'done':''} ${claimed?'claimed':''}">
       <div class="ch-head"><span class="ch-icon">${icon(ch.icon)}</span><div class="ch-info"><div class="ch-nm">${ch.name}</div><div class="ch-ds">${ch.desc}</div></div><div>${act}</div></div>
@@ -1278,7 +1278,7 @@ function renderAnalytics(){
   else if(daysActive.size>=7)roast=`${daysActive.size} days in, ${totalTaps} taps. not bad, don't get comfortable`;
   else roast=`${daysActive.size} day${daysActive.size>1?'s':''} active, ${totalTaps} taps. baby numbers, pump them up`;
   el.innerHTML=`<div class="card">
-    <div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">last 7 days — taps/day</div>
+    <div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">last 7 days — taps/day</div>
     <div class="an-bars">${days.map(d=>`<div class="an-col"><div class="an-val">${d.taps}</div><div class="an-track">
       <div class="an-bar ${d.taps>0?(d.isToday?'today':''):'empty'}" style="height:${d.taps>0?Math.max(8,d.taps/mx*100):4}%"></div></div>
       <div class="an-lbl ${d.isToday?'today':''}">${d.lbl}</div></div>`).join('')}</div>
@@ -1292,7 +1292,7 @@ function renderAnalytics(){
 // ─── ACTIVITY FEED ───
 function renderActivity(){
   const el=document.getElementById('activityEl');if(!el)return;
-  if(!data.activityLog||!data.activityLog.length){el.innerHTML='<div class="text-center text-muted" style="padding:14px;font-size:.7rem;">no activity yet... tap something</div>';return}
+  if(!data.activityLog||!data.activityLog.length){el.innerHTML='<div class="text-center text-muted" style="padding:14px;font-size:.82rem;">no activity yet... tap something</div>';return}
   const actIcons={tap:'spark',untap:'skull',buy:'coin',claim:'trophy',freeze:'ice',commit:'journal',checkin:'question',habit:'plus',challenge:'sword',squad:'megaphone',demon:'crystal'};
   el.innerHTML=data.activityLog.slice(0,12).map(a=>`<div class="act-item"><span class="act-icon">${icon(actIcons[a.type]||'pin')}</span><span class="act-msg">${escHtml(a.msg)}</span><span class="act-time">${timeAgo(a.time)}</span></div>`).join('')
 }
@@ -1356,7 +1356,7 @@ function renderShop(){
     else if(shopTab==='themes'){const v={...BASE_THEME,...(item.vars||{})};prev=`<div style="display:flex;justify-content:center;gap:5px;margin-bottom:6px">
       <span style="width:20px;height:20px;border-radius:50%;display:inline-block;background:${v['--accent']}"></span>
       <span style="width:20px;height:20px;border-radius:50%;display:inline-block;background:${v['--bg']||'#0a0a0a'}"></span></div>`}
-    else prev=`<div style="font-size:.68rem;color:var(--accent);margin-bottom:5px;font-style:italic">"${item.name}"</div>`;
+    else prev=`<div style="font-size:.8rem;color:var(--accent);margin-bottom:5px;font-style:italic">"${item.name}"</div>`;
     h+=`<div class="shop-card ${owned?'owned':''} ${equipped?'equipped':''} ${!owned&&!afford?'locked':''}">${prev}
       <div class="shop-nm">${item.name}</div><div class="shop-ds">${item.desc}</div>${btn}</div>`
   });
@@ -1444,7 +1444,7 @@ function renderDaySum(key){
     else verdict=`<span class="text-muted">${icon('face_blank','icon-sm')} before your time on the farm.</span>`
   }else if(st.total>=5)verdict=`<span class="text-accent">${icon('fire','icon-sm')} ATE this day. ${st.total} taps, +${st.aura} aura — sigma menace.</span>`;
   else verdict=`<span class="text-accent">${icon('spark','icon-sm')} showed up (${st.total} tap${st.total>1?'s':''}). decent.</span>`;
-  let htm=`<div class="day-sum"><div class="ds-date">› ${dl}${isToday?' <span class="text-accent">(today)</span>':''}</div><div style="font-size:.72rem;margin-bottom:8px">${verdict}</div>`;
+  let htm=`<div class="day-sum"><div class="ds-date">› ${dl}${isToday?' <span class="text-accent">(today)</span>':''}</div><div style="font-size:.84rem;margin-bottom:8px">${verdict}</div>`;
   if(st.fd.length)htm+=`<div class="ds-row">${st.fd.map(h=>`<span class="ds-tag good">${iconOrEmoji(h.emoji,'icon-sm')} ${h.name}</span>`).join('')}</div>`;
   if(st.sd.length)htm+=`<div class="ds-row">${st.sd.map(h=>`<span class="ds-tag good">${iconOrEmoji(h.emoji,'icon-sm')} ${h.name} ${icon('no','icon-sm')}</span>`).join('')}</div>`;
   if(st.total>0)htm+=`<div class="ds-row"><span class="ds-tag good">${icon('coin','icon-sm')} +${st.aura} AP</span></div>`;
@@ -1496,7 +1496,7 @@ function renderAll(){
 function resetApp(){
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('skull')} RESET EVERYTHING?</h3>
-    <p style="font-size:.72rem;color:var(--fg2);margin-bottom:14px;">this will NUKE all your shit. streaks, aura, habits — everything gone. are you sure??</p>
+    <p style="font-size:.84rem;color:var(--fg2);margin-bottom:14px;">this will NUKE all your shit. streaks, aura, habits — everything gone. are you sure??</p>
     <div class="modal-actions"><button class="btn" onclick="closeModal()">nah</button>
     <button class="btn btn-danger" onclick="confirmReset()">nuke it all</button></div>`;
   document.getElementById('modalOverlay').classList.add('show')
@@ -1562,7 +1562,7 @@ function promptName(){
   if(data.packName)return;
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('brain')} WHAT'S YOUR NAME, DEGENERATE?</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">this is your pack name. make it go hard af</p>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">this is your pack name. make it go hard af</p>
     <input type="text" id="packNameInput" placeholder="e.g. RizzLord, GigaChad, BrainRotSlayer..." maxlength="20">
     <div class="modal-actions"><button class="btn btn-accent btn-block" onclick="setName()">lock tf in →</button></div>`;
   document.getElementById('modalOverlay').classList.add('show');
@@ -1579,7 +1579,7 @@ function setName(){
 function renderTodayProgress(){
   const el=document.getElementById('todayProgress');if(!el)return;
   const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
-  if(!all.length){el.innerHTML='<div class="text-center text-muted" style="padding:12px;font-size:.72rem;">no habits yet, add some first you NPC</div>';return}
+  if(!all.length){el.innerHTML='<div class="text-center text-muted" style="padding:12px;font-size:.84rem;">no habits yet, add some first you NPC</div>';return}
   const today=todayKey(),done=all.filter(h=>h.taps[today]),left=all.filter(h=>!h.taps[today]);
   const pct=all.length>0?Math.round(done.length/all.length*100):0;
   let msg;
@@ -1588,21 +1588,21 @@ function renderTodayProgress(){
   else if(pct<100)msg="over halfway, don't stop now you legend";
   else msg="CLEAN SWEEP — every habit tapped, you absolute MENACE";
   let h=`<div class="card"><div class="flex-between" style="margin-bottom:8px">
-    <div><span class="tp-pct">${pct}%</span><span class="text-muted" style="font-size:.6rem;margin-left:6px">${done.length}/${all.length} tapped</span></div>
-    <div style="font-size:.62rem;color:var(--fg2);text-align:right;max-width:160px">${msg}</div></div>
+    <div><span class="tp-pct">${pct}%</span><span class="text-muted" style="font-size:.74rem;margin-left:6px">${done.length}/${all.length} tapped</span></div>
+    <div style="font-size:.88rem;color:var(--fg2);text-align:right;max-width:160px">${msg}</div></div>
     <div class="lvl-bar-wrap" style="height:6px;margin-bottom:10px"><div class="lvl-bar" style="width:${pct}%;${pct===100?'background:linear-gradient(90deg,#b388ff,#00e5ff,#00e5ff);box-shadow:0 0 16px rgba(179,136,255,.6)':''}"></div></div>`;
   if(left.length>0){
-    h+='<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">still need to tap:</div>';
+    h+='<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px">still need to tap:</div>';
     h+=left.map(hab=>{const type=data.habits.starve.includes(hab)?'starve':'farm';
       return `<div class="tp-row" onclick="quickTap('${type}','${hab.id}',this)">
         <span class="tp-check">${type==='starve'?icon('no','icon-sm'):icon('spark','icon-sm')}</span>
         <span>${iconOrEmoji(hab.emoji,'icon-sm')} ${hab.name}</span>
-        <span class="text-muted" style="font-size:.6rem;margin-left:auto">${type==='starve'?'starve it':'farm it'}</span></div>`}).join('')
+        <span class="text-muted" style="font-size:.74rem;margin-left:auto">${type==='starve'?'starve it':'farm it'}</span></div>`}).join('')
   }
   if(done.length>0){
-    h+='<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px">done today:</div>';
+    h+='<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px">done today:</div>';
     h+=done.slice(0,5).map(hab=>`<div class="tp-row done"><span class="tp-check">${icon('check','icon-sm')}</span><span>${iconOrEmoji(hab.emoji,'icon-sm')} ${hab.name}</span></div>`).join('');
-    if(done.length>5)h+=`<div class="text-muted text-center" style="font-size:.6rem;padding:4px">+${done.length-5} more</div>`
+    if(done.length>5)h+=`<div class="text-muted text-center" style="font-size:.74rem;padding:4px">+${done.length-5} more</div>`
   }
   h+='</div>';el.innerHTML=h
 }
@@ -1672,7 +1672,7 @@ function handleImport(evt){
 function promptNameForce(){
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('tag')} RENAME YOURSELF, DEGENERATE</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">current name: <span class="text-accent">${data.packName||'none'}</span></p>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">current name: <span class="text-accent">${data.packName||'none'}</span></p>
     <input type="text" id="renameInput" placeholder="new name..." maxlength="20" value="${data.packName||''}">
     <div class="modal-actions"><button class="btn" onclick="closeModal()">nah</button><button class="btn btn-accent" onclick="doRename()">lock it in</button></div>`;
   document.getElementById('modalOverlay').classList.add('show');
@@ -1742,8 +1742,8 @@ function openShare(){
   const s=myStats();
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('camera')} FLEX YOUR AURA</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:6px;">share your stats. make the NPCs jealous</p>
-    <div id="sharePreviewWrap" style="text-align:center;padding:20px 0;font-size:.72rem;color:var(--fg2)">generating your flex card...</div>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:6px;">share your stats. make the NPCs jealous</p>
+    <div id="sharePreviewWrap" style="text-align:center;padding:20px 0;font-size:.84rem;color:var(--fg2)">generating your flex card...</div>
     <div class="share-row">
       <button class="share-btn primary" onclick="shareCard()">${icon('download','icon-sm')} share card</button>
       <button class="share-btn" onclick="downloadCard()">${icon('save','icon-sm')} save image</button>
@@ -1793,8 +1793,8 @@ function openChallenge(){
   const link=genChallengeLink();
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('sword')} CHALLENGE A FRIEND</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">send this link. when they open it they'll see YOUR stats vs THEIRS — head to head. winner takes the bragging rights</p>
-    <input type="text" id="challengeLink" readonly value="${link}" style="width:100%;font-family:var(--mono);font-size:.62rem;padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);color:var(--accent);margin-bottom:10px">
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">send this link. when they open it they'll see YOUR stats vs THEIRS — head to head. winner takes the bragging rights</p>
+    <input type="text" id="challengeLink" readonly value="${link}" style="width:100%;font-family:var(--mono);font-size:.88rem;padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);color:var(--accent);margin-bottom:10px">
     <div class="share-row">
       <button class="share-btn primary" onclick="shareChallenge()">${icon('download','icon-sm')} send challenge</button>
       <button class="share-btn" onclick="copyChallenge()">${icon('link','icon-sm')} copy link</button>
@@ -1828,7 +1828,7 @@ function showHeadToHead(opp){
   const auraDiff=Math.abs(me.aura-opp.a);
   const verdict=iWin?`you're ahead by ${auraDiff.toLocaleString()} aura — don't get comfortable`:`${escHtml(opp.n)} is beating you by ${auraDiff.toLocaleString()} aura — lock tf in and catch up`;
   m.innerHTML=`<h3>${icon('sword')} ${escHtml(opp.n)} CHALLENGED YOU</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:4px;">head to head. who's got more aura?</p>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:4px;">head to head. who's got more aura?</p>
     <div class="h2h">
       <div class="h2h-side ${iWin?'win':'lose'}"><div class="h2h-av">${iconOrEmoji(me.avatar,'icon-lg')}</div><div class="h2h-name">${escHtml(me.name)} (you)</div>
         <div class="h2h-aura">${me.aura.toLocaleString()}</div><div class="h2h-lbl">aura</div>
@@ -1871,19 +1871,19 @@ async function fetchLeaderboard(){
 async function renderLeaderboard(){
   const el=document.getElementById('leaderboard');if(!el)return;
   if(data.leaderboardOptOut){
-    el.innerHTML=`<div class="card text-center" style="font-size:.7rem;padding:16px"><div class="text-muted">you're hidden from the leaderboard</div>
+    el.innerHTML=`<div class="card text-center" style="font-size:.82rem;padding:16px"><div class="text-muted">you're hidden from the leaderboard</div>
       <button class="btn btn-sm btn-accent mt-1" onclick="toggleLeaderboard(true)">${icon('trophy','icon-sm')} join the leaderboard</button></div>`;return
   }
-  if(!el.dataset.loaded)el.innerHTML=`<div class="card text-center text-muted" style="font-size:.7rem;padding:16px">loading the global rankings... ${icon('globe','icon-sm')}</div>`;
+  if(!el.dataset.loaded)el.innerHTML=`<div class="card text-center text-muted" style="font-size:.82rem;padding:16px">loading the global rankings... ${icon('globe','icon-sm')}</div>`;
   await submitScore();
   const lb=await fetchLeaderboard();
-  if(!lb){el.innerHTML=`<div class="card text-center" style="font-size:.7rem;padding:16px"><div class="text-muted">couldn't reach the leaderboard — you offline?</div>
+  if(!lb){el.innerHTML=`<div class="card text-center" style="font-size:.82rem;padding:16px"><div class="text-muted">couldn't reach the leaderboard — you offline?</div>
     <button class="btn btn-sm mt-1" onclick="renderLeaderboard()">${icon('refresh','icon-sm')} retry</button></div>`;return}
   el.dataset.loaded='1';
   const me=ensurePlayerId();const inTop=lb.top.some(e=>e.id===me);
   let h=`<div class="card" style="padding:8px 6px">`;
-  h+=`<div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;padding:2px 6px 8px">${lb.total} player${lb.total===1?'':'s'} farming worldwide ${icon('globe','icon-sm')}</div>`;
-  if(!lb.top.length)h+=`<div class="text-center text-muted" style="font-size:.7rem;padding:10px">no one's on the board yet. be the first</div>`;
+  h+=`<div style="font-size:.84rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;padding:2px 6px 8px">${lb.total} player${lb.total===1?'':'s'} farming worldwide ${icon('globe','icon-sm')}</div>`;
+  if(!lb.top.length)h+=`<div class="text-center text-muted" style="font-size:.82rem;padding:10px">no one's on the board yet. be the first</div>`;
   lb.top.forEach((e,i)=>{
     const rank=i+1,isMe=e.id===me;
     const medal=rank===1?icon('crown','icon-sm'):rank===2?icon('medal','icon-sm'):rank===3?icon('star','icon-sm'):rank;
@@ -1921,12 +1921,12 @@ function openAuth(mode){
   mode=mode||'signup';
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('cloud')} ${mode==='signup'?'CREATE ACCOUNT':'LOG IN'}</h3>
-    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">${mode==='signup'?'claim a handle so your aura syncs across devices + you can play multiplayer':'welcome back — log in to sync your grind'}</p>
+    <p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px;">${mode==='signup'?'claim a handle so your aura syncs across devices + you can play multiplayer':'welcome back — log in to sync your grind'}</p>
     <input type="text" id="authHandle" placeholder="handle (3-20 letters/numbers)" maxlength="20" autocapitalize="off" autocomplete="username">
     <input type="password" id="authPin" placeholder="pin / passphrase (min 4 chars)" maxlength="64" autocomplete="${mode==='signup'?'new-password':'current-password'}">
     <div class="modal-actions"><button class="btn" onclick="openAuth('${mode==='signup'?'login':'signup'}')">${mode==='signup'?'i have an account':'make one instead'}</button>
       <button class="btn btn-accent" onclick="doAuth('${mode}')">${mode==='signup'?'sign up →':'log in →'}</button></div>
-    <p style="font-size:.55rem;color:var(--fg2);margin-top:10px;text-align:center">${icon('warn','icon-sm')} no email = no recovery. remember your pin</p>`;
+    <p style="font-size:.8rem;color:var(--fg2);margin-top:10px;text-align:center">${icon('warn','icon-sm')} no email = no recovery. remember your pin</p>`;
   document.getElementById('modalOverlay').classList.add('show');
   setTimeout(()=>document.getElementById('authHandle')?.focus(),100)
 }
@@ -1961,7 +1961,7 @@ async function pullCloudOnLogin(){
     const a=cloud.data.auraPoints;
     const m=document.getElementById('modalContent');
     m.innerHTML=`<h3>${icon('cloud')} CLOUD SAVE FOUND</h3>
-      <p style="font-size:.7rem;color:var(--fg2);margin-bottom:12px">your cloud has a saved grind${typeof a==='number'?` (${a.toLocaleString()} aura)`:''}. restore it? this replaces what's on this device.</p>
+      <p style="font-size:.82rem;color:var(--fg2);margin-bottom:12px">your cloud has a saved grind${typeof a==='number'?` (${a.toLocaleString()} aura)`:''}. restore it? this replaces what's on this device.</p>
       <div class="modal-actions"><button class="btn" onclick="keepLocalAfterLogin()">keep this device</button>
       <button class="btn btn-accent" onclick="restoreCloud()">restore cloud</button></div>`;
     document.getElementById('modalOverlay').classList.add('show')
@@ -2011,15 +2011,15 @@ async function mpGet(code){try{const res=await fetch(`${API.challenge}?code=${en
 async function renderMpChallenges(){
   const el=document.getElementById('mpChallenges');if(!el)return;
   if(!isLoggedIn()){
-    el.innerHTML=`<div class="card text-center" style="font-size:.7rem;padding:16px">
+    el.innerHTML=`<div class="card text-center" style="font-size:.82rem;padding:16px">
       <div class="text-muted">log in to create & join real multiplayer challenges</div>
       <button class="btn btn-sm btn-accent mt-1" onclick="openAuth('signup')">${icon('cloud','icon-sm')} sign up / log in</button></div>`;return
   }
   el.innerHTML=`<div class="share-row"><button class="share-btn primary" onclick="openCreateChallenge()">+ create challenge</button>
     <button class="share-btn alt" onclick="openJoinChallenge()">${icon('key','icon-sm')} join by code</button></div>
-    <div id="mpList" class="text-center text-muted" style="font-size:.7rem;padding:10px">loading your challenges...</div>`;
+    <div id="mpList" class="text-center text-muted" style="font-size:.82rem;padding:10px">loading your challenges...</div>`;
   const list=await mpMine();const lc=document.getElementById('mpList');if(!lc)return;
-  if(!list||!list.length){lc.innerHTML='<div class="card text-center text-muted" style="font-size:.7rem;padding:14px">no challenges yet. create one & share the code</div>';return}
+  if(!list||!list.length){lc.innerHTML='<div class="card text-center text-muted" style="font-size:.82rem;padding:14px">no challenges yet. create one & share the code</div>';return}
   lc.innerHTML=list.map(renderChallengeCard).join('')
 }
 function renderChallengeCard(ch){
@@ -2035,8 +2035,8 @@ function renderChallengeCard(ch){
   }).join('');
   return `<div class="card">
     <div class="flex-between"><strong style="font-size:.8rem">${escHtml(ch.title)}</strong>
-      <span style="font-size:.58rem;color:${ch.active?'var(--accent)':'var(--fg2)'}">${ch.active?'<span class="status-dot live"></span>live':'<span class="status-dot ended"></span>ended'}</span></div>
-    <div class="text-muted" style="font-size:.6rem;margin:2px 0 8px">race to ${ch.target.toLocaleString()} ${metricLbl} · code <strong class="text-accent">${ch.code}</strong></div>
+      <span style="font-size:.84rem;color:${ch.active?'var(--accent)':'var(--fg2)'}">${ch.active?'<span class="status-dot live"></span>live':'<span class="status-dot ended"></span>ended'}</span></div>
+    <div class="text-muted" style="font-size:.74rem;margin:2px 0 8px">race to ${ch.target.toLocaleString()} ${metricLbl} · code <strong class="text-accent">${ch.code}</strong></div>
     ${rows}
     <div class="share-row" style="margin-top:8px"><button class="share-btn" onclick="pushChallengeProgress('${ch.code}')">${icon('up','icon-sm')} update my progress</button>
       <button class="share-btn alt" onclick="shareChallengeCode('${ch.code}')">${icon('download','icon-sm')} share code</button></div></div>`
@@ -2047,7 +2047,7 @@ function openCreateChallenge(){
   const m=document.getElementById('modalContent');
   m.innerHTML=`<h3>${icon('sword')} CREATE A CHALLENGE</h3>
     <input type="text" id="chTitle" placeholder="challenge name (e.g. Gym Wars)" maxlength="40">
-    <div style="font-size:.6rem;color:var(--fg2);margin:6px 0 4px">what are we racing on?</div>
+    <div style="font-size:.74rem;color:var(--fg2);margin:6px 0 4px">what are we racing on?</div>
     <div class="chips" id="chMetric">
       <button class="chip f picked" data-m="taps" onclick="pickMetric(this)">${icon('check','icon-sm')} total taps</button>
       <button class="chip f" data-m="aura" onclick="pickMetric(this)">${icon('spark','icon-sm')} aura points</button>
@@ -2070,7 +2070,7 @@ async function createChallenge(){
 }
 function openJoinChallenge(){
   const m=document.getElementById('modalContent');
-  m.innerHTML=`<h3>${icon('key')} JOIN A CHALLENGE</h3><p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px">enter the code your friend sent you</p>
+  m.innerHTML=`<h3>${icon('key')} JOIN A CHALLENGE</h3><p style="font-size:.8rem;color:var(--fg2);margin-bottom:10px">enter the code your friend sent you</p>
     <input type="text" id="joinCode" placeholder="e.g. K7M2QX" maxlength="8" autocapitalize="characters" style="text-transform:uppercase">
     <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="joinChallenge()">${icon('sword','icon-sm')} join</button></div>`;
   document.getElementById('modalOverlay').classList.add('show');
@@ -2159,7 +2159,7 @@ function renderRitual(){
       <div class="demon-name" style="color:${act.color}">${act.name} ${act.epithet}</div>
       <div class="demon-power">${act.power}</div>
       <span class="demon-stat">${icon('clock','icon-sm')} ${left} left</span><span class="demon-stat">${icon('bolt','icon-sm')} ${act.mult}x aura</span><span class="demon-stat">lvl ${act.powerLvl}</span>
-      <div style="margin-top:12px;font-size:.7rem;color:#ffb3c4">${icon('journal','icon-sm')} today's decree:</div>
+      <div style="margin-top:12px;font-size:.82rem;color:#ffb3c4">${icon('journal','icon-sm')} today's decree:</div>
       <div style="font-size:.74rem;color:#fff;margin:4px 0 10px">"${act.quest}"</div>
       ${act.questDone?'<div class="demon-stat" style="border-color:#7dff00;color:#7dff00">'+icon('check','icon-sm')+' decree fulfilled</div>'
         :`<button class="summon-btn" onclick="completeQuest()">${icon('check','icon-sm')} i did it — claim ${Math.round(50*act.mult)} aura</button>`}
@@ -2168,14 +2168,14 @@ function renderRitual(){
   }else{
     const owned=(data.demons&&data.demons.owned)||[];
     h+=`<div class="pentagram">${icon('crystal','icon-xxl')}</div><div class="rc-card">
-      <div style="text-align:center;color:#e0a0b0;font-size:.72rem;margin-bottom:6px">choose the binding duration</div>
+      <div style="text-align:center;color:#e0a0b0;font-size:.84rem;margin-bottom:6px">choose the binding duration</div>
       <div class="dur-row">${POSSESS_TIERS.map((t,i)=>`<div class="dur-opt ${i===_selTier?'sel':''}" onclick="pickTier(${i})">
         <b>${t.h}h</b>${t.cost} aura<br>${t.mult}x</div>`).join('')}</div>
       <button class="summon-btn" onclick="summonDemon()" ${data.auraPoints<POSSESS_TIERS[_selTier].cost?'disabled':''}>
         ${icon('skull','icon-sm')} SUMMON DEMON (${POSSESS_TIERS[_selTier].cost} aura)</button>
-      <div style="text-align:center;font-size:.58rem;color:#a55;margin-top:8px">you have ${data.auraPoints.toLocaleString()} aura · this only transforms THIS app, your phone is safe</div>`;
+      <div style="text-align:center;font-size:.84rem;color:#a55;margin-top:8px">you have ${data.auraPoints.toLocaleString()} aura · this only transforms THIS app, your phone is safe</div>`;
     if(ritualUnlockedMP())h+=`<button class="dur-opt" style="width:100%;margin-top:14px;border-color:#9d4dff;color:#c9a0ff" onclick="startDemonWar()">${icon('sword','icon-sm')} START A DEMON WAR (multiplayer)</button>`;
-    if(owned.length){h+=`<div style="margin-top:18px;font-size:.66rem;color:#a55;text-transform:uppercase;letter-spacing:1px">bound demons (${owned.length})</div>`;
+    if(owned.length){h+=`<div style="margin-top:18px;font-size:.9rem;color:#a55;text-transform:uppercase;letter-spacing:1px">bound demons (${owned.length})</div>`;
       h+=owned.map(id=>{const d=DEMON_ROSTER.find(x=>x.id===id);if(!d)return'';
         return `<div class="owned-demon"><span class="od-em">${iconOrEmoji(d.emoji,'icon-lg')}</span><span style="flex:1">${d.name}</span>
           <button class="dur-opt" onclick="summonDemon('${id}')" ${data.auraPoints<Math.round(POSSESS_TIERS[_selTier].cost/2)?'disabled':''}>resummon ½ price</button></div>`}).join('')}
@@ -2293,7 +2293,16 @@ function init(){
     setTimeout(()=>broken.slice(0,3).forEach((h,i)=>setTimeout(()=>toast(rand(STREAK_BROKEN).replace('{n}',h.name),'bad'),i*600)),900)
   }
 
-  if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+  if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw.js?v=24').then(reg=>{
+      if(reg.waiting)reg.waiting.postMessage('skipWaiting');
+      reg.addEventListener('updatefound',()=>{
+        const nw=reg.installing;
+        if(nw)nw.addEventListener('statechange',()=>{if(nw.state==='installed'&&navigator.serviceWorker.controller)nw.postMessage('skipWaiting')});
+      });
+    }).catch(()=>{});
+    navigator.serviceWorker.addEventListener('controllerchange',()=>location.reload());
+  }
   initConfetti();
   checkChallengeLink();
   if(data.onboarded||data.packName)submitScore();
