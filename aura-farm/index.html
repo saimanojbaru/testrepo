@@ -392,6 +392,56 @@ cursor:pointer;transition:all .2s;touch-action:manipulation}
 .cal-stat{text-align:center;padding:8px 4px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
 .cal-stat-n{font-size:1.2rem;font-weight:900;line-height:1}
 .cal-stat-l{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:.5px;margin-top:3px}
+/* RITUAL / POSSESSION */
+@keyframes flick{0%,100%{opacity:1}45%{opacity:.82}48%{opacity:.55}51%{opacity:.9}}
+.rc-unlock{background:radial-gradient(circle at 50% 0%,rgba(255,62,108,.12),rgba(17,17,17,.7));border:1px dashed var(--danger);
+border-radius:var(--r);padding:16px;text-align:center;margin:10px 0;cursor:pointer;transition:all .2s}
+.rc-unlock:hover{border-style:solid;box-shadow:0 0 22px rgba(255,62,108,.2)}
+.rc-unlock.locked{opacity:.55;cursor:not-allowed;border-color:var(--border)}
+#ritualChamber{position:fixed;inset:0;z-index:1050;background:radial-gradient(circle at 50% 25%,#1a0008,#070003 72%);
+display:none;flex-direction:column;overflow-y:auto;padding:24px 16px 48px}
+#ritualChamber.show{display:flex;animation:fadeIn .35s}
+#ritualChamber .rc-close{position:fixed;top:12px;right:14px;z-index:2;background:rgba(0,0,0,.5);border:1px solid var(--danger);
+color:var(--danger);border-radius:8px;padding:6px 12px;font-family:var(--mono);font-size:.8rem;cursor:pointer}
+.rc-h{text-align:center;color:#ff3e6c;text-shadow:0 0 18px #ff0033,0 0 40px rgba(255,0,51,.4);font-size:1.4rem;font-weight:900;
+letter-spacing:3px;margin:34px 0 2px;animation:flick 3.5s infinite}
+.rc-sub{text-align:center;color:#a55;font-size:.62rem;letter-spacing:1px;margin-bottom:18px}
+.pentagram{width:120px;height:120px;margin:8px auto 16px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;
+border-radius:50%;border:2px solid rgba(255,62,108,.4);box-shadow:0 0 30px rgba(255,0,51,.3),inset 0 0 30px rgba(255,0,51,.2);
+animation:spinPulse 6s linear infinite}
+@keyframes spinPulse{0%{transform:rotate(0);box-shadow:0 0 24px rgba(255,0,51,.25),inset 0 0 24px rgba(255,0,51,.15)}
+50%{box-shadow:0 0 44px rgba(255,0,51,.5),inset 0 0 40px rgba(255,0,51,.3)}100%{transform:rotate(360deg);box-shadow:0 0 24px rgba(255,0,51,.25),inset 0 0 24px rgba(255,0,51,.15)}}
+.rc-card{max-width:420px;margin:0 auto;width:100%}
+.summon-btn{width:100%;padding:16px;background:linear-gradient(135deg,#8b0000,#ff003c);color:#fff;border:none;border-radius:var(--r);
+font-family:var(--mono);font-weight:900;font-size:.95rem;letter-spacing:1px;cursor:pointer;box-shadow:0 0 24px rgba(255,0,60,.4);
+transition:transform .15s;touch-action:manipulation}
+.summon-btn:active{transform:scale(.96)}
+.summon-btn:disabled{opacity:.4;box-shadow:none;cursor:not-allowed}
+.dur-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}
+.dur-opt{padding:10px 4px;border:1px solid rgba(255,62,108,.3);background:rgba(40,0,12,.5);color:#e0a0b0;border-radius:var(--r);
+font-family:var(--mono);font-size:.62rem;cursor:pointer;text-align:center;transition:all .15s;touch-action:manipulation}
+.dur-opt.sel{border-color:#ff3e6c;background:rgba(255,62,108,.18);color:#fff;box-shadow:0 0 12px rgba(255,0,51,.3)}
+.dur-opt b{display:block;font-size:.78rem}
+.demon-card{background:linear-gradient(160deg,rgba(40,0,16,.9),rgba(10,0,4,.95));border:1px solid #ff3e6c;border-radius:12px;
+padding:18px;text-align:center;margin:14px auto;max-width:420px;box-shadow:0 0 30px rgba(255,0,51,.25);animation:fadeUp .4s}
+.demon-emoji{font-size:3.4rem;filter:drop-shadow(0 0 14px rgba(255,0,51,.6));animation:flick 2.5s infinite}
+.demon-name{font-size:1.05rem;font-weight:900;color:#ff6b8c;text-shadow:0 0 12px rgba(255,0,51,.5);margin:6px 0 2px}
+.demon-power{font-size:.66rem;color:#c98;margin-bottom:8px}
+.demon-stat{display:inline-block;font-size:.6rem;color:#e0a0b0;border:1px solid rgba(255,62,108,.3);border-radius:10px;padding:2px 8px;margin:2px}
+.owned-demon{display:flex;align-items:center;gap:10px;padding:8px;border:1px solid var(--border);border-radius:var(--r);margin:5px 0;
+background:rgba(20,0,8,.5);font-size:.72rem}
+.owned-demon .od-em{font-size:1.4rem}
+/* possession across the app */
+.possess-vignette{position:fixed;inset:0;pointer-events:none;z-index:889;display:none;
+box-shadow:inset 0 0 140px 36px rgba(180,0,40,.32)}
+body.possessed .possess-vignette{display:block;animation:flick 5s infinite}
+.possess-banner{position:sticky;top:0;z-index:95;display:none;align-items:center;gap:8px;padding:7px 12px;
+background:linear-gradient(90deg,rgba(60,0,20,.96),rgba(20,0,8,.96));border-bottom:1px solid #ff3e6c;
+backdrop-filter:blur(8px);font-size:.66rem}
+body.possessed .possess-banner{display:flex}
+.possess-banner .pb-em{font-size:1.1rem;animation:flick 2s infinite}
+.possess-banner .pb-txt{flex:1;min-width:0;color:#ffb3c4}
+.possess-banner .pb-time{color:#ff6b8c;font-weight:700;white-space:nowrap}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -418,11 +468,23 @@ cursor:pointer;transition:all .2s;touch-action:manipulation}
 </div>
 </header>
 
+<!-- POSSESSION BANNER -->
+<div class="possess-banner" id="possessBanner"></div>
+
+<!-- POSSESSION VIGNETTE -->
+<div class="possess-vignette"></div>
+
 <!-- TOAST -->
 <div class="toast-wrap" id="toastWrap"></div>
 
 <!-- CONFETTI -->
 <canvas id="confettiCanvas"></canvas>
+
+<!-- RITUAL CHAMBER -->
+<div id="ritualChamber">
+<button class="rc-close" onclick="closeRitual()">✕ leave</button>
+<div id="ritualBody"></div>
+</div>
 
 <!-- ═══════════ APP ═══════════ -->
 <div class="container" id="appContainer">
@@ -566,7 +628,7 @@ const DEFAULT_DATA={
       {id:'f5',emoji:'💤',name:'8hr Sleep',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
     ]
   },
-  commits:[],rewards:[],squadPosts:[],playerId:null,leaderboardOptOut:false,account:null,owned:['av_brain','th_default'],
+  commits:[],rewards:[],squadPosts:[],playerId:null,leaderboardOptOut:false,account:null,demons:{owned:[],active:null,log:[]},owned:['av_brain','th_default'],
   equipped:{avatar:'av_brain',theme:'th_default',title:null},
   lastCheckIn:null,activityLog:[],joinedChallenges:{},claimedChallenges:[],
   calMonth:new Date().getMonth(),calYear:new Date().getFullYear()
@@ -687,6 +749,9 @@ function load(){
       if(!Array.isArray(data.rewards))data.rewards=[];
       if(!Array.isArray(data.squadPosts))data.squadPosts=[];
       if(data.account===undefined)data.account=null;
+      if(!data.demons||typeof data.demons!=='object')data.demons={owned:[],active:null,log:[]};
+      if(!Array.isArray(data.demons.owned))data.demons.owned=[];
+      if(!Array.isArray(data.demons.log))data.demons.log=[];
       if(data.packName&&data.onboarded===undefined)data.onboarded=true;
     }else{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
   }catch{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
@@ -956,7 +1021,23 @@ function renderDen(){
       <button class="share-btn primary" onclick="openShare()">📸 flex my aura</button>
       <button class="share-btn alt" onclick="openChallenge()">⚔️ challenge a friend</button>
     </div>
+    ${renderRitualUnlock()}
     ${deferredInstallPrompt?'<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">📲</div><div style="font-size:.75rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.6rem;color:var(--fg2)">add to home screen — farm aura offline, no cap 🔥</div></div>':''}`
+}
+function renderRitualUnlock(){
+  const a=activeDemon();
+  if(a)return `<div class="rc-unlock" onclick="openRitual()" style="border-color:${a.color}">
+    <div style="font-size:1.6rem">${a.emoji}</div>
+    <div style="font-size:.78rem;font-weight:900;color:${a.color}">${a.name} ${a.epithet} is loose</div>
+    <div style="font-size:.6rem;color:var(--fg2)">${a.questDone?'decree fulfilled ✓':'tap to see the demon\'s decree 📜'} · ${msLeft(a.expiresAt)} left</div></div>`;
+  if(ritualUnlocked())return `<div class="rc-unlock" onclick="openRitual()">
+    <div style="font-size:1.6rem">🔮💀</div>
+    <div style="font-size:.78rem;font-weight:900;color:var(--danger)">ENTER THE RITUAL CHAMBER</div>
+    <div style="font-size:.6rem;color:var(--fg2)">spend aura to summon a demon that possesses your app ✨</div></div>`;
+  return `<div class="rc-unlock locked">
+    <div style="font-size:1.6rem">🔒🔮</div>
+    <div style="font-size:.78rem;font-weight:900;color:var(--fg2)">RITUAL CHAMBER — LOCKED</div>
+    <div style="font-size:.6rem;color:var(--fg2)">reach ${RITUAL_UNLOCK_AURA.toLocaleString()} aura or level ${RITUAL_UNLOCK_LVL} to unlock summoning</div></div>`;
 }
 
 // ─── CHECK-IN ───
@@ -1052,7 +1133,7 @@ function renderAnalytics(){
 function renderActivity(){
   const el=document.getElementById('activityEl');if(!el)return;
   if(!data.activityLog||!data.activityLog.length){el.innerHTML='<div class="text-center text-muted" style="padding:14px;font-size:.7rem;">no activity yet... tap something 💀</div>';return}
-  const icons={tap:'✨',untap:'💀',buy:'💸',claim:'🏆',freeze:'🧊',commit:'📝',checkin:'🤔',habit:'➕',challenge:'⚔️'};
+  const icons={tap:'✨',untap:'💀',buy:'💸',claim:'🏆',freeze:'🧊',commit:'📝',checkin:'🤔',habit:'➕',challenge:'⚔️',squad:'📣',demon:'🔮'};
   el.innerHTML=data.activityLog.slice(0,12).map(a=>`<div class="act-item"><span class="act-icon">${icons[a.type]||'📌'}</span><span class="act-msg">${escHtml(a.msg)}</span><span class="act-time">${timeAgo(a.time)}</span></div>`).join('')
 }
 
@@ -1153,7 +1234,8 @@ function applyTheme(){
 }
 function applyEquipped(){
   applyTheme();const av=SHOP.avatars.find(a=>a.id===data.equipped?.avatar);
-  const logo=document.getElementById('headerLogo');if(logo&&av)logo.textContent=av.preview;renderGreeting()
+  const logo=document.getElementById('headerLogo');if(logo&&av)logo.textContent=av.preview;renderGreeting();
+  if(typeof refreshPossession==='function')refreshPossession()
 }
 
 // ─── CALENDAR ───
@@ -1854,6 +1936,183 @@ async function shareChallengeCode(code){
   catch(e){toast(`code: ${code}`,'good')}
 }
 
+// ═══════════ AURA POSSESSION — RITUAL CHAMBER ═══════════
+const RITUAL_UNLOCK_AURA=2500, RITUAL_UNLOCK_LVL=7;
+const DEMON_ROSTER=[
+  {id:'d_exec',name:'Brain Rot Executioner',emoji:'💀',color:'#ff003c',power:'hunts every doomscroll urge'},
+  {id:'d_wraith',name:'Cold Shower Wraith',emoji:'🧊',color:'#00b3ff',power:'drags you into the cold'},
+  {id:'d_sigma',name:'Sigma Shadow Overlord',emoji:'🥷',color:'#9d4dff',power:'enforces total lock-in'},
+  {id:'d_reaper',name:'Rizz Reaper',emoji:'🕺',color:'#ff2d9b',power:'reaps social aura'},
+  {id:'d_abyss',name:'Mewing Abyss Lord',emoji:'🗿',color:'#5b6cff',power:'jawline or oblivion'},
+  {id:'d_slayer',name:'Dopamine Demon Slayer',emoji:'⚔️',color:'#ffae00',power:'severs the cheap dopamine'},
+  {id:'d_doom',name:'Doomscroll Slayer',emoji:'📵',color:'#ff4d4d',power:'guards your feed'},
+  {id:'d_ghoul',name:'Gym Ghoul',emoji:'🏋️',color:'#00e0a8',power:'demands the pump'},
+  {id:'d_lich',name:'Lock-In Lich',emoji:'🔒',color:'#7dff00',power:'seals away distraction'},
+  {id:'d_gremlin',name:'Aura Gremlin',emoji:'👹',color:'#ff6b00',power:'gnaws on your bad habits'},
+  {id:'d_void',name:'Vape Void Lord',emoji:'🌫️',color:'#8aa0b5',power:'swallows the cravings'},
+  {id:'d_phantom',name:'Focus Phantom',emoji:'👻',color:'#b0b0ff',power:'haunts you into deep work'}
+];
+const DEMON_EPITHETS=['the Eternal','of the Abyss','Prime','the Unhinged','MAX','the Undying','XXL','the Relentless'];
+const DEMON_QUESTS=[
+  'do 50 pushups, then log the count in your commit log',
+  'send one friend a "lock in" voice note',
+  'go 2 hours with zero social apps (honor system)',
+  'take a cold shower, no negotiation',
+  'read 10 pages of literally anything',
+  'tap every single habit before this demon leaves',
+  'touch grass for 15 real minutes',
+  'no doomscrolling until the exorcism',
+  'make your bed and drink a full glass of water',
+  'write down 3 things you locked in on today'
+];
+// duration tiers: hours -> [aura cost, multiplier]
+const POSSESS_TIERS=[
+  {h:1,cost:200,mult:1.5},{h:4,cost:350,mult:2},{h:12,cost:500,mult:3},{h:24,cost:666,mult:4}
+];
+let _selTier=0;
+
+function ritualUnlocked(){return data.auraPoints>=RITUAL_UNLOCK_AURA||(getLevel().idx+1)>=RITUAL_UNLOCK_LVL}
+function activeDemon(){const a=data.demons&&data.demons.active;if(a&&a.expiresAt>Date.now())return a;return null}
+
+function genDemon(ownedId){
+  const base=ownedId?DEMON_ROSTER.find(d=>d.id===ownedId):rand(DEMON_ROSTER);
+  const b=base||rand(DEMON_ROSTER);
+  let best=0;[...(data.habits.starve||[]),...(data.habits.farm||[])].forEach(h=>{const s=calcStreak(h);if(s>best)best=s});
+  const powerLvl=Math.min(99,10+best*3+Math.floor(data.auraPoints/200));
+  return{id:b.id,name:b.name,emoji:b.emoji,color:b.color,power:b.power,
+    epithet:rand(DEMON_EPITHETS),powerLvl}
+}
+
+function openRitual(){
+  if(!ritualUnlocked()){sfx('error');haptic(40);toast(`ritual chamber locked 🔒 reach ${RITUAL_UNLOCK_AURA.toLocaleString()} aura or level ${RITUAL_UNLOCK_LVL}`,'bad');return}
+  _selTier=0;renderRitual();document.getElementById('ritualChamber').classList.add('show');sfx('buy');haptic(20)
+}
+function closeRitual(){document.getElementById('ritualChamber').classList.remove('show')}
+function renderRitual(){
+  const el=document.getElementById('ritualBody');if(!el)return;
+  const act=activeDemon();
+  let h=`<div class="rc-h">RITUAL CHAMBER</div><div class="rc-sub">spend aura. summon chaos. become possessed.</div>`;
+  if(act){
+    const left=msLeft(act.expiresAt);
+    h+=`<div class="demon-card" style="border-color:${act.color}">
+      <div class="demon-emoji">${act.emoji}</div>
+      <div class="demon-name" style="color:${act.color}">${act.name} ${act.epithet}</div>
+      <div class="demon-power">${act.power}</div>
+      <span class="demon-stat">⏳ ${left} left</span><span class="demon-stat">⚡ ${act.mult}x aura</span><span class="demon-stat">lvl ${act.powerLvl}</span>
+      <div style="margin-top:12px;font-size:.7rem;color:#ffb3c4">📜 today's decree:</div>
+      <div style="font-size:.74rem;color:#fff;margin:4px 0 10px">"${act.quest}"</div>
+      ${act.questDone?'<div class="demon-stat" style="border-color:#7dff00;color:#7dff00">✓ decree fulfilled</div>'
+        :`<button class="summon-btn" onclick="completeQuest()">✅ i did it — claim ${Math.round(50*act.mult)} aura</button>`}
+      <button class="dur-opt" style="width:100%;margin-top:10px" onclick="exorcise(true)">🕯️ exorcise early</button>
+    </div>`;
+  }else{
+    const owned=(data.demons&&data.demons.owned)||[];
+    h+=`<div class="pentagram">🔮</div><div class="rc-card">
+      <div style="text-align:center;color:#e0a0b0;font-size:.72rem;margin-bottom:6px">choose the binding duration</div>
+      <div class="dur-row">${POSSESS_TIERS.map((t,i)=>`<div class="dur-opt ${i===_selTier?'sel':''}" onclick="pickTier(${i})">
+        <b>${t.h}h</b>${t.cost} aura<br>${t.mult}x</div>`).join('')}</div>
+      <button class="summon-btn" onclick="summonDemon()" ${data.auraPoints<POSSESS_TIERS[_selTier].cost?'disabled':''}>
+        SUMMON DEMON 💀 (${POSSESS_TIERS[_selTier].cost} aura)</button>
+      <div style="text-align:center;font-size:.58rem;color:#a55;margin-top:8px">you have ${data.auraPoints.toLocaleString()} aura · this only transforms THIS app, your phone is safe 🫡</div>`;
+    if(ritualUnlockedMP())h+=`<button class="dur-opt" style="width:100%;margin-top:14px;border-color:#9d4dff;color:#c9a0ff" onclick="startDemonWar()">⚔️ START A DEMON WAR (multiplayer)</button>`;
+    if(owned.length){h+=`<div style="margin-top:18px;font-size:.66rem;color:#a55;text-transform:uppercase;letter-spacing:1px">bound demons (${owned.length})</div>`;
+      h+=owned.map(id=>{const d=DEMON_ROSTER.find(x=>x.id===id);if(!d)return'';
+        return `<div class="owned-demon"><span class="od-em">${d.emoji}</span><span style="flex:1">${d.name}</span>
+          <button class="dur-opt" onclick="summonDemon('${id}')" ${data.auraPoints<Math.round(POSSESS_TIERS[_selTier].cost/2)?'disabled':''}>resummon ½ price</button></div>`}).join('')}
+    h+=`</div>`;
+  }
+  el.innerHTML=h
+}
+function pickTier(i){_selTier=i;renderRitual()}
+function ritualUnlockedMP(){return isLoggedIn()}
+
+function summonDemon(ownedId){
+  const tier=POSSESS_TIERS[_selTier];const cost=ownedId?Math.round(tier.cost/2):tier.cost;
+  if(data.auraPoints<cost){sfx('error');haptic(40);toast(rand(BROKE_ROASTS),'bad');return}
+  data.auraPoints-=cost;
+  const d=genDemon(ownedId);
+  if(!data.demons)data.demons={owned:[],active:null,log:[]};
+  data.demons.active={...d,mult:tier.mult,hours:tier.h,startedAt:Date.now(),expiresAt:Date.now()+tier.h*3600000,
+    quest:rand(DEMON_QUESTS),questDone:false};
+  logAct('demon',`summoned ${d.emoji} ${d.name} ${d.epithet}`);
+  save();updateAura();
+  // ritual animation beat, then reveal + possess
+  const el=document.getElementById('ritualBody');
+  if(el)el.innerHTML=`<div class="rc-h">SUMMONING…</div><div class="pentagram" style="animation-duration:1.2s">${d.emoji}</div>
+    <div class="rc-sub">incanting ${d.name}…</div>`;
+  sfx('buy');haptic(30);spawnConfetti(40);
+  setTimeout(()=>{applyPossession();renderRitual();renderAll();sfx('tap');haptic(20);
+    toast(`${d.emoji} ${d.name} ${d.epithet} has POSSESSED your app 💀`,'good')},1300)
+}
+function completeQuest(){
+  const a=activeDemon();if(!a||a.questDone)return;
+  a.questDone=true;const reward=Math.round(50*a.mult);data.auraPoints+=reward;
+  // bind the demon permanently on first cleared decree
+  if(!data.demons.owned.includes(a.id)){data.demons.owned.push(a.id);
+    toast(`${a.emoji} ${a.name} BOUND — resummon it anytime ⛓️`,'good')}
+  logAct('demon',`fulfilled ${a.emoji} ${a.name}'s decree +${reward} aura`);
+  save();updateAura();showAuraChange(reward);spawnConfetti(40);launchConfetti();sfx('buy');haptic(20);
+  toast(`decree fulfilled 🔥 +${reward} aura (${a.mult}x)`,'good');renderRitual();renderAll()
+}
+function exorcise(manual){
+  const a=data.demons&&data.demons.active;if(!a)return;
+  data.demons.log=data.demons.log||[];data.demons.log.unshift({name:a.name,emoji:a.emoji,questDone:!!a.questDone,at:Date.now()});
+  if(data.demons.log.length>20)data.demons.log.length=20;
+  data.demons.active=null;clearPossession();save();renderAll();
+  if(document.getElementById('ritualChamber').classList.contains('show'))renderRitual();
+  sfx('untap');haptic(30);
+  toast(manual?`🕯️ ${a.emoji} ${a.name} exorcised early`:`🕯️ ${a.emoji} ${a.name} has left your app${a.questDone?' — decree complete ✓':' — decree unfulfilled 💀'}`,a.questDone?'good':'bad')
+}
+
+// visuals
+function applyPossession(){
+  const a=activeDemon();if(!a)return;
+  document.documentElement.style.setProperty('--accent',a.color);
+  document.documentElement.style.setProperty('--glow-a',a.color);
+  document.body.classList.add('possessed');
+  const logo=document.getElementById('headerLogo');if(logo)logo.textContent=a.emoji;
+  document.title=`${a.emoji} ${a.name} is in control`;
+  renderPossessBanner()
+}
+function clearPossession(){
+  document.body.classList.remove('possessed');document.title='Aura Farm';
+  applyEquipped();renderPossessBanner()
+}
+function renderPossessBanner(){
+  const el=document.getElementById('possessBanner');if(!el)return;
+  const a=activeDemon();
+  if(!a){el.innerHTML='';return}
+  el.innerHTML=`<span class="pb-em">${a.emoji}</span><span class="pb-txt"><b>${a.name}</b> · decree: ${a.questDone?'✓ done':escHtml(a.quest)}</span>
+    <span class="pb-time">⏳${msLeft(a.expiresAt)}</span>`
+}
+function refreshPossession(){
+  // called after applyEquipped so possession colors win while active
+  if(activeDemon()){const a=data.demons.active;
+    document.documentElement.style.setProperty('--accent',a.color);
+    document.documentElement.style.setProperty('--glow-a',a.color);
+    document.body.classList.add('possessed');
+    const logo=document.getElementById('headerLogo');if(logo)logo.textContent=a.emoji}
+  renderPossessBanner()
+}
+function msLeft(ts){const d=ts-Date.now();if(d<=0)return'0m';const h=Math.floor(d/3600000),m=Math.floor((d%3600000)/60000);return h>0?`${h}h ${m}m`:`${m}m`}
+function checkPossession(){
+  const a=data.demons&&data.demons.active;
+  if(a&&a.expiresAt<=Date.now()){exorcise(false);return}
+  if(a)applyPossession();
+  renderPossessBanner()
+}
+// demon wars = themed multiplayer challenge on the existing backend
+async function startDemonWar(){
+  if(!isLoggedIn()){closeRitual();openAuth('signup');return}
+  const a=activeDemon();const s=myStats();
+  const title=a?`${a.name}'s Demon War`:'Aura Demon War';
+  const avatar=a?a.emoji:s.avatar;
+  const j=await mpCall({action:'create',title,metric:'aura',target:Math.max(500,data.auraPoints+500),days:3,name:s.name,avatar});
+  if(j){await mpCall({action:'progress',code:j.code,progress:data.auraPoints});
+    closeRitual();spawnConfetti(30);sfx('buy');toast(`⚔️ Demon War live — code ${j.code}, recruit your victims`,'good');
+    switchTabById('tabSquad');renderMpChallenges();setTimeout(()=>shareChallengeCode(j.code),500)}
+}
+
 // ─── RECALC STREAKS ───
 function recalcAll(){
   const broken=[];
@@ -1880,6 +2139,9 @@ function init(){
   checkChallengeLink();
   if(data.onboarded||data.packName)submitScore();
   if(isLoggedIn())pushCloud(true);
+  checkPossession();
+  setInterval(()=>{const a=data.demons&&data.demons.active;if(!a)return;
+    if(a.expiresAt<=Date.now())exorcise(false);else renderPossessBanner()},30000);
 
   document.getElementById('commitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')addCommit()});
   document.getElementById('squadPostInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')postSquadWin()});
