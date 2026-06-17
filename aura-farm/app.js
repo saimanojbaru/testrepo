@@ -607,12 +607,17 @@ function tapHabit(type, id, evt) {
     const gain = type === 'starve' ? 10 : 15;
     const streakBonus = Math.min(calcStreak(habit) * 2, 50);
     const total = gain + streakBonus;
+    const prevAura = data.auraPoints;
     data.auraPoints += total;
     showAuraChange(total);
     floatPoints(btn, total);
     spawnRing(btn, type === 'starve');
-    spawnConfetti(total > 30 ? 40 : 20);
-    launchConfetti();
+    const crossed50 = Math.floor(data.auraPoints / 50) > Math.floor(prevAura / 50);
+    const streakMilestone = [7, 14, 21, 30, 50, 60, 90, 100, 150, 200, 365].includes(habit.streak);
+    if (crossed50 || streakMilestone) {
+      spawnConfetti(streakMilestone ? 50 : 30);
+      launchConfetti();
+    }
     sfx('tap'); haptic(12);
     toast(rand(type === 'starve' ? STARVE_ROASTS : FARM_HYPES), 'good');
   }
@@ -1223,7 +1228,7 @@ function renderSquadFeed() {
     action = action.replace('{reward}', rand(rewards));
 
     items.push(`
-      <div class="squad-item">
+      <div class="squad-item" style="animation-delay:${i * 0.08}s;">
         <span class="squad-avatar">${person.avatar}</span>
         <div>
           <div><span class="squad-name">${person.name}</span> <span class="squad-time">${times[i] || rand(times)}</span></div>
@@ -1278,6 +1283,7 @@ function switchTab(tabId, btn) {
   if (tabId === 'tabFarm') renderCommitLog();
   if (tabId === 'tabStarve') renderQuitTimers();
   if (tabId === 'tabDen') renderHabits();
+  initSectionReveal();
 }
 
 // ─── APP ENTRY ───
@@ -1312,6 +1318,9 @@ function setPackName() {
 }
 
 function activateApp() {
+  document.body.classList.add('cta-flash');
+  setTimeout(() => document.body.classList.remove('cta-flash'), 500);
+
   document.getElementById('screenLanding').classList.remove('active');
   document.getElementById('screenApp').classList.add('active');
   document.getElementById('bottomNav').style.display = 'flex';
@@ -1324,6 +1333,7 @@ function activateApp() {
   renderCommitLog();
   renderRewards();
   renderCalendar('appCalendar');
+  initSectionReveal();
 }
 
 function goLanding() {
@@ -1434,6 +1444,21 @@ function recalcAllStreaks() {
   return broken;
 }
 
+// ─── SECTION REVEAL ON SCROLL ───
+function initSectionReveal() {
+  const titles = document.querySelectorAll('.section-title:not([data-reveal-watched])');
+  if (!titles.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  titles.forEach(t => { t.dataset.revealWatched = '1'; observer.observe(t); });
+}
+
 // ─── INIT ───
 function init() {
   load();
@@ -1459,6 +1484,16 @@ function init() {
   initPWA();
   initOfflineWatch();
   initConfetti();
+  initSectionReveal();
+
+  // dismiss loading screen
+  const loader = document.getElementById('loadingScreen');
+  if (loader) {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 400);
+    }, 600);
+  }
 
   document.getElementById('commitInput')?.addEventListener('keydown', e => {
     if (e.key === 'Enter') addCommit();
