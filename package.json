@@ -16,5 +16,8 @@
   "dependencies": {
     "@copilotkit/react-core": "^1.56.2",
     "@copilotkit/react-ui": "^1.56.2"
+  },
+  "devDependencies": {
+    "cypress": "^15.17.0"
   }
 }
