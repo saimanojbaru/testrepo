@@ -1,0 +1,33 @@
+# Private content — not open-source
+content/
+
+# Local test runner — private QA gate, not shipped with the repo
+Dockerfile.test
+Dockerfile.test.dockerignore
+docker-compose.test.yml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.local
+.env.*.local
+.pytest_cache/
+
+# Secrets — never commit
+*.pem
+*.key
+*.crt
+tokens.json
+secrets.json
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
