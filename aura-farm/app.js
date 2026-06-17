@@ -30,6 +30,10 @@ const DEFAULT_DATA = {
   rewards: [],
   owned: [],
   equipped: { avatar: 'av_brain', theme: 'th_default', title: null },
+  lastCheckIn: null,
+  activityLog: [],
+  joinedChallenges: {},
+  claimedChallenges: [],
   calMonth: new Date().getMonth(),
   calYear: new Date().getFullYear()
 };
@@ -234,6 +238,42 @@ const GREETINGS = [
   "welcome back {name}, you absolute menace 😈"
 ];
 
+// ─── LEVEL SYSTEM ───
+const LEVELS = [
+  { min: 0,    name: 'Certified NPC',           icon: '🫥' },
+  { min: 50,   name: 'Baby Degenerate',         icon: '👶' },
+  { min: 150,  name: 'Aura Apprentice',         icon: '🌱' },
+  { min: 300,  name: 'Discipline Slut',         icon: '💅' },
+  { min: 500,  name: 'Brain Rot Bully',         icon: '😤' },
+  { min: 800,  name: 'Aura Whore',              icon: '🔥' },
+  { min: 1200, name: 'Sigma in Training',       icon: '💪' },
+  { min: 1800, name: 'Certified Menace',        icon: '😈' },
+  { min: 2500, name: 'Glow Up Demon',           icon: '🧬' },
+  { min: 3500, name: 'Aura Overlord',           icon: '👑' },
+  { min: 5000, name: 'Transcended Gigachad',    icon: '🌌' },
+  { min: 7500, name: 'Aura God',                icon: '⚡' },
+  { min: 10000, name: 'Final Form Degenerate',  icon: '💀' }
+];
+
+// ─── CHALLENGES ───
+const CHALLENGES = [
+  { id: 'ch1', icon: '🔥', name: '7-Day Lock-In',         desc: 'tap ALL your habits for 7 days straight you absolute slut',                  target: 7,   type: 'all_taps_streak',  reward: 200 },
+  { id: 'ch2', icon: '💀', name: 'Brain Rot Funeral',      desc: 'starve every brain rot habit for 14 days, bury that shit for good',          target: 14,  type: 'starve_streak',    reward: 400 },
+  { id: 'ch3', icon: '✨', name: 'Aura Farmer Supreme',    desc: 'hit 500 total aura points, grind like the degenerate you are',               target: 500, type: 'total_aura',       reward: 150 },
+  { id: 'ch4', icon: '📝', name: 'Journal Slut',           desc: 'log 10 commit entries, spill that tea consistently you menace',              target: 10,  type: 'total_commits',    reward: 100 },
+  { id: 'ch5', icon: '🏋️', name: '30-Day Sigma Arc',       desc: "maintain any single habit streak for 30 days, no breaks bitch",              target: 30,  type: 'single_streak',    reward: 750 },
+  { id: 'ch6', icon: '👑', name: 'Aura Millionaire',       desc: 'stack 2000 aura points total, become disgustingly rich in discipline',       target: 2000, type: 'total_aura',      reward: 500 }
+];
+
+// ─── CHECK-IN MOODS ───
+const CHECKIN_MOODS = [
+  { emoji: '🔥', label: 'on fire',    points: 5,  response: "LET'S GOOO, main character energy is IMMACULATE today 🔥✨" },
+  { emoji: '😤', label: 'locked in',  points: 5,  response: "sigma grindset engaged, brain rot is TREMBLING rn 😤💪" },
+  { emoji: '😐', label: 'mid',        points: 3,  response: "mid energy detected... at least you showed up, NPC 😐" },
+  { emoji: '💀', label: 'cooked',     points: 2,  response: "cooked af but at least you're self-aware, that's something i guess 💀" },
+  { emoji: '😭', label: 'down bad',   points: 2,  response: "down astronomical... but tomorrow you lock tf back in, promise me 😭🔥" }
+];
+
 // ─── SOUND FX (Web Audio API — zero external files) ───
 let audioCtx = null;
 function getAudioCtx() {
@@ -405,6 +445,9 @@ function load() {
       if (!data.equipped) data.equipped = { avatar: 'av_brain', theme: 'th_default', title: null };
       if (!data.owned.includes('av_brain')) data.owned.push('av_brain');
       if (!data.owned.includes('th_default')) data.owned.push('th_default');
+      if (!data.activityLog) data.activityLog = [];
+      if (!data.joinedChallenges) data.joinedChallenges = {};
+      if (!Array.isArray(data.claimedChallenges)) data.claimedChallenges = [];
     } else {
       data = JSON.parse(JSON.stringify(DEFAULT_DATA));
     }
@@ -577,6 +620,7 @@ function freezeStreak(type, id) {
   data.freezes--;
   calcStreak(habit);
   habit.lastStreak = habit.streak;
+  logActivity('freeze', `froze ${habit.emoji} ${habit.name} streak — saved by 🧊`);
   save();
   renderHabits();
   sfx('freeze'); haptic(20);
@@ -600,6 +644,7 @@ function tapHabit(type, id, evt) {
     showAuraChange(-loss);
     floatPoints(btn, -loss);
     spawnRing(btn, true);
+    logActivity('untap', `undid ${habit.emoji} ${habit.name} — fumbled the bag`);
     sfx('untap'); haptic(30);
     toast(rand(RELAPSE_MSGS), 'bad');
   } else {
@@ -618,6 +663,7 @@ function tapHabit(type, id, evt) {
       spawnConfetti(streakMilestone ? 50 : 30);
       launchConfetti();
     }
+    logActivity('tap', `${type === 'starve' ? 'starved' : 'farmed'} ${habit.emoji} ${habit.name} — +${total} AP`);
     sfx('tap'); haptic(12);
     toast(rand(type === 'starve' ? STARVE_ROASTS : FARM_HYPES), 'good');
   }
@@ -626,6 +672,7 @@ function tapHabit(type, id, evt) {
   habit.lastStreak = habit.streak;
   save();
   renderHabits();
+  if (currentTab === 'tabDen') { renderDenDashboard(); renderChallenges(); renderAnalytics(); renderActivityFeed(); }
 }
 
 // expanding ring fx over the tapped button (body-anchored so the
@@ -733,6 +780,7 @@ function addHabit(type) {
     createdAt: Date.now()
   });
 
+  logActivity('habit', `added ${selectedEmoji} ${name} to ${type === 'starve' ? 'brain rot kill list' : 'aura farm'}`);
   save();
   renderHabits();
   closeModal();
@@ -821,6 +869,7 @@ function addCommit() {
 
   data.auraPoints += 5;
   showAuraChange(5);
+  logActivity('commit', `logged commit: "${text.slice(0, 40)}${text.length > 40 ? '...' : ''}"`);
   save();
   input.value = '';
   renderCommitLog();
@@ -958,6 +1007,7 @@ function buyItem(category, id) {
   data.owned.push(id);
   const catKey = category.slice(0, -1);
   data.equipped[catKey] = id;
+  logActivity('buy', `bought "${item.name}" for ${item.cost} AP — drip acquired 💸`);
   save();
   updateAuraDisplay();
   renderRewards();
@@ -984,6 +1034,7 @@ function claimReward(id) {
   const r = REWARDS.find(x => x.id === id);
   if (!r || data.auraPoints < r.cost) return;
   data.rewards.push(id);
+  logActivity('claim', `claimed milestone "${r.name}" 🏆`);
   save();
   renderRewards();
   spawnConfetti(50);
@@ -1241,6 +1292,331 @@ function renderSquadFeed() {
   container.innerHTML = items.join('');
 }
 
+// ─── ACTIVITY LOG ───
+function logActivity(type, msg) {
+  if (!data.activityLog) data.activityLog = [];
+  data.activityLog.unshift({ type, msg, time: Date.now() });
+  if (data.activityLog.length > 50) data.activityLog.length = 50;
+}
+
+function timeAgo(ts) {
+  const diff = Date.now() - ts;
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
+
+function renderActivityFeed() {
+  const el = document.getElementById('activityFeed');
+  if (!el) return;
+
+  if (!data.activityLog || data.activityLog.length === 0) {
+    el.innerHTML = '<div class="text-center text-muted" style="padding:16px;font-size:0.72rem;">no activity yet... you haven\'t done shit, get off your ass and tap something 💀</div>';
+    return;
+  }
+
+  const items = data.activityLog.slice(0, 15);
+  const iconMap = { tap: '✨', untap: '💀', buy: '💸', claim: '🏆', freeze: '🧊', commit: '📝', checkin: '🤔', habit: '➕', challenge: '⚔️' };
+  el.innerHTML = items.map(a => {
+    const ago = timeAgo(a.time);
+    const icon = iconMap[a.type] || '📌';
+    return `<div class="activity-item"><span class="activity-icon">${icon}</span><span class="activity-msg">${escapeHtml(a.msg)}</span><span class="activity-time">${ago}</span></div>`;
+  }).join('');
+}
+
+// ─── LEVEL SYSTEM ───
+function getLevel() {
+  let lvl = 0;
+  for (let i = LEVELS.length - 1; i >= 0; i--) {
+    if (data.auraPoints >= LEVELS[i].min) { lvl = i; break; }
+  }
+  return { ...LEVELS[lvl], index: lvl };
+}
+
+function getLevelProgress() {
+  const lvl = getLevel();
+  const nextLvl = LEVELS[lvl.index + 1];
+  if (!nextLvl) return { current: lvl, next: null, progress: 100 };
+  const range = nextLvl.min - lvl.min;
+  const progress = Math.min(100, ((data.auraPoints - lvl.min) / range) * 100);
+  return { current: lvl, next: nextLvl, progress };
+}
+
+// ─── DEN DASHBOARD ───
+function renderDenDashboard() {
+  const el = document.getElementById('denDashboard');
+  if (!el) return;
+
+  const { current, next, progress } = getLevelProgress();
+  const levelNum = current.index + 1;
+  const checkedInToday = data.lastCheckIn === todayKey();
+
+  el.innerHTML = `
+    <div class="den-level-card">
+      <div class="den-level-header">
+        <span class="den-level-icon">${current.icon}</span>
+        <div>
+          <div class="den-level-title">Aura Slut Level ${levelNum}</div>
+          <div class="den-level-name">${current.name}</div>
+        </div>
+      </div>
+      <div class="den-level-bar-wrap">
+        <div class="den-level-bar" style="width:${progress.toFixed(1)}%"></div>
+      </div>
+      ${next ? `<div class="den-level-next">next: ${next.icon} ${next.name} at ${next.min.toLocaleString()} AP</div>` : `<div class="den-level-next" style="color:var(--accent);">MAX LEVEL — you've transcended, you absolute god 👑</div>`}
+    </div>
+
+    <div class="den-checkin ${checkedInToday ? 'done' : ''}">
+      <button class="btn ${checkedInToday ? '' : 'btn-accent glow-button'} btn-block" onclick="${checkedInToday ? '' : 'openCheckIn()'}" ${checkedInToday ? 'disabled' : ''}>
+        ${checkedInToday ? '✅ already checked in today, now go farm some aura' : '🤔 How cooked are you today? (daily check-in)'}
+      </button>
+    </div>
+  `;
+}
+
+// ─── CHECK-IN ───
+function openCheckIn() {
+  const modal = document.getElementById('modalContent');
+  modal.innerHTML = `
+    <h3>🤔 HOW COOKED ARE YOU TODAY?</h3>
+    <p style="font-size:0.7rem;color:var(--fg2);margin-bottom:14px;">be honest you degenerate, self-awareness is the first step to not being mid 💀</p>
+    <div class="checkin-moods">
+      ${CHECKIN_MOODS.map((m, i) => `
+        <button class="checkin-mood-btn" onclick="submitCheckIn(${i})">
+          <span class="checkin-mood-emoji">${m.emoji}</span>
+          <span class="checkin-mood-label">${m.label}</span>
+          <span class="checkin-mood-pts">+${m.points} AP</span>
+        </button>
+      `).join('')}
+    </div>
+    <div class="modal-actions">
+      <button class="btn" onclick="closeModal()">nah not rn 💀</button>
+    </div>
+  `;
+  document.getElementById('modalOverlay').style.display = 'flex';
+}
+
+function submitCheckIn(moodIdx) {
+  const mood = CHECKIN_MOODS[moodIdx];
+  data.lastCheckIn = todayKey();
+  data.auraPoints += mood.points;
+  logActivity('checkin', `checked in: ${mood.emoji} ${mood.label}`);
+  save();
+  closeModal();
+  updateAuraDisplay();
+  showAuraChange(mood.points);
+  renderDenDashboard();
+  sfx('tap'); haptic(12);
+  toast(mood.response, 'good');
+}
+
+// ─── CHALLENGES ───
+function getChallengeProgress(ch) {
+  const joined = data.joinedChallenges || {};
+  if (!joined[ch.id]) return { joined: false, progress: 0, percent: 0 };
+
+  let progress = 0;
+
+  if (ch.type === 'all_taps_streak') {
+    let streak = 0;
+    let d = new Date();
+    const allHabits = [...(data.habits.starve || []), ...(data.habits.farm || [])];
+    if (allHabits.length === 0) return { joined: true, progress: 0, percent: 0 };
+    if (!allHabits.every(h => h.taps[dateKey(d)])) d.setDate(d.getDate() - 1);
+    while (allHabits.every(h => h.taps[dateKey(d)])) { streak++; d.setDate(d.getDate() - 1); }
+    progress = streak;
+  } else if (ch.type === 'starve_streak') {
+    let streak = 0;
+    let d = new Date();
+    const starveHabits = data.habits.starve || [];
+    if (starveHabits.length === 0) return { joined: true, progress: 0, percent: 0 };
+    if (!starveHabits.every(h => h.taps[dateKey(d)])) d.setDate(d.getDate() - 1);
+    while (starveHabits.every(h => h.taps[dateKey(d)])) { streak++; d.setDate(d.getDate() - 1); }
+    progress = streak;
+  } else if (ch.type === 'total_aura') {
+    progress = data.auraPoints;
+  } else if (ch.type === 'total_commits') {
+    progress = (data.commits || []).length;
+  } else if (ch.type === 'single_streak') {
+    const allHabits = [...(data.habits.starve || []), ...(data.habits.farm || [])];
+    progress = allHabits.reduce((max, h) => Math.max(max, calcStreak(h)), 0);
+  }
+
+  const percent = Math.min(100, (progress / ch.target) * 100);
+  return { joined: true, progress, percent };
+}
+
+function renderChallenges() {
+  const el = document.getElementById('challengesList');
+  if (!el) return;
+
+  el.innerHTML = CHALLENGES.map(ch => {
+    const { joined, progress, percent } = getChallengeProgress(ch);
+    const completed = joined && progress >= ch.target;
+    const claimed = (data.claimedChallenges || []).includes(ch.id);
+
+    let actionBtn;
+    if (claimed) {
+      actionBtn = `<span class="text-accent" style="font-size:0.65rem;">✅ done</span>`;
+    } else if (completed) {
+      actionBtn = `<button class="btn btn-accent btn-sm" onclick="claimChallenge('${ch.id}')">claim 🔥</button>`;
+    } else if (joined) {
+      actionBtn = `<span class="text-muted" style="font-size:0.65rem;">${progress}/${ch.target}</span>`;
+    } else {
+      actionBtn = `<button class="btn btn-sm" style="border-color:var(--purple);color:var(--purple);" onclick="joinChallenge('${ch.id}')">join ⚔️</button>`;
+    }
+
+    return `
+      <div class="challenge-card ${completed && !claimed ? 'completed' : ''} ${claimed ? 'claimed' : ''}">
+        <div class="challenge-header">
+          <span class="challenge-icon">${ch.icon}</span>
+          <div class="challenge-info">
+            <div class="challenge-name">${ch.name}</div>
+            <div class="challenge-desc">${ch.desc}</div>
+          </div>
+          <div class="challenge-action">${actionBtn}</div>
+        </div>
+        ${joined && !claimed ? `
+          <div class="challenge-progress-wrap">
+            <div class="challenge-progress-bar" style="width:${percent}%"></div>
+          </div>
+          <div class="challenge-progress-text">${progress}/${ch.target}${completed ? ' — DONE, claim your aura you slut 🔥' : ''}</div>
+        ` : ''}
+        <div class="challenge-reward">🏆 ${ch.reward} AP reward</div>
+      </div>
+    `;
+  }).join('');
+}
+
+function joinChallenge(id) {
+  if (!data.joinedChallenges) data.joinedChallenges = {};
+  data.joinedChallenges[id] = { date: todayKey(), joinedAt: Date.now() };
+  const ch = CHALLENGES.find(c => c.id === id);
+  logActivity('challenge', `joined challenge: ${ch ? ch.name : id}`);
+  save();
+  renderChallenges();
+  sfx('tap'); haptic(12);
+  toast("challenge ACCEPTED ⚔️🔥 now lock the fuck in and don't embarrass yourself", 'good');
+}
+
+function claimChallenge(id) {
+  const ch = CHALLENGES.find(c => c.id === id);
+  if (!ch) return;
+  if (!data.claimedChallenges) data.claimedChallenges = [];
+  if (data.claimedChallenges.includes(id)) return;
+
+  data.claimedChallenges.push(id);
+  data.auraPoints += ch.reward;
+  logActivity('claim', `completed "${ch.name}" — +${ch.reward} AP`);
+  save();
+  updateAuraDisplay();
+  showAuraChange(ch.reward);
+  renderChallenges();
+  renderDenDashboard();
+  renderAnalytics();
+  spawnConfetti(40);
+  launchConfetti();
+  sfx('buy'); haptic(15);
+  toast(`CHALLENGE COMPLETED 🏆🔥 +${ch.reward} AP, you absolute sigma menace`, 'good');
+}
+
+// ─── ANALYTICS ───
+function renderAnalytics() {
+  const el = document.getElementById('analyticsSection');
+  if (!el) return;
+
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const d = new Date();
+    d.setDate(d.getDate() - i);
+    const key = dateKey(d);
+    const st = dayStats(key);
+    days.push({
+      label: d.toLocaleDateString('en', { weekday: 'short' }),
+      taps: st.total,
+      aura: st.auraEarned,
+      isToday: i === 0
+    });
+  }
+
+  const maxTaps = Math.max(...days.map(d => d.taps), 1);
+
+  const allHabits = [...(data.habits.starve || []), ...(data.habits.farm || [])];
+  const totalTaps = allHabits.reduce((sum, h) => sum + Object.keys(h.taps).filter(k => h.taps[k] === true).length, 0);
+  const totalDaysActive = new Set();
+  allHabits.forEach(h => Object.keys(h.taps).forEach(k => { if (h.taps[k]) totalDaysActive.add(k); }));
+  const avgTapsPerDay = totalDaysActive.size > 0 ? (totalTaps / totalDaysActive.size).toFixed(1) : '0';
+  const starveCount = (data.habits.starve || []).reduce((sum, h) => sum + Object.keys(h.taps).filter(k => h.taps[k] === true).length, 0);
+  const farmCount = (data.habits.farm || []).reduce((sum, h) => sum + Object.keys(h.taps).filter(k => h.taps[k] === true).length, 0);
+
+  let roast;
+  if (totalDaysActive.size === 0) {
+    roast = "you haven't done SHIT yet. zero data, zero aura, zero bitches 💀";
+  } else if (totalDaysActive.size >= 30) {
+    roast = `you've been grinding for ${totalDaysActive.size} days, you absolute slut for progress. your discipline is DISGUSTING (compliment) 🔥👑`;
+  } else if (totalDaysActive.size >= 14) {
+    roast = `${totalDaysActive.size} days active, ${totalTaps} total taps. you're not an NPC anymore bestie, you're a whole main character 😤✨`;
+  } else if (totalDaysActive.size >= 7) {
+    roast = `${totalDaysActive.size} days in and ${totalTaps} taps logged. decent start, but don't get comfortable you degenerate 👀🔥`;
+  } else {
+    roast = `${totalDaysActive.size} day${totalDaysActive.size > 1 ? 's' : ''} active with ${totalTaps} taps. baby numbers fr, pump those up 📈💀`;
+  }
+
+  let starveRoast = '';
+  if (starveCount > 0) {
+    starveRoast = starveCount > 50
+      ? `you've starved brain rot ${starveCount} times. that shit is DEAD, buried, and decomposing 💀🔥`
+      : starveCount > 20
+        ? `brain rot starved ${starveCount} times — it's on life support, keep smothering that bitch 😤`
+        : `${starveCount} brain rot starves so far. keep going, it's not dead yet 🚫`;
+  }
+
+  el.innerHTML = `
+    <div class="card">
+      <div class="analytics-chart">
+        <div class="analytics-chart-label">last 7 days — taps per day</div>
+        <div class="analytics-bars">
+          ${days.map(d => `
+            <div class="analytics-bar-col">
+              <div class="analytics-bar-val">${d.taps}</div>
+              <div class="analytics-bar-track">
+                <div class="analytics-bar ${d.taps > 0 ? (d.isToday ? 'today' : '') : 'empty'}" style="height:${d.taps > 0 ? Math.max(8, (d.taps / maxTaps) * 100) : 4}%"></div>
+              </div>
+              <div class="analytics-bar-label ${d.isToday ? 'today' : ''}">${d.label}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="analytics-stats">
+        <div class="analytics-stat">
+          <span class="analytics-stat-num">${totalTaps}</span>
+          <span class="analytics-stat-label">total taps</span>
+        </div>
+        <div class="analytics-stat">
+          <span class="analytics-stat-num">${totalDaysActive.size}</span>
+          <span class="analytics-stat-label">days active</span>
+        </div>
+        <div class="analytics-stat">
+          <span class="analytics-stat-num">${avgTapsPerDay}</span>
+          <span class="analytics-stat-label">avg/day</span>
+        </div>
+        <div class="analytics-stat">
+          <span class="analytics-stat-num">${starveCount}/${farmCount}</span>
+          <span class="analytics-stat-label">starve/farm</span>
+        </div>
+      </div>
+
+      <div class="analytics-roast">${roast}</div>
+      ${starveRoast ? `<div class="analytics-roast sub">${starveRoast}</div>` : ''}
+    </div>
+  `;
+}
+
 // ─── GREETING ───
 function renderGreeting() {
   const el = document.getElementById('appGreeting');
@@ -1282,7 +1658,7 @@ function switchTab(tabId, btn) {
   if (tabId === 'tabReward') renderRewards();
   if (tabId === 'tabFarm') renderCommitLog();
   if (tabId === 'tabStarve') renderQuitTimers();
-  if (tabId === 'tabDen') renderHabits();
+  if (tabId === 'tabDen') { renderHabits(); renderDenDashboard(); renderChallenges(); renderAnalytics(); renderActivityFeed(); }
   initSectionReveal();
 }
 
@@ -1333,6 +1709,10 @@ function activateApp() {
   renderCommitLog();
   renderRewards();
   renderCalendar('appCalendar');
+  renderDenDashboard();
+  renderChallenges();
+  renderAnalytics();
+  renderActivityFeed();
   initSectionReveal();
 }
 

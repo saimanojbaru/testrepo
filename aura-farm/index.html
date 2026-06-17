@@ -192,8 +192,11 @@
       <!-- Stats -->
       <div class="stats-row" id="statsRow"></div>
 
-      <!-- Tab: Den (Home — overview + commit log) -->
+      <!-- Tab: Den (Home — dashboard + habits) -->
       <div class="screen active" id="tabDen">
+        <!-- Level + Check-in Dashboard -->
+        <div id="denDashboard"></div>
+
         <div class="section-title neon-rot">💀 // STARVE THE BRAIN ROT</div>
         <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i didn't do this shit today" — starve that bitch 🚫💀</p>
         <div id="brainRotList"></div>
@@ -207,6 +210,21 @@
         <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
           + add aura habit ✨
         </button>
+
+        <!-- Challenges -->
+        <div class="section-title mt-2 neon-aura">⚔️ // ACTIVE CHALLENGES</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">join a challenge and prove you're not just another cooked NPC 🫡🔥</p>
+        <div id="challengesList"></div>
+
+        <!-- Analytics -->
+        <div class="section-title mt-2 neon-aura">📊 // YOUR RECEIPTS</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">the data doesn't lie bestie, here's how down bad (or up good) you really are 📈💀</p>
+        <div id="analyticsSection"></div>
+
+        <!-- Activity Feed -->
+        <div class="section-title mt-2 neon-aura">📡 // RECENT ACTIVITY</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">a timeline of your degenerate-to-sigma arc, updated in real time 👀</p>
+        <div id="activityFeed"></div>
       </div>
 
       <!-- Tab: Starve (Brain Rot Focus + Quit Timers) -->
