@@ -1,3 +1,4 @@
-aura-farm/android-twa/build/
-aura-farm/android-twa/.gradle/
+build/
+.gradle/
 *.apk
+local.properties
