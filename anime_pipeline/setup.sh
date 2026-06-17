@@ -17,20 +17,19 @@ fi
 echo "[2/3] Installing Python dependencies..."
 pip install -r "$SCRIPT_DIR/requirements.txt"
 
-# Pre-download AnimeGANv2 model weights
-echo "[3/3] Pre-downloading AnimeGANv2 model weights..."
-python3 -c "
-import torch
-torch.hub.load('bryandlee/animegan2-pytorch:main', 'generator', pretrained='face_paint_512_v2', trust_repo=True)
-torch.hub.load('bryandlee/animegan2-pytorch:main', 'generator', pretrained='celeba_distill', trust_repo=True)
-torch.hub.load('bryandlee/animegan2-pytorch:main', 'generator', pretrained='paprika', trust_repo=True)
-print('Models downloaded successfully.')
-"
+# Pre-download AnimeGANv3 ONNX scene models (recommended pipeline)
+echo "[3/3] Pre-downloading AnimeGANv3 models..."
+mkdir -p "$SCRIPT_DIR/models"
+BASE="https://github.com/TachibanaYoshino/AnimeGANv3/releases/download/v1.1.0"
+curl -sL -o "$SCRIPT_DIR/models/AnimeGANv3_shinkai.onnx" "$BASE/AnimeGANv3_Shinkai_37.onnx"
+curl -sL -o "$SCRIPT_DIR/models/AnimeGANv3_hayao.onnx" "$BASE/AnimeGANv3_Hayao_36.onnx"
+echo "Models downloaded to $SCRIPT_DIR/models/"
 
 # Create working directories
-mkdir -p "$SCRIPT_DIR/input" "$SCRIPT_DIR/output" "$SCRIPT_DIR/temp_frames"
+mkdir -p "$SCRIPT_DIR/input" "$SCRIPT_DIR/output"
 
 echo ""
 echo "=== Setup Complete ==="
-echo "Usage:  python3 $SCRIPT_DIR/anime_convert.py --input video.mp4 --output anime_video.mp4"
-echo "Styles: face_paint_512_v2 (default), celeba_distill, paprika"
+echo "Recommended (AnimeGANv3, full-resolution, sharp):"
+echo "  python3 $SCRIPT_DIR/anime_convert_v3.py -i video.mp4 -o anime.mp4 --model shinkai"
+echo "  Styles: shinkai (vibrant, default), hayao (Ghibli/warm)"

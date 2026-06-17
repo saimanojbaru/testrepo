@@ -1,6 +1,10 @@
-torch>=2.0.0
-torchvision>=0.15.0
+# AnimeGANv3 pipeline (recommended — anime_convert_v3.py)
+onnxruntime>=1.16.0
 opencv-python>=4.8.0
 numpy>=1.24.0
-Pillow>=10.0.0
 tqdm>=4.65.0
+
+# Legacy AnimeGANv2 pipeline (anime_convert.py) — only needed for that path
+torch>=2.0.0
+torchvision>=0.15.0
+Pillow>=10.0.0

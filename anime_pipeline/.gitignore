@@ -2,3 +2,6 @@
 output/
 temp_frames/
 input/
+
+# Downloaded model weights (fetched on demand by anime_convert_v3.py)
+models/
