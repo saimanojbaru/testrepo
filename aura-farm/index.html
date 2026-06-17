@@ -480,6 +480,9 @@ cursor:pointer;transition:all .2s;touch-action:manipulation}
 <div class="sec-title neon-a">🏆 GLOBAL LEADERBOARD</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">real players, real aura, ranked worldwide. where you stack up? 🌍</p>
 <div id="leaderboard"></div>
+<div class="sec-title neon-a mt-2">⚔️ MULTIPLAYER CHALLENGES</div>
+<p class="text-muted mb-1" style="font-size:.68rem;">create a challenge, share the code, race your friends for real 🏁</p>
+<div id="mpChallenges"></div>
 <div class="sec-title neon-a mt-2">👥 THE SQUAD FEED</div>
 <p class="text-muted mb-1" style="font-size:.68rem;">your real wins + a demo squad to vibe with. want real friends in here? challenge them 👇</p>
 <div class="card" style="margin-bottom:8px">
@@ -563,7 +566,7 @@ const DEFAULT_DATA={
       {id:'f5',emoji:'💤',name:'8hr Sleep',streak:0,bestStreak:0,taps:{},createdAt:Date.now()}
     ]
   },
-  commits:[],rewards:[],squadPosts:[],playerId:null,leaderboardOptOut:false,owned:['av_brain','th_default'],
+  commits:[],rewards:[],squadPosts:[],playerId:null,leaderboardOptOut:false,account:null,owned:['av_brain','th_default'],
   equipped:{avatar:'av_brain',theme:'th_default',title:null},
   lastCheckIn:null,activityLog:[],joinedChallenges:{},claimedChallenges:[],
   calMonth:new Date().getMonth(),calYear:new Date().getFullYear()
@@ -683,11 +686,12 @@ function load(){
       if(!Array.isArray(data.claimedChallenges))data.claimedChallenges=[];
       if(!Array.isArray(data.rewards))data.rewards=[];
       if(!Array.isArray(data.squadPosts))data.squadPosts=[];
+      if(data.account===undefined)data.account=null;
       if(data.packName&&data.onboarded===undefined)data.onboarded=true;
     }else{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
   }catch{data=JSON.parse(JSON.stringify(DEFAULT_DATA))}
 }
-function save(){localStorage.setItem(DB_KEY,JSON.stringify(data))}
+function save(){localStorage.setItem(DB_KEY,JSON.stringify(data));if(typeof scheduleCloudPush==='function')scheduleCloudPush()}
 
 // ─── SOUND ───
 let audioCtx=null;
@@ -1233,7 +1237,7 @@ function switchTab(tabId,btn){
   if(tabId==='tabDen'){renderDen();renderTodayProgress();renderChallenges();renderAnalytics();renderActivity()}
   if(tabId==='tabStarve'){renderHabits('starve','starveList');renderQuitTimers()}
   if(tabId==='tabFarm'){renderHabits('farm','farmList');renderCommitLog()}
-  if(tabId==='tabSquad'){renderLeaderboard();renderSquad()}
+  if(tabId==='tabSquad'){renderLeaderboard();renderMpChallenges();renderSquad()}
   if(tabId==='tabShop')renderShop();
   if(tabId==='tabCal')renderCal()
 }
@@ -1387,7 +1391,13 @@ function openSettings(){
   const m=document.getElementById('modalContent');
   const sz=new Blob([JSON.stringify(data)]).size;
   const kb=(sz/1024).toFixed(1);
+  const acctRow=isLoggedIn()
+    ?`<div class="settings-row"><span>☁️ Account</span><span class="text-accent">@${data.account.handle}</span></div>
+      <div class="settings-row"><span>🔄 Cloud Sync</span><button class="btn btn-sm btn-accent" onclick="pushCloud(false)">sync now ☁️</button></div>
+      <div class="settings-row"><span>🚪 Log Out</span><button class="btn btn-sm" onclick="closeModal();logout()">log out</button></div>`
+    :`<div class="settings-row"><span>☁️ Account</span><button class="btn btn-sm btn-accent" onclick="closeModal();openAuth('signup')">sign up / log in</button></div>`;
   m.innerHTML=`<h3>⚙️ SETTINGS</h3>
+    ${acctRow}
     <div class="settings-row"><span>📛 Pack Name</span><span class="text-accent">${data.packName||'not set'}</span></div>
     <div class="settings-row"><span>📊 Data Size</span><span class="text-muted">${kb} KB in localStorage</span></div>
     <div class="settings-row"><span>💾 Export Data</span><button class="btn btn-sm" onclick="exportData()">download JSON 📥</button></div>
@@ -1661,6 +1671,189 @@ function toggleLeaderboard(on){
   }
 }
 
+// ─── ACCOUNTS + CLOUD SYNC (backend) ───
+const API={account:'/api/account',sync:'/api/sync',challenge:'/api/challenge'};
+function isLoggedIn(){return !!(data.account&&data.account.token)}
+
+function openAuth(mode){
+  mode=mode||'signup';
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>☁️ ${mode==='signup'?'CREATE ACCOUNT':'LOG IN'}</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">${mode==='signup'?'claim a handle so your aura syncs across devices + you can play multiplayer 🔥':'welcome back — log in to sync your grind ☁️'}</p>
+    <input type="text" id="authHandle" placeholder="handle (3-20 letters/numbers)" maxlength="20" autocapitalize="off" autocomplete="username">
+    <input type="password" id="authPin" placeholder="pin / passphrase (min 4 chars)" maxlength="64" autocomplete="${mode==='signup'?'new-password':'current-password'}">
+    <div class="modal-actions"><button class="btn" onclick="openAuth('${mode==='signup'?'login':'signup'}')">${mode==='signup'?'i have an account':'make one instead'}</button>
+      <button class="btn btn-accent" onclick="doAuth('${mode}')">${mode==='signup'?'sign up 🚀':'log in →'}</button></div>
+    <p style="font-size:.55rem;color:var(--fg2);margin-top:10px;text-align:center">⚠️ no email = no recovery. remember your pin 💀</p>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('authHandle')?.focus(),100)
+}
+async function doAuth(mode){
+  const handle=document.getElementById('authHandle')?.value.trim();
+  const pin=document.getElementById('authPin')?.value||'';
+  if(!handle||!pin){sfx('error');toast("fill both fields you NPC 💀",'bad');return}
+  try{
+    const res=await fetch(API.account,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:mode,handle,pin})});
+    if(!res.ok){const t=await res.text();sfx('error');haptic(40);toast(t||'auth failed 💀','bad');return}
+    const j=await res.json();
+    data.account={accountId:j.accountId,token:j.token,handle:j.handle};save();
+    sfx('buy');haptic(15);spawnConfetti(30);closeModal();
+    if(mode==='login')await pullCloudOnLogin();
+    else{await pushCloud(true);toast(`account created — you're @${j.handle} now ☁️🔥`,'good')}
+    renderAll()
+  }catch(e){sfx('error');toast("couldn't reach the server 📡 you online?",'bad')}
+}
+function logout(){data.account=null;save();renderAll();sfx('untap');toast("logged out ☁️ local data stays on this device",'good')}
+
+let _cloudPending=null;
+async function cloudGet(){
+  if(!isLoggedIn())return null;
+  try{const res=await fetch(`${API.sync}?accountId=${encodeURIComponent(data.account.accountId)}&token=${encodeURIComponent(data.account.token)}`);
+    if(res.ok)return await res.json()}catch(e){}
+  return null
+}
+async function pullCloudOnLogin(){
+  const cloud=await cloudGet();
+  if(cloud&&cloud.data&&cloud.data.habits){
+    _cloudPending=cloud.data;
+    const a=cloud.data.auraPoints;
+    const m=document.getElementById('modalContent');
+    m.innerHTML=`<h3>☁️ CLOUD SAVE FOUND</h3>
+      <p style="font-size:.7rem;color:var(--fg2);margin-bottom:12px">your cloud has a saved grind${typeof a==='number'?` (${a.toLocaleString()} aura)`:''}. restore it? this replaces what's on this device.</p>
+      <div class="modal-actions"><button class="btn" onclick="keepLocalAfterLogin()">keep this device</button>
+      <button class="btn btn-accent" onclick="restoreCloud()">restore cloud ☁️</button></div>`;
+    document.getElementById('modalOverlay').classList.add('show')
+  }else{await pushCloud(true);toast(`logged in as @${data.account.handle} ☁️`,'good')}
+}
+function keepLocalAfterLogin(){_cloudPending=null;closeModal();pushCloud(true);toast(`logged in as @${data.account.handle} — this device kept ☁️`,'good')}
+function restoreCloud(){
+  if(_cloudPending){const acct=data.account;data=_cloudPending;data.account=acct;
+    if(!data.habits)data.habits=JSON.parse(JSON.stringify(DEFAULT_DATA.habits));
+    save();applyEquipped();renderAll();renderCal()}
+  _cloudPending=null;closeModal();sfx('buy');toast("cloud save restored ☁️🔥",'good')
+}
+let _cloudTimer=null;
+function scheduleCloudPush(){if(!isLoggedIn())return;clearTimeout(_cloudTimer);_cloudTimer=setTimeout(()=>pushCloud(true),2500)}
+async function pushCloud(silent){
+  if(!isLoggedIn())return;
+  const payload=JSON.parse(JSON.stringify(data));delete payload.account;
+  try{
+    const res=await fetch(API.sync,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({accountId:data.account.accountId,token:data.account.token,data:payload})});
+    if(res.ok){data.lastCloudSync=Date.now();localStorage.setItem(DB_KEY,JSON.stringify(data));if(!silent){sfx('tap');toast("synced to cloud ☁️✓",'good')}}
+    else if(res.status===401){data.account=null;localStorage.setItem(DB_KEY,JSON.stringify(data));toast("session expired, log back in ☁️",'bad')}
+  }catch(e){if(!silent)toast("sync failed 📡",'bad')}
+}
+
+// ─── MULTIPLAYER CHALLENGES (backend) ───
+function computeMetric(metric){
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  if(metric==='aura')return data.auraPoints;
+  if(metric==='streak'){let b=0;all.forEach(h=>{const s=calcStreak(h);if(s>b)b=s});return b}
+  return all.reduce((s,h)=>s+Object.keys(h.taps||{}).filter(k=>h.taps[k]===true).length,0)
+}
+async function mpCall(payload){
+  if(!isLoggedIn()){openAuth('signup');return null}
+  try{const res=await fetch(API.challenge,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({...payload,accountId:data.account.accountId,token:data.account.token})});
+    if(!res.ok){const t=await res.text();sfx('error');toast(t||'failed 💀','bad');return null}
+    return await res.json()}catch(e){toast("server unreachable 📡",'bad');return null}
+}
+async function mpMine(){
+  if(!isLoggedIn())return null;
+  try{const res=await fetch(`${API.challenge}?mine=1&accountId=${encodeURIComponent(data.account.accountId)}&token=${encodeURIComponent(data.account.token)}`);
+    if(res.ok)return (await res.json()).challenges}catch(e){}
+  return null
+}
+async function mpGet(code){try{const res=await fetch(`${API.challenge}?code=${encodeURIComponent(code)}`);if(res.ok)return await res.json()}catch(e){}return null}
+async function renderMpChallenges(){
+  const el=document.getElementById('mpChallenges');if(!el)return;
+  if(!isLoggedIn()){
+    el.innerHTML=`<div class="card text-center" style="font-size:.7rem;padding:16px">
+      <div class="text-muted">log in to create & join real multiplayer challenges ⚔️</div>
+      <button class="btn btn-sm btn-accent mt-1" onclick="openAuth('signup')">sign up / log in ☁️</button></div>`;return
+  }
+  el.innerHTML=`<div class="share-row"><button class="share-btn primary" onclick="openCreateChallenge()">+ create challenge</button>
+    <button class="share-btn alt" onclick="openJoinChallenge()">🔑 join by code</button></div>
+    <div id="mpList" class="text-center text-muted" style="font-size:.7rem;padding:10px">loading your challenges... ⚔️</div>`;
+  const list=await mpMine();const lc=document.getElementById('mpList');if(!lc)return;
+  if(!list||!list.length){lc.innerHTML='<div class="card text-center text-muted" style="font-size:.7rem;padding:14px">no challenges yet. create one & share the code 🏁</div>';return}
+  lc.innerHTML=list.map(renderChallengeCard).join('')
+}
+function renderChallengeCard(ch){
+  const myId=data.account.accountId;
+  const metricLbl={aura:'aura points',streak:'best streak (days)',taps:'total taps'}[ch.metric]||ch.metric;
+  const rows=ch.standings.map(s=>{
+    const pct=Math.min(100,s.progress/ch.target*100),isMe=s.accountId===myId;
+    const medal=s.rank===1?'🥇':s.rank===2?'🥈':s.rank===3?'🥉':('#'+s.rank);
+    return `<div class="lb-row ${isMe?'me':''}"><span class="lb-rank">${medal}</span><span class="lb-av">${s.avatar}</span>
+      <span class="lb-name">${escHtml(s.name)}${isMe?' <span class="text-accent">(you)</span>':''}</span>
+      <div style="flex:0 0 92px"><div class="ch-bar-w" style="margin:0 0 2px"><div class="ch-bar" style="width:${pct}%"></div></div>
+      <div class="lb-streak">${s.progress.toLocaleString()}/${ch.target.toLocaleString()}</div></div></div>`
+  }).join('');
+  return `<div class="card">
+    <div class="flex-between"><strong style="font-size:.8rem">${escHtml(ch.title)}</strong>
+      <span style="font-size:.58rem;color:${ch.active?'var(--accent)':'var(--fg2)'}">${ch.active?'🟢 live':'⚫ ended'}</span></div>
+    <div class="text-muted" style="font-size:.6rem;margin:2px 0 8px">race to ${ch.target.toLocaleString()} ${metricLbl} · code <strong class="text-accent">${ch.code}</strong></div>
+    ${rows}
+    <div class="share-row" style="margin-top:8px"><button class="share-btn" onclick="pushChallengeProgress('${ch.code}')">⬆️ update my progress</button>
+      <button class="share-btn alt" onclick="shareChallengeCode('${ch.code}')">📲 share code</button></div></div>`
+}
+let _chMetric='taps';
+function openCreateChallenge(){
+  _chMetric='taps';
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>⚔️ CREATE A CHALLENGE</h3>
+    <input type="text" id="chTitle" placeholder="challenge name (e.g. Gym Wars)" maxlength="40">
+    <div style="font-size:.6rem;color:var(--fg2);margin:6px 0 4px">what are we racing on?</div>
+    <div class="chips" id="chMetric">
+      <button class="chip f picked" data-m="taps" onclick="pickMetric(this)">✅ total taps</button>
+      <button class="chip f" data-m="aura" onclick="pickMetric(this)">✨ aura points</button>
+      <button class="chip f" data-m="streak" onclick="pickMetric(this)">🔥 best streak</button></div>
+    <input type="number" id="chTarget" placeholder="target to hit (e.g. 50)" min="1">
+    <input type="number" id="chDays" placeholder="days it runs (default 7)" min="1" max="90">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="createChallenge()">create 🏁</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+function pickMetric(btn){_chMetric=btn.dataset.m;document.querySelectorAll('#chMetric .chip').forEach(c=>c.classList.remove('picked'));btn.classList.add('picked')}
+async function createChallenge(){
+  const title=document.getElementById('chTitle')?.value.trim()||'Aura Showdown';
+  const target=parseInt(document.getElementById('chTarget')?.value)||50;
+  const days=parseInt(document.getElementById('chDays')?.value)||7;
+  const s=myStats();
+  const j=await mpCall({action:'create',title,metric:_chMetric,target,days,name:s.name,avatar:s.avatar});
+  if(j){await mpCall({action:'progress',code:j.code,progress:computeMetric(j.metric)});
+    closeModal();spawnConfetti(30);sfx('buy');haptic(15);toast(`challenge live 🏁 code: ${j.code} — share it!`,'good');
+    renderMpChallenges();setTimeout(()=>shareChallengeCode(j.code),500)}
+}
+function openJoinChallenge(){
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>🔑 JOIN A CHALLENGE</h3><p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px">enter the code your friend sent you</p>
+    <input type="text" id="joinCode" placeholder="e.g. K7M2QX" maxlength="8" autocapitalize="characters" style="text-transform:uppercase">
+    <div class="modal-actions"><button class="btn" onclick="closeModal()">nvm</button><button class="btn btn-accent" onclick="joinChallenge()">join ⚔️</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  setTimeout(()=>document.getElementById('joinCode')?.focus(),100)
+}
+async function joinChallenge(){
+  const code=(document.getElementById('joinCode')?.value||'').trim().toUpperCase();
+  if(!code){sfx('error');toast("enter a code 💀",'bad');return}
+  const s=myStats();
+  const j=await mpCall({action:'join',code,name:s.name,avatar:s.avatar});
+  if(j){await mpCall({action:'progress',code,progress:computeMetric(j.metric)});
+    closeModal();sfx('buy');haptic(15);toast(`joined "${j.title}" ⚔️🔥`,'good');renderMpChallenges()}
+}
+async function pushChallengeProgress(code){
+  const ch=await mpGet(code);if(!ch)return;
+  const j=await mpCall({action:'progress',code,progress:computeMetric(ch.metric)});
+  if(j){sfx('tap');haptic(10);toast("progress updated ⬆️🔥",'good');renderMpChallenges()}
+}
+async function shareChallengeCode(code){
+  const text=`join my Aura Farm challenge ⚔️ code: ${code} — ${APP_URL}`;
+  if(navigator.share){try{await navigator.share({title:'Aura Farm Challenge',text});sfx('tap');return}catch(e){}}
+  try{await navigator.clipboard.writeText(text);toast("challenge invite copied 🔗 go recruit 😤",'good');sfx('tap')}
+  catch(e){toast(`code: ${code}`,'good')}
+}
+
 // ─── RECALC STREAKS ───
 function recalcAll(){
   const broken=[];
@@ -1686,6 +1879,7 @@ function init(){
   initConfetti();
   checkChallengeLink();
   if(data.onboarded||data.packName)submitScore();
+  if(isLoggedIn())pushCloud(true);
 
   document.getElementById('commitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')addCommit()});
   document.getElementById('squadPostInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')postSquadWin()});
