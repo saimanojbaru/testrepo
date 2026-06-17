@@ -306,10 +306,12 @@ function resizeConfetti() {
   confettiCanvas.width = window.innerWidth;
   confettiCanvas.height = window.innerHeight;
 }
+const CONFETTI_EMOJIS = ['🔥','🍑','✨','💀','😈','👑','💅','🧠','🫠','💦'];
 function spawnConfetti(count) {
   if (!confettiCtx) return;
   const colors = ['#c8ff00', '#ff3e6c', '#b388ff', '#00e5ff', '#ff9100', '#ffd700', '#ff8fd6'];
   for (let i = 0; i < count; i++) {
+    const isEmoji = Math.random() < 0.3;
     confettiParticles.push({
       x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
       y: window.innerHeight * 0.35,
@@ -318,6 +320,7 @@ function spawnConfetti(count) {
       w: Math.random() * 8 + 4,
       h: Math.random() * 6 + 3,
       color: colors[Math.floor(Math.random() * colors.length)],
+      emoji: isEmoji ? CONFETTI_EMOJIS[Math.floor(Math.random() * CONFETTI_EMOJIS.length)] : null,
       rotation: Math.random() * 360,
       rotSpeed: (Math.random() - 0.5) * 15,
       life: 1,
@@ -342,8 +345,15 @@ function animateConfetti() {
     confettiCtx.translate(p.x, p.y);
     confettiCtx.rotate((p.rotation * Math.PI) / 180);
     confettiCtx.globalAlpha = p.life;
-    confettiCtx.fillStyle = p.color;
-    confettiCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    if (p.emoji) {
+      confettiCtx.font = `${14 + p.w}px serif`;
+      confettiCtx.textAlign = 'center';
+      confettiCtx.textBaseline = 'middle';
+      confettiCtx.fillText(p.emoji, 0, 0);
+    } else {
+      confettiCtx.fillStyle = p.color;
+      confettiCtx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+    }
     confettiCtx.restore();
   }
   if (confettiParticles.length > 0) {
