@@ -1,0 +1,4 @@
+[build]
+  base = "aura-farm"
+  publish = "."
+  command = "echo done"

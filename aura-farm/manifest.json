@@ -2,7 +2,7 @@
   "name": "Aura Farm",
   "short_name": "AuraFarm",
   "description": "Starve that fucking Brain Rot. Farm your Aura, no cap.",
-  "start_url": "/aura-farm/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
