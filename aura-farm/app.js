@@ -234,6 +234,60 @@ const GREETINGS = [
   "welcome back {name}, you absolute menace 😈"
 ];
 
+// ─── SOUND FX (Web Audio API — zero external files) ───
+let audioCtx = null;
+function getAudioCtx() {
+  if (!audioCtx) try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch {}
+  return audioCtx;
+}
+function sfx(type) {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  const t = ctx.currentTime;
+  if (type === 'tap') {
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(600, t);
+    osc.frequency.exponentialRampToValueAtTime(1200, t + 0.08);
+    gain.gain.setValueAtTime(0.18, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.12);
+    osc.start(t); osc.stop(t + 0.12);
+  } else if (type === 'untap') {
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, t);
+    osc.frequency.exponentialRampToValueAtTime(300, t + 0.12);
+    gain.gain.setValueAtTime(0.15, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.15);
+    osc.start(t); osc.stop(t + 0.15);
+  } else if (type === 'buy') {
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(523, t);
+    osc.frequency.setValueAtTime(659, t + 0.08);
+    osc.frequency.setValueAtTime(784, t + 0.16);
+    gain.gain.setValueAtTime(0.12, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.28);
+    osc.start(t); osc.stop(t + 0.28);
+  } else if (type === 'freeze') {
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(1800, t);
+    osc.frequency.exponentialRampToValueAtTime(400, t + 0.2);
+    gain.gain.setValueAtTime(0.1, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
+    osc.start(t); osc.stop(t + 0.25);
+  } else if (type === 'error') {
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(200, t);
+    osc.frequency.setValueAtTime(180, t + 0.08);
+    gain.gain.setValueAtTime(0.1, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
+    osc.start(t); osc.stop(t + 0.18);
+  }
+}
+function haptic(ms) { try { navigator.vibrate(ms || 12); } catch {} }
+
 // ─── STATE ───
 let data = {};
 let currentTab = 'tabDen';
@@ -323,7 +377,7 @@ function showAuraChange(amount) {
   if (slot) {
     const el = document.createElement('div');
     el.className = `aura-change ${amount > 0 ? 'gain' : 'loss'}`;
-    el.textContent = amount > 0 ? `+${amount} AP, ate that shit 🔥` : `${amount} AP, you fell tf off 💀`;
+    el.textContent = amount > 0 ? `+${amount} AP, absolutely ate that shit 🔥` : `${amount} AP, fumbled the bag you degenerate 💀`;
     slot.innerHTML = '';
     slot.appendChild(el);
     setTimeout(() => el.remove(), 2000);
@@ -384,7 +438,7 @@ function renderHabitList(type, containerId) {
 
   if (habits.length === 0) {
     container.innerHTML = `<div class="text-center text-muted" style="padding:20px;font-size:0.75rem;">
-      ${type === 'starve' ? 'no brain rot tracked yet... you lying or what? 🤨' : 'no aura habits yet... add something, NPC 💀'}
+      ${type === 'starve' ? "no brain rot tracked?? you're telling me you have zero bad habits? lying ass bitch 🤨💀" : "no aura habits?? you're just existing with no grind? embarrassing, add something you NPC 💀🔥"}
     </div>`;
     return;
   }
@@ -396,8 +450,8 @@ function renderHabitList(type, containerId) {
     const tapClass = tapped ? (type === 'starve' ? 'tapped-bad' : 'tapped') : '';
     const frozenTag = frozen > 0 ? ` <span class="text-cyan">🧊x${frozen}</span>` : '';
     const streakText = streak > 0
-      ? `🔥 ${streak}d streak, you slut for progress`
-      : (type === 'starve' ? 'no streak, you cooked 💀' : 'no streak, lock tf in 🔒');
+      ? `🔥 ${streak}d streak — absolute slut for discipline`
+      : (type === 'starve' ? '0d streak, you\'re getting cooked alive 💀' : '0d streak, do something you lazy bitch 🔒');
     // freeze is offered when yesterday is a gap but there WAS a chain before it
     // (the day before yesterday was kept) — i.e. a real streak is salvageable
     const dby = new Date(); dby.setDate(dby.getDate() - 2);
@@ -424,8 +478,8 @@ function freezeStreak(type, id) {
   const habit = data.habits[type].find(h => h.id === id);
   if (!habit) return;
   const yKey = yesterdayKey();
-  if (habit.taps[yKey]) { toast(rand(FREEZE_NOTNEEDED), 'good'); return; }
-  if (data.freezes <= 0) { toast(rand(FREEZE_BROKE), 'bad'); return; }
+  if (habit.taps[yKey]) { sfx('error'); toast(rand(FREEZE_NOTNEEDED), 'good'); return; }
+  if (data.freezes <= 0) { sfx('error'); haptic(50); toast(rand(FREEZE_BROKE), 'bad'); return; }
 
   habit.taps[yKey] = 'frozen';
   data.freezes--;
@@ -433,6 +487,7 @@ function freezeStreak(type, id) {
   habit.lastStreak = habit.streak;
   save();
   renderHabits();
+  sfx('freeze'); haptic(20);
   toast(rand(FREEZE_SAVES), 'good');
 }
 
@@ -453,6 +508,7 @@ function tapHabit(type, id, evt) {
     showAuraChange(-loss);
     floatPoints(btn, -loss);
     spawnRing(btn, true);
+    sfx('untap'); haptic(30);
     toast(rand(RELAPSE_MSGS), 'bad');
   } else {
     habit.taps[today] = true;
@@ -463,6 +519,7 @@ function tapHabit(type, id, evt) {
     showAuraChange(total);
     floatPoints(btn, total);
     spawnRing(btn, type === 'starve');
+    sfx('tap'); haptic(12);
     toast(rand(type === 'starve' ? STARVE_ROASTS : FARM_HYPES), 'good');
   }
 
@@ -495,7 +552,8 @@ function deleteHabit(type, id) {
   data.habits[type] = data.habits[type].filter(h => h.id !== id);
   save();
   renderHabits();
-  toast('habit yeeted into the void 🕳️', 'bad');
+  sfx('untap'); haptic(20);
+  toast('habit yeeted into the fucking void, gone forever bestie 🕳️💀', 'bad');
 }
 
 // ─── ADD HABIT MODAL ───
@@ -564,7 +622,7 @@ function fillSuggestion(type, idx) {
 
 function addHabit(type) {
   const name = document.getElementById('habitNameInput')?.value.trim();
-  if (!name) { toast("name it something, you NPC 💀", 'bad'); return; }
+  if (!name) { sfx('error'); toast("name it something you braindead NPC, I can't track vibes 💀", 'bad'); return; }
 
   data.habits[type].push({
     id: uid(),
@@ -579,9 +637,10 @@ function addHabit(type) {
   save();
   renderHabits();
   closeModal();
+  sfx('tap'); haptic(12);
   toast(type === 'starve'
-    ? `"${name}" added to brain rot hit list 💀🔥`
-    : `"${name}" added to the aura farm ✨`, 'good');
+    ? `"${name}" added to the brain rot kill list, starve that bitch 💀🔥`
+    : `"${name}" added to the aura farm, now grind it you slut ✨🔥`, 'good');
   selectedEmoji = EMOJI_OPTIONS[0];
 }
 
@@ -598,7 +657,7 @@ function renderQuitTimers() {
   const habits = data.habits.starve || [];
 
   if (habits.length === 0) {
-    container.innerHTML = '<div class="text-center text-muted" style="padding:20px;font-size:0.75rem;">no brain rot to quit yet... sus 🤨</div>';
+    container.innerHTML = '<div class="text-center text-muted" style="padding:20px;font-size:0.75rem;">no brain rot to detox from?? sus as fuck, add your demons bestie 🤨💀</div>';
     return;
   }
 
@@ -610,22 +669,22 @@ function renderQuitTimers() {
 
     if (days === 0) {
       timerText = "0 days";
-      motivText = "haven't even started? cooked af 💀";
+      motivText = "zero days clean you absolute degenerate, start NOW 💀";
     } else if (days < 3) {
       timerText = `${days} day${days > 1 ? 's' : ''}`;
-      motivText = "baby steps, don't fuck it up 👶";
+      motivText = "barely breathing, don't you dare fuck this up 👶🔥";
     } else if (days < 7) {
       timerText = `${days} days (${hrs}h)`;
-      motivText = "mid but getting there, keep starving it 🔥";
+      motivText = "brain rot is starving but still kicking, smother that bitch 🔥";
     } else if (days < 30) {
       timerText = `${days} days`;
-      motivText = "actually impressive ngl, your brain rot is SHOOK 😤";
+      motivText = "actually unhinged discipline ngl, your brain rot is getting BODIED 😤💀";
     } else if (days < 100) {
       timerText = `${days} days`;
-      motivText = "GIGACHAD ENERGY, brain rot is on life support 💀🔥";
+      motivText = "GIGACHAD AURA, brain rot on life support, pull the fucking plug 💀🔥";
     } else {
       timerText = `${days} days`;
-      motivText = "you've literally ascended, what even are you 🧬✨";
+      motivText = "you've transcended mortal degeneracy, ascended sigma shit 🧬✨";
     }
 
     return `
@@ -650,7 +709,7 @@ function renderQuitTimers() {
 function addCommit() {
   const input = document.getElementById('commitInput');
   const text = input.value.trim();
-  if (!text) { toast("write something you NPC 💀", 'bad'); return; }
+  if (!text) { sfx('error'); toast("write something you braindead NPC, the field is right there 💀", 'bad'); return; }
 
   data.commits.unshift({
     id: uid(),
@@ -665,7 +724,8 @@ function addCommit() {
   input.value = '';
   renderCommitLog();
   updateAuraDisplay();
-  toast("commit logged, you're actually journaling? slay 📝✨", 'good');
+  sfx('tap'); haptic(12);
+  toast("commit logged, you're actually journaling?? the glow up is REAL, slay 📝✨", 'good');
 }
 
 function renderCommitLog() {
@@ -673,7 +733,7 @@ function renderCommitLog() {
   if (!container) return;
 
   if (data.commits.length === 0) {
-    container.innerHTML = '<div class="text-center text-muted mt-2" style="font-size:0.75rem;">no commits yet... the log is empty, just like your discipline 💀</div>';
+    container.innerHTML = '<div class="text-center text-muted mt-2" style="font-size:0.75rem;">commit log is bone dry... just like your discipline and your DMs 💀📭</div>';
     return;
   }
 
@@ -709,7 +769,7 @@ function renderRewards() {
     { key: 'titles',  icon: '🏷️', label: 'Titles' }
   ];
 
-  let html = `<div class="shop-balance">💰 <span class="text-accent">${data.auraPoints}</span> aura points to blow</div>`;
+  let html = `<div class="shop-balance">💰 <span class="text-accent">${data.auraPoints.toLocaleString()}</span> aura to blow like a degenerate</div>`;
   html += `<div class="shop-tabs">`;
   tabs.forEach(t => {
     html += `<button class="shop-tab ${shopTab === t.key ? 'active' : ''}" onclick="setShopTab('${t.key}')">${t.icon} ${t.label}</button>`;
@@ -789,6 +849,7 @@ function buyItem(category, id) {
   const item = SHOP[category].find(x => x.id === id);
   if (!item) return;
   if (data.auraPoints < item.cost) {
+    sfx('error'); haptic(50);
     toast(rand(BROKE_ROASTS), 'bad');
     return;
   }
@@ -800,6 +861,7 @@ function buyItem(category, id) {
   updateAuraDisplay();
   renderRewards();
   applyEquipped();
+  sfx('buy'); haptic(15);
   toast(rand(REDEEM_HYPE), 'good');
 }
 
@@ -809,7 +871,8 @@ function equipItem(category, id) {
   save();
   renderRewards();
   applyEquipped();
-  toast("equipped 👑 drip upgraded, aura recalibrated ✨", 'good');
+  sfx('tap'); haptic(12);
+  toast("equipped 👑 your drip just leveled up, aura recalibrated fr ✨", 'good');
 }
 
 function claimReward(id) {
@@ -820,7 +883,8 @@ function claimReward(id) {
   data.rewards.push(id);
   save();
   renderRewards();
-  toast(`🏆 ${r.name} CLAIMED — ${r.desc}`, 'good');
+  sfx('buy'); haptic(15);
+  toast(`🏆 ${r.name} CLAIMED — ${r.desc} you filthy grinder`, 'good');
 }
 
 function applyTheme() {
@@ -1024,15 +1088,15 @@ function updateStats() {
   container.innerHTML = `
     <div class="stat-box">
       <div class="stat-num">${todayTaps}/${totalHabits}</div>
-      <div class="stat-label">locked in today</div>
+      <div class="stat-label">tapped today</div>
     </div>
     <div class="stat-box">
       <div class="stat-num">${bestStreak}</div>
-      <div class="stat-label">best streak</div>
+      <div class="stat-label">filthiest streak</div>
     </div>
     <div class="stat-box">
       <div class="stat-num">${totalDays.size}</div>
-      <div class="stat-label">days grinding</div>
+      <div class="stat-label">days not cooked</div>
     </div>
     <div class="stat-box">
       <div class="stat-num text-cyan">🧊${data.freezes ?? 0}</div>
@@ -1120,11 +1184,11 @@ function enterApp() {
   if (!data.packName) {
     const modal = document.getElementById('modalContent');
     modal.innerHTML = `
-      <h3>🧠 WHAT'S YOUR NAME, BESTIE?</h3>
-      <p style="font-size:0.7rem;color:var(--fg2);margin-bottom:12px;">this is your pack name. make it go hard or don't bother 🔥</p>
+      <h3>🧠 WHAT'S YOUR NAME, YOU DEGENERATE?</h3>
+      <p style="font-size:0.7rem;color:var(--fg2);margin-bottom:12px;">this is your pack name. make it go hard af or don't even bother, NPC 🔥💀</p>
       <input type="text" id="packNameInput" placeholder="e.g. RizzLord, GigaChad, BrainRotSlayer..." maxlength="20" autofocus>
       <div class="modal-actions">
-        <button class="btn btn-accent btn-block" onclick="setPackName()">lock in → 🔒</button>
+        <button class="btn btn-accent btn-block" onclick="setPackName()">lock the fuck in → 🔒🔥</button>
       </div>
     `;
     document.getElementById('modalOverlay').style.display = 'flex';
@@ -1137,12 +1201,13 @@ function enterApp() {
 
 function setPackName() {
   const name = document.getElementById('packNameInput')?.value.trim();
-  if (!name) { toast("name yourself, coward 💀", 'bad'); return; }
+  if (!name) { sfx('error'); toast("name yourself you coward, tf am I supposed to call you?? 💀", 'bad'); return; }
   data.packName = name;
   save();
   closeModal();
   activateApp();
-  toast(`welcome to the farm, ${name} 🔥✨ now lock tf in`, 'good');
+  sfx('buy'); haptic(15);
+  toast(`welcome to the farm, ${name} you degenerate 🔥✨ now lock tf in and farm that aura`, 'good');
 }
 
 function activateApp() {
@@ -1174,12 +1239,12 @@ function resetApp() {
   modal.innerHTML = `
     <h3>💀 RESET EVERYTHING?</h3>
     <p style="font-size:0.75rem;color:var(--fg2);margin-bottom:16px;">
-      this will nuke all your data. streaks, aura points, habits — everything gone.<br>
-      are you absolutely sure, you masochist? 🗑️
+      this will nuke ALL your shit. streaks, aura points, habits, shop drip — everything gone forever.<br>
+      are you absolutely fucking sure, you masochist? 🗑️💀
     </p>
     <div class="modal-actions">
-      <button class="btn" onclick="closeModal()">nah im good</button>
-      <button class="btn btn-danger" onclick="confirmReset()">nuke it all 💀</button>
+      <button class="btn" onclick="closeModal()">nah I'm not that stupid</button>
+      <button class="btn btn-danger" onclick="confirmReset()">nuke it all, I'm unhinged 💀</button>
     </div>
   `;
   document.getElementById('modalOverlay').style.display = 'flex';
@@ -1191,7 +1256,8 @@ function confirmReset() {
   save();
   closeModal();
   goLanding();
-  toast("everything nuked. fresh start, you degenerate 💀🔥", 'bad');
+  sfx('untap'); haptic(40);
+  toast("everything nuked to shit. fresh start, zero aura, back to being a nobody 💀🔥", 'bad');
 }
 
 // ─── SIGN IN (FAKE) ───
@@ -1200,14 +1266,14 @@ function showSignIn() {
   modal.innerHTML = `
     <h3>🔒 SIGN IN</h3>
     <p style="font-size:0.7rem;color:var(--fg2);margin-bottom:12px;">
-      lmao this is a local-first PWA bestie. your data lives in your browser.<br>
-      no accounts, no servers, no bullshit. privacy is bussin. 🫡
+      lmao this is a local-first PWA bestie. your data lives in YOUR browser, nobody's spying on your degenerate habits.<br>
+      no accounts, no servers, no corporate bullshit. privacy is bussin fr. 🫡
     </p>
     <p style="font-size:0.7rem;color:var(--accent);margin-bottom:12px;">
-      just hit "Enter your Zone" to start farming aura ✨
+      just hit "Enter your Zone" and start farming aura like the absolute menace you are ✨🔥
     </p>
     <div class="modal-actions">
-      <button class="btn btn-accent btn-block" onclick="closeModal()">got it, no cap 🔥</button>
+      <button class="btn btn-accent btn-block" onclick="closeModal()">got it, now let me farm 🔥</button>
     </div>
   `;
   document.getElementById('modalOverlay').style.display = 'flex';
@@ -1317,7 +1383,8 @@ function initPWA() {
     deferredInstallPrompt = null;
     const banner = document.getElementById('installBanner');
     if (banner) banner.classList.remove('show');
-    toast("installed, you absolute degenerate 🔥 now farm aura even offline ✨", 'good');
+    sfx('buy');
+    toast("INSTALLED 🔥 you're a real one now, farm aura even when you're cooked offline ✨😈", 'good');
   });
 }
 
@@ -1325,16 +1392,17 @@ function triggerInstall() {
   const banner = document.getElementById('installBanner');
   if (!deferredInstallPrompt) {
     // iOS Safari & co. don't support the prompt API — tell em how
-    toast("no auto-install here bestie — hit Share → 'Add to Home Screen' 📲", 'good');
+    toast("no auto-install here bestie — hit Share → 'Add to Home Screen', it's not that hard you NPC 📲", 'good');
     if (banner) banner.classList.remove('show');
     return;
   }
   deferredInstallPrompt.prompt();
   deferredInstallPrompt.userChoice.then(choice => {
     if (choice.outcome === 'accepted') {
-      toast("let's gooo, aura farm is on your home screen 😈🔥", 'good');
+      sfx('buy');
+      toast("LET'S GOOO, aura farm is on your home screen you absolute menace 😈🔥", 'good');
     } else {
-      toast("you really said no to free aura? cooked 💀", 'bad');
+      toast("you really said no to free aura farming?? absolutely cooked behavior 💀😭", 'bad');
     }
     deferredInstallPrompt = null;
     if (banner) banner.classList.remove('show');
@@ -1345,7 +1413,7 @@ function dismissInstall() {
   localStorage.setItem(INSTALL_DISMISS_KEY, '1');
   const banner = document.getElementById('installBanner');
   if (banner) banner.classList.remove('show');
-  toast("aight, install it later when you stop being mid 🙄", 'bad');
+  toast("aight, install it later when you stop being mid af and grow some balls 🙄💀", 'bad');
 }
 
 // ─── OFFLINE MODE WATCH ───
@@ -1356,11 +1424,11 @@ function initOfflineWatch() {
   };
   window.addEventListener('online', () => {
     apply();
-    toast("back online 📡✨ the algorithm missed your aura", 'good');
+    toast("back online 📡✨ the algorithm missed your aura, now get back to grinding you slut", 'good');
   });
   window.addEventListener('offline', () => {
     apply();
-    toast("you're offline 💀 even when you're cooked offline, your aura still farms ✨", 'bad');
+    toast("you're offline 💀 signal died but your aura doesn't, keep farming you disconnected degenerate ✨", 'bad');
   });
   apply(); // set initial state on load
 }
