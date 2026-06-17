@@ -356,6 +356,27 @@ filter:drop-shadow(0 0 6px var(--glow-a));transition:stroke-dashoffset 1s cubic-
 .ring-info{flex:1;min-width:0}
 .ring-info .ri-big{font-size:.85rem;font-weight:700;color:var(--fg)}
 .ring-info .ri-sub{font-size:.65rem;color:var(--fg2);margin-top:3px}
+/* SHARE */
+.share-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0}
+.share-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:11px 8px;border:1px solid var(--border);
+background:var(--bg2);color:var(--fg);border-radius:var(--r);font-family:var(--mono);font-size:.72rem;font-weight:700;
+cursor:pointer;transition:all .2s;touch-action:manipulation}
+.share-btn:active{transform:scale(.96)}
+.share-btn.primary{background:var(--accent);color:var(--bg);border-color:var(--accent);box-shadow:0 0 14px rgba(200,255,0,.25)}
+.share-btn.primary:hover{box-shadow:0 0 22px rgba(200,255,0,.4)}
+.share-btn.alt{border-color:var(--purple);color:var(--purple)}
+.share-preview{width:100%;border-radius:var(--r);border:1px solid var(--border);margin:8px 0;display:block}
+/* HEAD TO HEAD */
+.h2h{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:14px 0}
+.h2h-side{text-align:center;padding:12px 8px;background:rgba(26,26,26,.8);border:1px solid var(--border);border-radius:var(--r)}
+.h2h-side.win{border-color:var(--accent);box-shadow:0 0 16px rgba(200,255,0,.15)}
+.h2h-side.lose{opacity:.65}
+.h2h-av{font-size:2rem}
+.h2h-name{font-size:.7rem;font-weight:700;color:var(--purple);margin:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.h2h-aura{font-size:1.4rem;font-weight:900;color:var(--accent);text-shadow:0 0 8px var(--glow-a)}
+.h2h-lbl{font-size:.5rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px}
+.h2h-vs{font-size:1rem;font-weight:900;color:var(--danger);text-shadow:0 0 10px var(--glow-d)}
+.h2h-stat{font-size:.62rem;color:var(--fg2);margin-top:6px}
 /* CAL STATS */
 .cal-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
 .cal-stat{text-align:center;padding:8px 4px;background:rgba(26,26,26,.6);border-radius:var(--r);border:1px solid var(--border)}
@@ -447,13 +468,14 @@ filter:drop-shadow(0 0 6px var(--glow-a));transition:stroke-dashoffset 1s cubic-
 <!-- TAB: SQUAD -->
 <div class="tab" id="tabSquad">
 <div class="sec-title neon-a">👥 THE SQUAD FEED</div>
-<p class="text-muted mb-1" style="font-size:.68rem;">your grind + the squad's grind, all mixed together. flex or get flexed on 🫡🔥</p>
+<p class="text-muted mb-1" style="font-size:.68rem;">your real wins + a demo squad to vibe with. want real friends in here? challenge them 👇</p>
 <div class="card" style="margin-bottom:8px">
 <div style="font-size:.58rem;color:var(--fg2);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">post a win</div>
 <div class="input-row" style="margin:0">
 <input type="text" id="squadPostInput" placeholder="i just hit a 7-day streak, i'm HIM...">
 <button class="btn btn-accent" onclick="postSquadWin()">flex 🔥</button>
 </div>
+<button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple)" onclick="openChallenge()">⚔️ challenge a friend to beat your aura</button>
 </div>
 <div id="squadFeed"></div>
 <button class="btn btn-block btn-sm mt-1" style="border-color:var(--purple);color:var(--purple);" onclick="renderSquad()">refresh the feed 🔄</button>
@@ -912,7 +934,11 @@ function renderDen(){
     <div class="lvl-bar-wrap" style="margin-top:12px"><div class="lvl-bar" style="width:${pct.toFixed(1)}%"></div></div>
     ${next?`<div class="lvl-next">${data.auraPoints.toLocaleString()} / ${next.min.toLocaleString()} AP → ${next.icon} ${next.name}</div>`:'<div class="lvl-next" style="color:var(--accent)">MAX LEVEL — you absolute legend 👑</div>'}
     </div>
-    <div style="margin:10px 0 14px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ checked in today, go farm':'🤔 daily check-in — how cooked are you?'}</button></div>
+    <div style="margin:10px 0 10px"><button class="btn ${ck?'':'btn-accent glow-btn'} btn-block" onclick="${ck?'':'openCheckIn()'}" ${ck?'disabled':''}>${ck?'✅ checked in today, go farm':'🤔 daily check-in — how cooked are you?'}</button></div>
+    <div class="share-row">
+      <button class="share-btn primary" onclick="openShare()">📸 flex my aura</button>
+      <button class="share-btn alt" onclick="openChallenge()">⚔️ challenge a friend</button>
+    </div>
     ${deferredInstallPrompt?'<div class="install-card" onclick="installPWA()"><div style="font-size:1.2rem;margin-bottom:4px">📲</div><div style="font-size:.75rem;font-weight:700;color:var(--accent)">Install Aura Farm</div><div style="font-size:.6rem;color:var(--fg2)">add to home screen — farm aura offline, no cap 🔥</div></div>':''}`
 }
 
@@ -1406,6 +1432,154 @@ function installPWA(){
   })
 }
 
+// ─── SHARING / VIRALITY ───
+const APP_URL='https://aura-farm-pwa.netlify.app';
+function myStats(){
+  const all=[...(data.habits.starve||[]),...(data.habits.farm||[])];
+  let best=0;all.forEach(h=>{const s=calcStreak(h);if(s>best)best=s});
+  const lvl=getLevel();
+  return{name:data.packName||'Anon',aura:data.auraPoints,level:lvl.idx+1,levelName:lvl.name,icon:lvl.icon,streak:best,
+    avatar:SHOP.avatars.find(a=>a.id===data.equipped?.avatar)?.preview||'🧠'}
+}
+// draw a shareable stat card to canvas, return as a Promise<Blob>
+function drawShareCard(){
+  const s=myStats();const W=1080,H=1080;
+  const cv=document.createElement('canvas');cv.width=W;cv.height=H;const x=cv.getContext('2d');
+  // bg
+  x.fillStyle='#0a0a0a';x.fillRect(0,0,W,H);
+  // subtle scanlines
+  x.fillStyle='rgba(255,255,255,.02)';for(let y=0;y<H;y+=4)x.fillRect(0,y,W,2);
+  // border glow
+  x.strokeStyle='#c8ff00';x.lineWidth=6;x.shadowColor='#c8ff00';x.shadowBlur=30;x.strokeRect(40,40,W-80,H-80);x.shadowBlur=0;
+  x.textAlign='center';
+  // header
+  x.fillStyle='#888';x.font='600 34px monospace';x.fillText('AURA FARM', W/2, 140);
+  // avatar + level icon
+  x.font='150px serif';x.fillText(s.avatar, W/2, 330);
+  // name
+  x.fillStyle='#b388ff';x.font='900 56px monospace';x.fillText(s.name, W/2, 420);
+  // aura big number
+  x.fillStyle='#c8ff00';x.shadowColor='#c8ff00';x.shadowBlur=40;x.font='900 200px monospace';
+  x.fillText(s.aura.toLocaleString(), W/2, 640);x.shadowBlur=0;
+  x.fillStyle='#888';x.font='600 40px monospace';x.fillText('AURA POINTS', W/2, 700);
+  // level + streak row
+  x.fillStyle='#e0e0e0';x.font='700 44px monospace';
+  x.fillText(`${s.icon} Lvl ${s.level} · ${s.levelName}`, W/2, 810);
+  x.fillStyle='#c8ff00';x.font='900 64px monospace';x.fillText(`🔥 ${s.streak} DAY STREAK`, W/2, 900);
+  // footer cta
+  x.fillStyle='#888';x.font='600 32px monospace';x.fillText('starve the brain rot. farm your aura.', W/2, 985);
+  x.fillStyle='#c8ff00';x.font='700 34px monospace';x.fillText('aura-farm-pwa.netlify.app', W/2, 1030);
+  return new Promise(res=>cv.toBlob(res,'image/png'));
+}
+function openShare(){
+  const s=myStats();
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>📸 FLEX YOUR AURA</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:6px;">share your stats. make the NPCs jealous 🔥</p>
+    <div id="sharePreviewWrap" style="text-align:center;padding:20px 0;font-size:.72rem;color:var(--fg2)">generating your flex card... ⏳</div>
+    <div class="share-row">
+      <button class="share-btn primary" onclick="shareCard()">📲 share card</button>
+      <button class="share-btn" onclick="downloadCard()">💾 save image</button>
+    </div>
+    <div class="share-row" style="grid-template-columns:1fr">
+      <button class="share-btn alt" onclick="shareText()">🔗 share link + brag</button>
+    </div>
+    <div class="modal-actions" style="margin-top:10px"><button class="btn btn-block" onclick="closeModal()">close</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  drawShareCard().then(blob=>{
+    shareBlobCache=blob;const url=URL.createObjectURL(blob);
+    const wrap=document.getElementById('sharePreviewWrap');
+    if(wrap)wrap.innerHTML=`<img src="${url}" class="share-preview" alt="your aura card" style="max-width:240px;margin:0 auto">`;
+  })
+}
+let shareBlobCache=null;
+function bragText(){const s=myStats();return `I'm at ${s.aura.toLocaleString()} aura — Lvl ${s.level} ${s.levelName} ${s.icon} with a ${s.streak}-day streak 🔥 think you can beat me? ${APP_URL}`}
+async function shareCard(){
+  if(!shareBlobCache){toast("card still cooking, hold up ⏳",'bad');return}
+  const file=new File([shareBlobCache],'aura-flex.png',{type:'image/png'});
+  const s=myStats();
+  if(navigator.canShare&&navigator.canShare({files:[file]})){
+    try{await navigator.share({files:[file],title:'My Aura Farm stats',text:bragText()});sfx('buy');haptic(15)}catch(e){}
+  }else{downloadCard();toast("sharing images not supported here — saved it instead 💾",'good')}
+}
+function downloadCard(){
+  if(!shareBlobCache)return;
+  const url=URL.createObjectURL(shareBlobCache);const a=document.createElement('a');
+  a.href=url;a.download=`aura-flex-${todayKey()}.png`;a.click();URL.revokeObjectURL(url);
+  sfx('buy');haptic(12);toast("flex card saved 💾 post it everywhere 🔥",'good')
+}
+async function shareText(){
+  const text=bragText();
+  if(navigator.share){try{await navigator.share({title:'Aura Farm',text});sfx('tap');haptic(12);return}catch(e){}}
+  try{await navigator.clipboard.writeText(text);toast("brag + link copied 🔗 paste it anywhere 🔥",'good');sfx('tap')}
+  catch(e){toast("couldn't copy, screenshot it instead 📸",'bad')}
+}
+
+// ─── CHALLENGE A FRIEND ───
+function genChallengeLink(){
+  const s=myStats();
+  const payload={n:s.name,a:s.aura,l:s.level,ln:s.levelName,i:s.icon,s:s.streak,av:s.avatar};
+  const enc=btoa(encodeURIComponent(JSON.stringify(payload)));
+  return `${APP_URL}/#vs=${enc}`;
+}
+function openChallenge(){
+  const link=genChallengeLink();
+  const m=document.getElementById('modalContent');
+  m.innerHTML=`<h3>⚔️ CHALLENGE A FRIEND</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:10px;">send this link. when they open it they'll see YOUR stats vs THEIRS — head to head. winner takes the bragging rights 🏆</p>
+    <input type="text" id="challengeLink" readonly value="${link}" style="width:100%;font-family:var(--mono);font-size:.62rem;padding:10px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);color:var(--accent);margin-bottom:10px">
+    <div class="share-row">
+      <button class="share-btn primary" onclick="shareChallenge()">📲 send challenge</button>
+      <button class="share-btn" onclick="copyChallenge()">🔗 copy link</button>
+    </div>
+    <div class="modal-actions" style="margin-top:10px"><button class="btn btn-block" onclick="closeModal()">close</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show')
+}
+async function shareChallenge(){
+  const link=genChallengeLink();const s=myStats();
+  const text=`I challenge you on Aura Farm 😤 I'm at ${s.aura.toLocaleString()} aura with a ${s.streak}-day streak. beat me if you can 🔥`;
+  if(navigator.share){try{await navigator.share({title:'Aura Farm Challenge',text,url:link});sfx('buy');haptic(15);return}catch(e){}}
+  copyChallenge()
+}
+async function copyChallenge(){
+  const link=genChallengeLink();
+  try{await navigator.clipboard.writeText(link);toast("challenge link copied 🔗 go humble someone 😤",'good');sfx('tap');haptic(12)}
+  catch(e){const inp=document.getElementById('challengeLink');if(inp){inp.select();document.execCommand('copy');toast("link copied 🔗",'good')}}
+}
+// when opened via a challenge link, show head-to-head
+function checkChallengeLink(){
+  const hash=location.hash||'';
+  const m=hash.match(/vs=([^&]+)/);if(!m)return;
+  let opp;try{opp=JSON.parse(decodeURIComponent(atob(m[1])))}catch(e){return}
+  history.replaceState(null,'',location.pathname);
+  setTimeout(()=>showHeadToHead(opp),900)
+}
+function showHeadToHead(opp){
+  const me=myStats();
+  const m=document.getElementById('modalContent');
+  const iWin=me.aura>=opp.a;
+  const auraDiff=Math.abs(me.aura-opp.a);
+  const verdict=iWin?`you're ahead by ${auraDiff.toLocaleString()} aura 👑 don't get comfortable`:`${escHtml(opp.n)} is beating you by ${auraDiff.toLocaleString()} aura 💀 lock tf in and catch up`;
+  m.innerHTML=`<h3>⚔️ ${escHtml(opp.n)} CHALLENGED YOU</h3>
+    <p style="font-size:.68rem;color:var(--fg2);margin-bottom:4px;">head to head. who's got more aura? 👀</p>
+    <div class="h2h">
+      <div class="h2h-side ${iWin?'win':'lose'}"><div class="h2h-av">${me.avatar}</div><div class="h2h-name">${escHtml(me.name)} (you)</div>
+        <div class="h2h-aura">${me.aura.toLocaleString()}</div><div class="h2h-lbl">aura</div>
+        <div class="h2h-stat">${me.icon} Lvl ${me.level} · 🔥${me.streak}d</div></div>
+      <div class="h2h-vs">VS</div>
+      <div class="h2h-side ${!iWin?'win':'lose'}"><div class="h2h-av">${opp.av||'🧠'}</div><div class="h2h-name">${escHtml(opp.n)}</div>
+        <div class="h2h-aura">${(opp.a||0).toLocaleString()}</div><div class="h2h-lbl">aura</div>
+        <div class="h2h-stat">${opp.i||'🫥'} Lvl ${opp.l||1} · 🔥${opp.s||0}d</div></div>
+    </div>
+    <div style="font-size:.74rem;text-align:center;margin:10px 0;color:${iWin?'var(--accent)':'var(--danger)'}">${verdict}</div>
+    <div class="share-row"><button class="share-btn primary" onclick="closeModal();switchTabById('tabFarm')">🔥 farm more aura</button>
+      <button class="share-btn alt" onclick="closeModal();openChallenge()">⚔️ challenge them back</button></div>`;
+  document.getElementById('modalOverlay').classList.add('show');
+  if(iWin){spawnConfetti(30);launchConfetti()}
+  sfx(iWin?'buy':'error');haptic(20)
+}
+function switchTabById(id){const btn=document.querySelector(`.nav-btn[data-tab="${id}"]`);if(btn)switchTab(id,btn)}
+
 // ─── RECALC STREAKS ───
 function recalcAll(){
   const broken=[];
@@ -1429,6 +1603,7 @@ function init(){
 
   if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
   initConfetti();
+  checkChallengeLink();
 
   document.getElementById('commitInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')addCommit()});
   document.getElementById('squadPostInput')?.addEventListener('keydown',e=>{if(e.key==='Enter')postSquadWin()});

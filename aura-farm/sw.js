@@ -4,7 +4,7 @@
    you're cooked with no signal 📡💀✨
    ═══════════════════════════════════════════════════ */
 
-const CACHE_NAME = 'aura-farm-v16';
+const CACHE_NAME = 'aura-farm-v17';
 
 const ASSETS = [
   './',
