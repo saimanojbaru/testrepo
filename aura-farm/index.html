@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Starve that fucking Brain Rot. Farm your Aura, no cap.">
+  <title>Aura Farm</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header class="header">
+    <div class="header-left">
+      <span class="header-logo glitch">🧠</span>
+      <div>
+        <div class="header-title">AURA FARM</div>
+        <div class="header-version">v1.0 — brain rot slayer</div>
+      </div>
+    </div>
+    <div class="header-right" id="headerRight">
+      <button class="btn btn-sm" id="btnSignIn" onclick="showSignIn()">sign in</button>
+    </div>
+  </header>
+
+  <!-- ═══════════ TOAST CONTAINER ═══════════ -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ═══════════ LANDING PAGE ═══════════ -->
+  <div class="screen active" id="screenLanding">
+    <div class="container">
+      <div class="landing-hero">
+        <pre class="ascii-art">
+    ╔══════════════════════════════════╗
+    ║   🧠  A U R A   F A R M  🧠    ║
+    ║──────────────────────────────────║
+    ║  STARVE THE BRAIN ROT 💀        ║
+    ║  FARM YOUR AURA ✨               ║
+    ║                                  ║
+    ║  > no cap, you degenerate        ║
+    ╚══════════════════════════════════╝
+        </pre>
+        <p class="landing-tagline">
+          <em>Starve that fucking Brain Rot.</em><br>
+          <strong>Farm your Aura, no cap.</strong> 🔥
+        </p>
+        <button class="btn btn-accent btn-block mt-2" onclick="enterApp()" style="font-size:0.9rem; padding:14px;">
+          Enter your Zone → 👀
+        </button>
+      </div>
+
+      <!-- Landing Demo Sections -->
+      <div class="section-title">💀 // STARVE THE BRAIN ROT</div>
+      <div class="code-block" data-lang="brain-rot">
+<span class="comment">// daily taps to quit your degenerate habits</span>
+<span class="comment">// starve that brain rot, you absolute goon</span>
+
+<span class="keyword">const</span> <span class="fn">brainRot</span> = [
+  <span class="string">"📱 Doomscrolling"</span>,     <span class="comment">// cooked af</span>
+  <span class="string">"🍆 Gooning"</span>,            <span class="comment">// down astronomical</span>
+  <span class="string">"🛏️ Rotting in Bed"</span>,     <span class="comment">// npc behavior</span>
+  <span class="string">"🍔 Binge Eating"</span>,       <span class="comment">// emotional damage</span>
+  <span class="string">"🚬 Vaping"</span>,             <span class="comment">// lungs are mid</span>
+];
+
+<span class="keyword">function</span> <span class="fn">starve</span>() {
+  <span class="keyword">return</span> <span class="string">"lock the fuck in"</span>;
+}
+      </div>
+
+      <div class="section-title">✨ // FARM THE AURA</div>
+      <div class="code-block" data-lang="aura">
+<span class="comment">// stack those aura points king/queen</span>
+<span class="comment">// you absolute slut for progress</span>
+
+<span class="keyword">const</span> <span class="fn">auraHabits</span> = [
+  <span class="string">"🏋️ Gym (ate that shit)"</span>,
+  <span class="string">"📖 Reading (big brain energy)"</span>,
+  <span class="string">"🧊 Cold Shower (gigachad)"</span>,
+  <span class="string">"🧘 Mewing (jawline arc)"</span>,
+  <span class="string">"💤 8hr Sleep (recovery king)"</span>,
+];
+
+<span class="keyword">function</span> <span class="fn">farm</span>() {
+  <span class="keyword">return</span> <span class="string">"aura += 9000"</span>;
+}
+      </div>
+
+      <div class="section-title">👥 // THE SQUAD</div>
+      <div class="card">
+        <div class="squad-item">
+          <span class="squad-avatar">💀</span>
+          <div>
+            <div><span class="squad-name">xX_RizzLord_Xx</span> <span class="squad-time">2m ago</span></div>
+            <div class="squad-msg">hit a 30 day no-doomscroll streak, im literally unhinged rn 🔥</div>
+          </div>
+        </div>
+        <div class="squad-item">
+          <span class="squad-avatar">👑</span>
+          <div>
+            <div><span class="squad-name">GigaChadSophie</span> <span class="squad-time">15m ago</span></div>
+            <div class="squad-msg">cold shower at 5am, my aura is ungodly high rn 🧊✨</div>
+          </div>
+        </div>
+        <div class="squad-item">
+          <span class="squad-avatar">🍑</span>
+          <div>
+            <div><span class="squad-name">NPC_Slayer_420</span> <span class="squad-time">1h ago</span></div>
+            <div class="squad-msg">relapsed on doomscrolling for 3hrs... cooked beyond repair 💀</div>
+          </div>
+        </div>
+        <div class="squad-item">
+          <span class="squad-avatar">🦊</span>
+          <div>
+            <div><span class="squad-name">MewingQueen</span> <span class="squad-time">3h ago</span></div>
+            <div class="squad-msg">7 day gym streak, these gains are literally bussin 🏋️</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">🏆 // REWARDS</div>
+      <div class="card">
+        <div class="reward-item unlocked">
+          <span class="reward-icon">🔓</span>
+          <div class="reward-info">
+            <div class="reward-name">Aura Initiate</div>
+            <div class="reward-desc">reached 100 aura points, you're not a total npc</div>
+          </div>
+          <span class="reward-cost">100 AP</span>
+        </div>
+        <div class="reward-item locked">
+          <span class="reward-icon">🔒</span>
+          <div class="reward-info">
+            <div class="reward-name">Rizz Certified</div>
+            <div class="reward-desc">500 aura — your rizz is no longer hypothetical</div>
+          </div>
+          <span class="reward-cost">500 AP</span>
+        </div>
+        <div class="reward-item locked">
+          <span class="reward-icon">🔒</span>
+          <div class="reward-info">
+            <div class="reward-name">Sigma Overlord</div>
+            <div class="reward-desc">2000 aura — you've ascended past NPC existence</div>
+          </div>
+          <span class="reward-cost">2K AP</span>
+        </div>
+      </div>
+
+      <div class="section-title">📅 // CALENDAR</div>
+      <div class="card">
+        <div id="landingCalendar"></div>
+      </div>
+
+      <p class="text-center text-muted mt-2 mb-2" style="font-size:0.65rem;">
+        built different. no frameworks. no bullshit. pure vanilla. 🫡<br>
+        © 2026 aura farm — lock in or get lost
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════════ MAIN APP ═══════════ -->
+  <div class="screen" id="screenApp">
+    <div class="container">
+
+      <!-- Greeting -->
+      <div class="greeting" id="appGreeting"></div>
+
+      <!-- Aura Points -->
+      <div class="aura-display">
+        <div class="aura-number" id="auraNumber">0</div>
+        <div class="aura-label">aura points</div>
+        <div id="auraChangeSlot"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row" id="statsRow"></div>
+
+      <!-- Tab: Den (Home) -->
+      <div class="screen active" id="tabDen">
+        <div class="section-title">💀 // STARVE THE BRAIN ROT</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i resisted today, you degenerate" 🚫</p>
+        <div id="brainRotList"></div>
+        <button class="btn btn-danger btn-block btn-sm mt-1" onclick="openAddHabit('starve')">
+          + add brain rot to starve 💀
+        </button>
+
+        <div class="section-title mt-2">✨ // FARM THE AURA</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">tap = "i did this today, im that bitch" ✅</p>
+        <div id="auraFarmList"></div>
+        <button class="btn btn-block btn-sm mt-1" style="border-color:var(--accent);color:var(--accent);" onclick="openAddHabit('farm')">
+          + add aura habit ✨
+        </button>
+      </div>
+
+      <!-- Tab: Quit (Brain Rot Focus) -->
+      <div class="screen" id="tabQuit">
+        <div class="section-title">🚫 // QUIT TIMER — BRAIN ROT DETOX</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">track how long you've been starving each brain rot 💀</p>
+        <div id="quitTimerList"></div>
+      </div>
+
+      <!-- Tab: Commit -->
+      <div class="screen" id="tabCommit">
+        <div class="section-title">📝 // DAILY COMMIT LOG</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">what did you lock in today? journal it, no cap ✍️</p>
+        <div class="input-row">
+          <input type="text" id="commitInput" placeholder="i locked in because...">
+          <button class="btn btn-accent" onclick="addCommit()">log</button>
+        </div>
+        <div id="commitLog"></div>
+      </div>
+
+      <!-- Tab: Reward -->
+      <div class="screen" id="tabReward">
+        <div class="section-title">🏆 // REWARDS & RIZZ BOOSTERS</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">stack aura, unlock rewards, glow up your fuckability ✨</p>
+        <div id="rewardsList"></div>
+      </div>
+
+      <!-- Tab: Calendar -->
+      <div class="screen" id="tabCalendar">
+        <div class="section-title">📅 // YOUR GRIND CALENDAR</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">green = you locked in. empty = you were cooked 💀</p>
+        <div class="card">
+          <div class="flex-between mb-1">
+            <button class="btn btn-sm" onclick="calNav(-1)">← prev</button>
+            <span id="calMonthLabel" style="font-size:0.75rem; color:var(--accent);"></span>
+            <button class="btn btn-sm" onclick="calNav(1)">next →</button>
+          </div>
+          <div id="appCalendar"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Squad -->
+      <div class="screen" id="tabSquad">
+        <div class="section-title">👥 // THE SQUAD FEED</div>
+        <p class="text-muted mb-1" style="font-size:0.7rem;">your fellow degens grinding it out 🫡</p>
+        <div class="card" id="squadFeed"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════ BOTTOM NAV ═══════════ -->
+  <nav class="bottom-nav" id="bottomNav" style="display:none;">
+    <button class="nav-item active" data-tab="tabDen" onclick="switchTab('tabDen',this)">
+      <span class="nav-icon">🏠</span> Den
+    </button>
+    <button class="nav-item" data-tab="tabQuit" onclick="switchTab('tabQuit',this)">
+      <span class="nav-icon">🚫</span> Quit
+    </button>
+    <button class="nav-item" data-tab="tabCommit" onclick="switchTab('tabCommit',this)">
+      <span class="nav-icon">📝</span> Commit
+    </button>
+    <button class="nav-item" data-tab="tabReward" onclick="switchTab('tabReward',this)">
+      <span class="nav-icon">🏆</span> Reward
+    </button>
+    <button class="nav-item" data-tab="tabCalendar" onclick="switchTab('tabCalendar',this)">
+      <span class="nav-icon">📅</span> Cal
+    </button>
+    <button class="nav-item" data-tab="tabSquad" onclick="switchTab('tabSquad',this)">
+      <span class="nav-icon">👥</span> Squad
+    </button>
+  </nav>
+
+  <!-- ═══════════ MODAL ═══════════ -->
+  <div id="modalOverlay" class="modal-overlay" style="display:none;" onclick="closeModal(event)">
+    <div class="modal" id="modalContent"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
