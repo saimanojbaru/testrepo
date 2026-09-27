@@ -5,7 +5,7 @@ import { events } from './Events';
 import { GameState, StateMachine } from './GameState';
 import { AudioBus } from '../audio/AudioBus';
 import { buildLevel, type LevelRuntime } from '../world/LevelBuilder';
-import { setupLighting } from '../world/Lighting';
+import { applyLightTheme, setupLighting, type OfficeLights } from '../world/Lighting';
 import { PlayerController } from '../player/PlayerController';
 import { PlayerNoise } from '../player/PlayerNoise';
 import { Interactor } from '../player/Interactor';
@@ -25,9 +25,7 @@ import { TouchControls, isTouchDevice } from '../ui/TouchControls';
 import { getNpcDef, getNpcLook } from '../data/npcs';
 import { STATE_BARKS, pick } from '../data/dialogueLines';
 import type { EncounterContext, Ending, ExcuseDef, LevelData, NPCDef, ScriptedBeat } from '../data/types';
-import { level1 } from '../data/levels/level1_lunch';
-import { level2 } from '../data/levels/level2_crush';
-import { level3 } from '../data/levels/level3_cooker';
+import { LEVELS } from '../data/levels';
 
 // Bootstraps renderer, scene, camera and every system, and runs the top-level
 // state machine: MENU -> (intro) -> PLAYING <-> DIALOGUE -> ESCAPED | CAUGHT.
@@ -54,6 +52,12 @@ const TUNING = {
   encounterCooldown: 3,
   maxCharisma: 2,
   hydrateSeconds: 4,
+  lookBusySeconds: 5,
+  objectiveReach: 1.1,
+  /** Vision range multipliers by theme; a power cut stacks on top. */
+  rangeMulTheme: { day: 1, festival: 1, night: 0.8, theatre: 0.7 } as Record<string, number>,
+  powerCutRangeMul: 0.5,
+  watcherPostReach: 1.5,
   hydrateReach: 2.2,
   jamRadius: 20,
   jamSeconds: 10,
@@ -68,7 +72,7 @@ const TUNING = {
   dialogueCamLerp: 4,
 };
 
-export const LEVELS: LevelData[] = [level1, level2, level3];
+export { LEVELS };
 
 type CaughtReason = NonNullable<RunSummary['caughtReason']>;
 
@@ -92,7 +96,13 @@ interface Run {
   favors: number;
   deadline: number | null;
   allHandsUntil: number;
-  hydratingUntil: number;
+  /** "Look busy" cover (watercooler, premix chai, typing furiously): active until, and only near, the anchor. */
+  coverUntil: number;
+  coverAnchor: { x: number; z: number };
+  objectiveIdx: number;
+  objectiveMarker: THREE.Mesh | null;
+  powerCutUntil: number;
+  fireAlarm: boolean;
   probe: { npc: NPC; startExitDist: number } | null;
   elevatorCallTimer: number;
   encounterCooldownUntil: number;
@@ -123,6 +133,7 @@ export class Game {
   private introPending = false;
   private readonly debug: boolean;
   private readonly isTouch = isTouchDevice();
+  private lights!: OfficeLights;
   private touch: TouchControls | null = null;
 
   constructor(private readonly container: HTMLElement) {
@@ -135,7 +146,7 @@ export class Game {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, this.isTouch ? TUNING.maxPixelRatioTouch : TUNING.maxPixelRatio));
     container.append(this.renderer.domElement);
     this.camera = new THREE.PerspectiveCamera(TUNING.fov, 1, TUNING.near, TUNING.far);
-    setupLighting(this.scene);
+    this.lights = setupLighting(this.scene);
     this.resize();
     window.addEventListener('resize', () => this.resize());
 
@@ -207,7 +218,10 @@ export class Game {
     const level = buildLevel(data);
     this.scene.add(level.root);
     const player = new PlayerController(level.colliders);
-    player.reset(level.spawn.x, level.spawn.z, level.spawn.yaw);
+    // Face the first objective if there is one, otherwise the exit.
+    const firstObj = data.objectives?.[0];
+    const face = firstObj ? level.nav.cellCenter(...firstObj.cell) : null;
+    player.reset(level.spawn.x, level.spawn.z, face ? Math.atan2(-(face.x - level.spawn.x), -(face.z - level.spawn.z)) : level.spawn.yaw);
     const noise = new PlayerNoise((kind) => this.audio.footstep(kind));
     player.onBump = () => {
       this.audio.bump();
@@ -216,7 +230,7 @@ export class Game {
 
     const npcs: NPC[] = [];
     const world: NPCWorld = {
-      time: 0, player, colliders: level.colliders, nav: level.nav, npcs, fovMul: 1, playerHydrating: false,
+      time: 0, player, colliders: level.colliders, nav: level.nav, npcs, fovMul: 1, rangeMul: 1, fillMul: 1, playerHydrating: false,
       canEscalate: (npc) => this.canEscalate(npc),
       startEncounter: (npc) => this.startEncounter(npc, {}),
       caught: (npc, reason) => this.endCaught(npc.def, reason),
@@ -232,7 +246,7 @@ export class Game {
       data, level, player, noise, hearing, director, world, npcs,
       time: 0, beatTime: 0, firedBeats: new Set(), charisma: 0, log: [], dialogues: 0,
       bossPassedCorporate: false, absurdSuccesses: [], favors: data.favors ?? 0, deadline: null,
-      allHandsUntil: -1, hydratingUntil: -1, probe: null, elevatorCallTimer: -1, encounterCooldownUntil: 0,
+      allHandsUntil: -1, coverUntil: -1, coverAnchor: { x: 0, z: 0 }, objectiveIdx: 0, objectiveMarker: null, powerCutUntil: -1, fireAlarm: false, probe: null, elevatorCallTimer: -1, encounterCooldownUntil: 0,
       fading: false, repBefore: this.memory.reputationLabel(), ended: false,
     };
     this.run = run;
@@ -251,7 +265,9 @@ export class Game {
       extra += `${extra ? ' ' : ''}You have been caught ${this.memory.timesCaught} time${this.memory.timesCaught > 1 ? 's' : ''}. Every excuse costs a little more.`;
     }
 
-    this.hud.setObjective(data.name, data.goalText);
+    applyLightTheme(this.lights, level.theme, false);
+    this.setupObjectiveMarker(run);
+    this.hud.setObjective(data.name, this.goalText(run));
     this.hud.clearToasts();
     this.hud.show(true);
     this.vignette.reset();
@@ -367,7 +383,7 @@ export class Game {
     const p = run.player;
     p.update(dt, this.input.move(), this.input.crouchToggle);
     this.pushPlayerFromNpcs(run);
-    run.noise.update(dt, p);
+    run.noise.update(dt, p, this.noiseDamp(run));
     p.applyCamera(this.camera);
     this.interactor.update(this.camera, run.level.colliders);
     if (this.input.interact) this.interactor.tryUse();
@@ -379,7 +395,13 @@ export class Game {
     }
 
     w.fovMul = run.beatTime < run.allHandsUntil ? TUNING.allHandsFovMul : 1;
-    w.playerHydrating = run.beatTime < run.hydratingUntil && run.level.coolers.some((c) => Math.hypot(c.x - p.x, c.z - p.z) < TUNING.hydrateReach);
+    const powerCut = run.beatTime < run.powerCutUntil;
+    if (run.powerCutUntil > 0 && !powerCut) this.endPowerCut(run);
+    w.rangeMul = (TUNING.rangeMulTheme[run.level.theme] ?? 1) * (powerCut ? TUNING.powerCutRangeMul : 1);
+    w.fillMul = this.watcherActive(run) ? run.data.watcher!.fillMul : 1;
+    w.playerHydrating = run.beatTime < run.coverUntil && Math.hypot(run.coverAnchor.x - p.x, run.coverAnchor.z - p.z) < TUNING.hydrateReach;
+    this.updateObjectives(run);
+    this.updateLeavers(run);
     for (const npc of [...run.npcs]) {
       if (!this.state.is(GameState.PLAYING)) break;
       updateNPC(npc, dt, w);
@@ -525,7 +547,10 @@ export class Game {
     if (this.memory.heardAnything(npc.def.id)) ctx.add('heard_before');
     if (opts.voluntary) ctx.add('voluntary');
     if (opts.probeViolation) ctx.add('probe_violation');
-    const facts: EncounterFacts = { npc: npc.def, contexts: ctx, charisma: run.charisma, priorStops: npc.encounters, forced: run.data.forceUsedExcuses, levelModifier: run.data.suspicionModifier };
+    const levelModifiers = [];
+    if (run.data.suspicionModifier) levelModifiers.push(run.data.suspicionModifier);
+    if (this.watcherActive(run)) levelModifiers.push({ label: run.data.watcher!.label, value: run.data.watcher!.value });
+    const facts: EncounterFacts = { npc: npc.def, contexts: ctx, charisma: run.charisma, priorStops: npc.encounters, forced: run.data.forceUsedExcuses, levelModifiers };
 
     for (const o of run.npcs) if (o !== npc && o.state === NPCState.CONFRONT) o.setState(NPCState.RETURN);
     npc.setState(NPCState.CONFRONT);
@@ -658,15 +683,29 @@ export class Game {
       this.interactor.items.push({
         object: cool.group,
         highlight: cool.materials,
-        label: () => (run.beatTime < run.hydratingUntil ? 'Hydrating…' : '[E] Hydrate (look busy)'),
+        label: () => (run.beatTime < run.coverUntil ? 'Hydrating…' : '[E] Hydrate (look busy)'),
         use: () => {
-          if (run.beatTime < run.hydratingUntil) return;
-          run.hydratingUntil = run.beatTime + TUNING.hydrateSeconds;
+          if (run.beatTime < run.coverUntil) return;
+          this.startCover(run, cool.x, cool.z, TUNING.hydrateSeconds);
           this.audio.sip();
           this.hud.toast('Nobody suspects a person drinking water. Stay hydrated, the posters say.');
         },
       });
     }
+    for (const v of level.vendings) {
+      this.interactor.items.push({
+        object: v.group,
+        highlight: v.materials,
+        label: () => (run.beatTime < run.coverUntil ? 'Sipping premix…' : '[E] Premix chai (look busy)'),
+        use: () => {
+          if (run.beatTime < run.coverUntil) return;
+          this.startCover(run, v.x, v.z, TUNING.hydrateSeconds);
+          this.audio.sip();
+          this.hud.toast('Tea, coffee and soup all taste the same. You sip slowly. Standing at the machine is an alibi.');
+        },
+      });
+    }
+    this.addLaptop(run);
     for (const el of level.elevators) {
       this.interactor.items.push({
         object: el.group,
@@ -721,10 +760,11 @@ export class Game {
       case 'phoneRing': {
         const npc = npcById(pl.npc);
         if (!npc) break;
-        this.audio.phoneRing();
+        // `silent`: no ring and no toast, just someone absorbed in a screen (or asleep on one).
+        if (!pl.silent) this.audio.phoneRing();
         npc.distractedUntil = run.beatTime + (pl.duration ?? 8);
-        window.setTimeout(() => { if (this.run === run) npc.say(pl.line ?? 'Hello? …Hello?', pl.duration ?? 8); }, 1400);
-        this.hud.toast(`${npc.def.name.split(' ')[0]}'s phone is ringing. They turn away to answer.`);
+        window.setTimeout(() => { if (this.run === run) npc.say(pl.line ?? 'Hello? …Hello?', Math.min(pl.duration ?? 8, 8)); }, pl.silent ? 0 : 1400);
+        if (!pl.silent) this.hud.toast(`${npc.def.name.split(' ')[0]}'s phone is ringing. They turn away to answer.`);
         break;
       }
       case 'lockDoor': {
@@ -748,13 +788,184 @@ export class Game {
       case 'allHands': {
         run.allHandsUntil = run.beatTime + (pl.duration ?? 5);
         this.audio.allHandsChime();
-        this.hud.toast('TOWN HALL REMINDER on every monitor. Every head turns. Everyone sees twice as much.', 5);
+        this.hud.toast(pl.text ?? 'TOWN HALL REMINDER on every monitor. Every head turns. Everyone sees twice as much.', 5);
         for (const n of run.npcs.slice(0, 3)) {
           const p = run.player;
           if (Math.hypot(n.x - p.x, n.z - p.z) < TUNING.allHandsBarkRange) n.say(pick(STATE_BARKS.allHands), 2);
         }
         break;
       }
+      case 'powerCut':
+        run.powerCutUntil = run.beatTime + (pl.duration ?? 20);
+        applyLightTheme(this.lights, run.level.theme, true);
+        this.setGlow(run, false);
+        this.audio.powerCut();
+        this.hud.toast(pl.text ?? 'POWER CUT. The UPS clicks. Emergency lights only. Nobody can see anything.', 5);
+        break;
+      case 'gather': {
+        const target = run.level.nav.cellCenter(...(pl.cell as [number, number]));
+        for (const n of run.npcs) {
+          if (pl.npcs && !pl.npcs.includes(n.def.id)) continue;
+          startDistraction(n, target, pl.duration ?? 15);
+        }
+        if (pl.text) this.hud.toast(pl.text, 5);
+        break;
+      }
+      case 'heat':
+        for (const n of run.npcs) {
+          n.awareness = Math.min(0.9, n.awareness + (pl.amount ?? 0.3));
+          n.lastHeard = { x: run.player.x, z: run.player.z };
+          n.lastStimulus = run.world.time;
+        }
+        if (pl.text) this.hud.toast(pl.text, 5);
+        break;
+      case 'despawn': {
+        const npc = npcById(pl.npc);
+        if (!npc) break;
+        if (pl.text) npc.say(pl.text, 3);
+        npc.leaving = true;
+        npc.setPatrol([run.level.exitCenter]);
+        npc.setState(NPCState.PATROL);
+        if (pl.toast) this.hud.toast(pl.toast, 5);
+        break;
+      }
+      case 'toast':
+        this.hud.toast(pl.text, pl.duration ?? 4);
+        break;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Chapter mechanics
+  // -------------------------------------------------------------------------
+
+  private startCover(run: Run, x: number, z: number, seconds: number): void {
+    run.coverUntil = run.beatTime + seconds;
+    run.coverAnchor = { x, z };
+  }
+
+  /** A laptop on your own desk: press E to look busy. */
+  private addLaptop(run: Run): void {
+    const { level } = run;
+    const nav = level.nav;
+    const [sc, sr] = nav.worldToCell(level.spawn.x, level.spawn.z);
+    let deskCell: [number, number] | null = null;
+    for (const [dc, dr] of [[0, -1], [0, 1], [-1, 0], [1, 0]]) if (level.cellAt(sc + dc, sr + dr) === 'D') { deskCell = [sc + dc, sr + dr]; break; }
+    if (!deskCell) return;
+    const c = nav.cellCenter(...deskCell);
+    const laptop = new THREE.Group();
+    const mat = new THREE.MeshLambertMaterial({ color: 0x3a3d44 });
+    const base = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.02, 0.24), mat);
+    const lid = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.22, 0.015), mat);
+    lid.position.set(0, 0.11, -0.12);
+    lid.rotation.x = -0.25;
+    const screen = new THREE.Mesh(new THREE.PlaneGeometry(0.3, 0.18), new THREE.MeshBasicMaterial({ color: 0x9fd0ff }));
+    screen.position.set(0, 0.11, -0.11);
+    screen.rotation.x = -0.25;
+    laptop.add(base, lid, screen);
+    // Place it on the desk edge nearest your chair.
+    laptop.position.set(c.x + (level.spawn.x - c.x) * 0.25, 0.75, c.z + (level.spawn.z - c.z) * 0.25);
+    laptop.rotation.y = Math.atan2(-(level.spawn.x - c.x), -(level.spawn.z - c.z)) + Math.PI;
+    level.root.add(laptop);
+    this.interactor.items.push({
+      object: laptop,
+      highlight: [mat],
+      label: () => (run.beatTime < run.coverUntil ? 'Typing furiously…' : '[E] Look busy (type furiously)'),
+      use: () => {
+        if (run.beatTime < run.coverUntil) return;
+        this.startCover(run, laptop.position.x, laptop.position.z, TUNING.lookBusySeconds);
+        this.audio.footstep('crouch');
+        this.hud.toast('You open three Jira tabs and frown at them. Nobody interrupts a frowning person.');
+      },
+    });
+  }
+
+  private watcherActive(run: Run): boolean {
+    const w = run.data.watcher;
+    if (!w) return false;
+    const npc = run.npcs.find((n) => n.def.id === w.npc);
+    return !!npc && !npc.leaving && Math.hypot(npc.home.x - npc.x, npc.home.z - npc.z) < TUNING.watcherPostReach;
+  }
+
+  private noiseDamp(run: Run): number {
+    let k = 1;
+    for (const d of run.level.dampers) {
+      if (Math.hypot(d.x - run.player.x, d.z - run.player.z) < d.radius) k = Math.min(k, d.factor);
+    }
+    return k;
+  }
+
+  private setGlow(run: Run, on: boolean): void {
+    const glow = run.level.root.getObjectByName('kit-glow');
+    if (glow) glow.visible = on;
+    // The ceiling is unlit (it would read as grime otherwise), so it needs dimming by hand.
+    const ceiling = run.level.root.getObjectByName('ceiling') as THREE.Mesh | undefined;
+    const cm = ceiling?.material as THREE.MeshBasicMaterial | undefined;
+    if (cm) {
+      cm.userData.base ??= cm.color.getHex();
+      cm.color.setHex(on ? cm.userData.base : 0x2a2c30);
+    }
+    run.level.screenMaterial.color.setHex(on ? 0x8fb4d8 : 0x111418);
+  }
+
+  private endPowerCut(run: Run): void {
+    run.powerCutUntil = -1;
+    applyLightTheme(this.lights, run.level.theme, false);
+    this.setGlow(run, true);
+    this.hud.toast('Power is back. Every monitor boots up. Every head looks up.', 4);
+  }
+
+  private setupObjectiveMarker(run: Run): void {
+    const objs = run.data.objectives;
+    if (!objs?.length) return;
+    const marker = new THREE.Mesh(new THREE.OctahedronGeometry(0.18), new THREE.MeshBasicMaterial({ color: 0xffd166, transparent: true, opacity: 0.85 }));
+    marker.renderOrder = 5;
+    run.level.root.add(marker);
+    run.objectiveMarker = marker;
+    this.placeMarker(run);
+  }
+
+  private placeMarker(run: Run): void {
+    const objs = run.data.objectives ?? [];
+    const m = run.objectiveMarker;
+    if (!m) return;
+    const o = objs[run.objectiveIdx];
+    m.visible = !!o;
+    if (o) {
+      const c = run.level.nav.cellCenter(...o.cell);
+      m.position.set(c.x, 1.3, c.z);
+    }
+  }
+
+  private updateObjectives(run: Run): void {
+    const objs = run.data.objectives;
+    if (!objs || run.objectiveIdx >= objs.length) return;
+    const m = run.objectiveMarker;
+    if (m) { m.rotation.y += 0.04; m.position.y = 1.3 + Math.sin(run.beatTime * 3) * 0.08; }
+    const o = objs[run.objectiveIdx];
+    const c = run.level.nav.cellCenter(...o.cell);
+    if (Math.hypot(c.x - run.player.x, c.z - run.player.z) > TUNING.objectiveReach) return;
+    run.objectiveIdx++;
+    this.audio.uiSelect();
+    this.hud.toast(o.done, 4);
+    this.placeMarker(run);
+    this.hud.setObjective(run.data.name, this.goalText(run));
+  }
+
+  private goalText(run: Run): string {
+    const o = run.data.objectives?.[run.objectiveIdx];
+    return o ? `${o.label}, then: ${run.data.goalText}` : run.data.goalText;
+  }
+
+  /** NPCs sent home by a 'despawn' beat vanish when they reach the exit. */
+  private updateLeavers(run: Run): void {
+    for (const n of [...run.npcs]) {
+      if (!n.leaving) continue;
+      if (Math.hypot(n.x - run.level.exitCenter.x, n.z - run.level.exitCenter.z) > 2.2) continue;
+      this.scene.remove(n.group, n.cone);
+      n.dispose();
+      run.npcs.splice(run.npcs.indexOf(n), 1);
+      this.interactor.items = this.interactor.items.filter((i) => i.object !== n.group);
     }
   }
 
@@ -768,12 +979,22 @@ export class Game {
   private checkExit(run: Run): void {
     const p = run.player;
     if (!run.level.isExit(p.x, p.z)) return;
-    if (run.data.exitType === 'elevator' && !run.level.elevators.some((e) => e.isOpen)) return;
+    const objs = run.data.objectives;
+    if (objs && run.objectiveIdx < objs.length) {
+      this.hud.setStatus(`Not yet: ${objs[run.objectiveIdx].label}`);
+      return;
+    }
+    const alarm = run.level.isAlarmExit(p.x, p.z);
+    if (!alarm && run.data.exitType === 'elevator' && !run.level.elevators.some((e) => e.isOpen)) return;
     // Leaving while someone is calling your name is not escaping; it's a scene.
     const pursuer = run.npcs.find((n) => n.state === NPCState.CONFRONT || n.state === NPCState.CHASE);
     if (pursuer) {
       this.endCaught(pursuer.def, 'fled');
       return;
+    }
+    if (alarm) {
+      run.fireAlarm = true;
+      this.audio.fireAlarm();
     }
     this.endEscaped(run);
   }
@@ -791,7 +1012,11 @@ export class Game {
     const par = run.data.parTime;
     const underPar = t <= par;
     let stars = t <= par ? 3 : t <= par * TUNING.starSlack ? 2 : 1;
-    let flavor = '';
+    let flavor = run.data.escapeFlavor ?? '';
+    if (run.fireAlarm) {
+      stars = Math.max(1, stars - 1);
+      flavor = `You took the fire exit. The alarm screamed for eleven minutes. Srinivas has your photo on the walkie group now. ${flavor}`.trim();
+    }
     const priya = run.npcs.find((n) => n.def.id === 'priya');
     if (run.data.exitType === 'stairwell' && priya && priya.awareness > 0) {
       stars = Math.max(1, stars - 1);
@@ -827,7 +1052,7 @@ export class Game {
       chase: `${first} caught up with you. Running from a coworker is never, ever a good look.`,
       fled: `You made it to the door. So did ${first}. "Hey! Didn't you hear me?" Everyone heard.`,
       deadline: 'The invite landed. "Oh good, you\'re still here! Grab a chair." It was not a quick sync.',
-      dialogue: '',
+      dialogue: run.data.caughtFlavor ?? '',
     }[reason];
     this.showResults(run, 'CAUGHT', 0, flavor, [], by, reason);
   }

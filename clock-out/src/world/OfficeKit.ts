@@ -542,3 +542,123 @@ export function exitDoor(kit: KitBuilder, f: Frame, cell: number, variant: 'stai
   group.add(exit);
   return group;
 }
+
+// ---------------------------------------------------------------------------
+// Hyderabad-office props (chapters 2+)
+// ---------------------------------------------------------------------------
+
+export interface Vending { group: THREE.Group; materials: THREE.MeshLambertMaterial[]; x: number; z: number; }
+
+/** Tea/coffee premix machine. Tall enough to hide behind standing; tastes the same whichever button you press. */
+export function vendingMachine(kit: KitBuilder, f: Frame): Vending {
+  const group = new THREE.Group();
+  const [wx, wz] = localToWorld(f, 0, -0.25);
+  group.position.set(wx, 0, wz);
+  group.rotation.y = standaloneYaw(f.dir);
+  const body = lambert(0x8a2323);
+  addBox(group, 0, 0, 0, 0.85, 1.8, 0.65, body);
+  addBox(group, 0, 1.0, 0.33, 0.7, 0.55, 0.02, new THREE.MeshBasicMaterial({ color: 0xd9c9a8 }));
+  const label = makeSign(['TEA · COFFEE · SOUP', '(all same taste)'], 0.66, 0.2, { bg: '#f4e2c0', fg: '#6b1d1d', font: 'bold 44px Helvetica, Arial, sans-serif' });
+  label.position.set(0, 1.62, 0.335);
+  group.add(label);
+  for (let i = 0; i < 4; i++) addBox(group, -0.2 + i * 0.13, 0.82, 0.34, 0.08, 0.06, 0.02, new THREE.MeshBasicMaterial({ color: [0x7ee07e, 0xffd166, 0xef476f, 0x8ecae6][i] }));
+  addBox(group, 0, 0.35, 0.33, 0.24, 0.25, 0.04, lambert(0x1c1c1c));
+  addBox(group, 0, 0.36, 0.34, 0.06, 0.08, 0.06, lambert(0xf2efe6));
+  kit.colliders.add(boxCollider(f, 0, 0, -0.25, 0.9, 1.8, 0.7, 'prop', true));
+  return { group, materials: [body], x: wx, z: wz };
+}
+
+/** Fabric acoustic panels on the floor-facing sides of a wall cell. */
+export function acousticWall(kit: KitBuilder, cx: number, cz: number, cell: number, faces: Dir[]): void {
+  kit.box(cx, 0, cz, cell, TUNING.wallHeight, cell, PALETTE.wall, { collide: 'wall' });
+  const colors = [0x3f6b6b, 0x6b6b8a, 0x8a6b4a];
+  for (const dir of faces) {
+    const f: Frame = { cx, cz, dir };
+    for (let i = 0; i < 2; i++) {
+      kit.lbox(f, -0.35 + i * 0.7, 0.6 + (i % 2) * 0.35, cell / 2 + 0.02, 0.6, 1.1, 0.05, colors[(i + dir) % colors.length], { noAO: true });
+    }
+  }
+}
+
+/** Reception desk with a small Ganesha idol and the visitor register nobody reads. */
+export function receptionDesk(kit: KitBuilder, f: Frame): void {
+  kit.lbox(f, 0, 0, -0.1, 1.45, 1.05, 0.7, 0x6f5238, { collide: 'prop', sight: true });
+  kit.lbox(f, 0, 1.05, -0.1, 1.5, 0.04, 0.75, 0xd9cfbb);
+  kit.lbox(f, 0, 0.2, 0.26, 1.45, 0.08, 0.02, 0xd4af37, { noAO: true });
+  // Idol on a small pedestal with a marigold ring: every Indian reception desk, ever.
+  kit.lbox(f, -0.5, 1.09, -0.25, 0.16, 0.06, 0.16, 0x8a2323);
+  kit.lcyl(f, -0.5, 1.15, -0.25, 0.045, 0.065, 0.11, 0xe8a33d, {}, 8);
+  kit.lcyl(f, -0.5, 1.26, -0.25, 0.04, 0.045, 0.06, 0xe8a33d, {}, 8);
+  kit.lcyl(f, -0.5, 1.12, -0.25, 0.09, 0.09, 0.025, 0xf59e0b, {}, 10);
+  kit.lbox(f, 0.25, 1.09, -0.05, 0.36, 0.03, 0.26, 0x1f3b73);
+  kit.lbox(f, 0.25, 1.12, -0.05, 0.34, 0.005, 0.24, PALETTE.paper);
+}
+
+/** Temporary stage for the client visit: carpet, fairy lights, a lonely mic. */
+export function stage(kit: KitBuilder, cx: number, cz: number, cell: number, rand: () => number): void {
+  kit.box(cx, 0, cz, cell, 0.35, cell, 0x7a1c2a, { collide: 'prop', sight: false });
+  if (rand() < 0.25) {
+    kit.cyl(cx, 0.35, cz, 0.012, 0.012, 1.25, PALETTE.dark, {}, 6);
+    kit.cyl(cx, 1.6, cz, 0.025, 0.018, 0.08, PALETTE.dark, {}, 8);
+  }
+  for (let i = 0; i < 4; i++) kit.box(cx - cell / 2 + 0.2 + i * 0.37, 0.3, cz + cell / 2 - 0.02, 0.05, 0.05, 0.02, [0xffd166, 0xef476f, 0x7ee07e, 0x8ecae6][i], { layer: 'glow', noAO: true });
+}
+
+/** Server rack: tall, dark, blinking, and loud enough that nobody hears you next to it. */
+export function serverRack(kit: KitBuilder, f: Frame, rand: () => number): void {
+  kit.lbox(f, 0, 0, -0.1, 0.75, 2.1, 0.9, 0x202226, { collide: 'prop', sight: true });
+  for (let i = 0; i < 9; i++) {
+    kit.lbox(f, 0, 0.2 + i * 0.2, 0.36, 0.62, 0.012, 0.01, 0x3a3d44, { noAO: true });
+    kit.lbox(f, -0.24 + rand() * 0.05, 0.25 + i * 0.2, 0.362, 0.02, 0.02, 0.01, rand() < 0.8 ? 0x5cff8a : 0xffb347, { layer: 'glow', noAO: true });
+  }
+}
+
+export function beanBag(kit: KitBuilder, cx: number, cz: number, color: number): void {
+  kit.cyl(cx, 0, cz, 0.28, 0.42, 0.48, color, { collide: 'prop', sight: false }, 10);
+}
+
+/** A cinema seat row: two seats whose backs are just tall enough to hide a crouching adult. */
+export function theatreSeats(kit: KitBuilder, f: Frame): void {
+  for (const lx of [-0.37, 0.37]) {
+    kit.lbox(f, lx, 0, 0, 0.6, 0.45, 0.55, 0x2b2b30);
+    kit.lbox(f, lx, 0.45, -0.02, 0.58, 0.1, 0.5, 0x8a1e2b);
+    kit.lbox(f, lx, 0.45, 0.26, 0.58, 0.6, 0.1, 0x8a1e2b);
+  }
+  // Seat backs face the rear of the hall; the collider covers the row up to 1.05 m.
+  kit.colliders.add(boxCollider(f, 0, 0, 0.05, 1.5, 1.05, 0.65, 'prop', true));
+}
+
+/** Canteen counter with steel vessels and today's menu. */
+export function foodCounter(kit: KitBuilder, f: Frame): void {
+  kit.lbox(f, 0, 0, -0.05, 1.5, 0.95, 0.75, 0x9aa0a6, { collide: 'prop', sight: false });
+  kit.lbox(f, 0, 0.95, -0.05, 1.52, 0.04, 0.78, 0xc9ccd0);
+  for (let i = 0; i < 3; i++) {
+    kit.lcyl(f, -0.45 + i * 0.45, 0.99, -0.15, 0.17, 0.15, 0.22, 0xc9ccd0, {}, 12);
+    kit.lcyl(f, -0.45 + i * 0.45, 1.21, -0.15, 0.17, 0.17, 0.02, [0xe0a030, 0xf2efe6, 0xc0392b][i], { noAO: true }, 12);
+  }
+}
+
+/** Cinema screen on a wall face (the face toward open floor). */
+export function cinemaScreen(kit: KitBuilder, cx: number, cz: number, cell: number, dir: Dir): void {
+  kit.box(cx, 0, cz, cell, TUNING.wallHeight, cell, 0x1a1a1e, { collide: 'wall' });
+  kit.lbox({ cx, cz, dir }, 0, 0.6, cell / 2 + 0.02, cell + 0.02, 2.2, 0.02, 0xcfe0f0, { layer: 'glow', noAO: true });
+}
+
+/** Fire exit: red door, big warning, and an alarm you will absolutely trigger. */
+export function fireExitDoor(kit: KitBuilder, f: Frame, cell: number): THREE.Group {
+  const group = new THREE.Group();
+  const w = 1.0, h = 2.2, face = cell / 2;
+  doorSurround(kit, f, cell, w, h);
+  const [fx, fz] = localToWorld(f, 0, 0);
+  group.position.set(fx, 0, fz);
+  group.rotation.y = standaloneYaw(f.dir);
+  addBox(group, 0, 0, face - 0.1, w, h, 0.05, lambert(0xa8231f));
+  addBox(group, 0, 0.95, face - 0.05, w * 0.85, 0.06, 0.06, lambert(0xd9d9d9));
+  const warn = makeSign(['FIRE EXIT', 'ALARM WILL SOUND'], 0.7, 0.3, { bg: '#f4f1e8', fg: '#a8231f' });
+  warn.position.set(0, 1.5, face - 0.07);
+  group.add(warn);
+  const exit = makeSign(['EXIT'], 0.5, 0.18, { bg: '#1a1a1a', fg: '#3fbf6a', glow: true, font: 'bold 120px Helvetica, Arial, sans-serif' });
+  exit.position.set(0, 2.75, face + 0.02);
+  group.add(exit);
+  return group;
+}

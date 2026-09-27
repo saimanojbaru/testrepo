@@ -275,6 +275,20 @@ export class AudioBus {
     [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => this.tone('triangle', f, 0.18, 0.005, 0.5, i * 0.12));
   }
 
+  /** Fire alarm: a two-tone square siren. Loud on purpose. */
+  fireAlarm(): void {
+    if (!this.ctx) return;
+    for (let i = 0; i < 8; i++) this.tone('square', i % 2 ? 660 : 880, 0.12, 0.01, 0.22, i * 0.25);
+  }
+
+  /** Power cut: the UPS relay clunk and the hum dying. */
+  powerCut(): void {
+    if (!this.ctx) return;
+    this.tone('sine', 120, 0.4, 0.005, 0.3);
+    this.noiseBurst('lowpass', 300, 1, 0.35, 0.25);
+    this.tone('square', 2200, 0.05, 0.002, 0.08, 0.6);
+  }
+
   sip(): void {
     if (!this.ctx) return;
     for (let i = 0; i < 4; i++) this.noiseBurst('bandpass', 500 + i * 120, 4, 0.12, 0.08, i * 0.11);

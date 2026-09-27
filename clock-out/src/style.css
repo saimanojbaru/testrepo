@@ -280,3 +280,12 @@ details.panel[open] summary { margin-bottom: 10px; }
   .overlay-card p { font-size: 14px; }
   .screen { padding: 16px 20px 24px; }
 }
+
+/* ---------------------------------------------------------------- Chapters */
+.level-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 10px; }
+.level-grid .level-card { margin-bottom: 0; grid-template-columns: 40px 1fr auto; padding: 12px 14px; gap: 12px; }
+.level-grid .level-info h3 { font-size: 16px; }
+.level-grid .level-info p { font-size: 13px; }
+.level-grid .level-num { font-size: 26px; }
+.level-card.locked { opacity: 0.55; grid-template-columns: 40px 1fr; }
+.level-card.locked h3 { color: #6f6a5c; }

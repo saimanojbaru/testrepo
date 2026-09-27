@@ -50,7 +50,8 @@ export interface EncounterFacts {
   /** How many times this NPC already stopped you this run. */
   priorStops: number;
   forced?: string[];
-  levelModifier?: LineItem;
+  /** Flat per-level costs: "Nobody goes UP at 3 PM", "Ramesh sir hasn't logged off". */
+  levelModifiers?: LineItem[];
 }
 
 export interface LineItem { label: string; value: number; }
@@ -131,7 +132,7 @@ export class ExcuseRegistry {
     if (facts.contexts.has('near_exit') && !e.tags.includes('near_exit')) items.push({ label: 'Caught near the exit', value: TUNING.nearExit });
     if (facts.contexts.has('voluntary')) items.push({ label: 'You approached them (confident)', value: TUNING.voluntaryBonus });
     if (facts.contexts.has('probe_violation')) items.push({ label: 'Wandered toward the exit mid-walk', value: TUNING.probeViolation });
-    if (facts.levelModifier) items.push({ ...facts.levelModifier });
+    for (const m of facts.levelModifiers ?? []) items.push({ ...m });
     if (facts.priorStops > 0) items.push({ label: `${first} already stopped you ${facts.priorStops === 1 ? 'once' : `${facts.priorStops}x`} today`, value: TUNING.repeatStop * facts.priorStops });
     if (opts.panic) items.push({ label: 'Panic blurt', value: TUNING.panicPenalty });
     if (facts.charisma > 0) items.push({ label: `Smooth streak x${facts.charisma}`, value: -facts.charisma });

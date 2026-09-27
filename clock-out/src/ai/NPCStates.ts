@@ -78,6 +78,10 @@ export interface NPCWorld {
   npcs: NPC[];
   /** Global FOV multiplier (the all-hands doubles it). */
   fovMul: number;
+  /** Multiplies every NPC's vision range (power cut, night shift, dark cinema). */
+  rangeMul: number;
+  /** Multiplies awareness fill ("looking busy": the manager hasn't logged off yet). */
+  fillMul: number;
   playerHydrating: boolean;
   canEscalate(npc: NPC): boolean;
   startEncounter(npc: NPC): void;
@@ -88,7 +92,7 @@ export interface NPCWorld {
 
 export function effectiveVision(npc: NPC, w: NPCWorld): { fov: number; range: number } {
   let fov = npc.def.visionFov * w.fovMul;
-  let range = npc.def.visionRange;
+  let range = npc.def.visionRange * w.rangeMul;
   if (w.time < npc.distractedUntil) {
     fov *= TUNING.distractedFovMul;
     range *= TUNING.distractedRangeMul;
@@ -105,7 +109,7 @@ function perceive(npc: NPC, dt: number, w: NPCWorld): void {
   const graced = w.time < npc.graceUntil || npc.state === NPCState.ESCORT;
   if (sight.visible && !graced) {
     const near = 1 + TUNING.nearBonus * (1 - sight.dist / range);
-    let rate = TUNING.fillBase * near;
+    let rate = TUNING.fillBase * near * w.fillMul;
     if (sight.peripheral) rate *= TUNING.peripheralMul;
     if (p.crouched) rate *= TUNING.crouchMul;
     if (p.sprinting) rate *= TUNING.sprintMul;
@@ -342,9 +346,9 @@ export function startInvestigate(npc: NPC, target: Vec2, seconds: number, distra
   npc.investigateIsDistraction = distraction;
 }
 
-export function startDistraction(npc: NPC, target: Vec2): void {
+export function startDistraction(npc: NPC, target: Vec2, seconds: number = TUNING.distractionTime): void {
   if (npc.state === NPCState.CONFRONT || npc.state === NPCState.CHASE || npc.state === NPCState.ESCORT) return;
-  startInvestigate(npc, target, TUNING.distractionTime, true);
+  startInvestigate(npc, target, seconds, true);
 }
 
 function ambientBark(npc: NPC, dt: number, distToPlayer: number): void {

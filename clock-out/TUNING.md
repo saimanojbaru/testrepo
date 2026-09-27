@@ -157,3 +157,23 @@ Outcomes, from the spec:
 - `Vignette`: heartbeat above 0.6 awareness, one beat every 0.95 → 0.45 s.
 - `Lighting`: tint `#e8f0e4`, fog `#cfd6cc` @ 0.015, hemisphere 1.1, key 0.55, fill 0.25.
 - `AudioBus`: hum at 60 Hz ± 0.35 Hz (plus 120 Hz), ducked to 30% with a 350 Hz low-pass during dialogue over 150 ms.
+
+## Chapter mechanics (`core/Game.ts`, `world/LevelBuilder.ts`, level files)
+
+| Key | Value | Effect |
+|---|---|---|
+| `lookBusySeconds` | 5 s | E on your laptop: detection fill ×0.3 (`hydratingMul`) while you stay within 2.2 m |
+| Vending machine / cooler cover | 4 s | Same cover, anchored at the machine |
+| `watcher.fillMul` (ch 3) | 1.7× | Everyone fills faster while Ramesh sir is within 1.5 m (`watcherPostReach`) of his post |
+| `watcher.value` (ch 3) | +2 | Added to every excuse while he's there |
+| `rangeMulTheme` | day 1, festival 1, night 0.8, theatre 0.7 | Vision range by theme |
+| `powerCutRangeMul` | 0.5 | Stacks with theme during a power cut |
+| `acousticRadius` / `acousticFactor` | 2.6 m / ×0.55 | Your noise radius near acoustic panels |
+| `serverRadius` / `serverFactor` | 3.5 m / ×0.4 | Your noise radius near server racks |
+| Fire exit | −1 star | Always an escape, never a clean one |
+| `objectiveReach` | 1.1 m | How close you must get to tick off an objective |
+| Chapter pars | 45–95 s | Set from the autopilot's straight-line time plus room for a stealth route |
+
+Suspicion modifiers by chapter: 1: 0 · 2: +2 (sick leave) · 3: +2 while Ramesh sir is seated · 4: +2 · 5: +2 · 6: +2 · 7: +2 · 8: +2 · 9: +2 · 10: +2 · 11: +2 · 12: +2 · 13: +2.
+
+Autopilot pass over all 13 chapters (walk straight at each objective and exit, stop for every conversation, cheapest excuse): every chapter completes except where a patrol catches it twice (the night shift). The theatre has a verified no-conversation route (side aisle → back row → exit, 26.6 s).

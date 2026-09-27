@@ -85,6 +85,8 @@ export class NPC {
   lastConfrontDist = Infinity;
   /** Set by the Director for NPCs it spawned mid-level. */
   wanderer = false;
+  /** Heading home (a 'despawn' beat); removed on reaching the exit. */
+  leaving = false;
   /** Awareness at confront time is remembered for opener choice. */
   encounters = 0;
 

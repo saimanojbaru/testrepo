@@ -4,9 +4,11 @@ import { ColliderWorld } from './Colliders';
 import { NavGrid, type Vec2 } from './NavGrid';
 import {
   KitBuilder, ElevatorDoors, ClosetDoor, ceilingLight, copier, desk, divider, exitDoor, glassCell,
-  makeSign, meetingTable, mulberry32, plant, standaloneYaw, wallRun, watercooler, localToWorld,
-  type Copier, type Cooler, type Dir,
+  meetingTable, mulberry32, plant, wallRun, watercooler,
+  vendingMachine, acousticWall, receptionDesk, stage, serverRack, beanBag, theatreSeats, foodCounter, cinemaScreen, fireExitDoor,
+  type Copier, type Cooler, type Dir, type Vending,
 } from './OfficeKit';
+import { decorateWalls } from './WallDecor';
 
 // Turns a LevelData ASCII map into a scene graph, a collider list and a nav grid.
 // Everything a level needs at runtime hangs off LevelRuntime so teardown is one call.
@@ -17,25 +19,18 @@ const TUNING = {
   lightEveryRows: 2,
   posterCount: 6,
   carpetRepeatMeters: 3,
+  /** Acoustic panels and server hum hide your footsteps within this radius (factor multiplies noise radius). */
+  acousticRadius: 2.6,
+  acousticFactor: 0.55,
+  serverRadius: 3.5,
+  serverFactor: 0.4,
   ceilingTileMeters: 0.75,
   ceilingTint: 0xc9cdc0,
 };
 
 const WALKABLE = new Set(['.', 'P', 'X']);
-const WALLISH = new Set(['#', 'G', 'E', 'S', 'O']);
+const WALLISH = new Set(['#', 'G', 'E', 'S', 'O', 'A', 'U', 'Q']);
 
-const POSTERS: string[][] = [
-  ['TEAMWORK', 'Because none of us', 'can leave alone.'],
-  ['SYNERGY', "We don't know what it", 'means either.'],
-  ['TODAY IS A GIFT', 'Please return it', 'by 5 PM.'],
-  ['DAYS SINCE LAST', '"QUICK SYNC"', '0'],
-  ['YOUR MOTHER', 'DOES NOT WORK HERE', 'Clean the microwave.'],
-  ['PLEASE DO NOT TAKE', 'THE GOOD SCISSORS', '— B.'],
-  ['MANDATORY FUN', 'Thursday 4 PM', 'Attendance tracked.'],
-  ['ATTITUDE', 'is a little thing that', 'makes a big difference.'],
-  ['EXCELLENCE', 'is not an act.', 'It is a calendar hold.'],
-  ['HANG IN THERE', '(the cat did not', 'make it to Friday)'],
-];
 
 export interface LevelRuntime {
   data: LevelData;
@@ -51,8 +46,14 @@ export interface LevelRuntime {
   elevators: ElevatorDoors[];
   doors: ClosetDoor[];
   screenMaterial: THREE.MeshBasicMaterial;
+  vendings: Vending[];
+  /** Places that soak up your footsteps (acoustic panels, server racks). */
+  dampers: Array<{ x: number; z: number; radius: number; factor: number }>;
+  theme: 'day' | 'night' | 'theatre' | 'festival';
   cellAt(c: number, r: number): string;
   isExit(x: number, z: number): boolean;
+  /** Floor cell in front of a fire exit: it's an exit, but the alarm goes off. */
+  isAlarmExit(x: number, z: number): boolean;
   dispose(): void;
 }
 
@@ -75,6 +76,11 @@ export function buildLevel(data: LevelData): LevelRuntime {
   const coolers: Cooler[] = [];
   const elevators: ElevatorDoors[] = [];
   const doors: ClosetDoor[] = [];
+  const vendings: Vending[] = [];
+  const dampers: LevelRuntime['dampers'] = [];
+  const alarmCells = new Set<string>();
+  const theme = data.theme ?? 'day';
+  const screenRow = data.ascii.findIndex((row) => row.includes('U'));
   let spawnCell: [number, number] = [1, 1];
 
   const links = (c: number, r: number, set: Set<string>) => ({
@@ -151,6 +157,37 @@ export function buildLevel(data: LevelData): LevelRuntime {
           root.add(exitDoor(kit, { cx: x, cz: z, dir: frontDir(c, r) }, cs, variant));
           break;
         }
+        case 'V': {
+          const v = vendingMachine(kit, { cx: x, cz: z, dir: frontDir(c, r) });
+          vendings.push(v);
+          kitchens.push({ x: v.x, z: v.z });
+          root.add(v.group);
+          break;
+        }
+        case 'A': {
+          const faces: Dir[] = [];
+          ([[0, 0, -1], [1, 1, 0], [2, 0, 1], [3, -1, 0]] as Array<[Dir, number, number]>).forEach(([d, dx, dz]) => { if (WALKABLE.has(cellAt(c + dx, r + dz))) faces.push(d); });
+          acousticWall(kit, x, z, cs, faces);
+          dampers.push({ x, z, radius: TUNING.acousticRadius, factor: TUNING.acousticFactor });
+          break;
+        }
+        case 'R': receptionDesk(kit, { cx: x, cz: z, dir: frontDir(c, r) }); break;
+        case 'T': stage(kit, x, z, cs, rand); break;
+        case 'Z':
+          serverRack(kit, { cx: x, cz: z, dir: frontDir(c, r) }, rand);
+          dampers.push({ x, z, radius: TUNING.serverRadius, factor: TUNING.serverFactor });
+          break;
+        case 'B': beanBag(kit, x, z, [0xe76f51, 0x2a9d8f, 0xe9c46a, 0x6d597a][(c + r) % 4]); break;
+        case 'H': theatreSeats(kit, { cx: x, cz: z, dir: screenRow >= 0 && screenRow < r ? 2 : 0 }); break;
+        case 'F': foodCounter(kit, { cx: x, cz: z, dir: frontDir(c, r) }); break;
+        case 'U': cinemaScreen(kit, x, z, cs, frontDir(c, r)); break;
+        case 'Q': {
+          const dir = frontDir(c, r);
+          root.add(fireExitDoor(kit, { cx: x, cz: z, dir }, cs));
+          const off: Record<Dir, [number, number]> = { 0: [0, -1], 1: [1, 0], 2: [0, 1], 3: [-1, 0] };
+          alarmCells.add(`${c + off[dir][0]},${r + off[dir][1]}`);
+          break;
+        }
         case 'O': {
           const door = new ClosetDoor(kit, { cx: x, cz: z, dir: frontDir(c, r, [2, 1, 0, 3]) }, cs);
           doors.push(door);
@@ -159,7 +196,11 @@ export function buildLevel(data: LevelData): LevelRuntime {
         }
         default: break;
       }
-      if (ch !== '#' && c % TUNING.lightEveryCols === 1 && r % TUNING.lightEveryRows === 1) ceilingLight(kit, x, z);
+      // Night: only every other panel is on. Theatre: house lights are off.
+      const lit = theme === 'theatre' ? false
+        : theme === 'night' ? c % (TUNING.lightEveryCols * 2) === 1 && r % (TUNING.lightEveryRows * 2) === 1
+          : c % TUNING.lightEveryCols === 1 && r % TUNING.lightEveryRows === 1;
+      if (!WALLISH.has(ch) && ch !== '#' && lit) ceilingLight(kit, x, z);
     }
   }
 
@@ -168,10 +209,11 @@ export function buildLevel(data: LevelData): LevelRuntime {
     data.ascii.forEach((row, r) => [...row].forEach((ch, c) => { if (ch === 'M') kitchens.push(center(c, r)); }));
   }
 
-  addPosters(root, data, cellAt, cs, rand);
+  if (theme !== 'theatre') decorateWalls(root, cellAt, W, H, cs, rand, theme);
+  if (theme === 'festival') addRangoli(root, exitCells, cs, rand);
   root.add(kit.build());
   root.add(makeFloor(W * cs, H * cs));
-  root.add(makeCeiling(W * cs, H * cs));
+  root.add(makeCeiling(W * cs, H * cs, theme));
 
   const nav = new NavGrid(W, H, cs, (c, r) => WALKABLE.has(cellAt(c, r)));
 
@@ -191,9 +233,14 @@ export function buildLevel(data: LevelData): LevelRuntime {
     spawn: { x: sp.x, z: sp.z, yaw: spawnYaw },
     exitCells, exitCenter, kitchens, copiers, coolers, elevators, doors,
     screenMaterial: kit.screenMaterial,
+    vendings, dampers, theme,
     cellAt,
+    isAlarmExit(px: number, pz: number) {
+      return alarmCells.has(`${Math.floor(px / cs)},${Math.floor(pz / cs)}`);
+    },
     isExit(px: number, pz: number) {
-      return exitCells.has(`${Math.floor(px / cs)},${Math.floor(pz / cs)}`);
+      const key = `${Math.floor(px / cs)},${Math.floor(pz / cs)}`;
+      return exitCells.has(key) || alarmCells.has(key);
     },
     dispose() {
       root.traverse((o) => {
@@ -226,23 +273,38 @@ function hash(s: string): number {
   return h >>> 0;
 }
 
-function addPosters(root: THREE.Group, data: LevelData, cellAt: (c: number, r: number) => string, cs: number, rand: () => number): void {
-  const candidates: Array<{ c: number; r: number; dir: Dir }> = [];
-  const [W, H] = data.gridSize;
-  const off: Array<[Dir, number, number]> = [[0, 0, -1], [1, 1, 0], [2, 0, 1], [3, -1, 0]];
-  for (let r = 0; r < H; r++) for (let c = 0; c < W; c++) {
-    if (cellAt(c, r) !== '#') continue;
-    for (const [dir, dx, dz] of off) if (cellAt(c + dx, r + dz) === '.') candidates.push({ c, r, dir });
-  }
-  const pool = [...POSTERS];
-  for (let i = 0; i < TUNING.posterCount && candidates.length && pool.length; i++) {
-    const spot = candidates.splice(Math.floor(rand() * candidates.length), 1)[0];
-    const text = pool.splice(Math.floor(rand() * pool.length), 1)[0];
-    const sign = makeSign(text, 0.8, 1.0, { bg: ['#f1e9d2', '#dfe8ef', '#efe0e0'][i % 3], fg: '#3a3a3e', font: 'bold 50px Georgia, serif' });
-    const [wx, wz] = localToWorld({ cx: (spot.c + 0.5) * cs, cz: (spot.r + 0.5) * cs, dir: spot.dir }, 0, cs / 2 + 0.01);
-    sign.position.set(wx, 1.6, wz);
-    sign.rotation.y = standaloneYaw(spot.dir);
-    root.add(sign);
+/** A rangoli painted in front of each exit for the festival chapter. */
+function addRangoli(root: THREE.Group, exitCells: Set<string>, cs: number, rand: () => number): void {
+  const tex = canvasTexture(256, (g, sz) => {
+    g.clearRect(0, 0, sz, sz);
+    const colors = ['#e63946', '#ffb703', '#2a9d8f', '#9b5de5', '#fb8500', '#f1faee'];
+    for (let ring = 5; ring >= 0; ring--) {
+      g.fillStyle = colors[ring % colors.length];
+      const petals = 8 + ring * 2;
+      for (let i = 0; i < petals; i++) {
+        const a = (i / petals) * Math.PI * 2 + rand() * 0.02;
+        g.beginPath();
+        g.ellipse(sz / 2 + Math.cos(a) * ring * 18, sz / 2 + Math.sin(a) * ring * 18, 14, 7, a, 0, Math.PI * 2);
+        g.fill();
+      }
+    }
+  });
+  tex.wrapS = tex.wrapT = THREE.ClampToEdgeWrapping;
+  const mat = new THREE.MeshLambertMaterial({ map: tex, transparent: true, depthWrite: false });
+  for (const key of exitCells) {
+    const [c, r] = key.split(',').map(Number);
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(cs * 0.95, cs * 0.95), mat);
+    m.rotation.x = -Math.PI / 2;
+    m.position.set((c + 0.5) * cs, 0.016, (r + 0.5) * cs);
+    root.add(m);
+    // Diyas at the corners of the rangoli.
+    for (const [dx, dz] of [[-0.55, -0.55], [0.55, 0.55]]) {
+      const diya = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.035, 0.035, 8), new THREE.MeshLambertMaterial({ color: 0x9c4a1a }));
+      diya.position.set((c + 0.5) * cs + dx, 0.02, (r + 0.5) * cs + dz);
+      const flame = new THREE.Mesh(new THREE.ConeGeometry(0.015, 0.05, 6), new THREE.MeshBasicMaterial({ color: 0xffc14d }));
+      flame.position.set(diya.position.x, 0.07, diya.position.z);
+      root.add(diya, flame);
+    }
   }
 }
 
@@ -280,7 +342,7 @@ function makeFloor(w: number, h: number): THREE.Mesh {
   return mesh;
 }
 
-function makeCeiling(w: number, h: number): THREE.Mesh {
+function makeCeiling(w: number, h: number, theme: string): THREE.Mesh {
   const tex = canvasTexture(128, (g, s) => {
     g.fillStyle = '#e4e2da';
     g.fillRect(0, 0, s, s);
@@ -295,7 +357,7 @@ function makeCeiling(w: number, h: number): THREE.Mesh {
   });
   tex.repeat.set(w / TUNING.ceilingTileMeters, h / TUNING.ceilingTileMeters);
   // Unlit: a downward-facing Lambert ceiling only gets the hemisphere's dim ground colour and reads as grime.
-  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, color: TUNING.ceilingTint }));
+  const mesh = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, color: theme === 'day' || theme === 'festival' ? TUNING.ceilingTint : 0x3a3c40 }));
   mesh.rotation.x = Math.PI / 2;
   mesh.position.set(w / 2, TUNING.wallHeight, h / 2);
   mesh.name = 'ceiling';

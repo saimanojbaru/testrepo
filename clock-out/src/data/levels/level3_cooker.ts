@@ -5,6 +5,7 @@ import type { LevelData } from '../types';
 // five seconds, and Kavita's phone (T+55) is the one gap in her attention.
 export const level3: LevelData = {
   id: 'level3',
+  chapter: 7,
   name: 'Pressure Cooker Run',
   brief: 'You already used the cooker excuse. Everyone heard. You need a new excuse and an old door.',
   goalText: 'Leave the building. Do not mention the cooker.',

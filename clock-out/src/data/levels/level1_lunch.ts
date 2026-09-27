@@ -5,6 +5,7 @@ import type { LevelData } from '../types';
 // in the lobby when the doors open (T+70) or calling the car yourself.
 export const level1: LevelData = {
   id: 'level1',
+  chapter: 1,
   name: 'The 1 PM Vanishing',
   brief: 'Paradise biryani, 1 PM, before the queue. A "quick sync" invite is about to land. Be in the lift before it does.',
   goalText: 'Reach the lift before the 1:15 "quick sync" lands',

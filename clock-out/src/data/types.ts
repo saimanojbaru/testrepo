@@ -14,7 +14,10 @@ export interface LevelData {
   // Layout is authored as ASCII: '#'=wall, '.'=floor, 'D'=desk, 'C'=cubicle divider,
   // 'P'=player spawn, 'X'=exit trigger, 'K'=copier/cover prop, 'W'=watercooler,
   // 'M'=meeting room table, 'E'=elevator doors, 'S'=stairwell door
-  // Extensions: 'G'=glass wall, 'L'=potted plant, 'O'=closet door (creaks).
+  // Extensions: 'G'=glass wall, 'L'=potted plant, 'O'=closet door (creaks),
+  // 'V'=tea/coffee vending machine, 'A'=acoustic-panel wall (dampens your noise), 'R'=reception desk,
+  // 'T'=stage platform, 'Z'=server rack (hum masks your noise), 'B'=bean bag, 'H'=theatre seat row,
+  // 'F'=cafeteria counter, 'U'=cinema screen wall, 'Q'=fire exit door (escape, but the alarm goes off).
   ascii: string[];
   npcs: NPCPlacement[];
   exitType: 'elevator' | 'stairwell' | 'outside-door';
@@ -33,6 +36,21 @@ export interface LevelData {
   directorBudget: number;
   /** Flat suspicion every excuse costs on this level, shown as a verdict line item. */
   suspicionModifier?: { label: string; value: number };
+
+  /** Chapter number shown in the menu; chapters unlock in this order. */
+  chapter: number;
+  /** Lighting and decoration set. */
+  theme?: 'day' | 'night' | 'theatre' | 'festival';
+  /** Things to do, in order, before the exit counts ("grab your charger"). */
+  objectives?: Array<{ cell: [number, number]; label: string; done: string }>;
+  /**
+   * "Looking busy": while this NPC is still at their post, everyone else notices you
+   * faster and every excuse costs extra ("Ramesh sir hasn't logged off yet").
+   */
+  watcher?: { npc: string; fillMul: number; label: string; value: number };
+  /** Ending lines specific to this chapter. */
+  caughtFlavor?: string;
+  escapeFlavor?: string;
 }
 
 export interface NPCPlacement {
@@ -45,7 +63,10 @@ export interface NPCPlacement {
 export interface ScriptedBeat {
   atTime: number;
   // Spec types plus three level-specific ones (calendar, elevator, allHands).
-  type: 'bark' | 'spawn' | 'moveTo' | 'phoneRing' | 'lockDoor' | 'calendar' | 'elevator' | 'allHands';
+  type:
+    | 'bark' | 'spawn' | 'moveTo' | 'phoneRing' | 'lockDoor' | 'calendar' | 'elevator' | 'allHands'
+    // Chapter mechanics: lights out, everyone drifts to one spot, everyone gets warier, someone logs off.
+    | 'powerCut' | 'gather' | 'heat' | 'despawn' | 'toast';
   payload: any;
 }
 

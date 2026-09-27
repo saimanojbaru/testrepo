@@ -17,18 +17,19 @@ export class PlayerNoise {
 
   constructor(private readonly onStep: (kind: 'crouch' | 'walk' | 'sprint') => void) {}
 
-  update(dt: number, player: PlayerController): void {
+  /** `damp` (0..1] scales every radius: acoustic panels and server hum soak up footsteps. */
+  update(dt: number, player: PlayerController, damp = 1): void {
     const state = player.moveState;
     if (state === 'idle') {
       this.currentRadius = Math.max(0, this.currentRadius - dt * 20);
       return;
     }
-    this.currentRadius = TUNING.radius[state];
+    this.currentRadius = TUNING.radius[state] * damp;
     this.travelled += player.speed * dt;
     const stride = TUNING.stride[state];
     if (this.travelled >= stride) {
       this.travelled -= stride;
-      events.emit('noise', { x: player.x, z: player.z, radius: TUNING.radius[state], kind: state, fromPlayer: true });
+      events.emit('noise', { x: player.x, z: player.z, radius: TUNING.radius[state] * damp, kind: state, fromPlayer: true });
       this.onStep(state);
     }
   }

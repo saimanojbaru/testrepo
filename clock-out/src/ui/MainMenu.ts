@@ -11,12 +11,13 @@ export interface Settings {
   sensitivity: number; // multiplier on Input's default
   volume: number;      // 0..1
   cones: boolean;      // draw NPC vision cones on the floor
+  unlockAll: boolean;  // skip chapter progression
 }
 
 const SETTINGS_KEY = 'clockout.settings.v1';
 
 export function loadSettings(): Settings {
-  const fallback: Settings = { sensitivity: 1, volume: 0.8, cones: true };
+  const fallback: Settings = { sensitivity: 1, volume: 0.8, cones: true, unlockAll: false };
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
     return raw ? { ...fallback, ...(JSON.parse(raw) as Partial<Settings>) } : fallback;
@@ -43,6 +44,7 @@ const REP_BLURB: Record<string, string> = {
 export class MainMenu {
   private root: HTMLDivElement;
   private resetArmed = false;
+  private readonly unlockAllDebug = new URLSearchParams(location.search).has('debug');
 
   constructor(
     parent: HTMLElement,
@@ -74,12 +76,18 @@ export class MainMenu {
       </header>
       <div class="menu-grid">
         <section class="menu-levels">
-          <h2>Today's escapes</h2>
+          <h2>Chapters</h2>
+          <div class="level-grid">
           ${this.levels.map((l, i) => {
             const rec = m.levelRecord(l.id);
             const stars = rec ? '★'.repeat(rec.stars) + '☆'.repeat(3 - rec.stars) : '☆☆☆';
+            // Chapters unlock in order: escape one (any ending) to open the next.
+            const locked = !this.settings.unlockAll && !this.unlockAllDebug && i > 0 && !m.levelRecord(this.levels[i - 1].id);
+            if (locked) {
+              return `<div class="level-card locked"><div class="level-num">${l.chapter}</div><div class="level-info"><h3>🔒 ${esc(l.name)}</h3><p>Escape chapter ${this.levels[i - 1].chapter} to unlock.</p></div></div>`;
+            }
             return `<div class="level-card">
-              <div class="level-num">${i + 1}</div>
+              <div class="level-num">${l.chapter}</div>
               <div class="level-info">
                 <h3>${esc(l.name)}</h3>
                 <p>${esc(l.brief)}</p>
@@ -88,6 +96,7 @@ export class MainMenu {
               <button class="btn primary" data-play="${l.id}">Clock out</button>
             </div>`;
           }).join('')}
+          </div>
         </section>
         <aside class="menu-side">
           <div class="panel">
@@ -98,7 +107,7 @@ export class MainMenu {
           </div>
           <div class="panel">
             <h2>Legend excuses</h2>
-            ${trophies.length ? `<ul class="trophies">${trophies.map((e) => `<li>🏆 “${esc(e.text)}”</li>`).join('')}</ul>` : '<p class="muted">No legends yet. Absurd excuses that actually work end up here. Have you tried the goldfish?</p>'}
+            ${trophies.length ? `<ul class="trophies">${trophies.map((e) => `<li>🏆 “${esc(e.text)}”</li>`).join('')}</ul>` : '<p class="muted">No legends yet. Absurd excuses that actually work end up here. Have you tried the parrot?</p>'}
           </div>
           <details class="panel">
             <summary><h2>How to play</h2></summary>
@@ -124,6 +133,7 @@ export class MainMenu {
             <label class="setting">Mouse sensitivity <input type="range" min="0.3" max="2.5" step="0.05" data-set="sensitivity" value="${this.settings.sensitivity}"></label>
             <label class="setting">Volume <input type="range" min="0" max="1" step="0.05" data-set="volume" value="${this.settings.volume}"></label>
             <label class="setting check"><input type="checkbox" data-set="cones" ${this.settings.cones ? 'checked' : ''}> Show vision cones</label>
+            <label class="setting check"><input type="checkbox" data-set="unlockAll" ${this.settings.unlockAll ? 'checked' : ''}> Unlock all chapters</label>
           </details>
           <button class="btn danger" data-reset>Reset office memory</button>
         </aside>
@@ -133,10 +143,11 @@ export class MainMenu {
     this.root.querySelectorAll<HTMLInputElement>('[data-set]').forEach((input) =>
       input.addEventListener('input', () => {
         const key = input.dataset.set as keyof Settings;
-        if (key === 'cones') this.settings.cones = input.checked;
+        if (key === 'cones' || key === 'unlockAll') this.settings[key] = input.checked;
         else this.settings[key] = parseFloat(input.value);
         saveSettings(this.settings);
         this.actions.onSettings(this.settings);
+        if (key === 'unlockAll') this.show();
       }));
     const reset = this.root.querySelector<HTMLButtonElement>('[data-reset]')!;
     reset.addEventListener('click', () => {

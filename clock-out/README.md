@@ -48,6 +48,7 @@ Add `?debug` to the URL to expose `window.__clockout` (the Game instance) and sk
 ## How it plays
 
 - **Dividers are 1.5 m tall.** Crouched, your head is at about 1.0 m and you are invisible behind them. Standing, you're a head on a stick. Desks (0.74 m) hide nothing; copiers (1.3 m) do.
+- **Offices look like offices.** Every floor gets framed team photos (Annual Day, the Wonderla offsite, a colleague who left, faded out), motivational posters that have given up ("WORK-LIFE BALANCE: Work is life. Balance is optional."), a Thought-for-the-Day whiteboard, a sprint board where DONE says "Lunch", a cork notice board (the lost steel tiffin), Employee of the Month (Deepak, again) and birthday banners. There are also tea/coffee premix machines (E: sip slowly, it's an alibi), acoustic panels that soak up your footsteps, server rooms that hum over them, and a reception desk with a small Ganesha. All of it is painted onto canvases at load time (`world/WallDecor.ts`).
 - **The `?` over a head is suspicion filling.** At 0.35 they walk over to look. At `!` they come to talk. Every NPC shows a faint vision cone on the floor (toggle in Settings).
 - **Footsteps are noise events:** crouch 3 m, walk 7 m, sprint 14 m, bumping furniture 10 m, the supply-closet door 12 m. **Walls don't block noise.** That's a deliberate design choice: simple to read, punishing, and funny when Kavita hears you through drywall.
 - **Don't walk away from someone calling your name.** Two seconds of ignoring them and they chase you, faster than you walk and slower than you sprint. Reaching the exit while anyone is confronting or chasing you counts as caught.
@@ -69,13 +70,25 @@ Add `?debug` to the URL to expose `window.__clockout` (the Game instance) and sk
 - "The cooker situation has… escalated." only unlocks after you've used the cooker.
 - **Reset office memory** is on the main menu.
 
-## Levels
+## Chapters
 
-| # | Level | Goal | Beats |
+Thirteen chapters on HITEC City floors. They unlock in order: escape one (any ending) to open the next. Settings → "Unlock all chapters" skips that, and so does `?debug`.
+
+| # | Chapter | Goal | What makes it different |
 |---|---|---|---|
-| 1 | **The 1 PM Vanishing** | Get to the lift (and the biryani) before the 1:15 "quick connect" lands | T+20 Outlook invite starts a 15-minute countdown. T+40 Ramesh sir leaves his glass cabin and patrols. T+70 the lift opens for 10 s (you can also call it: E on the doors, 10 s wait) |
-| 2 | **The Forbidden Floor** | Take the UP stairwell to Ananya on floor 7 | Rohit watches the door and tells everyone. Priya walks the corridor. Jam a printer (3 favors) for a 10 s distraction; hide in the creaky supply closet. T+65 Rohit's mummy calls. T+120 Srinivas locks the closet. Reaching the stairs while Priya is at all suspicious means she follows you up |
-| 3 | **Pressure Cooker Run** | Leave the building | You start at the farthest desk. The cooker excuse is forced into memory: everyone has heard it and it's always in your hand, marked [USED]. Kavita is parked beside the exit. Srinivas and Lakshmi run dense loops. T+30 town hall reminder: every NPC's FOV doubles for 5 s. T+55 Kavita's phone rings: your window |
+| 1 | **The 1 PM Vanishing** | Lift before the 1:15 "quick connect" | Outlook countdown; Ramesh sir leaves his cabin at T+40; lift opens at T+70 or when called |
+| 2 | **The Coorg Trip Cover-Up** | Grab your charger, then back out the stairs | You're "on sick leave". **Objective** at your desk. Rohit is lost in reels until your friend's story tags you (T+45): everyone gets warier |
+| 3 | **The 6:30 PM Escape** | Lift home | **Looking busy**: while Ramesh sir is at his desk, everyone notices you 1.7× faster and excuses cost +2. E on your laptop to type furiously (cover). He logs off at T+100 |
+| 4 | **The Forbidden Floor** | UP stairwell to Ananya on 7 | Rohit snitches, Priya patrols, printer jams (3 favors), creaky supply closet |
+| 5 | **The Client Visit Performance** | Lift, without being volunteered | Stage in the middle of the floor; HR needs four dancers. Rehearsal (T+50) pulls everyone to the stage and opens the lift |
+| 6 | **The Power Cut Gambit** | Main door or the server-room fire exit | Deepak comes to "verify" your network issue. **Real power cut** at T+35: lights out, vision halved for 25 s. Server racks hide footsteps. **Fire exit** works, but the alarm costs a star |
+| 7 | **Pressure Cooker Run** | Leave the building | The cooker excuse is forced into memory; Kavita is parked by the exit; town hall doubles every FOV at T+30; Kavita's phone at T+55 |
+| 8 | **The Appraisal Meeting** | Out before they come back | Start in room 4B next to "PIP_final_v3.docx". Ramesh sir and Priya return at T+25. Fire exit right outside |
+| 9 | **The 1:30 AM Shift Change** | Lift before the 2:00 AM handover | **Night theme**. Deepak asleep on his keyboard, Srinivas doing rounds, Sanjay on Dallas hours, handover invite countdown |
+| 10 | **The Cafeteria Aunty's Gauntlet** | Plate from the counter, then back down the stairs | **Objective** at Lakshmi's counter, Ramesh sir eating facing it, the **1 PM rush** (T+40) queues everyone at the counter |
+| 11 | **The 'Patience-Building' Salary Delay** | Leave for your interview | Blazer on a Tuesday (+2). LinkedIn tells Priya she viewed your profile (T+30) |
+| 12 | **The Movie Theatre Laptop** | Lobby, to take Ramesh sir's call | **Dark cinema**: seat backs hide a crouch, the usher's torch is Srinivas anna, Rinku is bunking by the exit, **interval** at T+60 turns the lights up and sends everyone to the doors |
+| 13 | **The Festival Bonus Escape** | Out for Diwali | **Festival theme**: marigold torans, rangoli and diyas at the door. Priya stands on the rangoli with an attendance sheet until the kaju katli arrives (T+40) |
 
 Endings: **CLEAN** (no conversations, under par) · **ESCAPED** · **LEGEND** (an absurd excuse worked) · **PROMOTION** (passed Ramesh sir with a corporate excuse and finished under par; "Good initiative.") · **CAUGHT** (with an HR incident report).
 
@@ -99,7 +112,8 @@ Nine people from across India. Region shows in small, true details (a thin vibhu
 
 ```
 src/core      Game (state machine + orchestration), Input (intent), Clock (fixed 60 Hz step), Events (typed bus), GameState
-src/world     OfficeKit (procedural props, merged into a few draw calls with baked vertex-colour AO),
+src/world     WallDecor (canvas-painted team photos, posters, boards, torans),
+              OfficeKit (procedural props, merged into a few draw calls with baked vertex-colour AO),
               LevelBuilder (ASCII → scene + colliders + nav), NavGrid (8-dir A*, no corner cutting, string-pulled),
               Colliders (AABB, capsule-as-circle resolution, 3D segment LOS), Lighting
 src/player    PlayerController, PlayerNoise, Interactor
@@ -134,8 +148,8 @@ Every gameplay number is in a `TUNING` block at the top of its module. See [TUNI
 - **Project folder.** The spec assumed an empty folder. This repository already had an unrelated `package.json` at its root, so the game lives in `clock-out/`.
 - **tsconfig.** `strict: true` is on. The Vite template's `erasableSyntaxOnly` flag is off, so constructor parameter properties are allowed.
 - **Schemas.** The five spec interfaces are implemented as written, with additive extensions:
-  - ASCII `G` (glass), `L` (plant) and `O` (closet door).
-  - ScriptedBeat types `calendar`, `elevator` and `allHands`.
+  - ASCII `G` glass, `L` plant, `O` closet door, `V` vending machine, `A` acoustic wall, `R` reception, `T` stage, `Z` server rack, `B` bean bag, `H` theatre seats, `F` canteen counter, `U` cinema screen, `Q` fire exit.
+  - ScriptedBeat types `calendar`, `elevator`, `allHands`, `powerCut`, `gather`, `heat`, `despawn` and `toast`.
   - Optional LevelData fields `favors`, `clock`, `forceUsedExcuses`, `intro`, `directorBudget` and `suspicionModifier`.
   - An `NPCLook` table (visuals and voice) kept separate so `NPCDef` stays exact.
   - A `MENU` game state.

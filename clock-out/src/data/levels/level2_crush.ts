@@ -6,6 +6,7 @@ import type { LevelData } from '../types';
 // Rohit's phone.
 export const level2: LevelData = {
   id: 'level2',
+  chapter: 4,
   name: 'The Forbidden Floor',
   brief: 'Ananya from Design is on floor 7. At 3 PM everyone goes DOWN for chai. You need to go UP.',
   goalText: 'Take the UP stairwell to floor 7',
