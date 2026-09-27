@@ -156,6 +156,8 @@ Outcomes, from the spec:
 - `DialogueUI`: 30 ms/char typewriter, 100 ms choice stagger, timer turns red under 2 s.
 - `Vignette`: heartbeat above 0.6 awareness, one beat every 0.95 → 0.45 s.
 - `Lighting`: tint `#e8f0e4`, fog `#cfd6cc` @ 0.015, hemisphere 1.1, key 0.55, fill 0.25.
+- Power cut screens: fade out with time constant 0.9 s (afterglow) and come back in 0.35 s with a boot flicker (`screenFadeOut`, `screenFadeIn`).
+- `Props`: emergency lights 9 cd, range 7 m, 0.6 s stutter on; call room 20 cd; desk lamp 6 cd; phone 2 cd, lights up for 3.2 s every 7 s.
 - `AudioBus`: hum at 60 Hz ± 0.35 Hz (plus 120 Hz), ducked to 30% with a 350 Hz low-pass during dialogue over 150 ms.
 
 ## Chapter mechanics (`core/Game.ts`, `world/LevelBuilder.ts`, level files)

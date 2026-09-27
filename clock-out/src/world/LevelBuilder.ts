@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { buildProps, type PropRuntime } from './Props';
 import type { LevelData } from '../data/types';
 import { ColliderWorld } from './Colliders';
 import { NavGrid, type Vec2 } from './NavGrid';
@@ -50,6 +51,7 @@ export interface LevelRuntime {
   /** Places that soak up your footsteps (acoustic panels, server racks). */
   dampers: Array<{ x: number; z: number; radius: number; factor: number }>;
   theme: 'day' | 'night' | 'theatre' | 'festival';
+  props: PropRuntime;
   cellAt(c: number, r: number): string;
   isExit(x: number, z: number): boolean;
   /** Floor cell in front of a fire exit: it's an exit, but the alarm goes off. */
@@ -215,7 +217,10 @@ export function buildLevel(data: LevelData): LevelRuntime {
   root.add(makeFloor(W * cs, H * cs));
   root.add(makeCeiling(W * cs, H * cs, theme));
 
-  const nav = new NavGrid(W, H, cs, (c, r) => WALKABLE.has(cellAt(c, r)));
+  const props = buildProps(root, data.props, cs, colliders);
+  // Floor props with colliders also take their cell out of the nav grid.
+  const propBlocked = new Set((data.props ?? []).filter((p) => p.kind === 'cleaningCart' || p.kind === 'deskLamp').map((p) => p.cell.join(',')));
+  const nav = new NavGrid(W, H, cs, (c, r) => WALKABLE.has(cellAt(c, r)) && !propBlocked.has(`${c},${r}`));
 
   let ex = 0, ez = 0;
   for (const key of exitCells) {
@@ -233,7 +238,7 @@ export function buildLevel(data: LevelData): LevelRuntime {
     spawn: { x: sp.x, z: sp.z, yaw: spawnYaw },
     exitCells, exitCenter, kitchens, copiers, coolers, elevators, doors,
     screenMaterial: kit.screenMaterial,
-    vendings, dampers, theme,
+    vendings, dampers, theme, props,
     cellAt,
     isAlarmExit(px: number, pz: number) {
       return alarmCells.has(`${Math.floor(px / cs)},${Math.floor(pz / cs)}`);

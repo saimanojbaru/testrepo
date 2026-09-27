@@ -174,7 +174,7 @@ export class DialogueUI {
     this.hintEl.textContent = text;
   }
 
-  showVerdict(items: LineItem[], total: number, outcome: Outcome): void {
+  showVerdict(items: LineItem[], total: number, outcome: Outcome, blurted = false): void {
     this.verdictEl.innerHTML = '';
     const list = el('div', 'items');
     for (const it of items) {
@@ -187,7 +187,7 @@ export class DialogueUI {
       list.append(row);
     }
     const sum = el('div', `sum outcome-${outcome.toLowerCase()}`);
-    sum.innerHTML = `<span>Suspicion ${formatNum(total)}</span><strong>${outcomeLabel(outcome)}</strong>`;
+    sum.innerHTML = `<span>Suspicion ${formatNum(total)}</span><strong>${outcomeLabel(outcome)}${blurted ? (outcome === 'PASSED' ? ' (barely)' : ' (blurted)') : ''}</strong>`;
     this.verdictEl.append(list, sum);
     this.verdictEl.classList.remove('hidden');
   }

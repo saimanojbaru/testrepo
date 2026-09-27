@@ -18,7 +18,13 @@ export interface FaceRecipe {
   browTilt?: number;          // radians; + reads stern, - reads worried
   browColor?: number;
   noseLength?: number;        // 1 = default
-  mouth?: 'neutral' | 'smile' | 'smirk' | 'tired';
+  mouth?: 'neutral' | 'smile' | 'smirk' | 'tired' | 'open' | 'pursed';
+  /** <1 narrows the eyes (a knowing look). */
+  eyeSquint?: number;
+  /** Small white highlight in each eye: bright, eager, three weeks in. */
+  catchlight?: boolean;
+  /** Lifts the left brow by this many metres. */
+  browRaise?: number;
   lipColor?: number;
   hair: number;
   hairStyle: 'sidepart' | 'bun' | 'braid' | 'spiky' | 'bob' | 'receding' | 'crop';
@@ -61,6 +67,12 @@ function shade(color: number, k: number): number {
   return new THREE.Color(color).multiplyScalar(k).getHex();
 }
 
+/** z of the head surface at (x, dy) relative to the head centre. */
+function surfaceZAt(R: number, s: { w: number; h: number; d: number }, x: number, dy: number): number {
+  const u = x / (R * s.w), v = dy / (R * s.h);
+  return -R * s.d * Math.sqrt(Math.max(0.02, 1 - u * u - v * v));
+}
+
 /** z of the head surface on the centre line at height dy above the head centre. */
 function surfaceZ(R: number, s: { w: number; h: number; d: number }, dy: number): number {
   const t = Math.min(0.99, dy / (R * s.h));
@@ -86,21 +98,30 @@ export function buildFace(head: THREE.Group, r: FaceRecipe): void {
     ear.scale.set(0.45, 1.15, 0.8);
   }
 
-  // Eyes: white, iris, a highlight-free pupil. Slight sink into the face.
+  // Eyes. Each eyeball sits on the head surface along the view axis, and iris and
+  // pupil are offset from its centre straight down -Z by the same amount on both
+  // sides, so the gaze is parallel (focused at infinity) from every camera angle.
   const es = r.eyeSize ?? 1;
+  const sq = r.eyeSquint ?? 1;
   const eyeY = cy + 0.02;
+  const er = 0.019 * es;
   for (const side of [-1, 1]) {
     const x = side * 0.052;
-    const white = mesh(head, new THREE.SphereGeometry(0.019 * es, 12, 10), 0xefeae0, x, eyeY, front + 0.016);
-    white.scale.set(1.35, 0.8, 0.5);
-    mesh(head, new THREE.SphereGeometry(0.0095 * es, 10, 8), r.eyeColor ?? 0x4a2c18, x, eyeY - 0.001, front + 0.009).scale.set(1, 1, 0.5);
-    mesh(head, new THREE.SphereGeometry(0.0045 * es, 8, 6), 0x0a0a0a, x, eyeY - 0.001, front + 0.006).scale.set(1, 1, 0.5);
-    // Upper lid line gives the eye a shape instead of a googly disc.
-    mesh(head, new THREE.BoxGeometry(0.05 * es, 0.004, 0.008), shade(skin, 0.6), x, eyeY + 0.014 * es, front + 0.012, true);
-    // Brows.
+    const surf = surfaceZAt(R, s, x, eyeY - cy);
+    const cz = surf + er * 0.45;           // eyeball centre, a little inside the skin
+    const frontZ = cz - er * 0.7;          // front of the (flattened) eyeball
+    const white = mesh(head, new THREE.SphereGeometry(er, 14, 10), 0xefeae0, x, eyeY, cz);
+    white.scale.set(1.3, 0.82 * sq, 0.7);
+    mesh(head, new THREE.SphereGeometry(er * 0.52, 12, 8), r.eyeColor ?? 0x4a2c18, x, eyeY, frontZ - 0.0008).scale.set(1, Math.min(1, sq * 1.1), 0.22);
+    mesh(head, new THREE.SphereGeometry(er * 0.25, 8, 6), 0x0a0a0a, x, eyeY, frontZ - 0.0016).scale.set(1, 1, 0.22);
+    if (r.catchlight) mesh(head, new THREE.SphereGeometry(er * 0.1, 6, 4), 0xffffff, x + er * 0.2, eyeY + er * 0.2, frontZ - 0.0024).scale.set(1, 1, 0.3);
+    // Upper lid line gives the eye a shape instead of a googly disc; a squint lowers it.
+    mesh(head, new THREE.BoxGeometry(0.05 * es, 0.004, 0.008), shade(skin, 0.6), x, eyeY + er * 0.72 * sq, frontZ + 0.002, true);
+    // Brows follow the forehead curve; `browRaise` lifts the left one ("I know things").
     const bt = r.browThickness ?? 1;
-    const brow = mesh(head, new THREE.BoxGeometry(0.045, 0.009 * bt, 0.012), r.browColor ?? r.hair, x, eyeY + 0.036, front + 0.012, true);
-    brow.rotation.z = side * -(r.browTilt ?? 0.08);
+    const by = eyeY + 0.036 + (side === -1 ? r.browRaise ?? 0 : 0);
+    const brow = mesh(head, new THREE.BoxGeometry(0.045, 0.009 * bt, 0.012), r.browColor ?? r.hair, x, by, surfaceZAt(R, s, x, by - cy) - 0.002, true);
+    brow.rotation.z = side * -(r.browTilt ?? 0.08) + (side === -1 && r.browRaise ? 0.15 : 0);
   }
 
   // Nose: a small wedge pointing out of the face.
@@ -112,14 +133,24 @@ export function buildFace(head: THREE.Group, r: FaceRecipe): void {
   // Mouth: a thin arc; its rotation carries the mood.
   const lip = r.lipColor ?? shade(skin, 0.72);
   const mouthY = cy - 0.058;
+  // The face curves back below the eyes: sit the mouth on the actual surface at its height.
+  const mz = surfaceZ(R, s, mouthY - cy);
   const bearded = r.facialHair === 'beard';
   // A curved mouth floats oddly over a beard; bearded faces get a simple line.
   const mood = bearded ? 'neutral' : r.mouth ?? 'neutral';
-  if (mood === 'neutral' || mood === 'tired') {
-    const m = mesh(head, new THREE.BoxGeometry(0.05, 0.007, 0.01), lip, 0, mouthY, front + 0.022, true);
+  if (mood === 'open') {
+    // Eager open smile: dark mouth, a strip of teeth.
+    const m = mesh(head, new THREE.CircleGeometry(0.02, 14, Math.PI, Math.PI), 0x3a1a18, 0, mouthY + 0.006, mz - 0.003);
+    m.rotation.y = Math.PI;
+    m.scale.set(1.2, 0.9, 1);
+    mesh(head, new THREE.BoxGeometry(0.034, 0.005, 0.002), 0xf4f1ea, 0, mouthY + 0.004, mz - 0.0045);
+  } else if (mood === 'pursed') {
+    mesh(head, new THREE.TorusGeometry(0.008, 0.0035, 6, 12), lip, 0.004, mouthY + 0.002, mz - 0.002);
+  } else if (mood === 'neutral' || mood === 'tired') {
+    const m = mesh(head, new THREE.BoxGeometry(0.05, 0.007, 0.01), lip, 0, mouthY, mz - 0.002, true);
     if (mood === 'tired') { m.scale.x = 0.8; m.position.y -= 0.004; }
   } else {
-    const arc = mesh(head, new THREE.TorusGeometry(0.028, 0.0045, 6, 14, Math.PI * 0.8), lip, 0, mouthY + 0.012, front + 0.02);
+    const arc = mesh(head, new THREE.TorusGeometry(0.028, 0.0045, 6, 14, Math.PI * 0.8), lip, 0, mouthY + 0.012, mz + 0.002);
     arc.rotation.z = Math.PI + Math.PI * 0.1;
     if (mood === 'smirk') { arc.rotation.z += 0.35; arc.position.x = 0.008; }
   }
@@ -169,8 +200,9 @@ export function buildFace(head: THREE.Group, r: FaceRecipe): void {
   switch (r.forehead) {
     case 'vibhuti':
       // Three pale horizontal lines of sacred ash with a small kumkum dot: common across Tamil Nadu.
-      for (let i = 0; i < 3; i++) mesh(head, new THREE.BoxGeometry(0.044 - i * 0.004, 0.0024, 0.004), 0xcfc6b6, 0, fy + 0.01 - i * 0.008, fz, true);
-      mesh(head, new THREE.SphereGeometry(0.0032, 8, 6), 0xa3202a, 0, fy + 0.002, fz - 0.002);
+      // Middle ground: readable from conversation distance, invisible at patrol distance.
+      for (let i = 0; i < 3; i++) mesh(head, new THREE.BoxGeometry(0.052 - i * 0.005, 0.0034, 0.004), 0xe6ded0, 0, fy + 0.01 - i * 0.009, fz, true);
+      mesh(head, new THREE.SphereGeometry(0.004, 8, 6), 0xa3202a, 0, fy + 0.001, fz - 0.002);
       break;
     case 'tilak':
       mesh(head, new THREE.BoxGeometry(0.008, 0.035, 0.006), 0xc0392b, 0, fy - 0.01, fz, true);
@@ -186,7 +218,7 @@ export function buildFace(head: THREE.Group, r: FaceRecipe): void {
       break;
     case 'chandanam':
       // A thin line of sandal paste: a Kerala morning-temple habit that lasts till lunch.
-      mesh(head, new THREE.BoxGeometry(0.0045, 0.026, 0.004), 0xd8b870, 0, fy - 0.006, fz, true);
+      mesh(head, new THREE.BoxGeometry(0.0075, 0.03, 0.004), 0xf0d98c, 0, fy - 0.004, fz, true);
       break;
   }
 

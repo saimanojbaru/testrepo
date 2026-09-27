@@ -227,6 +227,12 @@ export const EXCUSES: ExcuseDef[] = [
     pivotLine: 'It trusts me, sir. We have a thing. A parrot thing.',
   },
   {
+    id: 'goldfish', category: 'absurd', risk: 5, tags: ['funny', 'legend'],
+    text: 'Sir, my goldfish is drowning.',
+    followUp: "…Fish can't drown.",
+    pivotLine: "That's what they said about the Titanic, sir.",
+  },
+  {
     id: 'liftmechanic', category: 'absurd', risk: 4, tags: ['funny', 'near_exit'],
     text: 'The lift mechanic is here and he asked for me by name.',
     followUp: 'Why would the lift mechanic ask for you?',

@@ -244,7 +244,7 @@ export class DialogueSystem {
     }
     this.ui.clearChoices();
     this.say('npc', this.reaction());
-    this.ui.showVerdict(this.items, this.total, this.outcome);
+    this.ui.showVerdict(this.items, this.total, this.outcome, this.blurted);
     this.ui.setHint('Space / click to continue');
     this.enter('reaction');
   }
@@ -300,7 +300,7 @@ export class DialogueSystem {
       if (score > bestScore) { bestScore = score; best = [...node.lines]; }
       else if (score === bestScore) best.push(...node.lines);
     }
-    return best.length ? pick(best) : 'Hey. Where are you going?';
+    return best.length ? pick(best) : 'Arre, where are you going?';
   }
 
   private reaction(): string {

@@ -41,6 +41,8 @@ export interface LevelData {
   chapter: number;
   /** Lighting and decoration set. */
   theme?: 'day' | 'night' | 'theatre' | 'festival';
+  /** Lit points of interest for the dark levels (emergency lights, a call running late, a phone). */
+  props?: PropSpec[];
   /** Things to do, in order, before the exit counts ("grab your charger"). */
   objectives?: Array<{ cell: [number, number]; label: string; done: string }>;
   /**
@@ -113,7 +115,7 @@ export interface NPCLook {
     | 'tie' | 'lanyard' | 'glasses' | 'clipboard' | 'mug' | 'headset' | 'backpack' | 'toolbelt' | 'pearls' | 'cardigan'
     // Indian-office wear and small regional tells.
     | 'halfSleeve' | 'belt' | 'penPocket' | 'kurti' | 'dupatta' | 'watch' | 'kara' | 'greenBangles' | 'goldBangles'
-    | 'kalava' | 'mangalsutra' | 'rudraksha' | 'gamosaStrap' | 'apron'
+    | 'kalava' | 'mangalsutra' | 'rudraksha' | 'gamosaStrap' | 'apron' | 'blazer'
   >;
   /** Layered-primitive face. When present it replaces the old box head and hair. */
   face?: FaceRecipe;
@@ -150,3 +152,13 @@ export interface DialogueNode {
 export type Outcome = 'PASSED' | 'PROBED' | 'ESCORTED' | 'CAUGHT';
 
 export type Ending = 'CLEAN' | 'ESCAPED' | 'LEGEND' | 'PROMOTION' | 'CAUGHT';
+
+export interface PropSpec {
+  kind: 'emergencyLight' | 'callRoom' | 'cleaningCart' | 'deskLamp' | 'phoneGlow';
+  cell: [number, number];
+  /** Metres from the cell centre. */
+  offset?: [number, number];
+  /** Degrees; 0 faces +Z. */
+  yaw?: number;
+  color?: 'red' | 'green';
+}

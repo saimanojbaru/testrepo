@@ -15,6 +15,7 @@ export const powercut: LevelData = {
   directorBudget: 1,
   theme: "day",
   suspicionModifier: {"label": "Your status says 'network issue'", "value": 2},
+  props: [{"kind": "emergencyLight", "color": "green", "cell": [1, 5], "offset": [-0.68, 0], "yaw": 90}, {"kind": "emergencyLight", "color": "red", "cell": [14, 1], "offset": [0, -0.68]}, {"kind": "emergencyLight", "color": "red", "cell": [23, 9], "offset": [0, -0.68]}, {"kind": "emergencyLight", "color": "green", "cell": [28, 10], "offset": [0.68, 0], "yaw": -90}],
   caughtFlavor: "Deepak: 'Network is fine, guru. I pinged you. You were typing.' Your status now says 'Available'. Forever.",
   escapeFlavor: "The power comes back at 3:07. Your Teams status says 'Away'. For once, it's true.",
   clock: { startMinutes: 855, rate: 0.16666666666666666 },

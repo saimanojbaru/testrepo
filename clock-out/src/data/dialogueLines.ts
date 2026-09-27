@@ -28,12 +28,12 @@ export const OPENERS: DialogueNode[] = [
 
   // --- Rinku (Jorhat, fresher) ---
   { who: 'rinku', lines: [
-    "Hi! Are you going somewhere cool? Can I come? I'll be very quiet.",
-    "I'm asking everyone what they're working on. For learning. What are you working on?",
-    "Wait, are you leaving? Is leaving allowed? Nobody tells me the rules.",
+    "Sir, going somewhere? Should I also come? I'll sit quietly only.",
+    "Sir, what are you working on? I'm asking everyone. For learning purpose.",
+    "Sir, you're leaving? Leaving is allowed? They didn't tell in induction.",
   ] },
   { who: 'rinku', when: ['crouching'], lines: [
-    "Is this a fire drill? Should I also crouch? I'm crouching.",
+    "Sir, fire drill is happening? Should I also sit down? I'm sitting down.",
   ] },
   { who: 'rinku', when: ['heard_before'], lines: [
     "Oh! You're the one from before! I wrote your excuse in my notebook. For learning.",
@@ -42,7 +42,7 @@ export const OPENERS: DialogueNode[] = [
   // --- Ramesh (Chennai, senior manager) ---
   { who: 'ramesh', lines: [
     "One minute, ma. Walk with me. Actually, stand with me. Where are we going?",
-    "There's my rockstar. Quick question. Quick. Where is your head at, location-wise?",
+    "There's my rockstar. Small doubt, ma. Where are you going, location-wise?",
     "You look like someone with a vision. Is the vision the lift?",
   ] },
   { who: 'ramesh', when: ['crouching'], lines: [
@@ -52,7 +52,7 @@ export const OPENERS: DialogueNode[] = [
     "We spoke about this. We had a whole connect. There was a whiteboard.",
   ] },
   { who: 'ramesh', when: ['near_exit'], lines: [
-    "Lift, eh? Bold. I like bold. I don't like unscheduled bold.",
+    "Lift, aa? Bold. I like bold. I don't like unscheduled bold.",
   ] },
 
   // --- Priya (Thrissur, HR) ---
@@ -62,7 +62,7 @@ export const OPENERS: DialogueNode[] = [
     "Do you have a moment? You do. I checked your calendar.",
   ] },
   { who: 'priya', when: ['crouching'], lines: [
-    "I'm going to need you to stand up and explain why you weren't standing up.",
+    "Kindly stand up and explain why you were not standing up.",
   ] },
   { who: 'priya', when: ['heard_before'], lines: [
     "I have your last excuse on file. Would you like to add an addendum?",
@@ -114,31 +114,31 @@ export const OPENERS: DialogueNode[] = [
   // --- Archetype fallbacks ---
   { who: 'boss', lines: ["Got a minute? Everyone's got a minute. That's the beauty of minutes."] },
   { who: 'gossip', lines: ["Ooh, where are you going? Tell me. I'll only tell a few people."] },
-  { who: 'chatty', lines: ["Hey! Hey. Sorry. Hi. Where are you going?"] },
+  { who: 'chatty', lines: ["Arre, hi! Sorry. Hi. Where are you going?"] },
   { who: 'hr', lines: ["A quick word. Everything is fine. That's what I'm here to confirm."] },
   { who: 'intern', lines: ["Hi! Sorry. Are you allowed to be over here?"] },
   { who: 'security', lines: ["Namaste, saar. Where are we going?"] },
-  { who: 'coworker', lines: ["Hey. Where are you going?"] },
+  { who: 'coworker', lines: ["Arre, where are you going?"] },
 
   // --- Context fallbacks (any NPC) ---
   { who: 'any', when: ['voluntary'], lines: ["Oh, hi. You wanted to talk to me? Nobody wants to talk to me."] },
-  { who: 'any', when: ['sprinting'], lines: ["Why are you running? Is there a fire? Is it a fun fire?"] },
+  { who: 'any', when: ['sprinting'], lines: ["Why are you running? Fire is there? Should I also run?"] },
   { who: 'any', when: ['probe_violation'], lines: ["One minute. That's not the way to your desk. That's the way to the door."] },
 ];
 
 /** Reactions after the verdict. Keyed by NPC id, then outcome. Falls back to archetype, then 'any'. */
 export const REACTIONS: Record<string, Partial<Record<Outcome, string[]>>> = {
   kavita: {
-    PASSED: ["Ayyo, poor thing. Go, go. I'll tell everyone. Nicely.", "That is the most interesting thing today. Go."],
+    PASSED: ["Arre deva, poor thing. Go, go. I'll tell everyone. Nicely.", "That is the most interesting thing today. Go."],
     PROBED: ["Chal, I'll walk with you. I was going that side anyway. I'm always going that side."],
     ESCORTED: ["Come, I'll drop you to your desk. You look pale. I'll tell you about my kitchen renovation."],
     CAUGHT: ["Arre. Ramesh sir will want to hear this. From me. Right now."],
   },
   rinku: {
-    PASSED: ["That's so valid. Go! I'll cover for you! I don't know how!", "Wow. You're so good at this. Is this what being senior is?"],
-    PROBED: ["Okay okay, I'll just walk with you. For learning."],
-    ESCORTED: ["I'll walk you back to your desk. I think that's what a good teammate does? Right?"],
-    CAUGHT: ["I have to tell Ramesh sir. I'm so sorry. It's in the induction deck."],
+    PASSED: ["Ho jayega sir, don't worry. Aap jaao, I'll manage!", "Tension mat lo, sir. If anyone asks, you're on a call. Which call? I'll manage."],
+    PROBED: ["Sir, I'll also come till the lift. For learning purpose."],
+    ESCORTED: ["Sir, come, I'll drop you to your desk. Team player, no? Deepak sir told me."],
+    CAUGHT: ["Sorry sir, I have to tell Ramesh sir. It's in the induction deck. Slide forty."],
   },
   ramesh: {
     PASSED: ["Good initiative. Go. Circle back.", "Say no more. Actually, put it in a mail. Go."],
@@ -154,7 +154,7 @@ export const REACTIONS: Record<string, Partial<Record<Outcome, string[]>>> = {
   },
   rohit: {
     PASSED: ["Haha, fine. Legend. Bring me back a samosa.", "Okay, that's actually good. I'm stealing it, bhai."],
-    PROBED: ["Nah, I'm walking with you. If you're escaping, I'm witnessing."],
+    PROBED: ["Nahi yaar, I'm walking with you. If you're escaping, I'm witnessing."],
     ESCORTED: ["Back to the desk, paaji. If I suffer, everyone suffers."],
     CAUGHT: ["RAMESH SIR! Sir, one minute! Come and see this!"],
   },
@@ -171,7 +171,7 @@ export const REACTIONS: Record<string, Partial<Record<Outcome, string[]>>> = {
     CAUGHT: ["Sorry, nanna. Rules are rules. I didn't make them. I laminated them."],
   },
   deepak: {
-    PASSED: ["Okay, guru, go. But update the ticket before you go. Joking. Not joking.", "Valid. Very valid. Go."],
+    PASSED: ["Okay, guru, go. But update the ticket before you go. Joking. Not joking.", "Genuine reason, guru. Go, go. I'll handle standup."],
     PROBED: ["I'll walk with you. I'm technically in a meeting. The meeting is walking."],
     ESCORTED: ["Let me drop you back. We can discuss your tickets. All eleven."],
     CAUGHT: ["Sorry, guru. I have to escalate. I don't like escalating. I'm very good at it."],
@@ -196,7 +196,7 @@ export const PANIC_PREFIX = ['Uh — ', 'Sir, actually — ', 'So basically what
 /** Generic deflections offered next to the real pivot line in the follow-up round. */
 export const DEFLECTIONS = [
   'New haircut, sir? Very sharp.',
-  "Can we take this offline? Like, tomorrow?",
+  "Can we take this offline, sir? Tomorrow?",
   "Good question. I'll revert on that.",
   "I'd rather not discuss at work, sir.",
 ];
@@ -206,9 +206,9 @@ export const FLOUNDERS = ['Um.', '…Yes, sir.', "I don't… I don't know.", 'So
 
 /** Barks for state transitions (shown in speech bubbles). */
 export const STATE_BARKS = {
-  suspicious: ['Hm?', 'Who is that?', 'Kaun hai?', 'Hello?', 'Huh.'],
-  investigate: ['I could have sworn…', 'Weird.', 'Must be the AC.', 'Nothing only.'],
-  confront: ['Hey! One minute!', 'Oh, hi! Wait wait!', 'Ek minute!', 'Hello, you. Hi.'],
+  suspicious: ['Hm?', 'Who is that?', 'Kaun hai?', 'Hello?', 'Enti?'],
+  investigate: ['I could have sworn…', 'Something is fishy.', 'Must be the AC.', 'Nothing only.'],
+  confront: ['Oye! One minute!', 'Oh, hi! Wait wait!', 'Ek minute!', 'Hello, you. Hi.'],
   chase: ['Arre, why are you RUNNING?', 'HEY! No running on the floor!', 'Stop! There is a no-running policy!'],
   ignored: ["Hello? HELLO? I'm talking to you only!", 'Excuse me? EXCUSE me?', "Don't walk away from a sync!"],
   giveUp: ['…Okay then.', 'Where did they go?', 'Fine. I saw nothing. I saw everything.'],

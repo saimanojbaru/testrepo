@@ -10,6 +10,8 @@ const TUNING = {
 
 export interface HudTopRight {
   clock: string;
+  /** Real seconds on the run, against par. */
+  timer?: { seconds: number; par: number };
   deadline?: string;
   deadlineUrgent?: boolean;
   favors?: { left: number; total: number };
@@ -91,6 +93,10 @@ export class HUD {
 
   setTopRight(info: HudTopRight): void {
     const parts = [`<div class="clock">${info.clock}</div>`];
+    if (info.timer) {
+      const { seconds, par } = info.timer;
+      parts.push(`<div class="runtimer ${seconds > par ? 'over' : ''}">⏱ ${seconds.toFixed(1)} s <span>· par ${par} s</span></div>`);
+    }
     if (info.deadline) parts.push(`<div class="deadline ${info.deadlineUrgent ? 'urgent' : ''}">${info.deadline}</div>`);
     if (info.favors) {
       const dots = '●'.repeat(info.favors.left) + '○'.repeat(info.favors.total - info.favors.left);

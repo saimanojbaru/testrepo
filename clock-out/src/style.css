@@ -51,6 +51,9 @@ button { font: inherit; }
   background: rgba(244, 241, 232, 0.55); padding: 8px 12px; border-radius: 4px; font-size: 12px; line-height: 1.5;
 }
 .top-right .clock { font-size: 18px; font-weight: 700; letter-spacing: 0.04em; }
+.top-right .runtimer { font-variant-numeric: tabular-nums; font-size: 14px; }
+.top-right .runtimer span { opacity: 0.6; font-size: 12px; }
+.top-right .runtimer.over { color: #ffb347; }
 .top-right .deadline { color: #7a3b16; font-weight: 700; }
 .top-right .deadline.urgent { color: var(--red); animation: blink 0.8s steps(2) infinite; }
 .top-right .favors { color: var(--blue); }

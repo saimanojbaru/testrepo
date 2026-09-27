@@ -219,6 +219,11 @@ export class NPC {
     const swing = Math.sin(this.walkPhase) * 0.55 * this.walkAmount;
     this.legs[0].rotation.x = swing;
     this.legs[1].rotation.x = -swing;
+    // Knees bend on the back-swing, which is what makes a walk read as a walk.
+    for (const leg of this.legs) {
+      const knee = leg.userData.knee as THREE.Object3D | undefined;
+      if (knee) knee.rotation.x = 0.05 + Math.max(0, -leg.rotation.x) * 1.1;
+    }
     this.arms[0].rotation.x = -swing * 0.8;
     this.arms[1].rotation.x = swing * 0.8;
     this.head.rotation.y = this.headYaw;
@@ -328,19 +333,46 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
   const body = def.color;
   const acc = new Set(look.accessories);
 
+  // Low-poly but deliberate: bevelled, tapered torso; jointed limbs with a knee and an elbow.
   for (const side of [-1, 1]) {
     const hip = new THREE.Group();
-    hip.position.set(side * 0.11, 0.86, 0);
-    part(hip, 0.15, 0.8, 0.17, look.pants, 0, -0.4, 0);
-    part(hip, 0.16, 0.08, 0.26, 0x1e1c1a, 0, -0.82, -0.04);
+    hip.position.set(side * 0.105, 0.86, 0);
+    limb(hip, 0.085, 0.068, 0.44, look.pants, -0.22);
+    const knee = new THREE.Group();
+    knee.position.y = -0.44;
+    knee.rotation.x = 0.05;
+    limb(knee, 0.066, 0.055, 0.38, look.pants, -0.19);
+    const shoe = soft(0.12, 0.075, 0.25, 0.025, 1, 1, 0x1e1c1a);
+    shoe.position.set(0, -0.4, -0.045);
+    knee.add(shoe);
+    hip.add(knee);
+    hip.userData.knee = knee;
     root.add(hip);
     legs.push(hip);
   }
-  part(root, 0.46, 0.64, 0.27, body, 0, 1.16, 0);
+  const pelvis = soft(0.4, 0.16, 0.25, 0.04, 1, 0.95, look.pants);
+  pelvis.position.set(0, 0.88, 0);
+  root.add(pelvis);
+  // Torso: broad at the shoulders, narrower at the waist, with bevelled edges.
+  const torso = soft(0.46, 0.64, 0.27, 0.05, 1.0, 0.84, body);
+  torso.position.set(0, 1.16, 0);
+  root.add(torso);
+  if (acc.has('blazer')) {
+    // A real blazer: open at the front with lapels over a white shirt.
+    const jacket = soft(0.5, 0.66, 0.3, 0.05, 1.02, 0.9, body);
+    jacket.position.set(0, 1.15, 0.004);
+    root.add(jacket);
+    part(root, 0.13, 0.5, 0.02, 0xf2f0ea, 0, 1.22, -0.16);
+    if (acc.has('tie')) part(root, 0.05, 0.42, 0.02, 0xa82828, 0, 1.2, -0.168);
+    for (const side of [-1, 1]) {
+      const lapel = part(root, 0.06, 0.3, 0.02, shade(body, 1.25), side * 0.085, 1.3, -0.166);
+      lapel.rotation.z = side * 0.35;
+    }
+  }
   if (acc.has('cardigan')) {
     part(root, 0.14, 0.6, 0.02, 0xefe6dc, 0, 1.17, -0.14);
   }
-  if (acc.has('tie')) {
+  if (acc.has('tie') && !acc.has('blazer')) {
     part(root, 0.16, 0.5, 0.02, 0xe8e6df, 0, 1.2, -0.14);
     part(root, 0.06, 0.42, 0.02, 0xa82828, 0, 1.2, -0.152);
   }
@@ -359,9 +391,13 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
   if (acc.has('pearls')) part(root, 0.22, 0.03, 0.02, 0xf5f1e6, 0, 1.43, -0.13);
   const trim = look.trim ?? 0xb8860b;
   if (acc.has('kurti')) {
-    // Tunic runs to mid-thigh with a woven border at the hem and neckline.
-    part(root, 0.5, 0.36, 0.29, body, 0, 0.72, 0);
-    part(root, 0.505, 0.05, 0.295, trim, 0, 0.56, 0);
+    // Tunic flares to mid-thigh with a woven border at the hem and neckline.
+    const tunic = soft(0.46, 0.4, 0.28, 0.04, 0.9, 1.18, body);
+    tunic.position.set(0, 0.73, 0);
+    root.add(tunic);
+    const hem = soft(0.56, 0.05, 0.34, 0.015, 1, 1, trim);
+    hem.position.set(0, 0.555, 0);
+    root.add(hem);
     part(root, 0.16, 0.035, 0.02, trim, 0, 1.43, -0.14);
   }
   if (acc.has('dupatta')) {
@@ -392,30 +428,48 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
 
   for (const side of [-1, 1]) {
     const shoulder = new THREE.Group();
-    shoulder.position.set(side * 0.3, 1.43, 0);
+    shoulder.position.set(side * 0.29, 1.43, 0);
+    // Shoulder cap, upper arm, then an elbow joint with the forearm and hand.
+    const cap = new THREE.Mesh(new THREE.SphereGeometry(0.075, 8, 6), mat(body));
+    cap.scale.set(1, 0.8, 1);
+    shoulder.add(cap);
+    limb(shoulder, 0.062, 0.052, 0.3, body, -0.15);
     if (acc.has('halfSleeve')) {
       // Half-sleeve formal shirt: the unofficial uniform of every Indian IT floor.
-      part(shoulder, 0.13, 0.28, 0.15, body, 0, -0.14, 0);
-      part(shoulder, 0.1, 0.34, 0.11, look.skin, 0, -0.44, 0);
-    } else {
-      part(shoulder, 0.12, 0.6, 0.14, body, 0, -0.3, 0);
+      const cuff = new THREE.Mesh(new THREE.CylinderGeometry(0.058, 0.058, 0.03, 8), mat(shade(body, 0.92)));
+      cuff.position.y = -0.27;
+      shoulder.add(cuff);
     }
-    part(shoulder, 0.1, 0.1, 0.1, look.skin, 0, -0.64, 0);
+    const elbow = new THREE.Group();
+    elbow.position.y = -0.3;
+    elbow.rotation.x = -0.14;
+    const forearm = acc.has('halfSleeve') || (acc.has('kurti') && !acc.has('blazer')) ? look.skin : body;
+    limb(elbow, 0.05, 0.042, 0.27, forearm, -0.135);
+    const hand = new THREE.Mesh(new THREE.SphereGeometry(0.05, 8, 6), mat(look.skin));
+    hand.scale.set(0.8, 1.15, 0.9);
+    hand.position.y = -0.31;
+    elbow.add(hand);
+    shoulder.add(elbow);
     // Wrist details sit just above the hand.
-    const wrist = (color: number, h = 0.022, grow = 0.02) => part(shoulder, 0.1 + grow, h, 0.1 + grow, color, 0, -0.575, 0);
+    const wrist = (color: number, h = 0.022, grow = 0.02) => {
+      const w = new THREE.Mesh(new THREE.CylinderGeometry(0.046 + grow / 2, 0.046 + grow / 2, h, 10), mat(color));
+      w.position.y = -0.25;
+      elbow.add(w);
+      return w;
+    };
     if (side === -1 && acc.has('watch')) wrist(0x2b2b2e, 0.035);
     if (side === 1 && acc.has('kara')) wrist(0xc8ccd0, 0.018, 0.028);
     if (side === 1 && acc.has('kalava')) wrist(0xc0392b, 0.012, 0.012);
-    if (acc.has('greenBangles')) { wrist(0x1e8a4a, 0.012, 0.03); part(shoulder, 0.13, 0.012, 0.13, 0x1e8a4a, 0, -0.555, 0); }
-    if (acc.has('goldBangles')) { wrist(0xd4af37, 0.01, 0.03); part(shoulder, 0.13, 0.01, 0.13, 0xd4af37, 0, -0.556, 0); }
+    if (acc.has('greenBangles')) { wrist(0x1e8a4a, 0.012, 0.03); wrist(0x1e8a4a, 0.012, 0.03).position.y = -0.225; }
+    if (acc.has('goldBangles')) { wrist(0xd4af37, 0.01, 0.03); wrist(0xd4af37, 0.01, 0.03).position.y = -0.228; }
     if (side === 1 && acc.has('clipboard')) {
-      part(shoulder, 0.02, 0.32, 0.24, 0x8a6a42, -0.05, -0.62, -0.1);
-      part(shoulder, 0.01, 0.26, 0.2, 0xf4f1e8, -0.064, -0.6, -0.1);
+      part(elbow, 0.02, 0.32, 0.24, 0x8a6a42, -0.05, -0.32, -0.1);
+      part(elbow, 0.01, 0.26, 0.2, 0xf4f1e8, -0.064, -0.3, -0.1);
     }
     if (side === -1 && acc.has('mug')) {
       const m = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.045, 0.11, 8), mat(0xe8e6df));
-      m.position.set(0.02, -0.66, -0.06);
-      shoulder.add(m);
+      m.position.set(0.02, -0.34, -0.06);
+      elbow.add(m);
     }
     root.add(shoulder);
     arms.push(shoulder);
@@ -489,6 +543,42 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
       part(head, 0.22, 0.08, 0.1, hair, 0.05, 0.38, -0.12).rotation.z = -0.2;
       break;
   }
+}
+
+/** Tapered cylinder limb segment hanging down from its parent joint. */
+function limb(parent: THREE.Object3D, rTop: number, rBottom: number, len: number, color: number, y: number): THREE.Mesh {
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(rTop, rBottom, len, 8), mat(color));
+  m.position.y = y;
+  parent.add(m);
+  return m;
+}
+
+const softCache = new Map<string, THREE.BufferGeometry>();
+/**
+ * Bevelled box, optionally tapered: `top`/`bottom` scale the width and depth at the
+ * top and bottom faces. Gives a chest-and-waist silhouette from one cheap mesh.
+ */
+function soft(w: number, h: number, d: number, bevel: number, top: number, bottom: number, color: number): THREE.Mesh {
+  const key = [w, h, d, bevel, top, bottom].join();
+  let g = softCache.get(key);
+  if (!g) {
+    const shape = new THREE.Shape();
+    const hw = w / 2 - bevel, hd = d / 2 - bevel;
+    shape.moveTo(-hw, -hd); shape.lineTo(hw, -hd); shape.lineTo(hw, hd); shape.lineTo(-hw, hd); shape.lineTo(-hw, -hd);
+    g = new THREE.ExtrudeGeometry(shape, { depth: h - 2 * bevel, bevelEnabled: true, bevelThickness: bevel, bevelSize: bevel, bevelSegments: 1 });
+    g.rotateX(-Math.PI / 2);
+    g.translate(0, -(h - 2 * bevel) / 2, 0);
+    const pos = g.getAttribute('position');
+    for (let i = 0; i < pos.count; i++) {
+      const t = (pos.getY(i) + h / 2) / h; // 0 at the bottom, 1 at the top
+      const k = bottom + (top - bottom) * Math.min(1, Math.max(0, t));
+      pos.setX(i, pos.getX(i) * k);
+      pos.setZ(i, pos.getZ(i) * k);
+    }
+    g.computeVertexNormals();
+    softCache.set(key, g);
+  }
+  return new THREE.Mesh(g, mat(color));
 }
 
 function shade(color: number, k: number): number {

@@ -214,7 +214,7 @@ export const NPC_LOOKS: Record<string, NPCLook> = {
     accessories: ['kurti', 'dupatta', 'greenBangles', 'mangalsutra'],
     face: {
       skin: 0xa8704c, hair: 0x120d0b, hairStyle: 'bun', gajra: true, forehead: 'chandrakor',
-      earrings: 'stud', mouth: 'smile', browTilt: -0.05, lipColor: 0x7a3434, shape: { w: 0.9, h: 1.1, d: 0.95 },
+      earrings: 'stud', mouth: 'smirk', eyeSquint: 0.62, browRaise: 0.012, browTilt: 0.02, lipColor: 0x7a3434, shape: { w: 0.9, h: 1.1, d: 0.95 },
     },
   },
   rinku: {
@@ -222,7 +222,7 @@ export const NPC_LOOKS: Record<string, NPCLook> = {
     tagline: 'Jorhat. Three weeks in. Still believes in all of it.',
     accessories: ['lanyard', 'backpack', 'gamosaStrap'],
     face: {
-      skin: 0xd8b08a, hair: 0x14100d, hairStyle: 'crop', mouth: 'smile', eyeSize: 0.95, browThickness: 0.9,
+      skin: 0xd8b08a, hair: 0x14100d, hairStyle: 'crop', mouth: 'open', eyeSize: 1.1, catchlight: true, browTilt: -0.14, browThickness: 0.9,
       shape: { w: 0.93, h: 1.05, d: 0.95 }, noseLength: 0.85,
     },
   },
@@ -267,14 +267,14 @@ export const NPC_LOOKS: Record<string, NPCLook> = {
     tagline: 'Mangaluru. Takes the credit, gives the tickets.',
     accessories: ['lanyard', 'watch', 'belt'],
     face: {
-      skin: 0x9c6b48, hair: 0x16110e, hairStyle: 'sidepart', facialHair: 'stubble', glasses: 'black', mouth: 'smirk',
+      skin: 0x9c6b48, hair: 0x16110e, hairStyle: 'sidepart', facialHair: 'stubble', glasses: 'black', mouth: 'smirk', browRaise: 0.01,
       shape: { w: 0.95, h: 1.06, d: 0.97 },
     },
   },
   sanjay: {
     skin: 0xb88660, hair: 0x2a2320, hairStyle: 'short', pants: 0x2c3a55, voice: 165, height: 1.04,
     tagline: 'Kolkata, via Dallas. Mostly via Dallas.',
-    accessories: ['tie', 'watch'],
+    accessories: ['blazer', 'tie', 'watch'],
     face: {
       skin: 0xb88660, hair: 0x2a2320, hairStyle: 'receding', greyTemples: true, glasses: 'black', mouth: 'tired',
       shape: { w: 0.98, h: 1.04, d: 0.98 },

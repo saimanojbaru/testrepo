@@ -15,6 +15,7 @@ export const nightshift: LevelData = {
   directorBudget: 0,
   theme: "night",
   suspicionModifier: {"label": "It's 1:30 AM. Where would you even be going?", "value": 2},
+  props: [{"kind": "callRoom", "cell": [5, 2], "yaw": 180}, {"kind": "deskLamp", "cell": [29, 2], "yaw": -90}, {"kind": "cleaningCart", "cell": [16, 14], "yaw": 20}, {"kind": "phoneGlow", "cell": [17, 9]}],
   caughtFlavor: "Sanjay: 'Great, you're here! In Dallas we'd call this commitment.' The handover ends at 5:50. Your shift starts at 6.",
   escapeFlavor: "2:07 AM. Hyderabad is quiet. The biryani place near the gate is somehow still open. Of course it is.",
   clock: { startMinutes: 90, rate: 0.16666666666666666 },

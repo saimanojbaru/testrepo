@@ -141,6 +141,10 @@ Every gameplay number is in a `TUNING` block at the top of its module. See [TUNI
   - *First offense* can't go straight to CAUGHT unless you blurted, so a first-time player isn't game-overed by one bad hand.
 - **Only one NPC can confront you at a time**, and the Director freezes other patrols when heat is high. Bad moments stay funny instead of turning into a dogpile.
 - **Phone calls turn NPCs sideways, not away**, so the window they open doesn't also open the exit for free. On the phone they ignore quiet footsteps.
+- **Voice is Indian English, not American.** No "that's so valid". Rinku says "Ho jayega sir, don't worry. Aap jaao, I'll manage." Each character gets at most one home-language word per line.
+- **Blurts are on the receipt.** A timed-out answer that still passes shows as "PASSED (barely)"; other outcomes get "(blurted)".
+- **Dark levels have points of interest.** The 1:30 AM shift has Sanjay's warm-lit cabin (a Dallas call running late), a security desk lamp, a parked housekeeping cart, and Deepak's phone lighting up on his desk. The power cut switches on red and green emergency light pools, and the monitors fade out with an afterglow instead of snapping to black (`world/Props.ts`, level `props`).
+- **Run timer.** The HUD shows the elapsed seconds against par; it turns amber once you're over par.
 - **Watercooler "hydrating"** (4 s at 30% detection fill) was added as a low-stakes use for the spec'd watercooler.
 
 ## Deviations from the spec

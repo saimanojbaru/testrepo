@@ -107,7 +107,7 @@ export class MainMenu {
           </div>
           <div class="panel">
             <h2>Legend excuses</h2>
-            ${trophies.length ? `<ul class="trophies">${trophies.map((e) => `<li>🏆 “${esc(e.text)}”</li>`).join('')}</ul>` : '<p class="muted">No legends yet. Absurd excuses that actually work end up here. Have you tried the parrot?</p>'}
+            ${trophies.length ? `<ul class="trophies">${trophies.map((e) => `<li>🏆 “${esc(e.text)}”</li>`).join('')}</ul>` : '<p class="muted">No legends yet. Absurd excuses that actually work end up here. Have you tried the goldfish?</p>'}
           </div>
           <details class="panel">
             <summary><h2>How to play</h2></summary>

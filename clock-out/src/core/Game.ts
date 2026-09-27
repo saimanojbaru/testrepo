@@ -30,6 +30,9 @@ import { LEVELS } from '../data/levels';
 // Bootstraps renderer, scene, camera and every system, and runs the top-level
 // state machine: MENU -> (intro) -> PLAYING <-> DIALOGUE -> ESCAPED | CAUGHT.
 
+const SCREEN_ON = new THREE.Color(0x8fb4d8);
+const SCREEN_OFF = new THREE.Color(0x111418);
+
 const TUNING = {
   fov: 72,
   near: 0.05,
@@ -52,6 +55,9 @@ const TUNING = {
   encounterCooldown: 3,
   maxCharisma: 2,
   hydrateSeconds: 4,
+  /** Seconds (time constant) for monitors to die / come back in a power cut. */
+  screenFadeOut: 0.9,
+  screenFadeIn: 0.35,
   lookBusySeconds: 5,
   objectiveReach: 1.1,
   /** Vision range multipliers by theme; a power cut stacks on top. */
@@ -102,6 +108,9 @@ interface Run {
   objectiveIdx: number;
   objectiveMarker: THREE.Mesh | null;
   powerCutUntil: number;
+  /** Monitor brightness 0..1; eases toward screenTarget so dying screens leave an afterglow. */
+  screenGlow: number;
+  screenTarget: number;
   fireAlarm: boolean;
   probe: { npc: NPC; startExitDist: number } | null;
   elevatorCallTimer: number;
@@ -246,7 +255,7 @@ export class Game {
       data, level, player, noise, hearing, director, world, npcs,
       time: 0, beatTime: 0, firedBeats: new Set(), charisma: 0, log: [], dialogues: 0,
       bossPassedCorporate: false, absurdSuccesses: [], favors: data.favors ?? 0, deadline: null,
-      allHandsUntil: -1, coverUntil: -1, coverAnchor: { x: 0, z: 0 }, objectiveIdx: 0, objectiveMarker: null, powerCutUntil: -1, fireAlarm: false, probe: null, elevatorCallTimer: -1, encounterCooldownUntil: 0,
+      allHandsUntil: -1, coverUntil: -1, coverAnchor: { x: 0, z: 0 }, objectiveIdx: 0, objectiveMarker: null, powerCutUntil: -1, screenGlow: 1, screenTarget: 1, fireAlarm: false, probe: null, elevatorCallTimer: -1, encounterCooldownUntil: 0,
       fading: false, repBefore: this.memory.reputationLabel(), ended: false,
     };
     this.run = run;
@@ -438,8 +447,10 @@ export class Game {
       const jammed = t < c.jammedUntil;
       (c.panel.material as THREE.MeshBasicMaterial).color.setHex(jammed ? (Math.floor(t * 6) % 2 ? 0xff3b2f : 0x401010) : 0x4fdc7a);
     }
+    run.level.props.update(t, t < run.powerCutUntil);
+    this.updateScreens(run, dt);
     const allHands = t < run.allHandsUntil;
-    run.level.screenMaterial.color.setHex(allHands ? (Math.floor(t * 4) % 2 ? 0xff6b3d : 0xf2f2f2) : 0x8fb4d8);
+    if (allHands) run.level.screenMaterial.color.setHex(Math.floor(t * 4) % 2 ? 0xff6b3d : 0xf2f2f2);
     for (const el of run.level.elevators) {
       el.buttonMat.color.setHex(run.elevatorCallTimer > 0 ? 0xffc34d : 0x777777);
     }
@@ -905,7 +916,18 @@ export class Game {
       cm.userData.base ??= cm.color.getHex();
       cm.color.setHex(on ? cm.userData.base : 0x2a2c30);
     }
-    run.level.screenMaterial.color.setHex(on ? 0x8fb4d8 : 0x111418);
+    run.screenTarget = on ? 1 : 0;
+  }
+
+  /** Screens fade out over a couple of seconds (backlight afterglow) and flicker back on. */
+  private updateScreens(run: Run, dt: number): void {
+    const tgt = run.screenTarget;
+    const tau = tgt < run.screenGlow ? TUNING.screenFadeOut : TUNING.screenFadeIn;
+    run.screenGlow += (tgt - run.screenGlow) * (1 - Math.exp(-dt / tau));
+    if (Math.abs(run.screenGlow - tgt) < 0.01) run.screenGlow = tgt;
+    // Coming back, monitors boot with a flicker.
+    const k = tgt === 1 && run.screenGlow < 0.9 && Math.random() < 0.25 ? run.screenGlow * 0.3 : run.screenGlow;
+    run.level.screenMaterial.color.copy(SCREEN_OFF).lerp(SCREEN_ON, k);
   }
 
   private endPowerCut(run: Run): void {
@@ -1050,7 +1072,7 @@ export class Game {
     const first = by.name.split(' ')[0];
     const flavor = {
       chase: `${first} caught up with you. Running from a coworker is never, ever a good look.`,
-      fled: `You made it to the door. So did ${first}. "Hey! Didn't you hear me?" Everyone heard.`,
+      fled: `You made it to the door. So did ${first}. "Arre! I was calling you only!" Everyone heard.`,
       deadline: 'The invite landed. "Oh good, you\'re still here! Grab a chair." It was not a quick sync.',
       dialogue: run.data.caughtFlavor ?? '',
     }[reason];
@@ -1088,7 +1110,7 @@ export class Game {
     this.hud.setCrouched(p.crouched);
     this.hud.setNoise(run.noise.currentRadius);
     const clock = this.clockMinutes(run);
-    const info: Parameters<HUD['setTopRight']>[0] = { clock: formatClock(clock) };
+    const info: Parameters<HUD['setTopRight']>[0] = { clock: formatClock(clock), timer: { seconds: run.time, par: run.data.parTime } };
     if (run.deadline !== null) {
       const left = Math.max(0, (run.deadline - clock) * 60);
       info.deadline = `Sync in ${Math.floor(left / 60)}:${String(Math.floor(left % 60)).padStart(2, '0')}`;

@@ -42,6 +42,9 @@ export const PAIN_QUOTES: Array<[string, string]> = [
   ['EXCELLENCE', 'Excellence is not an act. It is a recurring 6:45 PM meeting.'],
   ['REVERT BACK', 'Kindly do the needful and revert back at the earliest.'],
   ['HAPPY HOURS', 'Happy hours: none. Hours: many.'],
+  ['SECRET SANTA', 'You got the stapler. Again. From the same person.'],
+  ['HACKATHON', '48 hours. 1 pizza. 0 sleep. Runner-up.'],
+  ['ONE PIECE', 'Of cake left for eleven people. Choose wisely.'],
 ];
 
 const THOUGHTS = [
@@ -185,29 +188,25 @@ function paint(kind: Kind, rand: () => number, quotes: Array<[string, string]>, 
 
   switch (kind) {
     case 'quote': {
-      // Parody of the corporate motivational poster: black border, a scenic gradient, a title that has given up.
+      // Each poster is its own joke: a flat illustration over a colour of its own.
       const [title, body] = quotes[index % quotes.length];
-      const palettes = [['#1d3557', '#e76f51'], ['#264653', '#e9c46a'], ['#3d2c5e', '#f4a261'], ['#0b3d2e', '#a3c585']];
-      const [top, bottom] = palettes[Math.floor(rand() * palettes.length)];
+      const hue = (hash(title) % 360);
       g.fillStyle = '#111';
       g.fillRect(0, 0, W, H);
-      const grad = g.createLinearGradient(0, 30, 0, H * 0.58);
-      grad.addColorStop(0, top);
-      grad.addColorStop(1, bottom);
-      g.fillStyle = grad;
+      g.fillStyle = `hsl(${hue}, 38%, 32%)`;
       g.fillRect(34, 34, W - 68, H * 0.55);
-      // Mountain silhouette, because every motivational poster has one.
-      g.fillStyle = 'rgba(0,0,0,0.55)';
-      g.beginPath();
-      g.moveTo(34, H * 0.55 + 34);
-      for (let x = 34; x <= W - 34; x += 40) g.lineTo(x, H * 0.38 + Math.sin(x * 0.03 + index) * 40 + rand() * 30);
-      g.lineTo(W - 34, H * 0.55 + 34);
-      g.fill();
+      g.fillStyle = `hsl(${hue}, 45%, 44%)`;
+      g.fillRect(34, 34 + H * 0.4, W - 68, H * 0.15);
+      g.save();
+      g.translate(W / 2, 34 + H * 0.29);
+      (ILLUSTRATIONS[title] ?? ILLUSTRATIONS.DEFAULT)(g);
+      g.restore();
       g.fillStyle = '#f4f1e8';
-      g.font = 'bold 50px Georgia, serif';
+      g.textAlign = 'center';
+      g.font = 'bold 46px Georgia, serif';
       g.fillText(title, W / 2, H * 0.7);
-      g.font = 'italic 30px Georgia, serif';
-      wrap(g, body, W - 110).forEach((l, i) => g.fillText(l, W / 2, H * 0.79 + i * 38));
+      g.font = 'italic 29px Georgia, serif';
+      wrap(g, body, W - 110).forEach((l, i) => g.fillText(l, W / 2, H * 0.79 + i * 37));
       break;
     }
     case 'teamPhoto': {
@@ -414,3 +413,116 @@ function addToran(root: THREE.Group, faces: Array<{ c: number; r: number; dir: D
   }
   root.add(flowers, leaves);
 }
+
+function hash(t: string): number {
+  let h = 7;
+  for (let i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+// Poster illustrations, drawn around (0,0) in a roughly 380x240 box.
+type Draw = (g: CanvasRenderingContext2D) => void;
+const INK = '#f4f1e8', RED = '#e63946', YEL = '#ffd166', DARK = '#1b1b1f', GRN = '#7ee07e';
+
+function rect(g: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, c: string): void { g.fillStyle = c; g.fillRect(x, y, w, h); }
+function circle(g: CanvasRenderingContext2D, x: number, y: number, r: number, c: string): void { g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill(); }
+function label(g: CanvasRenderingContext2D, t: string, x: number, y: number, size: number, c: string): void {
+  g.fillStyle = c; g.font = `bold ${size}px Helvetica, Arial, sans-serif`; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(t, x, y);
+}
+function clock(g: CanvasRenderingContext2D, x: number, y: number, r: number, hh: number, mm: number): void {
+  circle(g, x, y, r, INK); g.strokeStyle = DARK; g.lineWidth = 6; g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.stroke();
+  g.lineCap = 'round';
+  const hand = (a: number, len: number, w: number) => { g.lineWidth = w; g.beginPath(); g.moveTo(x, y); g.lineTo(x + Math.sin(a) * len, y - Math.cos(a) * len); g.stroke(); };
+  hand(((hh % 12) + mm / 60) / 12 * Math.PI * 2, r * 0.5, 8);
+  hand(mm / 60 * Math.PI * 2, r * 0.8, 5);
+}
+function laptop(g: CanvasRenderingContext2D, x: number, y: number, s: number): void {
+  rect(g, x - 50 * s, y - 60 * s, 100 * s, 62 * s, DARK); rect(g, x - 44 * s, y - 54 * s, 88 * s, 50 * s, '#8fb4d8');
+  rect(g, x - 62 * s, y + 2 * s, 124 * s, 10 * s, '#c9ccd0');
+}
+
+const ILLUSTRATIONS: Record<string, Draw> = {
+  DEFAULT: (g) => circle(g, 0, 0, 70, YEL),
+  'WORK-LIFE BALANCE': (g) => {
+    // A seesaw: the laptop wins, the little house flies.
+    g.save(); g.rotate(-0.22); rect(g, -170, -6, 340, 12, INK); g.restore();
+    g.fillStyle = INK; g.beginPath(); g.moveTo(-20, 60); g.lineTo(20, 60); g.lineTo(0, 8); g.fill();
+    laptop(g, -115, 18, 0.9);
+    g.fillStyle = YEL; g.beginPath(); g.moveTo(95, -78); g.lineTo(140, -110); g.lineTo(185, -78); g.fill(); rect(g, 105, -78, 70, 45, YEL);
+  },
+  DEADLINES: (g) => {
+    rect(g, -110, -95, 220, 190, INK); rect(g, -110, -95, 220, 44, RED);
+    label(g, 'DUE', 0, -73, 30, INK); label(g, 'YESTERDAY', 0, 10, 36, DARK);
+    g.strokeStyle = RED; g.lineWidth = 7; g.beginPath(); g.ellipse(0, 10, 105, 38, 0, 0, Math.PI * 2); g.stroke();
+  },
+  APPRAISAL: (g) => {
+    // A flat line chart from 2019 onwards.
+    g.strokeStyle = INK; g.lineWidth = 4; g.beginPath(); g.moveTo(-150, -90); g.lineTo(-150, 80); g.lineTo(160, 80); g.stroke();
+    g.strokeStyle = GRN; g.lineWidth = 8; g.beginPath(); g.moveTo(-140, 40); g.lineTo(-60, 38); g.lineTo(20, 40); g.lineTo(100, 36); g.lineTo(150, 39); g.stroke();
+    ['19', '20', '21', '22', '23'].forEach((y, i) => label(g, `'${y}`, -130 + i * 68, 100, 20, INK));
+    label(g, '+0.5%?', 60, -40, 34, YEL);
+  },
+  FAMILY: (g) => {
+    for (let i = 0; i < 4; i++) { circle(g, -120 + i * 80, -30, 26, INK); rect(g, -145 + i * 80, 0, 50, 70, INK); }
+    label(g, '₹ ???', 0, -95, 36, YEL);
+  },
+  COMMITMENT: (g) => { clock(g, -40, 0, 85, 9, 47); circle(g, 120, -60, 40, YEL); circle(g, 138, -72, 36, `hsl(0,0%,0%,0)`); label(g, 'PM', 90, 70, 40, INK); },
+  WEEKENDS: (g) => {
+    ['SAT', 'SUN'].forEach((d, i) => { rect(g, -150 + i * 160, -80, 140, 160, INK); label(g, d, -80 + i * 160, 0, 44, DARK); });
+    g.strokeStyle = RED; g.lineWidth = 12; g.beginPath(); g.moveTo(-160, -90); g.lineTo(160, 90); g.moveTo(160, -90); g.lineTo(-160, 90); g.stroke();
+  },
+  'LEAVE POLICY': (g) => {
+    rect(g, -100, -100, 200, 200, INK);
+    for (let i = 0; i < 6; i++) rect(g, -80, -80 + i * 22, 160, 6, '#b9b2a0');
+    g.save(); g.rotate(-0.3); g.strokeStyle = RED; g.lineWidth = 6; g.strokeRect(-120, -28, 240, 56); label(g, 'APPROVED*', 0, 0, 38, RED); g.restore();
+  },
+  OWNERSHIP: (g) => {
+    // A small fire with your name on it.
+    g.fillStyle = '#ff7b00'; g.beginPath(); g.moveTo(-60, 70); g.quadraticCurveTo(-80, -10, -10, -90); g.quadraticCurveTo(0, -30, 30, -60); g.quadraticCurveTo(80, 0, 60, 70); g.fill();
+    g.fillStyle = YEL; g.beginPath(); g.moveTo(-30, 70); g.quadraticCurveTo(-30, 10, 0, -30); g.quadraticCurveTo(30, 10, 30, 70); g.fill();
+    rect(g, -70, 70, 140, 30, INK); label(g, 'PROD BUG · YOU', 0, 85, 18, DARK);
+  },
+  'DREAM BIG': (g) => { rect(g, -160, 20, 320, 60, INK); rect(g, -160, -20, 60, 40, '#b9b2a0'); laptop(g, 40, 20, 1); label(g, 'z z z', -90, -70, 38, YEL); },
+  TEAMWORK: (g) => { ['T', 'E', 'A', 'M'].forEach((c, i) => { rect(g, -170 + i * 88, -45, 76, 90, [YEL, RED, GRN, '#8ecae6'][i]); label(g, c, -132 + i * 88, 0, 60, DARK); }); },
+  'QUICK CALL': (g) => { rect(g, -55, -100, 110, 200, DARK); rect(g, -45, -85, 90, 150, '#2a9d8f'); label(g, '00:45:12', 0, -10, 24, INK); circle(g, 0, 82, 10, RED); },
+  ONSITE: (g) => {
+    g.fillStyle = INK; g.beginPath(); g.moveTo(-170, 10); g.lineTo(150, -5); g.quadraticCurveTo(185, 0, 150, 15); g.lineTo(-170, 25); g.fill();
+    g.beginPath(); g.moveTo(-20, 5); g.lineTo(-80, -70); g.lineTo(-40, -70); g.lineTo(40, 5); g.fill();
+    g.strokeStyle = '#ddd'; g.lineWidth = 2; for (let i = 0; i < 6; i++) { g.beginPath(); g.arc(120, -60, 10 + i * 8, 0, Math.PI); g.stroke(); }
+    label(g, 'SINCE 2016', 0, 80, 30, YEL);
+  },
+  PATIENCE: (g) => { rect(g, -120, -60, 240, 130, '#7a4e33'); rect(g, -120, -60, 240, 30, '#5b3a22'); label(g, '₹ 0', 0, 20, 60, INK); label(g, 'om', 110, -90, 30, YEL); },
+  'OUR PEOPLE': (g) => {
+    rect(g, -70, -100, 140, 200, DARK); circle(g, 0, -10, 45, GRN);
+    g.strokeStyle = DARK; g.lineWidth = 3; for (let i = 1; i < 6; i++) { g.beginPath(); g.ellipse(0, -10, i * 7, i * 9, 0, 0, Math.PI * 2); g.stroke(); }
+    label(g, 'BEEP', 0, 70, 24, GRN);
+  },
+  'CHAI BREAK': (g) => { for (let i = 0; i < 7; i++) { rect(g, -175 + i * 52, -10 - (i % 2) * 6, 36, 50, INK); rect(g, -170 + i * 52, -4 - (i % 2) * 6, 26, 12, '#c68642'); } label(g, 'QUEUE: 20 MIN', 0, -70, 30, YEL); },
+  'THE BENCH': (g) => { rect(g, -160, 0, 320, 18, '#a0522d'); rect(g, -160, -50, 320, 14, '#a0522d'); rect(g, -140, 18, 14, 60, DARK); rect(g, 126, 18, 14, 60, DARK); laptop(g, 0, -2, 0.7); },
+  'NOTICE PERIOD': (g) => { rect(g, -170, -70, 150, 140, INK); label(g, '90', -95, 0, 70, DARK); rect(g, 20, -70, 150, 140, INK); label(g, '0', 95, 0, 70, RED); },
+  INNOVATION: (g) => { circle(g, -30, -20, 70, YEL); rect(g, -60, 45, 60, 40, '#c9ccd0'); label(g, 'SUN 11 PM', 100, 60, 28, INK); circle(g, 130, -70, 26, INK); },
+  PRODUCTIVITY: (g) => { for (let i = 0; i < 5; i++) { circle(g, -140 + i * 70, -40, 20, INK); rect(g, -160 + i * 70, -18, 40, 50, INK); rect(g, -165 + i * 70, 35, 50, 12, '#7a4e33'); } label(g, 'STAND-UP (SEATED)', 0, 80, 22, YEL); },
+  FRIDAY: (g) => { rect(g, -70, -70, 140, 150, DARK); for (let i = 0; i < 5; i++) rect(g, -55, -55 + i * 26, 110, 14, '#3a3d44'); g.fillStyle = '#ff7b00'; g.beginPath(); g.moveTo(-40, -70); g.quadraticCurveTo(0, -150, 40, -70); g.fill(); label(g, 'DEPLOY 6:55 PM', 0, 100, 22, YEL); },
+  GROWTH: (g) => { rect(g, -45, -100, 90, 170, DARK); rect(g, -38, -88, 76, 140, '#8fb4d8'); rect(g, -30, 30, 16, 12, GRN); rect(g, -10, 0, 16, 42, GRN); rect(g, 10, -40, 16, 82, RED); label(g, '9h 42m', 0, 95, 22, INK); },
+  EXCELLENCE: (g) => { g.fillStyle = YEL; g.beginPath(); g.moveTo(-60, -80); g.lineTo(60, -80); g.quadraticCurveTo(55, 20, 0, 30); g.quadraticCurveTo(-55, 20, -60, -80); g.fill(); rect(g, -12, 30, 24, 30, YEL); rect(g, -50, 60, 100, 18, YEL); label(g, '6:45 PM ↻', 0, -40, 22, DARK); },
+  'REVERT BACK': (g) => { rect(g, -120, -70, 240, 150, INK); g.strokeStyle = DARK; g.lineWidth = 5; g.beginPath(); g.moveTo(-120, -70); g.lineTo(0, 20); g.lineTo(120, -70); g.stroke(); label(g, 'PFA', 0, 50, 34, RED); },
+  'HAPPY HOURS': (g) => { clock(g, -60, 0, 80, 23, 10); g.fillStyle = 'rgba(244,241,232,0.3)'; g.beginPath(); g.moveTo(70, -60); g.lineTo(150, -60); g.lineTo(110, 10); g.fill(); rect(g, 106, 10, 8, 60, INK); rect(g, 85, 68, 50, 8, INK); },
+  'SECRET SANTA': (g) => {
+    // A stapler wearing a Santa hat.
+    rect(g, -130, 20, 260, 40, '#3a3d44'); g.fillStyle = '#5a5d64'; g.beginPath(); g.moveTo(-130, 20); g.lineTo(120, -10); g.lineTo(130, 20); g.fill();
+    g.fillStyle = RED; g.beginPath(); g.moveTo(20, -8); g.lineTo(110, -18); g.lineTo(90, -110); g.fill(); rect(g, 15, -18, 100, 18, INK); circle(g, 90, -112, 14, INK);
+  },
+  HACKATHON: (g) => {
+    label(g, '{ }', -80, 0, 130, GRN);
+    g.fillStyle = YEL; g.beginPath(); g.moveTo(60, -60); g.lineTo(170, 60); g.lineTo(40, 60); g.fill();
+    for (const [x, y] of [[80, 20], [110, 40], [65, 45]]) circle(g, x, y, 9, RED);
+  },
+  'ONE PIECE': (g) => {
+    // One slice of birthday cake on a paper plate, eleven forks.
+    g.fillStyle = INK; g.beginPath(); g.ellipse(0, 50, 150, 30, 0, 0, Math.PI * 2); g.fill();
+    g.fillStyle = '#f7c59f'; g.beginPath(); g.moveTo(-70, 40); g.lineTo(70, 20); g.lineTo(70, -30); g.lineTo(-70, -10); g.fill();
+    g.fillStyle = '#ff99c8'; g.beginPath(); g.moveTo(-70, -10); g.lineTo(70, -30); g.lineTo(40, -50); g.lineTo(-90, -25); g.fill();
+    rect(g, 20, -80, 8, 35, '#8ecae6'); circle(g, 24, -86, 7, YEL);
+    for (let i = 0; i < 11; i++) { g.save(); g.rotate(-1.2 + i * 0.22); rect(g, -3, -160, 6, 50, '#c9ccd0'); g.restore(); }
+  },
+};
