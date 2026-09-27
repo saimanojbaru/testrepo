@@ -12,6 +12,8 @@ const TUNING = {
   usedWeight: 0.8,
   /** Chance a previously-used excuse is forced into the hand so memory stays visible. */
   showUsedChance: 0.6,
+  /** Every hand holds at least one unused excuse at or below this risk. */
+  plausibleRisk: 3,
   immunePenalty: 4,
   contextMissPenalty: 2,
   seenCrouching: 2,
@@ -20,6 +22,8 @@ const TUNING = {
   voluntaryBonus: -1,
   panicPenalty: 1,
   probeViolation: 2,
+  /** Each earlier stop by the same person this run: "didn't I just see you?" */
+  repeatStop: 3,
 };
 
 /** How much each archetype believes each category. Negative = more believable. */
@@ -43,7 +47,10 @@ export interface EncounterFacts {
   npc: NPCDef;
   contexts: Set<EncounterContext>;
   charisma: number;
+  /** How many times this NPC already stopped you this run. */
+  priorStops: number;
   forced?: string[];
+  levelModifier?: LineItem;
 }
 
 export interface LineItem { label: string; value: number; }
@@ -92,9 +99,9 @@ export class ExcuseRegistry {
       }
       hand.push(rest.splice(i, 1)[0]);
     }
-    // Always leave one honest-looking out, unless you've burned them all.
-    if (!hand.some((e) => e.risk <= 2 && this.memory.useCount(e.id) === 0)) {
-      const safe = rest.find((e) => e.risk <= 2 && this.memory.useCount(e.id) === 0);
+    // Always leave one plausible out, unless you've burned them all.
+    if (!hand.some((e) => e.risk <= TUNING.plausibleRisk && this.memory.useCount(e.id) === 0)) {
+      const safe = rest.find((e) => e.risk <= TUNING.plausibleRisk && this.memory.useCount(e.id) === 0);
       if (safe) replaceWorst(hand, safe, facts.forced);
     }
     // Keep Office Memory visible: a used excuse shows up marked [USED] most of the time.
@@ -124,6 +131,8 @@ export class ExcuseRegistry {
     if (facts.contexts.has('near_exit') && !e.tags.includes('near_exit')) items.push({ label: 'Caught near the exit', value: TUNING.nearExit });
     if (facts.contexts.has('voluntary')) items.push({ label: 'You approached them (confident)', value: TUNING.voluntaryBonus });
     if (facts.contexts.has('probe_violation')) items.push({ label: 'Wandered toward the exit mid-walk', value: TUNING.probeViolation });
+    if (facts.levelModifier) items.push({ ...facts.levelModifier });
+    if (facts.priorStops > 0) items.push({ label: `${first} already stopped you ${facts.priorStops === 1 ? 'once' : `${facts.priorStops}x`} today`, value: TUNING.repeatStop * facts.priorStops });
     if (opts.panic) items.push({ label: 'Panic blurt', value: TUNING.panicPenalty });
     if (facts.charisma > 0) items.push({ label: `Smooth streak x${facts.charisma}`, value: -facts.charisma });
     return items;

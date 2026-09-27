@@ -236,6 +236,12 @@ export class DialogueSystem {
     const sum = this.items.reduce((s, it) => s + it.value, 0);
     this.total = Math.max(0, Math.round(sum));
     this.outcome = outcomeFor(this.total);
+    // Nobody files an HR report the first time they stop you; they just walk you back.
+    // Panic blurts don't get this mercy: that's the cost of freezing.
+    if (this.outcome === 'CAUGHT' && this.facts.priorStops === 0 && !this.blurted) {
+      this.outcome = 'ESCORTED';
+      this.items.push({ label: 'First offense: let off with a walk', value: 0 });
+    }
     this.ui.clearChoices();
     this.say('npc', this.reaction());
     this.ui.showVerdict(this.items, this.total, this.outcome);

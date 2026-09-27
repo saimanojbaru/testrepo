@@ -12,12 +12,13 @@ export const level2: LevelData = {
   intro:
     "3:00 PM. The whole building drains downward toward the coffee cart. You're on 6. Sam from Legal is on 7, and Sam said " +
     '"come by sometime" in a way you have thought about for eleven days. Nobody takes the stairs up. Tom will notice. Tom notices everything.',
-  parTime: 110,
+  parTime: 90,
   gridSize: [30, 14],
   cellSize: 1.5,
   exitType: 'stairwell',
   directorBudget: 1,
   favors: 3,
+  suspicionModifier: { label: 'Nobody goes UP at 3 PM', value: 2 },
   clock: { startMinutes: 15 * 60, rate: 1 / 6 },
   ascii: [
     '##############################',

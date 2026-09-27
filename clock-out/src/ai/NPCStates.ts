@@ -27,11 +27,11 @@ const TUNING = {
   suspiciousAt: 0.35,
   confrontAt: 1.0,
   /** Awareness per second for a standing player in full view at max range. */
-  fillBase: 0.55,
+  fillBase: 0.4,
   /** Extra fill multiplier that ramps in as the player gets closer (x(1+nearBonus) at 0 m). */
   nearBonus: 1.8,
   peripheralMul: 0.5,
-  crouchMul: 0.55,
+  crouchMul: 0.4,
   sprintMul: 1.6,
   hydratingMul: 0.3,
   chatterMul: 0.5,
@@ -39,7 +39,7 @@ const TUNING = {
   distractedFovMul: 0.5,
   chatterRangeMul: 0.7,
   decayDelay: 2.0,
-  decayRate: 0.11,
+  decayRate: 0.15,
   /** While someone else is confronting, others top out here. */
   blockedCap: 0.92,
   suspiciousSpeedMul: 0.75,
@@ -49,6 +49,8 @@ const TUNING = {
   confrontReach: 1.9,
   catchReach: 1.05,
   chaseTriggerDist: 3.2,
+  /** Seconds of walking away from a confronting NPC before they give chase. */
+  ignoreBeforeChase: 2.0,
   chaseGiveUp: 4.0,
   confrontTimeout: 10,
   investigateTime: 4.0,
@@ -135,6 +137,8 @@ function escalate(npc: NPC, w: NPCWorld): boolean {
   if (npc.awareness >= TUNING.confrontAt && w.canEscalate(npc)) {
     endChatter(npc);
     npc.setState(NPCState.CONFRONT);
+    npc.ignoreTimer = 0;
+    npc.lastConfrontDist = Infinity;
     npc.say(pick(STATE_BARKS.confront), 2);
     w.onConfront(npc);
     return true;
@@ -174,8 +178,8 @@ export function updateNPC(npc: NPC, dt: number, w: NPCWorld): void {
       if (escalate(npc, w)) break;
       npc.stopMoving();
       if (w.time < npc.distractedUntil) {
-        // On the phone: turned away from their post, head down.
-        npc.turnTo(npc.home.yaw + Math.PI, dt);
+        // On the phone: turned sideways from what they normally watch, head down.
+        npc.turnTo(npc.home.yaw - Math.PI / 2, dt);
         npc.lookAround(w.time, 0.15);
       } else {
         const dHome = Math.hypot(npc.home.x - npc.x, npc.home.z - npc.z);
@@ -276,9 +280,12 @@ export function updateNPC(npc: NPC, dt: number, w: NPCWorld): void {
         w.startEncounter(npc);
         break;
       }
-      if (p.sprinting && distToPlayer > TUNING.chaseTriggerDist) {
+      // Walking away from someone calling your name counts as running, just slower.
+      if (p.speed > 0.5 && distToPlayer > npc.lastConfrontDist + 0.001) npc.ignoreTimer += dt;
+      npc.lastConfrontDist = distToPlayer;
+      if ((p.sprinting && distToPlayer > TUNING.chaseTriggerDist) || npc.ignoreTimer > TUNING.ignoreBeforeChase) {
         npc.setState(NPCState.CHASE);
-        npc.say(pick(STATE_BARKS.chase), 2.2);
+        npc.say(pick(npc.ignoreTimer > TUNING.ignoreBeforeChase ? STATE_BARKS.ignored : STATE_BARKS.chase), 2.2);
         break;
       }
       if (npc.stateTime > TUNING.confrontTimeout && !npc.seeing) {

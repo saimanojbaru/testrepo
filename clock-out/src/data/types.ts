@@ -29,6 +29,8 @@ export interface LevelData {
   intro: string;
   /** Max wanderers the Director may add on top of authored NPCs. */
   directorBudget: number;
+  /** Flat suspicion every excuse costs on this level, shown as a verdict line item. */
+  suspicionModifier?: { label: string; value: number };
 }
 
 export interface NPCPlacement {

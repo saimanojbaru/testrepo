@@ -27,7 +27,7 @@ export interface RunSummary {
   repAfter: string;
   newLegends: ExcuseDef[];
   caughtBy?: NPCDef;
-  caughtReason?: 'dialogue' | 'chase' | 'deadline';
+  caughtReason?: 'dialogue' | 'chase' | 'deadline' | 'fled';
   flavor: string;
   hasNext: boolean;
 }
@@ -123,17 +123,19 @@ function hrReport(s: RunSummary, memory: OfficeMemory): string {
   const reason = {
     dialogue: 'Attempted departure with insufficient justification.',
     chase: 'Running. Indoors. Away from a colleague.',
+    fled: 'Attempted to exit the premises while being addressed by name.',
     deadline: "Failure to attend a 'Quick Sync :)' while physically present in the building.",
   }[s.caughtReason ?? 'dialogue'];
   const id = `HR-${String(10000 + Math.floor(Math.random() * 89999))}`;
   const events: string[] = [];
   for (const l of s.log) {
-    let line = `At ${l.atClock}, employee told ${esc(l.npc.name)} “${esc(l.excuse.text)}”${l.blurted ? ' (witnesses describe this as “blurted”)' : ''}.`;
+    let line = `At ${l.atClock}, employee told ${esc(l.npc.name)} ${quote(l.excuse.text)}${l.blurted ? ' (witnesses describe this as “blurted”)' : ''}${l.blurted || !endsSentence(l.excuse.text) ? '.' : ''}`;
     if (l.followUp) {
-      line += ` When asked “${esc(l.followUp)}”, employee ${l.pivotText ? `replied “${esc(l.pivotText)}”` : 'said nothing and stared at the carpet'}.`;
+      line += ` When asked ${quote(l.followUp)}, employee ${l.pivotText ? `replied ${quote(l.pivotText)}${endsSentence(l.pivotText) ? '' : '.'}` : 'said nothing and stared at the carpet.'}`;
     }
     events.push(`<li>${line}</li>`);
   }
+  if (s.caughtReason === 'fled') events.push(`<li>Employee was observed reaching for the door handle while ${esc(by?.name ?? 'a colleague')} said “hey” four times, each louder.</li>`);
   if (s.caughtReason === 'chase') events.push(`<li>Employee was observed moving at a velocity inconsistent with “grabbing a coffee.”</li>`);
   if (s.caughtReason === 'deadline') events.push(`<li>At 1:15 PM a calendar invite landed. Employee was, unfortunately, still here.</li>`);
   events.push(`<li>${esc(pick(HR_REPORT.observations))}</li>`);
@@ -162,6 +164,15 @@ function hrReport(s: RunSummary, memory: OfficeMemory): string {
     <h4>Recommended action</h4>
     <ul>${recs.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
     <div class="hr-sign">Filed by Priya Raman, HR Business Partner.<br><em>This was not a formal conversation.</em></div>`;
+}
+
+function quote(s: string): string {
+  return `“${esc(s)}”`;
+}
+
+/** Quoted lines that already end in punctuation don't get a second full stop after the quote. */
+function endsSentence(s: string): boolean {
+  return /[.!?…]$/.test(s.trim());
 }
 
 export function formatTime(sec: number): string {

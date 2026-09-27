@@ -17,6 +17,7 @@ export const level3: LevelData = {
   exitType: 'outside-door',
   directorBudget: 1,
   forceUsedExcuses: ['casserole'],
+  suspicionModifier: { label: 'Leaving at 4:10 is a statement', value: 2 },
   clock: { startMinutes: 16 * 60 + 10, rate: 1 / 6 },
   ascii: [
     '##################################',

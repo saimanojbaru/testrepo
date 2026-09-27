@@ -79,6 +79,9 @@ export class NPC {
   lastBark = -1;
   snitchCooldown = 0;
   probeTimer = 0;
+  /** How long the player has been walking away from this NPC's CONFRONT. */
+  ignoreTimer = 0;
+  lastConfrontDist = Infinity;
   /** Set by the Director for NPCs it spawned mid-level. */
   wanderer = false;
   /** Awareness at confront time is remembered for opener choice. */
@@ -129,6 +132,8 @@ export class NPC {
   hear(e: NoiseEvent, time: number): void {
     if (e.fromPlayer) {
       if (time < this.graceUntil) return;
+      // On the phone you only notice things that are genuinely loud.
+      if (time < this.distractedUntil && e.kind !== 'bump' && e.kind !== 'door' && e.kind !== 'sprint') return;
       this.awareness = Math.min(1, this.awareness + (TUNING.hearGain[e.kind] ?? 0));
       this.lastHeard = { x: e.x, z: e.z };
       this.lastStimulus = time;

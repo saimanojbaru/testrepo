@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check:levels": "node scripts/check-levels.mjs"
   },
   "devDependencies": {
     "@types/three": "^0.186.0",

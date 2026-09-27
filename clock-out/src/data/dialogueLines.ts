@@ -197,6 +197,7 @@ export const STATE_BARKS = {
   investigate: ['I could have sworn…', 'Weird.', 'Must be the building.', 'Probably nothing.'],
   confront: ['Hey! Got a sec?', 'Oh — hi! Hold on!', 'Wait up!', "Hey, you. Hi."],
   chase: ['Are you RUNNING?', 'HEY! Nobody runs here!', 'Stop! We have a no-running policy!'],
+  ignored: ["Hey! I'm TALKING to you!", 'Excuse me? EXCUSE me?', "Don't you walk away from a sync!"],
   giveUp: ['…Okay then.', 'Where did they go?', 'Fine. I saw nothing. I saw everything.'],
   tomSnitch: ['PRIYA! Someone\'s going UP!', 'Hey! HEY! Somebody\'s sneaking!'],
   jam: ['Oh, not again.', 'Is the copier… screaming?', 'Who jammed it? WHO JAMMED IT?'],

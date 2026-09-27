@@ -19,7 +19,7 @@ import { DialogueSystem, type EncounterResult } from '../dialogue/DialogueSystem
 import { DialogueUI } from '../dialogue/DialogueUI';
 import { HUD } from '../ui/HUD';
 import { Vignette } from '../ui/Vignette';
-import { ResultsScreen, type ExcuseLog } from '../ui/ResultsScreen';
+import { ResultsScreen, type ExcuseLog, type RunSummary } from '../ui/ResultsScreen';
 import { MainMenu, loadSettings, type Settings } from '../ui/MainMenu';
 import { getNpcDef, getNpcLook } from '../data/npcs';
 import { STATE_BARKS, pick } from '../data/dialogueLines';
@@ -40,11 +40,16 @@ const TUNING = {
   nearKitchenDist: 6,
   nearCopierDist: 4,
   escortPenaltySeconds: 45,
+  probeSeconds: 8,
   probeViolationDist: 2.5,
+  /** How far away someone can be and still react out loud to the all-hands. */
+  allHandsBarkRange: 18,
+  /** Where the escorting NPC is left standing after walking you back. */
+  escortDropOffset: 1.2,
   passGraceSeconds: 12,
   /** After any conversation nobody can start a new one for this long. */
   encounterCooldown: 3,
-  maxCharisma: 3,
+  maxCharisma: 2,
   hydrateSeconds: 4,
   hydrateReach: 2.2,
   jamRadius: 20,
@@ -61,6 +66,8 @@ const TUNING = {
 };
 
 export const LEVELS: LevelData[] = [level1, level2, level3];
+
+type CaughtReason = NonNullable<RunSummary['caughtReason']>;
 
 interface Run {
   data: LevelData;
@@ -502,7 +509,7 @@ export class Game {
     if (this.memory.heardAnything(npc.def.id)) ctx.add('heard_before');
     if (opts.voluntary) ctx.add('voluntary');
     if (opts.probeViolation) ctx.add('probe_violation');
-    const facts: EncounterFacts = { npc: npc.def, contexts: ctx, charisma: run.charisma, forced: run.data.forceUsedExcuses };
+    const facts: EncounterFacts = { npc: npc.def, contexts: ctx, charisma: run.charisma, priorStops: npc.encounters, forced: run.data.forceUsedExcuses, levelModifier: run.data.suspicionModifier };
 
     for (const o of run.npcs) if (o !== npc && o.state === NPCState.CONFRONT) o.setState(NPCState.RETURN);
     npc.setState(NPCState.CONFRONT);
@@ -537,6 +544,9 @@ export class Game {
     npc.sawCrouch = npc.sawSprint = false;
     run.encounterCooldownUntil = run.world.time + TUNING.encounterCooldown;
 
+    // Tom tells everyone. Whatever you told him, Priya hears a version of it.
+    if (npc.def.id === 'tom' && r.outcome !== 'CAUGHT') this.onSnitch(npc);
+
     switch (r.outcome) {
       case 'PASSED': {
         run.charisma = Math.min(TUNING.maxCharisma, run.charisma + 1);
@@ -551,7 +561,7 @@ export class Game {
       case 'PROBED': {
         npc.awareness = 0;
         npc.setState(NPCState.ESCORT);
-        npc.probeTimer = 8;
+        npc.probeTimer = TUNING.probeSeconds;
         run.probe = { npc, startExitDist: this.exitDist(run) };
         this.hud.toast(`${npc.def.name.split(' ')[0]} is walking with you for a bit. Act natural. Don't head for the exit.`, 4);
         this.state.set(GameState.PLAYING);
@@ -566,7 +576,7 @@ export class Game {
           const s = run.level.spawn;
           run.player.reset(s.x, s.z, s.yaw);
           // They walked you here; now they walk back.
-          const [c, rr] = run.level.nav.nearestWalkable(...run.level.nav.worldToCell(s.x + 1.2, s.z));
+          const [c, rr] = run.level.nav.nearestWalkable(...run.level.nav.worldToCell(s.x + TUNING.escortDropOffset, s.z));
           const spot = run.level.nav.cellCenter(c, rr);
           npc.x = spot.x;
           npc.z = spot.z;
@@ -725,7 +735,7 @@ export class Game {
         this.hud.toast('ALL-HANDS REMINDER on every monitor. Every head turns. Everyone sees twice as much.', 5);
         for (const n of run.npcs.slice(0, 3)) {
           const p = run.player;
-          if (Math.hypot(n.x - p.x, n.z - p.z) < 18) n.say(pick(STATE_BARKS.allHands), 2);
+          if (Math.hypot(n.x - p.x, n.z - p.z) < TUNING.allHandsBarkRange) n.say(pick(STATE_BARKS.allHands), 2);
         }
         break;
       }
@@ -743,6 +753,12 @@ export class Game {
     const p = run.player;
     if (!run.level.isExit(p.x, p.z)) return;
     if (run.data.exitType === 'elevator' && !run.level.elevators.some((e) => e.isOpen)) return;
+    // Leaving while someone is calling your name is not escaping; it's a scene.
+    const pursuer = run.npcs.find((n) => n.state === NPCState.CONFRONT || n.state === NPCState.CHASE);
+    if (pursuer) {
+      this.endCaught(pursuer.def, 'fled');
+      return;
+    }
     this.endEscaped(run);
   }
 
@@ -781,7 +797,7 @@ export class Game {
     this.showResults(run, ending, stars, flavor, newLegends);
   }
 
-  private endCaught(by: NPCDef, reason: 'dialogue' | 'chase' | 'deadline'): void {
+  private endCaught(by: NPCDef, reason: CaughtReason): void {
     const run = this.run;
     if (!run || run.ended) return;
     run.ended = true;
@@ -790,17 +806,21 @@ export class Game {
     this.memory.recordCaught();
     this.audio.duck(false);
     this.audio.caughtStinger();
-    const flavor = reason === 'chase'
-      ? `${by.name.split(' ')[0]} caught up with you. Running from a coworker is never, ever a good look.`
-      : reason === 'deadline'
-        ? 'The invite landed. "Oh good, you\'re still here! Grab a chair." It was not a quick sync.'
-        : '';
+    const first = by.name.split(' ')[0];
+    const flavor = {
+      chase: `${first} caught up with you. Running from a coworker is never, ever a good look.`,
+      fled: `You made it to the door. So did ${first}. "Hey! Didn't you hear me?" Everyone heard.`,
+      deadline: 'The invite landed. "Oh good, you\'re still here! Grab a chair." It was not a quick sync.',
+      dialogue: '',
+    }[reason];
     this.showResults(run, 'CAUGHT', 0, flavor, [], by, reason);
   }
 
-  private showResults(run: Run, ending: Ending, stars: number, flavor: string, newLegends: ExcuseDef[], caughtBy?: NPCDef, caughtReason?: 'dialogue' | 'chase' | 'deadline'): void {
+  private showResults(run: Run, ending: Ending, stars: number, flavor: string, newLegends: ExcuseDef[], caughtBy?: NPCDef, caughtReason?: CaughtReason): void {
     const idx = LEVELS.findIndex((l) => l.id === run.data.id);
     this.hud.show(false);
+    this.hud.hideIntro();
+    this.hud.hidePause();
     this.hud.setInteract(null);
     this.vignette.reset();
     this.results.show({

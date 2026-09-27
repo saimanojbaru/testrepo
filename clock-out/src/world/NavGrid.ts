@@ -112,7 +112,9 @@ export class NavGrid {
 
   /** Greedy string-pulling: skip every waypoint that a clear straight line can bypass. */
   private smooth(from: Vec2, pts: Vec2[]): Vec2[] {
-    if (pts.length <= 2) return pts;
+    // Always smooth, even short paths: the first point is the centre of the mover's own
+    // cell, and walking back to it on every repath makes chasers jitter in place.
+    if (!pts.length) return pts;
     const out: Vec2[] = [];
     let anchor = from;
     let i = 0;
