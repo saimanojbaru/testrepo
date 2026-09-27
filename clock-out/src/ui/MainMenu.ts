@@ -103,6 +103,7 @@ export class MainMenu {
           <details class="panel">
             <summary><h2>How to play</h2></summary>
             <ul class="howto">
+              <li><b>Touch:</b> left thumb moves (floating stick), right thumb drags to look, plus USE / CROUCH / SPRINT buttons. Tap the conversation panel to skip or continue; tap an excuse to say it.</li>
               <li><b>WASD</b> move · <b>Mouse</b> look · <b>Shift</b> sprint (loud) · <b>C</b> toggle crouch (or hold <b>Ctrl</b>) · <b>E</b> use / talk · <b>Esc</b> pause</li>
               <li>Dividers are 1.5 m tall. Crouch behind them and you're invisible. Stand up and you're a head on a stick.</li>
               <li>Footsteps are noise: crouch 3 m, walk 7 m, sprint 14 m. Walls don't block sound.</li>

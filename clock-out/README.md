@@ -14,6 +14,21 @@ npm run build          # tsc + vite build, zero TS errors
 npm run check:levels   # validates level ASCII: widths, walkable NPC cells, exit reachable
 ```
 
+### Android APK
+
+The game is wrapped with [Capacitor](https://capacitorjs.com/) (`android/`). It runs landscape and fullscreen and keeps the screen on. On touch devices, on-screen controls replace the mouse and keyboard:
+- a floating joystick under your left thumb
+- drag with your right thumb to look
+- USE, CROUCH and SPRINT buttons, plus II to pause
+- tap an excuse to say it; tap the conversation panel to skip or continue
+
+```bash
+# needs JDK 21 and the Android SDK (platform 36); set ANDROID_HOME
+npm run android:apk    # -> android/app/build/outputs/apk/debug/app-debug.apk
+```
+
+The APK is debug-signed, fine for sideloading. Publishing to Play needs a release keystore (`./gradlew bundleRelease` with signing config).
+
 Add `?debug` to the URL to expose `window.__clockout` (the Game instance) and skip auto-pause on pointer-lock loss.
 
 ## Controls

@@ -7,14 +7,18 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "check:levels": "node scripts/check-levels.mjs"
+    "check:levels": "node scripts/check-levels.mjs",
+    "android:apk": "npm run build && npx cap sync android && cd android && ./gradlew assembleDebug"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
     "@types/three": "^0.186.0",
     "typescript": "~6.0.2",
     "vite": "^8.3.0"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
     "three": "^0.186.1"
   }
 }

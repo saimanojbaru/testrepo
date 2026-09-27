@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Clock Out</string>
+    <string name="title_activity_main">Clock Out</string>
+    <string name="package_name">com.clockout.game</string>
+    <string name="custom_url_scheme">com.clockout.game</string>
+</resources>

@@ -21,6 +21,7 @@ import { HUD } from '../ui/HUD';
 import { Vignette } from '../ui/Vignette';
 import { ResultsScreen, type ExcuseLog, type RunSummary } from '../ui/ResultsScreen';
 import { MainMenu, loadSettings, type Settings } from '../ui/MainMenu';
+import { TouchControls, isTouchDevice } from '../ui/TouchControls';
 import { getNpcDef, getNpcLook } from '../data/npcs';
 import { STATE_BARKS, pick } from '../data/dialogueLines';
 import type { EncounterContext, Ending, ExcuseDef, LevelData, NPCDef, ScriptedBeat } from '../data/types';
@@ -36,6 +37,8 @@ const TUNING = {
   near: 0.05,
   far: 140,
   maxPixelRatio: 2,
+  /** Phones get a lower render resolution; fill rate is the bottleneck there. */
+  maxPixelRatioTouch: 1.5,
   nearExitDist: 7,
   nearKitchenDist: 6,
   nearCopierDist: 4,
@@ -119,6 +122,8 @@ export class Game {
   private menu: MainMenu;
   private introPending = false;
   private readonly debug: boolean;
+  private readonly isTouch = isTouchDevice();
+  private touch: TouchControls | null = null;
 
   constructor(private readonly container: HTMLElement) {
     this.debug = new URLSearchParams(location.search).has('debug');
@@ -127,7 +132,7 @@ export class Game {
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, TUNING.maxPixelRatio));
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, this.isTouch ? TUNING.maxPixelRatioTouch : TUNING.maxPixelRatio));
     container.append(this.renderer.domElement);
     this.camera = new THREE.PerspectiveCamera(TUNING.fov, 1, TUNING.near, TUNING.far);
     setupLighting(this.scene);
@@ -143,6 +148,11 @@ export class Game {
     this.results = new ResultsScreen(ui);
 
     this.input = new Input(this.renderer.domElement);
+    dui.onTap = () => this.input.tap();
+    if (this.isTouch) {
+      this.touch = new TouchControls(ui, this.input, () => { if (this.state.is(GameState.PLAYING)) this.pause(); });
+      this.state.onChange((next) => this.touch?.show(next === GameState.PLAYING));
+    }
     this.applySettings(this.settings);
     this.registry = new ExcuseRegistry(this.memory);
     this.dialogue = new DialogueSystem(dui, this.registry, this.memory, {
@@ -160,7 +170,7 @@ export class Game {
 
     this.input.onLockChange((locked) => this.onLockChange(locked));
     this.renderer.domElement.addEventListener('click', () => {
-      if (this.state.is(GameState.PLAYING, GameState.DIALOGUE) && !this.input.locked) this.input.requestLock();
+      if (this.state.is(GameState.PLAYING, GameState.DIALOGUE) && !this.input.locked) this.grabPointer();
     });
 
     if (this.debug) (window as unknown as { __clockout: Game }).__clockout = this;
@@ -253,7 +263,7 @@ export class Game {
     this.hud.showIntro(data.name, data.goalText, data.intro, extra, () => {
       this.introPending = false;
       this.audio.unlock();
-      this.input.requestLock();
+      this.grabPointer();
       this.clock.reset();
       this.state.set(GameState.PLAYING);
     });
@@ -287,10 +297,16 @@ export class Game {
     this.state.set(GameState.PAUSED);
     this.audio.duck(true);
     this.hud.showPause(() => {
+      if (this.isTouch) { this.resume(); return; }
       this.input.requestLock();
       // If the browser refuses pointer lock we still resume; drag-to-look is the fallback.
       window.setTimeout(() => { if (this.state.is(GameState.PAUSED)) this.resume(); }, 300);
     }, () => this.showMenu());
+  }
+
+  /** Pointer lock is a desktop thing; on touch devices the look comes from drags. */
+  private grabPointer(): void {
+    if (!this.isTouch) this.input.requestLock();
   }
 
   private resume(): void {
@@ -840,8 +856,10 @@ export class Game {
 
   private updateHud(run: Run): void {
     const p = run.player;
-    const label = this.interactor.current?.label() ?? null;
+    const raw = this.interactor.current?.label() ?? null;
+    const label = raw && this.isTouch ? raw.replace('[E] ', 'USE: ') : raw;
     this.hud.setInteract(label);
+    this.touch?.setCrouched(p.crouched);
     this.hud.setCrouched(p.crouched);
     this.hud.setNoise(run.noise.currentRadius);
     const clock = this.clockMinutes(run);

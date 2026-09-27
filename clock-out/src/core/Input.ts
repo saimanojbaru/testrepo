@@ -30,6 +30,10 @@ export class Input {
   private mouseY = 0;
   private clicked = false;
   private dragging = false;
+  // Touch controls feed these instead of real keys.
+  private virtualForward = 0;
+  private virtualRight = 0;
+  private virtualSprint = false;
   private lockListeners: Array<(locked: boolean) => void> = [];
 
   constructor(private readonly lockTarget: HTMLElement) {
@@ -69,6 +73,38 @@ export class Input {
     });
   }
 
+  // --- Virtual input (touch controls) ---
+
+  setVirtualMove(forward: number, right: number): void {
+    this.virtualForward = forward;
+    this.virtualRight = right;
+  }
+
+  setVirtualSprint(on: boolean): void {
+    this.virtualSprint = on;
+  }
+
+  /** A one-frame virtual key press, e.g. the on-screen USE button sends 'KeyE'. */
+  pressVirtual(code: string): void {
+    this.pressed.add(code);
+  }
+
+  /** Look input from a touch drag, in the same pixel units as mouse movement. */
+  addLook(dx: number, dy: number): void {
+    this.lookX += dx;
+    this.lookY += dy;
+  }
+
+  /** A tap counts as a click for skipping lines and continuing verdicts. */
+  tap(): void {
+    this.clicked = true;
+  }
+
+  clearVirtual(): void {
+    this.virtualForward = this.virtualRight = 0;
+    this.virtualSprint = false;
+  }
+
   requestLock(): void {
     if (this.locked) return;
     // Some browsers return a promise that rejects if the gesture was too old; that
@@ -101,9 +137,9 @@ export class Input {
     const f = (this.isDown('KeyW') || this.isDown('ArrowUp') ? 1 : 0) - (this.isDown('KeyS') || this.isDown('ArrowDown') ? 1 : 0);
     const r = (this.isDown('KeyD') || this.isDown('ArrowRight') ? 1 : 0) - (this.isDown('KeyA') || this.isDown('ArrowLeft') ? 1 : 0);
     return {
-      forward: f,
-      right: r,
-      sprint: this.isDown('ShiftLeft') || this.isDown('ShiftRight'),
+      forward: Math.max(-1, Math.min(1, f + this.virtualForward)),
+      right: Math.max(-1, Math.min(1, r + this.virtualRight)),
+      sprint: this.isDown('ShiftLeft') || this.isDown('ShiftRight') || this.virtualSprint,
       crouchHeld: this.isDown('ControlLeft') || this.isDown('ControlRight'),
     };
   }

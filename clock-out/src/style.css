@@ -19,7 +19,8 @@
 html, body { margin: 0; height: 100%; background: #cfd6cc; overflow: hidden; }
 body { font-family: var(--sans); color: var(--ink); -webkit-font-smoothing: antialiased; }
 #app { position: fixed; inset: 0; }
-#app canvas { display: block; width: 100%; height: 100%; }
+#app canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+body { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
 .hidden { display: none !important; }
 button { font: inherit; }
 
@@ -238,3 +239,44 @@ details.panel[open] summary { margin-bottom: 10px; }
 .hr-sign { margin-top: 16px; border-top: 1px solid #cfc9b8; padding-top: 8px; font-size: 12px; }
 .results-buttons { margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap; }
 .pause h2 { margin-bottom: 8px; }
+
+/* ---------------------------------------------------------------- Touch */
+.touch-controls { position: absolute; inset: 0; }
+.touch-zone { position: absolute; inset: 0; touch-action: none; }
+.stick-base {
+  position: absolute; width: 120px; height: 120px; margin: -60px 0 0 -60px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12); border: 2px solid rgba(255, 255, 255, 0.35); pointer-events: none;
+}
+.stick-knob {
+  position: absolute; left: 50%; top: 50%; width: 52px; height: 52px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55); transform: translate(-50%, -50%);
+}
+.touch-btn {
+  position: absolute; touch-action: none; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.5);
+  background: rgba(24, 26, 24, 0.45); color: #fff; font: 700 11px var(--mono); letter-spacing: 0.06em;
+  width: 68px; height: 68px; padding: 0;
+}
+.touch-btn.held, .touch-btn.active { background: rgba(244, 241, 232, 0.85); color: var(--ink); }
+.btn-use { right: max(24px, env(safe-area-inset-right)); bottom: 110px; width: 78px; height: 78px; font-size: 13px; }
+.btn-crouch { right: calc(max(24px, env(safe-area-inset-right)) + 92px); bottom: 36px; }
+.btn-sprint { right: max(24px, env(safe-area-inset-right)); bottom: 24px; }
+.btn-pause { right: 50%; transform: translateX(50%); top: 12px; width: 44px; height: 44px; border-radius: 8px; }
+
+@media (max-height: 520px) {
+  .objective, .top-right { padding: 5px 8px; }
+  .top-right .clock { font-size: 14px; }
+  .toasts { top: 58px; }
+  .toast { font-size: 12px; padding: 5px 10px; }
+  .dialogue { padding: 0 8px 8px; }
+  .dlg-panel { padding: 10px 14px 8px; max-height: 96vh; overflow-y: auto; }
+  .dlg-name { font-size: 15px; }
+  .dlg-line { font-size: 15px; margin: 6px 0 8px; min-height: 2.2em; }
+  .dlg-tagline { display: none; }
+  .dlg-choice { padding: 6px 10px; font-size: 13px; }
+  .dlg-verdict .items { grid-template-columns: 1fr; font-size: 11px; }
+  .dlg-hint { display: none; }
+  .overlay-card { padding: 16px 20px; max-height: 94vh; overflow-y: auto; }
+  .overlay-card h2 { font-size: 20px; }
+  .overlay-card p { font-size: 14px; }
+  .screen { padding: 16px 20px 24px; }
+}

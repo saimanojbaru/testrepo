@@ -30,6 +30,8 @@ export class DialogueUI {
   private verdictEl: HTMLDivElement;
   private hintEl: HTMLDivElement;
   private buttons: HTMLButtonElement[] = [];
+  /** Tapping the panel (not a choice) acts like Space: skip / continue. Needed on touch screens. */
+  onTap: (() => void) | null = null;
 
   private full = '';
   private shown = 0;
@@ -54,6 +56,9 @@ export class DialogueUI {
     this.root.append(panel);
     parent.append(this.root);
     this.lineEl.addEventListener('click', () => this.skip());
+    this.root.addEventListener('pointerdown', (e) => {
+      if (!(e.target as HTMLElement).closest('.dlg-choice')) this.onTap?.();
+    });
   }
 
   open(): void {
