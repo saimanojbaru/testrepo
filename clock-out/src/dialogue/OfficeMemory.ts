@@ -3,7 +3,8 @@
 // press Reset, which the office also remembers, spiritually).
 
 const TUNING = {
-  storageKey: 'clockout.memory.v1',
+  // v2: the Indian-office rewrite changed every excuse id; old v1 profiles are ignored.
+  storageKey: 'clockout.memory.v2',
   /** Extra suspicion for the 2nd, 3rd, 4th+ use of the same excuse. */
   reusePenalty: [0, 2, 4, 6],
   timesCaughtPenalty: 0.5,
@@ -79,7 +80,7 @@ export class OfficeMemory {
   get escapes(): number { return this.data.escapes; }
   get reputationScore(): number { return this.data.reputation; }
 
-  /** Memory flags used by ExcuseDef.requires.memoryFlag, e.g. 'used:casserole'. */
+  /** Memory flags used by ExcuseDef.requires.memoryFlag, e.g. 'used:cooker'. */
   hasFlag(flag: string): boolean {
     if (flag.startsWith('used:')) return this.useCount(flag.slice(5)) > 0;
     if (flag === 'caught') return this.data.timesCaught > 0;
@@ -117,7 +118,7 @@ export class OfficeMemory {
   }
 
   /**
-   * Level 3 needs the casserole to have happened, whether or not you were there,
+   * Level 3 needs the cooker excuse to have happened, whether or not you were there,
    * and everyone on that floor to have heard about it. Returns true if it was forced.
    */
   ensureUsed(excuseId: string, heardByNpcs: string[]): boolean {

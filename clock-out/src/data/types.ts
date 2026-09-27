@@ -25,7 +25,7 @@ export interface LevelData {
   favors?: number;
   /** In-fiction wall clock: start time in minutes after midnight, and game-minutes per real second. */
   clock?: { startMinutes: number; rate: number };
-  /** Excuses the level forces into "already used" before it starts (Level 3's casserole). */
+  /** Excuses the level forces into "already used" before it starts (Level 3's cooker). */
   forceUsedExcuses?: string[];
   /** Flavor paragraph shown on the level intro card. */
   intro: string;
@@ -92,7 +92,7 @@ export interface NPCLook {
     | 'tie' | 'lanyard' | 'glasses' | 'clipboard' | 'mug' | 'headset' | 'backpack' | 'toolbelt' | 'pearls' | 'cardigan'
     // Indian-office wear and small regional tells.
     | 'halfSleeve' | 'belt' | 'penPocket' | 'kurti' | 'dupatta' | 'watch' | 'kara' | 'greenBangles' | 'goldBangles'
-    | 'kalava' | 'mangalsutra' | 'rudraksha'
+    | 'kalava' | 'mangalsutra' | 'rudraksha' | 'gamosaStrap' | 'apron'
   >;
   /** Layered-primitive face. When present it replaces the old box head and hair. */
   face?: FaceRecipe;

@@ -36,8 +36,8 @@ const ENDING_TITLES: Record<Ending, [string, string]> = {
   CLEAN: ['CLEAN EXIT', 'Nobody saw a thing. You were never here. You were barely here before.'],
   ESCAPED: ['ESCAPED', 'You talked your way out. The office will be talking about it too.'],
   LEGEND: ['LEGEND', 'That should not have worked. It worked. It is going in the newsletter.'],
-  PROMOTION: ['PROMOTION', '"Good initiative." Marcus holds the elevator for you. Then lets it go. You ride alone.'],
-  CAUGHT: ['CAUGHT', '"Quick chat" with Marcus. It was not quick. It was barely a chat.'],
+  PROMOTION: ['PROMOTION', '"Good initiative." Ramesh sir holds the lift for you. Then lets it go. You ride alone.'],
+  CAUGHT: ['CAUGHT', '"Quick connect" with Ramesh sir. It was not quick. It was barely a connect.'],
 };
 
 export class ResultsScreen {
@@ -124,7 +124,7 @@ function hrReport(s: RunSummary, memory: OfficeMemory): string {
     dialogue: 'Attempted departure with insufficient justification.',
     chase: 'Running. Indoors. Away from a colleague.',
     fled: 'Attempted to exit the premises while being addressed by name.',
-    deadline: "Failure to attend a 'Quick Sync :)' while physically present in the building.",
+    deadline: "Failure to attend a 'Quick Connect :)' while physically present in the building.",
   }[s.caughtReason ?? 'dialogue'];
   const id = `HR-${String(10000 + Math.floor(Math.random() * 89999))}`;
   const events: string[] = [];
@@ -137,7 +137,7 @@ function hrReport(s: RunSummary, memory: OfficeMemory): string {
   }
   if (s.caughtReason === 'fled') events.push(`<li>Employee was observed reaching for the door handle while ${esc(by?.name ?? 'a colleague')} said “hey” four times, each louder.</li>`);
   if (s.caughtReason === 'chase') events.push(`<li>Employee was observed moving at a velocity inconsistent with “grabbing a coffee.”</li>`);
-  if (s.caughtReason === 'deadline') events.push(`<li>At 1:15 PM a calendar invite landed. Employee was, unfortunately, still here.</li>`);
+  if (s.caughtReason === 'deadline') events.push(`<li>At 1:15 PM an Outlook invite landed. Employee was, unfortunately, still here.</li>`);
   events.push(`<li>${esc(pick(HR_REPORT.observations))}</li>`);
 
   const hist = memory.history();
@@ -150,7 +150,7 @@ function hrReport(s: RunSummary, memory: OfficeMemory): string {
     <div class="hr-head"><strong>INCIDENT REPORT</strong><span>${id}</span></div>
     <div class="hr-meta">
       <div><span>Date</span>Today. Again.</div>
-      <div><span>Subject</span>You (mid-level, desk by the plant)</div>
+      <div><span>Subject</span>You (Software Engineer II, desk by the plant)</div>
       <div><span>Reporting party</span>${by ? `${esc(by.name)}, ${esc(by.role)}` : 'The building'}</div>
       <div><span>Location</span>${esc(s.level.name)}</div>
       <div><span>Nature of incident</span>${esc(reason)}</div>
@@ -163,7 +163,7 @@ function hrReport(s: RunSummary, memory: OfficeMemory): string {
     ${note ? `<p class="hr-note">${esc(note)}</p>` : ''}
     <h4>Recommended action</h4>
     <ul>${recs.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>
-    <div class="hr-sign">Filed by Priya Raman, HR Business Partner.<br><em>This was not a formal conversation.</em></div>`;
+    <div class="hr-sign">Filed by Priya Menon, HR Business Partner.<br><em>This was not a formal conversation.</em></div>`;
 }
 
 function quote(s: string): string {

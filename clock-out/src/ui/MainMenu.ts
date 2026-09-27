@@ -70,7 +70,7 @@ export class MainMenu {
     this.root.innerHTML = `
       <header class="menu-title">
         <h1>CLOCK OUT</h1>
-        <p>A first-person stealth game about leaving work. The office is the enemy.</p>
+        <p>A first-person stealth game about leaving a HITEC City office. The office is the enemy.</p>
       </header>
       <div class="menu-grid">
         <section class="menu-levels">
@@ -142,7 +142,7 @@ export class MainMenu {
     reset.addEventListener('click', () => {
       if (!this.resetArmed) {
         this.resetArmed = true;
-        reset.textContent = 'Really? Brenda will forget everything. Click again.';
+        reset.textContent = 'Really? Kavita will forget everything. Click again.';
         return;
       }
       this.actions.onReset();

@@ -27,7 +27,7 @@ import { STATE_BARKS, pick } from '../data/dialogueLines';
 import type { EncounterContext, Ending, ExcuseDef, LevelData, NPCDef, ScriptedBeat } from '../data/types';
 import { level1 } from '../data/levels/level1_lunch';
 import { level2 } from '../data/levels/level2_crush';
-import { level3 } from '../data/levels/level3_casserole';
+import { level3 } from '../data/levels/level3_cooker';
 
 // Bootstraps renderer, scene, camera and every system, and runs the top-level
 // state machine: MENU -> (intro) -> PLAYING <-> DIALOGUE -> ESCAPED | CAUGHT.
@@ -245,7 +245,7 @@ export class Game {
       for (const id of data.forceUsedExcuses) {
         this.memory.ensureUsed(id, run.npcs.map((n) => n.def.id));
       }
-      extra = 'Office Memory: everyone on this floor has heard about the casserole. It will be in your hand, marked [USED]. Do not use it.';
+      extra = 'Office Memory: everyone on this floor has heard about the cooker. It will be in your hand, marked [USED]. Do not use it.';
     }
     if (this.memory.timesCaught > 0) {
       extra += `${extra ? ' ' : ''}You have been caught ${this.memory.timesCaught} time${this.memory.timesCaught > 1 ? 's' : ''}. Every excuse costs a little more.`;
@@ -560,8 +560,8 @@ export class Game {
     npc.sawCrouch = npc.sawSprint = false;
     run.encounterCooldownUntil = run.world.time + TUNING.encounterCooldown;
 
-    // Tom tells everyone. Whatever you told him, Priya hears a version of it.
-    if (npc.def.id === 'tom' && r.outcome !== 'CAUGHT') this.onSnitch(npc);
+    // Rohit tells everyone. Whatever you told him, Priya hears a version of it.
+    if (npc.def.id === 'rohit' && r.outcome !== 'CAUGHT') this.onSnitch(npc);
 
     switch (r.outcome) {
       case 'PASSED': {
@@ -663,7 +663,7 @@ export class Game {
           if (run.beatTime < run.hydratingUntil) return;
           run.hydratingUntil = run.beatTime + TUNING.hydrateSeconds;
           this.audio.sip();
-          this.hud.toast('Nobody suspects a person who is hydrating.');
+          this.hud.toast('Nobody suspects a person drinking water. Stay hydrated, the posters say.');
         },
       });
     }
@@ -672,13 +672,13 @@ export class Game {
         object: el.group,
         label: () => {
           if (level.elevators.some((e) => e.isOpen)) return null;
-          return run.elevatorCallTimer > 0 ? 'Elevator is on its way…' : '[E] Call elevator';
+          return run.elevatorCallTimer > 0 ? 'Lift is on its way…' : '[E] Call the lift';
         },
         use: () => {
           if (run.elevatorCallTimer > 0 || level.elevators.some((e) => e.isOpen)) return;
           run.elevatorCallTimer = TUNING.elevatorCallDelay;
           this.audio.uiSelect();
-          this.hud.toast('You press the button. The elevator considers it.');
+          this.hud.toast('You press the button. The lift considers it.');
         },
       });
     }
@@ -748,7 +748,7 @@ export class Game {
       case 'allHands': {
         run.allHandsUntil = run.beatTime + (pl.duration ?? 5);
         this.audio.allHandsChime();
-        this.hud.toast('ALL-HANDS REMINDER on every monitor. Every head turns. Everyone sees twice as much.', 5);
+        this.hud.toast('TOWN HALL REMINDER on every monitor. Every head turns. Everyone sees twice as much.', 5);
         for (const n of run.npcs.slice(0, 3)) {
           const p = run.player;
           if (Math.hypot(n.x - p.x, n.z - p.z) < TUNING.allHandsBarkRange) n.say(pick(STATE_BARKS.allHands), 2);
@@ -762,7 +762,7 @@ export class Game {
     for (const e of run.level.elevators) e.openFor(seconds);
     run.elevatorCallTimer = -1;
     this.audio.elevatorDing();
-    this.hud.toast(`DING. The elevator is here. ${Math.round(seconds)} seconds.`);
+    this.hud.toast(`DING. The lift is here. ${Math.round(seconds)} seconds.`);
   }
 
   private checkExit(run: Run): void {
@@ -795,16 +795,16 @@ export class Game {
     const priya = run.npcs.find((n) => n.def.id === 'priya');
     if (run.data.exitType === 'stairwell' && priya && priya.awareness > 0) {
       stars = Math.max(1, stars - 1);
-      flavor = `Priya followed you upstairs. She is "just checking on a thing." Sam from Legal waves. Priya waves back. It's a long ten minutes.`;
+      flavor = `Priya followed you upstairs. She is "just checking on a thing." Ananya from Design waves. Priya waves back. It's a long ten minutes.`;
     } else if (run.data.id === 'level2') {
-      flavor = 'Floor 7. Sam from Legal looks up. "Oh, hey. You came." You came.';
+      flavor = 'Floor 7. Ananya looks up from her Figma. "Oh, hey. You came." You came.';
     }
     let ending: Ending = 'ESCAPED';
     if (run.bossPassedCorporate && underPar) ending = 'PROMOTION';
     else if (run.absurdSuccesses.length) ending = 'LEGEND';
     else if (run.dialogues === 0 && underPar) ending = 'CLEAN';
     if (ending === 'PROMOTION' && run.data.exitType !== 'elevator') {
-      flavor = `${flavor ? `${flavor} ` : ''}Marcus holds the door. "Good initiative." You're not sure what just happened, but it's on your review now.`;
+      flavor = `${flavor ? `${flavor} ` : ''}Ramesh sir holds the door. "Good initiative." You're not sure what just happened, but it's on your review now.`;
     }
     const newLegends = run.absurdSuccesses.filter((e) => this.memory.recordLegend(e.id));
     this.memory.recordEscape(run.data.id, stars, t, ending);
@@ -872,15 +872,15 @@ export class Game {
     if (run.data.favors) info.favors = { left: run.favors, total: run.data.favors };
     if (run.data.exitType === 'elevator') {
       const open = run.level.elevators.find((e) => e.timeLeft > 0);
-      info.elevator = open ? `Elevator OPEN · ${Math.ceil(open.timeLeft)}s` : run.elevatorCallTimer > 0 ? `Elevator arriving · ${Math.ceil(run.elevatorCallTimer)}s` : 'Elevator: closed';
+      info.elevator = open ? `Lift OPEN · ${Math.ceil(open.timeLeft)}s` : run.elevatorCallTimer > 0 ? `Lift arriving · ${Math.ceil(run.elevatorCallTimer)}s` : 'Lift: closed';
     }
     this.hud.setTopRight(info);
 
     let status = '';
     if (run.probe) status = `${run.probe.npc.def.name.split(' ')[0]} is walking with you · act natural · ${Math.max(0, Math.ceil(run.probe.npc.probeTimer))}s`;
-    else if (run.beatTime < run.allHandsUntil) status = 'ALL-HANDS REMINDER · everyone is looking up';
+    else if (run.beatTime < run.allHandsUntil) status = 'TOWN HALL REMINDER · everyone is looking up';
     else if (run.world.playerHydrating) status = 'Hydrating… (people look away)';
-    else if (run.data.exitType === 'elevator' && run.level.isExit(p.x, p.z)) status = 'The doors are closed. Call the elevator, or wait for it.';
+    else if (run.data.exitType === 'elevator' && run.level.isExit(p.x, p.z)) status = 'The doors are closed. Call the lift, or wait for it.';
     this.hud.setStatus(status);
   }
 

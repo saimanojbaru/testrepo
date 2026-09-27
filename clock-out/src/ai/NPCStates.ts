@@ -147,7 +147,7 @@ function escalate(npc: NPC, w: NPCWorld): boolean {
     endChatter(npc);
     npc.setState(NPCState.SUSPICIOUS);
     npc.say(pick(STATE_BARKS.suspicious), 1.6);
-    if (npc.def.id === 'tom' && npc.snitchCooldown <= 0) {
+    if (npc.def.id === 'rohit' && npc.snitchCooldown <= 0) {
       npc.snitchCooldown = TUNING.snitchCooldown;
       w.onSnitch(npc);
     }

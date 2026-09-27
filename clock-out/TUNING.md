@@ -15,12 +15,12 @@ No human playtesting was possible in the build environment. The numbers were tun
 | Level | Route | Result |
 |---|---|---|
 | 1 | Crouch along the south wall, hide at the copiers, go when the doors open | Escaped, ~62–75 s (par 85) |
-| 1 | Walk straight at the elevator through Marcus's sightline | Caught by the 4th Marcus stop |
+| 1 | Walk straight at the lift through Ramesh sir's sightline | Caught or escorted by the 3rd Ramesh stop |
 | 2 | Crouch the north side, jam the copier, sneak to the stairs | Escaped, ~30–42 s |
 | 2 | Hide in the supply closet, then go | Escaped, ~55–65 s |
 | 2 | Walk straight | Escaped only after two PROBED conversations |
-| 2 | Walk straight and ignore Tom calling you | Caught ("fled") |
-| 3 | South wall, time Linda's loop, dash on Brenda's phone call | Escaped ~50% of runs, ~130 s (par 150) |
+| 2 | Walk straight and ignore Rohit calling you | Caught ("fled") |
+| 3 | South wall, time Lakshmi's loop, dash on Kavita's phone call | Escaped ~50% of runs, ~130 s (par 150) |
 | 3 | Walk straight / north routes | Mostly escorted or caught |
 
 The bot plays conversations with perfect information: it sees every hidden modifier. A human sees only the risk dots. Expect humans to do somewhat worse in conversations and better at reading patrols.
@@ -82,7 +82,7 @@ Reaching the exit while anyone is confronting or chasing you is a CAUGHT ("fled"
 | Creaky closet door (one-shot) | 12 m | — |
 | Copier jam (not the player) | 20 m (`Game.jamRadius`) | — |
 
-Each NPC's `hearingMul` scales the radius they can hear from: Brenda 1.3, Marcus 0.8. Walls don't block noise; that is deliberate.
+Each NPC's `hearingMul` scales the radius they can hear from: Kavita 1.3, Ramesh 0.8. Walls don't block noise; that is deliberate.
 
 ## Player (`player/PlayerController.ts`)
 
@@ -107,7 +107,7 @@ Each NPC's `hearingMul` scales the radius they can hear from: Brenda 1.3, Marcus
 | `plausibleRisk` | 3 | Every hand holds at least one unused excuse at or below this risk |
 | `showUsedChance` | 0.6 | A `[USED]` excuse is forced into the hand so memory stays visible |
 | `repeatStop` | +3 per earlier stop | "Didn't I just see you?" Per NPC, per run |
-| `immunePenalty` | +4 | e.g. Marcus hearing "I have a sync with another team" |
+| `immunePenalty` | +4 | e.g. Ramesh sir hearing "KT session with the other team" |
 | `contextMissPenalty` | +2 | e.g. "grabbing a coffee" nowhere near the kitchen |
 | `seenCrouching` / `seenSprinting` / `nearExit` | +2 / +1 / +1 | |
 | `voluntaryBonus` | −1 | You walked up and pressed E: confidence |

@@ -343,8 +343,10 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
     part(root, 0.06, 0.42, 0.02, 0xa82828, 0, 1.2, -0.152);
   }
   if (acc.has('lanyard')) {
-    part(root, 0.02, 0.3, 0.02, 0x2f6dbf, -0.07, 1.33, -0.145).rotation.z = -0.3;
-    part(root, 0.02, 0.3, 0.02, 0x2f6dbf, 0.07, 1.33, -0.145).rotation.z = 0.3;
+    const cord = look.trim ?? 0x2f6dbf;
+    part(root, 0.02, 0.3, 0.02, cord, -0.07, 1.33, -0.145).rotation.z = -0.3;
+    part(root, 0.02, 0.3, 0.02, cord, 0.07, 1.33, -0.145).rotation.z = 0.3;
+    if (look.trim === 0xd62828) part(root, 0.1, 0.02, 0.016, 0xf2c200, 0, 1.215, -0.151); // red-and-yellow: Karnataka colours
     part(root, 0.1, 0.13, 0.015, 0xf2f2f2, 0, 1.15, -0.15);
   }
   if (acc.has('backpack')) part(root, 0.36, 0.42, 0.16, 0x33373d, 0, 1.15, 0.2);
@@ -367,6 +369,13 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
     part(root, 0.1, 0.7, 0.02, trim, 0.17, 1.08, 0.155);
   }
   if (acc.has('belt')) part(root, 0.47, 0.05, 0.28, 0x2a2420, 0, 0.87, 0);
+  if (acc.has('apron')) part(root, 0.4, 0.62, 0.02, 0xf2efe6, 0, 0.9, -0.152);
+  if (acc.has('gamosaStrap')) {
+    // Assamese gamosa weave (white with red edges) wrapped round a backpack strap.
+    const strap = part(root, 0.07, 0.56, 0.02, 0xf4f1e8, 0.12, 1.17, -0.152);
+    strap.rotation.z = 0.12;
+    for (const dx of [-0.03, 0.03]) part(strap, 0.01, 0.56, 0.022, trim, dx, 0, 0);
+  }
   if (acc.has('penPocket')) {
     part(root, 0.09, 0.08, 0.01, shade(body, 0.9), -0.12, 1.3, -0.142);
     part(root, 0.012, 0.06, 0.012, 0x2f4fbf, -0.1, 1.35, -0.148);
@@ -445,7 +454,7 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
       part(head, 0.3, 0.26, 0.05, hair, 0, 0.2, 0.15);
       break;
     case 'big': {
-      // Brenda's hair has its own postcode; you will spot it over any divider.
+      // Big hair has its own postcode; you will spot it over any divider.
       const s = new THREE.Mesh(new THREE.IcosahedronGeometry(0.25, 0), mat(hair));
       s.position.set(0, 0.36, 0.04);
       s.scale.set(1.15, 0.85, 1.05);

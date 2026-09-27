@@ -3,7 +3,7 @@ import type { PlayerController } from './PlayerController';
 
 // Footsteps are discrete noise events, one per stride, with a radius set by how
 // the player is moving. Walls do not block noise: that is a deliberate design
-// choice (simple, readable, and funny when Brenda hears you through drywall).
+// choice (simple, readable, and funny when Kavita hears you through drywall).
 
 const TUNING = {
   radius: { crouch: 3, walk: 7, sprint: 14, bump: 10, door: 12 } as Record<string, number>,

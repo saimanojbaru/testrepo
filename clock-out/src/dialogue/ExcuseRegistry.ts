@@ -3,8 +3,8 @@ import type { Archetype, EncounterContext, ExcuseCategory, ExcuseDef, NPCDef } f
 import type { OfficeMemory } from './OfficeMemory';
 
 // Picks which excuses you get offered and prices them. The price is shown to the
-// player afterwards as a line-item breakdown, because learning *why* Brenda
-// bought the romance and Marcus didn't buy the goldfish is the fun.
+// player afterwards as a line-item breakdown, because learning *why* Kavita
+// bought the romance and Ramesh sir didn't buy the parrot is the fun.
 
 const TUNING = {
   contextWeight: 3,

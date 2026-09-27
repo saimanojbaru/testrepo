@@ -1,7 +1,7 @@
 // Validates level ASCII: row widths, NPC/patrol cells walkable, exit reachable from spawn.
 import { level1 } from '../src/data/levels/level1_lunch.ts';
 import { level2 } from '../src/data/levels/level2_crush.ts';
-import { level3 } from '../src/data/levels/level3_casserole.ts';
+import { level3 } from '../src/data/levels/level3_cooker.ts';
 const WALK = new Set(['.', 'P', 'X']);
 let bad = 0;
 for (const L of [level1, level2, level3]) {

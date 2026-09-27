@@ -26,7 +26,8 @@ export interface FaceRecipe {
   facialHair?: 'moustache' | 'thickMoustache' | 'beard' | 'stubble';
   glasses?: 'gold' | 'black' | 'none';
   /** Subtle regional markers. */
-  forehead?: 'vibhuti' | 'tilak' | 'chandrakor' | 'bindi';
+  forehead?: 'vibhuti' | 'tilak' | 'chandrakor' | 'bindi' | 'chandanam';
+  hat?: 'securityCap';
   gajra?: boolean;            // jasmine string in the hair
   earrings?: 'jhumka' | 'stud';
   noseRing?: boolean;
@@ -168,23 +169,33 @@ export function buildFace(head: THREE.Group, r: FaceRecipe): void {
   switch (r.forehead) {
     case 'vibhuti':
       // Three pale horizontal lines of sacred ash with a small kumkum dot: common across Tamil Nadu.
-      for (let i = 0; i < 3; i++) mesh(head, new THREE.BoxGeometry(0.058 - i * 0.005, 0.0034, 0.005), 0xe9e4d8, 0, fy + 0.012 - i * 0.011, fz, true);
-      mesh(head, new THREE.SphereGeometry(0.0045, 8, 6), 0xb3202a, 0, fy + 0.001, fz - 0.003);
+      for (let i = 0; i < 3; i++) mesh(head, new THREE.BoxGeometry(0.044 - i * 0.004, 0.0024, 0.004), 0xcfc6b6, 0, fy + 0.01 - i * 0.008, fz, true);
+      mesh(head, new THREE.SphereGeometry(0.0032, 8, 6), 0xa3202a, 0, fy + 0.002, fz - 0.002);
       break;
     case 'tilak':
       mesh(head, new THREE.BoxGeometry(0.008, 0.035, 0.006), 0xc0392b, 0, fy - 0.01, fz, true);
       break;
     case 'chandrakor': {
       // Crescent bindi, a quiet Maharashtrian signature.
-      const c = mesh(head, new THREE.TorusGeometry(0.01, 0.0035, 6, 12, Math.PI), 0x9b1b30, 0, fy - 0.004, fz);
+      const c = mesh(head, new THREE.TorusGeometry(0.0075, 0.0026, 6, 12, Math.PI), 0x8b1b30, 0, fy - 0.004, fz);
       c.rotation.z = Math.PI;
       break;
     }
     case 'bindi':
-      mesh(head, new THREE.SphereGeometry(0.0065, 8, 6), 0x9b1b30, 0, fy - 0.004, fz - 0.002).scale.set(1, 1, 0.4);
+      mesh(head, new THREE.SphereGeometry(0.0048, 8, 6), 0x8b1b30, 0, fy - 0.004, fz - 0.002).scale.set(1, 1, 0.4);
+      break;
+    case 'chandanam':
+      // A thin line of sandal paste: a Kerala morning-temple habit that lasts till lunch.
+      mesh(head, new THREE.BoxGeometry(0.0045, 0.026, 0.004), 0xd8b870, 0, fy - 0.006, fz, true);
       break;
   }
 
+  if (r.hat === 'securityCap') {
+    const capTop = mesh(head, new THREE.SphereGeometry(R * 1.1, 18, 10, 0, Math.PI * 2, 0, Math.PI * 0.36), 0x2c3e66, 0, cy + 0.01, 0);
+    capTop.scale.set(s.w, s.h * 1.05, s.d);
+    const brim = mesh(head, new THREE.CylinderGeometry(0.07, 0.07, 0.008, 16, 1, false, -Math.PI / 2, Math.PI), 0x223052, 0, cy + 0.098, front + 0.02);
+    brim.scale.set(1.1, 1, 0.9);
+  }
   if (r.noseRing) mesh(head, new THREE.TorusGeometry(0.007, 0.0016, 6, 10), 0xd4af37, 0.013, cy - 0.03, front - 0.006).rotation.y = Math.PI / 2;
   if (r.earrings) {
     for (const side of [-1, 1]) {
