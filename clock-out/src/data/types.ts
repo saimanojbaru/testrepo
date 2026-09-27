@@ -1,3 +1,5 @@
+import type { FaceRecipe } from '../ai/FaceBuilder';
+
 // Core data contracts. The first five interfaces follow the design spec exactly;
 // everything after the "extensions" marker is additive and documented in README.
 
@@ -86,7 +88,16 @@ export interface NPCLook {
   hair: number;
   hairStyle: 'bob' | 'big' | 'bald' | 'short' | 'bun' | 'cap' | 'swoop';
   pants: number;
-  accessories: Array<'tie' | 'lanyard' | 'glasses' | 'clipboard' | 'mug' | 'headset' | 'backpack' | 'toolbelt' | 'pearls' | 'cardigan'>;
+  accessories: Array<
+    | 'tie' | 'lanyard' | 'glasses' | 'clipboard' | 'mug' | 'headset' | 'backpack' | 'toolbelt' | 'pearls' | 'cardigan'
+    // Indian-office wear and small regional tells.
+    | 'halfSleeve' | 'belt' | 'penPocket' | 'kurti' | 'dupatta' | 'watch' | 'kara' | 'greenBangles' | 'goldBangles'
+    | 'kalava' | 'mangalsutra' | 'rudraksha'
+  >;
+  /** Layered-primitive face. When present it replaces the old box head and hair. */
+  face?: FaceRecipe;
+  /** Accent colour for kurti borders, dupattas and similar trims. */
+  trim?: number;
   /** Base pitch in Hz for the Animal-Crossing-style voice blips. */
   voice: number;
   /** One-line bio shown under the name in dialogue. */

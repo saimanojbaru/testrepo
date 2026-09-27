@@ -3,6 +3,7 @@ import type { NPCDef, NPCLook } from '../data/types';
 import type { NavGrid, Vec2 } from '../world/NavGrid';
 import type { NoiseEvent } from '../core/Events';
 import { NPCState, type NPCStateId } from './NPCStates';
+import { buildFace } from './FaceBuilder';
 
 // An NPC is a body (blocky, readable silhouette), a set of senses (Vision/Hearing
 // write into `awareness`), a memory of where it last noticed the player, and a
@@ -352,12 +353,50 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
     part(root, 0.1, 0.14, 0.08, 0x5a4027, 0.2, 0.8, -0.14);
   }
   if (acc.has('pearls')) part(root, 0.22, 0.03, 0.02, 0xf5f1e6, 0, 1.43, -0.13);
+  const trim = look.trim ?? 0xb8860b;
+  if (acc.has('kurti')) {
+    // Tunic runs to mid-thigh with a woven border at the hem and neckline.
+    part(root, 0.5, 0.36, 0.29, body, 0, 0.72, 0);
+    part(root, 0.505, 0.05, 0.295, trim, 0, 0.56, 0);
+    part(root, 0.16, 0.035, 0.02, trim, 0, 1.43, -0.14);
+  }
+  if (acc.has('dupatta')) {
+    // Dupatta over the left shoulder, falling straight down front and back.
+    part(root, 0.1, 0.8, 0.02, trim, 0.17, 1.02, -0.155);
+    part(root, 0.1, 0.06, 0.3, trim, 0.17, 1.45, 0);
+    part(root, 0.1, 0.7, 0.02, trim, 0.17, 1.08, 0.155);
+  }
+  if (acc.has('belt')) part(root, 0.47, 0.05, 0.28, 0x2a2420, 0, 0.87, 0);
+  if (acc.has('penPocket')) {
+    part(root, 0.09, 0.08, 0.01, shade(body, 0.9), -0.12, 1.3, -0.142);
+    part(root, 0.012, 0.06, 0.012, 0x2f4fbf, -0.1, 1.35, -0.148);
+  }
+  if (acc.has('mangalsutra')) {
+    for (const side of [-1, 1]) part(root, 0.012, 0.16, 0.01, 0x111111, side * 0.045, 1.38, -0.142).rotation.z = side * -0.35;
+    part(root, 0.03, 0.03, 0.012, 0xd4af37, 0, 1.3, -0.145);
+  }
+  if (acc.has('rudraksha')) {
+    for (let i = -3; i <= 3; i++) part(root, 0.018, 0.018, 0.018, 0x6b3a1f, i * 0.022, 1.43 - (3 - Math.abs(i)) * 0.012, -0.145);
+  }
 
   for (const side of [-1, 1]) {
     const shoulder = new THREE.Group();
     shoulder.position.set(side * 0.3, 1.43, 0);
-    part(shoulder, 0.12, 0.6, 0.14, body, 0, -0.3, 0);
+    if (acc.has('halfSleeve')) {
+      // Half-sleeve formal shirt: the unofficial uniform of every Indian IT floor.
+      part(shoulder, 0.13, 0.28, 0.15, body, 0, -0.14, 0);
+      part(shoulder, 0.1, 0.34, 0.11, look.skin, 0, -0.44, 0);
+    } else {
+      part(shoulder, 0.12, 0.6, 0.14, body, 0, -0.3, 0);
+    }
     part(shoulder, 0.1, 0.1, 0.1, look.skin, 0, -0.64, 0);
+    // Wrist details sit just above the hand.
+    const wrist = (color: number, h = 0.022, grow = 0.02) => part(shoulder, 0.1 + grow, h, 0.1 + grow, color, 0, -0.575, 0);
+    if (side === -1 && acc.has('watch')) wrist(0x2b2b2e, 0.035);
+    if (side === 1 && acc.has('kara')) wrist(0xc8ccd0, 0.018, 0.028);
+    if (side === 1 && acc.has('kalava')) wrist(0xc0392b, 0.012, 0.012);
+    if (acc.has('greenBangles')) { wrist(0x1e8a4a, 0.012, 0.03); part(shoulder, 0.13, 0.012, 0.13, 0x1e8a4a, 0, -0.555, 0); }
+    if (acc.has('goldBangles')) { wrist(0xd4af37, 0.01, 0.03); part(shoulder, 0.13, 0.01, 0.13, 0xd4af37, 0, -0.556, 0); }
     if (side === 1 && acc.has('clipboard')) {
       part(shoulder, 0.02, 0.32, 0.24, 0x8a6a42, -0.05, -0.62, -0.1);
       part(shoulder, 0.01, 0.26, 0.2, 0xf4f1e8, -0.064, -0.6, -0.1);
@@ -371,9 +410,19 @@ function buildModel(npc: NPC, root: THREE.Group, head: THREE.Group, legs: THREE.
     arms.push(shoulder);
   }
 
-  part(root, 0.12, 0.08, 0.12, look.skin, 0, 1.51, 0);
+  if (look.face) {
+    const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.052, 0.06, 0.12, 12), mat(look.skin));
+    neck.position.set(0, 1.52, 0);
+    root.add(neck);
+  } else {
+    part(root, 0.12, 0.08, 0.12, look.skin, 0, 1.51, 0);
+  }
   head.position.set(0, 1.55, 0);
   root.add(head);
+  if (look.face) {
+    buildFace(head, look.face);
+    return;
+  }
   part(head, 0.28, 0.32, 0.28, look.skin, 0, 0.16, 0);
   part(head, 0.045, 0.045, 0.02, 0x1a1a1a, -0.065, 0.2, -0.145);
   part(head, 0.045, 0.045, 0.02, 0x1a1a1a, 0.065, 0.2, -0.145);
