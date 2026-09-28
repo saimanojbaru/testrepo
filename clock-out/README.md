@@ -162,6 +162,18 @@ Every gameplay number is in a `TUNING` block at the top of its module. See [TUNI
 - **Commits.** The build was committed as a few milestone commits, not one per build step.
 - **Verification.** Verified headlessly: `tsc`, the production build, Playwright smoke runs of all three levels with zero console errors, a divider-cover test (crouched: awareness 0.01 over 25 s; standing: confronted), and autopilot playthroughs. Audio was exercised without errors but not listened to. Mouse feel, readability at a glance and whether the jokes land need a human playtest.
 
+## Art direction: realistic people, abstract office
+
+This is a decision, not a leftover. **The office stays flat, beige and low-poly on purpose; the people in it are realistic, specific individuals.** The corporation flattens the environment, but it can't flatten the humans stuck in it. That makes "why are the walls blocky and the people real?" the point of the game rather than a bug.
+
+What this commits us to:
+- **The environment is never "upgraded" piecemeal.** Identical cubicles, flat colours and reused poster frames stay deliberately uniform. One realistic desk would make the rest look unfinished.
+- **Realism belongs to people only:** faces (GNM heads), bodies and clothes (Anny, in prototype), and eventually motion (CMU mocap, in prototype). Props, lighting and architecture stay abstract.
+- **Inside a character, consistency matters more than fidelity.** A realistic head on a blocky body reads as a mistake; the same head on a realistic body reads as intentional. Mixed states are temporary and ship behind the "Realistic faces" setting.
+- **Identity signals stay sparse.** Most people's regional identity isn't visible on their body. Five of the nine faces carry no cultural marker (only Ramesh, Kavita, Priya and Lakshmi do). On realistic faces, a marker reads as costume faster than it does on a cartoon.
+
+Status: heads ship (Settings → Realistic faces). A walk test with Anny bodies, sewn Indian clothes and a CMU mocap walk is local only (not in the repo) while we judge whether realistic motion reads as deliberate.
+
 ## Realistic faces (GNM heads)
 
 **Settings → Realistic faces** (Everyone / Ramesh only / Off) swaps the cartoon faces for realistic heads on the same low-poly bodies. The default is Everyone.
