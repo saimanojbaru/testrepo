@@ -62,6 +62,7 @@ const TUNING = {
   screenFadeIn: 0.35,
   /** Photoreal splat stand-in: which NPC, and how dark it gets (splats ignore scene lights). */
   gnmDir: 'gnm',
+  annyDir: 'anny',
   /** Dialogue close-up on photoreal heads: metres of subject in frame height, narrowest FOV, ease rate. */
   closeUpFrame: 0.8,
   closeUpMinFov: 18,
@@ -168,6 +169,8 @@ export class Game {
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+    // Realistic heads on realistic bodies clip their own neck just below the body's (NPC.attachRealBody).
+    this.renderer.localClippingEnabled = true;
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, this.isTouch ? TUNING.maxPixelRatioTouch : TUNING.maxPixelRatio));
     container.append(this.renderer.domElement);
     this.camera = new THREE.PerspectiveCamera(TUNING.fov, 1, TUNING.near, TUNING.far);
@@ -316,9 +319,14 @@ export class Game {
     const mode = this.settings.realHeads;
     const cast = GNM_CAST[npc.def.id];
     if (!cast || mode === 'off' || (mode === 'ramesh' && npc.def.id !== 'ramesh')) return;
-    void import('../ai/GnmHead').then(async ({ loadGnmHead, gnmEyeHeight }) => {
-      const h = await loadGnmHead(`${TUNING.gnmDir}/${cast.file}.glb`, cast.markers);
-      if (this.run?.npcs.includes(npc)) npc.attachRealHead(h.group, gnmEyeHeight(h.anchors), cast.rest);
+    void Promise.all([import('../ai/GnmHead'), cast.body ? import('../ai/RealBody') : null]).then(async ([{ loadGnmHead, gnmEyeHeight }, rb]) => {
+      const [h, body] = await Promise.all([
+        loadGnmHead(`${TUNING.gnmDir}/${cast.file}.glb`, cast.markers),
+        rb && cast.body ? rb.loadRealBody(`${TUNING.annyDir}/${cast.body}.glb`) : Promise.resolve(null),
+      ]);
+      if (!this.run?.npcs.includes(npc)) return;
+      if (body) npc.attachRealBody(body, h.group, gnmEyeHeight(h.anchors), cast.rest);
+      else npc.attachRealHead(h.group, gnmEyeHeight(h.anchors), cast.rest);
     }).catch((e) => console.warn('Photoreal head failed to load; keeping low-poly.', e));
   }
 

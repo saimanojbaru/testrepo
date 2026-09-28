@@ -1,0 +1,170 @@
+[
+ {
+  "id": "ramesh",
+  "phenotype": {
+   "gender": 0.0,
+   "age": 0.805,
+   "weight": 0.75,
+   "muscle": 0.15,
+   "height": 0.45,
+   "proportions": 0.5
+  },
+  "local": {
+   "stomach-pregnant-incr": 0.5
+  },
+  "skin": "6a4330",
+  "outfit": {
+   "kind": "shirt",
+   "top": "c3cbd2",
+   "bottom": "26282c",
+   "fullSleeve": true
+  }
+ },
+ {
+  "id": "kavita",
+  "phenotype": {
+   "gender": 1.0,
+   "age": 0.795,
+   "weight": 0.58,
+   "muscle": 0.3,
+   "height": 0.4,
+   "proportions": 0.5
+  },
+  "skin": "9a6d52",
+  "outfit": {
+   "kind": "kurta",
+   "top": "0b5c63",
+   "bottom": "e6ddd0",
+   "dupatta": "a0124a"
+  }
+ },
+ {
+  "id": "lakshmi",
+  "phenotype": {
+   "gender": 1.0,
+   "age": 0.836,
+   "weight": 0.66,
+   "muscle": 0.3,
+   "height": 0.35,
+   "proportions": 0.5
+  },
+  "skin": "6e4632",
+  "outfit": {
+   "kind": "kurta",
+   "top": "8c2a1c",
+   "bottom": "8c2a1c",
+   "dupatta": "b8862a"
+  }
+ },
+ {
+  "id": "rinku",
+  "phenotype": {
+   "gender": 0.0,
+   "age": 0.62,
+   "weight": 0.35,
+   "muscle": 0.4,
+   "height": 0.45,
+   "proportions": 0.5
+  },
+  "skin": "b08466",
+  "outfit": {
+   "kind": "shirt",
+   "top": "5e9a6a",
+   "bottom": "2b3a55",
+   "fullSleeve": false
+  }
+ },
+ {
+  "id": "rohit",
+  "phenotype": {
+   "gender": 0.0,
+   "age": 0.692,
+   "weight": 0.55,
+   "muscle": 0.6,
+   "height": 0.7,
+   "proportions": 0.5
+  },
+  "skin": "a47a5c",
+  "outfit": {
+   "kind": "shirt",
+   "top": "a49ac9",
+   "bottom": "1c2233",
+   "fullSleeve": true
+  }
+ },
+ {
+  "id": "srinivas",
+  "phenotype": {
+   "gender": 0.0,
+   "age": 0.821,
+   "weight": 0.72,
+   "muscle": 0.45,
+   "height": 0.5,
+   "proportions": 0.5
+  },
+  "local": {
+   "stomach-pregnant-incr": 0.3
+  },
+  "skin": "5c3a28",
+  "outfit": {
+   "kind": "uniform",
+   "top": "3a4a5e",
+   "bottom": "1f2a1f",
+   "fullSleeve": true
+  }
+ },
+ {
+  "id": "deepak",
+  "phenotype": {
+   "gender": 0.0,
+   "age": 0.733,
+   "weight": 0.5,
+   "muscle": 0.4,
+   "height": 0.55,
+   "proportions": 0.5
+  },
+  "skin": "86604a",
+  "outfit": {
+   "kind": "shirt",
+   "top": "3d3a6a",
+   "bottom": "141414",
+   "fullSleeve": true
+  }
+ },
+ {
+  "id": "sanjay",
+  "phenotype": {
+   "gender": 0.0,
+   "age": 0.795,
+   "weight": 0.5,
+   "muscle": 0.4,
+   "height": 0.62,
+   "proportions": 0.5
+  },
+  "skin": "94694f",
+  "outfit": {
+   "kind": "shirt",
+   "top": "1b2a4a",
+   "bottom": "1b2a4a",
+   "fullSleeve": true
+  }
+ },
+ {
+  "id": "priya",
+  "phenotype": {
+   "gender": 1.0,
+   "age": 0.718,
+   "weight": 0.45,
+   "muscle": 0.35,
+   "height": 0.45,
+   "proportions": 0.5
+  },
+  "skin": "7a5038",
+  "outfit": {
+   "kind": "kurta",
+   "top": "efe9dc",
+   "bottom": "efe9dc",
+   "dupatta": "c9a227"
+  }
+ }
+]

@@ -176,6 +176,7 @@ export function updateNPC(npc: NPC, dt: number, w: NPCWorld): void {
   const walk = npc.def.walkSpeed;
   const p = w.player;
   const distToPlayer = Math.hypot(p.x - npc.x, p.z - npc.z);
+  npc.onPhone = npc.state === NPCState.IDLE && w.time < npc.distractedUntil;
 
   switch (npc.state) {
     case NPCState.IDLE: {

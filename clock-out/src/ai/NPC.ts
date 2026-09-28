@@ -4,6 +4,7 @@ import type { NavGrid, Vec2 } from '../world/NavGrid';
 import type { NoiseEvent } from '../core/Events';
 import { NPCState, type NPCStateId } from './NPCStates';
 import { buildFace } from './FaceBuilder';
+import type { RealBody } from './RealBody';
 
 // An NPC is a body (blocky, readable silhouette), a set of senses (Vision/Hearing
 // write into `awareness`), a memory of where it last noticed the player, and a
@@ -22,6 +23,9 @@ const TUNING = {
   realHeadScale: 1.18,
   realHeadRange: 16,
   reactSeconds: 3.5,
+  /** Realistic body: eye height above the head bone, and where the head's neck is clipped. */
+  eyeAboveHeadBone: 0.08,
+  neckClipBelow: 0.0,
   hearGain: { crouch: 0.04, walk: 0.1, sprint: 0.2, bump: 0.35, door: 0.35, jam: 0, phone: 0 } as Record<string, number>,
   headLookSeconds: 1.8,
   coneOpacity: 0.13,
@@ -111,6 +115,14 @@ export class NPC {
   private blinkIn = 2 + Math.random() * 3;
   private blinkT = -1;
   private talkT = 0;
+  /** Realistic body (Anny + mocap), optional; replaces the whole low-poly figure up close. */
+  private realBody: RealBody | null = null;
+  private neckPlane: THREE.Plane | null = null;
+  private lastRX = 0;
+  private lastRZ = 0;
+  private realSpeed = 0;
+  /** Set by the AI while the NPC is on a phone distraction. */
+  onPhone = false;
 
   constructor(readonly def: NPCDef, readonly look: NPCLook, x: number, z: number, yaw: number) {
     this.x = x;
@@ -236,6 +248,46 @@ export class NPC {
     this.exprGoal = { ...rest };
   }
 
+  /**
+   * Swap the whole low-poly figure for a realistic rigged body, with the GNM head seated
+   * on its animated head bone. The body (+Z forward, metres) is turned to the model's -Z
+   * and un-scaled from the NPC's height scale.
+   */
+  attachRealBody(body: RealBody, head: THREE.Group, eyeLocalY: number, rest: Record<string, number> = {}): void {
+    body.root.updateMatrixWorld(true);
+    const hp = body.headBone.getWorldPosition(new THREE.Vector3());
+    const seat = new THREE.Matrix4().makeTranslation(hp.x, hp.y + TUNING.eyeAboveHeadBone - eyeLocalY, hp.z);
+    head.matrixAutoUpdate = false;
+    head.matrix.copy(body.headBone.matrixWorld.clone().invert().multiply(seat));
+    body.headBone.add(head);
+    // The GNM head includes a neck and upper chest; clip it just below the body's neck.
+    const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
+    head.traverse((o) => {
+      const m = o as THREE.Mesh;
+      if (m.isMesh) (Array.isArray(m.material) ? m.material : [m.material]).forEach((mt) => { mt.clippingPlanes = [plane]; });
+    });
+    this.neckPlane = plane;
+    const holder = new THREE.Group();
+    holder.rotation.y = Math.PI;
+    holder.scale.setScalar(1 / this.look.height);
+    holder.add(body.root);
+    this.lowPolyFace = this.group.children.filter((c) => !(c instanceof THREE.Sprite));
+    this.lowPolyFace.forEach((c) => (c.visible = false));
+    this.group.add(holder);
+    this.realHead = holder;
+    this.realBody = body;
+    this.realMorphs = [];
+    head.traverse((o) => { const m = o as THREE.Mesh; if (m.morphTargetDictionary) this.realMorphs.push(m); });
+    this.exprRest = { ...rest };
+    this.exprGoal = { ...rest };
+    this.lastRX = this.x;
+    this.lastRZ = this.z;
+  }
+
+  get hasRealBody(): boolean {
+    return this.realBody !== null;
+  }
+
   get hasRealHead(): boolean {
     return this.realHead !== null;
   }
@@ -262,6 +314,18 @@ export class NPC {
     if (this.realHead.visible !== near) {
       this.realHead.visible = near;
       this.lowPolyFace.forEach((c) => (c.visible = !near));
+    }
+    if (this.realBody) {
+      // Clip choice follows what the NPC is actually doing: measured speed, phone state.
+      const sp = Math.hypot(this.x - this.lastRX, this.z - this.lastRZ) / Math.max(dt, 1e-4);
+      this.lastRX = this.x;
+      this.lastRZ = this.z;
+      this.realSpeed += (sp - this.realSpeed) * Math.min(1, dt * 10);
+      if (near) {
+        this.realBody.update(dt, this.realSpeed, this.onPhone);
+        const ny = this.realBody.neckBone.getWorldPosition(new THREE.Vector3()).y;
+        if (this.neckPlane) this.neckPlane.constant = -(ny - TUNING.neckClipBelow);
+      }
     }
     if (!near) return;
     if (this.exprHold > 0) {

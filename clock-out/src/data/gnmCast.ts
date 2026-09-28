@@ -7,12 +7,14 @@ import type { GnmMarker } from '../ai/GnmMarkers';
 export interface GnmCastEntry {
   file: string;
   markers: GnmMarker[];
+  /** Realistic rigged body with mocap (public/anny/<body>.glb); without it the head sits on the low-poly body. */
+  body?: string;
   /** Morph weights held at rest (Rinku's open, eager face; Kavita's knowing smirk). */
   rest?: Record<string, number>;
 }
 
 export const GNM_CAST: Record<string, GnmCastEntry> = {
-  ramesh: { file: 'ramesh', markers: ['vibhuti', 'glassesGold'] },
+  ramesh: { file: 'ramesh', markers: ['vibhuti', 'glassesGold'], body: 'ramesh' },
   kavita: { file: 'kavita', markers: ['chandrakor'], rest: { smirk: 0.55, squint: 0.35 } },
   rinku: { file: 'rinku', markers: [], rest: { smile: 0.5, jawOpen: 0.28, browRaise: 0.3 } },
   priya: { file: 'priya', markers: ['chandanam', 'glassesBlack'] },
