@@ -15,12 +15,14 @@ export interface Settings {
   photoreal: boolean;  // experimental: photoreal splat Ramesh (needs splat/ramesh.gvrm)
   realHeads: 'off' | 'ramesh' | 'all';  // realistic synthetic GNM heads
   showFps: boolean;    // frame-rate readout (for testing on phones)
+  /** Floor Tour mode (docs/tour/): reserved, not built yet. Off until the phone gate clears. */
+  tourMode: boolean;
 }
 
 const SETTINGS_KEY = 'clockout.settings.v1';
 
 export function loadSettings(): Settings {
-  const fallback: Settings = { sensitivity: 1, volume: 0.8, cones: true, unlockAll: false, photoreal: false, realHeads: 'all', showFps: false };
+  const fallback: Settings = { sensitivity: 1, volume: 0.8, cones: true, unlockAll: false, photoreal: false, realHeads: 'all', showFps: false, tourMode: false };
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
     return raw ? { ...fallback, ...(JSON.parse(raw) as Partial<Settings>) } : fallback;
@@ -150,8 +152,8 @@ export class MainMenu {
       input.addEventListener('input', () => {
         const key = input.dataset.set as keyof Settings;
         if (key === 'realHeads') this.settings.realHeads = input.value as Settings['realHeads'];
-        else if (key === 'cones' || key === 'unlockAll' || key === 'photoreal' || key === 'showFps') this.settings[key] = input.checked;
-        else this.settings[key] = parseFloat(input.value);
+        else if (key === 'sensitivity' || key === 'volume') this.settings[key] = parseFloat(input.value);
+        else this.settings[key] = input.checked;
         saveSettings(this.settings);
         this.actions.onSettings(this.settings);
         if (key === 'unlockAll') this.show();

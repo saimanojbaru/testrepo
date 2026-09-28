@@ -3,7 +3,7 @@
   "id": "ramesh",
   "phenotype": {
    "gender": 0.0,
-   "age": 0.805,
+   "age": 0.795,
    "weight": 0.75,
    "muscle": 0.15,
    "height": 0.45,
@@ -12,7 +12,7 @@
   "local": {
    "stomach-pregnant-incr": 0.5
   },
-  "skin": "66402d",
+  "skin": "5e3926",
   "outfit": {
    "kind": "shirt",
    "top": "c3cbd2",
@@ -24,13 +24,13 @@
   "id": "kavita",
   "phenotype": {
    "gender": 1.0,
-   "age": 0.795,
+   "age": 0.718,
    "weight": 0.58,
    "muscle": 0.3,
    "height": 0.4,
    "proportions": 0.5
   },
-  "skin": "95684d",
+  "skin": "986a4f",
   "outfit": {
    "kind": "kurta",
    "top": "0b5c63",
@@ -42,13 +42,13 @@
   "id": "lakshmi",
   "phenotype": {
    "gender": 1.0,
-   "age": 0.836,
+   "age": 0.795,
    "weight": 0.66,
    "muscle": 0.3,
    "height": 0.35,
    "proportions": 0.5
   },
-  "skin": "6e4632",
+  "skin": "69422e",
   "outfit": {
    "kind": "kurta",
    "top": "8c2a1c",
@@ -60,7 +60,7 @@
   "id": "rinku",
   "phenotype": {
    "gender": 0.0,
-   "age": 0.62,
+   "age": 0.6,
    "weight": 0.35,
    "muscle": 0.4,
    "height": 0.45,
@@ -78,13 +78,13 @@
   "id": "rohit",
   "phenotype": {
    "gender": 0.0,
-   "age": 0.692,
+   "age": 0.682,
    "weight": 0.55,
    "muscle": 0.6,
    "height": 0.7,
    "proportions": 0.5
   },
-  "skin": "b3886a",
+  "skin": "c49779",
   "outfit": {
    "kind": "shirt",
    "top": "a49ac9",
@@ -96,7 +96,7 @@
   "id": "srinivas",
   "phenotype": {
    "gender": 0.0,
-   "age": 0.821,
+   "age": 0.769,
    "weight": 0.72,
    "muscle": 0.45,
    "height": 0.5,
@@ -105,7 +105,7 @@
   "local": {
    "stomach-pregnant-incr": 0.3
   },
-  "skin": "593826",
+  "skin": "4f2f1e",
   "outfit": {
    "kind": "uniform",
    "top": "3a4a5e",
@@ -117,7 +117,7 @@
   "id": "deepak",
   "phenotype": {
    "gender": 0.0,
-   "age": 0.733,
+   "age": 0.708,
    "weight": 0.5,
    "muscle": 0.4,
    "height": 0.55,
@@ -135,13 +135,13 @@
   "id": "sanjay",
   "phenotype": {
    "gender": 0.0,
-   "age": 0.795,
+   "age": 0.769,
    "weight": 0.5,
    "muscle": 0.4,
    "height": 0.62,
    "proportions": 0.5
   },
-  "skin": "966b51",
+  "skin": "a1755b",
   "outfit": {
    "kind": "shirt",
    "top": "1b2a4a",
@@ -153,13 +153,13 @@
   "id": "priya",
   "phenotype": {
    "gender": 1.0,
-   "age": 0.718,
+   "age": 0.692,
    "weight": 0.45,
    "muscle": 0.35,
    "height": 0.45,
    "proportions": 0.5
   },
-  "skin": "7a5038",
+  "skin": "774d35",
   "outfit": {
    "kind": "kurta",
    "top": "efe9dc",

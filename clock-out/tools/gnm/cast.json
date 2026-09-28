@@ -7,7 +7,7 @@
   "overrides": {
    "head_000": -1.0
   },
-  "skin": "66402d",
+  "skin": "5e3926",
   "lip": "6e3f36",
   "hair": "side",
   "hairColor": "2b2724",
@@ -20,7 +20,7 @@
   "female": true,
   "kajal": 1,
   "latent": 1.6,
-  "skin": "95684d",
+  "skin": "986a4f",
   "lip": "8a4a44",
   "hair": "bun",
   "hairColor": "140e0b",
@@ -46,7 +46,7 @@
   "female": true,
   "kajal": 1,
   "latent": 1.6,
-  "skin": "7a5038",
+  "skin": "774d35",
   "lip": "7c4038",
   "hair": "braid",
   "hairColor": "0b0908",
@@ -57,7 +57,7 @@
   "seed": 3009,
   "female": false,
   "latent": 1.6,
-  "skin": "b3886a",
+  "skin": "c49779",
   "lip": "884e44",
   "hair": "short",
   "hairColor": "15100d",
@@ -72,7 +72,7 @@
   "overrides": {
    "head_001": 0.8
   },
-  "skin": "593826",
+  "skin": "4f2f1e",
   "lip": "643a30",
   "hair": "crop",
   "hairColor": "120e0c",
@@ -88,7 +88,7 @@
   "overrides": {
    "head_000": -0.6
   },
-  "skin": "6e4632",
+  "skin": "69422e",
   "lip": "74443a",
   "hair": "bun",
   "hairColor": "4a4540",
@@ -111,7 +111,7 @@
   "seed": 3001,
   "female": false,
   "latent": 1.6,
-  "skin": "966b51",
+  "skin": "a1755b",
   "lip": "80503f",
   "hair": "side",
   "hairColor": "3a3530",
