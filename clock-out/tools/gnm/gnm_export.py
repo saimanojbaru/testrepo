@@ -124,6 +124,26 @@ def assign_triangles():
 SLOTS = assign_triangles()
 
 
+_SOFT = {}
+
+
+def soft_group(name, iters=12):
+    """Vertex-group weight diffused over the mesh so painted regions have no hard edges."""
+    if name not in _SOFT:
+        import scipy.sparse as sp
+        f = TRIS
+        rows = np.concatenate([f[:, 0], f[:, 1], f[:, 2], f[:, 1], f[:, 2], f[:, 0]])
+        cols = np.concatenate([f[:, 1], f[:, 2], f[:, 0], f[:, 0], f[:, 1], f[:, 2]])
+        A = sp.coo_matrix((np.ones(len(rows)), (rows, cols)), shape=(len(TEMPLATE), len(TEMPLATE))).tocsr()
+        A.data[:] = 1
+        A = sp.diags(1 / np.maximum(np.asarray(A.sum(1)).ravel(), 1)) @ A
+        w = G[name].astype(np.float64)
+        for _ in range(iters):
+            w = 0.5 * w + 0.5 * (A @ w)
+        _SOFT[name] = w
+    return _SOFT[name]
+
+
 def paint_skin(p, spec):
     """Vertex colours (linear) for the skin: base tone plus brows, lash line, lips, stubble."""
     lm = landmarks(p)
@@ -133,7 +153,7 @@ def paint_skin(p, spec):
     for grp, tint, k in [('nose_region', [1.04, 0.98, 0.96], 0.6), ('left_cheek_region', [1.04, 0.97, 0.95], 0.5),
                          ('right_cheek_region', [1.04, 0.97, 0.95], 0.5), ('left_infraorbital_region', [0.9, 0.88, 0.9], 0.6),
                          ('right_infraorbital_region', [0.9, 0.88, 0.9], 0.6)]:
-        w = G[grp][:, None] * k
+        w = soft_group(grp)[:, None] * k * 0.6
         col = col * (1 - w) + col * np.array(tint) * w
     dark = lin(srgb(spec.get('hairColor', 0x16110e)))
     # Brows: a band around each brow polyline, thicker at the inner end.

@@ -26,6 +26,7 @@ import { getNpcDef, getNpcLook } from '../data/npcs';
 import { STATE_BARKS, pick } from '../data/dialogueLines';
 import type { EncounterContext, Ending, ExcuseDef, LevelData, NPCDef, ScriptedBeat } from '../data/types';
 import { LEVELS } from '../data/levels';
+import { PerfMeter } from '../ui/PerfMeter';
 import { SplatAvatar } from '../ai/SplatAvatar';
 import { GNM_CAST } from '../data/gnmCast';
 
@@ -141,6 +142,7 @@ export class Game {
   readonly camera: THREE.PerspectiveCamera;
   /** Dialogue close-up FOV for the current speaker (normal FOV for low-poly heads). */
   private zoomFov = TUNING.fov;
+  private perf!: PerfMeter;
   readonly input: Input;
   readonly state = new StateMachine();
   readonly audio = new AudioBus();
@@ -175,6 +177,8 @@ export class Game {
     container.append(this.renderer.domElement);
     this.camera = new THREE.PerspectiveCamera(TUNING.fov, 1, TUNING.near, TUNING.far);
     this.lights = setupLighting(this.scene);
+    this.perf = new PerfMeter(document.body);
+    this.perf.setEnabled(this.settings.showFps);
     this.resize();
     window.addEventListener('resize', () => this.resize());
 
@@ -319,10 +323,12 @@ export class Game {
     const mode = this.settings.realHeads;
     const cast = GNM_CAST[npc.def.id];
     if (!cast || mode === 'off' || (mode === 'ramesh' && npc.def.id !== 'ramesh')) return;
-    void Promise.all([import('../ai/GnmHead'), cast.body ? import('../ai/RealBody') : null]).then(async ([{ loadGnmHead, gnmEyeHeight }, rb]) => {
+    // ?bodies=kavita,rohit lets a local test try bodies that aren't in the cast yet.
+    const bodyFile = cast.body ?? (new URLSearchParams(location.search).get('bodies')?.split(',').includes(npc.def.id) ? npc.def.id : undefined);
+    void Promise.all([import('../ai/GnmHead'), bodyFile ? import('../ai/RealBody') : null]).then(async ([{ loadGnmHead, gnmEyeHeight }, rb]) => {
       const [h, body] = await Promise.all([
         loadGnmHead(`${TUNING.gnmDir}/${cast.file}.glb`, cast.markers),
-        rb && cast.body ? rb.loadRealBody(`${TUNING.annyDir}/${cast.body}.glb`) : Promise.resolve(null),
+        rb && bodyFile ? rb.loadRealBody(`${TUNING.annyDir}/${bodyFile}.glb`, new URLSearchParams(location.search).has('nogait') ? {} : cast.gait) : Promise.resolve(null),
       ]);
       if (!this.run?.npcs.includes(npc)) return;
       if (body) npc.attachRealBody(body, h.group, gnmEyeHeight(h.anchors), cast.rest);
@@ -410,6 +416,7 @@ export class Game {
       run.player.applyCamera(this.camera);
     }
     this.renderer.render(this.scene, this.camera);
+    this.perf.frame(now, this.renderer);
     if (steps > 0) this.input.endFrame();
   }
 
@@ -1220,6 +1227,7 @@ export class Game {
   private applySettings(s: Settings): void {
     this.input.sensitivity = 0.0022 * s.sensitivity;
     this.audio.setVolume(s.volume);
+    this.perf?.setEnabled(s.showFps);
   }
 
   private resize(): void {

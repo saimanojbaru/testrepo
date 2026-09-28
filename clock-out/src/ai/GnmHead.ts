@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { addGnmMarkers, type GnmMarker } from './GnmMarkers';
+import { withRealAmbient } from './RealLight';
 
 // Photoreal-ish heads baked from Google's GNM Head model (Apache-2.0): synthetic
 // identities, no scans of real people. The .glb carries per-part primitives
@@ -102,7 +103,7 @@ for (int i = 0; i < NUM_DIR_LIGHTS; i++) {
 }
 #endif`);
   };
-  return m;
+  return withRealAmbient(m);
 }
 
 let strandTexture: THREE.CanvasTexture | null = null;
@@ -158,10 +159,15 @@ export function hairMaterial(color: number, fadeEdges = false): THREE.MeshPhysic
 }`)
       .replace('#include <roughnessmap_fragment>', '#include <roughnessmap_fragment>\nroughnessFactor = clamp(roughnessFactor + 0.0, 0.3, 1.0);');
   };
-  return m;
+  return withRealAmbient(m);
 }
 
 function materialFor(name: string, extras: { hairColor: number; iris: number }, skin: THREE.Material): THREE.Material {
+  const m = rawMaterialFor(name, extras, skin);
+  return m === skin || name === 'hair' || m instanceof THREE.MeshBasicMaterial ? m : withRealAmbient(m);
+}
+
+function rawMaterialFor(name: string, extras: { hairColor: number; iris: number }, skin: THREE.Material): THREE.Material {
   switch (name) {
     case 'skin': return skin;
     case 'hair': return hairMaterial(extras.hairColor, true);

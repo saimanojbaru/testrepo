@@ -159,6 +159,9 @@ Outcomes, from the spec:
 - Power cut screens: fade out with time constant 0.9 s (afterglow) and come back in 0.35 s with a boot flicker (`screenFadeOut`, `screenFadeIn`).
 - `Props`: emergency lights 9 cd, range 7 m, 0.6 s stutter on; call room 20 cd; desk lamp 6 cd; phone 2 cd, lights up for 3.2 s every 7 s.
 - Realistic heads (`NPC.ts`): scale 1.18× real, cartoon head beyond 16 m, reactions held 3.5 s, blink every 2.5–6 s (0.16 s), lip-flap jaw 0.28 at 13 Hz. Dialogue close-up (`Game.ts`): 0.8 m of subject in frame, min FOV 18°, ease rate 3.
+- Realistic skin light (`Lighting.ts` `realisticAmbient` 1.2, via `RealLight.ts`): extra ambient that only realistic materials receive. Without it the office lighting crushes realistic skin by 15–25 L*. An environment map did the same job but halved the frame rate in the software renderer.
+- Skin tones (`tools/gnm/cast.json`): L* 27–62 (mean 43.6, held from before; spread widened from sd 10.0 to about 12). The dark end is already near the floor of human skin, so variance can't triple without shifting the mean.
+- Gait (`gnmCast.ts`, `RealBody.Gait`): per-character tempo, lean and arm swing on shared clips. Ramesh 0.9 / −0.06 / 0.7, Kavita 1.12 / +0.03 / 0.8, Rohit 0.94 / −0.03 / 1.35, Lakshmi 0.86 / +0.07 / 0.55.
 - `SplatAvatar`: arm drop 1.2 rad, elbow 0.15, breathing 0.25 Hz ± 0.02, leg swing 0.45 rad per m/s at 1.7 Hz, ground offset 0 m. Brightness: night 0.5, theatre 0.4, power cut ×0.35.
 - `AudioBus`: hum at 60 Hz ± 0.35 Hz (plus 120 Hz), ducked to 30% with a 350 Hz low-pass during dialogue over 150 ms.
 

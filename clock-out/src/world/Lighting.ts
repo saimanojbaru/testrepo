@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { realAmbient } from '../ai/RealLight';
 
 // Cheap fluorescent office light. No shadows, no area lights: a hemisphere fill for
 // the flat overhead feel, two weak directionals so box faces separate from each
@@ -23,6 +24,13 @@ const TUNING = {
   } as Record<string, { tint: number; fog: number; fogDensity: number; level: number }>,
   /** Emergency-light level during a power cut, as a fraction of normal. */
   powerCutLevel: 0.28,
+  /**
+   * Extra ambient for the realistic (PBR) heads and bodies only; the Lambert office ignores it.
+   * The office lights crush realistic skin by 15-25 L*. An environment map fixed that but
+   * halved the frame rate; this flat term (RealLight.ts) does it for free. Calibrated so skin
+   * reads as it does under bright neutral light.
+   */
+  realisticAmbient: 1.2,
 };
 
 export interface OfficeLights {
@@ -32,6 +40,7 @@ export interface OfficeLights {
   fill: THREE.DirectionalLight;
   fog: THREE.FogExp2;
   background: THREE.Color;
+  scene: THREE.Scene;
 }
 
 export function setupLighting(scene: THREE.Scene): OfficeLights {
@@ -46,7 +55,7 @@ export function setupLighting(scene: THREE.Scene): OfficeLights {
   const fill = new THREE.DirectionalLight(0xdfe6f0, TUNING.fill);
   fill.position.set(-0.5, 0.8, -0.6);
   scene.add(ambient, hemi, key, fill);
-  return { ambient, hemi, key, fill, fog, background };
+  return { ambient, hemi, key, fill, fog, background, scene };
 }
 
 /** Applies a theme; `powerCut` drops everything to emergency lighting. */
@@ -61,6 +70,7 @@ export function applyLightTheme(l: OfficeLights, theme: string, powerCut: boolea
   l.key.intensity = TUNING.key * k;
   l.fill.intensity = TUNING.fill * k;
   const fog = powerCut ? 0x14161a : t.fog;
+  realAmbient.value.setHex(t.tint).multiplyScalar(TUNING.realisticAmbient * k);
   l.fog.color.setHex(fog);
   l.fog.density = powerCut ? 0.035 : t.fogDensity;
   l.background.setHex(fog);
