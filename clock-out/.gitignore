@@ -27,3 +27,5 @@ dist-ssr
 # Photoreal avatar captures (tens of MB, and a real person's likeness): never commit
 public/splat/*.gvrm
 public/splat/*.ply
+tools/gnm/gnm_head.npz
+tools/gnm/repo/

@@ -18,6 +18,10 @@ const TUNING = {
   minEyeHeight: 1.56,
   bubbleSeconds: 3.6,
   bubbleCharsPerLine: 30,
+  /** Photoreal head: size relative to a real head, draw distance, reaction hold. */
+  realHeadScale: 1.18,
+  realHeadRange: 16,
+  reactSeconds: 3.5,
   hearGain: { crouch: 0.04, walk: 0.1, sprint: 0.2, bump: 0.35, door: 0.35, jam: 0, phone: 0 } as Record<string, number>,
   headLookSeconds: 1.8,
   coneOpacity: 0.13,
@@ -93,6 +97,20 @@ export class NPC {
   private walkPhase = 0;
   private walkAmount = 0;
   onSay: ((npc: NPC, text: string) => void) | null = null;
+
+  // --- Photoreal head (GNM), optional -------------------------------------
+  /** Set by the game each frame while this NPC's dialogue line is typing. */
+  talking = false;
+  private realHead: THREE.Group | null = null;
+  private realMorphs: THREE.Mesh[] = [];
+  private lowPolyFace: THREE.Object3D[] = [];
+  private exprRest: Record<string, number> = {};
+  private exprGoal: Record<string, number> = {};
+  private exprNow: Record<string, number> = {};
+  private exprHold = 0;
+  private blinkIn = 2 + Math.random() * 3;
+  private blinkT = -1;
+  private talkT = 0;
 
   constructor(readonly def: NPCDef, readonly look: NPCLook, x: number, z: number, yaw: number) {
     this.x = x;
@@ -197,6 +215,86 @@ export class NPC {
     this.walkAmount = 0;
   }
 
+  /**
+   * Swap the low-poly face for a photoreal GNM head. The head (+Z forward, metres)
+   * is turned to face the model's -Z, scaled, and placed so its eyes sit at eye height.
+   */
+  attachRealHead(head: THREE.Group, eyeLocalY: number, rest: Record<string, number> = {}): void {
+    const wrap = new THREE.Group();
+    wrap.rotation.y = Math.PI;
+    wrap.scale.setScalar(TUNING.realHeadScale);
+    head.position.y = -eyeLocalY;
+    wrap.add(head);
+    wrap.position.y = this.eyeY / this.look.height - 1.55;
+    this.lowPolyFace = [...this.head.children];
+    this.lowPolyFace.forEach((c) => (c.visible = false));
+    this.head.add(wrap);
+    this.realHead = wrap;
+    this.realMorphs = [];
+    head.traverse((o) => { const m = o as THREE.Mesh; if (m.morphTargetDictionary) this.realMorphs.push(m); });
+    this.exprRest = { ...rest };
+    this.exprGoal = { ...rest };
+  }
+
+  get hasRealHead(): boolean {
+    return this.realHead !== null;
+  }
+
+  /** Face reaction: on confront, and to each conversation outcome. Held for a few seconds, then back to rest. */
+  react(kind: 'confront' | 'PASSED' | 'PROBED' | 'ESCORTED' | 'CAUGHT'): void {
+    if (!this.realHead) return;
+    const boss = this.def.archetype === 'boss' || this.def.archetype === 'gossip';
+    const faces: Record<string, Record<string, number>> = {
+      confront: { browRaise: 0.7, squint: 0.2 },
+      PASSED: boss ? { smirk: 0.8 } : { smile: 0.85, browRaise: 0.2 },
+      PROBED: { squint: 0.6, smirk: 0.3 },
+      ESCORTED: { frown: 0.55, browRaise: 0.3 },
+      CAUGHT: { frown: 0.9, squint: 0.4 },
+    };
+    this.exprGoal = { ...this.exprRest, ...faces[kind] };
+    this.exprHold = TUNING.reactSeconds;
+  }
+
+  private animateRealHead(dt: number, distance: number): void {
+    if (!this.realHead) return;
+    // Past this distance the low-poly face is indistinguishable and much cheaper.
+    const near = distance < TUNING.realHeadRange;
+    if (this.realHead.visible !== near) {
+      this.realHead.visible = near;
+      this.lowPolyFace.forEach((c) => (c.visible = !near));
+    }
+    if (!near) return;
+    if (this.exprHold > 0) {
+      this.exprHold -= dt;
+      if (this.exprHold <= 0) this.exprGoal = { ...this.exprRest };
+    }
+    const w: Record<string, number> = {};
+    const names = new Set([...Object.keys(this.exprGoal), ...Object.keys(this.exprNow), 'blink', 'jawOpen']);
+    const k = Math.min(1, dt * 6);
+    for (const n of names) {
+      const cur = this.exprNow[n] ?? 0;
+      this.exprNow[n] = cur + ((this.exprGoal[n] ?? 0) - cur) * k;
+      w[n] = this.exprNow[n];
+    }
+    // Blink every few seconds.
+    this.blinkIn -= dt;
+    if (this.blinkIn <= 0) { this.blinkT = 0; this.blinkIn = 2.5 + Math.random() * 3.5; }
+    if (this.blinkT >= 0) {
+      this.blinkT += dt;
+      w.blink = Math.max(w.blink ?? 0, Math.sin(Math.min(1, this.blinkT / 0.16) * Math.PI));
+      if (this.blinkT > 0.16) this.blinkT = -1;
+    }
+    // Lip-flap while their line types out.
+    if (this.talking) {
+      this.talkT += dt;
+      w.jawOpen = (w.jawOpen ?? 0) + 0.28 * Math.abs(Math.sin(this.talkT * 13)) * (0.6 + 0.4 * Math.sin(this.talkT * 3.1));
+    }
+    for (const m of this.realMorphs) {
+      const dict = m.morphTargetDictionary!, inf = m.morphTargetInfluences!;
+      for (const [n, i] of Object.entries(dict)) inf[i] = w[n] ?? 0;
+    }
+  }
+
   /** Hides the body (for a stand-in avatar) but keeps the ? marker and speech bubbles. */
   setBodyVisible(v: boolean): void {
     for (const c of this.group.children) if (!(c instanceof THREE.Sprite)) c.visible = v;
@@ -217,6 +315,7 @@ export class NPC {
 
   /** Per-step animation + bookkeeping that doesn't depend on AI state. */
   animate(dt: number, fovDeg: number, range: number, showCone: boolean, playerDist: number): void {
+    this.animateRealHead(dt, playerDist);
     this.stateTime += dt;
     if (this.headLookTimer > 0) this.headLookTimer -= dt;
     this.headYaw += (this.headTargetYaw - this.headYaw) * Math.min(1, dt * 5);

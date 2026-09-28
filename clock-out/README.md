@@ -162,6 +162,16 @@ Every gameplay number is in a `TUNING` block at the top of its module. See [TUNI
 - **Commits.** The build was committed as a few milestone commits, not one per build step.
 - **Verification.** Verified headlessly: `tsc`, the production build, Playwright smoke runs of all three levels with zero console errors, a divider-cover test (crouched: awareness 0.01 over 25 s; standing: confronted), and autopilot playthroughs. Audio was exercised without errors but not listened to. Mouse feel, readability at a glance and whether the jokes land need a human playtest.
 
+## Realistic faces (GNM heads)
+
+**Settings → Realistic faces** (Everyone / Ramesh only / Off) swaps the cartoon faces for realistic heads on the same low-poly bodies. The default is Everyone.
+
+- **Source.** The heads come from Google's **GNM Head** parametric model (Apache 2.0; see `public/gnm/NOTICE.md`). Every face is a **synthetic identity**: no person was scanned. GNM's identity decoder gets a sex label and equal weight on its four ethnicity inputs, so no face is pushed toward a dataset category. The model has no South Asian category, and faking one by mixing categories would be caricature. Region is carried the way the rest of the game does it: skin tone, grooming, and one marker per character (Ramesh's vibhuti, Kavita's chandrakor, Priya's chandanam, Lakshmi's bindi and nose ring, Srinivas's cap, Rohit's beard, Priya's braid, Kavita's and Lakshmi's buns, kajal).
+- **Expressions.** Seven expressions (smile, smirk, frown, jaw open, brow raise, squint, blink) are solved from 68-landmark targets against GNM's expression basis. Faces blink, flap their jaw while their line types out, and react to outcomes: a smile or smirk on PASSED, a squint on PROBED, a frown on ESCORTED or CAUGHT. Kavita rests in a knowing smirk and Rinku in an eager open smile.
+- **Close-ups.** In conversation the camera eases into a close-up of a realistic head.
+- **Cost.** Nine heads come to about 10 MB on disk and about 5 MB compressed in the APK (int16-quantized geometry, sparse morphs). Each head is about 35k triangles. Beyond 16 m an NPC switches back to its cheap cartoon head. The loader is code-split, so with the setting off nothing extra downloads.
+- **Rebuilding / recasting.** See `tools/gnm/README.md`. `?gnmcast&ids=ramesh,kavita:smile` renders a casting sheet, and `?lineup&real` shows the full cast on their bodies.
+
 ## Experimental: photoreal Ramesh (Gaussian splat)
 
 One character can be swapped for a photoreal Gaussian-splat avatar ([Gaussian-VRM](https://github.com/naruya/gaussian-vrm), MIT). The rest of the office stays low-poly, and that contrast is the point. The NPC still runs the AI, colliders, "?" marker and speech bubbles; the splat only replaces what you see (`src/ai/SplatAvatar.ts`).

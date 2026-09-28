@@ -1,7 +1,10 @@
 import * as THREE from 'three';
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { NPC } from '../ai/NPC';
 import type { NPCDef, NPCLook } from '../data/types';
 import { NPC_DEFS, NPC_LOOKS } from '../data/npcs';
+import { gnmEyeHeight, loadGnmHead } from '../ai/GnmHead';
+import { GNM_CAST } from '../data/gnmCast';
 
 // Debug-only character lineup (?lineup): renders candidate characters full-body and
 // as face close-ups so looks can be compared and signed off before they ship.
@@ -89,4 +92,18 @@ export function showLineup(container: HTMLElement): void {
   (window as unknown as { __lineup: (m: typeof mode) => void }).__lineup = (m) => { mode = m; render(); };
   window.addEventListener('resize', render);
   render();
+  // ?lineup&real: the same bodies wearing the photoreal GNM heads.
+  if (new URLSearchParams(location.search).has('real')) {
+    scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environmentIntensity = 0.2;
+    const expr = new URLSearchParams(location.search).get('expr');
+    void Promise.all(npcs.map(async (n) => {
+      const cast = GNM_CAST[n.def.id];
+      if (!cast) return;
+      const h = await loadGnmHead(`gnm/${cast.file}.glb`, cast.markers);
+      n.attachRealHead(h.group, gnmEyeHeight(h.anchors), cast.rest);
+      if (expr) n.react(expr as 'PASSED');
+      n.animate(1, 90, 1, false, 1);
+    })).then(() => { render(); (window as unknown as { lineupReady: boolean }).lineupReady = true; });
+  }
 }

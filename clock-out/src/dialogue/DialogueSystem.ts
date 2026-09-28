@@ -49,6 +49,7 @@ export interface DialogueAudio {
 export class DialogueSystem {
   active = false;
   private phase: Phase = 'opener';
+  private speaker: 'npc' | 'player' = 'npc';
   private npc!: NPC;
   private facts!: EncounterFacts;
   private hand: ExcuseDef[] = [];
@@ -75,6 +76,15 @@ export class DialogueSystem {
     private readonly audio: DialogueAudio,
     private readonly onResolve: (r: EncounterResult) => void,
   ) {}
+
+  /** The NPC's line is still typing out (drives lip-flap on photoreal heads). */
+  get npcTalking(): boolean {
+    return this.active && this.speaker === 'npc' && !this.ui.lineDone;
+  }
+
+  get activeNpc(): NPC | null {
+    return this.active ? this.npc : null;
+  }
 
   start(npc: NPC, facts: EncounterFacts): void {
     this.active = true;
@@ -243,6 +253,7 @@ export class DialogueSystem {
       this.items.push({ label: 'First offense: let off with a walk', value: 0 });
     }
     this.ui.clearChoices();
+    this.npc.react(this.outcome);
     this.say('npc', this.reaction());
     this.ui.showVerdict(this.items, this.total, this.outcome, this.blurted);
     this.ui.setHint('Space / click to continue');
@@ -267,6 +278,7 @@ export class DialogueSystem {
   }
 
   private say(who: 'npc' | 'player', text: string): void {
+    this.speaker = who;
     if (who === 'npc') {
       const d = this.npc.def;
       this.ui.setSpeaker(d.name, d.role, this.npc.look.tagline, `#${d.color.toString(16).padStart(6, '0')}`, false);

@@ -13,12 +13,13 @@ export interface Settings {
   cones: boolean;      // draw NPC vision cones on the floor
   unlockAll: boolean;  // skip chapter progression
   photoreal: boolean;  // experimental: photoreal splat Ramesh (needs splat/ramesh.gvrm)
+  realHeads: 'off' | 'ramesh' | 'all';  // realistic synthetic GNM heads
 }
 
 const SETTINGS_KEY = 'clockout.settings.v1';
 
 export function loadSettings(): Settings {
-  const fallback: Settings = { sensitivity: 1, volume: 0.8, cones: true, unlockAll: false, photoreal: false };
+  const fallback: Settings = { sensitivity: 1, volume: 0.8, cones: true, unlockAll: false, photoreal: false, realHeads: 'all' };
   try {
     const raw = localStorage.getItem(SETTINGS_KEY);
     return raw ? { ...fallback, ...(JSON.parse(raw) as Partial<Settings>) } : fallback;
@@ -135,6 +136,7 @@ export class MainMenu {
             <label class="setting">Volume <input type="range" min="0" max="1" step="0.05" data-set="volume" value="${this.settings.volume}"></label>
             <label class="setting check"><input type="checkbox" data-set="cones" ${this.settings.cones ? 'checked' : ''}> Show vision cones</label>
             <label class="setting check"><input type="checkbox" data-set="unlockAll" ${this.settings.unlockAll ? 'checked' : ''}> Unlock all chapters</label>
+            <label class="setting">Realistic faces <select data-set="realHeads">${(['all', 'ramesh', 'off'] as const).map((v) => `<option value="${v}" ${this.settings.realHeads === v ? 'selected' : ''}>${{ all: 'Everyone', ramesh: 'Ramesh only', off: 'Off (cartoon)' }[v]}</option>`).join('')}</select></label>
             <label class="setting check"><input type="checkbox" data-set="photoreal" ${this.settings.photoreal ? 'checked' : ''}> Experimental: photoreal Ramesh (heavy)</label>
           </details>
           <button class="btn danger" data-reset>Reset office memory</button>
@@ -145,7 +147,8 @@ export class MainMenu {
     this.root.querySelectorAll<HTMLInputElement>('[data-set]').forEach((input) =>
       input.addEventListener('input', () => {
         const key = input.dataset.set as keyof Settings;
-        if (key === 'cones' || key === 'unlockAll' || key === 'photoreal') this.settings[key] = input.checked;
+        if (key === 'realHeads') this.settings.realHeads = input.value as Settings['realHeads'];
+        else if (key === 'cones' || key === 'unlockAll' || key === 'photoreal') this.settings[key] = input.checked;
         else this.settings[key] = parseFloat(input.value);
         saveSettings(this.settings);
         this.actions.onSettings(this.settings);

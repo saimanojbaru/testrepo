@@ -27,6 +27,7 @@ import { STATE_BARKS, pick } from '../data/dialogueLines';
 import type { EncounterContext, Ending, ExcuseDef, LevelData, NPCDef, ScriptedBeat } from '../data/types';
 import { LEVELS } from '../data/levels';
 import { SplatAvatar } from '../ai/SplatAvatar';
+import { GNM_CAST } from '../data/gnmCast';
 
 // Bootstraps renderer, scene, camera and every system, and runs the top-level
 // state machine: MENU -> (intro) -> PLAYING <-> DIALOGUE -> ESCAPED | CAUGHT.
@@ -60,6 +61,11 @@ const TUNING = {
   screenFadeOut: 0.9,
   screenFadeIn: 0.35,
   /** Photoreal splat stand-in: which NPC, and how dark it gets (splats ignore scene lights). */
+  gnmDir: 'gnm',
+  /** Dialogue close-up on photoreal heads: metres of subject in frame height, narrowest FOV, ease rate. */
+  closeUpFrame: 0.8,
+  closeUpMinFov: 18,
+  closeUpLerp: 3,
   splatNpc: 'ramesh',
   splatDefaultUrl: 'splat/ramesh.gvrm',
   splatThemeBrightness: { day: 1, festival: 1, night: 0.5, theatre: 0.4 } as Record<string, number>,
@@ -132,6 +138,8 @@ export class Game {
   readonly renderer: THREE.WebGLRenderer;
   readonly scene = new THREE.Scene();
   readonly camera: THREE.PerspectiveCamera;
+  /** Dialogue close-up FOV for the current speaker (normal FOV for low-poly heads). */
+  private zoomFov = TUNING.fov;
   readonly input: Input;
   readonly state = new StateMachine();
   readonly audio = new AudioBus();
@@ -303,6 +311,17 @@ export class Game {
     });
   }
 
+  /** Photoreal GNM heads (Settings: off / Ramesh only / everyone). Loads async; the low-poly face shows meanwhile. */
+  private maybeRealHead(npc: NPC): void {
+    const mode = this.settings.realHeads;
+    const cast = GNM_CAST[npc.def.id];
+    if (!cast || mode === 'off' || (mode === 'ramesh' && npc.def.id !== 'ramesh')) return;
+    void import('../ai/GnmHead').then(async ({ loadGnmHead, gnmEyeHeight }) => {
+      const h = await loadGnmHead(`${TUNING.gnmDir}/${cast.file}.glb`, cast.markers);
+      if (this.run?.npcs.includes(npc)) npc.attachRealHead(h.group, gnmEyeHeight(h.anchors), cast.rest);
+    }).catch((e) => console.warn('Photoreal head failed to load; keeping low-poly.', e));
+  }
+
   /** Experimental: swap one NPC's look for a photoreal splat avatar, if enabled and installed. */
   private loadSplat(run: Run): void {
     const url = new URLSearchParams(location.search).get('splat') ?? (this.settings.photoreal ? TUNING.splatDefaultUrl : null);
@@ -395,8 +414,11 @@ export class Game {
     if (this.state.is(GameState.PLAYING) && !run.fading) this.updatePlaying(run, dt);
     else if (this.state.is(GameState.DIALOGUE)) {
       this.dialogue.update(dt, this.input);
+      const talker = this.dialogue.activeNpc;
+      for (const n of run.npcs) n.talking = n === talker && this.dialogue.npcTalking;
       this.animateWorld(run, dt);
     }
+    this.updateZoom(dt);
     if (this.state.is(GameState.PLAYING, GameState.DIALOGUE)) {
       const target = this.state.is(GameState.DIALOGUE) ? TUNING.dialogueVignette : Math.max(0, ...run.npcs.map((n) => n.awareness));
       const beat = this.vignette.update(dt, target);
@@ -499,6 +521,18 @@ export class Game {
     const dist = Math.hypot(npc.x - p.x, npc.z - p.z);
     const pitchTarget = Math.atan2(npc.eyeY - 0.05 - p.eyeHeight, Math.max(0.5, dist));
     p.pitch += (pitchTarget - p.pitch) * k;
+    // Photoreal faces get a conversation close-up: zoom so the head fills about a third of the frame.
+    this.zoomFov = npc.hasRealHead
+      ? THREE.MathUtils.clamp(THREE.MathUtils.radToDeg(2 * Math.atan(TUNING.closeUpFrame / 2 / Math.max(0.5, dist))), TUNING.closeUpMinFov, TUNING.fov)
+      : TUNING.fov;
+  }
+
+  /** Eases the camera FOV toward the dialogue close-up, or back to normal. */
+  private updateZoom(dt: number): void {
+    const want = this.state.is(GameState.DIALOGUE) ? this.zoomFov : TUNING.fov;
+    if (Math.abs(this.camera.fov - want) < 0.01) return;
+    this.camera.fov += (want - this.camera.fov) * Math.min(1, dt * TUNING.closeUpLerp);
+    this.camera.updateProjectionMatrix();
   }
 
   // -------------------------------------------------------------------------
@@ -523,6 +557,7 @@ export class Game {
     };
     this.scene.add(npc.group, npc.cone);
     run.npcs.push(npc);
+    this.maybeRealHead(npc);
     this.interactor.items.push({
       object: npc.group,
       label: () => {
@@ -607,6 +642,7 @@ export class Game {
     this.hud.setStatus('');
     this.audio.duck(true);
     this.input.resetDialogueNav();
+    npc.react('confront');
     this.dialogue.start(npc, facts);
   }
 
