@@ -31,3 +31,4 @@ tools/gnm/gnm_head.npz
 tools/gnm/repo/
 tools/anny/cmu/
 tools/anny/.venv/
+__pycache__/
