@@ -162,6 +162,25 @@ Every gameplay number is in a `TUNING` block at the top of its module. See [TUNI
 - **Commits.** The build was committed as a few milestone commits, not one per build step.
 - **Verification.** Verified headlessly: `tsc`, the production build, Playwright smoke runs of all three levels with zero console errors, a divider-cover test (crouched: awareness 0.01 over 25 s; standing: confronted), and autopilot playthroughs. Audio was exercised without errors but not listened to. Mouse feel, readability at a glance and whether the jokes land need a human playtest.
 
+## Experimental: photoreal Ramesh (Gaussian splat)
+
+One character can be swapped for a photoreal Gaussian-splat avatar ([Gaussian-VRM](https://github.com/naruya/gaussian-vrm), MIT). The rest of the office stays low-poly, and that contrast is the point. The NPC still runs the AI, colliders, "?" marker and speech bubbles; the splat only replaces what you see (`src/ai/SplatAvatar.ts`).
+
+**No avatar ships with the repo.** A splat is a scan of a real person, and Ramesh is the antagonist, so use someone who has agreed to be scanned and cast.
+
+1. Scan the person (a phone scanning app that exports a Gaussian-splat `.ply`, standing in an A-pose, full body).
+2. Open the [Gaussian-VRM demo](https://naruya.github.io/gaussian-vrm/), load the `.ply`, and save the rigged `.gvrm` it produces.
+3. Put it at `public/splat/ramesh.gvrm` (gitignored).
+4. Turn on **Settings → Experimental: photoreal Ramesh**, or open the game with `?splat=splat/ramesh.gvrm`.
+
+If the file is missing or fails to load, the regular Ramesh stays and the game carries on.
+
+Things to know:
+- **Size.** A `.gvrm` is 25–50 MB. If it's in `public/splat/` when you build the APK, it ships inside the APK. The splat library (about 600 kB) loads only when the feature is on.
+- **Lighting.** Splats carry the light they were captured in. A tint patched into the splat shader darkens him for night (×0.5), the theatre (×0.4) and power cuts (×0.35).
+- **Animation.** No Mixamo files needed: the arms-down pose, breathing and walking leg swing are driven procedurally from the NPC's movement. The face does not animate; this format has no facial rig.
+- **Load time.** About 7.5 s per level in a software-rendered test browser. It hasn't been measured on a phone yet.
+
 ## What I'd build next
 
 1. **A human playtest pass** on the numbers in TUNING.md, especially the dialogue economy and Level 3's Linda loop.

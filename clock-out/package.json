@@ -19,6 +19,9 @@
   "dependencies": {
     "@capacitor/android": "^8.5.2",
     "@capacitor/core": "^8.5.2",
+    "@naruya/gaussian-vrm": "^1.0.3",
+    "@pixiv/three-vrm": "^3.5.5",
+    "jszip": "^3.10.2",
     "three": "^0.186.1"
   }
 }

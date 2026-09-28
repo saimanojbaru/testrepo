@@ -197,6 +197,11 @@ export class NPC {
     this.walkAmount = 0;
   }
 
+  /** Hides the body (for a stand-in avatar) but keeps the ? marker and speech bubbles. */
+  setBodyVisible(v: boolean): void {
+    for (const c of this.group.children) if (!(c instanceof THREE.Sprite)) c.visible = v;
+  }
+
   say(text: string, seconds = TUNING.bubbleSeconds): void {
     if (this.bubble) {
       this.group.remove(this.bubble);

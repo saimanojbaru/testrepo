@@ -26,6 +26,7 @@ import { getNpcDef, getNpcLook } from '../data/npcs';
 import { STATE_BARKS, pick } from '../data/dialogueLines';
 import type { EncounterContext, Ending, ExcuseDef, LevelData, NPCDef, ScriptedBeat } from '../data/types';
 import { LEVELS } from '../data/levels';
+import { SplatAvatar } from '../ai/SplatAvatar';
 
 // Bootstraps renderer, scene, camera and every system, and runs the top-level
 // state machine: MENU -> (intro) -> PLAYING <-> DIALOGUE -> ESCAPED | CAUGHT.
@@ -58,6 +59,11 @@ const TUNING = {
   /** Seconds (time constant) for monitors to die / come back in a power cut. */
   screenFadeOut: 0.9,
   screenFadeIn: 0.35,
+  /** Photoreal splat stand-in: which NPC, and how dark it gets (splats ignore scene lights). */
+  splatNpc: 'ramesh',
+  splatDefaultUrl: 'splat/ramesh.gvrm',
+  splatThemeBrightness: { day: 1, festival: 1, night: 0.5, theatre: 0.4 } as Record<string, number>,
+  splatPowerCutBrightness: 0.35,
   lookBusySeconds: 5,
   objectiveReach: 1.1,
   /** Vision range multipliers by theme; a power cut stacks on top. */
@@ -108,6 +114,8 @@ interface Run {
   objectiveIdx: number;
   objectiveMarker: THREE.Mesh | null;
   powerCutUntil: number;
+  /** Experimental photoreal stand-in for one NPC (Gaussian splat). */
+  splat: SplatAvatar | null;
   /** Monitor brightness 0..1; eases toward screenTarget so dying screens leave an afterglow. */
   screenGlow: number;
   screenTarget: number;
@@ -255,12 +263,13 @@ export class Game {
       data, level, player, noise, hearing, director, world, npcs,
       time: 0, beatTime: 0, firedBeats: new Set(), charisma: 0, log: [], dialogues: 0,
       bossPassedCorporate: false, absurdSuccesses: [], favors: data.favors ?? 0, deadline: null,
-      allHandsUntil: -1, coverUntil: -1, coverAnchor: { x: 0, z: 0 }, objectiveIdx: 0, objectiveMarker: null, powerCutUntil: -1, screenGlow: 1, screenTarget: 1, fireAlarm: false, probe: null, elevatorCallTimer: -1, encounterCooldownUntil: 0,
+      allHandsUntil: -1, coverUntil: -1, coverAnchor: { x: 0, z: 0 }, objectiveIdx: 0, objectiveMarker: null, powerCutUntil: -1, splat: null, screenGlow: 1, screenTarget: 1, fireAlarm: false, probe: null, elevatorCallTimer: -1, encounterCooldownUntil: 0,
       fading: false, repBefore: this.memory.reputationLabel(), ended: false,
     };
     this.run = run;
 
     for (const p of data.npcs) this.spawnNpc(p.def, p.cell, p.patrol, p.facing);
+    this.loadSplat(run);
     this.setupInteractables(run);
 
     let extra = '';
@@ -294,9 +303,27 @@ export class Game {
     });
   }
 
+  /** Experimental: swap one NPC's look for a photoreal splat avatar, if enabled and installed. */
+  private loadSplat(run: Run): void {
+    const url = new URLSearchParams(location.search).get('splat') ?? (this.settings.photoreal ? TUNING.splatDefaultUrl : null);
+    const npc = run.npcs.find((n) => n.def.id === TUNING.splatNpc);
+    if (!url || !npc) return;
+    void SplatAvatar.load(url, this.scene, this.camera, this.renderer).then((avatar) => {
+      if (!avatar) {
+        this.hud.toast('Photoreal Ramesh is not installed (see README). Using the regular Ramesh.', 3.5);
+        return;
+      }
+      if (this.run !== run || run.ended) { void avatar.dispose(); return; }
+      avatar.attach(npc);
+      run.splat = avatar;
+    });
+  }
+
   private teardownLevel(): void {
     const run = this.run;
     if (!run) return;
+    run.splat?.dispose();
+    run.splat = null;
     this.dialogue.abort();
     this.dialogueNpc = null;
     run.hearing.dispose();
@@ -439,6 +466,11 @@ export class Game {
     for (const npc of run.npcs) {
       const v = effectiveVision(npc, run.world);
       npc.animate(dt, v.fov, v.range, this.settings.cones, Math.hypot(npc.x - p.x, npc.z - p.z));
+    }
+    if (run.splat) {
+      const themeK = TUNING.splatThemeBrightness[run.level.theme] ?? 1;
+      run.splat.setBrightness(themeK * (run.beatTime < run.powerCutUntil ? TUNING.splatPowerCutBrightness : 1));
+      run.splat.update(dt);
     }
     for (const e of run.level.elevators) e.update(dt);
     for (const d of run.level.doors) d.update(dt);
@@ -984,6 +1016,7 @@ export class Game {
     for (const n of [...run.npcs]) {
       if (!n.leaving) continue;
       if (Math.hypot(n.x - run.level.exitCenter.x, n.z - run.level.exitCenter.z) > 2.2) continue;
+      if (run.splat?.isFor(n)) { run.splat.dispose(); run.splat = null; }
       this.scene.remove(n.group, n.cone);
       n.dispose();
       run.npcs.splice(run.npcs.indexOf(n), 1);
