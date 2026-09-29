@@ -387,8 +387,14 @@ def export(path, spec):
     write_glb(path, W, prims, extras)
 
 
+def body_spec(char_id, path='../cast.json'):
+    """One character's body spec from tools/cast.json (generated from src/data/cast.ts)."""
+    return next(m['body'] for m in json.load(open(path))['members'] if m['id'] == char_id)
+
+
 if __name__ == '__main__':
-    specs = json.load(open(sys.argv[1]))
+    # python anny_export.py ../cast.json <outdir>  (static bodies, no clips)
+    specs = [m['body'] for m in json.load(open(sys.argv[1]))['members']]
     for s in specs:
         export(f"{sys.argv[2]}/{s['id']}.glb", s)
         print('wrote', s['id'])

@@ -1,4 +1,6 @@
+import type { FaceRecipe } from '../ai/FaceBuilder';
 import type { NPCDef, NPCLook } from './types';
+import { CARTOON_MARKER_ACCESSORIES, CAST, HAIR, cartoonSkin, hex, type Marker } from './cast';
 
 // The cast: one HITEC City floor, people from all over India. Region shows up in
 // small, true details (a thin vibhuti line, a kara, a chandanam mark, a few words
@@ -8,8 +10,8 @@ import type { NPCDef, NPCLook } from './types';
 export const NPC_DEFS: Record<string, NPCDef> = {
   ramesh: {
     id: 'ramesh',
-    name: 'Ramesh Iyer',
-    role: 'Senior Manager',
+    name: CAST.ramesh.name,
+    role: CAST.ramesh.role,
     color: 0xc9d9ea, // pale blue half-sleeve formal shirt
     visionRange: 18,
     visionFov: 95,
@@ -30,8 +32,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   kavita: {
     id: 'kavita',
-    name: 'Kavita Deshpande',
-    role: 'Admin & Facilities',
+    name: CAST.kavita.name,
+    role: CAST.kavita.role,
     color: 0x1f5f6b, // teal cotton kurti
     visionRange: 13,
     visionFov: 110,
@@ -52,8 +54,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   rinku: {
     id: 'rinku',
-    name: 'Rinku Gogoi',
-    role: 'Fresher (Week 3)',
+    name: CAST.rinku.name,
+    role: CAST.rinku.role,
     color: 0x5a8a6a, // company welcome-kit hoodie, still creased
     visionRange: 12,
     visionFov: 100,
@@ -74,8 +76,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   priya: {
     id: 'priya',
-    name: 'Priya Menon',
-    role: 'HR Business Partner',
+    name: CAST.priya.name,
+    role: CAST.priya.role,
     color: 0xf1e9d6, // cream kurta with a thin gold border
     visionRange: 15,
     visionFov: 100,
@@ -96,8 +98,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   rohit: {
     id: 'rohit',
-    name: 'Rohit Malhotra',
-    role: 'Senior Software Engineer',
+    name: CAST.rohit.name,
+    role: CAST.rohit.role,
     color: 0x9d93cf, // lavender shirt, sleeves rolled up
     visionRange: 16,
     visionFov: 90,
@@ -117,8 +119,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   srinivas: {
     id: 'srinivas',
-    name: 'Srinivas Goud',
-    role: 'Facilities & Security',
+    name: CAST.srinivas.name,
+    role: CAST.srinivas.role,
     color: 0x51606f, // security uniform shirt
     visionRange: 14,
     visionFov: 105,
@@ -137,8 +139,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   lakshmi: {
     id: 'lakshmi',
-    name: 'Lakshmi Reddy',
-    role: 'Cafeteria Supervisor',
+    name: CAST.lakshmi.name,
+    role: CAST.lakshmi.role,
     color: 0x8f4a3a, // maroon cotton saree under a white apron
     visionRange: 14,
     visionFov: 100,
@@ -157,8 +159,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   deepak: {
     id: 'deepak',
-    name: 'Deepak Hegde',
-    role: 'Team Lead',
+    name: CAST.deepak.name,
+    role: CAST.deepak.role,
     color: 0x4a4a6a, // dark polo, red-and-yellow lanyard
     visionRange: 12,
     visionFov: 100,
@@ -177,8 +179,8 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
   sanjay: {
     id: 'sanjay',
-    name: 'Sanjay Mukherjee',
-    role: 'Director (Returned from Dallas)',
+    name: CAST.sanjay.name,
+    role: CAST.sanjay.role,
     color: 0x2c3a55, // the only blazer in Hyderabad in May
     visionRange: 15,
     visionFov: 100,
@@ -197,89 +199,57 @@ export const NPC_DEFS: Record<string, NPCDef> = {
   },
 };
 
+/**
+ * Cartoon looks. Identity (skin, hair, facial hair, glasses, markers, height, voice, tagline)
+ * comes from CAST (src/data/cast.ts); only cartoon-specific shaping and clothing live here.
+ */
+function look(id: string, c: { pants: number; trim?: number; clothes: NPCLook['accessories']; face: Omit<FaceRecipe, 'skin' | 'hair' | 'hairStyle'> }): NPCLook {
+  const m = CAST[id];
+  const skin = cartoonSkin(m);
+  const hair = hex(m.hairColor);
+  const has = (k: Marker) => m.markers.includes(k);
+  const forehead = (['vibhuti', 'chandrakor', 'chandanam', 'bindi'] as const).find(has);
+  const earrings = has('jhumka') ? 'jhumka' : has('studs') ? 'stud' : undefined;
+  const markerAccessories = m.markers.map((k) => CARTOON_MARKER_ACCESSORIES[k]).filter((a): a is NPCLook['accessories'][number] => !!a);
+  return {
+    skin, hair, pants: c.pants, voice: m.voice, height: m.heightCm / 170, tagline: m.tagline,
+    // Only drawn by faceless legacy heads; every cast member has a face recipe.
+    hairStyle: m.hair === 'bun' || m.hair === 'braid' ? 'bun' : has('securityCap') ? 'cap' : 'short',
+    ...(c.trim !== undefined ? { trim: c.trim } : {}),
+    accessories: [...c.clothes, ...markerAccessories],
+    face: {
+      ...c.face, skin, hair, hairStyle: HAIR[m.hair].cartoon,
+      ...(m.greyTemples ? { greyTemples: true } : {}),
+      ...(m.facialHair ? { facialHair: m.facialHair } : {}),
+      ...(m.glasses ? { glasses: m.glasses } : {}),
+      ...(forehead ? { forehead } : {}),
+      ...(has('securityCap') ? { hat: 'securityCap' as const } : {}),
+      ...(has('gajra') ? { gajra: true } : {}),
+      ...(earrings ? { earrings } : {}),
+      ...(has('noseRing') ? { noseRing: true } : {}),
+    },
+  };
+}
+
 export const NPC_LOOKS: Record<string, NPCLook> = {
-  ramesh: {
-    skin: 0x8a5a3c, hair: 0x15110f, hairStyle: 'short', pants: 0x3a3d44, voice: 150, height: 1.03,
-    tagline: 'Chennai. "Quick sync at 6:45?" is not a question.',
-    accessories: ['halfSleeve', 'belt', 'penPocket', 'watch'],
-    face: {
-      skin: 0x8a5a3c, hair: 0x15110f, hairStyle: 'sidepart', greyTemples: true, facialHair: 'moustache',
-      glasses: 'gold', forehead: 'vibhuti', mouth: 'neutral', browTilt: 0.2, browThickness: 1.4,
-      shape: { w: 0.94, h: 1.08, d: 0.98 }, noseLength: 1.1,
-    },
-  },
-  kavita: {
-    skin: 0xa8704c, hair: 0x120d0b, hairStyle: 'bun', pants: 0xe9e2d0, voice: 320, height: 0.93, trim: 0xa3195b,
-    tagline: 'Pune. Knows who ordered biryani on the team card. And why.',
-    accessories: ['kurti', 'dupatta', 'greenBangles', 'mangalsutra'],
-    face: {
-      skin: 0xa8704c, hair: 0x120d0b, hairStyle: 'bun', gajra: true, forehead: 'chandrakor',
-      earrings: 'stud', mouth: 'smirk', eyeSquint: 0.62, browRaise: 0.012, browTilt: 0.02, lipColor: 0x7a3434, shape: { w: 0.9, h: 1.1, d: 0.95 },
-    },
-  },
-  rinku: {
-    skin: 0xd8b08a, hair: 0x14100d, hairStyle: 'swoop', pants: 0x3b4a66, voice: 290, height: 0.98, trim: 0xb3202a,
-    tagline: 'Jorhat. Three weeks in. Still believes in all of it.',
-    accessories: ['lanyard', 'backpack', 'gamosaStrap'],
-    face: {
-      skin: 0xd8b08a, hair: 0x14100d, hairStyle: 'crop', mouth: 'open', eyeSize: 1.1, catchlight: true, browTilt: -0.14, browThickness: 0.9,
-      shape: { w: 0.93, h: 1.05, d: 0.95 }, noseLength: 0.85,
-    },
-  },
-  priya: {
-    skin: 0x9a6a4a, hair: 0x100c0a, hairStyle: 'bun', pants: 0xf1e9d6, voice: 260, height: 0.97, trim: 0xc9a24a,
-    tagline: 'Thrissur. Has a form for this. Has a form for the form.',
-    accessories: ['kurti', 'clipboard', 'watch'],
-    face: {
-      skin: 0x9a6a4a, hair: 0x100c0a, hairStyle: 'braid', forehead: 'chandanam', earrings: 'jhumka',
-      glasses: 'black', mouth: 'neutral', browTilt: 0.12, shape: { w: 0.9, h: 1.1, d: 0.96 },
-    },
-  },
-  rohit: {
-    skin: 0xc2946c, hair: 0x1b1411, hairStyle: 'short', pants: 0x2b3345, voice: 190, height: 1.06,
-    tagline: 'Ludhiana. Will tell everyone about you. Already has.',
-    accessories: ['halfSleeve', 'belt', 'watch', 'kara'],
-    face: {
-      skin: 0xc2946c, hair: 0x1b1411, hairStyle: 'spiky', facialHair: 'beard', mouth: 'smirk',
-      browThickness: 1.6, browTilt: 0.1, shape: { w: 0.96, h: 1.06, d: 0.98 },
-    },
-  },
-  srinivas: {
-    skin: 0x7a4e33, hair: 0x1a1512, hairStyle: 'cap', pants: 0x2f3a2c, voice: 130, height: 1.02,
-    tagline: 'Secunderabad. Knows every access card and every face. Nobody asks.',
-    accessories: ['clipboard', 'kalava', 'belt'],
-    face: {
-      skin: 0x7a4e33, hair: 0x1a1512, hairStyle: 'crop', hat: 'securityCap', facialHair: 'thickMoustache', mouth: 'neutral',
-      browThickness: 1.3, shape: { w: 0.97, h: 1.04, d: 0.98 },
-    },
-  },
-  lakshmi: {
-    skin: 0x8e5c3e, hair: 0x15100d, hairStyle: 'bun', pants: 0x8f4a3a, voice: 240, height: 0.92, trim: 0xd4af37,
-    tagline: 'Warangal. Twenty-two years in the canteen. Knows everyone\'s order.',
-    accessories: ['kurti', 'apron', 'goldBangles', 'mangalsutra'],
-    face: {
-      skin: 0x8e5c3e, hair: 0x15100d, hairStyle: 'bun', greyTemples: true, forehead: 'bindi', noseRing: true,
-      mouth: 'smile', shape: { w: 0.95, h: 1.05, d: 0.96 },
-    },
-  },
-  deepak: {
-    skin: 0x9c6b48, hair: 0x16110e, hairStyle: 'short', pants: 0x2a2a2a, voice: 210, height: 1.0, trim: 0xd62828,
-    tagline: 'Mangaluru. Takes the credit, gives the tickets.',
-    accessories: ['lanyard', 'watch', 'belt'],
-    face: {
-      skin: 0x9c6b48, hair: 0x16110e, hairStyle: 'sidepart', facialHair: 'stubble', glasses: 'black', mouth: 'smirk', browRaise: 0.01,
-      shape: { w: 0.95, h: 1.06, d: 0.97 },
-    },
-  },
-  sanjay: {
-    skin: 0xb88660, hair: 0x2a2320, hairStyle: 'short', pants: 0x2c3a55, voice: 165, height: 1.04,
-    tagline: 'Kolkata, via Dallas. Mostly via Dallas.',
-    accessories: ['blazer', 'tie', 'watch'],
-    face: {
-      skin: 0xb88660, hair: 0x2a2320, hairStyle: 'receding', greyTemples: true, glasses: 'black', mouth: 'tired',
-      shape: { w: 0.98, h: 1.04, d: 0.98 },
-    },
-  },
+  ramesh: look('ramesh', { pants: 0x3a3d44, clothes: ['halfSleeve', 'belt', 'penPocket', 'watch'],
+    face: { mouth: 'neutral', browTilt: 0.2, browThickness: 1.4, shape: { w: 0.94, h: 1.08, d: 0.98 }, noseLength: 1.1 } }),
+  kavita: look('kavita', { pants: 0xe9e2d0, trim: 0xa3195b, clothes: ['kurti', 'dupatta'],
+    face: { mouth: 'smirk', eyeSquint: 0.62, browRaise: 0.012, browTilt: 0.02, lipColor: 0x7a3434, shape: { w: 0.9, h: 1.1, d: 0.95 } } }),
+  rinku: look('rinku', { pants: 0x3b4a66, trim: 0xb3202a, clothes: ['lanyard', 'backpack'],
+    face: { mouth: 'open', eyeSize: 1.1, catchlight: true, browTilt: -0.14, browThickness: 0.9, shape: { w: 0.93, h: 1.05, d: 0.95 }, noseLength: 0.85 } }),
+  priya: look('priya', { pants: 0xf1e9d6, trim: 0xc9a24a, clothes: ['kurti', 'clipboard', 'watch'],
+    face: { mouth: 'neutral', browTilt: 0.12, shape: { w: 0.9, h: 1.1, d: 0.96 } } }),
+  rohit: look('rohit', { pants: 0x2b3345, clothes: ['halfSleeve', 'belt', 'watch'],
+    face: { mouth: 'smirk', browThickness: 1.6, browTilt: 0.1, shape: { w: 0.96, h: 1.06, d: 0.98 } } }),
+  srinivas: look('srinivas', { pants: 0x2f3a2c, clothes: ['clipboard', 'belt'],
+    face: { mouth: 'neutral', browThickness: 1.3, shape: { w: 0.97, h: 1.04, d: 0.98 } } }),
+  lakshmi: look('lakshmi', { pants: 0x8f4a3a, trim: 0xd4af37, clothes: ['kurti', 'apron'],
+    face: { mouth: 'smile', shape: { w: 0.95, h: 1.05, d: 0.96 } } }),
+  deepak: look('deepak', { pants: 0x2a2a2a, trim: 0xd62828, clothes: ['lanyard', 'watch', 'belt'],
+    face: { mouth: 'smirk', browRaise: 0.01, shape: { w: 0.95, h: 1.06, d: 0.97 } } }),
+  sanjay: look('sanjay', { pants: 0x2c3a55, clothes: ['blazer', 'tie', 'watch'],
+    face: { mouth: 'tired', shape: { w: 0.98, h: 1.04, d: 0.98 } } }),
 };
 
 /** NPCs the Director is allowed to bring in as wanderers, in preference order. */

@@ -30,7 +30,7 @@ export interface FaceRecipe {
   hairStyle: 'sidepart' | 'bun' | 'braid' | 'spiky' | 'bob' | 'receding' | 'crop';
   greyTemples?: boolean;
   facialHair?: 'moustache' | 'thickMoustache' | 'beard' | 'stubble';
-  glasses?: 'gold' | 'black' | 'none';
+  glasses?: 'gold' | 'black' | 'silver' | 'none';
   /** Subtle regional markers. */
   forehead?: 'vibhuti' | 'tilak' | 'chandrakor' | 'bindi' | 'chandanam';
   hat?: 'securityCap';
@@ -183,7 +183,7 @@ export function buildFace(head: THREE.Group, r: FaceRecipe): void {
   buildHair(head, r, s, cy);
 
   if (r.glasses && r.glasses !== 'none') {
-    const frame = r.glasses === 'gold' ? 0xc9a24a : 0x1c1c1c;
+    const frame = r.glasses === 'gold' ? 0xc9a24a : r.glasses === 'silver' ? 0xb8bcc4 : 0x1c1c1c;
     for (const side of [-1, 1]) {
       const ring = mesh(head, new THREE.TorusGeometry(0.026, 0.003, 6, 16), frame, side * 0.052, eyeY, front - 0.004);
       ring.scale.set(1.2, 0.9, 1);

@@ -17,7 +17,8 @@ python build_ramesh.py
 ```
 
 How it works:
-- `anny_export.py` builds a body from `bodies.json`. Anny's `age` runs newborn -1/3,
+- `anny_export.py` builds a body from its spec in `tools/cast.json` (generated from
+  `src/data/cast.ts` by `npm run cast:export`; edit the `.ts`, never the JSON). Anny's `age` runs newborn -1/3,
   baby 0, child 1/3, **young adult (~25) 2/3, old (~90) 1**; `gender` is 0 male, 1 female.
   It cuts Anny's head (the GNM head sits on the neck), sews clothes as offset shells of
   the body surface (so they share its skin weights), and writes a rigged `.glb`.

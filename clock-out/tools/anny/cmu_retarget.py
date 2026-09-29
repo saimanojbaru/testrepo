@@ -265,8 +265,9 @@ def add_animations(glb_path, W, clips):
 
 
 if __name__ == '__main__':
-    spec = [s for s in json.load(open(sys.argv[1])) if s['id'] == sys.argv[2]][0]
-    out = sys.argv[3]
+    # usage: python3 cmu_retarget.py <id> <out.glb>   (spec from ../cast.json)
+    spec = AE.body_spec(sys.argv[1])
+    out = sys.argv[2]
     AE.export(out, spec)
     v, W = AE.build(spec)
     walk = clip(W, 'cmu/02.asf', 'cmu/02_01.amc', 'walk')
@@ -298,8 +299,8 @@ def segment(W, asf, amc, fps_in, start_s, dur_s, fps_out=30, face='root'):
     return {'tracks': tracks, 'bob': rp[:, 1] - rp[:, 1].mean(), 'fps': fps_out, 'speed': 0.0, 'nframes_src': len(frames)}
 
 
-def batch(spec_path, char_id, out, clips):
-    spec = [s for s in json.load(open(spec_path)) if s['id'] == char_id][0]
+def batch(char_id, out, clips):
+    spec = AE.body_spec(char_id)
     AE.export(out, spec)
     v, W = AE.build(spec)
     baked = {}

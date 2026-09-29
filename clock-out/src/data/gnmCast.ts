@@ -1,10 +1,8 @@
 import type { GnmMarker } from '../ai/GnmMarkers';
 import type { Gait } from '../ai/RealBody';
+import { CAST, REALISTIC_HEAD_MARKERS, type Glasses } from './cast';
 
-// Photoreal cast: which baked GNM head each character wears, their one cultural
-// marker (plus glasses where they always had them), and a resting expression.
-// Heads are synthetic identities from GNM's own identity model (no real people);
-// region is carried by skin tone, grooming and the marker, never by caricature.
+// Realistic (GNM) head config, derived from CAST. Do not add identity here: edit cast.ts.
 export interface GnmCastEntry {
   file: string;
   markers: GnmMarker[];
@@ -16,14 +14,14 @@ export interface GnmCastEntry {
   rest?: Record<string, number>;
 }
 
-export const GNM_CAST: Record<string, GnmCastEntry> = {
-  ramesh: { file: 'ramesh', markers: ['vibhuti', 'glassesGold'], body: 'ramesh', gait: { tempo: 0.9, lean: -0.06, arms: 0.7 } },
-  kavita: { file: 'kavita', markers: ['chandrakor'], gait: { tempo: 1.12, lean: 0.03, arms: 0.8 }, rest: { smirk: 0.55, squint: 0.35 } },
-  rinku: { file: 'rinku', markers: [], rest: { smile: 0.5, jawOpen: 0.28, browRaise: 0.3 } },
-  priya: { file: 'priya', markers: ['chandanam', 'glassesBlack'] },
-  rohit: { file: 'rohit', markers: [], gait: { tempo: 0.94, lean: -0.03, arms: 1.35 } },
-  srinivas: { file: 'srinivas', markers: ['securityCap'] },
-  lakshmi: { file: 'lakshmi', markers: ['bindi', 'noseRing'], gait: { tempo: 0.86, lean: 0.07, arms: 0.55 } },
-  deepak: { file: 'deepak', markers: ['glassesBlack'], rest: { browRaise: 0.35 } },
-  sanjay: { file: 'sanjay', markers: ['glassesSilver'] },
-};
+const GLASSES: Record<Glasses, GnmMarker> = { gold: 'glassesGold', black: 'glassesBlack', silver: 'glassesSilver' };
+
+export const GNM_CAST: Record<string, GnmCastEntry> = Object.fromEntries(Object.values(CAST).map((m) => {
+  const markers = REALISTIC_HEAD_MARKERS.filter((k) => m.markers.includes(k)) as GnmMarker[];
+  if (m.glasses) markers.push(GLASSES[m.glasses]);
+  const entry: GnmCastEntry = { file: m.id, markers };
+  if (m.realistic.body) entry.body = m.id;
+  if (m.realistic.gait) entry.gait = m.realistic.gait;
+  if (m.realistic.rest) entry.rest = m.realistic.rest;
+  return [m.id, entry];
+}));

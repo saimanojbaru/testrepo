@@ -8,6 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "check:levels": "node scripts/check-levels.mjs",
+    "cast:export": "node scripts/export-cast.ts",
+    "check:cast": "node scripts/export-cast.ts --check",
+    "cast:defaults": "node scripts/export-cast.ts --defaults",
     "android:apk": "npm run build && npx cap sync android && cd android && ./gradlew assembleDebug"
   },
   "devDependencies": {

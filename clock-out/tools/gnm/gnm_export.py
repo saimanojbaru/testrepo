@@ -456,9 +456,19 @@ def export(path, spec):
     pack_glb(path, prims, extras)
 
 
+def head_specs(path):
+    """tools/cast.json (generated from src/data/cast.ts) -> head specs. A bare list is a scratch spec file."""
+    d = json.load(open(path))
+    return [m['head'] for m in d['members']] if isinstance(d, dict) else d
+
+
 if __name__ == '__main__':
-    specs = json.load(open(sys.argv[2]))
+    # python3 gnm_export.py gnm_head.npz ../cast.json ../../public/gnm [id ...]
+    specs = head_specs(sys.argv[2])
     out = sys.argv[3]
+    only = set(sys.argv[4:])
     for s in specs:
+        if only and s['id'] not in only:
+            continue
         export(f"{out}/{s['id']}.glb", s)
         print('wrote', s['id'])

@@ -1,10 +1,9 @@
 """Rebuild public/anny/ramesh.glb: Anny body + sewn clothes + CMU walk/idle/phone.
 Run from tools/anny with CMU files in ./cmu (see README.md)."""
-import json
 import anny_export as AE
 import cmu_retarget as C
 
-spec = [s for s in json.load(open('bodies.json')) if s['id'] == 'ramesh'][0]
+spec = AE.body_spec('ramesh')
 out = '../../public/anny/ramesh.glb'
 AE.export(out, spec)
 v, W = AE.build(spec)
