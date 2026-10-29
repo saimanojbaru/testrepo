@@ -1,0 +1,6 @@
+image_embedder.tflite
+  MobileNet-V3 (small, float32) image embedder from MediaPipe Tasks
+  Source: https://storage.googleapis.com/mediapipe-models/image_embedder/mobilenet_v3_small/float32/latest/mobilenet_v3_small.tflite
+  SHA-256: bbbb4c51a55a53905af1daec995ca1aae355046f8839bb8c9f5ce9271394bc40
+  Copyright Google LLC. Licensed under the Apache License, Version 2.0
+  (http://www.apache.org/licenses/LICENSE-2.0), as stated in the model's embedded metadata.

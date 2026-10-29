@@ -93,8 +93,6 @@
         <item quantity="one">%1$d file into %2$d folders</item>
         <item quantity="other">%1$d files into %2$d folders</item>
     </plurals>
-    <string name="preview_select_all">Select all</string>
-    <string name="preview_select_none">Select none</string>
     <string name="preview_naming_settings">Naming &amp; folder settings</string>
     <string name="preview_filter_all">All (%1$d)</string>
     <string name="preview_was">was %1$s</string>
@@ -163,7 +161,6 @@
     <string name="apply_progress">Processed %1$d of %2$d</string>
     <string name="apply_background_hint">You can leave the app; this continues in the background.</string>
     <string name="apply_stopped">Stopped early: %1$s</string>
-    <string name="apply_log_saved">Original and new names are saved in History. If enabled, a CSV log was also written to the output folder.</string>
     <string name="apply_view_log">View log</string>
     <plurals name="apply_copied">
         <item quantity="one">%d file copied</item>
@@ -221,7 +218,7 @@
     <string name="preset_original_labels">Original name, keywords</string>
     <string name="preset_custom">Custom template</string>
     <string name="settings_custom_template">Template</string>
-    <string name="settings_custom_template_hint">Tokens: {date} {time} {category} {labels} {text} {original}</string>
+    <string name="settings_custom_template_hint">Tokens: {date} {time} {year} {month} {day} {category} {label} {labels} {text} {original} {counter} {counter:2} {folder} {people} {camera}</string>
     <string name="settings_date_format">Date format</string>
     <string name="settings_none">None</string>
     <string name="settings_separator">Separator</string>
@@ -286,6 +283,147 @@
     <string name="notification_channel_description">Shows progress while Sortora analyses or organises files on your device.</string>
     <string name="notification_analyzing_title">Analysing on device</string>
     <string name="notification_applying_title">Organising files</string>
+    <string name="notification_undo_title">Undoing changes</string>
     <string name="notification_progress">%1$d of %2$d</string>
     <string name="notification_preparing">Preparing…</string>
+
+    <!-- Upgrade: extra actions -->
+    <string name="action_apply">Apply</string>
+    <string name="action_review">Review</string>
+    <string name="action_undo">Undo</string>
+
+    <!-- Rename mode -->
+    <string name="mode_rename">Rename</string>
+    <string name="mode_rename_hint">Files stay where they are and only get their new names. You can undo this from History.</string>
+    <string name="preview_in_place">Renamed in place</string>
+    <plurals name="preview_summary_rename">
+        <item quantity="one">%d file renamed in place</item>
+        <item quantity="other">%d files renamed in place</item>
+    </plurals>
+    <plurals name="preview_apply_rename">
+        <item quantity="one">Rename %d file</item>
+        <item quantity="other">Rename %d files</item>
+    </plurals>
+    <plurals name="preview_rename_confirm_title">
+        <item quantity="one">Rename %d original?</item>
+        <item quantity="other">Rename %d originals?</item>
+    </plurals>
+    <string name="preview_rename_confirm_body">The files keep their folders and content; only their names change. Every original name is logged, and History can rename them back.</string>
+    <string name="preview_rename_confirm_action">Rename originals</string>
+    <string name="apply_title_renaming">Renaming files</string>
+    <plurals name="apply_renamed">
+        <item quantity="one">%d file renamed</item>
+        <item quantity="other">%d files renamed</item>
+    </plurals>
+    <string name="apply_log_saved_undo">Original and new names are saved in History, where you can undo this batch. If enabled, a CSV log was also written to the output folder.</string>
+
+    <!-- Bulk actions / batch rename -->
+    <plurals name="bulk_scope_all">
+        <item quantity="one">The %d file</item>
+        <item quantity="other">All %d files</item>
+    </plurals>
+    <plurals name="bulk_scope_shown">
+        <item quantity="one">The %d file shown</item>
+        <item quantity="other">The %d files shown</item>
+    </plurals>
+    <string name="bulk_include">Include</string>
+    <string name="bulk_exclude">Exclude</string>
+    <string name="bulk_rename">Rename with pattern…</string>
+    <string name="bulk_set_folder">Put in folder…</string>
+    <string name="bulk_reset">Reset to suggestions</string>
+    <plurals name="bulk_set_folder_title">
+        <item quantity="one">Folder for %d file</item>
+        <item quantity="other">Folder for %d files</item>
+    </plurals>
+    <plurals name="bulk_rename_title">
+        <item quantity="one">Rename %d file</item>
+        <item quantity="other">Rename %d files</item>
+    </plurals>
+    <string name="bulk_rename_counter_hint">{counter} numbers files 001, 002… within each folder, in the order they were taken. {counter:2} uses two digits.</string>
+    <string name="preset_label_counter">Keyword, counter</string>
+
+    <!-- Smart filters -->
+    <string name="filter_has_face">Has face</string>
+    <string name="filter_screenshot">Screenshot</string>
+    <string name="filter_has_text">Contains text</string>
+    <string name="filter_landscape">Landscape</string>
+    <string name="filter_product">Product</string>
+    <string name="filter_blurry">Blurry</string>
+    <string name="filter_duplicate">Duplicates</string>
+    <string name="filter_video">Video</string>
+    <string name="filters_clear">Clear filters</string>
+    <string name="preview_no_matches_title">No files match</string>
+    <string name="preview_no_matches_body">Try removing a filter.</string>
+    <string name="detail_blurry">Looks blurry</string>
+    <string name="detail_sharp">Looks sharp</string>
+
+    <!-- Duplicates -->
+    <plurals name="preview_duplicates_found">
+        <item quantity="one">%d group of duplicates found. Only the best copy is suggested.</item>
+        <item quantity="other">%d groups of duplicates found. Only the best copy of each is suggested.</item>
+    </plurals>
+    <string name="duplicate_best">Best copy</string>
+    <string name="duplicate_exact">Duplicate</string>
+    <string name="duplicate_similar">Similar</string>
+    <string name="duplicate_section_exact">Exact duplicate</string>
+    <string name="duplicate_section_similar">Visually similar</string>
+    <string name="duplicate_this_is_best">This is the copy Sortora suggests keeping (highest resolution).</string>
+    <string name="duplicate_this_is_extra">Another copy looks better. Originals are never deleted; extras just aren\'t sorted.</string>
+    <string name="duplicate_keep_this">Keep this one instead</string>
+    <string name="settings_section_duplicates">Duplicates</string>
+    <string name="settings_detect_duplicates">Find duplicates</string>
+    <string name="settings_detect_duplicates_hint">Exact copies (same bytes) and visually similar photos, such as re-saves and burst shots</string>
+    <string name="duplicates_skip">Skip extra copies</string>
+    <string name="duplicates_skip_hint">Only the best copy is sorted. The others stay where they are.</string>
+    <string name="duplicates_folder">Put extras in a Duplicates folder</string>
+    <string name="duplicates_folder_hint">The best copy is sorted normally; the others go to Duplicates for you to review.</string>
+    <string name="duplicates_keep">Treat them like any other file</string>
+    <string name="duplicates_keep_hint">Duplicates are only marked in the preview.</string>
+
+    <!-- Faces -->
+    <string name="faces_title">Face groups</string>
+    <string name="faces_explainer">Faces that look alike, grouped on this phone. This is visual similarity, not identity recognition: look-alikes can merge and one person can split. Adjust the strictness until the groups look right.</string>
+    <string name="faces_comparing">Comparing faces on device…</string>
+    <string name="faces_strictness">Grouping strictness</string>
+    <string name="faces_looser">Fewer, bigger groups</string>
+    <string name="faces_stricter">More, smaller groups</string>
+    <string name="faces_empty_title">No groups at this strictness</string>
+    <string name="faces_empty_body">Move the slider left to group more loosely.</string>
+    <string name="faces_person_n">Person %1$d</string>
+    <string name="faces_name_label">Name</string>
+    <string name="faces_put_in_folder">Put in People/%1$s</string>
+    <string name="faces_moved_to_folder">Folder set for those files. Review them in the preview.</string>
+    <plurals name="faces_cluster_summary">
+        <item quantity="one">%1$d faces in %2$d file</item>
+        <item quantity="other">%1$d faces in %2$d files</item>
+    </plurals>
+    <plurals name="faces_singles">
+        <item quantity="one">%d face appears only once.</item>
+        <item quantity="other">%d faces appear only once.</item>
+    </plurals>
+    <string name="settings_face_grouping">Group similar faces</string>
+    <string name="settings_face_grouping_hint">Crops faces and compares them on device so you can name people and file their photos together. Face data is deleted with the session.</string>
+
+    <!-- Undo -->
+    <plurals name="undo_confirm_title">
+        <item quantity="one">Undo %d change?</item>
+        <item quantity="other">Undo %d changes?</item>
+    </plurals>
+    <string name="undo_confirm_copy">The copies Sortora made are deleted. Your originals were never touched. Copies you changed since are kept.</string>
+    <string name="undo_confirm_move">Each file is put back in its original folder under its original name, then removed from the output folder.</string>
+    <string name="undo_confirm_move_pick">Some files were picked individually, so Sortora can\'t reach their original folder. Choose a folder to put them back into (for example DCIM/Camera).</string>
+    <string name="undo_confirm_rename">Each file gets its original name back.</string>
+    <string name="undo_choose_folder">Choose folder</string>
+    <string name="undo_done">Undo finished</string>
+    <string name="undo_failed">Undo stopped early. Check the entries for details.</string>
+    <string name="history_entry_undone">Undone</string>
+    <string name="history_entry_undo_failed">Undo failed: %1$s</string>
+    <plurals name="history_undone">
+        <item quantity="one">%d undone</item>
+        <item quantity="other">%d undone</item>
+    </plurals>
+    <plurals name="history_batch_renamed">
+        <item quantity="one">%d file renamed</item>
+        <item quantity="other">%d files renamed</item>
+    </plurals>
 </resources>

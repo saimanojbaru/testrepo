@@ -3,7 +3,22 @@ package com.sortora.app.domain.model
 import kotlinx.serialization.Serializable
 
 @Serializable
-enum class OperationMode { COPY, MOVE }
+enum class OperationMode {
+    COPY,
+    MOVE,
+    /** Rename files where they are (batch rename); no folders are created. */
+    RENAME,
+}
+
+/** What to do with the extra copies when duplicates are found. Applied once after analysis. */
+enum class DuplicateHandling {
+    /** Keep only the best copy in the plan; the others stay untouched where they are. */
+    SKIP_EXTRAS,
+    /** Sort the best copy normally and put the others in a "Duplicates" folder. */
+    SEPARATE_FOLDER,
+    /** Treat duplicates like any other file. */
+    KEEP_ALL,
+}
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
 
@@ -14,6 +29,7 @@ enum class NamingPreset(val template: String) {
     CATEGORY_LABELS("{category}_{labels}"),
     DATE_LABELS("{date}_{labels}"),
     ORIGINAL_LABELS("{original}_{labels}"),
+    LABEL_COUNTER("{label}_{counter}"),
     CUSTOM(""),
 }
 
@@ -57,6 +73,9 @@ data class AnalysisOptions(
     val enableOcr: Boolean = true,
     val videoFrameCount: Int = 5,
     val includeSubfolders: Boolean = true,
+    /** Crop faces and compute embeddings so similar faces can be grouped. */
+    val faceGrouping: Boolean = true,
+    val detectDuplicates: Boolean = true,
 )
 
 data class AppSettings(
@@ -73,6 +92,7 @@ data class AppSettings(
     val groupByYear: Boolean = false,
     val writeLogFile: Boolean = true,
     val analysis: AnalysisOptions = AnalysisOptions(),
+    val duplicateHandling: DuplicateHandling = DuplicateHandling.SKIP_EXTRAS,
 ) {
     fun folderFor(category: ContentCategory): String =
         folderNames[category]?.takeIf { it.isNotBlank() } ?: category.defaultFolder

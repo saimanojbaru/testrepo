@@ -76,6 +76,7 @@ class SafMediaSourceRepository @Inject constructor(
                             lastModifiedMillis = if (cursor.isNull(4)) null else cursor.getLong(4),
                             kind = kind,
                             pathHint = pathFromDocumentId(docId) ?: parentPath,
+                            parentUri = DocumentsContract.buildDocumentUriUsingTree(tree, parentId).toString(),
                         )
                     }
                 }

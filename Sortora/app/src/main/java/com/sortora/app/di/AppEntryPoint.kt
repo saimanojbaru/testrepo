@@ -1,5 +1,6 @@
 package com.sortora.app.di
 
+import com.sortora.app.domain.repository.HistoryRepository
 import com.sortora.app.domain.repository.SessionRepository
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
@@ -13,4 +14,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 interface AppEntryPoint {
     fun sessions(): SessionRepository
+    fun history(): HistoryRepository
 }

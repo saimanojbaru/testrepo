@@ -13,6 +13,8 @@ data class SessionEntity(
     val status: String,
     val sourceLabel: String,
     val mode: String? = null,
+    /** Analysed-item count the stored duplicate groups were computed from (-1 = never). */
+    val duplicatesComputedFor: Int = -1,
 )
 
 /**
@@ -37,6 +39,7 @@ data class SessionItemEntity(
     val kind: String,
     val pathHint: String?,
     val dateTaken: Long? = null,
+    val parentUri: String? = null,
     val analysisStatus: String,
     val analysisJson: String? = null,
     /** Denormalised from the analysis so progress screens can count categories in SQL. */
@@ -44,11 +47,19 @@ data class SessionItemEntity(
     val errorMessage: String? = null,
     val customName: String? = null,
     val customFolder: String? = null,
+    val customPattern: String? = null,
     val included: Boolean = true,
     val plannedName: String? = null,
     val plannedFolder: String? = null,
     val applyStatus: String? = null,
     val applyMessage: String? = null,
+    /** Whole-image embedding, int8-quantised (see EmbeddingCodec). */
+    val embedding: ByteArray? = null,
+    /** SHA-256, only computed for files whose size matches another file's. */
+    val contentHash: String? = null,
+    val duplicateGroup: Long? = null,
+    val duplicateExact: Boolean = false,
+    val duplicateKeeper: Boolean = false,
 )
 
 /** Permanent history of original → new names. Never stores image content or OCR text. */
@@ -65,6 +76,30 @@ data class OperationLogEntity(
     val targetUri: String?,
     val status: String,
     val message: String?,
+    val sourceParentUri: String? = null,
+    val sizeBytes: Long = -1,
+    val undoStatus: String? = null,
+    val undoMessage: String? = null,
+)
+
+/**
+ * A face found in the current session. Embedding and thumbnail stay in app-private storage and
+ * are deleted with the session.
+ */
+@Entity(
+    tableName = "faces",
+    foreignKeys = [
+        ForeignKey(entity = SessionEntity::class, parentColumns = ["id"], childColumns = ["sessionId"], onDelete = ForeignKey.CASCADE),
+    ],
+    indices = [Index("sessionId"), Index("itemId")],
+)
+data class FaceEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val sessionId: Long,
+    val itemId: Long,
+    val embedding: ByteArray,
+    val thumbnailPath: String,
+    val personName: String? = null,
 )
 
 data class SessionWithCounts(
@@ -83,4 +118,19 @@ data class LogBatchRow(
     val total: Int,
     val succeeded: Int,
     val failed: Int,
+    val undone: Int,
+    val undoable: Int,
+    val needsRestoreFolder: Boolean,
 )
+
+data class DuplicateCandidateRow(
+    val id: Long,
+    val sourceUri: String,
+    val kind: String,
+    val sizeBytes: Long,
+    val contentHash: String?,
+    val embedding: ByteArray?,
+    val analysisJson: String?,
+)
+
+data class PersonRow(val itemId: Long, val personName: String)

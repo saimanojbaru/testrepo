@@ -18,28 +18,43 @@ data class NameInput(
     val tags: List<String>,
     /** Title read from the screen / page, if any. */
     val title: String?,
+    /** Position of this file in its folder (1-based), for `{counter}`. */
+    val counter: Int? = null,
+    /** Target folder (relative path); `{folder}` uses its last segment. */
+    val folder: String? = null,
+    /** Names the user gave to faces in this file. */
+    val people: List<String> = emptyList(),
+    /** Camera model from EXIF. */
+    val camera: String? = null,
 )
 
 /**
  * Renders file names from templates such as `{date}_{category}_{labels}`.
  *
  * Tokens:
- *  - `{date}` capture date in the chosen style, `{time}` HHmmss
- *  - `{category}` e.g. "talkinghead", `{labels}` top N tags joined by the separator
+ *  - `{date}` capture date in the chosen style, `{time}` HHmmss, `{year}` `{month}` `{day}`
+ *  - `{category}` e.g. "talkinghead", `{label}` the top keyword, `{labels}` top N keywords
  *  - `{text}` on-screen / page title in PascalCase, `{original}` the original name
+ *  - `{counter}` position within the folder (001, 002…), `{counter:N}` with N digits
+ *  - `{folder}` the target folder, `{people}` names given to faces, `{camera}` camera model
  *
  * Empty tokens disappear together with their separator, so `{date}_{category}_{labels}` for an
  * uncategorised photo becomes `2025-10-12_dog` rather than `2025-10-12__dog`.
  */
 class FileNameGenerator(private val zone: ZoneId = ZoneId.systemDefault()) {
 
-    private val tokenRegex = Regex("\\{(\\w+)\\}")
+    private val tokenRegex = Regex("\\{(\\w+)(?::(\\d{1,2}))?\\}")
     private val repeatedSeparators = Regex("([_\\-]){2,}")
 
-    fun generate(input: NameInput, settings: NamingSettings): String {
+    /**
+     * @param pattern a batch-rename pattern that replaces the configured template for this file.
+     */
+    fun generate(input: NameInput, settings: NamingSettings, pattern: String? = null): String {
         val sep = settings.separator.char
-        val template = templateFor(input, settings)
-        val rendered = tokenRegex.replace(template) { match -> renderToken(match.groupValues[1], input, settings) }
+        val template = pattern?.takeIf { it.isNotBlank() } ?: templateFor(input, settings)
+        val rendered = tokenRegex.replace(template) { match ->
+            renderToken(match.groupValues[1], match.groupValues[2].toIntOrNull(), input, settings)
+        }
         val collapsed = repeatedSeparators.replace(rendered) { it.value.first().toString() }
 
         var base = FileNameSanitizer.sanitizeBaseName(collapsed, sep)
@@ -78,24 +93,36 @@ class FileNameGenerator(private val zone: ZoneId = ZoneId.systemDefault()) {
         }
     }
 
-    private fun renderToken(token: String, input: NameInput, settings: NamingSettings): String {
+    private fun renderToken(token: String, width: Int?, input: NameInput, settings: NamingSettings): String {
         val sep = settings.separator.char
-        val value = when (token.lowercase()) {
+        val joiner = wordJoiner(sep)
+        val name = token.lowercase()
+        val value = when (name) {
             "date" -> formatDate(input.captureTimeMillis, settings.dateStyle)
-            "time" -> input.captureTimeMillis?.let { TIME_FORMAT.format(Instant.ofEpochMilli(it).atZone(zone)) }.orEmpty()
+            "time" -> formatWith(input.captureTimeMillis, "HHmmss")
+            "year" -> formatWith(input.captureTimeMillis, "yyyy")
+            "month" -> formatWith(input.captureTimeMillis, "MM")
+            "day" -> formatWith(input.captureTimeMillis, "dd")
             "category" -> input.category.nameToken
+            "label" -> input.tags.firstOrNull()?.let { phrase(it, joiner) }.orEmpty()
             "labels" -> input.tags
                 .take(settings.maxLabels.coerceIn(0, 6))
-                .map { phrase(it, wordJoiner(sep)) }
+                .map { phrase(it, joiner) }
                 .filter { it.isNotEmpty() }
                 .joinToString(sep.toString())
             "text" -> pascalCase(input.title.orEmpty())
             "original" -> input.originalBaseName
+            "counter" -> (input.counter ?: 1).toString().padStart((width ?: DEFAULT_COUNTER_WIDTH).coerceIn(1, 9), '0')
+            "folder" -> input.folder?.substringAfterLast('/')?.let { phrase(it, joiner) }.orEmpty()
+            "people" -> input.people.map { phrase(it, joiner) }.filter { it.isNotEmpty() }.joinToString(sep.toString())
+            "camera" -> input.camera?.let { phrase(it, joiner) }.orEmpty()
             else -> ""
         }
-        val lowercaseToken = token.lowercase() in setOf("category", "labels", "original")
-        return if (settings.lowercase && lowercaseToken) value.lowercase() else value
+        return if (settings.lowercase && name in LOWERCASE_TOKENS) value.lowercase() else value
     }
+
+    private fun formatWith(millis: Long?, pattern: String): String =
+        millis?.let { DateTimeFormatter.ofPattern(pattern).format(Instant.ofEpochMilli(it).atZone(zone)) }.orEmpty()
 
     private fun formatDate(millis: Long?, style: DateStyle): String {
         val pattern = style.pattern ?: return ""
@@ -118,8 +145,15 @@ class FileNameGenerator(private val zone: ZoneId = ZoneId.systemDefault()) {
     private fun withExtension(base: String, extension: String): String =
         if (extension.isEmpty()) base else "$base.${extension.lowercase()}"
 
-    private companion object {
-        val TIME_FORMAT: DateTimeFormatter = DateTimeFormatter.ofPattern("HHmmss")
-        val WORD_SPLIT = Regex("[^\\p{L}\\p{N}]+")
+    companion object {
+        const val DEFAULT_COUNTER_WIDTH = 3
+        private val WORD_SPLIT = Regex("[^\\p{L}\\p{N}]+")
+        private val LOWERCASE_TOKENS = setOf("category", "label", "labels", "original", "folder", "people", "camera")
+
+        /** Tokens offered in the pattern editor. */
+        val TOKENS = listOf(
+            "{date}", "{time}", "{year}", "{month}", "{day}", "{category}", "{label}", "{labels}",
+            "{text}", "{original}", "{counter}", "{counter:2}", "{folder}", "{people}", "{camera}",
+        )
     }
 }

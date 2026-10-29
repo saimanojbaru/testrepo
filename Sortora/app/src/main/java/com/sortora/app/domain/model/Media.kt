@@ -23,6 +23,11 @@ data class MediaFile(
     val pathHint: String? = null,
     /** MediaStore's DATE_TAKEN, when the file came from the media library. */
     val dateTakenMillis: Long? = null,
+    /**
+     * Document URI of the folder that contains this file, when known (files found by scanning a
+     * picked folder). Lets Undo put moved files back exactly where they were.
+     */
+    val parentUri: String? = null,
 ) {
     val extension: String
         get() = displayName.substringAfterLast('.', missingDelimiterValue = "").lowercase()

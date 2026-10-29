@@ -67,5 +67,6 @@ class ProgressNotifications @Inject constructor(@ApplicationContext private val 
         const val CHANNEL_ID = "sortora_progress"
         const val ANALYSIS_NOTIFICATION_ID = 1001
         const val APPLY_NOTIFICATION_ID = 1002
+        const val UNDO_NOTIFICATION_ID = 1003
     }
 }

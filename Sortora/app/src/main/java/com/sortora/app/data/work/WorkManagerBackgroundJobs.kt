@@ -47,6 +47,17 @@ class WorkManagerBackgroundJobs @Inject constructor(
         workManager.enqueueUniqueWork(applyName(sessionId), ExistingWorkPolicy.KEEP, request)
     }
 
+    override fun startUndo(batchId: Long, restoreTreeUri: String?) {
+        val request = OneTimeWorkRequestBuilder<UndoBatchWorker>()
+            .setInputData(workDataOf(SortoraWorker.KEY_SESSION_ID to batchId, UndoBatchWorker.KEY_RESTORE_TREE to restoreTreeUri))
+            .addTag(TAG)
+            .build()
+        // REPLACE: undoing again (e.g. with a restore folder) supersedes a finished or failed run.
+        workManager.enqueueUniqueWork(undoName(batchId), ExistingWorkPolicy.REPLACE, request)
+    }
+
+    override fun observeUndo(batchId: Long): Flow<JobProgress> = observe(undoName(batchId))
+
     override fun observeAnalysis(sessionId: Long): Flow<JobProgress> = observe(analysisName(sessionId))
 
     override fun observeApply(sessionId: Long): Flow<JobProgress> = observe(applyName(sessionId))
@@ -74,6 +85,7 @@ class WorkManagerBackgroundJobs @Inject constructor(
 
     private fun analysisName(id: Long) = "analyze_$id"
     private fun applyName(id: Long) = "apply_$id"
+    private fun undoName(id: Long) = "undo_$id"
 
     private companion object {
         const val TAG = "sortora"

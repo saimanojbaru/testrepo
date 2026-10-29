@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.sortora.app.domain.model.AnalysisOptions
 import com.sortora.app.domain.model.AppSettings
 import com.sortora.app.domain.model.ContentCategory
+import com.sortora.app.domain.model.DuplicateHandling
 import com.sortora.app.domain.model.NamingSettings
 import com.sortora.app.domain.model.OperationMode
 import com.sortora.app.domain.model.ThemeMode
@@ -57,6 +58,7 @@ class SettingsViewModel @Inject constructor(
     fun updateAnalysis(transform: (AnalysisOptions) -> AnalysisOptions) = launch { repo.updateAnalysis(transform) }
     fun setThemeMode(mode: ThemeMode) = launch { repo.setThemeMode(mode) }
     fun setDynamicColor(enabled: Boolean) = launch { repo.setDynamicColor(enabled) }
+    fun setDuplicateHandling(handling: DuplicateHandling) = launch { repo.setDuplicateHandling(handling) }
     fun setFolderName(category: ContentCategory, name: String) = launch { repo.setFolderName(category, name) }
     fun resetFolderNames() = launch { repo.resetFolderNames() }
     fun deleteCategory(id: String) = launch { repo.deleteCustomCategory(id) }

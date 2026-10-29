@@ -2,7 +2,10 @@ package com.sortora.app.data.ai
 
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.FaceDetection
+import android.graphics.PointF
+import android.graphics.Rect
 import com.google.mlkit.vision.face.FaceDetectorOptions
+import com.google.mlkit.vision.face.FaceLandmark
 import com.google.mlkit.vision.label.ImageLabeling
 import com.google.mlkit.vision.label.defaults.ImageLabelerOptions
 import com.google.mlkit.vision.objects.ObjectDetection
@@ -26,7 +29,7 @@ import java.io.Closeable
  *
  * Instances hold native resources; create one per batch and [close] it afterwards.
  */
-class MlKitVision(enableOcr: Boolean) : Closeable {
+class MlKitVision(enableOcr: Boolean, faceLandmarks: Boolean = false) : Closeable {
 
     private val labeler = ImageLabeling.getClient(
         ImageLabelerOptions.Builder().setConfidenceThreshold(LABEL_THRESHOLD).build(),
@@ -41,6 +44,8 @@ class MlKitVision(enableOcr: Boolean) : Closeable {
     private val faceDetector = FaceDetection.getClient(
         FaceDetectorOptions.Builder()
             .setPerformanceMode(FaceDetectorOptions.PERFORMANCE_MODE_FAST)
+            // Eye positions let face crops be aligned for grouping; only requested when needed.
+            .setLandmarkMode(if (faceLandmarks) FaceDetectorOptions.LANDMARK_MODE_ALL else FaceDetectorOptions.LANDMARK_MODE_NONE)
             .setMinFaceSize(0.05f)
             .build(),
     )
@@ -62,11 +67,22 @@ class MlKitVision(enableOcr: Boolean) : Closeable {
         return Objects(labels, detected.size, largest.coerceIn(0f, 1f))
     }
 
-    suspend fun faces(image: InputImage): FaceSummary {
+    /** A detected face in image pixels, with eye centres when landmarks are on. */
+    class DetectedFace(val box: Rect, val eyes: Pair<PointF, PointF>?)
+
+    suspend fun detectFaces(image: InputImage): List<DetectedFace> =
+        faceDetector.process(image).await().map { face ->
+            val left = face.getLandmark(FaceLandmark.LEFT_EYE)?.position
+            val right = face.getLandmark(FaceLandmark.RIGHT_EYE)?.position
+            DetectedFace(face.boundingBox, if (left != null && right != null) left to right else null)
+        }
+
+    suspend fun faces(image: InputImage): FaceSummary = summarize(detectFaces(image), image)
+
+    fun summarize(faces: List<DetectedFace>, image: InputImage): FaceSummary {
         val (width, height) = uprightSize(image)
-        val faces = faceDetector.process(image).await()
         if (faces.isEmpty()) return FaceSummary.NONE
-        val largest = faces.maxBy { it.boundingBox.width() * it.boundingBox.height() }.boundingBox
+        val largest = faces.maxBy { it.box.width() * it.box.height() }.box
         val area = largest.width().toFloat() * largest.height() / (width.toFloat() * height).coerceAtLeast(1f)
         return FaceSummary(
             count = faces.size,

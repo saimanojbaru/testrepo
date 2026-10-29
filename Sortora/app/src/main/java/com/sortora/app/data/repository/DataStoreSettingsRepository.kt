@@ -11,6 +11,7 @@ import com.sortora.app.domain.model.AnalysisOptions
 import com.sortora.app.domain.model.AppSettings
 import com.sortora.app.domain.model.ContentCategory
 import com.sortora.app.domain.model.DateStyle
+import com.sortora.app.domain.model.DuplicateHandling
 import com.sortora.app.domain.model.NamingPreset
 import com.sortora.app.domain.model.NamingSettings
 import com.sortora.app.domain.model.OperationMode
@@ -58,6 +59,9 @@ class DataStoreSettingsRepository @Inject constructor(
         val enableOcr = booleanPreferencesKey("enable_ocr")
         val videoFrames = intPreferencesKey("video_frames")
         val includeSubfolders = booleanPreferencesKey("include_subfolders")
+        val faceGrouping = booleanPreferencesKey("face_grouping")
+        val detectDuplicates = booleanPreferencesKey("detect_duplicates")
+        val duplicateHandling = stringPreferencesKey("duplicate_handling")
     }
 
     private val folderMapSerializer = MapSerializer(String.serializer(), String.serializer())
@@ -126,7 +130,11 @@ class DataStoreSettingsRepository @Inject constructor(
         prefs[Keys.enableOcr] = updated.enableOcr
         prefs[Keys.videoFrames] = updated.videoFrameCount.coerceIn(3, 12)
         prefs[Keys.includeSubfolders] = updated.includeSubfolders
+        prefs[Keys.faceGrouping] = updated.faceGrouping
+        prefs[Keys.detectDuplicates] = updated.detectDuplicates
     }
+
+    override suspend fun setDuplicateHandling(handling: DuplicateHandling) = edit { it[Keys.duplicateHandling] = handling.name }
 
     private suspend fun edit(block: (androidx.datastore.preferences.core.MutablePreferences) -> Unit) {
         store.edit { block(it) }
@@ -153,6 +161,7 @@ class DataStoreSettingsRepository @Inject constructor(
             groupByYear = prefs[Keys.groupByYear] ?: defaults.groupByYear,
             writeLogFile = prefs[Keys.writeLogFile] ?: defaults.writeLogFile,
             analysis = analysis(prefs),
+            duplicateHandling = enumOrDefault(prefs[Keys.duplicateHandling].orEmpty(), defaults.duplicateHandling),
         )
     }
 
@@ -175,6 +184,8 @@ class DataStoreSettingsRepository @Inject constructor(
             enableOcr = prefs[Keys.enableOcr] ?: d.enableOcr,
             videoFrameCount = prefs[Keys.videoFrames] ?: d.videoFrameCount,
             includeSubfolders = prefs[Keys.includeSubfolders] ?: d.includeSubfolders,
+            faceGrouping = prefs[Keys.faceGrouping] ?: d.faceGrouping,
+            detectDuplicates = prefs[Keys.detectDuplicates] ?: d.detectDuplicates,
         )
     }
 

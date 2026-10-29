@@ -6,17 +6,22 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
 import com.sortora.app.data.ai.OnDeviceMediaAnalyzer
+import com.sortora.app.data.file.SafContentHasher
 import com.sortora.app.data.file.SafFileOrganizer
 import com.sortora.app.data.file.SafTextFileWriter
+import com.sortora.app.data.local.FaceDao
 import com.sortora.app.data.local.LogDao
 import com.sortora.app.data.local.SessionDao
 import com.sortora.app.data.local.SortoraDatabase
 import com.sortora.app.data.media.SafMediaSourceRepository
 import com.sortora.app.data.repository.DataStoreSettingsRepository
+import com.sortora.app.data.repository.RoomFaceRepository
 import com.sortora.app.data.repository.RoomHistoryRepository
 import com.sortora.app.data.repository.RoomSessionRepository
 import com.sortora.app.data.work.WorkManagerBackgroundJobs
 import com.sortora.app.domain.repository.BackgroundJobs
+import com.sortora.app.domain.repository.ContentHasher
+import com.sortora.app.domain.repository.FaceRepository
 import com.sortora.app.domain.repository.FileOrganizer
 import com.sortora.app.domain.repository.HistoryRepository
 import com.sortora.app.domain.repository.MediaAnalyzer
@@ -43,6 +48,8 @@ object AppModule {
     @Singleton
     fun provideDatabase(@ApplicationContext context: Context): SortoraDatabase =
         Room.databaseBuilder(context, SortoraDatabase::class.java, "sortora.db")
+            // v1 only ever shipped as a pre-release test build; later versions must add real migrations.
+            .fallbackToDestructiveMigrationFrom(true, 1)
             .fallbackToDestructiveMigrationOnDowngrade(dropAllTables = true)
             .build()
 
@@ -51,6 +58,9 @@ object AppModule {
 
     @Provides
     fun provideLogDao(db: SortoraDatabase): LogDao = db.logDao()
+
+    @Provides
+    fun provideFaceDao(db: SortoraDatabase): FaceDao = db.faceDao()
 
     @Provides
     @Singleton
@@ -76,4 +86,6 @@ abstract class BindingsModule {
     @Binds abstract fun organizer(impl: SafFileOrganizer): FileOrganizer
     @Binds abstract fun jobs(impl: WorkManagerBackgroundJobs): BackgroundJobs
     @Binds abstract fun textWriter(impl: SafTextFileWriter): TextFileWriter
+    @Binds abstract fun contentHasher(impl: SafContentHasher): ContentHasher
+    @Binds abstract fun faces(impl: RoomFaceRepository): FaceRepository
 }

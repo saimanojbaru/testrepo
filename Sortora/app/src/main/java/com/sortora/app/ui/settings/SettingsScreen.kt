@@ -67,6 +67,7 @@ import com.sortora.app.BuildConfig
 import com.sortora.app.R
 import com.sortora.app.domain.model.ContentCategory
 import com.sortora.app.domain.model.DateStyle
+import com.sortora.app.domain.model.DuplicateHandling
 import com.sortora.app.domain.model.NamingPreset
 import com.sortora.app.domain.model.NamingSettings
 import com.sortora.app.domain.model.OperationMode
@@ -127,18 +128,29 @@ fun SettingsScreen(onBack: () -> Unit, onReplayOnboarding: () -> Unit, viewModel
                     Text(stringResource(R.string.settings_default_action), style = MaterialTheme.typography.bodyLarge)
                     Spacer(Modifier.height(8.dp))
                     SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
-                        listOf(OperationMode.COPY to R.string.mode_copy, OperationMode.MOVE to R.string.mode_move).forEachIndexed { i, (mode, label) ->
+                        val modes = listOf(
+                            OperationMode.COPY to R.string.mode_copy,
+                            OperationMode.MOVE to R.string.mode_move,
+                            OperationMode.RENAME to R.string.mode_rename,
+                        )
+                        modes.forEachIndexed { i, (mode, label) ->
                             SegmentedButton(
                                 selected = settings.defaultMode == mode,
                                 onClick = { viewModel.setDefaultMode(mode) },
-                                shape = SegmentedButtonDefaults.itemShape(i, 2),
+                                shape = SegmentedButtonDefaults.itemShape(i, modes.size),
                             ) { Text(stringResource(label)) }
                         }
                     }
                     Text(
-                        stringResource(if (settings.defaultMode == OperationMode.COPY) R.string.mode_copy_hint else R.string.mode_move_hint),
+                        stringResource(
+                            when (settings.defaultMode) {
+                                OperationMode.COPY -> R.string.mode_copy_hint
+                                OperationMode.MOVE -> R.string.mode_move_hint
+                                OperationMode.RENAME -> R.string.mode_rename_hint
+                            },
+                        ),
                         style = MaterialTheme.typography.bodySmall,
-                        color = if (settings.defaultMode == OperationMode.MOVE) MaterialTheme.colorScheme.error else MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = if (settings.defaultMode == OperationMode.COPY) MaterialTheme.colorScheme.onSurfaceVariant else MaterialTheme.colorScheme.error,
                         modifier = Modifier.padding(vertical = 4.dp),
                     )
                 }
@@ -303,6 +315,39 @@ fun SettingsScreen(onBack: () -> Unit, onReplayOnboarding: () -> Unit, viewModel
                     viewModel.updateAnalysis { it.copy(includeSubfolders = v) }
                 }
             }
+            item {
+                SwitchRow(stringResource(R.string.settings_face_grouping), stringResource(R.string.settings_face_grouping_hint), settings.analysis.faceGrouping) { v ->
+                    viewModel.updateAnalysis { it.copy(faceGrouping = v) }
+                }
+            }
+
+            // Duplicates
+            item { SectionHeader(stringResource(R.string.settings_section_duplicates)) }
+            item {
+                SwitchRow(stringResource(R.string.settings_detect_duplicates), stringResource(R.string.settings_detect_duplicates_hint), settings.analysis.detectDuplicates) { v ->
+                    viewModel.updateAnalysis { it.copy(detectDuplicates = v) }
+                }
+            }
+            if (settings.analysis.detectDuplicates) {
+                items(DuplicateHandling.entries) { handling ->
+                    Row(
+                        Modifier
+                            .fillMaxWidth()
+                            .selectable(selected = settings.duplicateHandling == handling, role = Role.RadioButton) {
+                                viewModel.setDuplicateHandling(handling)
+                            }
+                            .padding(horizontal = 16.dp, vertical = 6.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        RadioButton(selected = settings.duplicateHandling == handling, onClick = null)
+                        Spacer(Modifier.width(12.dp))
+                        Column {
+                            Text(stringResource(handling.labelRes()), style = MaterialTheme.typography.bodyLarge)
+                            Text(stringResource(handling.hintRes()), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                        }
+                    }
+                }
+            }
 
             // Appearance
             item { SectionHeader(stringResource(R.string.settings_section_appearance)) }
@@ -361,12 +406,25 @@ fun SettingsScreen(onBack: () -> Unit, onReplayOnboarding: () -> Unit, viewModel
     }
 }
 
+private fun DuplicateHandling.labelRes(): Int = when (this) {
+    DuplicateHandling.SKIP_EXTRAS -> R.string.duplicates_skip
+    DuplicateHandling.SEPARATE_FOLDER -> R.string.duplicates_folder
+    DuplicateHandling.KEEP_ALL -> R.string.duplicates_keep
+}
+
+private fun DuplicateHandling.hintRes(): Int = when (this) {
+    DuplicateHandling.SKIP_EXTRAS -> R.string.duplicates_skip_hint
+    DuplicateHandling.SEPARATE_FOLDER -> R.string.duplicates_folder_hint
+    DuplicateHandling.KEEP_ALL -> R.string.duplicates_keep_hint
+}
+
 private fun presetLabel(preset: NamingPreset): Int = when (preset) {
     NamingPreset.DATE_CATEGORY_LABELS -> R.string.preset_date_category_labels
     NamingPreset.DATE_TIME_CATEGORY_LABELS -> R.string.preset_date_time_category_labels
     NamingPreset.CATEGORY_LABELS -> R.string.preset_category_labels
     NamingPreset.DATE_LABELS -> R.string.preset_date_labels
     NamingPreset.ORIGINAL_LABELS -> R.string.preset_original_labels
+    NamingPreset.LABEL_COUNTER -> R.string.preset_label_counter
     NamingPreset.CUSTOM -> R.string.preset_custom
 }
 
@@ -378,7 +436,7 @@ private fun NamingExamples(naming: NamingSettings) {
         val date = LocalDateTime.of(2025, 10, 12, 14, 30, 15).atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
         listOf(
             NameInput("VID_20251012_143015", "mp4", date, ContentCategory.TALKING_HEAD, listOf("person", "desk"), null),
-            NameInput("IMG_4821", "jpg", date, ContentCategory.PET, listOf("dog", "beach"), null),
+            NameInput("IMG_4821", "jpg", date, ContentCategory.PET, listOf("dog", "beach"), null, counter = 7),
             NameInput("Screenshot_20251012-143015", "png", date, ContentCategory.SCREENSHOT, emptyList(), "Settings"),
         ).map { generator.generate(it, naming) }
     }

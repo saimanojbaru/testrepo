@@ -4,7 +4,13 @@ import com.sortora.app.domain.model.AnalysisOptions
 import com.sortora.app.domain.model.AnalysisResult
 import com.sortora.app.domain.model.AppSettings
 import com.sortora.app.domain.model.ApplyStatus
+import com.sortora.app.domain.duplicates.DuplicateCandidate
+import com.sortora.app.domain.duplicates.DuplicateGroup
 import com.sortora.app.domain.model.ContentCategory
+import com.sortora.app.domain.model.DuplicateHandling
+import com.sortora.app.domain.model.FaceRecord
+import com.sortora.app.domain.model.FaceSample
+import com.sortora.app.domain.model.UndoStatus
 import com.sortora.app.domain.model.LogBatch
 import com.sortora.app.domain.model.MediaFile
 import com.sortora.app.domain.model.NamingSettings
@@ -35,6 +41,7 @@ interface SettingsRepository {
     suspend fun setGroupByYear(enabled: Boolean)
     suspend fun setWriteLogFile(enabled: Boolean)
     suspend fun updateAnalysis(transform: (AnalysisOptions) -> AnalysisOptions)
+    suspend fun setDuplicateHandling(handling: DuplicateHandling)
 }
 
 /** Sort sessions and their items (Room). */
@@ -50,12 +57,29 @@ interface SessionRepository {
     suspend fun openSessions(): List<SortSession>
     suspend fun getItems(sessionId: Long): List<SessionItem>
     suspend fun pendingItems(sessionId: Long): List<SessionItem>
-    suspend fun saveAnalysis(itemId: Long, result: AnalysisResult)
+    suspend fun saveAnalysis(itemId: Long, result: AnalysisResult, imageEmbedding: FloatArray? = null)
     suspend fun markAnalysisFailed(itemId: Long, error: String)
     suspend fun setStatus(sessionId: Long, status: SessionStatus)
     suspend fun updateEdit(itemId: Long, customName: String?, customFolder: String?)
     suspend fun setIncluded(itemId: Long, included: Boolean)
     suspend fun setIncludedForAll(sessionId: Long, included: Boolean)
+
+    // Bulk edits from the preview's filtered selection.
+    suspend fun setIncluded(itemIds: Collection<Long>, included: Boolean)
+    suspend fun setCustomFolder(itemIds: Collection<Long>, folder: String?)
+    /** Sets a batch-rename pattern (clearing any typed name), or clears it when [pattern] is null. */
+    suspend fun setCustomPattern(itemIds: Collection<Long>, pattern: String?)
+    suspend fun resetEdits(itemIds: Collection<Long>)
+
+    // Duplicates.
+    suspend fun duplicateCandidates(sessionId: Long): List<DuplicateCandidate>
+    suspend fun saveContentHash(itemId: Long, hash: String)
+    /** Replaces the session's duplicate groups. Returns the ids of items that weren't in a group before. */
+    suspend fun saveDuplicateGroups(sessionId: Long, groups: List<DuplicateGroup>, analyzedCount: Int): Set<Long>
+    /** Makes [itemId] the copy to keep in its duplicate group. */
+    suspend fun setDuplicateKeeper(itemId: Long)
+    /** Number of analysed items the stored duplicate groups were computed from (-1 = never). */
+    suspend fun duplicatesComputedFor(sessionId: Long): Int
     /** Freezes the previewed plan: itemId → (name, folder). Items not in [plan] are excluded. */
     suspend fun freezePlan(sessionId: Long, mode: OperationMode, plan: Map<Long, Pair<String, String>>)
     suspend fun itemsToApply(sessionId: Long): List<SessionItem>
@@ -72,7 +96,18 @@ interface HistoryRepository {
     suspend fun entries(batchId: Long): List<OperationLogEntry>
     suspend fun allEntries(): List<OperationLogEntry>
     suspend fun record(entry: OperationLogEntry)
+    suspend fun markUndo(entryId: Long, status: UndoStatus, message: String?)
     suspend fun clear()
+}
+
+/** Faces found in the current session (embeddings + thumbnails), deleted with the session. */
+interface FaceRepository {
+    suspend fun saveFaces(sessionId: Long, itemId: Long, faces: List<FaceSample>)
+    fun observeFaces(sessionId: Long): Flow<List<FaceRecord>>
+    suspend fun setPersonName(faceIds: Collection<Long>, name: String?)
+    /** itemId → names given to faces in that item. */
+    fun observePeople(sessionId: Long): Flow<Map<Long, List<String>>>
+    suspend fun deleteOrphanedThumbnails()
 }
 
 /** Turns picked documents / folders into [MediaFile]s (Storage Access Framework). */

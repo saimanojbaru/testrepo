@@ -13,6 +13,7 @@ import com.sortora.app.domain.model.SessionStatus
 import com.sortora.app.domain.repository.SessionRepository
 import com.sortora.app.domain.usecase.RunAnalysisUseCase
 import com.sortora.app.domain.usecase.RunApplyUseCase
+import com.sortora.app.domain.usecase.UndoBatchUseCase
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.CancellationException
@@ -41,9 +42,12 @@ abstract class SortoraWorker(
     protected suspend fun startForeground() {
         try {
             setForeground(getForegroundInfo())
-        } catch (e: IllegalStateException) {
-            // Android 12+ may refuse to start a foreground service from the background.
-            // The work still runs; it just may be paused by the system on very large batches.
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            // Android 12+ may refuse to start a foreground service from the background, and some
+            // devices throw other errors here. The work still runs; it just may be paused by the
+            // system on very large batches.
             Log.w(TAG, "Running without foreground service", e)
         }
     }
@@ -135,5 +139,36 @@ class ApplyPlanWorker @AssistedInject constructor(
 
     companion object {
         const val KEY_ERROR = "error"
+    }
+}
+
+@HiltWorker
+class UndoBatchWorker @AssistedInject constructor(
+    @Assisted context: Context,
+    @Assisted params: WorkerParameters,
+    notifications: ProgressNotifications,
+    private val undoBatch: UndoBatchUseCase,
+) : SortoraWorker(context, params, notifications) {
+
+    override val notificationId = ProgressNotifications.UNDO_NOTIFICATION_ID
+    override val titleRes = R.string.notification_undo_title
+
+    override suspend fun doWork(): Result {
+        // For undo, the "session id" input is the history batch id (batches are keyed by session).
+        if (sessionId < 0) return Result.failure()
+        startForeground()
+        return try {
+            undoBatch(sessionId, inputData.getString(KEY_RESTORE_TREE), ::reportProgress)
+            Result.success()
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: Exception) {
+            Log.e("UndoBatchWorker", "Undo failed", e)
+            Result.failure(workDataOf(ApplyPlanWorker.KEY_ERROR to (e.message ?: e.javaClass.simpleName)))
+        }
+    }
+
+    companion object {
+        const val KEY_RESTORE_TREE = "restore_tree"
     }
 }

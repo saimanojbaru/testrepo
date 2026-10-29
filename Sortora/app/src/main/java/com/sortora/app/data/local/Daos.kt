@@ -43,8 +43,8 @@ interface SessionDao {
     @Query("SELECT * FROM session_items WHERE sessionId = :sessionId AND analysisStatus = 'PENDING' ORDER BY id")
     suspend fun pendingItems(sessionId: Long): List<SessionItemEntity>
 
-    @Query("UPDATE session_items SET analysisStatus = :status, analysisJson = :json, category = :category, errorMessage = :error WHERE id = :itemId")
-    suspend fun updateAnalysis(itemId: Long, status: String, json: String?, category: String?, error: String?)
+    @Query("UPDATE session_items SET analysisStatus = :status, analysisJson = :json, category = :category, errorMessage = :error, embedding = :embedding WHERE id = :itemId")
+    suspend fun updateAnalysis(itemId: Long, status: String, json: String?, category: String?, error: String?, embedding: ByteArray?)
 
     @Query("SELECT category, COUNT(*) AS count FROM session_items WHERE sessionId = :sessionId AND category IS NOT NULL GROUP BY category")
     fun observeCategoryCounts(sessionId: Long): Flow<List<CategoryCount>>
@@ -63,6 +63,52 @@ interface SessionDao {
 
     @Query("UPDATE session_items SET included = :included WHERE sessionId = :sessionId AND analysisStatus = 'DONE'")
     suspend fun setIncludedForAll(sessionId: Long, included: Boolean)
+
+    @Query("UPDATE session_items SET included = :included WHERE id IN (:itemIds)")
+    suspend fun setIncluded(itemIds: List<Long>, included: Boolean)
+
+    @Query("UPDATE session_items SET customFolder = :folder WHERE id IN (:itemIds)")
+    suspend fun setCustomFolder(itemIds: List<Long>, folder: String?)
+
+    @Query("UPDATE session_items SET customPattern = :pattern, customName = NULL WHERE id IN (:itemIds)")
+    suspend fun setCustomPattern(itemIds: List<Long>, pattern: String?)
+
+    @Query("UPDATE session_items SET customPattern = NULL, customName = NULL, customFolder = NULL WHERE id IN (:itemIds)")
+    suspend fun resetEdits(itemIds: List<Long>)
+
+    @Query("SELECT id, sourceUri, kind, sizeBytes, contentHash, embedding, analysisJson FROM session_items WHERE sessionId = :sessionId AND analysisStatus = 'DONE' ORDER BY id")
+    suspend fun duplicateCandidates(sessionId: Long): List<DuplicateCandidateRow>
+
+    @Query("UPDATE session_items SET contentHash = :hash WHERE id = :itemId")
+    suspend fun saveContentHash(itemId: Long, hash: String)
+
+    @Query("SELECT id FROM session_items WHERE sessionId = :sessionId AND duplicateGroup IS NOT NULL")
+    suspend fun groupedItemIds(sessionId: Long): List<Long>
+
+    @Query("UPDATE session_items SET duplicateGroup = NULL, duplicateExact = 0, duplicateKeeper = 0 WHERE sessionId = :sessionId")
+    suspend fun clearDuplicates(sessionId: Long)
+
+    @Query("UPDATE session_items SET duplicateGroup = :group, duplicateExact = :exact, duplicateKeeper = (id = :keeper) WHERE id IN (:itemIds)")
+    suspend fun setDuplicateGroup(itemIds: List<Long>, group: Long, exact: Boolean, keeper: Long)
+
+    @Query("UPDATE sessions SET duplicatesComputedFor = :count WHERE id = :sessionId")
+    suspend fun setDuplicatesComputedFor(sessionId: Long, count: Int)
+
+    @Query("SELECT duplicatesComputedFor FROM sessions WHERE id = :sessionId")
+    suspend fun duplicatesComputedFor(sessionId: Long): Int?
+
+    @Query("SELECT duplicateGroup FROM session_items WHERE id = :itemId")
+    suspend fun duplicateGroupOf(itemId: Long): Long?
+
+    @Query("UPDATE session_items SET duplicateKeeper = (id = :itemId) WHERE duplicateGroup = :group AND sessionId = (SELECT sessionId FROM session_items WHERE id = :itemId)")
+    suspend fun setKeeper(itemId: Long, group: Long)
+
+    @Transaction
+    suspend fun replaceDuplicateGroups(sessionId: Long, groups: List<Triple<List<Long>, Boolean, Long>>, analyzedCount: Int) {
+        clearDuplicates(sessionId)
+        groups.forEachIndexed { index, (members, exact, keeper) -> setDuplicateGroup(members, index + 1L, exact, keeper) }
+        setDuplicatesComputedFor(sessionId, analyzedCount)
+    }
 
     @Query("UPDATE session_items SET plannedName = NULL, plannedFolder = NULL WHERE sessionId = :sessionId AND applyStatus IS NULL")
     suspend fun clearPlan(sessionId: Long)
@@ -87,6 +133,28 @@ interface SessionDao {
     suspend fun purgeFinished()
 }
 
+private const val UNDOABLE = """
+    (targetUri IS NOT NULL AND status IN ('SUCCESS', 'COPIED_ORIGINAL_KEPT') AND (undoStatus IS NULL OR undoStatus != 'UNDONE'))
+"""
+
+@Dao
+interface FaceDao {
+    @Insert
+    suspend fun insertAll(faces: List<FaceEntity>)
+
+    @Query("SELECT * FROM faces WHERE sessionId = :sessionId ORDER BY id")
+    fun observeFaces(sessionId: Long): Flow<List<FaceEntity>>
+
+    @Query("UPDATE faces SET personName = :name WHERE id IN (:faceIds)")
+    suspend fun setPersonName(faceIds: List<Long>, name: String?)
+
+    @Query("SELECT DISTINCT itemId, personName FROM faces WHERE sessionId = :sessionId AND personName IS NOT NULL AND personName != '' ORDER BY id")
+    fun observePeople(sessionId: Long): Flow<List<PersonRow>>
+
+    @Query("SELECT DISTINCT sessionId FROM faces")
+    suspend fun sessionIdsWithFaces(): List<Long>
+}
+
 @Dao
 interface LogDao {
     @Insert
@@ -96,11 +164,17 @@ interface LogDao {
         """
         SELECT batchId, MIN(timestamp) AS timestamp, mode, COUNT(*) AS total,
             SUM(CASE WHEN status IN ('SUCCESS', 'COPIED_ORIGINAL_KEPT') THEN 1 ELSE 0 END) AS succeeded,
-            SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failed
+            SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) AS failed,
+            SUM(CASE WHEN undoStatus = 'UNDONE' THEN 1 ELSE 0 END) AS undone,
+            SUM(CASE WHEN $UNDOABLE THEN 1 ELSE 0 END) AS undoable,
+            MAX(CASE WHEN $UNDOABLE AND mode = 'MOVE' AND status = 'SUCCESS' AND sourceParentUri IS NULL THEN 1 ELSE 0 END) AS needsRestoreFolder
         FROM operation_log GROUP BY batchId ORDER BY timestamp DESC
         """,
     )
     fun observeBatches(): Flow<List<LogBatchRow>>
+
+    @Query("UPDATE operation_log SET undoStatus = :status, undoMessage = :message WHERE id = :entryId")
+    suspend fun markUndo(entryId: Long, status: String, message: String?)
 
     @Query("SELECT * FROM operation_log WHERE batchId = :batchId ORDER BY id")
     fun observeEntries(batchId: Long): Flow<List<OperationLogEntity>>

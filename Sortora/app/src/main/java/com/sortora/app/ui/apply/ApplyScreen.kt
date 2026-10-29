@@ -105,7 +105,7 @@ class ApplyViewModel @Inject constructor(
 @Composable
 fun ApplyScreen(onDone: () -> Unit, onOpenHistory: () -> Unit, viewModel: ApplyViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    val move = state.session?.mode == OperationMode.MOVE
+    val mode = state.session?.mode ?: OperationMode.COPY
 
     Scaffold(
         topBar = {
@@ -115,7 +115,8 @@ fun ApplyScreen(onDone: () -> Unit, onOpenHistory: () -> Unit, viewModel: ApplyV
                         stringResource(
                             when {
                                 state.finished -> R.string.apply_title_done
-                                move -> R.string.apply_title_moving
+                                mode == OperationMode.MOVE -> R.string.apply_title_moving
+                                mode == OperationMode.RENAME -> R.string.apply_title_renaming
                                 else -> R.string.apply_title_copying
                             },
                         ),
@@ -164,7 +165,14 @@ fun ApplyScreen(onDone: () -> Unit, onOpenHistory: () -> Unit, viewModel: ApplyV
                     ResultRow(
                         Icons.Outlined.CheckCircle,
                         MaterialTheme.colorScheme.primary,
-                        pluralStringResource(if (move) R.plurals.apply_moved else R.plurals.apply_copied, state.summary.succeeded, state.summary.succeeded),
+                        pluralStringResource(
+                            when (mode) {
+                                OperationMode.COPY -> R.plurals.apply_copied
+                                OperationMode.MOVE -> R.plurals.apply_moved
+                                OperationMode.RENAME -> R.plurals.apply_renamed
+                            },
+                            state.summary.succeeded, state.summary.succeeded,
+                        ),
                     )
                 }
                 if (state.summary.keptOriginal > 0) {
@@ -186,7 +194,7 @@ fun ApplyScreen(onDone: () -> Unit, onOpenHistory: () -> Unit, viewModel: ApplyV
                     }
                 }
                 item {
-                    Text(stringResource(R.string.apply_log_saved), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text(stringResource(R.string.apply_log_saved_undo), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
             items(state.problems, key = { it.id }) { item ->

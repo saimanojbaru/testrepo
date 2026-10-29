@@ -41,7 +41,7 @@ class VideoFrameExtractor @Inject constructor(@ApplicationContext private val co
                 // Sample the middle of each slice, skipping the very first/last moments (fades, black frames).
                 val timeUs = if (duration > 0) (duration * 1000L * (2 * index + 1)) / (2L * count) else 0L
                 grabFrame(retriever, timeUs, maxDimension)?.let { bitmap ->
-                    Frame(bitmap, residualRotation(bitmap, rawWidth, rawHeight, rotation))
+                    Frame(upright(bitmap, residualRotation(bitmap, rawWidth, rawHeight, rotation)), 0)
                 }
             }
             return Result(frames, info)
@@ -82,6 +82,13 @@ class VideoFrameExtractor @Inject constructor(@ApplicationContext private val co
         val scale = maxDimension.toFloat() / longest
         return bitmap.scale((bitmap.width * scale).roundToInt(), (bitmap.height * scale).roundToInt())
             .also { if (it !== bitmap) bitmap.recycle() }
+    }
+
+    /** Rotates a frame so pixels and detected coordinates line up (needed for face crops). */
+    private fun upright(bitmap: Bitmap, degrees: Int): Bitmap {
+        if (degrees == 0) return bitmap
+        val matrix = android.graphics.Matrix().apply { postRotate(degrees.toFloat()) }
+        return Bitmap.createBitmap(bitmap, 0, 0, bitmap.width, bitmap.height, matrix, true).also { if (it !== bitmap) bitmap.recycle() }
     }
 
     /**

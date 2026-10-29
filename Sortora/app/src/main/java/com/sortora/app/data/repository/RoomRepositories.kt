@@ -8,7 +8,12 @@ import com.sortora.app.data.local.SessionWithCounts
 import com.sortora.app.domain.model.AnalysisResult
 import com.sortora.app.domain.model.AnalysisStatus
 import com.sortora.app.domain.model.ApplyStatus
+import com.sortora.app.data.local.EmbeddingCodec
+import com.sortora.app.domain.duplicates.DuplicateCandidate
+import com.sortora.app.domain.duplicates.DuplicateGroup
 import com.sortora.app.domain.model.ContentCategory
+import com.sortora.app.domain.model.DuplicateInfo
+import com.sortora.app.domain.model.UndoStatus
 import com.sortora.app.domain.model.LogBatch
 import com.sortora.app.domain.model.MediaFile
 import com.sortora.app.domain.model.MediaKind
@@ -23,6 +28,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.json.Json
 import java.util.concurrent.ConcurrentHashMap
@@ -33,7 +39,13 @@ import javax.inject.Singleton
 class RoomSessionRepository @Inject constructor(
     private val dao: SessionDao,
     private val json: Json,
+    private val thumbnails: FaceThumbnailStore,
 ) : SessionRepository {
+
+    private companion object {
+        /** Keeps "IN (...)" lists well under SQLite's variable limit. */
+        const val SQL_CHUNK = 500
+    }
 
     override suspend fun createSession(sourceLabel: String, files: List<MediaFile>): Long {
         val id = dao.insertSession(
@@ -55,6 +67,7 @@ class RoomSessionRepository @Inject constructor(
                     kind = file.kind.name,
                     pathHint = file.pathHint,
                     dateTaken = file.dateTakenMillis,
+                    parentUri = file.parentUri,
                     analysisStatus = AnalysisStatus.PENDING.name,
                 )
             },
@@ -77,11 +90,14 @@ class RoomSessionRepository @Inject constructor(
 
     override suspend fun pendingItems(sessionId: Long): List<SessionItem> = dao.pendingItems(sessionId).map { it.toDomain() }
 
-    override suspend fun saveAnalysis(itemId: Long, result: AnalysisResult) =
-        dao.updateAnalysis(itemId, AnalysisStatus.DONE.name, json.encodeToString(AnalysisResult.serializer(), result), result.category.name, null)
+    override suspend fun saveAnalysis(itemId: Long, result: AnalysisResult, imageEmbedding: FloatArray?) =
+        dao.updateAnalysis(
+            itemId, AnalysisStatus.DONE.name, json.encodeToString(AnalysisResult.serializer(), result), result.category.name, null,
+            imageEmbedding?.let(EmbeddingCodec::encode),
+        )
 
     override suspend fun markAnalysisFailed(itemId: Long, error: String) =
-        dao.updateAnalysis(itemId, AnalysisStatus.FAILED.name, null, null, error)
+        dao.updateAnalysis(itemId, AnalysisStatus.FAILED.name, null, null, error, null)
 
     override fun observeCategoryCounts(sessionId: Long): Flow<Map<ContentCategory, Int>> =
         dao.observeCategoryCounts(sessionId).map { rows ->
@@ -97,6 +113,49 @@ class RoomSessionRepository @Inject constructor(
 
     override suspend fun setIncludedForAll(sessionId: Long, included: Boolean) = dao.setIncludedForAll(sessionId, included)
 
+    override suspend fun setIncluded(itemIds: Collection<Long>, included: Boolean) =
+        itemIds.chunked(SQL_CHUNK).forEach { dao.setIncluded(it, included) }
+
+    override suspend fun setCustomFolder(itemIds: Collection<Long>, folder: String?) =
+        itemIds.chunked(SQL_CHUNK).forEach { dao.setCustomFolder(it, folder?.takeIf { f -> f.isNotBlank() }) }
+
+    override suspend fun setCustomPattern(itemIds: Collection<Long>, pattern: String?) =
+        itemIds.chunked(SQL_CHUNK).forEach { dao.setCustomPattern(it, pattern?.takeIf { p -> p.isNotBlank() }) }
+
+    override suspend fun resetEdits(itemIds: Collection<Long>) = itemIds.chunked(SQL_CHUNK).forEach { dao.resetEdits(it) }
+
+    override suspend fun duplicateCandidates(sessionId: Long): List<DuplicateCandidate> =
+        dao.duplicateCandidates(sessionId).map { row ->
+            val analysis = row.analysisJson?.let { decodeAnalysis(row.id, it) }
+            DuplicateCandidate(
+                itemId = row.id,
+                uri = row.sourceUri,
+                kind = enumOrDefault(row.kind, MediaKind.IMAGE),
+                sizeBytes = row.sizeBytes,
+                contentHash = row.contentHash,
+                perceptualHash = analysis?.perceptualHash,
+                embedding = row.embedding?.let(EmbeddingCodec::decode),
+                width = analysis?.metadata?.width,
+                height = analysis?.metadata?.height,
+                captureTimeMillis = analysis?.metadata?.captureTimeMillis,
+            )
+        }
+
+    override suspend fun saveContentHash(itemId: Long, hash: String) = dao.saveContentHash(itemId, hash)
+
+    override suspend fun saveDuplicateGroups(sessionId: Long, groups: List<DuplicateGroup>, analyzedCount: Int): Set<Long> {
+        val before = dao.groupedItemIds(sessionId).toSet()
+        dao.replaceDuplicateGroups(sessionId, groups.map { Triple(it.members, it.exact, it.keeper) }, analyzedCount)
+        return groups.flatMap { it.members }.filterNot { it in before }.toSet()
+    }
+
+    override suspend fun setDuplicateKeeper(itemId: Long) {
+        val group = dao.duplicateGroupOf(itemId) ?: return
+        dao.setKeeper(itemId, group)
+    }
+
+    override suspend fun duplicatesComputedFor(sessionId: Long): Int = dao.duplicatesComputedFor(sessionId) ?: -1
+
     override suspend fun freezePlan(sessionId: Long, mode: OperationMode, plan: Map<Long, Pair<String, String>>) =
         dao.freezePlan(sessionId, mode.name, plan)
 
@@ -110,6 +169,9 @@ class RoomSessionRepository @Inject constructor(
     override suspend fun purgeFinishedSessions() {
         dao.purgeFinished()
         decoded.clear()
+        // Face rows were removed by the cascade; drop their thumbnail files too.
+        val live = dao.openSessions().map { it.session.id }.toSet()
+        withContext(Dispatchers.IO) { thumbnails.retainOnly(live) }
     }
 
     private fun SessionWithCounts.toDomain() = SortSession(
@@ -135,17 +197,20 @@ class RoomSessionRepository @Inject constructor(
             kind = enumOrDefault(kind, MediaKind.IMAGE),
             pathHint = pathHint,
             dateTakenMillis = dateTaken,
+            parentUri = parentUri,
         ),
         analysisStatus = enumOrDefault(analysisStatus, AnalysisStatus.PENDING),
         analysis = analysisJson?.let { decodeAnalysis(id, it) },
         error = errorMessage,
         customName = customName,
         customFolder = customFolder,
+        customPattern = customPattern,
         included = included,
         plannedName = plannedName,
         plannedFolder = plannedFolder,
         applyStatus = applyStatus?.let { enumOrDefault(it, ApplyStatus.FAILED) },
         applyMessage = applyMessage,
+        duplicate = duplicateGroup?.let { DuplicateInfo(it, duplicateExact, duplicateKeeper) },
     )
 
     /**
@@ -171,7 +236,10 @@ class RoomHistoryRepository @Inject constructor(private val dao: LogDao) : Histo
 
     override fun observeBatches(): Flow<List<LogBatch>> = dao.observeBatches().map { rows ->
         rows.map {
-            LogBatch(it.batchId, it.timestamp, enumOrDefault(it.mode, OperationMode.COPY), it.total, it.succeeded, it.failed)
+            LogBatch(
+                it.batchId, it.timestamp, enumOrDefault(it.mode, OperationMode.COPY), it.total, it.succeeded, it.failed,
+                it.undone, it.undoable, it.needsRestoreFolder,
+            )
         }
     }
 
@@ -194,8 +262,12 @@ class RoomHistoryRepository @Inject constructor(private val dao: LogDao) : Histo
             targetUri = entry.targetUri,
             status = entry.status.name,
             message = entry.message,
+            sourceParentUri = entry.sourceParentUri,
+            sizeBytes = entry.sizeBytes,
         ),
     )
+
+    override suspend fun markUndo(entryId: Long, status: UndoStatus, message: String?) = dao.markUndo(entryId, status.name, message)
 
     override suspend fun clear() = dao.clear()
 
@@ -211,6 +283,10 @@ class RoomHistoryRepository @Inject constructor(private val dao: LogDao) : Histo
         targetUri = targetUri,
         status = enumOrDefault(status, ApplyStatus.FAILED),
         message = message,
+        sourceParentUri = sourceParentUri,
+        sizeBytes = sizeBytes,
+        undoStatus = undoStatus?.let { enumOrDefault(it, UndoStatus.FAILED) },
+        undoMessage = undoMessage,
     )
 }
 

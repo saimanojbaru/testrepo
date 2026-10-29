@@ -81,4 +81,24 @@ data class AnalysisResult(
     val tags: List<String> = emptyList(),
     /** True when pixels could not be decoded and only metadata was used. */
     val limited: Boolean = false,
+    /** 64-bit difference hash for near-duplicate detection (middle frame for videos). */
+    val perceptualHash: Long? = null,
+    /** Variance of the Laplacian at ≤512 px; low values mean blurry. */
+    val sharpness: Float? = null,
+)
+
+/** One face found during analysis, ready for clustering. Never leaves the device. */
+class FaceSample(
+    /** L2-normalised embedding of the aligned face crop. */
+    val embedding: FloatArray,
+    /** Small JPEG of the crop, shown in the face groups screen. */
+    val thumbnailJpeg: ByteArray,
+)
+
+/** Everything one analysis step produces. */
+class AnalysisOutput(
+    val result: AnalysisResult,
+    val faces: List<FaceSample> = emptyList(),
+    /** L2-normalised whole-image embedding, used to confirm near-duplicates. */
+    val imageEmbedding: FloatArray? = null,
 )

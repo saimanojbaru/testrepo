@@ -12,6 +12,7 @@ import com.sortora.app.domain.repository.FileOrganizer
 import com.sortora.app.domain.repository.OrganizerBatch
 import com.sortora.app.domain.repository.TransferOutcome
 import com.sortora.app.domain.repository.TransferRequest
+import com.sortora.app.domain.repository.UndoResult
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
@@ -47,6 +48,108 @@ class SafFileOrganizer @Inject constructor(
         }.getOrNull() == true
         if (!reachable) throw IOException("The output folder is no longer accessible. Choose it again in Settings.")
         Batch(tree, root)
+    }
+
+    override suspend fun renameInPlace(sourceUri: String, newName: String): TransferOutcome = withContext(Dispatchers.IO) {
+        val renamed = try {
+            DocumentsContract.renameDocument(resolver, sourceUri.toUri(), newName)
+        } catch (e: CancellationException) {
+            throw e
+        } catch (e: FileNotFoundException) {
+            return@withContext TransferOutcome(ApplyStatus.FAILED, null, null, "The original file no longer exists.")
+        } catch (e: Exception) {
+            null
+        } ?: return@withContext TransferOutcome(
+            ApplyStatus.FAILED, null, null,
+            "This location doesn't allow renaming. Pick the folder instead of single files, or use Copy.",
+        )
+        // Providers may adjust the name (e.g. add " (1)" if it was taken); log what was actually written.
+        TransferOutcome(ApplyStatus.SUCCESS, displayName(renamed) ?: newName, renamed.toString(), null)
+    }
+
+    override suspend fun deleteCopy(targetUri: String, expectedSize: Long): UndoResult = withContext(Dispatchers.IO) {
+        val uri = targetUri.toUri()
+        val size = sizeOf(uri) ?: return@withContext UndoResult(true, "Already gone")
+        if (expectedSize > 0 && size != expectedSize) {
+            return@withContext UndoResult(false, "The copy was changed since it was made, so it was kept.")
+        }
+        val deleted = runCatching { DocumentsContract.deleteDocument(resolver, uri) }.getOrDefault(false)
+        if (deleted) UndoResult(true) else UndoResult(false, "Couldn't delete the copy.")
+    }
+
+    override suspend fun restoreMoved(targetUri: String, originalName: String, parentUri: String, expectedSize: Long): UndoResult =
+        withContext(Dispatchers.IO) {
+            val moved = targetUri.toUri()
+            if (sizeOf(moved) == null) return@withContext UndoResult(false, "The moved file is no longer in the output folder.")
+            val parent = toDocumentUri(parentUri)
+            val restored = try {
+                DocumentsContract.createDocument(resolver, parent, mimeFor(originalName, "application/octet-stream"), originalName)
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                null
+            } ?: return@withContext UndoResult(false, "No access to the original folder. Undo again and choose a folder.")
+            val copied = try {
+                copyStream(moved, restored)
+            } catch (e: CancellationException) {
+                runCatching { DocumentsContract.deleteDocument(resolver, restored) }
+                throw e
+            } catch (e: Exception) {
+                runCatching { DocumentsContract.deleteDocument(resolver, restored) }
+                return@withContext UndoResult(false, "Couldn't copy the file back: ${e.message}")
+            }
+            if (expectedSize > 0 && copied != expectedSize) {
+                runCatching { DocumentsContract.deleteDocument(resolver, restored) }
+                return@withContext UndoResult(false, "Restore incomplete; the moved file was kept.")
+            }
+            runCatching { DocumentsContract.deleteDocument(resolver, moved) }
+            UndoResult(true)
+        }
+
+    override suspend fun renameBack(targetUri: String, originalName: String): UndoResult = withContext(Dispatchers.IO) {
+        val result = runCatching { DocumentsContract.renameDocument(resolver, targetUri.toUri(), originalName) }.getOrNull()
+        if (result != null) UndoResult(true) else UndoResult(false, "Couldn't rename the file back (it may have been moved or deleted).")
+    }
+
+    private fun sizeOf(uri: Uri): Long? = runCatching {
+        resolver.query(uri, arrayOf(DocumentsContract.Document.COLUMN_SIZE), null, null, null)?.use { c ->
+            if (c.moveToFirst()) (if (c.isNull(0)) -1L else c.getLong(0)) else null
+        }
+    }.getOrNull()
+
+    private fun displayName(doc: Uri): String? = runCatching {
+        resolver.query(doc, arrayOf(DocumentsContract.Document.COLUMN_DISPLAY_NAME), null, null, null)?.use { c ->
+            if (c.moveToFirst()) c.getString(0) else null
+        }
+    }.getOrNull()
+
+    /** A picked folder comes as a tree URI; creating files needs the folder's document URI. */
+    private fun toDocumentUri(uri: String): Uri {
+        val parsed = uri.toUri()
+        return if (DocumentsContract.isDocumentUri(context, parsed)) {
+            parsed
+        } else {
+            DocumentsContract.buildDocumentUriUsingTree(parsed, DocumentsContract.getTreeDocumentId(parsed))
+        }
+    }
+
+    private suspend fun copyStream(source: Uri, target: Uri): Long {
+        val input = resolver.openInputStream(source) ?: throw FileNotFoundException()
+        val output = resolver.openOutputStream(target, "w") ?: throw IOException("Can't write the file")
+        var total = 0L
+        input.use { inp ->
+            output.use { out ->
+                val buffer = ByteArray(BUFFER_SIZE)
+                while (true) {
+                    currentCoroutineContext().ensureActive()
+                    val read = inp.read(buffer)
+                    if (read < 0) break
+                    out.write(buffer, 0, read)
+                    total += read
+                }
+            }
+        }
+        return total
     }
 
     private inner class Batch(private val tree: Uri, private val root: Uri) : OrganizerBatch {
@@ -157,31 +260,7 @@ class SafFileOrganizer @Inject constructor(
             names
         }
 
-        private suspend fun copy(source: Uri, target: Uri): Long {
-            val input = resolver.openInputStream(source) ?: throw FileNotFoundException()
-            val output = resolver.openOutputStream(target, "w") ?: throw IOException("Can't write to output folder")
-            var total = 0L
-            input.use { inp ->
-                output.use { out ->
-                    val buffer = ByteArray(BUFFER_SIZE)
-                    while (true) {
-                        currentCoroutineContext().ensureActive()
-                        val read = inp.read(buffer)
-                        if (read < 0) break
-                        out.write(buffer, 0, read)
-                        total += read
-                    }
-                    out.flush()
-                }
-            }
-            return total
-        }
-
-        private fun displayName(doc: Uri): String? = runCatching {
-            resolver.query(doc, arrayOf(DocumentsContract.Document.COLUMN_DISPLAY_NAME), null, null, null)?.use { c ->
-                if (c.moveToFirst()) c.getString(0) else null
-            }
-        }.getOrNull()
+        private suspend fun copy(source: Uri, target: Uri): Long = copyStream(source, target)
 
         private fun deleteQuietly(doc: Uri) {
             runCatching { DocumentsContract.deleteDocument(resolver, doc) }

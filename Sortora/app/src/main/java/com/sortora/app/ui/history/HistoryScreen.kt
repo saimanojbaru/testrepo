@@ -19,6 +19,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.outlined.Undo
 import androidx.compose.material.icons.outlined.CheckCircle
 import androidx.compose.material.icons.outlined.DeleteSweep
 import androidx.compose.material.icons.outlined.ErrorOutline
@@ -32,6 +33,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -62,7 +64,12 @@ import com.sortora.app.domain.model.ApplyStatus
 import com.sortora.app.domain.model.LogBatch
 import com.sortora.app.domain.model.OperationLogEntry
 import com.sortora.app.domain.model.OperationMode
+import com.sortora.app.domain.model.UndoStatus
+import com.sortora.app.domain.repository.BackgroundJobs
 import com.sortora.app.domain.repository.HistoryRepository
+import com.sortora.app.domain.repository.JobProgress
+import com.sortora.app.domain.repository.JobState
+import com.sortora.app.domain.repository.MediaSourceRepository
 import com.sortora.app.domain.repository.TextFileWriter
 import com.sortora.app.ui.components.EmptyState
 import com.sortora.app.ui.components.Formatters
@@ -86,14 +93,20 @@ data class HistoryUiState(
     val batches: List<LogBatch> = emptyList(),
     val expanded: Long? = null,
     val entries: List<OperationLogEntry> = emptyList(),
+    /** Batch being undone right now, with its job progress. */
+    val undoing: Long? = null,
+    val undoProgress: JobProgress = JobProgress(JobState.IDLE),
 )
 
 @HiltViewModel
 class HistoryViewModel @Inject constructor(
     private val history: HistoryRepository,
     private val writer: TextFileWriter,
+    private val jobs: BackgroundJobs,
+    private val sources: MediaSourceRepository,
 ) : ViewModel() {
     private val expanded = MutableStateFlow<Long?>(null)
+    private val undoing = MutableStateFlow<Long?>(null)
     private val messages = Channel<Int>(Channel.BUFFERED)
     val messageFlow = messages.receiveAsFlow()
 
@@ -101,11 +114,23 @@ class HistoryViewModel @Inject constructor(
         history.observeBatches(),
         expanded,
         expanded.flatMapLatest { id -> if (id == null) flowOf(emptyList()) else history.observeEntries(id) },
-    ) { batches, open, entries -> HistoryUiState(false, batches, open, entries) }
-        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), HistoryUiState())
+        undoing,
+        undoing.flatMapLatest { id -> if (id == null) flowOf(JobProgress(JobState.IDLE)) else jobs.observeUndo(id) },
+    ) { batches, open, entries, undoingId, progress ->
+        HistoryUiState(false, batches, open, entries, undoingId, progress)
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), HistoryUiState())
 
     fun toggle(batchId: Long) {
         expanded.value = if (expanded.value == batchId) null else batchId
+    }
+
+    /** [restoreTree]: folder for moved files whose original folder is unknown (picked by the user). */
+    fun undo(batch: LogBatch, restoreTree: Uri?) {
+        val tree = restoreTree?.toString()
+        if (tree != null) sources.persistTreeAccess(tree)
+        undoing.value = batch.batchId
+        expanded.value = batch.batchId
+        jobs.startUndo(batch.batchId, tree)
     }
 
     fun export(uri: Uri?) {
@@ -127,10 +152,23 @@ fun HistoryScreen(onBack: () -> Unit, viewModel: HistoryViewModel = hiltViewMode
     val resources = LocalResources.current
     val snackbar = remember { SnackbarHostState() }
     var confirmClear by remember { mutableStateOf(false) }
+    var confirmUndo by remember { mutableStateOf<LogBatch?>(null) }
+    var pendingRestore by remember { mutableStateOf<LogBatch?>(null) }
     val export = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("text/csv")) { viewModel.export(it) }
+    val pickRestoreFolder = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocumentTree()) { uri ->
+        pendingRestore?.let { batch -> if (uri != null) viewModel.undo(batch, uri) }
+        pendingRestore = null
+    }
 
     LaunchedEffect(Unit) {
         viewModel.messageFlow.collect { snackbar.showSnackbar(resources.getString(it)) }
+    }
+    LaunchedEffect(state.undoProgress.state) {
+        when (state.undoProgress.state) {
+            JobState.SUCCEEDED -> snackbar.showSnackbar(resources.getString(R.string.undo_done))
+            JobState.FAILED -> snackbar.showSnackbar(resources.getString(R.string.undo_failed))
+            else -> Unit
+        }
     }
 
     Scaffold(
@@ -162,29 +200,47 @@ fun HistoryScreen(onBack: () -> Unit, viewModel: HistoryViewModel = hiltViewMode
         LazyColumn(Modifier.fillMaxSize(), contentPadding = PaddingValues(top = padding.calculateTopPadding(), bottom = padding.calculateBottomPadding())) {
             items(state.batches, key = { it.batchId }) { batch ->
                 val open = state.expanded == batch.batchId
-                Row(
-                    Modifier.fillMaxWidth().clickable { viewModel.toggle(batch.batchId) }.padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                ) {
-                    Column(Modifier.weight(1f)) {
-                        Text(Formatters.dateTime(batch.timestamp), style = MaterialTheme.typography.titleSmall)
-                        Text(
-                            pluralStringResource(
-                                if (batch.mode == OperationMode.MOVE) R.plurals.history_batch_moved else R.plurals.history_batch_copied,
-                                batch.succeeded, batch.succeeded,
-                            ) + if (batch.failed > 0) " · " + pluralStringResource(R.plurals.apply_failed, batch.failed, batch.failed) else "",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    }
-                    Icon(if (open) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore, contentDescription = null)
+                val running = state.undoing == batch.batchId &&
+                    (state.undoProgress.state == JobState.RUNNING || state.undoProgress.state == JobState.QUEUED)
+                BatchHeader(batch, open, running, onToggle = { viewModel.toggle(batch.batchId) }, onUndo = { confirmUndo = batch })
+                if (running) {
+                    LinearProgressIndicator(Modifier.fillMaxWidth().padding(horizontal = 16.dp))
                 }
-                if (open) {
-                    state.entries.forEach { entry -> EntryRow(entry) }
-                }
+                if (open) state.entries.forEach { entry -> EntryRow(entry) }
                 HorizontalDivider()
             }
         }
+    }
+
+    confirmUndo?.let { batch ->
+        AlertDialog(
+            onDismissRequest = { confirmUndo = null },
+            icon = { Icon(Icons.AutoMirrored.Outlined.Undo, contentDescription = null) },
+            title = { Text(pluralStringResource(R.plurals.undo_confirm_title, batch.undoable, batch.undoable)) },
+            text = {
+                Text(
+                    stringResource(
+                        when (batch.mode) {
+                            OperationMode.COPY -> R.string.undo_confirm_copy
+                            OperationMode.MOVE -> if (batch.needsRestoreFolder) R.string.undo_confirm_move_pick else R.string.undo_confirm_move
+                            OperationMode.RENAME -> R.string.undo_confirm_rename
+                        },
+                    ),
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    confirmUndo = null
+                    if (batch.needsRestoreFolder) {
+                        pendingRestore = batch
+                        pickRestoreFolder.launch(null)
+                    } else {
+                        viewModel.undo(batch, null)
+                    }
+                }) { Text(stringResource(if (batch.needsRestoreFolder) R.string.undo_choose_folder else R.string.action_undo)) }
+            },
+            dismissButton = { TextButton(onClick = { confirmUndo = null }) { Text(stringResource(R.string.action_cancel)) } },
+        )
     }
 
     if (confirmClear) {
@@ -199,10 +255,47 @@ fun HistoryScreen(onBack: () -> Unit, viewModel: HistoryViewModel = hiltViewMode
 }
 
 @Composable
+private fun BatchHeader(batch: LogBatch, open: Boolean, running: Boolean, onToggle: () -> Unit, onUndo: () -> Unit) {
+    Row(
+        Modifier.fillMaxWidth().clickable(onClick = onToggle).padding(start = 16.dp, end = 8.dp, top = 12.dp, bottom = 12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Column(Modifier.weight(1f)) {
+            Text(Formatters.dateTime(batch.timestamp), style = MaterialTheme.typography.titleSmall)
+            val parts = buildList {
+                add(
+                    pluralStringResource(
+                        when (batch.mode) {
+                            OperationMode.COPY -> R.plurals.history_batch_copied
+                            OperationMode.MOVE -> R.plurals.history_batch_moved
+                            OperationMode.RENAME -> R.plurals.history_batch_renamed
+                        },
+                        batch.succeeded, batch.succeeded,
+                    ),
+                )
+                if (batch.failed > 0) add(pluralStringResource(R.plurals.apply_failed, batch.failed, batch.failed))
+                if (batch.undone > 0) add(pluralStringResource(R.plurals.history_undone, batch.undone, batch.undone))
+            }
+            Text(parts.joinToString(" · "), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        }
+        if (batch.undoable > 0 && !running) {
+            TextButton(onClick = onUndo) {
+                Icon(Icons.AutoMirrored.Outlined.Undo, contentDescription = null, modifier = Modifier.size(18.dp))
+                Spacer(Modifier.width(4.dp))
+                Text(stringResource(R.string.action_undo))
+            }
+        }
+        Icon(if (open) Icons.Outlined.ExpandLess else Icons.Outlined.ExpandMore, contentDescription = null)
+    }
+}
+
+@Composable
 private fun EntryRow(entry: OperationLogEntry) {
-    val (icon, tint) = when (entry.status) {
-        ApplyStatus.SUCCESS -> Icons.Outlined.CheckCircle to MaterialTheme.colorScheme.primary
-        ApplyStatus.COPIED_ORIGINAL_KEPT -> Icons.Outlined.Info to MaterialTheme.colorScheme.tertiary
+    val undone = entry.undoStatus == UndoStatus.UNDONE
+    val (icon, tint) = when {
+        undone -> Icons.AutoMirrored.Outlined.Undo to MaterialTheme.colorScheme.outline
+        entry.status == ApplyStatus.SUCCESS -> Icons.Outlined.CheckCircle to MaterialTheme.colorScheme.primary
+        entry.status == ApplyStatus.COPIED_ORIGINAL_KEPT -> Icons.Outlined.Info to MaterialTheme.colorScheme.tertiary
         else -> Icons.Outlined.ErrorOutline to MaterialTheme.colorScheme.error
     }
     Row(Modifier.fillMaxWidth().padding(start = 24.dp, end = 16.dp, top = 6.dp, bottom = 6.dp), verticalAlignment = Alignment.Top) {
@@ -210,8 +303,17 @@ private fun EntryRow(entry: OperationLogEntry) {
         Spacer(Modifier.width(12.dp))
         Column {
             Text(entry.originalName, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, maxLines = 1, overflow = TextOverflow.MiddleEllipsis)
-            Text("→ ${entry.targetFolder}/${entry.newName}", style = MaterialTheme.typography.bodyMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
-            entry.message?.let { Text(it, style = MaterialTheme.typography.bodySmall, color = tint) }
+            val target = if (entry.mode == OperationMode.RENAME || entry.targetFolder.isEmpty()) entry.newName else "${entry.targetFolder}/${entry.newName}"
+            Text("→ $target", style = MaterialTheme.typography.bodyMedium, maxLines = 2, overflow = TextOverflow.Ellipsis)
+            when {
+                undone -> Text(stringResource(R.string.history_entry_undone), style = MaterialTheme.typography.bodySmall, color = tint)
+                entry.undoStatus == UndoStatus.FAILED -> Text(
+                    stringResource(R.string.history_entry_undo_failed, entry.undoMessage.orEmpty()),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.error,
+                )
+                else -> entry.message?.let { Text(it, style = MaterialTheme.typography.bodySmall, color = tint) }
+            }
         }
     }
 }

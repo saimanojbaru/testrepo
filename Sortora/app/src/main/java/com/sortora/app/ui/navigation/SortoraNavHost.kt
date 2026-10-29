@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.sortora.app.ui.analysis.AnalysisScreen
 import com.sortora.app.ui.apply.ApplyScreen
+import com.sortora.app.ui.faces.FaceGroupsScreen
 import com.sortora.app.ui.history.HistoryScreen
 import com.sortora.app.ui.home.HomeScreen
 import com.sortora.app.ui.onboarding.OnboardingScreen
@@ -19,6 +20,7 @@ import kotlinx.serialization.Serializable
 @Serializable data class AnalysisRoute(val sessionId: Long)
 @Serializable data class PreviewRoute(val sessionId: Long)
 @Serializable data class ApplyRoute(val sessionId: Long)
+@Serializable data class FaceGroupsRoute(val sessionId: Long)
 @Serializable object HistoryRoute
 @Serializable object SettingsRoute
 
@@ -57,7 +59,11 @@ fun SortoraNavHost(showOnboarding: Boolean, navController: NavHostController = r
                     navController.navigate(ApplyRoute(session)) { popUpTo(HomeRoute) }
                 },
                 onOpenSettings = { navController.navigate(SettingsRoute) },
+                onOpenFaces = { session -> navController.navigate(FaceGroupsRoute(session)) },
             )
+        }
+        composable<FaceGroupsRoute> {
+            FaceGroupsScreen(onBack = { navController.popBackStack() })
         }
         composable<ApplyRoute> {
             ApplyScreen(

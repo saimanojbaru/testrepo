@@ -114,10 +114,12 @@ dependencies {
     implementation(libs.mlkit.objectdetection)
     implementation(libs.mlkit.face.detection)
     implementation(libs.mlkit.text.recognition)
+    implementation(libs.litert)
 
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.work.testing)
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.test.ext.junit)
     testImplementation(platform(libs.androidx.compose.bom))
