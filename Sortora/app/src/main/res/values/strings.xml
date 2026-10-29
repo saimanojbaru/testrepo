@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sortora</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_change">Change</string>
+    <string name="action_clear">Clear selection</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_discard">Discard</string>
+    <string name="action_done">Done</string>
+    <string name="action_get_started">Get started</string>
+    <string name="action_keep_going">Keep going</string>
+    <string name="action_more">More options</string>
+    <string name="action_move_up">Move up</string>
+    <string name="action_move_down">Move down</string>
+    <string name="action_next">Next</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_save">Save</string>
+    <string name="action_skip">Skip</string>
+    <string name="cd_video">Video</string>
+
+    <!-- Privacy -->
+    <string name="privacy_banner_title">Fully offline · Local AI</string>
+    <string name="privacy_banner_body">Sortora has no internet permission. Every photo and video is analysed by on-device models and never leaves your phone.</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">Sort your footage, automatically</string>
+    <string name="onboarding_1_body">Pick photos, videos or screenshots. Sortora looks at them and suggests clear names and tidy folders, like 2025-10-12_talkinghead_person_desk.mp4.</string>
+    <string name="onboarding_2_title">100% on your device</string>
+    <string name="onboarding_2_body">All analysis runs with AI models built into the app. Sortora doesn\'t even have permission to use the internet, so nothing can be uploaded. No accounts, no API keys, no cloud.</string>
+    <string name="onboarding_3_title">You stay in control</string>
+    <string name="onboarding_3_body">Preview every new name and folder before anything happens. Sortora copies by default, and only removes originals if you choose Move and confirm.</string>
+
+    <!-- Home -->
+    <string name="home_step_format">%1$d. %2$s</string>
+    <string name="home_step_media">Choose media</string>
+    <string name="home_step_destination">Output folder</string>
+    <string name="home_empty_title">Nothing selected yet</string>
+    <string name="home_empty_body">Pick individual photos and videos, or a whole folder such as DCIM or Screenshots.</string>
+    <string name="home_pick_files">Pick files</string>
+    <string name="home_pick_folder">Pick folder</string>
+    <string name="home_scanning">Looking for photos and videos…</string>
+    <plurals name="home_photos">
+        <item quantity="one">%d photo</item>
+        <item quantity="other">%d photos</item>
+    </plurals>
+    <plurals name="home_videos">
+        <item quantity="one">%d video</item>
+        <item quantity="other">%d videos</item>
+    </plurals>
+    <string name="home_selected_files_label">Selected files</string>
+    <string name="home_destination_empty">Choose where sorted files should go. Category folders are created inside it.</string>
+    <string name="home_destination_lost">Sortora lost access to the output folder. Please choose it again.</string>
+    <string name="home_destination_unnamed">Selected folder</string>
+    <string name="home_destination_hint">Category folders like Screenshots or Talking Head are created here.</string>
+    <string name="home_choose_destination">Choose output folder</string>
+    <string name="home_analyze">Analyse on device</string>
+    <string name="home_resume_title">Continue where you left off</string>
+    <string name="home_resume_body">Analysed: %1$d/%2$d · started %3$s</string>
+    <plurals name="home_items_selected">
+        <item quantity="one">%d item selected</item>
+        <item quantity="other">%d items selected</item>
+    </plurals>
+    <plurals name="home_analyze_count">
+        <item quantity="one">Analyse %d item on device</item>
+        <item quantity="other">Analyse %d items on device</item>
+    </plurals>
+
+    <!-- Analysis -->
+    <string name="analysis_title">Analysing</string>
+    <string name="analysis_progress">Analysed %1$d of %2$d</string>
+    <string name="analysis_loading_models">Loading on-device models…</string>
+    <string name="analysis_waiting">Waiting to start…</string>
+    <string name="analysis_background_hint">Everything runs on this phone. You can leave the app; Sortora keeps working and shows progress in a notification.</string>
+    <string name="analysis_found_so_far">Found so far</string>
+    <string name="analysis_stop">Stop analysis</string>
+    <string name="analysis_stop_confirm_title">Stop analysing?</string>
+    <string name="analysis_stop_confirm_body">Files analysed so far are kept, so you can still review them or continue later.</string>
+    <string name="analysis_stopped_title">Analysis stopped</string>
+    <string name="analysis_failed_title">Analysis couldn\'t finish</string>
+    <plurals name="analysis_stopped_body">
+        <item quantity="one">%d file was analysed before it stopped. Review it now, or continue with the rest.</item>
+        <item quantity="other">%d files were analysed before it stopped. Review them now, or continue with the rest.</item>
+    </plurals>
+    <string name="analysis_review_partial">Review analysed files</string>
+    <string name="analysis_continue">Continue analysis</string>
+
+    <!-- Preview -->
+    <string name="preview_title">Review changes</string>
+    <plurals name="preview_summary">
+        <item quantity="one">%1$d file into %2$d folders</item>
+        <item quantity="other">%1$d files into %2$d folders</item>
+    </plurals>
+    <string name="preview_select_all">Select all</string>
+    <string name="preview_select_none">Select none</string>
+    <string name="preview_naming_settings">Naming &amp; folder settings</string>
+    <string name="preview_filter_all">All (%1$d)</string>
+    <string name="preview_was">was %1$s</string>
+    <string name="preview_low_confidence">Low confidence</string>
+    <string name="preview_empty_title">Nothing to review</string>
+    <string name="preview_empty_body">None of the selected files could be analysed yet.</string>
+    <plurals name="preview_still_analyzing">
+        <item quantity="one">Still analysing %d file. It will appear here when ready.</item>
+        <item quantity="other">Still analysing %d files. They will appear here when ready.</item>
+    </plurals>
+    <plurals name="preview_failed_header">
+        <item quantity="one">%d file couldn\'t be analysed</item>
+        <item quantity="other">%d files couldn\'t be analysed</item>
+    </plurals>
+    <string name="preview_destination">Into: %1$s</string>
+    <string name="preview_no_destination">Choose an output folder first.</string>
+    <string name="preview_need_destination">Choose an output folder before applying.</string>
+    <plurals name="preview_apply_copy">
+        <item quantity="one">Copy %d file</item>
+        <item quantity="other">Copy %d files</item>
+    </plurals>
+    <plurals name="preview_apply_move">
+        <item quantity="one">Move %d file</item>
+        <item quantity="other">Move %d files</item>
+    </plurals>
+    <plurals name="preview_move_confirm_title">
+        <item quantity="one">Move %d file?</item>
+        <item quantity="other">Move %d files?</item>
+    </plurals>
+    <string name="preview_move_confirm_body">Each original is deleted only after its copy has been written and verified. Originals that can\'t be deleted are kept and listed. This can\'t be undone from Sortora.</string>
+    <string name="preview_move_confirm_action">Move and delete originals</string>
+    <string name="preview_new_name">New name</string>
+    <string name="preview_folder">Folder</string>
+    <string name="preview_folder_hint">Use / for subfolders, e.g. Clients/Acme</string>
+    <string name="preview_detected">Detected on device</string>
+    <string name="preview_matched_folder">Matched your folder “%1$s” (%2$s)</string>
+    <string name="preview_reset">Use suggestion</string>
+
+    <string name="detail_confidence">Category confidence: %1$s</string>
+    <plurals name="detail_faces">
+        <item quantity="one">%d face</item>
+        <item quantity="other">%d faces</item>
+    </plurals>
+    <string name="detail_text_title">Title read from image: “%1$s”</string>
+    <string name="detail_video_faces">Face visible in %1$s of sampled frames</string>
+    <string name="detail_video_motion">Change between frames: %1$s</string>
+    <string name="detail_date">Date: %1$s (from %2$s)</string>
+    <string name="detail_limited">This format couldn\'t be decoded on this device, so only metadata was used.</string>
+    <string name="date_source_exif">camera EXIF</string>
+    <string name="date_source_container">video metadata</string>
+    <string name="date_source_filename">file name</string>
+    <string name="date_source_media_store">media library</string>
+    <string name="date_source_modified">file modified time</string>
+    <string name="date_source_none">unknown</string>
+
+    <!-- Copy / Move -->
+    <string name="mode_copy">Copy</string>
+    <string name="mode_move">Move</string>
+    <string name="mode_copy_hint">Originals stay exactly where they are. Safe and reversible.</string>
+    <string name="mode_move_hint">Originals are deleted after each copy is verified. You\'ll be asked to confirm.</string>
+
+    <!-- Apply -->
+    <string name="apply_title_copying">Copying files</string>
+    <string name="apply_title_moving">Moving files</string>
+    <string name="apply_title_done">All done</string>
+    <string name="apply_progress">Processed %1$d of %2$d</string>
+    <string name="apply_background_hint">You can leave the app; this continues in the background.</string>
+    <string name="apply_stopped">Stopped early: %1$s</string>
+    <string name="apply_log_saved">Original and new names are saved in History. If enabled, a CSV log was also written to the output folder.</string>
+    <string name="apply_view_log">View log</string>
+    <plurals name="apply_copied">
+        <item quantity="one">%d file copied</item>
+        <item quantity="other">%d files copied</item>
+    </plurals>
+    <plurals name="apply_moved">
+        <item quantity="one">%d file moved</item>
+        <item quantity="other">%d files moved</item>
+    </plurals>
+    <plurals name="apply_kept_original">
+        <item quantity="one">%d copied, but its original couldn\'t be removed</item>
+        <item quantity="other">%d copied, but their originals couldn\'t be removed</item>
+    </plurals>
+    <plurals name="apply_failed">
+        <item quantity="one">%d failed</item>
+        <item quantity="other">%d failed</item>
+    </plurals>
+
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_export">Export as CSV</string>
+    <string name="history_exported">History exported</string>
+    <string name="history_export_failed">Couldn\'t export history</string>
+    <string name="history_clear">Clear history</string>
+    <string name="history_clear_confirm_title">Clear history?</string>
+    <string name="history_clear_confirm_body">This only deletes Sortora\'s log of original names. Your files are not touched.</string>
+    <string name="history_empty_title">No history yet</string>
+    <string name="history_empty_body">Every file you organise is listed here with its original name, so you can always trace it back.</string>
+    <plurals name="history_batch_copied">
+        <item quantity="one">%d file copied</item>
+        <item quantity="other">%d files copied</item>
+    </plurals>
+    <plurals name="history_batch_moved">
+        <item quantity="one">%d file moved</item>
+        <item quantity="other">%d files moved</item>
+    </plurals>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_privacy">Privacy</string>
+    <string name="settings_privacy_details">Sortora requests no internet and no storage permission. It can only read the files and folders you pick. Analysis results and history live in the app\'s private storage and are excluded from cloud backups.</string>
+    <string name="settings_section_organize">Organising</string>
+    <string name="settings_default_action">Default action</string>
+    <string name="settings_output_folder">Output folder</string>
+    <string name="settings_group_by_year">Group by year</string>
+    <string name="settings_group_by_year_hint">Creates subfolders like Pets/2025</string>
+    <string name="settings_write_log">Save a log file with each batch</string>
+    <string name="settings_write_log_hint">Writes a CSV of original → new names into the output folder</string>
+    <string name="settings_section_naming">Naming</string>
+    <string name="settings_naming_example">Examples</string>
+    <string name="preset_date_category_labels">Date, category, keywords</string>
+    <string name="preset_date_time_category_labels">Date, time, category, keywords</string>
+    <string name="preset_category_labels">Category, keywords</string>
+    <string name="preset_date_labels">Date, keywords</string>
+    <string name="preset_original_labels">Original name, keywords</string>
+    <string name="preset_custom">Custom template</string>
+    <string name="settings_custom_template">Template</string>
+    <string name="settings_custom_template_hint">Tokens: {date} {time} {category} {labels} {text} {original}</string>
+    <string name="settings_date_format">Date format</string>
+    <string name="settings_none">None</string>
+    <string name="settings_separator">Separator</string>
+    <string name="settings_lowercase">Lowercase names</string>
+    <string name="settings_screenshot_titles">Name screenshots by their title</string>
+    <string name="settings_screenshot_titles_hint">Uses text read on screen, e.g. Screenshot_Settings.png</string>
+    <string name="settings_max_labels">Keywords in each name: %1$d</string>
+    <string name="settings_section_categories">Your categories</string>
+    <string name="settings_categories_hint">Create folders with keywords. Files whose detected labels or text match go there first. Related words are matched too: a folder named Pets also catches dogs and cats. Higher in the list wins ties.</string>
+    <string name="settings_add_category">Add category</string>
+    <string name="settings_edit_category">Edit category</string>
+    <string name="settings_category_folder">Folder name</string>
+    <string name="settings_category_folder_placeholder">e.g. Receipts</string>
+    <string name="settings_category_keywords">Keywords (optional)</string>
+    <string name="settings_category_keywords_placeholder">e.g. receipt, invoice, total</string>
+    <string name="settings_category_keywords_hint">Comma-separated. Matched against detected objects, scenes and text.</string>
+    <string name="settings_category_no_keywords">Matched by folder name</string>
+    <string name="settings_section_folders">Built-in folder names</string>
+    <string name="settings_rename_folder">Folder for %1$s</string>
+    <string name="settings_rename_folder_hint">Leave empty to use “%1$s”</string>
+    <string name="settings_reset_folders">Reset folder names</string>
+    <string name="settings_section_analysis">Analysis</string>
+    <string name="settings_ocr">Read text in images</string>
+    <string name="settings_ocr_hint">On-device OCR helps detect screenshots and documents and match your keywords. Turn off for faster analysis.</string>
+    <string name="settings_video_frames">Frames sampled per video: %1$d</string>
+    <string name="settings_video_frames_hint">More frames = better talking head / B-roll detection, slower analysis</string>
+    <string name="settings_include_subfolders">Include subfolders</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_dynamic_color">Use wallpaper colours</string>
+    <string name="settings_section_about">About</string>
+    <string name="settings_version">Version %1$s · works fully offline</string>
+    <string name="settings_replay_intro">Show introduction again</string>
+
+    <!-- Categories -->
+    <string name="category_screenshot">Screenshot</string>
+    <string name="category_selfie">Selfie</string>
+    <string name="category_group">Group photo</string>
+    <string name="category_people">People</string>
+    <string name="category_document">Document</string>
+    <string name="category_landscape">Landscape</string>
+    <string name="category_city">City &amp; architecture</string>
+    <string name="category_food">Food</string>
+    <string name="category_pet">Pets &amp; animals</string>
+    <string name="category_product">Product</string>
+    <string name="category_talking_head">Talking head</string>
+    <string name="category_b_roll">B-roll</string>
+    <string name="category_screen_recording">Screen recording</string>
+    <string name="category_other">Other</string>
+
+    <!-- Errors -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_no_media_found">No photos or videos found in that selection.</string>
+    <string name="error_cannot_read_selection">Couldn\'t read the selected files.</string>
+    <string name="error_destination_not_writable">Sortora can\'t write to that folder. Please pick another one.</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Sorting progress</string>
+    <string name="notification_channel_description">Shows progress while Sortora analyses or organises files on your device.</string>
+    <string name="notification_analyzing_title">Analysing on device</string>
+    <string name="notification_applying_title">Organising files</string>
+    <string name="notification_progress">%1$d of %2$d</string>
+    <string name="notification_preparing">Preparing…</string>
+</resources>

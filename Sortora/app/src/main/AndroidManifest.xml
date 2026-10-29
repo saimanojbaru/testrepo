@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        PRIVACY: Sortora never touches the network.
+        ML Kit pulls in Google's "datatransport" telemetry library, which declares INTERNET.
+        Removing it here means the OS itself blocks every socket this app could open.
+        The build also fails if INTERNET ever reappears (see verify*NoInternetPermission in app/build.gradle.kts).
+    -->
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:node="remove" />
+
+    <!-- Progress notifications for long batches (optional; the app works without it). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Lets large batches keep running while the app is in the background. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROCESSING" />
+
+    <!--
+        No storage permissions are requested. All file access goes through the Storage Access
+        Framework: the user picks exactly which files/folders Sortora may read and write.
+    -->
+
+    <application
+        android:name=".SortoraApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Sortora"
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="36">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- WorkManager is initialised on demand with the Hilt worker factory (see SortoraApp). -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
+
+        <!-- Foreground service used by WorkManager while analysing / copying large batches. -->
+        <service
+            android:name="androidx.work.impl.foreground.SystemForegroundService"
+            android:foregroundServiceType="dataSync|mediaProcessing"
+            tools:node="merge" />
+    </application>
+</manifest>
