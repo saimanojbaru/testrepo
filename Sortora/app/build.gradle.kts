@@ -108,6 +108,7 @@ dependencies {
     // Thumbnails. Only the core + video decoder: no coil-network module, so no HTTP client ships.
     implementation(libs.coil.compose)
     implementation(libs.coil.video)
+    implementation(libs.haze)
 
     // On-device AI (bundled models).
     implementation(libs.mlkit.image.labeling)

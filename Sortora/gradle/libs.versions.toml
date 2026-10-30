@@ -23,6 +23,8 @@ mlkitFaceDetection = "16.1.7"
 mlkitTextRecognition = "16.0.1"
 # TensorFlow Lite runtime (LiteRT) for the bundled MobileNet-V3 image embedder.
 litert = "1.4.2"
+# Backdrop blur for the glass bars (pure UI, no network).
+haze = "1.7.1"
 junit = "4.13.2"
 robolectric = "4.17"
 androidxTestCore = "1.7.0"
@@ -70,6 +72,7 @@ mlkit-objectdetection = { group = "com.google.mlkit", name = "object-detection",
 mlkit-face-detection = { group = "com.google.mlkit", name = "face-detection", version.ref = "mlkitFaceDetection" }
 mlkit-text-recognition = { group = "com.google.mlkit", name = "text-recognition", version.ref = "mlkitTextRecognition" }
 litert = { group = "com.google.ai.edge.litert", name = "litert", version.ref = "litert" }
+haze = { group = "dev.chrisbanes.haze", name = "haze", version.ref = "haze" }
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric" }

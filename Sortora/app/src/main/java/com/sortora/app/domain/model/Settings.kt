@@ -81,7 +81,7 @@ data class AnalysisOptions(
 data class AppSettings(
     val onboardingComplete: Boolean = false,
     val themeMode: ThemeMode = ThemeMode.SYSTEM,
-    val dynamicColor: Boolean = true,
+    val dynamicColor: Boolean = false,
     val defaultMode: OperationMode = OperationMode.COPY,
     val destinationUri: String? = null,
     val destinationLabel: String? = null,

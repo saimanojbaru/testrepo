@@ -15,7 +15,7 @@ data class MainUiState(
     val loading: Boolean = true,
     val onboardingComplete: Boolean = false,
     val themeMode: ThemeMode = ThemeMode.SYSTEM,
-    val dynamicColor: Boolean = true,
+    val dynamicColor: Boolean = false,
 )
 
 @HiltViewModel
