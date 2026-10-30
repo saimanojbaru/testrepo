@@ -49,6 +49,9 @@ interface SessionDao {
     @Query("SELECT category, COUNT(*) AS count FROM session_items WHERE sessionId = :sessionId AND category IS NOT NULL GROUP BY category")
     fun observeCategoryCounts(sessionId: Long): Flow<List<CategoryCount>>
 
+    @Query("SELECT id, sourceUri, kind, analysisStatus, category, applyStatus, plannedFolder FROM session_items WHERE sessionId = :sessionId ORDER BY id")
+    fun observeItemProgress(sessionId: Long): Flow<List<ItemProgressRow>>
+
     @Query("UPDATE sessions SET status = :status WHERE id = :sessionId")
     suspend fun setStatus(sessionId: Long, status: String)
 

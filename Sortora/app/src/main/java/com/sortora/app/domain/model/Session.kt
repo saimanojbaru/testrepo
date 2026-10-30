@@ -56,6 +56,20 @@ data class SessionItem(
     val duplicate: DuplicateInfo? = null,
 )
 
+/**
+ * Just enough about one file to animate it on the progress screens: where it is, whether it has
+ * been analysed (and into which category) and whether it has been copied/moved yet.
+ */
+data class ItemProgress(
+    val id: Long,
+    val uri: String,
+    val kind: MediaKind,
+    val analysisStatus: AnalysisStatus,
+    val category: ContentCategory?,
+    val applyStatus: ApplyStatus?,
+    val plannedFolder: String?,
+)
+
 enum class UndoStatus { UNDONE, FAILED, SKIPPED }
 
 /** One line of the permanent log of original → new file names. */

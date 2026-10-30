@@ -9,6 +9,7 @@ import com.sortora.app.domain.duplicates.DuplicateGroup
 import com.sortora.app.domain.model.ContentCategory
 import com.sortora.app.domain.model.DuplicateHandling
 import com.sortora.app.domain.model.FaceRecord
+import com.sortora.app.domain.model.ItemProgress
 import com.sortora.app.domain.model.FaceSample
 import com.sortora.app.domain.model.UndoStatus
 import com.sortora.app.domain.model.LogBatch
@@ -50,6 +51,8 @@ interface SessionRepository {
     fun observeSession(sessionId: Long): Flow<SortSession?>
     fun observeItems(sessionId: Long): Flow<List<SessionItem>>
     fun observeCategoryCounts(sessionId: Long): Flow<Map<ContentCategory, Int>>
+    /** Lightweight per-file states for the progress animations (no analysis JSON decoded). */
+    fun observeItemProgress(sessionId: Long): Flow<List<ItemProgress>>
     /** The most recent session that was analysed but not yet applied or discarded. */
     fun observeResumableSession(): Flow<SortSession?>
     suspend fun getSession(sessionId: Long): SortSession?

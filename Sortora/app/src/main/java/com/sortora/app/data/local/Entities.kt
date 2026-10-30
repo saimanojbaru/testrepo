@@ -111,6 +111,16 @@ data class SessionWithCounts(
 
 data class CategoryCount(val category: String, val count: Int)
 
+data class ItemProgressRow(
+    val id: Long,
+    val sourceUri: String,
+    val kind: String,
+    val analysisStatus: String,
+    val category: String?,
+    val applyStatus: String?,
+    val plannedFolder: String?,
+)
+
 data class LogBatchRow(
     val batchId: Long,
     val timestamp: Long,

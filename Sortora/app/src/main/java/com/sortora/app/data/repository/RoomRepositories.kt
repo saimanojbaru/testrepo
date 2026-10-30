@@ -16,6 +16,7 @@ import com.sortora.app.domain.model.DuplicateInfo
 import com.sortora.app.domain.model.UndoStatus
 import com.sortora.app.domain.model.LogBatch
 import com.sortora.app.domain.model.MediaFile
+import com.sortora.app.domain.model.ItemProgress
 import com.sortora.app.domain.model.MediaKind
 import com.sortora.app.domain.model.OperationLogEntry
 import com.sortora.app.domain.model.OperationMode
@@ -102,6 +103,21 @@ class RoomSessionRepository @Inject constructor(
     override fun observeCategoryCounts(sessionId: Long): Flow<Map<ContentCategory, Int>> =
         dao.observeCategoryCounts(sessionId).map { rows ->
             rows.associate { enumOrDefault(it.category, ContentCategory.OTHER) to it.count }
+        }
+
+    override fun observeItemProgress(sessionId: Long): Flow<List<ItemProgress>> =
+        dao.observeItemProgress(sessionId).map { rows ->
+            rows.map { row ->
+                ItemProgress(
+                    id = row.id,
+                    uri = row.sourceUri,
+                    kind = enumOrDefault(row.kind, MediaKind.IMAGE),
+                    analysisStatus = enumOrDefault(row.analysisStatus, AnalysisStatus.PENDING),
+                    category = row.category?.let { enumOrDefault(it, ContentCategory.OTHER) },
+                    applyStatus = row.applyStatus?.let { enumOrDefault(it, ApplyStatus.FAILED) },
+                    plannedFolder = row.plannedFolder,
+                )
+            }
         }
 
     override suspend fun setStatus(sessionId: Long, status: SessionStatus) = dao.setStatus(sessionId, status.name)
