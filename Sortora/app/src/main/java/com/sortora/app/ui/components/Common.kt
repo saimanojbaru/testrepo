@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -14,10 +15,8 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.CloudOff
-import androidx.compose.material.icons.outlined.PlayCircle
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material.icons.rounded.PlayArrow
+import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -26,92 +25,99 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.sortora.app.R
 import com.sortora.app.domain.model.MediaKind
+import com.sortora.app.ui.design.Art
+import com.sortora.app.ui.design.Illustration
+import com.sortora.app.ui.design.Radius
+import com.sortora.app.ui.design.Reveal
+import com.sortora.app.ui.design.SoftCard
+import com.sortora.app.ui.design.Sortora
+import com.sortora.app.ui.design.Space
+import com.sortora.app.ui.design.hairline
 import java.text.DateFormat
 import java.util.Date
 import java.util.Locale
 
-/** The "nothing leaves your phone" banner shown on Home and in Settings. */
+/** The "nothing leaves your phone" card on Home and in Settings. */
 @Composable
 fun PrivacyBanner(modifier: Modifier = Modifier) {
-    Card(
-        modifier = modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-        ),
-    ) {
-        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+    val c = Sortora.colors
+    SoftCard(modifier.fillMaxWidth(), contentPadding = androidx.compose.foundation.layout.PaddingValues(Space.md)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
             Box(
                 Modifier
                     .size(40.dp)
                     .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.primary),
+                    .background(c.accentSoft),
                 contentAlignment = Alignment.Center,
             ) {
-                Icon(Icons.Outlined.CloudOff, contentDescription = null, tint = MaterialTheme.colorScheme.onPrimary)
+                Icon(Icons.Rounded.Shield, contentDescription = null, tint = c.accent, modifier = Modifier.size(20.dp))
             }
-            Spacer(Modifier.width(16.dp))
+            Spacer(Modifier.width(Space.md))
             Column {
-                Text(stringResource(R.string.privacy_banner_title), style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
-                Text(stringResource(R.string.privacy_banner_body), style = MaterialTheme.typography.bodySmall)
+                Text(stringResource(R.string.privacy_banner_title), style = MaterialTheme.typography.titleSmall, color = c.ink)
+                Spacer(Modifier.height(2.dp))
+                Text(stringResource(R.string.privacy_banner_body), style = MaterialTheme.typography.bodySmall, color = c.inkSecondary)
             }
         }
     }
 }
 
+/** Empty or finished states: a slow-moving illustration, a serif title and one line of help. */
 @Composable
 fun EmptyState(
-    icon: ImageVector,
+    art: Art,
     title: String,
     message: String,
     modifier: Modifier = Modifier,
     action: (@Composable () -> Unit)? = null,
 ) {
+    val c = Sortora.colors
     Column(
-        modifier = modifier
+        modifier
             .fillMaxWidth()
-            .padding(horizontal = 32.dp, vertical = 24.dp),
+            .padding(horizontal = Space.xxl, vertical = Space.xl),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        Box(
-            Modifier
-                .size(72.dp)
-                .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.secondaryContainer),
-            contentAlignment = Alignment.Center,
-        ) {
-            Icon(icon, contentDescription = null, modifier = Modifier.size(36.dp), tint = MaterialTheme.colorScheme.onSecondaryContainer)
-        }
-        Spacer(Modifier.height(16.dp))
-        Text(title, style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
-        Spacer(Modifier.height(4.dp))
-        Text(message, style = MaterialTheme.typography.bodyMedium, color = MaterialTheme.colorScheme.onSurfaceVariant, textAlign = TextAlign.Center)
+        Illustration(art, size = 152.dp)
+        Spacer(Modifier.height(Space.lg))
+        Text(title, style = MaterialTheme.typography.headlineSmall, color = c.ink, textAlign = TextAlign.Center)
+        Spacer(Modifier.height(Space.xs))
+        Text(message, style = MaterialTheme.typography.bodyMedium, color = c.inkSecondary, textAlign = TextAlign.Center)
         if (action != null) {
-            Spacer(Modifier.height(16.dp))
+            Spacer(Modifier.height(Space.lg))
             action()
         }
     }
 }
 
+/** Centres an [EmptyState] in the available space and fades it in. */
+@Composable
+fun CenteredEmptyState(art: Art, title: String, message: String, modifier: Modifier = Modifier, action: (@Composable () -> Unit)? = null) {
+    Box(modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Reveal(visible = true) { EmptyState(art, title, message, action = action) }
+    }
+}
+
 /** Thumbnail for a local content:// URI (images directly, videos via a decoded frame). */
 @Composable
-fun MediaThumbnail(uri: String, kind: MediaKind, modifier: Modifier = Modifier, size: Dp = 56.dp) {
+fun MediaThumbnail(uri: String, kind: MediaKind, modifier: Modifier = Modifier, size: Dp = 56.dp, radius: Dp = 12.dp) {
+    val c = Sortora.colors
+    val shape = RoundedCornerShape(radius)
     Box(
         modifier
             .size(size)
-            .clip(RoundedCornerShape(12.dp))
-            .background(MaterialTheme.colorScheme.surfaceVariant),
+            .clip(shape)
+            .background(c.thumbnail)
+            .hairline(shape, c.hairline),
         contentAlignment = Alignment.Center,
     ) {
         AsyncImage(
@@ -121,27 +127,24 @@ fun MediaThumbnail(uri: String, kind: MediaKind, modifier: Modifier = Modifier, 
             modifier = Modifier.size(size),
         )
         if (kind == MediaKind.VIDEO) {
-            Icon(
-                Icons.Outlined.PlayCircle,
-                contentDescription = stringResource(R.string.cd_video),
-                tint = Color.White,
-                modifier = Modifier
-                    .size(size / 2.5f)
-                    .clip(CircleShape)
-                    .background(Color.Black.copy(alpha = 0.35f)),
-            )
+            Box(
+                Modifier
+                    .align(Alignment.BottomStart)
+                    .padding(size / 14)
+                    .size((size / 3.2f).coerceAtLeast(16.dp))
+                    .clip(Radius.Pill)
+                    .background(Color.Black.copy(alpha = 0.42f)),
+                contentAlignment = Alignment.Center,
+            ) {
+                Icon(
+                    Icons.Rounded.PlayArrow,
+                    contentDescription = stringResource(R.string.cd_video),
+                    tint = Color.White,
+                    modifier = Modifier.size((size / 4.4f).coerceAtLeast(12.dp)),
+                )
+            }
         }
     }
-}
-
-@Composable
-fun SectionHeader(text: String, modifier: Modifier = Modifier) {
-    Text(
-        text = text,
-        style = MaterialTheme.typography.labelLarge,
-        color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(start = 16.dp, end = 16.dp, top = 24.dp, bottom = 8.dp),
-    )
 }
 
 object Formatters {

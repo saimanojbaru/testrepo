@@ -54,7 +54,33 @@ No cloud mode, no API keys, no accounts.
 | Your folders | Custom categories with keywords; related words are matched too ("Pets" catches dog, cat, bird…; "Receipts" catches *subtotal*, *tax*, *total* in OCR text) |
 | Preview | Every new name and folder before anything changes; edit, exclude, filter, bulk actions, see what was detected and why |
 | Big batches | WorkManager with a foreground notification; progress survives leaving the app and resumes after interruption |
-| UI | Jetpack Compose, Material 3, dynamic colour, dark mode, onboarding, empty states |
+| UI | A custom design system on Jetpack Compose (see [Design](#design)): warm neutrals and one accent, serif headlines, glass bars, spring physics, haptics, a signature sorting animation, light and dark themes |
+
+## Design
+
+Sortora's interface aims to feel calm and precise: warm paper-like neutrals, one clay accent,
+generous space, and motion that behaves physically.
+
+- **Design system** (`ui/design/`): palette (`Palette.kt`, light and dark, AA contrast for text),
+  type (`Type.kt`: Newsreader serif for headlines, Inter for everything else, both bundled
+  variable fonts), spacing and one radius family (`Tokens.kt`), spring-based motion specs, soft
+  two-layer shadows, frosted glass bars (Haze, real blur on Android 12+), and components: cards,
+  pill buttons, filter pills, a sliding segmented control, a self-drawing check, sheets, dialogs.
+- **Signature sorting animation** (`ui/sorting/`): files waiting to be analysed orbit the progress
+  ring, the near side larger and brighter. As each one finishes it is thrown into its category's
+  folder: a kick upward, an arc, tilt that follows its velocity, a shrink as it drops in, a faint
+  trail, a small burst of light. The folder tips open, bounces and counts up, with a light haptic
+  tick. Launches are staggered and capped so a batch moves like a flock; if analysis outruns the
+  animation, extra files land instantly so the screen never falls behind. The same stage shows
+  files moving into their output folders while copying or moving. The physics
+  (`SortPhysics.kt`) is plain Kotlin with unit tests.
+- **Fluid details:** the Home button morphs into the progress ring (shared element), a tapped
+  file morphs into its editor and back, duplicate copies collapse into a stack and fan out, face
+  circles pop in and glide when groups regroup, custom spinner, ring and bar instead of stock
+  progress indicators, animated empty-state illustrations, a drawn success mark, press feedback
+  with haptics everywhere.
+- **Respectful motion:** with *Remove animations* (Accessibility) or animator scale 0, ambient
+  movement stops and files land without flying.
 
 ## Build and run
 
@@ -148,6 +174,9 @@ app/src/main/java/com/sortora/app/
 ├── di/                     Hilt modules
 └── ui/                     Compose screens + ViewModels (MVVM)
     ├── onboarding/ home/ analysis/ preview/ faces/ apply/ history/ settings/
+    ├── design/             Design system: palette, type, tokens, glass, components, progress,
+    │                       illustrations, folder glyph, success mark, shared transitions
+    ├── sorting/            Sorting animation: physics (pure Kotlin) + stage
     ├── components/ theme/ navigation/
 ```
 
@@ -220,16 +249,23 @@ app/src/main/java/com/sortora/app/
   design: face data is deleted with the session).
 - **Not yet tested on physical devices.** The decision logic has unit tests and the full UI flow
   runs in a Robolectric smoke test, but ML Kit and TFLite only run on a device.
+- **Animation smoothness is unmeasured on real hardware.** The screens were rendered and reviewed
+  on the JVM, but frame timing of the sorting stage (up to 7 thumbnails in flight, each with a
+  soft shadow) and the glass blur has not been profiled on a low-end phone.
+- **Glass blur needs Android 12+.** Older versions get solid bars instead of frosted ones.
 
 ## Testing
 
+- `app/src/test/.../ui/sorting/`: 8 tests for the sorting physics (rises before it falls, lands on
+  target, stays finite through frame drops, stagger and in-flight cap, waits for unplaced targets,
+  backpressure, stable orbit slots).
 - `app/src/test/.../domain/`: 75 JVM tests covering file naming and pattern tokens, counters,
   date parsing, screenshot scoring, scene and video classification, tag selection, OCR summarising,
   custom-category matching, planning and de-duplication, rename-in-place planning, perceptual
   hashing, blur scoring, duplicate grouping and keeper choice, face clustering, smart filters, the
   undo use case (copy / move / rename, unknown folders, already-undone entries) and CSV export.
 - `AppSmokeTest`: Robolectric launches the real app (Hilt, Room, DataStore, WorkManager, navigation,
-  Compose) and walks onboarding → Home → Settings → History → Preview → edit sheet → Apply guard →
+  Compose) and walks onboarding → Home → Settings → History → Preview → file editor → Apply guard →
   smart filter → batch rename with a pattern → Rename-mode confirmation → Undo from History (run by
   the real worker).
 
@@ -237,6 +273,7 @@ app/src/main/java/com/sortora/app/
 
 Kotlin 2.4 · Jetpack Compose + Material 3 · MVVM + Clean Architecture (domain / data / ui) ·
 Hilt · Room · DataStore · WorkManager · Navigation (type-safe routes) · Coil 3 (local-only thumbnails) ·
+Haze (glass blur) ·
 ML Kit (bundled models) · TensorFlow Lite / LiteRT 1.4 · AGP 9.4 · Gradle 9.7 · version catalog
 (`gradle/libs.versions.toml`).
 
@@ -245,3 +282,8 @@ ML Kit (bundled models) · TensorFlow Lite / LiteRT 1.4 · AGP 9.4 · Gradle 9.7
 `app/src/main/assets/models/image_embedder.tflite` is MediaPipe's MobileNet-V3 (small) image
 embedder, © Google, licensed under the Apache License 2.0 (see `assets/models/NOTICE`). ML Kit
 models are distributed under the ML Kit terms of service.
+
+## Fonts
+
+Inter (© The Inter Project Authors) and Newsreader (© The Newsreader Project Authors) are bundled
+in `res/font/` under the SIL Open Font License 1.1; license texts are in `assets/licenses/`.

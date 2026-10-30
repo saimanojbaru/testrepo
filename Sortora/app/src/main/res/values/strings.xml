@@ -34,7 +34,6 @@
     <string name="onboarding_3_body">Preview every new name and folder before anything happens. Sortora copies by default, and only removes originals if you choose Move and confirm.</string>
 
     <!-- Home -->
-    <string name="home_step_format">%1$d. %2$s</string>
     <string name="home_step_media">Choose media</string>
     <string name="home_step_destination">Output folder</string>
     <string name="home_empty_title">Nothing selected yet</string>
@@ -56,25 +55,17 @@
     <string name="home_destination_unnamed">Selected folder</string>
     <string name="home_destination_hint">Category folders like Screenshots or Talking Head are created here.</string>
     <string name="home_choose_destination">Choose output folder</string>
-    <string name="home_analyze">Analyse on device</string>
     <string name="home_resume_title">Continue where you left off</string>
     <string name="home_resume_body">Analysed: %1$d/%2$d · started %3$s</string>
     <plurals name="home_items_selected">
         <item quantity="one">%d item selected</item>
         <item quantity="other">%d items selected</item>
     </plurals>
-    <plurals name="home_analyze_count">
-        <item quantity="one">Analyse %d item on device</item>
-        <item quantity="other">Analyse %d items on device</item>
-    </plurals>
 
     <!-- Analysis -->
-    <string name="analysis_title">Analysing</string>
-    <string name="analysis_progress">Analysed %1$d of %2$d</string>
     <string name="analysis_loading_models">Loading on-device models…</string>
     <string name="analysis_waiting">Waiting to start…</string>
     <string name="analysis_background_hint">Everything runs on this phone. You can leave the app; Sortora keeps working and shows progress in a notification.</string>
-    <string name="analysis_found_so_far">Found so far</string>
     <string name="analysis_stop">Stop analysis</string>
     <string name="analysis_stop_confirm_title">Stop analysing?</string>
     <string name="analysis_stop_confirm_body">Files analysed so far are kept, so you can still review them or continue later.</string>
@@ -94,7 +85,6 @@
         <item quantity="other">%1$d files into %2$d folders</item>
     </plurals>
     <string name="preview_naming_settings">Naming &amp; folder settings</string>
-    <string name="preview_filter_all">All (%1$d)</string>
     <string name="preview_was">was %1$s</string>
     <string name="preview_low_confidence">Low confidence</string>
     <string name="preview_empty_title">Nothing to review</string>
@@ -158,7 +148,6 @@
     <string name="apply_title_copying">Copying files</string>
     <string name="apply_title_moving">Moving files</string>
     <string name="apply_title_done">All done</string>
-    <string name="apply_progress">Processed %1$d of %2$d</string>
     <string name="apply_background_hint">You can leave the app; this continues in the background.</string>
     <string name="apply_stopped">Stopped early: %1$s</string>
     <string name="apply_view_log">View log</string>
@@ -426,4 +415,55 @@
         <item quantity="one">%d file renamed</item>
         <item quantity="other">%d files renamed</item>
     </plurals>
+
+    <!-- Redesign (premium UI) -->
+    <string name="home_eyebrow">On-device media sorter</string>
+    <string name="home_title">What shall we sort today?</string>
+    <string name="home_source_files_hint">Photos &amp; videos</string>
+    <string name="home_source_folder_hint">DCIM, Screenshots…</string>
+    <string name="home_destination_title">Sorted files go to</string>
+    <plurals name="home_sort_cta">
+        <item quantity="one">Sort %d file</item>
+        <item quantity="other">Sort %d files</item>
+    </plurals>
+    <string name="home_sort_cta_empty">Choose media to begin</string>
+    <string name="analysis_eyebrow">Analysing on this phone</string>
+    <plurals name="analysis_heading">
+        <item quantity="one">Sorting %d file</item>
+        <item quantity="other">Sorting %d files</item>
+    </plurals>
+    <string name="analysis_done_title">All sorted</string>
+    <plurals name="analysis_done_body">
+        <item quantity="one">%1$d file, ready for your review.</item>
+        <item quantity="other">%1$d files, ready for your review.</item>
+    </plurals>
+    <string name="analysis_review_cta">Review the plan</string>
+    <plurals name="stage_remaining">
+        <item quantity="one">+%d waiting</item>
+        <item quantity="other">+%d waiting</item>
+    </plurals>
+    <string name="percent_value">%1$d%%</string>
+    <string name="apply_eyebrow_copy">Copying into folders</string>
+    <string name="apply_eyebrow_move">Moving into folders</string>
+    <string name="apply_eyebrow_rename">Renaming in place</string>
+    <string name="apply_other_folders">Other folders</string>
+    <string name="apply_renamed_pile">Renamed</string>
+    <string name="apply_problems">Needs a look</string>
+    <string name="faces_show_all">Show all</string>
+    <string name="faces_show_less">Show less</string>
+    <plurals name="duplicate_stack_title">
+        <item quantity="one">%d copy</item>
+        <item quantity="other">%d copies</item>
+    </plurals>
+    <string name="duplicate_stack_expand">Show copies</string>
+    <string name="duplicate_stack_collapse">Collapse</string>
+    <string name="cd_include_file">Include this file</string>
+    <string name="settings_section_licenses">Licences</string>
+    <string name="settings_licenses_body">Fonts: Inter and Newsreader, SIL Open Font License 1.1. Image model: MediaPipe MobileNet-V3, Apache 2.0. Face, label, object and text models: Google ML Kit (bundled).</string>
+    <string name="history_eyebrow">Every change, reversible</string>
+    <string name="settings_eyebrow">Preferences</string>
+    <string name="faces_eyebrow">Look-alike groups</string>
+    <string name="preview_eyebrow">Nothing has changed yet</string>
+    <string name="filter_all">All</string>
+    <string name="action_choose">Choose</string>
 </resources>

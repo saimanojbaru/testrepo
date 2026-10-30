@@ -1,9 +1,14 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalSharedTransitionApi::class)
 
 package com.sortora.app.ui.faces
 
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.animateBounds
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -15,29 +20,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.outlined.CreateNewFolder
-import androidx.compose.material.icons.outlined.Face
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.rounded.CreateNewFolder
+import androidx.compose.material.icons.rounded.UnfoldLess
+import androidx.compose.material.icons.rounded.UnfoldMore
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Slider
-import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -48,7 +43,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.Layout
+import androidx.compose.ui.layout.LookaheadScope
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
@@ -66,7 +64,25 @@ import com.sortora.app.domain.model.FaceRecord
 import com.sortora.app.domain.naming.FileNameSanitizer
 import com.sortora.app.domain.repository.FaceRepository
 import com.sortora.app.domain.repository.SessionRepository
-import com.sortora.app.ui.components.EmptyState
+import com.sortora.app.ui.components.CenteredEmptyState
+import com.sortora.app.ui.design.Art
+import com.sortora.app.ui.design.Eyebrow
+import com.sortora.app.ui.design.FluidSpinner
+import com.sortora.app.ui.design.GhostButton
+import com.sortora.app.ui.design.GlassTopBar
+import com.sortora.app.ui.design.IconBubble
+import com.sortora.app.ui.design.Motion
+import com.sortora.app.ui.design.PageTitle
+import com.sortora.app.ui.design.ScreenScaffold
+import com.sortora.app.ui.design.SecondaryButton
+import com.sortora.app.ui.design.SoftCard
+import com.sortora.app.ui.design.Sortora
+import com.sortora.app.ui.design.SortoraTextField
+import com.sortora.app.ui.design.Space
+import com.sortora.app.ui.design.hairline
+import com.sortora.app.ui.design.isScrolled
+import com.sortora.app.ui.design.pressable
+import com.sortora.app.ui.design.scrolledPast
 import com.sortora.app.ui.navigation.FaceGroupsRoute
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -158,61 +174,65 @@ class FaceGroupsViewModel @Inject constructor(
 @Composable
 fun FaceGroupsScreen(onBack: () -> Unit, viewModel: FaceGroupsViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val c = Sortora.colors
     val resources = LocalResources.current
     val snackbar = remember { SnackbarHostState() }
+    val list = rememberLazyListState()
+    val scrolled by list.isScrolled()
+    val pastTitle by list.scrolledPast(1)
     LaunchedEffect(Unit) { viewModel.messageFlow.collect { snackbar.showSnackbar(resources.getString(it)) } }
 
-    Scaffold(
+    ScreenScaffold(
+        snackbar = snackbar,
         topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.faces_title)) },
-                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.action_back)) } },
+            GlassTopBar(
+                title = stringResource(R.string.faces_title),
+                showTitle = pastTitle,
+                scrolled = scrolled,
+                navigation = { IconBubble(Icons.AutoMirrored.Rounded.ArrowBack, stringResource(R.string.action_back), onBack) },
             )
         },
-        snackbarHost = { SnackbarHost(snackbar) },
     ) { padding ->
         if (state.loading) {
             Column(Modifier.fillMaxSize().padding(padding), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-                CircularProgressIndicator()
-                Spacer(Modifier.height(12.dp))
-                Text(stringResource(R.string.faces_comparing), style = MaterialTheme.typography.bodyMedium)
+                FluidSpinner(size = 34.dp)
+                Spacer(Modifier.height(Space.md))
+                Text(stringResource(R.string.faces_comparing), style = MaterialTheme.typography.bodyMedium, color = c.inkSecondary)
             }
-            return@Scaffold
+            return@ScreenScaffold
         }
         LazyColumn(
-            Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = padding.calculateTopPadding() + 8.dp, bottom = padding.calculateBottomPadding() + 16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+            state = list,
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(top = padding.calculateTopPadding(), bottom = padding.calculateBottomPadding() + Space.xl),
+            verticalArrangement = Arrangement.spacedBy(Space.sm),
         ) {
-            item {
-                Text(stringResource(R.string.faces_explainer), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+            item(key = "title") {
+                PageTitle(stringResource(R.string.faces_title), eyebrow = stringResource(R.string.faces_eyebrow), subtitle = stringResource(R.string.faces_explainer))
             }
-            item { StrictnessSlider(state.threshold, viewModel::setThreshold) }
+            item(key = "strictness") { StrictnessCard(state.threshold, viewModel::setThreshold) }
             if (state.clusters.isEmpty()) {
-                item {
-                    EmptyState(
-                        icon = Icons.Outlined.Face,
-                        title = stringResource(R.string.faces_empty_title),
-                        message = stringResource(R.string.faces_empty_body),
-                    )
+                item(key = "empty") {
+                    CenteredEmptyState(Art.Faces, stringResource(R.string.faces_empty_title), stringResource(R.string.faces_empty_body), Modifier.animateItem())
                 }
             }
-            items(state.clusters, key = { it.key }) { cluster ->
-                val index = state.clusters.indexOf(cluster) + 1
-                val fallback = resources.getString(R.string.faces_person_n, index)
+            itemsIndexed(state.clusters, key = { _, cluster -> cluster.key }) { index, cluster ->
+                val fallback = resources.getString(R.string.faces_person_n, index + 1)
                 ClusterCard(
                     cluster = cluster,
                     fallbackName = fallback,
                     onName = { viewModel.name(cluster, it) },
                     onFolder = { viewModel.putInFolder(cluster, fallback) },
+                    modifier = Modifier.animateItem(),
                 )
             }
             if (state.singles > 0) {
-                item {
+                item(key = "singles") {
                     Text(
                         pluralStringResource(R.plurals.faces_singles, state.singles, state.singles),
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = c.inkTertiary,
+                        modifier = Modifier.padding(horizontal = Space.gutter, vertical = Space.xs).animateItem(),
                     )
                 }
             }
@@ -221,60 +241,157 @@ fun FaceGroupsScreen(onBack: () -> Unit, viewModel: FaceGroupsViewModel = hiltVi
 }
 
 @Composable
-private fun StrictnessSlider(threshold: Float, onChange: (Float) -> Unit) {
+private fun StrictnessCard(threshold: Float, onChange: (Float) -> Unit) {
+    val c = Sortora.colors
     var position by remember(threshold) { mutableFloatStateOf(threshold) }
-    Column {
-        Text(stringResource(R.string.faces_strictness), style = MaterialTheme.typography.bodyLarge)
-        Slider(value = position, onValueChange = { position = it }, onValueChangeFinished = { onChange(position) }, valueRange = 0.2f..0.8f)
+    SoftCard(Modifier.padding(horizontal = Space.md).fillMaxWidth(), contentPadding = PaddingValues(Space.md)) {
+        Text(stringResource(R.string.faces_strictness), style = MaterialTheme.typography.titleSmall, color = c.ink)
+        Slider(
+            value = position,
+            onValueChange = { position = it },
+            onValueChangeFinished = { onChange(position) },
+            valueRange = 0.2f..0.8f,
+            colors = SliderDefaults.colors(
+                thumbColor = c.accent,
+                activeTrackColor = c.accent,
+                inactiveTrackColor = c.sunken,
+                activeTickColor = c.onAccent,
+                inactiveTickColor = c.inkTertiary,
+            ),
+        )
         Row {
-            Text(stringResource(R.string.faces_looser), style = MaterialTheme.typography.labelSmall, modifier = Modifier.weight(1f))
-            Text(stringResource(R.string.faces_stricter), style = MaterialTheme.typography.labelSmall)
+            Text(stringResource(R.string.faces_looser), style = MaterialTheme.typography.labelMedium, color = c.inkSecondary, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.faces_stricter), style = MaterialTheme.typography.labelMedium, color = c.inkSecondary)
         }
     }
 }
 
+private const val STACK_VISIBLE = 6
+private const val GRID_COLUMNS = 5
+
+/**
+ * One look-alike group. Collapsed, the faces overlap in a row; expanded, they spread into a grid.
+ * Every circle glides to its new place, and faces that join when the strictness changes pop in.
+ */
 @Composable
-private fun ClusterCard(cluster: FaceCluster, fallbackName: String, onName: (String) -> Unit, onFolder: () -> Unit) {
+private fun ClusterCard(cluster: FaceCluster, fallbackName: String, onName: (String) -> Unit, onFolder: () -> Unit, modifier: Modifier = Modifier) {
+    val c = Sortora.colors
     var name by remember(cluster.key, cluster.name) { mutableStateOf(cluster.name.orEmpty()) }
-    Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainerLow)) {
-        Column(Modifier.padding(12.dp)) {
-            LazyRow(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                items(cluster.faces.take(12), key = { it.id }) { face ->
-                    AsyncImage(
-                        model = File(face.thumbnailPath),
-                        contentDescription = null,
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .size(56.dp)
-                            .clip(CircleShape)
-                            .background(MaterialTheme.colorScheme.surfaceVariant),
-                    )
-                }
-            }
-            Spacer(Modifier.height(8.dp))
-            Text(
-                pluralStringResource(R.plurals.faces_cluster_summary, cluster.itemIds.size, cluster.faces.size, cluster.itemIds.size),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                OutlinedTextField(
-                    value = name,
-                    onValueChange = { name = it },
-                    placeholder = { Text(fallbackName) },
-                    label = { Text(stringResource(R.string.faces_name_label)) },
-                    singleLine = true,
-                    modifier = Modifier.weight(1f),
+    var expanded by remember(cluster.key) { mutableStateOf(false) }
+    val spread by animateFloatAsState(if (expanded) 1f else 0f, Motion.gentle(), label = "spread")
+    SoftCard(modifier.padding(horizontal = Space.md).fillMaxWidth(), contentPadding = PaddingValues(Space.md)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Column(Modifier.weight(1f)) {
+                Text(cluster.name ?: fallbackName, style = MaterialTheme.typography.titleMedium, color = c.ink)
+                Text(
+                    pluralStringResource(R.plurals.faces_cluster_summary, cluster.itemIds.size, cluster.faces.size, cluster.itemIds.size),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = c.inkSecondary,
                 )
-                Spacer(Modifier.width(8.dp))
-                TextButton(onClick = { onName(name) }, enabled = name != cluster.name.orEmpty()) { Text(stringResource(R.string.action_save)) }
             }
-            Spacer(Modifier.height(4.dp))
-            OutlinedButton(onClick = onFolder) {
-                Icon(Icons.Outlined.CreateNewFolder, contentDescription = null, modifier = Modifier.size(18.dp))
-                Spacer(Modifier.width(8.dp))
-                Text(stringResource(R.string.faces_put_in_folder, cluster.name ?: fallbackName))
+            if (cluster.faces.size > STACK_VISIBLE) {
+                GhostButton(
+                    stringResource(if (expanded) R.string.faces_show_less else R.string.faces_show_all),
+                    { expanded = !expanded },
+                    leading = if (expanded) Icons.Rounded.UnfoldLess else Icons.Rounded.UnfoldMore,
+                )
             }
         }
+        Spacer(Modifier.height(Space.sm))
+        val faces = cluster.faces.take(60)
+        LookaheadScope {
+            Layout(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .pressable({ expanded = !expanded }, enabled = cluster.faces.size > STACK_VISIBLE, pressedScale = 0.99f, haptic = null),
+                content = {
+                    faces.forEach { face ->
+                        androidx.compose.runtime.key(face.id) {
+                            FaceCircle(face, Modifier.animateBounds(this@LookaheadScope))
+                        }
+                    }
+                    if (faces.size > STACK_VISIBLE) {
+                        Box(
+                            Modifier
+                                .animateBounds(this@LookaheadScope)
+                                .size(52.dp)
+                                .graphicsLayer { alpha = 1f - spread }
+                                .clip(CircleShape)
+                                .background(c.sunken)
+                                .hairline(CircleShape, c.hairline),
+                            contentAlignment = Alignment.Center,
+                        ) { Text("+${cluster.faces.size - STACK_VISIBLE + 1}", style = MaterialTheme.typography.labelMedium, color = c.inkSecondary) }
+                    }
+                },
+            ) { measurables, constraints ->
+                val circle = 52.dp.roundToPx()
+                val placeables = measurables.map { it.measure(androidx.compose.ui.unit.Constraints.fixed(circle, circle)) }
+                val hasMore = faces.size > STACK_VISIBLE
+                val faceCount = faces.size
+                val width = constraints.maxWidth
+                if (expanded) {
+                    val gap = ((width - circle * GRID_COLUMNS) / (GRID_COLUMNS - 1).coerceAtLeast(1)).coerceAtLeast(0)
+                    val rows = (faceCount + GRID_COLUMNS - 1) / GRID_COLUMNS
+                    val height = rows * circle + (rows - 1).coerceAtLeast(0) * gap
+                    layout(width, height) {
+                        placeables.forEachIndexed { i, p ->
+                            if (i < faceCount) p.place((i % GRID_COLUMNS) * (circle + gap), (i / GRID_COLUMNS) * (circle + gap))
+                            else p.place(width - circle, height - circle) // "+N" bubble fades out in the corner
+                        }
+                    }
+                } else {
+                    val overlap = 16.dp.roundToPx()
+                    val step = circle - overlap
+                    val visible = if (hasMore) STACK_VISIBLE - 1 else faceCount
+                    layout(width, circle) {
+                        placeables.forEachIndexed { i, p ->
+                            when {
+                                i < visible -> p.place(i * step, 0, zIndex = (faceCount - i).toFloat())
+                                i < faceCount -> p.placeWithLayer((visible - 1).coerceAtLeast(0) * step, 0, zIndex = 0f) { alpha = 0f }
+                                else -> p.place(visible * step, 0, zIndex = (faceCount + 1).toFloat())
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Spacer(Modifier.height(Space.md))
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            SortoraTextField(
+                value = name,
+                onValueChange = { name = it },
+                label = stringResource(R.string.faces_name_label),
+                placeholder = fallbackName,
+                modifier = Modifier.weight(1f),
+            )
+            Spacer(Modifier.width(Space.xs))
+            GhostButton(stringResource(R.string.action_save), { onName(name) }, enabled = name != cluster.name.orEmpty())
+        }
+        Spacer(Modifier.height(Space.sm))
+        SecondaryButton(stringResource(R.string.faces_put_in_folder, cluster.name ?: fallbackName), onFolder, leading = Icons.Rounded.CreateNewFolder, compact = true)
+    }
+}
+
+@Composable
+private fun FaceCircle(face: FaceRecord, modifier: Modifier = Modifier) {
+    val c = Sortora.colors
+    val appear = remember { Animatable(0f) }
+    LaunchedEffect(Unit) { appear.animateTo(1f, Motion.bouncy()) }
+    Box(
+        modifier
+            .size(52.dp)
+            .graphicsLayer {
+                val a = appear.value
+                scaleX = 0.4f + 0.6f * a
+                scaleY = 0.4f + 0.6f * a
+                alpha = a.coerceIn(0f, 1f)
+            }
+            .clip(CircleShape)
+            .background(c.surface)
+            .padding(2.dp)
+            .clip(CircleShape)
+            .background(c.thumbnail),
+    ) {
+        AsyncImage(model = File(face.thumbnailPath), contentDescription = null, contentScale = ContentScale.Crop, modifier = Modifier.fillMaxSize())
     }
 }

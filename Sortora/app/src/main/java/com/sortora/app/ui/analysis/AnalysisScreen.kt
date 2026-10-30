@@ -1,44 +1,35 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
-
 package com.sortora.app.ui.analysis
 
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.outlined.ErrorOutline
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.AssistChip
-import androidx.compose.material3.Button
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
+import androidx.compose.material.icons.rounded.StopCircle
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -51,16 +42,39 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.toRoute
 import com.sortora.app.R
-import com.sortora.app.domain.model.ContentCategory
+import com.sortora.app.domain.model.AnalysisStatus
+import com.sortora.app.domain.model.ItemProgress
 import com.sortora.app.domain.model.SortSession
 import com.sortora.app.domain.repository.BackgroundJobs
 import com.sortora.app.domain.repository.JobProgress
 import com.sortora.app.domain.repository.JobState
 import com.sortora.app.domain.repository.SessionRepository
-import com.sortora.app.ui.components.EmptyState
+import com.sortora.app.ui.components.CenteredEmptyState
 import com.sortora.app.ui.components.icon
 import com.sortora.app.ui.components.labelRes
+import com.sortora.app.ui.design.Art
+import com.sortora.app.ui.design.Eyebrow
+import com.sortora.app.ui.design.FluidRing
+import com.sortora.app.ui.design.FluidSpinner
+import com.sortora.app.ui.design.GhostButton
+import com.sortora.app.ui.design.GlassDock
+import com.sortora.app.ui.design.GlassTopBar
+import com.sortora.app.ui.design.IconBubble
+import com.sortora.app.ui.design.Motion
+import com.sortora.app.ui.design.PrimaryButton
+import com.sortora.app.ui.design.Reveal
+import com.sortora.app.ui.design.ScreenScaffold
+import com.sortora.app.ui.design.SecondaryButton
+import com.sortora.app.ui.design.Sortora
+import com.sortora.app.ui.design.SortoraDialog
+import com.sortora.app.ui.design.Space
+import com.sortora.app.ui.design.SuccessMark
+import com.sortora.app.ui.design.morph
+import com.sortora.app.ui.home.SORT_ORB_KEY
 import com.sortora.app.ui.navigation.AnalysisRoute
+import com.sortora.app.ui.sorting.SortingStage
+import com.sortora.app.ui.sorting.StageItem
+import com.sortora.app.ui.sorting.StageTarget
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -71,7 +85,7 @@ import javax.inject.Inject
 data class AnalysisUiState(
     val session: SortSession? = null,
     val job: JobProgress = JobProgress(JobState.IDLE),
-    val categories: Map<ContentCategory, Int> = emptyMap(),
+    val items: List<ItemProgress> = emptyList(),
 ) {
     val processed: Int get() = (session?.analyzedItems ?: 0) + (session?.failedItems ?: 0)
     val total: Int get() = session?.totalItems ?: 0
@@ -91,8 +105,8 @@ class AnalysisViewModel @Inject constructor(
     val state: StateFlow<AnalysisUiState> = combine(
         sessions.observeSession(sessionId),
         jobs.observeAnalysis(sessionId),
-        sessions.observeCategoryCounts(sessionId),
-    ) { session, job, categories -> AnalysisUiState(session, job, categories) }
+        sessions.observeItemProgress(sessionId),
+    ) { session, job, items -> AnalysisUiState(session, job, items) }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), AnalysisUiState())
 
     fun cancel() = jobs.cancelAnalysis(sessionId)
@@ -103,110 +117,159 @@ class AnalysisViewModel @Inject constructor(
 @Composable
 fun AnalysisScreen(onBack: () -> Unit, onReview: (Long) -> Unit, viewModel: AnalysisViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val c = Sortora.colors
+    val resources = LocalResources.current
     var confirmCancel by remember { mutableStateOf(false) }
+    val running = !state.finished && !state.stopped
 
-    // Jump straight to the preview once everything is analysed.
-    LaunchedEffect(state.finished) {
-        if (state.finished) onReview(viewModel.sessionId)
-    }
-
-    Scaffold(
+    ScreenScaffold(
+        ambient = true,
         topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.analysis_title)) },
-                navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, stringResource(R.string.action_back)) }
+            GlassTopBar(
+                navigation = { IconBubble(Icons.AutoMirrored.Rounded.ArrowBack, stringResource(R.string.action_back), onBack) },
+                actions = {
+                    if (running) GhostButton(stringResource(R.string.analysis_stop), { confirmCancel = true }, color = c.inkSecondary, leading = Icons.Rounded.StopCircle)
                 },
             )
         },
+        bottomBar = {
+            Reveal(visible = state.finished) {
+                GlassDock {
+                    PrimaryButton(stringResource(R.string.analysis_review_cta), { onReview(viewModel.sessionId) }, Modifier.fillMaxWidth())
+                }
+            }
+        },
     ) { padding ->
+        if (state.stopped && !state.finished) {
+            val analyzed = state.session?.analyzedItems ?: 0
+            CenteredEmptyState(
+                art = Art.Paused,
+                title = stringResource(if (state.job.state == JobState.FAILED) R.string.analysis_failed_title else R.string.analysis_stopped_title),
+                message = pluralStringResource(R.plurals.analysis_stopped_body, analyzed, analyzed),
+                modifier = Modifier.padding(padding),
+            ) {
+                Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(Space.sm)) {
+                    if (analyzed > 0) PrimaryButton(stringResource(R.string.analysis_review_partial), { onReview(viewModel.sessionId) })
+                    SecondaryButton(stringResource(R.string.analysis_continue), viewModel::retry)
+                }
+            }
+            return@ScreenScaffold
+        }
+
+        if (state.session == null) {
+            Box(Modifier.fillMaxSize().padding(padding), contentAlignment = Alignment.Center) { FluidSpinner(size = 34.dp) }
+            return@ScreenScaffold
+        }
+
+        val byId = remember(state.items) { state.items.associateBy { it.id } }
+        val waiting = remember(state.items) {
+            state.items.filter { it.analysisStatus == AnalysisStatus.PENDING }.map { StageItem(it.id, it.uri, it.kind) }
+        }
+        val done = remember(state.items) {
+            state.items.mapNotNull { item -> item.category?.takeIf { item.analysisStatus == AnalysisStatus.DONE }?.let { item.id to it.name } }.toMap()
+        }
+        val categories = remember(state.items) { state.items.mapNotNull { it.category?.takeIf { _ -> it.analysisStatus == AnalysisStatus.DONE } }.distinct() }
+        val targets = categories.map { StageTarget(it.name, stringResource(it.labelRes()), it.icon()) }
+
         Column(
             Modifier
                 .fillMaxSize()
-                .padding(padding)
                 .verticalScroll(rememberScrollState())
-                .padding(24.dp),
+                .padding(top = padding.calculateTopPadding(), bottom = padding.calculateBottomPadding() + Space.xl),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            if (state.stopped && !state.finished) {
-                EmptyState(
-                    icon = Icons.Outlined.ErrorOutline,
-                    title = stringResource(if (state.job.state == JobState.FAILED) R.string.analysis_failed_title else R.string.analysis_stopped_title),
-                    message = pluralStringResource(R.plurals.analysis_stopped_body, state.session?.analyzedItems ?: 0, state.session?.analyzedItems ?: 0),
-                ) {
-                    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                        if ((state.session?.analyzedItems ?: 0) > 0) {
-                            Button(onClick = { onReview(viewModel.sessionId) }) { Text(stringResource(R.string.analysis_review_partial)) }
-                        }
-                        OutlinedButton(onClick = viewModel::retry) { Text(stringResource(R.string.analysis_continue)) }
-                    }
-                }
-                return@Column
-            }
-
-            Spacer(Modifier.height(16.dp))
-            Box(contentAlignment = Alignment.Center) {
-                CircularProgressIndicator(
-                    progress = { state.progress },
-                    modifier = Modifier.size(160.dp),
-                    strokeWidth = 10.dp,
-                    trackColor = MaterialTheme.colorScheme.surfaceVariant,
+            Eyebrow(stringResource(R.string.analysis_eyebrow))
+            Spacer(Modifier.height(Space.xs))
+            AnimatedContent(
+                state.finished,
+                transitionSpec = { fadeIn(Motion.fade(400)) togetherWith fadeOut(Motion.fade(200)) },
+                label = "heading",
+            ) { finished ->
+                Text(
+                    if (finished) stringResource(R.string.analysis_done_title) else pluralStringResource(R.plurals.analysis_heading, state.total, state.total),
+                    style = MaterialTheme.typography.displaySmall,
+                    color = c.ink,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(horizontal = Space.gutter),
                 )
-                Text("${(state.progress * 100).toInt()}%", style = MaterialTheme.typography.headlineMedium)
             }
-            Spacer(Modifier.height(24.dp))
+            Spacer(Modifier.height(Space.xs))
             Text(
-                stringResource(R.string.analysis_progress, state.processed, state.total),
-                style = MaterialTheme.typography.titleMedium,
-            )
-            Text(
-                state.job.currentFile ?: stringResource(
-                    if (state.job.state == JobState.QUEUED) R.string.analysis_waiting else R.string.analysis_loading_models,
-                ),
+                when {
+                    state.finished -> pluralStringResource(R.plurals.analysis_done_body, state.processed, state.processed)
+                    else -> state.job.currentFile ?: stringResource(
+                        if (state.job.state == JobState.QUEUED) R.string.analysis_waiting else R.string.analysis_loading_models,
+                    )
+                },
                 style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                color = c.inkSecondary,
                 maxLines = 1,
                 overflow = TextOverflow.MiddleEllipsis,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(horizontal = Space.xxl),
             )
-            Spacer(Modifier.height(16.dp))
+
+            SortingStage(
+                waiting = waiting,
+                done = done,
+                lookup = { id -> byId[id]?.let { StageItem(it.id, it.uri, it.kind) } },
+                targets = targets,
+                remainingLabel = { n -> resources.getQuantityString(R.plurals.stage_remaining, n, n) },
+                center = { ProgressOrb(state) },
+                modifier = Modifier.fillMaxWidth(),
+            )
+
+            Spacer(Modifier.height(Space.xl))
             Text(
                 stringResource(R.string.analysis_background_hint),
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.bodySmall,
                 textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                color = c.inkTertiary,
+                modifier = Modifier.widthIn(max = 360.dp).padding(horizontal = Space.xxl),
             )
-
-            if (state.categories.isNotEmpty()) {
-                Spacer(Modifier.height(24.dp))
-                Text(stringResource(R.string.analysis_found_so_far), style = MaterialTheme.typography.labelLarge, modifier = Modifier.fillMaxWidth())
-                Spacer(Modifier.height(8.dp))
-                FlowRow(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    state.categories.entries.sortedByDescending { it.value }.forEach { (category, count) ->
-                        AssistChip(
-                            onClick = {},
-                            label = { Text("${stringResource(category.labelRes())} · $count") },
-                            leadingIcon = { Icon(category.icon(), contentDescription = null, modifier = Modifier.size(18.dp)) },
-                        )
-                    }
-                }
-            }
-
-            Spacer(Modifier.height(32.dp))
-            TextButton(onClick = { confirmCancel = true }) { Text(stringResource(R.string.analysis_stop)) }
         }
     }
 
     if (confirmCancel) {
-        AlertDialog(
-            onDismissRequest = { confirmCancel = false },
-            title = { Text(stringResource(R.string.analysis_stop_confirm_title)) },
-            text = { Text(stringResource(R.string.analysis_stop_confirm_body)) },
-            confirmButton = {
-                TextButton(onClick = { confirmCancel = false; viewModel.cancel() }) { Text(stringResource(R.string.analysis_stop)) }
-            },
-            dismissButton = {
-                TextButton(onClick = { confirmCancel = false }) { Text(stringResource(R.string.action_keep_going)) }
-            },
+        SortoraDialog(
+            onDismiss = { confirmCancel = false },
+            title = stringResource(R.string.analysis_stop_confirm_title),
+            text = stringResource(R.string.analysis_stop_confirm_body),
+            confirm = stringResource(R.string.analysis_stop),
+            onConfirm = { confirmCancel = false; viewModel.cancel() },
+            dismiss = stringResource(R.string.action_keep_going),
         )
+    }
+}
+
+/** The ring at the centre of the orbit; it becomes the success mark when everything is sorted. */
+@Composable
+private fun ProgressOrb(state: AnalysisUiState) {
+    val c = Sortora.colors
+    Box(Modifier.morph(SORT_ORB_KEY), contentAlignment = Alignment.Center) {
+        AnimatedContent(
+            state.finished,
+            transitionSpec = { (fadeIn(Motion.fade(300)) + scaleIn(Motion.bouncy(), initialScale = 0.8f)) togetherWith (fadeOut(Motion.fade(200)) + scaleOut(targetScale = 1.08f)) },
+            label = "orb",
+        ) { finished ->
+            if (finished) {
+                SuccessMark(size = 148.dp)
+            } else {
+                FluidRing(state.progress, size = 148.dp, strokeWidth = 7.dp) {
+                    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                        Text(
+                            stringResource(R.string.percent_value, (state.progress * 100).toInt()),
+                            style = MaterialTheme.typography.headlineLarge,
+                            color = c.ink,
+                        )
+                        Text(
+                            "${state.processed} / ${state.total}",
+                            style = MaterialTheme.typography.labelMedium,
+                            color = c.inkTertiary,
+                        )
+                    }
+                }
+            }
+        }
     }
 }

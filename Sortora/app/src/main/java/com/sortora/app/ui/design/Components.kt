@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
@@ -72,6 +73,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import dev.chrisbanes.haze.HazeState
 import dev.chrisbanes.haze.HazeStyle
@@ -116,7 +118,8 @@ fun SoftCard(
 fun Modifier.glass(state: HazeState?, colors: SortoraColors, shape: Shape, opaque: Boolean = false): Modifier {
     val tint = if (opaque) colors.canvas.copy(alpha = 0.9f) else colors.glass
     val base = this.clip(shape)
-    val surface = if (state != null) {
+    // Without real blur (Android 11 and older), a see-through bar would show text behind it.
+    val surface = if (state != null && GlassBlurSupported) {
         base.hazeEffect(
             state,
             HazeStyle(
@@ -128,7 +131,7 @@ fun Modifier.glass(state: HazeState?, colors: SortoraColors, shape: Shape, opaqu
             ),
         )
     } else {
-        base.background(colors.canvas.copy(alpha = 0.96f))
+        base.background(colors.canvas)
     }
     return surface
 }
@@ -195,6 +198,7 @@ fun GlassDock(modifier: Modifier = Modifier, content: @Composable ColumnScope.()
             .fillMaxWidth()
             .glass(LocalHazeState.current, c, androidx.compose.ui.graphics.RectangleShape)
             .drawBehind { drawLine(c.hairline, Offset(0f, 0f), Offset(size.width, 0f), 1f) }
+            .navigationBarsPadding()
             .padding(horizontal = Space.gutter, vertical = Space.md),
         content = content,
     )
@@ -284,7 +288,9 @@ fun PrimaryButton(
                         Icon(leading, contentDescription = null, tint = fg, modifier = Modifier.size(19.dp))
                         Spacer(Modifier.width(Space.xs))
                     }
-                    Text(text, style = MaterialTheme.typography.labelLarge, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    AnimatedContent(text, transitionSpec = { fadeIn(Motion.fade()) togetherWith fadeOut(Motion.fade(140)) using SizeTransform(clip = false) }, label = "label") { label ->
+                        Text(label, style = MaterialTheme.typography.labelLarge, color = fg, maxLines = 1, overflow = TextOverflow.Ellipsis)
+                    }
                 }
             }
         }
@@ -442,7 +448,7 @@ fun <T> SegmentedControl(
         val offset by animateDpAsState(segment * index, Motion.gentle(), label = "thumb")
         Box(
             Modifier
-                .offset(x = offset)
+                .offset { IntOffset(offset.roundToPx(), 0) }
                 .width(segment)
                 .fillMaxHeight()
                 .softShadow(Radius.Pill, Depth.Low, c)
@@ -515,11 +521,11 @@ fun CheckOrb(checked: Boolean, onToggle: () -> Unit, modifier: Modifier = Modifi
 }
 
 @Composable
-fun ToggleRow(title: String, subtitle: String?, checked: Boolean, onChange: (Boolean) -> Unit, modifier: Modifier = Modifier) {
+fun ToggleRow(title: String, subtitle: String?, checked: Boolean, onChange: (Boolean) -> Unit) {
     val c = Sortora.colors
     val haptics = LocalHapticFeedback.current
     Row(
-        modifier
+        Modifier
             .fillMaxWidth()
             .toggleable(value = checked, role = Role.Switch) {
                 haptics.performHapticFeedback(if (it) HapticFeedbackType.ToggleOn else HapticFeedbackType.ToggleOff)
@@ -673,4 +679,99 @@ fun Reveal(visible: Boolean, modifier: Modifier = Modifier, content: @Composable
         enter = fadeIn(Motion.fade(360)) + slideInVertically(Motion.gentle()) { it / 6 } + scaleIn(Motion.gentle(), initialScale = 0.98f),
         exit = fadeOut(Motion.fade(200)) + scaleOut(targetScale = 0.98f),
     ) { content() }
+}
+
+/** Confirmation dialog in Sortora's style. Destructive confirms are tinted, never filled. */
+@Composable
+fun SortoraDialog(
+    onDismiss: () -> Unit,
+    title: String,
+    text: String,
+    confirm: String,
+    onConfirm: () -> Unit,
+    dismiss: String? = null,
+    destructive: Boolean = false,
+    icon: ImageVector? = null,
+) {
+    val c = Sortora.colors
+    androidx.compose.material3.AlertDialog(
+        onDismissRequest = onDismiss,
+        containerColor = c.surface,
+        shape = Radius.Xl,
+        tonalElevation = 0.dp,
+        icon = icon?.let {
+            {
+                Box(
+                    Modifier.size(48.dp).clip(CircleShape).background(if (destructive) c.dangerSoft else c.accentSoft),
+                    contentAlignment = Alignment.Center,
+                ) { Icon(it, contentDescription = null, tint = if (destructive) c.danger else c.accent, modifier = Modifier.size(22.dp)) }
+            }
+        },
+        title = { Text(title, style = MaterialTheme.typography.headlineSmall, color = c.ink, textAlign = androidx.compose.ui.text.style.TextAlign.Center) },
+        text = { Text(text, style = MaterialTheme.typography.bodyMedium, color = c.inkSecondary) },
+        confirmButton = { GhostButton(confirm, onConfirm, color = if (destructive) c.danger else c.accent) },
+        dismissButton = dismiss?.let { { GhostButton(it, onDismiss, color = c.inkSecondary) } },
+    )
+}
+
+/** Outlined field in Sortora's colours: quiet at rest, accent when focused. */
+@Composable
+fun SortoraTextField(
+    value: String,
+    onValueChange: (String) -> Unit,
+    label: String,
+    modifier: Modifier = Modifier,
+    placeholder: String? = null,
+    supporting: String? = null,
+    suffix: String? = null,
+    leading: ImageVector? = null,
+    singleLine: Boolean = true,
+    minLines: Int = 1,
+    mono: Boolean = false,
+) {
+    val c = Sortora.colors
+    androidx.compose.material3.OutlinedTextField(
+        value = value,
+        onValueChange = onValueChange,
+        modifier = modifier,
+        label = { Text(label) },
+        placeholder = placeholder?.let { { Text(it, color = c.inkTertiary) } },
+        supportingText = supporting?.let { { Text(it, color = c.inkTertiary) } },
+        suffix = suffix?.let { { Text(it, color = c.inkSecondary) } },
+        leadingIcon = leading?.let { { Icon(it, contentDescription = null, tint = c.inkSecondary, modifier = Modifier.size(20.dp)) } },
+        singleLine = singleLine,
+        minLines = minLines,
+        textStyle = if (mono) MonoStyle.copy(fontSize = androidx.compose.ui.unit.TextUnit(15f, androidx.compose.ui.unit.TextUnitType.Sp), color = c.ink)
+        else MaterialTheme.typography.bodyLarge.copy(color = c.ink),
+        shape = Radius.Md,
+        colors = androidx.compose.material3.OutlinedTextFieldDefaults.colors(
+            focusedBorderColor = c.accent,
+            unfocusedBorderColor = c.hairline,
+            focusedContainerColor = c.surface,
+            unfocusedContainerColor = c.sunken.copy(alpha = 0.55f),
+            cursorColor = c.accent,
+            focusedLabelColor = c.accent,
+            unfocusedLabelColor = c.inkSecondary,
+        ),
+    )
+}
+
+/** Bottom sheet frame: soft top corners, a slim handle, Sortora surface. */
+@OptIn(androidx.compose.material3.ExperimentalMaterial3Api::class)
+@Composable
+fun SortoraSheet(onDismiss: () -> Unit, content: @Composable ColumnScope.() -> Unit) {
+    val c = Sortora.colors
+    androidx.compose.material3.ModalBottomSheet(
+        onDismissRequest = onDismiss,
+        sheetState = androidx.compose.material3.rememberModalBottomSheetState(skipPartiallyExpanded = true),
+        containerColor = c.surface,
+        contentColor = c.ink,
+        scrimColor = c.scrim,
+        tonalElevation = 0.dp,
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(topStart = Radius.xxl, topEnd = Radius.xxl),
+        dragHandle = {
+            Box(Modifier.padding(top = Space.sm, bottom = Space.xs).size(width = 36.dp, height = 4.dp).clip(Radius.Pill).background(c.inkTertiary.copy(alpha = 0.4f)))
+        },
+        content = content,
+    )
 }

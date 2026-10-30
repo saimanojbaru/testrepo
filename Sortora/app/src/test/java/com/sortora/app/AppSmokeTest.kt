@@ -5,6 +5,7 @@ import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.isDialog
+import androidx.compose.ui.test.isSelectable
 import androidx.compose.ui.test.junit4.v2.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
@@ -121,7 +122,7 @@ class AppSmokeTest {
         waitForText(str(R.string.preview_need_destination))
 
         // Smart filter + batch rename with a pattern (default "{date}_{label}_{counter}").
-        compose.onNodeWithText("${str(R.string.filter_video)} (1)").performClick()
+        compose.onNode(hasText(str(R.string.filter_video)) and isSelectable()).performClick()
         compose.onNodeWithContentDescription(str(R.string.action_more)).performClick()
         compose.onNodeWithText(str(R.string.bulk_rename)).performClick()
         compose.onNodeWithText(str(R.string.action_apply)).performClick()
