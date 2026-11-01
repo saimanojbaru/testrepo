@@ -65,6 +65,26 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   white-space: nowrap; pointer-events: none;
 }
 .lbl.off { opacity: 0; }
+.lbl .te { font-size: 10.5px; font-weight: 600; opacity: 0.85; margin-top: -2px; }
+.lbl-corp .te { font-size: 14px; }
+.lbl .ph {
+  width: 38px; height: 38px; border-radius: 50%; overflow: hidden; border: 2px solid #fff; background: #1a2420;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6), 0 0 0 3px rgba(0,0,0,0.35);
+}
+.lbl .ph { position: relative; display: grid; place-items: center; }
+.lbl .ph svg { width: 17px; height: 17px; }
+.lbl .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.lbl.sel .ph { transform: scale(1.25); box-shadow: 0 0 0 3px rgba(91,228,155,0.55), 0 0 24px rgba(91,228,155,0.6); }
+.lbl .mr {
+  width: 16px; height: 16px; border-radius: 50%; display: grid; place-items: center; text-shadow: none;
+  font-size: 9.5px; font-weight: 900; color: #fff; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+.lbl-shield .shield {
+  display: inline-flex; flex-direction: column; align-items: center; padding: 0 7px 2px; border-radius: 6px; text-shadow: none;
+  background: #fff; color: #13110c; border: 2px solid #13110c; font-size: 11px; font-weight: 900; letter-spacing: 0.02em; line-height: 1.2;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+}
+.lbl-shield .shield i { display: block; width: calc(100% + 10px); height: 3px; background: #f2b23a; margin: 0 -5px 1px; border-radius: 3px 3px 0 0; }
 .lbl .t { font-weight: 700; letter-spacing: -0.01em; }
 .lbl .p {
   font-size: 9px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
@@ -139,7 +159,7 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
 .pill.dim { background: rgba(255,255,255,0.1); color: var(--ink); border: 1px solid var(--line); }
 #app[data-mode="quiz"] #headline, #app[data-mode="tour"] #headline,
 #app[data-sheet="open"] #headline, #app[data-card="open"] #headline { opacity: 0; transform: translateY(-8px); }
-#app[data-card="open"] #depth-bar { display: none; }
+#app[data-card="open"] #depth-bar, #app[data-card="open"] #places-strip { display: none; }
 #app[data-card="open"] #map-tools { opacity: 0; pointer-events: none; }
 
 /* ---------- map tools ---------- */
@@ -243,7 +263,9 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   position: absolute; z-index: 20; left: 0; right: 0; bottom: var(--tab-h); top: 30%;
   border-radius: 26px 26px 0 0; border-bottom: 0; display: flex; flex-direction: column;
   animation: sheetIn 0.45s var(--ease);
-  background: rgba(8, 12, 10, 0.9);
+  background: #080c0a;
+  /* opaque, no backdrop blur: a see-through scrolling sheet ghosted on some GPUs */
+  backdrop-filter: none; -webkit-backdrop-filter: none;
 }
 @keyframes sheetIn { from { transform: translateY(60px); opacity: 0; } }
 .sheet-grip { width: 38px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.18); margin: 9px auto 2px; flex: none; }
@@ -420,3 +442,55 @@ svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width:
   #tabbar { left: 16px; right: auto; width: 520px; bottom: 12px; border-radius: 22px; border: 1px solid var(--line); }
   #headline .title { font-size: 44px; }
 }
+
+/* ---------- v2: photos, dial, flight, draw ---------- */
+.q-img { margin: -2px -4px 10px; border-radius: 14px; overflow: hidden; height: 168px; background: #121a16; }
+.q-img img { width: 100%; height: 100%; object-fit: cover; display: block; animation: fadein 0.5s ease; }
+@keyframes fadein { from { opacity: 0; } }
+.q-answers.draw-bar { grid-template-columns: 1fr 1fr 1fr; }
+.q-answers.draw-bar .btn { width: 100%; }
+.q-answers.draw-bar .btn.on { background: var(--ink); color: #05140c; }
+.q-answers.draw-bar .tap-hint { grid-column: 1 / -1; background: rgba(8,12,10,0.8); border-radius: 12px; }
+
+.tool.dial { position: relative; width: 52px; height: 52px; border-radius: 50%; touch-action: none; cursor: grab; margin-left: -6px; }
+.dial-ring { position: absolute; inset: 4px; border-radius: 50%; border: 1.5px dashed rgba(255,255,255,0.18); }
+.dial-needle { position: absolute; inset: 0; display: grid; place-items: center; transition: transform 0.08s linear; }
+.dial-needle i { width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-bottom: 15px solid #ff5a6e; transform: translateY(-11px); filter: drop-shadow(0 0 4px rgba(255,90,110,0.6)); }
+.dial-tilt { position: absolute; bottom: 7px; left: 0; right: 0; text-align: center; font-size: 9px; font-weight: 900; letter-spacing: 0.06em; color: var(--green); }
+.tool.dial.active { box-shadow: 0 0 0 2px var(--green), 0 0 24px rgba(91,228,155,0.35); }
+
+#places-strip { gap: 10px; padding-bottom: 2px; }
+.place-card {
+  flex: none; width: 150px; height: 104px; border-radius: 16px; overflow: hidden; position: relative; text-align: left;
+  border: 1px solid var(--line-2); background: #142019; box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+.place-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.place-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.85)); }
+.place-card span { position: absolute; z-index: 1; left: 10px; right: 8px; bottom: 8px; font-size: 12.5px; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; }
+.place-card small { display: block; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 2px; }
+
+.ic-hero { position: relative; margin: -16px -16px 12px; height: 190px; border-radius: var(--r) var(--r) 0 0; overflow: hidden; background: #142019; }
+.ic-hero img { width: 100%; height: 100%; object-fit: cover; display: block; animation: fadein 0.5s ease; }
+.ic-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 45%, rgba(8,12,10,0.95)); }
+.ic-hero .credit { position: absolute; z-index: 1; right: 10px; bottom: 6px; left: 10px; text-align: right; font-size: 9px; color: rgba(255,255,255,0.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ic-hero .credit a { color: inherit; }
+.ic-hero + .ic-head .close-x { position: absolute; top: 12px; right: 12px; z-index: 2; background: rgba(0,0,0,0.55); }
+#info-card { position: relative; }
+.te-name { font-size: 15px; font-weight: 600; color: #cfe9da; margin-top: 2px; }
+.shield-inline { display: inline-flex; flex-direction: column; align-items: center; padding: 0 7px 2px; border-radius: 6px; background: #fff; color: #13110c; border: 2px solid #13110c; font-size: 12px; font-weight: 900; line-height: 1.2; margin-right: 6px; vertical-align: middle; }
+.shield-inline i { display: block; width: calc(100% + 10px); height: 3px; background: #f2b23a; margin: 0 -5px 1px; border-radius: 3px 3px 0 0; }
+.ic-actions .btn.ghost svg { width: 18px; height: 18px; }
+
+#flight .ov-top { gap: 10px; }
+.fl-title { font-weight: 800; font-size: 15px; letter-spacing: -0.01em; text-shadow: 0 2px 10px rgba(0,0,0,0.8); }
+.fl-card { margin: auto 12px 14px; border-radius: 20px; padding: 14px 16px; animation: rise 0.4s var(--ease); }
+.fl-now { font-size: 24px; font-weight: 800; letter-spacing: -0.03em; margin-top: 4px; }
+.fl-next { font-size: 13px; color: var(--muted); font-weight: 650; margin: 4px 0 10px; }
+.fl-ctrl { display: flex; align-items: center; gap: 10px; margin-top: 12px; }
+.fl-ctrl .seg { margin-top: 0; margin-left: auto; }
+#app[data-mode="flight"] #tabbar { transform: translateY(110%); }
+#app[data-mode="flight"] #headline, #app[data-mode="flight"] #map-tools, #app[data-mode="flight"] #topbar, #app[data-mode="flight"] #explore { opacity: 0; pointer-events: none; }
+#app[data-mode="flight"] #explore > * { pointer-events: none; }
+#app[data-mode="flight"] #attrib { bottom: 2px; }
+.lvl-note { font-size: 12px; color: var(--muted); margin-top: 8px; font-weight: 600; }
+.badge-adv { display: inline-block; font-size: 8.5px; font-weight: 900; letter-spacing: 0.14em; padding: 3px 6px; border-radius: 6px; background: var(--red); color: #fff; margin-left: 6px; vertical-align: middle; }

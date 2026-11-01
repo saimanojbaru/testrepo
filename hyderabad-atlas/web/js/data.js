@@ -3,7 +3,8 @@
 
 export const KIND_LABEL = {
   corp: 'Corporation', zone: 'Zone', circle: 'Circle', locality: 'Area',
-  landmark: 'Landmark', station: 'Metro station', line: 'Metro line', corridor: 'Route',
+  landmark: 'Landmark', station: 'Metro station', line: 'Metro line', corridor: 'Highway',
+  exit: 'ORR exit', river: 'River', rail: 'MMTS line', stop: 'Stop',
 };
 
 const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -36,6 +37,9 @@ export async function loadAtlas() {
     });
   }
   A.corridors.forEach((r) => put(r, 'corridor'));
+  (A.exits || []).forEach((e) => put(e, 'exit'));
+  (A.rivers || []).forEach((r) => put(r, 'river'));
+  (A.rail || []).forEach((r) => put(r, 'rail'));
 
   // children + colours
   const color = Object.fromEntries(A.corporations.map((c) => [c.id, c.color]));
@@ -48,8 +52,8 @@ export async function loadAtlas() {
   A.circles.forEach((c) => byId.get(c.zone).children.push(c.id));
   A.localities.forEach((l) => byId.get(l.circle).children.push(l.id));
 
-  // nearest locality for stations, so they inherit a corporation colour
-  for (const st of A.stations) {
+  // nearest locality for stations and exits, so they inherit a corporation colour
+  for (const st of [...A.stations, ...(A.exits || [])]) {
     const home = A.localities.find((l) => pointInGeom([st.lng, st.lat], l.geom));
     if (home) { st.locality = home.id; st.circle = home.circle; st.zone = home.zone; st.corp = home.corp; }
   }
@@ -60,7 +64,11 @@ export async function loadAtlas() {
   A.lists = {
     corp: A.corporations, zone: A.zones, circle: A.circles, locality: A.localities,
     landmark: A.landmarks, station: A.stations, line: A.metro, corridor: A.corridors,
+    exit: A.exits || [], river: A.rivers || [], rail: A.rail || [],
   };
+  A.highways = A.corridors.filter((r) => r.id !== 'r-orr');
+  A.orrRoute = A.get('r-orr');
+  A.photos = A.landmarks.filter((m) => m.photo);
   A.interchanges = A.stations.filter((s) => s.lines.length > 1);
   return A;
 }
@@ -70,7 +78,8 @@ export async function loadAtlas() {
 export function pointOf(it) {
   if (it.label) return it.label;
   if (it.lng != null) return [it.lng, it.lat];
-  if (it.kind === 'line') return it.line[Math.floor(it.line.length / 2)];
+  if (it.kind === 'line' || it.kind === 'rail' || (it.kind === 'corridor' && it.line)) return it.line[Math.floor(it.line.length / 2)];
+  if (it.kind === 'river') { const l = it.lines.reduce((a, b) => (b.length > a.length ? b : a)); return l[Math.floor(l.length / 2)]; }
   if (it.kind === 'corridor') { const s = it.stops[Math.floor(it.stops.length / 2)]; return [s.lng, s.lat]; }
   return [78.47, 17.4];
 }
@@ -141,8 +150,9 @@ export const compassOf = (deg) => COMPASS[Math.round(deg / 45) % 8];
 export function bboxOf(it) {
   let pts = [];
   if (it.geom) polys(it.geom).forEach((p) => (pts = pts.concat(p[0])));
-  else if (it.kind === 'line') pts = it.line;
-  else if (it.kind === 'corridor') pts = it.stops.map((s) => [s.lng, s.lat]);
+  else if (it.line) pts = it.line;
+  else if (it.kind === 'river') pts = it.lines.flat();
+  else if (it.kind === 'corridor' || it.stops) pts = it.stops.map((s) => [s.lng, s.lat]);
   else pts = [pointOf(it)];
   let [x0, y0, x1, y1] = [180, 90, -180, -90];
   for (const [x, y] of pts) { x0 = Math.min(x0, x); y0 = Math.min(y0, y); x1 = Math.max(x1, x); y1 = Math.max(y1, y); }
@@ -156,3 +166,44 @@ export function shuffle(a) {
 }
 
 export const pick = (a) => a[Math.floor(Math.random() * a.length)];
+
+// Coordinates of any line-like item as one polyline.
+export function pathOf(it) {
+  if (it.line) return it.line;
+  if (it.kind === 'river') return it.lines.reduce((a, b) => (b.length > a.length ? b : a));
+  if (it.stops) return it.stops.map((s) => [s.lng, s.lat]);
+  return [pointOf(it)];
+}
+
+// Planar distance (km) from point p to polyline `line`, good enough at city scale.
+export function distToLineKm(p, line) {
+  let best = Infinity;
+  for (let i = 1; i < line.length; i++) best = Math.min(best, segDistKm(p, line[i - 1], line[i]));
+  if (line.length === 1) best = km(p, line[0]);
+  return best;
+}
+
+// Points every `stepKm` along a polyline.
+export function resample(line, stepKm = 0.1) {
+  const out = [line[0]];
+  let carry = 0;
+  for (let i = 1; i < line.length; i++) {
+    const a = line[i - 1], b = line[i];
+    const d = km(a, b);
+    let t = stepKm - carry;
+    while (t <= d) {
+      const k = t / d;
+      out.push([a[0] + (b[0] - a[0]) * k, a[1] + (b[1] - a[1]) * k]);
+      t += stepKm;
+    }
+    carry = d - (t - stepKm);
+  }
+  if (line.length > 1) out.push(line[line.length - 1]);
+  return out;
+}
+
+export function lengthKm(line) {
+  let s = 0;
+  for (let i = 1; i < line.length; i++) s += km(line[i - 1], line[i]);
+  return s;
+}

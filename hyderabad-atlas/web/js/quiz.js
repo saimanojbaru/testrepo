@@ -4,15 +4,17 @@ import {
   pointInGeom, distToGeomKm, KIND_LABEL,
 } from './data.js';
 import { burst, buzz, toast } from './ui.js';
+import { pathOf, lengthKm } from './data.js';
+import { DrawPad, scoreDrawing, judgeStrokes, LEVELS } from './draw.js';
 
 const esc = (s) => String(s).replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 const em = (s) => `<em>${esc(s)}</em>`;
-const TOL = { locality: 1.3, landmark: 1.2, station: 0.7, stop: 1.3 };
+const TOL = { locality: 1.3, landmark: 1.2, station: 0.7, stop: 1.3, exit: 1.0 };
 const DEPTH_OF = { corp: 'corp', zone: 'zone', circle: 'circle', locality: 'locality', landmark: 'landmark', station: 'metro' };
 
 // ------------------------------------------------------------------ generators
 // Each returns a question or null if it doesn't apply to the item.
-export function makeGenerators(A) {
+export function makeGenerators(A, getLevel = () => 'pro') {
   const kindList = (k) => A.lists[k];
   const others = (it, n, pool) => {
     pool = (pool || kindList(it.kind)).filter((x) => x.id !== it.id && x.name !== it.name);
@@ -65,6 +67,7 @@ export function makeGenerators(A) {
     const p = pointOf(it);
     const near = pool.filter((x) => x.id !== it.id && x.name !== it.name).sort((a, b) => km(pointOf(a), p) - km(pointOf(b), p));
     const wrong = shuffle(near.slice(0, 7)).slice(0, 3);
+    if (wrong.length < 2) return null;
     return {
       kicker: 'Name it', prompt: `Which ${KIND_LABEL[it.kind].toLowerCase()} is marked?`,
       sub: it.circle ? `${A.get(it.zone).name} zone · ${A.get(it.corp).name}` : '',
@@ -324,7 +327,11 @@ export function makeGenerators(A) {
       title = line.name;
       ids = stops.map((s) => s.id);
     } else if (it.kind === 'corridor') {
-      stops = it.stops.map((s) => ({ ...A.get(s.id), name: s.name }));
+      stops = it.stops.map((s, i) => ({ id: s.id || `${it.id}-s${i}`, name: s.name, lng: s.lng, lat: s.lat, kind: 'stop' }));
+      if (it.loop) {
+        const k = Math.floor(Math.random() * (stops.length - 5));
+        stops = stops.slice(k, k + 5);
+      }
       if (Math.random() < 0.4) stops = stops.slice().reverse();
       title = it.name;
       ids = [it.id];
@@ -357,9 +364,9 @@ export function makeGenerators(A) {
   };
 
   G.whichRoad = (it) => {
-    if (it.kind !== 'corridor') return null;
+    if (it.kind !== 'corridor' || it.loop) return null;
     const a = it.stops[0], b = it.stops.at(-1);
-    const wrong = shuffle(A.corridors.filter((r) => r.id !== it.id)).slice(0, 3);
+    const wrong = shuffle(A.highways.filter((r) => r.id !== it.id)).slice(0, 3);
     return {
       kicker: 'Which road?', prompt: `Which route links ${em(a.name)} and ${em(b.name)}?`, sub: it.desc,
       mode: 'choice', options: opts(it, wrong), answer: it.id, ids: [it.id],
@@ -377,6 +384,84 @@ export function makeGenerators(A) {
     };
   };
 
+  // ---- "where is this?" from a photo
+  G.photoName = (it) => {
+    if (it.kind !== 'landmark' || !it.photo) return null;
+    const p = pointOf(it);
+    const pool = A.photos.filter((x) => x.id !== it.id);
+    const sameCat = shuffle(pool.filter((x) => x.cat === it.cat)).slice(0, 2);
+    const rest = shuffle(pool.filter((x) => !sameCat.includes(x)).sort((a, b) => km(pointOf(a), p) - km(pointOf(b), p)).slice(0, 8));
+    const wrong = sameCat.concat(rest).slice(0, 3);
+    return {
+      kicker: 'Picture this', prompt: 'Where is this?', sub: '', img: it.photo,
+      mode: 'choice', options: opts(it, wrong), answer: it.id, ids: [it.id],
+      setup(m) { m.setDepth('landmark', { animate: false }); m.clearSelection(false); m.setLabelOverride([]); m.home({ duration: 1000 }); },
+      reveal(m) {
+        m.setLabelOverride([pointSpec(it, 'good')]);
+        m.fitItem(it, { zoom: 15, pitch: 60, duration: 1600 });
+      },
+    };
+  };
+
+  // ---- ORR exits
+  G.exitNumber = (it) => {
+    if (it.kind !== 'exit') return null;
+    const others = shuffle(A.exits.filter((e) => e.id !== it.id && Math.abs(e.num - it.num) <= 4)).slice(0, 3);
+    return {
+      kicker: 'ORR exits', prompt: `Which ORR exit is ${em(it.short)}?`, sub: 'Outer Ring Road',
+      mode: 'choice', options: shuffle([it, ...others]).map((e) => ({ label: `Exit ${e.ref}`, value: e.id })), answer: it.id, ids: [it.id],
+      setup(m) { m.setDepth('blank', { animate: false }); m.clearSelection(false); m.setLabelOverride([pointSpec(it, 'quiz', it.short)]); m.home({ duration: 1000 }); },
+      reveal(m) { m.setLabelOverride([pointSpec(it, 'good', it.name)]); },
+    };
+  };
+
+  // ---- draw the route with a finger
+  G.draw = (it) => {
+    if (!['line', 'corridor', 'river', 'rail'].includes(it.kind)) return null;
+    const lvl = LEVELS[getLevel()] || LEVELS.pro;
+    const truth = pathOf(it);
+    if (truth.length < 2) return null;
+    let stops = [];
+    if (it.kind === 'line') stops = it.stationIds.map((id) => A.get(id)).map((s) => ({ name: s.name, lng: s.lng, lat: s.lat }));
+    else if (it.stops) stops = it.stops;
+    const start = stops[0] || { name: 'Start', lng: truth[0][0], lat: truth[0][1] };
+    const end = stops.at(-1) || { name: 'End', lng: truth.at(-1)[0], lat: truth.at(-1)[1] };
+    const spec = (s, kind, text = s.name) => ({ id: 'd-' + s.name + kind, lngLat: [s.lng, s.lat], text, kind, dot: true, force: kind !== 'stop', priority: kind === 'stop' ? 5 : 900 });
+    const shown = [spec(start, 'quiz', it.loop ? `${start.name} (start/end)` : `${start.name} (start)`)];
+    if (!it.loop) shown.push(spec(end, 'quiz', `${end.name} (end)`));
+    if (lvl.stops) stops.slice(1, -1).forEach((s) => shown.push(spec(s, 'stop')));
+    const what = it.kind === 'line' ? `the ${it.name}` : it.kind === 'river' ? 'the Musi river' : it.loop ? 'the full ORR loop' : it.name;
+    let prevRoads;
+    return {
+      kicker: `Draw the route · ${lvl.label}`, prompt: `Draw ${esc(what)}`,
+      sub: `${lengthKm(truth).toFixed(0)} km · ${lvl.note}`,
+      mode: 'draw', ids: [it.id], truth, tol: lvl.tolKm,
+      setup(m) {
+        m.setDepth('blank', { animate: false });
+        m.clearSelection(false);
+        prevRoads = m.roadsOn;
+        m.setRoads(!!lvl.roads);
+        if (lvl.dim) m.map.setPaintProperty('sat', 'raster-brightness-max', 0.45);
+        m.setLabelOverride(shown);
+        m.fitItem(it, { pitch: 0, bearing: 0, zoomAdj: -0.25, duration: 1000 });
+      },
+      check(strokes) {
+        const r = scoreDrawing(strokes, truth, lvl.tolKm);
+        const msg = r.avgOffM == null ? 'Nothing drawn.' : `Covered ${Math.round(r.coverage * 100)}% of the route · ${Math.round(r.precision * 100)}% of your line on it · average ${r.avgOffM >= 1000 ? (r.avgOffM / 1000).toFixed(1) + ' km' : r.avgOffM + ' m'} off.`;
+        return { correct: r.correct, score: r.score, msg };
+      },
+      reveal(m, res, strokes) {
+        m.setTruth([{ type: 'Feature', geometry: { type: 'LineString', coordinates: truth }, properties: {} }]);
+        m.setDraw(judgeStrokes(strokes || [], truth, lvl.tolKm));
+        m.setLabelOverride(shown.concat(stops.slice(1, -1).map((s) => spec(s, 'stop'))));
+      },
+      cleanup(m) {
+        m.setRoads(!!prevRoads);
+        m.map.setPaintProperty('sat', 'raster-brightness-max', 0.86);
+      },
+    };
+  };
+
   return G;
 }
 
@@ -386,17 +471,21 @@ const AUTO_GAMES = {
   zone: ['name', 'find', 'neighbour', 'whichZone'],
   circle: ['name', 'find', 'whichCircle', 'neighbour'],
   locality: ['findPoint', 'namePoint', 'whichCircle', 'whichCorp', 'compass'],
-  landmark: ['findPoint', 'namePoint', 'whichCorp', 'compass'],
+  landmark: ['findPoint', 'namePoint', 'whichCorp', 'compass', 'photoName', 'photoName'],
   station: ['nextStop', 'lineOf', 'findStation', 'order'],
-  line: ['order'],
-  corridor: ['order', 'whichRoad'],
+  line: ['order', 'draw'],
+  corridor: ['order', 'whichRoad', 'draw'],
+  exit: ['exitNumber', 'findPoint', 'namePoint'],
+  river: ['draw'],
+  rail: ['draw'],
 };
 
 export class Quiz {
   constructor(app) {
     this.app = app;
     this.A = app.A;
-    this.G = makeGenerators(app.A);
+    this.level = 'pro';
+    this.G = makeGenerators(app.A, () => this.level);
     this.root = document.getElementById('quiz');
     this.card = this.root.querySelector('.q-card');
     this.answers = this.root.querySelector('.q-answers');
@@ -426,7 +515,8 @@ export class Quiz {
     return qs;
   }
 
-  start({ title, ids, games, count = 10, onDone, key }) {
+  start({ title, ids, games, count = 10, onDone, key, level }) {
+    this.level = level || 'pro';
     this.questions = this.build(ids, games, count);
     if (!this.questions.length) { toast('Nothing to quiz yet'); return; }
     this.title = title; this.onDone = onDone; this.key = key;
@@ -438,9 +528,12 @@ export class Quiz {
   }
 
   show() {
+    this.endDraw();
     const q = this.q = this.questions[this.i];
     const m = this.app.map;
     m.setQuiz([]);
+    m.setDraw([]);
+    m.setTruth([]);
     m.tapHandler = null;
     this.root.querySelector('.qbar-fill').style.width = `${(this.i / this.questions.length) * 100}%`;
     this.root.querySelector('.qscore').textContent = this.score;
@@ -449,6 +542,11 @@ export class Quiz {
     this.card.querySelector('.kicker').textContent = `${q.kicker} · ${this.i + 1}/${this.questions.length}`;
     this.card.querySelector('.q-prompt').innerHTML = q.prompt;
     this.card.querySelector('.q-sub').textContent = q.sub || '';
+    const imgBox = this.card.querySelector('.q-img');
+    if (q.img) {
+      imgBox.hidden = false;
+      imgBox.innerHTML = `<img src="${q.img.hero || q.img.remote}" alt="" decoding="async">`;
+    } else { imgBox.hidden = true; imgBox.innerHTML = ''; }
     this.feedback.hidden = true;
     this.answers.className = 'q-answers';
     this.answers.innerHTML = '';
@@ -512,7 +610,34 @@ export class Quiz {
       reset.className = 'btn ghost small'; reset.textContent = 'Reset'; reset.style.gridColumn = 'span 2';
       reset.onclick = () => { this.seq = []; btns.forEach((b) => { b.textContent = b.dataset.label; b.classList.remove('dim'); }); };
       this.answers.appendChild(reset);
+    } else if (q.mode === 'draw') {
+      this.answers.className = 'q-answers draw-bar';
+      this.answers.innerHTML = `
+        <button class="btn ghost small" data-d="undo">Undo</button>
+        <button class="btn ghost small" data-d="mode">Move map</button>
+        <button class="btn primary small" data-d="done" disabled>Done</button>
+        <div class="tap-hint" data-d="hint">Trace the route with your finger. Use “Move map” to pan or zoom.</div>`;
+      const btn = (k) => this.answers.querySelector(`[data-d="${k}"]`);
+      this.pad = new DrawPad(m, (strokes) => { btn('done').disabled = !strokes.length; });
+      this.pad.start();
+      btn('undo').onclick = () => this.pad.undo();
+      btn('mode').onclick = () => {
+        const toMove = this.pad.mode === 'draw';
+        this.pad.setMode(toMove ? 'move' : 'draw');
+        btn('mode').textContent = toMove ? 'Draw' : 'Move map';
+        btn('mode').classList.toggle('on', toMove);
+        btn('hint').textContent = toMove ? 'Pan and zoom freely, then tap Draw to continue.' : 'Trace the route with your finger.';
+      };
+      btn('done').onclick = () => {
+        const strokes = this.pad.strokes.map((st) => st.slice());
+        this.endDraw();
+        this.answerValue(strokes);
+      };
     }
+  }
+
+  endDraw() {
+    if (this.pad) { this.pad.stop(); this.pad = null; }
   }
 
   answerChoice(v, btn) {
@@ -541,7 +666,7 @@ export class Quiz {
       });
     }
     this.app.map.tapHandler = null;
-    this.resolve(res, q.mode === 'tap' ? v : null, btn);
+    this.resolve(res, q.mode === 'tap' || q.mode === 'draw' ? v : null, btn);
   }
 
   resolve(res, ll, btn) {
@@ -570,8 +695,12 @@ export class Quiz {
     const next = document.createElement('button');
     next.className = 'btn primary';
     next.textContent = this.i === this.questions.length - 1 ? 'See results' : 'Next';
-    next.onclick = () => { this.i++; this.i < this.questions.length ? this.show() : this.finish(); };
-    if (q.mode === 'tap' || q.mode === 'order') { this.answers.className = 'q-answers one'; this.answers.innerHTML = ''; }
+    next.onclick = () => {
+      if (q.cleanup) q.cleanup(this.app.map);
+      this.i++;
+      this.i < this.questions.length ? this.show() : this.finish();
+    };
+    if (q.mode === 'tap' || q.mode === 'order' || q.mode === 'draw') { this.answers.className = 'q-answers one'; this.answers.innerHTML = ''; }
     else { this.answers.classList.add('locked'); }
     const holder = document.createElement('div');
     holder.style.gridColumn = '1 / -1'; holder.style.display = 'flex';
@@ -581,6 +710,9 @@ export class Quiz {
   }
 
   finish() {
+    this.endDraw();
+    this.app.map.setDraw([]);
+    this.app.map.setTruth([]);
     const n = this.questions.length;
     const pct = Math.round((this.right / n) * 100);
     const P = this.app.P;
@@ -624,6 +756,10 @@ export class Quiz {
   }
 
   close(done = false) {
+    this.endDraw();
+    if (this.q && this.q.cleanup) this.q.cleanup(this.app.map);
+    this.app.map.setDraw([]);
+    this.app.map.setTruth([]);
     this.root.querySelector('.q-result')?.remove();
     this.root.hidden = true;
     const m = this.app.map;

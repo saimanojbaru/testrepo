@@ -3,7 +3,7 @@
 import { crumb, KIND_LABEL } from './data.js';
 import { describe } from './describe.js';
 
-const DEPTH_OF = { corp: 'corp', zone: 'zone', circle: 'circle', locality: 'locality', landmark: 'landmark', station: 'metro', line: 'metro', corridor: 'routes' };
+const DEPTH_OF = { corp: 'corp', zone: 'zone', circle: 'circle', locality: 'locality', landmark: 'landmark', station: 'metro', line: 'metro', corridor: 'routes', exit: 'routes', river: 'routes', rail: 'metro' };
 
 export class Tour {
   constructor(app) {
@@ -49,8 +49,9 @@ export class Tour {
     if (it.kind === 'corp') m.fitItem(it, { zoomAdj: -0.1, padding: { bottom: 300 } });
     else if (it.kind === 'zone') m.fitItem(it, { zoomAdj: -0.2, padding: { bottom: 300 } });
     else if (it.kind === 'circle') m.fitItem(it, { zoomAdj: -0.4, maxZoom: 13.2, padding: { bottom: 300 } });
-    else if (it.kind === 'corridor' || it.kind === 'line') m.fitItem(it, { padding: { bottom: 300 } });
-    else m.fitItem(it, { zoom: it.kind === 'station' ? 13 : 12.6, padding: { bottom: 300 } });
+    else if (['corridor', 'line', 'river', 'rail'].includes(it.kind)) m.fitItem(it, { padding: { bottom: 300 } });
+    else if (it.kind === 'landmark' || it.kind === 'exit') m.fitItem(it, { zoom: 15, pitch: m.pitchForZoom(15), padding: { bottom: it.photo ? 420 : 300 } });
+    else m.fitItem(it, { zoom: it.kind === 'station' ? 13.5 : 12.6, padding: { bottom: 300 } });
 
     this.root.querySelectorAll('.dots i').forEach((d, k) => d.classList.toggle('on', k <= i));
     const kicker = `${i + 1} of ${this.ids.length} · ${KIND_LABEL[it.kind]}`;
@@ -58,6 +59,9 @@ export class Tour {
     this.card.querySelector('.t-title').textContent = it.name;
     this.card.querySelector('.t-crumb').textContent = crumb(A, it).join(' › ');
     this.card.querySelector('.t-fact').textContent = describe(A, it);
+    const img = this.card.querySelector('.t-img');
+    if (it.photo) { img.hidden = false; img.innerHTML = `<img src="${it.photo.hero || it.photo.remote}" alt="" decoding="async" onerror="this.parentNode.hidden=true">`; }
+    else { img.hidden = true; img.innerHTML = ''; }
     this.root.querySelector('[data-act="prev"]').disabled = i === 0;
     this.root.querySelector('[data-act="next"]').textContent = i === this.ids.length - 1 ? 'Start quiz' : 'Next';
     this.card.style.animation = 'none'; void this.card.offsetWidth; this.card.style.animation = '';

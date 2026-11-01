@@ -1,0 +1,56 @@
+{
+ "m-charminar": {
+  "hero": "img/places/charminar.jpg",
+  "thumb": "img/places/charminar_t.jpg",
+  "author": "Gopikrishna Narla",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Charminar-Pride_of_Hyderabad.jpg",
+  "wd": "Q1771696",
+  "desc": "mosque in Hyderabad, India"
+ },
+ "m-laad-bazaar": {
+  "hero": "img/places/laad-bazaar.jpg",
+  "thumb": "img/places/laad-bazaar_t.jpg",
+  "author": "Sissssou",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Laad_Bazaar.jpg",
+  "wd": "Q6466530",
+  "desc": "old market in Hyderabad, India"
+ },
+ "m-chowmahalla-palace": {
+  "hero": "img/places/chowmahalla-palace.jpg",
+  "thumb": "img/places/chowmahalla-palace_t.jpg",
+  "author": "Sailko",
+  "license": "CC BY 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Hyderabad%2C_Chowmahalla_Palace%2C_edificio_centrale_02.jpg",
+  "wd": "Q3380670",
+  "desc": "Palace in Telangana, India"
+ },
+ "m-falaknuma-palace": {
+  "hero": "img/places/falaknuma-palace.jpg",
+  "thumb": "img/places/falaknuma-palace_t.jpg",
+  "author": "Bernard Gagnon",
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Falaknuma_Palace_01.jpg",
+  "wd": "Q2263539",
+  "desc": "former palace in Hyderabad, India and now a luxury hotel"
+ },
+ "m-salar-jung-museum": {
+  "hero": "img/places/salar-jung-museum.jpg",
+  "thumb": "img/places/salar-jung-museum_t.jpg",
+  "author": "Pinakpani",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Salar_Jung_Museum%2C_the_building_and_complex_in_Hyderabad_21.jpg",
+  "wd": "Q1864572",
+  "desc": "art museum in Hyderabad, Telangana, India"
+ },
+ "m-purani-haveli": {
+  "hero": "img/places/purani-haveli.jpg",
+  "thumb": "img/places/purani-haveli_t.jpg",
+  "author": "Randhir",
+  "license": "Public domain",
+  "source": "https://commons.wikimedia.org/wiki/File:Purani_haveli.JPG",
+  "wd": "Q7260842",
+  "desc": "building in India"
+ }
+}

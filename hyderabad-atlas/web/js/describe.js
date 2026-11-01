@@ -40,7 +40,15 @@ export function describe(A, it) {
       return `${it.stationIds.length} stations from ${a} to ${b}.`;
     }
     case 'corridor':
-      return `${it.desc}: ${it.stops.map((s) => s.name).join(' → ')}.`;
+      return it.loop ? `${it.desc}. Exits run clockwise from Exit 1 at ${it.stops[0].name}.`
+        : `${it.desc}: ${it.stops.map((s) => s.name).join(' → ')}.`;
+    case 'exit': {
+      const ex = A.exits, i = ex.indexOf(it);
+      const nb = [ex[i - 1], ex[i + 1]].filter(Boolean).map((e) => `Exit ${e.ref} ${e.short}`);
+      return `Exit ${it.ref} on the Outer Ring Road, about ${d.toFixed(0)} km ${dir} of Charminar. Between ${nb.join(' and ')}.`;
+    }
+    case 'rail':
+      return `MMTS suburban rail line, ${it.name.replace('MMTS ', '')}.`;
     default:
       return '';
   }

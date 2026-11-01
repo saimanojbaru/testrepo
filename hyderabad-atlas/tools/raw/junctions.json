@@ -1,0 +1,588 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-01T12:41:50Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 307055926,
+  "lat": 17.4017897,
+  "lon": 78.5602624,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Uppal 'X' Roads"
+  }
+},
+{
+  "type": "node",
+  "id": 701133156,
+  "lat": 17.2555397,
+  "lon": 78.3758355,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Shamshabad",
+    "ref": "16"
+  }
+},
+{
+  "type": "node",
+  "id": 1323174931,
+  "lat": 17.2112056,
+  "lon": 78.5231206,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Raviryal",
+    "ref": "13"
+  }
+},
+{
+  "type": "node",
+  "id": 1521002237,
+  "lat": 17.3201274,
+  "lon": 78.6584370,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Pedda Amberpet",
+    "ref": "11",
+    "source": "Esri World Imagery (2023-09-10)"
+  }
+},
+{
+  "type": "node",
+  "id": 1521002267,
+  "lat": 17.3178349,
+  "lon": 78.6579327,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Pedda Amberpet",
+    "ref": "11",
+    "source": "Esri World Imagery (2023-09-10)"
+  }
+},
+{
+  "type": "node",
+  "id": 2090009459,
+  "lat": 17.2130358,
+  "lon": 78.5322911,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Raviryal",
+    "ref": "13"
+  }
+},
+{
+  "type": "node",
+  "id": 2180951748,
+  "lat": 17.3920424,
+  "lon": 78.3517694,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Narsingi",
+    "ref": "19"
+  }
+},
+{
+  "type": "node",
+  "id": 2180951764,
+  "lat": 17.3260485,
+  "lon": 78.3742009,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Rajendra Nagar (North)",
+    "ref": "17"
+  }
+},
+{
+  "type": "node",
+  "id": 2180952017,
+  "lat": 17.3982578,
+  "lon": 78.3513550,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Narsingi",
+    "ref": "19"
+  }
+},
+{
+  "type": "node",
+  "id": 2180952040,
+  "lat": 17.2038589,
+  "lon": 78.3944227,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Pedda Golkonda",
+    "ref": "15"
+  }
+},
+{
+  "type": "node",
+  "id": 2187029996,
+  "lat": 17.5577734,
+  "lon": 78.3082440,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Sultanpur",
+    "ref": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 2187030024,
+  "lat": 17.4049017,
+  "lon": 78.3345642,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Gandipet",
+    "ref": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 2187030038,
+  "lat": 17.5350580,
+  "lon": 78.2351565,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Patancheru",
+    "ref": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 2187030064,
+  "lat": 17.4597866,
+  "lon": 78.2502292,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Edulanagulapally",
+    "ref": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 2187030089,
+  "lat": 17.4088866,
+  "lon": 78.3266594,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Gandipet",
+    "ref": "1"
+  }
+},
+{
+  "type": "node",
+  "id": 2187030096,
+  "lat": 17.4678730,
+  "lon": 78.2489203,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Edulanagulapally",
+    "ref": "2"
+  }
+},
+{
+  "type": "node",
+  "id": 2187030125,
+  "lat": 17.5577127,
+  "lon": 78.3085576,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Sultanpur",
+    "ref": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 2188391651,
+  "lat": 17.3530793,
+  "lon": 78.3583343,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "APPA",
+    "ref": "18"
+  }
+},
+{
+  "type": "node",
+  "id": 2188391722,
+  "lat": 17.3456001,
+  "lon": 78.3621246,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "APPA",
+    "ref": "18"
+  }
+},
+{
+  "type": "node",
+  "id": 2199688088,
+  "lat": 17.3688025,
+  "lon": 78.6808142,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Taramatipet",
+    "ref": "10"
+  }
+},
+{
+  "type": "node",
+  "id": 2199688101,
+  "lat": 17.4422782,
+  "lon": 78.6688271,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Ghatkesar",
+    "ref": "9",
+    "source": "Esri World Imagery (2023-09-13)"
+  }
+},
+{
+  "type": "node",
+  "id": 2509297528,
+  "lat": 17.5777639,
+  "lon": 78.5735136,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Shamirpet",
+    "ref": "7"
+  }
+},
+{
+  "type": "node",
+  "id": 2509297559,
+  "lat": 17.5782786,
+  "lon": 78.5705854,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Shamirpet",
+    "ref": "7"
+  }
+},
+{
+  "type": "node",
+  "id": 2721044066,
+  "lat": 17.5933204,
+  "lon": 78.4085357,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Saregudem",
+    "ref": "5"
+  }
+},
+{
+  "type": "node",
+  "id": 2721044187,
+  "lat": 17.5941271,
+  "lon": 78.4104558,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Saregudem",
+    "ref": "5"
+  }
+},
+{
+  "type": "node",
+  "id": 3207154789,
+  "lat": 17.4046178,
+  "lon": 78.4644581,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Old PS Saifabad Jn"
+  }
+},
+{
+  "type": "node",
+  "id": 3618958519,
+  "lat": 17.5998332,
+  "lon": 78.4902208,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Kandlakoya",
+    "ref": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3753040532,
+  "lat": 17.3769228,
+  "lon": 78.6824745,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Taramatipet",
+    "ref": "10"
+  }
+},
+{
+  "type": "node",
+  "id": 3753055175,
+  "lat": 17.4441061,
+  "lon": 78.6683726,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Ghatkesar",
+    "ref": "9",
+    "source": "Esri World Imagery (2023-09-13)"
+  }
+},
+{
+  "type": "node",
+  "id": 3754079590,
+  "lat": 17.5191368,
+  "lon": 78.6456451,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Keesara",
+    "ref": "8"
+  }
+},
+{
+  "type": "node",
+  "id": 3789901090,
+  "lat": 17.3261265,
+  "lon": 78.4261359,
+  "tags": {
+    "highway": "motorway_junction"
+  }
+},
+{
+  "type": "node",
+  "id": 3789901288,
+  "lat": 17.3466113,
+  "lon": 78.4159174,
+  "tags": {
+    "highway": "motorway_junction",
+    "source": "Esri World Imagery (2023-08-31)"
+  }
+},
+{
+  "type": "node",
+  "id": 3789901657,
+  "lat": 17.3813042,
+  "lon": 78.4294038,
+  "tags": {
+    "highway": "motorway_junction"
+  }
+},
+{
+  "type": "node",
+  "id": 3806982401,
+  "lat": 17.4012929,
+  "lon": 78.5600855,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Uppal 'X' Roads"
+  }
+},
+{
+  "type": "node",
+  "id": 3813640290,
+  "lat": 17.5991149,
+  "lon": 78.4924138,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Kandlakoya",
+    "ref": "6"
+  }
+},
+{
+  "type": "node",
+  "id": 3813738658,
+  "lat": 17.2343082,
+  "lon": 78.5824575,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Bongulur",
+    "ref": "12"
+  }
+},
+{
+  "type": "node",
+  "id": 3813738849,
+  "lat": 17.2363266,
+  "lon": 78.5863291,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Bongulur",
+    "ref": "12"
+  }
+},
+{
+  "type": "node",
+  "id": 4310418162,
+  "lat": 17.3046202,
+  "lon": 78.3781550,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Rajendra Nagar (South)",
+    "ref": "17"
+  }
+},
+{
+  "type": "node",
+  "id": 4314601759,
+  "lat": 17.5574334,
+  "lon": 78.3167818,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Sultanpur",
+    "ref": "4"
+  }
+},
+{
+  "type": "node",
+  "id": 7093011502,
+  "lat": 17.5384526,
+  "lon": 78.2372665,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Patancheru",
+    "ref": "3"
+  }
+},
+{
+  "type": "node",
+  "id": 10281786064,
+  "lat": 17.3601042,
+  "lon": 78.4269532,
+  "tags": {
+    "highway": "motorway_junction",
+    "source": "Esri World Imagery (2023-08-31)"
+  }
+},
+{
+  "type": "node",
+  "id": 11178907552,
+  "lat": 17.4110972,
+  "lon": 78.3174988,
+  "tags": {
+    "highway": "motorway_junction",
+    "ref": "1A"
+  }
+},
+{
+  "type": "node",
+  "id": 11178907692,
+  "lat": 17.3985202,
+  "lon": 78.3477190,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Narsingi",
+    "ref": "19"
+  }
+},
+{
+  "type": "node",
+  "id": 11179144149,
+  "lat": 17.5119465,
+  "lon": 78.6494643,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Keesara",
+    "ref": "8"
+  }
+},
+{
+  "type": "node",
+  "id": 11179144178,
+  "lat": 17.2037308,
+  "lon": 78.4800525,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Tukkuguda",
+    "ref": "14"
+  }
+},
+{
+  "type": "node",
+  "id": 11179144184,
+  "lat": 17.2040670,
+  "lon": 78.4723237,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Tukkuguda",
+    "ref": "14"
+  }
+},
+{
+  "type": "node",
+  "id": 11179144185,
+  "lat": 17.2032555,
+  "lon": 78.4026604,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Pedda Golkonda",
+    "ref": "15"
+  }
+},
+{
+  "type": "node",
+  "id": 11179144197,
+  "lat": 17.2479300,
+  "lon": 78.3794031,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Shamshabad",
+    "ref": "16"
+  }
+},
+{
+  "type": "node",
+  "id": 11183482025,
+  "lat": 17.5616587,
+  "lon": 78.3608632,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Mallampet",
+    "ref": "4A"
+  }
+},
+{
+  "type": "node",
+  "id": 11947056968,
+  "lat": 17.5609415,
+  "lon": 78.3710429,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Mallampet",
+    "ref": "4A"
+  }
+},
+{
+  "type": "node",
+  "id": 11947065775,
+  "lat": 17.5617689,
+  "lon": 78.3623887,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Mallampet",
+    "ref": "4A"
+  }
+},
+{
+  "type": "node",
+  "id": 11947065784,
+  "lat": 17.5611257,
+  "lon": 78.3710475,
+  "tags": {
+    "highway": "motorway_junction",
+    "name": "Mallampet",
+    "ref": "4A"
+  }
+},
+{
+  "type": "node",
+  "id": 13019357773,
+  "lat": 17.4119636,
+  "lon": 78.3138557,
+  "tags": {
+    "highway": "motorway_junction",
+    "ref": "1A"
+  }
+}
+
+  ]
+}

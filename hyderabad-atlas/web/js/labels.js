@@ -17,6 +17,8 @@ const ICONS = {
   culture: '<path d="M4 4h16v12H4zM8 20h8M12 16v4"/>',
 };
 
+const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
 export class LabelLayer {
   constructor(map, el) {
     this.map = map;
@@ -39,7 +41,7 @@ export class LabelLayer {
     const keep = new Map(this.items.map((i) => [i.key, i]));
     const next = [];
     for (const s of specs) {
-      const key = s.kind + ':' + s.id + ':' + s.text;
+      const key = s.kind + ':' + s.id + ':' + s.text + ':' + (s.sub || '') + ':' + (s.img || '');
       let it = keep.get(key);
       if (it) keep.delete(key);
       else it = this.make(s, key);
@@ -57,10 +59,21 @@ export class LabelLayer {
     const el = document.createElement('div');
     el.className = `lbl lbl-${s.kind} off`;
     let html = '';
-    if (s.icon) html += `<span class="ic" style="color:${s.color || '#fff'}"><svg viewBox="0 0 24 24">${ICONS[s.icon] || ICONS.landmark}</svg></span>`;
+    if (s.kind === 'shield') {
+      // NH-style route shield
+      html = `<span class="shield"><i></i>${esc(s.text)}</span>`;
+      el.innerHTML = html;
+      this.el.appendChild(el);
+      return { key, el, w: 0, h: 0, spec: s };
+    }
+    // photo pin; if the photo can't load, the category icon underneath shows instead
+    if (s.img) html += `<span class="ph" style="border-color:${s.color || '#fff'};color:${s.color || '#fff'}"><svg viewBox="0 0 24 24">${ICONS[s.icon] || ICONS.landmark}</svg><img src="${s.img}" alt="" loading="lazy" decoding="async" onerror="this.remove()"></span>`;
+    else if (s.icon) html += `<span class="ic" style="color:${s.color || '#fff'}"><svg viewBox="0 0 24 24">${ICONS[s.icon] || ICONS.landmark}</svg></span>`;
+    else if (s.metro) html += `<span class="mr" style="background:${s.metro}">M</span>`;
     else if (s.dot) html += `<span class="dot" style="${s.dotColor ? `background:${s.dotColor};border-color:#fff` : ''}"></span>`;
-    html += `<span class="t">${s.text}</span>`;
-    if (s.pill) html += `<span class="p" style="background:${s.pillColor || '#5be49b'}">${s.pill}</span>`;
+    html += `<span class="t">${esc(s.text)}</span>`;
+    if (s.sub) html += `<span class="te">${esc(s.sub)}</span>`;
+    if (s.pill) html += `<span class="p" style="background:${s.pillColor || '#5be49b'}">${esc(s.pill)}</span>`;
     el.innerHTML = html;
     this.el.appendChild(el);
     return { key, el, w: 0, h: 0, spec: s };
@@ -82,9 +95,9 @@ export class LabelLayer {
     for (const it of this.items) {
       const p = this.map.project(it.spec.lngLat);
       // anchor: dot/icon items sit on the point; text-only items centre on it
-      const anchored = it.spec.dot || it.spec.icon;
+      const anchored = it.spec.dot || it.spec.icon || it.spec.img || it.spec.metro;
       const x = p.x - it.w / 2;
-      const y = anchored ? p.y - (it.spec.icon ? 13 : 3) : p.y - it.h / 2;
+      const y = anchored ? p.y - (it.spec.img ? 19 : it.spec.icon ? 13 : it.spec.metro ? 8 : 3) : p.y - it.h / 2;
       const r = [x - pad, y - pad, x + it.w + pad, y + it.h + pad];
       let ok = p.x > -40 && p.x < W + 40 && p.y > 40 && p.y < H + 20;
       if (ok && !it.spec.force) {

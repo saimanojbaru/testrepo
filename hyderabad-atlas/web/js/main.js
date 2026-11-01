@@ -1,4 +1,6 @@
-import { loadAtlas, crumb, KIND_LABEL, km, pointOf } from './data.js';
+import { loadAtlas, crumb, KIND_LABEL, km, pointOf, pathOf, lengthKm } from './data.js';
+import { isLowEndDevice } from './config.js';
+import { LEVELS } from './draw.js';
 import { AtlasMap, DEPTHS } from './map.js';
 import { Progress } from './progress.js';
 import { buildCurriculum, allLessons } from './curriculum.js';
@@ -10,7 +12,9 @@ import { toast, ring, ICON, buzz } from './ui.js';
 const $ = (s, el = document) => el.querySelector(s);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const fmt = (n) => n.toLocaleString('en-IN');
-const DEPTH_OF = { corp: 'corp', zone: 'zone', circle: 'circle', locality: 'locality', landmark: 'landmark', station: 'metro', line: 'metro', corridor: 'routes' };
+const DEPTH_OF = { corp: 'corp', zone: 'zone', circle: 'circle', locality: 'locality', landmark: 'landmark', station: 'metro', line: 'metro', corridor: 'routes', exit: 'routes', river: 'routes', rail: 'metro' };
+const PLAY_ICON = '<svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg>';
+const ORBIT_ICON = '<svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="4"/><circle cx="12" cy="12" r="2.5"/></svg>';
 
 const GAMES = [
   { id: 'daily', title: 'Daily mix', desc: '10 questions across everything you\'ve met so far', icon: 'bolt', wide: true, bg: 'radial-gradient(120% 120% at 100% 0%, #2c9b62 0%, #0d3a24 55%, #08150f 100%)' },
@@ -20,6 +24,9 @@ const GAMES = [
   { id: 'compass', title: 'Compass', desc: 'Which way from the landmark?', icon: 'compass', bg: 'radial-gradient(120% 120% at 100% 0%, #5e3a8f, #170b26 70%)' },
   { id: 'neighbours', title: 'Neighbours', desc: 'Who shares a border?', icon: 'grid', scope: ['zone', 'circle', 'locality'], bg: 'radial-gradient(120% 120% at 100% 0%, #8f3a4a, #260b11 70%)' },
   { id: 'metro', title: 'Metro master', desc: 'Lines, next stops, interchanges', icon: 'train', bg: 'linear-gradient(135deg, rgba(229,72,77,.5), rgba(62,139,255,.45) 55%, rgba(48,196,108,.45))' },
+  { id: 'draw', title: 'Draw the route', desc: 'Trace metro lines, highways, the ORR and the Musi from memory. Scored on how closely you follow the real path.', icon: 'route', wide: true, adv: true, bg: 'radial-gradient(130% 140% at 100% 0%, #c0392b 0%, #3b0f12 45%, #0b0606 100%)' },
+  { id: 'photo', title: 'Picture this', desc: 'Name the place from its photo', icon: 'target', bg: 'radial-gradient(120% 120% at 100% 0%, #1f7a8f, #08191e 70%)' },
+  { id: 'exits', title: 'ORR exits', desc: 'Exit 1 to 19 by heart', icon: 'route', bg: 'radial-gradient(120% 120% at 100% 0%, #7a6a2a, #1d1907 70%)' },
   { id: 'routes', title: 'Route builder', desc: 'Put highway & metro stops in order', icon: 'route', bg: 'radial-gradient(120% 120% at 100% 0%, #9a6a1c, #261807 70%)' },
   { id: 'review', title: 'Fix my mistakes', desc: 'Drill the places you keep missing', icon: 'redo', wide: true, bg: 'radial-gradient(120% 140% at 100% 0%, #6b2a33, #170a0c 70%)' },
 ];
@@ -32,7 +39,9 @@ class App {
     this.phases = buildCurriculum(this.A);
     this.lessons = allLessons(this.phases);
     this.el = $('#app');
-    this.map = new AtlasMap($('#map'), $('#labels'), this.A);
+    const st = this.P.s.settings;
+    if (st.lite === undefined) { st.lite = isLowEndDevice(); st.terrain = true; st.autoTilt = true; st.telugu = false; this.P.save(); }
+    this.map = new AtlasMap($('#map'), $('#labels'), this.A, { lite: st.lite, terrain: st.terrain, autoTilt: st.autoTilt, telugu: st.telugu });
     await this.map.init();
     this.quiz = new Quiz(this);
     this.tour = new Tour(this);
@@ -65,17 +74,137 @@ class App {
 
   bindChrome() {
     document.querySelectorAll('#tabbar button').forEach((b) => (b.onclick = () => this.tab(b.dataset.tab)));
-    document.querySelectorAll('#map-tools .tool').forEach((b) => (b.onclick = () => this.tool(b.dataset.tool, b)));
+    document.querySelectorAll('#map-tools .tool:not(.dial)').forEach((b) => (b.onclick = () => this.tool(b.dataset.tool, b)));
     this.syncTools();
     $('#btn-search').onclick = () => this.openSearch();
     $('#search [data-act="close"]').onclick = () => this.closeSearch();
     $('#search-input').oninput = (e) => this.runSearch(e.target.value);
     $('#sheet .sheet-grip').onclick = () => this.tab('explore');
+    this.bindDial();
+    this.bindFlight();
+  }
+
+  // ---------------------------------------------------------------- camera dial
+  bindDial() {
+    const d = $('[data-tool="dial"]');
+    const needle = $('.dial-needle', d), label = $('.dial-tilt', d);
+    let start = null, last = null, moved = false;
+    d.addEventListener('pointerdown', (e) => {
+      d.setPointerCapture(e.pointerId);
+      start = last = [e.clientX, e.clientY];
+      moved = false;
+      d.classList.add('active');
+    });
+    d.addEventListener('pointermove', (e) => {
+      if (!start) return;
+      if (Math.abs(e.clientX - start[0]) + Math.abs(e.clientY - start[1]) > 6) moved = true;
+      if (moved) this.map.nudgeCamera((e.clientX - last[0]) * 0.8, -(e.clientY - last[1]) * 0.45);
+      last = [e.clientX, e.clientY];
+    });
+    const up = () => {
+      if (!start) return;
+      d.classList.remove('active');
+      if (!moved) this.dialTap();
+      start = null;
+    };
+    d.addEventListener('pointerup', up);
+    d.addEventListener('pointercancel', up);
+    this.map.onCamera((b, p) => {
+      needle.style.transform = `rotate(${-b}deg)`;
+      label.textContent = p < 4 ? '2D' : `${Math.round(p)}°`;
+    });
+    this.map.emitCamera();
+  }
+
+  // tap: point north first; if already north, switch between 3D and flat
+  dialTap() {
+    const m = this.map.map, s = this.P.s.settings;
+    buzz(8);
+    if (Math.abs(m.getBearing()) > 2) { this.map.resetNorth(); return; }
+    s.tilt = !s.tilt;
+    this.map.pitch = s.tilt ? 52 : 0;
+    m.easeTo({ pitch: s.tilt ? this.map.pitchForZoom(m.getZoom()) : 0, duration: 700 });
+    toast(s.tilt ? '3D view' : 'Flat map view');
+    this.P.save();
+  }
+
+  // ---------------------------------------------------------------- flight
+  bindFlight() {
+    const f = $('#flight');
+    $('[data-f="stop"]', f).onclick = () => this.map.stopMotion();
+    $('[data-f="pause"]', f).onclick = (e) => {
+      const mo = this.map.motion;
+      if (!mo) return;
+      mo.paused = !mo.paused;
+      e.target.textContent = mo.paused ? 'Resume' : 'Pause';
+    };
+    f.querySelectorAll('.fl-speed button').forEach((b) => (b.onclick = () => {
+      if (this.map.motion) this.map.motion.speed = +b.dataset.s;
+      f.querySelectorAll('.fl-speed button').forEach((x) => x.classList.toggle('on', x === b));
+    }));
+  }
+
+  startFlight(it) {
+    const A = this.A;
+    const coords = pathOf(it);
+    if (coords.length < 2) return;
+    let stops = [];
+    if (it.kind === 'line') stops = it.stationIds.map((id) => A.get(id));
+    else if (it.stops) stops = it.stops;
+    // distance along the path where each stop sits
+    const cum = [0];
+    for (let i = 1; i < coords.length; i++) cum.push(cum[i - 1] + km(coords[i - 1], coords[i]));
+    const marks = stops.map((s) => {
+      let bi = 0, bd = Infinity;
+      coords.forEach((c, i) => { const d = km(c, [s.lng, s.lat]); if (d < bd) { bd = d; bi = i; } });
+      return { name: s.name, at: cum[bi] };
+    }).sort((a, b) => a.at - b.at);
+    this.hideCard();
+    this.flightItem = it;
+    this.setMode('flight');
+    const f = $('#flight');
+    f.hidden = false;
+    $('.fl-title', f).textContent = it.name;
+    $('.fl-kicker', f).textContent = `Fly along · ${lengthKm(coords).toFixed(0)} km`;
+    $('[data-f="pause"]', f).textContent = 'Pause';
+    f.querySelectorAll('.fl-speed button').forEach((x) => x.classList.toggle('on', x.dataset.s === '1'));
+    const d = DEPTH_OF[it.kind] || 'routes';
+    if (this.map.depth !== d) this.map.setDepth(d, { animate: false });
+    this.map.select(it, { fly: false });
+    const now = $('.fl-now', f), next = $('.fl-next', f), bar = $('.fl-bar', f);
+    now.textContent = marks[0] ? marks[0].name : it.name;
+    next.textContent = 'Taking off…';
+    this.map.flyAlong(coords, {
+      zoom: it.kind === 'line' ? 14.9 : 14.3, pitch: 66, kmPerSec: it.kind === 'line' ? 0.42 : 0.65,
+      onTick: (s, total) => {
+        bar.style.width = `${(s / total) * 100}%`;
+        let prev = null, nxt = null;
+        for (const mk of marks) { if (mk.at <= s + 0.15) prev = mk; else { nxt = mk; break; } }
+        if (prev && now.textContent !== prev.name) { now.textContent = prev.name; buzz(6); }
+        next.textContent = nxt ? `Next: ${nxt.name} · ${(nxt.at - s).toFixed(1)} km` : `${(total - s).toFixed(1)} km to the end`;
+      },
+      onEnd: () => { next.textContent = 'Arrived'; setTimeout(() => this.endFlight(), 1600); },
+      onStop: () => this.endFlight(),
+    });
+  }
+
+  endFlight() {
+    if ($('#flight').hidden) return;
+    this.map.stopMotion();
+    $('#flight').hidden = true;
+    this.setMode('explore');
+    const it = this.flightItem;
+    this.flightItem = null;
+    if (it) { this.setHeadline(it); this.renderCard(it); }
+  }
+
+  orbit(it) {
+    toast('Orbiting · touch the map to take control', 2600);
+    this.map.orbit(it);
   }
 
   syncTools() {
     const s = this.P.s.settings;
-    document.querySelector('[data-tool="tilt"]').classList.toggle('on', s.tilt);
     document.querySelector('[data-tool="roads"]').classList.toggle('on', s.roads);
     document.querySelector('[data-tool="labels"]').classList.toggle('on', s.labels);
   }
@@ -83,7 +212,6 @@ class App {
   tool(t) {
     const s = this.P.s.settings;
     if (t === 'recenter') { this.map.clearSelection(); this.hideCard(); this.map.home(); }
-    if (t === 'tilt') { s.tilt = !s.tilt; this.map.setPitch(s.tilt ? 52 : 0); }
     if (t === 'roads') { s.roads = !s.roads; this.map.setRoads(s.roads); toast(s.roads ? 'Road map on' : 'Road map off'); }
     if (t === 'labels') { s.labels = !s.labels; this.map.setLabelsOn(s.labels); }
     this.P.save();
@@ -129,6 +257,8 @@ class App {
 
   back() {
     if (!$('#search').hidden) { this.closeSearch(); return true; }
+    if (!$('#flight').hidden) { this.map.stopMotion(); return true; }
+    if (this.map.motion) { this.map.stopMotion(); return true; }
     if (!$('#quiz').hidden) { this.quiz.close(); return true; }
     if (!$('#tour').hidden) { this.tour.close(false); return true; }
     if (this.sheetBack) { const f = this.sheetBack; this.sheetBack = null; f(); return true; }
@@ -162,10 +292,27 @@ class App {
     const chip = document.querySelector(`.depth-chip[data-d="${d}"]`);
     if (chip) chip.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
     this.setHeadline();
+    this.renderStrip(d);
     if (fly && this.el.dataset.mode === 'explore') {
       if (d === 'metro') this.map.fitItem({ kind: 'corridor', stops: this.A.stations }, { zoomAdj: 0.1, duration: 1200 });
       else this.map.home({ duration: 1200 });
     }
+  }
+
+  // Swipeable photo cards of landmarks (Landmarks depth) and routes (Routes depth).
+  renderStrip(d) {
+    const strip = $('#places-strip');
+    const A = this.A;
+    let html = '';
+    if (d === 'landmark') {
+      html = A.photos.map((m) => `<button class="place-card" data-id="${m.id}"><img src="${m.photo.thumb || m.photo.remoteThumb}" alt="" loading="lazy" decoding="async" onerror="this.remove()"><span><small>${esc(m.cat)}</small>${esc(m.name)}</span></button>`).join('');
+    } else if (d === 'routes') {
+      html = [A.orrRoute, ...A.highways, ...(A.rivers || [])].filter(Boolean).map((r) => `<button class="place-card route-card" data-id="${r.id}" style="background:linear-gradient(135deg,#3a2a0c,#0d0a04)"><span><small>${r.ref ? esc(r.ref) : esc(KIND_LABEL[r.kind])} · ${Math.round(r.lengthKm || lengthKm(pathOf(r)))} km</small>${esc(r.name)}</span></button>`).join('');
+    }
+    strip.innerHTML = html;
+    strip.hidden = !html;
+    strip.scrollLeft = 0;
+    strip.querySelectorAll('[data-id]').forEach((b) => (b.onclick = () => this.exploreSelect(A.get(b.dataset.id))));
   }
 
   setHeadline(it) {
@@ -186,7 +333,7 @@ class App {
       locality: ['Level 4', `<em>${A.localities.length} areas</em> to know by heart.`, ['Tap any area']],
       landmark: ['Level 5', `<em>${A.landmarks.length} landmarks</em> to anchor your map.`, []],
       metro: ['Level 6', `<em>3 lines.</em> ${A.stations.length} stations.`, A.metro.map((l) => l.name)],
-      routes: ['Level 7', 'The <em>highways</em> in and out.', ['Road map on']],
+      routes: ['Level 7', `<em>${A.highways.length} highways,</em> the ORR and ${A.exits.length} exits.`, ['Real road paths', 'Tap a route']],
     }[this.map.depth] || ['', '', []];
     $('.kicker', h).textContent = text[0];
     $('.title', h).innerHTML = text[1];
@@ -234,7 +381,10 @@ class App {
         for (let i = 1; i < it.line.length; i++) len += km(it.line[i - 1], it.line[i]);
         return [[it.stationIds.length, 'stations'], [len.toFixed(0), 'km']];
       }
-      case 'corridor': return [[it.stops.length, 'stops']];
+      case 'corridor': return [[Math.round(it.lengthKm || lengthKm(pathOf(it))), 'km'], [it.stops.length, it.loop ? 'exits' : 'stops']];
+      case 'exit': return [[it.ref, 'exit no.'], [km([78.4746, 17.3616], pointOf(it)).toFixed(0), 'km to Charminar']];
+      case 'river':
+      case 'rail': return [[lengthKm(pathOf(it)).toFixed(0), 'km mapped']];
     }
     return [];
   }
@@ -271,28 +421,67 @@ class App {
       sections += `<div class="ic-sec">Stations in order</div><div class="chips">${it.stationIds.map((id, i) => chip({ ...A.get(id), color: it.color }, `${i + 1}. ${A.get(id).name}`)).join('')}</div>`;
     }
     if (it.kind === 'corridor') {
-      sections += `<div class="ic-sec">Stops in order</div><div class="chips">${it.stops.map((s, i) => chip({ ...A.get(s.id) }, `${i + 1}. ${s.name}`)).join('')}</div>`;
+      sections += `<div class="ic-sec">${it.loop ? 'Exits in order' : 'Stops in order'}</div><div class="chips">${it.stops.map((s, i) =>
+        `<button class="chip" data-ll="${s.lng},${s.lat}"><i style="background:#f2cf4a"></i>${esc(it.loop ? `Exit ${A.get(s.id)?.ref || i + 1} · ${s.name}` : `${i + 1}. ${s.name}`)}</button>`).join('')}</div>`;
     }
+    if (it.kind === 'exit') sections += `<div class="ic-sec">Road</div><div class="chips">${chip({ ...A.orrRoute, color: '#ffffff' })}</div>`;
     const pill = it.kind === 'corp' ? `Corporation ${it.num}` : KIND_LABEL[it.kind];
     const mastered = this.P.mastered(it.id);
+    const ph = it.photo;
+    const hero = ph ? `<div class="ic-hero"><img src="${ph.hero || ph.remote}" alt="${esc(it.name)}" decoding="async" onerror="this.parentNode.remove()"><div class="credit" data-credit>Photo: Wikimedia Commons</div></div>` : '';
+    const lineLike = ['line', 'corridor', 'river', 'rail'].includes(it.kind);
+    const canOrbit = ['landmark', 'locality', 'station', 'circle', 'zone', 'exit'].includes(it.kind);
+    const shield = it.kind === 'corridor' && it.ref ? `<span class="shield-inline"><i></i>${esc(it.ref)}</span>` : '';
     card.innerHTML = `
+      ${hero}
       <div class="ic-head"><div class="grow">
         <span class="pill" style="background:${it.color || '#5be49b'}">${esc(pill)}</span>
         ${mastered ? '<span class="pill dim" style="margin-left:4px">Mastered</span>' : ''}
-        <div class="ic-title">${esc(it.name)}</div>
+        <div class="ic-title">${shield}${esc(it.name)}</div>
+        ${it.te ? `<div class="te-name">${esc(it.te)}</div>` : ''}
         <div class="ic-crumb">${crumb(A, it).map((c) => `<b>${esc(c)}</b>`).join(' › ') || (it.full ? esc(it.full) : '')}</div>
       </div><button class="close-x" data-x>${ICON.close}</button></div>
       <div class="ic-fact">${esc(describe(A, it))}</div>
       <div class="ic-stats">${this.stats(it).map(([v, k]) => `<div class="stat"><div class="v">${v}</div><div class="k">${k}</div></div>`).join('')}</div>
       ${sections}
-      <div class="ic-actions"><button class="btn primary" data-q>Quiz me on this</button></div>`;
+      <div class="ic-actions">
+        ${lineLike ? `<button class="btn ghost" data-fly>${PLAY_ICON}Fly along</button>` : ''}
+        ${canOrbit ? `<button class="btn ghost" data-orbit>${ORBIT_ICON}Orbit</button>` : ''}
+        <button class="btn primary" data-q>Quiz me</button>
+      </div>`;
     card.hidden = false;
     this.el.dataset.card = 'open';
     card.scrollTop = 0;
     card.style.animation = 'none'; void card.offsetWidth; card.style.animation = '';
     $('[data-x]', card).onclick = () => { this.map.clearSelection(); this.hideCard(); this.setHeadline(); };
-    card.querySelectorAll('.chip[data-id]').forEach((c) => (c.onclick = () => this.exploreSelect(A.get(c.dataset.id))));
+    card.querySelectorAll('.chip[data-id]').forEach((c) => (c.onclick = () => { const x = A.get(c.dataset.id); if (x) this.exploreSelect(x); }));
+    card.querySelectorAll('.chip[data-ll]').forEach((c) => (c.onclick = () => {
+      const [lng, lat] = c.dataset.ll.split(',').map(Number);
+      this.map.fitItem({ lng, lat, kind: 'stop' }, { zoom: 14.6, pitch: this.map.pitchForZoom(14.6) });
+    }));
     $('[data-q]', card).onclick = () => this.quickQuiz(it);
+    const fly = $('[data-fly]', card), orb = $('[data-orbit]', card);
+    if (fly) fly.onclick = () => this.startFlight(it);
+    if (orb) orb.onclick = () => this.orbit(it);
+    if (ph) this.fillCredit(ph, $('[data-credit]', card));
+  }
+
+  // Photo credit: bundled photos carry it; remote ones ask the Commons API once.
+  async fillCredit(ph, el) {
+    const show = (c) => { if (el && c) el.innerHTML = `Photo: ${esc(c.author)} · ${esc(c.license)} · <a href="${ph.source}" target="_blank" rel="noopener">Wikimedia Commons</a>`; };
+    if (ph.author) return show(ph);
+    const cache = JSON.parse(localStorage.getItem('hyd-credits') || '{}');
+    if (cache[ph.file]) return show(cache[ph.file]);
+    try {
+      const url = 'https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*&prop=imageinfo&iiprop=extmetadata&titles=' + encodeURIComponent('File:' + ph.file);
+      const j = await (await fetch(url)).json();
+      const md = Object.values(j.query.pages)[0].imageinfo[0].extmetadata;
+      const strip = (h) => (h || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      const c = { author: strip(md.Artist && md.Artist.value).slice(0, 60) || 'Wikimedia Commons contributor', license: strip(md.LicenseShortName && md.LicenseShortName.value) || 'see source' };
+      cache[ph.file] = c;
+      localStorage.setItem('hyd-credits', JSON.stringify(cache));
+      show(c);
+    } catch { /* offline: keep the generic credit line */ }
   }
 
   quickQuiz(it) {
@@ -302,6 +491,7 @@ class App {
     else if (it.near) ids = ids.concat(it.near.slice(0, 4));
     if (it.kind === 'line') ids = it.stationIds;
     if (it.kind === 'station') ids = ids.concat(A.get(it.lines[0]).stationIds.slice(0, 6));
+    if (it.kind === 'corridor' && it.loop) ids = [it.id, ...A.exits.map((e) => e.id)];
     this.hideCard();
     this.map.clearSelection();
     this.quiz.start({ title: `Quiz · ${it.name}`, ids, games: 'auto', count: Math.min(8, Math.max(5, ids.length)) });
@@ -319,11 +509,11 @@ class App {
   runSearch(q) {
     const A = this.A;
     q = q.trim().toLowerCase();
-    const all = [...A.corporations, ...A.zones, ...A.circles, ...A.localities, ...A.landmarks, ...A.stations, ...A.metro, ...A.corridors];
+    const all = [...A.corporations, ...A.zones, ...A.circles, ...A.localities, ...A.landmarks, ...A.stations, ...A.metro, ...A.corridors, ...A.exits, ...A.rivers, ...A.rail];
     let res;
     if (!q) res = [...A.corporations, ...A.zones];
     else {
-      res = all.filter((x) => x.name.toLowerCase().includes(q))
+      res = all.filter((x) => x.name.toLowerCase().includes(q) || (x.te && x.te.includes(q)))
         .sort((a, b) => (b.name.toLowerCase().startsWith(q) - a.name.toLowerCase().startsWith(q)) || a.name.length - b.name.length);
     }
     $('#search-results').innerHTML = res.slice(0, 40).map((x) => `<button class="sr" data-id="${x.id}"><i style="background:${x.color || '#fff'}"></i><div><div class="sn">${esc(x.name)}</div><div class="ss">${KIND_LABEL[x.kind]}${crumb(A, x).length ? ' · ' + esc(crumb(A, x).join(' › ')) : ''}</div></div></button>`).join('')
@@ -404,7 +594,7 @@ class App {
     this.closeSheet();
     this.sheetBack = null;
     const runQuiz = () => this.quiz.start({
-      title: l.title, ids: l.items, games: l.games, count: Math.min(10, Math.max(6, l.items.length * 2)),
+      title: l.title, ids: l.items, games: l.games, count: l.count || Math.min(10, Math.max(6, l.items.length * 2)),
       key: { lesson: l.id },
       onDone: () => { this.returnTo = null; this.tab('learn'); },
     });
@@ -421,11 +611,12 @@ class App {
       <div class="games">${GAMES.map((g) => `<button class="game ${g.wide ? 'wide' : ''}" data-g="${g.id}">
         <div class="gfx" style="background:${g.bg}"></div><div class="gi">${ICON[g.icon]}</div>
         ${P.game(g.id).best ? `<div class="gb">BEST ${P.game(g.id).best}</div>` : ''}
-        <div class="gt">${esc(g.title)}</div><div class="gd">${esc(g.desc)}</div></button>`).join('')}</div>`;
+        <div class="gt">${esc(g.title)}${g.adv ? '<span class="badge-adv">ADVANCED</span>' : ''}</div><div class="gd">${esc(g.desc)}</div></button>`).join('')}</div>`;
     const body = this.openSheet(html);
     body.querySelectorAll('.game').forEach((b) => (b.onclick = () => {
       const g = GAMES.find((x) => x.id === b.dataset.g);
-      if (g.scope) this.renderScope(g);
+      if (g.id === 'draw') this.renderDrawSetup(g);
+      else if (g.scope) this.renderScope(g);
       else this.startGame(g);
     }));
   }
@@ -444,6 +635,46 @@ class App {
     }));
     $('[data-back]', body).onclick = () => this.renderPlay();
     $('[data-go]', body).onclick = () => { this.lastScope = sel; this.startGame(g, sel); };
+  }
+
+  renderDrawSetup(g) {
+    this.sheetBack = () => this.renderPlay();
+    const A = this.A;
+    const kinds = [
+      ['metro', 'Metro lines', A.metro.map((l) => l.id), 3],
+      ['highway', 'Highways', A.highways.map((r) => r.id), 3],
+      ['orr', 'ORR loop', [A.orrRoute.id], 1],
+      ['musi', 'Musi river', A.rivers.map((r) => r.id), 1],
+      ['mmts', 'MMTS rail', A.rail.map((r) => r.id), 3],
+    ].filter((k) => k[2].length);
+    let kind = this.lastDrawKind || 'metro', level = this.lastDrawLevel || 'pro';
+    const body = this.openSheet(`
+      <button class="text-btn" data-back style="display:flex;align-items:center;gap:2px;padding-left:0">${ICON.back}Games</button>
+      <div class="sh-kicker">Draw the route <span class="badge-adv">ADVANCED</span></div>
+      <div class="sh-title">Trace it <em>from memory.</em></div>
+      <div class="sh-lead">Draw the route with your finger. You score on how much of the real path you covered and how much of your line stayed on it.</div>
+      <div class="ic-sec" style="margin-top:18px">Route</div>
+      <div class="seg" data-g="kind">${kinds.map(([id, label]) => `<button data-v="${id}" class="${id === kind ? 'on' : ''}">${label}</button>`).join('')}</div>
+      <div class="ic-sec" style="margin-top:16px">Difficulty</div>
+      <div class="seg" data-g="level">${Object.entries(LEVELS).map(([id, l]) => `<button data-v="${id}" class="${id === level ? 'on' : ''}">${l.label}</button>`).join('')}</div>
+      <div class="lvl-note"></div>
+      <div class="ic-actions" style="margin-top:22px"><button class="btn primary" data-go>Start drawing</button></div>`);
+    const note = $('.lvl-note', body);
+    const sync = () => { note.textContent = LEVELS[level].note; };
+    sync();
+    body.querySelectorAll('.seg').forEach((seg) => seg.querySelectorAll('button').forEach((b) => (b.onclick = () => {
+      if (seg.dataset.g === 'kind') kind = b.dataset.v; else level = b.dataset.v;
+      seg.querySelectorAll('button').forEach((x) => x.classList.toggle('on', x === b));
+      sync();
+    })));
+    $('[data-back]', body).onclick = () => this.renderPlay();
+    $('[data-go]', body).onclick = () => {
+      this.lastDrawKind = kind; this.lastDrawLevel = level;
+      const k = kinds.find((x) => x[0] === kind);
+      this.closeSheet();
+      this.sheetBack = null;
+      this.quiz.start({ title: `Draw · ${k[1]} · ${LEVELS[level].label}`, ids: k[2], games: ['draw'], count: Math.min(k[3], k[2].length), level, key: { game: 'draw' }, onDone: () => this.tab('play') });
+    };
   }
 
   startGame(g, scope) {
@@ -465,6 +696,8 @@ class App {
       case 'neighbours': cfg = { ids: ids(A.lists[scope]), games: ['neighbour'], count: 10 }; break;
       case 'metro': cfg = { ids: ids(A.stations), games: ['nextStop', 'lineOf', 'interchange', 'order', 'findStation'], count: 10 }; break;
       case 'routes': cfg = { ids: ids(A.corridors).concat(ids(A.metro)), games: ['order', 'whichRoad'], count: 8 }; break;
+      case 'photo': cfg = { ids: ids(A.photos), games: ['photoName'], count: 10 }; break;
+      case 'exits': cfg = { ids: ids(A.exits), games: ['exitNumber', 'findPoint', 'exitNumber'], count: 10 }; break;
       case 'review': {
         const weak = P.weakest(14);
         if (weak.length < 3) { toast('No mistakes to fix yet. Play a few games first.'); return; }
@@ -510,9 +743,13 @@ class App {
         <div class="toggle-row">3D tilt<button class="switch ${s.tilt ? 'on' : ''}" data-set="tilt"></button></div>
         <div class="toggle-row">Road map overlay<button class="switch ${s.roads ? 'on' : ''}" data-set="roads"></button></div>
         <div class="toggle-row">Map labels<button class="switch ${s.labels ? 'on' : ''}" data-set="labels"></button></div>
+        <div class="toggle-row">Telugu names (తెలుగు)<button class="switch ${s.telugu ? 'on' : ''}" data-set="telugu"></button></div>
+        <div class="toggle-row">Tilt follows zoom<button class="switch ${s.autoTilt ? 'on' : ''}" data-set="autoTilt"></button></div>
+        <div class="toggle-row">3D terrain<button class="switch ${s.terrain ? 'on' : ''}" data-set="terrain"></button></div>
+        <div class="toggle-row"><span>Lite mode<br><small style="color:var(--muted);font-weight:600">For older phones: no 3D buildings or terrain</small></span><button class="switch ${s.lite ? 'on' : ''}" data-set="lite"></button></div>
         <div class="toggle-row">Reset all progress<button class="btn ghost small" data-reset>Reset</button></div>
       </div>
-      <div class="credits">${A.meta.structure}.<br>${A.meta.sources.map(esc).join('<br>')}<br>Imagery © Esri, Maxar, Earthstar Geographics. Map engine: MapLibre GL JS.</div>`);
+      <div class="credits">${A.meta.structure}.<br>${A.meta.sources.map(esc).join('<br>')}<br>Imagery © Esri, Maxar, Earthstar Geographics. 3D buildings and roads © OpenFreeMap, OpenMapTiles, OpenStreetMap contributors. Terrain: AWS Terrain Tiles (Mapzen). Landmark photos: Wikimedia Commons contributors, credited on each photo. Map engine: MapLibre GL JS.<br>Highway symbols and line colours are generic, not official logos; this app is not affiliated with GHMC, CMC, MMC, HMRL or the Government of Telangana.</div>`);
     body.querySelectorAll('[data-set]').forEach((b) => (b.onclick = () => {
       const k = b.dataset.set;
       s[k] = !s[k];
@@ -520,6 +757,10 @@ class App {
       if (k === 'tilt') this.map.setPitch(s.tilt ? 52 : 0);
       if (k === 'roads') this.map.setRoads(s.roads);
       if (k === 'labels') this.map.setLabelsOn(s.labels);
+      if (k === 'telugu') this.map.setTelugu(s.telugu);
+      if (k === 'autoTilt') this.map.autoTilt = s.autoTilt;
+      if (k === 'terrain') this.map.applyTerrain(s.terrain && !s.lite);
+      if (k === 'lite') { this.map.setLite(s.lite); if (!s.lite) this.map.applyTerrain(s.terrain); toast(s.lite ? 'Lite mode on' : 'Full 3D on'); }
       this.P.save();
       this.syncTools();
     }));

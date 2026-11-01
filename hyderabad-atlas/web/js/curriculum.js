@@ -56,13 +56,21 @@ export function buildCurriculum(A) {
     }),
   });
 
-  phases.push({
-    id: 'p5', title: 'Landmarks', sub: 'Heritage, lakes, campuses and transport hubs',
-    lessons: LANDMARK_GROUPS.map(([title, cats], i) => {
-      const ids = A.landmarks.filter((m) => cats.includes(m.cat)).map((m) => m.id);
-      return { id: 'lm-' + i, title, sub: `${ids.length} places`, items: ids, games: ['findPoint', 'namePoint', 'whichCorp', 'compass'] };
-    }),
+  // landmark lessons in bite-sized chunks (max 12 places each)
+  const lmLessons = [];
+  LANDMARK_GROUPS.forEach(([title, cats], gi) => {
+    const ids = A.landmarks.filter((m) => cats.includes(m.cat)).map((m) => m.id);
+    const parts = Math.ceil(ids.length / 12);
+    for (let k = 0; k < parts; k++) {
+      const chunk = ids.slice(Math.round((k * ids.length) / parts), Math.round(((k + 1) * ids.length) / parts));
+      lmLessons.push({
+        id: `lm-${gi}-${k}`, title: parts > 1 ? `${title} ${['I', 'II', 'III', 'IV'][k]}` : title,
+        sub: chunk.slice(0, 3).map((id) => A.get(id).name).join(' · ') + (chunk.length > 3 ? ` +${chunk.length - 3}` : ''),
+        items: chunk, games: ['photoName', 'findPoint', 'namePoint', 'whichCorp', 'compass'],
+      });
+    }
   });
+  phases.push({ id: 'p5', title: 'Landmarks', sub: 'Heritage, lakes, campuses and transport hubs', lessons: lmLessons });
 
   phases.push({
     id: 'p6', title: 'Metro', sub: 'Red, Blue and Green lines, station by station',
@@ -78,13 +86,22 @@ export function buildCurriculum(A) {
     ],
   });
 
+  const hw = A.highways;
+  const out = hw.filter((r) => /NH|SH|Highway/.test(r.name) && !/Old Mumbai/.test(r.name));
+  const inner = hw.filter((r) => !out.includes(r));
   phases.push({
-    id: 'p7', title: 'Routes', sub: 'Highways and corridors, in order',
+    id: 'p7', title: 'Routes', sub: 'Highways on real roads, the ORR and its exits',
     lessons: [
-      { id: 'routes-out', title: 'Highways out of the city', sub: 'NH44, NH65 (both ways), NH163',
-        items: A.corridors.slice(0, 4).map((r) => r.id), games: ['order', 'whichRoad', 'order'] },
-      { id: 'routes-in', title: 'Airport road & IT corridor', sub: 'PVNR Expressway · Panjagutta → Financial District',
-        items: A.corridors.slice(4).map((r) => r.id), games: ['order', 'whichRoad', 'order'] },
+      { id: 'routes-nh', title: 'National highways', sub: out.slice(0, 4).map((r) => r.ref || r.name).join(' · '),
+        items: out.slice(0, Math.ceil(out.length / 2)).map((r) => r.id), games: ['order', 'whichRoad', 'order'] },
+      { id: 'routes-nh2', title: 'More highways out', sub: out.slice(Math.ceil(out.length / 2)).map((r) => r.name.split(' · ').pop()).join(' · '),
+        items: out.slice(Math.ceil(out.length / 2)).map((r) => r.id), games: ['order', 'whichRoad', 'order'] },
+      { id: 'routes-inner', title: 'Expressways & the ORR', sub: inner.map((r) => r.name).concat('ORR').join(' · '),
+        items: inner.map((r) => r.id).concat(A.orrRoute ? [A.orrRoute.id] : []), games: ['order', 'whichRoad', 'order', 'draw'], count: 5 },
+      { id: 'routes-exits', title: 'ORR exits 1–19', sub: 'Gandipet to Narsingi, clockwise',
+        items: A.exits.map((e) => e.id), games: ['exitNumber', 'findPoint', 'namePoint'] },
+      { id: 'routes-draw', title: 'Draw it from memory', sub: 'Trace metro lines, highways and the Musi',
+        items: A.metro.map((l) => l.id).concat(out.slice(0, 3).map((r) => r.id), (A.rivers || []).map((r) => r.id)), games: ['draw'], count: 4 },
     ],
   });
 

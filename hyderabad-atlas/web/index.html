@@ -36,13 +36,18 @@
 
   <div id="map-tools">
     <button class="tool" data-tool="recenter" aria-label="Recentre"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button>
-    <button class="tool" data-tool="tilt" aria-label="3D"><span>3D</span></button>
+    <div class="tool dial" data-tool="dial" aria-label="Rotate and tilt">
+      <div class="dial-ring"></div>
+      <div class="dial-needle"><i></i></div>
+      <span class="dial-tilt">3D</span>
+    </div>
     <button class="tool" data-tool="roads" aria-label="Roads"><svg viewBox="0 0 24 24"><path d="M8 3 5 21M16 3l3 18M12 4v3M12 10v3M12 16v3"/></svg></button>
     <button class="tool" data-tool="labels" aria-label="Labels"><svg viewBox="0 0 24 24"><path d="M4 7V5h16v2M9 19h6M12 5v14"/></svg></button>
   </div>
 
   <!-- EXPLORE -->
   <section id="explore" class="panel">
+    <div id="places-strip" class="hscroll" hidden></div>
     <div id="depth-bar" class="hscroll"></div>
     <div id="info-card" class="glass card" hidden></div>
   </section>
@@ -61,6 +66,7 @@
       <button class="text-btn" data-act="skip">Quiz</button>
     </div>
     <div class="tour-card glass">
+      <div class="q-img t-img" hidden></div>
       <div class="kicker"></div>
       <div class="t-title"></div>
       <div class="t-crumb"></div>
@@ -68,6 +74,24 @@
       <div class="tour-ctrl">
         <button class="btn ghost" data-act="prev">Back</button>
         <button class="btn primary" data-act="next">Next</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLIGHT (fly-along / orbit) -->
+  <section id="flight" class="overlay" hidden>
+    <div class="ov-top">
+      <button class="icon-btn" data-f="stop" aria-label="Stop"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="fl-title"></div>
+    </div>
+    <div class="fl-card glass">
+      <div class="kicker fl-kicker"></div>
+      <div class="fl-now"></div>
+      <div class="fl-next"></div>
+      <div class="qbar"><div class="qbar-fill fl-bar"></div></div>
+      <div class="fl-ctrl">
+        <button class="btn ghost small" data-f="pause">Pause</button>
+        <div class="seg fl-speed"><button data-s="1" class="on">1×</button><button data-s="2">2×</button><button data-s="4">4×</button></div>
       </div>
     </div>
   </section>
@@ -80,6 +104,7 @@
       <div class="qscore">0</div>
     </div>
     <div class="q-card glass">
+      <div class="q-img" hidden></div>
       <div class="kicker"></div>
       <div class="q-prompt"></div>
       <div class="q-sub"></div>
