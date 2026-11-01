@@ -2,6 +2,8 @@
 
 An Android app for learning Hyderabad's geography layer by layer, on a 3D satellite map styled after the realtor's pov reel about the 2026 three-corporation split.
 
+![Hyderabad Atlas screens](docs/preview.jpg)
+
 **Install:** download [`release/HyderabadAtlas.apk`](release/HyderabadAtlas.apk) on your phone, open it, and allow "Install unknown apps" for your browser or file manager when asked. Android 8.0 or newer. You need internet for the satellite imagery.
 
 ## What's inside
