@@ -1,0 +1,2108 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-01T11:31:46Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 307023348,
+  "lat": 17.3893110,
+  "lon": 78.4992403,
+  "tags": {
+    "historic": "yes",
+    "internet_access": "wlan",
+    "name": "Kacheguda",
+    "name:ml": "കാച്ചിഗുഡ",
+    "name:te": "కాచిగూడ",
+    "name:ur": "کاچی گوڑہ",
+    "network": "IR",
+    "operator": "SCR",
+    "public_transport": "station",
+    "railway": "station",
+    "ref": "KCG",
+    "train": "yes",
+    "wikidata": "Q6344674",
+    "wikipedia": "en:Kacheguda railway station"
+  }
+},
+{
+  "type": "node",
+  "id": 321710524,
+  "lat": 17.4409014,
+  "lon": 78.4985547,
+  "tags": {
+    "historic": "monument",
+    "name": "Clock Tower",
+    "name:te": "క్లాక్ టవర్"
+  }
+},
+{
+  "type": "node",
+  "id": 626896827,
+  "lat": 17.3618204,
+  "lon": 78.4864271,
+  "tags": {
+    "historic": "monument",
+    "name": "shaik faiz kaman"
+  }
+},
+{
+  "type": "node",
+  "id": 626897216,
+  "lat": 17.3657622,
+  "lon": 78.4970385,
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:district": "Hyderabad",
+    "addr:state": "Andhra Pradesh",
+    "amenity": "college",
+    "historic": "yes",
+    "name": "Chanchalguda Junior College"
+  }
+},
+{
+  "type": "node",
+  "id": 626897420,
+  "lat": 17.3741567,
+  "lon": 78.4782198,
+  "tags": {
+    "amenity": "library",
+    "historic": "archaeological_site",
+    "name": "State Library",
+    "operator": "Telangana",
+    "operator:type": "public",
+    "wikidata": "Q3764208",
+    "wikimedia_commons": "Category:State Central Library, Hyderabad",
+    "wikipedia": "en:State Central Library, Hyderabad"
+  }
+},
+{
+  "type": "node",
+  "id": 626897472,
+  "lat": 17.3691653,
+  "lon": 78.4721325,
+  "tags": {
+    "amenity": "courthouse",
+    "historic": "monument",
+    "name": "High Court of Telangana",
+    "name:te": "తెలంగాణ రాష్ట్ర ఉన్నత న్యాయస్థానం",
+    "website": "http://hc.ts.nic.in/",
+    "wikidata": "Q3276107",
+    "wikipedia": "en:Telangana High Court"
+  }
+},
+{
+  "type": "node",
+  "id": 626901359,
+  "lat": 17.3679221,
+  "lon": 78.4851691,
+  "tags": {
+    "historic": "monument",
+    "name": "Dabeerpura darwaza"
+  }
+},
+{
+  "type": "node",
+  "id": 626910659,
+  "lat": 17.3684762,
+  "lon": 78.4757391,
+  "tags": {
+    "historic": "monument",
+    "name": "madina building;Ajfan",
+    "name:en": "Ajfan",
+    "shop": "supermarket"
+  }
+},
+{
+  "type": "node",
+  "id": 626926304,
+  "lat": 17.3618794,
+  "lon": 78.4709135,
+  "tags": {
+    "historic": "monument",
+    "name": "Mehboob Chowk Clock Tower",
+    "wikidata": "Q24906388"
+  }
+},
+{
+  "type": "node",
+  "id": 626940816,
+  "lat": 17.3845613,
+  "lon": 78.4750497,
+  "tags": {
+    "historic": "monument",
+    "name": "Mozam Jahi Market Clock Tower",
+    "shop": "moazzam jahi market"
+  }
+},
+{
+  "type": "node",
+  "id": 626940819,
+  "lat": 17.3883677,
+  "lon": 78.4710398,
+  "tags": {
+    "historic": "monument",
+    "name": "gandhi bhavan"
+  }
+},
+{
+  "type": "node",
+  "id": 886354211,
+  "lat": 17.4376840,
+  "lon": 78.5046055,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Mother Teresa Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 1306282000,
+  "lat": 17.4938541,
+  "lon": 78.5208267,
+  "tags": {
+    "historic": "memorial",
+    "name": "Amar Jyothi Amar Jawan"
+  }
+},
+{
+  "type": "node",
+  "id": 1714408692,
+  "lat": 17.3640754,
+  "lon": 78.5961071,
+  "tags": {
+    "historic": "memorial",
+    "name": "Dr. Ambedkar's Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2412799920,
+  "lat": 17.3692634,
+  "lon": 78.5333548,
+  "tags": {
+    "historic": "memorial",
+    "name": "Shivaji Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2418791411,
+  "lat": 17.4425460,
+  "lon": 78.4414688,
+  "tags": {
+    "historic": "monument",
+    "name": "Umesh Chandra Statue",
+    "name:te": "ఉమేష్ చంద్ర విగ్రహం"
+  }
+},
+{
+  "type": "node",
+  "id": 2527794306,
+  "lat": 17.3126268,
+  "lon": 78.4030886,
+  "tags": {
+    "historic": "memorial",
+    "name": "Mahatma Gandhi statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2590326097,
+  "lat": 17.4011614,
+  "lon": 78.5816384,
+  "tags": {
+    "historic": "monument",
+    "name": "NTR Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2708696718,
+  "lat": 17.4986710,
+  "lon": 78.3897262,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Sri Krishna Devaraya Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2709166032,
+  "lat": 17.3394978,
+  "lon": 78.5237381,
+  "tags": {
+    "historic": "memorial",
+    "name": "ysr statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2710906541,
+  "lat": 17.4542338,
+  "lon": 78.5009313,
+  "tags": {
+    "historic": "memorial",
+    "name": "dr bhim rao ambhedkar statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2710941028,
+  "lat": 17.4426649,
+  "lon": 78.5058102,
+  "tags": {
+    "historic": "memorial",
+    "name": "eashwari bhai statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2710956962,
+  "lat": 17.4004707,
+  "lon": 78.4736735,
+  "tags": {
+    "historic": "memorial",
+    "name": "Telangana Martyrs Memorial",
+    "name:te": "తెలంగాణ అమరవీరుల స్మారక చిహ్నం"
+  }
+},
+{
+  "type": "node",
+  "id": 2710964363,
+  "lat": 17.4147982,
+  "lon": 78.4658460,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Indira Gandhi Statue",
+    "name:te": "ఇందిరా గాంధీ విగ్రహం"
+  }
+},
+{
+  "type": "node",
+  "id": 2710973709,
+  "lat": 17.4135807,
+  "lon": 78.4602273,
+  "tags": {
+    "historic": "memorial",
+    "name": "pjr statue",
+    "name:en": "PJR Statue",
+    "name:te": "పీజేఆర్ విగ్రహం"
+  }
+},
+{
+  "type": "node",
+  "id": 2710974397,
+  "lat": 17.4132259,
+  "lon": 78.4604214,
+  "tags": {
+    "historic": "memorial",
+    "name": "Visweswarayya Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2710977507,
+  "lat": 17.4127359,
+  "lon": 78.4622139,
+  "tags": {
+    "historic": "memorial",
+    "name": "pjr statue",
+    "name:te": "పీజేఆర్ విగ్రహం"
+  }
+},
+{
+  "type": "node",
+  "id": 2710980065,
+  "lat": 17.4110582,
+  "lon": 78.4610145,
+  "tags": {
+    "historic": "memorial",
+    "name": "Rajiv Gandhi Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2710981546,
+  "lat": 17.4107048,
+  "lon": 78.4638497,
+  "tags": {
+    "historic": "memorial",
+    "name": "PJR Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2710987499,
+  "lat": 17.4077763,
+  "lon": 78.4655217,
+  "tags": {
+    "historic": "memorial",
+    "name": "Sarvepalli Radhakrishnan Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2712450043,
+  "lat": 17.4257566,
+  "lon": 78.4489014,
+  "tags": {
+    "historic": "memorial",
+    "name": "marri chenna reddy statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2712477054,
+  "lat": 17.4445293,
+  "lon": 78.4323044,
+  "tags": {
+    "historic": "memorial",
+    "name": "PJR Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2712702744,
+  "lat": 17.3924087,
+  "lon": 78.5191860,
+  "tags": {
+    "historic": "memorial",
+    "name": "gandhi statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2713845109,
+  "lat": 17.4319697,
+  "lon": 78.4392235,
+  "tags": {
+    "historic": "memorial",
+    "name": "pjr statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2713969504,
+  "lat": 17.4542506,
+  "lon": 78.4157488,
+  "tags": {
+    "historic": "memorial",
+    "name": "pjr statue"
+  }
+},
+{
+  "type": "node",
+  "id": 2714348490,
+  "lat": 17.4951785,
+  "lon": 78.3918149,
+  "tags": {
+    "historic": "monument",
+    "name": "BR Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3170082731,
+  "lat": 17.4025823,
+  "lon": 78.4681656,
+  "tags": {
+    "historic": "memorial",
+    "name": "Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3180218832,
+  "lat": 17.4015138,
+  "lon": 78.5601912,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3182190027,
+  "lat": 17.4266915,
+  "lon": 78.4526737,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "YSR Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3182229221,
+  "lat": 17.4486891,
+  "lon": 78.4962713,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3184114878,
+  "lat": 17.3919810,
+  "lon": 78.5161411,
+  "tags": {
+    "historic": "memorial",
+    "name": "Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3249939381,
+  "lat": 17.4018422,
+  "lon": 78.4683104,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Mahatma Gandhi Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 3388793456,
+  "lat": 17.4907914,
+  "lon": 78.4075587,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Vivekananda Statue",
+    "name:kn": "ವಿವೇಕಾನಂದ ಪ್ರತಿಮೆ"
+  }
+},
+{
+  "type": "node",
+  "id": 4009273430,
+  "lat": 17.4943780,
+  "lon": 78.4012556,
+  "tags": {
+    "historic": "memorial",
+    "name": "PGR Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 4149702191,
+  "lat": 17.4612532,
+  "lon": 78.5583176,
+  "tags": {
+    "historic": "monument",
+    "name": "Moula Ali Kamaan"
+  }
+},
+{
+  "type": "node",
+  "id": 4187311990,
+  "lat": 17.4224031,
+  "lon": 78.4850374,
+  "tags": {
+    "historic": "monument",
+    "name": "tank"
+  }
+},
+{
+  "type": "node",
+  "id": 4187312689,
+  "lat": 17.3948038,
+  "lon": 78.4753885,
+  "tags": {
+    "addr:city": "Hyderbad",
+    "addr:state": "Telangana",
+    "amenity": "bank",
+    "brand:wikidata": "Q1340361",
+    "brand:wikipedia": "en:State Bank of India",
+    "historic": "yes",
+    "name": "State Bank of India",
+    "name:ur": "اسٹیٹ بینک آف انڈیا",
+    "old_name": "State Bank of Hyderabad",
+    "short_name": "SBI",
+    "website": "https://www.sbi.co.in"
+  }
+},
+{
+  "type": "node",
+  "id": 4313322315,
+  "lat": 17.3634508,
+  "lon": 78.4749992,
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Gulzar houz (fountain)",
+    "name:te": "గుల్జార్ హౌజ్"
+  }
+},
+{
+  "type": "node",
+  "id": 4636929414,
+  "lat": 17.5169048,
+  "lon": 78.3426219,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "APJ Abdul Kalam Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 4637164124,
+  "lat": 17.5145101,
+  "lon": 78.3486469,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Maktha Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 4798484585,
+  "lat": 17.4039382,
+  "lon": 78.5172021,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "G A N RAJU Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 4856178849,
+  "lat": 17.4964545,
+  "lon": 78.3929421,
+  "tags": {
+    "historic": "monument",
+    "name": "Jawaharlal Nehru Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 4856178850,
+  "lat": 17.4960312,
+  "lon": 78.3948150,
+  "tags": {
+    "historic": "monument",
+    "name": "NTR Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 5177853521,
+  "lat": 17.4155839,
+  "lon": 78.4749604,
+  "tags": {
+    "artwork_type": "statue",
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Lord Buddha",
+    "name:ml": "ബുദ്ധ വിഗ്രഹം",
+    "name:te": "బుద్ధ విగ్రహం",
+    "start_date": "1992-1-12",
+    "tourism": "artwork",
+    "wikidata": "Q4984164",
+    "wikimedia_commons": "Category:Statue of the Buddha at the Hussain Sagar",
+    "wikipedia": "en:Buddha Statue of Hyderabad"
+  }
+},
+{
+  "type": "node",
+  "id": 5190765175,
+  "lat": 17.4755797,
+  "lon": 78.4856559,
+  "tags": {
+    "description": "Hasmathpet, Oldbowenpally",
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 5539307072,
+  "lat": 17.4183683,
+  "lon": 78.5845626,
+  "tags": {
+    "historic": "monument",
+    "name": "Ambedkar Statue, Boduppal"
+  }
+},
+{
+  "type": "node",
+  "id": 5695396229,
+  "lat": 17.4201002,
+  "lon": 78.4838529,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Gurajada Apparao"
+  }
+},
+{
+  "type": "node",
+  "id": 5695396230,
+  "lat": 17.4220964,
+  "lon": 78.4851947,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "C.R Reddy"
+  }
+},
+{
+  "type": "node",
+  "id": 5695396231,
+  "lat": 17.4225572,
+  "lon": 78.4855048,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Sarvepalli Radhakrishna",
+    "subject:wikidata": "Q156349"
+  }
+},
+{
+  "type": "node",
+  "id": 5695396232,
+  "lat": 17.4230780,
+  "lon": 78.4858637,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Mahboob Ali Khan",
+    "subject:wikidata": "Q681619",
+    "subject:wikipedia": "en:Mahboob Ali Khan"
+  }
+},
+{
+  "type": "node",
+  "id": 5695396234,
+  "lat": 17.4235488,
+  "lon": 78.4860644,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Rudramadevi",
+    "subject:wikidata": "Q3523666",
+    "subject:wikipedia": "en:Rudrama Devi"
+  }
+},
+{
+  "type": "node",
+  "id": 5695396236,
+  "lat": 17.4237894,
+  "lon": 78.4860977,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Kumarambheem",
+    "subject:wikidata": "Q6428141",
+    "subject:wikipedia": "en:Komaram Bheem"
+  }
+},
+{
+  "type": "node",
+  "id": 5733146968,
+  "lat": 17.3359145,
+  "lon": 78.2895947,
+  "tags": {
+    "historic": "monument",
+    "name": "Buddha's monument"
+  }
+},
+{
+  "type": "node",
+  "id": 5967867552,
+  "lat": 17.4110470,
+  "lon": 78.4681483,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "B R Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 6169037521,
+  "lat": 17.5027658,
+  "lon": 78.3889706,
+  "tags": {
+    "historic": "monument",
+    "name": "NTR STATUE"
+  }
+},
+{
+  "type": "node",
+  "id": 6373360518,
+  "lat": 17.4214922,
+  "lon": 78.4847020,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "statue",
+    "name": "Ballari Raghav"
+  }
+},
+{
+  "type": "node",
+  "id": 6377169106,
+  "lat": 17.4410994,
+  "lon": 78.3389869,
+  "tags": {
+    "historic": "monument",
+    "name": "Mushroom Rock"
+  }
+},
+{
+  "type": "node",
+  "id": 6377172957,
+  "lat": 17.4622523,
+  "lon": 78.3342027,
+  "tags": {
+    "access": "private",
+    "archaeological_site": "megalith",
+    "historic": "archaeological_site",
+    "historic:civilization": "prehistoric",
+    "name": "Megalithic Burial Site"
+  }
+},
+{
+  "type": "node",
+  "id": 6448133751,
+  "lat": 17.3806479,
+  "lon": 78.3172444,
+  "tags": {
+    "direction": "180",
+    "historic": "yes",
+    "name": "Nizami View Point",
+    "name:ur": "نظامی ویو پوائنٹ۔",
+    "opening_hours": "24/7",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 6634208969,
+  "lat": 17.4177858,
+  "lon": 78.5662056,
+  "tags": {
+    "access": "yes",
+    "historic": "monument",
+    "name": "New Hema Nagar Colony Arch"
+  }
+},
+{
+  "type": "node",
+  "id": 6634209091,
+  "lat": 17.4209629,
+  "lon": 78.5709790,
+  "tags": {
+    "access": "yes",
+    "commemorates:wikidata": "Q11378",
+    "historic": "monument",
+    "name": "Lord Shiva Arch"
+  }
+},
+{
+  "type": "node",
+  "id": 6634224607,
+  "lat": 17.4120548,
+  "lon": 78.5612884,
+  "tags": {
+    "commemorates:wikidata": "Q1579",
+    "historic": "monument",
+    "name": "Vijaya Ganapathi Arch"
+  }
+},
+{
+  "type": "node",
+  "id": 6651585138,
+  "lat": 17.4940060,
+  "lon": 78.3279762,
+  "tags": {
+    "historic": "memorial",
+    "memorial": "plaque",
+    "name": "HMWSSB"
+  }
+},
+{
+  "type": "node",
+  "id": 6685486363,
+  "lat": 17.4408942,
+  "lon": 78.4976949,
+  "tags": {
+    "historic": "memorial",
+    "name": "Telangana Martyrs Memorial"
+  }
+},
+{
+  "type": "node",
+  "id": 6690779939,
+  "lat": 17.4423867,
+  "lon": 78.4393579,
+  "tags": {
+    "historic": "monument",
+    "inscription": "Jai Bhim",
+    "name": "Dr B R Ambedkar Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 6690779943,
+  "lat": 17.4423732,
+  "lon": 78.4410615,
+  "tags": {
+    "historic": "monument",
+    "inscription": "Architect of Modren India",
+    "name": "Rajiv Gandhi Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 6710912125,
+  "lat": 17.4294944,
+  "lon": 78.5129000,
+  "tags": {
+    "historic": "monument",
+    "name": "Mahatma Gandhi Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 6710912146,
+  "lat": 17.4247413,
+  "lon": 78.5152947,
+  "tags": {
+    "historic": "wayside_shrine",
+    "name": "Hanuman Temple",
+    "name:te": "హనుమాన్ గుడి"
+  }
+},
+{
+  "type": "node",
+  "id": 6758497454,
+  "lat": 17.4198611,
+  "lon": 78.5165660,
+  "tags": {
+    "historic": "monument",
+    "name": "Netaji Subash Chandra Bose Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 6776351523,
+  "lat": 17.4216182,
+  "lon": 78.5170798,
+  "tags": {
+    "historic": "memorial",
+    "name": "Shivaji Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 6808260893,
+  "lat": 17.3897401,
+  "lon": 78.3950617,
+  "tags": {
+    "access": "yes",
+    "archaeological_site": "fortification",
+    "historic": "archaeological_site",
+    "historic:civilization": "Qutub_Shahi",
+    "inscription": "Victory Cannon",
+    "name": "18 Steps"
+  }
+},
+{
+  "type": "node",
+  "id": 6808260911,
+  "lat": 17.3896604,
+  "lon": 78.3964049,
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Golconda Jail"
+  }
+},
+{
+  "type": "node",
+  "id": 7707961937,
+  "lat": 17.4320459,
+  "lon": 78.4779496,
+  "tags": {
+    "historic": "memorial",
+    "material": "granite",
+    "memorial": "stone",
+    "name": "Damodaram Sanjeevaiah Memorial",
+    "name:te": "దామోదరం సంజీవయ్య స్మారకం"
+  }
+},
+{
+  "type": "node",
+  "id": 7922879265,
+  "lat": 17.5084529,
+  "lon": 78.3996686,
+  "tags": {
+    "historic": "monument",
+    "name": "Hanuman Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 7966169681,
+  "lat": 17.4173012,
+  "lon": 78.4301218,
+  "tags": {
+    "historic": "monument",
+    "name": "JRD Tata Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 7966169682,
+  "lat": 17.4170357,
+  "lon": 78.4309056,
+  "tags": {
+    "historic": "monument",
+    "name": "Sri. NTR & Smt. Basavatarakam Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 8354312479,
+  "lat": 17.4536155,
+  "lon": 78.3914490,
+  "tags": {
+    "historic": "city_gate",
+    "historic:civilization": "modern",
+    "name": "Chanda Naik Nagar Arch"
+  }
+},
+{
+  "type": "node",
+  "id": 8621042251,
+  "lat": 17.4515113,
+  "lon": 78.4841523,
+  "tags": {
+    "historic": "monument",
+    "name": "Telugu thali statue"
+  }
+},
+{
+  "type": "node",
+  "id": 8651547296,
+  "lat": 17.3898461,
+  "lon": 78.3948926,
+  "tags": {
+    "access": "yes",
+    "historic": "archaeological_site",
+    "historic:civilization": "medieval",
+    "name": "Victory Cannon - Fateh Rahbar"
+  }
+},
+{
+  "type": "node",
+  "id": 8909177646,
+  "lat": 17.4386471,
+  "lon": 78.4887891,
+  "tags": {
+    "historic": "monument",
+    "name": "Mahatma Gandhi Statue"
+  }
+},
+{
+  "type": "node",
+  "id": 8987811327,
+  "lat": 17.3759728,
+  "lon": 78.3169135,
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:state": "Telangana",
+    "date": "yes",
+    "historic": "yes",
+    "name": "عثمان ساگر",
+    "name:en": "Osman Sagar Dam",
+    "start_date": "1921-05-08",
+    "waterway": "dam"
+  }
+},
+{
+  "type": "node",
+  "id": 9711995042,
+  "lat": 17.3676115,
+  "lon": 78.4583986,
+  "tags": {
+    "description": "Constructed 1578",
+    "historic": "bridge",
+    "name": "Purana Pul Bridge"
+  }
+},
+{
+  "type": "node",
+  "id": 9885108778,
+  "lat": 17.3507099,
+  "lon": 78.4729016,
+  "tags": {
+    "historic": "monument",
+    "name": "Nehru statue"
+  }
+},
+{
+  "type": "node",
+  "id": 9923836904,
+  "lat": 17.4244789,
+  "lon": 78.5255086,
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "The Heritage well"
+  }
+},
+{
+  "type": "node",
+  "id": 10279877056,
+  "lat": 17.3039107,
+  "lon": 78.4398894,
+  "tags": {
+    "historic": "monument",
+    "name": "Vivekananda statue"
+  }
+},
+{
+  "type": "node",
+  "id": 10556446707,
+  "lat": 17.1789078,
+  "lon": 78.2123545,
+  "tags": {
+    "historic": "memorial",
+    "name": "Gokul Point"
+  }
+},
+{
+  "type": "node",
+  "id": 10836252952,
+  "lat": 17.3788354,
+  "lon": 78.4394513,
+  "tags": {
+    "historic": "monument",
+    "name": "Bhagwan Das Bagh"
+  }
+},
+{
+  "type": "node",
+  "id": 10836262029,
+  "lat": 17.3787012,
+  "lon": 78.4402227,
+  "tags": {
+    "historic": "monument",
+    "name": "Raja Bhagwan Das  Bagh"
+  }
+},
+{
+  "type": "node",
+  "id": 12618805890,
+  "lat": 17.4233402,
+  "lon": 78.4483910,
+  "tags": {
+    "historic": "memorial",
+    "name": "Jalagam Vengala rao Park Arch",
+    "source": "https://github.com/MappingMonster/OSM/blob/main/jalagam_vengal_rao_park.jpg"
+  }
+},
+{
+  "type": "node",
+  "id": 13043476521,
+  "lat": 17.4086623,
+  "lon": 78.4729835,
+  "tags": {
+    "historic": "memorial",
+    "name": "Telangana Martyrs Memorial",
+    "subject:wikidata": "Q17142637",
+    "subject:wikipedia": "en:Telangana Martyrs Memorial"
+  }
+},
+{
+  "type": "way",
+  "id": 27932547,
+  "center": {
+    "lat": 17.3715971,
+    "lon": 78.4765481
+  },
+  "tags": {
+    "bridge": "yes",
+    "foot": "yes",
+    "highway": "trunk",
+    "historic": "yes",
+    "int_ref": "AH43",
+    "lane_markings": "no",
+    "layer": "1",
+    "maxspeed": "60",
+    "name": "Naya Pul",
+    "name:en": "Naya Pul",
+    "name:ur": "نیا پل",
+    "oneway": "yes",
+    "ref": "NH44",
+    "ref:old": "NH7",
+    "sidewalk": "no"
+  }
+},
+{
+  "type": "way",
+  "id": 27936329,
+  "center": {
+    "lat": 17.3699495,
+    "lon": 78.4689471
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "primary",
+    "historic": "yes",
+    "layer": "1",
+    "lit": "yes",
+    "maxspeed": "60",
+    "name": "مسلم جنگ پل۔",
+    "name:en": "Muslim Jung Pul",
+    "oneway": "yes"
+  }
+},
+{
+  "type": "way",
+  "id": 28092575,
+  "center": {
+    "lat": 17.3676762,
+    "lon": 78.4582758
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "secondary",
+    "historic": "yes",
+    "layer": "1",
+    "maxspeed": "60",
+    "name": "Purana Pul",
+    "name:en": "Purana Pul",
+    "name:ur": "پرانا پل",
+    "oneway": "yes",
+    "start_date": "1578"
+  }
+},
+{
+  "type": "way",
+  "id": 89581822,
+  "center": {
+    "lat": 17.4787267,
+    "lon": 78.5040455
+  },
+  "tags": {
+    "historic": "yes",
+    "name": "Gunrock"
+  }
+},
+{
+  "type": "way",
+  "id": 116029684,
+  "center": {
+    "lat": 17.3604654,
+    "lon": 78.4735819
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "barrier": "wall",
+    "historic": "yes",
+    "name": "Mecca Masjid",
+    "name:ar": "مسجد مكة",
+    "name:en": "Mecca Masjid",
+    "name:fa": "مکه مسجد",
+    "name:ml": "മക്ക മസ്ജിദ്",
+    "name:te": "మక్కా మసీదు",
+    "name:ur": "مکہ مسجد",
+    "religion": "muslim",
+    "wikidata": "Q536288"
+  }
+},
+{
+  "type": "way",
+  "id": 116029938,
+  "center": {
+    "lat": 17.3603881,
+    "lon": 78.4731660
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "yes",
+    "name": "Mecca Masjid",
+    "name:en": "Mecca Masjid",
+    "name:fa": "مکه مسجد",
+    "name:hi": "मक्का मस्जिद",
+    "name:ur": "مکہ مسجد",
+    "opening_hours": "04:00-21:30"
+  }
+},
+{
+  "type": "way",
+  "id": 116030267,
+  "center": {
+    "lat": 17.3578453,
+    "lon": 78.4716606
+  },
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:housenumber": "20-4-236",
+    "addr:postcode": "500002",
+    "addr:street": "Motigalli",
+    "addr:unit": "Khilwat",
+    "building": "yes",
+    "historic": "yes",
+    "name": "چومحلہ محل",
+    "name:en": "Chowmahalla Palace",
+    "opening_hours": "10:00-17:00; Fr off"
+  }
+},
+{
+  "type": "way",
+  "id": 116031164,
+  "center": {
+    "lat": 17.3575420,
+    "lon": 78.4715662
+  },
+  "tags": {
+    "barrier": "wall",
+    "historic": "yes",
+    "name": "Chowmahalla Palace",
+    "name:en": "Chowmahalla Palace",
+    "name:fa": "کاخ چومحله",
+    "name:hi": "चौमहल्ला महल",
+    "name:kn": "ಚೌಮಹಲ್ಲಾ ಅರಮನೆ",
+    "name:ml": "ചൗമഹല്ല കൊട്ടാരം",
+    "name:ta": "சௌமஹல்லா அரண்மனை",
+    "name:te": "చౌమహల్లా ప్యాలెస్",
+    "name:ur": "چومحلہ محل",
+    "tourism": "attraction",
+    "wikidata": "Q3380670"
+  }
+},
+{
+  "type": "way",
+  "id": 121543671,
+  "center": {
+    "lat": 17.4192016,
+    "lon": 78.5263097
+  },
+  "tags": {
+    "amenity": "college",
+    "building": "yes",
+    "education": "college",
+    "historic": "monument",
+    "name": "Arts College"
+  }
+},
+{
+  "type": "way",
+  "id": 170860198,
+  "center": {
+    "lat": 17.3843955,
+    "lon": 78.4750622
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "monument",
+    "name": "Moazzam Jahi Market"
+  }
+},
+{
+  "type": "way",
+  "id": 207568787,
+  "center": {
+    "lat": 17.3847818,
+    "lon": 78.4750117
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "monument",
+    "name": "Moazzam Jahi Market"
+  }
+},
+{
+  "type": "way",
+  "id": 207578141,
+  "center": {
+    "lat": 17.3794533,
+    "lon": 78.4918789
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "historic": "yes",
+    "lanes": "2",
+    "layer": "1",
+    "name": "Chader Ghat Bridge",
+    "name:ur": "چادر گھاٹ پل",
+    "oneway": "yes",
+    "ref": "NH65",
+    "ref:old": "NH9",
+    "source": "Yahoo hires"
+  }
+},
+{
+  "type": "way",
+  "id": 225880080,
+  "center": {
+    "lat": 17.3587759,
+    "lon": 78.2988390
+  },
+  "tags": {
+    "alt_name": "Visa Balaji Temple",
+    "amenity": "place_of_worship",
+    "building": "temple",
+    "historic": "yes",
+    "name": "Chilkur Balaji Temple",
+    "religion": "hindu",
+    "tourism": "attraction",
+    "wikidata": "Q5098989",
+    "wikipedia": "en:Chilkoor Balaji Temple"
+  }
+},
+{
+  "type": "way",
+  "id": 238186115,
+  "center": {
+    "lat": 17.3616040,
+    "lon": 78.4746394
+  },
+  "tags": {
+    "addr:postcode": "500002",
+    "alt_name": "Char Minar",
+    "alt_name:hi": "चारमीनार",
+    "building": "yes",
+    "building:colour": "#FFE4B5",
+    "building:material": "limestone",
+    "building:part": "yes",
+    "height": "19",
+    "historic": "monument",
+    "min_height": "0",
+    "name": "Charminar",
+    "name:ar": "تشار مينار",
+    "name:de": "Charminar",
+    "name:en": "Charminar",
+    "name:fa": "چهارمنار",
+    "name:fr": "Charminar",
+    "name:hi": "चार मीनार",
+    "name:kn": "ಚಾರ್ ಮಿನಾರ್",
+    "name:ml": "ചാർമിനാർ",
+    "name:ru": "Чарминар",
+    "name:sa": "चारमीनार्",
+    "name:ta": "சார்மினார்",
+    "name:te": "చార్మినార్",
+    "name:uk": "Чармінар",
+    "name:zh": "查米纳塔门",
+    "opening_hours": "09:00-17:30",
+    "roof:colour": "#FFE4B5",
+    "roof:material": "limestone",
+    "roof:orientation": "along",
+    "roof:shape": "flat",
+    "tourism": "attraction",
+    "wheelchair": "no",
+    "wikidata": "Q1771696",
+    "wikimedia_commons": "Category:Charminar",
+    "wikipedia": "en:Charminar"
+  }
+},
+{
+  "type": "way",
+  "id": 238186614,
+  "center": {
+    "lat": 17.3602854,
+    "lon": 78.4736695
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Shahi Maqbara"
+  }
+},
+{
+  "type": "way",
+  "id": 238192345,
+  "center": {
+    "lat": 17.3651372,
+    "lon": 78.4826873
+  },
+  "tags": {
+    "attraction": "tourism",
+    "historic": "archaeological_site",
+    "historic:civilization": "medieval",
+    "landuse": "residential",
+    "name": "Purani Haveli",
+    "name:te": "పురాని హవేలీ"
+  }
+},
+{
+  "type": "way",
+  "id": 238192600,
+  "center": {
+    "lat": 17.3573000,
+    "lon": 78.4764327
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Moghalpura Tomb"
+  }
+},
+{
+  "type": "way",
+  "id": 238196320,
+  "center": {
+    "lat": 17.3892730,
+    "lon": 78.4992078
+  },
+  "tags": {
+    "building": "train_station",
+    "historic": "monument",
+    "name": "Kacheguda Railway Station"
+  }
+},
+{
+  "type": "way",
+  "id": 238281779,
+  "center": {
+    "lat": 17.3662004,
+    "lon": 78.4996549
+  },
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:state": "Telangana",
+    "amenity": "prison",
+    "historic": "building",
+    "name": "Chanchalguda Central Jail",
+    "start_date": "1876",
+    "wikidata": "Q5070855",
+    "wikipedia": "en:Chanchalguda Central Jail"
+  }
+},
+{
+  "type": "way",
+  "id": 253509394,
+  "center": {
+    "lat": 17.3954641,
+    "lon": 78.3965106
+  },
+  "tags": {
+    "access": "yes",
+    "archaeological_site": "tomb",
+    "historic": "archaeological_site",
+    "landuse": "cementry",
+    "name": "Qutub Shahi Tombs"
+  }
+},
+{
+  "type": "way",
+  "id": 253509400,
+  "center": {
+    "lat": 17.3966536,
+    "lon": 78.3970195
+  },
+  "tags": {
+    "access": "no",
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Tomb of Begun Hayat Bakshi",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 253509403,
+  "center": {
+    "lat": 17.3970592,
+    "lon": 78.3988332
+  },
+  "tags": {
+    "access": "no",
+    "building": "yes",
+    "building:min_level": "0",
+    "height": "8",
+    "historic": "tomb",
+    "name": "Tomb of Abdullah Qutub Shah",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 265419720,
+  "center": {
+    "lat": 17.4113434,
+    "lon": 78.4841849
+  },
+  "tags": {
+    "historic": "memorial",
+    "name": "chenna reddy memorial"
+  }
+},
+{
+  "type": "way",
+  "id": 281501992,
+  "center": {
+    "lat": 17.4033438,
+    "lon": 78.4736504
+  },
+  "tags": {
+    "historic": "castle",
+    "name": "Hill Fort",
+    "name:fa": "تپه‌قلعه",
+    "name:te": "హిల్ ఫోర్ట్",
+    "wikidata": "Q5762124",
+    "wikimedia_commons": "Category:Hill Fort Palace",
+    "wikipedia": "en:Hill Fort Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 310183978,
+  "center": {
+    "lat": 17.3794457,
+    "lon": 78.4917932
+  },
+  "tags": {
+    "bridge": "yes",
+    "highway": "trunk",
+    "historic": "yes",
+    "layer": "1",
+    "name": "Chader Ghat Bridge",
+    "name:ur": "چادر گھاٹ پل",
+    "oneway": "yes",
+    "ref": "NH65"
+  }
+},
+{
+  "type": "way",
+  "id": 318606404,
+  "center": {
+    "lat": 17.4091156,
+    "lon": 78.4636337
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "archaeological_site",
+    "name": "Khairunissa Tomb"
+  }
+},
+{
+  "type": "way",
+  "id": 332097820,
+  "center": {
+    "lat": 17.4034206,
+    "lon": 78.4000504
+  },
+  "tags": {
+    "historic": "archaeological_site",
+    "name": "Tomb"
+  }
+},
+{
+  "type": "way",
+  "id": 344499895,
+  "center": {
+    "lat": 17.3799205,
+    "lon": 78.4655884
+  },
+  "tags": {
+    "building": "yes",
+    "castle_type": "stately",
+    "historic": "castle",
+    "name": "Raja Dhanrajgir Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 350097287,
+  "center": {
+    "lat": 17.4152810,
+    "lon": 78.4589815
+  },
+  "tags": {
+    "alt_name": "Bella Vista Palace",
+    "building": "yes",
+    "historic": "yes",
+    "name": "Administrative Staff College of India",
+    "wikidata": "Q4883377",
+    "wikipedia": "en:Bella Vista, Hyderabad"
+  }
+},
+{
+  "type": "way",
+  "id": 356420864,
+  "center": {
+    "lat": 17.3935157,
+    "lon": 78.3944287
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Tomb of Ibrahim Quli Qutub Shah",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 356428521,
+  "center": {
+    "lat": 17.5139086,
+    "lon": 78.5495671
+  },
+  "tags": {
+    "building": "roof",
+    "historic": "city_gate",
+    "historic:civilization": "ancient_roman",
+    "name": "main gate",
+    "start_date": "2000",
+    "wikipedia": "en:Garden, Utah"
+  }
+},
+{
+  "type": "way",
+  "id": 356556815,
+  "center": {
+    "lat": 17.4362104,
+    "lon": 78.4883498
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "building",
+    "name": "James Street Police Station"
+  }
+},
+{
+  "type": "way",
+  "id": 357631341,
+  "center": {
+    "lat": 17.3689967,
+    "lon": 78.4777106
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "yes",
+    "name": "دیوان دیوڑی کمان",
+    "name:en": "Dewaan Dewdi Kamaan"
+  }
+},
+{
+  "type": "way",
+  "id": 357991201,
+  "center": {
+    "lat": 17.4686884,
+    "lon": 78.5567267
+  },
+  "tags": {
+    "amenity": "place_of_worship",
+    "building": "yes",
+    "historic": "yes",
+    "name": "Moula Ali Dargah",
+    "name:fa": "درگاه مولا علی",
+    "religion": "muslim",
+    "wikidata": "Q125784778"
+  }
+},
+{
+  "type": "way",
+  "id": 361409838,
+  "center": {
+    "lat": 17.4195272,
+    "lon": 78.4545638
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "building;castle",
+    "historic:civilization": "Nizam Era",
+    "layer": "1",
+    "name": "Errum Manzil Palace",
+    "wikidata": "Q5395745",
+    "wikipedia": "en:Errum Manzil"
+  }
+},
+{
+  "type": "way",
+  "id": 361691482,
+  "center": {
+    "lat": 17.4203229,
+    "lon": 78.4211337
+  },
+  "tags": {
+    "building": "yes",
+    "castle_type": "palace",
+    "historic": "castle",
+    "name": "Chiraan Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 417169810,
+  "center": {
+    "lat": 17.3836670,
+    "lon": 78.4869821
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "heritage_building",
+    "inscription": "opulent mansion built by James Achilles Kirkpatrick",
+    "name": "British Residency",
+    "wikidata": "Q6434047",
+    "wikipedia": "en:British Residency, Hyderabad"
+  }
+},
+{
+  "type": "way",
+  "id": 435588871,
+  "center": {
+    "lat": 17.3318526,
+    "lon": 78.4658564
+  },
+  "tags": {
+    "historic": "castle",
+    "name": "Falaknuma Palace",
+    "name:fa": "کاخ فاکنما",
+    "name:hi": "फालक़नुमा महल",
+    "name:ml": "ഫലക്നുമ കൊട്ടാരം",
+    "name:ur": "فلک نمہ محل",
+    "ruins": "no",
+    "tourism": "attraction",
+    "wikidata": "Q2263539",
+    "wikimedia_commons": "Category:Falaknuma Palace",
+    "wikipedia": "en:Falaknuma Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 576023427,
+  "center": {
+    "lat": 17.3624679,
+    "lon": 78.4748503
+  },
+  "tags": {
+    "building": "yes",
+    "height": "21",
+    "historic": "city_gate",
+    "historic:civilization": "Qutub_Shahi",
+    "layer": "1",
+    "min_height": "19",
+    "name": "Char Kaman",
+    "start_date": "1592"
+  }
+},
+{
+  "type": "way",
+  "id": 753429553,
+  "center": {
+    "lat": 17.3643923,
+    "lon": 78.4752189
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "historic:civilization": "Qutub_Shai",
+    "name": "Machli Kaman",
+    "start_date": "1592"
+  }
+},
+{
+  "type": "way",
+  "id": 780761850,
+  "center": {
+    "lat": 17.3725826,
+    "lon": 78.4136012
+  },
+  "tags": {
+    "historic": "memorial",
+    "name": "Bapu Ghat"
+  }
+},
+{
+  "type": "way",
+  "id": 784446547,
+  "center": {
+    "lat": 17.3689332,
+    "lon": 78.4765701
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "yes",
+    "name": "دیوان دیوڑی کمان",
+    "name:en": "Dewaan Dewdi Entrance"
+  }
+},
+{
+  "type": "way",
+  "id": 825496775,
+  "center": {
+    "lat": 17.4320491,
+    "lon": 78.4779496
+  },
+  "tags": {
+    "historic": "memorial",
+    "material": "granite",
+    "memorial": "stone",
+    "name": "Damodaram Sanjeevaiah Memorial",
+    "name:te": "దామోదరం సంజీవయ్య స్మారకం"
+  }
+},
+{
+  "type": "way",
+  "id": 889994313,
+  "center": {
+    "lat": 17.4439114,
+    "lon": 78.4912492
+  },
+  "tags": {
+    "barrier": "chain",
+    "historic": "memorial",
+    "name": "Amar Jawan Memorial"
+  }
+},
+{
+  "type": "way",
+  "id": 933350838,
+  "center": {
+    "lat": 17.3942089,
+    "lon": 78.3949482
+  },
+  "tags": {
+    "building:part": "yes",
+    "historic": "tomb",
+    "name": "Tomb of Muhammad Quli Qutub Shah"
+  }
+},
+{
+  "type": "way",
+  "id": 933350840,
+  "center": {
+    "lat": 17.3945724,
+    "lon": 78.3939731
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Tomb of Sultan Quli Qutub Shah",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 933350842,
+  "center": {
+    "lat": 17.3941862,
+    "lon": 78.3935460
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Jamsheed Quli Qutub Shah",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 933350843,
+  "center": {
+    "lat": 17.3958692,
+    "lon": 78.3961389
+  },
+  "tags": {
+    "access": "no",
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Tomb of Sultan Muhammad Qutub Shah",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 933350845,
+  "center": {
+    "lat": 17.3957687,
+    "lon": 78.3975389
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "tomb",
+    "name": "Tomb of Abdul Hasan Tana Shah",
+    "tomb": "mausoleum"
+  }
+},
+{
+  "type": "way",
+  "id": 933350847,
+  "center": {
+    "lat": 17.3896417,
+    "lon": 78.3964340
+  },
+  "tags": {
+    "access": "yes",
+    "archaeological_site": "building",
+    "historic": "archaeological_site",
+    "historic:civilization": "Qutb_Shah",
+    "name": "Golconda Jail"
+  }
+},
+{
+  "type": "way",
+  "id": 933350848,
+  "center": {
+    "lat": 17.3888221,
+    "lon": 78.4015553
+  },
+  "tags": {
+    "access": "yes",
+    "historic": "archaeological_site",
+    "historic:civilization": "Qutb_Shahi",
+    "name": "Golkonda Reservoir"
+  }
+},
+{
+  "type": "way",
+  "id": 970179147,
+  "center": {
+    "lat": 17.3477403,
+    "lon": 78.4639569
+  },
+  "tags": {
+    "building": "yes",
+    "cemetery": "grave",
+    "historic": "tomb",
+    "name": "شاہ راجو  قتال رحمتہ اللہ علیہ",
+    "name:en": "Hzth Shah Raju Khattal Hussaini R.A."
+  }
+},
+{
+  "type": "way",
+  "id": 971139858,
+  "center": {
+    "lat": 17.3665562,
+    "lon": 78.4585610
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "name": "پرانے پل دروازہ",
+    "name:en": "Purana Pul Darwaza",
+    "start_date": "1578"
+  }
+},
+{
+  "type": "way",
+  "id": 971970307,
+  "center": {
+    "lat": 17.3442879,
+    "lon": 78.5038589
+  },
+  "tags": {
+    "alt_name": "Maqhbara Shams al-Umara",
+    "area": "yes",
+    "historic": "tomb",
+    "name": "مقبرے پاگاہ",
+    "name:en": "Paigah Tombs",
+    "start_date": "1786",
+    "wikidata": "Q7124701",
+    "wikimedia_commons": "Category:Paigah Tombs",
+    "wikipedia": "en:Paigah Tombs"
+  }
+},
+{
+  "type": "way",
+  "id": 1131130012,
+  "center": {
+    "lat": 17.1784064,
+    "lon": 78.2172430
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "building",
+    "name": "Star Building"
+  }
+},
+{
+  "type": "way",
+  "id": 1447127342,
+  "center": {
+    "lat": 17.4569912,
+    "lon": 78.3771701
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "city_gate",
+    "layer": "1",
+    "name": "Golden Charminar"
+  }
+},
+{
+  "type": "way",
+  "id": 1492056631,
+  "center": {
+    "lat": 17.3746043,
+    "lon": 78.4652064
+  },
+  "tags": {
+    "building": "commercial",
+    "historic": "monument",
+    "name": "Pooja store"
+  }
+},
+{
+  "type": "way",
+  "id": 1492076035,
+  "center": {
+    "lat": 17.3735957,
+    "lon": 78.4687947
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "monument",
+    "name": "Pooja store"
+  }
+},
+{
+  "type": "way",
+  "id": 1570895014,
+  "center": {
+    "lat": 17.4336709,
+    "lon": 78.4916346
+  },
+  "tags": {
+    "building": "yes",
+    "historic": "building",
+    "name": "Victoria Grain Market"
+  }
+},
+{
+  "type": "relation",
+  "id": 9128913,
+  "center": {
+    "lat": 17.3834039,
+    "lon": 78.4009952
+  },
+  "tags": {
+    "historic": "fort",
+    "name": "Golconda Fort",
+    "name:en": "Golconda Fort",
+    "name:fa": "قلعه گلکنده",
+    "name:hi": "गोलकुंडा किला",
+    "name:kn": "ಗೋಲ್ಕೊಂಡ ಕೋಟೆ",
+    "name:ml": "ഗോൽക്കൊണ്ട കോട്ട",
+    "name:pl": "Fort Golkonda",
+    "name:ta": "கோல்கொண்டா கோட்டை",
+    "name:te": "గోల్కొండ కోట",
+    "name:ur": "گولکنڈہ قلعہ",
+    "opening_hours": "09:00-17:30",
+    "tourism": "attraction",
+    "type": "multipolygon",
+    "wikidata": "Q4141623",
+    "wikipedia": "en:Golconda"
+  }
+}
+
+  ]
+}

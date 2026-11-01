@@ -1,0 +1,987 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.4 2390de5a",
+  "osm3s": {
+    "timestamp_osm_base": "2026-11-01T11:30:41Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 317759267,
+  "lat": 17.4513921,
+  "lon": 78.3792883,
+  "tags": {
+    "amenity": "theatre",
+    "name": "Shilpa Kala Vedika",
+    "name:te": "శిల్ప కళా వేదిక",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 317759720,
+  "lat": 17.4526547,
+  "lon": 78.3779737,
+  "tags": {
+    "amenity": "arts_centre",
+    "name": "Shilparamam Crafts Village",
+    "tourism": "attraction",
+    "wheelchair": "yes"
+  }
+},
+{
+  "type": "node",
+  "id": 626897221,
+  "lat": 17.3656470,
+  "lon": 78.4858885,
+  "tags": {
+    "amenity": "place_of_worship",
+    "denomination": "shia",
+    "name": "alawa bibi",
+    "religion": "muslim",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 626897250,
+  "lat": 17.3650440,
+  "lon": 78.4832699,
+  "tags": {
+    "name": "The Nizam's Museum",
+    "name:te": "నిజాం మ్యూజియం",
+    "opening_hours": "Mo-Su 10:00-17:00",
+    "tourism": "museum",
+    "website": "https://www.hehnmh.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 626940817,
+  "lat": 17.3867500,
+  "lon": 78.4704712,
+  "tags": {
+    "name": "Exhibition Grounds",
+    "shop": "outdoor",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 726751707,
+  "lat": 17.4143801,
+  "lon": 78.4808321,
+  "tags": {
+    "name": "Snow world",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 728852369,
+  "lat": 17.3994472,
+  "lon": 78.4689612,
+  "tags": {
+    "name": "Horticulture Dept and Museum",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 1409718843,
+  "lat": 17.4245899,
+  "lon": 78.4521701,
+  "tags": {
+    "designation": "sff",
+    "name": "ultimus",
+    "source": "sfsf",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 3415666918,
+  "lat": 17.4031529,
+  "lon": 78.4698924,
+  "tags": {
+    "addr:city": "hyderabad",
+    "addr:street": "adarsh Nagar",
+    "name": "Dinosaurium",
+    "name:te": "డైనోసారియం",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 3415677039,
+  "lat": 17.4033125,
+  "lon": 78.4695283,
+  "tags": {
+    "addr:city": "hyderabad",
+    "addr:postcode": "500004",
+    "addr:street": "Adarsh Nagar",
+    "name": "B M Birla Science Museum",
+    "name:fa": "موزه علوم بیرلا",
+    "name:hi": "बी.एम बिरला वैज्ञानिक संग्रहालय",
+    "phone": "+914023235081",
+    "tourism": "museum",
+    "website": "http://www.birlasciencemuseum.org",
+    "wikidata": "Q3764957",
+    "wikimedia_commons": "Category:Birla Science Museum",
+    "wikipedia": "en:Birla Science Museum"
+  }
+},
+{
+  "type": "node",
+  "id": 3943151565,
+  "lat": 17.4529378,
+  "lon": 78.3794936,
+  "tags": {
+    "name": "shilparamam",
+    "note": "handycraft",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4107092489,
+  "lat": 17.4496173,
+  "lon": 78.4411282,
+  "tags": {
+    "addr:street": "Erragadda",
+    "name": "Kanjerla Laxmi Narayan Yadav Park",
+    "opening_hours": "Mo-Fr 16:00-21:00; Sa-Su 09:00-21:00",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4142875991,
+  "lat": 17.3780711,
+  "lon": 78.5489979,
+  "tags": {
+    "name": "subba ram reddy",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 4187284199,
+  "lat": 17.4148975,
+  "lon": 78.4790511,
+  "tags": {
+    "name": "Sunset Viewpoint",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 4285718090,
+  "lat": 17.5794320,
+  "lon": 78.5020823,
+  "tags": {
+    "name": "saigeetha ashramam",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 4400596191,
+  "lat": 17.4470344,
+  "lon": 78.4478418,
+  "tags": {
+    "name": "Ayyappa Temple",
+    "name:hi": "Ayyappa Temple",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4418622008,
+  "lat": 17.4060296,
+  "lon": 78.4898232,
+  "tags": {
+    "name": "park",
+    "name:en": "park",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4431024690,
+  "lat": 17.4117776,
+  "lon": 78.5218416,
+  "tags": {
+    "name": "old admin bldg opp ladies hostel",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4501055189,
+  "lat": 17.4901281,
+  "lon": 78.5999265,
+  "tags": {
+    "addr:housenumber": "6-120/2",
+    "addr:postcode": "500083",
+    "addr:street": "Venkateshwara Nagar Colony",
+    "email": "raju.lovesindia@gmail.com",
+    "name": "MVR Arcade Nagaram",
+    "name:en": "MVR Arcade, Nagaram, Dammaiguda Road, Near Fashion Planet",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "phone": "+919642555557",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 4683189592,
+  "lat": 17.3761241,
+  "lon": 78.3781632,
+  "tags": {
+    "name": "Taramati Baradari",
+    "name:en": "Taramati Baradari",
+    "opening_hours": "Mo-Su 11:00-17:00",
+    "tourism": "attraction",
+    "wikidata": "Q7685364",
+    "wikimedia_commons": "Category:Taramati Baradari",
+    "wikipedia": "en:Taramati Baradari"
+  }
+},
+{
+  "type": "node",
+  "id": 4684735889,
+  "lat": 17.3700458,
+  "lon": 78.4747728,
+  "tags": {
+    "name": "Muslim Graveyard",
+    "name:en": "Muslim Graveyard",
+    "tourism": "attraction",
+    "wheelchair": "limited"
+  }
+},
+{
+  "type": "node",
+  "id": 4686864293,
+  "lat": 17.3886992,
+  "lon": 78.4985997,
+  "tags": {
+    "name": "Railway Museum",
+    "name:en": "Railway Museum",
+    "opening_hours": "Mo-Su 10:00-18:00",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 5135633623,
+  "lat": 17.4701107,
+  "lon": 78.4521072,
+  "tags": {
+    "addr:postcode": "500042",
+    "addr:street": "HAL Township",
+    "name": "B-91, HAL Township",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 6448133751,
+  "lat": 17.3806479,
+  "lon": 78.3172444,
+  "tags": {
+    "direction": "180",
+    "historic": "yes",
+    "name": "Nizami View Point",
+    "name:ur": "نظامی ویو پوائنٹ۔",
+    "opening_hours": "24/7",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 7021221185,
+  "lat": 17.4160790,
+  "lon": 78.4434109,
+  "tags": {
+    "name": "Kalakriti art Gallery",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 7113998288,
+  "lat": 17.4310473,
+  "lon": 78.4074614,
+  "tags": {
+    "name": "Rolex",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 7707961947,
+  "lat": 17.4347165,
+  "lon": 78.4751311,
+  "tags": {
+    "name": "Wonder Fun Park and Party Zone",
+    "tourism": "theme_park"
+  }
+},
+{
+  "type": "node",
+  "id": 8007055195,
+  "lat": 17.5016683,
+  "lon": 78.3566510,
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:postcode": "500049",
+    "addr:street": "Neelima Greens Main Road",
+    "name": "Neelima Greens Park Club house",
+    "operator": "Neelima Greens Association",
+    "source": "local knowledge",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 10936819194,
+  "lat": 17.4132697,
+  "lon": 78.4673984,
+  "tags": {
+    "addr:city": "hyderabad",
+    "addr:state": "telangana",
+    "artwork_subject": "yes",
+    "height": "38.1",
+    "memorial": "statue",
+    "name": "B.R.Ambedkar Statue",
+    "name:fa": "مجسمه بی. آر. آمبدکار",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "node",
+  "id": 11373181970,
+  "lat": 17.4114348,
+  "lon": 78.6070496,
+  "tags": {
+    "highway": "bus_stop",
+    "name": "Chengicherla IDA Entrance",
+    "tourism": "viewpoint"
+  }
+},
+{
+  "type": "node",
+  "id": 11373206469,
+  "lat": 17.3116529,
+  "lon": 78.6824795,
+  "tags": {
+    "name": "Ramo",
+    "name:en": "Entrance to Ramoji Film City",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "node",
+  "id": 13543816905,
+  "lat": 17.4094646,
+  "lon": 78.4670978,
+  "tags": {
+    "name": "Saifabad Mint Museum",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 27937605,
+  "center": {
+    "lat": 17.3514202,
+    "lon": 78.4454676
+  },
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:district": "Hyderabad",
+    "addr:state": "Telangana",
+    "area": "yes",
+    "contact:phone": "+91 40 24477355",
+    "date": "12 October 1963",
+    "landuse": "park",
+    "name": "Nehru Zoological Park",
+    "name:etymology:wikidata": "Q1047",
+    "name:ur": "نہرو چڑیا گھر",
+    "opening_hours": "Sa-Th 08:30-17:30; PH off",
+    "tourism": "zoo",
+    "website": "https://hyderabadzoo.com/",
+    "wikidata": "Q3493970",
+    "wikimedia_commons": "Category:Nehru Zoological Park",
+    "wikipedia": "en:Nehru Zoological Park"
+  }
+},
+{
+  "type": "way",
+  "id": 28131043,
+  "center": {
+    "lat": 17.4310542,
+    "lon": 78.3899966
+  },
+  "tags": {
+    "leisure": "nature_reserve",
+    "name": "Durgam Cheruvu",
+    "name:fa": "دریاچه درگم چرووو",
+    "name:ml": "ദുർഗ്ഗം ചെരുവ്",
+    "name:te": "దుర్గం చెరువు",
+    "natural": "water",
+    "tourism": "attraction",
+    "water": "lake",
+    "wikidata": "Q5316410",
+    "wikimedia_commons": "Category:Durgam Cheruvu",
+    "wikipedia": "en:Durgam Cheruvu"
+  }
+},
+{
+  "type": "way",
+  "id": 28268610,
+  "center": {
+    "lat": 17.4202340,
+    "lon": 78.4201043
+  },
+  "tags": {
+    "alt_name": "KBR Park",
+    "boundary": "national_park",
+    "leisure": "nature_reserve",
+    "name": "Kasu Brahmananda Reddy National Park",
+    "name:etymology:wikidata": "Q3764086",
+    "name:fa": "پارک ملی کاسو برهماندا ردی",
+    "name:ml": "കാസു ബ്രഹ്മാനന്ദ റെഡ്ഡി നാഷണൽ പാർക്ക്",
+    "name:te": "కాసు బ్రహ్మానంద రెడ్డి నేషనల్ పార్క్",
+    "protect_class": "2",
+    "tourism": "attraction",
+    "wikidata": "Q969593",
+    "wikimedia_commons": "Category:Kasu Brahmananda Reddy National Park",
+    "wikipedia": "en:Kasu Brahmananda Reddy National Park"
+  }
+},
+{
+  "type": "way",
+  "id": 29124126,
+  "center": {
+    "lat": 17.4123848,
+    "lon": 78.4681147
+  },
+  "tags": {
+    "leisure": "park",
+    "name": "NTR Gardens",
+    "name:etymology:wikidata": "Q2646553",
+    "name:fa": "باغ‌های ان تی آر",
+    "name:ml": "എൻ ടി ആർ ഗാർഡൻസ്",
+    "name:te": "ఎన్టీఆర్ గార్డెన్స్",
+    "tourism": "attraction",
+    "wikidata": "Q6955496",
+    "wikimedia_commons": "Category:NTR Gardens",
+    "wikipedia": "en:NTR Gardens"
+  }
+},
+{
+  "type": "way",
+  "id": 31549634,
+  "center": {
+    "lat": 17.4364127,
+    "lon": 78.4427422
+  },
+  "tags": {
+    "amenity": "studio",
+    "name": "Saradhi Studios",
+    "name:te": "సారధీ స్టూడియోస్",
+    "studio": "video",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 90337179,
+  "center": {
+    "lat": 17.4605330,
+    "lon": 78.3760536
+  },
+  "tags": {
+    "amenity": "community_centre",
+    "name": "Annamayya Concert Bhavan‎",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 105725101,
+  "center": {
+    "lat": 17.4033232,
+    "lon": 78.4707169
+  },
+  "tags": {
+    "name": "B M Birla Planetarium",
+    "name:fa": "آسمان‌نمای بیرلا",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 105726070,
+  "center": {
+    "lat": 17.4060644,
+    "lon": 78.4691964
+  },
+  "tags": {
+    "addr:postcode": "500004",
+    "building": "yes",
+    "name": "Birla Mandir",
+    "name:hi": "बिड़ला मंदिर, हैदराबाद",
+    "opening_hours": "07:00-12:00,14:00-21:00",
+    "religion": "hindu",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 116031164,
+  "center": {
+    "lat": 17.3575420,
+    "lon": 78.4715662
+  },
+  "tags": {
+    "barrier": "wall",
+    "historic": "yes",
+    "name": "Chowmahalla Palace",
+    "name:en": "Chowmahalla Palace",
+    "name:fa": "کاخ چومحله",
+    "name:hi": "चौमहल्ला महल",
+    "name:kn": "ಚೌಮಹಲ್ಲಾ ಅರಮನೆ",
+    "name:ml": "ചൗമഹല്ല കൊട്ടാരം",
+    "name:ta": "சௌமஹல்லா அரண்மனை",
+    "name:te": "చౌమహల్లా ప్యాలెస్",
+    "name:ur": "چومحلہ محل",
+    "tourism": "attraction",
+    "wikidata": "Q3380670"
+  }
+},
+{
+  "type": "way",
+  "id": 116436664,
+  "center": {
+    "lat": 17.4285105,
+    "lon": 78.4236901
+  },
+  "tags": {
+    "amenity": "studio",
+    "landuse": "commercial",
+    "name": "Annapurna Studios",
+    "operator": "private",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 211408794,
+  "center": {
+    "lat": 17.4155664,
+    "lon": 78.4751129
+  },
+  "tags": {
+    "boundary": "protected_area",
+    "leisure": "park",
+    "man_made": "pier",
+    "name": "Buddha Statue Building complex",
+    "name:te": "బుద్ధ విగ్రహం భవన సముదాయం",
+    "operator": "Hyderabad Metropolitan Development Authority",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 213636353,
+  "center": {
+    "lat": 17.3763173,
+    "lon": 78.4836619
+  },
+  "tags": {
+    "name": "Maze",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 225880080,
+  "center": {
+    "lat": 17.3587759,
+    "lon": 78.2988390
+  },
+  "tags": {
+    "alt_name": "Visa Balaji Temple",
+    "amenity": "place_of_worship",
+    "building": "temple",
+    "historic": "yes",
+    "name": "Chilkur Balaji Temple",
+    "religion": "hindu",
+    "tourism": "attraction",
+    "wikidata": "Q5098989",
+    "wikipedia": "en:Chilkoor Balaji Temple"
+  }
+},
+{
+  "type": "way",
+  "id": 238186115,
+  "center": {
+    "lat": 17.3616040,
+    "lon": 78.4746394
+  },
+  "tags": {
+    "addr:postcode": "500002",
+    "alt_name": "Char Minar",
+    "alt_name:hi": "चारमीनार",
+    "building": "yes",
+    "building:colour": "#FFE4B5",
+    "building:material": "limestone",
+    "building:part": "yes",
+    "height": "19",
+    "historic": "monument",
+    "min_height": "0",
+    "name": "Charminar",
+    "name:ar": "تشار مينار",
+    "name:de": "Charminar",
+    "name:en": "Charminar",
+    "name:fa": "چهارمنار",
+    "name:fr": "Charminar",
+    "name:hi": "चार मीनार",
+    "name:kn": "ಚಾರ್ ಮಿನಾರ್",
+    "name:ml": "ചാർമിനാർ",
+    "name:ru": "Чарминар",
+    "name:sa": "चारमीनार्",
+    "name:ta": "சார்மினார்",
+    "name:te": "చార్మినార్",
+    "name:uk": "Чармінар",
+    "name:zh": "查米纳塔门",
+    "opening_hours": "09:00-17:30",
+    "roof:colour": "#FFE4B5",
+    "roof:material": "limestone",
+    "roof:orientation": "along",
+    "roof:shape": "flat",
+    "tourism": "attraction",
+    "wheelchair": "no",
+    "wikidata": "Q1771696",
+    "wikimedia_commons": "Category:Charminar",
+    "wikipedia": "en:Charminar"
+  }
+},
+{
+  "type": "way",
+  "id": 238284090,
+  "center": {
+    "lat": 17.3713514,
+    "lon": 78.4805563
+  },
+  "tags": {
+    "name": "Salar Jung Museum",
+    "name:ar": "متحف سالارجونج",
+    "name:fa": "موزه سالارجونگ",
+    "name:hi": "सालारजंग संग्रहालय",
+    "name:kn": "ಸಲಾರ್ಜಂಗ್ ಮ್ಯೂಸಿಯಂ",
+    "name:ml": "സലാർജംഗ് മ്യൂസിയം",
+    "name:mr": "सालारजंग संग्रहालय",
+    "name:ru": "Музей Саларджунг",
+    "name:ta": "சலார்ஜங் அருங்காட்சியகம்",
+    "name:te": "సాలార్‌జంగ్ మ్యూజియం",
+    "name:tr": "Salarjung Müzesi",
+    "name:ur": "سالارجنگ میوزیم",
+    "name:zh": "撒拉戎博物馆",
+    "tourism": "museum",
+    "wikidata": "Q1864572",
+    "wikimedia_commons": "Category:Salar Jung Museum",
+    "wikipedia": "en:Salar Jung Museum"
+  }
+},
+{
+  "type": "way",
+  "id": 357586185,
+  "center": {
+    "lat": 17.4031557,
+    "lon": 78.4503771
+  },
+  "tags": {
+    "name": "Tribal Museum",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 358108314,
+  "center": {
+    "lat": 17.3417119,
+    "lon": 78.4206140
+  },
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:postcode": "500052",
+    "building": "yes",
+    "mimics": "fish",
+    "name": "National Fisheries Development Board building",
+    "tourism": "attraction",
+    "wikidata": "Q118896527",
+    "wikipedia": "en:National Fisheries Development Board"
+  }
+},
+{
+  "type": "way",
+  "id": 378458224,
+  "center": {
+    "lat": 17.3992159,
+    "lon": 78.4702878
+  },
+  "tags": {
+    "addr:city": "hyderabad",
+    "addr:housenumber": "5-10-193, H A C A Bhavan",
+    "addr:postcode": "500004",
+    "addr:street": "P G Road, Near Control Room, H500004, India",
+    "building": "yes",
+    "description": "It's a historic museum. It's original name was Andhra Pradesh Archaeology Museum before Telengana and Andhra Pradesh were separated.",
+    "name": "Telangana State Archaeology Museum",
+    "name:en": "Telangana State Archaeology Museum",
+    "opening_hours": "Sa-Th 10:30-17:00",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 435588871,
+  "center": {
+    "lat": 17.3318526,
+    "lon": 78.4658564
+  },
+  "tags": {
+    "historic": "castle",
+    "name": "Falaknuma Palace",
+    "name:fa": "کاخ فاکنما",
+    "name:hi": "फालक़नुमा महल",
+    "name:ml": "ഫലക്നുമ കൊട്ടാരം",
+    "name:ur": "فلک نمہ محل",
+    "ruins": "no",
+    "tourism": "attraction",
+    "wikidata": "Q2263539",
+    "wikimedia_commons": "Category:Falaknuma Palace",
+    "wikipedia": "en:Falaknuma Palace"
+  }
+},
+{
+  "type": "way",
+  "id": 475883012,
+  "center": {
+    "lat": 17.6371968,
+    "lon": 78.4038242
+  },
+  "tags": {
+    "building": "yes",
+    "name": "AFA Museum",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 475941772,
+  "center": {
+    "lat": 17.5456670,
+    "lon": 78.5248988
+  },
+  "tags": {
+    "name": "Hakimpet Airforce Museum",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 544179717,
+  "center": {
+    "lat": 17.3922636,
+    "lon": 78.3167661
+  },
+  "tags": {
+    "name": "Treasure Island",
+    "tourism": "theme_park"
+  }
+},
+{
+  "type": "way",
+  "id": 558535323,
+  "center": {
+    "lat": 17.4320293,
+    "lon": 78.4653130
+  },
+  "tags": {
+    "name": "Jalavihar Water Park",
+    "source": "Bing",
+    "tourism": "theme_park"
+  }
+},
+{
+  "type": "way",
+  "id": 682819772,
+  "center": {
+    "lat": 17.2168699,
+    "lon": 78.5289652
+  },
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:country": "IN",
+    "addr:place": "Nehru Outer Ring Road",
+    "addr:state": "Telangana",
+    "brand": "Wonderla",
+    "brand:website": "https://www.wonderla.com/",
+    "brand:wikidata": "Q8031870",
+    "name": "Wonderla amusement park",
+    "tourism": "theme_park"
+  }
+},
+{
+  "type": "way",
+  "id": 790788316,
+  "center": {
+    "lat": 17.3758710,
+    "lon": 78.3786681
+  },
+  "tags": {
+    "name": "Taramati Baradari",
+    "tourism": "museum"
+  }
+},
+{
+  "type": "way",
+  "id": 859285500,
+  "center": {
+    "lat": 17.3828976,
+    "lon": 78.5558563
+  },
+  "tags": {
+    "addr:city": "Hyderabad, Telangana",
+    "addr:postcode": "500039",
+    "addr:street": "Uppal Bhagayath, Uppal",
+    "leisure": "park",
+    "name": "Shilparamam, Uppal",
+    "name:hi": "शिल्परमम, उप्पल",
+    "name:ur": "شلپرام، اپل",
+    "opening_hours": "Mo-Su 14:00-20:00",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 875042391,
+  "center": {
+    "lat": 17.3150935,
+    "lon": 78.7217751
+  },
+  "tags": {
+    "landuse": "commercial",
+    "name": "Mount Opera",
+    "tourism": "theme_park"
+  }
+},
+{
+  "type": "way",
+  "id": 975069736,
+  "center": {
+    "lat": 17.3970586,
+    "lon": 78.3988423
+  },
+  "tags": {
+    "name": "Tomb of Abdullah Qutub Shah",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "way",
+  "id": 1456200194,
+  "center": {
+    "lat": 17.2604454,
+    "lon": 78.6808146
+  },
+  "tags": {
+    "area": "yes",
+    "building": "yes",
+    "name": "Kripalu Cave",
+    "tourism": "attraction"
+  }
+},
+{
+  "type": "relation",
+  "id": 2833155,
+  "center": {
+    "lat": 17.4229769,
+    "lon": 78.4745517
+  },
+  "tags": {
+    "alt_name": "Hussain Sagar Lake",
+    "name": "Hussain Sagar",
+    "name:ar": "بحيرة حسين ساغار",
+    "name:fa": "دریاچه حسین ساگر",
+    "name:hi": "हुसैन सागर",
+    "name:ml": "ഹുസ്സൈൻ സാഗർ",
+    "name:te": "హుసేన్ సాగర్",
+    "name:th": "ฮุสเซนสาคร",
+    "name:ur": "حسین ساگر",
+    "natural": "water",
+    "tourism": "attraction",
+    "type": "multipolygon",
+    "water": "lake",
+    "wikidata": "Q3275994",
+    "wikipedia": "en:Hussain Sagar"
+  }
+},
+{
+  "type": "relation",
+  "id": 9128913,
+  "center": {
+    "lat": 17.3834039,
+    "lon": 78.4009952
+  },
+  "tags": {
+    "historic": "fort",
+    "name": "Golconda Fort",
+    "name:en": "Golconda Fort",
+    "name:fa": "قلعه گلکنده",
+    "name:hi": "गोलकुंडा किला",
+    "name:kn": "ಗೋಲ್ಕೊಂಡ ಕೋಟೆ",
+    "name:ml": "ഗോൽക്കൊണ്ട കോട്ട",
+    "name:pl": "Fort Golkonda",
+    "name:ta": "கோல்கொண்டா கோட்டை",
+    "name:te": "గోల్కొండ కోట",
+    "name:ur": "گولکنڈہ قلعہ",
+    "opening_hours": "09:00-17:30",
+    "tourism": "attraction",
+    "type": "multipolygon",
+    "wikidata": "Q4141623",
+    "wikipedia": "en:Golconda"
+  }
+},
+{
+  "type": "relation",
+  "id": 19917367,
+  "center": {
+    "lat": 17.2521720,
+    "lon": 78.6802315
+  },
+  "tags": {
+    "addr:city": "Hyderabad",
+    "addr:postcode": "501512",
+    "amenity": "studio",
+    "landuse": "commercial",
+    "name": "Ramoji Film City",
+    "name:hi": "रामोजी फिल्म सिटी",
+    "studio": "video",
+    "tourism": "theme_park",
+    "type": "multipolygon",
+    "website": "https://www.ramojifilmcity.com/",
+    "wheelchair": "limited",
+    "wikidata": "Q1786944"
+  }
+}
+
+  ]
+}

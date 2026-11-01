@@ -1,0 +1,13 @@
+<resources>
+    <style name="Theme.Atlas" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/atlas_bg</item>
+        <item name="android:colorBackground">@color/atlas_bg</item>
+        <item name="android:colorAccent">@color/atlas_green</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+    <color name="atlas_bg">#050807</color>
+    <color name="atlas_green">#5BE49B</color>
+    <color name="ic_bg">#07120D</color>
+</resources>
