@@ -462,6 +462,91 @@ export function makeGenerators(A, getLevel = () => 'pro') {
     };
   };
 
+  // ---- history: what does a name ending mean?
+  const allParts = [];
+  for (const l of [...A.localities, ...A.circles]) for (const p of l.nameParts || []) if (!allParts.some((x) => x.meaning === p.meaning)) allParts.push(p);
+  G.nameMeaning = (it) => {
+    if (!it.nameParts || !it.nameParts.length) return null;
+    const part = pick(it.nameParts);
+    const wrong = shuffle(allParts.filter((p) => p.meaning !== part.meaning && p.part !== part.part)).slice(0, 3);
+    if (wrong.length < 3) return null;
+    const options = shuffle([part, ...wrong]).map((p) => ({ label: p.meaning[0].toUpperCase() + p.meaning.slice(1), value: p.meaning }));
+    return {
+      kicker: "What's in a name", prompt: `In ${em(it.name)}, what does “${esc(part.part)}” mean?`, sub: it.kind === 'locality' ? `${A.get(it.circle).name} circle` : '',
+      mode: 'choice', options, answer: part.meaning, ids: [it.id],
+      setup(m) { m.setDepth('locality', { animate: false }); m.clearSelection(false); m.setLabelOverride([pointSpec(it)]); m.fitItem(it.kind === 'locality' ? A.get(it.circle) : it, { zoomAdj: 0, duration: 1100 }); },
+      reveal(m) { m.setLabelOverride([pointSpec(it, 'good')]); },
+      explain: it.story ? it.story.text : '',
+    };
+  };
+
+  // ---- history: which area does this name story belong to?
+  // one entry per name: a circle and an area can share a name (e.g. LB Nagar)
+  const storied = [...A.localities, ...A.circles, ...A.zones].filter((x, i, arr) => x.story && arr.findIndex((y) => y.story && y.name === x.name) === i);
+  G.storyOf = (it) => {
+    if (!it.story) return null;
+    const re = new RegExp(it.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+    const text = it.story.text.replace(re, '___');
+    const wrong = shuffle(storied.filter((x) => x.name !== it.name)).slice(0, 3);
+    return {
+      kicker: 'Name story', prompt: `Which area? “${esc(text)}”`, sub: it.story.kind === 'told' ? 'Commonly told origin' : 'Name meaning',
+      mode: 'choice', options: opts(it, wrong), answer: it.id, ids: [it.id],
+      setup(m) { m.setDepth('blank', { animate: false }); m.clearSelection(false); m.setLabelOverride([]); m.home({ duration: 1000 }); },
+      reveal(m) { m.setLabelOverride([pointSpec(it, 'good')]); m.fitItem(it.kind === 'locality' ? A.get(it.circle) : it, { duration: 1300 }); },
+    };
+  };
+
+  // ---- history: which came first?
+  const dated = A.landmarks.filter((m) => m.year);
+  G.whichFirst = (it) => {
+    if (!it.year) return null;
+    const other = pick(dated.filter((m) => m.id !== it.id && Math.abs(m.year - it.year) >= 8));
+    if (!other) return null;
+    const first = it.year < other.year ? it : other;
+    return {
+      kicker: 'Time travel', prompt: 'Which came first?', sub: `${it.name} or ${other.name}`,
+      mode: 'choice', options: shuffle([it, other]).map((x) => ({ label: x.name, value: x.id })), answer: first.id, ids: [it.id],
+      setup(m) { m.setDepth('landmark', { animate: false }); m.clearSelection(false); m.setLabelOverride([]); m.home({ duration: 1000 }); },
+      reveal(m) {
+        m.setLabelOverride([it, other].map((x) => ({ ...pointSpec(x, x === first ? 'good' : 'quiz', `${x.name} · ${x.year}`) })));
+      },
+      explain: `${first.name}: ${first.year}. ${(first === it ? other : it).name}: ${(first === it ? other : it).year}.`,
+    };
+  };
+
+  G.eraOf = (it) => {
+    if (!it.year || !A.eras) return null;
+    const era = A.eras.find((e) => it.year >= e.start && it.year <= e.end);
+    if (!era) return null;
+    const wrong = shuffle(A.eras.filter((e) => e !== era)).slice(0, 3);
+    return {
+      kicker: 'Time travel', prompt: `When was ${em(it.name)} built?`, sub: '',
+      mode: 'choice', options: shuffle([era, ...wrong]).map((e) => ({ label: `${e.title} (${e.start}–${e.end})`, value: e.title })), answer: era.title, ids: [it.id],
+      setup(m) { m.setDepth('landmark', { animate: false }); m.clearSelection(false); m.setLabelOverride([pointSpec(it)]); m.fitItem(it, { zoom: 14.5, duration: 1200 }); },
+      reveal(m) { m.setLabelOverride([pointSpec(it, 'good', `${it.name} · ${it.year}`)]); },
+      explain: `Built in ${it.year}.`,
+    };
+  };
+
+  // ---- Gen Z: which circle has more of something?
+  G.vibeTop = (it) => {
+    const c = it.kind === 'circle' ? it : it.circle ? A.get(it.circle) : null;
+    if (!c || !c.vibe) return null;
+    const cats = Object.keys(c.vibe.counts).filter((k) => c.vibe.counts[k] >= 3);
+    if (!cats.length) return null;
+    const k = pick(cats);
+    const lower = shuffle(A.circles.filter((x) => x.id !== c.id && x.vibe.counts[k] < c.vibe.counts[k])).slice(0, 3);
+    if (lower.length < 3) return null;
+    const label = { cafe: 'cafés and dessert spots', food: 'food spots', night: 'night-out places', fun: 'malls and cinemas', fit: 'gyms and sports centres', campus: 'colleges', green: 'parks' }[k];
+    return {
+      kicker: 'Vibe check', prompt: `Which circle has the most ${esc(label)}?`, sub: 'Mapped hangout places',
+      mode: 'choice', options: opts(c, lower), answer: c.id, ids: [c.id],
+      setup(m) { m.setDepth('vibes', { animate: false }); m.setVibes(k); m.clearSelection(false); m.setLabelOverride([]); m.home({ duration: 1000 }); },
+      reveal(m) { m.setLabelOverride([c, ...lower].map((x) => ({ ...pointSpec(x, x === c ? 'good' : 'quiz', `${x.name} · ${x.vibe.counts[k]}`), dot: false }))); },
+      explain: `${c.name} has ${c.vibe.counts[k]} mapped ${label}.`,
+    };
+  };
+
   return G;
 }
 
@@ -469,9 +554,9 @@ export function makeGenerators(A, getLevel = () => 'pro') {
 const AUTO_GAMES = {
   corp: ['name', 'find', 'whichCorp'],
   zone: ['name', 'find', 'neighbour', 'whichZone'],
-  circle: ['name', 'find', 'whichCircle', 'neighbour'],
-  locality: ['findPoint', 'namePoint', 'whichCircle', 'whichCorp', 'compass'],
-  landmark: ['findPoint', 'namePoint', 'whichCorp', 'compass', 'photoName', 'photoName'],
+  circle: ['name', 'find', 'whichCircle', 'neighbour', 'vibeTop'],
+  locality: ['findPoint', 'namePoint', 'whichCircle', 'whichCorp', 'compass', 'nameMeaning', 'storyOf'],
+  landmark: ['findPoint', 'namePoint', 'whichCorp', 'compass', 'photoName', 'photoName', 'whichFirst', 'eraOf'],
   station: ['nextStop', 'lineOf', 'findStation', 'order'],
   line: ['order', 'draw'],
   corridor: ['order', 'whichRoad', 'draw'],
@@ -686,7 +771,7 @@ export class Quiz {
     } else buzz([30, 50, 30]);
 
     const item = this.A.get(q.ids[0]);
-    const fact = item && item.fact ? item.fact : '';
+    const fact = q.explain || (item && item.fact ? item.fact : '');
     this.feedback.className = `q-feedback ${res.correct ? 'good' : 'bad'}`;
     this.feedback.innerHTML = `<div class="fh"><span>${res.correct ? pick(['Correct!', 'Spot on!', 'Nailed it!', 'Yes!']) : res.score > 30 ? 'Close!' : 'Not quite'}</span><span>+${res.score}</span></div>`
       + `<div class="fb">${esc([res.msg, fact].filter(Boolean).join(' '))}</div>`;

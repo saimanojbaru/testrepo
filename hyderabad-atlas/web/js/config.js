@@ -12,6 +12,22 @@ export const CONFIG = {
     glyphs: 'https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf',
     attribution: '© OpenFreeMap © OpenMapTiles © OpenStreetMap contributors',
   },
+  // Weather. Leave sharedUrl empty to let each phone call Open-Meteo directly
+  // (testing / small scale). At scale, publish one file every 15 minutes with
+  // tools/weather_snapshot.py and put its URL here.
+  weather: {
+    sharedUrl: '',
+    openMeteo: {
+      forecast: 'https://api.open-meteo.com/v1/forecast',
+      air: 'https://air-quality-api.open-meteo.com/v1/air-quality',
+    },
+    // live clouds: NASA GIBS, Himawari infrared, refreshed every 10 minutes
+    clouds: 'https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/Himawari_AHI_Band13_Clean_Infrared/default/default/GoogleMapsCompatible_Level6/{z}/{y}/{x}.png',
+    // rain radar frames list (RainViewer; free tier: zoom <= 7, personal/small use)
+    radarIndex: 'https://api.rainviewer.com/public/weather-maps.json',
+  },
+  // Shared poll results for the Gen Z column (off until a backend exists)
+  community: { url: '' },
   // Terrarium-encoded elevation (AWS Open Data terrain tiles)
   terrain: {
     tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'],

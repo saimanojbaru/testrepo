@@ -1,6 +1,10 @@
 import { loadAtlas, crumb, KIND_LABEL, km, pointOf, pathOf, lengthKm } from './data.js';
-import { isLowEndDevice } from './config.js';
+import { isLowEndDevice, CONFIG } from './config.js';
+const CONFIG_WX = CONFIG.weather;
 import { LEVELS } from './draw.js';
+import { wikiSummary, TimeTravel, eraOf } from './history.js';
+import { loadWeather, cachedWeather, insights, cityNow, METRICS, metricValue, wxText, wxIcon, aqiLabel, zoomEarthUrl, WindLayer, compass16 } from './weather.js';
+import { polls, myVotes, vote, rankings, hotTake, CAT_ICON, VIBE_STOPS } from './vibes.js';
 import { AtlasMap, DEPTHS } from './map.js';
 import { Progress } from './progress.js';
 import { buildCurriculum, allLessons } from './curriculum.js';
@@ -28,6 +32,9 @@ const GAMES = [
   { id: 'photo', title: 'Picture this', desc: 'Name the place from its photo', icon: 'target', bg: 'radial-gradient(120% 120% at 100% 0%, #1f7a8f, #08191e 70%)' },
   { id: 'exits', title: 'ORR exits', desc: 'Exit 1 to 19 by heart', icon: 'route', bg: 'radial-gradient(120% 120% at 100% 0%, #7a6a2a, #1d1907 70%)' },
   { id: 'routes', title: 'Route builder', desc: 'Put highway & metro stops in order', icon: 'route', bg: 'radial-gradient(120% 120% at 100% 0%, #9a6a1c, #261807 70%)' },
+  { id: 'timeline', title: 'Which came first?', desc: 'Charminar to Cyber Towers, in order', icon: 'redo', bg: 'radial-gradient(120% 120% at 100% 0%, #8f7a2a, #1d1606 70%)' },
+  { id: 'names', title: "What's in a name", desc: '-guda, -pet, -bagh… and name stories', icon: 'tag', bg: 'radial-gradient(120% 120% at 100% 0%, #2a6f5f, #071a15 70%)' },
+  { id: 'vibe', title: 'Vibe check', desc: 'Which circle has more cafés, pubs, parks?', icon: 'bolt', bg: 'linear-gradient(135deg, #4c1d95, #a21caf 55%, #f97316)' },
   { id: 'review', title: 'Fix my mistakes', desc: 'Drill the places you keep missing', icon: 'redo', wide: true, bg: 'radial-gradient(120% 140% at 100% 0%, #6b2a33, #170a0c 70%)' },
 ];
 const SCOPE_LABEL = { zone: 'Zones', circle: 'Circles', locality: 'Areas', landmark: 'Landmarks', station: 'Stations' };
@@ -258,6 +265,7 @@ class App {
   back() {
     if (!$('#search').hidden) { this.closeSearch(); return true; }
     if (!$('#flight').hidden) { this.map.stopMotion(); return true; }
+    if (this.map.wide && this.map.depth === 'weather') { const pnl = $('#mode-panel'); this.toggleIndiaView(pnl); return true; }
     if (this.map.motion) { this.map.stopMotion(); return true; }
     if (!$('#quiz').hidden) { this.quiz.close(); return true; }
     if (!$('#tour').hidden) { this.tour.close(false); return true; }
@@ -279,7 +287,7 @@ class App {
 
   // ---------------------------------------------------------------- explore
   renderDepthBar() {
-    const counts = { corp: 3, zone: 12, circle: 60, locality: this.A.localities.length, landmark: this.A.landmarks.length, metro: this.A.stations.length, routes: this.A.corridors.length };
+    const counts = { corp: 3, zone: 12, circle: 60, locality: this.A.localities.length, landmark: this.A.landmarks.length, metro: this.A.stations.length, routes: this.A.corridors.length, history: '1143–2026', weather: 'live', vibes: '60' };
     $('#depth-bar').innerHTML = DEPTHS.map((d) => `<button class="depth-chip" data-d="${d.id}">${d.label}<b>${counts[d.id]}</b></button>`).join('');
     document.querySelectorAll('.depth-chip').forEach((b) => (b.onclick = () => { buzz(6); this.setDepth(b.dataset.d); }));
   }
@@ -293,10 +301,171 @@ class App {
     if (chip) chip.scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
     this.setHeadline();
     this.renderStrip(d);
+    this.renderModePanel(d);
     if (fly && this.el.dataset.mode === 'explore') {
       if (d === 'metro') this.map.fitItem({ kind: 'corridor', stops: this.A.stations }, { zoomAdj: 0.1, duration: 1200 });
-      else this.map.home({ duration: 1200 });
+      else if (d !== 'history') this.map.home({ duration: 1200 });
     }
+  }
+
+  // Panels for the time-travel, weather and Gen Z views.
+  renderModePanel(d) {
+    const panel = $('#mode-panel');
+    if (this.tt) this.tt.stop();
+    if (d !== 'weather' && this.wind) this.wind.stop();
+    panel.hidden = !['history', 'weather', 'vibes'].includes(d);
+    if (panel.hidden) { panel.innerHTML = ''; return; }
+    if (d === 'history') {
+      if (!this.tt) this.tt = new TimeTravel(this);
+      this.tt.mount(panel);
+      this.tt.flyToNearest();
+    } else if (d === 'weather') {
+      this.renderWeatherPanel(panel);
+    } else if (d === 'vibes') {
+      this.renderVibesPanel(panel);
+    }
+    this.framePanel();
+  }
+
+  // keep the map content above the open bottom panel
+  framePanel() {
+    const top = $('#explore').getBoundingClientRect().top;
+    this.map.viewPad = { top: 150, bottom: Math.max(120, Math.round(window.innerHeight - top + 6)), left: 14, right: 14 };
+    if (this.map.depth !== 'history' && !this.map.wide) this.map.home({ duration: 1000 });
+  }
+
+  setHeadlineTime(year, era) {
+    const h = $('#headline');
+    $('.kicker', h).textContent = `Time travel · ${era.title}`;
+    $('.title', h).innerHTML = `<em>${year}</em> ${esc(era.sub)}.`;
+    $('.sub', h).innerHTML = `<span class="pill" style="background:#f2cf4a">${era.start}–${era.end}</span><span class="pill dim">${this.A.landmarks.filter((m) => m.year && m.year <= year).length} landmarks exist</span>`;
+  }
+
+  // ---------------------------------------------------------------- weather view
+  renderWeatherPanel(panel) {
+    const s = this.P.s.settings;
+    s.wxMetric = s.wxMetric || 'temp';
+    if (s.wxClouds === undefined) { s.wxClouds = true; s.wxRadar = true; s.wxWind = true; }
+    const m = METRICS[s.wxMetric];
+    panel.innerHTML = `
+      <div class="wx-panel glass">
+        <div class="wx-row hscroll wx-controls">
+          ${Object.entries(METRICS).map(([k, v]) => `<button data-m="${k}" class="wx-met ${k === s.wxMetric ? 'on' : ''}">${v.label}</button>`).join('')}
+          <span class="wx-sep"></span>
+          <button class="wx-tog ${s.wxClouds ? 'on' : ''}" data-l="clouds" aria-label="Clouds">☁️</button>
+          <button class="wx-tog ${s.wxRadar ? 'on' : ''}" data-l="radar" aria-label="Radar">🌧️</button>
+          <button class="wx-tog ${s.wxWind ? 'on' : ''}" data-l="wind" aria-label="Wind">💨</button>
+          <button class="wx-tog" data-india>${this.map.wide ? '🏙️ City' : '🌏 India'}</button>
+          <a class="wx-link" data-ze target="_blank" rel="noopener">Zoom Earth ↗</a>
+        </div>
+        <div class="wx-insights hscroll"></div>
+        <div class="wx-legend"><span>${m.stops[0][0]}${m.unit}</span><div class="grad" style="background:linear-gradient(90deg,${m.stops.map((x) => x[1]).join(',')})"></div><span>${m.stops.at(-1)[0]}${m.unit}</span></div>
+        <div class="wx-status"></div>
+      </div>`;
+    panel.querySelectorAll('[data-m]').forEach((b) => (b.onclick = () => { s.wxMetric = b.dataset.m; this.P.save(); this.renderWeatherPanel(panel); }));
+    panel.querySelectorAll('[data-l]').forEach((b) => (b.onclick = () => {
+      const k = { clouds: 'wxClouds', radar: 'wxRadar', wind: 'wxWind' }[b.dataset.l];
+      s[k] = !s[k];
+      this.P.save();
+      b.classList.toggle('on', s[k]);
+      this.applyWxLayers();
+    }));
+    $('[data-india]', panel).onclick = () => this.toggleIndiaView(panel);
+    const ze = $('[data-ze]', panel);
+    const syncZe = () => { const c = this.map.map.getCenter(); ze.href = zoomEarthUrl(c.lng, c.lat, this.map.map.getZoom() + 1, s.wxMetric); };
+    syncZe();
+    this.map.map.off('moveend', this._zeSync || (() => {}));
+    this._zeSync = syncZe;
+    this.map.map.on('moveend', syncZe);
+    this.applyWxLayers();
+    const wx = cachedWeather();
+    if (wx) this.applyWeather(wx);
+    this.refreshWeather();
+  }
+
+  async refreshWeather(force = false) {
+    const status = $('#mode-panel .wx-status');
+    if (status && !cachedWeather()) status.textContent = 'Loading live weather…';
+    try {
+      const wx = await loadWeather(this.A, { force });
+      if (this.map.depth === 'weather') this.applyWeather(wx);
+    } catch (e) {
+      const st = $('#mode-panel .wx-status');
+      if (st) st.innerHTML = `Live weather unavailable right now (offline?). Satellite and radar layers still work. <button class="text-btn" data-retry>Retry</button>`;
+      const r = st && st.querySelector('[data-retry]');
+      if (r) r.onclick = () => this.refreshWeather(true);
+    }
+  }
+
+  applyWeather(wx) {
+    const s = this.P.s.settings, A = this.A;
+    this.wxData = wx;
+    const metric = s.wxMetric || 'temp';
+    const scale = { stops: METRICS[metric].stops, value: (c) => metricValue(wx.circles[c.id], wx.aqi && wx.aqi[c.id], metric) };
+    this.map.setWeather(wx, metric, scale);
+    const ins = $('#mode-panel .wx-insights');
+    if (ins) {
+      ins.innerHTML = insights(A, wx).map((x) => `<button class="wx-ins ${x.tone}" ${x.id ? `data-id="${x.id}"` : ''}><div class="wi">${x.icon}</div><div class="wt">${esc(x.title)}</div><div class="wd">${esc(x.text)}</div></button>`).join('');
+      ins.querySelectorAll('[data-id]').forEach((b) => (b.onclick = () => this.exploreSelect(A.get(b.dataset.id))));
+    }
+    const st = $('#mode-panel .wx-status');
+    if (st) {
+      const mins = Math.max(0, Math.round((Date.now() - new Date(wx.updated).getTime()) / 60000));
+      st.textContent = `Updated ${mins ? mins + ' min ago' : 'just now'} · ${wx.source || 'Open-Meteo'} · clouds: NASA GIBS (Himawari) · radar: RainViewer`;
+    }
+    if (wx.wind && this.wind) this.wind.setField(wx.wind);
+    this.applyWxLayers();
+    if (!this.map.selected) this.setHeadline();
+  }
+
+  applyWxLayers() {
+    const s = this.P.s.settings;
+    this.map.setWxLayer('clouds', !!s.wxClouds, CONFIG_WX.clouds);
+    if (s.wxRadar) {
+      if (this.radarUrl) this.map.setWxLayer('radar', true, this.radarUrl);
+      else fetch(CONFIG_WX.radarIndex).then((r) => r.json()).then((j) => {
+        const f = j.radar.past.at(-1);
+        this.radarUrl = `${j.host}${f.path}/256/{z}/{x}/{y}/2/1_1.png`;
+        if (this.map.depth === 'weather' && this.P.s.settings.wxRadar) this.map.setWxLayer('radar', true, this.radarUrl);
+      }).catch(() => {});
+    } else this.map.setWxLayer('radar', false);
+    if (!this.wind) this.wind = new WindLayer(this.map.map, $('#wx-canvas'));
+    if (s.wxWind && this.wxData && this.wxData.wind && this.map.depth === 'weather') { this.wind.setField(this.wxData.wind); this.wind.start(); }
+    else this.wind.stop();
+  }
+
+  toggleIndiaView(panel) {
+    const m = this.map;
+    if (!m.wide) {
+      m.setWideBounds(true);
+      m.map.flyTo({ center: [81.8, 15.0], zoom: 4.4, pitch: 0, bearing: 0, duration: 2200, padding: m.padding() });
+      toast('India view: watch cyclones and monsoon clouds', 2600);
+    } else {
+      m.home({ duration: 1800 });
+      m.map.once('moveend', () => m.setWideBounds(false));
+    }
+    setTimeout(() => { const b = $('[data-india]', panel); if (b) b.textContent = m.wide ? '🏙️ City' : '🌏 India'; }, 50);
+  }
+
+  // ---------------------------------------------------------------- Gen Z view
+  renderVibesPanel(panel) {
+    const A = this.A;
+    this.vibeCat = this.vibeCat || 'all';
+    const cats = [['all', '🔥 All'], ...Object.entries(A.vibeCats).map(([k, v]) => [k, `${CAT_ICON[k]} ${v}`])];
+    const total = A.circles.reduce((s, c) => s + Object.values(c.vibe.counts).reduce((a, b) => a + b, 0), 0);
+    panel.innerHTML = `
+      <div class="vb-panel glass">
+        <div class="vb-cats hscroll">${cats.map(([k, l]) => `<button data-c="${k}" class="${k === this.vibeCat ? 'on' : ''}">${l}</button>`).join('')}</div>
+        <div class="vb-ranks hscroll">${rankings(A).map((r) => `<div class="vb-rank"><div class="rt">${r.icon} ${esc(r.title)}</div><ol>${r.list.map((c) => `<li data-id="${c.id}">${esc(c.name)} <span>${r.val(c)}</span></li>`).join('')}</ol></div>`).join('')}</div>
+        <div class="vb-note">Based on ${fmt(total)} hangout places mapped in OpenStreetMap. Many real places aren't mapped yet, so treat ranks as a guide.</div>
+      </div>`;
+    panel.querySelectorAll('[data-c]').forEach((b) => (b.onclick = () => {
+      this.vibeCat = b.dataset.c;
+      panel.querySelectorAll('[data-c]').forEach((x) => x.classList.toggle('on', x === b));
+      this.map.setVibes(this.vibeCat);
+    }));
+    panel.querySelectorAll('li[data-id]').forEach((li) => (li.onclick = () => this.exploreSelect(A.get(li.dataset.id))));
+    this.map.setVibes(this.vibeCat);
   }
 
   // Swipeable photo cards of landmarks (Landmarks depth) and routes (Routes depth).
@@ -326,6 +495,18 @@ class App {
       $('.sub', h).innerHTML = '';
       return;
     }
+    if (this.map.depth === 'weather') {
+      const now = this.wxData && cityNow(A, this.wxData);
+      $('.kicker', h).textContent = 'Hyderabad · live weather';
+      if (now) {
+        $('.title', h).innerHTML = `<em>${Math.round(now.t)}°</em> ${esc(wxText(now.code))} ${wxIcon(now.code)}`;
+        $('.sub', h).innerHTML = [`Feels ${Math.round(now.feels)}°`, `Humidity ${Math.round(now.rh)}%`, `Wind ${Math.round(now.wind)} km/h`, now.aqi != null ? `AQI ${Math.round(now.aqi)} · ${aqiLabel(now.aqi)}` : null].filter(Boolean).map((t, i) => `<span class="pill ${i ? 'dim' : ''}">${esc(t)}</span>`).join('');
+      } else {
+        $('.title', h).innerHTML = 'Weather, <em>circle by circle.</em>';
+        $('.sub', h).innerHTML = '<span class="pill">Live</span>';
+      }
+      return;
+    }
     const text = {
       corp: ['Hyderabad · since Feb 2026', 'One city. <em>Three corporations.</em>', [`~${fmt(A.meta.areaKm2)} km²`, '60 circles', '300 wards']],
       zone: ['Level 2', '<em>12 zones</em> across three corporations.', ['6 GHMC', '3 Cyberabad', '3 Malkajgiri']],
@@ -334,6 +515,8 @@ class App {
       landmark: ['Level 5', `<em>${A.landmarks.length} landmarks</em> to anchor your map.`, []],
       metro: ['Level 6', `<em>3 lines.</em> ${A.stations.length} stations.`, A.metro.map((l) => l.name)],
       routes: ['Level 7', `<em>${A.highways.length} highways,</em> the ORR and ${A.exits.length} exits.`, ['Real road paths', 'Tap a route']],
+      vibes: ['Gen Z guide', 'Mee area <em>vibe enti?</em>', ['Hangouts mapped per circle', 'Tap a circle']],
+      history: ['Time travel', '<em>1591</em> and counting.', []],
     }[this.map.depth] || ['', '', []];
     $('.kicker', h).textContent = text[0];
     $('.title', h).innerHTML = text[1];
@@ -343,7 +526,10 @@ class App {
   exploreSelect(it, fly = true) {
     if (!it) { this.map.clearSelection(); this.hideCard(); this.setHeadline(); return; }
     const d = DEPTH_OF[it.kind];
-    if (d && this.map.depth !== d) this.setDepth(d, false);
+    // the weather / Gen Z / time-travel views keep their own lens when you tap inside them
+    const keep = (['weather', 'vibes'].includes(this.map.depth) && ['circle', 'locality'].includes(it.kind))
+      || (this.map.depth === 'history' && it.kind === 'landmark');
+    if (d && !keep && this.map.depth !== d) this.setDepth(d, false);
     this.setHeadline(it);
     this.renderCard(it);
     const top = $('#info-card').getBoundingClientRect().top;
@@ -357,7 +543,13 @@ class App {
   hideCard() {
     $('#info-card').hidden = true;
     this.el.dataset.card = '';
-    if (this.el.dataset.mode === 'explore') this.map.viewPad = null;
+    if (this.el.dataset.mode === 'explore') {
+      this.map.viewPad = null;
+      if (!$('#mode-panel').hidden) {
+        const top = $('#explore').getBoundingClientRect().top;
+        this.map.viewPad = { top: 150, bottom: Math.max(120, Math.round(window.innerHeight - top + 6)), left: 14, right: 14 };
+      }
+    }
   }
 
   stats(it) {
@@ -425,6 +617,11 @@ class App {
         `<button class="chip" data-ll="${s.lng},${s.lat}"><i style="background:#f2cf4a"></i>${esc(it.loop ? `Exit ${A.get(s.id)?.ref || i + 1} · ${s.name}` : `${i + 1}. ${s.name}`)}</button>`).join('')}</div>`;
     }
     if (it.kind === 'exit') sections += `<div class="ic-sec">Road</div><div class="chips">${chip({ ...A.orrRoute, color: '#ffffff' })}</div>`;
+    const extra = { history: this.historySection(it), vibes: this.vibesSection(it), weather: this.weatherSection(it) };
+    // the current lens goes first; history always comes before the long chip lists
+    const first = this.map.depth === 'weather' ? 'weather' : this.map.depth === 'vibes' ? 'vibes' : 'history';
+    const rest = ['history', 'weather', 'vibes'].filter((k) => k !== first);
+    sections = extra[first] + (first === 'history' ? '' : extra.history) + sections + rest.filter((k) => k !== 'history').map((k) => extra[k]).join('');
     const pill = it.kind === 'corp' ? `Corporation ${it.num}` : KIND_LABEL[it.kind];
     const mastered = this.P.mastered(it.id);
     const ph = it.photo;
@@ -464,6 +661,95 @@ class App {
     if (fly) fly.onclick = () => this.startFlight(it);
     if (orb) orb.onclick = () => this.orbit(it);
     if (ph) this.fillCredit(ph, $('[data-credit]', card));
+    this.bindCardExtras(it, card);
+  }
+
+  // ---------------------------------------------------------------- card extras
+  historySection(it) {
+    const parts = it.nameParts || [];
+    let h = '';
+    if (it.year) {
+      const era = eraOf(this.A.eras, it.year);
+      h += `<div class="hist-story"><small>Built</small>${it.year} · ${esc(era.title)} era</div>`;
+    }
+    if (parts.length) h += `<div class="hist-parts">${parts.map((p) => `<span class="hist-part"><b>${esc(p.part)}</b> = ${esc(p.meaning)}</span>`).join('')}</div>`;
+    if (it.story) h += `<div class="hist-story"><small>${it.story.kind === 'told' ? 'Name story · commonly told' : 'Name meaning'}</small>${esc(it.story.text)}</div>`;
+    if (it.wiki) h += `<div class="wiki" data-wiki="${esc(it.wiki)}">Loading history from Wikipedia…</div>`;
+    return h ? `<div class="ic-sec">History & name</div>${h}` : '';
+  }
+
+  vibesSection(it) {
+    const c = it.kind === 'circle' ? it : it.circle ? this.A.get(it.circle) : null;
+    if (!c || !c.vibe || !['circle', 'locality'].includes(it.kind)) return '';
+    const v = c.vibe;
+    const cats = Object.entries(v.counts).filter(([, n]) => n > 0).sort((a, b) => b[1] - a[1]);
+    const spots = Object.entries(v.spots).flatMap(([k, list]) => list.slice(0, 2).map((x) => ({ ...x, k }))).slice(0, 8);
+    const voted = myVotes();
+    const pl = polls(c)[0];
+    const mine = pl && voted[`${c.id}:${pl.id}`];
+    return `<div class="ic-sec">Gen Z vibe${it.kind === 'locality' ? ` · ${esc(c.name)} circle` : ''}</div>
+      <div class="hist-story" style="margin-top:6px"><b>${v.score}</b>/100 hangout score<div class="meter"><i style="width:${v.score}%"></i></div></div>
+      <div class="chips">${v.tags.map((t) => `<span class="chip">✨ ${esc(t)}</span>`).join('')}</div>
+      <div class="hist-story">${esc(hotTake(this.A, c))}</div>
+      <div class="chips">${cats.map(([k, n]) => `<span class="chip">${CAT_ICON[k]} ${n} ${esc(this.A.vibeCats[k].toLowerCase())}</span>`).join('')}</div>
+      ${spots.length ? `<div class="ic-sec">Spots</div><div class="chips">${spots.map((x) => `<button class="chip" data-ll="${x.lng},${x.lat}">${CAT_ICON[x.k]} ${esc(x.name)}</button>`).join('')}</div>` : ''}
+      ${pl ? `<div class="poll" data-poll="${c.id}:${pl.id}"><div class="pq">${esc(pl.q)}</div><div class="po">${pl.options.map((o) => `<button class="${mine && mine.option === o ? 'on' : ''}">${esc(o)}</button>`).join('')}</div><div class="pn">${mine ? 'Your take is saved. Tap to change it.' : 'Your take is saved on your phone.'} <button class="text-btn" data-morepolls="${c.id}" style="font-size:11px;padding:0">More polls</button></div></div>` : ''}`;
+  }
+
+  weatherSection(it) {
+    const c = it.kind === 'circle' ? it : it.circle ? this.A.get(it.circle) : null;
+    const wx = this.wxData || cachedWeather();
+    const w = c && wx && wx.circles[c.id];
+    if (!w) return '';
+    const a = wx.aqi && wx.aqi[c.id];
+    const hours = (w.hourly.time || []).slice(0, 8).map((t, i) => ({ h: t.slice(11, 13), pop: w.hourly.pop[i] || 0, t: w.hourly.t[i] }));
+    return `<div class="ic-sec">Weather now${it.kind !== 'circle' ? ` · ${esc(c.name)} circle` : ''}</div>
+      <div class="wx-now">
+        <div class="stat"><div class="v">${Math.round(w.t)}° ${wxIcon(w.code)}</div><div class="k">${esc(wxText(w.code))}</div></div>
+        <div class="stat"><div class="v">${Math.round(w.feels)}°</div><div class="k">feels like</div></div>
+        <div class="stat"><div class="v">${Math.round(w.wind)}</div><div class="k">km/h ${esc(compass16(w.dir).split('-').map((x) => x[0].toUpperCase()).join(''))}</div></div>
+        ${a && a.aqi != null ? `<div class="stat"><div class="v">${Math.round(a.aqi)}</div><div class="k">AQI · ${esc(aqiLabel(a.aqi).split(' ')[0])}</div></div>` : ''}
+      </div>
+      <div class="wx-hours">${hours.map((x) => `<div><span>${x.pop}%</span><i style="height:${Math.max(2, x.pop * 0.4)}px"></i><span>${x.h}h</span></div>`).join('')}</div>
+      <div class="chips"><a class="chip" href="${zoomEarthUrl(c.label[0], c.label[1], 11, this.P.s.settings.wxMetric || 'temp')}" target="_blank" rel="noopener">🌍 Open in Zoom Earth ↗</a></div>`;
+  }
+
+  bindCardExtras(it, card) {
+    const wikiEl = $('[data-wiki]', card);
+    if (wikiEl) {
+      wikiSummary(wikiEl.dataset.wiki).then((w) => {
+        if (!wikiEl.isConnected) return;
+        if (!w) { wikiEl.remove(); return; }
+        const text = w.extract.length > 600 ? w.extract.slice(0, w.extract.lastIndexOf('. ', 600) + 1) : w.extract;
+        wikiEl.innerHTML = `${esc(text)} <a href="${w.url}" target="_blank" rel="noopener">Read more ↗</a><div class="wl">From Wikipedia · CC BY-SA 4.0</div>`;
+      });
+    }
+    card.querySelectorAll('.poll').forEach((p) => this.bindPoll(p));
+    const more = $('[data-morepolls]', card);
+    if (more) more.onclick = () => {
+      const c = this.A.get(more.dataset.morepolls);
+      const voted = myVotes();
+      const html = polls(c).slice(1).map((pl) => {
+        const mine = voted[`${c.id}:${pl.id}`];
+        return `<div class="poll" data-poll="${c.id}:${pl.id}"><div class="pq">${esc(pl.q)}</div><div class="po">${pl.options.map((o) => `<button class="${mine && mine.option === o ? 'on' : ''}">${esc(o)}</button>`).join('')}</div></div>`;
+      }).join('');
+      more.closest('.poll').insertAdjacentHTML('afterend', html);
+      more.remove();
+      card.querySelectorAll('.poll').forEach((p) => this.bindPoll(p));
+    };
+  }
+
+  bindPoll(p) {
+    if (p.dataset.bound) return;
+    p.dataset.bound = '1';
+    const [cid, pid] = p.dataset.poll.split(':');
+    p.querySelectorAll('.po button').forEach((b) => (b.onclick = () => {
+      vote(cid, pid, b.textContent);
+      p.querySelectorAll('.po button').forEach((x) => x.classList.toggle('on', x === b));
+      buzz(10);
+      this.P.addXp(2);
+      this.P.save();
+    }));
   }
 
   // Photo credit: bundled photos carry it; remote ones ask the Commons API once.
@@ -697,6 +983,9 @@ class App {
       case 'metro': cfg = { ids: ids(A.stations), games: ['nextStop', 'lineOf', 'interchange', 'order', 'findStation'], count: 10 }; break;
       case 'routes': cfg = { ids: ids(A.corridors).concat(ids(A.metro)), games: ['order', 'whichRoad'], count: 8 }; break;
       case 'photo': cfg = { ids: ids(A.photos), games: ['photoName'], count: 10 }; break;
+      case 'timeline': cfg = { ids: ids(A.landmarks.filter((m) => m.year)), games: ['whichFirst', 'eraOf', 'whichFirst'], count: 10 }; break;
+      case 'names': cfg = { ids: ids([...A.localities, ...A.circles].filter((x) => x.nameParts || x.story)), games: ['nameMeaning', 'storyOf'], count: 10 }; break;
+      case 'vibe': cfg = { ids: ids(A.circles), games: ['vibeTop'], count: 10 }; break;
       case 'exits': cfg = { ids: ids(A.exits), games: ['exitNumber', 'findPoint', 'exitNumber'], count: 10 }; break;
       case 'review': {
         const weak = P.weakest(14);
@@ -737,6 +1026,7 @@ class App {
       }).join('')}</div>
       ${weak.length ? `<div class="ic-sec" style="margin-top:22px">Keep missing</div>${weak.map((x) => `<div class="list-row"><i style="width:9px;height:9px;border-radius:50%;background:${x.color || '#fff'}"></i>${esc(x.name)}<span class="rs">${KIND_LABEL[x.kind]}</span></div>`).join('')}
         <div class="ic-actions"><button class="btn primary" data-review>Drill these now</button></div>` : ''}
+      ${Object.keys(myVotes()).length ? `<div class="ic-sec" style="margin-top:22px">Your takes</div><div class="sh-lead">${Object.keys(myVotes()).length} poll answers across ${new Set(Object.keys(myVotes()).map((k) => k.split(':')[0])).size} circles, saved on this phone.</div>` : ''}
       <div class="ic-sec" style="margin-top:22px">Settings</div>
       <div class="settings">
         <div class="toggle-row">Unlock all lessons<button class="switch ${s.unlockAll ? 'on' : ''}" data-set="unlockAll"></button></div>

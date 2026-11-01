@@ -9,6 +9,7 @@
 import { LabelLayer } from './labels.js';
 import { pointOf, bboxOf, pointInGeom, km, bearing as bearingOf } from './data.js';
 import { CONFIG } from './config.js';
+import { VIBE_STOPS } from './vibes.js';
 
 export const DEPTHS = [
   { id: 'corp', label: 'Corporations' },
@@ -18,7 +19,14 @@ export const DEPTHS = [
   { id: 'landmark', label: 'Landmarks' },
   { id: 'metro', label: 'Metro' },
   { id: 'routes', label: 'Routes' },
+  { id: 'history', label: 'Time travel' },
+  { id: 'weather', label: 'Weather' },
+  { id: 'vibes', label: 'Gen Z' },
 ];
+
+const HOME_BOUNDS = [[77.6, 16.8], [79.4, 18.0]];
+const WIDE_BOUNDS = [[55, -6], [105, 38]];
+const colorScale = (stops, key) => ['interpolate', ['linear'], ['coalesce', ['feature-state', key], -999], -999, 'rgba(0,0,0,0)', ...stops.flat()];
 
 const SLAB_H = { corp: 1500, zone: 800 };
 const lighten = (hex, t) => {
@@ -131,6 +139,10 @@ export class AtlasMap {
           paint: { 'fill-color': corpColor(), 'fill-opacity': ['case', ['boolean', ['feature-state', 'sel'], false], 0.42, ['boolean', ['feature-state', 'done'], false], 0.2, 0.08] } },
         { id: 'circle-fill', type: 'fill', source: 'circle', layout: { visibility: 'none' },
           paint: { 'fill-color': corpColor(), 'fill-opacity': ['case', ['boolean', ['feature-state', 'sel'], false], 0.5, 0.2] } },
+        { id: 'wx-fill', type: 'fill', source: 'circle', layout: { visibility: 'none' },
+          paint: { 'fill-color': 'rgba(0,0,0,0)', 'fill-opacity': ['case', ['boolean', ['feature-state', 'sel'], false], 0.75, 0.5], 'fill-opacity-transition': { duration: 500 } } },
+        { id: 'vibe-fill', type: 'fill', source: 'circle', layout: { visibility: 'none' },
+          paint: { 'fill-color': colorScale(VIBE_STOPS, 'vibe'), 'fill-opacity': ['case', ['boolean', ['feature-state', 'sel'], false], 0.8, 0.55] } },
         { id: 'locality-line', type: 'line', source: 'locality', layout: { visibility: 'none' },
           paint: { 'line-color': '#ffffff', 'line-opacity': 0.28, 'line-width': 0.7 } },
         { id: 'circle-line', type: 'line', source: 'circle', layout: { visibility: 'none' },
@@ -230,7 +242,7 @@ export class AtlasMap {
       container: this.el, style, center: home.center, pitch: 20, bearing: 0, zoom: home.zoom - 0.6,
       maxPitch: 78, maxZoom: 18.5, attributionControl: false, fadeDuration: 150,
       dragRotate: true, pitchWithRotate: true, renderWorldCopies: false,
-      maxBounds: [[77.6, 16.8], [79.4, 18.0]],
+      maxBounds: HOME_BOUNDS,
       pixelRatio: Math.min(window.devicePixelRatio || 1, this.lite ? 1.5 : 2),
       antialias: false,
     });
@@ -473,7 +485,9 @@ export class AtlasMap {
       'corp-slab': depth === 'corp',
       'zone-slab': depth === 'zone',
       'circle-fill': depth === 'circle',
-      'circle-line': ['circle', 'locality', 'landmark'].includes(depth),
+      'wx-fill': depth === 'weather',
+      'vibe-fill': depth === 'vibes',
+      'circle-line': ['circle', 'locality', 'landmark', 'history', 'weather', 'vibes'].includes(depth),
       'zone-line': ['circle', 'locality'].includes(depth),
       'locality-fill': depth === 'locality',
       'locality-line': depth === 'locality',
@@ -486,9 +500,12 @@ export class AtlasMap {
       'rail-line': depth === 'routes' || depth === 'metro',
     };
     for (const [id, on] of Object.entries(show)) this.vis(id, on);
-    this.map.setPaintProperty('circle-line', 'line-opacity', depth === 'circle' ? 0.6 : depth === 'locality' ? 0.5 : 0.22);
-    this.map.setPaintProperty('domain-dark', 'fill-opacity', depth === 'corp' || depth === 'zone' ? 0.42 : depth === 'metro' || depth === 'routes' ? 0.35 : 0.08);
-    this.map.setPaintProperty('sat', 'raster-brightness-max', depth === 'metro' ? 0.6 : 0.86);
+    this.map.setPaintProperty('circle-line', 'line-opacity', depth === 'circle' ? 0.6 : depth === 'locality' ? 0.5 : depth === 'weather' || depth === 'vibes' ? 0.45 : 0.22);
+    this.map.setPaintProperty('domain-dark', 'fill-opacity', depth === 'corp' || depth === 'zone' ? 0.42 : depth === 'metro' || depth === 'routes' ? 0.35 : depth === 'vibes' ? 0.3 : 0.08);
+    this.map.setPaintProperty('sat', 'raster-brightness-max', depth === 'metro' ? 0.6 : depth === 'vibes' ? 0.7 : 0.86);
+    this.map.setPaintProperty('mask', 'fill-opacity', depth === 'weather' ? 0.3 : 0.62);
+    if (depth !== 'history') this.resetTimeLook();
+    if (depth !== 'weather') { this.setWxLayer('clouds', false); this.setWxLayer('radar', false); if (this.wide) this.setWideBounds(false); }
     this.applyRoadMode();
     this.dimLines(null);
     if (animate && (depth === 'corp' || depth === 'zone')) this.riseSlabs(depth);
@@ -590,6 +607,20 @@ export class AtlasMap {
         return A.landmarks.map((m) => ({ id: m.id, lngLat: [m.lng, m.lat], text: m.name, sub: this.te(m), kind: 'landmark', icon: m.cat, img: m.photo && m.photo.thumb, color: A.color[m.corp] || '#fff', priority: m.id === selId ? 999 : (m.photo ? 20 : 10) + (m.rank || 0), sel: m.id === selId }));
       case 'metro':
         return A.stations.map((s) => ({ id: s.id, lngLat: [s.lng, s.lat], text: s.name, kind: 'station', metro: A.get(s.lines[0]).color, priority: s.id === selId ? 999 : s.lines.length > 1 ? 30 : 10, sel: s.id === selId }));
+      case 'history': {
+        const y = this.timeYear || 2026;
+        return A.landmarks.filter((m) => m.year && m.year <= y).map((m) => ({ id: m.id, lngLat: [m.lng, m.lat], text: m.name, sub: String(m.year), kind: 'landmark', icon: m.cat, img: m.photo && (m.photo.thumb || m.photo.remoteThumb), color: m.id === this.timeFocus ? '#f2cf4a' : '#e8dcc0', priority: m.id === this.timeFocus ? 999 : 2026 - m.year, sel: m.id === this.timeFocus || m.id === selId }));
+      }
+      case 'weather': {
+        const wx = this.wx;
+        return A.circles.map((c) => {
+          const w = wx && wx.data.circles[c.id];
+          const v = w ? this.wxLabel(c, w, wx) : '';
+          return { id: c.id, lngLat: c.label, text: v ? `${c.name} ${v}` : c.name, kind: 'circle', priority: c.id === selId ? 999 : c.areaKm2, sel: c.id === selId };
+        });
+      }
+      case 'vibes':
+        return A.circles.map((c) => ({ id: c.id, lngLat: c.label, text: c.name, kind: 'circle', pill: c.vibe.score >= 70 ? c.vibe.tags[0] : undefined, pillColor: '#f0abfc', priority: c.id === selId ? 999 : c.vibe.score, sel: c.id === selId }));
       case 'routes': {
         const out = [];
         const seen = new Set();
@@ -698,6 +729,76 @@ export class AtlasMap {
     if (on) m.touchZoomRotate.enableRotation();
   }
 
+  // --------------------------------------------------------------- time travel
+  setTimeYear(year, focusId) {
+    this.timeYear = year;
+    this.timeFocus = focusId || null;
+    const m = this.map;
+    // older eras look like old photographs
+    const sat = year < 1948 ? -0.95 : year < 1998 ? -0.55 : -0.18;
+    m.setPaintProperty('sat', 'raster-saturation', sat);
+    m.setPaintProperty('sat', 'raster-contrast', year < 1948 ? 0.2 : 0.12);
+    m.setPaintProperty('sat', 'raster-hue-rotate', year < 1948 ? 25 : 0);
+    // modern infrastructure appears only once it exists
+    for (const id of ['orr', 'orr-glow']) this.vis(id, year >= 2008);
+    for (const id of ['metro-line', 'metro-glow']) this.vis(id, year >= 2017);
+    if (year >= 2017) for (const l of this.A.metro) m.setFeatureState({ source: 'metro', id: l.id }, { dim: l.id === 'green' && year < 2020 });
+    for (const id of ['building-3d']) if (!this.lite) this.vis(id, year >= 1990);
+    this.refreshLabels();
+  }
+
+  resetTimeLook() {
+    if (this.timeYear == null) return;
+    this.timeYear = null;
+    const m = this.map;
+    m.setPaintProperty('sat', 'raster-saturation', -0.18);
+    m.setPaintProperty('sat', 'raster-contrast', 0.12);
+    m.setPaintProperty('sat', 'raster-hue-rotate', 0);
+    for (const id of ['orr', 'orr-glow']) this.vis(id, true);
+    if (!this.lite) this.vis('building-3d', true);
+  }
+
+  // --------------------------------------------------------------- weather
+  setWideBounds(on) {
+    this.wide = on;
+    this.map.setMaxBounds(on ? WIDE_BOUNDS : HOME_BOUNDS);
+    this.map.setMinZoom(on ? 3.2 : 0);
+  }
+
+  setWeather(data, metric, scale) {
+    this.wx = { data, metric, scale };
+    const stops = scale.stops;
+    this.map.setPaintProperty('wx-fill', 'fill-color', colorScale(stops, 'wx'));
+    for (const c of this.A.circles) {
+      const v = scale.value(c);
+      this.map.setFeatureState({ source: 'circle', id: c.id }, { wx: v == null ? -999 : v });
+    }
+    this.refreshLabels();
+  }
+
+  wxLabel(c, w, wx) {
+    const v = wx.scale.value(c);
+    if (v == null) return '';
+    return wx.metric === 'temp' ? `${Math.round(v)}°` : wx.metric === 'rain' ? `${Math.round(v)}%` : wx.metric === 'wind' ? `${Math.round(v)}` : `${Math.round(v)}`;
+  }
+
+  // Satellite clouds (NASA GIBS) and rain radar (RainViewer), added on demand.
+  setWxLayer(name, on, url) {
+    const m = this.map;
+    const id = 'wx-' + name;
+    if (on && !m.getSource(id) && url) {
+      const maxzoom = name === 'clouds' ? 6 : 7;
+      m.addSource(id, { type: 'raster', tiles: [url], tileSize: 256, maxzoom });
+      m.addLayer({ id, type: 'raster', source: id, paint: { 'raster-opacity': name === 'clouds' ? 0.55 : 0.8, 'raster-fade-duration': 300, 'raster-resampling': 'linear' } }, 'domain-dark');
+    }
+    if (m.getLayer(id)) this.vis(id, on);
+  }
+
+  setVibes(cat) {
+    const scale = (c) => (cat === 'all' ? c.vibe.score : Math.min(100, (100 * c.vibe.counts[cat]) / Math.max(1, ...this.A.circles.map((x) => x.vibe.counts[cat]))));
+    for (const c of this.A.circles) this.map.setFeatureState({ source: 'circle', id: c.id }, { vibe: scale(c) });
+  }
+
   // --------------------------------------------------------------- picking
   onClick(e) {
     if (this.drawing) return;
@@ -729,6 +830,9 @@ export class AtlasMap {
       case 'circle': return A.circles.find((c) => pointInGeom(ll, c.geom)) || null;
       case 'locality': return near(A.localities) || A.localities.find((c) => pointInGeom(ll, c.geom)) || null;
       case 'landmark': return near(A.landmarks, 34);
+      case 'history': return near(A.landmarks.filter((m) => m.year && m.year <= (this.timeYear || 2026)), 34);
+      case 'weather':
+      case 'vibes': return A.circles.find((c) => pointInGeom(ll, c.geom)) || null;
       case 'metro': return near(A.stations) || nearLine(A.metro, (l) => [l.line], 0.6) || nearLine(A.rail || [], (r) => [r.line], 0.5);
       case 'routes': {
         const scale = Math.max(0.25, 2.5 / Math.pow(2, this.map.getZoom() - 10));

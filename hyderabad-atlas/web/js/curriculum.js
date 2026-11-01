@@ -105,6 +105,33 @@ export function buildCurriculum(A) {
     ],
   });
 
+  // Stories & time: name meanings, name stories, which-came-first
+  const bySuffix = {};
+  for (const l of A.localities) if (l.nameParts && l.nameParts.length) (bySuffix[l.nameParts[0].part] ||= []).push(l.id);
+  const nameItems = Object.values(bySuffix).flatMap((ids) => ids.slice(0, 2)).slice(0, 24);
+  const seenStory = new Set();
+  const storyItems = [...A.localities, ...A.circles].filter((x) => x.story && !seenStory.has(x.name) && seenStory.add(x.name)).map((x) => x.id);
+  const dated = A.landmarks.filter((m) => m.year).sort((a, b) => a.year - b.year);
+  phases.push({
+    id: 'p8', title: 'Stories & time', sub: 'What the names mean and how the city grew',
+    lessons: [
+      { id: 'hist-names', title: "What's in a name", sub: '-guda, -pally, -pet, -bagh, -abad and more', items: nameItems, games: ['nameMeaning'] },
+      { id: 'hist-stories', title: 'Name stories', sub: 'Who and what the areas are named after', items: storyItems, games: ['storyOf'] },
+      { id: 'hist-old', title: 'Time travel: before 1900', sub: 'Golconda to Falaknuma', items: dated.filter((m) => m.year < 1900).map((m) => m.id), games: ['whichFirst', 'eraOf'] },
+      { id: 'hist-new', title: 'Time travel: 1900 to today', sub: 'Osmania University to the 2026 split', items: dated.filter((m) => m.year >= 1900).map((m) => m.id), games: ['whichFirst', 'eraOf'] },
+    ],
+  });
+
+  // Gen Z guide: where the hangouts are
+  const hot = A.circles.slice().sort((a, b) => b.vibe.score - a.vibe.score);
+  phases.push({
+    id: 'p9', title: 'Gen Z guide', sub: 'Cafés, food, nightlife, campuses, parks',
+    lessons: [
+      { id: 'vibes-top', title: 'Hangout capitals', sub: hot.slice(0, 3).map((c) => c.name).join(' · '), items: hot.slice(0, 15).map((c) => c.id), games: ['vibeTop', 'find'] },
+      { id: 'vibes-rest', title: 'Hidden gems', sub: hot.slice(15, 18).map((c) => c.name).join(' · '), items: hot.slice(15, 35).map((c) => c.id), games: ['vibeTop', 'find'] },
+    ],
+  });
+
   phases.forEach((p, pi) => p.lessons.forEach((l, li) => { l.phase = p.id; l.phaseIndex = pi; l.index = li; }));
   return phases;
 }
