@@ -142,6 +142,23 @@ data class Pose(
     val title: String = "",
     /** Additive: library grouping ("stance", "seated", "self-touch", ...). */
     val theme: String = "general",
+    /** Additive: other figures in the same scene (greetings, proxemics, groups). Anchors use "b:", "c:", "d:". */
+    val companions: List<SceneFigure> = emptyList(),
+    /** Additive: draw the main figure's line of gaze. */
+    val showGaze: Boolean = false,
+)
+
+/** Additive: a second (third, fourth) figure placed in the same scene as the main one. */
+@Serializable
+data class SceneFigure(
+    val params: PoseParams,
+    /** Floor position in cm relative to the main figure: +x is the main figure's left, +z its front. */
+    val x: Float = 0f,
+    val z: Float = 0f,
+    /** Which way this figure faces, degrees: 0 the same way as the main figure, 180 toward it. */
+    val facing: Float = 180f,
+    /** 1 for an adult; about 0.6 for a young child. */
+    val scale: Float = 1f,
 )
 
 @Serializable
@@ -171,8 +188,12 @@ data class PoseParams(
     val spineCurve: Float = 0f,
     /** Additive: upper body yaw relative to the hips, degrees. Positive turns to the figure's left. */
     val torsoTurn: Float = 0f,
-    /** Additive: a quiet prop drawn behind the figure: "chair", "stool", "table". */
+    /** Additive: a quiet prop drawn behind the figure: "chair", "stool", "table", "desk", "laptop", "lectern", "bench". */
     val prop: String? = null,
+    /** Additive: breath into the upper chest, -1 (emptied) to 1 (full). */
+    val chestBreath: Float = 0f,
+    /** Additive: breath into the belly, -1 to 1. */
+    val bellyBreath: Float = 0f,
 )
 
 @Serializable

@@ -28,33 +28,35 @@ data class FigureFrame(val top: Float, val width: Float) {
     fun union(o: FigureFrame) = FigureFrame(max(top, o.top), max(width, o.width))
 }
 
-data class FigureGroup(val path: Path, val depth: Float, val far: Boolean)
+data class FigureGroup(val path: Path, val depth: Float, val far: Boolean, val face: FaceMark? = null, val panel: Boolean = false)
 data class FaceMark(val center: Offset, val rx: Float, val ry: Float, val rotationDeg: Float, val strength: Float)
+data class Ground(val center: Offset, val rx: Float, val ry: Float)
 
 class FigureGeometry(
     val groups: List<FigureGroup>,
     val silhouette: Path,
-    val face: FaceMark?,
     val propLines: List<Pair<Offset, Offset>>,
-    val groundCenter: Offset,
-    val groundRadiusX: Float,
-    val groundRadiusY: Float,
+    val grounds: List<Ground>,
+    /** Line of gaze for the main figure, when the pose asks for it: eyes to a point ahead. */
+    val gaze: Pair<Offset, Offset>?,
     val scale: Float,
-    private val skeleton: Skeleton,
+    private val scene: Scene,
     private val projector: Projector,
 ) {
-    fun anchor(name: String): Offset? = skeleton.anchor(name)?.let(projector::screen)
+    fun anchor(name: String): Offset? = scene.anchor(name)?.let(projector::screen)
 }
 
 object PoseRenderer {
     private const val BOTTOM = -3f
 
-    /** Width and height a skeleton occupies, before scaling. */
-    fun frameOf(sk: Skeleton): FigureFrame {
-        val pr = Projector(sk.yaw, 1f, 0f, 0f)
-        val xs = keyPoints(sk).map(pr::sx)
+    fun frameOf(sk: Skeleton): FigureFrame = frameOf(Scene(listOf(sk), sk.yaw))
+
+    /** Width and height a scene occupies, before scaling. */
+    fun frameOf(scene: Scene): FigureFrame {
+        val pr = Projector(scene.yaw, 1f, 0f, 0f)
+        val xs = scene.figures.flatMap { keyPoints(it) }.map(pr::sx)
         val width = (xs.maxOrNull() ?: 30f) - (xs.minOrNull() ?: -30f) + 30f
-        val top = sk.head.y + 12f
+        val top = scene.figures.maxOf { it.head.y + 12f * it.placement.scale }
         return FigureFrame(top, width)
     }
 
@@ -70,79 +72,104 @@ object PoseRenderer {
         }
     }
 
-    fun build(sk: Skeleton, size: Size, frame: FigureFrame = frameOf(sk), padding: Float = 0.06f): FigureGeometry {
+    fun build(sk: Skeleton, size: Size, frame: FigureFrame = frameOf(sk), padding: Float = 0.06f): FigureGeometry =
+        build(Scene(listOf(sk), sk.yaw), size, frame, padding)
+
+    fun build(scene: Scene, size: Size, frame: FigureFrame = frameOf(scene), padding: Float = 0.06f, gaze: Boolean = false): FigureGeometry {
         val worldH = frame.top - BOTTOM
         val usableH = size.height * (1f - padding * 2f)
         val usableW = size.width * (1f - padding * 2f)
         val scale = min(usableH / worldH, usableW / frame.width)
 
-        val probe = Projector(sk.yaw, 1f, 0f, 0f)
-        val xs = keyPoints(sk).map(probe::sx)
+        val probe = Projector(scene.yaw, 1f, 0f, 0f)
+        val xs = scene.figures.flatMap { keyPoints(it) }.map(probe::sx)
         val midX = ((xs.maxOrNull() ?: 0f) + (xs.minOrNull() ?: 0f)) / 2f
         val ox = size.width / 2f - midX * scale
         val oy = size.height / 2f + (frame.top + BOTTOM) / 2f * scale
-        val pr = Projector(sk.yaw, scale, ox, oy)
+        val pr = Projector(scene.yaw, scale, ox, oy)
 
         val parts = mutableListOf<Part>()
-        val torsoDepth = pr.depth(sk.waist) + 0.5f
-        parts += Part("torso", "torso", torsoPath(sk, pr), torsoDepth, far = false)
+        scene.figures.forEachIndexed { f, sk -> parts += figureParts(f, sk, pr) + propPanels(f, sk, pr) }
 
-        // Neck and head share an id so they merge into one silhouette.
-        parts += Part("neck", "head", capsule(pr, sk.neck - sk.chestAxes.yAxis * 1f, 5.5f, sk.head - sk.headAxes.yAxis * 4f, 4.9f),
-            pr.depth(sk.neck) + 0.6f, false)
-        parts += Part("head", "head", headPath(sk, pr), pr.depth(sk.head) + 1f, false)
-
-        for ((name, side) in listOf("L" to sk.left, "R" to sk.right)) {
-            val farSide = pr.depth(side.shoulder) < torsoDepth - 7f
-            val upper = union(
-                circle(pr, side.shoulder, 5.2f),
-                capsule(pr, side.shoulder, 4.8f, side.elbow, 3.9f),
-            )
-            parts += Part("upperArm$name", "arm$name", upper,
-                (pr.depth(side.shoulder) + pr.depth(side.elbow)) / 2f + 0.8f, farSide)
-            val lower = union(capsule(pr, side.elbow, 3.95f, side.hand.wrist, 2.95f), handPath(pr, side.hand))
-            val tip = side.hand.wrist + side.hand.dir * 8f
-            parts += Part("forearm$name", "arm$name", lower,
-                max(pr.depth(side.elbow), max(pr.depth(side.hand.wrist), pr.depth(tip))) + 0.8f, farSide)
-
-            val farLeg = pr.depth(side.hip) < torsoDepth - 5f
-            val thigh = capsule(pr, side.hip, 8.7f, side.knee, 5.7f)
-            parts += Part("thigh$name", "leg$name", thigh, (pr.depth(side.hip) + pr.depth(side.knee)) / 2f - 3f, farLeg)
-            val shin = union(
-                capsule(pr, side.knee, 5.6f, side.ankle, 3.6f),
-                capsule(pr, side.foot.heel, 3.6f, side.foot.toe, 2.6f),
-                capsule(pr, side.foot.ballInner, 2.9f, side.foot.ballOuter, 2.9f),
-            )
-            parts += Part("shin$name", "leg$name", shin, (pr.depth(side.knee) + pr.depth(side.ankle)) / 2f - 3f, farLeg)
-        }
-
-        // Painter's algorithm, then merge neighbours from the same limb so joints read as one form.
+        // Painter's algorithm across every figure, then merge neighbours from the same limb.
         val sorted = parts.sortedBy { it.depth }
         val merged = mutableListOf<Part>()
         for (part in sorted) {
             val last = merged.lastOrNull()
             if (last != null && last.limb == part.limb) {
-                merged[merged.lastIndex] = last.copy(path = union(last.path, part.path), depth = max(last.depth, part.depth))
+                merged[merged.lastIndex] = last.copy(path = union(last.path, part.path), depth = max(last.depth, part.depth), face = last.face ?: part.face)
             } else merged += part
         }
-        val groups = merged.map { FigureGroup(it.path, it.depth, it.far) }
-        val silhouette = groups.fold(Path()) { acc, g -> union(acc, g.path) }
+        val groups = merged.map { FigureGroup(it.path, it.depth, it.far, it.face, it.panel) }
+        val silhouette = groups.filterNot { it.panel }.fold(Path()) { acc, g -> union(acc, g.path) }
+
+        val grounds = scene.figures.map { sk ->
+            val k = sk.placement.scale
+            val mid = sk.left.foot.ballInner.lerp(sk.right.foot.ballInner, 0.5f)
+            Ground(
+                pr.screen(V3(mid.x, 0f, mid.z - 3f * k)),
+                (abs(pr.sx(sk.left.foot.toe) - pr.sx(sk.right.foot.toe)) / 2f + 18f * k) * scale,
+                3.2f * k * scale,
+            )
+        }
+
+        val gazeLine = if (!gaze) null else {
+            val main = scene.main
+            val eyes = main.anchor("eyes") ?: main.head
+            val a = pr.screen(eyes)
+            val b = pr.screen(eyes + main.headAxes.zAxis * 75f)
+            if ((b - a).getDistance() < 10f * scale) null else a to b
+        }
 
         return FigureGeometry(
             groups = groups,
             silhouette = silhouette,
-            face = faceMark(sk, pr),
-            propLines = propLines(sk, pr),
-            groundCenter = pr.screen(sk.left.foot.ballInner.lerp(sk.right.foot.ballInner, 0.5f).let { V3(it.x, 0f, it.z - 3f) }),
-            groundRadiusX = (abs(pr.sx(sk.left.foot.toe) - pr.sx(sk.right.foot.toe)) / 2f + 18f) * scale,
-            groundRadiusY = 3.2f * scale,
+            propLines = scene.figures.flatMap { propLines(it, pr) },
+            grounds = grounds,
+            gaze = gazeLine,
             scale = scale,
-            skeleton = sk,
+            scene = scene,
             projector = pr,
         )
     }
 
-    private data class Part(val id: String, val limb: String, val path: Path, val depth: Float, val far: Boolean)
+    private fun figureParts(f: Int, sk: Skeleton, pr: Projector): List<Part> {
+        val k = sk.placement.scale
+        val parts = mutableListOf<Part>()
+        val torsoDepth = pr.depth(sk.waist) + 0.5f * k
+        parts += Part("$f:torso", torsoPath(sk, pr), torsoDepth, far = false)
+
+        // Neck and head share an id so they merge into one silhouette; the face mark rides with them.
+        parts += Part("$f:head", capsule(pr, sk.neck - sk.chestAxes.yAxis * (1f * k), 5.5f * k, sk.head - sk.headAxes.yAxis * (4f * k), 4.9f * k),
+            pr.depth(sk.neck) + 0.6f * k, false)
+        parts += Part("$f:head", headPath(sk, pr, k), pr.depth(sk.head) + 1f * k, false, faceMark(sk, pr, k))
+
+        for ((name, side) in listOf("L" to sk.left, "R" to sk.right)) {
+            val farSide = pr.depth(side.shoulder) < torsoDepth - 7f * k
+            val upper = union(
+                circle(pr, side.shoulder, 5.2f * k),
+                capsule(pr, side.shoulder, 4.8f * k, side.elbow, 3.9f * k),
+            )
+            parts += Part("$f:arm$name", upper, (pr.depth(side.shoulder) + pr.depth(side.elbow)) / 2f + 0.8f * k, farSide)
+            val lower = union(capsule(pr, side.elbow, 3.95f * k, side.hand.wrist, 2.95f * k), handPath(pr, side.hand, k))
+            val tip = side.hand.wrist + side.hand.dir * (8f * k)
+            parts += Part("$f:arm$name", lower,
+                max(pr.depth(side.elbow), max(pr.depth(side.hand.wrist), pr.depth(tip))) + 0.8f * k, farSide)
+
+            val farLeg = pr.depth(side.hip) < torsoDepth - 5f * k
+            val thigh = capsule(pr, side.hip, 8.7f * k, side.knee, 5.7f * k)
+            parts += Part("$f:leg$name", thigh, (pr.depth(side.hip) + pr.depth(side.knee)) / 2f - 3f * k, farLeg)
+            val shin = union(
+                capsule(pr, side.knee, 5.6f * k, side.ankle, 3.6f * k),
+                capsule(pr, side.foot.heel, 3.6f * k, side.foot.toe, 2.6f * k),
+                capsule(pr, side.foot.ballInner, 2.9f * k, side.foot.ballOuter, 2.9f * k),
+            )
+            parts += Part("$f:leg$name", shin, (pr.depth(side.knee) + pr.depth(side.ankle)) / 2f - 3f * k, farLeg)
+        }
+        return parts
+    }
+
+    private data class Part(val limb: String, val path: Path, val depth: Float, val far: Boolean, val face: FaceMark? = null, val panel: Boolean = false)
 
     // ---- Shapes ---------------------------------------------------------------------------
 
@@ -170,31 +197,34 @@ object PoseRenderer {
         return smoothClosed(pts)
     }
 
-    private fun headPath(sk: Skeleton, pr: Projector): Path {
+    private fun headPath(sk: Skeleton, pr: Projector, k: Float): Path {
         val h = sk.headAxes
+        fun at(x: Number, y: Number, z: Number) = sk.head + h.apply(v(x, y, z)) * k
         return union(
-            ellipsoid(pr, sk.head + h.apply(v(0, 1, -0.5)), h, 7.9f, 10.9f, 10f),
-            ellipsoid(pr, sk.head + h.apply(v(0, -4.6, 3.4)), h, 5.6f, 6.4f, 6.4f),
-            circle(pr, sk.head + h.apply(v(0, -0.6, 9.4)), 1.5f),
+            ellipsoid(pr, at(0, 1, -0.5), h, 7.9f * k, 10.9f * k, 10f * k),
+            ellipsoid(pr, at(0, -4.6, 3.4), h, 5.6f * k, 6.4f * k, 6.4f * k),
+            circle(pr, at(0, -0.6, 9.4), 1.5f * k),
         )
     }
 
-    private fun faceMark(sk: Skeleton, pr: Projector): FaceMark? {
+    private fun faceMark(sk: Skeleton, pr: Projector, k: Float): FaceMark? {
         val forward = sk.headAxes.zAxis
         val towardViewer = pr.depth(sk.head + forward) - pr.depth(sk.head)
         if (towardViewer < 0.25f) return null
-        val c = pr.screen(sk.head + sk.headAxes.apply(v(0, -1.2, 7.4)))
+        val c = pr.screen(sk.head + sk.headAxes.apply(v(0, -1.2, 7.4)) * k)
         val up = sk.headAxes.yAxis
         val upScreen = pr.screen(sk.head + up) - pr.screen(sk.head)
         val rot = Math.toDegrees(atan2(upScreen.x.toDouble(), -upScreen.y.toDouble())).toFloat()
-        return FaceMark(c, 4.3f * pr.scale * towardViewer, 6.4f * pr.scale, rot, ((towardViewer - 0.25f) / 0.75f).coerceIn(0f, 1f))
+        return FaceMark(c, 4.3f * k * pr.scale * towardViewer, 6.4f * k * pr.scale, rot, ((towardViewer - 0.25f) / 0.75f).coerceIn(0f, 1f))
     }
 
-    private fun handPath(pr: Projector, hand: Hand): Path {
+    private fun handPath(pr: Projector, hand: Hand, k: Float): Path {
         val w = hand.wrist
-        val d = hand.dir
-        val t = hand.thumb
+        val d = hand.dir * k
+        val t = hand.thumb * k
         fun at(along: Float, side: Float = 0f) = w + d * along + t * side
+        fun circle(pr: Projector, c: V3, r: Float) = this.circle(pr, c, r * k)
+        fun capsule(pr: Projector, a: V3, ra: Float, b: V3, rb: Float) = this.capsule(pr, a, ra * k, b, rb * k)
         return when (hand.shape) {
             HandShape.HIDDEN, HandShape.TUCKED -> circle(pr, w, 2.9f)
             HandShape.FIST -> union(circle(pr, at(4.6f), 4.1f), capsule(pr, w, 3.1f, at(3f), 3.4f))
@@ -224,30 +254,67 @@ object PoseRenderer {
 
     private fun propLines(sk: Skeleton, pr: Projector): List<Pair<Offset, Offset>> {
         val lines = mutableListOf<Pair<V3, V3>>()
+        fun box(x0: Float, x1: Float, y: Float, z0: Float, z1: Float) {
+            lines += v(x0, y, z0) to v(x1, y, z0); lines += v(x0, y, z1) to v(x1, y, z1)
+            lines += v(x0, y, z0) to v(x0, y, z1); lines += v(x1, y, z0) to v(x1, y, z1)
+        }
+        fun chair() {
+            val y = 44f; val x0 = -21f; val x1 = 21f; val zb = -22f; val zf = 18f; val back = 92f
+            box(x0, x1, y, zb, zf)
+            for (x in listOf(x0, x1)) for (z in listOf(zb, zf)) lines += v(x, 0, z) to v(x, y, z)
+            for (x in listOf(x0, x1)) lines += v(x, y, zb) to v(x, back, zb - 4)
+            lines += v(x0, back, zb - 4) to v(x1, back, zb - 4)
+            lines += v(x0, 74, zb - 3) to v(x1, 74, zb - 3)
+        }
+        fun table() {
+            val y = 74f
+            box(-45f, 45f, y, 14f, 80f)
+            for (x in listOf(-40f, 40f)) lines += v(x, 0, 20) to v(x, y, 20)
+        }
         when (sk.prop) {
-            "chair" -> {
-                val y = 44f; val x0 = -21f; val x1 = 21f; val zb = -22f; val zf = 18f; val back = 92f
-                lines += v(x0, y, zb) to v(x1, y, zb); lines += v(x0, y, zf) to v(x1, y, zf)
-                lines += v(x0, y, zb) to v(x0, y, zf); lines += v(x1, y, zb) to v(x1, y, zf)
-                for (x in listOf(x0, x1)) for (z in listOf(zb, zf)) lines += v(x, 0, z) to v(x, y, z)
-                for (x in listOf(x0, x1)) lines += v(x, y, zb) to v(x, back, zb - 4)
-                lines += v(x0, back, zb - 4) to v(x1, back, zb - 4)
-                lines += v(x0, 74, zb - 3) to v(x1, 74, zb - 3)
-            }
+            "chair" -> chair()
             "stool" -> {
                 val y = 66f
-                lines += v(-17, y, -17) to v(17, y, -17); lines += v(-17, y, 17) to v(17, y, 17)
-                lines += v(-17, y, -17) to v(-17, y, 17); lines += v(17, y, -17) to v(17, y, 17)
+                box(-17f, 17f, y, -17f, 17f)
                 for (x in listOf(-15f, 15f)) for (z in listOf(-15f, 15f)) lines += v(x, 0, z) to v(x, y, z)
             }
-            "table" -> {
-                val y = 74f
-                lines += v(-45, y, 14) to v(45, y, 14); lines += v(-45, y, 80) to v(45, y, 80)
-                lines += v(-45, y, 14) to v(-45, y, 80); lines += v(45, y, 14) to v(45, y, 80)
-                for (x in listOf(-40f, 40f)) lines += v(x, 0, 20) to v(x, y, 20)
+            "table" -> table()
+            "desk" -> { chair(); table() }
+            "laptop" -> {
+                chair(); table()
+                box(-16f, 16f, 75f, 24f, 46f)
+                lines += v(-16, 75, 46) to v(-16, 97, 50); lines += v(16, 75, 46) to v(16, 97, 50)
+                lines += v(-16, 97, 50) to v(16, 97, 50)
+            }
+            "lectern" -> lines += v(-26, 0, 38) to v(26, 0, 38)
+            "bench" -> {
+                val y = 44f
+                box(-70f, 70f, y, -18f, 18f)
+                for (x in listOf(-64f, 64f)) for (z in listOf(-14f, 14f)) lines += v(x, 0, z) to v(x, y, z)
             }
         }
-        return lines.map { (a, b) -> pr.screen(a) to pr.screen(b) }
+        val pl = sk.placement
+        return lines.map { (a, b) -> pr.screen(pl.point(a)) to pr.screen(pl.point(b)) }
+    }
+
+    /**
+     * Solid props: boards that hide the body behind them. They are depth-sorted with the limbs,
+     * so a lectern covers the legs while hands resting on its top stay visible.
+     */
+    private fun propPanels(f: Int, sk: Skeleton, pr: Projector): List<Part> {
+        val pl = sk.placement
+        fun quad(vararg pts: V3, bias: Float, id: String): Part {
+            val world = pts.map(pl::point)
+            val path = polygon(world.map(pr::screen))
+            return Part("$f:$id", path, world.map(pr::depth).average().toFloat() + bias, far = false, panel = true)
+        }
+        return when (sk.prop) {
+            "lectern" -> listOf(
+                quad(v(-20, 2, 36), v(20, 2, 36), v(20, 103, 27), v(-20, 103, 27), bias = 0f, id = "lecternFront"),
+                quad(v(-28, 104, 22), v(28, 104, 22), v(28, 112, 44), v(-28, 112, 44), bias = -15f, id = "lecternTop"),
+            )
+            else -> emptyList()
+        }
     }
 
     // ---- Primitives ----------------------------------------------------------------------

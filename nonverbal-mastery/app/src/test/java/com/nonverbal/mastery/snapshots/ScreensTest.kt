@@ -143,6 +143,9 @@ class ScreensTest {
         shot("05_poselib", true) { PoseLibraryScreen(c, "", "all", emptySet(), {}, {}, {}, {}) }
         shot("06_pose_detail") { PoseDetailScreen(c, "p_stand_arms_crossed_tight", "p_stand_arms_crossed_loose", PoseBookmark("p_stand_arms_crossed_tight", "", 0), {}, {}, {}, {}) }
         shot("06_pose_detail_side", true) { PoseDetailScreen(c, "p_stand_slumped_side", null, null, {}, {}, {}, {}) }
+        shot("06_pose_detail_pair") { PoseDetailScreen(c, "p_pair_handshake", null, null, {}, {}, {}, {}) }
+        shot("06_pose_detail_lectern") { PoseDetailScreen(c, "p_pro_lectern", null, null, {}, {}, {}, {}) }
+        shot("05_poselib_filtered") { PoseLibraryScreen(c, "", "together", emptySet(), {}, {}, {}, {}) }
     }
 
     @Test fun reviews() {

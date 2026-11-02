@@ -140,26 +140,39 @@ class ContentContractTest {
 
     @Test
     fun posesAreValidAndDescribed() {
-        val anchorProbe = PoseSolver.solve(pack.poses.first().params)
+        fun paramsOk(w: String, pp: com.nonverbal.mastery.data.models.PoseParams) {
+            check(pp.armPoseL in ArmPresets.all && pp.armPoseR in ArmPresets.all, w, "unknown arm preset ${pp.armPoseL}/${pp.armPoseR}")
+            check(pp.legStanceL in LegPresets.all && pp.legStanceR in LegPresets.all, w, "unknown leg preset ${pp.legStanceL}/${pp.legStanceR}")
+            check(pp.handShapeL in HandShape.ids && pp.handShapeR in HandShape.ids, w, "unknown hand shape ${pp.handShapeL}/${pp.handShapeR}")
+        }
         pack.poses.forEach { p ->
             val w = "pose ${p.id}"
             check(words(p.desc) >= 25, w, "desc must describe the pose in prose (≥25 words)")
             check(p.title.isNotBlank(), w, "needs a plate title")
-            check(p.params.armPoseL in ArmPresets.all && p.params.armPoseR in ArmPresets.all, w, "unknown arm preset")
-            check(p.params.legStanceL in LegPresets.all && p.params.legStanceR in LegPresets.all, w, "unknown leg preset")
-            check(p.params.handShapeL in HandShape.ids && p.params.handShapeR in HandShape.ids, w, "unknown hand shape")
+            check(p.theme in KNOWN_THEMES, w, "unknown theme '${p.theme}'")
+            paramsOk(w, p.params)
+            p.companions.forEachIndexed { i, c -> paramsOk("$w companion $i", c.params) }
             check(p.annotations.size <= 4, w, "at most 4 annotations")
+            val scene = PoseSolver.solveScene(p)
             p.annotations.forEach { a ->
-                check(anchorProbe.anchor(a.at) != null, w, "unknown anchor '${a.at}'")
+                check(scene.anchor(a.at) != null, w, "unknown anchor '${a.at}'")
                 check(a.color in setOf("accent-warm", "accent-cool", "do-green", "don't-red"), w, "unknown colour '${a.color}'")
             }
-            val sk = PoseSolver.solve(p.params)
-            val pts = listOf(sk.head, sk.left.hand.wrist, sk.right.hand.wrist, sk.left.knee, sk.right.knee, sk.left.foot.toe)
-            check(pts.all { !it.x.isNaN() && !it.y.isNaN() && !it.z.isNaN() }, w, "solver produced NaN")
+            scene.figures.forEach { sk ->
+                val pts = listOf(sk.head, sk.left.hand.wrist, sk.right.hand.wrist, sk.left.knee, sk.right.knee, sk.left.foot.toe)
+                check(pts.all { !it.x.isNaN() && !it.y.isNaN() && !it.z.isNaN() }, w, "solver produced NaN")
+                check(sk.left.foot.toe.y > -1f && sk.right.foot.toe.y > -1f, w, "a foot goes through the floor")
+            }
         }
         val ids = pack.poses.map { it.id }
         check(ids.size == ids.toSet().size, "poses", "duplicate pose ids")
+        check(pack.poses.size >= 120, "poses", "the library should hold about 120 poses (has ${pack.poses.size})")
         assertTrue("Pose library problems:\n" + problems.joinToString("\n"), problems.isEmpty())
+    }
+
+    private companion object {
+        val KNOWN_THEMES = setOf("stance", "arms", "self-touch", "head", "posture", "gesture", "seated", "walking", "breath",
+            "grief", "professional", "greeting", "together")
     }
 
     @Test

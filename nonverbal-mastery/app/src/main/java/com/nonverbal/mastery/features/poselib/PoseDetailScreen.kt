@@ -106,14 +106,15 @@ fun PoseDetailScreen(
     val yaw by animateFloatAsState(yawFor(Views[viewIndex].first), enterSpec(420), label = "yaw")
     var morph by remember(poseId, compareWith) { mutableFloatStateOf(0f) }
 
-    val a = remember(pose) { PoseSolver.solve(pose.params) }
-    val b = remember(other) { other?.let { PoseSolver.solve(it.params) } }
-    val skeleton = (if (b != null && morph > 0f) a.lerp(b, morph) else a).copy(yaw = yaw)
+    val a = remember(pose) { PoseSolver.solveScene(pose) }
+    val b = remember(other) { other?.let { PoseSolver.solveScene(it) } }
+    val scene = (if (b != null && morph > 0f) a.lerp(b, morph) else a).copy(yaw = yaw)
     val frame = remember(a, b) {
-        val fa = PoseRenderer.frameOf(a.copy(yaw = 0f))
-        val fb = b?.let { PoseRenderer.frameOf(it.copy(yaw = 0f)) }
-        val side = PoseRenderer.frameOf(a.copy(yaw = 90f))
-        (fb?.let { fa.union(it) } ?: fa).union(side)
+        // One frame for every angle, so the figure does not jump in size as it turns.
+        val angles = listOf(0f, 35f, 90f, 180f)
+        angles.map { y -> PoseRenderer.frameOf(a.copy(yaw = y)) }
+            .plus(if (b != null) angles.map { y -> PoseRenderer.frameOf(b.copy(yaw = y)) } else emptyList())
+            .reduce { x, y -> x.union(y) }
     }
     val saved = bookmark != null
 
@@ -132,7 +133,7 @@ fun PoseDetailScreen(
                     .semantics { contentDescription = pose.accessibleDescription() },
             ) {
                 PoseFigure(pose, Modifier.fillMaxSize(), markers = if (morph < 0.5f) MarkerMode.Numbered else MarkerMode.None,
-                    skeleton = skeleton, frame = frame, decorative = true)
+                    scene = scene, frame = frame, decorative = true)
             }
             SegmentedTabs(Views.map { TabSpec(it.second) }, viewIndex, { viewIndex = it }, Modifier.padding(top = Space.x2))
             if (other != null && b != null) {

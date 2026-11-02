@@ -78,12 +78,18 @@ class PoseSearchViewModel(private val c: AppContainer) : ViewModel() {
 
 val ThemeNames = linkedMapOf(
     "stance" to "Stance",
+    "posture" to "Posture",
     "arms" to "Arms",
     "self-touch" to "Self-touch",
     "head" to "Head & gaze",
-    "posture" to "Posture",
     "gesture" to "Gesture",
     "seated" to "Seated",
+    "walking" to "Walking",
+    "breath" to "Breath",
+    "grief" to "Grief",
+    "professional" to "At work",
+    "greeting" to "Greeting & culture",
+    "together" to "Together",
 )
 
 fun filterPoses(poses: List<Pose>, query: String, filter: String, bookmarked: Set<String>): List<Pose> {
@@ -123,7 +129,11 @@ fun PoseLibraryScreen(
     val colors = Nv.colors
     val all = curriculum.pack.poses
     val shown = filterPoses(all, query, filter, bookmarked)
-    val grouped = if (filter == "all" && query.isBlank()) shown.groupBy { it.theme } else mapOf("" to shown)
+    val grouped = if (filter == "all" && query.isBlank()) {
+        // Library order follows the theme list, not the order poses were authored in.
+        val order = ThemeNames.keys.toList()
+        shown.groupBy { it.theme }.toList().sortedBy { (t, _) -> order.indexOf(t).let { if (it < 0) Int.MAX_VALUE else it } }.toMap()
+    } else mapOf("" to shown)
 
     Column(Modifier.fillMaxSize().background(colors.background)) {
         TopBar(title = "Pose library", onBack = onBack)

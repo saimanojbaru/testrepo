@@ -35,7 +35,7 @@ import com.nonverbal.mastery.design.pose.FigureFrame
 import com.nonverbal.mastery.design.pose.FigureGeometry
 import com.nonverbal.mastery.design.pose.PoseRenderer
 import com.nonverbal.mastery.design.pose.PoseSolver
-import com.nonverbal.mastery.design.pose.Skeleton
+import com.nonverbal.mastery.design.pose.Scene
 import com.nonverbal.mastery.design.theme.Nv
 import com.nonverbal.mastery.design.tokens.Inter
 import com.nonverbal.mastery.design.tokens.NvColors
@@ -54,6 +54,7 @@ data class FigurePalette(
     val line: Color,
     val face: Color,
     val prop: Color,
+    val panel: Color,
     val ground: Color,
     val markerRing: Color,
 ) {
@@ -64,6 +65,7 @@ data class FigurePalette(
             line = c.figureLine,
             face = if (c.isDark) lerp(c.figureFill, c.ink, 0.13f) else lerp(c.figureFill, c.surface, 0.42f),
             prop = c.inkFaint.copy(alpha = 0.55f),
+            panel = lerp(c.surface, c.divider, 0.55f),
             ground = c.divider,
             markerRing = c.surface,
         )
@@ -80,8 +82,8 @@ fun Pose.accessibleDescription(): String = buildString {
 }.trim()
 
 @Composable
-fun rememberSkeleton(pose: Pose, view: String? = null): Skeleton =
-    remember(pose, view) { PoseSolver.solve(pose.params, view) }
+fun rememberScene(pose: Pose, view: String? = null): Scene =
+    remember(pose, view) { PoseSolver.solveScene(pose, view) }
 
 /**
  * A drawn figure. Filled silhouettes with per-limb hairlines (so arms crossing the body stay
@@ -96,7 +98,7 @@ fun PoseFigure(
     markers: MarkerMode = MarkerMode.Dots,
     view: String? = null,
     frame: FigureFrame? = null,
-    skeleton: Skeleton? = null,
+    scene: Scene? = null,
     decorative: Boolean = false,
     tint: Color? = null,
 ) {
@@ -104,10 +106,11 @@ fun PoseFigure(
     val palette = remember(colors, tint) {
         FigurePalette.from(colors).let { if (tint != null) it.copy(line = tint) else it }
     }
-    val solved = skeleton ?: rememberSkeleton(pose, view)
+    val solved = scene ?: rememberScene(pose, view)
     val measurer = rememberTextMeasurer()
     val numberStyle = remember { TextStyle(fontFamily = Inter, fontWeight = FontWeight.SemiBold, fontSize = 10.sp) }
     val markerColors = pose.annotations.map { annotationColor(it.color, colors) }
+    val gazeColor = colors.live
     val description = remember(pose) { pose.accessibleDescription() }
 
     val semantics = if (decorative) Modifier else Modifier.semantics {
@@ -119,10 +122,11 @@ fun PoseFigure(
         modifier
             .then(semantics)
             .drawWithCache {
-                val geo = PoseRenderer.build(solved, size, frame ?: PoseRenderer.frameOf(solved))
+                val geo = PoseRenderer.build(solved, size, frame ?: PoseRenderer.frameOf(solved), gaze = pose.showGaze)
                 val anchors = pose.annotations.map { geo.anchor(it.at) }
                 onDrawBehind {
                     drawFigure(geo, palette, style, dimmed)
+                    geo.gaze?.let { (a, b) -> drawGaze(a, b, gazeColor) }
                     if (markers != MarkerMode.None) {
                         anchors.forEachIndexed { i, a ->
                             if (a != null) drawMarker(a, markerColors[i], palette.markerRing, i + 1, markers, measurer, numberStyle)
@@ -137,30 +141,34 @@ fun DrawScope.drawFigure(geo: FigureGeometry, p: FigurePalette, style: FigureSty
     val hair = 0.9.dp.toPx()
     val draw: DrawScope.() -> Unit = {
         // Ground and props first, quietly, inside the same layer so a dimmed figure still hides them.
-        drawOval(
-            p.ground,
-            topLeft = Offset(geo.groundCenter.x - geo.groundRadiusX, geo.groundCenter.y - geo.groundRadiusY),
-            size = Size(geo.groundRadiusX * 2, geo.groundRadiusY * 2),
-        )
+        for (g in geo.grounds) {
+            drawOval(p.ground, topLeft = Offset(g.center.x - g.rx, g.center.y - g.ry), size = Size(g.rx * 2, g.ry * 2))
+        }
         for ((a, b) in geo.propLines) drawLine(p.prop, a, b, strokeWidth = 1.2.dp.toPx(), cap = StrokeCap.Round)
         when (style) {
             FigureStyle.Filled -> for (g in geo.groups) {
+                if (g.panel) {
+                    drawPath(g.path, p.panel)
+                    drawPath(g.path, p.prop, style = Stroke(1.2.dp.toPx(), join = StrokeJoin.Round))
+                    continue
+                }
                 drawPath(g.path, if (g.far) p.far else p.fill)
                 drawPath(g.path, if (g.far) p.line.copy(alpha = 0.55f) else p.line, style = Stroke(hair, join = StrokeJoin.Round))
+                // The face plane is drawn with its own head, so a hand in front of the face covers it.
+                g.face?.let { f ->
+                    rotate(f.rotationDeg, f.center) {
+                        drawOval(
+                            p.face.copy(alpha = 0.85f * f.strength),
+                            topLeft = Offset(f.center.x - f.rx, f.center.y - f.ry),
+                            size = Size(f.rx * 2, f.ry * 2),
+                        )
+                    }
+                }
             }
             FigureStyle.Outline -> drawPath(
                 geo.silhouette, p.line,
                 style = Stroke(1.4.dp.toPx(), cap = StrokeCap.Round, join = StrokeJoin.Round),
             )
-        }
-        if (style == FigureStyle.Filled) geo.face?.let { f ->
-            rotate(f.rotationDeg, f.center) {
-                drawOval(
-                    p.face.copy(alpha = 0.85f * f.strength),
-                    topLeft = Offset(f.center.x - f.rx, f.center.y - f.ry),
-                    size = Size(f.rx * 2, f.ry * 2),
-                )
-            }
         }
     }
     if (dimmed) {
@@ -171,6 +179,14 @@ fun DrawScope.drawFigure(geo: FigureGeometry, p: FigurePalette, style: FigureSty
             canvas.restore()
         }
     } else draw()
+}
+
+/** The line of gaze: dashed from the eyes, ending in a small open circle. */
+fun DrawScope.drawGaze(a: Offset, b: Offset, color: Color) {
+    val w = 1.3.dp.toPx()
+    drawLine(color.copy(alpha = 0.75f), a, b, strokeWidth = w, cap = StrokeCap.Round,
+        pathEffect = androidx.compose.ui.graphics.PathEffect.dashPathEffect(floatArrayOf(5.dp.toPx(), 4.dp.toPx())))
+    drawCircle(color.copy(alpha = 0.75f), radius = 3.dp.toPx(), center = b, style = Stroke(w))
 }
 
 fun DrawScope.drawMarker(

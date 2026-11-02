@@ -68,7 +68,7 @@ fun PosePairView(
     val colors = Nv.colors
     if (dont == null || doPose == null) return
     val frame = remember(dont, doPose) {
-        PoseRenderer.frameOf(PoseSolver.solve(dont.params)).union(PoseRenderer.frameOf(PoseSolver.solve(doPose.params)))
+        PoseRenderer.frameOf(PoseSolver.solveScene(dont)).union(PoseRenderer.frameOf(PoseSolver.solveScene(doPose)))
     }
 
     Column(modifier.fillMaxWidth()) {

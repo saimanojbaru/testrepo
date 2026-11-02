@@ -1,6 +1,6 @@
 # Content progress
 
-_Last updated: Phase 1 (engine) complete._
+_Last updated: Phase 2 (pose library) complete._
 
 ## Written
 
@@ -14,6 +14,26 @@ _Last updated: Phase 1 (engine) complete._
 Also written: the ethics statement *On Reading People* (1,205 words), crisis resources for 11 regions plus a worldwide directory, introductions for all six parts, and the full 90-chapter outline.
 
 Run `./gradlew testDebugUnitTest --tests '*ContentContractTest*' -i` for current counts.
+
+## Pose library (Phase 2: done)
+
+125 poses, each with a plate title, a theme, a prose description written to stand without the image, parameters and up to four annotations.
+
+| Theme | Poses | | Theme | Poses |
+|---|---|---|---|---|
+| Stance | 11 | | Walking | 6 |
+| Posture | 10 | | Breath | 5 |
+| Arms | 10 | | Grief | 5 |
+| Self-touch | 13 | | At work | 8 |
+| Head & gaze | 10 | | Greeting & culture | 9 |
+| Gesture | 9 | | Together (2–3 figures) | 12 |
+| Seated | 17 | | | |
+
+Every pose was reviewed visually in Paper and Ink (`./gradlew recordPaparazziDebug --tests '*PoseSheetTest*'` renders all of them, six to a page). The contract test checks presets, anchors (including companion anchors such as `b:head`), descriptions of at least 25 words, known themes, and that no foot goes through the floor.
+
+To add a pose: append it to `poses.json`. Use `view` (`front`, `three-quarter`, `side`, `back`, or degrees) to choose the angle that makes the point visible. Most front-on poses that move along the depth axis, such as pointing or leaning, read better in profile. Then render the sheet and look at it.
+
+Still missing, for later parts: carrying or holding a child; lying down; a seated cross-legged floor posture; a figure using a wheelchair or a cane (Part V needs these, and they should be drawn with care, not as props); and true facial expression, which the faceless figure cannot show by design. The face chapter (1.7) will need its own drawn plates.
 
 ## Read this before Phase 3: the page target and the contract disagree
 
@@ -40,7 +60,6 @@ Phase 1 kept the contract and did not pad. This needs a decision before Phase 3.
 
 ## Next
 
-- **Phase 2:** expand `poses.json` from 30 to ~120. Needed first: walking, two-figure and group scenes (proxemics, greetings, side-by-side), breathing states, grief postures, video-call framing, cultural variants. The leg-preset library needs ~10 more stances for the ~30 the brief asks for.
 - **Phase 3:** Part VI, The Discipline (15 chapters). Its 6.6 *The Ethics of Reading People* should extend the ethics statement, not repeat it.
 - Then Parts I (remaining 12), II (with the 2.13 safety gate: `safetyGate` must be set, and the test enforces ≥5 regions), III, IV and V.
 

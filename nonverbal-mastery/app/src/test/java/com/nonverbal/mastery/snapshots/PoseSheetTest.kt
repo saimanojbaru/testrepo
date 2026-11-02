@@ -44,7 +44,7 @@ class PoseSheetTest {
                         row.forEach { pose ->
                             Column(Modifier.weight(1f)) {
                                 Box(Modifier.fillMaxWidth().aspectRatio(0.7f).background(Nv.colors.surface)) {
-                                    PoseFigure(pose, Modifier.fillMaxSize(), markers = MarkerMode.None)
+                                    PoseFigure(pose, Modifier.fillMaxSize(), markers = MarkerMode.Dots)
                                 }
                                 Text(pose.title, style = Nv.type.uiSmall, color = Nv.colors.inkSecondary, maxLines = 2)
                             }
@@ -56,8 +56,8 @@ class PoseSheetTest {
         }
     }
 
-    @Test fun poseSheetLight() = (0..4).forEach { sheet(false, it) }
-    @Test fun poseSheetDark() = sheet(true, 0)
+    @Test fun poseSheetLight() = (0..(poses.size - 1) / 6).forEach { sheet(false, it) }
+    @Test fun poseSheetDark() = listOf(0, 15, 19).forEach { sheet(true, it) }
 
     private companion object {
         val json = Json { ignoreUnknownKeys = true }

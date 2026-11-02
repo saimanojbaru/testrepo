@@ -835,5 +835,2630 @@
     "color": "accent-cool"
    }
   ]
+ },
+ {
+  "id": "p_stand_wide_planted",
+  "title": "Planted, wide",
+  "theme": "stance",
+  "desc": "Standing figure with the feet set wider than the shoulders and planted flat, knees soft, arms loose at the sides, spine upright. A stable base that claims floor space. People stand like this when they feel secure, when they are bracing for confrontation, and when a long day has made their back ache.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_wide",
+   "legStanceR": "stand_wide",
+   "footAngleL": 4,
+   "footAngleR": 4
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "A base wider than the shoulders",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_narrow_closed",
+  "title": "Feet together, made small",
+  "theme": "stance",
+  "desc": "Standing figure with the feet together, arms held close against the sides, shoulders slightly raised and rounded, head a little lowered. The body occupies as little floor as it can. It can belong to someone shy, cold, deferential, or simply standing in a crowded lift.",
+  "params": {
+   "armPoseL": "hang_tight",
+   "armPoseR": "hang_tight",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_narrow",
+   "legStanceR": "stand_narrow",
+   "shoulderHeightL": 1.2,
+   "shoulderHeightR": 1.2,
+   "shoulderProtractionL": 1.5,
+   "shoulderProtractionR": 1.5,
+   "headPitch": 6
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "Feet together: a narrow footprint",
+    "color": "accent-cool"
+   },
+   {
+    "at": "shoulders",
+    "text": "Shoulders drawn up and in",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_ankles_crossed",
+  "title": "Standing, ankles crossed",
+  "theme": "stance",
+  "desc": "Standing figure with the weight on the right leg and the left foot crossed in front of it at the ankle, hands in pockets. A crossed stance is hard to hold if you need to move quickly, so observers often read it as comfort; people also adopt it out of habit or to ease a sore hip.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "pocket",
+   "handShapeL": "hidden",
+   "handShapeR": "hidden",
+   "legStanceL": "stand_cross",
+   "legStanceR": "stand_weight",
+   "weightShift": -0.7
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "One ankle crossed in front of the other",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_neutral_three_quarter",
+  "title": "At rest, three-quarter",
+  "theme": "stance",
+  "desc": "The standing reference figure turned three-quarters to the viewer: feet hip-width, weight even, arms hanging, spine vertical. From this angle, rounding of the shoulders and lean of the trunk become visible in a way they are not from the front.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Shoulders level, neither rolled nor pinned",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_neutral_side",
+  "title": "At rest, in profile",
+  "theme": "stance",
+  "desc": "The standing reference figure in profile, facing right, with ear, shoulder, hip and ankle roughly stacked and the arms hanging naturally. Use it as the line against which leaning, slumping and bracing in profile are measured.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Ear roughly over the shoulder",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hips",
+    "text": "Hips over the ankles",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_neutral_back",
+  "title": "At rest, from behind",
+  "theme": "stance",
+  "desc": "The standing reference figure seen from behind: feet hip-width, arms at the sides, shoulders level. From behind, the line of the shoulders and the angle of the head carry most of what can be seen, which is why people so often read mood in a back turned to them.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "back"
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "The shoulder line carries the mood",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_heels_up",
+  "title": "Up on the toes",
+  "theme": "stance",
+  "desc": "Standing figure lifted onto the balls of both feet with the hands clasped behind the back, caught mid-rock from heel to toe. Rocking like this appears in waiting, impatience, pleasure and boredom alike; only its timing and this person's habits can separate them.",
+  "params": {
+   "armPoseL": "behind_back",
+   "armPoseR": "behind_back",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "stand_heel_up",
+   "legStanceR": "stand_heel_up",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "Heels lifted off the floor",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_arms_behind_back",
+  "title": "Hands behind the back",
+  "theme": "arms",
+  "desc": "Standing figure with both hands clasped behind the back at the base of the spine, chest open, weight even. Common in people inspecting something, waiting patiently or holding authority in a room. It also hides the hands completely, which in another person may be modesty, habit, or cold fingers.",
+  "params": {
+   "armPoseL": "behind_back",
+   "armPoseR": "behind_back",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "chest",
+    "text": "Front of the body left open",
+    "color": "accent-cool"
+   },
+   {
+    "at": "left-elbow",
+    "text": "Elbows angled back",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_hands_clasped_front",
+  "title": "Hands clasped low",
+  "theme": "arms",
+  "desc": "Standing figure with both hands loosely clasped in front of the hips, elbows relaxed, shoulders level. A waiting posture at ceremonies, in queues and in group photographs. It shields the front of the body a little and gives the hands somewhere to be.",
+  "params": {
+   "armPoseL": "clasp_low",
+   "armPoseR": "clasp_low",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Hands clasped low in front",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_one_hand_pocket",
+  "title": "One hand in a pocket",
+  "theme": "arms",
+  "desc": "Standing figure with the left hand in a trouser pocket and the right forearm raised in an easy gesture, weight resting on the left leg. A relaxed speaking posture for many people: one hand engaged, the other parked.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "gesture_mid",
+   "handShapeL": "hidden",
+   "handShapeR": "open",
+   "legStanceL": "stand_weight",
+   "legStanceR": "stand_relaxed_out",
+   "weightShift": 0.5
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "The free hand illustrates",
+    "color": "do-green"
+   },
+   {
+    "at": "left-hip",
+    "text": "The other hand parked in a pocket",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_arms_crossed_side",
+  "title": "Arms folded, in profile",
+  "theme": "arms",
+  "desc": "Standing figure seen in profile, facing right, with the arms folded across the chest. From the side the forearms stack in front of the ribs like a shelf, and you can see whether the shoulders are lifted or resting. Here they rest.",
+  "params": {
+   "armPoseL": "cross_over",
+   "armPoseR": "cross_under",
+   "handShapeL": "relaxed",
+   "handShapeR": "tucked",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "arms",
+    "text": "Forearms folded in front of the ribs",
+    "color": "accent-cool"
+   },
+   {
+    "at": "shoulders",
+    "text": "Shoulders resting, not lifted",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_one_hand_hip",
+  "title": "One hand on the hip",
+  "theme": "arms",
+  "desc": "Standing figure with the left hand resting on the hip, elbow out, weight settled on the left leg and the right knee soft. A casual, half-open stance seen in conversation and in waiting, and in anyone whose lower back is tired.",
+  "params": {
+   "armPoseL": "hips",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_weight",
+   "legStanceR": "stand_relaxed_out",
+   "weightShift": 0.7
+  },
+  "annotations": [
+   {
+    "at": "left-elbow",
+    "text": "One elbow out to the side",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_wrist_grip",
+  "title": "Holding one's own wrist",
+  "theme": "arms",
+  "desc": "Standing figure with the left hand gripping the right wrist in front of the body, arms low. Holding your own wrist is a quiet mix of restraint and comfort: at a funeral it reads as composure, in a meeting it may be nerves, and in many people it is simply where the hands go.",
+  "params": {
+   "armPoseL": "grip_other_wrist",
+   "armPoseR": "clasp_low_held",
+   "handShapeL": "grip",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "One hand holding the other wrist",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_hand_mouth",
+  "title": "Hand over the mouth",
+  "theme": "self-touch",
+  "desc": "Standing figure with the left hand raised across the mouth, fingers along the cheek, elbow down. People cover the mouth when shocked, when thinking before speaking, when holding back a laugh or a word, and when they cough. The timing carries the meaning; the hand alone does not.",
+  "params": {
+   "armPoseL": "mouth_cover",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 4
+  },
+  "annotations": [
+   {
+    "at": "mouth",
+    "text": "Hand across the mouth",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_hand_eyes",
+  "title": "Hand over the eyes",
+  "theme": "self-touch",
+  "desc": "Standing figure with the left hand covering the eyes and the head tipped slightly forward. A gesture of blocking out, seen in grief, embarrassment, exhaustion and disbelief, and also in someone with a headache or tired eyes after hours at a screen.",
+  "params": {
+   "armPoseL": "eyes_cover",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 10
+  },
+  "annotations": [
+   {
+    "at": "eyes",
+    "text": "Palm across the eyes",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_brow_rub",
+  "title": "Rubbing the forehead",
+  "theme": "self-touch",
+  "desc": "Standing figure with the fingertips of the right hand pressed to the forehead and the head bowed slightly into the touch. A common self-soothing and thinking gesture that often accompanies effortful recall, a mistake, a long day, or a headache.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "brow_rub",
+   "handShapeL": "relaxed",
+   "handShapeR": "rub",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 9
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Fingertips at the brow",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_head_scratch",
+  "title": "Scratching the head",
+  "theme": "self-touch",
+  "desc": "Standing figure with the right hand at the side of the head, fingers in the hair, elbow raised. In cartoons it means puzzlement; in life it is just as often an itch, a habit, or a way to fill a pause while thinking.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "head_scratch",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headTilt": -6
+  },
+  "annotations": [
+   {
+    "at": "right-elbow",
+    "text": "Elbow lifted beside the head",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_collar",
+  "title": "Fingers at the collar",
+  "theme": "self-touch",
+  "desc": "Standing figure with the right hand at the side of the neck, fingers tugging at the collar. Adjusting the collar is a classic self-touch that can rise with heat, embarrassment or strain, and also with a tight shirt.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "collar",
+   "handShapeL": "relaxed",
+   "handShapeR": "pinch",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "neck",
+    "text": "Fingers at the collar",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_stand_forearm_stroke",
+  "title": "Stroking a forearm",
+  "theme": "self-touch",
+  "desc": "Standing figure with the left hand stroking the right forearm, which hangs close to the body. Slow, repeated stroking of the arm soothes, and it appears in waiting rooms and difficult conversations, as well as in someone who is simply cold.",
+  "params": {
+   "armPoseL": "forearm_stroke",
+   "armPoseR": "hang_tight",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hand stroking the forearm",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_leg_cleanse",
+  "title": "Palms down the thighs",
+  "theme": "self-touch",
+  "desc": "Seated figure leaning slightly forward with both palms pressed flat on the thighs, as if sliding them toward the knees. The movement wipes damp palms and settles the body at once; it often comes just before speaking, standing up, or answering something difficult.",
+  "params": {
+   "armPoseL": "thigh_slide",
+   "armPoseR": "thigh_slide",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "spineLean": 10
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Palms pressed down the thighs",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_jaw_rub",
+  "title": "Seated, rubbing the jaw",
+  "theme": "self-touch",
+  "desc": "Seated figure with the left hand rubbing along the jaw and the right hand resting on the thigh. Rubbing and stroking the jaw shows up while weighing a decision and while hearing something unwelcome, and in people who simply have stubble to rub.",
+  "params": {
+   "armPoseL": "face_cheek",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "rub",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "spineLean": 6,
+   "headTilt": 4
+  },
+  "annotations": [
+   {
+    "at": "chin",
+    "text": "Hand working along the jaw",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_gaze_direct",
+  "title": "Direct gaze",
+  "theme": "head",
+  "desc": "Standing figure seen at three-quarters, head level and facing straight ahead, with the line of gaze drawn. Direct gaze holds attention in many cultures and reads as a challenge in others. How long it lasts, and whether it is returned, matters more than the gaze itself.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "eyes",
+    "text": "Gaze level and straight ahead",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_gaze_aside",
+  "title": "Glance aside",
+  "theme": "head",
+  "desc": "Standing figure with the body facing forward and the head turned about forty degrees to its left, gaze following. A glance aside can be distraction, a check on a sound, a wish to leave, or a break from eye contact that lets someone think.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headTurn": 40
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head turned, body still forward",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_gaze_down_away",
+  "title": "Gaze down and away",
+  "theme": "head",
+  "desc": "Standing figure with the head turned to its right and dropped, gaze falling to the floor off to one side. People look down and away when remembering, feeling ashamed, deferring, or giving someone room; studies of gaze aversion find it rises with mental effort.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headTurn": -28,
+   "headPitch": 24
+  },
+  "annotations": [
+   {
+    "at": "eyes",
+    "text": "Gaze to the floor, off to one side",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_gaze_up",
+  "title": "Gaze raised",
+  "theme": "head",
+  "desc": "Standing figure with the chin lifted and the gaze raised above eye level, slightly to one side, as many people do while recalling or composing something. Popular claims that the direction of an upward glance shows lying or truth-telling have not held up when tested.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter",
+   "headPitch": -18,
+   "headTurn": 14
+  },
+  "annotations": [
+   {
+    "at": "eyes",
+    "text": "Gaze lifted above the horizon",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_gaze_over_shoulder",
+  "title": "Looking over the shoulder",
+  "theme": "head",
+  "desc": "Standing figure seen from behind, body facing away, head turned far over the left shoulder to look back. The body is going one way and attention another: a backward glance on leaving, a check behind, or a name called from across a room.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "back",
+   "headTurn": 72,
+   "torsoTurn": 12
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head turned back over the shoulder",
+    "color": "accent-cool"
+   },
+   {
+    "at": "feet",
+    "text": "Feet still facing away",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_head_chin_raised",
+  "title": "Chin raised",
+  "theme": "head",
+  "desc": "Standing figure in profile with the chin lifted so the face tilts upward and the throat is exposed. A raised chin is read as pride or defiance in some settings and as attention to someone taller in others. It is also how people look at a screen through the lower half of their glasses.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "headPitch": -17
+  },
+  "annotations": [
+   {
+    "at": "chin",
+    "text": "Chin lifted, throat open",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_head_chin_tucked",
+  "title": "Chin tucked",
+  "theme": "head",
+  "desc": "Standing figure in profile with the chin drawn down and back toward the chest, eyes looking out from under the brow. A tucked chin protects the throat and is common in uncertainty, cold and concentration; it is also a posture correction many people practise on purpose.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "headPitch": 15,
+   "spineCurve": 4
+  },
+  "annotations": [
+   {
+    "at": "chin",
+    "text": "Chin drawn down and in",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_head_nod_low",
+  "title": "The bottom of a nod",
+  "theme": "head",
+  "desc": "Standing figure caught at the low point of a nod, chin dropped toward the chest, seen at three-quarters. Nods regulate a conversation: slow single nods often mean go on, quick repeated ones often mean I have it, move along. Their meaning depends on culture and on the person's usual rhythm.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter",
+   "headPitch": 20
+  },
+  "annotations": [
+   {
+    "at": "chin",
+    "text": "Head dropping in a nod",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_posture_braced_upright",
+  "title": "Braced upright",
+  "theme": "posture",
+  "desc": "Standing figure in profile held stiffly upright: chest pushed forward, shoulders pulled hard back, chin tucked, arms pinned to the sides. Compared with an easy stacked posture it costs visible effort, and it is common in people trying to look composed under scrutiny.",
+  "params": {
+   "armPoseL": "hang_tight",
+   "armPoseR": "hang_tight",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "spineCurve": -9,
+   "shoulderProtractionL": -3,
+   "shoulderProtractionR": -3,
+   "headPitch": 6,
+   "chestBreath": 0.6
+  },
+  "annotations": [
+   {
+    "at": "chest",
+    "text": "Chest pushed forward",
+    "color": "accent-warm"
+   },
+   {
+    "at": "upper-back",
+    "text": "Shoulder blades squeezed back",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_posture_sway_back",
+  "title": "Hanging on the hips",
+  "theme": "posture",
+  "desc": "Standing figure in profile with the hips pushed forward and the upper body leaning back over them, upper back rounded. Sometimes called sway-back, it is a low-effort way to stand when tired, and to someone who does not know the person it can look like nonchalance or disengagement.",
+  "params": {
+   "armPoseL": "hang_forward",
+   "armPoseR": "hang_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "spineLean": -9,
+   "spineCurve": 13,
+   "shoulderProtractionL": 2,
+   "shoulderProtractionR": 2
+  },
+  "annotations": [
+   {
+    "at": "hips",
+    "text": "Hips pushed forward",
+    "color": "accent-cool"
+   },
+   {
+    "at": "upper-back",
+    "text": "Trunk leaning back over them",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_posture_lean_in_stand",
+  "title": "Leaning in, standing",
+  "theme": "posture",
+  "desc": "Standing figure seen at three-quarters, leaning forward from the hips with one foot slightly ahead, as if drawn toward a speaker. Leaning toward someone often goes with interest; it also happens in noisy rooms and with listeners who are hard of hearing.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_forward_step",
+   "legStanceR": "stand",
+   "view": "three-quarter",
+   "spineLean": 11,
+   "headPitch": -6
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Trunk inclined forward",
+    "color": "accent-cool"
+   },
+   {
+    "at": "left-foot",
+    "text": "One foot stepping in",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_posture_lean_away_stand",
+  "title": "Leaning away, standing",
+  "theme": "posture",
+  "desc": "Standing figure seen at three-quarters with the weight shifted onto the back foot and the trunk leaning slightly away. Leaning back can mark doubt, distaste or a wish for more room; it is also what people do to take in something large, or to get out of the way of someone's coffee.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand_step_back",
+   "view": "three-quarter",
+   "spineLean": -8,
+   "weightShift": -0.5,
+   "headPitch": -4
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Trunk tilted back",
+    "color": "accent-cool"
+   },
+   {
+    "at": "right-foot",
+    "text": "Weight moving to the rear foot",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_posture_contracted",
+  "title": "Drawn in",
+  "theme": "posture",
+  "desc": "Standing figure drawn in on itself: arms wrapped tightly across the chest, shoulders raised and rounded, head down, feet together. The body takes up as little space as it can. Cold, fear, shame and fatigue can all produce it; so can a crowded train.",
+  "params": {
+   "armPoseL": "cross_tight_over",
+   "armPoseR": "cross_tight_under",
+   "handShapeL": "grip",
+   "handShapeR": "tucked",
+   "legStanceL": "stand_narrow",
+   "legStanceR": "stand_narrow",
+   "shoulderHeightL": 2,
+   "shoulderHeightR": 2,
+   "shoulderProtractionL": 3,
+   "shoulderProtractionR": 3,
+   "headPitch": 15,
+   "spineCurve": 8
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Shoulders raised and rolled in",
+    "color": "accent-warm"
+   },
+   {
+    "at": "head",
+    "text": "Head lowered",
+    "color": "accent-cool"
+   },
+   {
+    "at": "feet",
+    "text": "Feet together",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_point",
+  "title": "Pointing",
+  "theme": "gesture",
+  "desc": "Standing figure seen at three-quarters with the right arm extended and the index finger pointing ahead. Pointing directs attention efficiently; pointing at a person is rude or aggressive in many cultures, where an open hand or a tilt of the head is used instead.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "point_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "point",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Index finger extended",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_palm_down",
+  "title": "Palm down, settling",
+  "theme": "gesture",
+  "desc": "Standing figure seen at three-quarters with the right forearm out at waist height and the palm turned down, as in a settling or slowing gesture. Palm-down gestures often go with firm statements or requests to calm down; whether they feel reassuring or dismissive depends on the relationship and the tone.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "palm_down_low",
+   "handShapeL": "relaxed",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Palm facing the floor",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_shrug",
+  "title": "Shrug",
+  "theme": "gesture",
+  "desc": "Standing figure in a full shrug: shoulders raised, forearms out to the sides with the palms turned up, head tilted. A shrug usually says some version of I don't know or what can you do. A half shrug of one shoulder can slip out while someone states something they are unsure of.",
+  "params": {
+   "armPoseL": "shrug_palms",
+   "armPoseR": "shrug_palms",
+   "handShapeL": "palm_up",
+   "handShapeR": "palm_up",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "shoulderHeightL": 3.5,
+   "shoulderHeightR": 3.5,
+   "headTilt": 8
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Shoulders lifted",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Palms turned up",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_chop",
+  "title": "Edge-of-hand emphasis",
+  "theme": "gesture",
+  "desc": "Standing figure with the right forearm raised and the hand held flat and upright like a blade, as if cutting the air to mark a point. A beat gesture that rises with emphasis; speakers use it to separate items and to signal certainty.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "chop",
+   "handShapeL": "relaxed",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Hand held edge-on",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_wave",
+  "title": "Waving hello",
+  "theme": "gesture",
+  "desc": "Standing figure with the right arm raised beside the head, elbow bent, palm open and forward, as in a wave. Waves differ from place to place, side to side, up and down, palm in; in some countries a palm-out wave also means no.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "wave",
+   "handShapeL": "relaxed",
+   "handShapeR": "open",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Open palm raised",
+    "color": "do-green"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_hand_raised",
+  "title": "Hand raised high",
+  "theme": "gesture",
+  "desc": "Standing figure with the right arm raised straight up, palm forward, as in asking to speak or volunteering. The height of a raised hand often tracks urgency or confidence; a hand lifted only to the shoulder is the hesitant version.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "raise_hand",
+   "handShapeL": "relaxed",
+   "handShapeR": "open",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Arm raised overhead",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_steeple_stand",
+  "title": "Steepled hands, standing",
+  "theme": "gesture",
+  "desc": "Standing figure with the fingertips of both hands pressed together in front of the chest, forming a steeple. Popular books call steepling a sign of confidence. In practice it is a common thinking and listening posture that tells you little until you know how often this person uses it.",
+  "params": {
+   "armPoseL": "steeple",
+   "armPoseR": "steeple",
+   "handShapeL": "steeple",
+   "handShapeR": "steeple",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Fingertips pressed together",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_gesture_arms_wide",
+  "title": "Arms wide",
+  "theme": "gesture",
+  "desc": "Standing figure with both arms swept out wide in front, palms up, as in describing something large or welcoming someone. Wide gestures tend to grow with enthusiasm and with the size of the room, and they vary a great deal between cultures and individuals.",
+  "params": {
+   "armPoseL": "arms_wide",
+   "armPoseR": "arms_wide",
+   "handShapeL": "open",
+   "handShapeR": "open",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Arms opened wide, palms up",
+    "color": "do-green"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_legs_crossed",
+  "title": "Legs crossed at the knee",
+  "theme": "seated",
+  "desc": "Seated figure with the left leg crossed over the right at the knee, the left foot hanging free, hands resting on the thighs. One of the commonest ways to sit in many Western settings. In parts of the Middle East and Southeast Asia, showing someone the sole of your foot is an insult.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit_cross_over",
+   "legStanceR": "sit"
+  },
+  "annotations": [
+   {
+    "at": "left-foot",
+    "text": "The sole of the crossed foot",
+    "color": "accent-warm"
+   },
+   {
+    "at": "knees",
+    "text": "Knee over knee",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_figure_four_upright",
+  "title": "Ankle on knee, upright",
+  "theme": "seated",
+  "desc": "Seated figure, upright, with the left ankle resting on the right knee and that knee out to the side, hands on the thighs. The so-called figure four takes up room and is common among men in relaxed settings; in formal or cross-cultural ones it can read as too casual.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit_ankle_on_knee",
+   "legStanceR": "sit"
+  },
+  "annotations": [
+   {
+    "at": "left-knee",
+    "text": "Knee out to the side",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_hands_behind_head",
+  "title": "Hands behind the head",
+  "theme": "seated",
+  "desc": "Seated figure leaning back with the fingers laced behind the head and the elbows spread wide, legs apart. It can be ease, a stretch after sitting too long, or a show of being unbothered. Who else is in the room usually decides how it lands.",
+  "params": {
+   "armPoseL": "hands_behind_head",
+   "armPoseR": "hands_behind_head",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "sit_wide",
+   "legStanceR": "sit_wide",
+   "spineLean": -12
+  },
+  "annotations": [
+   {
+    "at": "left-elbow",
+    "text": "Elbows spread wide",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_perched",
+  "title": "Perched on the edge",
+  "theme": "seated",
+  "desc": "Seated figure perched toward the front of the chair, back held clear of it, heels slightly lifted and hands on the thighs, as if ready to stand. Perching appears in eagerness and impatience, in people about to leave, and in those who were never offered a comfortable chair.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit_perch",
+   "legStanceR": "sit_perch",
+   "spineLean": 9,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "Heels lifted, weight forward",
+    "color": "accent-cool"
+   },
+   {
+    "at": "lower-back",
+    "text": "Back clear of the chair",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_slouched_low",
+  "title": "Slouched low",
+  "theme": "seated",
+  "desc": "Seated figure slid low in the chair, legs stretched out, back rounded, head sunk toward the chest. Slouching can be fatigue, boredom, comfort among friends, or a long day. To a teacher or an interviewer it often reads as disrespect, which is a judgment about norms, not about the person.",
+  "params": {
+   "armPoseL": "lap_clasp",
+   "armPoseR": "lap_clasp",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "sit_extended",
+   "legStanceR": "sit_extended_cross",
+   "spineLean": -20,
+   "spineCurve": 16,
+   "headPitch": 8,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "upper-back",
+    "text": "Rounded back, slid low",
+    "color": "accent-cool"
+   },
+   {
+    "at": "feet",
+    "text": "Legs stretched out",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_turned_toward",
+  "title": "Turned toward a neighbour",
+  "theme": "seated",
+  "desc": "Seated figure with the hips facing forward but the shoulders and head turned about thirty degrees to its left, as if toward someone in the next seat. How much of the body turns toward a person, and how quickly, is one of the clearer signs of where attention is going.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "torsoTurn": 28,
+   "headTurn": 10
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Shoulders turned toward the neighbour",
+    "color": "accent-cool"
+   },
+   {
+    "at": "knees",
+    "text": "Knees still facing forward",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_knee_hug",
+  "title": "Hugging a knee",
+  "theme": "seated",
+  "desc": "Seated figure with the left foot drawn up onto the seat and both arms wrapped around the raised knee, chin lowered toward it. A gathering, self-holding posture common in teenagers and in tired or sad adults, and also simply a comfortable way to sit at home.",
+  "params": {
+   "armPoseL": "knee_hug",
+   "armPoseR": "knee_hug",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "sit_knee_up",
+   "legStanceR": "sit",
+   "spineLean": 8,
+   "headPitch": 8,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Arms wrapped around the knee",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_phone",
+  "title": "Head down to a phone",
+  "theme": "seated",
+  "desc": "Seated figure with the head dropped forward and the gaze on a phone held in both hands above the lap, shoulders slightly rounded. Phone posture now accounts for much of what looks like withdrawal or low mood in public places; check what the hands are doing before reading the head.",
+  "params": {
+   "armPoseL": "phone_low",
+   "armPoseR": "phone_low",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "headPitch": 32,
+   "spineCurve": 10,
+   "shoulderProtractionL": 2,
+   "shoulderProtractionR": 2,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head dropped toward the screen",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Phone held in both hands",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_walk_stride",
+  "title": "Walking",
+  "theme": "walking",
+  "desc": "Figure in profile mid-stride: left foot forward and planted, right heel lifting behind, arms swinging opposite the legs. The reference walk. Pace, stride length and arm swing vary widely with height, age, footwear and mood.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "swing_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "Front heel down, back heel lifting",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_walk_brisk",
+  "title": "Brisk walk",
+  "theme": "walking",
+  "desc": "Figure in profile in a long, brisk stride with a slight forward lean and a full arm swing. A brisk walk often reads as purpose or confidence; it is also simply what people do when they are late.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "swing_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_long_forward",
+   "legStanceR": "walk_long_back",
+   "view": "side",
+   "spineLean": 6
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "A slight forward lean",
+    "color": "accent-cool"
+   },
+   {
+    "at": "feet",
+    "text": "A long stride",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_walk_slow_down",
+  "title": "Slow walk, head down",
+  "theme": "walking",
+  "desc": "Figure in profile taking a short step with the head down, shoulders rounded and the arms hanging without swinging. Pace slows and arm swing shrinks with fatigue, pain, low mood and age; a single walk cannot tell you which.",
+  "params": {
+   "armPoseL": "hang_forward",
+   "armPoseR": "hang_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_short_forward",
+   "legStanceR": "walk_short_back",
+   "view": "side",
+   "spineCurve": 14,
+   "headPitch": 18,
+   "shoulderProtractionL": 3,
+   "shoulderProtractionR": 3
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head down",
+    "color": "accent-cool"
+   },
+   {
+    "at": "arms",
+    "text": "Arms barely swinging",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_walk_hands_pockets",
+  "title": "Walking, hands in pockets",
+  "theme": "walking",
+  "desc": "Figure seen at three-quarters walking with both hands in the trouser pockets. Pocketed hands remove the arm swing, which can make a walk look guarded or casual depending on the rest of the body, the weather and the person.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "pocket",
+   "handShapeL": "hidden",
+   "handShapeR": "hidden",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Hands pocketed, no arm swing",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_walk_phone",
+  "title": "Walking, eyes on a phone",
+  "theme": "walking",
+  "desc": "Figure in profile walking slowly with a phone held up in the right hand and the head bent toward it. Studies of pedestrians find that people texting while they walk slow down, shorten their steps and drift off a straight line.",
+  "params": {
+   "armPoseL": "hang_forward",
+   "armPoseR": "phone_hold",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_short_forward",
+   "legStanceR": "walk_short_back",
+   "view": "side",
+   "headPitch": 30,
+   "spineCurve": 8
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head bent to the screen",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_walk_toward",
+  "title": "Walking toward you",
+  "theme": "walking",
+  "desc": "Figure walking straight toward the viewer, left foot forward, arms swinging opposite. Seen head-on, a walk shows mostly its width: how far apart the feet track and how much the shoulders roll.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "swing_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "-25"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "Front foot reaching toward you",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_breath_easy",
+  "title": "Easy breath",
+  "theme": "breath",
+  "desc": "Standing figure in profile breathing easily: belly soft and slightly forward, chest quiet, shoulders down. Relaxed breathing at rest is mostly diaphragmatic and moves the abdomen more than the upper chest.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "bellyBreath": 0.35
+  },
+  "annotations": [
+   {
+    "at": "belly",
+    "text": "Belly soft, moving with the breath",
+    "color": "do-green"
+   },
+   {
+    "at": "shoulders",
+    "text": "Shoulders quiet",
+    "color": "do-green"
+   }
+  ]
+ },
+ {
+  "id": "p_breath_high",
+  "title": "Breathing high in the chest",
+  "theme": "breath",
+  "desc": "Standing figure in profile drawing breath high into the chest: chest lifted and expanded, shoulders rising, belly held in. Shoulder-lifting breaths often come with anxiety, exertion and effortful speech, and some people breathe this way out of habit.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "chestBreath": 1,
+   "bellyBreath": -0.4,
+   "shoulderHeightL": 2.5,
+   "shoulderHeightR": 2.5,
+   "headPitch": -3
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Shoulders rising with the breath",
+    "color": "accent-warm"
+   },
+   {
+    "at": "chest",
+    "text": "Upper chest expanded",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_breath_low",
+  "title": "Breathing low into the belly",
+  "theme": "breath",
+  "desc": "Standing figure in profile breathing low: the abdomen swells forward on the in-breath while the chest and shoulders stay still. Slow abdominal breathing is the basis of most breathing practices used to lower arousal.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "bellyBreath": 1
+  },
+  "annotations": [
+   {
+    "at": "belly",
+    "text": "Abdomen expanding",
+    "color": "do-green"
+   },
+   {
+    "at": "shoulders",
+    "text": "Shoulders still",
+    "color": "do-green"
+   }
+  ]
+ },
+ {
+  "id": "p_breath_held",
+  "title": "Breath held",
+  "theme": "breath",
+  "desc": "Standing figure in profile with the chest held full and still, shoulders slightly raised and arms close: the posture of a held breath. People hold their breath when concentrating, bracing for news and in moments of fright; the release, when it comes, is often a visible sigh.",
+  "params": {
+   "armPoseL": "hang_tight",
+   "armPoseR": "hang_tight",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "chestBreath": 0.7,
+   "shoulderHeightL": 2,
+   "shoulderHeightR": 2,
+   "headPitch": 3
+  },
+  "annotations": [
+   {
+    "at": "chest",
+    "text": "Chest held full and still",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_breath_exhale",
+  "title": "Long exhale",
+  "theme": "breath",
+  "desc": "Standing figure in profile at the end of a long out-breath: chest sunk, shoulders dropped, upper back softening forward, head bowed a little. A long exhale can be relief, resignation or deliberate calming; after a held breath it usually marks a release of tension.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "chestBreath": -0.9,
+   "shoulderHeightL": -1,
+   "shoulderHeightR": -1,
+   "shoulderProtractionL": 1.5,
+   "shoulderProtractionR": 1.5,
+   "spineCurve": 6,
+   "headPitch": 7
+  },
+  "annotations": [
+   {
+    "at": "chest",
+    "text": "Chest emptied and lowered",
+    "color": "accent-cool"
+   },
+   {
+    "at": "shoulders",
+    "text": "Shoulders dropped",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_grief_head_in_hands",
+  "title": "Face in the hands",
+  "theme": "grief",
+  "desc": "Seated figure folded forward, elbows near the knees, face buried in both hands. A posture of overwhelm, common in grief and despair, and also in exhaustion and intense concentration. If you see it in someone you know, the right response is to sit nearby and ask, not to interpret.",
+  "params": {
+   "armPoseL": "head_in_hands",
+   "armPoseR": "head_in_hands",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "spineLean": 30,
+   "spineCurve": 12,
+   "headPitch": 26
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Face hidden in both hands",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_grief_bowed",
+  "title": "Standing, head bowed",
+  "theme": "grief",
+  "desc": "Standing figure with the head deeply bowed, chin toward the chest, hands clasped low in front. A posture seen at gravesides, memorials and moments of silence, where it is both private feeling and public ritual.",
+  "params": {
+   "armPoseL": "clasp_low",
+   "armPoseR": "clasp_low",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 32,
+   "spineCurve": 8,
+   "shoulderProtractionL": 1.5,
+   "shoulderProtractionR": 1.5,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head deeply bowed",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Hands clasped low",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_grief_kneeling",
+  "title": "Kneeling, head bowed",
+  "theme": "grief",
+  "desc": "Kneeling figure seen at three-quarters, upright on both knees, hands resting on the thighs, head bowed low. Kneeling marks prayer, mourning and reverence in many traditions; it is also how people tend a grave or speak to someone sitting on the ground.",
+  "params": {
+   "armPoseL": "kneel_rest",
+   "armPoseR": "kneel_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "kneel",
+   "legStanceR": "kneel",
+   "headPitch": 30,
+   "spineCurve": 10,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head bowed low",
+    "color": "accent-cool"
+   },
+   {
+    "at": "knees",
+    "text": "Both knees on the ground",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_grief_folded_side",
+  "title": "Folded forward, in profile",
+  "theme": "grief",
+  "desc": "Seated figure in profile folded forward over the knees, arms wrapped around the body, head down. From the side you can see how far the trunk has collapsed toward the lap: a protective shape that grief, nausea, cold and exhaustion all produce.",
+  "params": {
+   "armPoseL": "self_wrap",
+   "armPoseR": "self_wrap",
+   "handShapeL": "relaxed",
+   "handShapeR": "tucked",
+   "legStanceL": "sit_tucked",
+   "legStanceR": "sit_tucked",
+   "spineLean": 16,
+   "spineCurve": 18,
+   "shoulderProtractionL": 4,
+   "shoulderProtractionR": 4,
+   "headPitch": 18,
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "upper-back",
+    "text": "Back curved over the lap",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_grief_self_wrap_standing",
+  "title": "Standing, arms around the body",
+  "theme": "grief",
+  "desc": "Standing figure with both arms wrapped around the body at the ribs, shoulders hunched, head down, feet close. A self-holding posture common in grief and shock, and also in someone standing outside in the cold.",
+  "params": {
+   "armPoseL": "self_wrap",
+   "armPoseR": "self_wrap",
+   "handShapeL": "relaxed",
+   "handShapeR": "tucked",
+   "legStanceL": "stand_narrow",
+   "legStanceR": "stand_narrow",
+   "headPitch": 20,
+   "shoulderHeightL": 1.5,
+   "shoulderHeightR": 1.5,
+   "spineCurve": 8
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Arms holding the body",
+    "color": "accent-warm"
+   },
+   {
+    "at": "head",
+    "text": "Head down",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_presenting",
+  "title": "Presenting, open",
+  "theme": "professional",
+  "desc": "Standing figure seen at three-quarters, presenting: one forearm raised with the palm up toward an audience, the other arm relaxed, weight even. Open-handed gesture while speaking tends to read as candour; its absence reads as nothing at all, since many good speakers barely gesture.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "gesture_open",
+   "handShapeL": "relaxed",
+   "handShapeR": "palm_up",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "60",
+   "weightShift": 0.2
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Palm up toward the audience",
+    "color": "do-green"
+   },
+   {
+    "at": "feet",
+    "text": "Weight even",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_lectern",
+  "title": "At the lectern",
+  "theme": "professional",
+  "desc": "Standing figure behind a lectern, hands resting on its slanted top, leaning slightly toward it. A lectern hides most of the body and gives the hands a place to hold; under nerves, a white-knuckled grip on its edges is common.",
+  "params": {
+   "armPoseL": "lectern_hands",
+   "armPoseR": "lectern_hands",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "prop": "lectern",
+   "spineLean": 4,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Hands resting on the lectern",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_video_call",
+  "title": "On a video call",
+  "theme": "professional",
+  "desc": "Seated figure in profile at a table facing a laptop, forearms resting on the tabletop, upright and close to the screen. On camera the shoulders, head and hands are almost all that can be read, and the angle of the camera does much of the reading for you.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "laptop",
+   "spineLean": 6,
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Shoulders square to the camera",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_video_slump",
+  "title": "Slumped at the laptop",
+  "theme": "professional",
+  "desc": "Seated figure in profile hunched toward a laptop: upper back rounded, shoulders rolled forward, head pushed out toward the screen. The posture of a long working day. It reads as tired or disengaged on camera, and it is mostly the furniture's fault.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "laptop",
+   "spineLean": 14,
+   "spineCurve": 18,
+   "shoulderProtractionL": 3,
+   "shoulderProtractionR": 3,
+   "headPitch": -10,
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head pushed toward the screen",
+    "color": "accent-warm"
+   },
+   {
+    "at": "upper-back",
+    "text": "Rounded upper back",
+    "color": "accent-warm"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_check_watch",
+  "title": "Checking the time",
+  "theme": "professional",
+  "desc": "Standing figure with the left forearm raised across the body and the head bent to look at a watch. A glance at the time during a conversation is often taken as a wish to leave; it can also be a train to catch or a reminder to take medicine.",
+  "params": {
+   "armPoseL": "watch_check",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter",
+   "headPitch": 28,
+   "headTurn": -8
+  },
+  "annotations": [
+   {
+    "at": "left-wrist",
+    "text": "Wrist turned up toward the eyes",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_pro_taking_notes",
+  "title": "Taking notes",
+  "theme": "professional",
+  "desc": "Seated figure at a table leaning forward with the head down, the right hand writing and the left resting on the page. Note-taking breaks eye contact for long stretches; most speakers read it as attention, though some read it as a record being kept against them.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "write",
+   "handShapeL": "flat",
+   "handShapeR": "pinch",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "desk",
+   "spineLean": 14,
+   "headPitch": 26,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Hand writing",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_listening",
+  "title": "Listening at the table",
+  "theme": "professional",
+  "desc": "Seated figure at a table leaning in a little with the forearms on the tabletop and the head tilted, as in listening. Listening postures vary so much between people that a change from someone's own baseline matters far more than any of these features.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "desk",
+   "spineLean": 8,
+   "headTilt": 8,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Head tilted toward the speaker",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_arms_folded_seated",
+  "title": "Arms folded, leaning back",
+  "theme": "professional",
+  "desc": "Seated figure at a table leaning back away from it with the arms folded across the chest. In a meeting this is often read as resistance; it is just as likely to be someone cold, someone tired, or someone listening comfortably.",
+  "params": {
+   "armPoseL": "cross_over",
+   "armPoseR": "cross_under",
+   "handShapeL": "relaxed",
+   "handShapeR": "tucked",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "desk",
+   "spineLean": -10,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "arms",
+    "text": "Arms folded",
+    "color": "accent-cool"
+   },
+   {
+    "at": "torso",
+    "text": "Leaning back from the table",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_bow_light",
+  "title": "A light bow",
+  "theme": "greeting",
+  "desc": "Standing figure in profile bowing lightly from the hips, about fifteen degrees, back straight and arms at the sides. In Japan a bow of this depth, the eshaku, is an everyday greeting between equals; depth, duration and who bows first all carry meaning there.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_narrow",
+   "legStanceR": "stand_narrow",
+   "view": "side",
+   "spineLean": 15,
+   "headPitch": 4
+  },
+  "annotations": [
+   {
+    "at": "hips",
+    "text": "Bending from the hips, back straight",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_bow_formal",
+  "title": "A formal bow",
+  "theme": "greeting",
+  "desc": "Standing figure in profile in a deeper, formal bow of about thirty degrees from the hips, back straight, arms at the sides, gaze lowered. In Japanese etiquette a bow of this depth, the keirei, shows respect in business and toward seniors.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_narrow",
+   "legStanceR": "stand_narrow",
+   "view": "side",
+   "spineLean": 30,
+   "headPitch": 6
+  },
+  "annotations": [
+   {
+    "at": "hips",
+    "text": "A deeper bend, about thirty degrees",
+    "color": "accent-cool"
+   },
+   {
+    "at": "eyes",
+    "text": "Gaze lowered",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_wai",
+  "title": "The wai",
+  "theme": "greeting",
+  "desc": "Standing figure with the palms pressed together in front of the chest, fingers pointing up, and the head bowed slightly toward them. In Thailand this is the wai: the higher the hands and the deeper the bow, the more respect shown, and the junior person is expected to offer it first.",
+  "params": {
+   "armPoseL": "palms_together",
+   "armPoseR": "palms_together",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 14,
+   "spineLean": 4
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Palms together at the chest",
+    "color": "accent-cool"
+   },
+   {
+    "at": "head",
+    "text": "Head bowed toward the hands",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_palms_high",
+  "title": "Palms together, raised high",
+  "theme": "greeting",
+  "desc": "Standing figure with the palms pressed together and raised to the level of the face, head bowed into them. Hands held this high signal deep respect: in Thailand they are raised this way toward monks and elders, and in Indian greetings toward someone especially honoured.",
+  "params": {
+   "armPoseL": "palms_together_high",
+   "armPoseR": "palms_together_high",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 20,
+   "spineLean": 8
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Hands raised to the face",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_hand_on_heart",
+  "title": "Hand on the heart",
+  "theme": "greeting",
+  "desc": "Standing figure with the right hand placed flat over the heart and the head inclined. In many Muslim-majority and Middle Eastern settings this accompanies or replaces a handshake, and it is a respectful way to greet someone who does not shake hands with people of another gender.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "chest_hand",
+   "handShapeL": "relaxed",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 10
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Hand flat over the heart",
+    "color": "do-green"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_lowered_gaze",
+  "title": "Gaze lowered in respect",
+  "theme": "greeting",
+  "desc": "Standing figure with the head slightly inclined and the gaze held below the other person's eyes, hands clasped low. In many cultures, including communities in East and South Asia, West Africa and many Indigenous nations, avoiding a direct gaze toward an elder or senior is a mark of respect, not evasion.",
+  "params": {
+   "armPoseL": "clasp_low",
+   "armPoseR": "clasp_low",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 18,
+   "spineLean": 4
+  },
+  "annotations": [
+   {
+    "at": "eyes",
+    "text": "Gaze kept below eye level",
+    "color": "accent-cool"
+   }
+  ],
+  "showGaze": true
+ },
+ {
+  "id": "p_rest_squat",
+  "title": "Resting squat",
+  "theme": "greeting",
+  "desc": "Figure resting in a deep squat with the heels flat on the ground, forearms on the knees and hands hanging between them. An ordinary way to rest, wait or talk across much of Asia, Africa and the Middle East; observers unused to it sometimes misread it as loitering.",
+  "params": {
+   "armPoseL": "forearms_knees",
+   "armPoseR": "forearms_knees",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "squat",
+   "legStanceR": "squat",
+   "spineLean": 32,
+   "headPitch": -14,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "Heels flat on the ground",
+    "color": "accent-cool"
+   },
+   {
+    "at": "knees",
+    "text": "Knees high and apart",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_greet_acknowledge",
+  "title": "A raised palm across a room",
+  "theme": "greeting",
+  "desc": "Standing figure with the right hand lifted briefly to shoulder height, palm forward, chin raised: a small acknowledgement to someone across a room. Low-cost greetings like this keep acquaintances warm without requiring a conversation.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "acknowledge",
+   "handShapeL": "relaxed",
+   "handShapeR": "open",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": -5,
+   "headTilt": 4
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Palm raised at shoulder height",
+    "color": "do-green"
+   }
+  ]
+ },
+ {
+  "id": "p_kneel_one_knee",
+  "title": "On one knee",
+  "theme": "greeting",
+  "desc": "Figure down on the left knee with the right foot planted in front, forearm resting on the raised knee, trunk upright. Taking a knee brings an adult down to a child's eye level or to someone sitting on the ground; it is also how people tie a shoe.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "forearms_knees",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "kneel_down",
+   "legStanceR": "kneel_up",
+   "spineLean": 6,
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "knees",
+    "text": "One knee down, one up",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pair_face_to_face",
+  "title": "Face to face, at a conversational distance",
+  "theme": "together",
+  "desc": "Two standing figures in profile facing each other a little over a metre apart, both at rest. This is about where Edward Hall placed the boundary between personal and social distance for conversation among acquaintances in the United States; comfortable distances vary widely by culture, relationship and setting.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "About 1.1 metres between them",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 112,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_too_close",
+  "title": "Too close",
+  "theme": "together",
+  "desc": "Two figures in profile standing less than half a metre apart. The one on the right leans in; the one on the left leans back with the weight on the rear foot and the chin drawn away. When someone enters space another person treats as intimate, the usual response is to restore distance with the body by leaning, stepping back or turning.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand_step_back",
+   "view": "side",
+   "spineLean": -9,
+   "headPitch": -5,
+   "weightShift": -0.4
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Leaning back to restore distance",
+    "color": "accent-warm"
+   },
+   {
+    "at": "b:torso",
+    "text": "Leaning in",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 7,
+     "headPitch": -4
+    },
+    "x": 0,
+    "z": 48,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_side_by_side",
+  "title": "Side by side",
+  "theme": "together",
+  "desc": "Two standing figures side by side, a forearm's length apart, both facing forward toward something ahead of them. Many men find it easier to talk side by side, walking, driving or watching something, than face to face, where a steady mutual gaze can feel like scrutiny.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "hang",
+   "handShapeL": "hidden",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Both facing the same way",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "pocket",
+     "handShapeL": "relaxed",
+     "handShapeR": "hidden",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "weightShift": 0.4
+    },
+    "x": -62,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_angled",
+  "title": "An open angle",
+  "theme": "together",
+  "desc": "Two standing figures at roughly a right angle to each other, both turned toward a point between them, like the sides of an open letter L. Angled positions allow conversation with less unbroken eye contact than face to face, and they leave room for a third person to join.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "-20",
+   "torsoTurn": -20,
+   "headTurn": -15,
+   "footAngleL": -14,
+   "footAngleR": 14
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Turned toward a shared point",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headTurn": 10
+    },
+    "x": -70,
+    "z": 62,
+    "facing": 95,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_handshake",
+  "title": "Handshake",
+  "theme": "together",
+  "desc": "Two standing figures in profile shaking right hands, about three-quarters of a metre apart, each arm extended to meet in the middle. Grip, length, distance and whether the other hand joins in vary across cultures and people; a firm grip is prized in some places and seen as aggressive in others.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "handshake",
+   "handShapeL": "relaxed",
+   "handShapeR": "grip",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Hands meeting midway",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "handshake",
+     "handShapeL": "relaxed",
+     "handShapeR": "grip",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 76,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_hug",
+  "title": "Embrace",
+  "theme": "together",
+  "desc": "Two figures in profile in a full embrace, chests close, one arm over the other's shoulder and one around the back. Hugs between men often come with back slaps that keep them brief; a long, still embrace usually marks something larger, such as grief or a reunion.",
+  "params": {
+   "armPoseL": "hug_low",
+   "armPoseR": "hug_high",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "spineLean": 4
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Chests close together",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hug_low",
+     "armPoseR": "hug_high",
+     "handShapeL": "flat",
+     "handShapeR": "flat",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 4
+    },
+    "x": 0,
+    "z": 30,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_arm_around",
+  "title": "An arm around the shoulders",
+  "theme": "together",
+  "desc": "Two figures seen from behind standing side by side, one with an arm across the other's shoulders while the other's head is bowed. A side embrace is a common form of comfort and solidarity between men; it can be easier to accept than a hug because neither has to face the other.",
+  "params": {
+   "armPoseL": "around_shoulders",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "back"
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hand resting on the far shoulder",
+    "color": "do-green"
+   },
+   {
+    "at": "b:head",
+    "text": "Head bowed",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headPitch": 22,
+     "spineCurve": 6
+    },
+    "x": 46,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_seated_across",
+  "title": "Across a table",
+  "theme": "together",
+  "desc": "Two seated figures in profile facing each other across a table, both leaning in a little with the forearms on the tabletop. A table sets the distance and puts a barrier between bodies, which is part of why interviews and negotiations feel more formal than the same conversation on a sofa.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "desk",
+   "spineLean": 6,
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Forearms on the shared table",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "flat",
+     "handShapeR": "flat",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "spineLean": 6
+    },
+    "x": 0,
+    "z": 118,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_bench",
+  "title": "Side by side on a bench",
+  "theme": "together",
+  "desc": "Two figures seated side by side on a bench: one upright with the hands on the thighs, the other leaning forward with forearms on the knees and head down. Sitting beside someone, rather than across from them, is how a lot of men's hardest conversations happen.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "bench",
+   "torsoTurn": -10,
+   "headTurn": -10,
+   "view": "30"
+  },
+  "annotations": [
+   {
+    "at": "b:head",
+    "text": "Head down, forearms on the knees",
+    "color": "accent-warm"
+   },
+   {
+    "at": "head",
+    "text": "Turned slightly toward him",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "forearms_knees",
+     "armPoseR": "forearms_knees",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "prop": "none",
+     "spineLean": 20,
+     "headPitch": 18
+    },
+    "x": -58,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_adult_child",
+  "title": "At a child's height",
+  "theme": "together",
+  "desc": "An adult down on one knee facing a young child, so that their heads are at about the same height. Coming down to a child's eye level makes a conversation less looming; it is one of the simplest things a parent, teacher or coach can do with the body.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "forearms_knees",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "kneel_down",
+   "legStanceR": "kneel_up",
+   "view": "side",
+   "spineLean": 4
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Eyes at the child's height",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 62,
+    "facing": 180,
+    "scale": 0.6
+   }
+  ]
+ },
+ {
+  "id": "p_group_three",
+  "title": "A circle of three",
+  "theme": "together",
+  "desc": "Three standing figures in a loose circle, turned toward a shared centre, with a gap left open on the near side. Conversational groups tend to arrange themselves like this, in what the linguist Adam Kendon called an F-formation, and whether the gap stays open or closes as someone approaches tells you how welcome a newcomer is.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "hang",
+   "handShapeL": "hidden",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headTurn": -12
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Facing the shared centre",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": -72,
+    "z": 58,
+    "facing": 102,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "cross_over",
+     "armPoseR": "cross_under",
+     "handShapeL": "relaxed",
+     "handShapeR": "tucked",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 72,
+    "z": 58,
+    "facing": -102,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_turned_away",
+  "title": "Half out of the conversation",
+  "theme": "together",
+  "desc": "Two figures in conversation. The one on the left faces the other fully. The one on the right keeps the head turned toward the conversation but has swung the feet and hips away, toward the room. When the lower body leaves before the head, a person may be ready to go, or may simply be waiting to be released politely.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "b:feet",
+    "text": "Feet and hips turned away",
+    "color": "accent-warm"
+   },
+   {
+    "at": "b:head",
+    "text": "Head still toward the other",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "torsoTurn": -18,
+     "headTurn": -20
+    },
+    "x": 0,
+    "z": 100,
+    "facing": 218,
+    "scale": 1
+   }
+  ]
  }
 ]

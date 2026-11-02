@@ -8,13 +8,13 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v0.1 (Phase 1 complete)
+## Status: v0.2 (Phases 1 and 2 complete)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
 | Content | 3 of 90 chapters written to the full contract (1.1, 1.11, 1.15), ~14,500 words; ethics statement (1,205 words); crisis resources |
-| Pose library | 30 poses + 6 drawn diagrams |
+| Pose library | 125 poses in 13 themes, including two- and three-person scenes, + 6 drawn diagrams |
 | Tests | 28 passing: content contract, engines, 39 screen renders, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
 | Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
 
@@ -67,7 +67,14 @@ Poses are drawn, never photographed. Each pose is a set of parameters solved int
 - **Morphing.** Pose Detail can morph a DON'T pose into its DO counterpart to show exactly what changed.
 - **Annotations.** Markers anchor to named landmarks (`left-shoulder`, `throat`, `feet`…). Every pose carries a prose description used by TalkBack.
 
-Left and right are always the figure's own.
+- **Scenes.** A pose can include companion figures with a position, facing and size: greetings, proxemics, a circle of three, an adult kneeling to a child. Annotations address them as `b:head`, `c:left-hand`.
+- **Bases and breath.** Standing, seated, kneeling (both knees or one) and squatting, plus `chestBreath` / `bellyBreath` that fill the front of the body.
+- **Gaze.** `showGaze` draws the line of sight from the eyes, used for the glance plates.
+- **Solid props.** A lectern is a board that depth-sorts with the limbs, so it hides the legs while the hands rest on top; chairs, tables, a laptop and a bench are drawn as quiet lines.
+
+Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and right are always the figure's own.
+
+![Together](docs/screens/23-poses-together.png)
 
 ## Where this deviates from the brief, and why
 
