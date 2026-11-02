@@ -1,0 +1,257 @@
+{
+ "id": "foundations-14",
+ "categoryId": "foundations",
+ "index": 14,
+ "tier": "MASTER",
+ "title": "Deception",
+ "estimatedMinutes": 70,
+ "hook": "The best evidence says you cannot see a lie, and the most useful thing this chapter can do is stop you from trying.",
+ "why": "This is the only chapter in the book about lying, and it exists to talk you out of something. Many people come to body language hoping to learn to spot lies: in a partner, a child, an employee, a salesman, a suspect. The hope is understandable. It is also, on the best evidence, almost entirely misplaced, and acting on it does real harm, mostly to honest people.\n\nThe statement at the front of the book gave the headline: people judging lies from behaviour are right about half the time. This chapter explains why, and what to do instead. You will learn how often people actually lie and what kinds of lies they tell, why the cues to lying are so faint, why humans default to believing each other and why that is wise, how honest people come to look guilty, why machines and training programmes have not solved the problem, what does improve accuracy, and how to handle the moments when you suspect you are being lied to without damaging the people and relationships around you.",
+ "teach": [
+  {
+   "h": "Everyone lies a little, and a few lie a lot.",
+   "p": "In 1996 Bella DePaulo and colleagues asked students and members of the public to keep diaries of every social interaction lasting ten minutes or more, and of every lie they told, for a week. Lies were common. Students reported telling about two a day, and community members about one. Most were small: exaggerated enthusiasm for a gift, a feeling played down, an excuse for being late. Many were told to spare someone else's feelings rather than for the liar's own gain. People reported feeling little distress about most of them.\n\nLater research added an important twist. In 2010 Kim Serota, Timothy Levine and Franklin Boster surveyed a thousand American adults about lies told in the previous day and found that the average hid a skewed distribution. Most people reported telling no lies at all that day, or only one or two. A small minority of prolific liars told a large share of all the lies reported.\n\nThese findings set the base rate for everything else in this chapter. Lying is common in the sense that almost everyone tells small social lies. Serious lies, about money, crime, infidelity or danger, are much rarer, and they cluster in a minority of people. In any given conversation, the person in front of you is very probably telling the truth about anything that matters.\n\nThat base rate has a consequence that the chapter on the protocol described in general terms. When the thing you are looking for is rare, even a moderately good detector produces far more false alarms than true ones. A reader who treats every nervous answer as a possible lie will mostly be accusing honest people.\n\nBefore you look for a lie, remember how rarely there is a serious one to find.",
+   "poseId": "p_pair_seated_across",
+   "disconfirm": "If diary and survey studies had found serious lies to be as common as small social ones, and spread evenly through the population, the base-rate argument would be weaker. They found the opposite, though self-report has its own limits."
+  },
+  {
+   "h": "The cues are faint, not hidden.",
+   "p": "In 2003 DePaulo and colleagues brought together the research on behavioural cues to lying: 158 possible cues, examined across more than a hundred studies. The results were sobering for anyone hoping for a tell. Most cues showed no reliable link to lying at all. Gaze aversion, the cue most people around the world believe in, was not one of the cues associated with lies. Fidgeting, posture shifts and blinking showed no clear pattern either.\n\nThe cues that did show some association were weak and mostly not about the body. Liars tended to give accounts that were somewhat less detailed, less plausible and less engaged, and they appeared a little more tense on some measures. Even these differences were small, varied from study to study, and were stronger when people were lying about something that mattered to them and had little time to prepare.\n\nIn 2011 Maria Hartwig and Charles Bond asked why people fail at detecting lies. One popular answer is that people rely on the wrong cues. Their analysis found that this was largely not the problem: people's judgments followed the cues that were in fact weakly related to lying. The problem was that those cues were faint. There is no hidden signal that experts can see and the rest of us miss. There is very little signal there at all.\n\nThis is the scientific heart of the matter, and it explains the figure quoted at the front of the book. People judging lies from behaviour do barely better than chance not because they are careless readers but because behaviour carries very little information about whether someone is lying.\n\nThere is no Pinocchio's nose. There is only a faint, unreliable murmur, and it is drowned out by everything else people feel.",
+   "poseId": "p_gaze_aside",
+   "disconfirm": "If later meta-analyses found strong, reliable behavioural cues to lying that held across situations and people, this block would be wrong. The research since 2003 has continued to find the cues faint.",
+   "pullQuote": "There is no hidden signal that experts can see and the rest of us miss."
+  },
+  {
+   "h": "Defaulting to truth is usually wise.",
+   "p": "If we are so poor at spotting lies, why do we not become more suspicious? Timothy Levine's truth-default theory offers an answer. People, he argues, passively assume that what others tell them is honest, and do not even consider the possibility of deception unless something specific triggers it. This default is not a failure. In a world where most communication is honest, it is efficient and it makes cooperation possible.\n\nOne consequence is what researchers call the veracity effect. In experiments where people judge a mixture of truths and lies, they tend to judge most statements true. They are therefore quite accurate on the truths and poor on the lies. Their overall accuracy depends heavily on the mix: in a world of mostly truths, the default is right most of the time.\n\nAbandoning the default has costs. A person who doubts everyone wastes effort checking ordinary statements, damages relationships with honest people who sense the doubt, and still catches very few liars, because the cues are faint. In families, workplaces and friendships, chronic suspicion is corrosive in a way that occasional deception rarely is.\n\nLevine's theory does not say people should never suspect. It describes what triggers suspicion usefully: a motive to deceive, a statement that contradicts known facts, information from a third party, a story that does not hang together. Those triggers are about content and evidence, not about the body.\n\nTrust by default, and let facts, not faces, tell you when to stop.",
+   "poseId": "p_pair_handshake",
+   "disconfirm": "If people who habitually doubted others turned out to catch far more lies, at little cost to their relationships, the truth default would be a weakness rather than a strength. The research on detection accuracy suggests suspicion buys very little."
+  },
+  {
+   "h": "Honest people look guilty too.",
+   "p": "In *Telling Lies*, first published in 1985, Paul Ekman described what he called the Othello error, after the play in which Othello takes Desdemona's distress at being accused as proof of her guilt. The error is to mistake the signs of an honest person's fear of being disbelieved for the signs of a liar's fear of being caught. The two fears look alike, because they are alike.\n\nThink of who is most likely to show signs of tension when questioned: someone anxious by temperament, someone who has been disbelieved before, someone from a group that is often suspected, someone with much to lose if wrongly accused, someone who stammers, someone autistic who finds eye contact hard, someone questioned in a language not their own. None of these is a liar. All of them may look, to an untrained eye and to most trained ones, like the textbook picture of a liar.\n\nThe chapter on high-stakes environments in Part VI described how an interviewer who expects guilt can produce the defensiveness that then looks like guilt. The Othello error is the reader's side of the same trap. The more you suspect, the more an honest person's discomfort will look like confirmation.\n\nThis is why reading nervousness as dishonesty does its greatest harm to the people least able to bear it. The calm, practised liar sails through, while the frightened truth-teller is doubted.\n\nWhen someone looks nervous under questioning, the first rival is that they are frightened of not being believed.",
+   "poseId": "p_stand_hand_neck",
+   "disconfirm": "If honest people under suspicion showed no more signs of tension than honest people who were not suspected, the Othello error would not occur. Studies of interviews and everyday experience both suggest that being doubted is itself stressful."
+  },
+  {
+   "h": "Machines and programmes have not solved it.",
+   "p": "If people cannot see lies, perhaps instruments can. The polygraph measures heart rate, breathing and skin conductance while a person answers questions. In 2003 a committee of the United States National Research Council reviewed the scientific evidence on it. They concluded that in tests about a specific incident, the polygraph could distinguish lying from truth-telling at better than chance but well short of perfection, and that its theoretical basis was weak. For screening large numbers of people, such as employees, where most are honest and a few might be lying, they found its accuracy too poor to be useful: it would flag many honest people for every liar caught.\n\nBehavioural screening programmes have fared no better. In 2013 the United States Government Accountability Office reviewed a programme in which officers at airports watched passengers for behavioural signs of deception or threat. It found that the available evidence did not show that such behavioural indicators could be used to identify people who posed a risk, and recommended that funding be limited.\n\nThe chapter on the 1/25th second described what training in brief facial expressions can and cannot do; the chapter on teaching others described a study in which training in interrogation cues made people less accurate and more confident. The pattern across all these efforts is the same. Instruments and courses that read the body for lies inherit the body's weakness as a source of information about lying.\n\nWhen anyone, a device, a course or an expert, promises to read lies from the body, ask to see the evidence. It will rarely survive the asking.",
+   "poseId": "p_sit_closed_hunched",
+   "disconfirm": "If independent reviews found that a device or training programme reliably detected lies from behaviour in realistic conditions, with few false alarms among honest people, this block would need revising. The reviews described here found otherwise."
+  },
+  {
+   "h": "What works is evidence and context.",
+   "p": "If behaviour carries so little, what does carry information about lies? The research points consistently away from the body and towards content and evidence.\n\nIn 2010 Pete Blair, Timothy Levine and Allison Shaw gave people the usual task of judging whether others were lying, but supplied some of them with information about the situation that they could compare with what was said. Those with context did dramatically better than the usual near-chance performance, reaching accuracy around three in four. They were not reading faces better. They were checking stories against facts.\n\nResearch on professional interviewing points the same way. Studies of interview methods by Maria Hartwig, Pär Anders Granhag and others have found that interviewers who let people give a full account and then consider it carefully against the available evidence detect deception far more accurately than those who watch demeanour. These are professional methods, with professional safeguards, for police and investigators; they are not techniques for testing friends and family. What they show is where the information lies: in what is said, and in whether it fits the facts.\n\nFor ordinary life, the lesson is simple. If something important depends on whether you are being told the truth, look at what can be checked: records, dates, independent accounts, whether the story hangs together and fits what you already know. Ask open questions and listen to the whole answer. Do not watch the face for the answer.\n\nCheck the story against the world, not the face against a list.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "If people given relevant context about a situation judged lies no more accurately than those without it, the case for evidence over demeanour would be weak. The context studies found large improvements."
+  },
+  {
+   "h": "When you think you are being lied to.",
+   "p": "Sooner or later you will suspect someone close to you of lying. Here is how to handle it without doing more harm than the lie could.\n\nFirst, ask what is at stake and whether it is your business. Many suspected lies are small social ones, told to spare feelings or avoid an awkward moment, and pursuing them costs more than it gains. Second, notice what triggered your suspicion. If it was something in their body, their eyes, their hands, their nerves, recognise that this is the weakest possible evidence and may be the Othello error. If it was a contradiction with facts you know, that is worth more.\n\nThird, if it matters, look at what can be checked, quietly and fairly, without setting traps. The protocol at the end of this part forbids testing a reading by trapping someone, and that applies here above all. Fourth, ask openly, once, without accusation: *I'm confused about Tuesday, because I thought you said you were at work. Can you help me understand?* Then listen to the whole answer.\n\nFifth, accept uncertainty. Often you will not know, and the honest position is to live with not knowing rather than to fill the gap with a reading. And sixth, where the matter is serious, involving safety, money, abuse or crime, take it to people and processes equipped to handle it, rather than relying on your reading of anyone's behaviour.\n\nAbove all, remember the base rate and the Othello error. The person in front of you is probably telling the truth, and if they look frightened, it may be of you.",
+   "poseId": "p_pair_bench",
+   "disconfirm": "If following these steps regularly left you more often deceived, and your relationships no better, than relying on your reading of people's behaviour, this block would be poor advice. The evidence on detection accuracy suggests the reverse."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Hearing the whole account, and checking what can be checked.",
+   "dontCaption": "'You touched your nose. You're lying.'",
+   "annotation": "Behavioural cues to lying are faint and unreliable. Content checked against evidence carries far more information."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_too_close",
+   "doCaption": "Remembering that honest people are nervous too.",
+   "dontCaption": "Pressing a nervous man until he looks guilty.",
+   "annotation": "The Othello error mistakes an honest person's fear of being disbelieved for a liar's fear of being caught."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Knowing gut judgments of lies barely beat a coin.",
+   "dontCaption": "Trusting your gut to catch liars.",
+   "annotation": "People's judgments follow the cues that exist, and those cues are faint. Confidence does not make them stronger."
+  },
+  {
+   "doPoseId": "p_pair_handshake",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Trusting by default, and checking what matters.",
+   "dontCaption": "Suspecting everyone, all of the time.",
+   "annotation": "Most communication is honest, so the truth default is usually right. Suspicion costs relationships and catches very few liars."
+  }
+ ],
+ "caseStudy": "Rob, fifty, owns a small hardware shop. Over a month, the till comes up short on six evenings, by between twenty and sixty pounds. Three people work the till. Rob has read articles about spotting liars, and he decides to ask each of them about it and watch closely.\n\nTwo of them answer easily and look puzzled. The third, Kemal, a quiet man in his twenties who has worked there a year, goes red, looks at the floor, touches his neck and answers in short, halting sentences. Rob feels certain. Everything he has read says this is what a liar looks like. He decides to let Kemal go at the end of the week.\n\nHis wife, who keeps the accounts, asks him one question before he does: which evenings was the till short, and who was working? Rob had not checked. When they look, Kemal worked only two of the six evenings. All six, though, were evenings when a particular customer had returned goods using the old card machine, which, it turns out, had been processing some refunds twice. The supplier confirms the fault. The money is recovered.\n\nRob thinks about why Kemal reacted as he did. He knows Kemal's visa depends on keeping this job, that Kemal's English is careful rather than fluent, and that Kemal is shy with almost everyone. Being questioned by his boss about missing money was frightening for reasons that had nothing to do with guilt. Rob had read Kemal's fear of being disbelieved as a liar's fear of being caught.\n\nHe tells Kemal what happened and apologises. Kemal is quiet for a moment and then says he had not slept for two nights. Rob replaces the card machine, and stops reading articles about spotting liars.",
+ "observe": [
+  "The next time you suspect someone of not telling you the whole truth, notice what triggered the suspicion: something in their behaviour, or something that contradicted known facts.",
+  "Watch a news interview with someone accused of wrongdoing, and notice how much of your impression comes from their manner rather than from anything you can check.",
+  "Notice one small social lie you tell this week, such as praise you do not quite mean, and what it was for."
+ ],
+ "drills": [
+  {
+   "name": "Lie Diary",
+   "minutes": 15,
+   "steps": [
+    "For three days, note every lie you tell, however small, and every lie you suspect someone of telling you.",
+    "For each lie you tell, note what it was for: sparing feelings, avoiding awkwardness, or your own benefit.",
+    "For each suspected lie, note what triggered the suspicion.",
+    "Mark which suspicions rested on behaviour and which on facts.",
+    "Write one sentence about the base rate of serious lies in your own week."
+   ]
+  },
+  {
+   "name": "Othello Check",
+   "minutes": 15,
+   "steps": [
+    "Recall a time when someone seemed nervous or evasive when you asked them about something.",
+    "List every reason an honest person in their position might have been nervous.",
+    "Note what you concluded at the time and whether you ever learned the truth.",
+    "Write how the conversation might have felt from their side.",
+    "Write the question you could have asked instead."
+   ]
+  },
+  {
+   "name": "Story Against Facts",
+   "minutes": 20,
+   "steps": [
+    "Choose a news story in which someone's account of events has been disputed.",
+    "Note your first impression of whether they are being truthful, and what it is based on.",
+    "List the facts that can be checked against their account.",
+    "Check what you can from reliable sources.",
+    "Compare your first impression with what the facts suggest, and note which was more informative."
+   ]
+  },
+  {
+   "name": "The Open Question",
+   "minutes": 10,
+   "steps": [
+    "Think of a small, recent moment when something someone told you did not seem to fit.",
+    "Write one open, non-accusing question that would let them explain, beginning with what confused you.",
+    "Read it aloud and remove any words that imply they are lying.",
+    "If it is appropriate and matters, ask it, once, and listen to the whole answer.",
+    "Note how the conversation went and whether the confusion was resolved."
+   ]
+  },
+  {
+   "name": "Uncertainty Practice",
+   "minutes": 10,
+   "steps": [
+    "Choose one suspicion you currently hold about someone that you cannot resolve with facts.",
+    "Write down what is at stake if you are wrong in each direction.",
+    "Decide whether it is your business at all.",
+    "If it is not serious, write a sentence letting it go.",
+    "If it is serious, write which person or process could properly handle it."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which behaviour has research most consistently linked to lying?",
+   "options": [
+    "Avoiding eye contact, which liars are known to do more than others",
+    "Touching the face or neck while answering a pointed question",
+    "None strongly: most behavioural cues to lying are faint or absent",
+    "Fidgeting and shifting posture more than the person usually does"
+   ],
+   "answer": 2,
+   "explain": "Across 158 cues, most showed no reliable link to lying, gaze aversion included. The cues with some association were weak and mostly about the content of what was said, which is why judgments from behaviour barely beat chance.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did DePaulo and colleagues' diary studies of everyday lying find?",
+   "options": [
+    "Most people tell small lies daily, many of them to spare others' feelings",
+    "Most people tell serious, self-serving lies several times every single day",
+    "Hardly anyone lies at all in everyday life, outside of a few rare situations",
+    "People lie only to strangers, and never to the people closest to them"
+   ],
+   "answer": 0,
+   "explain": "Lies were common but mostly small, and many were told for others' sake. Serious lies are much rarer, and later research found they cluster in a minority of people, which sets a low base rate for anything that matters.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In Blair, Levine and Shaw's study, what raised accuracy at judging lies well above the usual level?",
+   "options": [
+    "Watching the face closely for brief expressions of hidden feeling",
+    "Training the judges in the nonverbal cues most often associated with lying",
+    "Requiring the people being judged to maintain steady eye contact",
+    "Giving judges information about the situation to compare with the account"
+   ],
+   "answer": 3,
+   "explain": "Judges with context reached around three in four correct, far above the usual near-chance level. They did it by checking stories against facts, not by reading behaviour better.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Money is missing from the till, and when you ask staff about it, one nervous employee reddens and looks at the floor. What fits this chapter?",
+   "options": [
+    "Treat his nervousness as strong evidence, and act on it before he leaves",
+    "Remember honest people are nervous too, and check the records first",
+    "Question him again, more firmly this time, to see whether his story changes",
+    "Watch him closely over the coming weeks for further signs of guilt"
+   ],
+   "answer": 1,
+   "explain": "Nervousness under questioning is exactly what the Othello error misreads. Records, dates and other evidence carry far more information than his face, and checking them protects an honest person from a false accusation.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What does Timothy Levine's truth-default theory propose?",
+   "options": [
+    "People are naturally suspicious, and must learn to trust each other",
+    "People can detect lies well, but choose not to act on what they see",
+    "People assume others are honest unless something triggers suspicion",
+    "People believe only those who keep steady eye contact with them while talking"
+   ],
+   "answer": 2,
+   "explain": "In a world where most communication is honest, defaulting to truth is efficient and supports cooperation. Useful triggers for suspicion are motives, contradictions and third-party information, not body language.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A friend suspects his partner is lying about where she was last night and asks you how to read her body for the truth. What fits this chapter?",
+   "options": [
+    "Say body language cannot settle it; talk openly, and check facts if it matters",
+    "Teach him the main signs of lying so that he can watch for them at dinner",
+    "Suggest he set a small trap, such as a question he already knows the answer to",
+    "Tell him to trust his instincts, since people usually know when they are lied to"
+   ],
+   "answer": 0,
+   "explain": "Behaviour carries very little information about lying, and traps damage relationships while measuring the trap. An open conversation, and facts where they matter, are the only honest routes, and the deeper issue may be trust itself.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific time when you were sure someone was lying to you because of how they behaved, their eyes, their hands, their nerves. Were you right, and how do you know? List every honest reason they might have behaved that way. What facts could have settled the question, and did you check them? Then think of a time when you were nervous while telling the truth. How would you have wanted to be treated?",
+  "guidance": "Most people discover that their certainty about a lie rested on behaviour, and that they never actually learned whether they were right. The second half of the prompt is the most useful. Remembering how it feels to be doubted while honest is the best protection against the Othello error.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to keep looking for tells after reading this chapter, convinced that your own eye is sharper than the research allows. The second is the Othello error: reading an honest person's fear of being disbelieved as guilt, which falls hardest on the anxious, the disbelieved and the outsider. The third is chronic suspicion, abandoning the truth default and damaging relationships with honest people for very little gain. The fourth is to trap people, testing a suspicion with a ruse that measures your trap rather than their honesty. And the fifth is to trust devices and courses that promise to read lies from the body. Check stories against facts, ask openly, live with uncertainty, and let proper processes handle what is serious.",
+ "furtherStudy": [
+  {
+   "work": "Cues to deception",
+   "author": "Bella M. DePaulo, James J. Lindsay, Brian E. Malone, Laura Muhlenbruck, Kelly Charlton and Harris Cooper",
+   "note": "Psychological Bulletin 129(1), 2003. The review of 158 possible cues, and how faint the real ones are."
+  },
+  {
+   "work": "Why do lie-catchers fail? A lens model meta-analysis of human lie judgments",
+   "author": "Maria Hartwig and Charles F. Bond Jr.",
+   "note": "Psychological Bulletin 137(4), 2011. People use the right cues; the cues are simply weak."
+  },
+  {
+   "work": "Duped: Truth-Default Theory and the Social Science of Lying and Deception",
+   "author": "Timothy R. Levine",
+   "note": "University of Alabama Press, 2020. Why we default to truth, and what actually helps detect lies."
+  },
+  {
+   "work": "The Polygraph and Lie Detection",
+   "author": "National Research Council",
+   "note": "National Academies Press, 2003. The scientific review of the polygraph and its limits."
+  }
+ ],
+ "reviewPrompt": "The next time you suspect a lie, write down what triggered the suspicion, and check one fact before thinking about anyone's behaviour."
+}

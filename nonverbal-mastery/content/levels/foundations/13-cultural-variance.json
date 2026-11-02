@@ -1,0 +1,258 @@
+{
+ "id": "foundations-13",
+ "categoryId": "foundations",
+ "index": 13,
+ "tier": "MASTER",
+ "title": "Cultural Variance",
+ "estimatedMinutes": 70,
+ "hook": "Whether faces speak one human language has divided science for a century, and the honest answer changes what you are allowed to assume.",
+ "why": "Every reader of people eventually meets the question at the centre of this chapter. When someone from a culture you do not know smiles, frowns or gasps, can you trust your reading of it? If human expressions are a universal language, much of what you have learned travels with you. If they are local dialects, much of it does not.\n\nScientists have argued about this for a hundred and fifty years, and the argument is not settled. This chapter lays out the evidence on both sides honestly: Darwin's original question, the studies that seemed to prove universality, the critiques that showed how much depended on how the question was asked, the newer research suggesting that different cultures carry different mental pictures of the same emotion, the evidence from voices and from millions of videos, and the idea of dialects that tries to reconcile them. It ends with what a careful reader is entitled to assume. The practical method for working in an unfamiliar culture is in Part VI; this chapter gives you the science that method rests on.",
+ "teach": [
+  {
+   "h": "Darwin asked the question.",
+   "p": "In 1872 Charles Darwin published *The Expression of the Emotions in Man and Animals*. Part of his evidence came from a questionnaire he sent to missionaries, colonial officials and travellers around the world, asking whether the people they lived among showed astonishment with raised eyebrows and an open mouth, shame with a blush, contempt with a raised lip, and so on. The replies, filtered through the assumptions of the people writing them, mostly said yes. Darwin concluded that many expressions were inherited and shared by all humans.\n\nFor much of the twentieth century, social scientists leaned the other way. Anthropologists such as Margaret Mead and Ray Birdwhistell emphasised how much expression differed from one culture to another, and Birdwhistell argued that there were no universal expressions at all, only learned conventions as varied as languages. The smile, he suggested, meant different things in different places, and in some places very little.\n\nBoth positions were built on limited evidence. Darwin's correspondents saw what they expected. The relativists relied heavily on striking anecdotes and on the idea, popular at the time, that almost everything human was learned.\n\nThe question matters for a reader because it determines how far your experience transfers. If expressions are universal, your years of reading faces at home give you a head start anywhere. If they are local, they may give you a head start in the wrong direction, as the chapter on cross-cultural calibration in Part VI warned.\n\nKeep the question open as you read. The honest answer turns out to be neither of the two that were first proposed.",
+   "poseId": "p_stand_neutral_three_quarter",
+   "disconfirm": "If the question of universality had been settled decisively in one direction, this chapter would be unnecessary. The fact that careful researchers still disagree, using better methods than Darwin had, is itself the main reason for caution."
+  },
+  {
+   "h": "The case for universals.",
+   "p": "In the late 1960s Paul Ekman and Wallace Friesen set out to test universality in a place where people had had very little contact with outsiders or their media. Among the Fore people of the highlands of Papua New Guinea, they told short stories, such as *her child has died*, and asked people to choose which of several photographs of faces matched the story. Published in 1971, the results showed agreement well above chance for most emotions, though fear and surprise were often confused with each other. When Fore people were asked to show how they would look in each story, Americans shown photographs of their faces could identify many of the intended emotions.\n\nIn 1987 Ekman and colleagues extended the work to ten cultures and again found substantial agreement about which emotion the classic faces showed. Studies of spontaneous expression added weight. In 2009 David Matsumoto and Bob Willingham compared the faces of sighted and congenitally blind judo athletes after winning and losing matches and found that the blind athletes produced the same facial expressions, though they had never seen a face. The chapter on the spine as status described a similar finding for pride and shame postures.\n\nThese results persuaded much of the field that a small number of basic emotions, such as happiness, sadness, anger, fear, surprise and disgust, have universal facial expressions rooted in biology, which cultures then regulate through display rules. This view shaped decades of research, training and technology, including the emotion-reading software discussed in Part VI.\n\nThe evidence for some shared core is real. The question is how large the core is, and how much the methods inflated it.",
+   "poseId": "p_gaze_direct",
+   "disconfirm": "If people in remote cultures, matching faces to stories, had performed at chance for every emotion, the universal view would have failed at its first test. They did better than chance for most emotions, which is why the view was taken seriously.",
+   "diagram": "face-prototypes"
+  },
+  {
+   "h": "The case against: how the question was asked.",
+   "p": "In 1994 James Russell published a long critique of the universality studies. He did not argue that faces mean nothing across cultures. He argued that the methods used had made agreement look much stronger than it was.\n\nMost studies gave people a short list of emotion words or stories and asked them to choose one for each face. That forced choice, Russell pointed out, lets people succeed by elimination: if you know one face is happy and one sad, the remaining choices are easier. The faces were posed, exaggerated prototypes rather than expressions seen in daily life. Many participants had some exposure to Western media. And agreement fell, sometimes sharply, as samples became more remote and methods less constrained.\n\nA study published in 2014 by Maria Gendron, Debi Roberson, Marietta van der Vyver and Lisa Feldman Barrett tested this directly. They asked Himba participants in a remote part of Namibia to sort photographs of posed faces into piles, freely, without any emotion words being provided. The Himba did not produce the six Western categories. They tended to group smiling faces together, and often sorted the others by what the person seemed to be doing, *laughing*, *looking at something*, rather than by an inner feeling. Supplying emotion words changed their sorting somewhat, but still did not produce the Western six.\n\nThe lesson is not that faces are meaningless. It is that how much meaning they seem to carry across cultures depends heavily on how you ask, and that people in many places may read a face first as an action in a situation, not as a window onto a feeling.\n\nThe answer you get depends a great deal on the question you ask.",
+   "poseId": "p_sit_hand_face",
+   "disconfirm": "If people in remote cultures sorted faces freely into the same six groups that Western participants produce, the method critique would lose most of its force. The free-sorting studies have so far found otherwise, though they are few and debated."
+  },
+  {
+   "h": "Different cultures carry different pictures of a feeling.",
+   "p": "In 2012 Rachael Jack, Philippe Schyns and colleagues used a clever method to find out what people in different cultures expect an emotional face to look like. They showed participants thousands of computer-generated faces with random combinations of facial movements and asked them, each time, which emotion the face showed, if any. From the answers they reconstructed each participant's mental picture of each emotion.\n\nWestern participants' pictures fell into six fairly distinct groups resembling the classic prototypes. East Asian participants' pictures overlapped more, and they relied more on the eyes than the mouth to represent the intensity of a feeling. The researchers concluded that the six classic faces are not equally shared, and that different cultures carry different expectations about which parts of the face carry an emotion.\n\nA study in the Trobriand Islands of Papua New Guinea, published in 2016 by Carlos Crivelli, James Russell and colleagues, found something even more striking. The wide-eyed, gasping face that Western research treats as the prototype of fear was read by Trobriand Islanders as a threatening display, closer to anger, the kind of face used to intimidate. The same configuration carried something like the opposite meaning.\n\nFor a reader, these findings mean that fine distinctions between expressions are the least likely to travel. Telling fear from surprise, or contempt from disgust, by face alone is unreliable even at home, and across cultures it may be wrong in ways you cannot detect. Where in a face to look for intensity, eyes or mouth, may also differ.",
+   "poseId": "p_gaze_aside",
+   "disconfirm": "If mental pictures of emotional faces turned out to be the same in every culture tested, the dialect view would be unnecessary. The reverse correlation and Trobriand studies found real differences, though both await wider replication.",
+   "pullQuote": "The same face can carry something close to the opposite meaning in another place."
+  },
+  {
+   "h": "Voices and contexts travel further.",
+   "p": "Faces are not the only evidence. In 2010 Disa Sauter, Frank Eisner, Paul Ekman and Sophie Scott played recordings of nonverbal vocalisations, such as laughs, screams, sighs and sobs, to Himba listeners and to English listeners, and asked them to match each sound to a short emotional story. Both groups recognised several basic emotions in the other group's sounds at above chance. Laughter was recognised especially well across the two cultures; some other positive sounds were recognised mainly within a culture. The chapter on reading the room described a related finding: listeners in twenty-four societies could hear whether people laughing together were friends.\n\nA very different kind of evidence came in 2021, when Alan Cowen, Dacher Keltner and colleagues used machine learning to analyse facial expressions in about six million videos from 144 countries, along with the situations in which they appeared: weddings, sporting events, protests, funerals, fireworks and so on. They found that about sixteen kinds of expression were associated with similar kinds of situation in every region of the world they studied, with roughly seventy percent of the pattern shared across regions. The method depends on how the algorithms were trained, and it measures what faces go with what situations rather than what people feel.\n\nTaken together, these findings suggest that some links between expressions and situations are widely shared, especially for laughter and for expressions in strongly patterned situations such as celebrations and grief. They do not settle how people read each other's faces in ordinary conversation, where situations are subtler and expressions faint.\n\nShared contexts are a better guide across cultures than shared faces.",
+   "poseId": "p_group_three",
+   "disconfirm": "If vocalisations such as laughter and screams were recognised only within cultures, never across them, the case for a shared core would be much weaker. The cross-cultural vocal studies found otherwise, especially for laughter."
+  },
+  {
+   "h": "Dialects: one language with strong accents.",
+   "p": "Hillary Anger Elfenbein has offered a way of holding these findings together, which she calls dialect theory. Emotional expression, on this view, is like a language spoken in many dialects. There is a shared core, a broad family resemblance between how people everywhere express some feelings, especially in strong and clear situations. On top of the core, each culture develops its own accents: particular movements it uses more or less, particular ways of combining them, particular meanings for configurations that elsewhere mean something else.\n\nDialect theory explains several findings at once. It explains why recognition across cultures is above chance but lower than within a culture, the in-group advantage described in Part VI. It explains why people who live among another culture for some time become better at reading it: they learn the accent. And it explains why some expressions, like laughter, travel well, while others, like the gasping face, can be read in very different ways.\n\nThe dialect view also fits what this book has said about individuals. Within any culture, people have their own idiolects: a colleague whose resting face looks stern, a friend who laughs when anxious, a father who goes silent when moved. A reader always has to learn the local accent and the personal one.\n\nFor practical purposes, think of what you already know about faces as a native speaker's knowledge of one dialect. It will help you understand the rough sense of much that you see elsewhere, and it will mislead you about the details.",
+   "poseId": "p_greet_wai",
+   "disconfirm": "If people who spent long periods in another culture became no better at reading its expressions over time, the idea of learnable accents would be weak. Studies of exposure and recognition, and the experience of most long-term migrants, suggest that they do improve."
+  },
+  {
+   "h": "What you are allowed to assume.",
+   "p": "From all this, a few working rules follow, and they apply in your own culture as much as in any other.\n\nYou may assume, weakly, that some links are widely shared: smiling and laughing in pleasant and sociable situations, crying in grief, the expanded and slumped postures of victory and defeat. Even these carry local accents. A smile may be embarrassment, apology or politeness as easily as pleasure, and in some places it is used much more freely with strangers than in others.\n\nYou should not assume that fine distinctions travel: fear from surprise, contempt from disgust, worry from concentration. Nor should you assume that intensity is shown in the same part of the face, or that a configuration you know carries the meaning you know. When the stakes matter, treat any reading of an unfamiliar face as a description of movement in a situation, and ask.\n\nYou should assume that context carries more of the meaning than the face does, everywhere. The chapter on the face showed this even within one culture. Across cultures, the situation, the relationship and the local norms carry still more.\n\nAnd you should assume that your informants, the people who know both their culture and yours, are worth more than any finding in this chapter. The method in Part VI, building local baselines and asking people who know, exists because the science described here gives you a rough map and not the ground.\n\nA shared core, strong accents, and context deciding most of the meaning: that is the honest answer, and it is enough to work with.",
+   "poseId": "p_stand_head_tilt",
+   "disconfirm": "If careful readers who relied on the classic faces in unfamiliar cultures turned out to be as accurate as those who relied on context and local informants, the rules in this block would be too cautious. The evidence described here suggests they would not."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Holding them as a rough shared core, with local accents.",
+   "dontCaption": "Assuming the textbook faces mean the same everywhere.",
+   "annotation": "Universality studies found above-chance agreement, but the methods inflated it. Fine distinctions are the least likely to travel."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Asking what that face means here.",
+   "dontCaption": "Reading a gasping face as fear in every culture.",
+   "annotation": "In the Trobriand Islands the classic fear face read as a threat display. A configuration can carry very different meanings in different places."
+  },
+  {
+   "doPoseId": "p_stand_neutral_three_quarter",
+   "dontPoseId": "p_gaze_direct",
+   "doCaption": "Learning where people here show intensity.",
+   "dontCaption": "Watching only the mouth for feeling, as at home.",
+   "annotation": "Different cultures carry different pictures of a feeling, and some rely more on the eyes. Your habits of attention are part of your dialect."
+  },
+  {
+   "doPoseId": "p_greet_wai",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Trusting smiles and laughter a little, and checking the rest.",
+   "dontCaption": "Dismissing all shared expression as myth.",
+   "annotation": "There is a shared core, especially for laughter and strong situations. The honest position lies between the two extremes."
+  }
+ ],
+ "caseStudy": "Ben, thirty-three, has taught English in Britain for eight years and moves to a language school in Seoul. He considers himself good at reading a classroom: he can tell from faces who is lost and who is bored. In his first month in Seoul his confidence goes. When he asks whether students have understood, many keep a calm, neutral face and nod, and then cannot do the exercise. Some smile when they get an answer wrong, which at home he would have read as not taking it seriously.\n\nHe asks a Korean colleague, Ji-woo, who taught in Australia for three years. She explains that some students, especially in front of a teacher, keep a composed face when confused, because showing confusion openly can feel like a loss of face for them or a criticism of the teacher. The smile at a wrong answer is often embarrassment, not amusement. Then she adds a caution: this is not true of every student, and the younger ones and those who have studied abroad are often quite different. She also tells him, kindly, that some students find his very expressive face a little overwhelming.\n\nBen changes his method. He stops relying on faces to check understanding and uses short written tasks instead. He watches for changes in each student's own baseline rather than reading their faces against his British classroom. He learns that one student, Min-jun, presses his lips together briefly when lost, and another, Seo-yeon, goes very still. He tones down his own expressions a little.\n\nBy the end of the term his students are asking more questions. When one smiles at a wrong answer, he no longer reads it as carelessness. He reads it as a smile, in a situation, from a particular person, and asks.",
+ "observe": [
+  "Watch a film or programme made in a culture you know little about, and note one expression whose meaning you were unsure of, and what the situation suggested.",
+  "Notice one occasion when someone smiled in a situation where you would not expect a smile, and list what else the smile might have meant.",
+  "Ask someone who has lived in two cultures which expressions they had to relearn, and note their answer."
+ ],
+ "drills": [
+  {
+   "name": "Movement and Situation",
+   "minutes": 15,
+   "steps": [
+    "Choose a clip from a film or documentary set in a culture you know little about.",
+    "Pause at three moments when a face changes, and describe each movement without naming an emotion.",
+    "Note the situation at each moment: who is present, what has just happened.",
+    "Write your first reading of each face, and then a reading based on the situation alone.",
+    "Note where the two readings differ."
+   ]
+  },
+  {
+   "name": "Your Own Dialect",
+   "minutes": 15,
+   "steps": [
+    "List five expressions you use often, such as a particular smile, frown or way of showing surprise.",
+    "For each, write what you mean by it.",
+    "Ask someone from a different background, if you can, what each would mean to them.",
+    "Mark any where the meanings differ.",
+    "Write one sentence about which of your expressions might mislead people elsewhere."
+   ]
+  },
+  {
+   "name": "Informant Questions",
+   "minutes": 20,
+   "steps": [
+    "Find someone who has lived for some time in two cultures.",
+    "Ask which facial expressions or gestures they had to relearn when they moved.",
+    "Ask for a specific situation in which they were misread, or misread someone else.",
+    "Ask how long it took to feel at home reading people in the new culture.",
+    "Write down the answers as close to their words as you can."
+   ]
+  },
+  {
+   "name": "Fine Distinctions",
+   "minutes": 10,
+   "steps": [
+    "Open the face plates of the six posed prototypes in the pose library.",
+    "Cover the labels and try to name each face.",
+    "Note which pairs you find hardest to tell apart.",
+    "Write down a situation in which each hard pair might occur.",
+    "Note how much easier the situation makes the distinction."
+   ]
+  },
+  {
+   "name": "Assumptions Audit",
+   "minutes": 15,
+   "steps": [
+    "Write down three readings of other people's faces you have made recently.",
+    "For each, mark whether it relied on a broad link, such as a smile in a pleasant moment, or a fine distinction, such as fear versus surprise.",
+    "For each fine distinction, write what in the situation supported it.",
+    "Mark any reading that relied on the face alone.",
+    "Write how you would check those readings next time."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "What does the evidence best support about facial expressions across cultures?",
+   "options": [
+    "They are a universal language and are read the same way everywhere",
+    "They are entirely learned and carry no shared meaning across cultures",
+    "There is a rough shared core, with strong local accents and context",
+    "Only Western faces show emotion clearly enough to be read by others"
+   ],
+   "answer": 2,
+   "explain": "Agreement across cultures is above chance, especially for laughter and strong situations, but methods inflated early estimates and some configurations carry different meanings elsewhere. Context does much of the work everywhere.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Ekman and Friesen's study among the Fore of Papua New Guinea, what were participants asked to do?",
+   "options": [
+    "Match photographs of faces to short stories about emotional situations",
+    "Pose a series of faces while being filmed by the visiting research team",
+    "Sort a pile of photographs freely into groups of their own choosing",
+    "Name the emotion shown in each face using a list of English words"
+   ],
+   "answer": 0,
+   "explain": "Participants chose which face matched a story, and did better than chance for most emotions, though fear and surprise were often confused. Critics later pointed out that this kind of forced choice can inflate agreement.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "When Himba participants sorted photographs of faces freely, without being given emotion words, what happened?",
+   "options": [
+    "They sorted them neatly into the same six groups Western participants use",
+    "They declined to sort the photographs at all, finding the task meaningless",
+    "They sorted the photographs only by the apparent age and sex of each person shown",
+    "They did not produce the six groups, often sorting faces by actions instead"
+   ],
+   "answer": 3,
+   "explain": "Smiling faces tended to go together, but other faces were often grouped by what the person seemed to be doing, such as laughing or looking. How much meaning faces seem to carry depends on how the question is asked.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Working abroad, you see a colleague make a wide-eyed, open-mouthed face that at home would mean fear. What fits this chapter?",
+   "options": [
+    "Read it as fear, since the fear face has been shown to be universal",
+    "Treat it as a movement, and ask what it means here before concluding",
+    "Ignore it, since you cannot read faces at all in another culture",
+    "Mirror the expression back to show that you understand the feeling"
+   ],
+   "answer": 1,
+   "explain": "Fine distinctions travel least well, and in at least one society this very face reads as a threat display. Describing the movement and asking, the colleague or a local informant, avoids a confident misreading.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Crivelli and colleagues find about the wide-eyed gasping face in the Trobriand Islands?",
+   "options": [
+    "It was read as fear, exactly as in Western studies of the face",
+    "It was not recognised as meaning anything in particular at all",
+    "It was read as a threatening display, closer to anger than to fear",
+    "It was read as surprise by adults and as fear by younger children"
+   ],
+   "answer": 2,
+   "explain": "The configuration Western research treats as the prototype of fear carried something close to the opposite meaning there. The same face can mean different things in different places.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A friend says research proves that emotions are universal, so he can read anyone, anywhere. What fits this chapter?",
+   "options": [
+    "The core is rough, the accents are strong, and context decides most",
+    "He is right, since the universal faces have been shown in many studies",
+    "He is wrong, since research shows faces mean nothing across cultures",
+    "He is right about faces but wrong about voices, which are all learned"
+   ],
+   "answer": 0,
+   "explain": "Both extremes are unsupported. A shared core exists, especially for laughter and strong situations, but fine distinctions and many meanings are local, and context carries much of the meaning everywhere.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific time when you read the face of someone from a background different from yours, and later learned you had been wrong, or suspected you might have been. Describe the movement you saw and the situation. Was your reading a broad one, such as pleasure or distress, or a fine distinction? What would the situation alone have told you? Knowing what this chapter says about shared cores and local accents, what would you now assume, and what would you ask?",
+  "guidance": "The background need not be national; class, region, generation and religion carry their own dialects. Many people find that their misreading involved a fine distinction, or a smile in an unexpected place. The useful part is the last question: separating what you may reasonably assume from what you need to check.",
+  "minCharacters": 150
+ },
+ "failureMode": "There are two opposite failures. The first is universalism: assuming that the classic faces mean the same everywhere, and reading people from other cultures with the confidence of a native speaker of a dialect that is not theirs. The second is radical relativism: deciding that because faces vary, nothing can be read across cultures at all, and withdrawing from people whose expressions are unfamiliar. A third failure is to swap one stereotype for another, learning that a culture is reserved or expressive and reading every person in it that way. And a fourth is to forget that the same lessons apply at home, where fine distinctions are unreliable and context carries most of the meaning. Assume a rough shared core, expect strong accents, trust context, and ask.",
+ "furtherStudy": [
+  {
+   "work": "Constants across cultures in the face and emotion",
+   "author": "Paul Ekman and Wallace V. Friesen",
+   "note": "Journal of Personality and Social Psychology 17(2), 1971. The study among the Fore that launched the modern case for universals."
+  },
+  {
+   "work": "Is there universal recognition of emotion from facial expression? A review of the cross-cultural studies",
+   "author": "James A. Russell",
+   "note": "Psychological Bulletin 115(1), 1994. The method critique that changed how the evidence is read."
+  },
+  {
+   "work": "Facial expressions of emotion are not culturally universal",
+   "author": "Rachael E. Jack, Oliver G. B. Garrod, Hui Yu, Roberto Caldara and Philippe G. Schyns",
+   "note": "Proceedings of the National Academy of Sciences 109(19), 2012. Different cultures carry different mental pictures of the same feelings."
+  },
+  {
+   "work": "Sixteen facial expressions occur in similar contexts worldwide",
+   "author": "Alan S. Cowen, Dacher Keltner, Florian Schroff and colleagues",
+   "note": "Nature 589, 2021. Six million videos from 144 countries, and what they do and do not show."
+  }
+ ],
+ "reviewPrompt": "The next time you read an unfamiliar face, describe the movement and the situation, and ask before trusting any fine distinction."
+}

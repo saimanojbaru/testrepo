@@ -94,6 +94,9 @@ class MasteryFlowTest {
         scrollTo(hasText("Master this level"))
         rule.onNode(hasText("Master this level")).performClick()
         waitFor("Level mastered. The next one is open.")
-        rule.onNode(hasText("Open 1.11", substring = true)).assertExists()
+        // The next written chapter after 1.1, whichever that is as the book grows.
+        val c = TestContent.curriculum
+        val next = c.levelsInOrder("foundations")[1]
+        rule.onNode(hasText("Open ${c.reference(next)}", substring = true)).assertExists()
     }
 }

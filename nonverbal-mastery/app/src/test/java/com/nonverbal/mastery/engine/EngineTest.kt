@@ -110,11 +110,16 @@ class MasteryTest {
     @Test
     fun unlocksAreSequentialOverWrittenLevelsAndEveryCategoryStartsOpen() {
         val foundations = curriculum.levelsInOrder("foundations")
-        assertEquals(listOf(1, 11, 15), foundations.map { it.index })
-        val none = Unlocks.unlockedIds(foundations, emptyMap())
+        assertEquals(foundations.map { it.index }.sorted(), foundations.map { it.index })
+        // Unlocking skips over chapters that are not written yet: simulate a part with gaps.
+        val gappy = foundations.filter { it.index in setOf(1, 11, 15) }
+        assertEquals(listOf(1, 11, 15), gappy.map { it.index })
+        val none = Unlocks.unlockedIds(gappy, emptyMap())
         assertEquals(setOf("foundations-01"), none)
         val m1 = mapOf("foundations-01" to LevelProgress("foundations-01", "foundations", LevelStatus.MASTERED))
-        assertEquals(setOf("foundations-01", "foundations-11"), Unlocks.unlockedIds(foundations, m1))
+        assertEquals(setOf("foundations-01", "foundations-11"), Unlocks.unlockedIds(gappy, m1))
+        // Over the real, complete part, mastering the first opens exactly the second.
+        assertEquals(setOf(foundations[0].id, foundations[1].id), Unlocks.unlockedIds(foundations, m1))
         // A level the reader has already started stays open even if content is later inserted before it.
         val started = mapOf("foundations-15" to LevelProgress("foundations-15", "foundations", LevelStatus.IN_PROGRESS))
         assertTrue("foundations-15" in Unlocks.unlockedIds(foundations, started))
