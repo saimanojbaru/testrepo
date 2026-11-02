@@ -1,0 +1,268 @@
+{
+ "id": "foundations-15",
+ "categoryId": "foundations",
+ "index": 15,
+ "tier": "MASTER",
+ "title": "Synthesis — Building Your Own Protocol",
+ "estimatedMinutes": 90,
+ "hook": "Expertise in reading people isn't a sharper eye; it's a written procedure you trust precisely because you have watched it fail.",
+ "why": "Think of the best judge of people you know: a grandmother who could tell within a minute whether a new boyfriend would last, or a manager whose hires always seemed to work out. It is tempting to call it a gift. Look closer and you usually find a habit. She watched for the same few things every time, checked them against what she already knew, asked one quiet question, and remembered when she had been wrong. Her intuition was a procedure she had stopped noticing.\n\nMost readers of people never build one. They collect techniques, a bit of baseline here and a pacifier there, and apply whichever comes to mind, which in practice means whichever confirms what they already suspected. Their errors are random, so they never learn from them. A protocol fixes this. By taking the same steps in the same order, writing down what you predicted and checking what happened, you turn a scatter of impressions into something that can be scored, corrected and improved. That is the difference between having opinions about people and having a skill.",
+ "teach": [
+  {
+   "h": "Trust intuition only where feedback has trained it.",
+   "p": "In 2009 Daniel Kahneman and Gary Klein, who had spent their careers on opposite sides of an argument about intuition, published a joint paper setting out where they agreed. Intuitive expertise is real, they concluded, but only under two conditions. The environment must be regular enough to contain valid cues, and the person must have had long practice with timely, clear feedback on whether their judgments were right. Firefighters, nurses and chess players can meet both conditions. Many stock pickers and political pundits meet neither, and their confident intuitions do little better than chance.\n\nReading people sits uncomfortably in between. There are some valid cues, as earlier chapters showed, but they are weak, noisy and specific to the individual. And feedback is scarce. You form an impression of a colleague and rarely learn whether it was right; when you do, it is weeks later and tangled up with everything else. Under those conditions you can gather years of experience and stay exactly as confident, and as wrong, as when you began.\n\nThis is the deepest reason to work from a protocol. A written procedure does what the environment will not: it creates feedback. When you write down beforehand what you think is happening and what you expect to see next, and then check, you manufacture the clear, timely signal that skill needs. Over months you learn which of your readings tend to hold and which tend to fail.\n\nAtul Gawande's work on surgical checklists makes a related point. Skilled people err less often from ignorance than from failing to apply what they know, consistently, under pressure. A procedure carries your best judgment into the moments when your judgment is worst.",
+   "poseId": "p_stand_neutral",
+   "disconfirm": "If, after several months of recorded predictions, your hit rate on a kind of reading is no better than guessing would give you, your intuition in that area has not been trained, however confident it feels. The record decides, not the feeling.",
+   "pullQuote": "A procedure carries your best judgment into the moments when your judgment is worst."
+  },
+  {
+   "h": "Step one: read yourself before you read anyone.",
+   "p": "Every protocol in this book begins with the observer, because the observer is the instrument, and an uncalibrated instrument gives confident nonsense. Before you read anyone in a situation that matters, take thirty seconds for four checks.\n\nBody: where is your breath, where are your shoulders, is your jaw set, are your hands still? You learned your own baseline and your own pacifiers in earlier chapters, and this is where you use them. If you find your own strain signals, lower them before you go further, or at least note that your readings will lean toward threat.\n\nState: are you tired, hungry, hurried, angry about something unrelated? Joseph Forgas's work on affect infusion suggests that these colour exactly the ambiguous judgments you are about to make.\n\nStake: what do you want to be true? If you are hoping your boss is pleased, or dreading that your partner is upset, you will find what you hope for or dread. Name the wish in a sentence. You will not escape it, but naming it lets you discount it.\n\nPrior: what do you already believe about this person? Strong prior beliefs are not wrong to hold, but they quietly turn every observation into confirmation. Write the belief down so you can notice when the evidence fails to fit it.\n\nThis takes less time than reading about it. In a live situation it can be one breath and one silent sentence: tired, want her to like the plan, think she's sceptical. That sentence will save you from more misreadings than any technique in the rest of this book.",
+   "poseId": "p_stand_shoulders_raised",
+   "disconfirm": "If your readings in a given kind of situation come out the same whether you are rested or exhausted, hopeful or dreading, your state may not be distorting you much there. Test it by comparing your notes across days."
+  },
+  {
+   "h": "Step two: fix three references before you look for change.",
+   "p": "Before you look for a signal you need three references, and most readers check at most one.\n\nThe first is the individual baseline: how this person usually is in this kind of setting. If you do not have one, your first job is to start one, and your readings should stay provisional until you do.\n\nThe second is context: what is normal in this room, for these people, at this moment. A man with folded arms at a graveside, a man pacing outside a delivery room and a man silent in a monastery are all behaving normally. Culture belongs here too. The eye contact, distance, touch and volume that count as ordinary vary greatly between groups, as the chapters on cultural variance show. Context tells you what the situation is pushing everyone toward.\n\nThe third is the base rate, and it is the one almost everyone forgets. How common is the behaviour you noticed, in people generally? Face touching, as you know, is very common. And how common is the state you are tempted to infer? Daniel Kahneman and Amos Tversky showed decades ago that people neglect base rates when a vivid description is in front of them. If one employee in a hundred is concealing a serious problem at any given time, even a fairly reliable cue will flag far more innocent people than concealing ones. The rarer the state, the more of your readings of it will be false alarms.\n\nTake the three together and you know how surprising an observation really is. A behaviour that is unusual for this person, unusual in this setting and uncommon in general deserves attention. A behaviour that is ordinary on any one of the three counts deserves much less than it feels like it does.",
+   "poseId": "p_stand_weight_shift",
+   "disconfirm": "If you cannot say, even roughly, what this person is like at rest, what the setting pushes everyone toward, and how common the suspected state is, you are not ready to interpret a change. Gather more before you conclude anything."
+  },
+  {
+   "h": "Step three: require a cluster, congruence and timing.",
+   "p": "A single change, however striking, is a weak basis for anything. The protocol asks for three properties together.\n\nA cluster: at least two changes from baseline, ideally in different channels. Face, posture, hands, voice and words are partly independent, so when several shift at once, the chance that all of them are coincidence falls.\n\nCongruence, or its absence: do the channels agree with each other and with what is being said? A colleague who says the plan is great while his voice flattens, his hands stop and his torso turns toward the door is showing an incongruence worth a question. Beware a famous misreading here. Albert Mehrabian's experiments in the 1960s are often quoted as showing that 93 percent of communication is nonverbal. They showed nothing of the kind. They concerned single words spoken in tones that contradicted them, judged for liking, and Mehrabian himself has said the figures do not apply to ordinary conversation.\n\nTiming: did the cluster begin together, shortly after something identifiable? Changes that start at the same moment and are tied to a cue hang together far better than changes scattered across a conversation.\n\nThe psychologist David Funder offers a useful frame for why all three matter. In his Realistic Accuracy Model, an accurate judgment requires that a behaviour be relevant to the state in question, available to be seen, actually detected by the observer, and correctly used. Clusters, congruence and timing are ways of improving relevance and use. Without them you are guessing from whatever caught your eye.",
+   "poseId": "p_stand_turned_away",
+   "disconfirm": "If the changes you grouped into a cluster began at different times, or each also appears on its own in this person's baseline, you do not have a cluster; you have coincidence. Pull them apart and see whether any one survives alone.",
+   "pullQuote": "Incongruence is a reason to ask, not a reason to discount what someone said.",
+   "diagram": "congruence-matrix"
+  },
+  {
+   "h": "Step four: write the hypothesis, a rival, and what would prove you wrong.",
+   "p": "Only now, after the self-check, the references and the cluster, are you allowed to say what you think is going on. Say it in writing, in three lines.\n\nThe hypothesis: your best guess, stated narrowly. Not she doesn't like the plan, but something about the timeline in the plan troubled her.\n\nThe rival: the most plausible ordinary explanation. She is tired after a long day; she is worried about something at home; she was thinking about the budget, not the timeline. In 1890 the geologist Thomas Chamberlin urged scientists to hold multiple working hypotheses at once, because a single favourite hypothesis bends every new fact toward itself. The same thing happens at a meeting table.\n\nThe disconfirmer: what you would expect to see if your hypothesis were wrong and the rival right. If it is the timeline, the change should recur when the timeline comes up again and not when the budget does. If she is simply tired, the change should spread across topics and ease when the meeting ends.\n\nThis is Karl Popper's demand applied to a single afternoon. A claim that nothing could contradict is not knowledge, and a reading that would survive any possible next observation is not a reading. It is a story you have decided to keep.\n\nWriting matters because memory cheats. Afterwards you will remember having suspected whatever turned out to be true. A line in a notebook, written before you know the answer, is the only reliable record of what you actually predicted.",
+   "poseId": "p_stand_head_tilt",
+   "disconfirm": "If you cannot write a rival at least as plausible as your hypothesis, you have not looked hard enough; you have not found the truth. If you cannot name an observation that would favour the rival, your hypothesis cannot be tested and should not be acted on."
+  },
+  {
+   "h": "Step five: test by asking, never by trapping.",
+   "p": "A hypothesis about a person is tested in one of two ways: by waiting for the situation to vary on its own, or by asking. The protocol permits both and forbids a third, which is setting a trap.\n\nWaiting is underrated. Conversations return to their subjects, meetings recur, people meet again. If your hypothesis predicts that a change will recur with a particular topic, simply notice whether it does when that topic comes back. You learn without doing anything to anyone.\n\nAsking is the stronger test and the kinder one. The question should be open and leave the other person free to answer however they like: you seemed to go quiet when we got to the timeline, is that worth talking about? It names what you noticed without claiming to know what it means, and it offers a door rather than pushing anyone through it. The answer is data. So is a polite deflection, which tells you the person would rather not discuss it with you now, and that is their right.\n\nTrapping is the move the protocol forbids: mentioning something false to watch the reaction, raising a sensitive subject suddenly to provoke a response, holding silence to make someone uncomfortable, staring to see who looks away first. These techniques fill interrogation manuals and seduction guides, and they share two defects. They treat the other person as a specimen rather than a participant. And they do not work, because the pressure they create produces the very signals they claim to detect, in the innocent as much as anyone.\n\nIf you cannot test a reading without deceiving or pressuring someone, leave it untested. Some things about other people are not yours to find out.",
+   "poseId": "p_sit_lean_back_open",
+   "disconfirm": "If the person, asked openly, gives an account that fits what you observed as well as your hypothesis did, prefer their account. A reading you keep in spite of the person's own explanation has stopped being a hypothesis.",
+   "pullQuote": "Some things about other people are not yours to find out."
+  },
+  {
+   "h": "Step six: record, score and revise, and know when to stop reading.",
+   "p": "The last step is the one that makes the others worth doing. Afterwards, return to what you wrote and mark it right, wrong or unclear. If you can, attach a rough confidence to each prediction when you make it: sixty, eighty or ninety-five percent.\n\nPhilip Tetlock spent two decades tracking the predictions of experts and amateurs and found that the best forecasters were not the cleverest or the best informed. They were the ones who stated predictions precisely, attached honest probabilities, kept score and updated in small steps as evidence changed. Calibration means that the things you call eighty percent likely happen about eighty percent of the time. It can be learned, and the only way to learn it is to keep a record.\n\nA month of records will show you your error profile: the kinds of people you misread, the settings in which you overreach, the states you are too quick to see. Perhaps you read anger into quiet men, or miss distress in cheerful ones, or overrate your accuracy with people you find attractive. That profile is the most personal and useful part of your protocol. Write it at the top.\n\nFinally, every good protocol includes stopping rules: conditions under which you put the method down. When someone is grieving. When you are in an intimate moment with a partner. When a person has asked you not to analyse them. When you are too depleted to be fair. In those moments the skill is presence, not reading, and the best thing your trained attention can do is rest.\n\nA protocol is not a cage. It is the scaffolding you climb until you no longer think about the rungs, and it is still there on the days you slip.",
+   "poseId": "p_sit_neutral",
+   "disconfirm": "If your record shows that your confident readings come true no more often than your hesitant ones, your confidence is not tracking anything. Lower it until it does."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Reading from a settled body: the self-check comes first.",
+   "dontCaption": "Reading from the edge of your seat, with your own arousal steering the read.",
+   "annotation": "The observer is the instrument. Calibrate yourself before you measure anyone else."
+  },
+  {
+   "doPoseId": "p_stand_turned_away",
+   "dontPoseId": "p_stand_arms_crossed_loose",
+   "doCaption": "Feet, torso and head shifting together after a cue: a cluster.",
+   "dontCaption": "One channel, one frame, one conclusion.",
+   "annotation": "A single cue is weak evidence. Several channels changing at once, tied to a moment, earn a written hypothesis."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Testing it with an open question, asked in a body that makes honesty easy.",
+   "dontCaption": "Testing a reading by pressure: looming, staring, waiting for a crack.",
+   "annotation": "Pressure produces the signals it claims to detect. Ask, and let the answer count."
+  },
+  {
+   "doPoseId": "p_stand_upright_side",
+   "dontPoseId": "p_stand_slumped_side",
+   "doCaption": "Rested and stacked, breathing low: the instrument calibrated.",
+   "dontCaption": "Running the protocol depleted: the read will be darker than the room.",
+   "annotation": "Your own state is the first entry in every protocol. On bad days, lower your confidence along with your shoulders."
+  },
+  {
+   "doPoseId": "p_sit_hands_clasped_lap",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Sitting with him, hands still, attention soft.",
+   "dontCaption": "Studying a grieving friend for signals.",
+   "annotation": "Some moments call for presence, not reading. Knowing when to put the method down is part of the method."
+  }
+ ],
+ "caseStudy": "Every Thursday for six years, Owen has played five-a-side football with the same group and gone for a drink afterwards. He knows their baselines without trying. Marcus is loud from the first minute. Ben is quiet until his second pint. Jamie is the joker, who narrates every game as if commentating on it.\n\nOne Thursday in October Jamie barely speaks during the game. In the pub he sits at the end of the table, turned slightly toward the door, checks his phone and leaves after one drink. Ben decides Jamie is annoyed with him over a missed pass and spends the next week sending apologetic messages and jokes, which Jamie does not answer, which Ben reads as confirmation.\n\nOwen runs his protocol, mostly in his head and partly in a note on the walk home. Self: tired, and a little hurt that Jamie left without saying goodbye, so discount for that. Baseline and context: this is far outside Jamie's range, in a setting where he is usually at his most relaxed. Base rate: friends having a bad week is common; a quarrel with the group is not, since nothing happened. Cluster: quiet, turned away, phone, early exit, all present from the moment he arrived rather than starting at any remark. Hypothesis: something outside the group is weighing on him. Rival: he is tired or ill. Disconfirmer: if it is illness, he will say so or be himself next week; if it is the group, it will be about one of them and show when that person speaks.\n\nThe next Thursday Jamie is quiet again, and not toward anyone in particular. Owen offers him a lift and on the drive says only: you've seemed far away the last couple of weeks, no need to talk about it, but I'm around. Jamie says nothing for a few streets. Then he says that his father has been diagnosed with early dementia and that he has told no one.\n\nOwen writes one more line that night: hypothesis held, rival wrong. Ben, when he hears, stops apologising.",
+ "observe": [
+  "Choose one recurring meeting or gathering this week where you know most people well. Before it begins, write one sentence for each of the four self-checks: body, state, stake and prior.",
+  "During that gathering, notice one moment when someone's behaviour departs from their usual range in more than one channel at once. Afterwards, write the hypothesis, a rival and a disconfirmer in three lines, before you know which is right.",
+  "Within the next fortnight, test one written hypothesis by waiting for the situation to recur or by asking an open question. Record the outcome as right, wrong or unclear.",
+  "At the end of the month, reread every prediction you have recorded and write a two-sentence description of your error profile: who and what you tend to misread."
+ ],
+ "drills": [
+  {
+   "name": "Write Your Protocol",
+   "minutes": 30,
+   "steps": [
+    "On one page, write the six steps of this chapter in your own words: self, references, cluster, hypothesis with rival and disconfirmer, test, record.",
+    "Under each step, add the one question you are most likely to skip, judging by your earlier reflections.",
+    "Add your stopping rules: at least three situations in which you will not read people.",
+    "Leave a line at the top for your error profile, blank for now.",
+    "Date the page as version one and keep it where you will see it before important conversations."
+   ]
+  },
+  {
+   "name": "Thirty-Second Self-Check",
+   "minutes": 10,
+   "steps": [
+    "Set a timer for thirty seconds and silently run the four self-checks: body, state, stake, prior.",
+    "Write one line for each check.",
+    "Repeat five times over the day at different moments: before a meal, after a message, before a call.",
+    "In the evening, read the five sets and note which check changed most across the day.",
+    "Decide which check you will make first in a high-stakes moment."
+   ]
+  },
+  {
+   "name": "The Prediction Ledger",
+   "minutes": 20,
+   "steps": [
+    "Make a simple ledger in your notes app with five columns: date, person and setting, hypothesis, confidence, outcome.",
+    "In a recorded interview or a film you have not seen, pause at a moment of visible change and write a hypothesis with a confidence of 60, 80 or 95 percent.",
+    "Write a rival explanation and the observation that would favour it.",
+    "Play on and record the outcome honestly.",
+    "Repeat with four more moments, then compare your stated confidence with your hit rate."
+   ]
+  },
+  {
+   "name": "Rivals",
+   "minutes": 15,
+   "steps": [
+    "List five readings of people you made in the past month that you felt sure about.",
+    "For each, write the most plausible ordinary rival explanation you can think of.",
+    "Rate how well each rival fits what you actually saw, from one to five.",
+    "Mark the readings for which the rival fits at least as well as your original.",
+    "Write one sentence about what those readings have in common."
+   ]
+  },
+  {
+   "name": "Stopping Rules",
+   "minutes": 10,
+   "steps": [
+    "Picture three situations in which reading someone would be the wrong thing to do: a grieving friend, an intimate moment, a person who has asked you not to analyse them.",
+    "For each, write what your trained attention should do instead: listen, stay, be still, help.",
+    "Write down the physical signs in your own body that you have slipped into reading mode, such as leaning in, narrowed eyes or mental note-taking.",
+    "Choose one phrase you will say to yourself to put the method down.",
+    "Use the phrase once this week and note what happened."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "According to Kahneman and Klein, when can you trust an intuitive judgment?",
+   "options": [
+    "When you feel strongly confident about it",
+    "When you have many years of experience in the area",
+    "When the environment has valid cues and you have had long practice with timely feedback",
+    "Never, because intuition is always biased"
+   ],
+   "answer": 2,
+   "explain": "Confidence and years of experience are exactly what fail in low-feedback environments, where people grow more certain without growing more accurate. Kahneman and Klein agreed that intuition deserves trust only where the environment is regular and feedback is clear. A protocol is a way of supplying the feedback that social life withholds.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Why does the protocol require a rival explanation for every hypothesis?",
+   "options": [
+    "To seem balanced to other people",
+    "Because a single favoured hypothesis bends new observations toward itself",
+    "Because the rival is usually the correct one",
+    "To make predictions harder to score"
+   ],
+   "answer": 1,
+   "explain": "Chamberlin's method of multiple working hypotheses was designed against exactly this bias. Holding a rival forces you to ask what would tell the two apart. The rival is not usually correct, but without it you cannot see when your favourite is wrong.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague says your proposal is great while her voice flattens, her hands stop moving and she turns slightly away. Following the protocol, what do you do?",
+   "options": [
+    "Conclude she dislikes the proposal and withdraw it",
+    "Set her words aside, since most communication is nonverbal",
+    "Note the cluster and its timing, write a hypothesis and a rival, and ask an open question about any concerns",
+    "Ask her directly why she is lying"
+   ],
+   "answer": 2,
+   "explain": "Several channels shifted together at an identifiable moment, which earns a hypothesis and a question, not a verdict. Setting her words aside repeats the misreading of Mehrabian's experiments, which never showed that words carry little weight. Accusing her of lying turns a pointer into a charge.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Albert Mehrabian's experiments in the 1960s actually study?",
+   "options": [
+    "How much of all communication is nonverbal",
+    "How listeners judged a speaker's liking from single words spoken in a contradicting tone",
+    "Whether body language can reveal lies",
+    "Facial expressions across cultures"
+   ],
+   "answer": 1,
+   "explain": "The famous percentages came from experiments on single words and tones, judged for feelings of liking or disliking. Mehrabian has said the figures do not apply to communication in general. In ordinary conversation, words still carry most of the content.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Philip Tetlock's research, what distinguished the most accurate forecasters?",
+   "options": [
+    "Higher intelligence and deeper expertise",
+    "Strong, consistent opinions",
+    "Relying on gut feeling under time pressure",
+    "Precise predictions, honest probabilities, keeping score and updating in small steps"
+   ],
+   "answer": 3,
+   "explain": "Tetlock found that the habits of forecasting mattered more than credentials. Calibration comes from stating predictions precisely enough to be wrong, and then checking them. That is the purpose of the ledger in this chapter.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your closest friend's father has just died, and at the funeral you notice yourself tracking your friend's face and hands for signs of how he is coping. What does your protocol say?",
+   "options": [
+    "Continue, but more discreetly",
+    "Write down what you see for later",
+    "Apply a stopping rule: put the method down and simply be with him",
+    "Ask him how he is really feeling, given what you have observed"
+   ],
+   "answer": 2,
+   "explain": "Grief is one of the clearest stopping conditions. Your trained attention is better spent on presence: standing near him, doing practical things, letting him lead. Reading him there turns a friend into a subject at the moment he most needs a friend.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Write the first version of your personal protocol, then test it against one specific reading you made in the past month that turned out to be wrong. Describe the situation, what you saw, what you concluded and what was actually going on. Which step of your protocol would have caught the error, and which step would you probably have skipped anyway? Be honest about the second part; it is the one that will change your protocol.",
+  "guidance": "Write the protocol in your own words, not this chapter's; a step that does not survive translation into your language has not yet been absorbed. For the wrong reading, choose one that cost something, even something small: an awkward week, an unnecessary apology, a missed chance to help. Trace the error to a specific step. Most people find their errors gather at the self-check or at the rival, because both require admitting something about yourself. Date the protocol. You will revise it, and the revisions are the record of your skill.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure at this level is to treat the protocol as a ritual that confers authority. A reader runs the steps, arrives at a hypothesis and then believes it more firmly than before, as if the procedure had proved it. It has not. A protocol does not make a reading true. It makes it testable, and it makes your errors visible so that you can learn from them. If your notes contain no wrong predictions after a month, you are not unusually accurate; you are writing predictions too vague to fail, or not checking them honestly. The second failure is applying the protocol everywhere. A man who runs his steps on his partner during an argument, or on a friend at a funeral, has mistaken a tool for a way of being. Use the stopping rules. The point of all this practice is to need it less, not to live inside it.",
+ "furtherStudy": [
+  {
+   "work": "Conditions for intuitive expertise: A failure to disagree",
+   "author": "Daniel Kahneman and Gary Klein",
+   "note": "American Psychologist 64(6), 2009. The clearest statement of when intuition deserves trust."
+  },
+  {
+   "work": "Superforecasting: The Art and Science of Prediction",
+   "author": "Philip E. Tetlock and Dan Gardner",
+   "note": "The best practical guide to calibration, keeping score and updating."
+  },
+  {
+   "work": "On the accuracy of personality judgment: A realistic approach",
+   "author": "David C. Funder",
+   "note": "Psychological Review 102(4), 1995. The Realistic Accuracy Model: relevance, availability, detection and utilisation."
+  },
+  {
+   "work": "The Checklist Manifesto: How to Get Things Right",
+   "author": "Atul Gawande",
+   "note": "Why skilled people fail by not applying what they know, and how a written procedure helps."
+  }
+ ],
+ "reviewPrompt": "Run your written protocol once this week on a real moment, from self-check to recorded outcome, then revise one line of the protocol in light of what happened."
+}

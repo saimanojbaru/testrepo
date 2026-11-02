@@ -1,0 +1,554 @@
+{
+ "version": 1,
+ "generatedAt": "2026-11-02",
+ "categories": [
+  {
+   "id": "foundations",
+   "title": "Foundations",
+   "tagline": "Reading the body as a language before you try to speak it.",
+   "accent": "#2F4A73",
+   "heroAsset": "foundations.jpg",
+   "introduction": "Before you can say anything with your body, you have to be able to read the language at all. These fifteen chapters teach its grammar: the baseline every reading starts from, the channels the body speaks through (space, gaze, posture, face, voice, touch), how signals cluster, how they vary across cultures, and why the face is the least reliable witness and deception the least worthwhile target. The part ends with you writing your own protocol, a procedure you trust because you have watched it fail.",
+   "outline": [
+    {
+     "index": 1,
+     "title": "The Baseline"
+    },
+    {
+     "index": 2,
+     "title": "The 1/25th Second"
+    },
+    {
+     "index": 3,
+     "title": "Proxemics"
+    },
+    {
+     "index": 4,
+     "title": "The Gaze"
+    },
+    {
+     "index": 5,
+     "title": "The Spine as Status"
+    },
+    {
+     "index": 6,
+     "title": "Clusters & Congruence"
+    },
+    {
+     "index": 7,
+     "title": "The Face"
+    },
+    {
+     "index": 8,
+     "title": "Voice as Body Language"
+    },
+    {
+     "index": 9,
+     "title": "The Taxonomy of Touch"
+    },
+    {
+     "index": 10,
+     "title": "Space & Territory"
+    },
+    {
+     "index": 11,
+     "title": "Leakage & Pacifiers"
+    },
+    {
+     "index": 12,
+     "title": "Reading the Room"
+    },
+    {
+     "index": 13,
+     "title": "Cultural Variance"
+    },
+    {
+     "index": 14,
+     "title": "Deception"
+    },
+    {
+     "index": 15,
+     "title": "Synthesis — Building Your Own Protocol"
+    }
+   ]
+  },
+  {
+   "id": "inner-world",
+   "title": "The Inner World",
+   "tagline": "Reading the body you live in, before reading anyone else's.",
+   "accent": "#5B4A7E",
+   "heroAsset": "inner-world.jpg",
+   "introduction": "The body you know least well is the one you live in. These chapters turn the method inward, toward stress, breath, the mask of being fine, depression, anger, anxiety, grief, trauma, burnout and depletion. They teach recognition and the right response, never diagnosis. One chapter, on what the body may show when someone is thinking about suicide, opens through a page of crisis resources, because teaching it badly is dangerous and refusing to teach it is worse.",
+   "outline": [
+    {
+     "index": 1,
+     "title": "The Stress Posture"
+    },
+    {
+     "index": 2,
+     "title": "Breath as the Master Signal"
+    },
+    {
+     "index": 3,
+     "title": "The “I'm Fine” Mask"
+    },
+    {
+     "index": 4,
+     "title": "Depression's Physical Signature"
+    },
+    {
+     "index": 5,
+     "title": "Anger — The Escalation Ladder"
+    },
+    {
+     "index": 6,
+     "title": "Anxiety's Body"
+    },
+    {
+     "index": 7,
+     "title": "The Body in Grief"
+    },
+    {
+     "index": 8,
+     "title": "Trauma & the Freeze Response"
+    },
+    {
+     "index": 9,
+     "title": "Pacifiers & Self-Soothing"
+    },
+    {
+     "index": 10,
+     "title": "Burnout"
+    },
+    {
+     "index": 11,
+     "title": "Sleep, Cortisol & Visible Depletion"
+    },
+    {
+     "index": 12,
+     "title": "Substance Use & the Body"
+    },
+    {
+     "index": 13,
+     "title": "Suicidal Ideation — What the Body Shows"
+    },
+    {
+     "index": 14,
+     "title": "Interoception"
+    },
+    {
+     "index": 15,
+     "title": "Building a Personal Early-Warning System"
+    }
+   ]
+  },
+  {
+   "id": "social-world",
+   "title": "The Social World",
+   "tagline": "The nonverbal language between men that nobody teaches.",
+   "accent": "#9A4F33",
+   "heroAsset": "social-world.jpg",
+   "introduction": "Men are rarely taught the language spoken between them: the side-by-side conversation, the greeting, the nod, the hug that is mostly back-slaps, the silence that means comfort. This part is about friendship, intimacy and vulnerability: how to read and offer closeness, how consent works without words and why it still requires them, how to disagree and repair with the body, and how to hold a child, a dying parent or a grieving friend.",
+   "outline": [
+    {
+     "index": 1,
+     "title": "The Side-by-Side Principle"
+    },
+    {
+     "index": 2,
+     "title": "The Male Greeting Taxonomy"
+    },
+    {
+     "index": 3,
+     "title": "The Head Nod & Its Dialects"
+    },
+    {
+     "index": 4,
+     "title": "Personal Space Between Men"
+    },
+    {
+     "index": 5,
+     "title": "The Bro Hug"
+    },
+    {
+     "index": 6,
+     "title": "Touch Between Male Friends"
+    },
+    {
+     "index": 7,
+     "title": "Silence as Communication"
+    },
+    {
+     "index": 8,
+     "title": "The Intimacy of Shared Activity"
+    },
+    {
+     "index": 9,
+     "title": "Reading Attraction — Signals & Hard Limits"
+    },
+    {
+     "index": 10,
+     "title": "Consent as Nonverbal Negotiation"
+    },
+    {
+     "index": 11,
+     "title": "The Body in Disagreement"
+    },
+    {
+     "index": 12,
+     "title": "Repair — The Physical Language of Apology"
+    },
+    {
+     "index": 13,
+     "title": "Fatherhood — Holding, Carrying, Teaching"
+    },
+    {
+     "index": 14,
+     "title": "Caregiving — The Steady Presence"
+    },
+    {
+     "index": 15,
+     "title": "Mourning Together"
+    }
+   ]
+  },
+  {
+   "id": "modern-world",
+   "title": "The Modern World",
+   "tagline": "The body on Zoom, in the meeting room, and in the text thread.",
+   "accent": "#2C6470",
+   "heroAsset": "modern-world.jpg",
+   "introduction": "Most of your body language now passes through a camera, a meeting table or a text box. These chapters cover the video call, framing and status, the voice as body, what is real and what is myth in power posing, the handshake after the pandemic, the geometry of meeting rooms, negotiation, interviews and leadership, and the written body language of email and chat. The thread through all of it is authority that does not depend on intimidation.",
+   "outline": [
+    {
+     "index": 1,
+     "title": "The Video Call Body"
+    },
+    {
+     "index": 2,
+     "title": "Camera Height, Framing & Perceived Status"
+    },
+    {
+     "index": 3,
+     "title": "Audio as Body Language"
+    },
+    {
+     "index": 4,
+     "title": "The Professional Poker-Face Trap"
+    },
+    {
+     "index": 5,
+     "title": "Power Posing — What's Real, What's Myth"
+    },
+    {
+     "index": 6,
+     "title": "The Handshake in a Post-Handshake World"
+    },
+    {
+     "index": 7,
+     "title": "Meeting Room Geography"
+    },
+    {
+     "index": 8,
+     "title": "The Nonverbal Glass Ceiling"
+    },
+    {
+     "index": 9,
+     "title": "Stage Presence Without Performance"
+    },
+    {
+     "index": 10,
+     "title": "The Body at the Negotiation Table"
+    },
+    {
+     "index": 11,
+     "title": "Interview Signals That Actually Matter"
+    },
+    {
+     "index": 12,
+     "title": "Written Body Language — Text, Email, Slack"
+    },
+    {
+     "index": 13,
+     "title": "Social Media Self-Presentation"
+    },
+    {
+     "index": 14,
+     "title": "Networking — Approach, Exit, Escape"
+    },
+    {
+     "index": 15,
+     "title": "Leading — Authority With Warmth"
+    }
+   ]
+  },
+  {
+   "id": "overlooked-contexts",
+   "title": "Overlooked Contexts",
+   "tagline": "The masculine body is not one body.",
+   "accent": "#5A6A2C",
+   "heroAsset": "overlooked-contexts.jpg",
+   "introduction": "The classic literature on body language was written about a narrow slice of people and then applied to everyone. This part corrects that, drawing on disability studies, queer theory and critical race scholarship: neurodivergent communication, masking and its cost, sensory overload, queer signalling and safety, how Black men's bodies are read and misread, class, disability and the politics of help, age, size, religion and modesty, code-switching, and what performing masculinity costs. It ends by building a nonverbal self that is actually yours.",
+   "outline": [
+    {
+     "index": 1,
+     "title": "Neurodivergence — Reading the Map Without the Legend"
+    },
+    {
+     "index": 2,
+     "title": "Masking & Its Cost"
+    },
+    {
+     "index": 3,
+     "title": "Sensory Overload in Social Space"
+    },
+    {
+     "index": 4,
+     "title": "The Queer Nonverbal Dialect"
+    },
+    {
+     "index": 5,
+     "title": "Safety & Signaling in Hostile Space"
+    },
+    {
+     "index": 6,
+     "title": "Race & the Reading of Black Male Bodies"
+    },
+    {
+     "index": 7,
+     "title": "Class & the Codification of Manners"
+    },
+    {
+     "index": 8,
+     "title": "Disability & the Politics of Help"
+    },
+    {
+     "index": 9,
+     "title": "Age — The Invisible Man"
+    },
+    {
+     "index": 10,
+     "title": "Body Size & the Claiming of Space"
+    },
+    {
+     "index": 11,
+     "title": "Cultural Variance — A Working Map"
+    },
+    {
+     "index": 12,
+     "title": "Religion, Modesty & Touch"
+    },
+    {
+     "index": 13,
+     "title": "Code-Switching in the Body"
+    },
+    {
+     "index": 14,
+     "title": "Masculinity as Performance — The Cost of the Act"
+    },
+    {
+     "index": 15,
+     "title": "Integration — Building an Authentic Nonverbal Self"
+    }
+   ]
+  },
+  {
+   "id": "discipline",
+   "title": "The Discipline",
+   "tagline": "The method that turns reading into skill.",
+   "accent": "#86622A",
+   "heroAsset": "discipline.jpg",
+   "introduction": "Knowing is not the same as being able. This part is the method that turns reading into skill: a baseline journal, the sixty-second scan, video review of yourself, honest feedback, calibration in the field, the ethics of observation, teaching others, plateaus and deliberate practice, reading groups, high-stakes rooms and your own body under stress. Its last chapter, The Quiet Body, is about what remains when the technique has been absorbed.",
+   "outline": [
+    {
+     "index": 1,
+     "title": "Building Your Baseline Journal"
+    },
+    {
+     "index": 2,
+     "title": "The 60-Second Scan"
+    },
+    {
+     "index": 3,
+     "title": "Video Review of Yourself"
+    },
+    {
+     "index": 4,
+     "title": "Feedback Loops & Honest Mirrors"
+    },
+    {
+     "index": 5,
+     "title": "Calibration — Testing Hypotheses in the Field"
+    },
+    {
+     "index": 6,
+     "title": "The Ethics of Reading People"
+    },
+    {
+     "index": 7,
+     "title": "Teaching Others — The Test of True Understanding"
+    },
+    {
+     "index": 8,
+     "title": "Plateaus & Deliberate Practice"
+    },
+    {
+     "index": 9,
+     "title": "Building a Personal Protocol"
+    },
+    {
+     "index": 10,
+     "title": "Reading Groups in Real Time"
+    },
+    {
+     "index": 11,
+     "title": "Cross-Cultural Calibration"
+    },
+    {
+     "index": 12,
+     "title": "High-Stakes Environments"
+    },
+    {
+     "index": 13,
+     "title": "Reading Yourself Under Stress"
+    },
+    {
+     "index": 14,
+     "title": "Synthesis & Improvisation"
+    },
+    {
+     "index": 15,
+     "title": "Mastery — The Quiet Body"
+    }
+   ]
+  }
+ ],
+ "crisisResources": {
+  "resourceTitle": "If you're struggling right now",
+  "resourceBody": "If you are thinking about suicide, or you are worried about someone who might be, you do not have to work it out alone and you do not have to be certain before you reach out. The people on these lines talk with people in exactly this place, every day and every night. You can call for yourself, or call to ask how to help someone else.\n\nIf you are worried about someone, ask them directly whether they are thinking about killing themselves. Asking does not put the idea in their head; reviews of the research find it does not increase suicidal thinking, and it often brings relief. Then stay with them, and help them make the call.",
+  "regions": [
+   {
+    "region": "United States",
+    "org": "988 Suicide & Crisis Lifeline",
+    "contact": "Call or text 988"
+   },
+   {
+    "region": "Canada",
+    "org": "9-8-8 Suicide Crisis Helpline",
+    "contact": "Call or text 988"
+   },
+   {
+    "region": "United Kingdom",
+    "org": "Samaritans",
+    "contact": "Call 116 123"
+   },
+   {
+    "region": "United Kingdom",
+    "org": "Shout",
+    "contact": "Text SHOUT to 85258"
+   },
+   {
+    "region": "Ireland",
+    "org": "Samaritans",
+    "contact": "Call 116 123"
+   },
+   {
+    "region": "Australia",
+    "org": "Lifeline",
+    "contact": "Call 13 11 14"
+   },
+   {
+    "region": "New Zealand",
+    "org": "Need to Talk?",
+    "contact": "Call or text 1737"
+   },
+   {
+    "region": "India",
+    "org": "Tele-MANAS",
+    "contact": "Call 14416"
+   },
+   {
+    "region": "Germany",
+    "org": "TelefonSeelsorge",
+    "contact": "Call 0800 111 0 111"
+   },
+   {
+    "region": "France",
+    "org": "Numéro national de prévention du suicide",
+    "contact": "Call 3114"
+   },
+   {
+    "region": "South Africa",
+    "org": "SADAG Suicide Crisis Helpline",
+    "contact": "Call 0800 567 567"
+   },
+   {
+    "region": "Anywhere else",
+    "org": "Find A Helpline: free lines in over 130 countries",
+    "contact": "findahelpline.com"
+   }
+  ]
+ },
+ "ethics": {
+  "title": "On Reading People",
+  "subtitle": "What this book teaches, what it refuses to teach, and why the difference matters.",
+  "sections": [
+   {
+    "paragraphs": [
+     "Every time you look at someone and form a guess about what is going on inside them, you exercise a small power. You decide, privately and without their consent, that you know something about them they have not told you. Most of the time the guess is harmless, and often it is kind: you see a friend's shoulders drop and you ask whether he is all right. But the same act, made carelessly or made for advantage, is how people are misjudged in job interviews, followed around shops, disbelieved by police and dismissed by doctors. This book teaches the act. It would be dishonest to teach it without saying, first and plainly, what it is for and what it is not for.",
+     "The short version is this. Reading people well is a method for asking better questions. It is not a method for reaching conclusions about people without asking them. Everything in these pages is built to make the first use easier and the second harder."
+    ]
+   },
+   {
+    "heading": "A reading is a guess",
+    "paragraphs": [
+     "There is no dictionary of gestures. Crossed arms do not mean defensiveness, a touch to the neck does not mean a lie, a lowered gaze does not mean shame. Each of these has dozens of causes, most of them dull: a cold room, a sore back, a habit, fatigue, culture, the effort of remembering a date. What the research on nonverbal behaviour supports is narrower than the dictionary and far more useful. Changes from a person's own baseline, clustered across more than one channel and tied in time to something specific, are worth noticing. Noticing them is a reason to ask. It is never a reason to know.",
+     "So every reading in this book is taught as a hypothesis, with its direction, its timing and, always, its disconfirming condition: what you would have to see to know you were wrong. If you cannot say what would prove a reading wrong, you do not have a reading. You have a story, and stories about other people are where most of the harm in this subject begins."
+    ]
+   },
+   {
+    "heading": "Attention is not consent",
+    "paragraphs": [
+     "The people you observe have not agreed to be studied. That does not forbid observation, since all social life involves it, but it sets limits. The field assignments in this book ask you to watch ordinary behaviour in public places, briefly, at a distance, and without recording anyone. They never ask you to photograph or film strangers, to follow anyone, to keep notes on a named person's private life, or to test a reading by provoking someone. If a person notices you watching and seems uncomfortable, the exercise is over. Look away and let it go.",
+     "Your notes are about your own perception, not about them. The journal in this app records what you saw and what you guessed so that you can learn where your guesses go wrong. It is not a file on anyone, and it never leaves your phone unless you choose to export it.",
+     "Be most careful where you hold power. A manager reading an employee, a teacher reading a student, an officer reading a suspect, a father reading a teenager: in each case your reading can change what happens to the other person, and they cannot easily correct you. The more power you have over someone, the higher your standard of evidence should be, and the more readily you should ask instead of infer."
+    ]
+   },
+   {
+    "heading": "What this book will not teach",
+    "paragraphs": [
+     "It will not teach you to detect lies. The best evidence, from a meta-analysis of more than two hundred studies by Charles Bond and Bella DePaulo, is that people judging deception from behaviour are right about 54 percent of the time, barely better than a coin, and that trained professionals rarely do much better. The chapter on deception exists to explain why, and to talk you out of trying.",
+     "It will not teach you to manipulate: to mirror someone in order to lower their guard, to manufacture rapport as a technique for getting something, or to read attraction in order to push past hesitation. In touch, closeness and sex, the only signal that grants permission is a clear yes. A no, a hesitation or a silence ends the question, and no posture overrides a word.",
+     "It will not teach you to diagnose. The chapters on the inner life teach recognition and response: notice, ask directly, stay, and help the person reach someone qualified. Nothing in this app will ever tell you that a body means a person is depressed, traumatised or suicidal. When the body raises the question, you ask the person."
+    ]
+   },
+   {
+    "heading": "Bodies are not one body",
+    "paragraphs": [
+     "Much of the classic research on nonverbal communication was done on a narrow slice of people: mostly Western, mostly white, mostly university students, mostly neurotypical. Its norms are not neutral. An autistic man who avoids eye contact is not being evasive. A deaf man who looks hard at your face is reading your mouth. A Black man who keeps his hands visible and his movements small in a shop may be managing a danger you have never had to manage. A man raised where lowering the gaze shows respect is showing respect. When observers treat one group's habits as the human default, their errors fall hardest on the people who already carry the most misreading.",
+     "That is why the reference point in this book is always a person's own baseline, never a universal one, and why an entire part is given to the contexts the classic literature overlooked."
+    ]
+   },
+   {
+    "heading": "Read yourself first",
+    "paragraphs": [
+     "The person you will observe most often, with the most access and the most correctable bias, is you. Your state colours what you see. A tired, anxious observer finds threat everywhere; a confident one misses discomfort he would rather not notice. The method here starts with your own body for that reason. Before you read a room, check your breath, your shoulders, and what you stand to gain from the conclusion you are about to reach.",
+     "This is not a ritual. Research on mood and judgment, including Joseph Forgas's work on what he called affect infusion, finds that feelings seep into the judgments we make about other people most strongly when the judgment is complex and the information ambiguous. That describes nearly every reading in this book."
+    ]
+   },
+   {
+    "heading": "Knowing when to stop",
+    "paragraphs": [
+     "There are moments when reading is the wrong thing to do: with a grieving friend, with a partner in an intimate moment, with a child who needs you rather than your assessment, with anyone who has asked not to be analysed. Skill includes the decision to put it down. The final chapter of this book is called The Quiet Body because the end of practice is not a sharper eye. It is a steadier presence that other people can rest in."
+    ]
+   },
+   {
+    "heading": "If you are worried about someone",
+    "paragraphs": [
+     "If what you notice in someone makes you afraid for their safety, ask them directly whether they are thinking about suicide. Asking does not plant the idea; reviews of the evidence find that it does not increase suicidal thinking and can bring relief. Then stay with them, and help them contact a crisis line or emergency services. The resources are one tap from the home screen and in Settings, in every edition of this book.",
+     "Read gently, test honestly, and stay ready to be wrong. That is the whole ethic. Everything else in this book is method."
+    ]
+   }
+  ]
+ }
+}

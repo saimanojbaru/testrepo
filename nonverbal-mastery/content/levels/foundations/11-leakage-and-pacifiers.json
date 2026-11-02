@@ -1,0 +1,269 @@
+{
+ "id": "foundations-11",
+ "categoryId": "foundations",
+ "index": 11,
+ "tier": "EXPERT",
+ "title": "Leakage & Pacifiers",
+ "estimatedMinutes": 75,
+ "hook": "The body does not betray secrets; it manages strain, and the hands that soothe a man point to the pressure without ever naming it.",
+ "why": "Most men learn about leakage from a television detective: the suspect touches his nose, the detective narrows his eyes, the case breaks. Real rooms are less obliging. Picture a quarterly review in which a project lead rubs the back of his neck every time the launch date comes up. His director, who has read a little about body language, decides the lead is hiding something and spends the meeting pressing him. The lead goes quieter, the director grows more certain, and the real problem, a dependency stuck in another team that the lead did not want to blame on a colleague, surfaces three weeks later as a missed launch.\n\nWhat the director missed is that leakage is real but narrow. Under strain, the parts of the body we monitor least do show it, and self-soothing touches really do rise. What they tell you is where effort or discomfort has gathered, not what it is about, and certainly not whether someone is lying. Read well, a pacifier is a request for a gentler question. Read badly, it is a licence to interrogate, and interrogation produces exactly the signals that seem to confirm it.",
+ "teach": [
+  {
+   "h": "Leakage follows a gradient of control, not a map of secrets.",
+   "p": "In 1969 Paul Ekman and Wallace Friesen published a paper on what they called nonverbal leakage. Their argument was about sending capacity and feedback. The face can produce a huge range of fine distinctions, it is what other people watch most, and we get constant feedback about it, so it is the channel we manage best. The hands are watched less and the legs and feet hardly at all, so feeling that is being held back from the face is likelier to escape lower down. Ekman later argued that the face leaks too, in brief expressions, but the gradient itself remains a useful guide to where to look.\n\nNotice what the gradient does and does not claim. It says unmanaged feeling is likelier to show in less-managed channels. It does not say that what shows was concealed, or guilty, or even emotional. A man smiling warmly while his foot taps under the table may be hiding impatience, or he may be someone whose foot always taps, or he may need the bathroom. Leakage is a property of channels, not a confession.\n\nThe most sobering numbers in this field come from Charles Bond and Bella DePaulo, who pooled more than two hundred studies of people judging truth from lies. Average accuracy was about 54 percent, a whisker above chance. DePaulo's own large review of behavioural cues to deception found most of them weakly related to lying, if at all. If leakage reliably revealed lies, those numbers would look very different.\n\nSo use the gradient as a viewing order, not a verdict. When you want to know how someone is actually doing, glance below the face, at the hands, shoulders, legs and feet. Then hold what you see as you would hold any other observation: against this person's baseline, in its timing, with an alternative explanation ready.",
+   "poseId": "p_sit_heel_raised",
+   "disconfirm": "If the lower channels of someone's body stay as calm as their face across the moments you care about, the gradient has nothing to show you, and you should stop looking for leakage that is not there. And if the change you see below the face also appears in moments of no consequence, it is part of their range.",
+   "pullQuote": "Leakage is a property of channels, not a confession."
+  },
+  {
+   "h": "A pacifier is the body regulating itself, and it works.",
+   "p": "Ekman and Friesen's 1969 catalogue of nonverbal behaviour named a class of movements they called adaptors: actions that once served the body's own needs, such as scratching, rubbing and holding, performed now in fragments. Self-adaptors, in which the hand touches the body, are what the former FBI agent Joe Navarro popularised as pacifying behaviours. The terms differ and the observation is the same. Under strain, people touch themselves more, and the touch does something.\n\nThere is reasonable evidence that it helps. Primatologists have long treated scratching and self-grooming as markers of anxiety in monkeys and apes, and the psychiatrist Alfonso Troisi reviewed this work and argued that the same displacement activities track stress in people. In 2013 Changiz Mohiyeddini and Stuart Semple put men through a standard laboratory stress test of public speaking and mental arithmetic and found that those who showed more displacement behaviour reported feeling less stressed. A group led by Martin Grunwald recorded brain activity while people held information in memory amid distracting noise, and found that spontaneous face touches were followed by changes they interpreted as regulation of attention and emotion.\n\nThe common forms are worth knowing so that you recognise them: a hand to the front of the neck, often over the hollow at the base of the throat; a palm rubbed across the back of the neck; fingers stroking the jaw, cheek or lips; palms pressed and slid down the thighs; one hand stroking the other forearm; a long exhale through puffed cheeks; fingers fiddling with a watch, ring, collar or cuff.\n\nNone of these is a symptom. Each is a small and effective act of self-care, and that framing matters for how you respond. When you see someone soothing themselves, you are watching them manage. You are not watching them crack.",
+   "poseId": "p_stand_hand_neck",
+   "disconfirm": "If self-touch in a particular person does not rise at moments you would expect to be hard for them, or rises just as much when they are relaxed and absorbed, it is not working as a pacifier in them. It is habit, grooming or simple comfort.",
+   "pullQuote": "You are watching them manage. You are not watching them crack."
+  },
+  {
+   "h": "The base rate is high, so the rate is the signal.",
+   "p": "Because self-touch is constant, a single instance tells you almost nothing. The medical students in Kwok's study touched their faces about 23 times an hour while doing nothing more stressful than attending a lecture. Jinni Harrigan, studying self-touching in the 1980s, found it bound up both with feeling and with the work of speaking and thinking: people touch themselves more when they are searching for words, not only when they are uneasy. A touch is as likely to mean I am looking for the right phrase as I am uncomfortable.\n\nThe informative quantity is the rate, measured against the person's own baseline. Suppose a man touches his face once or twice a minute through the easy part of a conversation. When a particular subject comes up he touches it seven times in the next minute, then gradually returns to his usual rate. That cluster, with its onset and its decay, is a pattern worth noticing. The touches themselves are unremarkable; the shape of the curve is what speaks.\n\nThis is also why the work cannot be done from a photograph. A still image of a hand at a throat is one frame from a rate you do not know. Newspapers love such frames, a politician caught mid-touch at the worst possible moment, and they mean almost nothing. The same politician may have touched his throat forty times that afternoon.\n\nIn practice, keep a rough count. You will not tally every touch in a live conversation, and you should not try; your attention belongs to the person. But you can notice, roughly, when someone moves from their ordinary rate to a great deal more, and when they come back down. The return matters too. A spike that settles suggests something registered and was absorbed. A rate that stays high suggests the pressure has stayed.",
+   "poseId": "p_sit_hand_face",
+   "disconfirm": "If you cannot say what this person's ordinary rate of self-touch is, you cannot call any rate high. And if the cluster you noticed coincides with the person speaking at length or hunting for words, the effort of speech is a strong rival explanation.",
+   "diagram": "baseline-timeline"
+  },
+  {
+   "h": "Timing turns a pacifier into a pointer.",
+   "p": "A pacifier that arrives a second or two after a specific question, word or name is far more useful than one that drifts in over a minute. Timing turns a general sign of strain into a pointer: something about that moment cost this person effort.\n\nThe pointer is real but blunt. Suppose you ask a friend at dinner whether his father is out of hospital and whether he is still making the trip next month. His hand goes to the back of his neck before you finish. Which part landed? The father, the hospital, the trip, the cost of the trip, or your asking in front of other people? The body has told you where to look in time, not what you will find there.\n\nYou can sharpen a pointer without pressing on it. The method is gentle replication. Let the conversation move on and return to one element later, alone and in a different form: how is your dad doing? If the touch comes back with the father and not with the trip, you have learned something. If it comes back with neither, the first time may have been coincidence, or the moment may have passed. If it comes back whenever anything personal is raised, the issue may be talking about himself at all.\n\nWhat you must not do is replicate by pressure: repeat the question harder, hold eye contact, wait in silence for the touch. That is an interrogation technique, and it fails on its own terms, because pressure produces pacifiers in honest, anxious people as reliably as in anyone. You will have manufactured the signal you were trying to read.\n\nThe aim of sharpening a pointer is never to catch someone. It is to know which question to ask kindly, or which subject to leave alone.",
+   "poseId": "p_sit_neck_touch",
+   "disconfirm": "If the touch does not recur when the same element returns in a calmer form, or recurs just as often with unrelated topics, the timing was coincidence or the pressure was general. One onset is an observation; a pattern needs at least two.",
+   "pullQuote": "The body has told you where to look in time, not what you will find there."
+  },
+  {
+   "h": "Effort leaks too, and it looks like distress.",
+   "p": "A great deal of what looks like emotional leakage is something else: effort. Thinking hard changes the body. People working to remember, calculate or find words often look away, slow down, pause, stop gesturing or touch their faces more. Arthur Glenberg and his colleagues found that averting the gaze helps people answer difficult questions, because faces and busy surroundings compete for the same attention. Susan Goldin-Meadow's research shows that gestures actively support thinking, so when speech gets hard some people gesture more while others go still.\n\nAldert Vrij built an approach to interviewing on this, arguing that lying is often harder work than telling the truth, so increasing the load on everyone, for instance by asking for an account in reverse order, makes a liar's extra effort easier to see. Whatever its merits in a police interview, the lesson for ordinary life runs the other way: honest people under load look a great deal like people under strain.\n\nSo when someone's hands stop and their eyes drop to the floor after your question, ask first whether the question was simply hard. Did you ask for a date, a number, a sequence, a judgment about something complicated? Did you ask in their second language, in a noisy room, at the end of a long day? Effort is the likeliest explanation for many of the changes this chapter teaches you to notice, and it is morally neutral.\n\nOften the difference between effort and distress cannot be seen at all. Sometimes it shows in the recovery. Effort tends to resolve once the answer is found, often with a small release: a nod, a breath, the hands returning to their usual motion. Distress tends to linger past the answer. Even that is a tendency, not a rule.",
+   "poseId": "p_stand_head_down",
+   "disconfirm": "If the change persists after the person has found and given their answer, or appears with questions that need no thought at all, effort becomes a weaker explanation. If it resolves the moment they have their answer, assume effort first."
+  },
+  {
+   "h": "Stillness can leak more than movement.",
+   "p": "Popular body-language writing is obsessed with movement: the scratch, the touch, the shift. Experienced observers learn to watch for its absence. When someone who usually gestures goes still, when breathing seems to pause, when a bouncing foot suddenly stops, the body has done something as informative as any touch.\n\nStillness has several sources. Heavy thinking can freeze the hands, as the previous section showed. Alarm can too: many animals, people included, respond to a sudden threat by stopping, a response usually called freezing, which lets attention lock on before anything else happens. Deliberate self-control is a third source. Someone determined to show nothing often clamps down on all movement at once, and the result is a person who is suddenly and conspicuously calm. Research on deception has repeatedly found that, contrary to the stereotype of the fidgeting liar, people trying to control themselves tend to move their hands and fingers less, not more. Like every such cue the effect is small, and plenty of honest people do the same simply because they feel watched.\n\nTo notice stillness you need a baseline that includes movement. You cannot see a man stop gesturing if you never saw him gesture. This is one reason the first chapter of this book insists on watching people at ease before you watch them under any kind of question.\n\nWhen you do notice it, slow down rather than speed up. A person who has gone still is often managing a great deal. The decent responses are the ones that lower the load: a pause, an easier question, a change of subject, a little more physical distance. If it was effort, you have given them room to think. If it was alarm, you have given them room to recover.",
+   "poseId": "p_stand_freeze",
+   "disconfirm": "If the person is still across easy and hard topics alike, stillness is their range, not a reaction. If the stillness comes while they are listening rather than speaking, it may simply be how they pay attention."
+  },
+  {
+   "h": "What you see is theirs to explain and yours to protect.",
+   "p": "Everything in this chapter can be misused, and the misuse is tempting because it feels clever. A negotiator who sees the other side's hand go to the neck when price is mentioned thinks he has found a weak point. A boss who notices an employee's foot freeze at a question about a project thinks he has found a lie. A partner who catalogues the other's self-touch during an argument thinks he has found proof. Each has found nothing but a person under strain, and each is about to make the strain worse.\n\nThe position of this book is simple. A pacifier is a person regulating themselves, and seeing it puts you under an obligation, not in a position of advantage. Lower the pressure. Slow down, sit back, offer an easier question or a way out. If you need to know more, ask openly and accept the answer you get. Never use what you noticed to press, corner or test someone. In a negotiation, treat the observation as information about the other side's constraints, something that might help you find an agreement both of you can live with, never as a lever.\n\nThere is one person whose pacifiers you are free to study as closely as you like: yourself. Your own hand at your neck in a meeting is twenty seconds of warning that most people never get. Learning your own repertoire, the jaw you rub, the thigh you smooth, the breath you hold, is the bridge between this chapter and the part of the book on the inner world. Men are often taught to ignore exactly these signals in themselves. Reading them is not weakness. It is the earliest information you will ever have about your own state.\n\nSee, then ease. That order never reverses.",
+   "poseId": "p_stand_arm_self_hold",
+   "disconfirm": "If, after you lower the pressure, the person's self-touch and stillness settle back toward their baseline, your attention was part of the strain. If they persist, the strain lies elsewhere; let them tell you about it, or not, in their own time.",
+   "pullQuote": "See, then ease. That order never reverses."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_sit_heel_raised",
+   "dontPoseId": "p_stand_head_tilt",
+   "doCaption": "Glancing lower, where management thins out.",
+   "dontCaption": "Watching the face, the channel people manage best.",
+   "annotation": "Leakage follows a gradient of control. Look below the face for what is least managed, then treat what you find as a question."
+  },
+  {
+   "doPoseId": "p_sit_neck_touch",
+   "dontPoseId": "p_sit_hand_face",
+   "doCaption": "A hand arriving at the throat two seconds after the question, in a man who rarely does it.",
+   "dontCaption": "A chin rest while listening: his habit, not a tell.",
+   "annotation": "Both are self-touch. Only one departs from his baseline on a cue, and even that shows where the pressure is, not what it is."
+  },
+  {
+   "doPoseId": "p_stand_freeze",
+   "dontPoseId": "p_stand_gesture_open",
+   "doCaption": "Noticing the moment his hands stopped.",
+   "dontCaption": "Watching only for movement.",
+   "annotation": "Gestures drop under effort and under alarm. The absence of a habitual movement can say as much as any touch."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Noticed, named and released: shoulders down, breath out, hands free.",
+   "dontCaption": "Your own grip and lifted shoulders, unnoticed, carrying strain into the room.",
+   "annotation": "Your own pacifiers are the first instrument to learn. A man who notices his hand at his neck has a warning most people never get."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Seeing the strain and giving room.",
+   "dontCaption": "Seeing the strain and leaning in to press.",
+   "annotation": "A pacifier is a person regulating. The decent response lowers the pressure: sit back, slow down, offer an easier way through."
+  }
+ ],
+ "caseStudy": "Tom has led the mobile team at a mid-sized software company for two years. In meetings he talks with his hands: he draws architecture in the air, counts off risks on his fingers, leans back when he is confident. At the March planning review the director, Alan, asks whether the app will still ship on the fourteenth. Tom says yes. His hands, which have been moving all meeting, come down to his lap and stay there. His right thumb works across the knuckles of his left hand. His answers to the next three questions are a sentence each.\n\nAlan has read a book on body language. He notes the stillness and the rubbing and concludes that Tom is hiding a slip. For the next twenty minutes he presses: are you sure, what aren't you telling me, who else should I ask. Tom grows quieter and more careful with each question, which Alan reads as confirmation. He leaves telling a colleague that Tom has lost control of the project.\n\nMarcus, Tom's manager, was in the same room and saw the same things. He noted the change, the moment it began, and that it had not ended by the close of the meeting. He did not form a theory. Afterwards he walked Tom to the kitchen and said: the fourteenth seemed to weigh on you. What would make it realistic?\n\nTom exhaled. The app depended on a payments service owned by another team, whose lead had been on parental leave, and nothing had moved in three weeks. Tom had not wanted to name a colleague in front of the director. Marcus took it to the other team's manager that afternoon. The date moved by a week, with no blame and no surprise.\n\nBoth men saw the same leakage. One treated it as evidence and generated more of it. The other treated it as a pointer and asked where it pointed.",
+ "observe": [
+  "Watch a televised press conference or a hard interview for ten minutes with the sound off, marking every self-touch with a rough timestamp. Then play it with sound and write down what had just been asked before each cluster, and before each quiet stretch.",
+  "In a meeting where you are not presenting, notice one colleague's ordinary gesturing in the first ten minutes. Afterwards, write down any moment their hands went still for more than a few seconds, what had just been said, and whether hard thinking was a plausible cause.",
+  "For one full day, catch your own pacifiers: each time you notice your hand at your face, neck, hair or thigh, write one word for what was happening just before. At the end of the day, look for the pattern.",
+  "In a queue, a waiting room or an airport gate, without staring at or recording anyone, notice which self-touches are most common among people who are simply waiting. That is the base rate you will compare everything else against."
+ ],
+ "drills": [
+  {
+   "name": "The Gradient",
+   "minutes": 15,
+   "steps": [
+    "Choose a five-minute clip of a seated interview in which the guest's whole body is visible.",
+    "Watch it once with a card covering everything below the guest's chin, and write three sentences about how they seem.",
+    "Watch it again with the face covered and only the body visible, and write three more sentences.",
+    "Compare the two descriptions and mark where they agree and where they differ.",
+    "For each difference, write one ordinary explanation that has nothing to do with concealment."
+   ]
+  },
+  {
+   "name": "Rate, Not Instance",
+   "minutes": 20,
+   "steps": [
+    "Pick a long interview or panel in which one person is on camera for at least twenty minutes.",
+    "For the first ten minutes, tally the person's self-touches in one-minute blocks to find their resting rate.",
+    "For the next ten minutes keep tallying, and mark any minute at least double the resting rate.",
+    "For each spike, note what had been said in the preceding fifteen seconds.",
+    "Write one sentence per spike stating the pointer, not a meaning: something about this topic cost effort."
+   ]
+  },
+  {
+   "name": "Effort or Strain",
+   "minutes": 15,
+   "steps": [
+    "Write six questions on cards: three easy, such as what you ate yesterday, and three demanding, such as the months in reverse order or the plot of the last book you read.",
+    "Set your phone to record yourself from the waist up, shuffle the cards, and answer each one aloud.",
+    "Watch the recording with the sound off and mark every change in your hands, gaze and posture.",
+    "Match each change to its question and count how many came during the demanding ones.",
+    "Write down which of these changes an observer might have mistaken for discomfort or evasion."
+   ]
+  },
+  {
+   "name": "Your Pacifier Map",
+   "minutes": 10,
+   "steps": [
+    "Sit somewhere quiet and recall, in detail, a recent moment that embarrassed you or a conversation you are dreading.",
+    "Stay with it for two minutes without trying to control your body.",
+    "Notice where your hands went, what your breath did and where your shoulders sat, and write each down.",
+    "Repeat with a pleasant memory and note the differences.",
+    "Write your three likeliest pacifiers on a card and keep it in your wallet for a week."
+   ]
+  },
+  {
+   "name": "Ease, Not Press",
+   "minutes": 15,
+   "steps": [
+    "Recall a recent conversation in which someone seemed uncomfortable at a particular moment.",
+    "Write down exactly what you said and did in the minute after you noticed.",
+    "Mark each of your moves as easing the pressure or adding to it.",
+    "Rewrite that minute using only easing moves: a pause, a simpler question, an offered exit, a little more distance.",
+    "Say the rewritten version aloud once, so that it is available to you next time."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A man touches the front of his neck while answering whether he finished a report. What does the research support concluding?",
+   "options": [
+    "He is probably lying about the report",
+    "He is probably anxious about the report",
+    "Something may have registered or cost effort, if this departs from his baseline and closely follows the question",
+    "Nothing at all, since self-touch is meaningless"
+   ],
+   "answer": 2,
+   "explain": "No single self-touch is a sign of lying, and anxiety is only one of several possible causes. The last option overcorrects: a well-timed departure from someone's baseline is information, just not an answer. The defensible claim is the narrow one.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Ekman and Friesen's account of leakage, why is the face the channel least likely to let unmanaged feeling escape?",
+   "options": [
+    "The face shows fewer emotions than the body",
+    "People watch faces most and get the most feedback about them, so they manage them best",
+    "Facial muscles are slower than leg muscles",
+    "Faces only show emotion in children"
+   ],
+   "answer": 1,
+   "explain": "The argument rests on sending capacity, attention and feedback. We are watched in the face and know it, so we control it most. The legs and feet are watched least, which makes them likelier to show what is not being managed, though not necessarily anything concealed.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "During a salary negotiation, the other side's lead rubs the back of his neck twice as you name your figure, then goes still. What is the most defensible next move?",
+   "options": [
+    "Hold silence and eye contact to see whether he breaks",
+    "Note the change and ask an open question about their constraints",
+    "Raise your figure, since he is clearly rattled",
+    "Point out that he seems uncomfortable"
+   ],
+   "answer": 1,
+   "explain": "The touch and the stillness point to effort or pressure near that moment, not to a weakness you can exploit. An open question about constraints lets you learn what the pressure is about and keeps the negotiation honest. Silence and staring are pressure, and pressure produces more of the signals you think you are reading.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Bond and DePaulo's meta-analysis of deception judgments found that people's average accuracy was about:",
+   "options": [
+    "54 percent",
+    "75 percent",
+    "90 percent for trained observers",
+    "33 percent"
+   ],
+   "answer": 0,
+   "explain": "Across more than two hundred studies, people told lies from truths only slightly better than chance. Trained professionals did not reliably do better. Leakage is real, but it is not a lie detector.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Which statement about stillness is best supported?",
+   "options": [
+    "Liars fidget more, so stillness suggests honesty",
+    "Stillness is never informative, because it is an absence of behaviour",
+    "A sudden drop in someone's usual movement can be informative, and has several possible causes, including effort, alarm and self-control",
+    "Stillness always indicates fear"
+   ],
+   "answer": 2,
+   "explain": "The fidgeting liar is a stereotype; research tends to find that people controlling themselves move their hands less, not more. But stillness has many causes, so it is a pointer, never a verdict. You can only see it at all if you know how much the person usually moves.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Your own hand keeps going to your jaw during a tense conversation with your father about his finances. What is the most useful response?",
+   "options": [
+    "Suppress it so that he doesn't read it",
+    "Treat it as early information about your own state: breathe out, lower your shoulders, and slow the conversation down",
+    "Point out that he seems tense too",
+    "Ignore it, since self-touch is meaningless"
+   ],
+   "answer": 1,
+   "explain": "Your own pacifiers are the earliest signal you will ever have about your state. Suppressing them removes the information without removing the strain. Using them to regulate yourself, and the pace of the conversation, is the skill this chapter is built toward.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Describe one specific moment in the last month when you noticed your own body soothing itself: a hand at your neck, a rubbed jaw, a held breath, palms slid down your thighs. Where were you, who was there, and what had just happened? Then describe what you did next, and whether noticing the touch changed anything. If you did not notice it at the time, write about how you realised it afterwards.",
+  "guidance": "Be as physical as you can: which hand, which part of you, for how long. Resist explaining the moment away, and resist dramatising it. The aim is to begin a map of your own pacifiers, because you will use it in the chapters on stress, anger and anxiety, and because it is the one map of leakage you are entitled to draw in full. If this feels hard, remember that noticing a pacifier is not admitting a weakness. It is catching yourself in the act of looking after yourself.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure with this chapter is the pacifier hunt. A reader who has learned the taxonomy starts scanning for neck touches and jaw rubs and, finding them everywhere, because they are everywhere, decides that everyone is anxious about something and that he can see it. He has confused frequency with significance. Worse, he usually begins to act on what he finds, pressing where he sees strain, which produces more strain and more pacifiers, which feel like confirmation. The second failure is reading pacifiers as deception. Nothing in the research supports a neck touch as a sign of lying in particular; it is a sign of effort, discomfort or habit in roughly everyone. If you catch yourself thinking there's the tell, stop, and ask instead what would make this moment easier for the person in front of you.",
+ "furtherStudy": [
+  {
+   "work": "Nonverbal leakage and clues to deception",
+   "author": "Paul Ekman and Wallace V. Friesen",
+   "note": "Psychiatry 32(1), 1969. The original argument for the gradient of control, worth reading in full."
+  },
+  {
+   "work": "Accuracy of deception judgments",
+   "author": "Charles F. Bond Jr. and Bella M. DePaulo",
+   "note": "Personality and Social Psychology Review 10(3), 2006. The meta-analysis behind the 54 percent figure."
+  },
+  {
+   "work": "Displacement behaviour regulates the experience of stress in men",
+   "author": "Changiz Mohiyeddini and Stuart Semple",
+   "note": "Stress 16(2), 2013. Evidence that self-soothing behaviour actually soothes."
+  },
+  {
+   "work": "What Every BODY Is Saying",
+   "author": "Joe Navarro with Marvin Karlins",
+   "note": "A popular source for the catalogue of pacifying behaviours. Read it for the catalogue, with this chapter's cautions beside it."
+  }
+ ],
+ "reviewPrompt": "Watch two minutes of a public figure answering hard questions with the sound off and list every self-touch with a timestamp. Then turn the sound on and write what each cluster followed, with one ordinary explanation for each."
+}

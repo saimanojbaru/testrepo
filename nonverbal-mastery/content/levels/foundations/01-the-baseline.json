@@ -1,0 +1,275 @@
+{
+ "id": "foundations-01",
+ "categoryId": "foundations",
+ "index": 1,
+ "tier": "FOUNDATION",
+ "title": "The Baseline",
+ "estimatedMinutes": 60,
+ "hook": "A gesture means nothing until you know what that body does when nothing is happening, and almost nobody bothers to find out.",
+ "why": "Picture the second interview for a job you want. Across the table the hiring manager keeps her arms folded, answers in short sentences and barely smiles. You spend forty minutes trying to win her back. You talk too much, you oversell, and you leave convinced you failed. A week later you learn that she folds her arms in every meeting, speaks that way to everyone, and rated you the strongest candidate she saw. Nothing in her body was about you. You read a stranger against a template, the generic person you imagine everyone to be, and the template lied.\n\nThis is the most common error in reading people, and it is not a shortage of attention. It is a missing reference. A signal is a change, and a change needs something to change from. Without a baseline, every habit looks like a message, every fidget looks like nerves, and every quiet person looks displeased. With one, most of what you see sorts itself into noise you can ignore, and the little that remains becomes a precise question you can ask. The baseline is not one technique among many in this book. Every other chapter assumes it.",
+ "teach": [
+  {
+   "h": "A signal exists only against a baseline.",
+   "p": "Every reading you make is a comparison, whether you know it or not. When you think he looks nervous, you are comparing him with something: with how you imagine a calm person looks, with how you would look, or with how he looked an hour ago. Only the last comparison is worth much. The first two smuggle in a template, and templates are built from your own habits, your own culture and whatever you absorbed from films.\n\nPaul Ekman, who spent decades studying the face and deception, named one version of this mistake the Brokaw hazard, after the television interviewer Tom Brokaw, who had said he watched for convoluted, evasive answers as a sign of lying. Ekman's point was that some people are convoluted and evasive all the time. Their manner tells you about their style, not about the question. The hazard is failing to allow for individual differences, and the cure is a baseline: a working picture of how this particular person behaves when nothing in particular is at stake.\n\nThink of a friend who talks with his hands. If one evening his hands lie still in his lap while he tells you his week was fine, the stillness is information. In a man who never gestures, the same stillness is nothing. The posture is identical and the meaning is not, because meaning lives in the difference. That is why this book never offers a list of what gestures mean. A list can describe postures. It cannot tell you what is normal for the person in front of you, and without that it cannot tell you anything.\n\nIn practice a baseline answers four questions. How does this person sit or stand when settled? What do their hands do: illustrate, rest, fidget, touch the face? How fast and how loud do they speak, and where do they pause? Where do their eyes go when they think? You will not have all four answers at once, and you do not need them. You need enough to recognise a departure.",
+   "poseId": "p_stand_neutral",
+   "disconfirm": "If you find yourself confidently reading someone you have never seen at rest, you are using a template, not a baseline. The test is simple: could you describe how this person usually stands, gestures and speaks? If you could not, any deviation you think you see is a deviation from your own assumptions.",
+   "pullQuote": "The posture is identical and the meaning is not, because meaning lives in the difference."
+  },
+  {
+   "h": "A baseline is a range, not a pose.",
+   "p": "The word suggests a single line, but a person at rest is never still. They shift their weight, cross and uncross their legs, touch their face, glance at the window. A baseline is the range those movements occupy and the rate at which they happen. Get this wrong and you will treat ordinary fluctuation as a signal.\n\nConsider how often people touch their own faces. In one observational study, Yen Lee Angela Kwok and her colleagues filmed medical students during lectures and counted: on average each student touched their face 23 times an hour. That is the background rate in a room of attentive adults with nothing in particular on their minds. If you watch someone for five minutes and see two face touches, you have seen nothing at all. If you watch the same person for twenty minutes, see almost none, and then see six in the ninety seconds after a particular remark, you may have seen something. The touch did not change. The rate did.\n\nSo record rates and ranges. Touches his jaw two or three times a minute. Bounces his right knee while he listens and stops when he talks. Sits back with an arm over the chair and leans in when interested. Notes like these describe a territory rather than a position, and they let you say with some confidence that a later behaviour falls outside it.\n\nRanges also tell you how much to trust your own eyes. A person whose resting range already includes a great deal of self-touch, foot movement and shifting has a noisy baseline, and small changes in them are hard to see and easy to invent. A very still person has a quiet baseline, where small changes stand out. Neither is better. Knowing which you are dealing with tells you how loudly a change has to speak before you listen.",
+   "poseId": "p_sit_neutral",
+   "disconfirm": "If a behaviour you flagged as a departure turns out to recur at about the same rate through the rest of the conversation, it was part of the range all along. Ten more minutes of watching is the cheapest test in this book."
+  },
+  {
+   "h": "The same person has several baselines.",
+   "p": "You do not have one way of sitting. You have one for your manager's office, one for your sofa, one for your father's kitchen table and one for a first date. Each is real and each is a baseline. When observers forget this, they take a baseline in one setting, apply it in another, and read the difference between the settings as a message about the moment.\n\nResearchers on interviewing have made the same point formally. Aldert Vrij, who has studied deception for three decades, criticises a common interviewing practice: chat with someone about neutral topics to establish a baseline, then compare that with their behaviour during questions about the matter at hand. The two conversations differ in stakes, in difficulty, in emotion and in how closely the person is being watched, so behaviour differs in honest and dishonest people alike. The comparison tells you that hard questions are hard, which you knew. Vrij argues instead for a comparable baseline, taken under conditions as close as possible to the ones you care about.\n\nFor ordinary life the lesson is short. Compare like with like. If your colleague seems tense in the Monday budget meeting, compare her with herself in earlier budget meetings, not with herself at Friday drinks. If your brother is quiet at your parents' house, compare him with how he usually is at your parents' house, where he may have been quiet since he was twelve.\n\nIt also means a baseline expires. A man who has recently lost his job, his marriage or his sleep has a new resting state, and your old picture of him is out of date. When something large has changed in someone's life, start again.",
+   "poseId": "p_sit_lean_back_open",
+   "disconfirm": "If the behaviour you noticed also appears when the same person is in the same kind of setting with nothing at stake, it belongs to the setting, not to the moment. Before you interpret a change, check that you are not comparing two different rooms."
+  },
+  {
+   "h": "The first minutes measure the room, not the person.",
+   "p": "Almost everyone is less settled at the start of an encounter than twenty minutes in. A new room, a new person, uncertainty about what is expected: all of it shows. Ankles hook under the chair, hands look for something to hold, the voice rides a little higher and the laugh comes a little quicker. Then, unless something keeps the stakes high, the body settles into its usual range.\n\nIf you take your baseline in those first minutes you will mistake the novelty for the person, and then misread the settling itself, seeing someone warm to you when they have merely warmed to the room. This costs people in job interviews, first dates and first meetings with clients, where both sides form firm impressions in exactly the window where behaviour is least representative.\n\nA well-known line of research, begun by Nalini Ambady and Robert Rosenthal, found that strangers watching very short silent clips of teachers, thin slices of a few seconds, could predict those teachers' end-of-term ratings surprisingly well. It is tempting to take this as licence to read people quickly. Look closer. Those judgments concern broad, stable impressions such as warmth or confidence, pooled across several observers whose errors cancel out. They are not one observer's guess about what one person feels at one moment. Thin slices show that first impressions are consistent, not that they are right about anyone's state.\n\nThe practical rule: hold your reading of anyone loosely for the first ten or fifteen minutes. Watch for the moment they settle, the exhale, the lean back, the hands finding their usual place. That moment is where the baseline begins.",
+   "poseId": "p_sit_ankles_locked",
+   "disconfirm": "If someone never settles, even after twenty minutes in a setting that should not threaten them, the novelty explanation fails. Either their baseline really is restless or something in the situation keeps the stakes high for them. Both are worth knowing, and neither is a conclusion yet."
+  },
+  {
+   "h": "Record change, timing and duration, and nothing else yet.",
+   "p": "Once you have a baseline you are looking for departures from it. Each departure has three properties worth writing down, and at first almost nothing else is.\n\nChange: what moved, and in which direction. Not he got defensive, but his arms went from loosely folded to gripped and his shoulders rose. Describe the body, not your theory of the mind inside it. The discipline of plain description is what keeps your later interpretation honest.\n\nTiming: what had just happened. A change that follows a specific question, name or topic within a second or two tells you far more than one that drifts in over a minute. Researchers who study emotional expression, Ekman among them, treat the timing of an expression relative to what prompted it as central evidence. If you cannot say what a change followed, you have not yet seen a signal, only a variation.\n\nDuration: how long it lasted before the person returned to range. A brief departure that resolves in seconds suggests something registered and was absorbed. A shift that lasts the rest of the conversation suggests that the situation itself has changed for them. Both matter, differently.\n\nNotice what is missing from the list: meaning. You are not yet allowed to say what the change means. That comes later, after you have checked it against other channels, against the context and against at least one alternative explanation. Write that at the mention of the move he stopped gesturing for about thirty seconds, and you have something you can test. Write that he hates the idea of the move, and you have a conclusion you will defend instead of examine.",
+   "poseId": "p_stand_arms_crossed_tight",
+   "disconfirm": "If you cannot name what a change followed, or it fades back into the person's range when you look again, treat it as variation. A departure that does not survive a second look was not one.",
+   "pullQuote": "Describe the body, not your theory of the mind inside it.",
+   "diagram": "baseline-timeline"
+  },
+  {
+   "h": "Your own baseline comes first.",
+   "p": "You are part of every scene you observe. If you arrive at a meeting short of sleep, anxious about the outcome or angry about something else, you will see a different room from the one a rested, neutral observer would see. This is not a moral failing; it is how perception works. The psychologist Joseph Forgas spent years documenting what he called affect infusion: mood seeps into our judgments of other people, and it seeps in most when the judgment is complex and the evidence ambiguous. Reading bodies is nearly always both.\n\nSo before you take anyone else's baseline, take your own. Where are your shoulders? Is your breath high in the chest or low? Is your jaw set? What do you want to be true about the person you are about to read? A man hoping his boss is pleased will find pleasure in her face, and a man who expects criticism will find that instead. The body you bring into the room is the lens you see it through.\n\nYour own baseline matters for a second reason: you change what you observe. If you sit forward and stare, people become self-conscious, and their behaviour shifts toward a guardedness that you then dutifully record. Observation done well is quiet, side-on and intermittent. You watch the way you would watch weather from a window, not the way you would watch a suspect.\n\nThere is a reason the chapters on the inner world sit beside this one, and the chapters on discipline end with one called The Quiet Body. The best readers are not the ones with the sharpest eyes. They are the ones whose own state disturbs the reading least.",
+   "poseId": "p_stand_shoulders_raised",
+   "disconfirm": "If two observers with different moods and different stakes see the same change at the same moment, your own state is probably not producing it. If only you see it, and especially if it confirms what you feared, check yourself before you check them."
+  },
+  {
+   "h": "A baseline is a hypothesis, and attention is not permission.",
+   "p": "Everything you write down about how someone usually behaves is a guess built from a sample. The sample is small, it was taken in particular settings, and it was filtered through your attention, which catches some things and misses others. Treat your baseline as a working model: useful, provisional, and to be revised the moment it predicts badly. If you expected your friend to fidget through a long dinner and he sat still for two hours, your model of him is wrong, not his behaviour.\n\nPeople also change. They recover, age, grieve, fall in love, start medication, stop drinking. The man whose baseline you learned five years ago may no longer exist. Long familiarity is no protection. Couples married for decades still misread each other, often because each is reading against a version of the other that is years out of date.\n\nFinally, a baseline is a form of attention, and attention can tip into surveillance. The point of knowing how someone usually is, in this book, is to notice when they might need a question: are you all right, was that the wrong moment, would you like to stop? It is not to build a file on them, to catch them out, or to gain an edge in a negotiation they do not know they are in. Keep notes about what you saw and what you guessed, never dossiers on the private lives of named people. If you ever find yourself watching someone in order to use what you see against them, you have left the method of this book behind.\n\nThe reading is yours. The person is not.",
+   "poseId": "p_sit_forward_engaged",
+   "disconfirm": "A good baseline predicts. If, over several meetings, yours keeps failing to predict how someone behaves when nothing in particular is happening, discard it and start again.",
+   "pullQuote": "The reading is yours. The person is not."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_arms_crossed_tight",
+   "dontPoseId": "p_stand_arms_crossed_loose",
+   "doCaption": "A change from his usual, logged as a question.",
+   "dontCaption": "His usual way of standing, read as a message about you.",
+   "annotation": "Same crossed arms, two situations. The loose fold is his baseline; the grip and the lifted shoulders are the departure, and even that is only a question."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Watching side-on and now and then, the way you watch weather.",
+   "dontCaption": "Watching hard enough to be noticed, and so measuring your own effect.",
+   "annotation": "A baseline comes from someone who does not feel watched. If your attention changes their behaviour, the reading is about you."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_ankles_locked",
+   "doCaption": "Minute twenty: the same man, settled into his range.",
+   "dontCaption": "Minute two, read as nervousness about you.",
+   "annotation": "The first minutes measure the newness of the room. Wait for the settle before you draw the line you will measure from."
+  },
+  {
+   "doPoseId": "p_stand_weight_shift",
+   "dontPoseId": "p_stand_neutral",
+   "doCaption": "His neutral: weight on the left leg, hip high, right knee soft.",
+   "dontCaption": "A textbook neutral laid over everyone.",
+   "annotation": "There is no universal resting posture. The reference line belongs to the person, not to a figure in a book."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_stand_head_down",
+   "doCaption": "Compared with how he looks while listening at ease.",
+   "dontCaption": "A downward glance mid-answer, read as hiding something.",
+   "annotation": "Many people look away to think; Glenberg's experiments found that averting the gaze helps people remember. Learn where this person's eyes go when they think before reading anything into it."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_stand_shoulders_raised",
+   "doCaption": "Checking your own shoulders and breath before reading anyone.",
+   "dontCaption": "Arriving braced, and finding threat in every face.",
+   "annotation": "Your own state is the lens. Read your body first, and the room comes into focus."
+  }
+ ],
+ "caseStudy": "Daniel, twenty-nine, has been with Anna for two years when he finally meets her father. Robert is sixty-three, a retired surveyor, and he spends most of the first hour of dinner with his arms folded across his chest, answering Daniel's questions in a sentence or less. Daniel drives home certain that he has been judged and found wanting. For the next month he is stiff and over-polite whenever Anna mentions her father, and when they meet again he talks too much, defending himself against an accusation nobody made.\n\nAnna's brother, Tom, was at the same dinner and saw something else. He has watched his father at a hundred family meals. Robert folds his arms at every table he has ever sat at, and says it is because his back aches if he doesn't. He answers everyone briefly, his own children included. What Tom noticed was different. When Daniel asked about the farm where Robert grew up, his arms came down, he leaned forward and he talked for ten minutes. Then, when Anna mentioned that she and Daniel were thinking of moving abroad for Daniel's work, Robert's hand went to the back of his neck, he stopped eating, and he said nothing for long enough that Anna changed the subject.\n\nTom did not conclude that his father disliked the move, or Daniel. He noted a change, its timing and how long it lasted, and a week later, walking the dog with Robert, he asked how he felt about Anna possibly moving. Robert was quiet for a while. Then he said he had been dreading it since Anna's mother died, because Anna was the one who rang every Sunday.\n\nTom told Daniel. On the next visit Daniel did not try to win Robert over. He asked about the farm again, and before they left he mentioned that Anna had already said she would keep the Sunday calls. Robert's arms stayed folded the whole evening. At the door he shook Daniel's hand for a long time.",
+ "observe": [
+  "In a café or on a train, choose one adult who has been settled in their seat for at least ten minutes and who will not notice you. For five minutes, without recording or photographing them, count only how often they touch their face and how often they shift position, and stop at once if they look your way.",
+  "On your next video call with someone you know well, write two lines about how they sit and speak in the first two minutes, and two more lines twenty minutes in. Compare the notes afterwards and mark what changed as the call settled.",
+  "Pick a long-form interview online in which the guest appears for at least an hour. Watch the first five minutes and a stretch around the forty-minute mark, and write down three things the guest does more in one stretch than in the other.",
+  "Before a meeting or a family meal this week, take sixty seconds to note your own baseline: where your shoulders sit, how your breath feels, and what you want to be true about the people you are about to see."
+ ],
+ "drills": [
+  {
+   "name": "The Five-Minute Range",
+   "minutes": 15,
+   "steps": [
+    "Sit somewhere public where people stay put: a café, a library, a waiting room.",
+    "Choose one person who has been settled for at least ten minutes and is absorbed in something. Never photograph or follow anyone; if they notice you, choose someone else or stop.",
+    "For five minutes keep a tally of three behaviours only: face touches, posture shifts, and glances away from what they are doing.",
+    "Turn each tally into a rate per minute and write a one-line description of their resting range.",
+    "Watch for two more minutes and note whether anything falls outside the range you wrote. Most of the time nothing will, and that is the lesson."
+   ]
+  },
+  {
+   "name": "Two Rooms, One Person",
+   "minutes": 20,
+   "steps": [
+    "Find two clips of the same public figure in different settings, such as a relaxed talk-show appearance and a formal press conference.",
+    "Watch three minutes of each with the sound off.",
+    "List what their hands, posture and head do in each setting.",
+    "Mark which differences are explained by the setting itself: a lectern, a sofa, a microphone, a hostile room.",
+    "Write one sentence on what a reader would get wrong if he used the talk-show baseline to judge the press conference."
+   ]
+  },
+  {
+   "name": "The Settle Curve",
+   "minutes": 15,
+   "steps": [
+    "Choose a recorded conversation in which you can see one person from the very start: a podcast video, a panel, an interview.",
+    "Watch the first eight minutes with a timer running.",
+    "Note the minute at which the person first sits back, exhales, or lets their hands come to rest in a habitual place.",
+    "Describe their behaviour before and after that moment in two sentences.",
+    "Repeat with a second person and see whether they settle sooner or later."
+   ]
+  },
+  {
+   "name": "Your Own Resting Line",
+   "minutes": 15,
+   "steps": [
+    "Prop your phone up and record yourself, seated, reading something dull for ten minutes. The recording is for you alone; delete it afterwards if you like.",
+    "Play it back at double speed with the sound off.",
+    "Count your face touches, posture shifts and leg movements, and turn them into rates.",
+    "Write down one habit you did not know you had.",
+    "Note how an observer who did not know you might misread that habit."
+   ]
+  },
+  {
+   "name": "Prediction Before Contact",
+   "minutes": 10,
+   "steps": [
+    "Before you next see someone you meet every week, write three predictions about their resting behaviour: how they will sit, what their hands will do, how fast they will talk.",
+    "Put the predictions somewhere you will not reread until afterwards.",
+    "During the meeting do not hunt for confirmation; simply be with them.",
+    "Afterwards, mark each prediction as a hit, a miss or unclear.",
+    "Revise your written baseline for that person in light of the misses."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague you have never met keeps his arms folded throughout your first meeting. What does the folding tell you on its own?",
+   "options": [
+    "That he is defensive about the topic",
+    "That he disagrees with you but won't say so",
+    "Very little, until you know whether he folds his arms at rest",
+    "That he is cold and you should adjust the room"
+   ],
+   "answer": 2,
+   "explain": "Folding is one of the most misread postures because it appears in so many resting baselines. Without knowing how he sits when nothing is at stake, you cannot tell a habit from a reaction. A cold room is a fair alternative hypothesis, but it is still a hypothesis, not something the folding tells you.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Why does Aldert Vrij criticise baselining someone during small talk and then comparing them during difficult questions?",
+   "options": [
+    "Small talk produces too little behaviour to measure",
+    "People lie during small talk as well",
+    "Baselines can only be taken from video",
+    "The two conversations differ in stakes and difficulty, so behaviour would change even in an honest person"
+   ],
+   "answer": 3,
+   "explain": "The comparison mixes up the thing you care about with everything else that changes between the two conversations. Hard questions are harder, more closely watched and more emotional for anyone. A useful baseline is taken under conditions as close as possible to the moment you want to interpret.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At lunch, a usually animated friend tells a story about his weekend with his hands moving freely. When someone asks whether he has heard back about the promotion, his hands drop into his lap and stay there for the next few minutes while he answers briefly. What is the most defensible note to make?",
+   "options": [
+    "He didn't get the promotion and is hiding it",
+    "He is angry with the person who asked",
+    "His gestures stopped right after the promotion question and stayed down for minutes; worth a private, gentle question later",
+    "Nothing, because hands in the lap is a normal resting posture"
+   ],
+   "answer": 2,
+   "explain": "This note records change, timing and duration without claiming to know the cause. The last option ignores that the stillness departs from his own animated baseline, which is exactly what makes it informative. The first two leap to a meaning the body cannot supply.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "In an observational study of medical students during lectures, roughly how often did people touch their own faces?",
+   "options": [
+    "About 23 times an hour",
+    "About twice an hour",
+    "About once every ten minutes",
+    "Almost never, unless anxious"
+   ],
+   "answer": 0,
+   "explain": "Kwok and colleagues counted an average of 23 face touches per hour among attentive students. The figure sets the background rate: one face touch, or several, means nothing on its own. What can mean something is a change in rate for a particular person, tied to a particular moment.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Research on thin slices shows that observers can predict some outcomes from a few seconds of silent video. What follows for reading a stranger you have just met?",
+   "options": [
+    "First impressions are reliable, so trust your first read",
+    "It shows impressions are consistent across observers, not that one quick read of a person's feelings is correct",
+    "You should only read people in the first thirty seconds",
+    "Thin slices only work with the sound on"
+   ],
+   "answer": 1,
+   "explain": "The studies by Ambady and Rosenthal concern broad, stable impressions such as warmth, pooled across several observers. They do not show that one observer can read one person's passing state at a glance. The first minutes of an encounter are also when behaviour is least like a person's baseline.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "You arrive at a performance review exhausted after a sleepless night with a sick child. Your manager seems curt, and you sense disapproval in every pause. What should you do first?",
+   "options": [
+    "Address the disapproval directly",
+    "Recognise that your own state is colouring what you see, and hold the reading loosely",
+    "Match her curtness to show you are not intimidated",
+    "Assume she has bad news and prepare to argue"
+   ],
+   "answer": 1,
+   "explain": "Fatigue and anxiety tilt readings toward threat, an effect Joseph Forgas studied as affect infusion. Your own baseline is off, so your reading of hers is unreliable. That does not mean ignoring what you notice; it means treating it as a guess until you can compare it with how she usually is in reviews.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific person you see at least once a week: a colleague, a parent, a flatmate. Write their baseline as precisely as you can: how they sit or stand, what their hands do, how fast they talk, where their eyes go when they think. Then describe one specific occasion when you misread them because you compared them with how you expected a person to behave rather than with how they usually are. What did you conclude, what was actually going on, and how did you find out?",
+  "guidance": "Write the baseline in plain physical language, as if for someone who has never met this person: sits sideways with one foot on the rung of the chair, not relaxed. For the misreading, name the moment, what you saw, and the conclusion you drew before you knew better. Most people find the second part uncomfortable, which is a sign it is worth doing. If no misreading comes to mind, choose the person you are surest you understand and ask what you would see if they were struggling. Given how they usually are, would you notice?",
+  "minCharacters": 150
+ },
+ "failureMode": "The most common misuse of this chapter is to learn the word baseline and skip the work. A reader watches someone for two minutes, decides that is their normal, and from then on treats every difference as a signal. He has replaced one template with another, smaller one, built from a sample too short to mean anything and usually taken in the very minutes when the other person was least settled. The result is worse than having no baseline, because it feels like method. The second failure is subtler: treating a departure as an answer. A change from baseline tells you that something registered. It does not tell you what, and the likeliest explanations are often mundane: a sore back, a full bladder, a memory, a draught. If you catch yourself thinking he departed from baseline, so he is upset about this, stop at the comma. A departure earns a question, never a conclusion.",
+ "furtherStudy": [
+  {
+   "work": "Telling Lies: Clues to Deceit in the Marketplace, Politics, and Marriage",
+   "author": "Paul Ekman",
+   "note": "Read the passages on the Brokaw hazard and the Othello error. The book is better on why lie detection fails than on how to do it."
+  },
+  {
+   "work": "Detecting Lies and Deceit: Pitfalls and Opportunities (2nd edition)",
+   "author": "Aldert Vrij",
+   "note": "The discussion of baselining and comparable truth is the clearest account of why the setting matters."
+  },
+  {
+   "work": "Nonverbal Communication in Human Interaction (8th edition)",
+   "author": "Mark L. Knapp, Judith A. Hall and Terrence G. Horgan",
+   "note": "The standard academic textbook, and a sober counterweight to popular body-language books."
+  },
+  {
+   "work": "Face touching: A frequent habit that has implications for hand hygiene",
+   "author": "Yen Lee Angela Kwok, Jan Gralton and Mary-Louise McLaws",
+   "note": "American Journal of Infection Control 43(2), 2015. A short paper that sets a base rate you will use throughout this book."
+  }
+ ],
+ "reviewPrompt": "Choose one person you will see in the next two days and, before you meet, write three predictions about their resting behaviour. Afterwards, score each as a hit or a miss and rewrite each miss as a better description."
+}
