@@ -1,0 +1,261 @@
+{
+ "id": "foundations-07",
+ "categoryId": "foundations",
+ "index": 7,
+ "tier": "ADVANCED",
+ "title": "The Face",
+ "estimatedMinutes": 70,
+ "hook": "The face is the most watched part of the body and the best trained to perform, so ask what it is doing before you ask what it means.",
+ "why": "When people talk about reading someone, they usually mean reading their face. It is where we look first and longest, and it feels like a window: a smile means happy, a frown means cross, and a face that does not match the words is hiding something. The face does carry a great deal of information. It also carries more performance than any other part of the body, because it is the part everyone has been practising on since childhood.\n\nThis chapter treats the face with the respect it deserves and the caution it needs. You will learn to describe what a face is doing in terms of muscle movements before naming any feeling, to understand the two kinds of smile and the limits of telling them apart, to see faces as signals made for audiences rather than readouts of inner states, to treat the famous six expressions as posed prototypes that real faces rarely match, and to recognise how much of what we think we see in a face actually comes from the body and the situation around it. The question of whether faces speak a universal language is left to the chapter on cultural variance.",
+ "teach": [
+  {
+   "h": "The face is the best-trained performer.",
+   "p": "The chapter on leakage and pacifiers described a gradient of control: the parts of the body people watch most are the parts people learn to manage best. The face sits at the top of that gradient. Everyone around you has been looking at your face since the day you were born, reacting to it, praising some expressions and punishing others. By adulthood, most people have very fine control over what their face shows in front of others.\n\nMuch of that control is learned through display rules, the norms about who may show which feelings, to whom and how strongly, which the chapter on cross-cultural calibration in Part VI describes. A child learns to smile at a disappointing present, a boy learns not to cry in front of other boys, a nurse learns a calm face for frightened patients, and a salesman learns a warm one for strangers.\n\nNone of this makes faces meaningless. It makes them partly deliberate. The face is not only a window onto feeling but also a channel that people use, consciously and not, to communicate, to manage their relationships and to present themselves as they wish to be seen.\n\nFor a reader, the consequence is a particular order of questions. Before asking what a face means, ask what it is doing, who it is doing it for, and how it compares with this person's usual face. A broad smile from a man who smiles at everyone tells you about his manners. A brief tightening of the mouth from a man who usually keeps his face very still may tell you more.\n\nThe most practised part of the body deserves the most careful reading, not the most confident.",
+   "poseId": "p_pro_presenting",
+   "disconfirm": "If people's facial expressions turned out to track their reported feelings closely whether or not anyone was watching, and regardless of their culture and job, the face would be less of a performer than this block claims. The studies described below suggest otherwise."
+  },
+  {
+   "h": "Describe the movement before you name the feeling.",
+   "p": "In 1978 Paul Ekman and Wallace Friesen published the Facial Action Coding System, usually called FACS. It describes every visible movement of the face in terms of the muscles that produce it, numbered as action units. Action unit 1 raises the inner corners of the brows. Action unit 4 lowers the brows and draws them together. Action unit 6 raises the cheeks and narrows the eyes. Action unit 12 pulls the corners of the lips up and out. There are dozens more.\n\nFACS was a quiet revolution because it separated two questions that people constantly run together: what the face did, and what that means. Trained coders using FACS can agree closely about what a face did, frame by frame, because they are describing movements, not guessing at feelings. Arguments about meaning come afterwards, and can be checked against what the person reports, what happens next and what was going on.\n\nYou do not need to learn the full system to borrow its discipline. The face plates in this book label each face with its action units, and the habit to build is simply to describe before you interpret. *Brows lowered and drawn together, lips pressed* is a description you can check. *She looked angry* is an interpretation, and it may be wrong in several ways: the movement may be concentration, the feeling may be worry, and the face may be performing for someone else.\n\nDescription also protects you from your own mood. When you are tense, an ambiguous face looks hostile. A description written in muscle terms is harder for your mood to bend.\n\nSay what moved. Then wonder why.",
+   "poseId": "p_sit_neutral",
+   "disconfirm": "If, when you describe faces as movements first, your eventual readings turn out no more accurate than when you name feelings straight away, the extra step is not helping you. Compare a few weeks of each in your journal before deciding.",
+   "diagram": "face-brows"
+  },
+  {
+   "h": "Two smiles, and the limits of the difference.",
+   "p": "In 1862 the French physician Guillaume Duchenne published photographs of faces whose muscles he had stimulated with electric currents. He noticed that a smile produced only by the muscles that pull up the corners of the mouth looked different from a smile of real enjoyment, in which the muscles around the eyes also contract, lifting the cheeks, narrowing the eyes and creasing their outer corners. The second kind came to be called the Duchenne smile.\n\nIn 1990 Ekman, Richard Davidson and Friesen found that Duchenne smiles were more often accompanied by reports of enjoyment, and by a pattern of brain activity associated with positive feeling, than smiles involving the mouth alone. The distinction entered popular culture as a way of spotting fake smiles: if the eyes do not smile, the smile is false.\n\nLater research complicated the story. In 2009 Eva Krumhuber and Antony Manstead found that many people produced the eye movements of a Duchenne smile when they were merely posing, and other studies have found that a substantial share of people can produce Duchenne smiles deliberately on request. Strong smiles of any kind tend to push the cheeks up and narrow the eyes simply through the force of the movement. So the presence of the eye movement does not prove enjoyment, and its absence does not prove falsehood.\n\nA smile with the mouth alone is usually not a lie at all. It is the polite smile of greeting, thanks, acknowledgment and courtesy, one of the most common and useful signals people make. Calling it fake misunderstands what it is for.\n\nRead the difference between the two smiles as one weak clue to enjoyment, alongside the voice, the timing and the situation, never as a lie detector.",
+   "poseId": "p_greet_acknowledge",
+   "disconfirm": "If posed smiles almost never showed the cheek and eye movements of a Duchenne smile, and enjoyment almost always did, the distinction would be a strong clue. The research since 2009 has found the overlap too large for that.",
+   "diagram": "face-smiles"
+  },
+  {
+   "h": "Faces are made for audiences.",
+   "p": "In 1979 Robert Kraut and Robert Johnston watched people at a bowling alley. If facial expressions simply read out inner feelings, bowlers should smile most at the moment they see a strike. They did not. Bowlers smiled rarely while facing the pins, whatever the result, and smiled far more when they turned round to face their friends.\n\nSimilar patterns have turned up elsewhere. José-Miguel Fernández-Dols and María-Angeles Ruiz-Belda studied gold medallists at the 1992 Olympic Games and found that they smiled much more while interacting with the crowd and officials than during the moments on the podium when they were simply listening to the anthem, presumably no less happy. In 1991 Alan Fridlund found that people watching a funny video alone smiled more if they believed a friend was watching the same video in another room.\n\nThese findings support a view, developed most fully by Fridlund, that facial expressions are first of all social signals: moves in an exchange with other people, shaped by who is there, as much as expressions of what is felt. Feeling and face are connected, but loosely, and an audience tightens or loosens the connection.\n\nFor a reader, this adds a question that is easy to forget: who is this face for? A smile turned towards a boss, a frown aimed at a child, a look of concern held while others are watching may be telling you more about the relationship than about the feeling. A face shown when the person thinks no one is looking is telling you something different again.\n\nBefore reading a face, find its audience.",
+   "poseId": "p_pair_face_to_face",
+   "disconfirm": "If people's expressions turned out to be just as strong and frequent when they were truly alone as when others were present, the audience view would be wrong. The studies described here found clear differences, but check what you see in your own life before relying on them."
+  },
+  {
+   "h": "The six faces are posed, and real faces rarely match them.",
+   "p": "Most people have seen the six classic faces of emotion: happiness, surprise, fear, anger, disgust and sadness. They appear in textbooks, training courses and software, and the face plate in this chapter shows them with their action units. They are useful as a vocabulary. They are also, almost without exception, posed: actors or volunteers were asked to make the faces, and the most recognisable versions were chosen.\n\nReal faces in real situations rarely look like this. Studies that record people during genuine emotional events find that the full configurations appear much less often than the textbook suggests. People feeling intense fear often show only part of the fear face, or a different face entirely. People who are angry may frown, or smile, or show nothing. The review led by Lisa Feldman Barrett in 2019, described in the chapter on ethics in Part VI, concluded that the link between particular facial configurations and particular emotions is far weaker and more variable than the classic picture assumed.\n\nThere is a long-running scientific argument here, between researchers who see a small set of universal emotional expressions and those who see expressions as far more variable and constructed from context. The chapter on cultural variance lays out that debate. For practical reading, both sides agree on enough: a given face can arise from many feelings, a given feeling can produce many faces, and the prototype is the exception rather than the rule.\n\nSo use the six faces to name movements, not to diagnose people. When you see part of a configuration, you have seen a movement. The meaning still has to be found.",
+   "poseId": "p_stand_neutral",
+   "disconfirm": "If recordings of people during real emotional events regularly showed the full prototype faces for the emotions they reported, the six faces would be better guides than this block allows. The research reviewed in 2019 found them to be the exception.",
+   "pullQuote": "A given face can arise from many feelings, and a given feeling can produce many faces.",
+   "diagram": "face-prototypes"
+  },
+  {
+   "h": "The body and the situation do more than the face.",
+   "p": "In 2012 Hillel Aviezer, Yaacov Trope and Alexander Todorov showed people photographs of professional tennis players at the moment they had won or lost a crucial point. When people saw the whole picture, they could easily tell winners from losers. When they saw only the faces, they could not: intense joy and intense despair produced faces so similar, contorted, open-mouthed and strained, that people's judgments were close to chance. When people saw only the bodies, they were accurate.\n\nThe most revealing part came next. When the researchers swapped faces between winning and losing bodies, people's judgments followed the body, yet they reported that they had been reading the face. We believe we read faces, and much of the time we are reading everything around them.\n\nThe chapter on clusters and congruence described a related finding: the same face reads as disgust on one body and anger on another. Together, these results suggest that at moments of strong feeling especially, the face is a poor witness on its own. Posture, hands, voice, words and the situation carry much of the information.\n\nThis is good news for the reader who has learned the rest of this book. The baseline, the cluster, the timing and the context are not extras to be checked after reading the face. They are often where the reading actually comes from. A face seen without them is a face half-seen.\n\nWhen a face seems to tell you everything, look at what surrounds it.",
+   "poseId": "p_gesture_arms_wide",
+   "disconfirm": "If people judging isolated faces of intense emotion could tell positive from negative as accurately as people judging whole scenes, the face would be a better witness than this block claims. In the tennis study they could not."
+  },
+  {
+   "h": "Read faces well, and leave them alone.",
+   "p": "Bring the chapter together into a way of reading a face. First, know the resting face. Faces at rest differ a great deal. Some people's brows sit low and their mouth turns down slightly when they are relaxed, and they spend their lives being asked what is wrong. Some conditions reduce facial movement altogether: Parkinson's disease often flattens the face, facial palsy can freeze one side, and cosmetic injections can still the forehead. A still or stern face may be the person's baseline, not their mood.\n\nSecond, describe what moved, in action units or plain words. Third, note the timing: what had just happened? Fourth, find the audience: who was the face for? Fifth, read it with the body, the voice and the situation, as the tennis study suggests. Only then form a hypothesis, with a rival, and if it matters, ask about the moment, never about the face.\n\nAnd leave people's faces alone. Telling someone to smile, asking why they look so cross, or commenting on a face they did not mean you to see turns their face into your business. People whose resting faces look stern hear such comments constantly, and they are wearing. A face is often the one part of themselves people feel least able to control in public.\n\nThe best readers of faces are the ones people feel comfortable being seen by. They notice a great deal and say very little about faces at all.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "If commenting on people's expressions made them more at ease and more open with you, by their own account, the advice to leave faces alone would be wrong for your relationships. Ask two people you trust how such comments land before deciding.",
+   "diagram": "face-mouths"
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Noting the cheeks didn't lift, and asking who the smile was for.",
+   "dontCaption": "'The smile didn't reach his eyes, so he's fake.'",
+   "annotation": "Polite smiles are common, useful and honest. Duchenne markers can be produced on purpose, so they are weak clues either way."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_gaze_direct",
+   "doCaption": "Reading the face with the body, the voice and the situation.",
+   "dontCaption": "Studying a face for the truth.",
+   "annotation": "At moments of strong feeling, faces alone are poor witnesses. Much of what we think we read in faces comes from what surrounds them."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Leaving his face alone, and asking how his day was.",
+   "dontCaption": "'Cheer up. Give us a smile.'",
+   "annotation": "Comments on people's faces turn them into your business. Ask about the situation if you are concerned, not about the face."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Learning that this is simply how his face rests.",
+   "dontCaption": "Reading a stern resting face as anger.",
+   "annotation": "Resting faces vary widely, and some conditions still the face. A stern or flat face may be a baseline, not a mood."
+  }
+ ],
+ "caseStudy": "Marcus, forty-four, runs a small restaurant. When he hires Ana as head chef, the front-of-house staff start avoiding the kitchen. Ana, they say, is always annoyed. Marcus sees what they mean. Ana's face at rest has low, straight brows and a mouth that turns slightly down, and when she is working it looks fierce.\n\nBefore saying anything, Marcus tries the habit he has been practising: describe before interpreting. Over a week he watches her face during service and writes down what moves. Her brows lower and draw together whenever she is checking a plate or timing several pans, and relax when she hands the plate over. Her lips press together when an order comes in wrong. When she talks with her sous-chef about a new dish, her cheeks lift, her eyes crease and she laughs often. With customers who come to the pass to thank her, she gives a small smile with the mouth alone and goes back to work.\n\nHis notes describe a person who concentrates hard, dislikes mistakes, enjoys food and is polite but reserved with strangers. None of it says annoyed. He asks her, carefully, whether the kitchen is going all right for her. She says it is the best job she has had. Then she laughs and says she has been told her whole life that she looks cross, and that a previous boss used to tell her to smile.\n\nMarcus tells his front-of-house manager what he has noticed, in terms of what Ana's face does at work, without any suggestion that Ana needs to change. He also asks the staff to bring problems to the pass between rushes, when her brows are not down over six pans at once.\n\nA month later, a waiter tells him Ana is actually funny. Marcus says nothing about faces at all.",
+ "observe": [
+  "Watch someone you know well at rest, when they think no one is looking, and describe their resting face in terms of what the brows, eyes and mouth are doing.",
+  "Notice one smile today and describe it as movements: did the cheeks lift, did the eyes crease, who was it for?",
+  "Watch a few seconds of a sporting celebration or a moment of defeat with the face covered, and then with only the face visible, and compare what you can tell."
+ ],
+ "drills": [
+  {
+   "name": "Movements First",
+   "minutes": 20,
+   "steps": [
+    "Open the face plates in the pose library and, for each face, write what moved, without naming any feeling.",
+    "Choose a recorded interview and pause it at five moments when the face changed.",
+    "For each moment, write the movement in plain words or action units.",
+    "Then write two or three feelings or states that could produce that movement.",
+    "Note which context, such as what had just been said, would help you choose between them."
+   ]
+  },
+  {
+   "name": "Smile Census",
+   "minutes": 15,
+   "steps": [
+    "Over one day, notice ten smiles, from strangers, colleagues and people close to you.",
+    "For each, note whether the cheeks lifted and the eyes creased, or only the mouth moved.",
+    "Note who the smile was aimed at and what had just happened.",
+    "Mark any smile you would previously have called fake.",
+    "Write one sentence about what the polite smiles were doing."
+   ]
+  },
+  {
+   "name": "Find the Audience",
+   "minutes": 15,
+   "steps": [
+    "In a social setting, choose three moments when someone's face changed markedly.",
+    "For each, note who was looking at them at the time.",
+    "Note whether their face changed again when they turned to someone else or looked away from the group.",
+    "Write what each face seemed to be saying to its audience.",
+    "Write one rival reading for each."
+   ]
+  },
+  {
+   "name": "Face Hidden, Face Alone",
+   "minutes": 15,
+   "steps": [
+    "Find photographs or short clips of athletes at moments of victory and defeat.",
+    "Cover the faces and judge from the bodies which moments are victories.",
+    "Then look only at the faces, with the bodies covered, and judge again.",
+    "Check your answers.",
+    "Write down how much of your judgment depended on the body."
+   ]
+  },
+  {
+   "name": "Resting Faces",
+   "minutes": 15,
+   "steps": [
+    "Choose three people you see often and recall their faces at rest.",
+    "Describe each resting face in terms of brows, eyes and mouth.",
+    "Note any impression of their mood or character that you formed from it.",
+    "Check each impression against what you actually know about them.",
+    "Write one change you would now notice as meaningful for each of the three."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague smiles at you warmly, but his cheeks do not lift and his eyes do not crease. What does the research best support?",
+   "options": [
+    "His smile is fake, and he does not mean anything that he is saying to you",
+    "He is hiding a dislike of you behind a polite face, so watch him closely from now on",
+    "It may be a polite social smile, which is common and is not a lie",
+    "He is anxious about something and covering it with a smile for now"
+   ],
+   "answer": 2,
+   "explain": "Smiles with the mouth alone are the everyday smiles of courtesy and acknowledgment. Eye and cheek movements are a weak clue to enjoyment, since people can produce them on purpose and strong smiles produce them anyway.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Kraut and Johnston's study of people at a bowling alley, when did bowlers smile most?",
+   "options": [
+    "When they turned round to face their friends, rather than the pins",
+    "At the moment the ball struck the pins, whatever their final score",
+    "Only after a poor roll, as a way of covering their embarrassment",
+    "When they were alone in the lane and nobody else was watching them"
+   ],
+   "answer": 0,
+   "explain": "Bowlers smiled rarely at the pins, even after a strike, and often when facing their friends. Faces are shaped by their audience as much as by feeling.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What does the Facial Action Coding System describe?",
+   "options": [
+    "The emotions a person's face is showing at any given moment",
+    "Which facial expressions are honest and which ones are faked",
+    "The personality types that tend to go with different faces",
+    "The visible movements of the face, as numbered action units"
+   ],
+   "answer": 3,
+   "explain": "FACS separates what the face did from what it means. Coders can agree closely about movements; meaning is a separate question to be checked against context and what the person says.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A new team member's resting face has low brows and a downturned mouth, and colleagues assume she is always annoyed. What fits this chapter?",
+   "options": [
+    "Ask her gently whether something at work is making her unhappy",
+    "Learn her resting face as her baseline, and look for changes from it",
+    "Suggest to her privately that she try to smile more in the office",
+    "Tell colleagues that she is shy and that they should make allowances"
+   ],
+   "answer": 1,
+   "explain": "Resting faces vary widely, and a stern one is a baseline, not a mood. Changes from it carry the information. Telling someone to smile makes their face your business.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Aviezer, Trope and Todorov find using photographs of tennis players winning and losing points?",
+   "options": [
+    "From the faces alone, people could easily tell which player had won each point",
+    "People could not tell winners from losers by face alone, but could by body",
+    "Only the players' voices, not faces or bodies, revealed who had won",
+    "Faces and bodies were equally hard to read at moments of high emotion"
+   ],
+   "answer": 1,
+   "explain": "Intense joy and despair produced near-identical faces, and judgments of the faces alone were close to chance. People followed the body while believing they were reading the face.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At dinner, a friend smiles broadly all through a story about losing his job. What is the most useful approach?",
+   "options": [
+    "Remember faces are for audiences, and later, alone, ask how he is doing",
+    "Take the smile at face value, since he is clearly coping with it well",
+    "Tell him gently that his smile looks forced and he does not need to pretend",
+    "Assume he is in denial and suggest that he should see a counsellor"
+   ],
+   "answer": 0,
+   "explain": "A smile at a dinner table may be for the table: courtesy, pride, a way to tell the story. A quiet question later, without an audience, lets him say how he really is, without anyone commenting on his face.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific face you have misjudged: a resting face you read as unfriendly, a smile you called fake, or an expression you were sure you understood. Describe what the face actually did, in terms of movement. Who was the face for at that moment, and what were the body, voice and situation doing? What do you now think the face meant, and what would you need to have seen or asked to know for certain?",
+  "guidance": "Many people find their example in someone whose resting face looks stern or flat, and realise that they formed a lasting impression of the person from it. Try to describe the movement in the terms of the face plates, brows, lids, cheeks, mouth, before writing any feeling. The last question is the important one: what would have let you check?",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to treat the face as a window rather than a performer, taking every expression at face value or, at the other extreme, treating every polite smile as a lie. The second is to read the six textbook faces into real faces that only partly resemble them. The third is to read faces without their surroundings, forgetting that at moments of strong feeling the body and the situation often carry more information than the face. The fourth is to judge people by their resting faces, especially when a condition or simple anatomy gives them a stern or flat look. And the most common social failure is commenting on faces: telling people to smile, asking why they look cross. Describe, find the audience, read the whole person, and leave their face alone.",
+ "furtherStudy": [
+  {
+   "work": "Facial Action Coding System: A Technique for the Measurement of Facial Movement",
+   "author": "Paul Ekman and Wallace V. Friesen",
+   "note": "Consulting Psychologists Press, 1978; revised with Joseph C. Hager, 2002. The standard method for describing what a face does."
+  },
+  {
+   "work": "Social and emotional messages of smiling: An ethological approach",
+   "author": "Robert E. Kraut and Robert E. Johnston",
+   "note": "Journal of Personality and Social Psychology 37(9), 1979. The bowling-alley study of faces and their audiences."
+  },
+  {
+   "work": "Body cues, not facial expressions, discriminate between intense positive and negative emotions",
+   "author": "Hillel Aviezer, Yaacov Trope and Alexander Todorov",
+   "note": "Science 338(6111), 2012. Tennis players, and how much we read from the body while believing we read the face."
+  },
+  {
+   "work": "Can Duchenne smiles be feigned? New evidence on felt and false smiles",
+   "author": "Eva G. Krumhuber and Antony S. R. Manstead",
+   "note": "Emotion 9(6), 2009. Why the eye-crease test is a weak clue, not a lie detector."
+  }
+ ],
+ "reviewPrompt": "Describe three faces this week in terms of what moved before naming any feeling, and note who each face was for."
+}

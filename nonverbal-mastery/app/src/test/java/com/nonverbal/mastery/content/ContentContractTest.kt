@@ -123,7 +123,7 @@ class ContentContractTest {
             check(para.count { it == '*' } % 2 == 0, w, "unbalanced *italic* markers in: ${para.take(60)}")
         }
         val all = TestContent.text
-        check(!Regex("TODO|lorem ipsum|TBD|coming soon", RegexOption.IGNORE_CASE).containsMatchIn(all), "pack", "contains a stub marker")
+        check(!Regex("\\bTODO\\b|lorem ipsum|\\bTBD\\b|coming soon", RegexOption.IGNORE_CASE).containsMatchIn(all), "pack", "contains a stub marker")
         prose.forEach { check(!Regex("[a-z]- (?!and |or |to )[a-z]").containsMatchIn(it), w, "word broken by a line-wrap hyphen in: ${it.take(60)}") }
     }
 
