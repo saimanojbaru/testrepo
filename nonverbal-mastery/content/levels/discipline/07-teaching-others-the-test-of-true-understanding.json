@@ -1,0 +1,257 @@
+{
+ "id": "discipline-07",
+ "categoryId": "discipline",
+ "index": 7,
+ "tier": "ADVANCED",
+ "title": "Teaching Others — The Test of True Understanding",
+ "estimatedMinutes": 70,
+ "hook": "You don't understand a reading until you can teach it to someone who keeps asking how you know.",
+ "why": "After a few months of practice you will be able to do things you cannot yet explain. You will sense that a meeting has turned before anyone says so, or that a friend is not as fine as he claims. Some of that sense is real skill. Some of it is habit wearing the costume of skill, and from the inside the two feel the same.\n\nTeaching is the most reliable way to tell them apart. A learner who keeps asking *how do you know?* forces each reading back into its steps, and the steps either hold or they do not. This chapter is about using that pressure deliberately: what the research says about why explaining exposes gaps, why experts make poor teachers by default, what to teach first so that you do not send out confident amateurs, and how to teach the people who matter most, your sons, your juniors and your friends. It is also about what teaching does for you. Few things will improve your own reading faster than having to defend it to someone who is not yet impressed.",
+ "teach": [
+  {
+   "h": "The feeling of understanding is not understanding.",
+   "p": "In 2002 Leonid Rozenblit and Frank Keil asked people how well they understood everyday objects: a zip, a flush toilet, a cylinder lock, a speedometer. Most rated their understanding fairly high. Then they were asked to write a step-by-step explanation of how one of the objects worked, and to answer a diagnostic question about it. Afterwards they rated their understanding again, and the ratings fell, often sharply. The researchers called this the illusion of explanatory depth: we mistake familiarity with a thing for knowledge of how it works.\n\nThe illusion was strongest for devices and processes, things with hidden causal steps, and weaker for simple facts or lists. A reading of a person is exactly the kind of thing that produces it. *I can tell when my boss is about to say no* feels like knowledge. Asked how, most people produce one cue and then a gesture of the hand: *you just can*.\n\nThe six steps of the protocol are the parts of the mechanism. A reading that is really understood can be broken into them: what the person's baseline is, what changed, in which channels, when, what else could explain it, and what would show you wrong. A reading that is only familiar breaks at the second or third step, and the break tells you where to watch next.\n\nNone of this means the original sense was worthless. Experienced readers often pick up patterns before they can name them, and some of those patterns are sound. The point is that you cannot tell which ones are sound until you have tried to explain them, and the act of explaining is where the sorting happens.\n\nThe simplest test is to write the explanation out before anyone asks for it.",
+   "poseId": "p_stand_head_scratch",
+   "disconfirm": "If you write out, step by step, how you reached a recent reading, and your confidence in your understanding of it does not drop at all, the illusion did not apply to that reading. Try the same exercise on the reading you are proudest of before concluding it never applies."
+  },
+  {
+   "h": "Preparing to teach makes you learn.",
+   "p": "Teaching does something for the teacher that ordinary study does not. In 2014 John Nestojko, Dung Bui, Nate Kornell and Elizabeth Bjork gave students a passage to learn. Some were told they would be tested on it; others that they would have to teach it to another student. In fact everyone was tested. Those who expected to teach recalled more, especially the main points, and organised what they recalled more coherently. Merely expecting to explain changed how they read.\n\nActually teaching adds more. Logan Fiorella and Richard Mayer found in 2013 that students who prepared to teach and then explained the material on video did better on a test a week later than students who only prepared. The explaining itself fixed the knowledge. Earlier work by Michelene Chi and her colleagues, in 1989, had found that the students who learned most from worked physics examples were the ones who explained the examples to themselves as they went, step by step, noticing where their explanation failed.\n\nResearchers sometimes call this the protégé effect: the teacher learns from the pupil's existence. The mechanism is not mysterious. Preparing to explain forces you to find the structure of what you know. Explaining aloud forces you to commit to each step, and a step you cannot say is a step you did not have.\n\nYou can use this without a pupil. Before you reread a chapter of this book, decide that you will explain its main idea to someone at the weekend, and read with that person in mind. Then do it. Notice which questions you could not answer, and go back to the chapter for those alone. A friend who is mildly interested is enough. So is a patient partner, or a son who is old enough to be curious.",
+   "poseId": "p_pro_presenting",
+   "disconfirm": "If preparing to explain a chapter produces no gaps you had not already noticed, and no better recall a week later than rereading did, teaching is not adding much for you on that material. Try it on a chapter you found difficult before deciding."
+  },
+  {
+   "h": "The curse of knowledge.",
+   "p": "In 1990 Elizabeth Newton, then a graduate student at Stanford, asked one group of people to tap out the rhythm of well-known songs on a table, and another group to guess the songs. Before they began, the tappers predicted that listeners would name about half of them. Listeners named three songs out of a hundred and twenty. The tappers were astonished and a little irritated. They could hear the tune in their heads as they tapped. The listeners heard only knocking.\n\nEconomists Colin Camerer, George Loewenstein and Martin Weber had described the same trap a year earlier, in a study of markets: once you know something, you find it very hard to imagine not knowing it, and you judge what others can see by what you can see. They called it the curse of knowledge.\n\nExperienced readers are cursed in exactly this way. You no longer see a change from baseline and a cluster across channels; you see *she's worried*. When you teach, you skip the steps you no longer notice yourself taking, and the learner hears knocking. Worse, he may take the conclusion without the steps, which is how folklore about bodies gets passed on.\n\nThe remedies are slow and practical. Use worked examples, real moments described in full, with every step written out. Ask the learner to predict before you say what you saw, so that you can find out what he actually perceives. And make him explain the reading back to you in his own words, including the rival explanation and the test. Where his version is thinner than yours, you have found a step you skipped.\n\nExpect to be surprised by how much you skip. Everyone is.",
+   "poseId": "p_sit_forward_engaged",
+   "disconfirm": "If a learner can explain a reading back to you in his own words, including the rival explanation and how he would test it, without any prompting from you, you have escaped the curse for that reading. If he gives you only the conclusion, you have not.",
+   "pullQuote": "The tune plays in your head, and all they hear is knocking."
+  },
+  {
+   "h": "Teach the doubt before the signal.",
+   "p": "What you teach first shapes everything that follows. A learner who first hears that a hand to the neck can mark stress will spend weeks seeing stress in every neck. A learner who first hears that there is no dictionary, that every reading starts from a baseline and ends with a test, will hold every later signal more loosely. Teach falsifiability first, before any particular cue.\n\nThere is direct evidence of what happens when people are taught signals without doubt. In 1999 Saul Kassin and Christina Fong trained one group of students in the behavioural cues to deception taught in a widely used police interrogation method, and left another group untrained. Both then watched videotaped interviews of people who had or had not committed a mock crime. The trained students were less accurate than the untrained ones, and more confident. They could also give more reasons for their judgments. The training had not made them better at detecting lies. It had made them better at justifying errors.\n\nThis is the outcome to fear when you teach: a confident amateur lie detector, armed with cues and reasons, applying them to a colleague, a partner or a stranger. The statement at the front of this book explains why lie detection from behaviour barely beats chance. Your learner needs to hear that early and often, from you, before someone else offers him a list.\n\nSo the first lesson is always the same. A reading is a hypothesis. It needs a baseline to start from, a cluster and a moment to point to, a rival to beat and a way to be shown wrong. Only after that do you show him the signals, each with its own disconfirming condition attached.\n\nIf he finds the first lesson dull, good. It is meant to slow him down.",
+   "poseId": "p_gesture_hand_raised",
+   "disconfirm": "If learners you teach doubt-first end up no less confident and no more accurate than those taught signals first, the order does not matter. The training research suggests it does; compare your learners' confidence with their own ledgers after a month."
+  },
+  {
+   "h": "Make your thinking visible.",
+   "p": "Crafts have always been taught by apprenticeship: the novice watches the master work, then works under the master's eye. The difficulty with reading people is that the master's work happens inside his head. In 1989 Allan Collins, John Seely Brown and Susan Newman proposed what they called cognitive apprenticeship, a way of teaching invisible skills like reading and mathematics by making the expert's thinking visible.\n\nTheir method has a sequence that fits this book well. First, modelling: you perform the skill and narrate your thinking aloud, including your doubts. Then coaching: the learner performs it while you watch and comment. Then scaffolding and fading: you give support, such as the six steps written on a card, and withdraw it as he improves. Then articulation and reflection: he explains his reasoning and compares it with yours. Finally exploration: he tries it on situations you did not prepare.\n\nIn practice this means watching together. A recorded public interview, a scene from a film, or a busy café seen from a table are all good material. You narrate first, and you narrate the process, not the conclusion: *Her baseline in the first minute is still and chatty. Here, at the question about the merger, her hands stop and her answers shorten. That's a change in two channels at a clear moment. It could be discomfort with the subject, or she might just be recalling figures. I'd want to see whether it happens again on the next hard question.*\n\nThen hand over. Let him narrate the next clip while you only ask questions. Resist the urge to correct the conclusion. Correct the steps, and let the conclusion follow from them.\n\nIt will feel slow. Slow is what the invisible parts of a skill require.",
+   "poseId": "p_pair_side_by_side",
+   "disconfirm": "If narrating your thinking aloud makes your own readings worse, or your learner copies your conclusions without your method, you are modelling answers rather than process. Narrate less of what you conclude and more of what you checked."
+  },
+  {
+   "h": "The question that keeps asking how you know.",
+   "p": "The most useful thing a learner can do for a teacher is to keep asking *how do you know?* Each time the question is answered, it can be asked again, and the chain of answers is a direct test of whether the reading rests on anything observable.\n\nHere is a chain that holds. *He's not convinced.* How do you know? *His nods stopped when the price came up.* How do you know that's different? *He nodded steadily through the first ten minutes, and at the price he went still and looked at his notes.* How do you know it's about the price? *I don't yet. It could be the notes. I'd watch for it the next time the number is mentioned.* Each answer is something you could point to, and the last one admits its limit.\n\nHere is a chain that breaks. *He's not convinced.* How do you know? *You can just tell.* How? *Something about his face.* What about it? *He looked sceptical.* The answers go in a circle, back to the conclusion. That reading may still be right, but it has no mechanism you can teach, test or improve.\n\nThree rounds is usually enough to show which kind you have. Teach learners to ask it of you, and mean it when you say they should. A man who is defensive when his pupil asks how he knows is teaching a worse lesson than any he could put into words: that confidence should be protected from questions.\n\nThen turn the question on yourself, silently, whenever a reading arrives with great force. The force is not an answer to it.",
+   "poseId": "p_pair_seated_across",
+   "disconfirm": "If after three rounds of *how do you know?* you can still answer with something observable, your reading was grounded. If you run out of observable answers at the first or second round, it was not, however sure it felt."
+  },
+  {
+   "h": "Teaching sons, juniors and friends.",
+   "p": "What you teach travels further than you do. A junior who learns from you that crossed arms mean resistance will apply it to colleagues for a decade, and a son will apply what you taught him to every girlfriend, teacher and boss he ever has. Choose what to leave out as carefully as what to put in.\n\nWith a son, start with himself. Teach him to notice his own body under pressure before anyone else's: where his shoulders go, what his breath does, what his hands find to hold. That teaches attention without making him a watcher of others, and it is the habit that protects him most. Teach the ethics alongside the method, in your own example as much as in words. If he sees you read his mother at the table and announce it, that is the lesson he will keep. Never use family members as practice material for him.\n\nWith juniors at work, remember the power. A junior who learns to read colleagues on your behalf is being made into an informant, whatever you call it. Teach him to read situations and to ask better questions of the people involved, and never ask him what he read in someone you manage.\n\nWith friends, invite the reverse. Tell a friend you are practising and ask him to call out your readings when they sound like stories. Friends make good honest mirrors because they have less reason than juniors to be polite.\n\nWhoever you teach, the test is the same. They should become more careful and more kind with people, not more suspicious. If they come back to you with readings of other people as trophies, something in your teaching has gone wrong.",
+   "poseId": "p_pair_adult_child",
+   "disconfirm": "If someone you taught goes on to read people more carefully and more kindly, as judged by the people around them rather than by themselves, the teaching worked. If they read more and ask less, it did not."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_gesture_open",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Teaching a question: 'What would show that's wrong?'",
+   "dontCaption": "Teaching a signal: 'That means he's lying.'",
+   "annotation": "Learners keep whatever they are taught first. Teach the doubt, and the signals will be held loosely when they come."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pro_lectern",
+   "doCaption": "Watching together and thinking aloud.",
+   "dontCaption": "Lecturing the conclusions.",
+   "annotation": "The expert's work happens inside his head. Narrating the process, doubts included, is how a learner gets to see it."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Listening while the learner explains it back.",
+   "dontCaption": "Racing ahead: the tapper who can hear the tune.",
+   "annotation": "Experts skip the steps they no longer notice taking. The learner's own explanation shows which ones."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Welcoming the question as a test.",
+   "dontCaption": "Defending a reading when the learner asks how you know.",
+   "annotation": "A teacher who protects his confidence from questions teaches that confidence should be protected. The question is the lesson."
+  }
+ ],
+ "caseStudy": "Dev, thirty-eight, manages the floor of a busy restaurant and has a reputation for reading tables. He knows when a table wants the bill before anyone looks up, and when a complaint is coming before the plate is pushed away. When Callum, nineteen, joins as a waiter, Dev tells him to watch and learn.\n\nOn the second night Callum asks how he knew table nine wanted the bill. Dev says *you just can tell*. Callum asks how, and Dev, slightly annoyed, cannot get past the woman's glance towards the bar. That night he writes down every table he is sure about and what he noticed. By the end of the week he has found something uncomfortable. About half of his famous readings rest on the clock and the order: a couple who have finished dessert and coffee after ninety minutes want the bill whatever their bodies are doing. The body cues he relies on are real but fewer than he thought, and his complaint radar is wrong as often as it is right.\n\nSo he teaches Callum differently. He teaches baseline first: how a table behaves in its first ten minutes. Then change: the moment conversation stops and both diners look outward. Then the test: walk past and ask whether there is anything else they need, which settles the question without guessing.\n\nIn the third week Callum tells him that the men on table four are cheapskates and will not tip, because of how they are dressed. Dev stops him there. That is not a reading, he says, it is a story about clothes, and they have nothing to go on until the men do something. The men leave a large tip and a note for the kitchen.\n\nA month later Callum challenges one of Dev's own calls, a table Dev was sure was unhappy with the food. Callum asks how he knows. Dev goes over and asks. The couple are arguing about a holiday. The food is fine. Dev buys Callum a drink at the end of the shift.",
+ "observe": [
+  "The next time someone asks how you knew something about a person, count how many steps you can name before you reach I just could tell.",
+  "Watch someone skilled at a craft explain it to a beginner, in person or on video, and notice which steps the expert skips without seeming to realise it.",
+  "When someone tells you what another person's body meant, notice whether they also say how they would know they were wrong."
+ ],
+ "drills": [
+  {
+   "name": "Explain It Step by Step",
+   "minutes": 15,
+   "steps": [
+    "Choose a recent reading of someone that you felt sure about, and rate how well you understand how you reached it, from one to seven.",
+    "Write out how you reached it, one step per line: baseline, change, channels, timing, rival explanations and the test.",
+    "Underline every line where you had to guess or leave a gap.",
+    "Rate your understanding again from one to seven.",
+    "Write down the step where you were weakest, and what you would need to watch for next time to fill it."
+   ]
+  },
+  {
+   "name": "Teach One Idea",
+   "minutes": 30,
+   "steps": [
+    "Choose one idea from a chapter you have finished, and a willing friend or family member to teach it to.",
+    "Prepare a ten-minute explanation, starting with what would show the idea wrong.",
+    "Teach it, using one real moment from your journal as a worked example, with names and details changed.",
+    "Ask the listener to explain the idea back to you in their own words.",
+    "Write down every place where their version was thinner than yours, and what you had skipped."
+   ]
+  },
+  {
+   "name": "The Tappers",
+   "minutes": 10,
+   "steps": [
+    "Choose a well-known song and, without telling a friend which one, tap its rhythm on a table.",
+    "Before you start, write down the chance you think they will name it.",
+    "Record whether they did, then swap roles and repeat with a different song.",
+    "Compare your predictions with the results.",
+    "Write one sentence on what this means for explaining a reading to someone who cannot see what you see."
+   ]
+  },
+  {
+   "name": "How Do You Know, Three Times",
+   "minutes": 15,
+   "steps": [
+    "With a partner, watch a short scene from a film or a recorded public interview.",
+    "One of you states a reading of a person in it.",
+    "The other asks how do you know, three times, waiting for each answer.",
+    "Note the round at which the answers stopped being something either of you could point to on screen.",
+    "Swap roles with a new scene and compare where each of you ran out."
+   ]
+  },
+  {
+   "name": "Think Aloud Together",
+   "minutes": 20,
+   "steps": [
+    "With a learner, choose two short clips of public interviews or film scenes.",
+    "On the first clip, narrate your reading aloud as process, including baseline, change, rivals and doubts, but no verdict until the end.",
+    "On the second clip, let the learner narrate while you only ask questions.",
+    "Correct his steps, not his conclusion, and let him revise the conclusion himself.",
+    "Each write one thing the other noticed that you missed."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Someone reads people very well. Does it follow that they can teach it well?",
+   "options": [
+    "Yes, because anyone who can do something well can show others how it is done",
+    "Not necessarily, because the steps have become automatic and they will skip what they no longer notice",
+    "Only if they have also read the research behind each of the signals they use",
+    "No, because good readers rely on instinct, which by its very nature cannot be put into words or passed on"
+   ],
+   "answer": 1,
+   "explain": "This is the curse of knowledge. Experts see conclusions where novices need steps, and they judge what a learner can see by what they can see themselves. Good teaching has to rebuild the steps deliberately.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What happened when participants in Rozenblit and Keil's studies tried to explain how everyday devices worked?",
+   "options": [
+    "They explained them easily and rated their understanding even higher afterwards",
+    "Most of them refused to answer",
+    "Their ratings of their own understanding fell after they tried",
+    "Their ratings rose, because explaining built confidence"
+   ],
+   "answer": 2,
+   "explain": "Writing out the causal steps exposed how little of the mechanism they actually knew. The same thing happens when you try to explain a reading that felt obvious, which is why the explanation is worth attempting.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In Elizabeth Newton's study, tappers predicted that listeners would name about half the songs. How many did the listeners name?",
+   "options": [
+    "About half of them, as the tappers had predicted",
+    "About a quarter of them, half what was predicted",
+    "About one in ten of them, a fifth of the prediction",
+    "Three of the hundred and twenty songs"
+   ],
+   "answer": 3,
+   "explain": "The tappers could hear the tune in their heads, so they could not imagine the listeners hearing only knocking. An expert explaining a reading has the same blind spot about how much of it is in his head rather than in his words.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A junior colleague you are teaching says that a client touched his nose, so he was lying. What is the best response?",
+   "options": [
+    "Ask what else the touch could mean, what his baseline was, and how she could tell if she were wrong",
+    "Tell her she is probably right, but that she should keep readings like that to herself",
+    "Tell her that touching the face has been shown to have nothing to do with anything",
+    "Show her a list of the lying cues that the research has found to be more reliable than touching the nose"
+   ],
+   "answer": 0,
+   "explain": "She has learned a dictionary entry, and the fix is the method rather than a better entry. Walking her through baseline, rival explanations and the test teaches her to hold every later signal loosely.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Kassin and Fong find when they trained students in the deception cues taught by a popular interrogation method?",
+   "options": [
+    "The trained students became much more accurate, though no more confident",
+    "The trained students were less accurate than the untrained, and more confident",
+    "Training made no difference to either accuracy or confidence",
+    "The trained students became more cautious and made fewer judgments"
+   ],
+   "answer": 1,
+   "explain": "The training gave them reasons rather than accuracy. They could justify their errors more fluently. This is the danger of teaching signals without teaching doubt first.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your fifteen-year-old son asks you to teach him how to tell when people are lying. What fits this chapter?",
+   "options": [
+    "Teach him the cues you have learned, so that he is harder to fool than his friends",
+    "Tell him to wait until he is older, since reading people is an adult skill",
+    "Tell him nobody can do that reliably, and offer to teach him to notice changes, starting with himself",
+    "Refuse, and explain that the subject is not suitable for someone his age and may make him suspicious of people"
+   ],
+   "answer": 2,
+   "explain": "The honest answer protects him from a confident skill that does not exist. Starting with his own body teaches attention without making him a watcher of others, and the habit of asking is what he will need most.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Choose one specific reading of a person that you are confident about, the kind you make often, such as knowing when a colleague is about to disagree or when your partner is upset. Imagine explaining it to someone who keeps asking how you know. Write down each answer you would give, until you reach one that is not something you could observe. How many steps did you manage before the chain broke? What would you need to watch for over the next week to go one step further?",
+  "guidance": "Most people manage one or two observable steps before they reach *you can just tell*. That is not a failure; it is a map. The step where the chain breaks is exactly where your attention should go in the coming week. If your chain held all the way to a test, write down the test and run it.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to teach conclusions: a set of readings, delivered with authority, that the learner copies without the steps. The second is to teach too early, before your own ledger supports what you are teaching, so that you pass on confident folklore with your name on it. The third is to make learners into watchers: a son who reads the family, a junior who reports on colleagues. The most corrosive is the teacher's ego, which treats the learner's question as a challenge to be put down rather than a test to be welcomed. A teacher like that does not merely fail to learn from his pupil. He teaches the pupil that a confident reading should be defended rather than checked, and that lesson outlasts everything else.",
+ "furtherStudy": [
+  {
+   "work": "The misunderstood limits of folk science: An illusion of explanatory depth",
+   "author": "Leonid Rozenblit and Frank Keil",
+   "note": "Cognitive Science 26(5), 2002. The studies behind the illusion, with careful controls."
+  },
+  {
+   "work": "Expecting to teach enhances learning and organization of knowledge in free recall of text passages",
+   "author": "John F. Nestojko, Dung C. Bui, Nate Kornell and Elizabeth Ligon Bjork",
+   "note": "Memory & Cognition 42(7), 2014. A clean demonstration that preparing to teach changes how you learn."
+  },
+  {
+   "work": "Cognitive apprenticeship: Teaching the crafts of reading, writing, and mathematics",
+   "author": "Allan Collins, John Seely Brown and Susan E. Newman",
+   "note": "In Knowing, Learning, and Instruction: Essays in Honor of Robert Glaser, edited by Lauren B. Resnick, 1989."
+  },
+  {
+   "work": "\"I'm innocent!\": Effects of training on judgments of truth and deception in the interrogation room",
+   "author": "Saul M. Kassin and Christina T. Fong",
+   "note": "Law and Human Behavior 23(5), 1999. Why teaching cues without doubt makes people worse."
+  }
+ ],
+ "reviewPrompt": "Explain one reading you made this week to someone else, and let them ask how you know until you run out of observable answers."
+}

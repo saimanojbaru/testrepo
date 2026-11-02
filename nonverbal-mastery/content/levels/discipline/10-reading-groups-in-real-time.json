@@ -1,0 +1,258 @@
+{
+ "id": "discipline-10",
+ "categoryId": "discipline",
+ "index": 10,
+ "tier": "EXPERT",
+ "title": "Reading Groups in Real Time",
+ "estimatedMinutes": 75,
+ "hook": "In a group the most important body is rarely the one talking; watch where the eyes go when a decision gets close.",
+ "why": "Almost everything in this book so far has been taught one person at a time: one baseline, one cluster, one hypothesis. Much of life does not come one person at a time. It comes in meetings of eight, dinners of six, families of five, and the reading that matters is often not about any single person but about the group: who it is really listening to, where it is heading, who is being left out, and whether it is about to admit you or close ranks.\n\nGroups have their own structure, and some of it is well studied. People arrange their bodies around a shared space. They pass the floor by rules so quick that nobody notices them. They look at speakers and at power in measurable patterns. This chapter teaches you to read that structure in real time: the shape of a group, the flow of its attention, its turn-taking, the signals of hierarchy and alignment, and how to sample a room you cannot possibly watch in full. It ends where it should, with your own place in the group, because you are never only watching it.",
+ "teach": [
+  {
+   "h": "A group has a body too.",
+   "p": "Watch any party from a balcony and you will see people standing in small clusters, each roughly a circle, each with its members turned towards a shared patch of floor. The anthropologist Adam Kendon called these arrangements F-formations. When two or more people talk standing up, they tend to position themselves so that each has equal, direct access to the space between them, which he called the o-space. Their bodies form a ring around it, and the space outside the ring is where newcomers wait.\n\nThe shape tells you things before anyone speaks. A tight ring with shoulders closed means a conversation that is, for now, closed. A ring with a gap, one person standing slightly back or angled outward, is an opening: people who join a group almost always enter through such gaps. When someone is about to leave, their lower body usually turns first, feet and hips swinging away while the head stays with the conversation. When the topic becomes private, the ring tightens and voices drop.\n\nSeated groups follow the same logic, though the furniture fixes much of it. Notice who has turned their chair, who has pushed back from the table, who has angled towards one neighbour and away from another. A meeting of eight around a table often contains two or three smaller rings, visible in the angles of torsos.\n\nAs always, the reading is of change against baseline, and the group has a baseline of its own. Some teams always sit loosely. Some friends always stand close. The useful signal is the moment a group's shape changes: the ring that tightens when a certain name comes up, the gap that opens when you approach.\n\nBefore you join a group, look at its shape. It will usually tell you whether you are welcome yet.",
+   "poseId": "p_group_three",
+   "disconfirm": "If you approach standing groups through their gaps and through their closed sides about equally often, and are admitted just as readily either way, the formation is not telling you much in your setting. Track twenty approaches before deciding."
+  },
+  {
+   "h": "Follow the eyes, not the voice.",
+   "p": "In a group conversation, listeners mostly look at whoever is speaking, and speakers look most at the person they are addressing. That much is predictable and tells you little. The useful information is in the exceptions: the moments when listeners look away from the speaker, and where they look instead.\n\nWhen a decision approaches, people look at the person they expect to make it. A proposal is put to the room, and before anyone answers, eyes go to one face. That face belongs to the real decision-maker for this question, who may or may not be the most senior person present and may not have spoken at all. The same thing happens after a joke, when people check one person's reaction before laughing fully, and after bad news, when they look to whoever will have to deal with it.\n\nThis is why the most important body in a group is rarely the one talking. The speaker has the floor. The person everyone glances at has the power over what happens next, and in many meetings those are different people.\n\nTo read this you need to stop watching the speaker at exactly the moments when the speaker is most interesting: the end of a proposal, the punchline, the announcement. At those moments, take a quick look round the room instead. You are looking for a convergence of gazes, three or four people glancing at the same face within a second or two. One person's glance means little. A convergence is a strong clue about the group's structure on this question.\n\nThen test it, as with any reading, by watching the next decision point and seeing whether the eyes go to the same place.",
+   "poseId": "p_gaze_over_shoulder",
+   "disconfirm": "If across several decision points the listeners' glances scatter rather than converge, or converge on whoever happens to be speaking, this group has no single centre of power on these questions, or its members hide it well. Do not invent one.",
+   "pullQuote": "The speaker has the floor. The person everyone glances at has the power over what happens next.",
+   "diagram": "group-attention"
+  },
+  {
+   "h": "Turn-taking is a machine you can watch.",
+   "p": "In 1974 Harvey Sacks, Emanuel Schegloff and Gail Jefferson described the rules by which conversation passes from one speaker to the next. The current speaker can select the next one, by name, by gaze or by a question aimed at someone. If nobody is selected, the first person to start speaking gets the turn. If nobody starts, the current speaker may go on. The system runs so fast that most people never notice it. In 2009 Tanya Stivers and colleagues measured the gaps between questions and answers in ten languages around the world. In all of them, most answers began within about half a second, with Japanese speakers leaving the shortest gaps and Danish speakers the longest.\n\nBecause the system is so fast, the signals of wanting a turn are small and easy to miss. A person preparing to speak often takes a quick breath in, shifts forward, lifts a hand slightly from the table, or opens their mouth and closes it again. Watch for someone who does this two or three times without getting the floor. They are being passed over, and the group is losing whatever they had to say.\n\nTurn-taking also shows structure. Notice who is selected by gaze most often, who is interrupted and by whom, and who takes the floor after a silence. Interruptions that run in one direction more than the other are a pattern worth recording. So is the person who is never selected but always speaks when they choose to.\n\nThere is some evidence that the distribution of turns matters to how well a group works. In 2010 Anita Woolley and her colleagues found that groups whose members took more equal turns did better across a range of tasks. Later work has questioned how strong the effect is, but the pattern is worth watching in your own meetings.",
+   "poseId": "p_sit_perched",
+   "disconfirm": "If, when you count, the turns in a group you know turn out to be spread fairly evenly and nobody's attempts to speak go unanswered, your impression that someone is being shut out was not supported. Count again in a different meeting before revising your view of the group."
+  },
+  {
+   "h": "Power shows in how people look.",
+   "p": "In the 1970s Ralph Exline, Steve Ellyson and Barbara Long described a pattern they called the visual dominance ratio: the amount a person looks at their partner while speaking, divided by the amount they look while listening. Most people look more while listening than while speaking. People in positions of power tend to look about as much while speaking as while listening, which gives them a ratio near one. People in lower positions look much more while listening, which gives them a lower ratio.\n\nJohn Dovidio and Steve Ellyson found in 1982 that observers use this pattern to judge power, even without being told what to look for. And in 1988 Dovidio and colleagues showed that it follows situational power rather than fixed traits. In mixed pairs of men and women, whoever held the expertise on the topic under discussion showed the higher ratio, whichever sex they were.\n\nIn a group, this gives you a second way of seeing hierarchy. Notice who holds steady eye contact while they speak, and who looks down or away when speaking but watches closely when listening. Notice the person who looks at others while they talk without seeming to seek their approval. And notice when the pattern shifts: a junior who starts to hold the room's gaze while speaking, or a senior who suddenly watches others more closely while they talk.\n\nThe usual cautions apply with extra force. Gaze norms differ between cultures. Many autistic people look less at faces whatever their status. Some people look down to think. Use the ratio as one clue about the structure of a room, never as a judgment about any single person, and always against that person's baseline.",
+   "poseId": "p_pro_arms_folded_seated",
+   "disconfirm": "If the people you would rank as most powerful in a group do not show a higher ratio of looking while speaking to looking while listening, the pattern does not hold in that group, or your ranking is wrong. Check the ranking by watching who decides."
+  },
+  {
+   "h": "Alignment, and its limits.",
+   "p": "People in conversation tend to fall into step. They share postures, echo each other's gestures, match pace and pitch, often without knowing it. In classrooms in the 1970s Marianne LaFrance found that posture sharing between teacher and students went along with students' ratings of rapport. In 1999 Tanya Chartrand and John Bargh described what they called the chameleon effect: people unconsciously mimicked the mannerisms of a stranger they worked with, and in one study participants whose mannerisms were mimicked by a confederate liked that person more.\n\nThese findings became popular, and the popular version outran the evidence. Later studies have found the link between mimicry and liking smaller and less consistent than the first reports suggested, and some, using carefully controlled virtual characters, found no effect on rapport at all. Alignment is real. Its meaning is less certain than the advice books claim.\n\nIn a group, alignment is most useful as a map of sub-groups rather than as a measure of liking. Notice who shares posture with whom, who turns towards whom when they laugh, and who moves together, sitting back or leaning in at the same moment, when a point is made. Two or three people who repeatedly align may be allies on this question, or old friends, or simply tired at the same time. Hold the map loosely, and check it against what people actually say and decide.\n\nOne use of this knowledge is ruled out. Mimicking someone in order to win them over is the manipulation this book refuses to teach, and given the evidence, it may not even work.",
+   "poseId": "p_pair_angled",
+   "disconfirm": "If people you map as aligned regularly take opposite sides when a decision is made, alignment is not tracking alliance in this group. Keep it as a description of who moves together, and stop reading more into it."
+  },
+  {
+   "h": "Sample a room you cannot fully watch.",
+   "p": "You cannot watch eight people at once, and trying to do so produces a blur in which you notice nobody. A group is read by sampling: choosing whom to watch and when, and accepting that most of the room will go unobserved most of the time.\n\nChoose anchors. In most meetings three people repay attention more than the rest: the person who will decide, the quietest person, and the person with the most at stake in the outcome, who may be neither of the first two. Rotate your attention among them, a few seconds each, and let the rest of the room sit in your peripheral vision. Peripheral vision is poor at detail but good at movement, so it will still catch the large changes, someone pushing back from the table or turning away.\n\nChoose moments. Some moments are worth more than others: the start, when baselines are set; the moment a proposal is put; bad news; a joke; and the end, when people relax and show what they were holding. At those moments, take a quick look round the whole room rather than staying with your anchors.\n\nWrite down what you saw as soon as you can, by anchor and by moment, rather than as an impression of the room. *At the price, Grace looked at the window and Paul looked at Grace* is a record. *The room was against it* is a story.\n\nAccept the gaps. A sampled room is a partial picture, and the honest journal entry says which parts you saw and which you did not. Nobody reads a whole group. Good readers know which parts of it they missed.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "If, after a meeting, your sampled notes miss the change that turned out to matter, check whether it came from someone outside your anchors or at a moment you did not sample. Adjust the anchors before deciding that sampling does not work for you."
+  },
+  {
+   "h": "You are part of the group you are reading.",
+   "p": "Everything in this chapter so far treats you as an observer. You are never only that. Your gaze selects speakers, your posture joins or leaves the ring, your laughter tells the room whose joke landed. In a group, reading and acting cannot be separated, and the more power you hold in the room, the larger your effect on what you are trying to read.\n\nThis is a responsibility and an opportunity. If you lead a meeting, you allocate turns with your eyes whether you mean to or not. Speakers tend to look at the people they expect to answer, and the people they look at are more likely to speak. Use that deliberately. When you notice someone who has tried to come in and failed, look at them at the next pause, and if needed say their name: *Tomasz, you were about to say something.* It costs a second and often changes the outcome.\n\nNotice too what your own body is doing to the group's baseline. If you are tense, the room will often tighten around you, and you may then read the tightness as something about them. If you are the senior person and you lean back and go quiet, others may wait for you, and their waiting can look like reluctance.\n\nBefore you trust a group reading, ask what part of it you caused. Then test it in a way that does not depend on you, for example by asking an open question of the whole room and watching who answers first, or by checking with individuals afterwards, one at a time, in private.\n\nRead the group, then the person, then yourself in both.",
+   "poseId": "p_pro_presenting",
+   "disconfirm": "If the patterns you see in a group stay the same whether you are present, absent, leading or simply attending, your effect on that group is small. A colleague's notes from a meeting you missed are the simplest way to check."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pair_face_to_face",
+   "dontPoseId": "p_pair_turned_away",
+   "doCaption": "Both bodies still turned towards the shared space.",
+   "dontCaption": "Talking on while the other's body has already turned to leave.",
+   "annotation": "Feet and hips usually swing away before the head does. The lower body announces a departure first."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_presenting",
+   "doCaption": "Watching where the listeners look as the decision approaches.",
+   "dontCaption": "Watching only whoever is speaking.",
+   "annotation": "The speaker has the floor; the person everyone glances at has the power. Look round the room at the moments that matter."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_posture_lean_in_stand",
+   "doCaption": "Noticing who aligns with whom, and leaving it at that.",
+   "dontCaption": "Mirroring someone's posture to win him over.",
+   "annotation": "Alignment is real, but its link to liking is weaker than the advice books claim, and using it as a technique is manipulation."
+  },
+  {
+   "doPoseId": "p_stand_gesture_open",
+   "dontPoseId": "p_stand_wide_planted",
+   "doCaption": "Using your gaze to hand the floor to someone who has been trying to speak.",
+   "dontCaption": "Holding the floor with your eyes on the most senior person.",
+   "annotation": "Gaze allocates turns. Whoever leads a group decides, often without noticing, who gets heard."
+  }
+ ],
+ "caseStudy": "Sam, thirty-three, has just become a project manager at an engineering firm, and his first big meeting is a supplier decision. Seven people sit round the table. Paul, the operations director, talks most and talks with confidence: the cheaper supplier is the obvious choice. Sam assumes the decision is Paul's.\n\nHe has decided in advance to sample rather than stare, so his anchors are Paul, the quietest person in the room, and whoever has most at stake. The quietest is Grace, head of finance, at the far end of the table. She has said almost nothing. When Paul puts the proposal to the room and asks whether anyone objects, Sam looks round instead of at Paul. Four people glance at Grace within a second. So does Paul. Grace's pen has stopped, and she is looking at the window.\n\nSam also notices Tomasz, a junior engineer, who has leaned forward and taken a quick breath three times during the discussion, and each time been talked over. The fourth time, Sam looks at him and says, *Tomasz, you were about to say something.* Tomasz says that the cheaper supplier's site failed an inspection last spring.\n\nSam turns to Grace. *What would you need to see before you were comfortable?* She says she would want the inspection report and three years of the supplier's accounts. The decision is deferred for a fortnight.\n\nAfterwards Sam writes his notes by anchor and moment, not as an impression. He later learns that every contract above a certain value needs Grace's signature, which nobody had mentioned to a new manager. At the next decision meeting he watches the eyes again. They go to Grace. When the inspection report arrives, the firm chooses the other supplier.",
+ "observe": [
+  "In your next group conversation, notice where the listeners' eyes go just before a decision, an answer to a proposal, or a laugh.",
+  "In a public place, briefly watch a few groups of three or more people standing together, and notice the shape each makes and whether it has an opening.",
+  "In a meeting, notice one person who tries to speak and does not get the floor, and what they did each time just before giving up."
+ ],
+ "drills": [
+  {
+   "name": "Eye Map",
+   "minutes": 20,
+   "steps": [
+    "In a meeting or a recorded panel discussion, sketch where each person sits.",
+    "At three moments, the start, a proposal and a decision or answer, mark with an arrow where each person is looking.",
+    "Note who received the most glances at the decision moment and who spoke the most overall.",
+    "Compare both with the formal roles in the room.",
+    "Write one hypothesis about the group's structure on this question, and the next decision point at which you will test it."
+   ]
+  },
+  {
+   "name": "Turn Ledger",
+   "minutes": 15,
+   "steps": [
+    "Choose a recorded discussion of three or more people lasting at least fifteen minutes.",
+    "Tally the turns each person takes.",
+    "Mark each interruption with an arrow from the interrupter to the person interrupted.",
+    "Mark each failed attempt to speak, such as a breath, a lean forward or a half-started word that did not get the floor.",
+    "Write down what the tallies show that you did not notice while simply watching."
+   ]
+  },
+  {
+   "name": "Formation Watch",
+   "minutes": 15,
+   "steps": [
+    "In a public place such as a station concourse, a park or a reception, choose five standing groups to observe briefly, never staring.",
+    "Sketch the shape of each group, marking any gaps in the ring.",
+    "For each, predict with a percentage whether it will admit a newcomer or break up within five minutes.",
+    "Check each prediction from a distance as it resolves.",
+    "Record your hit rate and which features of the shape you relied on."
+   ]
+  },
+  {
+   "name": "Sampling Rotation",
+   "minutes": 20,
+   "steps": [
+    "Before a meeting, choose three anchors: the person who will decide, the quietest person, and the person with most at stake.",
+    "During the meeting, rotate your attention among the anchors every few seconds, leaving the rest to peripheral vision.",
+    "At the start, at any proposal and at the end, look round the whole room once.",
+    "Afterwards, write what each anchor did at each key moment, as behaviour rather than impressions.",
+    "Note one thing you saw that you would have missed watching only the speakers."
+   ]
+  },
+  {
+   "name": "Give the Floor",
+   "minutes": 15,
+   "steps": [
+    "In a meeting you lead or attend, watch for one person who tries to speak and is passed over.",
+    "At the next pause, look at them, and if needed say their name and invite them in.",
+    "Note what they say and how the discussion changes.",
+    "Repeat in at least two more meetings over the next fortnight.",
+    "Write down what you learned in those meetings that you would otherwise not have heard."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "In a meeting, who usually tells you the most about where a decision is going?",
+   "options": [
+    "Whoever is speaking, since they hold the attention of everyone in the room",
+    "The most senior person on the organisation chart, whatever happens in the room",
+    "Whoever the listeners glance at as the decision gets close",
+    "Whoever has spoken the most often and for the longest during the meeting"
+   ],
+   "answer": 2,
+   "explain": "The speaker holds the floor, but the face the listeners check as a decision approaches belongs to whoever they expect to decide. That is often not the speaker, and sometimes not the most senior person present.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Adam Kendon's account of F-formations, what does the shape of a standing group tell you?",
+   "options": [
+    "Whether the members share a space for talk, and whether it is open",
+    "Which member of the group holds the highest status at work or in the family",
+    "How long the members of the group have known each other, roughly in years",
+    "Whether the members like each other or are only being polite for now"
+   ],
+   "answer": 0,
+   "explain": "People talking together arrange themselves around a shared space they all have access to. A closed ring signals a closed conversation; a gap is usually where newcomers enter. Shape says little on its own about status or liking.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What is the visual dominance ratio?",
+   "options": [
+    "The share of a meeting during which a particular person holds the floor",
+    "Looking while speaking, divided by looking while listening",
+    "The number of people in the room who look at someone while he speaks",
+    "How often a person is the first to break eye contact in a conversation"
+   ],
+   "answer": 1,
+   "explain": "People with more situational power tend to look about as much while speaking as while listening; those with less look much more while listening. It is a clue about a room's structure, never a verdict on one person, and gaze norms vary by culture and person.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Two colleagues sit with mirrored postures through most of a meeting. What can you reasonably conclude?",
+   "options": [
+    "That they agree with each other on the main issue being discussed",
+    "That one of them is deliberately mimicking the other to win his trust",
+    "That they are friends outside work and have known each other for years",
+    "Only a weak hypothesis that they are aligned, to check against what they do"
+   ],
+   "answer": 3,
+   "explain": "Alignment is real, but its link to liking and agreement is weaker and less consistent than early studies suggested. Use it as a map of who moves together, and check it against what people say and decide.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Tanya Stivers and colleagues find when they measured turn-taking in ten languages?",
+   "options": [
+    "Most answers began within about half a second in every language",
+    "Gaps between turns differed by several seconds from language to language",
+    "Only European languages showed any regular pattern of taking turns",
+    "Speakers of most languages talked over each other most of the time"
+   ],
+   "answer": 0,
+   "explain": "Turn-taking was fast everywhere, with modest differences between languages. Because the system is so quick, the signs of someone wanting a turn are small, and someone repeatedly passed over is easy to miss.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You are leading a meeting and notice a junior colleague lean forward and take a quick breath three times without getting a word in. What fits?",
+   "options": [
+    "Leave it, since he will speak up when he has something important enough to say",
+    "Look at him at the next pause and invite him in by name",
+    "Mention it to him privately after the meeting so that he can be more assertive",
+    "Ask the group to raise hands before speaking for the rest of the meeting"
+   ],
+   "answer": 1,
+   "explain": "Those are classic signs of a failed attempt to take a turn. As the leader you allocate turns with your gaze whether you mean to or not, so a look and his name at the next pause is quick and often changes what the group hears.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific group you belong to that meets regularly, such as a team, a family or a group of friends. Who speaks most? Who do people look at when a decision is close? Are those the same person? Describe one moment you remember when the group's attention went somewhere you did not expect, and say what you would watch for at the next meeting to test your picture of how this group really works.",
+  "guidance": "Most people find that the person who speaks most and the person the group defers to are different more often than they expected, especially in families. If you cannot remember where eyes went at decision points, that is the first thing to watch for. Be careful to describe the group's structure, not to judge any one person in it.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to watch the speaker, which is natural and tells you least. The second is the opposite: reading hierarchy into every glance and building a confident organisation chart from a single meeting, ignoring culture, personal style, and the person who simply looked at the clock. The third is trying to watch everyone and seeing no one. The fourth is misusing what you learn: mirroring people to win them over, choosing seats to dominate, steering turns to shut out a rival. And the most constant failure is forgetting that you are in the group. Your gaze, your posture and your silence shape what you are trying to read, so test group readings in ways that do not depend on you.",
+ "furtherStudy": [
+  {
+   "work": "Conducting Interaction: Patterns of Behavior in Focused Encounters",
+   "author": "Adam Kendon",
+   "note": "Cambridge University Press, 1990. The source of F-formations, and a careful study of how bodies organise conversation."
+  },
+  {
+   "work": "A simplest systematics for the organization of turn-taking for conversation",
+   "author": "Harvey Sacks, Emanuel A. Schegloff and Gail Jefferson",
+   "note": "Language 50(4), 1974. The classic account of how the floor passes between speakers."
+  },
+  {
+   "work": "Decoding visual dominance: Attributions of power based on relative percentages of looking while speaking and looking while listening",
+   "author": "John F. Dovidio and Steve L. Ellyson",
+   "note": "Social Psychology Quarterly 45(2), 1982. How observers read power from patterns of gaze."
+  },
+  {
+   "work": "Universals and cultural variation in turn-taking in conversation",
+   "author": "Tanya Stivers, N. J. Enfield, Penelope Brown and colleagues",
+   "note": "Proceedings of the National Academy of Sciences 106(26), 2009. Turn-taking measured in ten languages."
+  }
+ ],
+ "reviewPrompt": "At the next decision point in a meeting, look round the room instead of at the speaker, and note whose face the listeners check."
+}

@@ -1,0 +1,258 @@
+{
+ "id": "discipline-08",
+ "categoryId": "discipline",
+ "index": 8,
+ "tier": "ADVANCED",
+ "title": "Plateaus & Deliberate Practice",
+ "estimatedMinutes": 70,
+ "hook": "Most people stop improving not because they reach their limit but because they reach good enough, which feels exactly like skill.",
+ "why": "Somewhere in the past few months your progress probably slowed. The early chapters produced quick gains: you began to see baselines, to notice clusters, to catch your own pacifiers. Then the gains became harder to feel. Your ledger may show the same Brier score month after month. Your readings may feel smooth and natural, which is pleasant and also a warning.\n\nThis chapter is about that flat stretch. It explains why skills stall when they become comfortable, what the research on deliberate practice actually shows once the popular myths are stripped away, and why reading people is an unusually hard skill to improve by practice alone. Then it turns practical: how to find a plateau in your own records, how to make practice harder in the ways that help rather than the ways that merely hurt, how to design drills at the edge of your ability, and why stopping, sleeping and taking the skill off duty belong to the practice rather than interrupting it.",
+ "teach": [
+  {
+   "h": "Good enough feels like skill.",
+   "p": "In 1967 Paul Fitts and Michael Posner described three stages in learning a skill. In the first, the cognitive stage, you think about every step and make many errors. In the second, the associative stage, the steps begin to join up and errors fall. In the third, the autonomous stage, the skill runs without conscious attention, which frees your mind for other things. The autonomous stage is where most skills end up, and it is also where most skills stop improving.\n\nThe writer Joshua Foer called this the OK plateau. Most adults type at a speed they reached years ago and have never exceeded, though they type every day. They are not at the limit of their fingers. They reached a speed that was good enough, the skill went automatic, and automatic skills repeat themselves rather than grow. Practice that happens without attention maintains a skill; it rarely improves one.\n\nReading people is an extreme case. Everyone reaches the autonomous stage in childhood, because social life demands it. By the time you opened this book you had decades of fluent, automatic reading behind you, most of it never checked. The early chapters pushed you back into the cognitive stage, deliberately: baselines, clusters, timing, rivals, tests. That is why they felt slow and why they worked.\n\nThe danger now is that the method itself goes automatic. You run the six steps without really running them, the way a man says grace without hearing the words. The readings feel smooth. The ledger stops moving. You have arrived at a new and higher OK plateau, and it feels exactly like mastery.\n\nThe way off it is the same as before: bring attention back to the parts of the skill you have stopped noticing, and make them effortful again.",
+   "poseId": "p_sit_lean_back_open",
+   "disconfirm": "If your readings feel effortless and your ledger is still improving month on month, you are not on a plateau, and fluency is doing its proper job. The warning applies only when ease and a flat record arrive together.",
+   "pullQuote": "Practice without attention maintains a skill. It rarely improves one."
+  },
+  {
+   "h": "What deliberate practice is, and is not.",
+   "p": "In 1993 Anders Ericsson, Ralf Krampe and Clemens Tesch-Römer studied violinists at a music academy in Berlin. They divided them by their teachers' judgment into the best, the good, and those training to become music teachers, and asked them to reconstruct how they had spent their time since childhood. All three groups had spent many hours on music. What separated them was the amount of solitary practice: time spent alone, working on specific weaknesses set by a teacher, with attention and feedback. By their late teens the best had accumulated thousands more hours of it than the future teachers.\n\nEricsson called this deliberate practice and was careful to define it narrowly. It is designed to improve a particular aspect of performance. It is effortful and requires full concentration. It comes with prompt feedback. And it is not, for the most part, enjoyable in itself. Playing through pieces you like is not deliberate practice, and neither is performing.\n\nTranslated to this book, most of what you do while reading people is performance: you read, you respond, life goes on. Deliberate practice is the narrower thing you do on purpose to get better at one part of the method: a session spent only on baselines, a week of predictions about turn-taking scored the same day, a recording reviewed for one channel alone.\n\nTwo features matter most. Practice must target a specific weakness rather than the whole skill, and it must carry feedback quick enough to correct you while the attempt is still fresh. Without both, hours do not turn into improvement, however many of them there are.\n\nTen focused minutes on one weakness, scored, will do more than an evening of general watching.",
+   "poseId": "p_pro_taking_notes",
+   "disconfirm": "If you find that hours of general watching improve your ledger as fast as short sessions aimed at one weakness, deliberate practice is not adding anything for you. Compare the two over a month before deciding which to keep."
+  },
+  {
+   "h": "Practice matters, but less than the myth says.",
+   "p": "Ericsson's work was later popularised as a rule that ten thousand hours of practice makes anyone an expert. He objected to the simplification, and later research has trimmed the claim further. In 2014 Brooke Macnamara, David Hambrick and Frederick Oswald combined eighty-eight studies of deliberate practice and performance. Practice mattered, but it explained about twelve percent of the differences between people overall. It explained around a quarter in games such as chess, about a fifth in music, less in sport, and very little in education and the professions.\n\nThe domains where practice mattered most share something: clear rules, stable conditions, and fast, unambiguous feedback. A chess move wins or loses. A note is in tune or it is not. The professions, where practice explained least, are messier. Outcomes arrive late, are shaped by many causes, and are rarely scored.\n\nYou met the same idea at the end of Part I, in Daniel Kahneman and Gary Klein's two conditions for trustworthy intuition: an environment regular enough to learn, and quick, clear feedback. The meta-analysis fits that pattern: practice paid off most where the domain was regular and quick to tell you that you were wrong. A golfer on a range sees every ball land. A manager reading his team may wait a year to learn whether his reading of a new hire was right, and may never learn it at all.\n\nReading people sits uncomfortably close to the professions. Behaviour is noisy, causes are many, and feedback is slow or absent. That is the honest reason the earlier chapters asked you to build a journal and a ledger. They manufacture the feedback that social life does not supply. Without them, hours of practice will mostly make you more fluent in your existing errors.\n\nThe lesson is modest and practical. Practice helps, but only practice that is scored.",
+   "poseId": "p_stand_weight_shift",
+   "disconfirm": "If your readings improve steadily over months without any scoring at all, the environment you read in may be more regular, and its feedback quicker, than most. That is possible in some jobs. Check it by scoring a month of readings anyway."
+  },
+  {
+   "h": "Find the plateau in your ledger.",
+   "p": "A plateau is easy to feel and hard to prove, because the feeling of stalling comes and goes with mood. The ledger settles it. Three records are worth looking at together.\n\nThe first is your Brier score by month, from the calibration chapter. A score that has moved by less than a few hundredths over three or four months, on predictions of similar difficulty, is a plateau. The second is your calibration curve, drawn separately for each quarter of the year. If the bands have stopped moving towards the diagonal, you have stopped learning what your confidence is worth. The third is the surprise rate: the share of your journal entries in the past month in which something happened that you did not expect. A falling surprise rate can mean you are getting better. It can also mean you have stopped putting yourself anywhere you might be surprised.\n\nTo tell those apart, look at what you are practising on. Most plateaus turn out to be plateaus of material. The reader has drifted into the same settings, the same people and the same kind of prediction, and has become good at that narrow slice. Tag your last fifty predictions by setting and by the kind of person you read. If three quarters of them come from two settings, the plateau is in your diet, not in your ability.\n\nSome plateaus are real ceilings for now, and that is fine. The point of finding one is to decide deliberately whether to push on that part of the skill, or to accept it and spend your effort elsewhere.",
+   "poseId": "p_sit_neutral",
+   "disconfirm": "If your Brier score and calibration bands are still improving, and your predictions come from a wide range of settings and people, you are not on a plateau, whatever it feels like. Trust the record over the mood."
+  },
+  {
+   "h": "Make it harder in the ways that help.",
+   "p": "Robert Bjork, who has spent decades studying how people learn, coined the phrase desirable difficulties for a group of findings that run against intuition. Some changes make practice feel harder and slower, and make performance during practice worse, yet produce better learning that lasts longer and transfers further. The main ones are spacing practice out over time, mixing different kinds of problem together rather than blocking them, testing yourself rather than rereading, and varying the conditions.\n\nOne study shows the trap clearly. In 2008 Nate Kornell and Robert Bjork asked people to learn the styles of twelve landscape painters from examples of their work. Some saw each painter's examples in a block; others saw the painters mixed together. The mixed group were later much better at recognising new paintings by the same artists. Yet most participants believed that blocked study had worked better for them. The difficulty that helped felt like it was hurting.\n\nReading people is a task of exactly this kind: learning to recognise patterns across varied examples. So mix your material. In a single session, alternate between a recorded interview, a café and your notes from a meeting, rather than spending an hour on one. Spread practice across the week in short sessions rather than one long one. Test yourself with predictions rather than reviewing what you already know.\n\nExpect your hit rate to drop for a while. That drop is not a sign the method is failing. It is very often the sign that it has begun to work.\n\nJudge a change in practice by the ledger a month later, never by how the session felt.",
+   "poseId": "p_walk_brisk",
+   "disconfirm": "If, after a month of mixed and spaced practice, your ledger shows no improvement over blocked practice on the same kind of material, these difficulties are not helping you in this skill. The research suggests they usually do, but your record is the test that counts.",
+   "pullQuote": "The difficulty that helped felt like it was hurting."
+  },
+  {
+   "h": "Design drills at the edge.",
+   "p": "A useful drill sits at the edge of your ability: hard enough that you fail often, easy enough that you succeed often enough to learn. If you are right almost every time, the drill is maintenance. If you are at chance, you are guessing and nothing is being learned. Aim for predictions you get right somewhere between about six and eight times in ten.\n\nThere are several ways to move a drill to the edge. Restrict the channel: watch a recorded conversation with the sound off and read only feet and hands, then listen with the picture off and read only voice. Shorten the time: make your sixty-second scan a thirty-second one and see what survives. Pause and predict: stop a recorded interview just after a question and predict, with a number, what the person will do next, whether they will answer directly, laugh, or look to the host, then play it and score. Change the material: read in a setting you rarely enter, or people you know least, always within the ethics of the earlier chapters.\n\nPause and predict is the closest you can get to the forecaster's daily feedback. A single hour of recorded talk can produce dozens of scored predictions, about people who chose to be filmed, with no one affected by your guesses.\n\nChange one thing at a time. If you restrict the channel and shorten the time together, you will not know which change helped. Keep a short note of each drill design in your ledger and its hit rate, so that you can see which designs push you and which merely frustrate.\n\nWhen a drill's hit rate climbs above eight in ten, it has done its job. Move the edge again.",
+   "poseId": "p_pro_video_call",
+   "disconfirm": "If you find you learn as much from drills you almost always get right as from drills at the edge, the edge rule does not fit you. Compare a month of each on the same kind of prediction before trusting either."
+  },
+  {
+   "h": "Rest is part of the practice.",
+   "p": "Ericsson's violinists did not practise all day. The best of them practised in sessions of around an hour or so, rarely more than about four hours in a day, and they slept more than the less accomplished students, including naps in the afternoon. Deliberate practice is so demanding of attention that it cannot be sustained for long, and the attention is the part that does the work.\n\nSleep appears to do some of the work too. In 2000 Robert Stickgold and his colleagues found that people trained on a visual discrimination task improved overnight, without further practice, but only if they slept. Those deprived of sleep on the first night did not show the gain. Perceptual learning of this kind is not identical to reading people, and the claim here is modest: practice followed by sleep tends to stick better than practice followed by more practice.\n\nThere is a second kind of rest that matters for this skill in particular. A man who practises reading people all day eventually reads people all day. He analyses his partner at dinner and his children at bedtime. That is not practice. It is a habit that makes him worse company and, because tired attention is poor attention, a worse reader as well.\n\nSo set the practice in boxes. Short sessions, at set times, with a clear end. Outside the boxes, the skill is off duty: you notice what you notice, and you let it go. The chapter on the quiet body will return to this. For now, treat stopping as a skill in its own right, and practise it as deliberately as the rest.\n\nStop while your attention is still good, not when it has gone.",
+   "poseId": "p_breath_easy",
+   "disconfirm": "If your ledger improves faster when you practise in long, unbroken sessions late into the evening than in short sessions with sleep between them, your learning differs from the general pattern. Test it for a month before giving up the rest."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_sit_forward_engaged",
+   "dontPoseId": "p_sit_lean_back_open",
+   "doCaption": "Practising where you still get it wrong.",
+   "dontCaption": "Practising what you already do well.",
+   "annotation": "Comfortable practice maintains a skill. Improvement happens at the edge, where you fail often enough to learn."
+  },
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "Ten minutes of pause and predict, every guess scored.",
+   "dontCaption": "An hour of passive watching.",
+   "annotation": "Hours without feedback mostly make you more fluent in your errors. A scored prediction teaches something every time."
+  },
+  {
+   "doPoseId": "p_breath_easy",
+   "dontPoseId": "p_stand_shoulders_raised",
+   "doCaption": "Stopping while attention is still good.",
+   "dontCaption": "Grinding on, tired, to finish the session.",
+   "annotation": "Attention does the work in deliberate practice, and it runs out. Sleep after practice tends to fix what was learned."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Judging it by the ledger a month later.",
+   "dontCaption": "Judging a drill by how it felt.",
+   "annotation": "Desirable difficulties feel like failure while they work. Only the record can say whether a change in practice helped."
+  }
+ ],
+ "caseStudy": "Chris, forty-six, is a sales director who has always been proud of reading clients. He worked through the calibration chapter with enthusiasm, and for two months his Brier score fell steadily. Then it stopped. For four months it barely moved, though he was practising more than ever: an hour most evenings going over the day's meetings, and a running commentary in his head through every client call.\n\nWhen he tags his last fifty predictions, the reason is plain. Forty of them are about clients he has known for years, in the same two meeting rooms, and almost all are predictions about whether a client will push back on price. He has become very good at one narrow thing.\n\nSo he changes the diet. Three times a week he spends fifteen minutes on recorded panel discussions, pausing after each question to predict what the next speaker will do, with the sound off for the first half. He adds predictions about people he knows least: new junior staff, suppliers he meets once. He mixes the material within each session. For three weeks his hit rate falls, and he hates it. His predictions about the panels are right barely half the time.\n\nHe also stops the evening hour. His wife has told him, not unkindly, that he has started narrating her face at dinner. He moves practice to fifteen minutes on the train in the morning and leaves it there.\n\nBy the end of the third month, the panel predictions are right about seven times in ten. More to the point, his Brier score on client predictions has begun to fall again, though he has spent less time on clients than before. His explanation in the ledger is short: he is noticing hands, and pauses before answers, that he had stopped seeing years ago. The evenings are quieter too.",
+ "observe": [
+  "Notice one skill you use every day, such as typing or driving, that stopped improving years ago, and what you would have to do differently to improve it.",
+  "During a conversation this week, notice a moment when your reading of someone arrived effortlessly, and ask yourself whether you have ever checked readings of that kind.",
+  "Notice which settings and which kinds of people you practise reading most often, and which you never practise on at all."
+ ],
+ "drills": [
+  {
+   "name": "Find Your Plateau",
+   "minutes": 20,
+   "steps": [
+    "Take your calibration ledger and work out your Brier score for each of the past four months.",
+    "Draw your calibration curve separately for the earliest and the most recent two months.",
+    "Tag your last fifty predictions by setting and by the kind of person you read.",
+    "Mark any score that has barely moved and any tag that holds more than a third of your predictions.",
+    "Write one sentence naming your plateau, and whether it is in your ability or in your material."
+   ]
+  },
+  {
+   "name": "Pause and Predict",
+   "minutes": 20,
+   "steps": [
+    "Choose a recorded interview or panel discussion of at least twenty minutes, with people who chose to be filmed.",
+    "Pause just after each question and write a prediction about what the next speaker will do, with a percentage.",
+    "Play on until it resolves, then mark it hit or miss.",
+    "Make at least fifteen predictions in the session.",
+    "Record your hit rate and the kind of prediction you missed most often."
+   ]
+  },
+  {
+   "name": "One Channel Only",
+   "minutes": 15,
+   "steps": [
+    "Choose a recorded conversation between two or three people.",
+    "Watch five minutes with the sound off, attending only to hands and feet, and predict each change of speaker.",
+    "Watch the next five minutes with the picture off, attending only to voice, and predict again.",
+    "Score both halves.",
+    "Write down which channel you read better, and design next week's drill around the weaker one."
+   ]
+  },
+  {
+   "name": "Interleaved Session",
+   "minutes": 20,
+   "steps": [
+    "Choose three kinds of material, such as a recorded interview, a public place, and your notes from a recent meeting.",
+    "Set a timer and spend five minutes on each in turn, making scored predictions where you can.",
+    "Go round the three a second time if time allows.",
+    "Note how the session felt compared with an hour on a single kind of material.",
+    "In a month, compare the ledger for interleaved sessions with your earlier blocked ones."
+   ]
+  },
+  {
+   "name": "Rest Audit",
+   "minutes": 10,
+   "steps": [
+    "List the times in a typical day when you read people without having decided to practise.",
+    "Mark any where reading was unwanted, by you or by the person you were with.",
+    "Choose two short boxes of time each day for practice, with a clear start and end.",
+    "Choose one setting, such as dinner at home, where the skill is always off duty.",
+    "After a week, write down what changed in your practice and at home."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Your readings of people now feel effortless and natural. What does that most likely mean?",
+   "options": [
+    "That you have mastered the method and can now safely stop deliberate practice altogether",
+    "That the skill has gone automatic, which is also when improvement tends to stop",
+    "That your readings deserve more trust than the record kept in your ledger",
+    "That your readings have become as accurate as those of a trained expert"
+   ],
+   "answer": 1,
+   "explain": "Fluency is the autonomous stage of a skill, and automatic skills tend to repeat themselves rather than grow. Ease is a warning only when it comes with a flat record, so check the ledger before deciding.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Macnamara, Hambrick and Oswald's 2014 meta-analysis, how much of the difference in performance did deliberate practice explain?",
+   "options": [
+    "About twelve percent overall, and very little in the professions",
+    "Nearly all of it, in every one of the many domains that they studied",
+    "About half of it, spread evenly across all the domains",
+    "None of it, once natural talent had also been measured"
+   ],
+   "answer": 0,
+   "explain": "Practice mattered most where rules are clear and feedback is fast, such as games and music, and least in messy domains. Reading people is closer to the messy end, which is why scored practice matters so much more than hours.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In Kornell and Bjork's study, people learned painters' styles from mixed or blocked examples. What happened?",
+   "options": [
+    "They learned worse from mixed examples, and correctly sensed it",
+    "They learned equally well under either of the two schedules",
+    "They learned better from mixing, and correctly judged that it helped",
+    "They learned better from mixing, yet believed blocking had worked better"
+   ],
+   "answer": 3,
+   "explain": "Mixing made learning harder during study and better afterwards, and learners misjudged which had helped. That is why changes in practice should be judged by the ledger, not by how a session felt.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your Brier score has been flat for four months. You practise daily on the same clients in the same meetings. What is the best change?",
+   "options": [
+    "Practise for longer each day, on the same clients, to break through",
+    "Stop practising entirely for a few months and let the skill settle",
+    "Vary the material and push to the edge: new settings and people, restricted channels",
+    "Change your scoring method to one that rewards your strengths more"
+   ],
+   "answer": 2,
+   "explain": "Most plateaus are plateaus of material. Varying settings, people and channels moves practice back to the edge, where failure is common enough to learn from, while keeping the scoring honest.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "In Fitts and Posner's account of how skills are learned, at which stage do most skills stop improving?",
+   "options": [
+    "The cognitive stage, when each step is still thought through one at a time",
+    "The associative stage, when the separate steps first begin to join together",
+    "The autonomous stage, once the skill runs without conscious attention",
+    "None of them, since skills keep improving for as long as they are used"
+   ],
+   "answer": 2,
+   "explain": "Once a skill runs automatically it tends to repeat itself rather than grow, which is the OK plateau. Improvement means bringing attention back to the parts you have stopped noticing.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You have been practising reading people for two hours every evening, and your partner says you have started analysing her at dinner. What fits?",
+   "options": [
+    "Explain the method to her so that she understands what you are doing",
+    "Keep practice to short, set sessions, and take the skill off duty at home",
+    "Practise on her openly, since it is good material and she knows you",
+    "Keep practising as before, but stop mentioning what you notice aloud"
+   ],
+   "answer": 1,
+   "explain": "Long sessions exhaust the attention that does the work, and reading all the time makes you worse company and a worse reader. Practice in boxes, with the skill off duty outside them, protects both.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific area of reading people where you improved quickly when you started this book and now feel you have stopped, or one where you have never improved at all. What do you practise there, how often, and how do you find out whether you were right? Describe one change that would make your practice in that area harder in a useful way, and say how you would know within a month whether it was working.",
+  "guidance": "Aim for something narrow, such as reading turn-taking in meetings, or reading your teenager's moods, rather than reading people in general. Most people find that their answer to the third question is *I don't*, which is usually the whole explanation for the plateau. The change you choose should come with a way of scoring it, or it will not tell you anything.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to grind: to meet a plateau with more of the same practice, for longer, in the same settings, and to mistake the effort for difficulty. The second is to overshoot, making drills so hard that you are guessing at chance, which feels heroic and teaches nothing. The third is to abandon a good change because it made scores worse in the first weeks, which is exactly what desirable difficulties do. The fourth is to let practice escape its boxes until you are reading everyone all the time, which tires the attention the practice depends on and costs you the people you live with. Change the material before the effort, judge by the ledger rather than the feeling, and keep the evenings.",
+ "furtherStudy": [
+  {
+   "work": "The role of deliberate practice in the acquisition of expert performance",
+   "author": "K. Anders Ericsson, Ralf Th. Krampe and Clemens Tesch-Römer",
+   "note": "Psychological Review 100(3), 1993. The violinist studies, and a far more careful argument than the popular ten-thousand-hour rule."
+  },
+  {
+   "work": "Deliberate practice and performance in music, games, sports, education, and professions: A meta-analysis",
+   "author": "Brooke N. Macnamara, David Z. Hambrick and Frederick L. Oswald",
+   "note": "Psychological Science 25(8), 2014. How much practice explains, domain by domain."
+  },
+  {
+   "work": "Moonwalking with Einstein: The Art and Science of Remembering Everything",
+   "author": "Joshua Foer",
+   "note": "Penguin Press, 2011. The chapter on the OK plateau is the clearest short account of why automatic skills stop improving."
+  },
+  {
+   "work": "Make It Stick: The Science of Successful Learning",
+   "author": "Peter C. Brown, Henry L. Roediger III and Mark A. McDaniel",
+   "note": "Harvard University Press, 2014. A readable guide to spacing, interleaving, testing and other desirable difficulties."
+  }
+ ],
+ "reviewPrompt": "Design one drill at the edge of your ability this week, with a single change from your usual practice, and score it in your ledger."
+}
