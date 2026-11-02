@@ -1,0 +1,257 @@
+{
+ "id": "discipline-12",
+ "categoryId": "discipline",
+ "index": 12,
+ "tier": "EXPERT",
+ "title": "High-Stakes Environments",
+ "estimatedMinutes": 75,
+ "hook": "When the stakes rise, attention narrows to the threat you expect, and the signal you need arrives from just outside that tunnel.",
+ "why": "The moments in which reading people matters most are the moments in which it is hardest to do. A man shouting in a public place. A disciplinary meeting that could end someone's job. A negotiation with a great deal of money on the table. A conversation with a teenager you think may be in trouble. In each, your body prepares for a threat, your attention tightens, and you feel more alert than ever. You are also, measurably, seeing less.\n\nThis chapter is about reading when it counts. It explains how high stakes narrow attention and point it at whatever you expect, and why a reading made under that narrowing can create the evidence it was looking for. Then it gives you the tools that people in dangerous professions rely on: the pre-brief and the premortem before the event, dividing the work of talking and watching, using your own body to bring a situation down, and the debrief afterwards. None of them make you braver or cleverer. They make you see a little more of the room.",
+ "teach": [
+  {
+   "h": "Stakes narrow the beam.",
+   "p": "In 1959 J. A. Easterbrook proposed what he called the cue-utilisation hypothesis. As emotional arousal rises, the range of cues a person uses shrinks. At first this helps: irrelevant details drop away and attention concentrates on the task. As arousal keeps rising, relevant cues at the edges start to drop away too, and performance falls. The beam of attention gets brighter and narrower at the same time.\n\nResearch on eyewitnesses gives the clearest picture of this. In 1987 Elizabeth Loftus, Geoffrey Loftus and Jane Messo tracked the eye movements of people watching a staged scene in a restaurant, in which a customer either handed a cashier a cheque or pointed a gun at her. When the gun was present, viewers fixated on it more often and for longer, and afterwards they were worse at identifying the man holding it. Later reviews have found the weapon-focus effect repeatedly. The threat drew the eyes, and the face, which was what a witness would later need, went less noticed.\n\nEveryday high stakes do the same on a smaller scale. In an angry conversation you watch the other person's face and hands and lose the room around them. In a tense meeting you watch the person you fear and miss the colleague who has gone quiet. And because the narrowing comes with a feeling of heightened alertness, you are unlikely to notice that it is happening.\n\nThe first defence is simply to know this about yourself. When your heart rate rises and the situation seems to sharpen, assume that your field has shrunk. The signal you need is probably outside it.\n\nFeeling alert is not the same as seeing widely. Under pressure, it usually means the opposite.",
+   "poseId": "p_posture_braced_upright",
+   "disconfirm": "If, after a tense situation, you can describe the edges of the room, who was there and what they were doing, as fully as after a calm one, your attention did not narrow much under that level of stress. Test it by writing such a description within an hour of your next tense moment."
+  },
+  {
+   "h": "The threat you expect is the one you see.",
+   "p": "Narrowing has a direction. Attention does not shrink towards the centre of the scene but towards whatever you already believe is the threat. That is what makes high-stakes reading so dangerous: the expectation you bring decides where the beam points, and anything outside it, including evidence against the expectation, goes unseen.\n\nInvestigators have a name for this when it goes wrong in criminal cases: tunnel vision. Keith Findley and Michael Scott, reviewing wrongful convictions in 2006, described how investigators who settled early on a suspect went on to notice and remember the evidence that fitted, explain away the evidence that did not, and stop looking for alternatives. None of this required bad faith. It is what attention does under pressure once it has a target.\n\nThe same pattern turns up in ordinary life. A manager who expects a resignation sees a resignation in every closed door and every long lunch. A father who suspects drugs sees them in every red eye and every mumbled answer, and misses the boy's grief over a friend who moved away. A man who expects a stranger to be dangerous watches his hands and misses that he is lost and frightened.\n\nThe remedy is to name the expectation before the stakes rise. Write down, or say to a colleague, what you expect to happen and what you expect this person to do. Then add a rival: the most likely innocent explanation for the same situation. Naming both will not stop your attention from narrowing. It gives the narrowed attention two targets instead of one, and that alone keeps more of the room in view.\n\nExpectation is the hand on the torch. Decide where it points before the dark arrives.",
+   "poseId": "p_head_chin_tucked",
+   "disconfirm": "If you name an expectation and a rival before a high-stakes conversation and find that, afterwards, you noticed no more evidence for the rival than you would have otherwise, naming did not widen your attention. Try writing the rival with a specific behaviour to watch for."
+  },
+  {
+   "h": "Presumption manufactures its own evidence.",
+   "p": "The most serious danger of high-stakes reading is that it can create the behaviour it takes as proof. The clearest evidence comes from the study of police interrogation, and it is a warning for everyone else.\n\nIn 2003 Saul Kassin, Christine Goldstein and Kenneth Savitsky had students play interrogators questioning other students, some of whom had committed a mock theft and some of whom had not. Some interrogators were led to expect guilt. Those interrogators chose more questions that presumed guilt, pressed harder, and worked to get a confession. The suspects they questioned, including the innocent ones, became more defensive, and neutral observers listening to the tapes then judged those suspects more likely to be guilty. The expectation had produced its own evidence.\n\nThe real-world cost of this is documented. A 2010 review by Kassin and colleagues, written for the American Psychology-Law Society, set out the risk factors for false confessions, including long interrogations, presentation of false evidence, youth and intellectual disability, and noted that false confessions had featured in a substantial share of the cases later overturned by DNA evidence in the United States. Innocent people confess under pressure far more often than most people believe possible.\n\nYou are unlikely ever to interrogate anyone. But the pattern holds in every setting where one person questions another with something at stake: a disciplinary hearing, a parent confronting a teenager, a partner confronting a partner. If you go in having decided, your questions, your tone and your body will push the other person into defensiveness, and their defensiveness will look exactly like the guilt you expected.\n\nGo in with a question, not a verdict, and let your questions be ones an innocent person could answer calmly.",
+   "poseId": "p_pair_too_close",
+   "disconfirm": "If, when you go into a hard conversation having decided in advance, the other person's behaviour looks no more defensive than when you go in open, presumption is not distorting your evidence in that setting. Your own reading of their defensiveness cannot settle it, so ask a neutral third person who was present.",
+   "pullQuote": "Their defensiveness will look exactly like the guilt you expected."
+  },
+  {
+   "h": "Pre-brief, and imagine the failure.",
+   "p": "People in dangerous professions do much of their best reading before the event. Flight crews brief the approach before they fly it. Surgical teams pause before the first incision. Police and negotiators gather and talk through what they know. The point of a pre-brief is to decide in calm what attention will be too narrow to decide under pressure: what we expect, what would surprise us, and who will watch for what.\n\nOne of the most useful additions to a pre-brief is the premortem, which the psychologist Gary Klein described in 2007. Instead of asking what could go wrong, which invites optimism, you imagine that the event has already happened and gone badly, and ask why. The idea draws on earlier work by Deborah Mitchell, Jay Russo and Nancy Pennington, who found in 1989 that imagining an outcome as already certain helped people come up with more reasons for it than imagining it as merely possible.\n\nA personal premortem for a hard conversation takes five minutes. *It is an hour from now and the conversation went badly. What happened?* Write every reason you can think of. Most will be about you: you lost your temper, you assumed, you missed something. Then turn each reason into a plan, and each missed thing into something to watch for. If one reason is *I didn't notice he was frightened*, then fear goes on your list of rivals, with the signs you would expect to see.\n\nKeep the pre-brief short enough to remember. Three lines are enough: what I expect, the rival I will watch for, and the one thing I must not do.\n\nThe failures you imagine in advance are the ones you have a chance of seeing in time.",
+   "poseId": "p_sit_figure_four_upright",
+   "disconfirm": "If your premortems for hard conversations consistently fail to name the thing that actually went wrong, they are not drawing on your real patterns. Look back through your journal for the commonest causes of your past failures and start the next premortem with those."
+  },
+  {
+   "h": "Divide the talking from the watching.",
+   "p": "It is very hard to talk and watch at the same time when the stakes are high. Talking under pressure takes most of your attention: choosing words, managing your voice, holding the thread. Watching takes the rest. For this reason, professions that work under pressure often split the two jobs between different people.\n\nIn aviation, one pilot flies and the other monitors, calling out what the flying pilot may have missed. In crisis negotiation teams, a primary negotiator talks while a second listens to every word, watches the whole situation and passes notes. In anaesthesia, a model called crisis resource management, developed by David Gaba and colleagues in the 1990s, teaches that in an emergency one person should stand back and keep the overview rather than join the hands-on work.\n\nYou can do the same in ordinary high-stakes situations. In a difficult negotiation or a hard meeting, agree with a colleague beforehand who will talk and who will watch, what the watcher is looking for, and a discreet way of passing on what they see. At a difficult medical appointment, take a friend whose only job is to listen and to notice. In a tense public situation at work, one person speaks and another watches the crowd and the person's hands.\n\nThe watcher's notes are also the best material for a debrief, because they come from someone whose attention was not narrowed by having to perform.\n\nWhen you have to do both jobs alone, do them in turns. Talk, then pause and look round deliberately, then talk again. The pause costs a second, and it is when you are most likely to see what you have missed.",
+   "poseId": "p_pair_side_by_side",
+   "disconfirm": "If the person who watches sees nothing that the person talking missed, over several high-stakes situations, either the talker's attention is unusually wide or the watcher has not been told what to watch for. Brief the watcher more specifically before deciding the split is unnecessary."
+  },
+  {
+   "h": "Use your own body to bring it down.",
+   "p": "In a tense encounter, the one body you can control is your own, and it is a large part of what the other person is reading. Bodies tend to answer each other. Raised voices draw raised voices, squared shoulders draw squared shoulders, and fast movement draws fast movement. De-escalation begins by refusing to join that loop.\n\nThe physical elements are simple and run against instinct. Stand at an angle rather than squarely, which is less confrontational and gives both of you room. Keep your hands visible, open and still, and away from your face and pockets. Keep your distance, or step back if the other person steps forward. Lower your voice and slow your speech, since people under stress tend to match the pace and volume around them. Use fewer words. If you can, sit down, or invite the other person to sit. And breathe out slowly before you speak, which steadies your own voice.\n\nThere is growing evidence that training people in this way of behaving works. In 2022 Robin Engel and colleagues evaluated a de-escalation training programme in the police department of Louisville, Kentucky, and found that after the training, use of force fell by around a quarter, with similar falls in injuries to both the public and officers.\n\nThese are not tricks for winning. They are ways of making a situation less dangerous for everyone in it, including the person who is frightening you. They do not replace your judgment about safety. If you see a weapon, or the situation is getting worse despite your efforts, your job is to get yourself and others to safety and call for help.\n\nCalm is easiest to lend when you have actually got some. Check your own breath first.",
+   "poseId": "p_stand_neutral_three_quarter",
+   "disconfirm": "If, in tense encounters you are part of, slowing down, lowering your voice and angling your body make no difference to how quickly the other person calms, compared with your usual manner, these elements are not what matters in your setting. Keep a short record of a dozen such encounters before deciding."
+  },
+  {
+   "h": "Debrief while it is fresh.",
+   "p": "The United States Army developed the after-action review as a way of learning from exercises and operations, and versions of it are now used in hospitals, fire services and companies. It asks four questions. What was supposed to happen? What actually happened? Why was there a difference? What will we do differently next time?\n\nDebriefs work. In 2013 Scott Tannenbaum and Christopher Cerasoli combined the evidence from dozens of studies and found that teams and individuals who debriefed improved their performance by about a quarter on average, compared with those who did not. The effect held for real teams as well as in simulations, and it did not depend on expensive equipment.\n\nFor a reader, the debrief should include the reading itself. What did I expect, and where was my attention? Which signals did I use? What was happening outside my focus that I missed, and who saw it? Did my questions or my body shape the behaviour I saw? Were the readings I acted on right, and how do I know?\n\nDo it within hours, while memory is still close to the event, for the reasons the journal chapter set out. Do it when things went well too. A high-stakes situation that went well is the one you are most likely to explain with a flattering story, and the one where the luck you had is easiest to mistake for skill.\n\nAnd keep it blameless. A debrief that looks for someone to blame teaches everyone to hide what they missed, which is exactly the information the debrief exists to find.",
+   "poseId": "p_breath_exhale",
+   "disconfirm": "If your debriefs over several months produce no changes in how you handle high-stakes situations, or the same misses keep recurring, the debriefs are not reaching the cause. Ask someone who was present to run the next one with you, and to ask the fourth question."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_posture_braced_upright",
+   "doCaption": "Settled enough to see the edges of the room.",
+   "dontCaption": "Braced for the threat you expect.",
+   "annotation": "Arousal narrows attention towards the expected threat. The signal you need is often just outside it."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_too_close",
+   "doCaption": "Asking as if you might be wrong.",
+   "dontCaption": "Questioning someone you have already decided about.",
+   "annotation": "Presumption makes people defensive, and their defensiveness then looks like the guilt you expected. Go in with a question."
+  },
+  {
+   "doPoseId": "p_stand_neutral_three_quarter",
+   "dontPoseId": "p_stand_wide_planted",
+   "doCaption": "Angled, hands open and still, voice lower and slower.",
+   "dontCaption": "Squared up, voice rising to meet his.",
+   "annotation": "Bodies answer each other. De-escalation begins with refusing to join the loop."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_walk_brisk",
+   "doCaption": "Ten minutes to debrief while it is still fresh.",
+   "dontCaption": "Straight from the crisis to the next thing.",
+   "annotation": "A debrief within hours catches what the narrowed attention missed, before memory replaces it with a story."
+  }
+ ],
+ "caseStudy": "Kwame, forty-seven, is a duty manager at a busy railway station. On a Friday evening a man starts shouting at a ticket barrier, slamming his palm on the glass. Two of Kwame's staff begin to move towards him, and the people nearby step back.\n\nKwame stops his colleague Ade and gives a ten-second pre-brief. *I'll talk. You watch his hands and the people around him. If you see anything I should know, touch your ear.* He names his expectation to himself, a fight, and a rival, someone in trouble.\n\nHe approaches at an angle, stops a couple of metres away, keeps his hands open at his sides, and speaks more quietly than the man is shouting. *I'm Kwame, I run the station tonight. Tell me what's happened.* The man shouts that the barrier will not take his ticket. Kwame is watching the man's hands, which are still slapping the glass. Ade touches his ear.\n\nKwame glances where Ade is looking. By a pillar stands a girl of about eight with a small rucksack, crying. The man keeps glancing at her. Kwame had not seen her at all. *Is she with you?* he asks. The man's shoulders drop. She is his daughter. He is meant to hand her over to her mother at the other end of the line, the custody arrangement is strict, and his ticket is for the wrong day.\n\nKwame lets them through and phones ahead to the other station. The whole thing takes six minutes.\n\nAfterwards he and Ade run a short debrief in the office. What did they expect? A fight. What happened? A frightened father. What did Kwame miss? The girl, because his attention had narrowed to the hands. What will they do next time? Exactly the same split, because the watcher saw what the talker could not.",
+ "observe": [
+  "The next time your heart rate rises in a conversation, notice afterwards how much of the room you can still describe, and what you cannot.",
+  "Before a conversation that matters to you, write down what you expect the other person to do, so that you can compare it with what happens.",
+  "In a tense public moment you witness, notice where most people's eyes go, and what is happening just outside that point."
+ ],
+ "drills": [
+  {
+   "name": "Personal Premortem",
+   "minutes": 15,
+   "steps": [
+    "Choose a hard conversation you expect to have in the next fortnight.",
+    "Write at the top: it is an hour afterwards and the conversation went badly. Then list every reason you can think of.",
+    "Mark the reasons that are about you rather than the other person.",
+    "Turn each marked reason into a plan, and each thing you might miss into a sign to watch for.",
+    "Compress the result to three lines: what you expect, the rival you will watch for, and the one thing you must not do."
+   ]
+  },
+  {
+   "name": "Edge Check",
+   "minutes": 10,
+   "steps": [
+    "Choose a moderately tense situation you will be in this week, such as a difficult meeting or a crowded journey.",
+    "At its tensest moment, breathe out slowly and look deliberately at the edges of the room or space.",
+    "Silently name three things you see at the edges.",
+    "Within an hour, write down everything you can remember about the edges of the scene.",
+    "Compare it with a similar note from a calm situation, and record the difference."
+   ]
+  },
+  {
+   "name": "Divide the Watch",
+   "minutes": 20,
+   "steps": [
+    "Before a meeting or negotiation that matters, agree with a colleague who will talk and who will watch.",
+    "Tell the watcher two specific things to look for, and agree a discreet signal.",
+    "During the meeting, the talker pauses at least once to check for the signal.",
+    "Afterwards, the watcher reports what they saw that the talker missed.",
+    "Swap roles at the next suitable meeting and compare what each of you noticed."
+   ]
+  },
+  {
+   "name": "De-escalation Rehearsal",
+   "minutes": 20,
+   "steps": [
+    "With a friend, agree a stop word and a short scenario in which they play someone angry about something reasonable.",
+    "Run it for two minutes while you practise standing at an angle, hands open and still, voice low and slow, and few words.",
+    "Ask your friend which of your behaviours made them calmer and which made them angrier.",
+    "Run it again with your friend raising the intensity slightly.",
+    "Write down the one physical habit that was hardest to hold, and practise it alone for five minutes."
+   ]
+  },
+  {
+   "name": "After-Action Review",
+   "minutes": 15,
+   "steps": [
+    "Within six hours of any high-stakes conversation or situation, open your journal.",
+    "Answer in writing: what was supposed to happen, and what actually happened.",
+    "Answer: why was there a difference, including where your attention was and what you missed.",
+    "Note whether your questions or your body may have shaped the behaviour you saw.",
+    "Write one specific thing you will do differently next time."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "When the stakes rise and you feel highly alert, do you notice more of what is going on?",
+   "options": [
+    "Yes, because adrenaline sharpens every one of the senses at the same moment",
+    "No, because attention narrows onto the expected threat and drops the edges",
+    "Only if you have been through military or police training beforehand",
+    "Yes, as long as you keep your eyes moving steadily around the room"
+   ],
+   "answer": 1,
+   "explain": "Rising arousal narrows the range of cues you use, and it narrows towards whatever you expect. The feeling of alertness hides the narrowing, so assume your field has shrunk and look deliberately at the edges.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In studies of weapon focus, what happened to witnesses when a weapon was visible?",
+   "options": [
+    "They looked at the weapon more and identified the person less well",
+    "They remembered every detail of the scene more clearly than usual",
+    "They remembered the face better, since it was linked to the threat",
+    "They could not later say whether a weapon had been there at all"
+   ],
+   "answer": 0,
+   "explain": "The threat drew their eyes, and the face that a witness would later need was noticed less. It is a precise example of attention narrowing towards the expected threat and dropping what lies outside it.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In Kassin, Goldstein and Savitsky's study, what happened when student interrogators were led to expect guilt?",
+   "options": [
+    "They asked more neutral questions so as to avoid showing any bias",
+    "They became more accurate at picking out the guilty suspects",
+    "They behaved no differently from interrogators expecting innocence",
+    "They pressed harder, and their suspects then sounded more guilty"
+   ],
+   "answer": 3,
+   "explain": "Expecting guilt changed their questions and their pressure, which made suspects, including innocent ones, more defensive. Observers then judged those suspects more likely to be guilty, so the expectation produced its own evidence.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You are going into a disciplinary meeting convinced that an employee lied about his hours. What fits this chapter?",
+   "options": [
+    "Watch him closely for any of the signs that people show when lying",
+    "Ask pointed questions designed to put pressure on him to admit it",
+    "Run a premortem, write a rival explanation, and ask open questions",
+    "Bring a colleague along with you to confirm what you both see"
+   ],
+   "answer": 2,
+   "explain": "Going in with a verdict will shape your questions and his defensiveness, which will then look like proof. A premortem and a named rival widen your attention, and open questions give an innocent explanation a fair chance to emerge.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What does a premortem ask you to do?",
+   "options": [
+    "Review a failure after the event with everyone who took part in it",
+    "Imagine the plan has already failed and work out why",
+    "List all the strengths of a plan before presenting it to others",
+    "Ask an outside expert to predict whether the plan will succeed"
+   ],
+   "answer": 1,
+   "explain": "Imagining the failure as already certain makes it easier to come up with reasons for it than asking what might go wrong. For a hard conversation, the reasons usually point to what you might miss or do.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a station, a man is shouting at a ticket barrier and two colleagues are moving towards him. What fits this chapter?",
+   "options": [
+    "Approach him squarely, hold his eye, and tell him firmly and clearly to calm down",
+    "Keep well back from him and wait for the police to arrive, whatever happens next",
+    "Agree who talks and who watches, then approach at an angle, hands open, voice low",
+    "Gather several colleagues around him so that he can see he is outnumbered"
+   ],
+   "answer": 2,
+   "explain": "Splitting talking from watching keeps someone's attention wide, and an angled stance, open hands and a lower voice refuse to join the escalation. If you see a weapon or things get worse, get to safety and call for help.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Describe one specific high-stakes conversation or situation from the past year, at work, at home or in public, in which you later realised you had missed something important. What did you expect going in, and where was your attention? What was happening outside that focus? Which of the tools in this chapter, a premortem, a second pair of eyes, your own body or a debrief, would most likely have caught it, and how would you use it next time?",
+  "guidance": "Choose a situation where something was genuinely at stake for you, because that is when narrowing happens. Most people find that what they missed was not hidden. It was in plain view, outside the place their expectation had pointed their attention. Name the expectation as precisely as you can, since that is what you will need to name in advance next time.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to trust the feeling of alertness, believing that because you feel sharp, you are seeing everything. The second is to go into a hard conversation with a verdict, so that your questions and your body produce the defensiveness you then read as proof. The third is to use the elements of de-escalation as a technique for winning rather than for reducing danger, which people sense quickly and which tends to make things worse. The fourth is to skip the debrief, either because the situation went well and you would rather keep the flattering story, or because it went badly and you would rather not look. The last is heroics: staying to read a situation that has become dangerous, when the right action was to leave and call for help.",
+ "furtherStudy": [
+  {
+   "work": "The effect of emotion on cue utilization and the organization of behavior",
+   "author": "J. A. Easterbrook",
+   "note": "Psychological Review 66(3), 1959. The original account of how arousal narrows attention."
+  },
+  {
+   "work": "Police-induced confessions: Risk factors and recommendations",
+   "author": "Saul M. Kassin, Steven A. Drizin, Thomas Grisso, Gisli H. Gudjonsson, Richard A. Leo and Allison D. Redlich",
+   "note": "Law and Human Behavior 34(1), 2010. The scientific review paper on how presumption and pressure produce false confessions."
+  },
+  {
+   "work": "Performing a project premortem",
+   "author": "Gary Klein",
+   "note": "Harvard Business Review 85(9), 2007. A short, practical description of the method."
+  },
+  {
+   "work": "Do team and individual debriefs enhance performance? A meta-analysis",
+   "author": "Scott I. Tannenbaum and Christopher P. Cerasoli",
+   "note": "Human Factors 55(1), 2013. The evidence that structured debriefs improve performance."
+  }
+ ],
+ "reviewPrompt": "Before your next high-stakes conversation, write your expectation and one rival in a single line each, and debrief within six hours afterwards."
+}

@@ -1,0 +1,258 @@
+{
+ "id": "discipline-11",
+ "categoryId": "discipline",
+ "index": 11,
+ "tier": "EXPERT",
+ "title": "Cross-Cultural Calibration",
+ "estimatedMinutes": 75,
+ "hook": "Every baseline you have was built in one culture; carry it into another and your calibration becomes a confident list of misreadings.",
+ "why": "By now your ledger has taught you roughly what your confidence is worth. That figure was earned somewhere particular: among people who talk at a certain volume, stand at a certain distance, hold eye contact for a certain time and fall silent for certain reasons. Move to another country, another region, another class, or simply another company with a different culture, and the figure is no longer true. Worse, it fails in a particular way. Your errors stop being scattered and start leaning in one direction, because you are measuring everyone against the same wrong ruler.\n\nThis chapter is about recalibrating when the ruler changes. It is not a catalogue of countries; Part V offers a working map, and any map is a starting point at best. It is a method: knowing where your own baselines came from, what the research does and does not say about how expression varies, how to build a local baseline from scratch, how to use people who know a setting better than you do, and how to avoid swapping one stereotype for another.",
+ "teach": [
+  {
+   "h": "Your baseline has a passport.",
+   "p": "Every baseline you hold was built somewhere. Your sense of a normal speaking volume came from your family's kitchen. Your sense of how long a silence can last before it becomes uncomfortable came from the conversations you grew up in. Your sense of how much eye contact is honest and how much is rude came from your region, your class, your schools and your workplaces. None of it felt like culture while you were learning it. It felt like how people are.\n\nThis matters because the errors you make with an unfamiliar baseline are not random. A man raised among loud talkers will read a quiet room as cold, again and again, and each reading will feel like perception. A man raised where people touch freely will read a colleague's reserve as dislike. His ledger, if he keeps one, will show a run of confident misses all leaning the same way.\n\nThe research on emotion recognition shows the same shape at the level of whole groups. In 2002 Hillary Anger Elfenbein and Nalini Ambady combined nearly a hundred studies of people judging emotions in faces, voices and bodies across cultures. People recognised emotions at better than chance across cultural lines, so expression is far from arbitrary. But they were reliably more accurate with people from their own cultural group, and the advantage shrank where groups had more contact with each other. Familiarity is part of accuracy.\n\nSo the first step in any new setting is to remember that you have brought a ruler with you, and that it was made somewhere else. You cannot leave it at home. You can stop trusting it by default.\n\nBefore you read anyone abroad, ask what your home baseline would make of them, and then suspect that answer.",
+   "poseId": "p_walk_hands_pockets",
+   "disconfirm": "If your ledger shows the same calibration in a new setting as at home, from the first week, your home baseline happens to fit this setting well. Check it separately for each kind of prediction before relaxing, because one kind can fit while another fails.",
+   "pullQuote": "You have brought a ruler with you, and it was made somewhere else."
+  },
+  {
+   "h": "The same feeling, shown differently.",
+   "p": "Paul Ekman and Wallace Friesen used the term display rules for the learned norms about who may show which feelings, to whom and how strongly. In a classic though small study reported in the early 1970s, Japanese and American students watched an unpleasant film. Alone, their faces reacted in similar ways. When an experimenter sat with them, the Japanese students more often masked their negative expressions with a smile. The feeling may have been the same. The display was governed by a rule about showing it in front of someone of higher status.\n\nLater work has mapped display rules on a larger scale. In 2008 David Matsumoto and colleagues surveyed students in thirty-two countries about how much emotion they thought it right to show, and found that people in more individualistic countries endorsed more expression overall. Jeanne Tsai's research on what she calls ideal affect adds another layer: people in many East Asian settings tend to value calm, low-arousal good feelings, while many Americans value excitement. In a 2016 study, American leaders in official photographs showed broader, more excited smiles than Chinese leaders, who more often showed calm ones.\n\nFor a reader, the consequence is direct. A calm face may be contentment rather than indifference. A broad smile may be politeness rather than delight, or delight rather than politeness. A face that shows little in front of a senior person may show a great deal in front of a friend. The same muscles are being governed by different rules.\n\nDisplay rules are also not only national. Workplaces, families, professions and generations have their own. A surgeon's face in theatre and a salesman's face on the floor follow different norms from the same man's face at home.\n\nLearn the rules of a setting before you read the faces in it.",
+   "poseId": "p_greet_bow_light",
+   "disconfirm": "If people in a new setting turn out to show the same feelings in the same ways and to the same degree as at home, in front of seniors and peers alike, the display rules there differ little from yours. Watch both kinds of audience before concluding it."
+  },
+  {
+   "h": "Weird samples, weird readers.",
+   "p": "In 2010 Joseph Henrich, Steven Heine and Ara Norenzayan pointed out that most of what psychology knows about human beings comes from people who are Western, educated, industrialised, rich and democratic, which they abbreviated as WEIRD, and often from undergraduates in the United States. On a range of measures, from visual illusions to fairness, those people turned out to be unusual rather than typical. Many of the studies cited in this book share that limitation, and you should hold their findings as findings about the people studied.\n\nGaze is a good example of why it matters. Much Western advice treats steady eye contact as a sign of honesty and confidence. In 2013 a Japanese and Finnish team led by Hironori Akechi showed faces with direct and averted gaze to participants in Japan and Finland. Japanese participants rated faces making eye contact as angrier, less approachable and more unpleasant than Finnish participants did. A reader who brings the Western rule to such a setting will read respect as evasiveness and will himself come across as confrontational.\n\nContext is treated differently too. In 2008 Takahiko Masuda and colleagues showed Japanese and American participants cartoons of a central figure surrounded by others. Japanese participants' judgments of the central figure's emotion were more influenced by the faces around it. The same face, read in two places, was read with different amounts of the room included.\n\nNone of this means that people in one culture cannot read people in another. It means that the rules you were taught as universal were very often local rules, and that the reader who checks which is which makes fewer confident mistakes.\n\nWhen a rule in this book seems obvious, ask who it was tested on.",
+   "poseId": "p_gaze_direct",
+   "disconfirm": "If you find, in a new setting, that the gaze and context rules of your home culture predict people's reactions as well there as at home, the WEIRD caution does not bite in that setting. Test it with a ledger of a few dozen predictions before relying on it."
+  },
+  {
+   "h": "Gestures are local vocabulary.",
+   "p": "Some gestures are less like signals and more like words. Ekman and Friesen called them emblems: movements with a direct verbal translation that members of a group all know, such as a thumbs-up, a wave goodbye or a finger across the throat. Like words, they belong to languages, and the languages differ.\n\nIn 1979 Desmond Morris and his colleagues published the results of a survey across forty locations in Europe and around the Mediterranean, asking local people what twenty common gestures meant. The answers varied enormously. A thumb and forefinger joined in a ring meant *good* in some places, *zero* or *worthless* in others, and an obscene insult in others still. A backward toss of the head meant *no* in parts of Greece and southern Italy, and something else or nothing at all further north. Some of the boundaries ran through the middle of single countries.\n\nThe lesson is not to memorise a list. Lists go out of date, vary within countries, and tempt you to read emblems where there are none. The lesson is that any gesture you make without thinking is a word in your language, and you should not assume it means the same thing elsewhere. Notice which gestures you use most, and in a new setting, use fewer of them until you have seen how they land.\n\nHead nods deserve special care, because they carry the conversation along without anyone noticing, and the patterns of nodding for yes, no, and *I'm listening* differ between places. The chapter on the head nod in Part III takes them up in detail.\n\nWhen you do not know what a gesture means, the person who made it can tell you.",
+   "poseId": "p_gesture_shrug",
+   "disconfirm": "If the gestures you use without thinking turn out to be understood as you intend in a new setting, by people of different ages and backgrounds there, your vocabulary happens to be shared. Ask a local informant to confirm before relying on it."
+  },
+  {
+   "h": "The variation inside a culture is wider than the gap between cultures.",
+   "p": "Once you learn that a culture tends towards reserve or towards expressiveness, it is very tempting to read every member of it that way. That is simply a new stereotype replacing the old baseline, and it fails just as badly.\n\nResearchers who compare countries are usually careful to say that their findings describe averages. In most cross-cultural studies of expression and display rules, the spread of individuals within each country is wide, and the distributions of different countries overlap heavily. A quiet American and a voluble Finn are both easy to find. Region, class, generation, profession, personality and the setting of the moment all shape how a person shows what they feel, and a national average says little about the person in front of you.\n\nThis is why the method of this book, which starts from an individual baseline, matters more across cultures, not less. A cultural norm can tell you what range of behaviour to expect in a setting, so that you do not read ordinary reserve as hostility. It cannot tell you where this person sits within that range. Only watching this person over time can do that.\n\nThe practical rule has two parts. Use the cultural norm to widen your idea of what normal looks like, so that unfamiliar behaviour is not automatically read as a signal. Then use the individual baseline, as always, to look for change. A colleague who is quiet in a quiet office is at baseline. A colleague who is usually lively and goes quiet in that same office has changed, and the culture does not explain it.\n\nCulture sets the range. The person sets the baseline.",
+   "poseId": "p_greet_acknowledge",
+   "disconfirm": "If, in a setting you know well, people turn out to behave very uniformly, so that knowing their culture tells you nearly everything about each person, the variation in that setting is unusually small. Check by comparing a dozen people's baselines on the same dimension.",
+   "pullQuote": "Culture sets the range. The person sets the baseline."
+  },
+  {
+   "h": "Build a local baseline from scratch.",
+   "p": "When you arrive in a setting whose norms you do not know, treat yourself as a beginner again, deliberately. Lower your confidence by at least one band by default, and for the first two weeks or so make descriptions rather than predictions.\n\nStart with the neutral moments, the ones in which nothing much is at stake: greetings, small talk, queues, the start of meetings. Watch for a short list of dimensions. How loudly do people talk, and how fast? How close do they stand, and do they touch? How long do they hold eye contact, and with whom? How long are the silences before someone speaks? How much do faces move, and do smiles come easily? How do people interrupt, and how do they disagree?\n\nCompare people with each other, not with home. The question is not whether this colleague is louder than your friends at home. It is whether he is louder than his colleagues here. Write these observations in your journal under a heading of their own, *local baseline*, so that you can see the setting's range building up.\n\nWhen you begin to make predictions again, start with wide bands and harmless public behaviour, as in the calibration chapter: who will speak first, whether a greeting will include a handshake, how long a silence will last. Score them separately from your home ledger. Your calibration in the new setting is a new curve, and it starts flat.\n\nExpect to feel clumsy. Being clumsy for a while is how you avoid being confidently wrong for a long time.",
+   "poseId": "p_sit_turned_toward",
+   "disconfirm": "If after a month your local predictions are as well calibrated as your home ones from the first day you resumed predicting, you may have needed less of a reset than this block assumes. Keep the separate ledger anyway until the curves agree for several months."
+  },
+  {
+   "h": "Use informants, and stay humble.",
+   "p": "Anthropologists have always relied on informants, people inside a community who can explain what an outsider is seeing. For a reader of people in an unfamiliar setting, a good informant is worth more than any book, including this one.\n\nThe best informants know both your setting and theirs: a colleague who has worked in your country, a friend who grew up between two cultures. Ask them about behaviour, not about peoples. *When Mikko went quiet after the reallocation was announced, what would that usually mean here?* is a useful question. *Are Finns always this quiet?* invites a stereotype in return. Ask about variation too: *Would that be the same for someone older, or from the north?*\n\nUse more than one informant where you can, because each one sees their culture from their own position within it, with their own class, generation and agenda. Where two informants disagree, you have learned that the behaviour varies, which is itself useful. Be wary of informants who seem to enjoy explaining their own people as a type.\n\nIn 1998 Melanie Tervalon and Jann Murray-García, writing about the training of doctors, argued for what they called cultural humility rather than cultural competence. Competence suggests a skill that can be completed. Humility is a lasting habit of self-questioning: you expect to be wrong, you ask, and you treat the other person as the authority on their own life. That is the right stance for a reader too.\n\nAnd offer the same help in return. Being a good informant about your own culture is the simplest way to show that you are asking out of respect.",
+   "poseId": "p_pair_face_to_face",
+   "disconfirm": "If an informant's explanations of behaviour in their setting repeatedly fail to predict what happens next, either the informant is describing an ideal rather than practice, or their position within the culture differs from the people you are reading. Find a second informant before trusting either."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_greet_lowered_gaze",
+   "dontPoseId": "p_gaze_direct",
+   "doCaption": "Noticing that here, a lowered gaze to a senior is respect.",
+   "dontCaption": "Holding the steady eye contact that reads as honest at home.",
+   "annotation": "Gaze rules are among the most local of all. The same eye contact can be warmth in one place and challenge in another."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_too_close",
+   "doCaption": "Letting the other person set the distance, and staying there.",
+   "dontCaption": "Standing at your home distance.",
+   "annotation": "Comfortable distance is learned. In a new setting, let others place themselves and follow their lead."
+  },
+  {
+   "doPoseId": "p_greet_acknowledge",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Watching how people greet and gesture before doing it yourself.",
+   "dontCaption": "Using a home gesture without checking what it means here.",
+   "annotation": "Emblems are local vocabulary. Use fewer of yours until you have seen how they land."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_stand_arms_crossed_loose",
+   "doCaption": "Reading him against his colleagues here: ordinary.",
+   "dontCaption": "Reading a quiet colleague by your home baseline: cold.",
+   "annotation": "Culture sets the range of normal. Compare people with each other in the setting, then look for change in the person."
+  }
+ ],
+ "caseStudy": "Daniel, thirty-nine, a project lead from Chicago, moves to his company's office in Helsinki for two years. In his first fortnight he reads the room as he would at home. Several colleagues leave long pauses before answering, show little on their faces when he presents, and rarely interrupt. He concludes that his ideas are not landing and that the team resents an outsider. His ledger, which he keeps separately for the new office, fills with confident predictions of objections that never come.\n\nHe lowers his confidence by a band and spends the next three weeks describing rather than predicting. He writes a local baseline: how long the silences usually last, who speaks first, how disagreement sounds when it comes. He finds that it comes directly and briefly, usually after the pause rather than as an interruption.\n\nHe also finds an informant. Aino, a colleague who spent six years in Toronto, tells him that in this office a long pause after a question usually means someone is thinking about it seriously. She adds that it varies: the younger engineers are quicker to jump in, and the sales team are different again.\n\nThen Daniel overcorrects. He decides that silence here means nothing, and stops noticing it. A month later Mikko, who is usually the liveliest person in the room and the first to joke, sits through a whole meeting about the reallocation of projects without a word. Daniel's new rule says silence is normal. His individual baseline for Mikko says this is a large change.\n\nHe trusts the individual baseline and asks Mikko for a coffee. Mikko tells him that the reallocation takes him off the project he started, and that nobody asked him. Daniel arranges for him to stay on as an adviser. In his journal he writes a single line: *the office sets the range; Mikko sets the baseline.*",
+ "observe": [
+  "The next time you are with people whose background differs from yours, notice one behaviour you were about to read through your own baseline, and what else it could mean in theirs.",
+  "In a setting new to you, notice how people greet each other, including distance, touch and eye contact, before you greet anyone yourself.",
+  "Notice one way your own family's baseline differs from a friend's family, for example in volume, touch or how an argument sounds."
+ ],
+ "drills": [
+  {
+   "name": "Map Your Own Baseline",
+   "minutes": 20,
+   "steps": [
+    "Write down your own default on eight dimensions: volume, speed, distance, touch, eye contact, length of silences, how easily you smile, and how you interrupt.",
+    "For each, note where you learned it: family, region, class, school or work.",
+    "Mark the ones you had assumed were simply how people are.",
+    "Ask someone from a different background to mark where their default differs from yours.",
+    "Write down the two differences most likely to cause you to misread someone."
+   ]
+  },
+  {
+   "name": "Local Baseline",
+   "minutes": 20,
+   "steps": [
+    "In a setting whose norms you do not know well, choose neutral moments such as greetings, queues or the start of meetings.",
+    "Make ten descriptive observations on the eight dimensions, with no predictions.",
+    "Compare the people you watch with each other, not with people at home.",
+    "Write the range you observed for each dimension under the heading local baseline.",
+    "Repeat on at least three days before you begin to make predictions in this setting."
+   ]
+  },
+  {
+   "name": "Informant Interview",
+   "minutes": 20,
+   "steps": [
+    "Choose someone who knows a setting well and, ideally, also knows yours.",
+    "Prepare three questions about specific behaviour you have seen, such as what a long pause after a question would usually mean here.",
+    "Ask each, and follow it with a question about variation, such as whether it would differ for someone older or from elsewhere.",
+    "Write down the answers as close to their words as you can.",
+    "Ask a second informant the same questions within a fortnight and note where the two differ."
+   ]
+  },
+  {
+   "name": "Separate Ledgers",
+   "minutes": 15,
+   "steps": [
+    "Take your scored predictions about people whose background differs from yours, at least twenty of them.",
+    "Draw their calibration curve separately from the rest of your ledger.",
+    "Compare the two curves band by band.",
+    "Where the cross-cultural curve shows overconfidence, drop your stated confidence by one band for that kind of prediction.",
+    "Write the adjustment and a date to check it again at the front of your ledger."
+   ]
+  },
+  {
+   "name": "Gesture Check",
+   "minutes": 10,
+   "steps": [
+    "List five gestures you use without thinking, such as a thumbs-up, a beckoning finger, a ring of thumb and forefinger, pointing and nodding.",
+    "For each, find out from a reliable source or an informant where its meaning differs.",
+    "Mark any you should avoid or check in settings you expect to visit.",
+    "Choose a neutral alternative for each marked gesture, such as words or an open hand.",
+    "Practise the alternatives in front of a mirror until they feel natural."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "You have spent years building well-calibrated baselines at home. In a new country, how far should you trust your readings at first?",
+   "options": [
+    "As far as at home, since the basic emotions are shown the same everywhere",
+    "Less than at home, since your errors will tend to lean in one direction",
+    "More than at home, since outsiders see things that locals have stopped noticing",
+    "Not at all, since people from other cultures cannot be read by outsiders"
+   ],
+   "answer": 1,
+   "explain": "Your baselines were built in one culture, so in another your errors stop being scattered and lean the same way. Lower your confidence by a band, describe before you predict, and build a local baseline.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Elfenbein and Ambady's 2002 meta-analysis find about recognising emotions across cultures?",
+   "options": [
+    "It was above chance across cultures, and better within one's own group",
+    "It fell to chance level whenever the two cultures involved were different",
+    "It was equally accurate whatever the culture of the person making the judgment",
+    "It was only possible for observers who had been trained in other cultures"
+   ],
+   "answer": 0,
+   "explain": "Expression is far from arbitrary, since people recognised emotions across cultural lines. But familiarity helped: people were more accurate with their own group, and the advantage shrank with more contact between groups.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In Friesen's study of Japanese and American students watching an unpleasant film, what changed when an experimenter sat with them?",
+   "options": [
+    "Both groups of students showed more disgust in front of the experimenter",
+    "The American students hid their reactions more completely than before",
+    "Neither group's expressions changed at all when someone else was present",
+    "The Japanese students more often masked negative feelings with a smile"
+   ],
+   "answer": 3,
+   "explain": "Alone, both groups reacted similarly. With a higher-status person present, a display rule came into play for the Japanese students. The feeling may have been the same, while the display was governed by a learned norm.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In an office abroad where meetings are often quiet, a colleague who is usually the liveliest in the room goes silent through a whole meeting. What fits?",
+   "options": [
+    "Ignore it, since silence in meetings is normal in this office",
+    "Read it as disapproval, as you would read it in an office at home",
+    "Treat it as a change from his own baseline, and ask him privately",
+    "Ask a local colleague what people in this country mean by silence"
+   ],
+   "answer": 2,
+   "explain": "The office's norm sets the range of normal, but this man's own baseline is lively, so his silence is a change that the culture does not explain. Asking him privately tests the reading without assuming anything about his culture.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What was the main concern Henrich, Heine and Norenzayan raised about WEIRD samples?",
+   "options": [
+    "That Western researchers had been deliberately excluding other countries",
+    "That results from Western samples are always wrong when tested elsewhere",
+    "That much of psychology rests on narrow samples whose results may not travel",
+    "That people outside the West are less willing to take part in research"
+   ],
+   "answer": 2,
+   "explain": "Most research participants have been Western, educated, industrialised, rich and democratic, and on many measures they turned out to be unusual. Findings about them are findings about them until they are tested elsewhere.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You will be working for a month in a country you have never visited. What is the best first step for your reading of people there?",
+   "options": [
+    "Memorise a list of the country's gestures and their meanings before you go",
+    "Describe rather than predict at first, and build a local baseline",
+    "Read people exactly as you would at home and correct mistakes as they come",
+    "Avoid reading anyone until you have lived there for at least a year"
+   ],
+   "answer": 1,
+   "explain": "A list is a starting point that varies within countries and goes out of date. Watching neutral moments, comparing people with each other and finding an informant gives you a baseline for the setting you are actually in.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Describe one specific time when you misread someone whose background differed from yours, at work, while travelling, or in your own neighbourhood. What did you see, and what did you conclude using your own baseline? What would the behaviour more likely have meant in theirs, and how did you find out, if you did? What would you do in the first ten minutes of a similar meeting now?",
+  "guidance": "The background does not have to be national. Many of the clearest examples come from class, region, generation or profession, which can differ as much as countries do. Try to name the dimension involved, such as volume, distance or silence, and the home baseline you were using without knowing it. Your answer to the last question should be something you can actually do.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to carry your home baselines everywhere and to read unfamiliar norms as signals, which produces a steady run of confident misreadings that all lean the same way. The second is the overcorrection: replacing the old baseline with a national stereotype, so that every member of a culture is read as its average, and the change in one person is missed. The third is catalogue thinking, trusting lists of gestures and customs over local observation and informants. The fourth is performance, copying local customs as a show rather than following them as a guest. The last is withdrawal: deciding that people unlike you cannot be read, and so not trying, which looks like humility and works like avoidance.",
+ "furtherStudy": [
+  {
+   "work": "On the universality and cultural specificity of emotion recognition: A meta-analysis",
+   "author": "Hillary Anger Elfenbein and Nalini Ambady",
+   "note": "Psychological Bulletin 128(2), 2002. The evidence for both universality and an in-group advantage."
+  },
+  {
+   "work": "The weirdest people in the world?",
+   "author": "Joseph Henrich, Steven J. Heine and Ara Norenzayan",
+   "note": "Behavioral and Brain Sciences 33(2–3), 2010. Why findings from Western undergraduates may not describe humanity."
+  },
+  {
+   "work": "Gestures: Their Origins and Distribution",
+   "author": "Desmond Morris, Peter Collett, Peter Marsh and Marie O'Shaughnessy",
+   "note": "Jonathan Cape, 1979. The survey of twenty gestures across forty locations; dated, and still a vivid lesson in local vocabulary."
+  },
+  {
+   "work": "Mapping expressive differences around the world: The relationship between emotional display rules and individualism versus collectivism",
+   "author": "David Matsumoto, Seung Hee Yoo, Johnny Fontaine and colleagues",
+   "note": "Journal of Cross-Cultural Psychology 39(1), 2008. Display rules surveyed in thirty-two countries."
+  }
+ ],
+ "reviewPrompt": "In the next unfamiliar setting you enter, describe the local baseline on three dimensions before you make a single prediction about anyone there."
+}
