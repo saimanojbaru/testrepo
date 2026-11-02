@@ -8,14 +8,14 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v0.3 (Phases 1–3 complete)
+## Status: v0.4 (Parts I and VI written)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
-| Content | 18 of 90 chapters written to the full contract: all of Part VI, The Discipline (6.1–6.15), plus 1.1, 1.11 and 1.15. About 83,000 words, ≈185 pages. Ethics statement (1,205 words); crisis resources |
-| Pose library | 125 poses in 13 themes, including two- and three-person scenes, + 6 drawn diagrams |
-| Tests | 29 passing: content contract, engines, 46 screen renders, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
+| Content | 30 of 90 chapters written to the full contract: all of Part I, Foundations, and all of Part VI, The Discipline. About 135,000 words, ≈300 pages. Ethics statement (1,205 words); crisis resources |
+| Pose library | 125 poses in 13 themes, including two- and three-person scenes, + 6 drawn diagrams + 7 face plates |
+| Tests | 31 passing: content contract, engines, 48 screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
 | Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
 
 See [`content/_progress.md`](content/_progress.md) for where authoring stopped, what later chapters must not repeat, and the open question about the page target.
@@ -75,6 +75,10 @@ Poses are drawn, never photographed. Each pose is a set of parameters solved int
 - **Solid props.** A lectern is a board that depth-sorts with the limbs, so it hides the legs while the hands rest on top; chairs, tables, a laptop and a bench are drawn as quiet lines.
 
 Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and right are always the figure's own.
+
+**Faces live on plates.** The figures are faceless by design. Where the face itself is the subject (microexpressions, the face, gaze, smiles), chapters use drawn face plates: neutral, ungendered sketches built from FACS action units in `FacePlates.kt`, labelled with the units they show and described in prose for TalkBack.
+
+![Face plate](docs/screens/27-face-plate.png) ![Six posed prototypes](docs/screens/28-face-prototypes.png)
 
 ![Together](docs/screens/23-poses-together.png)
 

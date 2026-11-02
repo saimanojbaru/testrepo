@@ -1,77 +1,94 @@
 # Content progress
 
-_Last updated: Phase 3 (Part VI, The Discipline) complete._
+_Last updated: Part I, Foundations, complete. Parts I and VI are written in full._
 
 ## Written
 
-18 of 90 chapters: all of Part VI, plus the three Phase 1 chapters from Part I.
+30 of 90 chapters: all of Part I and all of Part VI. That is 135,084 words, about 300 pages.
 
-| Chapter | Tier | Words | ≈ Pages |
-|---|---|---|---|
-| 1.1 The Baseline | Foundation | 5,133 | 11 |
-| 1.11 Leakage & Pacifiers | Expert | 4,951 | 11 |
-| 1.15 Synthesis — Building Your Own Protocol | Master | 4,680 | 10 |
-| 6.1 Building Your Baseline Journal | Foundation | 4,566 | 10 |
-| 6.2 The 60-Second Scan | Foundation | 4,479 | 10 |
-| 6.3 Video Review of Yourself | Foundation | 4,519 | 10 |
-| 6.4 Feedback Loops & Honest Mirrors | Intermediate | 4,521 | 10 |
-| 6.5 Calibration — Testing Hypotheses in the Field | Intermediate | 4,707 | 10 |
-| 6.6 The Ethics of Reading People | Intermediate | 4,998 | 11 |
-| 6.7 Teaching Others — The Test of True Understanding | Advanced | 4,587 | 10 |
-| 6.8 Plateaus & Deliberate Practice | Advanced | 4,449 | 10 |
-| 6.9 Building a Personal Protocol | Advanced | 4,569 | 10 |
-| 6.10 Reading Groups in Real Time | Expert | 4,502 | 10 |
-| 6.11 Cross-Cultural Calibration | Expert | 4,508 | 10 |
-| 6.12 High-Stakes Environments | Expert | 4,466 | 10 |
-| 6.13 Reading Yourself Under Stress | Master | 4,550 | 10 |
-| 6.14 Synthesis & Improvisation | Master | 4,525 | 10 |
-| 6.15 Mastery — The Quiet Body | Master | 4,435 | 10 |
-| **Total** | | **83,145** | **≈185** |
+| Part I | Tier | Words | | Part VI | Tier | Words |
+|---|---|---|---|---|---|---|
+| 1.1 The Baseline | Foundation | 5,133 | | 6.1 Building Your Baseline Journal | Foundation | 4,566 |
+| 1.2 The 1/25th Second | Foundation | 4,411 | | 6.2 The 60-Second Scan | Foundation | 4,479 |
+| 1.3 Proxemics | Foundation | 4,317 | | 6.3 Video Review of Yourself | Foundation | 4,519 |
+| 1.4 The Gaze | Intermediate | 4,415 | | 6.4 Feedback Loops & Honest Mirrors | Intermediate | 4,521 |
+| 1.5 The Spine as Status | Intermediate | 4,298 | | 6.5 Calibration | Intermediate | 4,729 |
+| 1.6 Clusters & Congruence | Intermediate | 4,399 | | 6.6 The Ethics of Reading People | Intermediate | 4,998 |
+| 1.7 The Face | Advanced | 4,345 | | 6.7 Teaching Others | Advanced | 4,587 |
+| 1.8 Voice as Body Language | Advanced | 4,256 | | 6.8 Plateaus & Deliberate Practice | Advanced | 4,449 |
+| 1.9 The Taxonomy of Touch | Advanced | 4,344 | | 6.9 Building a Personal Protocol | Advanced | 4,569 |
+| 1.10 Space & Territory | Expert | 4,384 | | 6.10 Reading Groups in Real Time | Expert | 4,502 |
+| 1.11 Leakage & Pacifiers | Expert | 4,951 | | 6.11 Cross-Cultural Calibration | Expert | 4,508 |
+| 1.12 Reading the Room | Expert | 4,324 | | 6.12 High-Stakes Environments | Expert | 4,466 |
+| 1.13 Cultural Variance | Master | 4,238 | | 6.13 Reading Yourself Under Stress | Master | 4,550 |
+| 1.14 Deception | Master | 4,186 | | 6.14 Synthesis & Improvisation | Master | 4,525 |
+| 1.15 Synthesis | Master | 4,680 | | 6.15 Mastery — The Quiet Body | Master | 4,435 |
+| **Part I** | | **66,681** | | **Part VI** | | **68,403** |
 
-Part VI alone is 68,381 words (≈150 pages). The pack is 620 KB raw and 195 KB gzipped, so the full book should fit the 2 MB budget gzipped.
+The pack is 947 KB raw and 300 KB gzipped. At this rate the full book will be about 900 KB gzipped, inside the 2 MB budget.
 
 Also written: the ethics statement *On Reading People* (1,205 words), crisis resources for 11 regions plus a worldwide directory, introductions for all six parts, and the full 90-chapter outline.
 
 Run `./gradlew testDebugUnitTest --tests '*ContentContractTest*' -i` for current counts.
 
-## How Part VI was written
+## How Parts I and VI were written
 
-- **Hooks first.** All 15 hooks were written in one pass and each was judged against its chapter's scope before any chapter was drafted. Each one earned its place.
-- **Depth.** Every chapter follows the full contract. Teach blocks run 260–350 words, against an average of about 290 in the Phase 1 chapters. There are no stubs.
-- **Falsifiability.** Every teach block states what would show it wrong. Most of these are tests the reader can run on their own ledger.
-- **Poses.** Every chapter uses only poses that already exist in the library, so none were added. Two chapters use drawn diagrams: 6.10 uses the group-attention diagram and 6.13 the breathing wave.
-- **Not repeating Part I.** Part VI does not re-teach the baseline (1.1), leakage (1.11) or the six steps (1.15), and calls back to them where needed.
-  - 6.9 is about making the 1.15 steps run under pressure.
-  - 6.8 refers to Kahneman and Klein as introduced in 1.15 rather than introducing them again.
-- **Not repeating the ethics essay.** 6.6 adds method the essay lacks: contextual integrity, the flows test, hold, ask or act, a bias audit, emotion-recognition technology as a mirror, records, and hard cases.
-- **Deception still has one chapter.** 6.7 (Kassin & Fong 1999) and 6.12 (Kassin et al. 2003, 2010) cite interrogation research only as warnings about how presumption and training create false confidence. 1.14 remains the only chapter on deception itself.
+- **Hooks first.** For each part, all hooks were written in one pass and judged against the chapter's scope before any chapter was drafted.
+- **Depth.** Every chapter follows the full contract, with teach blocks of 240–350 words. There are no stubs.
+- **Falsifiability.** Every teach block states what would show it wrong, usually as a test the reader can run.
+- **Balanced quizzes.** Every quiz passes the length rules below.
+- **No repetition across chapters.** Later chapters call back to earlier ones rather than re-teaching them. 1.6 goes deeper than the cluster step in 1.15 without repeating it. 1.12 covers a room's atmosphere and leaves group mechanics to 6.10. 1.13 covers the universality debate and leaves the method to 6.11 and the map to 5.11.
+- **Deception has one chapter.** 1.14 is the only chapter on lying. 1.2 explicitly leaves lie detection to it. 1.4 mentions the gaze-aversion belief only to point there. 6.7 and 6.12 use interrogation research only as warnings.
 
-## Quiz rule added in Phase 3
+## Face plates (added for Part I)
 
-The right answer had been visibly the longest option in most questions written so far, Phase 1 included, so a reader could pass a quiz by always picking the longest. Options in 1.1, 1.11, 1.15 and 6.1–6.6 were rewritten, and the contract test now enforces two rules:
+The body figures stay faceless by design. Faces appear only on dedicated plates: neutral, ungendered sketches drawn from FACS action units (the standard coding of facial muscle movements), each with a TalkBack description. There are seven plates:
+
+- `face-smiles`, two smiles;
+- `face-brows`, three brows;
+- `face-lids`, the lids;
+- `face-mouths`, three mouths;
+- `face-prototypes`, six posed prototypes;
+- `face-micro`, a microexpression time line;
+- `face-gaze`, gaze direction.
+
+They are used in 1.2, 1.4, 1.6 and 1.7. Each is drawn from a `FaceSpec` in `FacePlates.kt`, so a new plate is a few lines of code. `DiagramSheetTest` renders every plate in Paper and Ink for review, and the contract test rejects unknown diagram ids.
+
+This settles the earlier open question about faceless figures, but the choice is reversible. If you would rather have faces on the figures themselves, the same `drawFace` could be placed on the pose skeleton's head.
+
+## Quiz rules
+
+The right answer had been visibly the longest option in most early questions, so a reader could pass a quiz by always picking the longest. The contract test now enforces two rules:
 
 1. The right answer may be at most 1.35 times the length of the longest wrong option.
 2. The right answer may be the longest option in at most half of a chapter's questions.
 
-The test also rejects words broken by a line-wrap hyphen ("de- escalation").
+It also rejects words broken by a line-wrap hyphen. The stub-marker check now matches whole words only; it had been flagging the surname Todorov.
 
 ## Boundaries for chapters not yet written
 
-Part VI now covers ground that some later chapters approach from another angle. Keep them distinct.
+Parts I and VI cover ground that later chapters approach from other angles. Keep them distinct, and call back rather than re-teach.
 
-| Unwritten chapter | Already covered in | What the later chapter should do instead |
+| Unwritten chapter | Already covered in | What the later chapter should do |
 |---|---|---|
-| 1.12 Reading the Room | 6.10 Reading Groups: F-formations, gaze convergence, turn-taking, visual dominance, mimicry and its limits, sampling a room | Foundations-level atmosphere and entering a room. Do not re-teach 6.10's research. |
-| 1.13 Cultural Variance | 6.11 Cross-Cultural Calibration: Elfenbein & Ambady, Friesen's display rules, Matsumoto 2008, Tsai, WEIRD, Akechi 2013, Masuda 2008, Morris's gestures, cultural humility | The evidence debate on universality (for example Ekman versus Barrett, Jack et al. 2012). Leave the method to 6.11 and the map to 5.11. |
-| 2.2 Breath as the Master Signal, 2.14 Interoception, 2.15 Early-Warning System | 6.13 Reading Yourself Under Stress: Garfinkel 2015, affect labelling, emotion differentiation, reappraisal (Jamieson, Brooks), slow breathing (Zaccaro, Balban), Levant | Part II should go deeper on the science and the clinical side. Do not present 6.13's studies as new. |
-| 4.11 Interview Signals That Actually Matter | 6.6, on records and structured interviews (Schmidt & Hunter 1998) | Can build on 6.6 and refer back to it. |
-
-Part VI also points forward to chapters that must exist when they are written:
-
-- 3.1, the side-by-side principle (from 6.15).
-- 3.3, head nods (from 6.11).
-- Part II, on interoception and clinical concerns (from 6.13).
-- Part V's working map of cultures (from 6.11).
+| 2.2 Breath; 2.14 Interoception; 2.15 Early-Warning System | 6.13: Garfinkel 2015, affect labelling, reappraisal, slow breathing (Zaccaro, Balban), Levant | Go deeper on the science and the clinical side. Do not present 6.13's studies as new. |
+| 2.3 The "I'm Fine" Mask | 1.8 (a voice that changes before the words do); 1.2 (Ekman and Friesen's patient film) | Build the clinical picture. Refer back for the voice and the history of the idea. |
+| 2.8 Trauma & the Freeze Response | 1.9 (freezing when touched is not consent) | Explain freezing in depth. |
+| 3.1 The Side-by-Side Principle | 1.3 (Sommer's seating, angles); 6.15 | Develop the principle for men's friendships and hard conversations. |
+| 3.3 The Head Nod | 6.11 (gesture dialects) | The full treatment of nods. |
+| 3.4 Personal Space Between Men | 1.3 (Hall, Kennedy, Sorokowska, Argyle & Dean) | What is specific to men. Do not repeat the general research. |
+| 3.5 The Bro Hug; 3.6 Touch Between Male Friends | 1.9 (Heslin, Suvilehto, consent) | What is specific to men's touch. |
+| 3.7 Silence as Communication | 1.8 (pauses, Goldman-Eisler, Clark & Fox Tree) | Silence as a message, not as planning. |
+| 3.10 Consent as Nonverbal Negotiation | 1.9 (only a clear yes grants permission) | The full treatment. Keep the same hard line. |
+| 4.2 Camera Height, Framing & Perceived Status | 1.5 (Witkower & Tracy on head tilt) | Apply it to cameras. |
+| 4.3 Audio as Body Language | 1.8 (McAleer, Puts, Klofstad, Kraus) | Microphones, calls and recordings. |
+| 4.5 Power Posing | 1.5 (one paragraph: Ranehill 2015, Carney) | The full evidence. |
+| 4.7 Meeting Room Geography | 1.3 (Sommer); 1.10 (Brown & Baer home ground) | Meeting rooms specifically. |
+| 4.11 Interview Signals | 6.6 (records, Schmidt & Hunter) | Build on 6.6. |
+| 5.1 Neurodivergence | 1.4 (Trevisan on eye contact); 1.8 (stammering) | The full picture. |
+| 5.6 Race & the Reading of Black Male Bodies | 6.6 (Hugenberg & Bodenhausen); 1.14 (the Othello error) | The full treatment. |
+| 5.11 Cultural Variance — A Working Map | 1.13 (evidence); 6.11 (method) | The map itself, with its limits. |
+| 5.12 Religion, Modesty & Touch | 1.9 (a declined handshake as a matter of faith) | The full treatment. |
 
 ## Pose library (Phase 2: done)
 
@@ -102,22 +119,21 @@ Still missing, for later parts:
 - lying down;
 - sitting cross-legged on the floor;
 - a figure using a wheelchair or a cane. Part V needs these, and they should be drawn with care, not as props.
-- true facial expression, which the faceless figure cannot show by design. The face chapter (1.7) will need its own drawn plates.
 
 ## Still open: the page target and the contract disagree
 
 The brief sets two targets that cannot both be met.
 
-- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 18 chapters so far average about 4,600 words, about 10 pages.
+- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 30 chapters so far average about 4,500 words, about 10 pages.
 - **The page target.** 22–25 pages per chapter, 2,000+ pages in total.
 
-At the current depth, 90 chapters come to about **415,000 words, roughly 900–1,000 pages**. Reaching 2,000 pages needs one of three things:
+At the current depth, 90 chapters come to about **405,000 words, roughly 900 pages**. Reaching 2,000 pages needs one of three things:
 
 1. **Widen the contract.** For example 2–3 case studies per chapter, 8–10 teach blocks, or drill variations. This needs a schema change (`caseStudy` becomes a list), and it risks padding.
 2. **Add chapters.** About 180 would be needed at the current depth. The brief allows 7–8 parts.
-3. **Accept about 900–1,000 pages** as the honest size of the book.
+3. **Accept about 900 pages** as the honest size of the book.
 
-Phases 1 and 3 kept to the contract and did not pad.
+Every chapter so far has kept to the contract without padding. Sixty chapters remain, so this is still the cheapest moment to decide.
 
 ## Authoring workflow
 
@@ -132,9 +148,8 @@ The JSON files are the source of truth. Edit them directly.
 
 ## Next
 
-- Part I: the remaining 12 chapters, respecting the boundaries above.
-- Part II, with the 2.13 safety gate: `safetyGate` must be set, and the test requires at least 5 crisis regions.
-- Parts III, IV and V.
+- Part II, The Inner World, with the 2.13 safety gate: `safetyGate` must be set, and the test requires at least 5 crisis regions. Part II is the most sensitive part of the book. No chapter may diagnose; every chapter teaches recognition and response.
+- Then Parts III, IV and V, respecting the boundaries above.
 
 ## Needs a human before release
 
@@ -154,4 +169,23 @@ The JSON files are the source of truth. Edit them directly.
   - Akechi 2013.
   - Friesen's 1972 display-rule study.
   - Balban 2023.
+
+  For Part I, check these first:
+  - Porter & ten Brinke 2008 (number of expressions, share of participants).
+  - Yan et al. 2013 (author list, the half-second definition).
+  - Sorokowska 2017 (distances by country; the link with climate).
+  - Binetti 2016 (preferred durations).
+  - Kleinke 1986 and Argyle & Cook 1976 (gaze proportions).
+  - Tracy & Matsumoto 2008 (number of nations).
+  - Hall, Coats & LeBeau 2005 (number of studies).
+  - Nair 2015 (which measures differed).
+  - Jones & Yarbrough 1985 (meaning clusters).
+  - Suvilehto 2015 (sample, countries).
+  - Fernández-Dols & Ruiz-Belda 1995.
+  - Gendron 2014 (the emotion-word condition).
+  - Cowen 2021 (about 70 percent shared).
+  - Totterdell 2000.
+  - Serota 2010 (how lying is concentrated in a few people).
+  - Blair, Levine & Shaw 2010 (about three in four).
+  - The 2003 National Research Council and 2013 GAO conclusions.
 - **Crisis numbers** re-verified before each release, because services change.
