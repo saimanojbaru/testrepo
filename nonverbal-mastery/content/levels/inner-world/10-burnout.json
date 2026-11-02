@@ -1,0 +1,257 @@
+{
+ "id": "inner-world-10",
+ "categoryId": "inner-world",
+ "index": 10,
+ "tier": "EXPERT",
+ "title": "Burnout",
+ "estimatedMinutes": 60,
+ "hook": "Burnout looks like laziness from outside and feels like running on empty from inside, and the body usually shows it long before anyone says the word.",
+ "why": "Burnout is one of the most common ways that good workers fall apart, and one of the most misread. From outside, a burned-out colleague looks lazy, cynical, careless or disloyal. From inside, he feels drained, detached and useless, and often ashamed of feeling that way about work he used to care about. The people most at risk are often the most committed, which makes the misreading crueller.\n\nThis chapter teaches what burnout is and is not, how each of its three parts shows in the body and behaviour, why it is as much a problem of the job as of the person, how it overlaps with low mood, and what actually helps, for the person and for anyone who manages or works alongside him. Much of what follows applies beyond paid work, to carers and parents running on empty, but the research and the formal definitions concern work, and this chapter keeps to that.",
+ "teach": [
+  {
+   "h": "Burnout is a relationship with work that has gone wrong.",
+   "p": "In 2019 the World Health Organization included burn-out in its International Classification of Diseases, but carefully. It is listed not as a medical condition but as an occupational phenomenon: a syndrome resulting from chronic workplace stress that has not been successfully managed. The classification describes three dimensions: feelings of energy depletion or exhaustion; increased mental distance from one's job, or feelings of negativism or cynicism about it; and reduced professional efficacy.\n\nThe definition draws on decades of research by Christina Maslach and colleagues, who have studied burnout since the 1970s, first among nurses, social workers and others in caring professions, and later across many kinds of work. The term itself was popularised in 1974 by the psychologist Herbert Freudenberger, who used it to describe the exhaustion and disillusionment he saw among dedicated volunteers at a free clinic, himself included.\n\nTwo points in the definition matter for a reader. First, burnout is about work. It is not the same as being tired, stressed or depressed in general, though it overlaps with all three. Second, it arises from chronic stress that has not been managed, which means the cause lies at least partly in the job: its demands, its resources, its fairness. Burnout is not simply a personal failure to cope.\n\nWhen someone seems to have stopped caring about their work, the question to ask is not only *what is wrong with him?* but also *what has this job been asking of him, and for how long?*",
+   "poseId": "p_pro_video_slump",
+   "disconfirm": "If burnout turned out to arise mainly from individual weakness, regardless of workload, control or fairness at work, the WHO's framing of it as an occupational phenomenon would be misleading. The research on work conditions described below suggests the job matters a great deal.",
+   "pullQuote": "Burnout is not simply a personal failure to cope."
+  },
+  {
+   "h": "Exhaustion: the tank runs dry.",
+   "p": "The first and most visible dimension is exhaustion. It is not ordinary tiredness that a good night's sleep or a weekend fixes. It is a deep depletion that rest no longer touches. People describe waking up already tired, dreading Monday by Saturday afternoon, needing all their energy just to get through the day.\n\nThe body shows it. Movement slows. Posture slumps at the desk. Faces look grey and drawn. People catch every cold going and take longer to recover; the chapter on the stress posture described how chronic stress wears on the immune system and on sleep. Headaches, stomach problems and aching shoulders become regular. Many people sleep badly despite being exhausted, lying awake thinking about work or waking early with their mind already racing.\n\nAt work, exhaustion shows in behaviour over weeks: arriving later or leaving earlier, or the opposite, staying very late to keep up; more sick days; eating at the desk or not at all; snapping at small things; staring at the screen without seeming to take anything in.\n\nNone of these, alone, is burnout. Exhaustion can come from illness, a new baby, caring for a parent, poor sleep or a dozen other causes. What makes it suggestive of burnout is that it is tied to work, has lasted a long time, and comes with the other two dimensions described next.\n\nExhaustion also changes how a person reads others. The chapter on sleep and visible depletion later in this part describes how a tired brain sees more threat in faces. A depleted man may hear a colleague's neutral request as an attack, which feeds the irritability that others then notice. Some of what looks like his bad temper is simply the world as it looks through depletion.\n\nExhaustion that rest does not fix is a signal, not a character trait.",
+   "poseId": "p_stand_slumped_side",
+   "disconfirm": "If people's exhaustion in burnout lifted with an ordinary weekend's rest, as everyday tiredness does, it would not be the deep depletion described here. Most people who have been burned out describe rest that no longer restored them."
+  },
+  {
+   "h": "Distance: the shutters come down.",
+   "p": "The second dimension is mental distance from the job, often showing as cynicism. People who once cared deeply begin to protect themselves by caring less. They make sarcastic remarks about the organisation, the customers or the patients. They say *it's just a job* about work that used to matter to them. In caring professions, Maslach called this depersonalisation: treating patients, pupils or clients as cases or numbers rather than people.\n\nIt shows in the body as withdrawal. The face becomes flatter and less animated in meetings. Eye contact shortens. People stop joining in: eating alone, skipping social events, turning their camera off on video calls, contributing the minimum. Some become irritable and dismissive; others go quiet and compliant, doing what is asked and nothing more.\n\nThis is the dimension most often misread, because it looks so much like a bad attitude. Managers respond to cynicism with discipline, and colleagues respond to withdrawal by withdrawing in turn. Both make it worse. The distance is, in most cases, a defence: a person protecting what is left of himself from a job that has taken more than he can give.\n\nFor a reader, the useful comparison is with the person's own past. Was this man always sardonic and detached, or has he become so? A cynic who used to be an idealist is often a burned-out idealist.\n\nNotice too who is not being asked. In many workplaces, a man who has gone quiet and sardonic is assumed to be tough or simply unbothered. The colleague who has stopped joking at lunch, who sighs at every new request, whose emails have shrunk to a single line, may be saying more through those changes than he would ever say in words.\n\nCynicism in a once-committed person is often care that has run out of fuel.",
+   "poseId": "p_pro_arms_folded_seated",
+   "disconfirm": "If the colleagues who became cynical and withdrawn at work had always been that way, rather than changing over time, distance would be a matter of temperament rather than burnout. The change from baseline is what matters."
+  },
+  {
+   "h": "Efficacy: 'I'm no good at this any more.'",
+   "p": "The third dimension is a reduced sense of professional efficacy: feeling incompetent, unproductive, unable to make a difference. People who were good at their jobs start to doubt that they ever were. Tasks that used to take an hour take a day. Decisions get put off. Mistakes creep in, and each one feeds the sense of failing.\n\nFrom outside, this can look like declining performance, and it often is. But the decline is usually a consequence of exhaustion and distance rather than a sign that the person has stopped trying. Many burned-out people are trying harder than ever and getting less done, which is one of the most demoralising experiences there is.\n\nWatch for compensation as well. Some people respond to falling efficacy by working longer and longer hours, which deepens the exhaustion and leaves even less energy for doing the work well. In a burned-out person, very long hours are often a symptom rather than a solution, and praising them can make things worse.\n\nThe body shows effort without result. Long hours at the desk with little to show. The head in the hands over a task that should be simple. A furrowed brow and a slump when someone asks how a project is going. Self-criticism in conversation, often disguised as humour: *I'm useless, me.*\n\nThis dimension carries a particular risk for men whose sense of themselves is closely tied to competence at work. When the work goes, or seems to go, it can feel like losing who they are, and the chapter on the I'm Fine mask described how men in that position often hide it.\n\nWhen a capable man starts calling himself useless, take it seriously, and do not simply argue him out of it.",
+   "poseId": "p_stand_brow_rub",
+   "disconfirm": "If people whose sense of efficacy collapsed under burnout were generally less capable than their colleagues to begin with, this dimension would be about ability rather than burnout. Burnout often strikes the most committed and capable, which is why the change matters more than the level."
+  },
+  {
+   "h": "It is about the job as well as the person.",
+   "p": "Maslach and her colleague Michael Leiter describe burnout as the result of a mismatch between a person and their job, in one or more of six areas of work life. Workload: too much to do, with too few resources. Control: too little say over how the work is done. Reward: good work that goes unrecognised. Community: a team marked by incivility, conflict or isolation rather than support. Fairness: decisions that feel unjust or discriminatory. Values: being asked to do things that conflict with what the person believes is right.\n\nThis framework has a practical consequence that is easy to miss. If burnout comes from mismatches in the job, then solutions aimed only at the person, such as resilience workshops, mindfulness apps and wellness weeks, will often miss the point. They may help a little, but they leave the mismatch in place, and can send the message that the problem lies in the worker's inability to cope with an unreasonable situation.\n\nFor a reader who manages people, this means that when you see the signs of burnout in someone on your team, the most useful questions are about the six areas. What is his workload compared with six months ago? How much control does he have? Is his work recognised? How is the team treating him? Has anything felt unfair? Is he being asked to do things that sit badly with him?\n\nAnd ask, rather than decide. Maslach and Leiter advise leaders to involve people in identifying and fixing the mismatch rather than imposing their own solutions.\n\nWhen burnout spreads through a team, look at the team's conditions before you look at its members.",
+   "poseId": "p_pair_seated_across",
+   "disconfirm": "If people's burnout improved just as much from personal resilience training as from changes to workload, control, fairness and recognition, the mismatch model would be wrong. The research Maslach and Leiter draw on suggests the job conditions matter a great deal."
+  },
+  {
+   "h": "Burnout and low mood overlap.",
+   "p": "Burnout and depression share a great deal: exhaustion, withdrawal, poor sleep, feelings of uselessness. Researchers continue to debate how far they are the same thing seen from different angles, and some studies find substantial overlap. What matters for a reader is not the label but the reach of the difficulty.\n\nBurnout, in the WHO's definition, is about work. If a man's exhaustion, detachment and sense of failure extend well beyond work, if he has stopped enjoying his family, his friends and his hobbies, if he feels hopeless about life in general, if his sleep has collapsed, then what he is experiencing may be more than burnout, and the chapter on depression's physical signature applies. That is not a reason to argue with him about which word fits. It is a reason to encourage him to see a doctor, who can help tell these apart and look for physical causes too.\n\nIt is also a reason to listen carefully for hopelessness. Men who have lost their sense of themselves through work, through burnout, redundancy or failure, are at raised risk of suicide. If you hear talk of being a burden, of there being no way out, or of not wanting to go on, ask directly whether he is thinking about ending his life. The chapter on suicidal ideation explains how, and the crisis resources are one tap away.\n\nBurnout is a word for what work has done. It is not a ceiling on how serious things can get.",
+   "poseId": "p_head_chin_tucked",
+   "disconfirm": "If burnout and low mood never overlapped, with burned-out workers always well outside work, there would be no need to look beyond the job. The overlap researchers report is a reason to ask about life beyond work too."
+  },
+  {
+   "h": "What helps.",
+   "p": "For the person himself, the research on recovery from work points first to rest that is actually rest. Sabine Sonnentag and colleagues have found that psychologically detaching from work during time off, not checking email, not rehearsing problems, being absorbed in something else, is linked to better wellbeing and less exhaustion. Physical activity, time with people who matter, and sleep all help. So do boundaries: a time when work stops, a phone that goes in a drawer.\n\nBut recovery cannot outrun a mismatch that continues. The person also needs to name the problem with someone who can change it: a manager, a union representative, human resources. Talking to a doctor is worthwhile too, both for the sleep and health effects and to check whether something more than burnout is going on. Some people need time off; some need a change of role or job.\n\nFor colleagues and managers, the most useful responses follow from the earlier blocks. Notice changes from the person's baseline. Ask, privately and without judgment, how he is and what has changed at work. Ask specifically about load, control, recognition, fairness and support. Then change what you can, and say what you cannot. Recognise good work out loud. Protect time off. Do not send a burned-out man to a resilience workshop and leave his workload as it was.\n\nAnd notice your own. Burnout is easier to see in others than in yourself, because it erodes the very energy and judgment you would need to notice it. The chapter on building an early-warning system at the end of this part asks you to decide, now, what your first signs would be.",
+   "poseId": "p_walk_stride",
+   "disconfirm": "If people recovering from burnout did just as well while continuing to check work email in the evenings and with their workload unchanged, the advice to detach and fix the mismatch would be unnecessary. The research on recovery suggests otherwise."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Seeing a change from who he was, and asking what changed at work.",
+   "dontCaption": "Reading a once-keen colleague's cynicism as a bad attitude.",
+   "annotation": "Cynicism in a once-committed person is often a defence against a job that has taken too much."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Asking about his workload, control and support.",
+   "dontCaption": "Sending him on a resilience course.",
+   "annotation": "Burnout comes from a mismatch between person and job. Fixing only the person leaves the mismatch in place."
+  },
+  {
+   "doPoseId": "p_walk_stride",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "A walk with the phone left at home.",
+   "dontCaption": "Checking work email on the sofa at ten at night.",
+   "annotation": "Psychological detachment from work during time off is linked to recovery. Rest that is still half work does not restore."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Taking it seriously, and listening.",
+   "dontCaption": "Hurrying him back to work when he says he is useless.",
+   "annotation": "When capable people start calling themselves useless, the collapse in efficacy is real and deserves attention, not argument."
+  }
+ ],
+ "caseStudy": "Ravi, thirty-eight, teaches maths at a busy secondary school and has a reputation as one of its best teachers. For years he ran the chess club at lunchtime and stayed late to help pupils before exams. In the autumn, Graham, his head of department, notices changes. Ravi has stopped running the chess club. In the staffroom he makes sour jokes about the pupils being just numbers on a spreadsheet. He looks grey, has been off sick three times since September, and twice has forgotten to set cover work.\n\nAnother senior teacher suggests a quiet word about professionalism. Graham decides to ask a different question first. He catches Ravi at the end of a day, sits with him in an empty classroom, and says that Ravi seems shattered and not himself, and asks what has changed this term. Ravi says he is fine. Graham waits. Then Ravi says that since two colleagues left in the summer and were not replaced, he has been teaching an extra five lessons a week, covering another teacher's exam classes, and marking until midnight. He feels he is failing every class he teaches.\n\nGraham takes the workload to the head the next day, with the numbers. Two of Ravi's extra classes are moved to a supply teacher. Graham also tells Ravi, plainly, that his teaching is still among the best in the department, and suggests he see his doctor about his sleep. Ravi does, and his doctor also asks about his mood more broadly; it is mainly work, Ravi says, and the doctor agrees to see him again in a month.\n\nRavi starts leaving his marking at school on Fridays. By February he is less grey. In March, a pupil asks whether chess club is coming back. Ravi says it might, on Thursdays.",
+ "observe": [
+  "Notice whether anyone at your work has changed over recent months from committed to cynical, from present to withdrawn, from capable to self-doubting.",
+  "Notice how your organisation responds to signs of burnout: with changes to the work, or with programmes aimed at the person.",
+  "Notice how often you check work messages in your own time, and how you feel afterwards."
+ ],
+ "drills": [
+  {
+   "name": "Three Dimensions",
+   "minutes": 15,
+   "steps": [
+    "Think of someone at work who seems to be struggling.",
+    "Write what you have seen under each heading: exhaustion, distance or cynicism, and reduced efficacy.",
+    "For each, note how it compares with how they were a year ago.",
+    "Note anything that suggests the difficulty reaches beyond work.",
+    "Write one private, behaviour-first question you could ask them."
+   ]
+  },
+  {
+   "name": "Six Areas Check",
+   "minutes": 20,
+   "steps": [
+    "Choose your own job or the job of someone you manage.",
+    "Rate each of the six areas from one to five: workload, control, reward, community, fairness and values.",
+    "Mark the two weakest areas.",
+    "For each, write one change that would help, and who could make it.",
+    "Write one sentence you could use to raise it with that person."
+   ]
+  },
+  {
+   "name": "Detachment Week",
+   "minutes": 15,
+   "steps": [
+    "Choose a time each evening after which you will not read or think about work.",
+    "Put your work phone or notifications away at that time for a week.",
+    "Fill the time with something absorbing, such as exercise, a hobby or people.",
+    "Each night, note how often your mind went back to work and what you did about it.",
+    "At the end of the week, compare your energy with the week before."
+   ]
+  },
+  {
+   "name": "Recognition Habit",
+   "minutes": 10,
+   "steps": [
+    "Think of three people whose good work you have noticed recently and not mentioned.",
+    "Write one specific sentence of recognition for each.",
+    "Say or send each sentence this week.",
+    "Notice their response.",
+    "Write down how often you usually give recognition, honestly."
+   ]
+  },
+  {
+   "name": "Your First Signs",
+   "minutes": 15,
+   "steps": [
+    "Think back to the most depleted period of your working life.",
+    "Write down the first signs that appeared in your body, behaviour and attitude.",
+    "Write which of the six areas was most out of balance at the time.",
+    "Write who noticed, if anyone, and what they did.",
+    "Write one thing you would do differently if those first signs appeared again."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A once-keen colleague has become sarcastic, withdrawn and error-prone over several months. What does this chapter suggest?",
+   "options": [
+    "That he has a bad attitude and needs a formal warning to refocus him",
+    "That he is lazy and has stopped caring about the people he works with",
+    "That these may be signs of burnout; ask about his load and what has changed",
+    "That he is depressed and should be sent home until he has recovered"
+   ],
+   "answer": 2,
+   "explain": "Exhaustion, cynicism and falling efficacy together, as a change from his baseline, fit burnout, which arises partly from the job. A private question about workload, control and support is more useful than discipline or a diagnosis.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "How does the World Health Organization's ICD-11 classify burn-out?",
+   "options": [
+    "As an occupational phenomenon from chronic workplace stress, not a medical condition",
+    "As a serious mental illness that requires treatment with medication",
+    "As a personality trait found mainly in people who dislike hard work",
+    "As a general term for feeling tired in any area of life, not only work"
+   ],
+   "answer": 0,
+   "explain": "The WHO describes burn-out as a syndrome resulting from chronic workplace stress that has not been successfully managed. It says the term should be applied only to experiences at work, not to other areas of life.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Which of these is one of Maslach and Leiter's six areas of work life linked to burnout?",
+   "options": [
+    "The length of a person's daily commute",
+    "The temperature of the office",
+    "The size of a person's salary alone",
+    "Fairness"
+   ],
+   "answer": 3,
+   "explain": "The six areas are workload, control, reward, community, fairness and values. Mismatches between person and job in these areas drive burnout, so they are where to look for solutions.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your team's best engineer seems exhausted and cynical. Human resources suggests sending him on a resilience workshop. What fits this chapter?",
+   "options": [
+    "Send him on the workshop, since resilience is what he is lacking",
+    "Ask him about workload, control and support, and change what you can",
+    "Tell him to take a week's holiday and come back when he feels better",
+    "Wait to see whether his performance falls before doing anything at all"
+   ],
+   "answer": 1,
+   "explain": "Burnout arises from mismatches in the job, so changes to workload, control, recognition and fairness matter most. A workshop alone leaves the mismatch in place and can imply the problem is his.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What are the three dimensions of burn-out in the WHO definition?",
+   "options": [
+    "Anger, anxiety and low mood, at work and at home",
+    "Overwork, underpayment and poor management by others",
+    "Exhaustion, mental distance or cynicism, and reduced efficacy",
+    "Insomnia, weight loss and frequent illness over several months"
+   ],
+   "answer": 2,
+   "explain": "Energy depletion, increased mental distance or cynicism about the job, and reduced professional efficacy. Each shows in the body and behaviour, and each is often misread as a character flaw.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A friend says work has burned him out, and also that he has stopped enjoying anything outside work, sleeps badly and feels hopeless. What fits this chapter?",
+   "options": [
+    "Encourage him to see a doctor, as this may be more than burnout, and ask how he is",
+    "Tell him that burnout always passes once a person has a good long holiday",
+    "Advise him to resign immediately, since the job is clearly the whole problem",
+    "Suggest a mindfulness app, which should be enough to help him recover"
+   ],
+   "answer": 0,
+   "explain": "When exhaustion and hopelessness reach well beyond work, it may be more than burnout. Encouraging a doctor helps tell these apart, and hopelessness is a reason to ask directly whether he has had thoughts of suicide.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific period when you, or someone close to you, came near to burning out. Describe what showed in the body and behaviour under each of the three dimensions: exhaustion, distance, and reduced efficacy. Which of the six areas of work life was most out of balance? What did people around you do, and what would have helped more? If the same signs appeared in a colleague tomorrow, what is the first question you would ask?",
+  "guidance": "Many men recognise burnout in themselves only in hindsight, because it erodes the energy and judgment needed to notice it. Be specific about the six areas: naming the mismatch, such as workload or fairness, points to what could change. The question you write at the end should be private, behaviour-first, and about the work as well as the person.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to read burnout as a character flaw, treating the exhausted, cynical, error-prone colleague as lazy, disloyal or incompetent, and responding with discipline. The second is to treat it as entirely the person's problem, offering resilience courses and wellness apps while the workload, unfairness or lack of control continue. The third is to miss the change from baseline, judging someone as they are now rather than as they were. The fourth is to stop at the word burnout when the difficulty reaches well beyond work and may need a doctor. And the quietest failure is to miss it in yourself, because burnout erodes the very capacity you would need to notice it. Ask about the job as well as the person, change what can be changed, and keep an eye on your own first signs.",
+ "furtherStudy": [
+  {
+   "work": "Burn-out an 'occupational phenomenon': International Classification of Diseases",
+   "author": "World Health Organization",
+   "note": "WHO news release, May 2019. The definition and its three dimensions, in the WHO's own words."
+  },
+  {
+   "work": "The Burnout Challenge: Managing People's Relationships with Their Jobs",
+   "author": "Christina Maslach and Michael P. Leiter",
+   "note": "Harvard University Press, 2022. The six areas of work life, and what organisations can do."
+  },
+  {
+   "work": "Staff burn-out",
+   "author": "Herbert J. Freudenberger",
+   "note": "Journal of Social Issues 30(1), 1974. The paper that brought the word into psychology."
+  },
+  {
+   "work": "Recovery from job stress: The stressor-detachment model as an integrative framework",
+   "author": "Sabine Sonnentag and Charlotte Fritz",
+   "note": "Journal of Organizational Behavior 36(S1), 2015. Why switching off from work matters."
+  }
+ ],
+ "reviewPrompt": "This week, rate your own job on the six areas of work life, and set one time each evening after which you stop checking work."
+}
