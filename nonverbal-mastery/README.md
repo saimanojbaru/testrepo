@@ -8,17 +8,19 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v0.2 (Phases 1 and 2 complete)
+## Status: v0.3 (Phases 1–3 complete)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
-| Content | 3 of 90 chapters written to the full contract (1.1, 1.11, 1.15), ~14,500 words; ethics statement (1,205 words); crisis resources |
+| Content | 18 of 90 chapters written to the full contract: all of Part VI, The Discipline (6.1–6.15), plus 1.1, 1.11 and 1.15. About 83,000 words, ≈185 pages. Ethics statement (1,205 words); crisis resources |
 | Pose library | 125 poses in 13 themes, including two- and three-person scenes, + 6 drawn diagrams |
-| Tests | 28 passing: content contract, engines, 39 screen renders, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
+| Tests | 29 passing: content contract, engines, 46 screen renders, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
 | Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
 
-See [`content/_progress.md`](content/_progress.md) for where authoring stopped and what Phase 2 starts with.
+See [`content/_progress.md`](content/_progress.md) for where authoring stopped, what later chapters must not repeat, and the open question about the page target.
+
+![Part VI](docs/screens/25-part-six.png) ![Group attention](docs/screens/26-group-attention.png)
 
 ## Build and test
 
@@ -33,7 +35,7 @@ See [`content/_progress.md`](content/_progress.md) for where authoring stopped a
 
 | Test | What it proves |
 |---|---|
-| `ContentContractTest` | Every written level meets the spec's content contract (word ranges, block counts, 5–6 questions with a misconception and a scenario, 3–6 pose pairs, real pose IDs). Plus stricter house rules: every teaching claim states its disconfirming condition, no stub markers, quiz answers spread across letters, the ethics essay is present, the gzipped pack is under 2 MB. |
+| `ContentContractTest` | Every written level meets the spec's content contract (word ranges, block counts, 5–6 questions with a misconception and a scenario, 3–6 pose pairs, real pose IDs). Plus stricter house rules: every teaching claim states its disconfirming condition, no stub markers, quiz answers spread across letters and never guessable by length (the right answer is at most 1.35× the longest wrong one, and the longest option in at most half the questions), no words broken by line-wrap hyphens, the ethics essay is present, the gzipped pack is under 2 MB. |
 | `MasteryTest`, `ReviewSchedulerTest`, `BackupRoundTripTest` | Mastery criteria and their plain-language "you still need to" list, scoring, sequential unlocking across unwritten gaps, the 1/3/7/21/60/120-day schedule, and a lossless journal round-trip including unicode. |
 | `AppSmokeTest` (Robolectric, API 26 and 34) | Launches the real `MainActivity` with Room, DataStore and the assembled pack, then walks home → category → chapter → quiz → ethics (from the chapter menu) → pose library → settings → crisis resources. |
 | `MasteryFlowTest` | A reader masters Level 1.1 using only the UI: five drills, a field note, a perfect quiz, a 150-character reflection, then "Level mastered. The next one is open." |

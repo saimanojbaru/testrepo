@@ -138,6 +138,13 @@ class ScreensTest {
         shot("04l_level_further") { level(l1.id, Kind.References) }
     }
 
+    @Test fun discipline() {
+        shot("03_category_discipline") { CategoryScreen(c, "discipline", progress, {}, {}, {}) }
+        shot("04m_discipline_open", true) { level("discipline-15", Kind.Hook) }
+        shot("04n_discipline_diagram") { level("discipline-10", Kind.Teach, 1, scrollPx = 2450) }
+        shot("04o_discipline_quiz") { level("discipline-06", Kind.Question, 2) }
+    }
+
     @Test fun poseLibrary() {
         shot("05_poselib") { PoseLibraryScreen(c, "", "all", setOf("p_sit_neck_touch"), {}, {}, {}, {}) }
         shot("05_poselib", true) { PoseLibraryScreen(c, "", "all", emptySet(), {}, {}, {}, {}) }
