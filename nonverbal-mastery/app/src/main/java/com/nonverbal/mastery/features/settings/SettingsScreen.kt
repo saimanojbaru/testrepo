@@ -273,6 +273,11 @@ fun SettingsScreen(
                     "This app has no network permission. It cannot send anything anywhere. There is no analytics, no crash reporting and no tracking of any kind. It is a book.",
                     style = Nv.type.bodySmall, color = colors.inkSecondary,
                 )
+                Spacer(Modifier.height(Space.x3))
+                Text(
+                    "Set in Newsreader by Production Type and Inter by Rasmus Andersson, both under the SIL Open Font License 1.1. The licence text ships with the app.",
+                    style = Nv.type.uiSmall, color = colors.inkTertiary,
+                )
             }
             Group("Start again") {
                 if (!confirmingReset) {

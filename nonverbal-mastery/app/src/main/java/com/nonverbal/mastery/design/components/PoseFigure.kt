@@ -135,15 +135,14 @@ fun PoseFigure(
 
 fun DrawScope.drawFigure(geo: FigureGeometry, p: FigurePalette, style: FigureStyle, dimmed: Boolean) {
     val hair = 0.9.dp.toPx()
-    // Ground and props first, quietly.
-    drawOval(
-        p.ground,
-        topLeft = Offset(geo.groundCenter.x - geo.groundRadiusX, geo.groundCenter.y - geo.groundRadiusY),
-        size = Size(geo.groundRadiusX * 2, geo.groundRadiusY * 2),
-    )
-    for ((a, b) in geo.propLines) drawLine(p.prop, a, b, strokeWidth = 1.2.dp.toPx(), cap = StrokeCap.Round)
-
     val draw: DrawScope.() -> Unit = {
+        // Ground and props first, quietly, inside the same layer so a dimmed figure still hides them.
+        drawOval(
+            p.ground,
+            topLeft = Offset(geo.groundCenter.x - geo.groundRadiusX, geo.groundCenter.y - geo.groundRadiusY),
+            size = Size(geo.groundRadiusX * 2, geo.groundRadiusY * 2),
+        )
+        for ((a, b) in geo.propLines) drawLine(p.prop, a, b, strokeWidth = 1.2.dp.toPx(), cap = StrokeCap.Round)
         when (style) {
             FigureStyle.Filled -> for (g in geo.groups) {
                 drawPath(g.path, if (g.far) p.far else p.fill)

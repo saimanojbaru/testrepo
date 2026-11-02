@@ -24,6 +24,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -69,9 +70,22 @@ fun CrisisScreen(
                 Icon(NvIcons.Heart, null, tint = colors.brass, modifier = Modifier.size(28.dp))
                 Spacer(Modifier.height(Space.x4))
                 Text(gate?.resourceTitle ?: "If you're struggling right now", style = Nv.type.display, color = colors.ink, modifier = Modifier.semantics { heading() })
-                Spacer(Modifier.height(Space.x4))
-                Prose(gate?.resourceBody ?: "Please reach out to someone now. If you are in immediate danger, call your local emergency number.")
-                Spacer(Modifier.height(Space.x6))
+                Spacer(Modifier.height(Space.x3))
+                Text(
+                    "Free, confidential, any hour. You can call for yourself, or to ask how to help someone else.",
+                    style = Nv.type.body, color = colors.inkSecondary,
+                )
+                Spacer(Modifier.height(Space.x5))
+                // The numbers come first. The reader's own region, guessed from the phone's locale
+                // (no permission, nothing sent), is placed at the top.
+                val home = remember { localRegionName() }
+                val regions = gate?.regions.orEmpty().sortedBy { if (it.region == home) 0 else 1 }
+                Hairline()
+                regions.forEach { r ->
+                    ResourceRow(r) { contact(context, r.contact) }
+                    Hairline()
+                }
+                Spacer(Modifier.height(Space.x5))
                 Text(
                     "If you are in immediate danger, call your local emergency number: 911 in the US and Canada, 999 in the UK, 112 across the EU and India, 000 in Australia, 111 in New Zealand.",
                     style = Nv.type.bodySmall,
@@ -79,12 +93,7 @@ fun CrisisScreen(
                     modifier = Modifier.fillMaxWidth().clip(Shapes.card).background(colors.dontRed.copy(alpha = 0.08f)).padding(Space.x4),
                 )
                 Spacer(Modifier.height(Space.x8))
-                SectionLabel("Free, confidential, any hour", color = colors.inkTertiary)
-                Spacer(Modifier.height(Space.x2))
-                gate?.regions.orEmpty().forEach { r ->
-                    ResourceRow(r) { dial(context, r.contact) }
-                    Hairline()
-                }
+                Prose(gate?.resourceBody ?: "Please reach out to someone now.")
                 Spacer(Modifier.height(Space.x10))
                 if (onContinue != null) {
                     Text(
@@ -104,14 +113,14 @@ fun CrisisScreen(
 @Composable
 private fun ResourceRow(r: CrisisResource, onCall: () -> Unit) {
     val colors = Nv.colors
-    val dialable = r.contact.any { it.isDigit() }
+    val dialable = r.contact.any { it.isDigit() } || r.contact.contains(".")
     Row(
         Modifier
             .fillMaxWidth()
             .then(if (dialable) Modifier.clickable(role = Role.Button, onClick = onCall) else Modifier)
             .heightIn(min = 64.dp)
             .padding(vertical = Space.x3)
-            .semantics(mergeDescendants = true) { contentDescription = "${r.region}. ${r.org}. ${r.contact}" + if (dialable) ". Double tap to dial." else "" },
+            .semantics(mergeDescendants = true) { contentDescription = "${r.region}. ${r.org}. ${r.contact}." },
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Column(Modifier.weight(1f)) {
@@ -122,17 +131,38 @@ private fun ResourceRow(r: CrisisResource, onCall: () -> Unit) {
         }
         if (dialable) {
             Spacer(Modifier.width(Space.x2))
-            Icon(NvIcons.Phone, null, tint = colors.accent, modifier = Modifier.size(22.dp))
+            Icon(if (r.contact.startsWith("Text")) NvIcons.Message else if (r.contact.any { it.isDigit() }) NvIcons.Phone else NvIcons.Forward,
+                null, tint = colors.accent, modifier = Modifier.size(22.dp))
         }
     }
 }
 
-/** Opens the dialler with the first number in the contact string. Needs no permission. */
-private fun dial(context: Context, contact: String) {
-    val number = Regex("[0-9][0-9 ]{1,16}[0-9]").find(contact)?.value?.replace(" ", "") ?: return
+/** Region name for the phone's locale, matching the resource table. */
+private fun localRegionName(): String? = when (java.util.Locale.getDefault().country) {
+    "US" -> "United States"; "CA" -> "Canada"; "GB" -> "United Kingdom"; "IE" -> "Ireland"
+    "AU" -> "Australia"; "NZ" -> "New Zealand"; "IN" -> "India"; "DE" -> "Germany"
+    "FR" -> "France"; "ZA" -> "South Africa"
+    else -> null
+}
+
+/**
+ * Opens the dialler, a text message, or the browser for a resource. None of these needs a
+ * permission: the app hands the action to the phone and sends nothing itself.
+ */
+private fun contact(context: Context, contact: String) {
+    val number = Regex("[0-9][0-9 ]{1,16}[0-9]|[0-9]{3,}").find(contact)?.value?.replace(" ", "")
+    val intent = when {
+        contact.startsWith("Text") && number != null -> {
+            val body = Regex("Text (\\w+) to").find(contact)?.groupValues?.get(1)
+            Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:$number")).apply { if (body != null) putExtra("sms_body", body) }
+        }
+        number != null -> Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number"))
+        contact.contains(".") -> Intent(Intent.ACTION_VIEW, Uri.parse("https://" + contact.trim().removePrefix("https://")))
+        else -> return
+    }
     try {
-        context.startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$number")).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+        context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
     } catch (_: ActivityNotFoundException) {
-        // A device without a dialler (some tablets): the number is on screen to copy.
+        // A device without a dialler or browser: the details stay on screen to copy.
     }
 }

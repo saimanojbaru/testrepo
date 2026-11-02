@@ -220,7 +220,7 @@ private fun CategoryHero(category: Category, number: Int, accent: Color) {
     Box(
         Modifier
             .fillMaxWidth()
-            .height(340.dp)
+            .height(360.dp)
             .sharedContainer(SharedKeys.categoryCard(category.id))
             .background(accent.copy(alpha = if (colors.isDark) 0.14f else 0.09f)),
     ) {
@@ -234,11 +234,11 @@ private fun CategoryHero(category: Category, number: Int, accent: Color) {
                 romanNumeral(number),
                 style = Nv.type.numeralLarge.copy(fontSize = Nv.type.numeralLarge.fontSize * 3.2f, lineHeight = Nv.type.numeralLarge.lineHeight * 3.2f),
                 color = accent.copy(alpha = 0.13f),
-                modifier = Modifier.align(Alignment.TopEnd).padding(top = Space.x12, end = Space.x4),
+                modifier = Modifier.align(Alignment.TopEnd).padding(top = Space.x10, end = Space.x2),
             )
             if (pose != null) PoseFigure(
                 pose,
-                Modifier.align(Alignment.CenterEnd).padding(end = Space.x6, top = Space.x10).size(width = 150.dp, height = 230.dp),
+                Modifier.align(Alignment.TopEnd).padding(end = Space.x8, top = 64.dp).size(width = 96.dp, height = 140.dp),
                 style = FigureStyle.Outline,
                 markers = MarkerMode.None,
                 decorative = true,

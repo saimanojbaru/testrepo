@@ -23,6 +23,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
@@ -95,6 +96,7 @@ fun PathScreen(curriculum: Curriculum, progress: Map<String, LevelProgress>, now
         .maxByOrNull { it.lastOpenedAt ?: 0L }
         ?.let { p -> curriculum.levels[p.levelId]?.let { it to p } }
 
+    val wide = LocalConfiguration.current.screenWidthDp >= 600
     LazyColumn(
         Modifier.fillMaxSize().background(colors.background),
         contentPadding = PaddingValues(bottom = Space.x12),
@@ -198,23 +200,30 @@ fun PathScreen(curriculum: Curriculum, progress: Map<String, LevelProgress>, now
         item("contents-label") {
             SectionLabel("Contents", modifier = Modifier.padding(horizontal = Space.listGutter).padding(bottom = Space.x4), color = colors.inkTertiary)
         }
-        curriculum.categories.forEachIndexed { i, category ->
-            item(category.id) {
-                val levels = curriculum.levelsInOrder(category.id)
-                val masteredHere = levels.count { progress[it.id]?.status == LevelStatus.MASTERED }
-                CategoryCard(
-                    numeral = romanNumeral(i + 1),
-                    title = category.title,
-                    tagline = category.tagline,
-                    mastered = masteredHere,
-                    total = curriculum.plannedPerCategory[category.id] ?: 15,
-                    written = levels.size,
-                    accent = categoryAccent(category.accent, colors),
-                    onClick = { actions.openCategory(category.id) },
-                    modifier = Modifier
-                        .padding(horizontal = Space.listGutter, vertical = Space.x2 - 2.dp)
-                        .sharedContainer(SharedKeys.categoryCard(category.id)),
-                )
+        // Phones: one column. Tablets and landscape: the parts sit two abreast, like facing pages.
+        val rows = curriculum.categories.withIndex().chunked(if (wide) 2 else 1)
+        rows.forEach { row ->
+            item(row.first().value.id) {
+                Row(
+                    Modifier.padding(horizontal = Space.listGutter, vertical = Space.x2 - 2.dp),
+                    horizontalArrangement = Arrangement.spacedBy(Space.x3),
+                ) {
+                    row.forEach { (i, category) ->
+                        val levels = curriculum.levelsInOrder(category.id)
+                        val masteredHere = levels.count { progress[it.id]?.status == LevelStatus.MASTERED }
+                        CategoryCard(
+                            numeral = romanNumeral(i + 1),
+                            title = category.title,
+                            tagline = category.tagline,
+                            mastered = masteredHere,
+                            total = curriculum.plannedPerCategory[category.id] ?: 15,
+                            written = levels.size,
+                            accent = categoryAccent(category.accent, colors),
+                            onClick = { actions.openCategory(category.id) },
+                            modifier = Modifier.weight(1f).sharedContainer(SharedKeys.categoryCard(category.id)),
+                        )
+                    }
+                }
             }
         }
         item("footer") {

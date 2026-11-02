@@ -174,10 +174,12 @@ fun SegmentedTabs(
     tint: Color = Nv.tint,
 ) {
     val colors = Nv.colors
+    val line = colors.divider
     Row(
         modifier
             .fillMaxWidth()
             .background(colors.background)
+            .drawBehind { drawLine(line, Offset(0f, size.height - 0.5f), Offset(size.width, size.height - 0.5f), 1f) }
             .horizontalScroll(rememberScrollState())
             .padding(horizontal = Space.listGutter, vertical = Space.x2),
         horizontalArrangement = Arrangement.spacedBy(Space.x1),

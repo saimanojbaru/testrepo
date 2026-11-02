@@ -44,9 +44,21 @@ android {
     }
     packaging {
         resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" }
+        // No NDK here; ship the AndroidX native libs as built rather than attempting to strip them.
+        jniLibs { keepDebugSymbols += "**/*.so" }
+    }
+    androidResources {
+        // Hero briefs (*.md) live beside the images for designers; they do not ship in the APK.
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~:!*.md"
     }
     testOptions {
         unitTests.isIncludeAndroidResources = true
+        unitTests.all {
+            // Robolectric fetches its Android runtime at test time; use Google's Maven Central mirror,
+            // which serves identical artifacts and is far less prone to rate limiting.
+            it.systemProperty("robolectric.dependency.repo.url", "https://maven-central.storage-download.googleapis.com/maven2")
+            it.maxHeapSize = "3g"
+        }
     }
 }
 
@@ -128,4 +140,9 @@ dependencies {
     debugImplementation(libs.compose.ui.tooling)
 
     testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.test.junit)
+    testImplementation(platform(libs.compose.bom))
+    testImplementation(libs.compose.ui.test.junit4)
+    debugImplementation(libs.compose.ui.test.manifest)
 }

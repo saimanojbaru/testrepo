@@ -109,6 +109,10 @@ class ContentContractTest {
         check(!l.reviewPrompt.trim().endsWith("?"), w, "reviewPrompt must be a task, not a question")
         check(l.tier == tierFor(l.index), w, "tier ${l.tier} does not match index ${l.index}")
         check(l.estimatedMinutes in 30..240, w, "estimatedMinutes looks wrong")
+        val prose = listOf(l.why, l.caseStudy, l.failureMode, l.reflection.prompt) + l.teach.flatMap { listOf(it.p, it.disconfirm.orEmpty()) }
+        prose.flatMap { it.split(Regex("\\n\\s*\\n")) }.forEach { para ->
+            check(para.count { it == '*' } % 2 == 0, w, "unbalanced *italic* markers in: ${para.take(60)}")
+        }
         val all = TestContent.text
         check(!Regex("TODO|lorem ipsum|TBD|coming soon", RegexOption.IGNORE_CASE).containsMatchIn(all), "pack", "contains a stub marker")
     }

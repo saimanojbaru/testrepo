@@ -84,6 +84,11 @@ object NvIcons {
         lineTo(15.5f, 13f); lineTo(20f, 14.5f); lineTo(20f, 18f); curveTo(20f, 19.1f, 19.1f, 20f, 18f, 20f); curveTo(10.3f, 20f, 4f, 13.7f, 4f, 6f)
         curveTo(4f, 4.9f, 4.9f, 4f, 6f, 4f); close()
     }
+    val Message = icon("message") {
+        moveTo(5f, 5f); lineTo(19f, 5f); curveTo(19.6f, 5f, 20f, 5.4f, 20f, 6f); lineTo(20f, 15f); curveTo(20f, 15.6f, 19.6f, 16f, 19f, 16f)
+        lineTo(10f, 16f); lineTo(6f, 19.5f); lineTo(6f, 16f); lineTo(5f, 16f); curveTo(4.4f, 16f, 4f, 15.6f, 4f, 15f); lineTo(4f, 6f)
+        curveTo(4f, 5.4f, 4.4f, 5f, 5f, 5f); close()
+    }
     val Heart = icon("care") {
         moveTo(12f, 19f); curveTo(5f, 14.5f, 3.5f, 11f, 4.2f, 8.2f); curveTo(5f, 5f, 9.3f, 4.2f, 12f, 7.6f)
         curveTo(14.7f, 4.2f, 19f, 5f, 19.8f, 8.2f); curveTo(20.5f, 11f, 19f, 14.5f, 12f, 19f); close()

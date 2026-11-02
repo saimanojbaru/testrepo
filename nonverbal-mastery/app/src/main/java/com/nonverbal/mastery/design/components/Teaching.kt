@@ -301,7 +301,7 @@ fun QuizQuestionView(
                     answered && isChosen -> colors.dontRed
                     else -> colors.divider
                 }
-                val fade = if (answered && !isCorrect && !isChosen) 0.55f else 1f
+                val fade = if (answered && !isCorrect && !isChosen) 0.7f else 1f
                 Row(
                     Modifier
                         .fillMaxWidth()

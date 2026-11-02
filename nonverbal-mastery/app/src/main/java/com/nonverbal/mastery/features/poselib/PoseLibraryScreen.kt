@@ -124,7 +124,6 @@ fun PoseLibraryScreen(
     val all = curriculum.pack.poses
     val shown = filterPoses(all, query, filter, bookmarked)
     val grouped = if (filter == "all" && query.isBlank()) shown.groupBy { it.theme } else mapOf("" to shown)
-    val full = GridItemSpan(Int.MAX_VALUE)
 
     Column(Modifier.fillMaxSize().background(colors.background)) {
         TopBar(title = "Pose library", onBack = onBack)
@@ -135,7 +134,7 @@ fun PoseLibraryScreen(
             horizontalArrangement = Arrangement.spacedBy(Space.x3),
             verticalArrangement = Arrangement.spacedBy(Space.x4),
         ) {
-            item("intro", span = { full }) {
+            item("intro", span = { GridItemSpan(maxLineSpan) }) {
                 Column(Modifier.padding(top = Space.x4)) {
                     Text("Plates", style = Nv.type.display, color = colors.ink)
                     Spacer(Modifier.height(Space.x3))
@@ -149,13 +148,13 @@ fun PoseLibraryScreen(
                     FilterChips(filter, onFilter, bookmarked.isNotEmpty())
                 }
             }
-            if (shown.isEmpty()) item("empty", span = { full }) {
+            if (shown.isEmpty()) item("empty", span = { GridItemSpan(maxLineSpan) }) {
                 EmptyState(
                     if (filter == "saved") "No plates saved yet. Tap the bookmark on any plate to keep it here." else "No plate matches that. Try a body part, like “hand” or “shoulder”.",
                 )
             }
             grouped.forEach { (theme, poses) ->
-                if (theme.isNotEmpty()) item("h-$theme", span = { full }) {
+                if (theme.isNotEmpty()) item("h-$theme", span = { GridItemSpan(maxLineSpan) }) {
                     SectionLabel(ThemeNames[theme] ?: theme, Modifier.padding(top = Space.x4), color = colors.inkTertiary)
                 }
                 items(poses, key = { it.id }) { pose ->
@@ -163,7 +162,7 @@ fun PoseLibraryScreen(
                 }
             }
             if (filter == "all" && query.isBlank()) {
-                item("diagrams-h", span = { full }) {
+                item("diagrams-h", span = { GridItemSpan(maxLineSpan) }) {
                     Column(Modifier.padding(top = Space.x8)) {
                         Text("Diagrams", style = Nv.type.title, color = colors.ink)
                         Spacer(Modifier.height(Space.x2))
@@ -171,7 +170,7 @@ fun PoseLibraryScreen(
                     }
                 }
                 DiagramKind.entries.forEach { kind ->
-                    item("d-${kind.id}", span = { full }) { Diagram(kind, Modifier.padding(top = Space.x4)) }
+                    item("d-${kind.id}", span = { GridItemSpan(maxLineSpan) }) { Diagram(kind, Modifier.padding(top = Space.x4)) }
                 }
             }
         }

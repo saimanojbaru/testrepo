@@ -41,6 +41,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.nonverbal.mastery.data.db.LevelProgress
+import com.nonverbal.mastery.data.db.LevelStatus
 import com.nonverbal.mastery.data.models.Level
 import com.nonverbal.mastery.data.repo.Codec
 import com.nonverbal.mastery.data.repo.Curriculum
@@ -193,7 +194,9 @@ fun LevelScreen(
     val plan = remember(level) { planLevel(level) }
     val sectionStarts = remember(plan) { (0 until 5).map { s -> PLAN_OFFSET + plan.indexOfFirst { it.section == s } } }
     val readRange = remember(plan) { PLAN_OFFSET until PLAN_OFFSET + plan.count { it.section == 0 } }
-    val check = MasteryCheck.of(level, state.progress)
+    // The card and tabs follow the reflection as it is typed, not the debounced saved copy.
+    val effective = (state.progress ?: LevelProgress(level.id, level.categoryId, LevelStatus.OPEN)).copy(reflection = state.reflection)
+    val check = MasteryCheck.of(level, effective)
     val scope = rememberCoroutineScope()
     val density = LocalDensity.current
     val tabBarPx = with(density) { 56.dp.toPx() }

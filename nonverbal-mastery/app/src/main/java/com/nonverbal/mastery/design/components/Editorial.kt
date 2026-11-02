@@ -191,7 +191,9 @@ fun DropCapParagraph(
             val targetBaseline = p1First + ((lines - 1) * lineHeightPx).toInt()
             val capBaseline = capP[FirstBaseline].takeIf { it != androidx.compose.ui.layout.AlignmentLine.Unspecified } ?: capP.height
             val capY = targetBaseline - capBaseline
-            val textBlockH = p1.height.coerceAtLeast(capY + capP.height)
+            // Below the cap only its baseline matters; its descent area is empty for capitals.
+            val capBottom = capY + capBaseline + (lineHeightPx * 0.32f).toInt()
+            val textBlockH = p1.height.coerceAtLeast(capBottom)
             val height = textBlockH + (p2?.height ?: 0)
             layout(c.maxWidth, height) {
                 capP.place(0, capY)
