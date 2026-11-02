@@ -149,10 +149,10 @@
   {
    "q": "Your ledger shows that readings you felt certain about came true about as often as readings you felt only fairly sure about. What does this mean?",
    "options": [
-    "You are equally skilled at both",
-    "You need more predictions in the certain band",
+    "You are equally skilled at both kinds of reading, which is a good sign for your progress",
+    "You need more predictions in the certain band before the result can mean anything at all",
     "Your feeling of certainty is not tracking your accuracy, so it should carry less weight",
-    "Certainty only matters in professional settings"
+    "Certainty only matters in professional settings, not in readings of friends and family"
    ],
    "answer": 2,
    "explain": "Calibration is the match between how sure you feel and how often you are right. If the feeling does not separate likelier readings from less likely ones, it is not information. Lower your stated confidence until the bands come apart.",
@@ -163,9 +163,9 @@
    "q": "Why were the weather forecasters studied by Murphy and Winkler so well calibrated?",
    "options": [
     "They made precise probability forecasts every day and found out quickly whether they were right",
-    "They used better instruments than other experts",
-    "Weather is easy to predict",
-    "They were trained statisticians"
+    "They used better instruments than other experts did, so their raw information was simply more accurate",
+    "Weather is easier to predict than most things, so their forecasts were usually right anyway",
+    "They were trained statisticians, and knew how to correct their own biases mathematically"
    ],
    "answer": 0,
    "explain": "Calibration grows from precise statements and prompt, clear feedback. Forecasters get both daily. Reading people provides almost neither naturally, which is why the ledger has to supply them.",
@@ -175,10 +175,10 @@
   {
    "q": "You suspect a colleague is unhappy with you. Which of these is a prediction you can actually score?",
    "options": [
-    "She will be off with me this week",
-    "She doesn't really like me",
-    "Something is going on with her",
-    "If she is unhappy with me, she won't ask me to join Thursday's review, which she usually does: seventy percent, check Thursday"
+    "She will be off with me for most of this week, probably until the deadline has passed",
+    "She doesn't really like me, and probably hasn't since I joined the team last spring",
+    "Something is going on with her, and it is likely to come to a head before Friday",
+    "If she is unhappy with me, she won't ask me to Thursday's review, as she usually does: seventy percent"
    ],
    "answer": 3,
    "explain": "Only the last names an observable behaviour, a time and a probability, and ties the behaviour to her usual pattern. The others could be confirmed by almost anything and refuted by nothing, so they can never teach you whether you read her well.",
@@ -190,8 +190,8 @@
    "options": [
     "Being right three quarters of the time",
     "Saying fifty percent about everything",
-    "Perfect calibration",
-    "Being wrong every time"
+    "Being perfectly calibrated in every band",
+    "Being wrong on every single prediction"
    ],
    "answer": 1,
    "explain": "If you always say fifty percent, every prediction scores a quarter whatever happens. A useful reader should do better than that over time. Perfect forecasting scores zero.",
@@ -201,9 +201,9 @@
   {
    "q": "You made ten predictions at ninety percent and nine came true. Are you well calibrated at ninety percent?",
    "options": [
-    "Yes, exactly",
-    "No, you should be at a hundred percent",
-    "No, you are overconfident",
+    "Yes, exactly, since nine in ten is precisely what ninety percent means",
+    "No, you should be at a hundred percent if you say you are ninety sure",
+    "No, you are overconfident, since one in ten of them failed to come true",
     "You cannot tell yet: ten predictions are far too few to read a band reliably"
    ],
    "answer": 3,
@@ -214,10 +214,10 @@
   {
    "q": "You have a hunch that a friend is avoiding the subject of his marriage. Which way of testing it fits this chapter?",
    "options": [
-    "Mention a rumour about his wife and watch his reaction",
-    "Wait for the subject to come up naturally and note what he does, or ask him openly whether he would like to talk about it",
-    "Ask mutual friends what they have heard",
-    "Bring it up suddenly in a group to see if he flinches"
+    "Mention a rumour about his wife in passing, and watch his face closely for a reaction",
+    "Wait for the subject to come up and note what he does, or ask him openly if he would like to talk",
+    "Ask your mutual friends quietly what they have heard about how things are at home",
+    "Bring it up suddenly in a group, to see whether he flinches before he has time to compose himself"
    ],
    "answer": 1,
    "explain": "Waiting and asking are the two legitimate tests. The others engineer a reaction, which is manipulation, damages trust, and measures your provocation rather than his state. Some predictions about friends should simply stay unscored.",

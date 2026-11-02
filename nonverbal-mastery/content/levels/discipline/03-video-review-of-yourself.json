@@ -149,10 +149,10 @@
   {
    "q": "Why does a recording of your own voice usually sound wrong to you?",
    "options": [
-    "Recording equipment distorts voices",
+    "Recording equipment distorts voices, especially cheap phone microphones, making them thinner",
     "You normally hear your voice partly through the bones of your skull, which makes it sound lower and fuller",
-    "Everyone's voice changes when they are being recorded",
-    "Your memory of your own voice fades over time"
+    "Everyone's voice changes when they are being recorded, because they speak more carefully",
+    "Your memory of your own voice fades over time, so any recording sounds unfamiliar at first"
    ],
    "answer": 1,
    "explain": "The recording is closer to what everyone else hears. Your own perception adds bone-conducted sound that no one else receives. The surprise is normal, and it fades as you get used to the outside version.",
@@ -162,9 +162,9 @@
   {
    "q": "What did Gilovich, Savitsky and Medvec's work on the illusion of transparency find?",
    "options": [
-    "People can hide nothing from trained observers",
-    "Lying is always visible on video",
-    "People underestimate how much of their emotion shows",
+    "That people can hide almost nothing from observers who are trained",
+    "That lying is nearly always visible on video when it is slowed down",
+    "That people underestimate how much of their emotion shows to others",
     "People overestimate how much of their inner state others can see"
    ],
    "answer": 3,
@@ -175,10 +175,10 @@
   {
    "q": "In a review you see that you frown hard and look down whenever you are concentrating, and colleagues have called you stern. What should you do?",
    "options": [
-    "Treat it as one habit worth working on: choose a small replacement, such as a nod, practise it, and record again in two weeks",
-    "Practise smiling constantly in meetings",
-    "Ignore it, since you know you are not stern",
-    "Tell colleagues they are misreading you"
+    "Treat it as one habit worth working on: practise a small replacement, such as a nod, and record again",
+    "Practise smiling more or less constantly in meetings, so that nobody can read you as stern",
+    "Ignore it, since you know you are not stern and your colleagues will come to see that",
+    "Tell your colleagues they are misreading you, and explain what the frown actually means"
    ],
    "answer": 0,
    "explain": "The frown is costing you, because it is reliably misread. A small replacement is more likely to stick than suppression, and a second recording tells you whether it worked. A held smile is a performance, and people notice.",
@@ -188,10 +188,10 @@
   {
    "q": "Why is the first review pass done with the sound off?",
    "options": [
-    "It is less embarrassing",
-    "Recordings are clearer without sound",
+    "It is less embarrassing than hearing your own voice played back at you",
+    "Recordings on most phones are clearer to watch without the sound on",
     "Without words to follow, you see movement you would otherwise miss",
-    "Sound distracts from facial expression"
+    "Sound tends to distract you from what your face is doing on the screen"
    ],
    "answer": 2,
    "explain": "Words pull attention to meaning. With them gone, the body's rhythms, self-touches and gestures become visible, just as they do when you watch strangers with the sound off.",
@@ -201,10 +201,10 @@
   {
    "q": "After a careful review you find twelve things you dislike about how you come across. What is the best approach?",
    "options": [
-    "Fix them all before your next meeting",
+    "Fix them all before your next meeting, while the recording is still fresh in your mind",
     "Choose the one habit most likely to be misread by others and change only that, with a replacement",
-    "Delete the recording and stop reviewing",
-    "Practise a new posture until it feels natural"
+    "Delete the recording, and stop reviewing yourself, since the exercise is only making it worse",
+    "Practise a completely new posture and manner until it feels natural, and record again then"
    ],
    "answer": 1,
    "explain": "Most habits should be left alone, because the people who know you read them correctly. Changing everything produces stiffness and self-monitoring. One habit that costs you, replaced rather than suppressed, is enough.",
@@ -214,10 +214,10 @@
   {
    "q": "You want to review how you come across in your team's weekly meeting. What is the right way to record it?",
    "options": [
-    "Record the whole meeting secretly so people behave naturally",
-    "Record the meeting and review how everyone else behaved too",
-    "Record only your own feed, tell the team you are doing it for your own practice, and delete it after making notes",
-    "Ask a colleague to film you from across the room without telling the others"
+    "Record the whole meeting without telling anyone, so that everyone behaves naturally in front of the camera",
+    "Record the whole meeting openly, and review how everyone else in it behaved as well as yourself",
+    "Record only your own feed, tell the team it is for your own practice, and delete it after making notes",
+    "Ask a colleague to film you from across the room, without telling the others what it is for"
    ],
    "answer": 2,
    "explain": "Self-review is about your body, with consent from anyone else involved. Secret recording is unlawful in many places and a breach of trust everywhere. Deleting the file afterwards keeps the notes and loses the risk.",

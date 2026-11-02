@@ -160,10 +160,10 @@
   {
    "q": "According to Kahneman and Klein, when can you trust an intuitive judgment?",
    "options": [
-    "When you feel strongly confident about it",
-    "When you have many years of experience in the area",
+    "When you feel strongly and immediately confident about it, without needing to reason it out",
+    "When you have many years of experience in the area, whatever kind of area it is",
     "When the environment has valid cues and you have had long practice with timely feedback",
-    "Never, because intuition is always biased"
+    "Never, because intuition is always biased and should be replaced by explicit rules"
    ],
    "answer": 2,
    "explain": "Confidence and years of experience are exactly what fail in low-feedback environments, where people grow more certain without growing more accurate. Kahneman and Klein agreed that intuition deserves trust only where the environment is regular and feedback is clear. A protocol is a way of supplying the feedback that social life withholds.",
@@ -173,10 +173,10 @@
   {
    "q": "Why does the protocol require a rival explanation for every hypothesis?",
    "options": [
-    "To seem balanced to other people",
+    "To seem fair and balanced to other people when you share your reading",
     "Because a single favoured hypothesis bends new observations toward itself",
-    "Because the rival is usually the correct one",
-    "To make predictions harder to score"
+    "Because the rival explanation usually turns out to be the correct one",
+    "To make your predictions harder to score, so that you are tested properly"
    ],
    "answer": 1,
    "explain": "Chamberlin's method of multiple working hypotheses was designed against exactly this bias. Holding a rival forces you to ask what would tell the two apart. The rival is not usually correct, but without it you cannot see when your favourite is wrong.",
@@ -186,10 +186,10 @@
   {
    "q": "A colleague says your proposal is great while her voice flattens, her hands stop moving and she turns slightly away. Following the protocol, what do you do?",
    "options": [
-    "Conclude she dislikes the proposal and withdraw it",
-    "Set her words aside, since most communication is nonverbal",
-    "Note the cluster and its timing, write a hypothesis and a rival, and ask an open question about any concerns",
-    "Ask her directly why she is lying"
+    "Conclude that she dislikes the proposal, and withdraw it before it does any harm",
+    "Set her words aside, since most communication is nonverbal and the body is truer",
+    "Note the cluster and its timing, write a hypothesis and a rival, and ask about any concerns",
+    "Ask her directly why she is lying to you about what she thinks of the proposal"
    ],
    "answer": 2,
    "explain": "Several channels shifted together at an identifiable moment, which earns a hypothesis and a question, not a verdict. Setting her words aside repeats the misreading of Mehrabian's experiments, which never showed that words carry little weight. Accusing her of lying turns a pointer into a charge.",
@@ -199,10 +199,10 @@
   {
    "q": "What did Albert Mehrabian's experiments in the 1960s actually study?",
    "options": [
-    "How much of all communication is nonverbal",
+    "How much of all human communication is nonverbal, across many different kinds of conversation",
     "How listeners judged a speaker's liking from single words spoken in a contradicting tone",
-    "Whether body language can reveal lies",
-    "Facial expressions across cultures"
+    "Whether body language can reveal lies more reliably than the words a person chooses",
+    "How facial expressions of emotion differ across cultures, from Europe to East Asia"
    ],
    "answer": 1,
    "explain": "The famous percentages came from experiments on single words and tones, judged for feelings of liking or disliking. Mehrabian has said the figures do not apply to communication in general. In ordinary conversation, words still carry most of the content.",
@@ -212,9 +212,9 @@
   {
    "q": "In Philip Tetlock's research, what distinguished the most accurate forecasters?",
    "options": [
-    "Higher intelligence and deeper expertise",
-    "Strong, consistent opinions",
-    "Relying on gut feeling under time pressure",
+    "Higher intelligence and deeper expertise in the regions they were forecasting",
+    "Strong, consistent opinions that they defended against every kind of challenge",
+    "Relying on gut feeling under time pressure rather than on slow deliberation",
     "Precise predictions, honest probabilities, keeping score and updating in small steps"
    ],
    "answer": 3,
@@ -225,8 +225,8 @@
   {
    "q": "Your closest friend's father has just died, and at the funeral you notice yourself tracking your friend's face and hands for signs of how he is coping. What does your protocol say?",
    "options": [
-    "Continue, but more discreetly",
-    "Write down what you see for later",
+    "Continue reading him, but more discreetly, so that he does not notice",
+    "Write down what you see so that you can look at it properly later",
     "Apply a stopping rule: put the method down and simply be with him",
     "Ask him how he is really feeling, given what you have observed"
    ],

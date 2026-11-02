@@ -149,10 +149,10 @@
   {
    "q": "Nobody at work has ever told you that you come across as impatient. What can you conclude?",
    "options": [
-    "That you do not come across as impatient",
-    "That your colleagues are unobservant",
+    "That you do not come across as impatient, since someone would have mentioned it by now",
+    "That your colleagues are unobservant, or too busy with their own work to notice you",
     "Very little: people withhold unwelcome feedback, especially from someone with power over them",
-    "That you should ask your manager to confirm it"
+    "That you should ask your manager to confirm it, since managers see the most of you"
    ],
    "answer": 2,
    "explain": "Rosen and Tesser's MUM effect describes how reluctant people are to pass on bad news, and power makes them more reluctant still. Silence around a senior person is often caution, not approval. The only way to find out is to ask in a way that makes honesty safe.",
@@ -162,10 +162,10 @@
   {
    "q": "What did Vazire's self-other knowledge asymmetry research suggest about who knows what about a person?",
    "options": [
-    "Others tend to judge visible and evaluative traits well, while people often know their own inner states, such as anxiety, better",
-    "People always know themselves best",
-    "Strangers know you better than friends do",
-    "Self-knowledge and others' knowledge are identical"
+    "Others often judge visible traits well, while people often know their own inner states, such as anxiety, better",
+    "People always know themselves best in every respect, since only they have direct access to their own thoughts and feelings",
+    "Strangers know you better than friends do, because they have no history to bias their judgment",
+    "Self-knowledge and other people's knowledge of you turn out to be much the same in every area"
    ],
    "answer": 0,
    "explain": "Each side sees what the other cannot. Your inner experience is yours; how you come across is visible to the people around you. Asking for feedback means going to the source that holds the evidence.",
@@ -175,9 +175,9 @@
   {
    "q": "You ask your sister how you come across with your children, and she says you can be a bit sharp with them. You feel your face go hot. What is the best next move?",
    "options": [
-    "Explain that you are only firm because you care",
-    "Point out that she is not a parent",
-    "Change the subject and think about it later",
+    "Explain that you are only firm with them because you care about them",
+    "Point out, gently, that she is not a parent herself and cannot know",
+    "Change the subject for now, and think it over later on your own",
     "Thank her and ask for one recent example of when she saw it"
    ],
    "answer": 3,
@@ -188,10 +188,10 @@
   {
    "q": "What did Kluger and DeNisi's 1996 meta-analysis of feedback interventions find?",
    "options": [
-    "Feedback always improves performance",
-    "Feedback helped on average, but in more than a third of cases made performance worse, especially when it focused on the person rather than the task",
-    "Negative feedback is always harmful",
-    "Feedback only works when it comes from a manager"
+    "Feedback improves performance in almost every case, as long as it is given promptly",
+    "It helped on average, but in over a third of cases made things worse, especially when aimed at the person",
+    "Negative feedback is nearly always harmful, while positive feedback nearly always helps",
+    "Feedback only works when it comes from a manager or someone else with authority"
    ],
    "answer": 1,
    "explain": "More feedback is not automatically better. What it draws attention to matters: the task and the behaviour tend to help, the self tends to harm. That is why this chapter translates every piece of feedback toward behaviour.",
@@ -201,10 +201,10 @@
   {
    "q": "Who makes the best honest mirror?",
    "options": [
-    "Someone who always tells you that you are doing well",
-    "Your harshest critic, because they hold nothing back",
+    "Someone who always tells you that you are doing well, so you stay motivated",
+    "Your harshest critic, because they hold nothing back and will spare you nothing",
     "Someone who sees you often, wishes you well, and loses little by being honest",
-    "Your manager, because they see you most"
+    "Your manager, because they see you most often and know your work the best"
    ],
    "answer": 2,
    "explain": "Frequency gives the mirror enough observations, goodwill aims the feedback at helping you, and having little to lose makes honesty possible. An admirer or a critic alone gives you a distorted picture, and a manager may have reasons to shade the truth.",
@@ -214,10 +214,10 @@
   {
    "q": "Two weeks after changing how you listen in meetings, what closes the feedback loop?",
    "options": [
-    "Going back to the person who raised it, asking whether they have noticed a difference, and telling them what you tried",
-    "Assuming the change worked if nobody complains",
-    "Asking the whole team in a meeting",
-    "Recording the next meeting without telling anyone"
+    "Going back to the person who raised it, asking if they have noticed a difference, and saying what you tried",
+    "Assuming the change has worked if nobody complains about your listening in the next month",
+    "Asking the whole team in a meeting whether your listening has improved since you last asked",
+    "Recording the next meeting without telling anyone, and then checking the recording carefully for any sign of change"
    ],
    "answer": 0,
    "explain": "Returning to the same person tells you whether the change is visible and shows them their honesty was used. It often brings a second, finer piece of feedback. Silence, as this chapter showed, tells you very little.",

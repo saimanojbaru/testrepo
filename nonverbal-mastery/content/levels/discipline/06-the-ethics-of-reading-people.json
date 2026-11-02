@@ -150,10 +150,10 @@
   {
    "q": "You have read, correctly as it turns out, that a colleague is anxious about her job. What does being right allow you to do?",
    "options": [
-    "Mention it to others, since it is true",
-    "Record it, since accurate readings are evidence",
-    "Being right does not settle where the reading may go; that depends on the context you saw it in and what she would expect",
-    "Tell her you knew all along"
+    "Mention it to others who work with her, since it is true and they may be able to help",
+    "Record it in your notes on her, since accurate readings are evidence worth keeping",
+    "Being right does not settle where it may go; that depends on where you saw it and what she would expect",
+    "Tell her you knew all along, so that she does not have to explain herself to you"
    ],
    "answer": 2,
    "explain": "Accuracy and appropriateness are different questions. A true reading passed to the wrong place is still a breach of the norms it came from, and it takes from her the choice of whether and how to tell her own story.",
@@ -164,9 +164,9 @@
    "q": "In Helen Nissenbaum's account of privacy as contextual integrity, when is privacy violated?",
    "options": [
     "When information flows in ways that break the norms of the context it came from",
-    "Whenever personal information is observed",
-    "Only when information is written down",
-    "Only when the information was secret"
+    "Whenever personal information about someone is observed by anyone without permission",
+    "Only when information about a person is written down or recorded in some way",
+    "Only when the information was secret and someone deliberately revealed it"
    ],
    "answer": 0,
    "explain": "Contextual integrity explains why information seen in plain view can still be misused. What matters is whether its next move fits the norms under which it was shown, such as a meeting, a funeral or a dinner among friends.",
@@ -176,10 +176,10 @@
   {
    "q": "At dinner your friend's wife flinches twice when he gestures sharply near her and checks his face before answering. What fits this chapter?",
    "options": [
-    "Raise it with the group to see if others noticed",
-    "Confront your friend about how he treats her",
-    "Do nothing, since you cannot know what it means",
-    "Find a private moment to ask her gently how she is, and make sure she knows help exists, without accusing anyone"
+    "Raise it quietly with the others at the table, to see whether they noticed the same thing",
+    "Confront your friend later about how he treats her, and tell him what you saw at dinner",
+    "Do nothing, since you cannot know what it means and it is not your business to ask",
+    "Find a private moment to ask her gently how she is, and make sure she knows help exists"
    ],
    "answer": 3,
    "explain": "You cannot know what the flinch means, which rules out accusation and broadcasting. You can give her a safe chance to speak and make sure she knows where help is. If anything points to immediate danger, call the emergency services.",
@@ -189,10 +189,10 @@
   {
    "q": "What did the 2019 review led by Lisa Feldman Barrett conclude about reading emotions from faces?",
    "options": [
-    "Faces reveal emotions as reliably as words do",
-    "Facial movements vary too much across people, situations and cultures to be read as specific emotions without context",
-    "Only trained professionals can read faces reliably",
-    "Machines read faces better than people do"
+    "Faces reveal emotions as reliably as words do, once you know which muscles to watch",
+    "Facial movements vary too much across people, settings and cultures to be read as emotions without context",
+    "Only trained professionals can read emotions from faces with any real reliability",
+    "Machines can now read emotions from faces better than people are able to"
    ],
    "answer": 1,
    "explain": "The review found some link between expressions and emotions but far less reliable than commercial systems assumed. A scowl can be anger, concentration, confusion or sun in the eyes, which is why baseline and context matter.",
@@ -202,10 +202,10 @@
   {
    "q": "Which statement about readings you keep to yourself is most accurate?",
    "options": [
-    "They are harmless because nobody hears them",
-    "They are fine as long as they turn out accurate",
+    "They are harmless, because nobody else ever hears them and so nobody is affected",
+    "They are fine as long as they turn out to be accurate when you check them later",
     "They still shape how you treat people, so a biased private reading does harm even when it is never spoken",
-    "They should always be shared so they can be checked"
+    "They should always be shared with the person, so that they can be checked and corrected"
    ],
    "answer": 2,
    "explain": "A reading you keep changes how closely you watch someone, how much benefit of the doubt you give and how you answer them. That is why bias in private readings matters, and why the ledger, not introspection, is the place to look for it.",
@@ -215,10 +215,10 @@
   {
    "q": "Your director asks you to note attitude concerns in a staff member's appraisal because she looked unenthusiastic in a meeting. What fits?",
    "options": [
-    "Write it as asked, since the director saw it too",
-    "Write that she seemed unenthusiastic but add that you disagree",
-    "Ask other staff whether they noticed the same thing",
-    "Record what she actually did and said, leave out the impression, and raise any real concern with her directly"
+    "Write it as asked, since the director saw the meeting too and is entitled to a view",
+    "Write that she seemed unenthusiastic in the meeting, but add a note saying that you disagree with it",
+    "Ask the other staff who were there whether they noticed the same lack of enthusiasm",
+    "Record what she did and said, leave out the impression, and raise any concern with her directly"
    ],
    "answer": 3,
    "explain": "Impressions of demeanour in a record are later read as findings by people who never met her, and she cannot answer them. Behaviour can be checked and answered. If there is a concern, the person it is about should hear it first.",

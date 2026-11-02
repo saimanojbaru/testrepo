@@ -163,10 +163,10 @@
   {
    "q": "Why does the scan read each person from the ground up and leave the face for last?",
    "options": [
-    "Faces are unimportant",
-    "It is faster",
-    "The lower body is less managed, and faces capture attention so readily that starting there crowds out everything else",
-    "People cannot see you looking at their feet"
+    "Faces are less important than bodies, since most of what people feel is shown below the neck",
+    "It is faster, because feet and legs change less often and can be checked at a single glance",
+    "The lower body is less managed, and faces grab attention so readily that starting there crowds out the rest",
+    "People cannot see you looking at their feet, so it lets you watch them without being noticed"
    ],
    "answer": 2,
    "explain": "Two reasons combine: the gradient of control from the leakage chapter, and the way faces pull and hold attention. Ending with the face means the rest of the body actually gets looked at. None of this makes the lower body a lie detector.",
@@ -177,9 +177,9 @@
    "q": "You arrive at a family barbecue. Running the scan, you notice your cousin at the far side of the garden, turned away from the group with arms folded, looking at his phone. What is the best output of the scan?",
    "options": [
     "One small action: go and stand near him for a minute and see whether he wants company",
-    "Conclude he is upset with someone and ask who",
-    "Keep watching him for the rest of the afternoon",
-    "Tell the rest of the family he seems unhappy"
+    "Conclude that he is upset with someone at the party, and quietly ask the others who",
+    "Keep watching him for the rest of the afternoon until you can tell what is wrong",
+    "Tell the rest of the family he seems unhappy, so that someone can go and check on him"
    ],
    "answer": 0,
    "explain": "The scan ends in a single question or action, then stops. Standing nearby offers company without demanding an explanation, and lets him tell you whether he wanted to be alone. Watching him all afternoon turns perception into surveillance.",
@@ -189,9 +189,9 @@
   {
    "q": "What does Erving Goffman's term civil inattention describe?",
    "options": [
-    "Ignoring people you dislike",
-    "Paying close attention to strangers for safety",
-    "Avoiding eye contact out of shyness",
+    "Ignoring people you dislike, so politely that they can never quite be sure they are being ignored",
+    "Paying close attention to strangers in public places, for the sake of your own safety",
+    "Avoiding eye contact with strangers out of shyness, or a fear of being drawn into talk",
     "The brief glance that acknowledges a stranger, followed by a polite withdrawal of attention"
    ],
    "answer": 3,
@@ -202,10 +202,10 @@
   {
    "q": "Is a longer, continuous scan of a room always better than a short one?",
    "options": [
-    "Yes, because more observation means more information",
+    "Yes, because more observation always means more information, and more information means better readings",
     "No: a constant scan is vigilance, which tires you, unsettles others and narrows into threat-seeking",
-    "Yes, as long as you use soft eyes",
-    "Only in professional settings"
+    "Yes, as long as you use soft eyes and keep moving your gaze so that nobody notices you",
+    "Only in professional settings, such as security work, where watching is part of the job"
    ],
    "answer": 1,
    "explain": "The scan has an end so that you can be present with the people in the room. Continuous sweeping is a state of alarm, not a higher form of perception. If you cannot stop scanning, that tells you something about your own state.",
@@ -215,10 +215,10 @@
   {
    "q": "A friend tells you, with some pride, that he can pick out easy targets in a bar from the way they walk. What does this chapter say about that skill?",
    "options": [
-    "It is a useful safety skill everyone should learn",
-    "It shows he has mastered the scan",
-    "The same looking can find who needs help or who is vulnerable to exploitation; this book teaches only the first",
-    "It is harmless as long as he never acts on it"
+    "It is a useful safety skill that everyone should learn, so that they can avoid looking like a target",
+    "It shows he has mastered the scan, since he can read a whole room from movement alone",
+    "The same looking can find who needs help or who could be exploited; this book teaches only the first",
+    "It is harmless as long as he never acts on it, since looking at people is not a crime"
    ],
    "answer": 2,
    "explain": "Research on how assailants choose victims is a warning about what scanning can be used for, not a technique to copy. The scan in this book ends with the question of who could use something from you. If it ends with who would be easy, it has become something else.",

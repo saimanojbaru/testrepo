@@ -99,6 +99,14 @@ class ContentContractTest {
         check(l.quiz.any { it.isMisconceptionTest }, w, "quiz needs a misconception test")
         check(l.quiz.any { it.isScenario }, w, "quiz needs a scenario question")
         check(l.quiz.map { it.answer }.toSet().size >= 3, w, "quiz answers should not cluster on one letter")
+        // The right answer must not be findable by length alone: never far longer than the longest
+        // wrong option, and the longest option in at most half of a chapter's questions.
+        l.quiz.forEachIndexed { i, q ->
+            val longestWrong = q.options.filterIndexed { j, _ -> j != q.answer }.maxOf { it.length }
+            check(q.options[q.answer].length <= longestWrong * 1.35, w, "quiz[$i] right answer is much longer than every wrong one")
+        }
+        val longestIsRight = l.quiz.count { q -> q.options[q.answer].length == q.options.maxOf { it.length } }
+        check(longestIsRight * 2 <= l.quiz.size, w, "the right answer is the longest option in $longestIsRight of ${l.quiz.size} questions")
         check(words(l.reflection.prompt) in 60..100, w, "reflection prompt must be 60–100 words (is ${words(l.reflection.prompt)})")
         check(l.reflection.prompt.contains("specific", ignoreCase = true) || l.reflection.prompt.contains("one ", ignoreCase = true), w, "reflection prompt must ask for a specific instance")
         check(words(l.reflection.guidance) >= 40, w, "reflection guidance must be a real paragraph")
@@ -115,6 +123,7 @@ class ContentContractTest {
         }
         val all = TestContent.text
         check(!Regex("TODO|lorem ipsum|TBD|coming soon", RegexOption.IGNORE_CASE).containsMatchIn(all), "pack", "contains a stub marker")
+        prose.forEach { check(!Regex("[a-z]- (?!and |or |to )[a-z]").containsMatchIn(it), w, "word broken by a line-wrap hyphen in: ${it.take(60)}") }
     }
 
     @Test

@@ -158,10 +158,10 @@
   {
    "q": "Which of these is the most useful journal entry?",
    "options": [
-    "He got defensive when I raised the deadline.",
-    "Arms went from resting to folded high, shoulders lifted, within a second of 'the deadline'; lasted about a minute.",
-    "He was clearly hiding something about the deadline.",
-    "Bad meeting."
+    "He got defensive when I raised the deadline, which is what he always does",
+    "Arms went from resting to folded high within a second of 'the deadline', and stayed so for a minute",
+    "He was clearly hiding something about the deadline, and I need to find out what",
+    "Bad meeting: tense from the start, mostly because of him and the deadline"
    ],
    "answer": 1,
    "explain": "Only the second entry records what a camera could have seen, with its timing and duration, which means it can be read against more than one explanation later. The first and third are conclusions with the evidence thrown away. The fourth records a mood, most likely yours.",
@@ -171,10 +171,10 @@
   {
    "q": "What did Loftus and Palmer's 1974 experiment on witness memory show?",
    "options": [
-    "People remember car accidents accurately if they saw them clearly",
-    "Eyewitnesses become more accurate under stress",
-    "A word in a later question, such as 'smashed' rather than 'hit', changed speed estimates and produced false memories of broken glass",
-    "Memory improves when events are rehearsed aloud"
+    "People remember car accidents accurately if they saw them clearly and were asked about them soon after",
+    "Eyewitnesses become more accurate under stress, because arousal fixes the details of an event in memory",
+    "A word in a later question, such as 'smashed' for 'hit', changed speed estimates and created false memories",
+    "Memory improves when events are rehearsed aloud, so retelling an accident makes the account more reliable over time"
    ],
    "answer": 2,
    "explain": "Information arriving after an event altered the memory of the event itself. That is why a journal must be written before the outcome of a reading is known. Afterwards, the outcome edits the observation.",
@@ -184,10 +184,10 @@
   {
    "q": "At dinner your brother went quiet and looked at his plate when your mother mentioned his job. What do you write in your journal tonight?",
    "options": [
-    "Setting, your state, what changed and when, your guess, a rival and what would show you wrong, using a role or initial",
-    "A full account of what you think is wrong with his career",
-    "Nothing unless it happens again",
-    "A reminder to confront him about it next time"
+    "Setting, your state, what changed and when, a guess, a rival and a disconfirmer, using only an initial",
+    "A full account of what you think has gone wrong with his career, so that you remember it",
+    "Nothing unless it happens again, since a single moment is not worth recording at all",
+    "A reminder to confront him about it next time, with the exact words your mother used"
    ],
    "answer": 0,
    "explain": "A single shaped entry keeps the moment testable without turning it into a conclusion. Writing nothing loses it to memory. The second and fourth options leap from one observation to a story and an action.",
@@ -197,9 +197,9 @@
   {
    "q": "Why does every entry begin with a line about your own state?",
    "options": [
-    "To practise mindfulness",
-    "Because journals should be personal",
-    "To keep a record of your mood for a doctor",
+    "To practise mindfulness, since noticing your own state is calming in itself and good for you",
+    "Because journals should be personal, and the state line keeps the entries honest and private",
+    "To keep a record of your mood that you could show to a doctor if your sleep or mood began to get any worse",
     "So you can later see whether your readings shift with your fatigue, mood or what you wanted to be true"
    ],
    "answer": 3,
@@ -210,10 +210,10 @@
   {
    "q": "Your journal shows your readings were right nine times out of ten last month. What is the most likely explanation?",
    "options": [
-    "You are an unusually accurate reader",
-    "The people you read were unusually easy to read",
+    "You are an unusually accurate reader, and the journal is confirming what you suspected",
+    "The people you read were unusually easy to read, or were mostly people you have known very well for years",
     "Your guesses are too vague to be wrong, or you mostly wrote down moments that confirmed you",
-    "Your memory is improving"
+    "Your memory is improving, so you record the moments more accurately than you used to"
    ],
    "answer": 2,
    "explain": "Hit rates that high usually mean the predictions could not fail or the entries were selected after the fact. Check whether each guess named what would show it wrong, and whether you wrote entries on ordinary days too. Darwin's golden rule exists for exactly this.",
@@ -223,10 +223,10 @@
   {
    "q": "A friend asks you to keep notes on his partner's behaviour so that he can prove she is hiding something. What does this chapter say?",
    "options": [
-    "Keep the notes, but use initials",
+    "Keep the notes, but use initials only, so that nobody else could identify her",
     "Decline: a baseline journal records your own perception, not a file on someone's private life",
-    "Keep notes on body language only",
-    "Agree, as long as he shows her the notes later"
+    "Keep notes on her body language only, and leave out anything she actually says",
+    "Agree, as long as he promises to show her the notes later and let her respond"
    ],
    "answer": 1,
    "explain": "What he is describing is a dossier built to win an argument, and in a relationship that can be a form of control. The journal in this book is about how you see, and it stays that way. The kind response is to ask what is worrying him.",

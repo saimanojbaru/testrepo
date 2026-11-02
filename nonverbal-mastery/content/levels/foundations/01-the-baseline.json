@@ -167,10 +167,10 @@
   {
    "q": "A colleague you have never met keeps his arms folded throughout your first meeting. What does the folding tell you on its own?",
    "options": [
-    "That he is defensive about the topic",
-    "That he disagrees with you but won't say so",
+    "That he is defensive about the topic, or about meeting you",
+    "That he disagrees with you but has decided not to say so",
     "Very little, until you know whether he folds his arms at rest",
-    "That he is cold and you should adjust the room"
+    "That he feels cold, and that you should adjust the room to suit him"
    ],
    "answer": 2,
    "explain": "Folding is one of the most misread postures because it appears in so many resting baselines. Without knowing how he sits when nothing is at stake, you cannot tell a habit from a reaction. A cold room is a fair alternative hypothesis, but it is still a hypothesis, not something the folding tells you.",
@@ -180,9 +180,9 @@
   {
    "q": "Why does Aldert Vrij criticise baselining someone during small talk and then comparing them during difficult questions?",
    "options": [
-    "Small talk produces too little behaviour to measure",
-    "People lie during small talk as well",
-    "Baselines can only be taken from video",
+    "Small talk produces too little behaviour to measure reliably, so any baseline taken from it is mostly noise",
+    "People lie during small talk as well, so the baseline already contains the very behaviour you are trying to detect",
+    "Baselines can only be taken reliably from video, because live observers miss most of what happens in real time",
     "The two conversations differ in stakes and difficulty, so behaviour would change even in an honest person"
    ],
    "answer": 3,
@@ -193,10 +193,10 @@
   {
    "q": "At lunch, a usually animated friend tells a story about his weekend with his hands moving freely. When someone asks whether he has heard back about the promotion, his hands drop into his lap and stay there for the next few minutes while he answers briefly. What is the most defensible note to make?",
    "options": [
-    "He didn't get the promotion and is hiding it",
-    "He is angry with the person who asked",
-    "His gestures stopped right after the promotion question and stayed down for minutes; worth a private, gentle question later",
-    "Nothing, because hands in the lap is a normal resting posture"
+    "He didn't get the promotion and is hiding it, so you should change the subject to spare him",
+    "He is angry with the person who asked, and the stillness is his way of controlling it",
+    "His gestures stopped right after the promotion question and stayed down; worth a gentle private question later",
+    "Nothing, because hands resting in the lap is a normal posture and carries no meaning at all"
    ],
    "answer": 2,
    "explain": "This note records change, timing and duration without claiming to know the cause. The last option ignores that the stillness departs from his own animated baseline, which is exactly what makes it informative. The first two leap to a meaning the body cannot supply.",
@@ -219,10 +219,10 @@
   {
    "q": "Research on thin slices shows that observers can predict some outcomes from a few seconds of silent video. What follows for reading a stranger you have just met?",
    "options": [
-    "First impressions are reliable, so trust your first read",
-    "It shows impressions are consistent across observers, not that one quick read of a person's feelings is correct",
-    "You should only read people in the first thirty seconds",
-    "Thin slices only work with the sound on"
+    "That first impressions are reliable enough that you can usually trust your first read",
+    "That impressions agree across observers, not that one quick read of someone's feelings is right",
+    "That you should only try to read people in the first thirty seconds of meeting them",
+    "That thin slices only work when the sound is on and the observer can hear the voice"
    ],
    "answer": 1,
    "explain": "The studies by Ambady and Rosenthal concern broad, stable impressions such as warmth, pooled across several observers. They do not show that one observer can read one person's passing state at a glance. The first minutes of an encounter are also when behaviour is least like a person's baseline.",
@@ -232,10 +232,10 @@
   {
    "q": "You arrive at a performance review exhausted after a sleepless night with a sick child. Your manager seems curt, and you sense disapproval in every pause. What should you do first?",
    "options": [
-    "Address the disapproval directly",
+    "Address the disapproval directly, so that it does not hang over the whole review",
     "Recognise that your own state is colouring what you see, and hold the reading loosely",
-    "Match her curtness to show you are not intimidated",
-    "Assume she has bad news and prepare to argue"
+    "Match her curtness, so that she can see you are not intimidated by her manner",
+    "Assume she has bad news for you, and prepare your arguments before she says it"
    ],
    "answer": 1,
    "explain": "Fatigue and anxiety tilt readings toward threat, an effect Joseph Forgas studied as affect infusion. Your own baseline is off, so your reading of hers is unreliable. That does not mean ignoring what you notice; it means treating it as a guess until you can compare it with how she usually is in reviews.",

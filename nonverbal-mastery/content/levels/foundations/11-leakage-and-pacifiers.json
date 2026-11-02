@@ -161,10 +161,10 @@
   {
    "q": "A man touches the front of his neck while answering whether he finished a report. What does the research support concluding?",
    "options": [
-    "He is probably lying about the report",
-    "He is probably anxious about the report",
-    "Something may have registered or cost effort, if this departs from his baseline and closely follows the question",
-    "Nothing at all, since self-touch is meaningless"
+    "He is probably lying about the report, since neck touching is a classic sign of deceit",
+    "He is probably anxious about the report and worried about what you will say next",
+    "Something may have registered or cost effort, if it departs from his baseline and follows the question",
+    "Nothing at all, since self-touch is a meaningless habit that everyone has all day"
    ],
    "answer": 2,
    "explain": "No single self-touch is a sign of lying, and anxiety is only one of several possible causes. The last option overcorrects: a well-timed departure from someone's baseline is information, just not an answer. The defensible claim is the narrow one.",
@@ -174,10 +174,10 @@
   {
    "q": "In Ekman and Friesen's account of leakage, why is the face the channel least likely to let unmanaged feeling escape?",
    "options": [
-    "The face shows fewer emotions than the body",
+    "The face can show fewer distinct emotions than the body, so there is less to leak",
     "People watch faces most and get the most feedback about them, so they manage them best",
-    "Facial muscles are slower than leg muscles",
-    "Faces only show emotion in children"
+    "Facial muscles move more slowly than leg muscles, so leaks are too brief to notice",
+    "Faces only show emotion clearly in young children, before display rules have been learned"
    ],
    "answer": 1,
    "explain": "The argument rests on sending capacity, attention and feedback. We are watched in the face and know it, so we control it most. The legs and feet are watched least, which makes them likelier to show what is not being managed, though not necessarily anything concealed.",
@@ -187,10 +187,10 @@
   {
    "q": "During a salary negotiation, the other side's lead rubs the back of his neck twice as you name your figure, then goes still. What is the most defensible next move?",
    "options": [
-    "Hold silence and eye contact to see whether he breaks",
+    "Hold silence and steady eye contact to see whether he breaks first",
     "Note the change and ask an open question about their constraints",
-    "Raise your figure, since he is clearly rattled",
-    "Point out that he seems uncomfortable"
+    "Raise your figure, since the rubbing shows he is clearly rattled",
+    "Point out to him that he seems uncomfortable with your number"
    ],
    "answer": 1,
    "explain": "The touch and the stillness point to effort or pressure near that moment, not to a weakness you can exploit. An open question about constraints lets you learn what the pressure is about and keeps the negotiation honest. Silence and staring are pressure, and pressure produces more of the signals you think you are reading.",
@@ -213,10 +213,10 @@
   {
    "q": "Which statement about stillness is best supported?",
    "options": [
-    "Liars fidget more, so stillness suggests honesty",
-    "Stillness is never informative, because it is an absence of behaviour",
-    "A sudden drop in someone's usual movement can be informative, and has several possible causes, including effort, alarm and self-control",
-    "Stillness always indicates fear"
+    "Liars fidget more than truth-tellers, so stillness is a fairly good sign of honesty",
+    "Stillness is never informative, because it is an absence of behaviour, not a signal",
+    "A sudden drop in someone's usual movement can be informative, with several possible causes",
+    "Stillness nearly always indicates fear, since freezing is the oldest threat response"
    ],
    "answer": 2,
    "explain": "The fidgeting liar is a stereotype; research tends to find that people controlling themselves move their hands less, not more. But stillness has many causes, so it is a pointer, never a verdict. You can only see it at all if you know how much the person usually moves.",
@@ -226,10 +226,10 @@
   {
    "q": "Your own hand keeps going to your jaw during a tense conversation with your father about his finances. What is the most useful response?",
    "options": [
-    "Suppress it so that he doesn't read it",
-    "Treat it as early information about your own state: breathe out, lower your shoulders, and slow the conversation down",
-    "Point out that he seems tense too",
-    "Ignore it, since self-touch is meaningless"
+    "Suppress it, so that he does not read it as a sign that you are losing the argument",
+    "Treat it as early information about your own state: breathe out and slow the conversation down",
+    "Point out that he seems tense too, so that the two of you are on an equal footing",
+    "Ignore it, since self-touch is a meaningless habit and says nothing about your state"
    ],
    "answer": 1,
    "explain": "Your own pacifiers are the earliest signal you will ever have about your state. Suppressing them removes the information without removing the strain. Using them to regulate yourself, and the pace of the conversation, is the skill this chapter is built toward.",
