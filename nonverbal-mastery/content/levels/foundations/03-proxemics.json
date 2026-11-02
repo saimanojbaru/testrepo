@@ -1,0 +1,258 @@
+{
+ "id": "foundations-03",
+ "categoryId": "foundations",
+ "index": 3,
+ "tier": "FOUNDATION",
+ "title": "Proxemics",
+ "estimatedMinutes": 55,
+ "hook": "Everyone carries an invisible boundary that moves with mood, culture and relationship, and most people only find it by stepping over it.",
+ "why": "You know the feeling of someone standing too close: the urge to step back, the eyes that drift away, the conversation that suddenly needs ending. You probably know the opposite too, the friend who stays across the room when you wanted them nearer. Distance is one of the first things bodies negotiate, and one of the last things people talk about.\n\nThis chapter is about that negotiation. The study of it is called proxemics, a word coined by the anthropologist Edward Hall, and its research is more useful than its famous diagram of four rings suggests. You will learn where the rings came from and why they are only a starting map, what happens in the brain when someone comes too close, how people balance closeness against eye contact and posture, how distance shifts with culture, age and relationship, why angles matter as much as inches, and how crowds suspend the usual rules at a cost. Most of all, you will learn to read changes in distance as signals, and to let other people set the distance they need.",
+ "teach": [
+  {
+   "h": "Distance is a message both people are writing.",
+   "p": "In *The Hidden Dimension*, published in 1966, Edward Hall proposed four zones of interpersonal distance. Intimate distance, up to about 45 centimetres, is for comforting, embracing and whispering. Personal distance, up to about 1.2 metres, is the bubble of ordinary conversation between friends. Social distance, up to about 3.6 metres, is for business and for people one does not know well. Public distance lies beyond, the space of lectures and speeches.\n\nThe rings are useful, and they are widely misused. Hall drew them from observations of middle-class adults in the north-eastern United States in the middle of the twentieth century, and he was the first to insist that other groups use space differently. They describe one population's habits, not a law of human nature.\n\nThey also describe a negotiation rather than a fixed setting. When two people stand together, the distance between them is written by both: one steps in, the other eases back or holds still, and within a few seconds they settle at a distance each can tolerate. That settled distance tells you something about the relationship, the setting and the moment, and a change in it tells you more.\n\nSo the rings are a vocabulary, not a rule. They give you words for what you see: this conversation has moved from social to personal distance, or that man keeps everyone at the outer edge of the personal zone. What the movement means depends, as always, on the person's own baseline and the situation they are in.\n\nStart every reading of distance by asking who is setting it, and whether it has just changed.",
+   "poseId": "p_pair_face_to_face",
+   "disconfirm": "If, across many settings and groups, people's comfortable conversational distances clustered tightly around Hall's figures whatever their culture and relationship, the rings would be closer to a rule than this block allows. The large international studies described below found wide variation instead.",
+   "diagram": "proxemics-rings"
+  },
+  {
+   "h": "The boundary lives in the brain.",
+   "p": "Personal space is not only a social convention. It is felt, and the feeling has a basis in the brain. In 2009 Daniel Kennedy, Ralph Adolphs and colleagues studied a woman known in research as SM, whose amygdalae, two small regions involved in detecting threat, had been destroyed by a rare disease. Asked to say when an approaching experimenter came too close, SM let him come nearly nose to nose. She knew in principle that people keep a distance, but she did not feel the discomfort that tells everyone else when to stop.\n\nIn the same study, brain scans of people without such damage showed the amygdala becoming more active when they knew the experimenter was standing close to the scanner, even though they could not see him. The boundary works partly as an alarm, and the alarm goes off whether or not anyone means harm.\n\nResearchers often measure that boundary with a simple method: one person walks slowly towards another, who says *stop* at the moment the approach becomes uncomfortable. Distances measured this way vary with who is approaching, from which direction, how fast, and whether they are making eye contact. The boundary is not a circle drawn on the floor. It expands and contracts with threat, mood and trust.\n\nFor a reader, two consequences follow. When someone steps back from you, they may be responding to an alarm they did not choose and cannot easily switch off. And when you step closer to someone, you may be setting off that alarm whatever your intentions.\n\nDistance is felt before it is thought about.",
+   "poseId": "p_pair_too_close",
+   "disconfirm": "If people's reported discomfort at close range turned out not to vary with how threatening or trusted the approaching person was, the idea of a flexible, threat-tuned boundary would be wrong. Studies using the stop-distance method have repeatedly found that it does vary."
+  },
+  {
+   "h": "Closeness is balanced, not fixed.",
+   "p": "In 1965 Michael Argyle and Janet Dean proposed that people balance several signals of intimacy at once: distance, eye contact, the angle of their bodies, smiling and the topic of conversation. When one rises above what feels comfortable, people tend to compensate by lowering another. Their theory became known as the intimacy equilibrium model.\n\nYou have seen it in every lift. Strangers forced into intimate distance stop looking at each other, turn to face the doors, fall silent and watch the floor numbers. They cannot restore the distance, so they reduce everything else. The same thing happens in conversation. When someone comes closer than you would like, you are likely to look away more, turn your shoulders slightly, lean back, or talk about something less personal.\n\nThe effect is robust enough to appear even with people who are not there. In 2003 Jeremy Bailenson and colleagues placed people in a virtual room with a computer-generated person. Participants kept more distance from a virtual person who held their gaze than from one who did not, as if mutual gaze had raised the intimacy and distance had to make up for it.\n\nThis gives you a useful set of signals. Compensation is a sign that the current closeness, of distance or of topic, is more than someone wants. A colleague who leans back, glances away and shortens his answers as you step in is very likely telling you to step out. And reciprocity, moving closer, holding more eye contact, turning to face you, often signals the opposite.\n\nWhen you see compensation, the polite reading is the simplest: give back some room.",
+   "poseId": "p_posture_lean_away_stand",
+   "disconfirm": "If people did not look away, turn or lean back more often when someone stood closer than usual, the equilibrium idea would not hold. Test it gently in your own conversations by noticing what others do when the distance changes, never by crowding anyone on purpose.",
+   "pullQuote": "Compensation is a sign that the current closeness is more than someone wants."
+  },
+  {
+   "h": "The boundary moves with culture, age and relationship.",
+   "p": "In 2017 Agnieszka Sorokowska and a large international team asked nearly nine thousand people in forty-two countries how close they would comfortably stand to a stranger, to an acquaintance and to someone close to them. The answers varied widely. For strangers, the preferred distance ranged from well under a metre in some countries to around one and a half metres in others. In almost every country people wanted much less distance from close friends and family than from acquaintances, and less from acquaintances than from strangers.\n\nOther patterns appeared too. On average, women in many countries preferred more distance from strangers than men did, and older people preferred more distance than younger ones. Countries with warmer climates tended towards somewhat smaller distances. None of these averages tells you what any particular person prefers; the spread within each country was large.\n\nPersonal history matters as much as nationality. People who grew up in crowded homes, people who have been assaulted, people who work in professions that require closeness, such as nursing or barbering, and people whose senses are easily overwhelmed may all carry boundaries very different from the average for their culture. The chapter on cross-cultural calibration in Part VI explains how to build a local baseline rather than relying on national averages.\n\nRelationship is the strongest influence of all, and it changes within a single conversation. Two people who start at social distance often drift inward as trust grows, and drift outward again when a topic turns sour.\n\nThe question is never how close people should stand. It is how close this person stands, with you, here, and whether that has changed.",
+   "poseId": "p_pair_angled",
+   "disconfirm": "If you find that a person's comfortable distance from you stays exactly the same across settings, topics and stages of your relationship, their boundary is unusually fixed, or you have not yet watched it closely. Note their distance at the start and end of a few conversations before deciding."
+  },
+  {
+   "h": "Angles matter as much as inches.",
+   "p": "Distance is only half of the spatial message. The other half is orientation: whether two people face each other squarely, stand at an angle, or sit side by side.\n\nIn the 1960s the psychologist Robert Sommer studied where people chose to sit around tables, depending on what they had been asked to do. For casual conversation, people tended to choose the corner of a table, at right angles to each other, or directly across. For cooperating on a task, they chose to sit side by side. For competing, they chose to sit opposite each other, often at a distance. For working separately at the same table, they sat as far apart as they could.\n\nFace-to-face orientation intensifies everything. It is the arrangement of interviews, confrontations and courtship, and it makes eye contact hard to avoid. An angle of around ninety degrees keeps the conversation connected while giving both people somewhere else to look. Side by side reduces the intensity further, which is why many difficult conversations go better in a car, on a walk or at a bar than across a table. Part III develops this as the side-by-side principle.\n\nApproach angles matter too. Walking straight up to someone from the front, especially someone who is seated or smaller than you, feels more confronting than approaching from slightly to one side and pausing at the edge of their space.\n\nWhen you read a pair or a group, notice the angles as well as the gaps. Two people who turn from facing each other to standing side by side have changed the conversation, whatever they are saying.",
+   "poseId": "p_pair_side_by_side",
+   "disconfirm": "If difficult conversations you hold side by side or at an angle turn out no easier, over several tries, than those held face to face, orientation does not matter much for you and the people you talk with. Compare a few of each before deciding."
+  },
+  {
+   "h": "Crowds suspend the rules, at a cost.",
+   "p": "On a packed train, nobody can keep their preferred distance, and everyone knows it. People cope by changing everything else: they look at their phones or the floor, keep their bodies still, avoid touching hands and faces, and give no sign of noticing the person pressed against their shoulder. The sociologist Erving Goffman called a version of this civil inattention, and the chapter on the sixty-second scan in Part VI describes it in quieter settings.\n\nThe cost is real. In 2007 Gary Evans and Richard Wener studied commuters on trains into New York City. What predicted stress best, measured by saliva cortisol, by a simple proofreading task and by the commuters' own reports, was not how crowded the carriage was overall but how close the people next to them were sitting. Having a stranger pressed against you for an hour wears on the body even when it is accepted as normal.\n\nFor a reader, crowds produce a great deal of behaviour that looks like withdrawal, tension or coldness, and almost none of it is personal. The man who will not meet your eye on the platform is not avoiding you. He is coping with the crowd. Readings of individuals in crowded places should be held especially loosely.\n\nCrowds also change how quickly people reach their limit. Someone who has spent an hour on a packed train may arrive at your meeting with less tolerance for closeness than usual. Their baseline for the day has shifted.\n\nRead behaviour in a crush as the crush, not as the person.",
+   "poseId": "p_stand_narrow_closed",
+   "disconfirm": "If people's tension and withdrawal in crowded places turned out to predict how they behaved towards you personally once the crowd had gone, the advice to treat crowd behaviour as impersonal would be too cautious. In your own observations, check what the same people do once they have space again."
+  },
+  {
+   "h": "Read the change, and let them set the distance.",
+   "p": "The most useful proxemic signals are changes against a baseline. A colleague who usually stands at an easy arm's length and steps back half a pace when you raise a topic has told you something about the topic, or about you, or about the moment. A friend who moves closer when the conversation turns to his worries is telling you something about trust. A child who edges away from a visiting relative is telling you something too, and it deserves attention rather than correction.\n\nNote the timing, as with any reading. What was said or done just before the distance changed? Did anything else change at the same moment: eye contact, the angle of the shoulders, the voice? A step back with no other change may simply be someone shifting their weight. A step back with a turned shoulder, a glance at the door and shorter answers is a cluster.\n\nThen apply the rule that makes all of this kind rather than calculating: let the other person set the distance. If they step back, do not follow them. If they step closer, you may stay where you are or move a little, but do not close the gap entirely. With children, people who are seated, and anyone over whom you have power, err further: crouch to a child's height, sit beside rather than stand over, approach a desk from the side.\n\nProxemics is also something you write. Your own habits of distance were learned somewhere, and they may be closer or further than the people around you expect. Ask an honest mirror whether you tend to crowd people or hold them at a distance.\n\nDistance freely given is a form of respect, and people notice it.",
+   "poseId": "p_pair_adult_child",
+   "disconfirm": "If letting others set the distance made people no more comfortable with you, by their own account and by how long they stayed and how much they said, the rule would add nothing in your relationships. Ask two people you trust before and after a month of practising it."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_too_close",
+   "doCaption": "Easing back half a step when he does.",
+   "dontCaption": "Holding your ground as he leans away.",
+   "annotation": "Leaning back and looking away are compensation. The simplest reading is that he wants more room, so give it."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_face_to_face",
+   "doCaption": "Side by side, looking at the same thing.",
+   "dontCaption": "Squared up, face to face, for a hard conversation.",
+   "annotation": "Facing someone squarely intensifies everything. Side by side lowers the pressure and makes hard topics easier to hold."
+  },
+  {
+   "doPoseId": "p_greet_acknowledge",
+   "dontPoseId": "p_walk_toward",
+   "doCaption": "Approaching at an angle, and pausing at the edge.",
+   "dontCaption": "Walking straight up to someone from the front.",
+   "annotation": "A direct frontal approach feels more confronting, especially to someone seated or smaller. An angle and a pause let them invite you in."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_pair_seated_across",
+   "doCaption": "At the corner, turned slightly towards each other.",
+   "dontCaption": "Across a desk for a friendly chat.",
+   "annotation": "Sommer found people choose corners for conversation and opposite seats for competition. Seating writes the tone before anyone speaks."
+  }
+ ],
+ "caseStudy": "Luca, thirty-eight, manages a team of designers in an open-plan office. He grew up in a big, loud family where people stood close and touched shoulders when they talked, and he has always been a leaner: when he wants to see someone's work, he comes up behind their chair and looks over their shoulder at the screen.\n\nIn his first appraisal round as a manager, one designer, Hana, tells him, carefully, that she finds it hard to think when he does this. Luca is surprised. He watches himself for a week. Each time he leans over a desk, the person at it goes still, their shoulders rise slightly, and their answers get shorter. Several of them lean away from the screen they are meant to be showing him. He had read this as concentration. It was compensation.\n\nHe changes one habit. Instead of coming up from behind, he approaches from the side, asks whether it is a good moment, and pulls up a chair to sit beside the desk at an angle, a little further back than feels natural to him. The difference is immediate. Hana starts turning her screen towards him herself. People explain their work at greater length, and two of them start coming to his desk to show him things, which nobody had done before.\n\nHe also notices something about one colleague, Bilal. When Bilal is excited about an idea, he moves closer, sometimes very close. Luca learns that this is Bilal's baseline for enthusiasm, not a lack of manners, and that Bilal steps back to his usual distance when he is unsure.\n\nIn his journal Luca writes that he had spent years reading people's reactions to his own closeness as their personalities. Now he lets them set the distance, and watches what they do with it.",
+ "observe": [
+  "In a lift or a queue, notice how people adjust their eyes, posture and silence to cope with being closer to strangers than they would choose.",
+  "In your next standing conversation, notice who sets the distance and what happens to eye contact and posture when one of you shifts.",
+  "In a café or waiting room with many empty seats, notice where each newcomer chooses to sit in relation to the people already there."
+ ],
+ "drills": [
+  {
+   "name": "Stop Distance",
+   "minutes": 15,
+   "steps": [
+    "With a willing friend, stand about four metres apart in a quiet space.",
+    "Walk slowly towards them until they say stop, and measure the distance with a tape or by counting floor tiles.",
+    "Repeat with you approaching from the side, and again while holding eye contact instead of looking at their shoulder.",
+    "Swap roles and repeat all three.",
+    "Write down how the distances changed and how each approach felt to each of you."
+   ]
+  },
+  {
+   "name": "Compensation Watch",
+   "minutes": 15,
+   "steps": [
+    "Over two or three days, watch for moments in your own conversations when someone leans back, looks away or turns slightly.",
+    "Note what had just happened to the distance, the topic or the eye contact.",
+    "Note what you did next, and whether they settled once you did it.",
+    "Look for moments of reciprocity too, when someone moved closer or turned towards you.",
+    "Write one sentence about what tends to trigger compensation in the people you talk with most."
+   ]
+  },
+  {
+   "name": "Seat Choice",
+   "minutes": 15,
+   "steps": [
+    "In a café, library or waiting room, sit where you can see the seating without staring at anyone.",
+    "Each time someone new arrives, predict where they will sit and give the prediction a percentage.",
+    "Record where they actually sit, in relation to the people already seated.",
+    "Make at least ten predictions.",
+    "Score them and note which features of the room you relied on."
+   ]
+  },
+  {
+   "name": "Three Angles",
+   "minutes": 20,
+   "steps": [
+    "Arrange three short conversations with the same friend on similar topics, each about five minutes.",
+    "Hold the first across a table, the second at a corner, and the third side by side.",
+    "After each, both of you rate from one to ten how easy it felt to talk.",
+    "Note how much eye contact each arrangement involved.",
+    "Write down which arrangement you would choose for a hard conversation, and why."
+   ]
+  },
+  {
+   "name": "Let Them Set It",
+   "minutes": 10,
+   "steps": [
+    "For one day, in every standing conversation, let the other person choose the distance.",
+    "If they step back, do not follow; if they step closer, move no more than half the gap.",
+    "With anyone seated or smaller than you, sit or crouch to their level where it is appropriate.",
+    "Notice any conversation that felt different from usual.",
+    "At the end of the day, write what you noticed about the distances you would have chosen yourself."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "How are Edward Hall's four distance zones best treated?",
+   "options": [
+    "As fixed rules of comfortable distance that hold for people everywhere",
+    "As a starting map from one group of people, adjusted for each setting",
+    "As measurements that apply only between strangers meeting for the first time",
+    "As distances to be enforced strictly in order to avoid causing any offence"
+   ],
+   "answer": 1,
+   "explain": "Hall drew his zones from mid-century middle-class Americans and stressed that other groups differ. They give you words for what you see; the person, relationship and setting decide what the distance means.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Kennedy and colleagues find about SM, a woman whose amygdalae had been destroyed?",
+   "options": [
+    "She felt no discomfort at close range and let an experimenter come nearly nose to nose",
+    "She kept unusually large distances from everyone because she felt constantly threatened",
+    "She could not tell how far away anyone was, though she felt discomfort normally",
+    "She felt discomfort only with strangers and never with people she already knew well"
+   ],
+   "answer": 0,
+   "explain": "SM knew people keep a distance but did not feel the alarm that tells others when to stop. The finding suggests personal space works partly as a felt threat signal, not only as a social rule.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "According to Argyle and Dean's equilibrium idea, what tends to happen when someone stands closer than is comfortable?",
+   "options": [
+    "The other person moves closer still, to match them",
+    "Nothing much happens, unless the two are strangers",
+    "The other person compensates, for example by looking away",
+    "Both people raise their voices to cover the awkwardness"
+   ],
+   "answer": 2,
+   "explain": "People balance distance, eye contact, angle and topic. When one becomes too intimate they lower another, which is why lifts fall silent and why a colleague leaning back as you step in is likely asking for room.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague leans back and glances away each time you step closer to make a point. What fits this chapter?",
+   "options": [
+    "Keep the distance as it is, since he will get used to it soon enough",
+    "Step closer still, to show him that you are confident in your idea",
+    "Ask him directly whether there is some reason he dislikes you",
+    "Ease back half a step and let him set the distance"
+   ],
+   "answer": 3,
+   "explain": "Leaning back and looking away are compensation for too much closeness. Easing back is the simplest test of that reading, and letting him set the distance costs you nothing.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Sorokowska and colleagues find when they asked people in forty-two countries about comfortable distances?",
+   "options": [
+    "Comfortable distances were almost the same in every country studied",
+    "Preferred distance to strangers varied widely between countries",
+    "Only men preferred to keep more distance from strangers than friends",
+    "Distances depended on the climate and on nothing else that was measured"
+   ],
+   "answer": 1,
+   "explain": "Distances to strangers ranged from under a metre to about one and a half metres between countries, and varied widely within them too. Relationship mattered everywhere: people wanted much less distance from those close to them.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You need to talk with your teenage son about something sensitive. Which arrangement best fits this chapter?",
+   "options": [
+    "Across the kitchen table, facing him directly so he knows it is serious",
+    "Standing in his bedroom doorway while he sits on the bed and listens",
+    "Side by side, for example in the car or while walking somewhere together",
+    "Close in front of him, so that he cannot easily avoid the conversation"
+   ],
+   "answer": 2,
+   "explain": "Facing someone squarely, or standing over them, intensifies a conversation and makes eye contact hard to escape. Side by side lowers the pressure, which often makes it easier for a teenager to talk.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific person you see often, at work or at home, and the distance at which the two of you usually talk. Who sets it, you or them? Describe one moment when that distance changed, closer or further, and what had just happened. Looking back, was anyone compensating, by looking away, turning or leaning back? What would you do differently next time to let them set the distance they need?",
+  "guidance": "Many people discover that they have been setting the distance in most of their relationships without noticing. If you are taller, more senior or simply more confident than the other person, the answer is especially likely to be you. Try to recall the moment of change precisely, because the timing is what makes it readable.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to treat Hall's rings as rules and to judge people who stand closer or further as rude or cold, when they are following their own baseline or culture. The second is to read crowd behaviour as personal, taking the withdrawn faces of a packed train as a verdict on you. The third is to test someone's boundary by crowding them to see what they do, which turns a reading into an intrusion. And the most common in everyday life is simply failing to notice compensation, so that a man keeps stepping in while the person in front of him keeps leaning away, and both leave the conversation without knowing why it went badly. Let others set the distance, and watch what they do with it.",
+ "furtherStudy": [
+  {
+   "work": "The Hidden Dimension",
+   "author": "Edward T. Hall",
+   "note": "Doubleday, 1966. The origin of the four zones, and a reminder from Hall himself that they belong to one culture."
+  },
+  {
+   "work": "Personal space regulation by the human amygdala",
+   "author": "Daniel P. Kennedy, Jan Gläscher, J. Michael Tyszka and Ralph Adolphs",
+   "note": "Nature Neuroscience 12(10), 2009. The study of SM and the felt alarm behind personal space."
+  },
+  {
+   "work": "Preferred interpersonal distances: A global comparison",
+   "author": "Agnieszka Sorokowska, Piotr Sorokowski, Peter Hilpert and colleagues",
+   "note": "Journal of Cross-Cultural Psychology 48(4), 2017. Nearly nine thousand people in forty-two countries."
+  },
+  {
+   "work": "Eye-contact, distance and affiliation",
+   "author": "Michael Argyle and Janet Dean",
+   "note": "Sociometry 28(3), 1965. The original statement of the intimacy equilibrium idea."
+  }
+ ],
+ "reviewPrompt": "In three conversations this week, let the other person set the distance, and note what they did when the topic changed."
+}

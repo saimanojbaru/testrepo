@@ -1,0 +1,260 @@
+{
+ "id": "foundations-04",
+ "categoryId": "foundations",
+ "index": 4,
+ "tier": "INTERMEDIATE",
+ "title": "The Gaze",
+ "estimatedMinutes": 60,
+ "hook": "Eyes are the one part of the body built to be read, which is exactly why people learn to manage them first.",
+ "why": "Eye contact carries more folklore than any other signal. Look people in the eye to be trusted. A shifty gaze means a guilty mind. Pupils widen when someone likes you. Liars look up and to the right. Most of this is wrong, and some of it does real harm, because it teaches people to distrust anyone whose eyes behave differently from their own.\n\nAnd yet the eyes really are special. They are the part of the body most clearly shaped by evolution to be read, and gaze does important work in every conversation: it shows where attention is going, it helps pass the turn from speaker to speaker, and it regulates closeness. This chapter separates the work from the folklore. You will learn why human eyes are built to be seen, how gaze runs a conversation, how long eye contact people actually prefer, why looking away so often means thinking, why some people find eye contact painful, what pupils and blinks can and cannot tell you, and how to follow other people's gaze while minding your own.",
+ "teach": [
+  {
+   "h": "The human eye is built to be read.",
+   "p": "Look at the eyes of almost any other primate and you will see mostly iris and dark tissue. Look at a human eye and you see a dark iris set in a wide field of white. In 1997 Hiromi Kobayashi and Shiro Kohshima compared the eyes of dozens of primate species and found the human eye unusual in just this way: its white sclera is widely exposed and contrasts sharply with the iris, which makes the direction of a person's gaze easy to see from a distance.\n\nWhy would an animal advertise where it is looking? One answer, later called the cooperative eye hypothesis, is that for a species that hunts, builds and raises children together, showing others where you are looking is more useful than hiding it. In 2007 Michael Tomasello and colleagues found that human infants of about a year followed the direction of an adult's eyes, while great apes mostly followed the direction of the head. Babies learn very early that the eyes, not just the face, point at what matters.\n\nThe habit stays with us. In 1998 Chris Friesen and Alan Kingstone showed that when people see a face looking to one side, their attention shifts in the same direction automatically, even when the gaze tells them nothing useful. We cannot easily help following someone's eyes.\n\nFor a reader, this has two consequences. Gaze is one of the most informative signals you have, because it shows where attention is. And because everyone has known since infancy that eyes are watched, gaze is also one of the first things people learn to manage. A steady, confident gaze can be practised. So can an innocent one.\n\nRead gaze for where it goes, before you read it for what it means.",
+   "poseId": "p_gaze_direct",
+   "disconfirm": "If people turned out not to shift their attention towards where others are looking, unless the gaze was useful to them, the idea that gaze following is automatic would be wrong. Studies of gaze cueing have repeatedly found the shift, even when it hinders the task.",
+   "diagram": "face-gaze"
+  },
+  {
+   "h": "Gaze runs the conversation.",
+   "p": "In 1967 Adam Kendon filmed pairs of people talking and traced where each was looking, second by second. He found a pattern that later research has largely confirmed. Listeners look at speakers much more than speakers look at listeners. Speakers tend to look away as they begin a long turn, as if to concentrate and to signal that they are not yet finished, and to look back at the listener as they come to the end of it, which helps hand over the turn.\n\nMichael Argyle and Mark Cook, summarising the research in 1976, gave rough figures for typical Western pairs: listeners looking at the speaker about three quarters of the time, speakers looking at the listener well under half the time, and mutual gaze, both looking at once, occupying only a fraction of the conversation and usually in short spells.\n\nThis pattern is the baseline against which most gaze readings should be made, and it already undoes a piece of folklore. A speaker who looks away while explaining something is not being evasive. He is doing what speakers ordinarily do. A listener who looks away from you repeatedly while you speak is more unusual, and may be distracted, uncomfortable, thinking hard about what you said, or simply tired.\n\nGaze also shows who is expected to speak next. A speaker who ends a question looking at one person in a group has selected that person, and others will usually wait. The chapter on reading groups in Part VI builds on this.\n\nWhen you read someone's gaze, first ask whether they were speaking or listening. The same look means different things in each role.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "If you tally where people look in recorded conversations and find speakers looking at listeners as much as listeners look at speakers, the pattern does not hold for the people you watched. Try three different pairs before drawing a conclusion, since individuals vary.",
+   "diagram": "gaze-cone"
+  },
+  {
+   "h": "How long is long enough.",
+   "p": "How long should eye contact last? In 2016 Nicola Binetti, Alan Johnston, Isabelle Mareschal and colleagues asked several hundred visitors to a London science museum to watch videos of an actor looking straight at them for different lengths of time, and to say whether the gaze felt too short or too long. On average, people preferred about three seconds, and most preferred somewhere between two and five. Hardly anyone preferred the very shortest or the very longest durations they were shown.\n\nLonger gaze is not simply more of the same. Reviews of the research, including one by Chris Kleinke in 1986, suggest that prolonged gaze intensifies whatever is already happening between two people. Between people who like each other, it reads as warmth or intimacy. Between people in conflict, it reads as challenge. Between strangers, it can read as threat or as unwanted interest. The gaze itself is the same. The relationship decides what it says.\n\nThis links to the intimacy balance described in the chapter on proxemics. When distance is small, comfortable eye contact gets shorter, which is why people in lifts look at the floor. When distance is large, longer gaze is easier to bear.\n\nFor a reader, these findings set a rough baseline and offer one useful sign. Eye contact that is held much longer than a few seconds, by someone who usually breaks it sooner, has changed the temperature of the conversation in some direction, and the context tells you which. And for your own behaviour, the advice to look people in the eye should be read as *look, then look away, then look back*, not as *stare*.\n\nLong gaze turns the volume up on whatever is already there.",
+   "poseId": "p_stand_head_tilt",
+   "disconfirm": "If people you talk with seem equally comfortable whether you hold eye contact for two seconds or ten, preferred durations vary more in your circle than the museum study found. Ask two honest mirrors how your eye contact feels before relying on either."
+  },
+  {
+   "h": "Looking away is often thinking.",
+   "p": "One of the most widespread beliefs about gaze is that people who look away are hiding something. A worldwide survey of beliefs about lying, carried out in fifty-eight countries in 2006, found it to be the most commonly held belief of all. The chapter on deception explains why it does not survive the evidence. This block explains what looking away usually is.\n\nIn 1998 Arthur Glenberg and his colleagues found that people look away from a face more often when they are asked harder questions, and that looking away actually helps: people who were allowed to avert their gaze, or to close their eyes, answered difficult questions more accurately than people who were made to keep looking at a face. A face is a rich, distracting stimulus, and the mind uses gaze aversion to shut it out.\n\nGwyneth Doherty-Sneddon and Fiona Phelps found the same in children in 2005. Children averted their gaze more when questions were harder, and did so more in face-to-face conversation than over a video link, which suggests that the social pressure of a face adds to the load. Teachers who read a child's look away as inattention may be interrupting the very thing they asked for.\n\nSo when someone looks away as they answer, the first rival explanation is effort, and it is often the right one. Notice where the eyes go and for how long. A glance up or to the side for a few seconds while someone recalls a date is the face of thinking. Whether there is anything more going on cannot be told from the eyes alone.\n\nIf you want better answers, give people room to look away.",
+   "poseId": "p_gaze_up",
+   "disconfirm": "If people did not look away more on harder questions, or if looking away did not help them answer, the effort explanation would be weak. Try asking a friend a few easy and a few hard questions and watch their eyes; most people find the difference immediately.",
+   "pullQuote": "If you want better answers, give people room to look away."
+  },
+  {
+   "h": "Some eyes will not meet yours, for good reasons.",
+   "p": "Many people find eye contact uncomfortable, and for some it is genuinely painful. In 2017 Dominic Trevisan, Elina Birmingham and colleagues analysed first-hand accounts from autistic adults and teenagers about eye contact. Many described it as intensely uncomfortable, overwhelming or distracting, some as physically painful. Several explained that they could listen properly only if they were not looking at the speaker's eyes. Some had been told all their lives that they were rude, shifty or not paying attention.\n\nAutism is only one reason. In many cultures, lowering the eyes before an older or more senior person shows respect, and the chapter on cross-cultural calibration in Part VI describes research in which people from Japan and Finland read the same direct gaze very differently. Shy and socially anxious people often look less. People who are grieving, ashamed or exhausted may look down. Deaf people who lipread may look at the mouth rather than the eyes. People with some kinds of visual impairment may not be looking where they appear to be.\n\nAll of this points to the same rule as every other chapter. A person's gaze must be read against their own baseline, not against an imagined standard of how eyes ought to behave. A man who never meets anyone's eyes is not telling you anything special when he does not meet yours. A man who usually meets your eyes and suddenly cannot has changed, and the change is worth noticing.\n\nWhen a person's gaze differs from yours, judge them by what they say and do. That is where most of the information is.",
+   "poseId": "p_gaze_down_away",
+   "disconfirm": "If people whose habitual gaze is low or averted turned out, when you came to know them well, to be consistently less honest or less attentive than others, the advice in this block would be wrong. The first-hand research and cross-cultural studies point the other way."
+  },
+  {
+   "h": "Pupils, blinks and lids.",
+   "p": "The pupils change size constantly, and some of the change reflects what is happening in the mind. In 1966 Daniel Kahneman and Jackson Beatty asked people to hold strings of digits in memory and found that their pupils widened as the strings grew longer and narrowed again as they reported them. Pupil size became one of psychology's best measures of mental effort.\n\nThe popular claim that pupils widen when people see something or someone they like goes back to work by Eckhard Hess in the 1960s. Some of it holds up in laboratory conditions, but pupils respond far more strongly to light, and also to effort, arousal and fatigue. In ordinary conversation, with changing light and at normal distances, you cannot see small changes in someone's pupils reliably, and you could not tell their cause if you did. For practical reading, pupils are best left alone.\n\nBlinking is a little more visible and no more decisive. People tend to blink more when aroused or stressed, and less when concentrating on something visual, such as reading or watching closely. A sudden change in someone's blink rate against their baseline is worth noting as one signal of a change in state. It does not tell you which state.\n\nThe lids carry clearer signals than either. Upper lids that rise and show white above the iris come with surprise, alarm and intense interest. Lids that tighten and narrow the eye without the cheeks rising come with concentration, scrutiny, anger and bright light. Lids that droop come with fatigue. The face plates show the difference, and as always the movement comes first and the meaning second.\n\nWatch the lids. Leave the pupils to the laboratory.",
+   "poseId": "p_sit_forward_engaged",
+   "disconfirm": "If you could reliably see changes in a conversation partner's pupil size at normal distance and in ordinary light, and those changes tracked their interest rather than the light, this block would undersell pupils. Most people who try find they cannot see the changes at all.",
+   "diagram": "face-lids"
+  },
+  {
+   "h": "Follow the gaze, and mind your own.",
+   "p": "Because gaze shows where attention is going, following it is one of the most useful things a reader can do. When someone glances at the door, the clock or their phone, their attention has gone there, at least for a moment. When someone in a meeting glances at their manager before answering a question, the manager's view may matter to the answer. When a person's eyes return again and again to one object, one person or one part of a document, it has their attention for a reason.\n\nAs always, note the timing. A glance at the clock as you start your second hour of explanation has a likely meaning. A glance at the clock when the clock chimes has an obvious one. And gaze tells you where attention went, not why. The colleague who looks at the door may be waiting for someone, worried about being late, or wishing to leave you.\n\nYour own gaze does the same work in the other direction. When you glance at your watch while someone is speaking, they see your attention leave them. When you look at one person in a group as you finish a question, you have chosen who answers. When you look hard at someone for a long time, you raise the intensity of the moment, whether you mean to or not.\n\nSo the rule for your own eyes is simple. Put your attention where you want people to feel it, and keep your phone and the clock out of your line of sight when someone needs to feel heard. The soft gaze described in Part VI, which rests on a face and moves away naturally, is the gaze people find easiest to talk to.\n\nWhere your eyes go, your attention is seen to go.",
+   "poseId": "p_pro_check_watch",
+   "disconfirm": "If people you talk with seemed not to notice or mind when your eyes went to your watch or phone while they spoke, gaze would carry less weight in your circle than this block suggests. Ask an honest mirror whether they have noticed it, before assuming they have not."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gaze_direct",
+   "doCaption": "Looking, looking away, and looking back.",
+   "dontCaption": "Holding eye contact like a contest.",
+   "annotation": "Most people prefer eye contact of a few seconds at a time. Held much longer, gaze turns up the intensity of whatever is already happening."
+  },
+  {
+   "doPoseId": "p_greet_lowered_gaze",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Knowing it can be respect, shyness or thought.",
+   "dontCaption": "Reading a lowered gaze as guilt.",
+   "annotation": "A lowered gaze has many causes, from culture to autism to grief. Read it against the person's own baseline."
+  },
+  {
+   "doPoseId": "p_gaze_up",
+   "dontPoseId": "p_gaze_aside",
+   "doCaption": "Seeing someone search for an answer.",
+   "dontCaption": "Reading a look away as evasion.",
+   "annotation": "People look away more when questions are harder, and it helps them think. Effort is the first rival to consider."
+  },
+  {
+   "doPoseId": "p_sit_forward_engaged",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Eyes on him, the clock out of sight.",
+   "dontCaption": "Glancing at your watch while he talks.",
+   "annotation": "People see your attention go where your eyes go. Keep the clock and the phone out of your line of sight when someone needs to be heard."
+  }
+ ],
+ "caseStudy": "Ibrahim, fifty-two, has taught maths at the same secondary school for twenty years. He has always believed that a pupil who looks away when asked a question has not been listening, and he says so: *Eyes up here, please.* He has a reputation as strict but fair.\n\nAt a training day on questioning, a speaker mentions research showing that people look away more when questions are harder, and that it helps them think. Ibrahim is sceptical, so he tries it. In his next lessons he notices where pupils' eyes go after he asks a question. The ones who answer instantly usually hold his gaze. The ones who look up at the ceiling or out of the window for a few seconds often give the best answers, when he waits for them. When he says *eyes up here*, the answers get shorter and worse.\n\nHe also thinks about Rhys, a quiet boy in Year Ten who never looks at him at all. Ibrahim had marked him as disengaged. Looking at Rhys's work, he finds it among the most careful in the class. A conversation with the school's special educational needs coordinator tells him that Rhys is autistic and finds eye contact overwhelming; he listens best looking at the desk.\n\nIbrahim changes two habits. After asking a question, he waits several seconds, and he looks away himself, at the board or his notes, so that the pupil does not feel stared at while thinking. And he stops asking anyone to look at him.\n\nBy the end of term more pupils are answering, and the answers are longer. Rhys asks his first question of the year, to the desk, and it is a good one. Ibrahim writes it on the board.",
+ "observe": [
+  "In your next conversation, notice when the other person looks away: as they start an answer, in the middle of it, or as they finish.",
+  "Watch someone answer a hard, unscripted question on television, and notice where their eyes go while they search for the answer.",
+  "Notice how long you hold eye contact with a stranger as you pass in the street, and what happens when either of you holds it a moment longer."
+ ],
+ "drills": [
+  {
+   "name": "Gaze Tally",
+   "minutes": 15,
+   "steps": [
+    "Choose a recorded conversation between two people, at least five minutes long, filmed so that both faces are visible.",
+    "Pick one person and, for three minutes, note each time they look at their partner and each time they look away.",
+    "Mark separately whether they were speaking or listening at the time.",
+    "Work out roughly how much of the time they looked at their partner while speaking and while listening.",
+    "Note any moments where they looked back at their partner just before handing over the turn."
+   ]
+  },
+  {
+   "name": "The Hard Question",
+   "minutes": 10,
+   "steps": [
+    "Ask a willing friend five easy questions and five hard ones, such as naming their address and recalling what they ate a week ago on Tuesday.",
+    "Watch where their eyes go during each answer, without commenting.",
+    "Note how often and for how long they looked away on each kind of question.",
+    "Swap roles and ask them to watch you.",
+    "Write down each of your gaze baselines for easy and hard questions."
+   ]
+  },
+  {
+   "name": "Look, Away, Back",
+   "minutes": 15,
+   "steps": [
+    "In three ordinary conversations this week, practise holding eye contact for a few seconds, then looking away naturally, then looking back.",
+    "Notice whether you tend to stare or to avoid eye contact when you are not thinking about it.",
+    "Notice how the other person responds when you look away while they are speaking, and when you look back.",
+    "Afterwards, ask one person you trust how your eye contact felt to them.",
+    "Write down one adjustment to keep."
+   ]
+  },
+  {
+   "name": "Follow the Eyes",
+   "minutes": 15,
+   "steps": [
+    "In a meeting, a café or a family gathering, choose three moments to notice where people's eyes go, such as a door opening or a name being mentioned.",
+    "Note who looked where, and for how long.",
+    "For each glance, write what it seemed to point to.",
+    "Write one rival reason for each glance.",
+    "Check any you can, by watching what happens next."
+   ]
+  },
+  {
+   "name": "Room to Think",
+   "minutes": 10,
+   "steps": [
+    "In your next few conversations, after asking a question that needs thought, wait at least three seconds before saying anything else.",
+    "While you wait, look away yourself, at your notes, a window or your cup.",
+    "Notice whether the answer is longer or more considered than usual.",
+    "Note how the silence felt to you.",
+    "Write down whether you will keep the habit, and with whom."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague looks away while answering a difficult question. What does the research most support?",
+   "options": [
+    "That she is evading the question and probably hiding something from you",
+    "That she lacks confidence in her answer, so you should press her on it",
+    "That she may be thinking, since looking away helps people answer hard questions",
+    "That she does not respect you, since she will not hold your eyes for long"
+   ],
+   "answer": 2,
+   "explain": "People look away more on harder questions, and doing so improves their answers by shutting out a distracting face. Effort is the first rival to consider; the eyes alone cannot tell you whether anything more is going on.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Tomasello and colleagues' study, what did one-year-old infants follow that great apes mostly did not?",
+   "options": [
+    "The direction of an adult's eyes, not just the head",
+    "The direction in which an adult pointed with a finger",
+    "The sound of an adult's voice from behind a screen",
+    "The movement of an adult's hands towards an object"
+   ],
+   "answer": 0,
+   "explain": "Infants followed the eyes themselves, while apes mostly followed the head. The finding supports the idea that human eyes, with their exposed white, evolved partly to be read.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In the museum study by Binetti and colleagues, what length of eye contact did people prefer on average?",
+   "options": [
+    "Under half a second, no more than a brief glance",
+    "About ten seconds, held steadily and without a break",
+    "As long as possible, with no clear upper limit at all",
+    "About three seconds, with most between two and five"
+   ],
+   "answer": 3,
+   "explain": "Hardly anyone preferred the shortest or the longest durations shown. Gaze held much longer than a few seconds intensifies whatever is already happening, which is why staring feels like a challenge or an advance.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A new team member never meets your eyes in one-to-one meetings but answers thoughtfully and does good work. What fits this chapter?",
+   "options": [
+    "Tell him plainly that eye contact is expected in this workplace",
+    "Treat it as his baseline, and judge him by what he says and does",
+    "Assume he is hiding some problem and watch him more closely",
+    "Arrange the chairs so that he has to face you directly in future"
+   ],
+   "answer": 1,
+   "explain": "Habitual low gaze has many causes, including autism, culture and shyness, and tells you nothing on its own. A change from his own baseline would be worth noticing; his usual pattern is not.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Kahneman and Beatty find about the pupils in 1966?",
+   "options": [
+    "They shrink noticeably whenever a person is telling a lie",
+    "They show the direction in which a person is really looking",
+    "They widen with mental effort, such as holding digits in mind",
+    "They respond only to changes in light and to nothing else"
+   ],
+   "answer": 2,
+   "explain": "Pupil size tracked memory load closely, which made it a valuable laboratory measure of effort. In ordinary conversation, though, light changes swamp these effects and you cannot see them reliably.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In a meeting you ask someone a question, and before answering they glance at their manager. What is the most useful reading?",
+   "options": [
+    "The manager's view may matter on this; watch the next question too",
+    "The person is lying, and is checking whether the manager noticed it",
+    "The person is incompetent and cannot answer without permission",
+    "The glance means nothing, since people glance around constantly"
+   ],
+   "answer": 0,
+   "explain": "Gaze shows where attention goes, and a glance at a manager before answering suggests the manager's view matters to the answer. One glance is a hypothesis; the next decision point will test it.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific person whose eye contact you have judged, as shifty, cold, intense or rude. Describe what their eyes actually did, as behaviour, and what you concluded. Using this chapter, list at least two other explanations, such as effort, culture, shyness or autism. Then think about your own gaze: in what situations do you look away, stare, or glance at your phone, and what might people conclude from it?",
+  "guidance": "The aim is to separate what the eyes did from the meaning you gave it. Many people find that their strongest judgments about gaze were made about people whose habits simply differed from their own. The second half matters as much: most of us have never seen our own gaze in conversation, and the people we talk to read it constantly.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to judge people against a single standard of eye contact, reading low gaze as evasion and steady gaze as honesty, when both are habits shaped by culture, temperament, neurology and role. A second is to forget the role: a speaker who looks away is doing what speakers do. A third is to stare, having been told that eye contact builds trust, and to make people uncomfortable in the name of connection. A fourth is to chase signals the eyes cannot give, such as pupil size in ordinary light, or the direction of a glance as a sign of lying. And the quietest failure is to forget your own eyes, glancing at a phone or a clock while telling someone you are listening.",
+ "furtherStudy": [
+  {
+   "work": "Some functions of gaze-direction in social interaction",
+   "author": "Adam Kendon",
+   "note": "Acta Psychologica 26, 1967. The classic frame-by-frame study of how gaze passes the turn in conversation."
+  },
+  {
+   "work": "Reliance on head versus eyes in the gaze following of great apes and human infants: The cooperative eye hypothesis",
+   "author": "Michael Tomasello, Brian Hare, Hagen Lehmann and Josep Call",
+   "note": "Journal of Human Evolution 52(3), 2007. Why human eyes may have evolved to be read."
+  },
+  {
+   "work": "Pupil dilation as an index of preferred mutual gaze duration",
+   "author": "Nicola Binetti, Charlotte Harrison, Antoine Coutrot, Alan Johnston and Isabelle Mareschal",
+   "note": "Royal Society Open Science 3(7), 2016. How long people actually like eye contact to last."
+  },
+  {
+   "work": "How do adults and teens with self-declared Autism Spectrum Disorder experience eye contact? A qualitative analysis of first-hand accounts",
+   "author": "Dominic A. Trevisan, Nicole Roberts, Christine Lin and Elina Birmingham",
+   "note": "PLoS ONE 12(11), 2017. Autistic people describe, in their own words, what eye contact is like."
+  }
+ ],
+ "reviewPrompt": "In your next three conversations, notice whether the other person looks away while speaking or while listening, and give them room to look away when they think."
+}
