@@ -1,0 +1,325 @@
+{
+ "id": "inner-world-13",
+ "categoryId": "inner-world",
+ "index": 13,
+ "tier": "MASTER",
+ "title": "Suicidal Ideation — What the Body Shows",
+ "estimatedMinutes": 70,
+ "safetyGate": {
+  "resourceTitle": "Before you read this chapter",
+  "resourceBody": "This chapter is about suicide: the warning signs, how to ask someone whether they are thinking about it, and how to help. It contains no details of methods. If you are thinking about suicide yourself, or you are reading this because you are worried about someone right now, please contact one of the lines below before you read on. They are free, confidential and open to anyone, including people calling about someone else.\n\nIf someone is in immediate danger, call your local emergency number. The chapter will be here when you are ready.",
+  "regions": [
+   {
+    "region": "United States",
+    "org": "988 Suicide & Crisis Lifeline",
+    "contact": "Call or text 988"
+   },
+   {
+    "region": "Canada",
+    "org": "9-8-8 Suicide Crisis Helpline",
+    "contact": "Call or text 988"
+   },
+   {
+    "region": "United Kingdom",
+    "org": "Samaritans",
+    "contact": "Call 116 123"
+   },
+   {
+    "region": "United Kingdom",
+    "org": "Shout",
+    "contact": "Text SHOUT to 85258"
+   },
+   {
+    "region": "Ireland",
+    "org": "Samaritans",
+    "contact": "Call 116 123"
+   },
+   {
+    "region": "Australia",
+    "org": "Lifeline",
+    "contact": "Call 13 11 14"
+   },
+   {
+    "region": "New Zealand",
+    "org": "Need to Talk?",
+    "contact": "Call or text 1737"
+   },
+   {
+    "region": "India",
+    "org": "Tele-MANAS",
+    "contact": "Call 14416"
+   },
+   {
+    "region": "Germany",
+    "org": "TelefonSeelsorge",
+    "contact": "Call 0800 111 0 111"
+   },
+   {
+    "region": "France",
+    "org": "Numéro national de prévention du suicide",
+    "contact": "Call 3114"
+   },
+   {
+    "region": "South Africa",
+    "org": "SADAG Suicide Crisis Helpline",
+    "contact": "Call 0800 567 567"
+   },
+   {
+    "region": "Anywhere else",
+    "org": "Find A Helpline: free lines in over 130 countries",
+    "contact": "findahelpline.com"
+   }
+  ]
+ },
+ "hook": "The body can show that someone is struggling, but not whether they are thinking about suicide; only asking can tell you, and asking is safe.",
+ "why": "More than seven hundred thousand people die by suicide each year, about one death in every hundred worldwide, and in most countries the majority are men. Behind each death are families, friends and colleagues, many of whom later wonder what they missed. This chapter answers that question honestly. The body can show you that someone is struggling, sometimes clearly, as earlier chapters in this part described. It cannot show you whether a person is thinking about suicide. No posture, face or gesture tells you that, and decades of research have not found one that does.\n\nWhat the body gives you is a reason to ask. This chapter teaches the warning signs worth knowing, why men are at particular risk, how to ask the question directly and why asking is safe, what to do in the minutes after someone says yes, how time, distance and a written plan help a crisis pass, and why staying in touch afterwards matters. It ends with looking after yourself, because helping someone through this is heavy. If you are struggling as you read, the resources at the start of this chapter are for you too, and they are open now.",
+ "teach": [
+  {
+   "h": "The body shows struggle, not suicide.",
+   "p": "Everything in this part of the book has been about reading distress: the stooped posture and slowed movement of low mood, the braced shoulders of stress, the mask of “I'm fine”, the heavier drinking, the withdrawal and the exhaustion. These are worth noticing, and people who are thinking about suicide often show some of them. But most people who show them are not thinking about suicide, and some people who are thinking about it show none of them, or hide them well.\n\nThe research is humbling. In 2017, Joseph Franklin and colleagues pooled fifty years of studies of risk factors for suicidal thoughts and behaviour, 365 studies in all. Across every kind of risk factor they examined, including depression, hopelessness and previous attempts, prediction was only slightly better than chance, and it had not improved over the decades. The authors did not say that risk factors are useless; they said that, on their own, they cannot tell you who will act. If the best-studied risk factors cannot do that, a reading of someone's posture across a room certainly cannot.\n\nThis has a clear practical consequence. Do not wait until someone's body looks bad enough. Do not reassure yourself because a friend still goes to work, still laughs, still turns up. And do not use reading as a substitute for the conversation. The body's job in this chapter is to raise a question, never to answer it.\n\nThe figure here sits folded and closed. You might see this shape in someone you love after a loss, or after a long hard stretch. It tells you that something is heavy. It does not tell you what, or how heavy. Only the person can tell you that, and only if someone asks.",
+   "poseId": "p_sit_closed_hunched",
+   "disconfirm": "This would be wrong if research found a visible signal that reliably separates people who are thinking about suicide from people who are struggling in other ways. Fifty years of risk-factor research, pooled by Franklin and colleagues, has not found one.",
+   "pullQuote": "The body can tell you someone is struggling. Only a question can tell you whether they are thinking about suicide."
+  },
+  {
+   "h": "Warning signs live in words, changes and goodbyes.",
+   "p": "Risk factors describe who is at higher risk over years. Warning signs describe what may be happening now. In 2006, a working group of the American Association of Suicidology, led by David Rudd, set out a consensus list of warning signs for the public, and crisis services publish similar lists today. The clearest signs are things people say: talking about wanting to die, about having no reason to live, about feeling trapped or in unbearable pain, or about being a burden to others. Treat these as serious every time, including when they are said as a joke or in passing.\n\nThe next signs are changes in behaviour: drinking or using drugs more, withdrawing from friends and activities, sleeping far more or far less, acting anxious, agitated or reckless, showing rage or talking about revenge, and large swings in mood. Some people say goodbye as though for the last time, give away things that matter to them, or suddenly put their affairs in order. Some lists also include a sudden calm after a long period of distress. That calm can mean many things, including real relief, and the evidence for it as a sign is thin; treat it, like the rest, as a reason to check in.\n\nMuch of this list overlaps with the body. Withdrawal shows in where a person sits and how soon they leave. Agitation shows in restless hands and pacing. Neglect shows in clothes and grooming. But notice that the strongest signs are words, which is why listening matters as much as looking, and why a comment that makes the room go quiet deserves a private follow-up rather than a change of subject.\n\nEven the people who wrote these lists call them prompts, not tests. Lanny Berman, then the association's executive director, conceded that their accuracy was “not great”. Their purpose is to get you to ask, and to get the person to help.",
+   "poseId": "p_stand_head_down",
+   "disconfirm": "This would be wrong if warning signs predicted suicide accurately enough to be used as a test. Their own authors present them as prompts to ask and to seek help, and concede that their accuracy is limited."
+  },
+  {
+   "h": "Men, burden and belonging.",
+   "p": "Men die by suicide at higher rates than women in most countries. The World Health Organization's estimates for 2019 put the global rate for men at more than twice the rate for women. In England and Wales in 2023, about three in every four people who died by suicide were men, and the highest rate was among men in their late forties. Women more often report suicidal thoughts and attempts; men more often die.\n\nEarlier chapters described why men can be hard to read in distress. Many have learned to show it as irritability, busyness or drinking rather than sadness, and to say “I'm fine” when they are not. In a study of young survivors of nearly lethal attempts, Thomas Simon and colleagues found that being male, getting into fights and feeling hopeless distinguished those who had acted impulsively. Anger and recklessness can be part of the picture, not a sign that someone is coping.\n\nOne influential account of why people come to want to die is the interpersonal theory, set out by Thomas Joiner and developed by Kimberly Van Orden and colleagues in 2010. It proposes that the wish to die grows most dangerous when two feelings meet: that one does not belong, and that one is a burden on others. The evidence is mixed, with the burden idea best supported, and critics argue that the theory leaves out culture and circumstance. But it points to two things a friend can affect. You can include someone, so that belonging is felt rather than assumed. And you can let them help you, ask their advice and tell them they matter, which answers the belief that they are only a weight.\n\nThe figure here sits alone with a phone, connected to everyone and to no one. Belonging is not the same as being near people. It is being expected, and being noticed when you do not turn up.",
+   "poseId": "p_sit_phone",
+   "disconfirm": "The figures would be wrong for any country where men die by suicide at similar or lower rates than women; there are such places, which is why the numbers here are given by place and year. The interpersonal theory would be weakened if burden and belonging failed to predict the wish to die, and some studies find only weak links."
+  },
+  {
+   "h": "Ask the question plainly.",
+   "p": "If what you see and hear worries you, ask. Ask directly, using the word: “Are you thinking about suicide?” or “Are you thinking about killing yourself?” It feels brutal to write. Said gently, at a private moment, it is a kindness, because it tells the person that you can hear the answer.\n\nMany people fear that asking will put the idea in someone's head. The research says otherwise. In 2014, Dazzi and colleagues reviewed thirteen studies that had asked people about suicide and measured the effect; none found a significant increase in suicidal thinking, and some suggested that it fell. A 2018 meta-analysis by Blades and colleagues, covering eighteen studies, reached the same conclusion: asking does not increase risk and may bring a small benefit. Many people who have been suicidal describe relief at being asked.\n\nHow you ask matters. Avoid questions that signal the answer you want, such as “You're not thinking of doing anything stupid, are you?”, which invite a no. Avoid vague phrases like “hurting yourself”, which can mean something else. Describe what you have noticed first, as specific behaviour, as earlier chapters taught: “You've been really quiet since the summer, and last week you said we'd be better off without you. I'm worried about you. Are you thinking about suicide?”\n\nChoose the setting with care. Side by side, on a walk, in a car or on a bench, often works better for men than across a table, as the chapter on the “I'm fine” mask described. Give the answer time to come. If the answer is no and you are still worried, say that the door is open, and ask again another day. A no is not a failure. You have shown that this is something they can talk to you about.",
+   "poseId": "p_pair_bench",
+   "disconfirm": "This would be wrong if studies found that being asked about suicide increased suicidal thinking or behaviour. The reviews by Dazzi and by Blades found no increase, though most studies measured thoughts rather than deaths, which are rare.",
+   "pullQuote": "Asking does not plant the idea. It tells the person you can hear the answer."
+  },
+  {
+   "h": "If the answer is yes: stay, listen, and judge the urgency.",
+   "p": "If the answer is yes, your body will react. Your breath may catch and your stomach drop. That is normal. Breathe out, stay where you are, and say something simple: “Thank you for telling me. I'm glad you did.” You do not need the right words. You need to stay.\n\nThen listen. Let them tell you what has been happening, without arguing, lecturing or rushing to fix it. Do not tell them how much they have to live for or how upset other people would be; it usually feels like being told that their pain is wrong. Reflect what you hear: “It sounds like you've been carrying this on your own for a long time.” As the chapter on the mask described, listening matters more than solving.\n\nYou also need to know how urgent things are. It is reasonable to ask whether they have thought about how or when, and whether they have the means. You do not need the details; the answers tell you how much danger they are in now. If they have a plan and the means, or you believe they are in immediate danger, do not leave them alone. Call the emergency services, or a crisis line, with them. If they are not in immediate danger, agree on the next step together, such as calling a crisis line now or seeing a doctor tomorrow, and if you can, make sure they do not go home to an empty evening.\n\nDo not promise to keep it secret. You can say: “I care about you too much to keep this to myself, but we'll decide together who we tell and how.” Most people accept this, and it keeps you honest. You are not their therapist. Your job is to stay with them and help them reach people who can help.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "This advice would be wrong if staying and listening made things worse; crisis services such as the 988 Lifeline recommend exactly these steps. Your judgment of urgency will be rough, so when in doubt, treat it as urgent."
+  },
+  {
+   "h": "Time, distance and a written plan.",
+   "p": "Many suicidal crises are short. In a study of people aged thirteen to thirty-four who had survived nearly lethal attempts, Simon and colleagues found that about one in four had spent less than five minutes between deciding to act and acting. The urge can be intense, and it can pass. Anything that puts time and distance between a person in crisis and a way to end their life gives the crisis room to pass.\n\nThis is called means safety. With the person's agreement, it can mean asking a trusted friend to keep a firearm for a while, keeping medicines locked away or in small amounts, or removing anything else the person has thought of using. It is not a sign of distrust; it is like taking a friend's car keys when they have been drinking. And getting through the crisis matters, because most people who survive a suicide attempt do not later die by suicide. In a review of ninety studies of people treated in hospital after self-harm, Owens and colleagues found that after nine years about seven in a hundred had died by suicide. That is a serious risk, and it also means that most lived.\n\nA safety plan helps here. Developed by Barbara Stanley and Gregory Brown, it is a short written list, usually made with a clinician or crisis worker, of what to do as a crisis builds: the person's own warning signs, things they can do alone to get through, people and places that distract, people to ask for help, professional and crisis contacts, and ways to make the surroundings safer. In 2018, Stanley and colleagues compared about twelve hundred patients in veterans' emergency departments who received safety planning and follow-up calls with patients at sites that offered usual care. Those who received it had 45 per cent fewer suicidal behaviours over six months, and more than twice the odds of attending treatment. It was not a randomised trial, but the result is encouraging. You can help someone keep their plan where they will find it, and be one of the names on it.",
+   "poseId": "p_pair_side_by_side",
+   "disconfirm": "This would be wrong if removing access simply moved people to other means without reducing deaths; studies of means restriction mostly find that total deaths fall. The safety-planning result came from a comparison of sites rather than a randomised trial, and could partly reflect differences between them."
+  },
+  {
+   "h": "Follow up, and look after yourself.",
+   "p": "The days and weeks after a crisis matter as much as the conversation. In 2001, Jerome Motto and Alan Bostrom reported a trial with 843 people who had been admitted to hospital with depression or suicidal thoughts and had then refused further treatment. Some were sent short, caring letters, twenty-four over five years, asking nothing except that they knew someone was thinking of them. The group who received letters had lower suicide rates during the years the letters came, a difference that was statistically significant in the first two years. Later trials of caring contacts have had mixed results, but the idea has spread because it is cheap, kind and plausible.\n\nYou can do the same. Send a message the next day, and the week after, and the month after that. Keep it short and ask for nothing: “Thinking of you. Pint on Thursday?” Mark the anniversaries and the hard dates. Keep inviting them, even when they say no.\n\nThen look after yourself. Hearing that someone you care about wants to die is frightening, and many people carry it alone afterwards, replaying the conversation. Talk to someone you trust, sharing no more than you need to. Crisis lines also support people who are worried about someone else. You are not responsible for another person's life on your own, and you cannot watch over anyone every hour. What you can do is ask, stay, connect and follow up.\n\nAnd if someone you know dies by suicide, despite everyone's care, the grief that follows is often tangled with guilt and unanswerable questions. It is not proof that you failed them. Support groups exist specifically for people bereaved by suicide, and everything in the chapter on grief applies to you, with extra gentleness.",
+   "poseId": "p_greet_hand_on_heart",
+   "disconfirm": "Caring contacts would be called into doubt if well-run trials consistently found no benefit. Later trials have been mixed, so treat follow-up as a sensible kindness with promising evidence rather than a proven cure."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_pair_seated_across",
+   "doCaption": "Side by side, on a bench or a walk",
+   "dontCaption": "Across a table, like an interview",
+   "annotation": "Hard questions are easier to answer when neither person has to hold eye contact. Sitting side by side lowers the stakes for both of you."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Full attention, no rush",
+   "dontCaption": "Half listening, an eye on the time",
+   "annotation": "After a yes, unhurried attention is the most useful thing you can give. If time really is short, say so and agree when you will come back, rather than glancing away."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_turned_away",
+   "doCaption": "Staying turned toward them",
+   "dontCaption": "Turning away when the answer is yes",
+   "annotation": "Shock is normal, and the body shows it. Breathe out, turn back and stay in the conversation, because the person is watching how you take it."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_walk_stride",
+   "doCaption": "Making the call together",
+   "dontCaption": "Handing over a number and leaving",
+   "annotation": "A number written on a card is easy to put away. Offering to sit with someone while they call, or to call together, turns a suggestion into a connection."
+  }
+ ],
+ "caseStudy": "Sam, forty-four, has played five-a-side football with Dev, forty-six, every Tuesday for eight years. Over the winter, after Dev's business folds and he moves out of the family home, Sam notices changes. Dev misses two games, then comes back thinner and unshaven. He picks a fight with a younger player over nothing. In the pub afterwards he drinks fast and says little. One evening, when someone jokes about money, Dev says flatly that his kids would be better off without him, and laughs. Nobody else seems to notice.\n\nSam does. He remembers the word burden from a training day at work, and he knows he cannot tell from Dev's face what Dev means. The next Tuesday he offers Dev a lift home and, parked outside the flat with the engine off, says: “Mate, you've not been yourself since Christmas, and what you said last week about the kids has stuck with me. I'm worried. Are you thinking about suicide?”\n\nDev stares straight ahead for a long time. Then he says yes, most nights. Sam's stomach turns over. He breathes out and says, “Thank you for telling me.” He listens for nearly an hour. He asks whether Dev is in danger tonight; Dev says he does not think so, but that the evenings are the worst. Sam asks if they can call a crisis line together now, and Dev agrees, on speaker, in the car. The counsellor helps them make a plan: Dev will see his doctor in the morning, Sam will drive him, and Dev's brother will stay with him for a few days and look after anything in the flat that worries him.\n\nThe doctor refers Dev for treatment. Sam texts him every few days, nothing heavy. Dev comes back to Tuesdays in the spring. Months later, he tells Sam that the question in the car was the first time anyone had asked, and that he had been waiting for someone to.",
+ "observe": [
+  "Notice how people around you talk about suicide, including phrases like “committed suicide” and jokes. The language people hear shapes whether they believe they can speak.",
+  "Notice who in your life has gone quiet, stopped turning up or changed over the past few months. You do not need to act on everything; notice, and consider a check-in.",
+  "Notice your own body's reaction when you read or hear the word suicide. That reaction is what you will need to breathe through when you ask.",
+  "Notice the side-by-side moments in your week, such as drives, walks or shared jobs, in which a hard question could be asked."
+ ],
+ "drills": [
+  {
+   "name": "Say the Words",
+   "minutes": 10,
+   "steps": [
+    "Write down the direct question, in the words you would use: “Are you thinking about suicide?”",
+    "Say it aloud, alone, ten times, until your voice is steady.",
+    "Write the sentence you would use before it, describing what you had noticed.",
+    "Say both sentences aloud together, slowly and gently.",
+    "If you have a willing friend who knows the purpose, practise once with them, then swap roles."
+   ]
+  },
+  {
+   "name": "Your Region's Line",
+   "minutes": 10,
+   "steps": [
+    "Open the crisis resources in this app and find the line for where you live.",
+    "Save the number in your phone under a name you will recognise in a hurry.",
+    "Write down your local emergency number and how to reach a doctor out of hours.",
+    "Write the first sentence you would say if you called about someone else.",
+    "Check that the people closest to you know these numbers too."
+   ]
+  },
+  {
+   "name": "A Plan for Yourself First",
+   "minutes": 20,
+   "steps": [
+    "On a calm day, write down your own early signs of a very bad patch: thoughts, feelings, behaviour.",
+    "Write three things you can do alone that help you get through a hard evening.",
+    "Write the people and places that take your mind off things, and the people you could ask for help.",
+    "Add the professional and crisis numbers you found in the previous drill.",
+    "Write one thing that would make your surroundings safer on a bad night, and keep the page where you will find it."
+   ]
+  },
+  {
+   "name": "The First Five Minutes",
+   "minutes": 15,
+   "steps": [
+    "Write what you would say first if someone answered yes.",
+    "Write two listening sentences that reflect what you hear, without fixing.",
+    "Write how you would ask about urgency, and the answers that would mean calling emergency services.",
+    "Write how you would explain that you cannot keep it secret.",
+    "Write how you would help them connect, and who you would talk to afterwards."
+   ]
+  },
+  {
+   "name": "The Follow-Up Habit",
+   "minutes": 15,
+   "steps": [
+    "List three people in your life who have had a hard year.",
+    "For each, write a short message that asks for nothing in return.",
+    "Set reminders in your phone to check in with each over the next two months.",
+    "Send the first message this week.",
+    "Note how each person responds, without needing a reply."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Does asking someone directly whether they are thinking about suicide make suicide more likely?",
+   "options": [
+    "Yes, because the question itself can put the idea into a person's head",
+    "Only if you use the word suicide instead of a gentler phrase",
+    "No; reviews find that asking does not increase suicidal thinking",
+    "It depends mainly on whether the person asked is a man or woman"
+   ],
+   "answer": 2,
+   "explain": "Reviews by Dazzi and colleagues and by Blades and colleagues found no increase in suicidal thinking after people were asked, and some found small benefits. Using the word clearly is recommended, because vague phrases can be misread.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Franklin and colleagues' 2017 review of fifty years of research find about predicting suicide?",
+   "options": [
+    "Known risk factors predicted it only slightly better than chance",
+    "Trained clinicians could predict it accurately from body language",
+    "Depression alone predicted almost every suicide in later life",
+    "Prediction had improved steadily with each decade of new studies"
+   ],
+   "answer": 0,
+   "explain": "Across 365 studies, risk factors predicted suicidal thoughts and behaviour only slightly better than chance, and prediction had not improved over time. This is why the body, or any single sign, should prompt a question rather than a conclusion.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A friend who has been withdrawn for weeks says, half joking, “Everyone would be better off without me.” What is the best next step?",
+   "options": [
+    "Tell him firmly that it is not true, and then change the subject",
+    "Find a private moment, ask him directly about suicide, and listen",
+    "Make a joke to lighten the mood, and then check in next month",
+    "Wait to see whether his body language shows any clearer signs"
+   ],
+   "answer": 1,
+   "explain": "Talking about being a burden is one of the clearest warning signs, even when it is said as a joke. Waiting for the body to confirm it is a mistake, because the body cannot; asking directly, in private, is the next step.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Why does putting time and distance between a person in crisis and dangerous means help?",
+   "options": [
+    "It forces the person to rely on willpower until the feeling goes",
+    "It means that the person no longer needs professional help at all",
+    "It shows the person that the people around them do not trust them",
+    "Many suicidal crises are brief, and the urge can pass if delayed"
+   ],
+   "answer": 3,
+   "explain": "In Simon and colleagues' study, about one in four survivors of nearly lethal attempts had spent less than five minutes between deciding and acting. Delay gives the crisis room to pass, and it works alongside professional help, not instead of it.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You ask a colleague, and she says yes, she has been thinking about ending her life, and asks you to keep it secret. What should you do?",
+   "options": [
+    "Thank her, stay with her, and explain you'll help her get support",
+    "Promise to keep the secret so that she goes on trusting you in future",
+    "Go straight to her manager without saying anything more to her",
+    "Give her the helpline number and leave her to make the call alone"
+   ],
+   "answer": 0,
+   "explain": "Promising secrecy can leave you holding a danger alone, and going behind her back breaks trust. Thank her, stay, judge the urgency, and decide together who to tell and how, helping her make the call rather than leaving her with a number.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "In Motto and Bostrom's trial, what did some people who had refused further care receive, and what happened?",
+   "options": [
+    "Daily phone calls from a psychiatrist, and nobody in the group died",
+    "A single long letter, which had no measurable effect at any point",
+    "Short, regular caring letters; suicide rates were lower while they came",
+    "Weekly home visits, after which rates fell only once visits stopped"
+   ],
+   "answer": 2,
+   "explain": "The contact group received twenty-four short letters over five years that asked for nothing. Their suicide rates were lower during the years of contact, significantly so in the first two years, which is why brief, regular follow-up is recommended.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific person in your life whom you would want to ask, if you were ever worried about them, or think of a time when you were worried about someone and did not ask. What did you notice, and what stopped you? Write the exact words you would use now, starting with what you had noticed and ending with the direct question. Then write what you would say first if the answer were yes, and where you would sit or walk while you asked.",
+  "guidance": "Write the words exactly, because the question is easier to say once it has been written down. If you did not ask someone in the past and things went badly, be gentle with yourself; most people were never taught how. If this chapter has stirred thoughts of suicide in you, please use the resources at the start of the chapter now, or talk to someone you trust today.",
+  "minCharacters": 150
+ },
+ "failureMode": "The most dangerous failure is to wait for the body to tell you: to assume that someone is safe because they still go to work, still laugh or do not look low enough, when no posture or face can show whether a person is thinking about suicide. The second is not to ask, out of fear of planting the idea, which the research does not support, or to ask in a way that invites a no. The third is to meet a yes by arguing, lecturing, promising secrecy or leaving the person alone. The fourth is to forget time and distance: a crisis can pass when dangerous means are out of reach and a plan is in place. The fifth is to stop after one conversation, when following up is part of the help. And the last is to carry it all yourself. Ask, stay, connect, follow up, and get support for yourself too.",
+ "furtherStudy": [
+  {
+   "work": "Why People Die by Suicide",
+   "author": "Thomas Joiner",
+   "note": "Harvard University Press, 2005. The interpersonal theory, written for general readers by a psychologist whose own father died by suicide."
+  },
+  {
+   "work": "Does asking about suicide and related behaviours induce suicidal ideation? What is the evidence?",
+   "author": "T. Dazzi, R. Gribble, S. Wessely and N. T. Fear",
+   "note": "Psychological Medicine 44(16), 2014. The review behind the advice to ask directly."
+  },
+  {
+   "work": "Safety Planning Intervention: A brief intervention to mitigate suicide risk",
+   "author": "Barbara Stanley and Gregory K. Brown",
+   "note": "Cognitive and Behavioral Practice 19(2), 2012. The safety plan, step by step, from its developers."
+  },
+  {
+   "work": "Preventing suicide: a resource for media professionals",
+   "author": "World Health Organization and International Association for Suicide Prevention",
+   "note": "2023 update. The safe-messaging guidance this chapter follows: no details of methods, language that does not blame, and stories of help and recovery."
+  }
+ ],
+ "reviewPrompt": "This week, save the crisis line for your region in your phone, and say the direct question aloud until you can say it gently and without hesitation."
+}
