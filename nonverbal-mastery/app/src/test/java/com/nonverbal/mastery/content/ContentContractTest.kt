@@ -74,6 +74,7 @@ class ContentContractTest {
             check(b.poseId != null && b.poseId in poseIds, w, "teach[$i] must reference a pose in the library (${b.poseId})")
             check(!b.disconfirm.isNullOrBlank(), w, "teach[$i] must state its disconfirming condition")
             check(b.h.isNotBlank() && !b.h.endsWith(":"), w, "teach[$i] heading must be a claim")
+            check(b.diagram == null || com.nonverbal.mastery.design.components.DiagramKind.of(b.diagram) != null, w, "teach[$i] diagram '${b.diagram}' is not a known plate")
         }
         check(l.teach.any { it.pullQuote != null }, w, "at least one teach block needs a pull quote")
         check(l.poseGallery.size in 3..6, w, "poseGallery must have 3–6 pairs (has ${l.poseGallery.size})")

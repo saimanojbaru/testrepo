@@ -64,6 +64,34 @@ enum class DiagramKind(val id: String, val title: String, val description: Strin
     BreathingWave(
         "breathing-wave", "The four phases of a breath",
         "A wave tracing one slow breath in four phases: inhale rising, a pause at the top, exhale falling, and a pause at the bottom. A dot travels along the wave at the pace of the breath. A slow, even cycle like this is a regulation practice, not a reading of anyone else.",
+    ),
+    FaceSmiles(
+        "face-smiles", "Two smiles",
+        "Two drawn faces. On the left, the lip corners are pulled up and out while the eyes are unchanged. On the right, the same mouth with the cheeks raised as well: the lower lids are pushed up, the eyes narrow, and small creases fan out from their outer corners. The second is often called the Duchenne smile. People can produce it deliberately too, so it is evidence of enjoyment, not proof.",
+    ),
+    FaceBrows(
+        "face-brows", "Three brows",
+        "Three drawn faces. In the first, both brows are raised and the forehead creases across. In the second, the brows are lowered and drawn together, with short vertical creases between them. In the third, only the inner corners of the brows are raised while they are pulled together, giving a slanted, worried line. Each movement has many possible causes, including concentration, effort, doubt and bright light.",
+    ),
+    FaceLids(
+        "face-lids", "The lids",
+        "Three drawn faces. In the first, the upper lids are raised so that white shows above the iris. In the middle, the eyes are at rest. In the third, the lids are tightened, so the lower lid rises and the eye narrows without the cheeks lifting.",
+    ),
+    FaceMouths(
+        "face-mouths", "Three mouths",
+        "Three drawn faces. In the first, the lips are pressed together and thinned. In the second, the corners of the mouth are pulled down and the chin pushes up. In the third, one corner of the mouth is tucked in and slightly up on one side only.",
+    ),
+    FacePrototypes(
+        "face-prototypes", "Six posed prototypes",
+        "Six drawn faces arranged in two rows, showing the configurations long used in research to stand for happiness, surprise, fear, anger, disgust and sadness, each labelled with its action units. They are posed prototypes. Studies of real faces find that people rarely show these full configurations, and that the same configuration can mean different things in different situations.",
+    ),
+    FaceMicro(
+        "face-micro", "A flash across the face",
+        "Three drawn faces along a time line. The first and last are at rest. The middle one, which lasts under half a second, shows lowered brows, tightened lids and pressed lips. A bracket on the time line marks how brief the flash is. The faces before and after it show nothing, which is why such flashes are easy to miss and hard to interpret.",
+    ),
+    FaceGaze(
+        "face-gaze", "Where the eyes point",
+        "Three drawn faces with the head still and only the eyes moving. In the first, the eyes look straight out at the viewer. In the second, they look to one side. In the third, they look down and slightly away.",
     );
 
     companion object {
@@ -89,6 +117,13 @@ fun Diagram(kind: DiagramKind, modifier: Modifier = Modifier, showTitle: Boolean
             DiagramKind.CongruenceMatrix -> CongruenceDiagram(m.height(190.dp))
             DiagramKind.GroupAttention -> GroupAttentionDiagram(m.height(240.dp))
             DiagramKind.BreathingWave -> BreathingWaveDiagram(m.height(180.dp))
+            DiagramKind.FaceSmiles -> FacePlate(FaceCells.smiles, 2, m.height(190.dp))
+            DiagramKind.FaceBrows -> FacePlate(FaceCells.brows, 3, m.height(160.dp))
+            DiagramKind.FaceLids -> FacePlate(FaceCells.lids, 3, m.height(160.dp))
+            DiagramKind.FaceMouths -> FacePlate(FaceCells.mouths, 3, m.height(160.dp))
+            DiagramKind.FacePrototypes -> FacePlate(FaceCells.prototypes, 3, m.height(320.dp))
+            DiagramKind.FaceMicro -> MicroExpressionPlate(m.height(220.dp))
+            DiagramKind.FaceGaze -> FacePlate(FaceCells.gaze, 3, m.height(160.dp))
         }
     }
 }
