@@ -8,19 +8,19 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v0.4 (Parts I and VI written)
+## Status: v0.5 (Parts I, II and VI written)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
-| Content | 30 of 90 chapters written to the full contract: all of Part I, Foundations, and all of Part VI, The Discipline. About 135,000 words, ≈300 pages. Ethics statement (1,205 words); crisis resources |
+| Content | 45 of 90 chapters written to the full contract: all of Part I, Foundations; all of Part II, The Inner World, where 2.13 opens through a crisis-resource gate; and all of Part VI, The Discipline. About 199,000 words, ≈440 pages. Ethics statement (1,205 words); crisis resources |
 | Pose library | 125 poses in 13 themes, including two- and three-person scenes, + 6 drawn diagrams + 7 face plates |
-| Tests | 31 passing: content contract, engines, 48 screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
+| Tests | 31 passing: content contract, engines, 50 screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
 | Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
 
 See [`content/_progress.md`](content/_progress.md) for where authoring stopped, what later chapters must not repeat, and the open question about the page target.
 
-![Part VI](docs/screens/25-part-six.png) ![Group attention](docs/screens/26-group-attention.png)
+![Part VI](docs/screens/25-part-six.png) ![Group attention](docs/screens/26-group-attention.png) ![The gate before 2.13](docs/screens/29-gate-2-13.png)
 
 ## Build and test
 
@@ -90,6 +90,7 @@ Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and ri
 | Hairline outline on every figure | The specified figure fill is 1.6:1 against the page. The outline brings the silhouette edge above the 3:1 non-text minimum. |
 | Additive, optional schema fields | `TeachBlock.disconfirm` (falsifiability becomes structural and testable), `TeachBlock.diagram`, `Pose.title/theme`, `PoseParams.view/headPitch/spineCurve/torsoTurn/prop` (a slump is not a lean; gaze needs pitch), `Category.outline/introduction`, `ContentPack.crisisResources/ethics`, `LevelProgress.fieldNote/lastOpenedAt`. All are defaulted, so older packs decode. |
 | Chapter and screen titles in the display serif | Reads as a book rather than an app; Inter carries labels, claims and controls. |
+| 2.13 opens through a gate, not behind a lock | The gate says plainly what the chapter is about, puts the crisis lines first, and offers "Continue to 2.13" at once. Nothing is hidden or delayed; a reader in trouble meets the numbers before the content. |
 | Crisis screen puts phone numbers first, ordered by the phone's locale | Someone in crisis should not scroll past paragraphs to find a number. The locale lookup needs no permission and sends nothing. |
 | `allowBackup="false"`, no cloud backup | Reflections can be intimate. They leave the phone only through the explicit export. |
 | Unwritten chapters appear in each table of contents as "Not yet written" | The shape of the book is part of the product. Unlocking is sequential over written chapters, so 1.11 opens after 1.1 even while 1.2–1.10 are unwritten. |

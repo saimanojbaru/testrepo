@@ -177,6 +177,11 @@ class ScreensTest {
         shot("11_ethics", true) { EthicsScreen(c.pack.ethics, {}) }
         shot("12_crisis") { CrisisScreen(c.pack.crisisResources, null, null, {}, {}) }
         shot("12_crisis", true) { CrisisScreen(c.pack.crisisResources, null, null, {}, {}) }
+        // The gate in front of 2.13, exactly as AppNav builds it.
+        val gated = c.levels.getValue("inner-world-13")
+        val label = "Continue to ${c.reference(gated)}  ${gated.title}"
+        shot("12_gate_2_13") { CrisisScreen(gated.safetyGate, label, {}, {}, {}) }
+        shot("12_gate_2_13", true) { CrisisScreen(gated.safetyGate, label, {}, {}, {}) }
     }
 
     @Test fun states() {

@@ -1,0 +1,247 @@
+{
+ "id": "inner-world-14",
+ "categoryId": "inner-world",
+ "index": 14,
+ "tier": "MASTER",
+ "title": "Interoception",
+ "estimatedMinutes": 65,
+ "hook": "Interoception is the sense of the body from inside, and how clearly you hear it shapes your feelings, your choices and your reading of everyone else.",
+ "why": "Most of this book is about the signals other people's bodies send out. This chapter is about the signals your own body sends in: the heartbeat, the breath, the tight stomach, the heavy limbs, the warmth in the face. Together they are called interoception, the sense of the body's internal state, and they matter to a reader in two ways. They are the raw material of your own feelings, so they shape your moods and choices. And they colour every reading you make of someone else, because a gut feeling about a person is, first of all, a feeling in your gut.\n\nThe chapter on reading yourself under stress in Part VI treated your sense of your own state as a reading to be checked in the moment. This chapter goes underneath that. It explains what interoception is and how the brain builds feelings from it, why it is so hard to measure, how it goes wrong in anxiety, low mood and alexithymia, what it contributes to judgments about other people, and what training can and cannot do. The claims are kept modest, because the science is young and some popular accounts have run well ahead of it.",
+ "teach": [
+  {
+   "h": "A sense you rarely notice.",
+   "p": "Ask people to list their senses and they name five: sight, hearing, touch, taste and smell. But the body also reports constantly on itself: on the heart and lungs, the stomach and bladder, temperature, hunger and thirst, pain, itch and the pleasant feeling of a gentle touch. Most of these signals never reach awareness. Those that do arrive as feelings of being hungry, tired, on edge, warm or unwell.\n\nThe idea that emotions are built on these signals is old. In 1884 William James argued that we do not cry because we are sad, but feel sad because we cry: an emotion is the perception of the body's response. Modern neuroscience has revisited the idea with better tools. In 2002, A. D. Craig described a dedicated pathway carrying signals about the body's physiological condition up to the brain, where they are mapped and re-mapped in a region called the insula. He proposed that the front of the insula is where these maps become feelings, and the foundation of the sense of self.\n\nCraig's account has been enormously influential, and also challenged. In 2013 Antonio Damasio and colleagues described a man with extensive damage to the insula on both sides of his brain who still reported bodily feelings and emotions. Most researchers now see the insula as one important hub in a wider network rather than the single seat of feeling.\n\nFor a reader, the lesson is simple and practical. Your feelings are not separate from your body; they are, in large part, your brain's account of it. The figure here breathes easily, and you cannot see what she feels inside. Neither, often, can she, until she stops and checks.",
+   "poseId": "p_breath_easy",
+   "disconfirm": "This would be wrong if feelings arose without any dependence on bodily signals. The insula case described by Damasio and colleagues shows that no single region is essential, but it does not show that the body is irrelevant to feeling.",
+   "pullQuote": "A gut feeling about a person is, first of all, a feeling in your gut."
+  },
+  {
+   "h": "Feelings are the brain's best guess about the body.",
+   "p": "A newer group of theories, set out by researchers such as Anil Seth, and Lisa Feldman Barrett with W. Kyle Simmons, describes the brain as a prediction machine. Rather than waiting passively for signals from the heart or gut, it predicts what they will be, given the situation, and uses the incoming signals to correct its guesses. On this view, what you feel is shaped as much by the prediction as by the signal.\n\nThis explains some everyday puzzles. The same racing heart can be felt as excitement before a match and dread before an interview, because the brain's guess about what the arousal means differs, as the chapter on reappraisal in Part VI described. It explains why hunger can be felt as anger when nothing in the situation points to food, as the chapter on depletion described. And it explains why a body that has learned to expect danger can produce the feeling of danger from very ordinary signals.\n\nIt also explains why insight alone rarely changes feelings. If what you feel is partly a learned prediction, it changes when the predictions change, which usually takes repeated experience rather than a single realisation. This is one reason that treatments for anxiety involve doing things, not just understanding them.\n\nThe figure here stands braced, shoulders set. If you ask him what he feels, he may say angry, or worried, or fine. The bracing is the signal. The name he gives it is a guess, shaped by what he expects, and he may be wrong. The same is true of you, especially when you are tired, hungry or already on edge.",
+   "poseId": "p_posture_braced_upright",
+   "disconfirm": "Predictive accounts would be weakened if feelings tracked bodily signals directly, whatever the context and expectation. Studies in which the same bodily state is felt differently in different contexts support the predictive view, though the details of how it works remain debated."
+  },
+  {
+   "h": "Measuring it is harder than it sounds.",
+   "p": "If interoception matters so much, you might expect it to be easy to measure. It is not. The chapter on reading yourself under stress described the difference between how accurately you sense your body and how good you believe you are at it, and the problems with the classic task in which people count their heartbeats. The difficulties go further.\n\nAn alternative test asks people to judge whether a series of tones is in time with their heartbeat or slightly out of time. It avoids some of the guesswork of counting, but many people perform no better than chance, which makes differences between them hard to study. Questionnaires such as the Multidimensional Assessment of Interoceptive Awareness, developed by Wolf Mehling and colleagues in 2012, ask instead about how people attend to their bodies: whether they notice sensations, worry about them, trust them and use them to calm themselves. These are useful, but they measure attitudes and habits, not accuracy.\n\nAnd interoception is not one sense. Studies that test the same people on heart and breathing tasks often find weak links between their scores. Someone who can feel their heartbeat may be poor at noticing a change in their breathing, and vice versa.\n\nIn 2016 the first Interoception Summit brought researchers together in Tulsa, Oklahoma, and in 2018 they published a consensus roadmap, led by Sahib Khalsa. It called for better tests across several bodily systems, and for studying interoception across many mental health conditions rather than one at a time. The practical lesson for you is to be cautious about any claim, including your own, that someone simply has good or bad body awareness. The figure here sits still, attending inwards. What she notices depends on where she looks, and on what she has learned to look for.",
+   "poseId": "p_sit_hands_clasped_lap",
+   "disconfirm": "This would be wrong if a single test, such as heartbeat perception, predicted interoception across the whole body. Studies comparing heart and breath tasks often find weak links, which is why the 2018 roadmap called for measures across several systems."
+  },
+  {
+   "h": "When the volume is wrong: anxiety and low mood.",
+   "p": "In 2010 Martin Paulus and Murray Stein proposed that anxiety and depression can be understood partly as problems of interoception: not broken senses, but altered predictions about the body. In anxiety, the brain predicts bodily threat too readily and amplifies ordinary signals. In depression, the body can seem muted and distant, so that hunger, tiredness and even pleasure arrive faintly, if at all.\n\nPanic is the clearest example. In 1992 Anke Ehlers and Peter Breuer found that people with panic disorder reported more awareness of their hearts than other people, and in some tests perceived their heartbeats more accurately. Later studies were mixed, and the counting task they used has been questioned. But the more consistent finding is about interpretation. In David Clark's model of panic, an attack builds when a normal sensation, such as a skipped beat or breathlessness after stairs, is read as a sign of catastrophe, which raises the arousal, which seems to confirm the catastrophe.\n\nThis is why one of the most effective parts of treatment for panic deliberately brings on the feared sensations, under guidance, by exercises such as spinning in a chair or running on the spot. It is called interoceptive exposure. In a 1997 trial, Michelle Craske and colleagues found that it reduced panic frequency and fear more than breathing retraining did. The aim is not to stop feeling the body, but to learn, through experience, that the sensations are uncomfortable and safe. It is done with a clinician, after any medical causes have been checked.\n\nThe figure here has a hand at the neck, as if checking a pulse. Repeated checking is a sign of a body being listened to too hard, and it keeps attention locked on the signal. If you see it in someone, the response from the chapter on anxiety applies: offer calm and control, not alarm.",
+   "poseId": "p_stand_hand_neck",
+   "disconfirm": "This would be wrong if people with panic disorder attended to their bodies no more, and interpreted sensations no more fearfully, than other people. Findings on accuracy are mixed, but the evidence for heightened attention and fearful interpretation is stronger."
+  },
+  {
+   "h": "Alexithymia: when the signals blur.",
+   "p": "The chapter on reading yourself under stress introduced alexithymia, difficulty identifying and describing your feelings, and the argument that many men are taught it. Research by Rebecca Brewer, Richard Cook and Geoffrey Bird suggests that it may begin before the naming, in the body itself.\n\nIn a 2016 study, they found that people higher in alexithymia were worse at perceiving bodily states that have nothing to do with emotion, and that they rated different states, emotional and non-emotional, as more similar to one another. For them, anxiety and hunger, or anger and being too hot, may simply feel alike. The authors concluded that alexithymia is better described as a general difficulty with interoception than as a problem with emotions alone. Bird and colleagues have also argued, from studies of autistic and non-autistic adults, that difficulties recognising other people's emotions, and empathising with their pain, often track alexithymia rather than autism itself.\n\nThis matters for reading others. If you cannot tell your own anxiety from your own hunger, you are likely to find it harder to read those states in someone else, and to misread your reactions to them. The remedy is not willpower, but a habit of checking the body systematically before naming a feeling: am I hungry, tired, tense, cold or unwell? Then try a small test. Eat, rest or warm up, and see whether the feeling changes. If it does, it was partly the body. If it does not, it may be about something else.\n\nThe figure here sits with a hand to her face, uncertain. She may not know what she feels yet. That is not a failure, and the honest answer, “I'm not sure what this is”, is often a better start than a confident wrong name.",
+   "poseId": "p_sit_hand_face",
+   "disconfirm": "This would be wrong if people high in alexithymia were as good as anyone at telling bodily states apart. Brewer and colleagues found that they were worse, though the study relied partly on self-report, and the direction of cause is not settled."
+  },
+  {
+   "h": "Your body in your reading of others.",
+   "p": "Interoception also feeds judgments about the world outside. In 2010 Barnaby Dunn and colleagues found that bodily responses guided people's intuitive decisions in a card game more strongly when those people were better at sensing their heartbeats. The twist was that this helped when the bodily signals pointed the right way and hurt when they pointed the wrong way. Better interoception made the body more influential, not always more correct.\n\nA striking field study pointed in a similar direction. In 2016 Narayanan Kandasamy and colleagues tested eighteen traders on a London trading floor. The traders were better than matched controls at detecting their heartbeats, and the better a trader's score, the higher their profits relative to others and the longer they had lasted in the markets. It was a small, correlational study, but it suggests that in fast, uncertain decisions, the body carries useful information.\n\nFor a reader of people, the implication is double. Your body may pick up something real about another person before you can say what it is: a tension in the room, a mismatch you have not consciously registered. And your body may also be reacting to your own hunger, tiredness or history, or to someone who resembles a person who once hurt you. The feeling does not tell you which.\n\nSo treat a gut reaction to a person as data about your body first. Note it, check your own state, and then look for evidence about them, as the methods in Part VI describe. The figure here leans in, attentive. The best readers are not those who ignore their bodies, nor those who obey them, but those who listen and then check.",
+   "poseId": "p_sit_forward_engaged",
+   "disconfirm": "This would be wrong if better interoception always improved judgment. Dunn and colleagues found that it made bodily signals more influential whether they were helpful or misleading, and the trading study was small and correlational."
+  },
+  {
+   "h": "Training it, with modest claims.",
+   "p": "Can interoception be improved? Many practices claim so, and the evidence is more cautious. In 2008 Sahib Khalsa and colleagues compared experienced meditators, who had spent years attending to bodily sensation, with people who did not meditate. The meditators were no better at detecting their heartbeats, though they rated the task as easier and their own performance as better. Practice had changed their confidence more than their accuracy.\n\nMore targeted training shows more promise. In a 2021 trial led by Lisa Quadt and Sarah Garfinkel, 121 autistic adults were randomly assigned to six sessions of heartbeat training with feedback, or to a comparison training focused on sounds. Anxiety fell more in the heartbeat group, by a modest amount, and at follow-up 31 per cent of them met the trial's criteria for recovery, compared with 16 per cent of the comparison group. Only half the participants provided follow-up data, and one developed anxiety about their heart, so the result is promising rather than settled.\n\nWhat practice can reasonably offer the rest of us is a change in how we relate to sensations: noticing them earlier, naming them more carefully, and being less frightened by them. Body scans, slow attention to the breath and the systematic checks in this chapter can do that. They will not make you a human heart monitor, and they are not a substitute for treatment.\n\nOne caution. If you are prone to health anxiety, more attention to the body can mean more worry, and new or frightening symptoms should be checked by a doctor before you treat them as feelings. The figure here breathes out. Noticing, naming and letting go is the skill; staring is not.",
+   "poseId": "p_breath_exhale",
+   "disconfirm": "These claims would be too strong if larger trials found no benefit from interoceptive training. The 2021 result is a single trial with heavy loss to follow-up, so treat it as encouraging rather than proven."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_breath_exhale",
+   "dontPoseId": "p_stand_hand_neck",
+   "doCaption": "Noticing once, then letting the breath settle",
+   "dontCaption": "Checking the pulse again and again",
+   "annotation": "Repeated checking keeps attention locked on the body and feeds anxiety. Noticing once, naming what you feel and letting it pass is the aim of most body awareness practice."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_posture_braced_upright",
+   "doCaption": "Tension noticed and released",
+   "dontCaption": "Braced, and unaware of it",
+   "annotation": "Many people only discover their tension when someone points it out. A brief scan, several times a day, catches it earlier."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_slouched_low",
+   "doCaption": "Sitting still and checking in",
+   "dontCaption": "Numb, no longer listening",
+   "annotation": "In low mood the body can go quiet, and people stop noticing hunger, tiredness or cold. Regular check-ins restore some of that information."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Treating it as a question",
+   "dontCaption": "Acting on a gut feeling as a verdict",
+   "annotation": "A strong reaction to a stranger is real information about your body. Whether it is information about them is a separate question, to be checked."
+  }
+ ],
+ "caseStudy": "Marcus, thirty-eight, a project manager, has had what he calls stomach trouble for two years. It comes most weeks, often on Sunday evenings, and with it a short temper that his partner, Leah, has learned to steer around. He has also noticed that he takes against people quickly. After a first meeting with a new supplier, he tells his team the man is shifty, though he cannot say why.\n\nHis doctor runs tests and finds nothing physically wrong, and suggests that stress may be part of it. Marcus is sceptical. He does not feel stressed, he says; he feels ill. A psychologist he sees through work asks him to try something simple. Three times a day, for a fortnight, he is to stop and write down what his body is doing, in body words only, before giving it any other name: tight stomach, warm face, heavy legs, hungry, cold.\n\nThe notes surprise him. The Sunday stomach starts at about six, as he thinks about the Monday meeting with his director, and it eases if he goes for a run. The short temper comes mostly late in the afternoon, on days he has skipped lunch, and fades after he eats. And the meeting with the supplier, when he checks his diary, came at the end of a long day with no break, after a call with the director that had gone badly.\n\nMarcus does not decide that everything was in his head. Some Sundays the stomach is just a stomach. But he begins to check before he names. He eats before late meetings. When he feels his temper rising at home, he tells Leah, “I'm tense, I don't think it's you,” and they both find that easier. With the psychologist, he starts working on the Monday meetings themselves. And when the supplier turns out, over the next few months, to be reliable and straightforward, Marcus notes it in his journal: a gut feeling, checked, and wrong.",
+ "observe": [
+  "Three times today, pause and notice one signal from inside your body, such as hunger, temperature, heartbeat or breath, before you name any emotion.",
+  "Notice when a strong reaction to another person arrives, and what your body was doing just before it: hungry, tired, tense or cold.",
+  "Notice how people around you describe their bodies when they are upset, and whether “I feel sick” sometimes means “I'm anxious”.",
+  "Notice whether checking a sensation makes it fade or grow."
+ ],
+ "drills": [
+  {
+   "name": "The Inside Scan",
+   "minutes": 10,
+   "steps": [
+    "Sit comfortably and spend one minute noticing your breath without changing it.",
+    "Move your attention to your chest and notice whether you can feel your heartbeat, without touching your pulse.",
+    "Move to your stomach: is it hungry, full, tight or settled?",
+    "Notice temperature, and any tension in your jaw, shoulders and hands.",
+    "Write three words describing what you found, using body words only, and only then decide which emotion, if any, fits."
+   ]
+  },
+  {
+   "name": "Test the Name",
+   "minutes": 15,
+   "steps": [
+    "The next time you notice a strong feeling, write the name you would give it.",
+    "Write what your body is doing, in body words, separately from the name.",
+    "Choose a small test: eat something, drink water, rest for ten minutes or warm up.",
+    "After the test, write whether the feeling changed, and how.",
+    "Repeat on five occasions over a fortnight, and note which names held up and which did not."
+   ]
+  },
+  {
+   "name": "Gut Feeling Log",
+   "minutes": 15,
+   "steps": [
+    "When you have a strong first impression of someone, write it down in one sentence.",
+    "Write your own state at the time: sleep, food, stress and anything the person reminded you of.",
+    "Write what evidence would confirm or overturn the impression.",
+    "Return to the entry after a few weeks and record what you learned about the person.",
+    "After five entries, note how often the gut feeling held up, and under what conditions."
+   ]
+  },
+  {
+   "name": "Sensation Without Story",
+   "minutes": 15,
+   "steps": [
+    "Only if your health allows and you have no heart condition, climb stairs briskly or jog on the spot until your heart is clearly pounding.",
+    "Sit down and notice the sensations, describing them silently in body words: fast, strong, warm, breathless.",
+    "Notice any story your mind adds, such as something is wrong, and label it as a story.",
+    "Watch the sensations fade over the next few minutes, without checking your pulse.",
+    "Write how long they took to settle; if sensations like these frighten you, do this with a therapist instead."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Experienced meditators spend years attending to their bodies. What did Khalsa and colleagues find when they tested meditators' heartbeat detection?",
+   "options": [
+    "They sensed their heartbeats almost perfectly, far better than anyone else tested",
+    "They were no more accurate than non-meditators, but rated themselves better",
+    "They were worse than non-meditators, because meditation dulls the senses",
+    "They were more accurate, but only after a session of intense exercise"
+   ],
+   "answer": 1,
+   "explain": "The meditators were no better at detecting their heartbeats, though they found the task easier and rated their performance higher. Practice can change confidence more than accuracy, which is why self-assessments of body awareness need checking.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Brewer, Cook and Bird conclude about alexithymia?",
+   "options": [
+    "It reflects a general difficulty sensing bodily states, not only emotions",
+    "It is a form of autism, and always occurs together with autism",
+    "It is a deliberate, learned choice not to talk about feelings with other people",
+    "It mainly affects the ability to recognise other people's faces"
+   ],
+   "answer": 0,
+   "explain": "People higher in alexithymia were worse at perceiving non-emotional bodily states and rated different states as more alike. The authors concluded that alexithymia is better described as a general difficulty with interoception.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A friend with panic attacks keeps checking his pulse and says his heart is going wrong, though his doctor has found no heart problem. Which approach fits the evidence best?",
+   "options": [
+    "Checking his pulse more often, so that he can catch any problem early",
+    "Avoiding all exercise, so that his heart rate never rises much again",
+    "Telling him firmly that the sensations are all in his imagination",
+    "Treatment that includes gradual, guided exposure to the feared sensations"
+   ],
+   "answer": 3,
+   "explain": "Interoceptive exposure, done with a clinician after medical causes are checked, teaches through experience that the sensations are uncomfortable but safe. Checking and avoidance keep attention locked on the body and maintain the fear.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Kandasamy and colleagues find on a London trading floor?",
+   "options": [
+    "Traders who ignored their bodies earned the most over their careers",
+    "Traders were worse than other people at detecting their own heartbeats",
+    "Traders' heartbeat detection tracked their profits and how long they lasted",
+    "Heartbeat detection made no difference to the traders' performance at all"
+   ],
+   "answer": 2,
+   "explain": "The traders were better than matched controls at detecting their heartbeats, and better detection went with higher relative profits and longer survival in the markets. The study was small and correlational, so it suggests rather than proves a link.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You meet a new colleague and instantly feel uneasy. It is late afternoon and you skipped lunch. What does this chapter suggest?",
+   "options": [
+    "Treat the unease as information about your body first, and then check",
+    "Trust the feeling, because gut reactions are usually accurate about people",
+    "Ignore the feeling completely, because bodily signals carry no information",
+    "Avoid the colleague until you can work out exactly what the feeling means"
+   ],
+   "answer": 0,
+   "explain": "A gut reaction is first a signal from your own body, which may reflect hunger, tiredness or history as well as the other person. Note it, check your state, and then look for evidence about them.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did the 2021 trial of heartbeat training in autistic adults, led by Quadt and Garfinkel, find?",
+   "options": [
+    "Anxiety disappeared completely in nearly everyone who took part in the training",
+    "Anxiety fell modestly more than in a comparison group, with caveats",
+    "Training had no effect on anxiety and the trial was stopped as unsafe",
+    "Anxiety rose, because paying attention to the body made people worse"
+   ],
+   "answer": 1,
+   "explain": "Anxiety fell more in the heartbeat-training group, and more of them met the criteria for recovery at follow-up. Only half the participants provided follow-up data, so the result is promising rather than settled.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific moment in the past month when you misread your own body: when you called something anger that was hunger, illness that was anxiety, or calm that was numbness. What were the signals, and what name did you give them at the time? What would you have noticed if you had checked before naming? Write what you would check next time, and which person in your life tends to bear the cost when you misread yourself.",
+  "guidance": "Most people find this hard, and that is the point: the signals are faint and the names come fast. You do not need a dramatic example. A short temper before dinner, or a gut feeling that turned out to be tiredness, is enough. If you have frequent physical symptoms that frighten you, see a doctor first, and then consider the reading.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to treat your feelings as direct readouts of the body, or of the world, when they are the brain's best guess, shaped by hunger, tiredness, expectation and history. The second is to confuse confidence with accuracy: years of practice, or a strong sense of being in touch with your body, do not guarantee that you read it well. The third is to listen too hard, checking and rechecking sensations until attention itself feeds anxiety. The fourth is to stop listening altogether, so that hunger, exhaustion and distress arrive as irritability that other people must absorb. The fifth is to treat a gut feeling about another person as a verdict on them rather than a question. And the last is to oversell training, when the evidence is promising but early. Notice, name, check, and see a doctor about symptoms that worry you.",
+ "furtherStudy": [
+  {
+   "work": "How do you feel? Interoception: the sense of the physiological condition of the body",
+   "author": "A. D. (Bud) Craig",
+   "note": "Nature Reviews Neuroscience 3(8), 2002. The paper that set out the modern view of interoception and the insula."
+  },
+  {
+   "work": "Interoception and mental health: a roadmap",
+   "author": "Sahib S. Khalsa and colleagues",
+   "note": "Biological Psychiatry: Cognitive Neuroscience and Neuroimaging 3(6), 2018. The consensus of the first Interoception Summit, on measurement and mental health."
+  },
+  {
+   "work": "Alexithymia: a general deficit of interoception",
+   "author": "Rebecca Brewer, Richard Cook and Geoffrey Bird",
+   "note": "Royal Society Open Science 3(10), 2016. Why difficulty naming feelings may begin with difficulty sensing the body."
+  },
+  {
+   "work": "Being You: A New Science of Consciousness",
+   "author": "Anil Seth",
+   "note": "Faber, 2021. A readable account of feelings and the self as the brain's predictions about the body."
+  }
+ ],
+ "reviewPrompt": "This week, before naming a strong feeling, check four things in your body first: hunger, tiredness, tension and temperature."
+}

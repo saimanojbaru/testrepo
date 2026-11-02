@@ -1,10 +1,10 @@
 # Content progress
 
-_Last updated: Part I, Foundations, complete. Parts I and VI are written in full._
+_Last updated: Part II, The Inner World, complete. Parts I, II and VI are written in full._
 
 ## Written
 
-30 of 90 chapters: all of Part I and all of Part VI. That is 135,084 words, about 300 pages.
+45 of 90 chapters: all of Parts I, II and VI. That is 199,354 words, about 440 pages.
 
 | Part I | Tier | Words | | Part VI | Tier | Words |
 |---|---|---|---|---|---|---|
@@ -25,7 +25,26 @@ _Last updated: Part I, Foundations, complete. Parts I and VI are written in full
 | 1.15 Synthesis | Master | 4,680 | | 6.15 Mastery — The Quiet Body | Master | 4,435 |
 | **Part I** | | **66,681** | | **Part VI** | | **68,403** |
 
-The pack is 947 KB raw and 300 KB gzipped. At this rate the full book will be about 900 KB gzipped, inside the 2 MB budget.
+| Part II | Tier | Words |
+|---|---|---|
+| 2.1 The Stress Posture | Foundation | 4,212 |
+| 2.2 Breath as the Master Signal | Foundation | 4,189 |
+| 2.3 The “I'm Fine” Mask | Foundation | 4,254 |
+| 2.4 Depression's Physical Signature | Intermediate | 4,199 |
+| 2.5 Anger — The Escalation Ladder | Intermediate | 4,152 |
+| 2.6 Anxiety's Body | Intermediate | 4,260 |
+| 2.7 The Body in Grief | Advanced | 4,253 |
+| 2.8 Trauma & the Freeze Response | Advanced | 4,241 |
+| 2.9 Pacifiers & Self-Soothing | Advanced | 4,221 |
+| 2.10 Burnout | Expert | 4,215 |
+| 2.11 Sleep, Cortisol & Visible Depletion | Expert | 4,194 |
+| 2.12 Substance Use & the Body | Expert | 4,182 |
+| 2.13 Suicidal Ideation — What the Body Shows (gated) | Master | 4,795 |
+| 2.14 Interoception | Master | 4,444 |
+| 2.15 Building a Personal Early-Warning System | Master | 4,459 |
+| **Part II** | | **64,270** |
+
+The pack is 1.35 MB raw and 430 KB gzipped. At this rate the full book will be about 900 KB gzipped, inside the 2 MB budget.
 
 Also written: the ethics statement *On Reading People* (1,205 words), crisis resources for 11 regions plus a worldwide directory, introductions for all six parts, and the full 90-chapter outline.
 
@@ -39,6 +58,17 @@ Run `./gradlew testDebugUnitTest --tests '*ContentContractTest*' -i` for current
 - **Balanced quizzes.** Every quiz passes the length rules below.
 - **No repetition across chapters.** Later chapters call back to earlier ones rather than re-teaching them. 1.6 goes deeper than the cluster step in 1.15 without repeating it. 1.12 covers a room's atmosphere and leaves group mechanics to 6.10. 1.13 covers the universality debate and leaves the method to 6.11 and the map to 5.11.
 - **Deception has one chapter.** 1.14 is the only chapter on lying. 1.2 explicitly leaves lie detection to it. 1.4 mentions the gaze-aversion belief only to point there. 6.7 and 6.12 use interrogation research only as warnings.
+
+## How Part II was written
+
+Part II is the most sensitive part of the book, and it follows extra rules on top of the ones above.
+
+- **Recognition and response, never diagnosis.** Every chapter teaches what can be noticed, which rival explanations to consider, how to ask, and where to find help. No chapter names a condition from a posture.
+- **Safe messaging.** 2.13 follows the WHO and IASP media guidance: no details of methods, “died by suicide” rather than “committed”, and stories of help and recovery. It teaches asking directly (Dazzi 2014; Blades 2018), staying, judging urgency, means safety, safety planning (Stanley 2018) and caring contact (Motto & Bostrom 2001). Its central claim is that no body signal reveals suicidal thinking (Franklin 2017), so the body's job is to prompt a question.
+- **The gate.** `safetyGate` on 2.13 carries all 12 crisis regions. Its title says plainly what the chapter covers. The crisis screen puts the numbers first, so the gate text refers to “the lines above”. `ScreensTest` renders the gate exactly as `AppNav` builds it (`12_gate_2_13`).
+- **Medical rivals first.** Where a sign could be illness (slurred speech, panic-like symptoms, fatigue), the chapter says to rule out medical causes before reading it as emotion.
+- **Facts checked on the web while writing.** Sources for 2.13–2.15 are listed under “Needs a human” below. Where a study could not be confirmed, the chapter cites one that could: 2.15 cites Lam, Wong & Sham's 2001 study instead of Lam & Wong 1997.
+- **Length.** Part II chapters average about 4,280 words, slightly shorter than Parts I and VI. Clinical topics were kept tight rather than padded.
 
 ## Face plates (added for Part I)
 
@@ -71,10 +101,7 @@ Parts I and VI cover ground that later chapters approach from other angles. Keep
 
 | Unwritten chapter | Already covered in | What the later chapter should do |
 |---|---|---|
-| 2.2 Breath; 2.14 Interoception; 2.15 Early-Warning System | 6.13: Garfinkel 2015, affect labelling, reappraisal, slow breathing (Zaccaro, Balban), Levant | Go deeper on the science and the clinical side. Do not present 6.13's studies as new. |
-| 2.3 The "I'm Fine" Mask | 1.8 (a voice that changes before the words do); 1.2 (Ekman and Friesen's patient film) | Build the clinical picture. Refer back for the voice and the history of the idea. |
-| 2.8 Trauma & the Freeze Response | 1.9 (freezing when touched is not consent) | Explain freezing in depth. |
-| 3.1 The Side-by-Side Principle | 1.3 (Sommer's seating, angles); 6.15 | Develop the principle for men's friendships and hard conversations. |
+| 3.1 The Side-by-Side Principle | 1.3 (Sommer's seating, angles); 6.15; 2.3 and 2.13 (side by side for hard questions) | Develop the principle for men's friendships. Do not re-teach the hard-conversation use. |
 | 3.3 The Head Nod | 6.11 (gesture dialects) | The full treatment of nods. |
 | 3.4 Personal Space Between Men | 1.3 (Hall, Kennedy, Sorokowska, Argyle & Dean) | What is specific to men. Do not repeat the general research. |
 | 3.5 The Bro Hug; 3.6 Touch Between Male Friends | 1.9 (Heslin, Suvilehto, consent) | What is specific to men's touch. |
@@ -85,10 +112,12 @@ Parts I and VI cover ground that later chapters approach from other angles. Keep
 | 4.5 Power Posing | 1.5 (one paragraph: Ranehill 2015, Carney) | The full evidence. |
 | 4.7 Meeting Room Geography | 1.3 (Sommer); 1.10 (Brown & Baer home ground) | Meeting rooms specifically. |
 | 4.11 Interview Signals | 6.6 (records, Schmidt & Hunter) | Build on 6.6. |
-| 5.1 Neurodivergence | 1.4 (Trevisan on eye contact); 1.8 (stammering) | The full picture. |
+| 5.1 Neurodivergence | 1.4 (Trevisan on eye contact); 1.8 (stammering); 2.9 (stimming, Kapp 2019); 2.14 (alexithymia rather than autism, Bird 2010; the ADIE trial) | The full picture. Call back to these rather than repeating them. |
 | 5.6 Race & the Reading of Black Male Bodies | 6.6 (Hugenberg & Bodenhausen); 1.14 (the Othello error) | The full treatment. |
 | 5.11 Cultural Variance — A Working Map | 1.13 (evidence); 6.11 (method) | The map itself, with its limits. |
 | 5.12 Religion, Modesty & Touch | 1.9 (a declined handshake as a matter of faith) | The full treatment. |
+| 3.x chapters on men's friendship and support | 2.3 (asking twice, listening rather than fixing); 2.13 (asking about suicide); 2.15 (trusted watchers) | Build on these. The suicide material stays in 2.13 only. |
+| 4.x chapters on work and meetings | 2.10 (burnout, Maslach's six areas); 2.11 (fatigue and hunger at work) | Apply them to work settings without re-teaching. |
 
 ## Pose library (Phase 2: done)
 
@@ -124,16 +153,16 @@ Still missing, for later parts:
 
 The brief sets two targets that cannot both be met.
 
-- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 30 chapters so far average about 4,500 words, about 10 pages.
+- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 45 chapters so far average about 4,430 words, about 10 pages.
 - **The page target.** 22–25 pages per chapter, 2,000+ pages in total.
 
-At the current depth, 90 chapters come to about **405,000 words, roughly 900 pages**. Reaching 2,000 pages needs one of three things:
+At the current depth, 90 chapters come to about **400,000 words, roughly 880 pages**. Reaching 2,000 pages needs one of three things:
 
 1. **Widen the contract.** For example 2–3 case studies per chapter, 8–10 teach blocks, or drill variations. This needs a schema change (`caseStudy` becomes a list), and it risks padding.
 2. **Add chapters.** About 180 would be needed at the current depth. The brief allows 7–8 parts.
 3. **Accept about 900 pages** as the honest size of the book.
 
-Every chapter so far has kept to the contract without padding. Sixty chapters remain, so this is still the cheapest moment to decide.
+Every chapter so far has kept to the contract without padding. Forty-five chapters remain, so the choice still shapes half the book.
 
 ## Authoring workflow
 
@@ -148,12 +177,17 @@ The JSON files are the source of truth. Edit them directly.
 
 ## Next
 
-- Part II, The Inner World, with the 2.13 safety gate: `safetyGate` must be set, and the test requires at least 5 crisis regions. Part II is the most sensitive part of the book. No chapter may diagnose; every chapter teaches recognition and response.
-- Then Parts III, IV and V, respecting the boundaries above.
+- Part III, Men & Connection; then Parts IV and V, respecting the boundaries above.
+- Part V needs the poses listed as missing (a child carried, lying down, sitting on the floor, a wheelchair and a cane) before its chapters are written.
 
 ## Needs a human before release
 
-- **Clinical review** of Part II, above all 2.13. The brief asks for 2.13 to be "clinician-reviewed in voice". An AI author can write in a clinician's voice, but that is not a clinician's review.
+- **Clinical review** of Part II, above all 2.13. The brief asks for 2.13 to be "clinician-reviewed in voice". An AI author can write in a clinician's voice, but that is not a clinician's review. Ask the reviewer to look first at:
+  - 2.13: the gate text; asking “whether they have thought about how or when”; the means-safety paragraph; the case study.
+  - 2.6: what to do during a panic attack.
+  - 2.12: the signs of alcohol poisoning, the recovery position, and the warning about stopping heavy drinking suddenly.
+  - 2.14: the drill “Sensation Without Story”, which is a mild form of interoceptive exposure.
+  - 2.8: the trauma-informed responses.
 - **Scholarly review** of Part V (disability studies, queer theory, critical race studies).
 - **A second check of every citation and statistic** (the Phase 12 editorial pass). For Part VI, check these figures first, because they were stated from memory:
   - Macnamara 2014 percentages by domain.
@@ -188,4 +222,22 @@ The JSON files are the source of truth. Edit them directly.
   - Serota 2010 (how lying is concentrated in a few people).
   - Blair, Levine & Shaw 2010 (about three in four).
   - The 2003 National Research Council and 2013 GAO conclusions.
+
+  For Part II, 2.13–2.15 were checked against these sources while writing:
+  - WHO 2019 estimates, 12.6 vs 5.4 per 100,000 ([AA report](https://www.aa.com.tr/en/europe/1-in-100-deaths-is-by-suicide-but-global-rate-falling-who/2277625)); ONS 2023, 4,506 of 6,069 ([ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/2023)).
+  - Dazzi et al. 2014 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/24998511/)); Franklin et al. 2017 ([APA](https://www.apa.org/news/press/releases/2016/11/suicidal-behaviors)); Rudd et al. 2006 ([Memphis](https://digitalcommons.memphis.edu/facpubs/8951)); Van Orden et al. 2010 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC3130348)).
+  - Simon et al. 2001 ([Means Matter](https://hsph.harvard.edu/research/means-matter/means-matter-basics/duration-of-suicidal-crises)); Owens, Horrocks & House 2002 ([CSP](https://www.suicideinfo.ca/?p=107340)); Stanley et al. 2018 ([NPR](https://www.npr.org/sections/health-shots/2018/07/11/628029412/a-simple-emergency-room-intervention-can-help-cut-future-suicide-risk)); Motto & Bostrom 2001 ([Stanford SPARQ](https://sparq.stanford.edu/solutions/caring-letters-prevent-suicide)); #BeThe1To ([NIMH](https://www.nimh.nih.gov/health/publications/5-action-steps-to-help-someone-having-thoughts-of-suicide)).
+  - Craig 2002 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/12154366/)); Damasio, Damasio & Tranel 2013 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC3657385)); Khalsa et al. 2018 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/29884281/)); Khalsa et al. 2008 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2637372)); Brewer, Cook & Bird 2016 ([City](https://openaccess.city.ac.uk/id/eprint/16737/)); Bird et al. 2010 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2859151)); Kandasamy et al. 2016 ([PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5027524/)); Quadt et al. 2021 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC8350004)); Paulus & Stein 2010 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2886901)); Ehlers & Breuer 1992; Mehling et al. 2012; Dunn et al. 2010 ([Cardiff](https://orca.cardiff.ac.uk/id/eprint/30125/)).
+  - Birchwood et al. 1989 ([Cambridge](https://resolve.cambridge.org/core/journals/psychological-medicine/article/predicting-relapse-in-schizophrenia-the-development-and-implementation-of-an-early-signs-monitoring-system-using-patients-and-families-as-observers-a-preliminary-investigation/9B5144EF885FA5CBB991D3ED04E40653)); Perry et al. 1999 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC27688)); Cook et al. 2012 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/21402724/)); Henderson et al. 2004 and Thornicroft et al. 2013 ([Mental Elf](https://www.nationalelfservice.net/populations-and-settings/hospital-admissions/joint-crisis-plans-to-prevent-compulsory-admissions-a-good-idea-stymied-by-poor-execution/)); MONARCA I, 2015 ([Cambridge](https://resolve.cambridge.org/core/journals/psychological-medicine/article/daily-electronic-selfmonitoring-in-bipolar-disorder-using-smartphones-the-monarca-i-trial-a-randomized-placebocontrolled-singleblind-parallel-group-trial/C45C6B5F4A25A022155721C61F29E882)).
+
+  For 2.1–2.12, key facts were checked while writing, but no source log was kept. Check these numbers first:
+  - WHO, about 280 million people with depression in 2019 (2.4).
+  - de Jonge et al. 2016: over 140,000 adults in 25 countries (2.6).
+  - Mostofsky et al. 2012: nearly 2,000 heart-attack patients (2.7); Mostofsky, Penner & Mittleman 2014 (2.5).
+  - Kjærvik & Bushman 2024: over 150 studies (2.5); the Kaplan & Wheeler phase names (2.5).
+  - Dreisoerner et al. 2021: 159 adults (2.9).
+  - Sundelin et al. 2013: ten people, about 31 hours awake; Goldstein-Piekarski et al. 2015: eighteen adults (2.11).
+  - Mundt et al. 2012: over a hundred adults (2.4).
+  - Möller et al. 2017: the share of women reporting tonic immobility (2.8).
+  - Martin, Neighbors & Griffith 2013 (2.3); von Dawans et al. 2012 (2.1).
 - **Crisis numbers** re-verified before each release, because services change.
