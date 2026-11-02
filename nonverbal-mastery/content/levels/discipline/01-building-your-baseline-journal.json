@@ -1,0 +1,266 @@
+{
+ "id": "discipline-01",
+ "categoryId": "discipline",
+ "index": 1,
+ "tier": "FOUNDATION",
+ "title": "Building Your Baseline Journal",
+ "estimatedMinutes": 55,
+ "hook": "Memory is a novelist that rewrites what you saw to fit what you concluded; a journal is the only witness it cannot persuade.",
+ "why": "Think about the last time you were sure someone was angry with you. If you try now to recall what you actually saw, you will probably find a conclusion with very little underneath it: a tone, a look, a sense. You cannot check it, because the evidence has been quietly rewritten to match the story. That is not a flaw peculiar to you. It is how memory works for everyone, and it means that a man can spend years reading people and learn almost nothing, because every misreading is remembered as a near miss and every lucky guess as insight.\n\nA journal breaks that loop. It holds what you saw and what you guessed at the time, before the outcome arrives to edit them. Over weeks it becomes the only honest account of where your readings go right and where they go wrong, which is the raw material of every other chapter in this part. Without it, practice is repetition. With it, practice becomes learning.",
+ "teach": [
+  {
+   "h": "Memory edits observations to fit conclusions.",
+   "p": "In 1974 Elizabeth Loftus and John Palmer showed people film of a car accident and then asked how fast the cars were going when they hit, or smashed into, each other. The verb changed the answer: people asked about smashing gave higher speeds. A week later, more of them remembered seeing broken glass, though there was none. A single word, arriving after the event, had altered the memory of the event itself.\n\nReading people is full of such words. You see a colleague's face at a meeting, and an hour later someone tells you he is about to resign. By evening you remember him looking evasive. Baruch Fischhoff called the related effect hindsight bias, or creeping determinism: once people learn an outcome, they believe they would have predicted it, and they remember their earlier judgment as closer to the truth than it was.\n\nThe consequence for this book is severe. If you rely on memory to learn from your readings, the outcome will always arrive first and rewrite what you thought you saw. You will remember being right more often than you were, and you will have no way to find out. The only defence is to fix the observation in writing before you know how the story ends.\n\nThis is not a counsel of despair about memory. It is a reason to stop asking memory to do a job it was never built for. Memory keeps the gist and serves the present; a page keeps the detail and serves the future you who will want to know what actually happened.",
+   "poseId": "p_pro_taking_notes",
+   "disconfirm": "If, over a month, your remembered version of events and your written entries agree in nearly every detail, including your wrong guesses, your memory is unusually faithful and the journal matters less for you. Few people pass that test; check it before assuming you do.",
+   "pullQuote": "Fix the observation in writing before you know how the story ends."
+  },
+  {
+   "h": "Write the observation and the inference on separate lines.",
+   "p": "Anthropologists learned long ago that field notes are only useful if description and interpretation are kept apart. Robert Emerson, Rachel Fretz and Linda Shaw's guide to ethnographic fieldnotes teaches students to record what people said and did in concrete, low-inference language, and to mark their own interpretations as interpretations. The same discipline turns a diary into a journal of observation.\n\nCompare two entries. *He was defensive about the deadline.* And: *When I said the fourteenth, his arms went from his lap to folded high across his chest, shoulders lifted; he answered the next two questions in a few words; about a minute later his hands went back to the table.* The first is a conclusion with no evidence attached. The second is evidence, and it allows several conclusions, which is exactly the point.\n\nThe test for each descriptive line is simple: could a camera have recorded it? Folded arms, a pause of several seconds, a change in volume, a hand to the jaw, eyes moving to the window: yes. Nervous, cold, guilty, interested, defensive: no. Those words belong on the next line, under a heading that marks them for what they are: my guess.\n\nKeeping the lines separate does two things. It forces you to look closely enough to have something to describe. And it preserves the description for later, when you may want to read it against a different guess than the one you made on the day.",
+   "poseId": "p_stand_arms_crossed_tight",
+   "disconfirm": "If you find that your descriptive lines and your guesses always point the same way, check whether the descriptions were chosen to fit the guess. An honest description usually supports more than one reading."
+  },
+  {
+   "h": "Write within hours, not days.",
+   "p": "Hermann Ebbinghaus, who tested his own memory with lists of nonsense syllables in the 1880s, found that most forgetting happens soon after learning, in the first hours and the first day, and then slows. Memory for a fleeting change in someone's posture behaves the same way, only worse, because it was never deliberately learned in the first place.\n\nSo the journal has two speeds. The first is a jotting, made within minutes, that takes no more than thirty seconds: the time, the place, who it was by role or initials, what changed, and what had just happened. A few words each. A note on your phone in the corridor after the meeting is enough.\n\nThe second is the full entry, written the same day while the jotting can still unlock the memory. It takes three or four minutes and follows the shape described in the next section. Jottings without full entries decay into cryptic fragments within a week; full entries written days later have already been edited by everything you learned in between.\n\nMake the jotting effortless or you will not do it. Keep the note open on your home screen, use the same five words every time, and accept abbreviations only you can read. The aim is not a record anyone else could use; it is a hook strong enough to pull the moment back out of memory four hours later.\n\nThere is one firm rule about timing: never write during the conversation itself. Taking notes on someone while they talk to you changes what they do and what they say, and it turns a person into a subject in front of their eyes. Be with them now. Write afterwards.",
+   "poseId": "p_sit_phone",
+   "disconfirm": "If your full entries written the next morning turn out, on review, to be as detailed and as uncertain as same-day ones, the delay may not cost you much. Compare a few of each before relaxing the rule."
+  },
+  {
+   "h": "Give every entry the same shape.",
+   "p": "A journal becomes evidence only when its entries can be compared, and entries can only be compared if they share a shape. The form this book recommends has eight short lines, most of them a single phrase:\n\n*Setting:* where, when, who, by role. *My state:* rested or tired, calm or braced, what I wanted to be true. *Baseline:* what this person is usually like in this kind of setting, if I know. *Change:* what moved, described for a camera. *Timing:* what it followed, and how long it lasted. *Guess:* my best hypothesis. *Rival:* the most plausible ordinary explanation. *Would show me wrong:* what I would expect to see if the rival were true.\n\nLeave a ninth line blank: *Outcome.* You fill it in days or weeks later, when you learn something, and you mark it right, wrong or unclear. That empty line is what turns the journal from a record of impressions into a record of predictions.\n\nThe shape will feel slow for the first dozen entries and then become fast, because it is the same shape as the method itself. Most people find they can complete an entry in under three minutes by the second week. If a line is empty, leave it empty; an honest blank is worth more than an invented baseline.\n\nWrite entries on ordinary days too, when nothing seemed to happen. A journal kept only for striking moments will be full of drama and empty of the quiet evidence that most of what you notice is noise. The dull entries are the control group.",
+   "poseId": "p_sit_neutral",
+   "disconfirm": "If after a month you cannot compare entries, because each one is shaped differently, the template is not doing its work. Shorten it until you use it every time, rather than lengthening it until you never do."
+  },
+  {
+   "h": "Record your own state, and the facts that disagree with you, first.",
+   "p": "The second line of every entry is about you, and it is the one most people skip. Were you tired, hungry, anxious about the outcome, irritated by something unrelated? What did you hope or fear you would find? These are not confessions. They are calibration data. Over weeks, the journal can show you whether your readings of threat cluster on days you slept badly, or your readings of warmth on days you wanted the deal to close.\n\nCharles Darwin described a habit he kept for many years in his autobiography. Whenever he met a fact or thought that went against his general conclusions, he wrote it down at once, because he had found that such facts were far more apt to slip from memory than favourable ones. He called it a golden rule.\n\nApply it to your journal. The observations that fit your story will be remembered anyway. The ones that do not fit, the colleague who was warm on the day you were sure he was angry, the friend who laughed easily the week you thought he was low, are the ones that vanish. Write those first, and in full.\n\nThe stake deserves particular honesty. If you want a client to sign, a friend to forgive you or a date to go well, you will see signs of yes in ambiguous behaviour, and the same behaviour will look like no on the day you expect rejection. Write the wish down in one plain sentence before you write anything about the other person. You will not be free of it, but on review you will be able to see how often the wish and the reading matched, and that number is one of the most useful things a journal can tell you.",
+   "poseId": "p_stand_shoulders_raised",
+   "disconfirm": "If your state line shows no relationship to your hit rate over two months of entries, your mood may not be distorting your readings much. The point of recording it is that you will know, rather than assume.",
+   "pullQuote": "Write down the facts that disagree with you first; they are the first to go."
+  },
+  {
+   "h": "A journal records your perception, never a file on a person.",
+   "p": "There is a line between a baseline journal and a dossier, and it matters more than any technique in this chapter. A baseline journal is about your seeing: what you noticed, what you guessed, where you were wrong. A dossier is about another person's life: their secrets, their weaknesses, a case being built. The first makes you a better reader. The second makes you someone others would be right to fear.\n\nKeep entries about roles and initials, not full names. Record behaviour you observed in shared settings, not private information you overheard or were told in confidence. Never photograph or record people to support an entry. Never keep notes on a partner, a former partner or a family member in order to win an argument or prove a point; that is surveillance, and in some relationships it is a warning sign of control.\n\nThe journal in this app lives only on your phone and leaves it only if you export it. That protects you as well as the people you write about. A page of guesses about a colleague's feelings, read by the wrong person, can do real harm, and the guesses may well be wrong.\n\nA useful test before writing any line: if the person you are writing about read this entry, would they recognise a fair description of a moment, or would they feel watched? Write only the first kind.",
+   "poseId": "p_sit_forward_engaged",
+   "disconfirm": "If you notice the journal growing longer about one particular person while your reflections on your own errors grow shorter, the journal has drifted from perception toward surveillance. Stop and reread this section."
+  },
+  {
+   "h": "The weekly review turns entries into evidence.",
+   "p": "Entries that are never reread are a diary. Once a week, take twenty minutes with the journal. Fill in any outcomes you now know. Count your guesses: how many right, how many wrong, how many still unclear. Then look for patterns, which only appear across many entries.\n\nGroup the entries in three ways. By setting: are your readings at work better than your readings at home? By the kind of person: do you misread quiet people, older people, people from a particular background? By your own state: do your misses cluster on certain days? Each grouping is a question about you, not about them.\n\nEnd each review by writing one sentence about what you noticed and one question to test in the coming week. *I keep reading tiredness as disapproval in my manager; this week, check whether her short answers follow late nights on the team calendar.* The question gives next week's observations a purpose.\n\nAfter a month, the review starts to show something no single entry could: the shape of your own perception. That shape is what the later chapters on calibration, feedback and personal protocols are built on.\n\nKeep one more page, separate from the entries: a short baseline note for each person you see often, by role. *Manager: short answers before ten, expansive after lunch; looks at the window when thinking.* Revise it at the review whenever the entries contradict it. That page is the slowest-changing and most valuable thing in the journal, because it is the reference every later entry about that person is read against.",
+   "poseId": "p_sit_hands_clasped_lap",
+   "disconfirm": "If four weekly reviews in a row show no pattern at all, either your readings are unusually even or your entries are too few or too vague to reveal one. Add entries before concluding the former."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_pro_taking_notes",
+   "doCaption": "Being with them now, and writing it down afterwards.",
+   "dontCaption": "Taking notes on someone while they talk to you.",
+   "annotation": "Notes taken in front of a person change what they do and what they tell you. Jot after the moment, not during it."
+  },
+  {
+   "doPoseId": "p_sit_neck_touch",
+   "dontPoseId": "p_stand_hand_neck",
+   "doCaption": "Written the same evening: hand to the throat two seconds after the question about Friday.",
+   "dontCaption": "Remembered a week later as 'he looked guilty'.",
+   "annotation": "The same moment, kept two ways. Only the written description can still be read against a different guess."
+  },
+  {
+   "doPoseId": "p_sit_phone",
+   "dontPoseId": "p_walk_phone",
+   "doCaption": "Stopping for two still minutes to write it properly.",
+   "dontCaption": "Typing a note while walking away, half attending to both.",
+   "annotation": "A jotting written while distracted is just a second unreliable memory. Two quiet minutes are worth more than ten rushed ones."
+  },
+  {
+   "doPoseId": "p_breath_easy",
+   "dontPoseId": "p_stand_shoulders_raised",
+   "doCaption": "Noting your own state on the first line, then writing.",
+   "dontCaption": "Writing up the meeting braced and irritated, without noting it.",
+   "annotation": "The entry starts with you. A reading taken braced leans toward threat, and only a recorded state line can show that later."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Recording what you saw and guessed, by role, in shared settings.",
+   "dontCaption": "Building a file on one person's private life.",
+   "annotation": "A baseline journal is about your perception. A dossier is about someone else's life, and it has no place in this practice."
+  }
+ ],
+ "caseStudy": "Ravi manages three accounts for a logistics firm. In March he became convinced that his largest client contact, Mark, was cooling on the relationship: shorter answers, arms folded, a glance at his phone whenever Ravi raised the renewal. Ravi's colleague Dan, who had covered the account in February, said he had felt the same and had already offered a discount to win Mark back.\n\nSix weeks earlier Ravi had started a journal, one entry after every call, in the same shape each time. Reading back over eleven entries about Mark, he found three things he would never have recalled. The short answers and folded arms appeared in every Monday call, which were at eight in the morning, straight after Mark's own weekly operations meeting; on Thursday afternoons he was expansive. Ravi's own state line read *tired* or *anxious about numbers* on every day he had written that Mark seemed cold. And one entry fitted no pattern at all: a Thursday when Mark went quiet at the word pricing, put his hand to his jaw, and asked for the figures in writing.\n\nRavi wrote a narrower hypothesis: Mark is happy with the service, and something about pricing is constraining him. The rival: he is quietly shopping elsewhere. What would tell them apart: if he were shopping, his questions would move to exit terms. Over the next two Thursday calls his questions were all about payment schedules. Ravi asked him directly whether the timing of payments was the issue. It was. Mark's new finance director had changed the company's payment terms, and Mark had been embarrassed to raise it.\n\nRavi moved the payment dates without touching the price. Dan's discount, offered to a man who was never leaving, had cost the firm nine percent for nothing. Memory had told both men the same story. Only one of them had a record that could argue back.",
+ "observe": [
+  "Tonight, write one entry about a single moment from today when someone's behaviour changed, using two separate lines: what their body did, and what you guessed it meant. Use a role, not a name.",
+  "For one week, write an entry within an hour of every meeting, family meal or long call you take part in, whether or not anything seemed to happen.",
+  "At the end of the week, count how many of your entries describe moments you would not otherwise have remembered, and how many of your guesses you can now check.",
+  "Reread your three oldest entries and underline every word that is an inference dressed as a description, such as nervous, cold or defensive."
+ ],
+ "drills": [
+  {
+   "name": "Split the Sentence",
+   "minutes": 10,
+   "steps": [
+    "Write down ten phrases you often use about other people, such as he was nervous or she seemed cold.",
+    "Under each, write what a camera would have recorded at that moment.",
+    "Mark every phrase for which you cannot think of any observable behaviour behind it.",
+    "Rewrite the rest as descriptions with a timing: what moved, after what, for how long.",
+    "Keep the list and add to it whenever you catch a new inference word in your entries."
+   ]
+  },
+  {
+   "name": "The Thirty-Second Jot",
+   "minutes": 15,
+   "steps": [
+    "Watch three minutes of a recorded interview with the sound on and pause the moment you notice any change in the guest.",
+    "Set a timer for thirty seconds and jot only the time, the person's role, what changed and what had just been said.",
+    "Wait five minutes, then write the full entry from the jotting alone.",
+    "Replay the moment and compare it with your entry.",
+    "Note one detail the jotting saved and one it missed, and adjust what you jot next time."
+   ]
+  },
+  {
+   "name": "The Same Shape",
+   "minutes": 15,
+   "steps": [
+    "Create a note template with the nine lines: setting, my state, baseline, change, timing, guess, rival, would show me wrong, outcome.",
+    "Write one entry from memory about a moment yesterday, filling every line you honestly can and leaving the rest blank.",
+    "Time how long it took.",
+    "Remove or merge any line you would be tempted to skip under time pressure, keeping state, change, guess, rival and outcome.",
+    "Save the template where you can open it in two taps."
+   ]
+  },
+  {
+   "name": "Memory Against the Page",
+   "minutes": 20,
+   "steps": [
+    "Choose an entry you wrote at least two weeks ago and do not reread it yet.",
+    "Write, from memory, what happened in that moment and what you thought at the time.",
+    "Now read the original entry.",
+    "Mark every difference between the two versions.",
+    "Note which way your memory drifted: toward what you later learned, toward your own conclusion, or neither."
+   ]
+  },
+  {
+   "name": "The Weekly Review",
+   "minutes": 20,
+   "steps": [
+    "Gather at least five entries from the past week and fill in any outcomes you now know.",
+    "Tally the guesses as right, wrong or unclear.",
+    "Group the entries by setting, by the kind of person, and by your own state line.",
+    "Write one sentence describing the clearest pattern you can see.",
+    "Write one question to test in the coming week, and put it at the top of next week's page."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Which of these is the most useful journal entry?",
+   "options": [
+    "He got defensive when I raised the deadline.",
+    "Arms went from resting to folded high, shoulders lifted, within a second of 'the deadline'; lasted about a minute.",
+    "He was clearly hiding something about the deadline.",
+    "Bad meeting."
+   ],
+   "answer": 1,
+   "explain": "Only the second entry records what a camera could have seen, with its timing and duration, which means it can be read against more than one explanation later. The first and third are conclusions with the evidence thrown away. The fourth records a mood, most likely yours.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Loftus and Palmer's 1974 experiment on witness memory show?",
+   "options": [
+    "People remember car accidents accurately if they saw them clearly",
+    "Eyewitnesses become more accurate under stress",
+    "A word in a later question, such as 'smashed' rather than 'hit', changed speed estimates and produced false memories of broken glass",
+    "Memory improves when events are rehearsed aloud"
+   ],
+   "answer": 2,
+   "explain": "Information arriving after an event altered the memory of the event itself. That is why a journal must be written before the outcome of a reading is known. Afterwards, the outcome edits the observation.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At dinner your brother went quiet and looked at his plate when your mother mentioned his job. What do you write in your journal tonight?",
+   "options": [
+    "Setting, your state, what changed and when, your guess, a rival and what would show you wrong, using a role or initial",
+    "A full account of what you think is wrong with his career",
+    "Nothing unless it happens again",
+    "A reminder to confront him about it next time"
+   ],
+   "answer": 0,
+   "explain": "A single shaped entry keeps the moment testable without turning it into a conclusion. Writing nothing loses it to memory. The second and fourth options leap from one observation to a story and an action.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Why does every entry begin with a line about your own state?",
+   "options": [
+    "To practise mindfulness",
+    "Because journals should be personal",
+    "To keep a record of your mood for a doctor",
+    "So you can later see whether your readings shift with your fatigue, mood or what you wanted to be true"
+   ],
+   "answer": 3,
+   "explain": "Your state is a known source of error in reading other people. Recorded entry by entry, it becomes something you can check against your hit rate. Without it, you can only guess whether your bad days produce bad readings.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your journal shows your readings were right nine times out of ten last month. What is the most likely explanation?",
+   "options": [
+    "You are an unusually accurate reader",
+    "The people you read were unusually easy to read",
+    "Your guesses are too vague to be wrong, or you mostly wrote down moments that confirmed you",
+    "Your memory is improving"
+   ],
+   "answer": 2,
+   "explain": "Hit rates that high usually mean the predictions could not fail or the entries were selected after the fact. Check whether each guess named what would show it wrong, and whether you wrote entries on ordinary days too. Darwin's golden rule exists for exactly this.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "A friend asks you to keep notes on his partner's behaviour so that he can prove she is hiding something. What does this chapter say?",
+   "options": [
+    "Keep the notes, but use initials",
+    "Decline: a baseline journal records your own perception, not a file on someone's private life",
+    "Keep notes on body language only",
+    "Agree, as long as he shows her the notes later"
+   ],
+   "answer": 1,
+   "explain": "What he is describing is a dossier built to win an argument, and in a relationship that can be a form of control. The journal in this book is about how you see, and it stays that way. The kind response is to ask what is worrying him.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Choose one specific belief you hold about someone you see often, such as my manager doesn't rate me or my father is disappointed in me. Write down the three observations you would point to as evidence, and for each one, when it happened and exactly what you saw. Then write one observation that would count against the belief, and say honestly whether you have ever looked for it.",
+  "guidance": "Most people find that their evidence for a firmly held belief about someone is thinner than they expected: a remembered tone, a single sentence, a look whose date they cannot place. That discovery is the point of the exercise, not a failure. Describe each observation as a camera would. If you cannot, say so plainly, and notice what that tells you about how the belief was formed. Then write the disconfirming observation as specifically as you can, so that you will recognise it if it happens this week.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is a journal that quietly becomes a confirmation machine. The reader writes entries only when something feels significant, which means he records the moments that fit his stories and skips the ordinary days that would have contradicted them. He writes conclusions on the description line. He never fills in the outcome, so the guesses can never be wrong. After a month he has a thick book that proves he was right about everyone. The second failure is the dossier: entries that grow longer and longer about one person, usually someone he is in conflict with or worried about, while the lines about his own state and errors shrink. Both failures have the same cure. Write on ordinary days. Keep description and guess apart. Fill in the outcome. And reread the section on perception versus surveillance whenever one name starts to dominate the page.",
+ "furtherStudy": [
+  {
+   "work": "Writing Ethnographic Fieldnotes (2nd edition)",
+   "author": "Robert M. Emerson, Rachel I. Fretz and Linda L. Shaw",
+   "note": "The clearest guide to keeping description and interpretation apart in written observation."
+  },
+  {
+   "work": "Reconstruction of automobile destruction: An example of the interaction between language and memory",
+   "author": "Elizabeth F. Loftus and John C. Palmer",
+   "note": "Journal of Verbal Learning and Verbal Behavior 13(5), 1974. The experiment behind the first section."
+  },
+  {
+   "work": "Hindsight is not equal to foresight: The effect of outcome knowledge on judgment under uncertainty",
+   "author": "Baruch Fischhoff",
+   "note": "Journal of Experimental Psychology: Human Perception and Performance 1(3), 1975."
+  },
+  {
+   "work": "The Autobiography of Charles Darwin",
+   "author": "Charles Darwin",
+   "note": "Look for the passage on his golden rule of writing down at once every fact that went against his conclusions."
+  }
+ ],
+ "reviewPrompt": "Write one full journal entry today in the nine-line shape. Then reread your entries from a week ago and mark one place where your memory and the page disagree."
+}

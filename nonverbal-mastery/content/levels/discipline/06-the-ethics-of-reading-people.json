@@ -1,0 +1,258 @@
+{
+ "id": "discipline-06",
+ "categoryId": "discipline",
+ "index": 6,
+ "tier": "INTERMEDIATE",
+ "title": "The Ethics of Reading People",
+ "estimatedMinutes": 65,
+ "hook": "Every reading moves information out of someone's body and into your head; ethics is deciding where it is allowed to go next.",
+ "why": "The statement at the front of this book sets out the principles: a reading is a guess, attention is not consent, power raises the standard of evidence, and some things this book refuses to teach. Principles are necessary and they are not enough. They tell you what kind of man to be. They do not tell you what to do at half past nine on a Tuesday, when a colleague asks what is going on with someone, and you think you know.\n\nThis chapter is the method that sits under the principles. It treats a reading as information that has moved, out of one person's body and into your head, and asks where it may go next. It gives you a test to run before you pass anything on, a short list of what you owe once you have noticed something, a way to find the bias travelling inside your own readings, and a set of hard cases to practise on. The skill of the earlier chapters makes you see more. This one decides whether seeing more makes you better company or worse.",
+ "teach": [
+  {
+   "h": "A reading is information on the move.",
+   "p": "When you notice that a colleague's voice tightens whenever the budget comes up, something has happened that is easy to miss: information has moved. It began in her body, in a meeting, among people who were all there for a shared purpose. Now it is in your head. Nothing wrong has happened yet. All social life runs on movements like this, and she can see your face too. The ethical question is not whether you were allowed to notice. It is where the noticing is allowed to go next.\n\nThe philosopher Helen Nissenbaum gave that question a shape. In her account of privacy as contextual integrity, first set out in 2004 and developed in her book *Privacy in Context* in 2010, information is never simply public or private. It arrives under the norms of a context: what a patient tells a doctor, what a colleague shows in a meeting, what a friend lets slip over dinner. Privacy is violated when information flows in ways that break the norms of the context it came from, even if every piece of it was in plain view.\n\nThis explains something the public and private split cannot. Your friend's face at his father's funeral was visible to a hundred people. Describing it in a work email the following week would still feel like a betrayal, because a funeral carries norms about what is seen there and where it goes. Nobody had to declare the norms. Everyone present knew them.\n\nReadings deserve more care in transit than facts do, because a reading carries your inference along with what the person showed. When you pass one on, you move not only her tightened voice but your guess about what it meant, and she is not there to correct it. The listener receives a conclusion with the evidence stripped off, and conclusions travel further and faster than the evidence ever would.\n\nSeen this way, the journal is safe for a simple reason. It is a flow from your eyes to your own notebook, kept for your own learning, and that is a context almost everyone would accept.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "If the people you read would not mind, when asked plainly, where any of your readings went, the norms of context would not matter for them. Ask one person you trust how they would feel about a particular reading of theirs reaching a particular place, and listen to the answer.",
+   "pullQuote": "Conclusions travel further and faster than the evidence ever would."
+  },
+  {
+   "h": "Run the flows test before you pass anything on.",
+   "p": "Most ethical mistakes in reading people happen in a single sentence, said lightly: *I think she's struggling at home*, *he's clearly not on board*, *she fancies you, by the way*. The test that prevents them takes about ten seconds and has four questions.\n\nFirst: where did I see this? Name the context and the norms it carried, a team meeting, a dinner among friends, a hospital corridor. Second: what exactly am I passing on, the behaviour or my inference? *She went quiet when the night shift came up* is a report. *She's got problems at home* is a story you built on it. Third: who would receive it, and what could they do with it? A reading that reaches a manager can change someone's work; one that reaches a group can follow her for years. Fourth: would she expect it to go there, and if she learned that it had, would she think it fair?\n\nThe fastest way to run the fourth question is backwards. Imagine the person reading the message you are about to send, or standing behind you as you say the sentence. If you would change a word, change it now, or say nothing.\n\nNone of this forbids talking about people. Research on reputation, including work by Matthew Feinberg, Robb Willer and their colleagues in 2012, finds that sharing what people have done can protect a group, warning others about someone who cheats or bullies. That is a report of conduct, which the person can answer. A reading of someone's inner state is different. It is a guess about something they have not told anyone, and passing it on takes from them the chance to tell it themselves, or not at all.\n\nWhen the test fails, there is almost always a better flow available: take what you noticed to the person, or keep it.",
+   "poseId": "p_stand_hands_clasped_front",
+   "disconfirm": "If you run the four questions on the last ten readings you passed on and every one passes, either you are already careful or you are answering the fourth question on the other person's behalf. Where you can, ask one of them whether they minded."
+  },
+  {
+   "h": "What you owe after noticing.",
+   "p": "Noticing creates a small obligation, and there are three ways to meet it: hold, ask or act. Choosing between them is most of ethics in practice.\n\nHold is right for most readings. The person showed something, it is theirs, and nothing about the moment needs you. Holding is not ignoring. A reading you keep can still change how you behave, quietly: you slow down, you leave a question for another day, you give the person the easier seat. That is the reading put to its best use, and nobody ever has to know it happened.\n\nAsk is right when the reading touches something you share, such as a plan, a piece of work or a friendship, or when it concerns the person's wellbeing and you are close enough to ask. Ask about the situation, not the signal, and leave a clear way out: *When the night-shift change came up you went quiet. If it causes you a problem, I'd like to know. You don't have to tell me why.* Then accept whatever comes back, including nothing.\n\nAct is for the rare case where there is a risk of harm, to the person or to someone else. Here the norms of context give way to safety, and the guidance at the front of the book on asking directly about suicide is the clearest example. Acting means bringing in help, a crisis line, a doctor, emergency services, the person responsible for safety at work. It never means broadcasting.\n\nThe three carry different costs when they are chosen wrongly. Holding when you should have asked costs a little. Asking when you should have held costs a little more, since nobody enjoys being read aloud. Holding when you should have acted can cost a great deal, and it is the error men are most likely to make out of a wish not to intrude.",
+   "poseId": "p_pair_angled",
+   "disconfirm": "If over a month you find that your questions about things you noticed regularly leave people feeling watched rather than cared for, you are asking too often or naming their bodies too precisely. Ask less often, and about the situation rather than the signal.",
+   "pullQuote": "Noticing creates a small debt. Usually it is paid by keeping quiet, or by asking."
+  },
+  {
+   "h": "Bias travels inside the reading.",
+   "p": "Readings do not go wrong at random. They go wrong in the directions a culture has already laid down, and they feel like perception rather than prejudice while they do it.\n\nIn 2003 Kurt Hugenberg and Galen Bodenhausen showed White participants short films of faces changing expression, and asked them to mark when anger appeared or faded. Participants higher in implicit prejudice saw anger arrive sooner and linger longer on Black faces than on White ones. Nobody had told them what to see. The bias was inside the act of looking. In 2008 Victoria Brescoll and Eric Uhlmann found that men who expressed anger at work were granted more status, while women who expressed the same anger were granted less, and their anger was put down to their character rather than the situation. The same tight jaw, read through two stereotypes, produced two different people.\n\nA reading kept private is not therefore harmless. It shapes what you do next: how closely you watch someone, how much benefit of the doubt you give, how curtly you answer. A man who reads threat more readily in one group of people will treat that group as more threatening, and will rarely notice that he is doing it.\n\nIntrospection will not find this, because the bias feels exactly like seeing. Your ledger can. Tag each scored prediction with the broad group of the person you read, in your own notes only, and after a few months compare the error rates and the direction of the errors. Where you find a gap, such as reading anger or coldness more readily in one group than the record supports, treat your first impression of people in that group as one band less certain until the gap closes.\n\nThis is uncomfortable work. It is also the only kind of evidence that can tell you whether your readings are fair.",
+   "poseId": "p_stand_neutral_three_quarter",
+   "disconfirm": "If your ledger, tagged by group, shows the same error rates and the same direction of errors across groups over a large number of predictions, this bias is not showing up in your readings in that domain. Keep checking, because a small sample from one group can hide a pattern for a long time."
+  },
+  {
+   "h": "The machine that reads faces is a mirror.",
+   "p": "Over the past decade companies have sold software that claims to read emotion from faces and voices: in recorded job interviews, in classrooms, in call centres, and in at least one publicly funded trial at European borders. It is worth studying, not because you will build it, but because it is a careless human reader made visible and run at scale.\n\nIn 2019 Lisa Feldman Barrett, Ralph Adolphs, Stacy Marsella, Aleix Martinez and Seth Pollak published a long review of the evidence on whether emotions can be read from facial movements. Their conclusion was that people do sometimes scowl when angry and smile when happy, but far less reliably than the products assumed, and that the same face means different things across people, situations and cultures. A scowl can be anger, concentration, confusion or bright sunlight.\n\nThe errors also followed the familiar lines. In 2018 Lauren Rhue tested two commercial systems on photographs of professional basketball players and found that they scored Black players as angrier, or more contemptuous, than White players with similar smiles. One large hiring-software company dropped facial analysis from its video interviews in 2021 after sustained criticism. In 2024 the European Union's AI Act banned systems that infer emotions in workplaces and schools, except for medical or safety reasons.\n\nLook at what went wrong and you find this book's warnings, one after another. The systems used a dictionary of expressions. They had no baseline for the person, no knowledge of the context, no way to be shown wrong, and they fed their guesses straight into decisions about people's lives. If that is wrong when a machine does it to millions, it is wrong when you do it to one person. The harm is only smaller.\n\nWhenever you feel sure of a reading, ask whether you would trust a machine that reached it the same way.",
+   "poseId": "p_pro_video_call",
+   "disconfirm": "If independent tests across cultures and groups showed an automated system inferring specific emotions from faces reliably, without knowing the person or the context, this block would need revising. As of the 2019 review, the evidence pointed the other way."
+  },
+  {
+   "h": "When a reading enters a decision.",
+   "p": "The statement at the front of the book says that power raises the standard of evidence. Here is what that means on paper, in the places where a reading can change what happens to someone: hiring, appraisal, discipline, grading, decisions about a child.\n\nRecord behaviour, never inference. *He did not make eye contact and gave short answers* can be checked, explained and answered. *He seemed shifty* cannot, and it will be read by people who never met him as a finding. Before you write any impression of demeanour into a record, ask whether it describes the task the person was being judged on. Usually it does not, and it should be left out.\n\nGive the person a chance to answer anything that will count against them. A reading shown to its subject often collapses within a minute: the short answers were a stammer they manage, the lack of eye contact was autism, the flatness was a migraine. A reading that is never shown to its subject never gets that chance, and its errors become permanent.\n\nPrefer structure to impressions. In a large review of personnel research in 1998, Frank Schmidt and John Hunter found that structured interviews, with the same questions asked of everyone and answers scored against a plan, predicted later job performance noticeably better than unstructured conversations. A good part of the difference is that structure leaves less room for the interviewer's reading of the candidate's body to stand in for evidence about the work.\n\nA simple rule covers most cases. If an impression would not survive being read aloud to the person it describes, it should not be in their file. If it would survive, it is probably a description of behaviour, and it can stay.",
+   "poseId": "p_pair_seated_across",
+   "disconfirm": "If decisions in your setting that leave out impressions of demeanour turn out worse, over a fair number of cases, than ones that include them, the rule is too strict for that setting. The research on structured interviews suggests the opposite, but your own records can test it."
+  },
+  {
+   "h": "Three hard cases.",
+   "p": "At a dinner with an old friend you notice that his wife flinches twice when he gestures sharply near her, and that she checks his face before answering simple questions. You do not know what it means. It could be a startle reflex, an old injury, a row before you arrived, or fear. The flows test rules out the table and the group chat. What you owe is a quiet chance for her to speak: a private moment, a gentle question about how she is, and a way of making sure she knows that help exists, including the domestic abuse lines in your country. You do not confront him on a guess. If you see or hear something that points to immediate danger, you call the emergency services.\n\nA colleague's hands have begun to shake in the mornings, and she has missed two early meetings. The causes run from medication and poor sleep to anxiety, illness and drink, and you are not placed to choose between them. You ask how she is doing, behaviour first, and offer help. If her work is safety-critical, such as driving or operating machinery, the behaviour you saw, not your theory of its cause, can go to whoever is responsible for safety.\n\nYour sixteen-year-old son has come home with the same slumped walk for a week and goes straight to his room. Here you have more access, more duty and more power than in either other case. Use the duty and restrain the power. Sit with him somewhere side by side, say what you have noticed without a verdict, and tell him you are there. The slump is his, and so is the explanation.\n\nIn each case the answer came from the same three questions: where the reading came from, what the person would expect, and whether anyone is at risk.",
+   "poseId": "p_pair_bench",
+   "disconfirm": "If working through these cases leaves you with a rule that seems to settle every future case automatically, you have learned a rule rather than the method. The test is whether, in a case none of these covers, you can still say where the reading came from and what the person would expect."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_group_three",
+   "doCaption": "Taking it, as a question, to the one person it is about.",
+   "dontCaption": "Passing a reading round the group.",
+   "annotation": "A reading shared with others reaches people who cannot check it, about someone who cannot answer it. The better flow is almost always to the person, or nowhere."
+  },
+  {
+   "doPoseId": "p_stand_hands_clasped_front",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Holding it until there is a private moment and a reason to ask.",
+   "dontCaption": "Naming it in public: 'You're nervous.'",
+   "annotation": "Being right does not settle where a reading may go. Most readings are best held, and a held reading can still make you gentler."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_taking_notes",
+   "doCaption": "Listening, and recording only what was said and done.",
+   "dontCaption": "Writing the impression into the file.",
+   "annotation": "A record of behaviour can be checked and answered. A record of demeanour is read later as a finding by people who never met the person."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Asking whether you would read it the same way on a different face.",
+   "dontCaption": "Sure that the anger on that face is obvious.",
+   "annotation": "Bias feels exactly like perception. Only a ledger tagged by group can show whether your first impressions are fair."
+  }
+ ],
+ "caseStudy": "Tom, forty-four, manages a team of maintenance engineers at a distribution centre. At a Monday briefing his director announces that the night shift will be reorganised and that everyone will take a turn. Tom notices that Priya, one of his best engineers, goes very still and pale, writes nothing down, and leaves before the usual coffee. Over the next week she stops eating lunch with the team.\n\nOn Thursday evening, at the pub, his colleague Gary asks what is up with Priya. Tom feels the pull of a ready answer. He thinks something is going on at home, and he has the beginnings of a theory. He runs the flows test instead. He saw her stillness in a work briefing; the theory about home is his, not hers; Gary has no role in her work; and if Priya heard that her private life was being discussed in the pub, she would be right to be angry. He says he has no idea and would rather not guess.\n\nThe next morning he finds her alone in the workshop and asks about the situation, not the signal. *When the night-shift change came up you went quiet. If it causes you a problem, I'd like to know. You don't have to tell me why.* She is silent for a moment, then tells him that she cares for her mother in the evenings and that nights are impossible. They work out a swap with two engineers who want the night premium.\n\nA month later the director asks Tom to note \"attitude concerns\" in Priya's appraisal, because she looked unenthusiastic about the reorganisation. Tom writes what she did: raised a scheduling conflict promptly and helped arrange cover. He leaves out the impression, and tells the director why: it would not survive being read aloud to her, and it was wrong.\n\nGary never finds out about Priya's mother. Nobody needed him to.",
+ "observe": [
+  "Notice one moment this week when you are tempted to tell a third person what you read in someone, and ask yourself whether that person would expect it to travel there.",
+  "In a meeting or a group chat, notice when someone's reading of another person, such as he's not on board, is passed round as fact, and work out what behaviour, if any, it was built from.",
+  "Find one advert, article or product that claims to read emotions from faces or voices, and note which of the following it ignores: the person's baseline, the context, and any way of being shown wrong."
+ ],
+ "drills": [
+  {
+   "name": "Flows Audit",
+   "minutes": 15,
+   "steps": [
+    "Open the last two weeks of your journal and list every reading you passed on to anyone, in speech or in writing.",
+    "For each, write the context you first saw it in and the norms that context carried.",
+    "Mark whether you passed on the behaviour or your inference about it.",
+    "Mark any flow the person would not have expected or would not have thought fair.",
+    "For each marked flow, write what you would do differently, and whether you now owe the person anything."
+   ]
+  },
+  {
+   "name": "Behaviour, Not Verdict",
+   "minutes": 15,
+   "steps": [
+    "Write down five impressions you have formed or voiced about people at work or at home, such as seemed shifty or not committed.",
+    "Rewrite each one as observable behaviour with a time and place, removing every word that describes character.",
+    "Read the two versions side by side and note how much of the original was inference.",
+    "Mark which rewritten versions would survive being read aloud to the person.",
+    "Keep only those, and decide whether any of them is worth saying at all."
+   ]
+  },
+  {
+   "name": "Bias Audit",
+   "minutes": 25,
+   "steps": [
+    "Take your scored predictions from the calibration ledger, at least forty of them.",
+    "Tag each with the broad group of the person you read, in your own notes only.",
+    "For each group, work out the hit rate and note the direction of the misses, for example readings of anger or coldness that did not come true.",
+    "Write down any group where your misses lean one way more than for others.",
+    "Write one adjustment, such as treating first impressions of that group as one band less certain, and set a date to check it again."
+   ]
+  },
+  {
+   "name": "Hold, Ask or Act",
+   "minutes": 15,
+   "steps": [
+    "Write down three things you have noticed about people in the past fortnight that you have not yet done anything about.",
+    "For each, decide whether it calls for holding, asking or acting, and write one sentence saying why.",
+    "For any you marked act, write the specific risk of harm that justifies it, and who you would bring in.",
+    "For any you marked ask, write the exact question, about the situation rather than the signal, with a clear way out.",
+    "Say the question aloud twice, as you would say it to the person."
+   ]
+  },
+  {
+   "name": "Hard Case Rehearsal",
+   "minutes": 20,
+   "steps": [
+    "Choose one hard case from this chapter, or one of your own with the names and details changed.",
+    "Write where the reading came from and the norms of that context.",
+    "List every person who might receive the reading and what they could do with it.",
+    "Write what you owe, the first sentence you would say, and to whom.",
+    "Write one piece of information that would change your plan, and what you would do instead."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "You have read, correctly as it turns out, that a colleague is anxious about her job. What does being right allow you to do?",
+   "options": [
+    "Mention it to others, since it is true",
+    "Record it, since accurate readings are evidence",
+    "Being right does not settle where the reading may go; that depends on the context you saw it in and what she would expect",
+    "Tell her you knew all along"
+   ],
+   "answer": 2,
+   "explain": "Accuracy and appropriateness are different questions. A true reading passed to the wrong place is still a breach of the norms it came from, and it takes from her the choice of whether and how to tell her own story.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Helen Nissenbaum's account of privacy as contextual integrity, when is privacy violated?",
+   "options": [
+    "When information flows in ways that break the norms of the context it came from",
+    "Whenever personal information is observed",
+    "Only when information is written down",
+    "Only when the information was secret"
+   ],
+   "answer": 0,
+   "explain": "Contextual integrity explains why information seen in plain view can still be misused. What matters is whether its next move fits the norms under which it was shown, such as a meeting, a funeral or a dinner among friends.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At dinner your friend's wife flinches twice when he gestures sharply near her and checks his face before answering. What fits this chapter?",
+   "options": [
+    "Raise it with the group to see if others noticed",
+    "Confront your friend about how he treats her",
+    "Do nothing, since you cannot know what it means",
+    "Find a private moment to ask her gently how she is, and make sure she knows help exists, without accusing anyone"
+   ],
+   "answer": 3,
+   "explain": "You cannot know what the flinch means, which rules out accusation and broadcasting. You can give her a safe chance to speak and make sure she knows where help is. If anything points to immediate danger, call the emergency services.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did the 2019 review led by Lisa Feldman Barrett conclude about reading emotions from faces?",
+   "options": [
+    "Faces reveal emotions as reliably as words do",
+    "Facial movements vary too much across people, situations and cultures to be read as specific emotions without context",
+    "Only trained professionals can read faces reliably",
+    "Machines read faces better than people do"
+   ],
+   "answer": 1,
+   "explain": "The review found some link between expressions and emotions but far less reliable than commercial systems assumed. A scowl can be anger, concentration, confusion or sun in the eyes, which is why baseline and context matter.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Which statement about readings you keep to yourself is most accurate?",
+   "options": [
+    "They are harmless because nobody hears them",
+    "They are fine as long as they turn out accurate",
+    "They still shape how you treat people, so a biased private reading does harm even when it is never spoken",
+    "They should always be shared so they can be checked"
+   ],
+   "answer": 2,
+   "explain": "A reading you keep changes how closely you watch someone, how much benefit of the doubt you give and how you answer them. That is why bias in private readings matters, and why the ledger, not introspection, is the place to look for it.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Your director asks you to note attitude concerns in a staff member's appraisal because she looked unenthusiastic in a meeting. What fits?",
+   "options": [
+    "Write it as asked, since the director saw it too",
+    "Write that she seemed unenthusiastic but add that you disagree",
+    "Ask other staff whether they noticed the same thing",
+    "Record what she actually did and said, leave out the impression, and raise any real concern with her directly"
+   ],
+   "answer": 3,
+   "explain": "Impressions of demeanour in a record are later read as findings by people who never met her, and she cannot answer them. Behaviour can be checked and answered. If there is a concern, the person it is about should hear it first.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific time when something you noticed about a person travelled further than it should have: told to a colleague, written in a message, or used in a decision. Where did you first see it, and what would the person have expected to happen to it? Who did it reach, and could they correct it? If it happened again tomorrow, what would you do differently at the moment of telling, and do you still owe that person anything?",
+  "guidance": "You are looking for one flow, not a general confession. Most people find their example in a light remark that seemed harmless at the time. Name the context it came from and the exact sentence you said, if you can remember it. If you decide you owe the person something, it is usually small: a correction to whoever heard the reading, or simply never repeating it.",
+  "minCharacters": 150
+ },
+ "failureMode": "There are two opposite failures. The first is to run the flows test after the fact, as a way of feeling better about something already said, so that the test becomes a ritual of absolution rather than a check. The second is paralysis: a man becomes so worried about intruding that he holds everything, including the reading that needed a question or the one that needed help. The cost of that failure is quieter but can be far greater, because the person who needed someone to notice gets nobody. There is a third, subtler failure. Having a careful method can make a reader feel entitled to read more, more closely, more often. The point of this chapter is the opposite: to read with lighter hands, ask sooner, and carry less.",
+ "furtherStudy": [
+  {
+   "work": "Privacy in Context: Technology, Policy, and the Integrity of Social Life",
+   "author": "Helen Nissenbaum",
+   "note": "Stanford University Press, 2010. The full account of contextual integrity, building on her 2004 paper in the Washington Law Review."
+  },
+  {
+   "work": "Emotional expressions reconsidered: Challenges to inferring emotion from human facial movements",
+   "author": "Lisa Feldman Barrett, Ralph Adolphs, Stacy Marsella, Aleix M. Martinez and Seth D. Pollak",
+   "note": "Psychological Science in the Public Interest 20(1), 2019. The review behind the warning about automated emotion reading."
+  },
+  {
+   "work": "Facing prejudice: Implicit prejudice and the perception of facial threat",
+   "author": "Kurt Hugenberg and Galen V. Bodenhausen",
+   "note": "Psychological Science 14(6), 2003. A short, striking study of bias inside the act of looking."
+  },
+  {
+   "work": "Can an angry woman get ahead? Status conferral, gender, and expression of emotion in the workplace",
+   "author": "Victoria L. Brescoll and Eric Luis Uhlmann",
+   "note": "Psychological Science 19(3), 2008. How the same expression is read differently through different stereotypes."
+  }
+ ],
+ "reviewPrompt": "Before passing on any reading this week, name where you first saw it and decide whether the person would expect it to travel to the place you are sending it."
+}

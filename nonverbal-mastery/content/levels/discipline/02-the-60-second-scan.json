@@ -1,0 +1,258 @@
+{
+ "id": "discipline-02",
+ "categoryId": "discipline",
+ "index": 2,
+ "tier": "FOUNDATION",
+ "title": "The 60-Second Scan",
+ "estimatedMinutes": 50,
+ "hook": "Sixty seconds of structured looking beats an hour of staring, because attention finds what it is told to find and quietly drops the rest.",
+ "why": "You walk into a crowded kitchen at a party. Within a second your eyes go to the person you came to see, then to the loudest laugh, then to whoever is holding the food. That is attention doing its job: going to what is salient and to what you care about. An hour later you learn that a friend was standing by the back door the whole time, alone and miserable, and you never registered him, though he was in plain view for the entire evening.\n\nUnstructured looking finds what it expects. A short, fixed routine of looking does something different: it sends your attention to places it would not go on its own, in an order that covers the room before it settles on anyone. It also ends. Sixty seconds of deliberate scanning followed by ordinary, relaxed presence is more perceptive, and far less strange to be around, than a man who watches everyone all evening. This chapter gives you the routine.",
+ "teach": [
+  {
+   "h": "Attention sees what it is aimed at, and misses what it is not.",
+   "p": "In 1999 Daniel Simons and Christopher Chabris asked people to watch a short film of two teams passing basketballs and to count the passes made by one team. Partway through, a person in a gorilla suit walked into the middle of the game, faced the camera, thumped their chest and walked off. About half of the viewers never saw it. They were not careless; they were doing exactly what they had been asked, and the task consumed the attention that would have noticed the gorilla.\n\nPsychologists call this inattentional blindness, and it has been found again and again since Arien Mack and Irvin Rock gave it a name. It is not a quirk of laboratory films. It is how attention works everywhere: what you are looking for, and what you already care about, decide what reaches awareness. Everything else can pass through your visual field unrecorded.\n\nFor a reader of people this is humbling. When you walk into a room looking for your boss's mood, you will see your boss's mood and very little else. When you are worried about one friend, the other friend's trouble can stand two metres away without ever registering.\n\nYou cannot escape the limits of attention, but you can aim it deliberately. A routine scan is a way of telling attention, in advance, to visit places it would otherwise skip. It does not make you see everything. It makes you see more than your interests would have shown you, and it makes the gaps predictable rather than random.",
+   "poseId": "p_gaze_direct",
+   "disconfirm": "If, after running a structured scan for a few weeks, you find it never shows you anything your ordinary glance did not, your ordinary glance may already be broad. Test it by writing down what you noticed before and after scanning the same room.",
+   "pullQuote": "What you are looking for decides what reaches you."
+  },
+  {
+   "h": "Scan in a fixed order: yourself, the room, the groups, one person.",
+   "p": "The scan has four beats, each about fifteen seconds, always in the same order.\n\n*Yourself.* Breath, shoulders, jaw, what you want from this room. The first chapter of this book explained why: your state colours everything that follows, and you will not notice it later.\n\n*The room.* Layout, exits, light, noise, where the space pushes people. A narrow hallway crowds bodies together; a loud bar makes everyone lean in; a cold office keeps arms folded. The room explains a great deal of the behaviour in it before any person does.\n\n*The groups.* Who is with whom, how tightly, which way the groups face. Who is on their own. Where attention seems to be flowing: toward a speaker, a screen, a door, a particular person.\n\n*One person.* Only now do you let your attention settle, either on the person you came to see or on whoever the previous beat showed you was the exception. You give them your full attention for a few seconds, then let the scan end.\n\nThe order matters more than the timing. Starting with a person, as almost everyone does, lets that person absorb the whole minute. Starting with yourself and the room means that by the time you look at anyone, you already know what the setting is doing to everyone in it, and you are far less likely to read the room's effects as one person's feelings.",
+   "poseId": "p_stand_open",
+   "disconfirm": "If running the beats in a different order gives you the same picture of a room, the order may matter less for you than it does for most people. Try it both ways in a few places before deciding."
+  },
+  {
+   "h": "Read each person from the ground up.",
+   "p": "When the scan reaches people, sweep each one from the floor upward: feet and legs, then hands, then the orientation of the torso, then shoulders, then head, and the face last.\n\nThere are two reasons for this order. The first is the gradient of control from the chapter on leakage: the feet and legs are the least managed parts of most people's bodies, and the face the most. Starting at the bottom gives you the less curated signal first. The second reason is that faces capture attention more readily than almost anything else in a scene. If you start with a face, it tends to hold you, and the rest of the body never gets examined.\n\nIn practice, ground-up reading takes two or three seconds per person and catches things a face-first glance will miss: the man laughing at a joke while his feet point at the door, the woman nodding along whose hands have gone still, the colleague whose torso has turned a quarter away from the conversation he appears to be in.\n\nNone of these is a conclusion, as earlier chapters made clear. Feet pointing at a door may mean a wish to leave, a need for the bathroom or simply where the floor space is. What the ground-up sweep gives you is a fuller description to hold against this person's baseline, and occasionally a mismatch between top and bottom that is worth a second look.",
+   "poseId": "p_stand_turned_away",
+   "disconfirm": "If, across many scans, the lower body never adds anything to what the face already told you, the sweep is not earning its seconds in your setting. Keep it, but note whether that changes in rooms where people are trying harder to look composed."
+  },
+  {
+   "h": "Look for the exception, not the most interesting person.",
+   "p": "Visual search research gives a useful hint about what to look for. In Anne Treisman's work on attention, a single item that differs from everything around it in one simple feature, a red dot among green ones, seems to pop out without effort, while finding an item defined by a combination of features requires slow, deliberate search.\n\nRooms work similarly. The most useful thing a scan can find is usually a simple difference from the room's pattern: the still person in a moving crowd, the one facing a different way from everyone else, the one standing outside every group, the one who is quiet in a loud room or loud in a quiet one. These differences tend to pop out once you know to look for them.\n\nWhat a scan should not do is go straight to the most interesting person: the attractive one, the important one, the one you are worried about. Your interest will find them anyway. The scan's job is to find what your interest would miss.\n\nAn exception is not automatically a problem. The person standing alone may be the host taking a breather, someone waiting for a friend, or a person who simply likes the edges of rooms. The exception is where your attention goes next, gently and briefly, not where your conclusions go.\n\nAbsence counts as an exception too, and it is the one scans miss most often because there is nothing to see. The colleague who always sits by the window and today is not in the room; the friend who usually arrives first and has not come; the group that normally includes four people and today has three. A scan that only looks at who is present cannot find who is missing, so add one quiet question to the groups beat: who would I expect to see here?",
+   "poseId": "p_group_three",
+   "disconfirm": "If the exceptions your scans pick out turn out, again and again, to have ordinary explanations you could not have helped with, the exceptions are not telling you much in that setting. That is useful to know; it tells you the room was fine."
+  },
+  {
+   "h": "Use soft eyes, and honour civil inattention.",
+   "p": "A scan done with a hard, fixed stare is both less effective and more intrusive than one done with soft eyes: a relaxed gaze that rests lightly on a point and takes in movement and shape at the edges of vision. Peripheral vision is poor at detail but good at motion and orientation, which is most of what a scan needs.\n\nThe sociologist Erving Goffman described the ordinary courtesy that strangers extend to each other in public as civil inattention: a brief glance that acknowledges the other person's presence, followed by a withdrawal of attention that signals they are not an object of special interest. Most people perform it dozens of times a day without noticing. Staring breaks it, and people feel the break immediately.\n\nA good scan stays inside the rules of civil inattention. Glance, take in, move on. Return, if you need to, with another brief glance rather than a held look. If someone catches your eye, acknowledge it the way anyone would, with a small nod or a half-smile, and look elsewhere.\n\nThis matters for accuracy as well as manners. A person who feels watched changes their behaviour, as the chapter on baselines explained, and the change you then observe is one you caused. Soft, brief attention leaves the room as you found it.\n\nThe exact rules vary. How long a glance may last before it becomes a stare differs between cultures, between cities and countryside, and between a busy street and a quiet waiting room. When you are somewhere unfamiliar, watch how long other people let their eyes rest on strangers, and stay a little under it.",
+   "poseId": "p_gaze_aside",
+   "disconfirm": "If people around you start returning your gaze, shifting away or looking uncomfortable while you scan, your attention is landing harder than you think. Shorten the glances until no one reacts."
+  },
+  {
+   "h": "End the scan with one question, then stop scanning.",
+   "p": "A scan that never ends is not perception; it is vigilance. Constantly sweeping a room for threats or signals is tiring, unsettling to the people around you, and narrows over time into a search for danger. People who have been through trauma sometimes find themselves unable to stop scanning; that is a hard state to live in, not a skill to cultivate.\n\nSo the scan has an output and an end. The output is a single question or a single small action. *Is my cousin by the fence on his own because he wants to be?* *The meeting is tense around the projector; I'll wait before raising my item.* *The man at the end of the table hasn't spoken; I'll ask him directly.* Then you stop scanning and simply take part in the room.\n\nYou may run another scan later, when something changes: a new person arrives, the mood shifts, you move to a different room. In a long evening, three or four scans are plenty. Between them, your attention belongs to the people you are actually with.\n\nThe rhythm, a short deliberate look and then ordinary presence, is what separates a perceptive person from a watchful one. Others can relax around the first. Nobody relaxes around the second.\n\nIf the question was worth asking, it is worth a line in the journal that evening: what the scan showed, what you did, what happened. Over weeks those lines will show you whether your scans find things that matter or only things that are unusual, which are not the same.",
+   "poseId": "p_breath_easy",
+   "disconfirm": "If you notice you cannot stop scanning, that every room makes you sweep and re-sweep, treat that as information about your own state rather than as diligence. The chapters on stress and on reading yourself under pressure are the place to start."
+  },
+  {
+   "h": "Practise until it costs nothing, and know who the scan is for.",
+   "p": "At first the scan will feel slow and self-conscious. Tie it to transitions you already make: walking into a room, sitting down at a table, joining a call. Run it at every transition for two weeks and it will begin to happen in well under a minute, with no sense of effort. That is when it becomes useful, because a skill that requires effort is abandoned the moment you are busy.\n\nThere is one more thing to be clear about. The ability to sweep a room and pick out the person who stands apart is not morally neutral. In a study often cited in self-defence courses, Betty Grayson and Morris Stein showed short films of pedestrians to men in prison for violent assaults and asked who would make an easy victim. Their choices were associated with features of the walkers' gait, such as stride and the way they moved their arms. People who prey on others scan rooms too.\n\nThis book teaches the scan for the opposite purpose: to notice the person who is struggling, excluded, unwell or afraid, so that you can help or give them room. If you ever catch yourself scanning a bar for someone who looks easy to approach, easy to persuade or easy to intimidate, you are using the same eyes for something this book refuses to teach.\n\nThe question at the end of every scan should be some version of the same one: who here could use something from me?",
+   "poseId": "p_walk_stride",
+   "disconfirm": "If a month of daily scanning has not made the routine faster or more automatic, it may be attached to the wrong moments. Move it to a transition you never skip, such as sitting down, and try again.",
+   "pullQuote": "The question at the end of every scan is who here could use something from me."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_gaze_aside",
+   "dontPoseId": "p_gaze_direct",
+   "doCaption": "Sweeping in a set order, glancing and moving on.",
+   "dontCaption": "Fixing on the most interesting person in the room.",
+   "annotation": "Your interest will find the interesting people anyway. The scan exists to show you what your interest would skip."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Soft eyes, the room taken in from the edges.",
+   "dontCaption": "Watching one person until they feel it.",
+   "annotation": "Peripheral vision is poor at detail but good at movement and orientation, which is most of what a scan needs."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_posture_braced_upright",
+   "doCaption": "Scanning from a settled body, then letting the scan go.",
+   "dontCaption": "Scanning braced, like a guard on duty.",
+   "annotation": "A scan that never ends is vigilance, not perception. Look deliberately, then return to the room."
+  },
+  {
+   "doPoseId": "p_stand_turned_away",
+   "dontPoseId": "p_stand_head_tilt",
+   "doCaption": "Starting from the feet, which here point at the door.",
+   "dontCaption": "Starting with the face, the channel people manage best.",
+   "annotation": "Read each person from the ground up. Faces hold attention so readily that the rest of the body never gets a look."
+  }
+ ],
+ "caseStudy": "Joe has coached an under-twelves football team on Saturday mornings for three seasons. His assistant, Craig, is a former semi-professional player with a sharp eye for talent. Both men watch the boys closely, but they watch differently.\n\nOne October morning Joe runs his scan as he walks from the car park. Himself: rushed, a little irritable after a late night. The pitch: wet, cold wind from the north, parents clustered by the gate to keep warm. The groups: the usual knot of boys kicking a ball against the fence, two pairs doing keepy-uppies, a few still with their parents. The exception: Theo, normally one of the noisiest, standing on his own by the corner flag with his hood up, hands in his sleeves, facing away from the others.\n\nCraig, watching the same scene, sees who is sharp in the warm-up and who is slow off the mark. When Theo misplaces three passes he notes it and moves him to the second group.\n\nJoe treats the exception as a question, not a verdict. Cold and tired is the obvious rival explanation; it is a raw morning. So rather than asking Theo what is wrong, he gives him a job, setting out the cones with him, and talks about nothing much while they do it. Theo says almost nothing, then mentions that his dad is not coming to watch any more because he has moved out.\n\nJoe does not dig. He tells Theo he is glad he came, keeps him in his usual group, and at pick-up tells Theo's mother only that Theo seemed quieter than usual and that he had enjoyed setting up with him. She thanks him and says it has been a hard month.\n\nOver the next few weeks Theo arrives a little earlier each Saturday and starts helping with the cones without being asked. Craig, still watching for talent, never learns why.",
+ "observe": [
+  "The next time you walk into a café, office or waiting room, run the four beats before you sit down: yourself, the room, the groups, one person. Afterwards, write down anything you saw that you would normally have missed.",
+  "At a gathering this week, run a scan once every half hour and notice only who is standing or sitting apart from any group. Note whether it is the same person each time.",
+  "On a bus or train, rest your gaze on a neutral point for five minutes and notice how much movement and orientation you can still read at the edges of your vision without looking directly at anyone."
+ ],
+ "drills": [
+  {
+   "name": "Count and Miss",
+   "minutes": 15,
+   "steps": [
+    "Find a short video of a busy public scene, such as a station concourse or a street market.",
+    "Watch it once while counting one specific thing, such as how many people look at their phones.",
+    "Watch it again with no task, simply taking in the scene.",
+    "List everything you noticed on the second viewing that you missed on the first.",
+    "Write one sentence about what your task made you blind to."
+   ]
+  },
+  {
+   "name": "Four Beats",
+   "minutes": 20,
+   "steps": [
+    "Choose three different public spaces you will pass through today.",
+    "In each, stand or sit for one minute and run the four beats in order: yourself, the room, the groups, one person.",
+    "Immediately afterwards, write one line for each beat.",
+    "Compare the three sets of notes and mark which beat produced the most useful line.",
+    "Note which beat you were tempted to skip, and do that one first tomorrow."
+   ]
+  },
+  {
+   "name": "Ground Up",
+   "minutes": 15,
+   "steps": [
+    "Sit somewhere you can see people standing or waiting, such as a bus stop or a queue.",
+    "Choose five people one at a time, never staring, and for each describe the feet, hands, torso, shoulders and head before looking at the face.",
+    "For each person, note whether the face and the lower body seemed to say the same thing.",
+    "Where they differed, write one ordinary explanation for the difference.",
+    "Stop if anyone notices you looking, and choose someone else."
+   ]
+  },
+  {
+   "name": "Odd One Out",
+   "minutes": 15,
+   "steps": [
+    "In a busy place, run a quick scan and look only for the single most obvious exception: the still one, the one facing away, the one alone.",
+    "Note what made them stand out.",
+    "Without approaching or staring, watch for a minute to see whether an ordinary explanation appears.",
+    "Repeat twice more in different places.",
+    "Write down how many of the three exceptions turned out to need anything from anyone."
+   ]
+  },
+  {
+   "name": "Soft Eyes",
+   "minutes": 10,
+   "steps": [
+    "Sit facing a busy area and choose a fixed point slightly above eye level.",
+    "Keep your gaze relaxed on that point for two minutes, noticing movement at the edges.",
+    "Count how many people you can track by movement alone, and which way each is facing.",
+    "Practise glancing at one person for under a second and returning to your point.",
+    "Repeat until the glance and the return feel natural rather than furtive."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "In Simons and Chabris's experiment, roughly how many viewers counting basketball passes failed to notice a person in a gorilla suit?",
+   "options": [
+    "Almost none",
+    "About half",
+    "Only those who were tired",
+    "Everyone"
+   ],
+   "answer": 1,
+   "explain": "About half missed it, because the counting task consumed the attention that would have noticed it. The lesson is not that those viewers were careless. It is that what you are looking for decides what reaches you, which is why a scan aims attention deliberately.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Why does the scan read each person from the ground up and leave the face for last?",
+   "options": [
+    "Faces are unimportant",
+    "It is faster",
+    "The lower body is less managed, and faces capture attention so readily that starting there crowds out everything else",
+    "People cannot see you looking at their feet"
+   ],
+   "answer": 2,
+   "explain": "Two reasons combine: the gradient of control from the leakage chapter, and the way faces pull and hold attention. Ending with the face means the rest of the body actually gets looked at. None of this makes the lower body a lie detector.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You arrive at a family barbecue. Running the scan, you notice your cousin at the far side of the garden, turned away from the group with arms folded, looking at his phone. What is the best output of the scan?",
+   "options": [
+    "One small action: go and stand near him for a minute and see whether he wants company",
+    "Conclude he is upset with someone and ask who",
+    "Keep watching him for the rest of the afternoon",
+    "Tell the rest of the family he seems unhappy"
+   ],
+   "answer": 0,
+   "explain": "The scan ends in a single question or action, then stops. Standing nearby offers company without demanding an explanation, and lets him tell you whether he wanted to be alone. Watching him all afternoon turns perception into surveillance.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What does Erving Goffman's term civil inattention describe?",
+   "options": [
+    "Ignoring people you dislike",
+    "Paying close attention to strangers for safety",
+    "Avoiding eye contact out of shyness",
+    "The brief glance that acknowledges a stranger, followed by a polite withdrawal of attention"
+   ],
+   "answer": 3,
+   "explain": "Civil inattention is the everyday courtesy of public life: notice, then release. A good scan stays inside it. Staring breaks it, and people feel the break at once.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Is a longer, continuous scan of a room always better than a short one?",
+   "options": [
+    "Yes, because more observation means more information",
+    "No: a constant scan is vigilance, which tires you, unsettles others and narrows into threat-seeking",
+    "Yes, as long as you use soft eyes",
+    "Only in professional settings"
+   ],
+   "answer": 1,
+   "explain": "The scan has an end so that you can be present with the people in the room. Continuous sweeping is a state of alarm, not a higher form of perception. If you cannot stop scanning, that tells you something about your own state.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "A friend tells you, with some pride, that he can pick out easy targets in a bar from the way they walk. What does this chapter say about that skill?",
+   "options": [
+    "It is a useful safety skill everyone should learn",
+    "It shows he has mastered the scan",
+    "The same looking can find who needs help or who is vulnerable to exploitation; this book teaches only the first",
+    "It is harmless as long as he never acts on it"
+   ],
+   "answer": 2,
+   "explain": "Research on how assailants choose victims is a warning about what scanning can be used for, not a technique to copy. The scan in this book ends with the question of who could use something from you. If it ends with who would be easy, it has become something else.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific room you were in during the past month where you later learned something about someone that had been visible at the time and that you missed: a friend who was struggling, a colleague who was left out, someone who wanted to leave. Describe where your attention went instead. Then describe what a deliberate minute of looking, in the four beats, might have shown you, and what you could have done with it.",
+  "guidance": "Be concrete about where your attention actually went: the person you were trying to impress, the argument you were following, your own phone. There is no blame in this; attention goes where our interests send it. The useful part is the second half, where you rebuild the room beat by beat. Most people find that the thing they missed was not hidden at all, only outside the narrow beam of what they were looking for, which is exactly what a routine scan is designed to widen.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to turn the scan into a performance of perceptiveness. The reader sweeps every room he enters, announces his readings to whoever is nearby, and treats the exceptions he spots as discoveries rather than questions. He stares, breaks civil inattention, and changes the very behaviour he thinks he is reading. A quieter failure is the scan that never ends: a man who keeps sweeping a party all night has not become more observant, only more vigilant, and the people around him can feel it. A third failure is looking only for exceptions that interest him and skipping the ones that would ask something of him. Keep it short, keep it in order, end it with a single question about who might need something, and then put it down and join the room.",
+ "furtherStudy": [
+  {
+   "work": "Gorillas in our midst: Sustained inattentional blindness for dynamic events",
+   "author": "Daniel J. Simons and Christopher F. Chabris",
+   "note": "Perception 28(9), 1999. The original gorilla study."
+  },
+  {
+   "work": "The Invisible Gorilla: How Our Intuitions Deceive Us",
+   "author": "Christopher Chabris and Daniel Simons",
+   "note": "A readable account of the limits of attention and why we overrate what we notice."
+  },
+  {
+   "work": "Behavior in Public Places: Notes on the Social Organization of Gatherings",
+   "author": "Erving Goffman",
+   "note": "The source of civil inattention, and still the best close description of how strangers manage each other in public."
+  },
+  {
+   "work": "Attracting assault: Victims' nonverbal cues",
+   "author": "Betty Grayson and Morris I. Stein",
+   "note": "Journal of Communication 31(1), 1981. Read as a warning about what scanning can be used for."
+  }
+ ],
+ "reviewPrompt": "The next time you enter a room with at least five people in it, run the four-beat scan in under a minute and then stop. Afterwards, write one line about the one thing you would have missed without it."
+}

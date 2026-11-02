@@ -1,0 +1,257 @@
+{
+ "id": "discipline-05",
+ "categoryId": "discipline",
+ "index": 5,
+ "tier": "INTERMEDIATE",
+ "title": "Calibration — Testing Hypotheses in the Field",
+ "estimatedMinutes": 70,
+ "hook": "Confidence is a feeling and calibration is a record; until you have counted, you don't know what your certainty is worth.",
+ "why": "Two men are equally sure that their manager is annoyed with them. One walks into her office defensive and comes out with the conversation he feared. The other has kept a ledger for three months and knows something uncomfortable: when he feels ninety percent sure that someone senior is annoyed with him, he is right about half the time. So he asks a plain question instead, and learns that she has been distracted all week by a parent in hospital.\n\nBoth men felt the same certainty. Only one knew what his certainty was worth. That knowledge is calibration: the match between how sure you feel and how often you turn out to be right. It cannot be had by introspection, because the feeling of sureness is the very thing being tested. It can only be had by counting. This chapter shows you how to turn the predictions in your journal into numbers, score them, and read the result honestly, so that your confidence starts to mean something.",
+ "teach": [
+  {
+   "h": "Feeling sure is not evidence of being right.",
+   "p": "Decades of research on judgment have found the same pattern again and again: people's confidence runs ahead of their accuracy. Sarah Lichtenstein, Baruch Fischhoff and Lawrence Phillips reviewed the evidence on probability judgments in 1982 and found overconfidence to be the common case. When people said they were ninety or ninety-nine percent sure of an answer, they were wrong far more often than that. When asked to give ranges they were confident would contain a true value, the true value fell outside the ranges much more often than they expected.\n\nThere are exceptions, and they are instructive. Weather forecasters in the United States, studied by Allan Murphy and Robert Winkler in the 1970s, turned out to be remarkably well calibrated: when they said there was a seventy percent chance of rain, it rained on about seventy percent of those days. Forecasters are not wiser than other people. They make precise probability statements every day, and the sky tells them the next morning whether they were right.\n\nYou can feel the effect for yourself in five minutes. Write down ranges you are ninety percent sure contain the answers to ten factual questions: the length of a river, the year a famous building was finished, the population of a city you have visited. Then look them up. A well-calibrated person misses about one. Most people, ever since Marc Alpert and Howard Raiffa first ran the exercise with business students, miss four or five, and are surprised every time.\n\nReading people offers almost none of that feedback naturally. You decide a friend is upset, and you rarely find out. You decide a client is keen, the deal falls through for unrelated reasons, and the reading is never tested. Under those conditions confidence can grow for years without any connection to accuracy.\n\nCalibration is the attempt to give yourself the forecaster's advantage: to state your readings as probabilities, check them, and let the results adjust how sure you allow yourself to feel.",
+   "poseId": "p_head_chin_raised",
+   "disconfirm": "If your ledger shows that your most confident readings come true about as often as you said they would, you are already well calibrated in that area, and this chapter will mainly confirm it. Most people find the opposite on their first count.",
+   "pullQuote": "The feeling of sureness is the very thing being tested."
+  },
+  {
+   "h": "Turn words into numbers.",
+   "p": "In the 1960s Sherman Kent, who led analysis at the CIA's Office of National Estimates, noticed that his analysts and their readers meant wildly different things by the same words. A report saying an event was probable was read by some policymakers as near certain and by others as little better than even. Kent proposed a table linking each phrase to a range of probabilities, so that words would carry consistent meaning. Later surveys of ordinary readers have found the same spread: words like likely, probably and possibly mean very different numbers to different people.\n\nYour journal has the same problem. *He's probably annoyed* could mean sixty percent or ninety, and if you do not know which, you cannot learn whether you were right to say it. So replace the words with numbers. Use a small set of bands: sixty, seventy, eighty, ninety and ninety-five percent. Fifty is not a prediction, it is a coin.\n\nAt first the numbers will feel arbitrary. That is fine. Their job is not to be precise on day one but to be consistent enough that, after a few dozen predictions, you can see whether your seventies come true about seven times in ten.\n\nNumbers also change how you speak to other people. A man who can say *I think she might be upset, maybe sixty percent, so I'll ask* has a very different conversation from one who says *she's upset*. The first leaves room for being wrong; the second has already decided.\n\nWrite the number at the moment of the reading, before you go looking for support. A number added later is contaminated by everything you noticed afterwards, and especially by what you wanted to be true. The journal's time matters here: a prediction written ten minutes before a meeting is a prediction; one written an hour after it is a memory dressed up as one.",
+   "poseId": "p_pro_taking_notes",
+   "disconfirm": "If after a month you find you are using only one or two bands, say always eighty, your numbers are not yet distinguishing between readings you are more and less sure of. Force yourself to use the whole range for a week and see whether the bands separate."
+  },
+  {
+   "h": "Make predictions that can fail, with a date.",
+   "p": "A calibration ledger is only as good as the predictions in it, and most predictions people make about each other are impossible to score. *He'll be off with me* or *she's not keen* could be confirmed by almost anything and refuted by almost nothing.\n\nA scoreable prediction has three parts. It names something observable that will or will not happen. It sets a time by which you will know. And it carries a probability. *If my colleague is unhappy about the plan, she won't volunteer for the pilot when it's raised on Thursday, which she usually would: seventy percent.* On Thursday afternoon you know.\n\nNotice what this requires. You have to translate an inner state you have guessed at, unhappy, into a behaviour that state would make more or less likely, using what you know of this person's baseline. That translation is itself a discipline. Often you will find you cannot name any behaviour that would distinguish your guess from its rival, which tells you the guess was never testable in the first place.\n\nThere is a quiet benefit to this step that has nothing to do with scoring. Naming the observable behaviour forces you to consult the person's baseline, and many readings dissolve right there: you realise she never volunteers for pilots, or that he is always quiet on Mondays. A prediction you cannot write, because the behaviour would be normal for this person anyway, is a reading you were about to make in error.\n\nKeep the predictions modest and near. A prediction about next week is scored next week; one about next year is scored never. Predictions about public, ordinary behaviour are especially useful for practice: whether a stranger will get off at the next stop, which way a colleague will turn when he leaves the room. They are harmless, quick to check, and they build calibration faster than anything else.",
+   "poseId": "p_gesture_point",
+   "disconfirm": "If most of your predictions turn out to be unscoreable when the date arrives, because you cannot tell whether they came true, the problem is in how they were written. Rewrite the next ten with a named behaviour before scoring anything."
+  },
+  {
+   "h": "Score yourself by hand.",
+   "p": "The simplest useful score is the one Glenn Brier proposed for weather forecasts in 1950. For each yes-or-no prediction, take the probability you gave, subtract one if it happened or zero if it did not, and square the result. Then average the squares across all your predictions. A perfect forecaster scores zero. Someone who says fifty percent about everything scores a quarter.\n\nAn example makes it concrete. You said eighty percent and it happened: the difference is twenty points, squared gives four hundredths. You said eighty percent and it did not happen: eighty points, squared gives sixty-four hundredths. One confident miss costs sixteen times as much as a confident hit gains, which is exactly the point. The score punishes confident errors heavily and rewards honesty about uncertainty.\n\nReadings with more than two possibilities can be scored the same way once you break them into yes-or-no parts. *She is annoyed, distracted or fine* becomes three predictions: annoyed, thirty percent; distracted, fifty; fine, twenty. The three must add up to a hundred, and making them add up is often the first time you notice that you had been treating the likeliest option as the only one. Score each part separately when the answer arrives.\n\nYou do not need a spreadsheet, though one helps. Ten predictions scored on paper once a week are enough to start. Write the score at the top of each weekly review in your journal and watch it over months, not days.\n\nDo not compare your score with other people's. It depends on how hard your predictions were, and a man who only predicts that the sun will rise will score beautifully. Compare your score with your own past, on predictions of the same kind.",
+   "poseId": "p_sit_hands_clasped_lap",
+   "disconfirm": "If your Brier score improves sharply in a single week, check whether the predictions got easier rather than you getting better. Calibration improves slowly; sudden gains usually mean the questions changed."
+  },
+  {
+   "h": "Read the calibration curve, not the hit rate.",
+   "p": "Your overall hit rate tells you very little. Calibration lives in the bands. Gather all the predictions you made at seventy percent and count how many came true. Do the same for eighty and ninety. If your seventy-percent predictions came true seven times in ten, you are well calibrated there. If your ninety-percent predictions came true six times in ten, you are overconfident at the top of your range, which is the commonest finding of all.\n\nPlot the bands on paper if you like: the confidence you stated along the bottom, the rate at which things happened up the side. A perfectly calibrated reader's points sit on the diagonal. Points below it mean overconfidence, points above it underconfidence.\n\nThe curve also shows something the hit rate hides: whether your numbers carry information at all. If every band comes true at roughly the same rate, your sixty and your ninety mean the same thing, and the honest move is to stop using the higher numbers until they earn their place. Forecasting researchers call the ability to separate likelier events from less likely ones resolution, and it matters as much as calibration does.\n\nBe careful with small numbers. In 1971 Amos Tversky and Daniel Kahneman described the belief in the law of small numbers: people expect small samples to look like the whole population, and so they draw firm conclusions from a handful of cases. Ten predictions in a band can easily come out six or nine by chance. You need something like twenty in a band before its rate starts to mean much, and more is better.\n\nWhen a band is clearly off, adjust in small steps. If your nineties are coming true seven times in ten, start calling those readings eighty and see whether the new eighties settle. Large swings in self-confidence are as poorly calibrated as the habit they replace.",
+   "poseId": "p_stand_head_tilt",
+   "disconfirm": "If, after a few months, your bands sit close to the diagonal across the whole range, you are well calibrated for the kinds of predictions you make. The next question is whether you are making predictions hard enough to be worth making."
+  },
+  {
+   "h": "Test in the field without manipulating anyone.",
+   "p": "Every prediction about a person is tested by watching what that person does, and there is a right and a wrong way to arrange the watching. The right ways are the ones from the protocol chapter: wait for the situation to recur, or ask openly. The wrong way is to engineer a reaction.\n\nEngineering looks like this: mentioning something you know is sensitive to see whether a colleague flinches, inventing a rumour to test whether someone already knew, staging a small slight to see if a friend is touchy. It is tempting because it produces fast feedback. It is also manipulation, it damages trust when discovered, and it corrupts the very data you wanted, since the reaction you provoke is a reaction to your provocation.\n\nFor practice, use the endless supply of harmless public predictions. Will the man at the bus stop look at his phone before the bus arrives? Which of the three people at the counter will order first? Will the woman reading by the window leave before you finish your coffee? You learn the habit of stating a number, waiting, and scoring, with no one affected at all.\n\nWith people you know well there is a middle path: tell them you are practising. A partner or close friend who knows you are trying to read moods more accurately can be asked, a day later, whether you got it right. That turns a private guess into a shared check made with consent, and it often produces the most useful entries in the ledger. Use it sparingly. Being asked every evening to rate your own mood is its own kind of intrusion.\n\nFor predictions about people you know, accept that the feedback will be slower and sometimes never arrive. Unscored predictions are not wasted; they are honest gaps, and a ledger with gaps is far better than one filled in by guessing what probably happened.",
+   "poseId": "p_walk_stride",
+   "disconfirm": "If you notice that your quickest feedback comes from predictions you helped to cause, you are measuring your own influence, not your reading. Remove those entries from the ledger before scoring."
+  },
+  {
+   "h": "Calibrate by domain and by state.",
+   "p": "Calibration is not one number. Most people are well calibrated in some areas and badly in others. A man may be accurate about his friends' moods and overconfident about his boss's, or good at reading strangers on trains and poor at reading his own children. Tag each prediction by domain, by the kind of person, and by your own state from the journal's first line, and look at the bands separately for each.\n\nThe patterns are often striking. Overconfidence tends to cluster where the stakes for you are high, where you have strong prior beliefs, and where you rarely get feedback. Underconfidence sometimes appears where you are a newcomer and have learned to doubt yourself, even when your readings are good.\n\nThere is encouraging evidence that calibration can be trained. Douglas Hubbard, who teaches estimation to analysts, reports that short calibration training, practising estimates with immediate feedback, makes most people noticeably better calibrated. Philip Tetlock's forecasting research pointed the same way. The method is always the same: precise predictions, prompt scoring, small adjustments.\n\nTetlock's work added a further lesson. The forecasters who did best in his tournaments were not those with the grandest theories but those who updated in small steps as evidence arrived, and who treated their beliefs as hypotheses to be tested rather than treasures to be guarded. That is the temperament this whole part of the book is trying to build, and calibration is where it is easiest to measure.\n\nThe final use of calibration is in how you speak. Once you know what your certainty is worth in a given domain, say so. *My gut says she's upset, but my gut is wrong about half the time with her, so let me ask.* That sentence, said even silently to yourself, is what this chapter is for.",
+   "poseId": "p_stand_open",
+   "disconfirm": "If your bands look the same in every domain and every state, either you are unusually consistent or your tags are too broad to separate anything. Narrow one tag, such as people senior to me, and look again."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Fairly sure, with a number and a date to check it.",
+   "dontCaption": "Certain, and never checking.",
+   "annotation": "Confidence that is never scored grows without any connection to accuracy. A number and a date give it something to answer to."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_stand_arms_crossed_loose",
+   "doCaption": "Written down: seventy percent he skips the Thursday review, check Thursday.",
+   "dontCaption": "'He'll be off with me': a prediction nothing can refute.",
+   "annotation": "A scoreable prediction names a behaviour, a time and a probability. Without all three, it cannot teach you anything."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_too_close",
+   "doCaption": "Testing it by waiting for the situation to come round again.",
+   "dontCaption": "Testing a hunch by pressing someone until they react.",
+   "annotation": "An engineered reaction measures your provocation, not your reading. Wait, or ask openly."
+  },
+  {
+   "doPoseId": "p_walk_stride",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Practising on strangers' next public move: harmless, and checkable within a minute.",
+   "dontCaption": "Practising on the feelings of people who never agreed to it.",
+   "annotation": "Calibration grows fastest on quick, harmless predictions. Which way he turns, whether she gets off at this stop."
+  }
+ ],
+ "caseStudy": "Kieran, twenty-nine, works in procurement and considers himself good with people. After reading about calibration he starts a ledger: every prediction he makes about someone at work goes in with a percentage and a date. For three months he writes about five a week and scores them every Sunday.\n\nThe overall hit rate looks respectable. The bands do not. His seventy-percent predictions come true about seven times in ten. His ninety-percent predictions about senior colleagues being annoyed with him come true only twelve times in twenty-two. And his sixty-percent predictions that a peer liked an idea come true nine times in eleven: he is underconfident about warmth among people his own level, and badly overconfident about displeasure above him.\n\nIn June his director, Helen, goes quiet halfway through his presentation on a new supplier, looks at her phone twice, and leaves without the usual comment. Kieran feels the familiar certainty, ninety percent at least, that she thinks the proposal is weak. He writes it down. Then he looks at the band that number belongs to, and writes beside it: *my real rate here is about half*.\n\nInstead of rewriting the proposal overnight, as he once would have, he sends her a short message the next morning asking whether she wanted any changes before it went to committee. She replies within the hour: the proposal is fine, she is sorry she rushed off, her father had been taken into hospital that morning. It goes to committee unchanged and is approved.\n\nHis colleague Ross, who has never kept a ledger, once spent a weekend rebuilding a business case because a manager frowned at it. The frown, it turned out, was a migraine. Kieran does not tell Ross about the ledger. He just adds the Helen prediction to the ninety band, scored as a miss, and watches the line move a little closer to the diagonal.",
+ "observe": [
+  "On your commute or in a café, make five quick predictions about strangers' next public actions, such as which exit they will take or whether they will stand at the next stop, give each a percentage, and check within a minute.",
+  "Before your next meeting, write one prediction about one person's behaviour in it, with a percentage and a clear way to check, and score it afterwards.",
+  "Notice the next time you say probably or I bet about someone, and write down what number you actually meant."
+ ],
+ "drills": [
+  {
+   "name": "Words to Numbers",
+   "minutes": 10,
+   "steps": [
+    "Write down eight words or phrases you use about other people's likely behaviour, such as probably, I bet, surely and no way.",
+    "Next to each, write the percentage you mean by it.",
+    "Check for inconsistencies, such as two different words that you meant to carry the same number.",
+    "Choose the five bands you will use from now on: sixty, seventy, eighty, ninety and ninety-five percent.",
+    "Write the list on the first page of your ledger."
+   ]
+  },
+  {
+   "name": "Commuter Ledger",
+   "minutes": 15,
+   "steps": [
+    "On a journey or in a public place, choose people whose next public action you can see, never following or staring at anyone.",
+    "For each, write a prediction about one ordinary action in the next minute and a percentage, for example: gets off at the next stop, seventy percent.",
+    "Check each one as soon as it resolves and mark it hit or miss.",
+    "Make twenty predictions in total across the session.",
+    "Count how many came true in each band you used."
+   ]
+  },
+  {
+   "name": "Brier by Hand",
+   "minutes": 15,
+   "steps": [
+    "Take ten predictions that have already been scored as happened or did not happen.",
+    "For each, subtract one from your stated probability if it happened, or zero if it did not, and square the result.",
+    "Add the ten squares and divide by ten.",
+    "Compare the result with a quarter, the score of someone who says fifty percent about everything.",
+    "Write the score and the date at the top of this week's review."
+   ]
+  },
+  {
+   "name": "Draw the Curve",
+   "minutes": 20,
+   "steps": [
+    "Gather at least forty scored predictions.",
+    "Group them by the confidence band you used.",
+    "For each band, work out the share that came true.",
+    "Plot the bands on paper, stated confidence along the bottom and actual rate up the side, and draw the diagonal.",
+    "Mark each band as over, under or close, and note how many predictions it holds before trusting it."
+   ]
+  },
+  {
+   "name": "Domain Split",
+   "minutes": 20,
+   "steps": [
+    "Tag every scored prediction in your ledger by domain, such as work, family, friends or strangers.",
+    "Tag each again by your own state line: rested and calm, or tired and braced.",
+    "Work out the hit rate for each tag separately, band by band where you have enough.",
+    "Write down the single biggest difference between tags.",
+    "Write one adjustment you will make, for example: in readings of senior colleagues when I am tired, drop my number by one band."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "Your ledger shows that readings you felt certain about came true about as often as readings you felt only fairly sure about. What does this mean?",
+   "options": [
+    "You are equally skilled at both",
+    "You need more predictions in the certain band",
+    "Your feeling of certainty is not tracking your accuracy, so it should carry less weight",
+    "Certainty only matters in professional settings"
+   ],
+   "answer": 2,
+   "explain": "Calibration is the match between how sure you feel and how often you are right. If the feeling does not separate likelier readings from less likely ones, it is not information. Lower your stated confidence until the bands come apart.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Why were the weather forecasters studied by Murphy and Winkler so well calibrated?",
+   "options": [
+    "They made precise probability forecasts every day and found out quickly whether they were right",
+    "They used better instruments than other experts",
+    "Weather is easy to predict",
+    "They were trained statisticians"
+   ],
+   "answer": 0,
+   "explain": "Calibration grows from precise statements and prompt, clear feedback. Forecasters get both daily. Reading people provides almost neither naturally, which is why the ledger has to supply them.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You suspect a colleague is unhappy with you. Which of these is a prediction you can actually score?",
+   "options": [
+    "She will be off with me this week",
+    "She doesn't really like me",
+    "Something is going on with her",
+    "If she is unhappy with me, she won't ask me to join Thursday's review, which she usually does: seventy percent, check Thursday"
+   ],
+   "answer": 3,
+   "explain": "Only the last names an observable behaviour, a time and a probability, and ties the behaviour to her usual pattern. The others could be confirmed by almost anything and refuted by nothing, so they can never teach you whether you read her well.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "On yes-or-no predictions, a Brier score of about a quarter corresponds to what?",
+   "options": [
+    "Being right three quarters of the time",
+    "Saying fifty percent about everything",
+    "Perfect calibration",
+    "Being wrong every time"
+   ],
+   "answer": 1,
+   "explain": "If you always say fifty percent, every prediction scores a quarter whatever happens. A useful reader should do better than that over time. Perfect forecasting scores zero.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You made ten predictions at ninety percent and nine came true. Are you well calibrated at ninety percent?",
+   "options": [
+    "Yes, exactly",
+    "No, you should be at a hundred percent",
+    "No, you are overconfident",
+    "You cannot tell yet: ten predictions are far too few to read a band reliably"
+   ],
+   "answer": 3,
+   "explain": "Small samples bounce around by chance, which is the belief in the law of small numbers that Tversky and Kahneman described. Nine out of ten is consistent with being well calibrated and with being quite overconfident. Wait for twenty or more in the band.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "You have a hunch that a friend is avoiding the subject of his marriage. Which way of testing it fits this chapter?",
+   "options": [
+    "Mention a rumour about his wife and watch his reaction",
+    "Wait for the subject to come up naturally and note what he does, or ask him openly whether he would like to talk about it",
+    "Ask mutual friends what they have heard",
+    "Bring it up suddenly in a group to see if he flinches"
+   ],
+   "answer": 1,
+   "explain": "Waiting and asking are the two legitimate tests. The others engineer a reaction, which is manipulation, damages trust, and measures your provocation rather than his state. Some predictions about friends should simply stay unscored.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Describe one specific reading of someone that you felt very sure about in the past month. What number would you have put on it at the time? What actually happened, if you know? Then think back over similar readings, of the same kind of person in the same kind of situation. Roughly how often do readings that feel that sure turn out right, and what would you need to start writing down to find out for certain?",
+  "guidance": "The aim is to put a number on a feeling and then doubt the number honestly. Most people find that their memory of past readings is too patchy to answer the second question, which is itself the reason for keeping a ledger. If you can name a domain where you suspect you are overconfident, such as readings of people with power over you, or of a partner during an argument, write it down. That is the first band you should start tracking.",
+  "minCharacters": 150
+ },
+ "failureMode": "The commonest failure is to game the ledger without meaning to. The reader makes easy predictions that cannot fail, scores beautifully, and concludes he is well calibrated about people when he has only become well calibrated about trivia. A second failure is impatience: reading a band after five or ten predictions and either celebrating or despairing, when chance alone could explain the result. A third is to confuse calibration with accuracy and stop there; a man can be perfectly calibrated and rarely sure of anything useful. The most serious failure is ethical. In search of quicker feedback the reader starts arranging little tests for the people around him, and his ledger fills with reactions he caused. Score honest predictions, wait for real outcomes, and leave unscored what cannot be fairly tested.",
+ "furtherStudy": [
+  {
+   "work": "Calibration of probabilities: The state of the art to 1980",
+   "author": "Sarah Lichtenstein, Baruch Fischhoff and Lawrence D. Phillips",
+   "note": "In Judgment Under Uncertainty: Heuristics and Biases, edited by Daniel Kahneman, Paul Slovic and Amos Tversky, 1982."
+  },
+  {
+   "work": "How to Measure Anything: Finding the Value of Intangibles in Business",
+   "author": "Douglas W. Hubbard",
+   "note": "The chapter on calibration training is a practical guide to becoming better calibrated."
+  },
+  {
+   "work": "Belief in the law of small numbers",
+   "author": "Amos Tversky and Daniel Kahneman",
+   "note": "Psychological Bulletin 76(2), 1971. Why ten predictions tell you less than they seem to."
+  },
+  {
+   "work": "Verification of forecasts expressed in terms of probability",
+   "author": "Glenn W. Brier",
+   "note": "Monthly Weather Review 78(1), 1950. The original short paper behind the score."
+  }
+ ],
+ "reviewPrompt": "Make ten predictions this week, each with a behaviour, a date and a percentage, and score them by hand on Sunday using the Brier method."
+}
