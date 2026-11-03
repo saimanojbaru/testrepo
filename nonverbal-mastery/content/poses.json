@@ -4144,5 +4144,225 @@
     "scale": 1
    }
   ]
+ },
+ {
+  "id": "p_group_meeting",
+  "title": "Round a meeting table",
+  "theme": "professional",
+  "desc": "Five seated figures around a long meeting table: one at the head, two along one side, one along the other and one at the far end, hands resting on the table. Where people sit at a table shapes who speaks, who is spoken to and who is overlooked, often before the meeting has begun.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "long_table",
+   "view": "62",
+   "spineLean": 4
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "The head of the table",
+    "color": "accent-cool"
+   },
+   {
+    "at": "e:head",
+    "text": "The far end, facing the head",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "headTurn": -20
+    },
+    "x": -78,
+    "z": 60,
+    "facing": 90,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "headTurn": 20
+    },
+    "x": -78,
+    "z": 130,
+    "facing": 90,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "headTurn": -10
+    },
+    "x": 78,
+    "z": 95,
+    "facing": -90,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit"
+    },
+    "x": 0,
+    "z": 196,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pro_stage_walk",
+  "title": "Moving on a stage",
+  "theme": "professional",
+  "desc": "Standing presenter caught mid-step across a stage, one hand opening toward the audience palm up while the other swings naturally, head turned toward the room. Movement on a stage reads best when it has a purpose, such as walking to a new point for a new idea, rather than pacing.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "gesture_open",
+   "handShapeL": "relaxed",
+   "handShapeR": "palm_up",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "60",
+   "headTurn": -22
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "An open hand toward the room",
+    "color": "do-green"
+   },
+   {
+    "at": "knees",
+    "text": "A step with a purpose",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pro_video_lean_in",
+  "title": "Too close to the camera",
+  "theme": "professional",
+  "desc": "Seated figure at a laptop leaning far forward from the hips, head pushed toward the screen, forearms on the table. On a video call this fills the frame with a face at the distance of a whisper, which many viewers find intense, and it usually means the person is straining to see or hear.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "laptop",
+   "view": "side",
+   "spineLean": 22,
+   "headPitch": -6
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Face pushed toward the camera",
+    "color": "accent-warm"
+   },
+   {
+    "at": "upper-back",
+    "text": "Leaning in from the hips",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_group_join",
+  "title": "Joining a group",
+  "theme": "together",
+  "desc": "A figure walking up to a loose circle of three, toward the side the group has left open; the two nearest members have turned toward him to make room. A group with an open side and members who turn to widen it is inviting a newcomer; a closed circle of backs is not.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_short_forward",
+   "legStanceR": "walk_short_back",
+   "view": "90",
+   "headTurn": 6
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Approaching the open side",
+    "color": "accent-cool"
+   },
+   {
+    "at": "b:torso",
+    "text": "Turning to make room",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": -50,
+    "z": 150,
+    "facing": 150,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "pocket",
+     "armPoseR": "hang",
+     "handShapeL": "hidden",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 50,
+    "z": 195,
+    "facing": -150,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "cross_over",
+     "armPoseR": "cross_under",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 255,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
  }
 ]

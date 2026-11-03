@@ -281,6 +281,13 @@ object PoseRenderer {
             }
             "table" -> table()
             "desk" -> { chair(); table() }
+            // The head of a meeting table: the figure's chair, and a long table running away in front of it.
+            "long_table" -> {
+                chair()
+                val y = 74f
+                box(-45f, 45f, y, 14f, 176f)
+                for (x in listOf(-40f, 40f)) for (z in listOf(20f, 170f)) lines += v(x, 0, z) to v(x, y, z)
+            }
             "laptop" -> {
                 chair(); table()
                 box(-16f, 16f, 75f, 24f, 46f)

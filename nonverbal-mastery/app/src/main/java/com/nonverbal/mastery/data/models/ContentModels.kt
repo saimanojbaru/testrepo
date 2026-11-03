@@ -192,7 +192,7 @@ data class PoseParams(
     val spineCurve: Float = 0f,
     /** Additive: upper body yaw relative to the hips, degrees. Positive turns to the figure's left. */
     val torsoTurn: Float = 0f,
-    /** Additive: a quiet prop drawn behind the figure: "chair", "stool", "table", "desk", "laptop", "lectern", "bench", "bed", or "none" for no chair under a seated figure. */
+    /** Additive: a quiet prop drawn behind the figure: "chair", "stool", "table", "desk", "laptop", "lectern", "bench", "bed", "long_table" (head of a meeting table), or "none" for no chair under a seated figure. */
     val prop: String? = null,
     /** Additive: breath into the upper chest, -1 (emptied) to 1 (full). */
     val chestBreath: Float = 0f,
