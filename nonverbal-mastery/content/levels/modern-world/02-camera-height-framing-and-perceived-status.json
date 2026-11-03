@@ -1,0 +1,232 @@
+{
+ "id": "modern-world-02",
+ "categoryId": "modern-world",
+ "index": 2,
+ "tier": "FOUNDATION",
+ "title": "Camera Height, Framing & Perceived Status",
+ "estimatedMinutes": 55,
+ "hook": "A camera placed below your chin makes you look down on everyone in the meeting, and most people never notice they have done it.",
+ "why": "Every camera puts the viewer somewhere. A laptop on a desk puts them below your chin, looking up your nose. A phone held at arm's length above you puts them over your head, looking down. A camera at eye level puts them across a table from you. Film directors have known for a century that these choices change how a character is seen. Most people on video calls make the same choices every day without knowing it.\n\nThis chapter is about the picture you send. It covers how camera angle changes perceived status and what the research does and does not show, the problem of the low laptop, distance and framing, what your background says, how light shapes the face, and why you should be slow to read anything into other people's setups. The previous chapter covered what video does to the body and the rhythm of conversation; this one is about the frame itself.",
+ "teach": [
+  {
+   "h": "The camera is a point of view.",
+   "p": "In a room, the people you meet see you from roughly their own eye height, and they move around you as you talk. On a call, they see you from exactly one place: wherever your camera happens to be. That position is a point of view, and it carries meaning whether or not you chose it.\n\nFilm and photography have long used this. A character shot from below looms over the audience and seems powerful or threatening. A character shot from above seems small, vulnerable or diminished. A character shot from eye level is presented as an equal. Cinematographers choose these angles deliberately to tell the audience how to feel about the person on screen.\n\nVideo calls apply the same grammar to ordinary people in ordinary meetings, usually by accident. The laptop is on the desk because that is where laptops go; the phone is held in one hand because that is comfortable; the webcam sits wherever the monitor is. Few people check what angle they are presenting, and fewer still ask what it says.\n\nFor a reader, the point is twofold. Know what your own camera is saying, and fix it if it is saying something you do not mean. And when you watch someone else on a call, remember that their angle is mostly an accident of furniture. The figure here sits at a laptop. Where that laptop's camera sits relative to his eyes decides, before he says a word, whether his colleagues are looking up at him, down on him or straight across.",
+   "poseId": "p_pro_video_call",
+   "disconfirm": "This would be wrong if viewers' impressions of a person were unaffected by the angle from which they were seen. Research on camera angle mostly finds effects, as the next block describes, though they are not uniform."
+  },
+  {
+   "h": "What angle does to status.",
+   "p": "Researchers have tested the film director's intuition. In 1973 Lee Mandell and Donald Shaw showed viewers a filmed news interview with a fictional official, shot either from a low angle, from eye level or from above. When he was filmed from below, viewers rated him as more potent. In a 2011 study, Steffen Giessner and his colleagues found that people judged a person as more powerful when a photograph showed them from below rather than from above.\n\nThe findings are not uniform. A study from the 1970s found that a newsreader filmed at eye level was rated as more dynamic than one filmed from above or below, and another found that angle made no difference to how authoritative newsreaders seemed. The effect seems to depend on the person, the setting and what viewers are asked to judge.\n\nThe chapter on the spine as status in Part I described a related finding: Zachary Witkower and Jessica Tracy showed that small tilts of the head change how dominant a neutral face appears. Angle, whether of the head or of the camera, changes the geometry of the face, and people read that geometry as status.\n\nThe practical conclusion is modest. Angle can tilt impressions of power, but not reliably in one direction for everyone. Eye level is the neutral choice: it presents you as an equal, which is what most working conversations need. The figure here lifts his chin. Seen from below, many people look a little like this whether they mean to or not.",
+   "poseId": "p_head_chin_raised",
+   "disconfirm": "This would be wrong if camera angle never affected judgments of power. Several studies have found effects, though others have not, so treat the direction and size of the effect as uncertain."
+  },
+  {
+   "h": "The low laptop.",
+   "p": "The commonest camera angle in modern working life is the worst. A laptop on a desk puts its camera well below the user's eyes. The viewer sees the underside of the chin, the inside of the nostrils and the ceiling. Because the user is looking at the screen, slightly downward, they appear to be looking down on the viewer.\n\nWhether this reads as dominance, aloofness or simply an unflattering picture depends on the viewer and the moment. None of those readings is what most people intend in a meeting with colleagues or clients. And the effect lasts for every minute of every call.\n\nThe opposite mistake happens with phones. Held low and pointed up, a phone produces the same view from below. Held high and pointed down, as in many selfies, it makes the person look smaller and the viewer loom over them. Researchers at Cardiff University found that people who took selfies from below were seen as more dominant, and that people chose lower angles when the photo was meant for a CV than when it was meant for dating. Many people, it seems, know these effects at some level and use them.\n\nThe fix for calls is simple: raise the camera to eye level. Put the laptop on a stack of books or a stand, use an external camera at the top of a monitor, or prop the phone at eye height. The figure here tucks his chin and looks down. This is roughly how a person working at a low laptop looks to everyone on the other end of the call.",
+   "poseId": "p_head_chin_tucked",
+   "disconfirm": "This would be wrong if a camera well below eye level produced the same impression as one at eye level. The research on angle suggests it does not, though how a low angle is read varies between viewers."
+  },
+  {
+   "h": "Distance and framing.",
+   "p": "How much of you the camera sees changes the conversation too. Too close, and your face fills the screen at a size that, in a room, would mean you were leaning into someone's face; the previous chapter described why this feels intense. Too far, and you become a small figure in a large room, hard to read and easy to ignore.\n\nA useful default for most calls is head and shoulders, with the top of the head a little below the top of the frame and the upper chest visible. This shows your face clearly, lets posture carry some meaning, and leaves room for your hands to enter the frame when you gesture. Centre yourself, so that the viewer is not looking at a wall with a face in the corner.\n\nFor presentations, consider standing. Standing frees the voice and the breath, lets you gesture naturally and gives you some of the presence of a speaker in a room. Set the camera so that it shows you from about the waist up, and practise moving within the frame.\n\nBe consistent. In a regular meeting, viewers build a baseline of how you look on their screen, just as they would in a room. If your framing changes every week, from close-up to distant, from kitchen to car, they have to rebuild that baseline each time. The figure here presents standing, one hand open to the audience. On a call, this is far more engaging than a small face peering up from a low laptop.",
+   "poseId": "p_pro_presenting",
+   "disconfirm": "This would be wrong if framing made no difference to how engaging or readable a speaker was on screen. The guidance here rests on broadcast practice and on the research on video communication rather than on direct experiments with framing, so treat it as well-founded advice."
+  },
+  {
+   "h": "Your background speaks.",
+   "p": "Whatever is behind you is part of the picture, and people read it. In a study published in 2023, Ruth Cook, Alexandra Thompson and Paddy Ross at Durham University showed 167 people still images of faces against different video call backgrounds: a living room, a blurred living room, a bookcase, plants, a blank wall and a novelty image. Faces in front of plants and bookcases were rated most trustworthy and competent. Faces in front of the living room and the novelty background were rated lowest. Blank and blurred backgrounds came in between.\n\nTwo other findings matter. Smiling faces were rated as more trustworthy and competent whatever the background, so the face still counted for most. And the ratings showed familiar stereotypes: women were rated more trustworthy, men more competent. The background did not remove bias; it added a layer to it.\n\nThe study used still images, not live calls, and first impressions on calls may fade quickly as people talk. But first impressions matter in interviews, pitches and first meetings. If you can, choose a calm, uncluttered background, a plain wall, a bookcase or some plants, and avoid novelty backgrounds for serious conversations.\n\nThe figure here sits upright, at ease. What surrounds him on a screen will colour how he is seen before he speaks. That is a reason to choose it with care, and a reason, as the last block of this chapter explains, to be careful about judging others by theirs.",
+   "poseId": "p_sit_neutral",
+   "disconfirm": "This would be wrong if backgrounds had no effect on first impressions. Cook and colleagues found clear effects, though with still images rather than live video, so the size of the effect in real calls is uncertain."
+  },
+  {
+   "h": "Light makes the face.",
+   "p": "Light decides whether the camera can see your face at all. A window behind you turns you into a silhouette, a dark shape with no expression, and people read a hidden face as a closed one. Light from directly above casts shadows under the eyes and nose and makes people look tired or severe. Light from a screen alone gives the face a cold, bluish cast.\n\nThe best light for most calls comes from in front of you and slightly to one side: a window you are facing, or a lamp beside your screen. It shows the eyes clearly, softens shadows and makes small expressions visible, which matters a great deal given how much the face has to carry on a call.\n\nNone of this needs expensive equipment. Turning your desk so that you face the window, or moving a lamp, usually solves the problem. Check how you look before important calls, preferably with the same light you will have during the call, because light changes through the day.\n\nFor a reader, lighting is another reason to read faces on calls with caution. A face that looks grim may be lit from above. A face that looks tired may be lit by a screen at the end of a long day. A face you cannot see may belong to someone working by a window they cannot move away from. The figure here looks straight at the viewer. Without light on his face, that look would be lost.",
+   "poseId": "p_gaze_direct",
+   "disconfirm": "This would be wrong if lighting made no difference to how readable and approachable a face appeared on camera. The claim rests on photographic practice and on the general research on faces rather than on direct studies of call lighting."
+  },
+  {
+   "h": "Read other people's setups lightly.",
+   "p": "Once you know how much a camera angle, a frame and a background can say, it is tempting to read them in others. Resist. Most people's setups are accidents of money, space and circumstance, not statements.\n\nA colleague calling from a cramped bedroom may share a flat with four people. A candidate with a blurred background may be hiding a child's toys or a hospital room. A low, unflattering angle may belong to someone who cannot afford a stand, or who uses a wheelchair at a desk of the wrong height. A camera turned off may protect privacy, bandwidth or a bad day. None of this tells you anything about competence, character or commitment.\n\nThe Durham study is a warning here too. Viewers rated identical faces as more or less competent depending on what was behind them. That is a bias, and in hiring, promotion or client decisions it can quietly favour people with money, space and quiet homes. If you make decisions about people you meet on screen, notice when you are judging the room rather than the person, and correct for it. Many organisations now encourage neutral virtual backgrounds for exactly this reason.\n\nRead faces, voices and what people say; set the rest aside. The figure here listens. On a call, that means attending to the person in the frame, not the furniture around them.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "This would be wrong if people's video setups reliably reflected their competence or character. They mostly reflect their circumstances, and research showing that backgrounds sway judgments is evidence of bias rather than of insight.",
+   "pullQuote": "Read faces, voices and what people say; set the rest aside."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Camera at eye level",
+   "dontCaption": "Camera below: looking down your nose",
+   "annotation": "A laptop on a desk makes you appear to look down on everyone in the meeting. Raise the camera to eye level and you meet them as equals."
+  },
+  {
+   "doPoseId": "p_pro_presenting",
+   "dontPoseId": "p_pro_video_lean_in",
+   "doCaption": "Far enough back to gesture",
+   "dontCaption": "A face filling the frame",
+   "annotation": "Head and shoulders with a little space above, or waist up when presenting, lets posture and hands carry meaning again."
+  },
+  {
+   "doPoseId": "p_gaze_direct",
+   "dontPoseId": "p_gaze_down_away",
+   "doCaption": "Eyes to the lens for the point that matters",
+   "dontCaption": "Eyes on your own image",
+   "annotation": "With a camera at eye level and light on your face, a look into the lens reads as a look into the other person's eyes."
+  }
+ ],
+ "caseStudy": "Raj, thirty-eight, sells software to hospital trusts, and since his firm closed its regional offices he pitches almost entirely on video. His figures have slipped, and clients who used to warm to him in person seem cool on calls. He cannot work out why.\n\nA colleague who sits in on one of his pitches tells him bluntly afterwards: “You look like you're looking down your nose at them. And I can barely see your face.” Raj checks. His laptop sits on the kitchen table, so the camera looks up at his chin. Behind him is the kitchen window, so his face is in shadow. To the left of the frame is a fridge covered in his children's drawings.\n\nHe moves the laptop onto a stack of cookery books so that the camera is at eye level. He turns the table so that he faces the window, which lights his face. He sets up in the corner of the spare room in front of a bookcase. He sits back far enough that his shoulders and hands are in shot, and he hides his self-view. His next three pitches feel different; one client remarks that it is good to finally see him properly.\n\nA few weeks later Raj interviews a graduate for his team. The young man calls from a tiny bedroom with a clothes rack behind him and a camera pointing up at his chin. Raj catches himself thinking that the candidate looks unprofessional. Then he remembers his own kitchen, sets the room aside, and listens to the answers. They are the best of the day.",
+ "observe": [
+  "On your next call, notice the angle from which you see each person: below, level or above, and how it colours your impression.",
+  "Notice your own camera's angle and what it shows: chin, ceiling, eyes.",
+  "Notice backgrounds on calls, and catch any judgment about a person that comes from their room rather than from them.",
+  "Notice how lighting changes faces on screen, especially at the end of the day."
+ ],
+ "drills": [
+  {
+   "name": "Three Angles",
+   "minutes": 15,
+   "steps": [
+    "Record yourself saying the same two sentences with the camera below your chin, at eye level and above your head.",
+    "Watch the three clips with the sound off.",
+    "Write down the impression each gives: power, distance, warmth, smallness.",
+    "Ask someone else to watch them and describe their impressions too.",
+    "Set your everyday camera at the angle that matches how you want to come across."
+   ]
+  },
+  {
+   "name": "Fix the Light",
+   "minutes": 10,
+   "steps": [
+    "Before your next important call, open your camera and look at your face as others will see it.",
+    "If there is a window behind you, turn so that you face it, or close the blind and use a lamp.",
+    "Move a lamp to the front and slightly to one side of your screen.",
+    "Check again, and note the difference in how readable your face is."
+   ]
+  },
+  {
+   "name": "Background Audit",
+   "minutes": 10,
+   "steps": [
+    "Look at your usual video background as if you were meeting yourself for the first time.",
+    "List anything that distracts or says something you would rather not say.",
+    "Choose a calm alternative for important calls: a plain wall, a bookcase, plants.",
+    "Avoid novelty backgrounds for serious conversations."
+   ]
+  },
+  {
+   "name": "Judge the Person",
+   "minutes": 15,
+   "steps": [
+    "During your next few calls, notice any impression you form from someone's background, angle or lighting.",
+    "Write it down, and next to it write a circumstance that could explain the setup.",
+    "Ask yourself whether the impression would survive meeting them in person.",
+    "If you make decisions about people on screen, write one rule to keep their room out of it."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague says a fun novelty background makes you look approachable on calls. What did the Durham study by Cook and colleagues find?",
+   "options": [
+    "Novelty backgrounds were rated the most trustworthy and most competent of all the options",
+    "Backgrounds made no difference once a face was shown on the screen",
+    "Novelty and living-room backgrounds were rated least trustworthy and competent",
+    "Novelty backgrounds helped men but harmed women in every rating"
+   ],
+   "answer": 2,
+   "explain": "Plants and bookcases were rated highest for trust and competence, and the living room and novelty backgrounds lowest. Smiling helped whatever the background, and the study used still images rather than live calls.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Giessner and colleagues find about photographs taken from below or above?",
+   "options": [
+    "People shown from below were judged more powerful than people shown from above",
+    "People shown from above were judged more powerful than people shown from below",
+    "The angle of a photograph had no measurable effect on how powerful anyone seemed",
+    "Only people shown at eye level were judged powerful in any condition"
+   ],
+   "answer": 0,
+   "explain": "A low angle made people seem more powerful. Other studies have found weaker or different effects, so eye level remains the safest neutral choice.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Why does a laptop on a desk often give a poor impression on video calls?",
+   "options": [
+    "Because laptops have worse microphones than any other kind of device",
+    "Because the camera sits below the eyes, so you seem to look down on viewers",
+    "Because a laptop screen is too small for the other person to see",
+    "Because people sit too far back from their laptops for their faces to be seen"
+   ],
+   "answer": 1,
+   "explain": "A low camera shows the chin and nostrils and makes the user appear to look down on the viewer. Raising the camera to eye level presents you as an equal.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A job candidate calls from a cramped bedroom with poor light and a camera pointing up at his chin. What fits this chapter best?",
+   "options": [
+    "Mark him down for professionalism, since presentation matters",
+    "Ask him why he did not prepare a more suitable and professional place to call from",
+    "Assume he is not taking the opportunity seriously enough",
+    "Set the setup aside, since it reflects circumstances, and judge his answers"
+   ],
+   "answer": 3,
+   "explain": "Setups mostly reflect money, space and circumstance, and research showing backgrounds sway judgments is evidence of bias. Judging the answers rather than the room keeps the decision fair.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "In Cook and colleagues' study, what effect did smiling have?",
+   "options": [
+    "Smiling faces were rated more trustworthy and competent on any background",
+    "Smiling made people seem noticeably less competent, though a little more trustworthy",
+    "Smiling had no effect, because backgrounds dominated every rating",
+    "Smiling helped only in front of plants, not in front of bookcases"
+   ],
+   "answer": 0,
+   "explain": "Happy faces were rated more trustworthy and competent across all backgrounds. The face still carried most of the impression, though backgrounds added to it.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You have an important pitch on video tomorrow. Which setup fits this chapter best?",
+   "options": [
+    "Laptop on the desk, window behind you, and a novelty background for fun",
+    "Camera at eye level, light in front of you, calm background, head and shoulders",
+    "Phone held above your head, so the client looks down at your face",
+    "Camera very close, so that your face fills the screen and looks engaged"
+   ],
+   "answer": 1,
+   "explain": "Eye level presents you as an equal and front light makes your face readable. A calm background avoids distraction, and head-and-shoulders framing lets posture and hands carry meaning.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific video call where you formed a strong impression of someone, positive or negative, before they had said much. What did you see: the angle, the light, the background, the framing? How much of your impression came from the person and how much from their setup? Then look at your own usual setup as a stranger would. Write down what it says about you, and one change you will make.",
+  "guidance": "Be honest about the judgments you made, including unflattering ones; most people make them. The aim is twofold: to send a picture that matches how you want to be seen, and to catch yourself reading other people's circumstances as their character.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to leave your camera wherever the furniture puts it, so that a low laptop makes you look down on everyone in every meeting. The second is to ignore light, appearing as a silhouette against a window or a grim face lit from above. The third is to frame yourself too close or too far, so that your face is either overwhelming or lost. The fourth is a background that distracts or says something you did not mean, such as a novelty image in a serious meeting. And the fifth is to read other people's setups as their character, marking down a colleague or candidate for a cramped room, a cheap camera or a blurred background that reflects their circumstances, not their competence.",
+ "furtherStudy": [
+  {
+   "work": "The power of pictures: Vertical picture angles in power pictures",
+   "author": "Steffen R. Giessner, Michelle K. Ryan, Thomas W. Schubert and Niels van Quaquebeke",
+   "note": "Media Psychology 14(4), 2011. How the vertical angle of a picture changes judgments of power."
+  },
+  {
+   "work": "Virtual first impressions: Zoom backgrounds affect judgements of trust and competence",
+   "author": "Ruth Cook, Alexandra Thompson and Paddy Ross",
+   "note": "PLOS ONE 18(9), 2023. What video call backgrounds do to first impressions."
+  },
+  {
+   "work": "Judging people in the news, unconsciously: Effect of camera angle and bodily activity",
+   "author": "Lee M. Mandell and Donald L. Shaw",
+   "note": "Journal of Broadcasting 17(3), 1973. An early test of how camera angle changes impressions of a person on screen."
+  }
+ ],
+ "reviewPrompt": "This week, raise your camera to eye level, face your light source, and notice one judgment you make about someone from their room rather than from them."
+}

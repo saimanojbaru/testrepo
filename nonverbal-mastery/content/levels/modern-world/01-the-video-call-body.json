@@ -1,0 +1,232 @@
+{
+ "id": "modern-world-01",
+ "categoryId": "modern-world",
+ "index": 1,
+ "tier": "FOUNDATION",
+ "title": "The Video Call Body",
+ "estimatedMinutes": 60,
+ "hook": "On a video call your body shrinks to a head and shoulders in a box, and everything you used to say with your whole body has to fit inside it.",
+ "why": "For many people, more working conversations now happen through a camera than across a table. Interviews, team meetings, client pitches, appraisals and even difficult conversations take place on a screen. Yet most of what this book has taught assumes two bodies in the same room: the distance between them, the angle of their shoulders, their feet, their hands, the small movements a listener makes without thinking. On a video call, almost all of that disappears or changes.\n\nThis chapter is about what happens to the body on a video call, and what to do about it. It covers what the camera keeps and what it cuts, why video calls are so tiring, how the tiny delays in the connection break the rhythm of conversation, the gaze problem that makes eye contact impossible, how to send signals a camera can carry, how to read people through a screen without over-reading, and how to design calls around human bodies rather than around the software. The next two chapters take up the camera's angle and the sound of your voice.",
+ "teach": [
+  {
+   "h": "The body in a box.",
+   "p": "A typical video call shows a face and shoulders, cut off somewhere around the chest. Everything below is gone: the legs crossed toward or away from someone, the foot jiggling under the table, the hands folded in a lap, the lean of the whole body. Gestures made at the level of the waist vanish below the frame. A shrug becomes a small lift of the shoulders that may or may not be visible. A person's whole bearing is reduced to the angle of a head and the expression on a face.\n\nAt the same time, the face that remains is enormous. On a laptop or a large monitor, other people's faces are shown at a size that, in a room, would mean they were standing very close to you. The chapter on proxemics described how distance carries meaning and how people adjust it to manage intimacy. A video call removes that control. Every face is close, and stays close, whatever the relationship.\n\nThe result is a strange mixture of too little and too much. You lose most of the body, so the signals you relied on in a room are missing. And the face is magnified, so every flicker of the eyes and every frown is on display, both yours and theirs.\n\nFor a reader, the first lesson is humility. Readings that would be reasonable in a room may be unreliable on a screen, because the evidence is thinner. The figure here sits at a laptop in profile, upright and engaged. From the camera's point of view, almost all of this posture is invisible. Only the head and shoulders make it through, and they must carry what the whole body used to say.",
+   "poseId": "p_pro_video_call",
+   "disconfirm": "This would be wrong if video calls carried as much nonverbal information as face-to-face meetings. The framing of a typical call makes that impossible, though higher cameras, wider shots and larger screens can restore some of what is lost.",
+   "pullQuote": "Readings that would be reasonable in a room may be unreliable on a screen, because the evidence is thinner."
+  },
+  {
+   "h": "Why video calls tire you.",
+   "p": "Many people noticed during the pandemic that a day of video calls left them more drained than a day of meetings in person. In 2021 Jeremy Bailenson, who studies virtual communication at Stanford, set out four reasons. First, close-up eye gaze: on a call, everyone appears to be looking straight at you at close range, all the time, which in ordinary life happens only in moments of intimacy or confrontation. Second, cognitive load: in a room, sending and reading nonverbal signals happens largely without effort, while on a call people have to work at both. Third, the mirror: most software shows you your own face throughout, which no ordinary conversation does. Fourth, immobility: to stay in frame, people sit still for hours.\n\nIn a survey of more than ten thousand people, Géraldine Fauville, Bailenson and their colleagues found that women reported more fatigue from video calls than men, and that the difference was partly explained by greater anxiety about their own image on screen. Women also reported longer meetings and shorter breaks between them.\n\nThese were surveys and theoretical arguments rather than experiments, but the mechanisms suggest simple remedies. Hide your self-view once you have checked your frame. Make other people's video smaller, or use speaker view rather than a grid of faces. Take breaks between calls. Turn cameras off for some meetings, and stand or walk during audio-only ones.\n\nThe figure here has slumped at the laptop, shoulders rounded, an hour into a long call. On camera it reads as boredom. Much more often, it is simply fatigue.",
+   "poseId": "p_pro_video_slump",
+   "disconfirm": "This would be wrong if video calls were no more tiring than meetings in person. Fatigue surveys consistently find otherwise, though they rely on self-report and cannot isolate which of Bailenson's mechanisms matters most."
+  },
+  {
+   "h": "The broken rhythm.",
+   "p": "In ordinary conversation, people take turns with remarkable precision. The gap between one person finishing and the next starting is usually a fraction of a second, and speakers rely on that rhythm to know when to come in and when to hold back. Video calls break it.\n\nIn 2022 Julie Boland and her colleagues compared the same pairs of people talking face to face and over Zoom. Face to face, the average gap between turns was about 135 milliseconds. Over Zoom, it was about 487 milliseconds, more than three times as long, even though the technical delay in the connection was only a fraction of that. People also held the floor for longer on Zoom, and there were fewer changes of speaker. The researchers suggested that small, variable delays disrupt the automatic timing that normally keeps a conversation in step.\n\nThe consequences are familiar. Two people start speaking at once, both stop, both apologise, and both start again. Someone pauses to let others in, and nobody comes in. A colleague takes a beat to answer, and it feels like reluctance. Quiet people stop trying to get a word in at all.\n\nSo read pauses on a call generously. A slow answer is often the connection, not the person. If you are chairing, make turn-taking explicit: name the next speaker, use raised hands, and leave a beat longer than feels natural before moving on. The figure here sits with a hand to his face, apparently hesitating. On a call, he may simply be waiting for a gap that the technology never gives him.",
+   "poseId": "p_sit_hand_face",
+   "disconfirm": "This would be wrong if turn-taking over video were as quick and smooth as face to face. Boland and colleagues found large delays, though in one platform and one set of studies, and newer technology may narrow the gap."
+  },
+  {
+   "h": "Where the eyes go.",
+   "p": "On a call, eye contact is impossible in a strict sense. If you look at the other person's face on your screen, your camera, usually above the screen, records you looking slightly down, and to them you seem to be looking at their chest or your keyboard. If you look into the camera, they see you looking straight at them, but you can no longer see their face at all.\n\nThe chapter on gaze described how people look away while thinking and look back to check how they are being received. On a call, the looking away is still visible, and often magnified. Someone glancing at another window, reading notes or checking a message appears to be looking off into space. Someone looking down at their own face in the corner of the screen appears distracted.\n\nThere is no perfect solution, but some habits help. Place the window showing the person you are speaking with as close to the camera as possible, so that the angle is small. Look into the camera when you make a point that matters, or when you are listening to something serious, so that the other person feels addressed. Look at faces the rest of the time, to read their reactions. Tell people if you are taking notes: “I'm looking down because I'm writing this down.”\n\nThe figure here looks down and away. In a room, this is often thinking. On a screen, it can look like inattention, and the person on the other end cannot see what you are looking at. Say so when it matters.",
+   "poseId": "p_gaze_down_away",
+   "disconfirm": "This would be wrong if people on video calls read a downward gaze as attention rather than distraction. The geometry of camera and screen makes misreading likely, though people who use video calls often may learn to discount it."
+  },
+  {
+   "h": "Make your signals bigger, and clearer.",
+   "p": "Because the camera carries less, the small signals that keep a conversation going need a little help. The chapter on the head nod described the back channel: the nods, mm-hms and small sounds that tell a speaker you are following. On a call, these are easily lost. A small nod is barely visible in a compressed video, and the mm-hm is often cut off by noise suppression or muted microphones.\n\nSo nod a little more clearly, and let your face react. Smile when something is funny. Show surprise when something surprises you. Raise your eyebrows, tilt your head. This is not performing; it is translating your ordinary reactions into a size the medium can carry. Many people find that the video call version of themselves looks flatter than they feel, and a little extra expression simply restores the balance.\n\nBring your hands into the frame when you gesture, so that they can be seen. Sit far enough back that your shoulders and upper chest are visible, which lets posture carry some meaning again. Lean in slightly to show interest, but not so far that your face fills the screen.\n\nUse the software's signals sparingly but deliberately: a thumbs-up reaction to agree without interrupting, a raised hand to ask for the floor, a short message in the chat to say you are following. The figure here is at the bottom of a nod. On a call, this movement is one of the most useful things a listener can do, and it needs to be large enough to survive the journey.",
+   "poseId": "p_head_nod_low",
+   "disconfirm": "This would be wrong if ordinary-sized nods and expressions came across on video as clearly as in person. The reduced size and quality of video images make that unlikely, though the right amount of extra expression varies with the person and the setting."
+  },
+  {
+   "h": "Reading people through a screen.",
+   "p": "Reading on a call needs extra care, because the evidence is thinner and the rivals are more numerous. A frozen face may be a frozen connection. A delay may be latency. A sudden glance away may be a child entering the room, a message arriving or a second screen. A flat expression may be fatigue, poor lighting or a camera that makes everyone look grey.\n\nCameras switched off deserve particular generosity. People turn their cameras off because of slow connections, shared or untidy homes, a crying baby, exhaustion, anxiety about their appearance, a disability or because watching faces all day is overwhelming, which is true for many neurodivergent people. Treating a camera that is off as a sign of disengagement is usually unfair.\n\nUse the channels you have. The voice, which the next chapter but one examines, carries a great deal on a call. Listen for changes in pace and tone. Notice who speaks and who stays silent, and who tries to speak and gives up. Read the chat as well as the faces. And build a baseline for each person on video, because their video self may differ from their in-person self.\n\nWhen something matters, check. “You've gone quiet; are you still with us?” or “I can't read your face on this connection; what do you think?” The figure here sits back with arms folded. In a room, the posture might say something. On a call, it may just be the way he sits when he cannot see anyone's body either.",
+   "poseId": "p_pro_arms_folded_seated",
+   "disconfirm": "This would be wrong if readings made through video were as reliable as readings made in person. Fewer channels and more rivals make them less reliable, though some signals, such as voice, survive well."
+  },
+  {
+   "h": "Design calls for human bodies.",
+   "p": "Much of the strain of video calls comes from habits that could be changed. Back-to-back meetings with no breaks, cameras required for every call, hour-long slots for twenty minutes of business and grids of twenty faces are choices, not laws of nature.\n\nIf you run meetings, you can change them. Make meetings shorter, and leave gaps between them. Make cameras optional for some calls, and model it yourself. Use audio-only calls for one-to-one conversations where faces add little, and suggest walking while you talk. The opening chapter of Part III described how many men talk most easily side by side; a walking phone call has some of the same quality, with neither person watching the other's face.\n\nThink about which conversations need the face. A difficult conversation, a piece of bad news or an apology may be better in person if possible, or on a call with cameras on and full attention. Routine updates may be better as a message. Matching the medium to the conversation is part of reading people well.\n\nAnd look after your own body. Stand up between calls. Look into the distance. Move. The figure here walks while on the phone. For many conversations, this is a better arrangement than two faces frozen in boxes, and both people often end the call less tired than they began it.",
+   "poseId": "p_walk_phone",
+   "disconfirm": "This would be wrong if shorter meetings, optional cameras and audio-only calls made no difference to fatigue. Research on video fatigue points to these factors, though direct trials of meeting design are few."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_lean_in",
+   "doCaption": "Seated back, at a comfortable distance",
+   "dontCaption": "Face filling the frame",
+   "annotation": "A face pushed toward the camera appears at the distance of a whisper. Sitting back lets your shoulders, posture and hands back into the picture."
+  },
+  {
+   "doPoseId": "p_walk_phone",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "A walking call with the camera off",
+   "dontCaption": "Slumped in front of a camera for an hour",
+   "annotation": "Not every conversation needs faces. Audio-only calls, especially on the move, remove the mirror and the stare and often go better."
+  },
+  {
+   "doPoseId": "p_head_nod_low",
+   "dontPoseId": "p_pro_arms_folded_seated",
+   "doCaption": "Clear nods the camera can carry",
+   "dontCaption": "Still and unreadable on screen",
+   "annotation": "On a call, small signals are lost. A clearer nod and a visible reaction tell the speaker you are with them."
+  }
+ ],
+ "caseStudy": "Owen, forty-five, manages a team of engineers spread across three cities. Since his company went remote, he spends six or seven hours a day on video calls. He ends each day exhausted and short-tempered, and in his annual review, two of his team say that he comes across as cold and distracted in meetings.\n\nOwen is hurt and puzzled, so he watches a recording of one of his calls, as the chapter on video review suggested. He sees what they see. His laptop sits low on the desk, so he looks down at the camera. He spends half of each call looking at the corner of the screen where his own face is. His reactions are tiny, a flicker of the eyebrows that the camera barely records. When people pause for him to come in, he waits, and the pause stretches until someone else fills it.\n\nHe makes a few changes. He hides his self-view after the first minute. He raises the laptop on a stack of books and moves the speaker's window up near the camera. He cuts meetings to twenty-five minutes, so there are gaps between them, and makes cameras optional for the daily update. When he chairs, he names the next speaker and leaves a longer pause before moving on. He lets his face react, and nods so that it shows. Once a week, he and his deputy have their one-to-one as a phone call while both of them walk.\n\nThree months later, the team's comments are different. One engineer says that Owen seems more relaxed. Owen says that he is less tired than he has been in two years, and that the walking calls are the best conversations of his week.",
+ "observe": [
+  "On your next call, notice how much of each person's body you can see, and what you are relying on to read them.",
+  "Notice how often people talk over each other or leave long gaps, and how the group recovers.",
+  "Notice where your own eyes go during a call: faces, your own image, notes, other windows.",
+  "Notice who turns their camera off and when, and resist the first explanation that comes to mind."
+ ],
+ "drills": [
+  {
+   "name": "Watch Yourself Once",
+   "minutes": 20,
+   "steps": [
+    "Record five minutes of a real or practice video call, with permission from anyone else on it.",
+    "Watch it with the sound off, and note what your face, head and shoulders say.",
+    "Note where your eyes go, and how often you look at your own image.",
+    "Note how visible your nods and reactions are.",
+    "Write down two changes you will make, and try them on your next call."
+   ]
+  },
+  {
+   "name": "Fix the Frame",
+   "minutes": 10,
+   "steps": [
+    "Raise your camera so that the lens is roughly at eye level.",
+    "Sit back until your shoulders and upper chest are in the frame.",
+    "Move the window showing the speaker as close to the camera as you can.",
+    "Turn off your self-view once you have checked how you look."
+   ]
+  },
+  {
+   "name": "Chair for the Delay",
+   "minutes": 15,
+   "steps": [
+    "In the next meeting you run, name the person you want to hear from next instead of asking the room.",
+    "Leave a pause of three full seconds before moving on from a question.",
+    "Ask quieter people directly, by name, for their view.",
+    "Afterwards, note who spoke who usually does not."
+   ]
+  },
+  {
+   "name": "Walk One Call",
+   "minutes": 15,
+   "steps": [
+    "Choose one one-to-one conversation this week that does not need faces or a screen.",
+    "Suggest doing it as a phone call while both of you walk.",
+    "Notice how the conversation differs from your usual video calls.",
+    "Ask the other person afterwards how it felt for them."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague says that a video call is just a meeting on a screen, so all the same body language rules apply. What does this chapter suggest?",
+   "options": [
+    "He is right; cameras capture everything a meeting room shows",
+    "Video cuts most of the body, magnifies faces and adds new strains",
+    "Video calls carry more nonverbal information than meetings in person",
+    "Body language plays no part in video calls, so it can be ignored"
+   ],
+   "answer": 1,
+   "explain": "A typical frame shows only head and shoulders, faces appear at intimate size, and Bailenson identified close-up gaze, cognitive load, the mirror and immobility as sources of strain. Readings that are reasonable in a room may be unreliable on screen.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Fauville, Bailenson and colleagues find about who reports more fatigue from video calls?",
+   "options": [
+    "Men reported far more fatigue, because they are less used to cameras",
+    "Fatigue was the same for everyone once meeting length was considered",
+    "Women reported more fatigue, partly linked to anxiety about self-view",
+    "Only people over sixty reported any fatigue from video calls at all"
+   ],
+   "answer": 2,
+   "explain": "Women reported more fatigue, and the difference was partly explained by anxiety about their own image on screen. Women also reported longer meetings and shorter breaks, which suggests simple remedies.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Boland and colleagues find when the same pairs of people talked face to face and over Zoom?",
+   "options": [
+    "The gaps between turns were more than three times longer over Zoom",
+    "Turn-taking was faster over Zoom because people were paying closer attention",
+    "There was no difference in the rhythm of conversation at all",
+    "People changed speakers more often over Zoom than face to face"
+   ],
+   "answer": 0,
+   "explain": "Turn transitions averaged about 135 milliseconds face to face and about 487 over Zoom, far more than the technical delay. People also held the floor longer, with fewer changes of speaker.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "On a video call, a colleague takes a noticeable beat before answering your question. What fits this chapter best?",
+   "options": [
+    "Treat it as reluctance and ask him what he is really unhappy about",
+    "Treat it as a sign that he does not know the answer to the question",
+    "Repeat the question more loudly, since he probably did not hear it",
+    "Remember that delays disrupt timing on calls, and wait for his answer"
+   ],
+   "answer": 3,
+   "explain": "Small delays on calls greatly slow turn-taking, so a pause is often the connection rather than the person. Reading it as reluctance or ignorance adds a story the evidence does not support.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Why does looking at someone's face on your screen often make you appear to be looking down?",
+   "options": [
+    "Because screens make everyone look tired, whatever they are doing",
+    "Because the camera usually sits above the screen, not where the face is",
+    "Because people instinctively lower their heads during video calls",
+    "Because video compression shifts the apparent position of the eyes on the screen"
+   ],
+   "answer": 1,
+   "explain": "The camera records you from above the screen, so looking at the image below it reads as looking down. Placing the speaker's window near the camera, and looking into the lens for important points, reduces the problem.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "After six hours of back-to-back video calls, you feel drained and irritable. What does this chapter suggest?",
+   "options": [
+    "Push through, since video fatigue is just a matter of willpower",
+    "Turn your self-view on, so you can check you look more engaged",
+    "Hide self-view, take breaks, and move some calls to audio or walking",
+    "Lengthen each call so that you can cover everything in fewer meetings"
+   ],
+   "answer": 2,
+   "explain": "The mirror, the stare and immobility all add strain. Hiding self-view, building in breaks and moving suitable conversations to audio-only or walking calls address the mechanisms directly.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific video call in the past week that went less well than you hoped, or that left you particularly tired. Describe your setup: camera height, where you looked, whether your self-view was on, how much of your body was in frame. How did the rhythm of turn-taking go? What did you read in other people's faces or silences, and how confident should you have been? Write two changes you will make to your setup and one to how you read others on screen.",
+  "guidance": "Be practical and concrete: the height of the laptop, the window you watched, the pause you misread. If you can, watch a recording of yourself before writing. The aim is not perfection on camera but a setup that tires you less and lets your ordinary warmth and attention come through.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to read people on video as if they were in the room, drawing confident conclusions from a face that is compressed, delayed and missing most of its body. The second is to treat delays and pauses as reluctance, coldness or ignorance, when the connection is often to blame. The third is to stare at your own image, look down at a low camera and keep your reactions so small that the camera loses them, and then wonder why people find you cold. The fourth is to treat cameras that are off as disengagement without considering the many reasons people switch them off. And the fifth is to accept a day of back-to-back calls as normal, rather than shortening meetings, adding breaks and moving the right conversations to audio or a walk.",
+ "furtherStudy": [
+  {
+   "work": "Nonverbal overload: A theoretical argument for the causes of Zoom fatigue",
+   "author": "Jeremy N. Bailenson",
+   "note": "Technology, Mind, and Behavior 2(1), 2021. The four mechanisms that make video calls tiring."
+  },
+  {
+   "work": "Zoom Exhaustion & Fatigue Scale",
+   "author": "Géraldine Fauville, Mufan Luo, Anna C. M. Queiroz, Jeremy N. Bailenson and Jeff Hancock",
+   "note": "Computers in Human Behavior Reports 4, 2021. A measure of video fatigue, and what predicts it."
+  },
+  {
+   "work": "Zoom disrupts the rhythm of conversation",
+   "author": "Julie E. Boland, Pedro Fonseca, Ilana Mermelstein and Myles Williamson",
+   "note": "Journal of Experimental Psychology: General 151(6), 2022. How video calls slow and scramble turn-taking."
+  }
+ ],
+ "reviewPrompt": "This week, raise your camera to eye level, hide your self-view, and leave a longer pause than feels natural before moving on in any call you chair."
+}
