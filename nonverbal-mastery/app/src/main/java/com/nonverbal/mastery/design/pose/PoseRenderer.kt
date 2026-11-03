@@ -103,7 +103,8 @@ object PoseRenderer {
         val groups = merged.map { FigureGroup(it.path, it.depth, it.far, it.face, it.panel) }
         val silhouette = groups.filterNot { it.panel }.fold(Path()) { acc, g -> union(acc, g.path) }
 
-        val grounds = scene.figures.map { sk ->
+        // A carried child or a person lying on a bed casts no floor shadow of their own.
+        val grounds = scene.figures.filterNot { it.placement.lifted }.map { sk ->
             val k = sk.placement.scale
             val mid = sk.left.foot.ballInner.lerp(sk.right.foot.ballInner, 0.5f)
             Ground(
@@ -287,6 +288,17 @@ object PoseRenderer {
                 lines += v(-16, 97, 50) to v(16, 97, 50)
             }
             "lectern" -> lines += v(-26, 0, 38) to v(26, 0, 38)
+            // A bed for a figure lying on its back (pitch -90): the body runs from the feet at the origin
+            // toward the figure's own rear, so the bed does too. Mattress top 52 cm, with a pillow line.
+            "bed" -> {
+                val y = 52f
+                box(-46f, 46f, y, -186f, 14f)
+                box(-46f, 46f, y - 14f, -186f, 14f)
+                for (x in listOf(-46f, 46f)) for (z in listOf(-186f, 14f)) lines += v(x, 0, z) to v(x, y - 14f, z)
+                lines += v(-30, y + 7, -150) to v(30, y + 7, -150)
+                lines += v(-46, y + 30, -186) to v(46, y + 30, -186)
+                for (x in listOf(-46f, 46f)) lines += v(x, y, -186) to v(x, y + 30, -186)
+            }
             "bench" -> {
                 val y = 44f
                 box(-70f, 70f, y, -18f, 18f)
@@ -294,7 +306,7 @@ object PoseRenderer {
             }
         }
         val pl = sk.placement
-        return lines.map { (a, b) -> pr.screen(pl.point(a)) to pr.screen(pl.point(b)) }
+        return lines.map { (a, b) -> pr.screen(pl.floor(a)) to pr.screen(pl.floor(b)) }
     }
 
     /**
@@ -304,7 +316,7 @@ object PoseRenderer {
     private fun propPanels(f: Int, sk: Skeleton, pr: Projector): List<Part> {
         val pl = sk.placement
         fun quad(vararg pts: V3, bias: Float, id: String): Part {
-            val world = pts.map(pl::point)
+            val world = pts.map(pl::floor)
             val path = polygon(world.map(pr::screen))
             return Part("$f:$id", path, world.map(pr::depth).average().toFloat() + bias, far = false, panel = true)
         }

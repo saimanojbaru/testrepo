@@ -3,13 +3,22 @@ package com.nonverbal.mastery.design.pose
 import com.nonverbal.mastery.data.models.Pose
 import com.nonverbal.mastery.data.models.PoseParams
 
-/** Where a figure stands in a scene: floor offset, facing (yaw) and size. */
-data class Placement(val offset: V3 = V3.ZERO, val yaw: Float = 0f, val scale: Float = 1f) {
-    private val rot = M3.rotY(yaw)
+/**
+ * Where a figure is in a scene: offset (usually on the floor), facing (yaw), size, and pitch, which tips the
+ * whole figure about its own left-right axis so that it can lie down.
+ */
+data class Placement(val offset: V3 = V3.ZERO, val yaw: Float = 0f, val scale: Float = 1f, val pitch: Float = 0f) {
+    private val yawRot = M3.rotY(yaw)
+    private val rot = if (pitch == 0f) yawRot else yawRot * M3.rotX(pitch)
     fun point(p: V3) = offset + rot.apply(p * scale)
     fun dir(d: V3) = rot.apply(d)
     fun axes(m: M3) = rot * m
-    fun lerp(o: Placement, t: Float) = Placement(offset.lerp(o.offset, t), yaw + (o.yaw - yaw) * t, scale + (o.scale - scale) * t)
+    /** A point in the figure's floor frame: same place and facing, but never lifted or tipped. Props use it. */
+    fun floor(p: V3) = V3(offset.x, 0f, offset.z) + yawRot.apply(p * scale)
+    /** True when the figure is not standing, sitting or kneeling on the floor. */
+    val lifted: Boolean get() = offset.y > 1f || pitch != 0f
+    fun lerp(o: Placement, t: Float) =
+        Placement(offset.lerp(o.offset, t), yaw + (o.yaw - yaw) * t, scale + (o.scale - scale) * t, pitch + (o.pitch - pitch) * t)
 
     companion object { val IDENTITY = Placement() }
 }
@@ -191,7 +200,7 @@ object PoseSolver {
     fun solveScene(pose: Pose, viewOverride: String? = null): Scene {
         val main = solve(pose.params, viewOverride)
         val others = pose.companions.map { c ->
-            solve(c.params).placed(Placement(v(c.x, 0, c.z), c.facing, c.scale))
+            solve(c.params).placed(Placement(v(c.x, c.y, c.z), c.facing, c.scale, c.pitch))
         }
         return Scene(listOf(main) + others, main.yaw)
     }
@@ -305,7 +314,8 @@ object PoseSolver {
             right = Side(shoulderR, elbowR, handR, hipR, legSolveR.knee, legSolveR.ankle, legSolveR.foot),
             sections = sections,
             seated = seated,
-            prop = p.prop ?: if (seated) "chair" else null,
+            // "none" suppresses the chair a seated figure would otherwise get (a child sitting on a hip).
+            prop = if (p.prop == "none") null else p.prop ?: if (seated) "chair" else null,
             yaw = yawFor(viewOverride ?: p.view),
         )
     }

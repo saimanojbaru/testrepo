@@ -159,6 +159,10 @@ data class SceneFigure(
     val facing: Float = 180f,
     /** 1 for an adult; about 0.6 for a young child. */
     val scale: Float = 1f,
+    /** Additive: lift off the floor in cm, for a child carried on a hip or a person lying on a bed. */
+    val y: Float = 0f,
+    /** Additive: tip about the figure's own left-right axis, degrees. -90 lays it on its back, head toward its own rear. */
+    val pitch: Float = 0f,
 )
 
 @Serializable
@@ -188,7 +192,7 @@ data class PoseParams(
     val spineCurve: Float = 0f,
     /** Additive: upper body yaw relative to the hips, degrees. Positive turns to the figure's left. */
     val torsoTurn: Float = 0f,
-    /** Additive: a quiet prop drawn behind the figure: "chair", "stool", "table", "desk", "laptop", "lectern", "bench". */
+    /** Additive: a quiet prop drawn behind the figure: "chair", "stool", "table", "desk", "laptop", "lectern", "bench", "bed", or "none" for no chair under a seated figure. */
     val prop: String? = null,
     /** Additive: breath into the upper chest, -1 (emptied) to 1 (full). */
     val chestBreath: Float = 0f,

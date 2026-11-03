@@ -98,6 +98,19 @@ object ArmPresets {
         "hug_low" to ArmPreset(Frame.CHEST, v(6, -22, 32), v(1, -0.2, 0), handDir = v(-1, 0, -0.2)),
         "around_shoulders" to ArmPreset(Frame.SHOULDER, v(42, -3, -5), v(0.2, 0.6, -1), handDir = v(0.4, -0.6, 0.6)),
         "on_shoulder" to ArmPreset(Frame.SHOULDER, v(30, -6, 6), v(0.2, -1, -0.3), handDir = v(0.6, -0.5, 0.4)),
+        // Greeting between friends
+        "fist_bump" to ArmPreset(Frame.SHOULDER, v(-15, -22, 40), v(0.5, -1, -0.3), handDir = v(-0.1, 0.05, 1), thumb = v(0, 1, 0)),
+        "clasp_chest" to ArmPreset(Frame.SHOULDER, v(-14, -24, 24), v(0.7, -1, -0.3), handDir = v(-0.35, 0.6, 0.7), thumb = v(0, 1, 0)),
+        // Holding and carrying
+        "cradle_under" to ArmPreset(Frame.CHEST, v(-12, -22, 22), v(1, -0.7, -0.1), handDir = v(-0.9, 0.1, 0.2)),
+        "baby_back" to ArmPreset(Frame.CHEST, v(-6, -8, 22), v(1, -0.5, -0.2), handDir = v(-0.9, 0.2, 0.3)),
+        "cradle_support" to ArmPreset(Frame.CHEST, v(-2, -18, 13), v(0.8, -0.8, -0.2), handDir = v(-0.6, 0.2, 0.6)),
+        "hip_carry" to ArmPreset(Frame.PELVIS, v(30, 2, 12), v(0.3, -0.5, -1), handDir = v(0.2, 0.1, -1)),
+        "reach_up_short" to ArmPreset(Frame.SHOULDER, v(4, 20, 6), v(0.8, -0.2, -0.3), handDir = v(-0.2, 1, 0.1)),
+        "hold_hand_low" to ArmPreset(Frame.SHOULDER, v(9, -52, 6), v(0.4, 0, -1), handDir = v(0.2, -0.95, 0.15)),
+        // Reaching to someone lying down, and working with the hands at a bench
+        "hold_forward_low" to ArmPreset(Frame.SHOULDER, v(-18, -38, 50), v(0.5, -1, -0.2), handDir = v(-0.1, -0.35, 1)),
+        "work_low" to ArmPreset(Frame.PELVIS, v(9, -10, 34), v(0.7, -0.4, -0.6), handDir = v(-0.4, -0.35, 0.85)),
     )
 
     fun get(id: String): ArmPreset = all[id] ?: all.getValue("hang")

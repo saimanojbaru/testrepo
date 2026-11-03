@@ -3460,5 +3460,689 @@
     "scale": 1
    }
   ]
+ },
+ {
+  "id": "p_head_nod_up",
+  "title": "The up-nod",
+  "theme": "head",
+  "desc": "Standing figure seen at three-quarters with the chin flicked briefly upward and the head tipped back a few degrees, arms loose at the sides. Between men in many English-speaking places, a quick upward nod at a distance says I see you, often to an acquaintance; a downward nod is often the more formal or respectful version.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter",
+   "headPitch": -16
+  },
+  "annotations": [
+   {
+    "at": "chin",
+    "text": "Chin lifted, not dropped",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pair_fist_bump",
+  "title": "Fist bump",
+  "theme": "together",
+  "desc": "Two standing figures in profile, each extending the right arm so that their closed fists meet in the middle at about chest height, a little more than an arm's length apart. A light, quick greeting that needs no grip and little closeness, common among friends, teammates and younger men.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "fist_bump",
+   "handShapeL": "relaxed",
+   "handShapeR": "fist",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Knuckles meeting midway",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "fist_bump",
+     "handShapeL": "relaxed",
+     "handShapeR": "fist",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 88,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_pull_in_hug",
+  "title": "The handshake pulled into a hug",
+  "theme": "together",
+  "desc": "Two figures in profile, right hands still clasped between their chests while the left arms reach over each other's shoulders, bodies leaning in from the hips. The classic greeting between male friends: a grip that turns into a brief, half embrace, usually closed with a slap or two on the back.",
+  "params": {
+   "armPoseL": "hug_high",
+   "armPoseR": "clasp_chest",
+   "handShapeL": "flat",
+   "handShapeR": "grip",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "spineLean": 6
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "The grip stays between them",
+    "color": "accent-cool"
+   },
+   {
+    "at": "left-hand",
+    "text": "A hand on the back, ready to pat",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hug_high",
+     "armPoseR": "clasp_chest",
+     "handShapeL": "flat",
+     "handShapeR": "grip",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 6
+    },
+    "x": 0,
+    "z": 40,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_side_hug",
+  "title": "Side by side, arms across shoulders",
+  "theme": "together",
+  "desc": "Two figures standing shoulder to shoulder and facing the same way, each with an arm across the other's shoulders and the free arm hanging loose. A side hug is common in photographs, at celebrations and among teammates; it offers closeness without either person having to face the other.",
+  "params": {
+   "armPoseL": "around_shoulders",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "15"
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hand resting on the far shoulder",
+    "color": "do-green"
+   },
+   {
+    "at": "b:right-hand",
+    "text": "Arm returned in kind",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "around_shoulders",
+     "handShapeL": "relaxed",
+     "handShapeR": "flat",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 46,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_shoulder_comfort",
+  "title": "A hand on the shoulder",
+  "theme": "together",
+  "desc": "Two standing figures side by side at three-quarters: one rests a hand on the near shoulder of the other, whose head is bowed and shoulders rounded. A hand on the shoulder is among the most widely accepted forms of comfort between men; it asks for nothing and can be shrugged off easily.",
+  "params": {
+   "armPoseL": "on_shoulder",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter",
+   "headTurn": 14,
+   "headPitch": 8
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Resting, not gripping",
+    "color": "do-green"
+   },
+   {
+    "at": "b:head",
+    "text": "Head bowed",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headPitch": 24,
+     "spineCurve": 8,
+     "shoulderProtractionL": 1.5,
+     "shoulderProtractionR": 1.5
+    },
+    "x": 58,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_walk_together",
+  "title": "Walking side by side",
+  "theme": "together",
+  "desc": "Two figures walking side by side at a matched pace, seen at three-quarters, one with the head turned slightly toward the other as they talk. Walking together sets a shared rhythm and a shared direction, and many conversations that would stall across a table run easily on a walk.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "swing_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "three-quarter",
+   "headTurn": 16
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "A glance across, then back to the path",
+    "color": "accent-cool"
+   },
+   {
+    "at": "knees",
+    "text": "Steps falling into time",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "swing_back",
+     "armPoseR": "swing_forward",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "walk_forward",
+     "legStanceR": "walk_back"
+    },
+    "x": 56,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_work_together",
+  "title": "Working at the same bench",
+  "theme": "together",
+  "desc": "Two figures standing side by side at a workbench, both leaning in with heads down and hands busy on the same job in front of them. Shared work gives two people somewhere to put their eyes and hands, and a lot of men's friendship is made in exactly this position.",
+  "params": {
+   "armPoseL": "work_low",
+   "armPoseR": "work_low",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "35",
+   "prop": "table",
+   "spineLean": 14,
+   "headPitch": 26
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Hands on the same task",
+    "color": "do-green"
+   },
+   {
+    "at": "b:head",
+    "text": "Eyes on the work, not on each other",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "work_low",
+     "armPoseR": "work_low",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "prop": "table",
+     "spineLean": 14,
+     "headPitch": 24,
+     "headTurn": -10
+    },
+    "x": -62,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_lean_back",
+  "title": "One leans in, one leans away",
+  "theme": "together",
+  "desc": "Two standing figures in profile: one leans toward the other with a hand raised mid-gesture, while the other leans back from the hips, turns the shoulders away and folds the arms. Leaning away, turning and closing up are among the plainest signs that someone wants more distance, whatever the words are doing.",
+  "params": {
+   "armPoseL": "cross_over",
+   "armPoseR": "cross_under",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand_step_back",
+   "view": "side",
+   "spineLean": -8,
+   "torsoTurn": 18,
+   "headTurn": 20,
+   "weightShift": -0.4
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Trunk tipping back and turning",
+    "color": "accent-warm"
+   },
+   {
+    "at": "b:torso",
+    "text": "Leaning in",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 10
+    },
+    "x": 0,
+    "z": 68,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_apology",
+  "title": "Coming to apologise",
+  "theme": "together",
+  "desc": "Two standing figures in profile a little over an arm's length apart. One stands with a hand flat on the chest, head slightly lowered and the other hand open at the side; the other waits with arms folded and head turned a little away. An apology often has to be made to a body that is not yet ready to hear it.",
+  "params": {
+   "armPoseL": "chest_hand",
+   "armPoseR": "hang_open",
+   "handShapeL": "flat",
+   "handShapeR": "open",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side",
+   "headPitch": 10,
+   "spineLean": 3
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hand on the chest",
+    "color": "accent-cool"
+   },
+   {
+    "at": "head",
+    "text": "Head a little lowered",
+    "color": "accent-cool"
+   },
+   {
+    "at": "b:arms",
+    "text": "Arms still folded",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "cross_over",
+     "armPoseR": "cross_under",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headTurn": -12
+    },
+    "x": 0,
+    "z": 96,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_cradle_infant",
+  "title": "Holding a baby",
+  "theme": "together",
+  "desc": "Standing adult seen from the side, holding a small baby upright against the chest, one forearm under the baby's bottom and the other hand spread across its back, the baby's head resting near the shoulder. Supporting the head and neck matters in the first months, before a baby can hold its own head up.",
+  "params": {
+   "armPoseL": "baby_back",
+   "armPoseR": "cradle_support",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "70",
+   "headPitch": 14,
+   "headTurn": 10,
+   "spineLean": -3
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "A hand across the baby's back",
+    "color": "do-green"
+   },
+   {
+    "at": "right-hand",
+    "text": "A forearm under the bottom",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "prop": "none",
+     "headPitch": 10,
+     "headTurn": 30
+    },
+    "x": 0,
+    "z": 14,
+    "facing": 180,
+    "scale": 0.42,
+    "y": 90
+   }
+  ]
+ },
+ {
+  "id": "p_pair_hip_carry",
+  "title": "A child on the hip",
+  "theme": "together",
+  "desc": "Standing adult with a young child sitting on the left hip, one arm wrapped under the child's bottom, the hip pushed out to take the weight. Carrying a child on the hip leaves one hand free, and a hip shifted out like this is often the first sign of a parent across a room.",
+  "params": {
+   "armPoseL": "hip_carry",
+   "armPoseR": "hang",
+   "handShapeL": "flat",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_weight",
+   "legStanceR": "stand_relaxed_out",
+   "view": "10",
+   "weightShift": 0.8,
+   "headTurn": 18
+  },
+  "annotations": [
+   {
+    "at": "left-hip",
+    "text": "Hip out, taking the child's weight",
+    "color": "accent-cool"
+   },
+   {
+    "at": "left-hand",
+    "text": "Arm around the child",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "prop": "none",
+     "headTurn": -15
+    },
+    "x": 30,
+    "z": 6,
+    "facing": 0,
+    "scale": 0.55,
+    "y": 64
+   }
+  ]
+ },
+ {
+  "id": "p_pair_child_hand_walk",
+  "title": "Walking hand in hand with a child",
+  "theme": "together",
+  "desc": "An adult and a young child walking side by side, seen at three-quarters, the adult's hand lowered and the child's arm lifted so that their hands meet between them. Walking with a small child means shortening the stride and lowering the hand to the child's height, not the other way round.",
+  "params": {
+   "armPoseL": "hold_hand_low",
+   "armPoseR": "swing_forward",
+   "handShapeL": "grip",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "three-quarter",
+   "headTurn": 20,
+   "headPitch": 10
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hand lowered to the child's",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "swing_forward",
+     "armPoseR": "reach_up_short",
+     "handShapeL": "relaxed",
+     "handShapeR": "grip",
+     "legStanceL": "walk_back",
+     "legStanceR": "walk_forward"
+    },
+    "x": 38,
+    "z": 0,
+    "facing": 0,
+    "scale": 0.55
+   }
+  ]
+ },
+ {
+  "id": "p_pair_teach_alongside",
+  "title": "Showing a child how",
+  "theme": "together",
+  "desc": "An adult down on one knee beside a young child, both facing the same way, the adult's near hand reaching toward the child's hands as both look down at the task in front of them. Teaching alongside, at the child's height, lets the child keep the job in their own hands.",
+  "params": {
+   "armPoseL": "gesture_open",
+   "armPoseR": "hang",
+   "handShapeL": "open",
+   "handShapeR": "relaxed",
+   "legStanceL": "kneel_down",
+   "legStanceR": "kneel_up",
+   "view": "three-quarter",
+   "headPitch": 22,
+   "headTurn": 12
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hand near, not taking over",
+    "color": "do-green"
+   },
+   {
+    "at": "b:hands",
+    "text": "The child's hands on the task",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "gesture_mid",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "open",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headPitch": 24
+    },
+    "x": 42,
+    "z": 6,
+    "facing": 0,
+    "scale": 0.55
+   }
+  ]
+ },
+ {
+  "id": "p_pair_bedside",
+  "title": "At the bedside",
+  "theme": "together",
+  "desc": "A seated figure on a chair drawn up beside a bed, leaning forward with one hand reaching to hold the hand of the person lying there. Sitting down at the bedside, at the level of the person in the bed, changes the visit: it says that you are staying rather than passing through.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "hold_forward_low",
+   "handShapeL": "relaxed",
+   "handShapeR": "grip",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "view": "12",
+   "prop": "chair",
+   "spineLean": 18,
+   "headPitch": 12
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Holding the hand on the cover",
+    "color": "do-green"
+   },
+   {
+    "at": "head",
+    "text": "Eyes level with the pillow",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "prop": "bed"
+    },
+    "x": 90,
+    "z": 95,
+    "facing": 90,
+    "scale": 1,
+    "y": 64,
+    "pitch": -90
+   }
+  ]
+ },
+ {
+  "id": "p_group_mourning",
+  "title": "Standing together, heads bowed",
+  "theme": "together",
+  "desc": "Three figures standing in a row, facing the same way with heads bowed and hands clasped in front, one with an arm across the shoulders of the man beside him. Mourning together often looks like this: little speech, bodies close, attention on the same place.",
+  "params": {
+   "armPoseL": "clasp_low",
+   "armPoseR": "clasp_low",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "15",
+   "headPitch": 26
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Heads bowed together",
+    "color": "accent-cool"
+   },
+   {
+    "at": "c:left-hand",
+    "text": "An arm across the shoulders",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "clasp_low",
+     "armPoseR": "clasp_low",
+     "handShapeL": "clasp",
+     "handShapeR": "clasp",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headPitch": 22
+    },
+    "x": 54,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   },
+   {
+    "params": {
+     "armPoseL": "around_shoulders",
+     "armPoseR": "hang",
+     "handShapeL": "flat",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headPitch": 24
+    },
+    "x": -54,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
  }
 ]
