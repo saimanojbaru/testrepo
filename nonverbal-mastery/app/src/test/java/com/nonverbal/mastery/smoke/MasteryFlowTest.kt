@@ -37,6 +37,9 @@ class MasteryFlowTest {
     private fun waitFor(text: String) = rule.waitUntilAtLeastOneExists(hasText(text, substring = true), timeoutMillis = 10_000)
     private fun list() = rule.onNode(hasScrollToNodeAction())
     private fun scrollTo(m: SemanticsMatcher) = list().performScrollToNode(m)
+    /** Scrolls to a node that appears only after a database write lands, retrying until it does. */
+    private fun scrollToEventually(m: SemanticsMatcher) =
+        rule.waitUntil(timeoutMillis = 10_000) { runCatching { scrollTo(m) }.isSuccess }
 
     @Test
     fun aReaderCanMasterTheBaseline() {
@@ -80,7 +83,7 @@ class MasteryFlowTest {
             rule.onNode(option).performClick()
             rule.waitForIdle()
         }
-        scrollTo(hasText("That clears the bar", substring = true))
+        scrollToEventually(hasText("That clears the bar", substring = true))
 
         // Reflection: at least 150 characters.
         scrollTo(hasContentDescription("Reflection", substring = true))

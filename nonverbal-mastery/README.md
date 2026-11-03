@@ -8,13 +8,13 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v0.5 (Parts I, II and VI written)
+## Status: v0.6 (Parts I, II, III and VI written)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
-| Content | 45 of 90 chapters written to the full contract: all of Part I, Foundations; all of Part II, The Inner World, where 2.13 opens through a crisis-resource gate; and all of Part VI, The Discipline. About 199,000 words, ≈440 pages. Ethics statement (1,205 words); crisis resources |
-| Pose library | 125 poses in 13 themes, including two- and three-person scenes, + 6 drawn diagrams + 7 face plates |
+| Content | 60 of 90 chapters written to the full contract: all of Part I, Foundations; all of Part II, The Inner World, where 2.13 opens through a crisis-resource gate; all of Part III, The Social World; and all of Part VI, The Discipline. About 259,000 words, ≈575 pages. Ethics statement (1,205 words); crisis resources |
+| Pose library | 140 poses in 13 themes, including two- and three-person scenes, a baby held, a child on the hip and a bedside, + 6 drawn diagrams + 7 face plates |
 | Tests | 31 passing: content contract, engines, 50 screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
 | Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
 
@@ -80,7 +80,7 @@ Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and ri
 
 ![Face plate](docs/screens/27-face-plate.png) ![Six posed prototypes](docs/screens/28-face-prototypes.png)
 
-![Together](docs/screens/23-poses-together.png)
+![Together](docs/screens/23-poses-together.png) ![Part III figures: leaning away, an apology, a baby held, a child on the hip, walking hand in hand, teaching alongside](docs/screens/30-poses-part-three.png)
 
 ## Where this deviates from the brief, and why
 
