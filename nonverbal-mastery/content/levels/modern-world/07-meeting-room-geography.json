@@ -68,9 +68,9 @@
    "annotation": "Edge seats confirm silence. A seat from which you can see most of the group makes it easier to speak and be heard."
   },
   {
-   "doPoseId": "p_pro_video_lean_in",
+   "doPoseId": "p_pro_video_call",
    "dontPoseId": "p_pro_video_slump",
-   "doCaption": "The remote colleague leaning in",
+   "doCaption": "The remote colleague upright and present",
    "dontCaption": "The remote colleague fading out",
    "annotation": "In a hybrid meeting the screen is the far corner of the table. Remote colleagues need invitations, not just a camera."
   }

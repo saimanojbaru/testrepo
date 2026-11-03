@@ -1,10 +1,10 @@
 # Content progress
 
-_Last updated: Part III, The Social World, complete. Parts I, II, III and VI are written in full._
+_Last updated: Part IV, The Modern World, complete. Parts I, II, III, IV and VI are written in full._
 
 ## Written
 
-60 of 90 chapters: all of Parts I, II, III and VI. That is 259,020 words, about 575 pages.
+75 of 90 chapters: all of Parts I, II, III, IV and VI. That is about 320,600 words, about 710 pages.
 
 | Part I | Tier | Words | | Part VI | Tier | Words |
 |---|---|---|---|---|---|---|
@@ -63,7 +63,26 @@ _Last updated: Part III, The Social World, complete. Parts I, II, III and VI are
 | 3.15 Mourning Together | Master | 3,989 |
 | **Part III** | | **59,666** |
 
-The pack is 1.74 MB raw and 550 KB gzipped. At this rate the full book will be about 900 KB gzipped, inside the 2 MB budget.
+| Part IV | Tier | Words |
+|---|---|---|
+| 4.1 The Video Call Body | Foundation | 3,992 |
+| 4.2 Camera Height, Framing & Perceived Status | Foundation | 3,853 |
+| 4.3 Audio as Body Language | Foundation | 3,829 |
+| 4.4 The Professional Poker-Face Trap | Intermediate | 3,974 |
+| 4.5 Power Posing — What's Real, What's Myth | Intermediate | 3,778 |
+| 4.6 The Handshake in a Post-Handshake World | Intermediate | 4,234 |
+| 4.7 Meeting Room Geography | Advanced | 4,249 |
+| 4.8 The Nonverbal Glass Ceiling | Advanced | 4,147 |
+| 4.9 Stage Presence Without Performance | Advanced | 4,187 |
+| 4.10 The Body at the Negotiation Table | Expert | 4,312 |
+| 4.11 Interview Signals That Actually Matter | Expert | 4,156 |
+| 4.12 Written Body Language — Text, Email, Slack | Expert | 4,187 |
+| 4.13 Social Media Self-Presentation | Master | 4,214 |
+| 4.14 Networking — Approach, Exit, Escape | Master | 4,276 |
+| 4.15 Leading — Authority With Warmth | Master | 4,178 |
+| **Part IV** | | **61,566** |
+
+The pack is 2.13 MB raw and 670 KB gzipped. At this rate the full book will be about 800 KB gzipped, inside the 2 MB budget.
 
 Also written: the ethics statement *On Reading People* (1,205 words), crisis resources for 11 regions plus a worldwide directory, introductions for all six parts, and the full 90-chapter outline.
 
@@ -97,6 +116,15 @@ Part II is the most sensitive part of the book, and it follows extra rules on to
 - **New figures first.** Fatherhood and caregiving needed poses the engine could not draw, so the engine gained lifted and lying companions and a bed before those chapters were written (see the pose library below).
 - **Length.** Part III chapters average about 3,980 words, shorter than Parts I and VI (about 4,500) and Part II (about 4,280). Every chapter meets the contract, but the drift is worth watching (see the page target below).
 
+## How Part IV was written
+
+- **No tells, no tricks.** 4.10 keeps to 1.14: there are no reliable bluff tells. It reports the evidence on strategic mimicry (Maddux 2008) but treats deliberate copying as manufacturing a signal, and teaches attention as the honest route to the same trust. Faked anger is shown to backfire (Côté 2013). No chapter teaches a technique for steering someone against their interests.
+- **The burden on the reader, not the read.** 4.8 places the bias in the evaluator (Brescoll & Uhlmann; Williams & Tiedens) and gives readers checks to run on themselves, rather than advising women to change. 4.11 gives the same treatment to interview nerves, autistic candidates and gaze across cultures.
+- **Weak or contested findings are labelled.** The phone-on-the-table effect is reported with the replications that failed (Przybylski & Weinstein 2013; Linares & Sellier 2021). The fear of public speaking is reported with how the question was asked (Dwyer & Davidson 2012). Byron's negativity effect is described as a proposal. The jury studies are described cautiously because their abstracts were not available.
+- **One source left out on purpose.** The plan for 4.14 named Casciaro, Gino & Kouchaki (2014) on why networking feels dirty. Harvard Business School has told the journal about data concerns in a study in that paper, so 4.14 does not use it. Exact figures that could not be confirmed (Kruger's 78% and 56%, Maddux's 67% and 12.5%) were left out, and claims were written without them.
+- **Pose meanings kept consistent.** The new `p_pro_video_lean_in` is the "too close" example in 4.1 and 4.2, so later chapters use `p_pro_video_call` for good video posture.
+- **Length.** Part IV chapters average about 4,100 words. The first five ran shorter (3,780–3,990); the last ten returned to 4,150–4,310 after teach blocks were aimed at 260–300 words.
+
 ## Face plates (added for Part I)
 
 The body figures stay faceless by design. Faces appear only on dedicated plates: neutral, ungendered sketches drawn from FACS action units (the standard coding of facial muscle movements), each with a TalkBack description. There are seven plates:
@@ -128,33 +156,25 @@ Parts I and VI cover ground that later chapters approach from other angles. Keep
 
 | Unwritten chapter | Already covered in | What the later chapter should do |
 |---|---|---|
-| 4.6 The Handshake in a Post-Handshake World | 3.2 (greeting phases, the ladder, reading the incoming hand, Frumin's sniffing study); 3.5 (hugs) | The handshake itself and its post-pandemic changes. Do not re-teach greeting phases. |
-| 4.2 Camera Height, Framing & Perceived Status | 1.5 (Witkower & Tracy on head tilt) | Apply it to cameras. |
-| 4.3 Audio as Body Language | 1.8 (McAleer, Puts, Klofstad, Kraus) | Microphones, calls and recordings. |
-| 4.5 Power Posing | 1.5 (one paragraph: Ranehill 2015, Carney) | The full evidence. |
-| 4.7 Meeting Room Geography | 1.3 (Sommer); 1.10 (Brown & Baer home ground) | Meeting rooms specifically. |
-| 4.11 Interview Signals | 6.6 (records, Schmidt & Hunter) | Build on 6.6. |
-| 4.10 Negotiation; 4.15 Leading | 3.3 (nods mean listening, not agreement; Briñol & Petty); 3.11 (Gottman, disagreeing at work); 3.12 (Lewicki's apology components) | Apply to negotiation and leadership without re-teaching. |
-| 5.1 Neurodivergence | 1.4 (Trevisan on eye contact); 1.8 (stammering); 2.9 (stimming, Kapp 2019); 2.14 (alexithymia rather than autism, Bird 2010; the ADIE trial); 3.3 and 3.5 (nodding and hugs) | The full picture. Call back to these rather than repeating them. |
-| 5.6 Race & the Reading of Black Male Bodies | 6.6 (Hugenberg & Bodenhausen); 1.14 (the Othello error); 3.2 (the dap's history, briefly) | The full treatment. Keep the dap account consistent with 3.2. |
+| 5.1 Neurodivergence | 1.4 (Trevisan on eye contact); 1.8 (stammering); 2.9 (stimming, Kapp 2019); 2.14 (alexithymia rather than autism, Bird 2010; the ADIE trial); 3.3 and 3.5 (nodding and hugs); 4.11 (autistic candidates and eye contact in interviews) | The full picture. Call back to these rather than repeating them. |
+| 5.6 Race & the Reading of Black Male Bodies | 6.6 (Hugenberg & Bodenhausen); 1.14 (the Othello error); 3.2 (the dap's history, briefly); 4.8 (Livingston & Pearce's "teddy bear" study, one paragraph); 4.11 (Word, Zanna & Cooper 1974 on interracial interviews) | The full treatment. Keep the dap account consistent with 3.2. 4.8 promises this chapter takes up how Black men's authority is read. |
 | 5.4 The Queer Nonverbal Dialect; 5.5 Safety & Signaling in Hostile Space | 3.4 and 3.5 (homohysteria, Anderson & McCormack); 3.9 (attraction between men deferred to Part V) | The full treatment, which 3.9 promised. |
-| 5.8 Disability & the Politics of Help; 5.9 Age | 3.14 (dignity in physical care, matching pace, PAINAD) | Disability and age from the inside, not as care recipients only. |
-| 5.11 Cultural Variance — A Working Map | 1.13 (evidence); 6.11 (method); 3.3 (nod dialects: Bulgaria, Greece, South Asia, Japan); 3.6 (hand-holding between male friends in India) | The map itself, with its limits. |
-| 5.12 Religion, Modesty & Touch | 1.9 (a declined handshake as a matter of faith); 3.2 (hand on heart); 3.15 (shiva custom) | The full treatment. |
-| 4.x chapters on work and meetings | 2.10 (burnout, Maslach's six areas); 2.11 (fatigue and hunger at work) | Apply them to work settings without re-teaching. |
+| 5.8 Disability & the Politics of Help; 5.9 Age | 3.14 (dignity in physical care, matching pace, PAINAD); 4.7 (standing meetings are not for everyone); 4.12 (generational habits with voice notes and punctuation) | Disability and age from the inside, not as care recipients only. |
+| 5.11 Cultural Variance — A Working Map | 1.13 (evidence); 6.11 (method); 3.3 (nod dialects: Bulgaria, Greece, South Asia, Japan); 3.6 (hand-holding between male friends in India); 4.6 (bow, wai and hand on heart as complete greetings); 4.10 (anger in negotiation across cultures, Adam 2010; Swaab 2012 on East Asia) | The map itself, with its limits. |
+| 5.12 Religion, Modesty & Touch | 1.9 (a declined handshake as a matter of faith); 3.2 (hand on heart); 3.15 (shiva custom); 4.6 (observant Muslims and Orthodox Jews who do not shake hands across genders, and how to respond) | The full treatment. |
 
 ## Pose library
 
-140 poses, each with a plate title, a theme, a prose description written to stand without the image, parameters and up to four annotations.
+144 poses, each with a plate title, a theme, a prose description written to stand without the image, parameters and up to four annotations.
 
 | Theme | Poses | | Theme | Poses |
 |---|---|---|---|---|
 | Stance | 11 | | Walking | 6 |
 | Posture | 10 | | Breath | 5 |
 | Arms | 10 | | Grief | 5 |
-| Self-touch | 13 | | At work | 8 |
-| Head & gaze | 10 | | Greeting & culture | 9 |
-| Gesture | 9 | | Together (2–3 figures) | 12 |
+| Self-touch | 13 | | At work | 11 |
+| Head & gaze | 11 | | Greeting & culture | 9 |
+| Gesture | 9 | | Together (2–5 figures) | 27 |
 | Seated | 17 | | | |
 
 Every pose was reviewed visually in Paper and Ink. `./gradlew recordPaparazziDebug --tests '*PoseSheetTest*'` renders all of them, six to a page. The contract test checks:
@@ -168,6 +188,8 @@ To add a pose, append it to `poses.json`. Use `view` (`front`, `three-quarter`, 
 
 Added for Part III (15 poses): the up-nod, fist bump, handshake pulled into a hug, side hug, hand on the shoulder, walking together, working at a bench, leaning away, coming to apologise, holding a baby, a child on the hip, walking hand in hand with a child, teaching alongside, at the bedside, and mourning together. To draw them, a companion figure can now be lifted (`y`) and laid down (`pitch: -90`), props stay on the floor when a figure tips, lifted figures cast no shadow, `prop: "none"` removes a seated figure's default chair, and there is a `bed` prop.
 
+Added for Part IV (4 poses): five people round a long meeting table (`long_table` prop), a presenter walking a stage, leaning too close to the camera on a video call, and a newcomer joining an open group.
+
 Still missing, for Part V:
 
 - sitting cross-legged on the floor;
@@ -178,16 +200,16 @@ Still missing, for Part V:
 
 The brief sets two targets that cannot both be met.
 
-- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 60 chapters so far average about 4,320 words, about 10 pages.
+- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 75 chapters so far average about 4,270 words, about 9.5 pages.
 - **The page target.** 22–25 pages per chapter, 2,000+ pages in total.
 
-At the current depth, 90 chapters come to about **390,000 words, roughly 860 pages**. Part III averaged about 3,980 words a chapter, so the later parts are drifting shorter. Reaching 2,000 pages needs one of three things:
+At the current depth, 90 chapters come to about **385,000 words, roughly 855 pages**. Parts III and IV averaged about 4,000 and 4,100 words a chapter, shorter than Parts I and VI. Reaching 2,000 pages needs one of three things:
 
 1. **Widen the contract.** For example 2–3 case studies per chapter, 8–10 teach blocks, or drill variations. This needs a schema change (`caseStudy` becomes a list), and it risks padding.
 2. **Add chapters.** About 180 would be needed at the current depth. The brief allows 7–8 parts.
 3. **Accept about 900 pages** as the honest size of the book.
 
-Every chapter so far has kept to the contract without padding. Thirty chapters remain, so the choice still shapes a third of the book.
+Every chapter so far has kept to the contract without padding. Fifteen chapters remain. Options 1 and 2 would now mean going back over finished parts as well as writing Part V.
 
 ## Authoring workflow
 
@@ -202,7 +224,7 @@ The JSON files are the source of truth. Edit them directly.
 
 ## Next
 
-- Part IV, The Modern World; then Part V, respecting the boundaries above.
+- Part V, respecting the boundaries above. It is the last part to write.
 - Part V needs the poses listed as missing (sitting on the floor, a single figure lying down, a wheelchair and a cane) before its chapters are written.
 
 ## Needs a human before release
@@ -214,7 +236,8 @@ The JSON files are the source of truth. Edit them directly.
   - 2.14: the drill “Sensation Without Story”, which is a mild form of interoceptive exposure.
   - 2.8: the trauma-informed responses.
 - **Specialist review of Part III's safety advice**: 3.13 (crying babies, the ICON routine, never shaking) by a health visitor or paediatric nurse; 3.10 (the summary of consent law covers England and Wales only, and the support lines) by someone who works in sexual violence support; 3.14 (PAINAD and the end of life) by a palliative care nurse.
-- **Scholarly review** of Part V (disability studies, queer theory, critical race studies).
+- **Scholarly review** of Part V (disability studies, queer theory, critical race studies). Include 4.8 (gender and status) and the race paragraphs in 4.8 and 4.11.
+- **A check of 4.14's last block** (leaving pressure or harassment at events, and the bystander advice) by someone who works in harassment prevention.
 - **A second check of every citation and statistic** (the Phase 12 editorial pass). For Part VI, check these figures first, because they were stated from memory:
   - Macnamara 2014 percentages by domain.
   - Haynes 2009 mortality and complication rates.
@@ -257,6 +280,17 @@ The JSON files are the source of truth. Edit them directly.
   - Birchwood et al. 1989 ([Cambridge](https://resolve.cambridge.org/core/journals/psychological-medicine/article/predicting-relapse-in-schizophrenia-the-development-and-implementation-of-an-early-signs-monitoring-system-using-patients-and-families-as-observers-a-preliminary-investigation/9B5144EF885FA5CBB991D3ED04E40653)); Perry et al. 1999 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC27688)); Cook et al. 2012 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/21402724/)); Henderson et al. 2004 and Thornicroft et al. 2013 ([Mental Elf](https://www.nationalelfservice.net/populations-and-settings/hospital-admissions/joint-crisis-plans-to-prevent-compulsory-admissions-a-good-idea-stymied-by-poor-execution/)); MONARCA I, 2015 ([Cambridge](https://resolve.cambridge.org/core/journals/psychological-medicine/article/daily-electronic-selfmonitoring-in-bipolar-disorder-using-smartphones-the-monarca-i-trial-a-randomized-placebocontrolled-singleblind-parallel-group-trial/C45C6B5F4A25A022155721C61F29E882)).
 
   For Part III, facts were checked on the web while writing. The main sources: Wright 1982 and Hall 2011 (friendship); Boothby, Clark & Bargh 2014; Oppezzo & Schwartz 2014; Kendon & Ferber 1973; Frumin et al. 2015 ([eLife](https://elifesciences.org/articles/05154)); Maynard 1990; Wells & Petty 1980 and Briñol & Petty 2003; Uzzell & Horne 2006; Novelli, Drury & Reicher 2010; Middlemist et al. 1976; Floyd 1999; Nagy 2011; Cohen et al. 2015 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC4323947)); Murphy et al. 2018 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6169869)); Anderson & McCormack 2015; Kraus, Huang & Keltner 2010 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/21038960/)); Floyd 2014; Deitcher 2001; Basso 1970; Koudenburg et al. 2011; Williams et al. 2000; Hall 2018 (hours to friendship); Cox 2021 (American friendship survey); Wilson & Cordier 2013; Cohen et al. 2010 (rowers); Abbey 1982; Perilloux et al. 2012; Place et al. 2009; Farris et al. 2008 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC2885706)); Kitzinger & Frith 1999; O'Byrne et al. 2006; Jozkowski et al. 2014; Sexual Offences Act 2003 s.74 ([legislation.gov.uk](https://www.legislation.gov.uk/ukpga/2003/42/section/74)); Carrère & Gottman 1999; Lewicki et al. 2016; Schumann & Ross 2010; Frantz & Bennigson 2005; Gettler et al. 2011 ([PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC3182719)); Erlandsson et al. 2007 ([PubMed](https://pubmed.ncbi.nlm.nih.gov/17542814/)); ICON guidance; Amodia-Bidakowska et al. 2020; ONS Census 2021 unpaid care; Swayden et al. 2012; Warden, Hurley & Volicer 2003; Goldstein et al. 2018; Blundon et al. 2020 ([PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7316981/)); Norton & Gino 2014; Klass et al. 1996; Mitima-Verloop et al. 2022 ([PMC](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9195581/)). Check these details first: the sample sizes quoted for Frumin (271) and Swayden (120); Gottman's 80–85 per cent stonewaller figure, which comes from his own remarks; and whether the first names given for O'Byrne and Hansen are right.
+
+  For Part IV, facts were checked on the web while writing. The main sources: Bailenson 2021; Fauville et al. 2021; Boland et al. 2022; Giessner et al. 2011; Cook et al. 2023; Mandell & Shaw 1973; Newman & Schwarz 2018; Schroeder & Epley 2015; Schroeder, Kardas & Epley 2017; Boone & Buck 2003; Wang et al. 2017; ten Brinke & Adams 2015; Grandey 2003; Carney, Cuddy & Yap 2010; Ranehill et al. 2015; Elkjær et al. 2022; Simmons & Simonsohn 2017; Chaplin et al. 2000; Bernieri & Petty 2011; Stewart et al. 2008; Dolcos et al. 2012; Mela & Whitworth 2014; Fauci's April 2020 remark; Strodtbeck & Hook 1961; Strodtbeck & Lipinski 1985; Howells & Becker 1962; Steinzor 1950; Sommer 1959 and 1965; Bluedorn, Turban & Love 1999; Knight & Baer 2014; Przybylski & Weinstein 2013 and the replications (Allred 2018; Linares & Sellier 2021); Sana, Weston & Cepeda 2013; Brescoll & Uhlmann 2008; Salerno & Peter-Hagene 2015; Williams & Tiedens 2016; Judge & Cable 2004; Livingston & Pearce 2009; Jacobi & Schweers 2017; the 2016 Washington Post report on amplification; Dwyer & Davidson 2012; Savitsky & Gilovich 2003; Brooks 2014; Goldin-Meadow et al. 2001; Maddux, Mullen & Galinsky 2008; Van Kleef, De Dreu & Manstead 2004; Adam, Shirako & Maddux 2010; Côté, Hideg & Van Kleef 2013; Swaab et al. 2012; Barrick, Shaffer & DeGrassi 2009; DeGroot & Motowidlo 1999; Powell, Stanley & Brown 2018; Feiler & Powell 2016; Sackett et al. 2022; HireVue's January 2021 announcement; Word, Zanna & Cooper 1974; Kruger et al. 2005; Byron 2008; Gunraj et al. 2016; Glikson, Cheshin & Van Kleef 2018; Miller et al. 2016; Kalman et al. 2013; Kumar & Epley 2021; Willis & Todorov 2006; Todorov et al. 2005; Jenkins et al. 2011; White, Sutherland & Burton 2017; Tiggemann & Anderberg 2020; Jordan et al. 2011; Epley & Schroeder 2014; Sandstrom & Boothby 2021; Boothby et al. 2018; Mastroianni et al. 2021; Kendon 1990; Fiske, Cuddy & Glick 2007; Cheng et al. 2013; Edmondson 1996 and 1999; Google's Project Aristotle; Sy, Côté & Saavedra 2005. Check these details first:
+  - Strodtbeck & Hook 1961: that jurors at the ends of the table were chosen as foreman more often, and that higher-status jurors took those seats. This is the standard account, but the abstract was not available.
+  - Steinzor 1950 and Howells & Becker 1962: the designs, which were confirmed only from secondary accounts.
+  - Mela & Whitworth 2014: the relative bacteria transfer for the high five and the fist bump.
+  - Jacobi & Schweers 2017: "around three times as often".
+  - Todorov et al. 2005: "roughly seven in ten" Senate races (68.8% in 2004; 71.6% across 2000–2004).
+  - Mastroianni et al. 2021: that the average gap was about half the conversation's length.
+  - Edmondson 1996: the hospital teams that reported more errors.
+  - Tiggemann & Anderberg 2020: the design (bare-chested, clothed and scenery images).
+  - Livingston & Pearce 2009: kept to one hedged sentence; check the wording.
 
   For 2.1–2.12, key facts were checked while writing, but no source log was kept. Check these numbers first:
   - WHO, about 280 million people with depression in 2019 (2.4).

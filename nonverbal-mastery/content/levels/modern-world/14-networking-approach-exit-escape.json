@@ -10,8 +10,8 @@
  "teach": [
   {
    "h": "Strangers want to talk more than you think.",
-   "p": "In 2014 Nicholas Epley and Juliana Schroeder asked commuters on trains and buses in Chicago to do one of three things on their journey: talk to the stranger next to them, sit in solitude, or do whatever they normally did. Other commuters were asked to predict how each option would feel. They predicted that talking to a stranger would be the least pleasant of the three.\n\nThey were wrong. Commuters who talked to a stranger reported a more pleasant journey than those who sat alone, and the effect held for introverts as well as extraverts. When asked why they had expected otherwise, people said they assumed the stranger would not want to talk to them. In fact, the strangers were generally glad to.\n\nIn 2021 Gillian Sandstrom and Erica Boothby combined seven studies of conversations between strangers, involving more than two thousand people. Before talking, people worried that they would not enjoy it, that the other person would not like them, and that they lacked the skill to keep a conversation going. Afterwards, the conversations had gone better on every count than people had predicted, and generally went quite well.\n\nA networking event is a room full of people making the same mistaken prediction. Most of them are hoping someone will talk to them, and most assume that nobody wants to. The person who makes the first move is usually doing everyone a favour. The figure here stands with one hand in a pocket, at the edge of things, the posture of someone who would like to talk but has decided the others would rather he did not.",
-   "poseId": "p_stand_one_hand_pocket",
+   "p": "In 2014 Nicholas Epley and Juliana Schroeder asked commuters on trains and buses in Chicago to do one of three things on their journey: talk to the stranger next to them, sit in solitude, or do whatever they normally did. Other commuters were asked to predict how each option would feel. They predicted that talking to a stranger would be the least pleasant of the three.\n\nThey were wrong. Commuters who talked to a stranger reported a more pleasant journey than those who sat alone, and the effect held for introverts as well as extraverts. When asked why they had expected otherwise, people said they assumed the stranger would not want to talk to them. In fact, the strangers were generally glad to.\n\nIn 2021 Gillian Sandstrom and Erica Boothby combined seven studies of conversations between strangers, involving more than two thousand people. Before talking, people worried that they would not enjoy it, that the other person would not like them, and that they lacked the skill to keep a conversation going. Afterwards, the conversations had gone better on every count than people had predicted, and generally went quite well.\n\nA networking event is a room full of people making the same mistaken prediction. Most of them are hoping someone will talk to them, and most assume that nobody wants to. The person who makes the first move is usually doing everyone a favour. The figure here stands with his hands in his pockets, at the edge of things, the posture of someone who would like to talk but has decided the others would rather he did not.",
+   "poseId": "p_stand_hands_pockets",
    "disconfirm": "This would be wrong if conversations with strangers usually went as badly as people predicted. Epley and Schroeder, and Sandstrom and Boothby, found that they went considerably better.",
    "pullQuote": "A networking event is a room full of people hoping to be spoken to and assuming that nobody wants to."
   },
@@ -41,7 +41,7 @@
   },
   {
    "h": "Leaving without wounding.",
-   "p": "A good exit has two parts: a signal from the body and a close in words. The body comes first. Shift your weight slightly back, let your feet turn a little towards the room, and allow a natural pause to lengthen rather than filling it. Most people sense these signals and start to wind down themselves. Then close in words, with three elements: appreciation, a reason and, if it is true, a future.\n\nSomething like: It's been really good to talk to you. I'm going to go and say hello to a few more people before the talk starts. I'll send you that article tomorrow. Offer your hand, or whatever greeting fits, and go. The reason does not need to be elaborate, but it should be honest. You are not leaving because they are dull; you are leaving because the event is for meeting people, and they know it as well as you do.\n\nAnother graceful exit is the bridge. Introduce the person to someone else, mention what they have in common, stay for a minute, then leave the two of them talking. This gives them a new conversation rather than leaving them alone. It is also one of the most generous things you can do at an event, and people tend to remember who introduced them to whom.\n\nSome exits wound. Scanning the room over someone's shoulder while they are talking tells them they are a placeholder. Looking at your phone and drifting away leaves them uncertain whether the conversation is over. Saying you are going to get a drink and then joining another group in plain view feels like a small betrayal. The figure here offers a small acknowledging nod, the kind of warm, clear close that lets both people move on.",
+   "p": "A good exit has two parts: a signal from the body and a close in words. The body comes first. Shift your weight slightly back, let your feet turn a little towards the room, and allow a natural pause to lengthen rather than filling it. Most people sense these signals and start to wind down themselves. Then close in words, with three elements: appreciation, a reason and, if it is true, a future.\n\nSomething like: It's been really good to talk to you. I'm going to go and say hello to a few more people before the talk starts. I'll send you that article tomorrow. Offer your hand, or whatever greeting fits, and go. The reason does not need to be elaborate, but it should be honest. You are not leaving because they are dull; you are leaving because the event is for meeting people, and they know it as well as you do.\n\nAnother graceful exit is the bridge. Introduce the person to someone else, mention what they have in common, stay for a minute, then leave the two of them talking. This gives them a new conversation rather than leaving them alone. It is also one of the most generous things you can do at an event, and people tend to remember who introduced them to whom.\n\nSome exits wound. Scanning the room over someone's shoulder while they are talking tells them they are a placeholder. Looking at your phone and drifting away leaves them uncertain whether the conversation is over. Saying you are going to get a drink and then joining another group in plain view feels like a small betrayal. The figure here raises a hand in a brief farewell, the kind of warm, clear close that lets both people move on.",
    "poseId": "p_greet_acknowledge",
    "disconfirm": "This would be wrong if a clear, warm exit left people feeling more rejected than a drifting, uncertain one. Most people find a clear close with appreciation easier to accept than being left wondering whether the conversation has ended.",
    "pullQuote": "Close with appreciation, a reason and, if it is true, a future."
@@ -58,7 +58,7 @@
    "doPoseId": "p_group_join",
    "dontPoseId": "p_pair_too_close",
    "doCaption": "Waiting at the edge of an open group",
-   "dontCaption": "Breaking into a closed pair",
+   "dontCaption": "Crowding in on a conversation",
    "annotation": "Read the shape before you approach. Join open groups from where you can be seen, and wait for the circle to widen."
   },
   {
@@ -70,9 +70,9 @@
   },
   {
    "doPoseId": "p_pair_face_to_face",
-   "dontPoseId": "p_gaze_over_shoulder",
+   "dontPoseId": "p_gaze_aside",
    "doCaption": "Full attention until you leave",
-   "dontCaption": "Scanning the room over their shoulder",
+   "dontCaption": "Glancing around the room while they talk",
    "annotation": "Looking past someone tells them they are a placeholder. Give full attention, then close warmly and go."
   }
  ],

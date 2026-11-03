@@ -41,8 +41,8 @@
   },
   {
    "h": "The camera as interviewer.",
-   "p": "Many interviews now happen on video, and some happen with no human present at all. In a one-way video interview, the candidate records answers to questions that appear on screen, and the recordings are watched later, or scored by software.\n\nFor a time, some of that software claimed to analyse candidates' facial expressions. One of the best known providers, HireVue, faced criticism from researchers and a formal complaint from a privacy group, and in January 2021 it announced that it had stopped using facial analysis in new assessments, saying that it added little beyond what could be learned from what candidates said. Part VI explained why reading emotion from faces is far less reliable than such systems claimed. Some places have since introduced rules requiring employers to tell candidates when software will analyse their video interviews.\n\nFor candidates, the lessons of the earlier chapters in this part apply. Set the camera at eye level, light your face from the front, sit at a distance where your head and shoulders fill the frame, and look at the camera when you speak. In a recorded interview, there is no face to respond to, which many people find unnerving; it can help to imagine a specific, friendly person on the other side of the lens.\n\nFor interviewers watching recordings or on a live video call, remember that the camera flattens and distorts. A candidate's poor connection, cramped room or low laptop says nothing about their ability. The figure here leans towards the camera, attentive, in the setting where many first interviews now take place.",
-   "poseId": "p_pro_video_lean_in",
+   "p": "Many interviews now happen on video, and some happen with no human present at all. In a one-way video interview, the candidate records answers to questions that appear on screen, and the recordings are watched later, or scored by software.\n\nFor a time, some of that software claimed to analyse candidates' facial expressions. One of the best known providers, HireVue, faced criticism from researchers and a formal complaint from a privacy group, and in January 2021 it announced that it had stopped using facial analysis in new assessments, saying that it added little beyond what could be learned from what candidates said. Part VI explained why reading emotion from faces is far less reliable than such systems claimed. Some places have since introduced rules requiring employers to tell candidates when software will analyse their video interviews.\n\nFor candidates, the lessons of the earlier chapters in this part apply. Set the camera at eye level, light your face from the front, sit at a distance where your head and shoulders fill the frame, and look at the camera when you speak. In a recorded interview, there is no face to respond to, which many people find unnerving; it can help to imagine a specific, friendly person on the other side of the lens.\n\nFor interviewers watching recordings or on a live video call, remember that the camera flattens and distorts. A candidate's poor connection, cramped room or low laptop says nothing about their ability. The figure here sits upright at a comfortable distance from the screen, in the setting where many first interviews now take place.",
+   "poseId": "p_pro_video_call",
    "disconfirm": "This would be wrong if facial analysis of video interviews had proved to add substantial value to hiring decisions. The best known provider dropped it, saying it added little beyond the content of candidates' answers."
   },
   {
@@ -69,9 +69,9 @@
    "annotation": "Your manner shapes the candidate's performance. A warm start gives every candidate the same chance to show what they can do."
   },
   {
-   "doPoseId": "p_pro_video_lean_in",
+   "doPoseId": "p_pro_video_call",
    "dontPoseId": "p_pro_video_slump",
-   "doCaption": "Camera at eye level, leaning in",
+   "doCaption": "Camera at eye level, sitting upright",
    "dontCaption": "Slumped below a low laptop",
    "annotation": "In a video interview, the camera is the interviewer's eye. Raise it, light your face, and speak to it."
   }
