@@ -1,0 +1,240 @@
+{
+ "id": "modern-world-10",
+ "categoryId": "modern-world",
+ "index": 10,
+ "tier": "EXPERT",
+ "title": "The Body at the Negotiation Table",
+ "estimatedMinutes": 75,
+ "hook": "Negotiators are taught to hunt for tells, but the body's real power at the table lies in what it does to trust, patience and your own judgment.",
+ "why": "Negotiation attracts more body language folklore than almost any other setting. Books and courses promise to teach you to spot a bluff from a touch of the nose, to dominate the room with your posture, to mirror your counterpart into agreement and to use anger to extract concessions. Men in particular are often taught that negotiation is a contest of nerve, won by the one who gives least away and reads the other best.\n\nThe research tells a different story. The tells are mostly unreliable, as the chapter on deception in Part I showed. What the body does reliably at the table is quieter: it builds or erodes trust, it carries emotions that change what the other side concedes, and it shapes your own judgment through fatigue and arousal. This chapter covers the myth of the tell, mimicry and why the honest version of it works better, what anger does and when it backfires, why faked emotion costs trust, when seeing each other helps, and how to manage your own body through a long negotiation. Throughout, it holds to the line this book draws: understanding these effects is for negotiating better and more honestly, not for manipulating the person across the table.",
+ "teach": [
+  {
+   "h": "The myth of the tell.",
+   "p": "The idea of the tell comes from poker, where a player's unconscious habit, such as a twitch when bluffing, might give away the strength of a hand. Negotiation books borrowed the idea and multiplied it: a hand to the nose means a lie, crossed arms mean resistance, a glance to the side means the price has room to move. Negotiators are encouraged to watch for these signs and to act on them.\n\nThe evidence does not support this. As the chapter on deception in Part I described, people's accuracy at detecting lies from behaviour is only slightly better than chance, and the behaviours most often believed to signal lying, such as averted gaze and fidgeting, are among the weakest cues. There is no reason to think negotiators are better at this than anyone else, and some reason to think they are worse, because the stakes make them more suspicious.\n\nActing on false tells is costly. A negotiator who decides that his counterpart is bluffing because she touched her face may push too hard, lose a deal that was available, or damage a relationship that mattered more than the deal. A negotiator convinced he can read the other side also tends to stop asking questions, because he believes he already knows the answers.\n\nWhat can be read, with care, is the general state of a conversation: whether the other side seems engaged or withdrawn, tense or at ease, more or less willing to keep talking. These readings are useful as prompts to ask, not as verdicts. The figure here sits with a hand to his face, a gesture a negotiation book might call a sign of doubt or deceit. It is far more likely that he is thinking.",
+   "poseId": "p_sit_hand_face",
+   "disconfirm": "This would be wrong if specific behaviours such as touching the face reliably revealed bluffs in negotiation. Research on deception finds that such cues are weak and that people's accuracy at detecting lies is only slightly above chance."
+  },
+  {
+   "h": "Mimicry and trust.",
+   "p": "One body language effect does have good evidence at the table. In 2008 William Maddux, Elizabeth Mullen and Adam Galinsky asked some negotiators to subtly mimic their counterparts' posture and mannerisms: if the other person leaned back, they would lean back a little later; if the other touched their face, they would do something similar after a pause. Other negotiators were told not to mimic.\n\nNegotiators who mimicked achieved better outcomes for themselves and for the pair. In a negotiation where a deal could only be reached by uncovering the parties' underlying interests, mimickers were much more likely to reach agreement. The researchers found that the effect worked through trust: counterparts who were mimicked trusted the mimicker more, and so shared more information about what they really needed.\n\nThis fits a wider body of research. Part VI described the chameleon effect: people unconsciously mimic those they interact with, and being mimicked tends to increase liking. Mimicry seems to work as a signal that two people are in tune, and trust follows.\n\nTwo cautions follow. First, the negotiators in the study were told to mimic subtly, with a delay. Most people find it unsettling to realise they are being copied, and an obviously mirrored gesture reads as a technique rather than as rapport. Second, and more important, there is a question about whether deliberate mimicry is something you should do at all, which the next block takes up. The figures here sit across a table from each other, the classic arrangement of a negotiation. How they sit in relation to each other will shape how much they trust each other, whether or not either of them is thinking about it.",
+   "poseId": "p_pair_seated_across",
+   "disconfirm": "This would be wrong if negotiators who mimicked their counterparts reached deals no more often than those who did not. In Maddux and colleagues' study they reached more deals, through greater trust, though the mimicry was deliberately subtle."
+  },
+  {
+   "h": "Rapport without the trick.",
+   "p": "Deliberately mimicking someone to make them trust you is, on any honest reading, a way of manufacturing a signal. You are producing the appearance of being in tune in order to obtain information the other person might not otherwise share. This book does not teach techniques of that kind, and the reason is practical as well as ethical: a negotiation is usually one meeting in a longer relationship, and trust obtained by technique is fragile when it is discovered.\n\nThere is a better route to the same place. Natural mimicry is not something people decide to do. It arises when two people are genuinely attending to each other. If you listen closely to your counterpart, are curious about what they need, and are actually trying to find an agreement that works for both of you, your bodies will tend to fall into step without any instruction. The trust that follows is real, because the attention behind it is real.\n\nIn practice this means spending the energy you might have spent watching for tells or copying gestures on understanding the other side. Ask what matters to them and why. Reflect back what you heard, in your own words. Notice when they seem to relax or tighten, and ask about it rather than drawing conclusions. Let silence sit after a question, rather than filling it with your own argument.\n\nThis is slower than a trick, and it does not guarantee a better deal on any single occasion. But it builds the kind of trust that survives the end of the negotiation and makes the next one easier. The figure here listens with attention, the posture from which honest rapport grows. The study's effect was carried by trust. Earning it is better than engineering it.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "This would be wrong if genuine attention produced no rapport or trust without deliberate mimicry. Research on natural mimicry suggests the opposite: people fall into step when they are genuinely engaged with each other.",
+   "pullQuote": "The mimicry study's effect was carried by trust. Earning it is better than engineering it."
+  },
+  {
+   "h": "What anger does at the table.",
+   "p": "Emotion travels across a negotiating table, and anger has been studied more than any other. In 2004 Gerben van Kleef, Carsten de Dreu and Antony Manstead had people negotiate over the sale of mobile phones with a counterpart who, through scripted messages, appeared either angry or happy. People conceded more to the angry counterpart than to the happy one.\n\nThe reason was inference. People used the counterpart's anger as information about his limits: if he was angry at the offer, he must be close to walking away, so it was safer to concede. When the angry counterpart had already made large concessions himself, the effect disappeared, because his anger no longer suggested he was near his limit. Later work by the same team found that the effect was strongest for people with little power. Negotiators with strong alternatives were largely unmoved by the other side's anger.\n\nIt would be easy to conclude that anger is a useful tactic. The next block explains why that conclusion is too quick. For now, the useful lesson is about reading. When your counterpart shows anger, it may be telling you something true about their limits, or it may not. Treat it as a question rather than an answer: ask what specifically is unacceptable to them and why.\n\nIt is also worth noticing what anger does to you. Facing an angry counterpart, most people feel pressure to make the discomfort stop, and conceding is the quickest way. Naming that pressure to yourself, and taking a breath or a break before responding, gives you the chance to decide rather than react. The figure here raises his chin, a small sign of challenge. How much it moves you depends partly on how much power you have and how badly you need the deal.",
+   "poseId": "p_head_chin_raised",
+   "disconfirm": "This would be wrong if negotiators conceded no more to an angry counterpart than to a happy one. In Van Kleef and colleagues' study they conceded more, because they read anger as a sign that the other side was near its limit."
+  },
+  {
+   "h": "When anger backfires.",
+   "p": "Anger's effect at the table turns out to depend heavily on context. In 2010 Hajo Adam, Aiwa Shirako and William Maddux found that expressing anger drew larger concessions from European American negotiators but smaller concessions from Asian and Asian American negotiators. When the researchers told participants that anger was an acceptable part of negotiating, the cultural difference largely disappeared. When they told them it was unacceptable, anger backfired for everyone. What mattered was whether anger was seen as appropriate.\n\nWhether the anger is real matters too. In 2013 Stéphane Côté, Ivona Hideg and Gerben van Kleef compared anger that a negotiator actually felt with anger that was put on for show. Faked anger, displayed without being felt, made counterparts demand more, not less, because it reduced their trust. Felt anger lowered demands, because the person seemed tough. People often sense the difference between felt and performed emotion, even when they cannot say how.\n\nTogether, these findings undercut the idea of anger as a tactic. Performed anger tends to cost trust and can raise the other side's demands. Even real anger helps only where the other side sees it as legitimate, and the person who uses it pays a price in the relationship.\n\nIf you are genuinely angry in a negotiation, the honest course is to say what you are angry about and why, in words, rather than letting it leak out as pressure or performing more of it than you feel. If you are not angry, do not pretend. The figure here stands with arms crossed tightly, a posture that can look like resolve or like barely contained anger. Which it reads as, and what it costs, depends on whether it is real and whether the room accepts it.",
+   "poseId": "p_stand_arms_crossed_tight",
+   "disconfirm": "This would be wrong if faked anger extracted concessions as well as felt anger. Côté and colleagues found that faked anger raised counterparts' demands by reducing their trust, while felt anger lowered them.",
+   "pullQuote": "Performed anger costs trust. If you are angry, say what about, in words; if you are not, do not pretend."
+  },
+  {
+   "h": "When seeing each other helps.",
+   "p": "Many negotiations now happen by email, on the phone or over video rather than face to face. Does it matter whether the parties can see each other? In 2012 Roderick Swaab, Adam Galinsky, Victoria Medvec and Daniel Diermeier combined the results of many studies of negotiation and group decisions to find out.\n\nTheir answer was that it depends on what the parties bring to the table. For people who started out neutral towards each other, with no particular relationship, richer channels such as video and face-to-face meetings led to better outcomes than text. For people already inclined to cooperate, the channel made little difference. For people who were already hostile, richer channels could make outcomes worse, perhaps because seeing and hearing each other gave more opportunity to provoke and react.\n\nThe researchers also found that the benefit of rich channels for neutral parties was weaker in East Asian cultures than in Western ones, a reminder that none of these findings applies everywhere.\n\nThis gives a practical rule of thumb. When you are negotiating with a stranger, try to meet in person or at least by video for the early stages, where trust is built and interests are explored. When a relationship has turned hostile, it may help to cool things with written exchanges, a mediator or a break before meeting again. And on video, the lessons from the earlier chapters of this part apply: a camera at eye level, a well-lit face and an attentive posture all carry more weight than in a room. The figure here is on a video call, the setting where many negotiations now begin.",
+   "poseId": "p_pro_video_call",
+   "disconfirm": "This would be wrong if seeing each other made no difference to negotiations between strangers. Swaab and colleagues found that richer channels improved outcomes for neutral parties, though not for those already cooperative or hostile."
+  },
+  {
+   "h": "Your own body at the table.",
+   "p": "The body that matters most in a negotiation is often your own. Long negotiations are physically demanding. Hours of concentration, little food, poor sleep before an important meeting and the steady arousal of a high-stakes exchange all affect judgment. Part II's chapters on stress and sleep looked at how depletion wears down mood, patience and judgment. At the table, that often shows up as conceding late in the day simply to be finished, or digging in over something small out of irritation.\n\nA few practices help. Eat beforehand and keep water nearby. Schedule breaks into long sessions, and take one before any significant decision rather than after. Notice your own signs of arousal, such as a tight jaw, shallow breathing or a rising voice, and treat them as a signal to slow down. When you feel pressure to agree immediately, it is almost always acceptable to say that you need a short time to think.\n\nChanging the physical arrangement can help too. Part III described the side-by-side principle: men often talk more easily when they are not face to face. Some negotiators find that a walk together, or sitting side by side in front of a whiteboard or a shared document, turns a contest into a joint problem. The table that separates two parties also defines them as opponents, and moving away from it can change that.\n\nNone of this guarantees a good deal. It protects the quality of your own thinking, which is the one thing at the table you can fully control. The figures here walk side by side, turned slightly towards each other. A difficult conversation is often easier to have in motion, looking at the same path rather than at each other.",
+   "poseId": "p_pair_walk_together",
+   "disconfirm": "This would be wrong if fatigue, hunger and stress had no effect on negotiators' decisions. Research on stress and sleep loss, discussed in Part II, suggests they impair judgment and emotional control, which is why breaks protect decisions."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_sit_forward_engaged",
+   "dontPoseId": "p_sit_hands_behind_head",
+   "doCaption": "Leaning in to understand",
+   "dontCaption": "Leaning back to look unbothered",
+   "annotation": "Displays of indifference are meant to unsettle. Attention to what the other side needs does more for the deal."
+  },
+  {
+   "doPoseId": "p_pair_work_together",
+   "dontPoseId": "p_pair_seated_across",
+   "doCaption": "Side by side over the problem",
+   "dontCaption": "Squared off across the table",
+   "annotation": "A table defines two parties as opponents. Working on a shared page turns a contest into a joint problem."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Listening for the interest behind it",
+   "dontCaption": "Pointing to press a demand",
+   "annotation": "Pressure invites resistance. Asking why something matters to the other side often finds the room a demand cannot."
+  }
+ ],
+ "caseStudy": "Marcus, thirty-six, is a procurement manager negotiating the renewal of a large contract with a software supplier. Before the first meeting he read a book on negotiation body language. He went in watching for tells, mirroring the account manager's posture, and planning to show anger at the first price to signal that it was unacceptable.\n\nIt went badly. He thought the account manager touched her face when she named the price and decided she was bluffing, so he pushed hard. His show of anger felt false even to him, and she became guarded and stopped volunteering information. The meeting ended with both sides further apart than when they started.\n\nBefore the second meeting, a more experienced colleague asked him what the supplier actually needed from the deal. Marcus did not know. He had spent the first meeting watching her hands instead of asking.\n\nThis time he suggested they work through the contract side by side, on a shared screen. He asked about her company's constraints and listened. It turned out that her company cared far more about a longer contract term than about the headline price, and that Marcus's company could easily commit to three years. They found an agreement that cut the price and extended the term. When a point about support hours frustrated him, he said plainly that it was a problem for his team and why, rather than performing anger. He took a break before agreeing to the final terms, though he was fairly sure of them.\n\nAfterwards he reflected that he had read nothing useful from her body in either meeting. What had changed the outcome was that, the second time, he had been paying attention to her rather than watching her.",
+ "observe": [
+  "Notice, in your next negotiation or difficult conversation, whether you are watching for signs or listening for needs.",
+  "Notice whether you and the other person fall into similar postures as the conversation goes on, without either of you deciding to.",
+  "Notice how you respond when someone across the table shows anger, and whether you feel pressure to concede.",
+  "Notice your own physical state late in a long meeting, and whether it is affecting what you are willing to agree to."
+ ],
+ "drills": [
+  {
+   "name": "Interests Not Tells",
+   "minutes": 20,
+   "steps": [
+    "Before your next negotiation, large or small, write down what you think the other side needs and why.",
+    "Write three open questions that would help you find out, such as what matters most to you here.",
+    "In the conversation, ask them and listen, rather than watching for signs of bluffing.",
+    "Afterwards, note what you learned that you could not have read from their body.",
+    "Compare your notes with what you assumed beforehand."
+   ]
+  },
+  {
+   "name": "Name the Pressure",
+   "minutes": 15,
+   "steps": [
+    "In your next tense conversation, notice the moment you feel pressure to agree or give way.",
+    "Name it silently: I am feeling pressure to end this.",
+    "Take one slow breath before responding.",
+    "If the decision matters, say you need a short time to think.",
+    "Afterwards, note whether pausing changed what you decided."
+   ]
+  },
+  {
+   "name": "Words for Anger",
+   "minutes": 15,
+   "steps": [
+    "Think of a point in a past negotiation or argument where you felt angry.",
+    "Write one or two sentences that say what you were angry about and why, without blame or threat.",
+    "Practise saying them aloud, in an even voice.",
+    "Next time you feel anger in a negotiation, use words like these rather than letting it leak as pressure."
+   ]
+  },
+  {
+   "name": "Change the Geometry",
+   "minutes": 20,
+   "steps": [
+    "Choose a negotiation or difficult conversation coming up.",
+    "Plan to hold part of it side by side, over a shared document, whiteboard or walk.",
+    "Notice whether the conversation feels more or less adversarial than across a table.",
+    "Ask the other person afterwards how it felt to them.",
+    "Decide whether to use the arrangement again."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A negotiation coach claims that experienced negotiators can spot a bluff from tells such as touching the nose. What does the evidence suggest?",
+   "options": [
+    "Experienced negotiators can spot bluffs reliably once they have learned the main tells",
+    "Lie detection from behaviour is barely above chance, and cues like face touching are weak",
+    "Face touching is a reliable sign of lying, but only when the stakes are very high",
+    "Bluffing can be detected from posture, though not from any gestures of the hands"
+   ],
+   "answer": 1,
+   "explain": "People detect lies from behaviour at only slightly better than chance, and the cues most often believed to reveal lying are among the weakest. Acting on false tells can cost a deal or a relationship.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Maddux and colleagues' study, how did subtle mimicry help negotiators?",
+   "options": [
+    "It made counterparts afraid of the mimicker, so they conceded more quickly",
+    "It distracted counterparts, so they did not notice the weakness of the offers",
+    "It increased trust, so counterparts shared more about what they really needed",
+    "It had no effect on outcomes, though it made the meetings feel more pleasant"
+   ],
+   "answer": 2,
+   "explain": "Mimicked counterparts trusted the mimicker more and shared more information, which made deals more likely. The mimicry was deliberately subtle; this book's view is that genuine attention is the honest route to the same trust.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Why did people concede more to an angry counterpart in Van Kleef and colleagues' study?",
+   "options": [
+    "They read the anger as a sign the counterpart was close to walking away",
+    "They wanted to punish the counterpart for being rude by ending quickly",
+    "They believed angry people were more honest about their best offers",
+    "They found anger frightening, whatever the counterpart had already offered"
+   ],
+   "answer": 0,
+   "explain": "People used the anger as information about the other side's limits. When the angry counterpart had already conceded a lot, the effect disappeared.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Adam, Shirako and Maddux find about anger in negotiations across cultures?",
+   "options": [
+    "Anger drew larger concessions from every group, though the effect was smaller for some",
+    "Anger backfired with every group, so it should never be used in any negotiation",
+    "Anger had no effect in any culture once the size of the offer was accounted for",
+    "Anger drew larger concessions from European Americans but smaller ones from Asian Americans"
+   ],
+   "answer": 3,
+   "explain": "The difference depended on whether anger was seen as appropriate. When participants were told anger was acceptable, it helped regardless of background; when told it was unacceptable, it backfired for everyone.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague suggests you act angry at the supplier's first offer, even though you are not, to push the price down. What does the research suggest?",
+   "options": [
+    "It will work well, because the supplier will read your anger as a sign of your limits",
+    "Faked anger tends to reduce trust and can lead the other side to demand more, not less",
+    "It will have no effect, because suppliers are trained to ignore emotion in negotiations",
+    "It works only if you keep it up for the whole negotiation without letting it slip at all"
+   ],
+   "answer": 1,
+   "explain": "Côté and colleagues found that faked anger raised counterparts' demands by reducing trust. Felt anger worked differently, but performing emotion you do not feel tends to backfire.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "You are about to negotiate for the first time with a company you have never worked with. Which approach fits the research best?",
+   "options": [
+    "Hold the early stages by video or in person, where trust can be built",
+    "Keep everything in email, so that you can control exactly what they see",
+    "Meet in person, but keep your face blank so they can read nothing at all",
+    "Send a lawyer to the first meeting, so that you are never seen in person"
+   ],
+   "answer": 0,
+   "explain": "For parties who start out neutral, richer channels such as video and face-to-face meetings tend to improve outcomes. Swaab and colleagues found the benefit did not hold for parties who were already hostile.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific negotiation or difficult conversation from the past year: over pay, a price, a deadline, a family decision. What were you watching for in the other person's body, and what did you conclude from it? Did you learn what they actually needed, and how? Describe one moment when emotion, theirs or yours, changed what happened. If you could go back, what would you do differently with your attention, your words or your own body?",
+  "guidance": "Many people go into negotiations braced for a contest and come out having learned little about the other side. Be honest about whether you were reading or asking. Be specific about the moment emotion entered, and about whether anyone's emotion was real or performed.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to believe you can read bluffs from tells, and to push too hard on the strength of a touched nose or crossed arms. The second is to copy your counterpart's gestures as a technique, which is manipulative and often noticed, when genuine attention builds the same trust honestly. The third is to perform anger as a tactic, when faked anger tends to raise the other side's demands and cost trust. The fourth is to concede to an angry counterpart simply to make the discomfort stop, without asking what their anger is about. The fifth is to negotiate tired, hungry or rushed, and agree late in the day to things you would have refused in the morning. And the sixth is to treat the person across the table as an opponent to be read rather than a person to be understood.",
+ "furtherStudy": [
+  {
+   "work": "Chameleons bake bigger pies and take bigger pieces: Strategic behavioral mimicry facilitates negotiation outcomes",
+   "author": "William W. Maddux, Elizabeth Mullen and Adam D. Galinsky",
+   "note": "Journal of Experimental Social Psychology 44(2), 2008. Mimicry, trust and deals."
+  },
+  {
+   "work": "The interpersonal effects of anger and happiness in negotiations",
+   "author": "Gerben A. van Kleef, Carsten K. W. de Dreu and Antony S. R. Manstead",
+   "note": "Journal of Personality and Social Psychology 86(1), 2004. Why people concede to anger, and when they do not."
+  },
+  {
+   "work": "Cultural variance in the interpersonal effects of anger in negotiations",
+   "author": "Hajo Adam, Aiwa Shirako and William W. Maddux",
+   "note": "Psychological Science 21(6), 2010. How culture changes what anger does at the table."
+  },
+  {
+   "work": "The consequences of faking anger in negotiations",
+   "author": "Stéphane Côté, Ivona Hideg and Gerben A. van Kleef",
+   "note": "Journal of Experimental Social Psychology 49(3), 2013. Why performed anger costs trust."
+  }
+ ],
+ "reviewPrompt": "In your next negotiation, ask what the other side needs instead of watching for tells, and take a breath before any concession."
+}
