@@ -1,0 +1,232 @@
+{
+ "id": "modern-world-03",
+ "categoryId": "modern-world",
+ "index": 3,
+ "tier": "FOUNDATION",
+ "title": "Audio as Body Language",
+ "estimatedMinutes": 55,
+ "hook": "On a call your voice is most of your body, and a poor microphone can cost you credibility that your words have earned.",
+ "why": "On a phone call there is no body at all, and on a video call most of it is missing. What remains, and what survives compression, delay and poor connections best, is the voice. The chapter on voice in Part I described how quickly people judge a voice, and how much feeling and status it carries. This chapter is about what happens to the voice when it travels through a microphone, a network and a speaker into someone else's ear.\n\nIt covers why the voice matters more on calls than in rooms; the evidence that poor sound makes people seem less intelligent and their work less important; the evidence that hearing someone, rather than reading their words, makes them seem more thoughtful and more human, especially when you disagree; the practical side of microphones and rooms; pace and pauses on a delayed line; and how to listen to voices on calls without reading too much into what the technology has done to them.",
+ "teach": [
+  {
+   "h": "On a call, the voice is the body.",
+   "p": "The chapter on voice in Part I described how listeners form impressions of trustworthiness and dominance from a single word, how feelings can be heard in pitch, pace and loudness, and how, in one line of research, people judged others' feelings more accurately from the voice alone than from voice and face together. On calls, these findings matter even more, because the voice is often all there is.\n\nOn a phone call, the voice carries everything: warmth, attention, confidence, doubt, fatigue. On a video call, the face is small, compressed and often frozen, while the voice usually arrives more intact. Many people who think they are reading a colleague's face on a call are in fact reading their voice, with the face as a rough accompaniment.\n\nThis has two consequences. First, your own voice deserves the attention you would give your appearance before an important meeting: how it sounds through your microphone, in your room, on the other person's speaker. Second, when you read others on calls, listen as carefully as you look. Changes in pace, pitch, loudness and breath are often more informative than anything visible in a small, grainy window.\n\nThe figure here sits with head down to a phone. Whatever he is hearing, his face will tell an observer little; his voice, when he answers, will tell the person on the other end a great deal. On calls, the voice does the work that the whole body does in a room.",
+   "poseId": "p_sit_phone",
+   "disconfirm": "This would be wrong if listeners on calls relied mainly on visual cues rather than the voice. Research on voice-only communication suggests the voice carries much of the emotional information, though on good video connections the face adds more than it does on poor ones."
+  },
+  {
+   "h": "Bad sound, worse judgments.",
+   "p": "In 2018 Eryn Newman and Norbert Schwarz played people recordings of scientists. In one experiment they used conference talks; in another, interviews from a well-known American science radio programme. The content was identical in every version, but half the listeners heard the recordings in good audio quality and half heard them slightly degraded, with a little echo and muffling.\n\nListeners who heard the poor recordings rated the scientists as less intelligent, less likeable and less expert, and rated their research as less important. They were also less likely to say they would share the interview. The words were the same. Only the sound had changed.\n\nSchwarz's wider research on what psychologists call processing fluency suggests why. When something is easy to take in, people tend to judge it more favourably: more true, more likeable, more competent. When it takes effort, that effort is quietly blamed on the content or the person. A tinny, echoing, crackling voice costs the listener effort, and the speaker pays for it.\n\nThe practical lesson is uncomfortable but useful. On calls, recordings and podcasts, the quality of your microphone and your room may affect how intelligent you seem as much as what you say. The figure here stands at a lectern. In a hall, the room carries his voice. On a call, a cheap microphone in an echoing room can quietly undo the authority his words have earned.",
+   "poseId": "p_pro_lectern",
+   "disconfirm": "This would be wrong if audio quality had no effect on how speakers and their ideas were judged. Newman and Schwarz found clear effects across two experiments, though with brief recordings, so the effect may shrink as listeners get to know a speaker.",
+   "pullQuote": "On calls, your microphone may affect how intelligent you seem as much as what you say."
+  },
+  {
+   "h": "The voice reveals a mind.",
+   "p": "In 2015 Juliana Schroeder and Nicholas Epley asked MBA students to prepare short pitches to a company they hoped to work for. Then they had evaluators, including 39 professional recruiters, either read the pitches, listen to them or watch them on video. Those who heard a candidate rated him or her as more competent, thoughtful and intelligent than those who read the identical words, liked the candidate more and were more interested in hiring them.\n\nAdding video made little difference beyond the voice. What seemed to matter was the natural variation in a speaking voice: the rises and falls of pitch, the changes of pace and emphasis that show a person thinking as they speak. Even written pitches gained when they were read aloud.\n\nThis has practical uses. When a decision about you depends on how thoughtful you seem, give people your voice: a phone call rather than an email, a short recorded message rather than a long written one, a conversation rather than a document. And when you speak, let your voice move. A flat, rehearsed delivery, read from a script or squeezed by nerves, throws away the variation that signals a mind at work.\n\nIt also has a warning for readers. If hearing someone makes them seem smarter than reading them, then judging people from written applications alone may undervalue some, and judging them from a single call may overvalue the fluent. The figure here listens attentively. What he concludes about the speaker may depend more on the channel than on the speaker.",
+   "poseId": "p_pro_listening",
+   "disconfirm": "This would be wrong if listeners judged candidates' intellect the same from text as from speech. Schroeder and Epley found a consistent advantage for speech, though in short pitches, and later work has examined how far it extends to longer interactions."
+  },
+  {
+   "h": "Hearing the other side.",
+   "p": "In 2017 Schroeder, Michael Kardas and Epley extended the idea to disagreement. They had people encounter the views of someone they disagreed with on divisive issues, either by reading what the person had said or by hearing them say it. When people heard their opponent's voice, they judged them as more mentally capable, more thoughtful and more human than when they read the same words. The effect was clearest in disagreement, and seeing the speaker as well as hearing them added little.\n\nText, it seems, strips out the cues that remind us there is a thinking person behind an opinion. Written disagreement makes it easier to conclude that the other side is stupid, ignorant or malicious, which is one reason email and message threads so often escalate.\n\nFor anyone who manages disagreement at work or in friendship, the lesson is direct. When a written exchange starts to heat up, change the channel. Pick up the phone, or meet. The chapter on disagreement in Part III described how much the body shapes the course of an argument; the voice carries a good part of that body down a phone line. The chapter on written body language later in this part looks at what to do when text is the only option.\n\nThe figure here sits turned toward someone, listening. Hearing an opponent explain themselves, with all the hesitations and emphases of a real voice, makes it much harder to treat them as a caricature.",
+   "poseId": "p_sit_turned_toward",
+   "disconfirm": "This would be wrong if hearing an opponent's voice made no difference to how mentally capable they seemed. Schroeder and colleagues found that it did, though in short exposures, and a voice can of course also confirm a poor impression."
+  },
+  {
+   "h": "Microphones and rooms.",
+   "p": "Good sound on a call depends far more on distance and the room than on expensive equipment. A microphone close to your mouth picks up your voice and little else; a laptop microphone at arm's length picks up your voice, the room's echo, the fan, the traffic and the dishwasher. A simple wired headset or a small external microphone near your mouth often makes more difference than any other single change to how you come across on calls.\n\nRooms matter too. Hard surfaces, such as tiles, glass and bare walls, bounce sound back and make voices hollow and distant. Soft surfaces, such as curtains, carpets, bookshelves and sofas, absorb it. A bedroom or a furnished living room usually sounds better than a kitchen or an empty office.\n\nMuting is a skill. In large meetings, mute when you are not speaking, so that background noise does not drown others out. In small conversations, consider staying unmuted, so that your laughs, mm-hms and small sounds of agreement reach the speaker; the chapter on the head nod described how much speakers depend on that back channel. Be aware that automatic noise suppression often cuts these small sounds, so a little extra nodding helps.\n\nCheck your sound before important calls by recording a few sentences and listening back on the kind of speaker the other person will use. The figure here leans forward, attentive. If his microphone is a metre away in a tiled kitchen, his attention will reach the other end muffled and echoing.",
+   "poseId": "p_sit_forward_engaged",
+   "disconfirm": "This would be wrong if microphone distance and room acoustics made little difference to perceived audio quality. Basic acoustics and broadcast practice say otherwise, though people vary in how much they notice."
+  },
+  {
+   "h": "Pace, pauses and the delay.",
+   "p": "The chapter on the video call body described how even small delays on a call slow and scramble turn-taking. Your voice can compensate. Speak a little more slowly than you would in a room, and leave slightly longer pauses, so that the delay does not swallow the end of your sentences and others have a chance to come in.\n\nEnd your turns clearly. In a room, a falling tone, a glance and a small movement tell others you have finished. On a call, much of that is lost. Ending with a question, or with a name, “What do you think, Sam?”, hands the turn over unambiguously and prevents the collision of two people starting at once.\n\nKeep your voice moving. Long days of calls flatten voices into a monotone, and the previous blocks described how much vocal variation signals thought and engagement. Standing up, moving, drinking water and taking breaks between calls all help to keep the voice alive. So does speaking to a person rather than a screen: imagine the listener in front of you.\n\nAvoid talking over people. On a delayed line, interruptions are more disruptive than in a room, because both speakers often carry on for a second before either hears the other. If you do collide, stop, and offer the floor: “Sorry, go ahead.” The figure here stands open and relaxed. Many people find that standing to speak on an important call gives their voice more breath and more range.",
+   "poseId": "p_stand_open",
+   "disconfirm": "This would be wrong if slower speech, clearer turn endings and vocal variety made no difference on delayed calls. Research on turn-taking over video and on vocal variation supports these practices, though they have not been tested together as a set."
+  },
+  {
+   "h": "Listening to voices on calls.",
+   "p": "When you read others on calls, the voice is your richest channel, and also one that the technology distorts. A voice that sounds flat may be compressed. A voice that sounds robotic or clipped may be a poor connection. A voice that sounds tired may be at the end of a sixth hour of calls. A voice that drops out may be a microphone being touched. None of these is necessarily about the person.\n\nSo listen for change against each person's baseline on calls, not against how they sound in a room. Notice when a colleague who usually speaks quickly slows down, when a confident voice becomes hesitant, when someone stops contributing, or when a voice tightens on a particular subject. The chapter on voice described how stress tends to raise and tighten the voice; on calls, those changes are often audible even when the face is not.\n\nAllow for culture and personality. Some people speak slowly and leave long pauses; some overlap enthusiastically; some are silent until asked. Quiet people are especially easy to lose on calls, because the delay and the lack of visual cues make it harder for them to find a way in.\n\nWhen in doubt, check. “You sound a bit flat today; is it the line or is it you?” is a perfectly good question. The figure here listens with his head tilted. On a call, that small movement is invisible, but the attention behind it can still be heard in the questions he asks.",
+   "poseId": "p_stand_head_tilt",
+   "disconfirm": "This would be wrong if voices on calls reflected people's states as faithfully as voices in a room. Compression, delay and poor connections distort voices, so readings must be checked against the person's baseline on calls and confirmed by asking."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "A microphone close to the mouth, in a quiet room",
+   "dontCaption": "Laptop microphone at arm's length",
+   "annotation": "Distance and the room matter more than price. A cheap headset close to your mouth beats an expensive laptop across an echoing kitchen."
+  },
+  {
+   "doPoseId": "p_walk_phone",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Calling to talk it through",
+   "dontCaption": "Typing a heated reply",
+   "annotation": "Hearing someone's voice makes them seem more thoughtful and more human, especially in disagreement. When text starts to heat up, pick up the phone."
+  },
+  {
+   "doPoseId": "p_pro_presenting",
+   "dontPoseId": "p_pro_lectern",
+   "doCaption": "Speaking it, with natural rises and falls",
+   "dontCaption": "Reading a script in a flat voice",
+   "annotation": "Vocal variation signals a mind at work. A script read flatly throws that signal away."
+  }
+ ],
+ "caseStudy": "Liam, thirty-one, is a structural engineer applying for a job with a firm in another country. The first interview is on video. He takes it at the kitchen table, on his laptop, with tiles on two walls and the fridge humming behind him. He thinks it goes well. He does not get through.\n\nA friend who works in recruitment asks to hear how he sounds. She records ten seconds of him on the same laptop in the same kitchen and plays it back. Liam winces: his voice is hollow and distant, with an echo, and every sentence is followed by the faint drone of the fridge. She tells him about the research on audio and credibility, and lends him a basic wired headset.\n\nFor his next interview, with a different firm, Liam sets up in his bedroom, with the curtains drawn and the headset on. He stands for the technical presentation. He ends each answer with a clear finish, and when the panel's questions arrive late, he waits rather than talking over them. He gets the job.\n\nIn his first month, an email exchange with a contractor about a delayed delivery turns sour. Each message is a little sharper than the last, and Liam finds himself drafting a reply that would end the relationship. He stops, and rings instead. The contractor turns out to be a tired man with a sick child who has been covering for two colleagues. They sort out the delivery in ten minutes. Liam keeps the draft as a reminder of what text alone had made of him.",
+ "observe": [
+  "On your next call, close your eyes for a minute and notice what you can tell about each speaker from the voice alone.",
+  "Notice the audio quality of different people on your calls, and whether it colours your impression of them.",
+  "Notice when a written exchange starts to heat up, and what happens if anyone switches to voice.",
+  "Notice who on your calls struggles to get a word in, and whether the delay is part of the reason."
+ ],
+ "drills": [
+  {
+   "name": "Hear Yourself",
+   "minutes": 15,
+   "steps": [
+    "Record thirty seconds of yourself speaking in your usual call setup.",
+    "Listen back on a phone speaker and on headphones.",
+    "Note echo, distance, background noise and how flat or lively your voice sounds.",
+    "Try the same with a headset or a different room, and compare.",
+    "Choose the setup you will use for important calls."
+   ]
+  },
+  {
+   "name": "Voice, Not Text",
+   "minutes": 10,
+   "steps": [
+    "Find a message thread at work or in your personal life where tension is building.",
+    "Instead of writing the next reply, call the person.",
+    "Notice how the conversation differs from the written exchange.",
+    "Write one sentence about what the voice added."
+   ]
+  },
+  {
+   "name": "Clear Endings",
+   "minutes": 10,
+   "steps": [
+    "In your next meeting on a call, end each of your contributions with a question or a name.",
+    "Leave a slightly longer pause than usual before speaking after someone else.",
+    "Notice whether fewer collisions happen.",
+    "Afterwards, note who spoke more than usual."
+   ]
+  },
+  {
+   "name": "Keep It Moving",
+   "minutes": 15,
+   "steps": [
+    "Record yourself reading a short paragraph in your normal call voice.",
+    "Record it again standing, imagining a person in front of you, letting pitch and pace vary.",
+    "Listen to both and note the difference.",
+    "Before your next important call, stand and speak a few sentences aloud to warm your voice up."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague says that if your content is good, the quality of your microphone does not matter. What did Newman and Schwarz find?",
+   "options": [
+    "He is right; listeners judged the content and ignored the sound quality",
+    "Poor audio made identical talks and speakers seem less intelligent and important",
+    "Poor audio made speakers seem more authentic and more trustworthy",
+    "Audio quality mattered only for listeners who were experts in the field"
+   ],
+   "answer": 1,
+   "explain": "With identical content, slightly degraded audio led listeners to rate scientists as less intelligent and their research as less important. Content that takes effort to hear is quietly judged less favourably.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Schroeder and Epley find when recruiters read, heard or watched job candidates' pitches?",
+   "options": [
+    "Reading the pitch produced the most favourable impression of all",
+    "Watching the video produced far better ratings than hearing the voice",
+    "Hearing the pitch made candidates seem more competent and thoughtful than reading",
+    "The format made no difference once the content of the pitch was the same"
+   ],
+   "answer": 2,
+   "explain": "Candidates who were heard were rated more competent, thoughtful and intelligent, and were more likely to be hired, than when the same words were read. Video added little beyond the voice.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Schroeder, Kardas and Epley find about hearing people you disagree with?",
+   "options": [
+    "Hearing an opponent made them seem more mentally capable than reading them",
+    "Hearing an opponent's voice made people dislike and dismiss them even more",
+    "Reading and hearing an opponent's words produced the same impression",
+    "Only seeing an opponent on video changed how people judged them"
+   ],
+   "answer": 0,
+   "explain": "People judged opponents as more thoughtful and human when they heard them than when they read the same words, and the effect was clearest in disagreement. Text strips out cues that remind us there is a mind behind an opinion.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "An email exchange with a colleague is getting sharper with each reply. What fits this chapter best?",
+   "options": [
+    "Write a carefully worded reply that sets out every point in full",
+    "Copy in your manager, so that the record of the exchange is clear",
+    "Stop replying and wait for the colleague to calm down by themselves",
+    "Pick up the phone or meet, so that you hear each other's voices"
+   ],
+   "answer": 3,
+   "explain": "Hearing each other's voices makes people seem more thoughtful and human, and written disagreement escalates easily. Changing the channel often resolves what text inflames.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Which setup is most likely to give good sound on calls, according to this chapter?",
+   "options": [
+    "A laptop microphone at arm's length in a large tiled kitchen",
+    "A simple headset close to the mouth, in a room with soft furnishings",
+    "An expensive microphone placed across an empty, echoing room",
+    "Speakerphone on a mobile phone placed flat in the middle of a large desk"
+   ],
+   "answer": 1,
+   "explain": "Distance from the mouth and the acoustics of the room matter more than price. Soft furnishings absorb echo, and a microphone close to the mouth picks up the voice rather than the room.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "On a call, a usually lively colleague sounds flat and slightly robotic. What fits this chapter best?",
+   "options": [
+    "Conclude that he is depressed and needs to be referred for support",
+    "Assume he is bored with the meeting and does not want to be there",
+    "Consider the connection and his baseline, and check if it matters",
+    "Ignore it, since voices carry no information on calls at all"
+   ],
+   "answer": 2,
+   "explain": "Compression and poor connections can make any voice sound flat or robotic. Compare with how he usually sounds on calls, and if it matters, ask whether it is the line or him.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific call or recording in which you, or someone else, came across worse than in person. What did the sound do: echo, distance, noise, flatness? How did it affect the impression? Then think of one written exchange that went badly and might have gone better by voice. Describe what you would change about your audio setup, and one kind of conversation you will move from text to voice.",
+  "guidance": "Listening to a recording of yourself is uncomfortable for almost everyone, but it is the fastest way to learn what others hear. Be specific about the room, the microphone and the distance. For the written exchange, notice whether you formed a harsher view of the other person in text than you would have on the phone.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to treat audio as a technicality, when poor sound makes the same words and the same speaker seem less intelligent and their ideas less important. The second is to rely on text when a decision depends on seeming thoughtful, or when a disagreement is heating up, instead of giving people your voice. The third is to speak on calls as if in a room: quickly, with no clear endings, over other people, in a voice flattened by fatigue. The fourth is to mute in small conversations and remove the back channel the speaker depends on. And the fifth is to read people's states from voices the technology has distorted, without checking against their baseline on calls.",
+ "furtherStudy": [
+  {
+   "work": "Good sound, good research: How audio quality influences perceptions of the research and researcher",
+   "author": "Eryn J. Newman and Norbert Schwarz",
+   "note": "Science Communication 40(2), 2018. How slightly poor sound makes identical speakers seem less intelligent."
+  },
+  {
+   "work": "The sound of intellect: Speech reveals a thoughtful mind, increasing a job candidate's appeal",
+   "author": "Juliana Schroeder and Nicholas Epley",
+   "note": "Psychological Science 26(6), 2015. Why hearing a candidate beats reading the same words."
+  },
+  {
+   "work": "The humanizing voice: Speech reveals, and text conceals, a more thoughtful mind in the midst of disagreement",
+   "author": "Juliana Schroeder, Michael Kardas and Nicholas Epley",
+   "note": "Psychological Science 28(12), 2017. Why opponents seem more human when you hear them."
+  }
+ ],
+ "reviewPrompt": "This week, record and listen to yourself in your call setup, fix one thing about the sound, and move one tense written exchange to a call."
+}
