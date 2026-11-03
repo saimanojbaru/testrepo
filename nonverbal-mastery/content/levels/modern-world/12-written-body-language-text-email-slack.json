@@ -1,0 +1,239 @@
+{
+ "id": "modern-world-12",
+ "categoryId": "modern-world",
+ "index": 12,
+ "tier": "EXPERT",
+ "title": "Written Body Language — Text, Email, Slack",
+ "estimatedMinutes": 75,
+ "hook": "Without a face or a voice, a full stop can sound angry and a slow reply can sound cold, so writing needs a body language of its own.",
+ "why": "Much of working life, and a good deal of family life and friendship, now happens in writing. Emails, text messages, team chats and comment threads carry requests, praise, disagreements and apologies that would once have been delivered face to face. Every one of them arrives without the body that would normally carry its tone: no face, no voice, no posture, no timing within the sentence.\n\nPeople do not stop reading tone because it is missing. They read it into whatever is left: punctuation, word choice, length, emoji, and how long the reply took. A message the sender thought was neutral can arrive sounding curt. A joke can read as an insult. A busy silence can feel like disapproval. This chapter treats writing as a nonverbal channel in its own right. It covers why senders overestimate how clearly their tone comes across, why neutral messages tend to be read as negative, what punctuation and emoji signal, how timing speaks, when to switch from text to voice, and practical ways to write so that your words carry the tone you intend. Men who are brief and businesslike by habit often find their messages read as colder than they meant, and this chapter is partly for them.",
+ "teach": [
+  {
+   "h": "The body you leave behind.",
+   "p": "When you write a message, you hear it in your own voice. You know whether you meant it as a joke, as a gentle reminder or as a firm instruction, and as you reread it, your sense of the tone is so vivid that it seems to be on the page. It is not. The reader gets the words without the voice in your head.\n\nIn 2005 Justin Kruger, Nicholas Epley and their colleagues tested how well people convey tone in email. Participants wrote statements that were meant to be sarcastic or serious, funny or not, and predicted how accurately the recipients would identify the intended tone. Senders were consistently overconfident. Recipients identified the tone less often than senders expected, and in some conditions barely more often than they would have by guessing. When the same statements were spoken aloud, accuracy rose.\n\nThe researchers traced the overconfidence to egocentrism: the difficulty of stepping outside your own perspective. Because the sender hears the intended tone so clearly, he assumes the reader will too. Even when senders were asked to consider how the message might be read, they found it hard to do.\n\nThe practical lesson is that the tone you hear when you reread your message is not evidence of how it will be read. Sarcasm and irony are the riskiest, because they depend entirely on tone of voice to reverse the literal meaning. Gentle humour, mild impatience and affectionate teasing are close behind. The figure here sits looking down at a phone, reading a message whose tone he is constructing for himself, whatever the sender intended.",
+   "poseId": "p_sit_phone",
+   "disconfirm": "This would be wrong if people conveyed tone as accurately in email as they expected to. Kruger and colleagues found that senders were consistently overconfident, and that tone was conveyed better by voice."
+  },
+  {
+   "h": "Why neutral reads as negative.",
+   "p": "It is not only that tone gets lost in writing. It tends to get lost in a particular direction. In 2008 Kristin Byron reviewed research on emotion in email and proposed two effects. The first she called the neutrality effect: messages meant to be positive tend to be read as more neutral than intended, because the warmth that would have been in the voice is missing. The second she called the negativity effect: messages meant to be neutral tend to be read as more negative than intended.\n\nThe reasons are not hard to see. A face-to-face request comes with a smile and a friendly tone that soften it. In writing, the bare request, such as Can you send me the figures by Friday, may read as an order. A reader who is tired, anxious or already wary of the sender fills the gap with their own mood or expectations, and those are often less generous than the sender's intention.\n\nStatus makes it worse. Messages from people with power over the reader are scrutinised more closely. A brief message from a manager, which the manager wrote in ten seconds between meetings, may be reread several times by the person who received it, searching for what it means about their standing.\n\nThe implication for anyone writing at work is that warmth has to be added deliberately, in words, because it will not come through on its own. A message that feels friendly enough to you is probably reading as neutral, and one that feels neutral to you may be reading as cool. The figure here rubs his jaw, frowning at something he has read. It may not have been meant the way he is taking it.",
+   "poseId": "p_sit_jaw_rub",
+   "disconfirm": "This would be wrong if neutral messages were usually read as neutral and positive ones as positive. Byron's review suggested that written messages tend to lose warmth and gain negativity in the reading, though her account was a proposal drawn from earlier research.",
+   "pullQuote": "Warmth has to be added in words, because it will not come through on its own."
+  },
+  {
+   "h": "Punctuation as tone of voice.",
+   "p": "In speech, tone is carried by pitch, pace and volume. In text messages, punctuation has taken over part of that job, and its meanings have shifted in ways that catch many people out.\n\nIn 2016 Celia Klin and her colleagues showed students short exchanges in which one person asked a question and the other replied with a single word, such as Okay, Sure or Yeah. When the exchanges were presented as text messages, replies that ended with a full stop were rated as less sincere than the same replies without one. When the same exchanges were presented as handwritten notes, the full stop made no difference.\n\nThe researchers argued that in text messaging, where a full stop is optional, including one becomes a choice, and readers interpret the choice. A one-word reply with a full stop can read as clipped, final or displeased, much as a flat voice would. Exclamation marks have moved in the opposite direction: in many workplaces and friendships, one exclamation mark now reads as ordinary friendliness, and its absence can read as coolness. Capital letters read as shouting, and an ellipsis can suggest hesitation, disappointment or something left unsaid.\n\nThese conventions vary by age, setting and person. In a formal email, full stops are expected and carry no hostility. In a quick text exchange with someone younger, Fine. may land very differently from Fine! or Sounds good. The safest approach is to notice how the people you write to use punctuation and to match them, and to avoid one-word replies when a short sentence would carry more warmth. The figure here has turned slightly away, the bodily equivalent of a curt full stop.",
+   "poseId": "p_stand_turned_away",
+   "disconfirm": "This would be wrong if one-word text replies with full stops were read as just as sincere as those without. In Klin and colleagues' study they were rated as less sincere, though the effect was absent in handwritten notes."
+  },
+  {
+   "h": "The smiley at work.",
+   "p": "If text strips warmth from messages, emoji and emoticons might seem to be the answer: a smiley face to stand in for the smile. In 2018 Ella Glikson, Arik Cheshin and Gerben van Kleef tested this in a series of experiments with participants from many countries, who read work emails from people they had never met.\n\nIn formal work emails, adding a smiley did not make the sender seem any warmer. It made them seem less competent. Recipients also shared less information in reply to emails with smileys. A photograph of a real smiling face, by contrast, made senders seem both warmer and more competent. In less formal work emails, such as an invitation to a party, a smiley did make the sender seem friendlier, without costing competence.\n\nThe researchers suggested that a smiley may work better once people know each other, when it is read as a substitute for a smile rather than a sign of unprofessionalism. That fits most people's experience: emoji flow freely between colleagues who are close and feel out of place in a first contact.\n\nEmoji have a further problem: people disagree about what they mean. In 2016 Hannah Miller and colleagues asked people to rate the feeling conveyed by common emoji and found frequent disagreement, even about the same image, and more when the same emoji appeared on different phones, where it may be drawn differently. A face one person reads as delighted, another reads as grimacing. The safest course is to use emoji where you know the relationship and the conventions, and to put the warmth in words in first contacts and formal messages. The figure here waves, a friendly greeting that is unambiguous in person and much harder to reproduce on a screen.",
+   "poseId": "p_gesture_wave",
+   "disconfirm": "This would be wrong if smileys in formal work emails made senders seem warmer. Glikson and colleagues found they did not, and that they lowered perceived competence, though in informal emails they did increase friendliness."
+  },
+  {
+   "h": "Time is a signal.",
+   "p": "In conversation, timing is part of the message: a pause before answering, a quick reply, a long silence. In writing, the same is true on a longer scale. How quickly someone replies, and whether they reply at all, is read as a signal of how much they care, how they feel and where they stand.\n\nResearchers who study online communication call these timing cues chronemics. In 2013 Yoram Kalman and his colleagues found that the timing of people's responses in an online task reflected aspects of their personality and how much they trusted their partner, and argued that timing is a reliable channel of social information in writing. Most people do not need a study to know this. A friend who usually replies within minutes but has not answered for a day, or a manager who replies to everyone in the thread except you, sends a message without writing a word.\n\nLike other nonverbal cues, timing is often misread. A slow reply may mean the person is busy, unwell, travelling or thinking carefully about what to say. Read receipts make things worse, because the reader can see that a message has been read and not answered, and fill the gap with their own fears. Status shapes the norms too: senior people often reply more slowly, and are allowed to.\n\nTwo practices help. When you cannot reply properly soon, send a short acknowledgement: Got this, will come back to you tomorrow. It costs ten seconds and removes the silence. And when someone is slow to reply to you, assume the most ordinary explanation first, and ask rather than conclude. The figure here checks his watch, the impatient gesture that a slow reply provokes in many readers.",
+   "poseId": "p_pro_check_watch",
+   "disconfirm": "This would be wrong if the timing of written replies carried no social information. Research on online chronemics, and ordinary experience, suggest that people read response times as signals, though they often misread the reasons."
+  },
+  {
+   "h": "When to switch to voice.",
+   "p": "Some messages should not be written. In 2021 Amit Kumar and Nicholas Epley asked people to reconnect with an old friend either by email or by phone. Beforehand, people expected a phone call to be more awkward and chose text when given the choice. Afterwards, those who had spoken by phone felt more connected than those who had written, and the call had not been more awkward than the email. Video calls produced similar connection to voice calls.\n\nIn a related line of research, Juliana Schroeder, Michael Kardas and Nicholas Epley found in 2017 that hearing someone explain their view aloud made them seem more thoughtful and human than reading the same words, particularly when the listener disagreed with them. The voice carries evidence of a mind at work that text strips away.\n\nThese findings suggest a simple rule. When a message involves strong feeling, disagreement, bad news, an apology or a relationship that matters, consider saying it rather than writing it. Pick up the phone, start a video call, send a voice note if that is what the other person uses, or walk over to their desk. Use writing to confirm what was agreed, not to conduct the argument.\n\nHabits differ here. Many younger people send voice notes freely and find unannounced calls intrusive, while many older people find voice notes odd and prefer a call. Asking is fine: Can I call you about this? The question itself signals that the matter deserves a voice. The figure here walks while talking on a phone, the conversation that would have been a tense thread of messages turned into something easier to hear.",
+   "poseId": "p_walk_phone",
+   "disconfirm": "This would be wrong if people felt just as connected after writing to an old friend as after calling. Kumar and Epley found that phone calls produced stronger connection without being more awkward, despite people's expectations.",
+   "pullQuote": "Use writing to confirm what was agreed, not to conduct the argument."
+  },
+  {
+   "h": "Writing with a body in mind.",
+   "p": "Since the body cannot travel with your words, the words have to do some of its work. A few habits go a long way.\n\nBefore sending anything that matters, reread it as the recipient on a bad day: tired, anxious and unsure where they stand with you. If it could sound cold, add warmth in words. Thanks for this, it's really helpful does what a smile would have done. If urgency is not intended, say so: No rush at all. If a request is routine, say that too, so it is not read as a judgment.\n\nAvoid sarcasm and irony in writing, especially with people you do not know well. Avoid writing when you are angry; if you must draft something, wait before you send it, and reread it the next morning. Match the other person's register, from the formality of greeting to the use of exclamation marks and emoji. Keep one-word replies for people who use them with you.\n\nWhen you receive a message that stings, apply the same generosity in the other direction. Read it again assuming the most neutral tone the words allow. Remember that the sender probably spent a fraction of the time writing it that you are spending reading it. If it still bothers you, ask about it or pick up the phone rather than replying in kind.\n\nNone of this makes writing as rich as a conversation. It makes it less likely that a small message does a large amount of harm. The figure here writes, head down, the moment when the body is least present and the words have to carry everything.",
+   "poseId": "p_pro_taking_notes",
+   "disconfirm": "This would be wrong if adding explicit warmth and context in words made no difference to how messages were read. Research on the loss of warmth in writing suggests that what is left unstated is filled in by the reader, often less generously than intended."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_walk_phone",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Switching to a call when it gets tense",
+   "dontCaption": "Arguing in a thread of messages",
+   "annotation": "Disagreement, bad news and apologies travel better by voice. Use writing to confirm what was agreed."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_sit_closed_hunched",
+   "doCaption": "Reading it again in the morning",
+   "dontCaption": "Rereading a curt email at midnight",
+   "annotation": "A tired, anxious reader fills a message with their own fears. Read it again later, assuming the most neutral tone the words allow."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Assuming the ordinary and asking",
+   "dontCaption": "Assuming the worst about a short reply",
+   "annotation": "Brevity is usually haste, not hostility. Ask before concluding."
+  }
+ ],
+ "caseStudy": "Greg, fifty-two, is a senior manager who prides himself on short emails. He writes as he speaks in meetings, briefly and to the point: Fine. Send it. See me tomorrow. He was surprised when an engagement survey showed that his team found him intimidating and hard to approach, because in person he is relaxed and friendly.\n\nA younger colleague, Aisha, eventually told him why. When he replied Fine. to her proposal, she had spent an evening wondering what she had done wrong. When he wrote See me tomorrow, with no reason given, she assumed she was in trouble. She had shown his messages to a friend, who agreed they sounded angry. Greg had meant none of it. He had been answering forty emails between meetings, and See me tomorrow had simply meant that he wanted to hear her ideas for the next project.\n\nHe made some changes. He added a few words of warmth to short replies: Looks good, thanks, send it. When he asked to see someone, he said why, even briefly: Can we chat tomorrow about the timeline? Nothing to worry about. When he could not reply properly, he sent a one-line acknowledgement. When a thread turned into a disagreement, he called instead of writing.\n\nIt felt strange at first, and he worried that he was padding his emails. But the next survey showed his team found him far more approachable, and Aisha told him that she no longer reread his messages three times. He still writes short emails. They just no longer sound like he is annoyed.",
+ "observe": [
+  "Notice a message this week whose tone you were unsure of, and what in it made you read it the way you did.",
+  "Notice how the people you write to most often use punctuation, exclamation marks and emoji.",
+  "Notice your reaction when a reply is slower than you expected, and what you assumed about the reason.",
+  "Notice whether there is a conversation you are conducting in writing that would be better held by voice."
+ ],
+ "drills": [
+  {
+   "name": "Bad Day Reread",
+   "minutes": 15,
+   "steps": [
+    "Choose three messages you are about to send this week that matter.",
+    "Before sending each, reread it as if you were the recipient on a tired, anxious day.",
+    "Mark any phrase that could sound cold, impatient or critical.",
+    "Add a few words of warmth or context where they are needed.",
+    "Note whether any replies were warmer than usual."
+   ]
+  },
+  {
+   "name": "Punctuation Audit",
+   "minutes": 15,
+   "steps": [
+    "Look back at your last twenty text or chat messages to colleagues or friends.",
+    "Count your one-word replies and how many ended with a full stop.",
+    "Compare your punctuation with that of the people you were writing to.",
+    "Rewrite two of your shortest replies as you would now send them."
+   ]
+  },
+  {
+   "name": "Switch the Channel",
+   "minutes": 20,
+   "steps": [
+    "Identify one disagreement, piece of bad news or apology you have been handling in writing.",
+    "Ask the other person if you can call or meet briefly.",
+    "Have the conversation by voice or face to face.",
+    "Afterwards, send a short written summary of what you agreed.",
+    "Note how the conversation compared with the written exchange."
+   ]
+  },
+  {
+   "name": "Acknowledge Fast",
+   "minutes": 10,
+   "steps": [
+    "For one week, whenever you cannot reply properly to a message within a day, send a one-line acknowledgement.",
+    "Include when you will reply, if you can.",
+    "Keep to the time you gave.",
+    "Note whether anyone mentions the change."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A colleague says that if an email's tone is clear when he rereads it, the recipient will read it the same way. What does Kruger and colleagues' research suggest?",
+   "options": [
+    "He is right, because careful rereading lets a writer see a message as the reader will",
+    "Senders are overconfident, because they hear their own tone and assume readers will too",
+    "Recipients usually read more warmth into emails than senders put into them",
+    "Tone is conveyed equally well by email and by voice, once people are used to email"
+   ],
+   "answer": 1,
+   "explain": "Senders hear the intended tone so vividly that they assume it is on the page. Kruger and colleagues found they were consistently overconfident, and that tone came across better by voice.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Klin and colleagues find about one-word text replies that ended with a full stop?",
+   "options": [
+    "They were rated as more sincere, because the full stop made the reply seem considered",
+    "They were rated the same as replies without a full stop, in texts and in handwritten notes",
+    "They were rated as less sincere in text messages, but not in handwritten notes",
+    "They were rated as less sincere in handwritten notes, but not in text messages"
+   ],
+   "answer": 2,
+   "explain": "In text messaging, where a full stop is optional, including one becomes a choice that readers interpret. In handwritten notes the full stop made no difference.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In Glikson and colleagues' study, what did a smiley do in a formal work email from a stranger?",
+   "options": [
+    "It made the sender seem warmer and more competent, as a real smile did",
+    "It made the sender seem warmer, though somewhat less competent than before",
+    "It had no effect at all on how the sender was perceived by recipients",
+    "It made the sender seem less competent, without making them seem warmer"
+   ],
+   "answer": 3,
+   "explain": "A smiley in a formal email lowered perceived competence and did not increase warmth. In informal emails, a smiley did make senders seem friendlier without costing competence.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "According to Byron's review, how are neutral email messages likely to be read?",
+   "options": [
+    "As more negative than the sender intended, because warmth is missing",
+    "As more positive than intended, because readers are usually generous",
+    "Exactly as intended, because neutral messages carry no emotion at all",
+    "As neutral by peers, but as positive by anyone the sender manages"
+   ],
+   "answer": 0,
+   "explain": "Byron proposed a negativity effect, in which neutral messages read as more negative than intended, and a neutrality effect, in which positive messages lose some of their warmth. Warmth therefore has to be added deliberately, in words.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Late at night you receive a two-word email from your manager: See me. What fits this chapter best?",
+   "options": [
+    "Reply at once asking what you have done wrong, so that you can prepare",
+    "Assume the most ordinary reason, and ask briefly in the morning what it is about",
+    "Forward it to a colleague to get a second opinion on how angry it sounds",
+    "Reply in the same short style, so that your manager sees how it feels"
+   ],
+   "answer": 1,
+   "explain": "Brief messages from people with power over us are read closely and often negatively, though they are usually written in haste. Assuming the ordinary and asking calmly avoids filling the gap with fear.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "You need to tell a colleague that his proposal will not go ahead. What fits the research in this chapter best?",
+   "options": [
+    "Tell him by phone or in person, then confirm the decision in writing",
+    "Send a short, clear email, so that there is a record of the decision",
+    "Send a message with an emoji to soften the news, so it reads as friendly",
+    "Wait for him to ask, so that he can raise the subject when he is ready"
+   ],
+   "answer": 0,
+   "explain": "Bad news and disagreement travel better by voice, which carries warmth and signs of a thinking mind that text strips away. Writing works best to confirm what was said.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific message you sent or received in the past month that was misread, or that you worried had been. Write out the message exactly. How did the sender intend it, and how was it read? What in the words, punctuation, length or timing pushed the reading one way? Now rewrite it as you would send it today, and describe whether it would have been better as a call or a conversation instead.",
+  "guidance": "Most misreadings come from what was left out, not what was put in: the warmth, the reason, the reassurance. Be specific about the exact words and timing. If you were the reader, consider how much of the tone you supplied yourself, and what mood you were in when you read it.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to assume that the tone you hear when you reread your message is the tone the reader will hear. The second is to write brief, bare messages and expect them to read as neutral, when they often read as cold. The third is to use sarcasm or irony in writing, where it is easily taken literally. The fourth is to scatter smileys through formal emails to strangers, where they lower perceived competence. The fifth is to conduct disagreements, apologies and bad news in writing, when voice carries warmth and humanity that text strips away. And the sixth is to read the worst into someone else's short message or slow reply, when haste is far more common than hostility.",
+ "furtherStudy": [
+  {
+   "work": "Egocentrism over e-mail: Can we communicate as well as we think?",
+   "author": "Justin Kruger, Nicholas Epley, Jason Parker and Zhi-Wen Ng",
+   "note": "Journal of Personality and Social Psychology 89(6), 2005. Why senders overestimate how clearly their tone comes across."
+  },
+  {
+   "work": "Texting insincerely: The role of the period in text messaging",
+   "author": "Danielle N. Gunraj, Celia M. Klin and colleagues",
+   "note": "Computers in Human Behavior 55, 2016. What a full stop does to a one-word reply."
+  },
+  {
+   "work": "The dark side of a smiley: Effects of smiling emoticons on virtual first impressions",
+   "author": "Ella Glikson, Arik Cheshin and Gerben A. van Kleef",
+   "note": "Social Psychological and Personality Science 9(5), 2018. Smileys, warmth and competence in work emails."
+  },
+  {
+   "work": "It's surprisingly nice to hear you: Misunderstanding the impact of communication media can lead to suboptimal choices of how to connect with others",
+   "author": "Amit Kumar and Nicholas Epley",
+   "note": "Journal of Experimental Psychology: General 150(3), 2021. Why a call often beats a message."
+  }
+ ],
+ "reviewPrompt": "This week, reread three important messages as their recipient on a bad day, and move one written disagreement to a call."
+}
