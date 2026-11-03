@@ -1,0 +1,238 @@
+{
+ "id": "modern-world-05",
+ "categoryId": "modern-world",
+ "index": 5,
+ "tier": "INTERMEDIATE",
+ "title": "Power Posing — What's Real, What's Myth",
+ "estimatedMinutes": 60,
+ "hook": "Standing like a superhero for two minutes will not change your hormones, but how you hold yourself can still change how you feel and how you are read.",
+ "why": "Few ideas from psychology have travelled as far as power posing. The claim was simple and appealing: stand in an expansive, confident posture for two minutes, hands on hips or arms in the air, and your body chemistry will change, making you feel and act more powerful. It was taught in business schools, recommended before job interviews and repeated in countless articles. Then it largely fell apart.\n\nThe chapter on the spine as status in Part I mentioned the collapse in a single paragraph. This chapter tells the whole story, because it matters twice over: for what it says about posture, and for what it teaches about judging any claim about body language, including the claims in this book. It covers the original study, the failed replications, the argument over what remains, the evidence that slumping matters more than spreading, how others read expansive postures, what the saga teaches about evidence, and what is actually worth doing before a high-stakes moment.",
+ "teach": [
+  {
+   "h": "The two-minute promise.",
+   "p": "In 2010 Dana Carney, Amy Cuddy and Andy Yap published a study in which 42 people held either two high-power poses, such as leaning back with feet on a desk and hands behind the head, or two low-power poses, such as sitting hunched with arms wrapped around the body, for one minute each. Those who held the high-power poses reportedly showed a rise in testosterone and a fall in the stress hormone cortisol, felt more powerful, and were more willing to take a financial risk.\n\nThe finding was irresistible. It suggested that a simple, free, two-minute ritual could change a person's biology and behaviour. Cuddy's talk about it became one of the most watched TED talks ever given, and power posing entered business training, coaching and popular culture. Men were advised to stand like a superhero in a toilet cubicle before an interview or a pitch.\n\nThe study, however, was small. Forty-two people split across conditions is a modest sample for detecting hormonal changes, which vary a great deal from person to person and hour to hour. Small samples can produce striking results by chance, especially when researchers have some freedom in how they analyse the data, and striking results from small samples often fail to hold up.\n\nThe figure here stands with hands on hips, a classic power pose. Whether holding it for two minutes changes anything inside the body was the question the next decade of research set out to answer.",
+   "poseId": "p_stand_hands_hips",
+   "disconfirm": "This would be wrong if the original study's sample had been large enough to detect hormonal effects reliably. Forty-two participants is small for that purpose, which is why replication was essential."
+  },
+  {
+   "h": "The replications.",
+   "p": "In 2015 Eva Ranehill and her colleagues repeated the experiment with 200 people, nearly five times as many, and with an experimenter who did not know which pose each participant had held. They found no effect of power posing on testosterone, cortisol or risk-taking. The one effect that survived was a small increase in how powerful people said they felt.\n\nOther attempts followed. A direct replication published in 2017 also found no hormonal effects. In the same year, a special issue of a journal devoted to pre-registered studies, in which researchers commit to their methods and analyses before collecting data, reported several more attempts. A combined analysis of those studies by Quentin Gronau and his colleagues found strong evidence that posing changed how powerful people said they felt, but virtually no effect on behaviour or hormones.\n\nIn 2016 Dana Carney, the first author of the original study, published a statement saying that she no longer believed that power pose effects were real, and setting out the analytic choices that she thought had produced the original result. It was an unusually honest act in science, and it is a large part of why the story is now a textbook case.\n\nThe figure here stands wide and planted. On current evidence, holding this stance for two minutes does not change your hormones or make you take bolder decisions. It may make you feel a little more powerful, which is a different and much smaller claim.",
+   "poseId": "p_stand_wide_planted",
+   "disconfirm": "This would be wrong if larger, pre-registered studies had confirmed the hormonal and behavioural effects. They did not, though they did find a small effect on how powerful people said they felt."
+  },
+  {
+   "h": "Arguing about what remains.",
+   "p": "The argument did not end with the replications. In 2017 Joseph Simmons and Uri Simonsohn applied a technique called p-curve, which looks at the pattern of statistical results across a body of studies, to 33 published studies of power posing. They concluded that the pattern was what you would expect if the true effect were zero and only the significant results had been reported.\n\nIn 2018 Cuddy, Jack Schultz and Nathan Fosse replied with a p-curve of 55 studies of what they called postural feedback. They found evidence of real effects, particularly on feelings and emotional states. In 2019 Marcus Credé pointed out a flaw that both sides had to reckon with: most of the studies compared expansive poses with contractive ones, not with an ordinary neutral posture. Any difference could therefore come from contractive poses making people feel worse, rather than expansive poses making them feel better.\n\nThere was one more twist. In the combined analysis of pre-registered studies, the effect on felt power was weaker among people who had never heard of power posing. That suggests that part of the effect may come from expectation: people who know what a pose is supposed to do may feel it doing so.\n\nThe figure here leans back with hands behind his head, one of the original high-power poses. Whether it makes the man feel powerful depends, it seems, partly on whether he has seen the TED talk.",
+   "poseId": "p_sit_hands_behind_head",
+   "disconfirm": "This would be wrong if the remaining evidence showed clear effects of expansive postures compared with neutral ones among people unaware of the idea. It does not yet, though the debate over how to read the studies continues."
+  },
+  {
+   "h": "Slumping matters more than spreading.",
+   "p": "In 2022 Emma Elkjær and her colleagues published a review of 73 studies on expansive and contractive postures and movements, with an important design choice: wherever possible, they compared each with a neutral posture. The results reframed the whole debate.\n\nCompared with a neutral posture, expansive postures made almost no difference to how people felt or behaved; the effect size was negligible. But compared with a neutral posture, contractive ones, such as slumping, hunching and folding inward, had a noticeably larger effect, lowering mood and affecting behaviour. Effects on hormones did not hold up. The authors concluded that it is the absence of contractive postures, rather than the presence of expansive ones, that matters.\n\nThis fits what Part II described. The chapters on stress and on depression showed how distress shrinks and folds the body, and how a slumped posture and a slowed walk often accompany low mood. If posture affects feeling, the effect seems to run mainly through collapse: folding in makes things worse, while unfolding to an ordinary, upright stance removes the harm without needing to become a superhero.\n\nThe review has its critics, who argue about which studies were included and how. But its central point is practical and modest. The figure here is contracted, curled in on himself. On current evidence, getting out of this posture matters more than getting into a power pose.",
+   "poseId": "p_posture_contracted",
+   "disconfirm": "This would be wrong if expansive postures improved mood or behaviour as much as contractive postures worsened them, compared with neutral. Elkjær and colleagues found a large asymmetry, though their review has been criticised on method, so the size of each effect remains open."
+  },
+  {
+   "h": "How others read expansive posture.",
+   "p": "The power pose saga concerned what posture does to the person holding it. What it does to the people watching is a separate question, and here the evidence is stronger. The chapter on the spine as status described a large body of research showing that people read open, expansive, upright postures as signs of dominance and status, and closed, contracted ones as signs of submission.\n\nThat reading is not always flattering. In a shared space, an expansive posture can come across as confident, but also as arrogant, territorial or intimidating. A man sprawled across two seats on a train, leaning back with hands behind his head in a meeting, or standing with hands on hips over a seated colleague, is taking up space, and other people notice and often resent it.\n\nThis is where the thread of this part matters: authority that does not depend on intimidation. An upright, open, settled posture, neither collapsed nor sprawling, tends to read as calm competence. Expansiveness beyond that tends to read as dominance, which may win compliance but rarely wins trust.\n\nAnd context changes everything. The same posture reads differently in a boardroom, a pub and a job interview; from a manager and from a new recruit; from a man and from a woman, as the chapter on the nonverbal glass ceiling later in this part describes. The figure here leans back, arms spread. At home, he is relaxed. In a meeting with junior colleagues, he is making a statement.",
+   "poseId": "p_sit_lean_back_open",
+   "disconfirm": "This would be wrong if observers did not read expansive posture as dominance. Research on status and posture consistently finds that they do, though whether the reading is positive or negative depends heavily on context."
+  },
+  {
+   "h": "What the saga teaches about evidence.",
+   "p": "Power posing is worth understanding in detail because it shows how a claim about body language can spread far beyond its evidence. A small study with a dramatic result, a charismatic presentation and a simple practical promise travelled around the world. The careful replications that followed travelled much less far. Many people who learned about power posing never heard that it had been questioned.\n\nThe episode is part of a wider reckoning in psychology, sometimes called the replication crisis, in which many well-known findings failed when other researchers tried to repeat them. Its lessons apply to every claim in this book. Ask how many people were studied. Ask whether the study has been repeated, especially by independent researchers. Ask whether the methods were fixed in advance. Ask how large the effect is, not only whether it exists. And be most suspicious of the claims you most want to be true.\n\nThis book has tried to follow those rules: by reporting sample sizes, noting when findings come from single studies, flagging disputes, and dropping claims that could not be confirmed. The disconfirming condition at the end of every block is an invitation to test what you read against the world.\n\nThe figure here presents with an open hand. A confident speaker with a good story is persuasive. That is exactly why the evidence behind the story needs checking.",
+   "poseId": "p_pro_presenting",
+   "disconfirm": "This would be wrong if the power posing story were an isolated case. Large replication projects have found that many published findings in psychology do not hold up as originally reported, which is why the lessons apply widely.",
+   "pullQuote": "Be most suspicious of the claims you most want to be true."
+  },
+  {
+   "h": "What to actually do.",
+   "p": "So what is worth doing before an interview, a pitch or a difficult meeting? Start with what the evidence suggests to avoid. Do not spend the last ten minutes hunched over your phone, shoulders rounded, head down; the research on contractive posture suggests this may lower your mood just when you need it. Get up, walk, stand or sit upright, and let your shoulders settle.\n\nThen use the tools with better support. The chapter on breath in Part II and the chapter on reading yourself under stress in Part VI described slow breathing and reappraisal, interpreting your nerves as readiness rather than threat. The chapter on stage presence later in this part describes a simple version: telling yourself that you are excited rather than trying to calm down.\n\nIf you find a power pose helps you feel more confident, there is no harm in it, provided you know what it does and does not do. It is a ritual that may lift your mood a little, perhaps partly because you expect it to, not a hormonal switch.\n\nIn the room itself, aim for the posture that reads as calm competence: upright, open, still, taking the space you need and no more. The figure here stands open and at ease. It is not a power pose. It is simply a person who is not collapsed, not sprawling and ready to talk, which, on the evidence, is most of what posture can do for you.",
+   "poseId": "p_stand_open",
+   "disconfirm": "This would be wrong if adopting an ordinary upright posture and avoiding slumping made no difference to how people felt before a stressful event. The evidence on contractive posture suggests it does, though effects are modest and individual differences large."
+  }
+ ],
+ "poseGallery": [
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Upright, breathing slowly",
+   "dontCaption": "Hunched over a phone before the interview",
+   "annotation": "The evidence suggests collapse does more harm than any pose does good. Put the phone away, stand or sit upright, and breathe."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_hands_behind_head",
+   "doCaption": "Upright and settled",
+   "dontCaption": "Spreading out to dominate the room",
+   "annotation": "Expansive sprawl reads as dominance, which may win compliance but rarely trust. Take the space you need and no more."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_posture_contracted",
+   "doCaption": "Simply upright, at rest",
+   "dontCaption": "Curled in and small",
+   "annotation": "You do not need a superhero stance. Getting out of a collapsed posture into an ordinary upright one does most of the work."
+  }
+ ],
+ "caseStudy": "Ben, twenty-six, has watched the power posing talk three times. Before every interview he goes to the toilets, stands with his hands on his hips for two minutes, and then sits in the waiting room scrolling through his phone until he is called. He has had six interviews in four months and no offers.\n\nA friend who is doing a psychology degree tells him about the replications, and Ben reads about them that evening. He feels faintly foolish. But one detail catches his attention: the finding that slumping seems to matter more than spreading. He thinks about the waiting room, where he sits hunched over his phone, reading emails and news, for twenty minutes before every interview.\n\nFor his next interview, Ben changes the routine. He leaves his phone in his bag. He arrives early and walks around the block, then sits upright in the waiting room with his feet flat and his shoulders loose, breathing slowly. When his nerves rise, he tells himself that he is excited, a trick his friend says has better evidence behind it. He skips the toilet-cubicle pose, then, on the way in, does a quick version anyway, laughing at himself.\n\nThe interview goes well. The interviewer later tells him that he seemed composed and genuinely interested. Ben has no idea how much of that came from the posture, the breathing or simply a better night's sleep. But he keeps the new routine, and when a friend asks him about power poses, he says they are mostly a placebo, and that the real trick is to stop folding up over your phone.",
+ "observe": [
+  "Notice your posture in the ten minutes before a stressful event, and whether you are folded over a phone.",
+  "Notice how expansive postures in a meeting are read by others: as confidence, arrogance or something else.",
+  "Notice a body language claim you have heard repeated, and whether you know where it came from or whether it has been tested.",
+  "Notice how your mood shifts when you move from a slumped posture to an upright one, without any special pose."
+ ],
+ "drills": [
+  {
+   "name": "Slump Check",
+   "minutes": 10,
+   "steps": [
+    "Set three reminders on your phone for random times during one day.",
+    "Each time one goes off, notice your posture: collapsed, upright or sprawling.",
+    "If you are collapsed, sit or stand upright and let your shoulders settle for a minute.",
+    "Note any change in mood, however small, and what you were doing when you slumped."
+   ]
+  },
+  {
+   "name": "Pre-Meeting Routine",
+   "minutes": 15,
+   "steps": [
+    "Choose a stressful event coming up this week.",
+    "Plan the ten minutes before it: no phone, a short walk, upright sitting, slow breathing.",
+    "Add one line of reappraisal, such as “I'm excited.”",
+    "Afterwards, note how you felt going in and how the event went.",
+    "Keep what helped and drop what did not."
+   ]
+  },
+  {
+   "name": "Claim Audit",
+   "minutes": 20,
+   "steps": [
+    "Write down three things you believe about body language that you picked up from articles, videos or courses.",
+    "For each, try to find the original study: how many people, when and by whom.",
+    "Check whether it has been replicated, ideally in a larger or pre-registered study.",
+    "Rate each belief as well supported, uncertain or doubtful.",
+    "Write one sentence about what surprised you."
+   ]
+  },
+  {
+   "name": "Space Check",
+   "minutes": 10,
+   "steps": [
+    "In your next meeting, notice how much space you take up compared with others.",
+    "If you are sprawling, settle into an upright, open posture that takes only your share.",
+    "If you are collapsed, sit up and let your shoulders open.",
+    "Notice whether others respond differently."
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "q": "A friend says that holding a power pose for two minutes raises testosterone and lowers cortisol. What does the evidence now suggest?",
+   "options": [
+    "He is right; every replication has confirmed the hormonal effects",
+    "Larger replications found no hormonal effect, only small effects on felt power",
+    "Power poses lower testosterone and raise cortisol, the opposite of what was claimed",
+    "Hormones change, but only if the pose is held for at least an hour"
+   ],
+   "answer": 1,
+   "explain": "Ranehill's study of 200 people and later pre-registered studies found no effect on hormones or behaviour. A small effect on how powerful people said they felt survived.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Ranehill and colleagues find when they repeated the power posing experiment with 200 people?",
+   "options": [
+    "Large effects on testosterone, cortisol and risk-taking in every group",
+    "No effects of any kind, not even on how powerful the people said they felt",
+    "Effects on hormones but not on how powerful people said they felt",
+    "No effects on hormones or risk-taking, but a small effect on felt power"
+   ],
+   "answer": 3,
+   "explain": "The larger, blinded study found no hormonal or behavioural effects. The one surviving effect was a small increase in self-reported feelings of power.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Elkjær and colleagues' 2022 review find when postures were compared with a neutral posture?",
+   "options": [
+    "Expansive postures had large effects, while contractive ones had none",
+    "Both kinds of posture had large, equal effects on hormones and mood",
+    "Contractive postures had a much larger effect than expansive ones",
+    "Neither kind of posture had any effect on mood or on behaviour"
+   ],
+   "answer": 2,
+   "explain": "Compared with neutral, expansive postures made a negligible difference, while contractive ones had a noticeably larger effect on affect and behaviour. Avoiding collapse matters more than adopting a power pose.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In the combined analysis of pre-registered studies, the effect of posing on felt power was weaker among people who had never heard of power posing. What does that suggest?",
+   "options": [
+    "Expectations may account for part of the effect people report feeling",
+    "Power posing works best of all on people who have never heard of the idea",
+    "The effect on felt power is entirely caused by hormonal changes",
+    "People who know about power posing hold the poses for longer"
+   ],
+   "answer": 0,
+   "explain": "If the effect is weaker among people unaware of what a pose is supposed to do, expectation may be contributing. That is one reason to treat power posing as a ritual rather than a biological switch.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You are waiting to be called for an important interview. What fits this chapter best?",
+   "options": [
+    "Spend the time scrolling your phone, so that you stay distracted",
+    "Put the phone away, sit or stand upright, breathe slowly, and avoid slumping",
+    "Hold a superhero pose for two minutes so your testosterone rises",
+    "Sprawl across the seats, so that the interviewer sees your confidence"
+   ],
+   "answer": 1,
+   "explain": "The evidence suggests that collapsed posture does more harm than power poses do good. Upright posture, slow breathing and reappraisal have better support than hormonal claims.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Which question is most useful when you meet a striking new claim about body language?",
+   "options": [
+    "Whether the person presenting it seems confident and persuasive",
+    "Whether it fits with what you already believed about body language",
+    "Whether it has been repeated in larger, independent, pre-registered studies",
+    "Whether many people have shared it on social media in the past year"
+   ],
+   "answer": 2,
+   "explain": "Power posing spread on the strength of a small study and a compelling presentation. Large, independent, pre-registered replications are the best test of whether a claim holds up.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  }
+ ],
+ "reflection": {
+  "prompt": "Think of one specific body language claim you once believed and acted on: a power pose, a rule about eye contact, a sign of lying, a confident handshake. Where did you learn it? Describe what you did because of it. Having read this chapter, how would you test it? Then describe your posture in the ten minutes before your last stressful event, and what you will do differently before the next one.",
+  "guidance": "There is no shame in having believed a popular claim; millions did. The point is to build the habit of asking where a claim comes from and how well it has been tested. Be specific about your pre-event routine: where you were, what you were doing with your phone, how you were sitting.",
+  "minCharacters": 150
+ },
+ "failureMode": "The first failure is to believe that a two-minute pose changes your hormones, when larger studies found no such effect. The second is to swing to dismissing posture entirely, when the evidence suggests that collapsed, contracted postures may lower mood and that avoiding them helps. The third is to mistake expansive sprawl for authority, when others often read it as arrogance or intimidation. The fourth is to accept striking claims about body language on the strength of a small study and a compelling speaker, without asking whether they have been replicated. And the fifth is to spend the minutes before a high-stakes moment hunched over a phone, then wonder why you walked in feeling small.",
+ "furtherStudy": [
+  {
+   "work": "Power posing: Brief nonverbal displays affect neuroendocrine levels and risk tolerance",
+   "author": "Dana R. Carney, Amy J. C. Cuddy and Andy J. Yap",
+   "note": "Psychological Science 21(10), 2010. The original study."
+  },
+  {
+   "work": "Assessing the robustness of power posing: No effect on hormones and risk tolerance in a large sample of men and women",
+   "author": "Eva Ranehill and colleagues",
+   "note": "Psychological Science 26(5), 2015. The larger replication that found no hormonal effect."
+  },
+  {
+   "work": "Expansive and contractive postures and movement: A systematic review and meta-analysis of the effect of motor displays on affective and behavioral responses",
+   "author": "Emma Elkjær and colleagues",
+   "note": "Perspectives on Psychological Science 17(1), 2022. Why slumping seems to matter more than spreading."
+  },
+  {
+   "work": "Power posing: P-curving the evidence",
+   "author": "Joseph P. Simmons and Uri Simonsohn",
+   "note": "Psychological Science 28(5), 2017. A statistical test of the published power posing literature."
+  }
+ ],
+ "reviewPrompt": "This week, catch yourself slumping three times and sit up, and check where one body language claim you believe actually came from."
+}
