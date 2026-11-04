@@ -10,6 +10,7 @@ import androidx.compose.ui.draw.drawWithCache
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.ClipOp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.StrokeCap
@@ -17,7 +18,8 @@ import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
-import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -31,6 +33,7 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.nonverbal.mastery.data.models.Pose
+import com.nonverbal.mastery.design.pose.Cast
 import com.nonverbal.mastery.design.pose.FigureFrame
 import com.nonverbal.mastery.design.pose.FigureGeometry
 import com.nonverbal.mastery.design.pose.PoseRenderer
@@ -86,8 +89,8 @@ fun rememberScene(pose: Pose, view: String? = null): Scene =
     remember(pose, view) { PoseSolver.solveScene(pose, view) }
 
 /**
- * A drawn figure. Filled silhouettes with per-limb hairlines (so arms crossing the body stay
- * legible), far-side limbs a shade deeper, and optional annotation markers.
+ * A drawn figure: a person from the cast, clothed and shaded, with far-side limbs a shade deeper
+ * and optional annotation markers.
  */
 @Composable
 fun PoseFigure(
@@ -101,12 +104,15 @@ fun PoseFigure(
     scene: Scene? = null,
     decorative: Boolean = false,
     tint: Color? = null,
+    /** Whose figure this is. Pairs pass the same seed so both panels show the same man. */
+    castSeed: String? = null,
 ) {
     val colors = Nv.colors
     val palette = remember(colors, tint) {
         FigurePalette.from(colors).let { if (tint != null) it.copy(line = tint) else it }
     }
     val solved = scene ?: rememberScene(pose, view)
+    val looks = remember(pose, castSeed, solved.figures.size) { Cast.forScene(castSeed ?: pose.id, solved) }
     val measurer = rememberTextMeasurer()
     val numberStyle = remember { TextStyle(fontFamily = Inter, fontWeight = FontWeight.SemiBold, fontSize = 10.sp) }
     val markerColors = pose.annotations.map { annotationColor(it.color, colors) }
@@ -122,7 +128,7 @@ fun PoseFigure(
         modifier
             .then(semantics)
             .drawWithCache {
-                val geo = PoseRenderer.build(solved, size, frame ?: PoseRenderer.frameOf(solved), gaze = pose.showGaze)
+                val geo = PoseRenderer.build(solved, size, frame ?: PoseRenderer.frameOf(solved), gaze = pose.showGaze, looks = looks)
                 val anchors = pose.annotations.map { geo.anchor(it.at) }
                 onDrawBehind {
                     drawFigure(geo, palette, style, dimmed)
@@ -146,24 +152,35 @@ fun DrawScope.drawFigure(geo: FigureGeometry, p: FigurePalette, style: FigureSty
         }
         for ((a, b) in geo.propLines) drawLine(p.prop, a, b, strokeWidth = 1.2.dp.toPx(), cap = StrokeCap.Round)
         when (style) {
-            FigureStyle.Filled -> for (g in geo.groups) {
-                if (g.panel) {
-                    drawPath(g.path, p.panel)
-                    drawPath(g.path, p.prop, style = Stroke(1.2.dp.toPx(), join = StrokeJoin.Round))
-                    continue
-                }
-                drawPath(g.path, if (g.far) p.far else p.fill)
-                drawPath(g.path, if (g.far) p.line.copy(alpha = 0.55f) else p.line, style = Stroke(hair, join = StrokeJoin.Round))
-                // The face plane is drawn with its own head, so a hand in front of the face covers it.
-                g.face?.let { f ->
-                    rotate(f.rotationDeg, f.center) {
-                        drawOval(
-                            p.face.copy(alpha = 0.85f * f.strength),
-                            topLeft = Offset(f.center.x - f.rx, f.center.y - f.ry),
-                            size = Size(f.rx * 2, f.ry * 2),
-                        )
+            FigureStyle.Filled -> {
+                val shade = geo.shadeOffset
+                val edge = (0.75.dp.toPx()).coerceAtMost(geo.scale * 0.55f).coerceAtLeast(0.5f)
+                for (g in geo.groups) {
+                    if (g.panel) {
+                        drawPath(g.outline, p.panel)
+                        drawPath(g.outline, p.prop, style = Stroke(1.2.dp.toPx(), join = StrokeJoin.Round))
+                        continue
+                    }
+                    for (l in g.layers) {
+                        drawPath(l.path, l.color)
+                        val shaded: DrawScope.() -> Unit = {
+                            // Soft light from the upper left: the far edge of every shape falls into shadow.
+                            clipPath(l.path) {
+                                drawPath(l.path, lerp(l.color, l.line, 0.32f))
+                                translate(-shade, -shade * 0.8f) { drawPath(l.path, l.color) }
+                            }
+                            drawPath(l.path, l.line, style = Stroke(edge, join = StrokeJoin.Round))
+                        }
+                        val quiet = l.quiet
+                        if (quiet == null) shaded() else clipPath(quiet, ClipOp.Difference) { shaded() }
+                    }
+                    for (m in g.marks) {
+                        if (m.width <= 0f) drawPath(m.path, m.color)
+                        else drawPath(m.path, m.color, style = Stroke(m.width, cap = StrokeCap.Round, join = StrokeJoin.Round))
                     }
                 }
+                // A quiet outer edge keeps dark clothes readable on a dark page and pale ones on a light page.
+                drawPath(geo.silhouette, p.line.copy(alpha = 0.45f), style = Stroke(edge * 1.2f, join = StrokeJoin.Round))
             }
             FigureStyle.Outline -> drawPath(
                 geo.silhouette, p.line,

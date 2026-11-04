@@ -2,6 +2,7 @@ package com.nonverbal.mastery.design.pose
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathOperation
 import kotlin.math.PI
@@ -18,6 +19,8 @@ class Projector(yawDeg: Float, val scale: Float, private val ox: Float, private 
     private val c = cos(Math.toRadians(yawDeg.toDouble())).toFloat()
     private val s = sin(Math.toRadians(yawDeg.toDouble())).toFloat()
     val viewX = V3(c, 0f, s)
+    /** Unit vector from the scene toward the camera. A surface faces the viewer when its normal points this way. */
+    val toViewer = V3(-s, 0f, c)
     fun sx(p: V3) = p.x * c + p.z * s
     fun depth(p: V3) = -p.x * s + p.z * c
     fun screen(p: V3) = Offset(ox + scale * sx(p), oy - scale * p.y)
@@ -28,8 +31,23 @@ data class FigureFrame(val top: Float, val width: Float) {
     fun union(o: FigureFrame) = FigureFrame(max(top, o.top), max(width, o.width))
 }
 
-data class FigureGroup(val path: Path, val depth: Float, val far: Boolean, val face: FaceMark? = null, val panel: Boolean = false)
-data class FaceMark(val center: Offset, val rx: Float, val ry: Float, val rotationDeg: Float, val strength: Float)
+/**
+ * One filled shape in one material (skin, shirt, trousers, shoes, hair), with its own edge colour.
+ * Inside [quiet] it is filled flat, with no edge or shading, so a limb joins the body without a seam.
+ */
+data class Layer(val path: Path, val color: Color, val line: Color, val quiet: Path? = null)
+
+/** A detail drawn over a figure's shapes: an eye, a brow, a mouth, a seam, a sole. Width 0 means filled. */
+data class Mark(val path: Path, val color: Color, val width: Float)
+
+data class FigureGroup(
+    val layers: List<Layer>,
+    val marks: List<Mark>,
+    val outline: Path,
+    val depth: Float,
+    val far: Boolean,
+    val panel: Boolean = false,
+)
 data class Ground(val center: Offset, val rx: Float, val ry: Float)
 
 class FigureGeometry(
@@ -40,6 +58,8 @@ class FigureGeometry(
     /** Line of gaze for the main figure, when the pose asks for it: eyes to a point ahead. */
     val gaze: Pair<Offset, Offset>?,
     val scale: Float,
+    /** How far, in pixels, the soft shadow side of each shape reaches. */
+    val shadeOffset: Float,
     private val scene: Scene,
     private val projector: Projector,
 ) {
@@ -72,10 +92,17 @@ object PoseRenderer {
         }
     }
 
-    fun build(sk: Skeleton, size: Size, frame: FigureFrame = frameOf(sk), padding: Float = 0.06f): FigureGeometry =
-        build(Scene(listOf(sk), sk.yaw), size, frame, padding)
+    fun build(sk: Skeleton, size: Size, frame: FigureFrame = frameOf(sk), padding: Float = 0.06f, look: Look = Cast.men.first()): FigureGeometry =
+        build(Scene(listOf(sk), sk.yaw), size, frame, padding, looks = listOf(look))
 
-    fun build(scene: Scene, size: Size, frame: FigureFrame = frameOf(scene), padding: Float = 0.06f, gaze: Boolean = false): FigureGeometry {
+    fun build(
+        scene: Scene,
+        size: Size,
+        frame: FigureFrame = frameOf(scene),
+        padding: Float = 0.06f,
+        gaze: Boolean = false,
+        looks: List<Look> = Cast.forScene("", scene),
+    ): FigureGeometry {
         val worldH = frame.top - BOTTOM
         val usableH = size.height * (1f - padding * 2f)
         val usableW = size.width * (1f - padding * 2f)
@@ -89,7 +116,10 @@ object PoseRenderer {
         val pr = Projector(scene.yaw, scale, ox, oy)
 
         val parts = mutableListOf<Part>()
-        scene.figures.forEachIndexed { f, sk -> parts += figureParts(f, sk, pr) + propPanels(f, sk, pr) }
+        scene.figures.forEachIndexed { f, sk ->
+            val look = looks.getOrNull(f) ?: Cast.men[f % Cast.men.size]
+            parts += Dresser(f, sk, pr, look).parts() + propPanels(f, sk, pr)
+        }
 
         // Painter's algorithm across every figure, then merge neighbours from the same limb.
         val sorted = parts.sortedBy { it.depth }
@@ -97,11 +127,13 @@ object PoseRenderer {
         for (part in sorted) {
             val last = merged.lastOrNull()
             if (last != null && last.limb == part.limb) {
-                merged[merged.lastIndex] = last.copy(path = union(last.path, part.path), depth = max(last.depth, part.depth), face = last.face ?: part.face)
+                merged[merged.lastIndex] = last.copy(
+                    shapes = last.shapes + part.shapes, marks = last.marks + part.marks, depth = max(last.depth, part.depth),
+                )
             } else merged += part
         }
-        val groups = merged.map { FigureGroup(it.path, it.depth, it.far, it.face, it.panel) }
-        val silhouette = groups.filterNot { it.panel }.fold(Path()) { acc, g -> union(acc, g.path) }
+        val groups = merged.map { it.finish() }
+        val silhouette = groups.filterNot { it.panel }.fold(Path()) { acc, g -> union(acc, g.outline) }
 
         // A carried child or a person lying on a bed casts no floor shadow of their own.
         val grounds = scene.figures.filterNot { it.placement.lifted }.map { sk ->
@@ -129,94 +161,386 @@ object PoseRenderer {
             grounds = grounds,
             gaze = gazeLine,
             scale = scale,
+            shadeOffset = 0.75f * scale,
             scene = scene,
             projector = pr,
         )
     }
 
-    private fun figureParts(f: Int, sk: Skeleton, pr: Projector): List<Part> {
-        val k = sk.placement.scale
-        val parts = mutableListOf<Part>()
-        val torsoDepth = pr.depth(sk.waist) + 0.5f * k
-        parts += Part("$f:torso", torsoPath(sk, pr), torsoDepth, far = false)
+    /** Materials, in the order they are painted within one limb or head. */
+    private enum class Mat { SKIN, BOTTOM, TOP, SHOE, SKIN_OVER, EAR, HAIR, BEARD }
 
-        // Neck and head share an id so they merge into one silhouette; the face mark rides with them.
-        parts += Part("$f:head", capsule(pr, sk.neck - sk.chestAxes.yAxis * (1f * k), 5.5f * k, sk.head - sk.headAxes.yAxis * (4f * k), 4.9f * k),
-            pr.depth(sk.neck) + 0.6f * k, false)
-        parts += Part("$f:head", headPath(sk, pr, k), pr.depth(sk.head) + 1f * k, false, faceMark(sk, pr, k))
+    private data class Shape(val mat: Mat, val path: Path, val color: Color, val quiet: Path? = null)
 
-        for ((name, side) in listOf("L" to sk.left, "R" to sk.right)) {
-            val farSide = pr.depth(side.shoulder) < torsoDepth - 7f * k
-            val upper = union(
-                circle(pr, side.shoulder, 5.2f * k),
-                capsule(pr, side.shoulder, 4.8f * k, side.elbow, 3.9f * k),
-            )
-            parts += Part("$f:arm$name", upper, (pr.depth(side.shoulder) + pr.depth(side.elbow)) / 2f + 0.8f * k, farSide)
-            val lower = union(capsule(pr, side.elbow, 3.95f * k, side.hand.wrist, 2.95f * k), handPath(pr, side.hand, k))
-            val tip = side.hand.wrist + side.hand.dir * (8f * k)
-            parts += Part("$f:arm$name", lower,
-                max(pr.depth(side.elbow), max(pr.depth(side.hand.wrist), pr.depth(tip))) + 0.8f * k, farSide)
-
-            val farLeg = pr.depth(side.hip) < torsoDepth - 5f * k
-            val thigh = capsule(pr, side.hip, 8.7f * k, side.knee, 5.7f * k)
-            parts += Part("$f:leg$name", thigh, (pr.depth(side.hip) + pr.depth(side.knee)) / 2f - 3f * k, farLeg)
-            val shin = union(
-                capsule(pr, side.knee, 5.6f * k, side.ankle, 3.6f * k),
-                capsule(pr, side.foot.heel, 3.6f * k, side.foot.toe, 2.6f * k),
-                capsule(pr, side.foot.ballInner, 2.9f * k, side.foot.ballOuter, 2.9f * k),
-            )
-            parts += Part("$f:leg$name", shin, (pr.depth(side.knee) + pr.depth(side.ankle)) / 2f - 3f * k, farLeg)
+    private data class Part(
+        val limb: String,
+        val shapes: List<Shape>,
+        val depth: Float,
+        val far: Boolean,
+        val marks: List<Mark> = emptyList(),
+        val panel: Boolean = false,
+    ) {
+        fun finish(): FigureGroup {
+            // One union per material and colour, painted in material order, so a limb has no seams of its own.
+            val layers = shapes.groupBy { it.mat to it.color }.entries
+                .sortedBy { it.key.first.ordinal }
+                .map { (key, list) ->
+                    val c = if (far) shadeOf(key.second, 0.1f) else key.second
+                    val quiets = list.mapNotNull { it.quiet }
+                    Layer(union(*list.map { it.path }.toTypedArray()), c, shadeOf(c, 0.42f),
+                        if (quiets.isEmpty()) null else union(*quiets.toTypedArray()))
+                }
+            val outline = if (layers.isEmpty()) Path() else union(*layers.map { it.path }.toTypedArray())
+            return FigureGroup(layers, marks, outline, depth, far, panel)
         }
-        return parts
     }
 
-    private data class Part(val limb: String, val path: Path, val depth: Float, val far: Boolean, val face: FaceMark? = null, val panel: Boolean = false)
+    /**
+     * Dresses one solved skeleton as a person: skin, clothes, shoes, hair, a face. Every shape is
+     * still placed from the skeleton's joints, so poses, views and companions work as before.
+     */
+    private class Dresser(val f: Int, val sk: Skeleton, val pr: Projector, val look: Look) {
+        val k = sk.placement.scale
+        val baby = look.age == Age.BABY
+        val child = look.age == Age.CHILD
+        /** Children's heads are larger for their bodies. */
+        val hk = k * when { baby -> 1.6f; child -> 1.24f; else -> 1.05f }
+        val b = look.build
+        /** Limb thickness follows build, gently. */
+        val lw = 1f + (b - 1f) * 0.8f
+        val skin = look.skin
+        val parts = mutableListOf<Part>()
+        /** The top's outline, kept so the sleeves can join it without a seam. */
+        var shirtPath: Path = Path()
+        var trousersPath: Path = Path()
 
-    // ---- Shapes ---------------------------------------------------------------------------
+        fun facing(n: V3) = n.normalized() dot pr.toViewer
 
-    private fun torsoPath(sk: Skeleton, pr: Projector): Path {
-        val minSide = mutableListOf<Offset>()
-        val maxSide = mutableListOf<Offset>()
-        for (sec in sk.sections) {
-            // Extreme points of the projected ellipse along screen x.
+        fun parts(): List<Part> {
+            torso()
+            head()
+            for ((name, side) in listOf("L" to sk.left, "R" to sk.right)) {
+                arm(name, side)
+                leg(name, side)
+            }
+            return parts
+        }
+
+        // ---- Torso ------------------------------------------------------------------------
+
+        private fun torso() {
+            val male = !baby && !child
+            // A man's trunk: shoulders and chest a little broader, hips a little narrower. Build widens the
+            // waist and deepens the belly more than anything else.
+            val widthShape = if (male) floatArrayOf(0.95f, 0.94f, 0.95f, 1.0f, 1.05f, 1.08f) else FloatArray(6) { 1f }
+            val heavy = b - 1f
+            val secs = sk.sections.mapIndexed { i, sec ->
+                val belly = if (i in 1..3) 1f + heavy * 2.6f else 1f + heavy * 1.2f
+                val waist = if (i in 1..3) 1f + heavy * 2.0f else 1f + heavy * 0.9f
+                sec.copy(halfWidth = sec.halfWidth * widthShape[i] * waist, halfDepth = sec.halfDepth * belly * (if (baby) 1.12f else 1f))
+            }
+            val ext = secs.map { extremes(it) }
+            val depth = pr.depth(sk.waist) + 0.5f * k
+
+            // Trousers: hips down to the crotch, closed across the waist.
+            val crotch = pr.screen(sk.pelvis + sk.lowerAxes.apply(v(0, -11.5, 0.5)) * k)
+            val trousers = smoothClosed(buildList {
+                for (i in 0..2) add(ext[i].first)
+                for (i in 2 downTo 0) add(ext[i].second)
+                add(crotch)
+            })
+
+            // Top: from just below the waist to the shoulders, hanging a little loose at the hem.
+            val hem = sk.sections[1].center - sk.lowerAxes.yAxis * (1.5f * k)
+            val hemExt = extremes(secs[1].copy(center = hem, halfWidth = secs[1].halfWidth * 1.05f, halfDepth = secs[1].halfDepth * 1.04f))
+            val top = pr.screen(sk.chest + sk.chestAxes.apply(v(0, 5.5, -1)) * k)
+            // The tops of the shoulders, so the outline runs over them instead of dipping between the arms.
+            val shoulderTops = listOf(sk.left.shoulder, sk.right.shoulder)
+                .map { pr.screen(it + sk.chestAxes.apply(v(0, 3.4, -0.5)) * k) }
+                .sortedBy { it.x }
+            // The slope of the trapezius, from the sides of the neck down to the shoulders.
+            val neckSides = listOf(1f, -1f)
+                .map { pr.screen(sk.chest + sk.chestAxes.apply(v(6.6f * it, 7.6, -1.6)) * k) }
+                .sortedBy { it.x }
+            val shirt = smoothClosed(buildList {
+                add(hemExt.first)
+                for (i in 2..5) add(ext[i].first)
+                add(shoulderTops[0])
+                add(neckSides[0])
+                add(top)
+                add(neckSides[1])
+                add(shoulderTops[1])
+                for (i in 5 downTo 2) add(ext[i].second)
+                add(hemExt.second)
+                add(pr.screen(hem - sk.lowerAxes.yAxis * (1.2f * k)))
+            })
+
+            shirtPath = shirt
+            trousersPath = trousers
+            // Where the hips overlap the thighs, the trousers are one piece of cloth: no seam, no shadow.
+            val r = k * lw
+            val thighs = union(
+                capsule(pr, sk.left.hip, 9.4f * r, sk.left.knee, 6.2f * r),
+                capsule(pr, sk.right.hip, 9.4f * r, sk.right.knee, 6.2f * r),
+            )
+            val shapes = mutableListOf(
+                Shape(Mat.BOTTOM, trousers, look.bottomColor, quiet = thighs),
+                Shape(Mat.TOP, shirt, look.topColor),
+            )
+            val marks = mutableListOf<Mark>()
+            val chestFront = facing(sk.chestAxes.zAxis)
+            val c = sk.chestAxes
+            fun chestPt(x: Number, y: Number, z: Number) = sk.chest + c.apply(v(x, y, z)) * k
+
+            if (look.top == Top.SHIRT && chestFront > 0.3f) {
+                // An open collar shows a little skin, then a button placket runs down the front.
+                shapes += Shape(Mat.SKIN_OVER, polygon(listOf(chestPt(-3.6, 2.8, 8.6), chestPt(3.6, 2.8, 8.6), chestPt(0, -6.5, 10.2)).map(pr::screen)), skin)
+                val front = (2..5).map { i -> secs[i].center + secs[i].depth * (secs[i].halfDepth + 0.3f * k) }
+                val pts = listOf(hem + sk.lowerAxes.zAxis * (secs[1].halfDepth * 1.04f)) + front.dropLast(1) + listOf(chestPt(0, -6.2, 10.1))
+                marks += Mark(polyline(pts.map(pr::screen)), shadeOf(look.topColor, 0.28f), 0.35f * k * pr.scale)
+                for (y in listOf(-12f, -20f, -28f)) {
+                    marks += Mark(dot(pr.screen(chestPt(0.4, y, 10.6 + if (y < -20f) 0.6f else 0f)), 0.42f * k * pr.scale), shadeOf(look.topColor, 0.35f), 0f)
+                }
+            }
+            if (look.top == Top.POLO && chestFront > 0.3f) {
+                marks += Mark(polyline(listOf(chestPt(0, 2.4, 9.6), chestPt(0, -9, 10.8)).map(pr::screen)), shadeOf(look.topColor, 0.3f), 0.35f * k * pr.scale)
+                marks += Mark(dot(pr.screen(chestPt(0.4, -4, 10.6)), 0.42f * k * pr.scale), shadeOf(look.topColor, 0.35f), 0f)
+            }
+            if (look.top == Top.JUMPER) {
+                // A ribbed hem band.
+                val band = extremes(secs[1].copy(center = hem + sk.lowerAxes.yAxis * (3.2f * k), halfWidth = secs[1].halfWidth * 1.05f, halfDepth = secs[1].halfDepth * 1.04f))
+                marks += Mark(polyline(listOf(band.first, band.second)), shadeOf(look.topColor, 0.22f), 0.3f * k * pr.scale)
+            }
+            parts += Part("$f:torso", shapes, depth, far = false, marks = marks)
+        }
+
+        /** Extreme points of a projected cross-section along screen x: (left, right). */
+        private fun extremes(sec: Section): Pair<Offset, Offset> {
             val a = sec.halfWidth * (sec.lateral dot pr.viewX)
-            val b = sec.halfDepth * (sec.depth dot pr.viewX)
-            val t = atan2(b, a)
+            val bb = sec.halfDepth * (sec.depth dot pr.viewX)
+            val t = atan2(bb, a)
             val ext = sec.lateral * (sec.halfWidth * cos(t)) + sec.depth * (sec.halfDepth * sin(t))
             val p1 = pr.screen(sec.center + ext)
             val p2 = pr.screen(sec.center - ext)
-            if (p1.x >= p2.x) { maxSide += p1; minSide += p2 } else { maxSide += p2; minSide += p1 }
+            return if (p1.x <= p2.x) p1 to p2 else p2 to p1
         }
-        val top = pr.screen(sk.chest + sk.chestAxes.apply(v(0, 5.5, -1)))
-        val crotch = pr.screen(sk.pelvis + sk.lowerAxes.apply(v(0, -11.5, 0.5)))
-        val pts = buildList {
-            addAll(minSide)
-            add(top)
-            addAll(maxSide.reversed())
-            add(crotch)
+
+        // ---- Head ---------------------------------------------------------------------------
+
+        private fun head() {
+            val h = sk.headAxes
+            fun at(x: Number, y: Number, z: Number) = sk.head + h.apply(v(x, y, z)) * hk
+            fun chestAt(x: Number, y: Number, z: Number) = sk.chest + sk.chestAxes.apply(v(x, y, z)) * k
+            val nf = if (baby) 0.85f else 1f + (b - 1f) * 0.9f
+
+            // Neck, then the collar of whatever is worn, both in the neck's place in the depth order.
+            val neck = mutableListOf(
+                Shape(Mat.SKIN, capsule(pr, sk.neck - sk.chestAxes.yAxis * (1.5f * k), 5.6f * k * nf, sk.head - h.yAxis * (4.5f * hk), 5.0f * k * nf), skin),
+            )
+            if (!baby) {
+                val collar = when (look.top) {
+                    Top.SHIRT, Top.POLO -> ellipsoid(pr, chestAt(0, 3.7, -1.0), sk.chestAxes, 6.5f * k * nf, 1.7f * k, 5.9f * k * nf)
+                    else -> ellipsoid(pr, chestAt(0, 3.1, -0.9), sk.chestAxes, 6.2f * k * nf, 1.2f * k, 5.7f * k * nf)
+                }
+                neck += Shape(Mat.TOP, collar, look.topColor)
+            }
+            parts += Part("$f:head", neck, pr.depth(sk.neck) + 0.6f * k, false)
+
+            val toward = facing(h.zAxis)
+            val jawW = if (child || baby) 5.9f else 6.5f + (b - 1f) * 2f
+            val skull = union(
+                ellipsoid(pr, at(0, 1.4, -0.8), h, 7.7f * hk, 10.2f * hk, 9.8f * hk),
+                ellipsoid(pr, at(0, -3.6, 2.4), h, jawW * hk, (if (baby) 5.6f else 6.9f) * hk, 6.8f * hk),
+                circle(pr, at(0, -8.4, 5.4), (if (baby) 1.6f else 2.4f) * hk),
+                capsule(pr, at(0, 1.2, 8.2), 1.0f * hk, at(0, -2.3, 9.8), (if (baby) 1.0f else 1.35f) * hk),
+            )
+            val shapes = mutableListOf(Shape(Mat.SKIN_OVER, skull, skin))
+
+            // Ears, on whichever side faces the viewer.
+            for (s in listOf(1f, -1f)) {
+                if (facing(h.xAxis * s) > -0.15f) {
+                    shapes += Shape(Mat.EAR, ellipsoid(pr, at(7.5f * s, 0.2, 0.2), h, 1.0f * hk, 3.0f * hk, 1.9f * hk), skin)
+                }
+            }
+
+            hair(h, toward, ::at)?.let { shapes += Shape(Mat.HAIR, it.first, it.second) }
+            beard(h, toward, ::at)?.let { shapes += Shape(Mat.BEARD, it.first, it.second) }
+
+            parts += Part("$f:head", shapes, pr.depth(sk.head) + 1f * k, false, marks = face(h, ::at))
         }
-        return smoothClosed(pts)
-    }
 
-    private fun headPath(sk: Skeleton, pr: Projector, k: Float): Path {
-        val h = sk.headAxes
-        fun at(x: Number, y: Number, z: Number) = sk.head + h.apply(v(x, y, z)) * k
-        return union(
-            ellipsoid(pr, at(0, 1, -0.5), h, 7.9f * k, 10.9f * k, 10f * k),
-            ellipsoid(pr, at(0, -4.6, 3.4), h, 5.6f * k, 6.4f * k, 6.4f * k),
-            circle(pr, at(0, -0.6, 9.4), 1.5f * k),
-        )
-    }
+        private fun hair(h: M3, toward: Float, at: (Number, Number, Number) -> V3): Pair<Path, Color>? {
+            data class Cut(val cy: Float, val ry: Float, val t: Float, val bumps: Float)
+            val spec = when (look.hairStyle) {
+                HairStyle.CROP -> Cut(3.2f, 9.2f, 0.55f, 0f)
+                HairStyle.SIDE -> Cut(2.8f, 9.8f, 1.15f, 0f)
+                HairStyle.CURLY -> Cut(3.0f, 10.0f, 1.9f, 0.05f)
+                HairStyle.BUZZ -> Cut(3.4f, 8.8f, 0.25f, 0f)
+                HairStyle.RECEDING -> Cut(3.2f, 9.2f, 0.45f, 0f)
+                HairStyle.CHILD -> Cut(2.6f, 9.8f, 1.05f, 0f)
+                HairStyle.BABY -> Cut(3.8f, 8.3f, 0.2f, 0f)
+            }
+            val base = ellipsoidPath(at(0, spec.cy, -1.3), h, (7.7f + spec.t) * hk, (spec.ry + spec.t * 0.6f) * hk, (10.0f + spec.t) * hk, spec.bumps)
+            var hair = base
+            // Short hair stops above the ears at the sides; at the back it runs down to the nape.
+            if (toward > -0.55f) {
+                hair = difference(hair, ellipsoid(pr, at(0, -4.4, 1.6), h, 9.8f * hk, (if (look.hairStyle == HairStyle.CHILD) 5.4f else 5.8f) * hk, 8.0f * hk))
+            }
+            // Where the face is turned toward us, cut the face out of the hair; from behind, hair covers the head.
+            if (toward > -0.35f) {
+                val low = look.hairStyle == HairStyle.CHILD
+                val cut = ellipsoid(pr, at(0, if (low) -3.3f else -2.6f, 4.0), h, 7.3f * hk, (if (low) 9.2f else 9.6f) * hk, 8.6f * hk)
+                hair = difference(hair, cut)
+            }
+            if (look.hairStyle == HairStyle.RECEDING) {
+                hair = difference(hair, ellipsoid(pr, at(0, 9.6, 2.6), h, 6.6f * hk, 4.4f * hk, 7.8f * hk))
+            }
+            val color = when (look.hairStyle) {
+                HairStyle.BUZZ -> mix(skin, look.hair, 0.72f)
+                HairStyle.BABY -> mix(skin, look.hair, 0.5f)
+                else -> look.hair
+            }
+            return hair to color
+        }
 
-    private fun faceMark(sk: Skeleton, pr: Projector, k: Float): FaceMark? {
-        val forward = sk.headAxes.zAxis
-        val towardViewer = pr.depth(sk.head + forward) - pr.depth(sk.head)
-        if (towardViewer < 0.25f) return null
-        val c = pr.screen(sk.head + sk.headAxes.apply(v(0, -1.2, 7.4)) * k)
-        val up = sk.headAxes.yAxis
-        val upScreen = pr.screen(sk.head + up) - pr.screen(sk.head)
-        val rot = Math.toDegrees(atan2(upScreen.x.toDouble(), -upScreen.y.toDouble())).toFloat()
-        return FaceMark(c, 4.3f * k * pr.scale * towardViewer, 6.4f * k * pr.scale, rot, ((towardViewer - 0.25f) / 0.75f).coerceIn(0f, 1f))
+        private fun beard(h: M3, toward: Float, at: (Number, Number, Number) -> V3): Pair<Path, Color>? {
+            if (look.beard == Beard.NONE || toward < -0.45f) return null
+            val trim = if (look.beard == Beard.FULL) 1f else 0.9f
+            var jaw = union(
+                ellipsoid(pr, at(0, -5.6, 5.0), h, 6.9f * trim * hk, 5.6f * trim * hk, 6.0f * hk),
+                circle(pr, at(0, -8.7, 5.8), 2.8f * trim * hk),
+            )
+            jaw = difference(jaw, ellipsoid(pr, at(0, -0.4, 5.2), h, 7.4f * hk, 5.2f * hk, 7.6f * hk))
+            val stache = capsule(pr, at(-2.4, -3.75, 8.7), 0.85f * hk, at(2.4, -3.75, 8.7), 0.85f * hk)
+            val shape = union(jaw, stache)
+            val color = when (look.beard) {
+                Beard.STUBBLE -> mix(skin, look.hair, 0.3f)
+                Beard.TRIM -> mix(skin, look.hair, 0.82f)
+                else -> look.hair
+            }
+            return shape to color
+        }
+
+        /** Eyes, brows, nose and mouth: each drawn only where that part of the face is turned toward us. */
+        private fun face(h: M3, at: (Number, Number, Number) -> V3): List<Mark> {
+            val marks = mutableListOf<Mark>()
+            val px = hk * pr.scale
+            val dark = Color(0xFF2A211C)
+            val brow = shadeOf(if (look.hairStyle == HairStyle.BABY) skin else look.hair, 0.15f)
+            val crease = shadeOf(skin, 0.32f)
+            val lips = mix(shadeOf(skin, 0.3f), Color(0xFF8E4A44), 0.3f)
+            fun n(x: Number, y: Number, z: Number) = h.apply(v(x, y, z))
+
+            for (s in listOf(1f, -1f)) {
+                if (facing(n(0.42f * s, 0.05, 0.9)) > 0.12f) {
+                    val eye = at(3.0f * s, 1.9, 7.7)
+                    marks += Mark(dot(pr.screen(eye), (if (baby) 0.75f else 0.62f) * px), dark, 0f)
+                    if (!baby) marks += Mark(polyline(listOf(at(1.3f * s, 4.1, 8.3), at(3.2f * s, 4.4, 8.0), at(4.8f * s, 3.9, 7.0)).map(pr::screen)), brow, 0.7f * px)
+                    if (look.glasses) {
+                        val ring = (0 until 18).map { i ->
+                            val th = 2.0 * PI * i / 18
+                            at(3.0f * s + 2.1f * cos(th).toFloat(), 1.8f + 1.7f * sin(th).toFloat(), 8.6)
+                        }
+                        marks += Mark(polygon(ring.map(pr::screen)), Color(0xFF2E2A28), 0.32f * px)
+                        marks += Mark(polyline(listOf(at(5.1f * s, 2.1, 7.9), at(7.4f * s, 2.3, 1.0)).map(pr::screen)), Color(0xFF2E2A28), 0.32f * px)
+                    }
+                }
+            }
+            if (look.glasses && facing(n(0, 0, 1)) > 0.25f) {
+                marks += Mark(polyline(listOf(at(-0.9, 2.2, 9.0), at(0.9, 2.2, 9.0)).map(pr::screen)), Color(0xFF2E2A28), 0.32f * px)
+            }
+            if (facing(n(0, -0.25, 1)) > 0.3f) {
+                marks += Mark(polyline(listOf(at(-1.25, -2.0, 8.9), at(0, -2.55, 9.8), at(1.25, -2.0, 8.9)).map(pr::screen)), crease, 0.4f * px)
+            }
+            // Mouth in two halves, so a profile still shows the near corner.
+            for (s in listOf(1f, -1f)) {
+                if (facing(n(0.6f * s, 0, 0.8)) > 0.2f) {
+                    val w = if (baby) 1.2f else 2.1f
+                    marks += Mark(polyline(listOf(at(w * s, -5.0, 8.3), at(w * 0.5f * s, -5.2, 8.8), at(0, -5.25, 8.95)).map(pr::screen)), lips, 0.5f * px)
+                }
+            }
+            return marks
+        }
+
+        // ---- Arms -----------------------------------------------------------------------------
+
+        private fun arm(name: String, side: Side) {
+            val torsoDepth = pr.depth(sk.waist) + 0.5f * k
+            val farSide = pr.depth(side.shoulder) < torsoDepth - 7f * k
+            val r = k * lw
+            val sleeves = look.sleeves
+
+            val upper = mutableListOf<Shape>()
+            if (sleeves != Look.Sleeves.LONG) {
+                upper += Shape(Mat.SKIN, capsule(pr, side.shoulder, 4.9f * r, side.elbow, 4.2f * r), skin)
+            }
+            val sleeveEnd = if (sleeves == Look.Sleeves.SHORT) side.shoulder.lerp(side.elbow, 0.5f) else side.elbow
+            // The sleeve joins the shirt at the shoulder without a seam.
+            val shoulderJoin = intersect(shirtPath, circle(pr, side.shoulder, 8f * r))
+            upper += Shape(Mat.TOP, union(
+                circle(pr, side.shoulder, 4.9f * r),
+                capsule(pr, side.shoulder, 5.0f * r, sleeveEnd, if (sleeves == Look.Sleeves.SHORT) 5.0f * r else 4.6f * r),
+            ), look.topColor, quiet = shoulderJoin)
+            parts += Part("$f:arm$name", upper, (pr.depth(side.shoulder) + pr.depth(side.elbow)) / 2f + 0.8f * k, farSide)
+
+            val lower = mutableListOf<Shape>()
+            val wrist = side.hand.wrist
+            val elbowJoin = circle(pr, side.elbow, 5.2f * r)
+            when (sleeves) {
+                Look.Sleeves.LONG -> lower += Shape(Mat.TOP, capsule(pr, side.elbow, 4.6f * r, wrist - side.hand.dir * (0.8f * k), 3.8f * r), look.topColor, elbowJoin)
+                Look.Sleeves.ROLLED -> {
+                    lower += Shape(Mat.SKIN, capsule(pr, side.elbow, 4.3f * r, wrist, 3.1f * r), skin, elbowJoin)
+                    lower += Shape(Mat.TOP, capsule(pr, side.elbow, 4.8f * r, side.elbow.lerp(wrist, 0.28f), 4.7f * r), look.topColor, elbowJoin)
+                }
+                Look.Sleeves.SHORT -> lower += Shape(Mat.SKIN, capsule(pr, side.elbow, 4.3f * r, wrist, 3.1f * r), skin, elbowJoin)
+            }
+            val handMat = if (sleeves == Look.Sleeves.LONG) Mat.SKIN_OVER else Mat.SKIN
+            lower += Shape(handMat, handPath(pr, side.hand, k * (if (baby) 1.15f else 1f)), skin)
+            val tip = wrist + side.hand.dir * (8f * k)
+            parts += Part("$f:arm$name", lower, max(pr.depth(side.elbow), max(pr.depth(wrist), pr.depth(tip))) + 0.8f * k, farSide)
+        }
+
+        // ---- Legs -----------------------------------------------------------------------------
+
+        private fun leg(name: String, side: Side) {
+            val torsoDepth = pr.depth(sk.waist) + 0.5f * k
+            val farLeg = pr.depth(side.hip) < torsoDepth - 5f * k
+            val r = k * lw
+            val thigh = capsule(pr, side.hip, 9.4f * r, side.knee, 6.2f * r)
+            // Seen end-on (sitting, facing us), a thigh runs into the lap without a seam.
+            parts += Part("$f:leg$name", listOf(Shape(Mat.BOTTOM, thigh, look.bottomColor, quiet = trousersPath)),
+                (pr.depth(side.hip) + pr.depth(side.knee)) / 2f - 3f * k, farLeg)
+
+            val ft = side.foot
+            val shin = capsule(pr, side.knee, 6.0f * r, side.ankle, 4.7f * k)
+            val shoe = union(
+                capsule(pr, ft.heel, 4.0f * k, ft.toe, 3.2f * k),
+                capsule(pr, ft.ballInner, 3.3f * k, ft.ballOuter, 3.3f * k),
+                capsule(pr, side.ankle - V3.Y * (1.5f * k), 4.0f * k, ft.heel, 3.9f * k),
+            )
+            val marks = mutableListOf<Mark>()
+            if (look.top != Top.ONESIE) {
+                val down = V3.Y * (-2.6f * k)
+                val sole = listOf(ft.heel + down, ft.ballInner.lerp(ft.ballOuter, 0.5f) + V3.Y * (-2.2f * k), ft.toe + V3.Y * (-1.6f * k))
+                marks += Mark(polyline(sole.map(pr::screen)), look.soleColor ?: shadeOf(look.shoeColor, 0.45f), 1.1f * k * pr.scale)
+            }
+            val kneeJoin = circle(pr, side.knee, 7f * r)
+            parts += Part("$f:leg$name", listOf(Shape(Mat.BOTTOM, shin, look.bottomColor, kneeJoin), Shape(Mat.SHOE, shoe, look.shoeColor)),
+                (pr.depth(side.knee) + pr.depth(side.ankle)) / 2f - 3f * k, farLeg, marks = marks)
+        }
+
+        // ---- Helpers --------------------------------------------------------------------------
+
+        private fun ellipsoidPath(c: V3, axes: M3, rx: Float, ry: Float, rz: Float, bumps: Float): Path {
+            if (bumps <= 0f) return ellipsoid(pr, c, axes, rx, ry, rz)
+            val center = pr.screen(c)
+            val pts = ellipsoidPoints(pr, c, axes, rx, ry, rz).mapIndexed { i, p ->
+                val th = 2.0 * PI * i / 48
+                val f = 1f + bumps * abs(sin(th * 9).toFloat())
+                Offset(center.x + (p.x - center.x) * f, center.y + (p.y - center.y) * f)
+            }
+            return smoothClosed(pts)
+        }
     }
 
     private fun handPath(pr: Projector, hand: Hand, k: Float): Path {
@@ -325,7 +649,7 @@ object PoseRenderer {
         fun quad(vararg pts: V3, bias: Float, id: String): Part {
             val world = pts.map(pl::floor)
             val path = polygon(world.map(pr::screen))
-            return Part("$f:$id", path, world.map(pr::depth).average().toFloat() + bias, far = false, panel = true)
+            return Part("$f:$id", listOf(Shape(Mat.TOP, path, Color.Gray)), world.map(pr::depth).average().toFloat() + bias, far = false, panel = true)
         }
         return when (sk.prop) {
             "lectern" -> listOf(
@@ -345,7 +669,10 @@ object PoseRenderer {
     }
 
     /** An ellipsoid with semi-axes along [axes], projected exactly onto the screen. */
-    private fun ellipsoid(pr: Projector, c: V3, axes: M3, rx: Float, ry: Float, rz: Float): Path {
+    private fun ellipsoid(pr: Projector, c: V3, axes: M3, rx: Float, ry: Float, rz: Float): Path =
+        polygon(ellipsoidPoints(pr, c, axes, rx, ry, rz))
+
+    private fun ellipsoidPoints(pr: Projector, c: V3, axes: M3, rx: Float, ry: Float, rz: Float): List<Offset> {
         val center = pr.screen(c)
         // Project the three semi-axes; the outline of an ellipsoid under orthographic projection
         // is the ellipse spanned by those projections. Sample it densely.
@@ -369,7 +696,7 @@ object PoseRenderer {
                 center.y + (ax.y * ex + ay.y * ey + az.y * ez) / h,
             )
         }
-        return polygon(pts)
+        return pts
     }
 
     /** A tapered capsule: two circles joined by their outer tangents. */
@@ -420,6 +747,32 @@ object PoseRenderer {
         }
         close()
     }
+
+    private fun difference(a: Path, b: Path): Path = Path().apply { op(a, b, PathOperation.Difference) }
+
+    private fun intersect(a: Path, b: Path): Path = Path().apply { op(a, b, PathOperation.Intersect) }
+
+    /** An open, gently smoothed line through [pts]. */
+    private fun polyline(pts: List<Offset>): Path = Path().apply {
+        if (pts.isEmpty()) return@apply
+        moveTo(pts[0].x, pts[0].y)
+        if (pts.size == 2) { lineTo(pts[1].x, pts[1].y); return@apply }
+        for (i in 1 until pts.size - 1) {
+            val m = Offset((pts[i].x + pts[i + 1].x) / 2f, (pts[i].y + pts[i + 1].y) / 2f)
+            if (i == pts.size - 2) quadraticTo(pts[i].x, pts[i].y, pts[i + 1].x, pts[i + 1].y)
+            else quadraticTo(pts[i].x, pts[i].y, m.x, m.y)
+        }
+    }
+
+    private fun dot(c: Offset, r: Float): Path = Path().apply {
+        addOval(androidx.compose.ui.geometry.Rect(c.x - r, c.y - r, c.x + r, c.y + r))
+    }
+
+    /** [c] darkened by [amount] (0 none, 1 black). */
+    fun shadeOf(c: Color, amount: Float): Color = Color(c.red * (1f - amount), c.green * (1f - amount), c.blue * (1f - amount), c.alpha)
+
+    private fun mix(a: Color, b: Color, t: Float): Color =
+        Color(a.red + (b.red - a.red) * t, a.green + (b.green - a.green) * t, a.blue + (b.blue - a.blue) * t, 1f)
 
     private fun union(vararg paths: Path): Path {
         var acc = paths.first()

@@ -180,7 +180,7 @@ data class Scene(val figures: List<Skeleton>, val yaw: Float) {
     }
 }
 
-/** Body measurements, cm. A neutral adult figure, deliberately unsexed. */
+/** Body measurements, cm, for an adult. The renderer shapes the body as a man's and applies each person's build. */
 private object Body {
     const val UPPER_ARM = 30f
     const val FOREARM = 26f

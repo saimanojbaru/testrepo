@@ -75,13 +75,13 @@ fun PosePairView(
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(Space.x3)) {
             PairPanel(
                 label = "Don't", caption = pair.dontCaption, pose = dont, dimmed = true,
-                accent = colors.dontRed, labelColor = colors.dontText, frame = frame,
+                accent = colors.dontRed, labelColor = colors.dontText, frame = frame, castSeed = doPose.id,
                 modifier = Modifier.weight(1f),
                 onClick = { onPoseClick(dont.id, doPose.id) },
             )
             PairPanel(
                 label = "Do", caption = pair.doCaption, pose = doPose, dimmed = false,
-                accent = colors.doGreen, labelColor = colors.doText, frame = frame,
+                accent = colors.doGreen, labelColor = colors.doText, frame = frame, castSeed = doPose.id,
                 modifier = Modifier.weight(1f),
                 onClick = { onPoseClick(doPose.id, dont.id) },
             )
@@ -103,6 +103,7 @@ private fun PairPanel(
     accent: Color,
     labelColor: Color,
     frame: com.nonverbal.mastery.design.pose.FigureFrame,
+    castSeed: String,
     modifier: Modifier,
     onClick: () -> Unit,
 ) {
@@ -121,7 +122,7 @@ private fun PairPanel(
                 .clickable(role = Role.Button, onClick = onClick)
                 .semantics { contentDescription = description },
         ) {
-            PoseFigure(pose, Modifier.fillMaxSize(), dimmed = dimmed, markers = MarkerMode.Dots, frame = frame, decorative = true)
+            PoseFigure(pose, Modifier.fillMaxSize(), dimmed = dimmed, markers = MarkerMode.Dots, frame = frame, decorative = true, castSeed = castSeed)
         }
         Spacer(Modifier.height(Space.x2))
         Text(inlineItalics(caption.trim()), style = Nv.type.caption, color = colors.inkSecondary)

@@ -13,19 +13,23 @@ import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.graphics.drawscope.translate
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
+import com.nonverbal.mastery.design.pose.Beard
+import com.nonverbal.mastery.design.pose.Cast
+import com.nonverbal.mastery.design.pose.HairStyle
+import com.nonverbal.mastery.design.pose.Look
 import com.nonverbal.mastery.design.theme.Nv
 import com.nonverbal.mastery.design.tokens.NvColors
 
 /**
- * A schematic face, described by FACS action units (0 = absent, 1 = strong).
+ * A face, described by FACS action units (0 = absent, 1 = strong).
  *
- * The body figures in this book are faceless on purpose. Faces appear only on these plates, where
- * the face itself is the subject, drawn as a neutral, ungendered sketch so that the plate teaches
- * muscle movements rather than a type of person.
+ * Each plate is drawn on one man from the book's cast, so the expressions are compared on the same
+ * face. He is clean-shaven or lightly stubbled, so nothing hides the mouth.
  *
  * Left and right are the face's own: [au14Right] dimples the face's right cheek, which the
  * viewer sees on the left.
@@ -56,7 +60,7 @@ data class FaceSpec(
 data class FaceCell(val spec: FaceSpec, val caption: String, val code: String)
 
 @Composable
-fun FacePlate(cells: List<FaceCell>, columns: Int, modifier: Modifier) {
+fun FacePlate(cells: List<FaceCell>, columns: Int, modifier: Modifier, look: Look = plateLook(cells.firstOrNull()?.caption ?: "")) {
     val measurer = rememberTextMeasurer()
     val c = Nv.colors
     val captionStyle = Nv.type.caption
@@ -72,7 +76,7 @@ fun FacePlate(cells: List<FaceCell>, columns: Int, modifier: Modifier) {
             val faceH = cellH - captionH
             val u = minOf(cellW * 0.36f, faceH * 0.37f)
             val center = Offset(left + cellW / 2f, top + faceH / 2f + 2.dp.toPx())
-            drawFace(cell.spec, center, u, c)
+            drawFace(cell.spec, center, u, c, look)
             val cap = measurer.measure(cell.caption, captionStyle.copy(color = c.ink))
             drawText(cap, topLeft = Offset(left + (cellW - cap.size.width) / 2f, top + faceH + 2.dp.toPx()))
             val code = measurer.measure(cell.code, codeStyle.copy(color = c.inkTertiary))
@@ -90,6 +94,7 @@ fun MicroExpressionPlate(modifier: Modifier) {
     val label = Nv.type.uiSmall.copy(fontSize = Nv.type.label.fontSize)
     val italic = Nv.type.caption
     val flash = remember { FaceSpec(au4 = 1f, au5 = 0.35f, au7 = 1f, au23 = 1f, au24 = 0.6f) }
+    val look = remember { plateLook("micro") }
     Canvas(modifier) {
         val w = size.width
         val axisY = size.height - 52.dp.toPx()
@@ -102,9 +107,9 @@ fun MicroExpressionPlate(modifier: Modifier) {
             androidx.compose.ui.geometry.Size(u * 2.7f, axisY - (faceY - u * 1.45f)),
             androidx.compose.ui.geometry.CornerRadius(12.dp.toPx()),
         )
-        drawFace(FaceSpec(), Offset(xs[0], faceY), u, c)
-        drawFace(flash, Offset(xs[1], faceY), u, c)
-        drawFace(FaceSpec(), Offset(xs[2], faceY), u, c)
+        drawFace(FaceSpec(), Offset(xs[0], faceY), u, c, look)
+        drawFace(flash, Offset(xs[1], faceY), u, c, look)
+        drawFace(FaceSpec(), Offset(xs[2], faceY), u, c, look)
         // The axis and the brief window.
         drawLine(c.divider, Offset(8.dp.toPx(), axisY), Offset(w - 8.dp.toPx(), axisY), 1.dp.toPx())
         drawRect(c.brass.copy(alpha = 0.28f), Offset(xs[1] - half, axisY - 5.dp.toPx()), androidx.compose.ui.geometry.Size(half * 2, 10.dp.toPx()))
@@ -123,19 +128,61 @@ fun MicroExpressionPlate(modifier: Modifier) {
 
 private fun lerp(a: Float, b: Float, t: Float) = a + (b - a) * t
 
-/** Draws one face centred at [o] whose half-width is [u]. */
-fun DrawScope.drawFace(f: FaceSpec, o: Offset, u: Float, c: NvColors) {
-    val line = c.ink.copy(alpha = 0.78f)
-    val soft = c.ink.copy(alpha = 0.32f)
-    val hair = 1.dp.toPx()
-    val stroke = maxOf(1.2.dp.toPx(), u * 0.035f)
+/** A man from the cast whose mouth is not hidden by a beard, chosen by [seed]. */
+fun plateLook(seed: String): Look {
+    val clear = Cast.men.filter { it.beard == Beard.NONE || it.beard == Beard.STUBBLE }
+    var h = 7
+    for (ch in seed) h = (h * 31 + ch.code) and 0x7FFFFFFF
+    return clear[h % clear.size]
+}
 
-    // Head: an egg, wider above the cheekbones, with small ears.
+private fun Color.darker(t: Float) = Color(red * (1f - t), green * (1f - t), blue * (1f - t), alpha)
+
+/** Draws one face centred at [o] whose half-width is [u], on the man described by [look]. */
+fun DrawScope.drawFace(f: FaceSpec, o0: Offset, u0: Float, c: NvColors, look: Look = plateLook("")) {
+    // The head is drawn a little smaller and higher than the cell's centre, to leave room for neck and shoulders.
+    val u = u0 * 0.86f
+    val o = Offset(o0.x, o0.y - 0.12f * u0)
+    val skin = look.skin
+    // On deep skin tones the features need more weight to read as clearly as on light ones.
+    val deep = 0.2126f * skin.red + 0.7152f * skin.green + 0.0722f * skin.blue < 0.3f
+    val edge = skin.darker(if (deep) 0.55f else 0.42f)
+    val line = if (deep) Color(0xFF0E0907) else Color(0xFF2A211C).copy(alpha = 0.85f)
+    val soft = if (deep) Color(0xFF120B08) else skin.darker(0.5f)
+    val hair = (if (deep) 1.3f else 1f) * 1.dp.toPx()
+    val stroke = maxOf(1.2.dp.toPx(), u * 0.035f) * (if (deep) 1.3f else 1f)
+
+    // Shoulders and collar, then the neck.
+    val shoulders = Path().apply {
+        moveTo(o.x - 1.55f * u, o0.y + 1.36f * u0)
+        cubicTo(o.x - 1.5f * u, o.y + 1.2f * u, o.x - 0.9f * u, o.y + 1.12f * u, o.x - 0.5f * u, o.y + 1.06f * u)
+        lineTo(o.x + 0.5f * u, o.y + 1.06f * u)
+        cubicTo(o.x + 0.9f * u, o.y + 1.12f * u, o.x + 1.5f * u, o.y + 1.2f * u, o.x + 1.55f * u, o0.y + 1.36f * u0)
+        close()
+    }
+    drawPath(shoulders, look.topColor)
+    drawPath(shoulders, look.topColor.darker(0.35f), style = Stroke(hair))
+    val neck = Path().apply {
+        moveTo(o.x - 0.42f * u, o.y + 0.7f * u)
+        lineTo(o.x - 0.46f * u, o.y + 1.14f * u)
+        quadraticTo(o.x, o.y + 1.3f * u, o.x + 0.46f * u, o.y + 1.14f * u)
+        lineTo(o.x + 0.42f * u, o.y + 0.7f * u)
+        close()
+    }
+    drawPath(neck, skin.darker(0.08f))
+    drawPath(neck, edge, style = Stroke(hair))
+    val collar = Path().apply {
+        moveTo(o.x - 0.5f * u, o.y + 1.08f * u)
+        quadraticTo(o.x, o.y + 1.36f * u, o.x + 0.5f * u, o.y + 1.08f * u)
+    }
+    drawPath(collar, look.topColor.darker(0.3f), style = Stroke(stroke * 1.4f, cap = StrokeCap.Round))
+
+    // Head: an egg with a firmer jaw, and small ears.
     val head = Path().apply {
         moveTo(o.x, o.y - 1.25f * u)
         cubicTo(o.x + 0.62f * u, o.y - 1.25f * u, o.x + 1.0f * u, o.y - 0.85f * u, o.x + 1.0f * u, o.y - 0.2f * u)
-        cubicTo(o.x + 1.0f * u, o.y + 0.45f * u, o.x + 0.72f * u, o.y + 1.02f * u, o.x, o.y + 1.25f * u)
-        cubicTo(o.x - 0.72f * u, o.y + 1.02f * u, o.x - 1.0f * u, o.y + 0.45f * u, o.x - 1.0f * u, o.y - 0.2f * u)
+        cubicTo(o.x + 0.99f * u, o.y + 0.5f * u, o.x + 0.62f * u, o.y + 1.16f * u, o.x, o.y + 1.24f * u)
+        cubicTo(o.x - 0.62f * u, o.y + 1.16f * u, o.x - 0.99f * u, o.y + 0.5f * u, o.x - 1.0f * u, o.y - 0.2f * u)
         cubicTo(o.x - 1.0f * u, o.y - 0.85f * u, o.x - 0.62f * u, o.y - 1.25f * u, o.x, o.y - 1.25f * u)
         close()
     }
@@ -144,11 +191,46 @@ fun DrawScope.drawFace(f: FaceSpec, o: Offset, u: Float, c: NvColors) {
             moveTo(o.x + s * 0.97f * u, o.y - 0.24f * u)
             cubicTo(o.x + s * 1.16f * u, o.y - 0.3f * u, o.x + s * 1.16f * u, o.y + 0.16f * u, o.x + s * 0.95f * u, o.y + 0.12f * u)
         }
-        drawPath(ear, c.figureFill)
-        drawPath(ear, c.figureLine, style = Stroke(hair))
+        drawPath(ear, skin)
+        drawPath(ear, edge, style = Stroke(hair))
     }
-    drawPath(head, c.figureFill)
-    drawPath(head, c.figureLine, style = Stroke(hair))
+    drawPath(head, skin)
+    // Soft shading down the far side of the face.
+    clipPath(head) {
+        drawPath(head, skin.darker(if (deep) 0.06f else 0.12f))
+        translate(-0.07f * u, -0.05f * u) { drawPath(head, skin) }
+    }
+    if (look.beard == Beard.STUBBLE) {
+        val jaw = Path().apply {
+            moveTo(o.x - 0.98f * u, o.y + 0.12f * u)
+            quadraticTo(o.x - 0.7f * u, o.y + 0.42f * u, o.x - 0.35f * u, o.y + 0.42f * u)
+            quadraticTo(o.x, o.y + 0.36f * u, o.x + 0.35f * u, o.y + 0.42f * u)
+            quadraticTo(o.x + 0.7f * u, o.y + 0.42f * u, o.x + 0.98f * u, o.y + 0.12f * u)
+            lineTo(o.x + 1.0f * u, o.y + 1.3f * u); lineTo(o.x - 1.0f * u, o.y + 1.3f * u); close()
+        }
+        clipPath(head) { drawPath(jaw, look.hair.copy(alpha = 0.11f)) }
+    }
+    drawPath(head, edge, style = Stroke(hair))
+
+    // Hair: a cap over the crown with a hairline across the forehead.
+    val thick = when (look.hairStyle) { HairStyle.CURLY -> 0.16f; HairStyle.SIDE -> 0.1f; HairStyle.BUZZ -> 0.02f; else -> 0.05f }
+    val hairline = when (look.hairStyle) { HairStyle.RECEDING -> -1.0f; else -> -0.8f }
+    val cap = Path().apply {
+        moveTo(o.x - 1.02f * u, o.y - 0.28f * u)
+        cubicTo(o.x - (1.02f + thick) * u, o.y - (0.95f + thick) * u, o.x - 0.66f * u, o.y - (1.28f + thick) * u, o.x, o.y - (1.28f + thick) * u)
+        cubicTo(o.x + 0.66f * u, o.y - (1.28f + thick) * u, o.x + (1.02f + thick) * u, o.y - (0.95f + thick) * u, o.x + 1.02f * u, o.y - 0.28f * u)
+        lineTo(o.x + 0.9f * u, o.y - 0.32f * u)
+        quadraticTo(o.x + 0.84f * u, o.y + (hairline + 0.12f) * u, o.x + 0.5f * u, o.y + hairline * u)
+        quadraticTo(o.x, o.y + (hairline + 0.06f) * u, o.x - 0.5f * u, o.y + hairline * u)
+        quadraticTo(o.x - 0.84f * u, o.y + (hairline + 0.12f) * u, o.x - 0.9f * u, o.y - 0.32f * u)
+        close()
+    }
+    val hairColor = if (look.hairStyle == HairStyle.BUZZ) Color(
+        skin.red + (look.hair.red - skin.red) * 0.75f, skin.green + (look.hair.green - skin.green) * 0.75f,
+        skin.blue + (look.hair.blue - skin.blue) * 0.75f,
+    ) else look.hair
+    drawPath(cap, hairColor)
+    drawPath(cap, hairColor.darker(0.3f), style = Stroke(hair))
 
     // Forehead lines (AU1/AU2) and the vertical creases between the brows (AU4).
     val raise = maxOf(f.au1, f.au2)
@@ -182,7 +264,7 @@ fun DrawScope.drawFace(f: FaceSpec, o: Offset, u: Float, c: NvColors) {
             moveTo(innerX, innerY)
             quadraticTo(midX, midY - 0.03f * u, outerX, outerY)
         }
-        drawPath(brow, line, style = Stroke(stroke * 1.9f, cap = StrokeCap.Round))
+        drawPath(brow, if (deep) Color(0xFF070504) else look.hair.darker(0.2f).copy(alpha = 0.95f), style = Stroke(stroke * 1.9f, cap = StrokeCap.Round))
     }
 
     // Eyes: lids open with AU5, narrow with AU7 and AU6; the iris follows the gaze.
@@ -199,11 +281,12 @@ fun DrawScope.drawFace(f: FaceSpec, o: Offset, u: Float, c: NvColors) {
             quadraticTo(ec.x, ec.y + down * 2f, inner.x, inner.y)
             close()
         }
-        drawPath(eye, c.background)
+        drawPath(eye, Color(0xFFF6F2EA))
         clipPath(eye) {
             val iris = Offset(ec.x + f.gazeX * 0.1f * u, ec.y + f.gazeY * 0.06f * u + 0.005f * u)
-            drawCircle(c.ink.copy(alpha = 0.62f), 0.072f * u, iris)
-            drawCircle(c.ink.copy(alpha = 0.9f), 0.03f * u, iris)
+            drawCircle(Color(0xFF5B3D2A), 0.072f * u, iris)
+            drawCircle(Color(0xFF1C1512), 0.032f * u, iris)
+            drawCircle(Color.White.copy(alpha = 0.8f), 0.014f * u, Offset(iris.x - 0.022f * u, iris.y - 0.022f * u))
         }
         // Upper lid line, heavier; lower lid lighter.
         val upper = Path().apply { moveTo(inner.x, inner.y); quadraticTo(ec.x, ec.y - up * 2f, outer.x, outer.y) }

@@ -76,7 +76,9 @@ Poses are drawn, never photographed. Each pose is a set of parameters solved int
 
 Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and right are always the figure's own.
 
-**Faces live on plates.** The figures are faceless by design. Where the face itself is the subject (microexpressions, the face, gaze, smiles), chapters use drawn face plates: neutral, ungendered sketches built from FACS action units in `FacePlates.kt`, labelled with the units they show and described in prose for TalkBack.
+**People, not mannequins.** Every figure is drawn as a person: a man from a cast of twelve (`People.kt`), varied in skin tone, age, build, hair, beard and clothes so that most readers can find someone like themselves. Each pose always shows the same man, chosen from its id, and a do/don't pair shows the same man in both panels. A small companion becomes the main figure's child or baby, and a person lying in bed is an older man. The renderer dresses the solved skeleton in shirt, trousers and shoes, gives it a face (eyes, brows, nose, mouth, ears, glasses), joins limbs to the body without seams, and adds soft shading from the upper left.
+
+**Faces up close live on plates.** Where the face itself is the subject (microexpressions, the face, gaze, smiles), chapters use drawn face plates built from FACS action units in `FacePlates.kt`, labelled with the units they show and described in prose for TalkBack. Each plate is drawn on one clean-shaven or lightly stubbled man from the cast, so the expressions are compared on one face and nothing hides the mouth.
 
 ![Face plate](docs/screens/27-face-plate.png) ![Six posed prototypes](docs/screens/28-face-prototypes.png)
 

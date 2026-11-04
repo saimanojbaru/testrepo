@@ -125,9 +125,21 @@ Part II is the most sensitive part of the book, and it follows extra rules on to
 - **Pose meanings kept consistent.** The new `p_pro_video_lean_in` is the "too close" example in 4.1 and 4.2, so later chapters use `p_pro_video_call` for good video posture.
 - **Length.** Part IV chapters average about 4,100 words. The first five ran shorter (3,780–3,990); the last ten returned to 4,150–4,310 after teach blocks were aimed at 260–300 words.
 
+## The people in the figures
+
+The figures were first drawn as faceless grey mannequins. Readers found them robotic and hard to relate to, so every figure is now drawn as a person:
+
+- **A cast of twelve men** in `People.kt`, varied in skin tone, age (two older men), build, hair, beard and clothes. A pose always shows the same man, chosen from its id. Do/don't pairs pass the same seed, so both panels show one man.
+- **Families and care.** A companion smaller than 0.8 scale is the main figure's child, and smaller than 0.45 his baby (same skin and hair, a child's clothes or a one-piece). A companion lying down is an older man.
+- **Clothes and body.** The renderer dresses the same solved skeleton: shirt, T-shirt, polo or jumper, with long, rolled or short sleeves; trousers; shoes or trainers with soles. Men's trunks are shaped with sloping shoulders and narrower hips, and build widens the waist and belly. Children's heads are larger for their bodies.
+- **Faces.** Eyes, brows, nose, mouth and ears are drawn only where that part of the face is turned toward the viewer, so profiles and back views work. Hair is cut away where the face shows, and covers the head from behind. Beards, stubble and glasses come from the cast.
+- **No seams.** Inside a "quiet" zone a shape is filled flat, with no edge or shadow, so sleeves join the shirt at the shoulder, shins join thighs at the knee, and seated thighs run into the lap.
+
+Annotations, anchors, views and morphing are unchanged, because the skeleton underneath is unchanged.
+
 ## Face plates (added for Part I)
 
-The body figures stay faceless by design. Faces appear only on dedicated plates: neutral, ungendered sketches drawn from FACS action units (the standard coding of facial muscle movements), each with a TalkBack description. There are seven plates:
+Where the face itself is the subject, chapters use dedicated plates drawn from FACS action units (the standard coding of facial muscle movements), each with a TalkBack description. Each plate is drawn on one man from the cast who is clean-shaven or lightly stubbled, so nothing hides the mouth. On deep skin tones the features are drawn heavier, so they read as clearly as on light skin. There are seven plates:
 
 - `face-smiles`, two smiles;
 - `face-brows`, three brows;
@@ -139,7 +151,7 @@ The body figures stay faceless by design. Faces appear only on dedicated plates:
 
 They are used in 1.2, 1.4, 1.6 and 1.7. Each is drawn from a `FaceSpec` in `FacePlates.kt`, so a new plate is a few lines of code. `DiagramSheetTest` renders every plate in Paper and Ink for review, and the contract test rejects unknown diagram ids.
 
-This settles the earlier open question about faceless figures, but the choice is reversible. If you would rather have faces on the figures themselves, the same `drawFace` could be placed on the pose skeleton's head.
+The figures and the plates now share one cast, so a reader meets the same men in both.
 
 ## Quiz rules
 
