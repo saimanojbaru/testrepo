@@ -82,6 +82,20 @@
    "doCaption": "Letting the breath go, and the tears with it.",
    "dontCaption": "Holding back tears with a locked jaw and a held breath.",
    "annotation": "Holding back tears is mostly done in the breath and the throat. The effort is visible, and letting go is not a failure."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_face_to_face",
+   "doCaption": "Beside him, breathing slowly, saying little",
+   "dontCaption": "Facing a frightened child and saying 'deep breaths'",
+   "annotation": "An instruction to breathe deeply often produces gulps. Slow, audible out-breaths beside someone give them a rhythm to join."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_stand_hand_eyes",
+   "doCaption": "A friend nearby, in no hurry",
+   "dontCaption": "Holding back tears alone in a corridor",
+   "annotation": "A held breath and a locked jaw are the work of not crying. Company without questions makes it safe to let the breath go."
   }
  ],
  "caseStudy": "Sam, thirty-six, is waiting with his friend Lee outside a hospital consulting room while Lee's mother sees a specialist about test results. Lee is talking about football, quickly, and Sam goes along with it. But Sam notices that Lee is breathing fast and high, his shoulders lifting with each breath, and that he takes a breath every few words. When a nurse calls a name that is not his mother's, Lee's breath stops completely for a moment, and he sighs heavily when he realises.\n\nThen Lee stops talking. He presses a hand to his chest and says he feels strange, that his hands are tingling and he cannot get enough air. He is breathing very fast now. Sam asks whether he has any pain in his chest or arm, and whether this has happened before. Lee says no pain, and yes, once, before his own father's funeral.\n\nSam stays calm and sits beside him. He tells Lee that he is right here and that this feeling will pass. He does not tell him to breathe. He breathes slowly himself, low and long on the way out, and after a minute says quietly, *Breathe out with me, as slow as you can.* They do it together a few times. He also catches a nurse's eye, briefly, in case. After a few minutes Lee's breathing slows and the tingling fades.\n\nWhen Lee's mother comes out, the news is better than they feared. In the car afterwards, Lee says he had no idea how scared he was until his body told him. Sam suggests he mention the episodes to his own doctor, since it has now happened twice, and Lee says he will.\n\nSam does not mention the fast breathing he had seen for twenty minutes beforehand. He had simply stayed, and breathed.",
@@ -100,6 +114,10 @@
     "Notice whether the movement was mainly in your chest or your belly.",
     "Once, count discreetly the breathing of someone sitting near you at rest.",
     "Write down the range you found, as a rough baseline."
+   ],
+   "variations": [
+    "Count your breaths at rest and again after climbing a flight of stairs, and note how long your breathing takes to return to its resting rate.",
+    "Count your breaths for a minute while watching something calm and again while watching something tense, and compare."
    ]
   },
   {
@@ -111,6 +129,10 @@
     "Note any held breath, quickening, sigh or catch in the voice, with the time.",
     "Note what had just been said at each change.",
     "Write one sentence on what the breath showed that the face did not."
+   ],
+   "variations": [
+    "Watch the same interview a second time with the sound off, and see whether you notice the breath changes without the words.",
+    "Watch a sports interview after a defeat and note how the player's breath behaves on the hardest questions."
    ]
   },
   {
@@ -122,6 +144,10 @@
     "Note what you were doing when you held it.",
     "Note any pattern, such as particular people, emails or tasks.",
     "Write one trigger you will watch for in future."
+   ],
+   "variations": [
+    "Add a note of what your shoulders and jaw were doing each time you caught a held breath.",
+    "Choose one recurring task that makes you hold your breath, and practise a slow out-breath before you start it each time."
    ]
   },
   {
@@ -133,6 +159,10 @@
     "Ask them afterwards whether they noticed, and whether their breathing changed.",
     "Swap roles.",
     "Write down what you would say, if anything, to someone in real distress."
+   ],
+   "variations": [
+    "Try the exercise with one of you telling a mildly stressful story, and see whether the listener's slow breathing changes the teller's.",
+    "Practise breathing beside someone while also talking, keeping your voice low and your sentences on the out-breath."
    ]
   },
   {
@@ -144,6 +174,10 @@
     "Write the three or four calm sentences you would say to someone in a panic.",
     "Say them aloud, slowly, until they come easily.",
     "Note the emergency number where you live and when you would call it."
+   ],
+   "variations": [
+    "Write down what you would do if the person also had chest pain, and practise saying the call to emergency services aloud.",
+    "Find out whether your workplace has a trained first-aider and where the nearest defibrillator is kept."
    ]
   }
  ],
@@ -225,6 +259,45 @@
    "explain": "Holding back tears is effortful, and being urged to stop or to start adds pressure. Small practical kindness and an unhurried silence let him do whatever he needs, and he will remember who stayed.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Roughly how many times a minute does a healthy adult breathe at rest?",
+   "options": [
+    "Around four to six times, slowly and very deeply into the belly",
+    "Roughly twelve to twenty times, quietly and mostly low in the body",
+    "Around forty to fifty times, quickly and mostly in the upper chest area",
+    "It varies so much from person to person that there is no typical range"
+   ],
+   "answer": 1,
+   "explain": "A healthy adult at rest breathes roughly twelve to twenty times a minute, quietly, with the movement mostly low in the body. Departures from this picture are one of the easiest things to see across a room.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Before a race, a pupil who has asthma is breathing fast, says his chest is tight and stops mid-sentence to breathe. A colleague says it is nerves. What fits this chapter best?",
+   "options": [
+    "Tell him to take some big deep breaths and get to the start line on time",
+    "Agree that it is nerves, since he has been anxious before races in the past",
+    "Treat it as possibly physical: follow his asthma plan and get help quickly",
+    "Ask him to breathe into a paper bag until the feeling of tightness has gone"
+   ],
+   "answer": 2,
+   "explain": "Breathlessness can have physical causes, and a reader cannot reliably tell them from anxiety. With a known condition such as asthma, treat the possibility of an emergency first, and call for help if he does not improve.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that the best way to help a person in a panic is to tell them to take big, deep breaths. What does this chapter suggest?",
+   "options": [
+    "It is right, since deep breaths in are the quickest way to stop a panic",
+    "Slow, easy breathing with long out-breaths, shown by example, helps more",
+    "It is right, but only if the person also breathes into a paper bag at once",
+    "It makes no difference, since breathing has no effect on how panic feels"
+   ],
+   "answer": 1,
+   "explain": "\"Take a deep breath\" usually produces a big, effortful breath in, the pattern of stress. Slow breathing with a long out-breath, offered by breathing that way yourself, tends to help more.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -253,6 +326,110 @@
    "work": "Breath: The New Science of a Lost Art",
    "author": "James Nestor",
    "note": "Riverhead Books, 2020. A popular account of breathing; enjoyable, though some of its claims go further than the evidence."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The manager who kept sighing",
+   "scene": "Claire, twenty-nine, is presenting her first quarterly report to her manager, Bernard, and two directors. She has rehearsed it for a week.\n  Five minutes in, as she puts up the first table of figures, Bernard sighs: a long, audible breath out, his shoulders dropping as it leaves him.\n  Two slides later he does it again. By the end of the presentation, Claire has counted five sighs, and she is sure each one marked a point where\n  he thought her work was poor.\n\n  She finishes quickly, skipping her last two slides, and answers the directors' questions in a voice that keeps rising. Afterwards she goes to\n  the toilets and cries. She tells a friend at lunch that Bernard obviously thinks she is useless, and that she is going to start looking for\n  another job.\n\n  That afternoon, Bernard stops by her desk to say that it was one of the clearest reports he has seen from the team, and asks whether she could\n  send him the slides she skipped. He mentions, in passing, that he has been reading figures all day and that his eyes are \"falling out of my\n  head\".\n\nClaire also remembers that Bernard did not look at her during most of the sighs. He was looking down at the printed copy of her figures, pen in hand, and twice he wrote something in the margin straight afterwards.\n\nClaire has worked for Bernard for only four months. In that time she has seen him praise people warmly in team meetings and criticise them, rarely, in private. She has never heard him criticise anyone by sighing. But she has never presented to him before, and she has spent the week imagining everything that could go wrong, so when the first sigh comes, it lands on a mind already braced for it.",
+   "misread": "Claire read each sigh as a verdict on her work. She treated a breath pattern as a message, and she counted the sighs as if more of them meant stronger disapproval, without asking what else might produce them.\n\nShe also let the sighs reorganise her memory of the whole meeting. By lunchtime, she remembered the directors as cold and her answers as poor, although neither was true.\n\nShe also forgot what she knew about him. In four months she had never seen him use a sigh as a criticism, and he had never been shy of saying what he thought.",
+   "betterRead": "Sighs are among the most misread signals there are, because in conversation they sound like comments. Much of the time they are something else. Li, Feldman and colleagues found that regular sighs do physical work, re-opening parts of the lungs that ordinary shallow breathing lets close, and Vlemincx's research suggests that sighs often reset breathing after a period of tension or concentration. A manager who has spent the day holding his breath over spreadsheets, and then studies another table of figures, will sigh, whatever he thinks of the presenter. A better reading would have weighed the sighs against everything else Bernard did: he took notes, nodded at her conclusions and asked no hostile questions. And if a sigh matters, it can be checked with a question later, such as \"Was there anything in the figures that worried you?\"\n\nClaire now keeps a simple rule for presentations: read the room by what people do, not by the noises they make.\n\nIt also helps to count what you can see rather than what you hear. Bernard's pen, his notes and his nods were all there to be read, and every one of them pointed the other way."
+  },
+  {
+   "title": "The boy who could not get his breath",
+   "scene": "Ms Adeyemi teaches PE at a secondary school. At the end-of-year sports day, Josh, twelve, comes to find her ten minutes before the\n  800 metres. He is breathing fast and high, his shoulders lifting with each breath. He says his chest feels tight and that he does not think he\n  can run. His voice is thin and he stops halfway through sentences to breathe.\n\n  Another teacher, standing nearby, says that Josh is \"always like this before races\" and that it is nerves. He suggests that Ms Adeyemi tells him\n  to take some deep breaths, have a drink of water and get to the start line, because he will be fine once he is running.\n\n  Ms Adeyemi has read the school's medical list that morning. Josh has asthma. She also notices that, when he breathes out, she can hear a faint\n  whistle, and that he is sitting forward with his hands on his knees.\n\nJosh's friends have gathered round, and one of them is laughing and telling him to stop being dramatic. Josh is trying to smile, and the effort makes his breathing more ragged. Ms Adeyemi notices that his lips look slightly pale.\n\nThe 800 metres is the event Josh's class has been training for all term, and his name is already on the start list. The starter is calling the runners. The other teacher looks at his watch, says that the boy needs to get moving, and reminds Ms Adeyemi that the head wants every event to start on time.",
+   "misread": "The other teacher read Josh's fast breathing and tight chest as nerves, because he had seen the boy anxious before races and because nerves are the common explanation for a child who does not want to run. He did not consider that the same signs could have a physical cause.\n\nHe also proposed the one response, deep breaths and a run, that would have been most dangerous if the cause was physical.\n\nAnd because Josh had been anxious before races in the past, the teacher's memory supplied an answer before he had looked at the boy in front of him. A familiar explanation is not the same as a checked one.",
+   "betterRead": "Fast, high breathing, a tight chest and difficulty speaking can come from anxiety, and they can also come from asthma, an allergic reaction, a heart problem or other physical causes. A reader cannot always tell which, and should never assume that breathlessness is \"just nerves\". Ms Adeyemi did what the chapter asks: she treated the possibility of a physical emergency first. She sat Josh upright, helped him use his reliever inhaler as his asthma plan described, stayed calm and close, and sent another pupil for the first-aider. She was ready to call an ambulance if he did not improve quickly or got worse. He improved within a few minutes, and she arranged for his parents to be told. Josh did not run the 800 metres that day, and nobody suggested that he should have.\n\nAfterwards, Ms Adeyemi also talked to the other teacher, without blame, about how easily she might have made the same assumption. They agreed that the school's medical list would be read aloud at the next staff briefing before sports day."
+  },
+  {
+   "title": "The man who would not cry in the meeting",
+   "scene": "Ravi, fifty-two, has led the same team of engineers for eleven years. On a Monday morning he has to tell them that the company is closing\n  their site at the end of the year. He stands at the front of the room and reads from a prepared sheet. His voice is flat and very careful. He\n  pauses often, but not where the sentences break, and Kate, one of his engineers, notices that in each pause his chest stops moving. He swallows\n  repeatedly. His jaw is tight. When he reaches the part about redundancy payments, he stops for several seconds, looks at the ceiling and then\n  carries on in the same flat voice.\n\n  Several people in the team are angry afterwards. One says that Ravi read it out \"like a robot\" and clearly does not care what happens to them.\n  Another says he has probably been offered a job at head office and is relieved to be shot of them.\n\n  Kate is not sure. She has worked with Ravi for six years and has never heard his voice like that.\n\nRavi had insisted on making the announcement himself, rather than leaving it to someone from head office. He had written the sheet the night before and rewritten it three times.\n\nAt the end, Ravi folds the sheet, says that he will answer any questions individually, and leaves the room more quickly than anyone has seen him move. Nobody has a chance to ask him anything. Two people go straight out for a cigarette, and the rest sit in silence.",
+   "misread": "The team read Ravi's flat voice and stiff delivery as coldness, and from coldness built stories about his not caring and having secured his own future. They heard the voice but did not watch the breath.\n\nAnd once one person had said \"robot\", the rest of the room began to hear his care as its opposite, and to remember the meeting that way.\n\nThey also took his quick exit as more of the same, when it fitted equally well a man who could not hold his breath for one more minute.",
+   "betterRead": "The signs of holding back tears are mostly in the breath and the throat: breath held or tightly controlled, pauses that fall in the wrong places, repeated swallowing, a set jaw, eyes lifted to the ceiling, and a voice kept flat because letting it move would let it break. Ravi's pauses fell where his breath stopped, not where his sentences ended. A flat voice in a moment like this is often the sound of a man keeping himself together, not of a man who does not care. Kate's better reading began with the baseline: this was not Ravi's voice. She went to his office an hour later and found him with the door shut. When she said that the announcement must have been hard to make, he told her he had been fighting tears since the weekend and had been determined not to cry in front of the team. He was losing his job too.\n\nKate's question also gave him something the meeting had not: a private place where his breath could finally do what it had been held back from doing."
+  },
+  {
+   "title": "The grandmother and the nightmare",
+   "scene": "Pat, sixty-six, is looking after her grandson Alfie, seven, for the weekend. At two in the morning he wakes from a nightmare, screaming,\n  and when she reaches his room he is sitting up in bed, gulping for air between sobs. His breath comes in sharp, catching pulls, his shoulders\n  jerking with each one, and he cannot get words out.\n\n  Pat's first instinct is to tell him to take deep breaths, which is what she has always told her own children. She sits on the edge of the bed,\n  facing him, holds his shoulders and says, \"Big deep breaths, Alfie, come on, deep breaths.\" Alfie tries. He gulps harder, his breath rising\n  higher in his chest, and he starts to cry more, saying that he can't.\n\n  Pat remembers something her daughter told her about a breathing exercise Alfie's school uses, and something she read about breathing beside\n  someone rather than instructing them.\n\nAlfie's parents are away for the first time since he was born, and he has been brave about it all day. At bedtime he asked twice whether his mum would ring in the morning.\n\nPat herself is frightened. She has never seen him like this, and she can feel her own heart going and her own breath high in her chest. Her instinct, she realises later, was to make the frightening thing stop as fast as possible, and the quickest way she knew was to give an order. She is also tired, and aware that she will have to tell his mother about this in the morning.",
+   "misread": "Pat read Alfie's gulping as a problem to be fixed by instruction, and her instruction asked for exactly the kind of breathing he was already struggling with: big, effortful breaths in, high in the chest.\n\nFacing him and holding his shoulders also made her one more thing to manage, when what he needed was something to lean against.\n\nHer own fear, high in her chest, was also part of the room. Alfie was breathing beside a frightened adult giving orders, and children match what is around them.",
+   "betterRead": "\"Take a deep breath\" usually produces a big, effortful breath in, which lifts the chest and shoulders and can make distress worse. What helps more is a slow, easy rhythm with a long breath out, and the easiest way to offer that is to do it yourself, nearby, without asking for anything. Pat let go of Alfie's shoulders, moved to sit beside him against the headboard and put her arm round him loosely. She breathed slowly and audibly, with long out-breaths, and talked to him in a low voice about nothing much: the cat, the morning, pancakes. She did not tell him to breathe. Within a few minutes his gulps had slowed, and then his breath was moving with hers. When he was calm, he told her about the dream, and fell asleep with the light on.\n\nPat noticed, too, that her own breathing had slowed as she breathed for him. Settling him had settled her, which is part of why it worked."
+  }
+ ],
+ "workedReading": {
+  "title": "The breath across the desk",
+  "scene": "Helen is a financial adviser. Mr and Mrs Grant, both sixty-four, have come to review their pensions before they retire next year. The first half hour is relaxed: they talk about their plans to travel and help with their grandchildren, and both breathe easily, laughing at each other's jokes. Then Helen turns the screen to show them the projection. Their pensions will provide about two-thirds of the income they had assumed. As she says the figure, Mr Grant's breath stops. His chest goes still, his hand freezes on the arm of the chair, and for several seconds he does not move. Then he lets out a long sigh. Mrs Grant, beside him, begins breathing faster and higher, her shoulders lifting, and she starts asking questions very quickly, one after another, without waiting for answers.\n\nHelen has had this conversation many times. She knows that numbers delivered to people in shock are rarely remembered, and that the next few minutes will decide whether they leave with a plan or only with a figure.\n\nHelen also knows that people often say little in the first minute after bad news, and that what they do say is not always what they mean. Her job in that minute is to watch, wait and make it safe for them to catch up, not to fill the silence with more information.",
+  "steps": [
+   {
+    "label": "Notice the breath first",
+    "text": "Helen has learned to watch breath before faces in moments like this, because it changes first and is harder to manage. She notes two different patterns: in Mr Grant, a held breath followed by a long sigh; in Mrs Grant, quick, high breathing and a rush of questions. She notes when each began: at the moment she said the figure.\n\nBreath is also easier for her to watch discreetly than faces. She can see their shoulders and hear their pauses while she looks at the screen, without making either of them feel studied.\n\nShe also watches her own impulse. When clients go quiet, she has a habit of explaining more, and she knows that more explanation is the last thing a held breath needs."
+   },
+   {
+    "label": "Mark the situation",
+    "text": "The situation is one that would affect almost anyone: unwelcome news about money, in a meeting that had been about hopes. The breath changes are about the news, not about her. She notes that this is the moment the meeting has changed, and that what she does next matters more than the figures on the screen.\n\nShe also reminds herself that she has seen this moment in many clients. It is one of the most predictable reactions in her work, which helps her stay calm, and her calm is part of what will help them.\n\nShe notes, too, that the room itself is not helping. It is warm, the blinds are half down and the screen is the brightest thing in it. She makes a note to open a window when they take a break."
+   },
+   {
+    "label": "Compare with their baseline",
+    "text": "For half an hour, both of them breathed easily and spoke in long, relaxed sentences. The change is sharp and simultaneous, which makes it meaningful. She also notes their different styles: in the earlier conversation, Mr Grant went quiet when he was thinking and Mrs Grant talked things through out loud. Their reactions to the figure fit those styles.\n\nShe notes, too, that couples often react in opposite ways to the same news, and that each may misread the other's reaction. Mr Grant's silence might look to his wife like indifference; her questions might feel to him like panic.\n\nThe baseline also tells her what calm looks like for each of them, so she will know when they have got back to it. That will be her signal that they are ready to look at options."
+   },
+   {
+    "label": "Read the cluster",
+    "text": "Mr Grant's held breath, frozen hand and then the sigh fit a man taking a blow and then letting some of it out. Mrs Grant's fast, high breathing and rapid questions fit rising alarm. Neither pattern says exactly what they feel. Disappointment, fear, shock or embarrassment could all produce them. What the cluster says clearly is that both are under strain and that neither is ready for more numbers.\n\nShe also notices her own breath. Delivering bad news, she has caught herself holding it in the past, and she lets it out now, slowly, before she says anything else.\n\nShe also notes that both patterns began within a second of the figure. Breath often moves before faces do, which is one reason she watches it."
+   },
+   {
+    "label": "Hold the readings open",
+    "text": "Mr Grant's sigh might be resignation, or relief that the worst was not worse, or simply a reset after a held breath. Mrs Grant's questions might be a wish to understand, or anxiety looking for somewhere to go. Helen notes that she does not need to choose. She needs to slow the meeting down and let them catch up.\n\nHolding the readings open also stops her from trying to answer every one of Mrs Grant's questions at once, which would keep the pace high and the alarm with it.\n\nShe also reminds herself that a sigh after a held breath is often the body resetting, not a statement. It may mean that Mr Grant is ready to listen again, or simply that he has started to breathe."
+   },
+   {
+    "label": "Slow the room",
+    "text": "She stops talking about figures. She lets a few seconds pass, breathes out slowly herself, and says, in a low, unhurried voice, \"That's a lot to take in, and it's not what you were expecting. We've got plenty of time, and there are several things we can do about it.\" She offers them a glass of water and asks whether they would like to take a break or carry on.\n\nShe also turns the screen away slightly, so that the figure is no longer between them, and moves her chair a little to the side of the desk rather than directly across it.\n\nShe also says nothing about their breathing, and does not tell either of them to calm down. Her own slower pace, and the pause, do that work without a word."
+   },
+   {
+    "label": "What happened",
+    "text": "Mrs Grant's breathing slows as Helen speaks, and she says she would like a minute. Mr Grant says quietly that he had been worried about this for a while and had not wanted to look. After a short break they go through the options together: working part-time for two more years, moving some savings and adjusting their plans. They leave with a plan they both understand. Helen notes that if she had pressed on with the next slide, she would have been explaining figures to two people who could no longer hear them.\n\nShe makes a note in their file to send a written summary the next day, because she knows that people remember little of what is said after a shock, however calm the rest of the meeting becomes.\n\nMrs Grant tells her at the door that she had been close to tears and was grateful for the break. Mr Grant shakes her hand and says it was the first time anyone had told him the truth about it without making him feel stupid."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Telling people to take a deep breath",
+   "body": "It is the most common thing people say to someone upset, and it often makes things worse. A person told to take a deep breath usually takes a big, effortful breath in, lifting the chest and shoulders, which is the pattern of stress rather than calm. Someone already over-breathing can be pushed further into the loop that feeds panic. It is also an instruction, which adds a demand to a person who is already overwhelmed. What tends to help more is slow, easy breathing with a long out-breath, offered by example rather than by command. If you say anything, say something like \"I'm here, there's no rush\" in a low voice, and breathe slowly yourself.\n\nWith children, the same applies even more strongly. A child told to take deep breaths will often try hard to obey, which means bigger, faster gulps. A child who is held loosely, or sat beside, by an adult breathing slowly will often fall into step without being asked.\n\nIt also helps to remember that people who have been told to take a deep breath many times may hear it as dismissive, as if their distress were a matter of technique. Being kept company feels very different from being coached."
+  },
+  {
+   "title": "Assuming breathlessness is just anxiety",
+   "body": "Because panic and over-breathing are common, it is easy to assume that anyone breathless and frightened is having a panic attack. That assumption can be dangerous. Asthma, allergic reactions, heart problems, blood clots and other medical emergencies can all cause breathlessness, chest tightness, fear and a sense of not getting enough air. A reader cannot tell them apart reliably by watching. If someone has chest pain, pain spreading to the arm, jaw or back, blue lips, confusion, difficulty speaking, a known condition such as asthma or a severe allergy, or if you are simply unsure, treat it as a medical emergency and call for help. A panic attack, frightening as it is, is a conclusion to reach only once physical causes have been ruled out.\n\nIt also helps to know the emergency number where you are, and where the nearest defibrillator is in places you spend a lot of time. Decisions in an emergency are made faster by people who have thought about them in advance.\n\nIt also helps to stay with the person while you wait for help, to keep them sitting comfortably, usually upright if they are struggling to breathe, and to tell the emergency operator what you see. Operators are trained to guide you through what to do next."
+  },
+  {
+   "title": "Reading every sigh as a comment",
+   "body": "In conversation, a sigh sounds like an opinion: boredom, disappointment, exasperation. Sometimes it is one. Much more often it is the body resetting its breathing after concentration, tension or a period of shallow breaths. A sigh in the middle of your presentation, your story or your request may be about you, or about the person's tiredness, their own worries or the stuffy room. Read sighs against the cluster: a sigh with a turned-away body, a flat face and a pointed silence means something different from a sigh with continued attention and a nod. When it matters, ask, gently, rather than deciding.\n\nIt also helps to remember how often you sigh yourself without meaning anything by it. Most people, asked to notice their own sighs for a day, are surprised by how many there are and how few were comments on anyone.\n\nSighs also cluster in certain settings: long meetings, close reading, waiting rooms and warm rooms after lunch. A sigh in one of those places is even less likely to be about you."
+  },
+  {
+   "title": "Watching someone's breath too openly",
+   "body": "Breathing is one of the few signals people can become instantly self-conscious about. Staring at someone's chest or shoulders, counting their breaths visibly, or announcing what you see, such as \"You're breathing really fast\", tends to make breathing more awkward, not less. In a man, it can also be read as staring at his body for other reasons. Read breath with the edge of your attention, in passing, while you look at the person's face or the room. Use what you notice to guide what you do, such as slowing down or offering a pause, rather than reporting it.\n\nThe same applies to your own breathing in front of others. You do not need to hide your breath, but if you use slow breathing to calm yourself in a meeting, do it quietly. A loud, obvious breathing exercise can unsettle a room.\n\nIf you do need to mention someone's breathing, for example because you are worried they are unwell, ask a question rather than making an observation. \"Are you feeling all right? Do you need to sit down?\" is easier to hear than a report on their chest."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Does slow breathing really calm people down?",
+   "a": "There is reasonable evidence that it can. A systematic review by Andrea Zaccaro and colleagues in 2018 found that slow breathing, at around six breaths a minute, was associated with changes in heart rhythm and brain activity linked to relaxation, and with lower reported anxiety and arousal, although most of the studies were small. A month-long study led by Melis Yilmaz Balban and David Spiegel compared five minutes a day of different breathing practices with mindfulness meditation, and found that breathing with long exhalations improved mood somewhat more. Slow breathing is not a cure for anything, and it does not work for everyone, but as a quick way to take the edge off arousal it is one of the best supported tools there is.\n\nIt also helps to remember that the out-breath matters most. Many breathing practices work by making the breath out longer than the breath in. Breathing in for a count of four and out for a count of six, for a few minutes, is a simple version anyone can try.\n\nIt is also worth noting what slow breathing is not. It does not replace treatment for anxiety, heart problems or breathing conditions, and some people find that focusing on their breath makes them more anxious, at least at first. If that happens, it is fine to stop and try something else, such as a walk."
+  },
+  {
+   "q": "Why do I sigh so much when I am stressed?",
+   "a": "Probably because stress makes your breathing tense and shallow, and sighs reset it. Vlemincx and colleagues found that breathing tends to become stiff and less variable during stress and concentration, and that a sigh is often followed by looser, more variable breathing, as if the system had been reset. That is the idea behind their resetter hypothesis. Frequent sighing is common during stressful periods and usually means nothing more than that. If sighing comes with persistent breathlessness, chest pain, dizziness or a sense that you cannot get a satisfying breath for long periods, it is worth mentioning to your doctor.\n\nYou can also use the sigh deliberately. A slow, full breath out, with the shoulders dropping, does on purpose what a natural sigh does by itself, and many people find it a quick way to loosen tension before a difficult moment.\n\nSome people also find that they sigh more when they are bored or tired, which is the same reset at work. A sigh in a dull meeting may be the body's way of staying alert."
+  },
+  {
+   "q": "Is it rude to watch someone's breathing?",
+   "a": "Not if you do it the way you notice anything else about a person: lightly, in passing, without staring. Doctors and nurses read breath constantly, and most patients never notice. The rudeness lies in making a show of it, or in using it against someone, for example by announcing that their breathing shows they are nervous. Breath is most useful as a private guide to your own behaviour: a sign to slow down, pause, offer water or stop pressing. Used that way, it makes you kinder, not more intrusive.\n\nIt also helps to notice your own breath first. If you catch yourself holding your breath or breathing high while someone else is upset, your breath is part of the room, and slowing it may help them more than anything you notice about theirs.\n\nIn close relationships it also helps to agree on a signal. Some couples and families use a word or a touch on the arm that means \"slow down, I can see you're under pressure\", which lets one person help another without commentary."
+  },
+  {
+   "q": "How can I tell a panic attack from a heart attack?",
+   "a": "Often you cannot, and neither can the person having it. Both can bring chest discomfort, breathlessness, a racing heart, sweating, nausea and an intense sense of fear or doom. Some features are more typical of a heart attack, such as crushing chest pain or pain spreading to the arm, jaw, neck or back, but heart attacks do not always follow the textbook, especially in women and older people. The safe rule is simple: if there is chest pain, or you are unsure, call emergency services. Paramedics would far rather attend a panic attack than miss a heart attack, and people who have panic attacks are often relieved to be checked.\n\nIt is also worth knowing that panic attacks can happen without any obvious trigger, including at night, and that people who have them are not being dramatic. The fear is real, even when the danger is not.\n\nIf someone tells you they are having a panic attack and they have had them before, it is still reasonable to ask whether this one feels the same as usual. A change in the pattern is a reason to get help."
+  },
+  {
+   "q": "Should someone who is hyperventilating breathe into a paper bag?",
+   "a": "No. The old advice to rebreathe from a paper bag is no longer recommended, because it can lower the oxygen in the blood, and because the person may be breathless for a reason that is not panic, such as asthma or a heart problem, in which case rebreathing could be harmful. If you are sure that someone is over-breathing from anxiety and there is no sign of a physical emergency, the safer approach is to stay calm and close, speak slowly, and encourage slower breathing with longer out-breaths, by example as much as by instruction. If in doubt, call for medical help.\n\nIf someone has had panic attacks before and has a plan from their doctor or therapist, ask them what helps. Many people know exactly what works for them, and being asked gives them back a little control.\n\nOnce the breathing has settled, it also helps to stay for a while. People often feel shaken, tired and embarrassed after a panic attack, and company in the half hour afterwards can matter as much as help during it."
+  },
+  {
+   "q": "Why does my breath catch when I try not to cry?",
+   "a": "Because crying is a breath pattern as much as a matter of tears. Crying brings sharp, catching inhalations and long, shaking exhalations, and when you try to hold it back, you hold the breath, tighten the throat and jaw, and swallow to stop the pattern starting. The catch in the breath and the break in the voice are the places where the crying pushes through. Many men learned early to hold this back, and some find it hard to let go even when they want to. There is nothing wrong with crying, and letting the breath go, when you are somewhere safe, is often what allows it to pass.\n\nIt can also help to know that the urge to cry often passes more quickly when it is allowed than when it is fought. A few minutes of crying, followed by a few slow breaths, frequently leaves people calmer than an hour of holding it back.\n\nIf you are with someone who is trying not to cry, the kindest thing is often to make it unnecessary to hold back: a quieter place, fewer people, a pause in the conversation, and the assurance that there is no hurry."
   }
  ],
  "watch": [
