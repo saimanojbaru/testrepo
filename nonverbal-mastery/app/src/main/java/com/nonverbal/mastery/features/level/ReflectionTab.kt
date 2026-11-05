@@ -2,6 +2,7 @@ package com.nonverbal.mastery.features.level
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,6 +16,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.semantics
@@ -71,6 +74,34 @@ fun ReflectionItem(
             modifier = column.padding(top = Space.x6),
         )
         Kind.References -> Column(column) {
+            if (level.watch.isNotEmpty()) {
+                SectionBreak(vertical = Space.sectionBreak + Space.x4)
+                SectionLabel("Watch it happen")
+                Spacer(Modifier.height(Space.x2))
+                Text(
+                    "Real footage where this can be seen. Each link opens outside the app, in YouTube or your browser.",
+                    style = Nv.type.uiSmall, color = colors.inkTertiary,
+                )
+                Spacer(Modifier.height(Space.x4))
+                val uri = LocalUriHandler.current
+                Column(verticalArrangement = Arrangement.spacedBy(Space.x4)) {
+                    level.watch.forEach { w ->
+                        Column(
+                            Modifier.fillMaxWidth()
+                                .clickable(role = Role.Button, onClickLabel = "Open the video outside the app") { runCatching { uri.openUri(w.url) } },
+                        ) {
+                            Text("${w.title.trim()}  ↗", style = Nv.type.bodySmall, color = Nv.tint)
+                            Spacer(Modifier.height(Space.x1))
+                            Text(
+                                w.source.trim() + (w.at?.let { "  ·  from $it" } ?: ""),
+                                style = Nv.type.uiSmall, color = colors.inkTertiary,
+                            )
+                            Spacer(Modifier.height(Space.x1))
+                            Text(inlineItalics(w.notice.trim()), style = Nv.type.uiSmall, color = colors.inkSecondary)
+                        }
+                    }
+                }
+            }
             SectionBreak(vertical = Space.sectionBreak + Space.x4)
             SectionLabel("Further study")
             Spacer(Modifier.height(Space.x4))

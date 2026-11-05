@@ -61,6 +61,8 @@ data class Level(
     val reviewPrompt: String,
     val estimatedMinutes: Int,
     val safetyGate: SafetyGate? = null,   // only set for 2.13
+    /** Additive: real footage where the chapter's subject can be seen happening. Opens outside the app. */
+    val watch: List<WatchRef> = emptyList(),
 )
 
 @Serializable
@@ -116,6 +118,20 @@ data class Reference(
     val work: String,
     val author: String,
     val note: String? = null,
+)
+
+/** A video where the behaviour in a chapter can be watched: a film scene, a talk, a documentary clip. */
+@Serializable
+data class WatchRef(
+    val title: String,
+    /** https link to an official upload (YouTube, TED and the like). */
+    val url: String,
+    /** Who published it: a channel, a studio, a broadcaster. */
+    val source: String,
+    /** What to look for, in one to three sentences. */
+    val notice: String,
+    /** Where in the video to look, as m:ss, when the scene is part of a longer video. */
+    val at: String? = null,
 )
 
 @Serializable

@@ -56,6 +56,8 @@ class ContentContractTest {
     private val pack = TestContent.pack
     private val poseIds = pack.poses.map { it.id }.toSet()
 
+    private val WATCH_HOSTS = setOf("youtube.com", "youtu.be", "ted.com", "vimeo.com", "bbc.co.uk", "pbs.org")
+
     private fun words(s: String?) = s?.split(Regex("\\s+"))?.count { it.isNotBlank() } ?: 0
     private fun sentences(s: String) = s.trim().split(Regex("(?<=[.!?…])\\s+(?=[\\p{Lu}“\"(])")).count { it.isNotBlank() }
 
@@ -114,6 +116,15 @@ class ContentContractTest {
         check(l.reflection.minCharacters >= 150, w, "reflection minimum must be ≥150 characters")
         check(words(l.failureMode) in 100..200, w, "failureMode must be 100–200 words (is ${words(l.failureMode)})")
         check(l.furtherStudy.size in 2..4, w, "furtherStudy must have 2–4 references")
+        // Watch links: official uploads on known video sites, each with something specific to notice.
+        check(l.watch.size <= 4, w, "watch must have at most 4 links")
+        l.watch.forEachIndexed { i, v ->
+            val host = Regex("^https://([^/]+)/").find(v.url)?.groupValues?.get(1)?.removePrefix("www.")?.removePrefix("m.")
+            check(host in WATCH_HOSTS, w, "watch[$i] url must be https on a known video site, got ${v.url}")
+            check(v.title.isNotBlank() && v.source.isNotBlank(), w, "watch[$i] needs a title and a source")
+            check(words(v.notice) in 8..70, w, "watch[$i] notice must be 8–70 words")
+            check(v.at == null || Regex("^\\d{1,2}:\\d{2}(:\\d{2})?$").matches(v.at), w, "watch[$i] at must look like m:ss")
+        }
         check(sentences(l.reviewPrompt) in 1..2, w, "reviewPrompt must be 1–2 sentences")
         check(!l.reviewPrompt.trim().endsWith("?"), w, "reviewPrompt must be a task, not a question")
         check(l.tier == tierFor(l.index), w, "tier ${l.tier} does not match index ${l.index}")
