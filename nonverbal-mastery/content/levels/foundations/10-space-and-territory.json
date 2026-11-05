@@ -80,6 +80,20 @@
    "doCaption": "Asking before you sit down.",
    "dontCaption": "Treating a colleague's desk as yours to use.",
    "annotation": "Secondary territories are claimed informally but felt strongly. A quick question avoids a surprising amount of resentment."
+  },
+  {
+   "doPoseId": "p_sit_perched",
+   "dontPoseId": "p_sit_lean_back_open",
+   "doCaption": "Perched, waiting to be shown a seat",
+   "dontCaption": "Sprawling in the host's own chair",
+   "annotation": "In someone else's home, wait to be offered a seat. Many chairs belong to someone, even if nobody says so."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pro_arms_folded_seated",
+   "doCaption": "Meeting on neutral ground, side by side",
+   "dontCaption": "Calling the hard talk into your own office",
+   "annotation": "Home ground gives the host an edge. When fairness matters, choose a place that belongs to neither of you."
   }
  ],
  "caseStudy": "Frank, sixty-three, retires after forty years as an engineer. For the first few weeks he enjoys being at home. Then he starts helping in the kitchen. He reorganises the cupboards so that things are where he thinks they should be, rearranges the drawer of utensils, and takes over the Sunday cooking. His wife, Linda, who has run the kitchen for thirty-five years, becomes short with him. They argue about where the colander should live. Frank tells a friend that retirement is putting a strain on the marriage.\n\nHis friend asks a question Frank has not considered: what did he lose when he retired? Frank thinks about it. He lost a desk he had sat at for fifteen years, a parking space with his name on it, a workshop where everyone knew which tools were his, and a seat at the end of the Monday meeting. And he has been trying, without realising it, to claim new territory in the one room that was most clearly Linda's.\n\nThat evening he asks Linda, carefully, whether he has been taking over the kitchen. She laughs, a little sharply, and says yes, and that she has started to feel like a guest in her own house. They put the cupboards back the way she had them.\n\nFrank clears out the garden shed, which has been full of junk for years, and turns it into a workshop with a bench, a radio and a pegboard for his tools. He joins a volunteer group that repairs bicycles for a local charity, and within a month he has a regular place at the end of their bench too. He still cooks on Sundays, when Linda asks him to, and he asks where things are.\n\nThe arguments stop. Linda tells her sister that Frank seems more himself. Frank thinks it is because he has somewhere to be himself in.",
@@ -98,6 +112,11 @@
     "Note any space whose ownership is unclear or disputed.",
     "Mark any space that has recently changed hands or been lost by someone.",
     "Write one sentence about any tension you have noticed around those spaces."
+   ],
+   "variations": [
+    "Do the same for a place you visit often but do not own, such as your parents' home or a friend's, and mark whose territory each part is.",
+    "Ask someone else who uses the same space to draw their own map, and compare the two.",
+    "Mark the places where you feel most and least at ease, and see whether they match the kinds of territory."
    ]
   },
   {
@@ -109,6 +128,10 @@
     "Note how newcomers responded to marked and unmarked places.",
     "Note any time a neighbour defended a marked place.",
     "Write down which kinds of marker seemed strongest."
+   ],
+   "variations": [
+    "Count how long marked and unmarked tables stay empty in the same room, and compare personal markers with impersonal ones.",
+    "Watch a beach, pool or park on a busy day and note the range of markers people use."
    ]
   },
   {
@@ -120,6 +143,10 @@
     "Consider whose territory each setting was.",
     "Write down which version of them you had been treating as the real one.",
     "Plan one conversation with them on their ground or neutral ground, and note any difference."
+   ],
+   "variations": [
+    "Choose someone you manage or teach, and think about which version of them you see on your ground.",
+    "Ask the person which setting they find easiest for difficult conversations, and use it next time."
    ]
   },
   {
@@ -131,6 +158,10 @@
     "Afterwards, write two impressions the room gave you.",
     "For each impression, write one ordinary explanation that would make it misleading.",
     "Do not share your impressions with anyone else."
+   ],
+   "variations": [
+    "Do the same with your own room or home, imagining a stranger seeing it for the first time.",
+    "Notice your own video call background and write what it might suggest to someone who does not know you."
    ]
   },
   {
@@ -142,6 +173,10 @@
     "Notice whether anyone had to work around one of your claims.",
     "Choose one claim to reduce.",
     "Note whether anyone seems to notice the difference."
+   ],
+   "variations": [
+    "Choose a shared space such as a train, office kitchen or gym, and note how much of it your belongings occupy.",
+    "At home, ask someone you live with which of your territorial habits they would most like you to change."
    ]
   }
  ],
@@ -223,6 +258,58 @@
    "explain": "Studies of desk-sharing found many people experienced losing a fixed place as a threat to who they were at work, and reclaimed space in just this way. Read against a territorial loss, his behaviour makes sense.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Altman's terms, what kind of territory is a person's own bedroom?",
+   "options": [
+    "Public territory, since anyone may enter it when it is not being used by its owner at the time",
+    "Primary territory, owned and used exclusively over long periods and tied to identity",
+    "Secondary territory, claimed informally through regular use but not owned by anyone at all",
+    "No territory at all, since territory applies only to spaces outside the home and work"
+   ],
+   "answer": 1,
+   "explain": "Primary territories are owned and used exclusively, and are central to a person's sense of who they are. Intrusion into them is felt as a serious violation, which is why knocking on a teenager's door matters so much.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Sommer and Becker find about markers left to hold places in libraries and canteens?",
+   "options": [
+    "Markers had no effect, since newcomers sat wherever they liked regardless of objects left",
+    "Only markers left by staff were respected, while those left by other users were ignored",
+    "Markers held places, and more personal markers, such as a jacket, held them for longer",
+    "Markers worked only while the owner was in sight, and were ignored as soon as they left"
+   ],
+   "answer": 2,
+   "explain": "Marked places were avoided by newcomers for longer than empty ones, and personal markers worked best. Objects speak for absent owners, which is why moving someone's things can feel like a small invasion.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague says that people negotiate equally well wherever a meeting is held. What did Brown and Baer's research suggest?",
+   "options": [
+    "She is right, since skill in negotiation is not affected by where the meeting takes place",
+    "She is right only for experienced negotiators, who are not affected by their surroundings",
+    "She is wrong, but only because visitors tend to make more generous offers out of politeness",
+    "Negotiators on their own ground tended to do better, and visitors felt less confident"
+   ],
+   "answer": 3,
+   "explain": "Home ground gave negotiators an advantage in Brown and Baer's studies, partly through confidence and partly through the rituals of hosting. That is a reason to choose neutral ground when fairness matters.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "At the first family dinner since your father died, his usual chair at the head of the table is empty. What fits this chapter best?",
+   "options": [
+    "Ask your mother beforehand what she would like done with the chair this year",
+    "Sit in it yourself, so that nobody has to look at an empty chair through the meal",
+    "Remove it from the room before anyone arrives, to spare everyone the sadness",
+    "Leave it, say nothing, and let whoever arrives first decide what to do with it"
+   ],
+   "answer": 0,
+   "explain": "A place like that is primary territory that has outlived its owner, and it often becomes a kind of memorial. The decision belongs, first, to the person closest to it, and asking her lets the family choose together.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -251,6 +338,110 @@
    "work": "A room with a cue: Personality judgments based on offices and bedrooms",
    "author": "Samuel D. Gosling, Sei Jin Ko, Thomas Mannarelli and Margaret E. Morris",
    "note": "Journal of Personality and Social Psychology 82(3), 2002. What rooms reveal about the people who use them."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "Grandad's chair",
+   "scene": "Every Christmas for thirty years, the Hughes family has eaten at the same long table, and every year Grandad Ken sat at the head of it,\n  in a high-backed wooden chair nobody else used. Ken died in the spring. At Christmas, the family gathers for the first time without him.\n  Ken's son, Mark, arrives a little late, sees that the head of the table is empty, and, thinking to save everyone the awkwardness of looking\n  at an empty chair, sits in it.\n\n  His mother, Jean, goes very quiet. She serves the meal without looking at him and leaves the room twice. Mark's sister, Claire, kicks him\n  under the table. After dinner, in the kitchen, Jean tells Mark sharply that he could have asked. Mark is wounded. He had meant it kindly, he\n  says, and it is only a chair. Jean says nothing more, but she is cool with him for the rest of the holiday.\n\nClaire, who stayed later than the others, found her mother in the kitchen at midnight, holding one of Ken's pipes that she had kept on the shelf by his chair. Jean said that she had been dreading the day for weeks, and that the chair was the part she had not known how to face.",
+   "misread": "Mark read the empty chair as a practical problem: a gap at the table that would make everyone sad. He did not read it as territory, a place bound up with his father's identity and his mother's marriage, or consider that sitting in it might feel to his mother like taking something that was not his to take.\n\nHe also read his mother's coolness as an overreaction to a small thing, which made it harder for him to see the large thing underneath it.",
+   "betterRead": "Altman's primary territories are places tied closely to a person's sense of who they are, and they can outlive the person. A chair at the head of a family table is exactly that kind of place, and after a death it often becomes a kind of memorial. The careful reading notices the claim before acting on it: whose place is this, and who else might feel it is theirs to decide? Mark could have asked his mother, before the meal, what she wanted done with the chair this year. Some families leave it empty; some ask the eldest to take it; some put a photograph on it. Any of these would have been fine. What made it hurt was that the decision was taken without her.\n\nIt is worth adding that grief makes territory more sensitive, not less. In the first year after a death, many families find that rooms, chairs and objects matter more than they would have predicted, and a question costs far less than an assumption."
+  },
+  {
+   "title": "The fridge shelf",
+   "scene": "Four people share a flat in a city where none of them grew up. Each has a shelf in the fridge, agreed on the day they moved in. Over a\n  few weeks, Josh, the newest flatmate, starts putting his overflow on the shelf belonging to Eilidh, who is away most weekends. One Sunday\n  evening Eilidh comes home to find her shelf full of Josh's beer and a half-eaten lasagne, and her own milk pushed to the back.\n\n  She takes everything of his off her shelf and puts it on the counter. Josh comes home, finds his lasagne warm on the side, and is furious.\n  The row that follows is far louder than anyone expects, and goes on for an hour, taking in washing up, noise, guests and who pays for toilet\n  roll. The other two flatmates retreat to their rooms. For the next month, Josh and Eilidh barely speak.\n\nThe two flatmates who retreated to their rooms later admitted that they too had been using other people's shelves now and then, and that the row had frightened them because it showed how much was riding on such small things.\n\nAfterwards each of them tells friends a version of the story in which the other is the problem. In Josh's version Eilidh threw his food on the floor; in Eilidh's version Josh had taken over her half of the fridge for weeks. Neither version mentions that Eilidh is away so often, or why she minds so much.",
+   "misread": "Each read the other's behaviour as a personal attack and a sign of character: Josh was selfish and careless, Eilidh petty and uptight. Neither recognised that the argument was not really about a shelf. It was about whether each of them had a secure place in a home where they were all, in a sense, guests.\n\nThe flatmates who stayed out of the row read it the same way, and quietly took sides according to whom they liked more, which made the flat a little colder for everyone.\n\nIt is also worth noticing that neither of them could have said, in the moment, what the shelf meant to them. The anger came first and the explanation much later.",
+   "betterRead": "In shared homes, small secondary territories carry far more weight than they seem to, because they are the only parts of the home that are clearly one person's. A shelf, a cupboard, a hook for a coat: each is a claim to belong. A dispute that is out of proportion to its stakes, as this chapter's last teaching point says, is often about belonging rather than the space itself. The careful move, for either of them, was to name that. Josh might have asked before borrowing the shelf, and Eilidh might have said that her shelf mattered to her because she was away so much and needed one thing in the flat that was reliably hers. Most flat rows end faster once someone says what the space means.\n\nJosh and Eilidh did eventually talk, at the prompting of one of the others. Josh admitted he had not thought of the shelf as anything more than space. Eilidh admitted that she had been feeling like a lodger in her own flat. They have been friendly since."
+  },
+  {
+   "title": "Negotiating on their ground",
+   "scene": "Rachel runs a small marketing firm and is negotiating the renewal of a contract with a large client. The client's procurement manager,\n  Simon, insists that the meeting take place at the client's headquarters. Rachel and her colleague are shown into a meeting room on the\n  fourth floor, given visitor badges, and kept waiting fifteen minutes. Simon arrives with two colleagues, sits at the head of the table on the side\n  facing the window, and leaves the visitors facing the light.\n\n  Rachel feels off balance from the start. She concedes more than she intended on price, agrees to a longer notice period, and drives home\n  frustrated with herself. Her colleague says that Simon seemed very sure of himself, and that perhaps they had simply been out-negotiated.\n\nOn the drive home, Rachel's colleague mentions that he could barely see Simon's face for the glare from the window behind him, and that he had spent most of the meeting squinting. Rachel realises she had done the same.\n\nAt the next meeting, three months later, Simon again suggests his office. This time Rachel notices the arrangement as it happens: the wait in reception, the seat against the window, the colleague who arrives with a pre-printed agenda. She does not feel any more confident, but she knows why she feels unsettled, which turns out to help.",
+   "misread": "Rachel read the outcome as a matter of personal skill: Simon was the better negotiator, and she had been weak. She did not notice how much of the meeting had been arranged by territory: his building, his room, his choice of seat, the wait, the badges, the light in her eyes.\n\nShe also missed the small signals that the room had been arranged deliberately. Leaving visitors to wait and face the light is not always an accident.\n\nHer colleague's conclusion, that they had simply been out-negotiated, was the most discouraging explanation available, and the least useful, because it suggested nothing they could do differently.",
+   "betterRead": "Brown and Baer found that negotiators on their own ground tend to achieve better outcomes, and that visitors tend to feel less confident. Some of that comes from familiarity and some from the small rituals of hosting, which put the host in charge of time, seating and comfort. A reader who understands this can reduce its effect without any tricks: by suggesting a neutral venue, or alternating venues across a series of meetings, or simply by noticing the effect and allowing for it, taking a moment to settle, asking to swap seats if the light is in your eyes, and saying that you will need to consider the terms before agreeing. For the next renewal, Rachel proposed meeting at a hotel halfway between the two offices. Simon agreed, and the negotiation was noticeably more even.\n\nWhen you lose a negotiation away from home, part of the loss may belong to the room. Knowing that stops you drawing the wrong conclusion about your own ability, and asking for small things at the start, a seat, some water, restores more footing than you expect."
+  },
+  {
+   "title": "The parking space outside number twelve",
+   "scene": "In a terraced street where nobody has a driveway, Dennis, seventy-four, has parked outside his own house for twenty-six years. The space is\n  public road; anyone can use it. When a new family moves in three doors down and starts parking there, Dennis first leaves a polite note on their\n  windscreen, then a less polite one, then starts putting a wheelie bin in the space whenever he drives out. The new neighbour, Tariq, moves the bin\n  and parks anyway. Within a month, the two men are not speaking, and Dennis has complained to the council.\n\n  Tariq thinks Dennis is a bully who believes he owns the street. Dennis thinks Tariq is arrogant and disrespectful. Both feel entirely in the\n  right. Neither has ever spoken to the other face to face.\n\nTariq's wife, who has noticed Dennis watching from his window each morning, wonders aloud whether he is lonely. Tariq says that is not their problem.\n\nDennis's daughter, who visits on Sundays, tells him he is making himself ill over a parking space. He tells her that she does not understand; that the space is the only one near enough to the front door for him to carry the shopping, and that the street used to be full of people who knew that without being told.",
+   "misread": "Tariq read Dennis's markers and complaints as entitlement and hostility, and Dennis read Tariq's parking as a deliberate provocation. Each responded to the other's moves with a stronger move of his own, which is exactly the escalation that territorial disputes produce when the claims are never discussed.\n\nThe council complaint made things worse, because it moved the dispute from two neighbours into an institution, where neither could back down without losing face.\n\nEach also read the other's silence as hostility, when it was mostly the ordinary reluctance of two strangers to knock on a door.",
+   "betterRead": "Ruback and Juieng's study of drivers leaving car park spaces found that people took longer to leave when someone was waiting for the space, and longer still when the waiting driver sounded the horn: people defend even spaces they are about to abandon. A space outside your own house for twenty-six years is a far stronger claim, legally empty but emotionally full. The careful reading starts from that. For Dennis, the space may be tied to his age, his mobility and his sense that the street is changing around him. A neighbour who knocks on the door, introduces himself and asks how the parking usually works on this street will often find an old man who wants to be acknowledged more than he wants the space. Tariq did that, eventually, at his wife's urging. Dennis told him about his bad hip. They agreed that Tariq would leave the space free in the evenings.\n\nIt is worth noticing that the solution was not about the space at all. The evenings were when Dennis came home with shopping; the mornings mattered to nobody. Nobody could have found that out through notes and bins."
+  }
+ ],
+ "workedReading": {
+  "title": "Moving into her flat",
+  "scene": "Tom moves into his girlfriend Leah's flat after a year together. It has been her home for five years. The first fortnight goes well. In the third week, Tom notices that Leah has become short with him in the evenings. She sighs when he comes in, tidies around him, and twice moves his things from the living room back into the spare room without saying anything. One evening, when he sits in the armchair by the window with his laptop, she says, \"Can you not sit there?\" and then apologises and says it does not matter.\n\nTom loves Leah and was excited to move in. He has been trying to make himself at home, which he thought was what she wanted.",
+  "steps": [
+   {
+    "label": "Check yourself",
+    "text": "Tom's first reaction is hurt, followed by a worry that the move was a mistake and that she has changed her mind about living with him. He notices that worry and decides to treat it as a feeling, not a finding. He also notices that he has been tired and stressed at work, and has spent more evenings than usual on his laptop.\n\nHe also notices that he has been reading her sighs as verdicts on him rather than as information about how her days are going, which they might equally be."
+   },
+   {
+    "label": "Map the territory",
+    "text": "Tom thinks about the flat in Altman's terms. For Leah it is primary territory, built up over five years and tied to her sense of herself. For him it is, so far, somewhere between secondary and borrowed. Within it, some places are especially hers: the armchair by the window where she reads, the bedside table, the shelf of books in the living room. He realises he has used all of them without thinking.\n\nIt helps to think about what he would feel if the roles were reversed: if Leah had moved into a flat he had lived in for five years, and was now reading in his chair every evening."
+   },
+   {
+    "label": "Notice the markers",
+    "text": "He looks at what has changed in the flat since he arrived. His laptop and charger now live on the coffee table. His coat hangs on the hook she used. His shoes are by the door where hers used to be. His books are stacked on the floor beside her shelf. None of these was a decision; they just happened. Together, they spread his claims across most of the living space.\n\nMarkers matter even when the owner is not trying to claim anything. To Leah, the flat now speaks with Tom's voice in every room, and hers has gone quiet.\n\nSeeing the flat through her eyes for a moment, he realises that it now looks more like his than hers, and that he did all of this in three weeks, without once asking."
+   },
+   {
+    "label": "Note the timing",
+    "text": "The shortness started in the third week, not the first, and it is worst in the evenings, when both of them are home and using the same rooms. The comment about the chair came when he sat in the one place she goes to unwind. The pattern points to the space and the hours, not to the relationship as a whole.\n\nTiming also tells him that something accumulated. A week of small claims did not register; three weeks of them did."
+   },
+   {
+    "label": "Hold several explanations",
+    "text": "Several stories fit. Leah is having second thoughts. She is stressed about something else, at work or with family. She is finding it harder than she expected to share the flat that has been hers. Or all of the territorial changes together have left her without a corner of her own. The timing and the chair favour the last two, without ruling out the first.\n\nHe is careful to keep the worrying explanation on the list. The point is not to dismiss it but to stop it from being the only one he can see.\n\nHolding these side by side, he notices that most of them call for the same first step, which is to give back some of the space he has taken, whatever else turns out to be going on."
+   },
+   {
+    "label": "Ask about the space",
+    "text": "Tom does not ask whether she regrets the move, which would put the whole relationship on trial. He says that he has realised he has been spreading out everywhere and taking her reading chair, and asks what would help the flat feel like hers as well as theirs. The question names the territory, not a feeling, and lets her say more if she wants to.\n\nStarting with what he has noticed in himself, rather than what he has noticed in her, also makes the conversation easier for her to join."
+   },
+   {
+    "label": "What happened",
+    "text": "Leah laughs, a little embarrassed, and says that yes, she has been feeling like a guest in her own home. They agree that the armchair and the bookshelf stay hers, that Tom will turn the spare room into somewhere he can work and leave his things, and that they will buy one new piece of furniture together that is theirs from the start. The shortness stops within a week. Tom notes for himself that the most important things about moving in had not been said, and that the furniture had been saying them instead.\n\nHe also notes that the most useful reading in the whole episode was not of Leah's body at all, but of the flat."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Using home ground to win",
+   "body": "Once you know that people on their own territory tend to feel more confident and negotiate better, it is tempting to use it: always insisting on your office, keeping visitors waiting, choosing the seat with the window behind you, conducting disciplinary meetings on your own turf. In a negotiation between equals, some of this is ordinary hosting. But where the meeting is meant to be fair, such as a grievance, a difficult conversation with a junior, a dispute between neighbours or a family mediation, using territory to unsettle the other person is a way of winning on something other than the merits. Choose neutral ground when fairness matters, and if you must host, host generously: a good seat for the visitor, no waiting, water on the table.\n\nIt is worth noticing the reverse too: if you are always the visitor, in your manager's office, at your partner's family home, on your client's premises, some of your discomfort may be the ground rather than the people.\n\nThere is nothing wrong with feeling more at ease in your own office. The failure is arranging someone else's discomfort in order to profit from it."
+  },
+  {
+   "title": "Reading rooms as verdicts",
+   "body": "Gosling's work shows that rooms carry real information about their occupants, but it is partial, and it is easy to overreach. A cluttered home office says something about how its owner works; it does not say that he is incompetent. Expensive furniture and many books may reflect wealth and upbringing more than curiosity, and a bare room may reflect a recent move, a small budget or a tidy temperament rather than a lack of depth. On video calls, backgrounds are often chosen for the call, or blurred, or borrowed. Notice what rooms show, by all means, but treat it as a hint about habits and tastes, not a judgment of character, and never let it decide anything important, such as a hiring decision.\n\nInterviewers who judge candidates by their video backgrounds are particularly at risk of judging class and circumstance rather than ability.\n\nA reader who wants to learn from rooms might ask, instead, what the person has chosen to put where visitors will see it. That tells you what they want you to know about them, which is a different and more respectful thing to learn."
+  },
+  {
+   "title": "Overriding territory \"for their own good\"",
+   "body": "Families often rearrange an older parent's home for safety: moving the armchair, removing rugs, tidying away clutter, installing new furniture. Parents do the same with children's rooms, and carers with residents' rooms in care homes. The changes may be sensible, but when they are made without the person, they take away one of the last areas where that person is in charge, and the loss can show as anger, confusion or withdrawal that is then blamed on age or illness. Ask first, explain the reason, change one thing at a time, and leave the person's most important places, the chair, the bedside, the photographs, exactly where they are unless there is a real danger.\n\nIn care homes, residents' rooms are often the only primary territory they have left. Staff who knock, ask and leave things where they are give back a measure of control that matters far more than it seems.\n\nA useful question for any change to someone else's space is whether you would accept the same change in your own home without being asked. If not, ask them."
+  },
+  {
+   "title": "Fighting a marker war",
+   "body": "Territorial disputes escalate through markers: a towel on a sunbed answered with a towel on the next one, a note on a windscreen answered with a bin in a parking space, a bag on a seat answered with a coat on the next seat. Each move feels justified, and each invites a stronger reply. The dispute is usually fought entirely through objects, without either party ever speaking to the other. If you notice yourself in one, ask whether the space is worth the conflict, and whether a single conversation might end it. Most of the time it would, because what each side wants is to be acknowledged, and an object cannot do that.\n\nHoliday sunbeds are the comic version. The serious version happens between neighbours, siblings and former partners, where the objects stand in for grievances nobody has said aloud.\n\nThe same pattern runs through divorces and family inheritances, where the house, the furniture and the family photographs become the ground on which much older disputes are fought."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why do people get so upset about seats, desks and parking spaces?",
+   "a": "Because these places are bound up with identity and belonging, not just convenience. A regular seat says that you are part of the place. A personalised desk says who you are at work. A parking space outside your house says that the street knows you. When someone takes one of these, it can feel like being told that you do not belong, or that you count for less than you thought. That is why territorial disputes so often feel out of proportion. Research on drivers by Ruback and Juieng even found people slower to leave a car park space when someone was waiting for it, as if defending a claim they were about to give up. The feelings are real, even when the claims have no legal standing.\n\nIf you are the one who has lost a space, it can help to name what it meant: not just a seat but a place where you belonged. Saying that, even to yourself, often takes some of the heat out of the anger.\n\nKnowing this does not make every claim legitimate, but it makes it easier to respond to the feeling rather than the object, which is usually what ends the dispute.\n\nA little acknowledgement goes a long way."
+  },
+  {
+   "q": "Is hot-desking bad for people?",
+   "a": "It is a trade-off, and Elsbach's research suggests it costs more than many organisations expect. Without a fixed desk, people lose a way of showing who they are and where they belong, and some feel it as a threat to their identity at work. Others prefer the flexibility, especially if they work from home often. Organisations that soften the change tend to do better: team zones rather than a free-for-all, lockers where people can keep personal things, permission to personalise a desk for the day, and attention to people who seem to have lost the most, such as long-serving staff who had built their place over years.\n\nIf you manage people through such a change, watch for those who seem to have lost the most, and give them something back, even something small, such as first choice of a desk in the new layout.\n\nIf you work in a hot-desking office yourself, small rituals help: a mug you always use, a plant you carry to whichever desk you take, a photograph on your laptop's lock screen."
+  },
+  {
+   "q": "How should I behave in someone else's home?",
+   "a": "As a guest on primary territory, which means letting the host lead. Wait to be offered a seat, or ask where to sit, because many homes have chairs that belong to particular people. Do not move things, open cupboards or go into rooms you have not been invited into. Follow the host's customs on shoes, food and where to put your coat. Notice the markers: a chair with a cushion and a reading lamp, a side of the sofa with the remote control, a seat at the table nobody else takes. These small courtesies cost nothing and tell the host that you understand you are on their ground.\n\nIf you are staying for longer, as a houseguest or a new partner, ask the host to show you where you can put your things. It saves you from guessing, and it shows that you know whose home it is.\n\nIf you are staying the night, the same rules apply more strongly to bedrooms and bathrooms, which are among the most private spaces in any home.\n\nAnd when you leave, put things back as you found them: the chair you moved, the cushion you sat on, the cup you used. Hosts notice, and they remember guests who left their home as they found it."
+  },
+  {
+   "q": "What do video call backgrounds tell me?",
+   "a": "Less than they seem to. A background is a curated piece of territory: people choose what to show, tidy what is visible and often move to a better-looking room for calls. Many use blurred or virtual backgrounds precisely to avoid being read. What you can sometimes see is the setting of someone's working life, such as a child's drawing on the wall, a bed in the corner because there is no other room, or a busy kitchen, and that can tell you something about the pressures they are under. Treat it with discretion. Commenting on someone's home on a call, even kindly, can feel intrusive.\n\nYour own background is also a choice. If you would rather not be read, a plain wall or a blurred background is perfectly acceptable."
+  },
+  {
+   "q": "How can two people share a home without fighting over space?",
+   "a": "By talking about territory before it becomes a fight. Each person usually needs at least one place that is clearly theirs: a desk, a chair, a shelf, a corner of a room, a drawer. Shared spaces work better when the rules are spoken rather than assumed: where things go, who uses which room when, how much of a shared surface each person may fill. When one person moves into a home that was the other's, it helps to change something together, so that the space starts to be shared rather than lent. And when a dispute about a small thing feels big, ask what the space means rather than arguing about the space.\n\nCouples who have lived together for decades often say that the best decision they made was agreeing early on that each of them had one room, or one corner, that was theirs to arrange however they liked.\n\nIt also helps to agree how you will raise space problems before they arise, so that a complaint about a shelf can be made as a request rather than a rebuke."
+  },
+  {
+   "q": "Is it rude to save seats with a coat or bag?",
+   "a": "It depends on the setting and the norms. In a café, leaving a coat on a chair while you queue is widely accepted. In a crowded train or a busy library, saving seats for absent friends while others stand is often resented, and Sommer and Becker's work shows that markers can hold space long after the claim is reasonable. A good rule is to hold only what you will use soon, and to give way gracefully when the space is needed by someone who is actually there, especially someone older, pregnant or less able to stand.\n\nOn commuter trains, a bag on the seat beside you during the rush hour is one of the commonest small irritations people report, and one of the easiest to fix.\n\nIf you notice that someone has saved a seat that is now needed, a polite question to the people nearby usually resolves it faster than moving the marker yourself."
   }
  ],
  "watch": [
