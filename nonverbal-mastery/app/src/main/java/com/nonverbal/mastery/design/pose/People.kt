@@ -6,6 +6,8 @@ enum class HairStyle {
     CROP, SIDE, CURLY, BUZZ, RECEDING, CHILD, BABY,
     /** Women's styles, and a girl's ponytail. */
     LONG, BOB, BUN, PONYTAIL, CURLY_LONG, PIXIE, HIJAB,
+    /** A Sikh man's turban. */
+    TURBAN,
 }
 enum class Beard { NONE, STUBBLE, TRIM, FULL }
 enum class Top { TSHIRT, SHIRT, JUMPER, POLO, BLOUSE, ONESIE }
@@ -156,7 +158,23 @@ object Cast {
             woman = true, age = Age.OLDER, build = 1.06f),
     )
 
-    val everyone: List<Look> get() = men + women
+    /**
+     * Men who appear only where a pose names them, so adding them does not change who is drawn in the
+     * poses that already exist.
+     */
+    val namedMen: List<Look> = listOf(
+        Look("Harpreet", skin = Color(0xFFB8835E), hair = Black, hairStyle = HairStyle.TURBAN, beard = Beard.FULL,
+            top = Top.SHIRT, topColor = Color(0xFFE3DED3), bottomColor = Color(0xFF34415A), shoeColor = BrownShoe,
+            scarfColor = Color(0xFF2F4170), build = 1.04f),
+        Look("Tony", skin = Color(0xFFE1B08D), hair = DarkBrown, hairStyle = HairStyle.CROP, beard = Beard.STUBBLE,
+            top = Top.POLO, topColor = Color(0xFF6E5A7E), bottomColor = Color(0xFF3B4250), shoeColor = BlackShoe,
+            sleeves = Look.Sleeves.SHORT, build = 1.4f),
+        Look("Walter", skin = Color(0xFFEAC4A8), hair = White, hairStyle = HairStyle.RECEDING, beard = Beard.NONE,
+            top = Top.JUMPER, topColor = Color(0xFF6A7B8C), bottomColor = Color(0xFF4F4A44), shoeColor = BrownShoe,
+            age = Age.OLDER, glasses = true, build = 0.95f),
+    )
+
+    val everyone: List<Look> get() = men + women + namedMen
 
     private val olderMen = men.filter { it.age == Age.OLDER }
     private val olderWomen = women.filter { it.age == Age.OLDER }

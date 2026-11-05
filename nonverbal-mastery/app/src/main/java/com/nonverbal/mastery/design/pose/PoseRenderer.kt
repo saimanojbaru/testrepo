@@ -168,7 +168,7 @@ object PoseRenderer {
     }
 
     /** Materials, in the order they are painted within one limb or head. */
-    private enum class Mat { SKIN, BOTTOM, TOP, SHOE, SKIN_OVER, EAR, HAIR, BEARD }
+    private enum class Mat { SKIN, BOTTOM, TOP, SHOE, SKIN_OVER, EAR, HAIR, BEARD, PROP }
 
     private data class Shape(val mat: Mat, val path: Path, val color: Color, val quiet: Path? = null)
 
@@ -370,7 +370,8 @@ object PoseRenderer {
             val shapes = mutableListOf(Shape(Mat.SKIN_OVER, skull, skin))
 
             // Ears, on whichever side faces the viewer, unless the hair or a scarf covers them.
-            val earsCovered = look.hairStyle in setOf(HairStyle.LONG, HairStyle.BOB, HairStyle.CURLY_LONG, HairStyle.HIJAB)
+            val earsCovered = look.hairStyle in setOf(HairStyle.LONG, HairStyle.BOB, HairStyle.CURLY_LONG, HairStyle.HIJAB) ||
+                sk.accessory == "headphones"
             for (s in listOf(1f, -1f)) {
                 if (!earsCovered && facing(h.xAxis * s) > -0.15f) {
                     shapes += Shape(Mat.EAR, ellipsoid(pr, at(7.5f * s, 0.2, 0.2), h, 1.0f * hk, 3.0f * hk, 1.9f * hk), skin)
@@ -378,13 +379,27 @@ object PoseRenderer {
             }
 
             hair(h, toward, ::at)?.let { shapes += Shape(Mat.HAIR, it.first, it.second) }
+            val headMarks = mutableListOf<Mark>()
+            if (sk.accessory == "headphones") {
+                // Over-ear headphones: a band over the crown and a cup on each ear that faces the viewer.
+                for (s in listOf(1f, -1f)) {
+                    if (facing(h.xAxis * s) > -0.2f) {
+                        shapes += Shape(Mat.PROP, ellipsoid(pr, at(8.3f * s, 0.3, 0.3), h, 1.8f * hk, 3.8f * hk, 3.3f * hk), Color(0xFFC3C8CF))
+                    }
+                }
+                val band = (0..10).map { i ->
+                    val th = PI * i / 10
+                    at(8.4f * cos(th).toFloat(), 0.8f + 11.6f * sin(th).toFloat(), -0.4)
+                }
+                headMarks += Mark(polyline(band.map(pr::screen)), Color(0xFFA9AEB6), 1.3f * hk * pr.scale)
+            }
             hairBehind(h, ::at)?.let { (path, color, centre) ->
                 // Long hair, a bun or a scarf's drape hangs behind the head: in front of it only when seen from behind.
                 parts += Part("$f:hairback", listOf(Shape(Mat.HAIR, path, color)), pr.depth(centre) - 1.5f * k, false)
             }
             beard(h, toward, ::at)?.let { shapes += Shape(Mat.BEARD, it.first, it.second) }
 
-            parts += Part("$f:head", shapes, pr.depth(sk.head) + 1f * k, false, marks = face(h, ::at))
+            parts += Part("$f:head", shapes, pr.depth(sk.head) + 1f * k, false, marks = face(h, ::at) + headMarks)
         }
 
         private fun hair(h: M3, toward: Float, at: (Number, Number, Number) -> V3): Pair<Path, Color>? {
@@ -403,6 +418,7 @@ object PoseRenderer {
                 HairStyle.CURLY_LONG -> Cut(3.0f, 10.2f, 2.8f, 0.07f)
                 HairStyle.PIXIE -> Cut(3.0f, 9.6f, 1.0f, 0f)
                 HairStyle.HIJAB -> return hijab(h, toward, at)
+                HairStyle.TURBAN -> return turban(h, at)
             }
             val longStyle = look.hairStyle in setOf(HairStyle.LONG, HairStyle.BOB, HairStyle.CURLY_LONG)
             val base = ellipsoidPath(at(0, spec.cy, -1.3), h, (7.7f + spec.t) * hk, (spec.ry + spec.t * 0.6f) * hk, (10.0f + spec.t) * hk, spec.bumps)
@@ -437,6 +453,16 @@ object PoseRenderer {
             )
             if (toward > -0.35f) scarf = difference(scarf, ellipsoid(pr, at(0, -1.6, 5.4), h, 5.9f * hk, 7.6f * hk, 6.4f * hk))
             return scarf to look.scarfColor
+        }
+
+        /** A Sikh turban (dastar): wrapped high over the crown and down over the tops of the ears. */
+        private fun turban(h: M3, at: (Number, Number, Number) -> V3): Pair<Path, Color> {
+            val wrap = union(
+                ellipsoid(pr, at(0, 5.0, -1.2), h, 9.0f * hk, 8.6f * hk, 10.6f * hk),
+                ellipsoid(pr, at(0, 8.6, -0.2), h, 7.6f * hk, 5.6f * hk, 9.0f * hk),
+            )
+            val cut = difference(wrap, ellipsoid(pr, at(0, -4.2, 2.6), h, 10.5f * hk, 7.6f * hk, 12f * hk))
+            return cut to look.scarfColor
         }
 
         /** What hangs behind the head, with a point to depth-sort it by. */
@@ -695,6 +721,20 @@ object PoseRenderer {
                 box(-70f, 70f, y, -18f, 18f)
                 for (x in listOf(-64f, 64f)) for (z in listOf(-14f, 14f)) lines += v(x, 0, z) to v(x, y, z)
             }
+            // The frame of a manual wheelchair; the wheels are solid parts (see propPanels).
+            "wheelchair" -> {
+                val y = 48f
+                box(-21f, 21f, y, -18f, 20f)
+                for (x in listOf(-21f, 21f)) {
+                    lines += v(x, y, -18) to v(x, 92, -24)            // back post
+                    lines += v(x, 92, -24) to v(x, 94, -33)           // push handle
+                    lines += v(x, y, 20) to v(x * 0.75f, 12, 32)      // front frame down to the footrest
+                    lines += v(x * 0.85f, 7, 28) to v(x * 0.85f, 0, 28) // caster fork
+                }
+                lines += v(-21, 88, -23) to v(21, 88, -23)
+                lines += v(-21, 70, -21) to v(21, 70, -21)
+                lines += v(-16, 12, 32) to v(16, 12, 36)              // footplate
+            }
         }
         val pl = sk.placement
         return lines.map { (a, b) -> pr.screen(pl.floor(a)) to pr.screen(pl.floor(b)) }
@@ -711,7 +751,49 @@ object PoseRenderer {
             val path = polygon(world.map(pr::screen))
             return Part("$f:$id", listOf(Shape(Mat.TOP, path, Color.Gray)), world.map(pr::depth).average().toFloat() + bias, far = false, panel = true)
         }
+        fun wheel(x: Float, cy: Float, cz: Float, r: Float, id: String): Part {
+            // A tyre (ring) in the figure's side plane, with spokes drawn over the hub.
+            fun ring(rad: Float) = (0 until 36).map { i ->
+                val th = 2.0 * PI * i / 36
+                pl.floor(v(x, cy + rad * sin(th).toFloat(), cz + rad * cos(th).toFloat()))
+            }
+            val outer = polygon(ring(r).map(pr::screen))
+            val inner = polygon(ring(r * 0.86f).map(pr::screen))
+            val tyre = Path().apply { op(outer, inner, PathOperation.Difference) }
+            val hub = pl.floor(v(x, cy, cz))
+            val spokes = (0 until 6).map { i ->
+                val th = PI * i / 6
+                val a = pl.floor(v(x, cy + r * 0.86f * sin(th).toFloat(), cz + r * 0.86f * cos(th).toFloat()))
+                val b = pl.floor(v(x, cy - r * 0.86f * sin(th).toFloat(), cz - r * 0.86f * cos(th).toFloat()))
+                Mark(polyline(listOf(pr.screen(a), pr.screen(b))), Color(0xFF8B8E94), 0.35f * pl.scale * pr.scale)
+            } + Mark(dot(pr.screen(hub), 2.2f * pl.scale * pr.scale), Color(0xFF55585E), 0f)
+            return Part("$f:$id", listOf(Shape(Mat.PROP, tyre, Color(0xFF34363B))), pr.depth(hub), far = false, marks = spokes)
+        }
+        fun stick(top: V3, bottom: V3, r: Float, color: Color, id: String, tip: Color? = null): Part {
+            val shapes = mutableListOf(Shape(Mat.PROP, capsule(pr, top, r, bottom, r * 0.85f), color))
+            if (tip != null) shapes += Shape(Mat.SHOE, capsule(pr, top.lerp(bottom, 0.86f), r * 1.02f, bottom, r * 0.9f), tip)
+            return Part("$f:$id", shapes, maxOf(pr.depth(top), pr.depth(bottom)) + 1f, far = false)
+        }
+        val hand = sk.right.hand
+        val grip = hand.wrist + hand.dir * (4f * pl.scale)
         return when (sk.prop) {
+            "wheelchair" -> listOf(
+                wheel(27f, 30f, -4f, 30f, "wheelL"), wheel(-27f, 30f, -4f, 30f, "wheelR"),
+                wheel(18f, 7f, 28f, 7f, "casterL"), wheel(-18f, 7f, 28f, 7f, "casterR"),
+            )
+            // A walking cane in the right hand, planted beside the foot, with a crook over the hand.
+            "cane" -> {
+                val foot = V3(grip.x, 0f, grip.z + 4f * pl.scale)
+                val crook = grip + sk.chestAxes.zAxis * (5f * pl.scale) + V3.Y * (1.5f * pl.scale)
+                listOf(stick(grip, foot, 1.25f * pl.scale, Color(0xFF5B4030), "cane"),
+                    stick(grip, crook, 1.25f * pl.scale, Color(0xFF5B4030), "caneCrook"))
+            }
+            // A long white cane swept ahead along the floor, red near the tip.
+            "long_cane" -> {
+                val ahead = sk.chestAxes.zAxis.let { V3(it.x, 0f, it.z).normalized() }
+                val tipPt = V3(grip.x, 1.5f * pl.scale, grip.z) + ahead * (78f * pl.scale)
+                listOf(stick(grip, tipPt, 0.9f * pl.scale, Color(0xFFF2F1EC), "longCane", tip = Color(0xFFB8393A)))
+            }
             "lectern" -> listOf(
                 quad(v(-20, 2, 36), v(20, 2, 36), v(20, 103, 27), v(-20, 103, 27), bias = 0f, id = "lecternFront"),
                 quad(v(-28, 104, 22), v(28, 104, 22), v(28, 112, 44), v(-28, 112, 44), bias = -15f, id = "lecternTop"),

@@ -71,6 +71,8 @@ data class Skeleton(
     val yaw: Float,
     /** Where this figure stands in its scene. Joints are already placed; props use it. */
     val placement: Placement = Placement.IDENTITY,
+    /** Something worn rather than held: "headphones". */
+    val accessory: String? = null,
 ) {
     /** Moves the whole figure: every joint, axis and section, as if it had been solved standing there. */
     fun placed(pl: Placement): Skeleton {
@@ -99,6 +101,7 @@ data class Skeleton(
         if (t < 0.5f) prop else o.prop,
         yaw + (o.yaw - yaw) * t,
         placement.lerp(o.placement, t),
+        if (t < 0.5f) accessory else o.accessory,
     )
 
     /** Named landmarks used by annotations. World space. */
@@ -192,6 +195,7 @@ private object Body {
     val SEAT_PELVIS = v(0, 54, -4)
     val KNEEL_PELVIS = v(0, 52, 0)
     val SQUAT_PELVIS = v(0, 30, -12)
+    val FLOOR_PELVIS = v(0, 14, -6)
 }
 
 object PoseSolver {
@@ -214,6 +218,7 @@ object PoseSolver {
             legL.base == Base.SIT && legR.base == Base.SIT -> Base.SIT
             legL.base == Base.KNEEL || legR.base == Base.KNEEL -> Base.KNEEL
             legL.base == Base.SQUAT && legR.base == Base.SQUAT -> Base.SQUAT
+            legL.base == Base.FLOOR && legR.base == Base.FLOOR -> Base.FLOOR
             else -> Base.STAND
         }
         val seated = base == Base.SIT
@@ -230,6 +235,7 @@ object PoseSolver {
             Base.SIT -> Body.SEAT_PELVIS
             Base.KNEEL -> Body.KNEEL_PELVIS
             Base.SQUAT -> Body.SQUAT_PELVIS
+            Base.FLOOR -> Body.FLOOR_PELVIS
             Base.STAND -> v(3.8f * w, Body.STAND_PELVIS_Y - 0.8f * kotlin.math.abs(w), 0)
         }
         val pelvis = basePelvis + v(0, 0, sway)
@@ -317,6 +323,7 @@ object PoseSolver {
             // "none" suppresses the chair a seated figure would otherwise get (a child sitting on a hip).
             prop = if (p.prop == "none") null else p.prop ?: if (seated) "chair" else null,
             yaw = yawFor(viewOverride ?: p.view),
+            accessory = p.accessory,
         )
     }
 

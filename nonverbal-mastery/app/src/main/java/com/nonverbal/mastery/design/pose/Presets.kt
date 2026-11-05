@@ -147,7 +147,7 @@ enum class HandShape {
 }
 
 /** What the pelvis rests on. */
-enum class Base { STAND, SIT, KNEEL, SQUAT }
+enum class Base { STAND, SIT, KNEEL, SQUAT, FLOOR }
 
 data class LegPreset(
     /** Ankle position in world space (feet stay planted when the pelvis moves). */
@@ -177,6 +177,8 @@ object LegPresets {
         "walk_forward" to LegPreset(v(8.5, 8.5, 26), v(0, 0, 1)),
         "walk_back" to LegPreset(v(8.5, 10.5, -24), v(0, 0, 1), heelLift = 6f),
         "sit" to LegPreset(v(11, 8.5, 40), v(0, 0.7, 0.7), base = Base.SIT),
+        // Sitting on the floor, legs crossed: knees out to the sides, each ankle tucked under the other shin.
+        "cross_legged" to LegPreset(v(-8, 7, 18), v(1, 0.3, 0.25), base = Base.FLOOR, toeOut = -72f),
         "sit_wide" to LegPreset(v(22, 8.5, 37), v(0.65, 0.55, 0.6), base = Base.SIT, toeOut = 18f),
         "sit_ankles_locked" to LegPreset(v(-1.5, 9.5, 18), v(0.1, 0.7, 0.7), base = Base.SIT, toeOut = -6f),
         "sit_ankles_locked_under" to LegPreset(v(2, 8.5, 20), v(0.1, 0.7, 0.7), base = Base.SIT, toeOut = -2f),

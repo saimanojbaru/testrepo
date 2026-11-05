@@ -171,6 +171,8 @@ data class SceneFigure(
 
 @Serializable
 data class PoseParams(
+    /** Additive: something worn, drawn with the head: "headphones". */
+    val accessory: String? = null,
     val headTilt: Float = 0f,
     val headTurn: Float = 0f,
     val spineLean: Float = 0f,

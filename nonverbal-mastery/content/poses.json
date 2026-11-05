@@ -4734,5 +4734,440 @@
    }
   ],
   "look": "Kenji"
+ },
+ {
+  "id": "p_floor_cross_legged",
+  "title": "Sitting cross-legged on the floor",
+  "theme": "seated",
+  "desc": "Figure sitting on the floor with the legs crossed, knees out to the sides and each foot tucked under the other shin, hands resting on the knees, back upright. In many homes, places of worship and cultures this is the ordinary way to sit, not an informal one.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "cross_legged",
+   "legStanceR": "cross_legged",
+   "view": "-30"
+  },
+  "annotations": [
+   {
+    "at": "knees",
+    "text": "Knees resting out to the sides",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Hands settled on the knees",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_wheelchair_user",
+  "title": "In a wheelchair",
+  "theme": "seated",
+  "desc": "A man sitting upright in a manual wheelchair, hands resting on his thighs near the wheel rims, feet on the footplate, looking ahead. The chair is part of how he moves through the world, not a sign of anything about his mood, intelligence or wish for help.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "wheelchair",
+   "view": "-35"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Eye level about 120 cm from the floor",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Hands near the rims, ready to push",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pair_wheelchair_eye_level",
+  "title": "Talking at eye level",
+  "theme": "together",
+  "desc": "A wheelchair user and a standing man who has pulled up a chair and sat facing him, so their eyes are at the same height. Sitting down, or stepping back far enough that the other person need not crane, turns a conversation between unequal heights into a conversation between equals.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "wheelchair",
+   "view": "70",
+   "headTurn": 0
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Eyes level with each other",
+    "color": "do-green"
+   },
+   {
+    "at": "b:head",
+    "text": "Seated, not standing over him",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "thighs_rest",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "spineLean": 8
+    },
+    "x": 0,
+    "z": 110,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_wheelchair_looming",
+  "title": "Standing over",
+  "theme": "together",
+  "desc": "A wheelchair user tipping his head back to look up at a man who stands close in front of him, leaning down with a hand out toward the chair. Standing over someone who is seated, and reaching for their chair uninvited, makes the other person smaller and treats the chair as public property.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "wheelchair",
+   "view": "70",
+   "headPitch": -16
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Craning up to see his face",
+    "color": "don't-red"
+   },
+   {
+    "at": "b:right-hand",
+    "text": "Reaching for the chair uninvited",
+    "color": "don't-red"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "point_forward",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 22,
+     "headPitch": 10
+    },
+    "x": 0,
+    "z": 62,
+    "facing": 180,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_walk_cane",
+  "title": "Walking with a cane",
+  "theme": "walking",
+  "desc": "An older man walking at an unhurried pace with a cane in his right hand, planted beside the leading foot, his head up and his free arm swinging a little. Pace and gait change with age and injury; a slower walk is not a sign of a slower mind.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "hang_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "grip",
+   "legStanceL": "walk_short_forward",
+   "legStanceR": "walk_short_back",
+   "prop": "cane",
+   "view": "three-quarter",
+   "spineCurve": 6
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "Weight taken through the cane",
+    "color": "accent-cool"
+   },
+   {
+    "at": "head",
+    "text": "Head up, looking ahead",
+    "color": "accent-cool"
+   }
+  ],
+  "look": "Walter"
+ },
+ {
+  "id": "p_walk_long_cane",
+  "title": "Walking with a long cane",
+  "theme": "walking",
+  "desc": "A man walking with a long white cane held ahead of him, its red-banded tip sweeping the ground a stride in front, his head level and his free arm relaxed. A long cane tells others that the person is blind or has low vision; it is not an invitation to take his arm.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "hang_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "grip",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "prop": "long_cane",
+   "view": "60"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "The cane held low and ahead",
+    "color": "accent-cool"
+   },
+   {
+    "at": "head",
+    "text": "Head level, gaze not needed to lead",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_sit_headphones",
+  "title": "Headphones on, eyes down",
+  "theme": "seated",
+  "desc": "A seated figure wearing over-ear headphones, head lowered a little, hands clasped in the lap, shoulders drawn in. For many people with sensory sensitivities, headphones and a lowered gaze are how they stay in a loud room at all; they are a way of coping, not a refusal to engage.",
+  "params": {
+   "armPoseL": "lap_clasp",
+   "armPoseR": "lap_clasp",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "accessory": "headphones",
+   "headPitch": 16,
+   "shoulderProtractionL": 2,
+   "shoulderProtractionR": 2,
+   "view": "-25"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Sound turned down, gaze lowered",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Hands held quiet in the lap",
+    "color": "accent-cool"
+   }
+  ]
+ },
+ {
+  "id": "p_pair_men_hand_in_hand",
+  "title": "Two men, hand in hand",
+  "theme": "together",
+  "desc": "Two men walking side by side and holding hands, at an easy pace, heads turned slightly toward each other. In some places this is an ordinary gesture between friends; in others it marks a couple, and whether it feels safe to do it in public depends on the street.",
+  "params": {
+   "armPoseL": "hold_hand_low",
+   "armPoseR": "swing_forward",
+   "handShapeL": "grip",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "three-quarter",
+   "headTurn": 14
+  },
+  "annotations": [
+   {
+    "at": "left-hand",
+    "text": "Hands held between them",
+    "color": "do-green"
+   },
+   {
+    "at": "head",
+    "text": "Turned a little toward each other",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "swing_forward",
+     "armPoseR": "hold_hand_low",
+     "handShapeL": "relaxed",
+     "handShapeR": "grip",
+     "legStanceL": "walk_forward",
+     "legStanceR": "walk_back",
+     "headTurn": -12
+    },
+    "x": 52,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_pair_men_apart_glance",
+  "title": "Letting go, glancing round",
+  "theme": "together",
+  "desc": "Two men walking with a gap opened between them, hands now at their sides, one glancing back over his shoulder at the street behind. Couples who are not safe to be seen as couples learn to let go at certain corners and to check who is watching; the gap is a calculation, not a quarrel.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "swing_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "three-quarter",
+   "headTurn": -60,
+   "torsoTurn": -12
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "A glance back at the street",
+    "color": "accent-warm"
+   },
+   {
+    "at": "left-hand",
+    "text": "The hand let go",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "swing_forward",
+     "armPoseR": "pocket",
+     "handShapeL": "relaxed",
+     "handShapeR": "hidden",
+     "legStanceL": "walk_forward",
+     "legStanceR": "walk_back"
+    },
+    "x": 86,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ]
+ },
+ {
+  "id": "p_stand_large_at_ease",
+  "title": "A big man at ease",
+  "theme": "stance",
+  "desc": "A tall, heavy-set man standing at ease, weight even, hands loose at his sides, shoulders relaxed. Larger men are often read as more threatening than their behaviour warrants, and learn to make themselves smaller; at ease is not the same as imposing.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Shoulders down, not squared",
+    "color": "do-green"
+   },
+   {
+    "at": "hands",
+    "text": "Hands visible and loose",
+    "color": "accent-cool"
+   }
+  ],
+  "look": "Tony"
+ },
+ {
+  "id": "p_pair_bench_large",
+  "title": "Sharing a bench",
+  "theme": "together",
+  "desc": "A heavy-set man and a slighter man sitting side by side on a bench, the larger man with his knees drawn in and his arms close, taking less than his share of the seat. Many larger people spend public space apologising with their bodies.",
+  "params": {
+   "armPoseL": "lap_clasp",
+   "armPoseR": "lap_clasp",
+   "handShapeL": "clasp",
+   "handShapeR": "clasp",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "bench",
+   "view": "20",
+   "shoulderProtractionL": 2.5,
+   "shoulderProtractionR": 2.5,
+   "footAngleL": -8,
+   "footAngleR": -8
+  },
+  "annotations": [
+   {
+    "at": "arms",
+    "text": "Arms drawn in close",
+    "color": "accent-warm"
+   },
+   {
+    "at": "knees",
+    "text": "Knees held together",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "thighs_rest",
+     "armPoseR": "thighs_rest",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "sit_wide",
+     "legStanceR": "sit_wide",
+     "prop": "none"
+    },
+    "x": -62,
+    "z": 0,
+    "facing": 0,
+    "scale": 1
+   }
+  ],
+  "look": "Tony"
+ },
+ {
+  "id": "p_greet_folded_hands",
+  "title": "Hands joined in greeting",
+  "theme": "greeting",
+  "desc": "A man in a turban greeting with his palms joined in front of his chest and his head slightly bowed. Joined hands accompany greetings in Sikh, Hindu and many South and South-East Asian traditions; they are complete in themselves and need no handshake to follow.",
+  "params": {
+   "armPoseL": "palms_together",
+   "armPoseR": "palms_together",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headPitch": 10,
+   "spineLean": 3,
+   "view": "-20"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Palms joined at the chest",
+    "color": "do-green"
+   },
+   {
+    "at": "head",
+    "text": "A small bow of the head",
+    "color": "accent-cool"
+   }
+  ],
+  "look": "Harpreet"
  }
 ]
