@@ -80,6 +80,20 @@
    "doCaption": "Taking demands off the table until it has passed.",
    "dontCaption": "Adding one more demand to a hard conversation.",
    "annotation": "Lowering the load is often more useful than any advice. One hard thing at a time is enough."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_too_close",
+   "doCaption": "Sitting alongside and letting him set the pace",
+   "dontCaption": "Crowding a stressed man with questions",
+   "annotation": "Questions fired at close range add load. Sitting beside someone, saying little, gives them company without one more demand."
+  },
+  {
+   "doPoseId": "p_breath_exhale",
+   "dontPoseId": "p_stand_hands_wring",
+   "doCaption": "One long out-breath before you walk in",
+   "dontCaption": "Carrying the wait in your hands and shoulders",
+   "annotation": "Before a hard conversation, check your own shoulders and breath. A settled body reads others better and loads them less."
   }
  ],
  "caseStudy": "Gary, forty-eight, manages a warehouse team. Over the autumn, one of his best supervisors, Paul, becomes difficult to work with. He snaps at the night shift, answers Gary's questions in single words and once walks out of a meeting. Two people complain. Gary's first instinct is a formal warning.\n\nBefore he decides, he watches Paul for a few days. He notices that Paul's shoulders are up almost all the time now, that he rubs his neck constantly, that he eats lunch standing up and that he checks his phone every few minutes. When Gary thinks back to last year, he remembers a man who leaned on the loading-bay door, laughing with the drivers. The change has been slow. Nobody noticed it happening.\n\nGary asks Paul to walk the yard with him, side by side, at a quiet time. He does not mention the complaints first. He says Paul seems to have a lot on and asks whether there is anything Gary could take off his plate. Paul is quiet for a long time. Then he says his father has dementia and has moved in with him and his wife, and that he has not slept a full night since September. He keeps checking his phone in case of a fall.\n\nGary gives him two things. He moves Paul off the rotating night shifts for three months, so his hours are predictable. And he agrees that Paul can take calls about his father at any time without asking. He also mentions the company's employee assistance line and suggests Paul talk to his doctor about his sleep.\n\nThe complaints stop. Paul's shoulders are not down yet, but by Christmas he is leaning on the loading-bay door again, now and then.",
@@ -98,6 +112,10 @@
     "Notice your jaw and where your breath is moving in the chest or belly.",
     "Breathe out slowly and let your shoulders drop as far as they will go.",
     "Write down how far they dropped each time, as a rough measure of how much you were bracing."
+   ],
+   "variations": [
+    "Add a fourth reminder just before a meeting or call you are dreading, and compare how far your shoulders drop then.",
+    "Ask someone you live with to tell you, once a day for a week, when they notice your shoulders up, and compare their reports with yours."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Mark any slow changes you had not noticed until now.",
     "For each change, write two possible causes, at least one about their circumstances.",
     "Decide whether any change is worth a gentle question, and write the question."
+   ],
+   "variations": [
+    "Use photographs from a year ago, with permission, and compare posture, face and how people hold themselves now and then.",
+    "Do the exercise on yourself, using a photograph from a calmer time in your life, and write what has changed."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Note whether the stress was unusual for this particular person.",
     "Mark which readings were about the situation and which about the person.",
     "Write one sentence about how this changes what you would do."
+   ],
+   "variations": [
+    "For each occasion, write what the stressed person did next, and whether the situation or the person explained it better.",
+    "Repeat the exercise for your own stress over the same week, and mark which of your stressful moments were about the situation."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Identify one small choice you could offer them.",
     "Offer both in your next conversation, simply and without comment.",
     "Note how they responded."
+   ],
+   "variations": [
+    "Offer a switch to yourself on a hard day: one piece of information about what comes next, and one small choice.",
+    "Try offering only information, with no choice, in one conversation, and only a choice in another, and compare the responses."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Write a replacement for each that offers information, choice or company instead.",
     "Say the replacements aloud until they sound natural.",
     "Use one of them this week and note what happened."
+   ],
+   "variations": [
+    "Ask someone close to you which phrases they find unhelpful when they are stressed, and add their list to yours.",
+    "Write a replacement phrase for a child, a colleague and a partner, and notice how the wording changes for each."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Uncertainty and lack of control make stress worse. Being clear about what will happen and when, and giving her what choices you can, reduces the harm of news you cannot change.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Carney Landis and William Hunt find when they filmed people startled by a sudden gunshot behind them?",
+   "options": [
+    "A fast protective crouch: a blink, the head forward, shoulders up and arms pulled in",
+    "A slow, relaxed stretch in which people raised both arms and leaned back from the sound",
+    "No consistent pattern, since every person reacted to the noise in an entirely different way",
+    "A broad smile in most people, as relief replaced surprise within the first half second"
+   ],
+   "answer": 0,
+   "explain": "Landis and Hunt described a consistent startle pattern: a blink, the head jerking forward and down, the shoulders rising and the arms pulling in. A milder, sustained version of that crouch is the posture of ongoing stress.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a crowded airline desk, a passenger whose flight has been cancelled grips the counter, speaks loudly and stands too close. He mentions a funeral. What fits this chapter best?",
+   "options": [
+    "Warn him at once that security will be called if he raises his voice again",
+    "Tell him firmly to calm down before you will discuss any of his options",
+    "Lower your voice, acknowledge his loss, explain the options, let him choose",
+    "Ignore what he says about the funeral and focus only on processing his ticket"
+   ],
+   "answer": 2,
+   "explain": "His body shows acute stress in a situation he cannot control. Lowering your own pace and offering clear information and a choice restores some predictability and control, which is what eases this kind of strain.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that stress is always harmful and should be avoided completely. What does this chapter suggest?",
+   "options": [
+    "It is right, since any activation of the stress response damages the body",
+    "It is right for men but not for women, who handle stress more effectively",
+    "Short bursts can help; the harm comes from load that is heavy or endless",
+    "It is wrong, since stress is always good for performance and health"
+   ],
+   "answer": 2,
+   "explain": "McEwen described stress effects as both protective and damaging. Short bursts sharpen attention and help performance; harm comes from load that is too heavy, too frequent or too long, and from systems that fail to switch off.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "Why Zebras Don't Get Ulcers",
    "author": "Robert M. Sapolsky",
    "note": "Third edition, Henry Holt, 2004. A readable account of what chronic stress does to the body."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The husband who seemed angry with her",
+   "scene": "Kavita and Sunil have been married for twelve years and have two children. For the past month Sunil has been different at home. He comes\n  in from work, says hello without looking up, and goes straight to the laptop at the kitchen table. When the children are noisy he snaps at them,\n  which he never used to do. At dinner he eats quickly and says little. In bed, Kavita notices, he lies on his back with his jaw clenched, and she\n  can hear his breath, quick and shallow, long after the light is off.\n\n  Kavita has started to wonder what she has done. She runs through the last few weeks: an argument about her mother's visit, a comment she made\n  about his driving. She becomes careful around him, and then, when he does not notice her care, resentful. One evening she asks him, sharply,\n  whether he is angry with her. He looks startled and says no, of course not, and goes back to the laptop.\n\n  The next weekend, at a friend's barbecue, Kavita hears another wife mention that Sunil's company is rumoured to be cutting a third of its staff\n  before Christmas. Sunil has not said a word about it at home.\n\nLooking back, Kavita realises there had been other signs. Sunil had stopped going to his Thursday five-a-side game, saying he was too tired. He had started checking his work email at breakfast, which he used to refuse to do. And twice she had found him awake at four in the morning, sitting in the dark kitchen with a cup of tea, saying he could not sleep.\n\nShe mentions none of this to Sunil, because she is no longer sure how he will react to anything she says.",
+   "misread": "Kavita read Sunil's withdrawal, shortness and set jaw as anger directed at her. She looked for the cause in their relationship, because that was where she was, and she did not look at the shape of his body, which had been telling her about strain rather than about her.\n\nShe also read his silence as a message to her, when it was much more likely a message he could not yet send to anyone.\n\nAnd because she became careful and then resentful, her own body began to change too. Sunil, under his own load, would have read her tension as disapproval, and each of them had started to brace against the other.",
+   "betterRead": "The cluster Kavita had noticed, a set jaw, quick shallow breathing, shortness with the children and a fixed attention on work, is the shape of stress, and stress is often misread as hostility by the person closest to it. A better reading starts with the body and the situation rather than the relationship: what might be loading him? It also allows for a man who has not said what is wrong because saying it would make it real, or because he thinks his job is to protect his family from worry. Kavita's question, \"Are you angry with me?\", invited only a denial. A question about him rather than her, such as \"You've seemed under a lot of pressure lately. Is something going on at work?\", gives him a door to walk through. When she asked it, a few days later, he told her about the rumours, and admitted that he had not slept properly in weeks.\n\nIt also helped that she asked when they were alone and calm, rather than in the middle of a tense evening."
+  },
+  {
+   "title": "The goalkeeper with his shoulders up",
+   "scene": "Andy coaches an under-sixteens football team on Sunday mornings. His goalkeeper, Kyle, has been the steadiest player in the side for two\n  seasons. This autumn, Kyle's play has fallen apart. He flaps at crosses he would once have caught, shouts at his defenders and, after one goal,\n  kicks the post. Between games he is sullen. When Andy talks to him, Kyle answers in a word or two, arms folded, shoulders up near his ears.\n\n  Andy's assistant thinks Kyle has got too big for his boots and should be dropped for a game to remind him of his place. Andy is inclined to agree.\n  Then, at a home match, he notices something he had not seen before. Kyle's father, who has started coming to every game this season, stands\n  behind the goal and talks to Kyle throughout: telling him where to stand, criticising his kicks, groaning loudly at mistakes. Each time his father\n  speaks, Kyle's shoulders rise a little further. By the second half, the boy is moving like a much smaller, stiffer player.\n\nKyle's mother, who drops him at training, has mentioned to Andy that things are \"a bit tense at home\" since Kyle's father lost his job in the summer, and that his father has thrown himself into Kyle's football. Andy had not connected the two.\n\nAndy also notices that Kyle's worst moments come straight after his father's loudest comments. When his father goes to buy a coffee at half-time, Kyle makes two good saves in a row and, for the first time in weeks, laughs at something a defender says. As soon as his father is back behind the goal, the boy's shoulders climb again.",
+   "misread": "The assistant read Kyle's folded arms, short answers and outbursts as arrogance, and proposed a punishment to fix it. Neither of them had looked at the situation around the goal, which was where the change had started.\n\nThey also took the outbursts as the problem, rather than as a sign of one, and reached for the kind of response that would have made the underlying load heavier.\n\nThe assistant's plan also assumed that what Kyle needed was a lesson, when the boy's problem was that he was being given far too many of them, loudly, from behind his own goal.",
+   "betterRead": "Glass and Singer found that stress which a person cannot predict or control does the most damage, and a parent's running commentary from behind the goal is exactly that: constant, unpredictable and impossible for a fifteen-year-old to stop. Kyle's raised shoulders and stiff movement were the shape of bracing, and his outbursts were what bracing often looks like in a teenager. Dropping him would have added a second uncontrollable blow. Andy did something else. He spoke to Kyle's father, kindly and privately, and asked all parents to watch from the halfway line. He told Kyle that he was staying in goal, and asked him what would help. Kyle asked if he could warm up away from the stand. Within three games he was catching crosses again.\n\nAndy also told his assistant what he had seen, so that the next time a player changed, they would both look at the touchline before reaching for the bench."
+  },
+  {
+   "title": "The man whose chair was not the problem",
+   "scene": "Dev, thirty-four, is a software engineer who has started getting headaches and a stiff, aching neck most afternoons. He assumes it is his\n  chair, and buys an expensive new one. When that makes no difference he buys a new monitor stand, then a pillow, and finally books an\n  appointment with a physiotherapist, Mrs Hughes.\n\n  Mrs Hughes watches him walk in, sit down and describe the problem. Then she asks him to let his shoulders drop. He says they are dropped. She\n  takes a photograph of him from the side and shows him: his shoulders sit visibly high, his chin juts forward, and his upper back is held stiff.\n  She puts her hands on his shoulders and asks him to breathe out slowly. They sink by what looks like two or three centimetres.\n\n  She asks him what has changed in his life in the past six months. He tells her that he was moved onto the on-call rota in the spring, that\n  his phone can go off at any time of the day or night, and that he has been sleeping with it on the pillow beside him.\n\nDev tells Mrs Hughes that he does not feel stressed. He likes his job, he is good at it, and the on-call shifts pay well. He is surprised to find, when she asks him to notice his jaw, that his teeth are pressed together, and that they have probably been pressed together for months.\n\nMrs Hughes also asks him to describe a typical night. Dev says he wakes two or three times, checks the phone even when it has not rung, and finds it hard to get back to sleep. On the mornings after a call-out he drinks four or five coffees to get through the day. He says all this as if it were simply the price of the job, which in a sense it is.",
+   "misread": "Dev read his headaches and neck pain as a problem with his equipment, because that was the explanation that asked nothing else of him. He had no sense that his own posture had changed, because chronic tension moves the baseline so slowly that the body stops reporting it.\n\nEach new purchase also postponed the question, because each one gave him a few days of hope that the problem had been solved.\n\nAnd he read the absence of a feeling of stress as proof that he was not stressed. Many people under chronic load say the same, which is one reason the body's signs are worth checking directly.",
+   "betterRead": "Dev's case is the self-reading version of baseline drift. He could not see his shoulders, and a body held braced for months simply feels normal from the inside. A physiotherapist, someone outside the situation with a trained eye, could see what he could not, and a photograph made it undeniable. Mrs Hughes treated the neck, and she also pointed him towards the load: a phone that could ring at any moment is a clear example of the unpredictable, uncontrollable stress that Glass and Singer found most draining. Dev talked to his manager, and the team moved to shorter on-call shifts with a second person as backup. He started a shoulder check three times a day. The headaches eased within a month, and he notes, ruefully, that the new chair is very comfortable.\n\nHe also asked Mrs Hughes to take another photograph three months later. His shoulders, in the second picture, sat noticeably lower, and he keeps both images on his phone as a reminder."
+  },
+  {
+   "title": "The passenger at the desk",
+   "scene": "Rhian works at an airline's customer service desk. On a stormy evening, twenty flights are cancelled, and the queue at her desk stretches\n  out of sight. A man in his fifties, Mr Obi, reaches the front after two hours. He stands very close to the desk, gripping its edge with both\n  hands. His shoulders are high, his jaw is set and he speaks loudly and fast. He says he must be on a flight to Lagos tonight, and that he does not\n  want to hear about the weather.\n\n  Rhian has had a long shift and several abusive customers. She feels her own shoulders go up. Her training tells her to warn customers who raise\n  their voices that she will call security. She begins to say so.\n\n  Then Mr Obi says, in the middle of a sentence, that his mother's funeral is the day after tomorrow, and his voice cracks. He takes his hands off\n  the desk and puts one over his eyes.\n\nBehind Mr Obi, the queue has grown restless, and two other passengers are filming him on their phones. A security officer at the end of the hall has begun to watch the desk.\n\nRhian can see the clock behind him. The last flight that might take him anywhere near Lagos leaves in under an hour, and she knows that the seats on it went twenty minutes ago. Whatever she tells him, it will not be what he wants to hear.",
+   "misread": "Rhian read the grip on the desk, the loud voice and the closeness as aggression, and began to answer them as a threat. Her own tiredness and the evening's earlier customers had already primed her to see hostility.\n\nShe also began to respond to the threat she saw rather than to the person in front of her, which is how a stressed exchange between two tired people becomes a confrontation.\n\nHer training had taught her a rule for loud customers, and the rule was useful. Applied without looking, it would have treated a grieving man as a security risk in front of a hall full of cameras.",
+   "betterRead": "Mr Obi's body showed the shape of acute stress: braced shoulders, set jaw, high fast speech and hands gripping something solid. In a situation he could neither predict nor control, carrying news he had not yet said aloud, that shape is what most people would show. Rhian's better reading began when she let herself see it, and her response followed the chapter's advice: lower the load, and give information and choice. She lowered her own voice, said she was very sorry about his mother, and told him exactly what was possible: a seat on the first flight in the morning, or a longer route that night through another city. She asked which he would prefer. His shoulders dropped as he thought about it. He chose the morning flight, thanked her, and apologised for shouting.\n\nRhian noted later that her own raised shoulders had nearly decided the exchange for both of them.\n\nHer lower voice also helped the people behind him. The queue settled as the exchange calmed, and the security officer turned away."
+  }
+ ],
+ "workedReading": {
+  "title": "The partner at the door",
+  "scene": "Leah hears Sam's key in the door at half past seven. He comes into the kitchen with his coat still on, drops his bag on a chair, and opens and closes a cupboard harder than he needs to. His shoulders are high, his jaw is set and his breathing is quick and shallow; she can hear it from across the room. He says \"hi\" without looking at her and starts emptying the dishwasher, fast. Leah had been looking forward to telling him about a flat they might rent, and had laid out the details on the table. She feels her stomach tighten.\n\nLeah has spent most of her afternoon imagining his pleasure at the flat. She notices, as she watches him, that her disappointment is already turning into irritation, and that she is about to say something about the cupboard.\n\nShe also notices that she wants him to notice her. She had a good day and has news she is excited about, and his arrival is not the scene she had imagined. That wish is understandable, and she sets it aside for a few minutes, because it will make whatever she reads more about her than about him.",
+  "steps": [
+   {
+    "label": "Describe before interpreting",
+    "text": "Leah makes herself list what she can see before deciding what it means. Coat still on. Bag dropped. Cupboard closed hard. Shoulders high, jaw set, breath quick and high in the chest. A short greeting with no eye contact. An immediate, fast task. She notices that her first impulse was to call all of this \"angry\", and that the word arrived before the list did.\n\nDescribing first also gives her a few seconds. In those seconds the tightness in her stomach eases a little, and she is less likely to answer his body with her own.\n\nWriting the list in her head, rather than reacting, also means she is watching him rather than her own feelings. For the next few minutes, her stomach is information about her, and his body is information about him."
+   },
+   {
+    "label": "Mark the situation",
+    "text": "It is a weekday evening, he has come straight from work, and she knows that his team has a large deadline this week. The situation is one that would load most people. Nothing has happened between the two of them today: they exchanged friendly messages at lunch. That makes it more likely that whatever she is seeing came in through the door with him.\n\nShe also notices what she does not know. He may have had news she has not heard yet. The situation is mostly invisible to her, which is a reason to hold any reading lightly.\n\nShe also reminds herself that a deadline week has a shape of its own. In earlier deadline weeks, Sam has been short every evening and fine again by the weekend, which is a pattern worth remembering."
+   },
+   {
+    "label": "Check the baseline",
+    "text": "Sam's usual arrival is slow: coat on the hook, a kiss, a few minutes on the sofa before he does anything. When he has been angry with her in the past, he goes quiet and still, and he does not do housework. Fast, jerky tasks are what he does when he is under pressure, as she has seen before exams and before his father's operation. This looks more like his stress than his anger.\n\nShe is glad she has the comparison. Without a baseline, the fast tasks and the hard cupboard would look like temper. With one, they look like a familiar sign of pressure."
+   },
+   {
+    "label": "Name the cluster",
+    "text": "The cluster runs through several channels, posture, breath, voice and movement, and all of them point the same way: a body braced and in a hurry. It does not include anything directed at her: no glare, no pointed remark, no turning away from her when she speaks. That absence matters as much as what is present.\n\nShe also checks her own body, because her tight stomach is part of the scene. A reader braced for an argument tends to find one.\n\nIf any part of the cluster had been aimed at her, such as a remark about the papers on the table or a refusal to look at her when she spoke, she would have read it differently. None was."
+   },
+   {
+    "label": "Hold the readings open",
+    "text": "He may have had a bad day at work. He may be worried about something he has not told her. He may, less likely, be annoyed about something she has done that she does not know about. Leah notes that she does not need to know which, yet. What she needs to decide is what to do in the next five minutes, and that is the same for all of them: do not add a load.\n\nHolding the readings open also stops her from reaching for the question that would load him most, \"What's wrong with you?\", which assumes something is wrong with him rather than with his day.\n\nShe also decides that if, after dinner, it turns out that he is annoyed with her, she will hear it then, when they are both calmer. Nothing about the next five minutes requires her to know."
+   },
+   {
+    "label": "Lower the load, offer a switch",
+    "text": "She moves the flat details off the table, quietly, so that he will not see them as one more thing. She puts the kettle on, and says, \"Rough day? Do you want to talk about it now, or after we've eaten?\" She keeps her voice low and does not ask anything else. The question gives him information, that she has noticed, and a choice about when.\n\nShe chooses the kettle deliberately. A small, ordinary task alongside him, rather than facing him across the table, makes the question feel less like an interview.\n\nShe also leaves the room for a minute, to hang up his coat, which gives him a moment alone with the dishwasher and a chance to breathe without being watched."
+   },
+   {
+    "label": "What happened",
+    "text": "Sam stops, puts down a plate and breathes out. He says after dinner. Over the meal his shoulders come down a little, and afterwards he tells her that a client had threatened to pull a contract that afternoon, and that his manager had blamed him in front of the team. They talk for an hour. The flat waits until the weekend, when he looks through the details twice and says he likes it. Leah notes that her first word, \"angry\", would have taken the evening somewhere quite different.\n\nShe also notices that if she had raised the flat at once, he might well have said he did not like it, and both of them would have believed him.\n\nLater that week, Leah tells Sam what she had seen when he came in, and how close she had come to taking it personally. He is surprised. He had not noticed the cupboard, or his coat, or that he had not looked at her."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Taking another person's stress personally",
+   "body": "The closer you are to a stressed person, the more likely you are to read their stress as being about you. A partner's shortness, a boss's coldness, a friend's silence: each arrives in a relationship, so the relationship is the first place we look for its cause. Sometimes that is right. More often, the body is announcing a load the person carried in from somewhere else. Before you ask what you have done, look at the shape: raised shoulders, set jaw, high breath and hurry point to strain, while a cold, steady look or a pointed remark aimed at you points to anger. Then ask about them, not about you.\n\nIt also helps to remember that people under stress often push away the people they feel safest with, because those are the people with whom they can afford to stop pretending. Being on the receiving end of that is hard. It is also, in an odd way, a sign of trust.\n\nThe reverse also happens. Some people are so used to being blamed that they read every stressed person around them as angry with them, and spend their energy trying to soothe a mood they did not cause. Checking the shape protects them too, because it lets them see when someone else's strain is not theirs to carry."
+  },
+  {
+   "title": "Treating stress as weakness",
+   "body": "Many men have learned that stress is something to hide, and many of the people around them have learned to treat visible strain as a failure of character. A colleague who looks stressed is told to toughen up; a son who braces before a match is told to stop being soft. This does not make the stress go away. It teaches the person to hide it, which moves the strain from the shoulders to the sleep, the stomach and the temper, where it is harder to see and harder to help. Stress is the body doing its job under load. Reading it as weakness misreads it twice.\n\nReaders who are men themselves are not immune to this. Many find that they are harshest about stress in others when they are most stressed themselves, and least willing to admit it.\n\nIt also helps to watch the words used about stress in your own home or workplace. If the only words available are weak, soft and losing it, people will hide strain until it can no longer be hidden. Plain words, such as under pressure, stretched or carrying a lot, make it easier to say."
+  },
+  {
+   "title": "Rushing to fix",
+   "body": "When we see someone stressed, the urge is to help at once, and help usually means advice: you should talk to your manager, you should take a break, you should try breathing exercises. Advice, offered too early, is one more demand on a person who already has too many. It also tells them that their state is a problem you want solved, which can feel like a judgment. The more useful early moves are smaller: noticing, lowering your own pace, removing what can wait, and asking what would help. If advice is wanted, it will be asked for.\n\nA useful rule is to ask before advising: \"Do you want ideas, or do you just want to talk?\" Most people answer honestly, and either answer tells you what to do next.\n\nFixing also tends to end conversations. Once a solution has been offered, the stressed person is expected to take it or explain why not, and either way the talking stops. Listening keeps the conversation open long enough for the real load to come out."
+  },
+  {
+   "title": "Seeing stress in every raised shoulder",
+   "body": "Once you know the shape of stress, it is easy to see it everywhere. Not every high shoulder is strain. Some people simply carry their shoulders high, as part of their usual posture. Cold weather lifts shoulders and tightens jaws. Pain in the neck, back or jaw can produce the same shape for reasons that have nothing to do with pressure. And a reading of stress is not a diagnosis of anything: it is a hypothesis about a state, to be checked against the person's baseline and the situation, and, where it matters, by asking.\n\nIt is also worth remembering that you are reading a state, not a person. Someone who looks stressed this week is not a stressed person, any more than someone who looks happy today is a happy person.\n\nAnd when a reading of stress is wrong, the cost is usually small, provided you have only asked a kind question. The cost rises quickly when a reading is announced as fact: \"You're stressed\" can feel as presumptuous as \"You're angry\"."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is stress always bad for you?",
+   "a": "No. The stress response exists because it helps: it sharpens attention, mobilises energy and prepares the body to act, and short bursts of it before a match, a presentation or an exam can improve performance. McEwen's own description of the stress systems, in the paper this chapter draws on, called their effects both protective and damaging. The damage comes from load that is too heavy, too frequent or too long, and from systems that fail to switch off afterwards. A useful question is not whether someone is stressed, but whether their stress ever comes down.\n\nIt also helps to separate stress from the things that cause it. A demanding job, a new baby or a house move may produce a great deal of stress and still be worth it. Reading stress well means noticing the load, not deciding whether the person should be carrying it.\n\nIt is also worth noticing your own pattern. Some people perform best with a little pressure and fall apart with a lot; others find even mild pressure draining. Knowing your own curve helps you read your own state, and to treat other people's curves as different from yours."
+  },
+  {
+   "q": "Can I tell chronic stress from a bad day just by looking?",
+   "a": "Not from a single look. A bad day and a bad season can produce the same shoulders and the same jaw. The difference shows over time and against the person's baseline: chronic strain shifts how someone usually looks, so that the raised shoulders and quick breath become their normal rather than a change from it. That is why it so often goes unnoticed, by the person and by everyone around them. The useful tools are memory, photographs and comparison with how they were months ago, and, above all, a kind question about how things have been lately.\n\nIf you know someone well, you can also watch the recovery. After a stressful event, how long does it take their shoulders to come down, their sleep to settle and their humour to return? A recovery that takes longer and longer is often the first sign that load has become chronic.\n\nIt also helps to know the common slow signs of strain that are easy to miss because they build so gradually: shorter temper, less laughter, giving up hobbies, later nights, more coffee or alcohol, and fewer phone calls to friends. Any one of them means little. Several, arriving over a season, are worth a question."
+  },
+  {
+   "q": "Why do the shoulders rise when we are under pressure?",
+   "a": "Landis and Hunt's films of the startle reflex showed a fast, protective crouch: the head comes forward and down, the shoulders rise and the arms pull in, guarding the neck and the softer front of the body. A milder, sustained version of that crouch appears under ongoing stress. The muscles that lift the shoulders are working continuously, which is one reason that chronic stress so often comes with neck and shoulder pain and headaches. Letting the shoulders drop, especially on a long out-breath, reverses the pattern for a moment, and repeated often enough, it can make the person aware of how much they had been holding.\n\nIt is also why so many people are surprised by how far their shoulders drop when they first check. The muscles have been working so long that the effort has stopped registering.\n\nIt also helps to check the jaw, which often clenches alongside the shoulders and is even easier to overlook. Many people find, when they first check, that their teeth are pressed together and their tongue is pushed hard against the roof of the mouth."
+  },
+  {
+   "q": "Does telling someone to calm down ever help?",
+   "a": "Rarely. \"Calm down\" and \"relax\" ask a stressed person to do something they would already be doing if they could, and they often hear it as a criticism, which adds a second load. What tends to help more is what Glass and Singer's experiments point to: a sense of predictability and control. Tell the person what will happen next. Offer a choice, even a small one, such as now or after lunch. Lower your own voice and pace, because people under stress often match what is around them. Remove anything that can wait. These do more than any instruction to relax.\n\nIt also helps to say what you are doing. \"I'm going to sort out the tickets; you don't need to do anything for the next ten minutes\" takes a demand away and tells the person what comes next, both at once.\n\nWith children, the same principle holds even more strongly. A child who is told to calm down has been given an instruction they usually cannot follow. A child who is told what will happen next, and given a small choice, often settles without being asked to."
+  },
+  {
+   "q": "Do men and women show stress differently?",
+   "a": "On average there may be differences, but they are smaller than people expect and they vary a great deal between individuals. Shelley Taylor proposed that the tend-and-befriend pattern might be especially strong in women, and later work by von Dawans and colleagues found that men under stress also became more trusting and generous towards others. What differs more reliably is what people have learned to show. Many men have learned to hide strain, or to show it only as irritation, which is why a stressed man is so often read as an angry one. Read the person and the situation before you read the sex.\n\nIt also helps to remember the situation. Many workplaces and families still reward men for hiding strain, which means that the absence of visible stress in a man under heavy load is not necessarily a sign that he is coping.\n\nIt may also help to notice how stress shows in the people you know best, regardless of sex. Some go quiet, some get busy, some get sharp and some get funny. Those personal patterns are more useful than any general rule."
+  },
+  {
+   "q": "When should someone's stress worry me?",
+   "a": "When it does not come down. Strain that lasts for weeks, that shows in sleep, appetite or health, that pushes someone away from the people and activities that usually help them, or that comes with talk of hopelessness, deserves more than a kind word. Later chapters in Part II describe burnout, depletion, anxiety and low mood, and 2.13 describes what to do if you are worried about someone's safety. A reader cannot diagnose any of these, and should not try. What you can do is notice, ask, listen, and encourage the person to talk to their doctor or another professional, and offer to help them do it.\n\nIf you are worried about yourself, the same applies. Notice what has changed, tell someone you trust, and talk to your doctor. Stress that has stopped coming down is common, it is treatable, and seeking help for it is a sensible thing to do.\n\nIf the person is someone you manage, the same rules apply with one addition: make sure they know what support the workplace offers, such as an employee assistance programme or occupational health, and that using it will not count against them."
   }
  ],
  "watch": [
