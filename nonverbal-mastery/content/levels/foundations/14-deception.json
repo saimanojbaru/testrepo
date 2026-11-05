@@ -80,6 +80,20 @@
    "doCaption": "Trusting by default, and checking what matters.",
    "dontCaption": "Suspecting everyone, all of the time.",
    "annotation": "Most communication is honest, so the truth default is usually right. Suspicion costs relationships and catches very few liars."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_stand_hand_mouth",
+   "doCaption": "Hearing the whole account, then checking it",
+   "dontCaption": "Reading a hand over the mouth as a lie",
+   "annotation": "A hand to the mouth has no reliable link to lying. Listen to the full story, and look for facts that can confirm or contradict it."
+  },
+  {
+   "doPoseId": "p_mixed_seated_across",
+   "dontPoseId": "p_gaze_down_away",
+   "doCaption": "Remembering that shame and grief lower the eyes",
+   "dontCaption": "Reading lowered eyes as guilt",
+   "annotation": "Gaze aversion is the most widely believed cue to lying and is not one. Embarrassment, grief and fear of being doubted look the same."
   }
  ],
  "caseStudy": "Rob, fifty, owns a small hardware shop. Over a month, the till comes up short on six evenings, by between twenty and sixty pounds. Three people work the till. Rob has read articles about spotting liars, and he decides to ask each of them about it and watch closely.\n\nTwo of them answer easily and look puzzled. The third, Kemal, a quiet man in his twenties who has worked there a year, goes red, looks at the floor, touches his neck and answers in short, halting sentences. Rob feels certain. Everything he has read says this is what a liar looks like. He decides to let Kemal go at the end of the week.\n\nHis wife, who keeps the accounts, asks him one question before he does: which evenings was the till short, and who was working? Rob had not checked. When they look, Kemal worked only two of the six evenings. All six, though, were evenings when a particular customer had returned goods using the old card machine, which, it turns out, had been processing some refunds twice. The supplier confirms the fault. The money is recovered.\n\nRob thinks about why Kemal reacted as he did. He knows Kemal's visa depends on keeping this job, that Kemal's English is careful rather than fluent, and that Kemal is shy with almost everyone. Being questioned by his boss about missing money was frightening for reasons that had nothing to do with guilt. Rob had read Kemal's fear of being disbelieved as a liar's fear of being caught.\n\nHe tells Kemal what happened and apologises. Kemal is quiet for a moment and then says he had not slept for two nights. Rob replaces the card machine, and stops reading articles about spotting liars.",
@@ -98,6 +112,10 @@
     "For each suspected lie, note what triggered the suspicion.",
     "Mark which suspicions rested on behaviour and which on facts.",
     "Write one sentence about the base rate of serious lies in your own week."
+   ],
+   "variations": [
+    "Keep the lie diary for a week rather than three days, and compare the first three days with the last four.",
+    "Ask a trusted friend to keep the same diary for three days, then compare what each of you lied about and why."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Note what you concluded at the time and whether you ever learned the truth.",
     "Write how the conversation might have felt from their side.",
     "Write the question you could have asked instead."
+   ],
+   "variations": [
+    "Repeat the exercise for a time when you were the nervous, honest person someone doubted, and write what would have helped.",
+    "Ask someone you know well to describe a time they were disbelieved while telling the truth, and listen without correcting them."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "List the facts that can be checked against their account.",
     "Check what you can from reliable sources.",
     "Compare your first impression with what the facts suggest, and note which was more informative."
+   ],
+   "variations": [
+    "Choose a historical case in which the truth later came out, and compare how the person's demeanour was described at the time with what was later established.",
+    "Do the exercise with a friend, each forming a first impression separately, and compare how much your impressions agreed before you looked at any facts."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Read it aloud and remove any words that imply they are lying.",
     "If it is appropriate and matters, ask it, once, and listen to the whole answer.",
     "Note how the conversation went and whether the confusion was resolved."
+   ],
+   "variations": [
+    "Write the same open question for three different relationships, a partner, a colleague and a child, and note how the wording changes.",
+    "Practise asking an open question about something low-stakes, such as a change of plan, and notice how the other person responds when they feel unjudged."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Decide whether it is your business at all.",
     "If it is not serious, write a sentence letting it go.",
     "If it is serious, write which person or process could properly handle it."
+   ],
+   "variations": [
+    "Return to the suspicion you chose after a month and note whether anything has changed, and whether letting it go cost you anything.",
+    "List three suspicions you have dropped in the past and whether any of them turned out to matter."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Behaviour carries very little information about lying, and traps damage relationships while measuring the trap. An open conversation, and facts where they matter, are the only honest routes, and the deeper issue may be trust itself.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Bond and DePaulo find when they combined many studies of people judging lies from behaviour?",
+   "options": [
+    "Average accuracy was about 54 percent, only a little better than chance",
+    "Average accuracy was about 90 percent among trained police officers",
+    "Average accuracy rose steadily the longer people watched a speaker's face",
+    "Average accuracy was far below chance, because people trusted every liar"
+   ],
+   "answer": 0,
+   "explain": "Across studies involving more than 24,000 judges, accuracy averaged about 54 percent, and professionals did little better than students. Judging lies from behaviour barely beats a coin toss.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A friendly, confident builder looks you in the eye, refuses a written contract and asks for most of the money upfront. What fits this chapter best?",
+   "options": [
+    "Trust him, since steady eye contact is one of the clearest signs of honesty",
+    "Distrust him, since confident people are usually lying about something",
+    "Ask for references, a written quote and payments in stages against work done",
+    "Watch his hands closely for the small gestures that give liars away"
+   ],
+   "answer": 2,
+   "explain": "Demeanour drives belief far more than honesty does, and confident liars benefit from it. The refusal of a contract is information about the situation, and checking references and staging payments protects you whatever his face shows.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone tells you that people look up and to one side when they invent a story. What does the evidence say?",
+   "options": [
+    "It is true, and it was the strongest cue found in DePaulo's review of cues",
+    "It is true for most people, though left-handed people do it the other way",
+    "Wiseman and colleagues tested it directly and found no support for it",
+    "It is true only when people are lying about something that matters"
+   ],
+   "answer": 2,
+   "explain": "Richard Wiseman and colleagues tested the claim in 2012 and found that the direction of people's eye movements did not distinguish lies from truth. It is a popular tell with no evidence behind it.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "The Polygraph and Lie Detection",
    "author": "National Research Council",
    "note": "National Academies Press, 2003. The scientific review of the polygraph and its limits."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The son who would not meet her eyes",
+   "scene": "Sandra's son Leo, sixteen, comes home an hour after his curfew on a Saturday night. He says he was at his friend Kofi's house, playing video\n  games, and lost track of time. Sandra asks him a few more questions in the kitchen. Leo answers in short sentences, looks at the floor, picks at\n  the label on a bottle of water and keeps shifting his weight from one foot to the other. When she asks why he did not answer her texts, he says\n  his phone died, and his ears go red.\n\n  Sandra has read that liars avoid eye contact and fidget, and Leo is doing both. She tells him she knows he is lying, that he is grounded for a\n  month, and that she will be checking his phone. Leo shouts that she never believes him and slams his bedroom door. The next morning, Kofi's\n  mother, whom Sandra meets at the shops, mentions in passing how nice it was to have Leo over, and that the boys had been up late talking.\n\n  Later that week, Leo tells his older sister what had really been wrong. His girlfriend had ended things with him by text that evening, at\n  Kofi's, and he had spent most of the night talking about it. He had not wanted to cry in front of his mother.\n\nSandra had not slept while she waited. She had rung Leo twice, imagined him in an accident, and by the time his key turned in the lock, the fear had turned into anger. She was also, though she did not say so, still angry about a lie he had told in the spring, about a party, which she had found out about weeks later. She went into the kitchen already half sure of what she would hear.",
+   "misread": "Sandra read Leo's downcast eyes, fidgeting and blushing as signs of a lie, because that is what popular lists of tells say. She treated the strength of her feeling as evidence, and she acted at once, with a punishment and an accusation, on the weakest kind of information there is.\n\nShe also let her anger choose the reading. After an hour of fear, a lie was the explanation that made sense of her feelings, and the earlier lie about the party made it feel even more likely. A reading that fits your mood is not the same as a reading that fits the evidence.",
+   "betterRead": "Gaze aversion is the cue people around the world most believe in, and DePaulo's review found no reliable link between it and lying. Embarrassment, grief, shame and the fear of being disbelieved all lower the eyes. A sixteen-year-old who has just been dumped, questioned by his mother in the kitchen, has every honest reason to look at the floor. A better reading starts from what can be checked. Kofi's house could have been confirmed with one message. And the question that mattered most to Sandra, whether her son was safe, had already been answered: he was home. An open question, asked gently the next day, such as \"You seemed upset last night. Is everything all right?\", might have brought the real story out at once.\n\nIt also helps to separate two questions Sandra ran together: whether Leo was where he said, and why he was late and silent. The first could be checked in a minute. The second needed patience, not suspicion."
+  },
+  {
+   "title": "The candidate with a gap in his CV",
+   "scene": "A housing charity is interviewing for a finance officer. On the panel are Deborah, the director; Phil, a trustee; and Hannah from human\n  resources. The strongest candidate on paper is Samuel, forty-four, who has excellent references from two previous employers. When Phil asks about\n  an eighteen-month gap in his employment history, Samuel's manner changes. He looks down, speaks more slowly, stumbles over his words and says only\n  that he had \"some family matters to deal with\". He does not elaborate. His hands, which had been resting on the table, move to his lap.\n\n  After the interview, Phil says he does not trust Samuel. \"Did you see him when I asked about the gap? Couldn't look at me. He's hiding\n  something. Prison, or he was sacked.\" Hannah says that they cannot judge that from his manner. Deborah agrees to make a decision only after\n  references and the standard checks.\n\n  The checks come back clean. When Deborah calls Samuel to offer him the job, he tells her, unprompted, that the gap was the period when he had cared\n  for his wife through cancer until her death, and that he still finds it hard to talk about with strangers.\n\nPhil has sat on many interview panels and prides himself on reading candidates. He tells the others that in thirty years in business he has learned to trust his gut, and that it has rarely let him down. Hannah notes, privately, that he has no way of knowing how often it has, since he rarely learns what happens to the people he turns down. Samuel's answers to every other question had been clear, detailed and well prepared. The change came at one question only.",
+   "misread": "Phil read Samuel's change of manner as concealment of something discreditable. He took a visible shift in behaviour, which shows only that a question touched something, and decided what that something was. Then he filled the gap with the worst story he could imagine.\n\nHe also gave himself no way of being wrong. If Samuel had explained the gap, Phil might have heard the explanation as a rehearsed story. Once he had decided that the discomfort meant concealment, almost anything Samuel said could be fitted into the same picture.",
+   "betterRead": "A change in behaviour when a subject comes up tells you that the subject matters to the person. It does not tell you why. Grief, illness, caring, redundancy and mental health problems are among the commonest reasons for gaps in employment, and all of them are things people may be reluctant to discuss with strangers in a job interview. This is the Othello error in a workplace: the signs of an honest person's discomfort read as the signs of a liar's. Hannah and Deborah did what the research recommends. They refused to judge from demeanour, and they relied on checks designed for exactly this question. A structured interview, with the same questions for every candidate and scoring agreed in advance, also helps, because it gives a panel's impressions less room to drift.\n\nSamuel was under no obligation to explain the gap, and a good panel does not press candidates for personal details. If a gap matters to the job, the panel can ask every candidate the same neutral question and let the checks do the rest."
+  },
+  {
+   "title": "The builder everyone believed",
+   "scene": "Grace, seventy-two, a retired nurse, wants her kitchen redone. A builder named Gary knocks on her door after doing a job for a neighbour,\n  or so he says. He is warm, relaxed and easy to like. He looks her in the eye, remembers her late husband's name after hearing it once, and talks\n  knowledgeably about the work. He shows her photographs of kitchens on his phone and gives her a price that is reasonable without being suspiciously\n  low. When she asks about a written contract, he laughs and says that he works on trust, like the old days, and that paperwork only slows things\n  down. He asks for sixty percent of the price upfront to buy materials.\n\n  Grace's daughter, Ruth, is uneasy when she hears about it on the phone, but Grace says she is a good judge of people after forty years on hospital\n  wards, and that Gary has an honest face. She pays him by bank transfer. He starts work on the Monday, removing the old units, and does not come\n  back. His phone number stops working. The neighbour, when asked, says Gary never did any work for her.\n\nGrace is not naive. She spent decades spotting patients who were hiding how ill they felt, and she is proud of it. What she does not consider is that a hospital ward and a doorstep are very different places. On the ward she could check her impressions against charts, tests and colleagues every day. On her doorstep she has nothing to check them against but a face. When Ruth reports the fraud to the police, the officer tells them that a man matching Gary's description has done the same to at least four other people in the area, all of them older.",
+   "misread": "Grace read Gary's steady eye contact, ease and warmth as signs of honesty. She also trusted her own long experience of people to protect her. Both readings made the same mistake as the people who distrust the nervous: they judged honesty from demeanour.\n\nShe also took his warmth as evidence about his work. Being pleasant at the door says nothing about whether a man can fit a kitchen, let alone whether he will. And she treated her long experience as protection, when it was experience of a quite different setting.\n\nHer daughter's doubts, which rested on the facts, she set aside as worry.",
+   "betterRead": "Timothy Levine's research on what he calls sender demeanour has found that some people are simply believed, whether they are telling the truth or not, and others are doubted either way. Their manner, not their honesty, drives most of the judgments people make about them. A practised fraudster has usually learned to show exactly the demeanour that people take for honesty, which is why confident liars do so well and nervous truth-tellers do so badly. The protection is the same in both directions: check what can be checked. A real builder can give an address, a written quote, references you can ring yourself and a payment schedule tied to finished work. Gary's refusal of a contract was the signal, and it was information about the situation, not about his face.\n\nRuth's unease was worth more than Grace's impression, because it rested on the situation: a cold call, no paperwork and a large payment upfront. None of that required reading Gary's face at all."
+  },
+  {
+   "title": "The witness whose story changed",
+   "scene": "Lucia runs a café on a busy street. One afternoon a woman's handbag is snatched outside, and Lucia, who saw part of it through the window,\n  gives a statement to a police officer at the scene. She says the man was in his twenties, wore a dark hoodie and ran towards the station. Two days\n  later, a detective, Sergeant Collins, interviews her again. This time she remembers that the hoodie was dark green, that the man had a white\n  stripe on his trainers, and that he may have run past the station rather than into it. She is less sure about his age.\n\n  Sergeant Collins becomes wary. Her account has changed, she seems flustered when he points this out, and she keeps touching her face and glancing\n  at the door. He notes in his report that the witness may be unreliable or protecting someone, and gives her account little weight. A week later,\n  CCTV from a shop opposite shows a man in a dark green hoodie, with white stripes on his trainers, running past the station.\n\nLucia had not wanted to get involved, and nearly did not give a statement at all. She has a business to run and the café was busy. In the second interview, held at the police station, she is aware of the time, of her staff covering for her, and of the sergeant's tone, which grows noticeably cooler once he spots the differences between her two accounts. She begins to wonder whether she is in some kind of trouble herself.\n\nThe CCTV comes to light only because the shop's owner, hearing about the theft from a customer, offers the footage himself. Sergeant Collins had not asked for it, having already decided that the case rested on a witness he did not trust.",
+   "misread": "Sergeant Collins read the changes in Lucia's account as signs of invention, and her discomfort when challenged as a sign of guilt. He treated consistency as the mark of truth and inconsistency as the mark of a lie.\n\nHe then read her nervousness when challenged as confirmation, which turned an ordinary reaction to being doubted into a second piece of evidence against her. And his note meant that every officer who read the file afterwards would inherit his reading without ever having met her.",
+   "betterRead": "Research on eyewitness memory, including work by Ronald Fisher and colleagues, has found that honest witnesses commonly add or change minor details when they tell a story again, and that such changes say little about whether the rest of their account is accurate. Memory is rebuilt each time it is recalled, and a second, calmer interview often brings out details the first did not. Lucia was flustered because a police officer was telling her that her story did not add up, which would fluster almost anyone. The better reading compares the core of the account across tellings, notes which details are new, and checks them against independent evidence, as the CCTV eventually did.\n\nCollins could also have asked how his own manner was affecting her. A witness who feels doubted becomes more anxious, and an anxious witness can look less credible, a loop that has nothing to do with the truth.\n\nSeparating the core of an account from its details takes a little longer, and it is far more reliable."
+  }
+ ],
+ "workedReading": {
+  "title": "The missing laptop",
+  "scene": "Nadia manages a small design studio of eleven people. On Monday morning, one of the studio's laptops, kept in a locked cupboard for staff to borrow, is missing. The sign-out sheet shows no entry since Thursday. When Nadia mentions it at the morning meeting, most people look blank or mildly curious. Ben, a junior designer who joined three months ago, goes pale, says he has not seen it, and leaves the meeting early, saying he has a call. Two colleagues exchange glances. By lunchtime, one of them has quietly told Nadia that \"it's obviously Ben\". Nadia feels the same pull. She also knows that if she gets this wrong, she could lose a good employee and poison the studio.\n\nNadia has a further reason to be careful. At a previous job, she watched a manager accuse a temporary worker of taking money from the petty cash on the strength of a nervous manner, and then quietly drop the matter when the money turned up in a different tin. The worker had already left. Nadia remembers how small, and how permanent, that mistake was.\n\nShe also knows that office suspicion spreads quickly, and that once a name has been whispered it is hard to take back.",
+  "steps": [
+   {
+    "label": "Name the trigger",
+    "text": "Nadia starts by asking what, exactly, has made her suspect Ben. The honest answer is his reaction: he went pale, his denial came quickly, and he left early. Nothing else points to him. She notices that every item on her list is demeanour, and that demeanour is the weakest evidence there is. She also notices that her colleagues' certainty is built on the same reaction, so two people agreeing adds nothing new.\n\nShe also notices how quickly the suspicion formed. It arrived within seconds of Ben's reaction, fully shaped, before she had any facts at all. Speed of that kind is a feature of the mind, not of the evidence."
+   },
+   {
+    "label": "Ask what is at stake",
+    "text": "A laptop is worth around a thousand pounds and may hold client files, so this matters, and it is Nadia's job to deal with it. But a false accusation against a junior employee would also be serious: for him, for the studio and potentially for her as an employer. Both errors have costs. She decides that the aim is to find the laptop, not to find a culprit, and that she will not say anything to Ben that she could not justify to an employment tribunal.\n\nWeighing both errors also changes what she will say. When the aim is to find a laptop, the natural question is where it might be, not who took it."
+   },
+   {
+    "label": "List the honest explanations",
+    "text": "She writes down every honest reason Ben might have reacted as he did. He is new and may fear being blamed because he is new. He may be anxious by temperament. He may have borrowed the laptop and forgotten to sign it out. He may know something about it that embarrasses him but is not theft. His call may have been real. Writing these down does not prove any of them, but it stops the first story from occupying the whole of her mind.\n\nShe adds one more possibility: that someone else moved it and Ben knows nothing at all. That is the plainest honest explanation, and the easiest to forget once a suspect has been found.\n\nWriting the list also reminds her that she does not need to decide which explanation is true. She needs to find the laptop."
+   },
+   {
+    "label": "Look for checkable facts",
+    "text": "Nadia turns to what can be checked. The studio's door system records which key cards were used and when. The laptop is registered to the studio's account, and IT can see when it last connected to the network. The cleaning firm has a log of its visits. She asks IT, and learns that the laptop last connected on Friday afternoon, at the office, and has not been online since. The key-card log shows three people in the building on Friday evening, and Ben is not one of them.\n\nNone of these facts settles the matter alone, but together they move her attention away from Ben's face and towards what happened to the laptop. She notes, too, that she could have checked all of this before the meeting."
+   },
+   {
+    "label": "Ask an open question",
+    "text": "She asks the whole team, by email, whether anyone used the laptop late last week or knows where it might be, and adds that she is not looking to blame anyone, only to find it. She then has a short, private, friendly conversation with each of the three people who were in on Friday evening, asking what they remember about the cupboard. She asks Ben nothing she does not ask everyone.\n\nShe keeps each conversation short and the same in shape: what they remember, whether they saw anyone at the cupboard, and whether there is anything else she should know. Asking everyone the same thing protects the innocent and keeps her own suspicion out of her voice."
+   },
+   {
+    "label": "Keep the serious route ready",
+    "text": "Nadia decides in advance that if the laptop has not turned up by the end of the week, she will report it to the police and the insurer and let them investigate. She will not run an interrogation of her own. That decision takes the pressure off her conversations, because she does not need them to produce a confession.\n\nIt also protects Ben. If something more serious had happened, a formal process would give him a clear account of what he was accused of and a fair chance to answer, which an informal grilling by his manager would not."
+   },
+   {
+    "label": "What happened",
+    "text": "One of the Friday-evening three, a senior designer, replies to the email within the hour. She had taken the laptop to a client presentation, meant to sign it out, and left it in the boot of her car over the weekend. It is back by two o'clock. Later, Ben tells Nadia that he went pale because in his previous job a phone had gone missing and he had been questioned about it for an afternoon, as the newest person, before it was found in someone else's drawer. Nadia's reading of his face had been right in one respect: he was frightened. It had been completely wrong about why.\n\nNadia also changes the sign-out system, and thanks the team at the next meeting for their help. She says nothing about suspicion. Most of the studio never knew that one of them had been suspected.\n\nHer own lesson, which she writes in her notebook, is short: check first, ask everyone, and treat a frightened face as a question rather than an answer."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Learning the tells anyway",
+   "body": "Many readers finish a chapter like this one, agree with it, and then go back to reading nose touches and glances to the left. The lists of tells are everywhere, they are confidently written, and they offer something the research does not: a feeling of control. One of the best known, the claim that people look up and to one side when they invent something, was tested directly by Richard Wiseman and colleagues in 2012, and they found no support for it. If you notice yourself reaching for a tell, treat that as a sign that you want certainty, not as evidence about the other person. Then ask what facts are available instead.\n\nIt also helps to notice where tells come from. Many popular lists cite no research that tested the cues they describe, and some come from courses with an interest in sounding certain. A cue that has never been tested is a guess, however confidently it is presented. In a second study, Wiseman's team found that people taught the eye-movement idea were no better at judging lies than people who had not been taught it."
+  },
+  {
+   "title": "Trusting the confident",
+   "body": "The mirror image of the Othello error is believing people because they seem honest. Steady eye contact, an easy smile, a relaxed body and a fluent story all make people believe a speaker, and none of them reliably indicates honesty. The people most harmed by this error are those who pride themselves on being good judges of character: they check less, because they trust their impression more. Fraudsters, from doorstep builders to investment schemes, depend on it. The protection is dull and effective: written agreements, independent references, staged payments, and a rule that the more someone asks you to trust them, the more you check.\n\nOlder people are a frequent target of doorstep fraud, partly because many grew up when a handshake was a contract. Their judgment of people is often excellent. It is the setting, a stranger on the doorstep with no way to check, that defeats it. A simple family rule, such as never paying a large sum upfront to anyone who called uninvited, protects better than any reading of character."
+  },
+  {
+   "title": "Turning a conversation into an interrogation",
+   "body": "When people suspect a lie, they often push: repeating the question, saying they know the truth already, refusing to accept an answer, watching for cracks. Research on false confessions, much of it by Saul Kassin and colleagues, has shown that pressured questioning can lead innocent people to confess, especially the young, the anxious and those who believe that confessing will make the pressure stop. At home and at work, pressure rarely produces truth. It produces compliance, resentment and sometimes a false admission that is then treated as proof. Ask once, openly, listen to the whole answer, and if the matter is serious, hand it to people trained and accountable for investigating it.\n\nPressure also damages the relationship whatever the truth turns out to be. A teenager grilled over a curfew, or an employee questioned as if guilty, remembers how it felt long after the facts are settled, and is less likely to bring you the truth next time.\n\nIn formal settings, research of this kind has led many police services, including those in England and Wales, to move from accusatory questioning towards information-gathering interviews, in which the aim is to obtain a full account and test it against the evidence."
+  },
+  {
+   "title": "Believing you can always tell",
+   "body": "Many people are sure they are good at spotting lies. The research suggests that this confidence tells you very little: a review by Bella DePaulo and colleagues found almost no relationship between how confident people were in their lie judgments and how accurate they were. The feeling of certainty comes from somewhere else, from how strongly a story fits what you already suspect, or from how clearly you saw a nervous gesture. If you are certain someone is lying and you have no facts, the certainty is the thing to examine.\n\nA useful habit is to write down, privately, what you suspect and why, and then to note later whether you were right. If you keep such a record, you may find that your hit rate on suspicions based on behaviour is lower than you assumed, and that the suspicions that proved right were usually backed by facts. The record does what confidence cannot: it shows you how good you really are."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Are some people naturally good at spotting lies?",
+   "a": "There have been claims of rare \"wizards\" who can spot lies far better than chance. Charles Bond and Adnan Uysal examined those claims in 2007 and argued that, given how many people had been tested, a few high scores were what chance alone would produce. Even if exceptional lie-spotters do exist, they are very rare, and there is no way to know from the inside whether you are one. Large reviews of the research, such as Bond and DePaulo's analysis of studies involving more than 24,000 judges, find average accuracy of about 54 percent, and they find that professionals such as police officers do little better than students. The safe working assumption is that you are not a wizard, and neither is anyone you know.\n\nTraining in nonverbal cues has generally helped little. In one study by Saul Kassin and Christina Fong, students trained in the behavioural cues taught by a popular interrogation method became more confident and less accurate. Confidence that grows faster than accuracy is a risk in itself."
+  },
+  {
+   "q": "Can microexpressions give a liar away?",
+   "a": "The idea is that a hidden feeling flashes across the face for a fraction of a second before it is masked. Research has found something much more modest. In a study by Stephen Porter and Leanne ten Brinke, brief expressions appeared in about a fifth of participants, always partial, never the full flash of popular accounts, and they were rare enough that they could not tell an honest face from a false one. Later work has found such expressions typically last under half a second. Chapter 1.2 covers this in detail. A brief expression can tell you that a feeling passed through someone. It cannot tell you that they are lying, because honest people have passing feelings too, especially when they are being watched closely.\n\nEven a genuine flash of feeling leaves you with the original problem: you still do not know what caused it. A flicker of fear in someone being questioned fits a liar and an honest person who fears being disbelieved equally well.\n\nWatching for microexpressions also has a cost. It fixes your attention on a face, a fraction of a second at a time, and draws it away from what the person is actually telling you, which is where the useful information lies."
+  },
+  {
+   "q": "Are lie detector apps or voice-stress systems any better?",
+   "a": "No independent evidence shows that consumer apps can detect lies, and the scientific case for voice-stress analysis is weak. A study funded by the United States National Institute of Justice tested two voice-stress systems on people who had been arrested, comparing what the systems said about questions on recent drug use with the results of drug tests, and found the systems performed at about chance. The polygraph, which is far better studied, was found by the National Research Council to be too inaccurate for screening. If a device promises to tell you whether your partner or employee is honest, treat it as a toy at best, and remember that acting on its results can do real harm.\n\nSuch tools are sometimes marketed to employers, parents and worried partners. The same rule applies to all of them: an accusation based on a device whose accuracy has not been shown is still an accusation based on nothing reliable.\n\nIf you are worried enough to consider such a tool, the worry is usually better taken to a conversation, or to someone with the proper authority to look into it."
+  },
+  {
+   "q": "What if I am right and they really are lying?",
+   "a": "Sometimes you will be. People do lie, and sometimes the nervous person you suspected turns out to have been hiding something. But being right once does not show that the method works, any more than a correct coin toss shows that coin tosses can predict the future. You will remember the times your suspicion was confirmed more readily than the times it was wrong or never tested, which makes your record look better than it is. What matters is what you do with a suspicion. If it rests on behaviour, hold it lightly and look for facts. If facts support it, you no longer need the behaviour. Either way, the decision should rest on evidence, not on a face.\n\nIt also helps to think about the cost of each kind of mistake in your situation. Wrongly believing a colleague about a small expense claim costs a little money. Wrongly accusing them can cost a career and a friendship. Those costs, not your gut, should decide how much evidence you need before you act."
+  },
+  {
+   "q": "How should I handle a child who lies?",
+   "a": "Calmly, and without treating it as a crisis of character. Research by Kang Lee and colleagues has found that lying emerges in many children around the age of three, as their understanding of other minds develops, and becomes more skilled with age. It is an ordinary part of growing up. How adults respond seems to matter. Victoria Talwar and Kang Lee found that children at a school that used harsh punishment were more likely to lie, and more skilled at it, than children at a school that did not. In another study by Lee and colleagues, a story that praised a child for telling the truth encouraged honesty more than stories that warned of punishment. Make the truth safe to tell, praise it when it comes, and focus on fixing the problem rather than on catching the lie.\n\nWith teenagers the same principles hold, though the stakes can be larger. Research by Håkan Stattin and Margaret Kerr found that most of what parents know about their teenagers' lives comes from what the teenagers choose to tell them, rather than from watching or checking. A home in which the truth is safe to tell is better protection than any amount of surveillance."
+  },
+  {
+   "q": "Is it ever right to suspect someone?",
+   "a": "Yes. Levine's truth-default theory describes the things that usefully trigger suspicion: a motive to deceive, a statement that contradicts known facts, information from a third party, a story that does not hang together, or a pattern of past deception. Those triggers are about situations and evidence, and they deserve attention. What this chapter warns against is suspicion built on behaviour alone. When something real triggers your doubt, follow it in the right way: check what can be checked, ask openly, and, if the stakes are high, involve people whose job it is. Suspicion is a reason to look at the facts, not a reason to stare at a face.\n\nIt can also be right to say plainly that something does not add up, without calling it a lie. \"I'm confused, because the bank statement shows something different. Can you help me understand?\" leaves room for an honest explanation and still raises the problem.\n\nQuestions of that kind work because they are about the facts, not about the person's character, and they allow someone who has made an honest mistake to correct it without losing face."
   }
  ],
  "watch": [
