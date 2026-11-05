@@ -81,6 +81,20 @@
    "doCaption": "Pausing, and letting the point land.",
    "dontCaption": "Racing through it, filling every silence.",
    "annotation": "Pauses are the sound of thinking, for speakers and listeners both. Silence after a question often brings the better answer."
+  },
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "Upright, voice carrying, breath free",
+   "dontCaption": "Slumped over the laptop, voice falling into the desk",
+   "annotation": "Posture shapes the voice. Slumped over a laptop, the breath is cramped and the voice drops into the desk."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Turning to hear it",
+   "dontCaption": "Talking over the quiet voice in the room",
+   "annotation": "Quiet, light voices are easily overlooked in meetings. Notice whose ideas you hear, and whose you only hear the second time."
   }
  ],
  "caseStudy": "Steve, fifty-three, phones his son Liam every Sunday. Liam is nineteen and in his first year at university two hundred miles away. On the phone Liam is usually fast and loud, interrupting himself with stories, laughing at his own jokes.\n\nOne Sunday in November, Steve notices something before he notices anything Liam says. Liam's voice is lower than usual and flat. He answers in short sentences with long pauses before each one. There is no laughter. When Steve asks how things are going, Liam says *fine, yeah, fine*, and the words come slowly, with a breath before them.\n\nSteve has been practising listening with his eyes closed on these calls, and he does it now. Every feature of the voice has changed from Liam's baseline at once, pitch, pace, rhythm, laughter, and the change began from the first word. It is not the line; he can hear the television in the background clearly.\n\nHe considers the rivals. Liam might be tired, or ill, or hungover, or in the middle of exams. Any of those could flatten a voice. He decides not to press on the phone, where Liam can hang up, and not to tell him that he sounds low, which might make him defensive. Instead he says he will be driving past the university on Saturday for work, which is almost true, and asks if Liam fancies lunch.\n\nAt lunch, side by side in a busy café, Liam tells him that his exams went badly, that he has not made many friends, and that most evenings he sits in his room. They talk for two hours. Steve helps him find the university's advice service and a climbing club that meets on Wednesdays.\n\nOn the following Sunday, Liam's voice is quicker. Not back to normal. Quicker.",
@@ -99,6 +113,11 @@
     "Note anything that usually changes when they are excited, tired or annoyed.",
     "Over the next week, listen for any change from these baselines.",
     "Record each change, the moment it began, and two possible causes."
+   ],
+   "variations": [
+    "Add a fourth person whom you mostly hear on the phone, and compare how much more of their baseline you know from the voice than the face.",
+    "Write each baseline in terms of breath as well: where the person seems to breathe, and how often.",
+    "Ask one of the three to describe your voice baseline, and compare it with your own description."
    ]
   },
   {
@@ -110,6 +129,10 @@
     "Write what you think the speaker was feeling at each change.",
     "Watch the same five minutes with the picture and note how your impressions change.",
     "Write down which impressions came from the voice alone."
+   ],
+   "variations": [
+    "Use a radio interview or podcast instead of a video, and compare how much more you hear when there is no picture to lose.",
+    "Do it with a recording in a language you do not speak, and see which feelings still come through."
    ]
   },
   {
@@ -121,6 +144,10 @@
     "Note whether the answer that comes is longer or more thoughtful than usual.",
     "Note any fillers the other person uses while thinking, without judging them.",
     "Write one sentence about how the silences felt to you."
+   ],
+   "variations": [
+    "Extend the silent count to five on one conversation, and note what happened in the extra seconds.",
+    "Try it on a video call, where silences feel longer, and notice whether you can hold them."
    ]
   },
   {
@@ -132,6 +159,10 @@
     "Listen to both and note differences in pitch, pace, volume and breath.",
     "Record the frustrating description again after one long breath out, speaking a little slower.",
     "Compare the second and third recordings and note what changed."
+   ],
+   "variations": [
+    "Repeat the recordings after a run of bad sleep, and compare your calm baseline with your tired one.",
+    "Read the paragraph once standing and once slumped in a chair, and listen for differences in breath and pitch."
    ]
   },
   {
@@ -143,6 +174,10 @@
     "Notice whether their voice changes over the next few minutes.",
     "Afterwards, note what happened to your own state as well.",
     "Repeat in two more conversations and compare."
+   ],
+   "variations": [
+    "Try it with a child who is upset, kneeling to their height as you lower and slow your voice.",
+    "Notice someone else doing it well, such as a nurse, a teacher or a customer service worker, and note exactly what their voice does."
    ]
   }
  ],
@@ -224,6 +259,58 @@
    "explain": "Every feature of his voice has changed from his own baseline at once. It does not tell you why, but it is worth a low-pressure way to ask more, such as meeting in person, rather than either ignoring it or labelling it.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Klofstad and colleagues' research on voters suggest about voice pitch?",
+   "options": [
+    "Listeners preferred candidates with higher-pitched voices, which they heard as more friendly",
+    "Voters tended to prefer candidates with lower-pitched voices, hearing them as stronger",
+    "Pitch made no difference to voters, who attended only to what the candidates actually said",
+    "Voters preferred whichever pitch was closest to their own, whatever the candidate's sex"
+   ],
+   "answer": 1,
+   "explain": "Lower-pitched voices tended to be heard as stronger and more competent and were preferred, a bias with no connection to the quality of what is said. A careful listener corrects for it deliberately.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your elderly mother's evening voice message is unusually slow and slurred, and she says she feels odd. What fits this chapter best?",
+   "options": [
+    "Assume she has had a glass of wine, and mention it to her in the morning when she is rested",
+    "Wait until her next message, to see whether the change in her voice is still there tomorrow",
+    "Call her at once, and if the slurring persists or there are other signs, call for emergency help",
+    "Read it as low mood, since a slower and flatter voice is a classic sign of feeling depressed"
+   ],
+   "answer": 2,
+   "explain": "Sudden slurred speech in a familiar voice is a change in baseline that could be medical, including a sign of stroke. The rule throughout this book is to take the medical explanation seriously first and act on it.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "A colleague says that people who use a lot of fillers like um and uh are unsure of what they are saying. What does the research suggest?",
+   "options": [
+    "He is right, since fillers are a reliable sign that the speaker lacks confidence in the content",
+    "He is right only for formal settings, since in casual talk fillers carry no meaning whatever",
+    "Fillers are mostly a habit picked up from others, and carry no information about the speaker",
+    "Fillers are used systematically to signal that the speaker is planning what to say next"
+   ],
+   "answer": 3,
+   "explain": "Clark and Fox Tree found that speakers use uh and um in regular ways to signal delays while they plan. They are part of how conversation is coordinated, not a sign of doubt or weakness.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "A caller to your help line is speaking fast and loudly, clearly stressed. What does the research on vocal contagion suggest you do?",
+   "options": [
+    "Slow and lower your own voice a little, leaving pauses, so that their voice can come down too",
+    "Match their pace and volume, so that they can hear that you share their sense of the urgency",
+    "Tell them firmly to calm down and to slow down, so that you can understand what they need",
+    "Stay silent until they have finished speaking, however long it takes them to wind down"
+   ],
+   "answer": 0,
+   "explain": "Voices carry moods between people, as Neumann and Strack found. A calmer voice at your end tends to steady the caller's, while matching their stress keeps it going and telling them to calm down rarely helps.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -252,6 +339,110 @@
    "work": "Voice-only communication enhances empathic accuracy",
    "author": "Michael W. Kraus",
    "note": "American Psychologist 72(7), 2017. An intriguing finding about listening without faces, to be held lightly until it is repeated."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "Two voices on the help desk",
+   "scene": "At a university IT help desk, two staff take calls in the same week during the first days of term. A lecturer rings ten minutes before\n  a lecture because the projector in her room will not connect to her laptop. Her voice is high and fast, her sentences are clipped, and she\n  breathes audibly between them. She says she has two hundred students arriving and nothing works.\n\n  The first time she rings, she gets Dave. Dave is efficient and keen to help, and without noticing he matches her: he speaks quickly,\n  raises his voice a little to sound energetic, and fires questions at her. Has she tried the other cable? Is the laptop on the guest network?\n  What model is it? Within a minute both of them are talking fast and over each other. She becomes more flustered, misreads his instructions\n  twice, and finally says she will just do the lecture without slides, and hangs up.\n\n  The next week, the same lecturer rings with the same problem in a different room, and gets Asha. Asha's first sentence is slow and low. She\n  says that ten minutes is plenty of time, and asks the lecturer to tell her what she can see on the screen. Asha leaves short pauses after each\n  answer. By the third exchange the lecturer's voice has slowed and dropped, her breathing is quieter, and she is reading out what is on her\n  screen accurately. The projector is working in four minutes.",
+   "misread": "Dave heard the lecturer's stress and responded to it as a demand for speed and energy. In matching her pace and volume, he added his own urgency to hers, and the two voices fed each other. He was trying to help, and he was reading her accurately as stressed; what he misread was what a stressed voice needs from the other end of the line.\n\nDave also misread his own role. He thought his job was to sound energetic and capable. On a call with a frightened person, his job was to sound like there was time.\n\nThe lecturer, for her part, came away from the first call convinced that the help desk was useless, which coloured every call she made for the rest of the term.",
+   "betterRead": "Neumann and Strack's work shows how voices carry moods from one person to another, often without either noticing. A voice that matches a stressed caller tends to keep the stress going. Asha did the opposite: she lowered and slowed her own voice, left room for answers, and let the lecturer's voice come down to meet hers. Nothing in her words was different from Dave's. The help was in the sound. Help desks, crisis lines and emergency services train exactly this, because a calm voice at the other end of a phone is one of the few tools that works on a frightened person you cannot see.\n\nDave was not a bad colleague. After listening to a recording of Asha's call in a training session, he said he had never noticed what his own voice did when a caller was stressed, and that it had felt helpful to be fast.\n\nFor readers who are not on help desks, the same skill applies to a partner arriving home stressed, a child who has had a bad day, or a friend who rings in a panic. Answer the voice with your voice before you answer the words."
+  },
+  {
+   "title": "The idea that was heard the second time",
+   "scene": "Nikhil is a data analyst who speaks quietly and quickly, with a light, fairly high voice. In the weekly planning meeting he suggests that\n  the team stop producing a monthly report that nobody reads and send a short dashboard instead. Nobody responds. The conversation moves on.\n  Ten minutes later, his colleague Craig, who has a deep, slow voice and speaks with long pauses, says almost exactly the same thing. The manager\n  says it is a great idea and asks Craig to look into it.\n\n  Nikhil says nothing in the meeting. Afterwards, one of his colleagues, Beth, who noticed what happened, tells him she is sorry. She says it\n  happens to her too, and that she has started saying, in meetings, that something was Nikhil's idea, or hers, when it reappears in someone else's\n  mouth. The manager, when Beth mentions it to him privately, is genuinely surprised. He had not heard Nikhil say it at all.\n\nNikhil has noticed this before, in other jobs. He has started saying less in meetings and sending his ideas by email instead, where they are at least credited to him. His manager has noticed that he says less, and has wondered privately whether Nikhil is as engaged as he used to be.",
+   "misread": "The manager did not decide that Nikhil's idea was worse. He simply did not register it, because a light, fast voice speaking quietly in a meeting does not carry the cues of authority that people hear in low, slow, resonant voices. When the same idea arrived in Craig's voice, it sounded like a proposal, and it was heard as one.\n\nThe bias was not malicious, which is what made it hard to see. Nobody in the room would have said that Craig's idea was better because his voice was deeper. They simply heard it as an idea, and Nikhil's as background.\n\nNikhil's quieter delivery had also made the manager read him as less engaged, which turned a bias about voices into a judgment about commitment.",
+   "betterRead": "Research on pitch, including Klofstad and colleagues' work on voters, finds that lower-pitched voices tend to be heard as stronger and more competent, a bias that has nothing to do with the quality of what is said. A careful listener in a meeting compensates for it deliberately: noticing whose voices fill the room and whose are quiet, and checking whether ideas are being credited to the voice that delivered them most impressively rather than the one that said them first. Beth's habit, naming who said something first, is one of the simplest correctives there is. The manager's own fix was to start each meeting by going round the table, so that the quiet voices were heard before the loud ones.\n\nThere is a second lesson in the case for anyone with a quiet voice. Nikhil was not wrong to speak, and he did not need a deeper voice. But he might have found allies like Beth sooner, and he might have followed his idea up in writing straight after the meeting, with his name on it, which is what he now does."
+  },
+  {
+   "title": "Not finishing his sentences",
+   "scene": "At his sister's wedding, Joel gives a short speech. Joel has a stammer. It is mild most of the time but worse when he is nervous, and\n  standing in front of a hundred and twenty people he is nervous. He blocks on the first word of his second sentence, and the silence stretches.\n  An uncle at the front table, meaning to help, calls out the word he guesses Joel is trying to say. He guesses wrong. A few people laugh, kindly,\n  and Joel's face goes red. He starts the sentence again and blocks again.\n\n  At another table, Joel's oldest friend, Kemi, simply waits, looking at Joel with an easy, unhurried expression, as if there were all the time in\n  the world. Joel catches his eye, breathes out, and gets the word. The rest of the speech is funny and touching, and his sister cries.\n\nLater, at the bar, the uncle apologises to Joel, a little embarrassed, and says he was only trying to help. Joel tells him, kindly, that the best help is to wait. The uncle says he had never thought of it that way, and that the silence had felt so long.\n\nJoel had practised the speech for weeks, with his sister and with Kemi, and he had chosen his words partly to avoid the sounds he finds hardest. He had not planned for the nerves of the moment, or for someone at the front table trying to rescue him.",
+   "misread": "The uncle read the silence as a gap that needed filling and the block as a problem he could solve by supplying the word. Many fluent speakers make the same mistake: they experience a stammer as discomfort to be relieved, often their own discomfort, and they relieve it by interrupting. To the person who stammers, it usually feels like being taken over.\n\nThe laughter, though kind, made things worse, because it told Joel that the block had become the event rather than the speech.\n\nAnd the advice the uncle might have given if he had been asked, slow down or take a breath, would have been just as unhelpful, because it treats a neurological difference as a lapse in effort.",
+   "betterRead": "Stammering is a neurological difference in how speech is produced, not a sign of nervousness about the content, deception or a lack of intelligence, though anxiety can make it worse. The kindest response is almost always to wait: keep natural eye contact, do not look away in embarrassment, do not finish the sentence, and do not tell the person to slow down or take a breath. Kemi's steady, unhurried attention told Joel that the silence was fine. Stammering organisations give the same advice, and many people who stammer say that the most helpful thing anyone can do is simply give them the time.\n\nIf you are the one who stammers, it is entirely reasonable to tell people what helps, before a speech or at the start of a meeting: that you stammer, that you will get there, and that they should wait rather than help. Most listeners are relieved to be told."
+  },
+  {
+   "title": "His mother's voice note",
+   "scene": "Oscar's mother, who is seventy-nine and lives alone, sends him a voice note most evenings, usually a minute or two about her day, the\n  neighbours and the weather. One Tuesday evening he listens to it on the bus home. Her voice is slower than usual, and some of her words are\n  slurred, run together in a way he has never heard from her. She repeats one sentence twice. At the end she says she feels a bit odd and is\n  going to have an early night.\n\n  Oscar's first thought is that she has had a glass of wine, which she sometimes does, or that she is tired. His second thought, a moment later,\n  is a public information advert he has seen many times, about the signs of a stroke, one of which is slurred speech. He rings her. She answers,\n  and her speech is still slurred. He asks her to smile and to lift both arms, as the advert says; she laughs and says one arm feels heavy. He\n  calls an ambulance and then a neighbour with a key.\n\nIn the ambulance the paramedic tells Oscar that he did exactly the right thing, and that many families wait until morning because the symptoms seem to be someone being tired or unwell in an ordinary way.",
+   "misread": "The ordinary reading, tiredness or a glass of wine, was available and comfortable, and it was also the most dangerous one. Slurred speech in a voice you know well is a change in baseline, and a sudden one. Reading it through mood or habit risked an hour, or a night, that his mother did not have.\n\nHis sister, when he called her afterwards, admitted that she had heard the same message on her phone and thought their mother sounded tipsy. Neither of them had wanted to be the one who overreacted.",
+   "betterRead": "This chapter, and Part II, give the same rule for any change that could be medical: consider the medical explanation first. Sudden slurred speech, a drooping face or weakness in an arm can be signs of a stroke, and public health campaigns in many countries teach people to call an emergency number at once rather than wait to see if it passes. Oscar did not diagnose anything. He noticed a change in a voice he knew, took the most serious explanation seriously, and checked it in the simple way he had been taught. His mother was treated within the hour, and recovered most of her speech over the following months.\n\nIf you are unsure, it is always better to call and be told it was nothing. Emergency services would far rather send an ambulance to a tired woman than arrive too late for a stroke."
+  }
+ ],
+ "workedReading": {
+  "title": "The voice on the conference call",
+  "scene": "You are on a weekly call with a project team spread across three offices. Marcus, the project lead in another city, is usually the calmest voice on the call: low, measured, with long pauses and an easy laugh. This week, as he introduces the agenda, his voice is higher than usual and faster. He says \"um\" several times in the first minute, which he rarely does, and twice he starts a sentence, stops and starts again. When someone asks about the deadline for the next stage, there is a long pause before he answers, and his answer is brief.\n\nThe call is audio only, as it usually is, because half the team are on trains or in shared offices. You have only the voice to go on, and the voice is all you need to notice that something is different.",
+  "steps": [
+   {
+    "label": "Check yourself",
+    "text": "You have heard rumours about budget cuts, and you are anxious about your own role. That anxiety makes you likely to hear bad news in any change in Marcus's voice. You also notice that your own voice, when you said hello at the start, was quicker than usual. You make a note to listen rather than to fill gaps.\n\nWriting down your own state takes a few seconds and changes how you listen for the rest of the call. You are less likely to hear your fears in his voice once you have named them as yours."
+   },
+   {
+    "label": "Recall his baseline",
+    "text": "You have heard Marcus on these calls every week for eighteen months. His voice at rest is low and slow, with pauses that come before his conclusions rather than in the middle of sentences. When he is tired he sounds flatter, not faster. When he is amused his pitch rises briefly and drops again. A sustained rise in pitch and pace, with false starts, is outside that range.\n\nYou also know some of the things that do not change Marcus's voice: bad news about the budget last year, a difficult client meeting in the spring. He sounded the same as always after both. That makes this week's change more notable, not less."
+   },
+   {
+    "label": "Check the line before the man",
+    "text": "Before reading Marcus, you check the channel. Is the connection poor? Is there noise behind him? You can hear traffic, which is unusual; he normally calls from his office. A man walking outside, or talking on a phone in a car, may speak faster and higher to be heard, and may pause because he is crossing a road. That alone could explain much of what you heard.\n\nA surprising number of misreadings on calls are really readings of the line: a bad microphone, a dropped signal, a noisy room, a speaker on a train. Checking the channel first is the audio equivalent of the single-cause check."
+   },
+   {
+    "label": "Note what changed, and when",
+    "text": "Even allowing for the traffic, the long pause came at a specific moment: the question about the deadline. The fillers clustered at the start, while he was setting out the agenda, and the false starts came when he mentioned the client. Timing points to two topics, the deadline and the client, rather than to the call as a whole.\n\nSeparating the two kinds of change, those that run through the whole call and those that arrive with a topic, is what lets you tell the setting from the subject."
+   },
+   {
+    "label": "Hold the explanations",
+    "text": "Several stories fit. He is outside, rushed and distracted, perhaps between meetings. Something has happened with the client that he has not yet been able to share. The deadline is at risk. He is unwell. Or he is simply having a hard day for reasons that have nothing to do with the project. Juslin and Laukka's review suggests that voices carry broad states such as stress fairly reliably, and specific causes hardly at all.\n\nIt helps to say the possibilities to yourself plainly and to notice which one you are rooting for. You want it to be traffic, because the other explanations might affect you. That wish is worth knowing about.\n\nIt also helps to rank them by how much they would matter to you, not just by how likely they are. The deadline being at risk matters most to you, which is precisely why it is most likely to colour your listening."
+   },
+   {
+    "label": "Respond with your own voice",
+    "text": "You do not ask, on a call with ten people, whether he is all right. When it is your turn to speak, you make your own voice a little slower and lower than usual, give your update briefly and clearly, and end with a simple offer: if there is anything on the client side you can help with this week, you are free. A calm voice, as the help desk case shows, often steadies the next one.\n\nNotice what you did not do. You did not ask him about his voice, you did not speculate to colleagues, and you did not sound alarmed. You changed the one thing you control, your own voice, and made an offer he could take up privately."
+   },
+   {
+    "label": "What happened",
+    "text": "After the call, Marcus sends you a message. He was walking back from a meeting with the client, who has asked for a much earlier deadline, and he had not yet worked out how to tell the team. He takes you up on your offer. You note two things for the future: that Marcus's voice goes up, not down, when he is under pressure, and that checking the line before the man had kept you from reading traffic and a difficult morning as bad news about your job.\n\nYou also note how little you could have known without the follow-up message. The voice told you that something was happening around the client and the deadline. It took Marcus to tell you what."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Faking a deep voice",
+   "body": "Because low voices are heard as authoritative, some men try to lower theirs deliberately, especially in interviews, presentations and negotiations. A voice pushed below its natural range usually sounds strained or theatrical, tires quickly and can damage the vocal folds over time. It also tends to slip back up under pressure, exactly when the speaker most wants it to hold. What makes a voice sound settled is not its pitch but its breath: speaking on a full, relaxed out-breath, at an unhurried pace, with pauses at the ends of thoughts. Work on those, and the pitch will find its own level. If you want help, a voice coach or speech therapist can teach you to use your natural range well, which is very different from faking another one.\n\nThere is also something faintly comic about a man performing gravitas with his larynx, and listeners often hear it. A natural voice, slowed and steadied, is far more convincing than a borrowed one.\n\nThe same goes for any vocal trick borrowed from a course: the upward inflection removed, the dramatic pause, the warm radio tone. Listeners can usually hear the technique, and they trust the person less for it."
+  },
+  {
+   "title": "Hearing accents as ability",
+   "body": "Accents carry information about where someone grew up, their class background and their first language. They carry no information about intelligence, honesty or competence, yet listeners routinely hear them that way. Part V's chapter on class describes research by Kraus and colleagues showing that people can judge social class from as few as seven words, and that speakers who sound higher class are rated more competent and offered more money by people with hiring experience. If you notice yourself warming to or cooling towards a voice before the person has said anything of substance, the accent is probably doing the work. Score what they said, not how they said it.\n\nThe bias works in both directions. A polished accent can buy a weak candidate credit he has not earned, just as a regional or foreign accent can cost a strong one.\n\nIf you are the one with the accent that draws assumptions, you already know this. What helps most is when the people around you notice the pattern and correct for it, which is what this chapter asks of every reader."
+  },
+  {
+   "title": "Finishing other people's sentences",
+   "body": "It feels like help: someone is struggling for a word, you know or think you know what it is, and you supply it. To people who stammer, people speaking in a second language, older people with word-finding difficulties and people who simply think as they talk, it usually feels like an interruption, and often like being told they are too slow to be worth waiting for. When you guess wrong, as the uncle at the wedding did, it also adds a correction to the struggle. Wait. A silence of a few seconds costs you nothing, and it tells the other person that what they have to say is worth the time it takes.\n\nIf you genuinely cannot understand what someone is trying to say, say so, and ask them to repeat it or put it another way. That respects them; guessing for them does not.\n\nIn meetings, the same habit shows up as people talking over the end of a quieter speaker's sentence, assuming they know where it was going. Often they do not."
+  },
+  {
+   "title": "Hearing \"I'm fine\" and not the voice",
+   "body": "The opposite failure to over-reading is under-reading: taking the words and ignoring the voice. A friend who says \"I'm fine\" in a flat, slow, quiet voice, with long gaps before each answer and no laughter at all, has given you more information than the words alone. That does not mean he is lying, and it does not tell you what is wrong. It means the conversation deserves another question. Part II's chapter on the \"I'm fine\" mask, and its guidance on asking twice, describe what to do next. The voice is often the first channel to change when someone is struggling, and the last one people think to hide.\n\nMen in particular often get used to hearing friends say \"fine\" in every possible tone of voice, and stop listening to the tone. Practise noticing it. One flat \"fine\" is nothing. A month of them is something.\n\nIt helps to know what the people close to you sound like when they are fine, so that you can hear when they are not. That is the voice baseline drill in this chapter, and it is worth doing for the people you love most."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can I change how my voice sounds?",
+   "a": "Some of it, yes, and quite quickly. Pace, volume, pausing and breath are under your control with practice: most people sound more settled simply by slowing down, breathing out before they start, and pausing at the ends of thoughts instead of filling them. Pitch is harder to change without strain, and there is usually no reason to try. Vocal quality, such as hoarseness or breathiness, depends partly on health and habit; persistent hoarseness lasting more than a few weeks is worth mentioning to a doctor. If you speak a great deal for work, a few sessions with a voice coach or speech therapist can be worth more than any amount of reading.\n\nRecording yourself occasionally, in an ordinary conversation rather than a performance, is the quickest way to learn what your voice actually does. Most people are surprised, and most of the surprises are useful.\n\nA simple daily habit helps more than a course: read a paragraph aloud each morning, slowly, on a full out-breath, and notice where your voice wants to rush. After a few weeks the slower pace starts to feel like your own."
+  },
+  {
+   "q": "Why does my voice shake when I am nervous?",
+   "a": "Because the voice runs on breath and muscle, and nerves change both. Under stress, breathing tends to become fast and shallow, high in the chest, and the muscles of the neck, jaw and throat tighten. The voice is pushed out on an unsteady stream of air through a tense instrument, and it wobbles. The most reliable fix is mechanical rather than mental: breathe out slowly and fully before you start, let the next breath drop low into the belly, and speak on the out-breath, more slowly than feels natural. Part II's chapter on breath covers the techniques in detail. Listeners usually notice the shake much less than the speaker does.\n\nIt can also help to slow down your first sentence deliberately. Voices tend to settle once they have started well, and a rushed opening tends to stay rushed.\n\nIt also helps to know that the shake is usually loudest at the start. Most nervous voices steady within the first minute, if the speaker keeps breathing and does not rush to get through."
+  },
+  {
+   "q": "Do accents really affect how people are judged?",
+   "a": "Yes, consistently. Studies in many countries find that listeners rate speakers with certain accents as more intelligent, educated or trustworthy than others, and that those ratings often follow class, region and ethnicity rather than anything about the speaker. Kraus and colleagues found that class could be heard from a handful of words and affected the salaries hiring managers were willing to offer. None of this is about the speaker. It is about the listener's associations. The defence, if you are judging others, is to notice your first reaction to a voice and set it aside until you have heard what the person actually has to say.\n\nIf you have an accent that others misjudge, you are not obliged to change it. Some people choose to, for work, and Part V's chapter on code-switching describes what that choice can cost. Others keep their voices and let their work speak.\n\nWhen you hear yourself forming a view of someone's ability in the first few seconds of hearing them speak, treat it as a cue to listen harder to the content, not as information about the person."
+  },
+  {
+   "q": "How can I tell whether someone on the phone is sad or just tired?",
+   "a": "Often you cannot, from the voice alone. Sadness and tiredness both tend to make voices quieter, lower, slower and flatter, and research on emotion in voices finds that these low-energy states are among the most easily confused. Context helps: the time of day, what you know about the person's week, whether the flatness lifts when you mention something they enjoy. But the honest answer is to ask, gently, and to ask in a way that allows either answer: you sound worn out tonight, is it just a long day? If it is more than that, the question leaves room for them to say so.\n\nWith people you know well, you can also learn their particular patterns over time. Some people sound sad when they are tired; others sound tired when they are sad. Your notes will tell you which."
+  },
+  {
+   "q": "Are fillers like \"um\" and \"uh\" a bad sign?",
+   "a": "Not in themselves. Clark and Fox Tree's analysis of recorded conversation found that speakers use them systematically to signal that they are planning what to say, with \"um\" often marking a longer delay than \"uh\". They are part of how conversation is coordinated, not noise or a sign of weakness. Speaking coaches who train people to remove every filler sometimes produce speakers who sound oddly rehearsed. If a speaker's fillers rise sharply against their own baseline, it may tell you that a topic is harder for them to talk about, which is worth knowing; it does not tell you why, and it certainly does not tell you they are lying.\n\nInterviewers and panels sometimes mark people down for fillers. If you are on a panel, remember what fillers are: the sound of someone thinking on their feet, which is often exactly what you asked them to do.\n\nIf you are the speaker and you worry about your fillers, the usual fix is not to suppress them but to pause instead: a silent pause does the same work and sounds more deliberate."
+  },
+  {
+   "q": "What about voices affected by disability or illness?",
+   "a": "Read them against their own baseline, never against an imagined standard. Parkinson's disease often makes the voice quieter and flatter. Strokes and other neurological conditions can make speech slurred or slow. People who are deaf or hard of hearing may speak more loudly or with a different rhythm. Stammering, as this chapter's case shows, changes the flow of speech without changing the thought. Many autistic people speak with a prosody that others misread as flat or unfriendly. In every case, the features that would signal a feeling in another speaker may be simply how this person's voice works, and a sudden change from their own usual pattern is what deserves attention.\n\nAnd if someone tells you that their voice is affected by a condition, believe them, and adjust how you listen. That is all most people want.\n\nIf you are unsure whether a change in someone's voice is new, ask someone who knows them better, or ask the person directly how they have been."
   }
  ],
  "watch": [
