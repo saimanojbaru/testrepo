@@ -84,6 +84,20 @@
    "doCaption": "Learning that this is simply how his face rests.",
    "dontCaption": "Reading a stern resting face as anger.",
    "annotation": "Resting faces vary widely, and some conditions still the face. A stern or flat face may be a baseline, not a mood."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_closed_hunched",
+   "doCaption": "Checking how this face usually rests",
+   "dontCaption": "Reading a still face as low mood",
+   "annotation": "Some faces are still at rest, for reasons of habit, health or culture. Learn the resting face before reading its stillness as a feeling."
+  },
+  {
+   "doPoseId": "p_mixed_side_by_side",
+   "dontPoseId": "p_mixed_face_to_face",
+   "doCaption": "Listening alongside, face and words together",
+   "dontCaption": "Searching her face for the truth",
+   "annotation": "The face is one channel among several, and the best trained to perform. Read it with the voice, the body and the situation."
   }
  ],
  "caseStudy": "Marcus, forty-four, runs a small restaurant. When he hires Ana as head chef, the front-of-house staff start avoiding the kitchen. Ana, they say, is always annoyed. Marcus sees what they mean. Ana's face at rest has low, straight brows and a mouth that turns slightly down, and when she is working it looks fierce.\n\nBefore saying anything, Marcus tries the habit he has been practising: describe before interpreting. Over a week he watches her face during service and writes down what moves. Her brows lower and draw together whenever she is checking a plate or timing several pans, and relax when she hands the plate over. Her lips press together when an order comes in wrong. When she talks with her sous-chef about a new dish, her cheeks lift, her eyes crease and she laughs often. With customers who come to the pass to thank her, she gives a small smile with the mouth alone and goes back to work.\n\nHis notes describe a person who concentrates hard, dislikes mistakes, enjoys food and is polite but reserved with strangers. None of it says annoyed. He asks her, carefully, whether the kitchen is going all right for her. She says it is the best job she has had. Then she laughs and says she has been told her whole life that she looks cross, and that a previous boss used to tell her to smile.\n\nMarcus tells his front-of-house manager what he has noticed, in terms of what Ana's face does at work, without any suggestion that Ana needs to change. He also asks the staff to bring problems to the pass between rushes, when her brows are not down over six pans at once.\n\nA month later, a waiter tells him Ana is actually funny. Marcus says nothing about faces at all.",
@@ -102,6 +116,11 @@
     "For each moment, write the movement in plain words or action units.",
     "Then write two or three feelings or states that could produce that movement.",
     "Note which context, such as what had just been said, would help you choose between them."
+   ],
+   "variations": [
+    "Do the same with a recorded conversation in a language you do not speak, so that the words cannot guide your labels.",
+    "Choose five moments from a film rather than an interview, and compare an actor's faces with the posed plates.",
+    "Ask a friend to make five faces for you, and describe each one in movements before they tell you what they meant."
    ]
   },
   {
@@ -113,6 +132,10 @@
     "Note who the smile was aimed at and what had just happened.",
     "Mark any smile you would previously have called fake.",
     "Write one sentence about what the polite smiles were doing."
+   ],
+   "variations": [
+    "Repeat the census on a different day and in a different setting, such as a family event, and compare the proportions.",
+    "Add a column for whether the smile changed when its audience looked away, and how quickly it returned when they looked back."
    ]
   },
   {
@@ -124,6 +147,10 @@
     "Note whether their face changed again when they turned to someone else or looked away from the group.",
     "Write what each face seemed to be saying to its audience.",
     "Write one rival reading for each."
+   ],
+   "variations": [
+    "Do it at a sporting event or in a pub showing a match, where faces change constantly and the audience shifts.",
+    "Watch your own face in a video call thumbnail and note how it changes when you think nobody is looking at you."
    ]
   },
   {
@@ -135,6 +162,10 @@
     "Then look only at the faces, with the bodies covered, and judge again.",
     "Check your answers.",
     "Write down how much of your judgment depended on the body."
+   ],
+   "variations": [
+    "Try the same exercise with photographs of people receiving good and bad news, such as election nights or exam results.",
+    "Ask a friend to do it blind, without knowing the outcomes, and compare their accuracy with yours."
    ]
   },
   {
@@ -146,6 +177,10 @@
     "Note any impression of their mood or character that you formed from it.",
     "Check each impression against what you actually know about them.",
     "Write one change you would now notice as meaningful for each of the three."
+   ],
+   "variations": [
+    "Ask one person you trust to describe your own resting face in plain terms, and compare it with how you imagine it.",
+    "Look at a few unposed photographs of yourself and write what a stranger might read into your face."
    ]
   }
  ],
@@ -227,6 +262,58 @@
    "explain": "A smile at a dinner table may be for the table: courtesy, pride, a way to tell the story. A quiet question later, without an audience, lets him say how he really is, without anyone commenting on his face.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Fernández-Dols and Ruiz-Belda find when they studied gold medallists at their award ceremonies?",
+   "options": [
+    "The medallists smiled most while standing alone on the podium as their anthem was played",
+    "The medallists smiled mostly while interacting with others, not while listening to the anthem",
+    "The medallists rarely smiled at all, since the pressure of the occasion had exhausted them",
+    "The medallists smiled equally throughout, which showed that smiles simply express happiness"
+   ],
+   "answer": 1,
+   "explain": "The champions, presumably no less happy during the anthem, smiled far more when interacting with the crowd and officials. Like Kraut and Johnston's bowlers, they suggest that smiles are aimed at audiences as much as they express feeling.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague says that anyone whose smile does not crease the eyes is being insincere. What does this chapter suggest?",
+   "options": [
+    "She is right, because the eye crease cannot be produced deliberately and so proves sincerity",
+    "She is right about strangers, though not about people whom you have known for a long time",
+    "Polite smiles without the eye crease are ordinary social signals, and many people can fake the crease",
+    "She is wrong, because the eyes play no part at all in how smiles of enjoyment actually look"
+   ],
+   "answer": 2,
+   "explain": "Most smiles in a day are social smiles, and they are not lies. And because many people can produce the eye-creasing smile on purpose, its presence or absence is a poor guide to sincerity.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "Over a year, a relative's face has become much less expressive, though he says he feels fine. What fits this chapter best?",
+   "options": [
+    "Conclude that he has become depressed and arrange for him to see a counsellor as soon as possible",
+    "Treat it as distance from the family, and give him more space until he chooses to reconnect",
+    "Assume that it is just ageing, since faces always become much less expressive as people grow older",
+    "Note the change, and gently suggest he mentions it to his doctor, without guessing at a cause"
+   ],
+   "answer": 3,
+   "explain": "Reduced facial movement can come from many things, including conditions that affect the nerves and muscles of the face. A sustained change in baseline is worth noticing and passing to someone qualified, not diagnosing at the table.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Aviezer, Trope and Todorov find when people judged tennis players' faces without their bodies?",
+   "options": [
+    "They could not reliably tell winners from losers from the faces alone, but could from the bodies",
+    "They could tell winners from losers far more accurately from the faces than from the whole picture",
+    "They judged every face as joyful, because the players' mouths were open wide at those moments",
+    "They could tell winners from losers only when the faces were shown at the moment of the point"
+   ],
+   "answer": 0,
+   "explain": "At moments of intense feeling, joy and despair produced faces so similar that people judged them near chance. The bodies, and the situation, carried the information the faces did not.",
+   "isMisconceptionTest": false,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -255,6 +342,110 @@
    "work": "Can Duchenne smiles be feigned? New evidence on felt and false smiles",
    "author": "Eva G. Krumhuber and Antony S. R. Manstead",
    "note": "Emotion 9(6), 2009. Why the eye-crease test is a weak clue, not a lie detector."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "\"Give us a smile\"",
+   "scene": "Darren, thirty-eight, supervises the loading bay at a builders' merchant. He is good at the job: calm under pressure, fair with\n  his team, quick to spot when a delivery has been loaded wrong. His face at rest has heavy, low brows and a mouth that turns slightly\n  down. When he concentrates, which is most of the working day, the brows draw together.\n\n  The new area manager, visiting for the first time, watches Darren for half an hour and then takes him aside. Customers, she says, might\n  find him intimidating. Could he try to look a bit friendlier? Smile more? Darren is taken aback. He has been told this before, by\n  teachers, by girlfriends, by a stranger in a pub who once asked him what his problem was. He goes back to the bay and spends the afternoon\n  trying to hold a pleasant expression while checking pallets, which makes him slower and more irritable, and his face, if anything, more\n  strained.\n\n  At the end of the day one of his team, who has worked with him for six years, asks whether he is all right. He has never seen Darren look\n  so tense. The customers who come to that bay every week, most of them builders who have known Darren for years, have never mentioned his\n  face at all. They mention that he is the only one who loads the vans properly.\n\nThe area manager's report on the visit includes a line about the loading bay: friendly service could be improved. Darren reads it and says nothing, but his wife notices that for weeks afterwards he checks his face in the van mirror before he gets out at work.",
+   "misread": "The area manager read Darren's resting face as a mood, and then as a problem with how he treated people, on the strength of half an hour's observation. She had no baseline for him, no evidence from his customers, and no account of what his face does when he is relaxed, pleased or annoyed. She simply saw a face that looked stern to her and assumed it meant what it would mean on her own face.\n\nHer request also put Darren in an impossible position: to keep doing the job well, while managing a face that was not doing anything wrong.",
+   "betterRead": "The careful reading begins with the resting face. Some people's brows sit low and their mouths turn down when they are perfectly content, and they spend their lives being asked what is wrong. Describing the movement rather than naming the feeling, as FACS encourages, would have shown the area manager a man whose brows lowered when he checked loads and relaxed when he talked to drivers. If she had a genuine concern about how customers felt, she could have asked the customers, or watched Darren talk to one. Asking a man to perform a smile while he works asks him to manage his face instead of doing his job, and it tells him that the face he was born with is a fault.\n\nIf Darren's face really did put a customer off, the fix would be a conversation, not a smile: a word of greeting, a joke with a regular, the kind of warmth that lives in what he says and does rather than in the set of his brows."
+  },
+  {
+   "title": "The smile at the wake",
+   "scene": "Siobhan's husband, Declan, died suddenly at fifty-six. At the wake, held at their home, she stands at the door for most of the\n  afternoon greeting people. She smiles at each of them, warmly, takes their hands, thanks them for coming, asks after their children. Several\n  times she laughs at a story someone tells about Declan. Her face is mostly bright.\n\n  Across the room, Declan's brother, Gerry, watches her with growing unease, and later says to his wife that Siobhan does not seem very cut up.\n  Gerry's wife tells him not to be ridiculous. But the remark gets back to Siobhan, as remarks at wakes do, and it hurts her more than almost\n  anything else that week. That night, when the last guest has gone, she sits on the floor of the kitchen and cannot get up for an hour.\n\nSiobhan's sister, who stood beside her for part of the afternoon, saw something Gerry did not: that each time a guest moved away from the door, Siobhan's smile fell away completely for a second or two before the next person arrived, and that she held the doorframe with one hand the whole time.\n\nTwo weeks later, when Siobhan's friend asks how she managed that afternoon, she says she does not really remember it. She remembers only that she wanted everyone who loved Declan to feel welcome in his house, and that she would have time to cry later.",
+   "misread": "Gerry read Siobhan's smiles as a direct readout of her feeling: a smiling face means a happy enough person, so a smiling widow must not be grieving much. He took no account of who the smiles were for, or of what a host at a wake is doing with her face.\n\nAnd having made the reading, Gerry said it aloud in a room full of people, where it was certain to travel, about a woman who had lost her husband four days earlier.",
+   "betterRead": "Kraut and Johnston's bowlers and Fernández-Dols and Ruiz-Belda's Olympic champions both show that faces are made for audiences: people smile far more when they are interacting with others than when they are alone with their feelings. A widow at the door of her own wake is hosting, thanking and reassuring, and the smile is part of that work. Many grieving people describe exactly this: smiling for hours for the sake of the people who came, and falling apart when they leave. A careful observer reads the smile as a message to the guests, not a report on the heart, and offers what Gerry did not: a quiet word, a hand on the arm, an offer to take a turn at the door.\n\nGerry, to his credit, apologised a month later, after his own wife pointed out that he had smiled through most of his mother's funeral."
+  },
+  {
+   "title": "The face that went quiet",
+   "scene": "Over a year, Lauren notices that her father's face has changed. At family dinners he still laughs at the grandchildren, but his face\n  barely moves when he does; the laugh is in his voice and shoulders, not his cheeks. He blinks less. When he listens to her, his expression\n  stays fixed, so that she often cannot tell whether he is interested, bored or hurt. Her brother thinks their father has become distant since\n  he retired, and perhaps depressed. Her mother says he is just tired.\n\n  Lauren also notices that his handwriting on birthday cards has become smaller, and that his right hand has a slight tremor at rest which\n  stops when he reaches for his cup. She does not know what these things mean, and she is careful not to make a diagnosis at the dinner table.\n  But she suggests to her mother that he might mention the changes to his GP, and offers to go with him.\n\nLauren's brother, Rob, lives two hours away and sees their father once a month. Each visit he finds his father harder to read, and each visit he leaves a little earlier. He tells Lauren that their father never asks him anything any more and seems not to care what he says. When Lauren mentions the handwriting and the tremor, Rob says that she is looking for problems, and that some people simply get quieter with age.",
+   "misread": "Her brother read the stillness of their father's face as a change of mood: distance, low spirits, a loss of interest in the family. That is the natural reading if the face is a window onto feeling. It led him to take his father's flat expressions personally, and to visit less.\n\nTheir mother, meanwhile, explained everything by tiredness, which was kinder but no more accurate, and which kept the family from asking the right question for months.",
+   "betterRead": "The face is a set of muscles controlled by the brain, and anything that affects that control can change what the face shows without any change in feeling. Parkinson's disease often reduces facial movement, which clinicians call hypomimia, and so can strokes, facial palsy, some medications and depression itself. A reader cannot tell which from across a table, and should not try. What Lauren did was the right use of this chapter: notice a sustained change in someone's baseline, describe it plainly, notice what else had changed alongside it, and point towards someone qualified to look. Her father was diagnosed with Parkinson's two months later. Knowing why his face had gone quiet changed how the whole family heard his laugh.\n\nShe also kept her observations to the facts she could see, and left the meaning to the doctor. That restraint is the hardest part of reading someone you love, because the worry pulls you towards a conclusion."
+  },
+  {
+   "title": "The candidate who would not stop smiling",
+   "scene": "Femi is interviewed for a graduate role in a bank by a panel of three. He smiles almost continuously: when he is introduced, while he\n  listens to each question, while he answers, and between sentences. He laughs briefly after several of his own answers. The smiles are broad,\n  but his cheeks barely lift and his eyes do not crease; they look, to one panel member, painted on. That panel member writes that the\n  candidate seemed nervous and not entirely serious, and possibly insincere.\n\n  A second panel member, Ruth, scores the content of Femi's answers against the agreed criteria and finds them strong, particularly on a\n  question about a team project that went wrong. Ruth also notices that the smile drops for a moment each time a question begins, as he\n  concentrates, and returns as soon as he starts to answer.\n\nRuth's own notes on Femi's smile are a single line: smiled throughout, consistent with nerves, drops while he listens to questions. Everything else on her sheet is about what he said.\n\nAfter the interview the first panel member says that Femi's constant smiling made it hard to take him seriously. Ruth asks which of his answers he would mark down, and he cannot name one.",
+   "misread": "The first panel member read the non-Duchenne smile as fakery and the frequency of smiling as a lack of seriousness. Both readings treat the smile as a message about the candidate's honesty and character, rather than as a common response to being nervous and wanting to be liked.\n\nThe same panel member had rated an earlier candidate highly for being warm and natural, a candidate whose cheeks lifted when he smiled and whose answers were thin.",
+   "betterRead": "Smiles that do not involve the eyes are not lies. They are the ordinary smiles of politeness, appeasement and nerves, and an interview is a setting that produces all three in abundance. Krumhuber and Manstead, whose work is listed at the end of this chapter, found that even the so-called genuine smile can be produced deliberately by many people, so the eye-crease test is a poor lie detector in either direction. Ruth's approach was the sound one: score what was said against criteria set in advance, and treat the smile as information about the candidate's state in a stressful room, not as evidence about his character. Femi was offered the job, and his manager later described him as one of the most conscientious people on the team.\n\nFemi's smile, in other words, was doing exactly what nervous smiles do: asking the room to be kind to him. Reading it as insincerity punished him for the most ordinary of requests."
+  }
+ ],
+ "workedReading": {
+  "title": "The face at the announcement",
+  "scene": "You and your partner have just told your oldest friend, Tom, over dinner at his flat, that you are getting married. Tom's face changes in the second after you say it. His brows rise, his eyes widen a little, the corners of his mouth pull up into a smile, and at the same time his lips press together briefly. Then he says, \"That's brilliant, mate,\" gets up, hugs you both, and goes to the kitchen to find a bottle of something. He is gone for a couple of minutes.\n\nYou are slightly nervous about telling him. He is the friend you have known longest, and you know that the last year has been hard for him. You have been watching his face more closely than you meant to.\n\nWhen he comes back with the bottle and three glasses, he is grinning, and asks how you proposed.",
+  "steps": [
+   {
+    "label": "Know the resting face",
+    "text": "You have known Tom for twenty years. His face at rest is open and mobile. He smiles easily, his eyebrows are expressive, and when he is surprised he usually laughs out loud. He has a habit of pressing his lips together when he is about to say something and decides not to. That last habit matters: you have a baseline for the lip press, and it is not a sign of displeasure in him.\n\nWithout that baseline, the lip press might look like the most important movement of the moment. With it, it is Tom being Tom, and the question becomes what he decided not to say."
+   },
+   {
+    "label": "Describe the movements",
+    "text": "In the plain terms FACS encourages: brows raised, eyes widened slightly, lip corners pulled up, lips pressed together for a moment, then a full smile with cheeks lifting as he stood to hug you. You resist the urge to label any of it yet. Written this way, it looks like several things happening at once, which is common at news.\n\nDescribing it this way also reveals that the movements came in a sequence rather than all at once. Sequences often tell you more than any single frame: first the surprise, then the smile, then the moment of holding something back.\n\nPlain description also protects you from your own nerves. You had been half expecting a reaction, and a nervous observer will find one in any face."
+   },
+   {
+    "label": "Ask who the face was for",
+    "text": "Faces are made for audiences, as Kraut and Johnston showed. The first movements came before he had time to arrange anything, in the second after the news. The smile with lifted cheeks came as he stood and moved towards you, when he was greeting you. The trip to the kitchen took him out of view, where his face was nobody's business but his own.\n\nThis step is easy to skip because the face feels like a window. Asking who it was for turns it back into what it mostly is: a message to the people present, shaped by what the sender wants them to know.\n\nThe kitchen, in particular, tells you something. People often step out of a room at exactly the moment a feeling needs somewhere to go, and coming back a few minutes later with a bottle is a graceful way to do it."
+   },
+   {
+    "label": "Read with body and situation",
+    "text": "Aviezer's tennis players showed that the body and the situation often tell you more than the face. Tom's body moved towards you at once and hugged you both warmly. The situation is good news from old friends, delivered in his own home. He is single, and has been since a long relationship ended last year. That last fact is part of the situation too.\n\nThe body, in other words, was unambiguous where the face was mixed. A man who did not want to celebrate would not have been on his feet and hugging you within two seconds."
+   },
+   {
+    "label": "Hold several readings",
+    "text": "The faces fit surprise, plainly. They fit happiness, plainly. The lip press, given his habit, fits a man deciding not to say something: perhaps a joke, perhaps something about his own situation, perhaps a question. The trip to the kitchen fits fetching a bottle, and also fits taking a moment alone. None of this suggests he is not glad for you.\n\nIt helps to say the readings to yourself in ordinary words: he is surprised and pleased for us, and it may have brushed against something of his own. Put that way, it does not sound like a problem. It sounds like a friend.\n\nHolding several readings at once is uncomfortable, and the temptation is to settle on the one that worries you most. Resist it. Nothing yet requires you to choose."
+   },
+   {
+    "label": "Decide what, if anything, to do",
+    "text": "There is nothing to fix and nothing to confront. If you sense that the news touched something for him, the kind move is not to name it at the table. It might be, later in the evening or on another day, to ask him how he is doing more generally, and to make sure the wedding plans include him in a way that matters, such as asking him to be best man if that was always going to happen.\n\nWhat you should not do is ask him at the table whether he is really happy for you. That question would force him either to perform happiness more convincingly or to say something about his own life in front of your partner, and he deserves the chance to choose."
+   },
+   {
+    "label": "What happened",
+    "text": "Late in the evening, on the balcony, Tom says he is genuinely thrilled, and also that it made him realise how much he had hoped to be in the same place by now. He had gone to the kitchen, he says, to have a quiet word with himself. Nothing in his face had been false. It had been a happy face for you and a private moment for him, in that order, and the order was a kindness.\n\nIt is worth noticing how little of this the face alone would have told you, and how much of it came from knowing Tom, his habits and his year.\n\nAnd it is worth noticing how close you came to spoiling it. If you had asked at the table whether he was really happy, you would have pulled his private moment into public before he was ready."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Running a fake-smile detector",
+   "body": "Once people learn about the Duchenne smile, many start sorting every smile they see into real and fake, and treating the second kind as insincerity. This is a mistake in both directions. Most of the smiles anyone produces in a day are social smiles, made to greet, thank, reassure, apologise or ease a moment, and they are no more lies than saying please is. And, as Krumhuber and Manstead found, many people can produce the eye-creasing smile deliberately, so its presence proves no more than its absence. A reader who marks a colleague down for a polite smile has not caught a liar. He has noticed that she was being polite.\n\nIf you want to know whether someone is pleased, the smile is weak evidence either way. Their words, their actions over time and what they choose to do next tell you far more.\n\nIt is also worth remembering that people from some backgrounds are taught to smile at strangers and authority as a matter of respect, so the polite smile you are tempted to call false may be good manners from home."
+  },
+  {
+   "title": "Reading stillness that comes from somewhere else",
+   "body": "A still face is not always a feeling. Cosmetic injections that relax the forehead remove the brow movements that signal worry, surprise and sympathy. Facial palsy can freeze one side of the face. Parkinson's disease, some strokes and some medications reduce expression across the whole face. Some people have simply grown up in families or cultures where the face is kept calm in company. Before you read a still face as coldness, low mood or disapproval, consider whether the face can move as much as you expect, and whether its stillness has always been part of how this person looks. Part V's chapter on disability describes how people with facial paralysis are routinely misread as less happy than they are.\n\nIf you are the person with the still face, it can help to tell people what they might be missing: that you have a condition that limits your expressions, and that they will hear more in your voice.\n\nAnd when the stillness is new, as in Lauren's father, it is worth treating as a change in baseline, which deserves a gentle question and perhaps a doctor, rather than as a change in how someone feels about you."
+  },
+  {
+   "title": "Assuming your own face is neutral",
+   "body": "Most people have little idea what their face looks like at rest, because they almost never see it except in mirrors, where they arrange it. A man who thinks he looks calm may look stern, sad or bored to others, and he will be puzzled when people react to a mood he does not have. The drills in this chapter include looking at your own resting face, which most readers find surprising. You cannot change the face you were born with, and you should not have to. But knowing how it reads lets you add a word where it helps, such as telling a new team that you look serious when you concentrate and are actually perfectly happy.\n\nIt is also worth knowing how your face changes when you are tired, stressed or concentrating, because those are the moments when others are most likely to read it as a mood aimed at them."
+  },
+  {
+   "title": "Turning your face into a uniform",
+   "body": "Some jobs, and some advice, encourage people to hold a pleasant expression at all times: in customer service, in sales, in front of a team. Part V's chapter on code-switching describes research suggesting that displaying feelings you do not have, all day, is linked with exhaustion. A face held in a permanent smile also stops carrying information, so that colleagues cannot tell when you are actually pleased. Let your face do what it does. Smile when something warrants it, show concern when someone is upset, and accept that, in between, your face will rest wherever it rests.\n\nThere is a difference between warmth and a uniform. Warmth is a response to someone; a uniform is worn regardless of who is there, and people can usually tell which one they are getting.\n\nLeaders, in particular, often believe they must keep a positive face whatever is happening. Teams usually trust a leader more when his face shows that he takes bad news seriously, and less when it stays bright through everything."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Are the six basic emotions really universal?",
+   "a": "This is one of the longest-running debates in psychology. Paul Ekman and his colleagues argued that a small set of facial expressions is recognised across cultures, including in isolated communities with little contact with Western media. Others, notably Lisa Feldman Barrett and colleagues, have argued that these studies relied on posed faces and forced choices that inflated agreement, and that people in different cultures do not reliably produce or recognise the same faces for the same feelings. Part I's chapter on cultural variance looks at the evidence in detail. For practical reading, the safest position is that the face carries some broadly shared signals, that culture shapes when and how they are shown, and that real faces rarely match the textbook versions.\n\nFor readers, this means treating the face plates in this book as a vocabulary, not a dictionary. They help you describe what you see; they do not tell you what it means in a particular person on a particular day.\n\nIn daily life, this matters less than the debate suggests. Whatever the answer about universality, a reader who describes what he sees and checks it against context will misread fewer faces than one who trusts a chart."
+  },
+  {
+   "q": "Can people fake a genuine smile?",
+   "a": "Many can, at least some of the time. The Duchenne smile, in which the cheeks lift and the eyes crease, was long treated as a mark of real enjoyment that could not be produced on demand. Krumhuber and Manstead found that people asked to pose smiles often produced the eye-creasing version too, and other researchers have found the same. Actors, salespeople and politicians do it routinely. The eye crease is still more common in spontaneous smiles of enjoyment than in polite ones, so it carries some information, but not enough to sort the honest from the dishonest. Read smiles in context: who they were for, what had just happened, and what the rest of the body was doing.\n\nThe same is true of the frown, the raised brows and every other expression: each can be produced on purpose by someone who has had reason to practise, and faces at work are often among the most practised of all."
+  },
+  {
+   "q": "Why do people keep telling me I look angry when I'm not?",
+   "a": "Probably because your face at rest has features that resemble an expression of anger: brows that sit low or close together, a mouth that turns down slightly, or a habit of frowning when you concentrate. Observers read resting faces as if they were expressions, and they do it quickly and without thinking. It is not your fault, and you do not need to fix it by performing cheerfulness. It can help to know which features people are reacting to, by looking at a few unposed photographs of yourself, and to say something to new colleagues or teams: that you look serious when you are thinking and that they should ask rather than guess. Most people are relieved to be told.\n\nIf the misreadings cause real problems at work, it is reasonable to raise them with a manager in those terms: that your face is being read as a mood you do not have, and that you would like people to judge you on what you do.\n\nSome people find it helps to notice when the misreadings happen. If it is mostly when you are concentrating, a simple sentence at the start of a meeting, such as asking people not to mind your thinking face, does more than any amount of effort to look pleasant."
+  },
+  {
+   "q": "Should I smile more at work?",
+   "a": "Smile when you mean it, and when a moment calls for warmth: greeting someone, thanking them, reassuring a nervous colleague. Smiles do help people feel welcome, and a face that never softens can be hard to approach. But a smile held on purpose for hours is work, and research on emotional labour links that kind of work with exhaustion. It also makes your face less informative, because people cannot tell your real pleasure from your default. If you are a leader, the moments that matter most are often not smiles at all, but a face that shows concern when someone brings you bad news, and that stays steady while they say it.\n\nA practical test is whether the people who work with you can tell when you are genuinely pleased. If they cannot, because your face is always pleasant, your warmth has stopped carrying information."
+  },
+  {
+   "q": "How much does a face mask or sunglasses change what people can read?",
+   "a": "A great deal. Covering the mouth removes most of the information about smiles and some about disgust and sadness; covering the eyes removes much of what signals surprise, fear and the warmth of a real smile. During the pandemic, many people discovered how much they had been relying on the lower face without knowing it, and research from that period found that masks made emotions noticeably harder to read. People adapt by leaning more on the eyes, the voice and the body. If you wear a mask or dark glasses in a conversation that matters, say more out loud: thank people in words, say when you are joking, and say when you are pleased.\n\nThe same applies to video calls with the camera off, where the whole face disappears: say aloud the reactions your face would usually carry."
+  },
+  {
+   "q": "Is it wrong to read someone's face without telling them?",
+   "a": "Not in itself. Everyone reads faces all the time; it is how conversation works. The ethical line in this book is not between noticing and not noticing, but in what you do with what you notice. Using a face to decide how gently to speak, when to pause or whether to ask how someone is, is ordinary care. Using it to catch someone out, to tell them what they really feel, or to make judgments about their honesty or character that you would not make from their words, is where reading becomes something else. If you would be uncomfortable explaining to someone how you used their face, think again about how you are using it.\n\nA simple version of the test is to imagine the person overhearing you describe their face to someone else. If they would feel understood, you are probably fine. If they would feel watched, you have gone too far."
   }
  ],
  "watch": [
