@@ -117,7 +117,7 @@ class ContentContractTest {
         check(words(l.failureMode) in 100..200, w, "failureMode must be 100–200 words (is ${words(l.failureMode)})")
         check(l.furtherStudy.size in 2..4, w, "furtherStudy must have 2–4 references")
         // Watch links: official uploads on known video sites, each with something specific to notice.
-        check(l.watch.size <= 4, w, "watch must have at most 4 links")
+        check(l.watch.size in 1..4, w, "watch must have 1–4 links")
         l.watch.forEachIndexed { i, v ->
             val host = Regex("^https://([^/]+)/").find(v.url)?.groupValues?.get(1)?.removePrefix("www.")?.removePrefix("m.")
             check(host in WATCH_HOSTS, w, "watch[$i] url must be https on a known video site, got ${v.url}")

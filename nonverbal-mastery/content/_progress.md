@@ -1,10 +1,10 @@
 # Content progress
 
-_Last updated: Part IV, The Modern World, complete. Parts I, II, III, IV and VI are written in full._
+_Last updated: v1.0. All six parts are written: 90 of 90 chapters, and every chapter links to official clips where the behaviour can be seen._
 
 ## Written
 
-75 of 90 chapters: all of Parts I, II, III, IV and VI. That is about 320,600 words, about 710 pages.
+90 of 90 chapters, all six parts. That is about 378,300 words, about 840 pages at 450 words a page.
 
 | Part I | Tier | Words | | Part VI | Tier | Words |
 |---|---|---|---|---|---|---|
@@ -82,7 +82,26 @@ _Last updated: Part IV, The Modern World, complete. Parts I, II, III, IV and VI 
 | 4.15 Leading — Authority With Warmth | Master | 4,178 |
 | **Part IV** | | **61,566** |
 
-The pack is 2.13 MB raw and 670 KB gzipped. At this rate the full book will be about 800 KB gzipped, inside the 2 MB budget.
+| Part V | Tier | Words |
+|---|---|---|
+| 5.1 Neurodivergence — Reading the Map Without the Legend | Foundation | 3,910 |
+| 5.2 Masking & Its Cost | Foundation | 3,795 |
+| 5.3 Sensory Overload in Social Space | Foundation | 3,650 |
+| 5.4 The Queer Nonverbal Dialect | Intermediate | 3,741 |
+| 5.5 Safety & Signaling in Hostile Space | Intermediate | 3,857 |
+| 5.6 Race & the Reading of Black Male Bodies | Intermediate | 4,017 |
+| 5.7 Class & the Codification of Manners | Advanced | 3,736 |
+| 5.8 Disability & the Politics of Help | Advanced | 4,225 |
+| 5.9 Age — The Invisible Man | Advanced | 3,933 |
+| 5.10 Body Size & the Claiming of Space | Expert | 3,807 |
+| 5.11 Cultural Variance — A Working Map | Expert | 3,799 |
+| 5.12 Religion, Modesty & Touch | Expert | 3,783 |
+| 5.13 Code-Switching in the Body | Master | 3,807 |
+| 5.14 Masculinity as Performance — The Cost of the Act | Master | 3,977 |
+| 5.15 Integration — Building an Authentic Nonverbal Self | Master | 3,694 |
+| **Part V** | | **57,731** |
+
+The full pack is 2.56 MB raw and 805 KB gzipped, inside the 2 MB budget.
 
 Also written: the ethics statement *On Reading People* (1,205 words), crisis resources for 11 regions plus a worldwide directory, introductions for all six parts, and the full 90-chapter outline.
 
@@ -125,6 +144,26 @@ Part II is the most sensitive part of the book, and it follows extra rules on to
 - **Pose meanings kept consistent.** The new `p_pro_video_lean_in` is the "too close" example in 4.1 and 4.2, so later chapters use `p_pro_video_call` for good video posture.
 - **Length.** Part IV chapters average about 4,100 words. The first five ran shorter (3,780–3,990); the last ten returned to 4,150–4,310 after teach blocks were aimed at 260–300 words.
 
+## How Part V was written
+
+- **About readers, not about groups.** Every chapter in Part V is about how bodies are read, and misread, by people who do not share the reader's background: neurodivergent, queer, Black, working-class, disabled, older, larger or smaller, from another culture or faith. The burden is placed on the reader's assumptions, not on the person being read.
+- **Boundaries kept.** Each chapter calls back to the earlier chapters listed under "Boundaries" below rather than re-teaching them. 5.11 is the map; 1.13 is the evidence; 6.11 is the method.
+- **No diagnosis.** 5.1–5.3 describe autistic and ADHD experience from the inside and never infer a condition from a posture.
+- **Facts checked on the web while writing**, with exact figures left out where they could not be confirmed (for example, Andreyeva 2008's "7% to 12%" and Deloitte 2013's "61%"). Contested findings are labelled: Hausdorff 1999's priming result, Bogart & Matsumoto 2010, Knapen 2018's single set of experiments, and ego depletion (Hagger 2016).
+- **New figures first.** Part V needed people the engine could not yet draw, so it gained a floor-sitting preset, a wheelchair, a cane and a long cane, headphones, named cast members (an older man, a heavy-set man, a Sikh man in a turban) and mixed pairs of men and women before the chapters were written.
+- **Length.** Part V chapters average about 3,850 words, the shortest part. Every chapter meets the contract.
+
+## Watch links
+
+Every chapter now has a "Watch it happen" section: one to four links to official clips where the chapter's behaviour can be seen, each with a note of what to notice.
+
+- **Official uploads only:** studios (A24, Warner Bros., Sony, Paramount, 20th Century, Apple TV, Netflix, Miramax), licensed clip channels (Movieclips, Rotten Tomatoes Trailers), broadcasters (BBC, Channel 4, CNN, CBS News, ABC News, the Guardian), TED and TEDx, universities, and the charities and organisations that made the material (Samaritans, Scope, RNIB, Time to Change, Thames Valley Police, the UK Men's Sheds Association).
+- **Every link was checked.** Each video id was found by searching YouTube and confirmed live through YouTube's oEmbed service. One early web search returned a wrong id, which is why nothing was taken from memory.
+- **Notes say what to notice**, without claiming timestamps that could not be checked. Where a clip is a trailer or compilation, the note describes the film or scene rather than a moment.
+- **Links leave the app.** The app has no network access and no in-app player. Tapping a link hands it to the phone's browser or YouTube app, so these are the only parts of the book that need a connection.
+- **The contract test** requires 1–4 links per chapter on a known video host (youtube.com, youtu.be, ted.com, vimeo.com, bbc.co.uk, pbs.org), with a notice of 8–70 words.
+- **Links rot.** Official channels sometimes remove clips. Re-check every id before each release, for example with an oEmbed request per link.
+
 ## The people in the figures
 
 The figures were first drawn as faceless grey mannequins. Readers found them robotic and hard to relate to, so every figure is now drawn as a person:
@@ -162,11 +201,11 @@ The right answer had been visibly the longest option in most early questions, so
 
 It also rejects words broken by a line-wrap hyphen. The stub-marker check now matches whole words only; it had been flagging the surname Todorov.
 
-## Boundaries for chapters not yet written
+## Boundaries between Part V and earlier parts
 
-Parts I and VI cover ground that later chapters approach from other angles. Keep them distinct, and call back rather than re-teach.
+Part V was written to these boundaries. Keep them if any chapter is revised: call back rather than re-teach.
 
-| Unwritten chapter | Already covered in | What the later chapter should do |
+| Part V chapter | Already covered in | What the later chapter should do |
 |---|---|---|
 | 5.1 Neurodivergence | 1.4 (Trevisan on eye contact); 1.8 (stammering); 2.9 (stimming, Kapp 2019); 2.14 (alexithymia rather than autism, Bird 2010; the ADIE trial); 3.3 and 3.5 (nodding and hugs); 4.11 (autistic candidates and eye contact in interviews) | The full picture. Call back to these rather than repeating them. |
 | 5.6 Race & the Reading of Black Male Bodies | 6.6 (Hugenberg & Bodenhausen); 1.14 (the Othello error); 3.2 (the dap's history, briefly); 4.8 (Livingston & Pearce's "teddy bear" study, one paragraph); 4.11 (Word, Zanna & Cooper 1974 on interracial interviews) | The full treatment. Keep the dap account consistent with 3.2. 4.8 promises this chapter takes up how Black men's authority is read. |
@@ -177,17 +216,17 @@ Parts I and VI cover ground that later chapters approach from other angles. Keep
 
 ## Pose library
 
-144 poses, each with a plate title, a theme, a prose description written to stand without the image, parameters and up to four annotations.
+170 poses, each with a plate title, a theme, a prose description written to stand without the image, parameters and up to four annotations.
 
 | Theme | Poses | | Theme | Poses |
 |---|---|---|---|---|
-| Stance | 11 | | Walking | 6 |
+| Stance | 13 | | Walking | 8 |
 | Posture | 10 | | Breath | 5 |
 | Arms | 10 | | Grief | 5 |
 | Self-touch | 13 | | At work | 11 |
-| Head & gaze | 11 | | Greeting & culture | 9 |
-| Gesture | 9 | | Together (2–5 figures) | 27 |
-| Seated | 17 | | | |
+| Head & gaze | 11 | | Greeting & culture | 10 |
+| Gesture | 9 | | Together (2–5 figures) | 44 |
+| Seated | 21 | | | |
 
 Every pose was reviewed visually in Paper and Ink. `./gradlew recordPaparazziDebug --tests '*PoseSheetTest*'` renders all of them, six to a page. The contract test checks:
 
@@ -202,11 +241,9 @@ Added for Part III (15 poses): the up-nod, fist bump, handshake pulled into a hu
 
 Added for Part IV (4 poses): five people round a long meeting table (`long_table` prop), a presenter walking a stage, leaning too close to the camera on a video call, and a newcomer joining an open group.
 
-Still missing, for Part V:
+Added for women in the figures (8 poses): mixed pairs of a man and a woman at an angle, side by side, face to face, across a table, seated and turned, leaning away, too close, and a handshake answered with a hand on the heart. Hints also add women to the group meeting, joining a group, the bedside and mourning, and girls to two child poses.
 
-- sitting cross-legged on the floor;
-- a main figure lying down (companions can lie down; a single lying figure cannot yet);
-- a figure using a wheelchair or a cane. These should be drawn with care, not as props.
+Added for Part V (18 poses): sitting cross-legged on the floor; a wheelchair user, alone, at eye level with a seated man, and stood over; walking with a cane and with a long cane; headphones in a loud room; two men walking hand in hand and letting go; a large man at ease and on a shared bench; a Sikh man greeting with joined hands; a tall man at ease; a father talking to his son at eye level; and four poses of older men (at rest, walking with his son, in a group, and spoken to directly). A single main figure lying down is still not supported; no chapter needed one.
 
 ## Still open: the page target and the contract disagree
 
@@ -215,13 +252,13 @@ The brief sets two targets that cannot both be met.
 - **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 75 chapters so far average about 4,270 words, about 9.5 pages.
 - **The page target.** 22–25 pages per chapter, 2,000+ pages in total.
 
-At the current depth, 90 chapters come to about **385,000 words, roughly 855 pages**. Parts III and IV averaged about 4,000 and 4,100 words a chapter, shorter than Parts I and VI. Reaching 2,000 pages needs one of three things:
+The finished 90 chapters come to about **378,300 words, roughly 840 pages**. Parts III, IV and V averaged about 4,000, 4,100 and 3,850 words a chapter, shorter than Parts I and VI. Reaching 2,000 pages needs one of three things:
 
 1. **Widen the contract.** For example 2–3 case studies per chapter, 8–10 teach blocks, or drill variations. This needs a schema change (`caseStudy` becomes a list), and it risks padding.
 2. **Add chapters.** About 180 would be needed at the current depth. The brief allows 7–8 parts.
 3. **Accept about 900 pages** as the honest size of the book.
 
-Every chapter so far has kept to the contract without padding. Fifteen chapters remain. Options 1 and 2 would now mean going back over finished parts as well as writing Part V.
+Every chapter keeps to the contract without padding. All 90 are written, so options 1 and 2 now mean going back over finished parts. This is the main decision left for the owner.
 
 ## Authoring workflow
 
@@ -236,8 +273,9 @@ The JSON files are the source of truth. Edit them directly.
 
 ## Next
 
-- Part V, respecting the boundaries above. It is the last part to write.
-- Part V needs the poses listed as missing (sitting on the floor, a single figure lying down, a wheelchair and a cane) before its chapters are written.
+- Decide the page target (above).
+- Human review (below), starting with Part II's clinical review and Part V's scholarly review.
+- Test on real devices: so far the app has run only in unit tests and snapshot renders.
 
 ## Needs a human before release
 
@@ -248,7 +286,9 @@ The JSON files are the source of truth. Edit them directly.
   - 2.14: the drill “Sensation Without Story”, which is a mild form of interoceptive exposure.
   - 2.8: the trauma-informed responses.
 - **Specialist review of Part III's safety advice**: 3.13 (crying babies, the ICON routine, never shaking) by a health visitor or paediatric nurse; 3.10 (the summary of consent law covers England and Wales only, and the support lines) by someone who works in sexual violence support; 3.14 (PAINAD and the end of life) by a palliative care nurse.
-- **Scholarly review** of Part V (disability studies, queer theory, critical race studies). Include 4.8 (gender and status) and the race paragraphs in 4.8 and 4.11.
+- **Scholarly and lived-experience review** of Part V, ideally by people from each group it describes: autistic and ADHD readers (5.1–5.3), queer men (5.4–5.5), Black men (5.6), disabled people (5.8), older men (5.9), and members of the faiths in 5.12. Include 4.8 (gender and status) and the race paragraphs in 4.8 and 4.11.
+- **Part V sources to check first:** Kraus & Keltner 2009 and Kraus et al. 2019 (5.7); Rivera 2012 (5.7); Scope's 2014 Opinium survey and Bogart, Tickle-Degnen & Ambady 2014 (5.8); Hess et al. 2012, Freudenberg et al. 2015, Williams et al. 2009, Levy et al. 2002 and Studenski et al. 2011 (5.9); Puhl & Heuer 2009, Puhl, Andreyeva & Brownell 2008, Rudolph et al. 2009 and Knapen, Blaker & van Vugt 2018 (5.10); Morris et al. 1979, Krys et al. 2016, Rychlowska et al. 2015 and Fischer & Schwartz 2011 (5.11); the Swedish Labour Court's 2018 ruling and Denmark's 2018 handshake law (5.12); McCluney et al. 2019 and 2021, Yoshino & Smith 2013, Hülsheger & Schewe 2011 and Hagger et al. 2016 (5.13); Vandello et al. 2008, Bosson et al. 2009, Way 2011, Wong et al. 2017 and the 2017 Man Box survey (5.14); Wood et al. 2008 and Fleeson & Wilt 2010 (5.15).
+- **Watch links:** check that each clip still shows what its note describes, especially trailers and clips whose content could only be judged from the title and the film.
 - **A check of 4.14's last block** (leaving pressure or harassment at events, and the bystander advice) by someone who works in harassment prevention.
 - **A second check of every citation and statistic** (the Phase 12 editorial pass). For Part VI, check these figures first, because they were stated from memory:
   - Macnamara 2014 percentages by domain.

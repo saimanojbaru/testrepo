@@ -253,5 +253,13 @@
    "note": "Monthly Weather Review 78(1), 1950. The original short paper behind the score."
   }
  ],
+ "watch": [
+  {
+   "title": "Why an Open Mind Is Key to Making Better Predictions",
+   "url": "https://www.youtube.com/watch?v=-07DJ7xVBis",
+   "source": "Knowledge at Wharton",
+   "notice": "On what makes some forecasters more accurate than others. Listen for the habits that matter here: keeping score, updating in small steps, and treating beliefs as hypotheses."
+  }
+ ],
  "reviewPrompt": "Make ten predictions this week, each with a behaviour, a date and a percentage, and score them by hand on Sunday using the Brier method."
 }

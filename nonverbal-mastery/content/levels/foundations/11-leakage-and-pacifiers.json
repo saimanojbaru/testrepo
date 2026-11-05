@@ -265,5 +265,13 @@
    "note": "A popular source for the catalogue of pacifying behaviours. Read it for the catalogue, with this chapter's cautions beside it."
   }
  ],
+ "watch": [
+  {
+   "title": "Behaviors That Tell You Something Is Wrong",
+   "url": "https://www.youtube.com/watch?v=1Qa15793FW4",
+   "source": "Joe Navarro",
+   "notice": "Joe Navarro, who popularised the term pacifiers, describes behaviours that suggest discomfort. Watch for the neck touches, lip compressions and self-soothing he names, and remember that they show discomfort, not its cause."
+  }
+ ],
  "reviewPrompt": "Watch two minutes of a public figure answering hard questions with the sound off and list every self-touch with a timestamp. Then turn the sound on and write what each cluster followed, with one ordinary explanation for each."
 }

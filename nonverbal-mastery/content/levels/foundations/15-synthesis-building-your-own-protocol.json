@@ -264,5 +264,13 @@
    "note": "Why skilled people fail by not applying what they know, and how a written procedure helps."
   }
  ],
+ "watch": [
+  {
+   "title": "Just One More Thing...",
+   "url": "https://www.youtube.com/watch?v=QxBnaMGP2aY",
+   "source": "Columbo",
+   "notice": "A compilation of the detective's famous final questions. Notice his method: patient observation, a hypothesis held loosely, and one last question designed to test it."
+  }
+ ],
  "reviewPrompt": "Run your written protocol once this week on a real moment, from self-check to recorded outcome, then revise one line of the protocol in light of what happened."
 }

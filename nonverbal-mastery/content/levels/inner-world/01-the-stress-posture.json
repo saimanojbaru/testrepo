@@ -253,5 +253,13 @@
    "note": "Third edition, Henry Holt, 2004. A readable account of what chronic stress does to the body."
   }
  ],
+ "watch": [
+  {
+   "title": "How stress affects your body",
+   "url": "https://www.youtube.com/watch?v=v-t1Z5-oPtU",
+   "source": "TED-Ed",
+   "notice": "An animated lesson on what stress does inside the body. Connect it to what shows on the outside: raised shoulders, shallow breathing, a tight jaw."
+  }
+ ],
  "reviewPrompt": "Check your own shoulders, jaw and breath three times this week, and offer one stressed person a piece of information or a small choice."
 }

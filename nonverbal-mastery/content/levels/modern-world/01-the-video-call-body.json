@@ -228,5 +228,13 @@
    "note": "Journal of Experimental Psychology: General 151(6), 2022. How video calls slow and scramble turn-taking."
   }
  ],
+ "watch": [
+  {
+   "title": "Children crash a live TV interview",
+   "url": "https://www.youtube.com/watch?v=IKxqy9SJ-0I",
+   "source": "CNN",
+   "notice": "The famous live interview interrupted by a professor's children. Notice how he tries to hold his on-camera posture while chaos unfolds behind him, and how much of a video-call body is about the frame."
+  }
+ ],
  "reviewPrompt": "This week, raise your camera to eye level, hide your self-view, and leave a longer pause than feels natural before moving on in any call you chair."
 }

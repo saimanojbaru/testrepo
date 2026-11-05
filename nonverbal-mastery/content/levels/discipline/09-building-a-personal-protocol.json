@@ -253,5 +253,13 @@
    "note": "European Journal of Social Psychology 40(6), 2010. Why new habits take weeks to months rather than days."
   }
  ],
+ "watch": [
+  {
+   "title": "The Checklist Manifesto",
+   "url": "https://www.youtube.com/watch?v=dfl8Xt8W09A",
+   "source": "Microsoft Research",
+   "notice": "Atul Gawande on how simple checklists improved surgical outcomes. Listen for why experts resist them, and why a short written procedure works under pressure."
+  }
+ ],
  "reviewPrompt": "Write one if-then plan tied to a trigger you will meet this week, and count the times it fires."
 }

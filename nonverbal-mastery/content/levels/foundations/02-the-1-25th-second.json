@@ -256,5 +256,13 @@
    "note": "Journal of Neuroscience 18(1), 1998. Why a brief face can register without being noticed."
   }
  ],
+ "watch": [
+  {
+   "title": "Dr. Ekman Explains Micro Expressions",
+   "url": "https://www.youtube.com/watch?v=fhv8Ftaq1LI",
+   "source": "Paul Ekman Group",
+   "notice": "Paul Ekman describes micro expressions in his own words. Remember the chapter's caution: a fleeting expression can show that an emotion flickered, but not why, and it is not proof of a lie."
+  }
+ ],
  "reviewPrompt": "Watch two minutes of a recorded interview at quarter speed this week, and describe three brief facial movements without naming any emotion."
 }

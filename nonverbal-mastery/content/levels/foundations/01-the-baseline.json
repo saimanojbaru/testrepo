@@ -271,5 +271,19 @@
    "note": "American Journal of Infection Control 43(2), 2015. A short paper that sets a base rate you will use throughout this book."
   }
  ],
+ "watch": [
+  {
+   "title": "Former FBI Agent Explains How to Read Body Language",
+   "url": "https://www.youtube.com/watch?v=4jwUXV4QaTw",
+   "source": "WIRED",
+   "notice": "Joe Navarro walks through the behaviours he looks for. Notice how often he compares a person with their own normal behaviour, and where a single cue is being asked to carry more weight than this chapter would allow."
+  },
+  {
+   "title": "Sherlock and John's First Meeting",
+   "url": "https://www.youtube.com/watch?v=VaT7IYQgyqo",
+   "source": "Sherlock (BBC)",
+   "notice": "Sherlock reads a stranger in seconds. Enjoy it, and notice what he never has: a baseline. A real reader would need to see how John behaves on an ordinary day before trusting any of it."
+  }
+ ],
  "reviewPrompt": "Choose one person you will see in the next two days and, before you meet, write three predictions about their resting behaviour. Afterwards, score each as a hit or a miss and rewrite each miss as a better description."
 }

@@ -8,13 +8,13 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v0.7 (Parts I, II, III, IV and VI written)
+## Status: v1.0 (all six parts written)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
-| Content | 75 of 90 chapters written to the full contract: all of Part I, Foundations; all of Part II, The Inner World, where 2.13 opens through a crisis-resource gate; all of Part III, The Social World; all of Part IV, The Modern World; and all of Part VI, The Discipline. About 320,600 words, ≈710 pages. Only Part V remains. Ethics statement (1,205 words); crisis resources |
-| Pose library | 144 poses in 13 themes, including two- to five-person scenes, a baby held, a child on the hip, a bedside and a meeting table, + 6 drawn diagrams + 7 face plates |
+| Content | All 90 chapters written to the full contract, in six parts: Foundations; The Inner World, where 2.13 opens through a crisis-resource gate; The Social World; The Modern World; Overlooked Contexts; and The Discipline. About 378,300 words, ≈840 pages. Every chapter links to 1–4 verified official clips where its behaviour can be seen. Ethics statement (1,205 words); crisis resources |
+| Pose library | 170 poses in 13 themes, drawn as men and women of many ages, builds and backgrounds, including two- to five-person scenes, a baby held, a child on the hip, a bedside, a meeting table, a wheelchair, a cane and a long cane, and sitting on the floor, + 6 drawn diagrams + 7 face plates |
 | Tests | 31 passing: content contract, engines, 50 screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
 | Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
 
@@ -76,13 +76,17 @@ Poses are drawn, never photographed. Each pose is a set of parameters solved int
 
 Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and right are always the figure's own.
 
-**People, not mannequins.** Every figure is drawn as a person: a man from a cast of twelve (`People.kt`), varied in skin tone, age, build, hair, beard and clothes so that most readers can find someone like themselves. Each pose always shows the same man, chosen from its id, and a do/don't pair shows the same man in both panels. A small companion becomes the main figure's child or baby, and a person lying in bed is an older man. The renderer dresses the solved skeleton in shirt, trousers and shoes, gives it a face (eyes, brows, nose, mouth, ears, glasses), joins limbs to the body without seams, and adds soft shading from the upper left.
+**People, not mannequins.** Every figure is drawn as a person from a cast in `People.kt`: twelve men, varied in skin tone, age, build, hair, beard and clothes so that most readers can find someone like themselves, nine women (one wearing a hijab), and named men who appear where a chapter needs them, such as an older man with a cane, a heavy-set man and a Sikh man in a turban. Most poses show a man from the cast, chosen from the pose's id; a pose can name who it shows instead, so women appear in mixed pairs and groups. A do/don't pair shows the same person in both panels. A small companion becomes the main figure's child or baby, and a person lying in bed is an older man. The renderer dresses the solved skeleton in shirt, trousers and shoes, gives it a face (eyes, brows, nose, mouth, ears, glasses), joins limbs to the body without seams, and adds soft shading from the upper left.
 
 **Faces up close live on plates.** Where the face itself is the subject (microexpressions, the face, gaze, smiles), chapters use drawn face plates built from FACS action units in `FacePlates.kt`, labelled with the units they show and described in prose for TalkBack. Each plate is drawn on one clean-shaven or lightly stubbled man from the cast, so the expressions are compared on one face and nothing hides the mouth.
 
 ![Face plate](docs/screens/27-face-plate.png) ![Six posed prototypes](docs/screens/28-face-prototypes.png)
 
-![Together](docs/screens/23-poses-together.png) ![Part III figures: leaning away, an apology, a baby held, a child on the hip, walking hand in hand, teaching alongside](docs/screens/30-poses-part-three.png) ![Part IV figures: a meeting table, a presenter crossing a stage, leaning too close to the camera, joining an open group](docs/screens/31-poses-part-four.png)
+**Watch it happen.** Each chapter's reflection tab ends with links to official clips (studios, broadcasters, TED, charities) where the behaviour can be seen, each with a note of what to notice. Every video id was checked live when it was added. Tapping one opens the phone's browser or YouTube app; the book itself stays offline.
+
+![Watch it happen](docs/screens/19-watch-it-happen.png)
+
+![Together](docs/screens/23-poses-together.png) ![Part III figures: leaning away, an apology, a baby held, a child on the hip, walking hand in hand, teaching alongside](docs/screens/30-poses-part-three.png) ![Part IV figures: a meeting table, a presenter crossing a stage, leaning too close to the camera, joining an open group](docs/screens/31-poses-part-four.png) ![Part V figures: sitting on the floor, a wheelchair user at eye level and stood over, a long cane, headphones, two men hand in hand](docs/screens/32-poses-part-five.png) ![Older men: at rest, walking with his son, in a group, spoken to directly](docs/screens/33-poses-older-men.png)
 
 ## Where this deviates from the brief, and why
 
@@ -100,7 +104,7 @@ Preset libraries: 65 arm placements, 15 hand shapes, 32 leg stances. Left and ri
 
 ## Privacy
 
-The APK requests no permissions. `aapt2 dump permissions` shows only `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`, a signature permission AndroidX defines for its own receivers. Dialling a crisis line or sharing an export hands an intent to another app; this app never touches the network.
+The APK requests no permissions. `aapt2 dump permissions` shows only `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`, a signature permission AndroidX defines for its own receivers. Dialling a crisis line, sharing an export or tapping a watch link hands an intent to another app; this app never touches the network.
 
 ## Fonts
 
