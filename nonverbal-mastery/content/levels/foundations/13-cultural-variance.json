@@ -81,6 +81,20 @@
    "doCaption": "Trusting smiles and laughter a little, and checking the rest.",
    "dontCaption": "Dismissing all shared expression as myth.",
    "annotation": "There is a shared core, especially for laughter and strong situations. The honest position lies between the two extremes."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Asking how your face reads here",
+   "dontCaption": "Treating your own expressions as neutral",
+   "annotation": "Your face speaks a dialect too. Across cultures, ask how your habits are read, and explain them aloud where they might mislead."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Asking an informant what you are missing",
+   "dontCaption": "Giving up on reading unfamiliar faces",
+   "annotation": "When readings keep failing, do not withdraw. Ask someone who knows both dialects, and ask people directly when it matters."
   }
  ],
  "caseStudy": "Ben, thirty-three, has taught English in Britain for eight years and moves to a language school in Seoul. He considers himself good at reading a classroom: he can tell from faces who is lost and who is bored. In his first month in Seoul his confidence goes. When he asks whether students have understood, many keep a calm, neutral face and nod, and then cannot do the exercise. Some smile when they get an answer wrong, which at home he would have read as not taking it seriously.\n\nHe asks a Korean colleague, Ji-woo, who taught in Australia for three years. She explains that some students, especially in front of a teacher, keep a composed face when confused, because showing confusion openly can feel like a loss of face for them or a criticism of the teacher. The smile at a wrong answer is often embarrassment, not amusement. Then she adds a caution: this is not true of every student, and the younger ones and those who have studied abroad are often quite different. She also tells him, kindly, that some students find his very expressive face a little overwhelming.\n\nBen changes his method. He stops relying on faces to check understanding and uses short written tasks instead. He watches for changes in each student's own baseline rather than reading their faces against his British classroom. He learns that one student, Min-jun, presses his lips together briefly when lost, and another, Seo-yeon, goes very still. He tones down his own expressions a little.\n\nBy the end of the term his students are asking more questions. When one smiles at a wrong answer, he no longer reads it as carelessness. He reads it as a smile, in a situation, from a particular person, and asks.",
@@ -99,6 +113,11 @@
     "Note the situation at each moment: who is present, what has just happened.",
     "Write your first reading of each face, and then a reading based on the situation alone.",
     "Note where the two readings differ."
+   ],
+   "variations": [
+    "Repeat with a clip from a culture you know well, and compare how much the situation added there.",
+    "Try the exercise with the sound off, then with it on, and note how much of your reading the voice changed.",
+    "Watch the same scene twice, a week apart, and see whether your readings of each face have changed."
    ]
   },
   {
@@ -110,6 +129,10 @@
     "Ask someone from a different background, if you can, what each would mean to them.",
     "Mark any where the meanings differ.",
     "Write one sentence about which of your expressions might mislead people elsewhere."
+   ],
+   "variations": [
+    "Ask a close friend from your own background the same questions, and see whether your expressions are as clear to them as you think.",
+    "Add one gesture or head movement to the list of five, and check its meaning in the same way."
    ]
   },
   {
@@ -121,6 +144,10 @@
     "Ask for a specific situation in which they were misread, or misread someone else.",
     "Ask how long it took to feel at home reading people in the new culture.",
     "Write down the answers as close to their words as you can."
+   ],
+   "variations": [
+    "Ask your informant what they had to unlearn when they returned home, if they did.",
+    "Ask about one specific feeling, such as embarrassment, and how it is shown differently in each culture they know."
    ]
   },
   {
@@ -132,6 +159,10 @@
     "Note which pairs you find hardest to tell apart.",
     "Write down a situation in which each hard pair might occur.",
     "Note how much easier the situation makes the distinction."
+   ],
+   "variations": [
+    "Repeat with photographs of real, unposed faces from news or sports images, and compare the difficulty.",
+    "Ask a friend from another culture to do the same exercise, and compare which pairs each of you found hardest."
    ]
   },
   {
@@ -143,6 +174,10 @@
     "For each fine distinction, write what in the situation supported it.",
     "Mark any reading that relied on the face alone.",
     "Write how you would check those readings next time."
+   ],
+   "variations": [
+    "Repeat the audit for readings of people from your own culture, and compare how often you relied on the face alone.",
+    "Pick one person you work with from a different background and note, over a week, which of your readings of them you later confirmed."
    ]
   }
  ],
@@ -224,6 +259,58 @@
    "explain": "Both extremes are unsupported. A shared core exists, especially for laughter and strong situations, but fine distinctions and many meanings are local, and context carries much of the meaning everywhere.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Elfenbein and Ambady find when they combined many studies of emotion recognition across cultures?",
+   "options": [
+    "People recognised emotions equally well in members of every culture, without exception",
+    "People recognised emotions more accurately in their own group, an advantage that shrank with contact",
+    "People recognised emotions better in other cultures than their own, since they paid more attention",
+    "People could not recognise any emotions outside their own culture, even after long exposure"
+   ],
+   "answer": 1,
+   "explain": "The in-group advantage means people read their own group a little more accurately, and the advantage shrinks where groups have more contact. Reading another dialect is a skill that improves with exposure.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "An elderly patient from a culture that prizes composure shows a calm face and reports a low pain score, but has not moved her leg or eaten all day. What fits this chapter best?",
+   "options": [
+    "Trust the calm face and the low score, since both point clearly to mild pain",
+    "Assume she is exaggerating her difficulty, since her face shows no sign of pain",
+    "Weigh her behaviour and her family's account more heavily than her calm face",
+    "Wait until she shows pain on her face before changing anything about her care"
+   ],
+   "answer": 2,
+   "explain": "Display rules shape how much pain people show, especially to strangers and doctors. Behaviour, such as not moving or eating, and the account of people who know her, carry more information than a face speaking an unfamiliar dialect.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "A colleague says that because faces vary across cultures, nothing can be read from anyone's face abroad. What does this chapter suggest?",
+   "options": [
+    "He is right, since the evidence shows that facial expressions have no shared meaning at all",
+    "He is right about faces, though gestures such as the thumbs-up mean the same everywhere",
+    "He is wrong, since the evidence shows that all facial expressions are completely universal",
+    "Some broad links travel, such as smiles in pleasant situations, but fine distinctions need checking"
+   ],
+   "answer": 3,
+   "explain": "Dialect theory holds both truths: a shared core, especially for strong and clear situations, with local accents on top. Radical relativism is as much a failure as overconfident universalism.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "According to research by Sauter and colleagues with Himba and English listeners, which kind of signal was recognised especially well across the two cultures?",
+   "options": [
+    "Laughter, among nonverbal vocal sounds, was recognised especially well across the cultures",
+    "Facial expressions of disgust, which both groups matched to stories with near-perfect accuracy",
+    "Hand gestures for agreement and refusal, which turned out to be identical in both cultures",
+    "Silences of different lengths, which both groups used to signal the very same emotions"
+   ],
+   "answer": 0,
+   "explain": "Several basic emotions were recognised in the other group's vocal sounds at above chance, and laughter especially well. Voices may travel across cultures somewhat better than faces do.",
+   "isMisconceptionTest": false,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +339,110 @@
    "work": "Sixteen facial expressions occur in similar contexts worldwide",
    "author": "Alan S. Cowen, Dacher Keltner, Florian Schroff and colleagues",
    "note": "Nature 589, 2021. Six million videos from 144 countries, and what they do and do not show."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The patient who did not show her pain",
+   "scene": "Halima, eighty-one, is admitted to a hospital ward in Birmingham after a fall. She came to Britain from Somalia thirty years ago and speaks\n  limited English. When the junior doctor, Tom, examines her hip, her face stays calm. She does not grimace, cry out or pull away; she looks at\n  the ceiling and breathes slowly. When the interpreter asks about pain on a scale of nought to ten, she says three. Tom writes her up for mild\n  pain relief.\n\n  Her granddaughter, Amina, arrives that evening and is alarmed. She tells the nurse that her grandmother would never show pain in front of a\n  stranger, let alone a young man, and that saying three to a doctor means it is bad. She points out that her grandmother has not eaten, has not\n  moved her leg at all since she arrived, and has been gripping the bed rail all afternoon. The nurse calls Tom back. An X-ray the next morning\n  shows a fractured hip.\n\nAmina says afterwards that she has had to do this for her grandmother before, at a GP surgery and at a dentist. Each time, she says, the staff were kind, and each time they believed the calm face over everything else.\n\nLater, on the ward round, the consultant asks Tom why he had judged the pain as mild. Tom says, honestly, that she looked comfortable and gave a low score. The consultant does not criticise him. She tells him that she made the same mistake early in her career, with a patient she still remembers, and asks him what he would look at next time.",
+   "misread": "Tom read Halima's calm face as a sign of mild pain, through the dialect of expression he had grown up with, in which people in serious pain usually show it. He also took her number at face value, without considering what a number means to someone for whom complaining to a doctor is itself a kind of disrespect.\n\nThe misreading was not careless. Tom was busy, kind and following his training. His training had simply assumed a dialect of pain that Halima did not speak.\n\nThere was a second, quieter error. Tom treated the interpreter's translation of the number as the whole of the answer. He did not ask how Halima said it, whether she hesitated, or whether she added anything the interpreter left out as unimportant. An interpreter can carry words across a gap far more easily than a tone or a pause.",
+   "betterRead": "Display rules, the norms about who may show what to whom, vary across cultures, generations, genders and settings, and pain is one of the feelings most shaped by them. Many older people, and people from cultures that prize composure, show very little pain on their faces, especially before strangers, doctors and men. A careful reader in Tom's position weighs the face least and the body and behaviour most: not moving the leg, not eating, gripping the rail. He asks the family what this person is like when they are hurting. And he treats a low pain score from someone likely to understate it as a reason to look harder, not to look away. The face was not lying. It was speaking a dialect Tom did not know.\n\nMany hospitals now train staff in exactly this, and use pain assessment that relies on behaviour as well as self-report, particularly for older patients and those who do not share the clinician's language.\n\nTom, for his part, now asks families the same question on every admission: how does she usually show that she is hurting?"
+  },
+  {
+   "title": "Laughter at the bad news",
+   "scene": "Graham, a British project manager, is on a video call with his counterpart in Osaka, Mr Takahashi, about a shipment that has been delayed by\n  three weeks, which will cost Graham's company a good deal of money. Graham explains the problem carefully and seriously. Mr Takahashi listens,\n  nods, and then laughs, a short, quiet laugh, before saying that this is very difficult and he is very sorry. He laughs again, briefly, when Graham\n  mentions the penalty clause.\n\n  Graham is furious. He tells his director afterwards that the Japanese side clearly does not take the delay seriously and is laughing at them. His\n  director, who worked in Tokyo for four years, tells him that he has probably misread the laugh completely.\n\nGraham's director also points out that Mr Takahashi had stayed on the call for an extra twenty minutes, which is not what someone indifferent to a problem does.\n\nThe delay itself was not Mr Takahashi's fault. A supplier further down the chain had failed an inspection, and his firm had found out only two days before the call. Graham knows this, but he had expected some visible sign of how seriously the other side took it: a grave expression, a long apology, perhaps an offer of compensation on the spot. Instead, as he saw it, he got two laughs.\n\nHe replays the moment several times on the recording. Each time, the laugh looks worse to him. He drafts an angry email to Mr Takahashi's manager, copying in his own director, and holds back from sending it only because his director asks to speak to him first.",
+   "misread": "Graham read the laugh through his own dialect, in which laughing at someone else's bad news signals amusement, indifference or contempt. He did not consider that a laugh might mean something else in a different culture, or in a moment of shared embarrassment.\n\nHe then passed his reading on to his director as a fact about the other company, which, if his director had believed it, could have soured a long relationship over a laugh.\n\nGraham also read the laugh in isolation. He took one sound from a forty-minute call and let it outweigh everything else that happened, including two apologies and a practical offer of help. That is the single-signal error from earlier chapters, made worse by an unfamiliar dialect.",
+   "betterRead": "In many settings, including some in Japan, a short laugh can signal embarrassment, discomfort or an attempt to soften an awkward moment, rather than amusement. Laughter in general travels well across cultures, as Sauter and colleagues found, but particular uses of it do not. Graham's director suggested reading the rest of the call rather than the laugh: Mr Takahashi had apologised twice, offered to check alternative routes, and agreed to a follow-up call the next day. Those are the actions of a man taking a problem seriously. The laugh was the sound of a difficult moment, in a dialect Graham had not yet learned.\n\nIt is also worth noting that Graham's anger, visible on camera, will have been read through Mr Takahashi's dialect too, and may have increased the embarrassment that the laugh was trying to soften.\n\nThe director also advised Graham to say plainly, at the start of the follow-up call, how serious the delay was for his company, rather than hoping his face would carry the message. Words cross a cultural gap better than faces do."
+  },
+  {
+   "title": "The engineer who did not smile at clients",
+   "scene": "Mikko, a Finnish engineer, moves to his firm's office in Texas to lead a team that installs industrial equipment. He is highly respected at\n  home for his calm and his competence. In Texas, his first two client meetings go badly. The clients find him cold and hard to read; one asks his\n  manager afterwards whether Mikko is unhappy with the contract. Mikko is baffled. He thought the meetings went well. He listened carefully, answered\n  every question precisely, and did not waste anyone's time with small talk.\n\n  His American colleague, Jess, who sat in on both meetings, tells him that he did not smile once, that he barely nodded, and that he let silences\n  run long after the clients spoke. To the clients, used to warm greetings and frequent smiles, this felt like disapproval. Mikko tells her that in\n  Finland, smiling at strangers for no reason can seem insincere, and that silence after someone speaks is a sign that you are taking them seriously.\n\nMikko also mentions that he had found the clients' constant smiles slightly unnerving, and had wondered whether they were hiding their real view of the contract. The misreading, in other words, ran in both directions.\n\nMikko is not new to working abroad. He has spent time on projects in Germany and Sweden, where his manner caused no trouble at all, and he had assumed that professional behaviour was much the same everywhere. What troubles him most is that the clients' complaint feels like a complaint about his character rather than his work, and he does not know which part of himself he is supposed to change.",
+   "misread": "The clients read Mikko's composed face and long silences as coldness and displeasure, through a dialect in which warmth is shown constantly and silence is uncomfortable. Mikko, in turn, read his own behaviour as respectful, through a dialect in which restraint is a courtesy. Each was reading accurately in their own language and wrongly across the gap.\n\nNeither side said anything about it at the time. Each simply formed an impression of the other and carried it into the next meeting.\n\nThe clients' reading had a further cost: it turned a difference of style into a doubt about the contract. Once one client wondered aloud whether Mikko was unhappy, others began watching him for signs of trouble, and found them in every pause.",
+   "betterRead": "Elfenbein's dialect theory fits this case closely: both sides shared the core meaning of a smile, but used it at very different rates and for different purposes. Neither dialect is wrong. The repair was for both sides to learn a little of the other's. Jess briefed the next clients that Mikko was a quiet, thoughtful man who listened hard. Mikko, without trying to become someone else, made a habit of a smile and a handshake at the start and end of meetings, and of saying aloud, after a long silence, that he was thinking about what they had said. His next three meetings went well. A man does not need to abandon his dialect. He needs to know that it is one.\n\nThe lesson runs both ways. Mikko's clients were not shallow for wanting smiles, and Mikko was not cold for withholding them. Each side was using a perfectly good dialect, and each needed a translator until they had learned a little of the other's. A colleague who can explain one side to the other is worth more than any guide to national character."
+  },
+  {
+   "title": "Reading his mother-in-law",
+   "scene": "James, a British accountant, marries Priya, whose family came to Britain from Gujarat. In the first year of their marriage, James finds his\n  mother-in-law, Meena, impossible to read. When he offers to help in the kitchen she smiles and tilts her head from side to side, and he cannot\n  tell whether she means yes or no. When he says something she disagrees with, she does not argue; she goes quiet and starts serving food. When she is\n  pleased with him, she says almost nothing to him directly, but tells Priya on the phone the next day.\n\n  James starts to feel that Meena does not like him, and becomes stiff and formal around her. Priya notices, and is upset that her husband and\n  her mother seem to be drifting apart.\n\nPriya, for her part, had never thought to explain her mother's habits, because to her they were simply how her mother was. It took James's growing stiffness for her to see that he was reading a language she had never had to translate.\n\nThe visits become tense. James starts finding reasons to arrive late and leave early, and he spends much of each visit in the garden with Priya's father, who talks about cricket and seems easier to understand. Meena, who notices everything, asks Priya whether James is unhappy in the marriage. Priya, caught between them, tells each of them that the other is fine, which is true and which helps nobody. By the end of the first year, James has decided that his mother-in-law simply disapproves of him, and that there is nothing to be done about it.",
+   "misread": "James read Meena through his own family's dialect, in which approval is usually said to your face, disagreement is argued out, and a side-to-side movement of the head means no. Every signal she sent was translated into the nearest thing in his language, and most of the translations came out cold.\n\nHe also never asked. It did not occur to him that the signals might mean something different, because they looked so like signals he already knew.\n\nEach translation also confirmed the one before. Once James suspected that Meena disliked him, her quiet became coldness, her head tilt became refusal, and her silence about his good news became indifference. A first reading, made in the wrong dialect, quietly organised all the later ones.",
+   "betterRead": "Many of Meena's signals carry different meanings in her dialect. A side-to-side tilt of the head often means yes, or I am listening; quiet rather than argument can be a way of keeping harmony with a son-in-law who is still, in a sense, a guest; and praise passed through a daughter can be a sign of respect rather than distance. James needed an informant, and he had the best possible one beside him. When Priya explained her mother's habits, James began to read her differently, and to ask Priya, after visits, what she thought her mother had meant. Within a year, he could read Meena's head tilt as easily as his own mother's frown.\n\nJames also learned to check the readings that mattered most. When he was unsure whether Meena wanted help, he offered in a way that made it easy to decline, and watched what she did rather than what her head did. When she went quiet after a disagreement, he let the subject drop and raised it later with Priya."
+  }
+ ],
+ "workedReading": {
+  "title": "The face in the new office",
+  "scene": "Six weeks into a new job at a firm's office in Manila, Dan, who has moved from Manchester, announces in a team meeting that a large client has asked for the project to be delivered a month early. Several faces change at once. One colleague, Ria, raises her eyebrows high, widens her eyes and presses her lips together, then smiles. Another, Joel, laughs briefly and looks down at his notes. A third sits completely still. Nobody says anything for a moment, then Ria says, \"Okay, sir, we can do it.\"\n\nDan likes his team and believes the meeting went well. He has not yet learned how the team usually responds to bad news, because there has not been any until now.\n\nDan has read about cultural dialects of expression and knows, in theory, that his instincts may not travel. This is the first time he has had to act on that knowledge with something important at stake. The client wants an answer by the end of the week, and whatever he tells them will be hard to take back. He also knows that the answer he heard in the meeting is the one he would most like to believe.",
+  "steps": [
+   {
+    "label": "Describe before interpreting",
+    "text": "Dan has learned to describe movements before he names feelings, and he does it now. Ria: brows raised high, eyes widened, lips pressed, then a smile. Joel: a short laugh, eyes down. The third colleague: no visible movement. Words: agreement from Ria, nothing from anyone else. He notes all of this without deciding what any of it means.\n\nDescribing the third colleague's stillness as \"no visible movement\" is important. It is tempting to call it shock, but stillness is the absence of a signal, not a signal.\n\nHe also notes timing. Ria's brows rose first and the smile came after, about a second later. A sequence like that, a strong first movement followed by a social one, is often worth more attention than either movement on its own."
+   },
+   {
+    "label": "Mark the situation",
+    "text": "The situation is a manager announcing an unwelcome change to a team in a meeting. In many cultures, including the one he has grown up in, that is a moment when people manage their faces carefully, and in many workplaces in the Philippines, as his colleagues have told him, it can be hard to say no to a manager directly, especially in public.\n\nHe also notes that he is the new manager, from abroad, and senior. That position changes what people will feel able to show him, in any culture.\n\nHe also notes that a meeting is a public setting. Whatever people feel, they will show less of it here than over coffee afterwards, and in a workplace that prizes smooth relations, the gap between the two may be wide."
+   },
+   {
+    "label": "Check against your dialect",
+    "text": "In Dan's own dialect, Ria's raised brows and widened eyes would read as surprise or alarm, the laugh as nervousness, the stillness as shock, and the \"we can do it\" as agreement. He notes that these are readings in his dialect, not necessarily in theirs. The raised eyebrows in particular may carry other meanings here: he has seen colleagues raise their eyebrows to say yes.\n\nThis step is uncomfortable, because it means admitting that his instincts, which have served him for years, may be giving him wrong answers here.\n\nHe reminds himself, too, that this is only his sixth week. He has a small sample of how these particular people react to anything, so even a reading that fitted his own dialect would rest on a thin baseline."
+   },
+   {
+    "label": "Hold several readings",
+    "text": "The team may be genuinely confident. They may be alarmed and unwilling to say so in a meeting. Ria's \"we can do it\" may be a commitment, or a polite acknowledgement that the news has been heard, or a way of protecting the team leader's face in front of the new manager. Joel's laugh may be embarrassment or a way of softening the moment. None of these can be settled from faces in an unfamiliar dialect.\n\nHolding the readings open also stops him from acting on the reassuring one, \"we can do it\", which is the reading he would most like to be true.\n\nWriting the readings down, even briefly, helps him resist the pull of the most comfortable one. On paper, \"we can do it\" sits next to \"we are worried and cannot say so\", and both look equally possible."
+   },
+   {
+    "label": "Ask an informant",
+    "text": "After the meeting, Dan asks Liza, a senior colleague who has worked with both British and Filipino teams, how she read the room. Liza tells him that a quick yes in a meeting after an unwelcome announcement is often a way of keeping things smooth, and that the real answer usually comes later, in smaller conversations. She suggests he talk to Ria alone.\n\nA good informant is someone who knows both dialects, who is not directly involved, and who will be honest with him. Liza is all three.\n\nHe chooses Liza partly because she is not on the project, so her reading will not be coloured by worry about the deadline."
+   },
+   {
+    "label": "Make it safe to answer honestly",
+    "text": "Dan finds Ria later and asks her, in private, what she really thinks the team can deliver, and adds that he would rather know now than in three weeks. He makes it clear that saying it is not possible will not count against her.\n\nAsking privately, with an explicit promise that the honest answer is welcome, matters more than any other step. It changes the setting from one in which agreement is expected to one in which the truth is safe.\n\nHe also chooses the moment: not straight after the meeting, when Ria might feel she is being checked on, but later in the afternoon, when he can ask about the plan rather than about her reaction."
+   },
+   {
+    "label": "What happened",
+    "text": "Ria tells him that the deadline is possible only if two features are dropped, and that the team had been worried but did not want to say no to him in front of everyone. Dan goes back to the client with a revised scope. He notes, for himself, that his reading of the faces had been roughly right about the feeling and completely wrong about what the words meant, and that the informant and the private question had done what no amount of watching could.\n\nHe also changes how he will announce bad news in future: briefly in the meeting, followed by short private conversations with each team leader, so that honest answers have somewhere to go."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Turning a dialect into a stereotype",
+   "body": "Once readers learn that cultures have dialects of expression, they often start applying them to individuals: Koreans hide confusion, Finns never smile, Japanese laugh when embarrassed. These are tendencies, sometimes real ones, and they vary enormously within every culture by age, region, generation, class, temperament and how long someone has lived elsewhere. Part V's chapter on cultural variance describes research showing that differences within countries are far larger than the differences between them. Use what you know about a culture's dialect as a first hypothesis about a person, and then let the person correct you. A Finnish engineer who smiles constantly is not doing Finnishness wrong.\n\nIt also helps to notice how you would feel about the reverse: being told, on the strength of your nationality, what your face must mean.\n\nA useful test is to ask whether you would accept the same generalisation about your own group. If a colleague told you that people from your country never show their feelings, you would probably think of a dozen exceptions straight away, starting with yourself. Extend the same courtesy to everyone else."
+  },
+  {
+   "title": "Believing your own face is neutral",
+   "body": "Most people experience their own expressions as natural and obvious, and other people's as foreign or hard to read. But your face speaks a dialect too. The amount you smile, the way you show disagreement, how long you hold a silence, whether you nod while listening, how readily you laugh at your own mistakes: all of these were learned, and all of them may be misread by people who learned differently. When you work or live across cultures, it helps to ask someone you trust how your face reads to people there, and to explain your habits aloud where they might cause confusion, as Mikko learned to do.\n\nEven within one country, families, regions and professions have their own dialects. A man who marries into a different family, or moves from a trade to an office, may find his face misread as much as if he had moved abroad.\n\nVideo can help here. Watching a recording of yourself in a meeting with the sound off, as Part VI suggests, often shows habits that feel invisible from the inside: a frown of concentration, a flat face while listening, a laugh that arrives at odd moments."
+  },
+  {
+   "title": "Leaning on the face when other channels travel better",
+   "body": "The evidence in this chapter suggests that faces are among the least reliable channels across cultures, especially for fine distinctions. Voices, particularly laughter and crying, seem to travel somewhat better, and situations travel best of all: a funeral is a funeral almost everywhere. When you are reading people from an unfamiliar culture, weigh the face least. Pay more attention to the situation, to what people do rather than how they look, to the voice, and to what they say. Halima's face told Tom nothing; her untouched food and her grip on the rail told him a great deal.\n\nThe same applies within your own culture when you are reading someone very different from you in age, class or background. The further the dialect from yours, the less weight the face can carry.\n\nNone of this means faces are useless across cultures. Broad feelings in strong moments, such as grief at a funeral or joy at a wedding, are usually readable anywhere. The trouble lies in fine distinctions and in the managed, everyday faces of work and polite company, which are exactly the faces most readers spend their time on."
+  },
+  {
+   "title": "Withdrawing because you cannot read anyone",
+   "body": "The opposite failure to overconfidence is giving up. People who move to a new country, or work with colleagues from very different backgrounds, sometimes find that their usual readings fail so often that they stop trying, and withdraw into their own group or into a polite, guarded formality. It feels safer, and it is lonely, and it gives everyone less information. The answer is not to stop reading but to read more humbly: to hold readings loosely, to ask informants, to ask people directly when it matters, and to accept that the first year in a new dialect is like the first year in a new language. You will make mistakes. Most people will forgive them, especially if they can see you trying.\n\nIt helps to remember that people from the other culture are usually reading you as well, and making their own mistakes. Saying so, lightly, can be a relief to everyone.\n\nWithdrawal also has a quieter version: staying physically present but no longer reading, and treating every face as a blank. That can look like calm, and it is really a kind of absence. People notice when they are no longer being seen."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is the smile universal?",
+   "a": "Smiling in pleasant and sociable situations seems to be found everywhere, and it is among the most reliably recognised expressions across cultures. But what a smile means, when it is expected and how often people use it vary a great deal. In some places people smile at strangers constantly; in others, smiling at a stranger without reason seems odd or insincere. Smiles also do many jobs besides showing pleasure: apologising, appeasing, hiding embarrassment, softening a refusal. Part V's chapter on cultural variance describes research suggesting that in some cultures a smiling face is even judged less intelligent or less honest. Trust a smile a little, everywhere, and its meaning only once you know the dialect.\n\nA useful habit across cultures is to treat a smile as an invitation to keep talking rather than as a statement about how someone feels.\n\nIf you come from a culture of frequent smiling and work somewhere it is rarer, it helps to know that a straight face there is often just a resting face, not a verdict on you."
+  },
+  {
+   "q": "Can I learn to read another culture's expressions?",
+   "a": "Yes, and you do so the way you learn a language: through exposure, mistakes and informants. Hillary Anger Elfenbein and Nalini Ambady combined many studies of emotion recognition across cultures and found an in-group advantage: people recognise emotions more accurately in members of their own cultural group. They also found that the advantage shrank where groups had more contact with each other. So time helps. Living, working and talking with people from another culture gradually teaches you their dialect, especially if you ask about what you see. The process usually takes months, not days, and it never quite finishes.\n\nFilms, television and novels from another culture help too, though they show heightened versions of everyday expression. Ordinary conversation is the real classroom.\n\nReading about a culture can help as a starting point, but it works best as a list of questions to ask rather than answers to rely on. A guidebook that says people in a country avoid saying no directly tells you to listen for indirect refusals; it cannot tell you how a particular colleague refuses."
+  },
+  {
+   "q": "What does the study of six million videos actually show?",
+   "a": "Cowen, Keltner and colleagues used machine learning to find about sixteen kinds of facial expression in millions of videos from 144 countries, and found that each kind tended to appear in similar kinds of situation in every region they studied, with the pattern of context links about seventy percent preserved across regions. That is strong evidence that similar faces turn up in similar situations worldwide. It is weaker evidence about what people feel, because the study measured faces and situations, not feelings, and because the algorithm was trained on human judgments that may carry their own cultural assumptions. Lisa Feldman Barrett, commenting on the study, praised its use of real-world settings while raising exactly that question.\n\nFor a reader, the practical message is modest: similar situations seem to produce broadly similar faces in many places, which is useful, and a face still needs its situation, its person and often a question before it means anything.\n\nIt is also worth knowing what the study did not look at: what people said they felt, or how faces varied between individuals within each region. Those are exactly the questions a reader in a real conversation needs answered, which is why the study supports a broad picture rather than a method for reading individuals."
+  },
+  {
+   "q": "Do people always read their own culture better?",
+   "a": "On average, yes, a little, which is what the in-group advantage describes. But the advantage is modest, it varies a great deal between individuals and emotions, and it shrinks with contact. Some people are better at reading strangers from other cultures than many people are at reading their own families. And within any culture, people misread each other constantly, which is why this book's methods, baseline, cluster, context and asking, apply at home as much as abroad.\n\nIt is also worth remembering that \"your own culture\" is not a single thing. A Londoner and a Glaswegian, or a farmer and a barrister, may read each other with as much difficulty as people from different countries.\n\nMany people who have lived abroad for years describe a related experience: they come to read their adopted culture well and, on returning home, feel briefly out of step with their own. Dialects can be learned, and they also need practice to stay fluent."
+  },
+  {
+   "q": "What should I do when I cannot read anyone around me?",
+   "a": "Slow down and rely more on words. Say more out loud than you would at home: that you are pleased, that you are thinking, that you would like to know what someone really thinks. Ask more questions, privately, and make it safe for people to give honest answers. Find an informant, someone who knows both your dialect and theirs, and ask them how a meeting read. Watch how local people respond to each other, which is often more revealing than how they respond to you. And remember that the people around you may be finding you just as hard to read.\n\nIt can also help to tell people that you are new and still learning how things work. Most people respond to that with patience, and some with very useful explanations.\n\nIt also helps to keep a short note of the readings you get wrong and what the right answer turned out to be. Over a few months, the notes become a personal dictionary of the new dialect, and the same mistakes start to repeat less often."
+  },
+  {
+   "q": "Are gestures part of this debate?",
+   "a": "Not in the same way. Facial expressions are argued about because they might be biologically shared. Most gestures, such as the thumbs-up, the ring, beckoning or pointing, are clearly learned conventions, and they vary across cultures in ways that can be mapped. Part V's chapter on cultural variance gives that map, along with its limits. Head movements for yes and no fall somewhere between the two, and Part III's chapter on the head nod covers them. The working rule is the same for all of them: what feels natural to you is a habit, and someone else's habit may be different.\n\nGestures can also be learned deliberately, from a guide or an informant, far more easily than facial dialects, because they are more conscious and more often explained.\n\nOne practical point: if you are unsure of a gesture, do less of it. An open hand and a clear spoken word are rarely misread; a hand sign that is friendly at home may be rude elsewhere."
   }
  ],
  "watch": [
