@@ -80,6 +80,20 @@
    "doCaption": "Noticing the shrink, and settling back to your own size.",
    "dontCaption": "Shrinking whenever the director walks in.",
    "annotation": "Your own posture tells you how you see someone. Noticing it gives you the choice to stay as you are."
+  },
+  {
+   "doPoseId": "p_stand_hands_clasped_front",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Taking only the room you need",
+   "dontCaption": "Taking the widest stance when meeting someone new",
+   "annotation": "Expansive postures invite others to shrink. With someone new, take only the room you need and let them settle."
+  },
+  {
+   "doPoseId": "p_stand_upright_side",
+   "dontPoseId": "p_posture_contracted",
+   "doCaption": "Standing at your own height",
+   "dontCaption": "Shrinking around one particular person",
+   "annotation": "If you shrink around someone, notice the moment it starts and let your body settle back to its usual size."
   }
  ],
  "caseStudy": "Andrew, forty-five, is a regional sales manager, six foot four, and has always been told he has presence. In meetings he sits back, an arm over the next chair, legs stretched out. At his annual review, his director passes on something from the team survey: people feel they cannot get a word in.\n\nAndrew is baffled, because he talks less than most of them. So he watches. In his next team meeting he notices that when he leans back and spreads out, the two newest members of the team pull their chairs in, cross their arms close and lean forward over their notebooks, small and still. They say almost nothing. When he leans forward to look at a document, they sit back a little and one of them speaks.\n\nHe also notices something about Marion, the oldest member of the team, who sits at the end of the table with a curved back and a quiet voice. He had always taken her for the least confident person in the room. In fact she has been with the company for thirty years and knows every client personally. A conversation over coffee reveals that she has osteoporosis and that sitting upright for long is painful.\n\nAndrew changes how he sits. He keeps his arms on the table, his chair pulled in, and leans forward when others are speaking. He stops sitting at the head of the table. At the start of each meeting he asks Marion what she is hearing from clients, and listens.\n\nWithin a month the newest members of the team are speaking in most meetings. One of them tells him, a little nervously, that he seems more approachable. Andrew does not tell her that all he changed was where he put his arms.",
@@ -98,6 +112,11 @@
     "During the meeting, note where people look when decisions are made and who changes posture when.",
     "Afterwards, compare your first impression with what you saw and with anything you know about the real hierarchy.",
     "Write one way in which posture misled you."
+   ],
+   "variations": [
+    "Do it at a family gathering rather than at work, and see whether the rank order you sense matches the one everyone would describe.",
+    "Harder: make your prediction before anyone has spoken, from posture alone, and keep it sealed until the end.",
+    "Ask someone who knows the group well to rank the people privately, and compare their order with yours."
    ]
   },
   {
@@ -109,6 +128,11 @@
     "Note the relationship between them, if you know it.",
     "Look for one moment when you shrank or expanded in response to someone else.",
     "Write down what you think that moment says about how you see them."
+   ],
+   "variations": [
+    "Watch a television panel or a reality show for complementarity, and pause the moment someone new joins.",
+    "Watch a child arrive at a group of older children, and note who expands and who contracts in the first minute.",
+    "Keep a note of which people make you expand and which make you contract, across a fortnight."
    ]
   },
   {
@@ -120,6 +144,11 @@
     "Ask each other how the other's face looked from where you were.",
     "Take a phone photo of each of you from slightly above and slightly below, with a neutral face.",
     "Compare how the photos read, and delete them afterwards."
+   ],
+   "variations": [
+    "Try the same comparison seated, with one of you on a higher chair, and see how much the height difference changes.",
+    "Repeat with someone much shorter than you, and ask how your face looks to them when you look down.",
+    "Look at a set of official photographs of leaders and note how often the camera is placed below them."
    ]
   },
   {
@@ -131,6 +160,11 @@
     "Count how many people speak, and how often, compared with your usual meetings.",
     "Afterwards, ask one person you trust whether the meeting felt different.",
     "Write down whether you will keep the change."
+   ],
+   "variations": [
+    "Try it for a whole week rather than a single meeting, and keep a count of how often others speak.",
+    "Ask a trusted colleague to watch for the moment you start to sprawl, and to tell you afterwards.",
+    "Do it in a meeting where you have no authority, and notice whether taking up less room changes how you are treated."
    ]
   },
   {
@@ -142,6 +176,10 @@
     "Note any judgment about their confidence or status that you have based on their posture.",
     "Check each judgment against what you actually know of them.",
     "Write down one change you would now notice as meaningful for each person."
+   ],
+   "variations": [
+    "Add one person you have only recently met, and see how many of your judgments about them rest on posture alone.",
+    "Revisit the list in three months and note which of your readings have changed as you learned more about each person."
    ]
   }
  ],
@@ -223,6 +261,58 @@
    "explain": "Bodies complement each other's rank, so your expansion invites their contraction. Changing your own posture is the quickest test of that reading, and it costs you nothing.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "At a meeting with a new client, one man talks the most and sprawls in his chair, while an older woman says little. Who is most likely to make the decision?",
+   "options": [
+    "The man who talks the most, since talking and taking up space are reliable signs of real power",
+    "You cannot tell from that, so watch where eyes go at decision points and ask who will decide",
+    "The older woman, since the quietest person in a meeting is almost always the one in charge",
+    "Whoever sits nearest the head of the table, since seating always reflects rank in meetings"
+   ],
+   "answer": 1,
+   "explain": "Hall, Coats and LeBeau found that the cues people associate with power, such as talking and expansiveness, track it only weakly. The glances at decision points, and a direct question, tell you far more.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Witkower and Tracy find when faces with neutral expressions were tilted slightly downward?",
+   "options": [
+    "They were judged more friendly, because a lowered head appears more modest and less threatening",
+    "They were judged more dominant, because the tilt made the brows appear lowered as in a frown",
+    "They made no difference to judgments, since people read only the expression on the face itself",
+    "They were judged more intelligent, because a lowered head suggests that the person is thinking"
+   ],
+   "answer": 1,
+   "explain": "Tilting the head down makes the brows look lower and more sharply angled, which observers read as a frown. The face has not moved; the judgment is an illusion produced by the angle.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In Tracy and Matsumoto's study of judo athletes, why did the behaviour of athletes who had been blind from birth matter?",
+   "options": [
+    "It showed that blind athletes were less likely than sighted ones to display any pride at all",
+    "It showed that pride displays are learned entirely by watching other people celebrate wins",
+    "It showed that blind athletes celebrated more modestly, out of respect for their opponents",
+    "It suggested the displays are not learned by sight, since they made the same ones as others"
+   ],
+   "answer": 3,
+   "explain": "Athletes blind from birth could not have learned the pride and shame displays by watching others, yet they showed them too. That suggests these displays are part of what bodies do, not merely a learned convention.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You notice that you sit on the edge of your chair and agree too quickly whenever your manager joins a meeting. What fits this chapter best?",
+   "options": [
+    "Adopt an expansive posture whenever she arrives, so that she sees you are not intimidated",
+    "Accept it, since people's posture around authority cannot be changed once it has been learned",
+    "Notice the moment it starts, and let yourself settle back to your usual size in the chair",
+    "Avoid meetings that she attends, since the shrinking shows that you cannot work with her"
+   ],
+   "answer": 2,
+   "explain": "People complement each other's posture without thinking, and the habit can outlast its reasons. Noticing it and settling back to your own size is enough; performing dominance in return would simply be another way of reacting to her.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -251,6 +341,110 @@
    "work": "Impro: Improvisation and the Theatre",
    "author": "Keith Johnstone",
    "note": "Faber and Faber, 1979. The chapter on status is the clearest practical account of status as something people play."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The quiet woman at the end of the table",
+   "scene": "A small software company sends three people to pitch to a family-owned chain of garden centres. In the meeting room they are met by\n  four people. One of them, Graham, a tall man in his fifties, does most of the talking at the start. He sits back with an arm over the next\n  chair, interrupts with jokes, and asks the most questions. Beside him is a younger man taking notes, and opposite him a finance manager.\n  At the far end of the table sits a woman in her sixties, Margaret, who introduces herself only by her first name, says very little and\n  sits with her hands folded on the table.\n\n  The software team pitch to Graham. They make eye contact with him, laugh at his jokes, and tailor their answers to the questions he asks,\n  which are mostly about how the product looks. Margaret asks one question, near the end, about what happens to the data if the company stops\n  paying the subscription. The team's lead answers it briefly and turns back to Graham.\n\n  The garden centres do not buy. The software team's lead puts it down to price, and spends a week preparing a discount for the next\n  family business they approach. Weeks later the team learns that Margaret owns the business, founded it with her late husband, and makes\n  every decision over a few thousand pounds. Graham is her nephew and runs the shops. Her one question had been the only one that mattered\n  to her, and the brief answer had told her that these people had not thought about it. She had sat quietly through the meeting by\n  choice. Over thirty years she had found that the people who pitched to her nephew told her more about themselves than those who worked out\n  who she was.",
+   "misread": "The software team read the room's power from posture and talk: the man who took up the most space and spoke the most must be in charge. These are precisely the cues people believe go with power, and, as Hall, Coats and LeBeau's review showed, they are a much weaker guide to who actually holds it. Age and gender assumptions made the misreading easier: an older woman with folded hands did not fit the picture of a decision-maker that the team carried, so they never looked for one there.",
+   "betterRead": "The cues that track power more reliably are quieter. Where do people look when a decision is in the air? Who speaks last, and is not interrupted? Whose question changes the tone of the room? In this meeting, Graham glanced at Margaret twice before answering questions about price, and the finance manager wrote nothing down until she spoke. When Margaret asked her one question, the room went quiet in a way it had not for anything Graham said. Those three things together were a better map of the room than an hour of posture. A careful team would have noticed those glances, addressed some of their answers to the whole table, and treated the quietest person's single question as possibly the most important of the meeting. A team that pitches to the loudest person is also, without meaning to, telling everyone else at the table that they do not count, and the people who do not count are often the ones who talk afterwards. Better still, they would have asked at the start who would be involved in the decision. People in family businesses are rarely offended by that question, and it saves everyone a wasted afternoon."
+  },
+  {
+   "title": "The tallest graduate",
+   "scene": "Tom joins an engineering firm on its graduate scheme at twenty-two. He is six foot five, broad-shouldered, with a deep voice and an easy,\n  upright way of standing. Within a month, without anyone deciding it, senior engineers have started directing questions about the graduates' project to him, though\n  he is no more experienced than the others. At the end of the first year he is chosen to lead the second-year project team, ahead of a\n  graduate named Shreya, who has the best technical record of the intake and has quietly solved most of the problems the group has faced.\n\n  Tom struggles. He is a capable engineer but has no particular gift for organising people, and he finds the role exhausting. The project\n  overruns. In his review, his manager says he expected more, given Tom's natural presence. Tom, who never asked to lead anything, privately\n  feels that he has been set up to fail by a quality he did not choose. He has felt this before. At school he was made captain of the\n  rugby team because he was the biggest boy in the year, not the best player, and spent a season being shouted at for losses he could not\n  prevent. Shreya, meanwhile, has started applying for jobs elsewhere. Nobody has told her why she was passed over, and she has drawn her own\n  conclusions about what the firm values.",
+   "misread": "The senior engineers read height and an upright carriage as leadership. They did not do so consciously; nobody decided that the tall graduate should lead. They simply found themselves turning to him, and when the time came to choose, he was the one who already seemed to be leading. Then, when he did not live up to an expectation he never set, they read that as a personal failing. Both errors flowed from the same source: a body read as a promise. The firm is now likely to lose the graduate it overlooked and to doubt the one it overrated, which is the worst of both outcomes.",
+   "betterRead": "Judge and Cable found that height is linked to pay and to ratings of leadership, an advantage given at birth and paid for by everyone who is shorter. A reader who knows this can catch himself. When you find yourself turning to someone as if they were in charge, ask what they have actually done to earn it. When choosing someone to lead, look at the record, as the firm would have had to do if all the graduates had been the same height: who has organised work, solved problems, brought others along. That would have pointed to Shreya. It would also have spared Tom a year of trying to be what his body seemed to promise. Tall men are not owed an apology for their height, and short women are not owed a promotion for theirs. What everyone is owed is to be judged on what they have done, and that takes a deliberate effort against a bias that works whether or not anyone means it to."
+  },
+  {
+   "title": "The son who shrinks",
+   "scene": "Pete is forty and runs his own building business. He is confident with clients, firm with suppliers and relaxed with his own crew. His\n  wife notices something he has never seen in himself. When they visit his father, Pete becomes smaller. He sits on the edge of the sofa with\n  his knees together and his hands between them. He agrees with things he disagrees with. His voice rises slightly. He laughs at his father's\n  jokes a beat too quickly. When his father leaves the room, Pete sits back and stretches his legs out, and his voice drops.\n\n  She mentions it, carefully, on the drive home. Pete is irritated, then quiet. He remembers being thirteen and his father standing over\n  him in the kitchen, and learning that the safest thing to do was to make himself small and agree. His father is now seventy-five and walks\n  with a stick, and has not raised his voice in years, but Pete's body has not caught up. Pete also realises, with some discomfort,\n  that his own sons go quiet when he comes home tired and stands in the kitchen doorway, and that his eldest sits on the edge of the sofa\n  when Pete is in a mood. He had put that down to the boy's shyness. He wonders now whether it is the same lesson, being learned again.",
+   "misread": "Pete had never read his own posture at all. Like most people, he experienced the shrinking as how he felt with his father, not as something he was doing. Because it was so familiar, it seemed like the natural state of their relationship rather than a habit learned thirty years earlier for good reasons that no longer applied. And because he had never noticed it, he could not notice the same shape forming in his own children, which is how habits like this pass down without anyone choosing them.",
+   "betterRead": "Tiedens and Fragale found that people complement each other's posture rather than copying it: faced with an expansive partner, they contract. In families, these patterns can set in childhood and outlive the circumstances that created them. The person shrinking rarely sees it; the people who love him often do, and rarely say so, because it seems too small and too strange to mention. The careful reading here was his wife's, and the work it prompted was Pete's own. On the next visit he noticed the moment he began to shrink, sat back into the sofa, put his feet flat on the floor and let his voice settle. Nothing dramatic happened. His father, oddly, talked more, and asked his son's opinion about a leak in the garage roof for the first time anyone could remember. Changing your own size can change the conversation without a word being said about it. At home, Pete has started sitting down when he talks to his sons after work, instead of standing in the doorway, and his eldest has started telling him about his day."
+  },
+  {
+   "title": "The celebration in the open-plan office",
+   "scene": "Kwabena, twenty-eight, has spent six months on a bid for a contract with a hospital trust. The email confirming the win arrives while he is\n  at his desk in the open-plan office. He stands up, throws both arms in the air, tips his head back and lets out a shout, then turns to the\n  colleague beside him and pulls him into a hug. A few people laugh and clap. Others look up, startled.\n\n  Later that afternoon his director, Martin, calls him in. Martin congratulates him on the win and then says, awkwardly, that some people had\n  found the display a bit much, and that it might be worth keeping things more low-key in future. Kwabena leaves the meeting deflated. The\n  director meant well. Kwabena feels he has been told that the joy he showed at a real achievement was a problem. He also wonders,\n  though he does not say so, whether a white colleague celebrating the same way would have been called in. The office is quiet and mostly\n  middle-aged, and he has noticed before that his laugh draws looks that other people's do not. The next time he wins something, he tells\n  himself, he will keep it to a nod and a quiet word, and he does, and he enjoys the win rather less.",
+   "misread": "Martin, and the colleagues who had complained, read the pride display as arrogance or showing off. The display was large, loud and unusual in that office, and in a culture of restraint any display of feeling can seem like a claim on other people's attention. The reading may also have been coloured, as Kwabena suspected, by who was celebrating: displays of feeling from young Black men are more often read as aggressive or excessive than the same displays from others, a pattern Part V examines in detail. And the timing made it worse: a note about decorum on a colleague's best day at work tells him what the firm notices, and he will remember it long after he has forgotten the shout.",
+   "betterRead": "Tracy and her colleagues found that the pride display, arms up, head back, chest out, appears spontaneously at moments of success, including in athletes who have been blind from birth and so could never have learned it by watching. It is one of the most natural things a body does when it wins. Whether it fits an office is a separate question, about local norms, and a fair one to raise. It is worth noticing which kinds of feeling an office lets people show, and who is allowed to show them: quiet satisfaction from senior people is often welcome, while a junior's loud delight is called unprofessional. But the kind reading starts with what the display was: a man overcome by having done something difficult. Martin might have begun by joining in for a moment, and left the question of open-plan etiquette for another day, or for never. A team that punishes visible pride teaches its members to win quietly, and then to stop caring quite so much about winning. If the noise genuinely disturbed people, the fair conversation is about noise in an open-plan office, applied to everyone, not about one man's joy."
+  }
+ ],
+ "workedReading": {
+  "title": "Who decides here?",
+  "scene": "Sana is a supplier's account manager visiting a family-run bakery business for the first time, to discuss a new contract for flour. She is shown into a back office where four people are waiting. A man in his forties in a suit stands to shake her hand and introduces himself as the operations manager. An older man in flour-dusted overalls stays seated at the side of the room, nods to her and says nothing. He has a mug of tea in both hands and looks as if he has just come off a long shift. A young woman sits at the desk with a laptop, and an older woman brings in tea and then sits down near the door. The operations manager gestures Sana to the chair facing him across the desk and launches straight into how the business works, how much flour they use, and what they pay their current supplier.",
+  "steps": [
+   {
+    "label": "Check your template",
+    "text": "Sana's first impression arrives before she has thought about it: the man in the suit is in charge, the young woman is his assistant, and the older couple are staff. She notices the impression, and notices what it is built from: clothes, who stood, who spoke first, and age and gender assumptions she would not defend if asked. She sets it aside as a hypothesis, not a conclusion. She has been wrong in exactly this way before, at a farm shop where the man who showed her round turned out to be a seasonal worker and the owner was the woman driving the forklift."
+   },
+   {
+    "label": "Watch the decision points",
+    "text": "Hall's review suggests that the cues most people trust, talking a lot and taking up space, are weak guides to power. So Sana watches for the moments that matter instead. When she mentions price, where do people look? The operations manager, about to answer, glances first at the man in overalls. When she mentions delivery times, the young woman looks at the older woman by the door. These glances are brief, and nobody seems aware of them. That is what makes them useful: they are not performed for the visitor."
+   },
+   {
+    "label": "Note who is deferred to",
+    "text": "Over the next few minutes she notices more. The operations manager does most of the talking but pauses whenever the man in overalls shifts in his chair. Nobody interrupts the older woman when she speaks, which she does twice, briefly. The young woman types notes but stops typing, and looks up, when the man in overalls finally asks a question about the mill the flour comes from. The operations manager falls silent while his question is answered, and does not resume until the older man nods."
+   },
+   {
+    "label": "Hold the rivals",
+    "text": "Several stories fit. The man in overalls may own the business and leave the talking to his manager. He may be the head baker, consulted on quality but not on money. The older woman may be a co-owner who handles the books, or simply someone respected. The glances could also be politeness to elders. Sana does not need to pick one yet; she needs to stop pitching to the wrong person. Every one of the plausible stories means that directing everything at the man in the suit is a mistake, which is enough to change what she does next."
+   },
+   {
+    "label": "Test by widening",
+    "text": "Rather than directing her answers to the suit, Sana addresses her answers to the room, and asks a question to the group: who would she be working with on the order schedule, and who would want to see the quality reports? The question is ordinary, and it lets them tell her how decisions are made without anyone having to announce it. It also signals respect for everyone in the room, which costs her nothing and which family businesses tend to notice."
+   },
+   {
+    "label": "Watch the answer",
+    "text": "The operations manager says he handles the schedule. The man in overalls says that he would want to see the reports, and adds, without emphasis, that his wife signs the contracts. The older woman by the door smiles, and the son, a little sheepishly, says that he should have introduced everyone properly at the start. She and her husband started the bakery thirty years ago; their son, the man in the suit, runs operations; their granddaughter, at the laptop, is learning the business. Sana's first impression had placed every one of them wrongly except the one who introduced himself."
+   },
+   {
+    "label": "Update and act",
+    "text": "Sana's first impression had been nearly the reverse of the truth. She does not dwell on it. She makes sure the quality reports go to the father and the contract to the mother, and she sends her follow-up email to all four. She also writes a short note to herself about the glances that told her most: the son looking at his father before talking about price, the granddaughter looking at her grandmother before talking about delivery. On the drive back she notes for her colleagues that, in family firms especially, the person who stands to greet you is often the one sent to do the talking, and the person who stays seated is often the one who decides."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Performing power to win",
+   "body": "A reader who learns that expansive postures read as dominant may start using them deliberately: arm over the next chair in a negotiation, feet on the desk with a junior, standing over someone's chair to make a point. Because people complement each other's posture, this often works in the moment: the other person contracts, defers and gives way. But what you have won is compliance, not agreement, and you have usually lost information, because people who feel small say less, and say less of what they actually think. The power-posing research, described in this chapter, also suggests that the inner benefits are modest at best. If you want to be followed, the chapters on leadership later in this book explain what works better. If you merely want to dominate, this book will not help you. Notice, too, what expansive postures do to the quality of a meeting: the person who sprawls usually hears less of what the room actually thinks, because the room has learned to tell him what he wants."
+  },
+  {
+   "title": "Reading a raised chin as arrogance",
+   "body": "A chin held high is often taken as pride or disdain, and a lowered chin as submission or menace. Witkower and Tracy's work shows how much of this is illusion: tilting the head changes how the brows and eyes appear, even when the face itself is still. Height adds a further distortion. A short man talking to a tall one must tilt his head back to meet his eyes, and will be read as raising his chin; a tall man talking to a short one must tilt his head down, and may be read as glowering. Photographers know this well: a portrait taken from slightly below makes its subject look more imposing, and one taken from above makes him look smaller and younger, without any change in his face. Before you read anything into the angle of someone's head, check the heights of the two people and the person's usual carriage. Many people simply hold their heads high, or low, all the time, for reasons of eyesight, glasses, neck stiffness or habit. A man wearing varifocal lenses tilts his head back to read and down to look at you, and neither tilt is about you."
+  },
+  {
+   "title": "Deferring to height",
+   "body": "Most people would deny that they think taller people are more capable. Yet Judge and Cable's findings, and countless smaller observations, suggest that height carries status regardless. The failure here is not a single misreading but a slow drift: turning to the tallest person for an answer, letting him finish while interrupting a shorter colleague, remembering his ideas as more forceful. Over months, these small deferrals add up to promotions, pay and authority that have little to do with ability. The remedy is simple to state and hard to practise: notice whom you turn to, and ask what they have done to deserve it. Then occasionally turn somewhere else. Managers who track, even roughly, whose ideas they credit in meetings often find the pattern surprises them, and correcting it is one of the quickest ways to hear from people the room has been quietly overlooking."
+  },
+  {
+   "title": "Shrinking to keep the peace",
+   "body": "Some men learn early that making themselves small is the safest way through: around a domineering parent, a bullying boss, a volatile partner. They sit on the edge of chairs, keep their hands close, agree quickly and laugh too readily. The habit protects them, and it also costs them. Others read the shrinking as low status and treat them accordingly, and the habit can persist long after the threat that created it has gone, as in the case of Pete and his father. If you notice yourself shrinking around particular people, the first step is simply to notice it, and the second is to ask whether the reason still applies. Sitting back into a chair is not an act of aggression. It is a man taking up the room he already has. Some people find it helps to rehearse the settled posture alone first, so that the body knows where to go when the old habit starts. Others find it easier to change one small thing, such as where they put their hands, and let the rest follow. The point is not to perform confidence in front of the person who once frightened you. It is to stop performing fear in front of someone who may no longer deserve it, or who may have long since stopped noticing."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Should I try to stand up straighter?",
+   "a": "For your own comfort, breathing and back, an easy upright posture is often better than a slump, and you may feel a little more alert in it. But do not expect it to make you more powerful, or to change your hormones. The large replication led by Ranehill found that the dramatic claims about power poses did not hold up, though some studies suggest a small effect on how confident people say they feel. Posture is mainly something other people read, and they will read a forced, rigid uprightness as tension rather than authority. A man who has decided to stand up straight often looks like exactly that: a man who has decided to stand up straight. If you want to change how you come across, work on what you say and how you listen. Your posture will tend to follow. If back pain or stiffness is behind a slump, that is a matter for a physiotherapist rather than for a book about reading people, and worth seeing to for its own sake."
+  },
+  {
+   "q": "How can I tell who really holds power in a room?",
+   "a": "Watch the decision points rather than the talking. When a question about money, risk or direction comes up, notice where people's eyes go before anyone answers. Notice who is interrupted and who is not, who speaks last on a topic and is not contradicted, whose short remark changes the tone. Notice who arrives late without apology and who is waited for. Notice, too, who is asked for a view at the end of a discussion, since in many organisations the most senior person speaks last. Hall, Coats and LeBeau's review found that many of the cues people believe go with power, such as talking more or taking up space, differ much less between powerful and less powerful people than everyone assumes. When in doubt, ask: who will be involved in the decision? People are rarely offended by an honest question about how their organisation works. If you get it wrong anyway, the repair is easy: include the person you overlooked in the next email and address your next answer to them."
+  },
+  {
+   "q": "Is it manipulative to change my posture on purpose?",
+   "a": "It depends on what you are trying to do. Taking up less space so that a junior colleague feels able to speak, sitting down so that you are not standing over someone who is upset, or uncrossing your arms so that you seem more open to a disagreement, are all deliberate changes made for the other person's sake, and they are part of being considerate. Using posture to intimidate, to win an argument you could not win on its merits, or to make someone feel small enough to give way is a different matter. So is copying someone's posture on purpose to win their trust, a tactic taught on some sales courses, which Part IV examines and which works, when it does, by manufacturing a signal. The test this book uses throughout is simple: would you be comfortable if the other person knew exactly what you were doing and why? If yes, carry on. If no, stop. Most of the considerate uses of posture would survive the other person knowing about them, and most of the manipulative ones would not."
+  },
+  {
+   "q": "Why do I shrink around some people?",
+   "a": "Usually because, at some point, it was useful. People complement each other's posture without thinking, contracting in front of someone expansive, and if the person in question once held real power over you, as a parent, a teacher, a manager, the habit may have been learned for good reasons. It can also come from anxiety, from feeling out of place in a social class or setting you were not raised in, or from respect. None of these is shameful. The useful question is whether the shrinking still serves you. If not, notice the moment it starts and let your body settle back: feet on the floor, back against the chair, voice at its usual pitch. You may find that people treat you differently without you saying anything at all. If the shrinking comes with real fear, around someone who has hurt you or might, that is a different matter, and your safety comes before any lesson in posture."
+  },
+  {
+   "q": "Do women and men display status in the same ways?",
+   "a": "Not exactly, and the differences are easy to misread. Hall, Coats and LeBeau found only a limited parallel between the nonverbal differences linked to status and those linked to gender, which means it is a mistake to read typically feminine behaviours as low status or typically masculine ones as high. A woman who smiles, nods and takes up less room may hold far more authority than a man who sprawls. Part IV's chapter on the nonverbal glass ceiling looks at how women's displays of authority are often judged more harshly than the same displays from men. A careful reader adjusts for this by watching what people do and how others respond to them, not how closely they match a picture of authority built mostly from men. The same caution applies to men whose authority is quiet: the man who listens, waits and speaks once may hold more sway than the one who fills the room."
+  },
+  {
+   "q": "What about cultures in which lowering yourself shows respect?",
+   "a": "In many cultures, status is shown by lowering rather than raising the body: bowing to elders or superiors, lowering the eyes, sitting lower than a guest, or kneeling to serve. In such settings, a person who makes himself small may be displaying good manners and confidence in his place, not weakness, and a person who stands tall and holds his gaze may be read as rude. Part V's chapter on cultural variance, and Part VI's chapter on cross-cultural calibration, take this further. The general rule is the same as everywhere in this book: read posture against the person's own baseline and the norms of the setting, not against a single picture of what power looks like. A visitor who bows slightly to an elder in a culture that expects it is not making himself smaller; he is showing that he knows where he is."
   }
  ],
  "watch": [
