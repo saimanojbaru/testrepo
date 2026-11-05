@@ -83,6 +83,20 @@
    "doCaption": "Ten minutes, naming movements before meanings.",
    "dontCaption": "Hours of slowed footage, hunting for tells.",
    "annotation": "Describing the movement first, and its possible causes second, is the habit that slow-motion practice should build."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Asking about the topic, not the face",
+   "dontCaption": "Telling someone what their face just did",
+   "annotation": "Naming another person's expression puts them on trial for their own face. Ask about the subject that seemed to land instead."
+  },
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_lean_in",
+   "doCaption": "Sitting back, listening, letting the face be",
+   "dontCaption": "Leaning into the screen to inspect a face",
+   "annotation": "Leaning in to scrutinise someone on camera changes their behaviour and yours. Sit back, listen, and treat what you see on a call as weak evidence."
   }
  ],
  "caseStudy": "Jonah, thirty-four, an account manager, has spent a few evenings watching online videos about microexpressions, and goes into a pitch feeling sharper than usual. Halfway through, as he explains the delivery timeline, the client's operations director, Eleanor, shows a brief frown and a press of the lips. It is gone in an instant. Jonah is certain he has seen her reject the timeline.\n\nHe spends the rest of the meeting reassuring her about deadlines she has not questioned, and that evening rewrites the proposal with a shorter schedule his team cannot meet. His manager, Priti, asks what Eleanor actually said about the timeline. Nothing, Jonah admits. He saw it on her face.\n\nPriti suggests he ask. The next morning he emails Eleanor a short note asking whether the proposed schedule works for her side. Eleanor replies that the timeline is fine. She had been working out in her head whether the second phase would land in the week her warehouse closes for stocktaking, which it does, by two days. Could they move that phase back a week?\n\nThe frown had been arithmetic. The press of the lips had been the moment she found the clash. Jonah had seen something real, at a real moment, and had attached the wrong meaning to it, then acted on the meaning instead of asking about the moment.\n\nHe puts the original schedule back, moves the second phase by a week, and writes in his journal: *saw a flash at the timeline; it pointed to something; it did not tell me what.* At the next pitch he notices a similar flicker when he mentions training. This time he asks, at the end, how the training plan looks to them, and learns about a shift pattern he had not known existed.",
@@ -101,6 +115,11 @@
     "Watch it again at a quarter of normal speed and note every brief movement of a single region of the face, with the time.",
     "Describe each movement in plain words, such as brows lowered and drawn together, without naming an emotion.",
     "Compare the two lists and count how many movements you missed at normal speed."
+   ],
+   "variations": [
+    "Harder: choose an interview in a language you do not speak, so that words cannot guide you, and see how many movements you catch.",
+    "Easier: use a cookery or craft video with long pauses between speech, where the face moves less often.",
+    "Compare notes with a friend who watched the same clip, and see how differently you each described the same moments."
    ]
   },
   {
@@ -112,6 +131,11 @@
     "For each, write three possible causes, at least one of which has nothing to do with emotion, such as effort, speech or light.",
     "Note what was being said at the moment of each movement.",
     "Mark any movement that coincided with a change in voice, hands or posture as well."
+   ],
+   "variations": [
+    "Harder: for each movement, write the rival explanation first, before any emotional one, and only then allow yourself a guess about feeling.",
+    "Use a recording of yourself, and see how many of your own brief movements you can explain without emotion.",
+    "Pair up: one person chooses five movements from a clip, the other proposes causes without being told what was said, then compare with the sound on."
    ]
   },
   {
@@ -123,6 +147,11 @@
     "Note the movements that appear only with the hard questions.",
     "Swap roles and ask your friend what they saw on your face.",
     "Write down your friend's effort face and your own, as a baseline for later."
+   ],
+   "variations": [
+    "Swap the questions for topics rather than difficulty: one your friend loves, one that bores them, one that annoys them mildly.",
+    "Try it with someone from a different generation or background, and notice which of your expectations about their face were simply your own habits.",
+    "Repeat in a month with the same friend and see whether the effort face has stayed the same."
    ]
   },
   {
@@ -134,6 +163,11 @@
     "Write your first guess at the cause, and one rival.",
     "Note what you did, if anything, and whether you later learned more.",
     "At the end of the week, count how many guesses you could check and how many held up."
+   ],
+   "variations": [
+    "Shorter version: log just one moment a day, but write it within five minutes, while the context is fresh.",
+    "Add a column for what happened to your own face at the same moment, if you noticed it.",
+    "At the end of the week, sort your entries into those you could check and those you could not, and see which kind you were more confident about."
    ]
   },
   {
@@ -145,6 +179,11 @@
     "Note what moved, how long it lasted, and whether you were aware of it at the time.",
     "Ask your friend whether they noticed it live.",
     "Delete the recording once you have made your notes."
+   ],
+   "variations": [
+    "Ask your friend to deliver two surprises, one pleasant and one mildly annoying, and compare your own two flashes.",
+    "Harder: try to keep your face still for the second surprise, then check the recording for what leaked anyway.",
+    "Ask your friend to guess, from your face alone, which surprise was which, and see how often they are right."
    ]
   }
  ],
@@ -226,6 +265,58 @@
    "explain": "The flash gives you a moment, the price, and nothing more. Asking about the topic later lets the client tell you what, if anything, it meant, without being told their face was being watched.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In a meeting, a colleague's mouth corner tightens on one side whenever she explains anything technical. A manager says this is contempt. What does this chapter suggest?",
+   "options": [
+    "He is right, because a one-sided tightening of the mouth is a reliable sign of contempt in anyone",
+    "It may be a habitual movement of her face, so it needs a baseline before it can mean anything",
+    "He is right only if the movement lasts less than half a second, which makes it a microexpression",
+    "It shows that she is concentrating hard, since a tightened mouth always means mental effort"
+   ],
+   "answer": 1,
+   "explain": "A movement that appears whenever she explains anything technical looks like part of her face, not a reaction to any one moment. Without a baseline, labelling it contempt is applying a plate to a person.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "A friend smiles for an instant and then goes still when he hears that his father has been taken to hospital. What is the most careful reading?",
+   "options": [
+    "He is secretly relieved, since a squelched smile shows a feeling that he is trying to hide",
+    "Smiles at shocking news often come with fear or embarrassment, so it shows little on its own",
+    "He has not understood the news yet, since a person who understands bad news never smiles",
+    "He is in denial about the illness, which is shown by a smile that he cannot quite suppress"
+   ],
+   "answer": 1,
+   "explain": "Many people smile or laugh briefly when frightened, embarrassed or overwhelmed. A suppressed smile at the moment of a shock fits fear at least as well as pleasure, and the cluster around it matters more than the flash.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Why should brief expressions seen on a video call be treated as weaker evidence than the same movements seen in person?",
+   "options": [
+    "Because people are more guarded on camera and so produce fewer genuine expressions there",
+    "Because video calls slow down expressions, so that brief ones look longer than they really are",
+    "Because limited frame rates and compression can hide, smear or even create brief movements",
+    "Because research shows that microexpressions only happen when people meet face to face"
+   ],
+   "answer": 2,
+   "explain": "A movement lasting a twenty-fifth of a second may fall between frames or be distorted by compression and lag. The image itself is less trustworthy than a face in the room, so voice, words and timing should carry more weight.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did the 2019 review led by Lisa Feldman Barrett conclude about faces and emotions?",
+   "options": [
+    "That six basic expressions are recognised in every culture with near-perfect accuracy",
+    "That brief expressions are the most reliable available sign of what a person is hiding",
+    "That machines now read emotions from faces more accurately than trained human observers",
+    "That people do not consistently make the same faces for the same emotions across settings"
+   ],
+   "answer": 3,
+   "explain": "The review found that the link between particular facial movements and particular emotions varies widely across situations and cultures. That is why reading a feeling from a face, by eye or by machine, is far less certain than it appears.",
+   "isMisconceptionTest": false,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -254,6 +345,110 @@
    "work": "Masked presentations of emotional facial expressions modulate amygdala activity without explicit knowledge",
    "author": "Paul J. Whalen, Scott L. Rauch, Nancy L. Etcoff and colleagues",
    "note": "Journal of Neuroscience 18(1), 1998. Why a brief face can register without being noticed."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The lip press at the price",
+   "scene": "Farah runs a small catering business and is pitching for a contract to supply lunches to a firm of architects. The office manager,\n  Linda, has been friendly throughout the meeting, nodding as Farah describes the menus and laughing at a story about a wedding that went\n  wrong. When Farah turns the page and names the price per head, Linda's lips press together for an instant and her brows draw down a\n  fraction. Then she smiles and says, \"Right, let me take that away.\"\n\n  Farah has read about microexpressions and is sure she has just seen the truth: the price is too high. On the drive back she rewrites\n  the quote with a ten per cent discount, which will make the contract barely worth having, and emails it that evening with an apology\n  for the earlier figure. Linda replies the next morning, a little puzzled, to say that the original price had been within budget. What\n  she had been doing, in the moment Farah saw, was dividing the figure by the number of staff who actually eat lunch in the office, which\n  is about two-thirds of the total, and working out whether the partners would accept paying for meals that went uneaten. That question,\n  not the price, was the one she needed to take away. Farah, meanwhile, had read the lip press as a verdict on her prices,\n  which in her experience is what every client's hesitation has meant, and which is exactly why she was primed to see it. Her two\n  previous pitches had both ended with a request for a lower price, and she had walked into this one braced for a third.",
+   "misread": "Farah saw a real movement at a real moment, and then supplied the meaning herself, choosing the one that most frightened her. She never checked it against anything else Linda did or said, and she acted on it at a cost to her own business. The flash had told her something registered when the price was named. It had not told her what. Worse, she treated her own fear of losing the contract as if it were Linda's objection, and negotiated against herself in an email, with nobody on the other side asking her to.",
+   "betterRead": "The careful move was available in the room. Noting that something had crossed Linda's face at the price, Farah could have asked an open question about the number itself: how does that sit with what you had in mind? Or, more gently still, what would you need to take back to the partners? Either would have surfaced the real issue, which was the head count, and which Farah could have solved by offering a price per meal served rather than per person employed. A flash is a pointer to a topic. The conversation is how you find out what is at the end of it. Farah's discount cost her a margin she could not afford and told Linda, without meaning to, that her prices were soft. The question would have cost her nothing."
+  },
+  {
+   "title": "The smile at the bad news",
+   "scene": "At a Monday meeting, the managing director of a regional insurance office announces that the claims team will be cut by a third.\n  Around the table people stiffen, look down at their notes or stare at the speaker. Andy, who has worked in claims for eleven years, does\n  something different. The corners of his mouth flick upward for a fraction of a second before his face goes still and he presses his lips\n  together. Sitting opposite him, Karen, another claims handler, sees it clearly.\n\n  By lunchtime Karen has told two colleagues that Andy smirked when the cuts were announced, and the story grows. Perhaps he knew already.\n  Perhaps he has been promised something. Perhaps he is glad to see certain people go. Andy notices that people are cool with him for the\n  rest of the week and has no idea why. When a friend finally tells him, he is mortified. He says that he has always smiled when he is\n  frightened, at funerals, at the dentist, in a car that skids on ice, and that he spent the whole meeting thinking about his mortgage. His wife confirms it, a little wearily: he laughed\n  when the vet told them the dog had to be put down, and then cried in the car for an hour. None of that is visible to Karen, who has sat\n  opposite Andy for three years without ever seeing him frightened.",
+   "misread": "Karen read the flash as a squelched smile of pleasure, which is the meaning the textbook plate would give it, and treated it as an admission. She ignored everything else about the moment: that it came at the instant of a shock, that it was cut off at once, and that the rest of Andy's body showed no sign of ease. Then she passed her reading on as fact, which turned a flicker into a reputation. In an anxious office, a story about a colleague who seemed pleased by redundancies spreads faster than any correction, and Karen had no way to take it back once it had travelled.",
+   "betterRead": "Smiling under stress is common. Many people smile or laugh when they are embarrassed, frightened or overwhelmed, and a smile that appears at the moment of bad news and is immediately suppressed fits fear and embarrassment at least as well as pleasure. A careful observer would note the moment, notice that the cluster around it showed tension rather than relief, and keep the movement to herself. If it mattered, she could have asked Andy, kindly, how he was taking the news. She might also have noticed her own state: she was frightened for her own job, and fear looks for someone to blame. A colleague who seems unbothered by a threat you feel acutely is an easy target for that fear. What she should never have done is broadcast a reading of someone's face to people who had not seen it and could not check it. A reading passed on loses its uncertainty with every telling, until \"I think I saw something\" becomes \"he smirked\", and a frightened man finds his colleagues turning cold."
+  },
+  {
+   "title": "The trained interviewer",
+   "scene": "A recruitment firm sends its senior consultants on a two-day course in reading facial expressions, including microexpressions. Graham\n  returns enthusiastic. A week later he interviews Kofi for a finance role. Kofi is well qualified and answers clearly, but when Graham asks\n  why he left his last job, the left corner of Kofi's mouth tightens and lifts for a moment, a movement the course had taught as the classic\n  sign of contempt.\n\n  Graham presses. He asks the question again in two different ways and watches closely each time. He notices the same one-sided tightening,\n  and becomes more convinced that Kofi holds his former employer, and perhaps the whole process, in contempt. He writes in his notes that the\n  candidate seemed dismissive and may have a problem with authority. Kofi, increasingly uncomfortable at being asked the same question three\n  times, becomes more guarded, which seems to confirm the note. Graham's colleague, who interviews Kofi the next day for a different role,\n  finds him warm and relaxed, and notices that the same one-sided pull at the corner of his mouth appears whenever he concentrates, about\n  every second sentence. When she asks, Kofi laughs and says that his sister teases him about it; he has done it since school, and it gets\n  worse when he is tired. He also mentions, without being asked, that he found yesterday's interview strange, because he was asked the same\n  question three times and never found out why.",
+   "misread": "Graham took a movement from a training plate and treated it as a fixed sign, ignoring the possibility that it was part of Kofi's face rather than part of his feeling. Then he tested his reading in a way that could only confirm it: by repeating an uncomfortable question, he produced discomfort, and read that as further evidence. The training had given him new confidence without any new means of checking himself, which is the most dangerous combination in this book.",
+   "betterRead": "A brief, one-sided pull at the mouth corner can accompany contempt. It also appears as a habitual movement in many faces, with concentration, with certain speech sounds, after dental work, and in people whose faces are slightly asymmetrical, which is most people. The only way to tell is a baseline: does this movement appear when he talks about anything effortful, or only about his last employer? Graham had the material to check within the interview, and did not. A careful interviewer would have noted the moment, moved on, and returned to the topic later in a neutral way, or simply relied on what Kofi said, which was that the company had been sold and his team disbanded. The firm later reviewed its notes on candidates assessed in the weeks after the course and found that consultants had rated several of them down for \"micro-signs\" that nobody could describe in plain words. It now asks interviewers to write what a candidate said, not what his face supposedly meant."
+  },
+  {
+   "title": "The flicker when he mentioned the new partner",
+   "scene": "Mark has been divorced for two years and has been seeing someone, Claire, for six months. He decides it is time to tell his\n  fourteen-year-old son, Ollie, before they meet. He chooses a calm Saturday, takes Ollie for breakfast, and tells him. Something crosses\n  Ollie's face at the name, a quick drawing together of the brows and a tightening around the eyes, and then it is gone. Ollie shrugs and says,\n  \"Cool,\" and goes back to his food.\n\n  Mark is sure he has seen anger, perhaps a sense of betrayal. He spends the next twenty minutes reassuring Ollie that nothing will change,\n  that Claire is not trying to replace his mum, that Ollie will always come first, that they can take things slowly. Ollie says less and less.\n  In the car home he puts his headphones on. That evening Mark texts Claire that he thinks it went badly and that they should postpone meeting.\n  A week later Ollie, out of nowhere, asks whether his mum knows about Claire, and whether she will be upset. Mark realises\n  that, for all his talk at breakfast, he never asked his son a single question, and that the one Ollie had been carrying was not one he\n  could have guessed. He also realises that Ollie's shrug and his \"Cool\" were probably the most honest things said at the table: a boy\n  buying himself time to think.",
+   "misread": "Mark saw a real flash and assigned it the meaning he feared most. He then responded to his own reading rather than to his son, filling the silence with reassurance about a feeling Ollie had not expressed. The flood of reassurance itself told Ollie that this was a bigger, more dangerous subject than he had thought, and he withdrew from it. Mark was, in effect, having a conversation with the face he had imagined rather than the boy in front of him, and the boy could tell.",
+   "betterRead": "The brief tightening of the brows and eyes is a common movement of concern, effort or surprise, as well as of anger. Its timing told Mark that the news had landed, which he already knew. A better response would have been to say very little, perhaps that Ollie could ask him anything about it whenever he wanted, and then to let breakfast carry on. The question Ollie eventually asked, about his mum, showed that his first worry had been for her, not about himself. That is something no reading of a face could have told Mark, and something a quiet, open door eventually did. When Ollie finally met Claire, a month later, it went well, and Mark noticed that he said far less than he had planned to, which seemed to help."
+  }
+ ],
+ "workedReading": {
+  "title": "A price on a video call",
+  "scene": "Tom is pitching a software subscription to a school business manager, Mrs Okafor, on a video call. The call is going well. She asks sensible questions about training and data protection. When Tom shares a slide with the annual price, he sees her lips press together and her brows lower slightly for what feels like a fraction of a second. Then she looks down and to the left, says \"mm-hm,\" and asks him to go back to the slide about training. Tom feels his stomach drop. He has lost two deals this month at exactly this point, both times after a long silence when the price appeared, and the memory arrives before any thought does. He has perhaps a second to decide whether to start defending the number, offer a discount, or carry on.",
+  "steps": [
+   {
+    "label": "Check yourself",
+    "text": "Tom wants this sale badly; it would make his quarter. That desire makes him likely to see danger at the price slide, because the price is the moment he has been dreading. He also knows he is tired after six calls today. Naming both helps him treat his first reaction, that she hates the price, as a feeling of his rather than a fact about her. He also reminds himself of the two lost deals, because those memories are doing a lot of the work in this moment: they have primed him to see the same ending again."
+   },
+   {
+    "label": "Mark the moment",
+    "text": "He notes exactly what had just happened: the price slide appeared. The timing is close, within a second, which makes the slide a reasonable candidate for whatever registered. It is not the only candidate. Video calls have a delay, and it is possible that the movement followed something else, such as a message on her screen or a noise in her office. He also checks whether anything else on his screen moved at that instant, such as her video freezing for a moment, which on this connection has happened twice already. Tom also notes what he himself was doing at that instant: he had just stopped talking and was waiting, which is precisely the moment when a nervous seller scans the other face hardest and sees most."
+   },
+   {
+    "label": "Describe the movement",
+    "text": "In plain words: a lip press and a slight lowering of the brows, very brief, followed by a glance down and to the left, and a neutral sound. Tom deliberately avoids words such as disapproval or shock. He also reminds himself that on a video call, at perhaps twenty or thirty frames a second and with compression, a movement this brief may be partly invisible or partly invented by the image. Describing it plainly also keeps it small: a lip press and lowered brows are a few millimetres of movement, which is about the weight this evidence deserves."
+   },
+   {
+    "label": "Look for company",
+    "text": "A single brief movement is weak evidence. What else changed? Her voice stayed even. Her questions kept coming. She did not sit back from the camera or cross her arms. She asked to go back to the training slide, which is an odd thing to do if the price had ended her interest, but a natural thing to do if she was weighing value against cost. The cluster around the flash is thin, and parts of it point the other way. If she had gone quiet, shortened her answers and started wrapping up the call, the picture would be different. She did the opposite."
+   },
+   {
+    "label": "Hold several explanations",
+    "text": "Tom lists the possibilities to himself. She thinks the price is too high. She is working something out: how it splits across budgets, or how it compares with what they pay now. She is reacting to something else on her screen. The movement is part of her concentrating face; he has not seen enough of her to know. The glance down and to the left fits calculating or reading as well as anything else. No explanation is strongly favoured. That is a perfectly good place to be. The aim of this step is not to pick the right answer but to stop the first explanation from passing itself off as the only one. Tom finds it helps to hold the list in a deliberately boring order, starting with the explanations that have nothing to do with him, because the ones about him will push to the front unaided."
+   },
+   {
+    "label": "Test without accusing",
+    "text": "Tom does not say that he noticed her reaction to the price. That would put her on the spot about her own face. Instead, after the training slide, he asks a neutral question about the number: \"How does the cost compare with what you are working with this year?\" The question invites her to say whatever she was thinking, without implying that he saw anything. He also decides, in advance, that if she simply says the price is fine, he will believe her and move on, rather than circling back to it until she voices a doubt he has talked himself into."
+   },
+   {
+    "label": "Learn and update",
+    "text": "Mrs Okafor says the price is fine, but that it would have to come out of two budgets, IT and staff development, and she needs to know whether the training element can be invoiced separately. Tom can do that. He notes, for the next call, that her lip press seems to come when she is doing sums, and that his own stomach dropped long before he had any evidence. The flash had pointed him at the right topic. His fear had pointed him at the wrong meaning."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Seeing contempt in a crooked mouth",
+   "body": "Popular guides teach that a one-sided tightening of the mouth corner means contempt. It can, in some contexts. But many faces are asymmetrical at rest and in movement, and many people have habitual one-sided expressions that accompany concentration, speech or nothing at all. Facial palsy, dental work, scars and some medications change how a face moves. A reader who has learned one plate and applies it to every face will find contempt everywhere, most of all in the people whose faces differ from the textbook. Before you read a one-sided movement, find out whether it is part of the face. The person who has it is often the last to know, and the most hurt by being told what it supposedly means. A colleague who learns that her concentrating face has been read as contempt for months does not just feel misjudged; she starts to watch her own mouth in every meeting, which makes concentration harder and the face stranger still."
+  },
+  {
+   "title": "Slowing down the people you love",
+   "body": "Some readers, having learned that slow motion reveals more, start reviewing videos of their partners, children or colleagues, frame by frame, looking for what they really felt. This is not study; it is surveillance, and it corrodes trust even when it is never discovered, because it changes how the watcher treats the watched. A brief movement found in a family video is no more meaningful than one seen live, and it comes without the context of the moment. Practise slowed viewing on public material made for an audience: interviews, speeches, debates. Keep the people you love out of the laboratory. If something about someone close to you is worrying you, the honest instrument is a conversation, and no amount of footage can stand in for it. A partner who learns that you have been studying their face in recordings will reasonably wonder what else you have been doing, and the damage to trust may outlast whatever you thought you saw."
+  },
+  {
+   "title": "Treating flashes as a lie detector",
+   "body": "The deception chapter later in this part explains why no body signal reliably reveals a lie. Microexpressions are the most tempting exception, because they feel like the truth escaping. But Porter and ten Brinke found brief expressions in genuine as well as false reactions, and most people concealing something showed none. A flash at the moment someone denies something proves only that the denial, or the question, or the situation, registered. Innocent people under suspicion feel fear, anger and humiliation, and those feelings flash too. If you ever find yourself thinking that a face has given someone away, stop and ask what else that face had reason to feel. The stakes here are not abstract. People have been disbelieved by employers, partners, police officers and juries on the strength of a face that seemed to say something, and the people most often misread are those whose faces, cultures or circumstances differ from the observer's."
+  },
+  {
+   "title": "Forgetting that your own face leaks",
+   "body": "Readers who learn about brief expressions often think only about other people's. Your own face moves too, and often before you know it: a flicker of boredom as a colleague starts a long story, a flash of distaste at a suggestion, a squelched smile at someone's mistake. Others may see these more clearly than you think, and read them less charitably than you would like. The answer is not to try to control your face, which tends to produce stiffness and odd leakage of its own, but to deal with the feeling: to be actually curious about the long story, or to say honestly that you have doubts about the suggestion. A face that has nothing to hide does not need managing. And when you do catch a reaction of yours that may have landed badly, naming it briefly, such as admitting that you winced at a number before you had thought it through, usually repairs more than it reveals."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Are brief expressions the same in every culture?",
+   "a": "Faces everywhere move briefly, and the same muscles produce broadly similar movements. Whether those movements carry the same meaning is far more contested. Ekman argued that a small set of basic expressions is universal, and his work on brief expressions rests on that claim. Other researchers, including Lisa Feldman Barrett and her colleagues, have argued that people in different cultures do not reliably produce or recognise those expressions in the way the universal view predicts. Part I's chapter on the face covers the debate in detail. For this chapter, the practical point is that cultural display rules shape when people show or suppress feelings, so the meaning of a suppressed flash depends partly on what the person's culture expects them to suppress in that setting. A brief smile cut short may mean one thing from someone raised to hide amusement in front of elders and another from someone raised to hide distress in front of strangers."
+  },
+  {
+   "q": "Can I train myself not to show brief expressions?",
+   "a": "Partly, and it is rarely worth it. People who work hard at controlling their faces, such as professional poker players, mostly do so by keeping the whole face still and their attention elsewhere, not by catching individual flashes. Suppression has costs: research on emotional suppression suggests that holding back the outward signs of a feeling takes effort, can make conversation feel stilted, and may leave others trusting you less. Part IV's chapter on the poker face takes this up for work. The more useful skill is to notice your own reactions sooner, so that you can deal with the feeling, explain it or set it aside, rather than hoping nobody saw it. Saying \"sorry, that took me by surprise\" after a visible reaction usually costs less, and earns more trust, than any amount of facial control. People forgive a reaction that is owned far more readily than one that is hidden and then discovered, and they tend to trust the person who owns it a little more afterwards."
+  },
+  {
+   "q": "What about software that claims to read emotions from faces?",
+   "a": "Be very sceptical. Automated systems can detect facial movements well; inferring feelings from them is the hard part, and the evidence that any face reliably reveals a specific emotion is weaker than these products imply. A large review led by Lisa Feldman Barrett in 2019 concluded that people do not consistently make the same faces for the same emotions across situations and cultures. In 2021 the hiring company HireVue announced that it had stopped using facial analysis in its assessments. A machine that labels a frame of your face as contempt is making the same error as Graham in this chapter's case study, only faster and with more authority. If you are ever assessed by such a system, at work or anywhere else, you are entitled to ask what it measures and how it was validated."
+  },
+  {
+   "q": "If my brain registers flashes I do not consciously see, should I trust my gut?",
+   "a": "Treat your gut as a smoke alarm, not a fire investigator. Smoke alarms are useful precisely because they are sensitive, and for the same reason they go off when someone burns the toast. Whalen's study suggests that brief signals can register without awareness, so a sudden sense that something is off may be tracking something real. But the feeling does not tell you what registered, or what it means, and it is just as easily triggered by your own mood, by someone who resembles a person you dislike, or by the setting. When your gut speaks, look and listen more carefully, check what had just happened, and ask an open question. Do not let the feeling skip straight to a verdict. A gut feeling about a stranger is especially unreliable, because it draws on resemblance and stereotype as readily as on anything the person actually did, and those are exactly the sources this book asks you to distrust. Over time, keeping a note of when your gut fired and what you later learned will show you how good your particular alarm is, and in which situations it tends to go off for nothing."
+  },
+  {
+   "q": "Is it worth learning to see brief expressions at all, then?",
+   "a": "Yes, for modest reasons. Seeing more of what crosses people's faces makes you a better listener, provided you keep the seeing light and do not let it crowd out the listening: you notice the moment a topic lands, you slow down when someone is struggling, and you are less likely to plough on through a conversation that has quietly gone wrong. It also makes you humbler, once you see how much faces move for reasons that have nothing to do with you. What it will not do is give you access to people's hidden truths. The perceptual skill is the easy half. The judgment about what to do with what you see is the half this book is really about. Most of the value lies in timing: knowing which sentence of yours, or which topic, prompted something worth a gentle question. A man who notices a great deal and concludes very little is better company, and a better friend, than one who notices little and concludes a lot."
+  },
+  {
+   "q": "How do I tell a real flash from a glitch on a video call?",
+   "a": "Often you cannot. Video calls run at a limited number of frames a second, compress the image heavily and drop frames when the connection falters, so a movement lasting a twenty-fifth of a second may fall between frames, be smeared across two, or be created by the compression itself. Lip movements during speech are especially easy to misread when sound and picture are slightly out of step. Lighting matters too: a face lit from one side by a window, or from below by a screen, throws shadows that move as the head moves and can look like changes of expression. Treat anything brief you see on a call as weaker evidence than the same movement in person, and lean even more heavily on voice, words and timing. If something matters, ask; if it can wait, wait until you meet. It also helps to remember that the other person is watching a degraded image of you, and may be misreading your face for exactly the same reasons."
   }
  ],
  "watch": [

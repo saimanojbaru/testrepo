@@ -116,6 +116,11 @@
     "For five minutes keep a tally of three behaviours only: face touches, posture shifts, and glances away from what they are doing.",
     "Turn each tally into a rate per minute and write a one-line description of their resting range.",
     "Watch for two more minutes and note whether anything falls outside the range you wrote. Most of the time nothing will, and that is the lesson."
+   ],
+   "variations": [
+    "Harder: follow two people at neighbouring tables and write a range for each. Note how differently two settled adults can behave.",
+    "Lighter: if five minutes feels long, do two minutes on three different days with the same kind of setting, and compare the rates.",
+    "Return to the same café at the same hour next week, choose someone similar, and see whether the rates you recorded hold or were peculiar to one person."
    ]
   },
   {
@@ -127,6 +132,11 @@
     "List what their hands, posture and head do in each setting.",
     "Mark which differences are explained by the setting itself: a lectern, a sofa, a microphone, a hostile room.",
     "Write one sentence on what a reader would get wrong if he used the talk-show baseline to judge the press conference."
+   ],
+   "variations": [
+    "Harder: choose a figure whose two settings differ only a little, such as a prepared speech and the questions after it.",
+    "With a partner: each watch alone, write your lists, then compare what you each attributed to the setting and what to the person.",
+    "Do it for someone you know personally, using two family videos from different occasions, and notice how much of what you think of as their manner belongs to the place."
    ]
   },
   {
@@ -138,6 +148,11 @@
     "Note the minute at which the person first sits back, exhales, or lets their hands come to rest in a habitual place.",
     "Describe their behaviour before and after that moment in two sentences.",
     "Repeat with a second person and see whether they settle sooner or later."
+   ],
+   "variations": [
+    "Live version: at your next meeting, note the minute at which you yourself settle, and what changed in your body when you did.",
+    "Harder: compare a guest who is clearly comfortable with the host with one who is meeting them for the first time.",
+    "Watch the host as well as the guest. Hosts often settle almost at once, because the room is theirs, and the gap between the two curves is worth seeing."
    ]
   },
   {
@@ -149,6 +164,11 @@
     "Count your face touches, posture shifts and leg movements, and turn them into rates.",
     "Write down one habit you did not know you had.",
     "Note how an observer who did not know you might misread that habit."
+   ],
+   "variations": [
+    "Second setting: record yourself on a video call as well, and compare your resting rates there with your rates while reading.",
+    "Ask someone you trust to name one habit of yours they would call part of your normal, and check it against the recording.",
+    "Repeat the recording on a day when you are tired or anxious, and compare the two sets of rates. The difference is your own early-warning sign."
    ]
   },
   {
@@ -160,6 +180,11 @@
     "During the meeting do not hunt for confirmation; simply be with them.",
     "Afterwards, mark each prediction as a hit, a miss or unclear.",
     "Revise your written baseline for that person in light of the misses."
+   ],
+   "variations": [
+    "Add the voice: predict how fast they will talk, how often they will laugh and how long they will pause before answering.",
+    "Harder: make predictions about someone you know only slightly, and notice how many more misses you score.",
+    "Keep the predictions for a month, across four meetings, and see whether your hit rate rises as your written baseline improves."
    ]
   }
  ],
@@ -241,6 +266,58 @@
    "explain": "Fatigue and anxiety tilt readings toward threat, an effect Joseph Forgas studied as affect infusion. Your own baseline is off, so your reading of hers is unreliable. That does not mean ignoring what you notice; it means treating it as a guess until you can compare it with how she usually is in reviews.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "You have worked beside a colleague for a year. Over the last month he has started arriving late, eating lunch alone and keeping his door shut. What does this chapter suggest?",
+   "options": [
+    "He is clearly unhappy in his job, so the kind thing is to raise it with his line manager at once",
+    "A sustained change from a long baseline earns a gentle, private question, not a conclusion",
+    "Nothing can be read from behaviour, so the best course is to ignore the change entirely",
+    "He is probably hiding something, so it is wise to keep an eye on him for a few weeks"
+   ],
+   "answer": 1,
+   "explain": "A long, well-sampled baseline is exactly what makes a sustained change worth noticing. It still tells you only that something has changed, not what, so the right response is an open question in private.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Why does this chapter advise discounting the first minutes of an encounter when you take someone's baseline?",
+   "options": [
+    "Because people deliberately perform for strangers early on and relax only once they forget",
+    "Because the first minutes are when people are most honest, before they think to hide anything",
+    "Because a new room and a new person unsettle almost everyone, so you would be measuring novelty",
+    "Because research shows that baselines can only be taken reliably after at least an hour together"
+   ],
+   "answer": 2,
+   "explain": "Almost everyone is less settled at the start of an encounter than later. A baseline taken in those minutes measures the room and the novelty, and the later settling can then be misread as the person warming to you.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Which of these is a baseline written the way this chapter recommends?",
+   "options": [
+    "He is a nervous, fidgety type who never seems to relax in meetings with senior people",
+    "He seemed defensive and closed off in the first few minutes, though he got better later",
+    "He is a confident man whose body language shows that he is comfortable with any authority",
+    "Seated at his desk, he touches his face about twice a minute and rests his chin on his hand"
+   ],
+   "answer": 3,
+   "explain": "A baseline describes the body, in a named setting, as a range or rate. Labels such as nervous, defensive or confident are interpretations, and they smuggle the conclusion into the very thing you will later compare against.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "You meet your partner's oldest friend for the first time at a loud birthday party. He is brief with you and keeps glancing at the door. What is the most defensible reading?",
+   "options": [
+    "He dislikes you, since a man who glances at the door wants the conversation to end",
+    "You have no baseline for him, so note it, hold it loosely and judge him on later meetings",
+    "He is nervous about meeting you, which shows that he cares about your partner's opinion",
+    "He is hiding something about your partner, since glancing away is a classic sign of guilt"
+   ],
+   "answer": 1,
+   "explain": "You have one sample, in a noisy setting, taken in the first minutes of meeting. Any reading of him as a person would be built on a template, so the honest course is to hold it loosely and let later meetings show you his range.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -269,6 +346,110 @@
    "work": "Face touching: A frequent habit that has implications for hand hygiene",
    "author": "Yen Lee Angela Kwok, Jan Gralton and Mary-Louise McLaws",
    "note": "American Journal of Infection Control 43(2), 2015. A short paper that sets a base rate you will use throughout this book."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The quiet new starter",
+   "scene": "Priya joins a design team of eight on a Monday. In her first three team meetings she sits at the end of the table, keeps her\n  laptop half closed, speaks once or twice, and answers questions in a sentence. Her manager, Gareth, has run the team for six years. He\n  is used to new hires who arrive keen, talk too much in the first fortnight, and then settle down. By the second Friday he has decided\n  that Priya is either unhappy or not very interested, and he mentions to his own manager that the hire may have been a mistake.\n\n  Mark, who sits next to Priya, sees the same meetings and something else. In their one-to-one conversations at the coffee machine she\n  talks quickly and laughs easily. In the meetings, she writes constantly. On Thursday, when the team discussed a client's complaint, she\n  stopped writing, looked up, and asked the only question in the room that the client had actually raised. Mark also notices that the\n  two other people on the team who came from agencies behaved much the same way in their first weeks, because in their old jobs junior\n  staff did not speak in front of clients. Both of them are now among the most talkative people on the team. Mark mentions none of this,\n  because nobody asks him, and because he assumes Gareth has seen what he has.",
+   "misread": "Gareth compared Priya with a template built from his own past hires, and read the difference as a message about her commitment. He also took his sample in the first ten days, when almost everyone is least settled, and in a single setting. Nothing in her behaviour had departed from anything, because he had never seen her baseline. And the costs of his reading were real: a word to his own manager that could have followed Priya through her probation, built on nothing but how she sat in three meetings.",
+   "betterRead": "Mark had two settings to compare and noticed that the difference between them was the room, not the person. He saw a change within the meetings that mattered: the moment she stopped writing and asked the question. A careful observer would note Priya's meeting range, wait a month before trusting it, and, if worried, simply ask her how she was finding the team. Gareth did ask, in the end. She said she was enjoying it and was used to keeping quiet until she knew how a team worked."
+  },
+  {
+   "title": "The father who stopped whistling",
+   "scene": "Joe, thirty-four, visits his father most Sundays. For as long as he can remember, his dad has whistled while he works in the\n  garage, talked to the radio during the football results, and come in from the car the moment it is parked. Over two months Joe notices\n  that the whistling has stopped. His father now sits in the parked car for several minutes before coming inside, and he has started\n  leaving the radio off.\n\n  None of these would mean anything in a stranger. Plenty of men sit in their cars, and plenty never whistle. Joe's sister, who visits\n  less often, thinks their father seems fine: he is polite, he asks after the children, he makes the tea. Joe is inclined to agree with\n  her, and to put the change down to age. His father is sixty-eight. Men slow down. And raising it feels absurd: what would he say, that\n  his dad has stopped whistling? He imagines the look he would get. For three more Sundays he says nothing, and drives home each time with\n  a vague unease he cannot quite name. On the fourth Sunday his father forgets that the grandchildren are coming, which he has never done\n  before, and spends most of the afternoon in the garden on his own.",
+   "misread": "The misreading here is not an over-reading but an under-reading. Having no template to compare with, Joe's sister saw an ordinary older man behaving normally. Joe had a long baseline and was tempted to explain away the departure from it, because noticing it meant having an awkward conversation. This is the quieter failure of reading, and probably the commoner one between men who love each other: seeing the change clearly, and talking yourself out of it, because the question feels too big for the evidence.",
+   "betterRead": "A long baseline is the most valuable thing in this chapter, and the change Joe saw is exactly what it is for: three behaviours, each part of his father's range for decades, all gone at once, and staying gone. The chapter's rule still applies. A departure earns a question, not a conclusion. Joe chose a moment in the garage, side by side, and said that he had noticed his dad was not whistling any more. After a pause his father told him that the business he had helped a friend start was failing and that he had lent money he could not afford to lose. The baseline did not tell Joe what was wrong. It told him when to ask."
+  },
+  {
+   "title": "Training and matches",
+   "scene": "Dev coaches a Sunday-league football team. One of his centre backs, Callum, is the hardest worker in training: first to every loose\n  ball, loud, constantly organising the players around him. In matches he is quieter for the first twenty minutes, hangs a few yards\n  deeper, and rarely shouts. After a heavy defeat, two of the senior players tell Dev that Callum does not seem up for games and should\n  be dropped.\n\n  Dev has seen the pattern for two seasons. He goes back over the match footage he films on his phone and counts. In every game, Callum's\n  first twenty minutes look the same, and in every game, his touches, tackles and shouting rise sharply after that, often peaking in the\n  last quarter of an hour, when others are tiring. In the defeat, he played exactly as he always does. The difference in that match was\n  that the team conceded twice in the first fifteen minutes. Dev also remembers that Callum works nights on a Saturday, arrives at the\n  ground with barely enough time to change, and says he needs a few minutes of the game to wake up. None of this is visible from the\n  touchline. All of it is part of the man's baseline on a match day.",
+   "misread": "The senior players used Callum's training baseline to judge his match behaviour. Training and matches are different settings, with different stakes and different rhythms, and he has a baseline for each. They also read a single game's result back into his body: because the team lost early, his usual slow start looked like a lack of commitment. And they reasoned from the outcome back to the body, which is the most tempting error in sport: when things go badly, every ordinary habit starts to look like the cause.",
+   "betterRead": "Dev kept the two baselines separate and checked the match one against footage rather than memory. He found that Callum's slow start was part of his normal range in games, and that nothing in the defeat departed from it. A coach who knows that can plan for it, perhaps by pairing Callum with a vocal partner in the opening minutes, instead of dropping a player for being exactly who he always is. He also told the two senior players what he had found, and showed them the counts, which did more to settle the dressing room than any speech about commitment."
+  },
+  {
+   "title": "The interviewer who had not slept",
+   "scene": "Helen interviews five candidates on a Thursday after a night spent mostly awake with a sick toddler. She notices that she is short-\n  tempered on the drive in, but thinks no more of it. The first two candidates seem guarded to her: one folds his arms, the other keeps\n  his answers brief. The third, who laughs a lot and leans forward, seems warm and open, and she rates him highest. By the afternoon she\n  has had coffee and lunch, and the last two candidates both seem perfectly pleasant.\n\n  Her colleague Sam sat in on all five interviews and scored them against the agreed questions. His scores put the first candidate\n  joint top and the third in the middle. When they compare notes, Helen cannot point to anything in the first candidate's answers that\n  was weak. She remembers his folded arms and his flat tone, and that is all. She had written \"cold\" in the margin of her sheet beside his\n  name, and \"guarded?\" beside the second candidate's, and nothing at all beside the content of either man's answers. When she tries to say why she liked the third candidate, she\n  describes his energy, his laugh and the way he leaned in. Sam points out that two of the third candidate's answers to the technical\n  questions were wrong.",
+   "misread": "Helen read the candidates without first reading herself. Tired and on edge, she saw the morning candidates through her own mood, and the one whose manner most soothed her, not the one who answered best, rose to the top. She also had no baseline for any of them: the folded arms and the brief answers were compared with an imagined ideal candidate, not with the man himself.",
+   "betterRead": "The chapter's last two teaching points apply directly. Your own state is the first baseline to take, and a morning after a sleepless night is a reason to lean harder on structure: score against the agreed criteria before forming an overall impression, and treat strong likes and dislikes as data about yourself. Helen and Sam agreed to re-interview the first candidate on a Monday. He folded his arms again, answered as briefly, and was offered the job. Helen now checks her own state before an interview day, and when it is poor she says so to her co-interviewer and asks him to watch her scoring as well as the candidates."
+  }
+ ],
+ "workedReading": {
+  "title": "A friend at the pub",
+  "scene": "Sam and Rich have met for a drink on the first Friday of the month for nine years. Tonight the pub is a new one, chosen because their usual place has closed for refurbishment. Rich arrives ten minutes late, which he never is, orders a soft drink rather than his usual pint, and spends the first half hour talking about work in a flat voice, glancing at his phone face down on the table. When Sam mentions that his own son has just started secondary school, Rich goes quiet, rubs the back of his neck and changes the subject to football. Later, while Sam is at the bar, he sees Rich turn the phone over, read something, and put it face down again without replying. By ten o'clock Rich says he ought to get back, which in nine years he has never said before half past eleven.",
+  "steps": [
+   {
+    "label": "Check yourself",
+    "text": "Before reading Rich, Sam notices his own state. He has had a good week and is in the mood for a long, loud evening. That matters: a man who wants a lively night will see a quiet friend as a problem to be fixed. Sam also notices that he is slightly irritated by the late arrival, which will make him more likely to read the rest of the evening as a slight. Naming both does not remove them, but it lets him discount his first impressions a little, the way a navigator corrects for a compass he knows is off."
+   },
+   {
+    "label": "Recall the range",
+    "text": "Sam knows Rich's baseline well, across years and settings. Rich is usually punctual, drinks one or two pints, talks a lot about work and complains about it cheerfully, checks his phone rarely when out, and asks about Sam's family. He goes quiet when he is tired, and he rubs his neck when his back is playing up after five-a-side. That last habit is part of his range, not outside it. What Sam does not have is a baseline for Rich in this particular pub, or for Rich on a night after a hard week at home, because he has never needed one. He knows the man well; he knows the setting not at all."
+   },
+   {
+    "label": "Describe the change",
+    "text": "In plain terms: he arrived late, chose a soft drink, spoke more flatly than usual about work, kept his phone on the table and glanced at it often, and went quiet with his hand on his neck when Sam mentioned his son's new school. The timing of that last change is the sharpest data point of the evening: it followed a specific topic within a second or two. The other changes were there from the moment he arrived, which suggests they belong to his evening rather than to anything Sam said. Separating the two kinds of change is half the work."
+   },
+   {
+    "label": "Weigh the context",
+    "text": "Several things are different tonight that have nothing to do with Rich's inner life. It is a new pub, which unsettles almost everyone for a while. He may be driving, which would explain the soft drink. He may be expecting a call, which would explain the phone. Each departure has a dull rival explanation, and Sam should hold those first. The reaction to the school topic has fewer obvious rivals. Even so, a neck rub on its own would be nothing, given Rich's back; it is the silence and the change of subject that come with it, at that moment, that make it worth holding onto."
+   },
+   {
+    "label": "Generate hypotheses",
+    "text": "Sam writes nothing down, but he holds several possibilities at once rather than one. Rich is tired and driving. Rich is waiting for news, perhaps medical, perhaps about work. Something about children or schools is painful at the moment: Rich and his partner have spoken before about wanting a child. Or he is simply having a flat week. No single sign points to one of these; the cluster, and especially the timing, makes the third worth keeping in mind."
+   },
+   {
+    "label": "Test gently",
+    "text": "The test is not a probing question about children. It is an open door: later, walking to the station side by side, Sam says that Rich seemed a bit far away tonight and asks whether everything is all right. If Rich says he is fine and talks about the match, Sam lets it go and notes that the evening was one off night. If he says more, Sam listens. Either answer is evidence, and Sam resolves in advance to accept the first one if that is the one he gets, rather than pressing until he hears what he expected. What Sam must not do is announce a conclusion, such as telling Rich he seems upset about kids, which would put Rich in the position of confirming or denying something Sam has guessed from his body."
+   },
+   {
+    "label": "Update the baseline",
+    "text": "Rich said that they had had a second miscarriage the month before, that he was driving because his partner was not up to coming out, and that he was waiting for her to text. Sam did not need to read any of that from Rich's body, and could not have. What the reading did was tell him when to open the door, and how gently. He also learned something lasting about his friend: that in a hard month Rich keeps coming out, keeps talking about work, and goes quiet only at the edge of the thing that hurts."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Taking the baseline on a bad day",
+   "body": "A baseline sampled during an unusual stretch of someone's life becomes the yardstick against which their ordinary life looks strange. A manager who first meets a new report during the week of a house move, a man who first spends time with his partner's family over a tense Christmas, a coach who first sees a player while he is carrying an injury: each learns a version of the person that is itself a departure. Then, when the person recovers, their normal behaviour looks like a change. The defence is to treat any baseline as provisional until you have seen it hold across several occasions and at least two settings, and to ask, early on, whether this is a typical week for them."
+  },
+  {
+   "title": "Pretending to baseline strangers",
+   "body": "Some readers, having learned this chapter, try to apply it to everyone they meet for five minutes: the barista, the man across the train carriage, the salesperson. They glance, form an impression of the person's normal, and then read every small movement against it. This is the old template in disguise. With strangers you rarely have a baseline at all, and the honest move is to admit it: lean on context, hold your readings loosely, and, where something matters, ask. Precision you have not earned is worse than none, because it feels like knowledge. A barista who seems curt with you may be forty orders into a rush, nursing a headache, or simply someone who is brief with everyone; you have no way of telling which, and no need to. The discipline of this chapter is as much about knowing when you do not have a baseline as about building one when you can."
+  },
+  {
+   "title": "Turning attention into surveillance",
+   "body": "Knowing someone's baseline well gives you a kind of power over them, and it can curdle. A partner who starts logging when the other checks their phone, how long they spend in the shower, and which messages make them smile is not reading carefully; he is building a case. The same habits that make you a good friend, noticing change and asking about it, become controlling when they are used to monitor, to catch out or to confirm a suspicion. The test is simple. Would the other person be comfortable knowing exactly what you track and why? If not, stop. Attention is not permission. Where you have a genuine worry about someone close to you, the remedy is the same as everywhere else in this book: say what you have noticed, plainly and kindly, and ask. A question respects the other person as the authority on their own life. A dossier does not."
+  },
+  {
+   "title": "Mistaking your baseline of a person for the person",
+   "body": "After years together it is easy to believe you know exactly how someone is, and to stop looking. The danger is that you go on reading the person you knew rather than the person in front of you. A wife who has always been quiet at parties and is now quieter still, a friend who used to be the loudest in the group and has gradually become the most thoughtful, a father who has grown gentler with age: each may be read against a picture that is years out of date. The changes may be good ones. They may be signs of strain. You will not know which unless you keep noticing, and you will not notice if you think you already know. Revisit your baselines of the people closest to you at least once a year, as deliberately as you would revisit an old map before a journey."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How long does it take to establish someone's baseline?",
+   "a": "Longer than most people think, and less long than it sounds. For a person who is settled in one setting, such as a colleague at their desk, twenty or thirty minutes of side-on attention will give you a rough range for things like posture, face-touching and how often they look away. For a person you want to read across settings, you need to see them in several, on several days. A useful rule of thumb is three occasions and two settings before you trust the range, and to discard the first ten minutes of any encounter. Long familiarity helps, but only if you keep updating, because people change. It also helps to write a baseline down, even in a line or two, because memory quietly edits itself to fit whatever you now believe about someone. A note made in March is a far better witness in June than your recollection of March."
+  },
+  {
+   "q": "What if I only meet someone once, for an interview or a negotiation?",
+   "a": "Then you have a baseline for the encounter, not for the person, and you should treat it that way. Let the first minutes pass before you start comparing, use the calmer middle of the conversation as your reference, and compare like with like: answers to similar questions, rather than small talk with hard questions. Hold every reading more loosely than you would with someone you know. Most importantly, remember that the person is also baselining you, and also getting it wrong. Structure, clear questions and a willingness to ask what someone meant will serve you better than any reading of their body. If a single meeting really matters, such as a negotiation that will run over several sessions, treat the first as the baseline and save your firmer readings for the second and third, when you have something to compare against."
+  },
+  {
+   "q": "Isn't watching people this closely a bit creepy?",
+   "a": "It can be, which is why the chapter insists on side-on attention, the way you notice weather, rather than staring. You are already watching people; everyone is, all the time, and mostly badly. Learning to do it well is mostly about doing less of it at any one moment and more of it over time. The difference between attention and surveillance lies in purpose and proportion. Attention is in the service of understanding and responding to someone. Surveillance is in the service of catching them out. Never record people without consent, never follow anyone, and never use what you notice to manipulate."
+  },
+  {
+   "q": "Do people have baselines for voice and speech, as well as for the body?",
+   "a": "Yes, and they are often more useful. Speaking rate, pitch, loudness, how long someone pauses before answering, how often they laugh, and even their typical sentence length all have ranges that are stable for the person and vary widely between people. A man who normally answers in a sentence is not being curt when he does so with you. The chapter on the voice later in this part takes this further. The same rules apply: discount the first minutes, compare like with like, and note change, timing and duration before you interpret."
+  },
+  {
+   "q": "What if someone's baseline includes a lot of movement, like constant fidgeting?",
+   "a": "Then movement is their normal, and stillness may be the departure worth noticing. Many people, including many autistic people and people with ADHD, move a great deal as part of how they concentrate or regulate themselves. Reading that movement against a still template produces a steady stream of false alarms: nervousness, boredom, dishonesty. Learn their range like anyone else's. Part V's chapters on neurodivergence and masking explain why this matters so much, and why asking someone to sit still can cost them more than it seems."
+  },
+  {
+   "q": "Can I use this on myself, to notice when I am not doing well?",
+   "a": "That is one of its best uses, and Part II of this book builds a whole early-warning system around it. Your own baseline is the one you can sample most often and in the most settings. Notice how you sleep, how much you eat, how often you see friends, how your shoulders sit at the end of a working day, how quickly you snap. When several of these drift together, and stay drifted for a couple of weeks, take it as seriously as you would a change in a friend. The people closest to you often see your departures before you do, so it is worth asking one of them, in a good week, what they would notice first if you were struggling."
   }
  ],
  "watch": [

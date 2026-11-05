@@ -74,7 +74,7 @@ import kotlinx.coroutines.launch
 /** The five sections of a chapter, in reading order. */
 val SectionNames = listOf("Read", "Drills", "Assess", "Reflect", "Further")
 
-enum class Kind { Hook, Why, Teach, Pair, Case, Failure, PracticeIntro, Observe, FieldLog, Drill, AssessIntro, Question, QuizResult, ReflectIntro, Editor, References, ReviewPreview, Mastery }
+enum class Kind { Hook, Why, Teach, Pair, Case, MoreCase, Worked, Failure, MoreFailure, ReaderQ, PracticeIntro, Observe, FieldLog, Drill, AssessIntro, Question, QuizResult, ReflectIntro, Editor, References, ReviewPreview, Mastery }
 
 data class LevelItem(val kind: Kind, val section: Int, val i: Int = 0) {
     val key: String get() = "$kind-$i"
@@ -88,7 +88,12 @@ fun planLevel(level: Level): List<LevelItem> = buildList {
         if (i < level.poseGallery.size) add(LevelItem(Kind.Pair, 0, i))
     }
     for (i in level.teach.size until level.poseGallery.size) add(LevelItem(Kind.Pair, 0, i))
-    add(LevelItem(Kind.Case, 0)); add(LevelItem(Kind.Failure, 0))
+    add(LevelItem(Kind.Case, 0))
+    level.moreCases.indices.forEach { add(LevelItem(Kind.MoreCase, 0, it)) }
+    if (level.workedReading != null) add(LevelItem(Kind.Worked, 0))
+    add(LevelItem(Kind.Failure, 0))
+    level.moreFailures.indices.forEach { add(LevelItem(Kind.MoreFailure, 0, it)) }
+    level.questions.indices.forEach { add(LevelItem(Kind.ReaderQ, 0, it)) }
     add(LevelItem(Kind.PracticeIntro, 1))
     level.observe.indices.forEach { add(LevelItem(Kind.Observe, 1, it)) }
     add(LevelItem(Kind.FieldLog, 1))
@@ -305,7 +310,11 @@ fun levelWordCount(level: Level): Int {
     level.teach.forEach { n += w(it.h) + w(it.p) + w(it.pullQuote) + w(it.disconfirm) }
     level.poseGallery.forEach { n += w(it.doCaption) + w(it.dontCaption) + w(it.annotation) }
     level.observe.forEach { n += w(it) }
-    level.drills.forEach { d -> n += w(d.name) + d.steps.sumOf { w(it) } }
+    level.drills.forEach { d -> n += w(d.name) + d.steps.sumOf { w(it) } + d.variations.sumOf { w(it) } }
+    level.moreCases.forEach { c -> n += w(c.title) + w(c.scene) + w(c.misread) + w(c.betterRead) }
+    level.workedReading?.let { r -> n += w(r.title) + w(r.scene) + r.steps.sumOf { w(it.label) + w(it.text) } }
+    level.moreFailures.forEach { f -> n += w(f.title) + w(f.body) }
+    level.questions.forEach { q -> n += w(q.q) + w(q.a) }
     level.quiz.forEach { q -> n += w(q.q) + q.options.sumOf { w(it) } + w(q.explain) }
     n += w(level.reflection.prompt) + w(level.reflection.guidance)
     level.furtherStudy.forEach { n += w(it.work) + w(it.author) + w(it.note) }

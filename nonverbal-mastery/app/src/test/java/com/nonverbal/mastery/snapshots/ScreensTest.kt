@@ -136,6 +136,11 @@ class ScreensTest {
         shot("04j_level_mastery_remaining") { level(l11.id, Kind.Mastery) }
         shot("04k_level_mastered") { level(l1.id, Kind.Mastery, justMastered = true) }
         shot("04l_level_further") { level(l1.id, Kind.References) }
+        shot("04q_level_more_case") { level("foundations-01", Kind.MoreCase, 0) }
+        shot("04r_level_worked") { level("foundations-01", Kind.Worked) }
+        shot("04s_level_reader_questions") { level("foundations-01", Kind.ReaderQ, 0) }
+        shot("04t_level_more_failure") { level("foundations-01", Kind.MoreFailure, 0) }
+        shot("04u_level_drill_variations") { level("foundations-01", Kind.Drill, 0, scrollPx = 900) }
     }
 
     @Test fun discipline() {

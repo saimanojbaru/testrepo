@@ -93,7 +93,7 @@ class ContentContractTest {
             check(d.steps.size in 4..6, w, "drills[$i] needs 4–6 steps")
             check(d.minutes in 10..30, w, "drills[$i] must take 10–30 minutes")
         }
-        check(l.quiz.size in 5..6, w, "quiz must have 5–6 questions")
+        check(l.quiz.size in 5..10, w, "quiz must have 5–10 questions")
         l.quiz.forEachIndexed { i, q ->
             check(q.options.size == 4, w, "quiz[$i] needs 4 options")
             check(q.answer in q.options.indices, w, "quiz[$i] answer out of range")
@@ -125,6 +125,7 @@ class ContentContractTest {
             check(words(v.notice) in 8..70, w, "watch[$i] notice must be 8–70 words")
             check(v.at == null || Regex("^\\d{1,2}:\\d{2}(:\\d{2})?$").matches(v.at), w, "watch[$i] at must look like m:ss")
         }
+        if (l.moreCases.isNotEmpty() || l.workedReading != null) checkDepth(l, w)
         check(sentences(l.reviewPrompt) in 1..2, w, "reviewPrompt must be 1–2 sentences")
         check(!l.reviewPrompt.trim().endsWith("?"), w, "reviewPrompt must be a task, not a question")
         check(l.tier == tierFor(l.index), w, "tier ${l.tier} does not match index ${l.index}")
@@ -194,6 +195,52 @@ class ContentContractTest {
     private companion object {
         val KNOWN_THEMES = setOf("stance", "arms", "self-touch", "head", "posture", "gesture", "seated", "walking", "breath",
             "grief", "professional", "greeting", "together")
+    }
+
+    /**
+     * The depth layer: what turns a 4,000-word chapter into a 10,000-word one without padding.
+     * More scenes read two ways, one scene read slowly, more ways it goes wrong, the questions
+     * readers ask, and variations on every drill.
+     */
+    private fun checkDepth(l: Level, w: String) {
+        check(l.moreCases.size in 3..4, w, "moreCases must have 3–4 scenes (has ${l.moreCases.size})")
+        l.moreCases.forEachIndexed { i, c ->
+            check(words(c.title) in 2..12, w, "moreCases[$i] title must be 2–12 words")
+            check(words(c.scene) in 200..400, w, "moreCases[$i] scene must be 200–400 words (is ${words(c.scene)})")
+            check(words(c.misread) in 60..160, w, "moreCases[$i] misread must be 60–160 words (is ${words(c.misread)})")
+            check(words(c.betterRead) in 80..200, w, "moreCases[$i] betterRead must be 80–200 words (is ${words(c.betterRead)})")
+        }
+        val r = l.workedReading
+        check(r != null, w, "a deepened chapter needs a worked reading")
+        if (r != null) {
+            check(words(r.scene) in 120..300, w, "workedReading scene must be 120–300 words (is ${words(r.scene)})")
+            check(r.steps.size in 5..7, w, "workedReading must have 5–7 steps")
+            r.steps.forEachIndexed { i, s ->
+                check(words(s.label) in 1..6, w, "workedReading step $i label must be 1–6 words")
+                check(words(s.text) in 60..220, w, "workedReading step $i must be 60–220 words (is ${words(s.text)})")
+            }
+        }
+        check(l.moreFailures.size in 2..4, w, "moreFailures must have 2–4 entries")
+        l.moreFailures.forEachIndexed { i, f ->
+            check(words(f.title) in 2..14, w, "moreFailures[$i] title must be 2–14 words")
+            check(words(f.body) in 120..260, w, "moreFailures[$i] must be 120–260 words (is ${words(f.body)})")
+        }
+        check(l.questions.size in 4..6, w, "questions must have 4–6 entries")
+        l.questions.forEachIndexed { i, q ->
+            check(words(q.q) in 4..40 && q.q.trim().endsWith("?"), w, "questions[$i] must be a real question of ≤40 words")
+            check(words(q.a) in 80..240, w, "questions[$i] answer must be 80–240 words (is ${words(q.a)})")
+        }
+        l.drills.forEachIndexed { i, d ->
+            check(d.variations.size in 1..3, w, "drills[$i] needs 1–3 variations")
+            d.variations.forEachIndexed { j, v -> check(words(v) in 15..90, w, "drills[$i] variation $j must be 15–90 words") }
+        }
+        check(l.quiz.size >= 8, w, "a deepened chapter's quiz must have 8–10 questions")
+        check(l.poseGallery.size >= 5, w, "a deepened chapter needs 5–6 pose pairs")
+        val total = levelWordCount(l)
+        check(total >= 9_900, w, "a deepened chapter must reach 22 pages, ≥9,900 words (is $total)")
+        val prose = l.moreCases.flatMap { listOf(it.scene, it.misread, it.betterRead) } + l.moreFailures.map { it.body } +
+            l.questions.map { it.a } + (r?.steps?.map { it.text } ?: emptyList()) + listOfNotNull(r?.scene)
+        prose.forEach { para -> check(para.count { it == '*' } % 2 == 0, w, "unbalanced *italic* markers in: ${para.take(60)}") }
     }
 
     @Test

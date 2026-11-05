@@ -267,6 +267,16 @@ fun DrillCard(
                     Text(inlineItalics(step.trim()), style = Nv.type.bodySmall, color = colors.ink)
                 }
             }
+            if (drill.variations.isNotEmpty()) {
+                Spacer(Modifier.height(Space.x1))
+                Text("VARIATIONS", style = Nv.type.labelSmall, color = colors.inkTertiary)
+                drill.variations.forEach { v ->
+                    Row {
+                        Text("◦", style = Nv.type.bodySmall, color = colors.inkTertiary, modifier = Modifier.padding(end = Space.x2))
+                        Text(inlineItalics(v.trim()), style = Nv.type.bodySmall, color = colors.inkSecondary)
+                    }
+                }
+            }
         }
     }
 }

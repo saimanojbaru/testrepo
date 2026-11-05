@@ -63,7 +63,41 @@ data class Level(
     val safetyGate: SafetyGate? = null,   // only set for 2.13
     /** Additive: real footage where the chapter's subject can be seen happening. Opens outside the app. */
     val watch: List<WatchRef> = emptyList(),
+    /** Additive depth: further scenes, each with the misreading and a better reading. */
+    val moreCases: List<CaseStudy> = emptyList(),
+    /** Additive depth: one scene taken through the book's method step by step. */
+    val workedReading: WorkedReading? = null,
+    /** Additive depth: further ways the chapter is misapplied, beyond [failureMode]. */
+    val moreFailures: List<FailureCase> = emptyList(),
+    /** Additive depth: the questions a thoughtful reader asks, answered. */
+    val questions: List<ReaderQuestion> = emptyList(),
 )
+
+/** A scene, how a careless observer reads it, and how a careful one does. */
+@Serializable
+data class CaseStudy(
+    val title: String,
+    val scene: String,
+    val misread: String,
+    val betterRead: String,
+)
+
+/** A scene read slowly: baseline, cluster, context, hypotheses, the test, what happened. */
+@Serializable
+data class WorkedReading(
+    val title: String,
+    val scene: String,
+    val steps: List<ReadingStep>,
+)
+
+@Serializable
+data class ReadingStep(val label: String, val text: String)
+
+@Serializable
+data class FailureCase(val title: String, val body: String)
+
+@Serializable
+data class ReaderQuestion(val q: String, val a: String)
 
 @Serializable
 enum class Tier { FOUNDATION, INTERMEDIATE, ADVANCED, EXPERT, MASTER }
@@ -94,6 +128,8 @@ data class Drill(
     val name: String,
     val minutes: Int,
     val steps: List<String>,
+    /** Additive: harder, easier or differently set versions of the same drill. */
+    val variations: List<String> = emptyList(),
 )
 
 @Serializable

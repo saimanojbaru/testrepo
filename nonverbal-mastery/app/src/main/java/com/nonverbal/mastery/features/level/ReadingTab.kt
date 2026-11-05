@@ -3,7 +3,14 @@ package com.nonverbal.mastery.features.level
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Text
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.unit.dp
+import com.nonverbal.mastery.design.components.inlineItalics
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.nonverbal.mastery.data.models.Level
@@ -75,10 +82,75 @@ private fun ReadingItem(item: LevelItem, curriculum: Curriculum, level: Level, a
             Spacer(Modifier.height(Space.x4))
             Prose(level.caseStudy)
         }
+        Kind.MoreCase -> {
+            val c = level.moreCases[item.i]
+            Column(column.padding(top = Space.sectionBreak)) {
+                SectionLabel("Case study ${item.i + 2}", color = colors.inkTertiary)
+                Spacer(Modifier.height(Space.x2))
+                Text(inlineItalics(c.title), style = Nv.type.claim, color = colors.ink, modifier = Modifier.semantics { heading() })
+                Spacer(Modifier.height(Space.x4))
+                Prose(c.scene)
+                Spacer(Modifier.height(Space.x5))
+                SectionLabel("The misreading", color = colors.dontText)
+                Spacer(Modifier.height(Space.x2))
+                Prose(c.misread)
+                Spacer(Modifier.height(Space.x5))
+                SectionLabel("A better reading", color = colors.doText)
+                Spacer(Modifier.height(Space.x2))
+                Prose(c.betterRead)
+            }
+        }
+        Kind.Worked -> level.workedReading?.let { r ->
+            Column(column) {
+                SectionBreak(vertical = Space.sectionBreak + Space.x4)
+                SectionLabel("A worked reading")
+                Spacer(Modifier.height(Space.x2))
+                Text(inlineItalics(r.title), style = Nv.type.claim, color = colors.ink, modifier = Modifier.semantics { heading() })
+                Spacer(Modifier.height(Space.x4))
+                Prose(r.scene)
+                r.steps.forEachIndexed { n, step ->
+                    Row(Modifier.padding(top = Space.x6)) {
+                        Text(
+                            "${n + 1}",
+                            style = Nv.type.numeral.copy(fontSize = Nv.type.body.fontSize * 0.85f),
+                            color = Nv.tint,
+                            modifier = Modifier.width(28.dp).padding(top = 1.dp),
+                        )
+                        Column(Modifier.weight(1f)) {
+                            Text(step.label.uppercase(), style = Nv.type.label, color = Nv.tint)
+                            Spacer(Modifier.height(Space.x2))
+                            Prose(step.text)
+                        }
+                    }
+                }
+            }
+        }
         Kind.Failure -> Column(column.padding(top = Space.sectionBreak + Space.x4)) {
             SectionLabel("How this goes wrong", color = colors.dontText)
             Spacer(Modifier.height(Space.x4))
             Prose(level.failureMode)
+        }
+        Kind.MoreFailure -> {
+            val f = level.moreFailures[item.i]
+            Column(column.padding(top = Space.x8)) {
+                Text(inlineItalics(f.title), style = Nv.type.claim, color = colors.ink, modifier = Modifier.semantics { heading() })
+                Spacer(Modifier.height(Space.x3))
+                Prose(f.body)
+            }
+        }
+        Kind.ReaderQ -> {
+            val q = level.questions[item.i]
+            Column(column.padding(top = if (item.i == 0) 0.dp else Space.x8)) {
+                if (item.i == 0) {
+                    SectionBreak(vertical = Space.sectionBreak + Space.x4)
+                    SectionLabel("Questions readers ask")
+                    Spacer(Modifier.height(Space.x5))
+                }
+                Text(inlineItalics(q.q), style = Nv.type.marginalia.copy(fontSize = Nv.type.body.fontSize), color = colors.ink,
+                    modifier = Modifier.semantics { heading() })
+                Spacer(Modifier.height(Space.x3))
+                Prose(q.a)
+            }
         }
         else -> Unit
     }
