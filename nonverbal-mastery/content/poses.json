@@ -5169,5 +5169,78 @@
    }
   ],
   "look": "Harpreet"
+ },
+ {
+  "id": "p_stand_at_ease_tall",
+  "title": "Tall, at ease",
+  "theme": "stance",
+  "desc": "A tall, broad-shouldered man standing at ease, weight even, hands loose at his sides, face neutral. How large and how threatening a man of this build is judged to be depends partly on him and partly, as research shows, on who is doing the judging.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand_wide",
+   "legStanceR": "stand_wide",
+   "view": "three-quarter"
+  },
+  "annotations": [
+   {
+    "at": "shoulders",
+    "text": "Broad shoulders, relaxed",
+    "color": "accent-cool"
+   },
+   {
+    "at": "head",
+    "text": "A neutral face",
+    "color": "accent-cool"
+   }
+  ],
+  "look": "Kwame"
+ },
+ {
+  "id": "p_pair_the_talk",
+  "title": "A father talking to his son",
+  "theme": "together",
+  "desc": "A father down on one knee at his son's height, talking to him seriously, the boy listening. Many Black parents give their sons a version of this talk: how to hold their hands, how to speak and how to move if stopped by police, because they know how their sons' bodies may be read.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "forearms_knees",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "kneel_down",
+   "legStanceR": "kneel_up",
+   "view": "side",
+   "spineLean": 4
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "At the boy's eye level",
+    "color": "accent-cool"
+   },
+   {
+    "at": "b:head",
+    "text": "Listening",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 62,
+    "facing": 180,
+    "scale": 0.6
+   }
+  ],
+  "look": "Marcus"
  }
 ]
