@@ -80,6 +80,20 @@
    "doCaption": "Reading the leave-taking, and saying goodbye first.",
    "dontCaption": "Holding forth while people edge towards their coats.",
    "annotation": "Rooms announce their endings before anyone says goodbye. Leaving while the room is still warm is part of reading it well."
+  },
+  {
+   "doPoseId": "p_greet_acknowledge",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Arriving quietly, taking the room's tone",
+   "dontCaption": "Bursting into a quiet room with a big greeting",
+   "annotation": "Match the room's weather before you try to change it. A quiet entrance costs nothing in a lively room and saves a great deal in a sad one."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_presenting",
+   "doCaption": "Stopping to acknowledge what has happened",
+   "dontCaption": "Pressing on with the agenda after bad news",
+   "annotation": "A room carrying shared news will not work well until the news is acknowledged. Two minutes of naming it frees the attention the pretending was using."
   }
  ],
  "caseStudy": "Alan, forty-four, has been a regional manager for three months when the company announces that a fifth of the staff in his region will be made redundant in the new year. Two weeks later is the Christmas party, which was booked long before the news. Alan had planned a short, upbeat speech.\n\nHe arrives at the venue and, instead of heading straight to the bar, pauses just inside the door while he takes off his coat. The room is quieter than last year's photographs suggested. People are standing in tight clusters by department, and the clusters do not mix. The laughter he can hear is short and stays inside each group. Several people are standing near the door with their coats still on. When a couple of people notice him, the volume in their corner drops.\n\nAlan realises that a speech about a great year would land badly in this room, and that his arrival, as the face of the news, has made the weather heavier. He drops the speech. He goes round the room, group by group, thanks people briefly for the year, and asks no questions about the redundancies. In one group he says plainly that he knows it is a hard Christmas and that he will answer any questions in the new year, one to one.\n\nHe notices a young administrator, Chloe, standing alone near the buffet, and introduces her to a team she works with but has never met. Their laughter, a few minutes later, includes her.\n\nAfter an hour Alan leaves, well before the end, telling the organiser to put the rest of the evening on his card. On Monday, three people tell him the party got much better after he left. He decides, after a moment, to take that as a compliment.",
@@ -98,6 +112,11 @@
     "Write a one-line description of the room's weather as soon as you can.",
     "At the end of the gathering, note whether the description held.",
     "After a week, write down what you most often missed at the threshold."
+   ],
+   "variations": [
+    "Do the threshold pause on entering your own home in the evening, and note the household's weather.",
+    "Write your threshold note before you speak to anyone, and compare it with a second note taken an hour later.",
+    "Ask a friend who arrives with you to write their own note separately, and compare."
    ]
   },
   {
@@ -109,6 +128,10 @@
     "Note whether the change seemed to start with one person.",
     "Note how the mood travelled through the group, and how long it took.",
     "Write one way you could respond differently next time to a change that starts with one person."
+   ],
+   "variations": [
+    "Choose one occasion when the mood improved rather than worsened, and trace what, or who, started that change.",
+    "Note how long the change took to spread through the group, and who it reached last, and whether they ever fully caught it."
    ]
   },
   {
@@ -120,6 +143,10 @@
     "Note any laughter that sounds polite rather than spontaneous, and who it is directed at.",
     "Note anyone who does not laugh at all.",
     "Afterwards, draw a rough map of the room's belonging from what you heard."
+   ],
+   "variations": [
+    "Do the same at a family gathering, where you know the relationships, and see whether the laughter matches what you know.",
+    "Listen for laughter at a workplace event, and note whether it crosses lines of seniority."
    ]
   },
   {
@@ -131,6 +158,10 @@
     "Write the words you could have used to check whether others shared your concern.",
     "Practise saying those words aloud until they feel natural.",
     "Note the next time a similar situation arises, and whether you used them."
+   ],
+   "variations": [
+    "Write the words for three different kinds of situation: a safety concern, a bad decision and someone being treated unfairly.",
+    "Practise with a friend, taking turns to be the one who speaks first, until the words come without a long pause before them."
    ]
   },
   {
@@ -142,6 +173,10 @@
     "Plan to leave shortly after the first clear signals, while the room is still warm.",
     "Say goodbye to the host and to anyone you spoke with at length.",
     "Afterwards, write how leaving at that point felt compared with your usual habit."
+   ],
+   "variations": [
+    "At a work event, note who leaves first and whether their leaving changes the room.",
+    "Try leaving earlier than usual at an event you normally stay at until the end, and notice how the goodbye feels."
    ]
   }
  ],
@@ -223,6 +258,58 @@
    "explain": "Breaking eye contact, standing, summarising and orienting to the door are classic signs that a gathering is ending. Wrapping up while the room is still warm is part of reading it well.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Totterdell find in his study of professional cricketers' moods during matches?",
+   "options": [
+    "Players' moods moved only with the state of the match, not with how their teammates felt",
+    "Players' moods tended to move with their teammates' collective mood, more so in committed players",
+    "Players' moods were unrelated to each other, since each was focused on his own performance",
+    "Players' moods matched their opponents' moods more closely than those of their own teammates"
+   ],
+   "answer": 1,
+   "explain": "Each player's mood tended to track the team's mood, even after accounting for the match situation, and the link was stronger in players more committed to the team. A group's mood is partly shared, not just the sum of its members.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "According to Knapp and colleagues, which of these is a typical signal that a conversation is coming to an end?",
+   "options": [
+    "People begin to lean back and settle into their chairs, as if they were getting comfortable",
+    "Eye contact becomes longer and steadier, as people concentrate on what is being said",
+    "People summarise what has been said, nod faster and turn their bodies towards the exit",
+    "The conversation becomes louder and faster, as people try to fit in everything at the end"
+   ],
+   "answer": 2,
+   "explain": "Leave-taking is signalled by summaries, quicker nods, broken eye contact and bodies turning towards the door. Reading these lets you leave while the room is still warm rather than overstaying.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You walk into a meeting room and it is quiet and tense. What does this chapter suggest about your first reading?",
+   "options": [
+    "Assume it is about you, since a room usually goes quiet when the newcomer is being discussed",
+    "Ignore the mood, since a room's atmosphere has no effect on how a meeting will actually go",
+    "Lift the mood straight away with a joke, since a tense room needs someone to break the ice",
+    "Treat it as information about the room, and allow that you may also be bringing your own weather"
+   ],
+   "answer": 3,
+   "explain": "A room's mood usually predates your arrival, and your own state colours how you see it. Treat the reading as information, check your own weather, and wait for evidence before taking it personally.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "In a meeting, everyone seems calm about a plan that you think has a serious flaw. What fits this chapter best?",
+   "options": [
+    "Ask whether anyone else has concerns, since others may be privately worried too",
+    "Stay quiet, since a calm room is good evidence that the plan is actually sound",
+    "Wait until after the meeting and raise it privately only with the person in charge",
+    "Go along with the plan, since disagreeing would damage the good mood in the room"
+   ],
+   "answer": 0,
+   "explain": "Latané and Darley's smoke-filled room shows how a group's calm can keep everyone in it from acting on what they each privately notice. A simple question often reveals that you are not alone.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -251,6 +338,110 @@
    "work": "Detecting affiliation in colaughter across 24 societies",
    "author": "Gregory A. Bryant, Daniel M. T. Fessler, Riccardo Fusaroli and colleagues",
    "note": "Proceedings of the National Academy of Sciences 113(17), 2016. What shared laughter reveals about who belongs."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The funny story at the wrong door",
+   "scene": "Jake has had a good week, and on Saturday evening he drops round to his friends Olu and Kerry's house with a bottle of wine and a story\n  he has been saving all week, about his boss falling into the canal at the office away-day. Kerry opens the door, says hi, and goes back into the\n  kitchen without waiting for him. In the living room, Olu is sitting on the sofa with the television on but not watching it. The children, who\n  normally rush to Jake, are upstairs; he can hear a door close. Kerry stays in the kitchen.\n\n  Jake sits down and launches into the canal story. It is a good story, and he tells it well, with voices. Olu smiles at the right moments\n  but does not laugh, and looks towards the kitchen twice. Kerry comes in halfway through, stands in the doorway with her arms folded, and goes\n  out again. When Jake finishes, there is a pause, and Olu says, \"Classic,\" and asks if he wants a glass. Twenty minutes later, Jake makes an\n  excuse and leaves, puzzled and slightly hurt.\n\nOn the drive home Jake replays the evening and decides that Olu and Kerry must have been annoyed that he turned up without warning, and wonders whether he should stop dropping round. It does not occur to him that their afternoon had nothing to do with him.",
+   "misread": "Jake walked in carrying his own weather, a good week and a story ready to tell, and imposed it on a room that had its own. He noticed the signals, the closed doors, the separation, the absent children, the television on but unwatched, but he did not read them as a mood; he read them as obstacles to get past with a good story.\n\nHe also read the lack of laughter as a failure of his story rather than a sign of the room, and so tried harder, which made it worse.\n\nAnd he never asked. One quiet question at the door would have given him the reading the room was offering, without anyone having to explain anything.\n\nThe story was good. The timing was the problem.",
+   "betterRead": "The threshold pause this chapter recommends would have told Jake almost everything. A host who does not linger at the door, a couple in separate rooms, children sent upstairs, a television nobody is watching: that is the weather of a house where something has just happened, most likely a row. None of it was about Jake, and none of it needed explaining to him. The kind response was to match the room: lower his voice, keep the story for another day, ask whether it was a bad time, and offer to come back. Olu told him a week later that he and Kerry had been arguing about money all afternoon, and laughed about the canal story then.\n\nIt is also worth noticing that the room gave Jake an easy way out, if he had looked for it: a quiet question at the door, is this a bad time, would have let his friends tell him without having to explain."
+  },
+  {
+   "title": "The meeting after the resignation",
+   "scene": "Paul manages a team of eight in a charity's fundraising department. At nine o'clock on a Monday, his deputy, Rosie, who has been with the\n  team for six years and is loved by everyone in it, emails the team to say she is leaving for a job in another city. At ten, Paul holds the weekly\n  planning meeting. He has a long agenda and a funding deadline on Friday.\n\n  He walks in, says good morning, and starts the agenda. The room is unusually quiet. Two people have red eyes. Rosie sits near the door, looking\n  at her notebook. When Paul asks for updates, people answer in a sentence and stop. The meeting finishes early, with nothing much decided. Later\n  that week, one of the team tells Paul that it felt as if the news had not happened, and that people had found that hard.\n\nRosie herself says afterwards that she had dreaded the meeting, and that the hardest part had been sitting through an hour of ordinary business while everyone tried not to look at her.\n\nPaul had meant to say something about Rosie at the end of the meeting, once the business was done. By the end, the moment had passed, and the team had spent an hour watching their manager behave as if nothing had happened.",
+   "misread": "Paul read the quiet as a slow Monday and pressed on with the task, treating the meeting as a planning session and the mood as something that would pass. He knew about the resignation, but he did not think of it as part of the room.\n\nHe also assumed that getting on with work would be the most respectful thing, a way of not making a fuss, when for his team it felt like being asked to pretend.\n\nIt is worth noticing that the quiet was itself the team's way of signalling. Nobody needed to say that they were upset; the room said it, and the manager did not hear it.",
+   "betterRead": "Jennifer George's idea of group affective tone describes exactly what Paul walked into: a shared mood, created by a shared event, that would shape how the group worked whether or not anyone mentioned it. Groups in a low mood plan badly and decide little. The careful response would have taken two minutes: start the meeting by acknowledging the news, saying something about what Rosie has meant to the team, and giving people a moment to say something if they wanted. Then the agenda, perhaps a shorter one. Naming the weather does not change it, but it lets people stop pretending it is not raining, which frees up the attention that the pretending was using.\n\nPaul did this the following week, and apologised for not doing it the first time. The team's response, he said later, was the first sign that they trusted him to say difficult things.\n\nGroups that acknowledge shared news early also tend to recover their working mood sooner. Pretending delays the recovery, it does not prevent the feeling."
+  },
+  {
+   "title": "The pub that turned",
+   "scene": "Darren and three friends are in a busy city-centre pub on a Saturday night watching a football match. For the first half the room is loud\n  and good-humoured, with groups mixing, laughter and the occasional cheer. Ten minutes into the second half, after a controversial decision, the\n  sound changes. The laughter stops. The noise drops for a moment, then comes back louder and harsher. A group of men near the bar have stopped\n  watching the screen and are watching another group. Two bar staff move towards that end of the room. People near the door start finishing their\n  drinks.\n\n  Darren notices all this and says, quietly, that they should go. His friends laugh at him; the match is not over and nothing has happened. Darren\n  goes anyway. His friends stay. Twenty minutes later a fight breaks out near the bar, and one of them is caught by a thrown glass while trying to\n  get out.\n\nAfterwards, the friend who was hurt says that he had noticed the change too, but that leaving felt like an overreaction, and he did not want to be the one to spoil the night.\n\nDarren is not a nervous man. He has simply spent years working behind a bar, where noticing the turn of a room is part of the job, and he has learned that the moment to leave is before anything happens, not after.",
+   "misread": "His friends read the room by asking whether anything had happened yet. Nothing had, so the room seemed safe. They missed the change in its weather: the shift in sound, the attention moving from the screen to another group, the movement of staff, and other drinkers quietly leaving.\n\nThey also treated Darren's caution as a judgment on them, which made it harder to take seriously. It is uncomfortable to be the person who reads the room aloud.\n\nAnd they treated the absence of an incident as evidence of safety, when the room was telling them that an incident was becoming more likely by the minute.",
+   "betterRead": "Rooms announce trouble before it arrives, as they announce endings. The shift from mixed, open laughter to a harsher, louder, more uniform noise, groups closing up, attention swinging from the shared focus to each other, staff repositioning and regulars leaving: each is weak alone, and together they make a strong reading. Part V's chapter on safety describes how people who have reason to be careful in public learn these signs early. Darren did not need to know what would happen. He needed only to notice that the room had changed and that the cost of leaving early was small. A reader who learns to take those changes seriously will leave many rooms that would have been fine, and a few that would not have been.\n\nRooms do not always turn violent, of course, and most of the evenings that feel like they might go wrong do not. The skill is not predicting trouble but noticing when the cost of leaving has become smaller than the cost of staying."
+  },
+  {
+   "title": "The manager who brought the weather",
+   "scene": "Neil runs a small architecture practice of twelve people. Over a hard winter, with two projects in trouble and the bank pressing, he arrives\n  each morning tense, walks straight to his office without stopping to talk, and closes the door. Within weeks, the studio has changed. People talk\n  less, take shorter lunches, and keep their eyes on their screens when he walks through. Nobody suggests ideas in meetings. Two people start looking for\n  other jobs.\n\n  Neil notices the change and reads it as a team that has lost its energy, perhaps because of the bad news about the projects. He considers a team\n  away-day to lift spirits. His business partner, who has watched the whole winter from across the studio, tells him bluntly that the studio is\n  doing exactly what he is doing.\n\nIt takes his partner a while to persuade him. Neil's first response is that he has been under enormous pressure and that the team should understand. His partner says they do understand, which is exactly why they are frightened.\n\nThe two people who had been looking for jobs mention, in their exit conversations, that the atmosphere had become unbearable, though neither can point to anything Neil said or did. They describe the closed door more than once.",
+   "misread": "Neil read the room's mood as something that had happened to the team, caused by the projects, and looked for something to lift it. He did not consider that he was its source. In the terms of this chapter, he was reading a room he had made as though he had found it.\n\nThe away-day would have been the forced weather this chapter warns against: a day of enforced fun organised by the man whose mood the team was absorbing.\n\nHe also took the team's quietness as a lack of energy, when it was something closer to caution: people keeping their heads down around a manager whose mood they could not predict.",
+   "betterRead": "Barsade's ripple-effect study showed how one person's displayed mood spreads through a group, and how it changes the way the group works. The more central the person, the stronger the ripple, because more people are watching them for cues. A leader's mood is the room's weather to a degree few leaders appreciate. Neil's remedy was not an away-day but a change at the door: stopping for two minutes on the way in, settling his own state before he entered the studio, saying good morning to people by name, and being honest at the next team meeting that the business was having a hard winter and that he was confident they would get through it. The studio did not become cheerful overnight. But people started talking again.\n\nIt is worth adding that leaders are not required to feel cheerful. They are required to notice what their state does to the room, and to take responsibility for it.\n\nNeil also noticed that his own mood improved when he stopped at people's desks on the way in. The two minutes of ordinary conversation took the edge off his worry before it reached his office, and before it reached anyone else."
+  }
+ ],
+ "workedReading": {
+  "title": "Arriving late to the family gathering",
+  "scene": "You arrive an hour late to your aunt's seventieth birthday lunch, held at her house, because of traffic. You can hear voices from the garden as you come up the path. When you let yourself in through the side gate, you see about twenty people on the lawn. You expected the loud, happy chaos of your family's usual parties.\n\nYour family is large and loud, and its parties usually spill over with noise, music and children running about. You know the house well and most of the people in it.\n\nLast time the family gathered, at a cousin's wedding, your uncle made the loudest speech of the day and danced until midnight. You are expecting to be greeted with a joke about your timekeeping.",
+  "steps": [
+   {
+    "label": "Pause at the threshold",
+    "text": "Instead of striding in with apologies and greetings, you stop at the gate for a few seconds, as if looking for somewhere to put the present you are carrying. In that pause you take the room's baseline, which here is a garden: its noise, its pace, its laughter, its groupings, where people are looking.\n\nThe pause costs nothing. You are carrying a present, so stopping at the gate looks natural. Nobody notices you taking the room's measure.\n\nIf there is no natural reason to pause, tying a shoelace, checking a message or looking for somewhere to put a coat gives you the same few seconds without anyone noticing."
+   },
+   {
+    "label": "Take the measure",
+    "text": "The noise is lower than at your family's usual parties. People are in small, separate clusters, mostly by household, not mixing. There is some laughter, but it is short and stays inside each cluster. Your aunt is sitting in a chair near the kitchen door, smiling and talking to whoever comes over, but your uncle, her husband, is not in the garden at all. Two of your cousins are standing near the kitchen, talking quietly, with their backs to the lawn.\n\nYou also notice who is missing, which is often as informative as who is there. A host's partner absent from his own wife's birthday is a change worth noting.\n\nThe kitchen door, the absent uncle and the cousins' turned backs all point the same way, towards the house, which is a cluster worth holding onto."
+   },
+   {
+    "label": "Check your own weather",
+    "text": "You have just spent an hour in traffic, anxious about being late and slightly cross with yourself. That could make you see tension where there is only a quiet afternoon. You note it, and decide to treat what you see as a first reading rather than a conclusion.\n\nArriving late also makes you self-conscious, likely to read glances as judgments on your lateness. Most of those glances are simply people noticing someone new."
+   },
+   {
+    "label": "Hold several explanations",
+    "text": "The mood might reflect nothing more than the heat, or the fact that half the guests have not seen each other for years and have not yet warmed up. It might reflect something about your uncle's absence: illness, a row, or simply that he is inside cooking. It might be that you have arrived at a quiet moment, after the speeches, before the cake. The cousins by the kitchen door may be connected to your uncle's absence, or not.\n\nIt is worth holding the ordinary explanations alongside the worrying ones. Large family gatherings are often quieter than people remember, and nostalgia exaggerates the noise of past parties.\n\nIf you are honest, you also notice which explanation you would prefer: that it is the heat, and nothing is wrong. That preference is worth knowing about, because it will tempt you to stop looking."
+   },
+   {
+    "label": "Join the room as it is",
+    "text": "You do not bring the energy you had planned, the loud greeting and the joke about the traffic. You go to your aunt first, give her the present and a hug, and say happy birthday quietly. Then you join the nearest cluster at its own volume, and listen more than you talk for the first ten minutes.\n\nGoing to the person at the centre of the occasion first is almost always right. It respects the reason for the gathering, and it gives you a few moments of the room's tone before you have to join a group.\n\nListening at a cluster's own volume for a few minutes also tells you whether it is a sad quiet or simply a sleepy one, which you could not tell from the gate."
+   },
+   {
+    "label": "Ask the right person, privately",
+    "text": "After a while you go into the kitchen to fetch a drink, where you find one of your cousins. You ask, lightly, whether everything is all right, since you had not seen your uncle. She tells you that he had a fall last week and is resting upstairs, that he insisted the party go ahead, and that everyone is a bit worried and trying not to spoil the day for your aunt.\n\nChoosing the kitchen, rather than asking in the garden, gives your cousin the chance to answer honestly without the whole family listening."
+   },
+   {
+    "label": "What you learned",
+    "text": "The weather made sense at once: a family being cheerful for one person while worried about another. You stay for the afternoon, at the room's own tone, and before you leave you go upstairs to see your uncle for ten minutes. On the drive home you note how close you came to bursting in with a story about the traffic, and how much the pause at the gate had given you.\n\nYou also note that you had read the room correctly from the gate, roughly, without knowing why. The why took a quiet question in the right place.\n\nYou also note that it was not your job to fix the afternoon. Your job was to fit into it, and to find the person who needed a visit."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Going along with the room when the room is wrong",
+   "body": "Reading a room is not the same as obeying it. Latané and Darley's smoke-filled room shows how a group's calm can keep everyone in it from acting on something they each privately notice. The same thing happens when a group laughs at a cruel joke, when a meeting nods through a plan everyone privately doubts, or when a crowd watches someone being harassed and does nothing. A good reader of rooms notices the mood and then decides whether to join it. Sometimes the most useful thing you can do with your reading is to break the room's surface: to be the first to say that the joke was not funny, that you are worried about the plan, or that someone should check on the woman being shouted at. Once one person speaks, others often follow.\n\nGroups often need only one person to speak for the rest to admit what they had noticed. That person does not need to be right, only willing to ask.\n\nIt is worth practising the words in advance, because the moment when a room's calm is wrong is exactly the moment when finding words is hardest."
+  },
+  {
+   "title": "Forcing the weather",
+   "body": "Some people, especially those responsible for a group, try to change a room's mood by force: insisting on fun at a team social, demanding enthusiasm after bad news, telling a gloomy family gathering to cheer up. It rarely works. Forced cheerfulness produces polite laughter and quiet resentment, and it tells people that their actual feelings are not welcome. Moods shift through contagion, as Barsade's study shows, not through instruction. If you want to change a room, change your own state first and let it spread, acknowledge the mood people are actually in, and give them a reason, rather than an order, to feel differently.\n\nTeams in particular can tell the difference between a leader who wants them to feel better and a leader who wants them to look better, and they respond very differently.\n\nForced weather also makes it harder to read the room, because people start performing the mood you demanded, and the real one goes underground where you cannot see it."
+  },
+  {
+   "title": "Taking a cold room personally",
+   "body": "When you walk into a room that is quiet, tense or unwelcoming, the natural assumption is that it is about you: that people were talking about you, that you are not wanted, that you have done something wrong. Most of the time, the room's weather was there before you arrived, made by events you know nothing about. Reading a cold room as a personal rejection leads people to withdraw, over-apologise or become defensive, any of which can make the room colder still. Take the room's weather as information about the room, and wait for evidence that it is about you before you treat it that way.\n\nA useful check is to ask yourself whether the room's mood was there before you walked in. If people were already quiet when you arrived, it is probably not about you.\n\nIf you are new to a group, it is especially easy to read every chill as a verdict on you. Newcomers are noticed more than they think, and judged far less."
+  },
+  {
+   "title": "Hearing only the loudest voice",
+   "body": "In most rooms, a few people make most of the noise, and it is easy to take their mood for the room's. A cheerful, loud table at a wedding can make the whole reception seem merry while several guests sit quietly miserable at the edges. A vocal, angry participant can make a meeting seem hostile when most of the room is simply waiting. When you take a room's measure, look past the loudest group to the edges: the people standing alone, the people near the door, the quiet table. The room's real weather is often in the places nobody is looking.\n\nHosts, especially, should look for the quiet guests. A good party is often judged by its liveliest table and remembered by its loneliest one.\n\nIn meetings, the same applies to the person who has said nothing. Their silence may be agreement, but it may also be the room's real view, waiting for an invitation."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can you really read a room in a couple of seconds?",
+   "a": "You can get a first impression in a couple of seconds, and that impression is often roughly right about the broad mood: lively or subdued, open or tense, welcoming or closed. But it is a first reading, like a weather glance out of the window, and it needs updating. Rooms change over an evening, and your first impression is coloured by your own state and by how you were received at the door. Use the threshold pause to set your opening behaviour, such as your volume and energy, and then keep watching. The pause is valuable mainly because it stops you from walking in on autopilot.\n\nPractising the pause on ordinary occasions, coming home, arriving at work, walking into a shop, makes it automatic, so that it is there when a room really matters.\n\nA useful habit is to write your first reading down, even in a line on your phone, and look at it at the end of the evening. Over a few weeks you will learn which of your first impressions tend to hold and which you usually revise."
+  },
+  {
+   "q": "What if I am the one who changes the mood of a room?",
+   "a": "You almost always are, to some degree, and the more central you are, the more you change it. Leaders, hosts, the person giving bad news, the person everyone is waiting for: each brings weather in with them. That is both a responsibility and an opportunity. Before you walk in, take a moment to notice your own state and settle it if you can. When you arrive, match the room's tone first before trying to shift it. If you need to change the mood, do it gradually, through your own pace, voice and attention, and acknowledge the mood that is there rather than pretending it is not.\n\nIf you realise after the fact that you brought bad weather into a room, saying so can help: telling a team that you were stressed this morning and that it was not about them often lifts a mood faster than anything else.\n\nIt also helps to know your own typical weather. Some people arrive everywhere a little anxious, some a little flat, some loud. Knowing yours lets you adjust before it becomes the room's."
+  },
+  {
+   "q": "How do I raise a concern when everyone else seems fine?",
+   "a": "Start by checking whether you are alone. Latané and Darley's study suggests that many people in a calm-looking group are privately uneasy and each waiting for someone else to act. A simple question often reveals this: \"Is anyone else worried about this?\" or \"Am I the only one who thinks that smell is odd?\" It invites others to share what they have noticed without forcing anyone to take a stand first. If the concern is urgent, such as a safety risk, act on it directly and let the room catch up. Being the first to speak is uncomfortable. Being the last one in a room that should have been left is worse.\n\nIn professional settings, a concern framed as a question about risk rather than a criticism of the plan is often easier for a room to hear.\n\nRemember, too, that the people who stay calm may simply not have noticed what you noticed. Telling them what you saw, plainly, gives them the chance to see it too."
+  },
+  {
+   "q": "How do I read the room on a video call?",
+   "a": "With far less information, but the same principles. Notice how many cameras are on, how quickly people respond to questions, how much people speak, and whether the chat is lively or silent. A call in which nobody unmutes and cameras go off one by one has a weather, just as a silent meeting room does. Notice too who speaks first and how others follow. Part IV's chapters on the video call body and on audio cover the details. Because so much is missing, it is worth asking more directly than you would in person: \"How is everyone doing today?\" or \"Is this a good time for this, or should we pick it up later?\"\n\nA message to a quiet participant after the call, asking how they found it, can also tell you a good deal about how the virtual room felt from the edges.\n\nVideo calls also make leaders' weather travel further, because every face is equally close and everyone can see the leader's expression at once."
+  },
+  {
+   "q": "How do I leave a party well?",
+   "a": "Watch for the signals Knapp and his colleagues described: people standing, glancing at the door, summarising the evening, reaching for coats and bags, the host starting to tidy. When the first clear signals appear, plan to leave soon after, while the room is still warm, rather than at the very end when everyone is tired. Find the host, thank them for something specific, and say goodbye to the people you spent most time with. Do not announce your departure to the whole room, which can start a rush, and do not start a new long conversation on your way out. Leaving well is part of being remembered well.\n\nIf you are the host and want people to stay, the reverse applies: a fresh pot of coffee or a new round of food tells a room the evening is not yet over.\n\nIf the host is busy, a short message the next day saying thank you does almost as well as a goodbye at the door."
+  },
+  {
+   "q": "Why do some gatherings leave me exhausted?",
+   "a": "Partly because reading and managing a room is work, and partly because moods are contagious. A tense family event, a fraught office party or a crowded wedding can leave you carrying other people's weather home. If you are introverted, the effort of sustained social contact is itself tiring regardless of the mood. It helps to notice which rooms drain you and why, to give yourself breaks, such as a walk outside or a few minutes in a quiet room, and to plan recovery time afterwards. It also helps to remember that you are allowed to leave early. Leaving well, as the previous answer describes, is far better than staying past what you can manage.\n\nAnd if you are hosting, remember that some of your guests may be drained by the very gathering you are enjoying. A quiet corner, an early end or a walk outside can be a kindness to them.\n\nIt can also help to arrive with a plan for when you will leave. Knowing the end is in sight makes a draining room easier to be in."
   }
  ],
  "watch": [
