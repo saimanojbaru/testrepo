@@ -91,6 +91,13 @@
    "doCaption": "Seeing the strain and giving room.",
    "dontCaption": "Seeing the strain and leaning in to press.",
    "annotation": "A pacifier is a person regulating. The decent response lowers the pressure: sit back, slow down, offer an easier way through."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Easing off, and asking about the topic later",
+   "dontCaption": "Naming the tell: \"You touched your neck just then\"",
+   "annotation": "A pacifier shows where the pressure is, never what it is. Use it to make things easier, not to put someone on the spot."
   }
  ],
  "caseStudy": "Tom has led the mobile team at a mid-sized software company for two years. In meetings he talks with his hands: he draws architecture in the air, counts off risks on his fingers, leans back when he is confident. At the March planning review the director, Alan, asks whether the app will still ship on the fourteenth. Tom says yes. His hands, which have been moving all meeting, come down to his lap and stay there. His right thumb works across the knuckles of his left hand. His answers to the next three questions are a sentence each.\n\nAlan has read a book on body language. He notes the stillness and the rubbing and concludes that Tom is hiding a slip. For the next twenty minutes he presses: *are you sure, what aren't you telling me, who else should I ask.* Tom grows quieter and more careful with each question, which Alan reads as confirmation. He leaves telling a colleague that Tom has lost control of the project.\n\nMarcus, Tom's manager, was in the same room and saw the same things. He noted the change, the moment it began, and that it had not ended by the close of the meeting. He did not form a theory. Afterwards he walked Tom to the kitchen and said: *the fourteenth seemed to weigh on you. What would make it realistic?*\n\nTom exhaled. The app depended on a payments service owned by another team, whose lead had been on parental leave, and nothing had moved in three weeks. Tom had not wanted to name a colleague in front of the director. Marcus took it to the other team's manager that afternoon. The date moved by a week, with no blame and no surprise.\n\nBoth men saw the same leakage. One treated it as evidence and generated more of it. The other treated it as a pointer and asked where it pointed.",
@@ -110,6 +117,11 @@
     "Watch it again with the face covered and only the body visible, and write three more sentences.",
     "Compare the two descriptions and mark where they agree and where they differ.",
     "For each difference, write one ordinary explanation that has nothing to do with concealment."
+   ],
+   "variations": [
+    "Use a clip of someone you know personally, from a family video, and see whether their face and body tell the same story.",
+    "Try it with a clip of a sports post-match interview, where emotion is high and the face is heavily managed.",
+    "Do the face-only viewing with the sound on, then the body-only viewing with it off, and compare the effect of the voice."
    ]
   },
   {
@@ -121,6 +133,10 @@
     "For the next ten minutes keep tallying, and mark any minute at least double the resting rate.",
     "For each spike, note what had been said in the preceding fifteen seconds.",
     "Write one sentence per spike stating the pointer, not a meaning: something about this topic cost effort."
+   ],
+   "variations": [
+    "Repeat with a second person in the same panel and compare their baselines and spikes.",
+    "Try tallying a different behaviour, such as posture shifts, and see whether its spikes line up with the self-touch spikes."
    ]
   },
   {
@@ -132,6 +148,10 @@
     "Watch the recording with the sound off and mark every change in your hands, gaze and posture.",
     "Match each change to its question and count how many came during the demanding ones.",
     "Write down which of these changes an observer might have mistaken for discomfort or evasion."
+   ],
+   "variations": [
+    "Ask a friend to choose the questions without telling you which are which, and see whether you can tell from the recording.",
+    "Add a seventh card with a mildly embarrassing question, and compare your body's response with the difficult ones."
    ]
   },
   {
@@ -143,6 +163,10 @@
     "Notice where your hands went, what your breath did and where your shoulders sat, and write each down.",
     "Repeat with a pleasant memory and note the differences.",
     "Write your three likeliest pacifiers on a card and keep it in your wallet for a week."
+   ],
+   "variations": [
+    "Repeat after a stressful day at work, and compare which pacifiers appear first when you are already tired.",
+    "Ask someone close to you which of your pacifiers they have noticed, and compare their list with yours."
    ]
   },
   {
@@ -154,6 +178,10 @@
     "Mark each of your moves as easing the pressure or adding to it.",
     "Rewrite that minute using only easing moves: a pause, a simpler question, an offered exit, a little more distance.",
     "Say the rewritten version aloud once, so that it is available to you next time."
+   ],
+   "variations": [
+    "Rewrite a second conversation, this time one in which you were the one under strain, and note what would have helped you.",
+    "Practise one easing move this week in a real conversation, and note how the other person responded."
    ]
   }
  ],
@@ -235,6 +263,58 @@
    "explain": "Your own pacifiers are the earliest signal you will ever have about your state. Suppressing them removes the information without removing the strain. Using them to regulate yourself, and the pace of the conversation, is the skill this chapter is built toward.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "A colleague says that touching your nose while talking is a reliable sign of lying. What does this chapter suggest?",
+   "options": [
+    "He is right, since a nose touch is one of the best-established signs of deception there is",
+    "A nose touch has many causes, and at most shows strain at a moment, not that anything is false",
+    "He is right only when the nose touch comes with a glance away, which completes the cluster",
+    "Nose touches mean nothing at all, since they are always caused by colds or by allergies"
+   ],
+   "answer": 1,
+   "explain": "Self-touch, including touching the nose, is common and has many causes. At best, a change from baseline at a marked moment tells you that something cost effort, and even trained observers detect lies only a little better than chance.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "What did Mohiyeddini and Semple's study of displacement behaviour in men suggest?",
+   "options": [
+    "That self-touching under stress made the men feel more stressed, by drawing their attention to it",
+    "That self-touching had no relationship at all with how stressed the men said they felt afterwards",
+    "That self-touching under stress may help regulate it, with more of it linked to less felt stress",
+    "That only men who were lying showed any increase in self-touching while they were under stress"
+   ],
+   "answer": 2,
+   "explain": "Men who showed more displacement behaviour, such as self-touching, under stress reported less stress, which suggests the behaviour does real work. That is one reason why suppressing your own pacifiers tends to backfire.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Each time you call on a quiet pupil without warning, she pulls her sleeves over her hands and her jiggling foot goes still. What fits this chapter best?",
+   "options": [
+    "Call on her more often, so that she gets used to answering in front of the whole class",
+    "Tell her to take her hands out of her sleeves, so that she learns better classroom habits",
+    "Mention to her parents that she seems sullen and may not be trying hard enough in class",
+    "Give her warning before you ask her, and reduce the pressure rather than add to it"
+   ],
+   "answer": 3,
+   "explain": "The pacifiers and the stillness point to a moment of strain, being called on without warning. Using the reading to make things easier, with a warning and time, is what this chapter recommends.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "You notice your own jaw working and your pen tapping during a tense conversation with your father. What does this chapter suggest?",
+   "options": [
+    "Notice them early, and deal with the strain itself through breath and a pause, without fighting them",
+    "Clamp your jaw and hands still, so that your father cannot see that you are under any strain",
+    "Ignore them, since your own pacifiers are private and cannot affect how the other person feels",
+    "Point them out to your father, so that he understands how difficult you find the conversation"
+   ],
+   "answer": 0,
+   "explain": "Your own pacifiers leak into the room and change how others respond. Suppressing them tends to produce other signs of strain, so the better course is to notice them and ease the strain underneath.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -263,6 +343,110 @@
    "work": "What Every BODY Is Saying",
    "author": "Joe Navarro with Marvin Karlins",
    "note": "A popular source for the catalogue of pacifying behaviours. Read it for the catalogue, with this chapter's cautions beside it."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "Palms on the thighs",
+   "scene": "In a job interview for an operations role, Daniel answers the first questions easily. When the interviewer, Fiona, asks about a nine-month\n  gap on his CV, his hands, which have been resting on the table, slide down under it, and she sees his forearms move as he rubs his palms along\n  his thighs, twice, slowly. He answers that he took time out for family reasons, then adds that he spent some of it doing a course. His voice is\n  steady, but the answer is shorter than his others.\n\n  Fiona has been on a course about body language in interviews. She knows the leg rub as a pacifying behaviour and has heard it described as a\n  sign that someone is uncomfortable with what they are saying. She writes in the margin: gap, evasive, check references carefully. For the rest of\n  the interview she is cooler and asks two further questions about the gap, each a little more pointed. Daniel's answers get shorter.\n\nAfter the interview, Fiona's colleague, who sat in, says that she thought Daniel seemed strong. Fiona says that the gap bothered her, and that his body language did not help. When her colleague asks what exactly he did, Fiona says he went quiet and rubbed his legs, and realises as she says it how little that is.",
+   "misread": "Fiona read a pacifier as a sign of concealment and then pressed on the point where she saw strain, which is the misuse this chapter most warns against. The pressing produced more strain and shorter answers, which she then took as confirmation.\n\nShe also treated a question about personal circumstances as a test of honesty, which it was never fit to be.",
+   "betterRead": "The leg rub was a real pointer, arriving within a second or two of a specific question, and it did tell Fiona something: the gap cost Daniel some effort to talk about. It did not tell her why. There are many reasons a person might find a gap hard to discuss: illness, a breakdown, caring for a dying parent, a redundancy they are ashamed of, a prison sentence, a pregnancy that ended badly. Most of them are none of an interviewer's business beyond what the job requires. The careful response was to note the pointer, accept the answer, and move on, or, if the gap mattered for the role, to ask one neutral question about what he had been doing to keep his skills current. Daniel had, it later emerged, been caring for his mother through cancer. He did not get the job, and Fiona's notes were part of the reason.\n\nA pointer is a reason for care, not suspicion. In an interview, care means accepting a brief answer about a personal matter, and judging the candidate on what the job requires."
+  },
+  {
+   "title": "Sleeves over the hands",
+   "scene": "Mr Adeyemi teaches maths to a Year 9 class. He notices that one pupil, Megan, pulls her jumper sleeves down over her hands whenever he\n  asks the class a question, and grips the cuffs from inside. When he calls on her by name, her foot, which has been jiggling under the desk,\n  stops dead, and she stares at her book. She usually answers that she does not know. Her written work is good.\n\n  Some teachers would read Megan's behaviour as sullenness or a lack of effort, and some of her previous teachers have. Mr Adeyemi tries\n  something different. For two weeks he stops calling on Megan without warning. Instead, before asking the class a question, he tells her quietly,\n  as he passes her desk, that he will ask her about the next one. When the question comes, her sleeves stay where they are and she answers,\n  correctly, in a quiet voice. By the end of the term she occasionally puts her hand up.\n\nMr Adeyemi also notices that on days when Megan has had a warning, her sleeves stay down for the whole lesson, not just the moment of the question. The fear of being called on had been colouring the entire hour.",
+   "misread": "The common misreading of a child like Megan is to take the pacifiers, the sleeves and the frozen foot, as a sign that she is withdrawn by temperament or simply not trying, and to respond by pressing harder: calling on her more, insisting she speak up, telling her to take her hands out of her sleeves.\n\nEach of those responses would have increased the very strain the pacifiers were managing, and taught Megan that being noticed meant being pressed.",
+   "betterRead": "Her pacifiers were pointers to a specific moment, being called on without warning in front of the class, and the stillness of her foot pointed to the same moment. Read that way, they suggested strain at the prospect of public performance, not a lack of knowledge or effort, and the written work supported that. Mr Adeyemi used the reading the way this chapter recommends: to reduce the pressure rather than to apply more. A warning, a little time, a quieter way to answer. He never mentioned the sleeves, never asked her to stop, and never told her what he had seen. The point of noticing was to change what he did.\n\nA year later, Megan's form tutor mentions that she has started speaking in assemblies. Nobody connects it to the maths lessons, and nobody needs to."
+  },
+  {
+   "title": "The hand at the back of his neck",
+   "scene": "Over a few months, Sarah notices that her husband, Liam, rubs the back of his neck whenever his mother is mentioned. He does it when his\n  sister rings, when Sarah suggests visiting, and once when a television advert shows an elderly woman in a care home. He does not do it at other\n  times. When she asks how his mother is, he says she is fine, getting older, nothing to worry about.\n\n  Sarah does not tell Liam what she has noticed. She does not say that his body is telling her something different from his words. Instead, one\n  Sunday when they are walking the dog, she says that she has been wondering how his mum is really getting on, and that she would like to go with\n  him next time he visits. Liam is quiet for a while. Then he says that his mother has been forgetting things, leaving the gas on, getting lost\n  on the way to the shops she has used for forty years, and that he has been too frightened to say it out loud.\n\nAfterwards, Sarah wonders how long Liam would have carried it alone if she had not asked. She also wonders how close she came to asking the wrong way, at the dinner table, in front of the children, with the words \"you always do that when I mention your mum\".",
+   "misread": "A less careful partner might have read the neck rub as irritation with his mother, or as something Liam was hiding, and confronted him with it: every time I mention your mum you do that, what aren't you telling me? Or she might have dismissed it as a habit and taken his words at face value.\n\nEither response would have been a mistake: the first would have made Liam defend himself, and the second would have left him alone with it.",
+   "betterRead": "The neck rub was a pacifier with a consistent pointer: the same topic, many times, and not otherwise. That made it worth acting on, but only in the way this chapter allows. A pacifier tells you where the pressure is, never what it is. Sarah used it to choose a topic and a moment, and then asked an open question, side by side, with an offer attached. She left the explaining to Liam, which is where it belonged, and gave him a setting in which explaining was easier. Months later, Liam told her that he had been waiting for someone to ask, and that he could not have started the conversation himself.\n\nThe same approach works with friends, colleagues and children: a repeated pacifier at a repeated topic tells you where to look, and the most respectful way to look is to offer an open door, not to point at what you saw."
+  },
+  {
+   "title": "Your own jaw",
+   "scene": "Craig, forty-five, sits with his father at the kitchen table to talk about his father's finances, which have become muddled since his mother\n  died. His father is proud and defensive. Halfway through, Craig's sister, who is listening on speakerphone, says afterwards that she could hear\n  in Craig's voice how angry he was. Craig is surprised; he thought he was being patient.\n\n  That evening, he watches a recording he had made of the conversation, with his father's permission, to keep track of the figures. He sees\n  himself working his jaw from side to side, rubbing his chin with the knuckles of one hand, sighing through his nose before answering, and gripping\n  his pen so that it taps the table. His father, across the table, looks at Craig's hands each time they move and becomes more defensive each\n  time.\n\nCraig also notices, watching the recording, that his father's own hands are still for most of the conversation, except when Craig's move. His father had been watching him far more closely than Craig had been watching his father.\n\nWatching it back, Craig counts eleven sighs in forty minutes. He has no memory of any of them. He does remember feeling, throughout, that he was being the patient one, and that his father was making things difficult for no reason.",
+   "misread": "Craig had been watching his father's body for signs of confusion or distress, and had not noticed his own at all. He thought his pacifiers were private, a way of managing his own frustration. His father read them as impatience and disapproval, and responded to them.\n\nHe had also assumed that his impatience was invisible because he had kept it out of his words, which is the same mistake he would have made if he had read his father's words and ignored his hands.",
+   "betterRead": "This chapter's final teaching point says that what you see in others is theirs to explain and yours to protect, and the same holds for what others see in you. Your own pacifiers leak into the room and change the conversation. The defence is not to suppress them, which tends to produce stiffness and other leakage, but to notice them early and deal with the strain underneath: a slow breath out, shoulders down, hands resting open on the table, a pause before answering. Craig tried it the following week, with a card in his pocket listing his three pacifiers. When he felt his jaw start to work, he breathed out and put his pen down. His father noticed nothing, but the conversation went better.\n\nHe also found, a little to his surprise, that the slow breath helped him as much as it helped the conversation. His frustration with his father was real, but it had been amplified by the strain of holding it in."
+  }
+ ],
+ "workedReading": {
+  "title": "The foot that stopped",
+  "scene": "You are in the pub with your friend Alex. As usual, his right foot is bouncing under the table, a steady jiggle that you have seen at every pint for ten years. He is telling a funny story about work, hands moving. You mention, in passing, that you saw his ex, Hannah, at a friend's party last weekend with her new partner. The foot stops dead. His hands come down to the table and wrap around his glass. He says, \"Oh, right. Good for her,\" and takes a long drink. A few seconds later the foot starts again, faster than before.\n\nAlex and Hannah split up six months ago, and Alex has said almost nothing about it since, except that it was for the best.",
+  "steps": [
+   {
+    "label": "Know the baseline",
+    "text": "The bouncing foot is Alex's baseline, as reliable as his laugh. Its stopping is therefore the change, not its presence. If you did not know him, you might have read the bouncing as nerves all evening and missed the moment that mattered. This is why stillness, as the chapter says, can leak more than movement.\n\nKnowing the baseline also saves you from the opposite error. All evening the bouncing foot has meant nothing, and you have not read anything into it."
+   },
+   {
+    "label": "Mark the timing",
+    "text": "The foot stopped within a second of a specific phrase: Hannah, with her new partner. The hands came to the glass at the same moment, and the drink followed. When the foot restarted, it was faster. Changes in three channels, at a named moment, make this a pointer rather than noise.\n\nThe restarting, faster, is part of the pointer too. Something that was held for a moment has been released, and with more energy than before."
+   },
+   {
+    "label": "Read the pointer, not a meaning",
+    "text": "Something about the mention of Hannah, or her new partner, or the party, or your having seen her, cost Alex effort. That is all the pointer says. It does not tell you whether he is hurt, jealous, relieved, embarrassed or simply caught off guard. The pacifier, gripping the glass and drinking, is the body managing whatever it was.\n\nIt is tempting to fill in the meaning from what you know, that they split up recently. Resist it. Your knowledge narrows the possibilities without choosing among them."
+   },
+   {
+    "label": "Consider effort",
+    "text": "Could it be mental effort rather than feeling? Possibly: he may be trying to remember who the new partner is, or working out how to respond politely. But effort usually comes with looking away and slowing speech, and Alex answered quickly and shortly, which fits managing a feeling better than searching for a thought.\n\nConsidering effort at all is a useful habit, because it reminds you that not every change is a feeling."
+   },
+   {
+    "label": "Decide whether to ease or press",
+    "text": "You could press: ask how he feels about it, say that he seemed bothered. That would put him on the spot in a pub, with the pacifier still working. Or you could ease: let the moment pass, change the subject back to his story, and leave the door open for later. The chapter is clear that a pointer is a reason to make things easier, not harder.\n\nIt is worth noticing how strong the urge to press can be when you care about someone. You want to help, and helping feels like getting him to talk. Often it is the opposite."
+   },
+   {
+    "label": "Ease, and leave a door",
+    "text": "You say that you only saw her briefly, and ask what happened next with his boss. Alex picks up the story, and his hands start moving again. Later, walking to the bus, you say that it must still be strange hearing about Hannah, and that you are around if he ever wants to talk about it. You say it once and do not repeat it.\n\nThe single, light offer, made side by side on the walk, gives him something he can come back to without making him respond now."
+   },
+   {
+    "label": "What happened",
+    "text": "Alex says nothing that night. A month later, after a five-a-side game, he tells you that the break-up had been his idea and that he had regretted it almost immediately, and that hearing about the new partner had been the first time he had admitted to himself that it was over. The foot had pointed you to the topic. Easing, and the door you left, let him choose when to walk through it.\n\nIt is also worth noticing what you never did: you never told Alex that his foot had stopped. He never needed to know that you had noticed."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Suppressing your own pacifiers",
+   "body": "Readers who learn that their self-touch is visible often try to stop it: sitting on their hands in interviews, clamping their legs still, forcing their hands away from their faces. This tends to backfire. Pacifiers do real work in regulating strain, and the evidence this chapter describes suggests that self-touch under stress may help. Suppressing them leaves the strain without its outlet, and it often shows up somewhere else instead: a rigid posture, a held breath, a tight voice, a foot that taps harder because the hands are pinned. A better approach is to work on the strain itself: breathe out slowly, drop the shoulders, rest the hands loosely and openly where they can move if they need to. A pacifier you allow is far less noticeable than one you are fighting.\n\nIf you find yourself in a situation where a pacifier would be genuinely distracting, such as giving a speech, choose a quiet one in advance, such as resting one hand lightly on the lectern, rather than trying to have none at all."
+  },
+  {
+   "title": "Treating pacifiers as a lie detector",
+   "body": "Many popular books and courses present the neck touch, the nose rub and the leg rub as signs of deception. They are signs of strain, and strain has many sources, including being suspected of something you did not do. Bond and DePaulo's analysis of deception research, described in this chapter's quiz, found people detecting lies at little better than chance, and nothing in the research on self-touch suggests a way around that. A man who touches his neck while denying something may be lying, or frightened of not being believed, or embarrassed by the question, or simply someone who touches his neck a great deal. The deception chapter later in this part explains why trying to catch lies from the body does more harm than good.\n\nThere is a further cost. People who have been taught that self-touch reveals lies sometimes start to watch their own hands anxiously in honest conversations, which makes them look exactly as uncomfortable as they fear."
+  },
+  {
+   "title": "Mistaking a body's needs for a mind's strain",
+   "body": "Not every touch is a pacifier. People scratch because they itch, from eczema, allergies, insect bites or dry skin. They rub their eyes because they are tired or wear contact lenses. They touch their noses because they have a cold. They fidget because they have ADHD, or because they need to move to concentrate, or because they stopped smoking last week. Some people have tics. Many autistic people stim, repeating movements that help them regulate, and Part V's chapter on neurodivergence explains why stopping those movements can cost them a great deal. Before reading self-touch as strain, ask whether the body has a simpler reason, and whether the movement is part of this person's normal range.\n\nWhen in doubt, look at the rate over time. A body's needs tend to produce steady patterns, such as scratching throughout a meeting, while strain tends to produce spikes at particular moments.\n\nA colleague who scratches her arm through every meeting has told you something about her skin, not her conscience. The pointer only becomes interesting when the pattern changes."
+  },
+  {
+   "title": "Pressing on the pressure point",
+   "body": "The most damaging misuse of this chapter is the one it was written to prevent: seeing a pacifier at a particular topic and using it as a weak spot. A negotiator who sees the other side's hand go to their neck when a deadline is mentioned, and then keeps returning to the deadline. A manager who sees an employee freeze at a question and keeps asking it. A partner who notices the other's discomfort about a subject and brings it up in every argument. Each is using what they read to increase someone's distress for advantage. It may work in the short term. It is also exactly what the ethics statement at the front of this book refuses, and it corrodes every relationship it touches.\n\nIf you notice that you have done this, the repair is the same as any other wrong: stop, acknowledge it if you can, and change how you use what you see.\n\nIt is worth remembering that the person under strain often knows exactly what you are doing, even if they cannot name it, and remembers it long after the negotiation or the argument is over."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is touching your nose a sign that you are lying?",
+   "a": "No. The idea comes partly from the story of Pinocchio and partly from popular writing that presented nose touching as a classic sign of deception, sometimes with a story about the nose becoming engorged when people lie. The evidence does not support it as a reliable sign. People touch their noses when they itch, when they have colds, when they are thinking, when they are uncomfortable, and when they are lying, and the last is no more common than the others. Like every pacifier, a nose touch is worth noting only as a change from baseline at a marked moment, and even then it tells you that something cost effort, not that something was false.\n\nIf you want a useful rule, it is this: the more famous a body-language sign is for lying, the less you should trust it."
+  },
+  {
+   "q": "Should I try to hide my own pacifiers in an interview?",
+   "a": "No; try to reduce the strain instead. Interviewers who know anything about this will expect candidates to touch their faces, shift and rub their hands; it is normal in a stressful setting, and good interviewers discount it. What helps is preparation that reduces strain at the source: practising your answers to the questions you dread most, especially about gaps or failures, until you can say them calmly. On the day, breathe out slowly before you answer, rest your hands loosely on your lap or the table, and give yourself permission to pause. If your hands still go to your neck now and then, let them.\n\nIf an interviewer ever comments on your hands or face, you are entitled to steer back to the substance: you were thinking, and here is your answer.\n\nIt can help to remember that the interviewer is also under some strain, and probably touching their own face too."
+  },
+  {
+   "q": "How can I tell effort from distress?",
+   "a": "Often you cannot, from the body alone, but there are clues. Effort tends to come with looking away, slower speech, pauses and a return to baseline once the thinking is done. Distress tends to come with changes in voice, breathing and facial tension, and may linger after the topic has moved on. Timing helps: changes that come with a hard question, such as a calculation or a memory test, lean towards effort, while changes that come with an emotionally loaded topic lean towards strain. The honest answer, as so often in this book, is to allow for both and to ask in a way that leaves room for either.\n\nWith people you know well, you will gradually learn their particular patterns. Some people go quiet when they think and loud when they are upset; others the reverse."
+  },
+  {
+   "q": "What should I do when I notice someone is under strain?",
+   "a": "Make things easier, in small ways, without announcing it. Slow your own pace. Leave a pause. Ask a simpler or more open question, or move to a different topic for a while and come back later. Offer a break, a glass of water, or a way to finish the conversation another time. If you are in a position of power over the person, as an interviewer, manager, teacher or officer, be especially careful, because they cannot easily ask for these things themselves. What you should not do is tell them what you have seen, ask why they touched their neck, or press harder on the topic. The point of noticing strain is to reduce it.\n\nIt is worth practising these moves in ordinary conversations, so that they are available to you when a conversation becomes difficult. Under pressure, people do what they have practised."
+  },
+  {
+   "q": "What about children's pacifiers?",
+   "a": "Children pacify constantly, and many of their pacifiers are the adult ones in plainer form: thumb sucking, hair twirling, chewing sleeves, pulling jumpers over hands, rocking, holding a favourite object. They are normal, and most fade or change form with age. Shaming a child for them, or forcing them to stop, removes a way of coping without addressing whatever made coping necessary. If a child's pacifiers increase sharply, or appear in new settings, treat it as you would a change in an adult's baseline: notice when it happens, think about what has changed in their life, and ask gently, perhaps side by side, perhaps through play.\n\nTeenagers often move their pacifiers to their phones: scrolling, turning the phone over, checking it without reading. The same rule applies. Notice the timing, and ask rather than confiscate."
+  },
+  {
+   "q": "Do pacifiers differ from person to person?",
+   "a": "Very much. Most people have a small repertoire of favourites, often two or three, which they use far more than others: one person rubs the back of the neck, another touches the lips, another smooths their trousers or turns a ring. These habits are surprisingly stable over years, which is why the drill in this chapter asks you to map your own. It also means that learning the pacifiers of the people you see most often is far more useful than learning a general list. A neck touch from someone who never touches their neck means more than a neck touch from someone who does it twenty times an hour.\n\nIt also means that two people can use the same movement for very different reasons. Your colleague's chin rub may be her thinking face; your brother's may be his tell for irritation."
   }
  ],
  "watch": [
