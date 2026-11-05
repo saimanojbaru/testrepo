@@ -81,6 +81,20 @@
    "doCaption": "Telling him, privately, what you have noticed.",
    "dontCaption": "Telling the team he is depressed.",
    "annotation": "Labels can harm, spread and be wrong. Describe what you have seen to the person himself, and leave the naming to him and his doctor."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_stand_slumped_side",
+   "doCaption": "Walking at his pace, beside him",
+   "dontCaption": "Leaving him to his slow walk alone",
+   "annotation": "A slowed, stooped walk can be a change from who he was. Matching his pace, side by side, makes company and talk easier."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_stand_hands_wring",
+   "doCaption": "Sitting with him and asking how he's been",
+   "dontCaption": "Reading restless hands as anger",
+   "annotation": "Low mood does not always look slow: pacing, picking and a short fuse can hide it. Ask about the changes, privately."
   }
  ],
  "caseStudy": "Kevin, forty-one, notices it first on the phone. His older brother Neil, fifty-six, was made redundant in the spring after thirty years at the same firm. Neil used to ring on Sundays and talk for an hour. Now Kevin rings him, and the calls are short. Neil's voice is slow and flat, his answers come after long pauses, and he never laughs.\n\nWhen Kevin visits in June, he sees more. Neil walks to the shop with him slowly, slightly stooped, letting Kevin get ahead. He has not shaved for days. There is unopened post on the hall table. He says he is just tired, sleeping badly, waking at four every morning. Their mother tells Kevin that Neil has let himself go and needs to pull himself together.\n\nKevin suggests a walk along the river they used to fish as boys. Side by side, after a while, he says that Neil has seemed slowed down since the job went, and asks how he really is. A long silence. Then Neil says that nothing seems to matter, that he does not enjoy anything, and that he feels like a waste of space. Kevin asks him, plainly, whether he has had thoughts of not wanting to be here, or of ending his life. Neil looks at him, surprised, and says no, not that, but he has felt flat like this for months.\n\nKevin tells him that it sounds like more than tiredness, that it is common after a big loss like a job, and that he thinks Neil should see his doctor. He offers to sit with him while he rings. Neil agrees, and the doctor sees him that week, runs some blood tests to rule out physical causes, and refers him for talking therapy.\n\nKevin starts driving over on Saturday mornings for a walk. In August, on the phone, Neil laughs at something. Kevin writes it down.",
@@ -99,6 +113,10 @@
     "For each change, list at least three possible causes, including physical ones.",
     "Mark any person with several changes lasting more than a couple of weeks.",
     "Write one behaviour-first question you could ask that person."
+   ],
+   "variations": [
+    "Do the exercise for someone you see only occasionally, and notice how much harder it is to judge change without a recent baseline.",
+    "Write down your own usual walk, voice and habits, as if for someone who might one day need to notice a change in you."
    ]
   },
   {
@@ -110,6 +128,10 @@
     "Compare each with how they usually sound.",
     "Write down any change you notice.",
     "If a voice has changed and other things have too, plan a time to see the person in person."
+   ],
+   "variations": [
+    "Listen to a voice message or recording from someone you know well from a year ago, and compare it with how they sound now.",
+    "Notice your own voice on your next few calls, and how it changes when you are tired or low."
    ]
   },
   {
@@ -121,6 +143,10 @@
     "For each marked phrase, write a replacement that offers company, patience or practical help.",
     "Say the replacements aloud.",
     "Keep the list somewhere you will see it."
+   ],
+   "variations": [
+    "Ask someone who has been through a low period which phrases helped them and which hurt, and add their answers to your list.",
+    "Write the replacements as text messages, since many conversations about mood now begin by text."
    ]
   },
   {
@@ -132,6 +158,10 @@
     "Find the crisis resources in this app for your region.",
     "Write three practical offers you could make to someone who needs a doctor.",
     "Rehearse saying one of them aloud."
+   ],
+   "variations": [
+    "Find out what support your workplace, college or community offers, such as an employee assistance line or a peer support group.",
+    "Write down how you would explain, in one sentence, why seeing a doctor about tiredness or sleep is an ordinary thing to do."
    ]
   },
   {
@@ -143,6 +173,10 @@
     "Write down who noticed, if anyone, and what they did.",
     "Write the first change that appeared, before you knew anything was wrong.",
     "Note one person you would want to tell if that change appeared again."
+   ],
+   "variations": [
+    "Share your list of early changes with one person you trust, and ask them to tell you if they ever notice them.",
+    "Write down what helped you most when your mood lifted last time, so that you can reach for it sooner next time."
    ]
   }
  ],
@@ -224,6 +258,45 @@
    "explain": "Labels can harm, spread and be wrong, and his health is his to share. Raising what you have noticed with him privately, and encouraging him towards a doctor, respects him and helps far more.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Roughly how many people did the World Health Organization estimate were living with depression in 2019?",
+   "options": [
+    "Around 280 million, roughly one adult in twenty worldwide",
+    "Around 28 million, or about one adult in every two hundred and fifty",
+    "Around 2.8 billion, which would be more than one adult in every three",
+    "Nobody has ever tried to estimate it, because depression cannot be measured"
+   ],
+   "answer": 0,
+   "explain": "The WHO estimated about 280 million people were living with depression in 2019, about one adult in twenty. Most of them were not in a doctor's office, which is why the people around them matter.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Since retiring, your husband has slowed down, gained weight, feels cold and says his mind is foggy. A friend says he is clearly depressed. What fits this chapter best?",
+   "options": [
+    "Agree with your friend and book him a counsellor without telling him",
+    "Accept that this is simply what happens to men when they get older",
+    "Tell him what you've noticed and encourage him to see a doctor",
+    "Tell the family that he is depressed so that they can all support him"
+   ],
+   "answer": 2,
+   "explain": "None of these signs is a diagnosis. Slowing, weight gain, feeling cold and mental fog can come from low mood or from physical illness, such as an underactive thyroid, so a doctor's visit covers every possibility.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a person who is depressed will always look sad. What does this chapter say?",
+   "options": [
+    "It is right, since sadness on the face is the defining sign of depression",
+    "It is right for men, though women with depression rarely look sad",
+    "Some people become restless, irritable or simply flat instead of sad",
+    "It is wrong, since people who are depressed always look perfectly normal"
+   ],
+   "answer": 2,
+   "explain": "Low mood often shows as irritability, restlessness, agitation, tiredness or flatness rather than sadness, especially in men, teenagers and older people. The absence of tears is not reassurance.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +325,110 @@
    "work": "The Noonday Demon: An Atlas of Depression",
    "author": "Andrew Solomon",
    "note": "Scribner, 2001. A personal and wide-ranging account of what depression is like from the inside."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The girl everyone called moody",
+   "scene": "Zara, fifteen, has always been the loud one in her family: netball three times a week, friends round every weekend, arguments with her\n  older brother about everything. Over the autumn term she changes. She gives up netball, saying she is bored of it. She spends most of the\n  weekend in her room with the curtains closed, sleeping until two in the afternoon. At dinner she pushes food around her plate and goes back\n  upstairs as soon as she can. When her mother, Amira, asks what is wrong, Zara snaps that nothing is and that everyone should leave her alone.\n\n  Amira's sister tells her not to worry. Fifteen-year-olds are moody, she says, it is hormones, and Zara will grow out of it. Amira half believes\n  this. She remembers being fifteen herself.\n\n  But Zara's form tutor rings in November to say that Zara has been sitting alone at lunch, that her grades have dropped in every subject, and that\n  she cried in an English lesson when the class read a poem about loss. The tutor asks whether anything has happened at home.\n\nAmira has also noticed that Zara has stopped posting on social media, which she used to do several times a day, and that her phone, once never out of her hand, now lies face down on her bedside table for hours. Her best friend, Leila, has not been round since half-term.\n\nZara's brother, who usually teases her mercilessly, has gone quiet around her too. He tells Amira that Zara told him to leave her alone \"for ever\" and slammed her door, and that he does not know what he did.",
+   "misread": "The family read Zara's withdrawal, sleep and irritability as ordinary adolescence, because some of each is normal at fifteen and because \"moody teenager\" was a ready explanation. The label let everyone stop looking at how much had changed, and for how long.\n\nIt also put the change down to her age, which made it seem temporary, so nobody asked how long it had been going on or whether it was getting worse.\n\nAnd because Zara snapped when asked, the family learned to stop asking, which made the snapping look like the problem when it was only the most visible part of it.",
+   "betterRead": "Teenagers are often moody, and many of the changes Zara showed can be ordinary for a short time. What made her case different was the cluster and the duration: a lost interest in something she had loved for years, long sleep, little appetite, withdrawal from friends, falling grades and tears, all lasting most of a term. In young people, low mood often shows as irritability rather than sadness, which makes it easy to read as attitude. A better reading does not diagnose. It notices the scale of the change and asks about it gently, at a quiet moment. Amira waited until she was driving Zara to her grandmother's, and said, \"You've stopped netball, and you seem really tired lately. I'm not cross. I just want to know how you're doing.\" Zara cried, and said she felt like nothing mattered any more. Amira listened, and the next week she took Zara to their doctor, who referred her to the local young people's mental health service.\n\nAmira also told the form tutor what had happened, so that school could support Zara in the meantime, and she asked Zara first whether that was all right."
+  },
+  {
+   "title": "The retired engineer who stopped gardening",
+   "scene": "Dennis, sixty-six, retired from a career as a civil engineer last year. For the first few months he was busy: a holiday with his wife,\n  Sue, a new shed, a vegetable bed. Over the winter he slows down. He sits in his chair most of the day, often dozing. The vegetable bed is\n  untouched. He has put on weight, feels the cold even with the heating on, and says his mind feels \"foggy\". He walks more slowly and his voice\n  has become hoarse and flat. When Sue suggests a walk, he says he cannot be bothered.\n\n  Sue's friends tell her that this is what retirement does to men who lived for their work, and that he is probably depressed. One gives her the\n  number of a counsellor. Dennis's brother says he is just getting old.\n\n  Sue is not sure what to think. Dennis does not seem sad, exactly. He seems slowed down, as if someone had turned his volume low.\n\nDennis has also stopped doing the crossword, which he finished every morning for forty years. He says the clues do not make sense any more, and he laughs about it, but Sue can see that it bothers him.\n\nSue also notices that his hands are dry and that he has started wearing a jumper in bed. When their grandson visits, Dennis plays with him for ten minutes and then has to sit down, breathless, which he puts down to being out of shape. He jokes that retirement has turned him into an old man overnight.",
+   "misread": "Sue's friends read the slowing, the weight gain and the loss of interest as depression after retirement, and his brother read them as age. Both readings were plausible stories about a man in Dennis's position, and neither had been checked.\n\nThe friend's counsellor and the brother's shrug pointed in opposite directions, and both would have skipped the one step that covers every possibility: a doctor's examination.\n\nNeither of them asked Dennis what he thought was happening, or noticed that he did not describe himself as sad at all. His own word, foggy, was closer to the truth than either of theirs.",
+   "betterRead": "This chapter's most important block says that none of these signs is a diagnosis, and Dennis's case shows why. Slowness, tiredness, weight gain, feeling cold, a hoarse voice and mental fog can come with low mood, and they can also come from physical illnesses, among them an underactive thyroid, anaemia, diabetes, heart problems and the side effects of medication. A reader cannot tell them apart. Sue did the right thing for every possibility at once: she told Dennis what she had noticed, without a label, and asked him to see their doctor about the tiredness. He agreed, mostly to please her. Blood tests showed that his thyroid was underactive. With treatment, over the following months, his energy and his voice came back, and in the spring he dug the vegetable bed. The counsellor's number stayed in the drawer, though Sue kept it in case.\n\nSue also noted that a reading of depression would not have been wrong to keep in mind. Low mood and physical illness often come together, and the doctor asked Dennis about both."
+  },
+  {
+   "title": "The chef who could not keep still",
+   "scene": "Marco, thirty-five, is head chef in a busy restaurant. Over the summer his staff notice that he has become hard to be around. He paces\n  the kitchen during service even when nothing is wrong, picks at the skin around his nails until it bleeds, and cannot sit through the weekly\n  meeting without getting up. He snaps at a junior chef over a sauce and apologises ten minutes later, looking close to tears. He has lost weight,\n  and the front-of-house manager, Bea, has seen him in his car before opening, sitting with his head on the wheel.\n\n  The owner thinks Marco is stressed by a bad review and needs a holiday. One of the line cooks thinks he must be using something to keep going.\n  Bea thinks he seems angry all the time, and has started to avoid him.\n\n  When Bea finally asks him, during a quiet afternoon, whether he is all right, Marco says he cannot switch his head off, that he wakes at three\n  every morning and cannot get back to sleep, and that he cannot remember the last time he enjoyed anything, including cooking.\n\nMarco has been head chef for four years and has a reputation for calm under pressure. Staff who have worked with him longest say they have never seen him like this, and two have quietly asked Bea whether he is ill.\n\nMarco's partner has rung Bea once, which she has never done before, to ask whether everything is all right at work, because he has stopped talking about it at home.",
+   "misread": "The kitchen read Marco's restlessness as stress, anger or drug use, because those are the usual stories about a man who cannot keep still. Few of them considered that low mood does not always look slow.\n\nAnd Bea's avoidance, though understandable, meant that the person most likely to notice the pattern stopped looking at it just when it mattered most.\n\nThe suspicion of drugs, in particular, would have made it much harder for anyone to ask him kindly, and much harder for him to answer honestly.",
+   "betterRead": "Most people picture low mood as slowness: a slumped body, a quiet voice, a man who will not get out of his chair. But some people become restless and agitated instead: pacing, wringing their hands, picking at their skin, unable to settle, irritable and quick to tears. This agitation can look much more like anxiety or anger than sadness. The cluster that mattered in Marco's case was not the pacing alone but what came with it: lost weight, early waking, tears after a flash of temper, and, when he was finally asked, a loss of pleasure in the thing he loved most. A reader cannot tell what lies behind a cluster like that, and should not try. Bea's question, asked privately at a quiet time, did what watching could not. She suggested he see his doctor, and the owner, once Marco agreed to tell him, gave him a fortnight off and covered his shifts. His doctor diagnosed depression and they agreed on treatment. When he came back, he told Bea that her question had been the first time anyone had asked."
+  },
+  {
+   "title": "The smile that stopped at the mouth",
+   "scene": "Hannah, thirty-eight, leads a project team at an insurance company and is known for her energy. In meetings she still smiles, nods and\n  says the right things. But her colleague Ade, who has worked beside her for five years, notices that something has changed. Her smiles appear on\n  cue and vanish as soon as nobody is looking at her; they move her mouth but not her eyes. Her emails, which used to arrive within the hour, now\n  take days, and are shorter. On video calls she pauses for a long time before answering questions, and her voice is lower and flatter than he\n  remembers. She has stopped bringing in her lunch and has stopped talking about her running.\n\n  Nobody else in the team seems to notice. Hannah's manager tells Ade that her work is fine and that she is \"as cheerful as ever\".\n\n  Ade is not sure whether it is his place to say anything. He is not her manager, and she has never talked to him about her personal life.\n\nAde has also noticed that Hannah's camera is off on more calls than it used to be, and that she logs in at the last minute rather than early, as she always did, to chat before the meeting starts.\n\nAde also remembers that Hannah's father died last spring, and that she took only two days off. She mentioned it once, in the kitchen, and changed the subject before he could say anything.",
+   "misread": "The team read Hannah's smiles as cheerfulness, because the smiles were there. They did not notice which muscles were moving, how quickly the smiles disappeared, or the slower voice and longer pauses that came with them.\n\nThe manager also measured her by her work, which was still fine, and took that as proof that she was. Many people in low periods keep their work going long after everything else has slipped.\n\nAde's own hesitation was a misreading too: that only a manager or a close friend has the right to notice. A colleague who has sat beside someone for five years often sees more than either.",
+   "betterRead": "The chapter on the face described the difference between a smile that involves the eyes and a polite smile with the mouth alone. In low periods, polite smiles often remain while felt ones become rarer, which can keep a person looking fine to everyone who sees them only briefly. Ade had something the others did not: five years of baseline. The change in her voice, her pauses, her emails, her lunches and her running made a cluster that the smile could not cancel out. He did not mention smiles or moods. He waited until they were walking back from a meeting and said, \"You've seemed really tired lately, and I've noticed you've stopped talking about your running. Is everything all right?\" Hannah said that she had been struggling for months and had been determined that nobody at work would know. She thanked him, and said it was a relief that somebody had.\n\nAde did not tell anyone else what she had said, and he did not mention it again unless she did."
+  }
+ ],
+ "workedReading": {
+  "title": "The fishing trip",
+  "scene": "For fifteen years, Tom and his friend Rich have spent a weekend each October fishing on a lake in the Lake District. Rich is usually the organiser: up first, kettle on, full of plans and terrible jokes. This year Tom arrives to find Rich still in bed at ten. Over the weekend Rich sleeps a great deal, eats little, and sits on the bank for hours without casting. His walk to the water is slow and stooped. He answers questions after long pauses, in a low, flat voice. He has not shaved, and he forgot to bring the bait, which in fifteen years he has never done. When Tom asks if he is all right, Rich says he is just tired, that work has been mad, and that he is glad to be away from it.\n\nTom has had his own hard years, and he remembers how much he hated being asked whether he was all right. He also remembers that the friend who finally asked properly, on a long drive, was the one who helped.\n\nTom also knows that Rich lives alone since his divorce two years ago, and that the October weekend is one of the few fixed points in his year. If anyone is going to notice, this weekend is probably when it will happen.",
+  "steps": [
+   {
+    "label": "Compare with the baseline",
+    "text": "Tom has fifteen October weekends to compare this one with. He notes how far Rich is from his usual self: the organiser now forgetting the bait, the early riser sleeping till ten, the talker answering after long pauses. The size of the change matters, and so does its spread across so many parts of his behaviour.\n\nHe also notes that he has seen Rich tired before, after a new baby and after a house move. Tired Rich was still the first up and still made bad jokes. This is different.\n\nHe also notes that Rich's mood seems lowest in the mornings and lifts a little by evening, though never back to the old Rich. Tom does not know what that means, but he files it as something Rich might want to mention to a doctor."
+   },
+   {
+    "label": "List what has changed",
+    "text": "He lists, in his head, only what he has seen: more sleep, less food, a slower and more stooped walk, long pauses, a flat voice, no jokes, not shaving, not fishing, forgetting things. He notes that some of it fits tiredness from work. He also notes that tiredness does not usually stop a man doing the thing he looks forward to all year.\n\nHe notes, too, the things that have not changed. Rich is still kind, still asks after Tom's children, and still thanked him for driving. That matters: whatever is happening, it has not changed who Rich is.\n\nHe also notices that Rich keeps apologising: for sleeping late, for forgetting the bait, for being boring company. In fifteen years, Rich has never apologised for being himself."
+   },
+   {
+    "label": "Consider every explanation",
+    "text": "He makes himself think of other causes. Rich could be physically unwell. He could be on new medication. He could be grieving something Tom does not know about. He could be drinking more than usual. He could be exhausted by work, as he says, or low in mood, or several of these at once. Tom notes that he cannot tell which, and that it is not his job to decide. His job is to ask.\n\nHe also reminds himself that the most likely explanation is not always the right one, and that his job this weekend is not to find the explanation at all.\n\nHe also thinks about what he would want if their places were swapped. He would want Tom to ask, once, kindly, and then to let him answer in his own time."
+   },
+   {
+    "label": "Choose a side-by-side moment",
+    "text": "He waits until the second afternoon, when they are both sitting on the bank with their lines in the water. There is nobody else around, nowhere they need to be, and something to look at that is not each other. If Rich does not want to talk, they can simply carry on fishing.\n\nHe also chooses a time when neither of them has been drinking. They have a few beers in the evenings, and Tom does not want the conversation to happen when either of them might not remember it clearly.\n\nHe also decides in advance what he will do if Rich says he is fine: accept it, say he is around, and ask again, lightly, on the drive home if the weekend does not change."
+   },
+   {
+    "label": "Ask about behaviour, not mood",
+    "text": "Tom says, \"You've slept a lot this weekend, mate, and you've barely touched your food. It's not like you. How have things really been?\" He does not say \"depressed\", and he does not suggest an answer. Then he looks back at the water and waits, for as long as it takes.\n\nHe also avoids asking several questions at once. One question, then silence, gives Rich room to answer in his own time and his own words.\n\nHe also keeps his tone ordinary, as if he were asking about the weather or the fishing. A question asked in a serious, worried voice can feel like an alarm going off, which makes it harder to answer calmly."
+   },
+   {
+    "label": "Wait through the pauses",
+    "text": "Rich says nothing for nearly a minute. Then, slowly, he says that things have been bad since the summer, that he wakes at four every morning, that nothing feels like anything and that he only came because he did not want to let Tom down. Tom does not rush to reassure him, and does not fill the pauses. He says it sounds like a really hard few months, and asks how long it has felt like this.\n\nWhen Rich stops talking, Tom thanks him for telling him, and says he is glad Rich came. They sit for a while longer, and Rich casts his line for the first time that weekend.\n\nHe also notices that Rich's voice, once he starts, gets a little faster and a little warmer, as if saying it aloud has taken some of the weight off."
+   },
+   {
+    "label": "Make the next step practical",
+    "text": "When Rich has said more, Tom asks whether he has talked to his doctor. Rich says he has not, because he does not know what he would say. Tom suggests he start with the sleep and the tiredness, and offers to sit with him while he books an appointment on Monday. Tom also asks, carefully, whether things have got so bad that he has thought about not wanting to be here, as 2.13 describes, ready to get help the same day if the answer is yes. Rich says no, just stuck. On Monday morning Tom texts him, and Rich replies that he has booked the appointment for Thursday.\n\nTom also asks Rich whether there is anyone else he would like to know, such as his partner, and whether he would like Tom to be there when he tells them. Rich says he will tell her himself, but thanks him for asking."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading low mood as a character flaw",
+   "body": "The slowness, neglect and withdrawal of low mood look, from outside, very like laziness, ingratitude or selfishness. A man who has stopped shaving has let himself go. A woman who no longer returns calls is rude. A teenager who sleeps all day is idle. These readings feel obvious, and they are often wrong. They also do harm, because people in low periods already tend to blame themselves, and hearing the same judgment from others confirms it. Before reaching for a judgment about character, look at the change: has this person always been like this, or have they changed? A change in someone you have known for years is information about their state, not their worth.\n\nIt also helps to remember that people in low periods often hide the worst of it from the people they love most, out of shame or a wish to protect them. What you see may be the part that could not be hidden.\n\nChildren are especially vulnerable to this reading. A child who has stopped doing homework, stopped playing and started sleeping in the afternoon is often told off for laziness. Asking what has changed, and why, is a better first move than any sanction."
+  },
+  {
+   "title": "Deciding that someone is depressed",
+   "body": "The opposite mistake is to see the signs in this chapter and conclude that someone is depressed, and then to say so, to them or to other people. Depression is a diagnosis, made by a professional after ruling out other causes, and the signs a reader can see are shared with grief, physical illness, medication, exhaustion, alcohol and ordinary hard times. Telling someone they are depressed can frighten them, insult them or send them down the wrong path, as it nearly did for Dennis. Telling other people is worse. Describe what you have noticed, to the person and only to them, and let a doctor do the diagnosing.\n\nThere is a further reason to avoid labels. Some people, told that they look depressed, become more anxious about it, and others become defensive and refuse to see anyone. A neutral description of what you have noticed keeps more doors open.\n\nIt is also worth remembering that a person may already have a diagnosis, and treatment, that you know nothing about. Your observations are still worth sharing kindly, but your conclusions add nothing to what their doctor already knows."
+  },
+  {
+   "title": "Saying the phrases that make it worse",
+   "body": "\"Cheer up.\" \"Look on the bright side.\" \"Other people have it worse.\" \"You've got so much to be grateful for.\" \"Have you tried exercise?\" Each is usually meant kindly, and each tends to land as a sign that the speaker does not understand, and that the low mood is a choice the person could simply stop making. They also invite the person to defend their misery, which digs it in deeper. Better phrases offer company and patience rather than correction: \"That sounds really hard.\" \"I'm here.\" \"You don't have to explain.\" \"Do you want me to come with you?\"\n\nIt also helps to resist comparisons with your own experience, even good ones. \"When I felt like that, running sorted me out\" is meant as hope, but it can sound like a prescription, and like a judgment if the same thing has not worked for them.\n\nAdvice about thinking positively can be especially hard to hear. Low mood often comes with a stream of negative thoughts that feel true, and being told to think differently can feel like being told you have failed at something else."
+  },
+  {
+   "title": "Expecting low mood to look sad",
+   "body": "Many readers look for tears and a downcast face, and miss low mood that looks like something else: irritability, restlessness, anger, constant tiredness, physical aches, drinking or overwork. In men, in teenagers and in older people especially, low periods often show in these less obvious ways, which is one reason they go unrecognised for so long. If someone close to you has changed in several ways over several weeks, the absence of sadness is not reassurance. Ask about what you have seen, whatever it looks like.\n\nPhysical complaints deserve particular care. Some people in low periods visit their doctor about headaches, backache, stomach trouble or tiredness, and never mention their mood. If someone you know has many physical complaints and has also changed in other ways, it is worth gently asking how they are feeling in themselves.\n\nOlder people deserve particular attention. Low mood in later life is often put down to age, illness or loneliness and left alone, when it can be treated as well in an eighty-year-old as in a forty-year-old.\n\nAnd some people in low periods are good company in short bursts, especially at work or in groups. A man who is funny for an hour at the pub may go home and sit in the dark. Brief contact is a poor guide to how someone is."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can you see depression in someone's face?",
+   "a": "You can sometimes see changes that often come with low mood: less facial movement overall, fewer and briefer smiles, more polite smiles with the mouth alone, a dropped gaze and shorter eye contact. But you cannot see depression itself. Tiredness, grief, illness, medication, shyness and many cultural styles can produce the same face, and plenty of people who are depressed keep their faces animated in company. The face is one channel among several, and the most useful signs are usually changes over time: the voice, the walk, sleep, appetite and the things a person has stopped doing.\n\nThe face is also the channel people manage most carefully in company, which is why the voice, the walk and the habits of daily life often give a clearer picture than any expression.\n\nSome people also find it hard to cry when they are low, and describe feeling numb rather than sad. A face that shows little may be showing exactly that: not sadness, but the absence of feeling."
+  },
+  {
+   "q": "Why does low mood slow the body down?",
+   "a": "Nobody fully understands why, but slowing is part of the standard descriptions of depression: slower movement, slower speech and slower thought. It may reflect changes in energy, sleep and motivation, and the effort that even ordinary actions can take in a low period. Michalak's research found a milder version of the same slowed walk in people put into a sad mood in the laboratory, which suggests that mood and movement are closely linked. That link has led to small studies on whether changing posture or walking style affects mood, but none of this suggests that someone can walk their way out of depression. The slowness is a sign, not a choice.\n\nIt also helps to know that slowness tends to lift with recovery. Mundt's research found that speech became faster and pauses shorter as people responded to treatment, which means the same signs that show the low period can also show it ending.\n\nIt also explains why ordinary tasks can feel so heavy. A person in a low period who takes an hour to get dressed is not being slow on purpose. Everything costs more than it used to."
+  },
+  {
+   "q": "How long should changes last before I worry?",
+   "a": "There is no exact rule for a reader, but duration is one of the most important things to notice. A bad day or a hard week is part of life. Clinical descriptions of depression usually require symptoms on most days for at least two weeks, and the people around someone often notice changes lasting much longer than that before anything is said. If several changes, in sleep, energy, appetite, interest, the voice or the walk, have lasted more than a couple of weeks, it is reasonable to ask the person about them and to suggest a doctor. If anything suggests they may be at risk, do not wait: 2.13 describes what to do.\n\nIt also helps to notice whether the changes are getting worse. A low period that is deepening, with more changes or stronger ones each week, is a stronger reason to ask soon than one that seems to be lifting.\n\nIt also helps to watch the things people do for pleasure. A loss of interest in hobbies, music, friends, sex or food that used to be enjoyed is one of the clearest changes there is, and one of the easiest for others to see.\n\nWhatever the timing, a kind question is never too early. You do not need to be sure something is wrong to ask how someone is, and you do not need to wait for a set number of weeks."
+  },
+  {
+   "q": "What if he will not see a doctor?",
+   "a": "Many people resist at first, and pressure usually hardens the resistance. Keep the door open, keep seeing him, and keep the offer practical: making the call together, driving him there, sitting in the waiting room. Some people find it easier to start with a physical symptom, such as sleep or tiredness, than to say they feel low. In some places, including England, people can refer themselves to talking therapies without seeing a doctor first, which may feel less daunting. If you are worried about his safety at any point, the advice in 2.13 overrides his reluctance: get help.\n\nIt may also help to ask what is stopping him. Some people fear being given medication, some fear being labelled, and some simply do not believe anything will help. Each fear has a different answer, and knowing which one he has makes your offer more useful.\n\nIt can also help to share the load. If he will not go to a doctor, would he speak to a pharmacist, a helpline or a friend who has been through something similar? Any conversation with someone who knows about low mood is better than none."
+  },
+  {
+   "q": "Can exercise help with low mood?",
+   "a": "Large reviews of trials have found that exercise, including walking, can reduce the symptoms of depression for many people, often alongside other treatments. But \"have you tried exercise?\" is one of the least helpful things to say to someone in a low period, because the energy to start is exactly what low mood takes away. If you want to help in this way, make it about company rather than advice: \"I'm going for a walk at eleven. Do you fancy coming?\" A walk side by side also makes talking easier, as the chapters on the I'm Fine mask and on side-by-side conversation describe.\n\nOther forms of activity can help in the same spirit: gardening together, cooking a meal, a short drive somewhere familiar. The aim is not fitness. It is a reason to get out of the chair, in company, without pressure.\n\nIt also helps to keep the invitation open without pressure. If he says no today, ask again next week, in the same easy way. The regular offer matters more than any single walk."
+  },
+  {
+   "q": "What should I do if I notice this in myself?",
+   "a": "Take it seriously, and tell someone. Your own signature, the first changes that appear when your mood drops, is one of the most useful things this chapter can help you learn, and the last drill asks you to write it down. If you notice several changes lasting more than a couple of weeks, book an appointment with your doctor, and start with whatever is easiest to say, such as sleep or tiredness. Tell one person you trust. And if you are having thoughts of not wanting to be here, use the crisis resources in this app now. Low mood is common, it is treatable, and asking for help is the most sensible thing you can do.\n\nIt can also help to tell your doctor what you have noticed in your body and habits, not only how you feel. Changes in sleep, appetite, energy and movement are things doctors ask about, and describing them can be easier than finding words for a mood.\n\nIt also helps to tell someone close to you what your early signs are before they appear. People who know what to look for can notice sooner than you can, and can ask in a way you have already agreed you would want."
   }
  ],
  "watch": [
