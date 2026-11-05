@@ -81,6 +81,20 @@
    "doCaption": "Letting him go, and agreeing when to talk again.",
    "dontCaption": "Following him when he walks off to cool down.",
    "annotation": "In recovery the body stays primed. Space now, and the real conversation in the calmer period afterwards."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_face_to_face",
+   "doCaption": "Angled, with space and open hands",
+   "dontCaption": "Squaring up, face to face, as his voice rises",
+   "annotation": "Facing someone squarely mirrors a confrontation. Turning to an angle, keeping your hands visible and leaving space lowers the stakes."
+  },
+  {
+   "doPoseId": "p_walk_slow_down",
+   "dontPoseId": "p_stand_freeze",
+   "doCaption": "Seeing the quiet climb, and pausing",
+   "dontCaption": "Mistaking his stillness for calm",
+   "annotation": "Some anger goes silent and still. Treat a sudden stillness and a clipped voice as a rung on the ladder, and step back early."
   }
  ],
  "caseStudy": "Gavin, forty-three, and his son Josh, fifteen, have been arguing more since Josh started his exam year. The rows follow a pattern. Gavin asks about revision, Josh mutters, Gavin's voice gets louder, Josh stands up, Gavin stands up, and within a few minutes they are shouting across the kitchen and Josh slams out. Afterwards Gavin goes to the garage and hits the punch bag, which he believes helps. It doesn't seem to.\n\nAfter one bad row, Gavin's wife suggests he look at what actually happens. He thinks back through the last few arguments and finds his first rung: his jaw sets and he hears himself say *Look*, every time, just before his voice rises. Josh's first rung is a hard stare at the floor and arms folded tight. By the time either of them stands up, nobody is listening.\n\nAt a quiet moment, over a takeaway, Gavin suggests a deal. Either of them can say *pause*, and they both stop for half an hour, no slamming, and then come back. Josh rolls his eyes but agrees. Gavin stops going to the punch bag after rows and takes the dog round the block slowly instead.\n\nThe next time Gavin hears himself say *Look*, he stops, breathes out, and says *pause* himself. Josh looks surprised. Half an hour later, calmer, Gavin asks a different question: not about revision, but whether the exams are worrying him. Josh, looking at the floor, says he thinks he is going to fail and that Gavin will be disappointed. The anger in the kitchen had been fear on both sides.\n\nThey still argue. But the rows rarely reach the top of the ladder now, and they talk afterwards, in the car or on dog walks, about what they were actually arguing about.",
@@ -99,6 +113,10 @@
     "Mark the earliest change that appeared in all three.",
     "Write a short phrase or action you will use when you notice that first rung.",
     "Practise it by recalling one of the episodes and imagining using it at the right moment."
+   ],
+   "variations": [
+    "Ask someone who knows you well what they notice first when you are getting angry, and compare it with your own list.",
+    "Do the same exercise for a time you got angry at work, and see whether your first rung is the same as at home."
    ]
   },
   {
@@ -110,6 +128,10 @@
     "Agree how long the pause will last and where each of you will go.",
     "Agree that you will both come back and what you will do first when you do.",
     "Write the agreement down and keep it where you can both find it."
+   ],
+   "variations": [
+    "Practise using the agreed word in a mild disagreement first, so that it feels familiar when it is needed.",
+    "Agree a second, gentler signal, such as a hand on the table, for moments when a word would feel like too much."
    ]
   },
   {
@@ -121,6 +143,10 @@
     "Notice your breath, jaw and voice before and after.",
     "Compare it with a time you vented instead.",
     "Write down which helped more."
+   ],
+   "variations": [
+    "Try two different arousal-lowering activities on two different occasions, and compare how quickly each brought your breath down.",
+    "Note how long it takes for your breath, voice and shoulders to return to normal after an irritation, as a rough measure of your recovery."
    ]
   },
   {
@@ -132,6 +158,10 @@
     "For each stage, note the visible changes in face, voice and body.",
     "Note what each person did that pushed things up or brought them down.",
     "Write what you would have done at the earliest point."
+   ],
+   "variations": [
+    "Watch the same scene a second time and mark the moment you think a step down would most easily have worked.",
+    "Watch a scene in which someone de-escalates well, and list exactly what they did with their voice, body and words."
    ]
   },
   {
@@ -143,6 +173,10 @@
     "Write what you now think it was protecting: fear, hurt, shame or something else.",
     "Write a question you could have asked in the calm afterwards to reach that feeling.",
     "Do the same for one time you were angry yourself."
+   ],
+   "variations": [
+    "Ask someone who was angry with you in the past, at a calm moment, what was going on for them at the time.",
+    "Write down what your own anger guarded in two different episodes, and whether it was the same feeling both times."
    ]
   }
  ],
@@ -224,6 +258,45 @@
    "explain": "The low period after a peak is often when people are most ready to repair, but not immediately. Space now, then a calm conversation, often side by side, about what the row was really about.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Bushman's 2002 study, what happened to angry people who hit a punching bag while thinking about the person who had insulted them?",
+   "options": [
+    "They became much calmer, since hitting the bag released the built-up pressure",
+    "They came away angrier and more aggressive than those who sat quietly",
+    "They became no more or less angry, though they reported feeling more tired",
+    "They became friendlier towards the person who had insulted them afterwards"
+   ],
+   "answer": 1,
+   "explain": "Venting rehearsed the anger rather than draining it. People who hit the bag while thinking about the insulter were angrier and more aggressive afterwards than people who simply sat quietly.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "When you disagree, your partner goes still and quiet, his answers get shorter and his jaw sets. You want to resolve things now. What fits this chapter best?",
+   "options": [
+    "Keep pressing, since the argument has clearly not started yet",
+    "Raise your voice, so that he understands how important this is",
+    "See the quiet climb, use an agreed pause, and come back to it later",
+    "Assume he does not care, since he is showing no sign of anger at all"
+   ],
+   "answer": 2,
+   "explain": "Some people climb quietly, through stillness, short answers and a set jaw. Pressing pushes them higher. An agreed pause, used early, with a promise to return, lets both of you come back down.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that if you are frightened of your partner's anger, the answer is simply to get better at calming them down. What does this chapter say?",
+   "options": [
+    "It is right, since good de-escalation can manage any kind of anger at home",
+    "It is right, but only if you also avoid raising anything that might upset them",
+    "Fear of a partner's anger is a safety matter; talk to someone and seek support",
+    "It is wrong, since anger at home is always a sign of a perfectly healthy relationship"
+   ],
+   "answer": 2,
+   "explain": "The skills in this chapter are for ordinary climbs. Anger used to frighten or control is a safety issue, and the right response is support, including domestic abuse lines, not better technique.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +325,110 @@
    "work": "Anger: The Misunderstood Emotion",
    "author": "Carol Tavris",
    "note": "Revised edition, Simon & Schuster, 1989. A readable, evidence-minded book that challenged the venting myth early."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The man who got out of his car",
+   "scene": "Lee, thirty-eight, is driving home on a Friday evening with his partner, Nadia, when another car cuts across him at a junction. Lee brakes\n  hard and leans on the horn. At the next set of lights, the other driver, a man in his fifties, gets out of his car and walks back towards them.\n  His face is dark red, his jaw is set and his fists are clenched at his sides. He is shouting before he reaches them, and he bends down to Lee's\n  window, very close, and bangs on the glass with the flat of his hand.\n\n  Lee feels his own ladder climb at once. His jaw tightens, his breath goes high and fast, and his hand moves to the door handle. He wants to get\n  out and face the man. He starts to say something through the glass, and his voice comes out louder than he meant.\n\n  Nadia puts her hand on his arm and says, quietly, \"Lee. Look at him. Don't.\" The lights turn green behind the other car, and the drivers behind\n  them start sounding their horns.\n\nLee notices afterwards that he cannot remember the other car's colour, or what the man was shouting. All he remembers is the hand on the glass and the feeling of his own fist closing on the door handle.\n\nNadia has seen Lee lose his temper only twice in six years, both times in the car. She has noticed that he grips the wheel harder in traffic, and that his first rung is a sharp breath in through the nose. She heard it at the junction, before he even touched the horn.",
+   "misread": "Lee read the other driver's anger as a challenge to be met, and his own rising anger as a reason to meet it. He was reading the situation through his own climb, which made getting out of the car feel like the obvious next step.\n\nAnd because his own ladder was climbing, the most dangerous option felt like the brave one. Rising anger narrows attention, and it narrowed Lee's to a single, very bad choice.\n\nHe also read Nadia's hand on his arm, for a split second, as her siding with the other driver. Only afterwards did he see it as the thing that brought him back.",
+   "betterRead": "The other driver was near the top of the ladder: flushed face, set jaw, clenched fists, shouting, closing the distance and striking something. At that rung, conversation does not work and the only useful aims are space and safety. Nadia's better reading came from outside the climb. She saw what Lee could not, that two ladders were rising together and that getting out would put two men at the top of them on a road at night. The safe response at that point is not to engage at all: keep the doors locked and the window up, do not answer, look ahead, and drive away as soon as you safely can. Lee took his hand off the handle, breathed out, and when the car in front moved, he went round it. Five minutes later, still shaking, he told Nadia that he had been one second from getting out, and thanked her.\n\nThey also agreed, later that week, that if anything like it happened again, Nadia would say the same three words, and Lee would treat them as his signal to breathe out and look away."
+  },
+  {
+   "title": "The husband who went quiet",
+   "scene": "Siobhan and Pete have been married for nine years. Siobhan has always thought of Pete as a calm man. He never shouts. When they disagree,\n  he goes quiet. Recently, though, their arguments have been ending badly. They follow a pattern: Siobhan raises something, such as money or his\n  mother, and Pete's answers get shorter. He stops looking at her. His jaw sets, and he becomes very still, his hands flat on the table. His voice,\n  when he speaks, is low and clipped. Siobhan, who hates leaving things unresolved, keeps going, asking him to say what he thinks.\n\n  Eventually, without warning as far as she can tell, Pete stands up, says something cutting, and leaves the house. He comes back an hour later\n  and will not discuss it.\n\n  Siobhan tells her sister that Pete \"goes from nothing to slamming the door with no warning\". Her sister, who has watched them argue at\n  Christmas, says there was plenty of warning, just not the kind Siobhan was looking for.\n\nSiobhan has also noticed that Pete's quiet has got longer and colder over the past year, since he started a new job with a long commute. He used to go quiet for minutes; now it can last all evening.\n\nPete's father had a terrible temper, and Pete has told Siobhan more than once that he decided as a boy he would never shout at anyone. She has never connected that with the way he goes still.",
+   "misread": "Siobhan read Pete's stillness and quiet as calm, because she associated anger with noise. She kept pressing because she thought the argument had not yet started, when Pete was already several rungs up his ladder.\n\nShe also read his eventual walk-out as an attack on her, when it was more likely the only way he knew to stop himself saying something worse.\n\nAnd her wish to resolve things at once, which felt to her like honesty, felt to him like being cornered.",
+   "betterRead": "Not everyone climbs loudly. Some people's anger goes quiet and still: shorter answers, a set jaw, a fixed gaze or no gaze at all, hands pressed flat, a clipped voice. These are the same rungs as a louder climb, expressed through control rather than release, and they can mean that the person is working very hard not to explode. Pressing at that point pushes them up the remaining rungs. A better approach is the one this chapter describes for knowing your own ladder: agree a pause in advance, at a calm moment. Siobhan and Pete agreed that either of them could say \"I need twenty minutes\" when an argument was going wrong, and that the other would let them go without following, on the understanding that they would come back. The first time Pete used it, Siobhan found it very hard not to follow him. He came back in twenty-five minutes, and they talked for an hour.\n\nSiobhan also learned to recognise the first quiet rungs, and to name them lightly: \"I think we're getting somewhere hard. Shall we stop for a bit?\" Pete said it was the first time he had felt she could see him."
+  },
+  {
+   "title": "The son on the ward",
+   "scene": "Femi is a staff nurse on a busy medical ward. At visiting time, a man in his forties, Craig, comes to the nurses' station. His father,\n  eighty-three, was admitted two days ago, and Craig has just found him in a wet bed, his water jug out of reach. Craig's voice is loud and getting\n  louder. He is gripping the edge of the desk, his face is flushed and he is leaning across it. He says that the ward is a disgrace, that nobody\n  cares, and that he wants to see whoever is in charge right now.\n\n  Two patients' relatives are watching. A healthcare assistant behind Femi has gone very still. Femi feels her own shoulders rise and a defensive\n  answer forming: the ward is short of three staff, she has been on her feet for nine hours, and Craig's father was changed only an hour ago.\n\n  She also notices that Craig's eyes are wet.\n\nFemi has seen many angry relatives in twelve years of nursing, and she knows the ward's policy on aggression by heart. She also knows that most angry relatives are frightened relatives, and that the policy is a last resort, not a first one.\n\nBehind the curtain at the nearest bed, Femi can hear Craig's father calling his son's name, quietly, as if he were worried that Craig was in trouble. Craig hears it too, and for a moment he looks towards the bay, and then back at her, and his voice goes up again.",
+   "misread": "Craig read the wet bed and the jug out of reach as proof that nobody cared about his father. Femi's first, defensive reading was that she was being attacked unfairly, which was true, and which, acted on, would have pushed both of them further up the ladder.\n\nAnd the defensive answer forming in her mind was accurate in every detail, which made it all the more tempting, and all the more likely to push him higher.\n\nCraig's own reading also missed something: the staff were not indifferent, they were stretched. That did not make his anger wrong, but it meant that what he was angry about and who he was angry with were not quite the same.\n\nArguing with the content would also have turned the exchange into a contest about who was right, in front of an audience, which is the one setting in which almost nobody steps down.",
+   "betterRead": "Craig was in late escalation: loud, flushed, gripping, leaning in, demanding. At that rung, arguing with the content, however fair the argument, tends to push people higher. What helps is acknowledgement before explanation, a lower and slower voice, space and an offer of something concrete. Femi stepped round the desk, stood at an angle rather than squarely facing him, and said, \"You found your dad in a wet bed and couldn't reach his water. That's awful, and I'm sorry.\" She asked if he would come with her to his father's bedside so that they could put it right together. Craig's voice dropped by half. At the bedside, as she changed the sheets with him, he told her that his mother had died on a ward like this one, and that he was terrified the same thing was happening to his father. His anger had been guarding his fear. Femi listened, made sure the jug was in reach, and arranged for the ward sister to call him that evening.\n\nFemi also told the ward sister what Craig had said about his mother, so that whoever spoke to him next would know what his anger was guarding."
+  },
+  {
+   "title": "The review that climbed",
+   "scene": "Raj manages a sales team and is holding a difficult performance review with Steve, who has missed his targets for two quarters. The\n  meeting starts well. Ten minutes in, when Raj mentions a complaint from a client, Steve's jaw tightens and he says, \"That's not fair.\" Raj, who\n  had expected the meeting to be tense, answers firmly. Steve's voice rises. So does Raj's. Steve leans forward and starts listing the problems he\n  has had with the new software. Raj leans forward too and says that other people manage with the same software. Within two minutes they are both\n  speaking loudly, over each other.\n\n  Steve stands up, says he is not going to sit there and be blamed, and walks out. Raj, angry, follows him into the corridor and tells him to come\n  back and finish the meeting. Steve refuses and leaves the building.\n\n  The next morning, Raj calls Steve into his office first thing and says they need to talk about what happened yesterday. Steve's jaw tightens as\n  soon as he sits down.\n\nRaj has been a manager for only a year and has had little training in difficult conversations. He was promoted from the same team as Steve, and he knows that some of the team think Steve should have got the job.\n\nSteve's partner rings Raj's office that morning, before Steve arrives, to say that Steve did not sleep and is thinking of resigning. Raj, still annoyed, does not take the call.",
+   "misread": "Raj read Steve's first objection as defiance to be met with firmness, and then read each of Steve's rising rungs as a reason to climb himself. Afterwards, he read the morning as a fresh start, when Steve's body was still in the recovery stage of the day before.\n\nHe also took Steve's walk-out personally, as defiance, which made following him feel justified rather than reckless.\n\nHe also treated the meeting as a test of his authority, which made backing down feel like losing, when it would have been the quickest way to get the meeting back.",
+   "betterRead": "The ladder offers different ways down at each rung, and the first is the easiest. When Steve's jaw tightened and he said \"That's not fair\", a simple acknowledgement, such as \"It sounds like that complaint feels unfair to you. Tell me what happened,\" would probably have kept the meeting near the bottom rung. Instead, Raj matched Steve's volume and posture, and two ladders climbed together. Following him into the corridor turned a walk-out, which is often a person taking their own time-out, into a second confrontation. And reopening it first thing the next morning ignored the recovery stage, when people are still raw and quick to climb again. Raj's better approach, which he took after talking to his own manager, was to send Steve a short message saying that the meeting had gone badly, that he wanted to hear about the software problems, and suggesting they meet again later in the week. The second meeting stayed near the bottom of the ladder.\n\nHe also apologised, briefly, for following Steve into the corridor. Steve said he had been out of order too, and the apology cost Raj nothing."
+  }
+ ],
+ "workedReading": {
+  "title": "The tackle in the second half",
+  "scene": "Dele coaches a Sunday-league football team. In the second half of a close match, his centre-back, Liam, twenty-four, is fouled hard from behind and the referee waves play on. Liam gets up slowly. Dele watches him from the touchline. Over the next few minutes, he sees Liam's shoulders rise and his jaw set. Liam starts shouting at the referee after every decision, then at his own teammates. He goes into a tackle much harder than he needs to, and when the opposing striker says something to him, Liam turns and steps towards him, chest out, fists closing.\n\nLiam is one of the best players in the team and normally one of the calmest. Dele has known him since he was sixteen and has seen him lose his temper on the pitch only once before, two seasons ago, after his parents' divorce.\n\nDele also knows that the referee, a volunteer, has had a difficult afternoon and is unlikely to respond well to a player shouting at him. If Liam is sent off, he will miss the next three matches, and the team has no other centre-back.",
+  "steps": [
+   {
+    "label": "Name the trigger",
+    "text": "Dele notes the trigger: a hard foul that went unpunished, an injustice in Liam's eyes. Anger often starts with something experienced as unfair, and naming it helps Dele understand what Liam is climbing about. It is not the referee in general, or the striker. It is that one tackle.\n\nHe also notes that the trigger came on top of whatever Liam brought onto the pitch that morning, which Dele does not know yet. Triggers often land on a load that is already heavy.\n\nNaming the trigger also tells him what to acknowledge later. Liam will not be calmed by being told he was wrong to be angry. He may be calmed by hearing that the foul was bad."
+   },
+   {
+    "label": "Watch the early rungs",
+    "text": "In the minutes after the foul, Dele sees the early rungs: shoulders up, jaw set, more shouting, faster movement, a harder tackle. Each is a step up. He also notes that Liam has stopped talking to his own defenders, which he normally does constantly, and is playing alone. These are signs of a climb in progress, and they come well before the confrontation with the striker.\n\nHe also notes his own climb. He is annoyed with the referee too, and he can feel himself wanting to shout at him from the touchline. If he does, he will be adding noise to a player who already has too much.\n\nHe also sees the teammates reacting. Two of them have started avoiding passing to Liam, and the goalkeeper is shouting at him to calm down, which Dele can see is making it worse."
+   },
+   {
+    "label": "Act before the top",
+    "text": "Dele does not wait for the confrontation to become a fight. As soon as Liam steps towards the striker, he calls his name loudly and signals to the referee for a substitution. Taking Liam off is not a punishment. It is the equivalent of a time-out, offered before the top of the ladder, when it can still work.\n\nHe also chooses to call Liam's name rather than anyone else's, and in a firm, level voice, not a shout. A shout from the touchline would be one more voice on the pitch telling Liam what to do.\n\nHe also tells the substitute, quietly, to go and tell the striker's captain that Liam is coming off, so that the other team does not see it as a reaction to their player."
+   },
+   {
+    "label": "Space, an angle, a low voice",
+    "text": "When Liam comes off, red-faced and swearing, Dele does not confront him on the touchline. He hands him a water bottle, stands beside him rather than in front of him, and says, in a low voice, \"That was a shocking tackle on you. Sit down for ten minutes and I'll put you back on.\" He acknowledges the injustice before anything else, and he gives Liam something to do and a time to come back.\n\nHe also keeps the other players away. Two teammates come over to tell Liam to calm down, and Dele waves them back to the pitch with a smile.\n\nHe keeps the conversation to a few words. A man at this rung cannot take in much, and anything longer than a sentence or two will feel like a lecture."
+   },
+   {
+    "label": "Let the recovery happen",
+    "text": "Liam sits on the bench with his head down, breathing hard. Dele leaves him alone. After five minutes, Liam's breathing has slowed and his shoulders have dropped, though his face is still flushed. Dele knows that in the recovery stage people are still quick to climb again, so he does not talk about the incident, and he waits until the last ten minutes before putting Liam back on, by which time he looks like himself.\n\nHe also watches Liam's hands, which have been clenched since the foul. When they open, and Liam rests them on his knees, Dele takes it as one more sign that the recovery has begun.\n\nWhen he does put Liam back on, he says only, \"You're back. Talk to your defenders,\" which gives Liam something ordinary to do and reminds him of his usual role on the pitch."
+   },
+   {
+    "label": "Talk in the calm",
+    "text": "After the match, in the pub, Dele sits beside Liam and asks how he is. Liam apologises, and says he does not know what happened. Dele asks if anything else is going on. Liam says his dad has been in hospital all week, that he has hardly slept, and that when the referee waved play on, it felt like nobody ever stopped anything bad from happening.\n\nHe also chooses the pub, after the match, rather than the dressing room straight after the final whistle. By then the match is over, everyone has eaten, and Liam's body has had more than an hour to settle.\n\nHe also lets Liam choose where to sit. Liam takes the end of the bench, a little away from the others, and Dele sits next to him there rather than calling him over."
+   },
+   {
+    "label": "What happened",
+    "text": "Dele listens, tells him he is sorry about his dad, and says the team will understand if he wants to miss a few weeks. Liam says football is the only thing keeping him sane. They agree that if Liam feels himself going, he will put his hand up and Dele will take him off for a few minutes, no questions asked. Dele notes for himself that if he had waited for the referee to deal with it, Liam would probably have been sent off, banned, and left without the one thing that was helping.\n\nLater that season, Liam uses the signal twice. Both times he comes off for five minutes, drinks some water, and goes back on. He is not booked again all year.\n\nDele also tells the rest of the team, briefly and without details, that Liam has had a hard week and that they should look out for him. Several of them text Liam that evening."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Noticing anger only at the top",
+   "body": "Most people notice anger when it is loud: the shout, the slammed door, the fist on the table. By then it has climbed several rungs, and most of the ways down have gone. The earlier rungs are quieter and easier to miss: a tightening jaw, a shorter answer, a faster pace, a hard look at the floor, a sudden stillness. Learning to see them is the single most useful skill in this chapter, in other people and in yourself, because the help that works at the bottom of the ladder, an acknowledgement or a lighter tone, is so much easier to give than the space and safety that are all that remain at the top.\n\nIt also helps to learn your own early rungs, because they are often easier to notice than other people's. A man who can feel his jaw set has more time to choose what he does next than one who first notices his anger when he hears himself shouting.\n\nIt also helps to know that the earliest rungs often appear minutes or even hours before an outburst, in a bad mood that nobody named. A man who has been short all evening is not suddenly angry at ten o'clock. He has been climbing since six."
+  },
+  {
+   "title": "Climbing with them",
+   "body": "When someone's voice rises, ours tends to rise to meet it. When they lean in, we lean in. When they stand, we stand. Matching is automatic, and in a calm conversation it builds connection. In a rising argument it builds a second ladder alongside the first, so that two people climb together, each pushed up by the other. Breaking the match is deliberate work: lower your voice when theirs rises, slow down when they speed up, sit when they stand if it is safe to, angle your body rather than squaring up, and keep your hands open and still.\n\nMatching also happens in writing. An angry email answered within a minute, in the same tone, is a climb by keyboard. Waiting, and answering more calmly than you feel, does the same work as lowering your voice.\n\nMatching is especially hard to break when you feel you are in the right. A fair point, shouted back, is still a shout. Being right does not make climbing any safer."
+  },
+  {
+   "title": "Mistaking quiet for calm",
+   "body": "Some people climb in silence. Their answers get shorter, their faces go still, their voices drop and their hands press flat. To someone who expects anger to be loud, this can look like calm or even indifference, and they keep pushing, until the quiet person suddenly erupts or walks out, apparently without warning. The warning was there. Learn the quiet rungs of the people you live and work with, and treat a sudden stillness, a fixed stare or a clipped voice with the same respect you would give a shout.\n\nQuiet anger can also be turned inwards, showing as sulking, withdrawal or long silences that punish without a word. That is a different problem from the quiet climb, and it is worth naming gently, at a calm time, rather than in the middle of it.\n\nIn families, quiet climbers are often the ones who learned as children that loud anger was dangerous. Knowing that can make it easier to treat their silence with patience rather than frustration."
+  },
+  {
+   "title": "Treating fear of someone's anger as a communication problem",
+   "body": "This chapter teaches how to step down an ordinary climb. It does not teach, and cannot teach, how to manage someone whose anger is used to control or frighten you. If you are afraid of a partner's or family member's anger, if you change what you say and do to avoid setting them off, if their anger has ever included threats, breaking things, blocking your way or physical harm, that is a matter of safety, not of better de-escalation. Talk to someone you trust, and contact the domestic abuse lines in your country, which offer confidential advice. And if you are the one whose anger frightens the people you live with, services exist in many places for men who want to change, and using them is a strong thing to do.\n\nIf you are worried about a friend or family member's safety at home, the chapter on the ethics of reading people describes how to raise it carefully, without confronting anyone on a guess, and how to make sure they know that help exists.\n\nIt also helps to know that abuse does not always look like rage. Some of the most controlling people are calm in public and frightening only at home. Trust what you know about how someone makes you feel, more than how they appear to others."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is anger always a bad thing?",
+   "a": "No. Anger is a response to something experienced as unfair, threatening or in the way, and it can be useful. It can signal that a limit has been crossed, give someone the energy to stand up for themselves or others, and push people to change things that are wrong. Carol Tavris's book on anger argues that the problem is rarely the feeling itself, but what people do with it. The aim of this chapter is not to stop anyone feeling anger. It is to help people notice it early, express it without harm, and help each other down the ladder before it costs them something they value.\n\nIt also helps to separate anger from aggression. Anger is a feeling; aggression is an action. A man can be very angry and still speak calmly, leave the room or write a firm letter. The ladder is about keeping the feeling from turning into actions he will regret.\n\nIt is also worth noticing what your anger tends to be about. Anger that rises again and again over the same thing may be pointing at something that needs to change, such as a workload, a boundary or an unspoken hurt."
+  },
+  {
+   "q": "Why does venting feel good if it does not help?",
+   "a": "Because it can bring a brief sense of relief, and because shouting or hitting something matches what the body is primed to do. But Bushman's experiments found that people who hit a punching bag while thinking about the person who had angered them came away angrier and more aggressive than people who had sat quietly. Venting seems to rehearse the anger rather than drain it, keeping the body aroused and the grievance fresh. The relief is real but short, and it can make the next episode more likely. Activities that bring arousal down tend to work better.\n\nIt also helps to notice that venting usually involves rehearsing the story of the grievance. Exercise that takes your mind off the grievance, such as a game you have to concentrate on, is different from exercise spent replaying it.\n\nIt also helps to notice what venting does to the people around you. Even when it is aimed at a pillow or a bag, shouting and hitting things can frighten partners and children, who do not know where it will stop.\n\nThe same applies to venting by text or on social media. A long angry post written in the heat of the moment tends to keep the anger going for the writer and spread it to readers. Writing it and not sending it, then rereading it the next day, is usually wiser."
+  },
+  {
+   "q": "What actually helps anger come down?",
+   "a": "The 2024 review by Kjærvik and Bushman, which combined more than a hundred and fifty studies, found that activities which lower arousal, such as slow breathing, relaxation, mindfulness and yoga, tended to reduce anger, while activities that raise arousal did not reliably help. Time also helps, as long as it is not spent replaying the grievance. In the moment, the most practical tools are the ones in this chapter: a slow out-breath, a short break agreed in advance, putting space between yourself and the trigger, and coming back to the subject only once your body has settled.\n\nIt also helps to have a plan before you need it. Deciding in advance what you will do when you notice your first rung, such as stepping outside, making tea or breathing out slowly three times, makes it far more likely that you will do it.\n\nHaving a plan also includes knowing what to say to the other person, such as \"I'm getting too angry to talk well. I'll be back in twenty minutes.\" Saying it once, calmly, turns leaving into a pause rather than a walk-out."
+  },
+  {
+   "q": "How long does it take to calm down after a row?",
+   "a": "Longer than most people think. The recovery stage of the ladder is a period when the body is still aroused even though the shouting has stopped: the heart is still fast, the breath still high, the face still flushed, and the person is still quick to climb again. How long it lasts varies from person to person and from row to row. The practical rule is to wait until the signs have settled, the breath slow, the voice ordinary, the shoulders down, before reopening the subject. If in doubt, wait until the next day, and agree a time rather than leaving it open.\n\nPhysical signs of recovery are also worth watching in yourself. If your heart is still pounding and your face still hot, you are not ready to talk, however calm you think your words will be.\n\nAfter a big row, sleep often helps more than talk. Many couples find that agreeing to pick it up the next day, at a set time, is kinder than trying to finish it at midnight."
+  },
+  {
+   "q": "Can you tell when someone is about to become violent?",
+   "a": "Not reliably, and no reader should rely on a prediction. Some signs are associated with rising risk: a fixed stare, clenched fists, a flushed or suddenly pale face, closing the distance, squaring up, striking objects, and a sudden stillness after shouting. If you see these, treat them as a reason to put your own safety first. Do not try to argue or win. Keep your voice low and your hands open, keep a clear route away, and leave if you can. Your own fear is information too. If you feel unsafe, act on it, and call the emergency services if anyone is in danger.\n\nIf you work in a setting where aggression is common, such as a hospital, a shop or public transport, your workplace should have training and procedures for this. Use them, and report incidents, so that the risk is shared rather than carried alone.\n\nAfterwards, it also helps to talk to someone about what happened. Frightening encounters stay in the body for a while, and saying what happened aloud, to someone safe, helps it settle.\n\nIt also helps to know the layout of places you work in. Knowing where the exits are, where colleagues are and how to call for help quickly means you can act fast without having to think."
+  },
+  {
+   "q": "What if I am the one who gets angry?",
+   "a": "Then this chapter is most useful to you. Find your first rung by looking back at recent episodes and noticing the earliest change that appears every time. Agree a time-out with the people you argue with most, and use it early, not as a way of winning but as a way of stopping. Replace venting with activities that bring your arousal down. Ask yourself, in calm moments, what your anger tends to guard: hurt, fear, shame, exhaustion. And if your anger frightens the people close to you, or you have hurt someone, look for a service that works with men who want to change. Asking for that help is one of the hardest and best things a man can do.\n\nIt also helps to tell the people close to you that you are working on it. Knowing that you are trying, and what your time-out word is, makes them more likely to help you use it and less likely to read it as walking away.\n\nIt may also help to look at what comes before your anger: tiredness, hunger, alcohol, a long day, a particular person. Many men find that their worst episodes cluster around a few predictable conditions, and that changing those conditions changes the anger."
   }
  ],
  "watch": [
