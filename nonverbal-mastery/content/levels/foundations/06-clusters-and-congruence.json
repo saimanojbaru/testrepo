@@ -82,6 +82,20 @@
    "doCaption": "Writing the cluster down, with its moment, before deciding what it means.",
    "dontCaption": "Finding more signs the longer you suspect.",
    "annotation": "Suspicion builds clusters out of ordinary behaviour. A real cluster arrives together, at a moment you can name."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_stand_face_touch",
+   "doCaption": "Counting them as one channel, and listening on",
+   "dontCaption": "Counting face, mouth and chin touches as three signs",
+   "annotation": "Movements of the same channel travel together. A true cluster needs changes in channels that usually move independently."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Asking about the moment, side by side",
+   "dontCaption": "Telling someone their body contradicts their words",
+   "annotation": "A cluster tells you when to ask and how gently. It is never evidence to use against someone's account of themselves."
   }
  ],
  "caseStudy": "Paul, forty-nine, is at the kitchen table when his daughter Ellie, eighteen, comes in waving her phone. She has been offered a place at a university in Scotland, four hundred miles away. *I'm so excited,* she says, and she is smiling. Paul is delighted and starts to say so. Then he notices her voice catch on the word excited, her hand go to her collarbone and stay there, and her eyes go not to him but to her mother.\n\nThree channels, within two seconds of the news. His first thought is that she does not really want to go and is saying what she thinks they want to hear. Then he runs the layers he has been practising. Could one ordinary cause explain it all? Not obviously; she is not cold or ill. Do the channels disagree? Yes: the words and the smile say joy, the voice and the hand say strain. What feelings might the moment hold? Joy, certainly. Fear of leaving. Something about her mother.\n\nHe writes nothing down at the table. He says he is proud of her, which is true, and leaves the rest. That night he puts one line in his journal: *Voice caught, hand to collarbone, looked at Mum, at 'excited'. Rival: mixed, not reluctant. Ask later, side by side.*\n\nTwo days later he drives Ellie to a friend's house. Halfway there he asks how she feels about going so far. She is quiet for a while, then says she is thrilled and terrified, and worried about her mum, who has been struggling since her own father, Ellie's grandad, died in the spring. She did not want to say it in front of her.\n\nNothing she showed at the table had been false. It had all been true at once. Paul and Ellie spend the rest of the drive planning which weekends she will come home.",
@@ -100,6 +114,11 @@
     "Listen to the same three minutes without the picture and write what you notice in the voice and words.",
     "Watch and listen together, and write your overall impression.",
     "Compare the three sets of notes and mark any impression that came from one channel alone."
+   ],
+   "variations": [
+    "Use a clip in a language you do not understand, so that the words channel is closed and you depend on the rest.",
+    "Do it with a friend: each of you takes a different channel, then compare notes without discussing your overall impressions first.",
+    "Try it with a recorded video call and note which channels the format removes or degrades."
    ]
   },
   {
@@ -111,6 +130,10 @@
     "Mark any entry where one cause could explain everything.",
     "Rewrite those entries as a single signal.",
     "Note how many of your clusters survive the check."
+   ],
+   "variations": [
+    "Go back through the last month of your journal, not just the last week, and see whether the single-cause rate changes.",
+    "For every cluster that survives, write the single cause you came closest to accepting, and why you rejected it."
    ]
   },
   {
@@ -122,6 +145,10 @@
     "Recall what you saw in the face, voice and words of the people involved.",
     "Mark any disagreement between channels that the mixed feelings would explain.",
     "Write one sentence about how you would ask about such a moment next time."
+   ],
+   "variations": [
+    "Choose one transition that is coming up, such as a leaving party or a birthday, and predict the mixed feelings in advance.",
+    "Ask one person who went through a transition recently what they were feeling, and compare it with what you saw."
    ]
   },
   {
@@ -133,6 +160,10 @@
     "Afterwards, write down what the hands seemed to show.",
     "If the moment allows, ask a gentle question about that part of the problem.",
     "Record whether the answer added something the words had left out."
+   ],
+   "variations": [
+    "Watch a recorded lecture or tutorial and note every gesture that adds information the words did not give.",
+    "Explain something you only half understand to a friend, and ask them to watch your hands for moments of doubt."
    ]
   },
   {
@@ -144,6 +175,10 @@
     "Write the question you would ask, if any.",
     "Where you later learn more, mark the line right, wrong or unclear.",
     "At the end of the week, count how many clusters survived each layer of the method."
+   ],
+   "variations": [
+    "Add a column for the channels you could not see, such as hands under a table, and mark how that limits the reading.",
+    "Share one line, with names removed, with a friend who knows this method, and ask whether they would read it the same way."
    ]
   }
  ],
@@ -225,6 +260,58 @@
    "explain": "A cluster only carries weight if its parts are independent. When one ordinary cause such as a cold room could produce every change at once, you have one signal, not three.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "A colleague touches his mouth, rubs his chin and scratches his nose while answering a question. How should these be counted?",
+   "options": [
+    "As three independent signals, which together make a strong cluster pointing to discomfort",
+    "As changes in one channel, the hands to the face, which is weaker evidence than a true cluster",
+    "As meaningless, since touching the face never tells an observer anything about anyone at all",
+    "As a sign of lying, since touching the face while answering is a classic sign of deception"
+   ],
+   "answer": 1,
+   "explain": "All three are the hands touching the face, so they come from one channel and tend to travel together. A cluster draws its strength from independent channels, such as voice, posture and words, changing together.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "At a leaving party, a colleague smiles and says he is excited about his new job, but his voice is quiet and he keeps looking around the room. What is the best first reading?",
+   "options": [
+    "He is hiding the fact that he was pushed out and does not really want to leave the company",
+    "He is probably feeling more than one thing, which is ordinary at a moment of change like this",
+    "He is being polite to the people here, whom he secretly dislikes and is relieved to be leaving",
+    "He has had too much to drink, which explains every part of what you can see in his behaviour"
+   ],
+   "answer": 1,
+   "explain": "Moments of transition reliably produce mixed feelings, as Larsen and colleagues found, and the body often shows both. Mixed feeling should be the first explanation held, before any story of concealment.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "What did Nickerson's review of confirmation bias describe?",
+   "options": [
+    "A tendency to notice and seek out information that supports what we already believe",
+    "A tendency to remember only the most recent things that someone did, and nothing earlier",
+    "A tendency to see more signals in strangers than in people whom we already know well",
+    "A tendency to trust words over bodies whenever the two of them happen to disagree"
+   ],
+   "answer": 0,
+   "explain": "People look for, notice and remember evidence that fits their existing beliefs. That is why a cluster assembled after suspicion has set in is far weaker than one written down at the moment it happened.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Which of these is the strongest evidence that something registered with a person at a particular moment?",
+   "options": [
+    "Five separate movements of the face, scattered across a long and difficult conversation",
+    "A posture that stayed the same throughout a meeting and never changed from the start",
+    "Several signs that all fit a suspicion you had held about the person for some weeks",
+    "Changes in voice, posture and words that began together, just after a named question"
+   ],
+   "answer": 3,
+   "explain": "Independent channels changing together, at a moment you can name, are unlikely to be chance. Scattered changes, unchanging postures and signs collected to fit a suspicion are all much weaker.",
+   "isMisconceptionTest": false,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -253,6 +340,110 @@
    "work": "Can people feel happy and sad at the same time?",
    "author": "Jeff T. Larsen, A. Peter McGraw and John T. Cacioppo",
    "note": "Journal of Personality and Social Psychology 81(4), 2001. The evidence for mixed feelings."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "Monday morning, sunglasses on",
+   "scene": "At the Monday planning meeting of a small marketing agency, Owen arrives two minutes late and sits at the far end of the table. He keeps\n  his sunglasses on for the first few minutes, then takes them off and squints. He slumps low in his chair, rubs his temples with both hands,\n  drinks a whole bottle of water in small sips, and answers questions in a word or two, slowly. When the creative director, Hannah, asks him\n  what he thinks of a client's new brief, he says, \"Fine,\" and closes his eyes for a moment.\n\n  Hannah has been worried about Owen for a while. His work has been good but his energy has dipped. Sitting at the head of the table she\n  counts what she sees: the slump, the hands at his head, the short answers, the closed eyes, the late arrival, the sunglasses. Six signals,\n  she thinks, all pointing the same way. After the meeting she tells her deputy that Owen is either checked out or depressed, and that she\n  is going to have to have a difficult conversation with him about his commitment.\n\n  Her deputy, who sits next to Owen, has another explanation. Owen gets migraines, perhaps once a month, and has had one since Sunday\n  evening. Bright light makes it worse, which is why he wore sunglasses. Noise makes it worse, which is why he spoke slowly and briefly. He\n  drinks water because he has read that it helps. He came in rather than calling in sick because he knew the brief was important.\n\nOwen, for his part, had not thought to mention the migraine. He had come to the meeting to show that he was taking the brief seriously, and it had not crossed his mind that his efforts to get through it would be read as the opposite.",
+   "misread": "Hannah counted six signals and treated them as six pieces of evidence. But they were not independent. A single ordinary cause, pain in the head made worse by light and noise, produced every one of them at once, just as a cold room produces a whole posture of hunching and folding. She also read them through a worry she already held, which made a cluster that pointed to illness look like a cluster that pointed to attitude.\n\nAnd because she was already worried, she was ready to have that worry confirmed rather than tested.",
+   "betterRead": "The single-cause check is the first question to ask of any impressive cluster: is there one thing that would explain all of this? Headache, illness, a bad night's sleep, cold, a hangover, a new medication: each produces a whole set of changes across the body. Hannah could have asked Owen, after the meeting and in private, whether he was all right, and he would have told her about the migraine. A worry about his energy over the last few months might still have been worth raising, but not on the strength of a Monday morning that had a plain explanation, and not as a question about his commitment.\n\nIt is also worth noticing how much of Hannah's cluster was her own position at the head of the table, looking down the room at a slumped figure under bright lights. From where Owen's deputy sat, the sunglasses and the water told a simple story at once."
+  },
+  {
+   "title": "The best man's smile",
+   "scene": "At his brother's wedding, Matt gives the best man's speech. It is funny and generous and well delivered. He smiles throughout. But\n  several guests notice that his voice is flat and quiet in places where the words are warm, that he grips the lectern with both hands, and\n  that he barely looks at his brother, Sam, except once, near the end, for a long moment. At the table of the bride's family there is\n  murmuring afterwards. One aunt says that he obviously resents his brother, or the bride, and was only going through the motions.\n\n  What the aunt does not know, because the family has kept it quiet, is that Matt and Sam's father died four months ago. He was meant to\n  give a speech that day too. Matt had written his own speech the night after the funeral, and rewritten it a dozen times. Every warm line\n  about his brother's future was also, for him, a line about the father who would not see it.\n\nMatt's mother, sitting at the top table, watches her son through the whole speech and cries quietly at the end. Several guests take that as the ordinary emotion of a mother at a wedding. Sam squeezes his brother's shoulder as he sits down and leaves his hand there for a moment longer than a brother usually would.",
+   "misread": "The aunt saw the disagreement between Matt's words, face and voice clearly, and reached for the first explanation that people usually reach for: concealment. If the smile and the voice disagree, one of them must be false, and since the warm words were the public ones, the flat voice must be the truth leaking out. It is a tidy story and, in this case, cruelly wrong.",
+   "betterRead": "Larsen, McGraw and Cacioppo found that people at moments of transition, such as graduation, really do feel happy and sad at once. Weddings, births, retirements, moves and farewells are full of such moments, and the body shows both feelings, often in different channels. A careful observer who saw the disagreement would hold mixed feeling as the first explanation, not deceit, and would look for the reason rather than the lie. The long look at Sam near the end, which the aunt read as reluctance, was the moment Matt reached the line about their father. Sam, who knew, understood it perfectly.\n\nThe aunt's mistake was not cruelty but haste. She saw a gap, chose the darkest explanation, and said it aloud at a family table, where it would travel. A careful guest who sensed something heavy behind the speech might simply have said to Matt, later, that it was a lovely speech, and left room for him to say more if he wanted."
+  },
+  {
+   "title": "The hands that knew where the flaw was",
+   "scene": "Imran, a junior structural engineer, is walking his manager, Claire, through his design for a mezzanine floor in a warehouse. He talks\n  confidently. The beams are sized correctly, the loads are within limits, the connections are standard. But each time he describes the\n  joint where the new floor meets the old wall, his right hand makes a small, repeated motion, a twisting gesture, as if turning something,\n  and then stops. His words at that point are the same as everywhere else: \"and that's all within tolerance.\"\n\n  Claire has read about gesture and speech. She does not tell Imran what his hand is doing, which would be odd and unsettling. Instead,\n  when he has finished, she asks him to go back to the wall connection and talk her through how the load gets from the beam into the old\n  brickwork. Imran pauses, and then says that he is not entirely happy with it. The brickwork is older than the drawings suggest, and he had\n  wondered whether the fixings would twist under uneven loading, but he had not been sure enough to raise it. They agree to get the wall\n  surveyed. The survey finds the problem he had half seen.\n\nAfterwards Claire thinks about how close they came to missing it. Imran is new, keen to impress and reluctant to sound unsure in front of a senior engineer. If she had asked whether he had any concerns, he would almost certainly have said no. The question about how the load travels gave him a way to reason his way to the doubt in front of her, rather than having to confess it.",
+   "misread": "A less careful manager might have seen nothing in the gesture, or might have read it as a nervous fidget and noted that the junior seemed anxious. Another might have challenged him directly, saying that his hands were telling a different story from his words, which would have put him on the defensive and made him less likely to admit doubt.",
+   "betterRead": "Church and Goldin-Meadow found that when children's hands showed one idea and their words another, they were often on the verge of understanding something new. Adults do the same: gestures often carry knowledge or doubt that has not yet reached words. The careful reading treats the mismatch as a pointer to a topic, not as a confession. Claire asked about the part of the design where the hand and the words disagreed, in a neutral way, as part of an ordinary review, and gave Imran room to put his half-formed doubt into words. That is a skill worth far more to an engineering team than any reading of nerves.\n\nClaire also made a point of thanking Imran, in front of the team, for raising the issue with the wall, so that the next time he had a half-formed doubt he would know it was welcome. A gesture can point you to a doubt once; a team's response decides whether the doubt is spoken next time without anyone needing to read it."
+  },
+  {
+   "title": "The father who built a case",
+   "scene": "Gary, fifty-one, starts to worry about his seventeen-year-old daughter, Leah. She seems tired. She has lost some weight. She keeps her\n  phone face down on the table and takes it to her room. She is short with him at dinner and goes out more in the evenings. A colleague's son\n  was caught with drugs recently, and the story has stayed with Gary. Over the next three weeks he starts to notice more: Leah's pupils seem\n  large one evening, she stays in the bathroom a long time, she rubs her nose. By the end of the month he has a list in his head of a dozen\n  signs, and he is sure.\n\n  He confronts her one Sunday, reading the list aloud. Leah is first shocked, then furious, then in tears. She is not taking drugs. She has\n  been revising late for her exams, eating less because she is anxious about them, and keeping her phone close because a group chat at school\n  has turned nasty and she does not want her parents to see what is being said about her. She had been planning to tell her mother. After the\n  confrontation she tells neither of them anything for weeks.\n\nLooking back, Gary can see the moment his suspicion took hold: the evening his colleague told the story about his son, over a pint, with a haunted look. From then on, every ordinary thing his daughter did passed through that story first. He had never once asked her what was wrong. He had only gathered evidence for an answer he had already chosen.",
+   "misread": "Gary built his cluster backwards. He started with a suspicion, then went looking for signs, and found them, because tiredness, weight change, a guarded phone and time in the bathroom are part of the ordinary life of many teenagers. Each new sign seemed to confirm the last, but each was collected because it fitted, while everything that did not fit went unnoticed.\n\nHe also chose the most hostile possible way to test his theory: a confrontation with a list, which left Leah no way to answer except by defending herself.",
+   "betterRead": "Nickerson's review of confirmation bias describes exactly this process, and it is most dangerous when the stakes feel highest, because fear makes us search harder. The chapter's defence is to write a cluster down at the moment it happens, with its time, its channels and its rival explanations, before deciding what it means, rather than assembling one from memory after suspicion has set in. And when a worry about someone you love is real, the approach that keeps the door open is a question, not a verdict: you seem tired and worried lately, is something going on? Leah would very probably have answered that question. She could not answer an accusation without first defending herself.\n\nGary has since apologised to Leah, and they have talked about the group chat. The repair took months, not because the accusation was cruel but because it had shown her that her father would read her before he would ask her."
+  }
+ ],
+ "workedReading": {
+  "title": "After the restructure",
+  "scene": "Your team has just been reorganised. Ben, who has been on the team for eight years, has been moved into a role that looks sideways at best. In the kitchen afterwards you ask how he feels about it. He says, \"Honestly, it's fine. It's probably a good change.\" He smiles as he says it. His voice is lower and slower than usual. His hand goes to the back of his neck and stays there. A moment later, when another colleague comes in, his posture sinks a little and he looks at his mug, and then he straightens and asks her about her weekend.\n\nYou have known Ben for three years. He is usually quick and funny, the person who makes the kitchen louder when he walks in, and he rarely sits still. You also know that he applied for the team lead role last year and did not get it, and that he has two children at primary school and a large mortgage.",
+  "steps": [
+   {
+    "label": "Describe each channel",
+    "text": "Before interpreting anything, you list what changed, channel by channel. Words: positive, with the hedge \"honestly\" and the qualifier \"probably\". Face: a smile. Voice: lower and slower than his usual quick, bright delivery. Hands: one at the back of the neck, held there. Posture: sinking briefly, then lifting. Each is described as behaviour, not as feeling. You notice that you want to write \"he's upset\" and do not.\n\nWriting channels separately like this feels slow, but it is what stops your first impression from doing all the work. If you begin with a feeling word, everything you see afterwards will be sorted into evidence for it or noise against it."
+   },
+   {
+    "label": "Check the timing",
+    "text": "The changes in voice and hand came within a second or two of your question, at a moment you can name. The sinking posture came a little later, when he thought the conversation was over, and lifted as soon as someone else needed him to be cheerful. All of them cluster around a single topic: his new role. Changes scattered across a day would mean much less.\n\nTiming also tells you something about which changes belong to the question and which to the setting. The quick change at the question is about the topic; the slower sinking, when he thinks nobody is watching, is about something he carries with him."
+   },
+   {
+    "label": "Run the single-cause check",
+    "text": "Is there one ordinary cause that would explain everything? He might be tired; it is late afternoon. His neck might be sore; he does a lot of cycling. But tiredness does not usually brighten instantly when a colleague walks in, and a sore neck does not explain the change of voice at that particular question. No single mundane cause fits the whole pattern.\n\nIt is worth doing this step honestly even when you are fairly sure, because the times when you are fairly sure are the times you are most likely to skip it. The day you find that a whole cluster is a cold room or a sore neck, the habit will have paid for itself."
+   },
+   {
+    "label": "Consider mixed feelings first",
+    "text": "The words and the smile point one way, the voice, hand and posture another. The first explanation to hold is not that Ben is lying, but that he feels more than one thing: perhaps relief that he still has a job, some genuine interest in the new role, and disappointment or worry about what it means for him. Larsen's work suggests that holding several feelings at once is ordinary at moments of change, and a restructure is one.\n\nIt helps to say the mixed feelings to yourself in a single sentence: he is relieved and disappointed, interested and worried. If the sentence sounds like an ordinary description of a man whose job has just changed, that is because it is."
+   },
+   {
+    "label": "Weigh the context",
+    "text": "Ben is talking to a colleague in a shared kitchen, a few minutes after an announcement. Even if he were deeply unhappy, there are good reasons not to say so here: professionalism, pride, not wanting to sound bitter about a decision he cannot change. The disagreement between channels may be less about what he feels than about what he can say in this setting.\n\nContext also includes you. You are a colleague, not a close friend, and not his manager. That shapes what he can safely say to you, and how much of what he feels he will let into his voice in your company."
+   },
+   {
+    "label": "Choose a question, not a verdict",
+    "text": "The worst move would be to tell Ben that his body says otherwise. It would put him in the position of defending his own face. Instead, later, somewhere quieter, you say that it is a big change after eight years, and that if he ever wants to talk it through over a coffee, you are around. That acknowledges both feelings without naming either, and leaves the next move to him.\n\nNotice what this response does not do. It does not tell him what you saw, it does not ask him to name a feeling, and it does not put any pressure on him to answer now. It simply makes the next conversation easy to start, if he wants it."
+   },
+   {
+    "label": "What you learn",
+    "text": "Two days later Ben takes you up on it. He says he is actually interested in the new work, but that he feels pushed aside, and he is worried it is the first step out of the door. Both things were true in the kitchen. Neither was a lie. You file away something about Ben's baseline as well: when he is troubled, his voice drops before anything else does, and his cheerfulness rises the moment someone else needs it.\n\nYou also learn something about yourself: that your first instinct, when you see a gap between words and voice, is to want to close it on the spot. Waiting two days produced a far better conversation than any question in the kitchen could have."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Counting one channel three times",
+   "body": "A cluster gets its strength from independence: from changes in channels that do not normally move together. Readers often inflate a cluster by counting several movements of the same channel as separate signals. A hand to the mouth, a rub of the chin and a scratch of the nose are three touches of the face by the hands, and they belong to one channel. A frown, a lip press and a narrowing of the eyes are all the face. Three of these together are worth noting, but they are not three independent pieces of evidence in the way that a change in voice, a change in posture and a change in words would be. Before you count a cluster, sort it by channel. If everything you have seen happened in one place, you have a strong signal from that channel, not a cluster.\n\nThe same caution applies to the voice: a rise in pitch, a faster pace and a slight tremor often come together from a single cause, such as nervousness about speaking at all, and should be counted as one change in one channel."
+  },
+  {
+   "title": "Treating incongruence as a lie",
+   "body": "When words and body disagree, the most tempting reading is that the body is telling the truth and the words are a cover. This is the logic of a thousand detective stories, and it is usually wrong in ordinary life. People feel mixed things, say polite things, keep private things private and manage their faces in public for good reasons. A man who says he is happy for a friend's promotion while his voice drops may be happy and envious at once. A woman who smiles while declining an invitation may be sorry and relieved. Reading every gap as deceit turns ordinary courtesy into suspicion, and the deception chapter later in this part explains why even trained observers do little better than chance at catching real lies.\n\nWhen you notice a gap, the most charitable explanation is usually also the most likely. Start there, and let the evidence push you somewhere darker only if it really does."
+  },
+  {
+   "title": "Reading clusters through a screen",
+   "body": "On a video call you see a head and shoulders, at a few dozen frames a second, through compression, often with sound slightly out of step with picture. The hands may be out of frame entirely, the posture invisible, the voice flattened by a cheap microphone. Many of the channels a cluster needs are simply missing, and the ones that remain are degraded. Readers who apply the full method to a video thumbnail end up treating a frozen frame, a laggy smile and a muffled voice as a cluster of distress. Hold readings from calls even more loosely than readings in person, and when something seems to matter, ask, or wait until you can meet.\n\nA useful habit is to note, alongside any reading from a call, which channels you could not see at all. If the hands, the posture below the shoulders and the room were all out of frame, your cluster was built from perhaps two channels, through a poor connection, and deserves to be treated as a hunch rather than a reading."
+  },
+  {
+   "title": "Using a cluster to win an argument",
+   "body": "Some readers learn this chapter and start saying things like, \"You say you're fine, but your arms are crossed and your voice is shaking.\" It feels like insight. To the person on the other end, it is an attack on their right to describe their own feelings, made with evidence they cannot check and cannot rebut. It also usually backfires, because people pushed to admit a feeling they did not choose to share tend to deny it more firmly. Clusters are for your own understanding, to tell you when to slow down, what to ask about and how gently. They are never a weapon to use against someone's account of themselves.\n\nThere is a quieter version of this failure that does as much harm: saying nothing aloud, but treating your private reading as more authoritative than what the other person has told you, and acting on it. The friend who said she was fine and was then quietly treated as fragile for a month has been overruled just as surely as if you had argued with her."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How many signals make a cluster?",
+   "a": "There is no magic number, and anyone who gives you one is selling something. What matters more than the count is independence and timing. Three changes in different channels, say voice, posture and words, arriving within a couple of seconds of a moment you can name, are far more telling than five changes in the face scattered across ten minutes. Ask three questions of any set of signals: are they in channels that do not normally move together, did they begin together, and is there no single ordinary cause that explains them all? If the answer to all three is yes, you have something worth a careful question. If not, you have a set of observations, which is still useful, but should be held more loosely.\n\nA practical rule for beginners: treat anything short of three channels as a single signal, however striking it looks. It will make you slower, and it will make you right more often."
+  },
+  {
+   "q": "What counts as a separate channel?",
+   "a": "Roughly: the face; the hands and arms; the posture of the trunk; the legs and feet; the voice, meaning its pitch, pace, loudness and quality; the words themselves; and breathing. These are produced by partly separate systems, under partly separate control, which is why a change across several of them at once is unlikely to be chance. Within each channel, movements tend to travel together. A tense face often frowns, presses the lips and narrows the eyes all at once, and those are not three independent signals. Distance and orientation, covered in the chapter on proxemics, can be treated as another channel, since moving away is a choice of the whole body.\n\nWhen you write down a cluster, it helps to give each channel its own line. If most of your lines turn out to be about one part of the body, you have learned something useful about the strength of what you saw."
+  },
+  {
+   "q": "If someone says one thing and their body says another, which should I believe?",
+   "a": "Neither, automatically. Folk wisdom says the body never lies, but bodies are managed too, and what they show is often a feeling about the moment rather than a verdict on the topic. Words, meanwhile, carry far more specific information than any posture; when someone tells you plainly what they think, it is usually the best evidence you have. The disagreement itself is the useful thing. It tells you that this moment is more complicated than the words alone suggest, and it is a reason to slow down, to look for the most likely sources of mixed feeling, and if it matters, to ask an open question. Treat the gap as a question, not as a tiebreaker between two witnesses.\n\nIn practice the gap usually resolves itself, if you are patient. People who feel two things often say the second one later, or to someone else, or in a quieter setting. Your job is mostly to make that later conversation possible."
+  },
+  {
+   "q": "Isn't the face more honest than the words?",
+   "a": "It is often less honest than people think, and less clear. Most adults have spent their lives learning to manage their faces in public, and they are good at it. And, as Aviezer and colleagues showed, the face is not read on its own: the same expression looks like disgust on one body and anger on another, because perception blends what the face and body are doing before you are aware of either. So a judgment that the face revealed something the words concealed may really be a judgment about the whole body and the context, credited to the face. Read the face as one channel among several, neither privileged nor ignored.\n\nResearchers who study faces in real settings, rather than posed photographs, consistently find that expressions are less clear, less frequent and more dependent on context than the posed versions suggest. The chapter on the face takes this up in detail."
+  },
+  {
+   "q": "Can I use this with my partner without it becoming creepy?",
+   "a": "Yes, if you use it to ask rather than to accuse. The people we live with show us their clusters every day, and noticing them is part of loving someone well. The line is crossed when noticing turns into cataloguing, when you start keeping a record of tells, or when you use what you notice to contradict what they say. A good test is the sentence you end up saying. \"You seemed quiet when your mum rang, is everything all right?\" respects their account and opens a door. \"Your face says you're angry with me\" tells them that their account counts for less than your reading of them. The first will get you more of the truth, and keep more of the trust.\n\nIt also helps to tell your partner, at some calm moment, that you notice these things and would rather ask than guess. Most people are glad to hear it, and some will start doing the same for you."
+  },
+  {
+   "q": "What if I am the one whose channels disagree?",
+   "a": "Then you are probably feeling more than one thing, like everyone else. It can help the people around you if you name it, especially when you can tell that your face or voice is sending a different message from your words: \"I'm genuinely pleased for you, and I'm also a bit gutted it wasn't me,\" or, \"I'm fine, just tired, it's not about you.\" A sentence like that removes the puzzle that the gap creates for others, and makes misreading far less likely. It is also, for many men, an unfamiliar kind of honesty, and one that tends to make relationships easier rather than harder.\n\nIt can also help to notice when your own channels are likely to disagree: at goodbyes, at other people's successes, at news you have to receive politely. Knowing in advance that your voice may drop while you say the right thing lets you add the sentence that explains it before anyone has to wonder."
   }
  ],
  "watch": [
