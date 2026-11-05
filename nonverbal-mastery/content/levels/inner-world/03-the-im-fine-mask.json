@@ -80,6 +80,20 @@
    "doCaption": "Accepting it, and leaving the door open.",
    "dontCaption": "Moving on when he says 'fine' a second time.",
    "annotation": "Pressing harder rarely works. Many men come back later to the person who asked twice and did not push."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_pair_seated_across",
+   "doCaption": "Asking on a walk, side by side",
+   "dontCaption": "Asking across a table, eye to eye",
+   "annotation": "Face to face, the only safe answer is often \"fine\". Walking together, with somewhere to look, makes a second answer easier."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Turning up, and sitting with him a while",
+   "dontCaption": "Asking by text and taking 'fine' as the answer",
+   "annotation": "A text gets the ritual reply. Being there, with time and no agenda, tells him the question was real."
   }
  ],
  "caseStudy": "Mike, forty-five, has played five-a-side every Thursday for years with his friend Danny. In the spring Danny's wife moves out. Danny tells everyone he is fine, makes a few jokes about having the remote to himself, and carries on.\n\nOver the next two months, Mike notices changes. Danny misses three Thursdays, then four. When he does come, he goes to the pub afterwards and stays after everyone else has left. His jokes have an edge they did not have before. On the phone his voice is flat and slow, nothing like the Danny who used to talk over everyone. When Mike asks how he is, he says *fine, mate, all good*, and changes the subject.\n\nMike thinks about how to ask. He does not want to make it a big conversation across a table. He asks Danny to help him collect a sofa from his sister's, an hour's drive each way. On the way back, both of them looking at the road, Mike says: *You've not been at five-a-side much. Are you all right? Really?* Danny says *yeah, fine*. Mike says nothing. A mile later, Danny says he is not sleeping, that the house is too quiet, that he has been drinking most nights to get to sleep, and that he feels like he has made a mess of everything.\n\nMike does not try to fix it. He asks what it has been like, and listens for the rest of the drive. Before they get back, he says he thinks Danny should talk to his doctor about the sleep and the drinking, and offers to sit with him while he rings for an appointment. Danny says he will think about it. Two days later he texts: *booked it.*\n\nDanny comes to five-a-side the following Thursday. He is quiet, and he stays for one drink, not five.",
@@ -98,6 +112,10 @@
     "Mark any case where several things did not fit.",
     "For those, write one specific, behaviour-first question you could ask.",
     "Ask it, privately and with an exit, in one case where it feels right."
+   ],
+   "variations": [
+    "Notice your own \"fine\" for a week, each time you say it, and note whether it was true.",
+    "Choose one person you see often and note, over a week, how their \"fine\" sounds on good days and on bad ones."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Choose a side-by-side moment, such as a drive, a walk or a shared task.",
     "Ask once in the usual way, then ask a second time about the change, and wait through any silence.",
     "Afterwards, write what happened and what you would do differently."
+   ],
+   "variations": [
+    "Write two versions of your second question, one about work and one about home, and choose the one that fits the person.",
+    "Plan the side-by-side moment in detail, including how you will leave the subject if he declines."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Notice each time you feel the urge to fix or compare, and let it pass.",
     "Ask your friend afterwards how it felt to be listened to that way.",
     "Swap roles, and note what it was like to be on the other side."
+   ],
+   "variations": [
+    "Repeat the exercise on the phone, where you have only the voice, and notice how much harder it is not to fill the silences.",
+    "Ask your friend to tell you about something more serious, with their agreement, and practise reflecting without reassuring."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Write down what, if anything, would have made it easier to say more.",
     "Note who, if anyone, noticed, and how.",
     "Write the name of one person you could tell next time."
+   ],
+   "variations": [
+    "Write down the phrase you would most like someone to have said to you at that time.",
+    "Ask one person you trust whether they have ever noticed you wearing the mask, and listen without defending yourself."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Write down two practical offers you could make to someone who needs a doctor, such as finding the number or going with them.",
     "Write down one sentence that frames seeing a doctor as ordinary.",
     "Keep these notes where you can find them quickly."
+   ],
+   "variations": [
+    "Look up the opening hours of one local support service, such as a men's group or a talking-therapy service, and note how to refer yourself.",
+    "Practise saying aloud your sentence about seeing a doctor until it sounds ordinary rather than solemn."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "He keeps control, which makes it easier to come back later. Many men return to the person who asked twice without pushing. If you are worried about his safety, though, ask directly, as the chapter on suicidal ideation explains.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "According to Addis and Mahalik's review, when are men least likely to seek help?",
+   "options": [
+    "When the problem feels unusual and asking would mean giving up control",
+    "Only when they are under thirty, since older men seek help as readily as women do",
+    "When the problem is physical, since men seek help for emotional problems more often",
+    "Never, since the review found that men and women seek help at exactly equal rates"
+   ],
+   "answer": 0,
+   "explain": "Addis and Mahalik argued that men's help-seeking depends on context: men seek help less when the problem feels unusual, when asking means giving up control, when it threatens their sense of themselves, and when others would see it as weakness. A man in those conditions rarely starts the conversation himself.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your father, a farmer, has worked from dawn to dark for months since a bad season, stopped seeing his friends and says he is fine. What fits this chapter best?",
+   "options": [
+    "Accept that he is fine, since hard work shows that he is clearly coping well",
+    "Tell him at dinner, in front of the family, that he is obviously depressed",
+    "Ask about the specific changes while working alongside him on a job",
+    "Wait for him to raise it himself, since asking would undermine his pride"
+   ],
+   "answer": 2,
+   "explain": "Busyness and withdrawal from usual pleasures are common forms of the mask. A specific, behaviour-first question, asked side by side and in private, gives him the easiest way to say more.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that if a man tells you he is fine, asking him a second time is disrespectful. What does this chapter suggest?",
+   "options": [
+    "It is right, since asking twice always means you do not believe him",
+    "Asking once more, privately and with an easy exit, shows you want to know",
+    "It is wrong, since you should keep asking until he finally tells you the truth",
+    "It is right for strangers but wrong for friends, who should always press"
+   ],
+   "answer": 1,
+   "explain": "A second question, asked once, gently and privately, tells the person the first one was real. What becomes disrespectful is pressing past a clear refusal.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "The experience of symptoms of depression in men vs women: Analysis of the National Comorbidity Survey Replication",
    "author": "Lisa A. Martin, Harold W. Neighbors and Derek M. Griffith",
    "note": "JAMA Psychiatry 70(10), 2013. How men's distress may be missed by conventional symptom lists."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The new father who was fine",
+   "scene": "Jamal, thirty-one, came back to work three weeks after his daughter was born, full of photographs and stories about nappies. Two months\n  later, his colleague Sophie notices that the stories have stopped. Jamal arrives early and leaves late, which he never used to do. His desk,\n  usually tidy, is covered in cups. He has snapped at a junior colleague twice, and in a team meeting he laughed at a joke a second after everyone\n  else, as if he had come back from somewhere. When Sophie asks how fatherhood is going, he says, \"Fine, great, knackered, you know how it is,\"\n  and turns back to his screen.\n\n  Sophie has two children and remembers the exhaustion. She almost leaves it there. But she also remembers how her husband had been after their\n  first was born: working all hours, saying he was fine, and admitting a year later that he had felt like a stranger in his own house and had not\n  known how to say so.\n\n  On Friday, she finds Jamal alone in the kitchen at seven in the evening, eating crisps for dinner, and notices that he has not yet called home.\n\nSophie also notices that Jamal has stopped eating lunch. For two weeks he has said he is not hungry, and when someone brought cake in for a birthday, he said he would have some later and never did.\n\nSophie also knows that Jamal's wife had a difficult birth, because he mentioned it once in a hurry and then never again.",
+   "misread": "The office read Jamal's long hours as commitment and his shortness as tiredness, the ordinary price of a new baby. Both readings were partly true, and both let everyone accept his \"fine\" without asking what the change in his habits might be hiding.\n\nAnd because he made jokes about being knackered, everyone around him joined in, which made the tiredness the official story and left no room for any other.\n\nSophie herself nearly made the same reading, and only her memory of her husband stopped her. A baseline from someone else's life can be a useful prompt, as long as it is treated as a question about this man rather than an answer.",
+   "betterRead": "New parents are expected to be tired, which makes it easy to file every change under sleep. But Jamal's cluster went further than tiredness: staying away from home rather than rushing back to it, a short fuse, flat moments in meetings and the stories about his daughter drying up. Research has found that depression around the time of a birth affects fathers as well as mothers, and that it often shows in men as irritability, withdrawal and overwork rather than tears. A better reading does not diagnose. It notices that the man who used to talk about his daughter has stopped, and asks about that. Sophie made Jamal a cup of tea, leaned on the counter beside him and said, \"You've been staying really late lately. How are things at home, honestly?\" He was quiet for a long time, and then said that he loved his daughter and did not feel anything, and was frightened by that. Sophie listened, told him that this was more common than he thought, and helped him book an appointment with his doctor the following week."
+  },
+  {
+   "title": "The farmer who never stopped working",
+   "scene": "Gwyn, fifty-eight, farms sheep on the hills above a small town in mid Wales, as his father did. The spring was hard: a wet lambing\n  season, heavy losses and then a collapse in the price he was offered at market. Since then, his wife, Eleri, has watched him change. He is out\n  before dawn and back after dark. He has stopped going to the café on market day, where he used to spend an hour with the other farmers. He has\n  stopped watching the rugby. He is short with the dog, which he never is, and he eats his dinner standing up.\n\n  When Eleri asks how he is, he says, \"Fine. Busy.\" When she says he looks tired, he says that farming is tiring and always has been. Their son,\n  who works in Cardiff, says on the phone that Dad sounds his usual self.\n\n  One evening, Eleri finds him sitting in the Land Rover in the yard, engine off, staring at the windscreen. He has been there, she thinks, for\n  more than an hour.\n\nEleri has noticed smaller things too. He has stopped reading the farming paper, which he used to read cover to cover on Thursday nights. He forgot their anniversary, which he has never done in thirty-four years. And he has stopped answering the phone when his brother rings, which he has done every Sunday for as long as she has known him.\n\nTheir son rings on Sundays. On the phone, Gwyn talks about the weather and the price of feed in the same voice he always uses, and then hands the phone to Eleri after two minutes, which he has always done too.",
+   "misread": "Everyone around Gwyn read his constant work as the ordinary rhythm of a farm in a bad year. His son read his voice on the phone as normal because the words were normal. The busyness that was keeping Gwyn away from everyone looked, from outside, like a man coping.\n\nThe son also heard the familiar word, busy, and filled in the rest from memory. On the phone, a mask needs only a few words to hold.\n\nEleri's own reading changed only when she saw him in the Land Rover, which was the first sign that did not fit the story of a busy man in a bad year.",
+   "betterRead": "The mask rarely looks like sadness. One of its most convincing forms is busyness, because hard work is admired and leaves no time for questions. The changes Eleri saw were withdrawals from the things that had always sustained him: the market café, the rugby, the patience with the dog, even sitting down to eat. Those are the slow signs that matter. A better approach for a man like Gwyn is side by side, in the middle of a job. Eleri went out with him the next morning to mend a fence, and while they worked she said, \"You haven't been to the café since April. I'm worried about you, Gwyn.\" He said nothing for a while, then that he did not see how they would keep the farm. They talked for an hour, with their hands busy. That week, with his agreement, she called a farming support charity and booked him an appointment with their doctor, and she drove him there herself.\n\nShe also told their son, with Gwyn's permission, so that the Sunday calls could become a little longer and a little less about the weather."
+  },
+  {
+   "title": "The son who was fine on the phone",
+   "scene": "Margaret, seventy, rings her son Chris, forty, every Sunday evening. For years the calls have lasted half an hour: his work, his\n  children, the garden, her neighbours. Over the autumn the calls get shorter. Chris says he is fine, the children are fine, work is fine. His\n  voice is slower and lower than usual, with long pauses, and twice he has forgotten something she told him the week before, which is unlike\n  him. When she mentions his birthday, which is coming up, he says he does not want any fuss this year.\n\n  Margaret's husband tells her not to worry. Chris is forty, he says, and he has a lot on, and a man does not want his mother checking up on him.\n  Margaret agrees that she should not interfere. But she has been listening to that voice for forty years, and she has heard it like this only\n  once before, the winter after Chris's first marriage ended.\n\n  She decides that she will not ask him on the phone. Instead, she tells him she is coming up to see the grandchildren the following Saturday,\n  and asks whether he would walk the dog with her while she is there.\n\nMargaret has also noticed that Chris has stopped mentioning his wife, Jo, who usually says hello in the background. When she asks after Jo, he says she is fine and changes the subject.\n\nWhen she rings off, Margaret writes down, on the pad by the phone, three things she noticed: slower, forgot about the dentist, no birthday. She has never done that before, and it makes the worry feel more real and also more manageable.",
+   "misread": "Margaret's husband read Chris's short answers as a grown man's wish for privacy, which was a fair reading of the words. It did not take account of the voice, the pauses or the forgetting, and it treated asking as interfering rather than as care.\n\nIt also assumed that a mother asking would be unwelcome, when for many men a parent is one of the few people they will let past the mask.\n\nIt also treated forty as an age at which a man no longer needs his mother, which is rarely true, and is least true in a hard winter.",
+   "betterRead": "The voice carries a great deal that words leave out, and on the phone it is often all there is. A slower, lower, flatter voice, longer pauses and lapses of memory, against a forty-year baseline, are a cluster worth taking seriously, especially when they echo a time the person was struggling before. Margaret's instinct to ask in person, side by side on a walk rather than face to face on the phone, fitted what this chapter describes. On the walk, she said, \"You've sounded tired on the phone lately, love. Not like you.\" Chris said he was fine. She said, \"All right. I'm here if that changes,\" and talked about the dog. Ten minutes later, by a bench, he told her that his wife had been ill and that he had been holding everything together and telling nobody. Margaret did not offer advice. She asked what would help, and he said that having her come up more often would.\n\nMargaret also kept her Sunday calls, and added a short text on Wednesdays that asked nothing, just a photo of the dog or the garden. Chris told her later that the texts had helped more than he could say."
+  },
+  {
+   "title": "The colleague who said no",
+   "scene": "Priya manages a small team at a council office. One of her officers, Owen, forty-two, has been quieter than usual for a month. He has\n  stopped joining the team for lunch, his reports are coming in late, and in their last one-to-one he answered every question briefly and looked\n  at the table. Priya asks, at the end of the meeting, how he is. He says he is fine.\n\n  Priya has read about asking twice, and she does. She says, \"You've seemed a bit quieter lately, and you've stopped coming to lunch. Is\n  everything all right?\" Owen looks up, says, \"I'd rather not talk about it, if that's all right,\" and his jaw tightens.\n\n  Priya feels a strong pull to press, because she is worried, and because she has read that men often need to be asked more than once. She also\n  feels a pull to apologise and retreat, and to pretend she never asked.\n\nOwen has worked for Priya for six years. He is reliable, private and well liked, and he has never brought his personal life into the office. She knows that he lives with his elderly father, and very little else.\n\nPriya has also noticed that Owen has taken several single days of leave at short notice, always on a Monday or a Friday, and that he has been seen leaving the building at lunchtime with his phone to his ear, walking fast. Twice he has come back looking as if he had been crying, and has gone straight to his desk with his head down.",
+   "misread": "The risk in this moment is to read a clear refusal as one more layer of the mask, and to keep pushing until the person feels inspected. The opposite risk is to read the refusal as a closed door for good, and never mention it again.\n\nBoth pulls were about Priya's discomfort as much as Owen's needs. Pressing would have eased her worry; retreating would have eased her embarrassment. Neither would have helped him.\n\nAnd there was a third risk: that Priya, embarrassed, would start avoiding Owen, which he would have read as a sign that he had said something wrong.",
+   "betterRead": "A second question is an invitation, and an invitation can be declined. Owen's answer was clear and his body agreed with it: he wanted the subject closed, at least for now. The respectful response accepts that and leaves the door open. Priya said, \"Of course. If anything changes, or if there's anything I can do at work to make things easier, just say. And the employee assistance line is there if you ever want to talk to someone outside the office.\" She then moved on to something ordinary, and did not raise it again. She did make a point of asking him to lunch the following week, which he accepted. Three weeks later, Owen asked if he could have a word, and told her that his father was dying and that he needed some flexibility over the next few months. He said that her not pushing had made it easier to come back to her.\n\nShe also wrote nothing about it in his file, and told nobody else, because nothing had been said that needed passing on."
+  }
+ ],
+ "workedReading": {
+  "title": "The flatmate behind the closed door",
+  "scene": "Ellie, twenty, shares a student flat with four others. Ben, who was the most sociable of them in their first term, has changed since Christmas. His curtains stay closed most of the day. He has stopped coming to the Tuesday quiz, and Ellie has not seen him leave for lectures in a fortnight. He still makes jokes in the kitchen, but they are fewer, and he goes back to his room as soon as he has eaten. The bins are full of takeaway boxes. When Ellie asked, a week ago, how he was, he said, \"Fine, just knackered, deadlines,\" and smiled. The others in the flat think Ben is just being lazy. One of them says he is probably playing games all night and that it is not their business. Ellie is not so sure.\n\nEllie is aware that she is not Ben's parent, his tutor or his doctor, and that she does not want to be the flatmate who interferes. She is also aware that if she does not say anything, it is possible nobody will.\n\nShe also knows that Ben has always been the joker of the flat, and that the jokes have not stopped entirely. That makes the change easy to miss, and easy for the others to dismiss.",
+  "steps": [
+   {
+    "label": "List what has changed",
+    "text": "Ellie writes down, for herself, what she has actually seen, without labels. Curtains closed during the day. No quiz for five weeks. Not leaving for lectures. Fewer jokes, back to his room after meals. Takeaways rather than cooking, which he used to enjoy. A \"fine\" with a smile. She notes that none of these, on its own, would mean much. Together, over a month, they make a pattern.\n\nWriting it down also stops her from leading with the most dramatic item, or with a guess. Each line is something she saw, which makes it something she can say to him without accusing him of anything.\n\nShe also notices one thing she had almost missed: he has stopped playing music in his room. The flat has been quieter since January, and she realises that the quiet is his."
+   },
+   {
+    "label": "Check against his baseline",
+    "text": "In the first term, Ben was up early, went to the gym, cooked for the flat on Sundays and organised the quiz team. The change is large, and it has lasted. She also notes that some of it, such as tiredness and takeaways, is normal in exam season, which is a reason to hold the reading lightly, but not a reason to ignore the rest.\n\nShe also thinks about how he responded when things were hard in the first term, after a bad week in November. He talked about it in the kitchen, loudly, and made it funny. The silence now is a different kind of change."
+   },
+   {
+    "label": "Think about the situation",
+    "text": "She thinks about what might have happened. January exams have just finished. She heard him on the phone to his parents last week, sounding tense. His girlfriend from home has not visited this term. Any of these, or none, might be part of it. She does not need to know which to ask, and she notes that guessing aloud would be the wrong way to start.\n\nShe also reminds herself that the reason does not matter for the first question. Whatever it is, the next step is the same: notice, ask, listen.\n\nShe also notes what she does not know. She has never met his parents, and she does not know what they expect of him. Whatever she imagines about his situation is a guess."
+   },
+   {
+    "label": "Choose the moment",
+    "text": "She does not knock on his door to ask, because that would make it an event, face to face and hard to escape. She waits until she is going to the corner shop and asks if he wants to come, since he has been saying he needs milk. Walking side by side, with somewhere to go and something to look at, is easier for both of them.\n\nShe also picks a time of day when he is likely to be awake and not in a hurry. Late afternoon, after he has eaten, is the time he is most often in the kitchen.\n\nShe also thinks about what she will do if he wants to talk for longer than the walk lasts. She decides that she will suggest a cup of tea in the kitchen when they get back, if the others are out."
+   },
+   {
+    "label": "Ask twice, about behaviour",
+    "text": "On the way, she asks how he is, and he says fine. She says, \"You've not been to the quiz for ages, and I haven't seen you go to lectures for a bit. Is everything all right? You don't have to say.\" She names what she has seen, not what she suspects, and she gives him an easy way out.\n\nShe says it lightly, without stopping walking, and without looking at him too hard. If he says no, she has already decided that she will say, \"Fair enough, I'm around,\" and talk about something else.\n\nShe also avoids the question she most wants to ask, which is whether he has been going to lectures at all. That would turn the conversation into a check on him, and she is not his tutor."
+   },
+   {
+    "label": "Listen, do not fix",
+    "text": "Ben is quiet for a minute, then says that he failed two exams in January and has not told his parents, who are paying his rent. He says he cannot face lectures because he feels like a fraud. Ellie's instinct is to tell him that loads of people fail exams and that resits are easy. She holds it back. She says it sounds like a lot to carry on his own, and asks how long he has been feeling like this. He says since before Christmas.\n\nShe also notices that his walk has slowed as he talks, and slows hers to match. They end up standing outside the shop for ten minutes without going in.\n\nWhen he finishes, she says, \"Thanks for telling me. That must have been hard to say.\" He laughs, a little shakily, and says it was easier than he expected, because they were walking."
+   },
+   {
+    "label": "Know the next step",
+    "text": "When he has said more, Ellie asks whether he has thought about talking to the university's student support or wellbeing service, and offers to look up how to book an appointment with him. She says that she would go with him if he wanted. She also knows, from reading 2.13, that if he had mentioned hopelessness or not wanting to be here, she would ask him directly about it and get help the same day. He has not, and when she asks, carefully, how bad it has got, he says just stuck. He books an appointment that evening, with her sitting beside him, and agrees to tell his parents after he has seen someone.\n\nShe checks in with him two days later, after the appointment, with a text that asks only how it went. He replies that it was all right, better than he expected, and thanks her for the milk."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Waiting for him to come to you",
+   "body": "Many people decide that if someone they care about were struggling, he would say so, and that the respectful thing is to wait. For a man who has learned to say he is fine, waiting can mean waiting for ever. Addis and Mahalik's review describes the conditions that make help-seeking hardest: when the problem feels unusual, when asking means giving up control, and when the people around him might see it as weakness. A man in those conditions is unlikely to start the conversation. A friend, partner or colleague who notices a pattern and asks, gently and privately, is doing something he may be unable to do for himself.\n\nIt also helps to remember that men often test the water first, with a joke, a passing remark or a mention of being \"a bit fed up\". A listener who picks up on that, rather than laughing it off, often finds the door was already ajar.\n\nWaiting also tends to make asking harder later. The longer a change goes unmentioned, the more it feels as if everyone has agreed not to see it, and the more awkward it becomes to be the first to say something."
+  },
+  {
+   "title": "Asking where he cannot answer",
+   "body": "A second question asked in front of others, in a crowded kitchen, across a table at dinner or in a group chat, puts a man in a position where the only safe answer is to repeat the first one. So does a question asked when he is about to leave, busy with something urgent or with his children in the room. Choose a moment when he is alone with you, not rushed, and ideally side by side: driving, walking, doing a job, watching a match. If there is no such moment, make one, by suggesting a walk or a drive. Where you ask matters almost as much as what you ask.\n\nTiming matters too. Late at night, after a few drinks, people sometimes say more than they meant to and regret it in the morning. A calm, sober moment is better, even if it takes longer to find.\n\nText messages have their own problem. A question by text is easy to answer with one word and a thumbs-up, and it gives you no voice or face to read. Use texts to set up a meeting, not to have the conversation."
+  },
+  {
+   "title": "Putting a label on it",
+   "body": "\"You seem depressed\", \"I think you're having a breakdown\" or \"You need therapy\" are verdicts, and verdicts invite denial. They also do something a reader of bodies should never do, which is diagnose. You do not know what is wrong, and he may not either. Describe what you have seen instead, as behaviour: you have not been to football for a month, you have been staying late every night, you have sounded flat on the phone. Behaviour is hard to argue with and easy to talk about, and it leaves him room to name what is going on in his own words.\n\nLabels can also frighten. A man who has not yet admitted to himself that something is wrong may hear \"depressed\" as a judgment he cannot accept, and close the conversation to protect himself from it.\n\nIf a word for what he is going through does come up, let it come from him. A man who says \"I think I might be depressed\" has taken an important step, and it is his to take."
+  },
+  {
+   "title": "Making his struggle about you",
+   "body": "When someone finally says that things have been hard, the listener sometimes responds with their own feelings first: hurt that he did not say so sooner, worry, or a story about a time they felt the same. \"Why didn't you tell me?\" can feel like an accusation. \"I know exactly how you feel\" can end the conversation. Both are natural, and both shift the focus away from the person who has just taken a risk. Thank him for telling you. Ask what it has been like. Keep your own feelings for later, or for someone else, and let this conversation be about him.\n\nIf his struggle does affect you, as it often will, find your own support: a friend, a partner, a helpline for carers or families. You will listen better if you are not carrying it alone.\n\nIt also helps to remember that he may not want to talk about it again for a while. A single conversation can be enough for now. Checking in later, lightly, is better than returning to the subject every time you see him."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What if I ask and I am wrong?",
+   "a": "Then the cost is usually small. A friend who says, \"No, honestly, I'm fine, just busy\" has lost nothing, and has learned that you care enough to ask. Most people, even if they are fine, are touched to be noticed. The cost of not asking when something is wrong can be much greater. What matters is the way you ask: privately, about specific behaviour, with an easy exit, and without a label. Asked that way, a wrong guess does no harm. If you notice yourself asking the same person every week, though, it may be time to trust his answer, or to ask yourself whether your worry is about him or about something in you.\n\nIt also helps to remember that you are not asking for a confession. You are letting him know that you have noticed and that you are someone he could talk to. That message lands even if he says nothing more.\n\nAnd if you are not sure whether to ask, ask yourself which you would regret more a month from now: an awkward minute, or having said nothing."
+  },
+  {
+   "q": "Isn't asking twice intrusive?",
+   "a": "It can be, if it becomes an interrogation. Asked once, gently, with evident interest and an easy way out, a second question is closer to courtesy than intrusion: it tells the person that the first question was real. What makes it intrusive is pressing past a clear refusal, asking in public, asking repeatedly over a short time, or asking in a way that suggests you already know the answer. Ask once more. Accept the answer you get. Leave the door open, and make it obvious that you meant it.\n\nDifferent relationships also carry different permissions. A partner or close friend can ask more directly than a colleague or a neighbour, who may do better simply to say that they have noticed and are around if needed.\n\nIt also helps to say why you are asking. \"I'm asking because I care about you, not because I think something's wrong with you\" makes the question easier to hear and easier to decline."
+  },
+  {
+   "q": "What should I say if he does start to talk?",
+   "a": "Less than you think. Listen more than you speak. Reflect back what you hear, such as \"That sounds really hard\" or \"So you've been carrying this on your own for a while\". Ask open questions that let him say more: what has it been like, how long has it been going on, what has helped, if anything. Resist the urge to fix, compare or reassure too quickly. Thank him for telling you. Then, if it seems right, ask what would help, and whether he has thought about talking to his doctor. If anything he says worries you about his safety, 2.13 describes what to do next.\n\nIt also helps to be comfortable with silence. When a man pauses mid-story, he is often deciding whether to go on. Waiting, rather than filling the gap, tells him it is safe to.\n\nAfterwards, it is fine to check in, briefly, a few days later. \"Just thinking about what you said the other day. How are things?\" shows that you remembered without making him start again from the beginning."
+  },
+  {
+   "q": "Why do so many men hide it?",
+   "a": "Not because men are simply stubborn. Addis and Mahalik argued that whether men seek help depends a great deal on context: on whether the problem feels normal, whether help means losing control, whether it touches their sense of who they are, and how the people around them would react. Many men also learned early that certain feelings were not to be shown, and that strength meant handling things alone. Those lessons are hard to unlearn. Seen this way, \"I'm fine\" is often a reasonable answer to an environment that has not made any other answer safe, which is why changing the environment, by asking well, can change the answer.\n\nIt also helps to model the alternative. Men who hear other men, especially men they respect, talk plainly about hard times find it easier to do the same. A friend who says \"I had a rough patch last year\" makes the second answer more possible.\n\nNone of this means every man hides things, or that every \"fine\" is a mask. It means that when a man's habits change and his words stay the same, the environment is worth considering before the man is judged."
+  },
+  {
+   "q": "Does talking about it actually help?",
+   "a": "For many people, yes, though talking is not a cure for everything. The research on suppression suggests that holding feelings in has costs: Gross and John found that people who habitually hid their emotions reported lower wellbeing and fewer close relationships, and Butler and colleagues found that hiding feelings in conversation made the other person feel less connected and raised their blood pressure. Being heard by someone who cares is one of the most reliable comforts there is. For problems that go deeper or last longer, talking to a friend is a first step, and talking to a doctor or therapist is often the next.\n\nTalking also tends to work best when the listener stays steady. A friend who is calm, interested and not shocked makes it easier to keep going than one who is visibly alarmed.\n\nIt also helps to know that being listened to is different from being advised. Many people who have been through a hard time say that what helped most was not anything anyone said, but the feeling that someone had heard them."
+  },
+  {
+   "q": "What if I am the one wearing the mask?",
+   "a": "Then this chapter applies to you too. You do not need to tell everyone. Choose one person you trust and tell them a little more than you usually would, perhaps in a side-by-side moment. Describe what has changed rather than trying to name it. If things have been hard for a while, or if they are getting worse, book an appointment with your doctor; many men find it easier to start by mentioning sleep or stress than by saying they feel low. And if you are having thoughts of not wanting to be here, the crisis resources in this app list people you can talk to now, any time of day or night.\n\nIt can also help to write down what has changed before you talk to anyone, as Ellie did for Ben. Seeing it on paper often makes it easier to believe it is real, and easier to say.\n\nIt may also help to notice what your own mask looks like from outside. If it is busyness, jokes or irritability, the people around you may already have noticed, and may be waiting for a sign that they can ask."
   }
  ],
  "watch": [
