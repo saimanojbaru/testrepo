@@ -30,7 +30,7 @@
   {
    "h": "You made a better impression than you think.",
    "p": "After a conversation with a stranger, most people replay it and find fault: they talked too much, said something awkward, could not think of a question. In 2018 Erica Boothby, Gus Cooney, Gillian Sandstrom and Margaret Clark found that this self-criticism is systematically wrong. People who had just met and talked underestimated how much their conversation partner liked them and enjoyed their company. The researchers called it the liking gap.\n\nThey found it in strangers meeting in a laboratory, in students who had just moved into shared accommodation, and in adults at a workshop. Among the students, it lasted for months. Observers who watched recordings of the conversations could see the signs that the partners liked each other, such as smiles, nods and engaged posture. The participants themselves missed them, because they were preoccupied with their own performance.\n\nThis connects with the illusion of transparency discussed elsewhere in this book: we think our awkwardness is obvious and our partner's warmth is polite. In fact the other person has usually enjoyed the conversation more than we realise, and noticed our awkwardness less.\n\nThe practical consequence is about following up. Many men leave a good conversation at an event and never contact the person again, assuming the interest was one-sided. The liking gap suggests the opposite is more likely. If you enjoyed talking to someone, send a short message the next day referring to something you discussed. The figures here stand face to face in conversation. Each is probably underestimating how much the other is enjoying it.",
-   "poseId": "p_pair_face_to_face",
+   "poseId": "p_mixed_face_to_face",
    "disconfirm": "This would be wrong if people accurately judged how much their conversation partners liked them. Boothby and colleagues found they consistently underestimated it, and missed liking signals that observers could see."
   },
   {
@@ -69,7 +69,7 @@
    "annotation": "Most people at an event are hoping to be spoken to. A phone tells them you are not available."
   },
   {
-   "doPoseId": "p_pair_face_to_face",
+   "doPoseId": "p_mixed_face_to_face",
    "dontPoseId": "p_gaze_aside",
    "doCaption": "Full attention until you leave",
    "dontCaption": "Glancing around the room while they talk",

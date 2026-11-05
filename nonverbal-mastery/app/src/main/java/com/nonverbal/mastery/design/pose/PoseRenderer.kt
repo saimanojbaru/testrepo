@@ -203,11 +203,15 @@ object PoseRenderer {
         val k = sk.placement.scale
         val baby = look.age == Age.BABY
         val child = look.age == Age.CHILD
+        val woman = look.woman && !baby && !child
         /** Children's heads are larger for their bodies. */
-        val hk = k * when { baby -> 1.6f; child -> 1.24f; else -> 1.05f }
+        val hk = k * when { baby -> 1.6f; child -> 1.24f; woman -> 0.98f; else -> 1.05f }
         val b = look.build
-        /** Limb thickness follows build, gently. */
+        /** Limb thickness follows build, gently; women's arms and legs are slighter. */
         val lw = 1f + (b - 1f) * 0.8f
+        val armW = lw * (if (woman) 0.86f else 1f)
+        val legW = lw * (if (woman) 0.93f else 1f)
+        val skirt = look.bottom == Bottom.SKIRT
         val skin = look.skin
         val parts = mutableListOf<Part>()
         /** The top's outline, kept so the sleeves can join it without a seam. */
@@ -229,15 +233,21 @@ object PoseRenderer {
         // ---- Torso ------------------------------------------------------------------------
 
         private fun torso() {
-            val male = !baby && !child
-            // A man's trunk: shoulders and chest a little broader, hips a little narrower. Build widens the
-            // waist and deepens the belly more than anything else.
-            val widthShape = if (male) floatArrayOf(0.95f, 0.94f, 0.95f, 1.0f, 1.05f, 1.08f) else FloatArray(6) { 1f }
+            val male = !baby && !child && !woman
+            // A man's trunk: shoulders and chest a little broader, hips a little narrower. A woman's: a narrower
+            // waist and shoulders, fuller hips and bust. Build widens the waist and deepens the belly most.
+            val widthShape = when {
+                male -> floatArrayOf(0.95f, 0.94f, 0.95f, 1.0f, 1.05f, 1.08f)
+                woman -> floatArrayOf(1.07f, 1.02f, 0.86f, 0.9f, 0.95f, 0.91f)
+                else -> FloatArray(6) { 1f }
+            }
+            val depthShape = if (woman) floatArrayOf(1.04f, 1f, 0.94f, 1.04f, 1.12f, 1f) else FloatArray(6) { 1f }
             val heavy = b - 1f
             val secs = sk.sections.mapIndexed { i, sec ->
                 val belly = if (i in 1..3) 1f + heavy * 2.6f else 1f + heavy * 1.2f
                 val waist = if (i in 1..3) 1f + heavy * 2.0f else 1f + heavy * 0.9f
-                sec.copy(halfWidth = sec.halfWidth * widthShape[i] * waist, halfDepth = sec.halfDepth * belly * (if (baby) 1.12f else 1f))
+                sec.copy(halfWidth = sec.halfWidth * widthShape[i] * waist,
+                    halfDepth = sec.halfDepth * belly * depthShape[i] * (if (baby) 1.12f else 1f))
             }
             val ext = secs.map { extremes(it) }
             val depth = pr.depth(sk.waist) + 0.5f * k
@@ -255,12 +265,12 @@ object PoseRenderer {
             val hemExt = extremes(secs[1].copy(center = hem, halfWidth = secs[1].halfWidth * 1.05f, halfDepth = secs[1].halfDepth * 1.04f))
             val top = pr.screen(sk.chest + sk.chestAxes.apply(v(0, 5.5, -1)) * k)
             // The tops of the shoulders, so the outline runs over them instead of dipping between the arms.
-            val shoulderTops = listOf(sk.left.shoulder, sk.right.shoulder)
-                .map { pr.screen(it + sk.chestAxes.apply(v(0, 3.4, -0.5)) * k) }
+            val shoulderTops = listOf(1f to sk.left.shoulder, -1f to sk.right.shoulder)
+                .map { (side, sh) -> pr.screen(sh + sk.chestAxes.apply(v(if (woman) -1.4f * side else 0f, if (woman) 2.8f else 3.4f, -0.5f)) * k) }
                 .sortedBy { it.x }
             // The slope of the trapezius, from the sides of the neck down to the shoulders.
             val neckSides = listOf(1f, -1f)
-                .map { pr.screen(sk.chest + sk.chestAxes.apply(v(6.6f * it, 7.6, -1.6)) * k) }
+                .map { pr.screen(sk.chest + sk.chestAxes.apply(v((if (woman) 5.4f else 6.6f) * it, 7.6, -1.6)) * k) }
                 .sortedBy { it.x }
             val shirt = smoothClosed(buildList {
                 add(hemExt.first)
@@ -278,7 +288,7 @@ object PoseRenderer {
             shirtPath = shirt
             trousersPath = trousers
             // Where the hips overlap the thighs, the trousers are one piece of cloth: no seam, no shadow.
-            val r = k * lw
+            val r = k * legW
             val thighs = union(
                 capsule(pr, sk.left.hip, 9.4f * r, sk.left.knee, 6.2f * r),
                 capsule(pr, sk.right.hip, 9.4f * r, sk.right.knee, 6.2f * r),
@@ -301,6 +311,9 @@ object PoseRenderer {
                 for (y in listOf(-12f, -20f, -28f)) {
                     marks += Mark(dot(pr.screen(chestPt(0.4, y, 10.6 + if (y < -20f) 0.6f else 0f)), 0.42f * k * pr.scale), shadeOf(look.topColor, 0.35f), 0f)
                 }
+            }
+            if (look.top == Top.BLOUSE && chestFront > 0.3f) {
+                shapes += Shape(Mat.SKIN_OVER, smoothClosed(listOf(chestPt(-3.4, 3.0, 8.4), chestPt(3.4, 3.0, 8.4), chestPt(0.6, -3.8, 9.8), chestPt(-0.6, -3.8, 9.8)).map(pr::screen)), skin)
             }
             if (look.top == Top.POLO && chestFront > 0.3f) {
                 marks += Mark(polyline(listOf(chestPt(0, 2.4, 9.6), chestPt(0, -9, 10.8)).map(pr::screen)), shadeOf(look.topColor, 0.3f), 0.35f * k * pr.scale)
@@ -331,13 +344,13 @@ object PoseRenderer {
             val h = sk.headAxes
             fun at(x: Number, y: Number, z: Number) = sk.head + h.apply(v(x, y, z)) * hk
             fun chestAt(x: Number, y: Number, z: Number) = sk.chest + sk.chestAxes.apply(v(x, y, z)) * k
-            val nf = if (baby) 0.85f else 1f + (b - 1f) * 0.9f
+            val nf = (if (baby) 0.85f else 1f + (b - 1f) * 0.9f) * (if (woman) 0.84f else 1f)
 
             // Neck, then the collar of whatever is worn, both in the neck's place in the depth order.
             val neck = mutableListOf(
                 Shape(Mat.SKIN, capsule(pr, sk.neck - sk.chestAxes.yAxis * (1.5f * k), 5.6f * k * nf, sk.head - h.yAxis * (4.5f * hk), 5.0f * k * nf), skin),
             )
-            if (!baby) {
+            if (!baby && look.hairStyle != HairStyle.HIJAB) {
                 val collar = when (look.top) {
                     Top.SHIRT, Top.POLO -> ellipsoid(pr, chestAt(0, 3.7, -1.0), sk.chestAxes, 6.5f * k * nf, 1.7f * k, 5.9f * k * nf)
                     else -> ellipsoid(pr, chestAt(0, 3.1, -0.9), sk.chestAxes, 6.2f * k * nf, 1.2f * k, 5.7f * k * nf)
@@ -347,23 +360,28 @@ object PoseRenderer {
             parts += Part("$f:head", neck, pr.depth(sk.neck) + 0.6f * k, false)
 
             val toward = facing(h.zAxis)
-            val jawW = if (child || baby) 5.9f else 6.5f + (b - 1f) * 2f
+            val jawW = if (child || baby) 5.9f else if (woman) 5.8f else 6.5f + (b - 1f) * 2f
             val skull = union(
                 ellipsoid(pr, at(0, 1.4, -0.8), h, 7.7f * hk, 10.2f * hk, 9.8f * hk),
-                ellipsoid(pr, at(0, -3.6, 2.4), h, jawW * hk, (if (baby) 5.6f else 6.9f) * hk, 6.8f * hk),
-                circle(pr, at(0, -8.4, 5.4), (if (baby) 1.6f else 2.4f) * hk),
-                capsule(pr, at(0, 1.2, 8.2), 1.0f * hk, at(0, -2.3, 9.8), (if (baby) 1.0f else 1.35f) * hk),
+                ellipsoid(pr, at(0, -3.6, 2.4), h, jawW * hk, (if (baby) 5.6f else if (woman) 6.5f else 6.9f) * hk, 6.8f * hk),
+                circle(pr, at(0, -8.4, 5.4), (if (baby) 1.6f else if (woman) 2.0f else 2.4f) * hk),
+                capsule(pr, at(0, 1.2, 8.2), 1.0f * hk, at(0, -2.3, 9.8), (if (baby) 1.0f else if (woman) 1.15f else 1.35f) * hk),
             )
             val shapes = mutableListOf(Shape(Mat.SKIN_OVER, skull, skin))
 
-            // Ears, on whichever side faces the viewer.
+            // Ears, on whichever side faces the viewer, unless the hair or a scarf covers them.
+            val earsCovered = look.hairStyle in setOf(HairStyle.LONG, HairStyle.BOB, HairStyle.CURLY_LONG, HairStyle.HIJAB)
             for (s in listOf(1f, -1f)) {
-                if (facing(h.xAxis * s) > -0.15f) {
+                if (!earsCovered && facing(h.xAxis * s) > -0.15f) {
                     shapes += Shape(Mat.EAR, ellipsoid(pr, at(7.5f * s, 0.2, 0.2), h, 1.0f * hk, 3.0f * hk, 1.9f * hk), skin)
                 }
             }
 
             hair(h, toward, ::at)?.let { shapes += Shape(Mat.HAIR, it.first, it.second) }
+            hairBehind(h, ::at)?.let { (path, color, centre) ->
+                // Long hair, a bun or a scarf's drape hangs behind the head: in front of it only when seen from behind.
+                parts += Part("$f:hairback", listOf(Shape(Mat.HAIR, path, color)), pr.depth(centre) - 1.5f * k, false)
+            }
             beard(h, toward, ::at)?.let { shapes += Shape(Mat.BEARD, it.first, it.second) }
 
             parts += Part("$f:head", shapes, pr.depth(sk.head) + 1f * k, false, marks = face(h, ::at))
@@ -379,17 +397,25 @@ object PoseRenderer {
                 HairStyle.RECEDING -> Cut(3.2f, 9.2f, 0.45f, 0f)
                 HairStyle.CHILD -> Cut(2.6f, 9.8f, 1.05f, 0f)
                 HairStyle.BABY -> Cut(3.8f, 8.3f, 0.2f, 0f)
+                HairStyle.LONG -> Cut(2.6f, 10.0f, 1.4f, 0f)
+                HairStyle.BOB -> Cut(2.6f, 10.0f, 1.6f, 0f)
+                HairStyle.BUN, HairStyle.PONYTAIL -> Cut(3.0f, 9.4f, 0.7f, 0f)
+                HairStyle.CURLY_LONG -> Cut(3.0f, 10.2f, 2.8f, 0.07f)
+                HairStyle.PIXIE -> Cut(3.0f, 9.6f, 1.0f, 0f)
+                HairStyle.HIJAB -> return hijab(h, toward, at)
             }
+            val longStyle = look.hairStyle in setOf(HairStyle.LONG, HairStyle.BOB, HairStyle.CURLY_LONG)
             val base = ellipsoidPath(at(0, spec.cy, -1.3), h, (7.7f + spec.t) * hk, (spec.ry + spec.t * 0.6f) * hk, (10.0f + spec.t) * hk, spec.bumps)
             var hair = base
             // Short hair stops above the ears at the sides; at the back it runs down to the nape.
-            if (toward > -0.55f) {
+            if (!longStyle && toward > -0.55f) {
                 hair = difference(hair, ellipsoid(pr, at(0, -4.4, 1.6), h, 9.8f * hk, (if (look.hairStyle == HairStyle.CHILD) 5.4f else 5.8f) * hk, 8.0f * hk))
             }
             // Where the face is turned toward us, cut the face out of the hair; from behind, hair covers the head.
             if (toward > -0.35f) {
                 val low = look.hairStyle == HairStyle.CHILD
-                val cut = ellipsoid(pr, at(0, if (low) -3.3f else -2.6f, 4.0), h, 7.3f * hk, (if (low) 9.2f else 9.6f) * hk, 8.6f * hk)
+                val cut = if (longStyle) ellipsoid(pr, at(0, -2.4, 4.4), h, 6.8f * hk, 9.4f * hk, 8.4f * hk)
+                    else ellipsoid(pr, at(0, if (low) -3.3f else -2.6f, 4.0), h, 7.3f * hk, (if (low) 9.2f else 9.6f) * hk, 8.6f * hk)
                 hair = difference(hair, cut)
             }
             if (look.hairStyle == HairStyle.RECEDING) {
@@ -401,6 +427,33 @@ object PoseRenderer {
                 else -> look.hair
             }
             return hair to color
+        }
+
+        /** A headscarf: covers the hair, ears and neck, and frames the face. */
+        private fun hijab(h: M3, toward: Float, at: (Number, Number, Number) -> V3): Pair<Path, Color> {
+            var scarf = union(
+                ellipsoid(pr, at(0, 1.0, -1.0), h, 9.0f * hk, 11.8f * hk, 11.0f * hk),
+                ellipsoid(pr, at(0, -10.5, 0.5), h, 10.5f * hk, 6.5f * hk, 9.5f * hk),
+            )
+            if (toward > -0.35f) scarf = difference(scarf, ellipsoid(pr, at(0, -1.6, 5.4), h, 5.9f * hk, 7.6f * hk, 6.4f * hk))
+            return scarf to look.scarfColor
+        }
+
+        /** What hangs behind the head, with a point to depth-sort it by. */
+        private fun hairBehind(h: M3, at: (Number, Number, Number) -> V3): Triple<Path, Color, V3>? = when (look.hairStyle) {
+            HairStyle.LONG -> Triple(union(
+                ellipsoid(pr, at(0, -3, -3.2), h, 8.9f * hk, 12f * hk, 7.8f * hk),
+                capsule(pr, at(0, -8, -4.2), 8.2f * hk, at(0, -20, -3.6), 7.2f * hk),
+            ), look.hair, at(0, -4, -4))
+            HairStyle.BOB -> Triple(ellipsoid(pr, at(0, -2.5, -2.4), h, 9.4f * hk, 10.6f * hk, 9.0f * hk), look.hair, at(0, -3, -3))
+            HairStyle.CURLY_LONG -> Triple(ellipsoidPath(at(0, -3, -2.6), h, 11.5f * hk, 12.5f * hk, 10f * hk, 0.06f), look.hair, at(0, -3, -3))
+            HairStyle.BUN -> Triple(ellipsoid(pr, at(0, 4.2, -9.8), h, 3.8f * hk, 3.6f * hk, 3.8f * hk), look.hair, at(0, 4, -9))
+            HairStyle.PONYTAIL -> Triple(union(
+                ellipsoid(pr, at(0, 3.4, -9.6), h, 2.6f * hk, 2.6f * hk, 2.6f * hk),
+                capsule(pr, at(0, 2.5, -10.4), 2.6f * hk, at(0, -10, -10.8), 1.7f * hk),
+            ), look.hair, at(0, 0, -9))
+            HairStyle.HIJAB -> Triple(capsule(pr, at(0, -6, -6), 8.0f * hk, at(0, -17, -6.5), 9.5f * hk), look.scarfColor, at(0, -8, -5))
+            else -> null
         }
 
         private fun beard(h: M3, toward: Float, at: (Number, Number, Number) -> V3): Pair<Path, Color>? {
@@ -428,14 +481,14 @@ object PoseRenderer {
             val dark = Color(0xFF2A211C)
             val brow = shadeOf(if (look.hairStyle == HairStyle.BABY) skin else look.hair, 0.15f)
             val crease = shadeOf(skin, 0.32f)
-            val lips = mix(shadeOf(skin, 0.3f), Color(0xFF8E4A44), 0.3f)
+            val lips = if (woman) mix(shadeOf(skin, 0.22f), Color(0xFFA84E5A), 0.45f) else mix(shadeOf(skin, 0.3f), Color(0xFF8E4A44), 0.3f)
             fun n(x: Number, y: Number, z: Number) = h.apply(v(x, y, z))
 
             for (s in listOf(1f, -1f)) {
                 if (facing(n(0.42f * s, 0.05, 0.9)) > 0.12f) {
                     val eye = at(3.0f * s, 1.9, 7.7)
-                    marks += Mark(dot(pr.screen(eye), (if (baby) 0.75f else 0.62f) * px), dark, 0f)
-                    if (!baby) marks += Mark(polyline(listOf(at(1.3f * s, 4.1, 8.3), at(3.2f * s, 4.4, 8.0), at(4.8f * s, 3.9, 7.0)).map(pr::screen)), brow, 0.7f * px)
+                    marks += Mark(dot(pr.screen(eye), (if (baby) 0.75f else if (woman) 0.68f else 0.62f) * px), dark, 0f)
+                    if (!baby) marks += Mark(polyline(listOf(at(1.3f * s, 4.2, 8.3), at(3.2f * s, if (woman) 4.8f else 4.4f, 8.0), at(4.8f * s, 4.0, 7.0)).map(pr::screen)), brow, (if (woman) 0.5f else 0.7f) * px)
                     if (look.glasses) {
                         val ring = (0 until 18).map { i ->
                             val th = 2.0 * PI * i / 18
@@ -455,8 +508,8 @@ object PoseRenderer {
             // Mouth in two halves, so a profile still shows the near corner.
             for (s in listOf(1f, -1f)) {
                 if (facing(n(0.6f * s, 0, 0.8)) > 0.2f) {
-                    val w = if (baby) 1.2f else 2.1f
-                    marks += Mark(polyline(listOf(at(w * s, -5.0, 8.3), at(w * 0.5f * s, -5.2, 8.8), at(0, -5.25, 8.95)).map(pr::screen)), lips, 0.5f * px)
+                    val w = if (baby) 1.2f else if (woman) 1.9f else 2.1f
+                    marks += Mark(polyline(listOf(at(w * s, -5.0, 8.3), at(w * 0.5f * s, -5.2, 8.8), at(0, -5.25, 8.95)).map(pr::screen)), lips, (if (woman) 0.65f else 0.5f) * px)
                 }
             }
             return marks
@@ -467,7 +520,7 @@ object PoseRenderer {
         private fun arm(name: String, side: Side) {
             val torsoDepth = pr.depth(sk.waist) + 0.5f * k
             val farSide = pr.depth(side.shoulder) < torsoDepth - 7f * k
-            val r = k * lw
+            val r = k * armW
             val sleeves = look.sleeves
 
             val upper = mutableListOf<Shape>()
@@ -505,18 +558,19 @@ object PoseRenderer {
         private fun leg(name: String, side: Side) {
             val torsoDepth = pr.depth(sk.waist) + 0.5f * k
             val farLeg = pr.depth(side.hip) < torsoDepth - 5f * k
-            val r = k * lw
-            val thigh = capsule(pr, side.hip, 9.4f * r, side.knee, 6.2f * r)
+            val r = k * legW
+            val thigh = capsule(pr, side.hip, 9.4f * r, side.knee, (if (skirt) 7.2f else 6.2f) * r)
             // Seen end-on (sitting, facing us), a thigh runs into the lap without a seam.
             parts += Part("$f:leg$name", listOf(Shape(Mat.BOTTOM, thigh, look.bottomColor, quiet = trousersPath)),
                 (pr.depth(side.hip) + pr.depth(side.knee)) / 2f - 3f * k, farLeg)
 
             val ft = side.foot
-            val shin = capsule(pr, side.knee, 6.0f * r, side.ankle, 4.7f * k)
+            val shin = if (skirt) capsule(pr, side.knee, 5.0f * r, side.ankle, 3.5f * k) else capsule(pr, side.knee, 6.0f * r, side.ankle, 4.7f * k)
+            val sf = if (woman) 0.86f else 1f
             val shoe = union(
-                capsule(pr, ft.heel, 4.0f * k, ft.toe, 3.2f * k),
-                capsule(pr, ft.ballInner, 3.3f * k, ft.ballOuter, 3.3f * k),
-                capsule(pr, side.ankle - V3.Y * (1.5f * k), 4.0f * k, ft.heel, 3.9f * k),
+                capsule(pr, ft.heel, 4.0f * k * sf, ft.toe, 3.2f * k * sf),
+                capsule(pr, ft.ballInner, 3.3f * k * sf, ft.ballOuter, 3.3f * k * sf),
+                capsule(pr, side.ankle - V3.Y * (1.5f * k), 4.0f * k * sf, ft.heel, 3.9f * k * sf),
             )
             val marks = mutableListOf<Mark>()
             if (look.top != Top.ONESIE) {
@@ -525,7 +579,13 @@ object PoseRenderer {
                 marks += Mark(polyline(sole.map(pr::screen)), look.soleColor ?: shadeOf(look.shoeColor, 0.45f), 1.1f * k * pr.scale)
             }
             val kneeJoin = circle(pr, side.knee, 7f * r)
-            parts += Part("$f:leg$name", listOf(Shape(Mat.BOTTOM, shin, look.bottomColor, kneeJoin), Shape(Mat.SHOE, shoe, look.shoeColor)),
+            val lower = if (skirt) listOf(
+                // Bare or tighted legs below a skirt, with the hem falling over the knee.
+                Shape(Mat.SKIN, shin, look.legColor ?: skin),
+                Shape(Mat.BOTTOM, capsule(pr, side.knee, 7.4f * r, side.knee.lerp(side.hip, 0.16f), 7.6f * r), look.bottomColor),
+                Shape(Mat.SHOE, shoe, look.shoeColor),
+            ) else listOf(Shape(Mat.BOTTOM, shin, look.bottomColor, kneeJoin), Shape(Mat.SHOE, shoe, look.shoeColor))
+            parts += Part("$f:leg$name", lower,
                 (pr.depth(side.knee) + pr.depth(side.ankle)) / 2f - 3f * k, farLeg, marks = marks)
         }
 

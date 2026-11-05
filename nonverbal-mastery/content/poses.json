@@ -3360,7 +3360,8 @@
     "x": 0,
     "z": 62,
     "facing": 180,
-    "scale": 0.6
+    "scale": 0.6,
+    "look": "girl"
    }
   ]
  },
@@ -3986,7 +3987,8 @@
     "x": 38,
     "z": 0,
     "facing": 0,
-    "scale": 0.55
+    "scale": 0.55,
+    "look": "girl"
    }
   ]
  },
@@ -4081,7 +4083,8 @@
     "facing": 90,
     "scale": 1,
     "y": 64,
-    "pitch": -90
+    "pitch": -90,
+    "look": "older-woman"
    }
   ]
  },
@@ -4126,7 +4129,8 @@
     "x": 54,
     "z": 0,
     "facing": 0,
-    "scale": 1
+    "scale": 1,
+    "look": "older-woman"
    },
    {
     "params": {
@@ -4187,7 +4191,8 @@
     "x": -78,
     "z": 60,
     "facing": 90,
-    "scale": 1
+    "scale": 1,
+    "look": "woman"
    },
    {
     "params": {
@@ -4217,7 +4222,8 @@
     "x": 78,
     "z": 95,
     "facing": -90,
-    "scale": 1
+    "scale": 1,
+    "look": "woman"
    },
    {
     "params": {
@@ -4333,7 +4339,8 @@
     "x": -50,
     "z": 150,
     "facing": 150,
-    "scale": 1
+    "scale": 1,
+    "look": "woman"
    },
    {
     "params": {
@@ -4364,5 +4371,368 @@
     "scale": 1
    }
   ]
+ },
+ {
+  "id": "p_mixed_angled",
+  "title": "An open angle, a man and a woman",
+  "theme": "together",
+  "desc": "A man and a woman standing at roughly a right angle to each other, both turned toward a point between them. An angle lets two people talk with less unbroken eye contact than face to face, and it leaves either of them free to step away.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "-20",
+   "torsoTurn": -20,
+   "headTurn": -15,
+   "footAngleL": -14,
+   "footAngleR": 14
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Turned toward a shared point",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headTurn": 10
+    },
+    "x": -70,
+    "z": 62,
+    "facing": 95,
+    "scale": 1,
+    "look": "Sara"
+   }
+  ],
+  "look": "Tom"
+ },
+ {
+  "id": "p_mixed_lean_back",
+  "title": "He leans in, she leans away",
+  "theme": "together",
+  "desc": "A woman and a man in profile: he leans toward her with a hand raised mid-gesture, while she leans back from the hips, turns her shoulders away and folds her arms. Leaning away, turning and closing up are among the plainest signs that someone wants more distance, whatever the words are doing.",
+  "params": {
+   "armPoseL": "cross_over",
+   "armPoseR": "cross_under",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand_step_back",
+   "view": "side",
+   "spineLean": -8,
+   "torsoTurn": 18,
+   "headTurn": 20,
+   "weightShift": -0.4
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Her trunk tipping back and turning",
+    "color": "accent-warm"
+   },
+   {
+    "at": "b:torso",
+    "text": "Him leaning in",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 10
+    },
+    "x": 0,
+    "z": 68,
+    "facing": 180,
+    "scale": 1,
+    "look": "Tom"
+   }
+  ],
+  "look": "Sara"
+ },
+ {
+  "id": "p_mixed_too_close",
+  "title": "Too close, a man and a woman",
+  "theme": "together",
+  "desc": "A woman and a man in profile standing less than half a metre apart. He leans in; she leans back with her weight on the rear foot and her chin drawn away. When someone enters space another person treats as intimate, the usual response is to restore distance with the body.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand_step_back",
+   "view": "side",
+   "spineLean": -9,
+   "headPitch": -5,
+   "weightShift": -0.4
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Leaning back to restore distance",
+    "color": "accent-warm"
+   },
+   {
+    "at": "b:torso",
+    "text": "Leaning in",
+    "color": "accent-warm"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "spineLean": 7,
+     "headPitch": -4
+    },
+    "x": 0,
+    "z": 48,
+    "facing": 180,
+    "scale": 1,
+    "look": "Tom"
+   }
+  ],
+  "look": "Sara"
+ },
+ {
+  "id": "p_mixed_face_to_face",
+  "title": "Face to face, a man and a woman",
+  "theme": "together",
+  "desc": "A man and a woman standing in profile, facing each other a little over a metre apart, both at rest. A comfortable conversational distance between acquaintances in many Western settings; what feels comfortable varies with culture, relationship and the people involved.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "hang",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "feet",
+    "text": "About 1.1 metres between them",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "hang",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 0,
+    "z": 112,
+    "facing": 180,
+    "scale": 1,
+    "look": "Amara"
+   }
+  ],
+  "look": "Diego"
+ },
+ {
+  "id": "p_mixed_seated_across",
+  "title": "Across a table, a man and a woman",
+  "theme": "together",
+  "desc": "A man and a woman seated in profile facing each other across a table, both leaning in a little with their forearms on the tabletop. A table sets the distance and puts a barrier between them, which is part of why interviews, negotiations and first dates across a table feel more formal than the same talk side by side.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "desk",
+   "spineLean": 6,
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "hands",
+    "text": "Forearms on the shared table",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "flat",
+     "handShapeR": "flat",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "spineLean": 6
+    },
+    "x": 0,
+    "z": 118,
+    "facing": 180,
+    "scale": 1,
+    "look": "Claire"
+   }
+  ],
+  "look": "Hassan"
+ },
+ {
+  "id": "p_mixed_side_by_side",
+  "title": "Side by side, a man and a woman",
+  "theme": "together",
+  "desc": "A man and a woman standing side by side, a forearm's length apart, both facing forward toward something ahead of them. Side by side, neither person has to hold the other's gaze, and either can turn to face the other or step away.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "hang",
+   "handShapeL": "hidden",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Both facing the same way",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "pocket",
+     "handShapeL": "relaxed",
+     "handShapeR": "hidden",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "weightShift": 0.4
+    },
+    "x": -62,
+    "z": 0,
+    "facing": 0,
+    "scale": 1,
+    "look": "Sara"
+   }
+  ],
+  "look": "Tom"
+ },
+ {
+  "id": "p_mixed_decline_handshake",
+  "title": "A hand offered, a hand on the heart",
+  "theme": "together",
+  "desc": "A man in profile offering his right hand to a woman wearing a headscarf, who answers with her right hand flat on her heart and her head inclined. Many observant Muslim women and men do not shake hands with someone of the opposite sex; a hand on the heart is a complete and warm greeting, and the offered hand is best turned into a nod.",
+  "params": {
+   "armPoseL": "hang",
+   "armPoseR": "handshake",
+   "handShapeL": "relaxed",
+   "handShapeR": "grip",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "right-hand",
+    "text": "An offered hand",
+    "color": "accent-cool"
+   },
+   {
+    "at": "b:right-hand",
+    "text": "A hand on the heart instead",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "chest_hand",
+     "handShapeL": "relaxed",
+     "handShapeR": "flat",
+     "legStanceL": "stand",
+     "legStanceR": "stand",
+     "headPitch": 10
+    },
+    "x": 0,
+    "z": 92,
+    "facing": 180,
+    "scale": 1,
+    "look": "hijab"
+   }
+  ],
+  "look": "Tom"
+ },
+ {
+  "id": "p_mixed_seated_turned",
+  "title": "Turned toward a colleague",
+  "theme": "together",
+  "desc": "A man seated beside a woman colleague, his hips facing forward but his shoulders and head turned toward her as she speaks. How much of the body turns toward someone, and how long it stays turned, shows where attention is going.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "torsoTurn": 28,
+   "headTurn": 12,
+   "view": "-25"
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Shoulders turned toward her",
+    "color": "do-green"
+   },
+   {
+    "at": "b:right-hand",
+    "text": "She is speaking",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "thighs_rest",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "torsoTurn": -12,
+     "headTurn": -10
+    },
+    "x": 64,
+    "z": 0,
+    "facing": 0,
+    "scale": 1,
+    "look": "Priya"
+   }
+  ],
+  "look": "Kenji"
  }
 ]

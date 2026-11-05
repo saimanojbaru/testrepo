@@ -48,7 +48,7 @@
   {
    "h": "Becoming a fair reader.",
    "p": "None of the biases in this chapter is something a person chooses. They work in the speed of a first impression, below deliberate thought, which is exactly why they need deliberate checks. Several are simple enough to use in the moment.\n\nThe first is the swap test. When you find yourself reading someone's behaviour as too emotional, too aggressive, too soft or too pushy, imagine the same words and gestures from someone of a different gender, height or background, and ask whether you would read them the same way. If not, look again at what actually happened.\n\nThe second is to look for the situation. Anger, tears, raised voices and silence all have causes. Asking what happened before deciding what kind of person someone is corrects the very attribution error Brescoll and Uhlmann found.\n\nThe third is to watch the floor. Notice who speaks, who is interrupted, whose ideas are picked up and who looks at whom when a question is asked. In a mixed group, people often address their answers to the most senior or most confident-seeming person in the room, and that is frequently a man. Turning your body and gaze to whoever asked the question is a small correction.\n\nThe fourth is to use whatever advantage you have. If you are tall, senior, male or confident in a room, people's eyes tend to rest on you. You can use that to give others the floor. The figure here sits turned towards a colleague, giving her his full attention. Small acts of attention like this are where fair reading becomes fair practice.",
-   "poseId": "p_sit_turned_toward",
+   "poseId": "p_mixed_seated_turned",
    "disconfirm": "This would be wrong if deliberate checks like the swap test made no difference to how behaviour is read. They do not remove bias, but they give a slower, more accurate reading a chance to correct a fast one."
   }
  ],
@@ -68,7 +68,7 @@
    "annotation": "Ideas land partly through the listeners. A body that is visibly attending tells the speaker, and the room, that her point counts."
   },
   {
-   "doPoseId": "p_sit_turned_toward",
+   "doPoseId": "p_mixed_seated_turned",
    "dontPoseId": "p_gaze_aside",
    "doCaption": "Turned towards the speaker until she is done",
    "dontCaption": "Looking away before she has finished",

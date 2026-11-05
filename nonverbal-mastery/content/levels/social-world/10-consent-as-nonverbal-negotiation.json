@@ -11,7 +11,7 @@
   {
    "h": "Bodies negotiate all the time.",
    "p": "Watch any physical interaction between two people and you will see a continuous exchange. One person moves closer; the other matches the move or holds still or steps back. A hand rests on an arm; the arm relaxes under it or slides away. An embrace starts; the other body meets it, endures it or pulls out of it. This happens in a hug between friends, in rough play between brothers, in a haircut, in a medical examination and in sex.\n\nReading these signals is a basic skill, and most people do it constantly without noticing. A friend who stiffens when you put an arm around him is read, and the arm comes away. A child who squirms out of a hug is let go. Much of the time, the negotiation works.\n\nBut reading is not the same as agreeing, and this chapter turns on that difference. The body can tell you to stop. It cannot, on its own, tell you that you may go on. Signs of willingness are easily misread, as the previous chapter showed, while signs of reluctance, once noticed, are reason enough to stop. The asymmetry is the whole point: read the body for no, and ask for yes.\n\nThe figures here show one person leaning in and the other leaning back, arms folded, turning away. In any physical situation, this is the body saying stop. Whatever has been said or done before, the right response is to step back and, if it matters, to ask.",
-   "poseId": "p_pair_lean_back",
+   "poseId": "p_mixed_lean_back",
    "disconfirm": "This would be wrong if signs of willingness could be read as reliably as signs of reluctance. The research on overperception in the previous chapter suggests they cannot, which is why the body should be read for no and asked for yes.",
    "pullQuote": "Read the body for no, and ask for yes."
   },
@@ -42,7 +42,7 @@
   {
    "h": "Ask, check, and keep checking.",
    "p": "Asking does not have to be clumsy, and it does not spoil anything. “Is this okay?” “Do you want to?” “Do you want me to stop?” Said warmly, at the right moment, these questions are part of intimacy, not an interruption to it. Many people say that being asked makes them feel safer and more willing, not less.\n\nConsent is not a single gate passed once. People can agree to one thing and not another, agree and then change their minds, or agree last week and not tonight. So keep checking as things change, especially when moving to something new, and especially when the other person's body changes: when they go quiet, stop returning touch, tense up or pull back.\n\nMake stopping easy. Say it out loud: “We can stop any time.” If they hesitate, stop and give them room, rather than waiting to see whether the hesitation passes. Look for active participation, not mere absence of objection: if someone is not taking an active part, stop and ask. And when someone says no, or not now, accept it without sulking, arguing or trying again later the same night. The way you take a no tells the other person whether it is safe to say one.\n\nThe figures here stand at an angle, close enough to speak, far enough that either can step away. A good question about touch is asked from somewhere like this, where both people are free to say no.",
-   "poseId": "p_pair_angled",
+   "poseId": "p_mixed_angled",
    "disconfirm": "This would be wrong if asking about consent made intimate encounters worse for those involved. Accounts from people who are asked suggest the opposite, though formal research on this question is limited."
   },
   {
@@ -54,14 +54,14 @@
  ],
  "poseGallery": [
   {
-   "doPoseId": "p_pair_angled",
-   "dontPoseId": "p_pair_too_close",
+   "doPoseId": "p_mixed_angled",
+   "dontPoseId": "p_mixed_too_close",
    "doCaption": "Asking first, with room to say no",
    "dontCaption": "Moving in without asking",
    "annotation": "The body can tell you to stop, but not that you may go on. Ask in words, from a distance that leaves the other person free."
   },
   {
-   "doPoseId": "p_pair_side_by_side",
+   "doPoseId": "p_mixed_side_by_side",
    "dontPoseId": "p_stand_freeze",
    "doCaption": "Stopping, stepping back and asking",
    "dontCaption": "Carrying on when someone goes still",

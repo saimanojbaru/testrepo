@@ -112,7 +112,9 @@ fun PoseFigure(
         FigurePalette.from(colors).let { if (tint != null) it.copy(line = tint) else it }
     }
     val solved = scene ?: rememberScene(pose, view)
-    val looks = remember(pose, castSeed, solved.figures.size) { Cast.forScene(castSeed ?: pose.id, solved) }
+    val looks = remember(pose, castSeed, solved.figures.size) {
+        Cast.forScene(castSeed ?: pose.id, solved, listOf(pose.look) + pose.companions.map { it.look })
+    }
     val measurer = rememberTextMeasurer()
     val numberStyle = remember { TextStyle(fontFamily = Inter, fontWeight = FontWeight.SemiBold, fontSize = 10.sp) }
     val markerColors = pose.annotations.map { annotationColor(it.color, colors) }

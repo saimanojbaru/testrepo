@@ -2,9 +2,14 @@ package com.nonverbal.mastery.design.pose
 
 import androidx.compose.ui.graphics.Color
 
-enum class HairStyle { CROP, SIDE, CURLY, BUZZ, RECEDING, CHILD, BABY }
+enum class HairStyle {
+    CROP, SIDE, CURLY, BUZZ, RECEDING, CHILD, BABY,
+    /** Women's styles, and a girl's ponytail. */
+    LONG, BOB, BUN, PONYTAIL, CURLY_LONG, PIXIE, HIJAB,
+}
 enum class Beard { NONE, STUBBLE, TRIM, FULL }
-enum class Top { TSHIRT, SHIRT, JUMPER, POLO, ONESIE }
+enum class Top { TSHIRT, SHIRT, JUMPER, POLO, BLOUSE, ONESIE }
+enum class Bottom { TROUSERS, SKIRT }
 enum class Age { BABY, CHILD, ADULT, OLDER }
 
 /**
@@ -29,18 +34,24 @@ data class Look(
     val glasses: Boolean = false,
     /** Sole colour, for shoes whose sole contrasts (trainers). */
     val soleColor: Color? = null,
+    val woman: Boolean = false,
+    val bottom: Bottom = Bottom.TROUSERS,
+    /** Below a skirt: tights, or bare skin when null. */
+    val legColor: Color? = null,
+    /** A headscarf's colour, for [HairStyle.HIJAB]. */
+    val scarfColor: Color = Color(0xFF5E6C8A),
 ) {
     enum class Sleeves { SHORT, ROLLED, LONG }
 
     /** A child of this person: same skin and hair colour, a child's clothes. */
-    fun child(index: Int): Look = copy(
+    fun child(index: Int, girl: Boolean = false): Look = copy(
         name = "$name's child",
-        hairStyle = HairStyle.CHILD, beard = Beard.NONE, glasses = false,
+        hairStyle = if (girl) HairStyle.PONYTAIL else HairStyle.CHILD, beard = Beard.NONE, glasses = false,
         top = Top.TSHIRT, sleeves = Sleeves.SHORT,
         topColor = KidTops[index % KidTops.size], bottomColor = Color(0xFF4F6E92),
         shoeColor = Color(0xFFEDEAE3), soleColor = Color(0xFFB9B3A8),
         hair = if (hair.isGrey()) Color(0xFF3B2A20) else hair,
-        build = 1f, age = Age.CHILD,
+        build = 1f, age = Age.CHILD, woman = girl, bottom = Bottom.TROUSERS, legColor = null,
     )
 
     /** A baby of this person: a soft one-piece, bare head with a little hair. */
@@ -50,7 +61,7 @@ data class Look(
         top = Top.ONESIE, sleeves = Sleeves.LONG,
         topColor = Color(0xFFF1E4C8), bottomColor = Color(0xFFF1E4C8), shoeColor = Color(0xFFF1E4C8), soleColor = null,
         hair = if (hair.isGrey()) Color(0xFF6A4A33) else hair,
-        build = 1f, age = Age.BABY,
+        build = 1f, age = Age.BABY, woman = false, bottom = Bottom.TROUSERS, legColor = null,
     )
 
     private companion object {
@@ -60,9 +71,10 @@ data class Look(
 }
 
 /**
- * The men who appear in the figures. Varied on purpose, in skin, age, build and style, so that
+ * The people who appear in the figures. Varied on purpose, in skin, age, build and style, so that
  * most readers will find someone like themselves. Each pose is drawn with one of them, chosen
- * from the pose id, so the same pose always shows the same man and a do/don't pair can share him.
+ * from the pose id, so the same pose always shows the same person and a do/don't pair can share him.
+ * Main figures are men unless a pose says otherwise; women appear where a pose names them.
  */
 object Cast {
     private val Black = Color(0xFF1C1714)
@@ -116,7 +128,39 @@ object Cast {
             build = 0.98f),
     )
 
-    private val older = men.filter { it.age == Age.OLDER }
+    val women: List<Look> = listOf(
+        Look("Sara", skin = Color(0xFFE9C0A0), hair = DarkBrown, hairStyle = HairStyle.LONG, beard = Beard.NONE,
+            top = Top.BLOUSE, topColor = Color(0xFFB9777E), bottomColor = Color(0xFF2F3A52), shoeColor = BlackShoe, woman = true),
+        Look("Amara", skin = Color(0xFF5E3A27), hair = Black, hairStyle = HairStyle.CURLY_LONG, beard = Beard.NONE,
+            top = Top.JUMPER, topColor = Color(0xFFC79A3E), bottomColor = Color(0xFF3D5372), shoeColor = Trainer,
+            soleColor = TrainerSole, woman = true),
+        Look("Mei", skin = Color(0xFFEDCBA8), hair = Black, hairStyle = HairStyle.BOB, beard = Beard.NONE,
+            top = Top.TSHIRT, topColor = Color(0xFF34466B), bottomColor = Color(0xFF8A8C8F), shoeColor = BlackShoe,
+            sleeves = Look.Sleeves.SHORT, woman = true, bottom = Bottom.SKIRT, legColor = Color(0xFF2B2A2E), build = 0.95f),
+        Look("Priya", skin = Color(0xFFB8805A), hair = Black, hairStyle = HairStyle.BUN, beard = Beard.NONE,
+            top = Top.BLOUSE, topColor = Color(0xFF3C7A74), bottomColor = Color(0xFF2E2E33), shoeColor = BrownShoe, woman = true),
+        Look("Claire", skin = Color(0xFFF2D4BE), hair = Blond, hairStyle = HairStyle.PONYTAIL, beard = Beard.NONE,
+            top = Top.SHIRT, topColor = Color(0xFFA9C0D6), bottomColor = Color(0xFF2E3A55), shoeColor = BrownShoe,
+            sleeves = Look.Sleeves.ROLLED, woman = true),
+        Look("Rosa", skin = Color(0xFFC9906A), hair = Brown, hairStyle = HairStyle.LONG, beard = Beard.NONE,
+            top = Top.BLOUSE, topColor = Color(0xFF8A3B4A), bottomColor = Color(0xFF8A3B4A), shoeColor = BlackShoe,
+            woman = true, bottom = Bottom.SKIRT, legColor = Color(0xFF3A2F2E)),
+        Look("Fatima", skin = Color(0xFFC08A62), hair = Black, hairStyle = HairStyle.HIJAB, beard = Beard.NONE,
+            top = Top.BLOUSE, topColor = Color(0xFFD8CBB4), bottomColor = Color(0xFF3B3A45), shoeColor = BrownShoe,
+            woman = true, scarfColor = Color(0xFF5E6C8A)),
+        Look("Margaret", skin = Color(0xFFEDCBB4), hair = White, hairStyle = HairStyle.PIXIE, beard = Beard.NONE,
+            top = Top.JUMPER, topColor = Color(0xFF7D8C7A), bottomColor = Color(0xFF5A5650), shoeColor = BrownShoe,
+            woman = true, age = Age.OLDER, glasses = true, build = 1.04f),
+        Look("Grace", skin = Color(0xFF6E4733), hair = Grey, hairStyle = HairStyle.PIXIE, beard = Beard.NONE,
+            top = Top.JUMPER, topColor = Color(0xFF8E7BA0), bottomColor = Color(0xFF3E3B47), shoeColor = BlackShoe,
+            woman = true, age = Age.OLDER, build = 1.06f),
+    )
+
+    val everyone: List<Look> get() = men + women
+
+    private val olderMen = men.filter { it.age == Age.OLDER }
+    private val olderWomen = women.filter { it.age == Age.OLDER }
+    private val youngerWomen = women.filter { it.age == Age.ADULT && it.hairStyle != HairStyle.HIJAB }
 
     private fun hash(s: String): Int {
         var h = 0x811C9DC5.toInt()
@@ -128,27 +172,40 @@ object Cast {
     fun main(seed: String): Look = men[hash(seed) % men.size]
 
     /**
-     * Everyone in a scene. The first figure is the pose's own man. Companions are other men, never
-     * the same one twice; a small companion becomes a child or a baby of the main figure; a person
-     * lying down (the bedside) is an older man.
+     * Everyone in a scene. [hints] name who each figure is ("woman", "older-woman", "girl", a cast name...);
+     * without a hint the first figure is a man chosen from the seed, companions are other men, a small
+     * companion becomes a child or baby of the main figure, and a person lying down is an older man.
      */
-    fun forScene(seed: String, scene: Scene): List<Look> {
-        val first = main(seed)
-        val used = mutableSetOf(first.name)
+    fun forScene(seed: String, scene: Scene, hints: List<String?> = emptyList()): List<Look> {
         val h = hash(seed)
+        val used = mutableSetOf<String>()
+        fun pick(pool: List<Look>, salt: Int): Look {
+            var j = (h / 7 + salt * 5) % pool.size
+            var tries = 0
+            while (pool[j].name in used && tries < pool.size) { j = (j + 1) % pool.size; tries++ }
+            return pool[j].also { used += it.name }
+        }
+        fun byHint(hint: String, salt: Int): Look? = when (hint.lowercase()) {
+            "woman" -> pick(youngerWomen, salt)
+            "older-woman" -> pick(olderWomen, salt)
+            "older-man" -> pick(olderMen, salt)
+            "man" -> pick(men.filter { it.age == Age.ADULT }, salt)
+            "hijab" -> women.first { it.hairStyle == HairStyle.HIJAB }.also { used += it.name }
+            else -> everyone.firstOrNull { it.name.equals(hint, ignoreCase = true) }?.also { used += it.name }
+        }
+        val firstHint = hints.getOrNull(0)
+        val first = firstHint?.let { byHint(it, 0) } ?: main(seed).also { used += it.name }
         var kids = 0
         return scene.figures.mapIndexed { i, sk ->
             if (i == 0) return@mapIndexed first
+            val hint = hints.getOrNull(i)
             val k = sk.placement.scale
             when {
                 k < 0.45f -> first.baby()
-                k < 0.8f -> first.child(kids++)
-                sk.placement.pitch != 0f -> older.firstOrNull { it.name !in used }?.also { used += it.name } ?: older.first()
-                else -> {
-                    var j = (h / 7 + i * 5) % men.size
-                    while (men[j].name in used) j = (j + 1) % men.size
-                    men[j].also { used += it.name }
-                }
+                k < 0.8f -> first.child(kids++, girl = hint == "girl")
+                hint != null -> byHint(hint, i) ?: pick(men, i)
+                sk.placement.pitch != 0f -> pick(olderMen, i)
+                else -> pick(men, i)
             }
         }
     }

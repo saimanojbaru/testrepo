@@ -17,7 +17,7 @@
   {
    "h": "Men tend to read too much.",
    "p": "In 1982 Antonia Abbey had pairs of unacquainted men and women talk for five minutes, and then asked them, and observers who had watched, to rate the intentions of each. Men, both participants and observers, read more sexual intent into the women's behaviour than women did. They also read more into the men's behaviour, which led Abbey to suggest that men have a general tendency to see sexual intent where others see friendliness.\n\nIn 2000 Martie Haselton and David Buss proposed an explanation they called error management theory. When the costs of two possible mistakes are unequal, they argued, minds may evolve to make the cheaper one more often. For ancestral men, missing a real opportunity may have cost more than mistaking friendliness for interest, so men may be biased toward overperceiving.\n\nIn 2012 Carin Perilloux, Judith Easton and Buss tested this with 96 men and 103 women in short speed meetings. Men overestimated the women's sexual interest, and women underestimated the men's. Men who rated themselves as more attractive, and men more interested in casual sex, overestimated more, and more attractive women were overestimated more. A later, much larger speed-dating study suggested that much of the difference came from projection: men who were interested tended to assume the interest was returned.\n\nWhatever the cause, the practical point is the same. If you are a man and you think someone is interested in you, your reading is probably biased upward, and most of all when you are interested yourself. The figures here sit across a table, as in a speed date. Whatever one of them is reading in the other, he should hold it lightly.",
-   "poseId": "p_pair_seated_across",
+   "poseId": "p_mixed_seated_across",
    "disconfirm": "This would be wrong if men read women's sexual interest as accurately as women read men's, or underestimated it. Repeated studies find overperception, though explanations differ, and most of the research has been with young heterosexual people in Western countries."
   },
   {
@@ -29,7 +29,7 @@
   {
    "h": "Drink makes misreading likelier.",
    "p": "The chapter on substance use in Part II described alcohol myopia: drink narrows attention to whatever is most obvious in the moment and pushes subtler cues into the background. In attraction, that means the smile is noticed and the turned shoulder is not. A man who has been drinking is more likely to read interest that is not there and to miss signs that someone wants to leave.\n\nIn 2008 Coreen Farris, Teresa Treat, Richard Viken and Richard McFall reviewed the research on misperceiving sexual intent and its link to sexual coercion. They described how misreading friendliness as sexual interest can be an early step in a sequence that ends with a man pressuring or forcing someone, and how situational factors, alcohol among them, make the misreading more likely. Later studies have found that alcohol interacts with misperception and with hostile attitudes toward women in shaping men's willingness to justify coercion.\n\nNone of this means that every misreading leads to harm, or that every man who misreads is dangerous. It means that the stakes of getting it wrong are not equal. Misreading interest and asking politely costs a moment of embarrassment. Misreading interest and acting on it can do lasting harm to another person.\n\nAnd drink affects the other person too. Someone who is drunk may be unable to give a meaningful yes, as the next chapter explains. The figures here show one leaning in and the other leaning back, arms folded, turning away. Sober, most men would read it at once. After a few drinks, the man leaning in may not.",
-   "poseId": "p_pair_lean_back",
+   "poseId": "p_mixed_lean_back",
    "disconfirm": "This would be wrong if alcohol made men better, or no worse, at reading disinterest. The research reviewed by Farris and colleagues and later studies point the other way, though most of it was done with young men in laboratory or college settings."
   },
   {
@@ -41,7 +41,7 @@
   {
    "h": "Ask, and accept the answer.",
    "p": "Because reading attraction is unreliable and biased, the only dependable method is to ask, in words, and to accept the answer. Ask clearly, at a moment when the other person can easily say no: “I've really enjoyed talking to you. Would you like to get a coffee sometime?” Ask once. Leave room for no, for maybe, and for silence.\n\nTreat anything other than a clear yes as a no. “I'm not sure,” “Maybe another time,” “I'm seeing someone,” a change of subject or no reply at all are all ways people decline without risking confrontation. Accept them with grace: “No problem; it was good to meet you.” Do not negotiate, do not ask again later that evening, and do not ask her friends.\n\nThis book teaches no techniques for increasing someone's interest, overcoming hesitation or escalating physical contact. That is not prudishness. Techniques of that kind exist to get past another person's reluctance, which is exactly what the ethics statement rules out. A person who is interested will usually tell you when you ask. A person who is not is entitled not to be worked on.\n\nThe figures here stand at an angle, open, with room to move. A good question about attraction is asked from this position: close enough to be heard, far enough away that either person can step back without awkwardness.",
-   "poseId": "p_pair_angled",
+   "poseId": "p_mixed_angled",
    "disconfirm": "This would be wrong if asking directly produced worse outcomes for both people than reading and acting on signals. Given the research on overperception, asking is the only approach that does not rely on a biased reading.",
    "pullQuote": "A person who is not interested is entitled not to be worked on."
   },
@@ -54,22 +54,22 @@
  ],
  "poseGallery": [
   {
-   "doPoseId": "p_pair_angled",
-   "dontPoseId": "p_pair_too_close",
+   "doPoseId": "p_mixed_angled",
+   "dontPoseId": "p_mixed_too_close",
    "doCaption": "Asking, and leaving room",
    "dontCaption": "Moving in because she smiled",
    "annotation": "A smile is not a yes. Ask a clear question from a distance that lets either of you step back."
   },
   {
    "doPoseId": "p_greet_acknowledge",
-   "dontPoseId": "p_pair_lean_back",
+   "dontPoseId": "p_mixed_lean_back",
    "doCaption": "Wishing her a good evening",
    "dontCaption": "Pressing on as she leans away",
    "annotation": "Leaning back, folded arms and a turning torso end the conversation. Leave gracefully; it costs nothing."
   },
   {
    "doPoseId": "p_walk_stride",
-   "dontPoseId": "p_pair_face_to_face",
+   "dontPoseId": "p_mixed_face_to_face",
    "doCaption": "Accepting it and walking on",
    "dontCaption": "Arguing with a no",
    "annotation": "No, maybe and silence are all answers. Accept them, and do not try again later the same evening."

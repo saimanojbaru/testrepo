@@ -146,6 +146,8 @@ data class Pose(
     val companions: List<SceneFigure> = emptyList(),
     /** Additive: draw the main figure's line of gaze. */
     val showGaze: Boolean = false,
+    /** Additive: who the main figure is: "woman", "older-woman", "older-man", "hijab", or a cast name. Default: a man. */
+    val look: String? = null,
 )
 
 /** Additive: a second (third, fourth) figure placed in the same scene as the main one. */
@@ -163,6 +165,8 @@ data class SceneFigure(
     val y: Float = 0f,
     /** Additive: tip about the figure's own left-right axis, degrees. -90 lays it on its back, head toward its own rear. */
     val pitch: Float = 0f,
+    /** Additive: who this figure is: "woman", "man", "older-woman", "older-man", "girl", "boy", "hijab", or a cast name. */
+    val look: String? = null,
 )
 
 @Serializable
