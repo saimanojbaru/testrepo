@@ -5242,5 +5242,182 @@
    }
   ],
   "look": "Marcus"
+ },
+ {
+  "id": "p_older_sit_at_rest",
+  "title": "Seated, older",
+  "theme": "seated",
+  "desc": "An older man sitting at rest on a straight-backed chair, feet flat, hands on his thighs, face in repose. With age, folds and lines around the mouth and eyes can make a resting face look sad or stern to others, though nothing in his mood has changed.",
+  "params": {
+   "armPoseL": "thighs_rest",
+   "armPoseR": "thighs_rest",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "spineLean": -4
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "A face at rest, not a sad one",
+    "color": "accent-cool"
+   },
+   {
+    "at": "hands",
+    "text": "Hands resting on the thighs",
+    "color": "accent-cool"
+   }
+  ],
+  "look": "Walter"
+ },
+ {
+  "id": "p_older_pair_walk",
+  "title": "Walking with his father",
+  "theme": "together",
+  "desc": "A younger man walking beside his father at the older man's pace, turned a little toward him as they talk. Matching someone's pace, rather than walking half a step ahead, keeps the conversation shared.",
+  "params": {
+   "armPoseL": "swing_back",
+   "armPoseR": "swing_forward",
+   "handShapeL": "relaxed",
+   "handShapeR": "relaxed",
+   "legStanceL": "walk_forward",
+   "legStanceR": "walk_back",
+   "view": "three-quarter",
+   "headTurn": 16
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Talking as they walk",
+    "color": "accent-cool"
+   },
+   {
+    "at": "b:head",
+    "text": "Turned toward him, at his pace",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "swing_back",
+     "armPoseR": "swing_forward",
+     "handShapeL": "relaxed",
+     "handShapeR": "relaxed",
+     "legStanceL": "walk_forward",
+     "legStanceR": "walk_back"
+    },
+    "x": 56,
+    "z": 0,
+    "facing": 0,
+    "scale": 1,
+    "look": "Ben"
+   }
+  ],
+  "look": "Walter"
+ },
+ {
+  "id": "p_older_group_circle",
+  "title": "An older man in the circle",
+  "theme": "together",
+  "desc": "Three people standing in a loose circle, an older man among two younger colleagues, all turned toward the shared centre. Who is included in the circle, and who is left at its edge, is one of the first things to change as men age.",
+  "params": {
+   "armPoseL": "pocket",
+   "armPoseR": "hang",
+   "handShapeL": "hidden",
+   "handShapeR": "relaxed",
+   "legStanceL": "stand",
+   "legStanceR": "stand",
+   "headTurn": -12
+  },
+  "annotations": [
+   {
+    "at": "torso",
+    "text": "Facing the shared centre",
+    "color": "accent-cool"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "hang",
+     "armPoseR": "gesture_mid",
+     "handShapeL": "relaxed",
+     "handShapeR": "open",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": -72,
+    "z": 58,
+    "facing": 102,
+    "scale": 1,
+    "look": "Callum"
+   },
+   {
+    "params": {
+     "armPoseL": "cross_over",
+     "armPoseR": "cross_under",
+     "handShapeL": "relaxed",
+     "handShapeR": "tucked",
+     "legStanceL": "stand",
+     "legStanceR": "stand"
+    },
+    "x": 72,
+    "z": 58,
+    "facing": -102,
+    "scale": 1,
+    "look": "Priya"
+   }
+  ],
+  "look": "Greg"
+ },
+ {
+  "id": "p_older_pair_seated_across",
+  "title": "Spoken to directly",
+  "theme": "together",
+  "desc": "An older man and a younger woman seated across a table, leaning in a little, each looking at the other. A doctor, a banker or an official who addresses the older man himself, at a normal pace and in a normal voice, treats him as the adult he is.",
+  "params": {
+   "armPoseL": "table_rest",
+   "armPoseR": "table_rest",
+   "handShapeL": "flat",
+   "handShapeR": "flat",
+   "legStanceL": "sit",
+   "legStanceR": "sit",
+   "prop": "desk",
+   "spineLean": 6,
+   "view": "side"
+  },
+  "annotations": [
+   {
+    "at": "head",
+    "text": "Addressed himself",
+    "color": "do-green"
+   },
+   {
+    "at": "b:head",
+    "text": "Looking at him, not past him",
+    "color": "do-green"
+   }
+  ],
+  "companions": [
+   {
+    "params": {
+     "armPoseL": "table_rest",
+     "armPoseR": "table_rest",
+     "handShapeL": "flat",
+     "handShapeR": "flat",
+     "legStanceL": "sit",
+     "legStanceR": "sit",
+     "spineLean": 6
+    },
+    "x": 0,
+    "z": 118,
+    "facing": 180,
+    "scale": 1,
+    "look": "Claire"
+   }
+  ],
+  "look": "Joseph"
  }
 ]
