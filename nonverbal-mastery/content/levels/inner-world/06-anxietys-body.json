@@ -80,6 +80,20 @@
    "doCaption": "Acknowledging the worry, and making a plan together.",
    "dontCaption": "Reassuring him for the tenth time that it'll be fine.",
    "annotation": "Repeated reassurance brings short relief and can keep worry going. A plan gives some control back."
+  },
+  {
+   "doPoseId": "p_group_three",
+   "dontPoseId": "p_stand_arm_self_hold",
+   "doCaption": "Brought into a small group, with something to do",
+   "dontCaption": "Left alone at the edge of the party",
+   "annotation": "An anxious guest holding his glass like a shield is not looking down on anyone. A role and one easy introduction lower the stakes."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_sit_heel_raised",
+   "doCaption": "Settled, once he knows what comes next",
+   "dontCaption": "A bouncing knee read as impatience",
+   "annotation": "Restless legs often mean nerves, not boredom. Telling someone what will happen, and when, gives anxiety less to grip."
   }
  ],
  "caseStudy": "Richard, fifty, leads a small finance team. His newest hire, Ollie, twenty-eight, is excellent on paper and quiet in person. In meetings he looks at the table, answers in a few words and never volunteers anything. He eats lunch alone at his desk. Two colleagues tell Richard they find Ollie stand-offish.\n\nRichard watches more carefully. He notices that Ollie's knee bounces under the table in meetings, that he grips his pen tightly, and that his voice is tight and quick on the rare occasions he speaks. Before his first presentation to the department, Ollie arrives forty minutes early, and his hands shake as he sets up. None of it looks like arrogance. It looks like a man working very hard to get through each meeting.\n\nRichard changes a few things without commenting on any of them. He sends agendas a day ahead, and tells Ollie in advance which item he will be asked about. He holds short one-to-ones before big meetings, so that Ollie can rehearse his points with one person rather than ten. He asks a warm, easy-going colleague to invite Ollie to the team's Thursday lunch.\n\nAfter a month, in one of their one-to-ones, Ollie tells him that he has struggled with anxiety since university, that meetings are the hardest part of his job, and that the agendas have made a real difference. Richard thanks him for telling him, asks whether there is anything else that would help, and mentions the company's employee assistance programme. He does not tell anyone else.\n\nIn March Ollie presents to the department again. His hands still shake a little when he sets up. Afterwards, at lunch, he tells a joke.",
@@ -98,6 +112,10 @@
     "Write how each behaviour could be explained by anxiety.",
     "Note anything you later learned about any of them.",
     "Write one thing you could do differently on a first meeting with someone who seems cold."
+   ],
+   "variations": [
+    "Do the exercise for someone you judged as warm and confident on first meeting, and ask whether you missed any signs of nerves.",
+    "Ask a friend who describes themselves as shy how they think they come across to strangers, and compare it with how they do."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "For each, write what you fear would happen without it.",
     "Choose one behaviour to drop next time, in a low-stakes version of the situation.",
     "Afterwards, write what actually happened."
+   ],
+   "variations": [
+    "Ask someone you trust to watch you in a low-stakes version of the situation and tell you which safety behaviours they noticed.",
+    "Drop a different safety behaviour each time over a month, and keep a short record of what you feared and what happened."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Write three short, calm sentences you would say to someone having a panic attack.",
     "Write the grounding exercise of naming things you can see, hear and touch.",
     "Keep the card in your wallet or phone and read it once a month."
+   ],
+   "variations": [
+    "Practise the card's sentences aloud with a friend playing the person having the attack, so that the words come easily.",
+    "Add to the card what you would say to bystanders, such as asking them to give space or to call for help."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Identify one choice you could offer them.",
     "Offer both, without mentioning anxiety.",
     "Note any difference in how they seem."
+   ],
+   "variations": [
+    "Try offering predictability to someone who seems confident, and notice whether it helps them too.",
+    "Offer a choice about the order of things, such as who speaks first, and notice whether the person takes it."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Write an alternative response that acknowledges the worry without arguing with it.",
     "Write a question that would help them make a plan.",
     "Practise both aloud."
+   ],
+   "variations": [
+    "Ask someone who gets anxious which responses help them most when they are worried, and add their answers to your notes.",
+    "Practise noticing the moment you are about to reassure for the second time, and swap in a question instead."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Recurrent attacks and growing avoidance are signs that help is worth seeking, and talking therapies have good evidence. Doing everything for him supports the avoidance; forcing him adds fear.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Clark and Wells's model of social anxiety, where does an anxious person's attention often go in a feared situation?",
+   "options": [
+    "Inward, to their own sensations and the impression they think they are making",
+    "Outward, to other people's faces, which anxious people read far more accurately than anyone else",
+    "Nowhere in particular, since anxiety has no effect on where people direct their attention",
+    "Towards the exits only, since anxious people are planning their escape the whole time"
+   ],
+   "answer": 0,
+   "explain": "Anxious people tend to turn their attention inward, to their racing heart and how they think they look. From outside this looks like disinterest, when it is the opposite.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A patient in a dentist's chair grips the armrests, breathes fast, keeps interrupting with questions and flinches at small movements. Staff call him rude. What fits this chapter best?",
+   "options": [
+    "Ask him to stop interrupting so that you can get the treatment finished",
+    "Explain each step before you do it and agree a signal he can use to stop",
+    "Treat him exactly as you would any other patient, so as not to single him out",
+    "Tell him there is nothing to be afraid of and carry on as quickly as possible"
+   ],
+   "answer": 1,
+   "explain": "His cluster fits fear rather than rudeness. Anxiety eases with predictability and control, so explaining each step and agreeing a stop signal that works gives him both.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that the kindest way to help an anxious person is to arrange things so that they never have to face what frightens them. What does this chapter suggest?",
+   "options": [
+    "It is right, since anxious people should be protected from every source of fear",
+    "This kind of accommodation can keep anxiety going; support small steps they choose",
+    "It is right for adults, though children should be pushed to face their fears at once",
+    "It is wrong, since anxious people should always be made to face their worst fears"
+   ],
+   "answer": 1,
+   "explain": "Accommodation comes from love but tends to maintain avoidance, and research on anxious children links it to more severe anxiety. Support the person, not the avoidance, with small steps they choose.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "Overcoming Social Anxiety and Shyness",
    "author": "Gillian Butler",
    "note": "Second edition, Robinson, 2016. A practical self-help guide based on the cognitive approach."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The boyfriend by the wall",
+   "scene": "Meg brings her new partner, Isaac, to her parents' fortieth wedding anniversary party. There are sixty people in a hired hall, most of\n  them her relatives. Isaac shakes hands with her parents, says congratulations and then retreats to the wall beside the drinks table. For most\n  of the next hour he stands there holding a glass of orange juice in both hands, close to his chest. He answers people who approach him politely\n  but briefly, looks at the floor between sentences, and does not ask anyone a question. When Meg's uncle tries a joke, Isaac smiles tightly and\n  says nothing.\n\n  Meg's brother, Rob, finds her in the kitchen. \"What's his problem?\" he asks. \"He's acting like he's too good for us.\" Her aunt has said\n  something similar.\n\n  Meg knows something Rob does not. Isaac told her before they arrived that big family events terrify him, that he had been awake half the night\n  worrying about it, and that he would try his best. He had come anyway.\n\nMeg also knows that Isaac is the funniest person she has ever met, one to one. He makes her laugh every day. Her family has seen none of that tonight, and she is starting to worry that they never will.\n\nIsaac's position is also the same one he takes at every crowded event, Meg realises: with a wall behind him, near the drinks table, with a clear view of the door.",
+   "misread": "Rob read Isaac's position by the wall, his short answers and his tight smile as arrogance, because those are the signs we expect from someone who looks down on the people around him. He did not consider that the same signs come from someone who is frightened of them.\n\nAnd because Rob had decided Isaac was arrogant, he stopped trying to talk to him, which left Isaac more isolated and more anxious, and made him look more stand-offish still.\n\nRob also took Isaac's failure to ask questions as a lack of interest, when an anxious man's attention is often too busy watching himself to think of any.",
+   "betterRead": "Anxiety and arrogance can look almost identical from outside: distance, short answers, little eye contact, a fixed position and a reluctance to join in. The difference is in what is going on inside, and that cannot be seen. Isaac's grip on his glass, held close like a shield, and his eyes dropping between sentences fitted anxiety far better than disdain, but even so, the kinder reading is the safer one to start with, because coldness towards an anxious person makes things worse. Meg's better approach was to give Isaac what anxiety needs: a little predictability and something to do. She asked him to help her carry round the plates of food, which gave him a role, a reason to move and a ready-made thing to say to each person. She introduced him to her cousin, who is also quiet and likes football, and left them by the window. By the end of the evening Isaac was laughing, and Rob admitted he had got him wrong.\n\nMeg also told Isaac afterwards that he had done really well, and asked what had helped most. He said the plates, because they gave him something to hold that was not his own drink."
+  },
+  {
+   "title": "The patient who seemed difficult",
+   "scene": "Mr Kowalski, sixty, arrives at a dental surgery for a filling. At the desk he is curt, answering the receptionist's questions in a word.\n  In the chair, he refuses to lie back fully. His hands grip both armrests so hard that his knuckles are white, his breathing is fast and high,\n  and he keeps asking the dentist, Dr Shah, what she is about to do, interrupting her before she has finished explaining. When the nurse moves\n  the light, he flinches. When Dr Shah picks up the drill, he sits bolt upright and says he needs a minute.\n\n  The receptionist has already told Dr Shah that Mr Kowalski is \"rude\". The nurse, who has a full list that afternoon, is visibly impatient.\n\n  Dr Shah notices that he has not been to a dentist for eleven years, according to his notes, and that he booked only after a tooth broke.\n\nMr Kowalski also mentions, as he sits down, that the last dentist he saw, as a young man, told him to stop being a baby and carried on when he asked her to stop.\n\nHe also keeps his coat on in the chair, zipped to the neck, and refuses the protective glasses at first, saying he wants to be able to see. When the nurse reclines the chair a few degrees, he grabs her wrist, then lets go and apologises, red in the face.",
+   "misread": "The receptionist and the nurse read Mr Kowalski's curtness, gripping and interruptions as rudeness and awkwardness. They saw a difficult patient, when the signs fitted a frightened one.\n\nThe nurse's impatience also added to the threat. An anxious patient reads a hurried, irritated face as one more reason to be frightened.\n\nThey also assumed that a man of sixty who interrupts and grips is a man who wants to be in charge, when every one of his questions was a request for the predictability that his fear was demanding. His curtness at the desk was the first rung of the same fear.",
+   "betterRead": "Fear of dental treatment is common, and it is one of the clearest examples of anxiety being misread as difficulty. The cluster was clear: a long gap since his last visit, curt answers, white knuckles, fast high breathing, constant questions and startle at small movements. Dr Shah's better reading led straight to what helps anxiety: predictability and control. She stopped, put the drill down and said, \"A lot of people find this hard. Let's do it at your pace.\" She explained each step before she did it, and agreed a stop signal with him: if he raised his left hand, she would stop at once, no questions asked. He raised it twice during the filling, and both times she stopped, waited and went on when he nodded. His grip loosened as he found that the signal worked. At the end he apologised for being difficult. She told him he had not been difficult at all, and he booked a check-up for six months' time.\n\nDr Shah also wrote a note on his file, with his permission, about the stop signal, so that any dentist who saw him in future would know what helped."
+  },
+  {
+   "title": "The student who stopped going to the hall",
+   "scene": "Ana, nineteen, is in her first year at university, living in a hall of residence with a large shared dining hall. In the first week she\n  ate there with her flatmates. By the fourth week she has stopped. She buys sandwiches and eats them in her room. When her flatmate Grace\n  suggests dinner in the hall, Ana says she is not hungry, or has work to do. At seminars she sits by the door and does not speak unless asked a\n  direct question, when her face goes red and her voice comes out very quietly. She has started missing the Thursday seminar altogether.\n\n  Grace, who likes Ana, has started to wonder whether Ana is avoiding her personally. Another flatmate thinks Ana is just antisocial and should be\n  left alone.\n\n  One evening Grace finds Ana in the kitchen, late, eating cereal, and asks whether she is all right. Ana says she is fine, then adds, almost\n  under her breath, that she cannot face walking into the hall with everyone looking at her.\n\nGrace has also noticed that Ana texts her a lot, warmly and often, and is funny on the flat's group chat. In person, in a group, she is a different person: silent, pink-faced and watching the door.\n\nAna's mother rings most evenings, and Ana always says that university is great, that she is making lots of friends and that the food in the hall is lovely.",
+   "misread": "Grace read Ana's withdrawal as being about her, and the other flatmate read it as a preference for being alone. Both readings missed the pattern that the withdrawal followed: away from the places where Ana felt watched.\n\nAnd because Ana's withdrawal was quiet, it was easy to let it continue. Nobody notices when someone stops coming to dinner in a hall of three hundred people.\n\nGrace's own worry, that it was about her, was also a form of self-focus, and a very common one. Most of us read other people's withdrawal as a verdict on ourselves.",
+   "betterRead": "Clark and Wells described how people with social anxiety use safety behaviours, things they do to prevent the disaster they fear, and how avoidance is the most powerful of all. Each time Ana skipped the hall, she was spared the fear, and each time she lost the chance to find that people were not watching her as closely as she believed. The avoidance was spreading, from the hall to seminars. A friend cannot treat this, and should not try. What Grace could do was listen without judgment, tell Ana that she was far from the only person who felt like this, and offer practical company: walking into the hall together at a quiet time, sitting at a small table near the door. She also mentioned that the university's student support service had people who helped with exactly this, and offered to go with her. Ana went the following week, and started a course of therapy that worked on the fear directly. By the summer term she was eating in the hall most evenings.\n\nGrace also kept inviting Ana to things, always with an easy way out."
+  },
+  {
+   "title": "The young man in the supermarket queue",
+   "scene": "Joan, fifty-four, is in the queue at a supermarket on a Saturday morning. The young man in front of her, in his early twenties, suddenly\n  puts his basket down. He is breathing very fast, his hand is pressed to his chest and he is pale and sweating. He grips the edge of the conveyor\n  belt and says, to nobody in particular, that he thinks he is going to pass out. People nearby step back. Someone mutters that he must be on\n  something.\n\n  Joan used to work as a teaching assistant and has done a first aid course. She asks him his name, which is Harvey, and whether he has any pain\n  in his chest or down his arm, any heart problems, asthma or diabetes. He says no, no pain, just his heart pounding, and that this has happened\n  before, twice, and he thought he was dying both times.\n\n  The cashier asks whether she should call an ambulance.\n\nHarvey's friend, who had gone to fetch something from another aisle, is nowhere to be seen. Harvey keeps looking towards the doors as if he wants to run, and his legs are shaking.\n\nA security guard has started walking over, looking wary. Two teenagers further back in the queue are filming on their phones. Harvey sees them, and his breathing gets faster still.",
+   "misread": "The people stepping back read Harvey's state as something to keep away from, and one of them read it as drug use. Both reactions left a frightened young man alone in public at the worst moment of his day.\n\nThe mutter about drugs also made Harvey's fear worse. Being judged by strangers is one of the things people fear most during a panic attack.\n\nNobody in the queue had done anything wrong exactly. They were frightened and uncertain, and stepping back is what frightened people do. But it left the most frightened person there alone.",
+   "betterRead": "Panic attacks are frightening and common, and they can look like many other things, including a medical emergency. Joan's first step was the right one: she checked for signs of a physical emergency before assuming panic. With no chest pain, no relevant conditions and a history of similar episodes, panic was the likely explanation, but she told the cashier to call an ambulance at once if anything changed or if he did not improve. She then did what helps: she moved him to a chair by the exit, away from the crowd, crouched beside him at his level, and spoke slowly and quietly. She told him that she thought it was a panic attack, that it would pass, and that she would stay with him. She did not tell him to calm down or to take deep breaths. She asked him to name five things he could see. Within about ten minutes his breathing had slowed and his colour had come back. She stayed until his friend arrived, and suggested gently that he mention the attacks to his doctor."
+  }
+ ],
+ "workedReading": {
+  "title": "The father at the school gate",
+  "scene": "Funmi has been collecting her daughter from primary school for two terms. Most of the parents at the gate know each other and stand in small groups, chatting. One father, whom she knows only as Ethan's dad, always stands apart, by the railings at the far end, looking at his phone. If anyone approaches, he answers briefly and goes back to the phone. When the children come out, he leaves at once. Some of the other parents call him stand-offish. One says he is \"a bit odd\". This week, Ethan has invited Funmi's daughter to his birthday party, and she will have to speak to his father about it.\n\nFunmi is not especially confident herself. She remembers standing alone at the gate in her first week, and how long the ten minutes felt before anyone spoke to her.\n\nShe has also heard what the other parents say, and she feels the small pull of agreeing with them. It would be easier to join in than to make up her own mind, and she notices that pull and puts it aside.\n\nShe also wonders how many of the parents who call him odd have ever said more than hello to him.",
+  "steps": [
+   {
+    "label": "Describe before judging",
+    "text": "Funmi lists what she has actually seen. He stands apart, always in the same place. He looks at his phone rather than the people. He answers briefly when approached. He leaves quickly. She notes that the other parents have already turned these behaviours into a character, stand-offish and odd, and that she has not.\n\nShe also notices that every behaviour on her list puts distance between him and other people, and that none of them is aimed at anyone in particular. That is a pattern of avoidance, not of dislike.\n\nShe also writes down, in her head, what she has not seen: no rudeness to anyone, no complaint, no sign of contempt. A man who thought he was better than the other parents would probably show it in some way. He shows nothing at all."
+   },
+   {
+    "label": "Look for the cluster",
+    "text": "Next time she watches more closely, without staring. His shoulders are high. His thumb moves on the phone, but he does not seem to be reading anything. When a group nearby laughs, he glances up quickly and then down again. When the bell goes, he is already moving before the children appear. These look less like indifference than like a man waiting for an ordeal to end.\n\nShe also notes his arrival time. He arrives at the last possible moment, just before the bell, which keeps the waiting as short as it can be. That fits someone managing an ordeal.\n\nShe also notices that his phone screen is dark at least once while his thumb is still moving on it. The phone, she thinks, is less something to look at than somewhere to put his eyes."
+   },
+   {
+    "label": "Hold the rival readings",
+    "text": "He might be anxious in groups. He might be shy, or new to the area, or tired from night shifts, or simply a private man who does not like small talk. He might be going through something at home. Funmi notes that she cannot tell which, and that she does not need to. Whatever the reason, a big group approach would probably be unwelcome, and a small, easy one probably would not.\n\nShe also reminds herself that the kinder reading costs nothing if it is wrong. If he is simply private, a short, friendly question will not trouble him.\n\nShe also considers that he might simply not want to be approached, and decides that a short, practical question is the lightest way to test that. If he is curt, she will leave it there."
+   },
+   {
+    "label": "Lower the demand",
+    "text": "She chooses a moment when he is alone and nobody else is near, and approaches from the side rather than head on, so he can see her coming. She keeps it short and specific, with a reason to talk that is not about him: \"Hi, I'm Amara's mum. Thanks for the party invitation. Is it all right if I drop her off and pick her up at the end?\"\n\nShe also keeps her own body easy: hands visible, a small smile, standing a little to one side rather than square in front of him. A relaxed approach asks less of the person approached.\n\nShe also chooses a day when the gate is quiet, because it is raining and most parents are waiting in their cars."
+   },
+   {
+    "label": "Give him predictability",
+    "text": "He looks up, startled, then relaxes a little when he hears what she wants. He says yes, that is fine, and that it is at the soft-play place at two. She asks one more easy question, whether there is anything Amara should bring, and then says she will see him on Saturday. She leaves before the conversation can become a burden, which gives him a clean ending.\n\nLeaving first also matters. An anxious person often does not know how to end a conversation, and fears getting it wrong. Ending it for him, warmly, removes one more thing to worry about.\n\nShe also gives him the information he will need without asking him to make small talk to get it: the time, the place, what to bring. Clear practical details are a gift to someone who dreads the unknown."
+   },
+   {
+    "label": "Notice the change",
+    "text": "At the party, he is still quiet, but he comes over when she arrives and tells her where the coats go. He says, with a small laugh, that he finds the school gate \"a bit much\" and that his wife usually does the pick-ups, but she started a new job in September. Funmi tells him she found it hard at first too, which is true.\n\nShe does not tell him that she had guessed he was anxious. He has told her something in his own words, and she lets him keep it that way.\n\nShe also tells him, briefly, that she is not great at the gate either. It gives him permission to have found it hard without making it a confession."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the next few weeks, Funmi says hello to him at the gate each day, briefly, from the side, and sometimes stands near him for a minute or two. One day he walks over to her group, stands at the edge and joins in a conversation about the school play. The other parents start to say he is nice once you get to know him. Funmi notes that he was nice all along, and that what changed was how hard he had to work to show it.\n\nShe also notices that her daughter and Ethan have become close friends, and that Ethan's dad now waves at Amara by name. Small, predictable contact, repeated, did what one big conversation could not.\n\nShe also mentions to one of the other parents, lightly, that he is nice and just a bit shy, which changes the story the gate tells about him more than anything she could have said to him."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading anxiety as rudeness, coldness or guilt",
+   "body": "The safety behaviours that anxious people use, avoiding eye contact, keeping to the edges, answering briefly, leaving early, gripping something, are almost exactly the signs that others read as rudeness, arrogance, disinterest or guilt. The misreading has a cruel effect. People respond to perceived rudeness with coolness, and the anxious person, who was afraid of being judged, finds that they are being judged, which confirms the fear and deepens the anxiety. Before you decide that someone is cold, ask whether they might be frightened. If you are wrong, the warmth you offer will have cost you nothing.\n\nIt also helps to remember that anxious people often apologise afterwards for how they behaved, and that they remember the coolness they received long after you have forgotten it.\n\nIn workplaces, the misreading can cost people their jobs. An anxious new starter who is quiet in meetings and avoids small talk can be judged as not a team player within weeks, long before anyone has seen what they can do when they are settled."
+  },
+  {
+   "title": "Reassuring without end",
+   "body": "When someone is anxious, the natural response is to reassure them: it will be fine, you will be great, nothing bad will happen. Once, this can help. Repeated over and over, about the same worry, it tends to backfire. Each reassurance brings brief relief and teaches the person that they need it, so they ask again, and the worry is never tested. Reassurance can become a safety behaviour that someone else performs. A better response acknowledges the worry without arguing with it and helps make a plan: \"I can see this is really worrying you. What would help you feel more ready?\"\n\nReassurance can also be quietly undermining. Told repeatedly that there is nothing to worry about, an anxious person may conclude that their worry is foolish, which adds shame to the anxiety without removing either.\n\nIf someone asks for reassurance many times a day about the same thing, or cannot stop checking that something is safe, it may be worth gently suggesting that they talk to a doctor. Patterns like that can be part of anxiety conditions that respond well to treatment."
+  },
+  {
+   "title": "Pushing someone into the deep end",
+   "body": "Some people, having heard that avoidance keeps anxiety going, decide to help by forcing the anxious person to face what they fear: dragging a socially anxious friend to a party, putting a nervous colleague on the spot in a meeting, making a frightened child jump into the pool. This usually backfires. Facing fears does help, but it works best gradually, in steps the person chooses and controls, ideally with someone trained to guide it. Being pushed without consent tends to make the situation more frightening and the person less trusting. Offer company and small, optional steps. The choice is theirs.\n\nWith children especially, being forced can teach the opposite lesson: that the adults around them will not stop when they are frightened. That makes the next frightening thing harder, not easier.\n\nIt also helps to ask what the person themselves would like to try. Many anxious people have ideas about the steps they could manage, and are relieved to be asked rather than told.\n\nAnd never use someone's anxiety as a joke or a test, by springing a surprise on them to see how they react. That teaches them that you are one more source of the unpredictability their anxiety fears."
+  },
+  {
+   "title": "Doing everything for them",
+   "body": "The opposite of pushing is accommodating: rearranging your life so that the anxious person never has to face what frightens them. You make every phone call, order every meal, answer the door, avoid the places they avoid. It comes from love, and it can keep the anxiety going. Research on families of anxious children, including work by Eli Lebowitz and colleagues, has found that this kind of accommodation is common and is linked to more severe anxiety over time, and that helping parents step back from it, supportively, can help children improve. The same principle applies to adults. Support the person, not the avoidance.\n\nStepping back does not mean withdrawing support. It means saying, warmly, \"I know this is hard, and I'm sure you can do it,\" and letting them make the call, rather than making it for them.\n\nStepping back is easier when you tell the person what you are doing and why. \"I'm not going to make the phone call for you this time, but I'll sit with you while you do\" is support, not withdrawal.\n\nIt also helps to notice your own relief when you take over. If doing it for them feels easier for you, that is worth knowing, because it means the accommodation may be serving your anxiety as well as theirs."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can you tell anxiety from guilt by looking?",
+   "a": "No. This is one of the most important lessons in the book, and the chapter on deception explains it in detail. An anxious honest person and a nervous liar show the same signs: fidgeting, avoided eyes, a dry mouth, a tight voice, a quick exit. Ekman called the mistake of reading an honest person's fear as guilt the Othello error. Anxiety under questioning is normal, especially in people who are anxious by temperament, who have been disbelieved before, or who are being questioned by someone with power over them. If you need to know whether someone is telling the truth, look at the evidence, not the body.\n\nIt also helps to remember that people who are questioned while anxious often give worse accounts, not better ones: they forget, hesitate and contradict themselves. None of that means they are lying.\n\nIt also helps to remember that some people look anxious all the time, by temperament, and that their anxiety tells you about them, not about whatever you are asking them.\n\nAnd if you are the anxious one being questioned, it is reasonable to say so. \"I get nervous in situations like this\" often changes how the other person reads everything that follows."
+  },
+  {
+   "q": "Why does anxiety make people seem cold?",
+   "a": "Partly because of safety behaviours, and partly because of where an anxious person's attention goes. Clark and Wells described how, in feared social situations, anxious people turn their attention inward, to their racing heart, their hot face, the impression they think they are making, and away from the other person. From outside, that looks like disinterest: fewer questions, less warmth, less responsiveness. It is the opposite of disinterest. They care so much about how they are coming across that they have no attention left for the conversation itself. Making the situation more predictable and less evaluative frees some of that attention up.\n\nIt also explains why anxious people sometimes seem to ignore what you said. They heard it, but much of their attention was busy monitoring themselves. Repeating key information, or writing it down, can help.\n\nThe same inward focus also makes anxious people poor judges of how they came across. Many leave a conversation convinced they were awkward or boring, when the other person noticed nothing of the kind."
+  },
+  {
+   "q": "Should I avoid situations that make someone anxious?",
+   "a": "Not entirely, and not on their behalf without asking. Avoidance brings relief in the short term and tends to make anxiety worse in the long term, because the fear is never tested. But that does not mean pushing. A good middle path is to make situations easier rather than avoiding them: offer information in advance, a role to play, a quieter version, a way to leave if needed, company. Ask the person what would help, and let them choose how far to go. A friend's job is to make small steps possible, not to decide which steps they take.\n\nIt may also help to agree a way out in advance. Knowing that they can leave at any time, without explanation, often makes it easier for an anxious person to go in at all.\n\nIt also helps to check what you are avoiding on their behalf. Sometimes we steer an anxious friend away from things because we are anxious for them, not because they asked us to."
+  },
+  {
+   "q": "What helps anxiety in the long run?",
+   "a": "For anxiety that is persistent or getting in the way of life, there are effective treatments. Cognitive behavioural therapy, including approaches built on Clark and Wells's model of social anxiety, has a strong evidence base, and much of it works by helping people test their fears gradually and drop their safety behaviours. Medication can also help some people. Many people with anxiety never seek treatment, often because they are anxious about seeking it. A friend can help by making it ordinary to talk about, and by helping with the practical steps of getting an appointment.\n\nSelf-help books based on the same approach, such as the one listed in this chapter's further study, can also help people with milder anxiety, especially as a first step or while they wait for an appointment.\n\nIt also helps to know that treatment works best when it is started, not when it is perfect. A first appointment, even an awkward one, is a step that many anxious people take only because someone made it feel ordinary."
+  },
+  {
+   "q": "What should I say to someone who is anxious before something big?",
+   "a": "Avoid \"don't worry\" and \"you'll be fine\", which tend to feel dismissive and invite the person to explain why they will not be. Instead, acknowledge the feeling and offer something concrete. \"It makes sense you're nervous, it's a big day.\" \"What's the bit you're most worried about?\" \"Would it help to run through it once?\" \"I'll be in the second row if you want a friendly face.\" Information about what will happen, a plan for the hardest moment, and company all help more than predictions that everything will be all right.\n\nIt also helps to say what you will do, not only what they will feel. \"I'll text you when I'm outside\" is more calming than \"You'll be fine\", because it is something they can count on.\n\nIt can also help to share your own experience lightly: \"I always feel sick before I present.\" Hearing that nerves are normal, from someone who copes, can make them feel less like a sign of failure."
+  },
+  {
+   "q": "How do I know when it is more than ordinary nerves?",
+   "a": "You cannot diagnose anxiety in someone else, but you can notice when it seems to be costing them a great deal. Signs worth taking seriously include anxiety that lasts for months, that stops someone doing things they want or need to do, that leads them to avoid more and more places or people, that comes with repeated panic attacks, or that seems to be affecting their sleep, work or relationships. In those cases, it is worth asking gently whether they have thought about talking to a doctor, and offering to help. If someone's anxiety comes with hopelessness or thoughts of not wanting to be here, 2.13 describes what to do.\n\nIt also helps to know that anxiety and low mood often go together, and that a person who has been very anxious for a long time may also be worn down. Asking about sleep, energy and enjoyment can help you understand how they are.\n\nIt also helps to know that many people with anxiety describe it as physical first: stomach trouble, headaches, a tight chest, poor sleep. Those may be the easiest things to talk about, and the easiest to take to a doctor."
   }
  ],
  "watch": [
