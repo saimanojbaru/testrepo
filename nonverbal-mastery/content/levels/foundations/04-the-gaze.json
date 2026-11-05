@@ -83,6 +83,20 @@
    "doCaption": "Eyes on him, the clock out of sight.",
    "dontCaption": "Glancing at your watch while he talks.",
    "annotation": "People see your attention go where your eyes go. Keep the clock and the phone out of your line of sight when someone needs to be heard."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_pair_face_to_face",
+   "doCaption": "Walking side by side, eyes on the path",
+   "dontCaption": "Face to face, eyes locked, for a hard talk",
+   "annotation": "Less eye contact can make hard conversations possible. Side by side, each person chooses when to look."
+  },
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_lean_in",
+   "doCaption": "Camera at eye level, glancing at it now and then",
+   "dontCaption": "Leaning in to stare at the camera",
+   "annotation": "True eye contact is impossible on most video calls. Glance at the camera when you make a point, and look at the person the rest of the time."
   }
  ],
  "caseStudy": "Ibrahim, fifty-two, has taught maths at the same secondary school for twenty years. He has always believed that a pupil who looks away when asked a question has not been listening, and he says so: *Eyes up here, please.* He has a reputation as strict but fair.\n\nAt a training day on questioning, a speaker mentions research showing that people look away more when questions are harder, and that it helps them think. Ibrahim is sceptical, so he tries it. In his next lessons he notices where pupils' eyes go after he asks a question. The ones who answer instantly usually hold his gaze. The ones who look up at the ceiling or out of the window for a few seconds often give the best answers, when he waits for them. When he says *eyes up here*, the answers get shorter and worse.\n\nHe also thinks about Rhys, a quiet boy in Year Ten who never looks at him at all. Ibrahim had marked him as disengaged. Looking at Rhys's work, he finds it among the most careful in the class. A conversation with the school's special educational needs coordinator tells him that Rhys is autistic and finds eye contact overwhelming; he listens best looking at the desk.\n\nIbrahim changes two habits. After asking a question, he waits several seconds, and he looks away himself, at the board or his notes, so that the pupil does not feel stared at while thinking. And he stops asking anyone to look at him.\n\nBy the end of term more pupils are answering, and the answers are longer. Rhys asks his first question of the year, to the desk, and it is a good one. Ibrahim writes it on the board.",
@@ -101,6 +115,11 @@
     "Mark separately whether they were speaking or listening at the time.",
     "Work out roughly how much of the time they looked at their partner while speaking and while listening.",
     "Note any moments where they looked back at their partner just before handing over the turn."
+   ],
+   "variations": [
+    "Repeat with a conversation in a culture or language different from your own, and compare the speaking and listening proportions.",
+    "Harder: tally both people at once, marking mutual gaze when both look at each other.",
+    "Do the same tally on a recorded video call, and see how the camera changes the pattern."
    ]
   },
   {
@@ -112,6 +131,11 @@
     "Note how often and for how long they looked away on each kind of question.",
     "Swap roles and ask them to watch you.",
     "Write down each of your gaze baselines for easy and hard questions."
+   ],
+   "variations": [
+    "Ask the questions while sitting side by side instead of face to face, and compare how often your friend looks away.",
+    "Do it in the reverse direction too: let your friend ask you, and see whether your hard-question gaze matches theirs.",
+    "Add a third kind of question: an emotionally difficult one, such as a regret, and note the difference from merely hard ones."
    ]
   },
   {
@@ -123,6 +147,11 @@
     "Notice how the other person responds when you look away while they are speaking, and when you look back.",
     "Afterwards, ask one person you trust how your eye contact felt to them.",
     "Write down one adjustment to keep."
+   ],
+   "variations": [
+    "Practise with someone you find intimidating, where the urge to stare or avoid is strongest.",
+    "Try it on a phone call with your eyes closed, and notice how much easier listening becomes without any gaze to manage.",
+    "Count to three silently during each spell of mutual gaze, and see how often you naturally break before or after."
    ]
   },
   {
@@ -134,6 +163,11 @@
     "For each glance, write what it seemed to point to.",
     "Write one rival reason for each glance.",
     "Check any you can, by watching what happens next."
+   ],
+   "variations": [
+    "Watch a recorded meeting or debate, follow every glance from one person for five minutes, and list what each pointed to.",
+    "Follow your own glances for an hour at work, noting each time your eyes go to the clock, your phone or the door, and what prompted it.",
+    "At a family gathering, follow where a child's eyes go during adult conversation, and note what they seem to be tracking."
    ]
   },
   {
@@ -145,6 +179,11 @@
     "Notice whether the answer is longer or more considered than usual.",
     "Note how the silence felt to you.",
     "Write down whether you will keep the habit, and with whom."
+   ],
+   "variations": [
+    "Try it on a video call by looking down at your notes while the other person thinks.",
+    "Count, silently, how long you can comfortably wait before speaking again, and aim to add two seconds each week.",
+    "Harder: do it with someone who usually answers quickly, and see whether the extra time changes their answers."
    ]
   }
  ],
@@ -226,6 +265,58 @@
    "explain": "Gaze shows where attention goes, and a glance at a manager before answering suggests the manager's view matters to the answer. One glance is a hypothesis; the next decision point will test it.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "According to Kendon's research on conversation, when do speakers tend to look back at their listener?",
+   "options": [
+    "At the very start of a long turn, to make sure that the listener is ready to listen",
+    "Towards the end of a turn, which helps to signal that the listener may now speak",
+    "Only when the listener has stopped looking at them, to win back their attention",
+    "Continuously throughout the turn, since looking away would signal a loss of interest"
+   ],
+   "answer": 1,
+   "explain": "Speakers tend to look away as they start a long turn and back as they finish, which helps hand the turn over. That is why a speaker looking away mid-sentence is doing what speakers ordinarily do.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Glenberg and colleagues find about looking away while answering questions?",
+   "options": [
+    "People looked away more on harder questions, and looking away helped them answer",
+    "People looked away only when they were inventing an answer rather than recalling one",
+    "Looking away made no difference to accuracy, but it did make people seem less honest",
+    "People looked away less on harder questions, because they needed the questioner's help"
+   ],
+   "answer": 0,
+   "explain": "People averted their gaze more as questions got harder, and doing so improved their answers. Looking away is often the face of thinking, which is why reading it as evasion is so often wrong.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A popular training method claims that the direction of someone's eye movements reveals whether they are lying. What did Wiseman and colleagues find in 2012?",
+   "options": [
+    "That the claim holds for right-handed people, though not for people who are left-handed",
+    "That the claim holds in the laboratory but breaks down in real life and high-stakes settings",
+    "That the claim holds only for trained liars, who move their eyes in a characteristic way",
+    "That the claim had no support, in the laboratory or in footage of real public appeals"
+   ],
+   "answer": 3,
+   "explain": "The direction of eye movements did not distinguish lies from truth in any of their tests. Eye movements while thinking are real; what they do not do is reveal deception.",
+   "isMisconceptionTest": true,
+   "isScenario": false
+  },
+  {
+   "q": "You are telling your twelve-year-old off for something serious. He keeps looking at the floor. What fits this chapter best?",
+   "options": [
+    "Insist that he looks at you, since looking away shows that he is not really listening",
+    "Read his lowered eyes as defiance and make the consequences stricter to show it matters",
+    "Let him look away, lower your voice, and perhaps sit beside him rather than over him",
+    "Stop the conversation, since he is clearly too upset to take in anything you say now"
+   ],
+   "answer": 2,
+   "explain": "Looking away is a common response to shame and to an intense encounter, and demanding eye contact raises the intensity further. Sitting beside him and letting him look where he needs to makes it more likely that he hears you.",
+   "isMisconceptionTest": false,
+   "isScenario": true
   }
  ],
  "reflection": {
@@ -254,6 +345,110 @@
    "work": "How do adults and teens with self-declared Autism Spectrum Disorder experience eye contact? A qualitative analysis of first-hand accounts",
    "author": "Dominic A. Trevisan, Nicole Roberts, Christine Lin and Elina Birmingham",
    "note": "PLoS ONE 12(11), 2017. Autistic people describe, in their own words, what eye contact is like."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The salesman who was taught to hold eye contact",
+   "scene": "Jamie, twenty-six, sells kitchens in a large showroom. On a sales course his company paid for, the trainer told the room that eye\n  contact builds trust and that a good salesman holds the customer's gaze while he talks and never looks away first. Jamie took it to\n  heart. For the next month he locks eyes with every customer the moment they start talking and holds on, nodding, through whole minutes of\n  conversation about cabinet finishes and worktop heights.\n\n  His sales fall. Several customers, particularly women shopping alone, cut conversations short and say they will think about it. One\n  couple asks to be served by someone else. Jamie notices that customers keep looking away from him, at the display units, at their phones,\n  at each other, and concludes that they are not serious buyers. He holds their gaze harder, to bring them back, and starts talking faster, as if he could reach the end of the pitch before they escape.\n\n  His manager, Bev, has watched kitchens sold for twenty years. She stands near him for an afternoon and then tells him, kindly, that his\n  customers are not losing interest. They are trying to get away from his eyes. She points out that her own best salespeople look at the\n  units while they talk, side by side with the customer, and look at the customer's face mostly while the customer is speaking, and then\n  only in short spells. Customers who are deciding how to spend twenty thousand pounds need room to think, and a stare takes it away. She adds that a\n  woman on her own in a showroom, being stared at by a young man she does not know, may feel something closer to alarm than pressure, and\n  will leave rather than say so.",
+   "misread": "Jamie took a rule about eye contact out of context and applied it as a constant, with no sense of role, rhythm or the stranger in front of him. He then read the predictable response, people breaking his gaze to relieve the pressure, as a sign that they were not interested, and pressed harder. The misreading fed itself: the more he stared, the more they looked away, and the more they looked away, the more he stared.",
+   "betterRead": "Eye contact is a rhythm, not a level. Kendon's research and Argyle and Cook's summary describe listeners looking at speakers much more than speakers look at listeners, and both looking away and back in short spells. The Binetti study found that most people prefer mutual gaze to last a few seconds, and Kleinke's review suggests that longer gaze intensifies whatever is already happening, which in a showroom with a stranger is often unease. A careful salesman looks at the customer while the customer talks, looks at the product while he talks, and treats a customer's glance away as a person thinking, not a sale slipping. Jamie changed his habits. Within a month his figures had recovered, and two customers mentioned on their feedback forms that he had been easy to talk to. He also noticed that he enjoyed the conversations more. Holding a stare had been hard work."
+  },
+  {
+   "title": "The interview room",
+   "scene": "A nineteen-year-old, Kieran, is questioned at a police station as a witness to a fight outside a nightclub. He answers every question\n  but keeps his eyes on the table, glancing up only briefly, and when the detective leans forward and asks him to look at her, he looks at\n  her chin. His answers are detailed and consistent, but the detective writes in her notes that he was evasive and may know more than he is\n  saying. A colleague who watches the recording agrees: the boy would not meet anyone's eye.\n\n  Kieran's mother, who arrives later, tells the custody sergeant that her son is autistic and that eye contact has always been hard for\n  him; at school he was put in detention twice for not looking at teachers. The sergeant passes this on. Kieran's account, checked against\n  the nightclub's camera footage, turns out to be accurate in almost every detail, including the order in which people arrived, which none\n  of the other witnesses got right. The two witnesses who had looked the detective in the eye throughout, and whom she had noted as\n  confident and credible, had both placed the main assailant on the wrong side of the street. One of them, it later emerged, had arrived\n  after the fight was over and pieced his account together from what friends had told him.",
+   "misread": "The detective and her colleague read low eye contact as evasion, which is the single most widespread belief about gaze in the world. They then treated the absence of eye contact as if it were evidence about the content of his account, and nearly discounted the most accurate witness they had. At the same time they gave extra weight to the confident gazers, whose accounts were worse. Gaze was doing the work that the evidence should have done, in both directions at once.",
+   "betterRead": "Many autistic people find eye contact uncomfortable, distracting or painful, as Trevisan and colleagues' study of first-hand accounts describes, and some can only listen properly when they are not looking at a face. Many people from cultures where looking down before authority is respectful do the same. And anyone, in a police station, may find a detective's gaze hard to hold. The careful reading separates gaze from content entirely. The question is whether the account is detailed, consistent and checkable, and Kieran's was all three. An interviewer who wants the best from a witness who finds eye contact hard can simply say that they do not need to look at her, and offer something else to look at, such as a diagram of the street, which often produces better recall as well as more comfort. The deception chapter later in this part explains why no gaze pattern reliably reveals a lie. Where the stakes are this high, reading eye contact as a credibility signal is not a small error; it is a way of disbelieving whole groups of people."
+  },
+  {
+   "title": "The glance at the door",
+   "scene": "At a dinner party, Fran, a guest Paul has not met before and the wife of an old friend from university, keeps glancing towards the hallway. She does it every few minutes through the\n  starter and more often during the main course, while still joining in the conversation. Paul, who is hosting and anxious that the evening\n  should go well, decides that she is bored, and probably finds his friends tedious. He starts directing questions to her, trying to draw her\n  in, and when she answers briefly and looks at the door again, he feels slighted.\n\n  Paul's partner, Ana, who is sitting beside Fran, notices something else. Fran glances at the door, and then at her phone on the table, and\n  then at her husband, who is at the other end of the table and has been drinking steadily. Each time her husband's voice rises, she looks\n  at him for a moment, then at the door. Ana also knows, because Fran mentioned it while they were in the kitchen, that it is the first time\n  the couple have left their baby with a sitter. When Fran laughs at a joke, she laughs fully, and when someone asks her about her\n  work she talks easily for several minutes before her eyes drift back to the hallway. None of this looks like boredom to Ana. It looks\n  like a woman whose attention has been split in three, doing her best to give the table its share.",
+   "misread": "Paul treated the glances as a message about the evening and, by extension, about himself. He never followed them. A glance points somewhere, and he read only that it pointed away from him, not where it pointed to. His own anxiety about the evening made him the centre of every gaze at the table, including the ones that had nothing to do with him, and his efforts to draw Fran in added a fourth demand on attention she was already rationing.",
+   "betterRead": "Following the gaze is the single most useful thing a reader can do with it. Fran's eyes were going to three places: the door, the phone and her husband. Read together, they suggest a woman listening for a call from the sitter and keeping an eye on a husband who might need to be got home, not a guest who is bored. Ana did the kind thing. She said quietly that Fran should feel free to check in with the sitter, and showed her the quiet room where the signal was good. Paul, told later what Ana had seen, admitted that he had been reading the whole table as a verdict on his cooking. The chapter's last teaching point applies to hosts more than anyone: when you are anxious, every glance looks like a review. A host who wants to read his table well would do better to follow one or two gazes to their destination than to count how many of them land on him. Where people look tells you what is on their minds, and most of the time, at most dinner parties, it is not the cook."
+  },
+  {
+   "title": "The boy who looked at his phone",
+   "scene": "Ravi's son, Arjun, is fifteen. When Ravi tries to talk to him about his schoolwork, which has been slipping, he insists that Arjun puts his\n  phone down and looks at him. Arjun does, sullenly, and for the rest of the conversation stares at a point somewhere past his father's ear,\n  answering in single words. Ravi takes this as defiance and the conversations get shorter and sharper.\n\n  One evening Ravi is driving Arjun to football practice, both looking at the road. Without being asked, Arjun starts talking about a teacher\n  he does not get on with, about a friend who has been unkind to him, about how he cannot see the point of history. He talks for twenty\n  minutes. The next week, Ravi tries talking to him while they cook together, both looking at the chopping boards. Again Arjun talks. When\n  Ravi mentions this to his own brother, his brother laughs and says that he has never had a real conversation with his own teenage\n  daughter except in the car. Ravi thinks back over the face-to-face talks of the past year: Arjun's eyes fixed past his ear, the single\n  words, the door closing afterwards. He had taken every one of them as defiance. He begins to wonder how many of them had simply been a\n  boy who could not say anything with his father's eyes on him.",
+   "misread": "Ravi equated eye contact with attention, and demanded it as a sign of respect. In doing so he turned every conversation into a confrontation, with the most intense form of gaze, sustained and face to face, in the most uncomfortable setting for a teenager: being looked at closely by a parent who is disappointed in him. The demand for eye contact also taught Arjun that the conversation was a test of submission rather than an exchange, so the safest answer was the shortest one.",
+   "betterRead": "Gaze raises the intensity of an encounter, and for many people, particularly adolescents and particularly when the subject is difficult, less of it makes talking possible. Side-by-side settings, such as cars, walks and shared tasks, let people choose when to look and when not to, which is why so many honest conversations happen in them. A car has the further advantage of a fixed end: the boy knows the conversation will stop when they arrive, which makes starting it less risky, and he can look out of the window at any moment without it being taken as rudeness. Part III takes this up in detail. Looking away from a parent is also a way of not escalating, of keeping a feeling contained. The careful reading of Arjun's averted eyes was not defiance but discomfort, and the remedy was not more eye contact but less. Ravi now saves the important conversations for the car, and has stopped asking his son to look at him. The schoolwork has not been fixed by a single drive, but Arjun now tells his father when something is going wrong, sometimes before his teachers do, which is worth more than any number of sullen, eye-to-eye agreements."
+  }
+ ],
+ "workedReading": {
+  "title": "Is he listening?",
+  "scene": "Kate is explaining a new rota system to her colleague Dev in a one-to-one meeting. She has spent a week on it and is nervous about his reaction, because he runs the team most affected by it. As she talks him through the spreadsheet on her laptop, Dev looks away from the screen and out of the window. He does it several times, for several seconds each time. At one point he looks up at the ceiling and says nothing for what feels like a long time. Kate's first thought is that he is bored, or already against the idea. She feels the familiar urge to speed up, to get to the good parts before she loses him, and to start answering objections he has not yet raised. She has done this before, in other meetings, and remembers that it rarely goes well.",
+  "steps": [
+   {
+    "label": "Check yourself",
+    "text": "Kate is anxious about Dev's reaction and invested in the plan, which makes her likely to read every look away as rejection. She also knows that she tends to fill silences when she is nervous. She names both, and decides to slow down rather than speed up. She also notices that she has been watching Dev's face more than the spreadsheet, which means she has been watching him far more closely than a colleague usually would, and is likely to see more movement, and read more into it, as a result."
+   },
+   {
+    "label": "Recall his range",
+    "text": "She has worked with Dev for two years. He looks out of windows a lot. In team meetings he often stares at the wall while others talk, and then makes the most useful point of the meeting. She has never seen him check his phone or the clock in a conversation he cared about. His baseline, in other words, includes a great deal of looking away while thinking. If anything about this meeting were a departure from it, the departure would be Dev looking steadily at her while she talked."
+   },
+   {
+    "label": "Note the role and the timing",
+    "text": "Dev is the listener here, and listeners usually look at the speaker more than speakers do, which makes his looks away worth noticing. But Kate also notices when they happen: each time she reaches a part of the plan that changes how his team's weekends work. The long look at the ceiling came straight after she showed him the cover for bank holidays. The timing points to the content, not to her. If Dev's looks away had come at random, or while she was speaking about things that did not affect him, they would mean less."
+   },
+   {
+    "label": "Look for company",
+    "text": "What else is Dev doing? His body is still turned towards her and the laptop. He has not sat back, crossed his arms or reached for his phone. He asked her to scroll back to a previous tab twice. He made a note on his pad after the bank holiday section. The cluster around the looks away points to engagement, specifically to working something out. A bored man checks the time; an opposed man sits back and folds his arms; a thinking man stares at the middle distance and writes something down."
+   },
+   {
+    "label": "Hold the explanations",
+    "text": "Kate lists the possibilities, deliberately putting the unflattering ones on the list as well as the hopeful ones, so that she cannot be accused, even by herself, of seeing only what she wants. He is bored. He disagrees but is not saying so yet. He is working through the consequences for particular people on his team. He is tired and his attention is drifting. The note-taking, the scrolling back and the timing of his looks all favour the third, though not conclusively. She resists the urge to ask whether he likes it, which would force a verdict before he has finished thinking."
+   },
+   {
+    "label": "Give him room, then ask",
+    "text": "Glenberg's research suggests that looking away helps people think, especially with hard material. So Kate stops talking, looks at the spreadsheet herself rather than at him, and waits. When Dev looks back, she asks an open question: what would this mean for the people on your team? It invites whatever he was thinking, without implying that his eyes had told her anything. It also treats him as the expert on his own team, which he is."
+   },
+   {
+    "label": "What happened",
+    "text": "Dev says that he likes the plan, but that two of his team are single parents who have custody at weekends, and the bank holiday cover would land on them twice in a row. He has already worked out a swap that fixes it. Kate realises that every look out of the window had been Dev running through his team member by member. She also notes that her nervousness had been reading his thinking as judgment, and that the same pattern had probably cost her in other meetings. The next time someone looks away while she explains something, she will wait before she worries. She also changes how she presents plans to Dev: she sends the spreadsheet a day early, so that the thinking, and the staring out of windows, can happen before the meeting rather than during it."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Demanding eye contact from children",
+   "body": "\"Look at me when I'm talking to you\" is one of the commonest things adults say to children, and one of the least useful. A child being told off is already in the most intense encounter of their day, and the demand for eye contact raises the intensity further while doing nothing to help them listen. For some children, especially autistic children, it actively prevents them from taking in what is being said. Some children are taught at home that looking an adult in the eye while being corrected is defiant, so the demand puts them in an impossible position between two sets of rules. Many children, like many adults, look away when they feel ashamed, which is the very feeling the adult is trying to produce. If the aim is to be heard, sit beside the child, lower your voice and keep your eyes on something you can both look at. If the aim is to see the child submit, it is worth asking whether that is a good aim at all. Children who are made to hold an adult's gaze while being told off learn to perform contrition with their eyes, which is a skill, but not the one anyone was trying to teach."
+  },
+  {
+   "title": "The stare-down",
+   "body": "Some men learn early that holding a gaze longer than the other person is a way to win. They use it in negotiations, in arguments with partners, on football terraces and in pubs. It often works in the moment, because sustained gaze raises arousal and most people break it to reduce the tension. But it works by making the other person uncomfortable, and in some settings it escalates rather than ends a conflict: a stare between two men who have been drinking is one of the commonest starts to a fight. A reader who has learned that gaze intensifies whatever is happening has also learned how to use it as a weapon. Do not. When you notice yourself holding a gaze to prevail rather than to connect, look down at something neutral. Nothing is lost by it except a contest that was not worth winning. And if someone else is staring you down, the same move, looking at something neutral, ends the contest without a loser, which is usually the safest outcome for everyone."
+  },
+  {
+   "title": "Reading pupils across a candlelit table",
+   "body": "The idea that pupils widen when someone likes you has a long life in dating advice. Pupils do respond to interest and arousal, and to mental effort, as Kahneman's work shows. But they respond far more strongly to light, and a dimly lit restaurant, a phone screen glowing on the table or a candle between two people will change pupil size by more than any feeling. Pupils also change with medication, alcohol, caffeine, fatigue and age, and they widen with the effort of following a conversation in a noisy room, which on a date may simply mean the restaurant is loud. Nobody can see the small changes that interest produces, across a table, in variable light, without instruments. Reading attraction from pupils is reading tea leaves. Part III's chapter on attraction explains what can be read honestly, and where the hard limits lie. The same caution applies to anyone who claims to read interest, honesty or intelligence from the eyes: what they are reading is mostly the lighting, and their own hopes."
+  },
+  {
+   "title": "Believing that eye direction reveals lying or thinking styles",
+   "body": "A popular claim, which comes from a training method called neuro-linguistic programming, holds that people look up and to one side when they remember and up and to the other when they invent, so that a person who looks in the wrong direction is lying. In 2012 Richard Wiseman and colleagues tested this directly, in the laboratory and with footage of people making public appeals, and found no support for it. Eye movements while thinking are real, as Glenberg's work shows, but their direction tells you nothing reliable about truth or lies. If you have ever been taught otherwise, unlearn it, because it will lead you to disbelieve people for the way their eyes happen to move when they think. The method is still taught on some sales and management courses. If you meet it there, ask the trainer for the evidence; the honest answer is that there is none."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How much eye contact should I make in a job interview?",
+   "a": "Behave as a good listener and a natural speaker would, rather than following a rule. While the interviewer is speaking, look at their face most of the time, with short breaks; this is what listeners usually do, and it shows you are following. While you are answering, it is normal to look away as you start and while you think, and to look back as you finish, which also signals that you have finished. Most people find mutual gaze of a few seconds at a time comfortable, and longer spells uncomfortable. With a panel, share your gaze between the panel members as you answer, returning to the person who asked. If eye contact is hard for you, for any reason, look at the bridge of the nose or the mouth; most interviewers cannot tell the difference at a normal distance, and those who matter will care more about your answers. If you are the interviewer, remember the reverse: a candidate's eye contact tells you about their habits, their nerves and their culture far more than about their honesty or ability."
+  },
+  {
+   "q": "Why do I find it hard to look at people while I am talking?",
+   "a": "In part because everyone does. Speakers look at listeners much less than listeners look at speakers, and people look away more when what they are saying is hard to think through, which, as Glenberg found, helps them think. If you notice yourself looking away while you talk, you are mostly doing what conversation requires. For some people the difficulty goes further: social anxiety can make eye contact feel exposing, and many autistic people find it uncomfortable or distracting. None of this is a flaw of character. If it is causing you problems, a few looks back at the listener at the ends of sentences usually reassure them that you are still with them, without requiring you to hold a gaze you find hard. Telling people you trust that you think better looking away is also allowed, and often a relief to them as well."
+  },
+  {
+   "q": "Does eye contact work differently on video calls?",
+   "a": "Yes, and in a way that confuses everyone. To appear to look someone in the eye on a call, you have to look at the camera, at which point you cannot see their face. To see their face, you look at the screen, which makes you appear to be looking slightly down. True mutual gaze is impossible on most setups. People adapt by glancing at the camera now and then, especially when making a point, and otherwise looking at the screen. Do not read a colleague's apparently downcast eyes on a call as evasion; they are almost certainly looking at your face. The opposite is also true: someone who stares steadily into the camera throughout a call is probably reading notes stuck beside it, or has been told that this is what good eye contact looks like. Part IV's chapter on camera height explains how to set up a laptop so that the gap is as small as possible. Raising the camera to eye level and placing the other person's window close to it narrows the gap enough that most people stop noticing it."
+  },
+  {
+   "q": "What does it mean when someone keeps looking at my mouth?",
+   "a": "Most often, that they are helping themselves hear you. People look at the mouth more in noisy places, when they are hard of hearing, when they are listening in a second language, and when the speaker has an accent they are not used to; lip movements carry real information about speech. Attraction folklore makes much of glances at the mouth, but the mundane explanations are far more common, and a reader who jumps to the romantic one will misread a great many people who are simply trying to follow what is being said. If you notice someone watching your mouth, try facing them more squarely, speaking a little more clearly, or moving somewhere quieter, and see whether their gaze changes. If it does, you have your answer, and have probably made the conversation easier for them without either of you having to mention it."
+  },
+  {
+   "q": "Do men and women make different amounts of eye contact?",
+   "a": "On average, studies have generally found that women look at conversation partners somewhat more than men do, and that pairs of women share more mutual gaze than pairs of men. The differences are averages, with large overlap, and they vary with culture, age and setting. They do suggest one common misreading worth guarding against: a man who looks at a woman less than she expects may seem to her uninterested, and a woman who looks at a man more than he expects may seem to him to be signalling something she is not. Part III's chapter on attraction takes this up, because the second misreading in particular causes real harm. A friendly woman who looks at a man while he talks is usually listening, not inviting, and treating attentive listening as a signal of interest is how a great deal of unwanted attention begins."
+  },
+  {
+   "q": "Can I tell anything from where someone looks when they might be lying?",
+   "a": "No. The idea that liars avoid eye contact is the most widely held belief about deception in the world, and the evidence does not support it. Some liars avoid eye contact, many hold it deliberately, and many truthful people look away because they are thinking, anxious or simply being polite. The claim that the direction of eye movements reveals lying was tested and rejected by Wiseman and colleagues. The deception chapter later in this part explains what the research does and does not support. For this chapter, the rule is simple: gaze tells you where attention is going and something about how the conversation is being managed. It does not tell you whether someone is telling the truth. If you need to know whether an account is true, check the account: its detail, its consistency and whether it can be verified. The eyes will only distract you."
   }
  ],
  "watch": [
