@@ -90,6 +90,13 @@
    "doCaption": "Sitting with him, hands still, attention soft.",
    "dontCaption": "Studying a grieving friend for signals.",
    "annotation": "Some moments call for presence, not reading. Knowing when to put the method down is part of the method."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_sit_hand_face",
+   "doCaption": "Writing the hypothesis, the rival and the test",
+   "dontCaption": "Reading in your head, with no record",
+   "annotation": "In your head, the rival fades and the outcome is remembered kindly. Three written lines, before you know the answer, keep you honest."
   }
  ],
  "caseStudy": "Every Thursday for six years, Owen has played five-a-side football with the same group and gone for a drink afterwards. He knows their baselines without trying. Marcus is loud from the first minute. Ben is quiet until his second pint. Jamie is the joker, who narrates every game as if commentating on it.\n\nOne Thursday in October Jamie barely speaks during the game. In the pub he sits at the end of the table, turned slightly toward the door, checks his phone and leaves after one drink. Ben decides Jamie is annoyed with him over a missed pass and spends the next week sending apologetic messages and jokes, which Jamie does not answer, which Ben reads as confirmation.\n\nOwen runs his protocol, mostly in his head and partly in a note on the walk home. Self: tired, and a little hurt that Jamie left without saying goodbye, so discount for that. Baseline and context: this is far outside Jamie's range, in a setting where he is usually at his most relaxed. Base rate: friends having a bad week is common; a quarrel with the group is not, since nothing happened. Cluster: quiet, turned away, phone, early exit, all present from the moment he arrived rather than starting at any remark. Hypothesis: something outside the group is weighing on him. Rival: he is tired or ill. Disconfirmer: if it is illness, he will say so or be himself next week; if it is the group, it will be about one of them and show when that person speaks.\n\nThe next Thursday Jamie is quiet again, and not toward anyone in particular. Owen offers him a lift and on the drive says only: *you've seemed far away the last couple of weeks, no need to talk about it, but I'm around.* Jamie says nothing for a few streets. Then he says that his father has been diagnosed with early dementia and that he has told no one.\n\nOwen writes one more line that night: *hypothesis held, rival wrong.* Ben, when he hears, stops apologising.",
@@ -109,6 +116,10 @@
     "Add your stopping rules: at least three situations in which you will not read people.",
     "Leave a line at the top for your error profile, blank for now.",
     "Date the page as version one and keep it where you will see it before important conversations."
+   ],
+   "variations": [
+    "Ask someone who knows you well to read your protocol and tell you which step they think you are most likely to skip.",
+    "Write a second, shorter version of your protocol, five lines long, for moments when you have only seconds to use it."
    ]
   },
   {
@@ -120,6 +131,10 @@
     "Repeat five times over the day at different moments: before a meal, after a message, before a call.",
     "In the evening, read the five sets and note which check changed most across the day.",
     "Decide which check you will make first in a high-stakes moment."
+   ],
+   "variations": [
+    "Run the self-check once in a calm moment and once just after something annoying happens, and compare the two sets of notes.",
+    "Add a fifth check, such as hunger or caffeine, and see over a week whether it changes your readings."
    ]
   },
   {
@@ -131,6 +146,10 @@
     "Write a rival explanation and the observation that would favour it.",
     "Play on and record the outcome honestly.",
     "Repeat with four more moments, then compare your stated confidence with your hit rate."
+   ],
+   "variations": [
+    "Keep the ledger for a month, then sort your predictions by confidence and compare each band with how often it was right.",
+    "Swap ledgers with a friend for one week, each predicting the same recorded moments, and compare your calibration."
    ]
   },
   {
@@ -142,6 +161,10 @@
     "Rate how well each rival fits what you actually saw, from one to five.",
     "Mark the readings for which the rival fits at least as well as your original.",
     "Write one sentence about what those readings have in common."
+   ],
+   "variations": [
+    "For each of your five readings, ask someone else to suggest a rival, and compare their rivals with yours.",
+    "Repeat the exercise for readings you made of yourself, such as deciding you were tired or annoyed, and look for rivals there too."
    ]
   },
   {
@@ -153,6 +176,10 @@
     "Write down the physical signs in your own body that you have slipped into reading mode, such as leaning in, narrowed eyes or mental note-taking.",
     "Choose one phrase you will say to yourself to put the method down.",
     "Use the phrase once this week and note what happened."
+   ],
+   "variations": [
+    "Ask a partner or close friend which situations they would most like you not to read them in, and add those to your rules.",
+    "Notice, for one day, every moment you catch yourself reading someone, and mark which of them were moments to stop."
    ]
   }
  ],
@@ -234,6 +261,45 @@
    "explain": "Grief is one of the clearest stopping conditions. Your trained attention is better spent on presence: standing near him, doing practical things, letting him lead. Reading him there turns a friend into a subject at the moment he most needs a friend.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Phillippa Lally and colleagues' study of new daily habits, how long did the habits take to become automatic?",
+   "options": [
+    "Exactly twenty-one days for nearly everyone, which is why the figure is so widely quoted",
+    "A median of about sixty-six days, with wide variation between people",
+    "About a year for everyone, because habits form only after a full cycle of seasons",
+    "Less than a week, provided that people never missed a single day of practice"
+   ],
+   "answer": 1,
+   "explain": "Lally's participants took a median of about sixty-six days, with a very wide range, and missing an occasional day made little difference. Expect a protocol to take months, not days, to become natural.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a family lunch, your usually talkative grandfather is quiet, eats little, laughs late at jokes and answers questions nobody asked. Your aunt says he is sulking about an argument. What fits this chapter best?",
+   "options": [
+    "Agree with your aunt, since a recent argument is the likeliest cause of the change",
+    "Tell him firmly that sulking is unfair on the family and he should move on",
+    "Consider ordinary rivals such as his hearing, and ask him kindly in private",
+    "Watch him closely for the rest of the day and record every signal you notice"
+   ],
+   "answer": 2,
+   "explain": "A strong baseline and a clear cluster show that something has changed; they do not say what. Answers to unasked questions point to an ordinary rival, hearing, and a private, kind question is the fairest test.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "A reader says that once he has run every step of his protocol, his reading of a person has been proved. What does this chapter say?",
+   "options": [
+    "He is right, since the steps are designed to remove all possible error",
+    "He is right only if his gut feeling agrees with the written conclusion",
+    "He is wrong, since protocols are useless and gut feeling is more accurate",
+    "He is wrong: a protocol makes a reading testable, not true"
+   ],
+   "answer": 3,
+   "explain": "The protocol does not confer certainty. It makes a reading specific enough to test and makes errors visible, so you can learn from them. Treating it as proof is the commonest failure at this level.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -262,6 +328,110 @@
    "work": "The Checklist Manifesto: How to Get Things Right",
    "author": "Atul Gawande",
    "note": "Why skilled people fail by not applying what they know, and how a written procedure helps."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The new starter who went quiet",
+   "scene": "Fatima leads a team of twelve in a customer service centre. Daniel, twenty-three, joined three weeks ago and made a strong start: chatty\n  in the break room, quick to ask questions, first to volunteer for the training role-plays. In his third week, he changes. He arrives on time but\n  goes straight to his desk. He eats lunch alone with his headphones in. In the team huddle, he stands at the back with his arms folded and says\n  nothing. Twice Fatima sees him sitting very still after a call, staring at his screen, before he takes the next one.\n\n  Two of the longer-serving team members tell Fatima that they have seen this before: new starters who go quiet in the third week are usually\n  looking for another job. One suggests she starts the process of finding his replacement now, since the centre loses about a third of its new\n  hires in the first three months. Fatima is under pressure herself. Her team's figures are down, and her own manager has asked for a plan by\n  Friday.\n\n  Fatima has been working through this book, and she decides to run her protocol before she does anything. She writes it out on a notepad during\n  her break, step by step, and is surprised by how different the situation looks on paper.\n\nFatima also notices that Daniel's figures have not dropped. His calls are slightly longer than average, but his customer ratings are among the best on the team. Whatever is happening, it is not showing up in his work, and she writes that down as a fact that any reading has to fit. She also remembers going quiet herself in her first month at the centre, after a caller reduced her to tears, and that nobody asked her about it.",
+   "misread": "The team's reading turned a pattern they had seen in other people into a conclusion about this one. It also came from people with no baseline for Daniel beyond three weeks, and it would have suited Fatima's own stress to accept it, because a departing employee is easier to plan around than a struggling one.\n\nIt also offered an easy action, starting the search for a replacement, at a moment when Fatima wanted something to put in her plan. Readings that come with a convenient next step deserve extra suspicion. And it rested on a statistic about new starters in general, which says nothing about why this new starter had changed.",
+   "betterRead": "Fatima's self-check came first: she was tired and anxious about her figures, and she noted that this would push her towards a quick, dark reading. Her references were thin: three weeks of baseline, in a job that changes week by week. When she checked the context, she found that Daniel had moved from the general queue to the complaints queue at the start of week three. The cluster was real, but it fitted two stories equally well. Her hypothesis was that the complaints calls were wearing him down; her rival was that he was job hunting. Either way the test was the same, a private, friendly question. In their one-to-one, she asked how he was finding the complaints line. Daniel admitted that two callers had been abusive, and that he had not said so because he did not want to look weak in his first month. Fatima arranged for him to sit with an experienced colleague for a week. By the end of it, he was back in the break room."
+  },
+  {
+   "title": "The grandfather at Sunday lunch",
+   "scene": "Every other Sunday, Rosa's family has lunch at her grandparents' house. Her grandfather, Ernesto, eighty-four, has always been the\n  centre of it: telling stories, teasing the grandchildren, arguing about football with Rosa's uncle. This Sunday he is different. He sits at the\n  end of the table and says very little. He pushes his food around and leaves most of it. When Rosa's cousin tells a story about her new job,\n  everyone laughs except Ernesto, who looks up a beat late and smiles uncertainly. Twice he answers a question that nobody asked.\n\n  In the kitchen afterwards, Rosa's aunt says he is sulking. A fortnight ago there was an argument about who would host Christmas, and Ernesto\n  had been hurt by it. Her uncle thinks it is simply age, and that they should all get used to him slowing down. Rosa's grandmother says only that\n  he has been \"a bit quiet lately\" and changes the subject.\n\n  Rosa is not convinced by either explanation. She has known her grandfather's baseline all her life, and this does not look like his sulking,\n  which is loud and theatrical, or like tiredness, which makes him doze in his chair after lunch.\n\nRosa is a pharmacist and is used to noticing small changes in older customers, but she knows her family will not welcome a professional manner at the lunch table. She also knows that her grandfather hates being fussed over, and that any question asked in front of everyone will be brushed aside. Her grandmother's vagueness strikes her too. It sounds less like someone who does not know and more like someone who has been asked not to say.",
+   "misread": "Her aunt read the change through the most recent family story, the Christmas argument, and her uncle through a general story about age. Both explanations were available and plausible, and both stopped the family from looking at what was actually happening at the table.\n\nEach reading also suited the person who offered it. The aunt had been part of the Christmas argument and was primed to see its effects. The uncle had been worrying about his father's age for a year. Neither had looked closely at what was in front of them.",
+   "betterRead": "Rosa's references were strong: a lifelong baseline, a familiar setting and a family she knows well. The cluster was clear: quiet, little appetite, late laughter and answers to questions nobody had asked. That last detail pointed her towards an ordinary rival that neither her aunt nor her uncle had considered, that he was not hearing what was said. She did not announce a theory. She sat beside him after lunch and asked, quietly, whether he was managing to follow the conversation. He admitted that his hearing aids had been \"playing up\" for a couple of weeks and that he had been too embarrassed to say. The batteries were flat, and he had not wanted to ask anyone to buy more. With new ones, he was arguing about football within the hour. Rosa still suggested, gently, that he mention his appetite to his doctor, since a reader's job ends where a professional's begins.\n\nHer aunt's and uncle's readings were not foolish. They were simply untested, and the test cost one quiet question."
+  },
+  {
+   "title": "The reader who would not stop",
+   "scene": "Victor, thirty-eight, has spent six months working carefully through this book. He keeps a journal, practises the drills, and has become\n  noticeably better at noticing what is going on in meetings at work. He is proud of the change. He has also, without quite deciding to, started\n  reading his wife, Elena, all the time.\n\n  At dinner he notices when she touches her neck, when her voice tightens, when she glances at her phone. He asks her, more and more often, what\n  is wrong, and when she says nothing is, he tells her that her shoulders say otherwise. He once noted down, in his practice journal, a cluster he\n  had seen when she talked about her sister, and later asked her about it as if it were a finding.\n\n  One evening Elena puts down her fork and tells him that she feels like she is living with a detective. She says she has started to watch her own\n  face at home, which she never used to do, and that she misses the man who used to just talk to her. Victor is hurt and confused. He thought that\n  paying closer attention was a form of love.\n\nVictor tells himself that he is only doing what the book teaches: noticing, checking, asking. He has not reread the chapter on stopping rules since he first skimmed it. He has also, he realises later, stopped telling Elena about his own day, because he has been too busy watching hers.",
+   "misread": "Victor read his own constant attention as care, and Elena's discomfort as resistance to being understood. He had turned a method meant for moments that matter into a way of living, and he had stopped noticing the effect his watching had on the person being watched.\n\nHe also missed the most important change of all, which was in Elena herself rather than in her signals: she had begun to manage her face at home. He had read every cue except the one that mattered.",
+   "betterRead": "Every protocol in this book includes stopping rules, and the people closest to you are where they matter most. In a long relationship, you already have the best baseline there is, and you rarely need a method: you need to listen, to ask plainly when something seems wrong, and then to believe the answer unless you have a real reason not to. Being studied is tiring, and it changes how people behave, so a partner who feels watched will start to manage her face, which makes her harder to read, not easier. Victor's repair was simple. He apologised, stopped recording anything about Elena in his journal, and agreed with her that if he was worried, he would say so in words, once, and leave it there. The skill he had built was still there for work. At home, he put it down.\n\nElena said later that the change she noticed most was not that he watched less, but that he started telling her about his own day again."
+  },
+  {
+   "title": "Two readers in one boardroom",
+   "scene": "Aisha and Tom, two managers at a housing association, present a proposal for a new repairs service to the board. Halfway through, Tom\n  glances at Mr Patel, the board's longest-serving member, and sees him frowning, arms folded, leaning back in his chair. He does not take notes and\n  does not ask a question. Tom loses his thread for a moment, then rushes the second half of the presentation.\n\n  Afterwards, in the corridor, Tom is gloomy. He is sure that Mr Patel is against the proposal and will speak against it when the board votes next\n  month. He wants to rewrite the costings and cut the most expensive part of the plan before then.\n\n  Aisha has sat in five board meetings with Mr Patel over the past year, and she has kept notes on all of them, partly as practice. She asks Tom to\n  wait before changing anything, and goes to her notebook.\n\nTom has prepared for weeks and badly wants the proposal to succeed. Mr Patel is known as a careful, sometimes sceptical member of the board, and a colleague had warned Tom that he \"sinks things he doesn't like\". Tom went into the room expecting to see opposition, and his eyes went to Mr Patel more often than to anyone else. When the presentation ends, the chair thanks them and moves to the next item. Nobody asks a question, which is normal at that stage of the board's process, though Tom has forgotten this.",
+   "misread": "Tom read a frown, folded arms and a backward lean as opposition, because that is what they would have meant had he made them. He had no baseline for Mr Patel, and his own nerves during the presentation pushed him towards the most threatening reading.\n\nHe also never considered the room. A cold boardroom, a long agenda and a member who habitually listens with his arms folded would explain everything Tom saw. And because he lost his thread, his own rushed second half became the thing most likely to worry the board.",
+   "betterRead": "Aisha's notes showed that Mr Patel frowns, folds his arms and leans back in nearly every meeting when he is listening hard, and that he rarely asks questions until the formal discussion. That was his baseline, not a change. The boardroom, she also remembered, is always cold, and several members fold their arms for warmth. No cluster, no change from baseline, no reading. Her hypothesis, held loosely, was that he was concentrating; her rival was that he had doubts. She tested it the simplest way: she emailed him to thank him for listening and to ask whether he had any questions before the vote. He replied the same day with two detailed questions about costs, and a note saying that he thought the proposal was the best the board had seen in years.\n\nTom kept the plan as it was. The board approved it the following month, with an amendment on costs that Mr Patel proposed. Aisha's notebook had saved them from cutting the strongest part of their own proposal."
+  }
+ ],
+ "workedReading": {
+  "title": "A teacher's first protocol",
+  "scene": "Kwame teaches English at a secondary school. Chloe, fourteen, has been one of the liveliest pupils in his Year 9 class all year, quick to answer and quick to argue. Over the past fortnight she has changed. She has moved from the front of the room to the back. She keeps her hood up until he asks her to lower it, and then sits with her head on her arm. She has handed in no homework for two weeks, which has never happened before. When he asked her, at the end of a lesson, whether everything was all right, she said \"fine\" without looking up and left quickly. Kwame is worried, and he is aware that he is worried. He decides to run the protocol properly, in writing, rather than act on a feeling.\n\nKwame has taught long enough to know that changes like this in teenagers have many possible causes, most of them ordinary: friendships, exams, sleep, family events, a first relationship, a phone. A few are serious. He cannot tell which from the front of a classroom, and he does not need to. He also knows that the school has a procedure for this, and that he has read it, but he has never had to use it.",
+  "steps": [
+   {
+    "label": "Check yourself first",
+    "text": "Kwame starts with himself. It is the end of a long term, he has a pile of marking and he has been sleeping badly. He notes that tiredness makes him read pupils more darkly and more quickly than usual. He also notes that he is fond of Chloe, which makes him want to fix things, and that the urge to fix is not the same as knowing what is wrong.\n\nHe also takes one slow breath before the next lesson, so that whatever he does next is done from a settled body rather than a worried one."
+   },
+   {
+    "label": "Fix the three references",
+    "text": "Baseline: he has a full year of it, and the change is large. Context: it is the same classroom and the same subject; nothing in the lesson has changed. He checks with two colleagues and learns that Chloe has changed in their lessons too, so the shift is not about English or about him. Culture and setting: nothing new. The references are as strong as a teacher is likely to get.\n\nStrong references matter because they let him trust the cluster. A change this large, against a year of baseline and confirmed by other teachers, is not noise."
+   },
+   {
+    "label": "Look for a cluster",
+    "text": "The cluster is clear and spans several channels: where she sits, her posture, the hood, the missing work, the brief answer with no eye contact and the quick exit. It is also sustained over two weeks across different lessons, which matters more than any single moment. Something has changed for Chloe. What has changed, the cluster cannot say.\n\nHe resists the temptation to add things he has not seen. He has heard a rumour from another pupil about Chloe's friendship group, and he leaves it out of his notes, because it is not an observation."
+   },
+   {
+    "label": "Write hypothesis, rival, disconfirmer",
+    "text": "He writes three lines. Hypothesis: something outside school is weighing on her. Rival: something inside school, such as a falling-out with friends or trouble with another pupil. Disconfirmer: if she is fine and cheerful with her friends at break and lunch, the trouble is less likely to be social. He also writes a line that is not in the usual protocol: whatever this is, it is not his job to find out alone.\n\nWriting the line about not acting alone changes what the next step will be. Without it, the natural next step would be to question Chloe again, which could make things worse."
+   },
+   {
+    "label": "Hand on what is not yours",
+    "text": "Kwame knows his school's safeguarding procedure, and he knows that a sustained change of this kind in a pupil is exactly what it exists for. He does not question Chloe further, and he does not try to investigate. That same afternoon, he writes down what he has observed, factually and without interpretation, and passes it to the school's designated safeguarding lead, as the procedure requires. His written notes, already free of guesses, make the report quick and clear.\n\nHe also resists the urge to find out more before reporting, so that he can make a stronger case. The procedure does not ask him to be sure. It asks him to pass on what he has seen."
+   },
+   {
+    "label": "Keep the door open",
+    "text": "In the next lesson, Kwame treats Chloe exactly as usual, warmly and without fuss. He tells the whole class that his door is open at lunchtime for anyone who wants help with the coursework, and he makes sure Chloe hears it. He does not ask her any more questions about how she is. He notes that his job now is to be a steady, safe adult, not a detective.\n\nHe notes the limits of his role in his journal: he is one adult among several in Chloe's life, and his part is to be reliable, not to solve things."
+   },
+   {
+    "label": "Record and score",
+    "text": "Two weeks later, the safeguarding lead tells Kwame, in general terms, that Chloe's family is going through a difficult separation and that the school is now supporting her. His hypothesis had been roughly right and his rival wrong, but he notes in his journal that neither mattered much. What mattered was that he noticed, checked his references, wrote down what he saw without guessing, and handed it to the person whose job it was. He adds a line to his own protocol: when the reading is about a child's welfare, the last step comes first.\n\nHe also notices that the protocol felt slow while he was running it, and that it took less than an hour in all, most of it spent writing three short paragraphs. His protocol page, now in its third version, has a new first line about welfare."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Running the protocol only on people you already suspect",
+   "body": "It is natural to reach for a careful method when something already feels wrong, and to skip it when everything feels fine. The result is a protocol that only ever examines people you have already judged, which makes it a machine for confirming suspicion. The rival explanation gets written, but half-heartedly, because you already know the answer. The fix is to run the protocol at times when you have no suspicion at all: on a friend who seems happy, a colleague who seems fine, a meeting that seems to have gone well. Some of those readings will surprise you too, and they will teach you how often your first impression is wrong in both directions.\n\nThere is a second reason to read people you do not suspect: it builds baselines. The calm, ordinary readings you collect now are what will let you see a real change later. The same applies to people you like. A protocol run only on people you distrust will never catch your misreadings of the ones you are fond of."
+  },
+  {
+   "title": "Doing it all in your head",
+   "body": "Many readers, once they know the steps, stop writing them down. It feels quicker and more natural, and it is where the protocol quietly dies. In your head, the rival explanation is a polite nod to a possibility you have already dismissed, the disconfirmer is never named, and the outcome is remembered in whatever way flatters your first guess. Writing is what makes the steps real. It does not need to be long. Three lines on a phone, written before you know the outcome, are worth more than an hour of careful thought afterwards.\n\nIt also helps to keep the notes in one place, where you will see them again. A scrap of paper lost in a coat pocket cannot be scored, and a reading that cannot be scored teaches you nothing. Writing also slows the moment down just enough for the rival to appear, and many readers find that the rival they write is better than the one they would have thought of."
+  },
+  {
+   "title": "Never reaching the stopping rules",
+   "body": "The more skilled you become, the more you see, and the harder it is to stop seeing. Readers at this stage sometimes find themselves reading everyone, all the time: partners at dinner, children at bedtime, friends at funerals. The stopping rules in your protocol are not a courtesy added at the end. They are part of what makes the skill safe to have. If you notice that you are reading someone when you should be with them, the protocol has done its job by making you notice. Put it down, and come back to the person.\n\nA simple test is to ask whether the person you are reading would be glad to know you were doing it. A colleague in a negotiation might not mind; a grieving friend would. If the answer is no, the moment probably belongs to the stopping rules. Stopping is also a skill you can practise. Choose a setting each week, a meal, a walk, a game, in which you will not read anyone at all, and notice how it feels."
+  },
+  {
+   "title": "Scoring yourself generously",
+   "body": "When you return to your notes, there is a strong pull to mark unclear outcomes as right, and to remember that you had always half suspected the answer that turned out to be true. Baruch Fischhoff's research on hindsight found that once people know an outcome, they tend to believe they would have predicted it, and to overestimate how likely it had seemed beforehand. Your written predictions are the defence against this, but only if you read them as they are. Mark unclear as unclear. Mark a reading that was right for the wrong reasons as a warning, not a success.\n\nIt helps to score with someone else now and then. A friend reading your notes, without your memory of how certain you felt, will mark them more honestly than you can."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How long before the protocol feels automatic?",
+   "a": "Longer than most people expect, and longer for some people than others. In a study by Phillippa Lally and colleagues, people who chose a new daily habit took a median of about sixty-six days for it to become automatic, with a very wide range between individuals, from under three weeks to well over half a year. Missing an occasional day made little difference. A reading protocol is more complex than most of the habits in that study, so expect the self-check to become automatic first and the written rival last. That is fine. The protocol is meant to slow you down where it matters, and some of it should never become entirely automatic.\n\nThe popular figure of twenty-one days seems to trace back to a 1960 self-help book by the surgeon Maxwell Maltz, who wrote that people took a minimum of about twenty-one days to adjust to a change. It is optimistic for most habits, and Lally's data suggest it is optimistic for most people."
+  },
+  {
+   "q": "Do I have to write everything down for ever?",
+   "a": "No. The writing matters most at the start, when you are learning how often you are wrong and in which direction. Later, you can keep it for the readings that matter: decisions about people, conversations you are worried about, readings you notice you are very sure of. It also helps to return to full written practice for a few weeks at a time, once or twice a year, as a kind of audit. Many readers find that their accuracy has drifted without their noticing, usually towards overconfidence, and the notes bring it back.\n\nA useful middle path is a very short note: the person, the reading, your confidence, and one line for the outcome later. Most readers can keep that up indefinitely, and it is enough to catch drift. If you stop altogether, keep one habit: write down any reading you are about to act on. That single rule catches most of the readings that do harm."
+  },
+  {
+   "q": "What counts as a good accuracy rate?",
+   "a": "There is no single benchmark, because it depends on how hard the readings are. What matters more is calibration: whether your confidence matches your accuracy. If you mark a set of readings as eighty percent likely, roughly eight in ten of them should turn out right. If only five do, you are overconfident, and the fix is to lower your stated confidence or to demand stronger clusters before you commit. Tetlock's best forecasters were not always right, but they were well calibrated, and they improved because they kept score. Aim for that, not for a number.\n\nA practical way to check calibration is to group your readings by the confidence you gave them, and look at each group separately once you have twenty or thirty. The pattern is usually clearer than any single reading."
+  },
+  {
+   "q": "Can I use the protocol on myself?",
+   "a": "Yes, and it is one of its best uses. The same steps work: check your state, fix your own baseline, look for a cluster of changes in your own body and behaviour, write a hypothesis and a rival, and test it, often by asking someone who knows you well. Part II applies this to stress, mood and depletion, and Part VI turns it into a personal early-warning habit. One caution: reading yourself is not diagnosing yourself. If what you notice worries you, the right test is a conversation with someone qualified, not more self-observation.\n\nReading yourself has a special difficulty: you are both the observer and the observed, so your state colours both. Asking someone who knows you to compare notes is often the most useful test there is. It is also worth reading yourself at good times, not only bad ones, so that your baseline includes how you look and feel when things are going well."
+  },
+  {
+   "q": "What if the protocol and my gut disagree?",
+   "a": "Treat the disagreement as information. Kahneman and Klein's work suggests that gut feelings deserve trust in settings where you have had long practice with clear feedback, such as reading a close friend you have known for twenty years. In a new setting, with a stranger, the gut is more likely to be repeating a stereotype or a mood. When the two disagree, slow down. Ask what your gut has noticed that your notes have not, and what your notes contain that your gut is ignoring. Then gather more information, usually by asking, before you decide anything.\n\nIt also helps to notice which way the disagreement runs. If your gut is warmer than your notes, it may be loyalty or hope. If it is colder, it may be a stereotype, a bad mood or something real that your notes have missed. Either way, the gap is the thing to look at."
+  },
+  {
+   "q": "Is the protocol the same in every setting?",
+   "a": "The core is the same: self-check, references, cluster, hypothesis and rival, a fair test and a record. What changes is the weight of each step. In a job interview, the references are thin and the stakes are high, so the protocol should be slow and the checks formal. With a close friend, the baseline is rich and the right test is almost always a kind question. In professional settings involving safety or welfare, the most important step may be handing the matter on. Part VI shows how to adapt the core into a personal protocol for the settings you actually work and live in.\n\nThe question to ask in any new setting is which step carries the most risk there. In some places it is your own state, in others thin references, and in others the temptation to keep going when you should stop. Readers who work across several settings often keep a short protocol card for each, with the same steps and different notes beneath them."
   }
  ],
  "watch": [
