@@ -73,6 +73,20 @@
    "doCaption": "Asking the child first",
    "dontCaption": "A hug a child did not choose",
    "annotation": "Children learn whether their no works from the adults around them. Offer a wave or a high five as an alternative, and let them choose."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_arm_around",
+   "doCaption": "Standing beside her, asking if she's all right",
+   "dontCaption": "An arm round a very drunk woman, steering her away",
+   "annotation": "Someone who cannot stand steadily cannot choose. Check on her, find her friends, and help her get home safely."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_stand_freeze",
+   "doCaption": "A friend beside him, believing him",
+   "dontCaption": "A man who froze, blaming himself alone",
+   "annotation": "Men freeze too, and often blame themselves for it. Belief and \"it's not your fault\" from a friend can be the start of recovery."
   }
  ],
  "caseStudy": "Ollie, twenty-four, is at a house party when he notices his friend Jake steering a woman toward the stairs. Ollie does not know her. She is stumbling, holding the banister with both hands, her eyes not quite focusing, and she does not seem to be answering when Jake talks to her.\n\nOllie's first instinct is that it is none of his business. Then he remembers a session at work on bystander intervention, and the three options it described: distract, delegate or deal with it directly. He goes over and says to Jake, cheerfully, that someone is asking for him outside about his car. While Jake hesitates, Ollie asks the woman if she is all right and whether her friends are here. She mumbles a name. Ollie finds the friend, who is horrified and takes her to a quiet room with water.\n\nJake is angry. He tells Ollie she was up for it. Ollie says, quietly, that she could not stand up, and that he would rather Jake was annoyed with him than in a police station, or worse, that she was hurt. Jake leaves the party.\n\nThe next morning Jake messages. He says he was drunk, that he did not see how bad she was, and that he feels sick thinking about it. Ollie replies that he gets it, and that the drink was part of the problem for both of them.\n\nIt changes something for Ollie too. With his girlfriend, he starts saying what he had always assumed: “Is this okay?” He is surprised by how much she likes being asked, and by how much easier it makes everything.",
@@ -91,6 +105,10 @@
     "Note how many used the word no, and what words and signals they used instead.",
     "Write down how you understood each one, and whether you were ever in doubt.",
     "Write one sentence about what this tells you about refusals in intimate situations."
+   ],
+   "variations": [
+    "Collect three refusals you heard in ordinary life this week, such as declined invitations, and write down how each was phrased.",
+    "Practise answering an indirect refusal gracefully, such as \"No problem, another time,\" until it comes without thought."
    ]
   },
   {
@@ -101,6 +119,10 @@
     "Say each aloud until it sounds natural in your voice.",
     "Write a response for no and not now that is gracious and contains no pressure.",
     "Choose the two you are most likely to use."
+   ],
+   "variations": [
+    "Write the checking phrases you would use with a long-term partner, and compare them with those you would use with someone new.",
+    "Practise saying \"We can stop any time\" in a warm, relaxed voice until it sounds natural."
    ]
   },
   {
@@ -111,6 +133,10 @@
     "Write a personal rule for what you will do if someone you are with shows them.",
     "Write down how you would help a stranger in that state, using distract, delegate or direct.",
     "Look up the emergency number and a sexual assault support line where you live, and save them."
+   ],
+   "variations": [
+    "Write down what you would do if a friend wanted to leave with someone who seemed very drunk.",
+    "Agree with your friends, before a night out, that you will look out for anyone who seems too drunk to choose."
    ]
   },
   {
@@ -121,6 +147,10 @@
     "Stop at once, and say something simple, such as “Okay, I've stopped.”",
     "Offer a choice the next time you greet them: a hug, a high five or a wave.",
     "Notice how the child responds over the following weeks."
+   ],
+   "variations": [
+    "Practise offering a child two alternatives to a hug or kiss, and notice which they choose.",
+    "Write down what you would say to a relative who insisted that your child kiss them."
    ]
   }
  ],
@@ -202,6 +232,45 @@
    "explain": "Tickling causes laughter whether or not it is enjoyed. Stopping when a child says stop teaches him that his no works, which is the foundation of consent.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did O'Byrne, Rapley and Hansen find in focus groups with young men about refusals?",
+   "options": [
+    "The men readily understood indirect, polite refusals",
+    "The men could not recognise any refusal that did not include the word no",
+    "The men believed that hesitation always meant that a woman wanted more",
+    "The men said refusals were impossible to understand without a written note"
+   ],
+   "answer": 0,
+   "explain": "The young men readily understood indirect refusals, such as hesitations and excuses. A claim not to understand a sexual refusal because it lacked the word no claims an ignorance people do not show elsewhere.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At the end of a night out, a friend who is slurring, unsteady and calling you by the wrong name asks to come back to your flat to carry on. What fits this chapter best?",
+   "options": [
+    "Take her home with you, since she has clearly asked and is an adult",
+    "Ask her again in an hour, once she has had a little time to sober up",
+    "Treat her as unable to consent, and help her get home safely with a friend",
+    "Leave her with the group, since it is not your responsibility to help"
+   ],
+   "answer": 2,
+   "explain": "Slurring, unsteadiness and confusion are signs that someone cannot meaningfully consent, whatever they say. The kind and right response is to help her get home safely.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that once a partner has agreed to something, there is no need to check again. What does this chapter say?",
+   "options": [
+    "It is right, since a yes given once lasts for the rest of the evening",
+    "Consent can change at any moment, so keep checking as things change",
+    "It is right in long relationships, though not with someone new",
+    "It is wrong, but only if the partner says the word no out loud"
+   ],
+   "answer": 1,
+   "explain": "Consent is not a single gate passed once. People can change their minds, and a change in their body, such as stillness or turning away, is a reason to check again.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -230,6 +299,110 @@
    "work": "Rape and Sexual Offences: Chapter 6, Consent",
    "author": "Crown Prosecution Service",
    "note": "Legal guidance for England and Wales. How freedom and capacity are assessed, including the effects of intoxication."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The partner who went quiet",
+   "scene": "Ben and Sophie have been together for four years. On a Friday night, after dinner and a bottle of wine shared between them, they are\n  kissing on the sofa. Ben is enjoying it, and assumes Sophie is too: she kissed him first. After a few minutes, he notices a change. She has stopped\n  moving her hands. Her kisses have become slower and then stopped, though she has not pulled away. Her body has gone still against him, and her\n  face is turned slightly to one side.\n\n  Ben's first thought is that she is just relaxing. They are a couple; she has never said no to him before; she started it. His second thought is\n  something he read about stillness.\n\n  He stops, sits back a little, and says, \"You OK? You've gone quiet.\"\n\nThey have had a busy week. Sophie has been working late, and Ben has been looking forward to a quiet Friday together. He is aware, as he notices her stillness, that he has been hoping for this evening all week, and that the hope might be colouring how he reads her.\n\nSophie has also mentioned, earlier in the evening, that she has had a headache all afternoon. Ben had heard it and forgotten it, as the evening went on and the wine went down.\n\nBen has also read, on a forum, that couples should never have to ask each other, because it ruins the spontaneity. He has never quite believed it, and tonight he is about to find out why.",
+   "misread": "Ben's first reading drew on things that felt like reasons to carry on: they were a couple, she had started it, she had never refused before. None of them told him what she wanted now, and her stillness was telling him something different.\n\nHe also took her having started the kiss as permission for what came after, when starting something is not agreeing to everything that might follow.\n\nHe also nearly read the relationship as a kind of standing permission, which is one of the commonest and least examined assumptions between long-term partners.\n\nAnd he nearly took her silence as comfort rather than as information, which is the easiest mistake to make with someone you love and trust.",
+   "betterRead": "Consent is not a single gate passed once, and it is not granted by a relationship. People can agree to one thing and not another, and want something at the start of an evening and not ten minutes later. Sophie's stillness, her hands stopping and her face turning away were the signs this chapter describes as reasons to stop and check, never as signs to continue. Being in a long relationship makes it easy to read a partner generously and to assume. Ben's better reading was to treat the change as a question. Sophie said that she was really tired and not in the mood after all, and that she was sorry. Ben said there was nothing to be sorry for, and meant it. He did not sulk, ask why or try again later. They watched half a film and fell asleep on the sofa. A week later, Sophie told him that the way he had stopped and asked had made her trust him more.\n\nBen also felt a flash of disappointment at her answer, and let it pass without showing it."
+  },
+  {
+   "title": "The friend at the end of the night",
+   "scene": "Liam, twenty-six, has been out with a group of friends for a birthday. At one in the morning, his friend Charlotte, whom he has known for\n  two years and has always rather liked, is very drunk. She has fallen over once, is slurring her words and keeps losing her phone. As the group\n  breaks up, she puts her arm through Liam's and says she wants to come back to his flat to carry on drinking. She kisses his cheek and laughs.\n\n  One of Liam's friends winks at him. Another says, \"Go on, mate, she's clearly keen.\"\n\n  Liam has thought about Charlotte this way before, and part of him wants to say yes. But he also notices that she cannot quite focus on his face,\n  and that she called him by the wrong name a minute ago.\n\nCharlotte's housemate, Priya, is still at the bar, looking round for her. Liam can see her over Charlotte's shoulder. Charlotte has not mentioned her, and does not seem to remember that they came out together.\n\nLiam's flat is a ten-minute walk away. He has a sofa and a spare duvet. A voice in his head says that he could just let her sleep there, and another voice asks him whether that is really what he would be doing.",
+   "misread": "His friends read Charlotte's arm, her kiss and her request as clear interest, and the end of the night as an opportunity. That reading ignored the signs that she was too drunk to choose anything.\n\nAnd his own attraction made the generous reading tempting. Wanting something is one of the strongest pressures on how we read other people's signals.\n\nHis friends' wink and encouragement also mattered. Pressure from other men to treat a drunk woman as an opportunity is one of the situations in which good men make bad choices, because refusing feels like failing a test in front of them.\n\nCharlotte's request, too, was not a decision. People who are very drunk often say things they would never choose sober, and treating those words as consent mistakes the drink for the person.",
+   "betterRead": "A yes counts only when the person giving it is free and able to give it, and the law in England and Wales says so in a single sentence. Capacity can be lost long before someone passes out: slurred speech, unsteadiness, eyes that do not focus, confusion and forgetting names are the signs the chapter on substance use described. Someone in that state cannot meaningfully agree to sex, whatever she says or does, and her request to come back to his flat could not be treated as consent to anything. Liam's better reading was that the kind thing and the right thing were the same. He said, \"Not tonight, Charlotte. Let's get you home,\" and found her housemate, who was still at the bar. He waited with them for a taxi, gave the driver the address, and texted the housemate an hour later to check that Charlotte had got in safely. The next day, Charlotte messaged to say thank you, and that she could not remember most of the evening, which told him everything about how right he had been.\n\nHe told the winking friend so, the next day."
+  },
+  {
+   "title": "The kiss for grandad",
+   "scene": "At a family birthday lunch, Ade's daughter, Zola, five, is told by her grandfather to come and give him a kiss. Zola hangs back behind her\n  father's legs. Her grandfather laughs and says, \"Come on, don't be shy, give grandad a kiss.\" Zola shakes her head and holds tighter to Ade's\n  trousers. Her grandmother joins in: \"She'll upset grandad. Go on, darling.\"\n\n  Ade feels the familiar pull. His father is old, proud and easily hurt, and the whole family is watching. As a boy, Ade was made to kiss relatives\n  he did not like, and he remembers how much he hated it.\n\n  Zola looks up at him.\n\nZola's older cousins are watching too, and one of them, eight, says, \"I had to kiss him too,\" in a voice that makes Ade think she did not enjoy it either.\n\nZola has been shy with her grandfather since her last visit, when he tickled her for a long time and did not stop when she asked. She has not said this to anyone, but she has been quiet whenever his name comes up. Ade noticed, and thought she would grow out of it.\n\nThe table has gone quiet. Ade's sister raises her eyebrows at him across the room, and his brother-in-law looks studiously at his plate. Everyone is waiting to see what Ade will do, and Ade knows that whatever he does will be talked about on the drive home.",
+   "misread": "The grandparents read Zola's hanging back as shyness to be overcome with gentle pressure, and her refusal as a small rudeness that would hurt her grandfather. They saw the kiss as affection owed, not affection offered.\n\nThe grandmother's warning, that Zola would upset grandad, also taught Zola something: that her job was to manage an adult's feelings with her body.\n\nAnd Ade's own pull to give in came from wanting to keep the peace, which is exactly the pressure that teaches children their no is negotiable.\n\nThe grandfather's laugh also did work: it turned the refusal into a joke, which made Zola's no seem silly rather than serious, and made it harder for anyone to support it.",
+   "betterRead": "A child who is told to hug or kiss a relative they do not want to touch learns that their body belongs to whoever is asking, and that their no does not count when the adult is important enough. Zola's hanging back, her headshake and her grip on her father were a clear refusal, as clear as any adult's. Ade's better response was to support her no and give her another way to be warm. He crouched down and said, \"You don't have to kiss grandad. Do you want to give him a high five, or a wave?\" Zola chose a wave. Ade said to his father, lightly, \"We let her choose. She'll come and sit with you when she's ready.\" His father grumbled. Twenty minutes later, Zola climbed onto her grandfather's knee by herself to show him a drawing, and he looked happier than any kiss could have made him. Later, Ade explained to his parents why he did it, and his mother, after a pause, said she wished someone had done the same for her.\n\nHe also told Zola, on the way home, that she had been right to say no."
+  },
+  {
+   "title": "The man who froze",
+   "scene": "Tom, twenty-two, tells his friend Kieran, months after it happened, about a night at a party when an older guest, someone he barely knew,\n  touched him sexually in a hallway while he was very drunk. Tom did not push him away or say anything. He says he just stood there, frozen, and then\n  went home and told nobody. He says he does not understand why he did not stop it, and that he feels pathetic, and that maybe he must have wanted it,\n  because he did not fight.\n\n  Kieran is shocked. His first instinct is to say, \"Why didn't you just punch him?\" He stops himself.\n\n  Tom is looking at the floor, his arms wrapped round himself.\n\nTom has also stopped going to parties since that night, and drinks much less than he did. He has told his friends that he is saving money. Kieran had wondered why, and had not asked.\n\nKieran remembers the party. He remembers seeing Tom leave early, pale and quiet, and thinking that Tom had simply had too much to drink. He also remembers the older guest, laughing loudly at the bar afterwards, as if nothing had happened.\n\nTom says that he has started to wonder whether he is making a fuss about nothing, because men are supposed to be able to look after themselves and because nobody else seems to think anything happened.",
+   "misread": "Tom read his own freezing as weakness, and even as a sign that he must have wanted it. Kieran's first instinct, to ask why Tom did not fight, would have confirmed exactly that reading.\n\nKieran's first instinct, to ask why Tom did not punch him, came from shock and loyalty. It is one of the most common responses survivors hear, and one of the most damaging.\n\nTom's question, whether he must have wanted it, is one that many survivors ask themselves, and it comes from the same mistaken belief: that only resistance proves refusal.\n\nTom's worry that he was making a fuss also came from the silence around him. When nobody names what happened, the person it happened to often concludes that it must not have mattered.",
+   "betterRead": "The chapter on trauma described tonic immobility: freezing that happens automatically when escape seems impossible, and that is common during assault. Men freeze as women do, and men who are assaulted often face extra disbelief because of the belief that a man can always fight back. Stillness is not a yes, from anyone, and Tom's not resisting said nothing about what he wanted. Kieran's better response, once he had caught himself, was belief and reassurance. He said, \"That's not your fault. Freezing is what bodies do. You didn't want it, and he shouldn't have done it.\" He did not ask for details. He asked whether Tom had told anyone else, and whether he would like help finding someone to talk to. Tom said he did not know where to start. Kieran looked up a support service for men who have experienced sexual assault, and the lines listed in this chapter, and offered to sit with him while he made the call. Tom called the following week. He told Kieran later that hearing \"it's not your fault\" from a friend had been the first time he had believed it."
+  }
+ ],
+ "workedReading": {
+  "title": "Checking in, and checking again",
+  "scene": "Marcus, thirty, and Jade, twenty-nine, have been on three dates. After dinner on the third, they go back to his flat for a coffee, and end up kissing on the sofa. Both seem to want it: Jade leaned in first, she is holding his face, and she laughs when he jokes about the cold coffee. Marcus would like things to go further. He also knows that this is the point at which assumptions are most tempting and most risky.\n\nMarcus has had relationships before in which he assumed too much, and one in which a partner told him, months later, that she had gone along with things she did not want. He has thought about that conversation a great deal.\n\nThey have talked a little, on earlier dates, about past relationships, and Jade has said, lightly, that she likes to take things slowly. Marcus remembers it now.\n\nThe flat is quiet, the lights are low and there is music playing. Everything about the setting invites assumption. Marcus knows that is exactly why he needs to be careful.",
+  "steps": [
+   {
+    "label": "Look for active participation",
+    "text": "Marcus notices what Jade is doing, not only what she is not doing. She is moving towards him, touching him, kissing back, laughing, talking. These are signs of active participation, which is what this chapter says to look for, rather than the mere absence of objection. He notes that they tell him she is enjoying this, and nothing about what she wants next.\n\nHe also notices his own state: one glass of wine with dinner, clear-headed, and keen. Keenness is the thing most likely to make him read generously, and he notes it.\n\nHe also notes that her laughter and touch are directed at him, responsive to what he does, not just general warmth. That is what active participation looks like: two people building something together, each responding to the other.\n\nHe also knows that her enthusiasm a few minutes ago does not commit her to anything now. Active participation has to be ongoing to count, which is why he keeps watching rather than deciding once."
+   },
+   {
+    "label": "Ask before something new",
+    "text": "Before moving things further, he pauses and says, \"Is this OK? Do you want to go a bit further, or stay here for now?\" He says it warmly, close to her, not as a formal question. Jade smiles and says she is happy as they are for now. Marcus says, \"Great,\" and kisses her again. Asking did not spoil anything. It told him where they were.\n\nHe also asks in a way that offers more than one acceptable answer. \"Go further, or stay here?\" makes \"stay here\" as easy to say as \"go further\", which a yes-or-no question might not.\n\nHe also notes that asking gave him information he could not have got any other way. Her face and body had been saying she was enjoying this; only her words could tell him what she wanted next.\n\nHe also makes sure his question is not a trap. He would be genuinely happy with either answer, and he lets that show in his face and voice, so that she does not have to guess which one he wants."
+   },
+   {
+    "label": "Notice the change",
+    "text": "A while later, Marcus notices that Jade's hands have stopped moving and her kisses have become shorter. She glances at her phone on the coffee table. Her body has gone a little stiller. None of this is a no, and all of it is a change, and the chapter is clear that a change is a reason to check, not to carry on and see whether it passes.\n\nHe also notices that the change came after her phone buzzed, and wonders whether something has come up. Whatever the reason, the change is what matters, and it calls for a question.\n\nHe also notices his own reluctance to check. Part of him would rather not ask, in case the answer is no. That reluctance is the surest sign that he should.\n\nHe also reminds himself that she may not want to say no outright, especially on a third date, in his flat, late at night. If he waits for a clear refusal, he may be waiting for something she does not feel able to give."
+   },
+   {
+    "label": "Make stopping easy",
+    "text": "He sits back slightly and says, \"You all right? We can stop any time, you know.\" He keeps his voice light and his body relaxed, so that the question does not feel like a test. He makes it clear, in words and in posture, that stopping would be completely fine.\n\nHe also moves back slightly as he asks, giving her physical room as well as verbal room. A question asked while pressing closer does not feel like a real question.\n\nHe also keeps his hands still and his body open while he waits for her answer, so that nothing about him suggests he is waiting to carry on."
+   },
+   {
+    "label": "Accept the answer warmly",
+    "text": "Jade says that she has an early start and should probably head home soon, and that she has had a really nice evening. Marcus says he has too, and offers to walk her to the bus stop or call her a taxi. He does not ask her to stay longer, suggest one more drink or look disappointed. Accepting the answer warmly is as important as asking the question.\n\nHe also makes the offer of a taxi practical and immediate, so that leaving is easy. A person who wants to go should not have to negotiate their way out.\n\nHe also says, as she gets her coat, that he would like to see her again, and lets her answer in her own time. Leaving the door open, without pressure, is part of accepting the answer gracefully.\n\nHe also does not say anything about the earlier moments or ask whether she enjoyed them. Turning a goodnight into a review of the evening puts pressure on her to reassure him."
+   },
+   {
+    "label": "Leave nothing to repair",
+    "text": "He walks her to the taxi, says goodnight with a kiss at the door that she starts, and texts her to check that she got home safely. He does not mention, then or later, that he had hoped for more. He wants her to know that saying no to him is easy and safe.\n\nHe also resists the temptation to ask, by message later, whether he did something wrong. That would make her responsible for his feelings about an evening that went exactly as it should have.\n\nHe also notes that a goodnight kiss she starts, at the door, is very different from one he starts. Letting her lead at the end is one more way of showing that the evening was on her terms as much as his."
+   },
+   {
+    "label": "What happened",
+    "text": "Jade texts back that she got home fine and that she would like to see him again. On their fifth date, she tells him that she had liked the way he checked, and that it had made her feel she could relax with him. Marcus notes that he had been tempted, at each point, to read the signals generously and carry on, and that asking had cost him nothing except a little uncertainty, which was the honest state of things anyway.\n\nHe also tells a friend, who asks how the date went, that it went well, and does not offer any details. Respect for a partner's privacy is part of the same habit.\n\nHe also notes, for himself, that the evening had three moments where he could have assumed, and that at each one, asking had made things better, not worse."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating the absence of a no as a yes",
+   "body": "Kitzinger and Frith showed that people rarely refuse anything with a bare no: they hesitate, hedge, apologise and make excuses, and everyone understands these as refusals in ordinary life. O'Byrne and colleagues found that young men in focus groups readily understood indirect refusals too. A man who waits for the word no before he stops is waiting for a signal that most people never give. Hesitation, delay, \"I'm not sure\", \"maybe we should\", a change of subject, a move away: each of these is a reason to stop. Only a clear, freely given yes is a reason to go on.\n\nIt also helps to listen for the softest refusals: \"I should probably go\", \"It's getting late\", \"I'm quite tired\". Each is a polite way of saying no, and each deserves the same response as the word itself.\n\nIt also helps to notice how you respond to indirect refusals elsewhere. If a friend says \"I'd love to, but I'm really tired\" to a night out, you understand at once. The same understanding applies in intimate moments.\n\nIn relationships, indirect refusals can be even softer: a sigh, a change of position, \"I'm a bit tired tonight\". Partners who know each other well often understand these perfectly, and the respect lies in acting on them."
+  },
+  {
+   "title": "Reading stillness or silence as agreement",
+   "body": "People go still for many reasons: fear, shock, confusion, freezing, a sense that resisting would make things worse, or not knowing how to stop something without a scene. Möller and colleagues found that most women seen after sexual assault reported significant immobility during it. Stillness, silence, passivity and a face turned away are signs to stop and ask, never signs to continue. The test is active participation: is the other person moving towards you, responding, touching, speaking? If not, stop, and check.\n\nIt also helps to know that people sometimes go along with touch because refusing feels more dangerous than enduring it. An absence of resistance from someone smaller, younger or more vulnerable than you means nothing about their wishes.\n\nIt also helps to remember that people sometimes laugh or smile when they are uncomfortable, especially when they are trying to keep a situation calm. A nervous smile is not a yes.\n\nIt also helps to remember that a person who seems relaxed can still be unwilling. Some people stay calm on the outside while feeling very differently inside, especially if they have learned that resisting makes things worse."
+  },
+  {
+   "title": "Ignoring capacity and freedom",
+   "body": "A yes means nothing if the person cannot freely give it. Someone who is heavily intoxicated, slurring, unsteady, confused or unable to focus cannot meaningfully consent, whatever they say. Someone who is frightened, under pressure, outnumbered, much younger, dependent on you or worn down by persistence is not free. Many of the worst harms happen when a man reads a drunk or pressured person's words or touch as permission. If you are in any doubt about whether someone is able to choose, the answer is no, and the kind thing is to help them get home safely.\n\nIt also helps to watch your friends. If someone in your group is steering a very drunk person away from the others, stepping in is not interfering. It may be the most important thing you do all night.\n\nIt also helps to know that in many places the law treats sex with someone who lacks capacity as a serious crime, whatever they said at the time. The chapter's line, that when in doubt the answer is no, is also the law's line.\n\nAnd never encourage someone to drink so that they will be more willing. Using alcohol to lower someone's resistance is a way of removing their freedom to choose.\n\nIt also helps to know your own limits on a night out. If you plan to drink heavily, you are also planning not to be in a state to judge anyone else's capacity, and the safest decision is made before the first drink."
+  },
+  {
+   "title": "Checking once and assuming forever",
+   "body": "Consent can change at any moment, and it does not carry over from one occasion to the next or from one act to another. A partner who agreed last week, or ten minutes ago, may not want to now. A relationship, a marriage or a previous yes does not grant permission for anything in the present. Keep checking as things change, especially when moving to something new and whenever the other person's body changes. And make stopping easy: say out loud that you can stop any time, and mean it.\n\nIt also helps to remember that a partner may not feel able to say no to someone they love, especially if they fear disappointing them. Making stopping easy, again and again, is how you show them that they can.\n\nIt also helps to talk about consent at calm times, not only in the moment. Couples who have talked about what they like, what they do not and how they will say so find it much easier to check in and to stop.\n\nIt also helps to remember that consent to one thing is not consent to another. Agreeing to kiss is not agreeing to anything else, and each new step needs its own yes."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Doesn't asking spoil the moment?",
+   "a": "Not if it is done warmly, and many people find the opposite. \"Is this OK?\" \"Do you want to?\" \"Shall we slow down?\" said close and gently, at the right moment, are part of intimacy rather than an interruption to it. Many people say that being asked makes them feel safer, more relaxed and more willing, because they know they can say no. What spoils the moment is pressure, assumption, or the discovery afterwards that the other person did not want what happened. Asking feels awkward mainly to people who are not used to it, and the awkwardness fades with practice.\n\nIt also helps to use words that fit you. Some couples develop their own short phrases for checking in, and these can become part of how they are close.\n\nIt also helps to remember that checking in is something you do with the whole of yourself: your voice, your pace and your readiness to stop. Words without a real willingness to hear no are not asking.\n\nIt also helps to notice how you feel when you are asked. Most people, on reflection, find it reassuring to be checked on by a partner, and that is a good guide to how a partner is likely to feel."
+  },
+  {
+   "q": "Does being in a relationship mean consent is assumed?",
+   "a": "No. Being married, living together or having been together for years does not mean that a partner has agreed to anything in the present. The law in England and Wales, and in many other places, makes no exception for relationships. In practice, long-term partners often read each other well, and many check in through looks, touch and a few words without formal questions. But the same rule applies: a change in the other person's body, such as stillness, silence or turning away, is a reason to check, and a no, a not tonight or a hesitation is an answer to accept warmly.\n\nIt also helps to remember that sex in a relationship can become a source of pressure, especially when one partner wants it more than the other. Talking about that, at a calm time, is better than letting it build into resentment or obligation.\n\nIt also helps to know that coercive control, persistent pressure and making a partner feel they owe you sex are recognised forms of abuse in many places. If you are on the receiving end of them, the domestic abuse lines in your country can help."
+  },
+  {
+   "q": "How drunk is too drunk to consent?",
+   "a": "There is no number of drinks that settles it, and the law does not set one. The courts in England have recognised that a person can lose the capacity to consent while still appearing conscious. The signs to look for are those of heavy intoxication: slurred speech, unsteadiness, confusion, eyes that do not focus, forgetting names or where they are, difficulty following a conversation, vomiting. If you see any of these, treat the person as unable to consent. If you have been drinking heavily yourself, you are not in a state to judge. When in doubt, the answer is no.\n\nIt also helps to know that you do not have to decide alone. If you are unsure about someone's state, ask their friends, or simply decide that tonight is not the night. There is always another night when both of you are sober.\n\nIt also helps to remember that two drunk people cannot reliably check in with each other. If both of you have been drinking heavily, waiting until another time is the safest choice for both.\n\nIt also helps to remember that someone can seem to sober up quickly and still be very impaired. A person who was slurring an hour ago and now seems fine may not be able to make a real choice yet."
+  },
+  {
+   "q": "What if she changes her mind partway through?",
+   "a": "Then you stop, at once, and you accept it. Changing your mind is allowed, at any point, and a person who wanted something a minute ago is entitled not to want it now. Stopping is not a failure or a rejection. Say something kind, such as \"Of course, that's fine,\" and make sure the other person feels safe and not responsible for your disappointment. Do not ask why, try to persuade, or resume later the same evening. The way you respond to a change of mind is one of the clearest signs of whether you can be trusted.\n\nIt also helps to know that stopping is not a punishment and should not feel like one. A calm, warm response tells your partner that they did nothing wrong, which makes it easier for them to be honest next time.\n\nIt also helps to make sure they feel safe afterwards. A cup of tea, a blanket or simply a calm, ordinary conversation shows that nothing has changed between you because they said stop.\n\nIt also helps to know that changing your mind is not unusual or unkind. People change their minds about all kinds of things, including in intimate moments, and a partner who can accept that gracefully is a partner worth having."
+  },
+  {
+   "q": "What should I do if I see something worrying at a party?",
+   "a": "Act, in whatever way is safe for you. Bystander training often describes three options: distract, delegate or deal with it directly. You can interrupt with a reason to break things up, as Ollie did by saying someone was asking about a car. You can find the person's friends, a member of staff or a host. You can ask the person directly whether they are all right, and offer to help them get home. If someone is in danger or being assaulted, call the emergency services. You do not have to be sure that something is wrong to step in; it is enough that something looks wrong.\n\nIt also helps to check on the person afterwards, if you can, and to tell someone responsible, such as a host or a member of staff, what you saw. People who act as bystanders often worry they overreacted; they rarely have.\n\nIt also helps to think about it in advance. Deciding now what you would do, and who you would tell, makes it far more likely that you will act when the moment comes.\n\nIt also helps to watch for the quieter signs, too: someone being separated from their friends, steered towards a car or a room, or given drink after drink by someone who is not drinking much themselves."
+  },
+  {
+   "q": "What if something like this happened to me?",
+   "a": "It was not your fault, whatever happened and whatever you did or did not do. Men are sexually assaulted too, and many freeze, as Tom did, and blame themselves afterwards for not fighting back. Freezing is automatic and common, and it says nothing about what you wanted. Telling someone you trust can help. Support services exist for men who have experienced sexual violence, and the lines listed in this chapter can help you find them. If it happened recently, you can also seek medical care and decide later whether to report it. You do not have to carry it alone.\n\nIt also helps to know that if a friend tells you something like this happened to him, your first words matter enormously. Belief, without questions about why he did not stop it, is the most useful response you can give.\n\nIt also helps to know that it is never too late to talk about it. Many men first tell someone years or decades later, and support is available whenever you are ready.\n\nAnd if a friend tells you that he is struggling with something like this, you do not need to have answers. Listening, believing him and helping him find support is more than enough."
   }
  ],
  "watch": [
