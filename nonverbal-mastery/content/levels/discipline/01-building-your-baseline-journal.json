@@ -88,6 +88,13 @@
    "doCaption": "Recording what you saw and guessed, by role, in shared settings.",
    "dontCaption": "Building a file on one person's private life.",
    "annotation": "A baseline journal is about your perception. A dossier is about someone else's life, and it has no place in this practice."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Keeping the journal for your own seeing",
+   "dontCaption": "Quoting the journal at someone in an argument",
+   "annotation": "A practice journal used as ammunition becomes surveillance. Keep it about your perception, and keep it private."
   }
  ],
  "caseStudy": "Ravi manages three accounts for a logistics firm. In March he became convinced that his largest client contact, Mark, was cooling on the relationship: shorter answers, arms folded, a glance at his phone whenever Ravi raised the renewal. Ravi's colleague Dan, who had covered the account in February, said he had felt the same and had already offered a discount to win Mark back.\n\nSix weeks earlier Ravi had started a journal, one entry after every call, in the same shape each time. Reading back over eleven entries about Mark, he found three things he would never have recalled. The short answers and folded arms appeared in every Monday call, which were at eight in the morning, straight after Mark's own weekly operations meeting; on Thursday afternoons he was expansive. Ravi's own state line read *tired* or *anxious about numbers* on every day he had written that Mark seemed cold. And one entry fitted no pattern at all: a Thursday when Mark went quiet at the word pricing, put his hand to his jaw, and asked for the figures in writing.\n\nRavi wrote a narrower hypothesis: Mark is happy with the service, and something about pricing is constraining him. The rival: he is quietly shopping elsewhere. What would tell them apart: if he were shopping, his questions would move to exit terms. Over the next two Thursday calls his questions were all about payment schedules. Ravi asked him directly whether the timing of payments was the issue. It was. Mark's new finance director had changed the company's payment terms, and Mark had been embarrassed to raise it.\n\nRavi moved the payment dates without touching the price. Dan's discount, offered to a man who was never leaving, had cost the firm nine percent for nothing. Memory had told both men the same story. Only one of them had a record that could argue back.",
@@ -107,6 +114,11 @@
     "Mark every phrase for which you cannot think of any observable behaviour behind it.",
     "Rewrite the rest as descriptions with a timing: what moved, after what, for how long.",
     "Keep the list and add to it whenever you catch a new inference word in your entries."
+   ],
+   "variations": [
+    "Do the drill with phrases you use about yourself, such as \"I was nervous\", and write what a camera would have recorded.",
+    "Swap lists with a friend and try to find the observable behaviour behind each other's phrases.",
+    "Collect inference words from a newspaper report or a work email, and rewrite one paragraph in camera language."
    ]
   },
   {
@@ -118,6 +130,11 @@
     "Wait five minutes, then write the full entry from the jotting alone.",
     "Replay the moment and compare it with your entry.",
     "Note one detail the jotting saved and one it missed, and adjust what you jot next time."
+   ],
+   "variations": [
+    "Try the jotting with the sound off for a three-minute clip, and notice what you record when you cannot hear the words.",
+    "Practise jotting on your phone in under thirty seconds after a real conversation, timing yourself.",
+    "Jot two moments from the same clip, then write full entries for both and compare their quality."
    ]
   },
   {
@@ -129,6 +146,11 @@
     "Time how long it took.",
     "Remove or merge any line you would be tempted to skip under time pressure, keeping state, change, guess, rival and outcome.",
     "Save the template where you can open it in two taps."
+   ],
+   "variations": [
+    "Show the template to someone you trust and ask which line they think you will skip most often.",
+    "Use the template for a week on paper, then a week on your phone, and keep whichever you used more.",
+    "Add a tenth line for one week, such as \"what I wanted to be true\", and see whether it changes your entries."
    ]
   },
   {
@@ -140,6 +162,11 @@
     "Now read the original entry.",
     "Mark every difference between the two versions.",
     "Note which way your memory drifted: toward what you later learned, toward your own conclusion, or neither."
+   ],
+   "variations": [
+    "Try the drill with an entry about a moment that went well, as well as one that went badly, and compare which way memory drifted.",
+    "Ask a friend who was present at the same moment to write their own memory of it, and compare it with your entry.",
+    "Repeat the drill after a month with the same entry, and notice whether your memory has drifted further."
    ]
   },
   {
@@ -151,6 +178,11 @@
     "Group the entries by setting, by the kind of person, and by your own state line.",
     "Write one sentence describing the clearest pattern you can see.",
     "Write one question to test in the coming week, and put it at the top of next week's page."
+   ],
+   "variations": [
+    "Add a column to your tally for your state line, and see whether your misses cluster on certain kinds of days.",
+    "At the end of a month, read all four weekly questions in a row and notice whether they have changed.",
+    "Share one pattern from your review, without names, with a trusted colleague, and ask what they make of it."
    ]
   }
  ],
@@ -232,6 +264,45 @@
    "explain": "What he is describing is a dossier built to win an argument, and in a relationship that can be a form of control. The journal in this book is about how you see, and it stays that way. The kind response is to ask what is worrying him.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Ebbinghaus find about how forgetting happens over time?",
+   "options": [
+    "That forgetting is slow at first and then speeds up after a week",
+    "That most forgetting happens soon after learning, and then slows",
+    "That people forget at an even rate, about the same each day",
+    "That memories never fade if they are about other people's faces"
+   ],
+   "answer": 1,
+   "explain": "Ebbinghaus found that most forgetting happens in the first hours and the first day after learning, and then slows. That is why the journal has a thirty-second jotting within minutes as well as a full entry the same day.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your weekly review shows that most of the times you read someone as hostile, your state line said \"tired\". What fits this chapter best?",
+   "options": [
+    "Ignore the state line, since tiredness has nothing to do with what other people do",
+    "Treat it as calibration data, and be slower to read hostility on tired days",
+    "Stop writing entries on tired days, since those readings are always unreliable",
+    "Conclude that the people you read as hostile were hostile, since the pattern is consistent"
+   ],
+   "answer": 1,
+   "explain": "The state line is there so that you can see whether your readings cluster on particular days. A cluster of hostility on tired days tells you about your reading, and suggests checking more carefully when you are tired.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says Darwin's golden rule was to write down every fact that supported his theories, so he would not forget them. What did he actually describe?",
+   "options": [
+    "Writing down at once every fact that went against his general conclusions",
+    "Writing down only the facts that fitted his theories, and ignoring the rest",
+    "Never writing anything down, so that his memory would stay sharp and flexible",
+    "Writing down his conclusions first, and then collecting facts to support them"
+   ],
+   "answer": 0,
+   "explain": "Darwin wrote that facts against his conclusions were far more apt to slip from memory than favourable ones, so he wrote them down at once. The journal's rival and outcome lines serve the same purpose.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -260,6 +331,110 @@
    "work": "The Autobiography of Charles Darwin",
    "author": "Charles Darwin",
    "note": "Look for the passage on his golden rule of writing down at once every fact that went against his conclusions."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The boy who kicked off after lunch",
+   "scene": "Laura, thirty-four, teaches a class of seven-year-olds, and one boy, Harvey, has been described by the previous teacher as \"explosive\". In\n  Laura's first month, he has three meltdowns: he throws a chair, runs out of the classroom and, on one afternoon, hides under a table and will not come\n  out. Each time, the staffroom view is the same. Harvey is a difficult boy, his home life is chaotic, and there is not much a teacher can do.\n\n  Laura has started a short journal, as this chapter suggests, writing a few lines in the same shape after anything notable in the classroom. She writes\n  about Harvey, but also about other children and about herself. After six weeks she has thirty-one entries, nine of them about Harvey.\n\n  At half-term she reads them through in one sitting. Several things jump out that she would never have recalled. All three meltdowns, and four of the\n  six smaller incidents, happened in the first hour after lunch. Seven of those nine entries were on days when rain had kept the children inside for a\n  loud, crowded wet play in the hall. Her own state line, on most of those afternoons, read \"rushed\" or \"behind\". And on the two dry afternoons when the\n  class went outside, she had written, almost in passing, that Harvey had been \"settled, reading in the corner\".\n\n  She writes a new hypothesis on a fresh page.\n\nShe also notices, rereading, that she had written \"explosive\" once in her first week, copying the previous teacher, and never again after she started describing what happened for a camera.\n\nThe teaching assistant, when Laura mentions the wet-play pattern, says that she had always thought Harvey hated the hall, because he covered his ears when the dinner ladies blew the whistle. Nobody had written it down.",
+   "misread": "The staffroom read Harvey's meltdowns as a feature of his character and his home life. Laura's own memory, before the journal, had read them the same way, as random explosions from a difficult boy.\n\nHarvey's parents, at the autumn parents' evening, had been told the same story about their son, and had gone home believing it.\n\nAnd Harvey read the adults' reactions, the raised voices and the trips to the head's office, as proof that he was the bad boy everyone said he was, which made the next afternoon harder still.",
+   "betterRead": "Loftus and Palmer showed how a single word after an event can reshape the memory of it, and Fischhoff showed how knowing an outcome makes it seem inevitable in hindsight. Once Harvey was \"explosive\", every incident was remembered as proof. The journal, written in the same shape each time and on ordinary days as well as bad ones, kept the details that memory had dropped: the time, the weather, the noise and Laura's own state. Her new hypothesis was that wet play left Harvey overwhelmed, and the rival was that afternoons were simply harder for everyone. What would tell them apart was whether other children also struggled after wet play. They mostly did not. Laura arranged for Harvey to spend wet play in the quiet library with a teaching assistant. In the following six weeks, the journal recorded one minor incident.\n\nLaura also shared the pattern, without fuss, with the teacher who would have Harvey the following year."
+  },
+  {
+   "title": "The nurse whose patients were non-compliant",
+   "scene": "Sita, forty-one, is a community nurse who visits patients at home, many of them older people with long-term conditions. She has kept a journal\n  for three months, one entry after each visit, mostly to track changes in patients' health. Her entries include a line about her own state, which she\n  usually fills in quickly and without much thought.\n\n  At a supervision session, her manager, Bernadette, asks her about a patient, Mr Chukwu, whom Sita has described several times as \"non-compliant\" with\n  his medication. Sita says that he never seems to listen and always has an excuse. Bernadette asks whether the journal shows anything about the visits\n  where he seemed most resistant.\n\n  That evening, Sita reads back through her twelve entries about Mr Chukwu. On every visit where she had written \"non-compliant\" or \"dismissive\", her\n  state line said \"running late\" or \"behind on the list\", and the visit had lasted under fifteen minutes. On the three visits where she had more time, she\n  had written that he asked detailed questions about side effects and said that one of his tablets made him dizzy.\n\n  She looks at the other patients she has called non-compliant in her notes. The pattern is the same.\n\nMr Chukwu's daughter, she remembers, had once called the surgery to complain that the nurse never stayed long enough to answer her father's questions. Sita had put it down to an anxious family.\n\nShe also notices that her entries about patients she likes are longer and warmer, and that she rarely writes \"non-compliant\" about them, even when they miss doses.",
+   "misread": "Sita read Mr Chukwu's questions and reluctance, on rushed visits, as non-compliance and dismissiveness. She had not connected her own hurry with his responses, because her state line had been filled in and never reread.\n\nHer manager, reading her notes, had also accepted the label, because it appeared so often that it looked like a pattern.\n\nMr Chukwu, for his part, read the rushed visits as a nurse who did not care about his dizziness, and stopped mentioning it, which made him seem more dismissive still.",
+   "betterRead": "This chapter puts the state line second in every entry because it is calibration data: over weeks, it can show whether readings of hostility or resistance cluster on particular kinds of days. Sita's readings of non-compliance clustered on her own rushed visits, when she had no time to hear the reason behind a patient's reluctance. Her better reading was a narrower hypothesis: Mr Chukwu was worried about dizziness, and on short visits the worry came out as resistance. The rival was that he simply did not want to take the tablets. What would tell them apart was whether addressing the dizziness changed his behaviour. On her next visit she booked twenty-five minutes, asked him about it directly and arranged for his GP to review the dose. He took the new tablets without complaint. Sita stopped using \"non-compliant\" in her notes and wrote down what patients actually said.\n\nBernadette also suggested that the team's notes record what patients said rather than labels about them, and the word \"non-compliant\" quietly disappeared from the service's records."
+  },
+  {
+   "title": "The journal that became a dossier",
+   "scene": "Matt, thirty-eight, works in a marketing agency and has a difficult manager, Clare, who he feels has never rated him. After reading the first part\n  of this chapter, he starts a journal, intending to improve how he reads people at work. Within a fortnight, most of the entries are about Clare.\n\n  They grow longer. He records what she says in meetings, how she looks at him, who she has lunch with, what time she arrives and leaves, a phone call\n  he overhears in which she sounds upset, and a rumour from a colleague that she is going through a divorce. He starts writing \"evidence\" in the margin\n  next to entries that he thinks show she is biased against him. The state line, which began as a careful note of his own mood, has shrunk to a single\n  word, usually \"annoyed\", and then disappeared.\n\n  One Sunday evening, he realises that he has spent two hours on the journal, reading back through a month of entries about Clare, and that he feels\n  worse than when he started. He also realises that he has written nothing about his own work, his own mistakes or anyone else.\n\n  He reads the section of this chapter on perception and surveillance again, slowly.\n\nHis partner has started to notice that he talks about Clare at dinner most evenings, and has asked him, carefully, whether the journal is helping.\n\nHe also notices that he has started to look forward to Clare making a mistake, so that he can write it down, and the thought unsettles him.",
+   "misread": "Matt read his growing file on Clare as careful observation, and each new entry as further evidence of her bias. He had stopped recording his own state, so he could no longer see that most of the entries were written while he was angry.\n\nHis colleague, who had passed on the rumour, read Matt's interest in it as sympathy, and told him more.\n\nHe also read his own two hours on a Sunday evening as diligence, when they were a man feeding a grievance.",
+   "betterRead": "This chapter draws a firm line between a baseline journal, which is about your own seeing, and a dossier, which is about another person's life. Matt's journal had crossed it: it recorded private information, a rumour and an overheard call, it focused on one person he was in conflict with, and it was being used to build a case. His better approach was the one the chapter recommends. He deleted the entries about Clare's private life and the rumour. He went back to writing about roles and initials, about behaviour in shared settings, and about his own state first. He started writing entries about other colleagues and about himself. A month later, rereading the new entries, he noticed that his readings of Clare as hostile clustered in meetings where he had come unprepared. He began preparing better, and asked her for feedback directly. It was more positive than he expected.\n\nHe also kept one page for his own errors, which he found, to his surprise, was the most useful page in the journal."
+  },
+  {
+   "title": "The recruiter who remembered his doubts",
+   "scene": "Jon, forty-five, is a recruiter, and six months ago he placed a candidate, Aidan, in a senior sales role with a client. The placement has gone\n  badly: Aidan has missed his targets, fallen out with his team and is about to be let go. The client is unhappy with Jon.\n\n  Jon's memory of the interview is clear. He remembers having doubts. He remembers that Aidan seemed a little too smooth, that he dodged a question\n  about his last job and that his handshake was oddly limp. He tells his own manager that he had a bad feeling about Aidan from the start and should\n  have trusted it.\n\n  Then he finds his journal entry from the day of the interview. He has kept a journal for a year, one short entry after each important meeting. The\n  entry reads: \"Setting: client interview, senior sales. State: rested, keen to fill role. Change: warm, steady eye contact, detailed answers on\n  pipeline. Guess: strong fit. Rival: rehearsed, may not match in practice. Would show me wrong: references vague on team work. Outcome:\" The outcome\n  line is blank. He never checked the references on team work.\n\n  He reads the entry twice. There is no doubt in it anywhere.\n\nHe also finds, two entries later, a note he had written the following week: \"Client called, very happy with A's first fortnight.\" He had forgotten that too.\n\nHis manager, listening to the remembered doubts, had nodded and said that gut feelings were usually right. Jon had agreed, until he found the entry.\n\nHe also notices that he had written, in the rival line, almost exactly the risk that came true, and that his memory had kept the handshake, which was not in the entry at all, and dropped the rival, which was.",
+   "misread": "Jon's memory read the interview, after the outcome, as full of warning signs he had felt at the time. The journal showed that he had felt confident, had named the right rival explanation and had then not tested it.\n\nHis manager accepted the remembered doubts at face value, and suggested that Jon trust his instincts more, which was the opposite of what the evidence showed.\n\nThe client, hearing Jon's account of his doubts, read it as Jon covering himself, which did the relationship more harm than the failed placement had.",
+   "betterRead": "Fischhoff called this hindsight bias, or creeping determinism: once people know an outcome, they come to believe they saw it coming. Jon's remembered doubts arrived after the placement failed. The journal entry, written the same day, could not be persuaded. It also showed something more useful than his invented intuition: he had written down exactly what would prove him wrong, vague references on teamwork, and had never checked. His better reading of the failure was not \"trust your gut\" but \"test the rival\". He changed his process so that every placement had its \"would show me wrong\" line checked before an offer was made, usually through a reference call. Over the next year, his journal recorded two candidates whose references on that point changed his recommendation.\n\nHe also told the client honestly what his notes showed: that he had been confident, had named the risk and had not checked it. The client said it was the first time a recruiter had admitted a mistake rather than blaming the candidate, and gave him the next role to fill."
+  }
+ ],
+ "workedReading": {
+  "title": "Turning a jotting into a full entry",
+  "scene": "Imogen, thirty, is a social worker, and she has just left a home visit to a family where a young child is on a child protection plan. She is sitting in her car outside, and she has two more visits before the end of the day. During the visit, something caught her attention: when she asked the mother, Stacey, about the child's father, Stacey's face changed and she started tidying the coffee table. Imogen does not know what it means. She knows that by tonight, after two more visits, her memory of it will have blurred and been rewritten by whatever she learns next. She uses the journal's two speeds: a jotting now, and a full entry this evening.\n\nShe also knows that her next two visits will add their own impressions, and that by the evening the visit to Stacey's flat will have been rewritten by whatever happens at them. The jotting is her way of holding it still.",
+  "steps": [
+   {
+    "label": "Jot within minutes",
+    "text": "Before she starts the engine, she types a thirty-second jotting on her phone: \"14.10, S's flat, asked about dad, face changed, tidied table about a minute, then normal.\" Ebbinghaus found that most forgetting happens in the first hours, and a fleeting change of expression was never deliberately learned at all. The jotting is not the entry. It is a peg for her memory to hang on until she can write properly.\n\nShe also resists writing her guess in the jotting. The aim is to capture what happened, not what she thought it meant."
+   },
+   {
+    "label": "Write the setting and your state",
+    "text": "At seven that evening, she opens her template. Setting: Stacey's flat, afternoon, second visit this month, child present, by role. My state: tired, slightly anxious, because her manager has asked for an update on this family tomorrow. She notices that she wanted to find something, which matters, and writes that down too. The state line goes first because it may explain later readings.\n\nShe also writes that she had missed lunch, because she has noticed before that hunger makes her read people more harshly.\n\nShe also notes that she had arrived ten minutes late, after a difficult previous visit, which might have set the tone of the conversation before it started."
+   },
+   {
+    "label": "Describe the change for a camera",
+    "text": "She writes what a camera would have recorded: \"When I asked whether the father had been in touch, S looked down, her mouth tightened, she began moving cups and magazines on the coffee table. Answered 'not really' without looking up. After about a minute, sat back and returned to talking about the nursery.\" She leaves out \"evasive\", \"nervous\" and \"hiding something\", which are inferences.\n\nShe checks the jotting as she writes and finds that it has preserved the timing, about a minute, which she would otherwise have remembered as much longer.\n\nShe also notes the words Stacey used, \"not really\", exactly, rather than paraphrasing them, because a paraphrase would already carry her interpretation."
+   },
+   {
+    "label": "Note timing and baseline",
+    "text": "Timing: the change followed the question about the father directly and lasted about a minute. Baseline: on the previous visit, Stacey had been chatty and relaxed throughout, and had tidied the table once, when the health visitor arrived. Imogen notes that tidying might be Stacey's way of managing any uncomfortable moment, not a sign of anything specific.\n\nShe also notes that the child was in the room, playing quietly, and showed no change when the father was mentioned."
+   },
+   {
+    "label": "Guess, then name the rival",
+    "text": "Guess: the father has been in contact, and Stacey is unsure whether to say so. Rival: the subject of the father is painful or embarrassing for reasons unrelated to risk, such as a recent break-up or his treatment of her. Imogen writes both with equal care. She knows that the rival is at least as plausible, and that the stakes of getting it wrong in either direction are high.\n\nShe also notes her own reaction: a tightening in her stomach, which she recognises from other visits where she was later proved wrong.\n\nShe also reminds herself that a guess written down is not a judgment made. It is a question for the next visit."
+   },
+   {
+    "label": "Write what would show you wrong",
+    "text": "Would show me wrong: if the father had been in contact, there might be signs at the flat, mentions from the child or the nursery, or a change in Stacey's account at the next visit when asked more gently. If the subject was simply painful, she would expect Stacey to be similarly uncomfortable with other questions about the past relationship. She leaves the outcome line blank, to be filled in when she knows more.\n\nShe also writes a reminder in her diary to ask the nursery, at her next contact, whether there have been any changes in the child's behaviour.\n\nShe also notes that she should not ask the child, which would be inappropriate, and that any concern would go to her manager first."
+   },
+   {
+    "label": "Fill in the outcome",
+    "text": "Ten days later, at the next visit, Imogen asks gently whether talking about the father is hard. Stacey says that he sends abusive messages to her phone, that she has not replied, and that she was ashamed to say so. There has been no contact with the child. Imogen fills in the outcome line, discusses the messages with her manager and helps Stacey report them. She notes that her guess was wrong and her rival right, and that the journal, not her memory, is what showed her that she had wanted to find something that day.\n\nShe also brings the entry to her next supervision, where her manager uses it to show a newer colleague how to keep guess and rival apart."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Writing for an audience",
+   "body": "Some people start a journal and, without quite meaning to, begin writing for a reader: polishing the prose, making themselves look perceptive, leaving out the guesses that turned out wrong, or sharing entries with friends as stories. The journal becomes a performance of insight rather than a record of seeing. It is a quieter version of the confirmation machine this chapter's failure mode describes. A useful journal is meant to be read by one person, you, in order to find your errors, and its value lies in the bits you would rather not show anyone: the tired state line, the wrong guess, the rival you dismissed. Keep it private. Write plainly and briefly. If you find yourself wanting to share an entry because it shows how clever you were, that is a sign to look harder at the entries you would not share.\n\nA good check is whether there is anything in the journal you would be embarrassed to read again. If there is not, it may be too polished to teach you much."
+  },
+  {
+   "title": "Quoting the journal in an argument",
+   "body": "A journal can be tempting to use as ammunition. In an argument with a partner, a colleague or a family member, someone pulls out an entry and reads it aloud: \"On the fourteenth, you said this and did that.\" It feels like evidence. It lands as surveillance, and it confirms the other person's worst fear about being watched. It also corrupts the journal, because once you know you might use it in a dispute, you start writing entries to win rather than to see. This chapter is clear that a baseline journal records your perception, never a file on a person, and never notes on a partner or family member in a dispute. If a conflict is serious enough to need a record, such as harassment at work or a safeguarding concern, keep that record separately, in the proper way, and do not mix it with your practice journal.\n\nIf you are tempted, stop and ask whether the entry describes your perception or the other person's life. Only the first belongs in the journal."
+  },
+  {
+   "title": "Recording everything",
+   "body": "Some people, enthusiastic at the start, try to record every interaction in detail: every meeting, every conversation, every glance. Within a fortnight the journal has become a second job, the entries are long and rushed, and the habit collapses. Others write such long entries that they never reread them. The journal this chapter describes is deliberately short: a thirty-second jotting and a full entry of eight brief lines, written for moments that caught your attention, plus a few ordinary ones so that the record is not biased towards drama. Five good entries a week, reviewed on Sunday, will teach you far more than fifty hurried ones that nobody reads. If the journal starts to feel like a burden, shorten it rather than stopping.\n\nA useful rule of thumb is five entries a week, at least one of them about an ordinary moment that seemed unremarkable.\n\nIt also helps to stop writing about any moment that you cannot describe in camera language. If you cannot say what moved, it was probably a feeling, not an observation."
+  },
+  {
+   "title": "Leaving the outcome line blank",
+   "body": "The ninth line, Outcome, is the one that turns a journal into evidence, and it is the one most often left empty. Without it, guesses can never be wrong, and the journal quietly confirms everything its writer believed, as Jon found when his blank outcome line let him rewrite the past. Filling it in takes effort: you have to remember to go back, and sometimes you have to ask. Build it into the weekly review this chapter describes, and treat \"unclear\" as an acceptable answer rather than leaving the line empty. Over a month, the tally of right, wrong and unclear will tell you more about your reading than any single entry. A journal full of blank outcomes is a diary; a journal full of honest outcomes is a teacher.\n\nIf you find a backlog of blank outcomes, go through them in one sitting and mark each as right, wrong or unclear. It takes less time than you think."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How long should an entry take?",
+   "a": "Two speeds, as the chapter describes. The jotting, made within minutes of the moment, should take no more than thirty seconds: the time, the place, the role or initials, what changed and what had just happened. The full entry, written the same day, should take two or three minutes, filling the eight short lines of the template. If entries are taking much longer, they are probably too detailed to sustain. The weekly review takes about twenty minutes. Altogether, a few minutes a day and twenty on Sunday are enough to build, over a couple of months, a record that can argue back with your memory. The aim is a habit you can keep, not a perfect account of every moment.\n\nIf you miss a day, do not try to catch up from memory, which is exactly what the journal is meant to avoid. Start again tomorrow."
+  },
+  {
+   "q": "Should I keep the journal on paper or on my phone?",
+   "a": "Either works; choose the one you will actually use. A phone is quicker for jottings and always with you, and a notes app with a saved template makes full entries easy, as The Same Shape drill suggests. Paper is slower, which some people find helps them think, and it feels more private. Whichever you choose, protect it. Use a password or keep the notebook somewhere others will not read it, because entries describe real people. Keep names to initials or roles. And avoid apps that sync to shared accounts or that colleagues or family can see. If you use a work device, remember that your employer may be able to access it, which is one more reason to keep entries about perception, not private lives.\n\nWhatever you use, keep the template the same across entries, because comparison is what makes the journal useful."
+  },
+  {
+   "q": "Is it ethical to keep notes about other people?",
+   "a": "Yes, if the notes are about your perception rather than their lives. This chapter draws the line clearly: a baseline journal records what you noticed, what you guessed and where you were wrong, using roles or initials, about behaviour in shared settings. It does not record private information you overheard or were told in confidence, it does not include photographs or recordings, and it never becomes a file on a partner, a former partner or a family member in a dispute. When one name starts to dominate the page, as Clare's did in Matt's journal, that is the signal to stop and reread the section on surveillance. The test is simple: would you be comfortable if the person read the entry? If not, it probably belongs to a dossier rather than a journal.\n\nIf you are ever unsure, leave the entry out. A journal with gaps is far better than one that becomes a file on someone."
+  },
+  {
+   "q": "What if I can never find out the outcome?",
+   "a": "Often you will not, and that is fine. Mark the outcome as unclear and move on. In the weekly review, count unclear outcomes separately from right and wrong ones. Over time, the proportion of unclear entries tells you something useful in itself: if most of your guesses can never be checked, you may be making guesses about things that do not matter, or not asking when you could. Where it is appropriate and kind, you can sometimes find out simply by asking, as Imogen did with Stacey and Ravi did with his client. Where it is not, the rival line still does its work, because writing down an ordinary explanation keeps your guess from hardening into a belief.\n\nIt also helps to set a reminder for any guess with a natural checkpoint, such as the next meeting or the end of a project.\n\nAnd remember that writing down the rival is itself a check, even when the outcome never arrives."
+  },
+  {
+   "q": "How long before patterns start to show?",
+   "a": "Usually a few weeks, and the first patterns are often about you rather than other people. Laura saw the pattern in Harvey's afternoons after six weeks and thirty-one entries; Sita saw hers after three months. You need enough entries for comparison, which is why every entry has the same shape and why it matters to write on ordinary days as well as dramatic ones. The weekly review, grouping entries by setting, by the kind of person and by your own state, is where patterns appear. Some will surprise you. The most common early discovery is that readings of hostility, warmth or interest cluster on days when the writer's own state line says tired, anxious or hopeful, as Sita's did.\n\nIt also helps to reread your oldest entries after a few months, which often shows how much your way of writing has changed."
+  },
+  {
+   "q": "What if the journal shows that I am often wrong?",
+   "a": "Then it is working. A journal that shows you are right nine times out of ten is more likely to be a confirmation machine than a sign of exceptional skill, as the chapter's quiz suggests. Being wrong, and finding out, is the only way to improve, and the entries where your guess failed are the most valuable ones you have. Look at them closely. What did you miss? What did your state line say? Which rival would have been right? Write down one question to test in the coming week. Over months, you may find that you are wrong less often in some settings and more often in others, which is exactly the kind of knowledge about your own reading that memory alone can never give you.\n\nIt also helps to notice which kinds of guesses improve first. For many people, readings of familiar colleagues improve before readings of strangers."
   }
  ],
  "watch": [
