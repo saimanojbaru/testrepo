@@ -80,6 +80,13 @@
    "doCaption": "The jolt as a trigger: pause, and name one rival.",
    "dontCaption": "The jolt of certainty, acted on at once.",
    "annotation": "The moment a reading feels most certain is the moment it is about to become an action. That is where an if-then plan belongs."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_pro_taking_notes",
+   "doCaption": "The home variant: mostly stopping rules",
+   "dontCaption": "Bringing the work protocol to the dinner table",
+   "annotation": "At home the main risk is reading too much. The people you love need to feel off duty in their own kitchen."
   }
  ],
  "caseStudy": "Martin, fifty-one, is a deputy head at a secondary school, and much of his week is spent in his office with pupils who have been sent out of lessons, and with their parents. He wrote his protocol after finishing Part I and was proud of it. Then, in October, a father arrived for a meeting about his son, folded his arms, and spoke loudly from the first sentence. Martin read aggression, felt his own voice rise to meet it, and within five minutes the meeting was over and the father was complaining to the head.\n\nThat evening, writing the journal entry, Martin saw that he had done none of his six steps. He had read the father's arms and volume in a single flash and answered them. So he wrote three if-then plans. *If a parent raises his voice, then I lower mine and put my hand flat on the desk.* *If I feel certain that someone is being difficult, then I ask one open question before I respond.* *If a pupil sits in silence, then I ask what happened, not why he did it.* He compressed the rest into three cues, *Hand. Normal? Ask.*, and tied the first to the handle of his office door.\n\nFor a month the plans fired about one time in three. He rehearsed them with a colleague playing an angry parent, which felt foolish and helped. By December they were firing most of the time.\n\nIn January a fourteen-year-old boy was sent to him after a fight and sat in silence, staring at the floor. Martin felt the familiar certainty, defiance, and his hand went to the desk before he had decided anything. He asked what had happened. After a long pause the boy said he was trying not to cry in front of a teacher. The fight had started when another boy said something about his father, who had left that week.\n\nMartin's ledger for the term shows the silent-pupil plan firing eleven times. In nine of them, the silence was not defiance.",
@@ -98,6 +105,11 @@
     "Write one if-then plan for each, with a single response that takes no more than a few seconds.",
     "Read each plan aloud and change any word you would not naturally use.",
     "Write the three plans on the first page of your ledger and mark each time one fires this week."
+   ],
+   "variations": [
+    "Write one extra plan for the time of day when your journal shows most of your errors, and track it separately for a week.",
+    "Ask a friend who knows you well to read your three plans and tell you which situation they would have chosen instead.",
+    "After a week, rewrite any plan that fired fewer than three times with a trigger you are more likely to meet."
    ]
   },
   {
@@ -109,6 +121,11 @@
     "Look for a sensation that appears in at least three of the five.",
     "Choose a small physical act, such as a slow breath out or a hand flat on the table, to pair with that sensation.",
     "Practise the pairing three times a day for a week by recalling one of the moments and doing the act."
+   ],
+   "variations": [
+    "Repeat the drill with five entries in which a conversation went well, and compare what you felt before those with the misreadings.",
+    "Try three different physical acts over three weeks, one per week, and record which one you actually remember to do.",
+    "Ask someone you live with whether they can see the sensation from outside, such as a set jaw or a change in your breathing."
    ]
   },
   {
@@ -120,6 +137,11 @@
     "Turn each marked step into a cue of one or two words.",
     "Say the three cues silently in order twenty times, spaced through the day.",
     "Write them on a card, and after each tense conversation note whether they surfaced."
+   ],
+   "variations": [
+    "Write two alternative sets of three cues, try each for a week, and keep the set that surfaced more often after tense conversations.",
+    "Record your cues aloud on your phone and listen to them on the way to a meeting you expect to be difficult.",
+    "Test your cues by recalling a hard conversation vividly for a minute, then checking whether all three came to mind."
    ]
   },
   {
@@ -131,6 +153,11 @@
     "Run the conversation, using only your three cues and one if-then plan.",
     "Stop and talk through which cues fired and which did not.",
     "Run it a second time with your friend raising the pressure slightly, and note the difference."
+   ],
+   "variations": [
+    "Run the rehearsal with the roles reversed, so that you feel what your usual habit is like from the other side.",
+    "Run it on a video call instead of in person, and notice which cues are harder to use on a screen.",
+    "Rehearse your crisis variant with your friend reading from a short script, keeping it calm and brief, and checking that you can say each step."
    ]
   },
   {
@@ -142,6 +169,11 @@
     "List the setting or kind of person where your errors cluster most.",
     "Make at most two changes: retire or reword one step, and sharpen one line for the cluster.",
     "Write the new version number, the date and the reason for each change at the top of the protocol."
+   ],
+   "variations": [
+    "Before you change anything, ask a trusted friend to read your after-lists and tell you which step they think fails most often.",
+    "Compare your current version with your first one, and write a paragraph on how your errors have changed between them.",
+    "Make no changes at all this quarter, and write down why, if the ledger shows that the protocol is still settling."
    ]
   }
  ],
@@ -223,6 +255,45 @@
    "explain": "A step that never changes anything is either already automatic or does not apply to your life. Retire or reword it, record the change and its reason, and let the next quarter's ledger show whether it mattered.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Schwabe and Wolf find in 2009 when they stressed people after training them to win rewards?",
+   "options": [
+    "Stressed people adapted to the new reward values faster than those who had not been stressed",
+    "Stress made no difference at all, since everyone adapted to the new reward values at much the same speed",
+    "Stressed people kept making the old, now pointless responses more than those who were not stressed",
+    "Stressed people refused to take part in the second half of the task and left before it ended"
+   ],
+   "answer": 2,
+   "explain": "Stress shifted people from acting on goals towards acting on habit. It is why a protocol known by heart can still fail in a tense moment, unless it has become the habit or is tied firmly to the situation.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your if-then plan says *When things get tense, I will slow down*. After three months it has never fired. What is the best change?",
+   "options": [
+    "Replace the trigger with something specific you will notice, such as a phrase you say or a sensation",
+    "Add more plans for other moods, so that at least one of them is bound to fire before long",
+    "Read the plan aloud every morning, so that it is fresh in your mind when things do get tense",
+    "Give up on if-then plans and rely on your judgement, since plans clearly do not suit the way you work"
+   ],
+   "answer": 0,
+   "explain": "*When things get tense* is a mood, not a moment you can notice, so the plan has nothing to fire on. A trigger must reliably occur, be noticeable and arrive early enough for the response to matter.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says people can hold about seven things in mind at once, so a six-step protocol will be fine in a hard conversation. What does the chapter say?",
+   "options": [
+    "That Cowan's review found most people can hold a dozen items, so the protocol could even be longer",
+    "That memory is irrelevant, since the steps of the protocol are written down on a card in your pocket",
+    "That anyone who has read the protocol often enough will remember all six steps under any pressure",
+    "That Cowan's review put the number at around four, which is why the moment itself needs three cues"
+   ],
+   "answer": 3,
+   "explain": "Working memory is small even at the best of times, and attention narrows under stress. The full protocol belongs before and after the conversation; three short cues are what survive during it.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +322,110 @@
    "work": "How are habits formed: Modelling habit formation in the real world",
    "author": "Phillippa Lally, Cornelia H. M. van Jaarsveld, Henry W. W. Potts and Jane Wardle",
    "note": "European Journal of Social Psychology 40(6), 2010. Why new habits take weeks to months rather than days."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The receptionist whose trigger never fired",
+   "scene": "Sarah, thirty-seven, works on the front desk of a busy GP surgery, where much of her day is spent with people who are worried, unwell or frustrated by the wait for an appointment. After Part I she wrote a plan for the hardest moments: *When things get tense, I'll slow down and listen.* She liked it. It sounded calm and kind.\n\nThree months later she reads back through her journal and finds that the plan has never once fired. On the worst days she remembers it afterwards, on the bus home, but never in the moment. There was no point at which things *got tense*; they were simply tense, and she was already answering.\n\nSo she goes back through the entries where an exchange at the desk went badly, looking for what happened in her own body and speech just before. The pattern surprises her. In almost every one, there is a moment when she hears herself say *I'm afraid the policy is*, and a moment just before that when her neck goes hot. In the exchanges that went well, she never said it at all.\n\nShe writes a new plan: *If I hear myself start to say \"the policy is\", then I stop and ask what they need today.*\n\nShe had also noticed that she said it faster each time, as if getting the words out quickly would make the conversation end sooner.",
+   "misread": "Sarah read her first plan as a good one because its intention was good. But *when things get tense* is a mood, not a moment, and a mood arrives without a moment you can notice. The plan had no trigger, so it could never fire.\n\nShe had also read her own forgetting as a lack of willpower, and had resolved each evening to try harder, which changed nothing.\n\nHer manager had praised the plan when she showed it to him, which had made it feel finished.",
+   "betterRead": "A trigger has to be something that reliably happens, that you will notice when it happens, and that arrives early enough for the response to matter. Sarah's journal found her one that met all three: a phrase she used only when an exchange was going wrong, preceded by a sensation she could learn to catch. The new plan fired on its second day. A man shouting about a repeat prescription heard, instead of the policy, *What do you need today?* He needed his blood-pressure tablets before the weekend, and there was a way to get them that Sarah had not thought of while she was defending the rules.\n\nShe also noticed that the hot neck came first, a second or two before the phrase, and began to use that as an earlier trigger.\n\nOver the next month she caught the hot neck before the phrase about half the time, and the phrase itself almost every time. Her journal for that month has fewer entries about the desk, because fewer exchanges went badly enough to write about."
+  },
+  {
+   "title": "The father who brought his work protocol home",
+   "scene": "Gareth, forty-five, is an operations manager who has used this book's method at work for a year, with good results. His one-to-ones with his team are calmer, and his ledger shows his predictions about meetings improving steadily. Pleased, he starts running the same protocol at home.\n\nAt dinner he checks his own state, notes his wife's baseline, and watches his daughter, Erin, fifteen, for changes from hers. When Erin goes quiet after a phone call, he asks, gently, whether the call has upset her, and mentions that her shoulders went up when she read the message. When his wife sighs at the washing-up, he asks whether something is on her mind, since she has been quieter than usual since Tuesday.\n\nAfter a fortnight Erin tells him, at the table, to stop doing *the face thing*. He asks what she means. She says that he watches everybody now, like a teacher during an exam, and that it is creepy. His wife says nothing, but later tells him that she has started to feel as if she is being assessed in her own kitchen.\n\nGareth is hurt. He had thought he was paying more attention to his family, which is what he has always been told good fathers do.\n\nHe had even started writing short notes about the family in his ledger, the same way he did for work, and had told himself it was practice.",
+   "misread": "Gareth read his family's discomfort as a misunderstanding of his motives, and read his close watching as care. They read it as being assessed, which is what it was. The protocol was built for work, where the main risk is power, and at home it went looking for things to read.\n\nHe also read his wife's silence, after Erin's remark, as agreement with him rather than with her daughter.",
+   "betterRead": "The chapter's point about variants applies exactly. At home the main risk is reading too much, so the home variant should be mostly stopping rules, and Gareth's had none. He wrote one: the skill is off duty at meals and in the car, he never announces a reading of anyone in the family, and when he is worried he asks an open question without saying what prompted it. He also told Erin she was right, which surprised her. A month later she mentioned, unprompted, that a friend was having a hard time and asked him what she should say, which she had not done for a long while.\n\nGareth kept his ledger for work only.\n\nHe found the change harder than any he had made at work. Reading his family had felt like love, and stopping felt like caring less. His wife told him, some weeks later, that it felt like the opposite."
+  },
+  {
+   "title": "The buyer who rewrote her protocol every week",
+   "scene": "Leila, thirty-eight, manages purchasing for a chain of garden centres and spends much of her week negotiating with suppliers. She took to the protocol chapter with energy. Her first version, 1.0, had six steps and two if-then plans. Within a week she had found a better phrasing for the second plan and called it 1.1. Then she added a negotiation variant, then a variant for phone calls, then a colour code for the strength of each signal.\n\nAfter two months she is on version 3.7. The protocol runs to four pages and she is proud of it. It is, by any standard, a thoughtful document.\n\nBut her ledger tells a different story. Her if-then plans, as far as she can tell, fire in perhaps one negotiation in five. When she tries to remember her three cues in the middle of a hard conversation, she is not sure which version's cues she is meant to be using. Twice she has caught herself, mid-meeting, trying to recall whether she had moved *Wrong if?* to the front or the back.\n\nA colleague asks her which version worked best. Leila realises she cannot say, because none of them was used for long enough to find out.\n\nHer negotiation variant alone has eleven steps, and the latest version has a footnote explaining why one of them was moved.",
+   "misread": "Leila read each improvement as progress, because each version was better written than the last. But a protocol rewritten every week never becomes a habit, and the moments that need it are the moments when only habits are available.\n\nShe read her uncertainty about which cues to use, in the middle of meetings, as a sign that the protocol still needed work, rather than as a sign that it needed leaving alone.",
+   "betterRead": "Lally's study is the useful benchmark here: a new daily behaviour took a median of about sixty-six days to become automatic, with wide variation between people. A protocol changed weekly never gets the chance. Leila went back to a version close to 1.0, with three cues and two plans, and froze it for a quarter. She kept a page of ideas for changes, but made none of them until the review date. By the end of the quarter her plans were firing in most negotiations, and the page of ideas had shrunk, because most of the changes she had wanted turned out not to be needed.\n\nAt the review, she made one change, and it was one she had first written down in the second week.\n\nShe also noticed that her colleagues had started asking her for advice on negotiations, which they had not done while her protocol ran to four pages."
+  },
+  {
+   "title": "The interviewer whose protocol came afterwards",
+   "scene": "Neil, forty-nine, is a hiring manager at a logistics firm, and he sits on interview panels most weeks. He has a protocol and is careful to use it. After each interview he writes a short note on each candidate, structured by its steps.\n\nOne afternoon the panel interviews Tomasz, thirty-three, for a senior planning role. Tomasz speaks fluent English with a strong accent, has a fairly still face, and often looks away to the side before answering harder questions. Neil comes out of the interview with a firm sense that he was evasive. His note reads: *Two channels: gaze aversion on hard questions, short answers. Rival considered: nerves. Ruled out, as he was calm elsewhere. Concern about candour.*\n\nAbi, forty, who sat on the same panel, reads the note and asks to talk. She points out that the short answers were complete answers to closed questions, and that when the panel asked open ones, Tomasz gave the most detailed answers of the day. She adds that many people look away while they think about a hard question, and that she does it herself. She asks Neil when, exactly, he ruled out nerves, and how.\n\nNeil realises that he cannot say. He wrote the rival down and crossed it out in the same sentence.\n\nThe two other candidates interviewed that afternoon, both of whom Neil had liked, had given shorter answers to the open questions than Tomasz had.",
+   "misread": "Neil read his own note as a careful reading, because it used the protocol's steps. It was a gut reaction written up in the protocol's language afterwards. Looking away while thinking, a still face and an accent were read as evasion, and the rival was dismissed rather than tested.\n\nHe also read the still face as a lack of warmth, without any baseline for how Tomasz's face looked when he was relaxed.",
+   "betterRead": "This is the subtler failure the chapter warns about: a protocol used to make a biased reaction sound rational. The steps have value only if they are run before the conclusion, and a rival is considered only when something could have ruled it in. Neil's fix was partly personal and partly structural. He added a line to his interview variant, *What do I want to be true, and what would change my mind?*, to be answered before he formed a view. He also asked the firm to score every candidate's answers to the same questions against the job, separately, before the panel discussed anyone, so that impressions of manner came last. Tomasz was offered the job.\n\nNeil also asked Abi to keep asking him how he knew, which she did, cheerfully, at every panel for the rest of the year.\n\nAbi said afterwards that the note had been useful, because it made the reasoning visible enough to question. A gut feeling that had never been written down could not have been challenged at all."
+  }
+ ],
+ "workedReading": {
+  "title": "One appraisal, before, during and after",
+  "scene": "Hana, forty-two, leads a team of eight in a housing association, and has an appraisal tomorrow with Owen, twenty-nine, whose work has slipped over the past two months: missed deadlines, two complaints from tenants about slow replies, and less in team meetings than usual. She expects the meeting to be awkward, and she has a prediction in her ledger: *Owen will be defensive about the deadlines, 70%.* She has a full protocol, a work variant, three cues that have become habit over the spring, and two if-then plans. She has decided to run the whole sequence properly: the read-do list the evening before, only the memory items in the room, and the do-confirm list afterwards.\n\nShe has also written down, as she was taught, the one thing she will not do: decide what the problem is before Owen has said anything.\n\nShe has run this sequence a dozen times since the spring, and it no longer feels like a performance.",
+  "steps": [
+   {
+    "label": "Read-do the night before",
+    "text": "The evening before, Hana sits down with the card and runs the full protocol as a read-do list. *How am I?* Tired, and slightly irritated with Owen, which she writes down because it will colour what she sees. *What is his baseline in settings like this?* In last year's appraisal he was chatty and asked lots of questions. *What am I most likely to misread?* Quietness as sulking, since that is her old habit with junior staff. *What will I ask rather than assume?* Whether something has changed for him.\n\nShe writes her answers in a few lines, and notices that the process has already softened her irritation a little, simply by naming it."
+   },
+   {
+    "label": "Name what she wants",
+    "text": "Her work variant adds one line: *What do I want to be true?* She answers it honestly. She wants Owen to be at fault in a simple way, because that would be quick to fix and would mean her own management had not missed anything. She notes that this makes her more likely to read his behaviour as attitude rather than as a sign of something else, and decides to look for one reading that would make her own management part of the story.\n\nThe answer she finds is that she has not had a proper one-to-one with Owen since the spring, when the team was short-staffed."
+   },
+   {
+    "label": "The doorway trigger",
+    "text": "In the morning she walks to the meeting room, and her hand on the door handle sets off the first if-then plan, which has been tied to that handle for months: *breathe out, feet on the floor*. She does it before she goes in. It takes two seconds. Owen is already there, and she sits at the corner of the table rather than opposite him, which is something her variant suggests for conversations that might feel like a judgement.\n\nShe also puts her phone face down and out of reach, which is part of the same plan."
+   },
+   {
+    "label": "Memory items in the room",
+    "text": "In the meeting she uses only her three cues, *Me. Normal? Ask.* She starts with the things that have gone well, and Owen is subdued but polite. When she reaches the deadlines, he goes quiet, looks down at the table and holds the edge of his notebook. *Normal?* He was never like this last year. That is a change from his baseline, in at least two channels, at a clear moment: the mention of deadlines.\n\nShe does not think about the full protocol at all. The cues are enough to hold the moment.\n\nOwen's quietness is not, by itself, a reading of anything. It is a change, and the cues have only told her where to look."
+   },
+   {
+    "label": "The jolt, and a rival",
+    "text": "Hana feels the jolt of certainty she has learned to treat as a trigger: *he doesn't care, and he's sulking*. Her second plan fires: *If I feel sure what someone is thinking, then I name one rival before I speak.* She names it silently: *he's embarrassed, or something is going on outside work.* Then *Ask.* She says, *You've seemed under pressure lately. Has anything changed for you?* After a long pause, Owen tells her that his mother had an operation in the spring and that he has been looking after her in the evenings, then working late into the night to catch up.\n\nShe thanks him for telling her, and they spend the rest of the meeting on what would help, rather than on the deadlines themselves."
+   },
+   {
+    "label": "Do-confirm afterwards",
+    "text": "That evening she runs the do-confirm list. Did she check her own state? Yes, at the door. Did she compare with Owen's baseline, or with her mood? Mostly baseline, though she notices that her prediction had been based on her irritation, not on him. Did she name a rival before acting? Yes. Did she ask rather than trap? Yes. What would she record? Behaviour only: *quiet and looking down when deadlines raised; disclosed caring responsibilities; agreed changes.* How sure was she? Her ledger prediction was 70% defensive, and it was wrong.\n\nShe also records something she had nearly missed: that her own lack of one-to-ones over the spring was part of why nobody had known."
+   },
+   {
+    "label": "What the after-list showed",
+    "text": "Over the following month Hana runs the after-list after every important conversation. The pattern is clear by the fourth week. Her cues fire reliably, and her rivals are good when she names them. The step that fails most is the one she had thought was her strongest: the comparison with baseline, which she keeps replacing, without noticing, with her expectations. At the next quarterly review that is the one line she changes. Owen's deadlines recover within six weeks, once they agree he can start and finish an hour earlier.\n\nShe also adds a monthly one-to-one with each member of her team to her calendar, which is not part of the protocol but came out of it."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Writing plans for situations you rarely meet",
+   "body": "It is tempting to write if-then plans for the dramatic moments: the furious customer, the colleague in tears, the stranger who seems to be in trouble. Those moments matter, but they are rare, and a plan that fires twice a year never gets the practice it needs to be there when it is wanted. The plans that change most are those attached to situations you meet every day or every week: walking into meetings, answering the phone, sitting down to dinner, the jolt of certainty that comes several times a day. Each firing is a repetition, and repetitions are what turn a plan into a habit. Start with frequent triggers. Once those plans fire without effort, the habit of pausing they build will help in the rare moments too, and for the rarest and most serious, such as a crisis, a plan can be rehearsed deliberately.\n\nA useful check is to count how many times each plan fired last week. If the answer is zero for any of them, change the trigger before you change anything else."
+  },
+  {
+   "title": "Responses you cannot do on purpose",
+   "body": "Many plans fail at the *then*. *If someone raises their voice, then I stay calm.* *If I feel certain, then I keep an open mind.* Staying calm and keeping an open mind are states, not actions, and you cannot produce a state on demand, least of all under stress. The plan fires, you remember it, and nothing happens, because there was nothing to do. Write responses that are actions you can take in a few seconds whatever you are feeling: breathe out slowly, put a hand flat on the table, lower your voice, name one rival silently, ask one open question. The actions often bring the state with them, a little later. Even when they do not, they have interrupted the habit long enough for the rest of the protocol to have a chance.\n\nTest a response by asking whether you could do it while furious. If not, it is a hope rather than an action.\n\nWrite the response as something a person watching you could see you do. If they could not, rewrite it."
+  },
+  {
+   "title": "Skipping the after-list when things went well",
+   "body": "The do-confirm list is easy to run after a conversation that went badly, because you want to know what went wrong. It is easy to skip after one that went well, because there seems to be nothing to learn. Over a few months that bias distorts the record. The ledger fills with disasters, the protocol is tuned to prevent them, and you never discover which steps were doing the work in the good conversations, or that a conversation went well despite a step you skipped. Run the after-list after every conversation that mattered, whatever its outcome, and keep it short enough that doing so is no burden. A good outcome reached by luck is the most important thing the list can catch, because it is the one you would otherwise repeat.\n\nOver a quarter, the after-lists from good conversations are often the ones that show you which steps to keep.\n\nA quick version is enough for routine conversations: one line for each item, written within an hour."
+  },
+  {
+   "title": "Borrowing someone else's protocol",
+   "body": "A colleague's cues, or the examples in this chapter, can look so neat that it seems easier to adopt them than to build your own. *Me. Normal? Wrong if?* works for many people, but it was chosen to cover common errors, not yours. If your own journal shows that your worst misreadings come from your temper, a cue about baselines will not catch them; if they come from acting on a single striking signal, a cue about your own state will not help either. A borrowed protocol also fails at the trigger, because the internal signals that matter most are personal. One person's warning sign is heat in the face, another's is the sudden wish to be clever. Use other people's protocols as examples of form. Fill the form from your own record.\n\nThe same applies to this book. Its examples are there to show what a protocol looks like. Yours should look like your mistakes.\n\nBorrowing is also how folk wisdom spreads. A neat cue repeated by enough people starts to sound like research, and nobody remembers that it began as one person's guess about their own mistakes."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I rehearse a plan for a situation that I cannot easily set up, such as a crisis?",
+   "a": "In two ways. First, mental rehearsal: imagine the situation as specifically as you can, where you are, who is there and what you notice first, and then imagine doing the response, in your own words, all the way through. It feels artificial, but it gives the plan a first use before it is needed. Second, role-play with someone you trust, keeping it brief and agreeing a signal to stop. For a crisis, where someone may be at risk, keep the plan very short and the same every time: safety first, ask directly, get help. Know in advance how you would get help where you live, including the numbers in this app's crisis resources, so that you do not have to look for them while someone needs you.\n\nRehearse the crisis variant every few months, not just once, because a plan you never use fades."
+  },
+  {
+   "q": "What should I do if an if-then plan fires at the wrong moments, or far too often?",
+   "a": "Narrow the trigger. A plan tied to *someone raises their voice* will fire at a football match, in a noisy pub and when your mother is calling from the garden, and after a while you will start ignoring it, which teaches you to ignore it when it matters. Add the setting or the person: *If someone raises their voice at me at work*, or *in a meeting I am chairing*. Alternatively, choose a different trigger closer to the moment you care about, such as an internal signal that comes only when you are about to misread. A plan that fires a few times a day in the right situations is more useful than one that fires constantly.\n\nIf a plan fires rarely in the right situations and often in the wrong ones, the trigger is probably a common sensation rather than the specific one that precedes your mistakes. Look again in the journal."
+  },
+  {
+   "q": "Should I tell people that I am using a protocol when I talk to them?",
+   "a": "You do not need to announce it, any more than a doctor announces each item on a checklist. But if someone asks why you paused, or why you asked a question instead of answering, tell them honestly. At work, sharing the parts of the protocol that are about asking rather than assuming can help: a team that knows you will check before you judge may find it easier to tell you things directly. What you should not do is present it as a method for reading people's hidden thoughts. It is a method for slowing yourself down, and describing it that way is both more accurate and less alarming for the people around you.\n\nIf someone you are with asks directly whether you are reading them, tell the truth, and stop if they would rather you did not.\n\nIt also helps to be clear with yourself about the difference. The protocol is a set of habits for your own behaviour. It does not give you access to anyone else's mind, and talking about it as if it did would mislead you as much as anyone else."
+  },
+  {
+   "q": "My three cues stop working when I am very angry. Is there anything shorter that will still work?",
+   "a": "Yes: a single physical act, rehearsed until it is automatic. A slow breath out, a hand flat on the table or your feet set on the floor will still be available when words are not, and they buy the second or two in which the cues can return. If you are too angry even for that, use a stopping rule rather than a reading rule. Say something you have prepared in advance, such as *Let me think about that and come back to you*, and leave the conversation until you can run the protocol properly. No reading made at the height of anger is worth acting on, and the most useful thing a protocol can do in that state is get you out of the room.\n\nAfterwards, when you are calm, write the moment in your journal. Anger is one of the most useful triggers to learn from, because it is so reliable."
+  },
+  {
+   "q": "Can the protocol still help me if I have always found faces hard to read?",
+   "a": "Yes, and perhaps more than it helps others. Most of the protocol is not about reading faces at all. It is about checking your own state, comparing with what is normal for this person, naming a rival explanation and asking rather than assuming. None of that depends on reading expressions well. If faces are hard for you, lean on the channels you read better, such as voice, timing or what people do, and lean especially on asking. Your variant might put *Ask* first rather than last. People who find faces hard often become very good at checking directly, which is the step most confident readers skip.\n\nIf you find faces hard, you may also be less likely than others to feel the false certainty that a single expression produces, which is one of the commonest sources of error in this book.\n\nThe same is true of the other end of the protocol. A journal and a ledger work just as well for someone who reads faces poorly, and will show you which of your other channels you can trust."
+  },
+  {
+   "q": "How many variants should my protocol have?",
+   "a": "Usually two or three, one for each part of your life where you read people often and where the risks are different, such as work, home and one other setting that matters to you, like negotiations or volunteering. Each should change no more than one or two lines of the core. If you find yourself writing a fourth or fifth, check whether the settings really differ in their risks, or whether you are writing variants instead of practising the core. The crisis variant is the exception: it should exist for everyone, and it should be the shortest of all.\n\nWrite each variant on the back of the card that holds the core, so that you can see at a glance how little it changes.\n\nReview the variants at the same quarterly review as the core, and retire any you have not used in the past three months."
   }
  ],
  "watch": [
