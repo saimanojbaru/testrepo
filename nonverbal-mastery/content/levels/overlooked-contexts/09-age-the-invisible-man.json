@@ -73,6 +73,20 @@
    "doCaption": "Talking to him",
    "dontCaption": "Talking about him to his daughter",
    "annotation": "Speak to an older man as you would to any adult, at a normal pace, using his name."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_adult_child",
+   "doCaption": "Side by side, adult to adult",
+   "dontCaption": "Talking to him like a child",
+   "annotation": "Elderspeak is heard as patronising, even by people with dementia. Use the voice and words you would use with any adult."
+  },
+  {
+   "doPoseId": "p_pair_work_together",
+   "dontPoseId": "p_sit_closed_hunched",
+   "doCaption": "Side by side on a shared task",
+   "dontCaption": "Alone in the same chair all day",
+   "annotation": "Many older men find company easier with a reason. A job that needs two people opens doors a visit cannot."
   }
  ],
  "caseStudy": "Frank, seventy-four, was an electrician for forty years and has been a widower for two. His daughter, Helen, began going to his medical appointments with him after a fall. Within a few months she noticed that the doctors addressed almost everything to her, and that her father had stopped answering. At the pharmacy, a young assistant called him young man and explained his new tablets slowly, twice, in a voice usually kept for toddlers.\n\nAt family dinners Frank had gone quiet. He nodded along, laughed a beat late, and once answered a question about his grandson's football with a remark about the weather. Helen's husband wondered aloud whether it was the start of dementia.\n\nIt was his grandson, Sam, who noticed that Frank always sat with his back to the window, his face in shadow and everyone else's in glare, and that he leaned toward whoever was speaking with his head turned to one side. A hearing test found significant loss in both ears.\n\nWith hearing aids and a seat facing the light, Frank's conversation came back. Helen changed her own habits at appointments: when a doctor turned to her, she turned to her father and waited, and the doctor followed. Sam started taking Frank to a Men's Shed near his house, where he now spends two mornings a week fixing donated bicycles and arguing about wiring with a retired plumber.\n\nFrank says the hearing aids helped, but what helped most was people looking at him again when they talked.",
@@ -91,6 +105,11 @@
     "Recall the last conversation, and note your pace, volume and the words you used.",
     "Mark anything that would sound odd if said to a man of forty.",
     "In your next conversation, speak to him exactly as you would to that man of forty."
+   ],
+   "variations": [
+    "Record a voice note to an older relative and listen back for any change in pace, volume or vocabulary compared with a note to a friend.",
+    "Notice how shop and café staff speak to older customers this week, and whether any use elderspeak.",
+    "Ask an older man you know whether people ever talk down to him, and listen to the examples."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Sit where he can see your face, and speak clearly without raising your voice.",
     "If he misses something, rephrase it rather than repeating it louder.",
     "Afterwards, note how much he joined in compared with usual."
+   ],
+   "variations": [
+    "Before the meal, ask him where he would like to sit, rather than deciding for him.",
+    "Turn off the background music or television during conversation, and notice the difference for everyone at the table.",
+    "If he wears hearing aids, ask whether a particular room or seat works best for them."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Let him set the pace, and stay beside him rather than half a step ahead.",
     "Turn your head toward him when you talk, as you would with anyone.",
     "Notice how the conversation feels compared with talking while you lead."
+   ],
+   "variations": [
+    "On the walk, ask him about a place you pass that he remembers from years ago, and let him tell the story at his own pace.",
+    "Walk the same route at your usual pace alone, then at his pace with him, and notice what you see on the slower walk that you missed on the faster.",
+    "Notice whether other people on the pavement walk round him or hurry past, and how he responds to it."
    ]
   },
   {
@@ -123,6 +152,11 @@
     "Invite him to it, without making it about his loneliness.",
     "Let the conversation come from the task rather than forcing it.",
     "Repeat it, since one visit rarely changes much."
+   ],
+   "variations": [
+    "Ask him to teach you something he knows, such as a repair, a recipe or a game, which turns the task into his expertise.",
+    "Choose a task that needs two people, such as moving furniture or putting up shelves, so that his help is genuinely needed.",
+    "Make it a regular arrangement, such as the first Saturday of every month, so that he can look forward to it."
    ]
   }
  ],
@@ -204,6 +238,45 @@
    "explain": "Pet names, slow speech and loud volume are elderspeak, and they are usually heard as patronising. Speaking to him as to any adult, and asking what he knows, treats him as the expert he may well be.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Holt-Lunstad and colleagues' 2010 analysis of 148 studies, what was linked to a greater likelihood of survival?",
+   "options": [
+    "Living alone, which reduced stress from family obligations in later life",
+    "Stronger social relationships, linked to about a fifty per cent greater likelihood",
+    "Retiring early, which gave people more time to rest and look after themselves",
+    "Owning a pet, which was the only social factor that predicted survival at all"
+   ],
+   "answer": 1,
+   "explain": "People with stronger social relationships had about a fifty per cent greater likelihood of survival over the study periods. Widowers are often among the most isolated people, which makes this especially relevant to older men.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A carer says to a resident with dementia, in a sing-song voice, \"Are we ready for our tablets, sweetheart?\" and he pushes her hand away. What fits this chapter best?",
+   "options": [
+    "Record him as resistant to care, since dementia often makes people more difficult",
+    "Sit at his level, greet him by name, speak to him as an adult and offer a choice",
+    "Speak more slowly and sweetly, since he probably did not understand the first time",
+    "Leave the tablets on the table and come back later, since he clearly wants nothing"
+   ],
+   "answer": 1,
+   "explain": "Williams and colleagues found residents with dementia were about twice as likely to resist care after elderspeak than after ordinary adult talk. Speaking to him as an adult, at his level, with a choice, respects him and tends to work better.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says shop staff overlook older customers only because older people are slow to come forward. What does this chapter suggest?",
+   "options": [
+    "That younger people pay less attention to older faces, an own-age bias, so the overlooking starts with them",
+    "That older customers are always slower to come forward, so the staff are simply responding to that",
+    "That shop staff deliberately ignore older customers because they are assumed to spend less money",
+    "That being overlooked is something older people imagine, since staff treat all customers the same"
+   ],
+   "answer": 0,
+   "explain": "Rhodes and Anastasi's review documented an own-age bias: people attend to and remember faces from their own age group better. Younger staff may simply not see older customers as readily.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +305,110 @@
    "work": "Breaking the Age Code",
    "author": "Becca Levy",
    "note": "William Morrow, 2022. A readable account of how beliefs about age shape health."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The resident who would not take his tablets",
+   "scene": "Arthur, eighty-six, was a merchant navy engineer for forty years and now lives in a care home with dementia. On good days he talks about ships,\n  engines and the ports he worked in, in detail. On bad days he is confused about where he is. Every morning a carer brings him his medication.\n\n  Kayleigh, twenty-two, is new and kind, and she has picked up the way some of the staff talk. She bends down close to his chair and says, in a high,\n  sing-song voice, \"Morning, sweetheart! Are we ready for our tablets? Good boy, let's take them for me, shall we?\" She holds the cup up to his mouth.\n\n  Arthur pushes her hand away. He turns his head, says \"Leave me alone\" and grips the arms of his chair. Kayleigh tries again, more slowly and more\n  sweetly. He knocks the cup to the floor. She writes in his notes that he was \"resistant to care\" and \"agitated\", and tells the senior carer that he\n  is getting more difficult.\n\n  The senior carer, Mo, fifty, has looked after Arthur for three years. He goes in, sits down in the chair beside him, says \"Morning, Arthur, it's Mo,\"\n  and talks to him for a minute about the weather over the harbour, which Arthur can see from his window. Then he says, plainly, \"Here are your morning\n  tablets. Would you like them with water or tea?\" Arthur says tea, and takes them.\n\nArthur's daughter, visiting that afternoon, finds the note about agitation and asks what happened. When Mo tells her, she says that her father used to say that the worst thing about the navy was officers who talked to him as if he were stupid.\n\nKayleigh had learned the voice in her first week from a colleague who used it with every resident. Nobody had told her that it might be the voice, not the dementia, that Arthur was pushing away.\n\nWhen Mo sits down beside him, Arthur looks at him for a long moment, as if checking who he is, and then visibly relaxes. Mo has noticed that he does this with anyone who sits at his level rather than bending over him.",
+   "misread": "Kayleigh read Arthur's pushing away and his sharp words as agitation and increasing difficulty, and recorded them as a feature of his dementia. She did not consider that he might be reacting to how he was being spoken to.\n\nThe other staff, reading Kayleigh's note, nearly began to treat Arthur as a resident who needed two carers for his medication, which would have been one more indignity.\n\nThe note also read his words, \"Leave me alone\", as part of his illness, when they were a perfectly clear request from an adult who did not want to be spoken to like that.",
+   "betterRead": "Williams and colleagues found that nursing home residents with dementia were about twice as likely to resist care after staff used elderspeak, with its sing-song tone, pet names and collective \"we\", than after ordinary adult talk. Even people with dementia heard the difference. Arthur was a man who had run ships' engines; being called \"good boy\" and fed like a toddler was an insult his illness had not taken away his ability to feel. Mo's approach was the better reading in practice: sit at his level, greet him by name, talk to him as an adult, offer a choice, and let him take the tablets himself. Mo talked to Kayleigh afterwards, without criticism, and showed her the research. She changed how she spoke within a week. Arthur's notes stopped describing him as resistant.\n\nMo also asked the home to add a short session on elderspeak to its induction for new carers, using Arthur's story with his daughter's permission.\n\nArthur's daughter told Mo, at the end of the year, that her father always brightened when he heard Mo's voice in the corridor."
+  },
+  {
+   "title": "The volunteer everyone thought was grumpy",
+   "scene": "Bill, seventy, retired from the fire service ten years ago and volunteers three days a week at a charity shop, sorting donations and serving at the\n  till. He is a kind, funny man with a great fund of stories. His face, at rest, is another matter. Deep lines run from his nose to the corners of his\n  mouth, which turn down, and two vertical furrows sit between his brows. When he is concentrating on the till, he looks, to most people, furious.\n\n  The shop's new manager, Jade, twenty-eight, notices in her first month that customers tend to queue at the other till when Bill is serving, and that\n  one or two younger volunteers seem wary of him. She wonders whether Bill is unhappy in the shop, or whether he resents having a younger manager. She\n  starts to give him the sorting jobs in the back room rather than the till, without saying why.\n\n  Bill notices. He says nothing, but he starts to come in two days a week instead of three.\n\n  One afternoon Jade hears laughter from the back room and finds Bill telling two of the younger volunteers, in vivid detail, about the night his\n  crew rescued a horse from a canal. They are in tears of laughter. Bill's face, telling the story, is entirely different.\n\nBill has noticed the queue at the other till too. He has assumed the customers prefer the younger volunteer, and has stopped making the small jokes he used to make with regulars.\n\nHis wife, when he mentions that he has been moved to the back, says that it has happened before: at his retirement party, a colleague's new wife asked her why Bill looked so cross on such a happy day.\n\nJade also notices, looking at the rota, that Bill has volunteered every Christmas Eve for six years, which is not the record of a man who is unhappy in the shop.",
+   "misread": "Jade read Bill's resting face, with its downturned mouth and furrowed brow, as unhappiness or resentment, and the customers read it as unfriendliness. Bill read his move to the back room as a sign that the new manager did not want him at the front.\n\nThe younger volunteers who were wary of him had read the same face the same way, and none of them had spent long enough with him to hear him talk.\n\nJade also read her own decision to move him to the back room as tactful, when it was a judgment about his face made without a word to him.\n\nAnd the customers who chose the other till read a resting face as a mood, which is how most people read faces they do not know.",
+   "betterRead": "Hess, Adams and colleagues found that the wrinkles and folds of older faces make expressions less clear, and Freudenberg, Hess and colleagues found that neutral expressions were rated as more emotional on older faces than on younger ones. Lines that follow the paths of decades of expression can look like sadness or anger at rest. Bill's face was simply seventy years old. The better reading, which Jade reached after hearing the laughter, was to judge him by what he did and said rather than by his resting face, and to ask rather than guess. She told him, honestly, that she had wondered whether he was happy in the shop. He laughed and said everyone had always told him he looked cross. She put him back on the till, and on the rota for the shop's school visits, where children asked him about fire engines for an hour.\n\nJade also mentioned, at the next volunteers' meeting, that faces are poor guides to mood, especially older ones, and told the story of her own mistake."
+  },
+  {
+   "title": "The widower next door",
+   "scene": "Ron, seventy-seven, has lived in the same house for fifty years, and his wife, Margaret, died eighteen months ago. His neighbour, Aisha, thirty-five,\n  moved in next door a year ago with her two young children. She sees Ron most days: putting out his bins, collecting his paper, standing at his window.\n\n  When she tries to chat, he is curt. \"Morning.\" \"Fine.\" \"Can't complain.\" When she offers to bring him some shopping, he says he can manage. When her\n  children wave to him over the fence, he nods and goes back inside. Aisha's partner says the old man clearly wants to be left alone, and they should\n  respect that.\n\n  Aisha is not sure. She has noticed that Ron's curtains often stay closed until midday, that he wears the same cardigan most days, that his garden,\n  which a neighbour tells her was once the best on the street, has gone wild. She has also noticed that when the postman stops to talk to him, Ron talks\n  for twenty minutes.\n\n  One Saturday, she is struggling to repair a broken fence panel between their gardens. Ron comes out, watches for a moment and says, gruffly, that\n  she is doing it wrong. Then he goes inside and comes back with a toolbox.\n\nAisha has also noticed that he waves, briefly, when her car pulls in at night, as if he has been waiting at the window to see her family home safely.\n\nShe has also noticed that he keeps Margaret's coat on the hook by the front door, and that he touches it when he goes out.\n\nOn the day of the fence, she notices that he is wearing a clean shirt, and that he has shaved, for the first time in weeks.",
+   "misread": "Aisha's partner read Ron's curt answers and refusals of help as a wish to be left alone. Ron's refusals were partly pride and partly the habit of a man who did not know how to accept company without a reason.\n\nRon's curtness was also, partly, a test: whether this new neighbour would keep trying, as Margaret would have wanted him to let her.\n\nAnd Ron read Aisha's offers of shopping as pity, which made accepting them feel like admitting something about himself that he was not ready to admit.\n\nAisha's partner, who worked long hours and rarely saw Ron, read him from a few curt exchanges at the bins.",
+   "betterRead": "Holt-Lunstad and colleagues found that people with stronger social relationships had about a fifty per cent greater likelihood of survival, and research on later life repeatedly finds widowers among the most isolated people of all. This chapter describes how loneliness in older men often shows as gruffness, letting appearance go and long silences broken by bursts of talk, which are easily read as bad temper. Ron's toolbox was the opening. Aisha's better response was the Side by Side drill: she accepted his help, let him show her how to fix the fence and asked whether he would help her with the garden too. Over the following months, Ron spent Saturday mornings helping her and teaching her children to plant beans. His curtains started opening earlier. When Aisha later mentioned that he seemed low some days, he agreed to see his GP, and started going to a bereavement group at the library.\n\nAisha's children started calling him Uncle Ron, which he pretended to find annoying.\n\nThe garden, by the following summer, was back to something like its old state, and Ron entered the street's flower show."
+  },
+  {
+   "title": "The customer in the phone shop",
+   "scene": "George, eighty-one, walks with a frame since a hip replacement last year. He goes into a phone shop on the high street because his phone has\n  stopped syncing with his laptop. He moves slowly to the counter, leans on the frame and waits while the young assistant, Josh, finishes serving\n  someone else.\n\n  When Josh turns to him, he speaks slowly and loudly, and says, \"What can I do for you today, sir? Is it your phone? Is it the buttons?\" When George\n  explains that the phone is no longer syncing with his laptop's calendar after an update, Josh says, \"Right, OK, so the calendar is like a diary on the\n  phone,\" and begins to explain what a calendar is. He suggests that George might find a simpler phone easier, and shows him one with large buttons.\n\n  George waits until Josh has finished. Then he explains, precisely, that he spent thirty-five years as a software engineer, that he wrote part of the\n  operating system for a bank's first cash machines, and that the problem is almost certainly a change in the authentication settings in the last update.\n\n  Josh goes red. He checks the settings, finds that George is right, and fixes it in two minutes.\n\nGeorge has had the same experience at the bank, the GP's surgery and the railway station, and has learned to wait until people finish before correcting them, because it saves time in the end.\n\nHe had come in, he says later, partly because he wanted to see how long it would take the shop to work out that he knew what he was talking about.\n\nJosh, in his defence, had been trained to \"keep it simple\" with customers, and nobody had told him that simple and patronising are not the same.",
+   "misread": "Josh read George's frame, slow walk and age as signs that he would not understand technology, and talked to him slowly, loudly and simply. He read a problem about software settings as a problem about buttons.\n\nThe customer behind George in the queue, a man in his thirties, had read the same frame the same way, and was visibly surprised by the conversation that followed.\n\nGeorge, for his part, read Josh's manner accurately, as a young man who meant well and had not been taught otherwise, and decided to be patient rather than offended.",
+   "betterRead": "Studenski and colleagues found that walking speed is a genuine health signal, linked to survival in older adults, but it is a signal about the body, not the mind. Wright's idea of spread, described in the previous chapter, applies here: a slow walk was taken as a sign that George was less capable in every way, including the one in which he was more expert than anyone in the shop. Josh's elderspeak, the slow, loud, simplified talk with \"sir\" and a description of what a calendar is, made the mistake audible. The better approach would have been the Adult to Adult drill: speak to him as you would to any customer of forty, listen to the problem he describes and take the description at face value. Josh apologised, and George laughed and told him about the cash machines for ten minutes. Josh told his manager it was the best customer he had had all month.\n\nJosh's manager added a line to the shop's training: ask customers what they already know before explaining anything."
+  }
+ ],
+ "workedReading": {
+  "title": "Bringing an experienced colleague into a change",
+  "scene": "Natalie, thirty-one, has just become manager of a team of six surveyors at a property firm, and the firm is moving all its surveys from paper forms to a tablet app. The most experienced member of the team is Stan, sixty-four, who has been surveying buildings for forty years and is respected by every builder in the county. Natalie has heard from others that Stan is \"not a tech person\" and will resist the change. She has also noticed, in her first few weeks, that in team meetings people tend to talk across Stan to each other, and that he has stopped offering his views. She wants him to be part of the change, not someone it is done to, and she suspects that how she speaks to him will matter as much as what she says. She decides to start by checking her own assumptions.\n\nShe also remembers her own grandfather, a carpenter, who was given a computer by his children and taught himself to design furniture on it at seventy-five. She suspects the label \"not a tech person\" may say more about the people using it than about Stan.\n\nShe has also seen, in her last job, a long-serving colleague retire early after a reorganisation in which nobody asked his opinion, and she does not want to repeat it.",
+  "steps": [
+   {
+    "label": "Check your own assumptions",
+    "text": "Before speaking to Stan, she writes down what she believes about him: that he will struggle with the app, that he will resist it, that he will need extra help. Then she asks what evidence she has. She has none of her own; it is all what others have said. She remembers the chapter's warning about spread: a man's age and the length of his career say nothing about his ability to learn a new tool.\n\nShe also notices that two of the younger surveyors are much less confident with the app than they let on, and that nobody has described them as not tech people.\n\nShe also notices that she has been planning to give Stan the training first, alone, to save him embarrassment, and realises that this plan rested on the same unexamined assumption."
+   },
+   {
+    "label": "Talk adult to adult",
+    "text": "She asks Stan for half an hour, one to one, in a quiet room. She speaks to him at the same pace and in the same words she would use with any colleague, without \"Don't worry\" or \"It's really easy\" or any of the softening that would tell him she expects him to find it hard. She explains what the change is, why the firm is making it and when it will happen, and asks what he thinks.\n\nShe also avoids standing over him or perching on the desk. They sit across a corner of the table, at the same height.\n\nShe also says, plainly, that she would value his view more than anyone's, because he knows the work best. It is true, and it sets the tone for the rest of the conversation."
+   },
+   {
+    "label": "Ask his view first",
+    "text": "Stan says, after a pause, that the app looks fine but that it does not have a way to record the condition of roof timbers the way surveyors actually look at them, which means the reports will be worse. He has looked at the demo version on his own phone already. Natalie had not known that the app had that gap, and had not known that he had looked at it. She writes it down.\n\nShe thanks him, and asks whether he would be willing to raise it in the training, which he says he would.\n\nShe also asks him what else he thinks the firm should know about the change, and he gives her two practical suggestions about working in poor signal on rural sites."
+   },
+   {
+    "label": "Set up the training room",
+    "text": "For the team training session, she makes sure the room is quiet, the tablets have large screens and the trainer faces the group rather than the projector. She asks the trainer to explain the app as he would to any group of professionals, and to take questions from everyone. She sits next to Stan rather than at the front, so that she can see whether anything is unclear for anyone at that end of the table.\n\nShe also asks the trainer not to single out anyone for extra help, but to offer a follow-up session to the whole team.\n\nShe also books the session in the morning rather than late in the afternoon, which suits everyone's concentration better."
+   },
+   {
+    "label": "Credit his experience publicly",
+    "text": "During the training, when the trainer reaches the section on roofs, Natalie says, \"Stan spotted a problem with this part. Stan, can you explain?\" Stan explains the issue clearly, and the trainer agrees to pass it to the developers. The younger surveyors, several of whom had not noticed the gap, listen to him with obvious respect.\n\nShe also notices that Stan sits up straighter after he has explained, and offers two more comments during the session, more than he has said in any meeting since she arrived.\n\nShe also makes sure the credit goes in writing, in her notes to the developers, with his name on the suggestion."
+   },
+   {
+    "label": "Talk to him, not around him",
+    "text": "In the following weeks, when team discussions start to flow across Stan, Natalie turns to him and asks what he thinks, then waits. She notices that once she does it a few times, others start to do it too. The Seen Less block of this chapter describes how older men are overlooked in groups; she has found that a single person turning towards them changes the pattern for everyone.\n\nShe also starts meetings by asking a different person for their view each time, which spreads the attention without making anyone the special case.\n\nShe also notices that she had been doing it herself in her first weeks, talking across him to the younger surveyors, without meaning to."
+   },
+   {
+    "label": "What happened",
+    "text": "The developers add a roof-timber section to the app, and the firm credits Stan in the release notes. Stan becomes the person the younger surveyors ask when the app does something odd on site, because he has learned it more thoroughly than anyone. At the end of the year, he tells Natalie that she was the first manager in a decade who had asked his opinion before telling him what was going to happen.\n\nShe also passes the story to her own manager, who asks Stan to help design the firm's training for new surveyors.\n\nShe also notices how much more she learns from the team when Stan is talking, because he knows the history of every building in the county."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Making age the joke",
+   "body": "\"Senior moment,\" \"old boy,\" \"past it,\" \"back in your day,\" \"OK, granddad\": jokes about age are among the few kinds of teasing that remain broadly acceptable in many workplaces and families, and older men are often expected to laugh along. Some do, and some genuinely enjoy the banter. But age jokes do quiet work. They frame forgetfulness, slowness or unfamiliarity with something new as signs of age rather than as ordinary human lapses that happen to everyone, and they tell younger people in the room how older colleagues are seen. Levy's research suggests that the stereotypes people absorb about ageing can shape their own health as they get older, so the jokes may also land, years later, on the people making them. If a forty-year-old forgets a name, nobody calls it a senior moment. Try holding older colleagues to the same standard.\n\nIf you enjoy the banter yourself, ask whether the older colleague is laughing because he finds it funny or because it is expected.\n\nIt also helps to notice whether the older colleague is ever the one making the jokes, or only their subject."
+  },
+  {
+   "title": "Assuming technology is beyond him",
+   "body": "Many people assume that older men cannot use, or do not want to use, smartphones, apps, video calls and computers, and treat them accordingly: explaining basics they already know, doing things for them, offering simpler devices, leaving them out of digital changes, as Josh did with George. Some older men do find new technology frustrating; so do many younger ones. But the generation now in their sixties, seventies and eighties includes the engineers, programmers and technicians who built much of the technology in use today, and many older people use it confidently every day. The assumption is a form of spread, from age to ability. The fix is simple: ask what someone already knows and how they would like to proceed, then explain at the level they ask for, as you would with anyone.\n\nA good question to ask is \"How do you usually do this?\", which tells you where to start and treats him as competent."
+  },
+  {
+   "title": "Helping without asking",
+   "body": "The previous chapter described how unasked-for help, taking an arm, carrying a bag, pushing a wheelchair, removes control from a disabled person. The same applies to older men, who are often helped without being asked: taken by the elbow across a road, steered onto a bus, relieved of their shopping, guided to a seat. Each act is usually meant kindly. Each also says, without words, that the helper has judged the older man unable to manage, and many men feel that judgment sharply, especially those who were strong and independent for most of their lives. Ask first: \"Would you like a hand?\" Then accept the answer, including a no. Holding a door, offering a seat and walking at someone's pace are courtesies; taking someone's arm without asking is not.\n\nAnd if he says no, do not hover nearby waiting for him to fail. Trust the answer.\n\nIf you are unsure whether he would welcome help, offering a choice works well: \"I'm going that way, would you like company?\""
+  },
+  {
+   "title": "Reading your own ageing as decline",
+   "body": "This chapter is mostly about how others read older men, but the same readings can be turned inward. Many men in their fifties and sixties start to read their own bodies through the stereotypes they have absorbed: every ache is the beginning of the end, every forgotten word a sign of decline, every grey hair a reason to step back. Levy and colleagues found that people with more positive views of their own ageing lived about seven and a half years longer than those with more negative views, after accounting for health and other factors. The research does not show that optimism alone keeps people alive, and some of the studies behind it are small. But it suggests that how you think about your own ageing is not neutral. Noticing the stereotype in your own head, and checking it against the evidence, is worth doing for yourself as well as for others.\n\nIt also helps to notice older men you admire, and how they carry themselves, as a counterweight to the stereotype.\n\nIf you find yourself saying \"I'm too old for that\", ask whether it is true or just a story you have absorbed."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether an older man is unhappy or just has a serious resting face?",
+   "a": "Often you cannot tell from the face alone, and you should not try. Hess, Adams and colleagues found that the lines and folds of older faces make expressions less clear, and Freudenberg, Hess and colleagues found that neutral older faces were read as more emotional than neutral younger ones. A mouth that turns down at rest, or furrows between the brows, can look like sadness or anger when the man feels neither. So look at other signals: what he says, how he says it, what he does, how he behaves with people he knows. Read him against his own baseline, as Jade eventually did with Bill. If you are genuinely concerned that someone is unhappy, ask in an ordinary way: \"How are you doing?\" and listen to the answer, rather than deciding from his face.\n\nIf he seems genuinely low, it is worth asking more than once, on different days, since many older men answer the first question with \"Fine\" by habit."
+  },
+  {
+   "q": "What is wrong with calling an older man \"young man\" or \"sweetheart\"?",
+   "a": "Usually nothing is meant by it except friendliness, but it is a form of elderspeak, the way of talking to older people as if they were children that researchers such as Susan Kemper have described. Pet names, the collective \"we\", a sing-song voice, slow and loud speech and over-simple explanations are often heard as patronising, and Williams and colleagues found that even people with dementia resisted care more after staff used elderspeak. \"Young man\" to a man of eighty also makes his age the joke. The respectful alternative is ordinary adult speech: his name or \"sir\" if that is the setting's norm, your normal pace and volume, and whatever words you would use with a man of forty. If he cannot hear you, face him and speak clearly; do not switch to baby talk.\n\nIt also helps to notice if you slip into it under pressure, for example when you are in a hurry or he has not understood."
+  },
+  {
+   "q": "How can I tell whether hearing loss is the problem?",
+   "a": "Look for the patterns this chapter describes: nodding along but answering a different question, laughing a beat late, leaning in, turning one ear towards the speaker, watching lips closely, asking people to repeat themselves, avoiding noisy places or withdrawing in groups. These are easily read as confusion, rudeness or disinterest. If you notice them, adjust the setting: sit him facing the light, away from noise, and speak clearly without shouting, rephrasing rather than repeating. Then, if it seems appropriate, suggest a hearing test gently and practically: \"It's so noisy in here, I can barely hear either. Have you had your hearing checked lately?\" The World Health Organization estimates that more than a quarter of people over sixty have a disabling hearing loss, so it is a common and treatable cause of apparent withdrawal.\n\nIt also helps to know that untreated hearing loss can increase isolation, so a test is worth encouraging gently but firmly."
+  },
+  {
+   "q": "My father has become gruff and withdrawn since my mother died. What can I do?",
+   "a": "Keep showing up, and try doing things side by side rather than face to face. Many older men find it hard to talk about grief or loneliness directly, but easier to talk while fixing something, gardening, walking, watching a match or cooking together, as Ron did with Aisha's fence. Invite him to help with a task rather than offering to help him, which respects his independence. Make it regular, since one visit rarely changes much. Encourage connections outside the family, such as a club, a Men's Shed or a volunteering role. If his low mood persists for weeks, if he stops eating or looking after himself, or if he talks about not wanting to go on, encourage him to see his GP, and in an emergency get help immediately. Holt-Lunstad and colleagues' work suggests that social connection matters for health as well as happiness.\n\nIt can also help to let him look after you sometimes, for example by asking his advice, which restores a role grief may have taken."
+  },
+  {
+   "q": "Does a slow walk mean someone is frail?",
+   "a": "It may say something about his physical health. Studenski and colleagues found that walking speed was linked to survival in older adults, and doctors increasingly treat it as a vital sign. But it says nothing about his mind, his knowledge or his ability to make decisions, and reading it that way is the mistake Josh made with George. A man who walks with a frame after a hip operation may be the sharpest person in the room. The respectful response to a slow walk is practical: walk at his pace and beside him rather than half a step ahead, hold doors without hurrying him, choose routes without too many stairs if he wants that, and otherwise treat him exactly as you would anyone else.\n\nIt also helps not to finish his errands for him unless he asks; independence often matters more than speed.\n\nAnd if he is walking with someone younger, address him, not his companion, when you ask the way or offer help."
+  },
+  {
+   "q": "How can I carry myself well as I get older?",
+   "a": "Keep moving, keep connected and watch the stories you tell yourself. Levy and colleagues found that people with more positive views of their own ageing lived longer, after accounting for health and other factors, though the research does not show that attitude alone is the cause. Regular walking, strength and balance exercise and staying active help the body. Staying in regular contact with others, through work, volunteering, clubs or family, helps both health and mood. Get your hearing and eyesight checked, so that you do not withdraw from conversations without meaning to. And notice the age stereotypes in your own head, the senior moments and the past-its, and check them against the evidence as you would anyone else's.\n\nAnd remember that older age is a long stretch of life, not a single stage. Most people in it are still learning.\n\nIt also helps to spend time with people of different ages, which keeps your own picture of ageing more accurate."
   }
  ],
  "watch": [
