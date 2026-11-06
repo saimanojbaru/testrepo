@@ -80,6 +80,13 @@
    "doCaption": "Welcoming the question as a test.",
    "dontCaption": "Defending a reading when the learner asks how you know.",
    "annotation": "A teacher who protects his confidence from questions teaches that confidence should be protected. The question is the lesson."
+  },
+  {
+   "doPoseId": "p_pair_teach_alongside",
+   "dontPoseId": "p_gesture_chop",
+   "doCaption": "Working through the steps side by side",
+   "dontCaption": "Handing down a verdict on someone's body",
+   "annotation": "A learner who receives verdicts learns to defer. One who works alongside you learns the steps, and can check yours."
   }
  ],
  "caseStudy": "Dev, thirty-eight, manages the floor of a busy restaurant and has a reputation for reading tables. He knows when a table wants the bill before anyone looks up, and when a complaint is coming before the plate is pushed away. When Callum, nineteen, joins as a waiter, Dev tells him to watch and learn.\n\nOn the second night Callum asks how he knew table nine wanted the bill. Dev says *you just can tell*. Callum asks how, and Dev, slightly annoyed, cannot get past the woman's glance towards the bar. That night he writes down every table he is sure about and what he noticed. By the end of the week he has found something uncomfortable. About half of his famous readings rest on the clock and the order: a couple who have finished dessert and coffee after ninety minutes want the bill whatever their bodies are doing. The body cues he relies on are real but fewer than he thought, and his complaint radar is wrong as often as it is right.\n\nSo he teaches Callum differently. He teaches baseline first: how a table behaves in its first ten minutes. Then change: the moment conversation stops and both diners look outward. Then the test: walk past and ask whether there is anything else they need, which settles the question without guessing.\n\nIn the third week Callum tells him that the men on table four are cheapskates and will not tip, because of how they are dressed. Dev stops him there. That is not a reading, he says, it is a story about clothes, and they have nothing to go on until the men do something. The men leave a large tip and a note for the kitchen.\n\nA month later Callum challenges one of Dev's own calls, a table Dev was sure was unhappy with the food. Callum asks how he knows. Dev goes over and asks. The couple are arguing about a holiday. The food is fine. Dev buys Callum a drink at the end of the shift.",
@@ -98,6 +105,11 @@
     "Underline every line where you had to guess or leave a gap.",
     "Rate your understanding again from one to seven.",
     "Write down the step where you were weakest, and what you would need to watch for next time to fill it."
+   ],
+   "variations": [
+    "Do the drill for a reading you later found was wrong, and see whether the gaps you underline are the same steps that failed.",
+    "Do it for a reading of yourself, such as knowing when you are about to lose your temper, and compare the two ratings.",
+    "Give your written steps to a friend and ask them to underline the gaps they can see, before you underline your own."
    ]
   },
   {
@@ -109,6 +121,11 @@
     "Teach it, using one real moment from your journal as a worked example, with names and details changed.",
     "Ask the listener to explain the idea back to you in their own words.",
     "Write down every place where their version was thinner than yours, and what you had skipped."
+   ],
+   "variations": [
+    "Teach the same idea to two very different listeners, such as a teenager and an older relative, and compare the questions each one asks.",
+    "Record yourself teaching it, then watch the recording and mark every place where you gave a conclusion without the step behind it.",
+    "Teach it once in five minutes without an example and once in ten with one, and compare how well each listener explains it back."
    ]
   },
   {
@@ -120,6 +137,11 @@
     "Record whether they did, then swap roles and repeat with a different song.",
     "Compare your predictions with the results.",
     "Write one sentence on what this means for explaining a reading to someone who cannot see what you see."
+   ],
+   "variations": [
+    "Describe a photograph of a face in words to a friend, who must pick it out from four similar photographs, and predict their chance first.",
+    "Tap a song for a child and for an adult, predicting each result separately, and see whether your prediction changes with the listener.",
+    "Give a one-word hint about the kind of song after the first attempt, and record how much the hint changes the result."
    ]
   },
   {
@@ -131,6 +153,11 @@
     "The other asks how do you know, three times, waiting for each answer.",
     "Note the round at which the answers stopped being something either of you could point to on screen.",
     "Swap roles with a new scene and compare where each of you ran out."
+   ],
+   "variations": [
+    "Do the drill on a reading of yourself from a recent video of you, with your partner asking the questions.",
+    "Do it with the sound off, so that every answer has to point to something visible, and see whether the chain gets longer or shorter.",
+    "Do it in writing by message over a week, one question a day, and notice whether slower answers hold up better."
    ]
   },
   {
@@ -142,6 +169,11 @@
     "On the second clip, let the learner narrate while you only ask questions.",
     "Correct his steps, not his conclusion, and let him revise the conclusion himself.",
     "Each write one thing the other noticed that you missed."
+   ],
+   "variations": [
+    "Swap the order: let the learner model the first clip aloud while you listen, then narrate the second yourself, and compare.",
+    "Use a busy café seen from your table, narrating quietly about the room as a whole rather than any one person, and without writing anything down.",
+    "Record your narration on your phone and listen back for every verdict that arrived before the evidence for it."
    ]
   }
  ],
@@ -223,6 +255,45 @@
    "explain": "The honest answer protects him from a confident skill that does not exist. Starting with his own body teaches attention without making him a watcher of others, and the habit of asking is what he will need most.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Nestojko and his colleagues find in 2014 when some students expected to teach a passage rather than be tested on it?",
+   "options": [
+    "They recalled less, because the pressure of expecting to teach it made them anxious",
+    "They recalled exactly the same amount, but felt more confident about it afterwards",
+    "They recalled more, especially the main points, and organised it more coherently",
+    "They read the passage less closely, assuming the learner would ask the questions"
+   ],
+   "answer": 2,
+   "explain": "Everyone was in fact tested. Merely expecting to explain changed how the students read, because preparing to teach forces you to find the structure of what you know.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You are teaching a friend, and he asks how you knew a colleague was upset. After two answers, all you can say is that you could just tell. What fits this chapter best?",
+   "options": [
+    "Insist that experienced readers sense many things that can never be fully put into words",
+    "Change the subject to another reading where you can explain every step more confidently",
+    "Tell him that he will understand it once he has been practising for as long as you have",
+    "Admit that the chain broke, treat the reading as unchecked and decide what to watch next"
+   ],
+   "answer": 3,
+   "explain": "The point where the chain breaks is where your attention should go next. Admitting it also teaches him the most important lesson in the chapter: that a confident reading should be checked rather than defended.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that preparing to teach is what helps, and that actually explaining the material adds nothing. What did Fiorella and Mayer find in 2013?",
+   "options": [
+    "Students who explained on video after preparing did better a week later than those who only prepared",
+    "Students who only prepared did just as well, because explaining aloud added nothing to their learning",
+    "Students who explained on video forgot more, because the camera distracted them from the material",
+    "Neither group remembered much a week later, so the timing of the test was the only thing that mattered"
+   ],
+   "answer": 0,
+   "explain": "Explaining fixed the knowledge in a way that preparing alone did not. Saying each step aloud forces you to commit to it, and a step you cannot say is a step you did not have.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +322,110 @@
    "work": "\"I'm innocent!\": Effects of training on judgments of truth and deception in the interrogation room",
    "author": "Saul M. Kassin and Christina T. Fong",
    "note": "Law and Human Behavior 23(5), 1999. Why teaching cues without doubt makes people worse."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The sales trainer who taught a list",
+   "scene": "Marcus, forty-six, trains a team of twelve account managers at a company that sells office equipment. Two years ago he ran an afternoon workshop on buying signals that people still mention. The slides were clear and easy to remember: leaning in means interest, crossed arms mean an objection, a hand on the chin means the client is weighing it up, and a glance at a watch means you are losing them.\n\nAt the quarterly review he reads through his team's meeting notes and finds the list everywhere. *Client crossed arms at price, objection, handled.* *Leaned in at the demo, strong interest.* The notes are confident and detailed, and the team talk about clients with a fluency they did not have before.\n\nThen he looks at the outcomes. Sophie, twenty-eight, one of his best people, lost a large renewal after spending twenty minutes answering an objection that the buyer said afterwards he never had. In her notes, the buyer crossed his arms when she named the price. When Marcus asks her about the meeting, she remembers that the room was cold and that the buyer kept his coat on throughout. Another rep pushed for a close because a client leaned in, and the client, who had leaned in to read the small print on the screen, asked for time to think and did not come back.\n\nMarcus goes back through a quarter's notes and counts. In the meetings where his team recorded a buying signal, what they predicted happened about as often as it did not.\n\nThe workshop slides are still on the shared drive, and two new starters have been sent them as part of their induction pack, with a note from Marcus saying they cover the basics.",
+   "misread": "Marcus read his team's fluent, confident notes as proof that the workshop had worked. The team read his list as a dictionary, and each cue as a fact about the client's mind rather than a change that needed a baseline and a test. Sophie read crossed arms in a cold room as an objection.\n\nMarcus had also read the team's enthusiasm for the workshop as evidence of its quality, which is how a training session that feels useful survives for years without anyone checking its results.",
+   "betterRead": "This is the pattern Kassin and Fong found in 1999, on a smaller scale: training in cues without doubt produced more confidence and more reasons, but not more accuracy. The fix was not a better list. Marcus reran the training with the doubt first. A cue is a change against this person's own baseline. It needs a clear moment and a second channel, it has rivals such as a cold room or small print, and the cheapest test is usually a question. *Is the price where you expected it to be?* would have settled Sophie's meeting in ten seconds. He also changed what the team wrote down. Instead of conclusions, they wrote predictions, such as *I think she'll ask for a discount*, and checked them after each meeting.\n\nWithin a quarter the notes were less confident and more useful, and the team had stopped answering objections nobody had raised."
+  },
+  {
+   "title": "The mother who started with her daughter's own body",
+   "scene": "Hannah, forty-four, has been working through this book for a few months when her daughter Maya, thirteen, asks her to teach her how to read people. Maya has a debating competition in three weeks and wants to know how to tell whether the judges like her.\n\nHannah's first impulse is to give her a few things to look for: smiles, nods, people leaning forward. She stops herself. Instead, she films Maya practising her opening speech in the living room, and they watch it together with the sound off. Maya is horrified. She sways from foot to foot, clutches her notes against her chest and speaks to the ceiling. Hannah asks her what she noticed first and how she knew. They work through it: what Maya's body did while she was chatting before she started, what changed when she began, and where her hands went when she lost her place.\n\nIn the second week Maya practises in front of her grandfather, who listens with his brow furrowed and his arms folded. Halfway through she stops and says that he obviously thinks it is rubbish. Hannah asks her how she knows. Maya says it is his face. Hannah asks her what his face does when he watches the snooker, which he loves. Maya thinks about it, and laughs. It is the same face.\n\nAfterwards Maya asks whether there is a list she could learn, like the ones she has seen online. Hannah says there are plenty of lists, and that most of them are wrong in the way her grandfather's face had just shown.",
+   "misread": "Maya read her grandfather's furrowed brow and folded arms as judgement, with no baseline for his listening face. Hannah's first impulse read the request as a request for signals, which would have given Maya a short dictionary and three weeks of seeing disapproval in every face.\n\nMaya also read her own swaying in the video as proof that she was a bad speaker, rather than as one habit that could be changed with a week of practice.",
+   "betterRead": "Starting with Maya's own body taught attention without making her a watcher of others, and it gave her something she could change. By the competition she had learned to plant her feet, hold her notes at her waist and speak to three points in the room. The grandfather was the lesson about baseline, and it came from Maya's own question rather than a rule. Concentration and disapproval can look alike on a listening face, and the only way to tell them apart is to know what that face does when it is enjoying something. Hannah also told her plainly that nobody can read a judge's mind from the front of a room.\n\nShe said the judges' faces would mostly look flat or stern whether they liked her or not, because many faces look that way when they listen hard. Maya went in expecting stern faces and was not thrown by them."
+  },
+  {
+   "title": "The coach whose readings were reputations",
+   "scene": "Lewis, fifty-two, has coached an under-fifteens football team for eleven years and believes he can tell from the touchline which boys are trying. This season the club gives him an assistant, Aisha, twenty-six, a former player who is studying for her coaching badges.\n\nIn the third match Lewis says that Kofi, fourteen, is switched off again, and that he wants to take him off. Aisha asks how he knows. Lewis says Kofi is walking back after attacks while the others jog. She asks how that is different from usual. Lewis says it is how Kofi always is; he has been lazy since he joined. She asks what Kofi is doing differently today. Lewis cannot say.\n\nAt half-time Aisha asks Kofi quietly why he has been walking back. Kofi says that the coach who runs the midweek training session told him to hold his position on the halfway line and save his legs, because he was going to play the full ninety minutes for the first time. He has been doing exactly what he was told.\n\nThat week Lewis writes down the boys he thinks of as lazy, moody or soft, and asks himself, for each one, what behaviour he could point to from the past month. For three of the five, the answer is something from last season, or something a parent once said on the touchline.\n\nLewis also notices that the boys he thinks of as hard workers are, almost without exception, the ones whose parents help out on match days.",
+   "misread": "Lewis read Kofi's walking back through a reputation that had formed years earlier, and read his own certainty as a reading. *How Kofi always is* sounded like a baseline, but it was a label that nobody had checked for a long time. Kofi read his own behaviour as obedience.\n\nLewis read Aisha's questions, at first, as a young assistant questioning an experienced coach in front of the bench, and he was short with her for the rest of the half.",
+   "betterRead": "The how-do-you-know chain broke at the second question, which is where readings built on reputation usually break. A reading needs a change from this person's baseline at a moment you can point to, and a reputation offers neither. Aisha's best move was not to win the argument but to ask Kofi, which is the cheapest test there is. Lewis's best move came afterwards. He asked Aisha to keep asking how he knew whenever he passed judgement on a boy from the touchline, and he started writing down one observation per boy per match, behaviour only.\n\nBy the end of the season, two of the boys he had thought of as lazy were among the hardest workers in his notes. The assistant he had been given to help the boys had helped him most.\n\nHe also told the boys what he was doing and why, which made the notes something they could ask about rather than a file kept on them. Kofi asked to see his after the last match of the season."
+  },
+  {
+   "title": "The head of department who asked for a report",
+   "scene": "Claire, forty-seven, is head of science at a secondary school. She is worried about Gary, fifty, one of her teachers, who has seemed withdrawn in department meetings this term. Her new deputy, Ben, thirty-one, has just finished a course on reading people and is keen to use it. Claire asks him, half joking, to keep an eye on Gary in the next meeting and tell her what he reads.\n\nBen is flattered. In the meeting he watches Gary closely and makes notes on his phone: arms folded when the timetable came up, little eye contact with Claire, a long breath out at the new marking policy. Afterwards he gives Claire a careful summary and a conclusion: Gary is resentful about being passed over for the deputy's job.\n\nTwo weeks later Gary tells a colleague that he feels watched, that the new deputy stares at him in meetings and types on his phone while Gary is talking. The colleague passes this on to Ben, who feels sick. He had liked Gary, and now Gary avoids him. Claire, meanwhile, has started treating Gary as resentful. Without quite deciding to, she has stopped offering him the sixth-form classes he used to teach.\n\nBen's course had spent a morning on clusters and baselines, and he had used neither. He had one meeting and a hunch from Claire, and he had written down what fitted it.\n\nGary had, in fact, been quieter at home too. His wife had noticed it before anyone at school, and had asked him about it directly, over dinner, which is the one thing nobody at work had done.",
+   "misread": "Claire read her request as a harmless use of a keen junior's new skill, and Ben read being asked as a sign of trust. Both read Gary's folded arms and long breath as resentment about the job, a story that one meeting could not support. Gary read Ben's attention, correctly, as being watched.\n\nClaire also read Gary's withdrawal as being about her, because she had been given the job he had applied for, and that guilt made the resentment story feel obvious.",
+   "betterRead": "A junior who reads a colleague on your behalf is being made into an informant, whatever anyone calls it, and the power runs one way. Gary could not know what was being reported, could not answer it and could not object. The reading was also weak: one meeting, no baseline for Gary, and a conclusion that went straight to motive. The right flow, in the language of the previous chapter, was a private conversation between Claire and Gary, in which she asked how he was finding the term and listened. When she finally had it, Gary told her that his father was ill and that he was driving four hours every weekend to see him.\n\nClaire apologised to Ben for putting him in that position, and to Gary for how she had treated him. Ben apologised to Gary without excuses."
+  }
+ ],
+ "workedReading": {
+  "title": "Teaching a reading on a recorded interview",
+  "scene": "Priya, forty, has kept a baseline journal for a year, and has agreed to teach her friend Tom, thirty-five, who has just started the book. They choose two recorded television interviews: one with the chief executive of a company dealing with a product recall, and one with a football manager after a heavy defeat. Priya will narrate the first, and Tom will narrate the second while Priya only asks questions. Her aim is not to show Tom that she is good at this. It is to make her process visible, including the places where it is weak, and to find out what Tom actually sees. She has written the six steps of the protocol on a card and put it on the table between them.\n\nTom has read the first two parts of the book and is keen to try it on something real. He says, before they start, that he expects to be bad at it. Priya says that is a useful thing to expect.",
+  "steps": [
+   {
+    "label": "Set the doubt first",
+    "text": "Before pressing play, Priya tells Tom what they are not going to do. They will not decide whether anyone is lying, because nobody can do that reliably from behaviour, and the statement at the front of the book explains why. They will look for changes against each person's baseline, at moments they can point to, and say what else could explain each one. Tom looks slightly disappointed. Priya says that is the right reaction, and that the doubt is what will make everything else he learns worth having.\n\nShe also tells him that she will get things wrong in front of him, and that she wants him to say so when she does."
+   },
+   {
+    "label": "Model the baseline aloud",
+    "text": "In the first two minutes the interviewer asks easy questions about the company's history. Priya pauses and narrates. *She sits square, hands loosely together on the desk. Full sentences, a small nod at the end of each answer, and she looks at the interviewer most of the time. That's her baseline for this interview, in this studio, under these lights. It isn't her baseline at home.* Before she says any of it, she lets Tom look and asks what he would add.\n\nTom adds that the chief executive smiles briefly before each answer. Priya had not noticed it, and writes it down as part of the baseline."
+   },
+   {
+    "label": "Name the change and channels",
+    "text": "At the question about when the company first knew of the fault, Priya pauses again. *Here. Her hands come apart and go flat on the desk, and her answers get shorter. The nod at the end stops. That's two channels, hands and voice, maybe three with the nod, at a clear moment.* Tom says he did not notice the nod at all. Priya rewinds, and they watch the first two minutes again for it. It is there, after every answer, and Tom had not seen it because nobody had told him to look.\n\nPriya also checks the brief smile Tom had noticed. It has gone at the question about the fault, and it comes back two questions later, when the interviewer moves on to the company's plans."
+   },
+   {
+    "label": "Say the rival aloud",
+    "text": "Tom says, *So she's hiding something about the fault.* Priya says that is one story, and asks him for two more. He suggests that her lawyers may have told her to answer that question carefully. Priya adds that it is the question with the most legal weight in the interview, that she may be trying to recall exact dates, and that the change would look the same if she were telling the truth and frightened of getting a detail wrong. *All of those fit. The change tells us the question mattered to her. It doesn't tell us why.*\n\nShe also says what would help decide between them: whether the same change appears at the other questions about dates and timings, and whether it appears in other interviews where the stakes were lower."
+   },
+   {
+    "label": "Hand over the second clip",
+    "text": "On the football manager, Tom narrates while Priya only asks questions. He starts with a conclusion, *he's furious*, and Priya asks him for the baseline first. He goes back and looks. The manager is clipped and flat from the first second; there is no relaxed opening minute to compare with. Tom realises he cannot say what changed, because nothing had a chance to. Priya tells him that is a finding, not a failure. Some clips do not contain a baseline, and the honest reading is that there is not enough to read.\n\nTom says it feels like cheating to say there is nothing to read. Priya says it is the opposite: it is the step most readers skip, and the reason most of their readings of strangers on television are stories."
+   },
+   {
+    "label": "Ask how he knows",
+    "text": "Later, Tom says that the manager's jaw tightened at a question about whether he would keep his job. Priya asks how he knows. He rewinds and shows her the moment. She asks how he knows it is different. He scrolls back looking for an earlier answer to compare, and finds one, about the referee, where the jaw does exactly the same thing. Tom laughs and says he has caught himself out. Priya says he has done what this chapter is about: tested his own reading before anyone else had to.\n\nShe adds that his first reading may still have been right. The manager may well have been worried about his job. It is just that the jaw cannot tell them so, and now Tom knows it."
+   },
+   {
+    "label": "What both learned",
+    "text": "At the end, each writes down one thing the other noticed that they had missed. Tom had seen the chief executive's feet shift under the desk, which Priya had not watched at all. Priya wrote that Tom had spotted the missing baseline in the second clip faster than she would have, because he had no habit of filling it in. She also wrote, for herself, that she had skipped the nod when she first narrated, and only mentioned it when Tom missed it: a step she no longer noticed herself taking.\n\nThey agree to do it again in a fortnight, with Tom choosing the clips and narrating first."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Teaching from your best stories",
+   "body": "Every experienced reader has a few stories they love to tell: the meeting where they knew the deal would collapse, the friend they could see was struggling before anyone else did. Those stories are memorable because they are hits, and a teacher who builds lessons from them passes on a distorted picture of the skill. The learner hears five triumphs and no misses, and concludes that a good reader is usually right. Your ledger tells a different story, and it is the ledger you should teach from. Use worked examples from your misses as well as your hits, and say aloud how often readings of that kind have come true for you. A learner who knows that your confident calls about meetings land about two times in three has a realistic target. One who has heard only your best stories has a target that does not exist.\n\nWhen you teach from your misses, say what you learned from each one. A learner who sees you treat a miss as information rather than embarrassment has learned the most useful habit of all."
+  },
+  {
+   "title": "Correcting the conclusion instead of the step",
+   "body": "When a learner reaches a wrong conclusion, the quickest correction is to give him the right one: *no, she's not bored, she's tired*. It feels helpful and teaches the wrong lesson. He learns that your conclusion beats his, but not why, and next time he will either defer to you or argue. Correct the step instead. Ask where his baseline came from, what changed, and what else could explain it, and let him find where his reasoning went wrong. Often you will discover that his conclusion was as defensible as yours, and that neither of you had enough to go on. That discovery is worth more to both of you than being right. If you cannot find a step to correct, and only feel that he is wrong, you have found a gap in your own reading instead.\n\nThe same applies when the learner is right and you are wrong. Show him the step where you went astray, so that he learns how readings fail as well as how they succeed."
+  },
+  {
+   "title": "Practising on people who did not agree",
+   "body": "Learners want material, and the nearest material is the people around them: the family at dinner, colleagues in meetings, the couple at the next table. A teacher who says *watch your sister tonight and tell me what you see* has turned a family into a practice ground without asking anyone. Most people would object if they knew, and they would be right to. Choose material that is public by nature or given by consent: recorded interviews, film scenes, sport, your own video, and friends who have agreed to be watched and to hear what you saw. In public places, teach learners to read situations rather than individuals, to look without staring, and never to write down anything that identifies a stranger.\n\nThe skill you are teaching is supposed to make people kinder to others, and it cannot do that if its practice treats others as specimens."
+  },
+  {
+   "title": "Teaching too many signals at once",
+   "body": "Enthusiastic teachers pour out everything at once: feet, hands, breath, gaze, voice and distance, all in one evening. The learner leaves dazzled and keeps a few vivid fragments, usually the most dramatic and least reliable ones. Teach one idea at a time, and let it settle in practice before adding the next. A sensible order follows this book: doubt and the protocol first, then baseline on one person in one setting, then change in one channel, then clusters, then context. Each lesson should end with a small task the learner can do that week, and the next should begin with what happened when he did it. Slow teaching feels inefficient.\n\nIt is the only kind in which the learner keeps the steps rather than the slogans.\n\nIf a learner asks about a signal you have not reached yet, note the question and promise to come back to it, then do."
+  }
+ ],
+ "questions": [
+  {
+   "q": "I have only been practising for a few months. Should I wait until I am more experienced before I teach anyone?",
+   "a": "Teach the method now, and hold back on readings. The method is the part of this book you can pass on safely from the first week: there is no dictionary, a reading starts from a baseline, it needs a change in more than one channel at a clear moment, it has rivals and it ends in a test. You do not need a year of experience to teach that, and teaching it will strengthen it in you. What you should hold back is particular readings that your ledger does not yet support, such as *when people do this, it means that*. If a learner asks for one, tell him what you have noticed, how many times, and how often it turned out to be right. *I've noticed it four times and I was right twice* is an honest answer, and a good lesson in itself.\n\nHold back, too, on teaching the hardest material in this book, such as the chapters on crisis and safeguarding, until you have read them carefully yourself. Point the learner to them rather than paraphrasing."
+  },
+  {
+   "q": "What should I do if the person I am teaching turns out to be better at it than I am?",
+   "a": "Be glad, and let them teach you. It happens more often than you might expect, because a beginner has no habits to fill in the gaps, and he sometimes sees what an experienced reader has stopped looking at. Ask him how he knows, as you would want to be asked, and treat his good answers as material for your own ledger. The worst response is to protect your status by finding fault with his readings. That teaches him that confidence should be defended, which is the most damaging lesson in this chapter, and it closes off the best source of correction you have.\n\nThe point of teaching was never to be the better reader. It was for both of you to read more carefully, and a pupil who overtakes you is the best evidence that it worked."
+  },
+  {
+   "q": "My partner finds it unsettling that I am studying this. Should I try to teach them, or leave it alone?",
+   "a": "Offer, and let them decide. Their unease is reasonable: most people imagine that someone learning to read bodies will start reading theirs, and nobody likes to feel watched at home. The most reassuring thing you can do is show them the method, especially the doubt and the ethics, and tell them plainly that you will not read them and announce it. Invite them to be your honest mirror, to tell you when your readings of other people sound like stories and to ask how you know. Many partners find that more interesting than they expected. If they would rather not hear about it, respect that, and keep your practice to recordings, public footage and yourself.\n\nA skill that makes your partner feel observed in their own home has cost more than it is worth."
+  },
+  {
+   "q": "How can I teach a child about this without making them anxious about being watched?",
+   "a": "Start with them rather than with other people, and keep it playful. Children can learn to notice what their own body does when they are nervous or excited, where their shoulders go and what their hands look for, and that awareness helps them in exams, matches and arguments. The tapping game in this chapter's drills teaches the curse of knowledge without any watching at all. Avoid teaching signals as secrets about other people, and never use family members as examples. A child who learns that adults are reading them will feel watched, and a child who learns to read adults may start reporting on them.\n\nModel the kindness alongside the method. If they see you notice that someone is upset and respond by asking gently, that is the lesson they will keep."
+  },
+  {
+   "q": "Can I use entries from my baseline journal as worked examples when I teach?",
+   "a": "Yes, with care. Your journal is the best teaching material you have, because it contains real moments, your actual steps and your misses. Before you use an entry, change names and identifying details so that your learner could not recognise the person, and leave out anything you were told or saw in confidence. Apply the flows test from the previous chapter: the entry came from one context, and teaching moves it into another, so ask whether the person would mind that flow if they knew of it. Choose entries for their steps rather than their drama.\n\nA dull entry with a clear baseline, a change and a test that came out wrong teaches more than a dramatic one in which you happened to be right."
+  },
+  {
+   "q": "How will I know whether my teaching has actually worked?",
+   "a": "Not by your learner's confidence, which is the measure most likely to mislead you: Kassin and Fong's trained students were more confident than the untrained ones and less accurate. Look instead for three things. First, his predictions: does he write them down, check them and keep score? Second, his language: does he describe behaviour and changes rather than verdicts, and offer rival explanations without being asked? Third, his questions: does he ask you how you know, and does he ask it of himself? A learner who has understood will also become slower to read people aloud, and gentler when he does.\n\nIf he has become quicker and more suspicious instead, the teaching has gone wrong, whatever his hit rate."
   }
  ],
  "watch": [
