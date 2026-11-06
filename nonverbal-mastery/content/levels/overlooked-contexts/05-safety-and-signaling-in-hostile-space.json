@@ -73,6 +73,20 @@
    "doCaption": "Sitting down beside them",
    "dontCaption": "Looking away while someone is harassed",
    "annotation": "Distraction is often the safest intervention: sit beside the person targeted, turn toward them and talk about something ordinary."
+  },
+  {
+   "doPoseId": "p_walk_slow_down",
+   "dontPoseId": "p_walk_toward",
+   "doCaption": "Slowing, keeping a wide berth",
+   "dontCaption": "Walking straight at a stranger in a dark car park",
+   "annotation": "Someone on alert cannot read your intentions. Make them easy to read from a distance."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Turned towards them, starting an ordinary conversation",
+   "dontCaption": "Head down in a phone while someone is harassed",
+   "annotation": "Distraction is often the safest way to help. Sitting beside someone and talking changes the scene."
   }
  ],
  "caseStudy": "Rob, thirty-three, often walks home after dinner with his friends Ellis and Josh, who have been together for six years. One evening he noticed that they were holding hands as they left the restaurant, and let go without a word as they turned onto the high street by the late-night pubs. They took hands again two streets later.\n\nHe asked them about it the next time, a little awkwardly. Josh laughed and said they had a map in their heads of where it was fine and where it was not, and that the high street on a Friday was not. Ellis mentioned a night, years earlier, when someone had thrown a bottle. They had never told Rob, because it had never come up.\n\nA few weeks later, walking home alone, Rob found himself behind a woman on a quiet road, both walking at the same pace. He noticed her glance back and speed up. He crossed the road and slowed down, and she relaxed visibly. He had never thought about it before.\n\nOn the train a month after that, he saw a young man in a turban being shouted at by two drunk passengers. Rob did not feel able to confront them. Instead he sat down next to the young man, asked him which stop was best for the stadium and kept talking until the two men lost interest. The young man thanked him quietly when they got off. Rob realised he had been reading these moments for years without seeing them, and that each needed only a small move.",
@@ -91,6 +105,11 @@
     "Cross the road, slow down or let a gap open.",
     "Notice whether the other person's walk changes.",
     "Make this your default on quiet streets."
+   ],
+   "variations": [
+    "Notice whether you ever walk behind someone on a quiet street in the daytime too, and whether their walk changes when they hear you.",
+    "If you run or cycle, practise calling out before you overtake on shared paths, and notice how people respond.",
+    "Choose a different seat in an empty carriage or bus the next time you would otherwise sit close to someone alone."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Picture sitting down beside them and turning toward them.",
     "Note who you could delegate to in that setting: a driver, a guard, staff.",
     "Keep the question in mind for when you need it."
+   ],
+   "variations": [
+    "Write your question for three settings, a train, a bus and a bar, and practise saying each aloud in an ordinary voice.",
+    "Save the text number for your local transport police or bus company in your phone, so that delegating takes seconds.",
+    "Talk through the five Ds with a friend, and agree which you would each be most likely to use."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Practise letting your face and gaze stay exactly as they would for anyone.",
     "Reflect on what a stare would have told them.",
     "Write one sentence about what you noticed."
+   ],
+   "variations": [
+    "Notice your reaction to someone wearing a visible symbol of their faith, and practise the same stillness you would show anyone.",
+    "Notice whether anyone around you stares at a visibly different person, and whether you could, safely, simply carry on as normal beside them.",
+    "Ask yourself what someone visibly different would need to see from strangers to feel at ease on your street."
    ]
   },
   {
@@ -122,6 +151,11 @@
     "Notice what the relaxed places have in common.",
     "Plan one regular visit to a place where you can set vigilance down.",
     "Notice how your breathing and shoulders change there."
+   ],
+   "variations": [
+    "Tell one trusted person about the places on your map, safe and unsafe, and notice how it feels to say it aloud.",
+    "Try a new place where you think you might be able to relax, and notice whether your body agrees.",
+    "Notice the days when you have been most careful, and plan something restful for the evening after them."
    ]
   }
  ],
@@ -203,6 +237,45 @@
    "explain": "Distraction and delegation are safe, effective ways to intervene. Sitting beside the person targeted and talking about something ordinary changes the scene without a confrontation.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "When Britain's Office for National Statistics first asked in 2021, roughly what share of women felt unsafe walking alone after dark even in busy places?",
+   "options": [
+    "Around one in twenty, a figure that was much the same as for men",
+    "Around half, far more than men, with many changing their behaviour",
+    "Almost none, since busy places were felt to be safe by nearly everyone",
+    "Around a quarter, with no difference at all between women and men"
+   ],
+   "answer": 1,
+   "explain": "Around half of women said they felt unsafe walking alone after dark even in busy public places, far more than men, and many said they had changed their behaviour as a result. That is the calculation behind a glance over the shoulder at night.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You are running on a dark canal path and coming up fast behind a woman running alone. What fits this chapter best?",
+   "options": [
+    "Close the gap quickly and pass close by, since you are clearly just another runner",
+    "Call out well before you reach her, then overtake with a wide gap, or let a gap open",
+    "Slow down and run right behind her until she notices you and moves aside to let you pass",
+    "Shout that you are not a threat as you come up behind her, so she knows to relax"
+   ],
+   "answer": 1,
+   "explain": "She cannot read your intentions from footsteps in the dark. Calling out early and passing with a wide gap makes them easy to read, and puts the burden on the person who can adjust.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a colleague who is always vague about his weekends must be hiding something shady. What does this chapter suggest?",
+   "options": [
+    "That vagueness can be concealment of a kind Meyer described, and is not yours to uncover",
+    "That vagueness about weekends is a reliable sign of dishonesty in every kind of workplace",
+    "That the colleague should be asked directly, in a team meeting, what he does at weekends",
+    "That vague answers about weekends always mean the colleague dislikes the people he works with"
+   ],
+   "answer": 0,
+   "explain": "Meyer described concealment, such as describing a partner as a friend, as part of minority stress. It is a response to the setting, and making the room safer helps more than prying.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -226,6 +299,110 @@
    "work": "A long way to go for LGBTI equality",
    "author": "European Union Agency for Fundamental Rights",
    "note": "Publications Office of the European Union, 2020. The survey of almost 140,000 people, including avoidance of holding hands in public."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The new colleague who watched the door",
+   "scene": "Amir, twenty-nine, has just joined a logistics company as a planner. He grew up in a country where same-sex relationships are illegal, and he\n  moved to Britain six years ago. He is gay, lives with his partner, and has told nobody at work. In his first month, his colleagues find him polite,\n  efficient and hard to know.\n\n  He always chooses the seat in the team room that faces the door. When people ask what he did at the weekend, he says he \"saw friends\" or \"stayed in\".\n  When the team's banter turns, as it sometimes does, to jokes about who fancies whom, he goes quiet and finds something to do on his screen. At the\n  Christmas lunch, he sits at the end of the table and leaves early. One colleague, Gemma, says to another that the new planner seems a bit cold, and\n  wonders whether he thinks he is better than them.\n\n  The team leader, Kath, has noticed the same things. She has also noticed that Amir relaxes visibly in one-to-one meetings with her, and that he is\n  funny and warm when they talk about work. She does not know what is going on, and she decides it is not her job to find out.\n\n  A few weeks later, Kath hears one of the team make a joke about a gay footballer, and hears Gemma laugh. She also sees Amir's face, which goes very\n  still.\n\nAmir has also checked the company's website for any sign of an LGBT staff network, and found none. He has noticed that his manager's email signature includes nothing about pronouns or networks. He has read the room before he walked into it.\n\nHe has also heard, in his first week, a manager in another team describe a former colleague as \"very camp\" in a tone that made the room laugh. He has filed it away.\n\nIn his first month, he also declined the invitation to the team's drinks twice, citing family plans. Gemma had taken that personally too.",
+   "misread": "Gemma read Amir's careful neutrality, vague weekends and silence during the jokes as coldness or arrogance. She did not consider that he might be reading the room, and the room had given him reasons to be careful.\n\nThe colleague who made the joke about the footballer read the laughter as agreement that it was harmless, and Amir's silence as no response at all.\n\nKath's first instinct, too, had been to wonder whether Amir was unhappy in the job, and she had nearly asked him in a one-to-one whether he was settling in, a question that would have put him on the spot without telling her anything.",
+   "betterRead": "Meyer described minority stress as including the constant expectation of rejection, the effort of watching for danger and the work of hiding parts of oneself, and this chapter describes how vigilance and concealment look from outside: a seat with a view of the door, vague answers, silence when jokes start. To someone who does not carry it, it can read as unfriendliness. Kath did not try to work out what Amir was hiding, which would have been a form of intrusion. Her better response was to make the room easier. She told the joker, privately and plainly, that jokes like that were not acceptable in her team, and said the same at the next team meeting without naming anyone. She began asking about weekends with \"Did you get up to anything nice?\" rather than \"Did you and your wife...?\" A few months later, Amir mentioned his partner, Daniel, in passing. Kath asked what Daniel did for a living. Gemma, it turned out, had been the first to ask whether Daniel would be coming to the summer barbecue.\n\nKath also set up a small staff network the following year, with Amir's help, and three other colleagues joined."
+  },
+  {
+   "title": "The runner on the canal path",
+   "scene": "Naomi, thirty-four, runs along the canal path three evenings a week after work. In winter, that means running at dusk, on a path with no\n  lights, high hedges on one side and water on the other. She runs with her phone in her hand and one earbud out, and she knows every bridge where\n  she can get off the path if she needs to.\n\n  One evening she hears footsteps behind her, fast and heavy, closing in. She glances back and sees a man in dark clothes about twenty metres away and\n  gaining. Her heart rate jumps. She speeds up; so does he. When he is right behind her, she swings round, phone raised, ready to shout.\n\n  The man, Craig, forty, pulls up short. He is a runner too, training for a half marathon, and he had been trying to overtake. He holds his hands up\n  and says, a little irritably, \"Do I look like a threat?\" Then he runs past her and on up the path, shaking his head.\n\n  Naomi stands on the path for a minute, shaking, then walks home. Craig, at home, tells his wife about the woman on the canal who nearly attacked him\n  with her phone, and says that it is getting so that a man cannot go for a run without being treated like a criminal. His wife asks him how\n  he would have felt, in the dark, hearing those footsteps.\n\nNaomi has thought about running only in daylight in winter, which would mean running only at weekends. She has decided that the canal is hers too, and that she will not give it up.\n\nShe has also, over the years, been followed twice on that path, once by a man on a bike who circled back three times. She remembers every bridge because of that evening.",
+   "misread": "Naomi read the fast, heavy footsteps closing in behind her at dusk as a possible threat. Craig read her alarm as an accusation against him personally, and his own innocence as something she should have been able to see.\n\nCraig also read his own speed as neutral, when, from twenty metres away in the dark, it was the most alarming thing about him.\n\nHis wife's question made him see, for the first time, that the woman could not have known what he knew about himself, and that his irritation had been a demand that she should.\n\nNaomi, for her part, read her own fright afterwards as an overreaction, and nearly stopped running on the canal. It was not an overreaction; it was a reading made with the only information she had.",
+   "betterRead": "When Britain's Office for National Statistics first asked in 2021, around half of women said they felt unsafe walking alone after dark even in busy public places, and many had changed their behaviour as a result. Naomi's alarm was a reasonable reading of footsteps she could not interpret; she could not see Craig's intentions, only his speed and his closeness. This chapter's principle is that the burden of making it easy falls on the person who can adjust. Craig's better approach, which he adopted after his wife's question, was to make his intentions legible from a distance: on dark paths, to call out \"Runner behind, passing on your right\" well before he reached anyone, to overtake with a wide gap, or to slow and let a gap open if passing was difficult. The next time he did it, the woman ahead of him waved a hand in thanks without looking round.\n\nCraig also told the men in his running club about it, and several of them said they had never thought about it either.\n\nNaomi kept running on the canal, and noticed that winter that more runners called out before they passed."
+  },
+  {
+   "title": "The colleague who stopped wearing his kippah",
+   "scene": "David, forty-seven, is an actuary, and he is Jewish. For most of his working life he has worn a kippah, a small skullcap, every day,\n  including at work, where nobody has ever commented on it except to ask, once or twice, what it was. After a week of news about attacks on Jewish\n  people in Europe, and a stranger shouting at him on the Tube, he starts taking it off before he leaves home and putting it on again when he gets back.\n  At work, he wears a flat cap in the street and takes it off at his desk.\n\n  His colleague and friend, Simon, fifty, notices. He assumes that David has become less observant, and mentions it lightly over lunch: \"Gone off\n  the hat, then?\" David says something vague and changes the subject. Simon thinks no more about it.\n\n  A month later, David's son, twelve, asks his father at dinner why he takes his kippah off on the way to the station. David tries to explain\n  without frightening him, and finds he cannot. The boy asks whether he should take his own off at school.\n\n  David mentions this to Simon, eventually, on a walk at lunchtime. Simon is quiet for a long time. He says he is sorry he made a joke about it, and\n  that he had not thought about what it might mean.\n\nSimon also remembers, now, that David had once mentioned a synagogue near his old office being guarded by police, and that he had thought it a strange detail and moved on.\n\nDavid has also stopped going to the café near the office that he used to visit every lunchtime, because a man there once looked at his kippah and said something under his breath.\n\nWhen he talks to Simon on the walk, he does not look at him, and keeps his hands in his coat pockets.",
+   "misread": "Simon read the missing kippah as a change in David's faith and made a light joke about it. He did not consider that it might be a calculation about safety, because he had never had to make one about anything he wore.\n\nAnd David's vague answer to the joke, which Simon read as a man not wanting to discuss his faith, was a man not wanting to discuss his fear.\n\nSimon also read his own joke as the kind of friendly teasing they had always shared, which made it harder to see that, this time, it had landed on something raw.\n\nDavid's son, too, had read the missing kippah as something to copy, which is how children learn a map of danger from the adults around them.",
+   "betterRead": "This chapter describes how people whose faith or ethnicity is visible make a calculation that others do not: whether to wear a symbol at all, depending on the week's news. David's flat cap was not a change in belief; it was a map of where he felt safe. Simon's joke was kindly meant and showed how invisible the calculation is to people who never have to make it. The better response, which Simon chose after their walk, was not to advise David, who knew his own risks far better than anyone, but to make the spaces Simon could influence safer. He told David that if he ever wanted company on the walk to the station, he only had to say. He challenged a colleague's comment about \"those people\" in a meeting the following week. And he left the choice about the kippah where it belonged, with David.\n\nDavid's son asked him, a few months later, whether Simon was the man from work who walked him to the station. David said yes."
+  },
+  {
+   "title": "The man who could not stop scanning",
+   "scene": "Joel, forty-one, is a Black gay man who works as a pharmacist in a market town. He has been shouted at in the street more times than he can\n  count, once followed home, and twice refused service. He has learned to scan every room he walks into, to check who is behind him at cash machines,\n  to keep his voice low on certain streets, to choose seats with a view of the door and to describe his partner, Aaron, as \"my friend\" when he does\n  not know who is listening.\n\n  He is good at it. He has not been hurt in years. But he is tired in a way that does not go away with sleep. His shoulders ache. He finds it hard to\n  relax even at home, and he has noticed that he snaps at Aaron after days when he has had to be especially careful.\n\n  Aaron suggests, one Sunday, that they try a running club in the city for gay and bisexual men that a friend has mentioned. Joel is reluctant. He\n  does not much like groups. But he goes.\n\n  On the first run, through a park on a sunny morning, he notices after twenty minutes that he has not looked behind him once. He has been talking to a\n  man about the best route up the hill, laughing, and his shoulders have come down. On the drive home he is quiet. Then he tells Aaron that he had not\n  realised how long it had been since he had stopped watching.\n\nAt work, he is known as calm and unflappable. Nobody there knows how much of that calm is the effort of watching.\n\nHe has also noticed that he always books restaurants for himself and Aaron in the city rather than in their own town, an hour's drive away, and that he has stopped asking himself why.",
+   "misread": "Joel had read his own vigilance as simply part of who he was, and his tiredness and irritability as personal failings. Aaron had read the snapping as Joel being in a bad mood, until he connected it with the days that had cost him most.\n\nHis colleagues read his calm as temperament, when much of it was the discipline of a man who had learned to keep his face still in public.\n\nJoel's GP, at an earlier appointment about his back, had read his tension as ordinary work stress, and Joel had not corrected him.",
+   "betterRead": "Meyer's research, and the decades of work that followed, link minority stress with poorer mental and physical health, and this chapter notes that constant scanning keeps the nervous system on a low simmer. For people who belong to more than one group that is often targeted, the watching can be doubled. Joel's vigilance had kept him safe, and nobody should tell him to drop it where it does. But he had no place where he could set it down. The better step, which the running club gave him, was regular time in a place where watching was not needed. Joel kept going every Sunday. He also told Aaron when a day had been especially hard, so that the snapping could be named rather than taken personally. When the tiredness did not lift over the winter, he saw his GP, who referred him to a counselling service run by and for LGBT people. He said later that the Sundays and the counselling together gave him back something he had not known he had lost.\n\nAaron started coming to the Sunday runs too, and they began to hold hands on the walk back to the car."
+  }
+ ],
+ "workedReading": {
+  "title": "Stepping in on a night bus",
+  "scene": "Ben, twenty-two, is on the night bus home after a shift at a restaurant. It is half past midnight, and the top deck is half full. A woman in her fifties, wearing a headscarf, is sitting alone near the front, reading on her phone. Three young men get on at the next stop, already drunk, and sit behind her. Within a minute, they are making loud comments about her scarf, laughing, and one of them kicks the back of her seat. She keeps her eyes on her phone, but her shoulders have gone up and she has stopped scrolling. Nobody else on the top deck reacts. Several people have their eyes fixed on their own screens. Ben is not a fighter, and there are three of them. He remembers the five Ds that the chapter on networking described, and decides what he can actually do.\n\nHe also notices that the woman has moved her bag from the seat beside her onto her lap, as if to make room, or to be ready to leave. It tells him something about how often this has happened to her.\n\nHe also remembers his own mother telling him about a night when men shouted at her on a bus, and how she had said afterwards that the worst part was that nobody else had looked up.\n\nHe also knows that if he does nothing, he will think about it for days.",
+  "steps": [
+   {
+    "label": "Check your own safety",
+    "text": "Before doing anything, he thinks about his own safety and the woman's. Confronting three drunk men directly could make things worse for both of them. He decides that direct challenge is not the right D here. The five Ds are distract, delegate, document, delay and direct, and the chapter is clear that you choose the one you can do safely.\n\nHe also checks where the driver's intercom is and whether there are cameras on the top deck, which there are, and notes that this makes it less likely the men will escalate.\n\nHe also notices that he is frightened himself, and that his heart is pounding. He takes one slow breath out before he stands up, which steadies his voice for the question."
+   },
+   {
+    "label": "Distract with your body",
+    "text": "He gets up, walks to the front and sits down in the seat beside the woman, turning slightly towards her so that his body is between her and the aisle. He asks, in an ordinary voice, \"Sorry, do you know if this goes past the hospital? I always get confused at the roundabout.\" She looks up, startled, and then understands. She says yes, two more stops.\n\nHe also keeps his voice at an ordinary volume, so that the men behind can hear an ordinary conversation, not a challenge.\n\nHe also chooses a question that she can answer easily, about the route, so that she does not have to talk about what is happening or explain herself."
+   },
+   {
+    "label": "Keep the conversation ordinary",
+    "text": "He keeps talking: about the hospital, about his shift, about the weather. He does not look round at the men or mention them. The point is to change the scene, so that the woman is no longer alone and the men no longer have an audience of one frightened person. After a few minutes, the comments behind them tail off into muttering.\n\nHe also notices that once he has sat down, two other passengers have looked up from their phones, as if the scene has changed for them too.\n\nHe does not try to make a point of it or to show the men that he has defeated them. The aim is a quiet bus, not a victory."
+   },
+   {
+    "label": "Delegate",
+    "text": "When the bus stops at the next stop, he texts the bus company's number displayed on the window, giving the bus number and the location and saying that a passenger is being harassed. On many buses, he knows, the driver can also be alerted by the emergency button or the intercom. Getting someone with authority involved is safer than taking it on himself.\n\nThe bus company replies within a few minutes saying the driver has been informed. At the next stop, the driver comes up the stairs and stands at the top for a moment, looking along the deck, before going back down.\n\nHe also notices that the driver's presence at the top of the stairs did more in five seconds than he could have done in five minutes, which is why delegation matters."
+   },
+   {
+    "label": "Document, if she wants it",
+    "text": "He considers filming the men, and decides against it unless the woman wants it. Filming can escalate a situation and can expose the person being targeted. If things had become violent, he would have noted the time, the bus number and what the men looked like, to give to the police, but he would have asked her first whether she wanted to report it.\n\nHe also asks himself whether the woman would want the men's faces on his phone, and concludes that she would most want the bus to be quiet and the journey to end."
+   },
+   {
+    "label": "Delay: check in afterwards",
+    "text": "When the three men get off at the station, still muttering, Ben asks the woman quietly whether she is all right, and whether she would like him to wait with her at her stop. She says she is fine, that her son is meeting her, and thanks him. He says it is nothing. He does not ask her to tell him how she feels or make a speech about the men.\n\nHe also does not tell her she should report it, which would be her decision, not his, though he gives her the bus number in case she wants to.\n\nHe also gets off at his own stop rather than staying on to protect her, because she has told him she is fine, and her answer is the one that counts."
+   },
+   {
+    "label": "What happened",
+    "text": "Her son is waiting at the stop. She points Ben out to him from the pavement, and her son raises a hand. On the way home Ben realises that he did nothing heroic. He sat down, asked about a roundabout and sent a text. He also realises that, of the twenty people on the top deck, he was the only one who did anything, and that it had taken him about thirty seconds to decide.\n\nHe also tells his flatmates about it the next day, and one of them says she had always wondered what she would do in the same situation. They talk through the five Ds together.\n\nA few weeks later, on the same route, he sees another passenger sit down beside a teenager who is being mocked, and ask her about the route. He smiles to himself."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Asking people to justify their caution",
+   "body": "When someone describes their vigilance, letting go of a partner's hand on a particular street, taking off a kippah on the commute, crossing the road at night, a common response is to question it: \"Isn't that a bit paranoid?\", \"Nobody would care round here,\" \"You can't live your life like that.\" The intention is often reassurance. The effect is to tell the person that their reading of their own safety is wrong, when they are almost always better placed to make it than you are. Many have specific experiences behind their caution, like the bottle Ellis and Josh remembered, which they may not want to share. Meyer's account of minority stress describes the expectation of rejection as a learned response to real experience, not an irrational fear. If someone tells you about their map, believe it, and ask whether there is anything you can do to make a particular place easier.\n\nIt also helps to remember that someone's caution is usually built on the worst thing that has happened to them, not the average."
+  },
+  {
+   "title": "Taking a woman's caution personally",
+   "body": "Many men feel hurt or angry when a woman crosses the road as they approach, holds her keys between her fingers, speeds up or turns round sharply, as Craig did on the canal path. \"Do I look like a threat?\" The honest answer is that she cannot tell, and that her caution is not an accusation against you in particular. It is a response to the fact that she cannot read the intentions of a stranger in the dark, and that the cost of getting it wrong falls on her. Arguing with her caution, or making a point of your innocence, makes the moment more frightening, not less. The more useful response is the one this chapter recommends: make your intentions easy to read from a distance by keeping a generous gap, crossing the road, calling out before you overtake, choosing a different seat. It costs you a few seconds and removes a fear she would otherwise carry home.\n\nIf you feel stung, notice that the feeling passes in a few seconds, while her fear might have lasted the whole way home."
+  },
+  {
+   "title": "Stepping in in a way that escalates",
+   "body": "When someone is being harassed, the urge to do something can lead to doing the wrong thing: squaring up to the harasser, shouting, getting physical or filming in a way that draws more attention to the person being targeted. Each can make the situation more dangerous for everyone, especially the target, who may then face the harasser alone later. The five Ds exist because there is usually a safer option than direct confrontation: distract by talking to the person targeted, delegate to staff, a driver or the police, document if the person wants it, and check in with them afterwards. Direct challenge has its place, when it is safe and when you can do it calmly. The test is whether your action makes the person being targeted safer. If it mainly makes you feel braver, choose another D.\n\nIf you are unsure, distraction and delegation are almost always safer starting points than confrontation.\n\nAnd never put the person being targeted in the position of having to manage your intervention as well as the harassment."
+  },
+  {
+   "title": "Assuming a place is safe because it feels safe to you",
+   "body": "It is easy to assume that a pub, a street or a town is friendly because nothing bad has ever happened to you there. \"It's fine round here\" is usually said by someone whose map has no danger marked on it. But other people may have a different map of the same place, drawn from different experiences, as Ellis and Josh did of the high street. When you are choosing a venue for a group, planning a route home or inviting a same-sex couple or a friend who wears a visible symbol of their faith, ask them where they would feel comfortable rather than telling them that a place is safe. And when they choose somewhere else, or let go of each other's hands, or take off a scarf, do not argue. Their reading of the place is information you do not have.\n\nIt also helps, when planning an event, to ask quietly, rather than in a group, where people would feel comfortable.\n\nIf someone tells you a place does not feel safe to them, add it to your own map too. It may change where you suggest next time."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is it really that unsafe for same-sex couples to hold hands in public?",
+   "a": "It depends on the place, and on the couple's experience, but the caution is common and has reasons. In the European Union Agency for Fundamental Rights' 2019 survey of almost 140,000 people, 61 per cent of respondents across the EU and the UK said they often or always avoided holding hands with a same-sex partner in public. Doan, Loehr and Miller found that heterosexual Americans were about as willing to grant same-sex couples formal rights as other couples, but less approving of their public displays of affection. Legal equality, in other words, has not meant equal freedom to be affectionate in the street. Couples like Ellis and Josh carry a map of where it feels fine and where it does not. The right response is to respect the map, not to question it, and to make your own reactions unremarkable.\n\nAnd if friends of yours let go of each other's hands as you walk together, carry on as if nothing has happened. You are part of their map now."
+  },
+  {
+   "q": "What should I do if I find myself walking behind a woman at night?",
+   "a": "Make it easy for her to see that you are not a threat, without making a show of it. Cross the road, slow down and let a gap open, or turn off if your route allows. If you need to overtake, do so with a wide gap rather than closing in behind her, and if you are running, call out before you reach her, as Craig learned to. Avoid hurrying to catch up to reassure her, which is likely to frighten her more. If she glances back or speeds up, do not take it personally. As this chapter describes, around half of women in Britain said they felt unsafe walking alone after dark, and she cannot read your intentions from footsteps. A few seconds of your time can spare her the rest of the walk spent on alert.\n\nIt also helps to keep your hands visible and your phone out, if you can, which tends to read as ordinary rather than threatening."
+  },
+  {
+   "q": "How can I help if I see someone being harassed in public?",
+   "a": "Use one of the five Ds that bystander-training organisations teach, choosing the one you can do safely. Distract: start an ordinary conversation with the person being targeted, sit beside them or ask them a question, as Ben did on the bus and Rob did on the train. Delegate: get a member of staff, the driver, a guard or the police. Document: note details, or film from a safe distance if the person wants you to. Delay: check on them afterwards and ask whether they need anything. Direct: tell the harasser to stop, but only if it is safe and you can stay calm. Throughout, follow the wishes of the person being targeted, and do not do anything that puts them at greater risk.\n\nAfterwards, it can help to talk it through with someone, since stepping in, even safely, can leave you shaken too.\n\nIt also helps to decide in advance which D you would use in the places you go most often, so that you do not freeze when it happens."
+  },
+  {
+   "q": "A colleague seems guarded and hard to get to know. Could this be vigilance?",
+   "a": "Possibly, though you cannot know, and it is not your job to work out why. Vigilance and concealment, as Meyer described them, can look like coldness from outside: vague answers about weekends, a seat facing the door, silence when the jokes start. So can shyness, grief, tiredness or simply a reserved personality. The useful response is the same whatever the reason. Do not take it personally, do not speculate about what they might be hiding, and do not press for personal details. Make the space around you safer: challenge jokes about any group, use neutral language about partners, and treat whatever they do share with ordinary interest, as Kath did with Amir. If there is something they want you to know, they are more likely to tell you in a room that has shown it is safe.\n\nIt also helps to be patient. Trust in a new workplace is often built over months, not weeks."
+  },
+  {
+   "q": "I am always on alert in public. Is that normal?",
+   "a": "For many people who have been targeted, or who belong to groups that often are, it is a common and understandable response. Meyer's work describes vigilance as part of minority stress: a learned skill, built on real experience, that keeps people safe and also costs them. It is not a personal failing, and you should not be told to drop it in places where it protects you. But it helps to have places and people where you can set it down, as Joel found with his running club: friends, communities and venues where you do not have to watch. Notice how your breathing and shoulders change there. If constant alertness is affecting your sleep, your relationships or your ability to enjoy things, talk to your GP, or to a support service run by and for people who share your experience.\n\nIt can also help to notice which people make you feel able to stop watching, and to spend more time with them.\n\nIt is also worth knowing that vigilance often eases a little in places where people like you are visible and respected."
+  },
+  {
+   "q": "How can I make a venue or event feel safe for everyone?",
+   "a": "Mostly by acting, not by signalling. A rainbow flag or a welcome sign helps only if what happens inside matches it. Make sure staff know what to do if someone is harassed, and that they act on it quickly and visibly, without making the target explain themselves. Have a clear policy on harassment and enforce it. Train door staff and bar staff in the five Ds. Make the space easy to leave: well-lit exits, staff near the door, taxis called from inside. Listen to the people who use the space: ask regulars from different groups what would make them feel more comfortable, and act on what they say. Over time, the people who keep watch will notice whether this is a place where they can stop, and will tell their friends.\n\nIt also helps to make reporting easy and anonymous, since people who have been targeted often do not want to be the centre of attention again.\n\nAnd when something does happen, tell the person who reported it what you did about it, so that they know it mattered."
   }
  ],
  "watch": [
