@@ -73,6 +73,20 @@
    "doCaption": "Building small releases into the day",
    "dontCaption": "Collapsing only when the camera goes off",
    "annotation": "If the only release comes at the end of the day, the day is costing too much. Build in a few breaths of ease."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_stand_wide_planted",
+   "doCaption": "At ease, back to the room, at home",
+   "dontCaption": "Still braced and scanning at the family table",
+   "annotation": "A work body that will not switch off is common after long periods of vigilance. Small release points help it learn that home is safe."
+  },
+  {
+   "doPoseId": "p_mixed_seated_across",
+   "dontPoseId": "p_sit_hands_clasped_lap",
+   "doCaption": "Talking as equals about his daughter",
+   "dontCaption": "Stiff and formal at a school meeting",
+   "annotation": "Switching to be taken seriously can crowd out the conversation. An open question gives the person room."
   }
  ],
  "caseStudy": "Marcus, thirty-six, is a solicitor in a London firm. He grew up on an estate in south London, the son of Jamaican parents, and was the first in his family to go to university. At work he speaks in the even, unaccented English his colleagues use, keeps his hair cut short, wears the same navy suits as everyone else and laughs politely at jokes about places he has never been. At his mother's house on Sundays, his voice changes before he has taken his coat off.\n\nFor years he thought of this as a skill, and in many ways it was. He won clients, impressed partners and was promoted early. But by his mid-thirties he noticed that he was exhausted on Friday nights in a way the work did not explain, and that he was short with his son when he got home.\n\nThe turning point came at a team lunch. A colleague, overhearing him on the phone to his brother, imitated his accent and said that he had not known Marcus could talk like that. Everyone laughed. Marcus laughed too, and then sat in the toilet for ten minutes with his heart racing.\n\nHe told a senior partner, Ruth, what had happened. Ruth spoke to the colleague privately, and then did something Marcus had not expected: she began to talk at team meetings about her own background in a northern mining town, and to make it normal for people to mention where they came from.\n\nMarcus still switches. But he has found a few places where he does not have to, including Ruth's office, and he says the Friday exhaustion is less than it was.",
@@ -92,6 +106,11 @@
     "Mark which switches you choose freely and which you make because you feel you must.",
     "Mark which switches leave you most tired.",
     "Choose one costly switch to look at more closely."
+   ],
+   "variations": [
+    "Add online spaces to your map, such as work chats, family groups and social media, and note how you switch in each.",
+    "Ask someone who sees you in two settings, such as a partner or an old friend, how differently you come across in each.",
+    "Mark the switches that you are proud of as well as the ones that cost you, since not all switching is a burden."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Write down when and where each happened.",
     "Ask what the release tells you about the hours before it.",
     "Plan two small releases into tomorrow, such as a walk or a call with a friend."
+   ],
+   "variations": [
+    "Try a release point at the moment you notice tension building, rather than waiting until the end of the day.",
+    "Notice whether your release points involve particular people, places or activities, and plan more of the ones that work.",
+    "On a day with no release points, notice how you feel by the evening, and what you would change."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Mark which are needed for the work and which are habit.",
     "Choose one habit-norm to relax, such as by sharing something about your own background.",
     "Notice over the following weeks who seems more at ease."
+   ],
+   "variations": [
+    "Ask a colleague from a different background which of your team's norms they find hardest, and listen without defending them.",
+    "Relax one norm for a trial month, such as a dress expectation, and ask people afterwards whether it made a difference.",
+    "Notice which jokes in your team are about where people come from, and whether everyone laughs."
    ]
   },
   {
@@ -122,6 +151,11 @@
     "Arrange to spend time with them this week.",
     "Notice how your body feels in their company compared with at work.",
     "Write a few lines about what that difference tells you."
+   ],
+   "variations": [
+    "Notice your posture, voice and breathing in the first five minutes with the unswitched friend, and compare them with the first five minutes at work.",
+    "If you cannot think of anyone with whom you do not switch, notice that, and consider who might become that person.",
+    "Tell the friend, if it feels right, that time with them is one of the few places you can stop switching."
    ]
   }
  ],
@@ -203,6 +237,45 @@
    "explain": "The pattern fits a costly switch. Mapping which adaptations cost most, and making room to drop them, addresses the cause; the willpower-tank account is not well supported.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Day and colleagues' 2002 meta-analysis find about high self-monitors, people who readily adapt their behaviour to the situation?",
+   "options": [
+    "That they were rated as less trustworthy and less effective than other employees",
+    "That they tended to receive better performance ratings and to emerge as leaders",
+    "That they were more likely to leave their jobs within a year of starting them",
+    "That they showed no difference at all from other people in how they were rated"
+   ],
+   "answer": 1,
+   "explain": "High self-monitors tended to receive better performance ratings and to emerge more often as leaders. Switching is a real skill; the problem is its cost when it is constant and unchosen.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a parents' evening, a father sits stiffly, speaks in a careful, formal voice, nods often and asks no questions. What fits this chapter best?",
+   "options": [
+    "Conclude that he is not very engaged with his child's education",
+    "Consider that he may be switching to be taken seriously, and ask an open question",
+    "Tell him he can relax and speak however he likes, since it is only a parents' evening",
+    "Mention his manner to the form tutor, so that the school knows the family is distant"
+   ],
+   "answer": 1,
+   "explain": "Many men switch in exactly the institutions that matter most for their families, and the effort can crowd out the conversation itself. An open question and a pause give him room without exposing the switch.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that code-switching is tiring because willpower is a limited tank that runs out over the day. What does this chapter suggest?",
+   "options": [
+    "That the willpower-tank idea has not held up, and the effort of monitoring and hiding is the likelier cause",
+    "That the willpower-tank idea has been fully confirmed by every large study that has tested it carefully",
+    "That code-switching is not tiring at all once a person has practised it for a few years at work",
+    "That only people who are bad at switching find it tiring, since skilled switchers feel nothing at all"
+   ],
+   "answer": 0,
+   "explain": "The popular explanation of ego depletion has not held up in large replications. The ongoing effort of monitoring yourself and the strain of hiding parts of who you are are the more likely sources of the fatigue.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +304,110 @@
    "work": "Global Dexterity",
    "author": "Andy Molinsky",
    "note": "Harvard Business Review Press, 2013. Adapting across cultures without losing yourself."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The engineer who would not sell himself",
+   "scene": "Piotr, forty-one, is a civil engineer who moved to Britain from Poland twelve years ago. He leads a team of eight on a large bridge project, and\n  his work is known across the firm for being meticulous. He is applying for promotion to associate director, and the final stage is a panel interview\n  with three directors.\n\n  In the interview, he is asked to describe his biggest achievement. He talks about the bridge project, but mostly in terms of the team: \"We managed to\n  solve the foundation problem,\" \"The team worked very hard.\" When asked what he personally contributed, he says, \"I coordinated,\" and stops. When asked\n  where he sees himself in five years, he says he hopes to be useful to the firm. He sits very still, hands folded, and smiles little.\n\n  The panel is split. One director writes that Piotr \"lacks confidence and leadership presence\". Another notes that he \"undersells himself\". The third,\n  Alison, who has worked with engineers from many countries, says that she suspects they are hearing a cultural habit of modesty rather than a lack\n  of achievement, and suggests they look at the project record.\n\n  The record shows that Piotr designed the solution to the foundation problem himself, over a weekend, and saved the client four months. He had not\n  thought it appropriate to say so.\n\nAfterwards, he tells his wife that the interview went badly because they asked him to talk about himself, which he finds embarrassing in any language.\n\nHis previous manager had once told him, kindly, that in Britain you had to \"blow your own trumpet a bit\". Piotr had nodded, and had not known how.\n\nHis team, when they hear later that he was nearly turned down for lacking leadership, are baffled. Several of them say that he is the best leader they have had, precisely because he never takes the credit.",
+   "misread": "Two of the panel read Piotr's modest account, his use of \"we\" and his stillness as a lack of confidence and leadership. Piotr read the interview's invitation to boast as something to be handled with restraint, as he had been taught, and assumed his record would speak for him.\n\nThe director who wrote \"lacks presence\" also read Piotr's stillness as nerves, when it was the composure of a man who did not think it polite to fidget in front of senior people.\n\nHe also read the panel's silence after his answers as satisfaction, because in his experience a modest answer was received well, and did not realise until afterwards that they had been waiting for more.\n\nThe third director, Alison, read the same answers through her experience of colleagues from many countries, which is why she asked to see the record before deciding.",
+   "betterRead": "Molinsky described cross-cultural code-switching as carrying two difficulties: competence, knowing how to perform an unfamiliar behaviour, and identity, performing one that conflicts with your values. For Piotr, self-promotion was both unfamiliar and, in his upbringing, close to bad manners. His modesty was a norm, not a deficit. The better reading, which Alison prompted, was to judge the evidence of what he had done, as structured assessments are meant to. The panel promoted him. Alison also offered, afterwards, to talk with Piotr about how the firm's directors expected people to describe their work, framing it as a local custom rather than a correction. Piotr decided to adapt partly: he now describes his own contribution plainly when asked, and still credits his team first, which he says is the version of himself he can live with.\n\nAlison also suggested that the firm's interview guidance mention that modesty about achievements varies between cultures, so that future panels would check the record before reading reticence as weakness.\n\nHe also began mentoring two junior engineers from abroad, explaining the unwritten rules he had learned the hard way."
+  },
+  {
+   "title": "The teacher who covered",
+   "scene": "Jamie, thirty-one, teaches English at a secondary school, and he is gay. He is out to the staff, and nobody has ever said anything unkind. But he\n  has never mentioned his partner, Tom, at work, never put a photograph on his desk, and always says \"we\" vaguely when asked about his weekend. He\n  dresses more plainly than he does at home, keeps his gestures smaller in front of classes and has declined, twice, to help run the school's LGBT\n  group. He tells himself that this is just professionalism.\n\n  At the end of a hard term, he is exhausted in a way that the marking does not explain. He realises that he has spent every day editing himself: what\n  he says, how he moves, which stories he tells. A colleague, Hannah, mentions her husband several times a day without thinking about it. Jamie has\n  mentioned Tom perhaps twice in three years.\n\n  At the staff Christmas party, a colleague asks him, in front of others, whether he is \"still single\". Jamie hesitates, then says, \"No, I've been with\n  Tom for six years.\" There is a short pause. Then the colleague says, \"Oh, brilliant, bring him next time,\" and moves on.\n\n  On the way home, Jamie notices that his shoulders have dropped for the first time in months.\n\nHe also realises that he has never told his students he is gay, which is his choice, and that he has also never told the colleague he shares a classroom with, which is a choice he is no longer sure he made.\n\nHe also realises that he had chosen his school partly because he thought he would not need to cover there, and that he had covered anyway, out of habit.\n\nHannah, who mentions her husband constantly, has no idea that she has been the measure of something for Jamie. When he tells her later, she is quiet for a moment and then says she wishes she had asked about his weekends properly.",
+   "misread": "Jamie read his own editing as ordinary professionalism and did not notice how much of the working day it consumed. His colleagues, for their part, read his vagueness about weekends as privacy, and had no idea of the effort behind it.\n\nThe colleague who asked whether he was still single read Jamie's vagueness over the years as having nothing to share, and was delighted to be told otherwise.\n\nHe also read the brief pause at the party as the beginning of the judgment he had always feared, when it was simply a colleague catching up with news she had never been given.",
+   "betterRead": "Yoshino described covering: letting an identity be known but playing it down so that it does not make others uncomfortable, by changing appearance, limiting affiliation, holding back on advocacy and managing association. Yoshino and Smith's survey found covering common across large companies, and this chapter describes how much of it happens in the body. Jamie was covering on several of those dimensions at once, and the effort showed as exhaustion. The better path, which began at the party, was his own to choose: to let go of the covering that cost most and protected least. He put a photograph of Tom on his desk in January. The following year he agreed to help run the LGBT group. The head teacher, hearing about it, made a point of using neutral language in staff communications and mentioning partners of all kinds in the staff newsletter. Jamie still chooses what to share, as everyone does. He no longer edits every sentence.\n\nHe also noticed that two students in his form, months later, told him about their own families more openly than before, though he never knew whether the photograph had anything to do with it."
+  },
+  {
+   "title": "The father at parents' evening",
+   "scene": "Delroy, forty-five, is a bus driver, a Black British man who grew up in Birmingham and speaks, with his friends and family, in a warm, expressive\n  mix of Brummie and Jamaican English. At his daughter Keisha's parents' evening, he arrives in a pressed shirt, sits very upright in the small plastic\n  chair, folds his hands on the table and speaks in what his wife calls his telephone voice: slow, careful and flattened, with every consonant in place.\n\n  The teacher, Mr Hodges, explains that Keisha's work has slipped this term and asks whether there is anything going on at home. Delroy answers in\n  short, formal sentences: \"Not that I'm aware of.\" \"We'll speak to her.\" \"Thank you for letting us know.\" He nods often and does not ask any questions.\n\n  Mr Hodges comes away with the impression of a father who is not very engaged with his daughter's education. He mentions to Keisha's form tutor that\n  the parents did not seem particularly concerned.\n\n  In the car park, Delroy's wife asks him why he went so stiff. He says that he always does, in schools and hospitals and banks, because he has learned\n  that if he talks like himself, people decide he is aggressive or stupid before he has finished a sentence. He says that he was so busy talking\n  properly that he forgot to ask about the maths.\n\nKeisha, who has come with them, notices the change in her father's voice as soon as he sits down, and tells her mother later that she hates it when he does that, because it makes him sound like a stranger.\n\nAt home that evening, he tells Keisha about the maths, in his own voice, and she explains what has been going wrong, which she had not told anyone at school.\n\nMr Hodges, it turns out, had seen eighteen sets of parents that evening, and Delroy and his wife were the seventeenth. He was tired, and had read the stiffness quickly.\n\nDelroy also remembers his own father at parents' evenings in the 1980s, saying almost nothing, and his teachers writing on his report that his parents seemed uninterested. He had resolved to be different, and then found himself doing the same thing for the same reason.",
+   "misread": "Mr Hodges read Delroy's stiffness, formal speech and lack of questions as disengagement from his daughter's education. Delroy's careful switch, made to be taken seriously, had used up the attention he needed for the conversation itself.\n\nThe form tutor, hearing Mr Hodges's account, read it as one more sign that the family was distant, which might have followed Keisha through the rest of the year.\n\nDelroy, for his part, read Mr Hodges's brisk manner as confirmation that he was being judged, which made his voice more careful still.\n\nAnd Keisha read her father's telephone voice as a stranger's, which is one of the costs of switching that falls on the people who know the switcher best.",
+   "betterRead": "McCluney and colleagues found that Black employees who code-switched were rated as more professional, and summarised research on how such switching is used to avoid negative stereotypes. Outside work, many Black men switch in exactly the institutions that matter most for their families: schools, hospitals, banks and offices. The cost here was attention. Delroy's switch was so effortful that it crowded out the questions he wanted to ask, and the result was read as indifference. The better reading would have looked past the formality to what the father was doing: coming, in a pressed shirt, after a shift, to talk about his daughter. Mr Hodges might have asked an open question, such as \"What would be useful for you to know?\", and waited. Delroy rang the school the next day and asked about the maths. Mr Hodges, hearing his ordinary voice on the phone, noticed the difference, and thought about it.\n\nMr Hodges also began starting every parents' evening conversation by asking what the parents would like to know, before giving his own view, and found the meetings went better with everyone."
+  },
+  {
+   "title": "The soldier home on leave",
+   "scene": "Connor, twenty-seven, is a corporal in the army, home on leave for two weeks after a six-month deployment. At work, for six months, his body has\n  been doing what it was trained to do: upright, alert, scanning every room, back to a wall, voice clipped and loud, sleep light, every movement\n  efficient. He is very good at his job.\n\n  At home, the switch does not come back. At his sister's birthday meal in a crowded restaurant, he takes the seat facing the door, sits braced and\n  upright throughout, scans the room every few minutes and answers questions in short, clipped sentences. When a tray of glasses crashes in the\n  kitchen, he is half out of his seat before he has thought. His nephew, eight, asks him why he is so serious. His girlfriend, Becca, finds him\n  distant and hard to reach, and wonders whether something has changed between them.\n\n  On the third night, Becca asks him, carefully, whether he is all right. Connor says he is fine. Then he says that he does not know how to stop being\n  at work.\n\n  His father, who served twenty years earlier, overhears and sits down with him on the back step.\n\nEarlier that day, in the supermarket, he had found himself moving through the aisles as if clearing a building, and had laughed at himself, and then not laughed.\n\nAt home, he also notices that he makes his bed with hospital corners every morning and lays out his clothes for the next day, as if for inspection, and that his mother watches him do it.\n\nHis nephew also asks why Uncle Connor will not sit with his back to the window, and Connor, to his own surprise, cannot answer.",
+   "misread": "Becca read Connor's braced, scanning, clipped manner as distance from her, and wondered whether the relationship had changed. His nephew read it as seriousness. Connor read his own failure to switch off as a fault in himself.\n\nHis sister read his clipped answers as irritation at being there, and nearly cried in the toilets halfway through her own birthday meal.\n\nConnor also read Becca's question as a sign that she had noticed something wrong with him, which made him more guarded for a moment before he answered honestly.\n\nBecca's friends, when she mentions it, suggest that he might have met someone else while away, which is a reading of distance that had nothing to do with the cause.",
+   "betterRead": "This chapter describes the difference between switching as a skill, chosen and droppable, and switching as survival, which cannot be dropped even in safe company. Connor's work body was a skill that months of deployment had made automatic, and it had not yet learned that the restaurant was safe. His father's better response came from experience: he told Connor that it had taken him weeks to stop sitting facing the door, that it was normal, and that it would ease with time. He suggested small release points: a long walk every morning, an evening with one old friend rather than a crowd, and sitting with his back to the room once, on purpose, to see how it felt. Becca learned not to take the distance personally. When the alertness had not eased by the end of his leave, Connor spoke to his unit's welfare officer, who arranged support. He told Becca that knowing it was common helped more than anything else.\n\nHis father also told him, that night on the step, that he still sometimes sat facing the door in restaurants, thirty years on, and that it no longer bothered him."
+  }
+ ],
+ "workedReading": {
+  "title": "Widening the room as a team leader",
+  "scene": "Bev, fifty-two, is head of planning at a city council, with a team of eighteen. Over her first year she has noticed something she finds hard to name. Several of her newer staff, the ones from backgrounds unlike the senior planners', seem braced at work in a way the others do not: very formal in meetings, careful about what they wear and say, quiet at the team social, and noticeably more relaxed when she bumps into them outside work. One, Kwame, a talented young planner, told her in his exit interview from a previous job, which he showed her, that he had left because he was tired of being someone else all day. Bev does not want to lose people for that reason. She decides to use the Widen the Room drill in this chapter, starting by looking at the norms rather than at the people.\n\nShe also knows that she switches herself, more than anyone in the department realises: her Lincolnshire voice has been sanded smooth over thirty years of committee meetings, and it comes back only when she is tired or with her sister.\n\nShe also suspects that the newer staff are paying a price the senior planners never had to pay, because the senior planners set the norms in the first place, and fit them without effort.\n\nShe is also aware that she cannot see the effort directly, and that her reading of who is braced could itself be wrong, which is why she plans to ask as well as watch.",
+  "steps": [
+   {
+    "label": "List the unwritten norms",
+    "text": "She writes down the unwritten norms of her department as honestly as she can: suits for site meetings and most office days, a particular way of speaking in committee, a habit of small talk about holidays and house prices, a team social at a wine bar, an expectation that nobody leaves before the director. She asks two colleagues she trusts to add to the list. They add several she had not noticed, including a habit of mimicking accents in jokes.\n\nShe also notices that several norms on the list were never decided by anyone; they simply arrived with the people who were there first, and stayed.\n\nShe also notices that several norms on the list exist mainly because the department's founders were all from similar backgrounds, and that nobody has questioned them since."
+   },
+   {
+    "label": "Mark what the work needs",
+    "text": "For each norm, she asks whether the work genuinely requires it. Formal dress for public inquiries and committee meetings: yes. Suits on ordinary office days: no. A clear, precise style in written reports: yes. One particular accent in meetings: no. Leaving after the director: no. Jokes about accents: certainly not. She finds that most of the norms on the list are habit rather than need.\n\nShe also asks whether any of the necessary norms could be explained more clearly to newcomers, so that nobody has to guess them.\n\nShe also notices that \"professionalism\" has been used in two recent appraisals to criticise staff whose work was excellent, and rewrites the department's guidance to say what it means."
+   },
+   {
+    "label": "Relax one norm at a time",
+    "text": "She starts with dress, telling the team that ordinary smart clothes are fine on office days and that suits are needed only for committee and inquiries. She changes the team social from the wine bar to a rotating choice, including a café breakfast and a walk. She mentions in a team meeting that the accent jokes will stop, without naming anyone. She does not make speeches about diversity.\n\nShe also notices that two senior planners grumble about the dress change, and that both of them come in wearing more relaxed clothes within a month.\n\nShe also makes a point of not announcing the changes as being for anyone in particular, so that nobody feels singled out as the reason.\n\nShe also asks HR to check whether the department's dress guidance has ever been applied differently to different staff."
+   },
+   {
+    "label": "Go first",
+    "text": "She begins, in small ways, to share something of her own background: that she grew up on a farm in Lincolnshire, that her father left school at fourteen, that she still says \"duck\" to people when she is tired. Ruth, in the case at the start of this chapter, did the same. When the leader shows a less polished self, it becomes safer for others to do so.\n\nShe also notices that it is harder than she expected, and that she has been covering a little herself for thirty years.\n\nShe also notices that one senior planner, after hearing about the farm, mentions for the first time that he grew up above a chip shop, which surprises everyone.\n\nShe keeps it short and occasional. A leader who talks about herself constantly makes the room about her, which is a different problem."
+   },
+   {
+    "label": "Watch without calling out",
+    "text": "Over the following months, she notices that two of the newer staff have started to speak more in meetings, and that one comes to work in clothes that look like his own rather than a uniform. She says nothing about any of it. Remarking on a switch, even kindly, would expose the effort she is trying to reduce.\n\nShe also resists the urge to praise the change in anyone's manner, which would turn their easing into something she had noticed and was watching.\n\nShe also notices that Kwame laughs more freely in team meetings, and resists the temptation to mention it to him."
+   },
+   {
+    "label": "Check what people actually feel",
+    "text": "At the end of six months, she includes two questions in the team's anonymous survey: whether people feel they can be themselves at work, and what, if anything, makes that harder. The answers show improvement, and also name one thing she had not thought of: that team meetings are always at eight, which is hard for parents and for people who pray at dawn. She moves them to ten.\n\nShe also shares the results with the team, including the parts that are still not good enough, which earns her more trust than the improvements do.\n\nShe also asks the team which norms they would like to keep, and finds that several people value the formal committee style, which stays."
+   },
+   {
+    "label": "What happened",
+    "text": "A year later, none of the newer staff have left, which is a first for the department. Kwame tells her that he still switches at committee meetings, as everyone does, but that he no longer feels he has to be someone else at his desk. Bev keeps her list of norms and reviews it every year. She notices that the senior planners seem more relaxed too, and that the walks have become the most popular social.\n\nShe also passes the list to the other heads of department, without the names, and two of them begin the same exercise.\n\nShe also notices that she herself says \"duck\" more often, and that nobody minds."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Rewarding only one version",
+   "body": "In many workplaces, appraisals, promotions and informal praise reward a particular style: a neutral accent, a measured voice, contained gestures, polished small talk, certain clothes. People who already have that style are rewarded for being themselves; people who have to switch into it are rewarded for switching, and quietly penalised when they do not. McCluney and colleagues found that both Black and white evaluators rated a Black employee who code-switched as more professional than one who did not. The result is that switching becomes a condition of advancement, and its cost falls on the people who differ most from the norm. If you assess others, check your criteria for style that the work does not need, as the drill in this chapter suggests, and look for what people actually do. Polish is not the same as competence.\n\nA useful check is to ask whether your highest performers all share one style, and whether the work explains that."
+  },
+  {
+   "title": "Demanding authenticity",
+   "body": "The opposite mistake is to urge people to drop their switch: \"Just be yourself here,\" \"You don't have to put on a voice for us,\" \"We want the real you.\" It is meant kindly, and it puts the burden back on the person to take a risk that they, not you, will bear if it goes wrong. The previous chapter on masking described the same problem with unmasking. A man who switches at work has usually learned, from experience, what happens when he does not. Telling him that it is safe does not make it safe; changing the room does. The useful approach is the one Bev took: widen the norms, go first in showing a less polished self, stop the jokes and comments that make switching necessary, and then let people decide for themselves, in their own time, how much to change.\n\nIt also helps to remember that people may switch for reasons that have nothing to do with you, and are not yours to remove.\n\nNotice, too, that \"be yourself\" is easiest to say for people who have never had to be anyone else."
+  },
+  {
+   "title": "Speaking for someone",
+   "body": "Some managers and colleagues, noticing that someone's natural style is read harshly by clients or senior staff, try to help by speaking for them: summarising their point in more polished language, explaining their manner to others, presenting their work for them. It can be well meant, and it can protect someone in a hostile room for a moment. But it tends to confirm the very reading it is meant to correct, by implying that the person cannot be understood without translation, and it takes visibility away from them. The chapter on the glass ceiling in Part IV described the difference between amplifying someone's point, which hands the floor back to them, and restating it in your own words. Hand the floor back. If a room is reading someone unfairly, challenge the room, not the person's style.\n\nIf you have to bridge a gap for a client, do it briefly and then turn to your colleague: \"Kwame can take you through the detail.\""
+  },
+  {
+   "title": "Reading the switch as disloyalty",
+   "body": "The cost of switching is felt at home as well as at work. Family and old friends may read a man's work voice, clothes or manners as a sign that he has changed, looks down on them or has abandoned where he came from: \"You've gone posh,\" \"You sound like a white man,\" \"Too good for us now.\" The chapter on class described Stephen, whose cousins teased him for exactly this. Such comments can make a man feel that he belongs fully in neither world, which is one of the identity costs this chapter describes. If someone you love switches for work, try not to read it as a verdict on you. Ask how it is for them, and let them be both people without having to choose. Both are real, as this chapter says; neither cancels the other.\n\nIf you are the one switching, it can help to tell family plainly that the work voice is for work, and that the home voice is still yours.\n\nAnd notice whether the people who tease are themselves switching, in other places, without anyone remarking on it."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is code-switching a bad thing?",
+   "a": "Not in itself. Adapting how you speak, dress and move to different settings is something almost everyone does, and Day and colleagues' 2002 meta-analysis found that high self-monitors, people who adapt readily, tended to receive better performance ratings and to emerge more often as leaders. The ability to read a room and fit it is a real skill. The problem this chapter describes is not switching but its cost when it is constant, unchosen and driven by fear of being judged or punished, especially when it falls most heavily on people whose natural style differs most from the norm. The difference between skill and survival lies in choice and cost: whether you switch because you want to, in a way you endorse, and whether you can drop it when you are somewhere safe.\n\nIt also helps to notice that most people switch in some way, which makes it easier to be generous about how others do it.\n\nIt also helps to remember that people switch in many directions, not only towards the norms of the powerful."
+  },
+  {
+   "q": "How can I tell whether my own switching has become survival?",
+   "a": "Look for the signs this chapter describes. You are exhausted in a way the work itself does not explain, as Marcus was on Friday nights. You are short-tempered at home after days of switching. You cannot drop the switch even with people you trust, as Connor could not at his sister's birthday. You feel a jolt of fear when someone sees the other version of you, as Marcus did at the team lunch. You no longer know which version is really you. The Switch Map and Release Points drills help you see where the cost falls. If several of these signs fit, it is worth looking for places where you can stop switching, and, if the exhaustion is affecting your health or relationships, talking to your GP or someone you trust.\n\nIt can also help to talk with others who switch in similar ways, who may recognise the cost and share what helps."
+  },
+  {
+   "q": "Why does switching tire me out if I am good at it?",
+   "a": "Because it takes effort to monitor yourself all day, even when you do it well. Hülsheger and Schewe combined ninety-five studies of emotional labour and found that surface acting, displaying what you do not feel, was strongly linked to exhaustion, while deep acting, actually feeling what you display, was much less so. Switching often involves a great deal of surface acting: the laugh at the joke that is not funny, the neutral face over an irritation, the careful voice over your natural one. A popular explanation for this kind of fatigue, that willpower is a limited tank that runs out, has not held up in large replications. The more likely explanation is the ongoing effort of monitoring and the strain of hiding parts of yourself, which is why places and people where you can stop matter so much.\n\nIt also helps to build in time with people who know all of you, which is where the monitoring can finally stop.\n\nIt also helps to know that surface acting is the costly part, so finding something you genuinely feel, even appreciation, can ease the load."
+  },
+  {
+   "q": "What can a manager do about code-switching in a team?",
+   "a": "Look at the room rather than the people. List the unwritten norms of dress, speech, socialising and behaviour in your team, and ask which ones the work genuinely needs, as Bev did. Relax the ones it does not. Stop jokes about accents, hair, food and backgrounds, and do not mimic how anyone speaks. Assess people on what they do, not on polish. Go first in showing a less guarded self, as Ruth and Bev both did. Do not call out anyone's switch, and do not urge people to drop it; change the conditions that make it necessary and let them decide. Ask, anonymously, whether people feel they can be themselves at work and what makes it harder, and act on the answers. The aim is not to stop switching but to make it a choice rather than a toll.\n\nIt also helps to accept that some switching will remain, because some settings do have genuine requirements, and to be clear about which ones.\n\nIt also helps to notice who in the team has never had to switch, since they may be the last to see the problem."
+  },
+  {
+   "q": "My partner seems like a different person at work events. Should I say something?",
+   "a": "Not in front of others, and not as a criticism. If your partner switches at work events, they may be doing what many people do, adapting to a setting with its own expectations, or they may be working hard to be accepted in a setting where their natural style is judged. Either way, pointing it out in public, as Marcus's colleague did at the team lunch, exposes something they may be working to keep invisible. In private, and with curiosity rather than judgment, you might ask how those events feel for them, and whether there is anything that would make them easier. Then listen. It may help them to know that you see both versions and love both, and that with you they do not need to switch at all.\n\nIf your partner tells you it is hard, take it seriously, and consider whether you can make those events easier, for example by staying close or leaving early together.\n\nAnd notice which version of yourself your partner sees most, and whether they would like to see the other one more often."
+  },
+  {
+   "q": "How can I adapt to another culture without losing myself?",
+   "a": "Molinsky's work suggests looking at two separate difficulties: competence, learning how the new behaviour is done, and identity, deciding whether and how far you are willing to do it. For competence, watch people you admire in the new setting, ask colleagues to explain the unwritten rules and practise in low-stakes moments. For identity, look for a version of the new behaviour that you can endorse, as Piotr did: he learned to describe his own contribution plainly while still crediting his team first, which felt honest to him. You do not have to choose between adopting the new culture completely and refusing it. Many people find a blend that works, and keep places, people and habits from their first culture where they can be fully themselves.\n\nIt also helps to stay in touch with people from your first culture, who can remind you who you were before you started adapting.\n\nIt also helps to forgive yourself the awkward early attempts, which almost everyone makes when they first adapt to a new setting."
   }
  ],
  "watch": [
