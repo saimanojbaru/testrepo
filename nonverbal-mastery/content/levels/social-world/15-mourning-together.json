@@ -73,6 +73,27 @@
    "doCaption": "Still walking with him months later",
    "dontCaption": "Gone after the funeral",
    "annotation": "The hardest months often come after everyone else has moved on. Keep inviting, keep walking, and mark the dates that matter."
+  },
+  {
+   "doPoseId": "p_older_group_circle",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Standing with the group at the wake",
+   "dontCaption": "A text sent, and staying away",
+   "annotation": "Messages are kind, but bereaved people remember who turned up. Being there, even saying little, is the gift."
+  },
+  {
+   "doPoseId": "p_pair_side_hug",
+   "dontPoseId": "p_stand_hands_pockets",
+   "doCaption": "An arm round his shoulders",
+   "dontCaption": "Hands in pockets at the graveside",
+   "annotation": "At a grave, a side hug or an arm round the shoulders says what words cannot, and asks nothing of the man receiving it."
+  },
+  {
+   "doPoseId": "p_pair_work_together",
+   "dontPoseId": "p_pair_men_apart_glance",
+   "doCaption": "Carrying, clearing, mending together",
+   "dontCaption": "Two friends who cannot find the words",
+   "annotation": "Many men grieve by doing. A shared task gives grief a form, and talk about the dead often follows."
   }
  ],
  "caseStudy": "Chris, fifty, has three friends from school: Ade, Simon and Mike. They play golf badly twice a year and share a group chat that is mostly about football. In June, Chris's son Jamie, nineteen, is killed in a car crash.\n\nAde drives straight round and sits in the kitchen for three hours, mostly in silence, making tea. Simon handles the phone calls Chris cannot face. Mike, who has never known what to say to anyone in pain, sends a message and then stays away, telling himself the family needs space.\n\nAt the funeral, Chris asks the three of them to help carry the coffin. Mike almost says no, then does it. Under the weight, shoulder to shoulder with the others, walking in step, he feels something give way. At the graveside he stands beside Chris with his arm across his shoulders, and neither of them says a word.\n\nIn the months after, the visits thin out. Ade keeps texting invitations to the golf; Chris keeps saying no, and Ade keeps asking. Mike sets a reminder in his phone for Jamie's birthday in October. On the day he sends a message: “Thinking of you and Jamie today. Remember him beating us all at crazy golf?” Chris rings him that evening and talks about Jamie for an hour, laughing and crying.\n\nOn the first anniversary, the four of them go to the grave together and then to the pub, where Chris tells stories about Jamie all evening. Mike notices that saying his name out loud does not break anything. It is the opposite.",
@@ -91,6 +112,10 @@
     "Write three things you will not say, because they explain or minimise the loss.",
     "Say the three true sentences aloud until they sound like you.",
     "Keep them somewhere you can find them."
+   ],
+   "variations": [
+    "Write a true sentence for a colleague's loss and one for a close friend's, and notice how they differ.",
+    "Ask someone who has been bereaved which sentences they still remember hearing, both the good ones and the bad."
    ]
   },
   {
@@ -101,6 +126,10 @@
     "For each, find out or recall the date of the death and the dead person's birthday, if you can.",
     "Put reminders in your phone for those dates.",
     "On the next one, send a short message that uses the dead person's name."
+   ],
+   "variations": [
+    "Add the birthdays of the people who died, as well as the dates of their deaths.",
+    "Send one message this month to someone whose loss was several years ago, using the dead person's name."
    ]
   },
   {
@@ -112,6 +141,10 @@
     "Follow wherever they take the conversation, including into silence or small talk.",
     "Leave when they signal they are tired, and say when you will come back.",
     "Afterwards, write down what you noticed about waiting."
+   ],
+   "variations": [
+    "Practise waiting in silence for a minute in an ordinary conversation, to get used to how it feels.",
+    "Ask a friend from a different faith or culture how visitors to a house of mourning are expected to behave there."
    ]
   },
   {
@@ -122,6 +155,10 @@
     "Write one side-by-side invitation you could make: a walk, a match, a job.",
     "Make it this week, and if they say no, ask again in a few weeks.",
     "Note any signs that their grief is turning into something heavier, and decide what you would do if you were worried."
+   ],
+   "variations": [
+    "Make the invitation a regular one, such as a monthly walk, rather than a single event.",
+    "If the person says no three times, change the invitation to something smaller, such as a short visit with a coffee."
    ]
   }
  ],
@@ -203,6 +240,45 @@
    "explain": "The months after a death are often the hardest, just as support falls away. Keep turning up, mark anniversaries, watch for grief turning into something heavier, and ask directly about suicide if you are worried.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Klass, Silverman and Nickman argue about grief?",
+   "options": [
+    "Many bereaved people keep a continuing bond with the person who died",
+    "Healthy grief always means letting go of the dead completely within a year",
+    "Grief follows five fixed stages that everyone must pass through in order",
+    "People who keep memories of the dead are failing to grieve properly"
+   ],
+   "answer": 0,
+   "explain": "They challenged the older view that healthy grief means letting go, arguing that many people keep a continuing bond through memories, rituals and conversations. Saying the dead person's name honours it.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague returns to work two weeks after his father's funeral. Everyone is avoiding the subject and he is eating alone. What fits this chapter best?",
+   "options": [
+    "Carry on avoiding the subject, since mentioning it would only upset him",
+    "Ask him for the details of how his father died, so that he can talk about it",
+    "Say you're sorry, use his dad's name if you can, and offer ordinary company",
+    "Tell him that time heals everything and that he will feel better soon"
+   ],
+   "answer": 2,
+   "explain": "Silence meant kindly often feels like erasure. A short, true acknowledgement, followed by ordinary warmth such as an invitation to lunch, tells him that his loss has been noticed.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that men grieve alone and do not need to mourn together. What does this chapter say?",
+   "options": [
+    "It is right, since men always prefer to keep their grief entirely private",
+    "Many men grieve well alongside others, in rituals and shared tasks",
+    "It is right for older men, though younger men like to mourn in groups",
+    "It is wrong, since men must talk about their feelings in order to grieve"
+   ],
+   "answer": 1,
+   "explain": "Many men grieve best side by side: carrying a coffin, telling stories at the usual table, cleaning a headstone together. Shared rituals give grief a form that does not depend on words.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +307,110 @@
    "work": "A Grief Observed",
    "author": "C. S. Lewis",
    "note": "Faber and Faber, 1961. A man's honest account of grief after his wife's death, and what helped and did not."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The colleague who came back",
+   "scene": "Imran, forty-four, returns to work two weeks after his father's funeral. His team of eight knew, because his manager sent an email. On his\n  first morning back, people say good morning and then look at their screens. In the kitchen, two colleagues stop talking when he walks in, say\n  hello and leave. Nobody mentions his father. At lunch, he eats at his desk, and the usual invitation to the café does not come.\n\n  By the afternoon, Imran feels invisible. He tells his wife that evening that it was as if nothing had happened, and that he does not know whether\n  to be relieved or hurt.\n\n  His colleagues, meanwhile, are talking about him in the pub. Several say they did not know what to say, and did not want to upset him. One says she\n  bought a card and left it in her drawer.\n\nImran's father had been ill for a year, and Imran had taken time off for appointments and hospital visits. Several colleagues had covered for him without being asked. He had been looking forward, in a strange way, to thanking them, and nobody gave him the chance.\n\nImran also notices that someone has moved the photograph of his father, taken at the office family day two years ago, from his desk. He finds it later in his drawer, face down. Whoever moved it meant well, and he puts it back.\n\nImran's manager had asked the team, in her email, to be kind to him when he came back. Several of them took that to mean leaving him alone.",
+   "misread": "Imran's colleagues read silence as tact: the kindest thing, they thought, was to treat him normally and not remind him. Imran read their silence as indifference, as if his father's death had been erased from the office.\n\nThe card left in the drawer was the clearest sign of their misreading. The kindness was there; the courage to deliver it was not.\n\nAnd by not inviting him to lunch, they took away the one ordinary thing that might have helped him feel that his life was carrying on.\n\nThe colleague who moved the photograph made the same mistake in a smaller form: trying to protect Imran by removing his father from view.",
+   "betterRead": "Bereaved people often say afterwards that they cannot remember what anyone said, but they remember exactly who acknowledged the loss and who did not. Silence meant kindly often lands as erasure. The better approach is a short, true acknowledgement, followed by ordinary warmth. The next morning, Imran's colleague Pete brought him a tea, put it on his desk, and said, \"I'm really sorry about your dad, mate. I'm around if you want a coffee.\" Then he went back to his own desk. The colleague with the card gave it to him, and wrote in it that she remembered Imran talking about his father's allotment. Their manager, Sue, asked him privately whether he wanted the team to say anything, and whether he needed flexibility over the next few months. At lunch, Pete invited him to the café, and they talked about football. On the way back, Imran said that his dad would have hated the café's coffee, and laughed for the first time in a fortnight.\n\nImran also told Sue, later, that the tea had meant more than any card."
+  },
+  {
+   "title": "The funeral he did not go to",
+   "scene": "Dan, thirty-two, gets a message from his best friend, Luke, saying that Luke's mother has died and that the funeral is next Thursday. Dan met\n  her twice, briefly. He has an important meeting on Thursday, and he feels awkward about going to the funeral of someone he hardly knew, in a town\n  where he will not know anyone. He sends Luke a long, warm message, sends flowers, and does not go.\n\n  At the funeral, Luke looks for him. Afterwards, Luke stops replying to Dan's messages for a few days, and when he does reply, his answers are\n  short. When Dan suggests a pint, Luke says he is busy.\n\n  Dan does not understand. He sent flowers and a long message. He did not know Luke's mother. Surely Luke understands.\n\nLuke's mother had been ill for months, and Luke had talked to Dan about it often, on the phone and at the pub. Dan had listened well. He did not realise how much Luke was counting on him to be there at the end.\n\nDan's sister, when he tells her about Luke's coolness, asks him a single question: if it had been his mother, would he have wanted Luke there? Dan does not answer, because he knows.",
+   "misread": "Dan read the funeral as an event for the person who died, and so decided that he had little reason to be there. He read his message and flowers as a fair substitute, and Luke's coolness as unreasonable.\n\nHe also read his own awkwardness as a reason to stay away, when awkwardness is almost universal at funerals and is rarely a good guide to whether you should go.\n\nLuke, too, did not say what he needed. Many bereaved people do not ask friends to come, and then are hurt when they do not. The safest assumption is that your presence is wanted.",
+   "betterRead": "Funerals are for the living as much as the dead, and the single most important thing a friend can do when someone is bereaved is to turn up. Luke was not looking for someone who had known his mother; he was looking for his best friend. Messages and flowers are kind, but they cannot stand in a crematorium car park beside someone. Luke's short replies and his refusal of the pint were the signs of a man hurt by an absence, and Dan's better response, once his sister pointed it out, was to repair it in person. He drove to Luke's house the following Saturday, without warning, and said on the doorstep, \"I should have been there on Thursday. I'm sorry. I'm here now.\" Luke looked at him for a long moment, and then let him in. They spent the afternoon sorting through his mother's photographs. Dan learned more about her in four hours than in the two times he had met her, and went to the scattering of her ashes a month later.\n\nDan also put the date of Luke's mother's death in his calendar, and rang Luke on the first anniversary."
+  },
+  {
+   "title": "The pub after the funeral",
+   "scene": "Tony, fifty-five, died suddenly of a heart attack. After his funeral, his six closest friends go to the pub where they have met on Friday nights\n  for thirty years. They sit at their usual table, with Tony's chair empty. For the first hour, they tell stories: the time Tony drove to Wembley with\n  the handbrake on, the karaoke, the fishing trip when he fell in. They laugh until they cry. Then they raise their glasses to the empty chair.\n\n  As the evening goes on, one of them, Kev, who was closest to Tony, drinks faster than the others. By ten, he is on his sixth pint, his voice is\n  getting louder and angrier, and he says, twice, that it should have been him.\n\n  The others look at each other. Nobody knows what to do. One suggests they let him get it out of his system.\n\nKev had seen Tony the day before he died, and they had argued about something trivial, a football result. Kev has not told any of the others.\n\nIan has known Kev for thirty years and has never seen him like this. Kev is the one who organises everything, the one who drove Tony to hospital when he broke his leg, the one who always knows what to say. Tonight he has said almost nothing except about the drink.\n\nBehind the bar, the landlord, who knew Tony for twenty years, has put a pint on the empty chair's side of the table and said it is on the house. Several of the men have stopped and looked at it for a long time.",
+   "misread": "The group read Kev's heavy drinking and anger as part of the evening's grief, something he needed to get out of his system. That was partly right. It also missed the moment when shared mourning was turning, for one of them, into something more dangerous.\n\nAnd their reluctance to intervene came partly from respect: nobody wanted to spoil a ritual that meant so much. Looking after someone within the ritual turned out to be possible.\n\nAnd the suggestion to let him get it out of his system assumed that drink would help him release the grief, when it was more likely to deepen the guilt.",
+   "betterRead": "Rituals give the body something to do with grief, and the friends' evening was a ritual in all but name: the usual table, the empty chair, the stories, the raised glasses. Norton and Gino found that people who performed rituals after a loss reported less grief, even when they did not believe that rituals worked. But mourning together also means watching each other. Kev's drinking, his rising anger and his repeated \"it should have been me\" were signs, as Part II described, that his grief might be carrying guilt and that his safety deserved attention. The better response was not to stop the ritual but to look after him within it. His friend Ian moved to sit beside him, got him a glass of water, and later walked him home. On the way, Ian asked him directly whether he was thinking of hurting himself, as 2.13 describes. Kev said no, just that he missed him. Ian rang him the next day, and the next, and they went fishing in Tony's honour a month later.\n\nKev told Ian, months later, about the argument the day before Tony died. Ian said Tony would have laughed about it."
+  },
+  {
+   "title": "The headstone on his birthday",
+   "scene": "Martin, sixty, lost his son, Josh, to cancer three years ago, at twenty-four. On Josh's birthday each year, Martin goes to the cemetery alone,\n  early in the morning, and sits by the grave. He has never told anyone that he does this. His wife goes later in the day, with flowers.\n\n  This year, three of Josh's friends from school, now in their late twenties, message Martin to ask whether they could come with him. They say they\n  think about Josh on his birthday and would like to do something. Martin is touched and unsure. He has always done this alone.\n\n  He says yes. They meet at the cemetery gates at eight. Nobody quite knows what to say.\n\nJosh's friends have also kept a group chat going since he died, in which they share photos and memories of him, especially on his birthday and the anniversary. Martin did not know it existed until one of them mentioned it at the gates.\n\nMartin has never been good at talking about Josh. In the first year, friends asked how he was and he said fine, and then they stopped asking. His wife talks about Josh often; Martin finds that he cannot, except at the grave, alone, where he talks to Josh out loud.\n\nAt the gates, the three friends stand in a loose group, hands in pockets, looking at the ground. One of them, Sam, is holding a carrier bag. Martin shakes their hands and says it is good of them to come, and then there is a silence that none of them knows how to fill.",
+   "misread": "Martin read his private visits as the way a father should grieve, quietly and alone. Josh's friends were not sure whether they would be intruding on something that belonged to the family.\n\nMartin also read his solitude as a choice, when it may have been partly that nobody had ever offered to come with him.\n\nAnd the friends' hesitation, whether they would be intruding, came from respect. Many people hold back from shared mourning because they think grief belongs only to the family, when the family often longs for others to share it.\n\nJosh's friends, too, had been unsure for three years whether they were allowed to grieve him, since he was not their son. Asking Martin was the first time any of them had said aloud that they missed him.",
+   "betterRead": "Klass, Silverman and Nickman argued that many bereaved people keep a continuing bond with the person who has died, through memories, rituals, conversations and places, and that this is not a failure to move on but part of grieving well. Shared rituals can carry that bond for several people at once. The better approach was to give the morning something to do, side by side. One of the friends, Sam, had brought a bucket, brushes and a cloth. Together, the four of them cleaned the headstone, pulled the weeds round it and put fresh flowers in the holder, mostly in silence. Then they sat on the grass and told stories about Josh that Martin had never heard. When they left, Martin shook each of their hands and held on. The next year, there were six of them. Martin said that he had thought the birthday would always be the loneliest day of his year, and that it had become one of the best.\n\nMartin also joined the group chat, and started posting photographs of Josh as a boy."
+  }
+ ],
+ "workedReading": {
+  "title": "Visiting a house of mourning",
+  "scene": "Ravi, forty-two, hears that the wife of his friend Paul has died after a long illness. The funeral is next week. Paul's sister has said that friends are welcome at the house in the evenings. Ravi has never visited a house of mourning before, and he does not know what to say or how long to stay. He decides to go on the second evening.\n\nRavi knew Helen a little: she used to make the best curry at their summer barbecues, and she once told him off for not wearing sunscreen. He has no idea what he will say to Paul, and he nearly does not go.\n\nHe also knows that Paul is not a talker. They play squash together on Tuesdays and talk about work and football. In fifteen years, they have never discussed anything personal, and Ravi has no idea what Paul will want from him.\n\nHe also reminds himself that he does not have to get it right. Paul will be surrounded by people for days, and nobody expects any of them to say the perfect thing.",
+  "steps": [
+   {
+    "label": "Arrive and greet",
+    "text": "At the door, Paul's sister lets him in. Paul is in the living room with several relatives. Ravi walks over and matches what Paul offers. Paul stands and holds out his hand; Ravi takes it, holds it a moment longer than usual, and puts his other hand on Paul's arm. Paul's face crumples slightly, and he pulls Ravi into a brief hug. Ravi leans into it and lets Paul end it.\n\nHe also leaves his coat on the hook in the hall rather than keeping it on. A coat kept on says a visitor is about to leave, and he wants to stay for a while.\n\nHe also notices that Paul's hand is cold and slightly shaky, and that his face is grey with tiredness. Paul has been greeting people for two days, and every greeting costs him something."
+   },
+   {
+    "label": "One true sentence",
+    "text": "Ravi says, \"I'm so sorry about Helen.\" He does not add that she is in a better place, that it was a blessing after so long, or that he knows how Paul feels. One true sentence, using her name, is enough. He has rehearsed it in the car so that it would come out steadily.\n\nHe also resists the urge to add anything about Helen's illness, or how hard it must have been to watch. Those sentences would ask Paul to relive it, in front of relatives.\n\nHe also says it quietly, close enough for Paul to hear but not for the whole room, so that the moment belongs to the two of them."
+   },
+   {
+    "label": "Sit, and wait",
+    "text": "Paul sits down again, and Ravi sits near him, at his level, rather than standing among the relatives. He does not launch into conversation. He waits, as visitors do during shiva, for Paul to speak first, so that Paul can decide whether to talk about Helen, about something else, or not at all.\n\nHe also leaves his phone in his coat. In a house of mourning, a phone in the hand says that a visitor's attention is somewhere else.\n\nHe also notices the other relatives' patterns: some talking loudly, some sitting very still, one crying in a corner. Mourning looks different in every body in the room, and none of it needs correcting.\n\nHe also chooses a seat beside Paul rather than opposite, so that Paul can look at him or away as he likes. In grief, as in so much else, side by side asks less."
+   },
+   {
+    "label": "Follow his lead",
+    "text": "After a minute, Paul says that Helen would have hated all these people in the house. Ravi smiles and says she always liked a quiet night in. Paul laughs, and starts telling a story about their honeymoon. Ravi listens, asks a question, and lets Paul talk. When Paul falls silent and looks at the floor, Ravi stays silent too.\n\nHe also shares a memory of his own when it fits: the time Helen told him off about the sunscreen. Paul laughs again and says that was exactly like her. Small, specific memories are among the gifts visitors can bring.\n\nHe also notices that Paul's voice changes when he talks about the honeymoon, lighter and quicker, as if remembering her alive gives him a moment's rest from remembering her dying."
+   },
+   {
+    "label": "Make yourself useful",
+    "text": "When the doorbell rings for the third time, Ravi says, \"I'll get it,\" and answers the door for the next visitors. He makes a round of tea for the relatives. Practical help gives his body something to do, and it takes small burdens off a family who have been on their feet for days.\n\nHe also asks Paul's sister, quietly, whether there is anything else the family needs: lifts to the funeral, someone to collect relatives from the station, someone to walk the dog.\n\nHe also washes up the tea cups before he leaves. Small, practical acts in a house of mourning are noticed and remembered, often more than anything said.\n\nHe also leaves the kitchen tidier than he found it, without making a fuss of it."
+   },
+   {
+    "label": "Leave when he tires",
+    "text": "After about an hour, Ravi notices that Paul's answers are getting shorter and that he keeps rubbing his eyes. He stands, says he will let him rest, and puts his hand on Paul's shoulder. He says, \"I'll be at the funeral on Tuesday, and I'll ring you next weekend.\"\n\nHe also says goodbye to the relatives he met, not only to Paul. A visit to a house of mourning is a visit to the family, and everyone there is grieving.\n\nHe also tells Paul's sister that he will be at the funeral, so that she knows to expect him, and asks whether they need anyone to help carry the coffin or give a reading."
+   },
+   {
+    "label": "Keep the promise",
+    "text": "Ravi goes to the funeral and rings the following weekend. He puts the date of Helen's death in his phone. Three months later, he invites Paul to a match. Paul says no, and Ravi asks again a few weeks later, and this time Paul says yes. On the anniversary, Ravi sends a message that says only, \"Thinking of you and Helen today.\" Paul replies that he had not expected anyone to remember.\n\nHe also notes that he had nearly not gone because he did not know what to say, and that he had said almost nothing, and that it had been enough.\n\nPaul tells him, a year later, that he does not remember anything anyone said in the first week, but that he remembers Ravi answering the door."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Staying away because you do not know what to say",
+   "body": "The commonest reason men give for not visiting the bereaved, not going to funerals and not calling is that they do not know what to say. Bereaved people almost never remember what was said. They remember who was there. A man who turns up, says one short true sentence and then sits with them has done more than one who sends a long, eloquent message and stays away. If you are not sure whether to go, go. If you are not sure what to say, say that you are sorry, use the dead person's name, and then let the mourner lead.\n\nIt also helps to remember that turning up can take many forms: going to the funeral, visiting the house, delivering food, standing at the back of a crematorium, sitting in the pub afterwards. Any of these counts.\n\nIt also helps to remember that it is never too late to turn up. A visit a week after the funeral, or a month, is still welcome, and often more so, because by then most people have stopped coming.\n\nIt also helps to take your cue from the family about the kind of presence they want. Some families want a crowd; others want a few close friends. A short message asking \"Would a visit help, or would you rather have some quiet?\" lets them choose."
+  },
+  {
+   "title": "Filling the silence with platitudes",
+   "body": "At a funeral or in a house of mourning, silence feels unbearable to many visitors, and they fill it: \"She's in a better place\", \"At least he's not suffering\", \"Everything happens for a reason\", \"I know how you feel\". Each of these explains or minimises the loss, and many bereaved people find them hurtful. The custom of waiting for the mourner to speak first, as visitors do during shiva, is wiser: you cannot know what the mourner needs, so let them decide. Sit near them, at their level, and be comfortable with silence. It is part of the comfort.\n\nIt also helps to resist telling your own story of loss. However well meant, it turns the conversation towards you, and the mourner may feel obliged to comfort you.\n\nIt also helps to watch your own discomfort. Platitudes usually come from the visitor's need to fill a silence, not from the mourner's need to hear them. Noticing that need, and letting it pass, is most of the skill.\n\nIt also helps to remember that the mourner may want to talk about the dead person, not about their own feelings. \"Tell me about her\" is often easier to answer than \"How are you feeling?\""
+  },
+  {
+   "title": "Avoiding the dead person's name",
+   "body": "Many people avoid saying a dead person's name to the bereaved, afraid of opening a wound. Most bereaved people say that what hurts more is the silence: the sense that the person they loved has been erased from everyone else's conversation. Klass and colleagues described how many people keep a continuing bond with the dead, and saying the name is one of the simplest ways to honour it. \"I was thinking about Jamie today\" or \"Helen would have loved this\" are often received with tears, and with gratitude.\n\nIt also helps to know that saying the name may bring tears, and that tears are not a sign you have done harm. They are often a sign that you have made it safe to grieve.\n\nIt also helps to keep using the name over the years. A father who lost a son ten years ago may still long to hear someone else say it, and almost nobody does.\n\nAnd when you do say the name, say it naturally, in an ordinary sentence. A name said in a hushed, careful voice can feel like a performance; said warmly and lightly, it feels like the person is still part of things."
+  },
+  {
+   "title": "Disappearing after the funeral",
+   "body": "In the first week after a death, there are visitors, flowers and food. By the third month, most of it has gone, just as the numbness wears off and the full weight of the loss arrives. The men who matter most are the ones who keep turning up: who invite the bereaved man to the things they used to do together, keep asking when he says no, remember the dates and say the name. Put the date of the death and the dead person's birthday in your phone. On those days, send a short message. It is one of the most remembered kindnesses there is.\n\nIt also helps to remember the men who are often overlooked: fathers who have lost a baby, men whose partners have died young, men grieving a friend rather than a relative. Their grief is often less recognised, and the months after can be especially lonely.\n\nIt also helps to keep the invitations ordinary. A bereaved man may not want to talk about his loss every time you meet; he may want, more than anything, a normal evening, with his loss acknowledged and then left alone.\n\nIt also helps to tell the bereaved man that you will keep checking in, so that the calls do not feel like intrusions. \"I'm going to ring you every couple of weeks, if that's all right\" makes it easy for him to accept."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What should I say at a funeral?",
+   "a": "Very little, and something true. \"I'm so sorry about your dad.\" \"I'm so sorry. He was a great man.\" \"I'm thinking of you.\" Use the dead person's name if you can. Avoid explaining the death, minimising it or comparing it to your own losses. If you have a short, specific memory, it can be a gift: \"I'll always remember him teaching us to fish.\" Then let the mourner lead. If you cannot speak because you are too moved, a hand on the arm or a held handshake says the same thing. Nobody at a funeral needs eloquence. They need people who came.\n\nIt also helps to say goodbye properly when you leave a funeral or a wake. A hand on the shoulder and \"I'll ring you next week\" turns your presence into a promise.\n\nIt also helps to know that you do not have to say anything at all. A firm handshake, a hand on the arm or a hug, held for a moment, can say everything that needs saying.\n\nIt also helps to say something to the other mourners, not only the closest relative. Parents, siblings and friends of the dead often stand at the edge of a funeral, unnoticed."
+  },
+  {
+   "q": "Should I go to a funeral if I barely knew the person who died?",
+   "a": "Usually, yes, if you know someone who is grieving. Funerals are for the living as much as for the dead, and many bereaved people say that seeing friends, colleagues and neighbours there, people who came for their sake, was one of the things that helped most. Dan's case in this chapter shows how much an absence can hurt. If you cannot go, say so honestly, send a message, and find a way to turn up afterwards: a visit, a meal, a walk. If you are unsure whether you would be welcome, ask a family member or simply go and stand at the back.\n\nIt also helps to know that at many funerals, especially large ones, the family will not remember everyone who came, but they will read the book of condolence or the cards later, and notice who was there.\n\nIt also helps to think about who else might be there: the dead person's colleagues, neighbours and friends. A funeral full of people who came for the family's sake tells them that their loved one mattered to more people than they knew."
+  },
+  {
+   "q": "How long should I keep checking in?",
+   "a": "Longer than most people do. The hardest months for many bereaved people are the third to the twelfth, after the visitors have gone, and the first anniversary, the first birthday and the first Christmas are often very hard. Grief can stay intense for a long time after the loss of a child or a partner. Keep inviting, keep asking, keep saying the name, for at least the first year and on the anniversaries after that. A message on the anniversary five years later can mean as much as one in the first week, because by then almost nobody else remembers.\n\nIt also helps to remember the other people who are grieving: the dead person's parents, siblings, children and friends. A message to them on the anniversary can mean as much as one to the closest relative.\n\nIt also helps to keep the messages short and to ask for nothing. \"Thinking of you and Helen today\" needs no reply, and the person receiving it does not have to manage your feelings as well as their own.\n\nIt also helps to notice when he starts mentioning the person who died on his own. That is often a sign that he wants to talk about them, and a good moment to ask a question or share a memory."
+  },
+  {
+   "q": "Is it all right to laugh at a wake?",
+   "a": "Yes. Many wakes are full of laughter, as people tell stories about the person who died, and the laughter is often part of the grief, not a break from it. The chapter on grief in Part II described a widow laughing at her husband's wake and sobbing in the toilets an hour later; both were grief. Follow the mood of the family. If they are telling funny stories, join in. If they are quiet, be quiet. What matters is that the laughter is about the person and shared with the mourners, not at anyone's expense.\n\nIt also helps to tell your own story about the person, if you have one. A funny or warm story at a wake is often the most welcome thing a guest can offer.\n\nIt also helps to watch for the people who are not laughing. A wake can be hard for someone whose grief is raw, and sitting quietly with them for a while is as important as joining the stories.\n\nIt also helps to know that some cultures and faiths have very different customs for mourning, including restrictions on music, laughter or food. If you are attending a funeral in a tradition you do not know, ask someone what is expected."
+  },
+  {
+   "q": "What if my friend grieves by working?",
+   "a": "Then join him. Many men lean towards what Doka and Martin called instrumental grief: they grieve by doing, organising the funeral, building something, fixing the house, clearing the dead person's things. That is a way of grieving, not a failure to grieve. Offer to help with the task: carrying, driving, sorting, mending. Side by side, with something to do, many men talk more about the person who died than they ever would face to face. And watch, gently, for signs that the work has become a way of never stopping, which can wear a man down, and use the pauses to ask how he is.\n\nIt also helps to make the task his choice. Offering to help with something he wants to do is different from taking it over, and he may need to do some of it himself as part of grieving.\n\nIt also helps to remember the practical tasks that follow a death, such as clearing a house, dealing with paperwork, selling a car. These can be overwhelming, and help with them is often the most welcome kind.\n\nIt also helps to remember that sorting a dead person's belongings can be one of the hardest tasks of all. Offering to help, and then following his lead about what to keep, is a kindness he may never forget."
+  },
+  {
+   "q": "What about losses when people could not gather?",
+   "a": "During the COVID-19 pandemic, many people lost someone without being able to visit them, hold a full funeral or gather afterwards, and research such as Mitima-Verloop and colleagues' 2022 study found that restricted mourning was linked to harder grief for many. Something similar happens when people die far away or when families cannot travel. It can help to create a ritual later: a memorial gathering on an anniversary, a walk to a place the person loved, a meal in their honour. It is never too late to mourn together, and many families find that a later gathering helps.\n\nIt also helps to involve people who could not be there at the time. A memorial gathering a year later, with photographs and stories, can give them the chance to mourn that they missed.\n\nIt also helps to involve the person who could not be there in planning it. A son who could not attend his father's funeral may want to choose the readings or the music for a later memorial.\n\nAnd if you are the one who could not be there, it is worth telling the family that you are grieving too, and asking whether there is anything you can do now. Absence at the time does not have to mean absence for good."
   }
  ],
  "watch": [
