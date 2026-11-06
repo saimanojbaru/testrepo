@@ -73,6 +73,20 @@
    "doCaption": "Composed, with warmth",
    "dontCaption": "Cool and above it all",
    "annotation": "Authority does not need coldness. A moderate, genuine smile adds warmth without costing competence."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Attention that shows on the face",
+   "dontCaption": "Glancing at the time while someone brings a problem",
+   "annotation": "People bring problems to faces that look ready to hear them. Let your interest be visible before you start to solve anything."
+  },
+  {
+   "doPoseId": "p_stand_gesture_open",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Open, with a reaction they can read",
+   "dontCaption": "Closed and unreadable as a junior asks a question",
+   "annotation": "A junior colleague depends on your face to know how they are doing. Give them something to read."
   }
  ],
  "caseStudy": "Mark, forty-four, is finance director of a manufacturing firm. He spent his twenties on a trading floor, where a face that gave nothing away was a survival skill, and he still prides himself on it. In his annual 360-degree review, the comments are consistent: excellent judgement, but impossible to read. One says that people rehearse for days before taking a problem to him, because they cannot predict how he will react.\n\nThe point is driven home when Mark announces a round of redundancies. He delivers the news calmly and precisely, with no visible emotion, because he does not want to make a hard moment harder. Afterwards he learns that staff are furious: many describe him as cold and indifferent. In fact he had slept badly for a week.\n\nWith a coach, Mark watches a recording of himself in a budget meeting. His face barely moves for forty minutes, even when a junior analyst presents work he privately thinks is excellent. He starts small. He lets himself smile when an idea is good, and says so. When people bring him bad news, he lets concern show before he asks questions. When he needs time to think, he says, “I'm going to keep my reaction to myself until I've looked at the numbers.”\n\nHe keeps his poker face for the quarterly meetings with the bank, where it still serves him well. Six months later, his team begins bringing him problems earlier, and the analyst whose work he praised tells him it was the first time she had known what he thought of anything she had done.",
@@ -92,6 +106,11 @@
     "Note moments where you felt something but your face showed nothing.",
     "Ask a trusted colleague how readable you seem, and write down what they say.",
     "Choose one kind of reaction, such as appreciation, to let show more often."
+   ],
+   "variations": [
+    "Watch a recording of yourself with the sound off and mark every moment when you think your face showed appreciation, then ask a colleague to mark the same moments independently.",
+    "Record yourself at home during a family meal, with everyone's agreement, and compare how readable your face is there and at work.",
+    "Count, during one meeting, how often your face reacts to junior colleagues compared with senior ones."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Let concern show when someone brings you a problem, before you start solving it.",
     "Notice how people respond.",
     "Write down one difference you noticed by the end of the day."
+   ],
+   "variations": [
+    "For one day, tell three people specifically what you appreciated about something they did, and let your face show it as you say it.",
+    "Let one moment of genuine amusement show in a meeting where you would normally keep a straight face, and notice whether the room relaxes.",
+    "When someone brings you a problem, let your first expression be concern for them, not for the problem, and notice the difference."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Use it the next time you need time to think.",
     "Notice whether it changes how the other person behaves.",
     "Adjust the wording until it sounds like you."
+   ],
+   "variations": [
+    "Write three versions of your hold sentence, for a meeting, a negotiation and a conversation at home, and practise each aloud.",
+    "Use a hold sentence the next time someone surprises you with bad news, then come back to them within a day with your view, as promised.",
+    "Ask a colleague how it felt when you named a hold, compared with times when you simply went quiet."
    ]
   },
   {
@@ -123,6 +152,11 @@
     "Note which one you find hardest to show.",
     "Practise that expression in front of a mirror or camera until it feels natural.",
     "Use it the next time the situation arises."
+   ],
+   "variations": [
+    "Add two situations from your home life to the list, such as a child's bad news or a partner's good news, and choose the expression that fits each.",
+    "Watch a news clip of a public apology with the sound off and judge whether the face fits the moment, then check your judgment with the sound on.",
+    "Before your next difficult conversation, decide in advance which expression you want the other person to see first."
    ]
   }
  ],
@@ -204,6 +238,45 @@
    "explain": "Selective expressiveness keeps composure for moments that need it, and a negotiation is one of them. Saying you need time to think avoids the gap being filled with guesses.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Why did Boone and Buck suggest that expressive people may be trusted more?",
+   "options": [
+    "Because expressive people are usually more senior and therefore more experienced",
+    "Because spontaneous expressions are hard to fake, so they give evidence of intentions",
+    "Because expressive people talk more and so other people simply get to know them faster",
+    "Because people trust anyone who smiles a lot, whatever their behaviour turns out to be"
+   ],
+   "answer": 1,
+   "explain": "Boone and Buck argued that expressivity evolved partly as a signal of cooperativeness. Spontaneous expressions are hard to fake, so they give others evidence about what a person intends.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A calm, experienced officer takes a statement from an elderly burglary victim with a steady, unmoving face. She later says he did not care. What fits this chapter best?",
+   "options": [
+    "Keep the same face next time, since calm is always the most professional choice",
+    "Let concern show inside the calm, and acknowledge her distress before the forms",
+    "Become visibly upset with her, so that she can see exactly how much he cares",
+    "Ignore the complaint, since victims often blame officers for things they cannot change"
+   ],
+   "answer": 1,
+   "explain": "Calm helps in a crisis, but a frightened person also needs to see that their distress has registered. Concern shown within composure matches the moment without adding to her fear.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that what your face shows at work is your own business and has no effect on anyone else. What does van Kleef's work suggest?",
+   "options": [
+    "That other people use your expressions as information about how things are going and what to do next",
+    "That faces at work are mostly ignored, since people pay attention only to what is actually said aloud",
+    "That expressions matter only in face-to-face sales, where customers watch the seller very carefully",
+    "That people read faces only when they already know the person well, and never in the first meetings"
+   ],
+   "answer": 0,
+   "explain": "Van Kleef argues that emotions act as social information. Colleagues read your face to judge how their work and the meeting are going, and adjust their behaviour accordingly.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +305,110 @@
    "work": "When the show must go on: Surface acting and deep acting as determinants of emotional exhaustion and peer-rated service delivery",
    "author": "Alicia A. Grandey",
    "note": "Academy of Management Journal 46(1), 2003. The cost of faking feelings at work."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The new manager who kept his cards close",
+   "scene": "Raj, thirty-four, was the best engineer on his team for six years, and in January he was promoted to lead it. He has never managed anyone\n  before. The manager he most admired, his first boss, was a calm, quiet man who never raised his voice and never seemed rattled, and Raj has\n  decided to manage the same way. In his weekly one-to-ones with his seven engineers, he listens carefully, asks precise questions, takes notes\n  and keeps his face still. He does not want to seem to have favourites, and he does not want to react before he has thought.\n\n  By April, the one-to-ones have become strangely quiet. People bring him finished work but not problems. When something goes wrong, he hears about\n  it late, usually from someone outside the team. Chloe, the most experienced engineer, who was also considered for his job, has started to give\n  short answers and leave early.\n\n  Then a recruiter's message to Chloe is forwarded to Raj by mistake. She has been talking to another company for a month. In the exit\n  conversation that follows, he asks her, as calmly as he can, what went wrong. She says she never had any idea what he thought of her work. Every\n  time she showed him something, his face stayed exactly the same, and she had come to assume that meant he was disappointed.\n\n  Raj is stunned. He had thought her work was the best on the team. He had said, in her last one-to-one, that it was \"fine\", and meant it as high\n  praise.\n\nRaj has also noticed that the team's chat channel goes quiet when he joins a conversation, and that jokes that were flying around a moment earlier stop. He has put it down to the normal distance between a manager and a team.\n\nIn team meetings it is the same. When someone proposes an idea, Raj listens with the same level expression whether he likes it or not, and then asks a careful question. The engineers have learned to read the question as the verdict, and to brace for it.",
+   "misread": "Chloe read Raj's still face and his careful \"fine\" as disappointment, and the rest of the team read them as a reason to keep problems to themselves. Raj read the quiet one-to-ones as a sign that the team was running smoothly.\n\nHe also read his own stillness as fairness, when to the team it looked like a judgment that never came.\n\nRaj also missed the quiet signals his team sent back: the shorter one-to-ones, the problems that arrived late, the senior engineer who stopped staying for a chat at the end. He read each one, if he noticed it at all, as a sign of efficiency.",
+   "betterRead": "Van Kleef's view of emotions as social information explains what happened. People watch a manager's face to find out how they are doing and what to do next. Raj's still face withheld that information, and his team filled the gap in the worst way available. Composure had been his old boss's style, but his old boss, Raj later remembered, also laughed easily and said \"That's great\" when he meant it. Raj's better approach was to keep his calm but let his reactions show. He started telling people specifically what he liked about their work, letting his face show interest when they brought problems, and saying \"Give me a minute to think\" when he needed one. Chloe left, but two months later the team's one-to-ones were full of problems again, brought early.\n\nHe also told the team, at the next meeting, that he had realised his face was hard to read, and that if they ever wanted to know what he thought, they should ask. Several did."
+  },
+  {
+   "title": "The officer at the door",
+   "scene": "Dave, forty-eight, is a police constable with twenty years' service, most of it in a busy town centre. He prides himself on staying calm.\n  He has been to fights, crashes and worse, and he has learned to keep his face steady and his voice even, because panic spreads and someone has to\n  be the still point. Colleagues say he is the person you want beside you when things go wrong.\n\n  One Tuesday morning he is sent to a house where an elderly woman, Margaret, eighty-one, has come home from a hospital appointment to find her back\n  door forced and her bedroom ransacked. Her late husband's watch and her wedding jewellery have gone. When Dave arrives she is sitting at the\n  kitchen table, shaking, with a neighbour holding her hand.\n\n  Dave is thorough. He takes a full statement, checks the door, photographs the bedroom, gives her a crime reference number and a leaflet about\n  victim support, and tells her honestly that the chances of recovering the jewellery are not high. His face stays calm and level throughout. He is\n  in the house for forty minutes.\n\n  A week later, Margaret's son makes a complaint. His mother, he writes, felt that the officer \"couldn't have cared less\" and treated her \"like a\n  piece of paperwork\". She has not slept properly since. Dave's sergeant, who has worked with him for years, reads the complaint and knows it is not\n  true, but she also knows that it is how it felt.\n\nDave's colleagues, when they hear about the complaint, are indignant on his behalf. One of them says the old lady should be grateful he turned up at all, given how stretched the shift was. Dave says nothing, but he goes over the visit in his head for days.\n\nIn the car afterwards, Dave had thought about his own mother, who is about Margaret's age, and how she would feel coming home to a forced door. He had felt it keenly. None of it reached his face.",
+   "misread": "Margaret read Dave's steady, unmoving face as indifference: to her loss, to her fear and to her. Dave read his own calm as professionalism and kindness, the right way to help someone who was already frightened.\n\nAnd Dave read the complaint, when he first heard of it, as ingratitude, which hurt him more than he showed.\n\nThe colleagues who defended him read the complaint as an attack on the job, and so missed what it said about how the visit had felt to someone frightened and alone. Margaret's son read Dave's calm as a lack of respect for his mother.",
+   "betterRead": "Calm helps in a crisis, but a frightened or grieving person also needs to see that their distress has registered. Ten Brinke and Adams found that executives who looked genuinely sad when apologising did better than those who smiled; a face that matches the moment tells people they have been understood. Dave's composure was right for a fight in the street and wrong for a widow at her kitchen table. His sergeant's better advice was not to stop being steady but to let concern show inside the steadiness: to sit down at her level, to say \"I'm so sorry, this is a horrible thing to come home to,\" and to let his face say it too, before turning to the forms. Dave went back to see Margaret, with her son's agreement. He told her he was sorry she had felt that way. She said, \"You seemed nicer this time.\" He said he had been just as sorry the first time, and that he had not shown it."
+  },
+  {
+   "title": "The adviser who smiled at everything",
+   "scene": "Jamie, twenty-nine, is a financial adviser at a small firm that helps people plan for retirement. He is cheerful, likeable and good at his\n  job, and he has been told since school that his smile is his best feature. He uses it. He smiles broadly when clients arrive, when he explains\n  their options, when he goes through the risks and when they sign.\n\n  His clients like him, and his first meetings go well. But fewer of them come back to invest than come back for his older colleague, Susan, who\n  is quieter and smiles less. When Jamie asks his manager why, she shows him the feedback from a recent survey of clients who chose not to proceed.\n  Several describe him as \"lovely\" and \"very friendly\". One says she was not sure he understood how serious the decision was for her. Another writes:\n  \"Nice lad, but I wanted someone who would worry about my money as much as I do.\"\n\n  Jamie is hurt. He thought his smile showed that he was confident and on their side. He watches Susan in a meeting with a couple in their sixties who\n  are deciding what to do with a pension. She smiles warmly when they arrive. When she talks about the risks, her face is serious and still, and she\n  pauses to let them take in each one. When they make their decision, she smiles again.\n\nJamie's manager also mentions, kindly, that he smiled throughout a meeting in which a widow explained that she needed to plan her finances because her husband had died. She had found it difficult to say, and had mentioned it in her feedback.\n\nWhen he thinks about it honestly, Jamie realises that he smiles most when he is least sure of himself. The bigger the number on the page, the wider the smile.",
+   "misread": "Jamie's clients read his constant broad smile as friendliness and, in a high-stakes decision, as a lack of seriousness about their money. Jamie read his own smile as reassurance, and did not notice that it never changed with the subject.\n\nSusan's quieter clients might have read Jamie's grin as nerves, if they had thought about it, and they would have been closer to the truth. Several simply decided, without quite knowing why, that they would rather trust their savings to someone who seemed to take them more seriously. Jamie, for his part, read their decisions as bad luck.",
+   "betterRead": "Wang and colleagues found that broad smiles made people seem warmer but less competent than slight ones, and that the cost was greatest when the stakes were high. A pension is about as high-stakes as most people's decisions get. Susan's face moved with the conversation: warm for the welcome, serious for the risks, warm again for the decision. That movement told her clients that she understood what each moment meant to them. Jamie's better approach was not to stop smiling but to let his smile follow the subject. He practised keeping a moderate, warm expression for greetings and a serious, attentive one for risks and losses. Six months later his clients' survey comments still said \"friendly\", and several now said \"careful\".\n\nHe also learned to stop smiling when a client talked about a loss, a death or a fear, and simply to listen with his face still and his eyes on theirs. Those were the moments, he later said, when clients decided to trust him."
+  },
+  {
+   "title": "The front-desk smile",
+   "scene": "Leah, thirty-one, manages the front desk of a large hotel near an airport. Her shifts are ten hours long, and for most of them she is on show:\n  checking guests in, handling complaints about rooms and delayed flights, calming people who have been travelling for a day and want someone to\n  blame. The hotel trains its staff to smile at every guest, and Leah is very good at it. Guests often mention her by name in their reviews.\n\n  Lately she has started to dread the end of her shifts. By the time she gets home she has nothing left. She snaps at her partner over small things,\n  and on her days off she does not want to see anyone. She has begun to feel that her smile at work is a mask she puts on in the staff room and takes\n  off in the car park, and that the person underneath it is getting more tired and less patient every month.\n\n  One evening a guest whose flight has been cancelled shouts at her for ten minutes about the price of a room. She smiles throughout, apologises,\n  finds him a cheaper rate and wishes him a good night. Then she goes into the back office and finds her hands are shaking.\n\n  Her friend Noor, a nurse, listens to her describe it and says that it sounds like the kind of exhaustion she sees in colleagues on difficult\n  wards.\n\nShe has tried to talk to her manager about it, but he praised her smile and said she was a natural. She did not know how to say that being a natural was exactly what was exhausting her.\n\nShe has noticed something else. The guests she finds easiest are the ones she genuinely likes, the tired families and the nervous first-time travellers, and those shifts leave her far less drained than the ones spent smiling at people who are rude to her.",
+   "misread": "Leah read her exhaustion as a personal weakness: a sign that she was not cut out for the job, or that she was becoming an unpleasant person. She read her smile as the professional part of her, and her tiredness as the problem.\n\nHer manager read the same smile as proof that she loved the job, and so missed every sign that she was struggling.\n\nAnd she read the shaking hands after the shouting guest as a failure of nerve, when they were the ordinary aftermath of ten minutes of holding a smile over fear and anger.",
+   "betterRead": "Grandey found that surface acting, changing your expression without changing your feeling, was linked to emotional exhaustion, while deep acting, changing the feeling itself, was not linked to it in the same way. Leah had spent years smiling over anger, fear and frustration, and the gap between her face and her feelings was costing her. Her better path combined several changes. With Noor's help she began to reappraise some encounters, seeing the shouting guest as a frightened man stranded far from home, which made a sympathetic expression easier to mean. She asked her manager for a rule that staff could hand over an abusive guest to a colleague. And she stopped smiling at people who were shouting at her, keeping instead a calm, serious face that matched the moment. She still went home tired, but not empty.\n\nNoor was careful to say that if the exhaustion did not lift, Leah should see her doctor, and Leah did, to rule out anything else.\n\nThe change in her face was small, but she noticed the difference by the end of the first week."
+  }
+ ],
+ "workedReading": {
+  "title": "Reviewing a junior's work in front of a client",
+  "scene": "Andrew, forty-seven, is a partner at an architecture practice. On Thursday he has two meetings about the same project, a new library for a small town. In the morning, his junior architect, Mei, twenty-six, will show him her first full design for the building. In the afternoon, they will present it to the town council's committee, who will also want to talk about the budget, which has gone up. Andrew is known in the practice for his poker face. He learned it from the partner who trained him, who said that clients should never see you surprised. He has started to wonder, after a colleague's comment at the practice away-day, whether his juniors find him as unreadable as his clients do. He decides to use Thursday to practise choosing what his face shows, rather than showing nothing all day by default.\n\nHe has also noticed, over the years, that the juniors who work with him most closely tend to over-prepare for his reviews, bringing three versions of every drawing in case he dislikes the first. He has always taken it as diligence. He now wonders whether it is anxiety, and whether his face is the reason.\n\nHe wants to see whether a face can be both trusted by a committee and readable to a junior, or whether he has to choose.",
+  "steps": [
+   {
+    "label": "Notice your default",
+    "text": "Before Mei arrives, Andrew looks at his reflection in the dark screen of his laptop. His resting face is serious, a little stern, with his lips pressed together. He knows that this is the face he wears for most of the day, and that it has served him well in negotiations and difficult site meetings. He also knows that, from across a desk, it could easily look like disapproval. He reminds himself that a blank face is not neutral to the person looking at it.\n\nHe thinks, too, about how the review usually goes. He looks at each drawing in silence, for a long time, and then gives his verdict. To him the silence is concentration. To the person across the desk it must feel like waiting for a sentence."
+   },
+   {
+    "label": "Decide what to show",
+    "text": "He thinks about what Mei needs from the review. She needs to know which parts of the design work and which do not, and she needs to leave confident enough to present it to a committee in a few hours. He decides that he will let his appreciation show where he feels it, show concern only where he has it, and keep his reaction to himself on anything he needs time to think about.\n\nHe also decides what he will not do. He will not fake enthusiasm for parts of the design he does not like, because Mei would hear the falseness, and it would make his praise worth less.\n\nAnd he reminds himself that the purpose of the review is to make the building better, not to test Mei's nerve. His face should serve that purpose."
+   },
+   {
+    "label": "Let appreciation show first",
+    "text": "Mei opens the drawings. The reading room, lit from above through a long roof light, is very good, and he lets himself smile and lean forward. \"That's lovely,\" he says. \"The light in there is exactly right.\" He watches her shoulders drop a little. Van Kleef's work suggests that she will use his face as information about how she is doing. He wants it to tell her the truth, and the truth here is good.\n\nHe goes on to name two more things he likes, specifically: the way the entrance draws people in from the market square, and the choice of timber. Specific praise tells her that he has looked closely, which is part of what makes it believable."
+   },
+   {
+    "label": "Name the hold",
+    "text": "The children's section is more of a puzzle. He is not sure the layout will work for buggies, but he wants to look again before he says so. Instead of a blank face, which she might read as disapproval, he says, \"I want to think about the children's area before I give you a view. Can we come back to it at the end?\" She nods. Naming the hold means she does not have to guess what his silence means.\n\nIt costs him nothing to say, and it changes what his silence means while he studies the drawings. Mei can now carry on presenting without trying to read his face for a verdict he has not reached."
+   },
+   {
+    "label": "Show concern without alarm",
+    "text": "When they return to the children's area, he shows her the problem with the buggies, and lets his face show concern, a slight frown and a serious look, but not alarm. He suggests a fix. She sees it at once and sketches it. His face relaxes again, and he tells her it is better than his suggestion, which is true.\n\nThe concern is about the drawing, not about her, and he makes sure his face says so. When she looks worried, he smiles and says, \"This is exactly what reviews are for.\" The frown goes as soon as the problem is solved, so that it does not hang over the rest of the meeting.\n\nMei says later that the frown was useful: it told her the problem mattered, and the smile that followed told her it was solved."
+   },
+   {
+    "label": "Keep composure for the committee",
+    "text": "In the afternoon, the committee's chair says that the budget increase is unacceptable and that they may have to look at other practices. Andrew keeps his face still and his voice level. This is the moment for composure: he needs time to think, and surprise or irritation would weaken his position. He says, \"I understand. Let me take you through where the increase comes from,\" and does. When Mei presents the reading room, he lets his pride in her show, because it is real and it helps the committee trust the work.\n\nAfter the meeting, the chair stays behind to shake his hand and says that he liked the way Andrew had kept calm about the money while being so clearly proud of his team's work. Andrew notes that the two did not conflict."
+   },
+   {
+    "label": "What happened",
+    "text": "The committee approves the design and agrees to look again at the budget with the practice. On the train home, Mei tells Andrew that the morning review was the most useful she has had. She says she had always found his reviews nerve-racking, because she could never tell what he thought until the end. Andrew writes three words in his notebook: appreciation, hold, composure. He resolves to use the poker face as a tool for particular moments, not as the face he wears all day.\n\nHe also notices that he feels less tired than usual at the end of a day of meetings, perhaps because he spent less of it holding his face still.\n\nA month later, Mei brings him a problem with the structural drawings the day she spots it, rather than a week later with three possible solutions."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Carrying the work face home",
+   "body": "A face trained for the trading floor, the courtroom or the operating theatre does not always switch off at the front door. Many men find that the composure that serves them at work follows them into the kitchen, so that a partner who tells them about a hard day, or a child who brings home a bad mark, meets the same still, assessing face that their colleagues see. At home that face is read even more harshly than at work, because the people there expect to see warmth. Children, in particular, may read a parent's blank face as disappointment and stop bringing their problems. The chapter on the \"I'm fine\" mask in Part II described the costs of habitual suppression to close relationships. If you notice that the people at home have started to tell you less, ask whether they can read you, and let your face come home too.\n\nIt can help to mark the change between work and home with a small ritual: a walk, a change of clothes, a few minutes in the car before you go in. Some men find that it gives the work face somewhere to stay."
+  },
+  {
+   "title": "Faking the expression instead of finding the feeling",
+   "body": "Once people learn that expressiveness builds trust, some try to manufacture it: a fixed smile in meetings, a practised look of concern, a nod at every point. It tends to backfire twice. Others often sense that the expression does not fit, and Krumhuber and colleagues found that smiles which looked fake reduced trust rather than building it. And Grandey's research suggests that surface acting of this kind is tiring, linked to emotional exhaustion in a way that genuine feeling is not. The better route is usually to find the feeling that belongs to the moment. Look for what you do genuinely appreciate in a colleague's work, or what genuinely concerns you about a problem, and let that show. If you feel nothing, say something true instead of performing something false.\n\nA useful rule is never to show a feeling you do not have, and to look for the feelings you do have but usually hide. Most people find there are plenty of the second kind.\n\nIf a colleague's work leaves you cold, say what would make it better, with a face that shows you want it to succeed."
+  },
+  {
+   "title": "Saving your warmth for the people above you",
+   "body": "Some men are readable and warm with their bosses, their clients and anyone senior, and still and unreadable with the people who report to them. The pattern is often unconscious: warmth is offered upwards, where it is felt to matter, and withheld downwards, where composure is felt to signal authority. But the people below notice, and they read it accurately as a statement about whom you value. It also robs them of the information they most need, because a junior colleague depends far more on your face to know how they are doing than your boss does. Watch yourself for a day and notice whom you smile at. If your warmth flows only upwards, your team will learn to keep their problems from you, as Raj's did.\n\nThe same pattern can run along other lines too: warmth for people who look and sound like you, stillness for those who do not. It is worth checking for both.\n\nAsk yourself who last saw you laugh at work, and who has never seen it."
+  },
+  {
+   "title": "Mistaking a still face for emotional control",
+   "body": "A still face can feel like control, but hiding a feeling is not the same as managing it. The irritation, worry or hurt is still there, and it tends to leak out elsewhere: in a clipped email later, in impatience with the next person, in sleepless nights or in a sudden flash of anger that surprises everyone, because nobody saw it coming. The chapter on the \"I'm fine\" mask described research by Gross and John suggesting that people who habitually hide their feelings report lower wellbeing than people who more often reappraise the situation. Real emotional control includes noticing what you feel, naming it to yourself and deciding what to do with it. Sometimes that means keeping it off your face for now. It should rarely mean pretending, even to yourself, that it is not there.\n\nIf you find that feelings you have kept off your face keep coming back as sleeplessness, irritability or low mood, talk to someone about them, and if they persist, see your doctor.\n\nNoticing a feeling and choosing not to show it for now is control. Refusing to notice it at all is not."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Isn't showing emotion at work unprofessional?",
+   "a": "It depends on which emotion, how much and when. Shouting, sulking and visible contempt are unprofessional, and nobody is suggesting you bring them to work. But appreciation, interest, concern and amusement are not unprofessional; they are a large part of what makes people trust and work well with you. Boone and Buck argued that expressive people give others evidence about their intentions, and later studies suggested that people who behave cooperatively tend to be more expressive. A face that never moves withholds that evidence. Professionalism means choosing what to show and when, not showing nothing at all, and the people who are best at it usually show a good deal of moderate, genuine feeling.\n\nAnd the moments when composure matters most, a crisis, a negotiation, a shock, are easier to handle if people already know what your face looks like when you are pleased.\n\nIn most workplaces, the people others most want to work for are both composed and readable."
+  },
+  {
+   "q": "How do I show appreciation without seeming gushing?",
+   "a": "Be specific and moderate. A short, genuine smile with a precise comment, such as \"The way you set out the options made that decision easy,\" says far more than a broad grin and \"Brilliant, amazing, love it.\" Specific praise shows that you have paid attention, which is what most people want. Let your face match your words rather than exceed them, and say it at the moment, not three weeks later in an appraisal. If you have been reserved for years, the first few times will feel like too much to you and will almost certainly look like very little to others. Ask a trusted colleague whether it registered, and adjust.\n\nAnd remember that appreciation is most useful when it is about something the person did, not about the person in general.\n\nGushing usually comes from praising everything; if your appreciation is selective and specific, it will rarely seem excessive."
+  },
+  {
+   "q": "What if my face naturally looks stern?",
+   "a": "Many people's resting faces look more serious, tired or cross than they feel, because of the shape of their brows, mouth or jaw. You cannot change your face, and you should not have to smile all day to make up for it. What you can do is make sure that your face moves when something happens: a small smile when someone arrives, raised brows when they say something interesting, a softening when they bring you a problem. You can also use words to fill the gap: \"I'm really pleased with this, even if my face doesn't always say so.\" People who know about your resting face quickly learn to read past it, especially if you tell them.\n\nIt also helps to know how your face looks on video, where a stern resting face can seem sterner still, as the chapters on calls earlier in this part describe."
+  },
+  {
+   "q": "How can I keep a straight face in a negotiation without seeming cold?",
+   "a": "Be warm before and after, and composed during. Greet people properly, show interest in them and their position, and let your face be readable while you are building the relationship. When an offer arrives, or a moment comes when you need time to think, keep your face still and say so: \"Let me think about that.\" Naming the hold stops the other side from reading your stillness as contempt or as a bluff. Then return to warmth when the moment passes. The chapter on the negotiation table later in this part describes how composure and warmth can work together, and why there are no reliable tells to hide in the first place.\n\nIt also helps to let colleagues see you laugh at your own resting face. Once it becomes a shared joke, it stops being a mystery.\n\nAnd when the deal is done, let your face show what you feel about it, whether that is satisfaction, relief or respect for a hard bargain. People remember the end of a negotiation."
+  },
+  {
+   "q": "Can I learn to be more expressive if I have been reserved all my life?",
+   "a": "Yes, though it usually starts on the inside rather than the outside. Levant argued that many boys are taught to stop noticing and naming soft feelings, and if that happened to you, the first step is to notice what you feel at all. Try naming one feeling a day to yourself, at the moment you feel it. Then let a little of it show, starting with the easiest feelings, such as appreciation or amusement, with the people you trust most. Watch how they respond. Expressiveness is partly a habit, and habits change with practice. Most men who try this find that the change looks much smaller from outside than it feels from inside, and that people respond to it warmly.\n\nSome men find it easier to start with other people's feelings than their own: noticing what a colleague might be feeling and saying so, which builds the same muscles from a safer angle."
+  },
+  {
+   "q": "Is the trade-off different for women at work?",
+   "a": "In some ways, yes. The chapter on the nonverbal glass ceiling later in this part describes research suggesting that observers judge the same expressions differently depending on who shows them, for example that anger can raise a man's perceived status and lower a woman's. That means the dial described here may be read differently for women, and that much of the problem lies with the people doing the reading rather than the person being read. If you evaluate others, the most useful thing this chapter can offer is to check your own reactions to other people's faces, and ask whether you would read the same expression the same way on someone else.\n\nIt also means that advice to women to smile more, or less, at work often misses the point. The fairer fix is in how expressions are judged.\n\nIf you are a man who is read as more authoritative when you are stern, it is worth knowing that the same face might cost a female colleague, and adjusting how you read hers."
   }
  ],
  "watch": [
