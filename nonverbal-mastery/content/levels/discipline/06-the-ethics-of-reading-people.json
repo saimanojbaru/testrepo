@@ -81,6 +81,20 @@
    "doCaption": "Asking whether you would read it the same way on a different face.",
    "dontCaption": "Sure that the anger on that face is obvious.",
    "annotation": "Bias feels exactly like perception. Only a ledger tagged by group can show whether your first impressions are fair."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Putting the phone down and asking later, in private",
+   "dontCaption": "Typing a reading into the group chat",
+   "annotation": "Most ethical mistakes happen in a single light sentence. A minute's pause is enough to run the flows test."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_stand_freeze",
+   "doCaption": "Going to him, side by side, with one question",
+   "dontCaption": "Saying nothing to a friend for months",
+   "annotation": "Holding everything out of fear of intruding can leave someone who needed to be noticed with nobody."
   }
  ],
  "caseStudy": "Tom, forty-four, manages a team of maintenance engineers at a distribution centre. At a Monday briefing his director announces that the night shift will be reorganised and that everyone will take a turn. Tom notices that Priya, one of his best engineers, goes very still and pale, writes nothing down, and leaves before the usual coffee. Over the next week she stops eating lunch with the team.\n\nOn Thursday evening, at the pub, his colleague Gary asks what is up with Priya. Tom feels the pull of a ready answer. He thinks something is going on at home, and he has the beginnings of a theory. He runs the flows test instead. He saw her stillness in a work briefing; the theory about home is his, not hers; Gary has no role in her work; and if Priya heard that her private life was being discussed in the pub, she would be right to be angry. He says he has no idea and would rather not guess.\n\nThe next morning he finds her alone in the workshop and asks about the situation, not the signal. *When the night-shift change came up you went quiet. If it causes you a problem, I'd like to know. You don't have to tell me why.* She is silent for a moment, then tells him that she cares for her mother in the evenings and that nights are impossible. They work out a swap with two engineers who want the night premium.\n\nA month later the director asks Tom to note \"attitude concerns\" in Priya's appraisal, because she looked unenthusiastic about the reorganisation. Tom writes what she did: raised a scheduling conflict promptly and helped arrange cover. He leaves out the impression, and tells the director why: it would not survive being read aloud to her, and it was wrong.\n\nGary never finds out about Priya's mother. Nobody needed him to.",
@@ -99,6 +113,11 @@
     "Mark whether you passed on the behaviour or your inference about it.",
     "Mark any flow the person would not have expected or would not have thought fair.",
     "For each marked flow, write what you would do differently, and whether you now owe the person anything."
+   ],
+   "variations": [
+    "Do the audit for readings you passed on outside work too, such as to family or friends, and compare.",
+    "Mark which of the flows you would be comfortable describing to the person concerned, word for word.",
+    "Notice the next reading you are tempted to pass on, and write down the flows test answers before deciding."
    ]
   },
   {
@@ -110,6 +129,11 @@
     "Read the two versions side by side and note how much of the original was inference.",
     "Mark which rewritten versions would survive being read aloud to the person.",
     "Keep only those, and decide whether any of them is worth saying at all."
+   ],
+   "variations": [
+    "Ask a trusted colleague to rewrite one of your impressions as behaviour without seeing your version, and compare.",
+    "Read back the last reference or appraisal you wrote and check every adjective for the behaviour behind it.",
+    "Practise saying one rewritten version aloud as you would to the person, and notice whether it feels fair."
    ]
   },
   {
@@ -121,6 +145,11 @@
     "For each group, work out the hit rate and note the direction of the misses, for example readings of anger or coldness that did not come true.",
     "Write down any group where your misses lean one way more than for others.",
     "Write one adjustment, such as treating first impressions of that group as one band less certain, and set a date to check it again."
+   ],
+   "variations": [
+    "Tag your predictions by the person's age and seniority as well as by group, and look for any lean in your misses.",
+    "Ask a friend from a different background to look at your tags and tell you what they notice.",
+    "Repeat the audit after three months and see whether the adjustment you wrote has changed the pattern."
    ]
   },
   {
@@ -132,6 +161,11 @@
     "For any you marked act, write the specific risk of harm that justifies it, and who you would bring in.",
     "For any you marked ask, write the exact question, about the situation rather than the signal, with a clear way out.",
     "Say the question aloud twice, as you would say it to the person."
+   ],
+   "variations": [
+    "For each reading you marked hold, write what you will quietly do differently because of it.",
+    "For each reading you marked act, write the proper route for acting in your setting, such as who you would tell.",
+    "Discuss one of your hold-ask-act choices with a trusted friend, without names, and see whether they would choose the same."
    ]
   },
   {
@@ -143,6 +177,11 @@
     "List every person who might receive the reading and what they could do with it.",
     "Write what you owe, the first sentence you would say, and to whom.",
     "Write one piece of information that would change your plan, and what you would do instead."
+   ],
+   "variations": [
+    "Rehearse one hard case aloud with a friend playing the person you are worried about, using your first sentence.",
+    "Find out the proper reporting route at your workplace for safeguarding or welfare concerns, so that you know it before you need it.",
+    "Write a hard case of your own from a past situation you now think you handled badly, and plan how you would handle it now."
    ]
   }
  ],
@@ -224,6 +263,45 @@
    "explain": "Impressions of demeanour in a record are later read as findings by people who never met her, and she cannot answer them. Behaviour can be checked and answered. If there is a concern, the person it is about should hear it first.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Hugenberg and Bodenhausen find in their 2003 study of faces changing expression?",
+   "options": [
+    "That everyone saw anger appear and fade at exactly the same moments on every face",
+    "That people higher in implicit prejudice saw anger arrive sooner and linger longer on Black faces",
+    "That participants could not detect anger at all on any of the faces that were shown to them in short films",
+    "That anger was always seen more clearly on White faces than on Black faces by every participant"
+   ],
+   "answer": 1,
+   "explain": "Participants higher in implicit prejudice saw anger arrive sooner and linger longer on Black faces than on White ones. The bias was inside the act of looking, before any conscious judgment.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In a work group chat, a colleague speculates that another colleague's marriage is in trouble because he looked upset in a meeting. What fits this chapter best?",
+   "options": [
+    "Add what you saw in the car park, since it helps everyone understand what is happening",
+    "Add nothing to the thread, redirect it lightly, and ask him privately whether he is all right",
+    "Report the colleague who posted to HR at once, since any speculation is a serious offence",
+    "Ignore it completely and mute the thread, since nothing about the speculation has anything to do with you"
+   ],
+   "answer": 1,
+   "explain": "The flows test rules out the chat: the reading came from a work meeting, the story about his marriage is inference and rumour, and he would not expect it to go there. A private question about the situation is the right flow.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says software that reads emotions from faces is free of human bias. What did Lauren Rhue find when she tested two commercial systems?",
+   "options": [
+    "That they scored Black basketball players as angrier or more contemptuous than White players with similar smiles",
+    "That they read every face identically, whatever the person's background, age or expression",
+    "That they were far more accurate than trained human observers at detecting genuine emotions in every face shown",
+    "That they could not process photographs of basketball players at all, and simply returned no results whatsoever"
+   ],
+   "answer": 0,
+   "explain": "Rhue found racial differences in how two commercial systems scored similar smiles. Software built on human-labelled data can carry, and scale up, the biases of human readers.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +330,110 @@
    "work": "Can an angry woman get ahead? Status conferral, gender, and expression of emotion in the workplace",
    "author": "Victoria L. Brescoll and Eric Luis Uhlmann",
    "note": "Psychological Science 19(3), 2008. How the same expression is read differently through different stereotypes."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The team leader who guessed a pregnancy",
+   "scene": "Aidan, thirty-six, leads a small product team at a software company, and he is good at noticing things. Over two weeks, he notices that one of\n  his developers, Emma, thirty-one, has stopped drinking coffee, has left two meetings suddenly looking pale, has turned down a drink at the Friday\n  social and has started wearing looser clothes. He puts the signs together and is fairly sure she is pregnant.\n\n  At the Friday social, while Emma is at the bar, a colleague asks Aidan why Emma has been so off lately. Aidan, pleased with his reading and wanting to\n  defend her, says quietly, \"I think she might be expecting. Keep it to yourself.\" He means it kindly.\n\n  By Monday, half the team knows. Someone congratulates Emma in the kitchen. Emma goes white, says nothing and goes back to her desk.\n\n  On Tuesday, Emma asks to speak to Aidan. She tells him that she is twelve weeks pregnant, that she had a miscarriage last year, and that she had\n  decided not to tell anyone at work until her scan on Friday, in case it happened again. She had not even told her mother. She asks him how the whole\n  team came to know before her own family did.\n\nHe had also noticed, he realises afterwards, that Emma had been careful not to mention anything herself, and had taken that as shyness rather than as a decision.",
+   "misread": "Aidan read the signs correctly, and read passing them on as a kindness, a way of explaining Emma's behaviour sympathetically. Emma read the congratulations in the kitchen as a disclosure taken from her before she was ready to make it.\n\nThe colleague who asked had read the reply as confidential, and told only two people, each of whom told two more, which is how a reading travels.",
+   "betterRead": "This chapter's central idea, drawing on Helen Nissenbaum's account of privacy as contextual integrity, is that a reading is information on the move, and that ethics is deciding where it is allowed to go. Aidan's reading began in Emma's body, at work, among colleagues, and moved, through one light sentence, into a context she had not chosen and would not have expected. Being right did not make the flow acceptable; it made it more harmful. The flows test would have stopped him: where did I see this, am I passing on behaviour or inference, who will receive it, and would she expect it to go there? The answer was to hold. Aidan apologised to Emma without excuses, asked whether there was anything she wanted him to say to the team, and followed her wishes exactly. He also told the colleague, privately, that he had been wrong to speculate. Emma's scan on Friday was fine.\n\nEmma told the team herself, a week later, in her own words, and asked Aidan to sit beside her when she did."
+  },
+  {
+   "title": "The teacher who noticed the bruises",
+   "scene": "Ms Rahman, forty-one, teaches a Year 4 class. One of her pupils, a quiet eight-year-old boy, has been arriving at school tired and hungry for a\n  few weeks. In PE on Wednesday, as he changes, she notices bruises on his upper arms, in a pattern that looks to her like the marks of fingers. When\n  a classmate bumps into him, he flinches more than seems normal. When she asks him, gently, whether he is all right, he says he fell over.\n\n  Ms Rahman feels the pull of several responses. She wants to ask him more questions, to find out what happened. She thinks about ringing his mother\n  that evening. She mentions it, quietly, to a teaching assistant in the corridor, who says that the family has had a hard time recently and that the\n  mother seems lovely. Ms Rahman starts to wonder whether she is overreacting.\n\n  She remembers the school's safeguarding training, and the section of this chapter on what you owe after noticing.\n\n  At the end of the day, she goes to the school's designated safeguarding lead, Mr Foster, and tells him exactly what she saw, when and what the boy\n  said, in his words.\n\nThe boy's file mentions that his father recently left the family home. The teaching assistant's remark had been well meant, and it had nearly talked Ms Rahman out of acting.",
+   "misread": "Ms Rahman's first instincts were to investigate herself, to contact the family or to talk it over informally, and the teaching assistant's reassurance nearly led her to read her own concern as an overreaction.\n\nThe teaching assistant read her own reassurance as kindness to a struggling family, without considering what it might mean for the child, who has no voice in that conversation and depends on adults to notice and pass concerns on.",
+   "betterRead": "This chapter describes three responses to noticing: hold, ask or act, and says that acting is right when there is a risk of harm that makes it wrong to wait. A possible injury to a child is exactly that case, and in schools the way to act is set out in safeguarding procedures: tell the designated safeguarding lead promptly, record what you saw and what the child said in their own words, and do not investigate, question the child at length or contact the family yourself, which could put the child at risk or compromise any later enquiry. The teaching assistant's comment, passed in a corridor, was the wrong flow, and Ms Rahman's decision not to repeat it was right. Mr Foster took her written account and followed the school's procedures, contacting the local authority's children's services. Ms Rahman did not learn the outcome, which is often the case, and was told that she had done exactly the right thing by passing on what she saw rather than what she guessed."
+  },
+  {
+   "title": "The patient labelled drug-seeking",
+   "scene": "Beth, thirty, is a nurse on an acute medical ward. At handover one morning, the night nurse describes a patient, Mr Adeyemi, twenty-eight, as\n  \"drug-seeking\". He has been restless all night, pressing the call bell, asking repeatedly for more pain relief, and he became angry when told he\n  would have to wait. The night nurse's written note says: \"Demanding, aggressive manner, drug-seeking behaviour.\"\n\n  Beth goes to see him. He is lying curled on his side, sweating, holding his abdomen, and he tells her through gritted teeth that he has sickle cell\n  disease and that this is a crisis, the worst he has had in a year. He says that every time he comes into hospital, someone decides he is after drugs.\n\n  Beth checks his notes. His diagnosis is recorded on the front page. His pain scores overnight were nine and ten out of ten. The note about\n  drug-seeking has already been read by the doctor on the morning ward round, who has reduced his pain relief.\n\n  Beth thinks about the note. She also thinks about the chapter's section on what happens when a reading enters a decision.\n\nThe night nurse, Beth learns later, had had a difficult shift, with two other patients deteriorating, and had written the note at the end of twelve hours on her feet.",
+   "misread": "The night nurse read Mr Adeyemi's restlessness, repeated requests and anger as drug-seeking, and wrote that inference into his notes. The doctor read the note as a clinical finding and acted on it, reducing the treatment for a patient in severe pain.\n\nMr Adeyemi, for his part, read the reduced pain relief as one more confirmation that he would never be believed in hospital, which made him more distressed and, to the staff, more demanding.",
+   "betterRead": "This chapter says that when a reading enters a decision, power raises the standard of evidence: record behaviour, never inference. \"Pressed the call bell eleven times; asked for more analgesia; pain score nine\" can be checked and explained. \"Drug-seeking behaviour\" cannot, and it travelled straight into a decision about his treatment. The section on bias adds that readings go wrong in the directions a culture has laid down, and that labels like this one are not applied evenly. Beth's better response was to act, because the patient was at risk of harm. She told the doctor at once what she had seen, gave the pain scores and the diagnosis, and asked for the pain relief to be reviewed, which it was. She then spoke to the nurse in charge about the note. It was amended to describe behaviour, and the ward added a reminder to its handover guidance about labels."
+  },
+  {
+   "title": "The friend who said nothing",
+   "scene": "Jake, forty, has known his friend Craig since school. Over the past six months, Craig has changed. He has been drinking more, sometimes texting\n  at two in the morning. He has missed the last three five-a-side games. When they meet, he looks tired and thinner, and he changes the subject whenever\n  Jake asks about his job. Jake has noticed all of it.\n\n  He has also read this chapter, and taken its warnings seriously. He does not want to intrude. He does not want to make assumptions about Craig's\n  private life, or diagnose him, or pass on a reading. So he holds. He says nothing to Craig, and nothing to anyone else. He tells himself that Craig will\n  talk when he is ready, and that it is not his place.\n\n  In the spring, Craig's sister rings Jake. Craig has been signed off work with depression, and is staying with her for a while. She says that he had\n  been struggling for months, that he had lost his job in the autumn and had told nobody, and that he had said, the night before, that he wished one of\n  his friends had asked.\n\n  Jake sits in his car outside the house for a long time after the call.\n\nHe had once nearly asked, in the car after a game Craig did come to, and had stopped himself because it seemed like prying.",
+   "misread": "Jake read the chapter's warnings about intrusion as a reason to hold everything, and read his own silence as respect. Craig read his friends' silence as a sign that nobody had noticed, or that nobody wanted to know.\n\nCraig's other friends had read the missed games the same way, as Craig being busy, and had each assumed that someone else would ask.",
+   "betterRead": "This chapter's failure mode names exactly this: paralysis, when a man becomes so worried about intruding that he holds everything, including the reading that needed a question or the one that needed help. The cost is quieter but can be far greater, because the person who needed someone to notice gets nobody. The chapter distinguishes holding, asking and acting. Craig's changes, sustained over months, called for asking: a private moment, a question about the situation rather than a verdict, and a way out if he did not want to talk. Something like \"You've seemed knackered for a while, and I've missed you at football. How are things, really?\" would have cost Jake nothing. His better response, late as it was, was to visit Craig at his sister's, sit with him, and say that he was sorry he had not asked. He then kept turning up, every week, side by side, as the chapter on masculinity in Part V describes.\n\nCraig told him, months later, that the weekly visits had mattered more than anything anyone said."
+  }
+ ],
+ "workedReading": {
+  "title": "A reading in the group chat",
+  "scene": "Ewan, thirty-three, is one of eight people in a work group chat, set up for a project team but now used mostly for jokes and gossip. On a Thursday evening, a colleague, Rhona, posts: \"Did anyone else notice Dev in the client meeting today? He looked like he was about to cry. Think his marriage is in trouble, he's had a face on all week.\" Two people react with a crying emoji. Another replies, \"Yeah, I heard his wife moved out.\" Ewan was in the meeting. He noticed Dev too: quiet, red-eyed, looking at the table. He also feels a strong pull to add what he knows, which is that Dev took a long personal call in the car park at lunchtime. He has the reply half typed when he stops and runs the flows test from this chapter.\n\nHe also knows that Rhona is not unkind. She is worried about Dev, in her way. Most readings that go wrong in group chats start with someone who cares, which is part of why they spread so easily.",
+  "steps": [
+   {
+    "label": "Pause before replying",
+    "text": "He deletes the half-typed message and puts the phone down for a minute. Most ethical mistakes in reading people happen in a single sentence, said lightly, as this chapter warns, and a group chat is designed for exactly that kind of sentence: quick, casual, and instantly passed to everyone at once. A minute's pause is enough to ask the four questions.\n\nHe also notices how much he wants to post his piece of information, and recognises the small pleasure of being the one who knows. It is a feeling worth noticing, and not trusting."
+   },
+   {
+    "label": "Where did I see this?",
+    "text": "He saw Dev in a client meeting and in the car park, at work, among colleagues. The norms of that context allow colleagues to notice that someone seems upset, and perhaps to ask whether they are all right. They do not include speculating about his marriage to a group of eight people, most of whom were not there.\n\nHe also reminds himself that the chat has eight members, one of whom reports directly to Dev's manager, and that anything posted there could reach places Dev would never expect."
+   },
+   {
+    "label": "Behaviour or inference?",
+    "text": "What he actually saw was behaviour: red eyes, quietness, a long phone call. \"His marriage is in trouble\" is Rhona's inference, and \"his wife moved out\" is a rumour from someone else entirely. The chat has already turned a few observations into a story about Dev's private life, and his own message would have added another piece of evidence to it.\n\nHe also notes that red eyes in a meeting could mean a dozen things, including hay fever, tiredness or news about someone else entirely."
+   },
+   {
+    "label": "Would Dev expect this flow?",
+    "text": "He asks himself whether Dev would expect his red eyes in a client meeting to become a thread about his marriage in a chat he is not part of, and whether Dev would think the flow reasonable if he saw it. The answer to both is no. That settles it: whatever he does, he will not add to the thread.\n\nHe also imagines Dev reading the thread over someone's shoulder, which makes the answer even clearer."
+   },
+   {
+    "label": "Choose: hold, ask or act",
+    "text": "He decides that the reading calls for asking, not for passing on. Dev seemed genuinely upset, and Ewan works alongside him. There is no sign of immediate risk that would call for acting. He will find a private moment tomorrow, ask a question about the situation rather than offering a verdict, and give Dev an easy way to say he is fine.\n\nHe also decides that, if Dev says he is fine, he will believe him and leave it there, rather than pressing for a reason."
+   },
+   {
+    "label": "Redirect the chat",
+    "text": "He picks up the phone and writes, lightly: \"Probably best to leave Dev's stuff to Dev. I'll check he's OK tomorrow.\" He adds nothing else. Nobody replies for a few minutes. Then Rhona writes \"Fair enough\", and someone posts about the football. The thread about Dev stops. Ewan notices that a short sentence was enough to change the flow, which is what this chapter's drills rehearse.\n\nHe also does not lecture the group, which would have turned a redirection into a confrontation and made people defensive."
+   },
+   {
+    "label": "What happened",
+    "text": "The next morning, Ewan catches Dev at the coffee machine and says, \"You seemed a bit rough yesterday. Everything all right? No need to say if not.\" Dev says that his father has been taken into hospital and that it does not look good. He has told nobody at work. Ewan asks whether there is anything he can cover, and takes the client follow-up off Dev's list. Later, Ewan quietly asks the chat's creator whether the group could be closed now that the project is over.\n\nHe also does not tell the chat what Dev told him, which, he realises, would have been the same mistake in a kinder form."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading people for entertainment",
+   "body": "Once you have learned to read bodies, it is tempting to use the skill as a game: commenting on strangers in a café, guessing aloud about a couple's relationship at the next table, analysing a date's nervousness to friends afterwards, or narrating what a colleague's posture says about them at lunch. It can feel harmless and even clever. But each comment moves information out of someone's body and into a context they never chose, which is exactly what this chapter asks you to check before doing. The people being read cannot answer, correct or object, and the readings are usually wrong in the ways the bias section describes. The skills in this book are for understanding people you deal with and helping where you can. If you notice that you are mostly using them to entertain others at someone else's expense, put them down.\n\nA useful test is whether you would be comfortable if the stranger you were analysing overheard every word."
+  },
+  {
+   "title": "Treating body-language readings of public figures as fact",
+   "body": "Politicians, celebrities and people accused of crimes are often the subject of confident body-language analysis: commentators claim that a touch of the nose shows a lie, that a smile proves guilt, that a pause reveals a secret. These readings spread widely, and the people concerned usually cannot answer them. The evidence does not support them. Part I's chapter on deception showed how weak the link is between behaviour and lying, and Barrett and colleagues' 2019 review concluded that emotions cannot be reliably inferred from facial movements alone. Public figures have less privacy in many respects, but the reading is no more accurate for being about someone famous. If you share or repeat such analysis, you are passing on an inference as if it were a fact, and often one shaped by the reader's existing opinion of the person.\n\nIf you are going to comment on a public figure, describe what they did and leave out what you think it means."
+  },
+  {
+   "title": "Telling people what they feel",
+   "body": "\"You're angry.\" \"You're nervous.\" \"You're obviously upset about this.\" Telling someone what they are feeling, especially in front of others, turns a private state into a public verdict and puts the person in the position of either confirming it or arguing with you about their own inner life. The chapter's pose gallery shows the alternative: hold the reading until there is a private moment and a reason to ask, and then ask about the situation rather than announcing the feeling. \"You went quiet when the deadline came up. Is the timing a problem?\" respects the person's authority over their own experience; \"You're stressed about the deadline\" claims it. You may be right about the feeling. Even so, it is theirs to name, and naming it for them often makes them less, not more, willing to talk.\n\nIf you genuinely need to name a feeling, offer it as a question: \"Am I right that this is frustrating?\""
+  },
+  {
+   "title": "Trusting the machine over the person",
+   "body": "Software that claims to read emotion from faces and voices is increasingly used in hiring, education and security, and it can seem more objective than a human reader. This chapter describes it as a careless human reader made visible and run at scale. Barrett and colleagues' review found that the same facial movement can express different emotions in different people and contexts, and Rhue found that commercial systems scored Black basketball players as angrier or more contemptuous than White players with similar smiles. If you work somewhere that uses such tools, do not treat their outputs as evidence about a person's feelings, honesty or suitability. Ask what the tool claims, what evidence supports it, whether it has been tested for bias and whether people are told it is being used. And where a person and a machine disagree about how someone feels, believe the person.\n\nIf you are asked to use such a tool, it is reasonable to ask for the evidence behind it before you agree."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is it wrong to notice things about people?",
+   "a": "No. Noticing is part of all social life, and the people around you can see your face too, as this chapter says. The ethical question is not whether you were allowed to notice but where the information goes next. A reading that stays in your head and quietly changes how you behave, by slowing down, leaving a question for another day or giving someone the easier seat, is often exactly right. Problems arise when readings move: into a conversation with a third person, a group chat, a written note, a decision about someone's job or care. That is where the flows test matters: where did I see this, am I passing on behaviour or inference, who will receive it, and would the person expect it to go there?\n\nIt also helps to notice how often you pass on readings without meaning to, through a raised eyebrow or a knowing look to someone else."
+  },
+  {
+   "q": "When should I act rather than ask?",
+   "a": "When there is a risk of harm that makes waiting wrong. This chapter's examples include a possible injury to a child, as Ms Rahman saw; a patient whose treatment is being affected by a wrong label, as Beth found; and someone who may be in danger. In those cases, acting usually means following the proper route rather than investigating yourself: telling a safeguarding lead, a senior colleague, a doctor or, in an emergency, the emergency services. Record what you saw and heard, not what you guessed. Do not confront the person you are worried about, or anyone you suspect, in a way that could make things worse for the person at risk. Outside those situations, asking, privately and gently, is usually the better choice.\n\nIf you are unsure whether a situation calls for acting, ask the person whose job it is, such as a safeguarding lead or a senior nurse, for advice. That is itself a proper flow."
+  },
+  {
+   "q": "What should I say if someone asks me what I think is going on with another person?",
+   "a": "Run the flows test before you answer. Often the most honest reply is to say what you saw, in behavioural terms, and to decline to add your inference: \"She did seem quiet in the meeting. I don't know why.\" If the question is gossip, as it was in Ewan's group chat, a light redirection works well: \"Probably best to leave that to her,\" or \"I'll check she's OK.\" If the person asking has a legitimate role, such as a manager concerned about someone's welfare, you can suggest they ask the person directly rather than relying on your reading. Avoid confirming theories about someone's private life, health or relationships, however sympathetic the intention. Aidan's kindly meant answer at the Friday social is the case to remember."
+  },
+  {
+   "q": "Should I tell someone I have noticed that they seem upset?",
+   "a": "Often yes, if you do it privately, gently and with an easy way out. Ask about the situation rather than announcing the feeling: \"You seemed a bit rough yesterday. Everything all right? No need to say if not,\" as Ewan did at the coffee machine. Choose a private moment, not a meeting or a group. Accept whatever answer you get, including \"I'm fine\", and do not press. The chapter's failure mode warns that holding everything out of fear of intruding can leave someone who needed to be noticed with nobody, as Craig was. A kind, private question costs very little, and it tells the person that someone saw them and cares, which is often what matters most.\n\nIf they do want to talk, listen more than you speak, and ask what would help rather than offering solutions straight away."
+  },
+  {
+   "q": "Is it ethical to analyse politicians' body language?",
+   "a": "You can notice what public figures do, as anyone can, but be very careful about what you conclude and what you pass on. The evidence does not support reading lies, guilt or hidden motives from body language, as Part I's chapter on deception and Barrett and colleagues' review both make clear. Your readings are also likely to be shaped by what you already think of the person. If you discuss a politician's performance, describe behaviour, such as \"he paused for a long time before answering\", rather than claiming to know what it meant. Be wary of commentators who claim certainty, and avoid sharing confident analyses of people accused of crimes, whose trials and reputations can be affected by public readings that have no basis."
+  },
+  {
+   "q": "How can I tell whether my readings are biased?",
+   "a": "Mostly by looking at your own record, because bias feels like perception rather than prejudice while it is happening. The Bias Audit drill uses your calibration ledger: tag your scored predictions by the broad group of the person you read, and see whether your misses lean in a particular direction for some groups. Hugenberg and Bodenhausen found that people higher in implicit prejudice saw anger arrive sooner and linger longer on Black faces, and Brescoll and Uhlmann found that the same expression of anger was read differently in men and women. Use the swap test from Part IV and Part V: would you read the same behaviour the same way in someone different? And where a reading enters a decision, write behaviour, not inference, so that others can check it.\n\nIt also helps to invite colleagues to point out when your readings seem to lean one way, and to thank them when they do."
   }
  ],
  "watch": [
