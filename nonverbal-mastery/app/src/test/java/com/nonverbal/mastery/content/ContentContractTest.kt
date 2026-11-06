@@ -241,6 +241,7 @@ class ContentContractTest {
         val prose = l.moreCases.flatMap { listOf(it.scene, it.misread, it.betterRead) } + l.moreFailures.map { it.body } +
             l.questions.map { it.a } + (r?.steps?.map { it.text } ?: emptyList()) + listOfNotNull(r?.scene)
         prose.forEach { para -> check(para.count { it == '*' } % 2 == 0, w, "unbalanced *italic* markers in: ${para.take(60)}") }
+        prose.forEach { para -> check(!Regex("\\S[ \\t]*\\n[ \\t]*\\S").containsMatchIn(para), w, "hard line break inside a paragraph: ${para.take(60)}") }
     }
 
     @Test
