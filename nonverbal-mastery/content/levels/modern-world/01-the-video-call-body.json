@@ -73,6 +73,20 @@
    "doCaption": "Clear nods the camera can carry",
    "dontCaption": "Still and unreadable on screen",
    "annotation": "On a call, small signals are lost. A clearer nod and a visible reaction tell the speaker you are with them."
+  },
+  {
+   "doPoseId": "p_gaze_direct",
+   "dontPoseId": "p_gaze_down_away",
+   "doCaption": "Looking into the camera for the key point",
+   "dontCaption": "Appearing to look down at the keyboard",
+   "annotation": "Faces on the screen sit below the camera. Look at them to read, and into the lens for the moments that matter."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_sit_headphones",
+   "doCaption": "Fully present, listening",
+   "dontCaption": "Headphones on, half in another window",
+   "annotation": "On a call it is easy to drift into email, and people can often tell from your eyes. Close the other windows for the conversations that count."
   }
  ],
  "caseStudy": "Owen, forty-five, manages a team of engineers spread across three cities. Since his company went remote, he spends six or seven hours a day on video calls. He ends each day exhausted and short-tempered, and in his annual review, two of his team say that he comes across as cold and distracted in meetings.\n\nOwen is hurt and puzzled, so he watches a recording of one of his calls, as the chapter on video review suggested. He sees what they see. His laptop sits low on the desk, so he looks down at the camera. He spends half of each call looking at the corner of the screen where his own face is. His reactions are tiny, a flicker of the eyebrows that the camera barely records. When people pause for him to come in, he waits, and the pause stretches until someone else fills it.\n\nHe makes a few changes. He hides his self-view after the first minute. He raises the laptop on a stack of books and moves the speaker's window up near the camera. He cuts meetings to twenty-five minutes, so there are gaps between them, and makes cameras optional for the daily update. When he chairs, he names the next speaker and leaves a longer pause before moving on. He lets his face react, and nods so that it shows. Once a week, he and his deputy have their one-to-one as a phone call while both of them walk.\n\nThree months later, the team's comments are different. One engineer says that Owen seems more relaxed. Owen says that he is less tired than he has been in two years, and that the walking calls are the best conversations of his week.",
@@ -92,6 +106,10 @@
     "Note where your eyes go, and how often you look at your own image.",
     "Note how visible your nods and reactions are.",
     "Write down two changes you will make, and try them on your next call."
+   ],
+   "variations": [
+    "Record a short call with your camera at two different heights, and compare how your gaze appears in each.",
+    "Watch a recorded call with the sound on and then off, and note which signals carry better without audio."
    ]
   },
   {
@@ -102,6 +120,10 @@
     "Sit back until your shoulders and upper chest are in the frame.",
     "Move the window showing the speaker as close to the camera as you can.",
     "Turn off your self-view once you have checked how you look."
+   ],
+   "variations": [
+    "Try your setup with a window in front of you and then behind you, and compare how readable your face is.",
+    "Ask a colleague to tell you honestly how you look on their screen, and adjust one thing they mention."
    ]
   },
   {
@@ -112,6 +134,10 @@
     "Leave a pause of three full seconds before moving on from a question.",
     "Ask quieter people directly, by name, for their view.",
     "Afterwards, note who spoke who usually does not."
+   ],
+   "variations": [
+    "Try ending one meeting five minutes early, and notice how people use the time and how they respond.",
+    "In a meeting you run, ask everyone to use a hand signal when they want to speak, and see whether talking over each other drops."
    ]
   },
   {
@@ -122,6 +148,10 @@
     "Suggest doing it as a phone call while both of you walk.",
     "Notice how the conversation differs from your usual video calls.",
     "Ask the other person afterwards how it felt for them."
+   ],
+   "variations": [
+    "Try the walking call with someone you usually only see on video, and compare the conversations.",
+    "Suggest an audio-only call for a meeting that usually has cameras, and ask people afterwards how it felt."
    ]
   }
  ],
@@ -203,6 +233,45 @@
    "explain": "The mirror, the stare and immobility all add strain. Hiding self-view, building in breaks and moving suitable conversations to audio-only or walking calls address the mechanisms directly.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Which of these is one of the four causes of video call fatigue that Bailenson proposed?",
+   "options": [
+    "Seeing your own face in the self-view window for hours",
+    "The cost of electricity used by the computer during long calls",
+    "Sitting further from other people than you normally would in a room",
+    "Hearing other people's voices more loudly and clearly than in person"
+   ],
+   "answer": 0,
+   "explain": "Bailenson's four causes were close-up eye gaze, cognitive load, the mirror of seeing your own face, and reduced mobility. Hiding self-view is one of the simplest ways to reduce the strain.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A capable team member almost always keeps his camera off in team meetings, and colleagues have started joking about it. What fits this chapter best?",
+   "options": [
+    "Make cameras compulsory for everyone, so that nobody can hide",
+    "Join in the joke, so that he understands how his absence looks",
+    "Ask him privately and kindly, since there are many ordinary reasons",
+    "Assume he is doing other work, and give him less important tasks"
+   ],
+   "answer": 2,
+   "explain": "Cameras go off for many reasons, from shared homes to mirror anxiety. Asking privately and offering options respects him, and judging him by his contributions rather than his video is fairer.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a candidate who looks down throughout a video interview is avoiding eye contact. What does this chapter say?",
+   "options": [
+    "It is right, since confident candidates always look straight into the camera",
+    "She is probably looking at faces on her screen, below the camera",
+    "It is right, but only if she also speaks quietly and hesitates often",
+    "It is wrong, since gaze tells you nothing at all on any video call"
+   ],
+   "answer": 1,
+   "explain": "Looking at someone's face on a screen makes you appear to look down, because the camera is above it. Reading that as evasion puts a judgment on a piece of equipment.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -226,6 +295,110 @@
    "work": "Zoom disrupts the rhythm of conversation",
    "author": "Julie E. Boland, Pedro Fonseca, Ilana Mermelstein and Myles Williamson",
    "note": "Journal of Experimental Psychology: General 151(6), 2022. How video calls slow and scramble turn-taking."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The candidate who would not look up",
+   "scene": "Sana, twenty-eight, is interviewing by video for a job as a data analyst. She is sitting at her kitchen table with her laptop flat in front of\n  her. The camera is at the top of the screen, well below her eye level, and she looks down at the interviewers' faces on the screen throughout. To the\n  three people on the panel, she appears to be looking at her keyboard, or her lap, for the whole forty minutes.\n\n  Her answers are strong: clear, detailed and well structured. But afterwards, one of the panel, Gareth, says that she did not make eye contact once,\n  and that he is not sure she would be confident with clients. Another says she seemed nervous. The third, Helen, says that Sana was looking at their\n  faces on her screen, which is exactly what anyone would do, and that they all look the same way to her.\n\n  Gareth says that confident people look at the camera.\n\nSana had practised her answers with a friend over video the night before, and the friend had said she looked great. Neither of them had noticed the camera angle, because they were looking at each other's faces on the screen.\n\nGareth has interviewed dozens of people in person and has a strong sense of what confidence looks like across a table. He has interviewed only a handful by video, and has not adjusted his sense of it.",
+   "misread": "Gareth read Sana's downward gaze as a lack of eye contact, and from that as a lack of confidence, as he would have in a room. He did not account for the camera, which records anyone looking at faces on a screen as looking slightly down.\n\nHe also read his own preference, for people who look into the camera, as a measure of confidence, when it is mostly a measure of whether someone has learned a technique.\n\nAnd the panel did not mention, in their discussion, that all three of them had looked down at their screens in exactly the same way. The camera that made Sana look evasive made them look the same to her.\n\nSana, for her part, had no idea how she looked. Without a self-view she had checked, she could not see the problem, which is exactly why the reader on the other side needs to allow for it.",
+   "betterRead": "On a call, eye contact in the strict sense is impossible. If you look at the other person's face on your screen, the camera above it records you looking down; if you look into the camera, you can no longer see them. Sana was doing what almost everyone does on video: looking at the people she was talking to. A low laptop exaggerated the effect. Reading her gaze as it would be read in a room put a judgment on a piece of equipment. Helen's better reading kept the panel's attention on what the interview could measure, the answers, and on the fact that all three of them looked the same on Sana's screen. Gareth agreed to score the answers first. Sana was offered the job. In her first week, Helen mentioned, kindly, that a pile of books under the laptop would raise the camera, and Sana laughed and said she had wondered why everyone always seemed to be looking at her chin.\n\nGareth also asked, at the next panel, whether they could agree in advance what they would and would not read from video."
+  },
+  {
+   "title": "The colleague whose camera was always off",
+   "scene": "Mark manages a team of eight who work remotely. Most of them keep their cameras on in team meetings. One, Tom, twenty-six, almost always\n  keeps his off. He speaks when asked, his contributions are useful, and his work is good. But Mark has started to feel that Tom is not really\n  present, and wonders whether he is doing other work during meetings, or does not care. Two other team members have made jokes about Tom being the\n  \"invisible man\".\n\n  Mark considers making cameras compulsory for all team meetings. He mentions this to a colleague in another department, who asks whether he has\n  asked Tom why.\n\n  He has not.\n\nTom also messages Mark after most meetings with useful thoughts he did not raise in the meeting itself. Mark has found these helpful, and has not connected them with the camera.\n\nMark has noticed that he feels more connected to the people whose faces he can see, and that he tends to address his questions to them. Tom, with no face on the screen, gets asked less, and so says less, which has made Mark more convinced that he is not engaged. Mark has not noticed the loop.\n\nTom, for his part, has noticed that he is the only one with his camera off, and has started to feel that it is being held against him. He has thought about saying something, and decided it would sound like an excuse.",
+   "misread": "Mark read Tom's camera being off as a sign of disengagement, and the jokes from colleagues as confirmation. He was about to set a rule for everyone on the strength of a reading he had not checked.\n\nThe colleagues' jokes also changed how Mark saw Tom. A joke repeated in a group can turn an ordinary behaviour into a reputation, without anyone having checked whether it was fair.\n\nHe also nearly turned a reading about one person into a rule for eight, which is how unchecked readings tend to grow in teams.\n\nThe questions Mark asked, mostly to visible faces, were a small but steady signal to Tom that he was less part of the team.",
+   "betterRead": "People turn their cameras off for many reasons: slow connections, shared or untidy homes, a crying baby, exhaustion, anxiety about being watched, a disability, or simply finding the constant self-view tiring. Bailenson's account of video call fatigue included mirror anxiety, the strain of seeing your own face for hours, and Fauville and colleagues found that this mirror anxiety was linked to how tired people felt. A camera that is off says nothing reliable about attention. Mark's better approach was to ask, privately and kindly. In a one-to-one, he said, \"I notice your camera's usually off in team meetings. That's fine, I'm just curious whether there's anything I could do to make calls easier for you.\" Tom said that he shared a flat with three people, worked from his bedroom and was embarrassed by it, and that his connection was poor. Mark arranged a company headset and a virtual background, said that cameras would be optional for team meetings, and asked the team to drop the joke. Tom started switching his camera on for one-to-ones, which was what Mark had really wanted.\n\nMark also stopped judging people's attention by their camera, and started noticing who followed up and who did not."
+  },
+  {
+   "title": "The argument across the time zones",
+   "scene": "Leah, thirty, is living in Melbourne for a year on a work placement. Her partner, Jake, is in London. They talk on video every evening for\n  her and every morning for him. Recently the calls have become tense. When Leah is telling Jake something, he often starts talking just as she\n  continues, and they end up talking over each other, both stopping and both saying \"Sorry, go on.\" When Jake answers a question, there is a pause,\n  and Leah reads it as hesitation. Last week, when she asked whether he missed her, the pause before his \"Of course\" felt like a lifetime.\n\n  Leah starts to wonder whether Jake is losing interest. Jake starts to feel that Leah is impatient and always interrupting him.\n\n  On one call, the connection freezes for several seconds while Jake is in the middle of telling her about his week, and when it comes back, Leah has\n  missed the end of his sentence and he is waiting for a reply.\n\nLeah's flat in Melbourne has a poor internet connection, and Jake usually calls from the train on his way to work. Neither of them has ever thought about how much the setting was adding to the strain.\n\nThey have also started to dread the calls a little, which neither has admitted. Leah notices that she checks her hair in the self-view before Jake answers, and Jake notices that he has started to keep them shorter.",
+   "misread": "Leah read Jake's pauses as hesitation and his talking over her as not listening. Jake read Leah's interruptions as impatience. Both read the broken rhythm of the call as information about the other person's feelings.\n\nThey also both read the apologies, \"Sorry, go on\", as signs of tension, when they were the ordinary sound of two people working round a delay.\n\nThey also read their own frustration with the technology as frustration with each other, which is one of the most common and least noticed ways that video strains a relationship.",
+   "betterRead": "Boland and colleagues found that the gap between turns in conversation was more than three times as long over Zoom as face to face, and a connection between Melbourne and London is likely to add further delay. The rhythm people rely on to know when to speak is broken, so they talk over each other, apologise and wait too long, and every pause feels heavier than it is. Leah's reading of the pause before \"Of course\" was a reading of the connection, not of Jake. The better approach was to name the lag and adjust for it. They agreed to leave a beat after each other finished, to use a small hand signal when one of them wanted to speak, and to say important things on a voice message if the connection was bad, so that the words arrived whole. Leah also asked, at the end of a call, \"Your pause before 'Of course' worried me. Was that the lag?\" Jake laughed and said he had been yawning, which was a different problem.\n\nThey also switched to audio-only calls when the connection was bad, and found that they talked over each other less."
+  },
+  {
+   "title": "The appraisal on a frozen screen",
+   "scene": "Dev, thirty-eight, is giving a team member, Rachel, a difficult appraisal by video. He tells her that her project has missed its deadlines\n  twice and that the client has complained. As he says it, Rachel's image freezes: her face is caught with her mouth slightly open and her eyes wide.\n  The audio continues for a moment, then cuts out. Dev waits. After about ten seconds, the picture jerks back to life. Rachel is now looking down, her\n  face flat.\n\n  Dev reads the frozen face as shock and the flat face as defiance. He becomes firmer, and starts going through the complaints in detail. Rachel says\n  very little for the rest of the call. At the end, she says, quietly, that she missed some of what he said because her connection dropped.\n\n  Dev realises that he does not know which parts she heard.\n\nRachel is working from her parents' house that week, because her own flat has a leak, and the broadband there is unreliable. She mentioned this to Dev at the start of the call, but he did not register it.\n\nDev has prepared the conversation carefully, with notes on the deadlines and a copy of the client's email open on his second screen. He glances at the notes several times as he speaks, which on Rachel's screen looks as though he is looking away from her.",
+   "misread": "Dev read Rachel's frozen expression as a reaction to his words, and her face when the picture returned as defiance. He did not consider that he was reading a frozen frame and a moment of recovery from a dropped connection.\n\nHe also became firmer in response to his reading, which is how a misread face on video can turn a difficult conversation into a harder one.\n\nHe also read Rachel's silence for the rest of the call as sullenness, when she may simply have been trying to work out what she had missed.\n\nAnd his own glances at his notes, which Rachel could see, may have looked to her like a man reading a script rather than talking to her, which would not have helped either.",
+   "betterRead": "Reading on a call needs extra care because the evidence is thinner and the rivals are more numerous. A frozen face may be a frozen connection. A delay may be latency. A flat face may be poor lighting, fatigue or someone trying to work out what they missed. Dev's sequence of readings, shock and then defiance, may have been accurate, or may have been entirely about the technology, and he had no way of telling. The better approach, especially for difficult news, is to check in words and to make the important points robust to a bad connection. Dev rang Rachel that afternoon, on the phone, and said he was sorry the call had been patchy. He went through the main points again, slowly, and asked what she had heard and what she thought. Rachel said that she knew about the deadlines and had been waiting for a chance to explain that two of her team had been off sick. They agreed a plan, and Dev sent a short written summary afterwards, so that nothing depended on a single dropped call."
+  }
+ ],
+ "workedReading": {
+  "title": "A hard conversation on video",
+  "scene": "Nadia manages a team spread across three offices. She needs to tell one of her senior engineers, Simon, that a reorganisation will move him onto a different project, one he has said before that he does not want. They are in different cities, and a video call is the only option this week. Nadia knows that Simon is proud of his current work and that the news will be unwelcome. She also knows how much a video call takes away.\n\nShe also knows that Simon is more relaxed on the phone than on video, and that he tends to switch his camera off when calls are tense. She decides to let him choose, and to make the call as easy for him as she can.\n\nNadia also knows that she will not be able to see Simon's hands, his feet, or whether he turns away from the desk. Whatever he feels, most of his body will be telling it to an empty room.\n\nShe also reminds herself that Simon will remember how this call felt long after he has forgotten the details, and that the care she takes now is part of the message.",
+  "steps": [
+   {
+    "label": "Set the frame before the call",
+    "text": "Nadia raises her laptop on a stack of books so that the camera is at eye level, sits back so that her shoulders and upper chest are in the frame, and sits facing a window so that her face is evenly lit. She moves the window showing Simon to just below the camera, and turns off her own self-view once she has checked it, so that she will not spend the call watching herself.\n\nShe also closes her email and silences notifications, so that nothing flashes on her screen while she is talking. A glance at a notification, on video, looks like a glance away from the person.\n\nShe also checks the background behind her. A cluttered room or a busy office can distract on video in a way it would not in person, because it fills so much of the small picture.\n\nShe also puts a glass of water within reach, out of shot, so that she will not have to leave the frame or reach awkwardly if her mouth goes dry."
+   },
+   {
+    "label": "Give him notice and a choice",
+    "text": "She sends Simon a short message beforehand: she would like to talk about the reorganisation, it may not be what he hopes, and would he prefer video or a phone call. He replies video. Giving notice and a choice of medium restores a little of the control that a screen takes away.\n\nShe also books the call for a time when he will have the rest of the afternoon free, so that he does not have to go straight into another meeting after hearing difficult news.\n\nShe also tells him in the message that the conversation will take about half an hour, so that he can plan around it and does not have to wonder how long it will last."
+   },
+   {
+    "label": "Say the hard part early",
+    "text": "She does not bury the news. After a brief hello, she says, slowly, looking into the camera for the key sentence, \"I want to tell you about the reorganisation. You're going to be moving onto the payments project from next month.\" Looking into the camera at that moment means that, on Simon's screen, she is looking straight at him when it matters.\n\nShe also says it in one clear sentence, without a long preamble. On video, a long build-up can feel even more anxious than in person, because the other person cannot read the room around the words.\n\nShe also avoids softening it so much that the message is lost. On video, where reactions are harder to read, clarity is a kindness: Simon should not be left wondering what she meant."
+   },
+   {
+    "label": "Leave room for the lag",
+    "text": "Then she stops, and waits, for longer than she would in a room. She knows that pauses on video are longer than they feel, and that if she fills the silence she may talk over his first reaction. After about three seconds, Simon says, \"Right,\" and nothing else. His face is still and his shoulders have lifted.\n\nShe also keeps her own face still and warm while she waits, rather than looking away or checking her notes. On his screen, her face is the only thing in the room.\n\nShe also keeps her hands visible, just in the frame, resting on the desk. Hands that disappear below the frame can look as though someone is doing something else."
+   },
+   {
+    "label": "Read what the camera carries",
+    "text": "With most of his body out of frame, Nadia reads what she can: the raised shoulders, the jaw set, his gaze dropping off the screen, his voice flatter than usual. She reminds herself that the picture is compressed and the light in his room is poor, and that any single sign may be the camera. Together, they fit a man taking a blow and trying not to show it.\n\nShe also notices that he has turned slightly away from the camera, so that she can see more of the side of his face. People on video often turn a little away when they want privacy, as they would turn away in a room.\n\nShe also notices that his microphone has picked up a sharp breath out, which the camera might not have shown. On video, the audio often carries signals the picture loses."
+   },
+   {
+    "label": "Check in words",
+    "text": "She does not guess. She says, \"I know this isn't what you wanted. How are you feeling about it?\" and waits again. Simon says that he is disappointed and that he feels as if his work on the current project has not been valued. Nadia listens, nods clearly enough for the camera to carry it, and says that his work has been valued, and why he was chosen for the new project.\n\nShe also uses his name when she reassures him, and looks into the camera as she does it. Small moments of direct gaze carry more weight on video, because they are rarer.\n\nShe also asks him whether there is anything he would like her to pass on to the directors, which gives him a way to influence the decision rather than only receive it."
+   },
+   {
+    "label": "Follow up off the screen",
+    "text": "She ends by saying that she knows video makes these conversations harder, and offers to talk again on the phone the next day, once he has had time to think. She sends a short written summary afterwards. The next day, on the phone, Simon asks several practical questions and says he is coming round to it. Nadia notes that the call had taken away his body, his room and half a second of every reply, and that each step she took had been a way of giving a little of that back.\n\nShe also thanks him, in the written summary, for how he took the news. A short note of thanks after a hard call helps the other person feel that the relationship survived it.\n\nShe also notes that she would have handled it differently in person: a walk, a coffee, more time. Video asked her to do everything a little more deliberately, and that turned out to be no bad thing."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading people on video as if they were in the room",
+   "body": "The temptation on a call is to read a face as confidently as you would across a table: a frown means disagreement, a downward gaze means evasion, a still face means coldness. But the face on a screen is compressed, delayed, lit badly and cut off at the chest, and the person may be looking at you, at themselves, at a second screen or at a child who has just walked in. Most of their body, which would normally help you weigh a facial expression, is gone. Read video faces more lightly than real ones, look for clusters across the whole call rather than single moments, and check important readings in words.\n\nIt also helps to remember that people adjust their faces for the camera in ways they would not in a room. Some freeze, some over-smile, some go blank. What you see on video may be partly a performance for the lens.\n\nIt also helps to watch for the moments when the picture and the sound disagree. A face that seems calm with a voice that has gone tight is often a better clue than either alone.\n\nIt also helps to know that video compresses faces in ways that remove subtle movements first: the small changes around the eyes, the flicker of a smile. What survives is often the larger, more deliberate expression, which may not be the most honest one."
+  },
+  {
+   "title": "Treating delays as reluctance",
+   "body": "Boland and colleagues found that the gap between turns was about three times as long over Zoom as face to face. A pause that would mean hesitation in a room may mean nothing at all on a call, and a reply that seems to come late may have been spoken on time. People also talk over each other more, because the rhythm that tells them when to speak is broken. Do not read pauses as reluctance, coldness or ignorance on a call. Leave longer gaps yourself, name people when you want them to speak, and when a pause worries you, ask about it rather than deciding what it meant.\n\nIt also helps to say, at the start of an important call, that you know there may be lag, and to agree how you will handle it. It makes pauses easier to bear for both of you.\n\nIt also helps to watch for who gets talked over most on calls. Quieter people, junior colleagues and people with slower connections often lose their turn repeatedly, and a chair who notices can give it back.\n\nIt also helps to watch for the pattern of who speaks first after a question. On video, the most confident or best-connected person often answers before anyone else has had a chance, and others give up waiting.\n\nIt also helps to repeat key decisions at the end of a call, so that anyone who lost a few seconds to the connection still leaves knowing what was agreed."
+  },
+  {
+   "title": "Watching yourself instead of them",
+   "body": "Most video software shows you your own face throughout the call, and many people spend a surprising share of every call looking at it. Bailenson described this mirror as one of the four causes of video call fatigue, and it also takes your attention away from the person you are talking to, which they can often see in your eyes. Check your frame at the start, and then hide your self-view. Move the window showing the other person as close to your camera as you can, so that your gaze looks more natural to them, and give them the attention you would in a room.\n\nIt also helps to notice when you are checking how you look rather than how they are. If your eyes keep drifting to your own image, that is a sign to hide it.\n\nIt also helps to place the window of the person you are talking to near the camera, rather than across the screen. The closer their face is to the lens, the more your gaze will look like eye contact to them.\n\nIt also helps to know that many people feel more self-conscious on video than in person, partly because of the self-view. Hiding it often makes people more natural, and so easier to read."
+  },
+  {
+   "title": "Reading a camera that is off as disengagement",
+   "body": "A camera that is off is easy to read as absence, boredom or doing something else. Often it is none of these. People turn cameras off because of poor connections, shared homes, children, disability, exhaustion, anxiety, or because they listen better without seeing themselves. Treating camera-off as a failing, through jokes, comments or a rule that cameras must always be on, can make people more anxious and less willing to speak. If it matters, ask privately and kindly, and offer options. Judge engagement by what people contribute, not by whether their face is on the screen.\n\nIt also helps to remember that people with disabilities, including some autistic people and people with chronic illness, may find cameras particularly draining. Optional cameras are an accessibility measure as well as a courtesy.\n\nIt also helps to be clear about expectations. If cameras are needed for a particular call, such as a client meeting, say so in advance, and say why, so that people can prepare rather than feel caught out.\n\nAnd remember that camera-off can also be a sign that something is wrong, such as illness or a crisis at home. If someone who usually has their camera on suddenly switches it off for weeks, a kind, private question is worth asking."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why do video calls make me so tired?",
+   "a": "Bailenson proposed four reasons. Close-up eye gaze: on a call, faces appear large and close, as if everyone were staring at you from intimate distance, all the time. Cognitive load: sending and reading signals takes conscious effort on video, because so many of them are missing or delayed. The mirror: seeing your own face for hours is unusual and tiring. Reduced mobility: you are stuck in a small space in front of a camera, unable to move as you would in a room. Fauville and colleagues developed a scale to measure the fatigue and found it widespread. Shorter calls, breaks between them, hiding self-view and allowing audio-only calls all help.\n\nIt also helps to stand up and move between calls, even for a minute or two, and to look at something far away. The body and eyes recover faster with small breaks than with none.\n\nIt also helps to switch to speaker view rather than a grid for most of a call. A single face is less tiring to watch than a wall of faces, all apparently looking at you at once.\n\nAnd it helps to remember that video fatigue is not a personal weakness. It is a predictable effect of a medium that asks the body to do unusual things for long periods."
+  },
+  {
+   "q": "Should I look at the camera or at the screen?",
+   "a": "Both, at different moments. Looking at the other person's face on your screen lets you read them, but makes you appear to be looking slightly down. Looking into the camera makes you appear to look straight at them, but means you cannot see their reaction. A practical compromise is to look at their face most of the time, and to look into the camera for the moments that matter most: a greeting, a key point, an important question, a thank you. Moving their window as close to the camera as possible reduces the gap between the two.\n\nIt also helps to tell people what you are doing. \"I'm looking at my notes\" or \"I'm looking at your slides\" explains a glance away that might otherwise be misread.\n\nIt also helps to look into the camera when you are listening to something important, as well as when you are speaking. It tells the speaker that you are paying attention, which a downward gaze can hide.\n\nIt also helps to practise. Recording yourself for a minute while looking at the screen and then at the camera shows the difference clearly, and makes it easier to choose when to do each."
+  },
+  {
+   "q": "Is it rude to turn my camera off?",
+   "a": "It depends on the setting and the norms of the group, and it is worth thinking about how others will read it. In some teams, cameras off is normal; in others, it can look as though you are not engaged. If you need to turn it off, a short explanation helps: \"My connection's poor today, so I'll keep my camera off,\" or \"I listen better without the video.\" For one-to-one conversations and anything sensitive, having your camera on, if you can, usually helps the other person read you. If you run meetings, making cameras optional for some calls is one of the simplest ways to reduce fatigue.\n\nIt also helps to switch on for the start and end of a call, even if you turn the camera off in the middle. A face at the greeting and goodbye carries much of the warmth that the rest of the call might lack.\n\nIt also helps to keep your microphone on mute when you are not speaking, so that background noise does not distract, and to unmute clearly when you want to come in.\n\nIf you are new to a team, it helps to watch what others do for the first few calls, and to ask your manager what is expected."
+  },
+  {
+   "q": "How can I read someone whose camera is off?",
+   "a": "Through the voice and the words, as you would on the phone. Listen to their pace, pitch and volume, the pauses before their answers, and where their voice drops, as the chapter on audio as body language describes. Notice what they say and what they leave out. Notice whether they contribute, ask questions and follow up, which tell you more about engagement than a face would. Because you have less to go on, check important readings in words: \"You sounded unsure about that. What do you think?\" And be generous: missing video is not missing attention.\n\nIt also helps to say more aloud than you would in person, such as \"That makes sense\" or \"I'm with you\", so that the other person has a back channel even without your face.\n\nIt also helps to know the person's usual voice. A colleague you only ever hear on audio still has a baseline: their normal pace, their usual pauses, their laugh. Changes from that baseline are as informative as changes in a face."
+  },
+  {
+   "q": "Do some people find video calls more tiring than others?",
+   "a": "Yes. Fauville, Bailenson and colleagues found that women, on average, reported more video call fatigue than men, and that this was linked partly to mirror anxiety, the strain of seeing their own face, and to feeling physically trapped in front of the camera. People who are anxious, neurodivergent, in poor health or in difficult home settings may also find calls harder. This is one reason to avoid assuming that everyone can cope with long days of video, and to design calls with breaks, optional cameras and audio-only options.\n\nIt also helps to ask people what works for them. Some people find a short break with the camera off halfway through a long call makes a large difference, and they may not ask for it unless invited.\n\nIt also helps to know that the effect is an average, and that individuals vary a great deal. Asking people what works for them is better than assuming."
+  },
+  {
+   "q": "How long should a video meeting be?",
+   "a": "Shorter than most are. Many meetings fill an hour because the calendar offers an hour, when twenty or thirty minutes would do. Shorter meetings, with breaks between them, reduce fatigue and keep attention higher. A simple habit is to end meetings five or ten minutes before the hour or half hour, so that people have time to stand up, move and look away from a screen before the next one. For one-to-one conversations where faces add little, a phone call, perhaps while walking, can be better than any video meeting.\n\nIt also helps to keep large group calls for broadcasting information, and to use smaller calls or messages for discussion. A grid of twenty faces is a poor setting for real conversation.\n\nIt also helps to ask whether a meeting is needed at all. A short written update, a shared document or a quick message can often do the job of a call, and save everyone half an hour in front of a camera."
   }
  ],
  "watch": [
