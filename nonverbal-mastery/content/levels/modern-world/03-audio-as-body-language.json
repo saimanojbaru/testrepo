@@ -73,6 +73,20 @@
    "doCaption": "Speaking it, with natural rises and falls",
    "dontCaption": "Reading a script in a flat voice",
    "annotation": "Vocal variation signals a mind at work. A script read flatly throws that signal away."
+  },
+  {
+   "doPoseId": "p_sit_headphones",
+   "dontPoseId": "p_sit_slouched_low",
+   "doCaption": "A headset close to the mouth, sitting up",
+   "dontCaption": "Slumped at arm's length from a laptop microphone",
+   "annotation": "Distance decides how much of the room the listener hears. A microphone near your mouth gives them your voice and little else."
+  },
+  {
+   "doPoseId": "p_breath_low",
+   "dontPoseId": "p_breath_high",
+   "doCaption": "A slow breath out, shoulders dropped",
+   "dontCaption": "Shallow, high breath before a difficult call",
+   "annotation": "Nerves reach the voice through the breath. Two slow breaths out before you speak will lower and steady it."
   }
  ],
  "caseStudy": "Liam, thirty-one, is a structural engineer applying for a job with a firm in another country. The first interview is on video. He takes it at the kitchen table, on his laptop, with tiles on two walls and the fridge humming behind him. He thinks it goes well. He does not get through.\n\nA friend who works in recruitment asks to hear how he sounds. She records ten seconds of him on the same laptop in the same kitchen and plays it back. Liam winces: his voice is hollow and distant, with an echo, and every sentence is followed by the faint drone of the fridge. She tells him about the research on audio and credibility, and lends him a basic wired headset.\n\nFor his next interview, with a different firm, Liam sets up in his bedroom, with the curtains drawn and the headset on. He stands for the technical presentation. He ends each answer with a clear finish, and when the panel's questions arrive late, he waits rather than talking over them. He gets the job.\n\nIn his first month, an email exchange with a contractor about a delayed delivery turns sour. Each message is a little sharper than the last, and Liam finds himself drafting a reply that would end the relationship. He stops, and rings instead. The contractor turns out to be a tired man with a sick child who has been covering for two colleagues. They sort out the delivery in ten minutes. Liam keeps the draft as a reminder of what text alone had made of him.",
@@ -92,6 +106,11 @@
     "Note echo, distance, background noise and how flat or lively your voice sounds.",
     "Try the same with a headset or a different room, and compare.",
     "Choose the setup you will use for important calls."
+   ],
+   "variations": [
+    "Record the same thirty seconds in three rooms of your home, such as the kitchen, the bedroom and a hallway, and rank them for echo.",
+    "Play your recording to a friend through a phone speaker and ask them to describe, in three words, how you sound.",
+    "Record yourself with noise suppression on and off, and note which version sounds most like you."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Instead of writing the next reply, call the person.",
     "Notice how the conversation differs from the written exchange.",
     "Write one sentence about what the voice added."
+   ],
+   "variations": [
+    "Before you call, write down the one thing you most want the other person to hear in your voice, such as concern or respect, and check afterwards whether it came across.",
+    "Try the same with a voice note for a message that might be misread, and ask the person afterwards how it landed.",
+    "Ask a colleague which they prefer for difficult conversations, a call, a voice note or writing, and note the answer for next time."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Leave a slightly longer pause than usual before speaking after someone else.",
     "Notice whether fewer collisions happen.",
     "Afterwards, note who spoke more than usual."
+   ],
+   "variations": [
+    "Chair one meeting in which you end each agenda item by asking a remote participant first, by name, then leaving a clear pause.",
+    "Practise ending a turn with a falling tone and a name, rather than trailing off, in an ordinary call with a friend.",
+    "Count the collisions in a meeting before and after you start ending turns clearly, and compare the two numbers."
    ]
   },
   {
@@ -122,6 +151,11 @@
     "Record it again standing, imagining a person in front of you, letting pitch and pace vary.",
     "Listen to both and note the difference.",
     "Before your next important call, stand and speak a few sentences aloud to warm your voice up."
+   ],
+   "variations": [
+    "Read the same paragraph sitting slumped, sitting upright and standing, and listen for which voice sounds most awake.",
+    "Before an important call, take three slow breaths out and say your first sentence aloud twice, then notice how the opening of the call feels.",
+    "Record yourself explaining something you care about without notes, then the same thing read from a script, and compare the liveliness."
    ]
   }
  ],
@@ -203,6 +237,45 @@
    "explain": "Compression and poor connections can make any voice sound flat or robotic. Compare with how he usually sounds on calls, and if it matters, ask whether it is the line or him.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Newman and Schwarz's research, what changed listeners' ratings of the same scientists saying the same things?",
+   "options": [
+    "The scientists' accents, which listeners judged more harshly than the content",
+    "Slightly degraded audio, which made them seem less intelligent and their work less important",
+    "Whether the scientists used notes, which made them sound less confident overall",
+    "How long each recording was, with shorter recordings rated as more expert by listeners"
+   ],
+   "answer": 1,
+   "explain": "When the audio was slightly degraded, listeners rated the same scientists as less intelligent, likeable and expert, and their research as less important. The sound was judged as part of the speaker.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In a hybrid meeting, a colleague who joins by phone has gone quiet over several months. What fits this chapter best?",
+   "options": [
+    "Assume she has lost interest in the work and plan around her quietly",
+    "Ask her how the meetings are for her, and change the setup and the turn-taking",
+    "Wait for her to raise it, since speaking up is each person's own responsibility",
+    "Move the meeting to email, since she seems more comfortable writing her views"
+   ],
+   "answer": 1,
+   "explain": "A remote voice competes with delay, a small speaker and a room that takes turns by glance. Asking her, improving the sound and giving her clear turns addresses the setup rather than guessing at her motives.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that the tremor they hear in their own voice on calls must be obvious to everyone listening. What does this book suggest?",
+   "options": [
+    "People tend to overestimate how much of their inner state others can see or hear",
+    "They are right, since every listener hears nerves in a voice straight away on calls",
+    "Phone lines make nerves louder, so a tremor is much more obvious than in a room",
+    "A tremor only shows if they speak slowly, so speaking fast is the best way to hide it"
+   ],
+   "answer": 0,
+   "explain": "The illusion of transparency, described in Part VI, is that people overestimate how visible their inner states are. A tremor that feels obvious is usually far less audible to others, especially through a phone line.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -226,6 +299,110 @@
    "work": "The humanizing voice: Speech reveals, and text conceals, a more thoughtful mind in the midst of disagreement",
    "author": "Juliana Schroeder, Michael Kardas and Nicholas Epley",
    "note": "Psychological Science 28(12), 2017. Why opponents seem more human when you hear them."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The expert who sounded unsure",
+   "scene": "Nadia, thirty-eight, is an epidemiologist at a university. During a winter outbreak of flu, a regional radio station asks her to come on\n  the drive-time programme to explain what is happening and what people should do. There is no time to get to the studio, so the producer rings her\n  at home and puts her straight on air. She takes the call on her laptop, at the kitchen table, with the phone's speaker beside it in case the line\n  drops. The kitchen has tiles on two walls and a stone floor. Her teenage son is making toast.\n\n  She knows her subject thoroughly. She has given the same explanation to colleagues, students and ministers. She speaks clearly, gives the three\n  pieces of advice she had planned and answers the presenter's questions without hesitation. She thinks it went well.\n\n  That evening her sister forwards her a few of the comments on the station's page. One says she \"sounded like she was hiding in a cupboard\".\n  Another says, \"If the expert doesn't sound sure, why should we be?\" A third, more kindly, says she seemed nervous. Nadia replays the clip on the\n  station's website. Her voice is thin, distant and slightly hollow, with a ring on every hard consonant, and the toaster pops halfway through her\n  most important sentence.\n\n  She is upset, and her first instinct is to decline the next invitation. A colleague who does a lot of media work tells her that the content\n  was right and the sound was wrong, and offers to show her how she sets up for interviews at home.\n\nThe interview lasts six minutes. Afterwards the producer thanks her warmly and says the phones have been busy, which Nadia takes as a good sign. She does not know that, in the studio, the presenter had leaned over to the producer during her second answer and mouthed, \"Can we get her any closer?\"\n\nHer son, who heard the whole interview from the other side of the kitchen, tells her she sounded fine. He was standing a few metres away, in the room, hearing her voice directly rather than through a laptop microphone.",
+   "misread": "The listeners read the hollow, distant sound as doubt, and some of them read doubt in the voice as doubt in the advice. Nadia read their comments as a judgment on her knowledge and her nerve, and nearly stopped giving interviews.\n\nNadia also read her own replay harshly, hearing every flaw as proof that she was no good on air, when almost every flaw was in the kitchen, not in her.\n\nThe presenter had read her distance as hesitancy too, and asked two follow-up questions that suggested he thought she was unsure of her facts. The listeners heard those questions as well.",
+   "betterRead": "Newman and Schwarz found that the same scientists, saying the same things, were rated as less intelligent, less likeable and less expert when the recording was slightly degraded, and their research was rated as less important. Listeners do not separate the sound from the speaker; a hollow, echoing voice is heard as a less certain one. Nadia's colleague showed her a simple setup: a wired headset with the microphone close to her mouth, in the bedroom, where the bed, curtains and a wardrobe full of clothes soak up the echo, with the door shut. Her next interview, a week later, sounded close and calm. The comments that time were about the advice, which is where she wanted them.\n\nThe tip that stayed with Nadia was the simplest one: before every interview, record ten seconds on the same setup and play it back. If it sounds like a cupboard, it is a cupboard, and there is still time to move.\n\nShe also stopped putting the phone's speaker beside the laptop, which had been feeding a faint echo of her own voice back into the line."
+  },
+  {
+   "title": "The thread that should have been a call",
+   "scene": "Tariq, forty-two, and Sophie, twenty-nine, work in different offices of the same charity and have never met in person. They are jointly\n  responsible for a funding bid due on Friday. On Tuesday, Sophie posts in their shared channel that the budget section is still missing and asks\n  Tariq when she can expect it. Tariq, who has been waiting for figures from finance, replies, \"As I said last week, I'm waiting on finance.\"\n\n  Sophie reads the \"as I said\" as a rebuke. She replies that she had understood the figures were due on Monday, and copies in their manager.\n  Tariq reads the copying in as an attempt to get him into trouble. He replies, at length, with dates and quotations from earlier messages. Sophie\n  replies with two lines and a full stop.\n\n  By Wednesday afternoon the thread is fourteen messages long, each one a little colder than the last. Neither of them has written anything\n  rude. Both of them believe the other is being unreasonable, and both have privately decided that the other is difficult to work with.\n\n  Their manager, Grace, reads the whole thread on her phone on Wednesday evening. She can see two careful, anxious people who both want the bid to\n  succeed, and she cannot see how either of them could tell that from what they have written.\n\nTariq has written each reply carefully, rereading it twice before he sends it to make sure it is accurate. Sophie has written hers quickly, between other meetings, on her phone. His care reads to her as coldness and point-scoring; her speed reads to him as curtness.\n\nBoth of them have told a friend about the other. Tariq's friend says Sophie sounds young and impatient. Sophie's friend says Tariq sounds like a man who does not like being questioned by a younger woman. Neither friend has heard either of them speak.",
+   "misread": "Each of them read the other's messages as cold and hostile, and built a picture of the other person from text alone. Each also read their own messages as reasonable and clear, without hearing how they would land.\n\nAnd each of them read the other's silences between messages as part of the hostility, when they were mostly time spent in other meetings.\n\nTheir friends, hearing one side and no voices at all, filled the gaps with stereotypes about age and gender, which made each story harder to undo.\n\nGrace's own first reading, before she had read the whole thread, was that one of them must be at fault, and she nearly took sides.",
+   "betterRead": "Schroeder, Kardas and Epley found that people who heard an opponent's voice judged them as more thoughtful and more human than people who read the same words. Text strips out the pauses, warmth and hesitation that tell us there is a person thinking on the other side. Tariq's \"as I said\" might have been spoken in a weary, apologetic tone; written down, it could only be read one way. Grace's better reading was that the problem was the channel, not the people. She asked them both to join a ten-minute call on Thursday morning. Within two minutes, Sophie heard how worried Tariq was about finance, and Tariq heard that Sophie had been chased by the funder. They agreed a plan, and the bid went in on Friday.\n\nGrace also suggested a rule for the team: if a thread reaches five replies without agreement, someone picks up the phone. It saved them a great deal of quiet resentment over the following year."
+  },
+  {
+   "title": "The voice on the conference phone",
+   "scene": "Bea, sixty-one, is a senior planning officer who has worked from home since moving to the coast to care for her mother. Her team still\n  meets in person every Monday, eight people around a long table in a meeting room with glass walls, and Bea joins by phone through a conference\n  speaker in the middle of the table.\n\n  She can hear most of what is said, though people at the far end of the table are faint, and when two people talk at once she hears only noise.\n  When she tries to speak, there is a short delay before her voice comes out of the speaker, and by then someone in the room has usually started\n  talking. Her voice, coming out of a small speaker in a large room, sounds thin and slightly tinny, and when people do hear her, they often ask her\n  to repeat herself.\n\n  Over a few months, Bea speaks less and less. She sends her views by email afterwards instead. The new team leader, Marcus, who joined in the\n  spring, mentions to a colleague that Bea seems to have checked out, and wonders aloud whether she is thinking about retiring.\n\n  The colleague, who has known Bea for fifteen years, says that Bea was the person who used to start the arguments in those meetings, and that\n  she does not think Bea has checked out at all.\n\nOne Monday, Bea unmutes three times to make a point about a planning application she knows better than anyone in the room. Each time, someone else is already speaking by the time her voice comes through. The third time, she hears someone say, \"Sorry, was that Bea? I think we lost her,\" and the meeting moves on before she can answer.\n\nShe mutes herself, writes the point in an email and sends it after the meeting. Nobody replies to it.",
+   "misread": "Marcus read Bea's silence and her thin, occasional voice as disengagement, and began to wonder whether she was winding down towards retirement. Bea read the room's habit of talking over her as a sign that her views no longer mattered to the team.\n\nAnd because the room could see one another and could not see her, they had no idea how often she had tried to speak and given up.\n\nMarcus had never heard Bea in a room. His whole picture of her came from a voice in a speaker, delayed and thin, and from her silences.",
+   "betterRead": "A remote voice in a hybrid meeting competes with a delay, a small speaker and a room full of people who can see one another's signals. The people in the room take turns by glance and breath; Bea has none of those cues, and her voice arrives late and thin. Her silence was a reading of the setup, not of the work. Marcus's better approach was to change the meeting. He asked Bea how it was for her, and she told him. He bought a better conference microphone, asked people to speak one at a time, and began each item by asking Bea first, by name, then leaving a clear pause. Within a month, Bea was starting the arguments again.\n\nHe stopped asking Bea to repeat herself in front of the room. If something was unclear, he summarised what he had heard and asked whether he had got it right, which made her clearer to everyone without making her the problem.\n\nThe others found the meetings better too: fewer collisions, shorter items, and decisions that everyone had heard."
+  },
+  {
+   "title": "The grandmother whose voice changed",
+   "scene": "Kofi, twenty-seven, rings his grandmother, Ama, eighty-four, every Sunday afternoon. She lives alone in the house where she raised his\n  mother, two hundred miles away, and the calls are one of the fixed points of both their weeks. She tells him about the church, the neighbours and\n  the garden, and asks him whether he is eating properly.\n\n  Over three Sundays in a row, Kofi notices that she sounds different. Her voice seems flatter and further away, and she asks him to repeat things\n  more often. Twice she misses the end of a question and answers something else. The laughter that usually breaks into her stories is quieter, and\n  she seems to want to finish the calls sooner.\n\n  Kofi worries. He has read about the early signs of low mood and of memory problems in older people, and he lies awake on the third Sunday night\n  running through the possibilities. He wonders whether she is lonely, whether she is ill, whether she is hiding something from the family.\n\n  He rings his mother, who saw Ama ten days earlier and thought she seemed perfectly well. Then he remembers that his uncle had been planning to\n  replace Ama's old landline with a new cordless handset, and that Ama has recently been fitted with hearing aids.\n\nOn the third Sunday he asks her whether she is feeling all right. She says she is fine, a little tired, and asks whether he has been eating properly. He cannot tell whether \"fine\" means fine. On the phone he has no face to check it against, and no kitchen to look around for the things he would notice in person: the post piling up, the fridge, the state of the garden.\n\nAma's stories have always wandered, and Kofi has always enjoyed following them. Now, when she loses the thread, he finds himself listening not to the story but for signs, and the listening makes him quieter, which makes the calls feel flatter still.",
+   "misread": "Kofi read the change in his grandmother's voice as a sign that something was wrong with her: low mood, illness or the beginning of memory trouble. He did not at first consider that the change might be in the line rather than the person.\n\nHe also nearly turned a change in the line into a story about her health, and lay awake with a worry she had no part in.\n\nHis mother's reassurance, based on a visit ten days earlier, did not settle him, because he trusted what he had heard more than what she had seen.\n\nAnd had he raised it with Ama as a worry about her memory, she might have felt accused of something she was not experiencing.",
+   "betterRead": "Listening for change against someone's baseline is good practice, and Kofi was right to notice. But on a call, the technology is part of the baseline. The new handset had a weaker microphone, and Ama, still getting used to her hearing aids, was holding it slightly away from her ear to stop a whistle, which also moved it away from her mouth. Kofi's better reading was to ask before assuming. The next Sunday he asked how the new phone was working. She said she hated it. His uncle set up the hearing aids to stream calls directly, and the old laughter came back. Had the changes gone on after that, the next step would have been to talk with her and the family, not to diagnose her from a phone line.\n\nKofi's worry was a loving one, and noticing change is worth doing. The mistake would have been to act on the story before checking the simplest explanation."
+  }
+ ],
+ "workedReading": {
+  "title": "Delivering bad news on a call",
+  "scene": "Owen, forty-five, manages a team of developers building a booking system for a chain of dental practices. On Friday morning he has to tell the client's operations director, Helen, that the launch will be three weeks late, because a security review found a problem that has to be fixed first. The call is by phone, because Helen is travelling between practices. Owen has never spoken to her without video before. He knows she has promised the launch date to her board, and he expects her to be angry. He has thirty minutes before the call, and he decides to spend ten of them on how he will sound, not only on what he will say. He has the facts and the new plan on a single page. What he has not prepared, until now, is the voice that will carry them.\n\nOwen has been in Helen's position himself, on the receiving end of bad news delivered badly: a supplier who emailed a delay at five o'clock on a Friday and then did not answer the phone. He remembers how much worse the silence made it. He wants Helen to hear, from the first sentence, that someone is taking responsibility.\n\nHe knows, too, that he talks faster when he is anxious, and that a fast voice delivering bad news can sound like someone trying to get it over with.",
+  "steps": [
+   {
+    "label": "Set up the sound",
+    "text": "He moves from the open-plan office, where colleagues are talking and a printer is running, to a small meeting room with a carpet and a soft chair. He uses a wired headset rather than his laptop's speaker and microphone, so that his voice will be close and clear and Helen's will be easy to hear. He turns off notifications. Newman and Schwarz's work showed him that poor sound makes the same message seem less credible, and he cannot afford that today.\n\nThen he thinks about Helen's end. He sends her a short message to say he will ring at ten, so that she can find somewhere quiet or pull over, rather than taking the news on a hands-free speaker in heavy traffic."
+   },
+   {
+    "label": "Settle the breath",
+    "text": "He notices that his breathing is high and quick, which will make his voice thin and fast. He breathes out slowly, twice, and lets his shoulders drop. He stands up for the first part of the call, because he finds that standing gives his voice more space and makes him less likely to mumble into his notes. He takes a sip of water, because a dry mouth clicks on a headset.\n\nHe says a couple of sentences aloud to warm his voice: the opening line and the sentence with the new date. Hearing them, he notices that he rushes the date, as if hoping she will not catch it, and decides to say it slowly instead."
+   },
+   {
+    "label": "Say the news first",
+    "text": "When Helen answers, he greets her by name, asks whether this is a good moment, and then says the important sentence early and plainly: \"I'm afraid the launch is going to be three weeks late, and I want to explain why and what we're doing about it.\" He speaks it, rather than reading it, because a read sentence sounds flat. He keeps his pace a little slower than usual, and his pitch steady rather than rising at the end, which could make it sound like a question.\n\nHe resists the urge to soften the news with a long run-up about the project's progress. A long preamble makes the listener brace, and on the phone, with no face to watch, Helen would hear only a voice going round in circles before the blow."
+   },
+   {
+    "label": "Leave room for her",
+    "text": "There is a silence on the line. In a room he would see her face; on the phone he has only the silence. He resists the urge to fill it with excuses and detail. He waits, counting slowly to three, and then says, \"I know this is difficult for you.\" Helen breathes out and says that it is. On a phone line, a pause that feels endless to the speaker often feels much shorter to the listener.\n\nA pause can carry a great deal in a room; on a phone line it carries more, because there is nothing else. Helen's silence is not a judgment he has to answer. It is the time she needs to take the news in."
+   },
+   {
+    "label": "Listen to how she sounds",
+    "text": "Helen's first questions are short and clipped, and her voice is louder than before. Owen hears the anger and does not match it. He keeps his own voice level and a little quieter, answers each question directly, and checks his reading against her words. When she says, \"I've already told my board,\" he hears that the anger is mostly about her own position, and responds to that.\n\nHe listens for what is missing too. Helen does not ask how the security problem happened, which suggests she trusts the team on the technical side and is focused on the consequences. He keeps the explanation short and spends his time on the plan.\n\nWhen she raises her voice at one point, he lets her finish, then answers more slowly than before. A calmer voice gives the other person something to settle towards."
+   },
+   {
+    "label": "End each turn clearly",
+    "text": "Because there is a small delay on the line, he ends each answer with a clear question or a pause, so that they do not talk over each other: \"Does that cover what you need for the board?\" When they do collide once, he stops at once and says, \"Sorry, go ahead.\" He offers to send a one-page summary she can share, and to join her board call if that would help.\n\nHe sits down for the second half of the call, when it turns to practical arrangements, and takes notes with a pen rather than on his keyboard, so that no clatter suggests he has stopped listening.\n\nHelen asks whether the new date is certain. Owen says honestly that it is their best estimate, and tells her what could move it. A steady voice saying \"I don't know yet\" is more credible than a bright one making promises."
+   },
+   {
+    "label": "What happened",
+    "text": "By the end of the call, Helen's voice has slowed and softened. She says that she is not happy, but that she appreciates being told directly and early. She asks for the summary by noon. Owen sends it, then writes two lines in his notes for next time: headset, quiet room, stand up, say the news first, leave the silence alone. Three weeks later, the system launches, and Helen asks for Owen by name on the next project.\n\nHe reflects afterwards that the call went better than he feared, not because he found perfect words but because Helen could hear, throughout, someone who was steady, direct and paying attention to her.\n\nHelen tells him months later that what she remembers is not the delay but the fact that he rang rather than emailing."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Typing while you talk",
+   "body": "On a call, people can hear you type, even through noise suppression, and they can hear something subtler too: the attention leaving your voice. When you split your attention, your pace changes, your sentences trail off, your pitch flattens and your answers come a beat too late. The person on the other end may not know exactly what they are hearing, but they often sense that you are somewhere else. If you need to take notes, say so, or use a pen and paper, which is quieter. If you are reading something else while someone speaks, stop. On a phone call in particular, your voice is the only proof that you are listening, and it gives you away when you are not. The same applies to walking around the kitchen, opening the post or checking another screen while you speak.\n\nA short silence while you write something down, explained with \"Just noting that,\" sounds far more attentive than a stream of keystrokes under your voice.\n\nVideo calls add a visible sign, eyes flicking sideways to another window, but even on audio alone a divided mind is easy to hear."
+  },
+  {
+   "title": "Putting on a radio voice",
+   "body": "Some people, once they learn how much the voice matters on calls, overcorrect. They adopt a deeper, slower, more polished voice, like an announcer's, or they read from a script to avoid hesitating. It rarely works. Listeners are quick to hear a performance, and a voice that sounds put on can seem less trustworthy than an ordinary one with a few hesitations in it. Schroeder and Epley's work suggests that what the voice conveys is a thinking mind, and the small rises, falls and pauses of real thought are part of that. Aim to sound like yourself, closer to the microphone, a little slower and with clear endings, not like someone else. If you use notes, use them as prompts rather than sentences, so that you are speaking rather than reading.\n\nIf you want to improve your voice, work on breath, pace and clarity, which belong to you, rather than on a new tone that belongs to someone else.\n\nA useful check is to ask someone who knows you well to listen to a recording of you on a call. If they say, \"That doesn't sound like you,\" start again."
+  },
+  {
+   "title": "Reading the line as the person",
+   "body": "Calls distort voices in ways that are easy to mistake for character or mood. Compression flattens pitch and makes voices sound duller. Noise suppression can clip the first syllable of a quiet speaker, so that they seem abrupt. A poor connection can make a warm voice sound robotic, and a delay can make a thoughtful person seem slow or a careful one seem evasive. A cheap headset can make anyone sound tired. Before you draw a conclusion about someone from how they sound on a call, ask what the technology might be doing, as Kofi eventually did with his grandmother. Compare them with how they usually sound on calls, not with how they sound across a table. And when in doubt, ask how they are, rather than deciding from the line.\n\nIt cuts both ways in hybrid meetings. People in the room sound clearer to each other than the remote speaker does, which can make the remote voice seem weaker in an argument it is in fact winning.\n\nIf a colleague's voice often sounds clipped or flat on calls, hear them once in person or on a different line before you form a view."
+  },
+  {
+   "title": "Assuming voice suits everyone",
+   "body": "This chapter argues for voice over text when tension is rising, and that is usually right. But not everyone hears, processes or speaks in the same way. A colleague who is deaf or hard of hearing may follow a call far better with captions, or may prefer a written exchange. Someone with an auditory processing difference may struggle with fast, overlapping talk, and someone who stammers may find unscheduled phone calls much harder than messages. Some people simply think more clearly in writing. The aim is not to push everyone onto calls but to give the other person the channel that lets them be heard best. If you do not know what that is, ask: \"Would a quick call help, or would you rather keep this in writing?\" Then honour the answer.\n\nAnd in a hybrid meeting, captions and a shared written agenda help everyone, not only the people who need them most.\n\nThe same care applies to accents. A strong accent through a compressed line can be harder to follow, and the listener's effort can turn, unfairly, into a judgment of the speaker. Ask for repetition kindly, and blame the line, not the voice."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Do I need an expensive microphone to sound good on calls?",
+   "a": "Usually not. The biggest improvements come from distance and the room, not from price. A microphone close to your mouth, such as the one on a basic wired headset, picks up your voice and very little of the room, while a laptop microphone at arm's length picks up the echo, the fan and the traffic as well. Soft rooms, with carpet, curtains, a bed or a sofa, sound far better than kitchens and bathrooms, which bounce sound off hard surfaces. A cheap headset in a bedroom will often beat an expensive microphone in a tiled kitchen. If you speak on calls for a living, a better microphone can help, but start with the basics: close, quiet and soft.\n\nIf you share a busy home, a headset with a microphone close to your mouth is also kinder to the people around you, since you will not need to raise your voice to be heard.\n\nPut the microphone a hand's width or so from your mouth and slightly to one side, so that your breath does not hit it directly."
+  },
+  {
+   "q": "Why does my voice sound so strange when I hear a recording of it?",
+   "a": "Because you normally hear your own voice partly through the bones of your skull, which makes it sound lower and fuller to you than it does to anyone else, as Part VI describes. A recording captures only the sound that travels through the air, which is the voice everyone else hears. Almost everyone dislikes their recorded voice at first, and the discomfort usually fades with a little exposure. It is worth listening anyway, because the recording is the closest you can get to how you sound on a call. Listen for echo, distance, pace and clear endings, rather than for whether you like the sound of yourself.\n\nA good exercise is to record a short message, listen once without judging, then listen again for one specific thing, such as whether your sentences end clearly. Treating the recording as information rather than a verdict makes it much easier to use.\n\nIf you review recordings of yourself for work, as Part VI suggests, the strangeness fades faster than most people expect."
+  },
+  {
+   "q": "Should I turn on noise suppression?",
+   "a": "It depends on the noise and on your voice. Noise suppression is good at removing steady sounds such as fans, traffic and keyboard clatter, and it can rescue a call from a busy home. But it works by guessing what is speech and what is not, and it sometimes guesses wrong. It can clip the first syllable of quiet speech, swallow small sounds such as \"mm\" and \"yes\", and give voices a slightly processed, underwater quality. If you are softly spoken, or if your listening sounds matter in the conversation, test it: record yourself with it on and off, and choose the version in which you sound most like yourself. A quieter room beats a cleverer filter.\n\nMany call apps offer more than one level of suppression. A lower setting often removes the worst of the background while leaving your voice more natural, and it is worth trying before you choose the strongest.\n\nIf you notice that someone else's voice is being clipped, tell them kindly. They almost never know."
+  },
+  {
+   "q": "Is a voice note as good as a call?",
+   "a": "A voice note carries your voice, which helps the other person hear warmth, hesitation and care that text strips out, so it can be a good choice for a message that might otherwise be misread. But it is not a conversation. The listener cannot answer, ask a question or show you how your words are landing, and you cannot adjust. In a disagreement that is heating up, a live call is usually better, because both of you can hear each other change. Voice notes also put work on the listener, who has to find a moment and a quiet place to play them. Some people love them and some find them a burden, so it is worth knowing which your colleague is.\n\nIf you do send one, keep it short, say at the start what it is about, and avoid sending several in a row, which can feel like being talked at.\n\nFor anything that needs a decision or a record, follow a voice note with a line of text."
+  },
+  {
+   "q": "How can I sound less nervous on an important call?",
+   "a": "Start with the body, because nerves show in the voice mainly through the breath. A few slow breaths out, with your shoulders dropped, will lower and steady your voice. Standing helps many people. So does warming up: say a few sentences aloud before the call, so that your first words are not your first words of the day. Then slow down a little and end your sentences clearly. Remember too that, as Part VI describes, people consistently overestimate how much of their inner state others can see. The tremor you feel in your voice is usually far less audible than you think, especially through a phone line.\n\nPrepare the first sentence and the last, so that you know how you will begin and end, and keep the middle as notes. Nerves tend to peak in the first minute, and a clear opening carries you through it. If your voice does shake, carry on; most listeners will follow the content long before they notice the shake."
+  },
+  {
+   "q": "How should I read someone's voice when the line is poor?",
+   "a": "Cautiously, and with the technology in mind. A poor line can flatten pitch, add delay, clip words and make anyone sound tired, curt or distant. Compare the person with how they usually sound on calls, not with how they sound in person, and look for changes that hold across several calls rather than one. Listen to the words as well as the voice, and if something seems wrong, ask. \"You sound a bit far away today, is everything all right?\" gives them the chance to say \"It's the line\" or to tell you something more. A voice on a bad line is a clue, not a conclusion, and a question costs far less than a mistaken story.\n\nAnd if you are the one on the poor line, say so early. It saves the other person from reading your voice wrongly.\n\nIf a connection is consistently bad, suggest switching, from video to audio only, or from the app to an ordinary phone line. Often the voice improves at once."
   }
  ],
  "watch": [
