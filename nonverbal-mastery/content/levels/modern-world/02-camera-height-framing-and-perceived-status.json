@@ -73,6 +73,20 @@
    "doCaption": "Eyes to the lens for the point that matters",
    "dontCaption": "Eyes on your own image",
    "annotation": "With a camera at eye level and light on your face, a look into the lens reads as a look into the other person's eyes."
+  },
+  {
+   "doPoseId": "p_pro_video_call",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "Sitting up, the camera at eye level",
+   "dontCaption": "Slumped low, the camera looking up at you",
+   "annotation": "Where the camera sits decides where the viewer stands. At eye level, everyone in the meeting is across a table from you."
+  },
+  {
+   "doPoseId": "p_gaze_direct",
+   "dontPoseId": "p_sit_hand_face",
+   "doCaption": "Facing the light, eyes clearly visible",
+   "dontCaption": "A face lost in shadow against a window",
+   "annotation": "A hidden face reads as a closed one. Turn to face the window, or put a lamp in front of you, and let your expressions carry."
   }
  ],
  "caseStudy": "Raj, thirty-eight, sells software to hospital trusts, and since his firm closed its regional offices he pitches almost entirely on video. His figures have slipped, and clients who used to warm to him in person seem cool on calls. He cannot work out why.\n\nA colleague who sits in on one of his pitches tells him bluntly afterwards: “You look like you're looking down your nose at them. And I can barely see your face.” Raj checks. His laptop sits on the kitchen table, so the camera looks up at his chin. Behind him is the kitchen window, so his face is in shadow. To the left of the frame is a fridge covered in his children's drawings.\n\nHe moves the laptop onto a stack of cookery books so that the camera is at eye level. He turns the table so that he faces the window, which lights his face. He sets up in the corner of the spare room in front of a bookcase. He sits back far enough that his shoulders and hands are in shot, and he hides his self-view. His next three pitches feel different; one client remarks that it is good to finally see him properly.\n\nA few weeks later Raj interviews a graduate for his team. The young man calls from a tiny bedroom with a clothes rack behind him and a camera pointing up at his chin. Raj catches himself thinking that the candidate looks unprofessional. Then he remembers his own kitchen, sets the room aside, and listens to the answers. They are the best of the day.",
@@ -92,6 +106,10 @@
     "Write down the impression each gives: power, distance, warmth, smallness.",
     "Ask someone else to watch them and describe their impressions too.",
     "Set your everyday camera at the angle that matches how you want to come across."
+   ],
+   "variations": [
+    "Record the three angles in different light, such as morning and evening, and see how the impression changes.",
+    "Ask someone you trust to rate the three clips without knowing which angle you prefer."
    ]
   },
   {
@@ -102,6 +120,10 @@
     "If there is a window behind you, turn so that you face it, or close the blind and use a lamp.",
     "Move a lamp to the front and slightly to one side of your screen.",
     "Check again, and note the difference in how readable your face is."
+   ],
+   "variations": [
+    "Take a photograph of your face in your usual light and in your improved light, and compare them side by side.",
+    "Try a lamp at three different positions, front, side and above, and note which shows your eyes most clearly."
    ]
   },
   {
@@ -112,6 +134,10 @@
     "List anything that distracts or says something you would rather not say.",
     "Choose a calm alternative for important calls: a plain wall, a bookcase, plants.",
     "Avoid novelty backgrounds for serious conversations."
+   ],
+   "variations": [
+    "Audit your background on your phone camera too, since many calls now happen on phones.",
+    "Ask a colleague what they noticed first about your background on your last call, and listen without defending it."
    ]
   },
   {
@@ -122,6 +148,10 @@
     "Write it down, and next to it write a circumstance that could explain the setup.",
     "Ask yourself whether the impression would survive meeting them in person.",
     "If you make decisions about people on screen, write one rule to keep their room out of it."
+   ],
+   "variations": [
+    "Write down one judgment about a setup that you later found was wrong, and what the real reason was.",
+    "Agree with a colleague who interviews with you that you will not discuss candidates' settings."
    ]
   }
  ],
@@ -203,6 +233,45 @@
    "explain": "Eye level presents you as an equal and front light makes your face readable. A calm background avoids distraction, and head-and-shoulders framing lets posture and hands carry meaning.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Mandell and Shaw's 1973 study, how did viewers rate an official filmed from a low angle?",
+   "options": [
+    "As more potent than when he was filmed from eye level or from above",
+    "As much weaker and less trustworthy than when filmed from any other angle",
+    "As exactly the same as from eye level, since angle had no effect at all",
+    "As more friendly and warm, but considerably less competent in his job"
+   ],
+   "answer": 0,
+   "explain": "Viewers rated the official as more potent when he was filmed from below. Low angles can make people seem powerful, which on everyday calls often reads as looking down on others.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A new colleague who uses a wheelchair appears on calls with the camera looking up at his chin, and another colleague jokes about it. What fits this chapter best?",
+   "options": [
+    "Join in the joke, since everyone's setup is fair game for a bit of fun",
+    "Tell him to fix his setup, since the angle makes him look intimidating",
+    "Read the angle as circumstance, address the joke, and offer help if he wants it",
+    "Ignore the joke and the angle, since neither is anything to do with you"
+   ],
+   "answer": 2,
+   "explain": "Setups reflect circumstance, and a low angle may come from a desk and a chair, not a choice. Offering practical help, and addressing a joke about his body, respects him.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a blurred background makes you look as though you are hiding something. What did the Durham study find?",
+   "options": [
+    "Blurred backgrounds were rated the least trustworthy of all the backgrounds tested",
+    "Blank and blurred backgrounds were rated in the middle, neither best nor worst",
+    "Blurred backgrounds were rated the most competent, above plants and bookcases",
+    "The study did not test blurred backgrounds, so nothing can be said about them"
+   ],
+   "answer": 1,
+   "explain": "In Cook and colleagues' study, plants and bookcases were rated highest, living rooms and novelty images lowest, and blank or blurred backgrounds in between. A blur is a safe choice when you cannot control what is behind you.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -226,6 +295,110 @@
    "work": "Judging people in the news, unconsciously: Effect of camera angle and bodily activity",
    "author": "Lee M. Mandell and Donald L. Shaw",
    "note": "Journal of Broadcasting 17(3), 1973. An early test of how camera angle changes impressions of a person on screen."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The chief executive from below",
+   "scene": "Mike, fifty-six, is the chief executive of a company with two thousand staff, most of whom now work from home. Every month he holds a town\n  hall on video. He takes the call from his phone, propped against a coffee mug on his kitchen table, so that the camera looks up at him from below\n  his chin. Behind him is a high ceiling with a single light fitting. When he leans forward to read his notes, his face fills most of the frame.\n\n  He thinks the town halls go well. But in a staff survey, several people describe his updates as \"lecturing\" and \"talking down to us\". A screenshot\n  of him, looking down his nose from below, has become a joke in one of the team chats, captioned with a line from a film about a tyrant.\n\n  His communications manager, Priya, is asked to find out why the town halls are landing so badly. She watches the last one on mute.\n\nMike is a warm man in person, known for remembering people's names and asking about their families. Staff who have met him in the canteen describe him as approachable. The ones who know him only from the town halls describe him very differently.\n\nPriya starts the recording of last month's town hall and turns the sound off. For the first ten minutes she simply watches Mike's face. She sees the underside of his jaw, the inside of his nostrils and the ceiling light sitting above his head like a halo. When he looks down at his notes, his eyelids drop and he seems to be looking down at the viewer. When he looks up again, he leans in, and his face swells until it fills the frame.\n\nThen she opens the chat log from the same session. The questions are short and careful, and almost nobody has their camera on. In the town halls Mike held in the office before everyone went home, she remembers, people used to queue at the microphone.",
+   "misread": "The staff read Mike's updates as condescending, and the screenshot turned that reading into a joke that spread. Mike read the town halls as successful, because nobody had told him otherwise and he had never watched one back.\n\nAnd the joke made the reading spread. Once a screenshot has become a meme, people start to see the person through it, and every later update is read in its light.\n\nPriya's own first reading, before she watched with the sound off, was that the words were the problem: too much bad news delivered too bluntly. She had started drafting gentler scripts. The words were fine. The picture was saying something else.",
+   "betterRead": "Every camera puts the viewer somewhere, and a camera below the chin puts every viewer beneath the speaker, looking up. Mandell and Shaw found that an official filmed from a low angle was rated as more potent, and Giessner and colleagues found that people judged a person as more powerful when photographed from below. Power and condescension can look much the same from that angle, and Mike's leaning into the frame added the intensity of a face too close. Priya's better reading was that the problem was mostly the phone and the mug, not the man. She set Mike up with the camera at eye level, sitting back so that his shoulders were in the frame, with a lamp in front and to one side of him and a bookcase behind. She also suggested that he watch one town hall back with the sound off. He did, and winced. The next survey described his updates as \"clearer\" and \"more human\". Nobody made a new meme.\n\nMike also started the next town hall by saying that he had watched himself back and had not liked what he saw, which got a laugh and a lot of goodwill."
+  },
+  {
+   "title": "The panellist who noticed her scores",
+   "scene": "Ruth, forty-four, sits on interview panels for a housing association, and all first interviews are now by video. After a round of twelve\n  interviews, she goes back over her scores, as she always does, to check her reasoning. She notices something she does not like. The three candidates\n  she scored highest all had calm, tidy backgrounds: a bookcase, a plant, a plain wall. The three she scored lowest called from a bedroom with clothes on\n  the bed, a busy family kitchen and a car.\n\n  When she rereads her notes, the candidates' answers do not explain the gap. One of the low scorers, the one in the car, gave the best answer of the\n  day to the question about supporting vulnerable tenants. Ruth had written \"distracted, unprofessional setting\" next to it.\n\n  She realises that the car was parked outside a hospital, because the candidate had mentioned at the start that she was between visits to her\n  father.\n\nRuth has also noticed that her notes on the low-scoring candidates contain more comments about appearance and setting than her notes on the others, which she has never done in face-to-face interviews.\n\nShe checks the scores of the other two panellists. Their pattern is the same as hers, and slightly stronger. Nobody on the panel had mentioned backgrounds in the discussion. They had talked about \"presence\", \"polish\" and \"how she came across\", and Ruth had nodded along.\n\nThe association's interview guidance says nothing about video. It was written when every candidate sat in the same meeting room, on the same chair, at the same table, with the same jug of water, and was seen against the same wall.\n\nShe remembers, too, that an ambulance siren had sounded behind that candidate's first answer, and that she had written \"noisy\" in the margin before the woman had finished her sentence.",
+   "misread": "Ruth read the candidates' backgrounds as signs of professionalism and organisation, and let those readings colour her scores, even when the answers pointed the other way.\n\nShe also read her own reactions as professional judgment, which is what made them so hard to see. Bias often feels like expertise from the inside.\n\nThe other panellists had read the backgrounds in the same way, and because everyone agreed, nobody questioned it. A shared impression felt like evidence. Her note on the candidate in the car described the setting precisely and the candidate not at all.",
+   "betterRead": "Cook, Thompson and Ross found that faces in front of plants and bookcases were rated as more trustworthy and competent than faces in front of living rooms or novelty backgrounds, which shows how readily people judge character from a setting. But most people's setups are accidents of money, space and circumstance, not statements. A bedroom may mean a shared flat; a busy kitchen may mean children; a car may mean a hospital car park. A panel that scores rooms is partly scoring wealth, housing and luck. Ruth's better approach was to set rules for herself and the panel. She proposed scoring answers against criteria agreed in advance, without discussing settings, and asking any candidate with a difficult setup whether they would like to reschedule. The panel agreed. They invited the candidate in the car back for a second interview, in person. She got the job, and turned out to be one of the best officers the team had hired.\n\nIt also took settings out of the panel's discussions altogether, which made them shorter and, Ruth thought, fairer."
+  },
+  {
+   "title": "The father against the window",
+   "scene": "Phil, fifty-two, video-calls his son, Jack, nineteen, every Sunday evening since Jack went to university. Phil takes the calls from the armchair\n  in his living room, with the big bay window behind him. In the summer, with the evening sun, Phil's face is a dark shape against a bright window, and\n  Jack can barely see his expression.\n\n  Jack starts to find the calls hard work. His dad seems flat and distant. When Jack tells him he has passed his first-year exams, he cannot tell\n  whether his father is pleased. Phil says, \"Well done, son,\" but his face shows nothing Jack can read. After a few weeks, Jack starts making excuses to\n  keep the calls short.\n\n  Phil notices and is hurt. He tells his wife that Jack does not seem to want to talk to him any more.\n\nPhil has also started to feel that Jack looks bored on the calls. Jack takes them on his laptop in his student room, with a ring light his flatmate lent him, and his face is perfectly clear, which makes his short answers feel all the more pointed to his father.\n\nPhil has always been a man of few words. In person Jack never minded, because his dad's face did most of the talking: the raised eyebrows when Jack said something daft, the slow smile when he was proud. On the calls, Jack hears the few words and nothing else.\n\nPhil's wife, Carol, takes her own calls with Jack on Wednesdays, from the kitchen, and finds them easy. She has begun to wonder whether Jack is avoiding his father, and has not yet thought to ask which chair Phil sits in.",
+   "misread": "Jack read his father's unreadable face as flatness and a lack of warmth, and kept the calls short. Phil read the short calls as his son pulling away. Neither of them knew that the window behind Phil had hidden his face for months.\n\nAnd because Jack's face was clear and Phil's was not, the calls were lopsided: Phil could read his son, and his son could not read him.\n\nCarol was close to a misreading of her own: that Jack was keeping his distance for some reason of his own, perhaps something at university he did not want to talk about.\n\nPhil's reading was the mirror image. He could see Jack's face perfectly, so he took every flat moment in it as a message, without once wondering what his own face was sending back.",
+   "betterRead": "Light decides whether the camera can see a face at all. A window behind you turns you into a silhouette, and people read a hidden face as a closed one. Phil's warmth, his pride and his delight at Jack's exam results were all there, and none of them reached his son, because the bright window behind him swallowed every expression. Jack's reading of flatness was a reading of the light. The better fix was almost absurdly simple. Phil's wife noticed it when she sat in on a call, and moved Phil to the sofa facing the window. On the next call, Jack could see his father's face clearly. When Jack mentioned a new friend, he saw his dad's eyes crinkle in a way he had not seen since the summer. The calls went back to an hour. Jack told his mother later that he had thought his dad was depressed. She said, \"He was just in the dark.\"\n\nPhil also moved a lamp beside the sofa for the winter evenings, so that his face stayed lit when the sun went down."
+  },
+  {
+   "title": "The camera at the wrong height",
+   "scene": "Dan, thirty-five, a software developer, uses a wheelchair. His desk at home is the right height for his chair, but his monitor, which has a\n  built-in camera, sits lower than it would for someone sitting in an ordinary office chair, and the camera looks up at him from below his chin. In his\n  first few weeks at a new company, he hears a colleague joke on a call about \"nostril cam\". Another colleague, in a one-to-one, suggests that he\n  \"sort out his setup\" because he looks a bit intimidating.\n\n  Dan has spent years managing other people's reactions to his body in person. He had not expected to have to manage them on camera as well. He feels\n  his face go hot and says nothing.\n\n  His manager, Helen, who heard the joke, asks him privately afterwards whether he would like any equipment.\n\nDan has also bought a standing frame to use for part of the day, which raises him to a different height, and on those days the camera angle is fine. Nobody has noticed the difference except Dan.\n\nThe colleague who made the joke is not unkind. He makes the same sort of joke about his own messy kitchen and his cat walking across his keyboard, and he has no idea that Dan uses a wheelchair, because on screen Dan is visible only from the chest up.\n\nDan has thought about raising it and decided against it. He does not want his first month to be about his chair. Instead he has started switching his camera off whenever he can, and has noticed that people talk over him more when he does.",
+   "misread": "Dan's colleagues read the low angle as carelessness, or as a picture that made him look domineering, and one of them turned it into a joke. None of them considered that the angle might be a consequence of his chair, his desk and his monitor, not a choice.\n\nThe colleague who suggested he sort out his setup meant it kindly, which made it harder to answer. Well-meant advice about someone's body or equipment can sting as much as a joke.\n\nDan read the comments as a sign that he would be judged for his body here as he had been elsewhere, and began to hide behind a switched-off camera, which brought problems of its own.",
+   "betterRead": "Reading other people's setups is risky, because most setups reflect circumstance rather than intention. A low angle may belong to someone who cannot afford a stand, works at a kitchen table or, like Dan, uses a wheelchair at a desk where an ordinary camera sits too low. The joke turned a piece of equipment into a comment on his body, which is exactly the kind of reading this book warns against. Helen's better response did two things. It offered practical help without assuming: she asked whether he wanted any equipment, and he said a separate camera on an adjustable arm would help, which the company bought. And it addressed the joke: she told the colleague, privately, that it had landed badly. Dan said later that the camera mattered less than the fact that someone had noticed the joke and done something about it.\n\nDan turned his camera back on. A few weeks later, the colleague who had made the joke asked him, a little awkwardly, where he had found the camera arm, because he wanted one for his own kitchen table."
+  }
+ ],
+ "workedReading": {
+  "title": "Setting up for an important pitch",
+  "scene": "Grace, forty, runs a small design studio and has a video pitch tomorrow to a large charity, worth more than the rest of her year's work combined. She has prepared the content carefully. Tonight she turns to the picture she will send. She opens her camera on her laptop at the kitchen table, where she usually works, and looks at herself as the charity's five trustees will see her.\n\nShe also knows that the charity's trustees will be on a grid of five small squares on her screen, and she will be one square on theirs. In a grid, small details of light and angle matter more than they would in person.\n\nShe has met only one of the trustees, briefly, at a conference. The others will form their first impression of her studio from whatever appears in the rectangle on their screens, and she knows from her own work how quickly a first impression of a design is formed and how hard it is to undo. She has a spare room upstairs, a desk lamp, a stack of art books and a plant. She gives herself half an hour.\n\nHer partner has offered to keep the children out of the kitchen during the call. She thanks him, and decides that the children are not the problem she most needs to solve.",
+  "steps": [
+   {
+    "label": "See what they will see",
+    "text": "The laptop camera looks up at her chin. The kitchen light overhead casts shadows under her eyes. Behind her, there is a fridge covered in children's drawings and a pile of washing on a chair. Her face fills most of the frame, because she leans in to read the screen. None of it is how she wants five strangers to see her for the first time.\n\nShe also notices her own reaction to her face on the screen: a flinch, then a habit of looking away from it. She decides that she will look at the setup once, carefully, fix it, and then not look again.\n\nShe notices, too, how she sits when she is concentrating: shoulders forward, chin down, face close to the screen. It is her ordinary working posture, and it is fine for working. On a call it would put her nose at the centre of the frame and her eyes near the top."
+   },
+   {
+    "label": "Raise the camera",
+    "text": "She moves to the spare room, puts the laptop on a stack of books so that the camera is at her eye level, and checks again. Now the trustees will see her face from across a table, neither looking up at her nor down on her. Giessner and others have shown that angle changes how powerful people seem; she wants to seem neither imposing nor small, but present.\n\nShe also checks that the stack of books is stable, so that the laptop will not wobble when she types or gestures.\n\nTo check the angle, she looks at the edge of the frame behind her: the line where the wall meets the ceiling should run level, not tilt away above her head. The lens is now at about the height of her eyes, so that looking into it feels like looking at someone across a table."
+   },
+   {
+    "label": "Frame head and shoulders",
+    "text": "She sits back until her head and shoulders are in the frame, with a little space above her head and her upper chest visible. Her hands can now appear at the bottom of the frame when she gestures. The previous chapter described how a face too close feels like someone leaning into yours; this distance feels like a conversation.\n\nShe also notes that some gestures will now be visible at the bottom of the frame, and practises keeping them a little higher and slower than she would in person, so that they read on screen.\n\nShe tries the other extreme as well. Sitting too far back, she becomes a small figure in a room, and her expressions are harder to read. She settles on a distance where her face is clear and her hands can appear when she gestures, and marks the position of her chair with a strip of tape."
+   },
+   {
+    "label": "Fix the light",
+    "text": "She turns her chair so that the window is in front of her and slightly to one side, and adds a desk lamp on the other side for the evening pitch. Her eyes are now clear, the shadows are soft and her expressions will carry. She turns off the harsh overhead light.\n\nShe also checks the light at the time of day the pitch will happen, since a window that is perfect in the morning may be glaring by late afternoon.\n\nShe checks her eyes in particular. If the trustees cannot see them clearly, much of what her face says about her interest and her warmth will be lost. With the lamp in place she can see a small reflection of light in each eye, which tells her they will show on the trustees' screens too.\n\nA string of coloured fairy lights on the bookcase is tinting one side of her face pink. She switches it off."
+   },
+   {
+    "label": "Choose a calm background",
+    "text": "Behind her is now a plain wall with a plant on a shelf. Cook and colleagues found that plants and bookcases were rated as more trustworthy and competent, and novelty backgrounds lowest. She does not need to perform success. She needs nothing behind her that pulls the trustees' attention away from her face and her work.\n\nShe also removes a framed award from the shelf behind her, because it would draw the eye and could look like boasting. The plant stays.\n\nShe considers a blurred or virtual background, and decides against it. Blur can make the edges of her hands flicker when she gestures, and a virtual office would look like what it is. A real, quiet wall says enough. She moves a stack of invoices that was just in shot."
+   },
+   {
+    "label": "Test it once, then forget it",
+    "text": "She records a minute of herself presenting her first slide, and watches it with the sound off. She notices that she looks down at her notes too often, and moves them to just below the camera. Then she hides her self-view, so that tomorrow she will be watching the trustees rather than herself.\n\nShe also asks her partner to join a test call from the next room, to check the sound and the picture on another device. What looks fine on her own screen can look different on someone else's.\n\nShe practises looking into the lens for her opening sentence and her closing one. It feels odd, like talking to someone's shoulder, so she sticks a small paper arrow beside the lens to remind herself where the trustees' eyes will appear to be."
+   },
+   {
+    "label": "What happened",
+    "text": "During the pitch, Grace looks into the camera for her key points and at the trustees' faces when they speak. One trustee's camera is low and his room is dark; she reminds herself not to read anything into it. At the end, the chair says that it was one of the clearest pitches they had seen. Grace wins the contract. She notes that she spent twenty minutes on the setup, and that the trustees probably noticed none of it, which was exactly the point.\n\nShe also notes that the trustee with the low camera and the dark room asked the sharpest question of the pitch, which reminded her once again that setups say very little about people.\n\nAfterwards she writes the setup on a card and keeps it in the desk drawer: books under the laptop, tape mark for the chair, lamp on the left, plant on the shelf. Next time it will take five minutes."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Leaving the camera where the furniture puts it",
+   "body": "Most people's camera angle is decided by their furniture: a laptop on a desk, a phone propped against a mug, a monitor at whatever height it came. The result is very often a camera below the chin, which shows the underside of the face and makes the user appear to look down on everyone. Mandell and Shaw, and Giessner and colleagues, found that low angles make people seem more powerful, which in a meeting with colleagues or clients often reads as aloofness or condescension. Raise the camera to eye level: a stack of books, a laptop stand or an external webcam is usually enough. It is one of the cheapest improvements you can make.\n\nIt also helps to check the angle on every device you use. A camera that is fine on your desktop may be low on your laptop and very low on your phone propped on a table.\n\nA second monitor creates its own version of the problem. If your camera is on your laptop and you look at a larger screen to one side, you will appear to spend the whole call gazing past everyone. Put the camera on the screen you actually look at, usually on top of it and in the middle."
+  },
+  {
+   "title": "Sitting with the light behind you",
+   "body": "A window behind you, especially on a bright day, turns your face into a silhouette, and people read a hidden face as closed, cold or unreadable. Light from directly overhead casts shadows under the eyes and nose and makes people look tired or severe. Screen light alone gives a cold, bluish cast. Face the window if you can, or put a lamp in front of you and slightly to one side. Check your face before an important call, as Grace did. Many people who seem flat on video turn out simply to be badly lit.\n\nIt also helps to remember the time of day. Light changes through the day, and a setup that works at ten in the morning may leave you in silhouette at four in the afternoon.\n\nGlasses bring a further problem: the screen and any lamp in front of you can reflect in the lenses and hide your eyes. Tilting the screen slightly, or moving the lamp further to one side, usually clears the reflection without losing the light.\n\nIf you cannot face a window, close the curtain behind you. A dim room lit from the front is easier to read than a bright one lit from behind."
+  },
+  {
+   "title": "Getting the distance wrong",
+   "body": "Too close, and your face fills the screen at a size that, in a room, would mean you were leaning into someone's face. Too far, and you become a small figure, hard to read and easy to ignore. Many people lean in to read the screen or their notes, so that they drift closer as a call goes on. A useful default is head and shoulders, with a little space above the head and the upper chest visible, which shows your face clearly and lets your posture and some gestures carry. Check your frame at the start, and notice if you lean in.\n\nIt also helps to watch the people who lean in when they speak and sit back when they listen. Their framing changes constantly, which can feel restless on screen. A steady distance is easier to watch.\n\nDistance also changes what your gestures do. Very close to the camera, a hand raised to make a point can fill half the screen and look like a hand pushed at someone's face. At head-and-shoulders distance, the same gesture looks like the ordinary emphasis it is."
+  },
+  {
+   "title": "Judging people by their rooms",
+   "body": "Once you know how much a background can say, it is tempting to read other people's. Resist it. A cluttered room may be a shared flat; a busy kitchen may be a parent working around children; a blurred background may hide a hospital room; a low, unflattering angle may belong to someone with no money for a stand, or a wheelchair user at a desk of the wrong height. Reading setups as statements about character turns circumstance, wealth and disability into judgments. If you make decisions about people on screen, set rules for yourself, as Ruth did, and judge what they say.\n\nIt also helps to notice your own reactions to backgrounds that look expensive. A large, beautiful room may say a great deal about someone's income and very little about their ability.\n\nThe same caution applies to dark rooms, low angles and cameras that are switched off. A dark room may be a room with one small window. A low camera may be the only device in the house. You can fix your own setup; other people's are usually their business unless they ask."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Does camera angle really change how powerful I look?",
+   "a": "Research suggests it can, though the effects are not always large or consistent. Mandell and Shaw found that an official filmed from a low angle was rated as more potent, and Giessner and colleagues found that people judged a person as more powerful when photographed from below rather than above. Some studies have found weaker or mixed effects. In everyday calls, the bigger problem is usually not power but the unflattering, slightly aloof impression of a camera below the chin. Putting the camera at eye level is the simplest way to send a neutral, conversational picture.\n\nIt also helps to think about what impression you want in a particular meeting. A slightly higher camera, looking down a little, can make you seem softer; eye level is the safest default for most conversations.\n\nIf you present to a large audience, the same rule holds. Each person watching a town hall on a laptop is, in effect, sitting across a table from you, and eye level keeps it that way."
+  },
+  {
+   "q": "What is the best background for a video call?",
+   "a": "Something calm that does not compete with your face. In Cook, Thompson and Ross's study, faces in front of plants and bookcases were rated as most trustworthy and competent, faces in front of a living room or a novelty image were rated lowest, and blank walls and blurred backgrounds were in between. You do not need a bookcase. A plain wall, a plant or a tidy corner is fine. Avoid novelty backgrounds for serious conversations, and remove anything that might distract or say something you would rather not say, such as a pile of washing or a screen showing something private.\n\nIt also helps to think about what your background says about other people in your life. A family photograph, a child's drawing or a partner walking past may be things you would rather keep private.\n\nWhatever you choose, check it at the size others will see it. In a grid of small squares, a busy shelf becomes visual noise, and a single object, a plant, a lamp or a picture, is easier on the eye than a dozen."
+  },
+  {
+   "q": "Should I use a virtual or blurred background?",
+   "a": "They can help, especially if you work from a shared or busy space. In the Durham study, blurred backgrounds were rated in the middle, neither helping nor hurting much. Virtual backgrounds can glitch, cutting off hands, hair or headphones as you move, which can be distracting. If you use one, test it first, and keep it simple: a plain office or a soft image is better than a beach or a spaceship for most work calls. A blur is often the safest choice when you cannot control what is behind you.\n\nIt also helps to tell people if your virtual background is hiding something difficult, such as a hospital room. Most will be kind, and it explains any glitches.\n\nBlurred and virtual backgrounds also struggle with movement. Hands, hair and the edges of glasses can flicker or vanish, which draws the eye to exactly the place you do not want it. If you use one, test it first and keep your gestures close to your body."
+  },
+  {
+   "q": "How can I light my face without buying equipment?",
+   "a": "Use what you have. Face a window if you can, because daylight from in front is the most flattering light there is. If the window is behind you, turn round or close the curtain. At night, put a desk lamp in front of you and slightly to one side, at about head height, and turn off harsh overhead lights if you can. A white sheet of paper or a pale wall beside you can bounce light into the shadows. Check your face in the camera before an important call. The aim is simply that people can see your eyes.\n\nIt also helps to keep your screen brightness moderate. A very bright screen close to your face can wash out your features and make your eyes squint.\n\nA sheet of white card or a pale wall beside you will bounce some light back onto the shadowed side of your face. Photographers use the same trick, and it costs nothing.\n\nIf the only light you have is overhead, move your chair a little way out from directly beneath it, so that the light falls on your face at an angle rather than straight down onto your brow."
+  },
+  {
+   "q": "What if I cannot change my setup?",
+   "a": "Do what you can, and say a word about what you cannot. Many people work from small, shared or difficult spaces, and nobody reasonable expects a studio. A short explanation, such as \"Sorry about the background, I'm working from my bedroom this week,\" heads off most judgments. Raise the camera if you can, even on a pile of books, and face the light. If you are interviewing or pitching and your setup is truly a problem, it is reasonable to ask whether the meeting could be by phone or in person instead. People who ask usually find others understanding.\n\nIt also helps to know that many organisations will provide equipment such as a webcam or a stand for people who work from home, especially if they have a disability. It is worth asking.\n\nIf nothing can be changed, say so once, lightly, at the start of an important call: \"Sorry about the angle, I'm on my phone today.\" It takes the question out of other people's minds and lets them get on with listening."
+  },
+  {
+   "q": "How should I judge other people's setups?",
+   "a": "Lightly, and preferably not at all. Notice any impression you form from someone's angle, light or room, and ask what circumstance might explain it: money, housing, children, disability, illness, a bad connection. Ask whether the impression would survive meeting them in person. If you make decisions about people on screen, such as hiring, judge their answers against criteria agreed in advance, and agree as a panel not to discuss settings. The aim of this chapter is to help you send a clear picture, not to give you a new way of judging others.\n\nIt also helps to remember that you are being read too. The same generosity you would want for your own setup is a good guide to the generosity you should show others.\n\nIf you lead meetings, you can make this easier for everyone by saying at the start that rooms and backgrounds play no part in the assessment, and by sharing setup tips with the whole team rather than singling anyone out."
   }
  ],
  "watch": [
