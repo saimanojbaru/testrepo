@@ -73,6 +73,27 @@
    "doCaption": "Leaning in to listen",
    "dontCaption": "On your phone at the bedside",
    "annotation": "Attention is the most valuable thing you can bring to a sickbed. Put the phone away and let your face answer theirs."
+  },
+  {
+   "doPoseId": "p_pair_wheelchair_eye_level",
+   "dontPoseId": "p_pair_wheelchair_looming",
+   "doCaption": "At his eye level, speaking to him",
+   "dontCaption": "Talking down to a man in a wheelchair",
+   "annotation": "Standing over someone who is seated makes them look up at you. Coming down to their level shows that you are talking with them."
+  },
+  {
+   "doPoseId": "p_pair_bedside",
+   "dontPoseId": "p_walk_toward",
+   "doCaption": "Saying your name, then sitting down",
+   "dontCaption": "Approaching a sleeping patient from behind",
+   "annotation": "A touch from nowhere can frighten someone ill or confused. Approach from the front, say who you are, and sit before you touch."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_stand_slumped",
+   "doCaption": "A friend taking a shift, a walk together",
+   "dontCaption": "The carer worn down, carrying it alone",
+   "annotation": "Carers wear out, and men often hide it. Help that is practical and regular is part of caring for the person being cared for."
   }
  ],
  "caseStudy": "Gary, fifty-eight, visits his father Alan, eighty-four, in a care home most evenings. Alan has advanced dementia and rarely speaks. For the first few months Gary stands at the end of the bed, says a few words, checks his phone and leaves after twenty minutes, feeling useless.\n\nA nurse suggests he pull up a chair and hold his dad's hand. Gary feels awkward the first time, but Alan's fingers close around his, and he sits for an hour. Over the following weeks, at pillow height, Gary starts to notice things he had missed. One evening Alan is restless, grimacing, and pulls his left leg away when the carers try to move him. He moans at night, the staff say, which is new. Gary tells the nurse exactly what he has seen. An X-ray shows a hairline fracture in Alan's hip from a fall nobody had witnessed. With pain relief, Alan is calmer than he has been in months.\n\nGary does not notice his own decline as quickly. He has stopped going to his Thursday quiz, he is drinking most nights, and he snaps at his wife over nothing. It is his brother who says something, and offers to take Tuesdays and Saturdays. Gary joins a carers' group that meets in a café, where most of the men talk about football for the first half hour.\n\nIn March, Alan stops responding. Gary sits with him for the last two days, holding his hand and talking about the fishing trips they used to take, the flask of tea and the one enormous pike. He does not know whether his father hears him. He talks anyway.",
@@ -91,6 +112,10 @@
     "Put your phone away for the whole visit.",
     "Offer your hand on the cover, and let them take it if they wish.",
     "Afterwards, note what you noticed from that height that you would have missed standing."
+   ],
+   "variations": [
+    "Try the pillow-height drill on a video call with an older relative, holding the screen at their eye level.",
+    "Notice where you stand in a hospital or care home, and how often staff come down to patients' level."
    ]
   },
   {
@@ -101,6 +126,10 @@
     "Write down what each looks like on a good day for this person: their baseline.",
     "For one week, note any change from that baseline.",
     "Describe any change to a nurse or doctor in terms of what you saw, not what you concluded."
+   ],
+   "variations": [
+    "Practise the PAINAD headings by watching a family member who is unwell with a cold, and noting each one.",
+    "Write down how you would describe pain signs to a nurse, in plain words, without guessing at a cause."
    ]
   },
   {
@@ -112,6 +141,10 @@
     "Name one person who could watch for these signs, and one who could take a shift.",
     "Find a carers' organisation or support group near you and save its details.",
     "Tell the person you named what you have written."
+   ],
+   "variations": [
+    "Share your amber list with one person and ask them to tell you if they see it.",
+    "Find the nearest carers' organisation to you and note what support it offers, even if you do not need it yet."
    ]
   },
   {
@@ -122,6 +155,10 @@
     "Write down three things you would want them to hear if they could no longer answer.",
     "Write down a memory you share that you could tell them, in detail.",
     "Consider whether there is anything you could say to them now, while they can still reply."
+   ],
+   "variations": [
+    "Write a few sentences you would want someone you love to hear near the end, and keep them somewhere safe.",
+    "Ask a hospice or palliative care nurse, if you ever meet one, what they wish families knew about the last days."
    ]
   }
  ],
@@ -203,6 +240,45 @@
    "explain": "These are classic signs of carer strain, the amber signs from Part II. Accepting help, respite and support is part of caring well, not a failure.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Goldstein and colleagues find when one partner held the other's hand during mild pain?",
+   "options": [
+    "Pain fell, and the partners' brain rhythms fell more into step",
+    "Pain rose sharply, because the touch made people more aware of every sensation",
+    "Nothing changed at all, since hand-holding has no measurable effect on pain",
+    "Only the partner holding the hand felt any change, and it was always discomfort"
+   ],
+   "answer": 0,
+   "explain": "Holding hands reduced the pain, and the more the partners' brain rhythms fell into step, the greater the relief. It was a small laboratory study, but it fits what patients and carers often say.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your father, who has advanced dementia, has started shouting and hitting out during his morning wash. He grimaces and pulls away when his right side is touched. What fits this chapter best?",
+   "options": [
+    "Accept that his dementia is getting worse and ask for something to calm him",
+    "Tell the carers to hold him firmly so that the wash can be finished quickly",
+    "Describe the pain signs to the nurse or doctor and ask for him to be checked",
+    "Stop visiting in the mornings, since your presence seems to be upsetting him"
+   ],
+   "answer": 2,
+   "explain": "Agitation, grimacing and guarding can be signs of pain in someone who cannot say so. Describe what you see and ask for an assessment, rather than reading it as the illness.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that research has proved dying patients who seem unresponsive understand every word said to them. What does this chapter say?",
+   "options": [
+    "It is right, since the patients' brains showed they understood everything",
+    "Some brains still responded to sounds; awareness is uncertain, so keep talking",
+    "It is wrong, since the research found that unresponsive patients hear nothing at all",
+    "It is right, but only for patients who were musicians before they became ill"
+   ],
+   "answer": 1,
+   "explain": "Blundon and colleagues found brain responses to sounds in some unresponsive patients, but could not show awareness or understanding. The evidence supports keeping talking, not certainty about what is heard.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +307,110 @@
    "work": "Unpaid care, England and Wales: Census 2021",
    "author": "Office for National Statistics",
    "note": "2023. Who provides unpaid care, including the men who do."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The husband who answered for her",
+   "scene": "Brian, sixty-nine, has been caring for his wife, Pat, since she had a stroke eight months ago. Her right side is weak and her speech is slow:\n  she knows what she wants to say, but the words take a long time to come. When their daughter visits, or the district nurse, or Pat's old friend\n  from the choir, Brian answers for her. \"She's doing much better, aren't you, love?\" \"She slept well.\" \"She's not hungry.\" He stands beside her\n  chair as he talks, looking at the visitor, and Pat looks up at them both.\n\n  At one visit, Pat's friend Maureen asks Pat directly how she is. Pat starts to answer, slowly, and Brian finishes the sentence for her: \"She's\n  fine.\" Pat turns her face away and closes her eyes.\n\n  After Maureen leaves, Pat is silent for the rest of the afternoon. When Brian brings her tea, she pushes it away.\n\nBrian was a foreman for thirty years and is used to being the one who gets things done. Since the stroke, he has organised everything: her medication, the appointments, the adaptations to the house. Speaking for her feels to him like part of the same job.\n\nPat's speech therapist has told them both that practising speech is the best way to recover it, and that Pat should be encouraged to talk as much as possible. Brian heard the advice and agreed with it, and has not noticed that he has been doing the opposite.",
+   "misread": "Brian read his answering for Pat as help, sparing her the struggle of slow speech and keeping conversations moving. He read her turning away and pushing the tea away as tiredness or low mood, not as a response to being spoken over.\n\nAnd the visitors, by answering Brian, went along with it. Each conversation that went over Pat's head confirmed that she was no longer part of the conversation.\n\nHe also took her silence afterwards as fatigue, when it was much more likely hurt. A person who cannot easily say \"you spoke for me\" may say it by turning away.\n\nHis standing, too, told the visitors whom to address. A seated wife and a standing husband who talks put the husband in charge of the conversation before anyone has said a word.",
+   "betterRead": "Dignity shows in small physical choices: coming down to eye level, speaking to the person rather than about them over their head, and letting them do whatever they still can, even if you could do it faster. Pat could still speak, slowly. Each time Brian finished her sentences, he took away one of the things she could still do, and standing beside her chair, looking at the visitor, made her the subject of the conversation rather than part of it. Her turning away and closing her eyes were a clear signal. Brian's better approach, which the speech therapist suggested when he mentioned the afternoon, was to change both his body and his habit. He sat down beside Pat when visitors came, at her level. When someone asked her a question, he looked at Pat, not the visitor, and waited, however long it took. The first time, she took nearly a minute to say that she missed singing. Maureen came back the next week with a recording of the choir, and Pat cried, and sang along with her left hand keeping time.\n\nBrian also asked visitors to wait for her answers."
+  },
+  {
+   "title": "The agitation that was pain",
+   "scene": "Joseph, eighty-six, has advanced dementia and lives in a care home. Over two weeks, he becomes agitated during his morning wash. He shouts,\n  pushes the carers away and twice hits out. The staff note it as a deterioration in his behaviour, and the manager mentions to his son, Chidi, that\n  the doctor may need to review his medication to calm him.\n\n  Chidi visits that evening. His father is in his chair, restless, grimacing, his breathing noisy. When a carer comes to help him to bed and puts a\n  hand under his right arm, Joseph cries out and pulls away, guarding his right side. Chidi, who is a nurse himself, notices that his father keeps his\n  right leg still and stiff, and that he flinches when anyone comes near it.\n\n  He asks the carer whether his father has had a fall recently. She says she does not think so, but that he was found on the floor of his room ten\n  days ago and seemed fine.\n\nChidi also notices that his father, who usually eats well, has left most of his dinner, and that he winces when he shifts in his chair. A carer tells him that Joseph has not wanted to walk to the lounge for a week.\n\nJoseph used to be a tailor, and his hands, his family say, were always busy. For the past week, they have lain still in his lap, except when someone tries to move him.",
+   "misread": "The staff read Joseph's agitation, shouting and hitting out as a worsening of his dementia, and a medication to calm him as the answer. They did not read the agitation as a possible sign of pain that he could not put into words.\n\nThe plan to review his medication also risked treating the symptom with a sedative while the cause went unfound, which is one of the commonest dangers when pain cannot be spoken.\n\nAnd the staff, busy and stretched, had no baseline from before the fall to compare with. Chidi's knowledge of his father's usual self was the piece of the picture they were missing.",
+   "betterRead": "People with advanced dementia often cannot say that they are in pain, and pain that is not recognised can show up as agitation, aggression or withdrawal that is mistaken for the illness. The PAINAD scale, published by Warden, Hurley and Volicer in 2003, asks an observer to watch breathing, vocalisation, facial expression, body language and consolability. Joseph's noisy breathing, crying out, grimacing, guarding his right side and resisting being moved fitted several of them, and the timing, after being found on the floor, mattered. A reader cannot diagnose pain or its cause. What Chidi could do was describe what he saw and ask for it to be checked. He told the nurse in charge exactly what he had observed, and asked for the doctor to examine his father's right hip before any medication was changed. An X-ray found a small fracture. With pain relief and gentler handling, Joseph's mornings became calm again.\n\nChidi also asked the home to use a pain scale for his father in future, and they agreed to check him regularly."
+  },
+  {
+   "title": "The carer who said he was fine",
+   "scene": "Raj, fifty-four, has cared for his mother, Kamala, who has Parkinson's disease, for three years since his father died. He works full time,\n  visits her every morning before work and every evening after, does her shopping, manages her medication and sleeps at her house two nights a week\n  when she is unsteady. His brother, Dev, lives two hundred miles away and rings on Sundays.\n\n  On a visit at Christmas, Dev is shocked. Raj looks grey and thin. He is short-tempered with their mother, which he never used to be, and then\n  ashamed of it. He has stopped going to the gym and to his Thursday quiz. Dev notices four empty wine bottles in the recycling for a single week.\n  When Dev asks how he is, Raj says he is fine, just a bit tired, and changes the subject.\n\n  Their mother, when Dev is alone with her, says quietly that she is worried about Raj, and that she feels she is a burden.\n\nRaj has also cancelled two holidays in the past three years because he could not find anyone to look after their mother. He has told his colleagues that he does not like holidays.\n\nRaj's colleagues have noticed too. He has made mistakes at work he never used to make, and his manager has asked whether everything is all right. He said yes.",
+   "misread": "Raj read his exhaustion as the ordinary price of looking after his mother, and his short temper as a personal failing. Dev, until he visited, read Raj's cheerful Sunday calls as a sign that things were under control.\n\nTheir mother's sense of being a burden was also a reading, and an understandable one: she could see her son's exhaustion, and had no way to change it.\n\nRaj's own reading, that a good son does not need help, was the most powerful of all, and the hardest to challenge from outside.\n\nDev's Sunday calls had also given him only Raj's voice, which Raj could manage. It took a visit to see what the voice had been hiding.",
+   "betterRead": "Men who care often carry on alone, see friends less, drink more, sleep badly and say they are fine, as the chapter on burnout described. Raj's grey face, his weight loss, his short temper followed by shame, his lost gym and quiz nights and the bottles in the recycling made a cluster of a carer close to breaking. Kamala's sense of being a burden was the other side of the same picture. The better response was to treat Raj's wellbeing as part of their mother's care, not separate from it. Dev said, on a walk round the block, \"You're doing an amazing job, and it's too much for one person. I want to help properly.\" They contacted a carers' organisation, arranged a care worker for two mornings a week and a respite weekend every two months, and Dev agreed to come down one weekend a month. Raj went back to his quiz. He told Dev that it was the first time in three years anyone had said the job was too much for one person, and that hearing it had felt like permission."
+  },
+  {
+   "title": "The last evenings",
+   "scene": "Leo, twenty, sits at his grandfather's bedside in a hospice. His grandfather, Frank, eighty-eight, has been unresponsive for two days. His\n  breathing is slow and irregular, with long pauses. His eyes are closed. Leo has never seen anyone die, and he does not know what to do. He sits\n  on a plastic chair a little way from the bed, his hands in his lap, looking at his phone, then at his grandfather, then at his phone again. After\n  twenty minutes, he stands up to leave, feeling useless.\n\n  A nurse, Grace, comes in to check on Frank. She sees Leo's face and asks whether he would like to sit closer.\n\n  Leo says he does not see the point. His grandad cannot hear him.\n\nLeo's mother is in the corridor talking to the doctor, and his aunt has gone home to sleep. For the first time, Leo is alone with his grandfather, and the silence in the room feels enormous.\n\nGrace has worked in the hospice for twelve years and has seen many young men sit exactly like this, at a distance, phone in hand, afraid to get closer. She knows that some of them will regret, for years, that they did not, and that a word now might spare Leo that.\n\nLeo's grandfather taught him to swim, to ride a bike and to fish. Leo lived with him for a year when his parents divorced. He has not told anyone at university that his grandfather is dying, because he does not know how to say it.",
+   "misread": "Leo read his grandfather's unresponsiveness as meaning that nothing he did could reach him, and his own presence as pointless. He sat at a distance, looking at his phone, because he did not know what else to do.\n\nHis phone, too, was a way of coping with a situation he had no script for. Looking at it was less frightening than looking at his grandfather.\n\nHe also read his own uselessness as a fact rather than a feeling. Many people at a deathbed feel useless, and that feeling is rarely a guide to what their presence means.\n\nAnd his decision to leave after twenty minutes was a reading too: that his presence was not wanted or needed. Grace's question showed him it was.",
+   "betterRead": "Blundon, Gallagher and Ward recorded the brain responses of hospice patients who had become unresponsive near death, and found that several still responded to sounds in ways similar to healthy volunteers. The researchers were careful: their results cannot show whether the patients were aware of what they heard. But they give some support to what hospice staff have long advised: keep talking. Grace's better suggestion was simple. She moved Leo's chair up to the head of the bed, at pillow height, and said that he could hold his grandad's hand if he wanted to, and tell him whatever he wanted him to hear. Leo took the hand. After a while, he started talking: about football, about his course, about the time his grandad taught him to fish. He played a song his grandfather loved on his phone. Frank died the next morning. Leo told his mother afterwards that he did not know whether his grandad had heard him, but that he had heard himself say it, and that it mattered.\n\nGrace also told Leo's mother what he had done, and she held him for a long time in the corridor."
+  }
+ ],
+ "workedReading": {
+  "title": "Visiting a friend after the diagnosis",
+  "scene": "Mike's friend Steve, fifty, has been diagnosed with bowel cancer and is recovering at home after surgery, before starting chemotherapy. Mike has not seen him since the diagnosis. He does not know what to say, and he is half tempted to send a card instead. Steve's wife, Julie, has said that Steve would love a visit, and that he gets tired quickly. Mike arrives on a Saturday afternoon. Steve is on the sofa, thinner than Mike remembers, a blanket over his knees, the television on with the sound down.\n\nMike has known Steve since they were eleven. They have never talked about anything serious in forty years, and he is afraid that he will say the wrong thing, or nothing at all.\n\nJulie has also warned him that Steve does not want to be treated like an invalid, and that he has been irritated by visitors who whisper or tiptoe round him. Mike decides to talk to him as he always has.\n\nMike also notices, as he comes in, that the room has been arranged around the sofa: tablets on the side table, a bowl, a stack of cards from well-wishers. Steve's world has shrunk to a few square metres, and Mike's visit is a large part of his day.",
+  "steps": [
+   {
+    "label": "Put the phone away",
+    "text": "Before he goes in, Mike puts his phone on silent and leaves it in his coat in the hall. He has heard from this chapter how much a phone in the hand says that a visit is passing through, and he wants Steve to know that he has come to stay for a while.\n\nHe also takes his coat off as soon as he arrives and hangs it up, rather than keeping it on. A coat kept on says a visitor is about to leave.\n\nHe also turns off the car radio before he goes in and takes a breath on the doorstep. He wants to arrive calm, because Steve will feel whatever he brings into the room."
+   },
+   {
+    "label": "Sit at his level",
+    "text": "Mike does not stand in the doorway or hover by the television. He asks if he can sit, and pulls a chair round to the end of the sofa, close, at Steve's eye level, angled towards him. Swayden's research found that patients thought a doctor had stayed longer when he sat rather than stood, and Mike wants the visit to feel unhurried, even if it is short.\n\nHe also notices the angle of the sofa and the television, and moves his chair so that Steve does not have to turn his head to see him, which might hurt after surgery.\n\nHe also lets Steve see him clearly, sitting in the light from the window rather than with his back to it, so that his face is easy to read."
+   },
+   {
+    "label": "Read the energy",
+    "text": "He notices that Steve's voice is quieter than usual, that he shifts position carefully, wincing slightly, and that he closes his eyes for a moment between sentences. Julie said he tires quickly, and Mike can see it. He decides to keep the visit to about forty minutes, and to watch for signs that Steve has had enough.\n\nHe also notices that Steve's hand goes to his side when he laughs. Mike makes a mental note not to make him laugh too hard, and then, a few minutes later, makes him laugh anyway, and they both wince and laugh more.\n\nHe also watches Julie, who comes in and out with tea. Her glance at the clock after half an hour tells him something Steve may not say himself.\n\nHe also notices that Steve's eyes brighten when the conversation turns to football, and dull when it turns to the hospital. He steers it gently towards the things that give Steve energy rather than the things that drain it."
+   },
+   {
+    "label": "Let him lead the talk",
+    "text": "Mike says, \"It's really good to see you, mate,\" and then asks how the surgery went, and lets Steve decide how much to say. Steve talks about the hospital food and the nurses, and then, briefly, about being frightened of chemo. Mike does not rush to reassure him or tell him about someone who did well. He says that sounds frightening, and that he is glad Steve told him.\n\nHe also brings news of their friends, which Steve asks for eagerly. People who are ill often feel cut off, and ordinary gossip helps them feel part of things.\n\nHe also resists the urge to share his own fears about cancer, or stories about people he has known with it. This visit is about Steve, and Steve's fears are enough."
+   },
+   {
+    "label": "Offer touch, not take it",
+    "text": "When Steve talks about the chemo, his hand rests on the arm of the sofa between them. Mike puts his own hand near it, on the arm, and leaves it there. Steve does not take it, and Mike does not press. After a minute, Steve pats his hand once and smiles, which Mike takes as thanks. He has learned that offering is enough.\n\nHe also does not mention the weight loss, the blanket or the tiredness. Steve knows. Naming it would only make him more aware of how he looks.\n\nHe also notices that Steve's hand had moved towards his a little before resting on the arm. The movement is small, and it tells Mike that the offer was welcome, even if a full handhold was not."
+   },
+   {
+    "label": "Make help practical",
+    "text": "As the visit winds down, Mike does not say \"Let me know if you need anything.\" He says, \"I'm off on Thursdays. I'll drive you to your first chemo session, if that would help Julie,\" and \"I'll bring a curry round next Saturday.\" Steve says yes to both. Specific offers are easy to accept; open ones put the burden of asking on the person who is ill.\n\nHe also asks Julie, on the way out, whether there is anything she needs. Carers often go unasked, and the question surprises her into saying that she would love an evening off.\n\nHe also writes the Thursday drive in his diary while he is still at the house, so that Steve can see it is fixed. A promise written down is easier to believe."
+   },
+   {
+    "label": "Leave well, and come back",
+    "text": "When Steve's eyes start to close for longer, Mike says he will let him rest, puts a hand on his shoulder as he stands, and says he will see him Thursday. He drives Steve to chemo every Thursday for three months. On the last drive, Steve tells him that the visits were the only time he felt like himself, because Mike talked to him about football as well as cancer.\n\nHe also notices that he had been afraid of saying the wrong thing, and that saying ordinary things had turned out to be right.\n\nHe also tells Julie, after the first Thursday, that he can do the drives for as long as they are needed, and she cries in the kitchen, quietly, for the first time since the diagnosis."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Visiting standing up",
+   "body": "A visitor who stands at the foot of the bed, in the doorway or by the window, coat on and phone in hand, is signalling that he is passing through. The person in the bed has to look up at him, and he looms. Swayden and colleagues found that patients estimated a doctor had spent longer with them when he sat down, even though the time was much the same. Pull up a chair to the head of the bed, at pillow height. Take your coat off. Put your phone away. The visit will feel longer and warmer, even if it is short, and you will see things you would miss from above.\n\nIt also helps to stay for at least a little while, even if the visit is short. Twenty minutes sitting down feels longer and warmer than forty minutes standing up.\n\nIt also helps to visit at the right time. Mornings after a bad night, mealtimes and the hour after medication are often hard. Asking the family or the nurses when is best saves both of you a difficult visit.\n\nAnd if you are visiting someone in hospital, ask whether they would like you to bring anything, or take anything home: washing, post, a message for a neighbour. Practical help is often the most welcome kind."
+  },
+  {
+   "title": "Touching without warning",
+   "body": "A hand on the shoulder from behind, an arm taken without a word, a sudden adjustment of a pillow: each can startle and frighten someone who is ill, in pain or confused, and people with dementia may react with fear or anger to a touch that seems to come from nowhere. Approach from the front, where they can see you. Say who you are and what you are about to do: \"It's Gary, Dad. I'm going to move your pillow.\" Ask before taking a hand, or offer yours and let them take it. Touch steadily and slowly, and stop if they pull away.\n\nIt also helps to watch for the moments when touch is most unsettling: being woken, being moved, being washed. These are the times when a warning and an explanation matter most.\n\nIt also helps to keep your voice low and your movements slow in a sickroom. People who are ill, in pain or confused often find sudden noise and movement distressing."
+  },
+  {
+   "title": "Mistaking pain for the illness",
+   "body": "When someone cannot say that they are in pain, the signs of pain can easily be read as part of their condition: agitation as dementia, withdrawal as depression, aggression as personality change. Watch for the signs the PAINAD scale describes: noisy or laboured breathing, moaning or crying out, a frowning or grimacing face, a tense, guarded or rigid body, pulling away from touch, and distress that cannot be soothed. Watch for changes after a fall or a move. You cannot diagnose pain or its cause, but you can describe what you have seen to a nurse or doctor and ask for it to be checked.\n\nIt also helps to keep a simple record of what you see, with dates and times, especially if you visit regularly. A note that he winced when his right side was touched on three evenings is far more useful to a doctor than a general sense that something is wrong.\n\nIt also helps to remember that people sometimes hide pain to avoid being a nuisance. Older men in particular may say they are fine while grimacing. Watch the body as well as listening to the words.\n\nIt also helps to know that pain can show differently in different people. Some go quiet and still; others become restless or irritable. Comparing with the person's usual behaviour matters more than any single sign."
+  },
+  {
+   "title": "Doing everything for them",
+   "body": "It is often quicker and easier to do things for someone who is ill or frail: finishing their sentences, buttoning their coat, cutting their food, answering for them when visitors ask a question. Each of these takes away something they can still do, and with it, a little dignity. Let them do whatever they still can, even if it takes longer. Wait while they find a word. Speak to them, not about them. Ask what they would like help with, rather than assuming. Caring well often means doing less, slowly, rather than doing more, quickly.\n\nIt also helps to ask the person what matters most to them to keep doing themselves. Some people would rather be helped with everything except feeding themselves; others would rather keep dressing themselves at any cost.\n\nIt also helps to involve them in decisions about their own care, as far as they are able. Being asked \"Would you like a wash now or after lunch?\" restores a little of the control that illness takes away.\n\nIt also helps to watch your own impatience. A carer who sighs, taps a foot or takes over with a quick \"Here, let me\" sends a message that the person is a nuisance, however lovingly the help is meant."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What should I say to someone who is very ill?",
+   "a": "Less than you think, and more ordinary things than you expect. \"It's really good to see you\" is enough to start. Ask how they are, and let them decide how much to say. Listen more than you speak, and do not rush to reassure, compare or advise. Many people who are seriously ill say that they are tired of talking about their illness and long for ordinary conversation: football, family news, gossip, the weather. Follow their lead. If you do not know what to say, it is fine to say so: \"I don't really know what to say, but I wanted to see you.\" Your presence says more than words.\n\nIt also helps to keep visits regular rather than long. A short visit every week often means more than a long one every few months, because it tells the person they have not been forgotten.\n\nIt also helps to bring something ordinary: a newspaper, a photograph, a story about the grandchildren. Objects and news from outside the sickroom remind people that they are still part of the world.\n\nIt also helps to know when to leave. Signs of tiredness, such as closing eyes, slower answers or a glance at the clock from a carer, are cues to go, and leaving before they are exhausted is a kindness."
+  },
+  {
+   "q": "How can I tell whether someone with dementia is in pain?",
+   "a": "Watch their body and behaviour, especially for changes. The PAINAD scale asks an observer to look at breathing, sounds such as moaning or crying out, facial expression, body language such as guarding, tension or pulling away, and whether the person can be comforted. A new or worsening agitation, aggression, restlessness or withdrawal, especially after a fall, a move or a change in medication, may be pain rather than the dementia itself. You cannot diagnose it, and you should not try. Tell a nurse or doctor exactly what you have seen, and ask for the person to be assessed for pain.\n\nIt also helps to know the person's baseline. Family members who know how someone usually behaves can often spot a change that busy staff miss, and their observations are valuable.\n\nIt also helps to know that infections, constipation, dehydration and injuries can all cause sudden changes in people with dementia, and that these are often treatable. A sudden change is always worth reporting.\n\nIt also helps to tell staff what the person's usual signs of pain were before the dementia, if you know them. A man who always went quiet when he was hurting may still do so, and that history can help the people caring for him."
+  },
+  {
+   "q": "Is hearing really the last sense to go?",
+   "a": "It is often said, and there is some evidence that fits it, though it is not settled. Blundon, Gallagher and Ward found that several hospice patients who had become unresponsive near death still showed brain responses to sounds similar to those of healthy volunteers. The researchers stressed that this cannot show whether the patients were aware of what they heard or understood words. Hospice staff have long advised families to keep talking, and many families find comfort in doing so. Speak gently, say who you are, and say what you want them to hear. Assume they may be able to hear, and speak as you would want to be spoken about.\n\nIt also helps to be careful what you say near someone who seems unresponsive. Conversations about them, or about practical arrangements, are kinder held outside the room.\n\nIt also helps to speak naturally, at an ordinary volume, rather than whispering. If they can hear, a whisper may be hard to make out; if they cannot, it does no harm to speak as you always did.\n\nIt also helps to give permission, if it feels right. Many families find it helps to tell a dying person that they will be all right, and that it is all right to go, though hospice staff can advise on what suits each family."
+  },
+  {
+   "q": "Should I hold the hand of someone who is ill?",
+   "a": "If they would like it, it may help. Goldstein and colleagues found that holding a partner's hand reduced pain in a laboratory setting and that partners' brain rhythms fell more into step, and James Coan's earlier work found that a trusted person's hand reduced the brain's response to threat. These were small studies of healthy people. But they fit what many patients and carers say. Ask first, or offer your hand on the cover and let them take it. Keep your touch steady and still rather than patting or stroking, unless they seem to like it, and take your hand away if they pull away.\n\nIt also helps to notice whether they hold on. A hand that tightens on yours, or stays when you loosen your grip, is often a sign that the contact is welcome.\n\nIt also helps to keep your own hand warm and relaxed. A cold, tense hand is less comforting than a warm, steady one, and the person may feel the difference.\n\nIt also helps to remember that some people do not like being touched when they are ill, and that sitting close, without touching, can be just as comforting."
+  },
+  {
+   "q": "How can I look after myself while caring?",
+   "a": "Treat your own wellbeing as part of the care, because a carer who breaks down cannot help anyone. Use the early-warning system from Part II: write down your own amber signs, such as worse sleep, a shorter temper, more drinking or fewer calls to friends, and ask someone to watch for them. Accept help, from family, friends, neighbours and services. Carers' organisations can advise on respite care, carers' assessments and support groups. Keep at least one regular thing that is yours, such as a game, a walk or a pint with a friend. And if you are struggling, tell your doctor.\n\nIt also helps to be honest with the person you care for about your own limits. Many people being cared for are relieved, not hurt, to hear that their carer is getting help, because they have been worrying about them.\n\nIt also helps to remember that accepting help is not a failure of love. Many carers find that they can give more, not less, when they have time to rest.\n\nIt may also help to talk to other carers. Support groups, online or in person, are often where carers find practical tips and the relief of being understood by people in the same position."
+  },
+  {
+   "q": "How do I visit someone who is dying?",
+   "a": "Gently, and for as long or as short a time as feels right. Sit close, at their level. Say who you are. If they are awake, let them lead the conversation, and do not be afraid of silence or of ordinary talk. If they are unresponsive, you can still hold their hand if that feels right, talk to them, read to them or play music they love. Follow the advice of the nurses and the family about what is welcome. Short visits are fine. Many people find it helps to say what they want to say, such as thank you, I love you or goodbye, while they have the chance.\n\nIt also helps to look after yourself afterwards. Sitting with someone who is dying can be exhausting and upsetting, and talking to someone about it, a friend, a nurse or a bereavement service, is part of caring for yourself.\n\nIt also helps to say goodbye at the end of each visit as if it might be the last, without making it heavy. A simple \"Love you, see you tomorrow\" can mean a great deal, to both of you.\n\nIt also helps to know that some people die when their family has just left the room. Hospice staff often say this is common, and that it is not a sign that anyone was in the wrong place."
   }
  ],
  "watch": [
