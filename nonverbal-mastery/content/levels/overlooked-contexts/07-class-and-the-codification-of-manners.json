@@ -73,6 +73,20 @@
    "doCaption": "Asking about the work",
    "dontCaption": "Hiring the candidate who plays squash",
    "annotation": "The warm feeling of recognition is often a reading of shared background. Ask about the work instead."
+  },
+  {
+   "doPoseId": "p_older_pair_seated_across",
+   "dontPoseId": "p_pair_turned_away",
+   "doCaption": "Facing him, explaining plainly",
+   "dontCaption": "Talking past an older patient to his daughter",
+   "annotation": "An accent tells you where someone grew up, not what they can understand. Speak to the person whose life it is."
+  },
+  {
+   "doPoseId": "p_mixed_seated_across",
+   "dontPoseId": "p_sit_closed_hunched",
+   "doCaption": "Brought into the conversation",
+   "dontCaption": "Stiff and silent at a formal dinner",
+   "annotation": "Effort with unfamiliar codes shows as stiffness. Give the newcomer something to talk about, and the manners stop mattering."
   }
  ],
  "caseStudy": "Charles, fifty-two, is a partner at a consulting firm and regularly interviews graduates. Last year he saw two candidates on the same afternoon. The first, Hugo, was relaxed and articulate, had rowed at university and spent a summer interning at a bank his uncle worked for. They talked about Italy for ten minutes. The second, Danny, had worked in a warehouse through university, spoke with a strong Liverpool accent, nodded a great deal and laughed nervously at Charles's jokes.\n\nCharles's instinct was clear: Hugo was a natural. But the firm had recently introduced structured interviews, and when Charles scored both candidates against the set questions, Danny's answers to the case problem were noticeably stronger. Charles looked at his notes and realised that most of what he had liked about Hugo was how familiar he felt. Hugo's answers had been fluent but thin; Danny's had been hesitant at the start and then precise, with numbers, a clear structure and a sensible recommendation.\n\nThe firm hired Danny. Before his first client dinner, Charles took him aside and explained how the evening would go: who would be there, what they would talk about, how the bill would be handled, what to wear. Danny said later that it was the most useful thing anyone had told him in his first year.\n\nCharles has started paying attention to the moment of recognition in interviews, the feeling that a candidate is someone like him, and treating it as a reason to check his scores rather than as evidence.",
@@ -91,6 +105,11 @@
     "List what made the impression: what they said, and how they said it.",
     "Separate the two columns: content and manner.",
     "Ask whether your impression would survive if you had only the content."
+   ],
+   "variations": [
+    "Repeat the exercise for someone you rated poorly in a first meeting, and see whether the content column changes your view.",
+    "Ask a colleague who was in the same meeting to list the content of what was said, without their impression, and compare it with yours.",
+    "Do the exercise for yourself after an interview or a pitch, and notice which column you were relying on to make your case."
    ]
   },
   {
@@ -101,6 +120,11 @@
     "Write down ten unwritten rules a newcomer would need to know.",
     "Mark which ones you learned without being told.",
     "Share the list, privately and kindly, with someone new to that setting."
+   ],
+   "variations": [
+    "Ask someone who is new to the setting which rules surprised them most, and add those to your list.",
+    "Turn your list into a short written guide for newcomers, and ask someone from a different background to check it for anything you missed.",
+    "Mark any rule on your list that exists mainly to show who belongs, and consider whether it is needed at all."
    ]
   },
   {
@@ -111,6 +135,11 @@
     "During the conversation, note what was said, in the candidate's words.",
     "Score against your list before forming an overall impression.",
     "Compare your scores with your gut feeling, and note where they differ."
+   ],
+   "variations": [
+    "Ask a second interviewer to score the same candidate independently, and compare your scores before discussing impressions.",
+    "Record the candidate's answer to one question word for word, and score it again a day later without your notes on manner.",
+    "Notice which candidates you warmed to during small talk, and check whether their scores matched your warmth."
    ]
   },
   {
@@ -121,6 +150,11 @@
     "Notice any assumption you form about each speaker's intelligence or competence from their accent.",
     "Ask what evidence you actually have for it.",
     "Write one sentence about what you noticed."
+   ],
+   "variations": [
+    "Listen to a radio interview with the presenter's introduction muted, and notice what you assume about the guest before you know who they are.",
+    "Notice which accents are used in advertisements for expensive products, and which for cheap ones.",
+    "Ask a colleague with a regional accent whether anyone has ever commented on it at work, and listen to the answer."
    ]
   }
  ],
@@ -202,6 +236,45 @@
    "explain": "Structured scoring directs attention to what was said rather than how it sounded. An informal lunch would give class signals even more room to stand in for evidence.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did the sociologist Norbert Elias trace about European rules of table manners?",
+   "options": [
+    "That they were invented in the twentieth century by etiquette writers for the middle classes",
+    "That they spread from royal courts to the wealthy and then downward, marking who belonged",
+    "That they arose from medical advice about hygiene and had nothing to do with social status",
+    "That they were identical across Europe and have hardly changed since the Middle Ages"
+   ],
+   "answer": 1,
+   "explain": "Elias traced how rules about forks, napkins and not spitting spread from royal courts to the wealthy and then downward over centuries. Each new rule became a way of telling who belonged.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A consultant explains a man's test results to his daughter rather than to him, after hearing his strong regional accent. What fits this chapter best?",
+   "options": [
+    "Carry on with the daughter, since she seems better placed to explain things to him later",
+    "Address the patient directly in plain language, and check his understanding in his own words",
+    "Speak to the patient more slowly and simply, since an accent suggests he will struggle",
+    "Give the patient written leaflets instead, since conversation is clearly difficult for him"
+   ],
+   "answer": 1,
+   "explain": "Listeners judge class from a few words and tend to rate higher-class speakers as more competent. An accent says nothing about a person's ability to understand, so speaking to him directly and checking his understanding is the fair reading.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a candidate who nods and laughs a lot in a first meeting must be nervous and lacking in confidence. What does this chapter suggest?",
+   "options": [
+    "That nodding and laughing are engagement cues that Kraus and Keltner linked with background, not confidence",
+    "That nodding and laughing are always signs of anxiety, whatever the person's background or upbringing",
+    "That candidates who nod and laugh are usually trying to manipulate the interviewer into liking them",
+    "That engagement cues mean nothing at all and should simply be ignored in every first meeting"
+   ],
+   "answer": 0,
+   "explain": "Kraus and Keltner found that people from poorer backgrounds tended to show more engagement cues, such as nodding and laughing. They reflect upbringing, not a lack of confidence or ability.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -230,6 +303,110 @@
    "work": "Distinction: A Social Critique of the Judgement of Taste",
    "author": "Pierre Bourdieu",
    "note": "Harvard University Press, 1984 (first published in French in 1979). Class carried in the body, as habitus."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The patient the consultant talked past",
+   "scene": "Terry, fifty-eight, worked for thirty years as a fitter at a car plant in the Midlands, and left school at sixteen. He has a strong local\n  accent and a habit, when he is nervous, of nodding along and saying \"Yeah, yeah\" while people talk. He has been referred to a hospital consultant\n  about a heart problem, and his daughter, Kerry, thirty, a pharmacist, comes with him.\n\n  The consultant, Dr Hartley, is pleasant and efficient. Within a minute of the appointment starting, she has begun to address most of her\n  explanation to Kerry. She explains the test results to her in medical terms, turns to Terry only to say, slowly and simply, \"Your heart isn't\n  pumping as well as it should,\" and then goes back to Kerry to discuss the options. When Terry asks a question about whether he can keep fishing, she\n  answers it briefly, to him, and then asks Kerry whether her father understands the medication plan.\n\n  Kerry is mortified. She says, \"You'd better ask him. He's the one taking it.\" Dr Hartley apologises, a little flustered, and turns to Terry.\n\n  On the drive home, Terry is quiet. Then he says that it happens all the time: in banks, at the council, at the garage when he takes the car in with\n  Kerry. People hear him and decide he is thick.\n\nHe had also, Kerry knows, read every leaflet the GP gave him twice and written his questions on the back of an envelope, which is still in his coat pocket.\n\nDr Hartley had seen eleven patients that morning, and was running forty minutes late. Efficiency, under pressure, tends to follow the path of least resistance, and the path led to the person who sounded like her.\n\nTerry had also, the week before, sat in the GP's waiting room rehearsing his questions under his breath, because he knew from experience that if he stumbled, people would stop listening to him.",
+   "misread": "Dr Hartley read Terry's accent, his nodding and his \"yeah, yeah\" as signs that he would struggle to understand, and turned to the daughter whose speech sounded like hers. Terry read the consultant's turn away from him as being judged stupid, as he had been many times before.\n\nKerry, too, had been read: as the competent one, because her years of training had given her the consultant's vocabulary and something like the consultant's accent.\n\nThe consultant, asked later, said that she had been trying to be efficient, and had assumed the daughter would explain things better at home. She had not noticed that the assumption rested on a voice.\n\nThe receptionist at the clinic, who had greeted Terry warmly in a voice like his, had treated him exactly as he expected to be treated everywhere.",
+   "betterRead": "Kraus and colleagues found that listeners could judge a speaker's class from seven words, mostly from pronunciation, and that people who sounded higher class were judged more competent. Kraus and Keltner found that people from poorer backgrounds tended to show more engagement cues, such as nodding, which observers read as a sign of class. Terry's nodding was attention, and his accent said nothing about his ability to understand his own heart. The better approach, which Dr Hartley adopted at his next appointment, was to address him directly, explain the results to him in plain language without talking down, ask what mattered most to him, and check his understanding by asking him to tell her the plan in his own words. Terry explained it perfectly. He also told her that he had been doing the fitting on heart-lung machines at the plant for ten years, and asked her an excellent question about the valve.\n\nKerry said afterwards that her father talked about the appointment for a week, and that being spoken to directly had mattered to him more than the diagnosis."
+  },
+  {
+   "title": "The scholarship student at formal hall",
+   "scene": "Shaun, eighteen, is the first person in his family to go to university, and he has won a place at an old college where students eat a formal\n  dinner twice a week, in gowns, at long tables lit by candles. On his first night, he sits between two students who went to private schools. In\n  front of him are three glasses, two knives, three forks, two spoons and a napkin folded into a shape he does not recognise. Everyone stands when a\n  bell rings and someone says a grace in Latin.\n\n  Shaun spends the whole meal watching. He waits for others to start before he eats, copies which fork they use, holds his glass the way they do and\n  says very little, because he is afraid his accent and his small talk will give him away. When the student on his left asks where he went to school,\n  he names his comprehensive and sees her pause for half a second before saying, \"Oh, how nice.\"\n\n  His tutor, Dr Okafor, sitting further down the table, notices that the new student seems stiff and unsmiling, and wonders whether he is unhappy or\n  simply aloof. She makes a mental note that he might not be settling in.\n\n  After dinner, Shaun goes back to his room and rings his mum, and tells her he is not sure he belongs there.\n\nHe had also, that afternoon, bought a new shirt for the dinner, the most expensive he had ever owned, and spent the meal worrying that he would spill something on it.\n\nHis mum tells him that she cleaned offices at a university like his for ten years, and that he has as much right to sit at that table as anyone who has ever sat there.\n\nEarlier that day, at the freshers' fair, a society stall had asked him whether he had rowed at school. He had said no, and the student at the stall had turned to the next person in the queue.",
+   "misread": "Dr Okafor read Shaun's stiffness and silence as unhappiness or aloofness. The student beside him read his school's name as a fact worth a pause. Shaun read the whole evening as a test he was failing, and his own careful watching as proof that he did not belong.\n\nAnd Shaun read the pause as a verdict on him, when it may have been nothing more than a student who had never met anyone from a comprehensive before and did not know what to say.\n\nThe second-years at the end of the table, who had been through the same thing, read Shaun's stiffness accurately and said nothing, because nobody had said anything to them.\n\nShaun's mum, on the phone, read his worry as homesickness, until he told her about the cutlery and she laughed and said she would have had no idea either.",
+   "betterRead": "Bourdieu's idea of habitus describes how manners learned in childhood feel natural to those who have them, and Elias traced how rules about cutlery and napkins became ways of telling who belonged. Shaun was not unhappy with the company; he was working hard to follow codes nobody had told him, and that effort showed as stiffness. The better response came from two directions. Dr Okafor, instead of noting him as a worry, invited him for a coffee, asked how he was finding it and told him plainly that she had been the first in her own family to go to university, and had spent her first formal dinner watching which fork to use. A second-year student from a similar background, whom she introduced him to, explained the rules before the next dinner, including the ones nobody tells you. At the third dinner, Shaun talked about football with a professor for twenty minutes.\n\nShaun later became the student who explained the rules to the new first-years, and added a few the college had never written down.\n\nDr Okafor also changed how the college briefed new students before their first formal dinner, so that nobody had to arrive guessing."
+  },
+  {
+   "title": "The partner with no presence",
+   "scene": "Sharon, forty-five, is a senior associate at an accountancy firm, and this is the third year she has been put forward for partnership. She grew\n  up on a council estate in Leeds, went to the local comprehensive and trained through an apprenticeship rather than a degree. Her clients love her,\n  and her figures are the best in her department. Each year, the partnership committee has turned her down with the same feedback: she needs to work on\n  her presence.\n\n  Nobody has told her what presence means. When she asks, she is told that partners need to be comfortable in any room, that clients need to see a\n  certain polish, and that she might like to come to the annual golf day, which she has never been invited to before. She notices that the two men\n  promoted last year both play golf, both went to the same university as the senior partner, and both, as far as she can see, have smaller client\n  books than hers.\n\n  She goes to the golf day. She cannot play, spends the afternoon in the clubhouse and feels, by the end of it, more out of place than ever.\n\n  A new partner on the committee, Rohan, who joined from another firm, reads her file and asks the committee, at the next meeting, what exactly her\n  presence is lacking.\n\nShe has also noticed that the partners talk about clients differently from the way she does: in terms of relationships and lunches, where she talks about problems and fees. She has wondered whether that is what they mean.\n\nShe has also, over the years, been mistaken twice at client events for a member of the catering staff, and once asked to fetch more coffee.\n\nAt the golf day, she noticed that the senior partner spent most of the afternoon with the two men promoted the year before, and that the conversations on the course seemed to be about clients as well as golf.",
+   "misread": "The committee read Sharon's directness, her regional accent and her absence from the golf course as a lack of presence and polish. They read the ease of the candidates who shared their background as readiness for partnership.\n\nShe also read the feedback, for three years, as being about her, and worked hard on her manner, when the problem was in the criteria the committee was using.\n\nThe two men who were promoted had read their own ease at the golf day as merit, and would have been surprised to hear it called a head start.\n\nRohan, coming from outside, could see the pattern that the committee could not, because he did not share the background that made the pattern feel natural.",
+   "betterRead": "Rivera found that evaluators at elite firms placed great weight on fit, which often meant similarity in leisure pursuits and style, and that those markers were closely tied to wealth and upbringing. \"Presence\" can work in the same way: a word that sounds like a skill and turns out, when examined, to mean manner. Sharon's clients and figures were the evidence that mattered, and the feedback asked her to acquire a background rather than a capability. Rohan's better approach was to ask for specifics, as this book recommends with any vague judgment. Nobody on the committee could name a client who had found Sharon lacking. The committee agreed to assess partnership candidates against written criteria, with evidence, and to stop using \"presence\" unless it could be described in behaviour. Sharon was made partner that spring. She has not been to the golf day since.\n\nShe also asked the committee to publish the criteria to all associates, so that the next candidate would not have to guess.\n\nRohan also asked that every partnership feedback letter include at least one specific example, which ended the use of \"presence\" almost overnight."
+  },
+  {
+   "title": "The finance director who flattened his voice",
+   "scene": "Stephen, fifty, grew up on an estate in Sunderland, the son of a shipyard welder. He won a place at university, trained as an accountant and is\n  now finance director of a large retailer in London. Somewhere in his twenties he flattened his accent. He did it deliberately, after a manager told\n  him, kindly, that he would go further if he sounded \"less regional\". He also learned to wine and dine, to play the small-talk game and to dress the\n  part.\n\n  It worked. But Stephen has never felt entirely at ease at work. He watches himself in every meeting. He is careful, polished and a little distant,\n  and colleagues describe him as impressive but hard to know. He has noticed that the only times he is truly relaxed at work are on site visits to the\n  warehouses, talking to the drivers and pickers, when his old voice comes back without his permission.\n\n  At home in Sunderland for his father's seventieth birthday, his cousins tease him about having \"gone posh\". His father, who is proud of him, says\n  nothing, but Stephen notices that he talks to him slightly more carefully than he talks to anyone else in the room.\n\n  On the train back, Stephen realises that he has become a man who is slightly foreign in both places, and that he is tired.\n\nHe has also noticed, recently, that he flinches slightly when he hears his own voice in recordings of meetings, because it sounds like someone he has made up.\n\nHe has also noticed that he never mentions his background at work, and that colleagues who know him well assume he grew up somewhere much like them.\n\nHe has also noticed that, when he goes back to the estate, he still knows exactly how to stand at the bar and how to take a joke, and that those skills, which nobody at work values, have never left him.",
+   "misread": "Stephen's colleagues read his careful polish as reserve, and his family read his flattened voice as distance. Stephen had read his first world's habits, his accent, his directness, his warmth, as faults to be corrected, and had corrected them so well that he no longer felt at home anywhere.\n\nHis cousins' teasing read his success as a betrayal, and his father's carefulness read it as a distance to be respected. Neither was what Stephen wanted.\n\nThe manager who gave him the advice twenty years earlier had read his accent as a barrier, and had been partly right about the room and wrong about the man.\n\nStephen's team, for their part, read his careful distance as seniority, and kept their own distance in return.",
+   "betterRead": "Kraus and colleagues found that higher-class-sounding candidates were offered higher salaries, so the manager's advice to Stephen was not wrong about the cost. But this chapter suggests that the habits of a first world are not errors, and that it is worth deciding consciously which codes to adopt and which to keep. Stephen's better path, which he took slowly, was not to throw away what he had learned but to stop hiding where he came from. He let his accent come back a little in meetings and found that nobody objected. He brought the directness and warmth he had grown up with into his team, and they responded to it. He talked to his father about the welding, at length. And he started a mentoring scheme for apprentices from the warehouses, explaining the unwritten rules of head office plainly, as nobody had explained them to him.\n\nAt his father's next birthday, his cousins said he sounded more like himself, and his father talked to him about the shipyard for most of the evening."
+  }
+ ],
+ "workedReading": {
+  "title": "Hosting a client dinner with a new trainee",
+  "scene": "Victoria, forty-eight, is a partner at a law firm, and next Thursday she is taking a client, the general counsel of a manufacturing company, to dinner, along with a trainee, Kyle, twenty-four. Kyle is one of the best trainees the firm has had in years. He grew up in a small town in Essex, went to the local sixth form and studied law at a university that is not one of the usual ones for the firm. He has never been to a client dinner, and Victoria noticed that he went pale when she mentioned it. She remembers her own first client dinner, as the daughter of a teacher and a bus driver, and the moment she drank from the wrong glass. She wants Kyle to spend the evening thinking about the client, not about the cutlery.\n\nShe has also noticed that Kyle laughs very easily and nods a great deal when she talks to him, which she now reads, after this chapter, as attention rather than nerves.\n\nShe also knows that the client is a man who values plain speaking, and that Kyle's directness, which some partners find raw, may be exactly what he likes.\n\nShe also knows that Kyle has been turning down after-work drinks, and suspects that cost is part of the reason. She makes sure the firm's policy on paying for client entertainment is clear to him.",
+  "steps": [
+   {
+    "label": "Explain the evening beforehand",
+    "text": "On Monday, she takes Kyle for a coffee and tells him exactly how the evening will go: where they will meet, what to wear, who will be there, roughly what they will talk about, how long it will take and that the firm pays. She mentions, lightly, the things nobody ever explains: start with the outside cutlery, the bread plate is on the left, it is fine to say no to wine, and she will order first. He writes it all down. She tells him that she learned all of it by getting it wrong.\n\nShe also tells him that it is fine to ask her quietly during the evening if he is unsure about anything, and agrees a small signal he can use.\n\nShe also tells him that the client is far more interested in the planning issue than in anyone's table manners, which turns out to be true."
+   },
+   {
+    "label": "Choose a gentler venue",
+    "text": "She chooses a good restaurant that is relaxed rather than formal, with a set menu and no wine ritual, where the codes are lighter for everyone. She knows that the client, who grew up on a farm, will probably prefer it too. Manners work as a gate, this chapter says; she can choose where to hold the meeting so that the gate is lower.\n\nShe also books a table in a quieter corner, so that the conversation can be heard without anyone raising their voice.\n\nShe also checks the menu online in advance and sends it to Kyle, so that he can choose before he arrives rather than reading an unfamiliar menu under pressure."
+   },
+   {
+    "label": "Set the pace at the table",
+    "text": "At the table, she sits so that Kyle can see what she does without having to watch for it. She picks up her napkin first, orders first and starts eating first, so that he has a model without having to ask. When the client orders a beer rather than wine, Victoria orders one too, and Kyle, visibly relieved, does the same.\n\nShe also avoids the elaborate tasting menu and asks for the ordinary one, which removes several decisions from the evening.\n\nShe also leaves her phone in her bag, which tells Kyle that he can leave his there too, without having to wonder.\n\nShe also notices that she has slowed her own pace at the table, which seems to slow everyone, and gives Kyle time to follow."
+   },
+   {
+    "label": "Model rather than correct",
+    "text": "At one point Kyle uses his knife to push food onto his fork, which is not quite how the client does it. Victoria does nothing, says nothing and does not look. Correcting someone's manners in front of others, as this chapter warns, turns a small difference into a public lesson. If anything needed saying, she would say it privately, kindly and later. Nothing does.\n\nShe knows that the client almost certainly did not notice, and that if he did, he did not care. People notice manners far less than the person worrying about them believes.\n\nShe also notices that she herself still holds her glass by the bowl rather than the stem, and that nobody in thirty years has ever mentioned it."
+   },
+   {
+    "label": "Bring him into the conversation",
+    "text": "She makes sure Kyle has something to contribute. When the conversation turns to the client's new factory, she says, \"Kyle did the research on the planning issue, he knows more about it than I do,\" and turns towards him. He talks for five minutes, clearly and precisely, and the client asks him two follow-up questions. Victoria notices that his accent becomes stronger when he relaxes, and that the client, who has a strong Yorkshire accent of his own, seems to like him more for it.\n\nShe also asks Kyle afterwards what he enjoyed most about the evening, and he says the planning question. She makes a note to give him more of that work.\n\nShe also asks the client a question about his own career, which leads him to mention that he left school at sixteen. Kyle visibly relaxes."
+   },
+   {
+    "label": "Handle the bill quietly",
+    "text": "She has arranged in advance for the bill to be settled at the bar, so that there is no awkward moment at the table. When the client offers to contribute, she thanks him and says it is the firm's pleasure. She tells Kyle in the taxi that this is how she always does it, so that he will know next time.\n\nShe also explains, in the taxi, how the firm's entertainment budget works, so that he will not be anxious about money if he ever hosts a dinner himself.\n\nShe also thanks the client for his time in a way that Kyle can hear and copy, which is the last of the unwritten rules of the evening.\n\nIn the taxi, Kyle asks her what she got wrong at her first dinner, and she tells him about the glass. They both laugh."
+   },
+   {
+    "label": "What happened",
+    "text": "The client emails the next day to thank Victoria for a very pleasant evening, and asks whether Kyle could work on the next phase of the planning matter. Kyle tells Victoria that he had expected to spend the dinner terrified, and instead spent it talking about the work. She writes down the list she gave him over coffee, tidies it and sends it to the head of trainees, suggesting that every new trainee should get it.\n\nShe also remembers, writing the list, how much she would have given for one at twenty-four.\n\nThe head of trainees adds the list to the induction pack, and two other partners start using it for their own trainees."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Mistaking directness for rudeness",
+   "body": "Many people from working-class backgrounds grow up with a direct style of speaking: saying what they think, plainly, without the cushioning phrases that are common in middle-class professional settings. \"That won't work\" rather than \"I wonder whether we might consider an alternative\". In rooms where cushioning is the norm, directness can be read as rude, aggressive or unsophisticated, and the person who uses it can be marked down for tone rather than content. But directness is a style, not a flaw, and in many situations it is more useful than the alternative, because everyone knows where they stand. Before reacting to how something was said, ask whether it was true and useful. If you need a different register in a particular setting, such as with a client, say so plainly, as you would want to be told. And notice which styles in your workplace are treated as the default and which as a deviation.\n\nIt also helps to notice whose directness is called \"refreshing\" and whose is called \"abrasive\" in your workplace.\n\nMany teams find, once they stop marking it down, that directness saves them time and confusion."
+  },
+  {
+   "title": "Reading polish as arrogance",
+   "body": "Class readings can cut the other way too. Some people, especially those who have felt looked down on, read ease, polish or an upper-class accent as arrogance, insincerity or entitlement, and treat people who have them with suspicion. It is an understandable reaction, but it is the same mistake in reverse: judging someone's character from the habits of their upbringing rather than from what they do. A man who leans back relaxed in a meeting may be arrogant, or may simply have been raised in rooms like this one. A public-school accent tells you where someone went to school, not whether they are kind, honest or good at their job. The principle of this chapter applies in every direction: notice class signals, and keep them separate from your judgment of the person, which should rest on evidence.\n\nIf you notice yourself bristling at someone's accent or manner, run the same check you would run in the other direction.\n\nA good test is to ask whether you would describe the same behaviour in the same way if the accent were different."
+  },
+  {
+   "title": "Asking where people went to school",
+   "body": "\"Where did you go to school?\" and \"What does your father do?\" can be innocent questions. In some settings they work as sorting devices, placing a person in a class hierarchy within seconds and setting the tone of everything that follows, as the student beside Shaun showed with her half-second pause. For someone from a less privileged background, the question can feel like a test they are about to fail, and many learn to dread it. If you are curious about someone, ask about things that do not rank them: what they are working on, what they enjoy, where they live now, what brought them here. If they want to tell you about their school or their family, they will. And if you hear the question being used as a sorting device, change the subject.\n\nIf someone asks you the question and you would rather not answer, it is fine to say where you live now, and move on.\n\nIn a hiring process, these questions have no place at all."
+  },
+  {
+   "title": "Teaching the codes as if they were virtues",
+   "body": "Mentors and managers who want to help people from less privileged backgrounds often explain the unwritten rules, which is valuable, as Victoria did. The trap is to present them as right rather than as conventions: to suggest that a regional accent needs fixing, that directness is unprofessional, or that the way the senior partners eat, dress or talk is simply the correct way. That tells the person that where they come from is a problem to be solved. A better framing explains the rules as the local customs of a particular setting, worth knowing in the way it is worth knowing the customs of a country you are visiting, and leaves the person free to decide which to adopt. It also helps to say, as Victoria did, that you had to learn them too, if you did, and to question the rules that exist mainly to keep people out.\n\nA good test is whether you would be comfortable explaining the rule to someone from another country as a local custom.\n\nAnd if a rule has no purpose other than marking who belongs, consider whether your organisation still needs it."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is it wrong to notice someone's class?",
+   "a": "No, and it would be almost impossible not to. Kraus and Keltner found that observers could estimate social class from sixty seconds of silent behaviour, and Kraus and colleagues found that seven words were enough from speech. Noticing happens in seconds and mostly without intention. The problem this chapter describes is not noticing but ranking: letting accent, polish, ease or manners stand in for judgments of intelligence, skill, honesty or effort. The practical habit is to separate the two, as the Ease Versus Evidence drill suggests. Notice the signal, name it to yourself as information about upbringing, and then make your judgment of the person on what they have actually said and done, preferably against criteria set in advance.\n\nIt also helps to notice your own reactions to your own accent and manners, which can be harsher than anyone else's.\n\nAnd notice when the signal flatters you as well as when it disadvantages others. Both are worth checking.\n\nAnd if you notice someone else ranking, a simple question about the evidence often changes the conversation."
+  },
+  {
+   "q": "Should I change my accent for work?",
+   "a": "That is your choice, and there is no single right answer. Kraus and colleagues found that candidates who sounded higher class were offered higher salaries by evaluators who knew nothing about their qualifications, so the cost of an accent can be real. But that cost reflects the bias of listeners, not a flaw in the speaker, and many people keep their accents and do very well. Stephen flattened his and found, years later, that it had cost him something too. Speaking clearly, at a pace others can follow, helps in any accent. Beyond that, decide consciously what you want to keep and what you want to adapt, rather than letting discomfort decide. If you are a manager, the more useful question is whether your organisation is rewarding accents rather than ability.\n\nIf you do adapt, it can help to keep your first voice somewhere: with family, with old friends, in the places where it belongs.\n\nIt also helps to remember that people with strong regional accents are often better understood than they fear."
+  },
+  {
+   "q": "How can I help a new colleague who does not know the unwritten rules?",
+   "a": "Tell them, privately, kindly and in advance, as Victoria and Charles did. Explain how a client dinner works, what the dress code really means, how meetings tend to run, who to copy into what, how the bill is handled and any other customs that newcomers would otherwise learn by getting them wrong in public. Frame the rules as local customs rather than as the right way to behave. Mention that you had to learn them too, if you did. Then, in the setting itself, model rather than correct: do things first, so that they can follow without watching anxiously, and never correct their manners in front of others. Finally, bring them into the conversation by giving them something to contribute, which turns attention from their manners to their mind.\n\nAnd once they know the rules, let them decide which ones to follow. Knowledge of a custom is not an obligation to adopt it.\n\nIt also helps to tell them which rules are flexible and which really matter, so that they can spend their attention wisely."
+  },
+  {
+   "q": "Why do people from wealthier backgrounds sometimes seem less attentive?",
+   "a": "Kraus and Keltner found that, in conversations between strangers, participants from wealthier, more educated backgrounds showed more signs of disengagement, such as doodling, grooming and fiddling with objects, while participants from poorer backgrounds showed more engagement, such as nodding and laughing. The researchers suggested that people with more resources depend less on others and can afford to attend less closely, while people with fewer resources have more reason to stay attuned. This is a pattern across groups, not a description of any individual, and it is not a judgment of character. But it is worth knowing in two directions: a candidate's eager nodding is not nervousness or low status, and a senior colleague's apparent inattention may be habit rather than contempt.\n\nIt can also help, if you are from a wealthier background, to notice your own habits of attention and make a point of showing interest.\n\nIt is also worth remembering that a pattern across groups says nothing certain about the person in front of you.\n\nAnd if a senior colleague seems inattentive to you, ask a direct question. You may find that he was listening all along."
+  },
+  {
+   "q": "How can I avoid hiring for fit?",
+   "a": "Decide in advance what the job requires, and judge candidates against that rather than against your sense of whether they would be good company. Use structured interviews, with set questions and scored answers, as Part IV described. Write down what a strong answer would contain before you hear any. Notice the moment of recognition, the feeling that a candidate is someone like you, and treat it as a reason to check your scores, as Charles learned to. Be wary of conversations about shared hobbies, schools or holidays, which Rivera found often tipped decisions at elite firms. If your organisation values culture, define what that means in behaviour, such as how people treat colleagues or handle mistakes, rather than in style. And look at who you have hired over the past few years, and ask how many of them resemble you.\n\nIt also helps to involve people from different backgrounds in setting the criteria, so that the definition of good is not set by one group.\n\nIt is also worth asking new hires, after a few months, what nearly put them off applying, and acting on what they say."
+  },
+  {
+   "q": "What can I do if I feel out of place in formal or upper-class settings?",
+   "a": "First, know that the feeling is common and has a cause. The codes of these settings are learned, not innate, and people who grew up with them follow them without effort, which makes them invisible. Your effort shows only because you are doing work that others are not. Second, prepare: ask someone you trust to explain how the evening or the meeting will run, as Shaun's second-year friend did. Third, remember that the habits you bring, such as attentiveness, warmth and directness, are assets in most rooms, and that most people are far more interested in what you say than in which fork you use. And finally, look for allies, others who have made the same move, who can share what they learned and remind you that you belong.\n\nIt can also help to remember that many people in those rooms feel out of place too, and are simply better at hiding it.\n\nIf a setting continues to feel unwelcoming after you have learned its codes, that may say more about the setting than about you."
   }
  ],
  "watch": [
