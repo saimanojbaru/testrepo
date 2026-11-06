@@ -81,6 +81,20 @@
    "doCaption": "Stepping out for a story",
    "dontCaption": "Gripping the lectern throughout",
    "annotation": "A lectern held tightly becomes a shield. Step beside it, or out from behind it, when you want the audience closer."
+  },
+  {
+   "doPoseId": "p_pro_presenting",
+   "dontPoseId": "p_stand_turned_away",
+   "doCaption": "Facing the room, the slide behind",
+   "dontCaption": "Back to the audience, reading the slide",
+   "annotation": "The audience looks where you look. Turn to the slide to point, then turn back before you speak about it."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_stand_collar",
+   "doCaption": "Hands loose, a breath out, then the first line",
+   "dontCaption": "Tugging at the collar before you begin",
+   "annotation": "Fidgeting before a talk feeds the nerves. Let your hands hang loose and breathe out slowly before you walk on."
   }
  ],
  "caseStudy": "Kwame, twenty-nine, a data analyst, was asked to give a twenty-minute talk at an industry conference about a project his team had led. He had never spoken to more than a dozen people. He watched videos of famous speakers, wrote out his talk word for word, and practised in front of a mirror with planned gestures: an open palm here, a sweep of the arm there, three steps to the left at the end of the introduction.\n\nIn the first rehearsal with his team, it went badly. He forgot a planned gesture, lost his place in the script, and froze. A colleague who had spoken at conferences watched him and said he looked like he was doing an impression of someone else.\n\nKwame changed his approach. He turned the script into a single page of headings. He stopped planning gestures and simply explained the project to his colleague, as he would over coffee, while she watched his hands. They moved on their own, and his explanation was clearer than the script. He kept just two pieces of staging: a few steps between each section, and a pause before the main finding.\n\nOn the day, his heart was pounding in the wings. He told himself he was excited, which felt silly, and took two slow breaths. In the first minute his voice wavered, and he was sure everyone could hear it. Nobody mentioned it afterwards. Halfway through, he caught himself speaking each point to one face in the third row, then another by the window, and realised he had stopped thinking about the audience as a crowd.\n\nSeveral people came to talk to him afterwards. None of them commented on his delivery. They wanted to know more about the project, which he decided was the best review he could have had.",
@@ -100,6 +114,11 @@
     "Ask them to watch your hands, posture and eyes rather than the content.",
     "Ask what looked most natural, and what disappeared when you got interested.",
     "Use that as the starting point for your delivery, rather than a planned set of gestures."
+   ],
+   "variations": [
+    "Explain the same topic to two different friends, one who knows the subject and one who does not, and notice how your hands change.",
+    "Record yourself explaining the topic to a friend, then watch the recording with the sound off and note which gestures carried the meaning.",
+    "Ask your friend to interrupt you once with a question, and notice how you recover your thread without notes."
    ]
   },
   {
@@ -111,6 +130,11 @@
     "Take two or three slow breaths into the belly, with a long exhale.",
     "Let your shoulders drop and your hands hang loose.",
     "Walk on and pause for a breath before your first sentence."
+   ],
+   "variations": [
+    "Try the routine before a small, low-stakes moment, such as speaking up in a meeting, so that it is familiar by the time you need it on a stage.",
+    "Try a version of the routine before a phone call or a video call, adapted to where you are, and notice whether your opening is steadier.",
+    "Pair the routine with walking the stage or the room beforehand, if you can, and notice whether the two together help more than either alone."
    ]
   },
   {
@@ -122,6 +146,11 @@
     "Record it again, pausing for two or three seconds at each mark.",
     "Listen to both and note which sounds clearer and more confident.",
     "Keep the pauses that helped."
+   ],
+   "variations": [
+    "Practise pausing after a question in an ordinary conversation, counting two seconds before you answer, and notice how the other person responds.",
+    "Mark the one sentence in your talk that matters most, and practise a three-second pause before and after it.",
+    "Ask a friend to time your pauses during a rehearsal, and compare their times with how long the pauses felt to you."
    ]
   },
   {
@@ -132,6 +161,11 @@
     "Move to someone in a different part of the room for the next point.",
     "Notice whether people respond differently when you speak to them directly.",
     "Afterwards, note whether you felt more or less nervous than usual."
+   ],
+   "variations": [
+    "In a large room, practise speaking each thought to a small group in turn, rather than to one face, and notice whether the room feels smaller.",
+    "During questions, practise beginning each answer to the questioner and ending it by looking back at them.",
+    "In a one-to-one conversation, notice how you naturally hold someone's eyes until a thought is finished, and bring that rhythm to your next talk."
    ]
   }
  ],
@@ -213,6 +247,45 @@
    "explain": "Scripted gestures tend to look like a performance and use up mental effort. Gestures that arise naturally while explaining are part of how speech is produced, and they look like they belong to the speaker.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What principle does this chapter suggest for moving around a stage?",
+   "options": [
+    "Keep moving throughout the talk, so that the audience never has time to lose interest in you",
+    "Move on transitions between sections, and stand still for the key points you want to land",
+    "Stay completely still from start to finish, since any movement at all distracts an audience",
+    "Walk towards the person who seems least interested, so that they feel obliged to pay attention"
+   ],
+   "answer": 1,
+   "explain": "Movement on a transition marks a change, as a new paragraph does on a page. Stillness on a key point makes it land, and walking between sections uses some restless energy.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Three minutes into your talk, the projector fails. What fits this chapter best?",
+   "options": [
+    "Stop and wait in silence until the technician has fixed it, however long that takes",
+    "Step towards the audience and carry on, letting your words and hands carry the content",
+    "Apologise at length for the problem, so that the audience knows it was not your fault",
+    "Abandon the talk, since without slides the audience will not follow the argument"
+   ],
+   "answer": 1,
+   "explain": "A talk that has been rehearsed aloud lives in the speaker, not the slides. Carrying on, with free hands to sketch what the slides would have shown, often makes the moment memorable rather than disastrous.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone advises starting every talk by telling the audience how nervous you are, so that they will be sympathetic. What does this chapter suggest?",
+   "options": [
+    "That announcing nerves draws the audience's attention to feelings that were mostly invisible to them",
+    "That audiences can always see a speaker's nerves, so it is best to admit them straight away",
+    "That announcing nerves is the most effective way to calm your own heart rate before speaking",
+    "That audiences rate nervous speakers more highly whenever the nerves are openly acknowledged"
+   ],
+   "answer": 0,
+   "explain": "Because of the illusion of transparency, most of what a nervous speaker feels is invisible from the seats. Announcing it makes people look for it, and frames the talk as an ordeal.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -241,6 +314,110 @@
    "work": "Is public speaking really more feared than death?",
    "author": "Karen Kangas Dwyer and Marlina M. Davidson",
    "note": "Communication Research Reports 29(2), 2012. The survey behind the famous claim, and what happens when it is asked properly."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The best man who raced",
+   "scene": "Sam, thirty-one, is best man at his oldest friend's wedding. He has written a good speech: three stories from their school days, a\n  touching paragraph about the bride, and a toast. He has timed it at six minutes. He has practised it in his head on the train every morning for a\n  fortnight, but never out loud, because his flatmates would hear.\n\n  At the reception, he stands up in front of a hundred and twenty guests with the speech on four cards. His heart is hammering and his mouth is dry.\n  He starts reading at once, before the room has quite settled, and goes faster and faster. The first story's punchline arrives before anyone has\n  understood the set-up, and only a few people laugh. He hears the thin laughter and speeds up further, to get to the next story. He finishes in just\n  under three minutes, raises his glass and sits down.\n\n  The groom hugs him. The bride's father says, kindly, that it was very good. Sam is sure it was a disaster.\n\n  Later, the groom's grandmother, who is hard of hearing, asks him what the story about the school trip was, because she missed it. He tells it to her\n  at the table, slowly, and she laughs so much she has to put her glass down.\n\nThe groom had asked him to keep it short, which Sam had taken to mean that it should be over as quickly as possible. What the groom had meant was no more than ten minutes.\n\nHis flatmate, who was at the wedding, tells him the next morning that the speech was nice but that nobody could keep up, and that the bride's mother had leaned over during the second story and asked what had happened to the tent.\n\nHe had also decided to read the cards rather than look up, because he was afraid that if he caught anyone's eye he would lose his place.",
+   "misread": "Sam read the thin laughter as proof that his stories were not funny, and sped up to escape. The guests, many of whom had missed the set-ups, read the speech as nervous and rushed, though warm. Nobody but Sam read it as a disaster.\n\nAnd he read the bride's father's \"very good\" as pity, when it was what fathers of brides say about every speech, and meant kindly.\n\nThe guests who laughed thinly were mostly laughing at the bits they had caught. A slower telling would have given the rest of the room the chance to catch up, and the laugh would have grown.",
+   "betterRead": "Anxiety speeds speech up, and fast speakers leave the audience no time to catch up. Jokes need a pause after the set-up and another after the punchline, and a room of a hundred and twenty people needs more time than a table of six. Sam's stories were funny, as his telling at the table proved. What failed was the pace. His better approach, which he used at his brother's wedding two years later, began with practising aloud, standing, at least five times. He waited for the room to settle before his first word. He paused after each set-up and let each laugh finish before going on. He told himself, as he stood up, that he was excited, which made him laugh at himself and helped. The speech ran seven minutes, and his brother's new wife asked him for a copy.\n\nHe also asked the groom's grandmother to sit near the front, and told the school-trip story to her, which made the whole room lean in."
+  },
+  {
+   "title": "The quiet scientist on the course",
+   "scene": "Tomasz, forty-five, is a research chemist, quiet, precise and well respected in his field. His company sends him on a two-day presentation\n  course before he gives the keynote at a customer conference. The trainer, an energetic former actor, tells the group that great speakers own the\n  stage. He has them practise striding to the front, booming their opening line, opening their arms wide and pausing for effect. He tells Tomasz that\n  he is too still and too soft, and that he needs to \"bring the energy\".\n\n  Tomasz does his best. At the conference, he strides on, opens his arms and booms his first line, which is a joke the trainer suggested. Several\n  people laugh politely. For the next twenty minutes he works hard at the big gestures and the big voice. It is exhausting, and it shows. His\n  colleagues, who know him well, watch with discomfort.\n\n  In the feedback forms, the customers rate the content highly. Several comments say the speaker seemed uncomfortable, and one says he seemed to be\n  \"acting the part of a presenter\". Another says that the most convincing moment was during the questions, when he forgot about the stage, stood still\n  and explained the chemistry in his own quiet way.\n\n  Tomasz reads the forms and feels foolish. His manager, Ines, says that she thinks the problem was the course, not him.\n\nThe trainer filmed each participant on the first day and played the clips back to the group, pausing on Tomasz's to point out that his hands barely moved. Tomasz had not wanted to say that he had been concentrating on what he was saying.\n\nOn the second day the trainer praised him warmly for a big, sweeping gesture during a practice run. Tomasz had not meant it; he had been reaching for his water.\n\nInes had sat through the keynote in the second row. She tells him that she could see him working, and that watching someone work that hard at being relaxed is tiring for the audience too.",
+   "misread": "The trainer read Tomasz's stillness and quiet voice as weaknesses to be fixed. Tomasz read the trainer's advice as the right way to present and his own manner as a deficiency. The customers read the performance as someone acting a part.\n\nThe trainer had read a single style of presence as the only one, and assumed that a quiet speaker must be a weak one.\n\nHis colleagues read his discomfort accurately, but nobody had told him before the conference that the course might not suit him, because the course had been everyone's idea.",
+   "betterRead": "Audiences tend to trust a body that looks as though it belongs to the person talking. A quiet man performing the big gestures and booming voice of a showman usually looks uncomfortable, because his body is acting out a role, and audiences notice the gap. Tomasz's natural manner, still, precise and attentive, was exactly what made his answers during the questions convincing. His better approach, which Ines helped him plan for the next conference, was to keep that manner and add only what supported it: a few steps between sections, a pause before each key finding, each point spoken to one person in the room, and his hands free to explain the chemistry as they did over coffee. He kept his voice at its natural level and used a good microphone. The feedback the next year called him \"clear\", \"credible\" and, to his surprise, \"engaging\".\n\nHe also stopped opening with a joke. He opened instead with a question his customers had asked him, which got their attention without anyone having to laugh."
+  },
+  {
+   "title": "The student who apologised for her nerves",
+   "scene": "Amara, twenty-two, is a final-year nursing student, and she has to present a case to a meeting of the ward team: two consultants, a ward\n  manager, several nurses and some medical students. She knows the patient and the case well. She has prepared her slides carefully. She has also\n  barely slept, and when she stands up, her hands are shaking and her voice wobbles on the first sentence.\n\n  She stops and says, \"Sorry, I'm really nervous.\" A few people smile encouragingly. She starts again, wobbles again, and says, \"Sorry, I'm so sorry,\n  I'm just really nervous.\" By the third apology, the room has gone very quiet, and the ward manager says gently, \"Take your time.\" Amara feels as\n  though every person in the room is watching her shake.\n\n  She gets through the presentation, and the content is good, but she is mortified. She is sure that everyone saw how frightened she was, and that the\n  consultants now think she cannot cope under pressure.\n\n  The next day, one of the consultants stops her in the corridor and says that her analysis of the patient's medication was the best he had heard from\n  a student that year. He does not mention the nerves. When she does, he looks puzzled and says he had thought the apologies were just politeness.\n\nShe had rehearsed the presentation twice in her room, sitting on the bed, reading from her laptop. She had not practised standing up, or speaking to anyone, or what she would do with her hands.\n\nAfterwards, a medical student who had presented the week before tells her that he had been terrified too, and that he had watched her the whole time thinking how calm she looked until she said she was nervous.\n\nThat evening she writes in her reflective journal that she must learn to be less nervous, and underlines it twice.",
+   "misread": "Amara read her own nerves as obvious to everyone and assumed the consultants had judged her by them. By apologising, she drew the room's attention to the nerves, which most people had barely noticed until she named them.\n\nAnd she read the ward manager's \"Take your time\" as a sign that her nerves were obvious, when it was a response to her apologies.\n\nThe medical students, who had all presented before, mostly read her shaking as ordinary, the way everyone feels at a first case presentation. The apologies were the part they remembered.",
+   "betterRead": "Savitsky and Gilovich found that speakers who were told about the illusion of transparency, that nerves are much less visible than they feel, felt calmer and were rated as better speakers by the people watching. Amara's shaking hands and wobbling voice were real, but far less visible from the seats than from inside her body, and the consultant had barely noticed them. Repeated apologies turned an invisible feeling into a visible topic. Her better approach, which a tutor suggested, was to say nothing about the nerves, take a slow breath out, pause after the first sentence, rest her hands on the table or the lectern for a moment if they shook, and carry on. At her next case presentation, she did exactly that. Her voice wobbled once and steadied. Nobody mentioned it, including her.\n\nShe also stopped rehearsing on her bed. She practised her next presentation standing in the empty seminar room, aloud, twice, with a friend pretending to be a consultant."
+  },
+  {
+   "title": "The manager behind the lectern",
+   "scene": "Ravi, fifty, manages a food processing plant that employs three hundred people. Head office has decided to close one of the plant's two\n  production lines, and ninety jobs will go. Ravi has to tell the workforce at a meeting in the dispatch hall at six in the morning, between shifts.\n  He has a statement drafted by head office and a list of support arrangements. The hall has a temporary lectern and a microphone.\n\n  He stands behind the lectern, grips it with both hands, and reads the statement word for word, looking down. It takes four minutes. He looks up only\n  at the end, when he says that he will take questions. There is a long silence. Someone at the back shouts that he does not even have the guts to look\n  at them. Ravi feels his face go hot and reads the support arrangements, again looking down.\n\n  He has worked at the plant for twenty-two years, and he knows many of the people in the hall by name. He had fought the decision for months and\n  lost. Almost nobody in the hall knows that.\n\n  That afternoon, the union representative, Bernadette, comes to his office. She tells him that people are angry about the closure, which he expected,\n  and angry with him, which he did not. \"They thought you were hiding,\" she says. \"Were you?\"\n\nRavi had been told by head office that he must read the statement exactly as written, for legal reasons. He took that to mean he must read it with his eyes on the page.\n\nOn the drive home that evening, he keeps hearing the shout from the back of the hall, and realises that he had not been able to see who had shouted, because he had not looked up.\n\nBernadette also tells him that a woman who has worked on the line for thirty years had said, \"He couldn't even look at us.\" Ravi had sat beside that woman's husband at the plant's last Christmas dinner.",
+   "misread": "The workforce read Ravi's grip on the lectern, his lowered eyes and his reading voice as a man hiding behind a statement, unwilling to face them. Ravi read his own manner as the proper, careful way to deliver an official announcement.\n\nRavi also read the silence after his statement as the workforce having nothing to say, when it was shock, and the first question came out as anger because nobody had been looked at.\n\nBernadette, too, had at first read his manner as hiding, until she remembered the months he had spent arguing with head office on the plant's behalf.",
+   "betterRead": "A lectern gripped with both hands becomes a barrier, and a speaker reading with his eyes down disappears behind it. On a day of bad news, that reads as hiding, however it is meant. The chapter on the poker face earlier in this part described how a face that shows nothing when delivering bad news is read as indifference. Ravi's better approach, which Bernadette suggested, was a second meeting. This time he stepped out from behind the lectern and stood still in front of it, without notes for the first part. He looked at people, one face at a time, said that he was sorry, that he had argued against the decision and lost, and that he would do everything he could for each of them. He let the silence after that sit. Then he took questions, turning to each person who asked. People were still angry, but several came up afterwards to shake his hand.\n\nHe also read the legally required statement at the end, slowly, looking up after each paragraph."
+  }
+ ],
+ "workedReading": {
+  "title": "Giving a talk when the slides fail",
+  "scene": "Naomi, thirty-nine, is a transport planner, and she is giving a fifteen-minute talk at a regional planning conference about a bus scheme her council has introduced. It is the first time she has spoken to an audience of more than a hundred. She has prepared well: a page of headings, a set of slides with maps and charts, and an opening and closing she knows by heart. She has rehearsed aloud, standing, four times, and once in front of a colleague. She is speaking third in the morning session, in a hotel conference room with a small stage, a lectern to one side and a large screen. She arrives forty minutes early to look at the room. She knows that nothing in her preparation will stop her heart pounding in the wings.\n\nHer colleague, watching her rehearsal, gave her one piece of advice: \"Don't let the slides give the talk. You give the talk.\" Naomi wrote it on the back of her headings page without quite knowing why.",
+  "steps": [
+   {
+    "label": "Walk the stage first",
+    "text": "During the coffee break before the session, she walks onto the empty stage, stands where she will stand, and looks out at the room. She notices where the lectern is, where the screen is, and where the steps are. She finds two places she can move between for her transitions. Seeing the room from the stage takes away some of the strangeness, so that when she walks on later, it will be a place she has stood.\n\nShe also checks the practical things: where to put her water, whether the microphone clips on or is handheld, and how to get from her seat to the stage without climbing over anyone's bag.\n\nShe also sits for a minute in a seat at the back, to see how far away the stage looks and how large she will need to make her gestures."
+   },
+   {
+    "label": "Run the wings routine",
+    "text": "While the second speaker is finishing, she stands at the side of the room. Her heart is racing. She says under her breath, \"I am excited,\" which feels slightly silly, and remembers that Brooks found it worked better than trying to calm down. She takes three slow breaths with a long exhale, lets her shoulders drop and her hands hang loose, and reminds herself that her nerves are far less visible than they feel.\n\nShe also avoids looking at her phone in the last ten minutes, as the chapter on power posing suggests, and stands rather than sitting hunched in her seat."
+   },
+   {
+    "label": "Pause before the first sentence",
+    "text": "She walks on at an ordinary pace, stands in the centre of the stage, plants her feet and looks at the audience for two seconds before she speaks. Then she says her first sentence, which she knows by heart, to one woman in the third row. She pauses after it. The pause feels long to her. To the room, it feels like someone about to say something worth hearing.\n\nShe speaks her second sentence to a man near the back, and her third to a woman on the far side. Each thought goes to one person, and the room, watching her speak to them, feels spoken to as well."
+   },
+   {
+    "label": "When the slides fail",
+    "text": "Three minutes in, the screen goes blue. The technician waves an apologetic hand and starts fiddling with a laptop. Naomi feels a jolt of panic. Then she remembers that the talk is in her, not in the slides. She steps away from the dead screen, towards the audience, and says, \"Well, you'll have to imagine the map. Picture a town with one main road and every bus stuck on it.\" People laugh.\n\nShe also resists the urge to apologise, beyond a single wry line. The audience does not need to manage her disappointment about the slides; they need the talk."
+   },
+   {
+    "label": "Let the hands do the work",
+    "text": "Without the map, she draws the town in the air with her hands: the main road, the new bus lane, the side streets the buses used to use. She has not planned any of it. Goldin-Meadow's work suggests that her hands are helping her think as well as helping the audience see. She moves a few steps for each new section and stands still for each key result, which she gives to one face, then another.\n\nShe notices, a few minutes in, that she has stopped thinking about her nerves altogether. Explaining the town with her hands has taken all her attention, which is perhaps why it works.\n\nHer movement also gives the room something to follow while the screen is dead: a step to the left for the old routes, a step to the right for the new."
+   },
+   {
+    "label": "Take the questions well",
+    "text": "The slides come back just in time for her closing chart, and she uses it briefly, then turns back to the room. For questions, she steps forward, turns her body to each person who asks, listens without nodding through their words, pauses before she answers, and ends each answer by looking back at the questioner. One question she cannot answer. She says so, and offers to find out.\n\nA man at the back asks a sharp question about cost. She turns to him, keeps her face attentive, gives the figure and the reason for it, and looks back at him at the end. He nods."
+   },
+   {
+    "label": "What happened",
+    "text": "Afterwards, several people tell her that the talk was the best of the morning, and two mention the drawing in the air. The session chair says that the slide failure was the best thing that could have happened to her talk. Naomi is not sure about that. She is sure that her preparation, aloud and on her feet, is what let her keep going when the screen went blue, and she writes \"rehearse without slides once\" at the top of her checklist for next time.\n\nShe also notices, watching the recording later, that her voice wobbled in the first minute, which she had felt intensely, and that on the recording it is barely audible.\n\nShe also realises that she never once thought about the woman in the third row's expression after the first sentence."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Announcing your nerves",
+   "body": "Many nervous speakers begin by saying so: \"I'm not very good at this,\" \"Bear with me, I'm really nervous,\" or a string of apologies when the voice wobbles. It feels honest, and it is sometimes meant to win sympathy. Usually it backfires. The illusion of transparency means that most of what you feel is invisible from the seats, and announcing it makes the audience look for it, so that a shake they would never have noticed becomes the thing they watch. It also frames the talk as an ordeal you are getting through rather than something you have come to give them. If your voice wobbles, pause, breathe out and carry on. If you need a moment, take it without explanation; a pause reads as composure. An audience that has not been told you are nervous will mostly assume you are not.\n\nIt is fine to acknowledge something the audience can plainly see, such as a cough or a dropped card, with a light word. Then move on."
+  },
+  {
+   "title": "Talking to the slides",
+   "body": "A common habit, especially for speakers who are nervous or who know their slides better than their talk, is to turn towards the screen and read it, sometimes for minutes at a time. The audience sees the speaker's back or side, the voice is directed away from them, and their eyes follow the speaker's gaze to the screen, so that nobody is looking at anybody. It also tends to slow the talk to the pace of reading. If you need to point something out on a slide, turn to it briefly, point, then turn back to the room before you speak about it. Keep a small copy of your slides or your headings on the lectern or a monitor in front of you, so that you can glance down rather than turning round. Slides should support the talk, not become the person the audience watches.\n\nA remote clicker helps, because it lets you change slides without turning towards the laptop as well as the screen."
+  },
+  {
+   "title": "Rehearsing only in your head",
+   "body": "Many people prepare a talk by reading it over silently or running through it in their heads on the train, as Sam did. It feels like rehearsal, but it leaves out almost everything that happens on the day: the voice, the breath, the pace, the hands, the moment when you have to find your place without stopping. Speaking aloud is slower than thinking, and a talk timed in your head will usually run long or, under nerves, get rushed. The body also needs to learn the talk. Rehearse aloud, standing, at least several times, ideally in a space like the one you will use, and at least once in front of someone. Record one run and listen to it. The first time you hear your talk aloud should not be in front of the audience.\n\nRehearse the transitions between sections more than the sections themselves, because that is where speakers most often lose their way."
+  },
+  {
+   "title": "Taking faces in the audience as verdicts",
+   "body": "From a stage, individual faces can look alarming. A man in the second row frowns, a woman checks her phone, someone yawns, and a nervous speaker reads each one as a judgment and starts to shrink or speed up. But most faces in an audience are resting faces, and a listening face often looks serious, even stern. A frown may be concentration, a phone may be a note being taken, a yawn may be an early start. The chapters on reading in Part I warned against reading single signals in isolation, and the warning applies doubly from a stage, where you have no baseline for anyone. Find a few responsive faces, by all means, and speak some thoughts to them. But do not let one face write your review. Look at the whole room over the whole talk, and judge it afterwards, if at all, by what people say and ask.\n\nIf you want honest feedback, ask two or three people afterwards what they remember. That is a better verdict than any face in the second row."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What should I do with my hands while I speak?",
+   "a": "Mostly, let them do what they do when you explain something to a friend. Goldin-Meadow and colleagues found that gesturing lightens the mental load of explaining, so pinning your hands to your sides or holding them rigidly can make speaking harder. When you are not gesturing, let them rest at your sides or lightly together in front of you, at about waist height, rather than in your pockets, clasped tightly or fiddling with a pen. If your hands shake, rest them on the lectern for a moment, or hold a single card. Avoid scripting gestures to particular lines, which tends to look wooden. If you want to check your hands, record yourself explaining something you care about and watch with the sound off.\n\nAnd if you hold something, such as a clicker or a single card, hold it lightly in one hand so that the other is free.\n\nIf you notice a habit you dislike, such as touching your face, replace it with something simple, such as resting your hands together, rather than trying to stop it by force."
+  },
+  {
+   "q": "Should I memorise my talk?",
+   "a": "Memorise the beginning and the end, and keep the middle as headings. Knowing your first sentence or two by heart gets you through the moment when nerves are highest, and knowing your last sentence means you can finish cleanly rather than trailing off. For the middle, a script learned word for word tends to sound recited, and if you lose a word you can lose your place entirely. Headings let you speak the content in your own words, which sounds more natural and is easier to recover if you stumble. The exception is a talk where precise wording matters, such as a formal statement or a tribute, where reading carefully, with pauses and frequent looks up, is perfectly acceptable.\n\nPut your headings in large type, so that a glance is enough to find your place.\n\nWhatever you choose, rehearse with exactly the notes you will use on the day, so that your eyes know where to find things."
+  },
+  {
+   "q": "What if my mind goes blank in the middle?",
+   "a": "Pause, breathe out and look at your notes. A pause of several seconds feels endless to you and ordinary to the audience, who mostly assume you are thinking, which you are. If the next point does not come, go back to the last thing you said and summarise it in a sentence, which often brings the thread back. If it still does not come, say plainly, \"Let me check where I am,\" and look at your headings. Speakers lose their place far more often than audiences realise, and the ones who recover calmly are remembered as composed. What makes a blank feel like a disaster is the panic around it, and the routine of pause, breath, notes and summary gives the panic something to do.\n\nMany experienced speakers keep a single line at the top of their notes, the main point of the talk, for exactly this moment."
+  },
+  {
+   "q": "Does saying \"I am excited\" really work, and what if it feels silly?",
+   "a": "In Brooks's study, people who said \"I am excited\" before a speech gave talks that independent viewers rated as more persuasive, competent and confident than people who said \"I am calm\", though they did not necessarily feel less anxious. The idea is that anxiety and excitement feel physically similar, and naming the feeling as excitement turns attention towards what might go well. Feeling silly is fine and may even help, because a small laugh at yourself loosens the body. If the word does not fit the occasion, such as a difficult announcement, a phrase such as \"I'm ready\" may suit you better, though Brooks tested excitement, not other phrases. The point is to reinterpret the arousal, not to fight it.\n\nCombine it with slow breathing, which settles the body while the reappraisal settles the mind.\n\nSome people find that saying it aloud, even quietly, works better than thinking it."
+  },
+  {
+   "q": "How should I handle questions after a talk?",
+   "a": "Treat each question as a conversation with one person, held in front of the room. Turn your body and your face to the person asking, and listen to the whole question without nodding through it or starting to answer in your head. Pause briefly before you reply, which shows that you are thinking about their question rather than reciting an answer. Begin your answer to the questioner, then widen it to the room, and end it by looking back at the questioner, which signals that you have finished. If you do not know the answer, say so and offer to find out. If a question is hostile, keep your voice level and your face attentive, answer the substance and do not get drawn into a duel.\n\nIf there is no roaming microphone, repeat or summarise the question for the room, so that everyone knows what you are answering."
+  },
+  {
+   "q": "Does any of this apply to presentations on video?",
+   "a": "Much of it does, with some changes. The chapters on the video call body and camera height earlier in this part describe the setup: camera at eye level, head and shoulders in the frame, good light and a good microphone. On video, the lens is your audience, so for your key points, look into the lens rather than at the faces on the screen. Many people present better standing, even on video, because it frees the breath and the hands; raise the camera to match. Pauses matter even more, because of the delay. And the wings routine still helps: a few slow breaths, a word of reappraisal and a moment to look at the lens before you begin.\n\nIf you can, ask someone else to watch the chat or the questions, so that you can keep your attention on the lens and the talk.\n\nAnd if you present on video often, record one session and watch it back, as the chapter on video review in Part VI describes."
   }
  ],
  "watch": [
