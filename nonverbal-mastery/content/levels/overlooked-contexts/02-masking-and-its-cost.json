@@ -73,6 +73,20 @@
    "doCaption": "Quiet time, headphones on",
    "dontCaption": "Pushing on through the crash",
    "annotation": "After a day of performing, recovery is not rudeness. Make room for it, in others and in yourself."
+  },
+  {
+   "doPoseId": "p_walk_slow_down",
+   "dontPoseId": "p_stand_hands_clasped_front",
+   "doCaption": "Stepping outside for a quiet break",
+   "dontCaption": "Holding it together for a three-hour party",
+   "annotation": "Social effort has a cost that does not always show. A break taken early is easier than a crash taken later."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_pair_adult_child",
+   "doCaption": "Quiet time first, talk later",
+   "dontCaption": "Questions the moment she gets home",
+   "annotation": "A child who has held it together all day may have nothing left at the door. Let the first hour be quiet."
   }
  ],
  "caseStudy": "Owen, forty-six, is a quantity surveyor known at work for being reliable, polite and a bit formal. He makes good eye contact, asks colleagues about their families and laughs at the right moments in meetings. At home, his wife has learned that after a work social he will spend the whole weekend almost silent, in the garden or with headphones on.\n\nWhen their son was diagnosed as autistic at nine, Owen went with his wife to the assessment. As the psychologist described the boy's traits, Owen found himself recognising most of them in himself: the overwhelming noise of crowds, the effort of faces, the scripts he had written for small talk since secondary school. He was assessed himself the following year, and was told he was autistic.\n\nThe diagnosis did not change his behaviour at work overnight. But it changed how he understood his exhaustion. He stopped forcing himself to every social event and began taking a quiet lunch alone without guilt. He told his manager, who asked what would help. Owen asked for agendas before meetings and permission to keep his camera off on long video calls.\n\nHis manager agreed, and later admitted she had always thought Owen was the most socially confident person on the team. He told her, carefully, that he had been working very hard to seem that way, and that he would like to work a little less hard at it. She said that was fine, and that she was glad he had told her. It was the first time in twenty years at work that he had said it aloud.",
@@ -91,6 +105,11 @@
     "For each, note what you hid or produced: a smile, a laugh, eye contact, a tone of voice.",
     "Rate how tired you felt afterwards, from one to five.",
     "Choose one situation where you could safely drop a little of the performance next time."
+   ],
+   "variations": [
+    "Repeat the inventory at home, with family or friends, and compare how much you perform there with how much you perform at work.",
+    "Note the time of day when you feel most tired after social effort, and plan one quiet break around it.",
+    "Share one item from your inventory with someone you trust, and notice how it feels to say it aloud."
    ]
   },
   {
@@ -101,6 +120,11 @@
     "Each time you feel the urge, notice what you were about to say and why.",
     "Write down how often it happened.",
     "Reflect on what those comments might have taught the people on the receiving end."
+   ],
+   "variations": [
+    "Extend the week to comments on how people dress, speak or eat, and notice how often such remarks come up around you.",
+    "When someone else makes a comment about a person's manner, try changing the subject rather than joining in.",
+    "Notice whether anyone has commented on your own manner this week, and how it made you feel."
    ]
   },
   {
@@ -111,6 +135,11 @@
     "Offer them a lower-demand alternative: a walk, a coffee for two, a message instead of a call.",
     "Make it easy to say no without explanation.",
     "Notice how they respond, and what it tells you about what suits them."
+   ],
+   "variations": [
+    "Offer the lower-demand option to someone you have never noticed struggling, too, since effort is often invisible.",
+    "Try a side-by-side activity, such as a walk, a game or cooking together, instead of sitting face to face for a catch-up.",
+    "If someone accepts the lower-demand option, keep offering it, rather than treating it as a one-off before returning to the usual plans."
    ]
   },
   {
@@ -121,6 +150,11 @@
     "Check it against this chapter: does it thank them and ask what helps, or does it comment on how they seem?",
     "Rewrite it if needed.",
     "Practise saying it aloud once, so it comes naturally when it matters."
+   ],
+   "variations": [
+    "Practise your response with a friend playing the person who tells you, and ask them how it felt to hear.",
+    "Write down the three responses you most want to avoid, so that you recognise them when they come to the tip of your tongue.",
+    "Think about what you would want someone to say if you told them something about yourself that you had kept hidden for years."
    ]
   }
  ],
@@ -202,6 +236,45 @@
    "explain": "A gap between public performance and private recovery suggests that social effort is costly for him. Offering easier alternatives reduces the load without diagnosing or rejecting him.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What were the two parts of camouflaging described in Hull and colleagues' 2017 study of autistic adults?",
+   "options": [
+    "Talking more and listening less, in order to control the direction of each conversation",
+    "Masking natural behaviour, and compensating with strategies such as rehearsal and copying",
+    "Avoiding all social events, and explaining the absence to friends with a believable excuse",
+    "Changing clothes to fit in, and changing accent to match the people around them each day"
+   ],
+   "answer": 1,
+   "explain": "Masking meant hiding natural behaviour, such as stims or a level voice. Compensation meant building strategies to get through, such as rehearsing conversations and copying others' gestures and phrases.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A thirteen-year-old is described by teachers as a delight, but at home she lies in a dark room for hours after school and cries if spoken to. What fits this chapter best?",
+   "options": [
+    "Assume she is fine, since behaviour at school is the best guide to how a child is coping",
+    "Take the evenings seriously, talk to the school and GP, and give her quiet time first",
+    "Be firmer about screen time, since teenagers are often difficult at home for that reason",
+    "Ask her teachers to watch for signs of autism, so that they can decide whether she has it"
+   ],
+   "answer": 1,
+   "explain": "Many children who hold themselves together all day have nothing left at home. Taking the evenings seriously, seeking advice and reducing demands helps, without anyone at school trying to diagnose her.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that unmasking is always the healthiest choice, so you should urge autistic friends to drop their masks everywhere. What does this chapter say?",
+   "options": [
+    "That the choice to unmask is the person's, and others can make masks less necessary",
+    "That unmasking is always harmful, so autistic people should keep their masks on in every setting",
+    "That masks can be removed by friends who point out the behaviours being hidden, so they stop",
+    "That only autistic women mask, so the advice does not apply to the men you know at all"
+   ],
+   "answer": 0,
+   "explain": "Unmasking can bring relief, but natural autistic behaviour still draws judgment. The choice belongs to the person; what others can do is make their own company a place where the mask is not needed.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -225,6 +298,110 @@
    "work": "Having all of your internal resources exhausted beyond measure and being left with no clean-up crew: Defining autistic burnout",
    "author": "Dora M. Raymaker, Alan R. Teo, Nicole A. Steckler and colleagues",
    "note": "Autism in Adulthood 2(2), 2020. What happens when the demands to appear non-autistic outstrip capacity."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The salesman who ran out of scripts",
+   "scene": "Adrian, thirty-seven, was diagnosed as autistic at twenty-five, and he has never told anyone at work. He is one of the best salesmen at a\n  company that sells medical equipment to hospitals. Clients describe him as warm, attentive and easy to talk to. They do not know that he prepares\n  every call like a play: a script for the opening, a list of questions, three jokes, notes on each client's children and holidays. He copies their\n  posture and their phrases, as he taught himself to do as a teenager. After each day of visits, he sits in his car for half an hour with his eyes\n  closed before driving home.\n\n  In the spring, he is promoted to regional manager. The job adds team meetings, an open-plan office, a new boss who likes to drop by unannounced and\n  a constant flow of calls. Adrian keeps performing. By the summer he is sleeping badly and has stopped going to the gym. By the autumn he finds that on\n  some days he cannot speak on the phone at all; the words will not come. He forgets meetings, loses track of emails and stops answering his door at\n  home. His manager, Claire, notices that his work has slipped and calls him in to discuss his \"attitude\".\n\n  Adrian sits through the meeting with his eyes on the table, unable to explain, and goes home and does not get out of bed for two days. His sister,\n  who knows he is autistic, comes round and finds him in the dark.\n\nHe has also, over the years, kept a spreadsheet of every client's preferences, including how they like to be greeted and which topics to avoid. Colleagues think he has a remarkable memory for people.\n\nIn team meetings, he has begun to sit very still and say little, saving what he has left for the calls that matter most. His team read the stillness as distance. He reads their reaction as one more thing he is failing at.\n\nHis sister finds the spreadsheet of client preferences open on his laptop, and a new tab beside it: a list of phrases for team meetings, half finished.",
+   "misread": "Claire read Adrian's slipping work, forgotten meetings and silence as a change of attitude, perhaps complacency after promotion. Adrian read his own loss of skills as a personal failure, proof that he had never been as capable as he seemed.\n\nHe also read the praise he had always had from clients as evidence that he was naturally good with people, which made the collapse harder to understand.\n\nHis team, meanwhile, read his new silences in meetings as a manager who had stopped caring about them, and two of them asked to move to another region. Nobody connected the change with the job that had been added to his life.\n\nClaire also read his inability to explain in the meeting as stubbornness, when he had lost, for the time being, the words.",
+   "betterRead": "Hull and colleagues found that autistic adults who camouflaged described exhaustion as its first cost, and Raymaker and colleagues described autistic burnout: chronic exhaustion, loss of previously manageable skills such as speaking, and reduced tolerance for stimulation, arising when demands outstrip capacity over a long period. Adrian's polished sales manner had always cost him; the promotion added demands until the cost could no longer be paid. His silence in the meeting was not attitude. His sister's better response was to take him to his GP, who signed him off work and referred him to occupational health. With their support, Adrian told Claire that he was autistic. They agreed a phased return, a quiet desk, notice before meetings and fewer unscheduled calls. Claire said she wished she had asked what was wrong before she asked about his attitude.\n\nAdrian also started telling new clients, when it felt safe, that he preferred to meet in quieter places, and found that most of them liked the change.\n\nClaire also changed how she raised concerns with anyone on the team, starting with \"How are you doing?\" rather than with the problem."
+  },
+  {
+   "title": "The friend who always cancelled",
+   "scene": "Zak, thirty, is the life of every party in his group of friends. He is funny, quick and generous, he remembers everyone's news and he can talk\n  to anyone. He is also, the group jokes, the biggest flake they know. After any big night, he disappears for days. He cancels the Sunday football,\n  does not answer messages and, twice this year, has dropped out of a birthday meal at the last minute with a vague excuse.\n\n  The jokes have started to have an edge. At a recent barbecue, someone said, within earshot, that Zak only turned up when there was an audience. One\n  friend, Danny, has stopped inviting him to smaller things, on the grounds that he will only cancel.\n\n  Will, who has known Zak since school, notices something the others do not seem to. When the two of them happen to be alone, waiting for a train or\n  walking back from the pub, Zak is quieter, flatter and more interesting: he talks about books, about his job, about a documentary he has watched\n  three times. He does not do the jokes. Will has also noticed that Zak looks exhausted at the end of every party, and that the brighter he has been,\n  the longer he disappears afterwards.\n\n  Will does not know why. He decides that he does not need to know, and that he would like to see more of the quieter Zak.\n\nZak's girlfriend, when Will meets her at a wedding, says that Zak sleeps for most of the day after any big event, and that she has stopped making plans for the day after parties.\n\nWill also remembers a time, years ago, when Zak left a wedding early without saying goodbye and later apologised by text, saying he had needed some air. Will had thought nothing of it at the time.",
+   "misread": "The group read Zak's disappearances as flakiness and his brilliance at parties as a performance for an audience. Danny read the cancellations as disrespect, and stopped inviting him, which left Zak with only the events that cost him most.\n\nWill's own first reading, years ago, had been the same as everyone else's. It was only the walks home that showed him a different Zak.\n\nZak's girlfriend read the long sleeps after parties as ordinary tiredness, and the group read the cancellations as character, and nobody put the two pictures together.",
+   "betterRead": "Hull and colleagues described a pattern that many people who camouflage recognise: a gap between a fluent public performance and the recovery it needs afterwards. Will did not speculate about whether Zak was autistic, which would have been a form of diagnosis and none of his business. He read only what he could see: that big social events seemed to cost Zak a great deal, and that what the group saw at parties was only part of him. His better response was the lower-demand option this chapter suggests. He asked Zak whether he fancied a walk on Saturday morning, just the two of them, and made it easy to say no. Zak said yes, and came. Over a few months, the walks became a regular thing. Later, Zak told Will that big groups wore him out more than anyone knew, and thanked him for never asking why he had cancelled.\n\nDanny, when he heard, started inviting Zak to smaller things again, with a line saying that it was fine to say no.\n\nZak still came to the big parties sometimes, and left earlier, and nobody joked about it any more."
+  },
+  {
+   "title": "The girl who was a delight at school",
+   "scene": "Maya, thirteen, is in her second year at secondary school, and her reports are glowing. Her teachers describe her as polite, hardworking and a\n  delight to have in class. She has a small group of friends, sits near the front and never causes any trouble.\n\n  At home it is different. Most days, Maya comes through the front door, drops her bag and goes straight to her room, where she lies under a weighted\n  blanket with the curtains closed. If anyone speaks to her in the first hour, she may scream or cry. On some evenings she bangs her head against the\n  wall. At weekends she will not leave the house. Her mother, Joanne, has tried everything she can think of, and has begun to wonder whether she is\n  doing something wrong as a parent.\n\n  When Joanne raises it at a parents' evening, Maya's form tutor, Mr Ellis, is surprised and a little sceptical. He says that Maya seems perfectly happy\n  at school and that teenagers are often difficult at home. He suggests that Joanne might try being firmer about screen time.\n\n  Joanne leaves feeling that she has not been believed. On the way home, Maya, who has said almost nothing all evening, tells her quietly that she\n  spends every day at school copying what the other girls do, and that she is so tired she could cry.\n\nMaya's friends at school have no idea. One of them tells Joanne, at a birthday party, that Maya is the most relaxed person she knows.\n\nJoanne has also noticed that Maya's handwriting, neat in her school books, is a scrawl in anything she writes at home, as if the effort runs out at the front door.",
+   "misread": "Mr Ellis read Maya's calm, compliant behaviour at school as evidence that she was fine, and Joanne's account of the evenings as ordinary teenage moodiness or a parenting problem. Joanne, without that support, had begun to read the evenings as her own failure.\n\nMaya's friends read her as relaxed, which was exactly what she was working so hard to achieve.\n\nMaya read her own exhaustion as a sign that something was wrong with her, because everyone else seemed to manage school without falling apart at home.",
+   "betterRead": "Hull and colleagues found that autistic women and girls reported more camouflaging on average than autistic men, and that many were diagnosed late or not at all, partly because they masked so effectively. A child who holds everything together all day may have nothing left at home, and the evenings are where the cost appears. Mr Ellis was right that Maya seemed fine at school; he was wrong that this meant she was fine. Nobody at school should diagnose her, and nobody did. The better response, which Joanne pursued, was to go back to the school's special educational needs coordinator, who listened, and to their GP, who referred Maya for an assessment. In the meantime, the school gave Maya a pass to leave lessons for a quiet room and a trusted adult to check in with. Joanne stopped questioning her after school and let the first hour be quiet. The head-banging became less frequent.\n\nMr Ellis, to his credit, came to see Joanne after the assessment and said he had learned something about how a calm child can be a struggling one."
+  },
+  {
+   "title": "The grandfather diagnosed at seventy",
+   "scene": "Bernard, seventy-one, a retired civil engineer, went with his daughter to his grandson's autism assessment last year to help with the\n  childcare. Listening to the psychologist describe the boy, he recognised himself in almost every sentence: the trouble with noise in crowded rooms,\n  the effort of following faces, the fixed routines, the deep, lifelong interest in bridges. He went home and read everything he could find.\n\n  At his daughter's urging, he was assessed himself, and was told, at seventy, that he was autistic. His wife of forty-four years, Margaret, is not\n  sure what to make of it. She has always known Bernard as reliable, kind and difficult: a man who disappeared into his workshop after family parties,\n  who would not go to the pub with her friends' husbands, who seemed to go cold when the grandchildren were noisy, and whom she had sometimes described\n  to her sister as \"moody\".\n\n  Bernard tells her that he spent his whole working life performing a man he thought he was supposed to be: shaking hands, making small talk, laughing\n  at the jokes in site meetings. His father had told him to look people in the eye and stop being odd, and he had. The workshop was where he went to stop.\n\n  Margaret listens. Then she asks him, carefully, how much of their marriage he has spent performing.\n\nHe had also, he tells her, kept a notebook of small-talk topics in his jacket pocket for most of his working life, and had once rehearsed a retirement speech for six weeks.\n\nHe tells her, too, that he loved her parties, in a way, because he loved her, and that he went to every one of them, and then went to the workshop.\n\nMargaret remembers the Christmas when he spent most of the afternoon fixing her sister's garden gate, alone, in the rain. She had been furious. He had been, he says now, more at peace than at any other point that day.",
+   "misread": "For decades, Margaret read Bernard's withdrawals after family events, his coolness with noisy grandchildren and his refusal of social invitations as moodiness. Bernard had read his own exhaustion as a failing to be managed, and hidden it as he had been taught.\n\nTheir children had read him as a strict, distant father who loved them but did not much enjoy their company, which he says now was only half true.\n\nMargaret had also read his refusal to go to the pub with her friends' husbands as a judgment on them, and on her choice of friends, which had caused more than one argument over the years.",
+   "betterRead": "Many autistic men, particularly older men, grew up before autism was widely recognised and were simply told to toughen up and look people in the eye, as this chapter describes. Bernard had masked so long that even he had not known what he was masking. His withdrawals were recovery, not mood. The better reading, which the diagnosis made possible, turned a lifetime of \"moodiness\" into a pattern that made sense. It did not undo the hurt Margaret had sometimes felt, and Bernard did not ask it to. They talked, over many evenings. She stopped taking the workshop personally; he began telling her when he needed to go, rather than simply disappearing. He also told his grandson, now eleven, that he was autistic too. The boy said that explained a lot about Grandad, and asked whether they could go and look at a bridge.\n\nMargaret said later that the diagnosis had given her a word for something she had felt for forty years, and that the word made it easier to forgive."
+  }
+ ],
+ "workedReading": {
+  "title": "When a friend tells you they are autistic",
+  "scene": "Joanna, thirty-four, works in a busy architecture practice, and her closest friend at work is Ash, thirty-two, a quiet, very funny technical designer who sits opposite her. They have lunch together most days. Ash rarely comes to the office drinks, never takes part in the team's away-day activities if he can help it, and sometimes goes silent for a whole afternoon. Joanna has never asked why. One Thursday, over coffee in the park, Ash tells her, haltingly, that he was diagnosed as autistic last month, at thirty-two, and that she is the first person at work he has told. He looks at his cup while he speaks. Joanna feels a rush of things at once: surprise, sympathy, curiosity and a sudden urge to say something reassuring. She has read the Better Responses drill in this chapter. She takes a breath before she says anything.\n\nShe is also aware that she sometimes talks a lot when she is anxious, and that Ash has once or twice seemed to flinch at it. She resolves to say less than she wants to.\n\nJoanna also remembers that she once told Ash, laughing, that he was \"the least sociable person in the office\". He had laughed too. She wonders now whether it had hurt.\n\nShe also knows almost nothing about autism beyond what she has read in this book, and decides that this is fine, because Ash is telling her about himself, not about a subject.",
+  "steps": [
+   {
+    "label": "Listen to the end",
+    "text": "Her first instinct is to jump in as soon as he pauses. She does not. She lets him finish, which takes a while, because Ash explains in some detail what the assessment involved and why he went. She keeps her face relaxed, looks mostly at the trees in front of them rather than at him, and nods. When he stops, she waits a moment longer, in case there is more. There is: he says he has been dreading telling anyone.\n\nShe also resists the urge to look at him closely, which she senses would make the moment harder. Looking at the trees, side by side, makes it easier for both of them.\n\nAsh also says that he has spent most of his life feeling that he was getting something wrong that everyone else could do without thinking, and that the diagnosis has made sense of it. Joanna does not interrupt that either."
+   },
+   {
+    "label": "Thank him",
+    "text": "She says, \"Thank you for telling me. I know that can't have been easy.\" She does not say that she would never have guessed, that he does not seem autistic, or that everyone is a bit autistic, all of which she can feel on the tip of her tongue. She knows that each of them would tell Ash, in one way or another, that the mask was what she valued, or that his effort did not count.\n\nShe also does not ask how he knows, or whether the assessment might be wrong, which she has heard people do.\n\nShe also avoids asking whether he will be \"getting treatment\", a question she has heard someone else ask, which treats autism as an illness."
+   },
+   {
+    "label": "Ask what helps",
+    "text": "She asks, \"Is there anything that would make work easier for you, or anything you'd like me to do differently?\" Ash thinks about it. He says that he finds the open office exhausting by mid-afternoon, that he hates being asked why he is not coming to drinks, and that he would like to keep doing lunch together because it is the easiest part of his day. Joanna says all three of those are easy.\n\nShe also asks whether there is anything she has done that made things harder, and he says, a little reluctantly, that she sometimes asks \"Are you OK?\" when he goes quiet, which he finds tiring. She thanks him and stops.\n\nShe does not promise more than she can deliver. She cannot change the office, but she can change how she behaves in it."
+   },
+   {
+    "label": "Change one thing",
+    "text": "She thinks about what she can actually do. She can stop asking whether he is coming to drinks, and simply tell him the plan, so that he can choose without explaining. She can suggest that they walk for lunch sometimes rather than sitting in the noisy café. She can stop filling the silences on his quiet afternoons with chat, and let him work. None of these is a big gesture. Each makes the mask a little less necessary in her company.\n\nShe also decides not to start reading about autism and telling Ash what she has learned. He is the expert on his own experience.\n\nShe also realises that she can stop inviting him to the Friday drinks in the tone of a question that needs an answer, and simply mention the plan in passing."
+   },
+   {
+    "label": "Keep it his",
+    "text": "Before they head back, she asks whether he wants anyone else to know. He says not yet, and perhaps not ever. She says that is completely fine and that she will not mention it to anyone, including their manager, unless he asks her to. A disclosure belongs to the person who makes it. Telling others, even with good intentions, takes the decision away from him.\n\nShe also notices how tempted she is to tell her partner that evening, and does not, because \"anyone\" includes him.\n\nShe also makes sure that, when the manager later asks her why Ash has been quieter, she says only that he seems fine to her."
+   },
+   {
+    "label": "Notice your own reading",
+    "text": "Walking back, Joanna thinks about the afternoons when Ash went silent, which she had sometimes taken as him being in a mood with her. She realises she had read his recovery as rudeness, which this chapter lists as one of its failures. She decides not to say this to him unless it comes up, because it is her reading to correct, not his to absolve.\n\nShe also thinks about how many other colleagues she might have misread in the same way, and resolves to be slower to take a silence personally.\n\nShe also notices a small flicker of hurt that he had not told her sooner, and lets it go. It was his to tell when he was ready."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the next few months, nothing much seems to change, which is the point. Ash keeps coming to lunch. On some days they walk. On his quiet afternoons, Joanna leaves him alone. In the spring, Ash decides to tell their manager and asks Joanna to come with him, which she does. He says afterwards that her saying \"thank you\" in the park was the moment he decided it might be safe to tell other people.\n\nWhen the team plans the next away-day, the manager quietly includes a choice of a walk or the noisy activity, without anyone having been told why.\n\nAsh also tells her, months later, that he has started stimming at his desk with a small fidget toy, and that nobody has said a word, which he counts as a victory."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Pushing someone to unmask",
+   "body": "Once people learn about masking and its costs, some start encouraging the autistic people they know to drop it: \"Just be yourself,\" \"You don't have to pretend with us,\" \"You should stim if you want to.\" It is meant as support. But unmasking carries real risks, as this chapter describes, because natural autistic behaviour still draws stares, jokes and judgments, and first impressions of autistic people form quickly and unfavourably. The person knows those risks far better than you do. Whether, where and how much to unmask is entirely their choice, and it may differ between home, friends and work. The useful thing you can do is not to urge them to take the mask off, but to make your own company a place where it is not needed: no comments, no stares, no demands, quiet options and acceptance of whatever they do. Then let them decide.\n\nA good question to ask yourself is whether you are making it safer for them to unmask, or making unmasking another thing they are expected to perform."
+  },
+  {
+   "title": "Reading burnout as laziness",
+   "body": "When someone who has been coping, or seeming to cope, starts to lose skills they had before, such as speaking on the phone, organising their day, keeping up with emails or leaving the house, it is easy to read the change as laziness, complacency or a bad attitude, as Claire did with Adrian. Raymaker and colleagues described autistic burnout as exactly this kind of loss, arising when demands outstrip capacity over a long period. Not every loss of skills is burnout, and nobody but a clinician should try to work out what is happening. But the first response to a sudden decline in someone who has been reliable should be concern rather than discipline: \"I've noticed things seem harder for you recently. Is something going on, and is there anything that would help?\" If the person is struggling badly, encourage them to see their GP, and involve occupational health if you can.\n\nIt also helps to remember that people in burnout often cannot explain what is happening, especially in a formal meeting.\n\nAnd when someone returns from a period of burnout, avoid asking them to explain it to the team. A short, agreed message is enough."
+  },
+  {
+   "title": "Passing on a disclosure",
+   "body": "When someone tells you they are autistic, or that they find social situations exhausting, they are trusting you with something that may affect how others see them, at work and elsewhere. It can be tempting to pass it on, usually with good intentions: telling a manager so that they will make allowances, telling the team so that they will be more understanding, or mentioning it to a friend because it explains something. Each of these takes a decision that belongs to the person and makes it for them. They may have very good reasons for telling only you, including past experiences of being treated differently once people knew. Unless there is a genuine risk to someone's safety, keep it to yourself. If you think others knowing would help, say so to the person and let them decide, as Joanna did.\n\nIf you need to share something for practical reasons, ask first: \"Would it help if I mentioned this to anyone, or would you rather I didn't?\""
+  },
+  {
+   "title": "Saying everyone is a bit autistic",
+   "body": "When someone describes the effort of masking, a common response is to identify with it: \"Oh, I hate small talk too,\" \"Everyone's a bit autistic,\" \"I'm exhausted after parties as well.\" The intention is usually solidarity. But it tends to flatten the experience. Most people do wear small masks, and the chapter on the poker face described how tiring surface acting can be. What distinguishes autistic masking, as this chapter explains, is its scope: many autistic people mask in almost every social situation, including with friends and family, often since early childhood, and the costs can include burnout and a loss of identity. Comparing it with your dislike of office parties can make the person feel that the size of their effort has not been heard. It is better to listen, to believe them and to ask what would help, before reaching for your own experience.\n\nIf you do relate, say so briefly and then return the conversation to them: \"I find parties tiring too, but it sounds like this is much bigger for you.\"\n\nListening without comparing is harder than it sounds, and it is one of the most useful things you can do for anyone."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether someone is masking?",
+   "a": "You usually cannot, and you should not try. Masking is designed to be invisible, and speculating about whether someone is masking autism is a form of diagnosis, which is not your business. Some patterns, such as a gap between a fluent performance and a long recovery afterwards, or a sharp difference between how someone is with one trusted person and how they are in a group, suggest that social effort costs a particular person a great deal. They are not signs of autism. The useful response to noticing them is not to work out why, but to make your company easier: fewer demands, no comments on manner, quieter options and no pressure to explain. If the person wants you to know more, they will tell you.\n\nAnd if you find yourself wondering about someone, the most useful question is not why, but how you could make things easier.\n\nIt also helps to apply the same care to everyone, since you cannot know who is working hardest to seem at ease."
+  },
+  {
+   "q": "Is masking always harmful?",
+   "a": "Not always, and not in the same way for everyone. Some of the strategies people describe, such as preparing for a difficult conversation, rehearsing an interview answer or learning how a particular workplace works, are useful to anyone. Hull and colleagues found that autistic adults camouflaged for understandable reasons: to fit in, make friends, keep jobs and avoid bullying, and some described it as helping in the short term. The problem the research highlights is the cost when masking is constant and extensive: exhaustion, a loss of identity and, over time, the risk of burnout. The aim is not to stop all masking, which would be neither possible nor always wise, but to reduce how often it is needed, so that the person has places and people with whom they can rest.\n\nIt can also help to ask the people you trust most where you can rest, and to protect those places and people.\n\nIt also helps to notice which of your own small masks you could safely put down, which makes it easier for others to do the same."
+  },
+  {
+   "q": "What is autistic burnout, and what helps?",
+   "a": "Raymaker and colleagues, working with autistic adults as research partners, described autistic burnout as chronic exhaustion, a loss of skills that were previously manageable, such as speaking or organising daily life, and a reduced tolerance for noise, light and other stimulation. It arose when the demands placed on a person, including the demand to appear non-autistic, outstripped their capacity over a long period. The autistic adults in the study described rest, reduced demands, time alone, permission to unmask and support from others as what helped most. Burnout is not something to diagnose in someone else. If you or someone you know is struggling in this way, talk to a GP, and at work, consider occupational health and adjustments such as quieter spaces, fewer meetings and more notice.\n\nRecovery from burnout often takes months rather than weeks, and a phased return is usually better than an abrupt one.\n\nPeople recovering from burnout often describe guilt about needing rest. Telling them plainly that rest is part of getting better can help."
+  },
+  {
+   "q": "My child seems fine at school but falls apart at home. What could that mean?",
+   "a": "Many parents describe this pattern, and it can have several causes, so it is worth taking seriously rather than assuming it is ordinary moodiness or your parenting. One possibility, described by many autistic young people, is that they spend the school day holding themselves together, copying others and suppressing their natural behaviour, and arrive home with nothing left, as Maya did. Talk to the school, ideally the special educational needs coordinator, and describe what you see at home in specific terms. Talk to your GP, who can advise on whether an assessment would help. In the meantime, it often helps to give a child quiet time after school before asking questions, and to reduce demands in the evening. Do not blame the child for the evenings; they may be the only time they feel safe enough to stop.\n\nIt can also help to keep a short diary of the evenings, which gives the school and the GP specific examples.\n\nAnd believe the child. If she tells you she is tired from copying other people all day, that is information, not an excuse."
+  },
+  {
+   "q": "Can I unmask at work?",
+   "a": "That is your choice, and there is no single right answer. Some autistic people find that dropping some of the performance at work, such as forcing eye contact or hiding a stim, makes them happier and better at their jobs. Others find that it draws attention or judgment that makes work harder. Many take a middle path: unmasking a little, with trusted colleagues first, and asking for adjustments that reduce the need to mask, such as agendas before meetings, a quieter desk, permission to keep a camera off or to work in writing. If you decide to tell your employer that you are autistic, in many countries they must consider reasonable adjustments. You do not owe anyone your mask, and you do not owe anyone its removal.\n\nIt can help to talk to other autistic people about how they have handled it, since their experience is often more useful than any general advice.\n\nIf you do disclose, it can help to prepare a short, plain statement of what you need, so that the conversation is about adjustments rather than explanations."
+  },
+  {
+   "q": "What should I say if someone tells me they are autistic?",
+   "a": "Something short and warm: \"Thank you for telling me. Is there anything that would help?\" Then listen to the answer and act on it. Avoid the responses that tend to land badly: \"You don't seem autistic,\" which treats the mask as the person; \"Everyone's a bit autistic,\" which dismisses the effort; \"Are you sure?\", which questions their experience; and a long list of things you have read about autism, which can feel like being told who you are. Ask before telling anyone else. And do not change how you treat them in ways they have not asked for, such as leaving them out of things or speaking to them differently. The person who told you is the same person they were before; you just know a little more about them.\n\nIt also helps to remember the person may be testing whether it is safe to say more. How you respond decides whether they do.\n\nIt can also help to check in a few weeks later, briefly, with something like \"Is anything we agreed still working for you?\""
   }
  ],
  "watch": [
