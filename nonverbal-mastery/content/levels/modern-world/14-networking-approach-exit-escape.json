@@ -74,6 +74,20 @@
    "doCaption": "Full attention until you leave",
    "dontCaption": "Glancing around the room while they talk",
    "annotation": "Looking past someone tells them they are a placeholder. Give full attention, then close warmly and go."
+  },
+  {
+   "doPoseId": "p_group_join",
+   "dontPoseId": "p_group_three",
+   "doCaption": "Opening the circle to a newcomer",
+   "dontCaption": "A tight circle with no gap",
+   "annotation": "Groups decide whether newcomers can join. Leave a gap, angle out and bring in whoever hovers at the edge."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_arm_around",
+   "doCaption": "Side-on, with room to step away",
+   "dontCaption": "An arm round the shoulders that will not lift",
+   "annotation": "Pressure often comes with a hand that will not let go. You are allowed to step away, and to help someone else do it."
   }
  ],
  "caseStudy": "Joe, twenty-seven, a junior architect, went to his first industry reception alone. For twenty minutes he stood by the wall with a drink, checking his phone and rehearsing an opening line. When he finally approached two people talking face to face near the window, they turned to him politely, the conversation stalled, and he left after a minute, embarrassed.\n\nHe tried again, this time with a group of three standing in a loose horseshoe near the food. He waited at the edge until a woman glanced at him and stepped back to make room. He listened, then introduced himself. The conversation was about a building they had all visited, and he had something to say about it. Twenty minutes later he realised he wanted to meet others, but did not know how to leave. He waited for a pause, said it had been great to talk and that he was going to find his old tutor before the speeches, and went. Nobody seemed offended.\n\nLater he noticed a colleague, Priya, backed against a pillar by an older man who kept touching her arm. Her smile was fixed and her eyes were moving round the room. Joe walked over, said hello to her by name and asked if he could borrow her for a minute about the project. She came at once. Out of earshot, she thanked him. They told one of the organisers, who kept an eye on the man for the rest of the evening.\n\nOn the train home, Joe was sure he had bored the people in the horseshoe. The next morning, one of them emailed to say she had enjoyed the conversation and asked if he would like to visit her practice.",
@@ -93,6 +107,11 @@
     "Choose the easiest approach: a person alone or an open group of three or more.",
     "Approach from where you can be seen, and wait at the edge for the circle to widen.",
     "Afterwards, note how the group responded."
+   ],
+   "variations": [
+    "Practise the scan in a busy café or a station, noticing which pairs and groups are open and closed, without approaching anyone.",
+    "At your next event, approach one person standing alone before you approach any group, and notice how they respond.",
+    "When you are in a group, count how many times someone hovers at the edge, and how many of them are brought in."
    ]
   },
   {
@@ -104,6 +123,11 @@
     "At your next event, use the full exit at least three times.",
     "Try one bridge exit, introducing someone to another person before you leave.",
     "Note how people responded to each."
+   ],
+   "variations": [
+    "Write your closing line for three settings, a trade show, a wedding and a work drinks, and practise each aloud.",
+    "Try the body signal on its own at the end of one conversation, and notice whether the other person starts to close before you say anything.",
+    "Use the bridge exit at least once at your next event, introducing two people with one sentence about what they have in common."
    ]
   },
   {
@@ -114,6 +138,11 @@
     "The next day, send each a short message referring to something you discussed.",
     "Do not wait to be sure they enjoyed it as much as you did.",
     "Note how many reply, and how warmly."
+   ],
+   "variations": [
+    "Follow up with someone you are not sure enjoyed the conversation, and note how they reply.",
+    "Keep a short note on your phone after each conversation at an event, with one detail to mention in your follow-up.",
+    "Reply to someone who follows up with you, even briefly, so that the habit spreads."
    ]
   },
   {
@@ -125,6 +154,11 @@
     "Identify who at a typical event you would go to for help: organisers, staff or security.",
     "Practise the line aloud until it feels natural.",
     "At your next event, notice who is with the organisers and where the exits are."
+   ],
+   "variations": [
+    "Talk through your rescue line with a friend who goes to the same events, and agree that each of you will use it for the other if needed.",
+    "At your next event, find out in the first ten minutes who the organisers are and how to reach them.",
+    "Think through what you would say if someone pressured you, and practise your plain exit line aloud until it no longer feels rude."
    ]
   }
  ],
@@ -206,6 +240,45 @@
    "explain": "Giving someone a reason to come with you is a way to help without confrontation. Afterwards, check she is all right and follow her lead, including whether to tell the organisers.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Sandstrom and Boothby's combined analysis of conversations between strangers, how did the conversations compare with people's predictions?",
+   "options": [
+    "They went worse than predicted, confirming that people are right to avoid strangers",
+    "They went better on every count than people had predicted beforehand",
+    "They went exactly as predicted, since people know how strangers will respond",
+    "They went better for extraverts but worse for introverts than either group predicted"
+   ],
+   "answer": 1,
+   "explain": "Before talking, people worried about enjoyment, being liked and keeping a conversation going. Afterwards, the conversations had gone better on every count than they had predicted.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You are standing in a tight circle of four at a reception, and you notice a newcomer hovering behind one of your group. What fits this chapter best?",
+   "options": [
+    "Carry on, since it is the newcomer's job to find a way into the conversation",
+    "Catch their eye, step back to open a gap, and bring them in with a word",
+    "Close the circle more tightly, since a newcomer would interrupt the conversation",
+    "Leave the group yourself, so that there is a space for the newcomer to fill"
+   ],
+   "answer": 1,
+   "explain": "A closed circle is hard for anyone to join, especially from behind. People already inside a group can open it by stepping back, leaving a gap and drawing the newcomer in.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that rescuing a person who is being pressured at an event means confronting the person doing it. What does this chapter suggest?",
+   "options": [
+    "That a light interruption offering a way out is usually safer, followed by telling an organiser",
+    "That confronting the person loudly in front of others is the only way to stop the behaviour",
+    "That it is never appropriate to intervene in someone else's conversation at a work event",
+    "That the person being pressured should be left to deal with it alone, to avoid embarrassment"
+   ],
+   "answer": 0,
+   "explain": "A simple interruption such as \"Can I borrow you for a minute?\" gives the person a way out without forcing it or escalating. If there is a real problem, organisers or staff can deal with it.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -234,6 +307,110 @@
    "work": "Why do people avoid talking to strangers? A mini meta-analysis of predicted fears and actual experiences talking to a stranger",
    "author": "Gillian M. Sandstrom and Erica J. Boothby",
    "note": "Self and Identity 20(1), 2021. How much better conversations with strangers go than people expect."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The silent hour at the conference dinner",
+   "scene": "Mohammed, forty-five, is a water engineer, and he has been sent to a three-day industry conference in another city. He is good at his job and\n  quiet by nature. On the first evening there is a conference dinner, with round tables of ten and seating by ballot. He finds himself between a woman\n  from a consultancy he has never heard of and a man from a regulator, neither of whom he knows.\n\n  He says hello to both, and then nothing much for an hour. He listens to the conversation on the far side of the table, eats slowly and looks at his\n  phone between courses. He assumes his neighbours would rather talk to people they know, and that a stranger starting a conversation would be an\n  imposition. The woman beside him, he notices, is also quiet, and also looks at her phone. He takes this as confirmation.\n\n  During dessert, the man from the regulator turns to him and asks, almost apologetically, what he thought of the afternoon session on leakage. It\n  is Mohammed's specialist subject. They talk for forty minutes. The woman from the consultancy joins in, and it turns out she has been working on\n  the same problem in a different region.\n\n  Walking back to his hotel, Mohammed feels both pleased and slightly foolish. He thinks about the hour he spent in silence, and wonders how many of\n  the people at that table spent it the same way.\n\nHe had also, he remembers, decided before the dinner that he would just eat and leave early, so that he would not have to talk to anyone. The ballot had seated him next to two people who had made the same decision.\n\nHe notices, too, that the people who talked most at the far end of the table did not seem especially confident. They had simply started.",
+   "misread": "Mohammed read his neighbours' quietness and their phones as signs that they did not want to talk to a stranger, and read his own silence as politeness. The woman beside him, it turned out, had been reading him in exactly the same way.\n\nAnd the man from the regulator, it turned out, had been waiting for an hour to ask about leakage, and had assumed Mohammed did not want to be disturbed.\n\nHe also read his own phone-checking as a neutral way to pass the time, when to his neighbours it looked exactly like a sign that he did not want to be disturbed.",
+   "betterRead": "Epley and Schroeder found that commuters expected talking to a stranger to be the least pleasant way to spend a journey, and were wrong; the strangers were generally glad to talk, and the effect held for introverts too. Sandstrom and Boothby's combined analysis found that conversations with strangers went better on every count than people had predicted. Mohammed's neighbours were not signalling unwillingness; they were doing what he was doing, waiting for someone else to go first. His better approach, at the next two dinners, was to start with the simplest possible question about the shared context: \"What did you make of this afternoon?\" He found that almost everyone was relieved to be asked. By the end of the conference he had a dozen useful contacts, and one of them became his next employer.\n\nHe also stopped leaving dinners early, and started choosing the empty seat next to someone sitting alone.\n\nThe woman from the consultancy told him on the last day that she had nearly left the dinner early, and was glad she had not."
+  },
+  {
+   "title": "The circle that did not open",
+   "scene": "Lauren, twenty-nine, has just moved from teaching into a sales role at an education technology company, and she goes to her first industry\n  awards evening with a list of people she would like to meet. She spots one of them, a director at a large school trust, standing with four other men\n  near the bar. They are in a tight circle, shoulders squared to the centre, laughing at something.\n\n  She walks up behind one of them and waits. Nobody turns. She edges into the narrow gap between two of the men and says, \"Hi, sorry to interrupt.\"\n  The men glance at her, one nods, and the conversation continues without her for a minute. Then the circle breaks up as two of them go to get drinks,\n  and she is left standing with the director, who is polite but clearly distracted.\n\n  Afterwards, she tells her manager, Rachel, that she felt shut out, and wonders aloud whether it was because she was the only woman in the group and\n  the youngest. Rachel says that might well have been part of it, because she has seen it happen many times. She also asks Lauren to describe exactly\n  how the group was standing when she approached.\n\n  Lauren thinks about it. The circle had been closed tight, and she had approached it from behind.\n\nLauren had also spent most of the first hour looking for the director rather than talking to anyone else, so that by the time she found him, she was anxious and in a hurry.\n\nShe had also, without quite realising, approached the group at its tightest moment, in the middle of a story that was building to a punchline, when nobody in it would have wanted to turn away.",
+   "misread": "Lauren read the group's failure to open as a rejection of her, perhaps because of her gender and age. That reading may well have been partly right. She did not, at first, read the shape of the group itself, which had been closed before she arrived.\n\nThe men in the circle, if asked, would probably have said that they had not noticed her, which may also have been true. Both can be true at once.\n\nShe also read the director's distraction afterwards as confirmation, when he may simply have been wondering where his friends had gone.",
+   "betterRead": "Kendon's work on F-formations, described in Part VI, shows that the shape of a standing group tells you how open it is before you hear a word: a tight circle with shoulders squared inwards is closed, while a horseshoe with a gap is open. Approaching a closed circle from behind, where nobody can see you, makes joining very hard for anyone. Rachel's better advice did two things. It gave Lauren a better approach: choose open groups and people standing alone, approach from where you can be seen, and wait at the gap for the circle to widen. And it did not dismiss Lauren's sense of being excluded. Rachel spoke to the director, whom she knew, and introduced Lauren to him properly the following month. She also started, at every event, deliberately standing in open horseshoes and drawing newcomers in, which she said was the job of anyone already in the room.\n\nLauren also found, at the next event, that approaching a woman standing alone by the window led to the most useful conversation of the evening."
+  },
+  {
+   "title": "The conversation that would not end",
+   "scene": "Peter, fifty, runs a small engineering firm, and he is at a trade show looking for a supplier of a particular kind of sensor. At the first\n  stand he visits, a sales representative, Wayne, greets him warmly and begins to explain the company's product range. Within five minutes, Peter has\n  learned that the company does not make the sensor he needs. He would like to move on. Wayne keeps talking.\n\n  Peter does not know how to leave. He nods, says \"Right\" and \"Interesting\" at intervals and begins to look past Wayne's shoulder at the stands\n  opposite. He checks his phone twice. He shifts from foot to foot. Wayne, who has had a quiet morning and is pleased to have a visitor, reads the\n  shifting as interest and the phone as a busy man fitting him in, and talks faster to cover more ground.\n\n  After twenty minutes, Peter says, \"Anyway,\" and walks off mid-sentence. Wayne is left holding a brochure. He tells his colleague that the man had\n  been rude, and wonders what he said wrong.\n\n  Peter, for his part, spends the next hour annoyed with himself for losing twenty minutes, and slightly guilty about the way he left. He also\n  realises that he never told Wayne what he was actually looking for.\n\nWayne, meanwhile, has noticed the phone and decided that Peter must be checking the company's website, which encourages him to explain the full range in more detail.\n\nWayne, after Peter has gone, tells himself that the man was clearly not a serious buyer. It does not occur to him that Peter had a serious need that the conversation never reached.",
+   "misread": "Wayne read Peter's shifting, nodding and phone-checking as interest, and talked on. Peter read his own drifting attention as a polite hint that Wayne should have picked up, and his abrupt exit as the only way out left to him.\n\nBoth of them read the other's behaviour through their own wishes: Wayne wanted a customer, and Peter wanted a way out.\n\nPeter also read his twenty lost minutes as Wayne's fault, when a single honest sentence at the start would have saved them.",
+   "betterRead": "Mastroianni and colleagues found that conversations almost never end when both people want them to, because each hides the wish to leave, and each is poor at guessing what the other wants. Peter's hints were too faint to read and his final exit too abrupt, so he lost twenty minutes and left a bad impression. The better exit has two parts: a body signal and a clear, warm close. Five minutes in, Peter could have shifted his weight back, let a pause lengthen, and said: \"This has been really helpful, thank you. You don't make the sensor I'm after, so I'm going to keep looking, but I'll take a brochure for the future.\" He might even have asked Wayne who did make it. At the next stand, he tried exactly that, and the representative pointed him to a company two aisles away, which had what he needed.\n\nWayne, at the end of the day, said he wished more visitors would tell him what they were after at the start, which would save everyone time."
+  },
+  {
+   "title": "The client who kept topping up the glass",
+   "scene": "Sunny, twenty-four, is six months into his first job at an advertising agency, and he has been invited to a client's after-party following a\n  product launch. He is pleased to be asked. He drinks very little, partly from habit and partly because he has an early train the next day.\n\n  The client's marketing director, Clive, fifty-five, takes a liking to him. He puts an arm round Sunny's shoulders, steers him to the bar and orders\n  him a double whisky. When Sunny sips it slowly, Clive tops it up from the bottle on the bar and says, \"Come on, you're not at work now.\" He keeps his\n  arm where it is. Over the next hour he tops up the glass three more times, tells Sunny he is \"one of the good ones\", and insists that Sunny come on\n  with him to a club afterwards. Sunny laughs, says maybe, and tries twice to step away. Each time Clive pulls him back with a hand on his arm.\n\n  Sunny does not know what to do. Clive is the agency's biggest client. Sunny is afraid of offending him, afraid of looking unprofessional, and\n  increasingly uncomfortable. His smile is fixed and his eyes keep going to the door.\n\n  His manager, Diane, fifty, is across the room. She has been watching for ten minutes.\n\nTwo other agency staff at the party have noticed too. Both have decided that it is not their business, and that Sunny is old enough to look after himself.\n\nSunny has thought about saying he feels unwell, and decided it would sound like an excuse. He has thought about saying he does not drink much, and decided Clive would take it as a challenge.",
+   "misread": "Clive read Sunny's fixed smile and his \"maybe\" as enjoyment and agreement, and treated each attempt to step away as reluctance to be overcome. Sunny read his own politeness as the only safe option, and his discomfort as something he had to hide.\n\nThe colleagues who looked away read his fixed smile as a young man enjoying a good evening, which is the reading that asks nothing of the person making it.\n\nClive, if challenged, would probably have said he was just being generous to a young man, which is how pressure often feels from the inside.",
+   "betterRead": "Pressure at events happens to men as well as women, and it is made harder by the wish to be polite in a professional setting, especially towards someone powerful. The signs Diane saw are the ones the chapter describes: a body angled away, a fixed smile, eyes searching the room, attempts to leave that are stopped. Her better response was the simplest one: she walked over, greeted Clive warmly, and said, \"Sorry to steal him, Sunny, I need you for a minute about tomorrow's deck.\" Sunny came at once. Out of earshot, she asked whether he was all right, told him he did not need to go to the club, and offered to share a taxi to the station. The next week she raised Clive's behaviour, without naming Sunny, with the agency's head of client services, who made sure Sunny was never again sent to Clive's events alone. Sunny said later that being rescued without fuss mattered more than anything that happened afterwards.\n\nDiane also told Sunny that he could always text her a single word from any event if he needed a way out."
+  }
+ ],
+ "workedReading": {
+  "title": "Hosting a networking event",
+  "scene": "Abena, thirty-eight, runs a print shop and organises a monthly evening for small business owners in her town, held in the upstairs room of a café. About thirty people come, half of them regulars and half new. Over the past year she has noticed a pattern: the regulars arrive, find each other and stand in tight circles near the counter, while the newcomers hover by the door, look at their phones and often leave within twenty minutes. Several new members have told her that the evening felt cliquey. This month she has decided to use what she knows about how groups stand, join and break up to make the room easier for everyone, and to keep an eye out for the kind of pressure that can spoil an evening for someone. She arrives an hour early to set up.\n\nShe has also heard, from a regular, that a man who comes most months has a habit of cornering newer members, and she wants to keep an eye on it without making accusations.\n\nShe has also noticed that newcomers who are introduced to someone in their first five minutes almost always stay, and those who are not almost always leave early.",
+  "steps": [
+   {
+    "label": "Set the room",
+    "text": "She moves the café's tables to the edges and leaves the middle of the room open, so that people can form groups wherever they like. She puts the drinks at one end and the food at the other, so that people move between them and pass each other. She puts a few chairs by the wall for anyone who needs or prefers to sit, and a small table near the door where she will stand.\n\nShe also opens a window, because a hot, crowded room makes people tired and short-tempered, and keeps the music low enough that people do not have to lean in close to be heard."
+   },
+   {
+    "label": "Greet at the door",
+    "text": "She stands at the small table and greets everyone personally as they arrive, by name if she knows it. For each newcomer, she asks what their business is, then walks them across the room. Being met at the door changes the first minute of the evening, which Epley and Schroeder's work suggests newcomers dread far more than they need to.\n\nShe also gives each newcomer a name badge with their business written under their name, which gives others an easy first question.\n\nShe also makes a point of greeting the regulars just as warmly, so that the newcomers can see that the welcome is for everyone."
+   },
+   {
+    "label": "Seed the first groups",
+    "text": "Instead of leaving newcomers at the edge, she brings each one to an open group, ideally one with something in common, and introduces them with a sentence that gives the group something to ask: \"This is Tom, he's just opened a bike repair shop on the high street.\" She stays for a minute, then leaves them talking. It is the bridge exit, used as a host.\n\nShe also notices that newcomers introduced this way tend to stay in their first group longer, and to join a second one on their own."
+   },
+   {
+    "label": "Ask regulars to open circles",
+    "text": "Before the evening, she asked three regulars to help: to stand in loose horseshoes rather than closed circles, leave a gap and draw in anyone who hovers. During the evening she watches the groups. When a circle near the counter closes tight, she catches one regular's eye and nods towards a man standing alone. The regular steps back, turns and waves him in.\n\nOne regular tells her afterwards that he had never noticed how closed his usual group was until he tried standing in a horseshoe.\n\nShe also reminds the regulars, lightly, that they were all newcomers once, and that someone probably brought them in."
+   },
+   {
+    "label": "Watch the edges",
+    "text": "Every ten minutes she looks round the room for people standing alone, looking at their phones or edging towards the door. She goes to them herself, or sends someone. She also watches for the other signal the chapter describes: a person backed against a wall, smile fixed, eyes searching the room. At one point she sees a young woman cornered by a man who keeps leaning in, and goes over with a question about the raffle.\n\nShe does not confront the man. She simply gives the young woman a reason to leave, and makes sure she is in a group before she walks away."
+   },
+   {
+    "label": "Make leaving easy",
+    "text": "Towards the end of the evening, she makes a short announcement thanking everyone and reminding them that the next meeting is in four weeks. Then she says, lightly, that anyone who needs to head off should feel free, and that she will send round a list of everyone's businesses tomorrow so that people can follow up. It gives everyone a clear, warm exit.\n\nShe also stands by the door as people leave, thanking them, which closes the evening as personally as it opened.\n\nShe also reminds people that the next meeting will start with a short round of introductions, which gives the quieter members an easy way in."
+   },
+   {
+    "label": "What happened",
+    "text": "More newcomers than usual stay to the end, and three of them email the next day to say how welcoming it felt. The young woman thanks Abena quietly on her way out, and Abena has a word with the man the following week. Abena sends the list, and several people tell her they have arranged to meet. She writes herself a checklist for next month: open middle, greet at the door, seed the groups, horseshoes, watch the edges, easy exits.\n\nWhen she speaks to the man the following week, she does it privately and plainly, describing what she saw and asking him to give people more space. He is embarrassed, and the next month he keeps his distance.\n\nAt the next meeting, the young woman brings a friend, which Abena takes as the best review the evening could have had."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Leaving no gap in your own circle",
+   "body": "Most advice about networking is for the person on the outside trying to get in. But at any event, most people are inside a group most of the time, and the group's shape decides whether anyone else can join. A tight circle with shoulders squared to the centre, absorbed in its own conversation, is closed to newcomers, even if nobody intends it, as Lauren found. If you are in a group, leave a gap: stand in a loose horseshoe rather than a closed ring, angle yourself slightly outwards and glance around the room from time to time. When someone hovers at the edge, catch their eye, step back to widen the circle and bring them in with a word: \"Come and join us, we were just talking about the keynote.\" It costs the group nothing and changes the evening for the person outside.\n\nIf you organise events, you can help by asking regulars to do this deliberately, as Abena did."
+  },
+  {
+   "title": "Steering every conversation to yourself",
+   "body": "Having joined a group or started a conversation, many people move quickly to what they came for: their business, their pitch, their job search. They talk about themselves at length, wait impatiently for the other person to finish and bring the subject back to their own topic. It is a common habit at networking events, and it tends to leave the other person feeling used. The better approach is the one that makes conversations with strangers go well in the first place: curiosity. Ask about the other person's work, listen to the answer and ask a follow-up. Join the topic the group was already discussing rather than replacing it. Your own business will come up naturally, usually when someone asks, and it will be heard far more warmly then than if you had pushed it.\n\nA good rule is to ask at least two questions about the other person before you say much about yourself.\n\nIf you notice that you have been talking for several minutes, stop and ask a question. The other person will usually be relieved."
+  },
+  {
+   "title": "Collecting contacts instead of conversations",
+   "body": "Some people treat an event as a numbers game: as many introductions as possible, two minutes each, a card swapped, then on to the next. They leave with a pocketful of names and almost nothing to follow up, because no conversation went far enough for either person to remember it. The research in this chapter suggests that conversations with strangers tend to go better than people expect, and that people like us more than we think, but only if there is a conversation. A few real exchanges, long enough to find something you have in common and something you can follow up, are worth far more than a dozen quick ones. Aim for three or four good conversations at an event, end each one warmly, and follow up the next day with something specific.\n\nIt also helps to set yourself a goal of one useful follow-up per event, rather than a number of cards.\n\nA useful test the morning after is whether you can remember one personal detail about each person you met. If not, you met too many."
+  },
+  {
+   "title": "Rescuing without checking",
+   "body": "Once you know the signs of someone who is trapped, it is possible to see them everywhere and to step in too hard. Not every intense conversation is unwanted, and not every fixed smile is distress; two people who are enjoying a heated argument about football may look, from across the room, like one person pressuring another. A heavy-handed rescue, such as confronting the other person or making a scene, can embarrass the person you meant to help and may make their situation worse. The safest intervention is the one the chapter describes: a light, ordinary interruption that offers a way out without forcing it, such as \"Can I borrow you for a minute?\" If they come with you, ask quietly whether they are all right. If they say they are fine, believe them, and stay nearby. If there is a real problem, tell an organiser.\n\nIf you are unsure whether to step in, a light interruption costs very little if you were wrong, and a great deal if you did nothing and were right.\n\nAfterwards, it is worth a quiet word with the organiser even if all was well. They may have seen a pattern you have not."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What should I say first when I approach someone at an event?",
+   "a": "Something simple about the shared situation. \"What brings you here?\", \"How did you find the last session?\" or \"Have you been to one of these before?\" all work, because they give the other person something easy to answer and show that you are interested in them. Introduce yourself by name early, and listen to the answer before saying much about yourself. There is no need for a clever opening line; Sandstrom and Boothby's analysis suggests that people worry far more about the start of a conversation with a stranger than it deserves, and that conversations tend to go better than either person predicted. If you are joining a group, wait at the edge, listen for a minute and join the topic they are already discussing.\n\nIf your mind goes blank, comment on something you can both see, such as the venue, the food or the talk that has just finished."
+  },
+  {
+   "q": "What if I am an introvert?",
+   "a": "Epley and Schroeder found that the benefits of talking to strangers held for introverts as well as extraverts, so being introverted does not mean networking will go badly. It may mean that it costs you more energy. Plan for that: aim for a few good conversations rather than many, give yourself short breaks outside or by the window, and arrive early, when rooms are quieter and people are easier to approach. Many introverts are good listeners, which is exactly what most people at events want. Look for others standing alone, who are often introverts too. And when you leave, do it warmly and without guilt; you have nothing to prove by staying until the end.\n\nIt also helps to have a small goal, such as one good conversation, after which you are free to go home.\n\nAnd if a room is very loud, find the quieter corner. Conversations there tend to go further, and the people in it are often glad of company."
+  },
+  {
+   "q": "How can I tell whether someone wants to end our conversation?",
+   "a": "Sometimes you can see it: their weight shifts back, their feet turn towards the room, their answers get shorter, their eyes start to move around, they mention someone they need to see. But Mastroianni and colleagues found that people are poor at guessing when their partner wants a conversation to end, because each person hides the wish out of politeness. The kindest approach is to offer an easy exit rather than trying to read minds: \"I've kept you a while, don't let me stop you meeting other people.\" If they want to stay, they will say so. If they want to go, you have saved them the effort of finding a way. Either way, the conversation ends better than it would have by drifting.\n\nAnd if you are the one who wants to stay, it is fine to say so: \"I'm enjoying this, but don't let me keep you.\"\n\nIf you are not sure, a short check, \"Shall we go and get some food?\", lets both of you end or continue without awkwardness."
+  },
+  {
+   "q": "Is it rude to leave a conversation to talk to someone else?",
+   "a": "Not if you do it well. Events are for meeting people, and everyone there knows it. What makes leaving feel rude is the way it is done: drifting off, scanning over someone's shoulder, checking a phone or walking away mid-sentence, as Peter did. A clear, warm close avoids all of that. Signal with your body first, then close in words with appreciation, a reason and, if it is true, a future: \"It's been great to talk. I'm going to say hello to a few more people before the talk. I'll email you that report tomorrow.\" Better still, introduce the person to someone else before you go, so that you leave them in a new conversation rather than on their own.\n\nIf you promised a future, such as sending an article, do it. A close that keeps its promise turns a pleasant exit into a contact.\n\nAnd if someone uses a warm close on you, take it as the courtesy it is, not as a rejection."
+  },
+  {
+   "q": "What should I do if someone at an event is pressuring me or will not let me leave?",
+   "a": "You are allowed to leave, and you do not need a reason. Start with a soft exit if you like, but if it is ignored, say it plainly: \"I'm going to head off now,\" or \"I'd rather not.\" Move as you say it, towards other people, the bar, the staff or the organisers, rather than standing still to negotiate. If someone keeps touching you, follows you or keeps pressing you to drink, tell an organiser or a member of staff. It is not your job to manage their feelings, and the fact that they are senior or important does not change that. Afterwards, consider telling your manager or your organisation, who can make sure it does not happen to you or anyone else again.\n\nIf you are the one who is senior, remember that people junior to you may find it much harder to say no, and give them easy ways out.\n\nIf you see this happening to someone else, the bystander line in this chapter, \"Can I borrow you for a minute?\", is often enough."
+  },
+  {
+   "q": "How do I follow up after an event without seeming pushy?",
+   "a": "Send one short message within a day or two, mentioning something specific you talked about: \"It was good to meet you at the dinner. Here's the article about leakage I mentioned.\" Specific details show that you were paying attention and help the other person remember who you are. Do not wait until you are sure they enjoyed the conversation as much as you did; Boothby and colleagues' work on the liking gap suggests they probably liked you more than you think. If they reply, suggest a next step if there is a natural one, such as a coffee or a call. If they do not, leave it, or send one gentle reminder after a few weeks. One message is a courtesy; five is pressure.\n\nIf you met several people, follow up with each one individually rather than with a group message, which tends to feel impersonal.\n\nIt also helps to connect on a professional network with a short personal note, rather than a blank request."
   }
  ],
  "watch": [
