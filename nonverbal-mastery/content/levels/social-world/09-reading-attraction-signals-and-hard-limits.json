@@ -73,6 +73,27 @@
    "doCaption": "Accepting it and walking on",
    "dontCaption": "Arguing with a no",
    "annotation": "No, maybe and silence are all answers. Accept them, and do not try again later the same evening."
+  },
+  {
+   "doPoseId": "p_mixed_angled",
+   "dontPoseId": "p_mixed_lean_back",
+   "doCaption": "Stopping where she set the distance",
+   "dontCaption": "Following as she steps back",
+   "annotation": "A step back each time you step forward is a clear message. Stop moving, and let her choose the distance, or the exit."
+  },
+  {
+   "doPoseId": "p_walk_stride",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Wishing her well and moving on",
+   "dontCaption": "Sulking after a polite no",
+   "annotation": "How you take a no is remembered longer than the question. A gracious exit costs nothing and respects her answer."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Backing his right to say no",
+   "dontCaption": "Laughing at a friend who did not want the attention",
+   "annotation": "Men are entitled to decline attention too. Taking a friend's discomfort seriously makes it easier for him to say so next time."
   }
  ],
  "caseStudy": "Josh, twenty-seven, is at a friend's wedding when he gets talking to Priya, a guest from the bride's side. She is warm and funny, laughs at his stories, asks him about his work and touches his arm twice. After three drinks, Josh is sure she is interested. He has read online that a touch on the arm is a strong sign.\n\nHis friend Tom, sober because he is driving, watches for a minute and then takes Josh aside. He points out that Priya has been exactly as warm with everyone at her table, that she keeps glancing toward a man by the bar, and that her answers to Josh's last few questions have been shorter. “Ask her if you want to know,” Tom says. “Don't guess.”\n\nJosh goes back, waits for a natural pause, and says, “I've really enjoyed talking to you. Would you like to swap numbers?” Priya smiles, and says that she is here with her partner, nodding toward the man at the bar, but that it was lovely to meet him. Josh feels his face go hot. He says, “Fair enough, enjoy the rest of the night,” and walks back to his table.\n\nLater, Priya's partner comes over, introduces himself and buys Josh a drink. The three of them end up dancing badly together to the last song.\n\nOn the drive home, Josh tells Tom that the online lists had made him feel like an expert. Tom says that the only expert on what Priya wanted was Priya, and that Josh had found that out in about ten seconds by asking.",
@@ -92,6 +113,10 @@
     "For each, write at least two other explanations, such as friendliness, nerves, politeness or their job.",
     "Write down what, if anything, would have settled the question.",
     "Note whether your interest in them may have coloured your reading."
+   ],
+   "variations": [
+    "Watch a conversation between two people you know are just friends, and list the signs a lazy reader might mistake for interest.",
+    "Ask a female friend which behaviours men most often misread in her, and listen without arguing."
    ]
   },
   {
@@ -102,6 +127,10 @@
     "Add any you have noticed yourself.",
     "Next time you are in a social conversation, check yourself against the list once, privately.",
     "If a cluster is present, practise ending the conversation gracefully."
+   ],
+   "variations": [
+    "Do the checklist for a conversation you remember going badly, and mark the signs you missed at the time.",
+    "Practise the exit line aloud, several times, until it sounds warm and easy rather than wounded."
    ]
   },
   {
@@ -112,6 +141,10 @@
     "For each, write a graceful response to no, maybe and silence.",
     "Say each aloud until it sounds natural.",
     "Notice which feel most like you, and remove any pressure from the wording."
+   ],
+   "variations": [
+    "Write the question for a message as well as in person, and notice how it changes when there is no face to read.",
+    "Write the gracious response to a no, a maybe and no reply, and practise saying each."
    ]
   },
   {
@@ -122,6 +155,10 @@
     "Write a personal rule for that point, such as not starting a romantic conversation with someone new.",
     "Tell a friend you trust about the rule.",
     "Note after your next night out whether you kept it."
+   ],
+   "variations": [
+    "Agree the drink rule with a friend before a night out, so that you can remind each other.",
+    "Notice, on one night out, how your reading of other people changes after each drink."
    ]
   }
  ],
@@ -203,6 +240,45 @@
    "explain": "Alcohol narrows attention to obvious cues and makes it easier to miss signs of disinterest. If you want to know, ask her clearly and accept the answer; if she has been drinking heavily too, the next chapter explains why that matters.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Arlie Hochschild call the work of producing warmth and attentive smiles as part of a job?",
+   "options": [
+    "Emotional labour, the managed warmth that some jobs require",
+    "Natural charm, a personality trait that some workers happen to possess",
+    "Romantic signalling, which staff use to show interest in their customers",
+    "Social mirroring, an unconscious habit with no connection to the job"
+   ],
+   "answer": 0,
+   "explain": "Hochschild described the emotional labour of jobs such as flight attendant, in which warmth is part of the work. A barista's or waiter's friendliness is often exactly that, and not an invitation.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A junior colleague who reports to you laughs at your jokes, listens closely to your feedback and touched your arm at the team drinks. You are thinking of asking her out. What fits this chapter best?",
+   "options": [
+    "Ask her out at once, since the arm touch is a clear sign of personal interest",
+    "Ask her friends in the office whether she might be interested in you",
+    "Read it as likely politeness, given your power over her, and do not ask",
+    "Wait for her performance review, then ask her out once it is out of the way"
+   ],
+   "answer": 2,
+   "explain": "Power deepens misreading: a junior colleague may not feel free to be anything but warm, or to refuse. With a reporting line between you, the respectful default is not to ask.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that men cannot really receive unwanted attention, because men always welcome it. What does this chapter say?",
+   "options": [
+    "It is right, since attention is always flattering for a man",
+    "Men can receive unwanted attention and are equally entitled to say no",
+    "It is right, but only when the attention comes from a woman",
+    "It is wrong, but men should still accept attention to avoid being rude"
+   ],
+   "answer": 1,
+   "explain": "Men receive unwanted attention from women and from men, and their signals of disinterest deserve the same respect. Friends who laugh it off make it harder for them to say no.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +307,110 @@
    "work": "Sexual coercion and the misperception of sexual intent",
    "author": "Coreen Farris, Teresa A. Treat, Richard J. Viken and Richard M. McFall",
    "note": "Clinical Psychology Review 28(1), 2008. How misreading can become a step toward coercion, and what makes it likelier."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The smile behind the counter",
+   "scene": "Danny, thirty-one, buys a coffee every morning at the same café on his way to work. One of the baristas, Chloe, remembers his order, asks\n  about his weekend and laughs at his jokes. On Fridays she writes a little smiley face on his cup. Over a few months Danny becomes convinced that she\n  is interested in him. He has read that remembering details and laughing at jokes are strong signs.\n\n  One Friday he leaves a note with his number on the counter as he picks up his coffee. The next Monday, Chloe is still friendly, but her smile is\n  smaller, she does not ask about his weekend and she turns to the coffee machine as soon as she has taken his order. On Tuesday, a different barista\n  serves him, and Chloe is at the far end of the counter, not looking up.\n\n  Danny's colleague, Imran, who sometimes comes with him, says that Chloe is exactly like that with everyone.\n\nDanny has also started arriving at the café at exactly the time Chloe's shift begins, and lingering by the counter after he has his coffee. He has not noticed that she has started stepping back from the counter whenever he does.\n\nImran also mentions that the café is owned by a small family business, and that Chloe has told him she is saving to go back to university. She cannot afford to lose regular customers, or the job.",
+   "misread": "Danny read Chloe's warmth, her memory for his order and her smiley faces as personal interest. He did not consider that warmth was part of her job, or that a customer who comes in every day is someone she cannot easily avoid.\n\nHe also took the smiley faces on his cup as personal, when, as Imran later pointed out, she drew them on every cup on Fridays.\n\nAnd because he saw her every day, the friendship felt to him like a relationship building over months, when for her it was one customer among hundreds.\n\nHis own reading also had no baseline. He had never seen how she was with anyone else, because he only saw her when she was serving him.",
+   "betterRead": "Arlie Hochschild described the emotional labour of jobs in which warmth and attentive smiles are part of the work, and baristas, bartenders, waiters and shop staff do it every day. Remembering a regular's order is good service, not a declaration. Chloe's warmth was real, but it was offered to everyone, and she was not free to withdraw it from a customer without consequences. Her smaller smile, her turn to the machine and her move to the far end of the counter after the note were a cluster of disinterest, and of discomfort at being put in an awkward position at work. Imran's observation, that she was like that with everyone, was the baseline Danny had missed. The better reading, before the note, would have been to enjoy the friendly service for what it was. After it, the kind response was to make things easy for her. Danny told her the next time she served him, briefly, \"Sorry about the note. I got the wrong end of the stick. No need to say anything.\" She smiled, properly, and said thanks. He kept buying his coffee there, and never mentioned it again."
+  },
+  {
+   "title": "The junior colleague who laughed at his jokes",
+   "scene": "Rob, forty-five, is a regional sales manager. Ellie, twenty-four, joined his team six months ago. She is bright, works hard, and laughs at his\n  jokes in meetings. When he gives her feedback, she listens intently, nods and thanks him. At the team's summer drinks, she stands with him for half\n  an hour, asks about his children and touches his arm when he makes her laugh. Rob, who separated from his wife last year, starts to think that Ellie\n  might be interested. He considers asking her to dinner.\n\n  He mentions it, carefully, to a friend from another company, who is a woman. She asks him a few questions: whether Ellie behaves the same way with\n  other senior people, whether she has ever suggested meeting outside work, and whether her performance review is coming up.\n\n  Rob realises that the answer to the first question is yes, the second is no, and the third is next month.\n\nEllie's previous manager, who left the company, used to make comments about her appearance. She has mentioned to a colleague that she is relieved to have a manager who is \"normal\", and that she tries hard to keep things friendly with him.\n\nRob has also started staying late on the evenings Ellie works late, and offering her lifts to the station, which she has accepted twice and politely declined once. He has read each acceptance as encouragement and the refusal as shyness.",
+   "misread": "Rob read Ellie's laughter, attention and the touch on his arm as personal interest. He did not weigh how much of it might be the ordinary behaviour of a junior employee managing her relationship with the man who decides her pay and her prospects.\n\nHe also read his own loneliness after the separation as information about Ellie. A man who wants something to be true is more likely to see evidence for it.\n\nHe also counted the lifts as signals, when accepting a lift from your manager on a dark evening is the kind of thing people do because refusing feels awkward.",
+   "betterRead": "Power deepens every misreading this chapter describes. A junior colleague who laughs at her manager's jokes, listens intently to his feedback and is warm at a work social may be friendly, may be ambitious, may be anxious to stay on his good side, or may be all three, and she may not feel free to be anything else. Her behaviour with other senior people was the baseline: the same warmth, offered to all of them. Abbey's research, and later studies, found that men tend to read more sexual intent into friendliness than women do, and a reporting line makes the stakes of that misreading much higher for her than for him. The better reading was that Rob could not know Ellie's feelings, and that asking would put her in a position where refusing might feel risky. Rob decided not to ask. He kept their relationship professional, made sure her review was handled fairly by a second manager as well as himself, and, when he did start dating again, it was through an app, with people who did not work for him."
+  },
+  {
+   "title": "The man who could not say no",
+   "scene": "Aaron, thirty, is at a bar with his friends on a Saturday night. A woman he does not know, Kerry, starts talking to him at the bar. Within a\n  few minutes she is standing very close, touching his arm and his chest, and leaning in to talk into his ear. Aaron, who has a girlfriend, steps back\n  twice. Each time, Kerry steps forward again. He keeps smiling and making polite answers, and keeps glancing at his friends.\n\n  His friends are watching, and laughing. One of them gives him a thumbs-up. When Aaron finally gets away and rejoins them, they tease him for being\n  shy and tell him he is lucky. Aaron laughs along, but he feels uncomfortable and slightly ashamed, and he does not know why.\n\n  On the way home, his friend Sanjay, who has been quieter than the others, asks him whether he was all right back there.\n\nAaron's girlfriend is away for the weekend. He has mentioned her to Kerry twice, which Kerry has ignored. He keeps his left hand, with a ring on it, visible on the bar, which she has also ignored.\n\nWhen Aaron goes to the toilet to get away, Kerry is waiting near the door when he comes out, and asks why he disappeared. He apologises, as if he had done something wrong, and goes back to the bar with her because he cannot think how to refuse.",
+   "misread": "Aaron's friends read Kerry's attention as something any man would want, and his stepping back as shyness. Aaron himself half believed them, because he had been taught that men should always welcome attention, and so he did not trust his own discomfort.\n\nThe thumbs-up mattered most. It told him that his friends saw this as a prize, and so his discomfort must be a failure on his part.\n\nKerry, too, misread him, taking his politeness as a sign that he was enjoying it. Politeness is one of the most commonly misread signals of all, in every direction.",
+   "betterRead": "Men also receive unwanted attention, from women and from men, and the rules of this chapter protect them as much as anyone. Aaron's two steps back, his polite smile and his glances at his friends were a cluster of disinterest as clear as any woman's would have been, and Kerry stepped forward each time, ignoring it. His friends' laughter made it harder for him to say no, because it told him that refusing would look strange. Many men find it hard to decline attention for exactly that reason. Sanjay's question was the better reading. He had seen the same signals Aaron was sending and taken them seriously. Aaron said, after a pause, that he had not liked it, and that he had not known how to get out of it without being rude. Sanjay said that next time, a hand up and \"I'm not interested, thanks\" would be enough, and that he would come over if Aaron looked at him. He also said, the next week, to the friend who had given the thumbs-up, that it had not looked like much fun from where Aaron was standing."
+  },
+  {
+   "title": "The question at the party",
+   "scene": "Sam, twenty-nine, is at a friend's birthday party. He gets talking to Leo, a friend of a friend, and they spend most of the evening together\n  in the kitchen, talking about films, travel and their families. Leo is funny and attentive, and Sam, who is gay, is attracted to him. He knows that\n  Leo is gay too, because their mutual friend has mentioned it. But he cannot tell whether Leo's warmth is interest or just friendliness. Leo\n  touches his arm sometimes, and holds his gaze, and also does both with the two women who keep joining them.\n\n  Sam has been in this position before, and has twice read interest that turned out to be friendship, which was embarrassing. He has also twice\n  missed interest that was there, which he found out later.\n\n  At the end of the evening, as people start to leave, Sam has a choice.\n\nSam also knows that their mutual friend has been trying to set them up, and suspects that Leo knows it too, which makes everything Leo does harder to read. Warmth might be interest, or politeness towards a friend's matchmaking.\n\nSam has also noticed that Leo laughs more with him than with the others, and that when the two women leave the kitchen, Leo stays. But he has also noticed Leo checking his phone and smiling at a message, and does not know who it was from.",
+   "misread": "Sam's uncertainty was itself a good reading: the signals were the ones that apply to any engaged conversation, and Leo showed them to everyone. His risk was to keep guessing, as he had before, and either act on a guess or let the moment pass.\n\nHis history of misreading in both directions was useful information. It told him that his own signals were not reliable enough to act on, which is true for most people.\n\nAnd because their friend was matchmaking, Sam knew that whatever Leo was doing might be shaped by that, which made reading his warmth even less reliable.",
+   "betterRead": "Everything in this chapter applies when the attraction runs between men. Place and colleagues found that observers could judge interest from speed-date clips only modestly better than chance, and the cues that carried most information, attention, leaning in and a conversation neither person wanted to leave, show enjoyment rather than romance. Sam's better approach was the only reliable one: to ask, clearly and once, at a moment when Leo could easily say no, and to accept the answer. As they collected their coats, out of earshot of the others, Sam said, \"I've really enjoyed tonight. Would you like to go for a drink sometime, just the two of us?\" Leo smiled and said that he would, and then added, honestly, that he was not sure whether he meant as friends or something more, and asked if that was all right. Sam said it was. They went for a drink the following week. It turned out to be as friends, and they still are.\n\nSam also noted that asking had cost him nothing, and that it had turned an evening of guessing into a friendship he valued."
+  }
+ ],
+ "workedReading": {
+  "title": "Reading disinterest at a party",
+  "scene": "Kwame, thirty-three, is at a house party. He has been talking to Hannah, a friend of the host, for about fifteen minutes, near the kitchen door. At first the conversation flowed: she asked about his work, laughed at a story about his cat, and told him about her new job. Kwame has had two beers. He likes her, and he is thinking about asking whether she would like to meet up sometime. In the last few minutes, though, something has changed.\n\nKwame has been single for a year and has not met anyone he liked as much as Hannah in that time. He notices how much he wants this conversation to go well, and how that wanting makes him want to ignore what he is starting to see.\n\nThe house is crowded and loud, and people keep squeezing past them to get to the fridge. Hannah has stepped aside to let three people through, and each time, she has ended up a little further from Kwame and a little closer to the living room door.\n\nHe also knows, from experience, that he tends to stay too long in conversations he is enjoying, and that people have sometimes had to find excuses to leave.",
+  "steps": [
+   {
+    "label": "Check your own state",
+    "text": "Kwame starts with himself. Two beers, a warm room, a conversation he has enjoyed and a wish for it to go somewhere. He knows from this chapter that alcohol narrows attention to the most obvious cues, and that men tend to read more interest than is there. He notes that his own wish is the thing most likely to make him misread.\n\nHe also notes that he does not know her baseline. He has known her for fifteen minutes, so he cannot tell whether she is always this way at parties or whether something has changed. That uncertainty is a reason to weigh the cluster rather than any single sign.\n\nHe also notices that he has been doing most of the talking for the last five minutes, which he would not usually do. Talking more as someone engages less is a common sign that a man is trying to hold a conversation that is ending."
+   },
+   {
+    "label": "List what has changed",
+    "text": "He makes himself list the signals, as behaviour. Her answers have become shorter. She has stopped asking him questions. Her feet and torso have turned slightly towards the living room, though her face is still politely towards him. She has glanced at her phone twice and at a friend across the room three times. She is holding her drink in front of her chest with both hands.\n\nHe also notes when the change began: just after he asked whether she was seeing anyone. That question, he realises, may have made her see where the conversation was going, and her winding down may be her answer.\n\nHe also notes the absence of signs he might have hoped for: no question about whether he would be at the host's next party, no mention of a coffee or a drink, no move to keep talking when someone squeezed past."
+   },
+   {
+    "label": "Consider the rivals",
+    "text": "Each signal has other possible explanations. She might be tired. Her friend might be waiting for her. The phone might be a message she needs to answer. The drink held in front of her might mean nothing. Kwame notes that no single one of these settles anything.\n\nHe also reminds himself that even if one of the explanations is innocent, the others still point the same way. A tired woman waiting for a friend can still be telling him she would like to go.\n\nHe also considers that she may simply want to talk to other people, which is perfectly normal at a party. That is not a rejection of him, only a choice about her evening."
+   },
+   {
+    "label": "Weigh the cluster",
+    "text": "Together, though, they make a clear pattern: a conversation that she is winding down, politely. Shorter answers, no questions, a body turning away while the face stays courteous, glances at the door and a friend: that is the cluster the chapter describes as one of the plainest messages there is. Kwame notes that disinterest is often clearer than interest, and that this is clear.\n\nHe also notes that his wish to ask has grown stronger as the signals have grown clearer, which is a sign of how wishful reading works: the more someone pulls away, the more urgent the question feels.\n\nHe also notes that the cluster appeared over a few minutes, not in a single moment. A gradual winding down is one of the most reliable patterns of disinterest, and one of the easiest to miss when you want to keep going."
+   },
+   {
+    "label": "Leave gracefully",
+    "text": "He decides not to ask her out. He says, \"I'll let you get back to your friends. It was really nice talking to you,\" and smiles, and moves to the kitchen to get a drink. He does not ask whether she is all right, or whether he has said something wrong, and he does not look back to see her reaction.\n\nHe also keeps his tone warm and light, so that his exit does not feel like a sulk. A cheerful goodbye leaves her nothing to manage.\n\nHe also makes sure his exit is clean: no lingering, no \"maybe see you later\", no backward glance. A clear goodbye leaves her completely free."
+   },
+   {
+    "label": "Do not follow up sideways",
+    "text": "Later in the evening, he resists the urge to ask the host whether Hannah is single, or to find her again on the way out to check whether he misread it. Either would turn her polite exit into something she has to handle twice. He talks to other people, and finds that he enjoys the rest of the party.\n\nHe also notices that the party is better once he stops thinking about Hannah. He has a long conversation with the host's brother about cricket, and laughs more than he has all evening.\n\nHe also resists checking her social media the next day, which he admits to himself he wants to do. Respecting a polite exit includes not following someone around online."
+   },
+   {
+    "label": "What happened",
+    "text": "On the way home, Kwame feels a little flat, and then, on reflection, fine. He notes that he had wanted it to go somewhere, and that the wanting had nearly made him ask at exactly the moment she was leaving. He also notes that reading the cluster had cost him nothing and had spared her an awkward refusal. If she had been interested, he thinks, she could still have come back to talk to him, and she would have known that he was the kind of man who took a hint.\n\nHe also tells a friend, the next day, how close he came to asking at the wrong moment. The friend says he has done exactly that more than once, and wishes he had read it as well.\n\nHe also notes that the evening taught him something about himself: that he reads interest most hopefully when he is lonely, and that loneliness is the time to rely most on the cluster and least on the wish."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Trusting a list of signs",
+   "body": "Books, videos and forums offer lists of signs that a woman is interested: touching her hair, holding your gaze, touching your arm, laughing at your jokes, facing you. The research gives little support to any of them as reliable signals of romantic interest. Place and colleagues found that observers judged interest from real speed dates only modestly better than chance, and especially poorly for women. Most of the listed signs are signs of ordinary friendliness, good manners, nerves or professional skill. A list encourages a man to tick boxes and then act on the total, which is exactly how the predictable overreading this chapter describes turns into an unwelcome advance.\n\nIt also helps to notice who sells the lists. Many come from people who profit from promising men a method, and some go on to teach techniques for getting past a woman's reluctance, which this book rules out.\n\nIt also helps to notice how the lists treat women: as puzzles to be decoded rather than people to be asked. That framing is part of what makes the advice so unreliable, and so likely to lead to pressure.\n\nIt also helps to remember that even the research that found some signal did so in speed-dating, where everyone knew why they were there. At a party, a bar or a workplace, where people are not there to date, the signals are weaker still."
+  },
+  {
+   "title": "Mistaking warmth that is not free",
+   "body": "Some people are warm because it is their job: baristas, bartenders, waiters, receptionists, nurses, shop staff, sales staff. Some are warm because you have power over them: junior colleagues, students, tenants, people who need something from you. Their warmth may be entirely genuine, and it is still not an invitation, because they may not feel free to withdraw it. Reading it as interest puts them in a position where refusing has a cost. If someone's warmth is part of their work, or if you have power over them, the respectful default is to enjoy the warmth for what it is and not ask.\n\nIt also helps to notice that people being paid to be warm often have their own signals for when it is too much: a step back from the counter, a colleague who suddenly takes over, a professional phrase such as \"Can I get you anything else?\"\n\nThe same applies the other way. A man who works in a bar, a gym or a shop may also be warm because it is his job, and may also not feel free to refuse attention from customers.\n\nA simple test helps: would this person be free to stop being warm to you without any cost to them? If the answer is no, their warmth is not a signal you can act on."
+  },
+  {
+   "title": "Asking again, asking her friends, or sulking",
+   "body": "A no, a maybe, a change of subject or no reply is an answer. The failures that follow it are common: asking again later the same evening, asking her friends whether she is single or what she really thinks, messaging repeatedly after no reply, sulking, or complaining about her to others. Each one turns a polite refusal into something she has to manage again, and some of them, repeated, become harassment. Accept the answer the first time, with grace, and move on. The way you take a no is often remembered longer than the question.\n\nIt also helps to remember that she may be worried about how you will take it. Many women have had men react badly to a no, and a gracious response is a relief that she may remember long after.\n\nIt also helps to remember that friends of the person you asked are not go-betweens. Asking them to find out, or to put in a good word, puts them in an awkward position and tells her that her answer was not accepted.\n\nIt also helps to remember that the person who said no owes you no explanation. Asking why, or what you could do differently, puts the burden of your disappointment on her."
+  },
+  {
+   "title": "Laughing off unwanted attention to men",
+   "body": "Men receive unwanted attention too, and they are often expected to welcome it. Friends who laugh, give a thumbs-up or call a man lucky when someone is pressing attention on him make it harder for him to say no, and teach him to distrust his own discomfort. A man who steps back, looks for his friends and keeps his answers polite is sending the same signals of disinterest as anyone else, and they deserve the same respect. If you see it, do what Sanjay did: check in, take his discomfort seriously, and, if he wants help getting away, give it.\n\nAnd if you are a man who receives unwanted attention at work, from a colleague or a customer, it is as reportable as it would be for anyone else. You do not have to laugh it off.\n\nIt also helps to watch for the same pattern in yourself. If you have ever laughed at a friend who was being pursued, it is worth asking what you would have wanted in his place.\n\nIt also helps to make it easy for friends to leave a situation. A friend who says \"Come on, mate, we're going\" at the right moment can rescue someone without anyone losing face."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can you ever tell whether someone is interested?",
+   "a": "Sometimes, and less often than you might think. Place and colleagues found that observers judged speed-daters' interest from short clips at better than chance, but only modestly, and especially poorly for women. The cues that carried most information, turning towards someone, leaning in, sustained attention and a conversation neither person seems keen to leave, show that someone is enjoying the conversation, not that the enjoyment is romantic. Signals of disinterest are often much clearer. The only reliable way to know whether someone is interested is to ask, clearly and once, at a moment when they can easily say no, and to accept the answer.\n\nIt also helps to notice whether the interest is mutual over time rather than in one moment. People who are interested usually look for ways to see you again; people who are friendly usually do not.\n\nIt also helps to notice that interest, when it is there, usually shows over time and in action: the other person suggests meeting, replies quickly, remembers things and makes plans. A single conversation, however warm, is rarely enough to tell.\n\nAnd if you are not sure whether to ask at all, it helps to ask yourself whether the other person could say no easily, right now. If the answer is no, it is the wrong moment, whatever you have read in their face."
+  },
+  {
+   "q": "Why do men tend to overestimate interest?",
+   "a": "Several explanations have been offered. Abbey's early research found that men read more sexual intent into both women's and men's behaviour than women did, suggesting a general tendency. Haselton and Buss proposed that men's minds may be biased towards the cheaper mistake, on the argument that for ancestral men, missing an opportunity cost more than misreading friendliness. Perilloux, Easton and Buss found that men who rated themselves as more attractive, and men more interested in casual sex, overestimated more. Whatever the cause, the practical lesson is the same: if you are a man, assume that your reading leans towards seeing interest, and correct for it by asking.\n\nIt also helps to know that women can misread too, often in the opposite direction, and that individual differences are larger than the averages suggest. The bias is a tendency, not a rule about any particular man.\n\nIt also helps to know that alcohol makes the bias stronger, as the chapter on substance use described. The more you have had to drink, the more you should distrust your reading of someone's interest."
+  },
+  {
+   "q": "Is it ever all right to ask out a colleague?",
+   "a": "Sometimes, with care, and never when you have power over them. Many relationships begin at work, and asking a peer once, clearly and privately, outside work time, with an easy way to say no, can be fine. But if you manage the person, decide their pay or prospects, or are much more senior, they may not feel free to refuse, and their warmth towards you may be part of managing the relationship. Many workplaces have policies about relationships across reporting lines. If you ask a colleague and the answer is anything other than a clear yes, accept it, never ask again, and make sure nothing about their work changes as a result.\n\nIt also helps to remember that a colleague who says no will have to keep working with you. Making sure the next day is completely normal is part of asking well.\n\nIt also helps to think about the setting. Asking a colleague at the end of a work social, in front of others, is much harder for them to decline than asking privately, by message, with time to think.\n\nIf you are unsure whether a relationship with a colleague would be appropriate, it is worth reading your workplace's policy first. Many organisations ask staff to declare relationships, especially across levels of seniority."
+  },
+  {
+   "q": "What should I do if she says maybe?",
+   "a": "Treat it as a no, and say something gracious, such as \"No problem. It was good to talk to you.\" People often say \"maybe\", \"I'm not sure\" or \"another time\" because a direct no feels confrontational, especially to a man they do not know well. If she would like to see you, she can tell you, and having accepted her maybe gracefully makes it easier for her to do so. Pressing for a definite answer, or treating maybe as a reason to keep asking, turns a polite exit into pressure. A clear yes is the only answer that means yes.\n\nIt also helps to remember that \"maybe\" from someone who is genuinely interested usually comes with a reason and a suggestion: \"I'm busy this week, but how about next Saturday?\" A maybe without either is usually a polite no.\n\nIt also helps to make your own response easy. A light, friendly reply to a maybe, followed by no further pursuit, tells her that you heard her, which makes you safer company in future."
+  },
+  {
+   "q": "Do the same rules apply on dating apps and messages?",
+   "a": "Yes, with some differences. Messages remove the body, so there are no turned shoulders or glances at the door, but they have signals of their own: shorter replies, longer gaps, questions that stop coming back, conversations that never move towards meeting. The chapter on written body language in Part IV covers this. The core rules hold. Ask clearly, accept the answer, treat silence as a no, and never push for photographs, personal details or a meeting that has not been offered. Repeated messages after no reply are not persistence; they are pressure.\n\nIt also helps to remember that the person you are messaging is reading your messages too, often more carefully than you think. A clear, friendly question and a gracious response to silence make you someone people feel safe meeting.\n\nIt also helps to keep early messages light and low-pressure. A conversation that can easily end without awkwardness is one in which the other person feels free, and freedom is what makes a yes mean something.\n\nPhotographs deserve particular care. Sending intimate images without being asked is unwelcome and, in many places, illegal, and asking for them early in a conversation is a form of pressure."
+  },
+  {
+   "q": "What if I am the one receiving unwanted attention?",
+   "a": "You are entitled to say no, clearly, and to have it respected, whoever is offering the attention. Step back, turn away, and say something plain, such as \"I'm not interested, thanks.\" If the other person persists, leave, and ask a friend or a member of staff for help. Many men find this hard because they have been taught that they should always want attention, and that saying no is unmanly. It is not. If the unwanted attention happens at work, is repeated, involves touching you, or comes from someone with power over you, it may be harassment, and you can report it.\n\nIt also helps to tell your friends what you want them to do if it happens again. A pre-arranged signal, such as a hand on the back of your neck, can bring a friend over without anyone else knowing why.\n\nIt also helps to know that unwanted attention can come from people you know as well as strangers: a friend's partner, a colleague, a client. The same right to say no applies, and so does the same right to support.\n\nIt also helps to know that saying no does not make you rude, cold or less of a man. A clear, polite no is one of the kindest things you can offer someone who is pursuing you, because it lets them move on."
   }
  ],
  "watch": [
