@@ -147,6 +147,20 @@
    "doCaption": "Making the call together",
    "dontCaption": "Handing over a number and leaving",
    "annotation": "A number written on a card is easy to put away. Offering to sit with someone while they call, or to call together, turns a suggestion into a connection."
+  },
+  {
+   "doPoseId": "p_older_pair_seated_across",
+   "dontPoseId": "p_older_sit_at_rest",
+   "doCaption": "Asking him plainly, and staying to listen",
+   "dontCaption": "Hearing \"I'm ready to go\" and changing the subject",
+   "annotation": "Talk of having had enough can sound like the realism of age. Treat it as a reason to ask directly, and to stay for the answer."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_stand_turned_away",
+   "doCaption": "A lift home, and the question asked in the car",
+   "dontCaption": "Laughing off \"they'd be better off without me\"",
+   "annotation": "A dark remark that makes the room go quiet deserves a private follow-up. Side by side, ask plainly whether he is thinking about suicide."
   }
  ],
  "caseStudy": "Sam, forty-four, has played five-a-side football with Dev, forty-six, every Tuesday for eight years. Over the winter, after Dev's business folds and he moves out of the family home, Sam notices changes. Dev misses two games, then comes back thinner and unshaven. He picks a fight with a younger player over nothing. In the pub afterwards he drinks fast and says little. One evening, when someone jokes about money, Dev says flatly that his kids would be better off without him, and laughs. Nobody else seems to notice.\n\nSam does. He remembers the word burden from a training day at work, and he knows he cannot tell from Dev's face what Dev means. The next Tuesday he offers Dev a lift home and, parked outside the flat with the engine off, says: “Mate, you've not been yourself since Christmas, and what you said last week about the kids has stuck with me. I'm worried. Are you thinking about suicide?”\n\nDev stares straight ahead for a long time. Then he says yes, most nights. Sam's stomach turns over. He breathes out and says, “Thank you for telling me.” He listens for nearly an hour. He asks whether Dev is in danger tonight; Dev says he does not think so, but that the evenings are the worst. Sam asks if they can call a crisis line together now, and Dev agrees, on speaker, in the car. The counsellor helps them make a plan: Dev will see his doctor in the morning, Sam will drive him, and Dev's brother will stay with him for a few days and look after anything in the flat that worries him.\n\nThe doctor refers Dev for treatment. Sam texts him every few days, nothing heavy. Dev comes back to Tuesdays in the spring. Months later, he tells Sam that the question in the car was the first time anyone had asked, and that he had been waiting for someone to.",
@@ -166,6 +180,10 @@
     "Write the sentence you would use before it, describing what you had noticed.",
     "Say both sentences aloud together, slowly and gently.",
     "If you have a willing friend who knows the purpose, practise once with them, then swap roles."
+   ],
+   "variations": [
+    "Practise saying the sentence you would use after the question if the answer were no, so that you can keep the door open.",
+    "Write the question in words that fit a particular person in your life, and say it aloud as if to them."
    ]
   },
   {
@@ -177,6 +195,10 @@
     "Write down your local emergency number and how to reach a doctor out of hours.",
     "Write the first sentence you would say if you called about someone else.",
     "Check that the people closest to you know these numbers too."
+   ],
+   "variations": [
+    "Find the crisis line for a country where someone you love lives, and save it too.",
+    "Show one person close to you where the crisis resources are in this app, and ask them to save the number."
    ]
   },
   {
@@ -188,6 +210,10 @@
     "Write the people and places that take your mind off things, and the people you could ask for help.",
     "Add the professional and crisis numbers you found in the previous drill.",
     "Write one thing that would make your surroundings safer on a bad night, and keep the page where you will find it."
+   ],
+   "variations": [
+    "Show your plan to one person you trust, and ask whether they would be willing to be one of the names on it.",
+    "Review your plan in three months, and update anything that has changed, such as numbers or people."
    ]
   },
   {
@@ -199,6 +225,10 @@
     "Write how you would ask about urgency, and the answers that would mean calling emergency services.",
     "Write how you would explain that you cannot keep it secret.",
     "Write how you would help them connect, and who you would talk to afterwards."
+   ],
+   "variations": [
+    "Practise the first five minutes aloud with a willing friend, taking turns, and stop at once if either of you finds it too much.",
+    "Write down what you would say to a crisis line if you called about someone who was with you."
    ]
   },
   {
@@ -210,6 +240,10 @@
     "Set reminders in your phone to check in with each over the next two months.",
     "Send the first message this week.",
     "Note how each person responds, without needing a reply."
+   ],
+   "variations": [
+    "Add a reminder for an anniversary or hard date for one of the people on your list.",
+    "Write one message you could send to someone you have lost touch with who had a hard year."
    ]
   }
  ],
@@ -291,6 +325,45 @@
    "explain": "The contact group received twenty-four short letters over five years that asked for nothing. Their suicide rates were lower during the years of contact, significantly so in the first two years, which is why brief, regular follow-up is recommended.",
    "isMisconceptionTest": false,
    "isScenario": false
+  },
+  {
+   "q": "What did Stanley and colleagues find for patients in veterans' emergency departments who received safety planning and follow-up calls?",
+   "options": [
+    "Fewer suicidal behaviours over six months, and better attendance at treatment",
+    "No difference at all compared with the patients who received usual care at other sites",
+    "More suicidal behaviour, because writing down a plan made people think about suicide",
+    "Better results only for patients who had never been to an emergency department before"
+   ],
+   "answer": 0,
+   "explain": "Patients who received safety planning and follow-up calls had 45 per cent fewer suicidal behaviours over six months and more than twice the odds of attending treatment. It was not a randomised trial, but the result is encouraging.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Late at night, your brother, who has been low for weeks, texts \"Sorry for everything. Love you.\" What fits this chapter best?",
+   "options": [
+    "Reply in the morning, since he is probably just tired and feeling sorry for himself",
+    "Text back telling him not to be silly and that everything will look better tomorrow",
+    "Call him now, ask directly about suicide, and get help if he is in danger",
+    "Post on his social media asking his friends whether anyone knows what is going on"
+   ],
+   "answer": 2,
+   "explain": "A goodbye-like message after weeks of low mood is a warning sign that calls for action now. Ring, ask plainly, judge the urgency, and if he is in danger, stay with him while someone calls the emergency services.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that people who talk about suicide are just seeking attention and do not mean it. What does this chapter say?",
+   "options": [
+    "It is right, since people who really mean it never talk about it beforehand",
+    "Talk of suicide should be taken seriously every time and followed up",
+    "It is right for young people, though older people's talk should be taken seriously",
+    "It is right, so the kindest response is to ignore it and not encourage them"
+   ],
+   "answer": 1,
+   "explain": "Talking about wanting to die is one of the clearest warning signs, and crisis services advise taking it seriously every time, however it is said. Someone seeking attention by talking about suicide needs attention.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -319,6 +392,110 @@
    "work": "Preventing suicide: a resource for media professionals",
    "author": "World Health Organization and International Association for Suicide Prevention",
    "note": "2023 update. The safe-messaging guidance this chapter follows: no details of methods, language that does not blame, and stories of help and recovery."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The goodbye email",
+   "scene": "Priya manages a team of twelve at an engineering consultancy. On a Thursday evening she receives an email from Martin, fifty, one of her\n  most experienced engineers, sent to the whole team. It thanks everyone for the years they have worked together, says how much he has valued\n  each of them, and mentions by name the people he wants to have his books and the plant on his desk. It ends, \"Look after each other.\" Martin\n  has not resigned. He is not due any leave.\n\n  Two of the team reply with cheerful messages, assuming he must have a new job he has not told them about. One jokes that she will fight anyone for\n  the plant.\n\n  Priya reads the email twice. She knows that Martin's wife left him in the spring, that he has been quiet and thin for months, and that last week,\n  when someone mentioned the pension scheme, he said he would not need to worry about that.\n\nPriya also remembers that Martin had asked her, a fortnight ago, whether his life insurance through work was still valid, which had seemed an odd question at the time and which she had answered without thinking about it.\n\nIt is nearly eight in the evening. The office is empty, and Priya is on the train home. She knows that Martin lives alone now, in a flat across the city, and that nobody in the team has his family's numbers.",
+   "misread": "The team read the email as a farewell before a new job, because that is the usual reason for a message thanking colleagues and giving things away. Nobody connected it with the months of change in Martin or with his remark about the pension.\n\nThe joke about the plant also showed how easily a group follows the most comfortable reading. Once two people had treated the email as cheerful, it became harder for anyone else to say it frightened them.",
+   "betterRead": "Saying goodbye as though for the last time, and giving away things that matter, are among the warning signs that crisis services list, and together with months of withdrawal and a comment that hinted at no future, they made a pattern that called for action that evening, not on Monday. A reader cannot know from an email what someone intends. Priya did not need to know. She rang Martin straight away. When he answered, she said, \"Martin, I got your email, and I'm worried about you. Are you thinking about suicide?\" After a long silence he said yes. Priya thanked him for telling her, stayed on the phone and asked whether he was safe right now. He said he was not sure. She asked whether she could call the emergency services to his address while she stayed on the line with him, and he agreed. She kept talking to him until they arrived. He was looked after in hospital that night, and over the following weeks a crisis team supported him at home. Priya visited, and kept in touch. In the autumn, Martin came back to work, and he still has the plant."
+  },
+  {
+   "title": "The son who said 'what's the point'",
+   "scene": "Carl's son, Ethan, sixteen, has been struggling since his exam results in August were worse than he hoped and his girlfriend ended their\n  relationship. He spends most of his time in his room, has stopped going to football, and barely eats with the family. Carl has put it down to\n  being sixteen. Then, one evening, Ethan's younger sister shows Carl a message Ethan posted on a group chat with his friends: \"Honestly what's\n  the point of any of it. Won't be around to see it anyway.\" One friend has replied with a laughing face.\n\n  Carl's wife wants to confiscate Ethan's phone and ground him for posting something so upsetting. Carl's instinct is to say nothing, in case\n  asking makes things worse.\n\n  Carl remembers a leaflet from Ethan's school about talking to teenagers, and the advice that asking directly is safe.\n\nCarl has also noticed that Ethan has stopped gaming with his friends online, which used to take up most of his evenings, and that his light is often on at three in the morning when Carl gets up for the toilet.\n\nCarl has also noticed that Ethan has deleted most of his photos from the past year, and that last week he gave his younger sister his favourite hoodie, the one he has worn almost every day since he was fourteen, saying he did not need it any more. Carl had thought it was a kind gesture between siblings, and had said so.",
+   "misread": "Carl's wife read the message as bad behaviour to be punished, and Carl's own first reading was that the safest thing was not to ask, for fear of putting the idea in Ethan's head. Both readings would have left Ethan alone with what he had written.\n\nThe friend's laughing reply also mattered. It told Ethan that the message had landed as a joke, which may have been what he hoped, and may have been what he feared.",
+   "betterRead": "Talk of having no future, even in a group chat and even with a laughing reply beneath it, is one of the clearest warning signs, and it should be taken seriously every time. The research is clear that asking directly does not increase risk: Dazzi and colleagues and Blades and colleagues found no increase in suicidal thinking from being asked, and some evidence that it helped. Carl knocked on Ethan's door that evening, sat on the end of the bed, and said, \"I saw what you put on the group chat. I'm not angry. I'm worried about you. Are you thinking about suicide?\" Ethan was silent, then said sometimes, at night, but not tonight. Carl listened. He did not argue or tell Ethan how much he had to live for. He asked whether they could see the doctor together the next day, and whether Ethan would be all right with him telling Ethan's mum. Ethan agreed to both. The doctor referred him to the young people's mental health service, and the school was told, with Ethan's permission. Carl checked in every evening, briefly, and in the spring Ethan went back to football."
+  },
+  {
+   "title": "The widower who was 'ready to go'",
+   "scene": "Alan, seventy-nine, lost his wife, Joan, eighteen months ago after fifty-four years of marriage. His daughter, Linda, visits every Sunday.\n  Over the winter she notices that he has stopped going to his bowls club, that he has given his golf clubs to his grandson, and that he has\n  started saying things like \"I've had a good innings\" and \"I'm ready to go now, love, I've had my life.\" He says them cheerfully, while making\n  the tea.\n\n  Linda's husband tells her that this is what old people say, and that her father is simply being realistic about his age. Linda half agrees.\n  Her father has never been a man for drama, and he does not seem unhappy, exactly. He seems settled.\n\n  But she also notices that he has written out a list of where all his papers are and left it on the kitchen table, where she would see it, and\n  that he has asked her twice whether she would look after Joan's cat.\n\nLinda also remembers that her mother's death was sudden, a stroke in the kitchen, and that her father found her. He has never talked about that morning, and Linda has never asked.\n\nWhen Linda mentions the list of papers, her father laughs and says that someone has to be organised in this family. She laughs too, and then feels sick on the drive home.",
+   "misread": "Linda's husband read Alan's remarks as the ordinary realism of old age, and his calm as acceptance. Older men's talk about being ready to go is often treated this way, and it is one reason their distress can be overlooked.\n\nHis cheerfulness also made the remarks easier to dismiss. People expect distress to sound distressed, and Alan's lightness hid how far his thinking had gone.",
+   "betterRead": "Older men, especially after bereavement, are among the people whose warning signs are most easily missed, because talk of having had enough can sound like ordinary acceptance of age. Alan's cluster went beyond that: withdrawing from his club, giving away things that mattered, putting his affairs in order and asking about the cat, alongside repeated talk of being ready to go. The chapter notes that a sudden calm can mean many things, and that it is a reason to check in. Linda asked, the following Sunday, side by side on the bench in his garden: \"Dad, you've given away your clubs and written out where everything is, and you keep saying you're ready to go. I'm worried about you. Are you thinking about ending your life?\" Alan was quiet for a while, then said that he thought about it, because he did not see what he was for any more. Linda listened, then told him how much he still mattered to them all. She asked him to come with her to his doctor, and he agreed. The doctor arranged support; Linda found a widowers' bereavement group that met on Thursdays. Alan went, grumbling, and went back the next week."
+  },
+  {
+   "title": "The friend who said no",
+   "scene": "Hamid and Leo have been friends since university. Leo, thirty-three, was made redundant in the summer and has been low ever since: he has\n  stopped answering messages for days at a time, and when they meet he drinks more than he used to and says very little. One night, over a\n  takeaway, Leo says that he feels like he has failed at everything, and that his family would be better off if they did not have to worry about\n  him.\n\n  Hamid takes a breath and asks him directly whether he is thinking about suicide. Leo looks surprised, then says no, he is not, he is just fed up,\n  and he did not mean it like that.\n\n  Hamid is not sure whether to believe him. He feels awkward, and worries that he has made things weird between them.\n\nHamid has done a short mental health awareness course through work, and the trainer said that the worst thing you can do is not ask. He did not expect to need it so soon, or to feel so awkward when he did.\n\nLeo has also stopped going to the gym, which he used to go to five times a week, and has started sleeping until the afternoon. His flat, which he used to keep spotless, is full of takeaway boxes, and he has not opened his post for weeks.",
+   "misread": "Hamid's worry was that a no meant he had misread the situation and made things worse by asking. He also wondered whether he should keep pressing until Leo admitted something.\n\nAnd Hamid's awkwardness was not a sign that he had done something wrong. It was simply what asking a hard question feels like the first time.\n\nLeo's own surprise also mattered. People often deny thoughts the first time they are asked, because the question catches them off guard, and then come back to it later once they know it is safe.",
+   "betterRead": "A no is not a failure. Asking showed Leo that suicide was something he could talk to Hamid about, and that is valuable whatever the answer is on the night. Pressing past a no tends to feel like an accusation. The better response, which Hamid managed, was to accept the answer, keep the door open, and stay in touch: \"OK. I'm glad. But if that ever changes, or if things get that bad, I want you to tell me. Any time.\" He then asked about the job search and offered to look over Leo's CV. Over the next two months he messaged every few days, asking nothing heavy, and they kept meeting. In November, Leo rang him late one evening and said that things had got worse and that he had started thinking about it, and that he was ringing because Hamid had told him to. Hamid stayed on the phone, they called a crisis line together, and Leo saw his doctor the next morning. Later, Leo told him that the question in the summer, and the fact that Hamid had not made a big deal of the no, was why he had known who to call."
+  }
+ ],
+ "workedReading": {
+  "title": "The message at midnight",
+  "scene": "Rachel, thirty-eight, is getting ready for bed when her phone buzzes. It is her younger brother, Tom, thirty-four, who has been struggling since his divorce and his move to a city three hours away. The message says: \"Sorry for everything. I love you. Tell Mum I'm sorry.\" Tom does not usually text late, and he never says he loves her. Over the past few weeks his messages have been short and flat, and on the phone at the weekend he said he did not see things getting better.\n\nRachel and Tom have always been close, but since the divorce he has been harder to reach. She had been meaning to visit for weeks and had kept putting it off.\n\nRachel also knows that their father died when Tom was twelve, and that Tom has always found it hardest of all of them to ask for help. She has never heard him sound the way he sounded at the weekend.",
+  "steps": [
+   {
+    "label": "Take it seriously",
+    "text": "Rachel's first thought is that she might be overreacting. Her second is that this message, after weeks of low, flat contact and talk of nothing getting better, has the shape of a goodbye. She decides that she would rather be wrong and embarrassed than not act, and that the next step is to reach him now, not in the morning.\n\nShe also notes that the message mentions their mother, and an apology to her. Messages that try to settle things with the people closest to someone are among the goodbyes that crisis services describe."
+   },
+   {
+    "label": "Reach him, and ask plainly",
+    "text": "She rings him immediately. He answers on the fifth ring, quietly. She says, \"Tom, I've just seen your message, and I'm really worried about you. Are you thinking about suicide?\" There is a long pause, and then he says yes. Rachel's stomach drops. She breathes out and says, \"Thank you for telling me. I'm so glad you picked up.\"\n\nShe also keeps her voice low and steady, even though her heart is racing. The person at the other end is listening to how she sounds as much as to what she says."
+   },
+   {
+    "label": "Judge how urgent it is",
+    "text": "She asks, gently, whether he is safe right now, tonight. He says he does not know. She asks whether he has thought about how, and he says yes. She does not ask for any details. The answers tell her that he is in danger now, and that this is not a conversation to finish and pick up tomorrow.\n\nShe also resists the urge to ask why, or to tell him he cannot do this. Those questions can wait. What matters now is whether he is safe and how to keep him that way."
+   },
+   {
+    "label": "Get help while you stay",
+    "text": "Rachel keeps Tom on the phone and signals to her partner, Dan, to call the emergency services for Tom's address from his own phone. She tells Tom that she is not going anywhere, and asks him to stay on the line with her. She asks whether there is anyone nearby who could come round, and whether he would move to a different room from where he is. She talks to him about ordinary things: his dog, their mum, the holiday they went on as children. She listens far more than she speaks.\n\nShe also keeps her questions simple and gives him small things to do: stay on the line, sit down, tell her about the dog. Small, concrete requests are easier to follow in a crisis than big ones."
+   },
+   {
+    "label": "Be honest about telling",
+    "text": "When Tom asks her not to tell anyone, she says, \"I love you too much to keep this to myself. Dan's calling someone who can help tonight, and tomorrow we'll decide together who else needs to know.\" Tom is quiet, then says OK. Rachel stays on the phone until she hears a knock at his door and voices she does not know, and then she speaks to the paramedics herself.\n\nShe also tells him what will happen next, so that the knock on the door does not come as a shock: someone is coming to help, they will be kind, and she will stay on the phone until they arrive."
+   },
+   {
+    "label": "Follow up",
+    "text": "Tom is taken to hospital, assessed and supported by a crisis team over the following weeks. Rachel drives up the next day and stays for the weekend. She helps him make a safety plan with the crisis worker, and her name and number go on it. After she goes home, she texts every day for a fortnight, and then every few days, never asking for much: a photo of his dog, a question about football. She puts the date of the midnight message in her calendar, so that she can check in on him next year.\n\nShe also asks the crisis worker, with Tom's agreement, what she should look out for and who she should ring if she is worried again, so that she is not left guessing."
+   },
+   {
+    "label": "Look after yourself",
+    "text": "For several weeks afterwards, Rachel cannot stop replaying the call. She talks to Dan and to a close friend, and rings a crisis line herself one evening, as someone worried about a family member, and finds it helps. She notes that she did not save Tom on her own. She asked, she stayed, she connected him to people who could help, and she kept in touch. In the spring, Tom tells her that he is still here because she rang straight back.\n\nShe also takes a few days off work, which she has never done for her own sake, and is surprised by how much she needs them."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating it as a joke or a bid for attention",
+   "body": "Talk of suicide is often said lightly: as a joke in the pub, a throwaway line in a group chat, a dark remark about money or a relationship. It is also often dismissed as attention-seeking. Both readings are dangerous. Crisis services are clear that talk about wanting to die, about being a burden or about having no future should be taken seriously every time, however it is said. If someone is seeking attention by talking about suicide, they need attention. The cost of a private, kind follow-up to a remark that turns out to mean nothing is a moment of awkwardness. The cost of ignoring one that meant everything cannot be undone.\n\nIt also helps to remember that people sometimes test the water with a light remark, to see how it lands. A friend who takes it seriously, gently and privately, may be the first person who has.\n\nAnd remember that someone who has talked about suicide before and not acted is not safe for that reason. Every time is worth taking seriously."
+  },
+  {
+   "title": "Asking in a way that invites a no",
+   "body": "\"You're not thinking of doing anything silly, are you?\" \"You wouldn't do anything stupid, would you?\" Questions like these are asked out of fear and love, and they tell the person which answer you want to hear. Most people give it. They also carry a judgment, that the thought is silly or stupid, which adds shame to whatever the person is carrying. Ask plainly, using the word, and in a tone that says you can hear either answer: \"Are you thinking about suicide?\" Describe what you have noticed first, so that the question has a reason. And then wait, for as long as the answer takes.\n\nIt also helps to avoid euphemisms of your own, such as \"ending it\" or \"doing something\". They can be misunderstood, and they can suggest that you cannot bring yourself to say the word, which makes it harder for the other person to say it too."
+  },
+  {
+   "title": "Arguing them out of it",
+   "body": "When someone says yes, many people's instinct is to argue: you have so much to live for, think of your children, things are not that bad, other people have it worse. It comes from love and panic, and it usually lands as a sign that you have not understood how much pain they are in, or that their pain is wrong. It can end the conversation. Listen instead. Reflect back what you hear. Ask what has been happening. Reasons to live matter, and they often come out in the conversation, but they are far more powerful when the person finds them than when you list them.\n\nIt also helps to resist minimising: \"It's not that bad\" or \"You'll feel better tomorrow\". However the situation looks from outside, it feels unbearable from inside, and being told otherwise can make someone feel more alone."
+  },
+  {
+   "title": "Keeping it secret, or carrying it alone",
+   "body": "Someone who tells you they are thinking about suicide may ask you to keep it secret, and promising feels like the way to keep their trust. It is a promise you cannot safely keep. Say instead that you care too much to keep it to yourself, and that you will decide together who to tell and how. Then help them connect to people who can help: a crisis line, their doctor, a family member. Carrying it alone is also a risk for you. Talk to someone you trust, and use the crisis lines yourself if you need to, because they support people who are worried about someone as well as people who are struggling.\n\nIt also helps to know in advance who you would tell. If someone you care about says yes, it is far easier to act quickly if you already know their doctor, their family or the crisis line for where they live.\n\nAnd if the person later thanks you, or does not, either is fine. You did not do it to be thanked."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What if they get angry with me for asking?",
+   "a": "Some people do react with anger or embarrassment at first, especially if they are not ready to talk or if they feel caught out. It does not mean you were wrong to ask. Stay calm, and say why you asked: \"I asked because I care about you, and because I've been worried.\" Do not argue or press. Leave the door open: \"If you ever do want to talk, about anything, I'm here.\" And keep in touch afterwards, as usual, so that the question does not become a wall between you. Many people who were angry at being asked say later that it mattered that someone did.\n\nIt may also help to remember that the question has done its work even if they are angry. They now know that you noticed, that you care, and that suicide is something they could raise with you."
+  },
+  {
+   "q": "What can I do if they live far away?",
+   "a": "A great deal. Call rather than text, so that you can hear them and they can hear you. Ask directly. If they say they are in danger now, stay on the line and ask someone else to call the emergency services for their address, or call them yourself and give the address; emergency services can be reached for someone in another area. If they are not in immediate danger, help them connect with local help, such as a crisis line or their doctor, and ask whether there is someone nearby who could be with them. Then keep in touch: regular calls and messages from a distance still help someone feel that they belong.\n\nIt also helps to know the emergency number in the country where they live, if it is different from yours, and to save it in your phone alongside their address."
+  },
+  {
+   "q": "What if I say the wrong thing?",
+   "a": "There are no perfect words, and you do not need them. What matters most is that you ask, use the word, listen without arguing, and stay. If you say something clumsy, you can say so: \"That came out wrong. What I mean is that I care about you and I'm worried.\" People who have been suicidal often say that it was not the words that helped but the fact that someone noticed, asked and did not run away. If you freeze, a simple \"I'm here\" and a few minutes of quiet company are far better than a perfect sentence never said.\n\nIt also helps to remember that you are not trying to talk them out of anything. You are trying to stay with them long enough for help to arrive, and to let them know they are not alone.\n\nIt may also help to practise. The first drill in this chapter asks you to say the question aloud until your voice is steady, and many people find that a few minutes of practice make the real moment much less frightening."
+  },
+  {
+   "q": "Should I mention it if I see something worrying online?",
+   "a": "Yes. A post, a message or a status that talks about wanting to die, having no future or saying goodbye is a warning sign, just as it would be in person, as Carl found with Ethan's group chat. Reach out privately, by phone if you can, rather than replying in public. Ask directly how they are and whether they are thinking about suicide. If you believe someone is in immediate danger and you cannot reach them, contact the emergency services. Most social media platforms also have ways to report posts about self-harm or suicide so that support can be offered.\n\nIt also helps to keep the conversation private. Replying publicly can embarrass the person, invite comments that make things worse, and turn a moment of honesty into a spectacle.\n\nIf you see something worrying and you do not know the person well, you can still reach out kindly, or let someone closer to them know what you saw, so that it is not left unanswered."
+  },
+  {
+   "q": "How can I support someone bereaved by suicide?",
+   "a": "Gently, and for a long time. Grief after suicide is often tangled with guilt, anger, shame and questions that have no answer, and many bereaved people feel isolated, because others do not know what to say and stay away. Say the name of the person who died. Do not ask how it happened, or speculate about why. Do not suggest that anyone could have prevented it. Offer practical help, as the chapter on grief describes, and keep offering it for months. Support groups exist specifically for people bereaved by suicide, and many find them helpful because everyone there understands. People bereaved by suicide can themselves be at higher risk, so keep in touch, and ask how they are.\n\nIt also helps to look after yourself if you were close to the person who died. Many people bereaved by suicide find that the grief comes in waves for years, and that support, from friends, groups or professionals, helps."
+  },
+  {
+   "q": "What if I am the one thinking about suicide?",
+   "a": "Please tell someone now. You do not have to manage these thoughts on your own, and they do not mean that you will act on them. The crisis lines listed at the start of this chapter are free, confidential and open now, by phone or text in many countries. If you are in danger, call the emergency services. If you can, tell someone you trust, and see your doctor. Many people who have felt this way say that the feeling, however strong, changed with time and support. If you have made a safety plan, use it. If you have not, the third drill in this chapter can help you start one on a calmer day.\n\nIt may also help to know that asking for help is not a burden on the people who love you. Most would far rather know, and be able to help, than find out too late."
   }
  ],
  "watch": [
