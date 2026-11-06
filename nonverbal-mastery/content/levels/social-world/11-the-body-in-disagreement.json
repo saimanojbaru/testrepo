@@ -73,6 +73,27 @@
    "doCaption": "A repair attempt: open hands, softer voice",
    "dontCaption": "Walking off mid-row without a word",
    "annotation": "Leaving with no return is a stonewall. A softened voice and open hands offer a way through; accepting one is a skill as well."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Sitting beside him, at his level",
+   "dontCaption": "Standing over a seated teenager",
+   "annotation": "Standing over someone turns a talk into an interrogation. Sitting at the same level, turned towards him, makes room for an answer."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_pro_arms_folded_seated",
+   "doCaption": "Listening to the end before you answer",
+   "dontCaption": "Arms folded, waiting for your turn to reply",
+   "annotation": "Folded arms and a fixed stare say the reply is already loaded. Letting the other person finish is the first repair."
+  },
+  {
+   "doPoseId": "p_mixed_seated_turned",
+   "dontPoseId": "p_gesture_chop",
+   "doCaption": "Turned towards her, voice lowered",
+   "dontCaption": "Chopping the air to win the point",
+   "annotation": "A chopping hand pushes every word. A lower voice and a body turned towards the other person make disagreement a conversation."
   }
  ],
  "caseStudy": "Rob, forty-six, and his younger brother Chris, forty-two, disagree about their mother, who is eighty and struggling at home. Rob thinks she should move into a care home; Chris thinks she should stay and have more help. They first discuss it standing in her kitchen while she is asleep upstairs. Rob opens with “You're being completely unrealistic,” and within two minutes they are standing a foot apart, voices low but hard. When Chris says that Rob just wants an easy life, Rob rolls his eyes. Chris feels his face go hot, says “Forget it,” and walks out.\n\nA week later, at Chris's suggestion, they meet for a walk along the river where they used to fish as boys. Side by side, they start again. Rob says, more slowly this time, that he is frightened of their mother falling with nobody there. Chris says that he is frightened she will give up if she leaves the house. Neither of them has said this before.\n\nHalfway along the path, the argument starts to heat up again. Chris notices his jaw clenching and says, “Hang on, I'm getting wound up. Give me a minute.” They walk on in silence for a while. Then Rob says, “Dad would have just told us both to shut up and made a pot of tea,” and they both laugh.\n\nBy the end of the walk, they have agreed to try more help at home for three months, with a list of things that would tell them it was not working. Rob apologises for the eye roll. Chris says he had not even noticed, which is not true, and they both know it.",
@@ -92,6 +113,10 @@
     "Choose a time, place and posture for raising it: seated, level, at a calm moment.",
     "Say the soft opening aloud until it sounds like you.",
     "After the conversation, note how the opening shaped what followed."
+   ],
+   "variations": [
+    "Rewrite the opening for a different person, such as a friend instead of a partner, and notice how the wording changes.",
+    "Practise the soft opening with someone you trust, and ask them how it felt to hear it."
    ]
   },
   {
@@ -102,6 +127,10 @@
     "Note any moment of eye rolling, sneering, sarcasm or looking down on the other person, from you or them.",
     "Write what each moment did to the conversation.",
     "Choose one habit to watch for in yourself."
+   ],
+   "variations": [
+    "Ask someone close to you whether they have noticed any contempt habits in you, and listen without defending yourself.",
+    "Watch a television debate and count the moments of contempt, then notice what happens to the discussion after each one."
    ]
   },
   {
@@ -113,6 +142,10 @@
     "Write the sentence you could use next time to call a break.",
     "Decide what you will do during a break to calm down rather than rehearse.",
     "Tell the person you argue with most often about the plan, at a calm moment."
+   ],
+   "variations": [
+    "Ask the person you argue with most what your flooding looks like from outside, and add their observations to your list.",
+    "Practise calling a break in a mild disagreement first, so that the phrase is familiar when you really need it."
    ]
   },
   {
@@ -123,6 +156,10 @@
     "Make one change: sit down, turn to an angle, step back or suggest a walk.",
     "Notice whether the tone changes in the following minutes.",
     "Afterwards, write down what you changed and what happened."
+   ],
+   "variations": [
+    "Try changing the geometry in a work discussion, for example by moving to the corner of a table, and notice the effect.",
+    "Suggest a walking conversation the next time you need to raise something difficult with a friend."
    ]
   }
  ],
@@ -204,6 +241,45 @@
    "explain": "Disagreement raised privately, at the same level and with a soft start can be heard on its merits. In front of others, or with a dominating posture, it puts standing at stake and tends to harden positions.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Levenson and Gottman find about partners' bodies during conflict?",
+   "options": [
+    "Their heart rates and other bodily signals tended to rise and fall together",
+    "Each partner's body stayed completely calm, whatever the other one was doing",
+    "Only the partner who started the argument showed any physical changes at all",
+    "Bodily signals were unrelated to conflict and depended only on the time of day"
+   ],
+   "answer": 0,
+   "explain": "Levenson and Gottman found physiological linkage: partners' heart rates and other signals rose and fell together during conflict. Flooding spreads, which is why one person calming down helps both.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague rolls his eyes and laughs through his nose whenever another colleague presents an idea in meetings. Others have started to smile along. What fits this chapter best?",
+   "options": [
+    "Ignore it, since an eye roll is a small, private reaction that harms nobody",
+    "Roll your own eyes back at him in the next meeting so he sees how it feels",
+    "Raise it with him privately, describing the behaviour and its effect on the team",
+    "Tell the presenter to toughen up, since she will face worse than this in her career"
+   ],
+   "answer": 2,
+   "explain": "The eye roll and scornful laugh are contempt, which attacks a person rather than an idea and spreads to others. Raising it privately, as behaviour and its effect, is more likely to change it than a public rebuke.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that sarcasm and eye-rolling in arguments are harmless, just a bit of banter. What does this chapter say?",
+   "options": [
+    "It is right, since sarcasm helps both people to relax and see the funny side",
+    "Contempt, often carried by the body, was among the strongest predictors of breakdown",
+    "It is right between men, though not between partners or colleagues",
+    "It is wrong, but only when the sarcasm is said out loud rather than shown"
+   ],
+   "answer": 1,
+   "explain": "Gottman found contempt, the eye roll, the sneer and the mocking tone, to be among the strongest predictors of relationships breaking down. It attacks dignity rather than ideas.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +308,110 @@
    "work": "Difficult Conversations: How to Discuss What Matters Most",
    "author": "Douglas Stone, Bruce Patton and Sheila Heen",
    "note": "Viking, 1999. Practical guidance on disagreeing well, from the Harvard Negotiation Project."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The eye roll in the meeting",
+   "scene": "Asha, thirty-six, is presenting a new scheduling system to her department. Halfway through, she proposes changing how the night shift is\n  rostered. Dan, forty, who has run the night rota for eight years, rolls his eyes, leans back in his chair, folds his arms and gives a short laugh\n  through his nose. He says nothing. Two colleagues glance at him and smile.\n\n  Asha falters, loses her place and rushes the rest of the presentation. In the discussion that follows, Dan's objections are sharp and sarcastic:\n  \"I'm sure that'll work brilliantly at three in the morning.\" Asha answers defensively. By the end, the room has split into two camps, and nothing\n  has been decided.\n\n  Their manager, Grace, watching from the end of the table, noticed the eye roll. She also knows that Dan's rota has been the source of three\n  complaints this year, and that he has been under pressure about it.\n\nDan had been told that morning, by a senior manager, that if the complaints about the night rota continued, the rota would be taken off him. He had not told anyone, and he walked into Asha's presentation already braced for an attack.\n\nAsha had spent three weeks on the proposal and had tested it with two night-shift workers, both of whom liked it. She had not thought to talk to Dan first, which she realises afterwards was a mistake.\n\nAfter the meeting, Asha sat in her car for ten minutes before driving home, replaying the eye roll. She told her partner that evening that she did not think she could work with Dan.",
+   "misread": "Dan read his eye roll and laugh as a small, private reaction to an idea he thought was naive. The colleagues who smiled read it as permission to dismiss the proposal. Asha read it, accurately, as contempt for her, not just for her idea.\n\nAnd the colleagues who smiled read the eye roll as a signal of where the room's status lay, which is how contempt from a senior or long-standing person can shape what a whole group thinks.\n\nAsha's reading was accurate, but her response, answering defensively, kept the exchange on the same footing. Defensiveness is one of the four behaviours Gottman described, and it often follows contempt.\n\nGrace, too, had a choice about how to read it. A manager who reads contempt as a personality flaw tends to punish it; one who reads it as a sign of defensiveness can often find a way through.",
+   "betterRead": "Gottman identified contempt as the most corrosive of the four behaviours he found in failing relationships, and it is carried largely by the body: the eye roll, the scornful laugh, the chin lifted to look down, the leaning back with arms folded. Contempt attacks a person's standing rather than their argument, and it spreads, as the colleagues' smiles showed. Dan's reaction probably came from defensiveness: his rota was under criticism, and Asha's proposal touched it. That does not make the eye roll acceptable, but it suggests where a repair might start. Grace's better response was to address it privately rather than in front of the room. She told Dan, the next day, that she had seen the eye roll, that it had shut down a discussion the department needed, and that she wanted his expertise in the redesign rather than his scorn. Dan was embarrassed, then admitted that he felt the complaints had been unfair. Grace asked him to work with Asha on the night-shift part. Their first meeting was stiff; their third was productive."
+  },
+  {
+   "title": "Standing over the kitchen table",
+   "scene": "Steve, forty-eight, has just had an email from his son Josh's school: Josh, sixteen, has missed six homework deadlines and skipped two\n  lessons. When Josh comes home, he finds his father waiting in the kitchen. Josh sits at the table with his phone. Steve stays standing, on the\n  other side of the table, hands on its edge, leaning over. He reads the email out and asks what Josh thinks he is playing at.\n\n  Josh looks at his phone, shrugs and says it is not a big deal. Steve's voice rises. He leans further over the table. Josh puts his hood up, slides\n  down in his chair and stops answering altogether. After ten minutes, Steve tells him he is grounded for a month, and Josh walks out and slams his\n  bedroom door.\n\n  Steve's wife, Kath, who heard most of it from the next room, asks him later whether he noticed that he had been standing over Josh the whole\n  time.\n\nSteve had a difficult day himself. His own manager had criticised his team's figures that afternoon, and he had driven home with the email from school replaying in his head, rehearsing what he would say.\n\nJosh's younger sister, Amy, was sitting in the next room doing homework and heard every word. She went upstairs before it ended and put her headphones on, which Kath noticed too.",
+   "misread": "Steve read Josh's shrug, his phone and his slide down the chair as indifference and defiance, and raised his voice to break through them. He did not notice that the arrangement of their bodies had turned a discussion into an interrogation.\n\nHe also read his own anger as a reasonable response to the school's email, which it was, without noticing that the anger was being delivered from a position Josh could only defend against.\n\nAnd because the email had already convinced him that Josh was simply idle, he did not ask the one question that might have opened the conversation: what was going wrong?",
+   "betterRead": "Where bodies are placed during a disagreement shapes how it feels. Standing over someone who is sitting, leaning across a table and reading out charges turns a conversation into a trial, and a teenager on trial will often do exactly what Josh did: shrink, hide behind a hood and shut down. The chapter on silence described stonewalling and flooding, and a sixteen-year-old being loomed over by an angry father is a likely candidate for both. Steve's harsh opening, reading out the email and asking what Josh was playing at, also set the course in the way Carrère and Gottman's research suggests early moments do. The better approach was to change both the opening and the geometry. Two days later, Steve sat down beside Josh on the sofa during a match, waited for half-time, and said, \"I'm worried about school. What's going on?\" Josh was quiet, then said that he was struggling with maths and had been too embarrassed to say. They agreed to talk to his teacher together. The grounding was quietly shortened.\n\nSteve also told Josh, on the sofa, that he was sorry for standing over him, which Josh did not answer but which, Kath said, he clearly heard."
+  },
+  {
+   "title": "The joke that did not land",
+   "scene": "Mark and Lisa, both in their forties, are arguing about money: Lisa wants to save for a house extension, and Mark wants to spend the money on\n  a family holiday. The argument has been going for twenty minutes and is getting heated. Lisa says that Mark always puts fun before the future.\n  Mark, trying to lighten the mood, puts on a silly voice and says, \"Yes, dear, I'm a terrible, irresponsible man,\" and grins.\n\n  Lisa's face goes cold. She says, \"You never take anything I say seriously,\" and leaves the room.\n\n  Mark is baffled. He was trying to calm things down. He tells his brother later that Lisa has lost her sense of humour.\n\nMark grew up in a family where arguments were defused with jokes, and humour has always been his way of calming things down. Lisa grew up in a family where jokes during arguments meant someone was not being taken seriously.\n\nThey have had versions of this argument for years. Lisa thinks Mark spends money as soon as it arrives; Mark thinks Lisa never lets them enjoy anything. Both of them are tired, the children are in bed upstairs, and the bank statement is on the kitchen table between them, where Lisa put it to start the conversation. Mark saw it when he came in and felt his shoulders rise before either of them had said a word.\n\nLisa had rehearsed her point in the car on the way home, and made it calmly, she thought. She saw Mark's grin before she heard the voice, and felt, she said later, as if she had been patted on the head.",
+   "misread": "Mark read his joke as a repair attempt, a way of softening a tense moment. Lisa read it as mockery: a silly voice, an exaggerated confession and a grin, at the exact moment she had made a serious point.\n\nAnd his conclusion, that Lisa had lost her sense of humour, located the problem in her, when the problem was the fit between the repair and the moment.\n\nLisa's reading, too, was coloured by history. Years of jokes at difficult moments had taught her to hear any joke in an argument as a refusal to engage.\n\nMark's grin, too, was a signal. A grin during someone else's serious point reads as dismissal almost everywhere.",
+   "betterRead": "Gottman's research found that what distinguished lasting couples was not the absence of conflict but repair attempts, small moves that stop a disagreement escalating, and whether those attempts were accepted. But a repair has to fit the moment. Humour can repair a row when both people are ready to laugh; at the peak of a serious point, a silly voice can look like contempt, which is the opposite of repair. Mark's joke imitated Lisa's tone and dismissed her point, two of the bodily markers of contempt the chapter describes, however he meant it. A better repair at that moment would have acknowledged her point first: \"You're right that I don't think enough about the future. Can we find a way to do both?\" Later that evening, Mark found Lisa in the kitchen, apologised for the voice, and said exactly that. Lisa said she would like to try. They agreed a smaller holiday and a savings plan. Lisa told him, a week later, that she did have a sense of humour, but not when she felt dismissed.\n\nMark now saves the silly voice for afterwards, when they laugh about the row."
+  },
+  {
+   "title": "The argument at the bar",
+   "scene": "Jim and Neil, both fifty-two, have been friends since university. They have always argued about politics, cheerfully, over pints. One\n  Friday, at the pub with four other friends, an argument about immigration gets out of hand. Both men lean in across the table. Their voices rise\n  to cover each other. Neither lets the other finish. Jim jabs a finger at the table; Neil laughs scornfully at one of Jim's points. The other\n  friends have stopped talking and are watching, one of them filming on his phone.\n\n  It has stopped being an argument about immigration. It has become a contest about who backs down first, in front of an audience.\n\n  Neil notices his own heart pounding and his face hot. He realises that he cannot remember the point he was trying to make.\n\nEarlier in the evening, Neil had been told by his doctor that his blood pressure was high, and he had been more irritable than usual all night. He had not mentioned it to anyone at the table.\n\nThe landlord, who knows them both, has wandered over and is hovering. Two of the other friends have started making jokes to break the tension, and both men have ignored them. Jim's voice has the edge it gets when he has had a bad week at work, which he has.",
+   "misread": "Both men read the argument as a matter of winning a point, and each read the other's raised voice and scornful laugh as attacks to be answered. Neither noticed that the audience had turned it into a status contest that neither could leave without losing face.\n\nThe phone being raised also changed the stakes. An argument that might be forgotten by morning could now be watched again, which made backing down feel even more costly.\n\nNeither man noticed that the other was flooding too. Two flooded men in front of an audience is one of the most reliable recipes for a fight.\n\nJim, for his part, read Neil's scornful laugh as a personal insult, which it partly was, and answered it in kind. Contempt invites contempt back.",
+   "betterRead": "Between male friends, disagreement often wears the clothes of banter, and it can slide into a contest of status in which winning matters more than the question. The body shows it: voices rising to cover each other, both men leaning in, neither giving an inch, an audience watching to see who backs down. Neil's pounding heart, hot face and lost train of thought were the signs of flooding the chapter describes, and they meant he could no longer think clearly or take in what Jim said. His better move was to step out of the contest without a defeat. He sat back, laughed properly, and said, \"Right, I need a break before I say something stupid. Same again?\" and went to the bar. When he came back, he changed the subject. The next day, he messaged Jim: \"Sorry about last night. Got carried away. Still think you're wrong, mind.\" Jim replied with a laughing face and said he had been about to send the same message.\n\nNeil also noted, later, that his doctor's news had been sitting under the argument all evening. Knowing what you bring to a disagreement is half the battle."
+  }
+ ],
+ "workedReading": {
+  "title": "Disagreeing with the boss",
+  "scene": "Priya, thirty-four, is a project manager. Her manager, Graham, fifty-five, has announced a plan to merge two teams and move both onto a new software system within six weeks. Priya thinks the timeline is unrealistic and that it will cost the company its biggest client, whose contract renews in the same period. She wants to say so. She is also aware that Graham is proud of the plan, that he has already presented it to the directors, and that the last person who challenged him in a meeting was moved off a major project soon afterwards.\n\nPriya has prepared carefully. She has the client's renewal dates, a one-page outline of a phased plan and a list of the risks. She has also decided in advance what she will do if Graham reacts badly: thank him for his time, and put her concerns in a short email afterwards.\n\nPriya has also noticed that Graham has been under pressure from the directors himself, and that the plan may be partly his response to being asked to cut costs quickly. Disagreeing with the plan, she realises, may feel to him like disagreeing with his survival.\n\nShe has also checked her own facts twice. Disagreeing with someone senior on a mistaken detail would cost her the argument and some of her credibility.",
+  "steps": [
+   {
+    "label": "Notice your own signs",
+    "text": "When Graham first presented the plan, Priya felt her jaw set and her shoulders lift. She noticed her arms folding and a sharp comment forming. She did not say it. She notes now that those were her own signs of disagreement and the first rungs of anger, and that if she had spoken then, she would have opened harshly, in public, in a way that would have cost her the argument.\n\nShe also notices that her disagreement is partly personal. Graham did not consult her before presenting the plan, and she is hurt by that. She sets the hurt aside for this conversation, because it would turn a question about timelines into a complaint about respect.\n\nShe also notices that her disagreement has been building for days, in her stomach and her sleep. Bringing it to Graham calmly will take some of that strain off her, whatever he decides."
+   },
+   {
+    "label": "Choose the time and place",
+    "text": "She asks for twenty minutes with Graham alone, on a Tuesday morning, when he is usually most relaxed. She avoids the end of the day and the team meeting, where an audience would turn disagreement into a contest of status. She books a small meeting room rather than his office, so that they are on neutral ground.\n\nShe also avoids raising it by email first. An email can be read in the harshest possible tone, forwarded and answered defensively. A short, calm conversation is easier to keep soft.\n\nShe also keeps the meeting short. Twenty minutes tells Graham that this is a focused conversation, not a long challenge, and makes it easier for him to say yes to the time."
+   },
+   {
+    "label": "Arrange the bodies",
+    "text": "When they sit down, she chooses a chair at the corner of the table, at an angle to his, rather than directly opposite. She keeps her laptop closed and her hands visible and still. She sits level with him and does not lean in. The geometry says that this is a conversation between two people looking at a problem, not a confrontation.\n\nShe also notices that Graham chose the chair facing the door, which is his usual habit. She sits so that she is not blocking his view of it, a small thing that keeps him from feeling cornered.\n\nShe also avoids sitting with her back to the window, so that Graham can see her face clearly. Being able to read each other's faces helps a disagreement stay a conversation."
+   },
+   {
+    "label": "Open softly",
+    "text": "She starts with what she agrees with: \"I think merging the teams makes sense, and I want it to work.\" Then she describes the problem calmly, as a fact rather than a criticism: \"The six-week timeline overlaps with the Henderson renewal, and I'm worried we won't be able to support them through both.\" Then she asks a question: \"Could we look at phasing it?\" She does not say that the plan is unrealistic or that he has not thought it through.\n\nShe also keeps her voice level and her pace slow. A fast, urgent delivery would make the problem feel like a crisis and Graham like the man who caused it.\n\nShe also avoids the word \"but\" after her opening agreement. \"I think it makes sense, and I'm worried about the timeline\" keeps the agreement standing; \"but\" would have cancelled it."
+   },
+   {
+    "label": "Read his response",
+    "text": "Graham's jaw tightens, and he leans back and folds his arms. He says that the directors have already approved the timeline. Priya notes the signs of defensiveness and does not push harder. She says, \"I understand. I don't want to make it harder for you with the directors. Can I show you the Henderson dates?\" She opens her laptop and turns it so that they can both see it, side by side.\n\nShe also notes that his defensiveness is about the directors, not about her. Knowing what his folded arms are protecting helps her offer him a way through rather than an argument.\n\nShe also notes that his question, \"What would phasing look like?\", is itself a repair attempt. Accepting it, by answering helpfully rather than triumphantly, is how the disagreement stays on track."
+   },
+   {
+    "label": "Make and accept repairs",
+    "text": "Looking at the dates, Graham sighs and says that he had not realised the renewal was so close. Priya says that it was not obvious from the project plan, and that she only noticed it last week. The remark takes the blame off him. Graham's arms unfold. He says, \"All right. What would phasing look like?\" Priya has a one-page outline ready, and they go through it together.\n\nShe also lets the silence sit after he looks at the dates, without filling it. People often change their minds in silences, and rushing in can stop them.\n\nShe also resists the urge to say \"I told you so\" in any form, even in her tone. Letting the dates speak for themselves allows Graham to reach the conclusion himself."
+   },
+   {
+    "label": "What happened",
+    "text": "Graham takes a phased version to the directors, presenting it as his own refinement, which Priya is happy to let him do. The Henderson contract is renewed. A month later, Graham asks Priya to review the next phase of the plan before he presents it. She notes that the disagreement had been decided before she said a word: by the time, the place, the chair she chose, the first sentence she spoke and the way she handled his folded arms.\n\nShe also sends him a short email afterwards, thanking him for his time and summarising what they agreed, so that the conversation has a clear outcome and nothing is misremembered.\n\nShe also notes that Graham never had to admit he was wrong. The disagreement was resolved by a shared look at the dates and a question he asked himself, which is often the most durable way for someone senior to change course."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Starting harshly",
+   "body": "How a disagreement begins seems to shape much of how it ends. Carrère and Gottman found that newlywed couples who later divorced showed more negative emotion from the first moments of their conflict discussions. A harsh opening, criticism, sarcasm, an accusation or a list of failings, puts the other person on the defensive before the real issue has been named. A soft opening describes the problem calmly, says what you feel, and asks for something specific: \"I'm worried about the money, and I'd like us to agree a budget.\" It is not weakness. It is the opening most likely to get you what you want.\n\nIt also helps to choose the moment. A soft opening at eleven at night, when both people are tired, or just as someone walks in the door, is still badly timed. A good opening needs a good moment.\n\nIt also helps to write down the harsh opening you are tempted to use, and then to write the soft one. Seeing the two side by side often makes the choice obvious.\n\nIt also helps to remember that a harsh startup often comes from having waited too long. Raising small things early, while they are still small, makes soft openings much easier."
+  },
+  {
+   "title": "The poison of contempt",
+   "body": "The eye roll, the sneer, the scornful laugh, the mocking voice and the chin lifted to look down on someone attack a person's dignity rather than their argument, and Gottman found contempt to be among the strongest predictors of relationships breaking down. It is easy to tell yourself that an eye roll is a small, private reaction. It is not private: the other person sees it, and so does everyone else, and it often spreads, giving others permission to dismiss the person too. If you catch yourself rolling your eyes or sneering, stop, and ask what is underneath it, which is often hurt or defensiveness.\n\nIt also helps to watch for contempt in yourself when you are tired, stressed or feel unheard. Many people who are rarely contemptuous find it creeping in at those times.\n\nIt also helps to notice contempt that is directed at whole groups: \"typical management\", \"typical men\", \"that lot\". Contempt for a group often leaks into how you treat its members in a disagreement.\n\nContempt can also be silent. A look held a moment too long, a pointed glance at someone else, a pause before answering that says \"how stupid\": all of these carry it without a word."
+  },
+  {
+   "title": "Geometry that pushes towards a fight",
+   "body": "Standing face to face at close range, chests forward, turns any disagreement towards a confrontation. Standing over someone who is seated turns it into an interrogation. Blocking a doorway traps the other person. Leaning across a desk or table makes every point feel like a push. These arrangements raise arousal on both sides and make flooding more likely. Change the geometry when a discussion heats up: sit down, turn to an angle, step back, open a door, or suggest walking and talking side by side. Bodies that are arranged for a conversation tend to have one.\n\nIt also helps to notice phones. A man who looks at his phone while you are talking, or holds it up between you, is changing the geometry of the conversation as much as one who stands over you.\n\nIt also helps to notice who is sitting where before the discussion starts. Moving your chair, opening a window or suggesting a walk before you begin is easier than changing the geometry in the middle of a row.\n\nIt also helps to keep the other person's exit open. A disagreement in which someone feels trapped, physically or socially, tends to escalate, because they fight to get out."
+  },
+  {
+   "title": "Refusing repairs, and never calling a break",
+   "body": "Repair attempts, a joke, a softened voice, a touch, \"I see your point\", \"let me try that again\", are what keep disagreements from escalating, and refusing them, or not noticing them, lets a row run on. The opposite failure is pressing on when one or both of you is flooded, heart pounding, face hot, thinking narrowed, when nothing useful can be said. Learn to make and accept repairs, even small ones. And learn to call a break: \"I need twenty minutes, then I'll come back,\" and then come back.\n\nIt also helps to watch for the other person's repairs, which are often small and easy to miss: a softer tone, a slight smile, a hand moved towards yours, a question about your point. Noticing and accepting them is half of repair.\n\nIt also helps to agree, at a calm time, what each of you finds most repairing. One partner may want a touch; another may want words; another may want a break. Knowing this in advance makes repair much easier.\n\nAnd after a disagreement, it helps to close it: a word, a hug, a cup of tea, a \"thanks for talking about it\". A row that ends with a repair leaves both people better prepared for the next one."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is arguing bad for a relationship?",
+   "a": "Not in itself. Every couple in Gottman's studies argued, and many happy couples argue a great deal. What seemed to matter was how they argued: whether they began softly or harshly, whether contempt crept in, whether they could make and accept repairs, and whether they could calm down when they were overwhelmed. Couples who never argued were not necessarily happier, and some avoided disagreements that needed to be had. The same is likely to be true of friendships and working relationships. The aim is not to stop disagreeing but to disagree in a way that leaves the relationship intact.\n\nIt may also help to notice what your disagreements are really about. Many rows about washing up, money or timekeeping are about something underneath, such as feeling unappreciated or unheard, and the body often shows that before the words do.\n\nIt may also help to notice how disagreements end. Couples and friends who end rows with a repair, even a small one, tend to find the next row easier to start well.\n\nIt also helps to remember that disagreement can be a sign of a healthy relationship. People who feel safe enough to disagree with each other are often closer than people who never do."
+  },
+  {
+   "q": "What is a soft startup?",
+   "a": "It is a way of opening a disagreement that describes the problem rather than attacking the person. A soft startup usually has three parts: a calm description of what is happening, said as a fact rather than an accusation; how you feel about it; and a specific request. \"The washing up has been left for three nights, and I'm feeling worn out. Could we take turns?\" rather than \"You never do anything round here.\" It also has a body: seated, level, at an angle, with an open posture and a calm voice. A soft startup does not mean hiding the problem. It means raising it in the way most likely to get it solved.\n\nIt also helps to practise soft startups on small things first. A soft opening about the bins is a rehearsal for a soft opening about money or children.\n\nIt also helps to make the request specific and possible. \"Could we take turns with the washing up?\" can be answered; \"Could you be more considerate?\" usually cannot.\n\nIt also helps to keep the startup about one thing. Bringing up several grievances at once, often called kitchen-sinking, makes it almost impossible to solve any of them."
+  },
+  {
+   "q": "How can I tell when I am flooding?",
+   "a": "Learn your own signs, because they come before the loss of control. Common ones include heat in the face or chest, a pounding heart, clenched fists or jaw, tunnel vision, a voice that rises without your choosing, an urge to shout or to escape, and the sense that you can no longer follow what the other person is saying. Gottman has described a heart rate above about a hundred beats a minute as a rough marker. When you notice these, say that you need a break, at least twenty minutes, and spend it doing something genuinely calming rather than rehearsing the argument.\n\nSome people find it useful to agree, at a calm time, a word that either of them can use to call a break without explanation. It is easier to say a word than to explain that you are overwhelmed.\n\nIt also helps to know that flooding is contagious. If you can calm yourself, your partner's body is more likely to calm too, which is one more reason to take the break seriously.\n\nIt also helps to return when you said you would. A break that ends on time builds trust; one that becomes a day of silence turns into the stonewalling the chapter on silence described."
+  },
+  {
+   "q": "What if they will not accept my repair?",
+   "a": "Then try again, later, and try a different kind. Repairs often fail because of timing, at the peak of anger, or because they do not fit the moment: a joke when the other person feels unheard, a touch when they need space. Repairs that acknowledge the other person's point, take responsibility for your part, or ask for a pause tend to work better in serious moments than humour. Sometimes the other person is flooded and cannot take in any repair until they have calmed down. Keep offering, without demanding that it be accepted, and come back when both of you are calmer.\n\nIt also helps to remember that accepting a repair does not mean agreeing with the other person. It means allowing the disagreement to continue without escalating, which is often all a repair is asking for.\n\nIt also helps to watch for the moment when the other person is ready. A softening of the face, a sigh, a question about your view: these are often the signs that a repair will now be heard.\n\nIt also helps to make repairs physical as well as verbal, if the relationship allows it. A hand held out, a step closer or a softened posture can carry a repair when words would feel forced."
+  },
+  {
+   "q": "Can men disagree without it becoming a contest?",
+   "a": "Yes, though it takes some awareness of what turns a disagreement into a contest. Audiences make it worse, because backing down in front of others feels like losing. Rising voices, leaning in and interrupting raise the stakes on both sides. The signs that a disagreement has become a status contest are visible: neither man is listening, both are leaning forward, and the point has been forgotten. Moving the disagreement somewhere private, sitting back, letting the other man finish, saying \"fair point\" when one is made, and agreeing to disagree are all ways of keeping it about the question rather than about who wins.\n\nIt also helps to notice when you are arguing for the audience rather than the other person. If you find yourself glancing at the others to see how a point landed, the disagreement has probably become a contest.\n\nIt also helps to give the other man a way out. \"You might be right about that\" or \"Fair point, I hadn't thought of it that way\" lets him change his mind without losing face, which is often all he needs.\n\nIt also helps to agree, with friends who enjoy arguing, a signal that it has gone too far, such as \"time out\" or a hand on the table, so that either can stop it without losing face."
+  },
+  {
+   "q": "How should I disagree with someone more senior?",
+   "a": "Privately, softly and with something to offer. Choose a time when they are not rushed and a place without an audience. Sit at an angle, level and open. Start with what you agree with, describe the problem as a fact rather than a criticism of them, and suggest an alternative rather than only an objection. Expect some defensiveness, and do not push harder when you see it; give them room, and a way to change their mind without losing face. If you have evidence, show it side by side, on a page or a screen you can both look at, which turns a disagreement into a shared problem.\n\nIt also helps to accept that you may not win. Disagreeing well with someone senior means giving them good information and a way to act on it; whether they do is partly out of your hands.\n\nIt also helps to put your view in writing afterwards, briefly and calmly, so that there is a record and nobody has to rely on memory of a conversation that may have been tense.\n\nIt also helps to bring a colleague's view if you can, with their permission. A concern shared by two people is harder to dismiss and less likely to feel like a personal challenge."
   }
  ],
  "watch": [
