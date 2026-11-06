@@ -73,6 +73,20 @@
    "doCaption": "Sitting within his own seat",
    "dontCaption": "Sitting wide on a crowded train",
    "annotation": "In shared space, keep your knees and elbows within your own seat, so nobody has to ask for room."
+  },
+  {
+   "doPoseId": "p_stand_large_at_ease",
+   "dontPoseId": "p_posture_contracted",
+   "doCaption": "At ease in his own size",
+   "dontCaption": "Shrinking to seem harmless",
+   "annotation": "Many big men learn to fold themselves away. Judge their behaviour as you would anyone's, and the folding becomes less necessary."
+  },
+  {
+   "doPoseId": "p_stand_at_ease_tall",
+   "dontPoseId": "p_posture_braced_upright",
+   "doCaption": "Upright and loose, taking his share",
+   "dontCaption": "Shoulders held wide for an imagined audience",
+   "annotation": "A body held for show is tiring to carry. Ordinary ease, in whatever size, reads better than any display."
   }
  ],
  "caseStudy": "Tony, forty-one, is six foot three and heavy. He works as a project manager for a housing association and is, by every account, a gentle man. He has learned to manage his size in a hundred small ways. He sits down before starting difficult conversations so that he is not standing over anyone. He keeps his hands open and visible. He lowers his voice when he disagrees, and he makes the first joke about his weight in any new group, because he would rather make it than hear it.\n\nTwo things happened in one month. At a site meeting, a contractor who was half his size shouted at a junior colleague, and nobody remarked on it. The next week Tony raised his voice briefly to stop the same contractor interrupting, and afterwards his manager mentioned that one or two people had found him intimidating.\n\nThen his GP, seeing him for a shoulder injury, spent most of the appointment on his weight and sent him away without an examination. Tony did not go back for three months, by which time the injury needed physiotherapy.\n\nTony raised the meeting with his manager, Mei. She replayed it and realised that she had judged the same behaviour differently in two men of different sizes. She said so to him, and since then has paid attention to whether she is judging what someone did, or how big he looked doing it. At his next appointment, Tony asked the doctor to examine his shoulder first, and to discuss his weight afterwards if there was time.",
@@ -91,6 +105,11 @@
     "Write down how you read it at the time.",
     "Imagine the same behaviour from a man much larger or much smaller.",
     "Note whether your reading changes, and what that tells you about what you were judging."
+   ],
+   "variations": [
+    "Try the drill with a positive reading too, such as finding a tall man naturally authoritative, and imagine the same words from a short man.",
+    "Swap weight instead of height, and imagine the same behaviour from a much heavier or much thinner man.",
+    "Ask a friend to read your written account of what happened without knowing the person's size, and tell you how they read it."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Check your notes for words such as energy, presence or polish.",
     "For each one, ask whether it describes behaviour or appearance.",
     "Remove or rewrite any that describe appearance."
+   ],
+   "variations": [
+    "Ask a colleague to read your notes from an interview or review and underline any words that describe appearance.",
+    "Compare your notes on two candidates of different builds, and see whether you used different words for similar answers.",
+    "Keep a short list of appearance words to check for, and add to it each time you find a new one in your own writing."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Check where your knees, elbows and bags are.",
     "Adjust so that you are within your own seat.",
     "Notice whether others relax as a result."
+   ],
+   "variations": [
+    "Do the audit in a waiting room, a café or a meeting room, not just on public transport, and notice where your bags and elbows end up.",
+    "Notice how other people of different sizes manage shared seats, and who tends to squeeze in and who tends to spread out.",
+    "On a busy train, offer your seat to someone who looks as though they need it more, and notice how it feels."
    ]
   },
   {
@@ -122,6 +151,11 @@
     "Note the habits you developed in response, such as shrinking, bracing or building.",
     "Ask which of those habits still serve you.",
     "Choose one to keep and one to let go."
+   ],
+   "variations": [
+    "Ask someone who knew you as a child how they remember your size being talked about, and compare it with your own memory.",
+    "Notice one moment this week when you held your body for an imagined audience, and try letting it go.",
+    "Write a sentence about your body that you would be happy for a friend to say about theirs."
    ]
   }
  ],
@@ -203,6 +237,45 @@
    "explain": "Wide sitting is partly anatomy and partly habit, rarely a deliberate power move. In shared space, though, it takes room from others, and the fix is simple.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Puhl, Andreyeva and Brownell's 2008 analysis of a national US survey, how often was weight discrimination reported compared with race discrimination?",
+   "options": [
+    "Far less often, since weight is rarely a reason for unfair treatment",
+    "About as often, with women reporting it about twice as often as men",
+    "Far more often, and only by men, not by women at all",
+    "Never, since the survey did not ask about weight at all"
+   ],
+   "answer": 1,
+   "explain": "Weight discrimination was reported about as often as race discrimination. Women reported it about twice as often as men, but heavier men face it too and are often less willing to say so.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A nurse complains that her heavy colleague is slow and leaves her the heavy work. The ward's handling logs show he does more transfers than anyone. What fits this chapter best?",
+   "options": [
+    "Trust the complaint, since a heavy colleague is likely to struggle with the physical work",
+    "Go by the evidence of what each person did, and address the weight-based comments",
+    "Ask the heavy colleague to lose weight, so that the complaints will stop in time",
+    "Move the colleague to a desk job, since his size makes the ward work harder for him"
+   ],
+   "answer": 1,
+   "explain": "Heavier people are widely stereotyped as lazy, and impressions of who is working hard are easily shaped by appearance. The records of what people actually did are a far better guide, and comments about weight are not acceptable.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that telling a friend they have lost weight is always a compliment. What does this chapter suggest?",
+   "options": [
+    "That weight loss can come from illness, grief or an eating disorder, so it is better to praise something else",
+    "That everyone wants to hear about weight loss, so it should be mentioned as often as possible",
+    "That commenting on weight gain is kinder than commenting on weight loss in most situations",
+    "That weight comments only matter to women, so they are harmless when made to a man"
+   ],
+   "answer": 0,
+   "explain": "A change in weight can reflect many things the person may be struggling with. Complimenting something other than the body avoids rewarding harm or forcing a smile over a worry.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +304,110 @@
    "work": "The Adonis Complex",
    "author": "Harrison G. Pope, Katharine A. Phillips and Roberto Olivardia",
    "note": "Free Press, 2000. Men's body image and the drive for muscle."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The healthcare assistant called lazy",
+   "scene": "Nigel, fifty, is a healthcare assistant on an orthopaedic ward, and he is a large, heavy man. He has worked on the ward for eleven years. He is\n  calm, patient and much in demand with frightened patients, who find his size reassuring when they are being moved. He moves steadily rather than\n  quickly, and he takes his breaks sitting down, because his knees ache by mid-afternoon.\n\n  A newer nurse on the ward, Chloe, twenty-six, has begun to make remarks. She says, within his hearing, that some people on the ward need to get a\n  move on. In the staff room, she jokes about who has eaten the biscuits. In a conversation with the ward manager, Siobhan, she says that Nigel is\n  slow and that she always seems to end up doing his share of the heavy work.\n\n  Siobhan has worked with Nigel for years and is surprised. But she knows that she should not rely on her own impression either. She looks at the\n  ward's records for the past month: the task allocation sheets, the moving-and-handling logs, the patient feedback.\n\n  The logs show that Nigel has done more patient transfers than anyone else on the ward, including most of the heaviest and most difficult ones,\n  because the nurses ask for him by name. The feedback forms mention him more than any other member of staff.\n\nHe has also heard the biscuit jokes before, on other wards, over many years, and has learned to laugh them off. He has not laughed this time, and Chloe has read his silence as sulking.\n\nNigel's colleague of ten years, Precious, who overhears one of Chloe's remarks, tells her quietly that Nigel lifted her own mother off the floor after a fall on the ward, single-handed, when nobody else could. Chloe says nothing.\n\nSiobhan also realises, reading the logs, that she herself had been allocating Nigel the heaviest patients for years, because he never complained, and had never thought about what that did to his knees.\n\nNigel himself has said nothing to anyone. He has spent most of his adult life deciding which comments to let pass, and has long since stopped expecting anyone to notice.",
+   "misread": "Chloe read Nigel's size, his steady pace and his seated breaks as laziness, and believed that she was carrying his share of the work. Her reading came from a stereotype, not from the record of what he did.\n\nThe other nurses who had laughed at the biscuit jokes read them as harmless banter, because they had never heard them aimed at themselves.\n\nChloe also read his seated breaks as a sign that he was avoiding work, when they were a man with bad knees pacing himself through a twelve-hour shift, which is exactly what the ward's own guidance on manual handling recommends.\n\nChloe, it turned out, had been told by a tutor during her training that heavier staff were a manual-handling risk, and had carried the idea onto the ward without testing it.",
+   "betterRead": "Puhl and Heuer's review found that heavier people are widely stereotyped as lazy, undisciplined and lacking willpower, and that the stigma reaches into work, health care and everyday life. Chloe's impression of who was doing the heavy work was shaped by who looked as though they were working hard: her own quick movements against Nigel's steady ones. Siobhan's better approach was to check the evidence, as the Weight-Neutral Review drill recommends: what had each person actually done? The logs told a different story from the impression. She spoke to Chloe privately, showed her the transfer figures, and said plainly that comments about weight and food were not acceptable on her ward. Chloe was embarrassed, and apologised to Nigel. Siobhan also arranged a better chair in the staff room, which several people with bad backs started using too.\n\nNigel said later that what mattered most was not the apology but that Siobhan had checked, rather than taking either impression on trust.\n\nThe patient feedback forms, which Siobhan pinned up in the staff room with names removed, made the point better than any conversation could have."
+  },
+  {
+   "title": "The teacher with small man syndrome",
+   "scene": "Tomás, twenty-nine, is a maths teacher in his second year at a secondary school, and he is five foot four. He is clear, firm and very good with\n  difficult classes. When he disagrees with a colleague in a department meeting, he says so directly. When a Year 11 boy, a head taller than him,\n  refuses to move seats, Tomás stands his ground calmly until he does.\n\n  He has heard the jokes. A colleague in the staff room calls him \"the little general\". After a department meeting where Tomás argued against a\n  new homework policy, the head of department, Martin, says to another teacher that Tomás has a touch of small man syndrome. Some of the older students\n  have picked up the phrase.\n\n  The homework policy goes ahead. Within a term, it is clear that Tomás's objections were right: the policy has doubled marking time and made no\n  difference to results. Another teacher, Steve, six foot two, made almost exactly the same argument in the same meeting, less forcefully. Nobody said\n  Steve had a complex.\n\n  At the end-of-term review, a deputy head who has watched both meetings asks Martin, privately, whether he would have described Steve's objection in\n  the same way.\n\nHis partner, a nurse, has told him that he does not need to prove anything, and he has told her that he is not trying to. In meetings, he is not sure any more whether he is being firm because he is right or because he expects to be dismissed.\n\nTomás has also noticed that when he speaks quietly in meetings, he is talked over, and when he speaks firmly, he is called the little general. He has started to wonder whether there is any volume that will be heard as normal.\n\nAt parents' evening, a mother tells him that her son, who struggles with maths, says Mr Tomás is the only teacher who never gives up on him. Tomás treasures it, and does not mention it to anyone in the department.",
+   "misread": "Martin read Tomás's directness and firmness as a short man compensating for his height, and so discounted his argument. He read the same argument from a taller colleague as a reasonable objection.\n\nThe students who picked up the phrase read it as a fact about their teacher, which turned a joke in the staff room into a label in the classroom.\n\nMartin also read his own discomfort at being contradicted by a younger, shorter colleague as a judgment about Tomás's manner, rather than as a feeling about being contradicted at all.\n\nSteve, who had made the same argument, had read the meeting accurately and said nothing, which he later told Tomás he regretted.",
+   "betterRead": "Knapen, Blaker and van Vugt's experiments found something much narrower than the Napoleon complex: shorter men kept more for themselves in a game where they held all the power against a taller opponent, but height made no difference to direct aggression. The stereotype does far more work than the evidence. Part IV's chapter on the glass ceiling described how a short man who speaks with authority may be read as overcompensating while a tall man saying the same thing is read as a leader. The deputy head's question was the Same Act, Different Body drill in practice. Martin, to his credit, thought about it and admitted that he would not. He stopped using the phrase, asked a colleague to stop calling Tomás the little general and invited Tomás to help design the replacement homework policy, which worked.\n\nTomás said later that the moment he noticed most was when the students stopped using the phrase, a few weeks after the staff did."
+  },
+  {
+   "title": "The prop on the commuter train",
+   "scene": "Joe, thirty, plays rugby at weekends as a prop forward and works in an insurance office in the city. He is very broad: wide shoulders, thick\n  thighs, a neck that does not fit standard shirt collars. Every morning he catches the same commuter train, sits in the same seat, spreads his knees\n  wide because it is comfortable, puts his rucksack on the seat beside him when the carriage is quiet and reads his phone.\n\n  He has never thought about it. One morning, the train is delayed and very crowded. A woman in her fifties, Pam, with a heavy bag, squeezes into the\n  edge of the seat next to him, after hovering for a moment while he moved his rucksack. For forty minutes she sits half on the seat, her shoulder\n  pressed against the window, her knees tucked to one side to avoid his.\n\n  As she gets off, she says, not unkindly but clearly, \"Some of us would like a seat too, love.\" Joe goes red. He had not noticed her at all until she\n  spoke.\n\n  That evening, he tells his girlfriend, half laughing, that he got told off for manspreading. She asks him how much of the seat he was using. He does\n  not know. The next morning, he watches himself.\n\nHe has also, he realises, been reading other men on the train for years as manspreaders, without ever checking his own knees.\n\nWhen he looks up from his phone that next morning, he notices that the man opposite him, also broad, has his knees together and his bag on his lap, and that the woman beside that man looks perfectly comfortable.\n\nHe also notices, now that he is looking, that he has been taking two seats' worth of space in the office canteen too, with his bag, his coat and his legs, and that people tend to sit elsewhere.",
+   "misread": "Joe read his own posture as neutral and comfortable, and the space he took as simply what his body needed. Pam read his wide knees, his rucksack and his absorption in his phone as a man who assumed the space was his.\n\nHis girlfriend's question made him see that he had read the space as his because nobody had ever told him otherwise.\n\nPam read him correctly, as it turned out, as a man who had not noticed. Her comment was not an attack but information, and Joe, to his credit, took it as that.\n\nAnd Joe had read the other men he saw spreading out as rude, while never applying the same reading to himself.",
+   "betterRead": "This chapter describes how some of the difference in how men and women sit is anatomy and comfort, and some is the difference between people who assume space is theirs and people who assume they must ask for it. Joe's size meant that he genuinely needed more room than many people, which made it all the more important to notice how much of the shared space he was taking. The better approach, which he tried the next morning, was the Seat Audit drill: check where his knees, elbows and bag were, keep within his own seat as far as his body allowed, and put the rucksack on his lap or the rack when the carriage filled. He noticed that the person next to him relaxed. He also started offering his seat to people with bags or sticks, which he found, slightly to his surprise, made the commute pleasanter for him too.\n\nPam, if she noticed, did not say. But the next time she sat beside him, there was room for her bag too."
+  },
+  {
+   "title": "The friend who trained too hard",
+   "scene": "Sean, twenty-two, has always been slight. Teased at school as \"the twig\", he started going to the gym at seventeen and has trained six days a\n  week ever since. He is now visibly muscular, but he does not see it. He wears baggy hoodies to hide what he thinks is a thin frame, checks his\n  reflection in every window, and holds his shoulders pulled back and his arms slightly away from his sides, as if to look wider.\n\n  His friends have started to make jokes about it. They call him \"lats\" because of the way he walks, and laugh when he refuses pizza after football.\n  Sean laughs too. But he has started skipping nights out because he does not want to miss a training session or eat food that is not on his plan, and\n  his friend Kwesi, who has known him since primary school, has noticed that he seems anxious and tired.\n\n  One evening, Kwesi sees Sean's phone open on a page about supplements and a forum for steroid use. Kwesi does not know much about it. He knows that\n  Sean has looked low for months, and that the jokes are not helping.\n\n  He suggests a walk, just the two of them, the way they used to when they were teenagers.\n\nHis mother has noticed too. She has told him he looks wonderful, which he has heard as proof that she does not understand.\n\nKwesi also remembers that, at fourteen, Sean was the funniest boy in their year, always the one telling stories, and that the stories stopped at about the time the training started.\n\nAt football, Sean plays brilliantly and then sits in the car afterwards checking his arms in the rear-view mirror, while the others go to the pub.",
+   "misread": "Sean's friends read his posture, his training and his refusals as vanity and laughed at them. Sean read his own muscular body as still too small, and the jokes as confirmation that he was being looked at and found lacking.\n\nAnd Sean read Kwesi's concern, at first, as one more person looking at his body, until Kwesi said plainly that it was Sean he was worried about, not his shape.\n\nHis mother's \"You look wonderful\" was read as not understanding, when it was a parent trying to reassure a son she could see was unhappy, without knowing what else to say.",
+   "betterRead": "Pope and his colleagues described muscle dysmorphia: a preoccupation with being too small, even in men who are very muscular. They also measured how action figures for boys grew more muscular over thirty years, as a window on changing ideals. Sean's held-wide shoulders and baggy clothes are the kind of posture this chapter describes: a body managed for an imagined gaze. Nobody but a clinician should decide what is going on, and Kwesi did not try. His better response was to stop joining in the jokes, to spend time with Sean side by side, and to say plainly, on the walk, that Sean seemed down and that he was worried about the steroid forum. Sean was quiet for a long time, then said that he hated how he looked. Kwesi went with him to the GP the following week. Sean said later that it was the first time anyone had treated his body as something other than a joke.\n\nOver the following year, Sean kept training, three days a week instead of six, and came back to the Friday nights out."
+  }
+ ],
+ "workedReading": {
+  "title": "Running a weight-neutral hiring round",
+  "scene": "Fiona, forty-four, is an HR business partner for a chain of hotels, and she is running recruitment for six front-desk managers, a role with a great deal of contact with guests. She has read Rudolph and colleagues' finding that weight bias at work is strongest at the point of hiring and in jobs with more customer contact, and she has noticed in the past that heavier candidates seem to fall at the interview stage more often than their applications would suggest. One panel member last year wrote \"not the right image for reception\" about a candidate who went on to be a star at a competitor. Fiona wants this round to judge candidates on what they can do. She has a week before the interviews begin, and a panel of three managers who have never discussed the issue.\n\nShe also knows that the hotel's existing staff include several heavier people who are among its best, and that the panel members work alongside them every day without noticing their size. The bias, she suspects, will be strongest with strangers.\n\nShe also knows that the panel members are not unkind people, and that most of them would be upset to think they had marked anyone down for their size. The checks are there to protect good people from a fast, quiet bias.\n\nShe also knows that front-desk staff are among the most visible people in the business, and that the panel will feel the pull of imagined guests' reactions more strongly than in any other role.",
+  "steps": [
+   {
+    "label": "Set the criteria first",
+    "text": "She writes the criteria for the role with the hiring managers before they see any applications: handling a difficult guest, managing a shift team, solving an overbooking problem, working the booking system, and communicating clearly. For each, they agree what a strong and a weak answer would include. They write nothing about appearance, presence or image, because none of these is part of doing the job.\n\nShe also adds a practical task, a role play with an angry guest, so that the panel judges what candidates do as well as what they say.\n\nShe also asks the managers to think about the best front-desk manager they have ever worked with, and what made them good, and finds that every answer is about behaviour, not looks."
+   },
+   {
+    "label": "Remove photographs",
+    "text": "Some applicants have included photographs with their CVs, as is common in some countries. Fiona removes them before the panel sees the shortlist, and asks the panel not to look candidates up online. Impressions formed from a photograph, as Part IV's chapter on social media described, arrive in a fraction of a second and tend to colour everything after.\n\nShe also asks the scheduling team to send every candidate the same information about the day, including the dress code, which is \"what you would wear to work\", so that nobody is judged on a suit.\n\nShe also makes sure the shortlisting is done against the criteria before anyone meets any candidate in person."
+   },
+   {
+    "label": "Brief the panel",
+    "text": "She spends ten minutes with the panel before the first interview. She does not lecture. She shows them Rudolph and colleagues' finding, mentions last year's \"image\" comment without naming who wrote it, and asks them to note what candidates do and say, not how they look or seem. She asks them to avoid words such as energy, presence and polish unless they can describe the behaviour behind them.\n\nOne panel member says, a little defensively, that she would never judge anyone on weight. Fiona says she believes her, and that the checks are there for everyone.\n\nShe also mentions that the same applies to height, age and accent, so that the briefing is about fair judgment rather than about one group.\n\nShe also says that the panel can raise anything that concerns them about a candidate, as long as they can name the behaviour."
+   },
+   {
+    "label": "Score the content",
+    "text": "During the interviews, each panel member scores each answer against the agreed criteria before forming an overall view. One candidate, Marcus, a heavy man in his thirties, gives the strongest answer of the day to the overbooking scenario, with a clear, calm plan and an example from his current job. All three panel members score it highly.\n\nShe also notices that Marcus, at the start of the interview, makes a joke about the narrow chair. The panel laughs politely. Fiona makes a note to replace the chair.\n\nShe also notices that the strongest answers come from candidates of every build, which is exactly what she would expect if the criteria are doing their job."
+   },
+   {
+    "label": "Check the notes for appearance words",
+    "text": "After each day, Fiona reads the panel's notes, as the Weight-Neutral Review drill suggests. She finds \"seemed a bit low-energy\" next to one candidate and \"might not suit the lobby\" next to another. She asks each writer what behaviour lay behind the phrase. Neither can name any. They agree to strike both comments and rely on the scores.\n\nShe also checks the notes for words such as \"polished\" and \"sharp\" used about thinner candidates, and finds two, which she also asks about.\n\nShe also notices, reading her own notes, that she had written \"very warm\" about a slim candidate whose answers were average. She strikes it too.\n\nShe also discovers that \"low energy\" had been written about a candidate who had come straight from a night shift, which he had mentioned at the start of the interview."
+   },
+   {
+    "label": "Discuss evidence, not impressions",
+    "text": "In the final discussion, Fiona asks the panel to start with the scores and the evidence for them, and only then to talk about overall impressions. When one manager says she is not sure about a candidate's fit with guests, Fiona asks which of the agreed criteria the concern relates to. The manager thinks about it, and says it does not relate to any of them.\n\nShe also asks the panel to name, for each appointed candidate, the single strongest piece of evidence for their appointment.\n\nThe discussion takes half the time of last year's, because it is about evidence rather than impressions, and nobody has to defend a feeling."
+   },
+   {
+    "label": "What happened",
+    "text": "The panel appoints six managers, including Marcus and another candidate who, Fiona suspects, would not have got through last year's process. Six months later, Marcus's hotel has the highest guest satisfaction scores in the region. Fiona writes up the process and shares it with the other hotels, along with the list of appearance words to check for. The \"image\" comment, she notes, did not reappear.\n\nShe also keeps the candidates' scores, so that she can check, at the end of the year, whether the people appointed performed as their scores predicted.\n\nShe also replaces the narrow interview chairs in all six hotels' training rooms with chairs without arms.\n\nShe also asks the six new managers, at the end of their first month, how they found the process, and one of them says it was the first interview in which he felt judged on his answers."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Commenting on a change in someone's weight",
+   "body": "\"You've lost weight, you look great!\" is among the commonest compliments, and it is usually meant warmly. But weight loss can come from illness, grief, stress, depression, an eating disorder or treatment for a serious condition, and the person receiving the compliment may be struggling with any of these. Praising it can reward something harmful, or force someone to smile through a comment about a body they are worried about. Comments on weight gain are even more likely to wound. The previous chapters described how quickly bodies are read and judged; remarks about weight make that reading explicit and public. If you want to say something kind, compliment something that is not the body: a decision, a piece of work, a choice of shirt, how well someone seems in themselves. If someone raises a change in their own weight, follow their lead and listen.\n\nIf someone has clearly changed, and you are close to them, \"How are you doing?\" is a better question than any remark about their body.\n\nIt also helps to apply the same rule to children, who absorb comments about weight, theirs and others', very early."
+  },
+  {
+   "title": "Joining in the jokes a man makes about himself",
+   "body": "Many large or short men make the first joke about their size in any new group, as Tony did, because they would rather make it than hear it. When others laugh and then make their own jokes, taking up the theme, the man's defence becomes an invitation, and he can end up hearing the jokes he was trying to pre-empt for years. Height jokes about short men follow the same pattern, as Tomás found with \"the little general\". Laughing at a man's own joke once is usually fine; it is the joke he chose. Picking it up and repeating it, or inventing new ones, is not. Notice when a man jokes about his body, and treat it as a sign of how often he has had to manage others' reactions, not as permission to join in.\n\nAnd if you are the one making the first joke, it is worth noticing whether you want to keep making it."
+  },
+  {
+   "title": "Designing spaces for one size",
+   "body": "Many shared spaces are built for an imagined average body: narrow chairs with fixed arms, theatre and aircraft seats with little room, uniforms only in standard sizes, medical equipment such as blood pressure cuffs and gowns that do not fit larger people, desks that are too low for tall men and too high for short ones. Each design choice tells people whose bodies do not fit that the space was not made for them, and some make taking part physically painful or impossible. A large man who has to sit sideways in a chair with arms, or stand at the back of a meeting because the seats do not fit, may be read as uncomfortable or disengaged. If you organise spaces, events or uniforms, include a range: some chairs without arms, a variety of sizes, adjustable desks, and equipment that fits everyone who will use it.\n\nA good test is to ask who in the organisation has never been able to sit comfortably at a meeting, and why.\n\nWhen planning events, ask in advance whether anyone needs a particular chair or seat, in the same message as dietary needs, so that it is routine."
+  },
+  {
+   "title": "Holding the body for show",
+   "body": "Some men, especially those who train hard or who feel too small, learn to hold their bodies for an imagined audience: shoulders pulled back and wide, arms held away from the sides, chest pushed out, as Sean did. Others, who feel too large, learn to fold in, hunching, hiding in loose clothes, sitting in corners. Both are forms of managing the body for a gaze, and both are tiring. They can also be misread: the held-wide stance as arrogance or aggression, the folded posture as low confidence. Part IV's chapter on power posing found that collapsed postures seem to lower mood, and the same chapter warned against rigid overcorrection. The posture this book recommends is ordinary: upright without strain, shoulders loose, taking your share of the space and no more, in whatever body you have. If managing your body for others is taking up much of your life, talk to your GP.\n\nIt also helps to notice which of your habits you would keep if nobody were watching.\n\nAnd notice whether the people you admire most carry themselves for show, or simply carry themselves."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether I am judging someone's size rather than their behaviour?",
+   "a": "Use the Same Act, Different Body drill in this chapter. Recall what the person actually did and said, as a camera would have recorded it, and then imagine exactly the same behaviour from a man much larger or much smaller, heavier or lighter. If your reading changes, as Martin's did when he compared Tomás with Steve, you are reading the body as well as the behaviour. It also helps to check the words you use about people: \"intimidating\", \"lazy\", \"low energy\", \"overcompensating\", \"lacks presence\". For each, ask what specific behaviour lies behind it. Where the answer is mostly about how someone looked, rewrite the judgment in terms of what they did, and see whether it still holds. Siobhan's check of the ward logs is the same principle applied to a team.\n\nAnd if you find the reading changes, say so, as Mei did with Tony. It tells the other person that you saw the difference too.\n\nIt also helps to ask a trusted colleague to do the same check on your judgments now and then, since nobody sees all of their own blind spots."
+  },
+  {
+   "q": "Is it ever all right to talk to someone about their weight?",
+   "a": "Rarely, unless they raise it, or unless you are their doctor and it is relevant to what they came in for. Most heavier people are already well aware of their weight, and have heard plenty of comments about it, so unsolicited advice usually adds shame rather than information. Puhl and Heuer's review found that weight stigma in health care leads many people to delay or avoid care. If you are worried about a friend's health, for example because they seem unwell, are losing weight rapidly or are struggling with eating, talk to them about how they are, not about their weight, and encourage them to see their GP. If a friend raises their own weight, listen and follow their lead rather than offering a plan.\n\nIf you work in health care, examining the problem the patient came with before discussing weight, as Tony eventually asked, makes care better and keeps patients coming back.\n\nIt also helps to notice how often weight comes up in conversation in your family or workplace, and whether it needs to."
+  },
+  {
+   "q": "Why do some big men seem so careful in how they move?",
+   "a": "Because many of them have learned, often since adolescence, that their size is read as a threat. This chapter describes the choreography many large men develop: keeping hands visible, lowering their voices, sitting down before difficult conversations, stepping back in arguments, making the first joke about their size, as Tony did. It is a form of the vigilance and masking described earlier in this part, and it takes effort. It can make a big man seem passive, overly gentle or hard to read. It is not your job to dismantle it, but you can make it less necessary by judging his behaviour as you would anyone's, and by noticing when you are reading his size as intent. A raised voice from a big man and a raised voice from a small one are the same behaviour.\n\nIt also helps to notice when you feel uneasy around a big man, and to ask what he has actually done.\n\nIt also helps to tell him, if you know him well, that you have noticed how careful he is, and that he does not need to be with you."
+  },
+  {
+   "q": "Is the Napoleon complex real?",
+   "a": "Only in a much narrower form than the stereotype suggests. Knapen, Blaker and van Vugt found that, in an economic game where the participant held all the power, shorter men kept more money for themselves when facing a taller opponent, but the effect largely disappeared when the other player had some power too, and height made no difference to a direct measure of aggression. That is a long way from the idea that short men are generally aggressive or domineering. In everyday life, the label tends to be applied to short men who are simply direct or firm, as it was to Tomás, and it allows others to dismiss what they say. The fairer approach is to judge the argument rather than the arguer's height.\n\nIt is also worth noticing that the phrase is almost never applied to tall men who are just as direct.\n\nAnd if you are a short man who has been labelled this way, it may help to know that the evidence is on your side."
+  },
+  {
+   "q": "How much space should I take on public transport?",
+   "a": "Your own seat, and as little more as your body allows. Sit with your knees within the width of your seat where you can, keep your elbows in, put bags on your lap or the rack rather than on the next seat when the carriage is busy, and notice whether the person beside you is squeezed, as Pam was beside Joe. Larger men genuinely need more room than many people, which makes it all the more important to check, rather than less. When the carriage is quiet, spreading out a little harms nobody; when it fills up, adjust. And if someone is standing with a heavy bag, a stick or a child while you are sitting comfortably, offering the seat is a small courtesy that tends to be noticed and remembered.\n\nIt also helps to remember that space-taking is often unconscious, which is why checking matters more than intention.\n\nIf you are unsure, watch how much room the person beside you has, rather than how much you have."
+  },
+  {
+   "q": "How can I make my workplace fairer for people of different sizes?",
+   "a": "Start with the decisions that matter most. Rudolph and colleagues found that weight bias was strongest at the point of hiring and in customer-facing roles, so use structured interviews, clear criteria and a check of interview notes for appearance words, as Fiona did. In performance reviews, judge what people have done, using records rather than impressions where you can, as Siobhan did. Challenge jokes and comments about weight and height. Look at the physical environment: chairs without arms, adjustable desks, uniforms in a full range of sizes and equipment that fits everyone. If your workplace includes health checks or wellbeing schemes, make sure they do not single people out by size. Most of these changes cost little and benefit everyone, including people of average build with bad backs or long legs.\n\nIt can also help to ask staff, anonymously, whether they have ever felt judged on their size at work, and to act on the answers.\n\nIt also helps to put the policy in writing, so that new staff know from the start that comments about bodies are not part of the culture."
   }
  ],
  "watch": [
