@@ -73,6 +73,27 @@
    "doCaption": "Coming down to his level",
    "dontCaption": "Standing over an upset toddler",
    "annotation": "To a small child, a standing man is a giant. Kneel or squat, and let your face answer what he is telling you."
+  },
+  {
+   "doPoseId": "p_kneel_one_knee",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Kneeling to her level, voice low",
+   "dontCaption": "Arms folded over a screaming toddler",
+   "annotation": "From above, a father is a giant telling her off. At her level, calm, he is someone she can come back to when the storm passes."
+  },
+  {
+   "doPoseId": "p_pair_cradle_infant",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Settled, breathing slowly, baby on his chest",
+   "dontCaption": "Checking the clock while jiggling the baby",
+   "annotation": "A baby borrows calm from the body holding her. A slow breath and a steady chest often settle her when nothing else will."
+  },
+  {
+   "doPoseId": "p_pair_child_hand_walk",
+   "dontPoseId": "p_pair_hip_carry",
+   "doCaption": "Walking hand in hand at his pace",
+   "dontCaption": "Carrying him everywhere, doing it for him",
+   "annotation": "Letting a child do it himself, with you alongside, teaches more than doing it for him, however much quicker that would be."
   }
  ],
  "caseStudy": "Kamal, thirty-three, becomes a father in October. By the sixth week, his daughter Leila cries for three or four hours every evening, and his wife is exhausted. Kamal takes the night shifts at weekends. One night at three in the morning, after two hours of walking and rocking, he feels something he has never felt before: a hot surge of anger at a tiny screaming person. It frightens him. He remembers the leaflet from the hospital. He lays Leila on her back in her cot, walks into the kitchen, runs cold water over his wrists and breathes until the anger drains. Five minutes later he goes back. She is still crying, and he is calm. He takes his shirt off and holds her against his chest, and after a while she sleeps.\n\nHe tells the health visitor about the anger, expecting to be judged. She tells him that what he did was exactly right.\n\nThree years later Kamal is teaching Leila to ride a bike. His instinct is to grip the handlebars and run alongside steering. He makes himself let go of the bars and jog beside her with a hand hovering near her back, not touching. She wobbles, falls, cries, and gets back on. On the fourth day she rides to the end of the path on her own and turns round shrieking.\n\nThat evening, in a tickle fight on the sofa, Leila shouts, “Stop, Daddy, stop!” through her laughter. Kamal stops at once. She looks at him, thinks, and says, “Okay, again.” Kamal's own father never hugged him after he was about nine. He has decided that Leila will choose when the hugs stop, not him.",
@@ -91,6 +112,10 @@
     "Notice how the child's face and body respond.",
     "Notice how your own voice changes when you are no longer talking down.",
     "Write down one difference you noticed."
+   ],
+   "variations": [
+    "Do the eye-level drill when giving a child good news, not only when they are upset, and notice their face.",
+    "Notice how other adults speak to children in a park or a shop, and how often they come down to the child's level."
    ]
   },
   {
@@ -102,6 +127,10 @@
     "Write down three things that calm you quickly.",
     "Save the number of a health line, doctor or health visitor in your phone.",
     "If you share care with a partner, agree on a signal that means take over now."
+   ],
+   "variations": [
+    "Write down who you would ring at three in the morning if you needed help, and save their number.",
+    "Share your walk-away plan with your partner, so that either of you can use it without explaining."
    ]
   },
   {
@@ -113,6 +142,10 @@
     "Each time you want to take over, wait ten seconds and offer the smallest help that would work instead.",
     "Withdraw help as soon as the child manages a step.",
     "Afterwards, note how much of the task the child did themselves."
+   ],
+   "variations": [
+    "Try the hands-off drill with a task you are very good at, which makes taking over even more tempting.",
+    "Ask your child afterwards what they liked about doing the task, and listen without correcting them."
    ]
   },
   {
@@ -123,6 +156,10 @@
     "Accept whatever they choose without comment.",
     "In play, stop the moment they say stop, and wait for them to restart it.",
     "Notice how the child responds over several weeks."
+   ],
+   "variations": [
+    "Let your child choose how to greet a visiting relative for a month, and notice what they choose.",
+    "Agree a family rule that stop means stop in every game, and stick to it yourself."
    ]
   }
  ],
@@ -204,6 +241,45 @@
    "explain": "Scaffolding means doing just enough to keep a child moving, at their level and beside them, and withdrawing help as they manage more. Taking over teaches her that the task belongs to you.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Wood, Bruner and Ross call the kind of help good tutors gave young children?",
+   "options": [
+    "Scaffolding, gradually withdrawn as the child can do more",
+    "Modelling, in which the tutor completes the whole task while the child watches",
+    "Correction, in which every mistake is pointed out and fixed by the adult at once",
+    "Free play, in which the tutor stays away and lets the child work entirely alone"
+   ],
+   "answer": 0,
+   "explain": "Wood, Bruner and Ross described scaffolding: recruiting interest, simplifying, demonstrating when needed and controlling frustration, then withdrawing help as the child becomes able to do more. The aim is for the child to keep the task.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your three-year-old throws herself on the supermarket floor, screaming, because you said no to sweets. People are watching. What fits this chapter best?",
+   "options": [
+    "Give her the sweets quickly so that the scene ends and everyone can move on",
+    "Pick her up at once and carry her out, telling her she is being naughty",
+    "Keep her safe, crouch to her level, stay calm and hold the limit until it passes",
+    "Stand over her and tell her firmly that people are looking at her"
+   ],
+   "answer": 2,
+   "explain": "Coming down to her level, keeping your own body calm and holding the limit without anger lets the storm pass and teaches her that tantrums do not change the answer. Safety comes first, then calm.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that because rough play is good for children, throwing a young baby high in the air is fine. What does this chapter say?",
+   "options": [
+    "It is right, since babies need rough play as much as older children do",
+    "Rough play suits older children; babies need head support and must never be shaken",
+    "It is right, but only if the baby is laughing while it happens",
+    "It is wrong, since all physical play with children of any age is harmful"
+   ],
+   "answer": 1,
+   "explain": "The benefits of rough-and-tumble come with older children and an adult in charge. Young babies need their heads and necks supported, and must never be shaken.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +308,110 @@
    "work": "Serve and Return",
    "author": "Center on the Developing Child, Harvard University",
    "note": "Online guide. How back-and-forth exchanges between babies and caregivers shape early brain development."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The father who handed her back",
+   "scene": "Ollie, thirty, has a four-week-old daughter, Isla. Every time Isla cries, Ollie holds her for a minute or two, jiggling her a little stiffly,\n  and then hands her back to his partner, Beth, saying that Isla wants her mum. Beth is exhausted, recovering from a difficult birth, and has started\n  to resent it. She tells her sister that Ollie is happy to hold the baby when she is quiet but never when she needs settling.\n\n  Ollie, for his part, is frightened. When Isla cries in his arms, he feels clumsy and useless, and he is sure that he is doing something wrong.\n  He has read that babies recognise their mother's smell and voice, and he has decided that there is no point in his trying.\n\n  One evening, Beth has a fever and has to go to bed early. Isla starts crying at eight o'clock, and there is nobody to hand her to.\n\nOllie's own father worked away for most of his childhood, and Ollie has no memory of being held by him. He has told Beth that he wants to be a different kind of father, and has no idea how.\n\nBeth has also noticed that Ollie holds Isla away from his body when she cries, at arm's length, as if she were something that might break. When Isla is asleep, he holds her close and gazes at her for ages.",
+   "misread": "Ollie read Isla's crying in his arms as proof that she needed her mother and that he could not help. Beth read his handing her back as unwillingness. Both readings assumed that soothing a baby was a gift some people had, rather than a skill that could be learned.\n\nHe also read his own fear as a lack of ability, when it was mostly a lack of practice. Every father is clumsy with a newborn at first.\n\nAnd Beth's resentment, though fair, was also a reading through exhaustion. She saw unwillingness where there was mostly fear, and Ollie could not tell her, because he was ashamed of it.",
+   "betterRead": "Research on fathers suggests that men's bodies respond to parenthood too, and that fathers can comfort babies well. In Erlandsson's small Swedish trial, babies held skin to skin on their fathers' chests after a caesarean birth cried much less and calmed sooner than babies in a cot. Ollie's stiffness and quick handovers gave Isla little chance to settle against him, and gave him no chance to learn what worked. The better reading was that comforting a baby takes practice, time and a calm body, and that his fear was part of what Isla was feeling. That evening, with no one else, Ollie took off his shirt, held Isla against his bare chest with a hand behind her head, and walked slowly round the living room, breathing as slowly as he could. It took twenty minutes. Then she fell asleep on him. He did not move for an hour. After that, he took the evening settling three nights a week, and Beth said it was the first time since the birth she had felt they were in it together."
+  },
+  {
+   "title": "The tickle that went on too long",
+   "scene": "Rob, thirty-eight, loves rough play with his son Leo, six: wrestling on the sofa, chasing round the garden, tickle fights at bedtime. One\n  Saturday morning, Rob pins Leo on the bed and tickles him. Leo shrieks with laughter and says, \"Stop! Stop!\" Rob keeps going, because Leo is\n  laughing. Leo says stop again, louder, still laughing, and starts kicking. Rob laughs too and carries on for a few more seconds. Then Leo's laughter\n  turns into crying, and he curls up and says that he hates his dad.\n\n  Rob is stunned and a little hurt. Leo was laughing. He thought they were having fun.\n\n  Rob's partner, Jo, who heard it from the kitchen, comes in and picks Leo up. Over his head, she gives Rob a look that he does not understand.\n\nRob was tickled relentlessly as a child by his older brothers, and remembers it as hilarious. He has never wondered whether he enjoyed it as much as he remembers.\n\nLeo has been asking, for a few weeks, not to have tickle fights at bedtime. Jo heard him say it once and mentioned it to Rob, who laughed and said that Leo always ended up loving it. On Saturday morning, Leo had said \"No tickling\" before they started wrestling, and Rob had grinned and said, \"We'll see.\"",
+   "misread": "Rob read Leo's laughter as enjoyment and his \"stop\" as part of the game. He did not know that tickling causes laughter whether or not it is enjoyed, so Leo's laughing told him nothing about whether Leo wanted it to continue.\n\nHe also read his own childhood as proof that tickling was harmless, and did not ask whether Leo might feel differently from him.\n\nAnd his \"We'll see\" when Leo had said no tickling before they started told Leo, before anything happened, that his no was open to negotiation.\n\nJo's look, which he did not understand, was the look of someone who had seen the same thing before and had been waiting for him to notice.",
+   "betterRead": "The chapter on consent described this exactly: a child who is tickled will often laugh while saying stop, because tickling produces laughter regardless of whether it is wanted. The kicking and the louder stop were Leo's body backing up his words. Rough play has real value, and Amodia-Bidakowska and colleagues found father-child play associated with children's later self-control, but its benefit depends on the adult keeping it safe and fair, and on the child's no working. When Rob carried on, Leo learned that his no did not count when his father was enjoying himself. Rob's better response, once Jo explained, was to repair it and change the rule. He sat on the floor beside Leo, at his level, and said, \"I'm sorry. I should have stopped when you said stop. From now on, stop means stop, straight away.\" The next time they played, Rob stopped the instant Leo said stop, and Leo, delighted with his new power, said stop about forty times, and started again each time.\n\nRob also told Jo that he had never thought about it before, and asked her to tell him if he got it wrong again."
+  },
+  {
+   "title": "The science project",
+   "scene": "Marcus, forty-two, is an engineer. His daughter, Amara, ten, has a school project: build a model of a working water wheel. They sit at the\n  kitchen table on a Saturday afternoon with card, glue, a cork and some skewers. Amara starts cutting the paddles, slowly and unevenly. Marcus\n  watches, his jaw tightening. After a few minutes, he says, \"Here, let me show you,\" takes the scissors and cuts the rest of the paddles himself,\n  neatly. Then he works out the axle, glues the wheel and tests it under the tap.\n\n  By the end of the afternoon, the water wheel works beautifully. Amara has spent most of it on her phone, sitting a little back from the table. When\n  her mother asks how the project went, she shrugs and says, \"Dad did it.\"\n\n  At school on Monday, her teacher praises the model. Amara does not mention that she barely touched it.\n\nAmara had been excited about the project all week. She had drawn a design in her notebook, with paddles shaped like leaves, which she meant to show her father. She never got the chance.\n\nMarcus also noticed, as he took the scissors, that Amara's shoulders dropped and she looked away. He thought it was relief. It was, he realised later, the moment she stopped being part of the project.",
+   "misread": "Marcus read Amara's slow, uneven cutting as a problem to be solved, and his taking over as help. He did not notice that his body had moved from beside her to over the task, and that she had withdrawn as he did.\n\nHe also read the working model as success, when the point of the project was for Amara to learn how a water wheel works, which she had not.\n\nAnd Amara's phone was not rudeness or laziness. It was what a ten-year-old does when she has been made a spectator at her own project.",
+   "betterRead": "Wood, Bruner and Ross described good teaching as scaffolding: recruiting the child's interest, simplifying the task, keeping them pointed at the goal, controlling frustration, demonstrating when needed and then withdrawing help as the child can do more. Much of it is physical. With his hands on the scissors and the glue, Marcus was doing the project, not teaching it, and Amara moved back from the table and onto her phone because there was nothing left for her to do. His tightening jaw was his own frustration, which children read instantly. The better approach was to keep the task in her hands. The next weekend, for a different project, Marcus sat beside Amara, at her height, with his hands on the table near the job but not on it. When she struggled, he asked, \"What do you think the problem is?\" and once, when she was stuck, showed her on a spare piece of card and gave it back. The result was wonky. Amara explained every part of it to her teacher, and asked if they could build another."
+  },
+  {
+   "title": "The stepson who pulled away",
+   "scene": "Gav, thirty-six, moved in with his partner, Sarah, and her son, Tyler, nine, six months ago. Gav is warm and physical by nature. He ruffles\n  Tyler's hair, puts an arm round his shoulders, picks him up and swings him round, as he does with his own nephews. Tyler stiffens each time. He\n  ducks away from the hair-ruffling, leans out from under the arm, and once, when Gav lifted him without warning, kicked out and shouted, \"Put me\n  down!\"\n\n  Gav is hurt. He tells Sarah that Tyler does not like him and never will. Sarah says that Tyler is just shy, and that Gav should keep trying.\n\n  Gav tries harder: more hugs, more lifting, more arms round shoulders. Tyler starts spending more time in his room when Gav is home.\n\nTyler's own father left when he was four, and he sees him every other weekend. He has told his mum that he does not need a new dad. Sarah has not told Gav this.\n\nTyler has also started asking his mum whether Gav is staying \"for ever\", and whether his real dad knows that Gav lives with them now. He asked the question at bedtime, twice, with the light off, which Sarah has learned is when he says the things that worry him most.",
+   "misread": "Gav read Tyler's stiffening and ducking as rejection of him, and Sarah read it as shyness to be overcome with persistence. Both readings led to more touch, when Tyler's body was asking for less.\n\nAnd Sarah's advice to keep trying, given out of love for both of them, pushed Gav towards the response most likely to make Tyler withdraw.\n\nGav also read Tyler's withdrawal to his room as a sign that he was failing, which made him try harder, which made Tyler withdraw more: a loop in which each of them read the other's response as a reason to keep doing the thing that made it worse.",
+   "betterRead": "A child learns from the earliest age whether their body belongs to them, and a new adult in the home, however kind, is someone whose touch the child has not yet chosen. Tyler's stiffness, his ducking and his shout of \"Put me down!\" were clear signals, the same signals the chapter on touch between friends described in adults: this is too much, too soon. Trying harder overrode them, and Tyler withdrew further. The better approach was to let Tyler set the pace. Gav stopped initiating touch altogether, apart from a high five if Tyler offered one. Instead, he offered things to do side by side: fixing Tyler's bike, playing football in the park, building a model together. He asked before any touch: \"High five?\" Over the next few months, Tyler started sitting next to him on the sofa during matches. One evening, after a goal, he leaned against Gav's arm and stayed there. Gav did not move or say anything about it.\n\nSarah also told Gav what Tyler had said about not needing a new dad, which helped him stop taking the distance personally."
+  }
+ ],
+ "workedReading": {
+  "title": "The meltdown in the supermarket",
+  "scene": "Femi, thirty-five, is doing the weekly shop with his daughter, Ada, three. At the checkout, Ada asks for a packet of sweets. Femi says no. Ada throws herself on the floor, screaming, kicking her legs and arms, her face red and wet. The queue behind them goes quiet. A woman tuts. An older man says, loudly, that in his day children knew how to behave. Femi feels his face burn and his heart race. He wants, more than anything, to make it stop, by picking her up and leaving, or by giving her the sweets.\n\nFemi has had a long week, and Ada has been unsettled since starting nursery. He knows that this tantrum is partly about the sweets and partly about everything else, and that he is running on empty too.\n\nAda has been at nursery since September and comes home tired and fractious most days. Femi suspects she has been holding herself together all week, and that the sweets were only the last straw.\n\nHe also knows that if he gives in today, the same scene will happen at the next checkout, and the one after that. The limit he holds now is a gift to himself next week.",
+  "steps": [
+   {
+    "label": "Check your own body first",
+    "text": "Femi notices his own state: hot face, racing heart, tight jaw, the urge to grab. He knows from Part II that a stressed adult makes a stressed child worse, and that anything he does in the next few seconds will be done through embarrassment. He breathes out slowly, once, and lets his shoulders drop before he does anything else.\n\nHe also notices that the audience is affecting him more than Ada is. Her screaming is ordinary for a three-year-old; it is the tutting that makes his face burn.\n\nHe also reminds himself what the tutting woman and the older man do not know: that this is normal for a three-year-old, and that every parent in the queue has either been here or will be."
+   },
+   {
+    "label": "Make her safe",
+    "text": "He checks that Ada is not in danger: she is on the floor, away from the trolley wheels, not near anything she could hit. He moves the trolley slightly so that nobody will trip over her. Safety comes first, before anything about the limit or the audience.\n\nHe also keeps half an eye on the people around them, without engaging with them. He does not need to explain himself to the queue; he needs to keep his daughter safe.\n\nHe also checks that her head is not near the hard edge of the checkout counter. Children in a tantrum can throw their heads back suddenly, and moving her a few inches away is the most important thing he does."
+   },
+   {
+    "label": "Come down to her level",
+    "text": "He crouches down beside her, at her height, rather than standing over her. He does not grab her or try to lift her. From above, he would be a giant telling her off; at her level, he is her father, near her, with a face she can see.\n\nHe also crouches slightly to the side of her rather than directly over her, so that she has room to move and he is not blocking her.\n\nHe also keeps his hands visible and still, near her but not on her. Grabbing a child mid-tantrum often makes the storm worse, because it adds a fight to a feeling."
+   },
+   {
+    "label": "Keep your face and voice calm",
+    "text": "He keeps his face soft and his voice low and slow. He says, \"You really wanted those sweets. You're cross.\" He does not argue, explain, threaten or bargain. Tronick's still-face studies showed how much small children need a face that answers, and Femi's answers: concerned, calm, not angry.\n\nHe also resists the urge to say \"Stop it\" or \"Everyone's looking\", which would add shame to her anger without helping her through it.\n\nHe also keeps his own breathing slow and audible, even though his heart is racing. Small children often borrow the rhythm of the adult nearest them, as the chapter on breath described."
+   },
+   {
+    "label": "Hold the limit",
+    "text": "He does not give her the sweets. He knows that if he does, she will learn that this works. He says, once, \"No sweets today,\" and then stays where he is, quietly, his hand resting near her, ready if she reaches for him. He lets the storm run its course.\n\nHe also does not leave the queue. Abandoning the shop would end the scene and teach Ada that a tantrum gets her out of places she does not want to be.\n\nHe also says the limit once and then stops talking. Repeating it, explaining it or arguing about it would give her something to fight against, and keep the storm going."
+   },
+   {
+    "label": "Comfort when it passes",
+    "text": "After about two minutes, Ada's screams turn to sobs, and she crawls towards him. He picks her up and holds her against his chest, a hand on her back, breathing slowly. She shudders a few times and quietens. He says, \"That was a big feeling,\" and pays for the shopping one-handed while she buries her face in his shoulder.\n\nHe also does not lecture her afterwards about behaving. A three-year-old who has just come through a storm needs comfort, not a lesson; the lesson is that the limit held.\n\nHe also lets her come to him rather than reaching for her. Her crawl towards him is her signal that she is ready to be held, and waiting for it makes the comfort hers to accept."
+   },
+   {
+    "label": "What happened",
+    "text": "In the car park, a woman who was behind them in the queue catches up and says that he handled it brilliantly, and that her own son did the same thing last week. Femi laughs and thanks her. He notes that the hardest part had been the first five seconds, when his own body wanted to end it at any cost, and that everything after that had followed from one slow breath and crouching down.\n\nHe also tells Ada's mother about it that evening, and they agree to keep sweets out of the conversation at checkouts for a while, which is easier than winning the same battle every week.\n\nHe also notes, for himself, that the tutting woman's disapproval had felt enormous in the moment and meant nothing an hour later, while how he treated Ada would stay with her."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Holding on when anger rises",
+   "body": "The most dangerous failure in this chapter is to keep holding a crying baby while frustration and anger build, out of a sense that you must not give up. Exhaustion and a baby who will not stop crying can push anyone towards a breaking point. The ICON messages are clear: infant crying is normal, comforting methods can help, it is okay to walk away, and never, ever shake a baby. If you feel anger or desperation rising, put the baby down safely on their back in their cot, leave the room, calm yourself for a few minutes, and go back. A crying baby in a safe cot is safe. If the feelings keep coming, tell your partner, your health visitor or your doctor.\n\nIt also helps to plan for the hardest times. Many parents find that the evening and the small hours are when crying is worst and patience thinnest. Knowing in advance what you will do, and who you will ring, makes it easier to do it.\n\nIt also helps to know that exhaustion is the biggest risk. Parents who are sleeping in short pieces for weeks are more likely to reach the edge, and sharing the night shifts, accepting help and sleeping when the baby sleeps are safety measures, not luxuries.\n\nAnd remember that crying can sometimes be a sign that something is wrong. If a baby's cry sounds different from usual, or comes with a fever, poor feeding, unusual sleepiness or anything else that worries you, contact a health professional."
+  },
+  {
+   "title": "Parenting from above and behind a phone",
+   "body": "A father standing over a small child is a giant, and much of a child's experience of him comes through that height: a voice from above, a face a long way up, hands that reach down. A father whose face is turned to a phone is, to a baby, a still face that does not answer, which Tronick's studies showed distresses babies within seconds. Come down to the child's level when they are upset, when you set a limit and when you listen to something that matters to them, and give them a face that responds. Put the phone away for the moments that count.\n\nIt also helps to notice how much of a child's day is spent looking up at adults. Even a few minutes each day at their level, on the floor, playing their game, changes how they see you.\n\nIt also helps to notice your face when you listen to a child. A frown of concentration can look like disapproval to a small child, and a softer face tells them that what they are saying is welcome.\n\nIt also helps to answer babies' sounds and faces with your own. A baby who babbles and gets a babble back, or smiles and gets a smile back, is learning that the world responds to them."
+  },
+  {
+   "title": "Taking over the task",
+   "body": "When a child is slow or clumsy at something, it is tempting to take the tool and do it properly. The job gets done, and the child learns nothing except that their father does not trust them with it. Teaching from behind, with your hands over theirs, or from above, pointing, has the same effect. Sit beside them, at their height, with your hands near the job but not on it. Ask questions before giving answers. Demonstrate on a spare piece if you must, then give it back. Accept a wonky result that the child made over a perfect one that you did.\n\nIt also helps to notice when you take over for your own sake: because you are in a hurry, because you are embarrassed by a messy result, or because you enjoy the task. Naming your reason makes it easier to step back.\n\nIt also helps to remember that children learn more from struggle than from watching. A child who works out why the axle will not turn has learned something; a child who watches an adult fix it has learned only that adults can.\n\nIt also helps to notice your hands. If they keep drifting towards the task, put them in your lap or round a cup of tea. Keeping your hands busy elsewhere is one of the easiest ways to keep from taking over."
+  },
+  {
+   "title": "Rough play without brakes",
+   "body": "Physical play can be one of the best things a father offers, and it depends on the adult being in charge of it: keeping it safe, letting the child win sometimes, stopping when the child says stop, and calming things down before bed. Play that carries on after a child says stop, that frightens or hurts, or that the adult wins every time teaches the opposite of self-control. Young babies need their heads and necks supported and must never be shaken or thrown; rough-and-tumble is for older children, and only when it stays safe, fair and stoppable.\n\nIt also helps to wind down before bed. Rough play last thing at night often leads to children who cannot sleep. A calm game, a story or a bath does more for bedtime than another round of wrestling.\n\nIt also helps to give children a clear way to stop play themselves, such as a word or a tap, and to honour it every time. A child who knows the brake works is free to enjoy the speed.\n\nIt also helps to watch the other children, if there are several. Rough play between a father and one child can frighten a smaller sibling watching, and the youngest often needs a gentler game of their own."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can a father really comfort a newborn as well as a mother?",
+   "a": "Many fathers can, with practice. Research suggests that fathers' bodies respond to parenthood too: Gettler and colleagues found that men who became fathers showed falls in testosterone, linked in the same group to more involvement in childcare. Erlandsson's small trial found that babies held skin to skin by their fathers after a caesarean birth calmed more quickly than babies in a cot. What makes a parent good at soothing is mostly time, practice and a calm body: a slow breath, a steady chest, a hand behind the head, a rhythm of walking or rocking. Fathers who hand the baby back every time never get the practice.\n\nIt also helps to share the hard times as well as the easy ones. Fathers who take some of the crying evenings, as well as the playful mornings, tend to become confident much sooner.\n\nIt also helps to find your own ways of soothing. Some fathers sing, some walk, some hum, some sway. Babies seem to care less about the method than about the steadiness of the person doing it.\n\nAnd if you feel nervous holding a newborn, ask the midwife or health visitor to show you. Most fathers feel clumsy at first, and a few minutes of guidance can make an enormous difference to their confidence."
+  },
+  {
+   "q": "What should I do if I feel angry with my crying baby?",
+   "a": "Recognise that it is normal to feel it, and that what matters is what you do next. Put the baby down safely on their back in their cot, leave the room, and calm yourself for a few minutes: breathe slowly, splash cold water on your face, put on music, ring someone. Then go back and check on the baby. A crying baby in a safe cot is not in danger. Never shake a baby, even for a moment. If you feel this way often, or if the feelings frighten you, tell your partner, your health visitor or your doctor. Many parents feel it, and help is available.\n\nIt also helps to know that crying usually peaks in the first two or three months and then eases. Remembering that it will not last forever can make the worst nights easier to bear.\n\nIt also helps to know that walking away is not abandoning the baby. It is protecting both of you, and it is one of the most responsible things a tired parent can do."
+  },
+  {
+   "q": "Is rough play good for children?",
+   "a": "It seems to be, for older children, when it is done well. Amodia-Bidakowska, Laverty and Ramchandani's review of 78 studies found that fathers tended to play more physically than mothers and that father-child play was associated with children's later ability to manage their feelings and behaviour, though the findings were correlational. The key seems to be that the adult stays in charge: keeping the play safe, letting the child win sometimes, stopping when they say stop and winding down before bed. Babies should never be shaken or thrown, and their heads need support until they can hold them up themselves.\n\nIt also helps to watch the child's face for the moment the fun stops: wide eyes, a frown, laughter that becomes shrieking. Those are signs to slow down before the child has to say stop.\n\nIt also helps to let the child lead sometimes. A child who chooses when the wrestling starts and stops gets more from it than one who is always on the receiving end."
+  },
+  {
+   "q": "How can I teach my child without taking over?",
+   "a": "Use what Wood, Bruner and Ross called scaffolding: give just enough help for the child to do the next step themselves, and then step back. Sit beside them, at their height, with your hands near the task but not on it. Ask questions, such as \"What do you think comes next?\", before you give answers. If they are stuck, demonstrate on a spare piece rather than on theirs. Watch your own frustration, in your breath, jaw and hands, because children read it at once. Accept a result that is less neat than you would have made, because it is theirs.\n\nIt also helps to praise effort rather than results. \"You kept trying with that axle\" tells a child what mattered more than \"Good job\" does.\n\nIt also helps to resist the urge to correct every mistake. Some mistakes teach more if they are discovered later, and a child who finds their own error has learned something lasting.\n\nIt also helps to say out loud what you are doing when you step back: \"I'm going to let you try this bit.\" Children often take the hint and rise to it."
+  },
+  {
+   "q": "Is it wrong to tickle children?",
+   "a": "Not if you stop when they say stop. Tickling can be great fun, and many children love it, but it produces laughter whether or not it is enjoyed, so a laughing child saying stop means stop. Stopping straight away, every time, teaches children that their no works, which matters for their safety as well as their trust in you. Some children, and some adults, do not like being tickled at all, and that is fine too. Ask, watch their body as well as their face, and let them start it again if they want to.\n\nIt also helps to teach children to stop as well. In play between siblings or friends, the same rule, stop means stop, protects everyone, and children who learn it at home tend to use it elsewhere.\n\nIt also helps to teach children to ask before tickling others, and to stop when others say stop. The rule protects them as well as their friends and siblings."
+  },
+  {
+   "q": "How can I stay physically close to my son as he grows?",
+   "a": "Keep offering, and let him choose. Many fathers stop hugging their sons somewhere around eight or ten, as if affection must end there, and many sons notice. Offer hugs, an arm round the shoulders or a hand on the back, especially at moments that matter: goodbyes, wins, losses, bad news. Accept a no gracefully. Make side-by-side time, as the opening chapter of this part described, because closeness often comes more easily beside him than face to face. As he gets older, the forms may change: a fist bump, a pull-in hug, a hand on the shoulder. The offer is what matters.\n\nIt also helps to tell him, as he grows, that the offer stands. \"You're never too old for a hug from your dad\" is a sentence many men wish they had heard.\n\nIt also helps to notice what he reaches for. Some boys stop wanting hugs but keep leaning against their fathers on the sofa, or asking for a lift so that they can talk in the car. Those are forms of closeness too.\n\nIt also helps to tell him, in words, that you are proud of him and glad to be his dad. Words of affection are a kind of touch too, and many men say they wish they had heard them more."
   }
  ],
  "watch": [
