@@ -80,6 +80,20 @@
    "doCaption": "Treating it as ordinary, because for him it is.",
    "dontCaption": "Staring at his rocking and telling him to stop.",
    "annotation": "Many autistic people stim to regulate themselves. Respecting it, and easing the environment, helps far more than stopping it."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_pull_in_hug",
+   "doCaption": "Standing close, and asking what he'd like",
+   "dontCaption": "Pulling a stiff friend into a hug he did not ask for",
+   "annotation": "A sudden hug can break the hold of someone keeping themselves together. Offer, and let him choose the comfort he needs."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_sit_jaw_rub",
+   "doCaption": "Scoring the answers, not the nerves",
+   "dontCaption": "Marking a candidate down for rubbing his jaw",
+   "annotation": "Interviews make almost everyone soothe themselves. Gestures of this kind say nothing reliable about skill or honesty."
   }
  ],
  "caseStudy": "Phil, fifty-two, is a foreman at a packaging plant. His newest apprentice, Lewis, nineteen, is autistic. On quiet shifts Lewis is fast and careful. On busy shifts, when the line is loud and the radio is on, he rocks slightly as he works, taps his fingers on the bench and hums. Another supervisor tells him to cut it out because it looks odd. Lewis stops, and by the end of that shift he has made three mistakes and gone very quiet.\n\nPhil notices the pattern over a few weeks. Lewis's tapping and rocking increase before he shuts down, the way a kettle starts to rattle before it boils. When he is allowed to rock and hum, he works steadily. Phil asks Lewis, privately, what helps. Lewis says the noise is the hard part, and that the rocking keeps him level. Phil gets him ear defenders, arranges short breaks in the quiet stores area on loud shifts, and has a word with the other supervisor.\n\nWatching Lewis makes Phil think about his own habits. Since his divorce two years ago, the two pints he used to have after work have become four or five most nights, and he notices that the first one is poured the moment he gets home after a bad shift. He tells himself it helps him sleep, though he wakes at three most nights.\n\nHe tries a week without it. The first evenings are hard. He takes the dog for a long walk instead, and rings his brother twice. By the end of the week he is sleeping better than he has in a year. He does not stop drinking, but he stops drinking to get through the evening.\n\nLewis passes his apprenticeship in the spring. At the small leaving do, he hums through the speeches, and nobody tells him to stop.",
@@ -98,6 +112,10 @@
     "Note which you have used more often in the past month.",
     "Choose one costly habit to replace with a gentle one for a week.",
     "At the end of the week, write what changed."
+   ],
+   "variations": [
+    "Ask someone who knows you well which of your soothing habits they notice most, and whether any of them worry them.",
+    "Keep a short note for a week of what you reached for each time you felt stressed, and at what time of day."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Breathe slowly for twenty seconds, with a long breath out.",
     "Notice anything that changes in your breath, shoulders or jaw.",
     "Repeat before another event, and note whether it feels different with practice."
+   ],
+   "variations": [
+    "Try the hand-on-chest exercise in a moment of mild irritation rather than before an event, and compare.",
+    "Try a different gentle touch, such as holding your own forearm or pressing your palms together, and see which settles you most."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Note anything else that has changed at the same time, such as sleep, mood or workload.",
     "For anyone whose soothing has increased alongside other changes, write a curious question you could ask.",
     "Ask it, privately, if it feels right."
+   ],
+   "variations": [
+    "Note your own soothing over the same two weeks, and compare its rise and fall with your workload or sleep.",
+    "Choose one person whose soothing has fallen rather than risen, and ask yourself what might have eased for them."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Check your guess by asking one of them directly at a calm moment.",
     "Write one specific form of soothing you could offer each of them.",
     "Offer one this week."
+   ],
+   "variations": [
+    "Ask one person directly what helps them most when they are upset, and whether anything people do makes it worse.",
+    "Write down what soothes you most, and share it with someone close, so they know what to offer."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Add a question about how they are, and a direct question about thoughts of suicide.",
     "Add a practical offer of help to reach a doctor.",
     "Read it aloud slowly until it feels calm."
+   ],
+   "variations": [
+    "Read the response aloud to a friend, and ask them whether anything in it would make them want to hide.",
+    "Find the crisis resources in this app for your region, and note where they are so you can find them quickly."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Shock, threats and demands to stop tend to deepen secrecy. A calm, caring response, a direct question about suicide given the raised risk, and practical help towards a doctor are what help. If an injury is serious, get medical help at once.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Dreisoerner and colleagues' study, what did the self-soothing touch involve before the stress test?",
+   "options": [
+    "One hand on the chest and one on the belly, for twenty seconds",
+    "A ten-minute massage of the shoulders and neck from a trained therapist",
+    "Squeezing a stress ball as hard as possible for the whole of the test",
+    "Holding hands with a partner for half an hour before the test began"
+   ],
+   "answer": 0,
+   "explain": "Participants placed one hand on the chest and the other on the belly for twenty seconds. Both this and a hug lowered the cortisol response to the stress test compared with doing neither.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At his father's wake, your friend stands by the window, pale and stiff, holding a cup of tea to his chest. You want to comfort him. What fits this chapter best?",
+   "options": [
+    "Pull him into a big hug at once, since he clearly needs physical comfort",
+    "Leave him completely alone, since grieving people never want anyone near",
+    "Stand beside him and ask whether he'd like a hug or just company",
+    "Take the cup from him and tell him he will feel better if he lets go"
+   ],
+   "answer": 2,
+   "explain": "People need different kinds of soothing at different times, and a sudden hug can break a fragile hold in public. Offering company and a choice lets him take the comfort he needs.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "A panel member says a candidate who twisted her ring and touched her neck throughout an interview must be hiding something. What does this chapter say?",
+   "options": [
+    "He is right, since self-touch is one of the most reliable signs of lying",
+    "Soothing tracks nerves and arousal, not honesty or competence",
+    "He is right, but only if she also avoided eye contact while she answered",
+    "He is wrong, since confident candidates always touch their faces more"
+   ],
+   "answer": 1,
+   "explain": "Self-soothing gestures are signs of arousal, and interviews are highly arousing. They show no reliable link to deception, so score the answers, not the hands.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "Self-Compassion: The Proven Power of Being Kind to Yourself",
    "author": "Kristin Neff",
    "note": "William Morrow, 2011. A popular introduction to soothing yourself with kindness, including soothing touch."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The candidate who twisted her ring",
+   "scene": "A small accountancy firm is interviewing for a senior role. The panel is three partners: Michael, Sarah and Graham. The strongest\n  candidate on paper is Grace, forty, who has excellent references and fifteen years of relevant experience. Throughout the interview, Grace twists\n  the ring on her right hand, turning it round and round. When she is asked a difficult technical question, she rubs her thumb hard along the\n  edge of the table, and twice she touches the side of her neck. Her answers are detailed, accurate and well organised.\n\n  Afterwards, Graham says he is not convinced. \"She couldn't keep still. All that fiddling. Either she's not confident in what she's saying, or\n  she's not telling us everything.\" Michael agrees that it was distracting. Sarah points out that Grace answered every question better than either\n  of the other candidates.\n\n  Graham says that in a client meeting, \"that kind of nervousness would put people off\". He suggests they offer the job to the second candidate,\n  who was relaxed and charming but less experienced.\n\nGrace mentioned at the start of the interview, laughing, that she always gets nervous in interviews and that she would try not to fiddle. Graham did not seem to hear it, and nobody wrote it down.\n\nSarah has worked with Graham for ten years and knows that he values confidence above almost everything. She also knows that two of the firm's best partners, including herself, are visibly nervous in front of new clients and have never lost one because of it.",
+   "misread": "Graham read Grace's ring-twisting, table-rubbing and neck-touching as signs of low confidence or concealment. He let the soothing gestures outweigh the content of her answers, which was the only thing the interview was designed to test.\n\nHe also treated the second candidate's ease as a sign of competence, which it was not. Some people are relaxed in interviews because they care less about the job.\n\nAnd because nervousness in an interview is so easy to see, it pushed aside the evidence that was harder to see: the depth of her answers, which took listening rather than watching.",
+   "betterRead": "Self-soothing tracks arousal, and almost everyone is aroused in a job interview. Twisting a ring, rubbing a surface and touching the neck are among the commonest ways people settle themselves, and they say nothing reliable about competence or honesty: the chapter on deception explains why no gesture of this kind is a sign of lying. Many people soothe more in interviews than they ever would at work, because interviews are among the most evaluative situations in adult life. Sarah's better reading kept the panel's attention on what the interview could actually measure: the answers. She suggested they score each candidate against the criteria they had agreed in advance, without discussing manner first. Grace scored highest on every criterion. She was offered the job, and within a year the clients Graham had worried about were asking for her by name. She still twists her ring in difficult meetings, and nobody minds.\n\nGraham, to his credit, admitted at Grace's first review that he had nearly cost them their best hire because of a ring."
+  },
+  {
+   "title": "The glass that became a bottle",
+   "scene": "Ayesha and Marcus have been married for sixteen years. Marcus has always liked a glass of wine with dinner. Since the spring, when his\n  company was restructured and he took on two people's work, the glass has crept up. First it was two glasses, then most of a bottle, then a\n  bottle and a whisky before bed. He opens the wine as soon as he gets home now, before he takes his coat off. He is not drunk, exactly. He is\n  quieter, falls asleep on the sofa and wakes at three in the morning.\n\n  Ayesha has mentioned it twice. Both times Marcus has said, irritably, that he works hard and is entitled to a drink, and that she is making a\n  fuss about nothing. The second time he did not speak to her for the rest of the evening.\n\n  Ayesha does not want to nag, and she does not want to start a row. But she has also noticed that Marcus no longer goes for his Saturday run, has\n  stopped seeing his brother, and sighs heavily every time his work phone buzzes, which it does all evening.\n\nAyesha has also found two empty bottles in the recycling on a Tuesday, which she knows she did not drink. When she mentioned it, lightly, Marcus said they had been there since the weekend. She knows they had not.\n\nMarcus's brother, who has not heard from him for weeks, rings Ayesha to ask whether everything is all right. She does not know what to tell him.",
+   "misread": "Ayesha's first approaches read the drinking as the problem and asked Marcus to change it, which he heard as criticism of the one thing that was getting him through the evenings. He read her concern as nagging.\n\nAnd because she raised it in the evenings, after he had already started drinking, the conversation always happened at the worst possible moment.\n\nMarcus, for his part, read her worry as an attack on how hard he was working, which made the drink feel like something he had to defend rather than something he could look at.",
+   "betterRead": "Drinking to unwind is one of the commonest forms of costly self-soothing, and the costs often creep in slowly: broken sleep, lost energy, dropped habits, more drinking to manage the effects. Marcus's drinking was also a sign of load. It had risen alongside the extra work, the phone that never stopped and the loss of his run and his brother, which made it a pointer to how much he was carrying. A better approach starts with the load rather than the drink. Ayesha waited for a calm Sunday and said, \"You've been carrying so much since the restructure. I'm worried about you, not just the wine.\" Marcus was quiet, then admitted that he dreaded every evening because of the phone. They agreed he would turn it off at eight, that she would come running with him on Saturdays, and that if the drinking did not come down, he would talk to his doctor. It came down, slowly. He told her later that being asked about the work, rather than the bottle, was what made it possible to talk."
+  },
+  {
+   "title": "The worry beads in the waiting room",
+   "scene": "In the waiting area of a hospital day unit, Mr Papadopoulos, seventy-seven, sits waiting for his wife, who is having a procedure. He has\n  a string of amber beads in his hand, and he flicks them over his fingers constantly, rhythmically, with a soft clicking sound: swinging them,\n  catching them, turning them, over and over, for more than an hour. His foot taps in time. He does not read, does not look at his phone and does\n  not speak to anyone.\n\n  A healthcare assistant, Jess, mentions to the nurse in charge that the man in the corner seems very agitated and might need to be calmed down,\n  or might be confused. Another relative, sitting nearby, moves to a seat further away, glancing at the beads with irritation.\n\n  The nurse in charge, Maria, grew up in a Greek family in north London. She smiles when she sees the beads.\n\nMr Papadopoulos's wife has been in the procedure room for longer than the nurse said she would be, and nobody has come out to tell him why. He keeps glancing at the double doors every time they swing.\n\nWhen the doors swing open and a porter comes out alone, Mr Papadopoulos half rises from his seat, the beads stopping in his hand, and then sits back down as the porter walks past him. The beads start again, faster than before. Jess, watching from the desk, takes this as further evidence that he is becoming distressed and asks Maria whether security should keep an eye on him.",
+   "misread": "Jess read Mr Papadopoulos's constant movement as agitation or confusion, because she did not recognise the beads and their rhythm as an ordinary, familiar way of soothing. The relative read the clicking as an annoyance aimed at others.\n\nNeither of them noticed what Maria saw at once: the steady rhythm, the familiar ease of a habit practised for decades, and the glances at the door that showed what he was actually waiting for.\n\nJess's reading was not unkind. She was trying to look after him. But calming someone who is already calming himself would have taken away his own way of coping and replaced it with nothing.",
+   "betterRead": "Many cultures have objects made for self-soothing: worry beads such as the Greek komboloi, prayer beads in several faiths, worry stones, and the cup of tea held for warmth. Their use is often habitual and calming, and a sharp increase in their use in a hospital waiting room is what you would expect from a man waiting for news of his wife. Reading it as agitation or confusion risked treating an ordinary coping habit as a clinical problem. Maria's better reading combined cultural knowledge with the situation. She went over, said hello in Greek, and told him how his wife's procedure was going and roughly how long it would be. The beads kept clicking, but more slowly, and he told her about his wife's garden for ten minutes. Maria explained to Jess, afterwards, that the beads were his way of getting through the wait, and that the best thing for his worry was information, not calming down.\n\nMaria also asked the procedure room to let him know whenever there was news, however small, which did more for his worry than anything else."
+  },
+  {
+   "title": "The friend who did not want a hug",
+   "scene": "At the wake after his father's funeral, Kwesi, thirty-five, stands by the window with a cup of tea held in both hands, close to his chest.\n  His oldest friend, Danny, has been watching him all afternoon and thinks he looks terrible: pale, stiff, his jaw tight, the tea untouched.\n  Danny walks over, says, \"Come here, mate,\" and pulls Kwesi into a big hug, arms wrapped round him.\n\n  Kwesi goes rigid. His arms stay pinned at his sides, the tea slopping in its cup. He does not hug back. After a second or two he steps out of\n  it, says, \"Thanks,\" without meeting Danny's eyes, and moves away to another part of the room.\n\n  Danny is hurt and confused. He tells his girlfriend that he was only trying to help, and that Kwesi had always been a hugger.\n\nKwesi had been holding the same cup of tea for almost an hour. Danny had noticed that he had not drunk any of it, and had taken that as a sign that he needed more than tea.\n\nKwesi's mother is across the room, surrounded by relatives, crying openly and being held by two of her sisters. Kwesi has been glancing over at her every few minutes. Whenever an aunt approaches him with open arms, he moves to the window again or offers to fetch more tea. He has been doing this, Danny realises later, all afternoon.",
+   "misread": "Danny read Kwesi's stiffness and pale face as a need for physical comfort, and gave the comfort he would have wanted himself, without asking. He read Kwesi's withdrawal from the hug as rejection of him.\n\nHe also did not consider the setting. In a room full of relatives, a hug is a public act, and for some people that is the hardest kind of comfort to receive.\n\nAnd when Kwesi stepped away, Danny read it as a rejection of their friendship, when it was a man protecting the composure he had decided he needed for the afternoon.",
+   "betterRead": "People need different kinds of soothing at different moments, and the same person who hugs freely on a good day may need not to be touched at all in the middle of grief. Kwesi's cup held close to his chest, his stiff stance and his position by the window, apart from the crowd, suggested a man holding himself together, perhaps by keeping his body contained. A sudden, enveloping hug can break that hold in public, which some people dread more than anything. The kinder approach offers comfort and lets the person choose. Danny could have stood beside him, shoulder to shoulder, looking out of the window, and said, \"Rough day. I'm here.\" He could have asked, \"Do you want a hug, or shall I just stand here?\" Danny did the second, a week later, at the pub. Kwesi said he had been about to cry at the wake and could not bear to do it in front of his aunts, and that the hug had nearly undone him. He hugged Danny when they left.\n\nDanny also learned to offer Kwesi's own comforts first: tea, a window, a walk."
+  }
+ ],
+ "workedReading": {
+  "title": "The colleague whose soothing doubled",
+  "scene": "Ruth manages a small customer support team. One of her team leaders, Pete, forty-eight, has worked for her for five years. He has always been a bit of a fidget: a pen in his hand, a cup of coffee on the desk. Over the past two months Ruth has noticed more. In meetings he rubs the back of his neck almost constantly, and he has bitten his nails down so far that two of them are plasters. He takes a vaping break every hour, where he used to take two a day. He has three coffee cups on his desk most afternoons. His work is still good.\n\nRuth knows that Pete is private and proud of his work. She also knows that two of her other team leaders have left in the past year, one after a breakdown nobody saw coming. She does not want to miss it again.\n\nShe also knows that people often show strain at work through their habits long before they say anything, and that the habits are easier to see than to interpret.",
+  "steps": [
+   {
+    "label": "Know the baseline",
+    "text": "Ruth starts with what she knows of Pete's usual soothing: a pen, one coffee at a time, the occasional fidget. That is his baseline, and it matters, because without it the current picture could look like any restless person. Against five years of baseline, the change is large.\n\nShe also reminds herself that some people simply fidget more than others, and that soothing on its own is never a sign of trouble. What matters is the change from his own normal.\n\nKnowing Pete's baseline also protects him. A new manager, seeing the neck-rubbing and the nails for the first time, might decide he was simply an anxious man, and never notice that he had changed."
+   },
+   {
+    "label": "Note the change",
+    "text": "She notes the changes as behaviour, without interpreting them: constant neck-rubbing in meetings, nails bitten to the quick, vaping every hour instead of twice a day, three coffees at once. Each is a form of soothing. Together, they suggest a body that needs far more soothing than it used to.\n\nShe also notes that the soothing has spread from his desk to the meetings, where he used to sit still. Soothing that appears in new places is often a sign that the load has grown.\n\nShe also notes that his soothing has become more effortful: not a pen turned idly in his fingers, but nails bitten until they bleed. Soothing that starts to hurt is a sign that the load has outgrown the gentle ways of carrying it."
+   },
+   {
+    "label": "Look for other changes",
+    "text": "She looks at what else has shifted. Pete has stopped joining the team's Friday lunches. He has been arriving at the last minute rather than early. Twice he has left on the dot, which he never used to do. He seems tired, and his jokes have stopped. None of this is about his work, which is still good, and she notes that good work is not evidence that everything is fine.\n\nShe also checks her own memory against the team's diary. The changes began, as far as she can tell, in early September, which gives her a rough starting point to ask about.\n\nShe also notices that he has stopped eating lunch at his desk and now eats nothing until the afternoon, when the coffees start. Skipped meals and more caffeine often go together when someone is short of time and running on nerves."
+   },
+   {
+    "label": "Hold the readings open",
+    "text": "The rise in soothing tells her that Pete is carrying more. It does not tell her what. It might be work, health, money, his family, or several of these. She also considers that she might be wrong about the size of the change. She decides that whatever it is, a private, kind question is the right next step, and that she should not guess aloud.\n\nShe also resists the temptation to ask his closest colleague what is going on. Asking others first would turn her concern into gossip, and Pete would be right to resent it.\n\nShe also notes that she cannot rule out a health problem. Some medications and conditions cause restlessness, and if Pete mentioned anything like that, she would encourage him to see his doctor."
+   },
+   {
+    "label": "Ask, privately",
+    "text": "She books a one-to-one in a small meeting room and starts with ordinary business. Then she says, \"You've seemed really stretched lately, Pete, and you've stopped coming to Friday lunch. I'm not worried about your work. I'm asking because I'd like to know how you are.\" She does not mention the nails, the vaping or the coffee. Naming his soothing would feel like being watched.\n\nShe also chooses the end of the day, so that he will not have to go straight back to his desk and face the team after a hard conversation.\n\nShe also keeps her own manner relaxed and ordinary. If she looks worried, he may feel that he has been caught out, and close the door."
+   },
+   {
+    "label": "Listen and offer something",
+    "text": "Pete is quiet for a moment, then says his mother has been diagnosed with dementia, that his father cannot cope, and that he has been driving there every evening after work and every weekend. He has not told anyone at work because he did not want it to look like an excuse. Ruth listens, thanks him for telling her, and asks what would help. They agree on flexible hours for the next three months, and she tells him about the employee assistance line, which offers support for carers.\n\nShe also offers to tell the team, in general terms, that he is working flexible hours for family reasons, so that he does not have to explain it himself. He says yes.\n\nShe also asks him whether there is anything at work he would like her to take off his plate for a while, and he names two reports that he has been dreading. She reassigns them that afternoon."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the following weeks, Pete's vaping breaks drop back to a few a day, and he comes to Friday lunch again. His nails start to grow back. Ruth notes that she had read the soothing correctly as a sign of load, and that she had known nothing about the load itself until she asked. She also notes that if she had told him to cut down on the breaks, she would have taken away one of the things keeping him going and learned nothing.\n\nShe adds a short note to her own diary to check in with him in a month, and does, briefly, without making it a meeting.\n\nShe also notes, for her own learning, that she nearly mistook the rise in soothing for a problem with Pete's discipline, and that if she had raised the breaks first, the conversation would have gone very differently."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Telling people to stop",
+   "body": "\"Stop fidgeting.\" \"Will you keep still?\" \"Stop clicking that pen.\" \"Put those beads away.\" When someone's self-soothing annoys or distracts us, the instinct is to ask them to stop. Sometimes that is fair: a pen clicking in a silent exam hall affects everyone. But often the soothing is helping the person cope, and removing it makes the coping harder, as Lewis found when he was told to stop rocking on the factory line. Before asking someone to stop, ask whether the behaviour is actually harming anyone, and if it is, whether a quieter alternative would do the same job. A worry stone in a pocket clicks less than a pen.\n\nIn classrooms, especially, children who fidget are often told off, when a small object to hold, a wobble cushion or permission to stand can help them concentrate better than stillness ever would.\n\nIn workplaces, a rule against fidgeting is rarely written down, but it is often enforced by looks, sighs and remarks. Noticing your own irritation, and asking whether it is reasonable, is part of making a team easier to work in."
+  },
+  {
+   "title": "Reading soothing as a sign of lying",
+   "body": "Pacifiers such as touching the neck, rubbing the hands, twisting a ring or touching the face are often presented in popular books as signs of deception. They are signs of arousal, and arousal comes from many sources: nerves, discomfort, being doubted, being watched, a hard question, a hot room. Honest people soothe as much as dishonest ones, and often more, because being suspected is itself stressful. Reading self-soothing as guilt is the Othello error described in Part I, and it falls hardest on the anxious, the neurodivergent and anyone being questioned by someone with power over them.\n\nThis matters most in settings with real consequences: interviews, police questioning, courts, border checks, disciplinary meetings. In all of them, the people being questioned are aroused, and their hands will show it.\n\nIt also helps to watch for the opposite error: reading the absence of soothing as honesty. A calm, still person may be relaxed, practised or simply someone who soothes in other ways. Stillness proves nothing either.\n\nPacifiers also increase when people are tired, cold, hungry or in pain. A witness touching her neck in a draughty interview room at the end of a long day may simply be cold and exhausted."
+  },
+  {
+   "title": "Ignoring costly soothing until it takes over",
+   "body": "The costlier forms of soothing, drink, scrolling, gambling, comfort eating, overwork, creep up slowly, and they are easy to excuse: a man is entitled to a drink after a hard day; everyone is on their phone; working late shows commitment. By the time the costs are obvious, the habit can be hard to break. It helps to watch for the pattern rather than the single instance: soothing that is rising, that has become the only way someone relaxes, that is crowding out gentler habits, or that the person is starting to hide. When you see it, ask about the load behind it first, and offer gentler soothing alongside, rather than demanding that the habit stop.\n\nIt also helps to look at your own costly soothing before you comment on anyone else's. People who are worried about a partner's drinking sometimes find, on reflection, that their own scrolling or working late serves the same purpose.\n\nWith teenagers, costly soothing often takes the form of screens late at night, energy drinks or skipping meals. The same approach works: ask about the load, offer company and gentler habits, and avoid making the habit the battleground."
+  },
+  {
+   "title": "Giving the comfort you would want",
+   "body": "People tend to offer the comfort that would soothe them: a hug, a long talk, distraction, a drink, advice. The person in front of you may need something different. Some people are soothed by touch and some find it overwhelming. Some want to talk and some want silence. Some want company and some want to be left alone for an hour. The safest approach is to offer, rather than impose, and to watch what the person reaches for when they are left to choose. If you are not sure, ask: \"Would a hug help, or would you rather I just sat here?\"\n\nChildren often tell adults clearly what soothes them, if they are asked: a particular blanket, a song, being held, being left alone with a book. Adults can tell us too, but are asked far less often.\n\nIt also helps to accept a no gracefully. If someone declines the comfort you offer, they are not rejecting you. They are telling you something useful about what they need.\n\nTouch deserves particular care. Some people have reasons, from past experiences, from their culture, from sensory differences, or simply from preference, to dislike being touched, especially unexpectedly. Asking first is never wrong."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is fidgeting a sign that someone is lying?",
+   "a": "No. Fidgeting, self-touch and other forms of soothing are signs of arousal, and people become aroused for many reasons, including being doubted, being watched and being asked a hard question. DePaulo's review of the research on lying, described in the chapter on deception, found that fidgeting showed no reliable link to deception. Honest people soothe themselves at least as much as liars do, and anxious, neurodivergent and nervous people soothe themselves more. If you want to know whether someone is telling the truth, look at what they say and what can be checked, not at what their hands are doing.\n\nIt also helps to know that some people fidget more when they are concentrating hard, not less. A student tapping a pen while solving a problem may be thinking at full stretch.\n\nIt also helps to remember that people soothe more when they feel suspected. If someone's fidgeting increases while you question them, the most likely cause is your questioning."
+  },
+  {
+   "q": "Why does a hand on the chest help?",
+   "a": "Nobody knows exactly, but there are several plausible reasons. Touch on the chest and belly is warm and gentle, the kind of touch people receive from others when they are comforted. It tends to slow the breath and bring attention into the body. And it is a small act of kindness towards oneself, which can soften the self-criticism that often comes with stress. In Dreisoerner and colleagues' study, twenty seconds of this kind of touch lowered the cortisol response to a stressful task, much as a hug from a trained stranger did. The effect was modest, but the technique is free, quick and private, which makes it worth trying.\n\nYou can also combine it with the slow out-breath described in the chapter on breath. Many people find the two together more settling than either alone.\n\nSome people feel self-conscious doing it at first. It can help to do it somewhere private, such as a toilet cubicle before a meeting, or to rest one hand on the chest in a way that looks like an ordinary gesture."
+  },
+  {
+   "q": "Should I stop my child from stimming?",
+   "a": "In most cases, no. Autistic adults in Kapp and colleagues' study described stimming as a valuable way of regulating emotions and sensory input, and many described being made to stop as harmful. If a child's stimming is not hurting them or anyone else, the most helpful response is usually to let it happen, and to help other people understand it. If a form of stimming is causing injury, such as head-banging, or is causing real problems in a particular setting, an occupational therapist or another professional who works with autistic children can help find a safer alternative that does the same job, rather than simply stopping it.\n\nIt also helps to ask the child what stimming does for them, if they can say. Many children can describe it clearly: it makes the noise go away, it feels good, it helps them think.\n\nMany autistic adults also say that being allowed to stim as children helped them more than anything else, and that being made to stop taught them that their way of being was wrong."
+  },
+  {
+   "q": "When does self-soothing become a problem?",
+   "a": "When its costs start to outweigh its benefits. Most self-soothing is harmless and helpful. It becomes a concern when it causes harm to the body, such as drinking that disrupts sleep and health or nail-biting that draws blood; when it becomes the only way someone can relax; when it escalates, so that more is needed for the same relief; when it crowds out other parts of life, such as friends, exercise or sleep; or when the person starts to hide it. Any of these is a reason to look at the load behind the soothing, and at gentler ways of carrying it, and sometimes to talk to a doctor.\n\nIt can also help to notice when the soothing happens. Soothing that comes mainly at night, alone, or after particular events points towards what it is soothing, and that is often the better place to start.\n\nIt also helps to watch your own patterns. If you notice that you reach for a costly habit more on particular days or after particular conversations, that is useful information about what is loading you.\n\nIf you are not sure whether a habit has become a problem, a simple test is to try a week without it, or with less of it, and notice how hard that feels. A habit that is very hard to cut down deserves attention."
+  },
+  {
+   "q": "What if I find out someone is hurting themselves on purpose?",
+   "a": "Stay calm, and do not react with shock, anger or ultimatums, which tend to make people hide it more. Tell them you have noticed and that you care. Ask how they are, and listen. It is also important to ask, directly and calmly, whether they have thoughts of ending their life, because self-harm and suicidal thoughts sometimes go together, and asking does not put the idea in their head; 2.13 explains how. Encourage them to see a doctor, and offer practical help with getting there. If they are in immediate danger or have a serious injury, get emergency help. The crisis resources in this app list people you can contact at any time.\n\nIt also helps to remember that people who self-harm often feel intense shame about it, and that a calm, kind response may be the first they have ever received.\n\nIt also helps to look after yourself afterwards. Discovering that someone you love is hurting themselves is distressing, and you may need someone to talk to as well."
+  },
+  {
+   "q": "How can I soothe myself without drink or a screen?",
+   "a": "Many gentler forms of soothing work quickly and cost little. A slow breath out, with the shoulders dropping. A hand on the chest. Warmth: a hot drink held in both hands, a bath, a blanket. Movement: a walk round the block, stretching, a run. Rhythm: music, rocking in a chair, a repetitive task such as washing up. Contact: a call to a friend, a hug from someone you trust, stroking a dog. Nature: stepping outside, even for a few minutes. It helps to build a short list of the ones that work for you, and to reach for one of them first, before the drink or the phone, so that the costly habit stops being the only option.\n\nIt may also help to make the gentler option easier than the costly one: trainers by the door, the phone charging in another room overnight, a friend's number at the top of your contacts.\n\nIt can also help to practise the gentle forms when you are calm, so that they come more easily when you are not. A breath you have practised a hundred times is easier to find in a hard moment than one you have only read about.\n\nAnd it helps to be patient with yourself. Swapping a costly habit for a gentler one rarely works perfectly the first time. A week with fewer late nights on the phone is progress, even if some nights slip."
   }
  ],
  "watch": [
