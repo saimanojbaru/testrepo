@@ -74,6 +74,20 @@
    "doCaption": "A long exhale before speaking",
    "dontCaption": "Tense, high breath in a crisis",
    "annotation": "The team reads your state before your words. One slow exhale and slower speech say that someone is holding this."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Turned towards them, the laptop closed",
+   "dontCaption": "Glancing at the clock as someone raises a worry",
+   "annotation": "An open door means little if the body behind it is busy. Stop, turn and let your face show interest first."
+  },
+  {
+   "doPoseId": "p_pair_teach_alongside",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Alongside, showing how",
+   "dontCaption": "Arms folded on the touchline",
+   "annotation": "A team catches its leader's mood. Influence built on respect starts with standing beside people, not over them."
   }
  ],
  "caseStudy": "Owen, forty-eight, is operations director at a food processing company. He came up through the plant floor and has a reputation as tough and capable. When a refrigeration failure spoiled a large shipment and a customer threatened to cancel its contract, he called the shift managers into a meeting.\n\nHe walked in fast, stood at the head of the table with his hands on his hips and asked who had been responsible for checking the temperature logs. The room went silent. Nobody admitted anything, and the meeting ended with nobody any clearer about what had gone wrong. Afterwards, one of the younger managers, Sophie, came to his office and told him quietly that two people had noticed the temperature rising during the night but had not wanted to call him at home.\n\nOwen was shaken. He realised that his people were more afraid of his reaction than of the failure itself. He called the managers together again the next morning. This time he sat at the side of the table, took a slow breath before he began, and said plainly that the situation was serious, that he wanted to understand what had happened, and that nobody was in trouble for telling him. He thanked Sophie, by name, for coming to him. Then he asked questions and listened.\n\nWithin an hour, they had a clear picture: an alarm that sounded only in an empty office, and a culture in which calling the boss at night felt riskier than waiting. They fixed both. Months later, when a night supervisor called Owen at two in the morning about a different fault, he thanked her, and meant it.",
@@ -93,6 +107,11 @@
     "Take one long, slow exhale and let your shoulders drop.",
     "Walk in at an unhurried pace.",
     "Afterwards, note whether the meeting's tone felt different from usual."
+   ],
+   "variations": [
+    "Do the threshold check before a video call as well, in the minute before you join, and notice whether your face on screen looks different.",
+    "Try the threshold check before you walk through your own front door after a hard day, and notice how the evening starts.",
+    "Ask a colleague you trust to tell you, after a meeting, what your face and posture looked like as you walked in."
    ]
   },
   {
@@ -104,6 +123,11 @@
     "Practise replacing any sigh, eye-roll or tightening with a turn towards the person and a question.",
     "Thank at least two people for bringing problems early.",
     "At the end of the week, note whether more problems reached you."
+   ],
+   "variations": [
+    "Keep a tally for a week of how many problems are brought to you, and compare it with the week before you started the drill.",
+    "When someone brings you a problem by email, reply first with a line of thanks before you respond to the substance.",
+    "Ask your team, anonymously, how they feel about bringing you bad news, and repeat the question in three months."
    ]
   },
   {
@@ -115,6 +139,11 @@
     "Bring in at least one quieter person by name.",
     "Only then give your view, and credit any ideas you are building on.",
     "Afterwards, note how many views were offered compared with usual."
+   ],
+   "variations": [
+    "In a one-to-one, ask your opening question and then count silently to ten before speaking again, whatever happens.",
+    "Ask a colleague to note how long you speak before anyone else does in the next meeting you lead.",
+    "In a decision you have already half-made, deliberately ask for the strongest argument against it before you give your view."
    ]
   },
   {
@@ -126,6 +155,11 @@
     "Practise saying them aloud at half your normal speed, with a slow exhale first.",
     "Practise standing or sitting still while you say them.",
     "Keep the sentences somewhere you can find them."
+   ],
+   "variations": [
+    "Rehearse a good-news moment as well as a bad one, and practise letting warmth show in your face as you say it.",
+    "Record yourself saying your crisis sentences and listen for speed and a rising tone at the end of each sentence.",
+    "Plan who you would call first, and what you would say, if the crisis you imagined happened tomorrow."
    ]
   }
  ],
@@ -207,6 +241,45 @@
    "explain": "Teams read a leader's state before the words. Settling the body and acknowledging the problem plainly is more reassuring than performed cheerfulness or a mask, both of which tend to be detected.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "When Google studied what made its teams effective in Project Aristotle, which factor emerged as the most important?",
+   "options": [
+    "The average intelligence of the team members, measured by tests",
+    "Psychological safety, a shared sense that it was safe to take interpersonal risks",
+    "The amount of time the team spent together in the same office each week",
+    "The seniority and experience of the team's leader across the whole company"
+   ],
+   "answer": 1,
+   "explain": "Psychological safety emerged as the most important of the factors Google identified. It echoes Edmondson's finding that teams learn when it is safe to speak.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A youth football coach shouts from the touchline with his arms folded and throws his hands up at every mistake, and his players play nervously. What fits this chapter best?",
+   "options": [
+    "Shout louder, since the boys clearly need firmer instructions during the match",
+    "Stand still with arms loose, applaud effort, and give instructions calmly at half-time",
+    "Stop attending matches, since his presence on the touchline is making things worse",
+    "Turn his back on mistakes, so that the players cannot see how disappointed he is"
+   ],
+   "answer": 1,
+   "explain": "A team catches its leader's mood, and influence through intimidation makes people play to avoid blame. Steady posture, visible warmth and calm instruction build influence through respect.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that in a crisis, a leader should smile broadly and tell everyone that there is nothing to worry about. What does this chapter suggest?",
+   "options": [
+    "That performed cheer is read as a sign things are worse, and steady, acknowledged concern is more credible",
+    "That performed cheerfulness always calms a team, because people believe the person in charge whatever they see",
+    "That leaders should show visible panic in a crisis, so that their team understands just how serious things are",
+    "That leaders should say nothing at all in a crisis until every last fact is known, to avoid making any mistakes"
+   ],
+   "answer": 0,
+   "explain": "People read the mismatch between a forced smile, a fast voice and tired eyes. Slowing down, acknowledging the problem plainly and saying what is being done builds more trust than reassurance that is not believed.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -235,6 +308,110 @@
    "work": "The contagious leader: Impact of the leader's mood on the mood of group members, group affective tone, and group processes",
    "author": "Thomas Sy, Stéphane Côté and Richard Saavedra",
    "note": "Journal of Applied Psychology 90(2), 2005. How a leader's mood spreads through a team."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The head teacher who wanted to be liked",
+   "scene": "Daniel, thirty-nine, has just become head teacher of a large secondary school that has had three heads in five years. He is warm, funny and\n  generous with his time. He greets staff by name, remembers their children's birthdays and keeps his door open. In his first term, staff say he is\n  the nicest head they have worked for.\n\n  By the spring, something has changed. Daniel has found it hard to say no. When two heads of department ask for the same room, he agrees with\n  whoever spoke to him last. When a teacher complains about a new behaviour policy, he says he will look at it again, and then does not. In meetings\n  he smiles, nods at everyone's points and closes with \"Let's keep talking about this.\" Decisions drift. A serious fight in the canteen, which the\n  behaviour policy was meant to prevent, is handled three different ways by three different staff.\n\n  At a staff meeting after the fight, Daniel stands at the front, smiling, and says he is sure they can all work together to find a way forward.\n  His voice rises at the end of each sentence. Several senior teachers exchange glances. Afterwards, one of them, Mrs Okonkwo, who has been at the\n  school for twenty-two years, asks to see him.\n\n  She tells him that the staff like him very much. Then she tells him that they have stopped believing anything will happen when he says it will.\n\nHe has also noticed that staff have started going to his deputy, a brisk, decisive woman called Ruth, for answers, and coming to him for sympathy. He had taken it as a sensible division of labour.\n\nHe has also begun to avoid the staff room at lunch, because people keep asking him what is happening with the behaviour policy and he does not know what to tell them.",
+   "misread": "Daniel read the staff's warmth towards him in the first term as confidence in his leadership, and read his own openness and agreeableness as the qualities a troubled school needed. The staff read the same openness, by the spring, as a lack of grip.\n\nHe also read Mrs Okonkwo's request to see him as a complaint about the fight, when it was an offer of help from someone who wanted him to succeed.\n\nThe staff, in the first term, had read his warmth as a welcome change after years of instability, which it was. By the spring, they had read his unwillingness to decide as a sign that nothing would change, which was also, for a while, true.",
+   "betterRead": "Fiske, Cuddy and Glick argued that people judge others on two dimensions, warmth and competence, and that a warm person who seems unable to act may be liked but not followed. Daniel had plenty of the first and was showing too little of the second. His rising voice, his smile through bad news and his \"let's keep talking\" all told the staff that he would not decide. The better approach was not to become cold but to let strength show alongside the warmth. Mrs Okonkwo suggested that he stand still at the front, speak more slowly, end his sentences on a falling tone, and say plainly what he had decided and why. At the next staff meeting he said, \"The behaviour policy stands. Here is what each of us will do.\" He kept his door open and his warmth. Within a term, the staff were saying he was the first head in years who meant what he said.\n\nRuth, his deputy, told him later that the change she noticed first was not in what he said but in how still he stood when he said it."
+  },
+  {
+   "title": "The director who said everything was fine",
+   "scene": "Anil, forty-four, is IT director at a regional building society. On a Monday morning, the society is hit by a cyberattack. Systems go down, the\n  branches cannot process payments, and nobody yet knows whether customer data has been taken. Anil has slept for three hours. At ten o'clock he holds\n  an all-staff video call, because rumours are spreading.\n\n  He has decided that his job is to keep everyone calm. He appears on camera smiling broadly, says that everything is under control, that the team\n  has it in hand and that there is nothing to worry about. He speaks quickly, laughs twice, and ends the call after five minutes without taking\n  questions.\n\n  Within an hour, the staff chat channels are fuller than before. People do not believe him. Several have noticed that he looked exhausted, that his\n  smile did not match his eyes, and that he talked very fast. A branch manager writes that if everything were fine he would not have needed to say so\n  four times. Someone has heard from a friend in the IT team that it is very far from fine.\n\n  That afternoon the chief executive, Lorraine, asks Anil whether he would like her to join him for a second call. She has led the society through a\n  flood and a bank run, and she has a view about how to talk to frightened people.\n\nHis team, who have been working through the night, watch the call from the server room. One of them turns the volume down halfway through.\n\nLorraine has watched the call. She tells Anil afterwards that it was the speed she noticed first, and the smile second.",
+   "misread": "Anil read calm as the absence of any sign of concern, and performed cheerfulness to produce it. The staff read his forced smile, his speed and his repeated reassurance as signs that things were worse than he was saying.\n\nHe also read the speed of the call as efficiency, when to the staff it looked like a man who could not wait to get away from their questions.\n\nLorraine read the same call differently: as a frightened man trying to protect his staff from his own fear, which was kind and which had backfired.",
+   "betterRead": "Sy, Côté and Saavedra found that a leader's mood spreads to the team, and the moment a team watches most closely is a crisis. But a performed mood spreads differently from a felt one: people read the mismatch between a smile and tired eyes, and a fast voice saying \"nothing to worry about\" tells them to worry. As the chapter on negotiation described for anger, performed emotion tends to cost trust. Lorraine's better approach, on the second call, was steady, acknowledged concern. She and Anil sat still, spoke slowly, and said plainly: \"This is serious. We do not yet know whether customer data has been affected. Here is what we are doing, and we will update you at four o'clock every day until it is resolved.\" They took questions and said \"We don't know yet\" three times. The chat channels went quiet.\n\nAnil said afterwards that saying \"we don't know yet\" had been the hardest sentence of his career, and the one that worked best.\n\nThe building society later found that no customer data had been taken. Staff said afterwards that the daily four o'clock updates had mattered more than the news itself."
+  },
+  {
+   "title": "The chief executive who spoke first",
+   "scene": "Fiona, fifty-two, is chief executive of a national charity, and she is proud of her collaborative style. Every quarter she holds a strategy day\n  with her senior team of eight. She opens each discussion by setting out her own thinking, at some length, with passion and evident expertise, and\n  then asks, \"What do you all think?\"\n\n  The team usually agrees. Fiona reads this as alignment. This year, she proposes closing the charity's helpline and moving its support entirely\n  online, to save money. She sets out the case for twenty minutes. When she asks what people think, there is a short silence, two people nod, and the\n  director of services says it seems a sensible direction. The proposal goes ahead.\n\n  Six months later, the online service is struggling. Older callers, people in crisis and people without reliable internet have stopped getting in\n  touch at all. In the review, it emerges that the helpline manager, Tunde, had serious doubts from the start and had raised them with his own\n  director, who had decided not to bring them to the strategy day because Fiona had seemed so certain.\n\n  Fiona is shocked. She asks the team why nobody said anything. After a long pause, the newest director says that it is hard to disagree with the chief\n  executive after she has spent twenty minutes explaining why she is right.\n\nShe has also, she realises, never once changed a proposal at a strategy day as a result of the discussion. She had taken that as a sign that her proposals were well prepared.\n\nShe has always believed that a leader should come to a discussion with a clear view, and she is right about that. What she has not noticed is the effect of sharing it first.",
+   "misread": "Fiona read her team's agreement as genuine alignment and their silences as having nothing to add. The team read her long, passionate opening as a decision already made, and kept their doubts to themselves.\n\nAnd she read the director of services' \"sensible direction\" as support, when it was the safest thing to say to a chief executive who had already decided.\n\nTunde's director had read Fiona's certainty as a closed door, and had decided, reasonably enough from what he had seen, that raising doubts would cost more than it would achieve.",
+   "betterRead": "Edmondson found that teams with better leadership reported more errors, because people felt safe to speak, and that psychological safety was linked to the learning behaviour that improves performance. A leader who speaks first and at length, however warmly, tells the room what the right answer is, and in a room where she holds power, few will risk contradicting it. Fiona's better approach, adopted at the next strategy day, was the Speak Last drill in this chapter: open with a question rather than a view, let the silence sit, bring in the quieter directors by name, and give her own view only at the end, crediting the ideas she was building on. She also asked each director to bring one concern from their teams to every strategy day. The helpline reopened, in a reduced form, the following spring.\n\nTunde was invited to the next strategy day to present the helpline's case himself.\n\nFiona said later that the hardest part was the silences, which she had always filled, and which turned out to be where the best ideas were waiting."
+  },
+  {
+   "title": "The coach on the touchline",
+   "scene": "Tony, fifty, coaches an under-fourteens football team on Saturday mornings. He played semi-professionally when he was young and he cares\n  intensely about the game. During matches he stands on the touchline with his arms folded or his hands on his hips, shouting instructions. When a\n  boy misplaces a pass, Tony throws his arms in the air. When the team concedes, he turns his back on the pitch and walks away a few steps, shaking his\n  head.\n\n  The team is not doing well. The boys play nervously, pass sideways to avoid mistakes and look over at Tony every time they touch the ball. Two of the\n  best players have stopped coming. At half-time, the team stands in silence while he tells them what they have done wrong.\n\n  One of the parents, Jas, who coaches a girls' team at the same club, watches a match from beside him. Afterwards, over tea in the clubhouse, she\n  asks him whether he has noticed where the boys look when they have the ball. Tony says they look at him for instructions. Jas says she thinks they\n  are looking at him to see whether he is about to throw his arms up.\n\n  Tony is quiet for a while. He says that his own coach used to stand exactly like that, and that he used to dread Saturdays.\n\nHis son plays in the team. On the drive home after matches, the boy sits in silence, and Tony has put it down to disappointment about the result.\n\nIn training sessions, without the pressure of a match, the same boys play quickly and confidently, and Tony has never understood why the difference is so large.",
+   "misread": "Tony read his touchline intensity as passion and commitment, and the boys' glances towards him as a need for instruction. The boys read his folded arms, thrown-up hands and turned back as anger and disappointment, and played to avoid it.\n\nHe also read the two players who left as lacking commitment, when they were the two who had been shouted at most.\n\nThe other parents had read the team's results as a lack of talent, and two had suggested that the club find a tougher coach.",
+   "betterRead": "Cheng and colleagues found two routes to influence: dominance, through intimidation and the threat of costs, and prestige, through being respected for what you know and bring. Tony had a great deal of prestige to offer and was leading by dominance. Sy and colleagues' work on mood contagion suggests that a team catches its leader's mood, and Tony's frustration was spreading across the pitch. Jas's better suggestion was to let his body show steadiness and warmth: stand still, arms loose, nod and clap for effort, save instructions for half-time and deliver them crouched at the boys' level, beginning with what went well. Tony tried it, finding it harder than any training session. By the end of the season the team was passing forwards again, and one of the boys who had left came back.\n\nHis son started talking on the drive home again, mostly about the goals.\n\nJas also suggested that he ask the boys at the end of each match what they had enjoyed, which they found strange at first and then looked forward to."
+  }
+ ],
+ "workedReading": {
+  "title": "Taking over a team that has lost trust",
+  "scene": "Nkechi, forty-one, has just been appointed ward manager on a busy medical ward. Her predecessor was known for his temper: staff who made mistakes were reprimanded in front of colleagues, and incidents were rarely reported. In the handover, the matron tells her that the ward's incident reports are suspiciously low, that sickness absence is high and that two experienced nurses have left in the past three months. Nkechi has read Edmondson's research on hospital teams, which found that better-led teams reported more errors because people felt safe to speak. Her first team huddle is at seven thirty on Monday morning, at the nurses' station, with about fifteen staff coming off and going on shift. She knows that what they see in the first minute will matter more than anything she says, and that trust will be built over months, not at one huddle.\n\nShe has also met managers who arrived promising change and left a year later having changed nothing, and she knows that the staff will be waiting to see which kind she is.\n\nShe also knows that she is new, younger than several of the nurses and from another hospital, and that some of them applied for her job.",
+  "steps": [
+   {
+    "label": "Check yourself at the threshold",
+    "text": "Before she walks to the nurses' station, she stops in the corridor for thirty seconds. Her breath is high, her jaw tight. She takes one long, slow exhale and lets her shoulders drop. She reminds herself that a leader's mood spreads, as Sy and colleagues found, and that the team will read her face before her words. She walks to the station at an unhurried pace.\n\nShe also leaves her phone in her pocket and her lanyard straight, small things that will make no difference to anyone except that she will not be fiddling with them.\n\nShe also reminds herself that she does not need to be impressive this morning. She needs to be someone the team might, eventually, trust with a mistake."
+   },
+   {
+    "label": "Open by listening",
+    "text": "She introduces herself briefly, then says, \"I'd like to start by hearing from you. What's the one thing that would make your shifts better?\" She lets the silence sit. After a long pause, a healthcare assistant says the hoist on bay three keeps breaking. Nkechi writes it down, thanks her by name and asks who else has something. Four more people speak. She stands still, turned towards each speaker.\n\nShe also notices who does not speak, a newly qualified nurse at the back and an agency nurse at the edge, and makes a note to find them later in the shift."
+   },
+   {
+    "label": "Meet the first bad news well",
+    "text": "Halfway through, a junior nurse, Grace, says quietly that she gave a patient a dose of medication an hour late on the night shift, and has not reported it because she was not sure what would happen. The huddle goes very quiet. Everyone watches Nkechi. She keeps her face calm and her voice even, and says, \"Thank you for telling me. That's exactly what I want people to do. Let's fill in the report together after the huddle.\"\n\nSeveral of the staff glance at each other. The predecessor, she learns later, would have asked for the nurse's name and the patient's notes in front of everyone.\n\nShe also checks, quietly after the huddle, that the patient came to no harm, and tells Grace the result, so that the report is not left hanging over her."
+   },
+   {
+    "label": "Show strength without dominance",
+    "text": "When a senior nurse says, a little sharply, that new managers always start like this and it never lasts, Nkechi does not bristle or argue. She nods, says, \"I understand why you'd think that. You'll have to judge me on what I do,\" and keeps her posture upright and settled. She knows from Cheng and colleagues' work that authority built on respect has to be earned, and cannot be claimed in a huddle.\n\nLater that week, she asks the same senior nurse for advice about the rota, and uses it. Respect, she knows, often starts with being asked."
+   },
+   {
+    "label": "Speak last on the decisions",
+    "text": "For the one decision she needs to make that morning, how to cover a staff gap on the late shift, she asks for ideas before giving her own. A nurse suggests swapping two break times, which Nkechi had not thought of. She says, \"That's better than what I had in mind, let's do it,\" and credits the nurse by name. It costs her nothing and tells the team that their ideas will be used.\n\nShe also says, before giving her own view on anything, \"Tell me if I'm missing something,\" and means it.\n\nShe also notices that two nurses who had said nothing earlier join the discussion about the break swap, because it is practical and low-risk. Small decisions are a safe place for people to start speaking."
+   },
+   {
+    "label": "Close with both",
+    "text": "She ends the huddle by summarising what she has heard and what she will do: chase the hoist today, look at the rota concerns this week, and hold the same huddle every Monday. Her voice is steady and her pace unhurried, which carries the strength. She thanks everyone, smiles and goes to help Grace with the incident report, which carries the warmth.\n\nShe also tells them what she will not do: discuss anyone's mistakes in front of the team. Saying it out loud, and keeping to it, matters more than any poster about values."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the next three months, the ward's incident reports double, which the matron, briefed by Nkechi in advance, reads as a good sign. The hoist is fixed. Sickness absence starts to fall. The senior nurse who doubted her says nothing for weeks, then one Monday brings a problem to the huddle herself. Nkechi notes that the first bad news she received set the pattern, and that she had about three seconds to get it right.\n\nGrace, the nurse who reported the late dose, becomes the ward's champion for incident reporting within the year.\n\nShe also keeps the Monday huddle going for the whole of her first year, even on the weeks when there is nothing much to discuss, because the regularity is part of what makes it safe."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Saving warmth for good news",
+   "body": "Many leaders are warm when things are going well: they smile, chat, praise and joke. When something goes wrong, the warmth disappears. The face closes, the voice hardens, the questions become interrogations. People quickly learn the pattern, and they learn it as a rule about when it is safe to approach. Bad news then arrives late or not at all, which is exactly what Owen discovered after the refrigeration failure. The moments when warmth matters most are the ones in which it is hardest to show: when someone admits a mistake, brings a problem or delivers news you did not want. Warmth there does not mean pretending it does not matter. It means showing that the person who told you is on your side, even as you take the problem seriously. A calm face, a \"thank you for telling me\" and a turn towards them do most of the work.\n\nA useful test is to ask who on your team last brought you bad news, and how your face looked when they did."
+  },
+  {
+   "title": "Confusing an open door with an open face",
+   "body": "\"My door is always open\" is one of the commonest phrases in management, and one of the most misleading. A door can be open while the body behind it says the opposite: a leader who keeps typing while someone talks, glances at the clock, sighs, answers the phone mid-sentence or listens with a frown and folded arms. People who come through the door read those signals far more than the words on the door, and many of them do not come back. If you want people to bring you things, make the first few seconds welcoming: stop what you are doing, turn your chair and your face towards them, close the laptop, and let your expression show interest before you know what the problem is. If you genuinely cannot stop, say so and give a time: \"I can't give this proper attention right now. Can we talk at three?\"\n\nSome leaders find it helps to move from behind the desk to a chair beside it whenever someone comes in.\n\nIf someone comes to you twice and finds you busy both times, they will usually stop coming."
+  },
+  {
+   "title": "Leading from behind a switched-off camera",
+   "body": "In remote and hybrid teams, the leader's body is often visible only through a video call, and many leaders, busy and tired, turn their camera off, mute their face or visibly work on something else during team calls. The team notices. A leader who is a black square in a team meeting is a leader whose reactions nobody can read, and a leader seen typing during someone's update is a leader who appears not to care. The chapters on video calls earlier in this part describe how much is already lost on screen. For a leader, the minimum is to have the camera on in team meetings, to look at the person speaking, to let the face react and to close other windows. If you need to be off camera for a reason, say so, so that the team does not fill the silence with a worse explanation.\n\nIt also helps to arrive at team calls a minute early, camera on, so that people see you before the agenda starts."
+  },
+  {
+   "title": "Keeping your stress private",
+   "body": "Leaders often believe that their stress is their own business, and try to hide it entirely. But a leader's mood spreads to the team, as Sy and colleagues found, and a team that can sense tension without knowing its cause will usually assume the worst, often that the tension is about them. The answer is neither to unload your worries on the team nor to perform cheerfulness, but to name the mood briefly and honestly so that it is not misread: \"I'm a bit preoccupied this morning with the budget meeting later, so if I seem distracted, it's not about you.\" That one sentence stops a dozen people wondering what they have done wrong. It also models the honesty about feelings that psychological safety depends on. Then take what steps you can to settle, such as a walk, a slow exhale or a short break, before the next meeting.\n\nIt also helps to tell the team when the pressure has lifted, so that they know the mood has changed too."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can a leader be warm and still be taken seriously?",
+   "a": "Yes, and the evidence suggests that the most effective leaders are both. Fiske, Cuddy and Glick argued that people judge others on warmth and competence, and that each matters: competence without warmth looks threatening, and warmth without competence looks pleasant but unreliable, as Daniel found. The trick is to let different parts of the body carry each. Posture, stillness and an unhurried pace carry strength; the face, the voice and attention carry warmth. A leader who stands settled and speaks slowly, with a falling tone at the end of a decision, while smiling when something is good and turning towards whoever is speaking, shows both at once. What undermines seriousness is not warmth but indecision, and what undermines warmth is not firmness but coldness.\n\nIf you lean naturally towards one, practise the other. Most leaders are stronger in one dimension and need deliberate work on the second.\n\nA useful check is to ask a trusted colleague which of the two people see first in you, and work on the other."
+  },
+  {
+   "q": "How can I stay calm in front of my team when I am not?",
+   "a": "Settle the body rather than hiding the feeling. Before you speak, take one long, slow exhale and let your shoulders drop. Slow your speech deliberately, perhaps by half, and pause between points, because anxious speech is fast and slowing it is one of the clearest signals of composure. Keep your movements fewer and slower. Then acknowledge the problem plainly rather than pretending it is not there, as Lorraine did: \"This is serious, and here is what we are doing.\" You do not need to feel calm to act calmly, and acting calmly tends to settle the feeling a little. What does not work is a forced smile and repeated reassurance, which people read as a sign that things are worse than you are saying.\n\nIf you have a few minutes before a difficult meeting, a short walk does more for your composure than rehearsing what to say."
+  },
+  {
+   "q": "What should I do in the first moments after someone brings me bad news?",
+   "a": "Watch your first reaction, because the person will remember it, and so will everyone they tell. A sigh, an eye-roll, a tightened jaw or a glance at your phone teaches people to bring you less. Instead, keep your face calm, turn towards them and say something that rewards the telling before you respond to the problem: \"Thank you for telling me straight away.\" Then ask questions to understand what happened, rather than who is to blame. If you need time to think, say so. If the news is about a mistake they made, separate the mistake from the person, and deal with it later and in private if necessary. Edmondson's work suggests that how leaders respond to the first bad news shapes whether they hear the next.\n\nAnd if the news is about a mistake you made yourself, say so first. Nothing teaches a team that errors are survivable faster.\n\nAfterwards, tell the person what happened as a result of their telling you. People bring more when they see that it made a difference."
+  },
+  {
+   "q": "How can I lead people who are older or more experienced than me?",
+   "a": "By building prestige rather than claiming dominance. Cheng and colleagues found that influence can come from respect for what you know and bring, as well as from intimidation, and with experienced colleagues, intimidation will fail and cost you. Ask for their views and use them, crediting them by name. Be clear about the decisions that are yours to make, and make them steadily, explaining why. Avoid overcompensating with a louder voice or a harder manner, which tends to read as insecurity, as Danny found in the chapter on the glass ceiling. Let your posture and pace be settled and unhurried. Experienced people usually respect a leader who knows what they do not know, says so and listens, far more than one who pretends to know everything.\n\nIt also helps to meet each experienced colleague individually early on and ask what they think the team needs."
+  },
+  {
+   "q": "Is it ever right for a leader to be dominant?",
+   "a": "Sometimes, briefly. In a genuine emergency, such as a fire, an injury or a moment when someone is in danger, a clear, firm, directive voice that tells people exactly what to do is what the situation needs, and most people are grateful for it. The chapter on high-stakes environments in Part VI describes this kind of command. The skill is to use it only when the situation calls for it and to step out of it as soon as the danger has passed, returning to questions, listening and credit. Leaders who stay in command mode after the emergency, or who use it for ordinary disagreements, teach their teams to fear them, and Cheng and colleagues' distinction suggests that influence built that way is fragile. Dominance is a tool for moments, not a style for every day.\n\nIf you do have to take command in an emergency, explain afterwards why you did, and thank people for following.\n\nIt also helps to be honest with yourself about whether a situation is truly an emergency or just feels urgent."
+  },
+  {
+   "q": "How can I build psychological safety in a team that has been burned?",
+   "a": "Slowly, through consistency. People who have been punished for speaking up will not believe a single speech; they will watch what you do the first few times someone brings you bad news, admits a mistake or disagrees with you. Respond well to each of those moments, as Nkechi did with the late medication. Admit your own mistakes openly, which shows that error is survivable. Ask for problems explicitly and thank people when they bring them. Speak last in discussions, so that your view does not close down others. Follow through on what you say you will do. Edmondson's work suggests that safety and learning grow together, but a team's memory of the old regime will fade only as your new pattern repeats, over months rather than weeks.\n\nIt can also help to ask the team directly what made speaking up feel risky before, and to change what you can.\n\nAnd be patient with people who test you. The ones who are slowest to trust are often the ones who were most hurt by the last leader."
   }
  ],
  "watch": [
