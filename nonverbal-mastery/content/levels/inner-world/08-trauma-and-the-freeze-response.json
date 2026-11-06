@@ -80,6 +80,20 @@
    "doCaption": "Seeing a body still trying to keep him safe, and staying.",
    "dontCaption": "Reading his jumpiness and short temper as weakness.",
    "annotation": "Hypervigilance, startle and irritability are the body's learned protection after a threat, not a flaw."
+  },
+  {
+   "doPoseId": "p_mixed_seated_turned",
+   "dontPoseId": "p_mixed_too_close",
+   "doCaption": "Sitting near, letting her choose what to say",
+   "dontCaption": "Pressing her for the details of what happened",
+   "annotation": "Asking for details, or why she did not fight, adds blame. Belief, closeness without pressure and her choice about what to tell help more."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_sit_knee_hug",
+   "doCaption": "Told, and believed, that freezing was not a choice",
+   "dontCaption": "Alone with the shame of having frozen",
+   "annotation": "Many survivors blame themselves for freezing. Hearing that it is what bodies do, from someone who believes them, can lift some of that weight."
   }
  ],
  "caseStudy": "Chris, thirty-one, shares a flat with his friend Jamal, thirty-three. In October, Jamal is attacked and robbed on his way home from the station. He is bruised but not badly injured, and tells Chris he is fine. He goes back to work after a week.\n\nOver the next month Chris notices changes. Jamal now walks home the long way, avoiding the high street. In the pub he takes the seat facing the door and keeps glancing at it. When a glass smashes behind the bar, he jumps so hard he spills his drink, then goes very quiet. He is short-tempered, which is not like him, and Chris hears him moving around the flat at three in the morning.\n\nOne evening Chris comes up behind Jamal in the kitchen and puts a hand on his shoulder to reach for a mug. Jamal goes rigid, then spins round with his fists up. He stares at Chris for a moment without seeming to see him. Chris steps back and says calmly, *Jamal. It's me. You're at home. You're safe.* After a few seconds Jamal lowers his hands, apologises, and sits down, shaking.\n\nChris does not ask what happened in October. He says he is sorry for startling him, and that from now on he will say something when he comes into a room. A few days later, on a walk, Jamal tells him a little about the attack: that he froze, could not shout, and has been furious with himself ever since. Chris tells him that freezing is one of the body's most common responses to danger, and not a choice.\n\nIn December, when the jumpiness and the broken sleep have not eased, Chris suggests he see his doctor and offers to go with him. Jamal is referred for trauma-focused therapy. By spring he is walking down the high street again, on good days.",
@@ -98,6 +112,10 @@
     "Ask before any touch, however small.",
     "Notice whether anyone responds differently from usual.",
     "Write down which of these felt most unnatural to you, and why."
+   ],
+   "variations": [
+    "Practise announcing yourself with a child, an older relative or a colleague, and notice whether they seem more at ease.",
+    "For one meeting or gathering, notice who sits facing the door, and make sure that seat is free for anyone who wants it."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Say the script aloud slowly until it feels natural.",
     "Note what you would not do: grab, question, crowd.",
     "Keep the script where you can find it."
+   ],
+   "variations": [
+    "Adapt your script for a child, using simpler words and a familiar object they can hold or name.",
+    "Practise the script with a friend, taking turns to be the person who is frozen, and notice which phrases feel calming."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "For each, write one way you could offer a choice.",
     "Introduce one of these changes this week.",
     "Note how people respond."
+   ],
+   "variations": [
+    "Ask someone you trust which moments in your home or workplace feel least in their control, and add their answers to your list.",
+    "Choose one routine that always happens without warning, such as a fire drill or a loud announcement, and find a way to give notice."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Write a replacement for each that conveys belief and support.",
     "Write one true sentence you could say to someone who blames themselves for freezing.",
     "Practise saying it aloud."
+   ],
+   "variations": [
+    "Write the replacement sentences on a card and keep it in your wallet or phone, so that they are there when shock takes your words.",
+    "Practise saying \"I believe you\" aloud until it feels natural, since it is often the hardest and most important sentence."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Find the crisis resources in this app for your region.",
     "Write two practical offers you could make to someone who needs help.",
     "Keep these notes where you can find them quickly."
+   ],
+   "variations": [
+    "Find out whether your workplace has a trauma support service or employee assistance line, and how to refer yourself or a colleague.",
+    "Write down how you would explain, in one sentence, that trauma treatment works even years after an event."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Signs that persist beyond a month and disrupt life are a reason to seek help, and effective treatments exist. Pushing him to drive or to tell the story can make things worse; making a doctor's appointment practical helps.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Which of these is one of SAMHSA's six principles for a trauma-informed approach?",
+   "options": [
+    "Empowerment, voice and choice for the people involved",
+    "Speed, firmness and control over every decision",
+    "Debriefing everyone in detail as soon as possible",
+    "Strict silence about the past, to avoid upsetting anyone"
+   ],
+   "answer": 0,
+   "explain": "SAMHSA's six principles are safety; trustworthiness and transparency; peer support; collaboration and mutuality; empowerment, voice and choice; and attention to cultural, historical and gender issues. Offering choice is one of the simplest ways to apply them.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Whenever voices rise in an argument, your partner goes completely still, stares at the floor, wraps her arms round herself and stops answering. What fits this chapter best?",
+   "options": [
+    "Raise your voice further, since she is clearly refusing to engage with you",
+    "Lower your voice, stop asking questions and agree to come back to it later",
+    "Tell her that silence is a form of punishment and that it has to stop",
+    "Keep asking her what is wrong until she finally tells you what she thinks"
+   ],
+   "answer": 1,
+   "explain": "Her stillness fits a freeze, which raised voices can trigger in people who grew up with frightening adults. Pressing pushes her further into it; lowering your voice and pausing lets her come back.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that the best way to help people after a traumatic event is to have them go through every detail of it in one session straight away. What does the research suggest?",
+   "options": [
+    "It is right, since talking it all through at once always prevents later problems",
+    "Single-session debriefing did not prevent later problems and may have harmed some",
+    "It is right, but only if the session lasts at least three hours without a break",
+    "It is wrong, since people should never talk about traumatic events at all"
+   ],
+   "answer": 1,
+   "explain": "Reviews found that single-session debriefing soon after a trauma did not prevent post-traumatic stress and might have made some people worse. Let people choose whether and when to talk, and offer professional help if they are struggling.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "The Body Keeps the Score",
    "author": "Bessel van der Kolk",
    "note": "Viking, 2014. A widely read account of trauma and the body; influential, though some of its claims go beyond the evidence and are debated."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The firefighter at the barbecue",
+   "scene": "Gareth, forty-six, retired from the fire service two years ago after twenty years on the job. At a friend's summer barbecue, someone lets\n  the coals flare and a pile of burgers catches, sending up a cloud of black smoke. Most of the guests laugh and cheer. Gareth, standing nearby\n  with a drink, goes rigid. His face drains of colour, his eyes fix on the smoke and he stops breathing for several seconds. Then he puts his\n  drink down on the wall, very carefully, and walks quickly round the side of the house.\n\n  One of the guests, who knows Gareth slightly, calls after him, \"Not keen on a bit of smoke, for a fireman!\" A couple of people laugh. Gareth's\n  wife, Helen, goes after him and finds him sitting on the front step, pale and shaking, staring at the pavement.\n\n  When the host, Paul, comes round to see what happened, Helen tells him quietly that there was a house fire, years ago, in which Gareth could not\n  reach a child. He does not talk about it.\n\nGareth has never told anyone outside his family about the fire, and he has never seen anyone about it. His old station had a counselling service, but going to it, he once said to Helen, would have been \"the end of the banter for ever\".\n\nHelen has seen this before: at a garage fire on the news, at a smoky pub, once at a bonfire. Each time, Gareth goes still, then leaves, then says nothing about it afterwards. She has learned to follow him without fuss.",
+   "misread": "The guest read Gareth's reaction as an odd weakness in a firefighter, something to tease. The others read it as an overreaction to a bit of barbecue smoke. None of them knew that the smoke had pulled a past danger into the present.\n\nAnd the joke turned a moment of private terror into a public embarrassment, which is often what makes people who have been through trauma hide their reactions even more carefully next time.\n\nThe guest's joke also rested on a common belief: that people who face danger for a living should be immune to it. Often the opposite is true. They have simply seen more of it.",
+   "betterRead": "A reminder, here the sight and smell of thick smoke, can trigger the body's defence cascade as though the original danger were happening again. Gareth's stillness, held breath, fixed gaze and then rapid exit fit a freeze followed by flight, not a man being squeamish. Emergency workers and soldiers often carry reactions like this for years, frequently in silence, because their training and their workplaces have taught them that reactions are weakness. Paul's better response was simple. He did not ask what had happened in the fire. He sat down on the step beside Gareth, said he was sorry about the joke, and asked if Gareth would like to stay out front for a while, with a drink brought out to him. Later he took the guest aside and asked him, without explanation, to lay off. A few weeks afterwards, Helen mentioned that Gareth had started seeing someone through a service for former emergency workers.\n\nPaul also made sure, at his next barbecue, that the grill was set up at the far end of the garden, and said nothing about why."
+  },
+  {
+   "title": "The friend who asked the wrong question",
+   "scene": "Laura, twenty-nine, and her friend Beth have known each other since school. One evening, after a few weeks of Beth seeming distant and\n  cancelling plans, Beth tells Laura that she was sexually assaulted by a man she met at a work event. She tells it haltingly, looking at her\n  hands, and says very little about what happened. She says she could not move, could not shout, could not do anything. She says it over and\n  over: she just froze.\n\n  Laura is horrified and angry on her friend's behalf. Without thinking, she asks, \"But why didn't you scream? Couldn't you have pushed him\n  off?\"\n\n  Beth goes silent. She pulls her knees up to her chest, wraps her arms round them and looks at the floor. After a minute she says she should\n  probably go home.\n\nBeth has not told anyone else, not her parents, not her flatmate, not her manager at work, where the man is a contractor she still sometimes sees in the lift. She says she has not slept properly since.\n\nLaura has also noticed changes in Beth over the past month that she had not understood. Beth has stopped going to the gym, where she used to go every morning. She jumps when her phone rings. When they went for a drink a fortnight ago, Beth insisted on sitting in a corner, facing the room, and left early when a group of men came in, saying she had a headache.",
+   "misread": "Laura's question came from shock and from a common belief that a person who is attacked will fight or shout, and that not doing so needs explaining. Beth heard it as what she already feared: that she was to blame for not resisting.\n\nHer question also shifted the focus from what the man had done to what Beth had not, which is a shift survivors hear constantly and which keeps many of them silent.\n\nShe also, without meaning to, treated Beth's freezing as the part of the story that needed explaining, rather than what the man had done.",
+   "betterRead": "Freezing is one of the body's most common responses to inescapable danger, and it is not chosen. In Möller and colleagues' study of women seen after a sexual assault, around seven in ten reported significant immobility during it, despite wanting to resist. Survivors who froze often blame themselves, and a question about why they did not fight confirms that blame. Laura realised what she had done as soon as Beth curled up. She said, \"I'm so sorry, that was a terrible thing to ask. Freezing is what bodies do. It wasn't your fault, and I believe you.\" She did not ask for details. She asked whether Beth wanted to stay, and whether there was anything she could do. Beth stayed. Later that week, Laura found the details of a specialist sexual violence support service and gave them to Beth, saying she would go with her if she wanted. Beth went, alone, a month later, and told Laura afterwards that the counsellor had said the same thing about freezing, and that hearing it twice had helped."
+  },
+  {
+   "title": "The warehouse worker who did not answer",
+   "scene": "Amir, thirty, came to Britain as a refugee from Syria four years ago and now works in a distribution warehouse. He is quiet, careful and\n  reliable. His new shift supervisor, Wayne, has started to find him frustrating. Twice, when a pallet has crashed to the floor nearby, Amir has\n  stopped dead in the middle of the aisle, rigid, staring at nothing, and has not responded when Wayne shouted his name. Once he dropped what he was\n  holding and crouched behind a shelving unit. Afterwards he says sorry and goes back to work without explanation.\n\n  Wayne thinks Amir is not paying attention, or is deliberately ignoring him. He has started shouting louder, and coming up behind Amir to tap him\n  on the shoulder when he wants something, which makes Amir jump violently.\n\n  A colleague who has worked with Amir for two years, Kasia, tells Wayne that he has got it wrong.\n\nAmir has never talked about the war at work. Kasia knows only that he lost his brother, because he mentioned it once, briefly, when she asked about his family, and then changed the subject.\n\nKasia has noticed something else. On days when there has been a crash, Amir eats lunch alone in his car rather than in the canteen, and comes back quieter. He has never taken a day off sick in two years, and he is the first to volunteer for extra shifts.",
+   "misread": "Wayne read Amir's stillness and failure to answer as inattention or defiance, and responded with the things most likely to set off the alarm again: louder shouting and touches from behind.\n\nHe also took the crouching as theatrical, when it was the most protective thing Amir's body knew to do in the presence of a sudden crash.\n\nHe also took Amir's silence afterwards as sullenness. A man who has just come back from a freeze often has no words for it, and no wish to explain it to a supervisor he barely knows. Asking him to explain would have been one more demand.",
+   "betterRead": "Sudden loud noises, such as a crash, a bang or a shout, are among the commonest reminders for people who have lived through violence or war. Amir's freeze, his fixed stare, his failure to hear his name and his crouch behind the shelving fit a body responding to danger, not a man ignoring his supervisor. Shouting louder and tapping him from behind made each episode worse. Kasia suggested what trauma-informed habits describe: approach from the front, where he can see you; say his name at an ordinary volume; tell him what you want before you touch anything; and, after a freeze, give him a moment and speak slowly. Wayne, a little embarrassed, tried it. He also asked Amir, privately and without asking about the past, whether there was anything at work that would help. Amir asked whether he could work in the aisles furthest from the loading bay, where the crashes were rarer. Wayne moved him, and the freezes became much less frequent.\n\nWayne also stopped the habit of tapping people from behind with everyone on the shift, and found that several other workers were relieved."
+  },
+  {
+   "title": "The girlfriend who went still",
+   "scene": "Tom and Lily have been together for a year. They rarely argue, but when they do, a pattern has started to frustrate Tom. As his voice\n  rises, Lily stops talking. She goes very still, her face blank, her eyes fixed on a point on the floor, her arms wrapped around herself. She\n  does not answer his questions. Sometimes she seems not to hear him at all. Tom finds this maddening. He reads it as stonewalling, a refusal to\n  engage, and it makes him louder.\n\n  After one argument, he tells a friend that Lily \"just shuts down and ignores me, like I'm not even there\". His friend suggests he asks her\n  about it, at a calm moment, rather than in the middle of a row.\n\n  When Tom does, a few days later, Lily tells him that she grew up in a house where her father shouted a great deal, and where silence and\n  stillness were the safest things to do. She says that when a man's voice gets loud, she goes somewhere else, and cannot get back until it is\n  quiet.\n\nTom has also noticed that, after an argument, Lily is exhausted for hours, and sometimes has a headache the next day. He had put this down to her sulking.\n\nTom has also noticed that Lily cannot watch films with shouting in them, and that she goes quiet when his friends get loud and boisterous at the pub. He had thought she just did not like them.",
+   "misread": "Tom read Lily's stillness as a deliberate withdrawal, a form of punishment or contempt, because that is what silence in an argument often means. He did not see that her body was doing what it had learned to do to survive.\n\nAnd Tom's louder voice, meant to reach her, was the very thing that kept her away. The harder he pressed, the further she went.\n\nHe also took her exhaustion afterwards as sulking, when a freeze can leave the body drained for hours.",
+   "betterRead": "Freezing is not only a response to extreme events. For people who grew up with frightening adults, ordinary raised voices can set off the same defence cascade years later. Lily's fixed gaze, her arms wrapped around herself, her silence and her apparent deafness fit a freeze, and pressing her at that moment, with a louder voice, pushes her further into it. Tom's better approach was the opposite of his instinct. They agreed that if Lily went still, he would lower his voice, stop asking questions, and say something like, \"I'm not angry with you. Let's stop for a bit.\" He would sit down rather than stand over her. They would come back to the subject later, when she was ready. It felt strange to Tom at first to stop an argument he had not finished. He found that the arguments they came back to were shorter and kinder than the ones he had pressed on with.\n\nLily also found it easier, over time, to say \"I'm going still\" before it took hold completely, which gave them both a few seconds' warning."
+  }
+ ],
+ "workedReading": {
+  "title": "Bonfire night",
+  "scene": "Kemi has taken her children to a community bonfire and fireworks display in the local park. As the first rockets go up with a series of loud bangs, she notices a man standing a few metres away, alone, in his fifties. He has gone completely rigid. His face is pale, his eyes are wide and fixed on the sky, his hands are clenched at his sides and he does not seem to be breathing. When the next bang comes, he flinches hard and half crouches. People around him are cheering. Nobody else seems to have noticed.\n\nKemi is not trained in anything beyond basic first aid, and she hesitates. She is aware that approaching a stranger could frighten him more, and that walking away would leave him alone.\n\nShe also notices that she does not know whether he is with anyone. He seems to be alone, and the people around him are watching the sky, not him.",
+  "steps": [
+   {
+    "label": "Notice the freeze",
+    "text": "Kemi notes the cluster: sudden rigidity, pallor, a fixed stare, clenched hands, held breath, a flinch and a half crouch at each bang. In a crowd that is cheering, this is not excitement or cold. It fits a body responding to danger. She also notes that she does not know why, and that she does not need to.\n\nShe also notices that she is calm herself, which matters. If she were frightened, she would be likely to rush, and rushing towards someone in a freeze can make it worse.\n\nShe also notes that the reaction repeats at each bang, which tells her it is tied to the noise rather than to something else in the crowd, such as a person he is frightened of."
+   },
+   {
+    "label": "Check for an emergency",
+    "text": "She considers whether he might be unwell in another way: a heart problem, a fall about to happen. His colour is pale but he is upright, and the timing of his reactions matches the bangs. She decides to approach, and to call for the first-aid volunteers if he seems physically unwell or does not respond at all.\n\nShe also keeps half an eye on the first-aid tent, so that she knows where help is if she needs it quickly.\n\nShe also reminds herself that she can be wrong about the cause and still help. Whatever is happening, a calm person, a choice and a quieter place will not make it worse."
+   },
+   {
+    "label": "Approach where he can see you",
+    "text": "She leaves her children with her sister and walks round so that she is in front of him, at an angle, where he can see her coming, rather than approaching from behind. She stops a little more than an arm's length away. She does not touch him. She says, at an ordinary volume, \"Hello, I'm Kemi. Are you all right?\"\n\nShe also keeps her hands visible and her movements slow. A sudden gesture, even a friendly one, could look like the very threat his body is braced for.\n\nShe also chooses not to say \"Don't worry\" or \"It's only fireworks\". Both would tell him that his body is wrong, which it is not; it is doing what it learned to do."
+   },
+   {
+    "label": "Offer choice and a way out",
+    "text": "He looks at her as if from a long way off and nods slightly, but does not speak. She says, \"The fireworks are loud. Would you like to walk over to the car park with me, where it's quieter?\" The question gives him a choice and an exit. He nods again, and they walk slowly to the edge of the park, with her beside him rather than in front.\n\nShe also walks at his pace, which is slow and stiff, and does not try to hurry him or guide him by the arm. He finds his own way, a step behind her shoulder.\n\nShe also makes sure the route to the car park is clear and does not lead them through the thickest part of the crowd, where being jostled from behind might set off his alarm again."
+   },
+   {
+    "label": "Help him come back",
+    "text": "At the car park, where the bangs are muffled, Kemi speaks slowly and calmly. She tells him where they are and that he is safe. She asks him to notice his feet on the ground and to tell her what colour her coat is. She breathes slowly herself. Over a few minutes his breathing returns, his hands open and he says, hoarsely, that he is sorry, he does not know what came over him.\n\nShe keeps her questions simple and concrete. A man coming back from a freeze can answer what colour a coat is far more easily than how he is feeling.\n\nShe also keeps her own breathing slow and audible, without commenting on it. People coming back from a freeze often fall into step with a calm person nearby, as the chapter on breath described."
+   },
+   {
+    "label": "Do not ask for the story",
+    "text": "Kemi does not ask what happened to him or why fireworks affect him. She says there is nothing to be sorry for, that loud bangs are hard for lots of people, and asks whether there is anyone she can call. He says his name is Ian and that his wife is at home, a few streets away. He says he thought he would be all right this year.\n\nShe also resists the urge to tell him that she understands. She does not, and he would know it.\n\nShe also offers practical help: a bottle of water from her bag, and to wait with him until his wife arrives. Practical help asks nothing of him except yes or no."
+   },
+   {
+    "label": "What happened",
+    "text": "Ian rings his wife, who comes to collect him. Before she leaves, she thanks Kemi and says quietly that Ian served in the army, and that bonfire night is always hard. Kemi returns to her children. She notes that she never learned what had happened to him, and that she did not need to. What helped was approaching where he could see her, giving him a choice and a way out, staying calm and slow, and leaving the story to him.\n\nShe also mentions to the organisers, afterwards, that a quiet area away from the fireworks might help some people next year. They put up a sign for one the following November.\n\nShe also thinks, on the way home, about how close she came to not approaching him at all. Most people in the crowd would have helped if they had noticed. The difference was only that she was looking."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Asking why they did not fight or run",
+   "body": "\"Why didn't you scream?\" \"Why didn't you just leave?\" \"Couldn't you have fought him off?\" These questions are often asked out of shock, love or anger on the survivor's behalf, and they are among the most damaging things a survivor can hear. They assume that resistance was possible and that not resisting needs explaining. The research on the defence cascade and on tonic immobility shows that freezing is common, automatic and not chosen. Many survivors already blame themselves for it, and questions like these confirm the blame. Instead say what is true: freezing is what bodies do in danger, it was not your fault, and I believe you.\n\nIt also helps to remember that the same applies to men. Men who have been assaulted often face even more disbelief about freezing, because of beliefs that men should always be able to fight back. Freezing is just as automatic in men.\n\nIt also helps to know that survivors are often asked these questions by the people closest to them, sometimes repeatedly. If you have asked one, it is never too late to say that you understand now, and that you are sorry.\n\nQuestions about what the survivor was wearing, drinking or doing beforehand carry the same blame, and do the same harm. None of them is a friend's business unless the survivor chooses to raise it."
+  },
+  {
+   "title": "Reading the alarm as character",
+   "body": "After trauma, the body can stay on alert for months or years: jumping at noises, scanning rooms, sitting with the back to a wall, snapping at small irritations, avoiding certain places. Each of these is easy to read as a flaw: paranoia, nervousness, bad temper, rudeness, laziness. These readings make the person's life harder, because they add judgment to a body that is already working overtime to keep them safe. Before deciding that someone is jumpy, cold or difficult, consider that their alarm may still be tuned to a danger you know nothing about, and make it a little easier for them, rather than harder.\n\nIt also helps to notice the strengths that come with the alarm. Many people who have been through danger are extremely good in a crisis, alert, steady and quick to act. The same body that jumps at a slammed door may be the one you want beside you in an emergency.\n\nIt also helps to make small allowances without asking for explanations: letting someone choose their seat, warning them before a loud noise, not taking it personally when they leave a crowded room.\n\nIrritability deserves particular patience. A body that is constantly on alert has little left over for frustration, and a person who snaps at small things may be exhausted by vigilance rather than short-tempered by nature."
+  },
+  {
+   "title": "Setting off the alarm for fun",
+   "body": "Some workplaces and friendship groups have a culture of pranks and surprises: jumping out from behind doors, banging things to make people jump, coming up from behind with a loud noise, play-fighting without warning. For most people these are harmless. For someone whose alarm is still tuned to danger, they can trigger a full freeze or panic, and the laughter that follows adds shame. You rarely know who has been through what. A culture of announcing yourself, approaching from the front and asking before touching costs nothing and makes a room safer for everyone in it.\n\nIf someone does react badly to a surprise, the kindest response is a quiet apology and nothing more. Asking them why they reacted so strongly, or telling them it was only a joke, makes it worse.\n\nWorkplaces that use loud alarms, sudden announcements or drills can help by giving notice where possible. A message saying \"there will be a fire alarm test at eleven\" costs nothing and spares some people a great deal.\n\nChildren are especially affected by surprises and play-fighting if they have been through something frightening. A child who screams or freezes when an adult jumps out at them is not being silly, and should not be laughed at."
+  },
+  {
+   "title": "Playing therapist",
+   "body": "When someone has been through something terrible, a caring friend may want to help them process it: asking them to go through what happened, encouraging them to feel their feelings, interpreting their reactions, or announcing that they must have PTSD. Reviews of single-session debriefing found that pressing people to go through traumatic events soon afterwards did not prevent later problems and might have made some worse. A friend's job is different from a therapist's. It is to be safe, steady company; to believe them; to let them choose whether, when and how much to tell; to notice if they seem stuck; and to help them reach professional help if they want it.\n\nIt also helps to look after yourself. Hearing about someone's trauma can be distressing, and friends sometimes carry more than they realise. Talking to someone you trust, without sharing identifying details, can help you stay steady for them.\n\nIt also helps to resist labels. Telling someone they have PTSD, or that they are traumatised, can frighten them, or make them feel broken. Describing what you have noticed, and asking how they are, leaves them free to find their own words."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is freezing a sign of weakness?",
+   "a": "No. Freezing is part of the body's automatic defence cascade, which Kozlowska and colleagues describe across animals and humans. When escape or fighting seems impossible, many bodies stop moving, sometimes in a state of alert stillness and sometimes in tonic immobility, when the person cannot move or speak even if they want to. It is not chosen, and it is extremely common: in Möller and colleagues' study, around seven in ten women seen after a sexual assault reported significant immobility. Freezing says nothing about a person's courage or character. It says that their body was trying to survive.\n\nIt also helps to say this to anyone who blames themselves for freezing, including yourself. Many people carry that shame for years, and hearing that freezing is common and automatic can be the start of putting it down.\n\nIt may also help to know that animals freeze in the same way, and that the response is ancient. A rabbit that goes still in the headlights is not choosing to; neither is a person."
+  },
+  {
+   "q": "What is the difference between freezing and tonic immobility?",
+   "a": "In the defence cascade Kozlowska and colleagues describe, freezing is a state of alert stillness: the body is primed to move but holds still, often while it assesses the threat, and the person may be able to act if a way out appears. Tonic immobility comes later, when escape seems impossible: the body becomes still and unresponsive, and the person may be unable to move or call out at all, even though they are aware. Both are automatic. In everyday conversation, people often use \"freeze\" for both, which is fine, as long as nobody assumes that someone who froze could have chosen to move.\n\nIt also helps to know that people often cannot remember clearly what happened during tonic immobility, or remember it in fragments. That is not a sign that they are confused or making things up. Memory under extreme threat often works differently.\n\nSome survivors also describe a sense of watching from outside their body, or of time slowing down. These experiences are common during extreme threat, and they are part of the same protective cascade."
+  },
+  {
+   "q": "Should I encourage someone to talk about what happened?",
+   "a": "Let them lead. Some people want to talk about a frightening experience soon afterwards, and some do not, and both are normal. Pressing someone to describe a traumatic event before they are ready can do harm, as the research on single-session debriefing found. What helps is making it clear that you are there if they want to talk, believing what they tell you, listening without interrupting or interrogating, and not asking for details they have not offered. If they never want to tell you, that is their choice. Many people find it easier to talk to a trained professional than to a friend, and that is fine too.\n\nIf someone does want to talk, it helps to let them stop whenever they like, without asking them to finish. A story told in pieces, over months, is still being told.\n\nIt also helps to know what not to do if they do talk: do not ask for more detail than they offer, do not ask why, do not tell them how they should feel, and do not tell anyone else without their permission.\n\nIf you are the person who went through it, the same applies: you do not owe anyone your story. You can choose whom to tell, how much, and when, and you can change your mind."
+  },
+  {
+   "q": "How can I tell whether someone has PTSD?",
+   "a": "You cannot, and you should not try. Post-traumatic stress disorder is a diagnosis made by a professional, and the signs a friend might notice, such as jumpiness, nightmares, avoidance, irritability and sleeping badly, are common in the weeks after any frightening event and often settle by themselves. What you can notice is whether they are settling. If, more than a month or so after the event, someone is still struggling with these things, or they are getting in the way of work, relationships or sleep, it is worth suggesting, gently, that they talk to their doctor. Effective treatments exist, and they work even years after the event.\n\nIf you are worried about their safety, for example if they talk about not wanting to be here, 2.13 describes what to do, and that takes priority over waiting to see whether things settle.\n\nIt can also help to know that the early weeks after a frightening event are often the hardest, and that many reactions in this period are a normal part of recovery rather than signs that something has gone wrong.\n\nFor children, the signs may look different: clinginess, bed-wetting, play that repeats the frightening event, or new fears. A child's doctor or school can advise if these last."
+  },
+  {
+   "q": "What should I do if someone freezes or panics in front of me?",
+   "a": "Stay calm and slow. Approach where they can see you, and do not grab or touch them without asking. Say your name and theirs if you know it, at an ordinary volume. Tell them where they are and that they are safe. Offer a choice, such as moving somewhere quieter. Invite them to notice the present: their feet on the floor, something they can see, the sound of your voice. Breathe slowly yourself. Do not ask what is wrong or what happened. Wait. When they come back, let them lead. If they seem physically unwell, or do not come back, call for medical help.\n\nAfterwards, it often helps to check in a day or two later, briefly, without asking about the episode itself: \"Just wanted to see how you're doing.\"\n\nIf you are with a child who freezes or panics, the same principles apply, with even more emphasis on calm, slow speech, getting down to their level and staying with them until they feel safe again."
+  },
+  {
+   "q": "Does trauma always cause lasting harm?",
+   "a": "No. Most people who go through a frightening event are shaken for a while and then recover, with time, support and ordinary life. Some find that the experience changes them in ways they value. A minority develop lasting problems such as post-traumatic stress, and for them effective treatments exist: clinical guidelines recommend trauma-focused therapies such as trauma-focused cognitive behavioural therapy and EMDR, and many people improve substantially with them. The most useful message a friend can give is that recovery is possible, that help works, and that asking for it is a strong thing to do.\n\nIt also helps to know that support for people who have been through particular kinds of trauma, such as veterans, emergency workers, refugees and survivors of sexual violence, is often available from specialist services as well as from doctors.\n\nIt may also help to know that recovery is not always a straight line. People who are doing well may have a bad week around an anniversary or after a reminder, and that does not mean they have gone backwards.\n\nAnd if you went through something frightening years ago and are still affected, it is not too late. Many people start treatment decades later and still benefit."
   }
  ],
  "watch": [
