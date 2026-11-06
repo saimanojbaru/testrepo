@@ -80,6 +80,20 @@
    "doCaption": "Treating it as a question",
    "dontCaption": "Acting on a gut feeling as a verdict",
    "annotation": "A strong reaction to a stranger is real information about your body. Whether it is information about them is a separate question, to be checked."
+  },
+  {
+   "doPoseId": "p_breath_easy",
+   "dontPoseId": "p_sit_jaw_rub",
+   "doCaption": "Noticed, named in body words, and let go",
+   "dontCaption": "A clenched jaw nobody has noticed, least of all you",
+   "annotation": "Many men override the body until its signals come out as temper. A brief check-in, in plain body words, catches them sooner."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Checking your own state, then the facts",
+   "dontCaption": "Deciding a stranger is shifty from a knot in your stomach",
+   "annotation": "A gut feeling is the brain's guess about your body in the moment. Treat it as a question, and let evidence answer it."
   }
  ],
  "caseStudy": "Marcus, thirty-eight, a project manager, has had what he calls stomach trouble for two years. It comes most weeks, often on Sunday evenings, and with it a short temper that his partner, Leah, has learned to steer around. He has also noticed that he takes against people quickly. After a first meeting with a new supplier, he tells his team the man is shifty, though he cannot say why.\n\nHis doctor runs tests and finds nothing physically wrong, and suggests that stress may be part of it. Marcus is sceptical. He does not feel stressed, he says; he feels ill. A psychologist he sees through work asks him to try something simple. Three times a day, for a fortnight, he is to stop and write down what his body is doing, in body words only, before giving it any other name: tight stomach, warm face, heavy legs, hungry, cold.\n\nThe notes surprise him. The Sunday stomach starts at about six, as he thinks about the Monday meeting with his director, and it eases if he goes for a run. The short temper comes mostly late in the afternoon, on days he has skipped lunch, and fades after he eats. And the meeting with the supplier, when he checks his diary, came at the end of a long day with no break, after a call with the director that had gone badly.\n\nMarcus does not decide that everything was in his head. Some Sundays the stomach is just a stomach. But he begins to check before he names. He eats before late meetings. When he feels his temper rising at home, he tells Leah, “I'm tense, I don't think it's you,” and they both find that easier. With the psychologist, he starts working on the Monday meetings themselves. And when the supplier turns out, over the next few months, to be reliable and straightforward, Marcus notes it in his journal: a gut feeling, checked, and wrong.",
@@ -99,6 +113,10 @@
     "Move to your stomach: is it hungry, full, tight or settled?",
     "Notice temperature, and any tension in your jaw, shoulders and hands.",
     "Write three words describing what you found, using body words only, and only then decide which emotion, if any, fits."
+   ],
+   "variations": [
+    "Do the scan just before a meal and just after, and compare what you notice in your stomach, mood and energy.",
+    "Do the scan at the end of a difficult conversation, and write what your body was doing before you name any feeling."
    ]
   },
   {
@@ -110,6 +128,10 @@
     "Choose a small test: eat something, drink water, rest for ten minutes or warm up.",
     "After the test, write whether the feeling changed, and how.",
     "Repeat on five occasions over a fortnight, and note which names held up and which did not."
+   ],
+   "variations": [
+    "Try a different test, such as a short walk or a few minutes outside, and compare its effect with eating or drinking.",
+    "Ask someone close to you which feelings they think you most often mislabel, and test those names first."
    ]
   },
   {
@@ -121,6 +143,10 @@
     "Write what evidence would confirm or overturn the impression.",
     "Return to the entry after a few weeks and record what you learned about the person.",
     "After five entries, note how often the gut feeling held up, and under what conditions."
+   ],
+   "variations": [
+    "Add a line for what your body was doing at the moment of the impression, in body words, separately from your state.",
+    "Do the log for impressions of places as well as people, such as a new office or a neighbourhood, and compare how often each held up."
    ]
   },
   {
@@ -132,6 +158,10 @@
     "Notice any story your mind adds, such as something is wrong, and label it as a story.",
     "Watch the sensations fade over the next few minutes, without checking your pulse.",
     "Write how long they took to settle; if sensations like these frighten you, do this with a therapist instead."
+   ],
+   "variations": [
+    "If you did the drill without difficulty, try noticing the same sensations after an ordinary flight of stairs at work, and compare.",
+    "Write down, beforehand, what story your mind is most likely to add, so that you can recognise it when it comes."
    ]
   }
  ],
@@ -213,6 +243,45 @@
    "explain": "Anxiety fell more in the heartbeat-training group, and more of them met the criteria for recovery at follow-up. Only half the participants provided follow-up data, so the result is promising rather than settled.",
    "isMisconceptionTest": false,
    "isScenario": false
+  },
+  {
+   "q": "What have Sarah Garfinkel and colleagues argued about interoception?",
+   "options": [
+    "Accuracy, self-rated sensitivity and insight into your accuracy are separate",
+    "Everyone senses their own heartbeat with perfect accuracy from early childhood onwards",
+    "Interoception is identical to the sense of touch and needs no separate study",
+    "Only professional athletes have any measurable awareness of their own internal state"
+   ],
+   "answer": 0,
+   "explain": "Garfinkel and colleagues distinguish how accurately you sense your body, how good you believe you are at it, and how well your confidence matches your accuracy. Feeling in touch with your body is not the same as reading it well.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Most evenings at about six, a father feels fury rising at his noisy children: hot face, shaky hands, headache, empty stomach. What fits this chapter best?",
+   "options": [
+    "Accept that he is an angry father and that nothing can be done about it",
+    "Shout once, loudly, so that the children learn to be quiet at that time",
+    "Eat something, wait a few minutes, and see whether the anger is still as strong",
+    "Ignore the sensations completely, since bodily feelings tell him nothing"
+   ],
+   "answer": 2,
+   "explain": "Feelings are the brain's best guess about the body in context, and hunger and fatigue can feel like anger in a noisy kitchen. A small test, such as eating, shows how much of the feeling was something simpler.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a strong gut feeling about a stranger is your body detecting the truth about them. What does this chapter say?",
+   "options": [
+    "It is right, since the body always picks up on things the mind misses",
+    "It is right for women but not for men, whose bodies are less sensitive",
+    "It is a guess shaped by your state and history; treat it as a question",
+    "It is wrong, since gut feelings are always mistaken and should be ignored"
+   ],
+   "answer": 2,
+   "explain": "Bodily signals guide judgments, and help when they point the right way and mislead when they do not. Check your own state and look for evidence before acting on a gut feeling about someone.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -241,6 +310,110 @@
    "work": "Being You: A New Science of Consciousness",
    "author": "Anil Seth",
    "note": "Faber, 2021. A readable account of feelings and the self as the brain's predictions about the body."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The engineer who did not know he was angry",
+   "scene": "Tom, forty-two, is a structural engineer. In a site meeting, a client's project manager blames Tom's team, in front of everyone, for a\n  delay that was caused by the client's own late changes. Tom answers calmly and politely, sets out the facts and moves the meeting on. He thinks\n  he has handled it well. On the drive home he grips the steering wheel so hard his hands ache, and he overtakes a lorry far too fast. At home, he\n  snaps at his wife, Mel, for leaving shoes in the hall, and then can barely eat his dinner.\n\n  When Mel asks what is wrong, he says nothing is, he is just tired. When she asks whether something happened at work, he says the meeting went\n  fine. She points out that his jaw is clenched so tight she can see the muscle, and that he has been rubbing his chest all evening.\n\n  Tom is surprised. He had not noticed either. He says, after a while, that he supposes the meeting annoyed him a bit.\n\nTom has always been proud of staying calm under pressure. His father had a terrible temper, and Tom decided young that he would never shout at work. He has never thought about where the anger goes instead.\n\nTom also slept badly that night, waking at three with his heart pounding, and lay awake replaying the meeting. He still did not call what he felt anger. He called it being unable to sleep.",
+   "misread": "Tom read his own state through his thoughts about the meeting, which told him he had been calm and professional. He did not notice the signals from his body, the grip, the clenched jaw, the tight chest, the lost appetite, and so he did not know he was angry until Mel told him.\n\nAnd because his thoughts said he had been calm, he took the evening's irritation as being about the shoes, and his wife took it as being about her.\n\nHis own word for the evening, tired, was not wrong. But it covered a feeling he had not let himself have.",
+   "betterRead": "Brewer, Cook and Bird's research suggests that difficulty naming feelings may start with difficulty reading the body, and the chapter on reading yourself under stress described how many men are taught to override these signals. Tom's body registered the injustice in the meeting long before his mind did: in his hands on the wheel, his reckless overtaking, his jaw, his chest and his appetite. A better reading of himself would start with the body, in plain words, before any name: hot face, tight jaw, heavy chest, gripping hands. Only then ask what feeling those sensations add up to. Mel's observation did what Tom's own attention could not. Over the following weeks, he tried the chapter's inside scan after difficult meetings, and found that he could often name anger within minutes instead of hours. He also found that once he could name it, he could do something with it, such as writing to the client, rather than taking it out on the shoes in the hall.\n\nMel also stopped asking \"What's wrong?\" and started asking \"What's your body doing?\", which Tom found much easier to answer."
+  },
+  {
+   "title": "The gut feeling about the lodger",
+   "scene": "Sue, sixty-three, has a spare room she wants to let to a lodger, for company as much as for the money. Her last lodger left owing two\n  months' rent and a damaged carpet, and she is nervous. On a Wednesday evening, a young man named Kwame comes to view the room. He is polite and\n  quiet, and asks sensible questions about bills and the kitchen. But as soon as he walks in, Sue feels her stomach tighten and her heart speed\n  up. Throughout the viewing she feels uneasy, and she cannot say why. When he leaves, she tells her sister on the phone that something about him\n  was off, and that she is going to say no.\n\n  Her sister asks her what, exactly. Sue cannot point to anything he said or did.\n\n  Her sister also asks how her day had been. Sue admits that she had been to the dentist, skipped lunch, and had just finished an angry phone call\n  with her previous lodger's mother about the money.\n\nSue also notices, after the phone call, that she has been rubbing her neck and that her hands are cold. She had put it down to the dentist. It does not occur to her that her body might have been on alert all afternoon.\n\nKwame, for his part, is nervous too. He has been turned down for three rooms this month, and he has started to wonder whether something about him puts people off. He tries hard to be polite and quiet, which may have made him harder to read.",
+   "misread": "Sue read the knot in her stomach and her racing heart as information about Kwame, as if her body had detected something about him that her eyes had missed. She did not consider that the same sensations might be coming from her own day.\n\nThe first viewing after a bad experience is also a setting in which almost anyone would feel uneasy, whoever walked through the door.\n\nShe also took the strength of the feeling as a sign of its accuracy. A gut feeling that arrives quickly and strongly feels more trustworthy than a slow one, whether or not it is.",
+   "betterRead": "On prediction-based accounts of feeling, such as those of Anil Seth and Lisa Feldman Barrett, the brain makes its best guess about what the body's signals mean in the situation. Sue's body was already aroused before Kwame arrived: hungry, sore from the dentist, and stirred up by an angry call about the last lodger. When a stranger walked in for the same room, her brain attached the arousal to him. Dunn and colleagues found that bodily signals guide intuitive decisions more strongly in people who sense them well, which helps when the signals point the right way and hurts when they do not. A better reading treats the gut feeling as a question rather than a verdict. Sue's sister suggested that she ask Kwame for references and his employer's details, and decide on the evidence. Both references were excellent. Sue offered him the room, and he has been her lodger for two years. She says now that he is the best company she has had since her husband died.\n\nShe also wrote, in her notebook, the state she had been in at the viewing, and decided to arrange future viewings for mornings, after breakfast, with no phone calls beforehand."
+  },
+  {
+   "title": "The new mother who forgot to eat",
+   "scene": "Nina, thirty-one, had her first baby in the spring. By the autumn her partner, Josh, has noticed something odd. Nina keeps forgetting to\n  eat. She says she is not hungry, and often she seems genuinely surprised when he points out that she has had nothing since breakfast. She sleeps\n  badly even when the baby sleeps. When he asks how she is feeling, she says she does not really feel anything much, that everything seems muffled,\n  as if she were watching her life through glass. She loves the baby, she says, but she cannot feel it the way she expected to.\n\n  Josh's mother says this is just new-baby tiredness and that Nina will snap out of it.\n\n  Josh is not sure. Nina has always been the one who notices when she is hungry, cold or tired, and who tells him off for skipping meals.\n\nNina has also stopped noticing when she is cold. Josh has found her sitting in the garden in a T-shirt in October, feeding the baby, with goosebumps on her arms, saying she had not realised.\n\nNina's mother, who visits on Sundays, has said that Nina seems \"far away\". When she held Nina's hand last week, it was icy, and Nina said she had not noticed. Josh has started leaving sandwiches by the sofa where Nina feeds the baby, and finding them untouched hours later.",
+   "misread": "Josh's mother read Nina's missed meals and flatness as ordinary tiredness, the normal fog of a new baby. That reading missed how far Nina's sense of her own body had changed from her baseline.\n\nNina's own reading was that she was failing as a mother, because she could not feel what she thought she should. That reading kept her silent for weeks.\n\nIt also treated the absence of distress as a good sign. Nina did not seem upset. She seemed numb, which is easier to overlook and can be just as important.",
+   "betterRead": "Paulus and Stein proposed that in depression the body can seem muted and distant, so that hunger, tiredness and even pleasure arrive faintly, if at all. Nina's forgetting to eat because she did not feel hungry, her sense of watching life through glass and her difficulty feeling the love she knew was there fit that description, and they were a change from a woman who had always been closely in touch with her body. A reader cannot diagnose anything from this, and should not try. But a cluster like this after a birth deserves a professional's attention, because depression after childbirth is common and treatable. Josh's better response was to tell Nina, gently, what he had noticed, and to ask whether she would talk to her health visitor or doctor. She agreed, with relief, and said she had been frightened to say it aloud. Her doctor diagnosed postnatal depression and arranged support. Over the winter, Nina told Josh one morning that she was starving, and they both laughed.\n\nJosh also kept leaving the sandwiches, and started sitting with her while she ate one, which turned a reminder into company."
+  },
+  {
+   "title": "The father who mistook hunger for fury",
+   "scene": "Rob, thirty-nine, has two children, aged five and eight. On weekday evenings, he gets home at half past five and takes over from his\n  partner, who works late. Most evenings, at about six, he loses his temper. The children are noisy, the kitchen is a mess, someone has spilled\n  something, and Rob shouts, louder than he means to, and then feels terrible. He has started to think that he is simply an angry father, and that\n  something is wrong with him.\n\n  His partner, Asha, suggests he try the chapter's drill called Test the Name. The next time he feels the fury rising, he is to write down what he\n  calls the feeling, and separately what his body is doing, and then run a small test.\n\n  On Tuesday, at ten past six, with the five-year-old wailing and the eight-year-old refusing to do his reading, Rob feels it coming and stops. He\n  writes: name, anger. Body: hot face, tight jaw, shaky hands, empty stomach, headache.\n\nRob has tried counting to ten, walking out of the room and apologising afterwards. None of it has stopped the shouting, and he has started to dread coming home, which makes the next evening worse.\n\nAsha has noticed the timing too. The shouting rarely happens at weekends, when Rob eats lunch at home, and it almost never happens after dinner. It is concentrated in the hour between his arrival and the meal.",
+   "misread": "Rob read his rising heat, tight jaw and shaking hands as anger at his children, and from there as a flaw in himself. He had never considered that the same sensations might be coming from something much simpler.\n\nAnd the shame he felt afterwards became one more load on the next evening, so that the cycle fed itself.\n\nHe also never asked when the anger came. If he had looked at the timing, the hour before dinner, he might have seen the pattern months earlier.",
+   "betterRead": "Feelings are the brain's best guess about the body in context. Shaky hands, a headache, a hot face and a short fuse are what low blood sugar and tiredness feel like, and at six o'clock, in a noisy kitchen with two demanding children, the brain's most available guess is anger at the children. Rob's test was simple: he ate a banana and a handful of nuts, drank a glass of water and waited ten minutes. The fury was still there, but at about half its strength, and the noise was easier to bear. Over the next fortnight he found that the feeling he had been calling anger was, most evenings, partly hunger. He started eating something on the train home. The six o'clock shouting did not vanish, but it became rare. He also stopped thinking of himself as an angry father, which, he said, was the biggest change of all.\n\nAsha said later that the drill had changed how she read him too. She had thought he was angry with her and the children; most evenings, he had simply been running on empty."
+  }
+ ],
+ "workedReading": {
+  "title": "The unease in the mediation room",
+  "scene": "Ifeoma is a family mediator. She is about to meet a separating couple, Mr and Mrs Hale, for the first session on arrangements for their children. Mrs Hale arrives first and is friendly but tense. When Mr Hale comes in, a large man who stays standing for a moment in the doorway, Ifeoma feels her stomach tighten, her face warm and her heart speed up. Her first thought is that he is going to be difficult, perhaps aggressive. She notices that she has already shifted her chair slightly towards Mrs Hale.\n\nIfeoma has been a mediator for eleven years. She knows that the first ten minutes of a first session often decide whether both parties feel that the process is fair, and that her own body is part of the room.\n\nShe also knows that mediators, like everyone else, have bodies that react before they think, and that the job requires her to notice her own reactions as carefully as the clients'.",
+  "steps": [
+   {
+    "label": "Notice the body first",
+    "text": "Ifeoma takes a breath and names what she is feeling in body words, silently: tight stomach, warm face, faster heart, shoulders lifted, a lean away from him. She notes that these are sensations, not facts about Mr Hale, and that her brain has already attached a story to them.\n\nShe does this in a few seconds, while she pours water for everyone. Naming sensations does not need a pause in the conversation, only a moment of attention.\n\nNaming the sensations also slows the story down. A tight stomach is something she can hold in mind for a moment. \"He's going to be difficult\" is a conclusion that tends to act on her before she has checked it."
+   },
+   {
+    "label": "Separate sensation from story",
+    "text": "The story is that he will be difficult. She notes that nothing he has done supports it yet: he has said hello, and he has stood in a doorway. The story came with the sensations, not from his behaviour, and she sets it aside as a guess to be tested rather than a reading to act on.\n\nShe also notes that her lean towards Mrs Hale happened before she had thought anything at all. The body had taken a side before the mind had decided anything.\n\nShe also reminds herself that sensations are real even when the story is wrong. Her body is genuinely aroused; the question is only what the arousal means."
+   },
+   {
+    "label": "Check your own state",
+    "text": "She runs a quick self-check. She skipped lunch. Her previous session, an hour ago, involved a father who shouted and had to be asked to leave, and her body is still braced from it. Mr Hale is also physically large, and she knows from experience that size alone tends to set off her alarm. All three are good reasons for her body to be on edge that have nothing to do with him.\n\nShe also notes that she has been in this room with a frightening client before, two years ago, and that the room itself may be part of what her body remembers.\n\nShe also remembers that the angry father an hour ago was also tall, which may be why Mr Hale's size registered so strongly. The body learns quickly from one bad experience, and generalises it."
+   },
+   {
+    "label": "Look for evidence",
+    "text": "She watches him with the edge of her attention as she explains how mediation works. He sits down when invited. His hands are clasped tightly in his lap. He looks at the table, nods often and says \"sorry\" twice for interrupting. His voice is quiet and slightly unsteady. None of this fits aggression. Much of it fits a man who is frightened of what this meeting might mean for his children.\n\nShe also notices what Mrs Hale does when Mr Hale speaks: she does not flinch or go still, which she might if she were afraid of him. Ifeoma notes it, carefully, as one more piece of evidence rather than proof.\n\nShe also notes how Mr Hale enters and sits: hesitantly, waiting to be asked, choosing the chair nearest the door. Those are more often the movements of a nervous man than of a threatening one."
+   },
+   {
+    "label": "Adjust the room",
+    "text": "She moves her chair back to the middle, so that she sits at an equal angle to both of them. She slows her own speech, lowers her shoulders and breathes out. She explains that both of them will have the same time to speak, and asks each of them, in turn, what matters most to them about the children. Mr Hale says, very quietly, that he is terrified of becoming a father who only sees his kids every other weekend.\n\nShe also offers both of them a break halfway through, which gives everyone, including herself, a chance to let their bodies settle.\n\nShe also gives both of them water and a moment to settle before any difficult topic. A pause helps every body in the room, including hers."
+   },
+   {
+    "label": "Keep testing",
+    "text": "Through the session she keeps checking her body against the evidence. Her stomach settles as the conversation goes on, and she notices that her unease returns briefly only once, when Mr Hale raises his voice slightly, and that it is gone again as soon as he apologises and lowers it. She notes that her body is useful as an early alert, as long as she checks what it is alerting her to.\n\nShe also tells herself that if the evidence had pointed the other way, if he had raised his voice repeatedly or tried to intimidate his wife, her body's alarm would have been worth acting on, and she would have used the procedures for safety in mediation.\n\nShe also keeps her notes factual, describing what each person said and did, rather than her impressions of them. Her impressions belong in her own reflection, not in the record."
+   },
+   {
+    "label": "What happened",
+    "text": "The session goes well. By the end, the Hales have agreed a draft arrangement for the next month. Afterwards, Ifeoma eats a sandwich, and writes in her notes that her first reaction to Mr Hale came from her previous session, her hunger and his size, and that if she had acted on it, she would have taken Mrs Hale's side before the meeting began. She resolves to eat before sessions, and to take five minutes between a difficult session and the next.\n\nShe also mentions to a colleague, in supervision, how quickly her body had decided about Mr Hale, and finds that the colleague has had the same experience many times.\n\nShe also changes her diary so that her most difficult sessions are never booked back to back. A body still braced from one conflict, she now knows, will find conflict in the next room."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating a gut feeling as a fact about someone else",
+   "body": "A knot in the stomach or a racing heart in the presence of a stranger feels like information about the stranger: he is dangerous, she is lying, they do not like you. Sometimes the body does pick up on something real. But the sensations are the brain's best guess about the body in the situation, and that guess is shaped by your hunger, tiredness, the last thing that happened to you, your past experiences and your stereotypes. Kandasamy's traders and Dunn's card players were helped by their bodies when their bodies were right and misled when they were not. Treat a gut feeling as a question, check your own state, and look for evidence before you act on it, especially when the stakes for the other person are high.\n\nIt also helps to remember that stereotypes live in the body as well as the mind. A stranger's size, accent, skin colour or clothes can set off arousal before a single word has been said, and that arousal feels exactly like intuition.\n\nIt also helps to ask whether you would have the same feeling about someone else in the same situation. If you would feel uneasy about anyone who came to view the room that evening, the feeling is about the evening."
+  },
+  {
+   "title": "Listening too hard",
+   "body": "Paying attention to the body is useful. Monitoring it constantly is not. People who check their pulse again and again, scan for every twinge, or focus anxiously on their breathing often find that the sensations grow rather than settle, and that each check feeds the worry, as Ehlers and Breuer's research on panic suggests. The aim of the inside scan is to notice briefly and then let go, not to keep watch. If you find that attending to your body makes you more anxious rather than less, do it less, and talk to a doctor or therapist, especially if you have panic attacks or worries about your health.\n\nIt may also help to put a limit on checking: notice once, write it down if you like, and then deliberately turn your attention to something outside your body for a while.\n\nIt also helps to remember that sensations change constantly, and that most of them mean nothing in particular. A twinge, a flutter or a skipped beat that comes and goes is usually just the body going about its business.\n\nHealth anxiety, a persistent fear of serious illness despite reassurance, is common and responds well to therapy, so if checking has become a daily habit, it is worth mentioning to a doctor."
+  },
+  {
+   "title": "Not listening at all",
+   "body": "The opposite failure is common in men who have been taught to push through: overriding hunger, tiredness, pain and tension until they stop registering at all. It can look like toughness, and it often works for a while. But a body that is never listened to keeps sending its signals through other routes: a short temper, an aching jaw, stomach trouble, poor sleep, illness. Tom learned that he was angry only when his wife pointed at his jaw. A brief check-in, a few times a day, costs almost nothing and gives you information you will otherwise receive later, and less kindly.\n\nIt also helps to watch for the signs that the body is talking louder: headaches, stomach trouble, clenched teeth at night, sudden irritability. These are often messages that were not heard the first time.\n\nIt also helps to build in small moments of noticing: on the stairs, waiting for the kettle, at traffic lights. The aim is a brief glance inside, not a meditation.\n\nPhysical pain deserves particular attention. Men who override pain often delay seeing a doctor about problems that are much easier to treat early, so a body that keeps reporting the same pain is worth listening to."
+  },
+  {
+   "title": "Mistaking confidence for accuracy",
+   "body": "Some people feel very much in touch with their bodies and are not especially accurate, and some feel out of touch and are better than they think. Khalsa and colleagues found that experienced meditators were no better than non-meditators at detecting their heartbeats, though they were more confident. Sarah Garfinkel and colleagues have argued that accuracy, self-rated sensitivity and insight into one's own accuracy are separate things. For a reader, the lesson is humbling: a strong sense that your gut is reliable is not evidence that it is. The only way to find out is to check your gut feelings against what happens, as the Gut Feeling Log asks.\n\nIt also helps to be suspicious of very confident claims about the body, in books, courses and apps. If a practice promises to make your gut infallible, it is promising something no research supports.\n\nIt also helps to be humble about other people's bodies. If your own interoception is uncertain, your sense of what someone else is feeling inside is more uncertain still."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is a gut feeling ever reliable?",
+   "a": "Sometimes, in the right conditions. Kahneman and Klein argued that intuition can be trusted where the environment is regular and the person has had long practice with clear feedback, such as a nurse who has seen thousands of patients or a friend who has known you for twenty years. In those settings, the body's quick signals may reflect real learning. In unfamiliar settings, with strangers, or when you are tired, hungry or upset, they are much more likely to reflect your own state, your expectations and your stereotypes. Treat a gut feeling as a reason to look more closely, and give it more weight the more often you have checked it against reality and found it right.\n\nIt also helps to notice which gut feelings you act on fastest. Feelings that make you want to exclude, accuse or distrust someone deserve the most checking, because their costs fall on another person.\n\nIt also helps to notice when a gut feeling is about yourself rather than another person. Unease before a decision may be telling you something about what you want, which is often more reliable than what it seems to tell you about others."
+  },
+  {
+   "q": "Why do I get the same butterflies before good things and bad things?",
+   "a": "Because the body's arousal is much the same in both. A faster heart, quicker breathing, a fluttering stomach and warm hands come with excitement, fear, attraction and anger alike. Prediction-based accounts of emotion suggest that the brain decides what the arousal means from the context: before a match, it is excitement; before a hospital appointment, it is dread. This is why the same sensations can feel so different, and why reframing them, for example telling yourself that the racing heart before a presentation is your body getting ready, can sometimes change how they feel.\n\nResearch on this kind of reframing is mixed, and it does not work for everyone, but many people find it a useful first step before a nerve-racking event.\n\nIt also helps to give the arousal a job. Before a presentation, a fast heart can go into a firm voice and clear gestures. The energy is there either way; the question is what you let it become."
+  },
+  {
+   "q": "Are some people just worse at sensing their bodies?",
+   "a": "People do vary, though measuring the differences is harder than it sounds, as this chapter describes. Some people find it hard to sense their heartbeat, notice hunger, or tell different bodily states apart, and Brewer, Cook and Bird found that this was linked to alexithymia, difficulty naming feelings. Interoception also varies among autistic people, some of whom report very strong bodily signals and others very faint ones. Being less aware of your body is not a failing. It does mean that checking in deliberately, with simple body words, may be especially useful.\n\nIt also helps to use other people's observations. A partner or friend who tells you that your jaw is clenched, or that you have not eaten all day, is giving you interoceptive information from the outside.\n\nSome people find it easier to notice the body during movement than at rest. A walk, a stretch or a few minutes of gentle exercise can make signals easier to feel and describe."
+  },
+  {
+   "q": "Does checking my body help with anxiety?",
+   "a": "It depends how you check. Brief, curious noticing, followed by letting go, can help some people catch stress early and respond to it. Repeated, anxious checking, such as taking your pulse many times a day, usually makes anxiety worse, because each check signals danger and amplifies the sensation. Therapies for panic and health anxiety often work the other way round: with a therapist, people deliberately bring on mild sensations, such as a raised heart rate, and learn that they are safe and pass. The drill Sensation Without Story is a mild version of this. If it frightens you, or you have a heart condition, do not do it alone; talk to a professional.\n\nIt also helps to know that health worries are common and treatable. If you find yourself checking your body often and fearing illness despite reassurance from doctors, a therapist can help.\n\nIf you are unsure whether a sensation needs a doctor, it is always reasonable to ask. The aim of this chapter is not to talk anyone out of seeking medical advice, only to avoid the spiral of checking that keeps anxiety going."
+  },
+  {
+   "q": "Can interoception be trained?",
+   "a": "Possibly, with modest claims. Khalsa's research found that years of meditation increased people's confidence in sensing their heartbeat more than their accuracy. More targeted training has shown more promise: in the 2021 trial led by Lisa Quadt and Sarah Garfinkel, autistic adults who practised heartbeat detection with feedback showed reduced anxiety afterwards. These are early results, and the field is young. For most readers, a simple daily practice of noticing the body in plain words, and checking what you notice against what happens, is a reasonable and low-risk place to start.\n\nIt also helps to keep expectations modest. The aim is not a perfect inner sense, but a habit of noticing that gives you a little more information, a little sooner.\n\nIt also helps to check what you notice against what happens. Writing down what your body seemed to be saying, and what turned out to be true, is a simple way of learning how far to trust it."
+  },
+  {
+   "q": "What does this mean for reading other people?",
+   "a": "That every reading you make passes through your own body. Your unease, warmth, irritation or attraction towards someone is built partly from your own heartbeat, breath and gut, which are shaped by your sleep, hunger, recent experiences and expectations. This is why the protocol in 1.15 begins with a self-check, and why the chapter on sleep and depletion matters so much. Before you trust what your body says about someone else, ask what it might be saying about you. Then look at the person's behaviour, their baseline and the situation, as the rest of this book teaches.\n\nIt also helps to tell people when your body is loud. \"I'm feeling a bit on edge today, so if I seem off, it's not you\" can stop your own state being read as a reaction to someone else.\n\nIt also helps to give other people the same allowance. A colleague who seems prickly with you may be reading you through a body that skipped lunch and slept badly, just as you sometimes read them."
   }
  ],
  "watch": [
