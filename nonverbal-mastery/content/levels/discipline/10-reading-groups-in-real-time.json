@@ -81,6 +81,13 @@
    "doCaption": "Using your gaze to hand the floor to someone who has been trying to speak.",
    "dontCaption": "Holding the floor with your eyes on the most senior person.",
    "annotation": "Gaze allocates turns. Whoever leads a group decides, often without noticing, who gets heard."
+  },
+  {
+   "doPoseId": "p_group_join",
+   "dontPoseId": "p_walk_brisk",
+   "doCaption": "Waiting at the gap until the ring opens",
+   "dontCaption": "Walking straight into a closed ring",
+   "annotation": "People join groups through gaps. A closed ring is usually about its conversation, not about you."
   }
  ],
  "caseStudy": "Sam, thirty-three, has just become a project manager at an engineering firm, and his first big meeting is a supplier decision. Seven people sit round the table. Paul, the operations director, talks most and talks with confidence: the cheaper supplier is the obvious choice. Sam assumes the decision is Paul's.\n\nHe has decided in advance to sample rather than stare, so his anchors are Paul, the quietest person in the room, and whoever has most at stake. The quietest is Grace, head of finance, at the far end of the table. She has said almost nothing. When Paul puts the proposal to the room and asks whether anyone objects, Sam looks round instead of at Paul. Four people glance at Grace within a second. So does Paul. Grace's pen has stopped, and she is looking at the window.\n\nSam also notices Tomasz, a junior engineer, who has leaned forward and taken a quick breath three times during the discussion, and each time been talked over. The fourth time, Sam looks at him and says, *Tomasz, you were about to say something.* Tomasz says that the cheaper supplier's site failed an inspection last spring.\n\nSam turns to Grace. *What would you need to see before you were comfortable?* She says she would want the inspection report and three years of the supplier's accounts. The decision is deferred for a fortnight.\n\nAfterwards Sam writes his notes by anchor and moment, not as an impression. He later learns that every contract above a certain value needs Grace's signature, which nobody had mentioned to a new manager. At the next decision meeting he watches the eyes again. They go to Grace. When the inspection report arrives, the firm chooses the other supplier.",
@@ -99,6 +106,11 @@
     "Note who received the most glances at the decision moment and who spoke the most overall.",
     "Compare both with the formal roles in the room.",
     "Write one hypothesis about the group's structure on this question, and the next decision point at which you will test it."
+   ],
+   "variations": [
+    "Do the eye map on a recording with the sound off, and see whether you can tell from the glances alone when a decision point arrives.",
+    "Map the same team in three meetings with different agendas, and note whether the person receiving the glances changes with the topic.",
+    "Compare your map with a colleague who attended the same meeting, without discussing it first."
    ]
   },
   {
@@ -110,6 +122,11 @@
     "Mark each interruption with an arrow from the interrupter to the person interrupted.",
     "Mark each failed attempt to speak, such as a breath, a lean forward or a half-started word that did not get the floor.",
     "Write down what the tallies show that you did not notice while simply watching."
+   ],
+   "variations": [
+    "Keep the ledger on a recording of a family or friends' dinner scene in a film, and compare the pattern with a recorded business meeting.",
+    "Add a column for who speaks first after each silence, and see whether it is the same person most of the time.",
+    "Keep a ledger on one of your own recorded video calls, and include yourself in the tally."
    ]
   },
   {
@@ -121,6 +138,11 @@
     "For each, predict with a percentage whether it will admit a newcomer or break up within five minutes.",
     "Check each prediction from a distance as it resolves.",
     "Record your hit rate and which features of the shape you relied on."
+   ],
+   "variations": [
+    "Repeat the drill in a different kind of setting, such as a conference coffee break, and compare which features of the shape you relied on.",
+    "Watch for groups that are about to break up, and note whether the lower body turns before the head, as the chapter describes.",
+    "Predict which group a newcomer will join, rather than whether a group will admit someone, and check from a distance."
    ]
   },
   {
@@ -132,6 +154,11 @@
     "At the start, at any proposal and at the end, look round the whole room once.",
     "Afterwards, write what each anchor did at each key moment, as behaviour rather than impressions.",
     "Note one thing you saw that you would have missed watching only the speakers."
+   ],
+   "variations": [
+    "Change one anchor halfway through the meeting, and note what you see in the new anchor that you had missed.",
+    "Use only peripheral vision for the rest of the room, and write down every movement it caught that turned out to matter.",
+    "Ask a colleague to sample the same meeting with different anchors, and compare your two records afterwards."
    ]
   },
   {
@@ -143,6 +170,11 @@
     "Note what they say and how the discussion changes.",
     "Repeat in at least two more meetings over the next fortnight.",
     "Write down what you learned in those meetings that you would otherwise not have heard."
+   ],
+   "variations": [
+    "When you invite someone in, offer a way out, such as asking whether they have anything to add or are happy to pass, and note the difference.",
+    "Ask the person afterwards, privately, whether being invited in was welcome, and adjust how you do it next time.",
+    "Try handing the floor with your gaze alone, without saying a name, and record how often it works."
    ]
   }
  ],
@@ -224,6 +256,45 @@
    "explain": "Those are classic signs of a failed attempt to take a turn. As the leader you allocate turns with your gaze whether you mean to or not, so a look and his name at the next pause is quick and often changes what the group hears.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Dovidio and his colleagues find in 1988 about the visual dominance ratio in mixed pairs of men and women?",
+   "options": [
+    "That men always showed the higher ratio, whatever the topic being discussed",
+    "That women always showed the higher ratio, because they look more while listening",
+    "That whoever held the expertise on the topic showed the higher ratio, whichever sex they were",
+    "That the ratio was the same for everyone and showed nothing about power at all"
+   ],
+   "answer": 2,
+   "explain": "Visual dominance followed situational power, such as expertise on the topic, rather than fixed traits. That is why a convergence of glances is a clue about the structure of a group on one question, not a fixed fact about a person.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a party, you see a group of three standing close in a tight ring, shoulders angled in, voices low. What fits this chapter best?",
+   "options": [
+    "Look for another group with a gap in its ring, and do not read this one's closed shape as being about you",
+    "Walk up and stand right next to them, since the ring will open once they notice you standing there",
+    "Decide that the people at this party are cliquey, since a closed ring shows they do not want newcomers",
+    "Interrupt with a friendly question, since a confident opening is the best way to break into a group"
+   ],
+   "answer": 0,
+   "explain": "A tight ring with shoulders closed is a conversation that is closed for now, often for its own reasons, such as a private topic. People join groups through gaps, so the better move is to find a group that has one.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone tells you that mirroring a person's posture will make them like you, because research has proved it. What does the chapter say?",
+   "options": [
+    "That the research shows mirroring always works, provided the other person does not notice that you are doing it",
+    "That later studies found the link smaller and less consistent, and that mimicry to win people over is ruled out here",
+    "That mirroring has been shown to make people dislike you, so you should always adopt the opposite posture to theirs",
+    "That posture sharing has never been studied, so nobody can say whether it means anything at all"
+   ],
+   "answer": 1,
+   "explain": "Chartrand and Bargh's early findings were influential, but later work found the effect smaller and less consistent, and some studies found none. Whatever the evidence, mimicking people to win them over is the manipulation this book refuses to teach.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +323,110 @@
    "work": "Universals and cultural variation in turn-taking in conversation",
    "author": "Tanya Stivers, N. J. Enfield, Penelope Brown and colleagues",
    "note": "Proceedings of the National Academy of Sciences 106(26), 2009. Turn-taking measured in ten languages."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The family dinner where the eyes went to the youngest",
+   "scene": "Nadia, thirty-six, has been married into her husband's family for nine years. Six months after her father-in-law's death, the family gathers for Sunday lunch to discuss whether to sell his house. Imran, forty-four, the eldest son, does most of the talking. He has spoken to an estate agent, he has figures, and he says that selling soon is the sensible thing to do. Nobody argues.\n\nNadia, who has no say in the decision and knows it, watches the table instead of Imran. When he finishes and asks, *So, are we agreed?*, three people glance at Sana, thirty, the youngest sister, within a second. So does Nadia's husband. Sana, who usually talks more than anyone at these lunches, has said almost nothing. Her fork has stopped, and she is looking at her plate.\n\nImran takes the silence as agreement and starts talking about dates. Sana nods once, without looking up. Nadia notices that Sana's chair has moved back from the table since the start of the meal, and that her husband, sitting beside Sana, has angled himself towards her.\n\nSana lives ten minutes from the house. For the last two years of their father's life, she was the one who visited every day.\n\nImran had arranged the lunch, chosen the date and brought the estate agent's letter. Nobody had asked Sana whether it was a good day for her.",
+   "misread": "Imran read the silence round the table as agreement and Sana's single nod as consent. He was watching the speaker, himself, and the people he expected to argue. The convergence of glances told a different story: on this question, the room was waiting for Sana.\n\nImran also read his own figures as the heart of the matter, when for at least one person at the table the house was not mainly about money.",
+   "betterRead": "The eyes showed where the decision really sat, and Sana's body showed a change from her baseline at the moment the decision was put: silence from the most talkative person at the table, a stopped fork, a chair pushed back. None of that said what Sana felt, and Nadia, as an in-law, had no standing to announce a reading. What she could do was small. She said, lightly, *Does it have to be decided today? It's a big thing.* Two people visibly relaxed. Imran agreed to wait a month. Later, in the kitchen, Nadia asked Sana how she was finding it all, and Sana cried for the first time since the funeral.\n\nNadia never told anyone what she had noticed at the table. She did not need to.\n\nWhat Nadia had read was not Sana's feelings but the room's structure: who the decision belonged to, and that she had not yet been asked. Her one sentence did nothing more than make room for the question."
+  },
+  {
+   "title": "The volunteer who thought the room was cliquey",
+   "scene": "Ama, fifty-eight, has just retired from nursing and joined a group of volunteers who run a community garden. At their summer social, held in a church hall, she knows almost nobody. She takes a drink and tries to join a conversation.\n\nThe first group she approaches is two women standing close, shoulders angled together, speaking quietly. Ama stands beside them and smiles. They smile back briefly, but the ring does not open, and after a minute she moves away. The second group is three men talking about football in a tight triangle. One glances at her and then back. The third is a couple who are plainly about to leave; their feet are already pointing at the door. By now Ama has decided that the group is cliquey and that she will not come again.\n\nOn her way to get her coat, she passes a group of four in a loose ring by the tea urn. One man is standing slightly back from the others, angled outward, with a gap beside him. He catches her eye.\n\nShe later learns that the two women in the first group were talking about one of them's recent bereavement.\n\nShe had spent thirty years reading patients on wards and had never felt so unable to read a room, which made the evening feel worse than it was.",
+   "misread": "Ama read three closed rings, one after the other, as a verdict on her and on the group. Each was a closed conversation, for its own reasons: a private topic, an established triangle, a couple leaving. None was about her.\n\nShe read the man who caught her eye at the urn, at first, as another polite brush-off, and had almost walked past before she noticed the gap beside him.",
+   "betterRead": "Kendon's F-formations make the difference readable before anyone speaks. A tight ring with shoulders closed is a conversation that is closed for now, and people who join groups almost always enter through gaps. The group by the urn was the open one: loose, with a member angled outward and a space beside him. Ama stood at the gap and waited, and the man stepped back to let her in. Within ten minutes she had been asked to help with the autumn planting. The rule she took away was simple. Look at the shape first. If a ring does not open, move on without reading it as rejection, because it is usually about the conversation rather than you.\n\nAt the next social she found the two women from the first group, who greeted her warmly and apologised for having been distracted.\n\nShe also noticed, over the next few months, that the people who stood slightly apart at these events were often the ones who had joined most recently, and she started standing that way herself, to leave a gap for whoever came next."
+  },
+  {
+   "title": "The chair who caused the silence she read",
+   "scene": "Helen, fifty-two, chairs the governing board of a primary school. She has read the chapter on groups and has resolved to talk less in meetings and let others speak, since she knows that as chair she tends to dominate. At the spring meeting the head teacher presents a proposal to change the start of the school day. Helen leans back, folds her hands and says nothing.\n\nNobody else says anything either. The silence lasts several seconds, then a few more. Two governors glance at Helen. The vice-chair looks at his papers. Helen reads the room as reluctant, and wonders whether the proposal is in trouble. When someone finally speaks, it is to ask a small question about the buses. Helen, worried that the board is unconvinced, suggests deferring the decision to the next meeting.\n\nAfterwards, the vice-chair stops her in the car park. He says that everyone was waiting to hear what she thought, as they always do, and that when she said nothing, they assumed she had doubts and did not want to say so in front of the head. He had been in favour himself, and so, he thinks, had most of the board.\n\nAt previous meetings Helen had always opened discussion by saying what she thought, and nobody had ever remarked on it.",
+   "misread": "Helen read the silence as the board's reluctance. Much of it was produced by her own change of behaviour: the person the room always looked to had leaned back and gone quiet, and the room read her silence as a signal and waited. The glances at her were the clue she missed.\n\nShe also read the question about the buses as a sign of doubt, when it was simply the first thing anyone felt safe to say.\n\nShe had read her own silence as neutral, as if a chair could disappear from the room by saying nothing.",
+   "betterRead": "You are part of the group you are reading, and the more power you hold in it, the larger your effect. A chair who suddenly goes silent changes the group's baseline, and the room's waiting can look exactly like reluctance. The test Helen needed was one that did not depend on her: an open question to the whole room, such as *I'd like to hear from everyone before I say what I think. What are your views?*, and then a slow round of the table. At the next meeting she did exactly that, and said so in advance. The proposal passed with one abstention, and two governors raised points about the buses that improved it.\n\nShe also told the board, in advance of the next meeting, that she would speak last.\n\nThe vice-chair's word in the car park was the test that did not depend on her, and it was the one that told her the truth. It was also, she realised, the kind of thing people only say to a chair afterwards and in private."
+  },
+  {
+   "title": "The consultant who drew an organisation chart from one meeting",
+   "scene": "Daniel, twenty-nine, is a management consultant at the start of a project with a manufacturing client. In the first meeting, with eight of the client's managers, he practises the eye map from this chapter. Several times, when a question is put to the room, three or four people glance at Rachel, forty, a manager whose title he has not quite caught. The managing director talks most, but the eyes go to Rachel.\n\nThat evening Daniel writes to his own director: *The real power in this room is Rachel. The MD defers to her. We should focus our stakeholder work on her.* He is pleased with the reading, which feels like exactly the kind of thing the chapter teaches.\n\nAt the second meeting, a week later, the agenda is different. The questions are about strategy, and when they are put to the room, the eyes go to the managing director, every time. Rachel barely speaks. Daniel's director asks him, gently, what Rachel's job is. Daniel checks. She is the finance manager. Most of the questions in the first meeting were about costs, and she had brought the figures and was controlling the slides on the screen.\n\nDaniel's director had asked him to keep his notes on the client to behaviour and roles, and to check his impressions with the team before writing them up.",
+   "misread": "Daniel read a convergence of glances in one meeting as a fixed fact about the organisation. The glances were real, but they were about the question, the figures and the screen: people looked at the person who held the numbers for that agenda.\n\nHe also read the managing director's talking as deference to Rachel, when it was simply his style in every meeting.",
+   "betterRead": "A convergence of gazes is a strong clue about the group's structure *on this question*, and the chapter's caution is in those last words. Dovidio's work points the same way: visual dominance follows situational power, such as expertise on the topic, rather than fixed rank. People look at the person who controls the screen, whose department the topic concerns, or who is expected to know the facts. One meeting gives you a hypothesis, to be tested at the next decision point on a different kind of question. The cheapest test of all is to ask how decisions are made. Daniel's director had simply asked the managing director, at the start, who needed to sign off on the project.\n\nDaniel's note to his director was withdrawn. The stakeholder work began with the managing director.\n\nRachel turned out to be important to the project after all, as the person whose figures every recommendation would have to survive, but that was a different reading, and it came from asking."
+  }
+ ],
+ "workedReading": {
+  "title": "An eye map and turn ledger on a recorded panel",
+  "scene": "Leah, thirty-one, is practising the eye map and turn ledger on a twenty-minute recording of a local television panel about whether to close a branch library. There are four guests and a presenter. The guests are the leader of the council, a man of about sixty; a campaigner for the library, a woman of about forty-five; the owner of a local business, a man of about fifty; and a young teacher, a woman in her late twenties. Leah has paper, a pen and a rule: no conclusions until she has written down what she saw at each moment. She also reminds herself that the recording is edited, and that the director, not she, chose which faces were on screen.\n\nShe has chosen a panel because it is unscripted and because the people on it chose to be filmed, which makes it fair material for practice.\n\nHer aim is not to judge any of the guests but to practise seeing the structure of a group she has no stake in.",
+  "steps": [
+   {
+    "label": "Sketch the seats",
+    "text": "She pauses on the first wide shot and sketches the layout. The guests sit in a shallow arc facing the presenter, with the council leader and the business owner on one side and the campaigner and the teacher on the other. The presenter sits at the end nearest the council leader. Leah notes that the seating may have been chosen by the producers to put the two sides opposite each other, so the arrangement itself tells her about the programme rather than the people.\n\nShe also notes the camera positions: one wide shot from behind the presenter and close-ups of whoever is speaking."
+   },
+   {
+    "label": "Set the group baseline",
+    "text": "In the first three minutes, the introductions, everyone looks at the presenter while she speaks, and each guest looks at her while answering. The council leader sits back with one arm on the chair. The campaigner sits forward with her hands together. The business owner sits still. The teacher sits upright and nods slightly while others speak. Leah writes these down as the baselines for this setting, for each of them, before anything contentious has been said.\n\nShe notes that the campaigner's forward lean is her baseline here, not a sign of anything, since she held it before any question had been asked."
+   },
+   {
+    "label": "Tally turns and attempts",
+    "text": "Over the twenty minutes Leah tallies the turns. The council leader takes eleven, the campaigner nine, the business owner six and the teacher three. She marks the interruptions with arrows: four in all, three of them by the council leader, each time cutting off the campaigner. She also marks failed attempts to speak, and finds five by the teacher: a quick breath in, a lean forward, once a half-started word, each time without getting the floor.\n\nShe notes that the teacher's three turns all came when the presenter selected her by name, never by taking the floor herself.\n\nThe ledger shows what simply watching had not: the teacher had tried to speak more often than anyone except the council leader, and had been heard least."
+   },
+   {
+    "label": "Watch the eyes at the question",
+    "text": "At minute twelve the presenter asks, *So, will the library close?* Leah rewinds and watches the wide shot frame by frame. The campaigner and the business owner both glance at the council leader before he answers, and so does the teacher. The council leader looks at the presenter, not the guests. On this question the convergence goes where the formal roles would predict. Leah notes that not every reading is a surprise, and that a reading which confirms the obvious is still worth recording.\n\nShe also notices that the business owner glances at the council leader a second time, after his answer, and writes it down without deciding what it means."
+   },
+   {
+    "label": "Map the alignments",
+    "text": "Leah notices that the council leader and the business owner sit back at the same moment twice, and that the campaigner and the teacher lean in together when the teacher finally speaks. She writes this down as a possible map of two sub-groups on this question, and holds it loosely. They may be allies, they may have been seated to look like it, or they may simply be reacting to the same moments in the same way. Their words will settle it better than their postures.\n\nShe checks the transcript afterwards and finds that the business owner and the council leader disagree on two points, which makes the ally reading weaker than the postures suggested."
+   },
+   {
+    "label": "Test at the next decision",
+    "text": "At minute seventeen the presenter asks whether a local business might fund the library to keep it open. This time the eyes go to the business owner: the council leader looks at him, and so does the campaigner. He sits forward for the first time. Leah writes that power on this panel seems to follow the question, as Dovidio's work suggests: the council leader for the decision, the business owner for the money. One panel is not enough to say more.\n\nShe also notices that the teacher is selected more often in the last five minutes, after the presenter has looked at her twice, which looks like a presenter handing over the floor deliberately."
+   },
+   {
+    "label": "Write it as record",
+    "text": "Her final notes are by moment, not impression: *At 'will it close?', three of three guests looked at the council leader. At the funding question, two looked at the business owner, who sat forward. Teacher: five failed attempts to speak, three turns.* She also writes down what she could not see: the teacher's hands, which were out of shot for most of the programme, and any reactions the editor cut. The record is partial, and it says so.\n\nShe writes one hypothesis to test on a second episode of the same programme: that the presenter hands the floor to quieter guests near the end."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading the room from its most expressive member",
+   "body": "In most groups one or two people show their reactions far more than the rest. They laugh loudest, frown most visibly and sigh audibly at the agenda. It is easy to treat them as the room's barometer and read the group's mood from their faces alone. But expressive people are expressive whatever the group thinks, and their reactions say more about their own style than about anyone else's view. A room in which one person groans at a proposal may be broadly in favour of it; a room in which one person laughs may be quietly unimpressed. Read the expressive member against their own baseline, like anyone else, and use the anchors and the room-wide glance at key moments to see whether others are with them. The quiet majority is usually where the group's real position lies.\n\nIt is also worth noticing who reacts after the expressive member, rather than at the same time. The people who check that member's face before reacting may be following them; the people who do not are showing you something of their own."
+  },
+  {
+   "title": "Reading gaze on a video call as if it were a room",
+   "body": "On a video call, nobody can look at anybody in particular. Each person sees a grid of faces, and their eyes go to the screen, to the camera or to their notes, in ways that bear no relation to who they are attending to. The convergence of gazes, the visual dominance ratio and the shape of the ring are all lost or scrambled. Readers who carry the room rules onto a screen will see patterns that do not exist, such as a colleague who seems to be avoiding the boss's eye because her camera is above a second monitor. On calls, rely on what still carries information: who unmutes first after a question, who speaks after a silence, who uses the chat, whose camera goes off, and above all the answers to direct questions put to people by name.\n\nPart IV's chapters on video calls cover this in more detail.\n\nA face on a call looking down may be reading the chat, checking a document or watching another person's video, and you will not know which."
+  },
+  {
+   "title": "Rescuing someone who did not want the floor",
+   "body": "Giving the floor to someone who has tried and failed to speak is one of the most useful things this chapter teaches. Done carelessly, it can also embarrass people who were content to listen. A quiet member is not always someone being shut out. Some people prefer to think before they speak, some speak only when they have something specific to add, and some find being named in front of a group acutely uncomfortable. Before you invite someone in, look for the signs of a failed attempt, a breath, a lean forward, a half-started word, rather than simple quietness. When you invite, offer a way out: *Anything to add, or happy to pass for now?* And if the setting allows, ask afterwards, in private, whether there was anything they wanted to say.\n\nIn some cultures and settings, being singled out to speak is far more uncomfortable than in others, which is one more reason to ask lightly.\n\nRemember, too, that you are part of the group. A senior person inviting a junior to speak is a stronger act than an equal doing the same, and it can feel more like being called on in class."
+  },
+  {
+   "title": "Counting turns as if more were always better",
+   "body": "A turn ledger can make inequality vivid, and it is tempting to conclude that every meeting should give everyone the same number of turns. Woolley's finding that more equal turn-taking went with better group performance has been questioned by later work, and even where it holds, it is a pattern across groups rather than a rule for any one meeting. Some people have more to contribute on a particular question than others, and a meeting about the budget may rightly be dominated by the person who holds it. The useful target is narrower: nobody who wants to speak should be shut out, and the pattern of interruptions should not run consistently in one direction. Use the ledger to spot those problems, not to enforce a quota.\n\nCounting also changes what you notice. Once you start tallying turns, you will see the quiet members more clearly, which is useful, and may start to see their quietness as a problem, which often it is not.\n\nThe ledger is a tool for noticing, not a measure of whether a meeting was good."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I read a group when I am the one presenting to it?",
+   "a": "With difficulty, and you should accept that. While you are speaking, most of your attention goes to what you are saying, and you are also the person everyone is looking at, which changes what you see. Build pauses into the presentation, at the points where a decision or a reaction matters, and use them to look round the room rather than at your notes. Choose two anchors in advance, usually the decision-maker and the person with most at stake, and glance at them at those pauses. Ask questions of the room rather than relying on faces. And if the occasion matters, ask a colleague you trust to sit in and watch for you, writing down what they see at each moment, since they will see far more than you can.\n\nAfterwards, compare your colleague's notes with your own impressions. The gap between them is usually large, and it is the best measure you will get of how little a presenter sees."
+  },
+  {
+   "q": "Is it rude to look round the room when somebody else is speaking?",
+   "a": "Brief glances are fine, and most people do them naturally at the moments this chapter describes: the end of a proposal, a joke, bad news. What is rude is staring at anyone, and especially fixing your eyes on the person you have decided holds the power, which they and others may notice. Most of the time, look at the speaker, as everyone else does. At key moments, take one quick look round the room and return. If you are watching a recording, there is no such constraint, which is one reason this book uses recordings for practice. In live meetings, sampling is meant to be light, a few seconds here and there, not continuous surveillance of the room.\n\nIf someone does notice you watching them, look away naturally and return your attention to the speaker.\n\nIt also helps to remember why you are looking. If the reason is to understand how the group works, a glance is enough. If it is to catch someone out, the glance has become something else."
+  },
+  {
+   "q": "What should I do if I notice that one person is repeatedly being talked over?",
+   "a": "If you are chairing, use the chair's power directly. At the next pause, look at them and, if needed, say their name: *You were about to say something.* If talking over has become a pattern, you can also change the process, by going round the table or asking for views in writing before the meeting. If you are not chairing, you still have some power. You can look at the person at a pause, which often hands them the floor, or say, *I'd like to hear what she was starting to say.* Afterwards, ask them privately whether that was welcome, and whether there was more they wanted to add. Do not make it a public issue about the person who interrupted unless the pattern continues, and if it does, raise it with the chair rather than in the meeting.\n\nIf you are the person being talked over, the same tools work for you: lean in and start a sentence at a pause, look at the chair, or ask to come back to your point before the item closes."
+  },
+  {
+   "q": "How much of this chapter still works on video calls?",
+   "a": "Some of it, and you need to know which parts. Gaze direction is almost meaningless on a call, because everyone looks at a grid or a camera rather than at each other, so the eye map and the visual dominance ratio do not transfer. The shape of the ring disappears entirely. Turn-taking survives, though it is slower and clumsier because of delay, and a turn ledger on a call can still show who is interrupted and who never gets in. Unmuting and starting to speak are the video equivalents of the breath and lean forward. Part IV's chapters on video calls go further. The main adjustment is to ask more: put questions to people by name, and do not rely on faces to tell you whether the group agrees.\n\nOn calls with cameras off, the group is even harder to read, and asking by name becomes the main tool you have.\n\nYou can also borrow the room's rules back by asking a colleague who is in the same physical room as other participants what they saw, since they can watch faces that the call hides from you."
+  },
+  {
+   "q": "How do I join a group at a party or networking event without feeling awkward?",
+   "a": "Look at the shape before you approach. Choose a group with a gap in its ring, or with one person standing slightly back or angled outward, and approach towards the gap rather than from behind anyone. Stop at the edge, make brief eye contact with one person and wait. Usually someone will step back to let you in within a few seconds, and the ring will widen. Listen for a minute before you speak, so that you join the conversation rather than starting a new one. If the ring does not open, move on without reading it as rejection. A closed ring is usually about the conversation it contains, and the next group may be wide open.\n\nIf you are with a friend, approach together; a pair is often admitted more easily than a single newcomer, and you have someone to talk to if the ring does not open.\n\nIt also helps to have something to offer when you are let in, such as a question about how the others know the host, which hands the floor back to them."
+  },
+  {
+   "q": "Can I use this to work out who really holds power in a new workplace?",
+   "a": "As hypotheses, yes, tested over several decisions of different kinds. A convergence of glances in one meeting tells you about one question on one day. If the eyes go to the same person across meetings about money, people and strategy, you have a stronger clue. But the cheapest test is usually to ask. *Who needs to sign off on this?* or *How are decisions like this usually made here?* are ordinary questions for someone new, and the answers will tell you more than an eye map. Use the eye map for what asking cannot easily reveal: whose opinion people check before they commit, and who is being consulted less than their role suggests.\n\nKeep your hypotheses about power to yourself until they have survived several tests, and even then, use them to understand the place rather than to work round people.\n\nA new person who reads power and then uses it to go round people quickly gets a reputation for it, and that reading will be correct."
   }
  ],
  "watch": [
