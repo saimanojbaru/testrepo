@@ -74,6 +74,20 @@
    "doCaption": "Assuming the ordinary and asking",
    "dontCaption": "Assuming the worst about a short reply",
    "annotation": "Brevity is usually haste, not hostility. Ask before concluding."
+  },
+  {
+   "doPoseId": "p_walk_phone",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Ringing them instead, out on a walk",
+   "dontCaption": "Thumbing out an angry reply",
+   "annotation": "Strong feeling travels badly in text. When a reply is heating up in your thumbs, put the phone to your ear instead."
+  },
+  {
+   "doPoseId": "p_stand_head_tilt",
+   "dontPoseId": "p_stand_hand_mouth",
+   "doCaption": "Curious: what else could they have meant?",
+   "dontCaption": "Stung by a sharp email",
+   "annotation": "Neutral messages tend to be read as more negative than intended. Ask what an ordinary, hurried sender might have meant."
   }
  ],
  "caseStudy": "Greg, fifty-two, is a senior manager who prides himself on short emails. He writes as he speaks in meetings, briefly and to the point: Fine. Send it. See me tomorrow. He was surprised when an engagement survey showed that his team found him intimidating and hard to approach, because in person he is relaxed and friendly.\n\nA younger colleague, Aisha, eventually told him why. When he replied Fine. to her proposal, she had spent an evening wondering what she had done wrong. When he wrote See me tomorrow, with no reason given, she assumed she was in trouble. She had shown his messages to a friend, who agreed they sounded angry. Greg had meant none of it. He had been answering forty emails between meetings, and See me tomorrow had simply meant that he wanted to hear her ideas for the next project.\n\nHe made some changes. He added a few words of warmth to short replies: Looks good, thanks, send it. When he asked to see someone, he said why, even briefly: Can we chat tomorrow about the timeline? Nothing to worry about. When he could not reply properly, he sent a one-line acknowledgement. When a thread turned into a disagreement, he called instead of writing.\n\nIt felt strange at first, and he worried that he was padding his emails. But the next survey showed his team found him far more approachable, and Aisha told him that she no longer reread his messages three times. He still writes short emails. They just no longer sound like he is annoyed.",
@@ -93,6 +107,11 @@
     "Mark any phrase that could sound cold, impatient or critical.",
     "Add a few words of warmth or context where they are needed.",
     "Note whether any replies were warmer than usual."
+   ],
+   "variations": [
+    "Ask a colleague to read one of your important emails before you send it and tell you, in one word, how it sounds.",
+    "Reread one message you received this week that stung, imagining it written by someone who likes you, and notice how it changes.",
+    "Read your draft aloud in the flattest voice you can, and add warmth wherever the flat voice makes it sound cold."
    ]
   },
   {
@@ -103,6 +122,11 @@
     "Count your one-word replies and how many ended with a full stop.",
     "Compare your punctuation with that of the people you were writing to.",
     "Rewrite two of your shortest replies as you would now send them."
+   ],
+   "variations": [
+    "Look at the last twenty messages from the person you text most, note their usual punctuation, and compare it with yours.",
+    "Rewrite one of your one-word replies three ways, plain, with an exclamation mark and with a short sentence, and decide which fits each person you write to.",
+    "Ask a friend from a different generation what a full stop or an ellipsis means to them in a text."
    ]
   },
   {
@@ -114,6 +138,11 @@
     "Have the conversation by voice or face to face.",
     "Afterwards, send a short written summary of what you agreed.",
     "Note how the conversation compared with the written exchange."
+   ],
+   "variations": [
+    "When a chat thread with a colleague reaches five messages without agreement, suggest a five-minute call, and note how long the call takes.",
+    "Try a video message instead of a written one for a piece of feedback, and ask the recipient afterwards how it landed.",
+    "After a difficult call, send a written summary within an hour, and check that the other person agrees with it."
    ]
   },
   {
@@ -124,6 +153,11 @@
     "Include when you will reply, if you can.",
     "Keep to the time you gave.",
     "Note whether anyone mentions the change."
+   ],
+   "variations": [
+    "Set up an out-of-office or signature line that says when you usually reply, and notice whether people's follow-ups change.",
+    "For one week, note how long you wait before reading something into a slow reply, and what you assumed.",
+    "When someone acknowledges your message quickly, thank them for it, so that the habit spreads."
    ]
   }
  ],
@@ -205,6 +239,45 @@
    "explain": "Bad news and disagreement travel better by voice, which carries warmth and signs of a thinking mind that text strips away. Writing works best to confirm what was said.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Kalman and colleagues argue about the timing of replies in online communication?",
+   "options": [
+    "That reply times are random and carry no social information worth noticing",
+    "That timing is a reliable channel of social information, reflecting things like trust",
+    "That fast replies always mean the sender is more competent than slow ones",
+    "That timing matters only in personal messages and never in work communication"
+   ],
+   "answer": 1,
+   "explain": "Kalman and colleagues found that response timing reflected aspects of personality and trust, and argued that timing is a reliable channel of social information. Like other cues, it is still easily misread.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your father, who always writes in full sentences with full stops, replies to your news with \"OK. We'll manage.\" What fits this chapter best?",
+   "options": [
+    "Read it as cold disappointment, since a full stop in a text message signals displeasure",
+    "Compare it with how he usually writes, and if still unsure, ring him to ask",
+    "Reply with a long explanation, so that he cannot misunderstand your reasons",
+    "Say nothing for a week, so that he has time to get over his disappointment"
+   ],
+   "answer": 1,
+   "explain": "Punctuation is read against the conventions of texting, but each person also has their own baseline. A message that matches how someone always writes tells you little, and a call settles what text cannot.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says it is safer to reconnect with an old friend by email, because a phone call would be more awkward. What did Kumar and Epley find?",
+   "options": [
+    "That people who called felt more connected, and the call was not more awkward than writing",
+    "That calls were far more awkward than emails, just as most of the people had expected beforehand",
+    "That emails and calls produced exactly the same feelings of connection in every case",
+    "That people preferred email afterwards, even though they had expected to prefer the call"
+   ],
+   "answer": 0,
+   "explain": "People expected calls to be more awkward and chose text when given the choice. Afterwards, those who had called felt more connected, and the call had not been more awkward than the email.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -233,6 +306,110 @@
    "work": "It's surprisingly nice to hear you: Misunderstanding the impact of communication media can lead to suboptimal choices of how to connect with others",
    "author": "Amit Kumar and Nicholas Epley",
    "note": "Journal of Experimental Psychology: General 150(3), 2021. Why a call often beats a message."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The joke that went to the client",
+   "scene": "Sarah, forty, is a project manager at an engineering consultancy. On a Thursday afternoon, the client for a hospital extension emails to say\n  that the deadline for the design review has moved forward by a week, for the second time. Sarah forwards the email to her team with a note: \"Great,\n  another deadline moved. Love that for us. Can't wait to explain to the structural team that they don't need weekends.\" She means it as a wry,\n  sympathetic joke, the kind she would make with a roll of the eyes in the office kitchen, to show her team that she knows how hard this is.\n\n  She has hit reply-all rather than forward. The client's project director, Paul, and two of his colleagues are still on the thread.\n\n  Paul reads the message on his phone in a car park. He does not know Sarah well. He reads the sarcasm literally, as contempt for his team and his\n  decision, and as a sign that the consultancy is complaining about him behind his back. He forwards it to Sarah's managing director with a single\n  line: \"Is this how your team talks about clients?\"\n\n  Sarah realises what has happened twenty minutes later, when her managing director rings her. She rereads the message. To her, it still sounds like\n  what it was: a tired joke. She cannot understand how anyone could take it seriously.\n\nEarlier that day, in the office kitchen, she had made almost exactly the same joke out loud to two of her engineers, and they had laughed. In the kitchen, her face and voice had done the work.\n\nHer team, meanwhile, had replied to her joke with three laughing emojis, which also went to the client.",
+   "misread": "Paul read Sarah's sarcasm literally, as contempt for him and his team, because he had only the words and did not know her. Sarah read her own message as obviously a joke, because she could hear the eye-roll in her own head as she reread it.\n\nAnd her managing director, reading Paul's one-line forward, read it at first as a crisis rather than as a misfired joke, because he had no more context than Paul did.\n\nPaul's colleagues, reading the same thread, took their cue from his reaction, and by the end of the afternoon the joke had become, in the client's office, evidence of what the consultancy really thought of them.",
+   "betterRead": "Kruger, Epley and colleagues found that senders consistently overestimate how well their tone comes across in email, and that sarcasm is among the hardest tones to convey in writing. The sender hears the intended voice so clearly that it seems to be on the page. Sarah's eye-roll and warm tone stayed in her head; Paul got the words. Her better response, after the damage, was to ring Paul rather than write. She apologised plainly, explained that the message had been meant for her team, said that it had been a poor joke about the pressure, not about him, and asked what the new date meant for his side. Hearing her voice, Paul accepted the apology. Sarah now follows a simple rule: no sarcasm in writing, ever, and nothing in a forwarded email that she would not say to the original sender's face.\n\nHer managing director also suggested a short pause before any reply-all, which the firm built into its email system as a ten-second delay before sending."
+  },
+  {
+   "title": "The father who punctuates",
+   "scene": "Ryan, twenty-four, moved to another city for work last year. His father, Malcolm, sixty, texts him once or twice a week. Malcolm learned to type\n  on a typewriter, and he writes texts the way he wrote letters: full sentences, capital letters and full stops. \"Fine. See you Sunday.\" \"Your mother\n  says hello.\" \"Call when you can.\"\n\n  In March, Ryan tells his father that he will not be home for his parents' anniversary lunch, because of a work trip. Malcolm replies: \"OK. We'll\n  manage.\" Ryan reads it as cold disappointment. He spends the evening feeling guilty, then resentful. He replies with a long message explaining why\n  the trip matters. Malcolm replies: \"Understood. Have a good trip.\" Ryan reads this as his father being hurt and refusing to say so. He does not text\n  for a week.\n\n  When he finally rings, his mother answers. She asks why he has gone quiet. Ryan says he did not want to make things worse after his dad's messages.\n  His mother is puzzled. She says Malcolm had been pleased that Ryan was getting such an important trip, and had been telling the neighbours about it.\n\n  She adds that his father writes every message like that, including the ones about the weather.\n\nRyan's friends, when he shows them the messages, agree that his father sounds annoyed. All of them are in their twenties. None of them has ever had a text from Malcolm before.\n\nHis mother also points out that Malcolm once ended a text about a family wedding with \"Congratulations.\" and a full stop, and that nobody had thought he disapproved of the marriage.",
+   "misread": "Ryan read his father's full stops and short sentences as cold disappointment and suppressed hurt. He did not compare them with how his father wrote every other message, which was exactly the same.\n\nHis friends' agreement made the reading feel like evidence, when they were all reading through the same conventions.\n\nHe also read his own long reply, and his father's short answer to it, as a sign that his father did not want to discuss it, when Malcolm simply found typing slow and had said what he meant in four words. The week of silence that followed was read on both sides.",
+   "betterRead": "Klin and colleagues found that a one-word text reply ending with a full stop was read as less sincere than the same reply without one, but that the full stop made no difference in handwritten notes. Malcolm's habits came from handwriting and typewriters, where a full stop is simply how a sentence ends. Read against Ryan's habits, his texts sounded clipped; read against his own baseline, they were entirely ordinary. Part I's rule about reading change against a person's baseline applies to writing too. Ryan's better reading would have compared \"OK. We'll manage.\" with the rest of his father's messages, and if still unsure, rung him. He rang his father that evening. Malcolm asked about the trip for twenty minutes and said nothing at all about the lunch.\n\nRyan also told his father, lightly, that his full stops sounded cross to people his age. Malcolm laughed and said he was too old to change, but started adding \"x\" to the end of his texts to his son."
+  },
+  {
+   "title": "The smiley to the new client",
+   "scene": "Lucy, twenty-seven, is a freelance illustrator, and she is pitching for her first job with a large publishing house. She has been given the\n  name of a senior art director, Elizabeth, whom she has never met. Lucy is warm and friendly by nature, and she wants that to come across. Her first\n  email begins, \"Hi Elizabeth!! Hope you're having a lovely week :)\" and ends, \"Would love to chat!! Thanks so much :) :)\". In between, she attaches\n  her portfolio and describes her work enthusiastically, with several more exclamation marks.\n\n  Elizabeth replies two days later, briefly and formally, thanking Lucy and saying that she will be in touch if anything suitable comes up. Nothing\n  does. A month later, Lucy sees that the publisher has commissioned an illustrator whose work she knows is similar to hers.\n\n  She asks a friend who has worked in publishing for ten years to look at the email. The friend says the portfolio is excellent. She also says,\n  gently, that she would never send an email like that to someone she had not met, and that in her experience senior people often read a first email\n  full of smileys as a sign that the sender is very junior or not quite serious.\n\n  Lucy is upset. She says she was just being friendly.\n\nShe had also spent an hour choosing the illustrations for her portfolio, and about five minutes on the email that carried it.\n\nWhen she rereads the email a month later, Lucy counts eleven exclamation marks and four smileys in nine sentences. She had not noticed any of them while writing.\n\nHer friend also points out that the email's subject line was \"Hello!!\", which gave Elizabeth no reason to open it before the others.",
+   "misread": "Lucy read her smileys and exclamation marks as warmth that would make her stand out. Elizabeth, receiving a first formal approach from a stranger, may well have read them as a lack of professionalism, and did not reply with any warmth of her own.\n\nShe also read Elizabeth's brief, formal reply as coldness, when it was the ordinary register of a busy senior person writing to someone she did not know.\n\nHer friend's reading was not that Lucy should be less warm, but that warmth reads differently in a first email to a stranger than in a chat with a friend.",
+   "betterRead": "Glikson, Cheshin and van Kleef found that in formal work emails from strangers, a smiley did not make the sender seem any warmer, made them seem less competent, and led recipients to share less information in reply. In informal settings, or once people know each other, the picture is different. Lucy's friendliness was real, but it arrived in a form that cost her credibility before Elizabeth had looked at the work. Her better approach, for her next pitch, was to match the register of a first approach: a plain, polite greeting, a clear sentence about why she was writing, her warmth expressed in words (\"I've admired your list for years, especially the picture books you published last spring\"), and no emoji. Once the art director replied in kind, Lucy could follow her lead. She won her next pitch, and the smileys came later, from the client.\n\nShe also asked her friend to read her next three first emails before she sent them, until she had the register right."
+  },
+  {
+   "title": "The proposal nobody answered",
+   "scene": "Femi, thirty-three, is a policy adviser at a housing charity. On Friday afternoon he sends his manager, Jo, a proposal he has been working on\n  for three weeks: a new approach to supporting tenants facing eviction. He is proud of it. He writes a short covering email, asks for her thoughts and\n  goes home.\n\n  By Monday lunchtime there is no reply. Femi checks his inbox every half hour. By Tuesday he has reread the proposal twice and found several\n  sentences he now thinks are clumsy. He notices that Jo has replied to a colleague's email about the office kitchen. By Wednesday morning he is sure\n  she thinks the proposal is weak and is avoiding telling him. He drafts an email withdrawing it, saying he will rework it from scratch, and nearly\n  sends it.\n\n  At the Wednesday team meeting, Jo arrives late, apologises and says she has been off sick since Friday evening with a chest infection, working\n  only on urgent things from her phone. The kitchen email had been one of those: there had been a leak. She says she has seen that Femi sent the\n  proposal and is looking forward to reading it properly that afternoon.\n\n  That evening she sends him three paragraphs of detailed, enthusiastic comments.\n\nHe has also told two friends that he thinks the proposal has bombed, and has started looking at job adverts, half seriously.\n\nJo's out-of-office message had not been switched on, because she had gone home ill on Friday evening without planning to be away.\n\nHe also notices that he has started writing shorter, more careful emails to Jo about other things, as if to avoid giving her anything more to judge.",
+   "misread": "Femi read Jo's silence as a judgment on his proposal, and her reply to someone else as proof that she was avoiding him. He began to read his own work through that story, finding faults he had not seen before.\n\nAnd Jo, had she known, would have read her own silence as simply being ill, without a thought for how it might look from the other side.\n\nHe also read the reply about the kitchen leak as a choice to answer someone else first, when it was the one message that could not wait.",
+   "betterRead": "Kalman and colleagues argued that the timing of replies is a reliable channel of social information, and people read it as such: a fast reply seems keen, a slow one cold. But like any nonverbal cue, timing is often misread, because silence has many causes, and illness, travel, overload and careful thought are far more common than displeasure. Femi's better reading would have treated the silence as information about Jo's week, not about his work. A short, friendly check on Tuesday, such as \"Just checking this reached you, no rush\", would have settled it. For her part, Jo began to send a one-line acknowledgement when she could not reply properly, as the drill in this chapter suggests: \"Got this, looks interesting, will read it next week.\" Femi has kept her email of comments.\n\nFemi deleted the withdrawal email without sending it, and kept, as a reminder, the half-written draft of a message he had nearly sent to a manager who had a chest infection."
+  }
+ ],
+ "workedReading": {
+  "title": "Delivering bad news in writing and by voice",
+  "scene": "Aled, forty-four, is finance manager at a medium-sized manufacturer. A long-standing supplier, Gwen, who runs a small family firm that makes packaging, has emailed to ask why her last three invoices have been paid late. Aled has looked into it. The late payments were his team's fault: a new system had sent her invoices to the wrong approval queue. He has also been told by his director that from next quarter all small suppliers will move from thirty-day to sixty-day payment terms, which will hurt Gwen's cash flow. He has to tell her both things. His first instinct is to reply to her email straight away with a careful, factual explanation, and he has a draft open on his screen. He stops before sending it, because he knows that she has been waiting and worrying, and that the news is worse than she expects.\n\nHe has also noticed that the email he was about to send begins with \"Further to your email\" and contains the phrase \"in line with company policy\", both of which would sound, to someone already worried, like a door being closed.\n\nHe also remembers that Gwen once sent the factory a hamper at Christmas, and that her firm has never once missed a delivery date.",
+  "steps": [
+   {
+    "label": "Decide on the channel",
+    "text": "He thinks about what the message contains: an apology, an explanation and bad news that affects a small business and a relationship of twelve years. This chapter's rule of thumb is that apologies, bad news and anything with strong feeling are better said than written. Kumar and Epley found that people expect calls to be more awkward than they are. He decides to ring Gwen first and follow up in writing.\n\nHe also thinks about what a written reply alone would leave out: his regret, the fact that the error was his team's, and the fact that he values the relationship. Those are exactly the things a voice carries best.\n\nHe decides that a written reply alone would be the convenient choice for him and the worse one for her."
+   },
+   {
+    "label": "Call first",
+    "text": "He sends a short email: \"Gwen, thanks for your message, and I'm sorry for the trouble. Could I give you a ring this afternoon to explain? Would three o'clock suit?\" On the call, he apologises plainly for the late payments, explains the cause in a sentence, and tells her that the three invoices have now been paid. He hears her relief. Then he tells her about the new terms, and hears her go quiet.\n\nHe also makes sure he has the facts in front of him, so that he can answer her questions directly rather than promising to find out.\n\nGwen, he notices, picks up on the second ring, as if she had been waiting by the phone. It tells him how much the late payments had been weighing on her."
+   },
+   {
+    "label": "Let the silence be hers",
+    "text": "He does not fill the silence with justifications. When Gwen speaks, she says that sixty days could put her in real difficulty. He says that he understands, that he will ask whether long-standing small suppliers can be phased in, and that he will tell her by Friday. Her voice softens a little. Schroeder and Epley's work suggests that hearing his voice helps her see a person rather than a policy.\n\nHe also asks her what would help most, which gives her something to do with her worry, and tells him what to ask his director for.\n\nHe also tells her what he does not yet know, which is whether phasing will be possible, rather than implying a promise he cannot keep."
+   },
+   {
+    "label": "Draft the follow-up",
+    "text": "After the call, he writes the follow-up email. It summarises what they discussed: the cause of the late payments, the confirmation that they are now paid, the new terms, and his promise to ask about phasing. He keeps it short and factual, because its job is to record what was said, not to carry the conversation again. He sets it aside for half an hour before rereading it.\n\nHe also removes two phrases from the draft that only make sense inside his own company, \"AP queue\" and \"P2P migration\", which would have meant nothing to her.\n\nHe also puts the key facts in the first two lines, so that she can find them at a glance, and the explanation below."
+   },
+   {
+    "label": "Reread it as her",
+    "text": "When he rereads it, he imagines Gwen opening it at nine in the evening, worried about her cash flow. One sentence, \"As explained, the new terms apply to all suppliers from April,\" now reads as cold and final. \"As explained\" sounds like a reproach. Byron's review suggests that neutral messages tend to be read as more negative than intended, especially from someone with power over the reader.\n\nHe also checks the subject line, which still reads \"RE: Overdue invoices\", and changes it to \"Your invoices, and the new payment terms\", so that she knows what is inside before she opens it."
+   },
+   {
+    "label": "Add what the voice carried",
+    "text": "He rewrites the sentence: \"As we discussed, the new terms are due to start in April. I know this is difficult for you, and I'll come back to you by Friday about whether we can phase it in.\" He adds a line at the start thanking her for her patience, and one at the end with his direct number. He matches her register: she writes in full sentences without emoji, so he does too.\n\nHe also checks that he is replying only to Gwen, and not to the internal thread in which the new terms were first discussed.\n\nHe also signs off with his first name, as Gwen does, rather than his full title, which would have made the message sound like it came from the company rather than from him."
+   },
+   {
+    "label": "What happened",
+    "text": "Aled's director agrees to phase in the new terms over a year for suppliers of more than five years' standing. Aled rings Gwen on Friday morning to tell her, then emails the details. She replies with a short message: \"Thank you, Aled. That makes a real difference. And thank you for ringing.\" He notes that the original draft, sent on its own, would have reached the same facts and lost the relationship.\n\nHe also notices, looking back, that the call took twelve minutes, and the original email draft had taken him forty.\n\nHe also adds a reminder to his calendar to ring Gwen in April, when the new terms start, to check how she is managing."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Writing or reading at midnight",
+   "body": "Messages written late at night, after a long day or a glass of wine, tend to be shorter, sharper and less carefully checked, and they often arrive in someone's inbox first thing in the morning, setting the tone for their day. Messages read late at night tend to be read more harshly, because tiredness and solitude make it easier to imagine the worst. Both directions of the same problem have the same remedy. If you write something that matters in the evening, save it as a draft and reread it in the morning before you send it; most email programs will also let you schedule it. If you receive something that stings in the evening, do not reply. Read it again in daylight, assuming the most neutral tone the words allow, as the pose gallery for this chapter suggests. Very few messages need an answer before breakfast.\n\nMany people find it helps to switch off work email notifications in the evening altogether, so that a stinging message waits until they are ready for it."
+  },
+  {
+   "title": "Copying in the wrong people",
+   "body": "Who you copy into a message is part of its tone. Adding someone's manager to a disagreement, as Sophie did in the chapter on audio, reads as escalation, whatever the intention. Replying to all on a message that should have gone to one person can feel like a public reprimand, or, as Sarah found, can deliver a private joke to the person it was about. Leaving someone off a thread that concerns their work reads as exclusion. Each of these is the written equivalent of raising your voice in front of an audience or turning your back on someone in a meeting. Before you send, look at the list of recipients and ask what each one's presence says to everyone else. If you need to involve a manager, tell the other person first, ideally by voice, rather than letting them discover it in the copy line.\n\nThe same applies to blind copies, which are easily discovered and almost always read as a breach of trust.\n\nA quick test: if the person read only the copy line, what would they think you were saying?"
+  },
+  {
+   "title": "Overcorrecting into gush",
+   "body": "Once people learn that bare messages read as cold, some swing the other way: every message gains three exclamation marks, two apologies and a \"just\": \"So sorry to bother you!! Just wondering if you might possibly have a moment to look at this?? No worries at all if not!!\" The intention is warmth. The effect, especially at work, is often anxiety, and it can make a simple request sound like a plea and undermine the sender's authority. Warmth in writing works best when it is specific and proportionate: a \"thanks\", a sentence of appreciation, a clear reason for the request and a note that it is not urgent if it is not. Match the other person's register, and let your warmth come from what you say rather than from how much punctuation you put around it. One exclamation mark is friendly; four is a shout.\n\nIf you notice that your messages are full of apologies, try deleting each \"sorry\" and \"just\" from one draft and see whether it reads as rude. It usually does not."
+  },
+  {
+   "title": "Reading the read receipt",
+   "body": "Messaging apps add a new layer of timing cues: the double tick, the word \"seen\", the dots that show someone is typing and then disappear. Each is easy to read as a message. Seen and not answered feels like being ignored; dots that appear and vanish feel like a reply being written and then withheld. But these cues are even less reliable than ordinary reply times. A message can be seen on a lock screen while someone is driving, opened and then forgotten in a busy moment, or started and abandoned because a child needed something. As with any nonverbal cue, read them against the person's usual pattern, consider the ordinary explanations first, and if it matters, ask. And if you know your own read receipts cause worry, you can usually turn them off, or send a quick \"Seen this, will reply later.\"\n\nThe disappearing typing dots, in particular, usually mean nothing more than a thought interrupted.\n\nIt can help to agree with close colleagues or family that \"seen\" means nothing more than seen."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is a full stop at the end of a text really rude?",
+   "a": "It depends on who is writing and who is reading. Klin and colleagues found that one-word text replies ending in a full stop were read as less sincere than the same replies without one, but the effect disappeared in handwritten notes, which suggests that it comes from the conventions of texting rather than from the full stop itself. Many people, especially those who learned to write on paper, use full stops in every message and mean nothing by them. Others leave them out and read them, when they do appear, as a sign of displeasure. The useful approach is to read each person's punctuation against their own habits, and to adjust your own a little for the people you write to most. If you are unsure what someone meant, ask.\n\nAnd if you are the one who punctuates fully, it can help to add a word of warmth to very short replies, such as \"OK, thanks\", so that the full stop has company.\n\nIf you are the younger writer, it is worth knowing that many people read a missing full stop as casual, and adjusting for formal messages."
+  },
+  {
+   "q": "Should I use emoji at work?",
+   "a": "With care, and with attention to who you are writing to. Glikson, Cheshin and van Kleef found that a smiley in a formal work email from a stranger made the sender seem less competent without making them seem warmer, while in informal work messages it made the sender friendlier at no cost. In practice, emoji tend to work between colleagues who already know each other, in chat channels and in informal settings, and to cost credibility in first approaches, formal emails and messages to people senior to you whom you do not know well. A good rule is to follow the other person's lead: if they use emoji with you, you can use them back. If not, put your warmth into words, which work everywhere.\n\nIf you are unsure, a warm sentence, such as \"Thanks so much for this\", does everything a smiley does, and more."
+  },
+  {
+   "q": "How quickly should I reply to messages?",
+   "a": "There is no single right answer, but there are useful habits. Most people read reply times as a signal, so if you cannot reply properly within the time someone would reasonably expect, send a short acknowledgement: \"Got this, will reply properly tomorrow.\" That one line prevents most of the worry that silence creates. It also helps to set expectations about when you are reachable, for example in an email signature or an out-of-office message, so that people do not read your evenings and weekends as coldness. You do not need to be always available. You need to be predictable, and to let people know when you are not going to be.\n\nIf you manage people, it helps to say explicitly that you do not expect replies outside working hours, and to follow your own rule.\n\nAnd when you do reply late, a short \"Sorry for the slow reply\" costs nothing and closes the gap the silence opened."
+  },
+  {
+   "q": "How should I read a message whose tone I cannot work out?",
+   "a": "Start with the most neutral reading the words allow, since Byron's review suggests that neutral messages tend to be read as more negative than intended. Compare the message with how that person usually writes: short and plain may be their normal style, as it was for Malcolm. Consider what else might be going on: they may be busy, on a phone, between meetings or unwell. If the message still seems sharp and it matters, ask, ideally by voice: \"I wasn't sure how to read your email, can we talk it through?\" Most of the time, the answer is that they were in a hurry. Replying in writing to a tone you have imagined is how many long, cold threads begin.\n\nIt also helps to remember how often your own short messages have been sent in a hurry, with no tone intended at all.\n\nIf you notice the same person's messages often sting, it may be worth a gentle conversation about how they come across."
+  },
+  {
+   "q": "Is it better to apologise in writing or by voice?",
+   "a": "For anything more than a small slip, by voice, followed by writing if a record is useful. Kumar and Epley found that people expect phone calls to be more awkward than they turn out to be, and feel more connected after them than after written exchanges. The chapter on audio earlier in this part described how hearing someone's voice makes them seem more thoughtful and more human. An apology is exactly where those qualities matter: the other person needs to hear that you understand and that you mean it, and a voice carries regret in a way text struggles to. Written apologies are easily read as formulaic or defensive. Call first, apologise plainly, listen, and then, if needed, confirm in writing what you have agreed to do.\n\nIf a call is impossible, a written apology works best when it is short, specific about what went wrong, and clear about what you will do next, without \"if\" or \"but\".\n\nAnd whatever the channel, an apology that names what happened lands far better than a general \"sorry for any inconvenience\"."
+  },
+  {
+   "q": "Do these rules differ across generations and cultures?",
+   "a": "Yes, quite a lot. Punctuation, formality, emoji and expected reply times vary between age groups, countries, industries and even teams. Many older writers use full stops and full sentences in every message; many younger writers save them for emphasis. Some cultures and workplaces expect formal greetings and sign-offs in every email; others find them stiff. Emoji that mean one thing in one place can mean something different elsewhere. The chapter on cultural variance in Part V discusses the wider pattern. The safest general approach is to notice the other person's register and match it, to read their messages against their own baseline rather than yours, and, when the stakes are high, to choose a channel where a voice can carry what the text cannot.\n\nWhen you work across cultures, it can help to ask a colleague from the other side what a particular phrase or emoji means there.\n\nWithin a team, it can help to agree a few norms, such as when to call rather than message, so that nobody has to guess."
   }
  ],
  "watch": [
