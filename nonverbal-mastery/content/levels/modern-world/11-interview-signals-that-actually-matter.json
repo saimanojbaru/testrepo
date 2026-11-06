@@ -74,6 +74,20 @@
    "doCaption": "Camera at eye level, sitting upright",
    "dontCaption": "Slumped below a low laptop",
    "annotation": "In a video interview, the camera is the interviewer's eye. Raise it, light your face, and speak to it."
+  },
+  {
+   "doPoseId": "p_sit_neutral",
+   "dontPoseId": "p_posture_braced_upright",
+   "doCaption": "Settled, eyes free to move while thinking",
+   "dontCaption": "Rigid and staring, performing confidence",
+   "annotation": "Counted eye contact and a fixed posture read as rehearsal. Sit settled, look while listening, and let your eyes move while you think."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_sit_hands_behind_head",
+   "doCaption": "Turned towards every candidate, every answer",
+   "dontCaption": "The interviewer leaning back after a first impression",
+   "annotation": "An interviewer's manner shapes the performance he sees. Give every candidate the same warm, attentive start."
   }
  ],
  "caseStudy": "Hassan, forty-four, runs a small software team and has hired a dozen people over the years, mostly by instinct. He prides himself on reading people. Last year he interviewed two candidates for a developer role. The first, Josh, was relaxed and funny, with a firm handshake and an easy manner. The second, Mei, was visibly nervous. She spoke slowly at first, looked down often while thinking, and her answers took time to get going.\n\nHassan hired Josh. Within six months it was clear the decision was a mistake: Josh was pleasant in meetings but his code was careless, and he struggled with the hard problems the team needed solved. When a similar role opened, a colleague suggested Hassan look again at Mei's application. He did, and this time he noticed that her answers, read in his notes, had been precise and well reasoned. She had simply been slow to warm up.\n\nHassan changed how he interviewed. He wrote a set of questions based on the work, with notes on what a strong answer would include, and asked every candidate the same ones. He started each interview by explaining the format and chatting for a couple of minutes before the questions. He took notes on what candidates said, not how they seemed, and asked a colleague to score them independently.\n\nMei applied again and was hired. In her first review, Hassan noticed that she still looked down when she was thinking hard, and that this was usually just before she said the most useful thing in the meeting. He no longer reads much into it.",
@@ -93,6 +107,11 @@
     "Listen back for pace: note any answers that drag, rush or stall at the start.",
     "Practise the slow starts until they begin more easily.",
     "Repeat with a friend asking the questions, if you can."
+   ],
+   "variations": [
+    "Answer each question twice, once with a work example and once with an example from outside work, and keep whichever is stronger.",
+    "Ask a friend to ask the questions in a different order and with different wording, so that you practise adapting rather than reciting.",
+    "Time your answers, and aim for about two minutes for each, with a clear ending, rather than stopping early or running on."
    ]
   },
   {
@@ -104,6 +123,11 @@
     "Take a short walk, then sit upright and take a few slow breaths.",
     "Say I am excited to yourself just before you go in.",
     "Afterwards, note how you felt in the first five minutes compared with usual."
+   ],
+   "variations": [
+    "Plan your journey to arrive thirty minutes early, so that a delay does not leave you flustered, and use the spare time for a walk.",
+    "Before a video interview, do the same routine at home: phone away, a short walk, upright sitting and slow breaths.",
+    "Write the first sentence of your answer to the most likely opening question on a card, and read it once before you go in."
    ]
   },
   {
@@ -115,6 +139,11 @@
     "For each, note what a strong and a weak answer would include.",
     "Ask every candidate the same questions and score their answers against your notes.",
     "Compare the scores with your gut impression of each candidate, and note where they differ."
+   ],
+   "variations": [
+    "Ask a colleague to score the same candidates independently, then compare your scores before you discuss your impressions.",
+    "Write down your first impression of each candidate in a sealed note, and compare it with their final scores at the end of the day.",
+    "Add one practical task to the interview, based on the real job, and score it against criteria agreed in advance."
    ]
   },
   {
@@ -125,6 +154,11 @@
     "Greet the candidate warmly, explain the format and offer water.",
     "Keep the same warmth for every candidate, including those who start badly.",
     "Afterwards, note whether candidates who began nervously improved as the interview went on."
+   ],
+   "variations": [
+    "Ask a colleague to sit in on one interview and watch your manner rather than the candidate's, noting any changes in warmth.",
+    "Plan a warm start for a video interview too: greet the candidate by name, explain the format and check that they can hear you clearly.",
+    "Ask candidates at the end how they found the interview, and use what they say to adjust your next one."
    ]
   }
  ],
@@ -206,6 +240,45 @@
    "explain": "Slower speech is the cue interviewers pick up most clearly, and rehearsal aloud is what improves it most. Word-for-word scripts tend to sound stiff and break down under pressure.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Word, Zanna and Cooper's second study, what happened to white applicants who were interviewed in a cool, distant style?",
+   "options": [
+    "They performed worse and were judged to be less calm and composed",
+    "They performed better, because the distance made them try much harder to impress",
+    "They performed exactly the same as applicants who were interviewed warmly by staff",
+    "They complained about the interviewers, and the study had to be stopped early on"
+   ],
+   "answer": 0,
+   "explain": "Applicants interviewed in the cooler style performed worse and seemed less composed. The interviewer's manner produced the very performance that appeared to confirm it.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A candidate arrives late and flustered after a train cancellation, and drops her folder as she sits down. What fits this chapter best?",
+   "options": [
+    "Note that she is disorganised, since how candidates arrive shows how they will work",
+    "Give her the same warm start as everyone else, and score her answers against the criteria",
+    "Keep the interview brief, since a flustered start rarely improves however long it lasts",
+    "Ask her to explain the delay in detail, so that you can judge whether it was her fault"
+   ],
+   "answer": 1,
+   "explain": "A first impression formed at the door tends to shape the interviewer's manner, which then shapes the candidate's performance. A warm start and structured scoring keep attention on what she can actually do.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that software reading candidates' faces in video interviews has proved that expressions reveal job suitability. What does this chapter say?",
+   "options": [
+    "That HireVue dropped facial analysis in 2021, saying it added little beyond candidates' words",
+    "That facial analysis is now required by law in every video interview in every country in the world",
+    "That facial analysis predicts job performance far better than any form of structured interview",
+    "That expressions in video interviews are always ignored by employers, so they do not matter at all"
+   ],
+   "answer": 0,
+   "explain": "After criticism and a formal complaint, HireVue announced in January 2021 that it had stopped using facial analysis in new assessments, saying it added little beyond what candidates said. Reading emotion from faces is less reliable than such systems claimed.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -234,6 +307,110 @@
    "work": "The nonverbal mediation of self-fulfilling prophecies in interracial interaction",
    "author": "Carl O. Word, Mark P. Zanna and Joel Cooper",
    "note": "Journal of Experimental Social Psychology 10(2), 1974. How an interviewer's manner shapes the candidate's performance."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The candidate who looked away to think",
+   "scene": "Ellis, twenty-seven, is autistic, and has applied for a data analyst role at a housing association. Their CV is strong: a first-class degree\n  in statistics, two years' experience cleaning and modelling data, and a portfolio of projects. They arrive at the interview early, sit very still in\n  reception, and in the interview room they look mostly at the table or the wall while answering. Their voice is level, with little rise and fall,\n  and they answer each question precisely and then stop, without the small talk that usually softens the end of an answer.\n\n  The panel is two managers, Gavin and Sue. Gavin, who leads the team, finds the interview uncomfortable. He feels that Ellis is not engaging with\n  him, and he wonders whether they are hiding something, or simply not very interested in the job. When Ellis does not smile at his joke about the\n  office coffee, he writes \"flat, poor rapport\" on his notes.\n\n  Sue, who has been trained in structured interviewing, has been scoring each answer against the criteria the panel agreed beforehand. Ellis's\n  answers to the technical questions are the best of the day. Their answer about handling a data protection breach is the only one that mentions\n  notifying the regulator within the legal time limit.\n\n  When the panel compares notes, Gavin says that he could not see Ellis fitting into the team. Sue asks him what, specifically, Ellis had said that\n  worried him.\n\nEllis had prepared for the interview by writing out examples for each criterion in the job description, and had practised them aloud to their sister, who had told them they were the most prepared candidate she had ever heard.\n\nGavin had interviewed four candidates that day. The one he liked best had chatted easily about football and the weather and given vague answers to the technical questions. He had written \"great fit\" on that form.\n\nSue had also noticed that Ellis answered every part of every question, in order, which none of the other candidates had done.",
+   "misread": "Gavin read Ellis's averted gaze, level voice and lack of small talk as disengagement, evasiveness and poor rapport. He took the discomfort he felt as information about the candidate rather than about the mismatch between their style and his expectations.\n\nHe also read his own joke falling flat as a failure of Ellis's, when it was a joke about coffee in a job interview.\n\nThe office coffee joke had been a test of sorts, though Gavin would not have called it that. He used it with every candidate, and read the laugh, or its absence, as a sign of whether they would fit in.",
+   "betterRead": "Barrick and colleagues found that self-presentation predicts interview ratings far better than it predicts job performance, and the interview is exactly where an autistic candidate's different style costs most and tells least. Many autistic people find eye contact uncomfortable or distracting, and look away in order to think, as Part I described and Part V discusses more fully. Ellis's gaze and voice said nothing about their honesty or their interest. Sue's better reading was the structured one: score what was said against what the job requires. Gavin, asked what Ellis had said that worried him, could not name anything. The panel offered Ellis the job. The association also began offering every candidate the interview questions twenty minutes in advance, and asking in the invitation whether anyone needed adjustments.\n\nEllis's manager found, within a few months, that Ellis's precision was exactly what the team had been missing.\n\nGavin, who had not been trained, asked to go on the structured interviewing course."
+  },
+  {
+   "title": "The interviewer who decided in the first minute",
+   "scene": "Neil, fifty-two, is a regional manager for a chain of supermarkets, interviewing for an assistant store manager. The fourth candidate of the\n  day, Destiny, thirty, arrives eight minutes late, out of breath, after her train was cancelled. She apologises twice, drops her folder as she sits\n  down and spends the first minute finding her notes. Neil has decided, before she has answered a question, that she is disorganised.\n\n  It shows. He leans back in his chair, looks at his notes more than at her, asks his questions in a flat voice and cuts her first two answers short\n  with \"Fine, let's move on.\" Destiny, who had been flustered, becomes more so. Her answers get shorter. She stops giving examples. By the end of the\n  interview she is answering in single sentences and Neil has written \"lacks presence\" at the top of her form.\n\n  His co-interviewer, Kemi, an HR adviser, has been watching Neil as well as Destiny. Afterwards she says that the first five minutes were the\n  worst start she had seen, and the last five were the best, because when Neil had left the room to take a call, Destiny had talked to her about how\n  she turned round a failing store in her current job, with figures, in detail, for four minutes.\n\n  Neil says he did not see that part. Kemi says that was rather the point.\n\nNeil had also, a few minutes before, interviewed a candidate who arrived early, shook his hand firmly and talked about football on the way to the room. He had written \"natural manager\" on that form before the first question.\n\nDestiny, on the train home, decided that she would not apply to the company again. She had been treated, she told her partner, as though she had already failed before she had opened her mouth.",
+   "misread": "Neil read Destiny's late, flustered arrival as a sign of disorganisation, and read the shrinking answers that followed as a lack of presence, without seeing that his own cooling manner was producing them.\n\nAnd Neil read the football conversation with the earlier candidate as evidence of management ability, which it was not.\n\nHe also read his own mood, irritated by a long day and a late candidate, as a judgment about her. Kemi, who saw the whole interview, read the change in Destiny's answers as a response to Neil's manner, which it was.",
+   "betterRead": "Word, Zanna and Cooper showed how an interviewer's manner can produce the performance that seems to confirm his first impression: applicants interviewed in a cool, distant style performed worse and seemed less composed. Neil's leaning back, his eyes on his notes and his cut-short answers told Destiny that she had already failed, and she responded accordingly. When the pressure lifted, her real ability showed. Kemi's better approach, which the company adopted for its managers, was a structured interview with a warm start for everyone: a greeting, an explanation of the format, water and a minute of ordinary conversation, whatever had happened before the candidate arrived. Kemi persuaded Neil to invite Destiny back for a second interview with a different panel. She was appointed, and within a year was running her own store.\n\nNeil, to his credit, asked Kemi to sit in on his next round of interviews and tell him what she saw.\n\nNeil also stopped writing anything on the form until the first answer had been given. He said later that it was the hardest habit he had ever broken."
+  },
+  {
+   "title": "The candidate who rehearsed her body",
+   "scene": "Hannah, twenty-five, has a second interview for a marketing role she badly wants. She spends the week preparing. She watches videos about\n  interview body language and practises a firm handshake on her flatmate. She learns that she should hold eye contact about two thirds of the time,\n  sit with her hands visible and steepled, lean slightly forward and mirror the interviewer's posture. She practises a two-minute power pose for the\n  bathroom beforehand. She reads the job description once.\n\n  In the interview, she concentrates hard on her body. She holds the interviewers' eyes, counting in her head; she steeples her hands; she leans\n  forward; she notices that one interviewer has crossed his legs and crosses hers. Meanwhile, the questions come. When asked how she would launch a\n  product to a new audience, she gives a general answer about social media that she has not thought through. When asked about a campaign she is proud\n  of, she cannot remember the figures.\n\n  Afterwards, the feedback is kind but clear. The panel found her \"very poised\" but felt that her answers lacked depth and examples. One interviewer\n  had noted that she seemed \"a little rehearsed\", and that her steady gaze had felt intense.\n\n  Hannah is baffled. She had done everything the videos said.\n\nIn the lift on the way out, one of the interviewers had asked her, kindly, what she would do differently in her current job if she could. It was the only moment she forgot about her body, and she gave her best answer of the day.\n\nHer flatmate, who had watched her practise all week, said afterwards that she had never once heard Hannah talk about the actual job.\n\nShe had also spent an evening choosing what to wear, and none at all on the company's last three campaigns.",
+   "misread": "Hannah read interview success as a matter of body language technique and spent her preparation on gaze, posture and mirroring. The panel read the result as poise without substance, and her counted eye contact and copied posture as rehearsed and slightly intense.\n\nShe also read the videos as describing what interviewers want, when they described what interviewers notice, which is not the same thing.\n\nThe interviewer who noticed her intense gaze read it, correctly, as effort. What he could not see was that the effort had come at the cost of thinking about the answers.",
+   "betterRead": "Barrick and colleagues found that self-presentation tactics were strongly related to interview ratings and much more weakly to job performance, and structured interviews are designed to look past them. Hannah's techniques could not make up for thin answers, and some of them, counted gaze and deliberate mirroring, read as performance, which is what they were. As the chapter on negotiation in this part described, copying someone's posture on purpose is manufacturing a signal, and people often sense it. Her better preparation, for her next interview, reversed the balance. She spent most of the week preparing answers aloud: five likely questions, each with a real example and figures, recorded and played back. She did a short walk and some slow breaths beforehand, and otherwise forgot her body. The feedback that time said \"clear examples\", and she got the job.\n\nShe kept one piece of body advice: a short walk before going in, which, she said, did more for her than all the steepling."
+  },
+  {
+   "title": "The interview with nobody there",
+   "scene": "Ade, thirty-eight, is changing careers after twelve years as a bus driver, and has applied for a trainee role in IT support at a large\n  company. The first stage is a one-way video interview. A question appears on his screen, he has thirty seconds to think and two minutes to record his\n  answer. There are six questions. Nobody is watching live.\n\n  He sets up his laptop on the kitchen table and starts. The first question appears, the timer starts, and he finds himself staring at his own face in\n  the corner of the screen. With no one to nod or react, he has no idea whether he is making sense. He speeds up, fills the silence with \"um\", and\n  stops early on two answers because he cannot tell whether he has said enough. On the fourth question, his mind goes blank, and he watches the timer\n  run down for ten seconds before he starts.\n\n  He finishes feeling that it was the worst interview of his life. He also wonders, uneasily, whether a computer has been reading his face. He has read\n  that some systems used to.\n\n  His daughter, Folake, who works in recruitment, sits down with him that evening. She asks him to practise answering a question to her, then to the\n  laptop's camera as if it were her.\n\nHe had prepared for the interview by reading about IT support, but not by practising speaking about it. In twelve years of driving, nobody had ever asked him to explain himself to a camera.\n\nAde also noticed afterwards that he had been sitting with the laptop low on the table, looking down into it, with the kitchen light behind him. On the playback screen he looked tired and far away.",
+   "misread": "Ade read the absence of any reaction as a sign that he was doing badly, and read his own face in the corner of the screen as a verdict. He also feared that his facial expressions were being scored, which made him more self-conscious still.\n\nHe also read the timer running down as a test of speed, when the employer had set it to give candidates time to think.\n\nAnd he read the blank on the fourth question as proof that he was not clever enough for IT, when it was the ordinary blank that any nervous person can have with a timer running and no face to talk to.",
+   "betterRead": "A one-way video interview removes the cues that keep a conversation going: the nod, the smile, the \"go on\". Without them, many candidates rush, stall or stop early. The lessons of earlier chapters in this part apply: camera at eye level, a well-lit face, a quiet room, and the lens treated as a person rather than a void. Folake's better approach was to practise. Ade hid his self-view, stuck a photograph of her beside the lens, and answered practice questions to it, using the thirty seconds to jot two words for each answer. He also checked the company's information, which said that recordings were reviewed by people, not analysed by software. HireVue, one of the best known providers, had stopped using facial analysis in 2021. Ade passed the first stage and, at the in-person interview, talked about calming angry passengers as a model of customer service.\n\nFolake also told him to treat the thirty seconds as thinking time, not dead time, and to start each answer by repeating the question in his own words, which bought him a few seconds and kept him on track."
+  }
+ ],
+ "workedReading": {
+  "title": "Interviewing a nervous candidate",
+  "scene": "Bridget, forty-seven, is head teacher of a primary school, interviewing for a teaching assistant. She has five candidates in a day, and a structured set of questions agreed with her deputy, who sits on the panel. The third candidate, Marek, forty-one, has spent fifteen years working in a warehouse and has been volunteering at a youth club for three years. His application is warm and specific. When Bridget goes to collect him from reception, he stands up too quickly, knocks his coffee and apologises. His handshake is damp. On the walk to her office he answers her questions in single words. Bridget recognises the signs of a very nervous candidate, and she knows from the research that nerves tend to cost candidates in interviews far more than they tell interviewers about the job.\n\nShe also knows her own habits. She warms quickly to confident, chatty candidates, and she has hired at least one who talked better than he worked. She has asked her deputy to watch her during the interviews, not only the candidates.\n\nShe has also arranged the chairs in her office at an angle rather than across her desk, so that the interview feels less like an examination.",
+  "steps": [
+   {
+    "label": "Notice your first impression",
+    "text": "By the time they reach her office, Bridget has already formed an impression: anxious, awkward, maybe not ready for a busy classroom. She notices it and names it to herself as an impression, not a finding. Barrick and colleagues found that impressions of self-presentation predict interview ratings far better than job performance. She writes nothing down yet.\n\nShe also remembers that some of the best assistants she has hired were nervous in their interviews, and some of the worst were charming.\n\nShe also remembers that the walk from reception is the most stressful part of an interview for many candidates, because nothing has started and anything could go wrong."
+   },
+   {
+    "label": "Make the warm start",
+    "text": "She offers him a glass of water, tells him how the interview will run, how many questions there are and that he can take his time over each, and that there is no trick in any of them. She asks him how his journey was and lets him talk for a minute. She sits turned towards him, with her notes to one side, and smiles. Word, Zanna and Cooper's work suggests her manner will shape his performance.\n\nShe also explains that she will be taking notes, so that Marek does not read her pen as a judgment when it starts to move."
+   },
+   {
+    "label": "Start with an easy question",
+    "text": "The first structured question asks him to describe his work at the youth club. It is a question he knows the answer to, and Bridget asks it in an ordinary, friendly voice. He starts slowly, with long pauses. Feiler and Powell found that slow speech is one of the clearest signs of interview anxiety, and that interviewers tend to misread it as a lack of assertiveness or warmth. Bridget reminds herself not to.\n\nShe also notices that his hands, which were clasped tightly at first, have started to move as he describes the youth club. His body is settling into the subject.\n\nShe also keeps her own pace slow, which tends to slow the room, and gives him permission, without saying so, to take his time."
+   },
+   {
+    "label": "Score the answer, not the delivery",
+    "text": "As he talks, his answer becomes specific: a boy who would not speak to adults, the football game Marek invented so that the boy could join in without having to talk, the day the boy asked him a question. Bridget scores it against the criterion for building relationships with children. It is the strongest answer to that question she has heard all day. The delivery was slow; the content was excellent.\n\nHer deputy, scoring independently, gives the answer the same mark. When they compare later, neither of them has written anything about his handshake or his coffee."
+   },
+   {
+    "label": "Leave room for thinking",
+    "text": "On a harder question about managing behaviour, Marek looks down at the table for several seconds and says nothing. Bridget resists the urge to rephrase the question or move on. She waits, with her face relaxed and attentive. Part I described how looking away helps people think. When he answers, it is a thoughtful account of staying calm and giving a child choices.\n\nShe notes that if she had rephrased the question, she would have interrupted the thinking that produced the answer.\n\nHer deputy, she notices, has started to look at his notes during the silence. She catches his eye and he looks up again. A panel's bodies matter as much as its questions."
+   },
+   {
+    "label": "Keep the warmth to the end",
+    "text": "By the last question, Marek is visibly more relaxed. Bridget keeps the same warm, attentive manner throughout, as she has for every candidate, so that the differences she sees are differences in the candidates rather than in her. At the end, she asks whether he has anything he would like to add, and tells him when he will hear.\n\nShe also thanks him for coming, and means it, because the warmth at the end is part of what he will remember about the school, whether or not he gets the job.\n\nShe notices that he makes a small joke in his last answer, the first of the interview, and laughs. It tells her how far he has come from the coffee in reception."
+   },
+   {
+    "label": "What happened",
+    "text": "When the panel compares scores, Marek is second overall, a close second to a candidate with classroom experience. Bridget appoints them both, one to a vacancy that has just arisen. In his first term, Marek becomes the adult that the most withdrawn children in the school seek out. Bridget notes that her first impression, on the walk from reception, would have ruled him out.\n\nShe also keeps the scores and notes from the day, so that if any candidate asks for feedback, she can give them specific, useful answers rather than impressions."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading respectful gaze as evasiveness",
+   "body": "In many cultures and families, lowering the eyes in front of an older or more senior person is a sign of respect, and holding a senior person's gaze can feel rude or challenging. A candidate raised with that norm may look down or away often in an interview, precisely because they are trying to be polite. An interviewer who expects steady eye contact may read the same behaviour as shiftiness, lack of confidence or something to hide. The chapter on eye contact in Part I described how much gaze norms vary, and Part V's chapter on cultural variance takes the subject further. The same misreading applies to autistic candidates and to anyone who looks away to think. In an interview, the safest assumption is that gaze tells you very little about honesty or ability, and the content of the answer tells you much more.\n\nIf you are unsure, judge the answer as if you had heard it on the phone. If it is strong without the gaze, it is strong."
+  },
+  {
+   "title": "Mistaking similarity for fit",
+   "body": "Interviewers tend to warm to candidates who remind them of themselves: who went to similar schools, share their hobbies, speak in the same way or laugh at the same jokes. The warmth feels like a judgment of fit, and it is often described that way afterwards: \"I could see him in the team.\" But it is mostly a judgment of similarity, and it tends to reproduce whatever the team already looks like. It also shows in the body: the interviewer leans in, smiles and relaxes with the familiar candidate, and becomes cooler with the unfamiliar one, which, as Word, Zanna and Cooper showed, can change how well each performs. If you notice that you particularly liked a candidate, ask what they said that met the criteria, and whether you would have liked the same answer from someone different.\n\nA simple check is to look at the people you have hired over the past few years and ask how many of them resemble you.\n\nStructured scoring helps here too, because the criteria do not care whether you would enjoy a pint with the candidate."
+  },
+  {
+   "title": "Rehearsing answers into a recital",
+   "body": "Candidates who have been told to prepare answers sometimes overdo it, writing out and memorising whole paragraphs. In the interview, the memorised answer comes out word for word, with the flat rhythm of recitation, and if the question is slightly different from the one rehearsed, the answer does not quite fit. Interviewers notice both. The better preparation is to know your examples, not your sentences: the situation, what you did, what happened and what you learned, with a figure or two. Practise telling each example aloud several times, in different words each time, so that you can adapt it to whatever is asked. As the chapter on stage presence described, headings beat scripts. An answer that sounds like it is being thought about tends to be trusted more than one that sounds as if it has been learned.\n\nA good test is to tell your example to a friend in three different ways. If you can, you know it well enough."
+  },
+  {
+   "title": "Reading the interviewer's face as your score",
+   "body": "Many interviewers, especially in structured interviews, keep a fairly neutral face, write notes while you talk and move briskly from one question to the next. They do this deliberately, so that their reactions do not steer candidates, and so that every candidate gets the same treatment. Nervous candidates often read that neutrality as disapproval, and a pen moving as a mark against them, and their answers shrink in response, as Destiny's did for different reasons. If an interviewer's face gives you little, assume it is their method, not your score. Keep giving full answers with examples. If you are unsure whether you have answered the question, ask: \"Would you like more detail on that?\" A neutral interviewer is usually a fair one, which is good news for a well-prepared candidate.\n\nIt can help to remember that the interviewer may be just as tired, or just as nervous, as you are.\n\nAnd if an interviewer is genuinely cold or dismissive, that tells you something about the organisation, which is worth knowing before you accept a job there."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How much eye contact should I make in an interview?",
+   "a": "Enough to feel like a conversation, and no more. Look at the interviewer while they are asking a question and when you begin your answer, and let your eyes move naturally while you think, which is what most people do. Part I described research suggesting that looking away while thinking helps people answer difficult questions, so do not force yourself to hold a gaze through every sentence. Counting seconds or following a rule such as two thirds of the time tends to produce the fixed, intense look that Hannah's panel noticed. If eye contact is uncomfortable for you, for example because you are autistic or because of cultural habit, looking at the area around the eyes or at the interviewer's notes now and then is fine. Good interviewers will be listening to your answers, not timing your gaze.\n\nIf you wear glasses or contact lenses, make sure you can see the interviewer clearly, since straining to see can look like frowning."
+  },
+  {
+   "q": "What can I do if I am visibly nervous?",
+   "a": "Prepare for the effects nerves actually have. Feiler and Powell found that the clearest sign of interview anxiety was slower speech, and that interviewers tended to read it as a lack of assertiveness or warmth. So practise your opening answers aloud until they start easily, and know your first example well. Before the interview, walk rather than sit hunched over your phone, breathe slowly and tell yourself you are excited. In the room, it is fine to pause before answering and to say \"Let me think about that for a second.\" Most of what you feel is far less visible than you think, as the chapter on stage presence described. If nerves are severe, it is reasonable to ask in advance whether the questions or format can be shared.\n\nBring a bottle of water. A sip gives you a natural pause to think, and helps a dry mouth.\n\nAnd if you know you speak slowly when nervous, it may help to tell yourself that slow is fine. A slow, clear answer with a good example beats a fast, vague one."
+  },
+  {
+   "q": "Should I tell an employer about a condition that affects how I come across?",
+   "a": "That is your choice, and there is no single right answer. Some candidates prefer not to disclose, and that is their right. Others find it helps to ask for adjustments, such as receiving the questions in advance, a quieter room, more time or a written element, and in many countries employers are required to make reasonable adjustments for disabled candidates. If you are autistic, have a stammer, have anxiety or have any condition that changes your eye contact, speech or manner, a short sentence at the start can also stop the panel misreading you: \"I find eye contact difficult, so I may look away while I think.\" Many candidates who have done this say the interview felt fairer. If you are an interviewer, make it easy by asking every candidate whether they need anything.\n\nWhatever you decide, you are entitled to be judged on your answers and your ability to do the job."
+  },
+  {
+   "q": "As an interviewer, how can I stop my first impression from taking over?",
+   "a": "Use structure, and treat the impression as something to test rather than a finding. Ask every candidate the same questions, based on what the job requires, and score each answer against criteria agreed in advance, ideally with a colleague scoring independently. Sackett and colleagues found structured interviews to be the best single predictor of performance they examined. Notice your first impression and name it, then set it aside until the scoring is done. Give every candidate the same warm start, whatever happened at reception, so that your manner does not produce the performance you expected. And when you discuss candidates, start with the scores and the evidence for them, not with how each candidate seemed.\n\nIt also helps to finish the day before you compare notes with colleagues, so that one person's impression does not set everyone else's.\n\nIf you can, interview with a colleague and take turns to ask the questions, so that one of you is always free to watch your own panel's manner."
+  },
+  {
+   "q": "Is it fair to judge a candidate's voice?",
+   "a": "Only with great care. DeGroot and Motowidlo found that vocal cues such as varied pitch and pace were modestly related to managers' later job performance, apparently because a lively voice made people seem more credible and likeable, which helps in managing. But a candidate's voice in an interview also reflects nerves, accent, a stammer, a hearing impairment, autism and many other things that have nothing to do with the job. Feiler and Powell found that interviewers read slow, anxious speech as a lack of warmth. If speaking matters in the role, test it directly, for example with a short presentation or a role play scored against clear criteria, rather than forming a view from how someone sounded while answering questions under pressure.\n\nIf you notice that you liked one candidate's voice more than another's, ask whether you would score their answers the same if you read them in a transcript.\n\nAnd if a candidate has a stammer, give them time to finish; never finish their words for them."
+  },
+  {
+   "q": "How should I prepare for a one-way video interview?",
+   "a": "Treat it as a video call with a person who happens to be watching later. Set up as the chapters on video calls describe: camera at eye level, face lit from the front, quiet room, good microphone. Hide your self-view, so that you are not watching your own face. Put something beside the lens that helps you speak to it as to a person, such as a photograph or a sticky note. Use any thinking time to jot two or three words for the answer. Practise with a few questions and a timer first, recording and watching back. Check the employer's information about how recordings are assessed; in some places, employers must tell candidates if software will analyse their videos. And remember that a human reviewer is listening for your answers, just as in any other interview.\n\nAnd if you have the choice, ask whether a live interview is possible instead. Some employers offer one on request.\n\nAfterwards, note what you would change for a second attempt, because many employers now use these interviews at several stages."
   }
  ],
  "watch": [
