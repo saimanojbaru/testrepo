@@ -80,6 +80,20 @@
    "doCaption": "Turning to face for what matters",
    "dontCaption": "An apology made to the side of a head",
    "annotation": "Some things need the face. Turn toward someone for an apology or a serious announcement, and say that you are doing it on purpose."
+  },
+  {
+   "doPoseId": "p_walk_phone",
+   "dontPoseId": "p_pro_video_call",
+   "doCaption": "A phone call on a walk, eyes on the road ahead",
+   "dontCaption": "A video call, both faces fixed on the screen",
+   "annotation": "Many men find it easier to talk without a face to hold. A call while walking keeps the body busy and the gaze free."
+  },
+  {
+   "doPoseId": "p_pair_work_together",
+   "dontPoseId": "p_pair_men_apart_glance",
+   "doCaption": "Working on something together",
+   "dontCaption": "Two men standing apart, glancing, with nothing to do",
+   "annotation": "A shared task gives both people a reason to be there and somewhere to look, and talk often follows."
   }
  ],
  "caseStudy": "Joe, forty-one, and Matt, forty-three, have been friends since school. For years they played five-a-side together on Thursdays, until the pitch closed and Matt's knee went. Since then they have met about twice a year, in a pub, across a table, catching up on news. When Joe's marriage ends, Matt hears about it from someone else.\n\nMatt suggests a pint, and it goes badly. Joe gives a short, cheerful account of the separation, looks at his phone, and talks about football. Matt asks how he is really doing, and Joe says he is fine, holding Matt's gaze a little too steadily, and goes to the bar.\n\nA month later Matt needs to collect a trailer from a town two hours away and asks Joe to come with him. Joe agrees, mainly because it sounds like a job rather than a conversation. For the first hour they talk about the route and the radio. Then, on a long straight stretch, Joe says, to the windscreen, that the worst part is the kids' bedrooms at his new flat, made up and empty on weekdays. His voice drops. Matt keeps his eyes on the road, says that sounds brutal, and waits. Joe talks for forty minutes, with long gaps.\n\nAt one point Joe turns his head and looks at Matt, as if checking. Matt glances across, nods once, and looks back at the road. Joe carries on. Matt does not try to fix anything. When they stop for petrol, they talk about the trailer.\n\nOn the way home Matt suggests they do something like it every month. They start walking a stretch of the coast path on the first Saturday of each month. Most of those walks are about nothing much. Some of them are about everything.",
@@ -99,6 +113,10 @@
     "Note what you were doing with your hands and eyes at the time.",
     "Look for a pattern: which settings made talk easier for you, and for the other person?",
     "Write one sentence about what this tells you about how you prefer to talk."
+   ],
+   "variations": [
+    "Do the same exercise for conversations with women in your life, and compare the settings.",
+    "Ask a close friend where he thinks your best conversations together have happened, and compare his answer with yours."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Write three invitations that involve doing something side by side rather than meeting to talk.",
     "Choose the one that best suits him, not only you.",
     "Send it this week, and make the activity the point."
+   ],
+   "variations": [
+    "Invite someone you have lost touch with to help you with a small practical job rather than to meet for a drink.",
+    "Suggest a regular side-by-side activity, such as a monthly walk, rather than a one-off meeting."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Resist the urge to turn and stare; glance briefly if they look across.",
     "Afterwards, write down two changes and what you thought they meant.",
     "If it is appropriate, check one of your readings later by asking a gentle question."
+   ],
+   "variations": [
+    "Try reading someone on a phone call while you both walk, and note which channels you rely on.",
+    "Notice your own voice and breath when a conversation beside someone turns serious, and what you do with your hands."
    ]
   },
   {
@@ -130,6 +156,10 @@
     "For each, decide where you will be and how you will turn to face the person.",
     "Write the sentence you will use to mark the turn, such as “I want to look at you while I say this.”",
     "Practise saying it aloud until it sounds like you."
+   ],
+   "variations": [
+    "Practise the turn with someone close to you in a low-stakes moment, such as thanking them for something.",
+    "Ask someone close to you which conversations they would rather have face to face, and note their answers."
    ]
   }
  ],
@@ -211,6 +241,45 @@
    "explain": "Side-by-side friendships often fade when the shared activity ends. Restoring a regular activity usually does more than scheduling a talk about the friendship.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Marily Oppezzo and Daniel Schwartz find about walking?",
+   "options": [
+    "Most people came up with more creative ideas walking than sitting",
+    "Walking made almost everyone less creative, because attention was split between two tasks",
+    "Walking improved creativity only for professional athletes who walked every single day",
+    "Walking had no effect on thinking, though people said they enjoyed it rather more"
+   ],
+   "answer": 0,
+   "explain": "Most participants generated more creative ideas while walking than while sitting. A walk side by side can help a problem that went round in circles at a desk open up.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You prefer to talk on walks, but your partner says she feels avoided when you suggest a walk every time she raises something serious. What fits this chapter best?",
+   "options": [
+    "Keep suggesting walks, since side by side is always the better way to talk",
+    "Ask how she prefers to talk, and turn to face her for the things that matter",
+    "Stop talking about serious things altogether, since you clearly disagree on how",
+    "Tell her that research proves walking conversations are more honest than any other kind"
+   ],
+   "answer": 1,
+   "explain": "Side by side is useful, not universal. Some people feel heard only when they are looked at, and some conversations ask for the face. Ask, and be ready to turn.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that Men's Sheds have been proven to cure loneliness in older men. What does this chapter say?",
+   "options": [
+    "It is right, since large trials have shown that every man who joins is cured",
+    "The idea is promising, but the evidence is mixed and mostly from small studies",
+    "It is wrong, since the research shows that Men's Sheds make loneliness worse",
+    "It is right, but only for men who were tradesmen during their working lives"
+   ],
+   "answer": 1,
+   "explain": "A review by Wilson and Cordier found reports of benefits, but most studies were small. Men's Sheds are a promising setting for side-by-side connection, not a proven cure.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -239,6 +308,110 @@
    "work": "Buddy System: Understanding Male Friendships",
    "author": "Geoffrey L. Greif",
    "note": "Oxford University Press, 2009. Interviews with hundreds of men about how their friendships form, last and end."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The drive to the station",
+   "scene": "Paul, forty-eight, has been trying for weeks to find out what is bothering his son, Callum, seventeen. Callum has gone quiet since the\n  autumn, spends most evenings in his room, and gives one-word answers at dinner. Twice Paul has sat him down at the kitchen table, looked him\n  in the eye and asked what is wrong. Both times Callum has said nothing is, stared at the table, and gone back upstairs as soon as he could.\n  Paul's wife thinks he is pushing too hard. Paul thinks he is not pushing hard enough.\n\n  On a dark Tuesday morning in January, Callum misses the bus to college, and Paul drives him to the station, twenty minutes away. For the first\n  ten minutes they say nothing. The radio is on. Then, at a red light, without looking at his father, Callum says that he is not sure he wants to\n  go to university after all, and that he does not know how to tell his mum, because she has been talking about it since he was eleven.\n\n  Paul's first instinct is to pull over, turn round and talk about it properly.\n\nPaul remembers that his own father never asked him anything at the table either, and that the only real conversation they ever had was in a car, on the way to Paul's first job interview. He had forgotten that until now.\n\nPaul also notices that Callum chose the moment himself: a red light, with something to look at, the radio on, and fifteen minutes left before the station. Nothing Paul had arranged had worked. The one setting he had not arranged did.",
+   "misread": "Paul read the kitchen table as the right place for a serious conversation, because that is where serious conversations happen in films and in his own childhood. He read Callum's silence there as stubbornness, and his own urge to turn and face him in the car as taking the matter seriously.\n\nAnd because both kitchen conversations had failed, Paul had started to believe that Callum simply did not want to talk to him, which made the urge to seize the moment in the car all the stronger.\n\nHis wife's view, that he was pushing, was right about the table and wrong about the need. Callum wanted to talk. He needed a different shape of conversation.",
+   "betterRead": "Face to face, across a table, a teenager has nowhere to look but at the person questioning him, and every hesitation is watched. In the car, with the road to look at, the radio filling the silence and a fixed time before arrival, the load drops, and Callum said in ten minutes what he had not been able to say in weeks. Paul's better reading was to keep the arrangement that had made it possible. He did not pull over. He kept his eyes on the road, turned the radio down a little, and said, \"Thanks for telling me. That sounds like a lot to carry.\" He asked what Callum was thinking of doing instead, and listened. At the station he said they could talk more on the drive home if Callum wanted, and offered to pick him up. Callum said yes. Over three evening drives that week, they worked out how to tell his mother together.\n\nPaul also stopped holding serious conversations at the kitchen table, and started offering lifts."
+  },
+  {
+   "title": "The widower at the workbench",
+   "scene": "Arthur, seventy-two, was an electrician for forty years. Since his wife died two years ago, he has spent most days alone in his bungalow.\n  His daughter worries about him. She has tried to get him to join a bereavement group, which he went to once and hated. \"Sitting in a circle\n  talking about feelings,\" he told her. \"Not for me.\"\n\n  A neighbour mentions a Men's Shed that has opened in the old scout hut: a workshop where retired men make and mend things together. Arthur goes,\n  reluctantly, on a Thursday morning. He spends the first hour standing near the door. Then someone asks whether anyone knows how to rewire an old\n  lamp. Arthur does.\n\n  By the end of the morning he is at a workbench with two other men, his back to the room, his hands busy, talking about lamps, then about the\n  football, then, briefly and without looking up, about his wife.\n\nArthur's daughter has also noticed that he answers the phone more cheerfully on Thursday evenings, and that he has started mentioning names she does not know: Bill, Gordon, a man called Taff who apparently cannot hammer a nail straight.\n\nArthur's daughter rang him that evening and asked how it had gone. He said it was all right, and then talked for twenty minutes about a lamp, a man called Gordon and the state of the shed's electrics, which he intends to fix.",
+   "misread": "Arthur's daughter read the bereavement group as the natural route to support, because it offered talk. Arthur read talk about feelings, in a circle, face to face, as something not for men like him, and so he had concluded that support was not for him either.\n\nThe group itself was not wrong. It was simply arranged in a way that put Arthur's face on show at the moment he least wanted to be seen.\n\nAnd Arthur's own reading, that support was not for men like him, would have kept him at home if the only kind on offer had been a circle of chairs.",
+   "betterRead": "For many men, closeness grows out of doing something alongside others, as Paul Wright described. A circle of chairs puts every face on show; a workbench puts every pair of hands to work and every face towards the job. Arthur did not talk about his wife because anyone asked him to. He talked about her because he was beside two men with something to do and no one watching his face. Men's Sheds and similar groups are a promising idea, and a review by Wilson and Cordier found reports of benefits to wellbeing and social connection, though the evidence is mixed and mostly from small studies. They are not a cure for grief or loneliness. But for men like Arthur they can offer a setting where the side-by-side principle does its work. His daughter's better approach, once she saw it, was to stop pushing the group and start asking about the lamps. He goes every Thursday now, and on Tuesdays too.\n\nShe also learned to ask about the lamps first and the feelings second, and found that the feelings came along by themselves."
+  },
+  {
+   "title": "The wife who wanted to be faced",
+   "scene": "Rich and Hana have been married for eight years. Rich has read about side-by-side conversation and has become a convert. When he wants to\n  talk about something important, he suggests a walk. When Hana wants to talk, he suggests they go for a drive. On the walks he talks easily, and\n  he is proud of how much more open he has become.\n\n  Hana is not happy. She tells her sister that whenever she raises anything serious, Rich steers them out of the house, and that she has started to\n  feel he does not want to look at her. Last week, when she tried to tell him how lonely she had felt since the baby was born, he suggested a walk\n  round the park. She said no, she wanted to sit down and look at him. He looked confused, and a bit hurt.\n\n  When Hana's sister asks whether she has told Rich this, Hana says she should not have to.\n\nRich, for his part, has been trying hard. He has read that men open up more on walks, and he has been proud of finally learning to talk. It has not occurred to him that what works for him might not work for her.\n\nRich grew up in a house where the only real conversations happened in the car or on the allotment, and he has always found eye contact during hard talk almost unbearable. Hana grew up in a family that sat round the kitchen table every night and talked about everything.",
+   "misread": "Rich read side by side as the best way to talk for everyone, because it worked so well for him. Hana read his suggestions of walks and drives as a way of avoiding her face, and his confusion as proof that he did not understand.\n\nHana's view that she should not have to tell him was understandable, and it left Rich guessing, which is how misreadings in long relationships tend to persist.\n\nEach of them was reading the other through their own childhood, which is one of the commonest sources of misreading in long relationships.",
+   "betterRead": "Side by side is a useful arrangement, not a rule. This chapter's block on when to turn and face makes the point that some people prefer face to face, and should not be pushed beside you because it is easier for you. Hall's review found that women, on average, expected more intimacy and self-disclosure from friends, and for many people being looked at while they speak is part of feeling heard. Some conversations, such as telling a partner you have been lonely, ask to be seen. The better approach was for both of them to say what they needed. When Hana did tell him, Rich was shocked and apologetic. They agreed that either of them could ask for a walk or a sit-down, and that the other would say yes. That evening, they sat on the sofa facing each other, and Rich kept his eyes on her face while she talked, which he found hard and which she said made all the difference."
+  },
+  {
+   "title": "Thirty years of fishing, and one thing unsaid",
+   "scene": "Keith and Barry, both sixty-one, have fished together on the same river every second Saturday for thirty years. They talk about the\n  weather, the river, the football and their grandchildren. They are, by any measure, close friends. In the spring, Barry is diagnosed with\n  prostate cancer. He tells his wife and his doctor. He does not tell Keith.\n\n  For three months they keep fishing. Keith notices that Barry is thinner, that he has missed two Saturdays for \"appointments\", and that he sits\n  more and casts less. Keith wonders, but does not ask. They have never asked each other anything like that.\n\n  Then Barry's wife mentions the diagnosis to Keith's wife, assuming he already knew. Keith is hurt, and then ashamed. He realises that in thirty\n  years beside each other, they have never said a single thing that mattered.\n\nKeith also remembers that when his own father was dying, nobody in the family said so aloud until the last week. He had sworn he would be different, and then had been exactly the same.\n\nBarry's wife has been urging him to tell Keith for weeks. Barry keeps saying that he will, next Saturday, and every Saturday the river is calm and the light is good, and the moment never seems right. He tells his wife afterwards that it would have felt like dropping a stone into the water.",
+   "misread": "Both men read their side-by-side friendship as a place where some things are not said, and read the silence about Barry's health as respect. Keith read his own unasked questions as tact.\n\nBarry, for his part, read Keith's silence as a sign that he did not want to know, when Keith had simply not known how to ask.\n\nKeith also read Barry's thinner frame and missed Saturdays with the same tact he had always used, which kept the friendship comfortable and left Barry alone with the hardest thing in his life. The arrangement that made talking easy had become the reason neither of them did.\n\nNeither man was unkind. Each was waiting for the other, and the river made waiting easy.",
+   "betterRead": "Side by side lowers the cost of saying hard things; it does not say them for you. The failure this chapter warns about is using the arrangement to avoid rather than to approach: spending years beside a friend without either of you ever saying what matters. The setting Keith and Barry shared was ideal for the conversation. What was missing was one of them starting it. Keith's better approach, the next Saturday, was to use the river. With both of them looking at the water, he said, \"I heard about the diagnosis, mate. I wish you'd told me. How are you doing with it?\" Barry said nothing for a while, then that he had not wanted to spoil the fishing. Keith said that nothing would spoil the fishing, and that he would drive him to his appointments if he wanted. They talked for an hour without once looking at each other. On the drive home, at Barry's door, Keith turned in his seat and looked at him, and said, \"I mean it. Anything you need.\" Barry nodded and held his eyes, and got out of the car."
+  }
+ ],
+ "workedReading": {
+  "title": "Reading a friend on a long drive",
+  "scene": "Sam is driving his friend Dev to Dev's father's eightieth birthday, three hours each way. Dev's father has dementia, and Dev has said little about it. For the first hour they talk about work and football. Then, as they pass the turning for the town where Dev grew up, Dev goes quiet. Sam glances across. Dev is looking out of the side window, his jaw set, his hands pressed flat on his thighs.\n\nSam knows Dev well. They have been friends for twenty years, and he has seen Dev quiet like this only twice before: after his divorce, and when his mother was ill.\n\nDev has visited his father only twice since the diagnosis, and both times he came home and did not speak for the rest of the day. He asked Sam to drive this time, he said, because he did not trust himself to drive back. Sam took that as a sign that this journey matters more than either of them has said.",
+  "steps": [
+   {
+    "label": "Keep the arrangement",
+    "text": "Sam's first impulse is to turn down the radio and ask what is wrong. He holds back. The car is working: Dev can look out of the window, nobody is watching his face, and there are two hours left. Sam keeps his eyes on the road and his voice light, and decides to let Dev set the pace.\n\nHe also keeps driving at the same steady speed, and does not change lanes or overtake for a while. A smooth, predictable drive keeps the setting calm.\n\nHe also reminds himself that Dev chose to go quiet at exactly the place where his childhood begins. The setting is doing some of the work, and it does not need any help from him."
+   },
+   {
+    "label": "Glance, do not stare",
+    "text": "He checks on Dev only in brief glances, the way any driver glances at a passenger. He sees the jaw, the flat hands, the eyes on the window. He does not turn his head to look properly, because that would put back the spotlight that the car removed.\n\nHe also notes that Dev's body is turned slightly away, towards the window. That is not rejection. It is a man giving himself a little more privacy inside a small space.\n\nHe also keeps his own body relaxed: one hand on the wheel, shoulders down, no sudden movements. A tense driver makes a tense passenger."
+   },
+   {
+    "label": "Listen to the voice",
+    "text": "When Dev eventually speaks, saying that they used to drive this road every summer to his gran's, Sam listens to his voice more than his words. It is lower and slower than it was an hour ago, with a pause before \"gran's\", and the last words trail off. The voice says more than the sentence: this is close to something that hurts.\n\nHe also answers in a voice that matches Dev's: lower and slower. A bright, chatty reply would have told Dev that the moment had not been noticed.\n\nHe also notes what Dev does not say. He talks about his gran and the summers, not about his father. The avoidance is part of the message: the hardest thing is still being approached from the side."
+   },
+   {
+    "label": "Listen to the breath and hands",
+    "text": "Sam notices a long breath out through Dev's nose, and that one of Dev's hands has moved to rub the back of his neck, a pacifier described in Part I. Dev is not just remembering a road. He is bracing for the visit, and soothing himself while he does it.\n\nHe also notices that Dev's hand stays on his neck while he talks about his gran, and moves away when he changes the subject. The pacifier marks the topic that hurts.\n\nHe also notices that he wants to fix it: to say that his father will probably recognise him, that it will be fine. He lets the urge pass, because he does not know that it is true, and Dev would know he did not."
+   },
+   {
+    "label": "Let the silence work",
+    "text": "Sam says, \"Good summers?\" and nothing more. Dev says yes, and then nothing for nearly a mile. Sam does not fill the gap. In a car, silence is easy to bear, because the road keeps moving. When Dev speaks again, it is to say that his dad did not know who he was on the phone last week, and that he is dreading walking into the room.\n\nHe also turns the radio off at some point during the silence, quietly, without comment. The gesture tells Dev that the space is his, without a single word.\n\nWhen Dev does speak, Sam answers with a question about the dread, not about the dementia. \"What's the worst bit?\" lets Dev choose what to say next."
+   },
+   {
+    "label": "Turn for what matters",
+    "text": "Sam listens, says that sounds really hard, and asks what he can do. At the service station, an hour later, they stop for coffee. As they stand by the car, Sam turns and faces Dev, and says, \"I'll come in with you, if you want. Or I'll wait in the car. Your call.\" He wants Dev to see him say it.\n\nHe chooses the service station deliberately. Standing by the car, with a coffee each, is a natural place to turn and face someone, and then to go back to driving.\n\nHe also keeps the turn short. Two sentences, face to face, and then back to the car. Turning for what matters does not mean turning the whole journey into a heart-to-heart."
+   },
+   {
+    "label": "What happened",
+    "text": "Dev asks him to come in. At the party, Sam stays beside him, which is where Dev seems to want him. On the drive home, Dev talks for most of the three hours, about his father, his childhood and his fears, all of it to the windscreen. When Sam drops him off, Dev says that it was the best day he has had in months, which surprises them both.\n\nSam also texts Dev the next day, briefly, to ask how he is, and suggests another drive in a month, to visit his father again if Dev wants company.\n\nSam also notes, for himself, how much he learned without seeing Dev's face for most of the day: the voice, the breath, the hand on the neck, the place on the road where he went quiet. He had read his friend more clearly from the side than he ever had across a table."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating side by side as shallow",
+   "body": "It is common to hear that men's friendships are thinner than women's, because men just do things together while women really talk. The research is more nuanced. Hall's review of thirty-seven studies found real but modest differences in what men and women expect from friends, with a great deal of overlap, and plenty of evidence that men value closeness and support as much as women do. Side by side is a different route to closeness, not a lack of it. Judging men's friendships by a face-to-face standard misses the conversations that happen in cars, on walks and at workbenches, and it can make men feel that their way of being close does not count.\n\nIt also helps to notice how men themselves talk about it. Many describe a friend as someone they could ring at three in the morning, even if they have never talked about feelings with him. That is a kind of closeness, not a lack of it.\n\nIt also helps to notice the language used to describe men's friendships: \"just mates\", \"only football\", \"not really close\". These can hide how much those friendships matter, sometimes from the men themselves.\n\nAnd it helps to remember that many women value side-by-side time too: walks with friends, cooking together, a shared project. The pattern is about what makes talk easier, not about who is allowed to have it."
+  },
+  {
+   "title": "Staring at the man beside you",
+   "body": "The whole point of side by side is that nobody has to hold anyone's gaze. When a man starts to talk to the windscreen, the instinct of a caring listener is to turn and watch him properly, to show that they are paying attention. That puts back exactly the pressure the arrangement removed, and many men will stop talking. Glance as a passenger or a walking companion would, briefly and naturally. Let your voice show that you are listening: a murmur, a short question, an unhurried silence. Read through the channels the chapter describes, voice, breath and hands, rather than through his face.\n\nIt also helps to resist commenting on the conversation itself. Saying \"It's great that we're finally talking like this\" can make a man self-conscious and end it. Let it be ordinary.\n\nPartners and parents often make this mistake out of love. When a man finally starts talking, they want to show that they are listening with their whole body. Showing it with your voice, and keeping your eyes on the road, works better."
+  },
+  {
+   "title": "Using side by side to avoid",
+   "body": "Shared activity can become a place to hide. Years of matches, fishing trips or rounds of golf can go by without either friend ever saying that one of them is ill, divorcing, grieving or struggling. The arrangement makes hard things easier to say, but someone still has to say them. If you have a side-by-side friendship and something is going on, use the setting: say the thing while you both look at the river. If your friend seems to be carrying something, ask, once, plainly, as the chapter on the I'm Fine mask describes, and let the activity carry the silence afterwards.\n\nA useful habit is to make one honest remark on every outing: how you really are, one sentence. It keeps the door open without turning the activity into an interview.\n\nIf you notice that years have passed without any real conversation, the next outing is a good time to change it. One plain sentence, said while you both look at the same thing, is enough to start.\n\nIt also helps to know that men often regret, later, what was never said in these friendships, especially after a friend has died. Saying it now, however awkwardly, is almost always the better choice."
+  },
+  {
+   "title": "Assuming everyone wants it",
+   "body": "Side by side works well for many men, and for many women too, but not for everyone and not for every conversation. Some people feel heard only when they are looked at. Some find walks or drives a way of being avoided. Some conversations, such as apologies, declarations, bad news and decisions that will change a relationship, ask for the face. Do not make side by side your only mode, and do not push it on people because it suits you. Ask how the other person likes to talk, and be ready to turn and face them when it matters.\n\nIt also helps to watch the other person's response when you suggest side by side. If they hesitate, look disappointed or say \"can we just sit?\", take it as information about what they need.\n\nIt also helps to switch modes for the end of a conversation. Even a walk that has gone well can end with a moment face to face, a look and a word, so that the other person knows they were seen as well as heard."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is it true that men only bond through activities?",
+   "a": "No. Wright's phrase, side by side versus face to face, describes a tendency, not a rule. Hall's meta-analysis found that, on average, women expected more self-disclosure and intimacy from friends and men placed more weight on shared activity, but the differences were modest and the overlap large. Many men have deep face-to-face friendships, and many women bond through shared activity. Activity is often the setting that makes men's closeness possible, and it is easy to underestimate how much is being shared in it. The useful question is not which is better, but which works for this person and this conversation.\n\nIt also helps to remember that friendships change over a lifetime. Men who bonded through sport in their twenties may find, in their fifties, that they want and can manage more direct talk. The route can change as the friendship does.\n\nIt also helps to notice that men often talk more about their friendships than people expect, when asked about the activities rather than the feelings. \"Who do you go fishing with?\" can open a conversation that \"Who are you close to?\" would close.\n\nIt also helps to notice that the setting is not the friendship. Two men who meet only at football can be very close, and two men who talk for hours can be strangers to each other. What matters is what passes between them."
+  },
+  {
+   "q": "Why do children talk so much in the car?",
+   "a": "For the same reasons adults do. In a car, nobody has to make eye contact, there is something to look at, the journey has a natural end, and silence is easy to bear because the road keeps moving. Children and teenagers often raise the things they find hardest to say on the school run, at bedtime with the light off, or while doing something with a parent, such as cooking or walking the dog. Many parents find that a fixed weekly drive, a walk or a shared task does more for conversation than any amount of sitting down at the kitchen table to talk.\n\nIt also helps to keep the drive or walk going after the hard thing is said. Stopping the car or turning round to face them can make it feel like a confession; carrying on lets it be part of an ordinary journey.\n\nIt also explains why bedtime, with the light off, is such a common time for children to say what is on their minds. In the dark, nobody can see anyone's face."
+  },
+  {
+   "q": "What if we do not share a hobby?",
+   "a": "You do not need one. Side by side can be built from almost anything that gives two people something to look at and do: a walk, an errand, a drive to the tip, cooking a meal, watching a match, washing the car, a job on the house, volunteering together. The activity does not need to be important, only shared. Many friendships that have faded can be restarted by inviting someone to help with a small task, such as moving a sofa or fixing a fence, because it gives both of you a reason to be there that is not about talking.\n\nIt also helps to make it regular. A standing arrangement, the same walk on the first Sunday of every month, removes the need to arrange each meeting and gives the friendship a rhythm.\n\nIt also helps to suggest the activity rather than the conversation. \"Fancy a walk on Sunday?\" is easy to say yes to. \"Can we have a talk?\" is not.\n\nShared tasks also have an end, which helps. When the sofa is moved or the fence is fixed, there is a natural moment to stop, and nobody has to find a way to leave a conversation."
+  },
+  {
+   "q": "Does this work on the phone?",
+   "a": "In part. A phone call removes the face, which is why many men find calls easier than video, and why some find it easier still to talk while walking with a phone, so that their eyes and bodies are occupied. But a call also removes the shared activity and the shared view, and long silences feel heavier on the phone than in a car. For hard conversations at a distance, a call is usually better than a video call or a message, and a walking call can be better still. For the most important things, being in the same place, side by side or face to face, is still best.\n\nIt also helps to agree in advance that silences are fine. On a walking call, saying \"I'm just walking, no rush\" makes it easier for the other person to take their time.\n\nIt also helps to keep the camera off on video calls when the subject is hard, if both people are comfortable with that. Many people find it easier to talk when they are not looking at their own face on the screen.\n\nFor some men, messages work in a similar way. A conversation that unfolds over days by text, with no faces and no pressure to reply at once, can carry things that would be hard to say on a call."
+  },
+  {
+   "q": "How can I read someone when I cannot see their face?",
+   "a": "Through the other channels this book has taught. Listen to the voice: pace, pitch, volume, pauses and where the voice drops. Listen to the breath: sighs, held breaths, the catch before a hard word. Watch the hands and the body with the edge of your attention: a hand rubbing the neck, fingers tapping, a body turning slightly towards or away. Notice silence, and what it follows. And notice the words themselves, which often matter more than anything else when someone is speaking to the windscreen. You will see less than face to face, and you will often hear more.\n\nIt also helps to check your reading afterwards, gently, if it matters. \"You went quiet when we passed your old school. All right?\" turns a guess into a question.\n\nIt also helps to accept that you will miss some things. Side by side trades some information for some ease, and for many conversations that is a good trade."
+  },
+  {
+   "q": "Are Men's Sheds and similar groups worth it?",
+   "a": "For some men, they may be. Men's Sheds offer a workshop where men make and mend things together, and many men who would never join a support group find their way there. A review by Wilson and Cordier found reports of benefits to wellbeing and social connection, but most studies were small and the evidence is mixed, so they should be seen as promising rather than proven. Similar ideas include walking groups, community gardens, volunteering and sports clubs for older men. If someone you know is isolated and dislikes the idea of talking groups, a place where men do things side by side may be an easier door to walk through.\n\nIt also helps to go with them the first time. Many men find it far easier to walk into a new group alongside a friend than on their own.\n\nIt may also help to look for groups where the activity is genuinely the point, rather than a pretext. Men are often quick to spot a support group dressed up as something else, and slow to trust it.\n\nAnd if the person resists, keep the door open. A man who says no to a Men's Shed this month may say yes to a walk with a neighbour next month, or to the shed in a year."
   }
  ],
  "watch": [
