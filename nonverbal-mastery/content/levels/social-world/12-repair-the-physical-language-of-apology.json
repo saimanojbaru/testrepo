@@ -73,6 +73,27 @@
    "doCaption": "Giving him room to answer",
    "dontCaption": "Pressing for forgiveness",
    "annotation": "Forgiveness cannot be demanded. Make the apology, offer repair, and give him room and time."
+  },
+  {
+   "doPoseId": "p_pair_apology",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Sorry face to face, after listening",
+   "dontCaption": "Sorry by text, from the sofa",
+   "annotation": "A text can carry the words but not the body that makes them believable. For what matters, turn up, and turn to face them."
+  },
+  {
+   "doPoseId": "p_kneel_one_knee",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Down at his level, saying sorry",
+   "dontCaption": "Apologising to a child from above",
+   "annotation": "A child hears an apology from above as a telling-off. At his level, in plain words, it teaches him how mistakes are put right."
+  },
+  {
+   "doPoseId": "p_stand_hands_clasped_front",
+   "dontPoseId": "p_posture_contracted",
+   "doCaption": "Owning the act, standing still to say it",
+   "dontCaption": "Hiding in shame, avoiding him",
+   "annotation": "Shame hides; guilt repairs. Separating what you did from who you are makes it possible to face the person and say sorry."
   }
  ],
  "caseStudy": "Neil, thirty-nine, misses the funeral of his best friend Marcus's father because of a work trip he could have moved. He sends a text that morning and means to call afterwards, but the week is busy and he does not. Over the next month Marcus goes cool. His messages are short. He skips five-a-side twice. When they do meet, his greeting is a nod rather than the usual pull-in hug.\n\nNeil thinks it is a bad patch and that Marcus will come round. It is his wife who points out that missing the funeral was not a small thing. Neil sends a text: “Sorry mate, work was mental, should've called.” Marcus replies with a thumbs-up and nothing else.\n\nA week later Neil asks if they can meet, and they sit on a bench outside the ground before a match. Neil asks Marcus how he has been since the funeral, and then listens. Marcus says that he looked for Neil in the church, and that not seeing him felt like being told he did not matter. Neil does not interrupt or explain.\n\nThen he turns to face him. His face is red and he looks down for a moment before he speaks. He says that he chose work over being there, that it was his fault and nobody else's, that he is sorry, and that if Marcus will let him, he would like to go with him to the grave. Marcus's arms stay folded. He says, “Right,” and they watch the match.\n\nTen days later Marcus texts a time and the name of the cemetery. They stand there for twenty minutes, side by side, and on the way back to the car Marcus puts his arm around Neil's shoulders for a moment.",
@@ -92,6 +113,10 @@
     "Cross out any excuse hiding in the explanation.",
     "Rewrite the apology around responsibility and repair, keeping it short.",
     "Read it aloud and remove anything that asks for forgiveness."
+   ],
+   "variations": [
+    "Do the six parts for an apology you received once, and mark which parts it had and which it lacked.",
+    "Write the apology in a version for a text message and a version for a face-to-face conversation, and compare them."
    ]
   },
   {
@@ -103,6 +128,10 @@
     "During the conversation, let them speak without interrupting, and reflect back what you heard.",
     "Only then apologise, for what they told you.",
     "Afterwards, note how the order changed the conversation."
+   ],
+   "variations": [
+    "Ask the other person, before you apologise, whether now is a good time, and accept their answer.",
+    "Practise asking \"What was it like for you?\" aloud, several times, until it comes easily and without strain."
    ]
   },
   {
@@ -113,6 +142,10 @@
     "Notice your arms, hands, chin, shoulders and voice.",
     "Say it again with your arms unfolded, hands still, head a little lowered and voice slower.",
     "Notice how different the two feel and look."
+   ],
+   "variations": [
+    "Record yourself on your phone saying sorry both ways, and watch the recordings with the sound off.",
+    "Ask someone you trust to watch you say sorry and tell you which version looked more sincere."
    ]
   },
   {
@@ -123,6 +156,10 @@
     "Write what you did, in one sentence about the act, not about yourself.",
     "Write what you feared it said about you.",
     "Write a sentence separating the two, such as “I did a thoughtless thing; I am not a thoughtless person, and I can put it right.”"
+   ],
+   "variations": [
+    "Write one sentence about the act and one about yourself for a mistake from your childhood, and notice the difference.",
+    "Ask a friend how they separate what they did from who they are, and note any phrase you could borrow."
    ]
   }
  ],
@@ -204,6 +241,45 @@
    "explain": "An apology that follows listening, owns the act plainly and offers repair, delivered face to face in private, matches what the research suggests works. “Sorry if anyone was offended” avoids responsibility.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "How did Dacher Keltner describe the display of embarrassment?",
+   "options": [
+    "The gaze drops, a smile is held in check, the head turns down and a hand may go to the face",
+    "The chin lifts, the eyes widen, and the person stares directly at whoever is watching",
+    "The arms fold tightly, the jaw sets, and the body turns squarely towards the other person",
+    "No consistent display, since embarrassment never shows on the face or in the body"
+   ],
+   "answer": 0,
+   "explain": "Keltner described dropping gaze, a controlled smile, the head turning down or away and often a hand to the face, and argued that the display works as appeasement. A little embarrassment helps an apology land.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a family lunch, you made a joke about your sister's weight. She smiled tightly, left early and has not replied to messages since. What fits this chapter best?",
+   "options": [
+    "Send a quick text saying you didn't mean anything by it, and move on",
+    "Wait for her to bring it up, since it was only a joke and she will get over it",
+    "Ask to talk, listen first, then apologise for what she tells you it did",
+    "Apologise in the family chat at once, before she has a chance to say anything"
+   ],
+   "answer": 2,
+   "explain": "The signs say an apology is owed. Asking to talk, listening first and then owning the act, without excuses, is what Frantz and Bennigson's and Lewicki's research suggests works.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that \"Sorry if anyone was offended\" is a perfectly good apology. What does this chapter say?",
+   "options": [
+    "It is right, since it includes the word sorry and goes to everyone involved",
+    "It shifts responsibility to the hurt person; own the act and offer repair instead",
+    "It is right, but only if it is sent by email rather than said in person",
+    "It is wrong, because apologies should never mention anyone else's feelings"
+   ],
+   "answer": 1,
+   "explain": "\"If anyone was offended\" makes the other person's reaction the problem. Lewicki's research found acknowledging responsibility and offering repair mattered most.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +308,110 @@
    "work": "On Apology",
    "author": "Aaron Lazare",
    "note": "Oxford University Press, 2004. A psychiatrist's account of how apologies work, and why they so often fail."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The apology at the door",
+   "scene": "Dev, forty, was supposed to collect his daughter, Mia, eight, from her swimming lesson at five. He got caught up on a work call and forgot.\n  The swimming teacher rang his wife, Anita, who left a meeting early and drove across town in rush-hour traffic to collect Mia, who had been waiting\n  in the foyer, upset, for forty minutes.\n\n  When Anita walks through the front door with Mia, Dev is already in the hallway. Before she has taken her coat off, he says, quickly, \"I'm so\n  sorry, I completely forgot, the call ran over, it won't happen again.\" He reaches for her bag.\n\n  Anita does not hand it over. She says, \"Right,\" in a flat voice, and walks past him into the kitchen. Mia goes upstairs without speaking. Dev\n  stands in the hall, confused. He apologised immediately, and properly, he thinks. Why does it feel as though it made things worse?\n\nDev had seen the swimming teacher's missed calls on his phone at twenty to six, and felt sick. He rang Anita, who was already in the car. She said only, \"I'm getting her,\" and hung up. He spent the next half hour rehearsing his apology.\n\nMia had been the last child left in the foyer. The swimming teacher had waited with her, and Mia had told her that her daddy always forgot things, which Anita heard as she walked in.\n\nAnita had also had to explain to her manager why she was leaving a client meeting early, which she hated doing, and had spent the drive feeling that her work was always the one that gave way.",
+   "misread": "Dev read the speed of his apology as a sign of sincerity, and assumed that apologising at once, before anything else could be said, was the best way to show he cared. He read Anita's flat \"Right\" as a refusal to accept it.\n\nHe also read his own discomfort as something to get rid of quickly. Much of the speed of his apology was about ending his own guilt, not about Anita's afternoon.\n\nHe also apologised to Anita and not to Mia, who had been the one waiting. The person most hurt is not always the person who arrives at the door first.\n\nMia's silence on the stairs was a message too, and a clearer one than Anita's \"Right\".",
+   "betterRead": "Frantz and Bennigson found that apologies coming later in a conversation were often judged more satisfying than apologies at the very start, because a later apology came after the hurt person had been heard. Dev's apology at the door, before Anita had said a word, took away her chance to say what the forty minutes had been like, for her and for Mia, and it sounded like an attempt to close the subject. It also included an excuse, the call, and a promise, but no acknowledgement of what she had gone through. The better approach was to let her speak first. After dinner, Dev sat down at the table with her and said, \"Tell me what happened this afternoon.\" Anita told him about leaving her meeting, the traffic, and Mia's face in the foyer. Dev listened, without interrupting or explaining. Then he said, \"I'm sorry. That was my job and I forgot it, and you both paid for it. I'll put the pickups in my calendar with an alarm.\" Then he went upstairs and said the same to Mia, kneeling by her bed."
+  },
+  {
+   "title": "Sorry if anyone was offended",
+   "scene": "Phil, fifty-two, a department head, loses his temper in a team meeting when a junior analyst, Jordan, twenty-four, points out an error in\n  Phil's figures. Phil tells him, in front of eight colleagues, that he should check his own work before he starts criticising other people's. Jordan\n  goes red and says nothing for the rest of the meeting.\n\n  That evening, Phil feels uneasy. He sends an email to the whole team: \"Apologies if anyone was offended by my tone in this afternoon's meeting.\n  It's been a stressful week. Let's move forward.\"\n\n  The next morning, two colleagues mention the email to Jordan with raised eyebrows. Jordan does not reply to it. In the team meeting that afternoon,\n  he sits at the far end of the table and does not speak.\n\nPhil's own manager, who heard about the meeting from someone else, mentioned it to him the next morning, which is partly why Phil sent the email. He wanted to be seen to have dealt with it.\n\nJordan's mother rang him that evening and asked how work was going. He said fine. He did not tell her that he had spent the train journey home wondering whether to start looking for another job, because the one thing he had been told when he joined was that the department valued people who spoke up.\n\nTwo of the colleagues who had laughed at Phil's remark in the meeting have since been noticeably cooler towards Jordan, taking their lead from the head of department.",
+   "misread": "Phil read his email as an apology. It contained the word, it went to everyone, and it moved things on. Jordan read it as something else: a statement that placed the problem in other people's feelings, offered an excuse and asked for the matter to be closed.\n\nHe also read the stressful week as a reason the team should understand, when it was a reason he had behaved badly, which is not the same thing.\n\nAnd by sending it to everyone, he spread the moment further while giving Jordan nothing, which made the email worse than silence.\n\nPhil also chose the medium that let him avoid Jordan's face. An email is easier to send than an apology is to say, which is exactly why it carries less.",
+   "betterRead": "Lewicki, Polin and Lount found that two parts of an apology mattered most: acknowledging responsibility and offering repair. \"Apologies if anyone was offended\" does neither. It makes the hurt person's reaction the problem, rather than the act, and \"it's been a stressful week\" turns the apology into an explanation. A public harm also usually needs a public correction, and an email cannot carry the body that makes an apology believable. Phil's better approach, which a colleague he trusted suggested, was to do it properly, twice. He asked Jordan for ten minutes, sat across a small table at his level, and said, \"I was out of order yesterday. You were right about the figures, and I attacked you instead of thanking you. I'm sorry.\" Then, at the next team meeting, he said to the room that Jordan had caught an important error and that he had handled it badly. Jordan said thank you. A month later, he pointed out another error, and Phil thanked him.\n\nPhil also told his own manager what he had done, which his manager said was the most useful part."
+  },
+  {
+   "title": "The son who missed the seventieth",
+   "scene": "Kofi, thirty-eight, missed his father's seventieth birthday party because he chose to go on a stag weekend that had been booked for months.\n  He told himself his father would understand. His father, Kwame, has said nothing about it since, but he has been cool on the phone, and at Sunday\n  lunch three weeks later, he greets Kofi with a handshake instead of the usual embrace.\n\n  After lunch, Kofi finds his father in the garden. He stands in front of him and says that he is sorry he missed the party, that it was a stupid\n  choice, and that he should have been there. His father listens with his arms folded, looks at the roses and says, \"Right.\" Nothing else.\n\n  Kofi feels a flash of frustration. He has done the hard thing, and his father has given him nothing back. He is tempted to say, \"I said I'm sorry,\n  Dad. What more do you want?\"\n\nAt the party, Kwame's brother gave a speech that mentioned all four of Kwame's children by name, and then said, \"three of whom are here.\" Kofi's mother told him about it afterwards. Kofi has not stopped thinking about it.\n\nKofi's sister has told him that their father was quiet for the whole party, and that he kept looking at the door. Kofi had pictured his father hardly noticing his absence among sixty guests.",
+   "misread": "Kofi read his father's folded arms and single word as a refusal to forgive, and felt that an apology made deserved an apology accepted. He nearly turned the moment into a demand.\n\nHe also nearly forgot that the hurt was three weeks old for his father and three minutes old for him. One sentence could not be expected to undo three weeks.\n\nHe also read the handshake at the door as coldness to be overcome, rather than as information about how much the absence had hurt.\n\nAnd his father's silence was, in its way, an answer. Some men can say \"I'm hurt\" only by saying nothing at all.",
+   "betterRead": "An apology is not a transaction, and the other person does not owe forgiveness for receiving one. Lewicki's study found that asking for forgiveness was the least important part of an apology, and pressing for it is worse. Kwame's folded arms and his \"Right\" did not necessarily mean rejection. They may have meant that he had heard it and needed time, or that he was too moved to say more, or that the hurt would take more than one sentence to mend. The better response was to accept that and let repair do its work over weeks. Kofi said, \"OK. I mean it, Dad,\" and stayed in the garden for a while, helping him tie up the roses. Over the next two months, he rang his father every Sunday and drove over twice to help with the shed. At Christmas, his father opened his arms first. He never mentioned the party again, and neither did Kofi.\n\nKofi also wrote his father a card for the next birthday, by hand, saying how much he had missed being there."
+  },
+  {
+   "title": "The friend he could not face",
+   "scene": "Matt, twenty-nine, borrows his friend Ade's car for a weekend and, reversing in a car park, crushes the rear bumper against a bollard. The\n  repair will cost hundreds of pounds. Matt is mortified. He returns the car on Monday with a short message saying there is a bit of damage at the\n  back and he is really sorry, and then he stops replying to Ade's messages. He skips five-a-side. He avoids the pub on Fridays. When Ade rings, he lets\n  it go to voicemail.\n\n  Ade is less angry about the bumper than about the silence. He tells a mutual friend that Matt has ghosted him over a car, and that he never thought\n  Matt was that kind of person.\n\n  Matt, meanwhile, is lying awake telling himself that he is useless, that he always ruins things, and that Ade must hate him.\n\nAde has also messaged twice to ask whether Matt is all right, not about the car. Matt has read both messages and not replied, because he does not know how to answer kindness when he feels he deserves anger.\n\nAde's partner has started asking whether Matt is coming to their barbecue next month, and Ade does not know what to say. The bumper has been fixed already, by a friend of Ade's who runs a garage, at cost. Ade has not told Matt, because Matt has not answered his calls.",
+   "misread": "Matt read his own mistake as a verdict on himself, I am a useless person, rather than as an act he could put right. Ade read Matt's withdrawal as indifference, when it was shame.\n\nAnd by treating the mistake as proof of his worthlessness, he made the apology impossible, because nobody wants to stand in front of a friend and confirm that they are useless.\n\nAde's reading, that Matt did not care, was also wrong, and understandable. From outside, shame and indifference can look exactly the same.\n\nMatt's silence also left Ade to invent his own explanation, which, without information, was the least kind one.",
+   "betterRead": "June Tangney's research distinguishes guilt, which focuses on the act, from shame, which focuses on the self. Guilt tends to motivate repair: apologising, making amends. Shame tends to motivate hiding, withdrawal and avoidance. Matt's shame turned a dented bumper into a failure of character, and the hiding it produced did far more damage to the friendship than the bumper had. The better approach starts by separating the act from the self: \"I damaged Ade's car\" is something that can be fixed; \"I am useless\" is not. Matt's brother, when Matt finally told him, made him say the first sentence aloud. Then Matt rang Ade, and said, \"I'm sorry about the car, and I'm sorry I disappeared. I was embarrassed. I'll pay the repair, whatever it costs.\" Ade said he had been more worried than angry. Matt paid the garage bill. At five-a-side the next week, Ade put an arm round his shoulders before kick-off and said that the bumper had been ugly anyway.\n\nMatt also noted, later, that the bumper cost three hundred pounds, and the month of silence had nearly cost him a friend."
+  }
+ ],
+ "workedReading": {
+  "title": "Apologising for a cruel joke",
+  "scene": "At a family Sunday lunch, Sam, thirty-four, makes a joke about his sister Becky's weight when she takes a second helping of potatoes. A few people laugh. Becky puts her fork down, smiles tightly and says nothing. She leaves early, saying she has a headache. Over the following week, her messages to the family group chat stop, and when Sam sends her a video of a dog that he knows she would usually love, she does not reply. Sam's mother tells him, on the phone, that Becky was very upset, and that she has been trying to lose weight for months.\n\nSam has always been the family joker, and the jokes have often been at other people's expense. Nobody has ever complained before, at least not to him, and he realises now that this may not mean nobody minded.\n\nBecky is his younger sister by three years. Growing up, Sam teased her constantly, and their parents always said that it was what brothers did. He realises now that she may have spent thirty years waiting for him to stop.\n\nSam also knows that Becky is the one who organises the family lunches, buys their mother's birthday presents and remembers everyone's anniversaries. If she stops coming, the whole family will feel it.",
+  "steps": [
+   {
+    "label": "Notice that it is owed",
+    "text": "Sam's first instinct was that it was just a joke and that Becky was overreacting. Then he notices the signs: her tight smile and silence at the table, the early exit, the silent group chat, the unanswered video. Schumann and Ross found that men tend to rate offences as less serious than the people they hurt, and Sam realises that his sense of the joke as small is not the measure that matters.\n\nHe also notices that his first defence, \"it was just a joke\", is a story about him, about what he intended. The question is not what he meant but what it did to her.\n\nHe also notices that his mother had to tell him. He had seen Becky's tight smile at the table and chosen not to read it, because reading it would have meant admitting the joke had landed badly."
+   },
+   {
+    "label": "Do not rush it",
+    "text": "His second instinct is to send a quick message: \"Sorry about the joke, didn't mean anything by it.\" He does not. A quick text would close the subject before Becky has said anything, and \"didn't mean anything by it\" is an excuse. He messages instead: \"I think I upset you on Sunday. Could I come round and talk?\" She replies the next day, briefly: Thursday.\n\nHe also notices how much he wants this over quickly. The urge to apologise by text is partly about sparing himself an uncomfortable conversation, and that is a reason to resist it.\n\nHe also lets her choose the time and place. Asking \"Could I come round?\" rather than turning up gives her control, which matters after a moment in which she had none."
+   },
+   {
+    "label": "Arrange the body",
+    "text": "At Becky's flat, he waits to be asked in, and sits when she sits, at the kitchen table, across a corner from her rather than directly opposite. He keeps his arms unfolded and his hands still on the table. He does not slump or sprawl. He knows that this is one of the conversations that needs the face, so he turns towards her.\n\nHe also leaves his phone in his coat, so that it cannot buzz on the table between them. A phone on the table, even face down, tells someone that they are competing for your attention.\n\nHe also notices that he wants to sit back with his arms folded, which is how he usually sits when he is uncomfortable. He keeps them on the table, which feels exposed and is meant to.\n\nHe also lets himself be the one who is less comfortable. Taking the chair with its back to the door, or the lower seat, is a small physical way of not claiming the stronger position."
+   },
+   {
+    "label": "Listen first",
+    "text": "He says, \"I want to say sorry for Sunday, but first I want to hear what it was like for you.\" Becky is quiet, then says that she has been dieting for months, that she was proud of how she had been doing, and that being laughed at in front of the whole family made her feel about twelve. Sam listens without interrupting, explaining or defending. He feels his face go hot and lets it.\n\nHe also resists the urge to say that he did not know about the diet. It would be true, and it would turn her account of being hurt into an argument about whether he could have known.\n\nHe also resists the urge to nod quickly or say \"I know, I know\" while she speaks, which would hurry her and suggest he had already understood before she finished."
+   },
+   {
+    "label": "Own it, plainly",
+    "text": "When she has finished, he says, \"I'm sorry. It was a cruel thing to say, and I said it in front of everyone. You didn't deserve it.\" He does not say that he did not mean it, or that he was only joking. His gaze drops for a moment as he says it, and he lets that happen too: a little visible embarrassment tells her that he knows he broke something.\n\nHe also keeps it short. A long apology can become a speech about the speaker's feelings, and the person who was hurt ends up comforting the person who hurt them.\n\nHe also does not add a self-criticism, such as \"I'm an idiot\". It would invite her to reassure him, which would turn the apology into something she had to do for him."
+   },
+   {
+    "label": "Offer repair, not a demand",
+    "text": "He says that he will apologise in the family chat as well, if she would like, so that everyone knows it was wrong, and that he will not make jokes about her body again. He does not ask her to forgive him. Becky says she would like him to say something in the chat. Her arms are still folded, and she says she needs a bit of time.\n\nHe also does not ask whether they are all right now, or whether she is still upset. Those questions put the burden of reassurance on her, which is exactly what an apology should not do.\n\nHe also asks whether there is anything else she would like him to do. She says no, the chat message will be enough. Asking leaves the shape of the repair in her hands."
+   },
+   {
+    "label": "What happened",
+    "text": "Sam posts a short message to the family: \"I was out of order on Sunday and I've apologised to Becky.\" Becky replies with a single heart. Over the next few weeks, she starts posting in the chat again, and at the next lunch, she sits next to him. Sam notes that the apology itself took five minutes, and that most of the work was in noticing it was owed, waiting until she could be heard, and keeping his body from defending him while he said it.\n\nHe also notices, at the next few family meals, how often he reaches for a joke at someone's expense, and how often he can choose a different one. The repair, he realises, is mostly in what he does not say.\n\nBecky tells him, months later, that the apology mattered less than the fact that the jokes stopped. That, she says, was how she knew he had meant it."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Not noticing that an apology is owed",
+   "body": "Schumann and Ross found that men and women apologise at similar rates when they think they have done something wrong, but that men tend to rate offences as less serious, and so notice fewer occasions that need an apology. The result is men who are genuinely surprised to learn, weeks later, that a remark, a missed event or a forgotten promise hurt someone badly. The signs are often in the body of the person hurt: a cooler greeting, shorter messages, a missing face at the usual gathering, a tight smile. Watch for them, and when you see them, ask whether you owe something, rather than waiting to be told.\n\nIt also helps to ask, when someone you know goes cool, \"Have I done something to upset you?\" Many people who are waiting for an apology will not ask for one, but will answer a direct, kind question.\n\nIt also helps to remember that people often do not tell you directly. A cooler greeting, a shorter text, a missed gathering: these are often the only signals you will get, and they deserve a question.\n\nPartners often notice that an apology is owed before the man does, as Neil's wife did in this chapter's case study. If someone close to you says \"I think you should say sorry\", it is worth taking seriously even if you cannot yet see why."
+  },
+  {
+   "title": "Apologising too soon",
+   "body": "It feels responsible to apologise at once, and sometimes it is. But Frantz and Bennigson found that apologies at the very start of a conversation, before the hurt person has spoken, can feel less satisfying, because they seem designed to close the subject. An apology lands best after the other person has been heard: after they have said what it was like, and you have listened without defending or explaining. Ask first, listen properly, and then apologise for what you now understand, rather than for what you assumed.\n\nThere is a balance here. Waiting too long can look like indifference, and an apology weeks later may come too late. The aim is to apologise soon after the person has been heard, not to delay for its own sake.\n\nIt also helps to ask permission to apologise, if the moment is raw. \"Can I say something about yesterday?\" lets the other person decide whether they are ready to hear it.\n\nIt also helps to know that some people need time before they can talk at all. If they say \"Not now,\" ask when would be good, and then come back at that time, without pressure.\n\nAnd if you realise only later that you apologised too soon, it is fine to go back: \"I said sorry quickly yesterday, but I didn't really listen. Can you tell me what it was like?\""
+  },
+  {
+   "title": "Letting the body contradict the words",
+   "body": "\"I'm sorry\" said with folded arms, a lifted chin, a shrug, a smirk, an eye on the clock or a voice that rises at the end is heard as something other than an apology. People judge sincerity largely from the body, and a defensive body cancels the words. Turn towards the person, at their level. Unfold your arms. Keep your hands still and visible. Lower your head a little. Speak slowly and quietly. Let some embarrassment show: Keltner's research suggests that a visible display of embarrassment works as appeasement, telling the other person that you know a rule was broken.\n\nIt also helps to watch your voice. An apology said quickly, in a rising tone, sounds defensive. One said slowly, in a lower, steadier voice, sounds like it was meant.\n\nIt also helps to watch your face as you finish. A smile of relief straight after an apology can look as though you are glad it is over, rather than sorry for what you did.\n\nIt also helps to put down whatever you are holding. Keys, a phone, a cup or a bag in your hands while you apologise can look as though you are on your way somewhere else."
+  },
+  {
+   "title": "Making a non-apology, or demanding forgiveness",
+   "body": "\"Sorry if you were offended\", \"Sorry, but you have to understand\", \"I've said I'm sorry, what more do you want?\" are not apologies. The first makes the other person's feelings the problem; the second turns the apology into an excuse; the third turns it into a demand. Lewicki's study found that acknowledging responsibility and offering repair mattered most, and that asking for forgiveness mattered least. Own the act, offer to put it right, and then accept whatever the other person gives back, including folded arms and a request for time.\n\nIt also helps to notice the \"but\". Anything that follows \"I'm sorry, but\" usually cancels the apology, because it tells the other person that what you really want to say comes next.\n\nIt also helps to resist asking \"Are we OK?\" straight away. It asks the other person to close the matter on your timetable, which is a quieter way of demanding forgiveness.\n\nAnd beware the apology that asks for something in return, such as \"I'm sorry, and I hope you'll be sorry too.\" However fair it feels, it turns the apology into a negotiation."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What makes an apology work?",
+   "a": "Lewicki, Polin and Lount identified six common parts of an apology: regret, explanation, acknowledgement of responsibility, repentance, an offer of repair and a request for forgiveness. Apologies with more of them were rated as more effective, but two mattered far more than the rest: acknowledging responsibility and offering repair. In practice, that means saying plainly what you did, without excuses, and offering something concrete to put it right. Add to that the timing, after the other person has been heard, and a body that is not defending itself, and you have most of what an apology needs.\n\nIt also helps to keep the explanation short or leave it out entirely. Explanations easily turn into excuses, and the other person usually does not need to know why you did it as much as that you know you did.\n\nIt also helps to make the repair proportionate. A forgotten pickup needs a calendar alarm; a public humiliation needs a public correction; a broken trust needs months of reliable behaviour.\n\nIt also helps to say it in your own words. A formula learned from a book can sound rehearsed; plain words, said slowly, sound meant."
+  },
+  {
+   "q": "Why do so many men find it hard to apologise?",
+   "a": "Partly because of what Schumann and Ross found: men tend to set a higher threshold for what counts as an offence, so they notice fewer occasions that call for an apology. Partly because many men were taught that apologising is weakness or a loss of status. And partly because of shame: when a mistake feels like a verdict on who you are, rather than something you did, it is far harder to own. Separating the act from the self, \"I did a thoughtless thing\" rather than \"I am a thoughtless person\", often makes it easier to say sorry and mean it.\n\nIt also helps to practise on small things. Men who apologise readily for small mistakes, such as being late or interrupting, often find it easier to apologise for large ones.\n\nIt also helps to watch the men around you. Many men apologise without saying sorry, through jokes, favours or turning up with a pint. These count for something, but they often leave the hurt person unsure whether the act was acknowledged.\n\nIt also helps to know that apologising does not mean losing. People generally respect someone who can admit a mistake far more than someone who never does.\n\nIt also helps to remember that apologising well is a skill, learned by practice. Few men were taught it, and almost any man can get better at it."
+  },
+  {
+   "q": "Should I apologise if I do not think I did anything wrong?",
+   "a": "Do not fake it: an apology you do not mean is usually visible in the body, and it can make things worse. But it is worth asking whether you might be measuring the offence by your own threshold rather than by its effect on the other person. You can also acknowledge impact honestly without claiming a fault you do not feel: \"I can see that what I said really hurt you, and I'm sorry it did.\" That is different from \"Sorry if you were offended\", because it accepts that the hurt was real and caused by you. Often, listening first changes your view of what you did.\n\nIt also helps to remember that an apology can be the start of a conversation, not the end of one. Listening to why it mattered to them may change your view of whether you were wrong.\n\nIt also helps to separate the intent from the effect in your own mind. You can believe you meant no harm and still accept that harm was done. Both can be true, and an apology addresses the second.\n\nAnd if, after listening, you still believe you did nothing wrong, it is honest to say so kindly, while acknowledging that they were hurt. That is better than a hollow apology that both of you will notice."
+  },
+  {
+   "q": "What is wrong with \"sorry if you were offended\"?",
+   "a": "It places the problem in the other person's reaction rather than in what you did. \"If you were offended\" suggests that their offence is uncertain, perhaps unreasonable, and that your apology depends on it. It also usually comes without acknowledgement of responsibility or any offer of repair, the two parts Lewicki's research found mattered most. A real apology names the act: \"I'm sorry I spoke to you like that in front of everyone.\" If you find yourself reaching for \"if\", ask whether you are trying to apologise or trying to close the subject.\n\nIt also helps to notice the passive voice. \"Mistakes were made\" is another way of not owning the act, and people hear it for what it is.\n\nIt also helps to notice the urge to add context. Context can matter, but it can come later, after the apology has landed, if the other person asks for it.\n\nIt also helps to watch for \"I'm sorry you feel that way\", which does the same thing as \"if\", and is heard the same way."
+  },
+  {
+   "q": "What if they will not forgive me?",
+   "a": "Then accept it, at least for now. An apology is not a transaction, and the other person does not owe you forgiveness for making one. Folded arms, a short reply or a request for time may mean that they have heard you and need longer, or that the hurt is deeper than one apology can mend. Do not press, repeat the apology to force a response, or complain that you have done your part. Let the offer of repair do its work over days and weeks: turning up, doing what you said you would, changing the behaviour that caused the hurt. Forgiveness, if it comes, often follows the repair rather than the words.\n\nIt also helps to remember that some hurts are slow to heal, especially after a betrayal. Patience, steady behaviour and time are often the only things that rebuild trust, and they cannot be hurried.\n\nIt also helps to keep the relationship going in ordinary ways while you wait: a normal message, an invitation, a favour. These show that your apology was not a bargain, and that you will still be there either way.\n\nIt also helps to forgive yourself in the meantime. Carrying shame while you wait for someone else's forgiveness can push you back towards hiding, which helps nobody."
+  },
+  {
+   "q": "How should I apologise to a child?",
+   "a": "Simply, at their level and without making them responsible for your feelings. Kneel or sit so that your face is level with theirs. Say what you did, in plain words: \"I'm sorry I shouted at you. That wasn't fair.\" Do not add a lecture about what they did to provoke it, and do not ask them to say it is all right. Offer repair if there is one, such as a promise to try a calmer way next time, and then keep it. Apologising to children teaches them that adults make mistakes and put them right, which is one of the most useful things a parent can model.\n\nIt also helps to apologise to children for small things as well as large ones. A father who says \"Sorry I was grumpy this morning\" shows his children that apology is ordinary, not a rare event reserved for disasters.\n\nIt also helps to apologise to a child soon. Children often carry a telling-off for longer than adults realise, and a quick, simple apology the same day can stop it settling into a story about themselves.\n\nIt also helps to say sorry to teenagers, too, even when they shrug. A shrug from a fifteen-year-old does not mean the apology did not land; it often means it did, and they do not know what to do with it."
   }
  ],
  "watch": [
