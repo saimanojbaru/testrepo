@@ -81,6 +81,13 @@
    "doCaption": "Judging it by the ledger a month later.",
    "dontCaption": "Judging a drill by how it felt.",
    "annotation": "Desirable difficulties feel like failure while they work. Only the record can say whether a change in practice helped."
+  },
+  {
+   "doPoseId": "p_sit_perched",
+   "dontPoseId": "p_sit_slouched_low",
+   "doCaption": "A short session while attention is fresh",
+   "dontCaption": "A tired session squeezed in late at night",
+   "annotation": "Tired attention runs the steps without really running them. Five scored predictions done properly are worth more than thirty done half asleep."
   }
  ],
  "caseStudy": "Chris, forty-six, is a sales director who has always been proud of reading clients. He worked through the calibration chapter with enthusiasm, and for two months his Brier score fell steadily. Then it stopped. For four months it barely moved, though he was practising more than ever: an hour most evenings going over the day's meetings, and a running commentary in his head through every client call.\n\nWhen he tags his last fifty predictions, the reason is plain. Forty of them are about clients he has known for years, in the same two meeting rooms, and almost all are predictions about whether a client will push back on price. He has become very good at one narrow thing.\n\nSo he changes the diet. Three times a week he spends fifteen minutes on recorded panel discussions, pausing after each question to predict what the next speaker will do, with the sound off for the first half. He adds predictions about people he knows least: new junior staff, suppliers he meets once. He mixes the material within each session. For three weeks his hit rate falls, and he hates it. His predictions about the panels are right barely half the time.\n\nHe also stops the evening hour. His wife has told him, not unkindly, that he has started narrating her face at dinner. He moves practice to fifteen minutes on the train in the morning and leaves it there.\n\nBy the end of the third month, the panel predictions are right about seven times in ten. More to the point, his Brier score on client predictions has begun to fall again, though he has spent less time on clients than before. His explanation in the ledger is short: he is noticing hands, and pauses before answers, that he had stopped seeing years ago. The evenings are quieter too.",
@@ -99,6 +106,11 @@
     "Tag your last fifty predictions by setting and by the kind of person you read.",
     "Mark any score that has barely moved and any tag that holds more than a third of your predictions.",
     "Write one sentence naming your plateau, and whether it is in your ability or in your material."
+   ],
+   "variations": [
+    "Do the drill separately for your predictions at work and at home, and see whether you have the same plateau in both places or two different ones.",
+    "Ask a friend to look at your tags without seeing your one-sentence conclusion, and tell you what they think your plateau is.",
+    "Repeat the drill at the end of every quarter and keep each one-sentence conclusion, so that you can see how your plateaus change."
    ]
   },
   {
@@ -110,6 +122,11 @@
     "Play on until it resolves, then mark it hit or miss.",
     "Make at least fifteen predictions in the session.",
     "Record your hit rate and the kind of prediction you missed most often."
+   ],
+   "variations": [
+    "Make your first ten predictions with the sound off, and the rest with sound, and compare the hit rates for the two halves.",
+    "Predict two steps ahead, such as how the answer after the next one will begin, and see how far your reading can see before it falls to chance.",
+    "Use a format you rarely watch, such as a select committee hearing or a press conference after a match, and see whether your hit rate travels."
    ]
   },
   {
@@ -121,6 +138,11 @@
     "Watch the next five minutes with the picture off, attending only to voice, and predict again.",
     "Score both halves.",
     "Write down which channel you read better, and design next week's drill around the weaker one."
+   ],
+   "variations": [
+    "Add a third session for gaze alone, watching only where each person looks before and after they speak.",
+    "Swap the order, so that the voice-only half comes first, and notice whether hearing first changes what you see afterwards.",
+    "Do the drill with a partner who keeps the score and stops you whenever you describe a verdict rather than something you saw or heard."
    ]
   },
   {
@@ -132,6 +154,11 @@
     "Go round the three a second time if time allows.",
     "Note how the session felt compared with an hour on a single kind of material.",
     "In a month, compare the ledger for interleaved sessions with your earlier blocked ones."
+   ],
+   "variations": [
+    "Add your weakest kind of material as a fourth item, and give it the same five minutes as the others, even though it feels worst.",
+    "Shuffle the order each time by drawing slips of paper, so that you cannot settle into a routine across the session.",
+    "Keep a fixed weekly test of twenty predictions on fresh material, and use it alone to judge the interleaved sessions."
    ]
   },
   {
@@ -143,6 +170,11 @@
     "Choose two short boxes of time each day for practice, with a clear start and end.",
     "Choose one setting, such as dinner at home, where the skill is always off duty.",
     "After a week, write down what changed in your practice and at home."
+   ],
+   "variations": [
+    "Ask the person you live with to note, for a week, any time they felt you were reading them, and compare their list with yours.",
+    "Try one full day a week with the skill off duty, and note whether your next session is sharper or flatter than usual.",
+    "Record your session hit rates by time of day for a fortnight, and move your sessions to the time when you score best."
    ]
   }
  ],
@@ -224,6 +256,45 @@
    "explain": "Long sessions exhaust the attention that does the work, and reading all the time makes you worse company and a worse reader. Practice in boxes, with the skill off duty outside them, protects both.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Stickgold and his colleagues find in 2000 about people trained on a visual discrimination task?",
+   "options": [
+    "They improved only while they were practising, and lost the gains overnight whether or not they slept",
+    "They improved overnight without further practice, but only if they slept on the first night",
+    "They improved most when they stayed awake all night and carried on practising until the morning",
+    "Sleep made no difference at all to how much they had improved when they were tested again"
+   ],
+   "answer": 1,
+   "explain": "People who slept after training improved overnight without more practice, and those deprived of sleep on the first night did not show the gain. The chapter draws only a modest lesson: practice followed by sleep tends to stick better than practice followed by more practice.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your pause-and-predict drill asks whether each answer will be long or short. After a month, your hit rate is still about one in two. What is the best change?",
+   "options": [
+    "Make the drill easier, one change at a time, until you are right about six to eight times in ten",
+    "Keep going for another month or two, since a low score shows that you are working at the very edge",
+    "Make the drill harder still, since a coin-flip score suggests that you need a tougher challenge",
+    "Stop scoring the predictions, since the numbers are only discouraging and get in the way of it"
+   ],
+   "answer": 0,
+   "explain": "On a yes-or-no prediction, one in two is chance. You are guessing, and guessing teaches nothing. A drill at the edge is one you fail often but not always, so that your successes and failures carry information about what you saw.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says the best violinists in Ericsson's study practised all day with hardly any rest. What did the study actually report?",
+   "options": [
+    "That they practised for eight hours a day or more, and slept less than the other students",
+    "That they rarely practised at all, and relied on their natural talent and their performances",
+    "That they practised exactly as much as the future music teachers, but enjoyed it a great deal more",
+    "That they practised in sessions of about an hour, rarely over about four hours a day, and slept more"
+   ],
+   "answer": 3,
+   "explain": "Deliberate practice demands so much attention that it cannot be sustained for long. The best violinists rested more, including naps in the afternoon, and stopped while their attention was still good.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +323,110 @@
    "work": "Make It Stick: The Science of Successful Learning",
    "author": "Peter C. Brown, Henry L. Roediger III and Mark A. McDaniel",
    "note": "Harvard University Press, 2014. A readable guide to spacing, interleaving, testing and other desirable difficulties."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The teacher whose surprises stopped",
+   "scene": "Joanne, thirty-nine, teaches a Year 6 class and has kept a prediction notebook since she worked through the calibration chapter. Each morning she writes three predictions about the day, each with a percentage, and scores them before she goes home. In her first two months her scores improved quickly. By the fifth month she is right almost every time, and she is pleased. Her surprise rate, the share of days on which something happened that she had not expected, has fallen from most days to almost none.\n\nOver half-term she reads back through the notebook and notices something she had not seen while writing it. Her early predictions were about things she genuinely did not know: whether a quiet girl would volunteer in the class debate, whether two boys who had fallen out would sit together at lunch, whether the class would settle after a supply teacher's lesson. Her recent ones are about things she could hardly get wrong. *They'll be restless after PE, 90%.* *The register will be noisy on a Friday, 85%.* She has not been getting better at hard predictions. She has stopped making them.\n\nNone of this was deliberate. Each week, the predictions that went wrong had felt slightly embarrassing, and she had drifted, without noticing, towards the ones that came true.\n\nShe had also stopped writing predictions about individual children, which had been the hardest to get right, and had told herself it was because the class predictions were more useful.",
+   "misread": "Joanne read her rising hit rate and falling surprise rate as improvement. They were a record of easier questions. The notebook was measuring her choice of predictions, not her reading of the class, and she had read comfort as skill.\n\nShe also read the falling surprise rate as a sign that she knew her class better, when it mainly meant she had stopped asking questions whose answers might surprise her.\n\nHer head teacher, seeing the notebook, had praised her for it, which made the comfortable version feel even more like progress.",
+   "betterRead": "This is the trap the chapter calls the OK plateau, arrived at by a side door: the drill drifted away from its edge until it became maintenance. A useful prediction sits where you are right somewhere between six and eight times in ten. Joanne rewrote her rule. At least one of her three daily predictions had to be about something she was genuinely unsure of, which she marked with a star, and she tracked the starred ones separately. Her hit rate on those was a little over half in the first fortnight. That number, not the overall one, was the measure of her reading, and it was the one that began to climb.\n\nShe also went back to predictions about individual children, written privately and kept in her own notebook, because they were the part of her reading that mattered most and the part she had stopped practising.\n\nThe class had not changed. What changed was that her notebook was measuring her again."
+  },
+  {
+   "title": "The student who made it too hard",
+   "scene": "Arjun, twenty-four, is a postgraduate student who read the chapter on drills at the edge and took it to heart. He designed what he called the hardest drill he could think of. He watches ten-second clips of recorded interviews in languages he does not speak, with the sound off, and predicts whether the person's next answer will be long or short.\n\nHe does fifty predictions a night, four nights a week, for a month. His ledger shows a hit rate of fifty-one percent. He tells a friend, with some pride, that he is training at the very limit of what is possible, and that the low scores show how hard he is pushing.\n\nHis friend asks whether the scores have changed at all over the month. Arjun checks. They have not. His first week was fifty-two percent and his last week was fifty. His friend asks how he would know whether he was learning anything. Arjun does not have an answer.\n\nHe also notices that he dreads the sessions, and has started doing them late at night, after everything else, so that they are over quickly.\n\nArjun's notes show no record of what he was looking at in the clips. His ledger is a column of guesses and a column of outcomes, with nothing in between.",
+   "misread": "Arjun read a hit rate at chance as evidence of effort at the edge. On a yes-or-no prediction, fifty percent is what a coin would score. He was not at the edge of his ability; he was past it, guessing, and a month of guessing had taught him nothing he could measure.\n\nHe read his dread of the sessions as part of the cost of real difficulty, rather than as a sign that the practice had stopped giving him anything back.",
+   "betterRead": "A drill at the edge is one you fail often but not always, so that the successes and failures carry information about what you saw. Arjun changed one thing at a time. First he switched to interviews in his own language, still with the sound off, and his hit rate rose to about sixty percent. Then he lengthened the clips to thirty seconds, so that each speaker had a baseline he could compare with. Over the next month his hit rate climbed slowly towards seventy, which was the first sign of learning in his ledger. He also moved the sessions to mid-morning, shortened them to fifteen minutes, and stopped dreading them.\n\nHe wrote in his ledger what he was looking at in each clip, so that his misses could teach him something.\n\nWhen his friend asked him a month later what he had learned, he could name three things he now looked for in the first seconds of an answer, which was three more than before."
+  },
+  {
+   "title": "The mediator who gave up too soon",
+   "scene": "Femi, forty-one, works as a workplace mediator and has used this book to practise reading the people he works with. For a year his practice has been blocked: on Mondays he reviews recorded panel discussions, on Wednesdays his notes from mediation sessions, and on Fridays a café near his office. His scores had been flat for three months, so after reading this chapter he switched to interleaved sessions, five minutes on each kind of material in turn, three times a week.\n\nFor two weeks, his hit rate falls from about seven in ten to a little under six. The sessions feel scrappy. He never settles into any one kind of material before the timer moves him on, and he finishes each one feeling that he has done nothing properly. At the end of the second week he goes back to his old timetable, and writes in his ledger: *Interleaving doesn't suit me. Blocked practice works better for the way I learn.*\n\nA colleague he trusts, who has read the same chapter, asks him how he knows. Femi says that his scores dropped and the sessions felt worse. She asks him what the chapter said would happen to his scores and his feelings if interleaving were working.\n\nFemi also notices that he has started to miss his Friday café sessions, which were the ones he enjoyed most, and wonders whether that is part of why he wants to go back.",
+   "misread": "Femi read the drop in his hit rate and the scrappy feeling of the sessions as proof that interleaving did not suit him. Both were what the research predicts when it does. He read the feeling of fluency as a measure of learning.\n\nHe also read his own preference for blocked practice as a fact about his learning style, a claim the research on learning styles does not support.",
+   "betterRead": "This is Kornell and Bjork's finding in a single ledger: most of their participants believed that blocked study worked better for them, though mixed study had produced much better learning. The difficulty that helps feels like it is hurting. Femi went back to interleaving and committed to a month before judging it, and he changed what he measured. Instead of his hit rate during the sessions, he scored a fixed set of predictions on fresh material at the end of each week, the same kind every time. By the end of the month those scores had begun to rise, for the first time since the spring.\n\nHe also kept one Friday café session a month, for the pleasure of it, and did not score it.\n\nHe wrote a new line in his ledger, under the old one: *Interleaving felt worse and worked better. Judge by the fixed test.*"
+  },
+  {
+   "title": "The woman who found a ceiling on video calls",
+   "scene": "Mei, fifty, manages a team spread across three countries, and most of her meetings happen on video calls. For a year she has kept a ledger of predictions about her calls: whether a quiet member of the team will raise a concern, whether a proposal will be accepted, whether someone who says yes means it. In face-to-face meetings, during her quarterly visits, her predictions are right about three times in four and still slowly improving. On video calls they have been stuck at a little under six in ten for six months.\n\nShe has tried everything the chapter suggests. She has restricted channels, practised pause and predict on recorded calls, interleaved material and rested properly. Nothing has moved the video-call scores. When she looks at the misses in detail, many of them involve things she could not see: a colleague's hands below the frame, a delay that put a pause in the wrong place, a camera that froze at the moment that mattered, a colleague who had turned the camera off.\n\nHer face-to-face predictions are made in the same weeks and about the same people, which makes the comparison unusually fair.\n\nHer manager, who has never kept a ledger, tells her that video calls are just as good as meeting in person once you get used to them. Mei is no longer sure.",
+   "misread": "Mei read the flat video-call scores, at first, as a failure of her practice, and kept trying harder drills. The ledger, read closely, showed a limit in the channel rather than in her reading: much of the information she needed was not on the screen at all.\n\nShe also read her colleagues' quietness on calls as reluctance more often than it was, because silence on a call carries less information than silence in a room.",
+   "betterRead": "The chapter allows for this: some plateaus are real ceilings for now, and the point of finding one is to decide deliberately whether to push or to accept it. Mei accepted it, and changed what she did instead of how she practised. On calls she stopped relying on her readings for anything that mattered and asked more questions: she checked agreement out loud, asked quiet colleagues for their view by name, and followed up important decisions in writing. Her predictions on calls stayed at about six in ten. The decisions made on them got better, because she had stopped treating a weak channel as a strong one.\n\nAccepting a ceiling also freed time for the face-to-face visits, where her readings were still improving.\n\nShe also told her team what she had found, which made it easier for them to tell her things directly rather than hoping she had noticed."
+  }
+ ],
+ "workedReading": {
+  "title": "Finding a plateau in four months of ledger",
+  "scene": "Rob, forty-four, runs a small team at an engineering firm and has kept a calibration ledger for seven months. His scores improved quickly at first and he has felt stuck since the spring, though he cannot say exactly how. On a quiet Sunday afternoon he sits down with the ledger and the find-your-plateau drill, determined to replace the feeling with evidence. He has about two hundred scored predictions, most with a confidence band, and a journal with notes on each day's surprises. He gives himself an hour and a rule: no changes to his practice until he has worked through every step and written down what the plateau is.\n\nHis wife has told him, more than once, that he seems frustrated with the whole thing, and he wants to know whether that frustration is telling him anything true.\n\nHe also knows that he finds numbers more convincing than feelings, and that this is one of the few areas of his life where he has been relying on a feeling.",
+  "steps": [
+   {
+    "label": "Pull four months of scores",
+    "text": "He works out his Brier score for each of the past four months: 0.21, 0.20, 0.21, 0.20. The numbers barely move. The predictions in each month are of a similar kind and difficulty, mostly about meetings, so the comparison is fair. Before the spring the score had fallen from about 0.27 to 0.21 in three months. Whatever was improving then has stopped. That is the first fact, and it replaces a vague sense of being stuck with something he can point to.\n\nHe also notes the number of predictions in each month, between forty and sixty, which is enough for a rough comparison but not for small differences.\n\nHe writes the four numbers at the top of a clean page, so that the next steps start from them rather than from his mood."
+   },
+   {
+    "label": "Draw the curve twice",
+    "text": "He draws his calibration curve for the first two of the four months and again for the last two. In both, his eighty percent band is the problem: things he called eighty percent likely happened about six times in ten, and the second curve is no better than the first. His lower bands are close to the diagonal. So the plateau is partly a calibration plateau. He has not learned what his strongest confidence is worth, and four months of scores have not taught him.\n\nHe notices that most of his eighty percent predictions are about whether his team will accept a proposal. The overconfidence may belong to one question rather than to him in general."
+   },
+   {
+    "label": "Tag the last fifty",
+    "text": "He tags his last fifty predictions by setting and by the kind of person he read. Thirty-four are about his own team in their weekly meeting, nine are about his family, and seven are about everyone else. Almost all the team predictions are about the same three people and the same question: whether a proposal will be accepted without argument. More than two thirds of his practice is one question, in one room, about people he has known for years.\n\nThe family predictions surprise him, and he decides to stop making them. His children have not agreed to be part of his ledger, and he finds he would not want to explain it to them."
+   },
+   {
+    "label": "Check the surprise rate",
+    "text": "In his journal he counts the days in the past month on which something happened that he had not expected. In his first two months it was about one day in three; last month it was about one in eight. He asks himself which way to read it. Given the tags, the honest reading is that he has stopped putting himself anywhere he might be surprised. A falling surprise rate in a narrowing diet is not improvement. It is the diet.\n\nHe also notices that the surprises he does record are mostly at home, which is one more reason to keep his practice away from it."
+   },
+   {
+    "label": "Name the plateau",
+    "text": "He writes one sentence: *My plateau is mainly in my material, with one weakness in my ability: I'm overconfident at eighty percent, and I keep practising on the same three people in the same room.* He reads it back and finds it slightly embarrassing, which he takes as a sign that it is accurate. The feeling of being stuck had suggested he needed to practise harder. The ledger says he needs to practise on different things.\n\nHe shows the sentence to his wife, who says it sounds about right and that he could have asked her months ago."
+   },
+   {
+    "label": "Design one change",
+    "text": "He resists the temptation to change everything. He chooses one change for the next month: three fifteen-minute sessions a week of pause and predict on recorded panel discussions, with people he has never seen before, mixed with predictions about two teams he works with only occasionally. He leaves the eighty percent problem alone for now, so that he will know which change did what, and writes the plan in the ledger with a date to review it.\n\nHe also books the sessions into his calendar on Tuesday, Thursday and Saturday mornings, so that they happen while he is fresh rather than whenever he finds a gap."
+   },
+   {
+    "label": "What the next month showed",
+    "text": "His hit rate on the panels was a little over half in the first week, which he found deflating, and close to seven in ten by the fourth. His Brier score on his own team, which he had barely practised on, fell to about 0.19, the first movement in four months. The surprise rate rose to about one day in four. In the next month he turns to the eighty percent band, with a rule that he will use it only when he can name two channels and a rival he has ruled out.\n\nHe writes in the ledger that the change he had nearly skipped, because it seemed too simple, was the one that worked."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Practising only the parts you enjoy",
+   "body": "Everyone has a favourite drill, and it is usually the one they are best at. A reader who is good at faces spends his sessions on faces, and one who is good at voices spends hers on voices. The sessions are pleasant and the scores are good, and nothing improves, because the practice is aimed at the strong parts of the skill rather than the weak. Ericsson was explicit that deliberate practice is not, for the most part, enjoyable in itself. It is aimed at the specific weakness, which is by definition the part you do least well and like least. Look at your ledger for the kind of prediction you miss most often and the channel you read worst, and spend most of your practice there. Keep one favourite drill as a reward at the end of a session if you like.\n\nA useful rule is two thirds on your weakest area and one third on everything else, adjusted each month as the ledger changes.\n\nYou will know you have found the right area when the sessions feel harder and the scores are lower than in the drills you enjoy."
+  },
+  {
+   "title": "Changing everything at once",
+   "body": "Finding a plateau is unsettling, and the natural response is to overhaul everything: new material, new drills, new times of day, a new scoring rule and a new resolution to rest properly, all starting on Monday. A month later the scores have moved, or not, and you have no idea which change did what. You cannot keep what helped or drop what did not, and the next plateau finds you no wiser. Change one thing at a time, and give each change long enough to show in the ledger, usually a month. Write the change and the date in the ledger, so that you can see later where the curve bent and why. It feels slow. It is the only way to learn what works for you, rather than what worked for someone in a study.\n\nIf two changes seem urgent, run them one after the other, a month each, and record the date of each change.\n\nChanging one thing at a time also protects you from the commonest mistake after a plateau, which is to credit the most exciting change with an improvement that came from a dull one."
+  },
+  {
+   "title": "Practising when your attention has gone",
+   "body": "Practice squeezed into the end of a long day feels virtuous and does little. Tired attention runs the steps of the method without really running them, and what it practises is a sloppy version of the skill, rehearsed until it sticks. Ericsson's violinists practised in sessions of around an hour and rarely more than about four hours a day, because deliberate practice uses attention faster than anything else. Choose a time when your attention is good, keep the session short, and stop while it is still good. If the only time available is late at night, do less: five scored predictions on a recording, done properly, are worth more than thirty done half asleep. Stickgold's finding, modest as it is, points the same way: practice followed by sleep tends to stick better than practice followed by more practice.\n\nNotice, too, when you are practising to feel virtuous rather than to improve. That kind of practice is usually the late-night kind."
+  },
+  {
+   "title": "Reading your hit rate without its difficulty",
+   "body": "A hit rate means nothing on its own, because it depends on how hard the predictions were. Joanne's rose because her questions became easier, and Femi's fell because his material became more varied. Both were misleading. Compare like with like: score a fixed kind of prediction on fresh material at regular intervals, and use that, not your session hit rate, as the measure of progress. Keep separate scores for different kinds of prediction, so that easy ones do not hide hard ones. And when your hit rate on a drill climbs above about eight in ten, read it as a sign that the drill has become too easy rather than that you have mastered the skill. The calibration chapter's Brier score helps, because it rewards honest confidence on hard predictions as well as hits on easy ones.\n\nThe most reliable comparison is with yourself on the same kind of task over time, never with the session you have just had.\n\nKeep, too, a note of how many predictions each score is based on. A hit rate from ten predictions can swing by twenty points on luck alone, and a month's comparison needs dozens."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How long should my scores be flat before I treat it as a plateau and change anything?",
+   "a": "Three or four months, on predictions of similar difficulty, is a reasonable threshold. Shorter flat stretches are common and often reflect a busy month, a change in material or ordinary noise in a small number of predictions. Before you change anything, check two things. First, that the predictions really are comparable: if you have drifted towards easier or harder questions, the flat score may be hiding a change in either direction. Second, that the plateau is in your ability rather than your material, which the tagging step of the drill will usually show. If it is in your material, the change is simple: practise on different things. If it is in your ability, choose one weakness and aim one drill at it for a month.\n\nRemember too that some plateaus are real ceilings for now. If one weakness has resisted three honest attempts, it may be wiser to accept it and change what you do in that setting than to keep drilling.\n\nWrite down the date you decided it was a plateau, and the change you made, so that the next review can see whether the change helped."
+  },
+  {
+   "q": "Is it worth practising at all if I can only spare ten minutes a day?",
+   "a": "Yes. Ten focused minutes on one weakness, with every prediction scored, will do more than an evening of general watching, and short sessions spread across the week are one of the desirable difficulties that help learning last. The limit on deliberate practice is attention rather than time, and attention is easiest to keep in a short session. Choose the ten minutes when you are fresh rather than tired, use material that gives quick feedback, such as pause and predict on a recording, and keep a running score in your ledger. Over a month that adds up to a few hundred scored predictions, which is more feedback than most people get about their reading of others in a lifetime.\n\nUse the ten minutes for one kind of prediction for a fortnight, then switch, so that the ledger can show you what each kind is doing."
+  },
+  {
+   "q": "Can I use films and television dramas for pause and predict, or only real interviews?",
+   "a": "Both have uses, and they are different. Films and dramas are written, acted, directed and edited, so the behaviour in them is designed to be read, often more clearly than real behaviour, and the moment of change is chosen for you. That makes them good material for practising noticing, restricting a channel or describing behaviour without verdicts, and this book's watch links use them for that. They are poor material for calibration, because a prediction about what a character will do is partly a prediction about the script. For scored predictions, prefer unscripted recordings of people who chose to be filmed, such as interviews, panel discussions and press conferences, where nobody has arranged the behaviour for you.\n\nMixing the two in one score will make your calibration look better than it is, so keep them in separate columns.\n\nSport is a good middle ground: unscripted, filmed from many angles and full of quick, scoreable moments, such as who will take the next penalty or how a manager will answer a question about a defeat."
+  },
+  {
+   "q": "My hit rate dropped when I started mixing my material. How do I tell a helpful difficulty from simply getting worse?",
+   "a": "Measure something that the change does not touch. Keep a fixed test, such as twenty predictions on a fresh recording of the kind you used before, and score it once a week. If interleaving is working, your hit rate in the mixed sessions may stay low for a while, but your score on the fixed test should hold steady at first and then begin to rise within a month or so. If the fixed test falls too and keeps falling, something else is going on: tiredness, a drill that has moved past your edge, or a change in your life that has taken your attention.\n\nGive the change a month before you judge it, and judge it by the fixed test rather than by how the sessions feel. Kornell and Bjork's participants were confident that the method that helped them least had helped them most."
+  },
+  {
+   "q": "Do I need a coach or a teacher to practise deliberately, or can I do it alone?",
+   "a": "Ericsson's violinists practised alone, but a teacher had set what they worked on, and that is the part most people lack. A teacher sees the weakness you cannot see in yourself and designs the practice that targets it. Without one, you can get much of the way with three substitutes. Your ledger shows your weak kinds of prediction and your overconfident bands, which tells you what to practise. An honest mirror, a friend who has agreed to tell you when your readings sound like stories, catches what the ledger misses. And teaching, as the previous chapter showed, exposes the steps you have stopped taking.\n\nIf you can find a more experienced reader willing to look at your ledger once a month, that comes closest to what the violinists had.\n\nWhatever you use, the principle is the same: someone or something outside your own head has to tell you which part to work on."
+  },
+  {
+   "q": "Is it all right to stop practising altogether for a while?",
+   "a": "Yes, and it is often wise. Skills built over months do not disappear in a few weeks off, and a break can be what lets you see your habits freshly when you return. If you are tired of the practice, or if it has started to leak into your evenings and your relationships, a few weeks of rest will do more good than forcing yourself on. When you come back, start with a short check rather than a full programme: one week of scored predictions of the kind you used to make, to see where you stand. The ledger will be waiting, and the comparison will tell you more than the feeling of being out of practice.\n\nA rest is also a good test of whether the skill has become part of how you see, or was only ever something you did when you were trying.\n\nWhat you should not do is keep practising out of guilt. Practice done grudgingly is rarely deliberate, and it is usually the kind that escapes its boxes."
   }
  ],
  "watch": [
