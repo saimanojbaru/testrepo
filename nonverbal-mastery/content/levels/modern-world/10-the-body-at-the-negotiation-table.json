@@ -74,6 +74,20 @@
    "doCaption": "Listening for the interest behind it",
    "dontCaption": "Pointing to press a demand",
    "annotation": "Pressure invites resistance. Asking why something matters to the other side often finds the room a demand cannot."
+  },
+  {
+   "doPoseId": "p_walk_slow_down",
+   "dontPoseId": "p_pro_check_watch",
+   "doCaption": "Stepping out for a break before deciding",
+   "dontCaption": "Watching the clock and agreeing to be done",
+   "annotation": "Tired negotiators concede to escape the room. Take the break before the decision, not after it."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Turned towards them, asking what has changed",
+   "dontCaption": "Arms locked after an angry outburst",
+   "annotation": "Anger tells you about the other person's situation. Find out what it is before you concede or dig in."
   }
  ],
  "caseStudy": "Marcus, thirty-six, is a procurement manager negotiating the renewal of a large contract with a software supplier. Before the first meeting he read a book on negotiation body language. He went in watching for tells, mirroring the account manager's posture, and planning to show anger at the first price to signal that it was unacceptable.\n\nIt went badly. He thought the account manager touched her face when she named the price and decided she was bluffing, so he pushed hard. His show of anger felt false even to him, and she became guarded and stopped volunteering information. The meeting ended with both sides further apart than when they started.\n\nBefore the second meeting, a more experienced colleague asked him what the supplier actually needed from the deal. Marcus did not know. He had spent the first meeting watching her hands instead of asking.\n\nThis time he suggested they work through the contract side by side, on a shared screen. He asked about her company's constraints and listened. It turned out that her company cared far more about a longer contract term than about the headline price, and that Marcus's company could easily commit to three years. They found an agreement that cut the price and extended the term. When a point about support hours frustrated him, he said plainly that it was a problem for his team and why, rather than performing anger. He took a break before agreeing to the final terms, though he was fairly sure of them.\n\nAfterwards he reflected that he had read nothing useful from her body in either meeting. What had changed the outcome was that, the second time, he had been paying attention to her rather than watching her.",
@@ -93,6 +107,11 @@
     "In the conversation, ask them and listen, rather than watching for signs of bluffing.",
     "Afterwards, note what you learned that you could not have read from their body.",
     "Compare your notes with what you assumed beforehand."
+   ],
+   "variations": [
+    "Before a small everyday negotiation, such as with a tradesperson or a seller online, write three questions about what the other person needs, and ask them.",
+    "After a negotiation, write down any moment when you were tempted to read a tell, and what you would have concluded from it.",
+    "Ask a colleague who negotiates often what they wish they had asked in their last deal, and add it to your list of questions."
    ]
   },
   {
@@ -104,6 +123,11 @@
     "Take one slow breath before responding.",
     "If the decision matters, say you need a short time to think.",
     "Afterwards, note whether pausing changed what you decided."
+   ],
+   "variations": [
+    "Practise holding a silence of four or five seconds after a question in an ordinary conversation, and notice how the other person fills it.",
+    "Write down, after a tense conversation, the exact moment you felt the most pressure to agree, and what you would do differently there.",
+    "Agree a word with a colleague negotiating alongside you that means \"let's take a break\", and use it once."
    ]
   },
   {
@@ -114,6 +138,11 @@
     "Write one or two sentences that say what you were angry about and why, without blame or threat.",
     "Practise saying them aloud, in an even voice.",
     "Next time you feel anger in a negotiation, use words like these rather than letting it leak as pressure."
+   ],
+   "variations": [
+    "Write your sentence about anger for a situation at home, such as a dispute with a neighbour, as well as one at work.",
+    "Practise saying your sentence to a friend who interrupts you angrily, keeping your voice even, and notice what happens to theirs.",
+    "Notice, in your next disagreement, whether the other person's anger drops when you put your own frustration into calm words."
    ]
   },
   {
@@ -125,6 +154,11 @@
     "Notice whether the conversation feels more or less adversarial than across a table.",
     "Ask the other person afterwards how it felt to them.",
     "Decide whether to use the arrangement again."
+   ],
+   "variations": [
+    "Try working through a shared document side by side on a video call, with one person sharing the screen, and notice whether it feels less like a contest.",
+    "For a conversation that has already turned hostile, try exchanging written proposals first and meeting only once the gap has narrowed.",
+    "In a meeting where you usually sit across from the other side, put the key figures on a screen at the end of the table, so that everyone faces them."
    ]
   }
  ],
@@ -206,6 +240,45 @@
    "explain": "For parties who start out neutral, richer channels such as video and face-to-face meetings tend to improve outcomes. Swaab and colleagues found the benefit did not hold for parties who were already hostile.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Swaab and colleagues' analysis, what did richer channels such as video do for negotiators who were already hostile?",
+   "options": [
+    "They could make outcomes worse, perhaps by giving more to provoke and react to",
+    "They always led to better outcomes, since faces and voices build trust between any two people",
+    "They made no difference, since hostile negotiators never reach any agreement at all",
+    "They helped only when the negotiators were from East Asian cultures, not elsewhere in the world"
+   ],
+   "answer": 0,
+   "explain": "For neutral parties, richer channels helped; for cooperative ones they made little difference; for hostile ones they could make things worse. Seeing and hearing each other gave more opportunity to provoke and react.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A client rings, angry, about an invoice, and threatens to cancel the whole order. What fits this chapter best?",
+   "options": [
+    "Offer a large discount at once, since anger shows he is very close to walking away for good",
+    "Ask calmly what has changed for him and explain the invoice before offering anything",
+    "Match his anger, since showing toughness will make him respect you and back down quickly",
+    "Hang up immediately, since an angry customer will not listen to any explanation you give"
+   ],
+   "answer": 1,
+   "explain": "Anger is information about the person's situation, not proof of their limits. Finding out what has happened often shows that no concession is needed, or which one is.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says anger always works in negotiation, because people concede to angry counterparts. What did van Kleef and colleagues' work show?",
+   "options": [
+    "That the effect faded when the angry side had already conceded a lot, and was weak for those with strong alternatives",
+    "That anger works equally well on everyone, regardless of power or the alternatives they have available to them at the time",
+    "That anger always backfires, because every negotiator reads it as weakness and pushes harder against the angry person",
+    "That anger works only when it is faked, since genuine anger tends to frighten the other side away from the table entirely"
+   ],
+   "answer": 0,
+   "explain": "People conceded because they read anger as a sign of the other side's limits. When the angry counterpart had already made large concessions, or the negotiator had strong alternatives, the effect largely disappeared.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -234,6 +307,110 @@
    "work": "The consequences of faking anger in negotiations",
    "author": "Stéphane Côté, Ivona Hideg and Gerben A. van Kleef",
    "note": "Journal of Experimental Social Psychology 49(3), 2013. Why performed anger costs trust."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The buyer who found a tell",
+   "scene": "Jen, thirty-four, is buying a used family car from a dealership on the edge of town. She has done her homework on prices and she has read a\n  popular book on negotiation body language. When the salesman, Kev, names the price, she watches him closely. He glances to the side and touches his\n  ear as he says the number. The book says that a glance away and a touch to the face mean a lie or room to move. Jen decides the price is padded.\n\n  She offers fifteen hundred pounds less. Kev says that he cannot do that, and that the price is already sharp. Jen, sure that she has seen through\n  him, sits back, folds her arms and says she will walk. Kev comes down a hundred pounds, which Jen takes as confirmation that there is more. She holds\n  out for another thousand. He apologises and says he cannot. She walks.\n\n  Over the next fortnight, she looks at four more cars of the same model and age. Three are priced higher than Kev's. The fourth is cheaper but has\n  done twice the mileage. When she rings the first dealership again, the car has been sold.\n\n  Her brother, who sold cars for six years, tells her that Kev's figure was a fair one, and asks what she found out about the deal besides the\n  price. Jen realises she had not asked about anything else.\n\nShe also noticed, she thought, that Kev's feet were pointing towards the door, which the book said meant he wanted to end the conversation. In fact the door was where the coffee machine was.\n\nKev, for his part, thought Jen was a serious buyer who had made up her mind not to trust him, and decided it was not worth offering her the extras he would usually have thrown in.",
+   "misread": "Jen read a sideways glance and a touch to the ear as a sign that the price was padded, and pushed hard on the strength of it. She read Kev's small concession as proof that there was much more to come, when it was close to his limit.\n\nAnd she read her own folded arms and threat to walk as strength, when they mostly told Kev that she was not interested in any deal he could actually offer.\n\nKev's own reading of her, as someone who would never be satisfied, was just as wrong, and cost him a sale he would happily have made.",
+   "betterRead": "As the chapter on deception in Part I described, people detect lies from behaviour only slightly better than chance, and face-touching and averted gaze are among the weakest cues. Kev may have been thinking, remembering the figure or simply scratching his ear. Acting on a false tell led Jen to push past a fair price and lose the car. The better reading would have put the energy into questions rather than watching: what was included, whether there was a warranty, what they would give for her old car, whether servicing or tyres could be part of the deal. Many dealers have more room on extras than on the headline price. When Jen bought her next car, she asked those questions, got a year's servicing and new tyres included, and paid close to the asking price without feeling she had lost.\n\nShe also took a friend with her, to give her someone to think aloud with before agreeing."
+  },
+  {
+   "title": "The silence after the number",
+   "scene": "Omar, twenty-nine, has been a software tester for three years and has been doing a senior tester's job for the last eight months without the\n  title or the pay. He has researched salaries and decided to ask his manager, Linda, for a rise of five thousand pounds. He has rehearsed the\n  conversation in the shower all week.\n\n  In the meeting, he sets out his case, then names the figure. Linda looks at him, says nothing, and writes something on her pad. Her face is still.\n  The silence lasts perhaps four seconds. To Omar it feels like a minute. He reads her stillness as a refusal, and before she has spoken, he says, \"Or\n  even three thousand would be great, I know budgets are tight.\" Linda looks up and says she will see what she can do.\n\n  Afterwards, he is furious with himself. He had decided in advance that five was the right number, and he had bargained himself down in four\n  seconds, without Linda saying a word.\n\n  Three weeks later, Linda tells him that she has secured a rise of three thousand. She mentions, in passing, that she had written \"5k, fair\" on her pad\n  during the meeting, and had been about to say she would push for it before he came in with the lower figure.\n\nOmar had also read, the night before, that you should never be the first to name a number. He had named it first anyway, because Linda had asked him what he had in mind, and he had felt he could not refuse.",
+   "misread": "Omar read Linda's silence and still face as a refusal, and lowered his own figure to escape the discomfort. Linda's silence had been her thinking, and her still face the ordinary face of someone writing a note.\n\nHe also read his own discomfort as information about Linda's answer, when it was information about how much he wanted the rise.\n\nLinda, for her part, read his quick lower figure as a sign that he had overreached and knew it, which made the lower figure easier to settle on.",
+   "betterRead": "In a negotiation, a silence after a number feels like pressure to the person who named it, and many people fill it with a concession, which amounts to negotiating against themselves. The pressure is real, but it is mostly inside the person feeling it. Linda's stillness was not a tell; as the chapter on the poker face earlier in this part described, a still face is easily read as disapproval when it may mean nothing of the kind. Omar's better approach, which he used at his next review, was to name the pressure to himself, breathe out slowly and wait. If the silence went on, he could ask a question: \"How does that sound to you?\" He practised holding a pause with a friend. At his next review, he named a figure, waited through Linda's silence, and got it.\n\nHe also learned to prepare a question to ask if the silence went on, so that he had something to say other than a lower figure."
+  },
+  {
+   "title": "The father of the bride",
+   "scene": "Bella, forty-five, runs a small florist's shop and does flowers for weddings. Three weeks before a large wedding, the bride's father, Keith,\n  rings her about the final invoice, which is higher than the original quote because the couple added flowers for the church and two extra tables.\n  He is angry. He says the invoice is outrageous, that he feels taken for a ride, and that he has a good mind to cancel the whole order. His voice is\n  loud and he talks over her twice.\n\n  Bella hates conflict. Within two minutes she offers him twenty per cent off the invoice, which wipes out her profit on the job. Keith accepts,\n  grudgingly, and rings off.\n\n  That evening, going through her emails, Bella finds the message from the bride confirming the extra flowers and the revised price, sent a month\n  earlier. It occurs to her that Keith may never have seen it.\n\n  The next day the bride rings, embarrassed. Her father had been ill and had not been told about the changes, and had seen the invoice in the post with\n  no explanation. She says that he is mortified and would like to pay the full amount. Bella says she will think about it, and puts the phone down\n  feeling that she has learned something expensive.\n\nShe has given discounts before, to stop people being angry with her. She has never worked out what they cost her over a year, and she does not want to.\n\nKeith had also said, near the end of the call, that he was \"not made of money, whatever people think\". Bella had heard it as a negotiating line. Later she wondered whether it had been the most important thing he said.",
+   "misread": "Bella read Keith's anger as a sign that he was close to cancelling and that only a large concession would save the order. She read her own discomfort as a reason to end the conversation as fast as possible.\n\nShe also read the speed of her own concession as kindness, when it was mostly a way of ending a conversation she found frightening.\n\nAnd she missed the clue in what he said, that he was not made of money, which pointed to worry rather than tactics.",
+   "betterRead": "Van Kleef and colleagues found that people concede more to an angry counterpart because they read anger as information about the other side's limits: if he is angry, he must be near walking away. But anger is information about the person's situation, and the first job is to find out what the situation is. Keith was not near his limit; he was confused and frightened by an unexplained bill while he was unwell. Bella's better response, which she now uses, is to slow the call down: to say, calmly, \"I can hear this has come as a shock, can I take you through what changed?\", and to explain before offering anything. If a concession is warranted, she makes it after she understands the problem, not to stop the discomfort. She let Keith pay the full amount, and he sent her a box of chocolates.\n\nShe also changed her invoices, so that any change to an order now comes with a short note explaining what changed and when it was agreed, which has stopped most angry calls before they start."
+  },
+  {
+   "title": "The partners on the screen",
+   "scene": "Harry, fifty-six, and Jonny, fifty-three, founded a joinery business together twenty years ago. They have fallen out badly over the direction of\n  the firm, and have agreed to split it: Jonny will buy Harry's share. They are no longer speaking except through their accountants. To save time, the\n  accountants suggest that the four of them meet on a video call to agree the valuation.\n\n  The call goes wrong within ten minutes. Each partner can see the other's face in a small square, and each reads the worst into it. When Harry names\n  his figure, he sees Jonny roll his eyes. When Jonny responds, Harry sees him smirk. Harry raises his voice; Jonny leans into his camera. Old\n  grievances come up, about a contract in 2011 and a van that was never paid for. The accountants try to steer back to the figures, but the two men are\n  now watching each other rather than the spreadsheet. The call ends with Harry leaving it.\n\n  Afterwards, Jonny's accountant, Seema, asks him whether he really smirked. Jonny says he was wincing at a figure, not smirking at Harry. Harry's\n  accountant reports that Harry is now talking about lawyers.\n\n  Seema suggests a different approach. She has seen this before.\n\nBoth men had agreed beforehand that they would keep it professional. Both had prepared their figures carefully. Neither had prepared for the sight of the other man's face after six months of not seeing it.\n\nSeema has worked on dozens of business separations, and she has noticed that the ones that go worst are often the ones where the partners still care most about what the other thinks of them.",
+   "misread": "Each partner read the other's face on the screen as contempt: an eye-roll, a smirk, a lean into the camera. Each reacted to what he read, and the reactions confirmed the readings, until the valuation was lost in the history.\n\nThe accountants read the call as a failure of goodwill, when it was a failure of format: two hostile people given the richest possible view of each other's faces at the worst possible moment.\n\nJonny's wince and Harry's raised voice were both reactions to the figures and the history, not to each other's faces in the moment, but the faces were what each man saw.",
+   "betterRead": "Swaab and colleagues found that richer channels such as video and face-to-face meetings helped negotiators who started out neutral, but could make things worse for people who were already hostile, perhaps because seeing each other gave more opportunity to provoke and react. Harry and Jonny were the second kind. Seema's better plan separated the two jobs. First, each side's proposals went back and forth in writing, through the accountants, where there were no faces to misread and time to think. When the gap had narrowed to a small sum, the four met in person at Seema's office, around a table with the spreadsheet on a screen at one end, so that everyone faced the numbers rather than each other. They agreed in an hour. Harry and Jonny shook hands at the end, briefly, which neither had expected.\n\nSeema said afterwards that the most useful thing she had done was to keep their faces apart until the numbers were close, and then to give them a shared screen to look at instead of each other."
+  }
+ ],
+ "workedReading": {
+  "title": "Negotiating a job offer",
+  "scene": "Leila, thirty-two, has been offered a job as a product manager at a larger company, and the recruiter, Tom, has rung to talk through the offer. The salary is below what she had hoped for, the start date is earlier than she can manage, and there is no mention of the flexible working she currently has. She likes the company and wants the job. She has never negotiated an offer before, and she is worried that asking for more will make them withdraw it. She asks Tom whether she can call him back in an hour, and he agrees. She spends the hour preparing, not by planning what to watch for in Tom's voice, but by working out what she needs and why, and what the company might need from her.\n\nShe has read that women who negotiate are sometimes judged harshly for it, and she is aware that the chapter on the glass ceiling places the problem in the evaluator. She decides that she will ask in a warm, plain way, and that if the company holds asking against her, that tells her something about the company.",
+  "steps": [
+   {
+    "label": "Prepare away from the table",
+    "text": "She writes down her three priorities in order: flexible working two days a week, a start date six weeks out rather than three, and a salary five thousand higher. She notes her alternative, which is to stay where she is, reasonably happy. She writes three questions for Tom: what flexibility the team already has, why the start date matters to them, and how the salary was set. Knowing her alternative makes her less afraid of the conversation.\n\nShe also writes down what she can offer in return: flexibility on the start date if the salary moves, and a willingness to join a launch call before she starts. A negotiation goes better when both sides can see something to gain."
+   },
+   {
+    "label": "Settle the body",
+    "text": "Before she rings back, she stands up, walks around the flat once and takes two slow breaths with long exhales. She has noticed that her shoulders are up by her ears. She lets them drop. She puts a glass of water by the phone and her list in front of her. She decides to take the call standing, because her voice is steadier when she stands, and she wants it to sound like her ordinary voice.\n\nShe also turns off notifications on her laptop and closes the door, so that she will not be distracted mid-sentence by a message.\n\nShe also reminds herself that Tom wants to fill the role, and that a candidate who asks reasonable questions is usually seen as a serious one."
+   },
+   {
+    "label": "Open warmly, then ask",
+    "text": "She begins by telling Tom, truthfully, that she is pleased about the offer and excited about the role. Then she asks her questions before stating any demands. She learns that the team already works flexibly, that the start date is tied to a product launch, and that the salary was set at the bottom of a band. Each answer tells her something she could not have guessed, and none of it came from listening for tells.\n\nShe makes notes as Tom talks, and reads back what she has understood before moving on, which shows him that she has listened and catches one misunderstanding about the bonus."
+   },
+   {
+    "label": "Leave room after the number",
+    "text": "She says that she would like the salary to be five thousand higher, explains why in one sentence, and then stops. Tom is silent for a few seconds. She feels the pull to fill the silence with \"but I could be flexible\", names the feeling to herself and waits. Tom says he will need to check with the hiring manager, but that it is within the band. She thanks him.\n\nShe also keeps her voice level when she names the figure, without a rising tone at the end, which would have made it sound like a question.\n\nWhen Tom does reply, she resists the temptation to thank him effusively, which can sound like relief, and simply says that she would appreciate it."
+   },
+   {
+    "label": "Say what matters plainly",
+    "text": "When Tom says the start date is fixed, Leila feels a flash of frustration. Instead of letting it into her voice or hiding it entirely, she puts it into words, calmly: \"That's hard for me, because I'm committed to finishing a project at my current job, and I'd rather not leave them in the lurch. Is there any room?\" Tom says he will ask whether she could join the launch team a little later.\n\nTom's tone softens noticeably after she explains. It is easier for him to argue her case internally when he knows the reason.\n\nAfterwards, she notices that saying the frustration in words made it fade. Hiding it would have kept it running in the background for the rest of the call."
+   },
+   {
+    "label": "Take time before agreeing",
+    "text": "By the end of the call, Tom has agreed in principle to two days' flexibility, a start date four weeks out and a salary three thousand higher, with a review after six months. He asks whether she can accept now. She says that it sounds very good and that she would like to sleep on it and confirm in the morning. She has learned that the moment of greatest pressure is the worst moment to decide.\n\nShe also asks Tom to send the revised offer in writing, so that she can check every detail in the morning rather than relying on memory of a phone call."
+   },
+   {
+    "label": "What happened",
+    "text": "In the morning she rereads her priorities, sees that the offer meets the first fully and the other two in part, and accepts. Six months later, at her review, she gets the remaining two thousand. She reflects that the most useful things in the negotiation were her questions, her pause after the number and her request for a night to think, and that none of them depended on reading Tom's body at all.\n\nShe also sends Tom a short thank-you note, because she will be working with the company for years, and the negotiation was the first piece of that relationship."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading restraint as weakness",
+   "body": "Negotiators from cultures or backgrounds in which open anger is unusual or inappropriate may stay calm and quiet under pressure. A negotiator who expects displays of feeling may read that calm as a weak position or a lack of commitment, and push harder. Adam, Shirako and Maddux found that anger drew larger concessions from European American negotiators but smaller ones from Asian and Asian American negotiators, and that what mattered was whether anger was seen as appropriate. Pressing with anger on someone who reads it as a breach of decorum is likely to cost you, not them. The same caution applies to silence, formality and indirectness, which mean different things in different places, as the chapter on cultural variance in Part V describes. Before reading a counterpart's restraint, ask what restraint means where they come from.\n\nIt also helps to remember that your own calm may be read as weakness by someone who expects displays of feeling. Words can clarify what your face does not show."
+  },
+  {
+   "title": "Choosing the wrong channel for the relationship",
+   "body": "Many people choose how to negotiate by convenience: an email because it is quick, a video call because it saves travel. Swaab and colleagues' work suggests that the right channel depends on the relationship. For people who start out neutral, richer channels such as video or a face-to-face meeting tend to help, because faces and voices build trust; a tense exchange of emails between strangers can easily harden. For people who are already hostile, richer channels can make things worse, because there is more to misread and react to, as Harry and Jonny found. Before a negotiation, ask what the relationship is like now. If it is neutral, meet or call. If it is hostile, consider exchanging proposals in writing first and meeting once the gap has narrowed. And whatever the channel, avoid making a final decision in the middle of a heated exchange.\n\nPhone calls sit between the two: voices without faces, which can suit a relationship that is cool but not yet hostile."
+  },
+  {
+   "title": "Filling every silence",
+   "body": "Silence in a negotiation is uncomfortable, and the person who has just named a number usually feels it most. Many people fill it, as Omar did, with a concession, a justification or a lower figure, before the other side has said anything at all. They are negotiating against themselves. The other person's silence is rarely a tactic and rarely a refusal. It is usually thinking, writing or simply the time it takes to respond. When you have made your point, stop. Breathe out, keep your face relaxed and let the other person answer. If the silence goes on, ask a question rather than offering a concession. Practise holding a few seconds of quiet in low-stakes conversations, so that it feels ordinary when it matters. A silence is only pressure if you treat it as one.\n\nIt also helps to have decided, before the conversation, the figure below which you will not go. Then a silence cannot move you below it."
+  },
+  {
+   "title": "Taking a still face personally",
+   "body": "Many professional negotiators keep their faces still at the table, as the chapter on the poker face earlier in this part describes, because composure helps them think and avoids giving away a reaction they have not yet considered. Across the table, a still face is easily read as contempt, hostility or a refusal, and some negotiators respond to that reading by becoming hostile themselves. The exchange then escalates over nothing. If your counterpart's face gives you little, do not fill the gap with the worst interpretation. Treat it as neutral, ask questions and listen to the words. If you need to know how something has landed, ask: \"How does that sound from your side?\" A still face is usually a person thinking, not a verdict, and the chapter's main point applies: attention beats reading.\n\nIf you are the one with the still face, a word of warmth at the start and a \"Let me think about that\" at the key moments can stop your composure being read as contempt.\n\nAnd if you are negotiating by video, remember that compression and a small frame make neutral faces look flatter still."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can't experienced negotiators read bluffs from body language?",
+   "a": "The evidence suggests not. As the chapter on deception in Part I described, people's accuracy at detecting lies from behaviour is only slightly better than chance, and the cues most often believed to signal lying, such as averted gaze, face-touching and fidgeting, are among the weakest. Experience does not seem to help much, and high stakes may make negotiators more suspicious rather than more accurate. Some people feel confident that they can read a bluff, but confidence and accuracy are poorly linked. The useful skills at the table are different: preparing your priorities and alternatives, asking questions that reveal the other side's interests, listening to the answers and managing your own state. These are reliable in a way that tells are not.\n\nIf you want to understand the other side better, the most reliable method is still the oldest: ask, and listen to the answer.\n\nIn short: you will learn far more from what people tell you than from what you think their hands are telling you."
+  },
+  {
+   "q": "Is it wrong to mirror the other person's posture?",
+   "a": "Natural mimicry is not wrong; it happens on its own when two people are genuinely attending to each other, and it tends to build liking and trust. Maddux and colleagues found that negotiators instructed to mimic their counterparts subtly got better outcomes, through increased trust. But deliberately copying someone's posture in order to make them trust you is manufacturing a signal, and this book does not teach it. It is also fragile: people who notice they are being copied tend to feel manipulated, and trust obtained by technique collapses when it is discovered. The honest route is the one the research points to underneath the technique: real attention to the other person. If you are genuinely listening, your bodies will tend to fall into step without any instruction.\n\nIf you find yourself thinking about your posture during a negotiation, turn your attention back to what the other person is saying."
+  },
+  {
+   "q": "What should I do if the other side gets angry?",
+   "a": "Slow down, and treat the anger as information about their situation rather than as proof of their limits. Van Kleef and colleagues found that people concede to angry counterparts because they infer that anger means the other side is near walking away, but that is often not true. Ask what has happened, as Bella eventually did: \"I can hear you're unhappy about this, can you tell me what's changed?\" Listen to the answer before you offer anything. Check your own alternatives, because the effect of anger is strongest on people who feel they have no other options. If the anger becomes abusive, it is fine to pause the conversation and come back to it. Concede only what is warranted by the problem, not what would make the discomfort stop fastest.\n\nAnd remember that you do not have to answer anger in the moment. \"Let me look into this and call you back\" is a perfectly good response."
+  },
+  {
+   "q": "Should I show my own frustration in a negotiation?",
+   "a": "If you genuinely feel it, put it into words, calmly, rather than performing it or burying it. Côté, Hideg and van Kleef found that faked anger made counterparts demand more, because it reduced their trust, while felt anger expressed honestly could lower demands. Adam and colleagues found that whether anger helps depends heavily on whether the other side sees it as appropriate, which varies by culture and setting. A sentence such as \"That's a real problem for my team, because it would mean missing our deadline\" tells the other side what matters and why, without escalating. It gives them information they can work with. What tends to backfire is a raised voice, a slammed folder or an act of outrage designed to push them back.\n\nIf you are not sure whether anger would be seen as appropriate, plain words about what matters and why are safe almost everywhere."
+  },
+  {
+   "q": "Is it better to negotiate by email, phone or in person?",
+   "a": "It depends on the relationship. Swaab and colleagues' combined analysis found that richer channels, video and face to face, led to better outcomes for people who started out neutral towards each other, made little difference for people already inclined to cooperate, and could make outcomes worse for people who were already hostile. For a first negotiation with a supplier or a new employer, a call or a meeting usually helps. For a dispute that has already turned bitter, written proposals may cool things down before you meet. Many negotiations use a mix: a call to build the relationship, written terms to fix the details, and a meeting to close. The research also found the benefit of rich channels weaker in East Asian cultures, so none of this is universal.\n\nWhatever the channel, follow an important conversation with a short written summary, so that both sides agree on what was said.\n\nIf you do meet in person, consider the geography too: side by side over a shared document often feels less like a contest than facing each other across a table."
+  },
+  {
+   "q": "How can I stop myself conceding late in a long negotiation?",
+   "a": "Plan for tiredness, because it will come. Eat beforehand and keep water nearby. Agree breaks at the start, rather than waiting until someone needs one, and take one before any significant decision rather than after it. Decide in advance which points you will not give up and write them down, so that you can check them when you are tired rather than relying on judgment at the end of the day. Notice the signs that you are depleted: a tight jaw, irritation over small things, a wish to be finished. When you notice them, say that you need a short time to think, or that you would like to sleep on the final terms. Very few good deals are lost by waiting until the morning.\n\nIt also helps to bring someone with you in very long negotiations, who can notice when you are flagging and suggest a break."
   }
  ],
  "watch": [
