@@ -73,6 +73,27 @@
    "doCaption": "Simply upright, at rest",
    "dontCaption": "Curled in and small",
    "annotation": "You do not need a superhero stance. Getting out of a collapsed posture into an ordinary upright one does most of the work."
+  },
+  {
+   "doPoseId": "p_stand_at_ease_tall",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Upright and at ease, taking only your share",
+   "dontCaption": "Hands on hips over a seated colleague",
+   "annotation": "A power pose in front of others reads as a statement. Ordinary upright ease reads as competence."
+  },
+  {
+   "doPoseId": "p_sit_forward_engaged",
+   "dontPoseId": "p_sit_slouched_low",
+   "doCaption": "Upright and engaged, with breaks to move",
+   "dontCaption": "Folded low over a screen for hours",
+   "annotation": "On current evidence, getting out of a slump matters more than striking a pose."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_posture_braced_upright",
+   "doCaption": "Upright but loose, breathing easily",
+   "dontCaption": "Rigid, standing to attention",
+   "annotation": "Overcorrecting into a stiff stance reads as tension. Find the upright posture you could hold for an hour."
   }
  ],
  "caseStudy": "Ben, twenty-six, has watched the power posing talk three times. Before every interview he goes to the toilets, stands with his hands on his hips for two minutes, and then sits in the waiting room scrolling through his phone until he is called. He has had six interviews in four months and no offers.\n\nA friend who is doing a psychology degree tells him about the replications, and Ben reads about them that evening. He feels faintly foolish. But one detail catches his attention: the finding that slumping seems to matter more than spreading. He thinks about the waiting room, where he sits hunched over his phone, reading emails and news, for twenty minutes before every interview.\n\nFor his next interview, Ben changes the routine. He leaves his phone in his bag. He arrives early and walks around the block, then sits upright in the waiting room with his feet flat and his shoulders loose, breathing slowly. When his nerves rise, he tells himself that he is excited, a trick his friend says has better evidence behind it. He skips the toilet-cubicle pose, then, on the way in, does a quick version anyway, laughing at himself.\n\nThe interview goes well. The interviewer later tells him that he seemed composed and genuinely interested. Ben has no idea how much of that came from the posture, the breathing or simply a better night's sleep. But he keeps the new routine, and when a friend asks him about power poses, he says they are mostly a placebo, and that the real trick is to stop folding up over your phone.",
@@ -91,6 +112,11 @@
     "Each time one goes off, notice your posture: collapsed, upright or sprawling.",
     "If you are collapsed, sit or stand upright and let your shoulders settle for a minute.",
     "Note any change in mood, however small, and what you were doing when you slumped."
+   ],
+   "variations": [
+    "Add a note of where you were and what you were doing each time a reminder goes off, and look for the situations in which you most often collapse.",
+    "Ask someone you live with to tell you, kindly, when they see you folded over a screen for long periods, and notice how often it happens.",
+    "Try a week of standing or walking for one phone call a day, and note whether those calls feel different."
    ]
   },
   {
@@ -102,6 +128,11 @@
     "Add one line of reappraisal, such as “I'm excited.”",
     "Afterwards, note how you felt going in and how the event went.",
     "Keep what helped and drop what did not."
+   ],
+   "variations": [
+    "Try the routine with and without your phone in the last ten minutes, on two similar occasions, and compare how you felt walking in.",
+    "Add a short walk outside before the event, even five minutes around the block, and note whether it changes your mood or your focus.",
+    "Write your reappraisal line on a card and read it once in the waiting room, then put it away and look up."
    ]
   },
   {
@@ -113,6 +144,11 @@
     "Check whether it has been replicated, ideally in a larger or pre-registered study.",
     "Rate each belief as well supported, uncertain or doubtful.",
     "Write one sentence about what surprised you."
+   ],
+   "variations": [
+    "Pick one claim from a recent social media post or article about body language and run it through all five questions in this chapter.",
+    "Find a claim you believe that turns out to be well supported, as well as one that is doubtful, so that the audit is about evidence and not just debunking.",
+    "Explain the power pose story to a friend in two minutes, including what survived, and notice which parts they find hardest to believe."
    ]
   },
   {
@@ -123,6 +159,11 @@
     "If you are sprawling, settle into an upright, open posture that takes only your share.",
     "If you are collapsed, sit up and let your shoulders open.",
     "Notice whether others respond differently."
+   ],
+   "variations": [
+    "Watch the most senior person in your next meeting and note how much space they take up, then notice how junior colleagues respond to them.",
+    "In a meeting where you are the most senior person, sit upright with your hands on the table for the whole time, and notice whether people speak more.",
+    "On public transport, notice who takes more than one seat's worth of space and how people around them respond."
    ]
   }
  ],
@@ -204,6 +245,45 @@
    "explain": "Power posing spread on the strength of a small study and a compelling presentation. Large, independent, pre-registered replications are the best test of whether a claim holds up.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Dana Carney, the first author of the original power posing study, do in 2016?",
+   "options": [
+    "She published a larger study that confirmed the original hormonal effects",
+    "She said publicly that she no longer believed power pose effects were real",
+    "She withdrew from research and declined to comment on the replication attempts",
+    "She argued that the replications had used the wrong poses and were therefore invalid"
+   ],
+   "answer": 1,
+   "explain": "Carney published a statement saying that she no longer believed power pose effects were real, and set out the analytic choices she thought had produced the original result. It was an unusually honest correction.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A manager leans far back with his hands behind his head throughout a meeting in which junior colleagues present their work. What fits this chapter best?",
+   "options": [
+    "He is projecting the calm confidence that juniors need to see from a leader",
+    "He is likely to be read as dominant or dismissive, and upright and settled would serve better",
+    "He should switch to standing with hands on hips, which reads as more authoritative",
+    "Posture makes no difference to how others read him, since the power pose research failed"
+   ],
+   "answer": 1,
+   "explain": "Expansive sprawl tends to be read as dominance, which junior colleagues often experience as intimidation. An upright, open, settled posture reads as calm competence without taking up their space.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone argues that studies in which expansive poses beat contractive ones prove that expansive poses make people feel better. What did Credé point out?",
+   "options": [
+    "That the difference could come from contractive poses making people feel worse, not expansive ones helping",
+    "That the studies had all used too many participants, which hid the real size of the effect",
+    "That expansive poses only work for people who have already watched the talk about them",
+    "That the studies had measured hormones instead of feelings, so they said nothing about mood"
+   ],
+   "answer": 0,
+   "explain": "Most studies compared expansive with contractive poses, not with a neutral posture. Any difference could therefore reflect collapse making things worse, which is what Elkjær and colleagues later found.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +312,110 @@
    "work": "Power posing: P-curving the evidence",
    "author": "Joseph P. Simmons and Uri Simonsohn",
    "note": "Psychological Science 28(5), 2017. A statistical test of the published power posing literature."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The trainer who sold the pose",
+   "scene": "Gary, fifty, runs leadership workshops for mid-sized companies. Eight years ago he built a half-day session around power posing, and it has\n  been his most popular product ever since. He shows a clip of the famous talk, explains the hormone findings, and then has the whole room stand with\n  hands on hips for two minutes before a mock presentation. People love it. They laugh, they feel braver, and the feedback forms are glowing.\n\n  At a session for a firm of actuaries, a participant called Priyanka, a statistician in her thirties, puts her hand up during the hormone slide. She\n  asks, politely, whether Gary is aware that the larger replication found no effect on testosterone or cortisol, and that the first author of the\n  original study has said publicly that she no longer believes the effects are real.\n\n  The room goes quiet. Gary has heard vague talk of a controversy, but he has never read the replications. He says that science is always arguing\n  and that the important thing is how the pose makes people feel. Priyanka nods and says nothing more. During the break, Gary notices her talking to\n  two colleagues, and assumes she is criticising him.\n\n  That evening he reads the replication papers and Carney's statement for the first time. He feels his face go hot. He realises that he has taught\n  something to several thousand people that the evidence no longer supports, and that he has been charging for it.\n\nGary also remembers, uncomfortably, a participant two years earlier who had said she felt no different after the pose. He had told her to try it for longer.\n\nHe also reads, more slowly, the arguments that followed: the p-curve analyses on both sides, Credé's point about the missing neutral posture, and the 2022 review suggesting that slumping matters more than spreading. By midnight he understands that the story is more interesting than the one he has been telling, and that it does not end with the pose working.\n\nHis next workshop is in nine days. The slides are printed, the clip is cued and the client has paid.",
+   "misread": "Gary read Priyanka's question as a challenge to his authority and her conversation in the break as an attempt to undermine him. He had also read the enthusiasm of his audiences as evidence that the pose worked, when it was evidence that people enjoyed the session.\n\nAnd he nearly read his own embarrassment as a reason to defend the session rather than change it.\n\nHis audiences had read his certainty as proof that the claim was solid. Most of them had no way of knowing that the certainty came from a talk, not from the studies behind it. Priyanka had read the session correctly, as a well-meant course that had not kept up with the evidence, and asked the question she would have wanted asked of her.",
+   "betterRead": "Ranehill and colleagues, with nearly five times as many participants and a blind experimenter, found no hormonal effect, and Carney's 2016 statement was an unusually honest correction. Priyanka was doing what the chapter on evidence recommends: asking whether a striking claim had held up. The better response, which Gary eventually chose, was to follow Carney's example. He rewrote the session. It now tells the story of the original study and the replications as a lesson in reading evidence, teaches people to avoid collapsing over their phones before a stressful moment, and replaces the two-minute pose with slow breathing and a line of reappraisal. He emailed Priyanka to thank her. She replied that her colleagues had been asking her in the break whether she thought he would mind the question.\n\nThe rewritten session, he found, was better received than the old one. Participants liked being trusted with the real story."
+  },
+  {
+   "title": "The sales director who leaned back",
+   "scene": "Callum, thirty-eight, is sales director of a software company, and he has a way of sitting in meetings that his friends call the deckchair.\n  He pushes his chair back from the table, leans back, laces his fingers behind his head and stretches his legs out, ankles crossed. He believes it\n  shows that he is relaxed, confident and in charge, and he has heard that open postures make you feel powerful.\n\n  The company has just hired four graduates into his team, and in their first month he holds weekly pipeline reviews in which each of them presents\n  their accounts. He sits in the deckchair throughout. Amira, twenty-two, the most able of the four, finds the meetings frightening. She presents to\n  the underside of his chin and his elbows. When she makes a good point, he does not move. When she makes a mistake, he says \"Hmm\" without lowering his\n  arms.\n\n  She tells a friend that she feels as though she is being judged by someone who has already decided she is not worth sitting up for. Another of the\n  graduates starts arriving at the reviews with a script, which he reads without looking up.\n\n  Callum's own manager, Ruth, sits in on one review. Afterwards she asks him whether he knows how he looks from the other side of the table. He laughs\n  and says he is just comfortable.\n\nCallum learned the deckchair from his first boss, who sat the same way and whom Callum admired. He has never wondered how that boss looked to anyone but him.\n\nCallum also notices, without thinking much about it, that the graduates sit very still in his reviews, hands under the table, shoulders slightly raised. He takes it as nerves about being new. He does not connect it with the way he is sitting.\n\nRuth has been in his position. She tells him that she once had a boss who stood with his hands on his hips at the end of her desk whenever he wanted something, and that she can still remember how small it made her feel, twenty years later.",
+   "misread": "Callum read his own sprawl as relaxed confidence and assumed his team would read it the same way. Amira read it as dismissal and judgment, and the graduate with the script read it as a reason to hide behind his notes.\n\nRuth's question gave him the chance to see it, and he read it at first as a joke.\n\nThe graduates also read his \"Hmm\" without lowering his arms as a verdict, and began to second-guess every number in their pipelines. Callum, who meant the sound as \"go on\", had no idea what it was doing to them.",
+   "betterRead": "The power pose research was about what posture does to the person holding it. What it does to the people watching is a different question, and the answer is clearer: expansive, sprawling postures are read as dominance, which in a room of junior colleagues often feels like intimidation or contempt. Callum was not trying to intimidate anyone, but he was taking up a great deal of space above people who had none to spare. Ruth's better advice was not to sit rigidly but to sit upright, open and settled, with his hands on the table and his face towards whoever was speaking. Callum tried it, grumbling. Within a few weeks the graduates were presenting to him rather than to their notes, and Amira had started to argue with him, which he decided was a good sign.\n\nHe also kept the deckchair for Friday drinks, where, Ruth agreed, it did no harm at all.\n\nRuth also suggested that he ask the graduates for feedback on the reviews, in writing and without names."
+  },
+  {
+   "title": "The student in the bed",
+   "scene": "Ellie, nineteen, is in her first year at university, and her exams start in a fortnight. She revises in bed, propped against the wall with her\n  laptop on her knees, for six or seven hours a day. By the evening she is curled forward over the screen, shoulders up, chin down, scrolling between\n  her notes and her phone. She has stopped going to the library because it feels like too much effort to get dressed.\n\n  Her mood has been sinking for a week. She feels slow and heavy, and she has started to believe that she is going to fail. A friend sends her a\n  video about power poses as a joke, and Ellie does one in front of the bathroom mirror, hands on hips, feeling ridiculous. She laughs, which helps a\n  little, and then goes back to bed and the laptop.\n\n  Her flatmate, Jo, a sports science student, finds her there at nine in the evening, folded over the screen in the dark. Jo says that she looks\n  like a question mark, and asks when she last went outside.\n\n  Ellie says she cannot afford the time. Jo points out that she has been on the same page of notes for forty minutes.\n\nHer mother rings on Sunday and asks how revision is going. Ellie says it is fine, curled up under the duvet with the phone on speaker, and her mother says she sounds tired.\n\nShe has started skipping meals, not deliberately but because the kitchen is on the other side of the flat and the laptop is warm on her knees. When she does get up, she feels stiff and light-headed, and goes back to bed sooner.\n\nJo has seen this before, in herself, during her own first exams. She remembers the week she spent revising on the floor of her room, and how much better she felt once a friend dragged her to the library and made her sit at a table by a window.",
+   "misread": "Ellie read her heavy, sinking mood as a sign that she was not clever enough and was going to fail. When the pose did nothing, she read that as proof that body-based advice was nonsense, and stayed folded up in bed.\n\nShe also read her own long hours in bed as hard work, when much of the time was spent stuck.\n\nHer mother read her tired voice on the phone as revision stress and nothing more. Ellie read her own stuck hours as a lack of ability, when they were, at least in part, the product of a posture, a room and a day with no movement in it.",
+   "betterRead": "Elkjær and colleagues' review suggests that the absence of collapsed postures matters more than the presence of expansive ones: compared with an ordinary upright posture, slumping and hunching seemed to lower mood, while power poses added little. Ellie was spending most of her day in exactly the kind of posture the review flagged, without movement or daylight, under pressure. Jo's better suggestion was ordinary. Revise at a desk or in the library, sitting upright. Get up every hour and walk, even for five minutes. Go outside once a day. Ellie tried it, partly to prove Jo wrong, and found that her concentration came back before her mood did. Jo also said, sensibly, that if the low mood did not lift after exams, Ellie should talk to the university's wellbeing service or her doctor, because posture is a small lever, not a treatment.\n\nShe also stopped revising in the dark. A desk lamp and an open curtain made the room feel less like a cave."
+  },
+  {
+   "title": "The man who could not stand up straight",
+   "scene": "Ken, sixty-three, has had back trouble for twenty years. A condition in his spine has slowly rounded his upper back, so that he stands with his\n  shoulders forward and his head a little ahead of his body. He walks with a stick on bad days. He was a site manager for most of his career and is now\n  a volunteer mentor for young men leaving the care system.\n\n  On a training day for mentors, the facilitator shows a slide about body language and confidence. It says that \"strong\" people stand tall, chest out,\n  shoulders back, and that slumped posture signals low status and weakness. She asks the mentors to model confident posture for the young men they\n  work with. Several people glance at Ken.\n\n  Ken has spent years being read wrongly by people who do not know him: shop assistants who speak to him slowly, strangers who assume he is frail\n  or sad. He has not expected it in a room of people who are supposed to be on his side. He says nothing, but he goes home angry.\n\n  The next week, one of the young men he mentors, Leon, seventeen, asks him why he stands like that. Ken tells him about his spine. Leon says that he\n  had thought Ken was just tired of everything, like his last social worker.\n\nKen has never minded explaining his back to people who ask. What he minds is being read without being asked.\n\nAt the next mentor meeting, a younger volunteer tells him, kindly, that he could try to \"stand a bit taller\" for the boys. Ken says that he would love to. The volunteer goes red.\n\nKen has thought, more than once, about simply standing as tall as his back allows for the length of a session. He has tried it. It hurts, and the pain shows on his face, which he suspects reads worse than the stoop.",
+   "misread": "The facilitator, and the slide behind her, read upright posture as strength and rounded posture as weakness, without allowing for bodies that cannot unfold. Leon read Ken's stance as weariness and disengagement, until Ken told him otherwise.\n\nKen, for his part, nearly read the slide as a sign that the organisation did not want him, and thought about leaving.\n\nThe younger volunteer read Ken's posture through the slide, as something to fix, and so turned a kindly impulse into a small humiliation. The slide had taught him to see a back and miss the man.",
+   "betterRead": "The research on slumping concerns postures that people can change: hunching over a phone, folding up in a chair when they could sit upright. It says nothing about the shape of a body that a condition, an injury, age or pain has set. Treating posture as a measure of character turns a medical fact into a moral judgment, and it is exactly the kind of overreach the power pose saga warns against. The better reading, which Ken offered Leon, was to ask before deciding. He wrote to the training organiser, who agreed to change the slide, and asked Ken to help rewrite it. The new version says that people read posture, often wrongly, and that what matters most is attention, steadiness and warmth, which anyone can show.\n\nLeon, for his part, started asking Ken about his back on bad days, which Ken found more touching than he could say. Being asked is the opposite of being read."
+  }
+ ],
+ "workedReading": {
+  "title": "Checking a viral claim before sharing it",
+  "scene": "Sofia, thirty-five, is the people manager for a chain of opticians, and she sends her area managers a short weekly note with tips. On Monday morning she sees a post on a professional networking site that has been shared thousands of times. It shows a woman standing with hands on hips and says: \"Science says: stand like this for two minutes before your performance review and boost your testosterone by 20%! Confidence is chemical.\" Her area managers have their annual reviews next week, and several of them are anxious. She is about to paste the post into her note when she remembers that one of her managers, a former pharmacist, is sceptical of anything that sounds like a supplement advertisement. She decides to spend twenty minutes checking the claim first, using the questions in this chapter, and to share whatever she finds.\n\nSofia has shared things before that turned out to be wrong: a statistic about how much of communication is nonverbal, a quiz about personality types. Each time, the correction travelled far less than the original. She does not want to do it again with her own team.",
+  "steps": [
+   {
+    "label": "Find the original study",
+    "text": "The post names no study. Sofia searches for power posing and testosterone, and finds the 2010 paper by Carney, Cuddy and Yap, which reported a rise in testosterone and a fall in cortisol after people held high-power poses. The figure in the post does not appear to come from it in any obvious way. She notes that a claim with a precise number and no source is already a warning sign.\n\nShe looks for the original paper rather than another article about it, because each retelling tends to round the findings up. The abstract is short and clear about what the study measured.\n\nShe also notices that the woman in the photograph is a stock image, used on several other posts about confidence. The post has borrowed a face as well as a finding."
+   },
+   {
+    "label": "Count the people",
+    "text": "The original study had 42 participants, split between high-power and low-power poses. Sofia is not a statistician, but she knows that hormone levels vary a great deal from person to person and hour to hour, and that 42 people is a small number on which to build a claim about body chemistry. She writes \"small sample\" in her notes.\n\nShe also notes who the participants were and how long they held the poses: one minute for each of two poses, a far cry from the post's confident instruction to stand for two minutes before a review. Details tend to shift as a claim travels.\n\nSmall studies are not worthless, she reminds herself. Many important findings started small. But a small study is a reason to look for a larger one, not a reason to tell forty managers that confidence is chemical."
+   },
+   {
+    "label": "Look for replications",
+    "text": "She finds Ranehill and colleagues' 2015 study, with 200 participants and an experimenter who did not know which pose each person had held. It found no effect on testosterone, cortisol or risk-taking. She finds the special issue of pre-registered studies, and the 2016 statement in which Carney said that she no longer believed the effects were real. The hormonal claim, she concludes, has not held up.\n\nShe is struck by how little the replications are mentioned in the posts she can find. The original study, and the talk about it, are everywhere; the correction is hard to find unless you go looking for it.\n\nShe reads Carney's statement in full. It is short and plain, and Sofia finds it oddly moving: a scientist explaining, in public, why she no longer believes her best-known finding."
+   },
+   {
+    "label": "Check what it was compared with",
+    "text": "She reads about Credé's point that most studies compared expansive poses with contractive ones, rather than with an ordinary posture, and about Elkjær and colleagues' 2022 review, which did compare with neutral posture. Expansive postures made almost no difference; contractive ones seemed to lower mood. So the useful finding is the opposite of the post's: avoid slumping, rather than strike a pose.\n\nThis changes the advice she wants to give. Instead of \"strike a pose\", the evidence points to \"do not collapse\": put the phone away, sit or stand upright, and let the shoulders settle. It is less exciting, and probably more useful.\n\nShe also notes that the review has critics, and that the argument about what remains is still going on. She decides to say so in her note rather than replace one confident claim with another."
+   },
+   {
+    "label": "Ask how big the effect is",
+    "text": "What survived the replications was a small increase in how powerful people said they felt, and that effect was weaker among people who had never heard of power posing, which suggests some of it comes from expectation. Sofia notes that a small, partly expected change in feeling is very different from \"boosting testosterone by 20%\".\n\nShe also notes that a feeling of confidence is still worth something. If a ritual makes a nervous manager walk in a little steadier, it has done some good, whatever is or is not happening to their hormones."
+   },
+   {
+    "label": "Ask who benefits",
+    "text": "She clicks on the profile that posted the claim. It belongs to a confidence coach selling an online course. That does not make the claim false, but it explains why it is so confidently worded and why the replications are missing. She reminds herself to be most careful with claims she would like to be true, and she would very much like her managers to feel braver next week.\n\nShe checks whether anyone in the comments has raised the replications. Two people have; both have been answered with \"Science is always changing\" and a link to the course.\n\nShe thinks about whether to comment on the post with the replications, and decides that it is not her job to argue with strangers. Her job is to give her own team something accurate."
+   },
+   {
+    "label": "What she did",
+    "text": "Sofia writes a short note instead of sharing the post. It tells the power pose story in five sentences, says that the hormone claim has not held up, and suggests three things for the ten minutes before a review: put the phone away, walk or sit upright, and take a few slow breaths. The former pharmacist replies first, with a thumbs-up and the words \"Finally, a tip with references.\" Two managers say the routine helped. One says she did the pose anyway, for fun, and felt better, and Sofia replies that there is nothing wrong with that, as long as she knows why.\n\nShe also adds a line at the end of her note inviting the managers to send her any claims they come across, so that they can check them together. Over the next few months, she gets a steady trickle, and the checking becomes a small team habit."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating posture as a measure of character",
+   "body": "Once people learn that posture is read as status, some start reading it as character: the hunched man is weak, the upright woman is strong, the boy who slouches does not care. That goes far beyond anything the evidence supports. Posture is shaped by height, pain, injury, age, disability, culture, tiredness, the chair you are sitting in and the job you have been doing all day. A rounded back may be a spinal condition; a lowered head may be respect, as the chapters on greetings describe; a slumped teenager may be a growing teenager. The research on contractive posture is about moments you can change in your own body, not a verdict on anyone else's. When you notice a posture, treat it as a question about the moment, and never as an answer about the person, as Ken's facilitator learned.\n\nIf you teach or coach others, take particular care, because a confident slide about posture and strength can land on someone whose body cannot do what it asks.\n\nThe same goes for culture. In many places a lowered gaze and a slight stoop before an older or senior person are signs of respect, and reading them as weakness gets the meaning exactly backwards."
+  },
+  {
+   "title": "Standing to attention",
+   "body": "Some people overcorrect. Having heard that slumping is bad and upright is good, they hold themselves rigidly: chest out, shoulders pinned back, chin up, as if on a parade ground. It is tiring, it often hurts, and it does not read as calm confidence. Others tend to see tension, and a body held stiff tends to make the breathing shallow and the voice tight, which is the opposite of what you want before a stressful moment. The posture this chapter recommends is ordinary: upright without strain, shoulders loose, weight settled, the kind of stance you might have when talking to a friend you like. If your posture feels like an effort to hold, you have gone past it. Let your shoulders drop, breathe out and find the version that you could keep for an hour.\n\nA useful test is to ask whether you could hold the posture comfortably while talking about something you enjoy. If not, it is a costume rather than a posture.\n\nPhysiotherapists and teachers of methods such as yoga often describe good posture as balanced rather than held, which is a useful way to think about it."
+  },
+  {
+   "title": "Letting a ritual replace preparation",
+   "body": "A pre-meeting routine can help you feel steadier, but it cannot do the work that the meeting needs. Some people spend more time on a pose, a playlist or a mantra than on knowing their material, sleeping properly or rehearsing the hard questions, and then put a poor outcome down to a routine that failed. The power pose story is partly a story about the appeal of a shortcut: two minutes in a cubicle seemed to promise what weeks of preparation deliver. Use rituals for what they are good for, which is mostly settling your body and attention in the last few minutes. Put most of your effort into what the evidence suggests matters most: preparation, rest and practice with the real material, ideally in front of someone who will tell you the truth.\n\nIt also helps to be honest afterwards. If a meeting went badly, ask first what you could have prepared better, before you blame the routine, the room or the nerves.\n\nA routine is the last ten minutes of preparation. It cannot be the first."
+  },
+  {
+   "title": "Swapping one simple story for another",
+   "body": "The collapse of the hormone claim produced its own oversimplifications. Some people now say that power posing has been proved completely fake, or that posture has no effect on anything, or that psychology as a whole cannot be trusted. None of these follows from the evidence. The hormonal and behavioural effects did not replicate; a small effect on felt power did, though it may be partly expectation; collapsed postures seem to lower mood; and how others read posture is well established. The argument also continues: Elkjær and colleagues' review has its critics, and the debate about what remains is not settled. The honest position is to hold conclusions loosely, to prefer larger and pre-registered studies, and to be wary of anyone, on either side, who sounds completely certain.\n\nThe same applies to this book. Where it reports a finding, the sources are there so that you can check them yourself.\n\nIt is worth noticing that the people who corrected the power pose story were mostly psychologists. A field that checks itself is doing its job."
+  }
+ ],
+ "questions": [
+  {
+   "q": "So is power posing completely fake?",
+   "a": "Not completely, but the dramatic part has not held up. The original claim was that two minutes in an expansive pose changed testosterone and cortisol and made people more willing to take risks. Larger and pre-registered studies found no effect on hormones or risk-taking. What survived was a small increase in how powerful people said they felt, and even that was weaker among people who had never heard of power posing, which suggests that expectation plays a part. Elkjær and colleagues' review then suggested that avoiding collapsed postures matters more than adopting expansive ones. So the pose is not a hormonal switch. It may be a small mood ritual, and an ordinary upright posture probably does most of the useful work.\n\nIn short: the pose is a story about evidence more than a tool, and an ordinary upright posture probably does most of what it promised.\n\nIf someone tells you it was all a fraud, it is worth knowing that the correction came from inside the field, including from the original study's first author."
+  },
+  {
+   "q": "Why did the original study find an effect if it was not real?",
+   "a": "Small studies can produce striking results by chance, and the original had 42 participants measured on hormones that vary a great deal from person to person and hour to hour. Researchers also make many choices in how they collect and analyse data, such as which measures to report and which participants to exclude, and those choices can push a result towards significance without anyone intending to mislead. In her 2016 statement, Carney set out several of the choices that she thought had produced the original result. This is why pre-registration, committing to the methods before collecting data, matters so much. None of this means the researchers were dishonest. It means that a single small study is a starting point, not a conclusion.\n\nIt also helps to know that the replication crisis has changed practice. Many journals now encourage pre-registration and publish replications, so recent findings tend to be more robust than older ones.\n\nIt is also why this book reports how many people a study included, and whether a finding has been repeated, wherever it can."
+  },
+  {
+   "q": "Should I still do a power pose before an interview?",
+   "a": "If you find it helps you feel braver, there is no harm in it, as long as you know what it does and does not do. It will not change your hormones, and any lift in confidence is likely to be small and partly a matter of expectation. More useful, on the evidence, is to avoid the posture that seems to make things worse: do not spend the last ten minutes hunched over your phone. Walk, sit or stand upright, let your shoulders settle and take a few slow breaths. Then remind yourself that the nerves are your body getting ready, as the chapter on stage presence later in this part describes. And do the pose in private, if at all: hands on hips in the waiting room reads very differently from inside the cubicle.\n\nIf someone else on the interview panel has read about power poses, the last thing you want is to be seen doing one.\n\nIf you use a ritual, choose one you can do in the waiting room without drawing attention: a slow breath out, feet flat, a loose jaw, and a line you say to yourself."
+  },
+  {
+   "q": "Will sitting up straight improve my mood?",
+   "a": "Possibly a little, if you are coming out of a slump. Elkjær and colleagues found that collapsed, contracted postures seemed to lower mood compared with an ordinary upright posture, so avoiding long periods folded over a screen is a reasonable habit. But the effects are modest, and posture is not a treatment for low mood or depression. If your mood has been low for weeks, if you have lost interest in things you usually enjoy, or if you are struggling to get through the day, talk to someone you trust and see your doctor or a support service. Posture can be one small part of looking after yourself, alongside movement, daylight, sleep and other people, but it should never be the only part.\n\nGetting up and walking for a few minutes every hour also breaks the slump without your having to think about posture at all."
+  },
+  {
+   "q": "How should I sit in a meeting so that I seem confident but not arrogant?",
+   "a": "Upright, open and settled, taking the space you need and no more. Sit with your back against the chair or slightly forward, feet on the floor, hands on the table or resting in your lap, shoulders loose. Turn your face and body towards whoever is speaking. Avoid both extremes: the collapsed posture, folded over a phone or a notebook, which can read as disengaged or anxious, and the sprawl, leaning far back with hands behind your head or legs stretched out, which tends to read as dominance or dismissal, especially to people junior to you. The chapter on meeting room geography later in this part describes how where you sit matters as much as how. Calm stillness usually reads as more confident than any expansive display.\n\nIf you are new, settled and attentive reads well. If you are senior, the same posture tells juniors that you are listening rather than presiding.\n\nAnd let your posture change with the conversation. Leaning in slightly when someone makes a good point shows that you are listening; stillness when you speak shows that you are not rushing."
+  },
+  {
+   "q": "How can I tell whether a body language claim is trustworthy?",
+   "a": "Ask a few questions before you believe or repeat it. How many people were studied, and who were they? Has the finding been repeated by other researchers, ideally in larger or pre-registered studies? What was it compared with: a neutral condition, or an opposite one that might have its own effect? How big was the effect, not just whether it existed? Who is telling you, and are they selling something? And be most careful with claims you would like to be true, because those are the ones we check least. The power pose story is worth remembering because it fails almost every one of these tests, and it still travelled further than the replications that corrected it.\n\nNone of this requires a statistics degree. Most of the checks take a few minutes with a search engine and a willingness to be disappointed."
   }
  ],
  "watch": [
