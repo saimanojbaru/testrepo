@@ -81,6 +81,20 @@
    "doCaption": "Starting from the feet, which here point at the door.",
    "dontCaption": "Starting with the face, the channel people manage best.",
    "annotation": "Read each person from the ground up. Faces hold attention so readily that the rest of the body never gets a look."
+  },
+  {
+   "doPoseId": "p_group_three",
+   "dontPoseId": "p_gaze_over_shoulder",
+   "doCaption": "Scan done, back in the conversation",
+   "dontCaption": "Scanning the party over a friend's shoulder",
+   "annotation": "A scan that never ends turns a host into a guard. Run it, act on it, and then join the room."
+  },
+  {
+   "doPoseId": "p_walk_slow_down",
+   "dontPoseId": "p_walk_brisk",
+   "doCaption": "Slowing at the door for sixty seconds",
+   "dontCaption": "Rushing into a room without a look",
+   "annotation": "A minute at the threshold, in a fixed order, finds more than an hour of staring once you are inside."
   }
  ],
  "caseStudy": "Joe has coached an under-twelves football team on Saturday mornings for three seasons. His assistant, Craig, is a former semi-professional player with a sharp eye for talent. Both men watch the boys closely, but they watch differently.\n\nOne October morning Joe runs his scan as he walks from the car park. Himself: rushed, a little irritable after a late night. The pitch: wet, cold wind from the north, parents clustered by the gate to keep warm. The groups: the usual knot of boys kicking a ball against the fence, two pairs doing keepy-uppies, a few still with their parents. The exception: Theo, normally one of the noisiest, standing on his own by the corner flag with his hood up, hands in his sleeves, facing away from the others.\n\nCraig, watching the same scene, sees who is sharp in the warm-up and who is slow off the mark. When Theo misplaces three passes he notes it and moves him to the second group.\n\nJoe treats the exception as a question, not a verdict. Cold and tired is the obvious rival explanation; it is a raw morning. So rather than asking Theo what is wrong, he gives him a job, setting out the cones with him, and talks about nothing much while they do it. Theo says almost nothing, then mentions that his dad is not coming to watch any more because he has moved out.\n\nJoe does not dig. He tells Theo he is glad he came, keeps him in his usual group, and at pick-up tells Theo's mother only that Theo seemed quieter than usual and that he had enjoyed setting up with him. She thanks him and says it has been a hard month.\n\nOver the next few weeks Theo arrives a little earlier each Saturday and starts helping with the cones without being asked. Craig, still watching for talent, never learns why.",
@@ -99,6 +113,11 @@
     "Watch it again with no task, simply taking in the scene.",
     "List everything you noticed on the second viewing that you missed on the first.",
     "Write one sentence about what your task made you blind to."
+   ],
+   "variations": [
+    "Try the drill with a task of your own choosing in a real place, such as counting red coats on a high street, and then look again without the task.",
+    "Do the drill with a friend, each counting something different, and compare what each of you missed.",
+    "Watch a short clip of your own workplace or family gathering, if you have one, and notice what you missed while it was happening."
    ]
   },
   {
@@ -110,6 +129,11 @@
     "Immediately afterwards, write one line for each beat.",
     "Compare the three sets of notes and mark which beat produced the most useful line.",
     "Note which beat you were tempted to skip, and do that one first tomorrow."
+   ],
+   "variations": [
+    "Run the four beats at a place you visit often, and notice whether familiarity makes you skip the room or the groups.",
+    "Time each of the four beats for a few days, and notice which one you most often rush through.",
+    "Run the four beats before you walk into your own home after work, and notice what you see that you usually miss."
    ]
   },
   {
@@ -121,6 +145,11 @@
     "For each person, note whether the face and the lower body seemed to say the same thing.",
     "Where they differed, write one ordinary explanation for the difference.",
     "Stop if anyone notices you looking, and choose someone else."
+   ],
+   "variations": [
+    "Practise ground-up reading on people in a film with the sound off, which removes any risk of staring at strangers.",
+    "Read one person you know well from the ground up, with their permission, and ask them afterwards whether your reading matched how they felt.",
+    "Notice your own feet and legs at the end of a meeting, and whether they were pointing at the door."
    ]
   },
   {
@@ -132,6 +161,11 @@
     "Without approaching or staring, watch for a minute to see whether an ordinary explanation appears.",
     "Repeat twice more in different places.",
     "Write down how many of the three exceptions turned out to need anything from anyone."
+   ],
+   "variations": [
+    "Look for an exception that might need something other than help, such as someone who is simply enjoying being alone, and notice how you tell the difference.",
+    "Run the drill at a family gathering, and notice whether the exception you find is a person you would usually overlook.",
+    "Keep a tally over a week of how many exceptions needed anything at all, and notice whether your scans become calmer."
    ]
   },
   {
@@ -143,6 +177,11 @@
     "Count how many people you can track by movement alone, and which way each is facing.",
     "Practise glancing at one person for under a second and returning to your point.",
     "Repeat until the glance and the return feel natural rather than furtive."
+   ],
+   "variations": [
+    "Practise soft eyes while walking, keeping your gaze ahead and noticing how much of the street you can still take in.",
+    "Try the drill in a quieter place first, such as a library, before moving to a busier one.",
+    "Notice how other people manage civil inattention with you, and how brief their glances are."
    ]
   }
  ],
@@ -224,6 +263,45 @@
    "explain": "Research on how assailants choose victims is a warning about what scanning can be used for, not a technique to copy. The scan in this book ends with the question of who could use something from you. If it ends with who would be easy, it has become something else.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Anne Treisman's work on attention, which kind of item seems to pop out of a scene without effort?",
+   "options": [
+    "An item defined by a particular combination of several different features",
+    "A single item that differs from everything around it in one simple feature",
+    "An item that is placed at the very centre of the scene, whatever it looks like",
+    "An item that the viewer has been told about in advance by the researchers"
+   ],
+   "answer": 1,
+   "explain": "A single item that differs in one simple feature, such as a red dot among green ones, pops out, while items defined by combinations of features need slow search. Rooms work similarly: the still person in a moving crowd stands out.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "On playground duty, a teacher sees a boy with a calm face chatting to a friend, but his feet and body are turned towards the gate and he keeps glancing at the road. What fits this chapter best?",
+   "options": [
+    "Read him as fine, since his calm face is the clearest sign of how he feels",
+    "Treat the difference as a question, and sit nearby to ask an ordinary question",
+    "Tell him firmly to move away from the gate, since he is clearly planning to leave",
+    "Call his parents straight away, since a child watching the road is always at risk"
+   ],
+   "answer": 1,
+   "explain": "Faces are the most managed part of the body; feet and orientation are among the least. When they disagree, the difference is a question worth asking, gently, with a small action that costs nothing if all is well.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says peripheral vision is useless for reading people, so you have to look straight at each person. What does this chapter suggest?",
+   "options": [
+    "That peripheral vision is poor at detail but good at movement and orientation, which is most of a scan",
+    "That peripheral vision is better at detail than central vision, so you never need to look directly at anyone",
+    "That peripheral vision only works in bright light, so it is no use in most rooms where people gather",
+    "That peripheral vision is only useful for spotting threats, and tells you nothing about anyone's mood"
+   ],
+   "answer": 0,
+   "explain": "Soft eyes rest lightly on a point and take in motion and orientation at the edges of vision, which is most of what a scan needs, while honouring civil inattention. A hard, fixed stare is both less effective and more intrusive.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +330,110 @@
    "work": "Attracting assault: Victims' nonverbal cues",
    "author": "Betty Grayson and Morris I. Stein",
    "note": "Journal of Communication 31(1), 1981. Read as a warning about what scanning can be used for."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The waiter counting covers",
+   "scene": "Rafael, twenty-six, is a waiter at a busy restaurant, and on Friday nights he works the main floor alone for the first hour. His manager has\n  asked him to keep count of covers and table turns, because the kitchen is struggling. Rafael is good at it. He sweeps the room every few minutes,\n  counting who is seated, who is waiting for a menu, who has finished and who has asked for the bill.\n\n  At half past seven, he is in the middle of a count when Mrs Ferreira, eighty-two, a regular who comes in every Friday, arrives at the door. She uses\n  a walking frame, and the restaurant is crowded. She stands by the door for several minutes, unable to get through the gap between two tables to her\n  usual seat by the window. Rafael passes within two metres of her three times. Each time he is counting, and each time he does not see her.\n\n  Eventually a customer at a nearby table stands up, helps her through and pulls out a chair. Mrs Ferreira sits down, upset, and when Rafael arrives\n  with a menu she says quietly that she had thought he was ignoring her.\n\n  Rafael is mortified. He had been looking at the room the whole time. He tells his manager afterwards that he did not see her, and his manager does not\n  quite believe him.\n\nHe had also, earlier that evening, failed to notice a child's spilled drink spreading across the floor by table six until he slipped in it. He had put it down to being busy.\n\nHe also realises, later, that the counting had felt like attention, which is why he had been so sure he was watching the whole room.",
+   "misread": "Mrs Ferreira read Rafael's passing her three times as deliberate neglect, and his manager read his account as an excuse. Rafael read his own failure as carelessness, when he had been doing exactly what he was asked.\n\nThe customer who helped Mrs Ferreira through read Rafael as an indifferent young waiter, and left a review saying so.\n\nAnd Rafael's manager read the miss as a lack of care, when it was the predictable result of the task he himself had set, done well.",
+   "betterRead": "Simons and Chabris found that about half of the viewers counting basketball passes never saw a person in a gorilla suit walk through the game. The task consumed the attention that would have noticed the gorilla. Rafael's counting was such a task, and Mrs Ferreira, standing still in a moving room, was the exception that the scan in this chapter is designed to find. The better approach was to separate the two jobs. Rafael kept counting covers, but at each pass through the room he added one beat without a task: soft eyes, a sweep for anyone who stood apart from the pattern, and one question about who might need something. He also asked the manager to keep a gap clear by the door. The following Friday, he saw Mrs Ferreira before she was through it, and her usual table was ready.\n\nMrs Ferreira, the following week, told him that he had been the first waiter in years to have her table ready before she asked."
+  },
+  {
+   "title": "The guard who stared",
+   "scene": "Barry, fifty-two, is a security guard at a shopping centre, and he prides himself on noticing things. He stands near the main entrance and\n  watches everyone who comes in, hard and steadily. When a group of teenagers arrives, he fixes on them, follows them with his eyes as they cross the\n  atrium and keeps watching after they have gone into a shop.\n\n  The teenagers notice. They start to play up to it, walking slowly past him, staring back, laughing. One of them, a boy of fifteen, Kai, asks him what\n  his problem is. Barry tells him to move along. The boy's friends film it. Within a week, the clip has been shared around the local school, and the\n  shopping centre's manager, Joanne, receives two complaints from parents saying that their children are being treated like criminals.\n\n  Joanne watches the CCTV from the afternoon. In two hours, Barry looked at the teenagers for nearly forty minutes in total. In the same two hours, a man\n  who was later reported for taking a woman's purse from her bag in the café walked past Barry twice, unwatched.\n\n  She asks Barry to come and see her.\n\nBarry has also, over the years, been praised by managers for his alertness, and has come to believe that watching hard is the same as watching well.\n\nJoanne also notices, on the footage, that every time Barry stares, the teenagers slow down and look back at him, which makes them look more suspicious to anyone watching the screen.",
+   "misread": "Barry read his steady, hard watching of the teenagers as vigilance and good security. The teenagers read it as an accusation and responded to it, so that their behaviour began to confirm the suspicion that had caused it.\n\nThe parents who complained read the clip as evidence of a guard who disliked young people, which was partly right, and missed that he had simply been taught to stare.\n\nBarry's previous managers had read his staring as diligence, and praised it, which is how the habit had grown.",
+   "betterRead": "Goffman described civil inattention: the brief glance that acknowledges a stranger, followed by a withdrawal of attention that signals they are not an object of special interest. Barry's stare broke it, and broke it at a group of children, which changed the behaviour he thought he was reading. This chapter also describes how a hard, fixed stare is less effective than soft eyes, a relaxed gaze that takes in movement and orientation at the edges of vision: by fixing on the teenagers, Barry missed the man in the café. Joanne's better approach, which she trained into the team, was the scan as this chapter describes it: short sweeps in a fixed order, soft eyes, brief glances at individuals, and action only on specific behaviour. Barry was sceptical at first. Within a month, he had stopped two thefts, and the complaints from parents had stopped too.\n\nBarry also started saying hello to the teenagers who came in regularly, with a nod and a brief glance, which they returned."
+  },
+  {
+   "title": "The host who never stopped scanning",
+   "scene": "Ross, thirty-seven, is hosting a fortieth birthday party for his wife, Fiona, in their house: forty guests, music in the kitchen, the garden\n  lit with lanterns. He wants it to go perfectly, and he has read the earlier sections of this chapter. All evening, he scans. He stands in doorways\n  and sweeps the room. He checks who is on their own, who has an empty glass, who is near the door, which groups are tight and which are drifting. He\n  moves from room to room doing it.\n\n  He is very good at spotting things. He refills glasses, rescues a shy neighbour from a corner and introduces two people who turn out to get on well.\n  But he barely talks to anyone for longer than a minute, and by eleven o'clock several guests have remarked to Fiona that Ross seems on edge. His oldest\n  friend, Dougie, tries three times to have a proper conversation with him, and each time Ross's eyes drift over Dougie's shoulder to the room.\n\n  After the guests have gone, Fiona says, gently, that it felt as though he had been working the party rather than at it. She also says that she\n  missed him.\n\n  Ross is tired in a way he does not understand, and slightly hurt. He had been trying to make it perfect for her.\n\nHe also, at one point, interrupts Fiona's sister mid-story to go and rescue a guest from a corner, and does not notice the look on her face as he leaves.",
+   "misread": "Ross read his constant scanning as good hosting and his catches as proof that it was working. His guests, and Dougie in particular, read his drifting eyes as distraction and nerves, and felt that he was not quite with them.\n\nAnd Ross read his own tiredness, at the end of the night, as the ordinary exhaustion of a host, when it was the cost of four hours of vigilance.",
+   "betterRead": "This chapter describes the scan as having an output and an end: a single question or small action, and then you stop and join the room. A scan that never ends is not perception but vigilance, tiring for the scanner and unsettling for the people around him. Ross's catches were real, but each one cost him a conversation, and the cumulative effect was a host who was everywhere and nowhere. The better approach, for the next party, was to run the scan once at the start and then once every half hour or so, as the observation in this chapter suggests, and between scans to stay in one conversation at a time. He also asked his sister to keep an eye on glasses and the shy neighbour, so that he did not have to. At Dougie's fiftieth, a year later, he spent forty minutes talking to the same three people, and Fiona said it was the best party he had ever been to."
+  },
+  {
+   "title": "The boy at the gate",
+   "scene": "Bethan, twenty-nine, is a primary school teacher, and on Wednesdays she is on playground duty at lunchtime. Like most of her colleagues, she\n  reads the playground by faces: who is laughing, who is crying, who looks cross. One Wednesday, she notices Leo, eight, sitting on a bench near the\n  school gate. His face is calm. He is chatting to a friend. She reads him as fine and moves on.\n\n  A few minutes later she happens to glance back and, without quite knowing why, looks at him again from the ground up, as she has read in this\n  chapter. His feet are both pointed at the gate, his body is turned slightly towards it, one hand is gripping the edge of the bench, and he keeps\n  glancing past his friend at the road. His face is still calm.\n\n  She walks over, sits on the end of the bench and asks Leo and his friend what they are talking about. Leo says football. Then he says, without being\n  asked, that his mum said she might come and get him at lunch because his nan is in hospital, and that he is waiting to see if she comes.\n\n  Bethan says that she will check with the office, and that if his mum comes, someone will come and find him straight away.\n\nHer colleague on the other side of the playground, asked later, says that she had seen Leo too, and had thought he looked perfectly happy.\n\nShe also notices that Leo's school bag is beside him on the bench, packed and zipped, at the start of lunch, which no other child's is.",
+   "misread": "Bethan's first reading, from Leo's calm face and his chat with a friend, was that he was fine. The rest of his body, which she had not looked at, was oriented entirely towards the gate and the road.\n\nLeo's friend, sitting beside him, had read him as fine too, because Leo had been working hard to seem it.\n\nLeo, too, had read the adults around him as unlikely to help, and had decided to wait at the gate on his own rather than ask anyone.",
+   "betterRead": "This chapter explains why the scan reads each person from the ground up and leaves the face for last: the feet and legs are among the least managed parts of the body and the face the most, and faces capture attention so readily that they tend to hold you. Leo's face was managed, as children's often are with adults, and his feet, his torso and his grip on the bench told the truer story. The better reading treated the orientation as a question rather than a verdict: it might have meant nothing, or a plan to slip out, or a worry. Sitting down and asking an ordinary question was the small action. The office confirmed that his mother was on her way, and Bethan walked Leo to reception when she arrived. Afterwards, she started reading the playground from the ground up, and noticed two more children that term who were waiting for something.\n\nShe also mentioned the pattern to her colleagues at the next staff meeting, without naming Leo, and two of them started reading the playground the same way."
+  }
+ ],
+ "workedReading": {
+  "title": "Running the scan at a wake",
+  "scene": "Alun, fifty-five, has driven three hours to the wake for his oldest friend, Gwyn, who died suddenly last week. The wake is in a rugby club function room, crowded, warm and loud, with a bar along one wall and doors open to a car park where some people have gone to smoke. Alun knows Gwyn's wife, Sian, and their two children well, and very few of the other hundred people there. He is grieving, and he wants to be useful rather than in the way. As he stands in the doorway, he decides to run the sixty-second scan in its four beats before he goes in, and then to stop, because he does not want to spend his friend's wake watching people.\n\nHe also knows that wakes can be hard places to read, because grief makes some people loud and others very still, and he reminds himself that most of what he sees will be ordinary mourning, not anything that needs him.",
+  "steps": [
+   {
+    "label": "Yourself first",
+    "text": "He notices that his jaw is tight, his breathing is high and his shoulders are up. He is tired from the drive and close to tears. He wants, more than anything, to find Sian and do something. He breathes out slowly once. The first beat matters, as the first chapter of this part explained: his state will colour everything he sees, and he wants to know it is there before he starts reading anyone.\n\nHe also notes, honestly, that he wants to be needed, and that this may make him see need where there is none."
+   },
+   {
+    "label": "The room",
+    "text": "He takes in the room: the bar on the left with a crowd three deep, the buffet table at the far end, a slideshow of photographs on a screen near the window, the open doors to the car park, and the noise, which is loud enough that people are leaning in to talk. He notes that the room is pushing people into clusters by the bar and the buffet, and leaving the corners by the screen nearly empty.\n\nHe also notices that the open doors to the car park are where people go to be alone for a minute, and that this is part of how the room works."
+   },
+   {
+    "label": "The groups",
+    "text": "He looks at the groups with soft eyes, not fixing on anyone. Gwyn's rugby friends are in a tight knot by the bar. Sian is in the middle of the room, surrounded, receiving a stream of people. Several older relatives are seated along one wall. A group of teenagers, friends of Gwyn's children, are by the buffet. Most groups face inwards. He does all this in about fifteen seconds, with brief glances, so that nobody feels watched.\n\nHe also notices that Gwyn's daughter is with her friends by the buffet, laughing, and reads it as ordinary grief, not as anything wrong."
+   },
+   {
+    "label": "One person, from the ground up",
+    "text": "One figure stands apart: Gwyn's son, Rhys, sixteen, by the screen, alone, watching the slideshow. Alun looks at him from the ground up. His feet are together, pointed at the screen; his hands are pushed deep in his pockets; his shoulders are raised and his head is down. His face, when he glances round at the room, is composed. The rest of him is not.\n\nHe resists the urge to keep looking. A second glance would have been enough; a third would have been staring.\n\nHe also notes that Rhys is standing where he can see the door, as if ready to leave, which adds to the question rather than answering it."
+   },
+   {
+    "label": "The exception as a question",
+    "text": "Alun does not conclude anything. Rhys might want to be alone, which would be perfectly reasonable. He might be avoiding the crowd. He might be close to breaking down. The scan has found an exception, and the chapter is clear that an exception is a question, not a discovery. Alun's question is simple: is Rhys on his own because he wants to be?\n\nHe also reminds himself that if Rhys wants to be alone, the kindest thing will be to leave him there.\n\nHe also checks his own state again: the urge to be useful is strong, and he reminds himself that his question is about Rhys, not about his own need to help."
+   },
+   {
+    "label": "One small action",
+    "text": "He gets two glasses of water from the bar and walks over to the screen, slowly, stopping a little to the side of Rhys rather than in front of him, so that they are both facing the photographs. He offers a glass and says, \"That's your dad at my wedding. He lost the rings.\" Rhys laughs, takes the water, and after a minute says that he cannot face talking to anyone else today. Alun says he does not have to, and stays, side by side, looking at the photographs, saying very little.\n\nHe also does not ask Rhys how he is feeling, which, he suspects, Rhys has been asked fifty times that day."
+   },
+   {
+    "label": "Stop scanning, and be there",
+    "text": "After twenty minutes Rhys goes to find his sister, and Alun goes to find Sian. He does not run the scan again for the rest of the afternoon. He talks to Gwyn's rugby friends, tells two stories, cries once in the car park, and leaves at six. Sian rings him a week later to say that Rhys had told her Alun was the only person at the wake who did not ask him how he was feeling.\n\nHe also notices, driving home, that he feels he was at the wake rather than watching it, which was what he had wanted."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Scanning only for threat",
+   "body": "When people learn to scan, many start looking mainly for danger: the person who seems agitated, the group that might cause trouble, the stranger who does not fit. Some of that is sensible, especially in jobs such as security. But a scan aimed only at threat narrows quickly, and it misses most of what the scan in this chapter is meant to find: the person who is lost, alone, unwell, upset or waiting for something, as Leo was at the gate and Mrs Ferreira was at the restaurant door. A threat-only scan also tends to land on the same kinds of people over and over, often young men, often from particular backgrounds, as Barry's did, and breaks civil inattention with exactly the people least likely to be doing anything wrong. End every scan with the question this chapter recommends: who here might need something? Threat is one possible answer among many.\n\nIt also helps to notice whose behaviour you most often read as threatening, and whether the pattern is about them or about you.\n\nA threat-only scan also wears out the scanner faster, because it keeps the body braced for something that rarely comes."
+  },
+  {
+   "title": "Using the scan to find the vulnerable for the wrong reasons",
+   "body": "The ability to sweep a room and pick out the person who stands apart is not morally neutral, as this chapter says plainly. Grayson and Stein's study, often cited in self-defence courses, found that people judged by others to be easy targets moved in recognisable ways. Some readers will notice that the same skill could be used to find people to exploit: the lonely customer who can be sold to, the newcomer who can be pressured, the person who will not complain. This book does not teach that, and the scan is not for it. The ethics chapter in this part sets out the line: reading is for understanding and helping, never for steering people against their interests. If you notice that your scans are increasingly aimed at finding people who are easy to influence, stop, and ask what you are using the skill for.\n\nA simple test is to ask whether the person you have noticed would thank you for what you plan to do. If not, do not do it."
+  },
+  {
+   "title": "Skipping yourself",
+   "body": "The first beat of the scan, yourself, is the one people most often skip, because it feels like a delay before the interesting part. It is not a delay. Your state colours everything that follows: a man who walks into a room tired and braced will read tension in the groups that a rested man would read as ordinary chat, and a man who wants a deal to close will read warmth in a client who is simply being polite. The first chapter of this part makes the same point for the journal. Fifteen seconds is enough: breath, shoulders, jaw, and one honest answer to the question of what you want from this room. Alun noticed that he was close to tears before he looked at anyone, which let him read Rhys more gently. If you skip the first beat, every later beat carries your state without your knowing.\n\nIt is also worth noticing whether your state changes the kind of exception you find: tired scans tend to find threats, hopeful ones find warmth."
+  },
+  {
+   "title": "Mistaking the room for the person",
+   "body": "The second beat of the scan, the room, often explains more behaviour than any person does. A cold office keeps arms folded; a loud bar makes everyone lean in close; a narrow hallway crowds bodies together; a slideshow of a dead friend makes people stand still and quiet. Readers who skip the room, or rush it, tend to attribute to people what belongs to the setting: reading folded arms in a draughty meeting room as defensiveness, or closeness in a noisy pub as intimacy. Before you read any person, ask what the room is doing to everyone in it. If most people share a behaviour, it is probably the room. The exception worth noticing is the person who differs from what the room is pushing everyone else to do, not the person who is simply doing what the room demands.\n\nA good habit is to ask, before reading any person, what you would be doing in their place in this particular room."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Won't people notice me scanning them?",
+   "a": "Not if you do it as this chapter describes. A scan done with soft eyes, a relaxed gaze resting lightly on a point and taking in movement and orientation at the edges of vision, is almost invisible. When you need to look at an individual, a glance of under a second, followed by a return to your resting point, is the brief acknowledgement Goffman called civil inattention, which strangers extend to each other all the time. What people do notice is a hard, fixed stare, a head that swivels to follow them, or eyes that keep drifting over someone's shoulder during a conversation, as Ross's did. The Soft Eyes drill practises the glance and the return. If anyone notices you looking, look away, and choose someone else, or stop.\n\nIt also helps to scan from a natural position, such as a doorway or a seat, rather than from the middle of a room where your eyes are more noticeable."
+  },
+  {
+   "q": "How do I stop scanning once I have started?",
+   "a": "By giving the scan an end. This chapter's rule is that every scan produces one question or one small action, and then stops: you put it down and join the room. Tie it to transitions, such as walking into a room or sitting down, so that it happens at natural moments rather than continuously. At a long event, a scan every half hour is plenty. If you find that you cannot stop scanning, that you sweep every room for threats, cannot relax in crowds and feel constantly on alert, that may be a sign of something more than a habit. People who have been through trauma or long periods of stress sometimes find themselves stuck in this state, and it is worth talking to your GP, who can help you find support.\n\nIt can also help to put the scan down deliberately, with a small physical signal to yourself such as sitting down or picking up a drink."
+  },
+  {
+   "q": "What should I do if the scan finds someone who seems to need help?",
+   "a": "Start with the smallest, lowest-key action that would help if they need it and cost nothing if they do not. Treat what you have noticed as a question, not a conclusion, as Joe did with Theo, Bethan with Leo and Alun with Rhys. Often the best action is to make yourself available without making them the centre of attention: give them a job, offer a drink, sit beside them, ask an ordinary question. Avoid asking \"What's wrong?\" or \"Are you OK?\" in front of others, which puts people on the spot. If the person is a child, tell the adult responsible. If someone is in danger or in a medical emergency, get help at once. And if they make it clear they want to be left alone, respect it.\n\nAfterwards, resist the urge to tell others what you noticed. The person you helped may not want it known.\n\nAnd if your action turns out to be unnecessary, that is fine. A friendly word costs nothing and is rarely unwelcome."
+  },
+  {
+   "q": "Does the scan work on video calls?",
+   "a": "In an adapted form. The yourself beat is the same: notice your own state before the call starts. The room becomes the call itself: how many people, who has video on, how good the connection is, whether there is a delay. The groups become the patterns of who talks to whom and who reacts to whom. And the exception is often easier to spot on a gallery view: the one person with the camera off, the one who has not spoken, the one whose face has gone still while everyone else is nodding. The chapters on video calls in Part IV explain how much the camera distorts, so hold readings even more lightly. End the scan, as always, with one question, such as whether to ask the quiet person for their view, and then get on with the call.\n\nIt also helps to scan at the start of the call, before the agenda takes over, since that is when the task-free beat is easiest."
+  },
+  {
+   "q": "Why start with the feet rather than the face?",
+   "a": "For two reasons, both described in this chapter. The first is the gradient of control: most people manage their faces carefully and their feet and legs hardly at all, so the lower body gives you the less curated signal first, as Leo's feet did at the gate. The second is that faces capture attention more readily than almost anything else in a scene; if you start with a face, it tends to hold you, and you may never look at the rest. Reading from the ground up corrects for both. It does not mean that feet are more truthful than faces in some absolute sense. Often the two agree. When they disagree, the disagreement is the thing worth noticing, and the question worth asking.\n\nIt also helps to notice whether you were drawn to the face before you had finished the sweep, which happens to almost everyone at first."
+  },
+  {
+   "q": "Can I train myself to stop missing things like the gorilla?",
+   "a": "Not entirely, and it would not help if you could. Inattentional blindness is a consequence of attention itself: when you focus on a task, you stop noticing what the task does not need. Nobody can attend to everything at once. What you can do is choose your tasks deliberately, and build in moments without a task, as the Count and Miss drill demonstrates: a second look at a scene with no counting, no searching, just taking it in. The scan's fixed order works in the same way: by moving through the beats, you give your attention a series of small, different tasks rather than one large one. Rafael did not stop counting covers; he added a beat in which he was not counting anything.\n\nIt also helps to accept that you will always miss something, and to build habits, such as a second look, that catch the important misses."
   }
  ],
  "watch": [
