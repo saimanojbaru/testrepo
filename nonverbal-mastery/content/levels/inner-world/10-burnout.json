@@ -80,6 +80,20 @@
    "doCaption": "Taking it seriously, and listening.",
    "dontCaption": "Hurrying him back to work when he says he is useless.",
    "annotation": "When capable people start calling themselves useless, the collapse in efficacy is real and deserves attention, not argument."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "A walk with a friend, the phone left at home",
+   "dontCaption": "Slumped at the screen long after hours",
+   "annotation": "Recovery needs real detachment from work. Time away that is still spent on emails gives the body no rest from the strain."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_pro_taking_notes",
+   "doCaption": "Asking first about workload and support",
+   "dontCaption": "Logging his mistakes for a warning",
+   "annotation": "Errors from a once-careful worker often follow exhaustion and distance. Asking about the job comes before managing the person."
   }
  ],
  "caseStudy": "Ravi, thirty-eight, teaches maths at a busy secondary school and has a reputation as one of its best teachers. For years he ran the chess club at lunchtime and stayed late to help pupils before exams. In the autumn, Graham, his head of department, notices changes. Ravi has stopped running the chess club. In the staffroom he makes sour jokes about the pupils being just numbers on a spreadsheet. He looks grey, has been off sick three times since September, and twice has forgotten to set cover work.\n\nAnother senior teacher suggests a quiet word about professionalism. Graham decides to ask a different question first. He catches Ravi at the end of a day, sits with him in an empty classroom, and says that Ravi seems shattered and not himself, and asks what has changed this term. Ravi says he is fine. Graham waits. Then Ravi says that since two colleagues left in the summer and were not replaced, he has been teaching an extra five lessons a week, covering another teacher's exam classes, and marking until midnight. He feels he is failing every class he teaches.\n\nGraham takes the workload to the head the next day, with the numbers. Two of Ravi's extra classes are moved to a supply teacher. Graham also tells Ravi, plainly, that his teaching is still among the best in the department, and suggests he see his doctor about his sleep. Ravi does, and his doctor also asks about his mood more broadly; it is mainly work, Ravi says, and the doctor agrees to see him again in a month.\n\nRavi starts leaving his marking at school on Fridays. By February he is less grey. In March, a pupil asks whether chess club is coming back. Ravi says it might, on Thursdays.",
@@ -98,6 +112,10 @@
     "For each, note how it compares with how they were a year ago.",
     "Note anything that suggests the difficulty reaches beyond work.",
     "Write one private, behaviour-first question you could ask them."
+   ],
+   "variations": [
+    "Do the exercise for yourself, honestly, and compare the picture with how you were a year ago.",
+    "Do the exercise for someone outside work, such as a carer or a parent at home, and see which dimensions apply."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Mark the two weakest areas.",
     "For each, write one change that would help, and who could make it.",
     "Write one sentence you could use to raise it with that person."
+   ],
+   "variations": [
+    "Ask a colleague to rate the six areas for their own job, and compare their weakest areas with yours.",
+    "Rate the six areas for a job you left, and see whether the weakest areas explain why you left."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Fill the time with something absorbing, such as exercise, a hobby or people.",
     "Each night, note how often your mind went back to work and what you did about it.",
     "At the end of the week, compare your energy with the week before."
+   ],
+   "variations": [
+    "Extend the detachment to one whole weekend day, and note what you did with the time.",
+    "Ask someone you live with to tell you when they notice you thinking or talking about work after your chosen time."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Say or send each sentence this week.",
     "Notice their response.",
     "Write down how often you usually give recognition, honestly."
+   ],
+   "variations": [
+    "Give recognition to someone more senior than you, such as your manager, and notice their response.",
+    "Recognise someone's effort on a piece of work that went badly, not only on what went well."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Write which of the six areas was most out of balance at the time.",
     "Write who noticed, if anyone, and what they did.",
     "Write one thing you would do differently if those first signs appeared again."
+   ],
+   "variations": [
+    "Share your first signs with one person at work and one at home, and ask them to tell you if they see them.",
+    "Write down which of the six areas you would most want to protect in your next job, and why."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "When exhaustion and hopelessness reach well beyond work, it may be more than burnout. Encouraging a doctor helps tell these apart, and hopelessness is a reason to ask directly whether he has had thoughts of suicide.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Who popularised the term burnout in 1974, and among which group?",
+   "options": [
+    "Herbert Freudenberger, describing volunteers at a free clinic",
+    "Christina Maslach, describing professional footballers at the end of their careers",
+    "The World Health Organization, describing factory workers in several countries",
+    "Sigmund Freud, describing his own patients during the early years of psychoanalysis"
+   ],
+   "answer": 0,
+   "explain": "Herbert Freudenberger used the term in 1974 to describe the exhaustion and disillusionment he saw among dedicated volunteers at a free clinic, himself included. Maslach's research came later and gave it its three dimensions.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A nurse who used to know every patient by name now refers to them by bed number, looks grey and eats alone. Her matron wants a formal talk about attitude. What fits this chapter best?",
+   "options": [
+    "Hold the formal talk at once, since referring to patients by number is unprofessional",
+    "Send her on an online resilience course and review her attitude again in six months",
+    "Ask her privately how things have been, and look at her workload and support",
+    "Move her to another ward without explanation, so that the problem goes away"
+   ],
+   "answer": 2,
+   "explain": "Bed numbers, a grey face and withdrawal fit the distance and exhaustion of burnout, and a change from a caring baseline points to the conditions. Asking, and changing the workload, does more than a talk about attitude.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a good two-week holiday will cure anyone's burnout. What does the research suggest?",
+   "options": [
+    "It is right, since a fortnight away resets the body's stress systems completely",
+    "The benefits usually fade within weeks of return if the work stays the same",
+    "It is right, but only if the holiday is spent somewhere with a hot climate",
+    "It is wrong, since holidays make burnout worse by adding travel stress"
+   ],
+   "answer": 1,
+   "explain": "Studies reviewed by de Bloom and colleagues found that holiday benefits tend to fade within a few weeks of returning to work. Without changes to the work itself, burnout tends to come back.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "Recovery from job stress: The stressor-detachment model as an integrative framework",
    "author": "Sabine Sonnentag and Charlotte Fritz",
    "note": "Journal of Organizational Behavior 36(S1), 2015. Why switching off from work matters."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The nurse who started saying 'bed six'",
+   "scene": "Joy, forty-one, has been a nurse on a busy surgical ward for twelve years. She is the one the students ask for, the one relatives\n  remember by name. Over the past year the ward has lost four nurses and replaced two, and Joy has been working extra shifts most weeks. Her ward\n  manager, Sandra, has started to notice changes. Joy no longer chats with patients as she does her rounds. At handover she refers to them by bed\n  number: \"bed six is post-op, bed nine needs a scan.\" Her face is flat and grey, and she has stopped joining the others in the staff room,\n  eating at the nurses' station instead, staring at her phone. Last week a relative complained that Joy had been curt with her mother.\n\n  The matron suggests a formal conversation about attitude, and says that the trust offers an online resilience course that Joy could be asked to\n  complete.\n\n  Sandra is not sure. She has worked beside Joy for eight years, and the woman at the nurses' station does not look like someone with a bad\n  attitude. She looks like someone who has been emptied out.\n\nSandra has also noticed that Joy has stopped bringing in the homemade cakes she used to bring every Friday, and that she no longer stays to chat at the end of a shift. Last month she forgot her own birthday until a student mentioned it.\n\nJoy's husband rang the ward once, last month, to ask whether she had been held up at work. She had left on time. She had been sitting in her car in the hospital car park for an hour before she could face driving home.",
+   "misread": "The matron read Joy's flatness, curtness and bed numbers as an attitude problem, something to be corrected through a formal conversation and a course. That reading placed the whole difficulty inside Joy, and none of it in the ward.\n\nAnd because the trust's response to burnout was a course, it also sent Joy a message: that the problem was her ability to cope, not the number of nurses on the ward.\n\nThe relative's complaint also became, in the matron's eyes, proof of a pattern, when a single curt exchange from an exhausted nurse after a fourteen-hour shift says more about the shift than about the nurse.",
+   "betterRead": "Joy showed all three of the WHO's dimensions of burn-out: exhaustion in her grey face and her eating alone; distance in the bed numbers, which Maslach called depersonalisation, a way of protecting oneself by caring less; and, in the complaint, the beginning of reduced efficacy. Against twelve years of baseline as the ward's most caring nurse, the change pointed less to her character than to her conditions. Maslach and Leiter's six areas fitted closely: workload far too high, little control over shifts, care unrecognised, and a team stretched thin. A resilience course would have treated the symptom and left the cause. Sandra's better approach was to ask Joy, privately, how the past year had been, and to listen. Joy cried, and said she no longer recognised herself. Sandra stopped asking her to cover extra shifts, protected her days off, told the matron that the ward needed more staff rather than more courses, and made sure Joy's work was thanked, out loud, at the next team meeting.\n\nJoy said later that what helped most was not the days off but being asked. Nobody had asked her how she was for over a year."
+  },
+  {
+   "title": "The owner who could not switch off",
+   "scene": "Callum, forty-five, runs a small building firm he started fifteen years ago. He has eight employees and a reputation for doing things\n  properly. This year has been brutal: a supplier went bust, two clients have not paid, and he has been working seven days a week to keep the\n  business going. His wife, Leanne, watches him change. He falls asleep on the sofa at half past eight and wakes at four, unable to get back to\n  sleep. He checks his phone constantly, including at the dinner table. He has stopped going to his son's football matches. When Leanne asks\n  how the business is, he says, \"What's the point? Every time I fix something, something else breaks.\"\n\n  Leanne suggests a holiday. Callum says he cannot possibly take one, and then, when she books a week in Spain anyway, he spends most of it on his\n  phone by the pool. Two days after they get back, he looks exactly as he did before they left.\n\n  His brother, who also runs a business, tells Leanne that Callum just needs to toughen up, because that is what running a firm is like.\n\nCallum has also started drinking more in the evenings, two or three beers where he used to have one, and has stopped going to the gym he went to every morning for ten years. He says he does not have time.\n\nCallum's employees have noticed too. His foreman says he snaps at them over small mistakes and then apologises, which he never used to do, and that he has started doing jobs himself rather than trusting anyone else to do them.",
+   "misread": "His brother read Callum's exhaustion and pessimism as a lack of toughness. Leanne's own first reading, that a break would fix it, treated a long-running mismatch with his work as ordinary tiredness that rest could cure.\n\nHis own reading was the cruellest. He took his exhaustion as proof that he was failing his business, his family and his employees, which pushed him to work harder still.\n\nThe holiday reading was kind and understandable. It simply treated the symptom, tiredness, as the cause, and so promised a cure that a week could not deliver.",
+   "betterRead": "Burnout is not confined to employees, and owners of small businesses often have the heaviest workload and the least chance to switch off. Callum's exhaustion that sleep did not fix, his cynical \"what's the point?\" and his sense that nothing he did made a difference fit all three dimensions. A holiday spent on the phone gave him no psychological detachment from work, which Sonnentag's research links to recovery, and the pressures were waiting when he got back. Leanne's better approach, after the holiday, was to talk with Callum about the work itself rather than his attitude to it. They looked at what was making it unmanageable. He agreed to ask his accountant about chasing the unpaid invoices, to give his foreman more responsibility, and to keep Sundays work-free, with the phone switched off. He also agreed to see his doctor about his sleep. It took months. The first sign of change was that he came to a football match and did not look at his phone once.\n\nHe also told his foreman, for the first time, that he was struggling. The foreman said he had noticed months ago and had been waiting to be asked to help."
+  },
+  {
+   "title": "The agent who read from the script",
+   "scene": "Tariq, thirty-two, has worked in a bank's customer complaints team for six years. He used to be its best agent: warm, patient, good at\n  calming angry callers. Since a reorganisation last year, the team has been given strict targets for call length and must follow a script, with\n  calls monitored and scored. Tariq's manager, Fiona, has noticed that he now reads the script word for word, in a flat voice. His calls are short,\n  but his customer satisfaction scores have fallen. He sighs before every call, rubs his eyes often, and sits slumped with his headset half off\n  between calls. He has taken more sick days this year than in the previous five combined.\n\n  Fiona's own manager sees the falling scores and tells her to put Tariq on a performance improvement plan.\n\n  Fiona has been in the team for as long as Tariq. She remembers that he once spent forty minutes on the phone with an elderly man whose savings\n  had been stolen, and got a letter of thanks from the man's daughter.\n\nTariq has also stopped joining the team's quiz on Friday afternoons, which he used to organise. When a new agent asks him for advice, he says, \"Just stick to the script, mate. It's easier.\"\n\nFiona has also noticed that Tariq no longer eats his lunch in the break room with the others. He takes it outside and sits on the low wall by the car park, alone, with his headphones in, even when it is raining. When she asked him last week how he was, he said, \"Living the dream,\" and laughed, without smiling.",
+   "misread": "Fiona's manager read Tariq's falling scores and flat delivery as declining performance to be managed. He did not ask why one of the best agents in the team had started to perform like one of the worst.\n\nIt also treated the scores as the whole truth, when the scores were measuring the very targets that had changed how Tariq was allowed to work.\n\nAnd the performance plan would have tested Tariq against the very targets that had caused the problem, which is a reliable way to make a good employee leave.",
+   "betterRead": "Maslach and Leiter's six areas explain much of what had happened to Tariq. The reorganisation had taken away his control over how he did the work, set targets that rewarded short calls rather than good ones, and clashed with his values, which were about helping people properly. His flat voice and word-for-word script were distance: the shutters coming down to protect someone who could no longer do the job the way he believed it should be done. His slump, his sighs and his sick days were exhaustion. A performance plan would have added pressure to a mismatch that the job itself had created. Fiona's better approach was to ask Tariq what had changed for him, and then to take what he said to her own manager. She argued for agents being allowed to go off script and spend longer on complex complaints. The bank agreed to trial it for experienced agents. Tariq's satisfaction scores rose within a month, and he told Fiona it felt like being allowed to do his job again.\n\nHe also started training new agents again, which gave him back the part of the job he had always loved."
+  },
+  {
+   "title": "The father at the end of his rope",
+   "scene": "Dev, thirty-nine, gave up his job as a graphic designer two years ago to stay at home with his twins, now three, while his wife, Priya,\n  returned to her career as a solicitor. He loves his children. But by the second winter, he is running on empty. He is short with the twins and\n  then guilty about it. He has stopped meeting his friends, stopped drawing, and spends nap times staring at the wall rather than resting. When\n  Priya comes home, he hands the children over and goes upstairs without a word. He tells her, one night, that he feels like he is failing at the\n  only thing he is supposed to be doing, and that he does not feel anything for the twins some days, which frightens him.\n\n  Priya's mother tells her that looking after children is what parents have always done, and that Dev should be grateful he does not have to go\n  out to work.\n\n  Priya has read about burnout at work and wonders whether something similar can happen at home.\n\nDev has also stopped looking after himself. He eats the twins' leftovers instead of meals, has not had a haircut in months, and wears the same tracksuit most days. When a friend from his old job messaged him, he did not reply for three weeks.\n\nPriya has also noticed that Dev flinches when the twins cry at night, and lies rigid in bed waiting for the next cry. He used to sleep through anything.",
+   "misread": "Priya's mother read Dev's exhaustion and detachment as ingratitude, because caring for children is supposed to be natural and rewarding, and because the work of a parent at home is rarely seen as work at all.\n\nAnd Dev's own reading, that he was failing as a father, was the kind of judgment that burnout feeds on and that keeps people from asking for help.\n\nIt also missed that Dev had no colleagues, no breaks and no end to his working day, which in any other job would be called unreasonable.",
+   "betterRead": "The WHO's definition of burn-out is about paid work, but researchers such as Isabelle Roskam and Moïra Mikolajczak have studied a similar pattern in parents: overwhelming exhaustion, emotional distance from the children, and a sense of no longer being the parent one wants to be. Dev's cluster fitted that pattern, and his feeling of nothing for his children some days was a reason to take it seriously rather than a reason for shame. Several of Maslach and Leiter's areas apply at home as much as at work: a relentless workload, little control over the day, little recognition and few adults to talk to. Priya's better response was to treat it as a problem of load, not of love. They found a nursery for two mornings a week, Priya took over bedtimes three nights a week, and Dev started meeting another stay-at-home father on Fridays. Because his low feelings reached so far, and frightened him, Priya also encouraged him to see their doctor, and went with him.\n\nDev also started drawing again, at nap times, which he said made him feel like himself for an hour a day."
+  }
+ ],
+ "workedReading": {
+  "title": "The one-to-one after the merger",
+  "scene": "Leanne manages a finance team that was merged with another department six months ago. One of her team, Phil, fifty-four, has been there for twenty years and knows more about the old systems than anyone. Since the merger, Leanne has noticed that Phil arrives just on time and leaves exactly on time, which he never used to do. In meetings he sits back with his arms folded and says, \"Whatever you think,\" to most suggestions. His reports, once immaculate, have contained three errors this quarter. He looks tired all the time, and twice she has seen him sitting in his car in the car park for twenty minutes before coming in. A colleague from the merged department has described him as \"dead wood\".\n\nLeanne also knows that the merger has been hard on everyone, including herself, and that she has had less time for her team than usual. She wonders whether she has contributed to whatever is happening to Phil.\n\nShe also knows that people in the merged department see the old team as resistant to change, and that Phil has become a symbol of that in their eyes. Whatever she does will be watched by both sides.",
+  "steps": [
+   {
+    "label": "Sort what you see",
+    "text": "Leanne sorts her observations under the three dimensions. Exhaustion: looking tired all the time, sitting in his car before coming in. Distance: arms folded, \"whatever you think\", leaving on the dot. Efficacy: errors in reports that used to be perfect. All three are present, and all three are changes since the merger.\n\nShe also notes that the dimensions appeared in order: tiredness first, in the first month after the merger, then the distance, then the errors. That order is common, and it suggests the problem has been building for some time.\n\nSorting her observations also helps her avoid leading with the errors. The errors are the part that would go in a performance file. The exhaustion and distance are the part that would explain them."
+   },
+   {
+    "label": "Compare with his baseline",
+    "text": "For twenty years, Phil was the person who stayed late at year end, who trained every new starter and who argued, sometimes stubbornly, for doing things properly. \"Whatever you think\" is the opposite of the man she knew. The size of the change makes it unlikely that he has simply become lazy, and the timing points to something about the merger.\n\nShe also notes the things that have not changed. He is still polite, still punctual, still reliable in the basics. The core of the man is there; it is the extra effort, the care beyond the job description, that has gone.\n\nShe also remembers a conversation from years ago, when Phil told her that the best part of his job was being the person everyone came to with problems. Since the merger, nobody comes to him."
+   },
+   {
+    "label": "Check the six areas",
+    "text": "She thinks through the six areas of work life. Workload has risen: he is now supporting two systems. Control has fallen: decisions about processes are made by the merged department's managers. Reward: his expertise in the old systems is now treated as obsolete. Community: the new colleagues talk about him rather than to him. Fairness and values may also be in play. Several areas are badly out of balance.\n\nShe also notices that her own part in the six areas is real. She has not recognised his work since the merger, and she has not argued for his views in the new management meetings. Some of the mismatch is in her gift to change.\n\nShe also asks herself which of the six areas she could change this month, and which would need someone more senior. Recognition and his role in the migration are hers to give. The workload across two systems is not, and she will have to argue for it."
+   },
+   {
+    "label": "Hold the readings open",
+    "text": "Leanne notes that burnout is one possibility, and that there are others: a health problem, something at home, low mood that reaches beyond work, or a mixture. She does not need to decide which. She decides to ask, privately, without mentioning the errors first, and to listen for whether the difficulty seems to be about work or about more than work.\n\nShe also considers whether he might be preparing to leave or retire. If so, that would be his choice to make, and a frank conversation would help him make it well.\n\nShe also decides that if he tells her the problem is mainly outside work, she will listen, offer support through the employee assistance line and flexibility, and encourage him to see his doctor, rather than trying to fix it herself."
+   },
+   {
+    "label": "Ask about the work",
+    "text": "In a one-to-one, she says, \"Phil, you've been here longer than anyone, and this merger has changed a lot. How has it been for you, honestly?\" He is silent for a long moment, then says that he feels like a dinosaur, that nobody asks his opinion any more, that he is doing two jobs and that he cannot see the point of trying to do either properly when the new managers will change it all again.\n\nShe also lets the silence sit before he answers. A man who feels unheard will often test whether a question is real by waiting to see whether the person asking will fill the gap.\n\nShe also does not argue with his sense of being a dinosaur, or tell him he is wrong to feel it. She says that she can see why he feels that way, given how the merger has gone."
+   },
+   {
+    "label": "Make a change together",
+    "text": "Leanne thanks him for being straight with her. She asks what would help most, and he says having a say. She asks him to lead the migration of the old system's reports, using exactly the knowledge the others have dismissed, and moves one of his routine tasks to a new colleague. She also tells the merged department's manager, firmly, that Phil's expertise is essential. She asks Phil how he is outside work, and he says fine, his garden is keeping him sane, which tells her the difficulty seems mostly to sit at work.\n\nShe also asks him how he would like her to raise his concerns with the new managers, so that he keeps some control over how his views are presented.\n\nShe also sets a date to review it with him in six weeks, so that the change is not a one-off gesture but something they will both come back to."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the next two months, Phil's arms unfold in meetings. He starts arguing again, stubbornly, for doing things properly, which Leanne finds she has missed. The errors stop. He still leaves on time, which she decides is no bad thing. She notes that the colleague who called him dead wood now asks him for help with the old reports most weeks, and that a disciplinary conversation would have cost the team its most knowledgeable member.\n\nShe also changes her own habits. She now spends ten minutes each week with each member of the team asking how the work is going, rather than waiting for problems to show up in the reports.\n\nShe also mentions to her own manager what she has learned, without naming Phil, because she suspects that others from the old department are struggling in the same way."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading burnout as laziness or a bad attitude",
+   "body": "From outside, burnout looks like a series of character flaws: tiredness that looks like laziness, cynicism that looks like disloyalty, mistakes that look like carelessness, withdrawal that looks like not caring. Managers who read it that way respond with warnings, performance plans and talks about attitude, which add pressure to a person who is already depleted and usually make things worse. The tell is often the change from baseline. A person who has always been lazy is a different problem from a once-committed person who has started to look lazy, and the second is far more often a sign that something about the work has gone wrong.\n\nIt also helps to notice who is most at risk. Burnout often hits the most committed people hardest, because they give the most and find it hardest to stop. The colleague who never says no is more likely to burn out than the one who always does.\n\nIt also helps to separate the person from the performance in conversation. \"Your reports have had errors\" and \"you seem exhausted\" are both true, and starting with the second makes it far more likely that the first can be solved."
+  },
+  {
+   "title": "Fixing the person instead of the job",
+   "body": "It is tempting for organisations to treat burnout as an individual problem, offering resilience training, wellness apps, mindfulness sessions and advice about sleep. These can help a little, and they are not useless. But Maslach and Leiter's research suggests that burnout grows from mismatches between people and their jobs: too much work, too little control, too little recognition, poor teams, unfairness and clashes of values. If those stay the same, the person goes back into the conditions that caused the problem. When you see burnout in someone, ask about the job as well as the person, and change what you can.\n\nWhen an organisation does change the job, it helps to say so plainly. People who have been offered courses instead of change before may assume the same is happening again, unless they see the workload actually fall.\n\nWellness offers can also help when they come with time. A mindfulness session in work hours, with cover arranged, sends a different message from an app that people are expected to use in their own time.\n\nA useful test for any wellbeing offer is to ask whether it would still be needed if the job were fixed. If the answer is no, the job is where the effort belongs."
+  },
+  {
+   "title": "Admiring overwork",
+   "body": "Many workplaces, and many men, treat long hours, constant availability and working through illness as signs of commitment. The person who answers emails at midnight is praised. The person who leaves on time is quietly judged. This culture rewards exactly the behaviour that leads to burnout, and it makes it harder for people to admit that they are struggling, because struggling looks like weakness. Notice what you praise. Recognising good work rather than long hours, and treating rest and boundaries as normal, makes burnout less likely and easier to talk about.\n\nIt also helps to model it yourself. A manager who sends emails at midnight, even with \"no need to reply\", teaches the team that midnight is when work happens.\n\nMen in particular often measure their worth by how hard they work, and find it difficult to see overwork as a problem until their health or their family forces them to. Praising balance in other men makes it easier for them to choose it.\n\nIt also helps to notice the language. \"Workhorse\", \"machine\" and \"never stops\" are often meant as praise, and they describe someone heading for exhaustion."
+  },
+  {
+   "title": "Calling everything burnout",
+   "body": "Burnout has become a common word, and it is sometimes used for any kind of tiredness, unhappiness or illness. That can hide other problems. Exhaustion, withdrawal and loss of confidence can come from low mood, anxiety, grief, physical illness, sleep disorders, medication and problems at home. If someone's difficulties reach well beyond work, if they have stopped enjoying anything, if they feel hopeless, or if their health seems affected, the label of burnout may be too narrow. Encourage them to talk to a doctor, and if anything suggests they may be at risk, follow 2.13.\n\nIt also helps to remember that burnout and other problems can come together. A man can be burned out by his job and also be depressed, unwell or grieving, and each needs its own response.\n\nIt also helps to keep the word in proportion in your own speech. Saying you are burned out after a hard week can make it harder to recognise the real thing, in yourself or in others, when it arrives."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is burnout a medical diagnosis?",
+   "a": "Not in the World Health Organization's classification. ICD-11 lists burn-out as an occupational phenomenon, a syndrome resulting from chronic workplace stress that has not been successfully managed, rather than as a medical condition, and it says the term should refer only to work. Some countries use related diagnoses in their own systems, and doctors may diagnose and treat conditions that overlap with burnout, such as depression, anxiety or sleep disorders. For a reader, the label matters less than the pattern: exhaustion, distance and a falling sense of competence, linked to work, and a change from how the person used to be.\n\nIt may also help to know that researchers still debate how burnout relates to depression, and that some people who describe themselves as burned out turn out to be depressed. A doctor can help tell them apart.\n\nIt is also worth knowing that the WHO definition is about work, so parents, carers and others outside paid work may find that the word fits their experience without fitting the definition. Researchers have studied similar patterns in those roles."
+  },
+  {
+   "q": "How is burnout different from stress?",
+   "a": "Stress is the body's response to demands, and it can be short and even useful: a deadline, a presentation, a busy week. Burnout is what can happen when stress at work goes on for a long time without being managed. It adds two things that ordinary stress usually lacks: a pulling away from the work, often with cynicism, and a fading sense of being any good at it. A stressed person is often still engaged and pushing hard. A burned-out person has often stopped pushing, because the tank is empty and the effort no longer seems worth it.\n\nA quick way to tell the two apart in someone you know is to ask whether they still care. A stressed person usually cares too much. A burned-out person often says they have stopped caring, and is troubled by it.\n\nBurnout also tends to build more slowly than ordinary stress, over months or years, which is why the change from baseline is so often missed by people who see the person every day."
+  },
+  {
+   "q": "Can a holiday fix burnout?",
+   "a": "It can help for a while, but it rarely fixes it on its own. Studies of holidays, reviewed by Jessica de Bloom and colleagues, have found that people's health and wellbeing usually improve during a holiday, and that the benefits tend to fade within a few weeks of returning to work. If the work is the same, the burnout tends to come back. Holidays help most when they give real detachment from work, without emails and calls, and when they are combined with changes to the work itself. Regular, smaller breaks, such as evenings and weekends that are genuinely free, may matter as much as the annual holiday.\n\nIt also helps to plan the return. The first days back from a holiday are often the most stressful, with a full inbox and a backlog. Keeping the first day light, if possible, can protect some of the benefit.\n\nIt also helps to protect the days around a holiday. Working late to clear everything before you go, and working late to catch up when you return, can cancel out much of the rest you had."
+  },
+  {
+   "q": "What can a manager do about it?",
+   "a": "More than most managers think. Maslach and Leiter's six areas give a practical checklist. Workload: can anything be removed, delayed or shared? Control: can the person have more say over how and when they work? Reward: is their good work recognised, specifically and often? Community: is the team supportive, and is incivility dealt with? Fairness: are decisions transparent and just? Values: is the person being asked to do things that conflict with what they believe in? A manager who asks about these, and changes what they can, does more for burnout than any number of wellness emails.\n\nIt also helps for managers to look after their own load. Managers who are burned out themselves find it hard to notice or help anyone else, and their teams often follow them down.\n\nIt also helps to ask the person what would make the biggest difference. People often know exactly which change would help most, and the answer is frequently smaller than managers fear.\n\nIt also helps to check in regularly, not just when something goes wrong. A short, routine conversation about workload makes it much easier for someone to say they are struggling before the signs become obvious."
+  },
+  {
+   "q": "What if I am the one burning out?",
+   "a": "Start by noticing your own first signs, the earliest changes in your body, behaviour and attitude when work gets out of balance, which the last drill asks you to write down. Protect real rest: evenings, weekends and holidays with genuine detachment from work. Look at the six areas and identify the one or two most out of balance, and raise them with your manager, specifically and calmly. Talk to people outside work. And if your exhaustion, detachment or hopelessness reach beyond work, into the rest of your life, talk to your doctor, because the problem may be more than burnout.\n\nIt may also help to talk to someone who has recovered from burnout. Many people find it reassuring to hear that recovery is possible, and useful to hear what changed for them.\n\nIt may also help to remember that recovery from burnout often takes months, not weeks, and that the first improvements are often small: sleeping a little better, caring a little more, a joke returning.\n\nIt also helps to tell the people close to you what you are noticing. Partners and friends often see the signs before you admit them, and having said it aloud makes it easier to act."
+  },
+  {
+   "q": "Do resilience courses help?",
+   "a": "They can help a little, especially when they teach practical skills such as detaching from work, managing sleep and setting boundaries. But they are not a substitute for fixing the job. Burnout grows mainly from mismatches between people and their work, and a course that teaches someone to cope better with an impossible workload leaves the workload in place. Many employees experience resilience training offered in place of real change as a message that the problem is them. The most useful courses are offered alongside changes to workload, control and support, not instead of them.\n\nThey can also help managers. Training that teaches managers to spot the signs and to have the conversation is often more useful than training aimed at the people who are already struggling.\n\nIt also helps to ask what the people taking the course think of it. If they see it as a substitute for change, it is unlikely to help, however good its content."
   }
  ],
  "watch": [
