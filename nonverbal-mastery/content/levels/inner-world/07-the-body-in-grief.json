@@ -80,6 +80,20 @@
    "doCaption": "Sitting close, and leaving the choice of touch to him.",
    "dontCaption": "Hugging him because he looks like he needs it.",
    "annotation": "Grief does not change the rule on touch. Offer, sit close enough to lean on, and let the grieving person choose."
+  },
+  {
+   "doPoseId": "p_older_pair_seated_across",
+   "dontPoseId": "p_older_sit_at_rest",
+   "doCaption": "A neighbour at his table in month three",
+   "dontCaption": "A widower left alone once the funeral is over",
+   "annotation": "Visitors fall away after the funeral, just as the hardest months begin. A cup of tea and her name said aloud are remembered for years."
+  },
+  {
+   "doPoseId": "p_older_pair_walk",
+   "dontPoseId": "p_grief_bowed",
+   "doCaption": "A walk together, and his name said aloud",
+   "dontCaption": "Grief nobody asks about",
+   "annotation": "Avoiding the name of the person who died can be the loneliest part of grief. Say it, and let the stories come."
   }
  ],
  "caseStudy": "Andy, forty, and his sister Claire lose their mother in February. Their father, Bill, sixty-seven, has been married to her for forty-four years. At the funeral he shakes every hand and does not cry. A week later he is back at his allotment, and then he starts rebuilding the shed she always complained about. Claire tells Andy, upset, that Dad does not seem to care.\n\nAndy is not so sure. He has noticed that Bill's walk has slowed, that he sighs often, that he has stopped eating breakfast, and that he works on the shed from first light until dark. He has also noticed that Bill always takes his heart pills with breakfast, and wonders whether he is taking them now. He asks. Bill admits he has forgotten them most days. Andy puts them by the kettle with a note.\n\nAndy does not ask his father how he is feeling. He turns up on Saturdays with his tools, and they work on the shed together, side by side. On the third Saturday, measuring a window frame, Bill says that Mum wanted a window just here so she could watch the birds, and that he is building it the way she wanted. Then he talks about her for an hour while they work, more than he has talked about anything in years.\n\nAndy explains to Claire what he has seen: that Dad is grieving by building, and that it is real. Claire starts bringing lunch on Saturdays.\n\nOn the anniversary in February, Andy rings in the morning. Bill's voice catches on the first word, and he says he is fine, and then that he is not, and then that he is glad Andy rang. In the spring they put a bird feeder outside the new window.",
@@ -98,6 +112,10 @@
     "Find out, if you can, the date of the death or the funeral.",
     "Put a reminder in your calendar a day before each anniversary.",
     "On the day, send a short message that mentions the person by name."
+   ],
+   "variations": [
+    "Add the birthdays of the people who died, as well as the anniversaries of their deaths.",
+    "Send one message this month to someone whose loss was more than a year ago, mentioning the person by name."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Write three phrases you will avoid and what you will say instead.",
     "Say the specific offers aloud.",
     "Use one of them the next time someone you know is bereaved."
+   ],
+   "variations": [
+    "Write specific offers suited to different people: a parent, a colleague, a neighbour, a friend far away.",
+    "Ask someone who has been bereaved which offers they most valued and which they never took up."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Mark whether your grief leaned towards feeling or towards doing.",
     "Note how other people responded to your way of grieving.",
     "Write what would have helped most, given your style."
+   ],
+   "variations": [
+    "Think about how someone close to you grieved, and whether their style was different from yours.",
+    "Write what you would want people to do for you if you were bereaved, given your style, and share it with someone close."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Offer to help with it, alongside them.",
     "While you work, follow their lead in conversation; do not steer it towards feelings.",
     "Afterwards, note anything they said about the person who died."
+   ],
+   "variations": [
+    "Offer to help with a task linked to the person who died, such as sorting photographs or tending a grave, if the bereaved person wants it.",
+    "Note how the conversation changes when you are working alongside someone compared with sitting opposite them."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Find bereavement support services available where you live and note how to contact them.",
     "Find the crisis resources in this app for your region.",
     "Keep these notes where you can find them."
+   ],
+   "variations": [
+    "Find out whether there is a bereavement service for children where you live, in case you ever need it for a family you know.",
+    "Write down how you would tell a child about a death in plain, honest words, avoiding phrases such as \"gone to sleep\"."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Wanting to be with the person who died is a reason to ask directly about suicide, which does not plant the idea. Combined with months of withdrawal and not eating, it also suggests she needs more than company, so help her reach her doctor or a crisis line.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What pattern did George Bonanno's research find in many bereaved people?",
+   "options": [
+    "Resilience: real sorrow, with little lasting disruption to daily life",
+    "Collapse: almost everyone stopped functioning for at least two whole years",
+    "Indifference: most people felt very little and returned to normal within days",
+    "Stages: nearly everyone moved through five fixed stages in exactly the same order"
+   ],
+   "answer": 0,
+   "explain": "Bonanno found that many bereaved people show resilience, real sorrow with little lasting disruption, and that this did not mean they loved the person less. Not crying is not a problem in itself.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Six weeks after his wife's funeral, your elderly neighbour's curtains stay shut at midday, his milk is left out and his car has not moved. What fits this chapter best?",
+   "options": [
+    "Leave him alone, since grieving people always want privacy in the first months",
+    "Ring the police at once, since something terrible has certainly happened to him",
+    "Knock with a practical offer, say his wife's name and offer something specific",
+    "Push a leaflet about bereavement counselling through his door and leave it there"
+   ],
+   "answer": 2,
+   "explain": "A practical reason to knock is easy to accept, saying her name makes it safe to grieve, and a specific offer is more useful than \"let me know if you need anything\". Keep an eye on the signs that he needs more help.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that grief moves through five fixed stages, in order, and that a person who skips one is not grieving properly. What does this chapter say?",
+   "options": [
+    "It is right, since research shows that every bereaved person follows these stages",
+    "Research does not find most people follow fixed stages; grief comes and goes",
+    "It is right for adults, though children move through the stages twice as quickly",
+    "It is right, but only for people who have lost a husband or a wife"
+   ],
+   "answer": 1,
+   "explain": "The stages come from Kübler-Ross's work with dying patients and were not meant as a fixed sequence. Research on bereavement finds people moving back and forth between grief and ordinary life, in no set order.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "The Other Side of Sadness: What the New Science of Bereavement Tells Us About Life After Loss",
    "author": "George A. Bonanno",
    "note": "Basic Books, 2009. Resilience, laughter and the many paths through grief."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The widow who laughed at the wake",
+   "scene": "Pauline, seventy, buried her husband, Frank, on a Thursday morning after fifty-one years of marriage. At the wake, in the function room of\n  the pub where they had their wedding reception, she moves from table to table. She tells stories about Frank: the time he drove to Blackpool\n  with the handbrake on, the time he tried to teach the grandchildren to fish and fell in. People laugh, and so does she, loudly. She has a gin and\n  tonic in her hand and is smiling.\n\n  Her daughter-in-law, Kerry, watching from the corner, says quietly to her husband that his mother does not seem very upset. \"She's laughing\n  like it's a party,\" she says. \"I thought she'd be in pieces.\"\n\n  An hour later, Kerry goes to the ladies' and finds Pauline alone in there, sitting on the closed lid of a toilet with the cubicle door open,\n  bent double, sobbing, Frank's reading glasses in her hand.\n\nPauline had chosen the pub herself. She said Frank would have hated a church hall and loved the jukebox, and she had put his favourite song on it before the first guests arrived.\n\nPauline's sister, who arrived from Spain that morning, stays close to her all afternoon, refilling her glass and laughing at every story, even the ones she has heard a hundred times. Twice she touches Pauline's elbow and steers her towards a chair, and twice Pauline shakes her head and keeps going.",
+   "misread": "Kerry read Pauline's laughter and stories as a sign that she was not grieving much, because she expected grief to look like sadness all the time. She judged the grief by its appearance at one moment, in one setting.\n\nShe also judged it from the outside of a family she had joined only ten years before, without the fifty years of stories that made the laughter make sense.\n\nShe also missed what was happening around Pauline: the sister's steering hand, the refilled glass, the stories that never quite stopped. A widow who keeps moving at her husband's wake is often a widow who cannot yet bear to stand still.",
+   "betterRead": "Stroebe and Schut's dual process model describes grieving people moving back and forth between facing the loss and turning to the business of living. At a wake, many people do both within minutes: telling stories, laughing, greeting people, then being ambushed by the full weight of the loss. Laughter about the person who died is often a way of being close to them, and many families describe the stories at the wake as among the most precious moments of the day. Neither the laughter nor the sobbing was the \"real\" grief. Both were. Kerry's better response, once she understood, was to sit beside Pauline in the cubicle, say nothing for a while, and then say, \"He was so funny, wasn't he?\" Pauline laughed through her tears and told her about the handbrake again.\n\nKerry said afterwards that she had learned more about grief in that cubicle than in her whole life before.\n\nPauline told her, later, that the laughing had been for Frank and the crying had been for herself, and that she needed both."
+  },
+  {
+   "title": "The young man who went to the gym",
+   "scene": "Kieran, twenty-two, lost his closest friend, Josh, in a road accident in the spring. At the funeral he stood at the back with his hands in\n  his pockets and left before the wake. Since then he has been at the gym twice a day, has taken on extra shifts at work, and has stopped going out\n  with the group of friends he and Josh shared. He does not mention Josh at all.\n\n  His mother, Sinéad, is worried. She has read that men bottle things up, and she keeps asking him to talk to her about how he feels. Each time,\n  Kieran says he is fine and leaves the room. She has left leaflets about counselling on his bed. He has thrown them away.\n\n  His uncle, Declan, who lost his own brother young, suggests to Sinéad that she might be asking the wrong question.\n\nKieran has also started running at night, alone, sometimes for two hours. His mother hears him come in at one in the morning and lies awake until she does.\n\nKieran has also kept Josh's hoodie, which was in his car the night before the accident. He has not washed it or worn it. It lies folded on the passenger seat, and when his mother asked whether he wanted to give it back to Josh's parents, he walked out of the kitchen without answering.",
+   "misread": "Sinéad read Kieran's silence and constant activity as a refusal to grieve, and kept offering the kind of grieving she would have wanted: talking about feelings. Each offer felt to Kieran like pressure, and pushed him further away.\n\nShe also took his throwing away the leaflets as a sign that he was in denial, when it was more likely a sign that the leaflets were offering a kind of help that did not fit him.\n\nAnd by treating counselling as the only proper way to grieve, she sent Kieran a message he heard clearly: that his way was wrong.",
+   "betterRead": "Doka and Martin describe a continuum from intuitive grieving, mainly through feeling and talking, to instrumental grieving, mainly through thought and activity. Many men, though by no means all, lean towards the instrumental end, and their grief can look from outside like avoidance. The gym, the extra shifts and the silence did not mean Kieran was not grieving. They may have been how he was grieving. Declan's better approach was to offer something to do. He asked Kieran whether he would help him organise a charity football match in Josh's memory, which Josh's parents had mentioned wanting. Kieran agreed at once. Over the next two months, booking pitches, chasing sponsors and recruiting players, he talked about Josh more than he had since the accident: the goals Josh scored, the nicknames, the night they got lost in Dublin. He never once talked about his feelings, and he cried at the match, in front of everyone, when Josh's dad presented the trophy.\n\nSinéad also stopped leaving leaflets, and started going to watch the training sessions for the match, which gave her and Kieran something to talk about in the car on the way home."
+  },
+  {
+   "title": "The colleague who left the meeting",
+   "scene": "Nadia, forty-four, works in a busy marketing team. Her mother died eight months ago, after a long illness. She took two weeks off, came back\n  and has been, everyone agrees, \"amazing\": on top of her work, cheerful, efficient. In a Monday meeting, the team is choosing music for a client's\n  advert. Someone plays a clip of an old song. Nadia goes very still, her breath catches, and she gets up and leaves the room without a word.\n\n  Her manager, Tom, is irritated. The client presentation is on Wednesday, and walking out of a meeting is not like her. One of her colleagues\n  mutters that it was a bit unprofessional. Another wonders aloud whether she is still \"not over it\".\n\n  Nadia comes back twenty minutes later, red-eyed, apologises and carries on as if nothing has happened.\n\nNadia has not mentioned her mother at work since she came back. Nobody else has either. Several colleagues have said they did not want to upset her by bringing it up.\n\nBefore the meeting, Nadia had been laughing in the kitchen with two colleagues about a television programme. Nothing about her morning suggested that anything was wrong, which is part of why the walk-out surprised everyone so much.",
+   "misread": "Tom read Nadia's walk-out as unprofessional, and a colleague read it as evidence that she had not recovered as she should. Both treated grief as something that ends, after which any return of it is a problem.\n\nAnd the colleague's \"not over it\" carried an assumption that grief should be finished in eight months, which few people who have been bereaved would recognise.\n\nTom's irritation also came from the deadline, not from Nadia. A manager under pressure is quicker to read any interruption as a problem.",
+   "betterRead": "Grief comes in waves, often long after a death, and the triggers are frequently small and unpredictable: a smell, a date, a place, a song. The body shows the wave suddenly, as Nadia's did: stillness, a caught breath, an abrupt exit. Eight months is not late for a wave; for many people the first year is full of them, and they continue, less often, for years. Leaving the room was probably the most professional thing Nadia could have done. Tom's better response came after he asked a colleague who knew Nadia well, and learned that the song had been played at her mother's funeral. He went to her desk later, quietly, and said, \"I'm sorry about earlier. That must have caught you off guard. Take whatever time you need, and if there's anything that would make work easier for a bit, tell me.\" She said thank you, and that it was the first time anyone at work had mentioned her mother since she came back.\n\nHe also told the rest of the team, with Nadia's permission, that the song had been played at her mother's funeral, so that nobody would wonder about the meeting."
+  },
+  {
+   "title": "The girl who played at the wake",
+   "scene": "Mia, eight, was very close to her grandad, who died suddenly of a stroke. At the funeral she holds her mother's hand and asks a lot of\n  questions: where Grandad is now, whether he can hear them, whether he was frightened. At the wake she plays happily with her cousins under the\n  tables, laughing, eating cake and asking for more lemonade. Her aunt remarks that children are so lucky, they just bounce back.\n\n  That night, at bedtime, Mia has a screaming tantrum over a missing sock, kicks her bedroom door and then sobs for an hour, saying she wants\n  Grandad. Over the next few weeks the pattern repeats: happy, ordinary days, and then sudden storms of anger or tears, often at bedtime or over\n  something tiny. She has started wetting the bed again, which she has not done since she was four.\n\n  Her father, Sam, does not know whether to be strict about the tantrums or to let them go. He wonders whether something is wrong with her.\n\nMia has also been asking the same questions again and again: whether Grandad is cold, whether he knows she misses him, whether Mummy is going to die too. Sam has answered them the first few times and is starting to find them hard.\n\nMia's teacher has also mentioned that she has been quieter in class, and that she drew a picture of her family at the weekend with Grandad in it, standing a little apart, with wings.",
+   "misread": "The aunt read Mia's play as a sign that she was not affected, and Sam read the later storms as a behaviour problem or a sign that something was wrong. Both readings came from expecting a child's grief to look like an adult's.\n\nSam's worry that something was wrong also led him towards the strict response, which would have punished Mia for grief she could not yet put into words.\n\nAnd the aunt's \"bounce back\" carried a hope that many adults have for children, that they will be spared. The hope is kind, and it can stop adults noticing grief that comes out later.",
+   "betterRead": "Children often grieve in short bursts, moving quickly between intense grief and ordinary play, which bereavement charities for children sometimes compare to jumping in and out of puddles. Play at a wake is common and healthy, and it does not mean a child has not understood. Grief may then come out sideways, in anger, clinginess, sleep problems, stomach aches or a return to younger behaviours such as bed-wetting, often at bedtime, when the day's distractions end. Sam's better approach combined steadiness with openness. He kept the bedtime routine predictable and calm, treated the bed-wetting without fuss, and made time each evening for Mia to talk about Grandad if she wanted to, using plain words rather than phrases such as \"gone to sleep\". He told her school what had happened. Over the next few months the storms became fewer, and Mia started a memory box with Grandad's watch and photographs, which she showed to everyone who visited.\n\nSam also told Mia's teacher about the drawing, and asked the school whether they had any support for bereaved children, which they did."
+  }
+ ],
+ "workedReading": {
+  "title": "The neighbour after the funeral",
+  "scene": "Shona lives next door to Ray, seventy-eight, whose wife, Iris, died six weeks ago. They have been neighbours for twenty years, friendly over the fence but not close. Iris did most of the talking. At the funeral, Ray seemed composed. Since then, Shona has noticed that his curtains are often closed at midday, that the milk has been left on the step two mornings running, and that his car has not moved for over a week. Iris used to put the bins out; this week nobody did. Shona has not seen Ray at all for four days.\n\nShona is aware that she barely knows Ray without Iris. She is not sure he will want her help, and she is a little afraid of intruding on a grief she has no part in.\n\nShe also knows, from her own mother's death, that the weeks after the funeral were the loneliest of all, when everyone assumed the worst was over and the house went quiet.",
+  "steps": [
+   {
+    "label": "Notice the change",
+    "text": "Shona lists what she has seen: curtains closed in daytime, milk left out, the car unmoved, bins not out, Ray not seen for four days. Each could have an ordinary explanation. Together, against twenty years of a very regular household, they make a pattern of a man who may have withdrawn into the house.\n\nShe also notes what she has not seen. Nobody has visited in the past week. His son lives two hundred miles away, and the daughter-in-law who came every day before the funeral has gone home.\n\nShe also checks her own reasons. She does not want to be nosy, and she does not want to be the neighbour who noticed nothing. Holding both in mind, she decides that a light, practical knock respects both."
+   },
+   {
+    "label": "Consider the explanations",
+    "text": "He might be away, staying with his son. He might be unwell. He might be grieving in the way many people do in the weeks after the funeral, when the visitors stop and the reality arrives, staying in, not eating, not sleeping. He might simply not have known that Iris did the bins. Shona notes that she cannot tell which, and that most of the possibilities call for the same first step.\n\nShe also reminds herself that six weeks is often when the visitors have stopped and the casseroles have run out, and when many people feel the loss most sharply.\n\nShe also considers that if he were seriously unwell, waiting would be the worst choice. That possibility, small as it is, is one more reason to knock today rather than next week."
+   },
+   {
+    "label": "Knock, with a practical reason",
+    "text": "She takes his milk in from the step and knocks, with the bins as her reason: \"I've brought your milk in, Ray, and I wondered if you'd like me to put your bins out with mine on Tuesdays for a while.\" A practical offer is easier to accept than a question about how he is, and it gives both of them something to talk about on the doorstep.\n\nShe also chooses mid-morning, when he is most likely to be up, and keeps the milk in her hand, so that she has something to give him and a natural reason to be on his step.\n\nShe also prepares herself for him not answering. If he does not, she will try his son's number through a mutual friend, and if she still hears nothing and sees no sign of him, she will call for help."
+   },
+   {
+    "label": "Read what she sees",
+    "text": "Ray opens the door in yesterday's clothes. He has not shaved, he looks thinner, and his voice is hoarse, as if he has not used it for days. He thanks her for the milk and says the bins would be a help. He is steady on his feet and his speech is clear, which reassures her that he is not unwell in a way that needs help now. He seems, more than anything, very tired and very alone.\n\nShe also notes the house behind him. It smells stale, the post is piled on the mat and there is a single cup on the hall table. Nothing alarming, but a picture of a man who has stopped looking after his home.\n\nShe also notices that he has made the effort to come to the door, and to thank her. That small courtesy is a good sign: the man Iris married is still there, under the tiredness."
+   },
+   {
+    "label": "Say her name",
+    "text": "Shona says, \"I keep thinking about Iris. I miss seeing her in the garden.\" Ray's face changes. His eyes fill, and then he smiles and says that she would have had something to say about the state of the hedge. He asks Shona whether she would like a cup of tea. She says yes, though she had not planned to stay.\n\nShe chooses her words carefully, about Iris rather than about Ray's feelings. Talking about the person who died is often easier than talking about the grief.\n\nSaying Iris's name is also what twenty years of neighbourliness allow. Shona knew her. A stranger saying the same would mean less; a friend's memory of the person is part of what makes it comforting."
+   },
+   {
+    "label": "Offer something specific",
+    "text": "Over the tea, Ray talks about Iris for half an hour. When Shona leaves, she does not say \"let me know if you need anything\". She says, \"I'm making a shepherd's pie on Thursday. I'll bring you some round at six.\" She also asks whether his son knows how he has been, and Ray admits that he has been telling him on the phone that he is fine.\n\nShe also gives him a reason to say yes that is not about need. Cooking for one more is no trouble, she says, and she always makes too much.\n\nShe also leaves the conversation when Ray starts to tire. Grieving people often have less energy for company than they did, and a short visit that ends well is better than a long one that drains him."
+   },
+   {
+    "label": "Keep going, and know the limits",
+    "text": "Shona brings the pie, and keeps doing the bins. She notes in her calendar the date of Iris's birthday and the anniversary of her death. She also keeps an eye on the signs that grief may be more than grief: if Ray stopped eating altogether, could not look after himself, talked about not wanting to go on, or seemed unwell, she would contact his son and his doctor, and if he were in danger, get help at once. Over the following months, Ray's curtains open earlier, his car moves again, and one Sunday he knocks on Shona's door with a cutting from Iris's favourite rose.\n\nShe also mentions to Ray, lightly, that his son might like to know how he really is, and offers to have the son's number in case she ever needs it. Ray gives it to her that afternoon.\n\nShe also tells Ray, on one of her visits, about a bereavement group that meets at the library on Wednesdays, and says she would walk him there if he ever wanted to try it. He says he will think about it, and in the spring he goes."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Judging grief by how it looks",
+   "body": "People carry pictures of what grief should look like: tears, a sad face, a quiet withdrawal for a decent length of time, then a gradual return. Real grief rarely matches the picture. It laughs at wakes, goes to the gym, throws itself into work, plays under the tables, and then sobs in a toilet cubicle or storms at bedtime. Judging someone's grief by how it looks, deciding they are not grieving enough, or are grieving too much, or in the wrong way, is one of the most hurtful things people do to the bereaved. Read the person against their own baseline and their own style, not against a picture of grief, and assume that whatever you see is only part of what they are carrying.\n\nIt also helps to remember that people often save their hardest grief for when they are alone, or with the one or two people they trust most. What a colleague or an in-law sees is often the composed version, kept up at great cost.\n\nIt also helps to remember that grief often shows differently in public and in private. Someone may be steady at work and collapse at home, or the other way round. Neither is the whole truth, and neither is a performance.\n\nMen in particular are often judged for grieving by doing. A father who goes back to work a week after a child's funeral may be told he is cold, when work may be the only place he can stand to be."
+  },
+  {
+   "title": "Avoiding the name",
+   "body": "Many people, afraid of upsetting a bereaved person, avoid mentioning the person who died. They talk about the weather, work, anything else. Bereaved people often say that this avoidance is one of the loneliest parts of grief: everyone seems to have forgotten, or to want them to forget. Saying the name rarely causes pain that was not already there, and it usually brings relief. \"I was thinking about Iris today.\" \"What was your mum like?\" \"I remember Josh scoring that goal.\" If tears come, they are not a sign that you have made things worse. They are often a sign that you have made it safe to grieve.\n\nIf you are not sure whether to mention the person, you can ask: \"Do you mind if I talk about her?\" Most bereaved people say yes, and are grateful to have been asked.\n\nChildren notice avoidance too. A child whose parent has died may stop mentioning them if the adults around never do, and conclude that the person, or the grief, is something shameful."
+  },
+  {
+   "title": "Disappearing after the funeral",
+   "body": "In the first days after a death, there are visitors, cards, meals and calls. After the funeral, they fall away, often within weeks, just as the full reality of the loss arrives. The hardest months for many bereaved people are the third to the twelfth, and the hardest days are the anniversaries, birthdays and holidays that come round in the first year. A message in month three, a meal in month six, a call on the anniversary, a visit on the first Christmas: these are often remembered for years. Put the dates in your calendar, and use them.\n\nIf you were not close enough to visit, a card or message in month three still matters. It tells the person that someone remembered, after the world seemed to forget.\n\nPractical help matters most in these later months: the first time a widow has to deal with the car insurance alone, the first time a widower has to cook Christmas dinner, the first birthday with nobody to buy for.\n\nIf you live far away, a regular call, a handwritten letter or a parcel on a hard date can do the same work. What matters is that it keeps coming after everyone else has stopped."
+  },
+  {
+   "title": "Putting grief on a timetable",
+   "body": "\"Shouldn't he be over it by now?\" \"It's been a year.\" \"She needs to move on.\" Grief does not follow a timetable, and pressure to finish it tends to push it underground rather than end it. Most people find that grief changes over time, becoming something they carry alongside their lives rather than something that fills them, but the change is gradual and uneven, and waves continue for years. The question that matters is not how long it has been, but whether the person is able to live their life. If, many months on, grief has stopped someone functioning at all, that is a reason to encourage professional help, not a reason to hurry them.\n\nIt also helps to watch your own discomfort. Much of the pressure on bereaved people to move on comes from the people around them, who find grief hard to be near. Noticing that in yourself makes it easier to stay.\n\nIt also helps to separate grief from the practical changes that follow a death. Someone who is not yet ready to sort out the wardrobe or sell the car is not stuck in grief; they are choosing their own pace, which is theirs to choose."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Are there stages of grief?",
+   "a": "The best-known stages, denial, anger, bargaining, depression and acceptance, come from Elisabeth Kübler-Ross's 1969 book on people who were dying, not people who were bereaved, and she later said they were never meant as a fixed sequence. Research on bereavement has not found that most people move through set stages in order. Many people feel several of these things at once, or in no particular order, or not at all, and move back and forth between grief and ordinary life, as the dual process model describes. The idea of stages can be harmful if it makes people feel they are grieving wrongly, or makes others wait for a stage that never comes.\n\nKübler-Ross's stages are not useless. Some people recognise some of those feelings, and naming them can help. The harm comes only when they are treated as a map that everyone must follow.\n\nIf someone you know finds the stages helpful, there is no need to argue with them. Let them use the idea that fits, and offer the dual process model only if they seem to be judging themselves for not feeling the right thing."
+  },
+  {
+   "q": "Is it normal not to cry?",
+   "a": "Yes. Many people grieve deeply without crying much, or cry only in private, or cry weeks later at something unexpected. George Bonanno's research on bereavement found that many people show a pattern he called resilience: real sorrow, but little lasting disruption to their daily lives, and this was not a sign that they had loved the person less. Instrumental grievers, in Doka and Martin's terms, may grieve mainly through activity. Not crying is not a problem in itself. What matters more is whether the person has some way of carrying the loss, and some people around them who will let them carry it in their own way.\n\nIt also helps to know that crying can come at strange times: at a film, at a stranger's kindness, years later. Grief that did not show at the funeral may show at a wedding, a birth or a song in a shop.\n\nIt can also help to tell someone who has not cried that it is all right not to. Some people worry that their dry eyes mean something is wrong with them, and are relieved to hear that grief takes many forms."
+  },
+  {
+   "q": "What should I actually say?",
+   "a": "Less than you fear you need to. \"I'm so sorry\" is enough to start. Saying the person's name, \"I'm so sorry about Frank\", is better. \"Tell me about him\" invites the stories many bereaved people want to tell. Avoid phrases that shrink or explain the loss: at least he had a long life, she's in a better place, everything happens for a reason, I know how you feel. If you do not know what to say, it is fine to say so: \"I don't know what to say, but I wanted you to know I'm thinking of you.\" Then listen, and let silences happen. Your presence says more than your words.\n\nIt also helps to follow their lead. If they want to talk about the funeral, the illness or the last conversation, listen. If they want to talk about football, talk about football. Both are grief.\n\nIt also helps to know that you do not need to make them feel better. Grief is not a problem you can solve, and trying to solve it usually leads to the phrases that hurt. Your job is to be there while they feel it."
+  },
+  {
+   "q": "Should I mention the person who died months later?",
+   "a": "Usually, yes. Many bereaved people say that one of the hardest things about the months after a death is that everyone else seems to have moved on and stopped mentioning the person, as if they had never existed. A mention months or years later, on an anniversary, at a birthday, or simply because something reminded you, often brings comfort. \"I was thinking about your dad today. He'd have loved this.\" If the person does not want to talk, they will say so, and you will have lost nothing. Take your cue from them, and do not assume that silence is what they want.\n\nFamilies often say that the people they remember most are not the ones who said the right thing at the funeral, but the ones who were still mentioning the person a year later.\n\nWriting a few lines in a card on an anniversary, with a memory of the person, can mean a great deal. People often keep such cards for years, long after the flowers are gone."
+  },
+  {
+   "q": "How long does grief last?",
+   "a": "There is no timetable. For most people, the most intense grief eases over the first year or two, and then becomes something they carry, returning in waves on anniversaries and at unexpected moments for the rest of their lives. That is ordinary. For a minority, grief stays as intense and disabling as at the start for many months, and psychiatry now recognises this as prolonged grief disorder: the World Health Organization's classification looks for it at least six months after a death, and the American system at least twelve months after. If someone you know seems stuck in this way, encourage them, gently, to talk to their doctor about bereavement support.\n\nIt also helps to know that grief can change shape over time. Some people find the second year harder than the first, because the numbness has worn off and the support has gone.\n\nIt also helps to know that bereavement support is available in many places, from charities, hospices, faith groups and GP surgeries, and that people can use it at any point, not only in the first weeks.\n\nIf you are the one grieving, it may help to know that there is no deadline for asking for support. Many people seek help only in the second or third year, when they realise the grief has not eased as they expected."
+  },
+  {
+   "q": "Can grief make people physically ill?",
+   "a": "It can affect the body in many ways. Mostofsky and colleagues found that the risk of a heart attack was sharply raised in the day after the death of someone significant, and fell over the following weeks. Grief also disrupts sleep and appetite, lowers energy, and can make people forget to look after themselves: to eat, to take their medicines, to go to appointments. Bereaved people, especially older people and those with heart conditions, may benefit from a check-up in the weeks after a death. A practical friend can help by asking about medicines and meals, as Andy did with his father, rather than only about feelings.\n\nGrief can also affect concentration and memory. Bereaved people often find that they forget appointments, lose things and cannot focus at work, and it helps them to know that this is common and usually eases.\n\nIt may also help to make the practical things easier: offering to drive them to the doctor, putting medicines into a weekly pill box, or making sure there is food in the fridge that needs no cooking."
   }
  ],
  "watch": [
