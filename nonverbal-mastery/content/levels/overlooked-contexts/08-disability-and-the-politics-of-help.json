@@ -74,6 +74,20 @@
    "doCaption": "Holding his gaze",
    "dontCaption": "Looking away while he signs",
    "annotation": "In a signed conversation, looking away is like covering your ears. Keep your eyes on the signer."
+  },
+  {
+   "doPoseId": "p_walk_long_cane",
+   "dontPoseId": "p_pair_arm_around",
+   "doCaption": "His own route, with an elbow offered if he wants it",
+   "dontCaption": "Steering a blind man by the arm",
+   "annotation": "Being grabbed and steered is disorienting. Introduce yourself, ask, and offer your elbow rather than taking his."
+  },
+  {
+   "doPoseId": "p_mixed_face_to_face",
+   "dontPoseId": "p_stand_turned_away",
+   "doCaption": "Facing her, mouth visible",
+   "dontCaption": "Turning away while she lip-reads",
+   "annotation": "For someone who lip-reads, a turned head ends the conversation. Face the person, and keep your mouth in view."
   }
  ],
  "caseStudy": "Ravi, thirty-nine, became a wheelchair user after a cycling accident three years ago. He works as an engineer, plays wheelchair basketball on Thursdays and has a dry sense of humour about most things. What wears him down, he says, is not the chair but the way people behave around it.\n\nStrangers take hold of his handles to push him up ramps he was managing. Waiters ask his wife what he would like. At work events, colleagues stand in a tight circle above him, and he spends the evening looking at belt buckles or straining his neck until he gives up and leaves early. Once, in a shop, a man patted him on the shoulder and told him he was an inspiration for being out.\n\nHis brother-in-law, Paul, a kind man who had never known anyone disabled, admitted that he had done several of these things in the first year. At a family wedding he had pushed Ravi across the lawn without asking, because the grass looked difficult, and had been hurt when Ravi snapped at him. Ravi's sister explained it later: it was like someone grabbing your arm and steering you across a room.\n\nPaul changed a few habits. He asks before he helps, and when Ravi says no, he leaves it. At family gatherings he pulls up a chair rather than standing over him, and he has noticed that others start sitting down too. When a waiter turned to him to ask what Ravi wanted, he simply looked at Ravi and waited.\n\nRavi says the difference is not that Paul is careful around him now. It is that Paul has stopped being careful around him, and started treating him as the same man he was before, who happens to sit down.",
@@ -92,6 +106,11 @@
     "For each, write the words you would use to offer help.",
     "Write what you will do if the answer is no.",
     "Practise saying the offer aloud until it sounds natural rather than anxious."
+   ],
+   "variations": [
+    "Practise your offer of help in three different settings, a station, a shop and an office, and notice how the words change.",
+    "Ask a disabled friend or colleague how they prefer to be offered help, and whether there are offers they find tiring.",
+    "Notice the next time someone offers you help you do not need, and how it feels to say no."
    ]
   },
   {
@@ -103,6 +122,11 @@
     "Walk a short route that includes a doorway, a step and a narrow gap.",
     "Swap roles, and notice what it feels like to be guided well, and to be pulled.",
     "Note one thing you would do differently with a stranger."
+   ],
+   "variations": [
+    "Learn how to guide someone through a doorway, onto an escalator and into a seat, using a sight loss charity's guidance.",
+    "Practise describing a room to a friend with their eyes closed, telling them where the door, the chairs and the table are.",
+    "Notice whether the places you use often have tactile paving, audio announcements and clear signage, and where they do not."
    ]
   },
   {
@@ -113,6 +137,11 @@
     "Sit down for one conversation with a seated person you would normally stand over.",
     "Notice how the conversation changes in length and tone.",
     "Write down what you noticed."
+   ],
+   "variations": [
+    "At your next event, count how many seated people are being spoken to by standing people, and whether anyone sits down to join them.",
+    "Move a chair into a conversation with a seated person, and notice how many others follow your lead.",
+    "In a meeting, check that everyone can see everyone else's face, including anyone who lip-reads or uses a wheelchair."
    ]
   },
   {
@@ -123,6 +152,11 @@
     "List any assumptions you made about him beyond what his disability actually involves.",
     "Ask what evidence you had for each one.",
     "Write one sentence about what you will assume next time, which is nothing extra."
+   ],
+   "variations": [
+    "Notice an assumption you have made about someone with an invisible disability, and what evidence you had.",
+    "Notice how often people speak more slowly or loudly to someone with a visible disability, and whether that person seems to need it.",
+    "Write down what you know about a disabled person's abilities beyond their disability, and notice whether you had assumed any limits."
    ]
   }
  ],
@@ -204,6 +238,45 @@
    "explain": "Talking to the companion instead of the disabled person is so common that a BBC programme on disability was named after it. Turning your eyes to him redirects the waiter without embarrassing anyone.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Which of these is an example of what Nario-Redmond and colleagues called benevolent ableism?",
+   "options": [
+    "Openly bullying a disabled colleague and making fun of how they move",
+    "Treating a disabled person as fragile or in need of rescue, such as pushing without asking",
+    "Building a ramp into a public building so that wheelchair users can enter it",
+    "Refusing to hire a disabled candidate because of an unwillingness to make any reasonable adjustments"
+   ],
+   "answer": 1,
+   "explain": "Benevolent ableism treats disabled people as fragile, childlike or in need of rescue. Unasked-for help, such as pushing a wheelchair without asking, is a common example, kind in intention and patronising in effect.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a bank counter, a Deaf customer has typed her problem on her phone. What fits this chapter best for the cashier?",
+   "options": [
+    "Speak very slowly and loudly, exaggerating each word so that she can lip-read it more easily",
+    "Face her, keep the mouth visible, write things down and let her lead on how to communicate",
+    "Ask the hearing customer behind her to explain what she wants, since he can hear",
+    "Turn to the screen while speaking, so that the problem can be sorted out more quickly"
+   ],
+   "answer": 1,
+   "explain": "Exaggerated or shouted speech is harder to lip-read, turning away hides the mouth, and speaking through a hearing stranger is a form of spread. Facing her, writing and letting her lead respects her as the customer.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a person using a priority seat who does not look disabled is probably taking advantage. What does this chapter suggest?",
+   "options": [
+    "That many disabilities are invisible, so assume they have a reason, as you would want them to of you",
+    "That anyone using a priority seat should be asked to prove their disability to the other passengers",
+    "That priority seats are only for people using wheelchairs, canes or guide dogs, and nobody else",
+    "That younger people are rarely disabled, so they should give up priority seats when asked"
+   ],
+   "answer": 0,
+   "explain": "Chronic pain, fatigue, heart conditions, epilepsy and many other disabilities do not show. Assuming that an ordinary-looking body is fully able is spread in reverse.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -227,6 +300,110 @@
    "work": "Physical Disability: A Psychological Approach",
    "author": "Beatrice A. Wright",
    "note": "Harper & Row, 1960; revised in 1983 as Physical Disability: A Psychosocial Approach. The origin of spread."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The father at the engagement party",
+   "scene": "Geoff, sixty-four, was diagnosed with Parkinson's disease five years ago. His tremor is mostly controlled by medication, but his face moves much\n  less than it used to, his voice has become soft and flat, and he moves slowly, especially when he is tired. His son, Tom, is engaged to Priya, and\n  her parents are hosting an engagement party at their home. It is the first time Geoff and his wife, Linda, have met them.\n\n  Priya's father, Raj, greets Geoff warmly and talks to him about the wedding plans. Geoff listens, nods slightly and answers in a quiet monotone. His\n  face barely changes. When Raj makes a joke about the cost of the wedding, Geoff's expression stays still. When Priya's mother shows them the garden\n  she has spent twenty years on, Geoff says \"Very nice\" in the same level voice.\n\n  After an hour, Raj says quietly to his wife that Tom's father does not seem very happy about the engagement. Priya's mother agrees that he seemed\n  cold. Priya, overhearing, is upset, and asks Tom whether his dad has a problem with her family.\n\n  Tom is horrified. He tells Priya that his father has been talking about the engagement for weeks, that he cried when Tom told him, and that he had\n  told Tom in the car on the way there how much he liked her parents' house.\n\nGeoff had also taken his medication late that afternoon, because the drive had run on, and he knows that his face and voice are flatter when the timing slips. He had not thought to mention it.\n\nLinda, watching from across the room, can see that Geoff is tired, and wishes she had found a way to tell Priya's parents earlier. She has done it so many times that she had hoped, this once, she would not need to.",
+   "misread": "Raj and his wife read Geoff's still face, soft monotone and slow responses as coldness and disapproval of the engagement. They read him against the general expectation of how a happy father looks, not against his own baseline.\n\nPriya, hearing her parents, read the coldness as a judgment on her family, which turned a misunderstanding about a face into a worry about a marriage.\n\nGeoff, for his part, had no idea how he was coming across. Inside, he was enjoying himself more than he had in months, and he assumed it showed.\n\nRaj's wife also read Geoff's slow movements, as he got up from the sofa, as reluctance to join the tour of the garden, when it was simply how long it took him to stand.",
+   "betterRead": "Parkinson's can reduce facial expression and flatten the voice, so that feelings which are fully present do not reach the face. Bogart, Tickle-Degnen and Ambady found that people with more severe facial paralysis were rated as less happy than people with milder paralysis, whatever they were actually describing: observers read a still face as a still mood. This chapter's rule is to read each person against his own pattern. Geoff's still face was simply his face now. The better response, which Tom and Linda made the same evening, was to explain, briefly and without fuss, that Geoff has Parkinson's, which affects his expression and voice, and that he was delighted. Raj sat down beside Geoff, asked him about his own wedding and listened to the words rather than watching the face. Geoff talked for half an hour. Raj said later that it was the best conversation of the party.\n\nLinda also suggested that, for big family occasions, Geoff take his medication on time and rest beforehand, which made a visible difference at the wedding itself."
+  },
+  {
+   "title": "The traveller at the station",
+   "scene": "Abdul, forty-five, has been blind since his twenties and travels to work by train every day with a long white cane. One morning his usual\n  platform is changed at short notice because of engineering works. The announcement is muffled, and the information screens he cannot see are the\n  only clear source. He stops near the top of the stairs to listen for another announcement.\n\n  A man in a hurry sees him, says \"Here, let me help you, mate,\" takes hold of his upper arm and starts steering him briskly down the stairs to\n  platform three. Abdul, caught off balance, says that he is not sure he needs platform three, but the man is already moving. At the bottom, the man\n  lets go, says \"There you go,\" and is gone. Abdul does not know which platform he is on, which way he is facing, or where the stairs are.\n\n  A woman who saw it happen comes over. She says, \"Hello, I'm Joanna. Would you like some help finding your train?\" Abdul says yes, he is trying to get\n  the 8.12 to Leeds. She checks the screen, tells him it has moved to platform five, and asks whether he would like to take her arm. He says yes. She\n  offers her elbow, and he takes it just above the joint.\n\n  As they walk, she tells him when the stairs are coming, whether they go up or down, and when there is a gap in the crowd.\n\nAbdul has had this happen before, more times than he can count. He has learned to say \"Please don't take my arm\" quickly, but on this morning the man was moving before he could speak.\n\nHe has been travelling this route for twelve years, and he knows the station well. What he needs on a morning like this is information, not an escort.",
+   "misread": "The first man read a blind man pausing at the top of the stairs as a man in need of rescue, and read his own grip on Abdul's arm as kindness. He took Abdul's control of his own movement without asking where he wanted to go.\n\nHe also read Abdul's protest as polite reluctance to accept help, rather than as a man telling him he was going the wrong way.\n\nThe other commuters, watching the man march Abdul down the stairs, read it as a kind stranger helping, and only Joanna saw that Abdul had been taken somewhere he had not asked to go.",
+   "betterRead": "Nario-Redmond and colleagues described benevolent ableism as treating disabled people as fragile or in need of rescue, and unasked-for help is among the experiences disabled people report most often. Being grabbed and steered is disorienting: Abdul lost his sense of where he was and was left on the wrong platform. Joanna did what sight loss charities such as the RNIB teach: she introduced herself, asked whether he wanted help, asked where he was going, offered her elbow rather than taking his, walked at his pace and described what was coming. At platform five, she told him where he was standing, which way the train would come from and where the nearest bench was, and said goodbye so that he knew she was leaving. Abdul caught his train. He said later that the difference between the two helpers was the difference between being moved and being accompanied.\n\nAbdul also asked the station staff to make sure platform changes were announced clearly twice, which they now do.\n\nJoanna, for her part, said it was the first time she had used the technique she had learned from a charity leaflet, and that it was far easier than she had expected."
+  },
+  {
+   "title": "The customer at the bank counter",
+   "scene": "Ellen, thirty-three, is Deaf and uses British Sign Language. She goes into her bank to sort out a problem with a payment that has been taken\n  twice. There is a queue. When her turn comes, the cashier calls \"Next, please!\" and Ellen, who is reading a leaflet, does not respond. The cashier\n  calls again, louder, and the man behind Ellen taps her on the shoulder and points.\n\n  At the counter, Ellen signs that she is Deaf and points to her ear, then takes out her phone, where she has typed a note explaining the problem. The\n  cashier, flustered, begins to speak very slowly and loudly, exaggerating every word, and then turns to her screen while still talking, so that Ellen\n  can no longer see her mouth. When she turns back, she asks Ellen a question in the same exaggerated way, and Ellen cannot follow it. Ellen types a\n  reply. The cashier reads it and says, to the man behind Ellen, \"I think she wants a refund.\"\n\n  Ellen feels her face go hot. She has been talked about, in the third person, in front of a queue, to a stranger.\n\n  The branch manager, Gareth, has seen it from his desk. He comes over, smiles at Ellen, picks up a notepad and writes, \"I'm the manager. Shall we sort\n  this out at my desk?\"\n\nThe man behind her, it turns out, also looked away rather than at Ellen when the cashier spoke to him, embarrassed, as if he too were unsure who the conversation belonged to.\n\nShe has used this branch for six years. In that time, nobody behind the counter has learned to wave rather than call her name.",
+   "misread": "The cashier read Ellen's deafness as a barrier to be overcome by volume and exaggeration, and when that failed, turned to the hearing man behind her as if he were Ellen's spokesman. She brought hearing habits into an exchange where they did not work.\n\nThe man behind her read the shoulder tap he gave her as helping, which it was, and then read the cashier's question to him as his to answer, which it was not.\n\nThe cashier, if asked, would have said she was trying her best, which was true. Her best was built on habits that suited hearing customers and failed Ellen.",
+   "betterRead": "This chapter describes how Deaf space reverses several hearing habits: calling out does nothing, faces must stay visible, and the person you are talking to is the person in front of you. Exaggerated, slow speech is harder to lip-read, not easier, and turning to a screen hides the mouth. Speaking to the man behind her was a version of spread, treating Ellen as unable to speak for herself. Gareth's better approach was simple. He wrote, faced her when he did speak, kept his mouth visible and let her lead on how they would communicate. At his desk, they exchanged written notes for ten minutes and resolved the double payment. He also asked her whether the bank could do anything better. She suggested that staff learn to wave or tap the counter to get a Deaf customer's attention and keep a notepad at every till. Gareth arranged both.\n\nEllen also wrote to the bank's head office, with Gareth's encouragement, and the notepads appeared at every branch in the region.\n\nGareth also learned to sign \"hello\" and \"thank you\", which Ellen said, when she next came in, made her laugh and made her day."
+  },
+  {
+   "title": "The engineer who stammered",
+   "scene": "Imran, thirty, is a civil engineer, and he has a stammer. On some words, especially at the start of a sentence or under pressure, his speech\n  blocks: his mouth forms the first sound and nothing comes for several seconds, or a sound repeats. He knows exactly what he wants to say. In meetings,\n  this is when the trouble starts.\n\n  When Imran blocks, his colleagues react in a few predictable ways. Some look away, out of kindness, which leaves him talking to the side of their\n  heads. Some finish his sentence for him, usually wrongly. One manager, Clive, has a habit of saying \"Take your time\" in a tone that makes Imran feel\n  like a child, and then moving on to someone else before Imran has finished. In one design review, a visiting client began to address his questions\n  to Imran's junior colleague, as if Imran were not the lead engineer.\n\n  Imran has started to say less in meetings. He emails his views afterwards instead. His annual review notes that he \"lacks presence in meetings\" and\n  \"could be more assertive\".\n\n  His new manager, Gemma, reads the review and asks Imran what would help. He tells her: wait, keep looking at me, do not finish my words, and do not\n  move on until I have finished.\n\nAt home, with friends and family, Imran stammers much less, and he has noticed that the meetings where people look away and hurry him are the meetings where it is worst.\n\nHe has also noticed that the client who turned to his junior colleague did not do so on the second day of the review, after Imran presented the structural calculations without a single block.\n\nHis previous manager, he later learned, had written the comment about presence after a single meeting in which Imran had blocked badly while presenting to the board.",
+   "misread": "His colleagues read Imran's blocks as difficulty in thinking or a lack of confidence, and responded by looking away, finishing his sentences or moving on. The client read his stammer as a sign that someone else must be in charge, which is spread at work.\n\nAnd the review read the consequences of those reactions, his silence and his emails, as a personality trait.\n\nImran also read his colleagues' looking away as embarrassment on his behalf, which made each block feel more shameful than the last.\n\nClive's \"take your time\", meant as patience, was read by everyone else in the room as a signal that Imran was struggling, which made the next block more likely.",
+   "betterRead": "Beatrice Wright described spread as the assumption that a disability in one area affects others, and a stammer is often mistaken for a lack of intelligence, confidence or authority. Part I's chapter on the voice touched on stammering, and the advice of stammering organisations is consistent: wait, keep natural eye contact, do not finish words and do not hurry the speaker. Imran's blocks were a feature of his speech, not his mind, and the review had turned the effect of others' reactions into a judgment of him. Gemma's better approach was to do what Imran asked and to make it the norm. She told the team, with his agreement, how they could help, and in meetings she waited, kept her eyes on him and did not move on until he had finished. She also removed the comment about presence from his review. Imran began speaking in meetings again, and led the next client review.\n\nClive, when Gemma explained, said he had thought he was being kind, and asked Imran directly what he should do instead."
+  }
+ ],
+ "workedReading": {
+  "title": "Hosting a wheelchair user for dinner",
+  "scene": "Matthew, thirty-six, has invited a new colleague, Lucy, thirty-four, and her husband, Sam, to dinner at his flat with a few friends. Lucy is a wheelchair user after a spinal injury in her twenties. She is funny, sharp and a keen cook, and Matthew wants her to enjoy the evening as much as anyone else. He has never had a guest who uses a wheelchair, and he realises, as he plans, that his flat is on the first floor and that he does not know whether she can get in. He also knows from this chapter that the biggest risks are not hostility but helpfulness: grabbing, steering, standing over and talking to the companion. He decides to ask rather than guess, and to treat Lucy as a guest first and a wheelchair user second.\n\nHe also remembers a work party at which he saw a wheelchair user spend the whole evening looking up at a circle of standing colleagues, and leave early. He wants his evening to be different.\n\nHe also asks Sam, privately, whether there is anything he should know, and Sam says only that Lucy hates being fussed over, which Matthew takes as the most useful advice of all.",
+  "steps": [
+   {
+    "label": "Ask about access first",
+    "text": "He messages Lucy a week before: \"My flat's on the first floor and there's a lift, but the front door has a step. Is that manageable, or would you prefer we went to a restaurant? Anything else that would help?\" Lucy replies that a single step is fine with her chair, that she would rather come to his flat, and that the main thing is space to turn in the bathroom. She thanks him for asking. Most people, she says, do not.\n\nHe also asks whether she would prefer any particular seat at the table, and she says somewhere she can get in and out without everyone having to move.\n\nHe also mentions where he lives and how to park nearby, which saves her a call to ask."
+   },
+   {
+    "label": "Plan the room",
+    "text": "He checks the bathroom and moves a laundry basket so that there is room to turn. He rearranges the living room so that there is a clear route from the door to the table, and moves the coffee table out of the way. He thinks about where everyone will sit, and plans for the pre-dinner drinks to happen around the sofa and armchairs, so that everyone is seated at the same level, rather than standing in a circle in the kitchen.\n\nHe also checks that the light switches and the door handle to the bathroom are within reach from a seated position, and leaves a lamp on in the hallway."
+   },
+   {
+    "label": "Greet at eye level",
+    "text": "When Lucy and Sam arrive, Matthew opens the door, greets Lucy first, by name, and steps back so that she can come in at her own pace. He does not take hold of her chair to help her over the step; she manages it with a quick tilt. In the living room, he sits down to talk to her rather than standing over her. As this chapter describes, sitting puts their eyes at the same height and spares her neck.\n\nHe also greets Sam, but second, so that the order of the greeting tells everyone who the guest is.\n\nHe also offers to take her coat, as he would anyone's, and hangs it where she can reach it herself when she leaves."
+   },
+   {
+    "label": "Let her lead on help",
+    "text": "At one point Lucy reaches for a bowl of crisps on a high shelf in the kitchen. Matthew's instinct is to grab it for her. He stops and asks, \"Would you like me to get that?\" She says, \"No, I've got it,\" and uses a long-handled grabber from her bag. He says nothing more. Asking, waiting and accepting the answer, as the Ask, Wait, Accept drill rehearses, means that help stays her decision.\n\nLater, when she does ask him to pass something from across the table, he passes it, as he would for anyone. Asking works in both directions.\n\nHe also notices how strong the urge to help was, and how little it had to do with anything Lucy needed."
+   },
+   {
+    "label": "Talk to her, not her husband",
+    "text": "When one of Matthew's friends, meeting Lucy for the first time, asks Sam whether Lucy would like a drink, Matthew turns to Lucy and waits, so that the question goes to her. Lucy says, cheerfully, \"A gin, please, and I can answer for myself, but thanks, Sam's quite used to it.\" Everyone laughs, including the friend, who goes red and then asks Lucy about her work.\n\nHe also notices that the friend, after going red, treats Lucy no differently for the rest of the evening, which is exactly the right recovery.\n\nHe also notices that the friend's mistake was the same one the waiter made with Ravi, and that it happens even among kind people."
+   },
+   {
+    "label": "Keep the evening ordinary",
+    "text": "Over dinner, the conversation is about cooking, work, holidays and a film everyone has seen. Nobody asks Lucy what happened to her, and nobody tells her she is an inspiration. When she offers to help with the washing up, Matthew says yes, as he would to anyone, and lowers the drying rack onto the table so that she can reach it.\n\nHe also notices that the evening's best conversation is between Lucy and a friend who is a chef, about bread, and that disability does not come up once.\n\nHe also makes sure the dessert is served at the table rather than on a high kitchen counter, so that everyone helps themselves at the same height."
+   },
+   {
+    "label": "What happened",
+    "text": "At the end of the evening, Lucy says it was the most relaxed dinner she had been to in months, and asks Matthew to come to hers next time so that she can show off her cooking. Sam tells Matthew quietly that the message about access had made Lucy decide to come. Matthew writes down what he learned: ask first, plan the room, sit down, ask before helping, let her answer for herself, and then forget about it.\n\nHe also realises that most of the planning took ten minutes, and that the hardest part was resisting the urge to help."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Calling someone an inspiration for ordinary things",
+   "body": "Telling a disabled person that they are an inspiration for going shopping, catching a train, going to work or being out at all is usually meant as praise. To many disabled people it lands as a reminder that others expected them to be at home, and that ordinary life is seen as remarkable when they do it. The man who patted Ravi on the shoulder in the shop was expressing admiration; what Ravi heard was that a wheelchair user buying milk was surprising. Nario-Redmond and colleagues describe this kind of praise as part of benevolent ableism: it is kind in intention and patronising in effect. If a disabled person does something genuinely remarkable, such as winning a race or building a company, say so, as you would to anyone. For ordinary life, the respectful response is the ordinary one: nothing at all.\n\nIf you feel admiration, ask yourself whether you would feel it for a non-disabled person doing the same thing. If not, keep it to yourself."
+  },
+  {
+   "title": "Asking what happened",
+   "body": "\"What happened to you?\" and \"Were you born like that?\" are among the first questions many disabled people are asked by strangers, sometimes before their name. The curiosity is natural, but the question puts the person's body and history at the centre of a meeting with someone they do not know, and asks them to explain it on demand. Many disabled people describe being asked it several times a week. Some are happy to talk about their disability with people they know well; few want to with a stranger at a bus stop or a colleague on their first day. If someone wants you to know, they will tell you. Until then, ask about the things you would ask anyone: their work, their weekend, the film they saw. Lucy's evening went well partly because nobody asked.\n\nIf you are curious, notice that the question is about your curiosity, not their needs, and let it go.\n\nIf a disabled colleague does tell you about their condition, listen, and follow their lead on how much to discuss it."
+  },
+  {
+   "title": "Moving someone's mobility aids",
+   "body": "A wheelchair, a cane, a walking frame or a guide dog's harness is, for many people, part of how they move through the world, and moving it can feel much like being moved. Pushing a wheelchair without asking is the obvious example, but there are others: moving a cane that is leaning against a table so that someone can sit down, folding a walker out of the way, hanging a bag on a wheelchair's handles, leaning on the chair while talking, or distracting a working guide dog. Each takes away something the person relies on, or touches their personal space without permission. Leave mobility aids where their owners put them. If one is genuinely in the way, ask the person before touching it. And never move one out of reach of someone who needs it to get up.\n\nIf you have moved one by mistake, put it back within reach at once and say so."
+  },
+  {
+   "title": "Doubting disabilities you cannot see",
+   "body": "Many disabilities are not visible: chronic pain, fatigue conditions, heart and lung conditions, epilepsy, autism, mental illness, hearing loss and many others. People with them often use accessible toilets, priority seats, blue badges and lifts, and are sometimes challenged, glared at or told that they do not look disabled. That reading is spread in reverse: assuming that a body that looks ordinary must be fully able. It can be humiliating and, for someone who is struggling to stand on a crowded train, harmful. If someone is using an accessible facility or a priority seat, assume they have a reason, as you would want them to assume of you. If you are a member of staff, follow your organisation's policy, which should not require people to prove or explain a disability in public.\n\nIf you are tempted to challenge someone, remember that the cost of being wrong falls entirely on them."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Should I offer help to a disabled stranger?",
+   "a": "You can offer, in the same way you would offer help to anyone who looked as though they might need it, and then follow their answer. Ask first, in an ordinary voice: \"Would you like a hand with that?\" Then wait, and accept the reply. If the answer is no, leave it, without insisting or looking hurt, as Paul learned to do with Ravi. If the answer is yes, ask how they would like you to help, because people often have a particular way of doing things that works for them, as Joanna asked Abdul. Never take hold of a person, their wheelchair, their cane or their bag without asking. Nario-Redmond and colleagues found that unasked-for help is among the experiences disabled people report most often, and the asking is what turns it into respect.\n\nAnd if you are not sure whether someone wants help, it is fine to stay nearby without doing anything. Being available is not the same as intervening."
+  },
+  {
+   "q": "What words should I use about disability?",
+   "a": "Follow the person's own lead. Some people prefer to be called disabled people, and some prefer people with disabilities. Many Deaf people use a capital D to mark their culture, and many autistic people prefer \"autistic person\". If you are unsure, listen to how someone describes themselves, or ask. Some phrases are widely disliked: \"confined to a wheelchair\" or \"wheelchair-bound\", when the chair is what lets someone move; \"suffers from\", which assumes misery; \"brave\" or \"inspirational\" for ordinary life. \"Wheelchair user\", \"blind\", \"Deaf\" and \"has a stammer\" are generally fine. Above all, remember that words matter less than how you behave: talking to the person, asking before helping and treating them as the same as anyone else.\n\nIf you get a word wrong and someone corrects you, thank them and use their word. That is all that is needed.\n\nIt is also worth noticing that many disabled people are tired of debates about language and would rather people simply got the behaviour right."
+  },
+  {
+   "q": "How should I talk to someone with a stammer or a speech impairment?",
+   "a": "Wait, keep natural eye contact and let them finish. Do not finish their words or sentences for them, even when you think you know what is coming, because you are often wrong and it takes their speech away from them. Do not tell them to slow down, take a breath or relax, which most people with a stammer find unhelpful. Do not move on to someone else before they have finished, as Clive did with Imran. Keep your face relaxed and attentive, as you would with anyone who was speaking. If you genuinely did not understand something, it is fine to say so and ask them to repeat it, or to check what you heard. Above all, listen to what they are saying, which is what they want from you, rather than to how they are saying it.\n\nIn meetings, a chair who makes waiting the norm helps far more than any individual reassurance.\n\nIt also helps to give the person time in meetings, for example by asking for their view and then waiting, rather than calling on them for a quick answer."
+  },
+  {
+   "q": "How can I get a Deaf person's attention and talk with them?",
+   "a": "Wave within their line of sight, tap them lightly on the shoulder or arm, or, in a group, flick the lights, rather than calling out. When you speak, face them, keep your mouth visible and speak at a normal pace and volume; exaggerated, slow or shouted speech is harder to lip-read, not easier. Do not turn away to a screen or a document while speaking. Have a notepad or phone ready to write things down, and let the Deaf person lead on how you communicate, as Gareth did at the bank. If an interpreter is present, look at and speak to the Deaf person, not the interpreter. Do not look away while someone is signing, which is like walking out of a conversation. And never address a Deaf person through a hearing companion as if they were not there.\n\nLearning a few signs, such as hello and thank you, is a small gesture many Deaf people appreciate, though it is no substitute for an interpreter in important conversations."
+  },
+  {
+   "q": "What if I make a mistake?",
+   "a": "Apologise briefly, correct it and move on, as Matthew's friend did when Lucy answered for herself. Most disabled people have been on the receiving end of many mistakes, and what matters to them is usually not the mistake itself but whether the person notices and changes. A long apology, or a show of embarrassment, puts the disabled person in the position of reassuring you, which is more work for them. So does avoiding them afterwards for fear of getting it wrong again. If you are unsure what would help in future, ask simply: \"Is there a better way for me to do that?\" Then do it. Getting something slightly wrong while treating someone as an equal is far better than getting everything right while treating them as fragile.\n\nIt also helps to notice whether you have started avoiding someone after a mistake, and to stop.\n\nMost disabled people have had to forgive a great many mistakes. What they remember is whether the person kept treating them as an equal."
+  },
+  {
+   "q": "How can I tell what someone with facial paralysis or Parkinson's is feeling?",
+   "a": "Listen to their words, their tone, their posture and what they do, rather than relying on their face, and ask when you are unsure. Bogart, Tickle-Degnen and Ambady found that observers read people with more severe facial paralysis as less happy, whatever they were actually describing, which means that the face can mislead you badly. People with Parkinson's, as Geoff's case shows, may have reduced facial expression and a flat voice while feeling as much as anyone. Read each person against their own baseline: once you know how they usually look and sound, changes become meaningful again. Many people with these conditions use words more deliberately to show feeling, so take what they say at face value. If they tell you they are delighted, they are.\n\nAnd if you are the one with the still face, telling people early, as Tom did for his father, can save hours of misreading."
   }
  ],
  "watch": [
