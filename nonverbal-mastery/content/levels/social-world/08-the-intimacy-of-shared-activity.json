@@ -73,6 +73,27 @@
    "doCaption": "Putting the tools down to talk",
    "dontCaption": "Busy hands, closed subject",
    "annotation": "When the activity becomes a wall, use a natural pause, such as the walk back or the cup of tea, to ask one real question."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_walk_hands_pockets",
+   "doCaption": "The weekly walk, back in the diary",
+   "dontCaption": "Walking alone the route you used to share",
+   "annotation": "Friendships fade when the hours stop. A regular, fixed activity puts them back, a few at a time."
+  },
+  {
+   "doPoseId": "p_group_three",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "Turning up to the team night",
+   "dontCaption": "Working late again, the team night skipped",
+   "annotation": "Shared time is often the first thing cut and the hardest to rebuild. Protect it as you would sleep or exercise."
+  },
+  {
+   "doPoseId": "p_pair_teach_alongside",
+   "dontPoseId": "p_pair_men_apart_glance",
+   "doCaption": "Shown the ropes by someone alongside",
+   "dontCaption": "Standing apart at a new club",
+   "annotation": "New friendships form through repeated contact and shared tasks. Go back, help with something, and let the hours do their work."
   }
  ],
  "caseStudy": "Dave, sixty-one, retires as an electrician eight months after his wife dies. Within a few weeks he realises that almost every man he talked to was someone he worked with. His daughter, worried, finds a Men's Shed twenty minutes away and drives him there herself, because she suspects he will not go alone.\n\nFor the first month Dave says almost nothing. He helps Ken, a former engineer in his seventies, rebuild a lawnmower engine, and the two of them communicate mostly in grunts and pointing. By the second month they are arguing cheerfully about torque settings. By the fourth, over tea at the end of a session, Dave mentions his wife for the first time, and Ken, without looking up from his mug, says that his own wife has dementia and no longer knows him.\n\nThe following spring Dave notices that Ken has changed. He leaves jobs half-finished, which he never used to do. His hands are slower. He snaps at a younger man over nothing, and three weeks in a row he leaves early. Dave has watched those hands for a year, and knows this is not Ken.\n\nOn the drive home one Thursday, Dave asks him how things really are. Ken says that his wife has moved into a care home, that he visits every day and that the house is unbearable in the evenings. Dave does not try to fix it. He starts picking Ken up for the shed twice a week, and on Sundays they walk the canal. The talk on those walks is mostly about engines. Sometimes it is not.",
@@ -92,6 +113,10 @@
     "Estimate how many hours you spent together in the past year.",
     "Mark any friendship that is running on memory rather than on shared time.",
     "Choose one to rebuild with a regular activity."
+   ],
+   "variations": [
+    "Do the ledger for your friendships with women too, and compare how they are held together.",
+    "Ask one friend on your list to estimate the hours you spent together last year, and compare his number with yours."
    ]
   },
   {
@@ -102,6 +127,10 @@
     "Find one near you: a club, a team, a choir, a volunteer group, a shed.",
     "Go once, and decide in advance that you will go at least four times before judging it.",
     "After four sessions, write down who you have spoken to and what you have noticed."
+   ],
+   "variations": [
+    "Choose an activity you have never tried, so that everyone starts as a beginner together.",
+    "Invite a friend to come with you to the first session, so that the first awkward visit is shared."
    ]
   },
   {
@@ -113,6 +142,10 @@
     "Compare it with how he usually is.",
     "If anything seems different, note it, and consider asking at a natural pause.",
     "Write down what you learned about him that conversation would not have shown you."
+   ],
+   "variations": [
+    "Watch a friend during a game you are both losing, and note how he handles it compared with when you are winning.",
+    "Notice what your own hands and breath do when a shared task goes wrong, and what that might show others about you."
    ]
   },
   {
@@ -123,6 +156,10 @@
     "Choose the natural pause where you could ask: the walk back, the drive, the tea.",
     "Write the one sentence you will use.",
     "Use it at the next opportunity, and let him choose whether to answer."
+   ],
+   "variations": [
+    "Choose the pause in advance and decide what you will do if he changes the subject: let it go, and try again another week.",
+    "Practise the sentence aloud while doing something with your hands, so that it comes naturally at the bench or the bike."
    ]
   }
  ],
@@ -204,6 +241,45 @@
    "explain": "The activity opens the door but does not walk through it. A natural pause, asked once and gently, lets him choose whether to talk without turning the trip into an interview.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Roughly how many hours together did Jeffrey Hall estimate it takes to become close friends?",
+   "options": [
+    "More than two hundred hours spent together",
+    "About five hours, as long as the conversation is deep and honest",
+    "Exactly twenty hours, whatever the people spend that time doing",
+    "Close friendship cannot be measured in hours, so he did not estimate it"
+   ],
+   "answer": 0,
+   "explain": "Hall estimated around fifty hours for a casual friend, ninety for a friend and more than two hundred for a close friend. Time spent by choice, doing things and talking, helped most.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Since his daughter was born two years ago, a man has stopped his weekly football, rarely sees other men and says he feels like a machine. What fits this chapter best?",
+   "options": [
+    "Tell him that giving up hobbies is simply part of being a good father now",
+    "Suggest he waits until the children are older before seeing friends again",
+    "Agree a protected weekly slot with his partner so that he can go back",
+    "Encourage him to find all his friendship online, which takes less time"
+   ],
+   "answer": 2,
+   "explain": "Shared activity is often the main source of men's friendship, and it is often the first thing cut. Treating it as part of keeping the family well, and protecting it, helps everyone.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that the synchrony studies prove marching or singing together will turn strangers into close friends. What does this chapter say?",
+   "options": [
+    "It is right, since one session of synchrony always creates a close friendship",
+    "Small studies found synchrony increased cooperation; they did not show friendship",
+    "It is wrong, since the studies found that synchrony made people cooperate less",
+    "It is right, but only for men who are already members of a sports team"
+   ],
+   "answer": 1,
+   "explain": "Wiltermuth and Heath found more cooperation after moving in time, and Cohen and colleagues found higher pain thresholds after synchronised rowing. These were small effects in small studies, not proof of friendship.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +308,110 @@
    "work": "A narrative review of Men's Sheds literature: Reducing social isolation and promoting men's health and well-being",
    "author": "Nathan J. Wilson and Reinie Cordier",
    "note": "Health and Social Care in the Community 21(5), 2013. What is known, and not yet known, about Men's Sheds."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The band that split",
+   "scene": "For nineteen years, Mo, forty-seven, played bass in a covers band with three friends from school. They rehearsed every Wednesday in a\n  garage and played pubs and weddings most weekends. When the drummer moved to Spain, the band split. At first the other three promised to keep\n  meeting. They met for a curry twice in the first year, and once in the second. By the third year, they were messaging on birthdays.\n\n  Mo did not realise how much he had lost until his father died and he found, sitting in the crematorium car park afterwards, that there was nobody\n  he wanted to ring. He had colleagues and neighbours, and a wife he loved. But the three men he had spent a thousand Wednesday evenings with were\n  people he now saw on social media.\n\n  His wife suggests that he ring them. Mo says that there is no point, because they have all moved on.\n\nMo has also noticed that the band's group chat, which used to buzz every day with set lists and gig times, has gone silent for months at a time, broken only by birthday messages and the occasional photograph. Nobody has left it. Nobody posts.\n\nRich, the guitarist, lives four miles from Mo. They pass each other's houses on the way to work. In three years, they have bumped into each other twice, once at a petrol station and once at a school play, and both times they said they must get together, and did not.\n\nWhen Mo's father died, two of the three sent flowers. The third, the drummer in Spain, sent a long message that made Mo cry in the car. None of them came to the funeral, and Mo had not invited them, because he had not thought they would want to.",
+   "misread": "Mo read the fading of the friendships as a sign that they had run their course, and his friends' silence as a lack of interest. He did not see that the band had been carrying the friendship, and that without it, the hours had simply stopped.\n\nHis certainty that they had moved on was also a way of protecting himself. If they had moved on, it was nobody's fault, and there was nothing he could do.\n\nAnd his wife's suggestion to ring them felt to him like an admission of need, which, for a man who had always been the one organising gigs and lifts, was hard to make.\n\nAnd because nobody had actually ended the friendship, there was nothing to repair, only a habit to restart, which is far easier than he imagined.",
+   "betterRead": "Jeffrey Hall's research suggests that friendships need hundreds of hours, and that shared activity supplies them almost without anyone noticing. When the activity goes, the hours go too, and friendships that seemed solid start to run on memory. That is not the same as people moving on. The three men were probably feeling the same gap. The better reading was that the friendships needed a new activity, not a reunion. Mo rang the guitarist, Rich, and suggested something with a fixed time: a jam in Rich's spare room on the first Wednesday of every month, no gigs, no pressure. Rich said yes so fast that Mo laughed. The keyboard player came too. They were rusty and loud and terrible, and they went for a curry afterwards. A year later they were still doing it, and when Rich's marriage ended, it was Mo he rang.\n\nMo also messaged the drummer in Spain, who joined the first jam by video, which was even worse musically and the best laugh they had had in years."
+  },
+  {
+   "title": "The father who stopped playing football",
+   "scene": "Tom, thirty-four, played five-a-side every Thursday for ten years with the same group of men. When his daughter, Lily, was born, he\n  stopped. It seemed the right thing to do: his partner, Jess, was exhausted, there was a baby to bathe, and an evening of football felt selfish.\n  Two years later, with a second child on the way, Tom realises that he has not had a proper conversation with another man, outside work, for months.\n  He is short-tempered at home, sleeps badly and feels, he tells Jess, like a machine for going to work and coming home.\n\n  Jess is surprised. She thought he had chosen to stop. She tells him that she had assumed he did not want to go any more, and that she would rather\n  he went back than kept being miserable.\n\n  Tom says that it feels wrong to go out when there is so much to do at home.\n\nTom has also stopped answering the five-a-side group chat, out of guilt. When the lads invited him to their Christmas night out, he made an excuse. He has started to feel that he is not one of them any more.\n\nTom's mates have noticed too. Two of them have messaged him over the past year asking if he fancies coming back, and he has said maybe, when things calm down. Things have not calmed down, and the messages have stopped.",
+   "misread": "Tom read the football as an indulgence to be given up when life got serious, and its loss as a sacrifice worth making. Jess read his giving it up as a choice he wanted. Neither of them saw the hours of friendship it had been supplying.\n\nHe also read his own misery as a personal failing, a sign that he was not coping with fatherhood, rather than as a sign that he had lost something important.\n\nAnd Jess's assumption that he had chosen to stop was understandable, because Tom had never said otherwise. Couples often lose things like this without either of them deciding to.",
+   "betterRead": "One of the commonest failures this chapter describes is treating shared time as wasted time, and giving it up first whenever work or family pressures grow. For many men, a weekly game is not only exercise but the main place where friendship happens, and losing it can leave them isolated in ways they do not notice until much later. The Survey Center on American Life found that many more men reported having no close friends in 2021 than in a similar survey in 1990, and while the comparison should be treated with caution, Tom's experience fits the pattern. The better approach was to treat the game as part of looking after the family, not competing with it. Tom and Jess agreed that Thursday was his, and that Saturday morning would be hers, for her running club. Tom went back. Within a month, he was sleeping better, and one of the lads, a new father himself, had become the friend he messaged at three in the morning during night feeds.\n\nHe also told the lads what had happened, which surprised him by how easy it was, and two of them admitted they had nearly stopped coming for the same reasons."
+  },
+  {
+   "title": "The kitchen that showed a man",
+   "scene": "Paul, forty, agrees to help his brother-in-law, Greg, fit a new kitchen over a long weekend. They have known each other for ten years,\n  mostly at family barbecues and Christmas, where Greg is easy-going and quick with a joke. Over three days of work, Paul sees a different man. When a\n  cupboard door will not line up, Greg swears, throws a screwdriver across the room and walks out into the garden for ten minutes. When Paul makes a\n  measuring mistake, Greg says nothing, but his jaw tightens and he redoes it himself without explanation. He works without breaks, skips lunch and\n  becomes quieter and sharper as the day goes on.\n\n  On the second evening, Paul's wife, Greg's sister, asks how it is going. Paul says that Greg is a nightmare to work with. She says that does not\n  sound like her brother at all.\n\n  On the third morning, Paul finds Greg sitting in his van outside, before they start, with his head in his hands.\n\nPaul also notices that Greg checks his phone at every break, reads something, and puts it away with his jaw set. Twice he goes outside to take a call and comes back looking grey.\n\nOn the first morning, Greg had been his usual self: joking, making tea, telling stories about the jobs he had done. The change came as the work got harder, which Paul only noticed later, looking back.",
+   "misread": "Paul read Greg's temper, his silent corrections and his refusal to stop as a difficult personality that had been hidden at family events. He did not ask whether something might be pressing on Greg that the work was bringing to the surface.\n\nHe also read the weekend through his own frustration. He was tired too, and a reading of Greg as difficult made his own irritation feel justified.\n\nHe also did not notice the timing. Greg's sharpness rose through each day and was worst in the late afternoon, which fits a man running on empty more than a man with a short fuse.",
+   "betterRead": "You learn a man by doing things with him: how he handles frustration, mistakes, tiredness and help. A long, demanding job together shows what an evening at a table never does. But what it shows is not always character. Greg's flashes of temper, his inability to take a break, his silent redoing of Paul's work and his growing sharpness as the day went on fitted strain at least as well as a bad temper, and his sister's surprise suggested that this was not his baseline. Paul's better response, when he found Greg in the van, was to use the setting the chapter describes. He got in the passenger seat, sat side by side, and said, \"You've seemed under a lot of pressure this weekend, mate.\" Greg said, after a while, that his business was losing money and that he had been lying awake every night. Paul listened, and then said they should take the morning slowly. They finished the kitchen on Monday. Greg rang him the following week, for the first time ever, just to talk.\n\nPaul's wife rang her brother that night."
+  },
+  {
+   "title": "The golf partner who kept playing",
+   "scene": "Stuart and Ray, both sixty-three, have played golf together every Saturday morning for fifteen years. In the spring, Ray's wife, Margaret,\n  is diagnosed with motor neurone disease. Ray tells Stuart in a single sentence on the first tee, then hits his drive. Over the following months,\n  Ray plays more than ever: an extra round on Wednesdays, practice at the range on Fridays. He talks about his swing, the course and the weather.\n  Whenever Stuart tries to ask about Margaret, Ray becomes intensely absorbed in the next shot, lines up a putt for a very long time, or starts talking\n  quickly about his new driver.\n\n  Stuart's wife tells him that Ray needs to talk about it, and that Stuart should make him. Stuart thinks that golf might be the only thing keeping Ray\n  going, and does not want to take it away.\n\n  Then one Saturday, on the eleventh green, Ray misses a short putt and stands there for a long time, staring at the hole.\n\nRay has also stopped coming into the clubhouse after the round, which he did for fifteen years. He loads his clubs into the car and drives off, saying that Margaret needs him, which is true, and which Stuart suspects is not the whole reason.\n\nStuart has also noticed Ray's scores getting better, which surprises him. Ray has always been an erratic golfer. Now he is focused, precise and grimly consistent, as if the game were the one thing in his life he could still control.\n\nStuart's wife, who knows Margaret well, has visited her twice. She says that Margaret is worried about Ray, and that he will not talk to her about it either. He goes out to the garage when she tries, or to the range.",
+   "misread": "Stuart's wife read Ray's golf as avoidance that needed to be broken through. Stuart read it as a refuge that should be protected. Both readings were partly right, and neither knew which Ray needed most.\n\nAnd both readings were made from the outside. Neither of them had asked Ray what he wanted, or noticed that the moments of absorption came at particular points in the conversation.\n\nRay's improving golf also hid him. A man playing the best golf of his life looks, from outside, like a man who is fine.\n\nStuart's own instinct, to protect the golf, was also partly about protecting himself from a conversation he did not know how to have.",
+   "betterRead": "Shared activity makes talk easier; it does not make it happen, and it can become a wall. The signs of the wall going up are visible: sudden absorption in the task when a subject approaches, bursts of talk about the activity, more and more time spent doing it. Ray showed all of these. But the activity was also, very likely, holding him together, and taking it away would not have helped. The better approach respects both: keep the activity, and use its natural pauses to open the door. On the eleventh green, Stuart walked over, stood beside him and said, quietly, \"How is she, Ray? And how are you?\" Ray said nothing for a long time, then that he did not know how he was going to do it. They sat on the bench by the twelfth tee for twenty minutes, while two groups played through. Then they finished the round. After that, the walk from the eighteenth green to the clubhouse became the place where Ray talked about Margaret, every Saturday, until the end."
+  }
+ ],
+ "workedReading": {
+  "title": "The motorbike in the garage",
+  "scene": "Ian, fifty-two, realises when he fills in the Friendship Ledger drill that his oldest friend, Martin, is a friendship running on memory. They were inseparable at school and in their twenties, rode motorbikes together across Europe, and were each other's best men. Now they see each other twice a year, at Christmas drinks and Martin's birthday, and talk about the past. Ian knows that Martin's divorce came through last year and that he lives alone. He also knows that Martin still has the old bike they rode to Spain, rusting in his garage.\n\nIan is aware that the idea feels slightly awkward. Two men in their fifties suggesting a weekly hobby can sound like a midlife crisis. He decides that the awkwardness is a small price, and that Martin probably feels it too.\n\nMartin has always been the quieter of the two, the one who listened while Ian talked. Since the divorce, Ian suspects, there has been nobody to listen to, and nobody to listen to him.",
+  "steps": [
+   {
+    "label": "Notice the drift",
+    "text": "Ian starts by admitting what has happened. There was no falling out. The hours simply stopped when they married, moved twenty miles apart and had children. He estimates that they have spent perhaps twelve hours together in the past year, most of it in a crowded pub. Hall's research suggests that is not enough to keep a close friendship close.\n\nHe also notes that he has many acquaintances and few close friends, and that Martin is the only one he has known for more than thirty years. Losing him to drift would be losing something irreplaceable.\n\nHe also checks the ledger for other names and finds two more friendships running on memory. He decides to start with Martin, the oldest and the one he thinks needs it most, and to come back to the others."
+   },
+   {
+    "label": "Choose an activity, not a reunion",
+    "text": "He considers suggesting a weekend away, and decides against it. A weekend is a reunion: intense, once, and then nothing. What friendships need is regular hours. He thinks of the bike. Restoring it would take months, give them a reason to meet every week, and put them side by side over an engine, which suits them both far better than sitting across a table.\n\nHe also chooses a task with an end in sight, a bike that will one day run, so that the evenings have a purpose beyond being together. A shared goal makes the hours feel natural rather than arranged.\n\nHe also thinks about what Martin enjoys now, not only what he enjoyed at twenty-five. Martin still talks about the bike whenever they meet; it is the one part of their past that seems to have kept its pull."
+   },
+   {
+    "label": "Make it fixed and easy",
+    "text": "He rings Martin and suggests Tuesday evenings, seven till ten, in Martin's garage, starting next week. He offers to bring the beer and his own tools. A fixed time, a short commitment and a concrete task make it easy to say yes and hard to drift. Martin says yes, sounding surprised.\n\nHe also suggests the first evening himself, rather than \"sometime\". \"Sometime\" is how drift begins; a date and a time are how it ends.\n\nHe also makes the first evening small. Three hours, a few beers, no pressure to finish anything. A first meeting that is easy is more likely to become a second.\n\nHe also keeps the invitation light. \"Fancy giving the old bike a go? Tuesdays, if you're free\" is easy to say yes to. \"I've been worried about you\" would have been true and much harder to answer."
+   },
+   {
+    "label": "Read him through the work",
+    "text": "Over the first few Tuesdays, Ian watches how Martin works. He is slower than he used to be, and more patient. When a seized bolt will not shift, Martin does not swear as he once would have; he goes very quiet and keeps trying. Twice he stops working and stares at the engine for a long time. Ian notes these moments without commenting on them.\n\nHe also notices the things that have not changed: Martin's habit of whistling when a job is going well, his way of laying tools out in order on a rag. Seeing the old baseline under the new quiet helps Ian read what has changed and what has not.\n\nHe also notices what Martin does with his hands when he is not working: cleaning tools that are already clean, lining up screws. Soothing, perhaps, or habit. Ian files it as one more sign of a man working hard to keep himself steady."
+   },
+   {
+    "label": "Use the natural pauses",
+    "text": "Ian notices that the best moments for talk come at the edges of the work: making tea, waiting for something to soak, wiping their hands at the end of the evening. On the fourth Tuesday, while they wait for penetrating oil to work on a bolt, Ian says, \"Must be strange, being on your own in the house.\" He keeps his eyes on the bolt.\n\nHe also chooses a remark about the house rather than a question about the divorce. A remark leaves Martin free to answer or not, and it touches the subject from the side.\n\nHe also lets Martin control the pace of the conversation, as he controls the pace of the work. If Martin wants to talk, he will; if he wants to talk about carburettors, that is fine too."
+   },
+   {
+    "label": "Put the tools down",
+    "text": "Martin is quiet, and then says that the evenings are the worst, and that some weeks Tuesday is the only night he speaks to anyone. Ian puts his spanner down and turns to face him. He says he is glad they are doing this, and that he would have done it years ago if he had thought. Then, after a minute, they go back to the bolt, which finally moves.\n\nHe also does not let the moment become a long conversation that neither of them wanted. A few minutes of honesty, and then back to the bolt, keeps the garage a place where hard things can be said without taking over.\n\nHe also notices that he wants to fix Martin's loneliness, to suggest dating apps and clubs and evening classes. He lets that pass too. The garage is doing the work, and advice can come later if Martin wants it."
+   },
+   {
+    "label": "What happened",
+    "text": "They finish the bike in October and ride it, slowly, to the coast and back. They keep the Tuesday evenings: there is always something else to fix. In the spring, Martin meets someone, and it is Ian he tells first, in the garage, over the engine of a second bike they have bought for a few hundred pounds. Ian notes that a few dozen Tuesday evenings had done what twenty years of Christmas drinks had not.\n\nHe also notes, for himself, that he had been lonelier than he knew. The Tuesdays mattered to him as much as to Martin.\n\nHe also tells his wife, after the first month, that Tuesday is now fixed, and she says she had noticed he came home happier on Tuesday nights."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Dismissing activity-based friendship as shallow",
+   "body": "It is common to hear that friendships built around football, golf or a shared hobby are not real friendships, because the men involved do not talk about anything important. That view misses two things. First, shared activity supplies the hours that Hall's research suggests friendship needs, and hours are the raw material of closeness. Second, activities seem to build bonds of their own: synchrony, effort and shared experience bring people together in ways talk alone does not. Some of the most loyal friendships men have are with the men they played, worked or served alongside. Shallow is not the right word for them.\n\nIt also helps to notice how men themselves describe these friendships. A man who says \"we just play golf\" may also say, if you ask, that he would trust his golf partner with his life.\n\nIt also helps to notice that women's friendships are also often built around activities: book clubs, running groups, children's activities, work. The contrast between talking and doing is real but smaller than the stereotype suggests.\n\nIt also helps to notice that the friendships men describe as most important often began in shared hardship: a team that lost together, a shift that got through a crisis, a unit that served together. The activity was not incidental. It was the bond."
+  },
+  {
+   "title": "Letting the activities lapse",
+   "body": "Adult life removes, one by one, the activities that used to supply men with friendship: school and university end, teams fold, jobs change, people move, children arrive. Each loss seems small and sensible at the time. The friends do not disappear; they simply stop being seen. Years later, many men find they have acquaintances and colleagues but nobody to ring. The answer is not to mourn the old activities but to put new ones in place, deliberately: something with a fixed time and a regular group, kept for a year, does more than any number of reunions.\n\nIt also helps to spot the moment of drift. The first missed session, the first cancelled meeting, the first \"let's do it sometime\": each is a chance to reset a date before the habit is gone.\n\nRetirement is a particularly dangerous moment. Men who retire often lose most of their daily contact with other men overnight, and many do not realise how much of their social life their job supplied until it has gone.\n\nIt also helps to keep an eye on friends whose activities have lapsed. A man whose team folded, whose job ended or whose children left home may be losing his friendships without noticing, and an invitation from you could be the start of a new one."
+  },
+  {
+   "title": "Treating shared time as the first thing to cut",
+   "body": "When work gets busy or a baby arrives, the weekly game, the band practice or the evening at the club is often the first thing to go, because it looks like an indulgence. For many men it is the main source of friendship, and cutting it can leave them isolated without anyone noticing, including themselves. Look after these hours the way you look after sleep and exercise. Agree them with your partner as part of keeping the family well, swap slots so that both of you have one, and cut something else first.\n\nIt also helps to remember that partners often benefit too. A man who has regular time with friends is usually easier to live with, less dependent on his partner for all his company, and better able to support others.\n\nIt also helps to notice that shared activity often makes men better partners and fathers, not worse. A man with friends to talk to has more to give at home, and less need to make his partner his only confidant.\n\nIt also helps to make the activity family-friendly when you can. A weekend walk with children in tow, a Saturday kickabout or a shared allotment can carry friendship without competing with family time."
+  },
+  {
+   "title": "Letting the activity become a wall",
+   "body": "Activities make talk easier, but some men use them to make talk impossible: becoming absorbed in the task whenever a hard subject comes up, filling every pause with talk about the job, spending more and more time doing it. Sometimes that is exactly what a man needs for a while, and forcing a conversation would be cruel. But if it goes on, the friendship can end up holding everything except what matters. Keep the activity, and use its natural pauses, the walk back, the tea break, the drive home, to open the door once, gently, and let him choose whether to walk through it.\n\nIt also helps to watch for the opposite: a friend who stops coming to the activity altogether. Absence from a shared activity is one of the clearest early signs that a man is struggling, and it is worth a message.\n\nIt also helps to remember that walls are often built for good reasons. A man who cannot talk about his wife's illness may simply need the golf to be the one place where life is normal, and respecting that, while keeping the door open, is a kindness."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is there really a friendship recession among men?",
+   "a": "There are signs of one, though the evidence should be treated with care. The Survey Center on American Life found that fifteen per cent of American men said they had no close friends in 2021, compared with three per cent in a similar survey in 1990, and the share with six or more close friends had fallen sharply. The two surveys were not identical, so the size of the change is uncertain. Similar concerns have been raised in other countries. Whatever the exact numbers, the pattern matches what many men describe: friendships that faded as the activities that held them disappeared, and too few new ones to replace them.\n\nIt also helps to remember that loneliness and having few friends are not the same. Some men with few friends are content; some with many are lonely. The question is whether the friendships you have give you what you need.\n\nIt also helps to know that men with fewer friends are often less likely to seek help when they are struggling, which is one more reason to take the decline seriously.\n\nIt also helps to remember that numbers in surveys are averages. Some men have rich friendships and some have none, and the average hides both. Looking at your own life tells you more than any survey."
+  },
+  {
+   "q": "How many hours does it take to make a friend?",
+   "a": "Jeffrey Hall's research gives a rough guide: around fifty hours together to go from acquaintance to casual friend, around ninety hours to become a friend, and more than two hundred hours to become a close friend. The kind of hours mattered: time spent together at work did less than time spent together by choice, and doing things together and talking helped most. These are estimates, not rules, but they make a useful point. Close friendship is built from a great deal of ordinary time, and a weekly activity can supply in a year what occasional meetings would take a decade to provide.\n\nIt also helps to notice which hours count. A hundred hours of sitting in silence in the same office may do less than ten hours of laughing over a shared task.\n\nIt also helps to notice how quickly the hours add up. A two-hour weekly activity supplies a hundred hours in a year, which, on Hall's estimates, is enough to turn an acquaintance into a friend.\n\nIt may also help to see each hour as an investment. Friendships built slowly, through regular time, tend to last; friendships built quickly, through intense but rare meetings, often fade."
+  },
+  {
+   "q": "Why does doing things together bring people closer?",
+   "a": "Several things seem to be going on. Shared activity supplies hours, which friendship needs. It gives people something to look at and do, which makes talk easier, as the opening chapter of this part described. And some research suggests that moving and working together can build bonds directly. Wiltermuth and Heath found that people who had walked or sung in time together cooperated more afterwards, and Cohen, Dunbar and colleagues found that rowers' pain thresholds rose more after rowing in synchrony than alone, which they took as a sign of greater endorphin release. These were small studies, and the effects should not be overstated, but they fit what many teams and choirs feel.\n\nIt also helps to choose activities with a shared rhythm, such as rowing, walking, singing or playing in a band. Many people describe a sense of togetherness in those moments that is hard to find any other way.\n\nIt also helps to notice the feeling after a shared effort: a long walk, a hard match, a finished job. Many men describe a sense of closeness in those moments that they find hard to put into words, and that may be part of what the research is measuring."
+  },
+  {
+   "q": "What if I am too busy for a regular activity?",
+   "a": "Most men are, which is why it helps to combine friendship with things you already do. A weekly walk can replace a solo run. A friend can come along to the tip, the hardware shop or a child's football match. Two families can share a regular meal. A commute can include a friend. Volunteering, a shed or a club can replace an hour of scrolling. The activity does not need to be ambitious. It needs to be regular, fixed in time and protected, so that it survives a bad month. One hour a week, kept for a year, adds up to more than fifty hours.\n\nIt also helps to tell your partner and your diary that the activity is fixed. Things written down and agreed tend to happen; things left vague tend to be squeezed out.\n\nIt also helps to ask friends to hold you to it. A message the day before, \"Still on for tomorrow?\", makes it harder to drop out at the last minute."
+  },
+  {
+   "q": "How can a man make new friends as an adult?",
+   "a": "By joining something with a fixed time and a regular group, and going back. Most adult friendships form through repeated contact in the same place: a club, a team, a choir, a volunteer group, a shed, a parkrun, a class. The first session is often awkward, and many men never return. Decide in advance to go at least four times before judging it. Talk to one person each time. Help with something. After a few weeks, suggest a coffee or a pint with someone you get on with. It is slow, and it works, because it supplies the hours that friendship needs.\n\nIt also helps to accept that some groups will not suit you. If a club or team does not feel right after a few visits, try another. The aim is regular contact with people you like, not loyalty to the first place you tried.\n\nIt also helps to say yes to the second invitation. Many men turn down the first pint after a club session out of shyness, and then find that the second invitation never comes.\n\nIt also helps to be patient with yourself. Making friends as an adult can feel awkward and slow, and many men give up too soon. The awkwardness is normal, and it fades with time."
+  },
+  {
+   "q": "What if the activity is all we ever talk about?",
+   "a": "That can be fine, for long stretches. Many friendships run happily on football, engines or fishing, and the activity itself is a kind of closeness. But it is worth noticing whether anything real ever gets said, and whether either of you would know if the other was struggling. A simple habit helps: one honest remark per outing, about how you actually are, said lightly in a natural pause. It keeps the door open without turning the activity into a counselling session. And if your friend seems to be carrying something, use the pauses to ask, as Stuart did on the eleventh green.\n\nIt also helps to remember that the activity itself is not a failure of intimacy. A friend who wants to talk only about the match may be telling you, through the match, that he values your company.\n\nIt also helps to remember that talk tends to deepen with time. Friendships that start with the activity often grow into conversations about everything else, if the hours are kept up long enough."
   }
  ],
  "watch": [
