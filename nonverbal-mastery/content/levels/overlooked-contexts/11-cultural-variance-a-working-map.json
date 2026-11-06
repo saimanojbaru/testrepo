@@ -81,6 +81,20 @@
    "doCaption": "Returning the greeting you are offered",
    "dontCaption": "Insisting on a handshake",
    "annotation": "If someone greets you with a bow, a wai or a hand on the heart, answer in kind rather than pushing for a handshake."
+  },
+  {
+   "doPoseId": "p_mixed_angled",
+   "dontPoseId": "p_mixed_too_close",
+   "doCaption": "Letting him set the distance",
+   "dontCaption": "Standing closer than he is comfortable with",
+   "annotation": "Comfortable distance varies widely between people and places. Watch whether the other person leans back, and adjust."
+  },
+  {
+   "doPoseId": "p_greet_bow_light",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Returning the greeting you are given",
+   "dontCaption": "A curt nod where a bow is offered",
+   "annotation": "When unsure, return the greeting you are offered, at a similar depth, without overdoing it."
   }
  ],
  "caseStudy": "Daniel, thirty-eight, is a sales director in Manchester who took over a team spread across Lagos, Manila and Warsaw. In his first month he misread almost everyone.\n\nTunde, his most junior account manager in Lagos, kept his eyes lowered whenever Daniel spoke to him on video, and Daniel wondered whether he was hiding something. In Manila, Joy answered his questions with a quick lift of the eyebrows and very few words, and Daniel assumed she was unsure. In Warsaw, Marta rarely smiled in meetings, and he took her for unhappy in the job. He closed a team call with a cheerful thumbs-up and an American-style sign-off that went down well in two offices and puzzled the third.\n\nA colleague who had worked in all three offices took him for a coffee. Tunde's lowered gaze was respect for a senior manager. Joy's raised eyebrows meant yes. Marta was reserved in meetings and warm one to one, and was, in fact, his most loyal team member.\n\nDaniel read up, and for a few weeks applied his new map with enthusiasm, until Joy told him, laughing, that she had grown up in Toronto and found it odd when he slowed his English down for her. He realised that the map had replaced one set of assumptions with another.\n\nHe now uses it differently. He treats the cultural notes as a first guess, watches how each person behaves with colleagues, and asks when he is unsure. He confirms decisions in words at the end of every call. And he has stopped closing meetings with a thumbs-up.",
@@ -99,6 +113,11 @@
     "For each, find out what it means in two countries you deal with.",
     "Mark any that could cause offence or confusion.",
     "Choose a safer alternative for each one you marked."
+   ],
+   "variations": [
+    "Ask a colleague or friend from another country which of your usual gestures would be misread where they grew up.",
+    "Watch a meeting or video from another country with the sound off, and list the gestures you see that you do not use.",
+    "Choose one gesture you use without thinking, and replace it with words for a week."
    ]
   },
   {
@@ -110,6 +129,11 @@
     "Over the next week, note what they actually do: distance, gaze, touch, nods and smiles.",
     "Compare the two lists, and mark where the map helped and where it misled.",
     "Write one sentence about how you will use the map next time."
+   ],
+   "variations": [
+    "Repeat the exercise with a colleague from your own country, and notice whether the general map of your own culture fits them either.",
+    "Write down three things you assumed about someone from their background that turned out to be wrong.",
+    "Ask the person, if it feels appropriate, which common assumptions about their culture they find least accurate."
    ]
   },
   {
@@ -120,6 +144,11 @@
     "Ask each person to confirm out loud or in writing.",
     "Note any point where a nod had been taken for agreement that was not there.",
     "Make confirming in words a standing habit for the next month."
+   ],
+   "variations": [
+    "At the end of a meeting, ask the quietest person first to confirm the decisions, and notice whether their answer differs from the nods.",
+    "Send a written summary after a meeting with people from your own culture too, and notice how often it catches a misunderstanding.",
+    "Agree with your team a simple phrase that means \"I don't agree\" or \"I'm not sure\", so that disagreement has an easy route."
    ]
   },
   {
@@ -130,6 +159,11 @@
     "Write down the norm in your own background that made it feel that way.",
     "Ask whether the other person might have experienced you in the opposite way.",
     "Note what you would do differently in a similar meeting."
+   ],
+   "variations": [
+    "Notice one moment this week when someone seemed too close, too quiet or too direct, and write down the norm that made it feel that way.",
+    "Ask someone you know well how you come across to them when you first meet people, and whether anything surprised them.",
+    "Imagine how you would describe your own culture's habits to a visitor, and which ones you would warn them about."
    ]
   }
  ],
@@ -211,6 +245,45 @@
    "explain": "In Japan and other cultures that avoid open disagreement, nodding often means I am listening rather than I agree. Confirming decisions in words closes the gap.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Morris and colleagues find about the raised thumb in their survey of gestures?",
+   "options": [
+    "That it meant approval in every one of the twenty-five countries without exception",
+    "That it meant approval in most places but was used as an insult in parts of Greece and Sardinia",
+    "That it was unknown outside Britain and was never used anywhere in the Mediterranean",
+    "That it was always an insult, which is why it should never be used in any business setting"
+   ],
+   "answer": 1,
+   "explain": "The raised thumb meant approval in most places, but Morris and colleagues found it used as an insult in parts of Greece and Sardinia. Even familiar gestures change meaning across short distances.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A new colleague from another office stands close and touches your forearm when he talks, and you find yourself leaning away. What fits this chapter best?",
+   "options": [
+    "Read his closeness as pushiness, and keep your answers short so that he gets the message",
+    "Notice your own norm, consider how he may be reading your distance, and talk about it",
+    "Ask your manager to tell him to stop, since touch is never appropriate in an office",
+    "Move desks so that you do not have to deal with him, since the styles will never fit"
+   ],
+   "answer": 1,
+   "explain": "Distance and touch vary widely, and each person tends to read the other's norm as a personal trait. Noticing your own norm, and how your leaning away may read to him, opens the way for both of you to adjust.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that Hall's high-contact and low-contact categories tell you how any individual from those regions will behave. What does this chapter suggest?",
+   "options": [
+    "That they are broad tendencies, and individuals vary far more within countries than between them",
+    "That they are exact rules, so every person from a region will behave in the same way",
+    "That they apply only to touch, and have nothing to say about distance or how people face each other",
+    "That they were disproved long ago and have no value at all as a first guess about anyone"
+   ],
+   "answer": 0,
+   "explain": "Hall's categories describe broad tendencies that change with age, setting, gender and city. Fischer and Schwartz found that individuals within a country differ far more than countries do, so the map is a first guess, not a verdict.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -239,6 +312,110 @@
    "work": "Whence differences in value priorities? Individual, cultural, or artifactual sources",
    "author": "Ronald Fischer and Shalom H. Schwartz",
    "note": "Journal of Cross-Cultural Psychology 42(7), 2011. Why the person matters more than the country."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The supplier who nodded the usual way",
+   "scene": "Edward, fifty, is a buyer for a British furniture company, and he is flying to Sofia for his first meeting with a Bulgarian supplier, Petar. On\n  the plane, he reads a guide to Bulgarian business etiquette. It warns him, as many guides do, that in Bulgaria the head movements for yes and no are\n  commonly described as reversed from the Western pattern, and that he should listen to the words rather than watch the head.\n\n  In the meeting, Edward asks whether the factory can deliver the first order by March. Petar nods. Edward, remembering the guide, reads the nod as no\n  and begins to discuss a later date. Petar looks puzzled and says, \"March is fine.\" Later, when Edward asks whether a particular finish is possible,\n  Petar shakes his head slightly. Edward, now thoroughly confused, takes it as yes and adds the finish to the order.\n\n  At the end of the day, over dinner, Petar mentions that he spent eight years working for a furniture company in Manchester. He laughs and says that\n  British visitors often arrive having read about Bulgarian nods, and that half of his staff nod the Western way, especially the younger ones, and the\n  other half do not.\n\n  Edward goes back over his notes from the meeting that night and finds that he has written down two decisions the wrong way round.\n\nHe had also, on the flight, practised nodding and shaking his head the \"Bulgarian way\" in the toilet mirror, which he now feels slightly foolish about.\n\nHe has also prepared a list of compliments to pay the factory, drawn from the guide, and notices during the day that Petar seems slightly puzzled by them, as if he is being treated as a tourist attraction.\n\nOver dinner, Petar also mentions that his grandmother, who has never left her village, nods in exactly the way the guidebook describes, and that he sometimes has to translate for her when British buyers visit the factory.",
+   "misread": "Edward read Petar's nod as no and his head shake as yes, applying a national rule from a guidebook to a man who did not follow it. Each reading was wrong, and each was confident.\n\nAnd he read his own confidence after reading the guide as knowledge, when it was a single generalisation he had no way to test on the plane.\n\nPetar, for his part, read Edward's sudden talk of later dates as a buyer trying to negotiate, and wondered for an hour whether the British company was having second thoughts about the order.",
+   "betterRead": "Fischer and Schwartz found that differences between individuals within a country were far larger than the differences between countries. Culture shifts the average; it does not determine the person. The guidebook's warning about Bulgarian nods is real, as Part III's chapter on the head nod described, but it describes a common pattern, not a rule for every individual, and Petar had spent years in Britain. Edward had swapped one set of assumptions for another, which this chapter calls treating the map as the territory. The better approach was the Confirm in Words drill: for every decision, ask a question that requires a spoken answer, and summarise in writing at the end. Edward emailed Petar the next morning with a written summary, asking him to correct anything wrong. Petar corrected the two points, with a smiley. They have worked together for six years.\n\nEdward also stopped reading national etiquette guides as instructions, and started reading them as lists of questions to ask.\n\nEdward also bought Petar's staff a box of English biscuits on his next visit, and they taught him which of them nodded which way."
+  },
+  {
+   "title": "The barista who did not smile",
+   "scene": "Olena, thirty-eight, arrived in Britain from Ukraine eighteen months ago and works in a busy café in Bristol. She is fast, accurate and\n  remembers every regular's order. She is also, her manager, Rhys, has noticed, not much of a smiler. She greets customers with a polite \"Hello, what\n  can I get you?\" and a neutral face, and saves her smiles for people she knows.\n\n  A customer complains on a review site that the woman at the counter seemed \"cold\" and \"like she didn't want us there\". Rhys mentions it to Olena,\n  gently, and suggests that she smile more at customers. Olena is hurt. She tells him that where she grew up, smiling broadly at strangers for no reason\n  can seem false, or even a little foolish, and that people would wonder what you wanted. She says she is not cold; she is serious about the work.\n\n  Rhys thinks about it. He realises that he has never questioned why customers in his café expect a smile, or whether a smile at the till means\n  anything at all about how much someone cares.\n\n  He also notices that several regulars ask for Olena by name, and that one elderly man comes in every morning specifically because, he says, she is\n  the only one who remembers that he cannot have milk.\n\nOlena has also noticed that some British customers smile at her and then speak to her sharply, which has made her even less sure what a smile at the counter means here.\n\nHer colleague, a student from Leeds who smiles at everyone, is often told by customers that she seems lovely, and is regularly short-changed at the till because she does not count carefully. Nobody has written a review about that.\n\nRhys also remembers that when he worked a summer in a café in Spain as a student, his manager there told him he smiled too much and looked as though he was laughing at the customers.",
+   "misread": "The customer read Olena's neutral greeting as coldness and unwelcome, and Rhys's first reading was that she needed to smile more. Olena read the request as a judgment that her honest, serious manner was a fault.\n\nRhys also read the review as a fact about Olena, when it was one customer's reading of a norm that customer had never questioned.\n\nOlena also read Rhys's suggestion, at first, as a sign that she was failing at the job, when her regulars and her accuracy said the opposite, and Rhys had meant it as a small tip.\n\nThe other staff, too, had read Olena as reserved and kept their distance, which left her more isolated than her neutral face had ever made her.",
+   "betterRead": "Krys and colleagues found that in some of the forty-four cultures they studied, smiling people were rated as more intelligent and honest, while in others they were rated as less intelligent, and in societies with high corruption, smiling faces were trusted less. Rychlowska and colleagues suggested that countries built by migration from many sources tend to treat smiles as a way of building bonds, while others tie them more to relationships already formed. Olena's neutral face was a norm, not a temperament. The better approach, which Rhys and Olena agreed, treated the local expectation as a custom worth knowing rather than a virtue she lacked. Rhys explained that many British customers read a smile at the counter as a welcome, and left the choice to her. Olena chose a small greeting smile that felt honest to her. The reviews soon mentioned her by name, as \"the one who remembers everything\".\n\nRhys also stopped judging new staff by how much they smiled in their first week, and started judging them by how customers came back."
+  },
+  {
+   "title": "The colleague who stood too close",
+   "scene": "Karim, forty, has just joined an engineering consultancy in Edinburgh from its office in Beirut. He is warm, energetic and very good at his job.\n  When he talks to colleagues, he stands close, often at about an arm's length or less, and when he makes a point he sometimes puts a hand briefly on\n  the other person's forearm or shoulder. In his previous office, among men, this was ordinary friendliness.\n\n  His new desk neighbour, Fraser, fifty-two, finds it unsettling. When Karim comes over to discuss a drawing, Fraser finds himself leaning back in his\n  chair, then rolling it back a few inches. When Karim touches his arm, Fraser stiffens. He says nothing, but he tells his wife that the new man is a\n  bit full-on and seems to want to be everyone's best friend in his first week.\n\n  Karim, for his part, has noticed that Fraser keeps moving away from him, rarely looks at him for long and answers in short sentences. He wonders\n  whether Fraser dislikes him, or whether people in the office resent his coming from another branch. He mentions it to their manager, Isla.\n\n  Isla, who has worked in both offices, smiles. She says that she thinks they are both reading each other through their own rulebooks, and suggests\n  that each of them try one of the exercises in this book.\n\nFraser's wife, hearing about it, laughs and reminds him that her own Italian family stands just as close, and that he had found them overwhelming too, the first Christmas.\n\nHe also notices that Karim's voice rises with enthusiasm when he talks about a project, and that Fraser, who speaks quietly, reads the rising voice as pressure.\n\nAt his previous office, Karim's manager used to greet him every morning with a hand on his shoulder and a long conversation about his family. In Edinburgh, the morning greeting is a nod and \"All right?\" from across the room.",
+   "misread": "Fraser read Karim's closeness and touch as over-familiarity and pushiness. Karim read Fraser's leaning away, short answers and brief gaze as dislike or resentment. Each read the other's norm as a personal trait.\n\nBoth of them had also read the other's behaviour as being about them personally, which is the commonest form this misreading takes.\n\nFraser also read his own leaning back as neutral, when it was the most visible signal in the exchange, and one that Karim, from his own norms, read as rejection.\n\nKarim later told Fraser, over lunch, that he had thought for weeks that the whole office disliked him, and Fraser said he had thought Karim was trying to sell him something.",
+   "betterRead": "Hall distinguished high-contact cultures, where people stand close and touch often, from low-contact ones, and Sorokowska's survey, described in Part I, found that preferred distances from strangers varied widely between countries. Those are broad tendencies, but they were clearly at work at Fraser's desk. Neither man was being unfriendly; each was following the norms he had grown up with, and each was reading the other's behaviour as a statement about himself. Isla's better suggestion was the Your Own Norms drill. Fraser wrote down the norm that made Karim feel too close, and realised that Karim might be experiencing him as cold. Karim noticed that Fraser leaned back each time he stepped in, and began to stand a little further away. Fraser, in turn, made a point of meeting Karim's eye and asking about his family. They now have lunch together on Fridays.\n\nIsla also mentioned, at the next team meeting, that people in the office came from many places and that styles of distance and touch varied, without singling anyone out."
+  },
+  {
+   "title": "The business card in the left hand",
+   "scene": "Richard, forty-five, is an account director at a logistics firm, and he is hosting a delegation from a client's offices in the Gulf at his company's\n  headquarters in Birmingham. He has prepared carefully: a good room, a translator on standby, halal catering, a clear agenda. As the delegation\n  arrives, he shakes hands with each member, and then, holding his coffee cup in his right hand, passes his business card to the senior visitor, Mr\n  Al-Rashid, with his left.\n\n  Mr Al-Rashid takes the card politely. A younger member of the delegation glances at the card and then at Richard, and says nothing. The meeting\n  goes well, but Richard has a faint sense that something in the first minute did not quite land.\n\n  At lunch, his colleague, Amira, who grew up in a family from the region, mentions to him quietly that in many places in the Middle East, as in parts\n  of South Asia and Africa, the left hand is traditionally associated with hygiene, and that passing something important with it, especially to a senior\n  person, can come across as careless. She adds that Mr Al-Rashid had almost certainly understood that Richard did not know, and that it was a small\n  thing.\n\n  Richard is mortified. He had spent a week on the agenda and never thought about his hands.\n\nHe also notices, on reflection, that he had been so focused on getting the catering and the agenda right that he had not thought to ask anyone what else he might need to know.\n\nHe also realises, thinking back, that he had laughed when Mr Al-Rashid's assistant declined the coffee, and wonders whether he should have asked whether anyone was fasting.\n\nAmira also tells him that the delegation had brought gifts, which Richard had put on a side table without opening, and that in their culture it would have been usual to thank them more fully.\n\nHe had also chosen the boardroom with the long table and the window behind his own chair, so that the visitors faced the light for the whole morning, which nobody mentioned.",
+   "misread": "Richard read his handover of the card as an ordinary courtesy, because in his own habits it was. The younger visitor's glance read it as a small lapse of respect towards a senior guest.\n\nRichard also read the visitor's silence as nothing, when it was courtesy covering a small lapse.\n\nThe younger visitor's glance, in turn, could have been read by Richard as hostility, had he noticed it, when it was simply the reaction of someone who had never seen a card passed that way.\n\nMr Al-Rashid, for his part, read the whole day as a sign that the British company valued the relationship, which was the reading that mattered most.",
+   "betterRead": "This chapter describes the body's courtesies that are easy to break without knowing: the left hand in much of the Middle East, South Asia and Africa, the head in Thailand, the soles of the feet in many places. None of them can be read from the other person's face, because most people are too polite to react. Richard's lapse was small, and Amira was right that Mr Al-Rashid had probably made allowances. The better approach for the rest of the visit was simple: he put his coffee down before handing anything over, used his right hand, or both hands for anything important, and passed the agreement documents to Mr Al-Rashid that way at the end of the day. He also asked Amira, before the next delegation, to brief him on anything else he should know. Mr Al-Rashid, signing the agreement, thanked Richard warmly for his hospitality.\n\nAmira also offered to prepare a one-page note for colleagues hosting visitors from the region, which the firm now sends to anyone organising an international visit."
+  }
+ ],
+ "workedReading": {
+  "title": "Preparing to lead a new international team",
+  "scene": "Megan, thirty-seven, is a project lead at a software company, and she has just been given a new team of eight: three developers in Bengaluru, three testers in Manila and two designers in her own office in Leeds. They will work together for a year on a single product, mostly by video. Megan has led teams before, but never across cultures, and she remembers a colleague's account of a project that failed because the team kept nodding in meetings and then not doing what had been agreed. She wants to use what she can learn about cultural patterns without turning eight individual people into three stereotypes. She has a week before the first team call, and she decides to prepare in the way this chapter recommends: map first, then the person.\n\nShe also knows that she has her own habits, as a British manager who tends to soften disagreement and say \"that's interesting\" when she means no, and that those habits may be as confusing to her new team as theirs are to her.\n\nShe also remembers that in her last project, with a team in her own country, she misread a quiet colleague as uninterested for two months. Culture, she suspects, will be only one of the things she has to read.\n\nShe is also aware that two of her team are women in a field dominated by men, and that how they are listened to may depend as much on that as on anything cultural.",
+  "steps": [
+   {
+    "label": "Learn the map",
+    "text": "She reads about common patterns in India and the Philippines, as well as in Britain: how people often greet colleagues, how disagreement is usually expressed, what a nod or a head tilt might mean, how hierarchy shows in meetings. She notes, for example, that in much of South Asia a side-to-side tilt of the head can mean yes or I understand, and that in the Philippines a quick raise of the eyebrows often means yes. She writes these down as possibilities, not rules.\n\nShe also reads about common patterns in Britain, written by someone from outside, and finds several of her own habits described in ways she had never noticed.\n\nShe also notes that hierarchy may shape how freely people disagree with a manager, and decides to create ways for people to disagree that do not require contradicting her in front of the group.\n\nShe also reads a little about how teams in each place usually raise problems, which suggests that she will need to ask for bad news rather than wait for it."
+   },
+   {
+    "label": "Hold the map loosely",
+    "text": "She reminds herself of Fischer and Schwartz's finding that differences between individuals within a country are far larger than differences between countries. She knows nothing yet about where each team member grew up, studied or worked, or what their own habits are. She resolves to treat each note as a first guess to be tested, and to drop any that the actual person contradicts.\n\nShe also learns, from the team's profiles, that two of the Bengaluru developers studied abroad and one of the Leeds designers grew up in Lagos, which already complicates any map.\n\nShe also notices that her notes on Britain describe a culture she barely recognises, which is a useful reminder of how general such notes are."
+   },
+   {
+    "label": "Watch them with each other",
+    "text": "In the first call, she spends the first few minutes watching rather than leading. She notices that the Bengaluru developers joke with each other easily and are quieter with her; that one Manila tester, Paolo, raises his eyebrows when she asks whether everyone can see the screen; and that one Leeds designer, Tom, nods constantly while she talks. She notes each as information about these particular people.\n\nShe also notices that the time difference means the Manila team is joining at the end of a long day, which may explain more about their energy than anything cultural.\n\nShe also notices that the Leeds designers talk over each other, cheerfully, which might be read by someone else as rudeness and is simply how those two work.\n\nShe also notices that she herself sits very still on calls, which one of the developers later tells her had made him wonder at first whether she was displeased."
+   },
+   {
+    "label": "Ask when unsure",
+    "text": "When one developer, Priya, tilts her head from side to side as Megan describes a deadline, Megan is not sure whether it means yes, maybe or no. She asks, plainly and warmly, \"Priya, does that deadline work for you, or would you push back on it?\" Priya says it works for the main feature but that the reporting module will need another week. Megan thanks her. The head tilt had meant yes to part of the question.\n\nShe also makes a point of asking Tom, who has nodded throughout, whether he has any concerns, and he raises the one problem nobody else had mentioned.\n\nShe also makes a note that Priya's tilt meant yes to some of it, and that she should not assume it means the same next time without checking."
+   },
+   {
+    "label": "Confirm in words",
+    "text": "At the end of the call, Megan reads back each decision and asks each person to confirm out loud. She follows up with a short written summary within an hour, asking people to reply if anything is wrong. Two people correct small details. This chapter warns that a nod may mean I am listening rather than I agree, and Megan's summary turns nods into decisions.\n\nShe also invites written questions after the call, for anyone who did not want to raise a concern in front of the group.\n\nShe also invites corrections by message, in writing, for anyone who prefers not to correct their manager on a call."
+   },
+   {
+    "label": "Check your own norms",
+    "text": "After the call, she notices that she had read Tom's constant nodding as agreement and Paolo's quietness as hesitation, and that both readings came from her own habits. She also realises that she had spoken more quickly than usual, which may have been hard for people joining in a second or third language. She resolves to slow down, and to invite each person to speak by name in future calls.\n\nShe also asks the team, at the next call, how they would like meetings to run, and adopts two of their suggestions.\n\nShe also realises she had addressed most of her questions to the two Leeds designers, who shared her accent and her time zone, and resolves to rotate who she asks first."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the following months, Megan's notes about cultural patterns fade from use, replaced by what she knows about each person: that Paolo is quiet in calls but writes excellent comments, that Priya always flags risks if asked directly, that Tom nods at everything and must be asked for his view. The project delivers on time. Megan tells her manager that the map was useful for the first week and the people for the rest.\n\nShe also notices that her own habit of softening disagreement had confused Priya, who took \"that's interesting\" as approval, and starts saying plainly when she disagrees.\n\nAt the end of the year, the team gives her a card. Priya has written that Megan was the first manager who asked her what she meant rather than deciding for her."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Performing the other culture",
+   "body": "Some people, having read about another culture's customs, overdo them: bowing deeply and repeatedly to a Japanese colleague who greets them with a handshake, pressing palms together for every greeting, adopting phrases from another language at every opportunity, or putting on an accent. It is usually meant as respect. It can come across as mimicry, or as a performance that is about the visitor rather than the host, and it can be awkward for the other person, who may have to respond in kind to a greeting they would not have used. A small, sincere gesture of respect, such as learning to say hello and thank you, or returning the greeting you are offered, is usually welcome. Beyond that, follow the other person's lead. If they offer a handshake, shake hands. The previous chapters in this part described being treated as a category; performing someone's culture back at them is another version of it.\n\nA good rule: return the greeting you are offered, at about the same depth and length, and leave the rest to them.\n\nAnd if you are not sure what greeting is expected, waiting a moment to see what the other person offers is almost always safe."
+  },
+  {
+   "title": "Using culture as an excuse",
+   "body": "Cultural knowledge can be misused in the other direction too, to excuse behaviour that would be a problem in anyone. \"That's just how they are over there\" can be used to dismiss a colleague's genuine rudeness, to tolerate harassment, or to avoid giving someone honest feedback because it might be culturally awkward. It can also be used against people: to explain away a woman's complaint, or to assume that a person from a particular background cannot be challenged. Fischer and Schwartz's finding that individuals vary far more than countries cuts both ways here. If behaviour would be unacceptable from a colleague from your own background, it deserves the same attention from anyone, delivered with the same respect. Culture may explain why a misunderstanding happened; it does not decide what is acceptable.\n\nIt also helps to ask how the same behaviour would be handled if it came from someone from your own background.\n\nRespect for a culture includes holding people from it to the same standards you would hold anyone else."
+  },
+  {
+   "title": "Asking where someone is really from",
+   "body": "\"Where are you from?\" \"London.\" \"No, where are you really from?\" The question is common and usually curious rather than hostile. But to someone who was born or raised in the country, it says that their face, name or accent marks them as a foreigner in their own home, and that their answer was not accepted. It also turns the person into a sample of a culture, which this chapter warns against. Joy, in the case at the start of this chapter, had grown up in Toronto and found it odd when Daniel slowed his English down for her because of where her family came from. If you are genuinely interested in someone's background, let them tell you as much as they want, in their own time, and ask about their own experience rather than about their country: \"Where did you grow up?\" is a question with a real answer.\n\nIf someone does tell you about their heritage, listen, and do not ask them to speak for everyone who shares it."
+  },
+  {
+   "title": "Reading fluency as sameness",
+   "body": "People who speak your language fluently, with your accent and your idioms, are easy to assume share your nonverbal norms as well. Often they do. Sometimes they do not: a colleague who grew up speaking English in one country and was raised by parents from another may carry habits of gaze, distance, touch or disagreement from both, and may switch between them depending on who is in the room. The opposite mistake is just as common: assuming that someone with a strong accent or a foreign name follows the norms of a country they may never have lived in, as Daniel did with Joy. In both cases, the remedy is the same: watch the person rather than the label, read them against their own baseline, and ask when a signal is unclear. Language tells you something about where someone has been. It does not tell you how they will look at you.\n\nThe same applies to second-generation colleagues, who may carry their parents' norms at home and quite different ones at work.\n\nIf you are unsure, the simplest question is the best: ask what someone means, whatever their accent."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I learn the norms of a culture I will be working with?",
+   "a": "Start with good general sources: guides written by people from that culture, colleagues who have worked there and, where possible, people from the culture itself. Look for the patterns this chapter describes: greetings, distance and touch, eye contact, how yes and no are signalled, how disagreement is expressed, and the body's courtesies, such as which hand to use and where to put your feet. Treat everything you learn as a set of possibilities, not rules. Then, when you meet people, watch how they behave with each other before you lead, as Megan did. And ask: most people are happy to explain their customs to someone who is genuinely interested, and far happier than to be guessed about. The best sources are the people you are actually working with.\n\nIt also helps to learn a few words of greeting and thanks, which are almost always welcomed, however badly pronounced.\n\nAnd remember that a guide written about a culture is always written by someone, from somewhere, which shapes what it notices."
+  },
+  {
+   "q": "Should I adapt to their customs or stick to my own?",
+   "a": "A useful rule of thumb is to follow the host. If you are visiting, adapt where you can to the customs of the place, especially for greetings and courtesies, and return the greeting you are offered. If you are hosting, make your guests comfortable and do not expect them to know your local codes, as Richard learned to do with his delegation. In mixed settings, such as an international team, the best approach is often to meet in the middle: agree simple shared habits, such as confirming decisions in words and inviting each person to speak, that work for everyone. Throughout, watch the individual and follow their lead. Many people who work internationally have already adapted to a range of styles, and will meet you more than halfway.\n\nAnd if your host adapts to your customs, accept it graciously rather than insisting on theirs, which can be awkward for both of you."
+  },
+  {
+   "q": "What should I do if I realise I have accidentally offended someone?",
+   "a": "Acknowledge it simply and briefly, if it seems appropriate: \"I'm sorry, I think I may have done that wrong. What should I have done?\" Most people are generous about honest mistakes made by someone who is clearly trying, and many will appreciate being asked. Avoid long, embarrassed apologies, which can make the moment bigger than it was and put the other person in the position of reassuring you. Then change what you do, as Richard did with his hands for the rest of the visit. If you are not sure whether you caused offence, ask someone who knows the culture, privately, as Richard asked Amira. And remember that most small lapses go unremarked precisely because people are polite; the fact that nobody reacted does not mean nothing happened, which is why learning the courtesies in advance matters.\n\nIt also helps to keep a short note of what you learned, so that you remember it next time.\n\nIf it happens in a group, a quiet word afterwards is often better than an apology in front of everyone."
+  },
+  {
+   "q": "Are there any gestures that are safe everywhere?",
+   "a": "Very few, and none completely. Morris and colleagues found that even the raised thumb, approval in most places, was used as an insult in parts of Greece and Sardinia, and that the ring made by thumb and finger meant different things a short distance apart. Indicating with an open hand rather than a pointing finger is safer in most places. A moderate smile is widely understood, though Krys and colleagues found that how smiles are read varies a great deal. Words are the safest of all: \"yes\", \"thank you\", \"please go ahead\" and a clear summary of what was agreed. When in doubt, keep gestures small, avoid hand signs that stand for words, and say what you mean.\n\nIt is also worth checking the emoji you use in messages to international colleagues, since some carry different meanings elsewhere.\n\nIt is also worth remembering that a gesture you see on screen in a film or a news report may carry a meaning there that it does not carry in daily life."
+  },
+  {
+   "q": "How can I use cultural knowledge without stereotyping people?",
+   "a": "Use the map to form a first guess, and let the person replace it. Fischer and Schwartz's finding that individuals within a country vary far more than countries do is the key: the map tells you about averages, and the person in front of you may be anywhere in the range, or may carry several cultures at once. Notice when you explain someone's behaviour by their culture, and ask whether you would explain the same behaviour in someone from your own background by their personality instead. Watch how they behave with others, read them against their own baseline, and ask when you are unsure. As this chapter's case showed, the map is useful for the first week. After that, it is the person you need to know.\n\nA useful check is whether you would be comfortable if someone described you in the same terms you are using about them.\n\nIt also helps to keep the map and your notes about people in separate places, so that one does not quietly overwrite the other."
+  },
+  {
+   "q": "Why do some people from my own country seem to follow different rules?",
+   "a": "Because national culture is only one of many influences on how people move, look and speak. Region, generation, class, religion, profession, education and family all shape nonverbal habits, and people from the same country can differ as much as people from different ones. A man from a rural village and a man from a capital city may stand, greet and argue quite differently; so may a man of twenty and a man of seventy. Earlier chapters in this part described how class, age and other backgrounds shape the body. The same method applies at home as abroad: notice the difference, avoid reading it as a personal trait, read the person against their own baseline and ask when a signal is unclear.\n\nIt also helps to notice how often you treat your own region's habits as the national standard.\n\nIt also helps to notice that people moving between regions or classes often code-switch, which the next chapter but one describes."
   }
  ],
  "watch": [
