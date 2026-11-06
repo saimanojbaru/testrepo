@@ -73,6 +73,27 @@
    "doCaption": "Stepping back to a friendly distance",
    "dontCaption": "Play-fighting a man who has gone stiff",
    "annotation": "When a man stops laughing and leans away, the play is over. Step back at once, and check in with him later, away from the group."
+  },
+  {
+   "doPoseId": "p_pair_men_hand_in_hand",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Seeing a gesture of friendship in another dialect",
+   "dontCaption": "Reading two friends holding hands as a couple",
+   "annotation": "In much of India and parts of the Middle East and Africa, male friends hold hands. Read it in its own culture, not yours."
+  },
+  {
+   "doPoseId": "p_pair_shoulder_comfort",
+   "dontPoseId": "p_gesture_chop",
+   "doCaption": "A hand resting still on his shoulder",
+   "dontCaption": "Quick, hard pats for a grieving friend",
+   "annotation": "Pats borrowed from sport say buck up. A still hand on the shoulder says I'm here, and asks nothing in return."
+  },
+  {
+   "doPoseId": "p_pair_bedside",
+   "dontPoseId": "p_older_sit_at_rest",
+   "doCaption": "A hand on his arm as you sit with him",
+   "dontCaption": "An old man nobody touches any more",
+   "annotation": "Older men living alone can go months without touch. Small, familiar touches, offered with care, can matter more than words."
   }
  ],
  "caseStudy": "Arjun, thirty-three, grew up in Pune, where he and his school friends walked arm in arm and hand in hand without a second thought. When he moves to Manchester for work, he makes friends quickly with Steve, a colleague of his own age. One lunchtime, walking to a café and deep in conversation, Arjun takes Steve's hand. Steve's whole body goes rigid. He laughs awkwardly, lets go and talks about the weather. Arjun is mortified, and for weeks he keeps his hands in his pockets around his English friends.\n\nHe notices, though, how much Steve and the others touch each other in other ways: the slaps on the back in the pub, the headlocks at five-a-side, the pile-on when someone scores. He learns that here, affection between men comes disguised as play.\n\nTwo years later Steve and his wife lose a pregnancy. Steve comes into work as if nothing has happened, and tells Arjun only because Arjun asks why he looks so tired. At lunch they sit in Arjun's car in the car park. Steve stares at the windscreen and says it is worse than he expected. Arjun hesitates, then puts his hand on Steve's shoulder and leaves it there. After a moment Steve reaches up and grips Arjun's arm, hard, and keeps hold of it.\n\nNeither of them says anything about it. A month later, walking back from the pub after Steve's first evening out since, Steve slings an arm around Arjun's shoulders and leaves it there for the whole length of the street. Arjun thinks of Pune, and of how many ways there are to say the same thing.",
@@ -91,6 +112,10 @@
     "Mark which touches were affectionate, which were play, and which were routine.",
     "Note how many came from men, and how many from your partner or family.",
     "Write one sentence about whether you would like more, less or different touch, and from whom."
+   ],
+   "variations": [
+    "Repeat the audit for a week, a year from now, and compare how much the touch in your life has changed.",
+    "Ask a male friend to do the audit too, and compare your lists over a pint."
    ]
   },
   {
@@ -101,6 +126,10 @@
     "Ask him to tell you whether the pressure and length felt comfortable.",
     "Practise taking your hand away smoothly when he shifts or leans away.",
     "Swap roles, and notice how it feels to receive."
+   ],
+   "variations": [
+    "Practise the resting hand on the upper arm as well as the shoulder, and notice which feels more natural to receive.",
+    "Practise sitting side by side with shoulders just touching, and ask your friend how it felt."
    ]
   },
   {
@@ -112,6 +141,10 @@
     "Note what made it hard for him to stop it, such as power, an audience or being new.",
     "Write what you could do or say if you saw it again.",
     "Choose one light interruption you could use, and say it aloud."
+   ],
+   "variations": [
+    "Recall a time when you were the one enduring rough play, and write what would have helped.",
+    "Write down the name of the person you would tell if you saw hazing in a team or workplace you are part of."
    ]
   },
   {
@@ -122,6 +155,10 @@
     "Write down how male friends there touch each other, and how it differs from what you are used to.",
     "Note one gesture that might be misread by an outsider in each direction.",
     "If you can, check your notes with someone from that culture."
+   ],
+   "variations": [
+    "Watch a film or documentary set in a culture with different rules about touch between men, and note what surprised you.",
+    "Ask a friend from another culture how men there show affection to each other, and listen without comparing."
    ]
   }
  ],
@@ -203,6 +240,45 @@
    "explain": "A resting hand on the shoulder, offered side by side, asks nothing and can be declined. If he leans in or covers your hand, let it stay; if he stiffens, take it back and stay near.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What does the touch avoidance measure developed by Andersen and Leibowitz in 1978 separate?",
+   "options": [
+    "Avoiding touch from your own sex and avoiding touch from the other sex",
+    "Touch at home and touch at work, which turn out to be exactly the same",
+    "Touch from children and touch from adults, which people always prefer",
+    "Touch in summer and touch in winter, since people touch more when it is cold"
+   ],
+   "answer": 0,
+   "explain": "The measure separates avoidance of same-sex touch from avoidance of opposite-sex touch. Studies using it have often found that men avoid same-sex touch more than women do.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At your rugby club, older players keep putting a new eighteen-year-old in headlocks. He has stopped laughing, goes rigid and leaves straight after training. What fits this chapter best?",
+   "options": [
+    "Leave it, since every new player goes through it and it is all part of the fun",
+    "Tell the new player that he needs to toughen up if he wants to fit in",
+    "Interrupt it, check on him privately, and raise it with the club's welfare lead",
+    "Join in more gently yourself, so that he feels like part of the team at last"
+   ],
+   "answer": 2,
+   "explain": "One-way touch, an audience, a target who is new and a man who has stopped laughing are the signs that play has become something he is enduring. Stop it, and raise it with whoever is responsible for welfare.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says the basketball touch study proves that touching causes teams to win, so coaches should make players hug. What does this chapter say?",
+   "options": [
+    "It is right, since the study proved that hugging is the main cause of winning",
+    "The study found a link, not proof, and forced touch is not what it observed",
+    "It is right, but only if players hug for at least ten seconds before each game",
+    "It is wrong, since the study found that touch made teams play much worse"
+   ],
+   "answer": 1,
+   "explain": "Kraus, Huang and Keltner's study was correlational, as they said themselves. Teams that already cooperated may have touched more, and touch that is required is not the same as touch that is offered.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +307,110 @@
    "work": "Touch",
    "author": "Tiffany Field",
    "note": "MIT Press, 2001. A wide survey of research on touch across the lifespan, and the effects of its absence."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The hand in the intensive care waiting room",
+   "scene": "Pete, forty-four, has been sitting in the intensive care waiting room for six hours. His wife, Mel, collapsed at work that morning and is\n  on a ventilator. His oldest friend, Gaz, arrives after work and sits down next to him. Pete is hunched forward, elbows on his knees, staring at the\n  floor. Gaz does not know what to say. After a minute, he reaches over and pats Pete on the back, quickly, three times, the way he would after a\n  missed penalty. Pete flinches slightly and does not look up.\n\n  Gaz takes his hand away, embarrassed. For the next half hour he sits beside Pete in silence, wanting to do something and not knowing what. Then a\n  nurse comes out to say that Mel's condition is unchanged, and Pete's shoulders begin to shake.\n\n  This time, Gaz puts his hand on Pete's shoulder and leaves it there. He does not pat or squeeze. Pete stops shaking after a while, but he does\n  not move away. After a few minutes he leans, very slightly, into Gaz's side.\n\nGaz has known Pete since they were seven. In thirty-seven years, the most physical contact they have had outside football was a handshake at Pete's wedding and a brief hug at Gaz's father's funeral, when neither of them could look at the other.\n\nPete's sister-in-law rang Gaz that afternoon and asked him to go, because Pete had told the family he did not want anyone with him. She said that Gaz was the only person Pete would not send away.\n\nGaz has also been up since five for a site shift and is still in his work boots. He nearly went home first to change, and then decided that Pete would not care what he was wearing.",
+   "misread": "Gaz's first touch, the quick pats, came from the only template he had for touching another man: a slap of sympathy on a pitch. Pete's flinch told him it was wrong for the moment, and Gaz read the flinch as a refusal of any touch at all.\n\nAnd because the first touch went wrong, Gaz nearly decided that touch itself was wrong, which would have left Pete with no comfort at all from the person best placed to give it.\n\nHe also read his own discomfort as a reason to do nothing, which is what many men do when touch goes wrong: they withdraw completely rather than try a different kind.",
+   "betterRead": "Comfort touch between men works best when it asks nothing of the man receiving it. A hand resting on the shoulder or upper back, still, falls on a part of the body that most men allow friends to touch, and it leaves him free to let it stay or shrug it off. Quick pats, by contrast, are rhythmic and active; they borrow the cover story of sport and say \"buck up\" more than \"I'm here\". Pete's flinch was a response to the pats, not to Gaz. The better reading was to try a different form, and Gaz found it. His still hand said that he was staying, and Pete's lean into his side answered it. They sat like that, shoulders touching, until Mel's sister arrived. Mel came off the ventilator four days later. When Pete thanked Gaz, months afterwards, it was not for anything he had said. It was for the hand.\n\nGaz also told Pete, months later, that he had nearly not come to the hospital because he did not know what he would do there. Pete said that he had done the only thing that helped."
+  },
+  {
+   "title": "The welcome at the rugby club",
+   "scene": "Sam, eighteen, joins a local rugby club's first team. In his first few weeks, some of the older players give him what they call a welcome:\n  headlocks in the changing room, a dead arm every time he walks past, being pinned down and having his hair shaved at the end-of-season party. The\n  older players laugh. Several of the young ones laugh too, because they went through it last year. Sam laughs along at first.\n\n  By the third week, the club's coach, Andy, notices that Sam has stopped laughing. He gets changed quickly and alone, keeps his back to the wall, and\n  leaves straight after training without going to the bar. When one of the senior players, Big Rob, grabs him in a headlock, Sam goes rigid and does\n  not struggle, his face blank. Rob laughs and says Sam needs toughening up.\n\n  Andy hears one of the other young players say, quietly, that Sam is thinking of quitting.\n\nSam's mother has noticed bruises on his arms and asked about them. He told her they were from training, which is partly true. He has not told her that he has started dreading Thursday evenings.\n\nAndy has coached at the club for nine years and was put through the same welcome himself at nineteen. He remembers laughing along with it, and he remembers the two lads in his year who quietly stopped turning up. He had never connected the two until now.",
+   "misread": "Big Rob and the older players read the headlocks and dead arms as ordinary rough play, a ritual every new player goes through, and Sam's silence as lack of toughness. They did not read the signs that play had stopped being play.\n\nThe young players who laughed, because they had been through it themselves, were also reading it through their own experience: they had survived it, so it must be harmless.\n\nThe coach's own history mattered too. Because he had gone through it, he had seen it as normal, and it took Sam's blank face for him to see it from the receiving end.\n\nAnd Sam's laughing along at first, which was his best attempt to survive it, was taken as proof that he was enjoying it.",
+   "betterRead": "Rough play between friends depends on both men being free to stop it. The signs that it has become something else are usually visible: the touch flows one way, from bigger and more senior men to a younger one; one person is laughing and the other is not; it continues after he has shown he has had enough; there is an audience that makes refusing costly; and the target is someone new or on the edge of the group. Sam's blank face, his rigid body in the headlock, his changing alone and his early exits fitted all of these. What the older players called a welcome had become hazing. Andy's better response was to act on it plainly. He stopped the headlock that evening with a firm \"Enough, Rob,\" and spoke to the senior players afterwards, telling them that the welcome stopped now. He raised it with the club's welfare officer, who reminded the whole club of its code of conduct. Andy also spoke to Sam privately, and told him that he wanted him in the team. Sam stayed. The following season, he was the one who welcomed new players, with a handshake."
+  },
+  {
+   "title": "The father who stopped hugging",
+   "scene": "Darren, forty-two, used to carry his son Ethan everywhere: on his shoulders at football, in his arms at bedtime, wrestling on the living room\n  floor. Somewhere around Ethan's eleventh birthday, without ever deciding to, Darren stopped. He shakes Ethan's hand now, or ruffles his hair, or\n  gives him a quick slap on the back after a match. He told himself it was what boys that age wanted.\n\n  Ethan is now thirteen. His mother notices that he has started sitting very close to her on the sofa, leaning against her during films, and hugging\n  her for a long time at bedtime, which he did not do when he was younger. When his father comes into the room, Ethan sits up.\n\n  One evening, Ethan's mother asks him whether he misses doing things with his dad. Ethan shrugs and says that his dad does not really do hugs any\n  more, and that he thinks his dad thinks he is too old for them.\n\nDarren's own father never hugged him at all, after about the age of six. Darren had promised himself he would do it differently, and for eleven years he did. He is not sure when he stopped, or why.\n\nDarren has also noticed that Ethan has started asking him to drive him to football rather than his mother, and that in the car Ethan talks more than at any other time. Darren has enjoyed the drives, without thinking about why Ethan might want them.\n\nHis wife has also noticed that Darren himself seems to miss it. He watches old videos on his phone of Ethan as a toddler, riding on his shoulders, and goes quiet.",
+   "misread": "Darren read his son's growing up as a reason to stop touching him, because that is what he believed boys need and because, perhaps, it is what his own father did. Ethan read his father's withdrawal as a judgment that he had outgrown being held.\n\nHis wife had noticed the change years ago, but had assumed it was something between father and son that she should not interfere with.\n\nIt also rested on an assumption many fathers hold without ever testing it: that a son's need for touch ends when childhood does.",
+   "betterRead": "Many fathers stop touching their sons as the boys approach adolescence, while mothers often continue, and the change is rarely discussed. Floyd's research on affection deprivation suggests that wanting more affection than you receive is linked to loneliness and poorer wellbeing, and boys are not exempt. Ethan's leaning into his mother was a sign of a need that had moved elsewhere. Darren's better approach, once his wife told him, was not to announce a change but to make touch available in forms a thirteen-year-old could accept: an arm along the back of the sofa during a match, so that Ethan could lean if he wanted; a hand on his shoulder in the car park after a game; a hug at bedtime, offered and easily declined. Ethan leaned into the arm on the sofa the first night, without either of them saying anything about it. A month later, he hugged his father before a school trip, quickly, in front of his friends.\n\nDarren also told his own father, the next time he saw him, that he had been thinking about hugs, and the old man looked at him for a long time and then patted his arm."
+  },
+  {
+   "title": "The widower nobody touched",
+   "scene": "Bob, eighty-one, has lived alone since his wife died three years ago. His son visits on Sundays and shakes his hand at the door. His\n  granddaughter waves from the car. A carer, Joy, comes in three mornings a week to help with his shower and his medication.\n\n  Joy notices something. When she helps Bob into his cardigan, he leans slightly into her hands. When she rests her hand on his arm to steady him on\n  the stairs, he slows down, as if he does not want the moment to end. One morning, as she puts his socks on, he says, out of nowhere, \"Do you know,\n  you're the only person who touches me now.\" Then he laughs, embarrassed, and changes the subject.\n\n  Joy mentions it to Bob's son, Graham, on the phone. Graham is surprised and a little defensive. His father, he says, has never been a touchy\n  person.\n\nJoy has been a carer for twenty years and has seen this many times. She says that touch is often the first thing older people lose and the last thing anyone thinks to give back.\n\nBob has also started keeping Joy talking at the door when she leaves, asking about her children and her holidays, and holding the door frame as if to keep her a few minutes longer. She has started arriving five minutes early so that she can stay five minutes late.",
+   "misread": "Graham read his father's lifelong reserve as a fixed preference, and so assumed that the lack of touch in Bob's life was simply how Bob wanted it. He had not considered that a man who never hugged might still need to be touched.\n\nBob's own embarrassment after his remark also made it easy to dismiss. He had said something true, and then laughed so that nobody would have to respond to it.\n\nHe also read his own hand at the door as enough. A handshake once a week, from the person closest to him, was all the touch Bob received from his family.\n\nGraham's defensiveness on the phone was also understandable. Being told by a carer something about your own father that you had not noticed can feel like criticism.",
+   "betterRead": "Kory Floyd's research found that people who wanted more affection than they received reported more loneliness, and men reported more of this deprivation than women. Older men living alone, especially after the loss of a partner, can go for months with almost no touch from anyone except professionals. Bob's leaning into Joy's hands and his remark about being touched were signs of a need he had no words for and no history of expressing. Graham's better response, once he thought about it, was not to start hugging a father who would have found it strange, but to add touch in forms Bob could accept: a hand on his shoulder as he arrived, a hand on his arm as they walked to the car, sitting beside him rather than opposite on the sofa. He also suggested that Bob's granddaughter come in rather than wave from the car. On her first visit, she kissed Bob's cheek, and he did not stop talking about it for a week.\n\nGraham also mentioned Joy's observation to his sister, who had moved abroad, and she started sending Bob a short video message every week, which he played over and over."
+  }
+ ],
+ "workedReading": {
+  "title": "The colleague in the stairwell",
+  "scene": "Dev and Andy have worked in the same engineering team for six years. They are friendly, have a pint now and then, and play in the same five-a-side team, but they are not especially close. At four o'clock on a Friday, Andy has been called into a meeting and told he is being made redundant. Twenty minutes later, Dev finds him sitting on the stairs between the third and fourth floors, his tie loosened, his elbows on his knees and his head down. When Dev says his name, Andy looks up, red-eyed, and says, \"They've let me go.\"\n\nDev has never comforted a colleague before. He has seen people cry at work twice in his career, and both times he walked away and sent an email later. He does not want to do that again.\n\nThe stairwell door bangs somewhere above them as someone leaves the building. Andy flinches and turns his face to the wall. Dev realises that Andy is terrified of being seen like this by anyone from the team.",
+  "steps": [
+   {
+    "label": "Read the state",
+    "text": "Dev takes in the cluster: head down, elbows on knees, the folded posture of grief and shock, red eyes, a voice that barely carries. Andy is not angry. He is stunned and close to tears. Dev also notes the setting: a stairwell, where Andy has gone to be out of sight, and where anyone might come through the door.\n\nHe also notices that Andy is on the stairs rather than in the toilets or outside. The stairwell is between floors, away from the team, but not hidden. He may want to be found, or he may simply not have been able to go any further.\n\nHe also checks that Andy is physically all right. Shock can make people dizzy or faint, and a man sitting on a stairwell should be steady on his feet before he tries to walk anywhere."
+   },
+   {
+    "label": "Consider the relationship and power",
+    "text": "They are equals at work, which matters: a touch from Dev will not carry the weight of a manager's. They are friendly but not close. They have touched before only in the cover stories this chapter describes: tackles at five-a-side, slaps on the back after a goal. A hug would claim more closeness than they share. A gentle, declinable touch would not.\n\nHe also notes that Andy's tie is loosened and his jacket is off, folded on the step beside him. A man who has undressed for the office in this way has stopped performing his work self.\n\nHe also considers that Andy may not want anyone at all, and decides that sitting down nearby, without touching first, will let him find out. If Andy turns away, Dev will say he is around and leave him in peace."
+   },
+   {
+    "label": "Choose where and how",
+    "text": "Dev sits down on the step beside Andy, not in front of him, so that they are side by side. He leaves a little gap between them. Then he rests his hand on Andy's upper back, between the shoulder blades, flat and still. He does not pat, rub or squeeze. It is a touch that asks nothing: Andy does not need to return it, respond to it or explain it.\n\nHe also chooses to sit one step below the top, at the same level as Andy, rather than standing over him, which would make him loom.\n\nHe also keeps his own body turned slightly towards the stairs rather than towards Andy, so that they are looking the same way. Side by side, a hand on the back feels like company rather than consolation."
+   },
+   {
+    "label": "Read the response",
+    "text": "Andy does not flinch or pull away. His shoulders drop slightly, and he breathes out, a long, shaky breath. Dev takes that as permission to leave his hand where it is. If Andy had stiffened or shifted away, Dev would have taken it back smoothly, without comment, and stayed sitting beside him.\n\nHe also notices that he is holding his breath, and lets it out slowly. His own calm will reach Andy through his hand as much as through his voice.\n\nHe also notices that Andy's hand, resting on his knee, opens slightly when Dev's hand settles on his back. Small changes like that are often the clearest sign that a touch is welcome."
+   },
+   {
+    "label": "Add few words",
+    "text": "Dev says, \"I'm really sorry, mate. That's rubbish.\" He does not ask for details or offer advice. Andy says that he has a mortgage and two kids, and that he does not know how he is going to tell his wife. Dev says that it sounds awful, and that he is not going anywhere.\n\nHe also resists the urge to say that it will be all right, that Andy will find something better or that it is not personal. None of those is what Andy needs to hear in the first twenty minutes.\n\nHe also keeps his voice low, both for Andy and because of the stairwell, where every word carries. A quiet voice makes the space feel more private than it is."
+   },
+   {
+    "label": "Release on his cue",
+    "text": "After a few minutes, when Andy sits up and wipes his face, Dev takes his hand away naturally, as if he had been about to stand. He does not make a moment of it. He asks whether Andy wants a coffee, or wants to get out of the building for a bit, and Andy says a walk would help.\n\nHe also offers to bring Andy's coat and bag down from the office, so that Andy does not have to walk back past the team, which Andy accepts gratefully.\n\nHe also gives Andy a moment alone before they set off, by going to fetch the bag and coat first. A minute on his own lets Andy wash his face and gather himself without an audience."
+   },
+   {
+    "label": "What happened",
+    "text": "They walk round the block twice, side by side, and Andy talks about what he might do next. Before he goes home, Andy thanks Dev and shakes his hand, holding it a moment longer than usual. In the following weeks, Dev sends him two job adverts and a message on the day of his last shift. Dev notes, later, that the touch in the stairwell was the first gentle touch they had ever exchanged in six years, and that it was easy, once he chose the right one.\n\nHe also notes that he chose the touch partly because of where they were. In an office kitchen, the same hand might have been too much; on a stairwell, out of sight, it was enough."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating it as male nature",
+   "body": "It is common to hear that men simply do not do gentle touch, as if it were built in. History and travel both say otherwise. Deitcher's photographs show pairs of American men in the nineteenth and early twentieth centuries posing with arms around each other, hands on knees, heads together. In much of India and parts of the Middle East and Africa, male friends walk hand in hand. The lack of gentle touch between men in many Western places today is a local custom, and a fairly recent one. Seeing it that way makes it easier to notice what it costs, and to make small changes without feeling that you are going against nature.\n\nIt also helps to notice your own discomfort with gentle touch between men, if you feel it, and to ask where it came from. For many men, the discomfort is something they were taught, not something they chose.\n\nIt also helps to remember that customs can change quickly. Within living memory, men in many Western places have moved from never hugging to hugging often. There is no reason gentler touch could not become ordinary again.\n\nIt also helps to look at old family photographs. Many families have pictures of grandfathers and great-uncles standing with arms round each other's shoulders, from a time when that was ordinary."
+  },
+  {
+   "title": "Misreading another culture's touch",
+   "body": "Two men walking hand in hand in Mumbai, a friend from Lagos linking your arm, a colleague from Cairo resting his hand on your knee as he talks: each can be startling to someone raised with stricter rules, and each is easy to misread as romance, overfamiliarity or a test. Most often, it is friendship in another dialect. The reverse misreading matters too: a man from a touch-friendly culture may read his English friend's stiffness as rejection. If you are startled, do not pull away with visible alarm. Relax, or step back smoothly, and if it matters, talk about the difference, as Arjun and Steve eventually did.\n\nIt also helps to remember that people who move between cultures often adjust their touch depending on who they are with. A man who holds his friend's hand at home may keep his hands in his pockets in London, and may feel the loss.\n\nIt also helps to know that men from touch-friendly cultures who move to more reserved places often describe a kind of skin hunger, missing the casual touch of friends. Being aware of it can make you a better friend to them."
+  },
+  {
+   "title": "Letting play become something one man is enduring",
+   "body": "Rough play between men can be warm, funny and close. It can also slide, sometimes quickly, into something one person is enduring rather than enjoying. The signs are visible: one man laughing and the other not, touch flowing only one way, an audience that makes refusing costly, a target who is new, younger or on the edge of the group, and play that continues after he has shown he has had enough. When you see them, interrupt, lightly if you can, firmly if you must. In teams and workplaces, hazing is a matter for the people responsible for welfare, not something to laugh off.\n\nIt also helps to ask what the ritual is for. Welcomes that bring new people into a team, through shared effort and celebration, build loyalty; welcomes that humiliate them usually build fear and resentment, and drive good people away.\n\nIt also helps to remember that the people doing the hazing are often decent men following a tradition they have never questioned. Talking to them directly, without humiliating them, is usually more effective than a public rebuke.\n\nSchools and clubs that take hazing seriously usually have clear rules and a named person to report to. If yours does not, asking for one is a reasonable thing to do."
+  },
+  {
+   "title": "Touching without reading the response",
+   "body": "The rule from the chapter on touch in Part I applies with extra force between men, where so much touch is unfamiliar: read the response, and adjust. A man who stiffens, pulls back, goes still or makes a joke as you touch him may be telling you that it is too much, or the wrong kind. Quick, hard pats are often the wrong kind when someone is grieving or frightened, as Gaz found. A resting hand, offered on the shoulder or upper back, and taken away smoothly if he shifts, is almost always safer. And always let the other man decide how much touch he wants.\n\nIt also helps to know that men who rarely receive gentle touch may react strongly to it, with tears, stiffness or a joke. None of these is a rejection. Stay steady, and let them recover in their own way.\n\nIt also helps to remember that some men have never been touched gently by another man, and may not know how to respond. A light, brief touch, offered without fuss, gives them a chance to find out.\n\nIt also helps to watch the moment after the touch. A man who relaxes, breathes out or leans in is telling you it helped; a man who quickly changes the subject or stands up may be telling you it was enough."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why do men touch each other mostly through rough play?",
+   "a": "Because, in many places, rough play gives touch a cover story. A headlock, a shoulder barge or a slap on the back is real physical contact, often warm and often enjoyed, but it can be presented as competition, mockery or fun, and so it does not need to be explained as affection. Boys learn this pattern early, partly because gentle touch between boys has often been policed, as the chapter on personal space described. Rough play is not bad in itself. But when it is the only touch available, men miss out on the kinds that comfort, and some men end up receiving almost no gentle touch at all.\n\nIt also helps to notice that rough play often carries real affection, and that taking it away entirely can feel like a loss too. The aim is not to replace play with gentleness, but to make gentleness available as well.\n\nIt also helps to notice that rough play often has its own rules of consent, learned in childhood: a tap on the floor in a wrestle, a shout of \"Pax\" or \"Truce\". When those rules disappear, so does the play."
+  },
+  {
+   "q": "Is it normal for a man to want more touch than he gets?",
+   "a": "Yes. Floyd's research on affection deprivation found that many people want more affection, including touch, than they receive, and that men reported more of this than women. Wanting more was linked to loneliness, stress and poorer wellbeing, though the research shows associations rather than causes. Many men receive affectionate touch only from a partner, and men without a partner may receive almost none. Noticing that you would like more is not weakness. It is information, and it can be met in many small ways: a hug from a friend, a hand on the shoulder, a pet, a massage, a regular game, a family that hugs.\n\nIt also helps to know that touch from a pet, a massage, a haircut or a sports team can meet some of the need. None of these replaces affection from people who love you, but all of them count.\n\nIt also helps to notice when touch hunger turns into something else, such as relying on alcohol or casual sex for closeness. Those needs are often better met in other ways, and talking about them with someone you trust can help.\n\nSome men find that the easiest touch to ask for is a hug at a goodbye or a hand on the shoulder in a hard moment. Saying \"I could do with that\" when it is offered is a good place to start."
+  },
+  {
+   "q": "Does touch between teammates really make teams play better?",
+   "a": "Kraus, Huang and Keltner found that NBA players and teams who touched each other more early in a season performed better later, even after accounting for how good they were thought to be, and that cooperation explained much of the link. But the study was correlational: it cannot show that touching caused better play, and the researchers said so. Teams that already trusted each other may have touched more. The finding is consistent with the idea that touch helps bind a group, but it is not a reason for coaches to require hugs. Touch that is forced is not the kind the study observed.\n\nIt also helps to notice the touch in teams you are part of. Teams that celebrate together, with high fives, hugs and hands on shoulders, often seem to trust each other more, whatever the direction of cause.\n\nIt is worth remembering that the same caution applies to many findings that sound neat and useful. A link between two things in a single season of one sport is a reason to wonder, not a reason to change everything."
+  },
+  {
+   "q": "Where can a man touch another man without it being strange?",
+   "a": "In most places, the shoulders, upper back and upper arm are the parts of the body that friends, including male friends, can touch without it being taken as intimate. A hand on the shoulder, a hand flat on the upper back, a brief squeeze of the upper arm, shoulders touching side by side: these are widely accepted as comfort or solidarity. Hands, knees, faces and the lower back are usually more intimate, though this varies a great deal between cultures and relationships. Whatever the place, the rule is the same: offer it lightly, read the response, and take it away smoothly if it is not welcome.\n\nIt also helps to watch how the other man touches you. If he puts a hand on your shoulder, a hand on his shoulder is likely to be welcome in return; if he never touches anyone, start with the lightest touch, or none.\n\nIt also helps to keep the touch brief unless the other man clearly wants more. A hand that stays for a few seconds is comfort; a hand that stays for minutes, uninvited, can feel like being held in place.\n\nIn workplaces, the safest touch between colleagues is usually a handshake or a brief hand on the shoulder or upper arm, offered only when the moment clearly calls for it."
+  },
+  {
+   "q": "How do I stop rough play that has gone too far?",
+   "a": "If you can, interrupt lightly first, in a way that gives everyone an exit: \"All right, that's enough, lads,\" or a distraction such as \"Who's getting the drinks?\" If that does not work, or if someone is being hurt, be firm and plain: \"Stop. He's had enough.\" Afterwards, check on the person who was the target, privately. If it is part of a pattern in a team, a school, a workplace or a club, raise it with whoever is responsible for welfare. Hazing and bullying often persist because the people who see them assume that someone else will act.\n\nIt also helps to remember that the person enduring it may not thank you at first. Being rescued in front of others can be embarrassing. What matters is that it stops, and that he knows someone noticed.\n\nIt also helps to remember that the people watching are often relieved when someone steps in. Many of them wanted it to stop and did not feel able to say so."
+  },
+  {
+   "q": "What if a man touches me in a way I do not like?",
+   "a": "You are allowed to say so, plainly, whoever he is. You can move away, take his hand off your shoulder, or say, \"I'm not a touchy person, mate,\" or simply \"Don't do that.\" Most people respond well to a clear, calm message. If the touch is sexual, repeated after you have said no, comes from someone with power over you, or frightens you, it is not a matter of preference but of boundaries and, sometimes, of safety. Tell someone you trust, and in a workplace, school or club, tell the person responsible for welfare or human resources.\n\nAnd if you have been touched in a way that has affected you deeply, now or in the past, support is available, including from services that work specifically with men.\n\nIt also helps to remember that saying no to a touch does not make you cold or rude. Clear boundaries make it easier for everyone to know what is welcome, including the people who want to touch you kindly.\n\nIt also helps to say it early. A clear word the first time an unwelcome touch happens is easier for everyone than a complaint after it has happened many times."
   }
  ],
  "watch": [
