@@ -74,6 +74,20 @@
    "doCaption": "Phone down, out among real people",
    "dontCaption": "Scrolling and comparing on the sofa",
    "annotation": "A feed shows everyone's best moments. Time among real bodies and real lives resets the sense of what is normal."
+  },
+  {
+   "doPoseId": "p_group_three",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Phone away, in the conversation",
+   "dontCaption": "Filming the party through a phone",
+   "annotation": "A moment spent getting the shot is a moment not spent in it. Take a few photos, then put the phone away."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Side by side, looking at the feed together",
+   "dontCaption": "Lecturing a teenager about his phone",
+   "annotation": "Teenagers tend to talk more easily side by side than face to face. Curiosity opens a conversation that a lecture closes."
   }
  ],
  "caseStudy": "Callum, thirty-one, was looking for a new job and, after a breakup, had started using a dating app. On both, he used photos he had chosen himself: a serious headshot with his arms folded for the professional network, and for the app a gym selfie taken after months of training, along with a photo from a stag weekend. He had few responses on either.\n\nA friend who worked in recruitment offered to look. She said the headshot made him look severe, and that the gym selfie said more about the gym than about him. She went through his phone and picked out three photos he had never considered: one of him laughing at a barbecue, one of him talking to someone at a friend's wedding, and a plain, smiling photo his sister had taken on a walk.\n\nHe was sceptical. He thought he looked tired in one and that his smile was lopsided in another. But he used them. Within a fortnight, two recruiters had contacted him, and conversations on the dating app began to go further. Several people mentioned that he looked friendly.\n\nAround the same time, he noticed that he felt worse about himself on days when he spent time on fitness accounts, and that he had been comparing his body with men who trained for a living. He unfollowed most of them. He kept training, but stopped photographing it. When he met someone from the app for the first time, she said he looked exactly like his pictures, which he decided was the best review a profile could get.",
@@ -93,6 +107,11 @@
     "Ask three people who do not know you well, or who will be frank, to choose their top two for that purpose.",
     "Compare their choices with your own.",
     "Try one of their choices for a month."
+   ],
+   "variations": [
+    "Ask the three people to say, in a word, what each photo makes them think of you, and compare their words with the impression you want to give.",
+    "Repeat the exercise for a different purpose, such as a dating profile, and see whether the chosen photos change.",
+    "Take some new photos while talking to a friend, rather than posing, and add them to the set before people choose."
    ]
   },
   {
@@ -103,6 +122,11 @@
     "List any accounts that reliably leave you feeling worse.",
     "Unfollow or mute at least two of them.",
     "After a week, notice whether anything has changed."
+   ],
+   "variations": [
+    "Keep a note for a week of how you feel after each session on social media, in a word, and look for the accounts linked to the worst words.",
+    "Follow two accounts that show ordinary bodies, ordinary lives or a hobby you enjoy, and notice whether your feed feels different after a fortnight.",
+    "Set a time limit for one app for a week, and notice what you do with the time instead."
    ]
   },
   {
@@ -113,6 +137,11 @@
     "Write down what you actually know about how each is doing, apart from their posts.",
     "Send one of them a message asking how they are, without referring to their posts.",
     "Note what you learn."
+   ],
+   "variations": [
+    "Ask an old friend you have not spoken to in a while how they really are, by phone if you can.",
+    "Think of a time when your own feed looked better than your life, and what you would have wanted someone to ask you.",
+    "Notice your reaction the next time a friend posts good news, and send them a message about something other than the post."
    ]
   },
   {
@@ -123,6 +152,11 @@
     "Ask whether you would be content for it to represent you in five years.",
     "If it includes someone else, ask whether they would be content too, or ask them.",
     "Note how often the pause changed what you posted."
+   ],
+   "variations": [
+    "Before posting a photo of a group, message each person in it, and notice how many say no or ask for a different one.",
+    "Look back at something you posted five years ago and ask whether you would post it now.",
+    "Agree a family rule about photos of children, such as no names, schools or locations, and share it with relatives who post."
    ]
   }
  ],
@@ -204,6 +238,45 @@
    "explain": "Others choose better photos of us than we do, and photos vary widely. A recent, natural photo also matches how people will meet you, which avoids a mismatch later.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Tiggemann and Anderberg's 2020 study, what happened to young men who saw Instagram images of muscular, bare-chested men?",
+   "options": [
+    "They became much more satisfied with their own bodies and more motivated to exercise",
+    "They were less satisfied with their own bodies than men who saw other images",
+    "They showed no change at all compared with men who saw the same men fully clothed",
+    "They became more critical of the men in the images, but not of their own bodies"
+   ],
+   "answer": 1,
+   "explain": "Young men who saw the bare-chested images were less satisfied with their own bodies afterwards. Other studies have found similar short-term effects, though the size varies.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A landlord asks applicants for a photo and rejects one because his selfie, taken at night in a car, looks shifty. What fits this chapter best?",
+   "options": [
+    "Trust the impression, since people can judge trustworthiness reliably in a tenth of a second",
+    "Stop judging from photos, and use the same references and questions for every applicant",
+    "Ask the applicant for a better photo, and decide on the basis of the second one instead",
+    "Choose applicants who send professional photos, since they show who takes things seriously"
+   ],
+   "answer": 1,
+   "explain": "Photos of the same person vary more than photos of different people, and snap impressions agree between viewers without being accurate. References and consistent questions say far more about a tenant than a selfie.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that Todorov's election study shows that candidates who look competent really are more competent. What did the study actually measure?",
+   "options": [
+    "Whether impressions of competence from faces predicted who won, not whether the winners were competent",
+    "Whether the winning candidates went on to perform better in office than the candidates who lost",
+    "Whether voters who knew the candidates' records rated their faces as looking more competent",
+    "Whether competent-looking candidates had higher scores on tests of intelligence and knowledge"
+   ],
+   "answer": 0,
+   "explain": "Participants judged competence from faces alone, and those judgments predicted election results. The study shows the power of the impression, not that the impression was correct.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +305,110 @@
    "work": "Misery has more company than people think: Underestimating the prevalence of others' negative emotions",
    "author": "Alexander H. Jordan, Benoît Monin, Carol S. Dweck and colleagues",
    "note": "Personality and Social Psychology Bulletin 37(1), 2011. Why other people's lives look easier than they are."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The photo from fifteen years ago",
+   "scene": "Stuart, fifty-five, is a management consultant who works mostly on his own, winning clients through his professional profile and\n  recommendations. His profile photo was taken by a professional photographer fifteen years ago, when he had more hair, less grey and a sharper jaw.\n  He likes it. It looks, he thinks, like the version of himself that clients should hire.\n\n  He has noticed something odd about his first video calls with new clients. In the first few seconds, after the camera connects, there is often a\n  small pause, a flicker of something on the other person's face, and then a slightly too bright \"Hello, Stuart!\". Once or twice someone has said,\n  \"Oh, hello, I wasn't sure I had the right call.\" He has started to dread that moment. He reads the flicker as disappointment, and he has begun to\n  wonder whether clients find him less impressive in person than his reputation suggests.\n\n  A former client who has become a friend, Anjali, mentions the photo over lunch. She tells him, laughing, that when they first met on video she had\n  thought for a moment that his son had joined the call by mistake.\n\n  Stuart is stung, and then thoughtful. He realises that every new client has met two people: the man in the photo, and then him.\n\nHe has also kept the photo on his company's website, his conference badges and the back of his book, so that by now there are hundreds of copies of a man who no longer exists.\n\nHe also notices that he has started switching his camera on a few seconds late, after the other person has appeared, as if to delay the moment of comparison.",
+   "misread": "Stuart read the flicker on new clients' faces as disappointment in him, and began to doubt how he came across. They were reacting to the gap between a fifteen-year-old photo and the man in front of them.\n\nHe also read his own discomfort at the start of calls as nerves about meeting new people, when it was the strain of being compared, every time, with a younger man.\n\nThe clients, for their part, read the mismatch as a small oddity and moved on, but the first minute of every call was spent adjusting rather than listening. Stuart read that minute as the verdict.",
+   "betterRead": "Willis and Todorov found that impressions from faces form in a fraction of a second and are held with growing confidence. Every client had formed an impression of Stuart from the old photo, and the first second of every call broke it. The flicker was surprise, not judgment, but it put both of them slightly on the back foot. The better approach was the one the chapter recommends: a photo that looks like you as people will meet you. Following White, Sutherland and Burton's finding, Stuart gathered a dozen recent, natural photos and asked three people who did not know him well to choose. They picked one taken by his daughter at a garden party, grey hair and all, in which he was listening to someone and smiling. The flicker disappeared from his first calls. Two new clients mentioned that he looked approachable.\n\nHe also updated the photo on his website and his conference badge, so that every new contact met the same man."
+  },
+  {
+   "title": "The tenant in the selfie",
+   "scene": "Hilary, sixty-one, owns three flats that she lets herself. When a flat comes up, she advertises it online and asks applicants to send a short\n  message and a photo of themselves, so that she can, as she puts it, get a feel for who she is dealing with. For the flat above the bakery, she gets\n  twenty applications in two days.\n\n  One applicant, Kai, twenty-six, a hospital porter, sends a long, polite message and a selfie taken at night in a car, lit from below by the phone\n  screen, unsmiling. Hilary thinks he looks shifty and does not reply. Another applicant, a man in his thirties, sends a bright, smiling photo in a\n  suit, taken at a wedding. He seems, she thinks, like a nice, reliable young man. She lets him the flat.\n\n  Within four months he is two months behind on rent and has sublet the second bedroom without telling her. When she finally gets him out, the flat\n  needs redecorating.\n\n  When she re-advertises, Kai applies again. His references, which she asks for this time, are excellent: three years in his last flat, a landlord\n  who calls him the best tenant he has had. She meets him for a viewing. He is warm, a little shy and very careful about the condition of the flat.\n\nShe had also, without thinking about it, rejected two other applicants whose photos were taken in poor light, and accepted one for her previous flat who had looked, she said at the time, \"like a lovely girl\", and who had been.\n\nHilary's daughter, when she hears about it, points out that the wedding photo had probably been taken by a professional, and the car selfie by a man on his break at the end of a night shift.",
+   "misread": "Hilary read Kai's dark, unsmiling selfie as a sign of an untrustworthy character, and the smiling wedding photo of the other applicant as evidence of reliability. Both readings came from single images, and both were wrong.\n\nShe also read her own confidence in her judgment as experience, when it was the ordinary confidence that snap judgments bring with them.\n\nShe also read the second applicant's suit and smile as a promise about his behaviour, when they were a record of one good afternoon at a wedding. Neither photo told her anything about paying rent.",
+   "betterRead": "Jenkins and colleagues found that different photos of the same person vary more in how they are judged than photos of different people, and Todorov's later work showed the same for impressions of character. A selfie lit from below in a car at night would make almost anyone look shifty; a professional photo at a wedding would flatter almost anyone. Willis and Todorov's work showed how quickly such impressions form and how confident they feel, but their studies measured agreement between viewers, not accuracy. Hilary's better approach was to stop asking for photos at all. She now asks applicants for references and proof of income, uses the same questions for everyone, and meets shortlisted applicants for a viewing. She let the flat to Kai. He has been there two years.\n\nShe also told the other landlords in her street about the change, and two of them stopped asking for photos too."
+  },
+  {
+   "title": "The son and the feed",
+   "scene": "Tom, forty-seven, has noticed changes in his son, Luke, sixteen, over the past six months. Luke has started going to the gym five or six times a\n  week, which Tom was pleased about at first. Then he noticed that Luke had begun refusing family meals with pasta or bread, weighing his food, and\n  spending long stretches in his room looking at his phone. One evening, passing Luke's door, Tom sees him standing in front of the mirror with his\n  shirt off, turning from side to side, frowning.\n\n  When Tom glances at Luke's phone, left on the kitchen table, the screen is full of fitness accounts: young men with very low body fat and very large\n  muscles, many of them shirtless, many of them selling supplements or training plans. Luke has saved dozens of posts.\n\n  Tom's first instinct is to make a joke about it, as his own father would have done. His second is to confiscate the phone. He does neither. He\n  tells his partner, Nadia, what he has seen, and they agree they need to talk to Luke, but neither of them is sure how.\n\n  That weekend, on a drive to his grandmother's, Luke says, out of nowhere, that he hates how he looks, and that everyone at the gym is bigger than\n  him.\n\nTom has also noticed that Luke has stopped wanting to go swimming with his younger brother, which he used to love, and wears a hoodie even on warm days.\n\nNadia remembers that Luke had once said, a few months earlier, that he could never look like the men at the gym \"without help\", and that she had not asked what he meant.",
+   "misread": "Tom's first reading was that Luke's new habits were a healthy enthusiasm that had gone a little far. His instincts, to joke or to confiscate, would have treated it as a phase to be mocked or a rule to be enforced, rather than as distress.\n\nLuke, for his part, read the men on his phone as normal and himself as failing, without knowing how those images had been made.\n\nNadia's first reading, when Tom told her, was that Luke was simply being a teenager, which was partly true and would have missed the part that mattered.",
+   "betterRead": "Tiggemann and Anderberg found that young men who viewed Instagram images of muscular, bare-chested men were less satisfied with their own bodies afterwards, and other studies have found similar effects, though their size varies. A feed of men who train and diet for a living, some of them edited or using drugs, can quietly become the standard a teenager measures himself against. Tom's better response, in the car, was to listen rather than reassure, and to ask what Luke was seeing online. Later, sitting side by side with him, he looked through the feed with Luke and talked about how the photos were made. They agreed to unfollow some accounts together. Because Luke's eating had changed and his distress seemed real, Tom and Nadia also took him to see their GP, who referred him for support. Tom did not try to work out what was wrong himself.\n\nLuke still goes to the gym, three times a week now, and eats with the family. The fitness accounts on his phone have mostly been replaced by football clips."
+  },
+  {
+   "title": "The friend whose feed was perfect",
+   "scene": "Oliver, thirty-five, has known Rob since university. They used to see each other every few weeks, but since Rob moved two hundred miles away\n  for a new job, they have kept in touch mostly through social media. Over the past year, Rob's feed has been a run of good news: a promotion, a new\n  house, a baby daughter, a holiday in Portugal with the baby asleep on his chest by a pool.\n\n  Oliver, whose own year has included a redundancy and a breakup, finds the feed hard to look at. Each post makes him feel further behind. He stops\n  liking the posts and stops messaging, partly out of envy and partly because he cannot think what to say that would not sound like complaining. He\n  assumes Rob is too busy and too happy to notice.\n\n  In November, a mutual friend mentions that Rob has been having a very hard time. His partner has been seriously unwell since the birth, Rob has been\n  caring for her and the baby while holding down the new job, and he has barely slept in months. He has been seeing his GP for support. The holiday\n  photo was from the one good week of the year.\n\n  Oliver sits with that for a long time. He realises he has not asked Rob how he is in eight months.\n\nHe has also, he realises, been posting less himself, and only the good things: a run, a meal out, a view from a walk. Anyone looking at his own feed would have no idea about the redundancy.\n\nRob had posted the holiday photo, the friend says, because his partner had asked him to, so that their families would see that they were all right.",
+   "misread": "Oliver read Rob's feed as evidence that Rob's life was going brilliantly, and read his own silence as a reasonable response to someone too busy and happy to miss him. Rob, unseen, may well have read Oliver's silence as a friendship fading.\n\nAnd he read his own envy as a reason to step back, when it was a sign of how much the friendship still mattered to him.\n\nRob had also read Oliver's silence, he said later, as Oliver being busy with a life of his own. Each man had been reading the other's feed, and neither had seen the other.",
+   "betterRead": "Jordan and colleagues found that people consistently underestimate how often others experience negative emotions, partly because people tend to show their positive feelings and hide their negative ones, and that those who underestimated others' struggles more tended to be less satisfied with their own lives. A feed concentrates that skew into a highlight reel. Oliver compared his worst year with Rob's best week. The better reading treats a feed as a selection, not a report, and treats silence from an old friend as something to break, not to wait out. Oliver sent Rob a message that evening: \"I've been a rubbish friend this year. How are you, really?\" Rob rang him back the next day, and they talked for an hour. Oliver visited at Christmas, and helped with the washing up while Rob slept.\n\nOliver also started telling a few close friends the truth about his own year, and found that two of them had been having hard years too, behind feeds that looked fine."
+  }
+ ],
+ "workedReading": {
+  "title": "Posting photos from a family party",
+  "scene": "Rosa, forty-four, has organised her father's eightieth birthday party in the back room of a local pub, with forty guests, three generations and a cake shaped like his old allotment shed. She has taken more than two hundred photos on her phone, and her family has asked her to post some so that relatives abroad can see. Sitting on the train home, she starts to choose. The photos include her father, who loves being photographed; her brother, Michael, who has just come out of hospital and is thin and pale; her niece, Bea, fifteen, who hates photos of herself; her cousin's toddler; and a dozen friends of her father's whom she barely knows. Rosa wants to share the joy of the day. She also knows that everyone in the photos will be seen by people they have never met, for a long time, and she decides to take the choosing as seriously as the party.\n\nShe has posted family photos before without asking anyone, and once had to take one down after a cousin rang in tears because her former partner had seen it. She does not want that again.\n\nShe also remembers how she felt when a friend posted a photo of her at a wedding, mid-mouthful, without asking, and how long it took for the comments to stop.",
+  "steps": [
+   {
+    "label": "Look at what you have",
+    "text": "She scrolls through the photos and notices how much they vary. In some, her father looks frail; in others, telling a story with his hands, he looks twenty years younger. Jenkins and colleagues found that photos of the same person vary more than people expect, and she can see it in every face on her phone. She picks a shortlist of twenty in which people look the way they did at the party: happy, at ease and themselves.\n\nShe also notices that the photos she likes best of herself are not the ones her sister likes best of her, and remembers the research on choosing your own photos."
+   },
+   {
+    "label": "Ask whose photo it is",
+    "text": "Before posting anything with someone else in it, she messages them. Her father says yes to everything. Michael asks her not to post any close-ups of him, because he does not want people asking about his health; he is happy with a group photo where he is at the back, laughing. Bea replies with a single word, \"no\", and then, a minute later, \"the one where I'm behind Grandad is fine\".\n\nShe does not ask Bea why. A teenager's no is a complete answer, and Bea has given her an alternative that works.\n\nShe also tells Michael which group photo she has in mind and sends it to him first, so that he can see exactly how he looks before anyone else does."
+   },
+   {
+    "label": "Check the children",
+    "text": "The toddler appears in several photos. Rosa messages her cousin, who is happy for one photo to go up but asks that it not show the name of the nursery on the child's jumper. Rosa crops it. She also checks that none of the photos shows the pub's name and the date together with the child, since she does not know everyone who will see the post.\n\nShe also thinks about her father's friends, some of whom are not on social media at all and may not expect to appear there. She leaves out the photos of the ones she could not reach.\n\nShe also checks her privacy settings, which have not been changed in years, and restricts the post to friends and family."
+   },
+   {
+    "label": "Apply the five-year test",
+    "text": "She imagines each photo being seen in five years' time, by a future employer, a new partner or the person themselves. One photo of her father's old friend, mid-sentence with a pint and his eyes half closed, is funny now and unkind later. She leaves it out. One photo of the whole family around the cake, everyone laughing, will be lovely in five years and in fifty. That one goes first.\n\nShe also applies the test to herself. One photo of her, flushed and mid-laugh, is unflattering and entirely true to the day. She keeps it.\n\nShe also thinks of Bea in five years, at nineteen, and is glad that no photo of her at fifteen will be waiting for her."
+   },
+   {
+    "label": "Choose what to leave out",
+    "text": "She ends with eight photos, from two hundred. The ones she leaves out include several in which people look less than their best, the one Bea vetoed, the close-ups of Michael and every photo that she would not want posted of herself. She notices that this is much the same rule White, Sutherland and Burton's work implies: other people are better judges of how they want to be seen than you are.\n\nShe also sends the full set of two hundred privately to her father, who wants to see every one."
+   },
+   {
+    "label": "Write the caption",
+    "text": "She writes a short caption naming the occasion and thanking everyone who came, and tags only those who have agreed to be tagged. She avoids anything that would invite questions about Michael. She turns off comments on the photo of the toddler and leaves them on for the others, so that relatives abroad can send their wishes.\n\nShe also avoids the usual phrases about the best day ever, because Michael's illness made the day harder for some of the family than the photos show.\n\nShe also adds a line inviting family members to message her for the full album, so that anyone who wants every photo can have them without all of them being public."
+   },
+   {
+    "label": "What happened",
+    "text": "Within an hour, her aunt in Canada has commented, and her father's oldest friend has sent a message saying he is going to print the cake photo. Michael tells her later that he was grateful she asked. Bea, without comment, likes the photo in which she is behind her grandfather. Rosa reflects that the eight photos tell the story of the day better than two hundred would have, and that nobody in them will wish they were not there.\n\nShe also notices that she enjoyed the choosing, and that it made her look at the day again more carefully than she would have otherwise.\n\nHer father asks her to print the eight photos, which he puts on the mantelpiece in the order she posted them."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating likes as a verdict",
+   "body": "Many people watch the reaction to their posts closely: how many likes, how fast, from whom, and who stayed silent. A post that gets fewer likes than usual can feel like a social judgment, and a friend who does not react can feel like a friend who has cooled. But reactions on social media depend on far more than the post or the person: on the time of day it was posted, on what the platform chose to show to whom, on how busy people were, on whether they saw it at all. Much of what you see as silence is people who never saw your post. Like any nonverbal cue, reactions are ambiguous and easily over-read, and treating them as a measure of how much you are liked is one of the quickest ways to make a feed feel worse. If you want to know how a friendship is going, ask the friend.\n\nIf you find yourself refreshing a post to check its reactions, close the app for an hour. The number will not mean more when you come back.\n\nMany platforms now let you hide like counts, which some people find makes posting feel lighter."
+  },
+  {
+   "title": "Posting other people without asking",
+   "body": "It is easy to post a photo of a friend, a colleague or a family member without a second thought, especially when you look good in it. But each photo shapes how that person is seen by people they may never meet: future employers, new partners, people who wish them harm. The person in the photo may be recovering from an illness, may have reasons to keep their location private, may simply dislike how they look, or may not want people to know they were there. Children cannot consent at all, and images of them, their schools and their routines can travel far. Before posting anyone else, ask, as Rosa did. Accept a no without argument. And if you are tagged in something you would rather not be, it is fine to ask for it to come down.\n\nA simple rule: post others as you would want to be posted, and when in doubt, leave it out."
+  },
+  {
+   "title": "Checking the candidate's photo before the interview",
+   "body": "Many recruiters and managers look up candidates online before an interview, and the profile photo is the first thing they see. Todorov and colleagues found that impressions of competence from faces alone predicted election results, and Willis and Todorov found that such impressions form in a fraction of a second and grow in confidence with more looking, not in accuracy. A recruiter who glances at a photo has formed an impression before reading a word of the application, and the chapter on interviews earlier in this part described how first impressions shape the interviewer's manner and the candidate's performance. If you make decisions about people, consider not looking at photos until after you have assessed what they have done and said, and keep any online checks to what is relevant to the job.\n\nIf you do look, look at everyone in the same way and at the same stage, so that no candidate is judged on a photo the others did not have to pass."
+  },
+  {
+   "title": "Photographing instead of being there",
+   "body": "At a concert, a party, a child's school play or a beautiful view, many people spend much of the moment looking at it through a phone, getting the shot. Part of the motive is the feed: the moment becomes something to present. The cost falls on the moment itself, and on the people in it. A father filming the nativity play is a father whose child, looking out from the stage, sees a phone rather than a face. A friend photographing the meal is a friend not talking. None of this means never taking photos. It means noticing when the camera has taken over from attention, taking a few pictures and putting the phone away, and letting some moments go unrecorded. The best photos of most occasions are often taken by someone else, of you being there.\n\nA good test is to ask yourself, afterwards, whether you remember the moment or the photo.\n\nSome families agree that one person will take the photos at an event, so that everyone else can simply be there."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What makes a good profile photo?",
+   "a": "One that looks like you as people will meet you, on a good day. That usually means a recent photo, head and shoulders, in good, soft light, with a natural expression, such as the face you make when you are listening to someone you like or laughing at something real. Avoid photos that are many years old, heavily filtered, cropped from a group or taken from an unflattering low angle. The most useful step, from White, Sutherland and Burton's work, is to let other people choose: collect a dozen recent, natural photos and ask several people who do not know you well, or who will be frank, to pick the best for the purpose. Their choices will usually make a better impression than yours, because they see what strangers will see.\n\nAnd update it every few years, or whenever you change enough that someone meeting you might be surprised.\n\nIf you use the same photo across several sites, people who meet you will have one consistent impression to match, which helps."
+  },
+  {
+   "q": "Should I smile in a professional profile photo?",
+   "a": "Usually, yes, but moderately. A warm, genuine smile tends to make people seem approachable and trustworthy, and a hard, unsmiling face with the chin raised, the classic serious headshot, can read as cold or arrogant. The chapter on the poker face earlier in this part described Wang and colleagues' finding that broad smiles made people seem warmer but less competent than slight ones, especially when the stakes were high. For a professional profile, a slight, natural smile is a good default. The best way to get one is not to force it but to be photographed while talking to someone or thinking about something pleasant. Then let other people choose the photo in which the smile looks most like yours.\n\nIf you are photographed for work, ask the photographer to chat to you while they shoot, which tends to bring out a more natural face.\n\nFor a dating profile, the same principle holds: a real smile in a real moment beats any posed expression."
+  },
+  {
+   "q": "Is it wrong to edit my photos?",
+   "a": "Light editing, such as adjusting brightness, cropping or correcting colour, is ordinary and harmless. The trouble starts when editing changes the face or body itself: slimming, smoothing, enlarging, reshaping. Edited images set an expectation that the first meeting cannot meet, and on dating apps and at work that mismatch is a familiar source of disappointment. They can also feed the comparisons this chapter describes, for you and for people who see them, because a heavily edited body presented as natural becomes part of someone else's idea of normal. A useful test is whether someone who met you the day after seeing the photo would recognise you immediately and feel that it was a fair likeness.\n\nIf you are unsure, ask a friend whether the edited photo looks like you. If they hesitate, use the unedited one.\n\nAnd if you post for work, remember that clients will compare the photo with the person on their first video call, as Stuart's did."
+  },
+  {
+   "q": "How can I tell whether social media is affecting how I feel about my body?",
+   "a": "Notice how you feel before and after time on particular accounts, as the feed audit in this chapter suggests. If you regularly feel worse about your body after scrolling, if you find yourself comparing your shape with people who are paid to look a certain way, or if you are changing what you eat or how you train because of what you see, the feed is probably playing a part. Unfollowing or muting accounts that reliably make you feel worse is a simple first step. If the worry about your body is taking up a lot of your thoughts, affecting your eating, your mood or your relationships, or leading you to consider supplements or drugs, talk to someone you trust and see your doctor. You do not need to work out what is wrong first.\n\nIt can also help to spend time with people whose bodies vary, in person, which is a useful corrective to a feed that shows only one kind.\n\nIf a friend tells you they are struggling with how they look, listen without comparing or reassuring too quickly, and ask what would help."
+  },
+  {
+   "q": "Should employers look at candidates' social media?",
+   "a": "If they do, they should do it carefully, consistently and for reasons connected to the job. A profile photo invites exactly the snap judgments described in this chapter, and impressions formed from a face before reading an application can shape the whole process. Many organisations prefer not to look at photos at all until after a decision, or to have someone other than the decision-maker carry out any checks and report only what is relevant, such as public conduct that would affect the role. Rules on this vary between countries, and it is worth checking them. If you are a candidate, it is sensible to assume that your public profiles may be seen, and to keep them as you would be happy for a future employer to see them.\n\nAnd if you are the candidate, a current, natural photo is still the safest choice, since it matches the person who will arrive.\n\nWhoever looks, it is worth writing down what was checked and why, so that the process can be explained if anyone asks."
+  },
+  {
+   "q": "How can I talk to a teenager about what they see online?",
+   "a": "With curiosity rather than a lecture, and preferably side by side rather than face to face. Teenagers often find it easier to talk in the car, on a walk or while doing something together, as Luke did. Ask what they are watching and what they like about it, and listen to the answer before offering a view. Look at the feed with them, if they are willing, and talk about how the images are made: lighting, angles, editing, the training and diet behind them, and the products being sold. Share your own experience of comparing yourself with others. Avoid mocking or banning, which tend to drive things underground. If you notice changes in eating, mood or behaviour that worry you, talk to your GP, who can help you decide what support is needed.\n\nIt also helps to be honest about your own habits. Teenagers notice quickly when the adult lecturing them about phones is looking at one.\n\nAnd remember that you do not need to be an expert on social media to help. Your attention and your calm matter more than your knowledge of the apps."
   }
  ],
  "watch": [
