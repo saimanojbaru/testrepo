@@ -80,6 +80,20 @@
    "doCaption": "Practising on strangers' next public move: harmless, and checkable within a minute.",
    "dontCaption": "Practising on the feelings of people who never agreed to it.",
    "annotation": "Calibration grows fastest on quick, harmless predictions. Which way he turns, whether she gets off at this stop."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "Scoring it as one of forty",
+   "dontCaption": "\"I knew it\" after one hit",
+   "annotation": "A single result tells you almost nothing. The band, filled over weeks, tells you what your confidence is worth."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_stand_head_down",
+   "doCaption": "Reading the curve, not the miss",
+   "dontCaption": "Despairing after one confident miss",
+   "annotation": "A ninety per cent prediction should fail one time in ten. Look at the rate across the band before deciding anything."
   }
  ],
  "caseStudy": "Kieran, twenty-nine, works in procurement and considers himself good with people. After reading about calibration he starts a ledger: every prediction he makes about someone at work goes in with a percentage and a date. For three months he writes about five a week and scores them every Sunday.\n\nThe overall hit rate looks respectable. The bands do not. His seventy-percent predictions come true about seven times in ten. His ninety-percent predictions about senior colleagues being annoyed with him come true only twelve times in twenty-two. And his sixty-percent predictions that a peer liked an idea come true nine times in eleven: he is underconfident about warmth among people his own level, and badly overconfident about displeasure above him.\n\nIn June his director, Helen, goes quiet halfway through his presentation on a new supplier, looks at her phone twice, and leaves without the usual comment. Kieran feels the familiar certainty, ninety percent at least, that she thinks the proposal is weak. He writes it down. Then he looks at the band that number belongs to, and writes beside it: *my real rate here is about half*.\n\nInstead of rewriting the proposal overnight, as he once would have, he sends her a short message the next morning asking whether she wanted any changes before it went to committee. She replies within the hour: the proposal is fine, she is sorry she rushed off, her father had been taken into hospital that morning. It goes to committee unchanged and is approved.\n\nHis colleague Ross, who has never kept a ledger, once spent a weekend rebuilding a business case because a manager frowned at it. The frown, it turned out, was a migraine. Kieran does not tell Ross about the ledger. He just adds the Helen prediction to the ninety band, scored as a miss, and watches the line move a little closer to the diagonal.",
@@ -98,6 +112,11 @@
     "Check for inconsistencies, such as two different words that you meant to carry the same number.",
     "Choose the five bands you will use from now on: sixty, seventy, eighty, ninety and ninety-five percent.",
     "Write the list on the first page of your ledger."
+   ],
+   "variations": [
+    "Ask a friend to write the percentages they mean by the same eight words, and compare their list with yours.",
+    "Notice the probability words used in a week of work emails, and write down what number each writer probably meant.",
+    "Use your five bands out loud for a week when making predictions with colleagues, and notice whether conversations become clearer."
    ]
   },
   {
@@ -109,6 +128,11 @@
     "Check each one as soon as it resolves and mark it hit or miss.",
     "Make twenty predictions in total across the session.",
     "Count how many came true in each band you used."
+   ],
+   "variations": [
+    "Make the predictions about strangers' next public move in a place you have never been before, where you have no baseline.",
+    "Add one prediction about your own behaviour, such as whether you will check your phone in the next five minutes, and score it honestly.",
+    "Repeat the drill on a different day of the week and compare the two sets of hits by band."
    ]
   },
   {
@@ -120,6 +144,11 @@
     "Add the ten squares and divide by ten.",
     "Compare the result with a quarter, the score of someone who says fifty percent about everything.",
     "Write the score and the date at the top of this week's review."
+   ],
+   "variations": [
+    "Work out the score for ten predictions about strangers and ten about people you know, and compare them.",
+    "Work out what your score would have been if you had said seventy per cent for every prediction, and compare it with your actual score.",
+    "Keep a running Brier score in your ledger and update it each week, noticing the direction it moves."
    ]
   },
   {
@@ -131,6 +160,11 @@
     "For each band, work out the share that came true.",
     "Plot the bands on paper, stated confidence along the bottom and actual rate up the side, and draw the diagonal.",
     "Mark each band as over, under or close, and note how many predictions it holds before trusting it."
+   ],
+   "variations": [
+    "Draw separate calibration curves for work and for home once each of them has at least twenty predictions.",
+    "Mark on the curve the bands where you made the fewest predictions, and resolve to fill them.",
+    "Draw a second curve a month later and lay it over the first to see whether you have moved towards the diagonal."
    ]
   },
   {
@@ -142,6 +176,11 @@
     "Work out the hit rate for each tag separately, band by band where you have enough.",
     "Write down the single biggest difference between tags.",
     "Write one adjustment you will make, for example: in readings of senior colleagues when I am tired, drop my number by one band."
+   ],
+   "variations": [
+    "Add a tag for the time of day, and check whether your calibration changes between morning and late afternoon.",
+    "Add a tag for whether the prediction was hopeful, fearful or neutral, and compare their curves.",
+    "Share your biggest difference between tags with a trusted friend, and ask whether it surprises them."
    ]
   }
  ],
@@ -223,6 +262,45 @@
    "explain": "Waiting and asking are the two legitimate tests. The rumour and the sudden question in front of a group engineer a reaction, which is manipulation and measures your provocation rather than his state. Asking mutual friends spreads a guess about his marriage to people who cannot check it. Some predictions about friends should simply stay unscored.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Sherman Kent notice about words such as \"probable\" in intelligence reports?",
+   "options": [
+    "That everyone understood them to mean almost exactly the same thing, so no table was needed",
+    "That readers took the same word to mean very different probabilities, so he proposed a table",
+    "That they were only ever used about weather forecasts and never about political events at all",
+    "That analysts avoided them completely, preferring to give exact percentages in every report"
+   ],
+   "answer": 1,
+   "explain": "Kent found that a report calling an event probable was read by some as near certain and by others as little better than even. He proposed a table linking each phrase to a range of probabilities.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "After one week, all eight of your predictions at eighty per cent have come true. What fits this chapter best?",
+   "options": [
+    "Move all your predictions up to ninety-five per cent, since you are clearly better than you thought",
+    "Keep predicting at eighty per cent and wait for a larger sample before concluding anything",
+    "Stop keeping the ledger, since you have already shown that your readings are accurate",
+    "Conclude that the predictions were too easy, and delete them from the ledger altogether"
+   ],
+   "answer": 1,
+   "explain": "Eight predictions can easily all come true by chance. Tversky and Kahneman showed that people expect small samples to mirror the true rate far more than they do; wait for at least twenty in a band.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that if your ledger shows you are well calibrated, you must also be an accurate reader of people. What does this chapter suggest?",
+   "options": [
+    "That calibration and accuracy differ: you can be well calibrated and rarely sure of anything useful",
+    "That calibration and accuracy are exactly the same thing, so a good curve means good reading",
+    "That calibration only matters for weather forecasters, and has nothing to do with reading people",
+    "That accuracy is impossible to measure, so calibration is the only thing worth keeping track of"
+   ],
+   "answer": 0,
+   "explain": "Calibration means your stated confidence matches your hit rate. A reader who says sixty per cent about everything can be well calibrated while rarely being confident enough to be useful.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +329,110 @@
    "work": "Verification of forecasts expressed in terms of probability",
    "author": "Glenn W. Brier",
    "note": "Monthly Weather Review 78(1), 1950. The original short paper behind the score."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The manager who was sure he would leave",
+   "scene": "Jackie, forty-eight, manages a team of twenty agents at a call centre, and she prides herself on knowing when someone is about to leave. One of\n  her agents, Ryan, twenty-four, has been quieter for a month: he has stopped joining the team's lunches, takes his breaks alone and answers her questions\n  in short sentences. Jackie is ninety per cent sure he is job-hunting. She decides not to put him forward for a training course that would lead to a team\n  leader role, because, as she tells her deputy, there is no point investing in someone who will be gone by Christmas.\n\n  She has been keeping a calibration ledger for three months, as this chapter suggests, and she writes the prediction down: \"Ninety per cent: Ryan hands\n  in notice by 31 December.\"\n\n  Ryan does not leave. In January, he tells Jackie that he had been caring for his father, who had been seriously ill, and that he had not wanted to say so\n  at work. He asks whether there are any development opportunities coming up. Jackie realises that the course she held back from him has already started.\n\n  At her next monthly review, she looks at her ninety per cent band. She has made ten predictions at ninety per cent, most of them about people leaving,\n  being unhappy or being about to cause trouble. Five came true.\n\nShe also notices, rereading the entry, that she had written \"quiet, avoiding me\" on three separate days, and had never once asked Ryan how he was.\n\nRyan's colleagues, asked later, said that they had noticed he was tired and had assumed he was struggling with the new targets. Nobody had guessed the real reason, and nobody had asked.",
+   "misread": "Jackie read Ryan's withdrawal as job-hunting, with ninety per cent confidence, and acted on it by holding back an opportunity. Ryan's quietness had been the strain of caring for a sick father, which she had not considered.\n\nHer deputy, hearing her certainty, read it as experience and agreed, which made the prediction feel more solid than it was.\n\nRyan, for his part, read his manager's coolness during that month as a sign that she had written him off, which made him even less likely to tell her what was happening at home.",
+   "betterRead": "Lichtenstein, Fischhoff and Phillips reviewed decades of research and found overconfidence to be the common case: when people said they were ninety per cent sure, they were wrong far more often than that. Jackie's ledger showed her own version. Her ninety per cent band came true half the time, which meant her certainty about people leaving was worth about as much as a coin toss. The ledger did its job by telling her what her confidence was worth. Her better approach was twofold. She adjusted her bands: predictions she felt ninety per cent sure of she now wrote at sixty, and she checked them before acting. And she stopped making decisions about people's development on the strength of predictions about their future. She put Ryan on the next course, and he became a team leader within a year.\n\nShe also told her deputy what the ledger had shown, which made him more cautious about agreeing with her next certainty."
+  },
+  {
+   "title": "The engineer who could not read his daughter",
+   "scene": "Graeme, fifty, is a structural engineer who loves numbers, and he took to the calibration ledger immediately. After four months he has nearly a\n  hundred scored predictions, and his overall Brier score is respectable. At work, his predictions about colleagues and clients are well calibrated: his\n  seventy per cent predictions come true about seven times in ten.\n\n  When he does the Domain Split drill, tagging every prediction by setting, one tag stands out. He has made twenty-three predictions about his\n  daughter, Isla, fifteen, mostly about her moods: whether she will be in a bad mood after school, whether she will join the family for dinner,\n  whether she will be upset about something he said. His seventy and eighty per cent predictions about Isla come true less than half the time. He is\n  confidently wrong about his own daughter.\n\n  He looks at the misses. Most of them are predictions that Isla would be upset or withdrawn, made on days when his own state line said \"tired\" or\n  \"worried about work\". On several of those days, she had in fact been cheerful.\n\n  He tells his wife, Moira, who laughs and says that she could have told him that for free.\n\nHe also notices that he has made almost no predictions about his son, who is twelve and easy-going, and wonders whether his attention follows his worry.",
+   "misread": "Graeme read his good calibration at work as a general skill, and assumed it applied equally at home. His predictions about Isla's moods were shaped more by his own tired, worried state than by anything she was doing.\n\nIsla, for her part, read her father's careful questions on tired days as a sign that she was in trouble, which sometimes made her quieter, which in turn seemed to confirm his prediction.",
+   "betterRead": "This chapter's section on calibrating by domain and by state warns that calibration is not one number: most people are well calibrated in some areas and badly in others, and overconfidence often clusters by domain and by the reader's own state. Graeme's ledger showed both: poor calibration about the person closest to him, concentrated on days when he was tired. The better approach was the adjustment the Domain Split drill recommends. He wrote a rule on the first page of his ledger: \"Isla, tired days: halve my confidence, and ask rather than predict.\" He also noticed that his predictions about Isla were almost all negative, which said something about his worry rather than her life. Over the next two months, he made fewer predictions about her and asked her more often how her day had been. His calibration about Isla improved, and so, Moira said, did dinner.\n\nHe also started making one prediction a week about Isla being in a good mood, to balance a ledger that had leaned towards worry."
+  },
+  {
+   "title": "The young analyst who was a natural",
+   "scene": "Zain, twenty-five, is a junior analyst at a consultancy, and after reading this chapter he starts a ledger. In his first week he makes eight\n  predictions at eighty per cent, about clients and colleagues: who will raise objections in a meeting, who will reply to an email that day, whether a\n  client will ask for a revised proposal. All eight come true.\n\n  He is delighted. He tells his flatmate that he is clearly a natural at reading people, and mentions it to his manager, Priyanka, who smiles and asks how\n  many predictions he has made. He stops making predictions at eighty per cent and starts making them at ninety-five, since he is evidently better than\n  he thought.\n\n  Over the following five weeks, he makes thirty more predictions at ninety-five per cent. Eighteen come true.\n\n  He is crestfallen. He tells Priyanka that he has lost his touch and wonders whether the first week was a fluke. She asks him whether eight predictions\n  were ever enough to tell him anything, and shows him a page from the chapter on the law of small numbers.\n\nHe also realises, looking at the first week's predictions, that most were about things that almost always happen: clients replying to emails, the same colleague raising the same objection.\n\nPriyanka also mentions that her own first month of predictions had been a run of hits, and that she had stopped believing in it after her second month.",
+   "misread": "Zain read eight hits in eight as proof of exceptional skill, and raised his confidence accordingly. When the larger sample showed a much lower hit rate, he read it as a loss of ability rather than as the truth emerging.\n\nHis flatmate read the eight hits the same way, and told him to put money on his instincts, which he fortunately did not.",
+   "betterRead": "Tversky and Kahneman's work on belief in the law of small numbers showed that people expect small samples to reflect the true rate far more closely than they do. Eight predictions at eighty per cent could easily all come true by chance, even for someone whose real hit rate was well below eighty. This chapter's failure mode names exactly this impatience: reading a band after five or ten predictions and either celebrating or despairing. The better reading waited for a larger sample. Zain's thirty-eight predictions together told him that his true hit rate at high confidence was around sixty-five per cent, and that he should use the seventy per cent band for most of his readings. He moved his predictions back down, kept making them, and waited for at least twenty in each band before drawing any conclusion. Six months later, his seventy per cent band was well calibrated.\n\nPriyanka also suggested that he include harder predictions, about things that might genuinely go either way, which made the ledger more useful and his score less flattering."
+  },
+  {
+   "title": "The colleague who tested people",
+   "scene": "Brett, thirty-four, works in sales, and he has become obsessed with his calibration ledger. Waiting for situations to recur is too slow for him,\n  so he starts arranging tests. He mentions to a colleague, Lauren, that he has heard redundancies are coming, to see whether she already knew; she goes\n  pale. He drops a remark about a team member's divorce, which he knows is a sore point, to see whether the man flinches; he does. He tells a new starter\n  that their manager has been criticising her work, to see whether she becomes defensive in the next meeting; she does, and the meeting goes badly.\n\n  His ledger fills up quickly, with predictions scored within minutes. His Brier score improves. He is pleased with himself.\n\n  Within a month, the rumour about redundancies has spread through the office and reached the managing director. Lauren has told HR that Brett said it.\n  The new starter has asked to move teams. The team member whose divorce Brett mentioned has stopped speaking to him.\n\n  HR invites Brett to a meeting. He tries to explain that he was testing hypotheses, as the chapter recommends.\n\nHe has also started to feel a small thrill each time a test works, which he had not expected, and which he finds hard to stop.\n\nHis manager has noticed that the team goes quiet when Brett walks into the kitchen, and has not yet worked out why.",
+   "misread": "Brett read his staged tests as calibration practice and his quickly scored predictions as evidence of improving skill. His colleagues read his remarks as cruelty, gossip and manipulation, which is what they were.\n\nHe also read his improving Brier score as improving skill, when he was scoring his own provocations.\n\nLauren read his remark about redundancies as inside information from someone who knew, and spent a sleepless weekend updating her CV.",
+   "betterRead": "This chapter's most serious warning is ethical: in search of quicker feedback, the reader starts arranging little tests for the people around him, and his ledger fills with reactions he caused. Mentioning something sensitive to see whether someone flinches, inventing a rumour to test whether they already knew, and planting a worry to see whether it shows are exactly the forms of engineering the chapter forbids. They also corrupt the data: Brett was scoring reactions he had provoked, not the behaviour he claimed to be predicting. The chapter's methods are to wait for situations to recur or to ask openly, and to leave untested what cannot be fairly tested. HR's response was formal: a warning, an apology to each colleague, and training. Brett deleted the ledger, apologised to Lauren and the others in person, and, months later, began a new ledger made only of predictions about strangers' next public move, as the chapter's commuter drill suggests.\n\nHe also asked HR whether the firm could add a line about ethical practice to its coaching materials on reading people, which it did, with his case, anonymised, as the example."
+  }
+ ],
+ "workedReading": {
+  "title": "Scoring a month of predictions",
+  "scene": "Helena, forty-three, is head of year at a secondary school, and for two months she has kept a calibration ledger of predictions about pupils, parents and colleagues: whether a particular parent will attend a meeting, whether a pupil who has been in trouble will be in trouble again that week, whether a colleague will object to a change in the timetable. Each prediction has a probability, a date and an observable outcome. She has scored each one as it resolved. It is the last Sunday of the month, and she sets aside forty minutes with her ledger, a pencil and a sheet of squared paper to do her first full review. She wants to know what her confidence is worth, and where.\n\nShe also knows that some of her predictions concern pupils whose lives are hard, and that a teacher's expectations can shape how a child is treated. She wants to find out whether her confidence about them is justified before she acts on it any more.",
+  "steps": [
+   {
+    "label": "Gather the scored predictions",
+    "text": "She counts forty-six scored predictions, plus eleven still open, which she leaves aside. She checks that each scored prediction has a clear outcome: happened or did not. Two are ambiguous, a pupil who was \"nearly\" in trouble, and she marks them unclear and leaves them out rather than scoring them in her favour. The ledger is only as honest as its scoring.\n\nShe also checks that none of the predictions depended on anything she did to provoke a reaction, and finds one she is unsure about, which she marks unclear too."
+   },
+   {
+    "label": "Group by band",
+    "text": "She sorts the forty-four clear predictions into the five bands she chose at the start, following the Words to Numbers drill: sixty, seventy, eighty, ninety and ninety-five per cent. She has nine at sixty, fourteen at seventy, twelve at eighty, seven at ninety and two at ninety-five. She notes that the top bands are small, and reminds herself that, as Tversky and Kahneman showed, small samples can mislead badly.\n\nShe also notices that she has made no predictions at fifty per cent at all, and wonders whether she avoids writing down guesses she is genuinely unsure about."
+   },
+   {
+    "label": "Score by hand",
+    "text": "She works out her Brier score for the forty-four, as Glenn Brier proposed: for each prediction, the probability minus one if it happened, or minus nothing if it did not, squared, then averaged. It takes ten minutes with the pencil. Her score is about 0.24. A forecaster who said fifty per cent about everything would score a quarter, 0.25, so she is doing only a little better than a coin.\n\nShe also works out what she would have scored by saying seventy per cent for everything: about 0.22, slightly better than her actual score. Her confident bands are costing her.\n\nShe also checks two of her calculations twice, because a slip with the squares would make the whole review misleading."
+   },
+   {
+    "label": "Draw the curve",
+    "text": "For each band she works out the share that came true. Sixty per cent: six in nine. Seventy: ten in fourteen. Eighty: eight in twelve. Ninety: five in seven. She plots them on the squared paper, with her stated confidence along the bottom and the actual hit rate up the side. The low bands sit close to the diagonal; the high bands fall well below it. She is well calibrated when she is unsure and overconfident when she is sure, which, as the chapter says, is the commonest finding of all.\n\nShe also notes the number of predictions in each band on the curve, so that she does not read too much into the small ones."
+   },
+   {
+    "label": "Split by domain and state",
+    "text": "She tags each prediction by domain and by her own state line, as the Domain Split drill suggests. The pattern is clear. Her overconfidence is concentrated in predictions about pupils she has had to discipline before, and on days when her state line says \"tired\" or \"behind\". On those, her eighty and ninety per cent predictions that the pupil would be in trouble again came true barely half the time.\n\nShe also notices that her predictions about parents are well calibrated, and her predictions about colleagues slightly underconfident, which surprises her."
+   },
+   {
+    "label": "Write one adjustment",
+    "text": "She writes one rule on the first page of the ledger: \"Pupils I have disciplined before, especially on tired days: drop my confidence by twenty points, and do not act on the prediction alone.\" She notes that this matters, because predictions about pupils can become self-fulfilling if a teacher treats a child as already in trouble.\n\nShe also writes a second, smaller rule: \"Colleagues: trust my seventy per cent band a little more,\" to correct the underconfidence.\n\nShe also writes beside the rule why it matters: a prediction that a child will be in trouble can become a reason to treat them as if they already are."
+   },
+   {
+    "label": "What happened",
+    "text": "Over the following month, she uses the rule. She makes fewer predictions about pupils at high confidence and checks before acting. At the next review, her eighty per cent band comes true eight times in eleven, and her Brier score falls to about 0.20. More importantly, one pupil she would have expected to be in trouble again, and might have treated as such, has a good month. Helena writes it in the outcome line and underlines it.\n\nShe also shows the method, though not the ledger, to her deputy, who starts one of his own."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Predicting what you hope will happen",
+   "body": "Some predictions are not really predictions but hopes in disguise: that the client will sign, that a colleague will back your proposal, that a difficult relative will behave at the wedding. Writing them down with a high probability feels optimistic, and it turns the ledger into a record of wishes rather than readings. The calibration curve will catch this in time, because hopeful predictions tend to sit in the high bands and fail more often than their stated confidence. But it is better to catch it at the moment of writing. Before you assign a probability, ask what you want to be true, the same question the journal's state line asks, and whether that wish is pushing the number up. If you notice a pattern of hopeful predictions in one domain, as Graeme's worried ones clustered around his daughter, tag them and look at them separately.\n\nA simple habit is to write the prediction you hope for and the one you fear side by side, and assign each its own probability.\n\nHopeful predictions are worth making; they simply need to be labelled as hopes, so that the curve can tell you how often your hopes come true."
+  },
+  {
+   "title": "Editing the prediction after the fact",
+   "body": "A prediction is only useful if it is fixed before the outcome. The temptation, once you know what happened, is to reinterpret what you wrote: a prediction that someone would \"object\" becomes a hit because they raised one small question; a prediction with a date of Friday becomes a hit because it happened on Monday. Each small edit improves the score and destroys the ledger's value. Fischhoff's work on hindsight bias, described in the first chapter of this part, shows how easily memory does this for us. The remedy is to write predictions so that they can clearly fail, with a specific observable outcome and a date, and then to score them exactly as written. When an outcome is genuinely ambiguous, mark it unclear, as Helena did, and leave it out rather than scoring it in your favour.\n\nIt helps to write predictions in pen, or in a note you cannot edit later, so that the temptation has nowhere to go."
+  },
+  {
+   "title": "Treating a single miss as proof",
+   "body": "Some readers, when a confident prediction fails, conclude that they cannot read people at all, and give up the ledger in disappointment. Others, when a long-shot prediction comes true, conclude that their intuition is uncanny. Both are reading a single outcome as if it were a pattern. A prediction at ninety per cent should fail about one time in ten, and a well-calibrated reader will have plenty of misses. What matters is the rate across a band, not any individual result. The chapter's failure mode warns against reading a band after five or ten predictions, and the warning applies even more to a single one. When a prediction fails, write the outcome, look at what you missed, and move on. The curve, not the miss, will tell you whether something needs to change.\n\nIf a miss upsets you, that is often a sign that the prediction mattered, which makes it worth writing down what you learned from it."
+  },
+  {
+   "title": "Assuming calibration transfers",
+   "body": "It is natural to assume that if you are well calibrated in one area, you are well calibrated everywhere. The evidence suggests otherwise. Graeme was well calibrated about colleagues and badly calibrated about his own daughter. Many people are good at predicting strangers' ordinary public behaviour, which the commuter drill practises, and poor at predicting the moods of people they care about or depend on. A ledger made mostly of easy, low-stakes predictions, as the chapter's failure mode warns, can show excellent calibration about trivia while telling you nothing about the readings that matter. Tag every prediction by domain, and look at each domain's curve separately once you have enough predictions in it. Expect your calibration to be worst exactly where the stakes and your feelings are highest.\n\nA useful rule is to start a new curve whenever you move into a new domain, such as a new job or a new relationship."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Isn't it cold to put numbers on people?",
+   "a": "The numbers are not on people; they are on your guesses about people. A calibration ledger records how confident you were that something would happen, and whether it did, so that you can learn what your confidence is worth. That is not cold; it is a form of humility. Without it, as Jackie's case shows, people make decisions about others on the strength of certainty that turns out to be no better than a coin toss. With it, you learn to hold your readings more lightly, to check before acting and to notice where your judgments go wrong. Keep the ledger private, write about roles or initials, and never use it to build a case against anyone. The aim is to read people more fairly, not to reduce them to percentages.\n\nAnd if you ever find yourself using a prediction to justify how you treat someone, as Jackie did with Ryan, stop and check it first."
+  },
+  {
+   "q": "How many predictions do I need before I can trust the results?",
+   "a": "More than most people expect. Tversky and Kahneman showed that people expect small samples to mirror the true rate far more closely than they do, which is how Zain mistook eight hits in eight for exceptional skill. As a rough guide, wait until you have at least twenty predictions in a band before drawing conclusions about it, and forty or more in total before drawing the calibration curve, as the Draw the Curve drill suggests. Keep the number of bands small, five at most, so that each fills up reasonably quickly. Early results are useful mainly as a habit; the information comes later. And keep making predictions in the bands where you are unsure, because those are where the useful learning usually is.\n\nIt can also help to make predictions about strangers' public behaviour, which resolve quickly and fill bands faster without involving anyone you know."
+  },
+  {
+   "q": "What if the ledger shows that I am underconfident?",
+   "a": "Then adjust your confidence upwards in that domain. Overconfidence is the commonest finding, but underconfidence is real too, and often specific: in the case at the start of this chapter, Kieran was underconfident about warmth among people at his own level, while being overconfident about displeasure among senior colleagues. Underconfidence has costs. It can make you hesitate when you could act, check repeatedly when once would do, or fail to trust readings that are usually right. If a band consistently comes true more often than its stated probability, move your predictions in that domain up a band and watch whether the curve moves towards the diagonal. The aim is not to be bold or cautious, but to mean what you say.\n\nIt also helps to notice whether your underconfidence is in areas where you have been criticised before, which is a common pattern."
+  },
+  {
+   "q": "What counts as a good Brier score?",
+   "a": "Lower is better. A perfect forecaster scores zero, and someone who says fifty per cent about everything scores a quarter, 0.25, which is the baseline any useful reader should beat. Beyond that, there is no fixed standard for predictions about people, because the score depends on how hard the predictions are. A ledger full of easy predictions will score well and tell you little. The most useful comparison is with yourself over time, in the same domains, as Helena did when her score fell from about 0.24 to 0.20 after one adjustment. Look at the calibration curve alongside the score, because the curve shows you where you are going wrong, and the score alone does not.\n\nIt also helps to note how many predictions are behind the score, since a score from ten predictions tells you much less than one from a hundred."
+  },
+  {
+   "q": "How can I test a prediction without manipulating anyone?",
+   "a": "Use the two methods this chapter recommends: wait for the situation to recur, or ask openly. Waiting means writing a prediction about something that will happen anyway, such as whether a colleague will raise an objection at next Thursday's meeting, and then watching. Asking means checking your reading directly and respectfully, as Kieran did when he asked his director whether the budget was the problem. What you must not do is engineer a reaction: mention something sensitive to see whether someone flinches, invent a rumour to test whether they knew, or plant a worry to see whether it shows, as Brett did. Those are manipulation, they hurt people, and they corrupt the ledger. Some readings cannot be fairly tested at all. Leave them unscored.\n\nIf neither waiting nor asking is possible, the right answer is often to hold the reading loosely and act as if it might be wrong."
+  },
+  {
+   "q": "Should I tell people that I keep a calibration ledger?",
+   "a": "You do not need to tell people about your private ledger, any more than you would tell them about a diary, as long as it stays private, uses roles or initials and records your guesses rather than their private lives. It is a tool for improving your own judgment. You should never use it to build a case against anyone, share it with others or quote it in an argument. If someone asks whether you write things down about how meetings go, be honest. And if you find yourself wanting to keep the ledger secret because you would be embarrassed for a particular person to see it, that is a sign that an entry has crossed from perception into surveillance and should be deleted, as Brett's should have been from the start."
   }
  ],
  "watch": [
