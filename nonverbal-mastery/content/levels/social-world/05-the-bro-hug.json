@@ -73,6 +73,27 @@
    "doCaption": "Staying still while he holds on",
    "dontCaption": "Slapping and releasing while he holds on",
    "annotation": "When a man holds on, the slaps should stop. Let your hand rest on his back and let him decide when it ends."
+  },
+  {
+   "doPoseId": "p_pair_side_hug",
+   "dontPoseId": "p_pair_hug",
+   "doCaption": "A side hug, an arm across the shoulders",
+   "dontCaption": "A full hug for a man who stiffens",
+   "annotation": "Not every man wants a full embrace. A side hug, both facing forward, offers warmth with more room and an easy way out."
+  },
+  {
+   "doPoseId": "p_pair_pull_in_hug",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "A quick pull-in hug, nothing to explain",
+   "dontCaption": "Mocking two friends for hugging",
+   "annotation": "Jokes about men hugging teach boys and men to stop. Letting a hug be ordinary keeps the door open for the next one."
+  },
+  {
+   "doPoseId": "p_pair_hug",
+   "dontPoseId": "p_pair_handshake",
+   "doCaption": "A long hug, slaps stopped, held",
+   "dontCaption": "A brisk handshake after five years apart",
+   "annotation": "At a reunion, a funeral or a hard goodbye, a quick greeting can turn into something more. Let it, and wait for him to let go."
   }
  ],
  "caseStudy": "Luke, twenty-nine, has two close friends from university, and he greets them in completely different ways. With Sam, it is always the same: a handshake pulled into a half hug, two slaps, a step back and a grin. With Dev, who is autistic and has said that hugs are too much for him, it is a fist bump, and has been for years.\n\nIn March, Sam's father dies suddenly. At the funeral, Sam comes over to Luke after the service. Luke goes into the usual greeting, hand out, pull, and his left hand rises for the first slap. But Sam does not step back. He holds on, and Luke feels his breath catch against his shoulder.\n\nLuke's hand stops in the air. He has a half-second of panic, and then he lets his hand come down flat on Sam's back, and stays still. He says nothing. He can feel Sam shaking. Around them, people carry on talking. Luke looks at the wall over Sam's shoulder and waits.\n\nIt lasts perhaps twenty seconds. Then Sam steps back, rubs his face with the heel of his hand, and says, “Cheers, mate.” Luke nods. Dev, who has been standing a little way off, comes over and bumps Sam's fist, and Sam laughs for the first time that day.\n\nNeither Sam nor Luke mentions the hug again for two years. Then, at Luke's wedding, Sam says in his speech that the best thing anyone did for him that year was to stand still in a church hall and let him cry. He does not say who.",
@@ -91,6 +112,10 @@
     "Note how long each usually lasts and how many slaps it includes.",
     "Mark any man you would like to hug and do not, or who hugs you when you would rather he did not.",
     "Write one sentence about what the list shows about your relationships."
+   ],
+   "variations": [
+    "Do the census for women in your life too, and compare the forms and lengths of the hugs.",
+    "Ask one man on your list whether he would like the way you greet each other to change."
    ]
   },
   {
@@ -101,6 +126,10 @@
     "Ask him to decline it sometimes by keeping his elbow firm.",
     "Practise letting go at once when he declines, with no change in your expression.",
     "Swap roles, so that you feel how easy, or hard, it is to decline."
+   ],
+   "variations": [
+    "Practise declining yourself, so that you know how it feels to keep your elbow firm and still be warm.",
+    "Practise the offer at a real greeting, such as a farewell, where a slight pull is natural."
    ]
   },
   {
@@ -111,6 +140,10 @@
     "In one hug with someone close, let it last a full three seconds rather than one.",
     "Notice how it feels, and how the other person responds.",
     "Write a few lines about the difference."
+   ],
+   "variations": [
+    "Notice which of your hugs you end first, and whether you could let the other person end one this week.",
+    "Notice the hugs on a sports broadcast and count how long the ones after big moments last."
    ]
   },
   {
@@ -122,6 +155,10 @@
     "Write the one short sentence you might say, or decide to say nothing.",
     "Practise, alone, letting a slapping hand come to rest and stay still.",
     "Write down how you would behave afterwards, so that he does not feel exposed."
+   ],
+   "variations": [
+    "Ask someone who has been through a loss what helped most when people hugged them, and what did not.",
+    "Practise the still hand on a hug with a partner or a close friend, and ask how it felt."
    ]
   }
  ],
@@ -203,6 +240,45 @@
    "explain": "A locked elbow on a handshake is a clear sign that he does not want to be pulled closer. Match the greeting he offers and put the warmth into your words.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Anderson and McCormack's 2015 interviews with forty British student athletes, how many described cuddling with close male friends?",
+   "options": [
+    "Thirty-seven of the forty, most of whom saw nothing unusual in it",
+    "None of them, since cuddling between men was found to be unheard of",
+    "About half, though most of them said that they felt ashamed of it",
+    "Only the four who were not playing team sports at the university"
+   ],
+   "answer": 0,
+   "explain": "Thirty-seven of the forty described cuddling with close male friends, and most saw nothing unusual in it. It was a small, particular group, but it shows how quickly the rules about men's touch can change.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a party, an old friend hugs you without slapping, and holds on well past the usual second or two. People are watching. What fits this chapter best?",
+   "options": [
+    "Slap his back twice to end it, and make a joke so that nobody gets the wrong idea",
+    "Push him away gently and say loudly that he has clearly had too much to drink",
+    "Stay still a moment longer, then later ask quietly whether he is all right",
+    "Hold on even longer, so that everyone in the room can see how close you are"
+   ],
+   "answer": 2,
+   "explain": "A hug that lasts longer than usual, without slaps, is a change from baseline and often a sign of need. Staying still says I'm here, and a quiet question later lets him say what happened.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that research has proved hugs stop you catching colds. What does this chapter say?",
+   "options": [
+    "It is right, since everyone who was hugged in the study stayed perfectly healthy",
+    "One study linked hugs to modest protection; it is not proof or a cure",
+    "It is wrong, since the study found that hugs made colds much more likely",
+    "It is right, but only if the hug lasts for more than twenty seconds"
+   ],
+   "answer": 1,
+   "explain": "Cohen and colleagues found that hugs accounted for part of the protective effect of social support against colds in one study of about four hundred people. It is suggestive, not a cure.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +307,110 @@
    "work": "Communicating Affection: Interpersonal Behavior and Social Context",
    "author": "Kory Floyd",
    "note": "Cambridge University Press, 2006. A broad account of how people express affection, including between men."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The goodbye at the airport",
+   "scene": "Phil, fifty-six, drives his son Jamie, twenty-two, to the airport. Jamie is moving to Australia for two years on a work visa. At the\n  departure gate, Jamie's mother hugs him for a long time and cries. Then it is Phil's turn. He steps forward, grips Jamie's right hand, pulls him\n  into a quick A-frame hug, hips well back, and slaps his back three times, hard. \"Look after yourself, son.\" He lets go after about a second and\n  steps back, his hands going into his pockets.\n\n  Jamie had wanted more. He had been dreading this moment for weeks, and he had imagined his father holding on. As he walks through security, he\n  looks back, and his father is already looking at his phone. On the plane, Jamie texts his sister that Dad could not even manage a proper hug.\n\n  In the car park, Phil sits in the driver's seat without starting the engine for twenty minutes. His wife sits beside him and says nothing.\n\nPhil had rehearsed what he would say on the drive to the airport. He had planned to tell Jamie how proud he was. When the moment came, he could not trust his voice, so he said the only safe sentence he had and let the slaps do the rest.\n\nJamie's mother, standing beside them at the gate, saw Phil's hands shaking as he put them in his pockets. She said nothing to Jamie, because there was no time, and because she thought he would understand one day.",
+   "misread": "Jamie read the quick hug, the hard slaps and the hands in pockets as a sign that his father did not feel much, or could not be bothered. He did not see what happened in the car park, and he read the form of the hug as a measure of the feeling behind it.\n\nHe also read his father's quick turn to his phone as indifference, when it may have been the only way Phil could stop himself watching his son walk away.\n\nAnd because the hug was the last thing that happened before the gate, it took on more weight than the twenty years of fatherhood behind it. A goodbye can feel like a summary of a relationship, even when it is only one second of it.",
+   "betterRead": "The bro hug is, among other things, a way for men to embrace while signalling that the embrace is under control. For many men of Phil's generation, the speed and the slaps are not a sign of shallow feeling but a way of managing feeling that might otherwise overflow. Floyd's research found that longer embraces are read as more intimate, which is exactly why a man afraid of breaking down at a departure gate keeps his short. Phil's hands in his pockets and his twenty minutes in the car park told a different story from the hug. A better reading, for Jamie, would have weighed the whole of his father's behaviour, not one second of it. Jamie's sister, when she got his text, rang their father, and then told Jamie about the car park. Jamie rang his dad from Singapore. Phil did not mention the hug. He asked whether the food on the plane was any good, and his voice cracked on the second sentence. When Jamie came home two years later, his father held on for a long time."
+  },
+  {
+   "title": "The hug that went on too long",
+   "scene": "At a friend's thirtieth birthday party, Mike, thirty, is in the kitchen when his old friend Carl arrives. They have not seen each other for\n  six months. Carl walks straight over and hugs him: not the usual pull-in and slaps, but a full hug, both arms, and he does not let go. Two seconds,\n  three, four. Mike, aware of people in the kitchen, slaps Carl's back twice, as if to end it, and starts to step back. Carl holds on a moment\n  longer, then lets go, laughs too loudly and says, \"Good to see you, mate,\" and goes to get a drink.\n\n  Mike feels awkward. Someone in the kitchen makes a joke about the two of them getting a room. Mike laughs it off.\n\n  Later in the evening, he finds Carl alone in the garden. Carl tells him that his marriage has ended and that he has been living in a rented room\n  for two months.\n\nCarl had also looked thinner, Mike noticed afterwards, and had not brought a present, which was unlike him. At the time, Mike had been too busy managing the room to notice anything about his friend.\n\nCarl's phone had buzzed twice in his pocket during the hug, and he had ignored it. Mike noticed that later too, when Carl finally checked it in the garden, read a message and put the phone away again without replying, his jaw tight.",
+   "misread": "Mike read the long hug through the room around him: unusual, slightly embarrassing, something to end before anyone made a joke. He did not read Carl, whose hug said that something had happened.\n\nThe joke in the kitchen mattered too. It confirmed Mike's fear that the hug looked odd, and it made the next step, asking Carl whether he was all right, feel even harder.\n\nHe also treated the joke in the kitchen as the most important reaction in the room, when the most important reaction was Carl's, and Carl had not laughed.",
+   "betterRead": "A hug that lasts longer than the usual second or two, between two men who normally keep it brief, is a change from baseline, and changes are informative. Nagy's analysis of embraces between athletes found that hugs typically lasted around three seconds; Carl's went well past the point where the slaps usually end it, without slaps of his own. The rivals include drink, excitement at a reunion and, often, need. Mike's two slaps were the bro hug's signal to finish, and they told Carl that the moment was over before he was ready. A better reading would have noticed that Carl was not slapping, and stayed still for another second or two. That alone would have said, \"I'm here.\" Afterwards, a quiet \"You all right, mate?\" would have opened the door that Carl had to open himself in the garden. Mike told him he was sorry about the kitchen. Carl said he had not noticed, which neither of them believed. They talked until two in the morning.\n\nHe also made a point, at the next few gatherings, of greeting Carl with a long, still hug, so that Carl would not have to start it himself."
+  },
+  {
+   "title": "The man who did not hug",
+   "scene": "Ollie, twenty-six, plays in a Sunday football team. After a win, the team hugs and celebrates in the changing room. Ollie, who is autistic,\n  finds unexpected hugs overwhelming: the pressure, the noise, the smell of other people, the loss of control over his own body. He has learned to\n  stand slightly apart after a goal and offer high fives instead. Most of the team know and are fine with it.\n\n  A new player, Jordan, joins in the autumn. After Ollie scores the winning goal, Jordan runs over and wraps him in a bear hug from behind, lifting\n  him off his feet. Ollie goes rigid, his arms pinned, his face tight, and when Jordan puts him down, he walks to the corner of the changing room and\n  sits with his head down. Jordan laughs and says, \"What's up with him? It's just a hug!\" A couple of others laugh.\n\n  The captain, Asif, who has played with Ollie for three years, sees Ollie's hands pressed hard against his knees.\n\nOllie has also been bear-hugged before, at a wedding, and had to leave the reception for an hour to recover. He has never told anyone on the team about it.\n\nOllie had told the previous captain about his preference in his first week, privately, and the team had simply absorbed it. Nobody had thought to tell Jordan, because it had stopped being something anybody thought about.",
+   "misread": "Jordan read Ollie's rigidity and withdrawal as rudeness or oddness, because to him a hug after a goal is the most natural thing in the world. The players who laughed read it the same way.\n\nAnd Jordan's \"It's just a hug!\" carried an assumption common to people who like hugs: that a hug is always a gift, and that refusing one is refusing friendship.\n\nThe laughter from the others mattered as much as Jordan's comment. It turned Ollie's distress into a joke at his expense, in the place where he had felt most at home.",
+   "betterRead": "Not every man hugs, and the reasons deserve respect. Some autistic men find hugs overwhelming; some men have injuries, histories of abuse or simply strong preferences. A hug from behind, with no warning and no way to decline, removes every bit of the control that makes touch bearable for someone like Ollie. His rigid body, his pinned arms and his retreat to the corner were signs of overload, not of coldness. Asif's better response was to make room for the difference without making a scene. He told Jordan, quietly, that Ollie did not do hugs and that high fives were his thing. He went over to Ollie, sat a little way off, and said, \"Great goal. Take your time.\" After a few minutes, Ollie came back. Jordan, a little embarrassed, held out his hand for a high five, and Ollie gave him one. After the next goal Ollie scored, Jordan got there first, palm up.\n\nAsif also mentioned to the whole team, at the next training session, that some players did not like being grabbed after goals and that a high five was always fine, without naming Ollie."
+  },
+  {
+   "title": "The grandfather who learned",
+   "scene": "Stan, seventy-eight, has never hugged his sons. He shook their hands on their wedding days and patted their shoulders at their mother's\n  funeral. It is simply not something he does. His grandson, Leo, nineteen, hugs everyone: his friends, his father, his uncles. When Leo leaves for\n  university, he walks up to Stan in the hallway and hugs him, a proper hug, arms round his shoulders.\n\n  Stan goes stiff. His arms stay at his sides for a moment. Then, awkwardly, one hand comes up and pats Leo's back, twice, the way he pats the dog.\n  Leo lets go and grins, and says, \"See you at Christmas, Grandad.\"\n\n  Stan's son, Ray, Leo's father, watches from the kitchen door. He feels something complicated: a flash of envy, and something like grief.\n\nRay remembers clearly the day he went off to university himself, at eighteen, and his father shaking his hand at the station and saying, \"Well, then.\" He had thought nothing of it at the time. Watching Leo, he thinks about it for the rest of the day.\n\nStan's wife died four years ago. Since then, nobody has touched him much at all, apart from the doctor and the barber. Leo's hug is the first in months, and it takes Stan the rest of the afternoon to stop thinking about it.",
+   "misread": "Ray read his father's stiffness as the same coldness he had grown up with, and his own reaction as something to keep to himself. Stan, for his part, read the hug as something that happened to him rather than something he might take part in.\n\nLeo, for his part, read the stiffness and pats as perfectly normal, which may be why he hugged his grandfather without hesitation. He had no history with the old rules to make the moment heavy.\n\nStan himself may also have misread the hug: as something done to an old man, rather than something offered to a grandfather who was loved.",
+   "betterRead": "Anderson and McCormack's research describes younger men in some places being far more comfortable with affection between men than earlier generations, and families often show the change across three generations in a single hallway. Stan's stiffness was not necessarily coldness. It was the body of a man raised under stricter rules, meeting a gesture he had never learned. The pats on Leo's back, awkward as they were, were a move towards the hug, not away from it. Ray's better response, later that day, was to say something. He told his father that Leo hugged everyone, and that he wished he and Stan had done more of it. Stan said nothing for a long while, then said that his own father had never even shaken his hand. At Christmas, when Leo hugged him, Stan put both arms round him. When Ray arrived, an hour later, Stan stood up and, stiffly and briefly, hugged him too.\n\nLeo, when his father told him about it later, said he had no idea his grandad had never hugged anyone. He started ringing Stan on Sundays."
+  }
+ ],
+ "workedReading": {
+  "title": "The reunion at arrivals",
+  "scene": "Ade, forty-one, waits at the arrivals gate at Heathrow for his younger brother, Femi, who has been working in Lagos for five years. They have spoken on the phone most weeks, but they have not been in the same room since their mother's funeral. When Femi comes through the doors, pushing a trolley, he sees Ade and stops. His face changes. He leaves the trolley and walks straight towards Ade, faster than he needs to, his arms lifting from his sides.\n\nFemi's last visit, for their mother's funeral, was a blur of arrangements. He flew in for three days and left the morning after. The two brothers hugged at the airport then too, quickly, both of them exhausted. Ade has thought about that hug often.\n\nAde has been thinking about this moment for days. He has wondered whether Femi will look older, whether they will know what to say to each other, and whether the five years have made them strangers.",
+  "steps": [
+   {
+    "label": "Read the opening",
+    "text": "Ade reads the approach: a step that keeps coming, arms lifting from the sides, a trolley abandoned. This is not an offer of a handshake or a quick pull-in. It is an offer of a full hug. Ade opens his own arms to match it, rather than putting out his hand, which would turn the moment into a negotiation.\n\nHe also notices that he had expected a handshake. They are not huggers, as brothers. Femi's approach is a change from baseline, which tells Ade that this greeting will mean more than usual.\n\nHe also takes a step forward to meet Femi, rather than waiting for him to arrive. Closing the last metre yourself tells the other person that the hug is wanted, not merely allowed."
+   },
+   {
+    "label": "Let the form follow him",
+    "text": "They meet in a full hug, both arms. Ade starts the usual rhythm: one slap on Femi's back, then a second. Femi does not slap back. His arms tighten. Ade notices the absence of slaps on Femi's side and lets his own hand stop.\n\nHe also notices that his own slaps came automatically, before he had decided anything. The habit is strong, and it took an absence on Femi's side to make him notice it.\n\nHe also lets his arms wrap more fully than he usually would, matching the strength of Femi's hold, so that the hug feels shared rather than one-sided, which Floyd's research suggests changes how an embrace is read."
+   },
+   {
+    "label": "Notice the length",
+    "text": "One second, two, three. The usual bro hug would have ended by now. Femi's hold does not loosen. Ade feels his brother's breath catch against his shoulder, and then the small, uneven shudders of someone trying not to cry. He notes that this has stopped being a greeting and become something else.\n\nHe also notices that Femi's grip on his shoulder blades is tight, his fingers pressing in. That is the hold of someone holding on, not someone greeting.\n\nHe also reminds himself that a man crying in an airport has had a long journey in more ways than one. Whatever is coming out has probably been held for a long time."
+   },
+   {
+    "label": "Make the hand still",
+    "text": "Ade lets his hand rest flat on Femi's back, still. He does not slap, rub or pat. He breathes slowly, so that Femi can feel it. He does not say anything. People are walking round them with trolleys, and Ade turns them both slightly, so that Femi's face is towards the wall and away from the crowd.\n\nHe also lowers his own head slightly, so that his cheek is against the side of Femi's head. It is not something he planned. It happens, and it makes the hug feel more like shelter.\n\nHe also keeps his own face calm and his eyes on the wall behind Femi, so that anyone looking at them sees only two men hugging, not a moment that needs explaining."
+   },
+   {
+    "label": "Wait for his release",
+    "text": "Ade does not let go first. He waits until Femi's arms loosen of their own accord, which takes nearly half a minute. When Femi steps back, his eyes are red, and he laughs and wipes them with the back of his hand, and says, \"Sorry, man. Long flight.\"\n\nHe also lets go a fraction of a second after Femi does, so that Femi is not the one left reaching. A gentle release, on the other person's cue, is part of a good hug.\n\nHe also notices that he wants to say something reassuring, such as \"It's all right,\" and decides against it. Femi has not said anything is wrong, and the stillness says enough."
+   },
+   {
+    "label": "Make the afterwards ordinary",
+    "text": "Ade says, \"It's good to see you,\" and goes to fetch the trolley. He does not mention the tears or ask what is wrong. In the car, he asks about the flight and the food, and lets Femi lead the conversation. Making the moment afterwards feel ordinary tells Femi that what happened at arrivals does not need explaining.\n\nHe also hands Femi a packet of tissues from his coat pocket without looking at him, which he had put there that morning, half knowing why.\n\nHe also suggests they stop for a coffee before the drive, which gives Femi a few minutes to settle in an ordinary place, with something to hold and something to look at."
+   },
+   {
+    "label": "What happened",
+    "text": "On the drive home, past the cemetery where their mother is buried, Femi asks whether they could stop there tomorrow. Ade says of course. At the grave the next day, Femi tells him that he had not been able to come back for the stone-laying and had felt ashamed of it for years. Ade tells him he never minded. Ade notes, afterwards, that the hug at arrivals said more than five years of phone calls, and that the most important thing he did in it was to stop slapping.\n\nHe also notes that he had very nearly offered a handshake when Femi came through the doors, because that was their habit. If he had, the whole visit might have started differently.\n\nFemi tells him, on the last day of his visit, that the hug at arrivals was the first time he had cried since the funeral. Ade says nothing about it, and hugs him at departures, longer this time, without a single slap."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Hugging a man who did not want it",
+   "body": "Men's hugs are negotiated in a fraction of a second, and it is easy to override someone who was offering something less. A handshake pulled into a hug the other man did not offer, a hug from behind with no warning, a hug that ignores a locked elbow or a step back: each takes away his choice. For many men this is merely awkward, but for some, autistic men, men with injuries, men with histories of abuse, it can be overwhelming or frightening. Read the opening, offer hugs in a way that can be declined, starting from a handshake with a slight pull, and accept the answer at once, with no change in your expression.\n\nIt also helps to remember that some men tolerate hugs they do not want because refusing feels rude. A stiff body, arms that stay down or a quick step back after the hug are signs worth noticing, and worth respecting next time.\n\nIt also helps to watch for the moment of decision in an approach. A man who hesitates, slows down or glances at your hands as he comes towards you may be wondering what you will offer. A clear, early handshake or open arms resolves it for both of you.\n\nAnd when you are the one declining, a clear, warm alternative helps: a handshake offered early, with a smile, or a raised hand for a high five. It tells the other person what you would like instead, so that nobody is left hanging."
+  },
+  {
+   "title": "Treating the rules as fixed",
+   "body": "The bro hug's rules are changing, and they vary enormously between places, generations and groups. Some young men hug and cuddle their friends freely; some older men have never hugged another man. A rule that holds in one group, such as two slaps and let go, may feel cold in another and too much in a third. Treating your own group's rules as universal leads to misreadings in both directions: reading an older man's stiff hug as coldness, or reading a younger man's long hug as something it is not. Read the individual and the setting, not the rule.\n\nIt also helps to adjust within a single friendship. A man who hugs freely at a wedding may want only a nod at the pub, and a man who never hugs may want one at a funeral. The setting changes the rules as much as the person does.\n\nIt also helps to notice your own generation's rules and how they feel to people outside them. A younger man's casual hug can feel overwhelming to an older man; an older man's handshake can feel cold to a younger one. Neither is wrong.\n\nIt also helps to remember that the same man can change. A man who never hugged at thirty may hug readily at sixty, after a loss, an illness or a grandchild, and the people around him should let him."
+  },
+  {
+   "title": "Slapping and letting go when he holds on",
+   "body": "When a quick hug turns into something longer, most men's instinct is to end it: another slap, a joke, a step back. That instinct is about managing the moment, and it pushes the other man back into composure he may not be able to hold. If a man holds on, especially at a funeral, a hospital, a reunion or after bad news, stop the slaps. Let your hand rest still on his back. Breathe slowly. Shield his face from others if you can. Wait for him to let go first. Then make what follows ordinary, so that he does not feel he has to explain.\n\nIt also helps to know that the man who holds on may be embarrassed afterwards. Saying nothing about it, or saying only \"Good to see you,\" lets him keep his dignity.\n\nIn families, the same applies. A father who holds on at his son's wedding, or a brother at a parent's funeral, may never have done it before, and how the other person responds can decide whether he ever does it again.\n\nIf you are not sure whether he is holding on or simply hugging longer than you expected, stay still for another second. If he loosens, he was finishing; if he does not, he needed it."
+  },
+  {
+   "title": "Mocking men who hug",
+   "body": "Jokes such as \"Get a room\" or \"Steady on, lads\" are the quickest way to end a hug and the surest way to teach anyone watching that hugs between men are suspect. They also make it harder for the man who needed the hug to ask for one again. The previous chapter described how this kind of policing passes on the old rules. If you see two men hugging, especially if one of them seems to need it, the kindest thing is to look away, say nothing, and, if someone else makes the joke, not to laugh.\n\nFathers have a particular influence here. A father who hugs his sons, and who does not mock other men for hugging, shows boys that affection between men is ordinary.\n\nIt also helps to model the alternative. Men who hug their friends openly, in front of other men, without slaps or jokes, make it easier for others to do the same.\n\nAnd if you are the one who made the joke, it is never too late to undo it. \"Sorry about that comment earlier, mate. Good to see you two\" costs nothing and tells everyone the joke was the problem, not the hug."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why do men slap each other's backs when they hug?",
+   "a": "Nobody has studied it directly, so the answers are interpretation rather than finding. The slaps seem to do several jobs: they set a rhythm, so that both men know when the hug will end; they add vigour, turning an embrace into something like a physical greeting between teammates; and they signal comradeship, which some men use to keep a hug from being read as romantic. The second or third slap usually means time to let go. Watching what happens to the slaps is one of the most useful things a reader can do: when they stop, or are not returned, the hug has usually become something more.\n\nIt also helps to notice your own slaps. Many men find, once they pay attention, that they slap harder or faster when they feel uncomfortable, and that the slaps are as much for them as for the other man.\n\nIt also helps to notice that slaps tend to be lighter between close friends and harder between men who are less comfortable with the hug. A hard, fast slap is often a sign of a man keeping the embrace at arm's length.\n\nIt also helps to know that the slaps can become a habit even in very close friendships, and that some men drop them only with one or two people. Noticing who you hug without slapping tells you something about who you trust most."
+  },
+  {
+   "q": "How long should a hug last?",
+   "a": "There is no correct length, but there are typical ones. Emese Nagy's analysis of embraces between athletes at the 2008 Olympics found that hugs lasted around three seconds on average. Many bro hugs are shorter, a second or so, ended by the slaps. Floyd's research found that longer embraces are read as more intimate. So the length of a hug is part of its meaning: a quick one says greeting, a longer one says something closer. In practice, let the other person's hold guide you. If he loosens, let go; if he holds on, stay.\n\nIt also helps to remember that a hug's length is shared. If you let go at one second and he was holding for three, he will feel the gap, so watch his hold as well as your own.\n\nIt also helps to remember that some cultures hug for much longer than others, and that a three-second hug may feel brief in some families and very long in others."
+  },
+  {
+   "q": "Are hugs actually good for your health?",
+   "a": "There is some evidence that they may help, though it should not be overstated. In Cohen and colleagues' 2015 study, people who felt more supported and were hugged more often were somewhat protected against the effects of stress on catching a cold, and those who were infected had milder symptoms if they had been hugged more. It was one study, of about four hundred people, and hugs were one part of a wider picture of social support. Hugs are not medicine. But the research fits what many people feel: that physical affection from someone you trust can make hard times a little easier.\n\nIt also helps to remember that touch is only helpful when it is welcome. An unwanted hug is not good for anyone's health, however well meant.\n\nIt also helps to remember that hugs can be part of a wider picture of support: being asked how you are, being listened to, being invited out. Hugs on their own, without the rest, do less.\n\nSome people also find that a hug before a stressful event, such as an exam or an operation, steadies them. Offering one, in a way that can be declined, is a small kindness."
+  },
+  {
+   "q": "What if I am not a hugger?",
+   "a": "That is fine. Many men, and many women, prefer handshakes, fist bumps, a hand on the shoulder or no touch at all, and their reasons, from temperament to sensory sensitivities to past experiences, deserve respect. It can help to make your preference easy to read: offer a handshake or a fist bump clearly and early, so that others do not go in for a hug. With close friends, it can help to say it once: \"I'm not much of a hugger, but it's good to see you.\" People who know your preference will adjust, and the friendship does not depend on the form of the greeting.\n\nIt also helps to have a warm alternative ready, such as a firm handshake with your other hand on his arm, which many men find carries much of what a hug carries without the closeness.\n\nIt may also help to notice what you do offer. A man who never hugs but always rings on birthdays, always turns up to help and always remembers names is showing affection in other ways, and those ways count.\n\nIt also helps to tell people when you would welcome a hug, if you are someone who usually does not. \"I could do with a hug, to be honest\" is one of the bravest and most useful sentences a man can say to a friend."
+  },
+  {
+   "q": "How do I hug someone who starts to cry?",
+   "a": "Stay. Stop any slaps or pats, and let your hand rest flat and still on his back, or move it slowly. Breathe slowly yourself. Do not speak unless something simple comes, such as \"I've got you\" or nothing at all. If you are in public, turn so that his face is shielded from others. Do not let go first; wait until his arms loosen. When he steps back, do not comment on the tears or ask what is wrong straight away. Make the next moment ordinary, such as fetching a drink or picking up his bag, and let him decide whether to talk.\n\nAfterwards, it can help to check in a day or two later, briefly, without mentioning the tears: \"Good to see you the other day. How are you doing?\"\n\nIt also helps to know that men who cry in a hug often feel embarrassed for days. A short, warm message later, with no mention of the tears, can help them know the moment was safe.\n\nIt also helps to remember that you may be moved too. If your own eyes fill, that is fine. Two men crying in a hug are not making a scene; they are sharing something."
+  },
+  {
+   "q": "Is it all right to hug a male colleague?",
+   "a": "It depends on the setting, the relationship, the culture of the workplace and, above all, the other person. In some workplaces, hugs between colleagues at a leaving do or after good news are normal; in others they would be unwelcome. Power matters: a senior person's hug is hard to decline, as the chapter on greetings described. The safe approach is to let the other person set the level, to offer a hug only in a way that can easily be declined, such as a handshake with a slight pull, and never to insist. When in doubt, a warm handshake and a few kind words do the same work.\n\nIt also helps to watch how the workplace greets people at moments that matter, such as a colleague returning from bereavement leave. A quiet word and a handshake, or a hug if the person clearly wants one, is often the most valued part of their first day back.\n\nIt also helps to watch for colleagues who hold back. Someone who never joins in group hugs may simply not want to, and making it easy to stay out, without comment, is part of a good team culture."
   }
  ],
  "watch": [
