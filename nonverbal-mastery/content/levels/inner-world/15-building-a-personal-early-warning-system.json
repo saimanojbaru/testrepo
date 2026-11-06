@@ -80,6 +80,20 @@
    "doCaption": "“It's on my amber list”",
    "dontCaption": "“I'm fine,” and the subject closed",
    "annotation": "The plan gives words to a man who finds feelings hard to name. Pointing to a sign on a list is easier than describing a mood."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_sit_slouched_low",
+   "doCaption": "Writing it with someone on a calm day",
+   "dontCaption": "Writing a plan in the middle of a crisis",
+   "annotation": "A plan written at the bottom tends to be vague. Looking back together, while you are well, finds your own early signs."
+  },
+  {
+   "doPoseId": "p_walk_toward",
+   "dontPoseId": "p_pro_video_slump",
+   "doCaption": "Leaving on time, as the plan says",
+   "dontCaption": "Working late through the first amber week",
+   "annotation": "The first signs are small and easy to explain away. Acting on them early, with the action you chose, is the whole point of the plan."
   }
  ],
  "caseStudy": "Ravi, fifty-two, had a long period of depression three years ago, after he was made redundant. Looking back with his doctor and his wife, Anjali, during his recovery, he found the order in which things had gone wrong. First he had started waking at four in the morning. Then he stopped reading, which he had always loved. Then he began drinking most evenings instead of on Fridays, stopped going to his chess club, and shaved only when he had to. By the time he admitted that something was wrong, all of it had been happening for two months.\n\nHe wrote a one-page plan. Green: walking the dog every morning, chess on Thursdays, seven hours' sleep, a drink on Fridays, Sunday calls with his daughter. Amber: four o'clock waking, no reading, weekday drinking, missed chess. Beside each, an action. Red: feeling like a burden or not wanting to be here, which meant calling his doctor the same day, with the crisis line written underneath. He gave copies to Anjali and to his friend Tom, and they agreed what Anjali would say if she saw amber.\n\nTwo years later, in the autumn his mother falls ill, Anjali notices that Ravi has missed chess twice and has been up before dawn most of the week. She says the agreed sentence: “Two things from your amber list this week. What do you want to do?” Ravi's first answer is that he is fine. Then he hears himself, and laughs, because “I'm fine” is on the list too.\n\nHe follows the plan. He stops the weekday drinking, goes back to chess, tells Tom, and books a doctor's appointment, where they agree some extra support for the months of his mother's illness. The dip lasts a few weeks instead of a season. When it has passed, Ravi updates the plan. This time, he noticed, the reading had stopped first.",
@@ -99,6 +113,10 @@
     "List the changes you remember, in the order you think they came.",
     "Ask someone who knew you then what they noticed, and add it to the list.",
     "Mark the two earliest signs: these are the first entries on your amber list."
+   ],
+   "variations": [
+    "Do the exercise for a good period as well as a hard one, and note the first signs that things were going well.",
+    "Ask two different people what they noticed, and compare their lists with each other and with yours."
    ]
   },
   {
@@ -110,6 +128,10 @@
     "Write Red: the signs of serious trouble, who you will call, and the crisis line and emergency number where you live.",
     "Read the plan aloud and cut anything you would not actually do.",
     "Keep a copy on paper and in your phone, and give one to a person you trust."
+   ],
+   "variations": [
+    "Write a version of the plan for a predictable hard time, such as an anniversary or a busy season at work.",
+    "Show the plan to your doctor or therapist, if you have one, and ask what they would add."
    ]
   },
   {
@@ -121,6 +143,10 @@
     "Agree the exact words they will use if they see amber, and what you will do then.",
     "Agree what they will not do without asking you, unless they believe you are in danger.",
     "Set a date, in three months, to review how it is working."
+   ],
+   "variations": [
+    "Agree a code word for green as well as amber, so that your watcher can tell you when you seem back to yourself.",
+    "Write down what you will say, in the moment, if your first instinct on hearing the agreed words is to argue."
    ]
   },
   {
@@ -132,6 +158,10 @@
     "Write down any sign that has been present for several days.",
     "If two or more signs have been present for two weeks, take the actions in your plan this week.",
     "Put the list away until the next review, and do not check it daily."
+   ],
+   "variations": [
+    "Try the review on a different day for a month and see whether a different time suits you better.",
+    "Add one line to the review: something that went well this week, to balance the attention on warning signs."
    ]
   },
   {
@@ -143,6 +173,10 @@
     "Note whether your watchers noticed before you did, and how you responded.",
     "Note which actions helped and which you skipped.",
     "Update your plan, and tell your watchers what has changed."
+   ],
+   "variations": [
+    "Ask your watcher what it was like for them, and whether they would like anything about the arrangement to change.",
+    "Write a short note to your future self about what you learned this time, and keep it with the plan."
    ]
   }
  ],
@@ -224,6 +258,45 @@
    "explain": "Health services advise seeing a doctor when low mood or loss of interest has lasted most days for more than two weeks. Any thoughts of suicide mean getting help immediately, without waiting.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Cook and colleagues' 2012 trial, what happened in peer-led WRAP groups that met weekly for eight weeks?",
+   "options": [
+    "Symptoms fell and hope and quality of life rose, compared with usual services",
+    "Nothing changed at all, because writing a plan has no effect on how people feel day to day",
+    "Symptoms rose sharply, because thinking about warning signs made everyone more anxious",
+    "Only participants who already had no symptoms at the start showed any improvement"
+   ],
+   "answer": 0,
+   "explain": "Peer-led WRAP groups reduced psychiatric symptoms and increased hope and quality of life compared with usual services. A personal plan, made with support, can change how people manage their own wellbeing.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Two of your amber signs, missing your Saturday run and not answering messages for days, have both been present for two weeks. What fits this chapter best?",
+   "options": [
+    "Wait another month to be sure, since two weeks is far too short to mean anything",
+    "Ignore them, since you have been busy and busyness explains both of them",
+    "Take the amber actions written in your plan, and tell your watcher",
+    "Start checking your mood on your phone every hour until the signs go away"
+   ],
+   "answer": 2,
+   "explain": "Two or more amber signs for a couple of weeks is the signal the plan exists for. Acting early, with the small actions you chose in advance, works better than waiting until things are worse.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that early-warning plans are only useful for people with a diagnosed mental illness. What does this chapter say?",
+   "options": [
+    "It is right, since only clinical relapses have a run-up that can be seen",
+    "Anyone can use one; stress, burnout and low mood usually have a run-up",
+    "It is right, and using a plan without a diagnosis can cause harm",
+    "It is wrong, but only for people who have had a crisis in the last year"
+   ],
+   "answer": 1,
+   "explain": "The research began with serious mental illness, but the idea applies to anyone. Most hard patches build through small changes that a personal plan can help you see sooner.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +325,110 @@
    "work": "Results of a randomized controlled trial of mental illness self-management using Wellness Recovery Action Planning",
    "author": "Judith A. Cook and colleagues",
    "note": "Schizophrenia Bulletin 38(4), 2012. A trial of peer-led WRAP groups with 519 participants."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The Saturday run she stopped going to",
+   "scene": "Jo, forty-five, is a deputy head teacher. Two years ago she burned out badly in the spring term and was off work for six weeks. During\n  her recovery, she and her friend Kate, who runs with her, looked back at how it had started. The first sign, they agreed, was that Jo had\n  stopped coming to the Saturday morning parkrun, saying she had too much marking. Then she stopped answering Kate's messages on weekday evenings.\n  Then she started having two glasses of wine every night rather than at weekends. By the time she went to her doctor, she was crying in the car\n  every morning before school.\n\n  Jo wrote a one-page plan. Amber: missing parkrun two weeks running; not answering messages for three days; wine on a school night. Kate agreed\n  to be her watcher, and they agreed that if Kate saw amber, she would say, \"Amber, Jo,\" and Jo would book a meeting with her head teacher to\n  talk about workload.\n\n  This October, in the run-up to a school inspection, Jo misses parkrun twice. On the second Saturday, Kate texts her a single word: \"Amber.\"\n\nJo has also noticed, this term, that she has been reading emails in bed again, which she stopped doing after last time, and that she has cancelled lunch with her sister twice. Neither is on her amber list, and she wonders whether they should be.\n\nKate has been watching for this all term. She noticed the first missed run, and decided, as they had agreed, to wait for the second before saying anything, so that one busy Saturday would not set off an alarm.",
+   "misread": "Jo's first reading of her own state, both times, was that she was simply busy, and that missing a run was a sensible choice when there was so much to do. Busyness is the most convincing disguise an early sign can wear.\n\nAnd because the inspection was real and important, the busyness felt like the right priority, which is exactly what made it such an effective hiding place for the early signs.\n\nKate, on the other hand, read the same sign without the disguise, because she was outside the busyness and had agreed in advance what it meant.",
+   "betterRead": "Birchwood's idea of a personal signature fitted Jo closely: her first signs were small, specific and in a familiar order, starting with the Saturday run. A generic list of warning signs would never have included parkrun. Her plan worked because it was hers, because it named an action beside each sign, and because Kate had agreed in advance exactly what she would say. Perry and colleagues' trial showed that acting early on personal warning signs can delay or prevent relapse, and Jo's experience was a small, everyday version of the same thing. When Kate's text came, Jo's first instinct was to reply that she was fine, just busy. She did not. She booked the meeting with her head teacher on Monday, and they agreed to share the inspection preparation among three senior staff rather than leaving most of it to her. She went to parkrun the following Saturday, ran her slowest time in years, and texted Kate afterwards: \"Green.\""
+  },
+  {
+   "title": "The brother who did not know what to say",
+   "scene": "Danny, thirty-eight, has watched his younger brother, Mark, go through two bad periods of depression in the past six years. Each time,\n  Danny noticed things weeks before Mark did anything about them: Mark stopped coming to Sunday dinner at their mum's, stopped replying in the\n  family group chat, and started posting late at night about not sleeping. Each time, Danny said nothing, because he did not want to interfere,\n  and because he was not sure whether Mark would want him to.\n\n  This winter, Danny sees it starting again. Mark has missed two Sunday dinners. His messages have become one-word answers. Danny mentions it to\n  their mum, who says Mark is a grown man and they should leave him alone.\n\n  On the third Sunday Mark does not come, Danny drives round to his flat. When Mark opens the door, Danny says, awkwardly, \"Mum's worried you've\n  gone quiet again,\" and Mark says he is fine, just busy, and does not ask him in.\n\nDanny has also noticed that Mark has stopped going to the gym where they both train, and that when they did meet there last month, Mark left after twenty minutes, saying he was not feeling it.\n\nMark's posts have also changed. He used to share football clips and jokes; now he posts at two or three in the morning, about not being able to sleep, and deletes them by the time Danny wakes up. Danny has screenshots of two of them on his phone, and does not know what to do with them.",
+   "misread": "Danny read his own role as an outsider who had no right to comment, and his mother read Mark's withdrawal as a grown man's choice. Mark, for his part, read Danny's awkward visit as his family checking up on him, which made it easier to close the door.\n\nAnd because nobody had agreed anything, every member of the family was waiting for someone else to say something first.\n\nAnd Danny's choice of words, \"Mum's worried\", put the concern on someone else, which made it easy for Mark to dismiss as his mother fussing.",
+   "betterRead": "Watchers help most when the arrangement is agreed in advance, when the person being watched has chosen them, shown them what to look for, and decided what words they will hear and what they will do. Without an agreement, a well-meaning watcher has no script, and the person being watched has no reason to hear concern as anything but intrusion. Danny's visit, though awkward, was not wasted: it showed Mark that someone had noticed. The better route, which they took a few weeks later once Mark had seen his doctor, was to make the arrangement explicit. On a walk in the spring, Danny said that he had seen the signs both times before and never known whether to say anything, and asked whether Mark would like him to. Mark said yes, and they agreed: if Mark missed two Sunday dinners in a row, Danny would ring and say, \"Two Sundays, mate,\" and Mark would book a doctor's appointment. The next winter, Danny rang. Mark booked it.\n\nDanny also told their mum about the arrangement, with Mark's permission, so that she would know Danny was watching and could stop worrying quite so much on her own."
+  },
+  {
+   "title": "The app that made him worse",
+   "scene": "Lewis, twenty-nine, has had anxiety on and off since university. After a bad spell last year, he decides to get serious about catching it\n  early. He downloads a mood-tracking app that prompts him five times a day, and buys a watch that scores his sleep, stress and recovery each\n  morning. At first it feels empowering. Within a month, he is checking the watch twenty times a day. A poor sleep score in the morning makes him\n  anxious for the rest of the day. A stress reading during a meeting makes him more stressed. He starts to dread the app's prompts, and to lie\n  awake worrying about what his sleep score will be.\n\n  His partner, Femi, notices that he looks at his wrist constantly, even at dinner, and that his mood seems to rise and fall with the numbers.\n\n  When Lewis's anxiety gets worse rather than better, he tells his therapist that he has been doing everything right: he has never monitored himself\n  so closely.\n\nFemi has also noticed that Lewis wakes earlier than he needs to, picks up the watch first thing and studies the screen before he has said good morning. On mornings with a low score, he is quiet and tense all through breakfast.\n\nLewis has also started cancelling evenings out if his recovery score is low, telling Femi that his body needs rest. Femi has noticed that on those evenings Lewis does not rest at all. He sits on the sofa refreshing the app.",
+   "misread": "Lewis read more monitoring as better monitoring, and took his rising anxiety as a sign that he needed to track even more closely. He did not see that the tracking had itself become one of the things making him anxious.\n\nHis therapist also noticed that Lewis described the scores in the language of judgment: a bad sleep, a failed day. The numbers had become verdicts on him.\n\nFemi read it more accurately than Lewis did, because Femi was watching Lewis rather than the numbers.",
+   "betterRead": "The MONARCA trial found that daily smartphone self-monitoring did not improve symptoms in people with bipolar disorder, and the chapter on interoception described how attending too closely to the body can feed worry, especially in people prone to anxiety. Lewis's constant checking had become a safety behaviour of the kind described in the chapter on anxiety: something that brought brief reassurance and kept the fear alive. Numbers from a device are prompts, not verdicts. His therapist suggested a different rhythm: a short written amber list of his own early signs, checked once a week on Sunday evening, and the watch taken off at night and left in a drawer. Lewis found the first fortnight hard, and kept reaching for his wrist. By the end of the month he was sleeping better, without knowing his score, and said that the weekly review told him more than the watch ever had.\n\nHe also told Femi about the change, and asked Femi to tell him if he started reaching for his wrist at dinner again. That made Femi his watcher, with an agreed sign."
+  },
+  {
+   "title": "The plan written at the bottom",
+   "scene": "Sean, forty-four, has heard about early-warning plans from a friend and decides to write one. He does it on a terrible night in January,\n  after a row with his ex-wife about the children, when he cannot sleep and has been drinking. He downloads a template, fills it in quickly and\n  copies most of the warning signs from a leaflet: feeling hopeless, losing interest, poor concentration, changes in appetite. For actions, he\n  writes \"exercise more\", \"eat healthily\" and \"think positively\". He does not ask anyone to be a watcher. He saves it on his laptop and forgets\n  about it.\n\n  Six months later, things are bad again. Sean remembers the plan, opens it and finds it useless. None of the signs are things he would actually\n  notice in himself, and none of the actions are things he would actually do.\n\n  He mentions this to his doctor, who asks him a different question: what was the very first thing that changed, last time, before anyone could\n  tell he was struggling?\n\nSean's ex-wife, who still sees him at handovers, has noticed the signs too, but she does not feel it is her place to say anything now, and Sean has not asked her to.\n\nWhen the doctor asks his question, Sean realises that he does not know. He knows how he felt at the worst point, but he has no idea what came first, and nobody has ever asked him.",
+   "misread": "Sean treated the plan as a form to fill in, and wrote it at the moment he was least able to think clearly about himself. He read generic signs as if they were his own, and generic advice as if it were a plan.\n\nHe also wrote it alone, so there was nobody to tell him that his real signs looked nothing like the leaflet's.\n\nThe leaflet's signs were not wrong for people in general. They were simply not his, and a plan made of other people's signs will not catch your own.",
+   "betterRead": "The contrast between trials of joint crisis plans described in this chapter suggests that plans work when they are personal and actually used, and not when they are filled in for their own sake. A plan written in a crisis tends to be vague, because a person in crisis has little energy for the careful looking-back that finds their signature. Sean's better plan came from his doctor's question. On a calm afternoon, with his sister's help, he looked back and found his own early signs: stopping cooking and living on takeaways, missing his Wednesday evening with the children, and leaving the post unopened. Beside each he wrote an action he would really take: cook one proper meal, ring the children even if he could not see them, open the post with his sister on Sunday. His sister agreed to be his watcher. The new plan fitted on half a page, and he kept it on the fridge.\n\nThe first time one of the signs appeared, a pile of unopened post, his sister noticed it on a Sunday visit and they opened it together. It turned out to be the first useful thing the plan had ever done."
+  }
+ ],
+ "workedReading": {
+  "title": "Writing a plan together",
+  "scene": "Ade, fifty, came through a long period of low mood last winter, with help from his doctor and a course of talking therapy. Now, in June, he feels well. His wife, Claire, suggests that they write an early-warning plan together while he is well, as his therapist recommended, so that next time they can both act sooner. Ade agrees, a little reluctantly. They sit at the kitchen table on a Sunday afternoon with a cup of tea and a blank sheet of paper divided into three colours.\n\nClaire is aware that Ade did not want to think about last winter, and that he agreed mostly to please her. She decides to keep the session short, to stop if he wants to, and to make sure it ends with green, not red.\n\nClaire has her own reasons too. Last winter she felt helpless for months, watching Ade slide and not knowing whether to say anything. She wants a plan as much for herself as for him.",
+  "steps": [
+   {
+    "label": "Choose a calm time",
+    "text": "Claire chose the moment carefully: a Sunday afternoon, both rested and fed, Ade well and with nothing pressing. She knows from the chapter that plans written in a crisis tend to be vague and that a person in a low period has the least energy for this work. A plan written on a good day draws on a clear memory and a steadier mind.\n\nShe also suggests they do it at home rather than in a café, so that Ade can stop or walk away if it gets too much, and so that nobody overhears.\n\nShe also brings a printed copy of the chapter's three colours, so that the structure is there and they can spend their energy on remembering rather than on deciding how to lay it out."
+   },
+   {
+    "label": "Look back together",
+    "text": "They start with last winter. Ade remembers that the first thing he noticed was not sleeping past four. Claire remembers something earlier: that in October he had stopped playing the guitar in the evenings, and had started watching television instead without really watching it. Neither had thought much of it at the time. They write down everything they remember, in the order it came.\n\nShe also asks Ade's brother, with Ade's permission, what he remembers. His brother says that Ade had stopped coming for the Friday pint by November, which neither of them had connected with anything.\n\nShe also lets Ade lead. When he remembers something, she writes it down without adding her own view. When she remembers something he does not, she says it gently, as a question: \"Do you remember when the guitar went quiet?\""
+   },
+   {
+    "label": "Mark the first two signs",
+    "text": "From the list they pick the two earliest signs: stopping the guitar, and waking at four. These go at the top of amber, because they came weeks before anything that worried anyone. Claire notes that she noticed the guitar before Ade noticed the sleep, which is why her part in the plan matters.\n\nShe also notes that the guitar is a perfect early sign: specific, easy to see from outside, and something Ade does almost every evening when he is well. A good amber sign is one whose absence is obvious.\n\nThey also note what came later, in December: drinking more on weekdays, snapping at the children. Those are useful too, but they go lower on the list, because by the time they appear the slide is well under way."
+   },
+   {
+    "label": "Write green and amber",
+    "text": "For green, they describe Ade when he is well: guitar most evenings, walking to work, a pint with his brother on Fridays, seven hours' sleep. Beside each amber sign they write one action Ade would really take: if the guitar stops for a week, he will book a call with his therapist for a check-in; if he wakes at four for more than a week, he will see his doctor about his sleep.\n\nThey keep the actions small, so that Ade will actually take them. A check-in call is easy to book. A promise to exercise every day would be the kind of action that gets skipped.\n\nGreen also gets a line about people: the Friday pint with his brother and the Sunday call with his mother. Ade says that writing those down made him realise how much they keep him steady."
+   },
+   {
+    "label": "Write red, with the numbers",
+    "text": "For red, they write the signs that would mean serious trouble: not getting out of bed, stopping eating, talking about being a burden or not seeing the point, or any thoughts of suicide. Beside them they write exactly what happens: Claire calls the doctor that day, or the out-of-hours service, and if Ade talks about not wanting to be here, they use the crisis line and the safety steps in 2.13. They write down the numbers so that nobody has to search for them.\n\nWriting red is the hardest part, and Claire notices Ade's shoulders rise. They take a short break, and finish it in five minutes, quickly, so that it is there if they need it and does not dominate the page.\n\nThey also add one line that is not a warning sign but a reminder, in Claire's handwriting: \"Last time, it got better.\""
+   },
+   {
+    "label": "Agree the words",
+    "text": "Claire asks what she should say if she sees amber. Ade thinks about it and says he would rather she did not say \"you're depressed again\", which would make him defensive. They agree on \"Guitar's been quiet, love\", which is specific, gentle and about behaviour, and that when he hears it, Ade will take the amber action rather than argue. They also agree that Claire will not tell his family without asking him, unless she thinks he is in danger.\n\nThey also agree what Ade will say to Claire if she seems to be getting it wrong: \"Not amber, love, just tired,\" which she promises to take seriously, and to look again in a few days.\n\nAde also asks Claire what she would like from him, as the watcher. She says that she would like him to tell her when he feels green again, so that she can stop watching for a while and just be his wife."
+   },
+   {
+    "label": "Review and use it",
+    "text": "They put a copy on the inside of a kitchen cupboard and one in Ade's phone, and set a reminder to review it in three months. In November, Claire notices that the guitar has been in its case for ten days. She says, \"Guitar's been quiet, love.\" Ade's first impulse is to say he is just tired. Instead, he books the call with his therapist. They talk twice that month, and he gets through the winter without the long slide of the year before. In the spring, they update the plan together.\n\nIn the review, Ade adds one more amber sign: not shaving at weekends, which Claire noticed in November and which he had not realised he did.\n\nClaire also notes, for herself, how different November felt. Last year she had watched and worried in silence for weeks. This year she said four words, and they both knew what to do."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Waiting until you are in crisis to plan",
+   "body": "The worst time to write an early-warning plan is when you need it most. In a crisis, energy is low, thinking is narrowed and memory is coloured by the present, so plans written then tend to be vague and generic, as Sean found. The best time is when you are well, ideally soon after a hard patch has passed, when you can still remember how it started and have the steadiness to look back. If you have never had a hard patch, you can still write a short plan from what you know about yourself: how you behave when you are stretched, and what usually helps.\n\nIt also helps to write the first draft quickly and improve it over time. A rough plan that exists is more useful than a perfect one that never gets written.\n\nAnd if you are supporting someone else, the same applies: suggest a plan when they are well, not in the middle of a crisis, when it may feel like one more demand.\n\nAfter a hard patch, set the date for writing or updating the plan before you feel completely well. Once life is back to normal, the memory of how it started fades quickly."
+  },
+  {
+   "title": "Copying a generic plan",
+   "body": "Leaflets and apps offer lists of warning signs, and they are a useful starting point. But a plan that lists signs you have never had, and actions you would never take, will not be used. The signs that matter are your own: the specific, small, early changes that you, or the people who know you, have actually seen before, such as stopping a hobby, missing a regular event or changing a daily habit. The actions that matter are concrete and realistic: a particular call, a particular appointment, a particular change to your week. A short personal plan beats a long generic one every time.\n\nIt also helps to include the people and places that keep you well in green, not only the habits. Green is not just a list of things you do; it is a description of a life that is working.\n\nIt also helps to keep the language your own. If you would never say \"low mood\" but would say \"flat\" or \"not myself\", write that. The plan should sound like you talking to yourself."
+  },
+  {
+   "title": "Recruiting watchers without an agreement",
+   "body": "A partner, friend or brother may see your early signs before you do. But without an agreement, they do not know whether you want them to say anything, what to say, or what will happen if they do, and you have no reason to hear their concern as anything but criticism. That is how watchers end up saying nothing, as Danny did for years, or saying it badly. Agree in advance what they will look for, the words they will use, what you will do when you hear them, and what they will not do without asking you. Then honour the agreement, especially when your first instinct is to say you are fine.\n\nIt also helps to thank your watcher when they speak up, even if you are not sure they were right. Being thanked makes it much easier for them to say it again next time.\n\nIt also helps to choose watchers who see different parts of your life. A partner may see sleep and temper; a colleague may see concentration and withdrawal at work. Two watchers with different views can catch what one would miss."
+  },
+  {
+   "title": "Monitoring too much",
+   "body": "More monitoring is not always better. Checking your mood, sleep or stress many times a day can turn a warning system into a source of worry, especially if you are prone to anxiety, and the evidence for intensive daily monitoring is mixed. Devices give numbers that look precise and often are not, and a poor score can spoil a day that was otherwise fine. A brief, scheduled review, once a week, against your own amber list, is enough for most people. Between reviews, put the list away and live your life.\n\nIt also helps to notice when the plan itself becomes a worry. If reviewing it makes you anxious, shorten it, review it less often, or ask your watcher to keep it for a while.\n\nIt also helps to build in green moments. A weekly review that only looks for problems can make life feel like a series of dangers. Noticing what went well keeps the system balanced."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Isn't this only for people with a mental illness?",
+   "a": "No. The research began with people at risk of relapse in serious mental illness, where early action can make a large difference, but the idea applies to anyone. Stress, burnout, low mood, heavy drinking and anger all tend to build gradually, through small changes that someone could have seen. A personal early-warning plan is simply a way of noticing your own run-up sooner and doing something about it. Many people with no diagnosis find it useful for the predictable hard patches in their lives: a demanding season at work, the anniversary of a loss, the winter months.\n\nIt also helps to include physical signs. Some people's earliest signs are bodily: headaches, a stiff neck, stomach trouble or catching every cold going. These belong on the amber list as much as changes in mood.\n\nIt may also help to think of it as the same kind of thing as knowing the warning light on a car's dashboard. Nobody needs a diagnosis to benefit from noticing early that something needs attention."
+  },
+  {
+   "q": "What if my watcher gets it wrong?",
+   "a": "Sometimes they will. A watcher may see an amber sign that has an ordinary explanation, such as missing football because of a family event. That is fine. The agreement is not that they will always be right, but that when they say the agreed words, you will take the agreed action, which should be small enough that doing it unnecessarily costs little. A call to a therapist or an appointment with a doctor that turns out not to be needed is a minor inconvenience. Review the arrangement together every few months, and adjust the signs or the words if they are not working.\n\nIt also helps to make the actions reversible. If the amber action is a check-in call, and the watcher was wrong, nothing is lost. If the amber action were something drastic, a false alarm would be costly, and people would stop using the plan."
+  },
+  {
+   "q": "How do I ask someone to be my watcher?",
+   "a": "Choose a calm moment, and keep it simple. You might say: \"I've been working out the early signs I show when things start to go wrong, so I can catch it sooner. You see me more than most people. Would you be willing to tell me if you notice any of them?\" Then show them your amber list, explain what each sign looks like in you, and agree the words and the action together. Make it clear that they are not responsible for fixing anything, only for saying what they see. Most people are glad to be asked, and many say that it is a relief to know what to do.\n\nIt also helps to choose someone who will actually see the signs. A close friend who lives far away may be less useful as a watcher than a colleague you see every day, for signs that show at work.\n\nIt also helps to give them permission to be wrong. \"If you think you see it and you're not sure, say it anyway\" makes the job far less frightening for the watcher."
+  },
+  {
+   "q": "What if I have nobody to ask?",
+   "a": "Then build the system with what you have. Your doctor or a therapist can help you write a plan, and some services offer ongoing check-ins. Peer support groups, including groups for people who have had particular difficulties, often include people who will notice and say something. A regular arrangement can be as simple as a weekly call or message with one person, even someone you are not especially close to. And your own weekly review is still valuable on its own. If you are isolated and struggling, the crisis lines in this app are there for you, too.\n\nA pet can even help. Many people's first sign is that walks with the dog get shorter or stop, which is easy to notice and easy to put on a list.\n\nIt also helps to know that some workplaces, colleges and community groups offer buddy schemes or peer support that can play this role, and that asking about them is an ordinary thing to do."
+  },
+  {
+   "q": "Should I use an app or a wearable?",
+   "a": "They can help some people, especially as a reminder to do a weekly review or to notice patterns over months. But the evidence for intensive daily monitoring is mixed, as the MONARCA trial showed, and for people prone to anxiety, constant scores can become a new source of worry, as Lewis found. If you use one, set it up to support your plan rather than replace it: a weekly prompt rather than five a day, and numbers treated as prompts rather than verdicts. If you notice that you are checking more and feeling worse, put the device away for a while.\n\nIt may also help to notice what you use the device for. If it helps you sleep, move and connect more, it is supporting your plan. If it mostly gives you something new to worry about, it is not.\n\nSome people find that a simple paper calendar, with a tick for each green habit, does the job better than any app, because it shows patterns over weeks without producing a score every morning."
+  },
+  {
+   "q": "What if I see amber in someone who has not asked me to watch?",
+   "a": "Then use the approach from the chapter on the I'm Fine mask: notice the change, choose a private, side-by-side moment, describe what you have seen as behaviour, ask how they are, and ask twice if it seems right. Respect their answer, and leave the door open. If they seem to be in serious trouble, or say anything that worries you about their safety, follow 2.13. Later, when things are calmer, you might ask whether they would like you to watch for those signs in future, which turns a one-off conversation into an arrangement.\n\nIt also helps to remember that the chapter's tools work together: noticing from this part, asking from the I'm Fine mask, and the safety steps from 2.13 if things are serious.\n\nIt also helps to remember that people often notice amber in someone else long before they notice it in themselves. That is exactly why watchers matter, and why a kind question from outside can be so useful."
   }
  ],
  "watch": [
