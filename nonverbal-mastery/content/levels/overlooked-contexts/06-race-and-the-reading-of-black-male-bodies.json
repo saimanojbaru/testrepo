@@ -73,6 +73,20 @@
    "doCaption": "Staying where you are",
    "dontCaption": "Stepping out of the lift as he walks in",
    "annotation": "Small avoidances are noticed every time. Staying put costs nothing and tells him he was read as a person."
+  },
+  {
+   "doPoseId": "p_stand_neutral",
+   "dontPoseId": "p_gaze_over_shoulder",
+   "doCaption": "Carrying on as you would with anyone",
+   "dontCaption": "Watching him over your shoulder",
+   "annotation": "Every glance back is noticed. If his behaviour would not worry you in anyone else, let it pass."
+  },
+  {
+   "doPoseId": "p_pair_pull_in_hug",
+   "dontPoseId": "p_stand_hand_mouth",
+   "doCaption": "Old friends, read as old friends",
+   "dontCaption": "Alarmed at a loud greeting across the street",
+   "annotation": "An expressive greeting is a dialect, not a fight. Look for the laughter and the open arms before you read conflict."
   }
  ],
  "caseStudy": "Neil, forty-four, manages a distribution warehouse. Within a month of promoting Desmond, a tall, quiet Black man, to shift supervisor, Neil had received two informal complaints from staff that Desmond was intimidating and had an attitude. Neil had felt a flicker of the same himself: Desmond rarely smiled in meetings and spoke bluntly.\n\nBefore acting, Neil asked both complainants what Desmond had actually said or done. Neither could name anything beyond his size, his serious face and one occasion when he had told a team to stop chatting and finish loading. Neil then thought about Alan, another supervisor, white, just as tall, who regularly told teams to hurry up in far stronger language. Nobody had ever called Alan intimidating.\n\nNeil spoke to the two staff members, calmly, about the difference between how someone seems and what they do. He also spoke to Desmond, carefully, to check that he was getting the support he needed in the new role. Desmond was guarded at first. Then he said that he had spent his whole working life being described as intimidating, that he kept his voice low and his hands visible without thinking about it, and that he had been waiting for this conversation.\n\nNeil had not known any of that. He began paying attention to who was described as aggressive in his warehouse, and why, and found that the pattern was not limited to Desmond. He started asking for specifics every time, and the word intimidating came up much less often after that.",
@@ -91,6 +105,11 @@
     "Write down exactly what he did and said, as a camera would have recorded it.",
     "Imagine the same actions from a white man of the same size in the same place.",
     "Note whether your reading changes, and write a fairer description if it does."
+   ],
+   "variations": [
+    "Run the swap test on a positive reading too, such as finding a white man naturally authoritative, and see whether your reading holds for a Black man.",
+    "Ask a friend to run the swap test on a story you tell about someone you found intimidating, without telling them your conclusion.",
+    "Swap age as well as race, and imagine the same behaviour from a much younger or older man."
    ]
   },
   {
@@ -101,6 +120,11 @@
     "Listen for whether the answer is about behaviour or about manner and size.",
     "Note how the conversation changes when specifics are asked for.",
     "Keep using the question."
+   ],
+   "variations": [
+    "Ask for specifics when someone describes a person of any background as difficult, and notice whether the answers differ.",
+    "Read back a reference or appraisal you have written and check every adjective for the behaviour behind it.",
+    "When you describe someone yourself, describe the behaviour first and the judgment second, and notice how often the judgment changes."
    ]
   },
   {
@@ -111,6 +135,11 @@
     "Write down the behaviours that would genuinely justify concern, such as specific actions or words.",
     "Commit to acting only on those, not on unease or how someone looks.",
     "Review after a month whether your actions matched the list."
+   ],
+   "variations": [
+    "Share your list of behaviours with the people who work with you, and ask whether anything on it would apply differently to different customers.",
+    "Review one decision you made in the past month, such as a complaint, a warning or a refusal, and check it against your list.",
+    "Ask a colleague you trust to tell you if they ever see you act on unease rather than behaviour."
    ]
   },
   {
@@ -121,6 +150,11 @@
     "Ask yourself whether you would read the same behaviour differently from younger-looking or white teenagers.",
     "Remind yourself that they are children.",
     "Note anything you would do differently as a result."
+   ],
+   "variations": [
+    "Look up the age range of the school year groups in your area, so that you have a sense of how young a Year 9 pupil really is.",
+    "Notice how teenage boys are described in local news, and whether some are called children and others young men.",
+    "When you next see a group of teenagers, guess their age, then look for clues such as uniforms, bags or a parent nearby, and compare."
    ]
   }
  ],
@@ -202,6 +236,45 @@
    "explain": "Asking for specifics separates behaviour from manner and size. The swap test checks whether the same behaviour would be described the same way from someone else.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Wilson, Hugenberg and Rule's studies, for which men was the inflation of perceived size and strength strongest?",
+   "options": [
+    "For men who were in fact larger and stronger than any of the others photographed",
+    "For darker-skinned men with more stereotypically Black features, though no larger",
+    "For men who were photographed smiling, compared with men with neutral faces",
+    "For white men who were photographed beside Black men of the very same size"
+   ],
+   "answer": 1,
+   "explain": "The bias was strongest for men with darker skin and more stereotypically Black facial features, even though those men were no larger. The inflated judgments also predicted how justified force against them seemed.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "On a bus, an older passenger feels threatened by four loud Black teenagers at the back, and guesses they are about nineteen. What fits this chapter best?",
+   "options": [
+    "Report them to the driver as a gang causing trouble, since loud groups are a threat",
+    "Check the age, run the swap test, and act only on behaviour",
+    "Move downstairs and avoid looking at them, since eye contact might provoke them",
+    "Tell them to quieten down, since young men respond best to a firm adult voice"
+   ],
+   "answer": 1,
+   "explain": "Black boys are often seen as several years older and less innocent than they are. Remembering they may be children, running the swap test and responding only to behaviour that would worry him in anyone gives a fairer reading.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says the best way to avoid racial bias is simply not to see colour. What does this chapter suggest?",
+   "options": [
+    "That the biases that matter work before deliberate thought, so deliberate checks are needed",
+    "That not seeing colour fully removes automatic bias in how big or old someone looks",
+    "That racial bias only appears in people who openly hold prejudiced views about others",
+    "That bias can be removed in a single training session, after which no checks are needed"
+   ],
+   "answer": 0,
+   "explain": "Payne found that bias lay in the automatic part of the response. Not seeing colour does not switch it off; noticing where it operates and using checks such as the swap test reduces its effects.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -225,6 +298,110 @@
    "work": "Prejudice and perception: The role of automatic and controlled processes in misperceiving a weapon",
    "author": "B. Keith Payne",
    "note": "Journal of Personality and Social Psychology 81(2), 2001. How race shapes split-second judgments of threat."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The student buying a suit",
+   "scene": "Jerome, nineteen, is a Black law student, and he has his first interview for a summer placement at a law firm next week. On Saturday he goes\n  to a department store in the city centre to buy his first suit, with money he has saved from his part-time job. He is wearing a hoodie and trainers,\n  and he has his headphones round his neck.\n\n  Within a minute of his walking into the menswear department, a security guard has moved from the escalator to a spot near the suits. As Jerome\n  looks through the rails, the guard follows at a distance, stopping whenever he stops. A sales assistant comes over and asks whether she can help him,\n  then stays beside him without saying anything else. When Jerome takes two suits to the fitting room, the guard stands outside the curtain.\n\n  Jerome comes out, hangs the suits back on the rail without trying them on, and leaves. He buys a suit the following week at a smaller shop where the\n  owner, an older man, measures him, talks to him about the interview and tells him to come back if he gets the job.\n\n  He writes a short, polite complaint to the department store. It reaches the store manager, Sandra, fifty-two, who asks for the CCTV footage and\n  watches the whole twenty minutes.\n\nHe had chosen the department store because his mother had bought his father's wedding suit there, thirty years earlier, and had told him it was the place to go for something that mattered.\n\nOn the bus home, he looks at the interview invitation on his phone and wonders whether the law firm will see him the same way. He decides to wear the suit from the smaller shop, and to wear it well.\n\nThe owner of the smaller shop, when Jerome mentions the department store, nods and says that his own son had the same experience there, twenty years ago.",
+   "misread": "The security guard and the sales assistant read a young Black man in a hoodie in the suit department as a possible shoplifter, and acted on that reading by following and hovering. Jerome read their behaviour accurately, as suspicion, and left.\n\nThe sales assistant, if asked, would probably have said she was being helpful. Staying silent beside someone, without offering help, is how helpfulness turns into surveillance.\n\nThe guard read Jerome's leaving without trying the suits on as confirmation that he had been up to something, when it was a young man who had been made to feel like a thief in a place he had chosen for an important purchase.\n\nSandra's first reading of the complaint, before she watched the footage, had been that a customer was being oversensitive. The footage changed her mind in the first three minutes.",
+   "betterRead": "Wilson, Hugenberg and Rule found that young Black men were judged larger, stronger and more threatening than white men of the same size, and Payne found that race shaped split-second readings of threat. Unease of that kind feels like perception, and the guard and the assistant acted on it. Sandra, watching the footage, could see that Jerome had done nothing except look at suits. Her better response used the Act on Behaviour drill in this chapter: she wrote down, with her security team, the specific behaviours that would justify attention, such as concealing goods or removing tags, and made clear that staff should act on those and nothing else. She ran the swap test with the guard, asking whether he would have followed a white student in a hoodie. He admitted that he would not. Sandra wrote to Jerome, apologised and invited him back. He did not come back, but he wrote to say that the apology meant something.\n\nSandra also asked the store's trainer to add the swap test to the induction for all new security and sales staff."
+  },
+  {
+   "title": "The boys on the bus",
+   "scene": "Brian, sixty-six, is on the top deck of a bus on his way home from the hospital, where he has had a long appointment. Four Black teenage boys\n  get on and sit at the back. They are loud: laughing, shouting across the seats at one another, playing music on a phone and pushing each other in\n  play. One of them is tall and broad, and Brian guesses that they are eighteen or nineteen.\n\n  Brian feels uneasy. He moves to a seat nearer the stairs. When one of the boys stands up suddenly and lurches down the aisle as the bus brakes,\n  Brian's heart jumps. He goes down to the driver and says that there is a gang of young men upstairs causing trouble.\n\n  The driver, a woman in her forties, goes up to have a look. She comes back down after a minute and says, quite gently, that they are kids from the\n  secondary school on the next road, they are fourteen, they are being noisy but not doing any harm, and she has asked them to turn the music down.\n\n  When the boys get off at the stop after Brian's, he sees them properly for the first time: school blazers under their coats, one of them carrying a\n  trumpet case. The tall one, laughing, has the face of a child.\n\nHe had also, earlier that day, sat in the hospital waiting room beside two white teenage boys in the same school's uniform, who were playing music on a phone and laughing. He had not noticed them at all.\n\nThe driver mentions, as she sits back down, that she has a son the same age, at the same school, and that he and his friends are just as loud.\n\nBrian's wife, when he tells her about it that evening, asks him how old their grandson is now. Fourteen, he says, and then goes quiet.",
+   "misread": "Brian read four loud teenagers as young men, a gang and a threat, and read a boy stumbling as the bus braked as a sudden aggressive movement. He reported trouble that did not exist.\n\nHe also read his own fear as a sensible response to danger, which is how bias usually feels from the inside.\n\nThe other passengers on the top deck, who had been quietly reading their phones, read the boys as noisy children, which is what they were. Brian's fear had been his alone.",
+   "betterRead": "Goff and colleagues found that students overestimated the ages of Black boys suspected of crimes by an average of four and a half years, and judged them less innocent than other boys from about the age of ten. Brian's guess of eighteen or nineteen was out by about the same margin, and it changed everything: noise from children became menace from men. The lurch down the aisle was a boy losing his balance when the bus braked. The better reading, which the Check the Age drill in this chapter rehearses, starts by remembering that teenagers are children and asking whether the same noise from a group of white schoolboys would have sent him down the stairs. Brian thought about it all evening. He decided that it would not have, and that if the driver had been less sensible, four fourteen-year-olds might have been met at the next stop by the police.\n\nHe also told his grandson about it, who is fourteen too, and who said that the same thing happened to his Black friends all the time."
+  },
+  {
+   "title": "The greeting across the street",
+   "scene": "Duncan, fifty-five, runs a café on a high street with a barbershop opposite. One Saturday morning, he is setting out the tables on the pavement\n  when a car pulls up and a young Black man, Isaac, gets out and shouts across the street to another, Tunde, who is coming out of the barbershop. Tunde\n  shouts back, louder. They stride towards each other in the middle of the road, arms out, still shouting. Isaac grabs Tunde's hand, pulls him into a\n  hard hug and thumps him on the back, and both of them are laughing and talking over each other at full volume.\n\n  For the first few seconds, Duncan reads it as the start of a fight. He has his phone out and his thumb over the emergency number before he\n  understands what he is seeing. His teenage daughter, Ella, who is helping him, laughs and says, \"Dad, they're mates.\" Isaac has just come back from a\n  year working abroad.\n\n  Duncan puts his phone away, embarrassed. The two men come into the café twenty minutes later, still talking loudly, and order breakfast. They are\n  friendly, funny and tip well.\n\n  That evening, Duncan thinks about how close he came to making a call, and about what might have happened next if he had.\n\nElla also tells him that Tunde is the barber who cut her friend's brother's hair for his school prom, and that he is lovely.\n\nDuncan has lived in the area for twenty years, and the barbershop opened three years ago. He realises he has never once spoken to the barber, though they open their shutters at the same time every morning.\n\nHe also remembers that he had, without thinking, stepped back towards the café door as the two men strode towards each other, as if to put the tables between himself and them.",
+   "misread": "Duncan read two Black men shouting and striding towards each other as the beginning of a fight, and very nearly called the police. He was applying a quieter baseline to a greeting that, within their circle, meant warmth and joy.\n\nAnd he read the volume as the important signal, when the laughter, the open arms and the hug were all telling him something else.\n\nHis thumb on the phone was the reading made into an action, and an action of that kind cannot easily be taken back once the call is made.",
+   "betterRead": "This chapter describes greetings among many Black men as expressive and physical: the dap, the pull-in hug, the call across a room. Part III described the history of the dap. Within those communities, the behaviour is read accurately as affection. Misreading happens when outsiders apply a quieter baseline, so that a loud greeting becomes aggression. Payne's work suggests that such readings are made in fractions of a second, and are shaped by race before deliberate thought arrives. Duncan's better reading, which his daughter supplied, was the one this book recommends everywhere: look for more than one signal, and wait a second before acting. The laughter, the open arms and the hug were all there. He also noticed, when he ran the swap test, that two white men greeting each other the same way after a year apart would probably have made him smile.\n\nDuncan told the story to a friend, who admitted that he had once called the police on a group of young Black men in a park who had turned out to be a church youth group."
+  },
+  {
+   "title": "The man at the window",
+   "scene": "Malik, thirty, is a nurse, and he has lived on a quiet street of terraced houses for two years. One night, after a twelve-hour shift, he gets\n  home at eleven to find that he has left his keys at work. His flatmate is away. He goes round to the back of the house, where the kitchen window is\n  open a crack, and starts trying to push it up and climb in.\n\n  His neighbour across the back alley, Peter, fifty-eight, hears the noise and looks out of his bedroom window. He sees a tall Black man in a dark\n  coat climbing through a window. He does not recognise him in the dark. His hand goes to his phone.\n\n  Then he hesitates. He remembers something his son said to him once, about how often men like Malik have the police called on them for being in their\n  own homes. He asks himself what he would do if he saw a white man climbing in, and realises that he would probably open his window and call out to\n  ask whether everything was all right.\n\n  So he does. \"Everything OK over there?\" Malik, half through the window, says that he has locked himself out, and introduces himself. Peter says he has\n  seen him going to work in his uniform, and asks whether he needs a hand.\n\nMalik has had the police called on him once before, two years earlier, when he was waiting in his car outside a friend's house. He has not forgotten it, and as Peter's window opens, his whole body tenses.\n\nIn the brief silence before Peter speaks, Malik keeps his hands where they can be seen on the window frame, as he was taught to as a teenager, and waits.",
+   "misread": "Peter's first reading was of a stranger, large and threatening, breaking into a house, and his first impulse was to call the police. The same behaviour from a white man, he realised, would have prompted a question rather than a call.\n\nMalik, for his part, read the opening window as the start of something dangerous, because experience had taught him to.\n\nPeter's hesitation came from a single memory of his son's words, which shows how much a small piece of knowledge can change what a person does in the next five seconds.",
+   "betterRead": "Wilson and colleagues found that inflated judgments of Black men's size and strength predicted how justified people thought force would be against them, and Payne found that threat is read faster and more readily after seeing a Black face. A tall Black man climbing through a window at night is exactly the kind of ambiguous scene in which those biases do their work. Peter did not ignore the situation; he responded to the behaviour with a question he would have asked anyone, which is what the swap test is for. If Malik had not been able to answer, or had run, Peter could still have called for help. Asking first cost nothing and avoided a call that could have put his neighbour in danger in his own home. Peter came round with a stepladder, and Malik climbed in safely. They have said hello every morning since.\n\nMalik said later that Peter's question was the first time a neighbour had ever asked him whether he was all right rather than what he was doing."
+  }
+ ],
+ "workedReading": {
+  "title": "Handling a report that a boy was aggressive",
+  "scene": "Anita, forty-four, is head of year at a large secondary school. On a Wednesday afternoon, she receives a written incident report from a supply teacher about Tyrone, fourteen, a Black boy in Year 9. It says that Tyrone was \"aggressive and intimidating\" in a science lesson, that he \"squared up\" to the teacher, and that the teacher felt threatened. The report asks for a fixed-term exclusion. Anita knows Tyrone a little: he is tall for his age, quiet in most lessons, and on the school's football team. She also knows the research described in this chapter, and the school's own figures, which show that Black boys are excluded at a higher rate than their classmates. She decides not to act on the report until she has done the checks this chapter describes.\n\nShe has also read the three earlier reports in Tyrone's file before, and accepted them without question. She notices that she had not, at the time, asked what he had actually done.\n\nShe also remembers a conversation with Tyrone's mother at a parents' evening the year before, in which his mother said that she worried every day about how teachers saw her son, and Anita had told her not to worry.\n\nShe is also aware that Tyrone's family has been at the school for years, and that his older brother left at sixteen after an exclusion that, she now wonders, may have rested on reports like this one.",
+  "steps": [
+   {
+    "label": "Check the age",
+    "text": "Before anything else, she reminds herself that Tyrone is fourteen. Goff and colleagues found that people overestimate the ages of Black boys by an average of four and a half years, so that a fourteen-year-old may be seen as a young man of eighteen or more. The report's language, \"squared up\", \"intimidating\", reads like a description of an adult. She resolves to judge what happened as the behaviour of a child.\n\nShe also notices that she had, reading the report, pictured an older, larger boy than Tyrone is, before she reminded herself of his age.\n\nShe also looks at the school photograph on his file, which shows a boy with a round face and a nervous smile, to anchor the report in the child it describes."
+   },
+   {
+    "label": "Ask for specifics",
+    "text": "She meets the supply teacher and asks him to describe exactly what Tyrone said and did, as a camera would have recorded it. He says that he told Tyrone to move seats, Tyrone stood up, said \"Why me? I haven't done anything,\" and stood by his desk without moving. When asked what \"squared up\" meant, the teacher says that Tyrone stood up straight and looked at him. Tyrone did not move towards him or raise a hand.\n\nShe also asks whether any other pupils were involved, and learns that the two boys who had been talking were not asked to move.\n\nShe also asks the teacher how he was feeling that afternoon. He admits that it was his first day at the school, and that he had been warned that Year 9 could be difficult."
+   },
+   {
+    "label": "Run the swap test",
+    "text": "She asks herself, and later the teacher, whether a white boy of the same size who stood up, protested and stood still would have been described as squaring up. The teacher, to his credit, thinks about it and says he is not sure. Anita writes down the behaviour without the adjectives: stood up, protested, did not move seats when asked, did not move towards the teacher.\n\nShe also asks herself whether she would have reached for the word \"intimidating\" if she had only read the bare behaviour, and concludes that she would not."
+   },
+   {
+    "label": "Hear his account",
+    "text": "She talks to Tyrone, with his form tutor present. He is guarded at first, looking at the floor. When she asks what happened, he says that two other boys had been talking, the teacher had picked on him, and he had stood up because he was angry about being blamed. He says that teachers often think he is threatening because he is big, and that he has learned to keep his hands by his sides. Anita listens without interrupting.\n\nShe also notices that Tyrone's account matches the teacher's on every point of behaviour. They differ only on what it meant.\n\nShe also notices that he says he stood up because he was angry, which is an honest account of a feeling that any fourteen-year-old blamed in front of the class might have."
+   },
+   {
+    "label": "Look at the pattern",
+    "text": "She checks Tyrone's record. There are three previous incidents, all described with similar words, \"intimidating\", \"aggressive manner\", \"threatening body language\", and none describing any physical act. She also checks how often those words appear in reports about other boys in the year group, and notices that they cluster around a small number of Black boys.\n\nShe takes the pattern to the senior leadership team, with the reports anonymised, so that the conversation is about the school's language rather than about any one teacher.\n\nShe also notes that the reports came from four different teachers, which tells her that the pattern is in the school's habits of description, not in one person."
+   },
+   {
+    "label": "Decide on behaviour",
+    "text": "She decides that Tyrone's refusal to move seats was a breach of the school's rules and deserves the usual consequence, a short detention, as it would for any pupil. She decides that nothing in his behaviour justifies an exclusion or the word \"intimidating\". She explains her reasoning to the supply teacher and to Tyrone's mother, and records the incident in behavioural terms only.\n\nShe also tells Tyrone directly that standing up and protesting was not the right way to handle being blamed, and talks with him about what he could do next time, as she would with any pupil."
+   },
+   {
+    "label": "What happened",
+    "text": "Tyrone serves the detention without complaint. His mother tells Anita that it is the first time a teacher has taken his side of a story seriously. Anita raises the pattern of language in incident reports at the next staff meeting, and the school changes its reporting form so that staff must describe what a pupil said and did before giving any judgment. Over the following year, the number of reports using \"intimidating\" falls sharply.\n\nShe also writes to the supply agency, without blame, to suggest that its teachers be given the school's guidance on describing behaviour before they start.\n\nShe also tells Tyrone's mother, a year later at another parents' evening, that she was right to worry, and that the school has tried to change."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Praising a Black man for not fitting the stereotype",
+   "body": "Comments such as \"You're so articulate,\" \"You're not what I expected,\" \"You're one of the good ones\" or \"You don't seem threatening at all\" are usually meant as compliments. They land as something else. Each one reveals the stereotype the speaker started with and tells the man that he has been measured against it and has passed, this time. They also imply that the ordinary qualities they praise, speaking well, being gentle, being professional, are surprising in a Black man, which is the stereotype restated. Many Black men describe hearing such comments throughout their lives, and the cumulative effect can be wearing. If you want to praise someone, praise something specific that they did: the clarity of their argument in a meeting, the care they took with a client, the goal they scored. Leave out the comparison with what you expected.\n\nA good check is to ask whether you would say the same thing to a white colleague who did the same thing.\n\nMany Black men can recite the comments they have heard most often. Most of them were meant as praise."
+  },
+  {
+   "title": "Saying you do not see colour",
+   "body": "Many people respond to discussions of racial bias by saying that they do not see colour and treat everyone the same. It is usually sincere, and it reflects a real wish to be fair. But the research in this chapter suggests that the biases that matter most operate before deliberate thought: in how big a man looks, how old a boy seems, how quickly a tool becomes a gun. Payne found that the bias lay in the automatic part of the response. Not seeing colour does not switch those processes off; it only makes it harder to notice them and to use the checks that reduce their effects, such as the swap test, asking for specifics and checking the age. Fairness, in practice, comes from noticing where bias is likely to operate and slowing down there, not from believing that you are immune to it.\n\nThe aim is not to see colour constantly, but to notice it in the moments where it is likely to bend your judgment."
+  },
+  {
+   "title": "Making one man the spokesperson",
+   "body": "When race comes up at work, in a training session, a discussion of the news or a review of policy, it is common for people to turn to the one Black man in the room and ask what he thinks, or how Black people feel about it, or whether something is racist. It can feel like inclusion. To many Black men it feels like being put on display, made to represent a whole group, and asked to do the work of educating colleagues, often while managing their own reaction to the topic. Some may welcome the chance to speak; many will not, and the request puts them in a difficult position either way. If you want to hear his view, ask privately, as you would ask anyone about anything personal, and accept a no. Do your own reading. And when changes are being made, ask who is doing the work, and whether it is fairly shared.\n\nIf a Black colleague chooses to speak, listen to him as one person with one view, not as a representative."
+  },
+  {
+   "title": "Dismissing the caution Black men carry",
+   "body": "Many Black men describe habits learned early, often through what is called the talk: hands visible, no sudden movements, no hands in pockets in shops, no running, no arguing with police. Some soften their presence deliberately, smiling more, speaking more quietly, dressing more formally. When they mention these habits, a common response is disbelief or reassurance: \"Surely not round here,\" \"You're overthinking it,\" \"I've never seen anything like that.\" The previous chapter described how questioning someone's map of safety tells them their reading of their own life is wrong. The research in this chapter suggests their caution has reasons. Listen, believe them, and ask what you could do in the places you influence, such as your shop, your workplace or your street, so that the caution becomes a little less necessary there.\n\nIt also helps to remember that the caution is usually invisible when it works, which is why it is so easy to doubt.\n\nIf he asks you to back him up, for example by speaking to a manager about how he has been described, do it."
+  }
+ ],
+ "questions": [
+  {
+   "q": "If these biases are automatic, can I do anything about them?",
+   "a": "Yes, though not by deciding to be unbiased. The research suggests the biases operate fast and largely outside awareness, so the useful steps are about behaviour rather than feeling. Notice the moments where they are most likely to operate: under time pressure, in ambiguous situations, when you are tired or stressed, and when the man is a stranger. Slow down there before acting. Use the swap test, imagining the same behaviour from a white man of the same size. Ask for specifics when anyone, including you, describes a Black man as aggressive or intimidating. Remember that boys are children. Look for evidence that would disconfirm your reading. And act only on behaviour that would justify the same action from anyone, as Sandra's store and Anita's school both did.\n\nIt also helps to know that the checks feel awkward at first and become quicker with practice.\n\nAnd when you get it wrong, which everyone sometimes does, apologise simply and change what you do."
+  },
+  {
+   "q": "Isn't it just that some men are genuinely more intimidating?",
+   "a": "Some people are genuinely threatening, and behaviour that would worry you in anyone should worry you here. But the question is whether your sense of how intimidating someone is matches what they are doing. Wilson, Hugenberg and Rule found that participants judged Black men larger, stronger and more capable of harm than white men of exactly the same size, with the bias strongest for darker-skinned men who were no larger. That means part of what feels like an accurate perception is added by the perceiver. The practical test is to ask what the person actually did and said, as Neil did with Desmond's complainants and Anita did with the supply teacher. If the answer is about size, a serious face or a firm voice rather than behaviour, the intimidation may be in the reading.\n\nA useful follow-up is to ask the person describing the intimidation whether they would use the same word about anyone else who did the same thing."
+  },
+  {
+   "q": "What should I do if I feel uneasy around a Black man in a public place?",
+   "a": "Notice the unease, and do not act on it unless there is behaviour that would justify acting with anyone. Stay where you are in the lift; do not cross the road ostentatiously; do not follow him round the shop or call security because of how he looks. Each of these actions is noticed and remembered, and each tells the man that he has been read as a threat for being there. Ask yourself whether you would feel the same unease with a white man of the same size, dressed the same way, doing the same thing. If you would not, the feeling is information about the bias rather than about him. If someone's behaviour is genuinely threatening, respond to the behaviour, as you would with anyone, and get help if you need it.\n\nIt also helps to remember that he may well have noticed your unease before you did, and is managing it too.\n\nAnd if you have reacted on unease before, the next time is a chance to do it differently."
+  },
+  {
+   "q": "How can I support Black colleagues without making it awkward?",
+   "a": "Mostly through what you do when others are reading them. When someone describes a Black colleague as aggressive, intimidating or having an attitude, ask what specifically he said or did, as this chapter's Ask for Specifics drill suggests. When his idea passes without comment and is later praised from someone else, credit it to him, as Part IV's chapter on the glass ceiling described. Do not make him the spokesperson on race, and do not praise him for not fitting a stereotype. Treat his directness, his expressiveness or his reserve as you would anyone's. If he tells you about his experience of being read, listen and believe him. And if you have power over decisions about pay, promotion or discipline, check whether descriptions of Black staff are based on behaviour or on manner.\n\nIt can also help to ask Black colleagues, privately and without pressure, whether there is anything about the workplace they would change."
+  },
+  {
+   "q": "Why do some Black men seem guarded or formal in mixed settings?",
+   "a": "For many, it is a response to being read. This chapter describes how many Black men grow up with a constant awareness of how their bodies are interpreted, and learn to manage it: keeping their voices low, their hands visible, their faces neutral, their dress formal. Desmond told Neil that he did this without thinking. It is a form of the vigilance described in the previous chapter and the masking described earlier in this part, and a later chapter looks at code-switching. From outside, it can look like coldness or reserve. It is not yours to dismantle, and it is not a sign that something is wrong with the man. The useful response is to make the setting one where such care is less necessary, and to treat whatever he chooses to show with ordinary respect.\n\nIf he relaxes over time in your company, take it as a sign that the setting has become safer, not as a reward you have earned.\n\nIt is also worth noticing how much effort that care takes, and that it is effort others do not have to spend."
+  },
+  {
+   "q": "Does this research apply to other groups too?",
+   "a": "The studies in this chapter mostly concern Black men in the United States, and their findings should not be stretched too far. But similar patterns of misreading have been described for other racialised groups in other places: young men from particular backgrounds being followed in shops, described as aggressive at work or treated as older than they are. The methods for reading fairly travel well, whatever the group: check the age, ask for specifics, run the swap test, act only on behaviour that would justify the same action from anyone, and look for evidence that would disconfirm your reading. The deeper principle of this book applies everywhere: the burden of accuracy belongs to the reader, not to the person being read.\n\nIt is also worth reading accounts written by people from the groups concerned, which often say more than the research can.\n\nIt also helps to ask people from the groups concerned what they would most like others to know, and to take their answers seriously."
   }
  ],
  "watch": [
