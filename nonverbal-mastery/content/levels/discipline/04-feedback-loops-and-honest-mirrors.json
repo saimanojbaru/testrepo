@@ -80,6 +80,20 @@
    "doCaption": "Taking it as information about one habit.",
    "dontCaption": "Taking criticism as a verdict on who you are.",
    "annotation": "Feedback aimed at the person tends to do harm. Translate it toward behaviour you can actually change."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_group_meeting",
+   "doCaption": "Asking one person, privately, with time",
+   "dontCaption": "Asking for feedback in front of the whole team",
+   "annotation": "The reluctance to deliver bad news is strongest when others are listening. Ask one to one, and let them think."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_sit_closed_hunched",
+   "doCaption": "Weighing it against other mirrors",
+   "dontCaption": "Crushed by one person's verdict",
+   "annotation": "One view can be as distorted as none. Check it against mirrors from other settings before you change."
   }
  ],
  "caseStudy": "Luis, thirty-six, is head chef of a busy restaurant. In a year he has lost three good line cooks. Each gave a reasonable reason for leaving, and Luis believes them. His owner, less convinced, suggests he ask someone.\n\nLuis chooses two mirrors: his sous-chef, Ana, who works beside him every night and is planning to open her own place within a year, and the front-of-house manager, Kemal, who watches the kitchen through the pass and does not report to him. He asks each the same question, privately, after service: *When I'm checking plates at the pass, what does my face do? Take a few days if you like. I want the honest version, and nothing you say will come back on you.*\n\nKemal answers the next night. *You go completely silent. You stare at the plate, then you stare at whoever cooked it. You don't say anything for a few seconds, even when the plate is fine. The young ones think you're about to explode.* Ana, a day later, gives an example: a Saturday when a cook burned his hand because he was watching Luis instead of the pan.\n\nLuis feels his face go hot and wants to explain that he is only concentrating. Instead he thanks them both and writes down exactly what they said. He records his own face at the pass on two quiet nights. The silence is there, and the stare, and it does look like rage.\n\nHe chooses one change: within two seconds of picking up a plate he says something, *good*, or one specific fix. Three weeks later he asks Kemal whether he has noticed anything. Kemal says the young cooks have stopped looking at the pass while they work. Ana adds that he still stares at the sauce station, which is where the next conversation starts.\n\nAt a group meeting that spring, a chef from the company's other restaurant asks his own team whether he is too harsh. They say no, chef. He loses two more cooks by summer.",
@@ -98,6 +112,11 @@
     "Rewrite each vague or personal question so that it asks about one observable behaviour in one setting.",
     "Add a request for an example to each.",
     "Choose the one you would be most nervous to ask, and keep it for this week."
+   ],
+   "variations": [
+    "Ask a trusted friend to rate your rewritten questions as vague, personal or behavioural, and see whether they agree with you.",
+    "Write one question about how you come across at home as well as at work.",
+    "Turn one of your questions into a question about a single meeting or event, so that the answer can be checked against a recording."
    ]
   },
   {
@@ -109,6 +128,11 @@
     "Cross out anyone who scores one on the third measure.",
     "Choose two or three mirrors from different settings among the highest scorers.",
     "Write one line on what you could offer each of them in return."
+   ],
+   "variations": [
+    "Add a fourth measure to your list: how different the person's experience of you is likely to be from your own.",
+    "Choose one mirror you would never normally ask, such as someone much younger or older, and consider whether they meet the three conditions.",
+    "Check whether all your chosen mirrors see you in the same setting, and replace one if they do."
    ]
   },
   {
@@ -120,6 +144,11 @@
     "Rewrite your response as three parts: thanks, one clarifying question, and silence.",
     "Say the rewritten response aloud three times, noticing where your body wants to defend.",
     "Note which of Stone and Heen's three triggers that criticism touched: truth, relationship or identity."
+   ],
+   "variations": [
+    "Rehearse your three-part response with a friend who delivers a mildly unfair piece of criticism, so that you practise under some pressure.",
+    "Write down what your body does in the first second of hearing criticism, and use that as your cue to slow down.",
+    "Recall a piece of praise you deflected, and rehearse receiving it with a simple thank you."
    ]
   },
   {
@@ -131,6 +160,11 @@
     "Rewrite each as a description a camera could have recorded, with when it happened.",
     "Read the original and the rewrite aloud, imagining you are on the receiving end.",
     "Note which version you would rather hear."
+   ],
+   "variations": [
+    "Rewrite one piece of feedback you received in the past, as you would have wanted to receive it, in camera language.",
+    "Notice the next time someone gives feedback about a person rather than a task, and how the recipient responds.",
+    "Practise giving one piece of positive feedback in camera language, which is often more useful than general praise."
    ]
   },
   {
@@ -142,6 +176,11 @@
     "Put a date in your calendar two weeks from now to ask the same person about it.",
     "Write out the exact words you will use to ask.",
     "After asking, add what you heard to your journal under the original feedback."
+   ],
+   "variations": [
+    "Close the loop on a piece of feedback from more than a year ago, if you can, and ask whether the change has lasted.",
+    "Write down what you will do if the person says they have not noticed any difference.",
+    "Tell the person, when you close the loop, one specific thing their feedback helped you understand."
    ]
   }
  ],
@@ -223,6 +262,45 @@
    "explain": "Returning to the same person tells you whether the change is visible and shows them their honesty was used. It often brings a second, finer piece of feedback. Silence, as this chapter showed, tells you very little.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Rosen and Tesser's MUM effect, described in 1970, refer to?",
+   "options": [
+    "People's tendency to pass on good news quickly and loudly to everyone around them",
+    "People's reluctance to pass on bad news, even when the recipient needs to hear it",
+    "People's habit of mumbling when they are nervous about speaking to someone senior",
+    "People's preference for receiving feedback from their mothers rather than colleagues"
+   ],
+   "answer": 1,
+   "explain": "People delay, soften or say nothing when the news is unwelcome, even when it is not their fault and the recipient needs it. Power makes the effect stronger.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your mother says you come across as arrogant, but two colleagues and a client, asked separately, say you are direct and sometimes impatient. What fits this chapter best?",
+   "options": [
+    "Reshape yourself around your mother's view, since she knows you best of all",
+    "Weigh all four views, note the setting each comes from, and work on the shared point",
+    "Dismiss all the feedback, since the different mirrors cannot agree with each other",
+    "Ask your mother again until she agrees with the others about how you come across"
+   ],
+   "answer": 1,
+   "explain": "One mirror can be as distorted as none, and each sees you in a particular setting. Several mirrors from different settings, and the point on which they agree, are the most reliable guide to what to change.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that the more senior you become, the more honest feedback you receive, because people respect you. What does this chapter suggest?",
+   "options": [
+    "That power strengthens the reluctance to deliver bad news, so senior people often hear less",
+    "That senior people always receive more honest feedback, because they are trusted by everyone",
+    "That seniority makes no difference to feedback, since people are equally honest with everyone",
+    "That only junior people need feedback, so seniority makes feedback unnecessary in any case"
+   ],
+   "answer": 0,
+   "explain": "The more people depend on your goodwill, the more they risk by being honest, which strengthens the MUM effect. Senior people often have to work hardest to hear the truth.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +329,110 @@
    "work": "Insight",
    "author": "Tasha Eurich",
    "note": "On internal and external self-awareness, and why asking what works better than asking why."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The vicar who asked how it went",
+   "scene": "Tim, fifty-one, has been vicar of a market-town parish for two years. Every Sunday, at the door after the service, he asks people how they found\n  the sermon. Every Sunday, they say it was lovely, thought-provoking or just what they needed to hear. Attendance, meanwhile, has been falling slowly,\n  and the younger families who came at Christmas have not come back.\n\n  His wife, Clare, suggests that \"How did you find it?\" at the church door, with a queue behind, is not a question anyone can answer honestly. Tim is\n  sceptical, but he tries something different. He chooses two people: Margaret, a churchwarden of thirty years who sits near the front and has no\n  reason to flatter him, and Josh, twenty-four, a youth worker who sits at the back. He asks each of them, privately, during the week: \"When I'm\n  preaching, where do my eyes go, and what do I do with my hands? Take a few days. I'd really like the honest version.\"\n\n  Margaret answers on Wednesday. She says, gently, that he preaches entirely to the left side of the church, where the choir and the older\n  congregation sit, and that he reads from his notes almost the whole time. Josh says that from the back, Tim looks as though he is talking to himself,\n  and that the families on the right-hand side have started sitting there because they feel nobody will notice if the children fidget.\n\n  Tim had no idea.\n\nHe also realises, thinking about it, that he has never once been told anything critical about his preaching in two years, and that he had taken that as a good sign.\n\nHe also notices, now that he is looking, that people leaving by the right-hand door at the end of the service rarely stop to shake his hand.",
+   "misread": "Tim read the congregation's \"lovely\" at the door as feedback, and the falling attendance as a mystery. The congregation had been telling him what was kind to say, because his question gave them no room to say anything else.\n\nAnd Tim read his own question as an invitation to honesty, when, asked at the door with a queue behind, it was an invitation to be polite.\n\nThe families on the right-hand side, for their part, had read his preaching to the left as a sign that the church was for the older congregation, and had begun to drift away without ever saying so.",
+   "betterRead": "Rosen and Tesser described the MUM effect: people are reluctant to pass on bad news, and they soften it or say nothing, especially to someone in a position of authority. \"How did you find it?\" asked at the door is vague, public and personal, and it invites the safest answer, as this chapter explains. Tim's better approach was the one the chapter recommends: a specific, observable question, asked privately, of mirrors who saw him often, wished him well and had little to lose by honesty. He also chose them from different parts of the church, which gave him two views of the same habit. He changed one thing: he moved to the centre of the chancel and spoke the first and last paragraph of each sermon from memory, looking at the whole church. A month later, he asked Margaret and Josh again. Both said they had noticed. By Easter, two of the younger families were back.\n\nHe also stopped asking about the sermon at the door, and asked people about their week instead, which several of them said they preferred."
+  },
+  {
+   "title": "The manager who argued with feedback",
+   "scene": "Leanne, forty-four, is an operations manager at a logistics firm, and she prides herself on being open to feedback. At her annual 360 review,\n  one comment stands out: \"Leanne can be intimidating in meetings; people are reluctant to raise problems.\" She is hurt and irritated. At the next team\n  meeting, she reads the comment out and says that she wants to understand it, because she has always tried to be approachable.\n\n  There is silence. Then one of her team leaders, Dean, says, carefully, that sometimes when people bring problems, she interrupts before they have\n  finished. Leanne says that she interrupts because she is trying to help them get to the point faster, which is not the same as being intimidating.\n  Another team leader says that she sometimes frowns when people disagree with her. Leanne says that she frowns when she is thinking, and that she\n  cannot help her face. A third person says nothing.\n\n  The meeting moves on. Over the following months, the 360 comments become shorter and blander. The next year, nobody mentions intimidation at all.\n  Leanne takes this as a sign that the problem has gone away.\n\n  Her director, Rob, notices that her team's incident reports have dropped by a third, while incidents logged by the safety team have not.\n\nShe also notices, though she does not connect it at the time, that Dean stops speaking in the next two meetings.",
+   "misread": "Leanne read the original comment as unfair and the follow-up comments in the meeting as misunderstandings she needed to correct. Her team read her explanations as a clear message that honest feedback would be argued with, and stopped giving it.\n\nRob, her director, had also read the quieter 360s as improvement, until the incident figures told a different story.\n\nShe also read the blander 360 comments the following year as evidence that she had changed, when the only thing that had changed was what her team was willing to write.",
+   "betterRead": "Stone and Heen describe three triggers that make people reject feedback: truth triggers, when it seems wrong; relationship triggers, when you resent who is giving it; and identity triggers, when it threatens your sense of who you are. Leanne's sense of herself as approachable was an identity trigger, and each explanation she gave taught her mirrors to stop being honest, which this chapter names as a common failure. The drop in incident reports was the cost. Her better approach, which Rob coached her through, was the Receiving Rehearsal: thanks, one clarifying question, a commitment to think about it, and nothing else. She went back to Dean and said, \"You were right, and I argued instead of listening. Can you tell me what the interrupting looks like from your side?\" She changed one habit: letting people finish. Incident reports rose again within two months.\n\nShe also asked Rob to tell her, privately, if he ever saw her arguing with feedback again, which he did twice that year."
+  },
+  {
+   "title": "The coach who said soft",
+   "scene": "Mick, fifty-eight, has coached amateur boxing at a community club for twenty years, and his feedback is famous. When a young boxer drops his\n  guard in sparring, Mick shouts, \"You're soft! Hands up!\" When someone loses a bout, he tells them they did not want it enough. He believes that\n  boxers need to hear the truth.\n\n  One of his most talented young boxers, Kayden, seventeen, has started to lose bouts he should win. After each loss, Mick tells him that he lacks\n  heart. Kayden's sparring gets worse. He starts flinching before punches land and stops coming to Thursday sessions.\n\n  A new assistant coach, Leah, thirty, who has a background in sports science, watches a sparring session with Mick and notices that Kayden's guard\n  drops in a specific moment: when he is tired, at the end of the second round, and always after throwing a right hand. She suggests to Mick that they\n  tell Kayden that, rather than that he is soft.\n\n  Mick is sceptical. He has always told boxers what he thinks of them. But he agrees to let Leah try.\n\nKayden's mother has also noticed that he comes home from training quiet and goes straight to his room, and has asked Mick whether something has happened. Mick told her that the boy needs toughening up.\n\nLeah also notices that the other young boxers have started to drop their eyes when Mick walks past, and that the club's membership has fallen by a quarter in two years.\n\nMick, watching Leah's video, sees the dropped guard for the first time, after twenty years of shouting about heart.",
+   "misread": "Mick read Kayden's dropped guard and lost bouts as a lack of heart, and told him so, as feedback about who Kayden was. Kayden read the feedback as a verdict on himself, and his performance got worse as a result.\n\nKayden's mother read his withdrawal as a sign that he was being bullied, which was closer to the truth than Mick realised.\n\nAnd Mick read his own bluntness as honesty, the thing he believed boxers most needed, when the honesty that helps is about the task, not the person.",
+   "betterRead": "Kluger and DeNisi pooled several hundred studies of feedback and found that in more than a third of cases it made performance worse, and that feedback drawing attention to the person rather than the task tended to do harm. \"You're soft\" is feedback about the self; \"your guard drops after your right hand when you're tired\" is feedback about the task, which a boxer can act on. Leah's better approach was the Task, Not Self drill: describe what a camera would have recorded, with when and after what. She showed Kayden a phone video of the moment, and they practised returning the right hand to his chin at the end of tiring rounds. Within a month, Kayden won his next bout. Mick, watching, said nothing for a while, and then asked Leah to show him how she had filmed it.\n\nKayden also started coming back on Thursdays. When Mick later asked him what had changed, he said it was the first time anyone had told him something he could actually fix, instead of something about himself he could not."
+  },
+  {
+   "title": "The consultant who listened to one mirror",
+   "scene": "Rajesh, thirty-three, is an IT consultant, and after reading this chapter he decides to ask for feedback about how he comes across. He asks his\n  mother, with whom he is very close and who has always been frank with him. She says, immediately, that he can come across as arrogant: he talks over\n  people, he corrects them and he does not listen. Rajesh is shaken. He takes it to heart.\n\n  Over the next two months he reshapes himself. In client meetings he speaks less, defers to everyone, prefaces his recommendations with \"I might be\n  wrong, but\", and avoids correcting anyone, even when they are mistaken. He holds back his hands and keeps his voice soft.\n\n  A client, Deborah, rings his manager to say that Rajesh seems unsure of his own advice and that she is no longer confident in his recommendations. His\n  manager, Paul, is surprised, and asks Rajesh what has changed.\n\n  Rajesh explains. Paul says that he has never once found Rajesh arrogant at work, and suggests that Rajesh ask two or three more people, in different\n  settings, before reshaping himself any further.\n\nHe also notices that he has started apologising before he speaks, even with friends, and that his girlfriend has asked him whether something is wrong.\n\nIn one meeting, he lets a client's colleague give a wrong figure to the board without correcting it, because he is afraid of seeming arrogant, and the mistake costs the client a week.",
+   "misread": "Rajesh read his mother's view as the truth about how he came across everywhere, and reshaped himself around it. His client read the reshaped Rajesh, hesitant and deferential, as a consultant who did not believe his own advice.\n\nRajesh also read his mother's honesty as accuracy, which is an easy mistake to make with someone who loves you and has never lied to you.\n\nHis mother, for her part, had been describing the son who argued with his brothers over dinner, not the consultant his clients knew, and would have been surprised to learn how seriously he had taken it.",
+   "betterRead": "This chapter warns that one person's view can be as distorted as none, and that the best mirrors see you often in the setting you care about, wish you well and lose nothing by honesty. Rajesh's mother met two of those conditions, but she saw him mostly at family dinners, arguing with his brothers, which is a very different setting from a client meeting. Vazire's work suggests that others know things about us that we cannot see, but which others, and in which settings, matters. Paul's better advice was the Choose Your Mirrors drill: two or three mirrors from different settings. Rajesh asked Paul, a colleague and a long-standing client. All three said he was direct and occasionally impatient when a client misunderstood a technical point, but not arrogant. He kept his directness, worked on his patience and stopped saying \"I might be wrong\" when he was not.\n\nHe also thanked his mother, and told her that she was right about family dinners, which made her laugh."
+  }
+ ],
+ "workedReading": {
+  "title": "Asking for feedback as a new team lead",
+  "scene": "Ayesha, thirty-two, was promoted three months ago to lead a team of eight software engineers, several of whom were her peers until recently. She suspects that something about how she comes across has changed since the promotion: the team chats less when she joins them, and two people have stopped bringing her problems early. Nobody has said anything. She knows from this chapter that, as their manager, she is now the person least likely to be told the truth, because power strengthens the MUM effect. She decides to build a feedback loop deliberately, and to do it in the way the chapter recommends: specific questions, chosen mirrors, a receiving response she has rehearsed, a check against a recording and a return visit.\n\nShe also knows that, three months ago, she would have been one of the people telling her old manager what they really thought, and that she is now on the other side of that conversation.",
+  "steps": [
+   {
+    "label": "Choose your mirrors",
+    "text": "She uses the Choose Your Mirrors drill. She lists everyone who sees her at work and rates them on how often they see her, how much they wish her well, and how little they lose by honesty. She chooses three: Tom, a senior engineer who is leaving for a new job in two months; Grace, a product manager from another team who sits in her stand-ups; and her own former manager, who now works in a different department.\n\nShe also notes that none of the three report to her, which is part of what makes them safe to be honest.\n\nShe also writes, next to each name, what she can offer in return, such as a reference for Tom or help with Grace's next project."
+   },
+   {
+    "label": "Write the question",
+    "text": "She writes a question that is specific, observable and small, as the Write the Question drill suggests: \"When someone brings me a problem in our stand-ups, what does my face or body do in the first few seconds?\" She adds a request for an example. She avoids \"How am I doing as a manager?\", which would invite reassurance.\n\nShe also writes a second question, to use only if the first produces nothing: \"Is there one habit of mine that might be misread by people who don't know me well?\"\n\nShe also tests the question on a friend outside work first, to check that it is clear and does not sound like fishing."
+   },
+   {
+    "label": "Ask privately, and give time",
+    "text": "She asks each of them in person, one to one, and says: \"Take a few days if you like. I'd really like the honest version, and nothing you say will come back on you.\" She means the last sentence, and she knows she will have to show it. She asks them not to answer straight away, because a considered answer is usually more specific.\n\nShe also resists the urge to ask her direct reports, who would face the strongest version of the MUM effect."
+   },
+   {
+    "label": "Receive without defending",
+    "text": "Tom answers first. He says that when someone raises a problem, she sighs, very slightly, and looks at her laptop before they have finished. Ayesha feels her face flush and an urge to explain that she sighs because she is tired. She notices the urge, as the chapter suggests, says \"Thank you, that's really useful. Can you remember an example?\" and listens. Tom gives one from the previous Tuesday.\n\nShe also writes down Tom's example word for word that evening, in her journal, before her memory can soften it.\n\nGrace, a day later, adds that Ayesha also says \"Mm\" in a flat voice while the person is still talking, which reads as impatience."
+   },
+   {
+    "label": "Check against a recording",
+    "text": "Grace says something similar: that Ayesha looks at her screen when problems come up. Two mirrors in different settings agreeing is worth taking seriously. Ayesha records her own camera feed in two stand-ups, after telling the team she is doing so for her own practice and will delete it. On the sound-off pass, she counts the sighs and the glances at the laptop. They are there, every time a problem is raised.\n\nShe also notices, on the recording, that she does it more on Mondays, when her inbox is fullest, which tells her something about when to be most careful."
+   },
+   {
+    "label": "Change one thing",
+    "text": "She chooses one change: when someone raises a problem, she closes her laptop lid, turns towards them and lets them finish, then says, \"Thanks for raising it.\" She practises it for two weeks. She also tells the team, without detail, that she has had some feedback about how she responds to problems in stand-ups and is working on it, which is itself a signal that honesty is welcome.\n\nShe also asks Tom to tell her, before he leaves, if he sees the old habit come back.\n\nShe also writes the change on a sticky note on the edge of her monitor: \"Laptop down. Turn. Let them finish.\""
+   },
+   {
+    "label": "Close the loop",
+    "text": "After two weeks, she goes back to Tom and Grace and asks: \"A couple of weeks ago you mentioned I look at my laptop when people raise problems. I've been trying to stop. Have you noticed any difference?\" Both say yes. Tom adds that two of the engineers mentioned it to him. A month later, one of the engineers who had stopped bringing her problems early brings her one on a Monday morning, and Ayesha closes her laptop.\n\nShe also writes the whole loop into her journal, from question to outcome, so that she can repeat it in six months."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Asking for feedback in public",
+   "body": "Asking for feedback in front of a group, as Leanne did when she read out her 360 comment at a team meeting, almost guarantees that nobody will say anything useful. The MUM effect, the reluctance to deliver bad news, is strongest when others are listening, because the person giving feedback risks embarrassing you and themselves in front of an audience. It is stronger still when you have power over the people in the room. Group requests for feedback tend to produce silence, safe generalities or, at best, a single brave person whose comment is then defended against in public. The chapter's method is private, one to one, with time to think. If you want feedback from a team, use anonymous channels for general views and private conversations with chosen mirrors for specifics, and never ask people to criticise you in front of each other.\n\nIf you need views from a whole team, use an anonymous survey for the general picture, and then ask individuals privately about specifics."
+  },
+  {
+   "title": "Cooling towards the messenger",
+   "body": "Some people receive feedback graciously in the moment and then, without quite meaning to, treat the person who gave it differently afterwards: a little cooler, a little less included, a little more likely to be passed over. The person giving the feedback notices, even if you do not, and so does everyone else who hears about it. Within a few months, your best mirror has stopped reflecting anything, and others have learned not to try. This is the slow version of arguing back, and it is even harder to see from the inside. If you ask someone for honest feedback, protect them afterwards. Thank them again later, tell them what you changed, and make a point of including them in the things that matter. The chapter's promise, \"nothing you say will come back on you\", has to be kept in your behaviour for months, not just in the moment.\n\nA good test is whether your mirror would ask you for feedback in return. If they would, the loop is working."
+  },
+  {
+   "title": "Asking only people like you",
+   "body": "It is natural to ask for feedback from people you are comfortable with, and they are often people similar to you in age, background, role and style. But people like you share many of your blind spots. They may not notice that you talk over quieter colleagues, because they are not quiet; that you look past older people, because they are not older; or that your humour excludes people from different backgrounds, because it does not exclude them. This book has stressed throughout that the people least like you are the ones you are most likely to misread, and they are also the ones most likely to misread you, or to see what others miss. When you choose mirrors, include at least one person whose experience of you is likely to be different from your own, as Tim did when he asked a young youth worker at the back as well as a churchwarden at the front.\n\nA simple way to start is to ask one person whose age, background or role is very different from yours the same question you asked your usual mirrors.\n\nIt also helps to ask your mirrors which of your habits they think other people notice most, which can reveal blind spots they share with you."
+  },
+  {
+   "title": "Asking for feedback you cannot use",
+   "body": "Feedback is most useful when it concerns something you can change, and least useful, sometimes harmful, when it concerns something you cannot. Asking people whether your face looks stern at rest, whether your accent is off-putting, or whether your height is intimidating may produce honest answers that you can do nothing with except worry. The chapter on video review in this part makes a similar point: change only the habits that are reliably misread, and use words to fill gaps that come from features. Ask instead about behaviours: what you do when someone disagrees, where your eyes go when you listen, what your hands do in tense moments. And do not ask too often. A mirror asked every week starts to feel like a judge, and begins to give answers that are either too kind or too sharp.\n\nIf you are unsure whether something can be changed, ask about what you do rather than what you are."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why will nobody tell me the truth about how I come across?",
+   "a": "Mostly because telling someone bad news is uncomfortable, and people avoid it. Rosen and Tesser called this the MUM effect: people delay, soften or say nothing when the news is unwelcome, even when it is not their fault and even when the recipient needs it. Power makes it stronger, because the more people depend on your goodwill, the more they risk by being honest. And many people have learned, from you or from others, that honesty is met with argument. The result is that most of what others could tell you about your blind spot is filtered out before it reaches you. You can change this, but only deliberately: ask specific questions, privately, of people who have little to lose, and receive what they say without defending.\n\nIt also helps to notice whether you have ever argued with feedback, since people remember it for a long time."
+  },
+  {
+   "q": "How can I ask for feedback without fishing for compliments?",
+   "a": "Ask about a specific, observable behaviour, rather than about yourself in general. \"How did I do?\" and \"How do I come across?\" invite reassurance. \"When I'm listening in meetings, what does my face do?\" and \"When someone disagrees with me, what do you notice first?\" invite description. Ask for an example. Ask in private, and give the person time to think rather than expecting an answer on the spot. Tell them that you want the honest version and that nothing will come back on them. And when the answer comes, receive it as information, with thanks and one clarifying question, rather than as a verdict on who you are. People can tell the difference between someone looking for praise and someone looking for information.\n\nIt also helps to name the reason you are asking, such as a new role or a specific meeting, which makes the request feel practical rather than needy."
+  },
+  {
+   "q": "What if the feedback seems unfair?",
+   "a": "Notice which of Stone and Heen's three triggers it has touched. It may seem wrong, a truth trigger; you may resent the person giving it, a relationship trigger; or it may threaten your sense of who you are, an identity trigger, as Leanne's did. Each can make fair feedback feel unfair. Do not argue in the moment. Thank the person, ask for an example, and take it away to think. Then check it: against a recording, as Ayesha did, against a second mirror in a different setting, as Rajesh did, and against your journal. If two or three independent sources agree, take it seriously, even if it still feels wrong. If none does, it may genuinely say more about the person than about you.\n\nAnd if you still think it is unfair after checking, you can thank the person and leave it there. Not all feedback needs acting on."
+  },
+  {
+   "q": "How often should I ask for feedback?",
+   "a": "Less often than you might think. One specific question to each of two or three mirrors, followed by a change and a return visit two weeks later, is a complete loop, and one loop every couple of months is plenty for most people. Asking too often wears out your mirrors and can make them feel like judges, which tends to produce answers that are either too gentle or too harsh. It can also make you self-conscious in the very situations you want to improve. The exception is when you are working on something specific and time-limited, such as a new role or a presentation: then a loop every few weeks for a short period makes sense, before you return to a slower rhythm.\n\nIt also helps to ask different mirrors at different times, so that no one person feels they are always the one you turn to."
+  },
+  {
+   "q": "How should I give feedback about someone else's body language?",
+   "a": "Only if they have asked, or if it genuinely matters to their work or wellbeing, and always privately. Keep it on the behaviour, not the person, as Kluger and DeNisi's findings suggest: describe what a camera would have recorded, with when and after what, as the Task, Not Self drill rehearses. \"When Sam raised the budget, you looked at your phone for most of his answer\" is usable; \"You come across as dismissive\" is not. Offer it as your observation, not a fact. Keep it to one thing. Avoid commenting on features people cannot change, such as their resting face or their accent. And leave room for them to disagree: they know their intentions, and you know only what you saw.\n\nIt also helps to ask whether they want it first: \"I noticed something in that meeting. Would it be useful if I told you?\""
+  },
+  {
+   "q": "What if my partner is the only person who will be honest with me?",
+   "a": "A partner can be a valuable mirror, because they see you often and usually wish you well. But they also have a stake in how you behave towards them, and they see you mainly in one setting, at home, which may not be the setting you most want to improve. Rajesh's experience with his mother shows how one close person's view can be both honest and misleading. Treat your partner's view as one mirror among several, and look for others: a colleague who is leaving, a peer in another team, a friend who sees you with other people. If you genuinely have no one else, a recording of yourself alone, reviewed with the method in the previous chapter, is a useful second view.\n\nIt also helps to ask your partner about a specific setting they see, such as how you are with your children, rather than about you in general.\n\nAnd if your partner's view surprises you, ask them for one example, as you would anyone else."
   }
  ],
  "watch": [
