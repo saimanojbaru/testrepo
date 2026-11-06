@@ -73,6 +73,27 @@
    "doCaption": "Letting the hand stay",
    "dontCaption": "Backing away from a friend's comfort",
    "annotation": "A hand on the shoulder asks for nothing. If you can, let it stay a moment; if you cannot, step back gently and say so."
+  },
+  {
+   "doPoseId": "p_pair_side_hug",
+   "dontPoseId": "p_pair_men_apart_glance",
+   "doCaption": "Side by side, an arm round him if he wants it",
+   "dontCaption": "Keeping a careful gap from a grieving friend",
+   "annotation": "The usual gap between men can feel like a wall at the wrong moment. Offer closeness from the side, and let him take as much as he wants."
+  },
+  {
+   "doPoseId": "p_pair_bench_large",
+   "dontPoseId": "p_stand_arms_crossed_tight",
+   "doCaption": "Sitting beside him, a hand's width apart",
+   "dontCaption": "Taking the far end of the bench, arms crossed",
+   "annotation": "In a shared crisis, the usual distance can shrink. Moving along a bench, side by side, is an offer that is easy to accept or decline."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_gesture_point",
+   "doCaption": "Letting friends stand as close as they like",
+   "dontCaption": "A joke that polices two men's closeness",
+   "annotation": "Jokes like \"get a room\" teach boys that closeness between men will be laughed at. Not laughing, and saying so lightly, can change that."
   }
  ],
  "caseStudy": "Tom, fifty-eight, has never been a man for closeness. He shakes hands with his friends, keeps an arm's length at the pub, and once told his son Ryan, then ten, that men do not sit on each other's laps. At Tom's retirement party, Ryan, now twenty-seven, arrives with three friends who greet each other with long hugs, lean on each other at the bar and sit squashed together on a sofa. Tom feels a flicker of disapproval and then, unexpectedly, something closer to envy.\n\nWhen Ryan hugs him goodbye, Tom stiffens and pats him twice on the back. Ryan notices, and lets go quickly.\n\nA month later they go to a match together, standing on the terrace for the first time in years. In the eighty-ninth minute their team scores, and Tom finds that he has grabbed Ryan around the shoulders and is shouting into his ear. Neither of them mentions it. On the walk back to the car they are closer than they have been for years, elbows bumping.\n\nIn the pub afterwards, Tom tells Ryan about his own father, who never touched him except to shake his hand on his wedding day. Ryan listens, side by side at the bar. He does not make a joke of it.\n\nAt Christmas, when Ryan arrives, Tom hugs him first, a little awkwardly, and holds on a moment longer than a back slap would allow. Ryan's friends would not have noticed anything unusual about it. Tom notices for the rest of the day.",
@@ -92,6 +113,10 @@
     "Note any settings where the distance changes, such as sport, drink or grief.",
     "Mark any relationship where you would like the distance to be different.",
     "Write one sentence about what the map shows you."
+   ],
+   "variations": [
+    "Do the map for women you see regularly as well, and compare the distances with those you keep with men.",
+    "Ask one friend how close he thinks you usually stand, and compare his estimate with yours."
    ]
   },
   {
@@ -102,6 +127,10 @@
     "Later in the conversation, shift so that you are side by side, looking at the same thing.",
     "Notice whether the distance between you changes without either of you deciding it.",
     "Afterwards, note any difference in how the conversation felt."
+   ],
+   "variations": [
+    "Try the experiment walking side by side rather than standing, and notice how close you end up without thinking.",
+    "Try sitting at a corner of a table rather than across it, and notice the effect on distance and conversation."
    ]
   },
   {
@@ -112,6 +141,10 @@
     "Write down what was said and how the men reacted.",
     "Write what the joke was teaching anyone who heard it, including any boys present.",
     "Write a sentence you could say, lightly, if you hear a joke like it again."
+   ],
+   "variations": [
+    "Notice the next joke of this kind you hear, and how the people it was aimed at responded in the minutes afterwards.",
+    "Practise your sentence aloud, in a light, friendly tone, so that it is ready when you need it."
    ]
   },
   {
@@ -122,6 +155,10 @@
     "For each, write the rival explanations: warmth, privacy, alcohol, challenge, discomfort, disagreement, respect.",
     "Note the other channels: torso, arms, face, voice.",
     "Where appropriate, check your reading with a question, and record whether you were right."
+   ],
+   "variations": [
+    "Ask one person, gently, about a change in distance you noticed, such as \"You sat right next to me today. All right?\"",
+    "Watch for changes in your own distance from people over a week, and what lay behind each one."
    ]
   }
  ],
@@ -203,6 +240,45 @@
    "explain": "A move closer can mean warmth, privacy, alcohol or challenge. In this context, trust and the wish to speak privately are the likeliest rivals, but the other channels and his baseline should guide the reading.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Uzzell and Horne's 2006 study, what mattered more than biological sex for the distances people kept?",
+   "options": [
+    "How strongly people identified with traditionally masculine or feminine traits",
+    "How tall each person was, since taller people always need more personal space",
+    "How many brothers and sisters each person had grown up with in the family home",
+    "The time of day, since everyone stands further apart in the afternoons than mornings"
+   ],
+   "answer": 0,
+   "explain": "Gender role, how strongly people identified with masculine or feminine traits, predicted distance better than whether they were male or female. Men's spacing is partly a performance of a certain kind of masculinity.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A new colleague from Brazil stands closer than you are used to, touches your arm as he talks, and follows when you step back. What fits this chapter best?",
+   "options": [
+    "Avoid him, since his behaviour shows that he does not respect your space",
+    "Report him to human resources at once for inappropriate physical contact",
+    "Read it as a different spacing norm, and say kindly what feels comfortable",
+    "Copy him exactly, standing even closer, so that he learns how it feels"
+   ],
+   "answer": 2,
+   "explain": "Spacing norms vary across cultures, and a step back met by a step forward is a classic sign of two norms meeting. Understanding the difference, and saying kindly what you prefer, works better than avoidance.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that young men today are all comfortable with physical closeness, so the old rules no longer apply. What does this chapter say?",
+   "options": [
+    "It is right, since research shows the old norms have vanished completely",
+    "Research on some groups found change; it does not apply to every young man",
+    "It is wrong, since young men today keep more distance than any generation",
+    "It is right for young men in cities, though rural men have not changed at all"
+   ],
+   "answer": 1,
+   "explain": "Anderson and McCormack described more affection among some groups of young men, but the research is based on particular settings and its reach has been questioned. Read the individual, not the generation.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +307,110 @@
    "work": "The influence of biological sex, sexuality and gender role on interpersonal distance",
    "author": "D. Uzzell and N. Horne",
    "note": "British Journal of Social Psychology 45(3), 2006. Why gender roles may matter more than sex in how much space people keep."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The friend who sat too close",
+   "scene": "Owen, thirty, and Rhys, thirty-one, share a flat and have been friends since university. They have a routine on Sunday evenings: Owen at\n  one end of the sofa, Rhys in the armchair, a film on. One Sunday, Rhys comes in, ignores the armchair and sits on the sofa right next to Owen,\n  their shoulders almost touching, though the other end of the sofa is empty. He does not say anything. He watches the film, quietly, and does\n  not make his usual jokes.\n\n  Owen feels a flash of awkwardness. He shifts a few centimetres along the sofa and makes a joke about Rhys needing his own space. Rhys laughs,\n  briefly, and moves back to the armchair. Halfway through the film, he says he is tired and goes to bed.\n\n  The next morning, Owen learns from a mutual friend that Rhys's girlfriend ended their four-year relationship on Saturday night.\n\nRhys had not told Owen because he did not know how to say it. He had come home, seen Owen on the sofa, and simply wanted to be near someone. He told Owen later that he had been about to say something when Owen moved along.\n\nLooking back, Owen also remembers that Rhys had not eaten dinner, which was unusual, and that he had left his phone face down on the kitchen counter rather than carrying it everywhere, as he normally did. At the time, none of it registered. It was just a quiet Sunday.",
+   "misread": "Owen read Rhys's sudden closeness as odd, something to be joked away, because it broke the rules they had always kept. He did not ask what had changed, or consider that the move along the sofa might have been a request.\n\nAnd because they had kept the same spacing for years, the change felt to Owen like a breach of an agreement, when it was the most honest thing Rhys could manage that night.\n\nThe joke about needing space was also a way of naming the closeness so that it could be laughed off. It is one of the most common ways men handle a moment that feels too intimate, and one of the most effective at ending it.",
+   "betterRead": "Because the normal gap between men is stable, a change in it is informative. When a man moves closer than usual, the rivals this chapter lists include warmth and trust, the wish to say something private, alcohol and challenge. A friend who sits closer than usual, quietly, without his usual jokes, on the day after a loss, is often asking for company without words. Owen's move along the sofa and his joke were the policing of closeness that this chapter describes, done almost by reflex, and they told Rhys that the request had been refused. A better reading would have noticed the whole cluster, the closeness, the quiet and the missing jokes, and stayed put. A simple \"You all right, mate?\" would have opened the door. Owen went and knocked on Rhys's door the next evening, apologised for the joke, and asked how he was. Rhys told him. The following Sunday, Owen sat in the middle of the sofa, and Rhys sat beside him.\n\nHe also noticed, afterwards, how quickly his joke had come. It was not a decision. It was a habit, learned long ago, and he was surprised to find it in himself."
+  },
+  {
+   "title": "The joke on the touchline",
+   "scene": "Dave coaches an under-fourteens rugby team. After a hard-fought win, the boys pile into each other on the pitch: hugging, arms round\n  shoulders, two of them lifting a third onto their shoulders. On the touchline, one of the fathers, Gary, laughs loudly and shouts, \"Get a room,\n  lads!\" A couple of other fathers laugh too.\n\n  Dave watches the boys. Several of them let go of each other at once. Two who had been hugging step apart and start messing about with the ball,\n  looking embarrassed. One of the youngest, Ethan, who has been hugging his best friend after scoring his first try, goes red and walks off to the\n  changing room on his own.\n\n  Dave has seen this happen before. He also remembers his own father saying the same kind of thing when he was a boy.\n\nGary is not a bad man. He drives three of the boys to every away match and has never missed a training session. He would be shocked to be told that his joke had sent a thirteen-year-old off the pitch on his own.\n\nEthan's mother, who had been standing a little further along the touchline, saw her son walk off and followed him to the changing room. She found him sitting on a bench, still in his kit, not crying, but very quiet. When she asked what was wrong, he said nothing was, and that he did not want to play next week.",
+   "misread": "Gary read the boys' hugs as something faintly ridiculous, and his joke as harmless banter. The boys read the joke clearly: closeness between them was being watched, and laughed at, by the men they looked up to.\n\nThe other fathers' laughter mattered as much as the joke. A single remark can be shrugged off; a group of men laughing tells the boys that this is what men think.\n\nIt also missed what the boys' closeness was for: celebrating together after a hard match, which is exactly what teams are supposed to do.",
+   "betterRead": "Eric Anderson's term homohysteria describes men's fear of being seen as gay, and how it leads them to police their own closeness and each other's. Anderson and Mark McCormack have described younger men being more comfortable with hugging and physical affection than earlier generations, though their research comes from particular groups. A joke like Gary's shows how the old rules are passed on: not by explanation, but by laughter at the moment of closeness, which teaches boys to step apart. Dave's better response was to address it, lightly but clearly, without shaming Gary in public. He walked over and said, with a smile, \"They've just won a hard match. Let them enjoy it.\" Later, he spoke to Gary privately. In the changing room, he made a point of hugging Ethan and congratulating him on his try, in front of the team. The next week, after the match, the boys hugged again. Gary kept quiet.\n\nHe also mentioned it to the club's welfare officer, who added a short line about touchline behaviour to the parents' code of conduct for the next season."
+  },
+  {
+   "title": "The colleague who stood too close",
+   "scene": "Rafael, thirty-four, has moved from São Paulo to a software company in Manchester. He is warm, talkative and quickly popular. But his\n  colleague Steve, forty-five, finds him hard to be around. When they talk, Rafael stands closer than Steve is used to, often touches his arm or\n  shoulder, and holds his gaze for longer. Steve keeps backing away. In one conversation by the coffee machine, he takes three steps back, and Rafael\n  follows, until Steve is almost against the wall.\n\n  Steve starts avoiding Rafael, eating lunch at his desk and answering his questions by message. Rafael notices and is hurt. He tells another\n  colleague that Steve seems cold, maybe even unfriendly towards foreigners.\n\n  Steve, for his part, tells his wife that the new Brazilian guy is a bit full on, and that he does not know how to tell him to back off.\n\nRafael has also noticed that the team greet each other without touching at all, even after weekends, and has started to wonder whether he has done something to offend everyone.\n\nTheir manager has noticed the tension and asked Steve, in a one-to-one, whether everything is all right with the new hire. Steve said it was fine. He did not want to seem like the man who could not cope with a friendly colleague, and he could not quite say what the problem was.",
+   "misread": "Each read the other through his own spacing norms. Steve read Rafael's closeness and touch as pushiness, and Rafael read Steve's backing away as coldness or prejudice. Neither considered that the other was simply standing where his own culture told him to.\n\nAnd Rafael's reading, that Steve might dislike foreigners, was the kind of conclusion people reach when a cultural difference is not named: the other person's behaviour is explained by their character rather than their norms.\n\nThey also each told someone else their reading of the other, rather than telling each other, which is how cultural misreadings harden into reputations.",
+   "betterRead": "The chapter on proxemics described how preferred distances vary across cultures, and Brazil is often described as a culture where friendly conversation involves closer distances and more touch than in northern England. Rafael was being warm in his own dialect; Steve was being polite in his. The dance by the coffee machine, one man stepping back and the other following, is a classic sign of two spacing norms meeting. Neither man was wrong. The better approach was for each to understand the other's norm and for Steve, who was uncomfortable, to say so kindly. A colleague who knew them both suggested it. Steve said to Rafael, over a coffee, \"I'm a bit of a space person, I'm afraid. Very English. It's nothing personal.\" Rafael laughed and said that in Brazil people would think Steve was angry with him. They found a middle distance. Steve started eating lunch with the team again, and Rafael learned to save his hugs for Fridays.\n\nSteve also admitted to his wife that he had been relieved to find Rafael so easy to talk to about it."
+  },
+  {
+   "title": "Squared up at the bar",
+   "scene": "Late on a Saturday night, in a busy pub, Josh notices his friend Kieran in a conversation at the bar with a man he does not know. At first\n  they are standing at a normal distance, angled, talking about the match on the television. Then something changes. The stranger turns square on\n  to Kieran and steps forward, closing the gap to half a metre. His chest is pushed forward, his chin up, his arms slightly away from his body.\n  Kieran turns to face him too, and does not step back. Their voices get louder.\n\n  Josh's other friend, Liam, says to leave them to it, that Kieran can look after himself. Someone else nearby has started filming on a phone.\n\n  Josh has seen Kieran in a fight once, years ago, and he remembers how quickly it happened.\n\nKieran has had four pints, and his team lost that afternoon. The stranger has had at least as many. Josh can see the landlord at the far end of the bar, watching, one hand already near the phone.\n\nJosh also notices that the stranger's two friends have stopped talking and are watching, one of them putting his drink down on the bar. Kieran's hands have closed into fists at his sides, and his face, which was flushed from the drink, has gone suddenly pale.",
+   "misread": "Liam read the change in distance as a private matter between two grown men. The filming bystander read it as entertainment. Neither reading took seriously what the change in distance and posture meant.\n\nThe phone being raised also mattered. An audience makes it harder for either man to back down, because backing down now happens in front of everyone and possibly online.\n\nLiam's reading also assumed that what mattered was Kieran's ability to look after himself, when the real question was whether anyone would get hurt, including people standing nearby.\n\nThe stranger's friends going quiet and putting their drinks down was also a sign Liam missed: the people closest to the stranger were reading the same change Josh was.",
+   "betterRead": "A man who closes the distance face to face, chest forward, chin up, arms away from his body, is often squaring up, one of the rivals this chapter lists for a sudden change in distance, and the one that matters most for safety. When two men do it to each other, their ladders, in the terms of the chapter on anger, are climbing together. The better reading was to act early, before either man reached the top. Josh walked over, did not get between them face to face, and came in at an angle beside Kieran. He said, easily, \"Kieran, mate, our taxi's here,\" and put a hand on his shoulder, turning him gently towards the door. To the stranger, he said, \"Sorry, mate, we've got to go.\" The angle and the exit gave both men a way out without either backing down in front of the other. Outside, Kieran said the man had insulted his team and that he would have flattened him. Josh said he knew, and that was why they had left.\n\nJosh noted afterwards that the gap between the two men had told him what was coming before their voices did."
+  }
+ ],
+ "workedReading": {
+  "title": "The bench in the waiting room",
+  "scene": "Mark, forty, sits in a hospital relatives' room waiting for news of his mother, who has had a stroke. His father, Ken, seventy-two, sits at the far end of the same long bench, two metres away. They have never been close. Ken was a stern, distant father, and in the past ten years they have spoken mostly at Christmas. Ken sits upright, his hands gripped together between his knees, staring at the floor. His jaw is tight and he has not spoken for twenty minutes. Mark wants to move closer, and does not know whether he should.\n\nThe relatives' room is small, overheated and lit by fluorescent tubes. A television on the wall is showing the news with the sound off. The only other person in the room, a woman in her sixties, is crying quietly into a tissue by the door.\n\nMark's mother has always been the bridge between them. Whatever he and his father have needed to say to each other, she has said for them. Sitting in the relatives' room, Mark realises that if she does not recover, there will be nobody to say it.",
+  "steps": [
+   {
+    "label": "Notice the gap",
+    "text": "Mark notices the distance between them: the far end of the bench, two metres, with the whole bench empty in between. He notes that this is how he and his father have always sat: in cars, at dinner, at the funeral of Ken's brother. The gap is their baseline, not a new message.\n\nHe also notices that he chose his own seat when he came in, at the opposite end, without thinking. The gap is something they both keep, not something his father imposes.\n\nHe also notes that there is nobody else to sit with. The usual buffers, his mother, his wife, the television, are not here, and for once the two of them have only each other."
+   },
+   {
+    "label": "Read the rest of the body",
+    "text": "He looks at the rest of his father's body. The hands gripped between the knees, the upright, braced posture, the jaw and the stare at the floor fit a man holding himself together in fear, not a man who wants to be left alone in anger. His father is not turned away from him. He is simply not turned towards anyone.\n\nHe also notices his father's shoes, polished as always, and his tie, which he has put on to come to the hospital. Ken has dressed for an occasion. It is the closest he comes to showing how serious he thinks this is.\n\nHe also notes that his father's knee is bouncing slightly, which he has never seen before. Ken is a still man by nature. The movement is a pacifier, and it tells Mark how frightened he is."
+   },
+   {
+    "label": "Consider the situation",
+    "text": "This is one of the settings where the usual rules change. A shared crisis, like a shared crowd, can shrink the gap between people, as Novelli, Drury and Reicher found when people felt part of the same group. Mark and his father are, for once, on the same side of something. That makes closeness more possible than it has been for years.\n\nHe also remembers that the only time his father has ever hugged him was at his grandmother's funeral, briefly, at the graveside. Crises, for Ken, have been the only times the rules relaxed.\n\nHe also knows that his father served in the army in his twenties, and that he has always found hospitals difficult, though he has never said why."
+   },
+   {
+    "label": "Hold the rivals open",
+    "text": "His father might want company and not know how to ask. He might want to be left alone with his fear. He might find closeness from his son, after years of distance, unbearable at this moment. Mark notes that he cannot tell which, and that the safest offer is a small one that his father can easily decline.\n\nHe also considers his own feelings. He wants closeness partly for himself: he is frightened too. He notes that this is fine, and that it is one more reason to make the offer small enough for his father to refuse without either of them feeling rejected.\n\nHe also reminds himself that a refusal would not be a rejection of him. A man who has kept his distance for seventy years may simply not know how to do anything else in a moment like this."
+   },
+   {
+    "label": "Offer closeness side by side",
+    "text": "Mark does not go and sit opposite his father or crouch in front of him, which would put them face to face. He moves along the bench to the middle, about an arm's length from Ken, and sits as his father sits, looking at the floor. He says, quietly, \"Do you want a tea, Dad?\" It is an offer that has nothing to do with feelings, side by side, with a natural yes or no.\n\nHe chooses an arm's length deliberately. Close enough to be beside him, far enough not to crowd him. The middle of the bench is an offer, not a claim.\n\nHe also keeps his eyes on the same patch of floor as his father. Looking at the same thing, as the opening chapter of this part described, can bring two people together without either having to look at the other."
+   },
+   {
+    "label": "Let him set the distance",
+    "text": "Ken says no, and then, after a long pause, \"Thanks, son.\" He does not move away. A few minutes later, he shifts slightly along the bench, closing a little of the gap, and says that he keeps thinking about how she looked when the ambulance came. Mark says that it must have been terrifying. Ken nods, and keeps looking at the floor.\n\nHe also resists the urge to say more. The closing of the gap is doing the talking, and words about it might make his father self-conscious and send him back to the end of the bench.\n\nHe also notices that his father's hands have loosened slightly since he sat down nearer, and that his breathing has become a little slower. Small changes, but ones Mark has not seen in him before."
+   },
+   {
+    "label": "What happened",
+    "text": "When the doctor comes in to say that his mother is stable and will be moved to a ward, Ken's shoulders drop and he lets out a long breath. Then he puts his hand on Mark's shoulder and leaves it there for a moment, which he has not done since Mark was a boy. Mark does not say anything about it. He notes that the gap between them on the bench, two metres at the start and half a metre at the end, had said more about the evening than anything either of them had managed to say aloud.\n\nOn the way to the ward, they walk side by side down the corridor, and Ken says, without looking at him, that he is glad Mark came. Mark says he is glad too.\n\nMark also tells his wife about the bench that night, and she says that it is the first time in ten years she has heard him talk about his father without bitterness. He visits his parents more often after that, and sits beside his father in the garden."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading the gap as coldness",
+   "body": "Two men who stand an arm's length apart, angle themselves away from each other and leave an empty seat between them may be very close friends. In many cultures, that is simply how men stand. Uzzell and Horne's research found that gender role mattered more than biological sex for the distances people kept, which suggests that men's spacing is partly a performance of a certain kind of masculinity rather than a measure of feeling. Read the distance between two men against what is normal for those men, in that setting and that culture, not against what would be normal between women, or between other men somewhere else.\n\nIt also helps to remember that distance changes with age, setting and familiarity. Two men who stand apart in their twenties may sit together on a bench in their seventies; the norms soften for many men as they age.\n\nIt also helps to remember that men may be closer in private than in public. Two friends who keep an arm's length at the pub may sit side by side on the sofa at home, talking for hours. Public spacing is partly for the audience.\n\nIt also helps to watch how men use objects to manage the gap: a pint held between them, a phone, a table, a dog on a lead. These give two men something to look at and hold, and make distance feel natural rather than awkward."
+  },
+  {
+   "title": "Passing on the policing",
+   "body": "Much of men's careful spacing is maintained by jokes and remarks that make closeness between men seem suspect: \"Get a room\", \"Are you two married?\", \"Steady on\". Each one is usually meant as harmless banter, and each one teaches anyone listening, especially boys, that closeness between men will be watched and laughed at. They also make gay men targets, and they keep straight men from comfort they might want. You do not need to lecture anyone. Noticing the joke, not laughing, and saying something light, such as \"Let them enjoy it,\" is often enough to change what a group of boys learns.\n\nAdults sometimes police girls' and women's closeness too, but the pressure on boys and men is often sharper, and the consequences for boys who do not conform can be severe.\n\nParents can also pass it on without jokes, through what they praise and discourage. A father who tells his son that men shake hands, not hug, is setting the same rule in a kinder voice.\n\nSports clubs, schools and youth groups have a particular chance to change this. Coaches and teachers who treat affection between boys as normal, and who do not laugh at jokes that police it, can shape what a whole team learns."
+  },
+  {
+   "title": "Reading a change in distance as one thing",
+   "body": "When a man moves closer than usual, it is tempting to settle on one reading: he is being warm, or he is being aggressive. The rivals in this chapter matter. A friend who sits closer after a loss is often asking for company. A man who steps in at a bar may be friendly, drunk or squaring up. A colleague from another culture may simply be standing where his culture puts people. Read the change alongside the rest of the body, the torso, chest, chin, arms, face and voice, and alongside what has just happened, before you decide what it means.\n\nIt also helps to watch your own reaction. A flash of discomfort when a man moves closer is information about your norms, not necessarily about his intent, and it is worth noticing before you act on it.\n\nIt also helps to watch for the moment when a change in distance is followed by a change in voice. A man who moves closer and lowers his voice is usually confiding; a man who moves closer and raises it is usually not."
+  },
+  {
+   "title": "Imposing closeness",
+   "body": "Once men notice how much closeness they deny themselves, some decide to fix it by moving in: standing closer, sitting beside, putting an arm round a friend's shoulders. Done with care, this can be welcome. Done without reading the other person, it overrides his right to set his own distance, which the chapter on proxemics made the central rule. Some men are comfortable with more space; some have reasons, from past experiences, culture or sensory sensitivity, to prefer it. Offer closeness, side by side and lightly, and let the other person decide how much of it to take.\n\nIt also helps to remember that touch and closeness carry different weight for people with experience of abuse or violence. The chapter on trauma described how an unexpected approach can set off an alarm. Moving slowly and from the side respects that.\n\nIt also helps to watch what happens after you offer closeness. If the other person relaxes, stays or moves closer, the offer was welcome. If he stiffens, turns or edges away, step back without comment.\n\nAnd remember that closeness can be offered in other ways than distance: a message, a call, a shared task, an invitation. Not every offer of closeness needs to be physical."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why do men leave an empty seat between them?",
+   "a": "Partly because of the norms that this chapter describes. In many cultures, two men sitting right next to each other when there is space to spread out can feel too intimate, or can be read by others as a sign of a romantic relationship, and the fear of that reading, what Eric Anderson called homohysteria, shapes how men arrange themselves. Partly, too, because people in general tend to spread out when they can, to protect their own space. The empty seat is rarely about dislike. Two close friends at the cinema may leave it, and then share popcorn across it all evening.\n\nIt also helps to notice when the seat is filled. Two men who sit right next to each other at the cinema, with space available, are telling you something about their relationship, or about how they feel that night.\n\nIt also helps to know that women sometimes leave a gap too, especially with strangers, and that men sometimes do not. The empty seat is a tendency, not a law."
+  },
+  {
+   "q": "Are younger men really more comfortable with closeness?",
+   "a": "Some research suggests that many are. Anderson and McCormack described boys and young men in British schools, universities and sports teams hugging, cuddling and expressing affection for each other in ways that, they argued, would have been unusual a generation earlier. But their research is mostly qualitative and based on particular groups, and some researchers have questioned how widely the change applies, especially outside middle-class and white settings. The safest reading is that norms are shifting in some places and among some young men, and that you should not assume any individual, young or old, follows the pattern.\n\nIt also helps to notice your own generation's rules. A father who was taught to keep his distance from other men may find his son's hugs strange, and it is worth asking whether the strangeness is about the hugs or about what he was taught.\n\nIt also helps to watch how different generations within one family handle closeness. Grandfathers, fathers and sons often follow different rules, and noticing the differences can make it easier to talk about them."
+  },
+  {
+   "q": "Is it wrong to want more space than other people?",
+   "a": "No. People differ in how much space they need, and the right to set your own distance is the central rule of the chapter on proxemics. Some men simply prefer more space; some have sensory sensitivities, past experiences or cultural habits that make closeness uncomfortable. The point of this chapter is not that men should stand closer, but that they should understand why they stand where they do, and notice when the gap is protecting them from comfort they might actually want. If you prefer space, it can help to say so kindly, as Steve did, so that others do not read it as coldness.\n\nIt also helps to know that space preferences can be temporary. Someone who is tired, unwell, overwhelmed or upset may want more room than usual, and less on a good day.\n\nIt may also help to explain your preference before it becomes a problem. A new colleague or a new friend who knows you like space is much less likely to take your distance personally.\n\nIt also helps to know that space needs can be different at home and at work, and with friends and strangers. A man who likes a lot of room at the office may be very comfortable close to his partner or his children."
+  },
+  {
+   "q": "Why can men stand so close together at football?",
+   "a": "Because shared identity changes the rules. Novelli, Drury and Reicher found that people placed their chairs closer to someone they believed was a member of their own group, and that crowds people feel part of are experienced very differently from crowds of strangers. On a terrace, singing, celebrating a goal, men are part of something larger, and the usual fear of what closeness might mean recedes. The same men who keep a careful gap at a bus stop will hug strangers when their team scores. The setting gives permission that ordinary life does not.\n\nThe same effect can be seen at concerts, protests, festivals and religious gatherings, where people who feel part of a group often tolerate, and even enjoy, a closeness they would avoid among strangers.\n\nShared grief can do the same. At funerals, men who would never touch each other otherwise often stand shoulder to shoulder, put an arm round each other, or hold each other up."
+  },
+  {
+   "q": "How should I respond if a friend moves closer than usual?",
+   "a": "Look at the rest of the picture first. If he is quiet, low, or has just had bad news, the move is probably a request for company, and the kindest response is to stay where you are, perhaps ask how he is, and let the closeness be. If he has been drinking, it may mean little. If his chest is forward, his chin up and his voice rising, it may be a challenge, and the chapter on anger describes what to do. If you are not sure, a simple, warm question, \"You all right, mate?\", is almost always a safe first step, and it lets him tell you what the move meant.\n\nIt also helps to let the closeness be ordinary. Commenting on it, such as \"You're very cuddly tonight,\" can make a man self-conscious and send him back to his usual distance.\n\nIt also helps to notice whether he moves away again. A friend who moves close for a few minutes and then returns to his usual distance may have said what he needed to, and the return is not a rejection.\n\nIt also helps to remember that your own reaction may be visible. If you shift away when a friend moves closer, he will probably see it, and may not try again for a long time."
+  },
+  {
+   "q": "Why is the urinal study taught as a warning?",
+   "a": "Because of how it was done. In 1976, Dennis Middlemist and colleagues observed men in a university lavatory through a periscope in a cubicle, measuring how long it took them to begin urinating with another man at different distances. The men did not consent and were not told afterwards, and the study was criticised at the time as an invasion of privacy and dignity. It found that closeness delayed urination, which the authors took as evidence that crowding raises physical arousal. This book keeps both lessons: closeness between men has real physical effects, and curiosity about other people's bodies has limits that no research question overrides.\n\nToday, research of this kind would have to pass an ethics review, and covert observation of people in toilets would almost certainly not be allowed.\n\nThe lesson for readers is the same as in the chapter on the ethics of reading people: watching others is never a licence to intrude on them, however interesting the question."
   }
  ],
  "watch": [
