@@ -73,6 +73,20 @@
    "doCaption": "Greeting each person in turn",
    "dontCaption": "Skipping one man in the circle",
    "annotation": "In a group, everyone notices who was greeted and how. If you cannot greet each person, greet the whole circle at once."
+  },
+  {
+   "doPoseId": "p_greet_folded_hands",
+   "dontPoseId": "p_pair_handshake",
+   "doCaption": "Returning the greeting he offered",
+   "dontCaption": "Pushing a handshake on a man who greets with palms together",
+   "annotation": "Greetings change across cultures and faiths. Match the greeting offered, and the respect is understood without a word."
+  },
+  {
+   "doPoseId": "p_greet_acknowledge",
+   "dontPoseId": "p_pair_hug",
+   "doCaption": "A warm hello, leaving the level to them",
+   "dontCaption": "A boss hugging a junior who cannot refuse",
+   "annotation": "Touch flows down hierarchies. If you are senior, offer the lighter greeting, and let the other person choose whether to come closer."
   }
  ],
  "caseStudy": "Danny, thirty-four, starts a new job as a site manager on a large building project. On his first morning he notices that every greeting on the site follows rules he does not yet know. The foreman, Pete, gives him an upward nod from across the yard and nothing more. The young labourers fist-bump each other and him. Tomasz, the senior carpenter, comes across, stops at a precise distance and holds out his hand, low and to the side, every morning without fail.\n\nOn the second day Danny, keen to fit in, offers Tomasz a fist. Tomasz looks at it, keeps his hand where it is, and Danny ends up bumping his knuckles against an open palm. Both laugh, but Danny notices that Tomasz is a little cooler for the rest of the day. The next morning he watches Tomasz's hand as he approaches, and shakes it properly. Tomasz nods, satisfied.\n\nKwame, the electrician, shakes hands and finishes with a snap of the fingers that he grew up with in Ghana. Danny gets it wrong twice. On the third attempt he asks Kwame to show him slowly, and Kwame, delighted, teaches him in front of the crew.\n\nDanny also notices what he must not copy. Pete, the foreman, slaps the apprentices on the back as he greets them, and one of them, a quiet nineteen-year-old, stiffens every time. Danny, who has authority over all of them, keeps to handshakes and nods with the apprentices.\n\nBy the end of the month Danny greets six men six different ways each morning, without thinking. When Pete's father dies and he comes back to work after the funeral, Pete walks straight past the nod and shakes Danny's hand, holding it a moment longer than usual.",
@@ -92,6 +106,10 @@
     "Mark any greetings that do not match, where one of you offers more than the other.",
     "Note any greetings that have changed over the years, and why.",
     "Write one sentence about what the list says about your relationships."
+   ],
+   "variations": [
+    "Do the inventory for women you see regularly, and compare the greetings with those you use with men.",
+    "Ask one man on your list how he would describe your greeting, and whether he would like it to change."
    ]
   },
   {
@@ -102,6 +120,10 @@
     "Note whether you were right.",
     "Note the cues you used: hand height, fist or open hand, arms, pace.",
     "At the end of the week, count your accuracy and the cues that worked best."
+   ],
+   "variations": [
+    "Do the exercise at a busy event, such as a wedding or a match, where many greetings happen quickly.",
+    "Watch a sports broadcast before a match, and predict each greeting between players from their approach."
    ]
   },
   {
@@ -113,6 +135,10 @@
     "Next time you meet, offer the next rung lightly, leaving room for him to stay where he is.",
     "Notice how he responds, and accept it either way.",
     "Write down what happened and how it felt."
+   ],
+   "variations": [
+    "Choose a friend you see less often than you would like, and offer one rung up at your next meeting.",
+    "Notice a greeting that someone else offered you one rung up, and how you responded."
    ]
   },
   {
@@ -123,6 +149,10 @@
     "Practise the recovery line, such as “Let's try that again,” said with a laugh.",
     "Practise the reverse, so you can recover from either side.",
     "Notice how quickly the awkwardness disappears when it is named."
+   ],
+   "variations": [
+    "Practise recovering a cheek-kiss collision, which is common in many cultures, as well as a handshake and fist collision.",
+    "Practise the recovery line in a new setting, such as a work event, so that it comes naturally under mild pressure."
    ]
   }
  ],
@@ -204,6 +234,45 @@
    "explain": "Goffman noted that greetings tend to grow warmer the longer people have been apart. Friends who meet daily may barely greet, while the same friends may embrace after a year away.",
    "isMisconceptionTest": false,
    "isScenario": false
+  },
+  {
+   "q": "In Kendon and Ferber's description, what usually comes soon after sighting, before people get close?",
+   "options": [
+    "A distance salutation, such as a wave, a nod or a call of hello",
+    "A firm handshake given from several metres away across the room",
+    "A long, unbroken stare held throughout the whole of the approach",
+    "Nothing at all, since greetings only begin when people are close"
+   ],
+   "answer": 0,
+   "explain": "After sighting and the decision to approach, people usually make a distance salutation, such as a wave, nod or smile, often returned in kind. Looking away during the approach that follows is normal.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Your brother has always greeted you with a hug. Since an argument about your father's will, he nods at you from across the room and stays away. What fits this chapter best?",
+   "options": [
+    "Nod back and keep your distance, since that is clearly what he wants",
+    "Ignore him for the rest of the day so he knows how hurtful the nod was",
+    "Treat the nod as a sign of the history, and find a private moment to talk",
+    "Walk over and hug him anyway, in front of everyone, to make the point"
+   ],
+   "answer": 2,
+   "explain": "A downgraded greeting is often the first visible sign that a relationship has shifted. Answering it in kind keeps the distance; a private word about the history behind it offers a way back.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a crushing handshake shows confidence and is always respected. What does this chapter say?",
+   "options": [
+    "It is right, since the strongest grip always makes the best impression",
+    "A firm, full grip helps first impressions in some research; crushing does not",
+    "It is right in business but wrong in social settings, where grip does not matter",
+    "It is wrong, since any physical contact in a greeting makes a bad impression"
+   ],
+   "answer": 1,
+   "explain": "Chaplin and colleagues linked firmer, fuller handshakes to more positive first impressions. But a painful grip reads as aggressive or insecure, and norms vary across cultures.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +301,110 @@
    "work": "Five on the Black Hand Side: Origins and Evolutions of the Dap",
    "author": "Smithsonian Center for Folklife and Cultural Heritage",
    "note": "Folklife magazine, 2014. A short history of the dap, from soldiers in Vietnam to everyday greeting."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The hug at the reunion",
+   "scene": "Gary, fifty, is at his school's thirty-year reunion in a hotel function room. Across the room he spots Neil, who was his best friend from\n  the age of eleven until they fell out over a girl at nineteen and stopped speaking. Gary has thought about Neil many times since. He has had two\n  pints, he is feeling sentimental, and he strides across the room with his arms already opening.\n\n  Neil sees him coming. He smiles, a little stiffly, and puts out his right hand, low and to the side, thumb up. His feet stop moving. Gary keeps\n  coming, ignores the hand, and wraps Neil in a full hug, slapping his back twice. Neil's arms stay mostly at his sides; one hand pats Gary's\n  shoulder once. When Gary lets go, Neil steps back half a pace, says \"Good to see you, Gary,\" and, after a minute of small talk, says he must go\n  and find someone.\n\n  Gary spends the rest of the evening feeling rejected, and tells another old friend that Neil is still holding a grudge after thirty years.\n\nGary had imagined this moment on the drive to the hotel: the two of them laughing, the years falling away. He had not imagined Neil's hand coming out first, and when it did, he simply did not see it.\n\nNeil had come to the reunion half hoping to see Gary and half dreading it. He had decided in the car that a handshake would be the right way to start, and that if it went well, they might have a drink later.",
+   "misread": "Gary read the moment through his own feelings: warmth, nostalgia and two pints. He did not read the offer coming towards him, a handshake and a stopped approach, and so he answered a question Neil had not asked.\n\nAnd because he had acted on his own feelings rather than Neil's offer, he then read Neil's withdrawal as a grudge, when it was a reaction to the hug itself.\n\nHe also read his own sentimental warmth as shared, because the reunion felt to him like a happy occasion. For Neil, it was a cautious one.",
+   "betterRead": "A greeting is negotiated in motion, and the incoming offer tells you most of what you need to know. Neil's hand forward, low and to the side, and his feet stopping were a clear offer of a handshake, the right rung for two men who had not spoken in thirty years. Gary's hug claimed a closeness that the history did not yet support, and Neil's stiff arms and half-step back were the body withdrawing from a claim it had not agreed to. That was not necessarily a grudge. It may simply have been too much, too soon. The better reading was to match the offer: take the handshake, warmly, perhaps with the left hand briefly on Neil's arm, and say how good it was to see him. A greeting that starts at the right rung leaves room to climb. Later that evening, Gary went back, shook Neil's hand, apologised for the ambush and asked if they could have a drink sometime. Neil said he would like that. They met a month later, and at the end of the evening it was Neil who opened his arms."
+  },
+  {
+   "title": "The manager who hugged everyone",
+   "scene": "Steve, forty-five, joins a marketing agency as head of department. He is warm and energetic, and he believes in a close team. On his\n  first morning he greets each of his twelve staff with a hug: a big, friendly embrace, sometimes with a slap on the back. He hugs them again at\n  the end of every week, and on birthdays.\n\n  Most of the team go along with it. Some seem to enjoy it. But Sana, twenty-four, a junior designer, starts arriving at the office late enough to\n  miss the Monday greetings, and Josh, twenty-two, the newest graduate, stiffens visibly each time, his arms barely moving. Neither says anything.\n  Sana mentions it to a colleague, who says that Steve is just a hugger and means well, and that complaining would make her look difficult.\n\n  Steve thinks the team is warming up nicely. He has noticed that some people are a bit shy, and plans to help them come out of their shells.\n\nSteve's previous company was a small start-up where everyone hugged, and he loved the culture there. He has brought it with him as a gift, without asking whether this team wants it.\n\nSteve has also started greeting clients with hugs when they visit the office. Two of them have mentioned it to the account director, who has not yet decided whether to say anything.",
+   "misread": "Steve read the team's going along with his hugs as acceptance, and Sana's and Josh's stiffness as shyness to be overcome. He did not consider that people junior to him might feel they could not refuse.\n\nThe colleague's advice, that complaining would make Sana look difficult, was itself a sign of how hard it is for junior staff to say no to a senior person's greeting.\n\nAnd because the hugs were meant kindly, it did not occur to Steve that kindness can also be a pressure, when it comes from someone who decides your pay and your prospects.",
+   "betterRead": "The chapter on touch described Nancy Henley's observation that touch tends to flow down hierarchies, and greetings follow the same rule. A manager's hug is a greeting that junior staff cannot easily decline, which means that their going along with it says little about whether they want it. Sana's arriving late to avoid it and Josh's stiff arms were signs of discomfort being managed rather than voiced. The better approach for someone in Steve's position is to let junior people set the level of the greeting. A warm hello, a nod or a handshake, offered in a way that is easy to match, leaves them free to offer more if they want to. When a colleague who knew Sana well quietly mentioned the problem to Steve, he was mortified. He stopped hugging, switched to a warm hello and a handshake if one was offered, and told the team he had got it wrong. Sana started arriving on time again. A few months later, two of the team hugged him at the Christmas party, on their own initiative."
+  },
+  {
+   "title": "The nod where the hug used to be",
+   "scene": "Rob and his brother Stuart, both in their forties, have always greeted each other with a hug and a slap on the back, since they were\n  teenagers. Six months ago their father died, and there has been a painful disagreement over the will. They have not discussed it directly;\n  their wives have done most of the talking.\n\n  At their mother's seventieth birthday lunch, Stuart arrives late. He sees Rob across the room and gives him a short, upward nod. He does not walk\n  over. When they end up next to each other at the buffet, Stuart says \"All right?\" and keeps his hands on his plate.\n\n  Rob feels it like a blow. Their mother, who has noticed nothing, asks why the two of them are not sitting together.\n\nRob's wife has noticed it too. She says quietly, as they help themselves to salad, that Stuart has not looked at Rob once since he arrived. Rob says he knows.\n\nRob has also noticed that Stuart arrived with a present for their mother that was clearly from both him and his wife, and that Stuart's wife, Claire, greeted Rob with her usual hug and an apologetic look. Whatever Stuart is feeling, Claire does not share it, or does not show it.\n\nLater, when they all line up for a family photograph, Stuart stands at the far end, beside his mother, rather than next to Rob as he always has. Their mother tells them to squeeze together, and Stuart moves half a step and no further.",
+   "misread": "Rob read the nod correctly as a downgrade, but his first instinct was to answer it with one of his own, and to spend the lunch on the other side of the room. A greeting withheld can easily become a greeting returned in kind.\n\nTheir mother's not noticing was also a reminder that greetings between adult brothers are often invisible to everyone except the brothers themselves.\n\nHe also nearly made the nod into a story about the whole relationship, when it was a story about one painful thing that had not been talked about.",
+   "betterRead": "Greetings carry history, and a change in a familiar greeting is often the first visible sign that something in the relationship has shifted. Stuart's nod in place of thirty years of hugs, and his hands staying on his plate at the buffet, were a message about the will that neither brother had yet put into words. Rob's reading was accurate. What mattered was what he did with it. Matching the downgrade would have kept the distance. The better response was to treat the greeting as information and find a private moment to respond to the history behind it. After lunch, Rob found Stuart in the garden and said, \"We used to hug, and today you nodded. I don't want the will to cost us that. Can we talk about it properly, just the two of us?\" Stuart was silent, then said he had felt pushed aside. They met for a drink the following week, without their wives, and talked for three hours. At Christmas, Stuart walked across the room and hugged him."
+  },
+  {
+   "title": "The handshake with a snap",
+   "scene": "Kofi, twenty-six, moves from Accra to Glasgow to start a graduate job at an engineering firm. On his first day, his line manager, Iain,\n  holds out his hand. Kofi shakes it and, at the end, slides his middle finger against Iain's to make a quick snapping sound, as he would with a\n  friend at home. Iain looks startled and pulls his hand back. Kofi laughs, then realises Iain is not laughing, and apologises.\n\n  Over the next week, Kofi notices that his greetings keep misfiring. He offers the snap handshake to a colleague, who looks confused. He greets an\n  older woman in accounts with a slight bow and a two-handed handshake, as he would greet an elder at home, and she seems taken aback. He starts to\n  feel that everything he does with his hands is wrong, and begins to greet people with only a nod.\n\n  His colleague Fiona, who has worked in West Africa, notices that the warmest person in the office has started to seem distant.\n\nAt home, Kofi's greetings were one of the things people liked most about him. His uncle used to say that you could tell how Kofi felt about someone by how he shook their hand.\n\nIn the second week, Kofi stops greeting the older woman in accounts at all, in case he gets it wrong again, and she, in turn, wonders whether she offended him.",
+   "misread": "Iain read the snap as something odd or inappropriate, and Kofi, in turn, read the misfires as proof that his own greetings were wrong. Each side read the other through their own repertoire.\n\nAnd because Iain pulled his hand back, Kofi read the startled reaction as disapproval of him, when it was only surprise at something unfamiliar.\n\nKofi's retreat into nods was also a misreading, of himself: he concluded that his way of greeting was wrong, when it was only unfamiliar. The longer he hid it, the less of himself his colleagues saw.\n\nIain's own surprise was understandable, and his pulling back was a reflex, not a judgment. Reflexes, though, are read as judgments by the person on the other end.",
+   "betterRead": "The male greeting repertoire changes as soon as you cross a border. The finger snap at the end of a handshake is common between friends in Ghana, and a two-handed handshake with a slight bow is a mark of respect for elders in many West African cultures. Neither is odd; both are greetings in a different dialect. Kofi's retreat into nods was the cost of the misreadings: a warm man becoming distant because his warmth kept landing wrongly. The better approach, which Fiona helped with, was for both sides to learn a little of the other's dialect. She told Kofi what Glasgow handshakes usually look like, and told Iain, when he mentioned the snap, what it meant in Ghana. Iain, to his credit, asked Kofi to teach him. A month later the two of them had a handshake that ended with a snap, which Iain was very proud of, and Kofi had stopped nodding at everyone.\n\nFiona also told the office manager, who added a short note about greetings to the welcome pack for new international graduates, so that the next person would not have to work it out alone."
+  }
+ ],
+ "workedReading": {
+  "title": "Greeting a circle at a wedding",
+  "scene": "Marcus, thirty-eight, arrives late at the evening reception of his cousin's wedding. Near the bar stands a circle of five men he knows to different degrees: his father-in-law, Clive, sixty-eight, whom he respects and finds slightly formal; his best friend, Jay; his cousin Tyler, twenty-four, the groom's brother; a man he has never met; and Dean, a former colleague he left a job because of, with whom things ended badly. As Marcus approaches, Jay sees him and his face lights up.\n\nMarcus has been dreading seeing Dean. He knew Dean would be there, because Dean is a friend of the groom, and he has decided in advance that tonight is not the night to deal with it.\n\nThe reception is loud and crowded, and the circle is near the bar, where people keep pushing past. Whatever greetings Marcus makes, he will have to make them quickly, in a small space, with an audience.",
+  "steps": [
+   {
+    "label": "Make the distance salutation",
+    "text": "From across the room, Marcus raises a hand and smiles towards the group as a whole, and gets nods and smiles back. He lets his gaze drop slightly as he walks the last few metres, which Kendon and Ferber noted is a normal part of an approach, so that he does not arrive staring at anyone.\n\nHe also slows his pace slightly as he gets close, which gives everyone a moment to see him coming and prepare their own greeting.\n\nHe also notes who sees him first. Jay's face lighting up tells him that the circle will turn towards him, and that he has a few seconds to read each man's offer before he arrives."
+   },
+   {
+    "label": "Read each offer",
+    "text": "As he arrives, he reads the hands. Jay's arms are already opening: a hug. Tyler's fist is coming up at chest height: a bump. Clive's hand comes forward, low and to the side: a handshake. The stranger's hands stay by his sides, with a polite smile: a nod and a name. Dean's hands stay in his pockets, and his eyes move to his drink: no offer at all.\n\nHe also notices that the offers fit what he knows of each relationship, which reassures him. If Jay had offered a handshake, or Clive a hug, he would have wondered what had changed.\n\nHe also notices Clive's slight straightening as he approaches, which is how Clive always prepares to shake hands. It is a small, reliable baseline, and it makes the reading easy."
+   },
+   {
+    "label": "Mind the order and the rank",
+    "text": "Marcus greets Clive first, with a firm, unhurried handshake and \"Good to see you, Clive,\" because he is the senior man in the circle and his father-in-law. Then Jay, who gets the full hug he offered, and Tyler, the fist bump. The order is not a rule anyone wrote down, but it shows respect for the setting and for Clive's place in it.\n\nHe also stands at a slight angle to the circle as he greets each man, rather than pushing into the middle of it, so that the group stays open for the others.\n\nHe also gives Clive a moment of eye contact longer than the others, which is part of how respect is shown in a greeting without any extra words."
+   },
+   {
+    "label": "Include the stranger",
+    "text": "He turns to the man he does not know, smiles, and says, \"Hi, I'm Marcus, the groom's cousin.\" The man says his name is Ravi and offers his hand at the last moment, which Marcus takes. Leaving a stranger out of a circle greeting is one of the easiest ways to make someone feel invisible, and one of the easiest to avoid.\n\nHe also remembers Ravi's name, and uses it later in the evening, which takes almost no effort and makes a stranger feel like a guest rather than a bystander.\n\nHe also keeps the introduction short and gives Ravi something to hold onto: who he is and how he fits in. A stranger in a circle of people who know each other often feels exposed, and a name and a connection help.\n\nHe also notes that Ravi's late hand came only after Marcus had introduced himself. Some people wait to see what a stranger offers before committing; matching their caution is part of reading them."
+   },
+   {
+    "label": "Handle the hard one",
+    "text": "With Dean, Marcus reads the hands in pockets and the eyes on the drink as a man who does not want a greeting beyond the minimum. He matches it: a short nod and \"Dean,\" said evenly. He does not offer a hand that would be refused, or make a show of ignoring him. The history is there, and a wedding is not the place for it.\n\nHe also keeps his voice and face neutral rather than cold. A neutral greeting respects the history without escalating it, and leaves the door open for a better conversation another time.\n\nHe also keeps his body angled so that he is not facing Dean directly, and returns his attention to the others quickly. A brief, even acknowledgement and then moving on is often the kindest way through an awkward greeting.\n\nHe also makes a mental note to talk to Jay later about Dean, away from the circle, so that the history has somewhere to go that is not the middle of a wedding."
+   },
+   {
+    "label": "Recover the collision",
+    "text": "A few minutes later, Tyler goes to introduce Marcus to his girlfriend, and Marcus offers a hand just as she leans in for a cheek kiss. They bump awkwardly. Marcus laughs and says, \"Let's try that again,\" and they do, with the kiss, and everyone laughs. Naming the collision lightly is the quickest way out of it.\n\nHe also notes that the girlfriend leaned in first, which told him what she expected. He simply had not read it fast enough, and the laugh repaired it.\n\nHe also lets the girlfriend lead the second attempt, so that the greeting happens on her terms, which is how most collisions are best repaired."
+   },
+   {
+    "label": "Mark the parting",
+    "text": "When Marcus leaves the circle to find his aunt, he does it properly: a hand on Jay's shoulder, a nod to Tyler, \"See you later\" to Ravi and Clive, and a brief nod to Dean. Partings mark relationships as much as greetings do, and leaving without one can read as a slight. Later, Clive tells Marcus's wife that Marcus has lovely manners, which Marcus finds slightly mortifying and secretly pleased about.\n\nHe also notes that his nod to Dean at parting was slightly warmer than the one at arrival. Dean nodded back, a little warmer too, which was more than Marcus had expected.\n\nHe also says a proper goodbye to Clive at the end of the night, with a handshake and a thank-you for the speech Clive gave. The parting is warmer than the greeting, which is how a good evening usually shows itself."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Imposing your own greeting",
+   "body": "The commonest greeting failure is to decide in advance what you will do and do it regardless of what the other person is offering: a fist to a man holding out his hand, a hug to a man who has stopped and extended his arm, a handshake to someone who greets with palms together. Each of these overrides the other person's offer, and the collision that follows is awkward at best and, at worst, a small act of disrespect. Watch the incoming hand, the arms and the pace of the approach, and match what is offered. If you want to offer more, offer it lightly, one rung up, and be ready to step back down if it is not returned.\n\nIt also helps to remember that people with injuries, arthritis or sensory sensitivities may avoid certain greetings for reasons that have nothing to do with you. A man who offers a fist or a nod instead of a handshake may be protecting a sore hand.\n\nIt also helps to notice your own habitual greeting and how it lands. A man who fist-bumps everyone may find that older men, women and people from other cultures experience it as overfamiliar; a man who shakes hands with everyone may seem stiff to younger friends.\n\nWhen you are unsure what is coming, a slight pause with your hand ready, rather than committing early to a fist or a hug, gives the other person a moment to show their offer. A greeting that waits half a second rarely collides."
+  },
+  {
+   "title": "Ignoring power",
+   "body": "Greetings follow hierarchies, and the person with more power has more freedom to set the level. A manager who hugs his staff, a coach who wraps an arm round his players, an older relative who insists on kisses: each may mean warmth, and each is using a freedom that the other person cannot easily refuse. People lower in a hierarchy often go along with greetings they would rather avoid, which makes their compliance a poor guide to their wishes. If you are senior, offer the lighter rung, a warm hello, a nod or a handshake, and let the other person decide whether to move closer.\n\nThe same applies in families. An uncle who insists on hugging nieces and nephews who stiffen is using an elder's privilege. Children and young people should be allowed to choose a wave or a high five instead.\n\nIf you are junior and a greeting from someone senior makes you uncomfortable, it is reasonable to step slightly back and offer a handshake instead, or to mention it to someone you trust. You should not have to arrive late to avoid it.\n\nIt also helps to watch for the signs of a greeting being endured rather than enjoyed: arms that stay down during a hug, a body that turns slightly sideways, a quick step back afterwards. Those signs are worth taking seriously, especially from people junior to you."
+  },
+  {
+   "title": "Reading a normal phase as a message",
+   "body": "Many people misread the ordinary phases of a greeting. Kendon and Ferber found that people often look away or down during the approach, before the close salutation. That is a normal part of the sequence, not a sign of shyness, guilt or dislike. The same goes for the small dip of the head made by the person who travels further, which is a courtesy rather than submission, and for the brief pause before a handshake while two people judge the distance. Read the greeting as a whole, and against the person's baseline, before you decide that any single part of it means something.\n\nIt also helps to remember that some people avoid eye contact during greetings for reasons of culture, neurodivergence or shyness. A greeting with little eye contact can still be warm.\n\nIt also helps to remember that a greeting is short and noisy, and that most of the information in it is uncertain. A slightly weak handshake on one occasion means very little; a change that persists over weeks means more.\n\nIt also helps to separate the greeting from the person's mood that day. A brief, distracted handshake from a friend who has just had bad news says nothing about the friendship."
+  },
+  {
+   "title": "Skipping people and partings",
+   "body": "In a group, it is easy to greet the people you know best and overlook the rest: the quiet colleague, the partner of a friend, the stranger in the circle. Each one notices. The same applies to leaving. A man who slips away from a group without a word, or says goodbye to his friend and not to the people his friend was with, can leave behind an impression of coldness he did not intend. Greet each person in a small group, even briefly, and mark your exit. These are small courtesies with large effects.\n\nAt work, it helps to greet the cleaner, the receptionist and the security guard as you would greet a colleague. How someone greets people with less status says a great deal about them, and people notice.\n\nIt also helps to greet people who are often overlooked in groups: the new partner, the quiet child, the person in a wheelchair at a lower height, who is often greeted last or not at all.\n\nAnd when someone arrives late to a group you are in, a quick greeting, even just eye contact and a nod, tells them they have been seen. Being ignored on arrival is one of the most common small hurts in group life."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Why do people look away as they walk towards you to say hello?",
+   "a": "It is a normal part of the greeting sequence. Kendon and Ferber found that after the distance salutation, a wave, nod or smile, people often look away or down during the approach, then look up again for the close greeting. Holding eye contact for the whole of a long approach would feel intense, even confrontational, and looking away gives both people a moment of privacy while they close the distance. It is not a sign that the person is shy, guilty or unfriendly. If someone looks down as they approach and then meets your eyes warmly at the handshake, the greeting has gone exactly as most greetings do.\n\nIt also helps to know that very long approaches, such as walking the length of a hall towards someone, are often awkward for everyone. A distance salutation early on, followed by looking away until you are close, is how most people manage them.\n\nIt also helps to know where to look when you are approaching. Glancing at the person, then at the floor or the space beside them, then back as you arrive, is the natural rhythm, and it avoids the stare that makes long approaches uncomfortable.\n\nIt also helps to know that some people find greetings themselves stressful, especially autistic people and people with social anxiety. A predictable, simple greeting, the same each time, can make it easier for them."
+  },
+  {
+   "q": "Does a firm handshake really matter?",
+   "a": "It can matter for first impressions. William Chaplin and colleagues found that people with firmer, fuller handshakes, with good eye contact, tended to make more positive first impressions, and that handshake quality was linked to perceived extraversion. But firm does not mean crushing. A grip that hurts reads as aggressive or insecure, and many people with arthritis or hand injuries find strong handshakes painful. Handshake norms also vary across cultures; in some, a softer, longer handshake is polite. Aim for a full, firm, brief grip, matched to the other person's, rather than a test of strength.\n\nIt also helps to match the other person's grip rather than impose your own. A firm grip offered to someone who gives a gentle one can feel like a contest; meeting them where they are feels like respect.\n\nIt may also help to dry your hands before an important handshake, if you know they get sweaty. It is a small, practical step that removes one source of worry.\n\nAnd if someone offers a limp or brief handshake, do not read too much into it. Some people simply shake hands that way, and in some cultures a softer grip is the polite one."
+  },
+  {
+   "q": "What should I do when a greeting goes wrong?",
+   "a": "Name it lightly and try again. Collisions are common: a hand meeting a fist, a handshake meeting a hug, two people leaning the same way for a cheek kiss. Most people feel a jolt of embarrassment, and the quickest way through it is to laugh and say something like \"Let's try that again\" or \"I never know which way to go.\" Then follow the other person's lead. Named with good humour, a collision becomes a small shared joke rather than an awkward moment, and it is usually forgotten within a minute. Pretending it did not happen tends to make it linger.\n\nIt also helps to remember that the other person feels the jolt too. Taking the lead in naming it, kindly, is a small generosity that most people appreciate.\n\nIt also helps to have a default for uncertain moments. Many people find that a smile and a slightly raised hand, ready to become a handshake if one is offered, covers most situations gracefully."
+  },
+  {
+   "q": "Should I start hugging my male friends?",
+   "a": "If you would like to, and they seem open to it, you can offer, one rung at a time. Many men find hugs with close friends easier than they expect, especially at moments that matter: a wedding, a funeral, a long-awaited reunion. The chapter on the bro hug describes how men often make hugs feel safe, with back slaps, a side angle or a brief duration. Read your friend's offer as he approaches. If his arms open, match them. If his hand comes forward, take it, and perhaps add your other hand on his arm. Accept either response. A friendship does not need a hug to be close, and a hug offered and declined is not a rejection of the friendship.\n\nIt may also help to notice moments when a hug would be natural, such as a goodbye before a long absence, a congratulation or a condolence. Those are often the easiest moments to move up a rung for the first time.\n\nIt also helps to notice how other men in your circle greet each other. If your friends hug each other, a hug is probably welcome; if they never do, a strong handshake with a hand on the arm may be the warmest rung that feels natural."
+  },
+  {
+   "q": "Have greetings changed since the pandemic?",
+   "a": "In many places, yes, at least for a while. During the COVID-19 pandemic, handshakes were discouraged and many people switched to nods, waves, elbow bumps or hands on hearts. Some have kept those habits, and some people remain uncomfortable with close contact. The chapter on the handshake in a post-handshake world takes this up. For a reader, the lesson is the same as always: watch the incoming offer, and if you are not sure, offer the lighter greeting and let the other person decide. Asking, \"Handshake, or are we still nodding?\" is perfectly acceptable.\n\nIt may also help to carry a lighter default for strangers in settings such as hospitals or care homes, where people may be unwell or anxious about infection.\n\nIt also helps to remember that people who are immunocompromised, elderly or caring for someone vulnerable may still prefer to avoid close contact. A greeting that respects that is a kindness, not an inconvenience.\n\nSome workplaces settled on a new default during the pandemic, such as a nod or a wave, and kept it. Following the local custom is usually the safest choice when you are new."
+  },
+  {
+   "q": "Why does how we say goodbye matter?",
+   "a": "Because partings, like greetings, mark relationships. Goffman observed that greetings and farewells bracket encounters, acknowledging the relationship as people come together and part, and that a warmer farewell often reflects a longer separation ahead. Leaving without a goodbye can read as coldness, anger or indifference. A farewell that is warmer than the greeting can show that the time together went well. In families and close friendships, how people part, especially before a long absence, is often remembered. Mark your partings, even briefly, with the people who matter to you.\n\nIt also helps to notice the partings in your own life that were never properly made: friends who moved away without a goodbye, colleagues who left on a Friday without a word. Sometimes a message, even late, can mark what the parting did not.\n\nIt also helps to notice how children learn goodbyes. A father who always says goodbye properly, even when he is leaving for a few hours, teaches his children that partings matter.\n\nIt also helps to make farewells honest. \"See you soon\" from someone who means it, said with a hand on the shoulder, lands very differently from the same words thrown over a shoulder on the way out.\n\nIt also helps to say goodbye to the person who is staying as well as the person who is leaving. At the end of a visit, the host is often the one who is forgotten."
   }
  ],
  "watch": [
