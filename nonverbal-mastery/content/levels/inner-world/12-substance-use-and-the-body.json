@@ -80,6 +80,20 @@
    "doCaption": "A calm voice and a simple message.",
    "dontCaption": "A raised voice to a drunk man.",
    "annotation": "Alcohol narrows attention to the most obvious cue. Make yours calm."
+  },
+  {
+   "doPoseId": "p_pair_walk_together",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Raising it on a walk, sober and side by side",
+   "dontCaption": "Texting him that he drinks too much",
+   "annotation": "A message about drinking invites defence. A private, sober conversation, with curiosity rather than labels, lets him hear his own reasons."
+  },
+  {
+   "doPoseId": "p_greet_acknowledge",
+   "dontPoseId": "p_stand_wide_planted",
+   "doCaption": "Calm, side-on, a short clear offer",
+   "dontCaption": "Blocking a drunk man and arguing back",
+   "annotation": "Drink narrows attention to the most obvious thing in the room. Make that a calm voice and a simple way out."
   }
  ],
  "caseStudy": "Ben, thirty-one, notices the change in his father, Jim, fifty-nine, over the year after Jim retires and his marriage ends. Jim's face is red more often. When Ben visits on Saturday mornings, there is sometimes a glass on the side, and Jim's hands shake as he makes coffee, then steady later. He repeats stories, is short-tempered on the phone in the evenings, and has stopped going to his bowls club. Ben finds empty bottles in the garage.\n\nBen's first attempt goes badly. Over Sunday lunch, he tells his father that he is drinking too much and turning into an alcoholic. Jim slams down his knife, says he has worked hard all his life and will drink what he likes, and they do not speak for a fortnight.\n\nBen reads about talking to someone about drinking and tries again, differently. He picks a sober afternoon and suggests a walk along the canal. Side by side, he says that he has noticed his dad's hands shaking in the mornings and that he is worried about him, because he loves him. Then he asks how his dad feels about his drinking these days. A long silence. Then Jim says he knows it has got out of hand, that the evenings are the worst since the divorce, and that he does not know how to stop.\n\nBen listens. He suggests talking to the doctor, and mentions that he has read that stopping suddenly can be dangerous for heavy drinkers, so it is worth getting help to cut down safely. Jim agrees to an appointment, and Ben drives him there. The doctor arranges support, and refers Jim to a local alcohol service.\n\nIt is not quick. But in the spring Jim goes back to bowls, on Wednesday evenings, the hardest night of the week.",
@@ -98,6 +112,10 @@
     "Write the FAST check for stroke from memory.",
     "Write what you would say first to someone who seems drunk and alone.",
     "Keep the notes where you can find them."
+   ],
+   "variations": [
+    "Add one condition not listed in the chapter that you have seen or heard of, and how it might be mistaken for drunkenness.",
+    "Practise the FAST check aloud with a friend, so that you can do it quickly without looking it up."
    ]
   },
   {
@@ -109,6 +127,10 @@
     "Practise the recovery position with a willing friend, following a reputable first-aid guide.",
     "Write down what not to do.",
     "Keep the card in your wallet or phone."
+   ],
+   "variations": [
+    "Find out whether a first-aid course is available locally, and book a place if you can.",
+    "Save the emergency number and your exact address in a note on your phone, so you can find them in a hurry."
    ]
   },
   {
@@ -120,6 +142,10 @@
     "Note any change from a year ago.",
     "Try one week with no drinks on weekdays, and note what you missed and what you gained.",
     "Write one sentence about what your drinking does for you."
+   ],
+   "variations": [
+    "Ask yourself which drinks you would miss most if you cut down, and what they do for you.",
+    "Try a drink-free week and note how you sleep, how you feel and what you reach for instead."
    ]
   },
   {
@@ -131,6 +157,10 @@
     "Write one sentence saying why you are worried, beginning with care.",
     "Write two open questions about how they see their drinking.",
     "Choose a sober, private, side-by-side moment when you could use them."
+   ],
+   "variations": [
+    "Rehearse your first sentence aloud, several times, until it sounds caring rather than accusing to your own ear.",
+    "Plan where and when the conversation will happen, and what you will do if it goes badly."
    ]
   },
   {
@@ -142,6 +172,10 @@
     "Note the advice about not stopping suddenly after heavy drinking.",
     "Find the crisis resources in this app for your region.",
     "Keep these notes where you can find them."
+   ],
+   "variations": [
+    "Find out whether your workplace has an employee assistance line that covers drinking or drug use.",
+    "Find a support group for families and friends, and note when and where it meets, in case you need it."
    ]
   }
  ],
@@ -223,6 +257,45 @@
    "explain": "Most people who drink too much have mixed feelings. Listening to both sides with curiosity helps them hear their own reasons for change, while lectures and labels tend to make them defend drinking.",
    "isMisconceptionTest": false,
    "isScenario": false
+  },
+  {
+   "q": "What do the UK chief medical officers advise as a weekly limit for regular drinking, to keep health risks low?",
+   "options": [
+    "No more than fourteen units, spread over three or more days",
+    "No more than forty units, as long as it is all drunk on the weekend",
+    "No limit at all, provided the person never feels drunk afterwards",
+    "Exactly one unit a day, every day, with no drink-free days at all"
+   ],
+   "answer": 0,
+   "explain": "The guidelines advise not regularly drinking more than fourteen units a week, spreading it over three or more days, with several drink-free days. For a reader, the pattern and its purpose matter as much as the number.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "At a party, a man who has been drinking is shouting at your friend over a spilled drink and stepping closer. Your friend is shouting back. What fits this chapter best?",
+   "options": [
+    "Shout louder than both of them, so that they stop and listen to you",
+    "Tell the drunk man firmly that he is being ridiculous and should go home",
+    "Speak calmly and simply, offer him something concrete, and give space",
+    "Grab the drunk man's arm and pull him away from your friend at once"
+   ],
+   "answer": 2,
+   "explain": "Alcohol narrows attention to what is most obvious, so a raised voice or a put-down dominates it. A calm, simple offer, such as help with his shirt, gives his attention somewhere else to go.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a cold shower and strong coffee will sober up a very drunk friend. What does this chapter say?",
+   "options": [
+    "It is right, since cold water and caffeine quickly lower the level of alcohol",
+    "They do not lower blood alcohol; watch for danger signs and get help",
+    "It is right, but only if the friend also eats a large meal straight away",
+    "It is right, and making them vomit afterwards will finish the job"
+   ],
+   "answer": 1,
+   "explain": "Coffee, cold showers and making someone vomit do not reduce blood alcohol and can cause harm. Keep them safe, on their side if drowsy, and call for help if there are signs of alcohol poisoning.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +324,110 @@
    "work": "Beyond Addiction: How Science and Kindness Help People Change",
    "author": "Jeffrey Foote, Carrie Wilkens and Nicole Kosanke",
    "note": "Scribner, 2014. A practical guide for families, based on evidence rather than confrontation."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The man asked to leave the bus",
+   "scene": "On a Tuesday afternoon, a man in his late fifties, Trevor, gets on a bus in a market town. He fumbles with his pass, drops it twice and\n  sways as he makes his way down the aisle. He sits heavily, sweating, and when the woman beside him asks if he is all right, his answer is slurred\n  and does not quite make sense. He seems irritable, and he grips the seat in front of him. A passenger behind says loudly that he is drunk at three\n  in the afternoon and should not be on the bus. The driver, hearing the complaint, stops at the next stop and tells Trevor he will have to get off.\n\n  Aisha, a student nurse sitting across the aisle, has been watching. She notices that Trevor's skin is pale and clammy, that his hands are shaking,\n  and that he smells of nothing at all: no alcohol. She also notices a metal bracelet on his wrist.\n\n  She gets up and asks the driver to wait.\n\nTrevor's shopping bag has fallen on the floor, and a packet of biscuits has spilled from it. The passenger behind him kicks it out of the aisle, muttering. Trevor tries to say something and cannot get the words out.\n\nTrevor's face has gone from pale to grey, and he is breathing quickly. He keeps trying to stand up and sitting down again, as if he knows he needs to do something but cannot remember what.",
+   "misread": "The passenger and the driver read Trevor's fumbling, swaying, slurring and irritability as drunkenness, because those are the signs people associate with it, and because the setting, a man alone in the afternoon, fitted a familiar story about drink.\n\nThe passenger's comment also gave the driver a ready-made explanation, and once someone has named a story aloud, others tend to see it too.\n\nEven if Trevor had been drinking, putting a confused, sweating man off a bus alone would have been risky. The decision to remove him was made on a reading nobody had checked.",
+   "betterRead": "Low blood sugar in someone with diabetes can produce almost exactly the picture of drunkenness: clumsiness, unsteadiness, slurred speech, confusion, irritability, sweating and shaking. Aisha's better reading came from looking for the cluster that did not fit drink: pale, clammy skin rather than a flush, no smell of alcohol, and a medical bracelet. The bracelet said that he had type 1 diabetes. She asked Trevor whether he had diabetes and whether he had any sugar on him. He managed to nod and point to his pocket, where there were glucose tablets. She helped him take them, asked the driver to call an ambulance in case he did not improve, and stayed with him. Within about fifteen minutes he was speaking clearly, embarrassed and grateful, and explained that he had skipped lunch after taking his insulin. The paramedics checked him over. The passenger who had complained said nothing for the rest of the journey.\n\nAisha also told the driver, kindly, that low blood sugar is easy to mistake for drunkenness, and that a quick question about diabetes can save someone's life."
+  },
+  {
+   "title": "The friend on the sofa",
+   "scene": "At a house party, Jordan, nineteen, has been drinking vodka shots for an hour on top of several beers. By midnight he can barely stand.\n  His friends half carry him to a sofa in the back room, where he lies on his back, mumbling. One of them says to let him sleep it off and that he\n  will be fine in the morning. They put a blanket over him and go back to the party.\n\n  Half an hour later, Mei, who has not been drinking much, goes into the back room to find her coat. Jordan is lying on his back with his mouth\n  open. His face is pale, almost grey, and his lips look slightly blue. His breathing is slow and uneven, with long gaps. She says his name loudly\n  and shakes his shoulder. He does not wake up. There is vomit on the cushion beside his head.\n\n  Two of his friends come in behind her. One says not to call anyone, because Jordan will get in trouble and his parents will kill him.\n\nMei also notices that Jordan's skin feels cold and clammy when she touches his arm, and that he does not react at all when she pinches his hand. The music from the party is so loud that nobody in the main room has any idea what is happening.\n\nMei has done a first-aid course through her university sports club, and she remembers the instructor saying that the most common mistake at parties is to leave someone to sleep it off on their back.",
+   "misread": "His friends read Jordan's state as ordinary drunkenness, something sleep would fix. They did not know that blood alcohol can keep rising after the last drink, or that a person who cannot be woken, lying on his back, is at risk of choking and of his breathing slowing dangerously.\n\nAnd their fear of getting him into trouble, which came from loyalty, pointed them towards the most dangerous choice of all.\n\nThey also assumed that because Jordan often drank a lot, he could handle it. Past nights are no guarantee about this one, and a body that has been drinking fast for an hour may still be absorbing alcohol long after the bottles are put away.",
+   "betterRead": "Jordan showed several signs of alcohol poisoning: he could not be woken, his breathing was slow and irregular, his skin was pale and his lips bluish, and he had vomited. Health services are clear: this is an emergency. Mei did what the chapter describes. She told the friends that she was calling an ambulance and that Jordan's safety mattered more than whether he got into trouble. While she called, she asked one of them to help her roll Jordan onto his side into the recovery position, so that if he vomited again he would not choke, and she kept checking his breathing. She kept him warm and stayed with him, and did not give him water or coffee or try to make him sick. The ambulance came within fifteen minutes, and Jordan was kept in hospital overnight. His mother rang Mei the next day to thank her. The doctor had told her that it could have been much worse.\n\nShe also told the call handler honestly how much Jordan had drunk, which helped the paramedics, and stayed with him until they took over."
+  },
+  {
+   "title": "The row at the Christmas party",
+   "scene": "At a company Christmas party, Steve, from the warehouse team, has had several pints. Near the bar, someone knocks into him and his drink\n  spills down his shirt. He turns round, red-faced, and squares up to the man who did it, Raj, from accounts. Steve's voice is loud and his\n  movements are large. He jabs a finger towards Raj's chest and demands an apology. Raj, who has also been drinking, is annoyed at being blamed for\n  something he says was an accident. He raises his own voice and tells Steve to calm down and stop being ridiculous.\n\n  Steve steps closer. A small crowd has turned to watch. Raj's friend, Michelle, who has been drinking water all evening because she is driving, can\n  see that the next few seconds could go badly.\n\n  She knows Steve slightly. He is a quiet, friendly man at work, and she has never seen him like this.\n\nRaj has also had a frustrating evening. His manager has just told him that his bonus will be smaller than expected, and the spilled drink is the last thing he wants to be blamed for.\n\nSteve has been at the company for twelve years and is known as the man who fixes everyone's printer without complaint. He rarely comes to parties. His wife left him in the summer, and a colleague persuaded him to come tonight to cheer himself up. He has drunk more than he meant to, faster than he meant to, because he did not know anyone at his table.",
+   "misread": "Raj read Steve's anger as an unreasonable overreaction and answered it with a raised voice and a put-down. Steve, with his attention narrowed by drink, saw only the raised voice and the insult, and climbed further.\n\nMichelle also noticed her own reaction: she wanted to tell Steve off. Being sober did not make her immune to the pull of the argument, only better placed to resist it.\n\nRaj also misread the spill. He took Steve's anger as a judgment of his character, when Steve, narrowed by drink, was reacting only to a wet shirt and a stranger's voice.",
+   "betterRead": "Steele and Josephs' theory of alcohol myopia predicts what happened: drink narrows attention to the most obvious cues in the moment, so a raised voice and a scornful \"calm down\" dominate a drinker's attention, while the reasons for restraint, such as the boss across the room and Monday morning, fade from view. Two narrowed men were facing each other. Michelle's better reading was that the safest message would be the simplest and calmest one. She stepped in at an angle, not between them, and said to Steve, in a low, friendly voice, \"Steve, your shirt's soaked. Come on, let's get you some paper towels.\" To Raj, she said, \"Let it go.\" The simple, concrete offer gave Steve's narrowed attention somewhere else to go. He went with her. In the toilets, drying his shirt, he said he did not know what had come over him. On Monday he apologised to Raj, who apologised too. Michelle noted that neither of them would have started a fight sober.\n\nMichelle also made sure Steve got a taxi home rather than going back to the bar, and asked a colleague to check he had arrived safely."
+  },
+  {
+   "title": "The husband who wanted to stop overnight",
+   "scene": "Pete, forty-five, has been drinking heavily for several years: a bottle of wine most evenings, more at weekends, and lately a can or two at\n  lunchtime. His hands shake in the mornings until he has had a drink, which he hides from his wife, Carol, by having one in the garage before\n  breakfast. On New Year's Eve, after an argument with Carol and a frightening blackout at a friend's party, he announces that he is stopping\n  completely, from tomorrow. He pours every bottle in the house down the sink.\n\n  Carol is relieved and proud of him. Her sister says that this is exactly what he needs to do, cold turkey, and that he should just get through the\n  first few days with willpower.\n\n  But Carol remembers reading something about heavy drinkers and stopping suddenly. On New Year's Day, by mid-morning, Pete is sweating, his hands\n  are shaking badly and he says his heart is racing.\n\nPete has tried to cut down before, twice, and both times he started again within a week. This time, he says, he is going to do it properly, all at once, and nobody is going to talk him out of it.\n\nCarol also notices that Pete is irritable and jumpy, and that he cannot sit still. He keeps saying he is fine, that it is just nerves, and that he will feel better once the first day is over. By the afternoon he says he can see things moving at the edge of his vision.",
+   "misread": "Carol's sister read stopping overnight as the right and brave thing, and treated the hard part as a test of willpower. That reading did not know that heavy, daily drinking can make the body physically dependent, and that sudden withdrawal can be dangerous.\n\nPete's own reading was the same: he thought that the shaking was weakness he had to beat, not a warning from a body that had learned to depend on alcohol.\n\nThe hallucinations were the most alarming sign of all, and the one most likely to be dismissed as stress, tiredness or imagination by someone who did not know what they might mean.",
+   "betterRead": "People who drink heavily every day can become physically dependent on alcohol, and stopping suddenly can cause withdrawal that is not only unpleasant but dangerous, including seizures and, in severe cases, a life-threatening state of confusion. Pete's morning shakes that settled after a drink, and his sweating, tremor and racing heart on New Year's Day, were signs of physical dependence and early withdrawal. This chapter's advice is clear: anyone who drinks heavily and wants to stop should talk to a doctor first. Carol's better response was to support his decision and his safety together. She told him how proud she was, and that the way to stop safely was with medical help. She rang the out-of-hours medical service that morning, explained what was happening and followed their advice, which included getting him seen urgently. Over the next weeks his doctor arranged a supervised reduction and referred him to a local alcohol service. Pete stopped, safely. He said later that pouring the bottles away had been the easy part.\n\nCarol also told Pete's sister, gently, why cold turkey had been dangerous for him, and the sister said she had never known."
+  }
+ ],
+ "workedReading": {
+  "title": "The man on the pavement at closing time",
+  "scene": "Sasha manages a pub in a city centre. At closing time on a Friday, as she locks up, she sees a man in his forties sitting slumped against the wall of the shop next door, his head on his chest. He did not come from her pub. People walking past glance at him and keep going; one says, \"Another one who's had a skinful.\" His clothes are smart, and there is a small graze on his forehead. When Sasha says, \"Are you all right, mate?\" he lifts his head slowly, mumbles something she cannot understand, and lets it drop again.\n\nSasha has dealt with drunk people outside the pub for fifteen years, and she knows how easy it is to assume. She also has a first-aid certificate that she renews every three years, and she has been on a course for licensed premises about vulnerable people at night.\n\nIt is cold, and the street is emptying. If she goes back inside, the man will probably be alone on the pavement for hours, or until someone less kind than her finds him.",
+  "steps": [
+   {
+    "label": "Check the scene",
+    "text": "Sasha first checks that it is safe to approach: there is nobody else around him, no broken glass, no traffic close by. She asks one of her bar staff, Tom, to stay with her. She notes that she does not know whether he has been drinking, and that she has not yet smelled alcohol or seen a bottle. She also notes the graze, which the passers-by did not mention.\n\nShe also notes that he is alone. People who are drunk with friends are usually being looked after by someone, however badly. A man alone, slumped, with an injury, is more vulnerable.\n\nShe also notes that the passers-by have made up their minds without stopping. A crowd that has decided someone is drunk will rarely check, which is one reason people in medical trouble are left alone."
+   },
+   {
+    "label": "Consider the rivals",
+    "text": "She runs through the rivals the chapter describes. He might be drunk. He might have low blood sugar. He might have had a stroke. He might have a head injury: the graze suggests a fall, and confusion and drowsiness after a blow to the head can be serious. He might have had a seizure. Several of these can look like drunkenness, and some are emergencies.\n\nShe also reminds herself that even if he has been drinking, that does not rule out anything else. A drunk man can also have hit his head, and the drink can hide the signs of a serious injury.\n\nShe also notices that the graze is fresh and that there is a little blood on the pavement behind his head, which makes a fall more likely and a head injury more of a worry."
+   },
+   {
+    "label": "Speak to him, and look",
+    "text": "She crouches beside him, at his level, and says clearly, \"Hello, my name's Sasha. Can you tell me your name? Have you hurt your head?\" He says, slowly, that his name is Martin and that he does not know what happened. His speech is slurred. She asks him to smile, and his face looks even on both sides. She asks him to lift both arms, and he does, slowly. She cannot smell alcohol. She looks for a medical bracelet and finds none.\n\nShe also asks whether he takes any medicines or has any medical conditions. He shakes his head slowly, but she notes that he may not be able to answer reliably.\n\nShe keeps her questions short and simple, one at a time, and waits for each answer. A confused person cannot follow a stream of questions, however kindly meant."
+   },
+   {
+    "label": "Decide to call",
+    "text": "She does not have to be sure what is wrong. A man who is confused, cannot say what happened and has an injury to his head needs to be checked, whatever else is going on. She asks Tom to call the emergency services and to give them the address, Martin's name and what she has seen, including the graze and the confusion. She tells Martin that help is on its way.\n\nShe also decides not to try to move him or get him into a taxi, which would be the quickest way of getting him off her doorstep and might be the worst thing for him.\n\nShe also tells the call handler that his speech is slurred and that he cannot say what happened, because those details help them decide how urgently to send an ambulance."
+   },
+   {
+    "label": "Keep him safe while you wait",
+    "text": "She keeps him sitting still and does not let him get up and walk, in case he falls again. She keeps talking to him, calmly, asking simple questions to see whether he stays awake. When he starts to slump sideways and becomes harder to rouse, she checks that he is breathing and, with Tom's help and the call handler's guidance, lays him on his side in the recovery position. She puts her coat over him to keep him warm.\n\nShe also asks Tom to watch for the ambulance and wave it down, so that no time is lost finding them in the dark.\n\nShe also notes the time he became harder to wake, so that she can tell the paramedics. Changes in how alert someone is are among the most important things to report after a head injury."
+   },
+   {
+    "label": "Hand over clearly",
+    "text": "When the paramedics arrive, Sasha tells them exactly what she saw: where he was, the graze, his name, his confusion, that his face and arms seemed even, that she could not smell alcohol, and that he became drowsier while they waited. She does not tell them he is drunk, because she does not know that, and they will decide for themselves.\n\nShe also gives the paramedics the time she first saw him, which helps them work out how long he might have been there.\n\nShe also hands over his phone and wallet, which she found on the ground beside him, so that his family can be contacted."
+   },
+   {
+    "label": "What happened",
+    "text": "A week later, Martin comes into the pub to thank her. He had been hit by a cyclist on his way home from a work dinner, had two glasses of wine at most, and had a bleed on the brain that needed surgery. The doctors told him that being found and brought in quickly had made a difference. Sasha notes that the passers-by had read a story from a slumped posture, and that the graze, the missing smell and the confusion had told a different one to anyone who looked.\n\nShe also changes something in her own pub: staff are now trained to check anyone who seems very drunk for a head injury or a medical bracelet before asking them to leave.\n\nShe also tells the passers-by she sees the next weekend, when a similar thing happens, that a man lying on the pavement may be injured rather than drunk. Two of them stop to help."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Deciding that someone is just drunk",
+   "body": "It is the commonest and most dangerous misreading in this chapter. Slurred speech, unsteadiness, confusion and drowsiness have many causes besides alcohol: low blood sugar, stroke, head injury, seizures, infections, some medications and conditions such as multiple sclerosis or Parkinson's disease. People in these states have been refused help, thrown off buses, ejected from pubs and arrested, sometimes with fatal results. Even when someone has been drinking, they may also have hit their head or be in a medical crisis. Look for the signs that do not fit drink, ask, look for a medical bracelet, and if in doubt, call for help. Being wrong in the cautious direction costs a little embarrassment.\n\nIt also helps to remember that people with some disabilities are often mistaken for drunk in everyday life: on buses, in shops, at airports. A moment's patience and a kind question spare them a humiliation they may face many times a year.\n\nBus drivers, shop staff, door staff and police officers are often the first to see someone in this state, and many now receive training about it. If you work in one of these jobs and have not been trained, it is worth asking for it."
+  },
+  {
+   "title": "Leaving them to sleep it off",
+   "body": "Putting a very drunk person to bed or on a sofa, alone, on their back, is one of the commonest ways alcohol poisoning turns into tragedy. The level of alcohol in the blood can keep rising after the last drink, breathing can slow, and a person who vomits while unconscious on their back can choke. If someone cannot be woken, is breathing slowly or irregularly, has pale or bluish skin, has had a seizure or is very confused, call the emergency services. If they are breathing, put them on their side in the recovery position, keep them warm, and stay with them, checking their breathing, until help arrives or they are clearly recovering.\n\nIt also helps to agree, before a night out, that someone in the group will stay sober enough to look after the others, and that anyone can call for help without being blamed.\n\nYoung men are among the least likely to call for help in this situation, often for fear of getting a friend into trouble. Emergency services treat alcohol poisoning as a medical problem, not a crime, and their job is to keep your friend alive.\n\nIf you are not sure how to do the recovery position, the emergency call handler will talk you through it. You do not need to be trained to save someone's life, only willing to call."
+  },
+  {
+   "title": "Confronting with labels",
+   "body": "\"You're an alcoholic.\" \"You've got a problem.\" \"You need to stop.\" Said in anger, at a family meal or the morning after a bad night, these usually produce denial, defensiveness and a row, as Ben found with his father. The person often drinks more secretly afterwards. Labels invite argument about the label rather than conversation about the drinking. The approach that tends to work better, drawn from motivational interviewing, is to choose a sober, private moment, describe what you have noticed as behaviour, say why you are worried, and ask with real curiosity how they see it. Most people who drink too much already have mixed feelings about it. Let them hear their own reasons.\n\nIt also helps to remember that the people closest to a heavy drinker are often the ones he hides it from most carefully, out of shame. Discovering the extent of it can be a shock, and it is worth taking time to calm down before you raise it.\n\nIt also helps to stay connected even when the conversation goes badly. A person who refuses to talk about their drinking today may be ready next month, and they are more likely to come to someone who did not give up on them."
+  },
+  {
+   "title": "Building a lasting picture from one drunken night",
+   "body": "Alcohol changes behaviour: it narrows attention, loosens restraint and turns up whatever feeling is most present. A colleague who was tearful, flirtatious, aggressive or embarrassing at a party was showing you something real, but something amplified by drink, and it is unfair to build a lasting picture of him from it. The same applies to what people said while drunk. Notice it, perhaps check in kindly the next day, and then read him by his sober baseline, as you would want to be read yourself. A single drunken night is an episode. A pattern of them, over weeks or months, is a different matter.\n\nAnd if you were the one who was drunk, a short apology the next day, without excuses, usually does more to repair things than any amount of explanation.\n\nIt also helps to watch your own drunken readings of others. Alcohol narrows the reader's attention too, so the slight you noticed at the party may look very different the next morning.\n\nThe same applies to what people say about others while drunk. A friend who tells you, after six pints, that your brother is a waste of space may mean something by it, or may mean nothing at all by the morning."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Can you tell how drunk someone is by looking?",
+   "a": "Not reliably. People's tolerance for alcohol varies enormously: a heavy drinker may seem steady with a blood alcohol level that would make someone else unconscious, which is one reason heavy drinkers can be in more danger than they look. Food, body size, medication and illness all change the effects. And the level of alcohol in the blood can keep rising for some time after the last drink, so someone who seems merely merry at midnight may be in trouble an hour later. Watch for the danger signs rather than trying to estimate drunkenness: confusion, vomiting, slow or irregular breathing, pale or blue skin, seizures, and difficulty staying awake.\n\nIt also helps to remember that mixing alcohol with other drugs, including some prescription medicines, can make its effects far stronger and less predictable.\n\nIt also helps to remember that someone who has stopped drinking may still be getting more intoxicated as their body absorbs what they have already drunk. Keep watching for at least an hour after the last drink.\n\nAnd remember that tolerance can fall. Someone who has cut down or stopped for a while, and then drinks their old amount again, can be far more affected than they expect."
+  },
+  {
+   "q": "Is it ever safe to let a drunk friend sleep?",
+   "a": "If someone has had a lot to drink but is awake, talking sensibly, breathing normally and able to walk with help, they may be able to sleep safely, as long as someone sober stays with them, puts them on their side rather than their back, and checks on them regularly. If they cannot be woken, are breathing slowly or irregularly, have pale or bluish skin, have vomited while drowsy, have had a seizure or are very confused, they need emergency help, not sleep. When in doubt, treat it as an emergency. Nobody has ever been harmed by a paramedic checking on someone who turned out to be fine.\n\nIt also helps to make sure the person is not left alone at any point, even to go to the toilet, until they are clearly recovering.\n\nIt also helps to check regularly through the night, not just once. Setting an alarm to check on a friend every half hour is a small inconvenience compared with the alternative."
+  },
+  {
+   "q": "What should I do if a drunk person becomes aggressive?",
+   "a": "Put your own safety and that of others first. Alcohol myopia means that a drunk person's attention is narrowed to what is most obvious, so your tone matters more than your argument. Keep your voice low and calm. Use short, simple sentences. Stand at an angle, keep your hands visible and open, and keep a route away. Do not argue, mock, threaten or touch them. Offer something simple and concrete, such as somewhere to sit, a glass of water or a way out of the situation. If you feel unsafe, leave, and if anyone is threatened or hurt, call the police. Do not try to win. Try to get everyone home.\n\nDoor staff, bar workers and others who deal with drunk people for a living are usually trained in exactly this, and their advice is the same: calm, simple, space, and help if it turns violent.\n\nIt also helps to remember that people who are drunk often forget what happened, and may not understand later why you acted as you did. Your aim is safety, not to be right or thanked.\n\nIt also helps to avoid crowds forming. An audience makes it harder for a drunk person to back down, so moving the conversation somewhere quieter, if it is safe, can lower the temperature quickly."
+  },
+  {
+   "q": "How much drinking is too much?",
+   "a": "Guidelines differ between countries. In the United Kingdom, the chief medical officers advise that, to keep health risks low, it is safest not to drink more than fourteen units a week on a regular basis, to spread drinking over three or more days rather than saving it up, and to have several drink-free days each week. Fourteen units is roughly six pints of average-strength beer or six medium glasses of wine. But for a reader, the pattern matters more than the number: drinking that has risen, that is used to cope, to sleep or to get through the day, that is hidden, or that is causing problems at work or at home, deserves attention whatever the weekly total.\n\nIt also helps to know that there is no completely safe level of drinking, according to the same guidelines, and that the risks rise with the amount. The guidelines describe low risk, not no risk.\n\nIt is also worth knowing that the guidelines are the same for men and women in the UK, and that pregnant women are advised not to drink at all."
+  },
+  {
+   "q": "What about drugs other than alcohol?",
+   "a": "The same principles apply. Avoid building a diagnosis from single physical signs such as red eyes, large or small pupils or a runny nose, which have many innocent causes. Look instead at patterns over time: changes in sleep, mood, money, friends, reliability and health. If you are worried, raise it the same way you would raise drinking: privately, soberly, with curiosity and without labels. In an emergency, such as someone who cannot be woken, is breathing strangely, has a seizure, is extremely agitated or overheating, call the emergency services and tell them honestly what you think has been taken, because it helps them treat the person.\n\nIf you are worried about someone's drug use, many areas have services that offer confidential advice to families and friends as well as to people who use drugs. You do not have to work it out alone.\n\nIt also helps to stay with the person and to keep anyone from giving them anything else to take while you wait for help.\n\nSome areas also run drug-checking services, needle exchanges and other harm-reduction services, which aim to keep people safe whether or not they are ready to stop. They can be a first point of contact for people who will not see a doctor."
+  },
+  {
+   "q": "What if the person whose drinking worries me is me?",
+   "a": "Then this chapter's drills are for you. Look honestly at your pattern over the past few weeks: how much, how often, when, and why. Notice whether drinking has become the way you relax, sleep, cope with stress or get through the evening. Tell someone you trust what you have noticed. Talk to your doctor, who can help without judgment and can check your physical health. If you drink heavily every day, do not stop suddenly without medical advice, because withdrawal can be dangerous. And if you are drinking to cope with low mood or hopelessness, say so: help for both is available, and they are often easier to treat together.\n\nIt may also help to tell your doctor exactly how much you drink, rather than a smaller number. Doctors hear honest numbers every day, and the real figure helps them help you safely.\n\nIt may also help to change the setting as well as the habit: fewer bottles in the house, a different route home that avoids the pub, a friend to call at the hour you usually pour the first drink."
   }
  ],
  "watch": [
