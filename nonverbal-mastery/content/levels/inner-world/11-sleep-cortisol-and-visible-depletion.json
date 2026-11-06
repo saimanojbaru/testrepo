@@ -81,6 +81,20 @@
    "doCaption": "Screens down, winding down.",
    "dontCaption": "Scrolling in bed at one in the morning.",
    "annotation": "Your own sleep shapes every reading you make the next day. Protecting it protects your judgment."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_sit_slouched_low",
+   "doCaption": "Asking quietly how she has been sleeping",
+   "dontCaption": "Reading a pupil's slump as boredom",
+   "annotation": "Sleep loss looks like sadness or boredom on the face. A private question finds the cause that a detention cannot."
+  },
+  {
+   "doPoseId": "p_pro_taking_notes",
+   "dontPoseId": "p_stand_slumped_side",
+   "doCaption": "Short notes now, the full talk after sleep",
+   "dontCaption": "Pressing a night worker for answers at handover",
+   "annotation": "At the end of a long night, everyone is at their low point. Keep it brief and safe, and talk properly once both of you have rested."
   }
  ],
  "caseStudy": "Mark, thirty-five, manages a small sales team. In March his daughter is born, and for the next two months he sleeps in two- and three-hour pieces. He keeps working full days. In the Monday meetings, he finds his team difficult. One junior, Priya, seems to look at him with contempt whenever he speaks. In April he snaps at her in front of everyone for what he reads as an eye-roll.\n\nThat evening his partner says, gently, that he has been snapping at her too, and that he looks terrible. Mark thinks about it. He realises that every Monday meeting has come after the worst night of the week, since his partner works Sunday nights and he does the night feeds alone. He has been reading faces through two hours' sleep.\n\nHe makes three changes. He moves the team meeting from nine on Monday to eleven on Tuesday, after the better night and a proper breakfast. He starts noting his sleep in the top line of his journal, and holds any reading of a colleague as hostile, on a short-sleep day, until he has slept on it. And he apologises to Priya, privately, telling her honestly that he has been running on very little sleep and that he took it out on her.\n\nPriya tells him that she had been rubbing her eyes because she had an eye infection, and had been worried all week that he was going to sack her.\n\nBy June the baby sleeps longer. Mark notices that the team has become, as he puts it, much nicer. He suspects most of the change was in him.",
@@ -99,6 +113,10 @@
     "At the end of the fortnight, compare how many such readings you made on short-sleep days and on rested days.",
     "Check any that you were later able to confirm or refute.",
     "Write one sentence about how depletion affects your reading."
+   ],
+   "variations": [
+    "Add a line for what you ate and when, and see whether hunger changes your readings as much as sleep does.",
+    "Ask someone you live with to rate your mood each evening for a week, and compare their ratings with your sleep."
    ]
   },
   {
@@ -110,6 +128,10 @@
     "Note when your hardest conversations with each of them usually happen.",
     "Identify one conversation you could move to a better time for both of you.",
     "Move it, and note any difference."
+   ],
+   "variations": [
+    "Ask the two people directly when they feel sharpest, and compare their answers with your observations.",
+    "Choose one recurring meeting and suggest moving it to a better time for most of the people in it."
    ]
   },
   {
@@ -121,6 +143,10 @@
     "Notice how the conversation goes compared with similar ones in the past.",
     "Notice whether you felt the urge to judge harshly at any point.",
     "Write down whether you will make this a habit."
+   ],
+   "variations": [
+    "Try having a snack before a difficult email as well as before a meeting, and notice whether it changes your tone.",
+    "Notice for a week how often difficult conversations at home happen before dinner, and try moving one."
    ]
   },
   {
@@ -132,6 +158,10 @@
     "Listen to the answer without offering advice.",
     "If the answer opens onto something harder, follow it with a curious question.",
     "Note what you learned that you would not have learned by reading their face."
+   ],
+   "variations": [
+    "Ask the sleep question of someone you see only occasionally, and notice how much it changes your reading of them.",
+    "Ask yourself the same question each morning for a week before you judge anyone else's mood."
    ]
   },
   {
@@ -143,6 +173,10 @@
     "Ask your partner or housemate, if you have one, whether you snore loudly or seem to stop breathing at night.",
     "If any signs apply, write down how you would book a doctor's appointment.",
     "Book it, if needed, this week."
+   ],
+   "variations": [
+    "Find out whether your workplace has a policy on rest breaks or night shifts, and what it says.",
+    "If you drive for work, write down where you would stop if you felt drowsy on your usual routes."
    ]
   }
  ],
@@ -224,6 +258,45 @@
    "explain": "Loud snoring, pauses in breathing and heavy daytime tiredness can be signs of sleep apnoea, which is treatable and important, especially for drivers. A doctor can assess it.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Sundelin and colleagues' study, how long had people gone without sleep before the second photograph was taken?",
+   "options": [
+    "About thirty-one hours",
+    "About three hours, after a short afternoon nap",
+    "About a week, with only very brief naps allowed",
+    "About one hundred hours, under constant medical supervision"
+   ],
+   "answer": 0,
+   "explain": "Participants were photographed after a normal night and again after about thirty-one hours without sleep. Observers rated the sleep-deprived faces as more tired-looking and also sadder.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A thirteen-year-old keeps falling asleep in class, arrives late with red, heavy eyes and once brought someone else's prescription to school. A colleague wants to give her detentions. What fits this chapter best?",
+   "options": [
+    "Give her detentions until she learns to go to bed at a sensible time",
+    "Tell her parents she is clearly on her phone all night and needs stricter rules",
+    "Ask her privately how she is sleeping and whether things are all right at home",
+    "Move her to the front of the class so that she cannot fall asleep"
+   ],
+   "answer": 2,
+   "explain": "Her face shows exhaustion but not its cause. A private, kind question can uncover reasons such as caring for someone at home, which a detention would never reach.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone cites the 2011 study of Israeli parole judges as proof that hungry judges are much harsher. What does this chapter say?",
+   "options": [
+    "It is proof, since the study has been replicated in every country since",
+    "The study has been strongly questioned; case order may explain the pattern",
+    "It is proof, but only for judges who skip breakfast before court",
+    "It shows that judges are kinder when they are hungry, not harsher"
+   ],
+   "answer": 1,
+   "explain": "Critics pointed out that cases were not heard in random order, which could produce the pattern on its own. Better-controlled studies suggest hunger can harshen judgments in negative or ambiguous situations.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +325,110 @@
    "work": "Why We Sleep",
    "author": "Matthew Walker",
    "note": "Scribner, 2017. A popular book on sleep; readable and influential, though some of its claims have been criticised as overstated."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The girl who slept in maths",
+   "scene": "Mr Okafor teaches maths at a comprehensive school. Kayleigh, thirteen, sits near the back of his Year 8 class. Since the autumn she has\n  started arriving late to the first lesson, her hair unbrushed, her eyes red and heavy-lidded. She yawns constantly, rests her head on her arm\n  and twice has fallen asleep at her desk. Her homework is often missing. When he asks her a question, she looks up slowly, as if from a long way\n  away, and says she does not know.\n\n  Another teacher tells Mr Okafor that Kayleigh is \"on her phone all night like the rest of them\" and needs a detention or two to sort her out.\n  Mr Okafor gave her one in October. It made no difference, and Kayleigh did not argue or complain about it, which struck him as odd for a\n  thirteen-year-old.\n\n  One morning, he notices that she has a carrier bag of shopping with her, and that she is carrying a box of prescription medication with someone\n  else's name on it.\n\nKayleigh has also stopped going to the after-school netball club, which she joined in Year 7, and she eats her lunch quickly, alone, and spends the rest of the break with her head down on a table in the library.\n\nWhen Mr Okafor looks back through his register, he finds that Kayleigh's lateness started in the week after October half-term, and that she has been late on almost every Monday and Thursday since.",
+   "misread": "The other teacher read Kayleigh's heavy eyes, yawns and sleeping in class as laziness or late-night phone use, and the detention treated tiredness as a discipline problem. Neither reading asked why a thirteen-year-old might be so short of sleep.\n\nAnd because Kayleigh accepted the detention without complaint, the teachers took her silence as indifference, when it may have been the exhaustion of a child who had no energy left to argue.\n\nThe detention also sent a message that the school had noticed her tiredness and decided it was her fault, which made it less likely that she would ever explain it.\n\nThe comment about the phone was also an assumption about her generation rather than about her, which made it easy to believe and impossible to check without asking.",
+   "betterRead": "Sundelin's research showed how clearly sleep loss is written on the face: hanging eyelids, red and swollen eyes, paler skin and a mouth that droops, which observers also read as sadness. Kayleigh's face told Mr Okafor that she was exhausted. It did not tell him why. The shopping and the medication suggested a possibility that the detention had ignored: that she might be a young carer, looking after someone at home. Mr Okafor's better approach was to ask, privately and kindly, at the end of the lesson: \"You look really tired lately. Is everything all right at home?\" Kayleigh said that her mum had multiple sclerosis and that she got up in the night to help her, and did the shopping before school. Mr Okafor told her she had done nothing wrong, thanked her for telling him, and passed it on, with her permission, to the school's pastoral lead, who arranged support from the local young carers' service and a quiet word with her other teachers.\n\nHe also stopped giving detentions for lateness to that class without first asking why, which surfaced one more pupil who was caring for a grandparent."
+  },
+  {
+   "title": "The mother who saw criticism everywhere",
+   "scene": "Hannah, thirty-two, has a three-month-old son who wakes every two hours. Her husband works long shifts, and most nights she is up alone.\n  Her mother-in-law, Margaret, visits three times a week to help. Hannah has started to dread the visits. She is sure Margaret disapproves of\n  her. When Margaret picks up the baby, Hannah sees a tightening of the mouth that she reads as a judgment of how she has dressed him. When\n  Margaret asks whether he has been fed, Hannah hears an accusation. When Margaret is quiet, Hannah reads the silence as disapproval.\n\n  One afternoon, when Margaret suggests that Hannah lie down for an hour while she watches the baby, Hannah bursts into tears and tells her that\n  she knows she thinks she is a terrible mother.\n\n  Margaret is stunned. She tells Hannah that she thinks she is doing an amazing job, and that she has been worried about her because she looks so\n  exhausted.\n\nHannah's husband has also noticed that she cries more easily, that she is snapping at him over small things, and that she has stopped seeing her friends from her antenatal group. He has put it down to tiredness and hopes it will pass.\n\nMargaret, for her part, has been holding back. She remembers her own mother-in-law, who criticised everything, and she has promised herself never to be like her. So she says very little, watches carefully, and asks only the questions she thinks a helpful grandmother should ask. The more carefully she watches, the more Hannah feels watched.",
+   "misread": "Hannah read Margaret's neutral faces, ordinary questions and silences as criticism. Her own exhaustion was colouring every reading, so that ambiguous signals looked hostile, and she did not consider that the hostility might be in her reading rather than in Margaret.\n\nShe also did not notice that her readings were worst in the late afternoon, after the longest stretch since she had slept, and best on the rare mornings after a better night.\n\nAnd because she read every visit as an inspection, she began to perform for Margaret, tidying and dressing the baby before she arrived, which made her more exhausted still.",
+   "betterRead": "Goldstein-Piekarski, Walker and colleagues found that after a night without sleep, people's brains and bodies distinguished less clearly between friendly and threatening faces, and they judged more faces as threatening, including neutral ones. Months of broken sleep with a new baby can have a similar effect on a reader: ambiguous signals tip towards threat, and a mother-in-law's tight mouth becomes a verdict. Hannah's better reading came once Margaret's words had broken through. They talked, and agreed that Margaret would take the baby for one long nap a day while Hannah slept, with no discussion of feeds or clothes unless Hannah asked. A few weeks of better sleep later, Hannah found that the tight mouth she had dreaded was simply how Margaret concentrated, and that she made the same face doing the crossword. She also mentioned to her health visitor how low and tearful she had been feeling, which the health visitor took seriously and followed up.\n\nMargaret, for her part, started saying aloud what she was thinking, \"He looks lovely in that,\" so that Hannah did not have to guess."
+  },
+  {
+   "title": "The date after the night shift",
+   "scene": "Leon, thirty, is a paramedic. He has arranged a first date with Abi, whom he met through a friend, for a Saturday lunchtime. On the\n  Friday night, his ambulance is called out to a serious crash, and his shift ends three hours late. He has slept for two hours when he meets Abi\n  at the café.\n\n  Abi finds him hard to read. His eyelids are heavy, his face is pale and flat, and he smiles only briefly. He listens, but slowly, and twice asks\n  her to repeat something. His voice is lower and quieter than it was on the phone. Halfway through lunch he yawns, then apologises. Abi decides\n  that he is bored, or that he does not find her interesting, and begins to wrap up the conversation early.\n\n  As they leave, Leon says he is really sorry he has been such poor company, and that he came off a night shift at nine that morning after a bad\n  job, and nearly cancelled but did not want to let her down.\n\nAbi has been on several disappointing dates this year and has started to expect them to go badly. When Leon yawns, it feels like confirmation of something she already believed would happen.\n\nLeon has also not eaten since a cereal bar at three in the morning. He orders a large breakfast at lunchtime, which Abi notices and finds slightly odd, and eats it quickly, without saying much.",
+   "misread": "Abi read Leon's heavy eyelids, flat face, slow responses and yawn as boredom or lack of interest in her. She read his tiredness as a feeling about her, because that was what the date was about.\n\nHer own expectation also shaped the reading. A reader who expects to be rejected finds rejection in ambiguous faces more easily, especially faces she has no baseline for.\n\nLeon, for his part, misread the date too. He saw her wrapping up early as a sign that she had decided against him, and nearly did not apologise at all.",
+   "betterRead": "Faces after sleep loss look sadder and less engaged, and the behaviours that come with tiredness, slower responses, missed words, flat speech and yawning, overlap almost exactly with the signs of boredom. A reader who does not know someone's sleep has little way of telling the two apart. Abi had no baseline for Leon, which made the misreading easy, and his apology changed everything. Her better reading was that she had met an exhausted man who had made an effort to keep his word, which said rather more about him than his eyelids had. She told him she was glad he had not cancelled, and suggested they try again the following weekend, when he had slept. On the second date, rested, he was animated, funny and asked her more questions than anyone had in months.\n\nAbi said later that his apology at the door was the moment she started to like him. It was the first thing all afternoon that had not been filtered through his exhaustion."
+  },
+  {
+   "title": "The argument before dinner",
+   "scene": "Sophie and James, both in their thirties, have been meaning to talk about money for weeks: whether they can afford a bigger flat, and\n  how to split their savings. They finally sit down to do it on a Thursday at seven in the evening, both straight from work. Neither has eaten\n  since a sandwich at midday. James has had a difficult afternoon with a client.\n\n  The conversation goes wrong almost at once. James's face looks tight and impatient to Sophie, and she reads his question about her spending as\n  an accusation. Sophie's sigh, when he shows her a spreadsheet, looks to James like contempt. Within twenty minutes they are both speaking sharply,\n  and Sophie says something about his mother's money that she instantly regrets. James walks out to the kitchen and starts making pasta, banging\n  the pans.\n\n  Over the pasta, neither of them says much. By the end of the meal, both are calmer, and Sophie apologises.\n\nThey had planned the conversation for the weekend, then moved it to Thursday because Sophie's sister was visiting. Neither of them thought about how they would feel by seven on a Thursday.\n\nSophie has also had a bad week. Her manager told her on Tuesday that her team's budget would be cut, and she has been carrying the worry around ever since without mentioning it to James. When he opens the spreadsheet, all she can see is another set of numbers telling her she cannot have what she wants.\n\nJames, for his part, had prepared the spreadsheet carefully at lunchtime, colour-coded and annotated, and had been looking forward to showing it to Sophie as proof that they could afford the flat. Her sigh, to him, felt like a dismissal of the effort.",
+   "misread": "Each of them read the other's face and tone as hostile, and each answered that hostility. Neither considered that both of them were hungry, tired and coming off a hard day, and that the evening had been set up for exactly this kind of misreading.\n\nThey also each read their own sharpness as a reaction to the other, rather than as a sign of their own hunger and fatigue, which is the hardest part of depletion to see from the inside.\n\nThe setting also mattered: across the kitchen table, facing each other over a laptop, in the posture of a negotiation rather than a conversation.\n\nNeither of them was wrong to want the conversation. They were wrong only about when to have it.",
+   "betterRead": "MacCormack and Lindquist found that hunger on its own did not make people more negative, but that hungry people in a negative or ambiguous situation judged things more harshly than people who had eaten. A money conversation at seven in the evening, after a long day, with neither person fed, is an ambiguous and loaded situation. Each tight face and each sigh was read through hunger and fatigue, and each harsh reading pushed the other one higher. Their better approach, which they agreed over the pasta, was to try again at a better time. They had the conversation on Saturday morning, after breakfast and a walk, with coffee on the table. It took an hour, they found that they mostly agreed, and James admitted that the spreadsheet had been a terrible way to start.\n\nThey also agreed a rule for the future: anything about money happens on a weekend morning, with breakfast first."
+  }
+ ],
+ "workedReading": {
+  "title": "The night handover",
+  "scene": "Gloria is the day manager of a care home for older people. At seven each morning she takes handover from the night staff. This morning the night carer, Ade, who is usually warm and talkative, is short with her. He gives the handover in clipped sentences, does not smile, and when Gloria asks a follow-up question about one resident's fall, he says, \"It's in the notes,\" and looks away. His face is grey, his eyes are red and he keeps rubbing his jaw. He has worked four twelve-hour nights in a row. Gloria feels a flash of irritation. She has had a difficult morning herself, with two staff off sick.\n\nGloria also knows that night staff often feel invisible to the day team, and that a brisk, critical handover can make them feel that their night's work counts for nothing.\n\nGloria knows Ade well. He has worked at the home for six years, mostly on nights by choice because it fits around his children's school day. He is the carer the residents ask for by name, and the one who sits with people who are dying when their families cannot be there.",
+  "steps": [
+   {
+    "label": "Check your own tank",
+    "text": "Gloria starts with herself. She slept badly, worrying about the staffing, and has had nothing but coffee since she woke. She notes that she is at risk of reading Ade more harshly than he deserves, and that her irritation arrived very quickly, which is often a sign that the reader is depleted.\n\nShe also notes that she is at her own low point of the week: Monday morning, short-staffed, with a full day ahead. The conditions for a harsh reading could hardly be better.\n\nShe also has a quick biscuit from the tin in the office before she says anything else, which she notes is the first food she has eaten all day. It is a small thing, and it changes how much patience she has for the next ten minutes."
+   },
+   {
+    "label": "Consider the hour and the shift",
+    "text": "It is seven in the morning, at the end of a fourth consecutive night. Ade's body is at or near the low point of its daily rhythm, and he has been awake for most of the past twenty-four hours. That alone would change how anyone looked and spoke: heavier eyes, a flatter face, shorter answers, less patience.\n\nShe also remembers that the hours before dawn are when accidents and errors are most common in night work, and that a carer at the end of a run of nights deserves care himself.\n\nShe also reminds herself that she herself is short with people at the end of a long day, and that nobody who knows her takes it as a sign of what she really thinks of them."
+   },
+   {
+    "label": "Compare with his baseline",
+    "text": "On day shifts, and at the start of night shifts, Ade is one of the warmest members of staff, chatting with residents and joking with colleagues. Gloria has never seen him curt with anyone. Against that baseline, the change is large, and it lines up with the end of a long run of nights, not with anything she has done.\n\nShe also notes that she has rarely seen Ade at seven in the morning after four nights. Her baseline for him is mostly from day shifts, which is a reason to be cautious about comparing the two.\n\nShe also notes that Ade is quieter than usual with the residents who are up early, which suggests the change is in him, across the board, rather than in how he feels about her."
+   },
+   {
+    "label": "Look at the cluster",
+    "text": "The grey face, red eyes, jaw-rubbing, clipped speech and looking away all fit exhaustion, with a pacifier added. None of them is directed at her in particular. The one thing that might be about her is \"It's in the notes\", and even that fits a man who has written the notes carefully and has nothing left to explain them with.\n\nShe also notes what is missing: no complaint, no blame of anyone else, no carelessness in the written notes. A man annoyed with her would probably show it in more than one short sentence.\n\nShe also notices that he keeps glancing at the corridor where the resident who fell has her room. That is a clue she files for later: something about the fall may be on his mind."
+   },
+   {
+    "label": "Hold the readings open",
+    "text": "He may simply be exhausted. The fall may have been frightening and he may be worried about it. Something may have happened in the night that he has not mentioned. He may, less likely, be annoyed with her about the rota. Gloria notes that she does not need to know which right now, and that the handover is the wrong moment to find out.\n\nShe also decides not to raise the rota at handover, even though it is on her mind. One more topic, at the end of his fourth night, would be one more load.\n\nHolding them open also stops her from saying the sentence that is forming in her head, about his tone, which would have been accurate and would have helped nobody."
+   },
+   {
+    "label": "Adjust to the state",
+    "text": "She keeps the rest of the handover short, reads the notes on the fall herself, and asks only the one question she needs answered for safety: whether the resident was seen by the doctor. Ade says yes. She thanks him, tells him he has done four long nights and should get home and sleep, and says she will ring him this afternoon if she has questions about the fall.\n\nShe also makes him a cup of tea before he goes, which takes two minutes and which Ade, she notices, holds with both hands as if it were the first warm thing he has touched all night.\n\nShe also asks the day nurse to check on the resident who fell straight away, so that Ade can go home knowing someone is looking after her."
+   },
+   {
+    "label": "What happened",
+    "text": "When Gloria rings at three, Ade answers sounding like himself. He apologises for being short and says that the fall had shaken him, because the resident had been on the floor for a few minutes before he found her, and he had been blaming himself all night. Gloria tells him he did everything right, and they talk it through properly. She also changes the rota so that no one works more than three nights in a row. She notes that her flash of irritation at seven in the morning would have produced a very different conversation.\n\nShe also starts asking night staff, at every handover, whether anything happened in the night that was hard for them, as well as what happened to the residents.\n\nShe also tells the rest of the day team, at the morning briefing, that the night had been hard, so that they read the night notes with that in mind."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading tiredness as a mood",
+   "body": "A tired face looks sad, flat, bored or disapproving, and tired behaviour, slower answers, shorter patience, less eye contact and less smiling, looks like a bad mood or a bad attitude. Without knowing how someone has slept, it is very easy to read their exhaustion as a feeling about you, the meeting or the conversation. The new father who seems uninterested at work, the pupil who seems bored, the date who seems disengaged, the partner who seems resentful at breakfast: each may simply be short of sleep. Before you decide what a flat face means, ask yourself what you know about the person's night, and if it matters, ask them.\n\nIt also helps to remember that tiredness can be invisible in conversation and obvious on camera. On video calls, under harsh light and at close range, a tired face can look even flatter than it does in person.\n\nParents of babies and young children, carers, shift workers and people with chronic pain are among those most often misread this way, because their tiredness is constant and rarely mentioned.\n\nIt also helps to give people the benefit of the doubt on Monday mornings and Friday afternoons, when the most people are tired, and to save judgments of anyone's mood for a time when they are more likely to be rested."
+  },
+  {
+   "title": "Trusting your own tired eyes",
+   "body": "Depletion changes the reader as well as the read. After poor sleep, people tend to see more threat in neutral faces, to judge more harshly, and to feel more irritable. A reading made at the end of a long day, after a bad night, on an empty stomach, is a reading made through a distorting lens. That does not mean it is wrong, but it does mean it deserves more checking than usual. If you notice yourself reading hostility everywhere on a tired day, it is worth asking whether the hostility is in the room or in you, and waiting until you are rested before acting on it, if you can.\n\nIt also helps to tell people when you are depleted. \"I slept terribly, so if I seem short, it's not you\" is a small sentence that can prevent a whole day of misreadings in both directions.\n\nIt also helps to separate a tired reading from a tired decision. You may not be able to stop yourself reading a colleague's face as hostile after a bad night, but you can stop yourself from sending the email you would write about it until the next day."
+  },
+  {
+   "title": "Holding hard conversations at the low point",
+   "body": "People often have difficult conversations at the worst possible times: late at night, at the end of a long day, before dinner, after a bad night's sleep, or in the early-afternoon dip. These are the times when both people are most likely to misread each other, to see threat, to answer harshly and to say things they regret. If a conversation matters and can wait, choose a time when both of you are rested and fed: late morning is often good. If it cannot wait, at least eat something, sit down, and agree to stop if it starts to go wrong.\n\nCouples often find it helpful to agree a rule: no important decisions after ten at night or before food. It sounds trivial and it prevents a surprising number of rows.\n\nAt work, the same principle applies to scheduling. Difficult appraisals, disciplinary meetings and bad news are best delivered in the late morning, not at five on a Friday afternoon.\n\nIf you are a manager, it also helps to notice when your team's hardest meetings happen. A weekly meeting held at four o'clock on a Friday may be producing worse decisions every week without anyone realising why."
+  },
+  {
+   "title": "Treating constant exhaustion as normal",
+   "body": "Many people accept being tired all the time as part of modern life, and many men in particular push through exhaustion for years rather than mention it. Ordinary tiredness that comes from a busy week or a new baby usually improves with rest. Tiredness that does not, that lasts for months, or that comes with loud snoring and pauses in breathing at night, falling asleep during the day, difficulty sleeping most nights, low mood or other changes in health, deserves a conversation with a doctor. Many causes of persistent exhaustion, including sleep disorders, thyroid problems and anaemia, are treatable.\n\nIt also helps to notice when someone close to you seems to be falling asleep at odd times, such as in conversation or at the wheel. Raising it kindly can be the start of getting a treatable problem diagnosed.\n\nIt also helps to ask a partner or housemate what they notice about your sleep. People often have no idea that they snore, stop breathing or thrash about at night until someone tells them.\n\nMen are often slower than women to see a doctor about tiredness, partly because it seems too ordinary to mention. It is not too ordinary. Persistent exhaustion is one of the commonest reasons doctors find treatable problems."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How much sleep do adults need?",
+   "a": "Most adults need at least seven hours a night on a regular basis, according to the consensus statement published in 2015 by the American Academy of Sleep Medicine and the Sleep Research Society, and many need more. Needs vary between people, and they change with age: teenagers need more than adults, and older adults often sleep more lightly. The best guide is how you feel. If you regularly need an alarm to drag you out of deep sleep, rely on caffeine to function, feel sleepy in the afternoon most days or sleep much longer at weekends, you are probably not getting enough.\n\nIt also helps to protect a regular wake time, even at weekends. Many sleep specialists find that a consistent time to get up does more for sleep than trying to go to bed earlier.\n\nIt also helps to know that caffeine can stay in the body for many hours, so an afternoon coffee may still be affecting sleep at bedtime, even in people who say it does not.\n\nIt also helps to treat sleep as part of reading well. A reader who protects his own sleep before an important day is doing something as useful as any amount of preparation."
+  },
+  {
+   "q": "Can you tell from someone's face that they slept badly?",
+   "a": "Sometimes. Sundelin and colleagues found that observers rated sleep-deprived faces as having more hanging eyelids, redder and more swollen eyes, darker circles, paler skin and more drooping corners of the mouth. But they also rated those faces as sadder, which shows the problem: the face of a tired person and the face of a sad person overlap a great deal. Make-up, lighting, skin tone, illness and age also change how a face looks. A tired-looking face is a reason to wonder about sleep, and to ask if it matters, rather than a reliable sign of it.\n\nIt may also help to know that people often underestimate how tired they look. If someone tells you that you look exhausted, it is usually worth taking seriously.\n\nWhen you do ask, keep it light and specific: \"Rough night?\" or \"How's the baby sleeping?\" A question about sleep is one of the easiest ways into a conversation about how someone really is.\n\nIt also helps to be careful with comments about how someone looks. \"You look tired\" can land as \"you look bad\", especially for someone who is already struggling. A question about sleep is usually kinder than a comment about a face."
+  },
+  {
+   "q": "Why does tiredness make me so irritable?",
+   "a": "Partly because sleep loss affects the parts of the brain that help regulate emotion. Research by Matthew Walker's group and others has found that after sleep deprivation, people's emotional responses become stronger and less controlled, and, as Goldstein-Piekarski and colleagues found, people see more threat in neutral faces. A tired person has a shorter fuse, a stronger reaction to small annoyances and a greater tendency to read other people as hostile. Knowing this does not stop it happening, but it can help you notice it, and choose not to act on the first irritation of a tired day.\n\nIt also helps to have a plan for tired days: fewer important decisions, more patience with yourself, and an early night if you can manage one. A tired day is a bad day to judge anyone.\n\nIt also helps to apologise quickly when you snap on a tired day. A short, honest apology, \"Sorry, I'm shattered, that wasn't about you,\" repairs most of the damage before it settles."
+  },
+  {
+   "q": "Are judges really harsher before lunch?",
+   "a": "A famous 2011 study by Shai Danziger and colleagues, of parole decisions by Israeli judges, reported that favourable rulings fell sharply as sessions went on and rose again after food breaks, and it is often quoted as proof that hunger affects judgment. The finding has been strongly questioned. Other researchers pointed out that the order of cases was not random, for example because prisoners without lawyers tended to be heard last in a session, and that this alone could produce the pattern. The safer conclusion comes from more controlled studies, such as MacCormack and Lindquist's: hunger can make judgments harsher in negative or ambiguous situations, which is reason enough to eat before a hard decision.\n\nThe story is a useful reminder that a vivid finding is not always a solid one. When a study seems to prove something neatly, it is worth asking whether anyone has checked it.\n\nIt also helps to apply the lesson to yourself. If you have an important decision to make about another person, such as a reference, a complaint or a hiring choice, make it when you are fed and rested, and look at it again the next day if you can."
+  },
+  {
+   "q": "Are night owls just lazy?",
+   "a": "No. People differ in their chronotype, the timing of their daily rhythm. Some are larks, alert early and tired by evening; others are owls, slow in the morning and at their best later in the day. These differences have a biological basis, and they shift with age: teenagers' rhythms move later, which is one reason so many struggle with early school starts, and older adults' rhythms often move earlier. An owl at a nine o'clock meeting may look sluggish and disengaged and be at their biological low point. Where you can, schedule important conversations at a time that suits both people's rhythms.\n\nIt also helps to know your own chronotype. If you are an owl, early meetings may show you at your worst, and it can be worth asking for later ones when they matter.\n\nIt also helps to be kind to teenagers who struggle in the morning. Their tiredness at an early start is often biology, not attitude, and treating it as laziness tends to make mornings worse.\n\nWorkplaces that allow flexible start times often find that owls do better work later in the day, and that the change costs little. It is worth asking about if mornings are your worst time."
+  },
+  {
+   "q": "When should tiredness worry me?",
+   "a": "When it does not go away with rest, when it lasts for weeks or months, or when it comes with other changes. Signs worth talking to a doctor about include loud snoring with pauses in breathing or gasping at night, which a partner may notice; feeling sleepy during the day despite enough time in bed; difficulty getting to sleep or staying asleep on most nights for months; and tiredness alongside low mood, weight change or other symptoms. And if you ever feel drowsy while driving, stop somewhere safe and rest. Sleepiness at the wheel is dangerous, and no deadline is worth it.\n\nShift workers deserve particular attention. Night shifts disrupt the body's rhythm, and people who work them for years often need extra support to sleep well and stay healthy.\n\nIt may also help to know that sleep problems and low mood often go together, each making the other worse. Treating one can help the other, which is one more reason to mention persistent sleep problems to a doctor.\n\nAnd if someone you know seems to be struggling with sleep, offering practical help, such as taking a night feed, covering a shift or driving them home, can do more than any advice."
   }
  ],
  "watch": [
