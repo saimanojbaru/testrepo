@@ -73,6 +73,20 @@
    "doCaption": "Letting the leg bounce",
    "dontCaption": "Telling a colleague to sit still",
    "annotation": "For some people, movement is how attention works. Asking them to stop may cost the focus you wanted."
+  },
+  {
+   "doPoseId": "p_pair_teach_alongside",
+   "dontPoseId": "p_pair_adult_child",
+   "doCaption": "Alongside, talking while looking at the task",
+   "dontCaption": "Crouching close and demanding eye contact",
+   "annotation": "Many autistic children listen best without a face pushed close to theirs. Sit beside, look at the work together and let the gaze go."
+  },
+  {
+   "doPoseId": "p_mixed_side_by_side",
+   "dontPoseId": "p_mixed_face_to_face",
+   "doCaption": "Side by side, looking at something shared",
+   "dontCaption": "Face to face, gaze expected",
+   "annotation": "A shared object to look at takes the pressure off eye contact. Many conversations go further side by side."
   }
  ],
  "caseStudy": "Liam, thirty-four, manages a small software team. When Ravi joined, Liam formed an impression within a week. Ravi rarely looked at anyone in meetings, answered questions in a few flat words, never laughed at the team's jokes and sometimes said things like That approach will not work, without softening it. Liam decided he was disengaged, possibly arrogant, and began to wonder whether the hire had been a mistake.\n\nThen he read Ravi's first written design review. It was the most careful document anyone on the team had produced, and it caught two problems Liam had missed. He asked Ravi for a one-to-one, and, rather than giving feedback about his manner, asked how he preferred to work.\n\nRavi told him, a little warily, that he was autistic. He said he looked away in meetings because faces distracted him from what people were saying, that he found the jokes hard to follow when several people talked at once, and that he said things directly because he assumed people wanted to know. He asked whether he could get agendas in advance and give some of his input in writing.\n\nLiam agreed. He started sending agendas the day before, asking for written comments, and saying plainly what he meant instead of hinting. He stopped reading Ravi's gaze as a verdict. Within a few months, Ravi was the person the team relied on for reviews, and Liam had noticed that two other team members liked the agendas just as much. He also noticed how quickly he had been ready to write someone off on the strength of a manner.",
@@ -92,6 +106,11 @@
     "Read the words back as if from a stranger, without picturing their face or voice.",
     "Note whether your impression of them changes.",
     "Decide on one thing you will judge by their words and actions rather than their manner."
+   ],
+   "variations": [
+    "Do the drill with a colleague whose manner you like, too, and notice whether their words alone are as strong as you thought.",
+    "Read a transcript or the written minutes of a meeting before you watch or remember it, and compare your impression of each speaker.",
+    "Ask a trusted friend to read the words you wrote down, without knowing who said them, and tell you their impression."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Rewrite three of those hints as plain statements.",
     "Use one of the plain versions in a real conversation.",
     "Note how the other person responded."
+   ],
+   "variations": [
+    "Ask a colleague whether they would prefer you to be more direct with them, and use their answer.",
+    "Rewrite one email you are about to send so that the request is in the first sentence, and notice whether the reply comes faster.",
+    "Notice one hint someone gives you this week that you could easily have missed, and how you would have preferred to be told."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Offer a choice of how to respond: in the meeting, by message afterwards, or in a walk-and-talk.",
     "Notice who takes up which option.",
     "Ask one person afterwards whether it helped."
+   ],
+   "variations": [
+    "Offer people the choice of a walking meeting or a seated one for your next one-to-one, and notice who chooses which.",
+    "Send questions for a discussion in advance, and invite written answers from anyone who prefers them.",
+    "After a meeting, send a short written summary of what was agreed, so that people who process better in writing have it."
    ]
   },
   {
@@ -122,6 +151,11 @@
     "Each time someone looks away, ask yourself what else might explain it.",
     "Write down one occasion when you assumed something about gaze that turned out to be wrong.",
     "Keep the note where you will see it."
+   ],
+   "variations": [
+    "In one conversation this week, deliberately look at something shared, such as a screen or a view, rather than the other person's face, and notice how it feels.",
+    "Notice a child or young person looking away while you talk to them, and resist asking them to look at you.",
+    "Ask someone you know well how they feel about eye contact, and listen to the answer."
    ]
   }
  ],
@@ -203,6 +237,45 @@
    "explain": "Asking about preferences and offering formats that suit him shares the work of bridging the gap. Coaching him to perform a different style places the whole burden on him.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Brewer, Bird and colleagues find when observers tried to identify facial expressions posed by autistic people?",
+   "options": [
+    "Autistic observers read them easily, while non-autistic observers could not read them at all",
+    "They were hard for everyone to read, which suggested each person's face had its own style",
+    "They were read more accurately than expressions posed by non-autistic people in the study",
+    "They could not be read because the autistic participants declined to pose any expressions"
+   ],
+   "answer": 1,
+   "explain": "Autistic people's posed expressions were recognised less accurately by autistic and non-autistic observers alike. The researchers concluded that the expressions were individual rather than following a shared autistic style.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A supply teacher tells an autistic nine-year-old to look at him while he explains a task, and the boy becomes distressed. What fits this chapter best?",
+   "options": [
+    "Insist more firmly, since children need to learn to make eye contact with teachers",
+    "Stop asking for eye contact, and judge his listening by what he does with the task",
+    "Send him out of the room, since distress during instructions is a form of defiance",
+    "Crouch closer to his desk, so that it is easier for him to look at the teacher's face"
+   ],
+   "answer": 1,
+   "explain": "Many autistic people look away in order to listen, and demanding eye contact can raise distress. What a child does with the instructions shows whether he heard them far better than where his eyes were.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "A parent says that a child who keeps moving while doing homework cannot be concentrating properly. What did Sarver and colleagues find?",
+   "options": [
+    "Children with ADHD who moved more during demanding memory tasks tended to perform better",
+    "All children performed worse whenever they moved, so stillness always helps concentration",
+    "Movement made no difference at all to the performance of any child who took part in the study",
+    "Only children without ADHD benefited from moving, while children with ADHD did much worse"
+   ],
+   "answer": 0,
+   "explain": "Children with ADHD who moved more while doing working-memory tasks tended to perform better, which suggests that movement can support thinking for some people rather than competing with it. It does not mean that every movement helps every child.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -231,6 +304,110 @@
    "work": "Hyperactivity in attention-deficit/hyperactivity disorder (ADHD): Impairing deficit or compensatory behavior?",
    "author": "Dustin E. Sarver, Mark D. Rapport, Michael J. Kofler and colleagues",
    "note": "Journal of Abnormal Child Psychology 43(7), 2015. Why some children think better while moving."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The student who paced",
+   "scene": "Kieran, nineteen, is in his first year of an engineering degree. He was diagnosed with ADHD at fourteen, and he has told the university's\n  disability service, which has sent a short note to his department. In the weekly lab briefing, forty students stand around benches while a\n  demonstrator, Dr Hale, explains the experiment. Kieran stands at the back. After a few minutes he begins to move: shifting his weight, walking a few\n  steps along the wall and back, turning a pen over in his fingers. He is listening hard. It is how he listens.\n\n  In the third week, Dr Hale stops mid-sentence and says, in front of everyone, \"If you can't stand still, perhaps you could wait outside.\" Several\n  students laugh. Kieran goes red, stands rigidly still for the rest of the briefing, and finds afterwards that he cannot remember the second half of\n  the instructions. His experiment goes wrong. He gets the lowest mark in the group.\n\n  The next week he stands at the back again, holding himself still with his arms folded and his jaw tight. He misses half the briefing again.\n  He stops asking questions in labs, and starts to wonder whether he is cut out for the course.\n\n  His personal tutor, Dr Mensah, notices his marks dropping and asks to see him. Kieran tells her what happened. She asks whether Dr Hale had seen the\n  note from the disability service. Kieran does not know.\n\nKieran's school had let him stand at the back of the class for years. Nobody at the university had told him that this might be a problem, and he had not thought to mention it.\n\nHe had also been told by a friend in the second year that Dr Hale was strict but fair, and he spends the evening trying to work out what he had done that was unfair to Dr Hale.\n\nIn the second lab, a classmate whispers that he should just take something to calm down. Kieran does not reply.",
+   "misread": "Dr Hale read Kieran's pacing and fidgeting as inattention and disrespect, and corrected it in public. Kieran read the correction as proof that his way of listening was unacceptable, and tried to stop it, which made listening harder.\n\nThe students who laughed read the correction as a joke at the expense of a fidgety classmate. None of them knew that Kieran had been listening more carefully than most of them.\n\nAnd Kieran read his own need to move as a weakness he should be able to overcome by effort, which is what he had been told, in one way or another, for most of his school life.\n\nDr Hale had also read the note from the disability service, it turned out, months earlier, and forgotten it. A note is not the same as a changed habit.",
+   "betterRead": "Sarver and colleagues found that children with ADHD who moved more during working-memory tasks tended to perform better, which suggests that for some people movement supports thinking rather than competing with it. Kieran's pacing was the opposite of inattention. Holding himself still took so much effort that there was little left for the instructions. The better reading, which Dr Mensah helped bring about, began with the note that Dr Hale had not read. Dr Hale apologised to Kieran privately, and the department agreed that students could stand, move at the back of the room or hold something in their hands during briefings, and that written instructions would be posted before each lab. Several other students began using the back wall too. Kieran's marks recovered. Dr Hale said later that he had learned to stop reading stillness as attention in anyone.\n\nKieran also started telling new lecturers at the start of each module that he might move around, which took the surprise out of it.\n\nThe posted instructions turned out to help almost everyone, including two international students who had been struggling to follow the spoken briefings."
+  },
+  {
+   "title": "The veterinary nurse who seemed cold",
+   "scene": "Rosie, thirty-one, is a veterinary nurse at a busy practice, and she is autistic. She is meticulous, gentle with frightened animals and\n  usually the last to leave, checking on the ones staying overnight. Her face tends to stay still, and her voice is level whatever she is saying. She\n  explains things clearly and precisely, and she does not usually smile when she is concentrating.\n\n  One afternoon she has to tell an elderly man, Mr Patel, that his dog's blood tests show kidney failure and that the vet would like to talk to him\n  about the options. She explains the results carefully, in a calm, even voice, looking at the screen rather than at him. Mr Patel goes very quiet.\n  Afterwards he tells the receptionist that the nurse \"didn't seem to care at all\", and writes a complaint saying she treated his dog like a set of\n  numbers.\n\n  The practice manager, Gill, reads the complaint and is inclined to agree that Rosie can come across as cold. She considers sending her on a course\n  about client communication. Then she remembers that Rosie stayed until nine the previous Friday with a cat that was not expected to survive the night,\n  talking to it quietly and stroking its head.\n\n  Gill asks Rosie to come and talk about the complaint, and is careful to start by saying that she knows how much Rosie cares about the animals.\n\nRosie had in fact noticed that Mr Patel had gone quiet, and had wondered whether she should stop. She had decided that he needed the information, and carried on, because that was what she would have wanted.\n\nShe had also printed out the blood results for Mr Patel and highlighted the important numbers, so that he could read them again at home. He had left them on the counter.",
+   "misread": "Mr Patel read Rosie's still face, level voice and gaze towards the screen as indifference to his dog and to him. Gill's first reading was that Rosie needed to learn to show warmth, which treated the difference as her deficit alone.\n\nRosie, for her part, had read Mr Patel's silence as him taking in the information, which was partly true, and had no way to read the hurt that went with it.\n\nThe receptionist who passed on the complaint read it as confirmation of something she had half thought herself, because Rosie rarely joined in the chat at the front desk.",
+   "betterRead": "Brewer, Bird and colleagues found that autistic people's posed expressions were hard for everyone to read, autistic observers included, because each person's face had its own way of showing feeling. Rosie's care was real and visible in what she did, but her face and voice did not follow the script Mr Patel expected. The double empathy problem cuts both ways: he could not read her, and she had no way of knowing that he needed something her face was not giving. The better approach, which Gill and Rosie agreed together, did not ask Rosie to perform expressions she did not feel. Rosie chose to add a sentence to difficult conversations that put her care into words: \"I know this is hard news. I've got very fond of Biscuit.\" Where she could, she sat beside clients rather than across the screen. Gill also rang Mr Patel to explain that Rosie had looked after his dog with great care. He came back the next week and asked for her by name.\n\nRosie said afterwards that having one sentence ready made difficult conversations easier for her too, because she no longer worried that clients were misreading her."
+  },
+  {
+   "title": "The call that went perfectly",
+   "scene": "Femi, thirty-eight, is an account manager at a company that builds data systems. He is sitting in on a video call between the company's lead\n  engineer, Ines, and a client's technical lead, Martin. Both are autistic, and both have mentioned it in passing in earlier emails. The call is to\n  agree the design of a complex data migration.\n\n  To Femi, the call is excruciating. Neither Ines nor Martin makes small talk. Martin's camera is pointed slightly off to the side, and Ines looks at\n  her second screen most of the time. They speak in short, precise sentences, with long silences while one of them thinks. Nobody smiles. When Ines\n  says that Martin's proposed schedule is unrealistic, Martin says \"Agreed,\" and they move on. Femi keeps trying to fill the silences with friendly\n  remarks, which both of them ignore.\n\n  After forty minutes, the call ends abruptly when they have finished the agenda. Femi is sure it has gone badly. He emails his manager to warn that the\n  client relationship may be in trouble, and drafts an apology to Martin for the \"tense\" meeting.\n\n  Before he sends it, an email arrives from Martin, copied to Ines. It says it was the most productive technical meeting he has had in a year, and\n  attaches a list of agreed actions that is more complete than Femi's notes.\n\nFemi had also been asked by his manager to \"keep the relationship warm\", and had understood that to mean filling the call with friendly chat.\n\nAt one point, Ines types a question into the chat instead of saying it aloud, and Martin answers in the chat too. Femi reads it as the two of them avoiding talking to each other.",
+   "misread": "Femi read the absence of small talk, smiles and eye contact, and the long silences, as tension and a relationship going wrong. He read his own attempts to fill the silences as helpful, when they were interruptions to two people thinking.\n\nHis manager, reading Femi's warning email, nearly arranged a call with the client's director to smooth things over, which would have confused everyone.\n\nHe also read Martin's off-centre camera as a sign that Martin was distracted, when Martin had angled it deliberately so that he did not have to look at his own face.\n\nNeither engineer had noticed Femi's discomfort at all, which is the double empathy problem from the other side: they could not read him either.",
+   "betterRead": "Crompton and colleagues found that chains of autistic people passed on information about as accurately as chains of non-autistic people, while mixed chains lost the most detail. Milton's double empathy problem predicts exactly this: misunderstanding arises in the gap between different ways of communicating, not inside one of them. Ines and Martin shared a style, and the call worked beautifully for them. The only person struggling was Femi, reading it with a map drawn for a different kind of conversation. His better reading would have judged the meeting by what it produced, not by how it felt to him. He deleted the apology. At the next call, he stayed quiet during the silences, took the notes, and asked Ines afterwards whether there was anything he could do to make the meetings easier. She said that not filling the silences would be ideal.\n\nInes and Martin's project finished a month ahead of schedule.\n\nFemi also learned to send a short agenda before each call, which both engineers said they appreciated."
+  },
+  {
+   "title": "The boy who would not look at the teacher",
+   "scene": "Sami, nine, is autistic, and his class has a supply teacher, Mr Dawson, for two weeks while their usual teacher is on leave. Nobody has passed\n  on the information in Sami's support plan. On the first morning, when Mr Dawson is explaining a maths task, he notices that Sami is looking at the\n  window rather than at him. He says, \"Sami, look at me when I'm talking to you.\" Sami glances at him and looks away again. Mr Dawson repeats it more\n  firmly. Sami's hands start to flap at his sides and he begins to hum.\n\n  Mr Dawson, who has had a difficult year at another school, reads this as defiance. He moves closer, crouches in front of Sami's desk and says,\n  \"Eyes on me, please.\" Sami pushes his chair back so hard that it falls over, and runs to the corner of the classroom, where he crouches with his hands\n  over his ears.\n\n  The teaching assistant, Mrs Begum, who knows Sami well, goes to him, sits on the floor a little way off and waits. After a few minutes he lets her\n  sit beside him. She tells Mr Dawson quietly that Sami listens best when he is not looking at the person speaking, and that he had heard every word of\n  the maths explanation.\n\n  That afternoon, Sami's mother, Leila, is called in to discuss his \"behaviour\".\n\nLeila has been called in about Sami's behaviour before, at another school, and she arrives braced for the same conversation.\n\nMrs Begum had tried to catch Mr Dawson's eye before he crouched down, but he had not looked at her.\n\nMr Dawson, for his part, had been told at his last school that he was too soft, and had resolved to be firmer from the first morning at this one.",
+   "misread": "Mr Dawson read Sami's averted gaze as inattention, and his flapping, humming and retreat as defiance. Each demand for eye contact, made closer and more firmly, raised Sami's distress, and Mr Dawson read the rising distress as worsening behaviour.\n\nThe other children read Sami's retreat as Sami being naughty again, which is the reading Mr Dawson had shown them.\n\nEach step in the escalation made sense within Mr Dawson's reading, and each one made Sami's distress worse. A misreading acted on firmly can do more harm than one held lightly.",
+   "betterRead": "Autistic people often describe eye contact as intense or overwhelming, and many look away in order to listen. Sami's gaze at the window was how he was attending; the flapping and humming were his way of managing a demand he could not meet, and the retreat to the corner was escape from a face pushed close to his. Mr Dawson's reading followed a script that works for many children and failed for this one. The better reading, which the meeting with Leila brought about, began with the support plan. The school made sure every adult who taught Sami had read it, and Mr Dawson apologised to Sami and his mother. He stopped asking any child in the class to look at him while he talked, and found, to his surprise, that several children seemed more settled. Sami finished the maths task the next morning, sitting at the side, looking at the window.\n\nLeila said that the apology mattered to Sami more than anything else, because no adult had ever told him they had got it wrong."
+  }
+ ],
+ "workedReading": {
+  "title": "Meeting a partner's autistic brother",
+  "scene": "Matt, thirty-three, is spending Christmas with his girlfriend Leah's family for the first time. Her brother, Jonah, twenty-nine, is autistic, and lives with their parents. Leah has told Matt that Jonah is funny, kind and obsessed with trains, that he finds new people tiring, and that previous boyfriends have either ignored him or talked to him as if he were a child. Matt wants to get it right, and he is nervous about getting it wrong. On the drive up, he asks Leah to tell him what helps and what does not, rather than guessing from anything he has read. She tells him three things: Jonah does not like being touched by people he does not know, he does not do much eye contact, and he will talk to you properly if you talk to him about something real. Matt resolves to treat Jonah as a person he is getting to know, not as a condition to be managed.\n\nHe also asks Leah what Jonah enjoys doing at Christmas, so that he can join in rather than create something new. She says Jonah likes to do the washing up alone after lunch, and that offering to help would be kind but that he will probably say no.\n\nHe also reminds himself that Jonah is an adult, and that the family's habits around him are theirs to explain, not his to correct.",
+  "steps": [
+   {
+    "label": "Greet without demands",
+    "text": "When they arrive, Jonah is in the hallway. Matt smiles, says \"Hi, Jonah, I'm Matt, good to meet you,\" and does not offer his hand or move closer. Jonah says \"Hello\" to a point somewhere past Matt's shoulder and goes back into the living room. Matt does not read this as rudeness. Leah had told him that Jonah would need time, and a greeting that asks nothing is easier to return later.\n\nLater, when Jonah walks past him in the kitchen, he says \"Hi\" again, this time on his own terms, and Matt says \"Hi\" back without making anything of it.\n\nLater in the afternoon, Jonah sits in the same room as Matt for an hour while everyone watches a film. Leah says afterwards that this was a good sign."
+   },
+   {
+    "label": "Let the gaze go",
+    "text": "Over lunch, Matt notices that Jonah looks mostly at his plate or the table, even when he is speaking. Matt's habit is to look at people while they talk, and he has to resist the urge to catch Jonah's eye. Part I described how autistic adults often look away in order to concentrate. He lets his own gaze drift to the table too when Jonah speaks, so that Jonah does not feel watched.\n\nHe also notices that Jonah listens to everything that is said at the table, and contributes a precise correction to Leah's father's account of a family holiday, which makes everyone laugh, including Jonah.\n\nWhen Jonah makes a dry joke about the turkey, nobody is quite sure it is a joke until he smiles slightly, and Matt laughs a beat late. Jonah seems pleased."
+   },
+   {
+    "label": "Talk about something real",
+    "text": "After lunch, Matt asks Jonah, plainly, which railway line he thinks is the most interesting in the country. Jonah looks up briefly, then launches into a detailed account of a line in Scotland, its engineering and its history. His voice is level and fast. Matt listens, asks two genuine questions and admits he did not know trains could do that. Jonah keeps talking for twenty minutes.\n\nHe resists the urge to change the subject when the account becomes very technical. Following someone into the depth of their interest is one of the clearest ways to show respect.\n\nHe also notices that Jonah's level voice carries a great deal of enthusiasm once you know what to listen for: speed, detail and the length of the answer."
+   },
+   {
+    "label": "Sit side by side",
+    "text": "Later, Jonah is sitting on the sofa looking at a book of railway maps. Matt sits at the other end of the sofa, not too close, and asks whether he can see. Jonah turns the book so that they can both look at it. Side by side, facing the same map, the conversation is easier for both of them than it was face to face across the table, as Part III described for many kinds of difficult talk.\n\nThey sit like that for half an hour, mostly in silence, turning the pages. Matt finds it surprisingly restful.\n\nWhen Jonah points out a branch line that closed in the 1960s, Matt asks why, and gets a ten-minute answer that he genuinely enjoys."
+   },
+   {
+    "label": "Say it plainly",
+    "text": "In the evening the family plays a board game, and the jokes come thick and fast. Jonah goes quiet. When Matt makes a sarcastic joke about the rules, Jonah takes it literally and corrects him. Matt laughs and says, \"Sorry, I was joking, you're right about the rule.\" He notices that saying plainly what he means is not a concession; it is a clearer way to talk, and the rest of the family seems to find it easier too.\n\nHe also notices that Leah's father, who has known Jonah all his life, still makes sarcastic jokes that Jonah takes literally, and that Leah quietly translates them.\n\nHe also avoids teasing Jonah about the correction, which a previous boyfriend, Leah tells him later, had done."
+   },
+   {
+    "label": "Notice your own reading",
+    "text": "When Jonah leaves the game halfway through and goes to his room without saying anything, Matt's first reading is that he has done something wrong. He catches the reading and asks Leah instead. She says Jonah has had enough of people for the day, which is normal, and that it is nothing to do with Matt. The double empathy problem, Matt realises, includes his own tendency to take Jonah's behaviour personally.\n\nHe also notices that, had he not asked, he would have spent the evening wondering what he had done, and might have been cooler with Jonah the next day.\n\nHe decides that the most respectful response is to carry on as normal when Jonah leaves, without comment, and to say goodnight if Jonah comes down again."
+   },
+   {
+    "label": "What happened",
+    "text": "On Boxing Day, Jonah comes down for breakfast and, without preamble, hands Matt a printout of a timetable for a heritage railway near Matt's flat, with two trains circled. Leah tells Matt later that it is the warmest thing she has seen her brother do for a new person. Matt reflects that he did very little: he asked, he waited, he listened, he talked about something real and he did not ask Jonah to look at him.\n\nIn February, Matt takes Jonah on the heritage railway. They speak perhaps twenty sentences in four hours, and both of them say afterwards that it was a very good day.\n\nLeah's mother tells Matt that Jonah had asked whether he would be coming next Christmas too."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Making the diagnosis the explanation for everything",
+   "body": "When someone tells you they are autistic or have ADHD, it can be tempting to attribute everything about them to it. A sharp comment becomes their autism; a forgotten deadline becomes their ADHD; a bad mood becomes a symptom. But neurodivergent people are also people who get tired, annoyed, bored, ill, sad and distracted for all the ordinary reasons, and who have personalities, opinions and days off like anyone else. Reading every behaviour through the diagnosis turns them back into a category, which is exactly what this chapter warns against, and it can excuse real problems that need ordinary attention, or dismiss real feelings as traits. A disclosure tells you something useful about how a person may communicate. It does not tell you why they did a particular thing on a particular day. When you are unsure, ask them, as you would anyone else.\n\nA good check is to ask whether you would read the same behaviour the same way in someone who had not told you anything.\n\nAnd remember that a person can be autistic and also simply wrong, or simply right, about the thing they are saying."
+  },
+  {
+   "title": "Accommodating by leaving people out",
+   "body": "Sometimes, wanting to be considerate, people decide on a neurodivergent colleague's behalf what they can and cannot cope with: not inviting them to the team social because it will be loud, not giving them the client presentation because it involves people, not putting them forward for the promotion because the role involves meetings. It feels like kindness. It is a decision taken without them, and it closes doors they may have wanted open. Many autistic and ADHD people want to take part in exactly these things, with some adjustment, and some do not, and the only way to know is to ask. Offer the invitation and the options: \"We're going to the pub on Friday, it'll be busy. Do you want to come, or would you prefer we do something quieter for your leaving do later?\" Then respect the answer, whatever it is.\n\nIt also helps to remember that \"would you like to?\" is a much better question than \"would you cope?\"\n\nIf you are planning an event, ask the person what would make it easier for them, and make that change for everyone if you can."
+  },
+  {
+   "title": "Praising someone for not seeming autistic",
+   "body": "\"You'd never know you were autistic\" and \"You don't seem like you have ADHD\" are usually meant as compliments. To many neurodivergent people, they land very differently. They suggest that the person's natural way of being is something to hide, and that hiding it well is an achievement. They reward masking, the effortful suppression of natural behaviour that the next chapter describes, and which many autistic people say is exhausting and harmful over time. They also imply a picture of what autism or ADHD looks like, usually a narrow one, and tell the person they do not fit it. If you want to say something kind, say it about the person: their work, their humour, their help. If they tell you about their neurodivergence, a simple \"Thanks for telling me, is there anything that would help?\" is far better than a verdict on how well they pass.\n\nIf you notice yourself thinking it, ask what you were expecting autism or ADHD to look like, and where that picture came from."
+  },
+  {
+   "title": "Hearing directness as hostility",
+   "body": "Many autistic people, and some people with ADHD, say exactly what they mean without the softening that many others add automatically: \"That approach will not work,\" \"This is wrong,\" \"I don't want to do that.\" To a listener used to cushioned speech, such statements can sound blunt, rude or aggressive, and the listener may react as if they had been attacked. Usually they have not. The speaker is giving information plainly, assuming that the listener wants it, and is often puzzled by the reaction. As the double empathy problem suggests, the misreading lies in the gap between styles. Before taking offence, listen to the content: is it true, useful, relevant? If you need the person to soften feedback in a particular setting, such as with a client, say so plainly and explain why, rather than expecting them to guess. And consider how much time cushioned speech wastes for everyone.\n\nMany teams find that once they get used to a colleague's directness, they prefer it, because they always know where they stand.\n\nIf you need softening for a client, model the words you would like used, rather than describing the tone."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether someone is autistic or has ADHD?",
+   "a": "You usually cannot, and you do not need to. Diagnosis is a careful process carried out by trained clinicians, and the behaviours in this chapter, such as averted gaze, fidgeting or a level voice, are common in many people for many reasons. Deciding that someone is autistic or has ADHD on the strength of their manner turns a person into a label and is often wrong. What you can do is respond to the person in front of you: notice if your usual reading of their behaviour might not fit, ask rather than infer, state your meaning plainly and offer different ways of taking part. If someone tells you they are neurodivergent, thank them and ask what helps. If you wonder about yourself, the final question in this chapter covers that.\n\nAnd if someone does not tell you, that is their choice. They owe nobody an explanation of how their mind works."
+  },
+  {
+   "q": "Should I avoid eye contact with an autistic person?",
+   "a": "Follow their lead rather than a rule. Many autistic people find sustained eye contact uncomfortable or distracting, so do not demand it, do not comment on it and do not read its absence as disinterest. But you do not need to avoid looking at them altogether; ordinary, brief glances are usually fine, and some autistic people are comfortable with eye contact. A useful habit is to let your gaze rest on something shared, such as a document, a screen or the view, as Matt did with the railway maps, so that neither of you has to manage a face-to-face stare. Talking side by side or while walking can make conversation easier for many people, autistic or not. If you are unsure, it is fine to ask what is comfortable.\n\nIf you are speaking to an autistic child, the same applies even more strongly. Never make eye contact a condition of being listened to.\n\nAnd never comment on someone's eye contact, approvingly or otherwise, unless they raise it."
+  },
+  {
+   "q": "What if I genuinely find a colleague's manner difficult?",
+   "a": "Start by separating the manner from the substance. The Words Without the Body drill in this chapter is useful here: write down what the colleague actually said and did, and read it as if it came from a stranger. Sasson and colleagues found that observers judged autistic adults less favourably from short video clips but not from transcripts of the same words. Your difficulty may be with the style rather than the person. Then remember that the misunderstanding runs both ways; your manner may be just as hard for them to read. If something is causing a real problem, talk about it plainly and specifically: \"When you say my plan won't work in front of the client, it makes it harder for me. Could you tell me first?\" Agree ways of working, rather than trying to change who someone is.\n\nIt also helps to ask how they prefer to receive feedback, which tells you something useful and shows respect.\n\nIf you manage the colleague, ask yourself whether you are judging their work or their style, and keep the two apart in any review."
+  },
+  {
+   "q": "How can I tell what an autistic person is feeling?",
+   "a": "Often, by asking, and by learning that particular person's ways of showing things over time. Brewer, Bird and colleagues found that autistic people's facial expressions were hard for everyone to read, autistic observers included, because each person's face had its own style. So general rules about autistic expressions will not help much. What helps is the same principle this book applies to everyone: learn the person's baseline. Notice what they do when they are content, stressed, absorbed or tired. Many autistic people will tell you directly how they feel if you ask a clear question, such as \"Are you OK to keep going, or would you like a break?\" They may also show feelings through actions rather than faces, as Rosie did with the animals and Jonah did with the timetable.\n\nIt is worth remembering that the same is true of everyone. Nobody's face is a reliable window, which is why asking is always useful.\n\nOver time, many people find they can read an autistic friend or colleague very well, once they stop expecting the usual signals."
+  },
+  {
+   "q": "Is fidgeting in a meeting rude?",
+   "a": "Not in itself. For many people, and especially for some people with ADHD, movement helps them concentrate: Sarver and colleagues found that children with ADHD who moved more while doing demanding memory tasks tended to perform better. Leg-bouncing, doodling, turning a pen or pacing at the back of the room may be signs of someone working hard to listen, as Kieran was. Many autistic people also use repetitive movements to regulate their arousal and focus. Unless the movement genuinely disrupts others, for example by making a loud noise, it is better to let it be. If you chair meetings, you can make it normal by saying that people are welcome to stand, move or fiddle with something if it helps them think.\n\nIf a fidget does make noise, such as a clicking pen, offer a quieter alternative rather than asking the person to stop moving.\n\nAnd if you notice yourself fidgeting more when concentrating, that may be your own body helping you."
+  },
+  {
+   "q": "I think I might be neurodivergent myself. What should I do?",
+   "a": "You do not need to decide alone, and you do not need to rely on online quizzes or descriptions of other people. If you think you may be autistic or have ADHD, and it would help you to know, talk to your GP or doctor about an assessment; waiting times can be long, but a doctor can explain the options. In the meantime, many people find it useful to read accounts by neurodivergent people themselves and to connect with communities run by and for them. You do not need a diagnosis to make changes that help you, such as asking for agendas in advance, moving while you think, taking breaks from noisy places or working in writing where you can. Whatever an assessment finds, the aim is to understand yourself better, not to fit a label.\n\nWhatever you find, be gentle with yourself about the years before you knew. Many people describe a mix of relief and grief.\n\nIf an assessment is not possible, or you decide against one, the adjustments that help are still worth making."
   }
  ],
  "watch": [
