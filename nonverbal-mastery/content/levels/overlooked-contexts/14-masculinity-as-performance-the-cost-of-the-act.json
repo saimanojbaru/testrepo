@@ -74,6 +74,20 @@
    "doCaption": "Letting the hug mean what it means",
    "dontCaption": "Keeping a close friend at arm's length",
    "annotation": "With a close friend, a hug held a moment longer, without the back slaps, is not a loss of anything."
+  },
+  {
+   "doPoseId": "p_pair_side_hug",
+   "dontPoseId": "p_pair_arm_around",
+   "doCaption": "A side hug that means what it means",
+   "dontCaption": "An arm round the neck that becomes a headlock",
+   "annotation": "Coded touch lets men be close while signalling that it means nothing soft. Sometimes it is worth letting it mean something."
+  },
+  {
+   "doPoseId": "p_pair_bench",
+   "dontPoseId": "p_stand_turned_away",
+   "doCaption": "Sitting together while he cries",
+   "dontCaption": "Turning away to hide tears",
+   "annotation": "Many men are taught to hide grief from other men. Staying beside him, saying little, tells him it is allowed."
   }
  ],
  "caseStudy": "Callum, twenty-nine, has had the same four close friends since school. They see each other most weekends, mostly at the pub or watching football, and their conversation runs on banter: who is losing his hair, who cannot cook, whose team is the worst. Callum loves them, though none of them has ever said anything of the kind to each other.\n\nWhen Ben's father died suddenly, the group did what it always did. They took him to the pub, bought his drinks and kept the jokes going. Ben laughed along and said he was fine. Over the next two months he stopped coming out, answered messages with a thumbs-up, and once snapped at Callum over nothing.\n\nCallum talked to his partner, who asked whether any of them had actually asked Ben how he was, alone, without the others. None had. Callum felt the old reluctance: it would be awkward, Ben would think he had gone soft, the others would hear about it.\n\nHe went round anyway, with the excuse of returning a drill. They ended up fixing a shelf together in Ben's hallway, and halfway through, without looking up, Callum said that he was sorry about Ben's dad and that he had not known what to say. Ben stopped, sat on the stairs, and cried for the first time since the funeral. Callum sat next to him with a hand on his shoulder and said nothing at all.\n\nLater, Ben told him that he had been waiting for one of them to ask. The group still runs on banter. But Callum now sends Ben a message every few weeks that is not a joke, and the others, it turns out, have started doing the same.",
@@ -92,6 +106,11 @@
     "Write down who you imagine would judge it, and what they would think.",
     "Ask whether you have evidence that they would, or whether you are assuming it.",
     "Choose one person with whom you could test the assumption."
+   ],
+   "variations": [
+    "Do the check for a gesture as well as a feeling, such as hugging a friend or holding your child's hand in public.",
+    "Ask a trusted friend whether they would actually think less of you for the thing you hold back, and listen to the answer.",
+    "Notice the next time you see another man do the thing you hold back, and how you react to him."
    ]
   },
   {
@@ -102,6 +121,11 @@
     "Pause, and give a true answer instead, even a short one.",
     "Notice how the friend responds.",
     "Write a sentence about what happened."
+   ],
+   "variations": [
+    "Try the true answer with someone you see less often, such as a cousin or an old friend, and notice whether it is easier or harder.",
+    "Ask a friend how he is, then ask a second time, \"No, really?\", and notice how often the second answer is different.",
+    "Notice the reflex answers you give in a day, and count how many were true."
    ]
   },
   {
@@ -113,6 +137,11 @@
     "During it, ask one real question, and then let the silence do some work.",
     "Do not try to fix anything unless he asks.",
     "Arrange to do it again."
+   ],
+   "variations": [
+    "Suggest a regular side-by-side activity, such as a monthly walk or a game of pool, so that it does not need an excuse each time.",
+    "Try the drill with an older man in your life, such as a father or an uncle, who may be even less used to being asked.",
+    "After the activity, send a short message that is not a joke, and notice whether he replies."
    ]
   },
   {
@@ -123,6 +152,11 @@
     "Mark the ones that still serve you and the people you love.",
     "Mark the ones that cost more than they give.",
     "Choose one to practise putting down this month, and one to keep with pride."
+   ],
+   "variations": [
+    "Ask an older man in your family which parts of the performance he learned from his own father, and which he would have put down if he could.",
+    "Choose one part of the performance you want to keep, and say out loud why it matters to you.",
+    "Notice one moment this month when you put down a part of the act, and how the people around you responded."
    ]
   }
  ],
@@ -204,6 +238,45 @@
    "explain": "Way's research describes exactly this shift, driven by fear of how closeness will be read. A home where affection between boys is never mocked gives it somewhere to survive.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Which masculine norm did Wong and colleagues find among those most clearly linked to poorer mental health outcomes?",
+   "options": [
+    "Physical courage, especially among men in dangerous jobs",
+    "Self-reliance, along with norms about sexual conquest and power over women",
+    "Loyalty to friends, particularly among men in close-knit groups",
+    "Steadiness under pressure, which was linked to anxiety and stress"
+   ],
+   "answer": 1,
+   "explain": "Self-reliance, along with norms about sexual conquest and power over women, was among the norms most strongly linked to poorer outcomes. Conformity overall was more strongly linked to unwillingness to seek help than to poor mental health itself.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A new father says he is fine whenever asked, but is drinking more each night, snapping at his partner and refusing offers of help. What fits this chapter best?",
+   "options": [
+    "Take him at his word, since he seems cheerful and competent at work",
+    "Make time side by side, share something of your own, and help him reach support",
+    "Tell him firmly to stop drinking and pull himself together for his family",
+    "Leave him to work it out, since asking would only embarrass him in front of others"
+   ],
+   "answer": 1,
+   "explain": "Strain in men often shows as drinking, irritability and refusing help rather than visible sadness. A side-by-side conversation, going first and helping him reach his GP or family support makes asking for help easier.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that any man who stays composed must be suppressing pain, and should be pushed to open up. What does this chapter suggest?",
+   "options": [
+    "That composure can be a real strength, and pressure tends to make a guarded man more guarded",
+    "That every composed man is hiding something and should be questioned until he talks about it",
+    "That composure is always a mask, so the kindest thing is to tell him that he is bottling things up",
+    "That men should never talk about feelings at all, so composure is the right choice in every case"
+   ],
+   "answer": 0,
+   "explain": "Steadiness under pressure is valued for good reasons, and not every calm man is hiding something. Creating the conditions to talk, and letting him choose, works better than demanding that he open up.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +305,110 @@
    "work": "The Man Box: A Study on Being a Young Man in the US, UK, and Mexico",
    "author": "Brian Heilman, Gary Barker and Alexander Harrison",
    "note": "Promundo-US and Unilever, 2017. The rules young men live by, and their costs."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The apprentice and the headlock",
+   "scene": "Reece, seventeen, has just started an apprenticeship with a building firm, and he is the youngest on a site of twenty men. In his first week,\n  the older lads test him. They call him \"the baby\", hide his tools, put him in a headlock when he walks past and ask him loudly whether he has a\n  girlfriend yet. Reece gives as good as he gets. He swears back, shoves when he is shoved and laughs at everything. By the second week, he has been\n  accepted, and he is quite proud of it.\n\n  In the third week, his grandmother goes into hospital. At lunch, he steps away from the group to ring his mum, and someone hears him say, \"Love you,\n  Mum, tell Nan I'll come tonight.\" When he comes back, the jokes start: \"Love you, Mum,\" in a high voice, kissing noises, a slap on the back of the\n  head. Reece laughs, goes red, and then spends the afternoon on his own at the far end of the site, working harder and faster than anyone, and putting\n  a dent in a skip with a sledgehammer that he did not need to swing so hard.\n\n  The site supervisor, Lenny, fifty-four, has watched this happen to apprentices for thirty years. He was one himself. At the end of the day he finds\n  Reece putting his tools away, and asks him how his nan is.\n\n  Reece looks at him for a long moment, and then tells him.\n\nLenny also remembers being sixteen on a site in the 1980s, being sent for a \"long weight\" and a tin of tartan paint, and being locked in a portable toilet for an hour. He had laughed about it for thirty years, and had never told anyone how frightened he had been.\n\nReece's dad, when he hears about the headlocks, tells him that it was the same when he started, and that you just have to take it. Reece says nothing.\n\nHe also notices that two of the older men, the ones who did not join in, nod to him the next morning in a way they had not before.",
+   "misread": "The older lads read Reece's call to his mother as weakness and mocked it, in the way they had been mocked themselves. Reece read the mockery as a threat to the standing he had just earned, and restored it the way he had learned: by working harder, swinging harder and keeping his worry to himself.\n\nLenny read the jokes, at first, as ordinary site banter, the kind he had grown up with, until he saw Reece with the sledgehammer and recognised himself.\n\nAnd the lad who started the jokes read his own part as harmless fun, the way it had been done to him, without noticing that it was the same lesson being passed down another generation.",
+   "betterRead": "Vandello and colleagues found that manhood is widely seen as precarious, earned and easily lost, and Bosson and colleagues found that men whose manhood was threatened more often chose to punch a bag, and punched harder. Reece's sledgehammer was the everyday version: a display that restored his standing after a moment of tenderness was turned into a joke. The better response, which Lenny gave, did not lecture the lads or Reece. It simply treated the call as what it was, a young man worried about his grandmother, and asked about it, privately, at the end of the day. Lenny also had a quiet word with the lad who had started the jokes, saying that his own mother had died while he was on a site like this one and that nobody had asked him about it. The jokes about Reece's mum stopped. Reece went to the hospital that night, and Lenny let him leave early the next day too.\n\nLenny also started asking each new apprentice, in their first week, how they were finding it, alone and away from the others."
+  },
+  {
+   "title": "The new father who was fine",
+   "scene": "Ali, thirty-three, became a father four months ago. His partner, Sana, has had a difficult time since the birth: a long labour, little sleep and,\n  more recently, low mood that her doctor is now treating. Ali has taken on most of the night feeds while also working full time as a sales manager.\n  At work, he is as sharp and cheerful as ever. When colleagues ask how fatherhood is going, he says it is amazing, shows them photos and changes the\n  subject.\n\n  At home, things are harder. He is exhausted. He has started having three or four beers most nights after the baby is asleep, which he never used to\n  do. He snaps at Sana over small things and then apologises. He has stopped going to the gym and stopped returning his brother's calls. When his\n  mother offers to come and stay for a week to help, he says they are managing fine.\n\n  His oldest friend, Sam, who became a father a year earlier, comes round one Saturday and notices the bottles in the recycling, the way Ali startles\n  when the baby cries and the fact that he says \"fine\" four times in an hour.\n\n  Sam suggests they take the pram for a walk round the park, so that Sana can sleep.\n\nHis manager, noticing that Ali's figures have slipped slightly, has made a note to raise it at his next review, without asking how he is.\n\nAt his niece's christening, Ali makes everyone laugh with a story about a nappy disaster, and his mother watches him across the room and thinks that he looks more tired than she has ever seen him.\n\nHe has also stopped sleeping properly even on the nights Sana does the feeds, lying awake listening for the baby and running through the next day's figures.",
+   "misread": "His colleagues read Ali's cheerfulness at work as proof that he was coping. Ali read his own refusal of help as strength and his drinking as a way of unwinding, without noticing that both were signs of how much he was struggling.\n\nHis brother read the unreturned calls as Ali being busy with the baby, which was true, and missed the rest.\n\nSana, exhausted herself, read his snapping as resentment of her and the baby, which deepened her own low mood and made the house quieter still.\n\nHis mother, after the christening, read his refusal of her offer as pride, which it was, and decided to come anyway, which turned out to be the right call.",
+   "betterRead": "Wong and colleagues found that conformity to traditional masculine norms was modestly linked to poorer mental health and more strongly to less willingness to seek help, with self-reliance among the norms most clearly involved. This chapter describes how anger, drinking and withdrawal are often the forms that strain takes in men taught to keep it off their faces. Ali's cheerful face at work told his colleagues nothing; the bottles and the snapping told Sam a great deal. Sam's better approach was the Side by Side drill. On the walk, pushing the pram, he said that his own first year had nearly broken him, and that he had not told anyone. Ali was quiet, then said he was barely holding it together. Sam helped him accept his mother's offer, and encouraged him to see his GP too, who was concerned about the drinking and the exhaustion and offered support. Ali said later that hearing Sam go first was what made it possible to say anything at all.\n\nAli's manager, when Ali eventually told him, said he wished he had asked, and arranged a few weeks of flexible hours."
+  },
+  {
+   "title": "The grandfather who learned to hug",
+   "scene": "Ray, sixty-eight, worked underground as a miner for twenty years and then as a security guard. He has two sons, now in their forties, and he has\n  never hugged either of them. His own father shook his hand when he left home at eighteen and again at his wedding, and that was all. Ray loves his\n  sons fiercely. He has shown it the way he knows: turning up, fixing things, driving through the night when one of them broke down on a motorway.\n\n  When his younger son, Gareth, has his first child, Ray and his wife drive to the hospital. Gareth comes out into the corridor, tired and tearful and\n  grinning, and before Ray can put out his hand, Gareth throws his arms around him.\n\n  Ray goes rigid. His arms stay at his sides for a second, then come up awkwardly to pat Gareth twice on the back. He steps back, clears his throat and\n  says, \"Well done, son.\" Gareth laughs, wipes his eyes, and takes them in to see the baby. On the drive home, Ray says nothing for an hour.\n\n  Then he says to his wife that he did not know what to do with his arms, and that he wished he had held on.\n\nRay's wife has watched him with the grandchildren of friends, holding babies with great tenderness and then handing them back quickly, as if he had been caught at something.\n\nGareth, in the hospital corridor, had not planned the hug either. It had simply happened, because he was overwhelmed, and his father was the person he most wanted to tell.\n\nAt the christening a few months later, Ray watches Gareth hold the baby against his chest, swaying, kissing the top of her head, and feels something he cannot name.",
+   "misread": "Gareth read his father's stiffness the way he had always read it, as the way Dad was. Ray read his own awkwardness as a failure, and his habit of never hugging as something too old to change.\n\nAnd his sons had read his lifelong stiffness as a lack of affection, when it was a lack of permission he had never been given.\n\nGareth, for his part, had stopped expecting anything else years ago, and read the two pats on the back as the most his father could manage, which was true, until it was not.\n\nHis wife had read the silence on the drive home as embarrassment, and was surprised when it turned out to be regret.",
+   "betterRead": "Niobe Way's interviews describe how boys learn, in adolescence, to distance themselves from closeness with other boys, and this chapter describes how touch between men is coded to signal that it means nothing soft. Ray had learned the rules from his father and passed them on without words. But the case does not end with the rules. His wife's better suggestion was that he practise: not with a speech, but with a hug at the next visit, held a second longer than felt comfortable. Ray did. Gareth noticed, and said nothing, and hugged him back. Over the following year, the hugs became ordinary. When Ray's older son, Mark, visited at Christmas, Ray hugged him at the door before he had his coat off. Mark told his brother later that it was the first time, and that he had nearly cried in the hallway. The Keep and Put Down drill describes this exactly: Ray kept the turning up and the fixing, and put down the arm's length.\n\nRay also told Gareth, eventually, that his own father had never hugged him, and Gareth said that he had guessed."
+  },
+  {
+   "title": "The man who joked about therapy",
+   "scene": "Dean, forty, is a warehouse manager, funny, popular and the loudest voice in the canteen. When a colleague, Pete, mentions that he has started\n  seeing a counsellor after his divorce, Dean jokes about it for weeks: asking Pete how he feels about the forklift, offering him a tissue when he\n  drops a box, calling the break room \"the therapy room\". The others laugh. Pete laughs too, and stops mentioning it.\n\n  A year later, Dean's own marriage is in trouble, his father is ill and he has started waking at four every morning with his heart pounding. He has\n  told nobody. At work he is louder than ever. At home he is short-tempered and silent by turns. One night, sitting in his car outside the house, unable\n  to make himself go in, he realises that the only person he knows who has been through anything like this is Pete.\n\n  He nearly does not call. He remembers every joke he made. Then he calls, and Pete answers on the second ring.\n\n  They meet for a pint. Pete listens, and then gives Dean the name of his counsellor, and says that the first session is the hardest and that he will\n  ask how it went.\n\nHe has also noticed that his own son, eleven, has started making the same kind of jokes about crying, and wonders where he learned them.\n\nHis wife has asked him twice whether he is all right, and he has said yes both times, and then gone out to the garage.\n\nIn the canteen, he has started making jokes about his own father's illness, which nobody laughs at, and which he cannot seem to stop making.",
+   "misread": "Dean read Pete's counselling as weakness and made it the butt of his jokes, policing the norm he would later need to break. He read his own silence and loudness as coping, until the night in the car.\n\nThe others in the canteen read the jokes as harmless, and read Pete's silence afterwards as him getting over it.\n\nDean also read his own loudness at work as proof that he was still on top of things, when it was the noise of a man trying not to hear himself.",
+   "betterRead": "This chapter describes how men police other men, through jokes and mockery, for closeness or feeling, and the Man Box survey found that young men who agreed most with rules about self-sufficiency and toughness reported more distress, including suicidal thoughts. Dean's jokes had taught the canteen, and himself, that asking for help was a joke. Pete's better response, when the call came, was generous: he did not mention the jokes, he listened, and he offered a practical next step and a follow-up. Dean went to the counsellor. A few months later, when a younger colleague mentioned that he was struggling, Dean said, without any joke, that he had been seeing someone and that it helped. The canteen went quiet for a moment. Then someone else said he had too.\n\nPete, for his part, said he had never held the jokes against Dean, because he had made the same kind of jokes himself before his divorce. He knew exactly how much courage the phone call had taken."
+  }
+ ],
+ "workedReading": {
+  "title": "Talking with a son after a heartbreak",
+  "scene": "Kevin, forty-six, notices that his son, Ethan, sixteen, has gone quiet. For two weeks Ethan has been spending most of the evening in his room, eating little at dinner, and snapping at his younger sister. Kevin knows from Ethan's mother that his girlfriend of six months has ended things. He also knows that if he sits Ethan down at the kitchen table and asks how he is feeling, Ethan will say \"fine\" and leave. Kevin's own father never talked to him about anything like this, and Kevin remembers his own first heartbreak, at sixteen, as a month of sitting alone in his bedroom pretending to be fine. He wants to do it differently, without forcing anything. He has read the Side by Side drill in this chapter, and he decides to use it.\n\nHe also knows that Ethan's friends are mostly boys who joke constantly, and that Ethan will probably not talk to them about it.\n\nHe also suspects that Ethan's mother has tried already and been shut out, and that a different approach, from a different parent, may land differently.\n\nHe also remembers that his own father, near the end of his life, told him that he wished they had talked more, and that Kevin had not known how to answer.",
+  "steps": [
+   {
+    "label": "Notice the signs, not words",
+    "text": "Ethan says he is fine whenever asked. Kevin does not take the words at face value, but he does not dismiss them either. He reads the pattern instead: withdrawal, less appetite, irritability with his sister. This chapter describes how strain in boys and men often shows as withdrawal or anger rather than sadness, and Kevin reads these as signs that Ethan is hurting, not as bad behaviour to be corrected.\n\nHe also notices his own urge to tell Ethan to stop being moody with his sister, and recognises it as the same message his own father gave him.\n\nHe also checks with Ethan's mother that there is nothing more worrying going on, such as Ethan saying things about not wanting to be here, which would need a different response."
+   },
+   {
+    "label": "Choose something side by side",
+    "text": "On Saturday he asks Ethan whether he would help him clear out the garage, because the job needs two people. Ethan shrugs and agrees. They work side by side for an hour, carrying boxes, deciding what to throw away, laughing at a box of Kevin's old football programmes. Side by side, with a task to look at, is often easier for boys and men than face to face across a table.\n\nHe also leaves his phone in the house, so that Ethan can see he is not half-attending.\n\nHe also notices that the work itself does some of the talking: Ethan's jokes about the old programmes are the first jokes he has made in two weeks."
+   },
+   {
+    "label": "Ask one real question",
+    "text": "When they stop for a drink, sitting on the garage step, Kevin says, without looking at Ethan, \"Your mum said things ended with Chloe. That's rubbish. How are you doing with it?\" Then he stops. He does not add a second question, offer advice or fill the gap. He drinks his tea and looks at the garden.\n\nHe chose the moment carefully: after the work had loosened them both up, with a drink in hand and something to look at.\n\nHe also chooses his words so that they name the event without guessing at the feeling, which leaves Ethan free to describe it."
+   },
+   {
+    "label": "Let the silence work",
+    "text": "Ethan says nothing for a long time. Kevin waits. After perhaps half a minute, Ethan says that it is fine, then that actually it is not fine, and then, in a rush, that she told everyone at school before she told him. Kevin nods. He keeps his face calm and his body turned slightly towards Ethan, not leaning in.\n\nHe notices that Ethan's voice has gone thick, and keeps his own gaze on the garden so that Ethan does not have to be seen.\n\nHe also resists the urge to say anything about Chloe telling everyone first, which would have made the moment about her rather than about Ethan."
+   },
+   {
+    "label": "Go first, briefly",
+    "text": "When Ethan stops, Kevin says that when he was sixteen, a girl called Lisa ended things with him at a bus stop, and that he spent a month in his bedroom pretending to be fine and wishing someone would ask. He keeps it short. The point is not his story but the permission it gives: that hurting is normal, that men his father's age felt it too, and that it can be said out loud.\n\nHe also notices that Ethan laughs at the bus stop, which lightens the moment without dismissing it.\n\nHe also does not ask Ethan to share anything in return. The story is offered, not traded."
+   },
+   {
+    "label": "Do not fix it",
+    "text": "Kevin resists the urge to offer advice, criticise Chloe or tell Ethan that there are plenty more fish in the sea. When Ethan asks whether it gets better, Kevin says yes, slowly, and that it is OK if it does not feel like it yet. Then he suggests they finish the garage. Ethan says OK, and picks up the next box.\n\nHe also does not tell Ethan's mother everything Ethan said, only that they had talked, which Ethan appreciates later.\n\nHe also tells Ethan, as they finish, that the garage door is always open if he wants to talk, and that he means the real door as well as the other kind."
+   },
+   {
+    "label": "What happened",
+    "text": "Ethan does not suddenly open up. But over the following weeks he comes out of his room more, eats more and is less sharp with his sister. A month later, driving him to football, Kevin asks how he is doing and Ethan says, \"Better,\" and then tells him about a new friend. Kevin notices that Ethan has started saying \"love you\" at the end of phone calls, which nobody in their family has ever said before.\n\nHe also notices that he feels closer to his son than he has in years, and that the garage is finally clear.\n\nHe also notices, a few weeks later, that Ethan comes and sits in the garage while Kevin is working, without a reason, and talks about nothing in particular."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Mistaking banter for the whole friendship",
+   "body": "Banter, the affectionate insults and running jokes that fill many male friendships, is a real form of closeness. It can show trust, belonging and even love. The trouble comes when it is the only mode the friendship has, so that there is no way to switch out of it when something serious happens. Callum's group, in the case at the start of this chapter, took Ben to the pub after his father died and kept the jokes going, because jokes were what they knew how to do. Ben needed something else, and nobody knew how to offer it. Keep the banter, and build a second channel alongside it: a message every few weeks that is not a joke, a walk with one friend rather than the whole group, the occasional question that wants a real answer. The banter will survive. The friendship will be stronger for having another gear.\n\nIf you are the one who usually leads the jokes, you may also be the one best placed to open the second channel.\n\nA good test is whether your friends would know, from your messages, if something serious had happened to you."
+  },
+  {
+   "title": "Rewarding only toughness in boys",
+   "body": "\"Big boys don't cry,\" \"Man up,\" \"Stop being a baby,\" \"Shake it off\": many boys hear these phrases long before they are old enough to question them, often from adults who love them and want them to be strong. Way's interviews suggest that boys lose much of their capacity for close friendship in adolescence partly because of messages like these. Rewarding only toughness teaches boys to keep their fear, sadness and tenderness off their faces, and to police other boys who do not. It does not make them less afraid or less sad; it makes them less able to say so. The alternative is not to stop valuing courage, which is worth valuing, but to value the other things too: comforting a friend, admitting a mistake, crying at a loss, asking for help. Boys learn which feelings are allowed by watching which ones the adults around them reward.\n\nIt also helps to notice which feelings you reward in girls but not boys, or the other way round."
+  },
+  {
+   "title": "Treating help-seeking as failure",
+   "body": "Wong and colleagues found that conformity to masculine norms was more strongly linked to unwillingness to seek psychological help than to poor mental health itself, and that self-reliance was among the norms most clearly involved. Many men treat asking for help, from a doctor, a counsellor, a friend or a partner, as an admission that they have failed to manage on their own. They wait until a problem is a crisis, as Dean did in his car, and sometimes beyond. Asking for help early is not weakness; it is the same practical sense that a man would apply to a fault in a car or a crack in a wall. If you are a man who struggles to ask, it can help to start small and practical: a GP appointment about sleep, a conversation with one trusted friend. If you know such a man, make asking easy by mentioning, as Sam and Pete did, that you have done it yourself.\n\nA useful reframe is that seeking help early is what a competent man does with any problem he cannot fix alone."
+  },
+  {
+   "title": "Demanding that a man open up",
+   "body": "Once people learn about the costs of masculine composure, some start to press: \"You need to talk about your feelings,\" \"Stop bottling it up,\" \"Just tell me what's wrong.\" The intention is good. But pressure tends to make a guarded man more guarded, and it can turn composure, which is not always a mask, into something he has to defend. Steadiness under pressure is a genuine strength, and many men are composed because they are calm, not because they are suppressing something. The approach this chapter recommends is gentler: create the conditions, side by side, with time and without an audience; ask one real question; go first if you can; and then let him decide what to say. A man who chooses to talk will say far more than one who has been made to.\n\nAnd if he chooses not to talk, respect it, and keep the door open.\n\nIt also helps to remember that some men process things alone first and talk later, and that later still counts."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is masculinity a bad thing?",
+   "a": "No. This chapter is about the performance of masculinity, the rules many men learn in schoolyards and changing rooms and keep up because the audience never seems to leave, and about the parts of that performance that cost more than they give. It is not about masculinity itself. Steadiness under pressure, physical courage, protectiveness, restraint and loyalty are valued by many men and by the people who rely on them, and they are worth keeping. Wong and colleagues found that not every masculine norm was linked to poorer outcomes; self-reliance and norms about dominance over women were among the most strongly involved. The Keep and Put Down drill is designed for exactly this: to choose deliberately which parts to keep with pride and which to put down.\n\nIt is also worth noticing that many of the parts worth keeping are the same parts the people who love him most rely on.\n\nAnd notice that the parts worth keeping are often the ones that protect others, while the parts worth putting down mostly protect the performance."
+  },
+  {
+   "q": "How can I tell whether a man is struggling if he says he is fine?",
+   "a": "Look at the pattern rather than the words. This chapter describes how strain in men often shows as anger, irritability, drinking more, working harder, withdrawal from friends and activities, or a sudden loss of interest, rather than as visible sadness. A man who says he is fine four times in an hour, as Ali did, may be telling you something by the repetition. If you are worried, find a time to be alone with him, ideally side by side, and ask one real question. If you are worried that he may be thinking about suicide, the chapter on suicidal ideation in Part II explains how to ask directly and how to connect him with help, and the crisis resources in this app list services you can contact. If anyone is in immediate danger, call the emergency services.\n\nIt also helps to ask him more than once, on different days, since the first \"fine\" is often reflex."
+  },
+  {
+   "q": "How can I start a real conversation with a male friend?",
+   "a": "Choose the setting carefully. Many men find it easier to talk side by side, on a walk, in a car, while fixing something or watching a match, than face to face across a table, as Callum found in Ben's hallway and Sam found pushing the pram. Avoid the group, where the banter will take over. Ask one real question and then wait, without filling the silence. If you can, go first: say something true about yourself, briefly, which gives him permission to do the same. Do not try to fix anything unless he asks. And do not make it a one-off. A message a week later that is not a joke, or another walk, tells him that the door is still open.\n\nIt also helps to remember that the first real conversation may be short, and that is enough.\n\nIf the first attempt goes nowhere, try again another day. Many men need two or three invitations before they believe the first was real."
+  },
+  {
+   "q": "What should I do if a friend tells me he has been thinking about suicide?",
+   "a": "Take it seriously, stay calm and thank him for telling you. Ask him directly whether he is thinking about ending his life and whether he has made any plans; the chapter on suicidal ideation in Part II explains why asking directly does not put the idea into someone's head and is one of the most helpful things you can do. Listen without judging or arguing. Do not leave him alone if you think he is in immediate danger, and call the emergency services if he is. Otherwise, help him connect with support: his GP, a crisis line, or the services listed in this app's crisis resources. Offer to make the call with him or go with him. And look after yourself afterwards, because hearing this from a friend is hard, and you do not have to carry it alone.\n\nYou do not need to have the right words. Staying with him and helping him reach support matter far more.\n\nIf he asks you to keep it secret, be honest that you cannot promise that if his life is at risk, and explain that you want to help him stay safe."
+  },
+  {
+   "q": "How can I raise a son who does not have to perform?",
+   "a": "Mostly by what you show him. Let him see you express a range of feelings, including sadness, worry and tenderness, not only anger or cheerfulness. Hug him, and keep hugging him past the age when other fathers stop, if he is willing. Do not police his feelings with \"big boys don't cry\", or his friendships with jokes about who he is close to. Value his kindness, his comforting of others and his honesty as much as his toughness. Notice when he starts to withdraw, as Ethan did, and create side-by-side time to talk. And let him see you ask for help when you need it. Way's interviews suggest that many boys lose their closest friendships in adolescence; a father who shows that closeness is allowed can make that loss less likely.\n\nIt also helps to let him see that you have close friendships with other men, and what they look like.\n\nIt also helps to apologise to him, simply, when you get it wrong, which shows him that strength and admitting mistakes go together."
+  },
+  {
+   "q": "Will other men think less of me if I show more feeling?",
+   "a": "Fewer than you might fear. This chapter's failure mode notes that men tend to assume other men hold the rules of the performance more strongly than they actually do, and so nobody is the first to break them. When Dean finally spoke about seeing a counsellor in the canteen, someone else said that he had too. When Callum sent Ben messages that were not jokes, the others started doing the same. Not every group will respond well, and it is sensible to start with the people you trust most. But many men are waiting for someone to go first, and the one who does is often respected for it rather than mocked. The Audience Check drill helps you test whether the judgment you fear is real or assumed.\n\nAnd if someone does mock you, notice who else in the room says nothing. Some of them may be glad you spoke.\n\nIt also helps to choose your audience. A trusted friend is a better first test than a whole group."
   }
  ],
  "watch": [
