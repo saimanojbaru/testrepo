@@ -73,6 +73,20 @@
    "doCaption": "Fully there, side by side",
    "dontCaption": "Half in the conversation",
    "annotation": "Presence is not a technique. It is attention that the other person can feel."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_sit_phone",
+   "doCaption": "Looking up, turned towards her, meaning it",
+   "dontCaption": "\"Well done\" said to a phone",
+   "annotation": "When words and body disagree, people believe the body. Let your body say what your words mean."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_gaze_direct",
+   "doCaption": "Side by side, just being together",
+   "dontCaption": "Studying a partner's face for clues",
+   "annotation": "The people closest to you deserve the gentlest reading. At home, let the attention rest."
   }
  ],
  "caseStudy": "Arjun, forty-five, works in sales and has always been good with people. Two years ago he became fascinated by body language, read everything he could find, and began to apply it. He mirrored clients' postures, steepled his hands in negotiations, held eye contact for a counted three seconds and checked his own stance in shop windows.\n\nFor a while it seemed to work. Then his wife, Priya, told him over dinner that talking to him had started to feel like watching someone act. A long-standing client said, half joking, that Arjun had become very polished lately. And Arjun noticed that he was exhausted after meetings in a way he had not been before, and that he could not remember what clients had said because he had been so busy watching himself.\n\nHe stopped the techniques for a month. Instead, he wrote a one-page protocol. Three signs of his own stress: talking fast, leaning in too far, tapping his pen. Three responses: a slow breath out, sitting back, putting the pen down. Three commitments: listen before reading, say what he means plainly, and never use what he notices to push someone into a decision.\n\nWithin a few weeks, Priya said that he seemed like himself again. The client who had called him polished told him he seemed more relaxed. Arjun noticed that he remembered conversations better, and that he read people more accurately when he was not also performing for them.\n\nHe still notices bodies; he cannot stop. But he now thinks of what he learned less as a set of techniques and more as a habit of attention, pointed mostly outward, and gentle when it turns in.",
@@ -91,6 +105,11 @@
     "Watch it once with the sound off, noting your posture, gestures and face.",
     "Watch it again with the sound on, noting where words and body match and where they do not.",
     "Write down three habits you had not noticed before."
+   ],
+   "variations": [
+    "Record yourself in two different settings, such as a work meeting and a family meal, and compare your habits in each.",
+    "Watch a recording of yourself listening rather than speaking, and notice what your face does when someone else is talking.",
+    "After watching, choose one habit you like and want to keep, as well as one you want to change."
    ]
   },
   {
@@ -101,6 +120,11 @@
     "Ask each what your body does when you are stressed, bored, pleased and tired.",
     "Listen without arguing or explaining.",
     "Compare their answers with your own picture of yourself."
+   ],
+   "variations": [
+    "Ask a third person from a different part of your life, such as a colleague if the first two were family, and compare all three answers.",
+    "Ask the two people what they think you do when you are happy, and notice whether you recognise it.",
+    "Thank each person afterwards, and tell them one specific thing that their answer taught you about yourself."
    ]
   },
   {
@@ -112,6 +136,11 @@
     "Write down three commitments for how you will read and treat others.",
     "Keep the page where you will see it, and review it after hard conversations.",
     "Revise it after a month, keeping what worked and changing what did not."
+   ],
+   "variations": [
+    "Share your protocol with one trusted person and ask them to tell you when they see your stress signs.",
+    "Add one commitment about how you will treat yourself when you notice the signs, not just others.",
+    "Write a version of the protocol for home as well as one for work, if your signs differ between them."
    ]
   },
   {
@@ -122,6 +151,11 @@
     "Do not plan any gestures, postures or expressions.",
     "Say it as plainly as you can, and let your body do what it does.",
     "Afterwards, ask one listener how you came across."
+   ],
+   "variations": [
+    "Try the drill in a difficult conversation as well as an explanation, deciding only what you want to say and letting your body follow.",
+    "After a conversation where you let your body follow, ask yourself whether you remember more of what the other person said than usual.",
+    "Notice one moment in the conversation when you started to plan a gesture, and simply let it go."
    ]
   }
  ],
@@ -203,6 +237,45 @@
    "explain": "Congruence means words, voice and face saying the same thing. A forced smile over bad news reads as false; plain words and visible concern are trusted.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Sedikides and colleagues suggest that feeling authentic is mostly about?",
+   "options": [
+    "Matching your usual habits as closely as possible in every situation",
+    "Being at your best: acting on your values, connecting with others and feeling competent",
+    "Expressing every feeling and impulse as it comes, whatever the setting",
+    "Refusing to adapt your behaviour to other people's expectations at any time, whatever they are"
+   ],
+   "answer": 1,
+   "explain": "Sedikides and colleagues suggested that feeling authentic is less about matching your habits and more about being at your best: acting on your values, connecting with others and feeling competent. A man who stays calm in a crisis because it matters to him is being himself.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A father says \"That's brilliant, well done\" to his daughter's news while looking at his phone, and she goes upstairs upset. What fits this chapter best?",
+   "options": [
+    "Explain to her that the words were what mattered, since he meant every one of them",
+    "Put the phone down, turn towards her, and say it again so that his body matches his words",
+    "Leave it, since teenagers often overreact and she will have forgotten all about it by the morning",
+    "Send her a message saying well done, so that she has it in writing to read again"
+   ],
+   "answer": 1,
+   "explain": "When words and body disagree, people tend to believe the body. Congruence, words, face and body saying the same thing, is what lets the praise land as meant.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that people cannot really tell when your words and your body do not match. What does this chapter suggest?",
+   "options": [
+    "That incongruence is easy to produce and hard to hide, and people often sense it without knowing why",
+    "That nobody notices incongruence, so it does not matter what your body does while you speak",
+    "That only trained experts can detect incongruence, and ordinary people never notice it",
+    "That incongruence only matters in formal settings such as interviews and presentations"
+   ],
+   "answer": 0,
+   "explain": "A smile that arrives a beat late, a gesture placed for effect or a confident voice over a worried face are easy to produce and hard to hide. People sense that something is wrong, even when they cannot say what.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -226,6 +299,110 @@
    "work": "On Becoming a Person",
    "author": "Carl R. Rogers",
    "note": "Houghton Mifflin, 1961. Congruence, genuineness and what makes a helping relationship work."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The reader who could not stop reading",
+   "scene": "Adam, thirty-two, is a nurse, and over the past year he has read almost everything he can find about body language, including most of this book.\n  He is good at it. He notices when patients are frightened before they say so, and colleagues have started asking him to sit in on difficult\n  conversations with families.\n\n  At home, it has become a problem. He reads his partner, Ellie, constantly: the tightness in her jaw when she comes in from work, the way she crosses\n  her arms during a phone call with her mother, the half-second pause before she says she is fine. He comments on what he sees, kindly, and asks\n  questions. \"You look tense. Is it your mum again?\" \"You touched your neck then. Are you worried about something?\" Twice, he has suggested that her\n  low mood might be the start of depression and that she should see someone.\n\n  One evening, after he asks why she frowned at a text message, Ellie puts her phone down and says, quietly, that she feels as if she is living with\n  a detective. She says she has started to manage her face around him, which she has never had to do with anyone before.\n\n  Adam is stung. He had thought he was being attentive. Then he remembers the first chapter of this book, about baselines, and realises that he has\n  never once asked Ellie what her own baseline is.\n\nHe also realises that he has been telling colleagues about Ellie's signals, as examples of what he has learned, and that she would be mortified if she knew.\n\nHe has also, he realises, been reading his friends at the pub, his sister at Sunday lunch and his own father on the phone, and he cannot remember the last time he simply enjoyed a conversation without analysing it.\n\nEllie tells him, too, that she had stopped mentioning her mother, because every mention led to a conversation about what her face had done while she talked about her.",
+   "misread": "Adam read Ellie's small signals as information to be decoded and commented on, and read his own comments as care. Ellie read them as being watched and analysed, which made her start to manage her face around the person she most wanted to be relaxed with.\n\nHe also read his own expertise as a reason to trust his readings of Ellie over her own account, which is the opposite of what the book had taught him.\n\nHe also read Ellie's growing quietness, in the weeks before she spoke up, as a sign of the low mood he had worried about, when much of it was a response to being watched.",
+   "betterRead": "This chapter's failure mode lists, among the commitments that sit around the method, no diagnosis and humility towards the people you read, and it describes the aim as attention pointed mostly outward and gentle when it turns in. Adam's attention had become scrutiny. Part VI ended with the idea of the quiet body: that the last skill is disturbing others less, until your attention feels like a place to rest. The better approach was to stop narrating what he saw and start asking, openly and less often: \"How was your day?\" and then listening to the words. He stopped commenting on her gestures. When he was genuinely worried, he said so plainly, once, and left the decision to her. Within a month, Ellie said that home felt like home again. Adam kept reading people at work, where it helped. At home, he let it rest.\n\nEllie also told him, months later, that she had started telling him things she would not have mentioned before, because she no longer felt she was being studied.\n\nHe also apologised to Ellie, simply, for making her feel watched, which mattered to her more than the change itself."
+  },
+  {
+   "title": "The introvert at the wedding",
+   "scene": "Nina, twenty-nine, is a quiet, thoughtful software tester, and she is maid of honour at her best friend's wedding. She dreads the speech. She is an\n  introvert, prefers small groups and has always believed that standing up in front of a hundred people and being funny is simply not who she is. She\n  considers asking someone else to give it.\n\n  Her friend, the bride, Rosa, says that she does not need Nina to be anyone else, only to say what she thinks. Nina writes a speech about their\n  friendship, practises it aloud, standing, five times, and on the day stands up with her heart pounding.\n\n  Something surprising happens. A few sentences in, the room laughs at a story about the two of them getting lost on a school trip, and Nina finds\n  herself enjoying it. She looks up, catches Rosa's eye, pauses for the laugh, and goes on more warmly than she had planned. By the end, she is moved and\n  so is the room. Afterwards, three strangers tell her it was the best speech of the day.\n\n  That night, in her hotel room, she is exhausted and also, oddly, happy. She tells her sister on the phone that she felt more like herself giving that\n  speech than she has in years, and that she does not understand why.\n\nShe had also spent the morning of the wedding hiding in the hotel garden, rehearsing under her breath, convinced that she would freeze. Rosa had found her there and told her she did not have to be funny.\n\nShe also notices, at the reception, that she talks easily to Rosa's grandmother and two strangers at her table, and that she is not pretending to enjoy it. She is enjoying it.\n\nHer father, at the reception, tells her that he had no idea she could do that, and she tells him that neither had she.",
+   "misread": "Nina read her own introversion as a fixed rule about what she could be, and read the outgoing, funny speech as a performance that would not be her. The experience of giving it contradicted both readings.\n\nHer sister, on the phone, read Nina's confusion as surprise at having enjoyed it, which was part of it. The rest was a new picture of herself that would take time to settle.\n\nRosa, who had known Nina for twenty years, read her far more accurately, as a quiet woman with a great deal to say about the people she loved, given the right occasion.\n\nShe also read the exhaustion afterwards, at first, as proof that the speech had not really been her, when it was simply the cost of giving a lot.",
+   "betterRead": "Fleeson and Wilt found that people felt most authentic when they were acting in an outgoing, kind, conscientious, calm and open way, whatever their usual personality; introverts felt more like themselves when acting extraverted, not less. Sedikides and colleagues suggested that feeling authentic is less about matching your habits and more about being at your best. Nina's speech was not a performance of someone else. It was her, speaking about something she cared about, to people she loved, at her best. Her exhaustion afterwards was real too, and worth respecting: she slept late, skipped the brunch and spent the next day quietly. The better reading of herself, which she took from the wedding, was that authenticity is not a narrow box but a direction: acting on what she values, in whatever register the moment needs, and then resting.\n\nShe also kept the outgoing side for occasions that mattered to her, and stopped apologising for the quiet side the rest of the time.\n\nAt Rosa's first anniversary party, a year later, Nina gave a second, shorter speech, without being asked, and enjoyed it just as much."
+  },
+  {
+   "title": "The father who said well done to his phone",
+   "scene": "Colin, fifty, is a project manager who works long hours, and he loves his daughter, Molly, fifteen, more than he can say. One evening Molly comes\n  into the kitchen, glowing, to tell him that she has been picked for the county hockey team. Colin is sitting at the table answering emails on his\n  phone. He looks up for a second, says \"That's brilliant, well done, love,\" and looks back down at the screen. He means every word.\n\n  Molly stands there for a moment. Then she says \"Thanks,\" flatly, and goes upstairs. Colin does not notice the flatness. He is pleased for her and\n  thinks the conversation went well.\n\n  Later, his wife, Jo, tells him that Molly is upset. She had run all the way home from the bus to tell him first. She told her mother that Dad didn't\n  care, that he had barely looked up.\n\n  Colin is shocked. He had said exactly the right words. He goes upstairs and knocks on Molly's door. She is lying on her bed with her headphones in.\n  He asks if he can come in, and sits on the end of the bed, and puts his phone face down on the floor, where she can see it.\n\nHe also realises, sitting on the end of the bed, that he cannot remember the last time he put his phone down when one of his children came into a room.\n\nJo also mentions, gently, that their son has stopped telling Colin things at all, and that she had assumed Colin knew.\n\nHe also remembers his own father, who read the newspaper at the breakfast table every morning of Colin's childhood and said \"Very good\" to everything without lowering it.\n\nJo noticed, a few weeks after that evening, that their son had started sitting at the kitchen table while Colin cooked, talking about school, which he had not done for a year.",
+   "misread": "Molly read her father's brief glance and his return to the screen as indifference, whatever his words said. Colin read his own words as the whole message, and did not notice that his body had said something quite different.\n\nJo, too, had read Colin's distraction for years as tiredness, and had stopped expecting more, which was a quieter cost of the same habit.\n\nAnd he read his own pride as something Molly could feel through the words, when what she could see was the top of his head and the glow of a screen.\n\nMolly's younger brother, watching from the doorway, read it the same way she did, and would have learned the same lesson.",
+   "betterRead": "Carl Rogers used the word congruence for a state in which what a person feels and what he expresses line up, and this chapter describes incongruence, words and body saying different things, as easy to produce and hard to hide. When words and body disagree, people tend to believe the body. Colin's \"well done\" was true, and his eyes on the phone made it sound false. The better response, which he gave on the end of the bed, was to make his body match the words: phone down, turned towards her, eyes on her face, and the same sentence again, slowly. \"I'm really proud of you. Tell me everything.\" Molly took her headphones out and told him about the trial, the goal she had scored and the coach who had picked her. Colin asked questions for twenty minutes. Afterwards he made a rule for himself: when someone he loved came in with news, the phone went face down first.\n\nMolly noticed the phone face down on the floor before he said anything, and that, she told her mother later, was what made her take the headphones out."
+  },
+  {
+   "title": "The protocol that failed in the moment",
+   "scene": "Hamid, forty-four, leads a team of twelve at an insurance company, and after reading this book he wrote a one-page protocol, as the chapter\n  suggests. Three signs that he is under more stress than he realises: talking fast, interrupting, a tight jaw. Three responses: a slow breath out,\n  sitting back, putting his pen down. Three commitments: listen before deciding, say what he means plainly, and never use what he notices to push\n  someone. He keeps it in his desk drawer.\n\n  Two months later, in a meeting about a client complaint that has reached the chief executive, Hamid's protocol fails completely. He talks fast,\n  interrupts three people, cuts off a junior colleague, Mia, who is trying to explain what happened, and leaves the meeting with his jaw aching. He\n  realises on the way back to his desk that he did not think of the protocol once.\n\n  That evening, he takes the page out of the drawer and reads it, and feels slightly foolish. It is all correct. None of it was there when he needed it.\n\n  He remembers that Part VI described something about this: that a protocol needs to be wired to the moments that need it, or it stays in the drawer.\n  He also remembers that Mia had been right about the complaint, and that he had not let her finish.\n\nHe also notices that the card he wrote for himself is still in its envelope in the drawer, unopened since the day he put it there.\n\nHis wife, when he tells her about the meeting, reminds him that the stillness and the fast talking always come when he is afraid of letting someone down, and that the chief executive's name had been on the complaint.\n\nHe also realises that the meeting was exactly the kind of moment he had written the protocol for, and that writing it had made him feel as if the work was done.",
+   "misread": "Hamid read his own protocol as finished once it was written, and read the failure in the meeting as proof that he was bad at managing himself. Mia, cut off mid-sentence, read his interruptions as a judgment on her explanation.\n\nHe also read the protocol itself as a failure, when the failure was in how he had stored it.\n\nHis team, for their part, read his interruptions in the meeting as panic, and two of them stopped speaking for the rest of it, which meant that the solution Mia had been about to offer was not heard.\n\nMia, for her part, read the cut-off as a sign that her explanation was wrong, and nearly did not raise it again.",
+   "betterRead": "This chapter describes a personal protocol as a set of checks that let you notice and correct yourself, not a script, and Part VI described how protocols must be wired to the moments that need them. A page in a drawer cannot interrupt a stress response in a heated meeting; a habit tied to a trigger can. Hamid's better approach was to revise the protocol, as the One-Page Protocol drill recommends after a month, and to make it usable in the moment. He wrote \"Breathe. Sit back. Let them finish\" on a card and put it inside the cover of the notebook he takes to every meeting. He agreed with his deputy that she would tap the table if he started interrupting. And he went to Mia the next morning, apologised for cutting her off and asked her to explain the complaint again. She did, and her explanation changed the firm's response to the client.\n\nHe also told his team, at the next meeting, that he had interrupted too much in the complaint meeting and was working on it, which made it easier for them to tell him when he did it again."
+  }
+ ],
+ "workedReading": {
+  "title": "Writing your own one-page protocol",
+  "scene": "Nathan, thirty-eight, runs a small architecture practice with six staff, and he has finished reading this book. He has learned a great deal about reading others, and he suspects he knows less about how he himself comes across. His partner says he goes quiet and distant when he is stressed; one of his staff once told him he seemed annoyed in a meeting where he had been perfectly happy. He decides to write a one-page protocol, as this chapter suggests, and to base it on evidence rather than on his own picture of himself. He gives himself a fortnight to gather that evidence and an evening to write the page. He also decides that the protocol will be a set of checks, not a script for how to look, because the aim, as this chapter says, is to be readable rather than to perform.\n\nHe also remembers that this chapter describes the aim as being readable, not performing, and he wants his protocol to help him notice himself, not to manage how he looks.\n\nHe also remembers the client in last month's meeting who said he seemed annoyed, and wonders how many other people have read him that way without saying so.\n\nHe also notices that he is slightly afraid of what the evidence will show, which tells him that it is worth gathering.\n\nHe also decides that he will share the finished page with his partner, because she is the person most likely to notice when he forgets it.",
+  "steps": [
+   {
+    "label": "Gather evidence first",
+    "text": "He uses the Watch Yourself drill, recording a client meeting with permission and watching it with the sound off. He notices that he folds his arms when he is thinking, frowns when he concentrates and rarely smiles until the end of a meeting. Then he uses the Ask Two People drill with his partner and a long-standing colleague. Both say the same thing: when he is stressed, he goes very still and very quiet, and his answers get shorter.\n\nHe also notices, watching the recording, that he leans forward and smiles much more when a client talks about the building they want than when they talk about the budget, which he had never realised.\n\nHe also notices that he interrupts his junior architect more than anyone else, which neither of the two people he asked had mentioned, and adds it to his list."
+   },
+   {
+    "label": "Name three stress signs",
+    "text": "From the evidence, he writes his three signs: going quiet and still, giving one-word answers, and a frown that stays when there is nothing to frown at. He notes that none of these is what he would have guessed. He had thought that stress made him louder. This is why the chapter insists on learning your own baseline from others, not only from yourself.\n\nHe also writes down, separately, the signs that he is happy and relaxed, so that he knows what his baseline looks like on a good day.\n\nHe also writes down the situations in which the signs appear most often: client meetings about money, and Friday afternoons when he is tired.\n\nHe also notices that each sign on his list is something other people saw before he did, which is a useful reminder of how little of himself he can see from inside."
+   },
+   {
+    "label": "Name three resets",
+    "text": "He writes three responses that bring him back towards his baseline: one slow breath out, letting his shoulders drop; asking a question rather than answering in one word; and, when he can, standing up and walking to the window for a moment. He tests each one during the fortnight and keeps the ones that work.\n\nHe also notices that the resets work best early. Once the stillness has fully set in, it takes much longer to come back.\n\nHe also notes that one reset he had expected to work, counting to five before answering, made him seem even more distant, and drops it.\n\nHe also notes that the breath works in any setting, which is why it goes first on the card."
+   },
+   {
+    "label": "Write three commitments",
+    "text": "He writes three commitments for how he will read and treat others: to read change against each person's baseline rather than his own; to ask in words before acting on a reading, especially with people least like him; and never to use what he notices to push anyone into a decision they would not otherwise make. He notices that the third one is the one he would most like his staff to hold him to.\n\nHe also writes a commitment about himself: to say \"I'm stressed, it's not you\" when he notices the signs, so that others do not misread them.\n\nHe also writes one commitment about his staff: to ask each of them, once a quarter, how he comes across to them, and to listen.\n\nHe also keeps the commitments short enough to remember in a meeting, because a commitment he cannot recall in the moment is not much use."
+   },
+   {
+    "label": "Wire it to moments",
+    "text": "He does not put the page in a drawer. He writes the three resets on a card inside his meeting notebook, and he asks his partner and his colleague to tell him, gently, when they see the stillness setting in. He links the first reset to the moment a meeting gets tense, so that the breath becomes a habit tied to a trigger rather than a resolution.\n\nHe also puts a copy of the page on the inside of his kitchen cupboard, where he will see it every morning.\n\nHe also sets a reminder on his phone for the review, so that the page does not quietly become a piece of paper in a drawer."
+   },
+   {
+    "label": "Test and revise after a month",
+    "text": "After a month, he reviews the page. Two resets work; the walk to the window is impractical in most meetings, so he replaces it with putting his pen down. He adds a fourth stress sign that his colleague noticed: he stops making eye contact with junior staff. He also notices that he has been reading his staff more carefully, and asking more.\n\nHe also asks his partner and colleague whether the protocol has made any difference, and listens to their answers without arguing.\n\nHe also notices that the act of reviewing the page has become a small monthly conversation with himself, which he has come to look forward to."
+   },
+   {
+    "label": "What happened",
+    "text": "Six months later, the colleague who once thought he was annoyed tells him that he has become much easier to read. His partner says the stillness still comes, but that he notices it sooner and says, \"I'm a bit stressed, it's not you,\" which helps. Nathan keeps the page on his desk and revises it every few months. He thinks of it, he says, as a map of himself, drawn by other people, that he keeps correcting.\n\nHe also gives a blank copy of the drill to each of his staff, without asking them to share what they write, in case any of them want to try it.\n\nHe also notices that one of his staff has started keeping a page of her own, and that she asks him, one day, what his three signs are. He tells her."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Reading the people closest to you like case studies",
+   "body": "After learning to read bodies, many people turn the skill on the people they live with, and it can feel like care. It often lands as surveillance, as Adam found with Ellie. Narrating someone's gestures back to them, \"You touched your neck, are you anxious?\", asking about every pause and frown, or suggesting that their mood is a sign of illness, makes them feel watched and analysed in the one place they most want to be relaxed. They may start managing their faces around you, which is the opposite of what you wanted. The people closest to you deserve the gentlest reading of all: their own baseline, learned over years; questions asked openly and not too often; and trust in what they tell you. Keep the sharper attention for work, for moments of real concern and for strangers you need to understand. At home, let it rest.\n\nA good test is whether the person would describe your attention as warmth or as scrutiny. Ask them, if you are not sure.\n\nIf you have been doing it, tell the person, and ask what would feel better. The answer is often simpler than you expect."
+  },
+  {
+   "title": "Using authenticity as an excuse for unkindness",
+   "body": "\"I'm just being honest,\" \"That's just who I am,\" \"I don't do fake.\" Each can be a sincere statement of values. Each can also be used to excuse rudeness, coldness or a refusal to consider how one's behaviour lands. This chapter argues that authentic is not the same as unfiltered: Fleeson and Wilt found that people feel most authentic when acting at their best, kindly, calmly and openly, not when acting on every impulse. A man who says a hurtful thing and calls it honesty, or who refuses to soften his manner for a grieving friend because softening is not \"him\", is mistaking a habit for a self. Authenticity means acting on your values, and kindness and consideration are usually among them. The question to ask is not \"Is this what I feel?\" but \"Is this who I want to be?\"\n\nHonesty and kindness are not opposites. The most useful honesty is usually the kind that can be heard.\n\nA good test is whether you would want someone you love to be \"honest\" with you in exactly the same way."
+  },
+  {
+   "title": "Waiting to feel authentic before acting",
+   "body": "Some people wait until a new way of behaving feels natural before they try it: they will be warmer with colleagues when warmth feels like them, they will speak up in meetings when it feels authentic, they will hug their sons when it no longer feels awkward. The feeling rarely comes first. Fleeson and Wilt's research, and Nina's wedding speech, suggest that acting on your values can itself produce the sense of being yourself, and that the awkwardness of a new behaviour usually fades with practice. Ray, in the previous chapter, did not wait to feel comfortable before hugging his son; he practised, and the comfort followed. Waiting for authenticity can mean waiting for ever. Choose the behaviour that fits the man you want to be, do it, and let the feeling catch up.\n\nA useful question is: what would the man I want to be do here? Then do that, even if it feels strange at first.\n\nIt also helps to choose one small behaviour at a time, so that the change is manageable and the feeling has a chance to follow."
+  },
+  {
+   "title": "Treating the book as the last word",
+   "body": "A book like this one can tempt readers to treat its findings as rules and its methods as finished. They are neither. Many of the studies it reports are single studies, some with small samples; some have been challenged, and some will be overturned by better research, as the power posing chapter described. Every person you meet will, at some point, fail to fit the patterns described here. The method this book has tried to teach, know the baseline, look for clusters, read change, weigh context, ask what would prove you wrong and confirm in words, is designed to be humble about its own limits. Keep that humility. Keep reading, testing and revising, and keep asking the people you read whether you have got them right. The best readers of people are the ones who expect to be surprised.\n\nIt also helps to keep a note of the readings you got wrong, which are often more instructive than the ones you got right.\n\nThe best compliment a reader of people can receive is that the people they read felt understood, not studied."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether I am performing rather than being myself?",
+   "a": "A few signs suggest performance: you are watching yourself more than the other person, as Arjun found; you cannot remember what was said because you were managing your gestures; you feel exhausted after ordinary conversations; and people who know you well say you seem different, polished or like someone acting. Being yourself, by contrast, usually involves attention pointed outward, at the person and the subject, with your body following your point rather than leading it, as the Let It Follow drill rehearses. It does not mean having no adaptations; everyone adapts to settings. The question is whether your adaptations serve what you value and the people in front of you, or whether they serve an image you are trying to project.\n\nAnother test is to notice whether you could explain your behaviour to the person in front of you without embarrassment.\n\nAnd performance is not always wrong. A eulogy or a wedding speech may need some staging; the question is whether the staging serves what you mean.\n\nIf you are not sure, ask a friend afterwards whether you seemed like yourself. They will usually know."
+  },
+  {
+   "q": "Is it fake to adapt how I come across?",
+   "a": "Not necessarily. Fleeson and Wilt found that people felt most authentic when acting in outgoing, kind, calm and open ways, whatever their usual personality, so adapting towards your best self can feel more like you, not less. The chapter on code-switching in this part describes adaptation as a skill when it is chosen and endorsed, and as a cost when it is constant and driven by fear. Wood and colleagues' measure of authenticity includes living in line with your values and not simply accepting others' expectations. So the question is not whether you adapt but why and how: whether the adaptation fits your values and the moment, as Nina's speech did, or whether it hides who you are to avoid judgment.\n\nIt also helps to notice whether you feel more yourself or less after a conversation in which you adapted.\n\nAnd when an adaptation starts to feel like hiding, that is a sign to look again at why you are making it."
+  },
+  {
+   "q": "What should go in my personal protocol?",
+   "a": "Keep it to one page and base it on evidence. Three signs that you are under more stress than you realise, gathered from recordings of yourself and from people who know you, as Nathan did. Three responses that bring you back towards your baseline, tested in practice. And a few commitments for how you will read and treat others, such as reading change against each person's own baseline, asking before acting on a reading, and never using what you notice to manipulate. Then wire it to the moments that need it, as Part VI described: a card in your meeting notebook, a trusted person who will tell you when they see the signs. Review it after a month and revise it, keeping what works. It is a map of yourself that other people help you draw.\n\nKeep it short enough to read in a minute. A protocol you never read is not a protocol.\n\nIt also helps to include one sign that you are at your best, so that the page reminds you what you are aiming for, not only what to avoid."
+  },
+  {
+   "q": "How can I stop over-reading the people I live with?",
+   "a": "Notice when you are narrating their gestures or asking about every small signal, and stop. Replace commentary with open questions asked less often: \"How was your day?\" rather than \"You look tense.\" Listen to the words and take them at face value most of the time. Learn their baseline by living with them, not by analysing them, and remember that a frown at a text message is usually about the text message. When you are genuinely worried, say so plainly, once, and leave the decision to them, as Adam learned to do. Avoid suggesting that someone's mood is a sign of illness unless you are seriously concerned, and then encourage them to see a professional rather than offering your own view. The aim at home is to be a place where nobody has to manage their face.\n\nIt also helps to notice what the people you live with already do well, and to say so, which turns attention into appreciation.\n\nIt also helps to remember that the people you love are not puzzles to solve, but people to know, which takes years rather than glances.\n\nAnd when you do notice something worrying, ask once, plainly, and trust the answer unless you have strong reason not to."
+  },
+  {
+   "q": "What if my body gives away things I would rather keep private?",
+   "a": "You are allowed to keep things private, and readable people are not unguarded with everyone. This chapter describes readable men as choosing where to be open. If someone notices that you seem tired or upset and asks, you can say so honestly without explaining: \"I'm a bit off today, nothing I want to talk about, but thanks for asking.\" That is congruent, because your words match what your body is already showing, and it is private, because you have not shared the reason. What tends to cause trouble is denial, insisting that you are fine while everything about you says otherwise, which leaves people confused and sometimes worried. A short, true sentence lets your body and your words agree, and keeps the rest your own.\n\nIt also helps to have a few people with whom you do not need to keep anything private at all.\n\nIt also helps to notice which people you can be fully open with, and to make time for them."
+  },
+  {
+   "q": "Where should I go from here?",
+   "a": "Practise, and stay humble. Part VI of this book turns the methods described here into a discipline: reviewing yourself on video, calibrating across cultures, building protocols and wiring them to the moments that need them. Choose one drill from this part and do it this week. Keep your one-page protocol and revise it. Ask the people you read whether you have read them rightly, especially the people least like you. Treat every surprising reading as a chance to learn, and every finding in this book as a starting point rather than a rule. Above all, keep your attention pointed mostly outward, at the people in front of you, and let it be gentle when it turns in.\n\nAnd remember that the point of all this was never to become an expert reader, but to understand and treat people better.\n\nIt also helps to return to the drills now and then, because habits drift, and what you notice about yourself changes as you change."
   }
  ],
  "watch": [
