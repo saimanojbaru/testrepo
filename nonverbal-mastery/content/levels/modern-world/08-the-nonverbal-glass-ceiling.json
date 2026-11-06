@@ -73,6 +73,20 @@
    "doCaption": "Turned towards the speaker until she is done",
    "dontCaption": "Looking away before she has finished",
    "annotation": "Looking away early signals that a turn is over. Staying turned towards the speaker holds the floor open for her."
+  },
+  {
+   "doPoseId": "p_mixed_face_to_face",
+   "dontPoseId": "p_pair_turned_away",
+   "doCaption": "Turning to the person who asked",
+   "dontCaption": "Answering the man when the woman asked",
+   "annotation": "Where you look when you answer tells the room who counts. Face the person who asked the question."
+  },
+  {
+   "doPoseId": "p_sit_lean_back_open",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Sitting back until she has finished",
+   "dontCaption": "Leaning in to take the floor mid-sentence",
+   "annotation": "Interruption starts in the body: a lean, a breath, a lifted hand. Notice the lean and let the sentence end."
   }
  ],
  "caseStudy": "Tom, thirty-eight, leads a project team of seven. In his written feedback for the year, he described Claire, one of his senior engineers, as sharp but too emotional in meetings. He described Mark, another senior engineer, as passionate and a strong voice. When his own manager read both reviews, she asked him what each had actually done.\n\nTom thought about it. In the meeting he remembered most clearly, Mark had slammed a hand on the table over a supplier's missed deadline. Claire, a week later, had said sharply that the team was being asked to ship code that had not been tested. He realised he had read Mark's anger as commitment and Claire's as a flaw, and that Claire had been right: the untested code had caused an outage a month later.\n\nHe tried the swap test on his other reviews and found two more places where he had used different words for similar behaviour. He rewrote them. He also started watching his own meetings more closely. Over two weeks he counted how often each person was cut off. Claire was interrupted more than anyone, often by Mark and sometimes by Tom himself.\n\nHe did not announce a policy. He simply began returning to people who had been cut off, by name, and crediting ideas to whoever first offered them. When he caught himself leaning in to speak over someone, he sat back and waited. Claire noticed within a month and said so, a little warily. Mark did not notice at all, but he was interrupted a little more often himself, and found he did not much like it.",
@@ -92,6 +106,11 @@
     "Imagine the same words and gestures from someone of a different gender, height or seniority.",
     "Note whether your reading changes.",
     "Where it does, write a fairer description of what happened."
+   ],
+   "variations": [
+    "Run the swap test on a colleague you admire as well as one you find difficult, since the bias can flatter as well as penalise.",
+    "Swap age or seniority instead of gender for one reading this week, and see whether your description of the behaviour changes.",
+    "Ask a trusted colleague to run the swap test on one of your written reviews, and listen to what they find."
    ]
   },
   {
@@ -103,6 +122,11 @@
     "Afterwards, look for patterns by gender, seniority and seat.",
     "Choose one person you will make a point of returning to next time.",
     "Note whether you interrupt less once you are counting."
+   ],
+   "variations": [
+    "Count interruptions in a hybrid meeting and note whether the people on the screen are cut off more than those in the room.",
+    "Count only your own interruptions for a week, and note the moments just before you cut in.",
+    "Share your counts, without names, with the person who chairs the meeting, and suggest one change."
    ]
   },
   {
@@ -113,6 +137,11 @@
     "Later in the meeting, come back to it and name the person who made it.",
     "If someone repeats an earlier idea, credit the person who first offered it.",
     "Afterwards, note how the room responded."
+   ],
+   "variations": [
+    "Agree with one colleague that you will each amplify the other at least once in your next shared meeting, then compare notes.",
+    "Amplify a point from someone more junior than you, and notice whether the room's response to it changes.",
+    "Notice whether anyone amplifies your points, and thank them afterwards, so that the practice spreads."
    ]
   },
   {
@@ -124,6 +153,11 @@
     "Write down the situation as they see it.",
     "Decide whether the anger was a reasonable response to that situation.",
     "Compare this with your first impression."
+   ],
+   "variations": [
+    "Apply the same steps to a colleague's tears or silence, not only to anger, and see whether your first reading changes.",
+    "Write down the situation behind your own most recent display of frustration at work, and ask whether others would have known it.",
+    "Ask the person directly, when appropriate, \"What happened before that meeting?\", and listen before you decide what it meant."
    ]
   }
  ],
@@ -205,6 +239,45 @@
    "explain": "The swap test separates what someone did from how you read it. If the same behaviour would earn different words from a different person, the description needs to change.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Brescoll and Uhlmann's study, what closed the gap in status between angry men and angry women?",
+   "options": [
+    "Telling participants that the woman was more senior than the man in the video",
+    "Giving an outside reason for the woman's anger, such as a colleague having lied",
+    "Having the woman express her anger more quietly and with fewer words than the man",
+    "Showing the videos to participants who worked in the same industry as the candidates"
+   ],
+   "answer": 1,
+   "explain": "People put women's anger down to character and men's to circumstance. When the researchers gave a situational reason for the woman's anger, the gap in status disappeared.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In a meeting, a supplier answers a woman's technical question by looking at and addressing her junior male colleague. What fits this chapter best?",
+   "options": [
+    "The junior should say nothing, since correcting a supplier would be embarrassing for him",
+    "The junior can turn towards her, name her role and look at her, handing the answer back",
+    "The woman should ask her junior colleague to put all her questions to the supplier for her",
+    "Nobody should react, since where people look when they answer has no effect on the meeting"
+   ],
+   "answer": 1,
+   "explain": "People often answer whoever seems most senior, frequently a man. Turning your body and gaze to the person who asked, and naming her role, uses your visibility to return the floor to her.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that interruptions of female justices at the United States Supreme Court faded as more women joined the court. What did Jacobi and Schweers find?",
+   "options": [
+    "That the gap grew rather than shrank as more women joined the court",
+    "That the gap disappeared entirely once there were three female justices",
+    "That male justices were interrupted more often than female justices by lawyers",
+    "That the study could not measure interruptions because it used written transcripts"
+   ],
+   "answer": 0,
+   "explain": "Female justices were interrupted around three times as often as male justices, and the gap grew rather than shrank as more women joined the court. The study used transcripts, so it captured words rather than tone.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -233,6 +306,110 @@
    "work": "The effect of physical height on workplace success and income: Preliminary test of a theoretical model",
    "author": "Timothy A. Judge and Daniel M. Cable",
    "note": "Journal of Applied Psychology 89(3), 2004. Height, pay and perceived leadership."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The registrar who raised her voice",
+   "scene": "Ngozi, thirty-four, is a surgical registrar in a busy teaching hospital. During an operation on a Tuesday afternoon, she notices that the\n  instrument count has been skipped before closing, because the theatre is running late and the consultant wants to finish. She asks for the count.\n  Nobody responds. She asks again, louder, and says, \"We are not closing until the count is done.\" The theatre goes quiet. The count is done. It is\n  correct.\n\n  Afterwards, the consultant, a senior surgeon in his sixties, tells the theatre manager that Ngozi was \"difficult\" and \"emotional\" in front of the\n  team, and that she needs to learn how to raise concerns professionally. The comment finds its way into her end-of-placement feedback, where it is\n  described as a problem with her communication.\n\n  Hugh, fifty-eight, the clinical director, reads the feedback when Ngozi appeals against it. He knows the consultant well. He also knows that\n  the same consultant shouts in theatre most weeks, at juniors, at equipment and at the clock, and that the staff describe him affectionately as\n  \"old school\". Nobody has ever written it in his feedback.\n\n  Hugh asks the theatre manager what happened before Ngozi raised her voice. The theatre manager says that she had asked politely first, and had\n  been ignored.\n\nNgozi has thought about not appealing. A colleague told her that appeals are remembered, and that she should let it go and keep her head down until her next rotation. She appealed anyway, because the comment described a safety check as a character flaw.\n\nNgozi has heard the consultant described as a brilliant surgeon with a temper, and she agrees with the first half. She has also noticed that when he shouts, the theatre goes quiet and does what he says, and when she raised her voice once, the theatre went quiet and wrote it down.",
+   "misread": "The consultant read Ngozi's raised voice as a flaw in her character, emotional and difficult, and the comment entered her record as a communication problem. The theatre team had long read his own shouting as a matter of style and the pressure of the job.\n\nThe theatre manager, passing on the comment, read it as routine feedback rather than as a judgment that needed checking.\n\nAnd the person writing her feedback read the consultant's account as the whole story, without asking anyone else in the theatre what they had seen.\n\nNgozi's colleague, advising her not to appeal, read the system accurately and drew the wrong conclusion from it.",
+   "betterRead": "Brescoll and Uhlmann found that people put a man's anger down to the situation and a woman's down to her character, and that the gap closed when people were given the situation behind the woman's anger. Here the situation was plain: a skipped safety check, a polite request ignored, and a registrar doing exactly what patient safety requires. Hugh's better reading started with the question the chapter recommends: what happened? He upheld Ngozi's appeal, removed the comment and wrote in her record that she had appropriately insisted on a safety check under time pressure. He also spoke privately to the consultant, and asked him to describe what he would have wanted a junior to do if the count had been wrong.\n\nHugh also asked the theatre team to agree a simple phrase that anyone, of any grade, could use to pause for a safety check, so that insisting on one would not depend on who raised their voice.\n\nNgozi completed her placement with a clean record and, two years later, was asked to teach the theatre safety course."
+  },
+  {
+   "title": "The trustee who got emotional",
+   "scene": "Rachel, fifty-two, sits on the board of trustees of a children's charity. At a board meeting, the treasurer proposes moving a large part of\n  the charity's reserves into an investment fund that promises higher returns. Rachel, who worked in financial regulation for twenty years, thinks the\n  fund is far riskier than it looks, and that losing the reserves would mean closing services. She says so, clearly, and when two other trustees\n  brush her objection aside, she says it again with obvious feeling: \"I have watched organisations lose everything this way. I am not willing to\n  gamble the children's services on it.\"\n\n  There is a short, uncomfortable silence. The chair, Peter, says, \"Let's keep this calm, Rachel,\" and moves on. The proposal seems set to pass.\n\n  Twenty minutes later, a newer trustee, David, a retired accountant, says that he has been looking at the fund's documents and has some concerns.\n  He sets out, calmly and briefly, almost exactly the risks that Rachel described. Several trustees nod. Peter thanks him for a very helpful\n  intervention and proposes deferring the decision until the board has independent advice.\n\n  After the meeting, Rachel sits in her car for ten minutes before she drives home. David, who had not noticed what happened, emails her that\n  evening to say that he had been building on her point and hoped she did not mind.\n\nRachel notices, too, that two of the trustees who had brushed her aside are now nodding along with David, and that one of them thanks him for \"a calm, clear view\".\n\nPeter, for his part, thinks the meeting went well. The board avoided a risky decision, nobody lost their temper, and the new trustee made a useful contribution. He does not remember who first raised the risk.\n\nShe has been on boards for fifteen years. She knows that if she mentions it, she risks being told she is being emotional again, and that if she does not, it will happen again next month.",
+   "misread": "The board read Rachel's feeling as a reason to discount her argument, and Peter read his own \"Let's keep this calm\" as good chairing. When the same argument arrived calmly from a man, the board read it as a helpful intervention and credited him with it.\n\nSeveral of the trustees read David's intervention as new information, when it was Rachel's argument in a different voice.\n\nDavid, too, had read his own point as building on hers, without noticing that the board heard it as new. Good intentions do not change where the credit lands.",
+   "betterRead": "Salerno and Peter-Hagene found that the same expression of anger from a holdout juror made a man more persuasive and a woman less, even when the words were identical. Rachel's case shows both that pattern and the problem of credit: an idea that passed without weight the first time was praised the second. The better reading would have weighed the argument rather than the feeling, and noticed that the feeling came from expertise. David's email was a start. Peter's better response, when Rachel raised it with him a week later, was to apologise, to say at the next meeting that the deferral had been Rachel's proposal first, and to ask her to lead the review of the board's investment policy. He also began, he said later, asking himself whether he would tell a man to keep calm.\n\nDavid, when he heard, offered to second Rachel's points at future meetings by name. She said she would rather the chair did his job, but thanked him."
+  },
+  {
+   "title": "The manager who was shorter than his team",
+   "scene": "Danny, thirty-three, has just been promoted to run the night shift at a large distribution warehouse. He is five foot five. One of his team\n  leaders, Lee, twenty-six, is six foot three, broad and quiet, and has been on the shift for less than a year. When visiting managers from head office\n  walk the floor, they almost always address their questions to Lee. Drivers arriving with problems look for Lee first. Twice, a director has\n  congratulated Lee on the shift's improved figures, which were Danny's work.\n\n  Danny has started to compensate. He speaks louder on the floor than he used to, stands on the loading step when he briefs the team, and has\n  become sharper in his manner. One of the older workers has begun calling him \"the little general\" behind his back, and Danny has heard it.\n\n  Lee is uncomfortable too. He has never wanted to be a manager, and he does not know how to tell the director that he is talking to the wrong\n  person without sounding as though he is criticising his boss.\n\n  The operations director, Carol, who visits monthly, notices Lee redirecting a driver's question to Danny with a nod of his head. Then she realises,\n  with some discomfort, that on her own last visit she had walked straight up to Lee and asked him how the new system was going.\n\nHe has also begun to notice that new starters on the shift introduce themselves to Lee first, and that Lee has started to look mortified when they do.\n\nAt home, Danny's partner has noticed that he comes back from shifts wound up and tired, and that he has started rehearsing what he will say to the head office managers before they visit, as if preparing for an argument.\n\nWhen Danny raises it with a friend from another depot, the friend laughs and says he should get some lifts in his boots. Danny laughs too, and feels worse.",
+   "misread": "The visitors read Lee's height and build as authority and addressed him as the person in charge. When Danny raised his voice and stood on the step, some of the team read his efforts as a small man overcompensating, a reading they would not have made of a tall manager doing the same.\n\nDanny read the nickname as proof that he was failing, and pushed harder, which made it stick.\n\nCarol read her own earlier mistake, once she noticed it, as a small slip. To Danny it had been one more month of being invisible in his own shift.\n\nAnd the director who congratulated Lee read the figures through the face in front of him, without asking whose they were.",
+   "betterRead": "Judge and Cable found that taller people earned more, with the link strongest in management and sales, where being seen as a leader matters most. The bias falls on short men as well as on women, and it lives in the people doing the reading. Danny's louder voice was a reasonable response to being overlooked, and it was then read as a flaw, which is a familiar double bind. Carol's better response was to fix her own reading first. On her next visit she went straight to Danny, introduced him to the head office team as the shift manager, and asked him to walk them round. She also asked her managers to begin every site visit by asking who was in charge, rather than assuming. Danny, freed from the competition, let his voice drop. The nickname faded, though not entirely.\n\nLee was relieved. He told Danny that he had hated being mistaken for the boss and had not known how to stop it."
+  },
+  {
+   "title": "The answer that went to the wrong person",
+   "scene": "Priya, forty-one, is the lead structural engineer on a new bridge for a rail company. She and her graduate engineer, Josh, twenty-five, meet\n  the sales engineer from a steel supplier to discuss a problem with the specification of some bolts. Priya has spent a week on the problem and knows\n  it in detail. Josh is three months into the job.\n\n  Priya asks the sales engineer a precise technical question about load ratings. He turns, slightly but unmistakably, towards Josh, and answers\n  him, looking at him throughout. When Priya asks a follow-up, the man answers Josh again. Josh, embarrassed, keeps glancing at Priya. Priya keeps her\n  face still and writes notes. She has had this happen many times before. She has learned that if she points it out, she is seen as touchy, and if she\n  does not, the meeting goes on around her.\n\n  On the third question, Josh does something he has not planned. He turns his chair a little towards Priya, so that his body faces her rather than the\n  sales engineer, and says, \"Priya's the lead on this, she'll know whether that works.\" Then he looks at her and waits.\n\n  The sales engineer pauses, turns to Priya and answers her for the rest of the meeting.\n\nJosh notices that the sales engineer smiles at him in a friendly, man-to-man way when he answers, as if the two of them were sharing something. It makes him feel slightly sick.\n\nIn the car park afterwards, Josh asks Priya whether that happens often. She says it happens in about half of her meetings with new suppliers, and that she has stopped counting because counting made her angry.\n\nJosh also realises that he had felt a small flicker of pleasure at being treated as the expert, before the discomfort set in, and he is not proud of it.",
+   "misread": "The sales engineer read the younger man as the authority in the room and directed his answers to him, without seeming to notice that he was doing it. Priya read the pattern accurately, but also read that calling it out herself would cost her.\n\nJosh, at first, read his own discomfort as a sign that he should stay out of it.\n\nThe sales engineer, if asked, would almost certainly have said that he was simply talking to whoever was easiest to talk to, which is exactly how the bias feels from the inside.",
+   "betterRead": "When a question is asked in a mixed group, people often address the answer to whoever seems most senior or most confident, and that is frequently a man, regardless of who asked. The correction is small and physical: turn your body and your gaze to the person who asked. Josh did more than that. He used the authority the sales engineer had given him to hand it back, turning towards Priya, naming her role and looking at her, so that the sales engineer's eyes followed his. That is what the chapter means by using whatever advantage you have. Afterwards, Priya thanked him. He said he had felt awkward. She said that was the price of it, and that it was much lower for him than for her.\n\nJosh had not set out to be an ally. He had simply noticed where the man's eyes were going, and moved his own."
+  }
+ ],
+ "workedReading": {
+  "title": "Chairing a promotion panel",
+  "scene": "Sunil, fifty, is head of engineering at a software company, and this week he chairs the panel that decides promotions to principal engineer. There are three candidates: Elena, thirty-eight, who leads the payments team; Marcus, forty, who leads infrastructure; and Joy, thirty-three, who leads the mobile app. Two other managers sit on the panel with him. Each candidate has a written case, peer feedback and their manager's recommendation. Last year's panel promoted two men and no women from a similar shortlist, and an engineer who left afterwards said in her exit interview that she had been told she was \"not quite principal material\" without ever being told why. Sunil has read this chapter and wants the panel to judge the evidence rather than the impression each candidate makes in the room.\n\nSunil also knows his own habits. He tends to warm to candidates who talk the way he does, quickly and with confidence, and he has been told in the past that he gives more airtime to the loudest person on a panel. He has decided to keep a quiet tally of who speaks in the panel itself, as well as judging the candidates.\n\nHe also knows that the panel will be tired by the third candidate, and that tired panels fall back on impressions. He schedules a break before each discussion.",
+  "steps": [
+   {
+    "label": "Agree the criteria first",
+    "text": "Before anyone discusses a candidate, Sunil asks the panel to agree what a principal engineer needs to show, with examples: technical judgment, influence across teams, mentoring, delivery. They write them on the whiteboard. He knows that criteria agreed in advance are harder to bend around a first impression, and that an impression formed in the first minute can otherwise become the frame for everything after.\n\nOne panellist objects that good engineers can tell a principal when they see one. Sunil agrees that experience matters, and asks him to say what he sees, in words that can go on the board, so that the others can check it against the evidence.\n\nAgreeing the criteria takes twenty minutes, and two of the panel think it is a waste of time. By the end of the day both of them say it was the most useful part."
+   },
+   {
+    "label": "Describe behaviour, not character",
+    "text": "When the panel turns to the peer feedback, Sunil asks everyone to underline words that describe character, such as \"abrasive\", \"emotional\", \"natural leader\" or \"passionate\", and to find the behaviour behind each one. Elena's feedback calls her \"abrasive\" twice. The behaviour behind it turns out to be that she blocked two releases she judged unsafe. Marcus's feedback calls him \"decisive\" for doing much the same.\n\nHe also asks the panel to treat praise words the same way. \"Natural leader\" in Marcus's feedback turns out to rest on his running a well-attended weekly meeting, which is worth something, but less than the phrase suggests."
+   },
+   {
+    "label": "Run the swap test",
+    "text": "For each loaded word, Sunil asks the panel to imagine the same behaviour from a colleague of a different gender and ask whether they would use the same word. One panellist admits that he would have called Marcus \"abrasive\" if he had been a woman. They agree to remove character words from their notes and keep the behaviours.\n\nThe swap test feels awkward at first, and one panellist says it is political. Sunil says it is about accuracy: if the same behaviour earns different words, at least one of the words is wrong, and they cannot both be evidence."
+   },
+   {
+    "label": "Look for the situation",
+    "text": "Joy's feedback includes a comment that she \"got upset\" in a planning meeting. Sunil asks what happened. Her manager explains that Joy had learned in the meeting that her team's work was being cut without consultation, after six months of effort. The panel agrees that her reaction was a response to a real problem, which she then helped to fix. Brescoll and Uhlmann found that this kind of situational information closes the gap in how anger is judged.\n\nHe also asks whether anyone has looked for the situation behind Marcus's \"decisive\" moments. Two of them turn out to have been decisions that his team later had to reverse.\n\nHe reminds the panel that situations are not excuses. They are information about what the behaviour was a response to, which is what the panel needs to judge it."
+   },
+   {
+    "label": "Watch the floor",
+    "text": "During the discussion, Sunil keeps an eye on his own panel. He notices that one panellist, Fiona, has tried to speak twice and been talked over both times by the most senior member. He says, \"Fiona, you were about to say something about Elena's mentoring,\" and waits. Fiona points out that Elena has mentored four engineers into senior roles, which nobody else had mentioned.\n\nHe also notices that he himself has been looking mostly at the senior panellist when he asks questions, and turns his chair a little so that he can see all three of the others without moving his head."
+   },
+   {
+    "label": "Credit and check",
+    "text": "When the senior panellist later makes the same point about mentoring as if it were his own, Sunil says, \"That's Fiona's point, and it's a strong one.\" Before the panel decides, he reads back the evidence for each candidate against each criterion, without the character words, and asks whether anyone's view has changed.\n\nHe also reads out the tally he has been keeping of who spoke in the panel. The senior panellist has spoken as much as the other three combined. Nobody says much about it, but the second half of the meeting is noticeably more even."
+   },
+   {
+    "label": "What happened",
+    "text": "The panel promotes Elena and Marcus, and gives Joy a clear plan with two specific gaps to close for next year. Each decision is written up against the criteria, with the evidence. Joy tells Sunil afterwards that it is the first promotion feedback she has had that she could act on. Sunil cannot know whether the panel's decisions were fairer than last year's. He does know that they were made on evidence that everyone could see, and that every loaded word had been examined before it counted.\n\nHe shares the panel's method with the other heads of department, with the agreed criteria and the list of loaded words, and suggests that every promotion panel use it next year."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Saving your support for afterwards",
+   "body": "Many men who notice a colleague being talked over, dismissed or misread do something kind afterwards: a quiet word in the corridor, a message saying \"I thought your point was really good.\" It is well meant, and it is better than nothing. But it leaves the room's reading unchanged. The meeting still ended with her point ignored, her anger recorded as a flaw or her idea credited to someone else, and the people who matter for her career still saw it that way. The private word can even become a substitute for acting, a way of feeling supportive without paying any cost. If you agree with a point, say so in the room, naming the person who made it. If someone is cut off, return to them while the meeting is still running. A short sentence in public does far more than a long one in private.\n\nA useful rule: if you would be happy to say it privately, say it publicly too, in a sentence, at the moment it matters.\n\nIf speaking up in the room is genuinely risky for you, say so to the person afterwards, and ask what would help next time."
+  },
+  {
+   "title": "Speaking for her instead of handing back the floor",
+   "body": "Some men, wanting to help, restate a woman's point in their own words: \"I think what Sara is trying to say is...\", and then explain it, often at greater length and with more confidence than she did. The idea may now be heard, but it is heard in his voice, and the room learns that her point needed translating. It can also misstate what she meant. Amplification works differently. It names the person and returns the floor to them: \"I want to come back to Sara's point. Sara, can you say more about that?\" Then it waits. The aim is not to be the hero of the moment but to make it easier for her to be heard in her own words. If you catch yourself explaining someone else's idea, stop and hand it back.\n\nThe same goes for explaining a woman's reaction to the room: \"I think Sara's just frustrated\" can undermine her as surely as ignoring her."
+  },
+  {
+   "title": "Assuming it is only about gender",
+   "body": "This chapter concentrates on gender, because that is where much of the research is. But the same reading errors follow other lines. People read authority into height, a deep voice and a particular accent; they read threat or anger into some faces more readily than others; they interrupt people who are younger, newer, disabled, softly spoken or from a different background. Part V looks at several of these in detail, including how Black men's bodies are read. The swap test works for all of them: imagine the same behaviour from someone different in any of these ways and ask whether your reading would change. If you check only for gender, you may become fairer to some colleagues while still misreading others in exactly the same way.\n\nIt also helps to know that people affected by more than one of these patterns at once often face more than the sum of them, which is a good reason to listen to their account of what happens in meetings.\n\nThe swap test is quick enough to run several times on the same impression: gender, age, accent, height. Each one may show something."
+  },
+  {
+   "title": "Reading the reaction to bias as the problem",
+   "body": "When someone has been interrupted, overlooked or misread repeatedly, they often react: they become curt, they stop contributing, they bring their points in writing, they push harder and louder, or they withdraw from meetings altogether. The reaction is then easy to read as the original problem: she is disengaged, he is aggressive, she is not a team player. That reading turns the effect of the bias into evidence against its target. Danny's louder voice on the warehouse floor and Rachel's ten minutes in her car were both reactions to being misread. Before you judge someone's manner in meetings, look at what happens to them in those meetings. Count the interruptions, notice whose ideas are picked up and ask whether the manner you dislike might be a response to how they have been treated.\n\nWithdrawal is often the cheapest choice left to someone who has been talked over for months. Read it as information about the meeting, not only about the person."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Isn't this just political correctness?",
+   "a": "It is a question of accuracy as much as fairness. If you read a colleague's anger as a flaw of character when it was a response to a real problem, you have misread her, and you may also have missed the problem, as Tom did with the untested code and the consultant nearly did with the instrument count. If you promote the tall man because he looks like a leader, you may have passed over the better one. The studies in this chapter do not tell you what to think about anyone. They show that the same behaviour is read differently depending on who shows it, which means that some of your readings are wrong. Correcting them makes you a better judge of people, which is the point of this whole book.\n\nAnd none of this asks you to stop reading people. It asks you to read everyone by the same standard."
+  },
+  {
+   "q": "What can I do if I am the one who keeps being interrupted?",
+   "a": "The research in this chapter places the main responsibility on the people doing the interrupting and on whoever runs the meeting, and it is not your job to fix their habits. Still, some things can help. A calm \"I'd like to finish my point\" said once, without apology, often works. So does agreeing in advance with a colleague that each of you will return to the other if you are cut off. You can ask the chair to set a norm that people finish before others come in, or to use a round on important items. If the pattern is persistent and affecting your work, it is reasonable to raise it with your manager, using specific examples and counts if you have them, rather than general impressions.\n\nIt can also help to keep a short record of incidents, with dates, in case you need it later.\n\nAnd if you chair meetings yourself, the most powerful change is to make finishing a sentence the norm for everyone."
+  },
+  {
+   "q": "How can I tell whether I am biased if I do not feel biased?",
+   "a": "You probably will not feel it, because these biases work in the speed of a first impression, below deliberate thought. That is why the checks in this chapter are deliberate. Read back the words you have used in recent reviews or references, and look for character words such as \"emotional\", \"abrasive\", \"passionate\" or \"natural leader\", then check whether they cluster by gender. Count interruptions in your own meetings, including your own. Notice where your eyes go when someone asks a question in a group. Run the swap test on your next strong impression. None of this will tell you that you are or are not biased in general. It will show you specific places where your reading may have gone wrong, which is more useful.\n\nAnother check is to notice whom you remember as having made a point. If it is usually the loudest or most senior person, look again."
+  },
+  {
+   "q": "Does the backlash research mean women should be assertive only with their bodies?",
+   "a": "No. Williams and Tiedens found that explicit dominance, such as direct demands and open disagreement, was penalised in women while nonverbal dominance, such as steady eye contact and a firm voice, was not. It would be easy to turn that into advice for women to say less and stand taller. But that puts the burden in the wrong place. The penalty lies in the people doing the judging, who punish the same behaviour in a woman that they reward in a man. The more useful lesson is for evaluators: when you find yourself disliking a woman's directness, ask whether you would dislike the same directness from a man, and judge the content of what she said.\n\nIf you mentor women, it is still reasonable to discuss what tends to land in a particular room. The aim is to share knowledge of the room, not to suggest that she is the problem."
+  },
+  {
+   "q": "How do I amplify someone's point without seeming to speak for them?",
+   "a": "Name them, point to their idea and hand the floor back. \"I want to come back to what Sara said about the timeline. Sara, can you say more?\" Then stop talking and look at her. If an idea is repeated by someone else, credit it simply: \"That's close to Sara's point earlier.\" Avoid restating her idea in your own words at length, which can make it sound as though it needed translating. Avoid making a show of it, too, which can embarrass the person you are trying to help. Done well, amplification is brief, specific and frequent, and after a while it becomes a habit of the group rather than a gesture from one person. It works best when several people do it.\n\nIf you are not sure whether someone would welcome amplification, ask them afterwards. Most people will tell you exactly what helps.\n\nOver time, the best sign that amplification is working is that it becomes unnecessary, because the group has learned to hear the first voice."
+  },
+  {
+   "q": "Does height really make that much difference?",
+   "a": "It makes a measurable difference on average, though not a decisive one for any individual. Judge and Cable's analysis of four large studies found that taller people earned more, even after accounting for gender, weight and age, and that the link was strongest in sales and management, where being seen as a leader matters most. Each extra inch was worth, on average, several hundred dollars a year. The effect is not about anything a tall person does. It is about how others read height, and it falls on short men as much as on women. If you make decisions about people, the useful question is whether you are responding to what someone has done or to how they look while doing it.\n\nHeight is also easy to correct for once you notice it: ask yourself, before a decision, what the person has actually done.\n\nIf you are tall, it is worth knowing that some of the deference you receive was not earned, and using it to point attention towards people who did earn it."
   }
  ],
  "watch": [
