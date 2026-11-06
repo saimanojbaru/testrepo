@@ -73,6 +73,20 @@
    "doCaption": "The remote colleague upright and present",
    "dontCaption": "The remote colleague fading out",
    "annotation": "In a hybrid meeting the screen is the far corner of the table. Remote colleagues need invitations, not just a camera."
+  },
+  {
+   "doPoseId": "p_pair_side_by_side",
+   "dontPoseId": "p_pair_seated_across",
+   "doCaption": "Side by side over the same problem",
+   "dontCaption": "Facing off across the table",
+   "annotation": "Rivals tend to sit opposite each other, and people answer whoever faces them. Side by side, the problem becomes the thing you face."
+  },
+  {
+   "doPoseId": "p_group_meeting",
+   "dontPoseId": "p_group_three",
+   "doCaption": "Seats within reach for anyone who wants one",
+   "dontCaption": "A stand-up with no chairs offered",
+   "annotation": "A format that forces one person to be the exception creates a new overlooked seat. Build the choice in from the start."
   }
  ],
  "caseStudy": "Daniel, forty-one, became head of a design department and inherited a weekly meeting of eleven people around a long table. Within a month he noticed that the same three senior designers did almost all the talking. One of them, Graham, always sat at the far end, facing the chair. The three newest members of the team sat in chairs against the wall, and the two colleagues who joined from another office appeared on a screen at one end of the room that Daniel had to turn round to see.\n\nHe made a few changes. He asked facilities for more chairs at the table, so nobody sat against the wall. He stopped sitting at the head and took a seat in the middle of one long side, from which he could see almost everyone. He moved the screen so it faced him, and on each item he asked the remote colleagues to speak first. He asked people to put phones in their bags, and laptops stayed closed unless someone was presenting.\n\nNot everything worked. Graham was irritated that the meeting no longer seemed to have a head, and said so. One of the remote designers found being asked first uncomfortable and asked Daniel to stop singling her out, so he switched to a quick round of everyone instead. But within six weeks, Femi, a junior designer who had not spoken in a single meeting, presented an idea that the team adopted.\n\nDaniel does not know how much was the seating and how much was simply that he had started asking. He suspects the two worked together: the room made asking natural, and asking made the room feel open. He also started a fifteen-minute standing check-in on Monday mornings, which people grumbled about at first and now defend.",
@@ -92,6 +106,11 @@
     "Afterwards, compare the tallies with the seats: heads, ends, sides, corners and wall.",
     "Note whether the person who spoke most had the widest view of the group.",
     "Write one change to the seating you would try next time."
+   ],
+   "variations": [
+    "Map the same regular meeting for three weeks running, and see whether the people who speak most stay in the same seats.",
+    "Add arrows to your seat map showing who responds to whom, and look for the Steinzor pattern of people answering whoever sits opposite.",
+    "Map a hybrid meeting, including the people on the screen, and compare their tallies with those of people in the room."
    ]
   },
   {
@@ -103,6 +122,11 @@
     "During the meeting, notice how easy it is to catch eyes and to find a gap to speak.",
     "Compare it with how you usually feel in your normal seat.",
     "Decide whether to keep the new seat."
+   ],
+   "variations": [
+    "Try sitting opposite the chair in a meeting where you usually sit beside them, and notice whether you are addressed more often.",
+    "Sit side by side with a colleague you usually face across the table, for a working session, and notice whether the tone changes.",
+    "In a meeting where you usually speak a lot, take a corner seat for once, and notice how hard it is to get the floor from there."
    ]
   },
   {
@@ -113,6 +137,11 @@
     "Ask one person at the edge, or on the screen, for their view by name.",
     "If someone is sitting against the wall, invite them to the table.",
     "Afterwards, note who spoke who usually does not."
+   ],
+   "variations": [
+    "Keep a written list of who has spoken in your next meeting, and before each decision, invite one person who is not on it.",
+    "Rearrange a regular meeting into a horseshoe or a circle for one week, and ask people afterwards whether it felt different.",
+    "If you are not the chair, invite one quiet colleague into the discussion yourself: \"I'd like to hear what Femi thinks about this.\""
    ]
   },
   {
@@ -124,6 +153,11 @@
     "Offer chairs to anyone who prefers or needs to sit.",
     "After two or three weeks, ask people whether it felt different, and how.",
     "Keep it, change it or drop it based on what they say."
+   ],
+   "variations": [
+    "Put stools or chairs around the standing table from the start, and use one yourself on some days, so that sitting is clearly normal.",
+    "Try a walking meeting for a one-to-one, with a seated option offered beforehand, and compare it with the same conversation at a desk.",
+    "Time the standing meeting for three weeks and the sitting version for three weeks, and compare the length and what got decided."
    ]
   }
  ],
@@ -205,6 +239,45 @@
    "explain": "In hybrid meetings the room tends to talk to itself. Inviting remote colleagues in first, and keeping them in view, works against the geography of the room.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Strodtbeck and Lipinski's 1985 study suggest about sitting at the head of a jury table?",
+   "options": [
+    "It had no influence at all on which of the jurors the others chose to be their foreman",
+    "It influenced who was chosen as foreman, but was not linked to doing the job better",
+    "It made jurors less likely to be chosen, because it looked as if they wanted power",
+    "It mattered only for jurors who had served before and knew how the process worked"
+   ],
+   "answer": 1,
+   "explain": "Sitting at the head of the table was a persistent influence on who was chosen as foreman, but it was not linked to doing the job better. The seat was shaping the choice, not the person's ability.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Two managers who dislike each other always sit directly opposite one another, and every meeting turns into a duel. What fits this chapter best?",
+   "options": [
+    "Accept the duels, since seating cannot change how two people feel about each other",
+    "Try seating them side by side for joint work, facing the same problem rather than each other",
+    "Seat each of them beside the chair, so that neither of them can easily be seen or heard by the room",
+    "Hold the meeting standing up, since standing groups are always less argumentative"
+   ],
+   "answer": 1,
+   "explain": "People who expect to compete tend to sit opposite each other, and people respond most to whoever faces them. Side by side, facing a shared task, makes cooperation easier to start, though seating is never the whole story.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "A colleague says that a laptop in a meeting only distracts the person using it. What did Sana, Weston and Cepeda find in their classroom study?",
+   "options": [
+    "That laptops helped everyone remember more, because notes were faster to take",
+    "That students who could see someone else's screen also remembered less of the lecture",
+    "That laptops made no difference to what students remembered from the lecture",
+    "That only students who used laptops for games, not email, were distracted by them"
+   ],
+   "answer": 1,
+   "explain": "Students who multitasked on laptops remembered less, and so did students sitting where they could see someone else's screen. Distraction spread to the people nearby.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -233,6 +306,110 @@
    "work": "The effects of stand-up and sit-down meeting formats on meeting outcomes",
    "author": "Allen C. Bluedorn, Daniel B. Turban and Mary Sue Love",
    "note": "Journal of Applied Psychology 84(2), 1999. Standing meetings were shorter, with no loss in decision quality."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The chair who arrived late",
+   "scene": "Joyce, sixty-seven, a retired head teacher, moves into a block of flats where the residents have just formed an association to deal with a\n  long-running dispute about repairs. She goes to the first meeting in the community room on the ground floor, arriving ten minutes late because her\n  bus was delayed. Eighteen people are already sitting around three tables pushed together into a long rectangle. The only free chair is at the far\n  end, facing the door.\n\n  She sits down, apologises and listens. Because she is at the end of the table, everyone can see her and she can see everyone. When the discussion\n  stalls, people's eyes drift towards her, and she finds herself summarising what has been said and suggesting next steps, as she used to in staff\n  meetings. At the end of the evening, when someone proposes electing a chair, three people suggest her. She is elected by a show of hands.\n\n  On the way back to her flat, a man called Tunde, who has lived in the block for twelve years and has been fighting the landlord about the repairs\n  for most of them, tells her, quite pleasantly, that he had been hoping to chair it himself. He had sat on the long side, by the radiator, and had\n  spoken twice.\n\n  Joyce lies awake that night. She knows almost nothing about the dispute. Tunde knows everything.\n\nShe also remembers that, as a head teacher, she had always sat at the end of the staff-room table, and that her deputies had sometimes complained that meetings felt like assemblies.\n\nAt the meeting, she had noticed that a man by the radiator kept starting to speak and stopping when someone nearer the ends got in first. She had not connected it with the table. She had assumed he was shy.",
+   "misread": "The residents read Joyce's position at the end of the table, and the summaries it made easy for her to give, as natural leadership. Joyce, at first, read her election as recognition of her ability, and did not consider how much the seat had done.\n\nTunde, too, read the vote as a judgment on him, and nearly stopped coming.\n\nThe residents who voted also read their own choice as a judgment of the candidates, when it was largely a response to the person who had been easiest to see and hear all evening. None of them would have said that the seat decided it.",
+   "betterRead": "Strodtbeck and Hook found that jurors at the ends of a long table were more likely to be chosen as foreman, and later work found that the seat shaped the choice without being linked to doing the job better. Joyce's chair gave her the widest view in the room and made her the natural resting place for eyes when the discussion paused. Tunde, on the long side by the radiator, was out of most people's line of sight. Joyce's better response was to say so. At the next meeting she explained that she had been elected largely because of where she happened to sit, proposed that Tunde lead on the repairs dispute, which he knew best, and suggested arranging the tables in a horseshoe in future, so that nobody had the end seat. The association voted for both. Joyce stayed on as secretary, which she said suited her far better.\n\nTunde later told her that the horseshoe had done more for the association than either of them."
+  },
+  {
+   "title": "The deputy beside the head",
+   "scene": "Nikhil, thirty-nine, is deputy head of a large secondary school. Every Monday morning the senior leadership team meets in the head teacher's\n  office, around an oval table. The head, Sarah, sits at the end nearest the window, and Nikhil has always sat in the chair immediately to her right,\n  where he sat on his first day because it seemed the natural place for a deputy.\n\n  Over the past term he has begun to feel sidelined. Sarah seems to address most of her questions to the two assistant heads sitting opposite her\n  and further down the table. When Nikhil speaks, she often carries on looking at them, and once or twice she has asked one of them what they think\n  of a point he has just made, as if he had not made it. He has started to wonder whether she is losing confidence in him, or preparing to bring in\n  someone else.\n\n  He raises it, carefully, with a former colleague who is now a head elsewhere. She asks him to draw the table and show her where everyone sits. Then\n  she asks him how often Sarah would have to turn her head to look at him.\n\n  He thinks about it. Sarah would have to turn almost ninety degrees. The assistant heads are in front of her without her moving at all.\n\nHe has also noticed that the assistant heads sometimes glance at each other when he speaks, and has read it as a shared judgment of his ideas. It may simply be that they can see each other and cannot easily see him.\n\nIn meetings with outside visitors, Nikhil sits wherever there is space, and he has noticed that Sarah turns to him readily then. He had put it down to her wanting to show a united front.",
+   "misread": "Nikhil read Sarah's habit of looking past him as a loss of confidence in him, and began to fear for his job. The assistant heads, without thinking about it, read the direction of Sarah's attention as a sign of who mattered most at the table.\n\nSarah, for her part, had read Nikhil's quietness as contentment, and had no idea that he felt sidelined.\n\nHe also read the assistant heads' greater share of the conversation as a sign that Sarah preferred them, rather than as the natural result of being in front of her eyes.",
+   "betterRead": "The seat beside the chair looks like a position of favour, but it is one of the hardest seats in the room to be seen from. Steinzor found that people tend to respond to whoever sits opposite them, because they can see that person's face and body. Sarah was not turning away from Nikhil; she was looking straight ahead. His former colleague's better suggestion was to change the seat before reading anything into the relationship. The next Monday, Nikhil took the chair at the far end of the oval, opposite Sarah. Within two weeks she was turning to him first on most items, and when he mentioned the change to her over coffee, she laughed and said she had wondered why he had suddenly become so much more vocal.\n\nHe also suggested to Sarah that the assistant heads rotate seats too, so that nobody became the person beside the head by default."
+  },
+  {
+   "title": "The rivals across the table",
+   "scene": "Gemma, forty-four, and Lewis, forty-seven, run the two largest sales regions of a building supplies company. They are both very good at their\n  jobs and they do not like each other. At the monthly regional meeting, around a long table, they always sit directly opposite each other, in the\n  middle of the two long sides, as if by appointment.\n\n  Every meeting becomes a duel. When Gemma speaks, Lewis answers, usually to disagree. When Lewis makes a proposal, Gemma picks it apart. The other\n  managers have learned to keep their heads down until the exchange has run its course. The managing director, Andy, has started to dread the\n  meetings and to make the important decisions afterwards, privately, with each of them separately.\n\n  This quarter the company needs a joint plan for a new national customer, whose stores fall in both regions. Andy has asked Gemma and Lewis to\n  produce it together, and he expects it to fail. Before their first planning session, his assistant, Hana, sets up the small meeting room. She is not\n  thinking about psychology. The big table is booked, so she puts two chairs side by side at a narrow desk facing a whiteboard, with a single laptop\n  between them.\n\n  Gemma and Lewis arrive, look at the chairs, and sit down next to each other, because there is nowhere else to sit.\n\nThe other managers have their own seats too, arranged in a rough pecking order down the table. The newest, a regional manager called Priti, sits by the door, where she has to lean forward to see either of the duellists.\n\nAndy has tried asking them both to \"keep it constructive\". Each of them has taken it as a rebuke aimed at the other.",
+   "misread": "Andy and the other managers read the duels as a clash of personalities that nothing could change. Gemma and Lewis each read the other's constant opposition as hostility, and neither noticed how much the seats were inviting it.\n\nAndy had also read his private decision-making as a sensible workaround, when it was teaching both managers that the duel was the real meeting.\n\nPriti, at the far end by the door, read the duels as the way the company did things, and learned to stay quiet. The meeting was teaching every newcomer the same lesson.",
+   "betterRead": "Sommer found that people who expect to compete tend to sit opposite each other, and people who expect to cooperate tend to sit side by side; Steinzor found that people respond most to whoever faces them. Gemma and Lewis's habitual seats set them up for an exchange every time either spoke. Side by side, facing the same whiteboard and the same laptop, they were looking at the problem rather than at each other. The planning session ran for two hours and produced a plan that both of them liked. Nobody believed it was the chairs alone. But Andy's better reading, once he heard about it, was that the arrangement had made cooperation easier to start, and he began to mix the seating at the monthly meeting, with name cards, rotating every month. The duels did not stop entirely. They became shorter.\n\nPriti, at the next meeting, sat in the middle of a long side for the first time, and spoke three times.\n\nGemma and Lewis never became friends. But the joint plan won the account, and both of them took the credit, which Andy decided was a fair outcome."
+  },
+  {
+   "title": "The stool at the stand-up",
+   "scene": "Kirsty, thirty-six, is a data analyst at an insurance company. Her new team leader, Ollie, is enthusiastic about standing meetings, which he\n  has read make teams faster and more creative. He introduces a fifteen-minute stand-up every morning at nine, around a high table in an open area.\n  There are no chairs. He says it keeps things snappy.\n\n  Kirsty has a chronic condition that causes fatigue and pain in her joints, and standing still for fifteen minutes first thing in the morning is\n  hard for her. She has not told Ollie, because she has only just joined the team and does not want to be known for her health. For the first week\n  she stands and grits her teeth. In the second week she brings a stool from her desk and perches on it at the edge of the group, a little lower than\n  everyone else and slightly behind them.\n\n  Ollie notices. To him, the stool looks like a statement that she is not bought into the new routine. A colleague jokes, kindly, about Kirsty\n  \"taking a seat at the back\". In the stand-ups she starts speaking less, because from the stool she is looking up at a ring of backs and elbows.\n\n  In her first one-to-one, Ollie tells her that he wants everyone to feel part of the team, and asks her whether she is finding the stand-ups useful.\n  She is not sure what to say.\n\nShe has also noticed that the stand-ups have become slightly shorter for everyone else and slightly harder for her, and that nobody seems to see the second part.\n\nOllie, for his part, is pleased with the stand-ups. They are quicker than the old sit-down meetings, and the team seems more energetic. He has not asked anyone how they find them, because they seem to be going so well.",
+   "misread": "Ollie read Kirsty's stool, at the edge of the group, as reluctance to buy into his new routine. Kirsty read his question in the one-to-one as a warning that she was being seen as difficult, and nearly said that everything was fine.\n\nThe colleague's joke read the stool as a choice about engagement, when it was a choice about pain.\n\nAnd Ollie read his own enthusiasm for the format as evidence that it worked for everyone, without asking the people for whom it might not.",
+   "betterRead": "Bluedorn and colleagues found standing meetings shorter with no worse decisions, and Knight and Baer found groups without chairs shared information more readily, but these were short laboratory studies, and standing is not possible or comfortable for everyone. A format that forces one person to sit lower and further back than everyone else turns her into the overlooked seat of the room. Kirsty, after some thought, told Ollie about her condition. His better response, which he chose, was to change the format rather than ask her to fit it: he put a few high stools around the table for anyone who wanted one, used one himself on some mornings, and kept the fifteen-minute limit. Two other colleagues began using the stools too. Kirsty went back to speaking at the stand-ups, now at the same height as everyone else.\n\nOllie said later that he had learned more from the stool than from the research on standing meetings."
+  }
+ ],
+ "workedReading": {
+  "title": "Setting up a room for a contentious meeting",
+  "scene": "Faisal, forty-six, is a council officer, and on Thursday evening he has to run a public meeting about a proposed cycle lane on a busy shopping street. Feelings are strong on both sides: shopkeepers worried about losing parking and trade, parents worried about their children cycling to school, older residents worried about crossing the road. About forty people have said they will come, and another dozen will join online. The community hall where the meeting is being held has been set up, as it always is, with a long top table at the front for the council officers and the local councillor, facing six rows of chairs. Faisal arrives an hour early and stands at the back of the hall, looking at the room as the residents will see it when they walk in.\n\nHe has run meetings like this before, in the same hall, set out the same way. They usually end with the officers defending a plan and the residents leaving angrier than they arrived. He wants to try something different, and the furniture is the one thing he can change in the next hour.\n\nHe also remembers a residents' meeting two years ago at which an older woman at the back gave up trying to speak and walked out.",
+  "steps": [
+   {
+    "label": "Read the room as set",
+    "text": "From the back, the hall says one thing clearly: the council will speak and the residents will listen. The top table faces the rows like a stage. People in the back rows will see the backs of heads; people at the ends of each row will see the officers at an angle. The online participants will see whatever the single camera on the top table shows, which is the officers' faces and nothing of the room. If he leaves it like this, the meeting will turn into a queue of complaints aimed at the front.\n\nHe also notices the microphones. There is one fixed microphone on the top table and a single handheld one for the audience, which means the officers will be heard clearly and the residents will have to wait for a microphone to reach them."
+   },
+   {
+    "label": "Take down the top table",
+    "text": "With the caretaker's help, he moves the top table to the side, for the projector and the refreshments, and takes away the front-facing rows. He wants the officers to be part of the meeting, not facing it. Strodtbeck and Hook's research suggests that the people at the head of a room tend to be treated as its leaders and take more of the floor. Tonight he wants the residents to have more of it.\n\nHe also asks the caretaker for a second handheld microphone, so that residents on both sides of the room can speak without waiting for one to be passed across."
+   },
+   {
+    "label": "Choose a shape",
+    "text": "He arranges the chairs in two concentric horseshoes, open at one end, with a screen for the online participants at the open end, where everyone can see it. In a horseshoe, there is no head, almost everyone can see almost everyone else, and people tend to talk across the space to one another rather than only to the front. He leaves several chairs with arms at the ends of the rows for people who need them.\n\nHe leaves a wide gap in the outer horseshoe near the door, so that latecomers can join without walking across the middle, and puts a few chairs there with a clear view of the screen."
+   },
+   {
+    "label": "Sit among them",
+    "text": "He decides that he and the councillor will sit in the inner horseshoe, in different places, rather than together. That way the residents will not face a bloc of officials, and each official will be sitting beside residents. He puts the planning engineer, who will answer technical questions, in the middle of the inner row, with the widest view of the room, because she will need to catch eyes and answer quickly.\n\nHe also asks the councillor not to sit beside him, explaining that two officials side by side will look like a panel. She agrees, and chooses a seat between two of the shopkeepers."
+   },
+   {
+    "label": "Watch who talks to whom",
+    "text": "Once the meeting starts, he notices the Steinzor effect at work: people respond most to whoever is sitting opposite them across the horseshoe. A shopkeeper and a parent, facing each other, begin to argue. Faisal lets it run for a minute, then asks each of them to say what they would need to feel the plan was fair, and writes both answers on the flip chart, where everyone can see them side by side.\n\nHe also notices that the people sitting beside each other in the inner row, a parent and an older resident, start quietly comparing notes about the crossing. Side by side, they are on the same side of the problem."
+   },
+   {
+    "label": "Bring in the edges",
+    "text": "He keeps a list of the people who have not spoken. He looks to the outer horseshoe and the ends of the rows, where the quieter residents have sat, and invites them by name or by description: \"I'd like to hear from someone who hasn't spoken yet, perhaps at this end.\" Every twenty minutes he turns to the screen and asks the online participants first, giving them a clear pause to unmute.\n\nHe also watches the screen for raised hands and the chat, and reads out one written question from an online participant who cannot speak because she is caring for a baby."
+   },
+   {
+    "label": "What happened",
+    "text": "The meeting does not reach agreement, and Faisal did not expect it to. But it ends with a list of conditions that both the shopkeepers and the parents can live with, including a loading bay and a safer crossing near the school. Several residents tell him that it was the first council meeting they had been to where they felt listened to rather than talked at. One older man says he could actually see who was speaking. Faisal writes in his notes: no top table, horseshoe, officials scattered, screen at the open end, and a list of the silent.\n\nHe also notices that the online participants spoke more than at any previous meeting he has run, perhaps because the screen sat where the whole room could see it, and because he kept turning to it."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Using the seating plan as a weapon",
+   "body": "Once you know how much seating shapes a meeting, it is tempting to use that knowledge quietly against people: to put a critic in the seat beside the chair, where he can be overlooked, to seat an ally opposite you so that the exchanges flow your way, or to leave the newcomer on the chairs by the wall so that she will stay quiet. This is the meeting-room version of manipulation, and the ethics essay at the start of this book is clear about it: knowledge of how people read and respond to space should be used to include, not to steer people against their interests. It also tends to be noticed. People are often quicker to spot a rigged room than the person who rigged it expects. If you arrange seats, do it openly and for everyone's benefit, so that all can see and be seen, and be ready to say why.\n\nArranging a room so that one person's voice is quieter is still a way of silencing them, even if nobody can say that it happened."
+  },
+  {
+   "title": "Making a format compulsory",
+   "body": "New meeting formats are often introduced with enthusiasm and no exceptions: everyone stands, everyone sits on the floor for the workshop, everyone walks for the walking meeting. For many people, that is fine. For people with chronic pain, fatigue, a disability, a pregnancy, an injury, or simply a bad night, a compulsory format can mean either discomfort or being the visible exception, perched on a stool at the edge, as Kirsty was. Being the exception can become the overlooked seat. The fix is to build choice into the format from the start, so that nobody has to ask for it: chairs or stools around the standing table, a seated option for the walking meeting, a choice of seating at the workshop. Then let people use it without comment, and use it yourself sometimes, so that it is clearly normal.\n\nIt is also worth remembering that people may not tell you why a format is hard for them, as Kirsty did not at first. Choice built in means they do not have to.\n\nA good test of any format is whether the person with the most difficulty can take part as fully as the person with the least."
+  },
+  {
+   "title": "Taking the same seat for ever",
+   "body": "Most people sit in the same place week after week, often from the first meeting they attended. Habit then fixes roles. The person who always sits at the end becomes the person who always sums up; the person who always sits beside the chair becomes the person nobody quite hears; the person who always sits by the door becomes the person who leaves early. Over time, everyone reads the pattern as character rather than geography. If you have been quiet in a meeting for months, try a different seat with a wider view and see whether it changes how often you speak and how you are answered. If you chair a regular meeting, occasionally mix the seating, openly and lightly, and watch whether different people come forward.\n\nA new seat feels strange for a week or two. Give it three meetings before you decide whether it made a difference."
+  },
+  {
+   "title": "Leaving the laptop open",
+   "body": "An open laptop in a meeting draws the eyes of the person using it and, often, of the people around them. Sana, Weston and Cepeda found that students who multitasked on laptops in a lecture remembered less, and so did students sitting where they could see someone else's screen. In a meeting, the effect is social as well as cognitive: a person looking at a screen is a person not looking at the speaker, and the speaker can see it. A row of open laptops turns a meeting into a room of people half-elsewhere. Close the laptop unless you are presenting or genuinely need it for the item being discussed, and if you are taking notes on it, say so. If you chair, agree a simple norm at the start, rather than glaring at individuals halfway through.\n\nThe same goes for phones held under the table, which everyone can see and nobody mentions.\n\nAnd if you need to check something urgently, step out briefly rather than half-attending at the table."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Where should I sit if I want to be heard?",
+   "a": "Where you can see, and be seen by, most of the people in the room. Howells and Becker found that leaders tended to emerge from the side of the table with the widest view of the group, and Strodtbeck and Hook found that people at the ends of a long table took part more. Avoid the seat immediately beside the chair, the far corners of a long side and the chairs against the wall, which are the easiest to overlook. Arriving a few minutes early gives you the choice. But use the knowledge to take part, not to compete for the best chair. If you notice that a quieter colleague always ends up on the edges, the best use of a good seat may be to offer it to them.\n\nIf you are new, arriving early is the easiest way to avoid the overlooked seats, because they are the ones left for latecomers."
+  },
+  {
+   "q": "Where should I sit in a one-to-one meeting with my manager?",
+   "a": "Often you will not have a choice, and that is fine. If you do, Sommer's work, discussed in Part I, suggests that sitting across a corner of a table, rather than directly opposite, tends to suit conversation, and that side by side suits working together on a document or a screen. Directly opposite, with a desk between you, tends to feel more formal and more like a negotiation or an assessment. If your manager always sits behind a desk and you sit in front of it, you could suggest moving to a small table for a particular conversation, such as a career discussion. Many managers are glad of the suggestion. The seat is not everything, but it can make a hard conversation easier to start.\n\nIf your manager always sits opposite you, it is worth noticing whether your conversations feel like assessments. A move to a corner can change that.\n\nAnd if you are the manager, offering a choice of seat at the start of a hard conversation is a small courtesy that people notice."
+  },
+  {
+   "q": "Is a round table really better?",
+   "a": "In some ways. A round table has no head, so nobody gains the advantage of the end seat, and most people can see most others. That makes it easier for leadership to emerge from what people say rather than where they sit. But it does not remove geography altogether. Steinzor's finding that people respond most to whoever sits opposite still applies, and the person beside a dominant speaker can still be overlooked. Very large round tables can also make people across the table hard to hear. For small groups that need to discuss and decide together, a round or square table is often a good choice; for presentations, it may not be. What matters most is that everyone can see and be seen.\n\nIf you have a choice of room, a smaller table that comfortably fits everyone usually works better than a large one with empty chairs."
+  },
+  {
+   "q": "Do standing meetings work?",
+   "a": "For some purposes. Bluedorn and colleagues found that standing meetings were about a third shorter than sitting ones, with no loss in decision quality, though people were less satisfied with them. Knight and Baer found that groups working in a room without chairs shared information more readily and were less territorial about their ideas. Both were short laboratory studies, so the results may not apply to long, complex discussions. Standing meetings tend to suit short, regular check-ins with a single purpose. They are not possible or comfortable for everyone, so offer chairs or stools as a normal part of the format, not as an exception, and ask people after a few weeks whether the meeting is better or simply shorter.\n\nIt also helps to give a standing meeting a firm end time and a single question, such as \"What do you need from the rest of us today?\""
+  },
+  {
+   "q": "Should I ban phones and laptops from meetings?",
+   "a": "A ban is often less useful than a shared norm. The evidence that a phone merely lying on the table spoils a conversation is weaker than popular articles suggest: Przybylski and Weinstein reported such an effect, but later attempts to repeat it did not find it. The evidence on open laptops is clearer, and suggests that screen use distracts the user and the people nearby. A sensible norm is that laptops stay closed unless someone is presenting or needs one for the item in hand, and phones stay face down or in bags unless someone is expecting an urgent call, in which case they say so. Agree it at the start of a regular meeting, follow it yourself, and revisit it if it is not working.\n\nIf you chair, close your own laptop first. People follow what the chair does far more than what the chair says."
+  },
+  {
+   "q": "How can I run a fair hybrid meeting?",
+   "a": "Treat the people on the screen as the most overlooked seats in the room and plan for them first. Some teams have everyone join from their own laptop, even those in the room, so that every face is the same size and every voice has its own microphone. If that is not possible, put the screen where the chair and most of the room can see it without turning, and use a good conference microphone. Ask remote participants for their views first on each item, or use a quick round of everyone, and leave a clear pause after asking. Some teams appoint a room buddy who watches the chat and the screen and speaks up for remote colleagues. And close each item by checking the screen before you move on.\n\nIt also helps to send papers in advance, so that remote participants are not trying to read a document over someone's shoulder on a shared screen.\n\nAfter the meeting, ask one remote participant how it was for them. They will usually tell you exactly what to change."
   }
  ],
  "watch": [
