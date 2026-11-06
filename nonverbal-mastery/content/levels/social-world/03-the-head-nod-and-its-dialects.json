@@ -73,6 +73,27 @@
    "doCaption": "Checking agreement in words",
    "dontCaption": "Taking a nod as a yes",
    "annotation": "In many settings a nod means I am listening, not I agree. When it matters, confirm the decision out loud."
+  },
+  {
+   "doPoseId": "p_pro_listening",
+   "dontPoseId": "p_sit_forward_engaged",
+   "doCaption": "Slow nods, sitting back, letting her finish",
+   "dontCaption": "Nodding fast, leaning in, waiting to speak",
+   "annotation": "Fast nods mid-sentence can feel like being hurried. A slow nod at the end of a phrase says go on, and leaves room for the next pause."
+  },
+  {
+   "doPoseId": "p_pair_seated_across",
+   "dontPoseId": "p_pro_arms_folded_seated",
+   "doCaption": "Asking afterwards what he thought",
+   "dontCaption": "Reading his stillness as disapproval",
+   "annotation": "Some people never nod. Check their baseline and the rest of the room, and ask in words when it matters."
+  },
+  {
+   "doPoseId": "p_mixed_face_to_face",
+   "dontPoseId": "p_head_chin_raised",
+   "doCaption": "Asking in words: is that a yes?",
+   "dontCaption": "Taking an upward toss of the head as yes",
+   "annotation": "Head movements for yes and no vary across cultures. When the answer matters, a quick question saves a costly misreading."
   }
  ],
  "caseStudy": "Callum, thirty-six, leads a project for a manufacturer in Leeds. He flies to Osaka to agree a delivery schedule with a supplier. The meeting goes, he thinks, perfectly. As he presents the timetable, the three engineers across the table nod steadily, and the senior engineer nods slowly at each of the key dates. Callum reports to his director that the dates are agreed.\n\nA week later an email arrives proposing different dates, politely but firmly. Callum is baffled and a little angry. His director, who has worked with Japanese partners for years, explains that the nods probably meant that the engineers were following, attentively and courteously, not that they had accepted anything. A Japanese colleague in Leeds confirms it, and adds that the senior engineer's silence after the presentation, which Callum had taken as satisfaction, probably meant there were concerns he did not want to raise in front of others.\n\nOn the next call, Callum changes his approach. After each key date he pauses and asks directly, “Is this date possible for your team?” He arranges a smaller follow-up call with the senior engineer alone. The concerns come out: a component shortage nobody had mentioned. They agree new dates, and this time Callum confirms each one in writing.\n\nHe also starts noticing his own nods. In his director's meetings he catches himself nodding along to ideas he thinks are wrong, and realises that his colleagues have probably been reading his nods the way he read the engineers'. He begins to save his nods for agreement, and to ask questions instead.",
@@ -92,6 +113,10 @@
     "Note what the speaker was saying just before each nod.",
     "Watch the same section with the sound off and see whether you can tell, from the nods alone, how the conversation was going.",
     "Write down two patterns you noticed."
+   ],
+   "variations": [
+    "Do the count for a different kind of programme, such as a political interview, and compare the listener's nods.",
+    "Count your own nods during a recorded call or meeting, if you can watch it back, and note what they followed."
    ]
   },
   {
@@ -103,6 +128,10 @@
     "Ask him how each minute felt to him as the speaker.",
     "Swap roles, so that you feel the difference too.",
     "Write down what you learned about the effect of your nods."
+   ],
+   "variations": [
+    "Try a third minute in which you give only fast nods, and ask your friend how that felt compared with slow ones.",
+    "Do the experiment on a video call, and compare how much the missing back channel affects the speaker on screen."
    ]
   },
   {
@@ -113,6 +142,10 @@
     "After the meeting, note whether each nod meant agreement, understanding or simply politeness.",
     "Identify one nod that may have given a false impression.",
     "Decide what you will do instead next time, such as asking a question."
+   ],
+   "variations": [
+    "Ask a colleague you trust whether they have ever read one of your nods as agreement when you did not mean it.",
+    "In your next meeting, replace one automatic nod with a short question, and notice the response."
    ]
   },
   {
@@ -123,6 +156,10 @@
     "Find out how people there signal yes, no and I am listening with the head.",
     "Ask someone from that place to show you and to check your understanding.",
     "Write down the signals you might misread, and the phrase you will use to confirm agreement in words."
+   ],
+   "variations": [
+    "Ask a colleague or friend from another culture which of your gestures they found confusing when they first met you.",
+    "Find a video of people speaking in the language of the place you chose, and watch how listeners use their heads."
    ]
   }
  ],
@@ -204,6 +241,45 @@
    "explain": "Yngve used the term for the nods, mm-hms and other small signals listeners send without taking over the conversation. Speakers depend on them to know that they are being followed.",
    "isMisconceptionTest": false,
    "isScenario": false
+  },
+  {
+   "q": "What did Evelyn McClave's detailed study of head movements in speech find?",
+   "options": [
+    "Head movements serve many functions in speech, well beyond yes and no",
+    "Head movements have only one function, which is to signal agreement with the speaker",
+    "Head movements are random and carry no information for the people in a conversation",
+    "Head movements are used only by listeners and never by the people who are speaking"
+   ],
+   "answer": 0,
+   "explain": "McClave catalogued many functions of head movements in conversation, including marking emphasis, lists and the speaker's turn, as well as back channel. A nod is rarely just a yes.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "You ask a Greek colleague, who is on the phone, whether a report will be ready tomorrow. He tilts his head back sharply, raises his eyebrows and clicks his tongue. What fits this chapter best?",
+   "options": [
+    "Take it as a quick up-nod meaning yes, and plan around the report tomorrow",
+    "Assume he is annoyed at being interrupted and wait for him to raise it later",
+    "Check in words, once he is off the phone, whether that was a yes or a no",
+    "Take it as a sign that he has not understood and ask your manager instead"
+   ],
+   "answer": 2,
+   "explain": "In Greece and nearby regions, an upward toss of the head with raised eyebrows often means no. When an answer matters, check it in words rather than reading a gesture through your own dialect.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that if you nod while you talk, the people listening will start to agree with you. What does this chapter say?",
+   "options": [
+    "It is right, since nodding is one of the most reliable persuasion techniques",
+    "Research found nodding mainly affects the nodder's confidence, and it is not a trick",
+    "It is right, but only if you nod at least three times at each important point",
+    "It is right for audiences of men but not for audiences that include women"
+   ],
+   "answer": 1,
+   "explain": "Wells and Petty, and Briñol and Petty, found effects on the people who nodded, not on the people watching. This book does not teach nodding as a way of steering others.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -232,6 +308,110 @@
    "work": "Bodytalk: A World Guide to Gestures",
    "author": "Desmond Morris",
    "note": "Jonathan Cape, 1994. A wide survey of gestures, including head movements for yes and no, and how their meanings vary by place."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The interviewer who never nodded",
+   "scene": "Aisha, twenty-nine, is presenting to a panel of three for a promotion to team leader. Two of the panel, Clare and Ravi, nod as she speaks,\n  smile at her examples and make the small sounds of listeners who are following. The third, Mr Grant, the director, does not move. He sits back,\n  his face still, his pen moving steadily across his notepad. He does not nod once in twenty minutes.\n\n  Aisha finds herself presenting to him alone. Each time she reaches a key point, she glances at him for a sign and gets nothing. By the middle of\n  the presentation she has started to speed up, repeat herself and add qualifications she had not planned. She skips her strongest example because\n  she is sure he is unimpressed. Afterwards, in the corridor, she tells a friend that she has blown it.\n\n  Two days later she gets the job. Clare tells her, laughing, that Mr Grant gave her the highest score on the panel, and that he never nods at\n  anyone.\n\nAisha had prepared for weeks. She had practised the presentation in front of her partner, who nodded encouragingly throughout, and she had come to depend on that rhythm without realising it. In the interview room, one face without it was enough to unsettle her.\n\nClare had noticed Aisha faltering and tried to help, nodding more and smiling more, which only made the contrast with Mr Grant starker. She told Aisha afterwards that she had wanted to say, \"He's always like that,\" but could not, in the middle of an interview.",
+   "misread": "Aisha read Mr Grant's missing back channel as disapproval, because a listener who gives no nods usually seems unconvinced. She then changed her presentation to win a reaction that was never going to come.\n\nAnd because she was watching the still face, she stopped watching the two faces that were nodding, which were telling her exactly what she needed to know.\n\nShe also read the panel as a single audience, when it was three people with three different styles, two of them telling her clearly that she was doing well.\n\nMr Grant, for his part, had no idea of the effect he was having. He had sat on dozens of panels and had never been told.",
+   "betterRead": "Yngve's back channel, the nods and small sounds that tell a speaker to go on, matters so much that a speaker who gets none typically falters, as Aisha did. But a missing nod has many causes besides disapproval: concentration, habit, note-taking, culture, neurodivergence or a deliberate effort to stay neutral on an interview panel. Mr Grant's steady note-taking was a sign of attention, not rejection. The better reading starts with the rivals and with the people who do give back channel: Clare and Ravi were nodding, which told her the content was landing. A speaker who notices a still face can choose to read the room as a whole, keep to her plan, and, if it matters, check in words at the end, such as \"Is there anything you'd like me to expand on?\" Aisha now tells the people she trains to find the friendliest face in the room, present to them, and let the still faces be still.\n\nShe also learned to read note-taking as attention rather than judgment, and to find it reassuring rather than alarming.\n\nMr Grant, told later, began saying \"thank you, that's helpful\" after each answer."
+  },
+  {
+   "title": "The husband who nodded too fast",
+   "scene": "Leila and Sam have been married for six years. On a Sunday evening, Leila tries to tell Sam about something that has been worrying her\n  for weeks: her mother's memory seems to be slipping, and she does not know whether to say anything to her brother. She speaks slowly, with\n  pauses, working out what she thinks as she goes.\n\n  Sam is listening, and wants to show it. He nods quickly and repeatedly, small fast nods, while she is still in the middle of her sentences,\n  saying \"yeah, yeah, yeah\". When she pauses, he jumps in with what she should do: ring her brother tomorrow, book her mum a doctor's appointment.\n\n  Leila goes quiet, says \"Fine, I'll do that,\" and goes to run a bath. Sam is confused. He listened, he agreed, he helped. He asks her later what he\n  did wrong, and she says that she felt hurried, as if he wanted her to finish.\n\nSam, for his part, had been brought up in a family where conversations were fast and everyone talked over each other. Fast nods and quick solutions were how love was shown in his house. Leila's family talked slowly, with long pauses, and nobody was rushed.\n\nLeila's mother had been a teacher, and a precise, careful woman, and the first sign had been a lost purse and a forgotten appointment. Leila had been turning it over for a fortnight, unsure whether she was imagining it, and the conversation with Sam was the first time she had said any of it aloud.",
+   "misread": "Sam read his fast nods as eager agreement and attention. Leila read the same nods as impatience, a signal to hurry up and get to the point, and his quick advice confirmed it.\n\nEach of them was reading the other through their own family's conversational dialect, which is one of the most common and least noticed sources of misunderstanding between couples.\n\nAnd his quick advice, meant to help, told her that he wanted the problem solved and the conversation finished, when what she wanted was to think aloud with someone beside her.",
+   "betterRead": "Nods differ in speed, size and number, and the differences carry meaning. Rapid, small, repeated nods in the middle of someone's sentence often say \"yes, yes, I've got it\", which can mean move along or let me speak, however warmly they are meant. For someone working out a hard thought aloud, they feel like being hurried. Slow nods, at the end of phrases rather than in the middle, say \"I hear you, go on,\" and leave room for the next pause. Sam's better approach, which he tried the following week, was to slow his nods to one at the end of each of Leila's sentences, to let the pauses be, and to ask a question rather than offer a plan: \"What do you think your brother would say?\" Leila talked for half an hour. At the end she decided, herself, to ring her brother, and thanked Sam for listening.\n\nSam also noticed, later, that his fast nods came most when he was anxious about the subject. Slowing them down meant sitting with his own discomfort, which was harder, and more useful, than offering a solution."
+  },
+  {
+   "title": "The toss of the head that meant no",
+   "scene": "Mark manages a small finance team in London. One of his analysts, Kostas, thirty-two, moved from Athens two years ago and is one of the\n  most reliable people on the team. On a Thursday afternoon, Mark leans round Kostas's screen and asks whether the quarterly report will be ready\n  for Friday's board meeting. Kostas, on the phone to a client, tilts his head back sharply, raises his eyebrows and makes a small click with his\n  tongue. Mark takes it as a quick up-nod and goes back to his desk.\n\n  On Friday morning, Mark asks for the report. Kostas looks surprised and says that he told Mark yesterday that it would not be ready until Monday,\n  because the figures from the Manchester office had not arrived. Mark says that Kostas nodded. Kostas says that he did not nod at all.\n\n  The board meeting starts at ten.\n\nKostas's English is fluent, and his colleagues rarely think of him as coming from anywhere else. That is part of why Mark did not think twice about the gesture: he heard Kostas as a Londoner, and read his head the same way.\n\nThe board meeting is the most important of the quarter. The chief executive has asked specifically for the report, and Mark had told her on Thursday evening, after the gesture, that it would be ready.",
+   "misread": "Mark read Kostas's upward toss of the head as the casual up-nod he knew from London, a quick \"yes\". He did not consider that the same movement might carry a different meaning in Kostas's dialect.\n\nAnd because Kostas was on the phone, he did not see Mark's reaction, and had no reason to think his answer had been misunderstood.\n\nHe also assumed that a gesture he did not fully recognise meant the thing he would most have liked it to mean. Wishful reading is a common partner of cross-cultural misreading, especially when a deadline is at stake.\n\nKostas's answer was perfectly clear in his own dialect, which is why he was surprised to be accused of nodding. From his side, he had said no.",
+   "betterRead": "Head movements for yes and no are among the gestures people most often assume are universal, and they are not. In Greece, Cyprus and parts of Turkey, a quick upward toss of the head, often with raised eyebrows and a click of the tongue, commonly means no. To a London manager, it looks very like an up-nod. Kostas was answering clearly in his own dialect; Mark was reading it in his. The better practice, for anyone working across cultures, is to check important answers in words, especially when the answer is given by a gesture while someone is busy: \"Is that a yes or a no?\" It costs a second. Mark explained the delay to the board, who were understanding. Afterwards, he and Kostas laughed about it, and agreed that any answer about a deadline would be given in words. Kostas also admitted that, after two years in London, he sometimes did not know himself which dialect his head was speaking.\n\nMark also mentioned it, lightly, at the next team meeting, and two other colleagues admitted to similar confusions with gestures from home.\n\nKostas, in turn, now answers deadline questions with a word as well."
+  },
+  {
+   "title": "The man who nodded at everything",
+   "scene": "Mike, forty, is a quiet, well-liked engineer who hates conflict. In meetings, he nods along to almost everything: proposals, deadlines,\n  criticism of his own team's work. At a planning meeting, the project lead sets an aggressive deadline for Mike's part of the project. Mike nods\n  three times, slowly, as the date is announced, and says nothing. Inside, he is thinking that the date is impossible.\n\n  Three weeks later, the deadline is missed. In the review, the project lead says, with some irritation, that Mike agreed to the date. Mike says\n  that he did not agree to anything. The project lead points out that he nodded, in front of everyone.\n\n  Mike goes home angry with the project lead, and then, slowly, with himself.\n\nMike's partner has noticed the same habit at home. He nods when she suggests holidays he does not want, plans he does not like and dinners with friends he finds dull, and then is quietly resentful for weeks.\n\nMike's team had told him before the meeting that the date was impossible, and he had promised them he would push back. When the date was announced and he nodded, two of his engineers looked at each other across the table and then down at their notepads. Afterwards, one of them asked him, quietly, what had happened, and Mike said he would sort it out. He never did.\n\nIn the review, the project lead also points out that the meeting notes, circulated the next day, recorded the date as agreed, and that Mike did not reply to say otherwise. Mike had read the notes and decided it was too late to object.",
+   "misread": "The project lead read Mike's slow nods as agreement, which is what slow nods at a key moment usually seem to mean. Mike read his own nods as mere politeness, a way of showing that he had heard, and did not consider what they would look like from outside.\n\nHis silence after the nods compounded it. In a meeting, a nod followed by nothing is the clearest possible signal of agreement, whatever the nodder privately thinks.\n\nThe engineers' glance across the table, which Mike saw and ignored, was a back channel too: a silent signal that they had noticed the gap between what he had promised and what he had done.",
+   "betterRead": "Nods are ambiguous: the same movement can mean I agree, I understand, I am listening or I am being polite. In a meeting, slow nods as a decision is announced will almost always be read as agreement, whatever the nodder means. Wells and Petty's research also suggests that nodding can nudge the nodder's own attitudes, and Briñol and Petty's that it increases confidence in whatever the nodder is already thinking; in Mike's case, it seems mainly to have shaped what others believed. The better habit is to use nods honestly, and to say what they cannot. If you do not agree, keep your head still and say so, or at least say that you have concerns: \"I'm not sure that date works for my team. Can I come back to you by Friday?\" Mike started doing that, haltingly at first. His team said it was the first time anyone had stood up for their workload, and the next deadline he agreed to, he met.\n\nHe also asked his partner to tell him when he nodded at home to something he did not want, which she found funny and did often."
+  }
+ ],
+ "workedReading": {
+  "title": "Reading the nods in a team meeting",
+  "scene": "Grace manages a team of eight in a council housing department. She is presenting a plan to reorganise the team's caseloads, which will change who works with which tenants. As she speaks, she watches the room. Fatima nods slowly at the end of each point. Joe nods rapidly, small fast nods, from the start. Pete, who has been in the team longest, sits perfectly still, arms folded, with no nods at all. Lydia nods, but with a slight frown. Two others are nodding absently while glancing at their laptops.\n\nGrace has presented changes to this team before, and she knows that people tend to nod in meetings and raise objections afterwards, in the corridor or by email. She would rather hear them now, while the plan can still change.\n\nGrace has also had a long week, and she would like this meeting to go smoothly. She notices the wish, and reminds herself that a smooth meeting and a good decision are not the same thing.\n\nThe plan has taken her three months to prepare, and she has already discussed it with her own manager, who liked it. She is aware that the people in the room have had no say in it so far, and that the meeting is the first time they have seen it.",
+  "steps": [
+   {
+    "label": "Hear the back channel",
+    "text": "Grace notices that the room is giving her a back channel, which tells her that people are following. She also notices that the nods are not all the same, and that she has been about to treat the room's nodding as general agreement. She reminds herself that nods mostly say \"I'm listening\", not \"I agree\".\n\nShe also notices her own reaction to the nods: relief. Relief is a sign that she wants agreement, which makes her more likely to see it where it is not.\n\nShe also notes that she has not yet heard a single word of response. Everything she has so far is body language, which is a lot of information about attention and very little about opinion."
+   },
+   {
+    "label": "Read speed and timing",
+    "text": "Fatima's slow nods at the end of each point fit someone taking it in and, perhaps, agreeing. Joe's rapid nods from the start look more like \"yes, yes, I've got it\": he may already know what he thinks, or want to speak. The absent nods from the two on their laptops are the easiest to discount. They are back channel on autopilot.\n\nShe also notices when the nods come. Fatima's come after Grace's explanations, not before them, which fits someone weighing each point rather than nodding in advance.\n\nShe also notices that Joe's fast nods began before she had explained the details, which suggests he made up his mind early, for or against, and that his view may not rest on the points she is making.\n\nShe also notes that Lydia's frown appears at a particular point, when Grace mentions the transfer of long-standing tenants. A change that is tied to a specific point is more informative than one that lasts the whole meeting."
+   },
+   {
+    "label": "Check the baselines",
+    "text": "Grace knows that Pete rarely nods in meetings, about anything, and that he folds his arms when he is concentrating. His stillness is his baseline, not necessarily disapproval. Lydia's frowning nod is less familiar: she usually nods with a smile. That change is the one Grace notes most.\n\nShe also reminds herself that Pete's stillness, in past meetings, has come before some of the most useful comments anyone made. A still face has often meant a man thinking hardest.\n\nShe also notes that one of the laptop nodders has stopped nodding and started typing, which may mean an email has arrived, or that something in the plan has prompted a note. She files it without deciding."
+   },
+   {
+    "label": "Consider the rivals",
+    "text": "Lydia's frown might mean disagreement, confusion about a detail, or worry about a particular tenant. Joe's fast nods might mean enthusiasm, impatience or a wish to raise something. Pete's stillness might mean concentration, scepticism or both. Grace notes that she cannot tell which from the nods, and that the decision about caseloads is too important to rest on them.\n\nShe also notes that the nods tell her about attention and mood, which is useful, and nothing reliable about agreement, which is what she most needs to know.\n\nShe also reminds herself that a room of nods is the norm in this organisation, where people rarely disagree in public. That culture makes the nods even less informative than usual."
+   },
+   {
+    "label": "Ask in words",
+    "text": "At the end of the presentation, Grace does not ask whether everyone is happy, which would invite more nods. She says, \"I'd like to hear concerns as well as support. Lydia, you looked as though something was bothering you.\" Then, \"Joe, you looked keen to say something.\" Then, to the room, \"Pete, you know these tenants better than anyone. What am I missing?\"\n\nShe names what she saw in neutral terms, \"you looked as though something was bothering you\", rather than \"you don't like it\". That leaves Lydia free to say what it was.\n\nShe keeps her own face open as she asks, and nods slowly as each person starts to answer. Her back channel now tells them that disagreement is welcome.\n\nShe also gives people a way to raise concerns privately, saying she will be in her office all afternoon, for anyone who would rather talk one to one."
+   },
+   {
+    "label": "Hear what the nods hid",
+    "text": "Lydia says that two of the tenants who would move to her caseload have had bad experiences with the officer they would be leaving, and that the change could upset them. Joe says he likes the plan and wants to start next week. Pete says, after a pause, that the plan is good but that the timing clashes with the annual rent review, and suggests waiting a month.\n\nShe also notices that Pete, once asked, speaks for longer than anyone. People who give little back channel often have the most to say when they are given a turn.\n\nShe also thanks each of them for the concern they raised, not just for the support. That small habit, repeated over months, makes it more likely that the next concern will be raised in the meeting rather than the corridor.\n\nShe also notes that none of the three concerns could have been read from a nod. Each came from knowledge the speaker had and Grace did not, which is the real reason for asking."
+   },
+   {
+    "label": "What happened",
+    "text": "Grace adjusts the plan, moves the start date and arranges a careful handover for Lydia's two tenants. She notes that the room had nodded through her whole presentation, and that if she had taken the nods as agreement, she would have missed both of the problems that mattered most. She also notes that the still, unnodding man in the corner had the most useful thing to say.\n\nShe also changes how she runs similar meetings: she now ends every presentation by asking named people for concerns, and emails the plan afterwards with an invitation to reply privately.\n\nShe also follows up with the two laptop users afterwards, privately, to make sure they understood the change. Absent nods sometimes hide absent attention."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Treating a nod as a yes",
+   "body": "In ordinary conversation, a nod often seems to mean yes, and it is easy to carry that reading into meetings, negotiations and conversations across cultures, where it often means something else. Nods mostly say \"I am listening\" or \"I follow\". In some cultures, steady nodding is simply courteous attention, as Callum found in Osaka, and in others a movement that looks like a nod can mean no. Even within one office, a man may nod to be polite while disagreeing completely, as Mike did. When agreement matters, check it in words: \"So we're agreed on Friday?\" or \"Is that a yes?\" A nod is a reason to ask, not a contract.\n\nIt also helps to remember that nods in a group are contagious. When several people nod, others join in without thinking, and a room can look unanimous when only one or two people actually agree.\n\nIt also helps to watch for the opposite trap in negotiations, where a counterpart's steady nodding can create a feeling of progress that is not real. Summarise what you think has been agreed, aloud, and watch for hesitation.\n\nTeachers and parents face a version of this every day. A child who nods when asked \"Do you understand?\" is often saying \"I want this to be over\". Asking the child to explain it back is a better test."
+  },
+  {
+   "title": "Reading a missing nod as disapproval",
+   "body": "A listener who gives no back channel is unnerving, and most speakers assume that silence means disapproval. Often it does not. Some people rarely nod by habit. Some concentrate with a still face. Senior people sometimes stay neutral deliberately, especially on interview panels. Some autistic people, and people from cultures with more restrained listening styles, nod less. On video calls, a missing nod may be a frozen screen. Before you change what you are saying to win a nod, look at the rest of the room, consider the rivals, and keep going. If it matters, ask afterwards.\n\nIt also helps to remember that people with depression, exhaustion or pain may give less back channel than usual. A listener who has gone still may be struggling, not judging.\n\nSpeakers who rely heavily on back channel can practise presenting to a still face, for example to a friend who agrees not to react, so that the real thing is less unsettling.\n\nIt also helps to give the still listener a role. Asking them a direct question early in a presentation, such as \"Does this match what you've seen?\", turns their silence into conversation.\n\nAnd remember that your own stillness may be read the same way. If you are a listener who rarely nods, a word now and then, such as \"go on\" or \"that's interesting\", can save a speaker from falling apart."
+  },
+  {
+   "title": "Nodding when you do not agree",
+   "body": "Many people nod along out of politeness, conflict avoidance or a wish to show that they are listening, and then are surprised to find that others believed they agreed. In meetings especially, slow nods as a decision is announced will almost always be read as support. If you disagree, your nod is giving a false message, and silence after it is taken as consent. Keep your head still when you disagree, and say something, however small: \"I've got some concerns about that,\" or \"Can I think about it and come back to you?\" Honest nods are part of honest speech.\n\nIt also helps to watch what happens to your own opinion when you nod along. Wells and Petty's research suggests that nodding can nudge your attitudes, so habitual nodding to things you doubt may slowly make them seem more acceptable than they are.\n\nIt also helps to know that disagreeing calmly in a meeting is almost always less costly than nodding and then missing a deadline. The awkward moment passes; the missed deadline is remembered.\n\nIn families, the same applies to children and teenagers who nod to end a conversation. A nod to \"Will you be home by ten?\" may mean \"I heard you\" rather than \"I will\"."
+  },
+  {
+   "title": "Hurrying people with your nods",
+   "body": "Fast, repeated, small nods while someone is still speaking often feel to the speaker like being hurried, whatever the listener intends. They can say \"I've got it, move on,\" or \"I want to speak.\" For someone working out a hard thought, telling a painful story or choosing their words carefully, fast nods can close the conversation. When someone is struggling to say something, slow down: a single slow nod at the end of a phrase, a pause, a murmur. Let your nods follow their speech rather than run ahead of it.\n\nIt also helps to notice when you are nodding fast because you are impatient. Saying so, kindly, is often better than signalling it: \"Sorry, I've got about five minutes. Can we come back to this tonight?\"\n\nIt also helps to match the speaker's pace. A slow speaker needs slow nods; a fast, excited speaker may welcome quicker ones. Following their rhythm, rather than your own, is what makes a nod feel like listening.\n\nIt also helps to watch your nods when you are bored. Fast, absent nods while scrolling a phone are one of the clearest ways of telling someone you are not really listening, even if you are hearing every word."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Are the up-nod and the down-nod real?",
+   "a": "They are a folk taxonomy rather than a research finding. Many men in English-speaking countries describe the up-nod, a quick lift of the chin, as casual and familiar, and the down-nod, a short dip of the head, as more formal or respectful, and they use the two that way without ever having been taught. But the distinction has not been tested carefully, and it varies between places, generations and groups. Treat it as a useful local dialect rather than a rule. If you are new somewhere, watch how men nod at each other there before you assume that your own nods mean the same thing.\n\nIt also helps to notice your own default. Some men up-nod everyone, and some down-nod everyone. Neither is wrong, but each will land differently with different people.\n\nIt also helps to notice the nods men give each other in passing, on a street, at the gym or in a car park. They are among the easiest gestures to observe, and the dialects of a place show quickly once you start watching.\n\nAnd in some places, men do not nod at strangers at all, and a nod from a stranger can seem forward. Like every greeting, the passing nod belongs to a place."
+  },
+  {
+   "q": "Why do I nod even when I do not agree?",
+   "a": "Because nodding does many jobs besides agreeing. Most nods in conversation are back channel, signals that you are listening and following, and they come almost automatically, which is why speakers falter without them. People also nod to be polite, to avoid conflict, to show respect for someone senior, or to keep a conversation moving. None of this is dishonest in itself. The problem arises when a nod is taken as agreement in a setting where agreement matters, such as a decision in a meeting. In those moments, notice your nod, and if it is giving the wrong message, say so in words.\n\nIt also helps to practise a neutral listening face for moments when you disagree: still, attentive, without nodding. It shows that you are listening without implying that you agree.\n\nIt also helps to notice whether your nods change with status. Many people nod more to senior colleagues than to junior ones, and some nod more to men than to women, without realising it.\n\nYou can also practise a small habit: when you nod, ask yourself, silently, whether you mean agreement or attention. After a few weeks, the difference becomes easier to feel."
+  },
+  {
+   "q": "Can nodding make other people agree with me?",
+   "a": "Not reliably, and this book does not teach it as a technique. Wells and Petty found that people who nodded while listening to an editorial agreed with it more than people who shook their heads, and Briñol and Petty later found that nodding seemed to increase people's confidence in their own thoughts: strong arguments became more persuasive, weak ones less so. These effects are about the nodder, and they are small. Trying to make someone nod in order to steer their opinion would be manipulation, and it is unlikely to work. Use your own nods honestly, to show attention and agreement where you mean them.\n\nIt also helps to remember that people notice when they are being worked on. Gestures used as techniques tend to look slightly off, and once someone suspects manipulation, they trust everything else you do less.\n\nIt also helps to remember that the research was done in laboratories, with editorials and headphones. Real conversations are messier, and small laboratory effects rarely translate into reliable everyday tools.\n\nIf you want to be more persuasive, the research points somewhere more useful: make stronger arguments, listen well, and let people reach their own conclusions."
+  },
+  {
+   "q": "How should I nod on a video call?",
+   "a": "A little more visibly than in person. On video, small nods are easily lost to low resolution, lag and the size of the window, so speakers get less back channel than they are used to, which is one reason video calls can feel tiring and flat. A slightly larger, slower nod at the end of a speaker's phrase, with your face clearly in frame, helps them know that you are following. Avoid nodding constantly, which looks odd on screen. The chapter on the video call body covers this in more detail.\n\nIt also helps to add a word or a small sound now and then, such as \"right\" or \"mm\", which travels better over video than a nod alone and gives the speaker a clearer back channel.\n\nIt also helps to look at the camera now and then while nodding, rather than at the speaker's image, so that your nod appears directed at them on their screen.\n\nIt also helps to keep your camera at eye level and your face well lit, so that the nods you do give are visible at all. A nod in a dark, low-angled frame is easily missed."
+  },
+  {
+   "q": "What if someone never nods at all?",
+   "a": "Then their stillness is probably their baseline, not a message. Some people nod very little by habit or temperament. In some cultures, listeners are more restrained. Some autistic people find nodding unnatural or tiring, and listen just as closely without it. Some people concentrate with a still face. If you are speaking to someone who never nods, watch for other signs of attention, such as eye contact, note-taking, questions or a turned body, and check understanding in words when it matters: \"Does that make sense?\" or \"What do you think?\"\n\nIt also helps to tell people about your own style if you rarely nod. \"I don't nod much, but I'm listening\" can save a speaker a lot of anxiety, especially in interviews and presentations.\n\nIt also helps to watch for small signs of attention that are not nods: a slight lean forward, a pen pausing, eyes moving to a slide. People who do not nod often show attention in these other ways.\n\nAnd if you are a speaker who needs a nod to feel confident, it may help to know that most stillness is not judgment. The people who are thinking hardest about what you say are often the ones who move least."
+  },
+  {
+   "q": "What does the Indian head wobble mean?",
+   "a": "In many parts of South Asia, a side-to-side tilting of the head, often called the head wobble or head bobble, is a common way of signalling yes, okay, I understand or I am listening, and its meaning depends on speed, context and the person. To visitors, it can look like uncertainty or even a no, which leads to misunderstandings. The chapter on cultural variance in Part I describes a man who misread his mother-in-law's head tilt in exactly this way. As with any dialect, the best approach is to learn it from people who use it, to ask when you are unsure, and to check important answers in words.\n\nIt also helps to remember that people who use the head wobble may also be fluent in the international nod, and may switch between them depending on who they are talking to, which makes asking all the more useful.\n\nIt may also help to remember that people from any culture can find their own gestures misread abroad. Kostas's toss of the head and the head wobble are two examples among many; your own nod may be just as confusing somewhere else."
   }
  ],
  "watch": [
