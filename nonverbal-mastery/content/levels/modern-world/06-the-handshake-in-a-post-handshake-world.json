@@ -81,6 +81,20 @@
    "doCaption": "A brief fist bump instead",
    "dontCaption": "A full handshake on a hospital ward",
    "annotation": "Where infection matters, less contact is kinder. A fist bump keeps some warmth at a fraction of the contact."
+  },
+  {
+   "doPoseId": "p_pair_handshake",
+   "dontPoseId": "p_pair_pull_in_hug",
+   "doCaption": "A matched grip at arm's length",
+   "dontCaption": "Pulling someone in by the hand",
+   "annotation": "A handshake that moves the other person is read as control. Meet midway and let them keep their balance."
+  },
+  {
+   "doPoseId": "p_greet_hand_on_heart",
+   "dontPoseId": "p_stand_arms_crossed_loose",
+   "doCaption": "An early hand on the heart and a smile",
+   "dontCaption": "Folding the arms to dodge an offered hand",
+   "annotation": "Declining well is about timing. Show your alternative before the other person's hand is fully out."
   }
  ],
  "caseStudy": "Arjun, thirty-four, manages a team at an engineering firm and has always shaken hands with everyone. During the pandemic he stopped, and when restrictions lifted he went straight back to it. For months he did not notice that some people met his hand a little late, or not at all.\n\nThen, at the start of a supplier meeting, he reached out to a woman from the other company. She hesitated, then said, smiling, that she didn't shake hands, and put her hand on her heart. Arjun froze with his hand in the air, said sorry twice, and spent the first ten minutes of the meeting feeling clumsy. Later he realised he had made the moment far more awkward than she had.\n\nHe changed his approach. Now, as he walks up to someone, he lets his hand start to come forward slowly and watches. If their hand comes up, he shakes it: whole hand, a matched grip, a couple of seconds. If it does not, he turns the movement into a hand on his chest and a nod, and says it's good to meet them. He has stopped apologising when a hand is not taken.\n\nHe also noticed that one of his engineers, Tom, had a crushing grip that made visitors wince, and that Tom's palms were often damp before presentations. Arjun told him, privately and lightly, about both. Tom was embarrassed, but he eased his grip and started carrying his coffee in his left hand.\n\nWhen Arjun's father went into hospital that winter, Arjun found himself bumping fists with the nurses instead of shaking hands. It felt odd at first. By the end of the week it felt like the most natural greeting there.",
@@ -100,6 +114,11 @@
     "Try matching their grip rather than setting your own.",
     "Check that your whole palm meets theirs, not just your fingers.",
     "Practise a two- or three-second shake with a look at their face, then stop."
+   ],
+   "variations": [
+    "Ask two different people, one with smaller hands and one with larger, to rate your grip, and notice whether your matched grip changes between them.",
+    "Practise the full greeting with a friend, grip, a look at the face and their name said back, and ask which part they noticed most.",
+    "Shake hands with your left hand a few times, as you might with someone who offers theirs, so that it does not feel strange when it happens."
    ]
   },
   {
@@ -110,6 +129,11 @@
     "Watch what the other person's hand does.",
     "If it comes up, shake it. If it stays down, turn the movement into a nod or a hand on your heart.",
     "Note how each greeting felt, and whether any were awkward."
+   ],
+   "variations": [
+    "At your next group event, use the slow offer with every person you greet, senior and junior, and note whether anyone's response surprised you.",
+    "Try the slow offer with someone you already know well, and notice whether they meet your hand, wave or hug instead.",
+    "Watch a host at an event greet a line of people, and note how they handle the people who do not raise a hand."
    ]
   },
   {
@@ -121,6 +145,11 @@
     "Practise both in a mirror until the gesture comes early, before the other person's hand is fully out.",
     "Rehearse it once with a friend who offers a hand.",
     "Keep the sentence ready for when you are unwell or the other person is vulnerable."
+   ],
+   "variations": [
+    "Practise your decline with three different gestures, a wave, a hand on the heart and a nod, and choose the one that feels most like you.",
+    "Ask a friend to press you after you decline, with a cheerful \"Oh, come on\", and practise answering warmly without giving way.",
+    "Write a version of your decline for a formal setting and one for a casual one, and keep both ready."
    ]
   },
   {
@@ -131,6 +160,11 @@
     "If they are wringing or fidgeting, let them rest still and open.",
     "Hold any cold drink in your left hand.",
     "Wipe your right palm discreetly just before you stand."
+   ],
+   "variations": [
+    "Try the routine before a social event as well as a work one, and notice whether your hands feel different when the stakes are lower.",
+    "Time how long before a meeting you start to fidget, and move your tissue-and-dry routine to just before that point.",
+    "Notice whether holding something, such as a notebook or a folder, in your left hand while you wait helps your hands stay still."
    ]
   }
  ],
@@ -212,6 +246,45 @@
    "explain": "People watching animated scenes rated encounters that began with a handshake more favourably, and a handshake softened the impact of cold behaviour. The participants were observers, so the study does not show what happens in real meetings.",
    "isMisconceptionTest": false,
    "isScenario": false
+  },
+  {
+   "q": "What did Chaplin and colleagues find about how consistent people's handshakes were?",
+   "options": [
+    "Handshakes changed completely depending on which coder each person was greeting",
+    "The same person tended to shake hands the same way on different occasions",
+    "Handshakes were consistent only among men, while women's varied a great deal",
+    "Only the strength of the grip was consistent, while every other feature varied"
+   ],
+   "answer": 1,
+   "explain": "The same person tended to shake hands in the same way on different occasions and with different coders. A firm handshake, in the full sense, went with more favourable first impressions.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "An interviewer offers his hand and the candidate declines warmly, explaining that someone at home is vulnerable to infection. What fits this chapter best?",
+   "options": [
+    "Accept it at once, offer a nod, and judge the candidate only on the interview",
+    "Note it as a sign of low confidence, since a handshake shows how a person copes",
+    "Insist gently on shaking, since a brief handshake carries very little real risk",
+    "Ask for details of the illness so that the panel can decide whether it is genuine"
+   ],
+   "answer": 0,
+   "explain": "People decline handshakes for health, faith and many other reasons, and since 2020 the handshake is one option among several. Accepting the decline and judging the answers is fair to the candidate.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that turning your hand palm down on top of the other person's is a proven way to show dominance. What does this chapter say?",
+   "options": [
+    "That the move has been proven to make the other person defer to you in any negotiation that follows",
+    "That such claims are little tested, though grips that make people feel handled read as power plays",
+    "That palm-down handshakes are always read as warm and friendly by the person receiving them",
+    "That the direction of the palm makes no difference at all to how any handshake is ever read"
+   ],
+   "answer": 1,
+   "explain": "Ideas about palm-down grips and two-handed shakes are widely repeated but little tested. What is clearer is that a greeting which makes someone feel handled is read as a power play.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -240,6 +313,110 @@
    "work": "The fist bump: A more hygienic alternative to the handshake",
    "author": "Sara Mela and David E. Whitworth",
    "note": "American Journal of Infection Control 42(8), 2014. Bacteria transferred by handshakes, high fives and fist bumps."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The candidate with damp palms",
+   "scene": "Kwame, twenty-three, has a final-round interview for a graduate scheme at a large accountancy firm. He has prepared for weeks. He has also\n  read, in three separate articles, that a weak or damp handshake can cost you a job in the first few seconds, and that interviewers judge your\n  confidence by your grip. His palms sweat when he is nervous, and they have sweated at every interview he can remember.\n\n  In the reception area, he sits with a cup of water from the cooler in his right hand, rubbing his left palm on his trousers. When the interviewer,\n  Mrs Akhtar, a partner in her fifties, comes out to collect him, he stands too quickly, swaps the cup to his left hand, wipes his right palm hard on\n  his thigh in full view, and then offers it. It is cold and damp from the cup. He apologises for it. She smiles, shakes it briefly and leads him to\n  the lift.\n\n  In the lift he cannot stop thinking about the handshake. He is sure it has already lost him the job. For the first ten minutes of the interview, he\n  answers in short, careful sentences, waiting for the moment when she will mention it.\n\n  She never does. Halfway through the interview, she asks him a question about a group project he led at university, and he forgets about his hands\n  altogether for the first time that day.\n\nHis older sister, who works in recruitment, had told him on the phone the night before not to worry about his hands. He had thanked her and gone back to reading the articles.\n\nHe has also practised his grip on his flatmate, who told him it was fine and then, when pressed, that it was \"a bit intense\". Kwame has spent the week trying to find the exact point between intense and limp.",
+   "misread": "Kwame read his damp handshake as a fatal first impression and spent the first part of the interview defending against a judgment that had not been made. He read the articles' warnings as rules that interviewers apply.\n\nAnd he read Mrs Akhtar's smile as politeness covering a bad impression, when it was simply how she greeted every candidate.\n\nThe articles had taught him that a handshake was a test with a pass mark, when for most interviewers it is simply a way of saying hello. He read every second of the lift ride through that lesson, and arrived in the interview room already defeated by a judgment that existed only in his head.",
+   "betterRead": "Stewart and colleagues did find that students with better handshakes got more favourable hiring recommendations in mock interviews, but the handshake seemed to carry part of a link with extraversion and ease, not to work as a test on its own. A brief damp handshake is one small sign among dozens, and most interviewers forget it long before they score anything. The bigger cost was the worry. Kwame's better routine, which he used at his next interview, was simple: hold any cold drink in his left hand, keep a tissue in his pocket and dry his palm discreetly a minute before he was called, stand at an ordinary pace, and say nothing about his hand. Mrs Akhtar's firm offered him a place. When he asked her, a year later, whether she had noticed the handshake, she said she remembered the group project answer.\n\nHe also stopped reading handshake articles the week before interviews, which he said was the best preparation of all."
+  },
+  {
+   "title": "The hand that hurt",
+   "scene": "Pauline, fifty-eight, is a partner at a firm of accountants, and she has had rheumatoid arthritis in her hands for nine years. On good days\n  her knuckles ache; on bad days they are swollen and hot, and a firm squeeze makes her eyes water. Most of her work is with clients she knows, who\n  have learned to greet her with a nod or a gentle touch. New clients are another matter.\n\n  At a business breakfast, a new client, Steve, sixty, who runs a haulage company, strides up to her with his hand already out. Before she can\n  say anything, he takes her hand and squeezes it hard, pumping it three times. The pain is sharp. She flinches, pulls her hand back and holds it\n  against her chest, and for a second she cannot speak.\n\n  Steve, who has always believed that a strong handshake shows respect, is taken aback. He reads her flinch and her pulled-back hand as a rebuff,\n  and wonders whether she has taken against him, or against his company, or against men like him. He is stiff with her for the rest of the meeting.\n\n  On the drive back to the office, Pauline's colleague asks her why she did not say anything. Pauline says that she never knows how to explain\n  her hands to strangers without sounding as though she is making a fuss.\n\nShe has tried wearing a wrist support to signal her joints, but people do not seem to notice it until after they have squeezed.\n\nSteve notices that Pauline barely looks at him during the meeting and keeps her right hand in her lap. He takes both as confirmation. In fact she is waiting for the pain to fade, and trying not to let it show.",
+   "misread": "Steve read Pauline's flinch and withdrawn hand as a rejection, perhaps of him personally, and became cold with her for the rest of the meeting. He read his own crushing grip as the respectful greeting he had always been taught.\n\nPauline read her own silence as the only option, when a few words early would have spared her the squeeze.\n\nSteve also read his own forty years of firm handshakes, and the fact that nobody had complained, as evidence that they were welcome. Silence about a painful grip is not the same as approval, and many people simply put up with it.",
+   "betterRead": "Chaplin and colleagues' work suggests that a good handshake is complete, matched and brief, not hard. A grip strong enough to hurt says more about the person giving it than the person receiving it, and for people with arthritis, injuries or pain in their hands it can do real harm. The better reading was that Pauline's flinch was pain, not dislike. Her better approach, which a physiotherapist suggested, was to get in first: to lift her hand to her chest or offer a small wave as someone approached, and say warmly, \"I don't shake hands, my joints won't let me, but it's lovely to meet you.\" Steve, when Pauline explained at their next meeting, was mortified. He told her that he had been squeezing hands hard for forty years and that nobody had ever told him it hurt. He has eased his grip since, and now waits to see what the other person does.\n\nPauline now gets in first at every new meeting, and finds that most people are relieved to be told."
+  },
+  {
+   "title": "The chief executive's double grip",
+   "scene": "Rob, forty-nine, has just become chief executive of a regional chain of garden centres. In his first month he visits all fourteen sites, and at\n  each one he greets the staff individually. He has read that a two-handed shake shows warmth, so he takes each person's right hand in his, puts his\n  left hand on their elbow or upper arm, and holds on while he asks their name and how long they have worked there. With the younger staff he sometimes\n  adds a pat on the shoulder as he moves on.\n\n  He believes the visits are going well. People smile and answer his questions, and the regional managers tell him that the staff appreciate his\n  making the effort.\n\n  The staff survey that follows tells a different story. Several comments mention the handshake. One says it felt \"like being handled\". Another says\n  that he held on so long she did not know how to get her hand back. A third, from a man in his sixties who has worked at the same site for thirty\n  years, says that being patted on the shoulder by a new boss half his age made him feel like a boy.\n\n  Rob's head of people, Fatima, brings him the comments. He is surprised and a little defensive. He had meant every greeting kindly, and he had\n  thought the extra hand was the kind part.\n\nRob learned the double grip from a sales trainer twenty years ago, who told him it was the handshake of a politician. He has never asked himself whether that was a recommendation.\n\nFatima also points out that several of the staff who wrote the comments are women, and that two of them had told her separately that they had not felt able to pull their hands away from the new boss.",
+   "misread": "Rob read his two-handed grip and the pat on the shoulder as warmth, and read the staff's smiles during the visits as agreement. Many of the staff read the same gestures as control, and in the case of the oldest, as being talked down to.\n\nThe regional managers read the visits as a success because the staff were polite, which is what staff are with a new chief executive.\n\nRob read the defensive feeling he had when he saw the comments as a sign that the staff were being unfair, when it was the ordinary sting of learning that a kindness had not landed.",
+   "betterRead": "Popular books describe the two-handed shake, the hand on the elbow and the pat as warm or as dominant, and the ideas are little tested. What is clear is that a handshake which makes the other person feel managed tends to be read as a power play, however it was meant, and that the more senior the person doing it, the more strongly it reads that way. Holding on too long removes the other person's choice about when the greeting ends. Fatima's better advice was to let warmth come from his face, his words and his attention: a single, matched, brief handshake if it was offered, a look at the person's face, their name repeated, and a real question. Rob tried it at the next round of visits. The comments the following year were about the questions he had asked, and one person wrote that he seemed to listen.\n\nHe also stopped patting people on the shoulder, which, he admitted, he had copied from a politician on television."
+  },
+  {
+   "title": "The candidate who declined",
+   "scene": "Dev, thirty, is applying for a job as a project manager at a housing charity. His partner is having treatment that leaves her immune system\n  very weak, and on her consultant's advice the household is careful about infections. Dev has not shaken hands with anyone for over a year. He uses\n  a small wave, a nod or a hand on his chest instead.\n\n  The interviewer, Ian, sixty-one, is a director who has been interviewing people for thirty years and has a firm belief that you can tell a lot\n  about a person from their handshake. When Dev comes into the room, Ian stands, walks round the desk and holds out his hand.\n\n  Dev has prepared for this. He raises his hand in a small wave, smiles, and says, \"I'm sorry, I'm not shaking hands at the moment, there's someone\n  at home I need to be careful for. It's very good to meet you.\" Ian pauses for a second, says \"Of course,\" and sits down.\n\n  Afterwards, Ian tells the second panellist, Claire, that the candidate seemed a bit odd, and that he could not quite put his finger on why. He\n  wonders whether Dev lacks confidence. Claire points out that Dev's answers were the strongest of the day, and that Ian himself had used the word\n  \"odd\" about every candidate who had not shaken his hand that year.\n\nDev had thought about simply shaking hands for the interview and then washing them. He decided that his partner's safety was not something to bargain with for a first impression.\n\nIan has a habit, which he is proud of, of noting his first impression of every candidate within the first minute, before they have answered a question. He says it is usually right.\n\nDev, for his part, leaves the interview unsure how the greeting landed. He noticed the pause before Ian said \"Of course\", and he spends the train journey home wondering whether it cost him.",
+   "misread": "Ian read Dev's declined handshake as oddness and perhaps a lack of confidence, because for thirty years the handshake had been his first test of a candidate. He did not notice that the reading had nothing to do with anything Dev had said or done in the interview.\n\nIan also read his own unease as insight, the kind of gut feeling his long experience had taught him to trust.\n\nHe also missed the possibility that a candidate who could decline so calmly, in a stressful moment, was showing exactly the steadiness the job required.",
+   "betterRead": "The handshake is no longer the single expected greeting. Since 2020 it has become one option among several, and people decline it for health, faith, disability, pain or caution on behalf of someone else. Dev did exactly what the chapter suggests: he declined early, warmly, with an alternative gesture and a short reason he was happy to give, though he did not owe one. The misreading was Ian's. Claire's better approach, which the charity adopted, was to remove the handshake from the assessment altogether: interviewers would let the candidate lead the greeting, and the panel would score answers against criteria agreed in advance. Dev got the job. Ian, to his credit, told Claire a month later that he had been wrong, and that he had started letting candidates choose.\n\nThe change cost the charity nothing, and it meant that candidates who could not or would not shake hands were judged on the same footing as everyone else, which is what a fair interview is meant to do."
+  }
+ ],
+ "workedReading": {
+  "title": "Hosting a visiting delegation",
+  "scene": "Martin, forty-four, runs the partnerships team at a university, and on Wednesday morning he is hosting a delegation of six visitors from a partner university abroad: two senior professors, a young research manager, an administrator, a PhD student and an older man who chairs their board. He has been told the names and roles but nothing about how each person prefers to greet. He knows that some may shake hands, some may bow, some may prefer not to touch at all, and that the senior visitors will be watching how he treats the junior ones. He has ten minutes in the entrance hall before the group arrives, and he spends them thinking about the greetings rather than rehearsing his welcome speech, because the greetings will come first and everyone will remember them.\n\nHe has hosted delegations before and made mistakes: a handshake offered to a woman who did not shake hands with men, a joke about bowing that fell flat. He wants this one to begin without any of that, so that the visitors' first minute is spent feeling welcome rather than managing him.\n\nHe also reminds himself that he is the host, which means the visitors should never have to wonder what is expected of them.",
+  "steps": [
+   {
+    "label": "Let the senior guest lead",
+    "text": "The chair of the board comes through the door first. Martin walks towards him at an easy pace and lets his right hand begin to come forward slowly, low and open, without pushing it out. The older man stops, smiles and bows his head slightly. Martin turns his movement into a small bow of his own and says, \"Welcome, it's an honour to have you here.\" Letting the most senior guest set the greeting is rarely wrong.\n\nHe also takes care with his pace. Striding up to the chair with his hand out would force a decision on an older man who has been travelling for a day. Walking at an easy pace gives the guest time to choose."
+   },
+   {
+    "label": "Match the grip offered",
+    "text": "One of the professors reaches out a hand straight away. Martin takes it with his whole palm, matches her grip rather than setting his own, looks at her face and says her name. Two or three seconds, then he lets go. Chaplin and colleagues found that a firm handshake in the full sense, complete, matched and brief with eye contact, went with better first impressions. Martin keeps it ordinary.\n\nHe resists the urge to add a second hand or a squeeze for emphasis. With a senior visitor watching, a simple, matched greeting says more about his respect than any flourish."
+   },
+   {
+    "label": "Read the hand that stays down",
+    "text": "The administrator, a woman in her forties, keeps her hands together in front of her and places one lightly on her chest as Martin turns to her. He sees it early, does not offer his hand, places his own on his chest and nods. \"Lovely to meet you.\" He does not apologise or comment. She smiles. Whatever her reason, faith, health or preference, it is hers, and he does not need to know it.\n\nHe also notes, for later, that she may prefer not to be seated where she will be crowded or touched in passing, and quietly makes sure she has space at the lunch table."
+   },
+   {
+    "label": "Greet everyone the same way",
+    "text": "The PhD student is at the back, half-hidden behind the others. Martin goes to him as deliberately as he went to the chair, waits to see what he offers and receives a fist bump, which he returns. He knows that in a group, people notice whom you greet fully and whom you skip, and that a host who greets the senior visitors warmly and nods at the juniors is telling everyone how he ranks them.\n\nHe also introduces the student to a colleague by name, so that the young man is drawn into the group rather than left at its edge. A greeting is the start of including someone, not the whole of it."
+   },
+   {
+    "label": "Recover from a collision",
+    "text": "The research manager and Martin both reach at the same moment, he for a handshake and she for a nod, and his hand ends up in the air. He laughs lightly, turns it into a small wave and says, \"We'll call that one a wave.\" She laughs too. A single light word and a smile let the moment pass; repeated apologies would have made it bigger than it was.\n\nHe notices that the research manager seems slightly embarrassed, and makes a point of asking her a question about her work a few minutes later, so that the collision is not the last thing she remembers about meeting him."
+   },
+   {
+    "label": "Plan the goodbye",
+    "text": "At the end of the day, the group gathers in the entrance hall again. Martin remembers how each person greeted him that morning and follows the same pattern for the farewells: a bow for the chair, a handshake for the professor, a hand on the heart for the administrator, a fist bump for the student. Greetings at the end of a visit are often warmer than at the start, and he lets his face show that he enjoyed the day.\n\nHe also says each person's name as he says goodbye, which tells them that the morning's greeting was not a formality and that he remembered who they were."
+   },
+   {
+    "label": "What happened",
+    "text": "The chair of the board writes afterwards to thank the university, and mentions the warmth of the welcome. The administrator tells Martin's colleague over coffee that many hosts had tried to shake her hand and that she had been grateful not to have to refuse. Martin writes himself a note for next time: start slowly, let them lead, greet the back of the group as carefully as the front, laugh off the collisions, and remember who did what for the goodbye.\n\nHe realises that he spent almost no time thinking about grip, and almost all of it watching people's hands and faces in the second before they met. That second, he decides, is where the greeting happens now."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Shaking some hands and not others",
+   "body": "In a group, people notice the pattern of your greetings as much as each greeting. A man who shakes hands with every man in the room and nods at the women, who greets the senior visitors fully and waves at the juniors, or who shakes hands with everyone except the colleague in the wheelchair, is sending a message about whom he counts, whatever he intends. Sometimes the pattern comes from a reasonable worry about getting it wrong, for example about whether a woman in a headscarf shakes hands. The answer is not to skip her but to approach everyone in the same way: walk up, let your hand begin to come forward slowly and let each person lead. That way every greeting starts with the same offer, and each person's answer is respected. Watch yourself at the next group event and notice who gets what.\n\nIf you are not sure, it is better to offer the same slow, open beginning to everyone and be declined than to decide on someone's behalf that they would not want it."
+  },
+  {
+   "title": "Using the handshake to manage people",
+   "body": "The handshake can be used to make a point: a grip that turns the other person's hand palm up, a second hand clamped on their wrist or elbow, a pull that brings them off balance towards you, a shake that goes on until you decide it ends, a pat on the shoulder as you move on. Popular books describe some of these as dominance moves, and while the specific claims are little tested, the general effect is clear enough: a greeting that makes the other person feel handled tends to be read as a power play. It also tends to be remembered. If you are senior, the effect is stronger, because the other person cannot easily resist. Let the handshake be a simple, matched, brief greeting, and let warmth come from your face, your words and your attention, as Rob learned at the garden centres.\n\nIf you notice yourself reaching for the other person's arm or shoulder, ask whether you would like the same from someone you had just met.\n\nA handshake should leave the other person exactly where they were standing, with their hand back and their dignity intact."
+  },
+  {
+   "title": "Watching the hands and forgetting the face",
+   "body": "Many people concentrate so hard on getting the grip right that they forget the rest of the greeting. They look at the hands, or past the person to the next one, and say nothing, or mumble their name. But a greeting is more than a grip. Chaplin and colleagues' definition of a firm handshake included eye contact, and much of what makes a first meeting feel warm is in the face and the voice: a look at the person, a smile that reaches the eyes, their name said back to them, a short sentence that shows you are glad to meet them. If you have to choose where to put your attention in the half second of a greeting, put it on the person's face, not their hand. A slightly imperfect grip with a warm look is far better than a perfect grip with a vacant one.\n\nIt also helps to say your own name clearly as you greet, so that the other person does not have to ask or pretend they caught it."
+  },
+  {
+   "title": "Pressing after a decline",
+   "body": "When someone declines a handshake, some people push back: \"Oh, come on, I don't bite,\" \"I've had my jab,\" \"Just this once.\" It is usually meant as friendly teasing. It is not received that way. It puts the other person in the position of refusing twice, often in front of others, and it treats their decision as something to be argued with. For someone who declines for reasons of faith, it can feel like disrespect for their beliefs; for someone with pain, a health risk or a history that makes touch unwelcome, it can feel like pressure on a boundary. The kind response to a decline is the same whatever the reason: accept it at once, offer an alternative, such as a nod or a hand on your heart, say something warm and move on. You do not need to know why, and you do not need to win.\n\nIf you are the one declining and someone presses, it is fine to repeat yourself once, kindly and firmly, and then change the subject."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How long should a handshake last?",
+   "a": "A couple of seconds, usually with no more than two or three small movements up and down. Chaplin and colleagues included a reasonable duration in their definition of a good handshake, and the commonest complaints about bad handshakes include the pump that goes on too long and the grip that will not let go. The simplest rule is to match the other person: shake while they shake and release when they begin to release. If you are holding someone's hand while you finish a sentence, you are probably holding it too long. Let go, keep looking at them and finish the sentence with your hands at your sides. The warmth of a greeting comes from the face and the words, not from the length of the grip.\n\nIn some places and settings, greetings last longer, with a lingering hand or a hand held while talking. Follow the other person's lead and let them decide when it ends."
+  },
+  {
+   "q": "What can I do about sweaty hands?",
+   "a": "Quite a lot, and most of it is simple. Hold any cold drink in your left hand, so that your right one stays dry and warm. Keep a tissue or a handkerchief in your pocket, and dry your palm discreetly a minute or two before you stand, rather than wiping it on your trousers in front of the other person. Keep your hands still and open while you wait, rather than clasped or wringing, which tends to make them warmer and damper. Above all, do not apologise for your hand: most people barely notice a slightly damp palm, and an apology draws attention to it. If sweating is severe and troubles you a great deal, it is worth talking to your doctor, because there are treatments that can help.\n\nIt also helps to know that many people's palms are damp when they are nervous, including interviewers, so you are far from alone."
+  },
+  {
+   "q": "Should I still expect to shake hands at a job interview?",
+   "a": "Be ready to, but let the interviewer lead. Many interviewers still offer a hand, and Stewart and colleagues' work suggests that an easy, complete handshake can be part of an impression of being at ease. But many now do not, and a growing number of organisations have removed the handshake from interviews altogether. Walk in at an ordinary pace, let your hand begin to come forward slowly, and follow what the interviewer does. If you do not shake hands yourself, for health, faith or any other reason, decline early and warmly with an alternative, as Dev did, and do not apologise more than once. Any interviewer who marks you down for it is judging something that has nothing to do with the job.\n\nAnd remember that your answers will be scored for far longer than your handshake will be remembered."
+  },
+  {
+   "q": "How should I greet someone whose hands or arms are affected by a disability?",
+   "a": "Much as you would greet anyone else, but with extra attention to their lead. Offer your hand slowly, if it seems natural, and let them decide. Someone with limited use of their right hand may offer their left, which is perfectly fine to shake; someone with a prosthetic arm may offer it or may prefer a nod; someone who cannot shake may smile or say hello, and that is the greeting. Do not grab, steer or help unless asked. If someone cannot see, say your name as you approach and say that you are offering your hand, so that they can find it or decline. The aim is the same as with every greeting in this chapter: give the other person the choice, and follow it without fuss.\n\nIt also helps to keep your own hands visible and still as you approach, so that the other person can see what you are offering."
+  },
+  {
+   "q": "Is a fist bump too casual for work?",
+   "a": "It depends on the setting. In hospitals and care homes, where staff greet many people and infection matters, the fist bump is a sensible choice, and Mela and Whitworth's study found that it transferred far fewer bacteria than a handshake. It is also common in sport, in many younger workplaces and among friends. In a formal meeting with people you do not know, it may read as too casual, and a handshake, a nod or a hand on the heart may fit better. The safest approach is the same as always: let the other person lead. If they offer a fist, bump it; if they offer a hand, shake it; if you are not sure, start slowly and see.\n\nIn mixed settings, such as a hospital meeting with outside visitors, it is fine to offer the fist bump and explain why.\n\nWhatever you choose, do it with the same warmth you would bring to a handshake: a look at the face, a smile and a word."
+  },
+  {
+   "q": "Is it rude to decline a handshake?",
+   "a": "No, as long as you do it warmly. People decline for many good reasons: faith, health, pain, disability, protecting someone vulnerable, or simply preferring not to touch strangers. What makes a decline feel rude is not the decision but the delivery: a hand left hanging, a step back, a frown, or silence. Decline early, before the other person's hand is fully out, by raising your own hand in a small wave or placing it on your chest, and pair it with a warm sentence, such as \"I don't shake hands, but it's lovely to meet you.\" You can give a reason if you want to, but you do not owe one. Most people accept it immediately, and the ones who do not are showing you something about themselves.\n\nAnd if you host events, it helps to make declining easy for everyone, for example by greeting with a nod and a smile yourself.\n\nIf you are the one offering and it is declined, the same applies in reverse: accept it at once and say something warm."
   }
  ],
  "watch": [
