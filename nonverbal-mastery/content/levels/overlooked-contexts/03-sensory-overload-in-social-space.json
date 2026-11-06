@@ -73,6 +73,20 @@
    "doCaption": "Leaving them on",
    "dontCaption": "Telling him to take the headphones off",
    "annotation": "Headphones and sunglasses indoors are tools that let people stay. Asking them to stop may mean they leave."
+  },
+  {
+   "doPoseId": "p_walk_slow_down",
+   "dontPoseId": "p_stand_hand_eyes",
+   "doCaption": "Stepping out somewhere dimmer for a while",
+   "dontCaption": "Shielding the eyes under harsh lights",
+   "annotation": "Overload often starts with small attempts to reduce input. A quiet place nearby lets someone recover and come back."
+  },
+  {
+   "doPoseId": "p_pair_angled",
+   "dontPoseId": "p_pair_shoulder_comfort",
+   "doCaption": "Nearby, not touching, with one quiet offer",
+   "dontCaption": "A hand on the shoulder during overload",
+   "annotation": "Touch and questions add input to a system that already has too much. Subtract: stay close, say little, offer one choice."
   }
  ],
  "caseStudy": "Jamal, thirty-one, meets his old school friends every month at a sports bar near the station: big screens, loud music, standing room only. His friend Pete always comes, but lately he has been quiet, standing at the edge, answering in single words and leaving after an hour. The others joked that Pete had become boring since he got married.\n\nOne evening Jamal walked out with Pete to the station and asked if everything was all right. Pete hesitated, then said that he had been diagnosed with ADHD that year, and that the bar was, for him, like trying to listen to five radios at once. He could not follow what anyone was saying, and by the end of the night he had a headache and nothing left. He had not wanted to make a fuss.\n\nJamal suggested they try somewhere quieter. The group grumbled, but agreed to alternate: one month the sports bar, the next a pub with a back room where they could sit round a table. In the quieter pub, Pete was a different person: funny, quick and full of stories. Two of the others admitted they could hear better there too.\n\nJamal also noticed his own pattern. After a week of bad sleep, he found the sports bar much harder than usual, and had once snapped at a friend for no reason. He started telling the group when he was tired, and leaving earlier on those nights, without making a thing of it. Nobody seemed to mind, and the evenings were better for it.",
@@ -91,6 +105,11 @@
     "Rate it from one to five for how easy it would be to hold a quiet conversation.",
     "If it rates low, find one adjustment: a quieter corner, a table away from speakers, a walk outside.",
     "Afterwards, note whether the adjustment changed how anyone behaved."
+   ],
+   "variations": [
+    "Audit a place you go every week, such as a café or a gym, and rate it at two different times of day.",
+    "Ask someone who finds busy places hard to rate a venue with you, and compare their rating with yours.",
+    "Add light and smell to your audit, not just sound, and notice which of the three bothers you most."
    ]
   },
   {
@@ -101,6 +120,11 @@
     "Write down what you usually do when they seem to be struggling.",
     "Cross out anything that adds input: questions, touch, reassurance at length.",
     "Replace it with one subtracting response, such as a single quiet offer to step outside."
+   ],
+   "variations": [
+    "Practise your one quiet offer aloud, so that it comes out calmly when you need it.",
+    "Next time someone is upset in a busy place, try saying half as much as you normally would, and notice what happens.",
+    "Ask someone you know who gets overwhelmed what they would most like people to do, and what they would most like people to stop doing."
    ]
   },
   {
@@ -111,6 +135,11 @@
     "Record how you slept the night before and how stressed you were.",
     "Look for a pattern between your state and your tolerance.",
     "Choose one adjustment for days when your threshold is low."
+   ],
+   "variations": [
+    "Note your caffeine and alcohol alongside sleep and stress, and see whether they change your tolerance for noise.",
+    "On a low-threshold day, try one small adjustment, such as earplugs on the train, and note whether it changes your mood later.",
+    "Notice whether your irritability with the people at home tends to follow noisy, crowded days at work."
    ]
   },
   {
@@ -121,6 +150,11 @@
     "Pick somewhere you could hear a person speaking at normal volume from across a small table.",
     "Notice how the conversation compares with ones held in louder places.",
     "Keep a short list of quiet places you can suggest."
+   ],
+   "variations": [
+    "Suggest a walk instead of a café for your next catch-up, and compare the conversation with your usual ones.",
+    "Ask a colleague who wears hearing aids which meeting rooms they find easiest, and book those for meetings they attend.",
+    "Find two quiet places near your work or home where you could take someone for an important conversation, and note them down."
    ]
   }
  ],
@@ -202,6 +236,45 @@
    "explain": "Choosing a quiet setting makes the conversation possible for him and is itself a signal that you listened. Noise affects people with hearing or sensory differences far more than others.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What is the Lombard effect, described by a French doctor in 1911?",
+   "options": [
+    "The way people speak more slowly in quiet rooms, so that conversations take longer",
+    "The way people raise their voices in noise, so that a noisy room grows steadily louder",
+    "The way light from screens makes people more alert and talkative in the evening",
+    "The way people stop talking altogether once the background noise passes a certain set level"
+   ],
+   "answer": 1,
+   "explain": "In noise, people raise their voices to be heard, everyone else then raises theirs, and the noise climbs. It is why busy restaurants get louder as the evening goes on.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "In a crowded supermarket, a seven-year-old has a meltdown, screaming and hitting his head, while his father kneels beside him. What fits this chapter best?",
+   "options": [
+    "Tell the father firmly that the boy needs discipline, so that he learns how to behave",
+    "Offer one quiet choice, such as a dim room nearby, and otherwise give them space",
+    "Ask the boy a series of questions to find out exactly what has upset him so much",
+    "Lift the boy up and carry him outside quickly, whatever he and his father want"
+   ],
+   "answer": 1,
+   "explain": "A meltdown is a loss of control that reasoning cannot stop, not a tantrum. Subtracting input, keeping him safe and offering one quiet option helps far more than questions, touch or comments.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says sensory overload in social settings only happens to autistic people. What does this chapter suggest?",
+   "options": [
+    "That many people can be overwhelmed, including people with hearing loss, and thresholds move",
+    "That only autistic children are affected, and that adults grow out of it with time and practice",
+    "That overload is always a choice, and anyone can push through a loud room if they want to",
+    "That only people with misophonia experience overload, since it is a single condition"
+   ],
+   "answer": 0,
+   "explain": "Hearing loss, ADHD, migraine, tiredness, illness and stress can all lower someone's tolerance for noise and light, and everyone's threshold moves from day to day. Choosing calmer settings helps all of them.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -225,6 +298,110 @@
    "work": "Consensus definition of misophonia: A Delphi study",
    "author": "Susan E. Swedo and colleagues",
    "note": "Frontiers in Neuroscience 16, 2022. What misophonia is, agreed by a panel of experts."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The grandfather outside the marquee",
+   "scene": "Frank, sixty-eight, has been looking forward to his granddaughter Chloe's wedding for a year. The ceremony goes beautifully. The reception is\n  in a marquee in a field, with a ten-piece band, a wooden dance floor and two hundred guests. By the time the speeches are over and the band starts,\n  the marquee is very loud.\n\n  Frank has had some hearing loss for several years. He has hearing aids, which he wears in quiet rooms and leaves in his pocket in noisy ones,\n  because they turn everything into the same roar. Within half an hour of the band starting, he cannot follow anything anyone says to him. He nods,\n  smiles, guesses and gets things wrong. Someone asks him whether he is enjoying himself and he answers a different question. After an hour he goes\n  outside and sits on a hay bale by the car park, alone, with his tie loosened.\n\n  Inside, the family notices. His son-in-law says Frank has never warmed to the groom. An aunt says he always did sulk at parties. Chloe, who has\n  seen him go out, is hurt, and wonders whether he disapproves of something.\n\n  Her new husband, Sam, goes out to find him and sits down on the next hay bale. Frank says, in the relative quiet, that it has been the best day of\n  his life and that he cannot hear a single word in there.\n\nHe had tried putting the hearing aids in during the speeches, which had worked, and then the band had started and the first chord had made him wince so badly that he took them straight out again.\n\nFrank's wife, Jean, who died four years ago, used to do the talking for both of them at loud parties, standing at his elbow and repeating what people said. Without her, he has quietly stopped going to most of them.\n\nHis grandson, Ben, eleven, had tried to talk to him about football twice, and Frank had answered both times with \"Lovely,\" which Ben had found funny and then slightly worrying.",
+   "misread": "The family read Frank's withdrawal, his wrong answers and his retreat outside as sulking or disapproval of the marriage. Frank had read his own struggle as something to hide, and had chosen to sit alone rather than explain.\n\nFrank had also misread himself, in a way: he had decided that a man who could not hear at his granddaughter's wedding had no business being in the middle of it, and taken himself away.\n\nChloe's hurt was a reading too, built on a quick glimpse of her grandfather walking out during the first dance. From inside a crowded marquee, it looked like a man who had had enough of her wedding.\n\nFrank's son-in-law had in fact once had a disagreement with Frank about politics, years ago, and the memory made his reading feel like evidence.",
+   "betterRead": "Background noise masks exactly the consonants that people with hearing loss already struggle to hear, as this chapter describes, and in a marquee with a band, the Lombard effect pushes every voice louder until the whole room is a wall of sound. Frank's nods, guesses and retreat were the ordinary results of a setting that had taken away his ability to follow conversation. Nothing in them was about the groom. Sam's better response subtracted rather than added: he sat beside Frank in the quiet and listened. Then he and Chloe set up two chairs outside the marquee, by a lamp, and took turns bringing family members out to sit with Frank for ten minutes at a time. Frank had a proper conversation with nearly everyone he loved, one at a time, in the quiet. Chloe said later that the hay bales were her favourite part of the evening.\n\nFrank wore his hearing aids for the quiet conversations outside, and heard every word.\n\nAt the next family party, Chloe made sure there was a quiet corner, and Frank stayed until the end."
+  },
+  {
+   "title": "The crisps on the sofa",
+   "scene": "Leo, twenty-six, and his partner, Hana, twenty-five, have just moved in together. On their third evening in the new flat, they settle down to\n  watch a film. Hana opens a bag of crisps. Within a minute, Leo's jaw has tightened, his shoulders have gone up and he is staring at the screen with\n  a fixed expression. When Hana crunches again, he says sharply, \"Can you not?\", gets up and goes to the kitchen.\n\n  Hana is stunned. Leo is usually gentle and easy-going. She sits on the sofa wondering what she has done, whether he is angry with her about\n  something else, and whether moving in together was a mistake. When he comes back, she asks what is wrong. He says, \"Nothing,\" and sits at the other\n  end of the sofa.\n\n  It happens again two days later, at breakfast, when she eats an apple. This time Leo puts in his earbuds and turns away from the table. Hana feels\n  rejected and says so. Leo apologises, says it is not about her, and then cannot explain what it is about.\n\n  A week later, Hana finds an article about misophonia on her phone, and recognises everything in it. She shows it to Leo. He reads it twice. Then he\n  tells her that he has felt this way about chewing sounds since he was about eleven, and that he has never told anyone, because it sounded mad.\n\nHana had also noticed, over the months they had been dating, that Leo always chose noisy restaurants and never wanted to eat at her parents' quiet kitchen table. She had thought he simply liked a buzz.\n\nLeo's mother, when he tells her, says that he used to leave the table at Sunday lunch as a boy and that they had put it down to him being difficult. She is upset that she never asked.\n\nHana also remembers that Leo once walked out of a cinema halfway through a film when the man beside him opened a packet of sweets. At the time, he had said he felt ill.",
+   "misread": "Hana read Leo's tension, sharp words and retreat as anger at her, and perhaps as a sign of deeper problems in the relationship. Leo read his own reaction as something shameful and irrational, and could not explain it even to himself.\n\nAnd Leo's \"nothing\" was read as a closed door, when it was a man who had no words for what was happening to him.\n\nShe also read his earbuds at breakfast as a deliberate shutting out of her, the second rejection in a week, when they were the only way he could stay at the table at all.",
+   "betterRead": "Swedo and colleagues' consensus definition describes misophonia as a decreased tolerance of specific sounds, which provoke strong negative emotional and physiological responses. The reaction is involuntary and can look exactly like personal anger, with a glare, a tight jaw and a sudden exit. Leo was not angry with Hana; his body was reacting to a sound before he could think. The better reading let both of them stop blaming. Together they agreed a few practical changes: background music or the television on during meals, crunchy snacks eaten in the kitchen when Leo was in the living room, earbuds when he needed them, without either of them taking it personally. Leo also saw his GP, who talked through options for support. Hana said that knowing what it was made it easier to stop feeling rejected, and Leo said that being believed was the biggest relief.\n\nThey also agreed a signal, a tap on the table, that Leo could use when a sound was getting to him, so that neither of them had to explain in the moment.\n\nWithin a few months, Hana barely noticed the arrangements, and Leo said the flat had become the easiest place he had ever lived."
+  },
+  {
+   "title": "The headphones in the open-plan office",
+   "scene": "Shreya, thirty-five, is a data scientist at an insurance company, and she is autistic. The company has just moved to a new open-plan office\n  with glass walls, bright overhead lights, a coffee machine that hisses every few minutes and hot desks. By two in the afternoon on most days, Shreya\n  has a headache, finds it hard to concentrate and has stopped speaking to anyone. She has started wearing noise-cancelling headphones from the\n  moment she arrives, and sunglasses when the sun comes through the glass.\n\n  Her colleagues notice. One jokes in the team chat that Shreya is \"in her bubble again\". Another says, more seriously, to their manager, Paul, that\n  she seems unfriendly and does not want to be part of the team. Paul, who is new, asks Shreya in a one-to-one whether she could take the headphones\n  off more often, so that people feel they can approach her.\n\n  Shreya goes home and cries. The headphones are what let her get through the day. She considers resigning.\n\n  The next morning she emails Paul, carefully, to explain that she is autistic, that the office is overwhelming for her, and that the headphones and\n  sunglasses are how she manages it. She asks whether there is a quieter space she could use.\n\nShe had mentioned to the facilities team, during the move, that she was worried about the lighting. She had been told that the new office was designed for wellbeing.\n\nIn meetings, she has started taking the headphones off and putting them round her neck, and finds that she can follow the conversation for about twenty minutes before the noise from the open office outside makes it impossible.\n\nPaul, reading the email at his desk, realises that he had never once asked her why she wore them.",
+   "misread": "Her colleagues read Shreya's headphones, sunglasses and silence as unfriendliness and a lack of interest in the team. Paul read them as a barrier to be removed, and asked her to remove the thing that was making the office bearable.\n\nPaul also read the team's complaint as a fair concern about team spirit, without asking what the headphones were for.\n\nThe colleague who made the joke read the headphones as a choice about people, when they were a choice about noise. The team never asked which it was.\n\nShreya had also read Paul's request as a sign that her job was at risk, which is how many people hear a manager asking them to change something they cannot.",
+   "betterRead": "Crane, Goddard and Pring found that the great majority of the autistic adults they studied reported extreme responses on at least one sensory dimension, and Robertson and Baron-Cohen described sensory differences as among the most common features of autism. An open-plan office with bright lights and constant noise can be, for some people, an exhausting place to be. Shreya's headphones were an adjustment, as ordinary as a pair of glasses. Paul's better response, after her email, was to apologise and to act. He found her a desk in a quieter corner away from the coffee machine, arranged a dimmer bank of lights above it, made it clear to the team that headphones were welcome for anyone, and asked colleagues to message Shreya rather than tap her on the shoulder. The joke in the chat stopped. Two other colleagues started using the quiet corner too.\n\nShreya stayed, and was promoted the following year.\n\nPaul also changed the hot-desk rules so that anyone who needed a particular desk for health reasons could book it permanently."
+  },
+  {
+   "title": "The meltdown in the supermarket",
+   "scene": "Darren, forty, takes his son Alfie, seven, who is autistic, to the supermarket on a Saturday afternoon, because Alfie's mother is working and\n  they need food for the week. Darren knows the timing is bad, but there is no other option. The store is crowded, the lights are bright, a radio is\n  playing, the tannoy keeps announcing offers, and a child in the next aisle is screaming.\n\n  Near the checkouts, Alfie stops walking, puts his hands over his ears and begins to rock. When Darren crouches down and asks him what is wrong,\n  Alfie screams, throws himself to the floor and begins hitting his head with his hands. Darren tries to talk to him calmly, then to lift him; Alfie\n  fights him off. A queue of people watches.\n\n  A woman behind them says, loudly, that what the boy needs is a firm hand. Another shopper films on her phone. Darren feels his face burning and his\n  own heart pounding. He kneels on the floor, puts his body between Alfie and the trolley, and says nothing at all.\n\n  A young shop worker, Kemi, comes over. She does not ask questions. She says quietly to Darren that there is a staff room behind the bakery that is\n  quiet and dim, and asks whether that would help.\n\nDarren had tried to prepare Alfie in the car, explaining that it would be busy and that they would be quick. Alfie had nodded and asked whether there would be music. Darren had said he did not know.\n\nDarren has been in this position before, in a play park and once at a family wedding. He knows it will pass. He also knows that the next ten minutes will feel like an hour.\n\nAn older man in the queue, Darren notices, has quietly moved his trolley to block the line of sight of the woman filming.",
+   "misread": "The woman in the queue read Alfie's meltdown as a tantrum and his father's calm as weakness. The shopper filming read it as a spectacle. Both readings added pressure to a child whose nervous system had already gone past its limit.\n\nDarren, too, felt the pull of their reading, and for a moment wondered whether he was handling it wrong. He held his ground, which was the right call.\n\nThe shopper filming also read the scene as public property, when it was a child in distress and a father doing his best.",
+   "betterRead": "This chapter describes a meltdown as a loss of control that cannot be stopped by reasoning, not a tantrum or a choice, and the response that helps is to subtract input and keep the person safe. Darren's silence and his body between Alfie and the trolley were exactly right. Kemi's offer was the best kind of help: one quiet choice, no questions, a way to remove the noise and light. In the staff room, with the lights off, Alfie calmed within ten minutes. Kemi brought him a cup of water and left them alone. Afterwards Darren found out that the store held a weekly quieter hour, like the one Morrisons introduced with the National Autistic Society, with dimmed lights and no music or announcements. He shops then now. Kemi's manager put a note in the staff newsletter about what she had done, and the store trained its staff to offer the same.\n\nDarren also wrote to the store manager to thank Kemi by name, which, she told him later, was the first letter of thanks she had ever received at work."
+  }
+ ],
+ "workedReading": {
+  "title": "Planning a team party everyone can enjoy",
+  "scene": "Ruth, forty-seven, is office manager for a firm of accountants, and she has been asked to organise the end-of-year party for sixty people. The last two parties were at a bar in town with a DJ, and Ruth noticed both times that a handful of people left within an hour, that the older partners stood in the corridor to talk, and that one colleague who uses hearing aids did not come at all this year. She also knows that at least two members of staff are autistic and one has told her that loud venues are very hard for her. Ruth wants a party that the people who love dancing will still enjoy, and that does not quietly exclude everyone else. She decides to plan it with the senses in mind, using the Room Audit drill from this chapter, and to ask rather than guess what would help.\n\nShe also remembers that the colleague with hearing aids, when asked why he had missed the party, had said only that he did not really do parties any more, and that she had not asked further. She wishes now that she had.\n\nShe also knows that several of the firm's oldest clients are coming, and that some of them, in their seventies, have told her before that they cannot hear anything at loud events.",
+  "steps": [
+   {
+    "label": "Audit the venue",
+    "text": "She visits three possible venues in person, at the time of day the party will be held. At each one she stands in the middle and tries to hold a quiet conversation with the events manager across a small table. The bar where they have always gone fails; she cannot hear a word. A hotel function room passes, with carpet, curtains and a separate lounge off the main room. She books the hotel.\n\nShe also checks where the toilets and the exits are, and whether the route to them goes through the loudest part of the room, since that decides whether people can step out easily.\n\nShe also asks each venue what else will be happening that night, and rules out one that has a wedding disco in the next room."
+   },
+   {
+    "label": "Build in a quiet room",
+    "text": "She asks the hotel to keep the lounge next to the function room as a quiet space all evening, with low lighting, comfortable chairs, no music and some food and drink. She plans to tell everyone about it on the invitation as an ordinary feature of the party, not as a special room for particular people, so that anyone can use it without having to explain why.\n\nShe also puts the quiet room on the floor plan she sends round, next to the bar and the cloakroom, so that it reads as just another part of the venue.\n\nShe also puts a couple of jigsaw puzzles and some board games in the lounge, so that it reads as a place to do something, not just a place to escape."
+   },
+   {
+    "label": "Set the light and sound",
+    "text": "She asks the band to keep the volume moderate for the first two hours, during dinner, and to save the loud set for later, when the dancing starts. She asks the hotel to avoid flashing lights and to keep a few wall lamps on rather than using only coloured spots. The Lombard effect means that a room which starts loud only gets louder, so starting quieter matters.\n\nShe also asks for the speeches to be given with a microphone at a moderate volume, near the quieter end of the room, so that people with hearing loss can follow them.\n\nShe also asks for the dinner tables to be round rather than long, so that people can hear the whole table without shouting down its length.\n\nShe also asks for the dessert to be served before the loud set, so that people who leave after dinner do not miss it."
+   },
+   {
+    "label": "Ask, and make answering easy",
+    "text": "Two weeks before the party, she sends a short message with the invitation: \"If there's anything that would make the evening easier for you, such as where you'd like to sit, let me know, no explanation needed.\" Four people reply. One asks to sit near the door; one asks for a table away from the speakers; the colleague with hearing aids asks for a table in the quieter lounge for dinner.\n\nShe also makes sure that the replies come only to her, and that the seating requests are arranged quietly, without anyone being pointed out on the night.\n\nShe also notices that two of the four requests come from people she would never have guessed would find parties difficult, which reminds her why asking matters.\n\nShe also says, when one person apologises for being difficult, that it is not difficult at all, which is true."
+   },
+   {
+    "label": "Watch for overload, gently",
+    "text": "On the night, Ruth keeps half an eye on the room. When she sees one young analyst standing at the edge with a hand pressed to one ear, looking at the floor, she does not go over and ask a string of questions. She catches his eye, smiles and nods towards the lounge door. He nods back and goes through. Subtracting input, not adding it, is the help this chapter recommends.\n\nLater, she sees him back in the main room, chatting at the edge of the dance floor. A short break had been enough.\n\nShe also checks on the colleague with hearing aids once, briefly, and he gives her a thumbs up from a table in the lounge, deep in conversation with a client."
+   },
+   {
+    "label": "Make leaving easy",
+    "text": "At the end of dinner, before the loud set, the managing partner thanks everyone and says, lightly, that the band is about to get going, that the lounge will stay quiet all night, and that anyone who needs to head home should feel free. It gives everyone a clear, warm exit, and nobody has to slip away feeling rude.\n\nShe also arranges taxis to be ordered from the hotel lobby, which is quiet, so that nobody has to stand outside the main room on the phone trying to hear a dispatcher.\n\nShe also arranges for the coats to be in the lounge, so that leaving does not mean pushing through the dance floor."
+   },
+   {
+    "label": "What happened",
+    "text": "Almost everyone stays for dinner, more than at any party in years. The dancers dance. The lounge is busy all night, with partners, parents, the colleague with hearing aids and several people Ruth had not expected. One of the autistic colleagues tells her it is the first work party she has enjoyed. Ruth keeps her notes for next year: hear across a table, quiet room for all, quieter first half, ask, nod, easy exits.\n\nThe colleague with hearing aids sends her an email the next day saying it was the first party in years he had been able to follow, and asking whether the firm could use the same hotel for the summer lunch.\n\nShe also asks a few people, the following week, what would have made it even better. Two say the same thing: a slightly earlier end to the loud set."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Joking about someone's adjustment",
+   "body": "Headphones at a party, sunglasses indoors, earplugs at a concert, a hood up in a supermarket, a seat by the door: each is a way someone makes a setting bearable, and each is an easy target for a joke. \"In your bubble again?\", \"Expecting the paparazzi?\", \"Are we that boring?\" The jokes are usually meant lightly. To the person on the receiving end, they say that the thing which lets them stay is something to be embarrassed about, and they can push people towards taking the adjustment off, putting up with the pain, or not coming at all. Shreya nearly resigned over a chat message about her bubble. If you notice an adjustment, the kindest response is no response: do not comment, do not stare, and treat it as ordinary. If you are curious, and you know the person well, you can ask privately whether there is anything that would help.\n\nIf someone else makes the joke, a simple change of subject is often enough to stop it spreading.\n\nAnd if you are the one with the adjustment, it is fine to say, lightly, \"It helps me concentrate,\" and leave it there.\n\nThe person who chooses an adjustment has usually thought about it far more than the person tempted to joke about it."
+  },
+  {
+   "title": "Treating sensory needs as fussiness",
+   "body": "Some people respond to sensory difficulties with impatience: \"You'll get used to it,\" \"Everyone finds it loud,\" \"Just ignore it.\" The assumption is that the discomfort is a matter of attitude, and that pushing through will make it go away. For many people with sensory differences, it does not work like that. Crane, Goddard and Pring found extreme sensory responses to be very common among autistic adults, and Robertson and Baron-Cohen described sensory differences as a core feature of autism, not a preference. Pushing through can lead to exhaustion, shutdown or meltdown rather than adaptation. The same is true of misophonia, which is involuntary. Treat a sensory need as you would treat any other practical need, such as a need to sit down or to see the screen clearly: something to accommodate, not something to argue with.\n\nA useful test is to ask whether you would tell someone who needed glasses to just try harder to see.\n\nIt can also help to remember that what looks like a small noise to you may be, to someone else, like a fire alarm."
+  },
+  {
+   "title": "Assuming overload belongs to autistic people only",
+   "body": "This chapter draws heavily on research about autism, but autistic people are far from the only ones for whom busy places can become too much. People with hearing loss struggle to follow speech in noise, as Frank did. People with ADHD can find competing sounds very hard to filter. People who get migraines may be sensitive to light and noise. People with tinnitus, people recovering from a head injury, people living with chronic pain or fatigue, people with a history of trauma, and anyone who has slept badly or is unwell may all have lower thresholds on some days. The safest assumption is that, in any group, some people are finding the room harder than you are. Choose settings that leave room for them, without needing to know who they are or why.\n\nChoosing settings that work for the person with the lowest threshold tends to make them better for everyone else too.\n\nIt is also worth noticing your own threshold on your worst days, which gives you a small glimpse of how others may feel on most days.\n\nIn practice, this means defaulting to the quieter venue, the softer lighting and the earlier start, and letting people opt into the loud parts."
+  },
+  {
+   "title": "Making a big deal of it afterwards",
+   "body": "After a shutdown or meltdown, or after someone has had to leave a room suddenly, many people feel embarrassed, exhausted or ashamed. Well-meaning friends and colleagues can make this worse: asking in front of others whether they are all right now, asking them to explain what happened, telling the group about it, or treating them as fragile for weeks. The chapter's advice is to treat it as ordinary. A brief, private \"Glad you're OK, let me know if there's anything that would help next time\" is usually enough. Do not demand an explanation or a post-mortem. If the person wants to talk about it, they will, and it helps if you listen without alarm. What they will remember is not the meltdown but whether the people around them made them feel safe or watched.\n\nIf the meltdown happened at work, agree with the person what, if anything, will be said to colleagues, and say no more than that.\n\nAnd if you were the one who had to leave, you do not owe anyone an account of why."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether someone is overloaded or just not enjoying themselves?",
+   "a": "Often you cannot tell from outside, and you do not need to. The early signs of overload described in this chapter, such as a hand to the ear, squinting, retreating to the edge of the room, shorter answers, a flat face or increased fidgeting, can also mean tiredness, boredom or worry. The useful response is the same either way: offer a quieter option, simply, without questions. \"It's loud in here, want to step outside for a bit?\" gives someone a way out if they need it and costs nothing if they do not. Avoid asking them to explain, and avoid assuming they are not enjoying your company. Frank's family assumed he disapproved of the groom; what he needed was a chair outside the marquee.\n\nAnd if they say they are fine, believe them, and leave the offer open: \"If you change your mind, I'll come with you.\"\n\nIt can also help to notice who chose the venue. If it was you, the quiet offer is part of being a good host."
+  },
+  {
+   "q": "What should I do if someone has a meltdown or shutdown?",
+   "a": "Make sure they are safe, then subtract. Move anything they could hurt themselves on, keep other people back and, if you can, reduce the noise and light, or offer a quieter place, as Kemi did. Use very few words, in a low voice, or none at all. Do not touch them unless you know it is welcome, and do not try to reason with them in the moment, which rarely helps. Wait. Calm presence matters more than anything you can say. If you are a bystander, the most helpful things are often not to stare, not to film, not to comment and to offer practical help to the person with them. Afterwards, treat it as ordinary, and do not ask for an explanation. If anyone is at risk of serious harm, get help.\n\nIt can also help, if you are with someone who has meltdowns, to agree a plan in advance, while things are calm.\n\nIt also helps, if you know someone is prone to meltdowns, to learn their early signs from them, so that you can help them leave sooner."
+  },
+  {
+   "q": "How can I choose a venue that works for most people?",
+   "a": "Use the test in this chapter: can you hear someone speaking at normal volume from across a small table? Visit at the time of day you will use it, because a quiet café at ten can be loud at one. Soft furnishings, carpet and curtains absorb sound; tiles, glass and high ceilings amplify it. Back rooms, booths and corners away from speakers and kitchens are usually quieter. Daytime and early evening are often calmer than late at night. For larger events, build in a quiet room open to everyone, keep music moderate at first and avoid flashing lights. For important one-to-one conversations, choose the quiet option every time. People will often tell you they would have been fine anywhere, and the conversation will be better regardless.\n\nIf you are not sure, ask the people you are meeting where they find easy, which also tells them you care about their comfort.\n\nIt is worth keeping a short list of such places in your phone, so that you can suggest one quickly when someone asks.\n\nAnd if you are the guest, it is fine to suggest a quieter place. Most people will be glad you did."
+  },
+  {
+   "q": "What is misophonia, and how can I live with someone who has it?",
+   "a": "Swedo and colleagues' consensus definition describes misophonia as a decreased tolerance of specific sounds, often sounds made by other people's mouths or noses, such as chewing or breathing, which provoke strong negative emotional and physiological reactions. The reactions are involuntary and can look like anger at the person making the sound. Living with it is easier when both people understand that it is not personal. Agree practical arrangements together, such as background sound at meals, eating certain foods elsewhere and earbuds when needed, as Leo and Hana did, and treat them as ordinary. If the reactions are severe or affecting daily life, talk to a GP about support. Avoid teasing or deliberately making the sounds, which can make the reactions worse and damage trust.\n\nIt can also help to talk about it when you are both calm, not in the middle of a reaction, when neither of you can think clearly.\n\nIt also helps to remember that the person with misophonia often feels ashamed of the reaction, so kindness about it goes a long way."
+  },
+  {
+   "q": "Why do noisy places seem to get harder as I get older?",
+   "a": "Often because hearing changes with age, gradually and usually without the person noticing. The first thing to go is often the ability to pick out speech from background noise, especially the high-pitched consonants that distinguish one word from another. So a busy restaurant that was once merely lively becomes a place where you nod and guess. Tiredness, poor sleep and stress also lower tolerance at any age. If you find yourself struggling to follow conversations in noise, asking people to repeat themselves often, or avoiding social events you used to enjoy, it is worth having your hearing tested. Hearing aids, choosing quieter venues and sitting with your back to the noise all help. The later chapter on age in this part looks at how hearing loss can be misread as withdrawal.\n\nIt is also worth telling friends and family, so that they can choose quieter places and face you when they speak.\n\nFacing the person you are talking to, in good light, also helps, because you will lip-read more than you realise."
+  },
+  {
+   "q": "How can I make a workplace easier on the senses?",
+   "a": "Start by asking people what they find hard, and make it easy to answer without explaining why. Common changes include quiet zones or rooms, desks away from kitchens and doors, dimmable or natural lighting rather than harsh overhead tubes, permission to wear headphones or sunglasses without comment, warning before fire alarm tests, and the option to message rather than tap someone on the shoulder, as Paul arranged for Shreya. In meetings, a quieter room and one person speaking at a time help everyone, especially people with hearing loss or sensory differences. In many countries, employers must consider reasonable adjustments for disabled staff, which can include sensory ones. Most of these changes cost little and benefit far more people than the ones who asked.\n\nIt also helps to ask people again after a few months, because needs change and new staff arrive with needs of their own.\n\nIt can also help to run a short, anonymous survey after any office move, asking specifically about noise and light.\n\nAnd it helps to remember that the people who complain least are often the ones who have given up asking."
   }
  ],
  "watch": [
