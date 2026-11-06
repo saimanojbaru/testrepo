@@ -73,6 +73,20 @@
    "doCaption": "Asking, with room to say no",
    "dontCaption": "Assuming he is interested and moving in",
    "annotation": "Between men, as with anyone, attention is not consent. Ask from a distance that lets either of you step away."
+  },
+  {
+   "doPoseId": "p_stand_open",
+   "dontPoseId": "p_posture_lean_away_stand",
+   "doCaption": "Open and kind while saying no",
+   "dontCaption": "Recoiling from a man's interest",
+   "annotation": "Interest is not an insult. A clear, warm no is enough, and it leaves both people their dignity."
+  },
+  {
+   "doPoseId": "p_sit_turned_toward",
+   "dontPoseId": "p_stand_turned_away",
+   "doCaption": "Turned towards him, asking about the weekend",
+   "dontCaption": "Turning away when he mentions his husband",
+   "annotation": "The safest reaction to a same-sex partner is the ordinary one. Ask what you would ask anyone, in the same tone."
   }
  ],
  "caseStudy": "Matt, twenty-nine, works in a sales team of eight men. A new colleague, Dan, joined in the spring: friendly, well dressed, uninterested in football. Within a fortnight, two of the others had decided he was gay, and the guessing had become a running joke when Dan was out of the room. Matt laughed along, though it made him slightly uncomfortable.\n\nOne afternoon Dan came back to his desk earlier than expected and caught the end of a joke. Nobody said anything. Dan went quiet for the rest of the day and ate lunch alone for the next week.\n\nMatt thought about it that evening. He realised he had no idea whether Dan was gay, that it was none of his business, and that the joke had told Dan something about the team whichever way it went. The next time it started, he said, quietly, Leave it, he's a good bloke. The others shrugged, and it stopped.\n\nA few months later, at a team dinner, Dan mentioned his husband in passing, testing the water. Matt asked what his husband did for a living and how long they had been together, exactly as he would have with anyone. Dan relaxed visibly. Later he told Matt he had been close to leaving the job in the spring, and that the change in the office had been the reason he stayed. Matt had not thought of two words, Leave it, as a decision that might keep someone in a job. He thought about it often afterwards.",
@@ -91,6 +105,11 @@
     "Ask yourself what you would do with the answer if you had it.",
     "Recognise that the question is theirs to answer, not yours.",
     "Return your attention to something you can actually read: their mood, comfort or wish to talk."
+   ],
+   "variations": [
+    "When you notice the question in your mind, write down the stereotype it rests on, and check whether you would apply it to anyone else.",
+    "Notice whether the question arises more often about men who are gentle, artistic or uninterested in sport, and what that tells you.",
+    "Put the question down for a whole month, and notice whether anything about your relationship with the person changes."
    ]
   },
   {
@@ -101,6 +120,11 @@
     "Notice how often you would otherwise have assumed.",
     "When someone tells you about their partner, mirror the words they use.",
     "Note any moment where the neutral word made a conversation easier."
+   ],
+   "variations": [
+    "Change one form, invitation or template at work so that it says partner rather than wife or husband.",
+    "Ask a friend how they would like their partner referred to when you introduce them, and use their answer.",
+    "Notice how many times in a week someone assumes your own partner's gender, or would if you had one."
    ]
   },
   {
@@ -111,6 +135,11 @@
     "Practise saying it in a calm, ordinary tone.",
     "The next time speculation starts, use it.",
     "Afterwards, note how the group responded."
+   ],
+   "variations": [
+    "Practise a version of the interruption for a family gathering as well as for work, since jokes often feel harder to stop at home.",
+    "Agree with a friend that you will back each other up if either of you interrupts a joke.",
+    "Notice how long it takes for a group to move on after a quiet interruption, which is usually only a few seconds."
    ]
   },
   {
@@ -121,6 +150,11 @@
     "Practise letting your face and body stay exactly as they would for any couple.",
     "Reflect on what a stare or a double take would have communicated.",
     "Write one sentence about what you noticed in yourself."
+   ],
+   "variations": [
+    "Notice your reaction to an on-screen same-sex couple, and practise the same stillness you would show any couple.",
+    "Notice whether anyone around you reacts to a same-sex couple in public, and whether you could, safely, simply carry on as normal beside them.",
+    "Ask yourself what a same-sex couple would need to see from strangers to feel safe holding hands on your street."
    ]
   }
  ],
@@ -202,6 +236,45 @@
    "explain": "The same principles apply as with any approach: a clear, kind answer, without contempt. Hostility to a gay man's interest is a reaction to the category, not to anything he did.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "Why do laboratory findings of above-chance gaydar fail to work in everyday life?",
+   "options": [
+    "Because laboratory photographs are always of famous people, whom observers already know",
+    "Because far fewer people are gay than in the lab sets, so most guesses would be wrong",
+    "Because people in real life always tell you their orientation within the first minute",
+    "Because gaydar only works for women, while most real-life guesses are about men"
+   ],
+   "answer": 1,
+   "explain": "Lab sets are often about half gay, while in real life the share is small. Even modest accuracy then produces mostly false positives, which is the false positive paradox.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A teacher hears a boy say \"That's so gay\" to a classmate in the changing room. What fits this chapter best?",
+   "options": [
+    "Ask the classmate in front of the others whether he is gay, so that the matter is cleared up",
+    "Interrupt quietly and plainly, keep the target out of it, and address the word with the class later",
+    "Ignore it, since it is just banter and the boys will grow out of it on their own in time",
+    "Lecture the boy loudly in front of the whole room, so that everyone can see him being punished for it"
+   ],
+   "answer": 1,
+   "explain": "A quiet, plain interruption changes what the room thinks is acceptable without making the target the topic. Guessing about the boy's orientation would add to the harm.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that a bisexual man dating a woman is really straight, and one dating a man is really gay. What does this chapter suggest?",
+   "options": [
+    "That orientation is what a person tells you, not what you infer from their partner",
+    "That a partner's gender is always the most reliable sign of a person's real orientation",
+    "That bisexual men are usually confused, and will settle on one orientation in time",
+    "That orientation can be read accurately from how a couple behaves together in public"
+   ],
+   "answer": 0,
+   "explain": "Bisexual people are often reread according to their partner, which ignores what they have said about themselves. When someone tells you their orientation, believe them.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -225,6 +298,110 @@
    "work": "Inferences about sexual orientation: The roles of stereotypes, faces, and the gaydar myth",
    "author": "William T. L. Cox, Patricia G. Devine, Alyssa A. Bischmann and Janet S. Hyde",
    "note": "Journal of Sex Research 53(2), 2016. Why gaydar works more as a licence to stereotype than as a skill."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The father who asked at dinner",
+   "scene": "Ian, fifty-two, has been wondering for a year whether his son, Ollie, sixteen, is gay. Ollie has never had a girlfriend, spends a lot of time\n  with one close friend, Reece, and has lost interest in football, which they used to watch together. Ian has read that parents should be supportive,\n  and he wants Ollie to know that it would be fine.\n\n  One evening at dinner, with Ollie's younger sister at the table, Ian puts down his fork and says, warmly, \"Ollie, I just want you to know that if\n  you're gay, that's absolutely fine with me and your mum. You can tell us anything.\" He smiles encouragingly.\n\n  Ollie goes bright red. His sister giggles. He says, \"I'm not,\" in a tight voice, eats two more mouthfuls and goes to his room. For the next month he\n  barely speaks to his father, stops inviting Reece round and spends most evenings at Reece's house instead. Ian is baffled and hurt. He had meant it\n  as the kindest thing he could say.\n\n  His wife, Sarah, points out, gently, that he had asked a sixteen-year-old the most private question of his life in front of his little sister, over\n  shepherd's pie, on the strength of a guess about football.\n\nHe had also, a few weeks earlier, mentioned his suspicion to his own brother over a pint, and his brother had told his wife, who had asked Sarah about it. Ollie, it later turned out, had overheard.\n\nHe has also been watching Ollie's phone screen when it lights up on the table, and reading the names of who is messaging him. Ollie has noticed, and has started keeping the phone face down.\n\nSarah also tells him that she had wondered the same things, and had decided the best thing she could do was make sure Ollie knew the house was safe, and wait.",
+   "misread": "Ian read Ollie's lack of girlfriends, his close friendship and his drift away from football as signs that he might be gay, and read his own question as support. Ollie read the question as being watched, guessed about and put on the spot in front of his family.\n\nHis wife's brother read the same signs the same way, which made the reading feel shared and therefore more likely. Several people guessing is not evidence; it is the same stereotype, repeated.\n\nIan also read Ollie's \"I'm not\" as an answer, when it was a boy closing a door that had been opened in front of his sister.\n\nHis brother had read Ian's worry as gossip worth passing on, which is how a guess travels round a family.",
+   "betterRead": "Cox and colleagues found that people readily infer orientation from stereotypes about interests and friendships, and that believing in gaydar makes them more likely to do so. Ian's reading rested on exactly those stereotypes. More importantly, the question was Ollie's to answer, when and to whom he chose. Asking, however warmly, took that choice away and made a guess into a public moment. The better approach, which Ian tried after apologising, was to put the question down and show safety in other ways: reacting warmly to gay characters on television, using neutral words such as partner, stopping his brother-in-law's jokes at a family party. He stopped wondering aloud. Nearly a year later, in the car, Ollie told him that he was bisexual and that Reece was his boyfriend. Ian said, \"Thank you for telling me. I like Reece a lot,\" and kept his eyes on the road.\n\nOllie told his father later that the moment he decided he could tell him was when Ian told his uncle to stop a joke at Christmas.\n\nIan also apologised to Ollie's sister, separately, for putting her brother on the spot in front of her."
+  },
+  {
+   "title": "The man the club decided about",
+   "scene": "Rhys, twenty-four, plays rugby for his village club on Saturdays and teaches dance at a primary school during the week. He is straight, has a\n  girlfriend who lives in another city and is softly spoken off the pitch. Within a month of joining the club, several of the players have decided\n  that he is gay. The jokes start in the changing room: about his job, about his clothes, about the girlfriend nobody has met.\n\n  Rhys laughs them off at first. Then he stops laughing. He begins changing quickly and leaving before the others have showered. He skips the social\n  evenings. When a teammate makes a remark about him in front of the opposing team, he does not come to training the following week.\n\n  One of the older players, Gareth, thirty-eight, has watched it happen. He has a younger brother who is gay and who left this same club fifteen years\n  earlier for the same reason, though nobody at the club knows that. Gareth has never said anything about the jokes. He has laughed at some of them.\n\n  After Rhys misses a second week, Gareth rings him. Rhys says he is thinking of joining another club, where nobody knows him.\n\nRhys's girlfriend, when he tells her on the phone, says that he should just bring her to a match and that would shut them up. Rhys says that is exactly the problem: he should not have to prove anything.\n\nThe coach has heard the jokes too. He has assumed that if Rhys minded, he would say so, and that saying something himself would make it a bigger deal than it was.\n\nGareth also remembers his brother, at seventeen, coming home from training and going straight to his room, and his mother saying that the boy was just tired.",
+   "misread": "The players read Rhys's job, voice and absent girlfriend as signs that he was gay, and read their jokes as harmless banter. Rhys, being guessed about, read the club as a place where any man who did not fit was a target.\n\nThe players also read Rhys's silence at the start as agreement that it was all a laugh, which is how most targets of banter are read until they stop turning up.\n\nGareth, for years, had read his own laughter as going along with the group rather than as part of what drove men like his brother away.\n\nThe coach read his own silence as neutrality, when to Rhys it was one more adult choosing not to see.",
+   "betterRead": "Johnson and colleagues found that observers judging orientation leaned heavily on gender stereotypes, and this chapter describes how guesses about orientation tend to attach to men who are gentle, artistic or uninterested in narrow ideas of masculinity, whatever their orientation. The cost of the guessing fell on Rhys, who is straight, and would have fallen just as hard on a gay player, who would have learned that the club was not safe. Gareth's better response, late as it was, was the quiet interruption this chapter describes. At the next training session, when a joke started, he said plainly, \"Leave it. We nearly lost a good player over this.\" He also told the captain about his brother. The captain spoke to the squad. Rhys came back. Gareth's brother, when he heard, came to watch a match for the first time in fifteen years.\n\nThe club also added a line to its code of conduct about slurs and banter aimed at players' orientation, and the captain read it out at the start of the season.\n\nRhys stayed at the club for three seasons and was made vice-captain in the last."
+  },
+  {
+   "title": "The double take at the station",
+   "scene": "Chris, forty-five, is waiting for a train on a Monday morning. Beside him on the platform, two men in their thirties, clearly a couple, are saying\n  goodbye; one is catching the train and the other has walked him to the station with their dog. As the train comes in, they kiss briefly, and one\n  of them says, \"See you tonight.\"\n\n  Chris does a double take. He does not mean anything by it; it is reflex, the way his head turns. He then glances at the woman next to him, who is\n  also looking, and raises his eyebrows slightly. She half smiles back.\n\n  The man getting on the train sees both of them. He sits down two rows ahead of Chris, takes out his phone and does not look up for the rest of the\n  journey. Chris notices that the man's shoulders have gone up, and that when he gets off at the same stop, he walks quickly away.\n\n  Chris thinks about it on the way to the office. He considers himself a fair-minded man. He has gay friends. He was not disapproving; he was\n  surprised. But he realises that the man on the train had no way of knowing that, and that the look he had exchanged with the woman on the platform\n  had probably looked, from the outside, like exactly the thing he would have said he was not.\n\nThe woman beside him, he realises, had probably read his raised eyebrows as an invitation to share a joke, and had accepted it.\n\nAt the office, a colleague mentions her weekend with her girlfriend, and Chris notices that he has to make a small effort to keep his face exactly as it would be for anyone, which tells him something about the morning.\n\nHe also remembers, uncomfortably, that his teenage daughter had once told him that his face \"does a thing\" when gay couples come on television, and that he had laughed it off.",
+   "misread": "Chris read his own double take as harmless reflex and his glance at the woman as nothing at all. The man getting on the train read both, quite reasonably, as a stranger noticing, commenting and sharing a reaction to his kiss with someone else.\n\nAnd the woman he glanced at read his glance as permission to share the reaction, so that one stranger's surprise became two.\n\nChris also read his own fair-mindedness as something the man on the train could see, when all he could see was a face turning and a glance shared.\n\nHis colleague's mention of her girlfriend that afternoon was a second test, and he noticed he had nearly failed it in the same small way.",
+   "betterRead": "A stare, a double take or a nudge to a friend is noticed and remembered, as this chapter describes, and a shared glance between strangers turns a private surprise into a small public judgment. For a same-sex couple, each of these reactions is information about whether it is safe to be affectionate in public, and the next chapter describes how much that calculation shapes queer men's lives. Chris's intention did not change what the man experienced. The better response, which he practised over the following months, was the Unremarkable drill: when he saw a same-sex couple, he let his face and body stay exactly as they would for any couple, which usually meant not reacting at all. He also noticed how often he had done the same double take before, and how rarely he had thought about it.\n\nHe also stopped exchanging glances with strangers about anyone, which he found removed a surprising number of small judgments from his day.\n\nHe also told the woman on the platform, the next time he saw her, nothing at all, which he decided was the right amount."
+  },
+  {
+   "title": "The climber who asked",
+   "scene": "Sam, twenty-seven, is gay, and he has been going to a climbing gym on Tuesday and Thursday evenings for a year. For the past two months he has\n  often ended up climbing alongside Jordan, twenty-eight, who is friendly, funny and very good on the overhanging routes. Jordan gives him advice,\n  belays for him, stands close when they look at the route map and once put a hand on his shoulder after a hard climb. They have started having a\n  coffee at the café afterwards.\n\n  Sam has begun to wonder whether Jordan is interested. He knows that Jordan has never mentioned a girlfriend or a boyfriend. He knows that friendly\n  straight men can be exactly like this. He also knows that getting it wrong could be embarrassing or, with some men, worse.\n\n  One Thursday, after coffee, he decides to ask, lightly, as they walk to the car park: \"Would you fancy getting a drink sometime? Like a date, I mean.\n  No worries at all if not.\"\n\n  Jordan stops, looks surprised and then smiles. He says, \"That's really nice of you to ask. I'm straight, so not a date. But I'd really like to keep\n  climbing with you, and I'm up for a drink as mates.\" Sam laughs, a little embarrassed, and says that sounds good.\n\nSam has asked men out before and been told no, mostly kindly. Once, years ago, at a party, a man laughed loudly, told his friends, and Sam left. He has never quite stopped remembering that evening.\n\nHe has also, without meaning to, been reading Jordan's body for weeks: every touch, every lingering conversation, every coffee. None of it had told him anything for certain. Only a question could.\n\nJordan, it turns out, had not thought about it at all. He is friendly with everyone at the gym and had never wondered how it might look.",
+   "misread": "Sam read Jordan's closeness, advice and touch as possible interest, which is an easy reading to make and often wrong. Jordan had been reading the friendship as exactly that, and had not considered how it might look.\n\nHad Jordan read Sam's question as an insult, as some men do, a kind invitation would have become a humiliation for no reason at all.\n\nSam, for a moment afterwards, read his own question as a mistake, when it had been exactly the right thing to do.\n\nJordan, too, could easily have read Sam's question as something to joke about later with friends. He did not, and that choice mattered as much as the answer.",
+   "betterRead": "The chapter on attraction in Part III described how interest shows as attention and how easily friendliness is overread, and this chapter adds that between men, where neither may know the other's orientation, signals are often subtle and tested gradually. Sam did the right thing: he did not try to decode Jordan's body, which could not have told him, but asked a clear question that left plenty of room to say no. Jordan did the right thing too. He answered the question kindly and plainly, without recoiling, joking or making Sam feel foolish, and offered what he could. This chapter contrasts that kind of clear, warm no with the contempt some men show when another man is interested in them. They climbed together the following Tuesday. A year later, Jordan was at Sam's birthday drinks, and met Sam's boyfriend.\n\nSam said later that Jordan's answer had made it easier to ask the next man he liked, because it reminded him that a no could be kind."
+  }
+ ],
+ "workedReading": {
+  "title": "Interrupting a slur in the changing room",
+  "scene": "Martina, thirty-eight, is a PE teacher at a secondary school. After a Year 9 football lesson, she is collecting equipment outside the boys' changing room, where a male colleague is supervising, when she hears several boys laughing and one of them say, \"That's so gay, Josh, you even throw like a girl.\" There is more laughter. Josh, a quiet boy who is better at dance than football, says nothing. Martina's colleague, who is on his phone at the far end of the corridor, does not seem to have heard. She knows that moments like this are where boys learn what is safe to be, and that the other boys in the room, including any who are gay or unsure, are learning it too. She also knows that the worst thing she could do is make Josh the centre of attention, or guess aloud about who he is.\n\nShe also remembers her own school, where the same word was used every day and no teacher ever said anything, and a boy in her year who left at fifteen and whom nobody heard from again.\n\nShe has also taught Josh for two years and has no idea whether he is gay, straight or anything else, and she reminds herself that this is exactly as it should be.\n\nShe has also seen how quickly a word like that spreads through a year group once it goes unchallenged.",
+  "steps": [
+   {
+    "label": "Hear it as information",
+    "text": "She hears two things in the comment: that \"gay\" is being used as an insult, and that it is being aimed at a boy who does not fit a narrow picture of masculinity. As this chapter describes, guesses and jokes about orientation tend to fall on boys who are gentle or artistic, whatever their orientation. She does not wonder whether Josh is gay. That question is not hers and would not change what she needs to do.\n\nShe also notices that the comment combined two insults, one about orientation and one about girls, and that both need addressing.\n\nShe also notices her own urge to find out who said it, and decides that the who matters less in this moment than the what."
+   },
+   {
+    "label": "Interrupt quietly",
+    "text": "She knocks on the changing-room door, puts her head round it without coming in, and says in a calm, ordinary voice, \"Not that word as an insult, please. Get changed, you've got five minutes.\" She does not shout, lecture or ask who said it. A quiet, plain interruption stops the moment without turning it into a scene, and tells every boy in the room that the word has been noticed.\n\nShe also tells her colleague afterwards what she heard, without blame, and asks him to keep an ear out. Supervision is part of how rooms like this become safe.\n\nShe keeps her face neutral and her voice level, so that the interruption reads as a rule rather than an outburst. Boys often take a calm adult more seriously than a shouting one.\n\nShe also does not wait outside to see what happens next. Lingering would turn a rule into a confrontation."
+   },
+   {
+    "label": "Keep the target out of it",
+    "text": "She does not look at Josh, say his name or ask him whether he is all right in front of the others. Doing so would make him the topic of the moment and confirm that he was the one being singled out. Her aim is to change what the room thinks is acceptable, not to draw attention to the boy the comment was about.\n\nShe resists the urge to reassure Josh with a look, which, in that moment, the other boys would have seen and read.\n\nShe also knows that some boys in the room may be gay or unsure, and that what they see her do will tell them more than anything she says to Josh."
+   },
+   {
+    "label": "Talk to the group later",
+    "text": "At the start of the next lesson, with the whole class, she takes two minutes to say that the school does not allow \"gay\" to be used as an insult, why it matters to people in the room whether or not anyone knows it, and that the same goes for \"like a girl\". She does not refer to the incident or to any individual. She keeps her voice and her posture steady, and moves on to the lesson.\n\nOne boy asks whether it is still all right to say it as a joke among friends. She says no, and explains, briefly, that you never know who in the room it is about.\n\nShe also mentions, briefly, that some people in their families, their friends or the class may be gay, and that the word lands on them whether or not anyone knows.\n\nShe keeps it short. Two minutes of plain explanation lands better with fourteen-year-olds than twenty minutes of a lecture."
+   },
+   {
+    "label": "Check in without guessing",
+    "text": "Later in the week she finds a moment to ask Josh, in passing, how he is finding PE this term, and mentions that the school's dance club is looking for people. She does not ask about the comment or about anything personal. If he wants to tell her something, she has given him an opening; if not, he has had an ordinary, friendly conversation with a teacher who noticed him.\n\nShe also lets his form tutor know, without detail, that he was on the receiving end of some name-calling, so that someone else can keep an eye out too.\n\nShe also notices that Josh seems more relaxed in her lessons over the following weeks, which she takes as enough.\n\nShe also makes sure the dance club teacher knows that Josh might come, so that he is welcomed by name rather than noticed as new."
+   },
+   {
+    "label": "Model the language",
+    "text": "Over the term, she makes a point of using neutral words when talking about families and relationships, such as parents rather than mum and dad and partner rather than girlfriend, and of treating same-sex couples in examples exactly as she treats any couple. None of this is a lesson about orientation. It is the background against which the boys decide whether school is a safe place.\n\nShe also notices how often she had, without thinking, used girls and boys as examples of couples in worked problems, and changes her examples.\n\nShe also asks the school library to make sure that its fiction shelves include books with gay characters, without fuss.\n\nShe also notices that she had sometimes laughed when a colleague called something \"a bit gay\" in the staff room, and stops."
+   },
+   {
+    "label": "What happened",
+    "text": "The slur does not stop entirely, but it becomes rarer, and twice Martina hears a boy say \"Not that word\" to another before she can. Josh joins the dance club. In the summer term, a different boy in the class comes out to a friend, and the friend tells Martina later that he had chosen to because, he said, the PE teacher had made it feel all right. Martina had never guessed about either boy, which she thinks is probably why it worked.\n\nHer colleague, the following term, interrupts a similar comment himself. She takes it as the best sign that the change has spread.\n\nShe also mentions the approach at a staff meeting, and two other teachers adopt it."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Overdoing acceptance",
+   "body": "Some people, wanting to show that they are on side, overcorrect. They gush when a colleague mentions a husband, tell him how much they love gay people, introduce him to others as \"my gay friend\", ask intimate questions about how he knew or how the relationship works, or bring up the subject whenever he is around. It is usually well meant, and it can feel as exposing as hostility. It marks the person as different, makes their orientation the main thing about them, and puts them in the position of managing your enthusiasm. The safe response this chapter describes is ordinary: ask about his weekend in the same tone you would use with anyone, ask what his husband does for a living, and then talk about something else. Being treated as unremarkable is, for most people, the point. If you want to show support, do it through what you do when it matters, such as interrupting a joke.\n\nA simple test is whether you would say the same thing, in the same tone, if he had mentioned a wife.\n\nAnd remember that coming out to you is not an invitation to make it a topic every time you see him."
+  },
+  {
+   "title": "Assuming straight by default",
+   "body": "Most people, without thinking, assume that the person in front of them is straight unless they have been told otherwise. \"Have you got a girlfriend?\", \"What does your wife do?\", \"Bring your husband\" all carry the assumption, and each one puts a gay or bisexual person in the position of either correcting you, which means coming out on your timetable, or letting the assumption stand, which means hiding. Neither choice is theirs. The Neutral by Default drill in this chapter addresses this directly: use \"partner\" or \"anyone special\" until you are told otherwise, and mirror the words people use about their own relationships. It costs nothing, it is natural once it becomes a habit, and it quietly tells everyone you speak to that you have not decided who they are before they have told you.\n\nIt also helps on forms and invitations, where \"partner\" or \"guest\" includes everyone without anyone having to explain.\n\nWhen someone corrects your assumption, say thank you and use their words; an apology that goes on too long makes the correction harder for them.\n\nOver time, it becomes so ordinary that you stop noticing you are doing it, which is when it helps most."
+  },
+  {
+   "title": "Reading orientation from a partner",
+   "body": "When people see a man with a woman, they usually assume he is straight; when they see him with a man, they assume he is gay. For bisexual men, and for anyone whose orientation is not fixed by their current relationship, both readings can be wrong. Bisexual people often describe being treated as confused, as \"really\" gay or \"really\" straight depending on who they are dating, or as their partner's orientation rather than their own. A man who has told you he is bisexual remains bisexual whether his partner is a man or a woman, as Ollie did. The broader principle is the one this chapter keeps returning to: orientation is what a person tells you it is, not what you infer from who they are with, how they walk or what they like. When someone tells you, believe them, and do not reinterpret it from the evidence of your own eyes.\n\nThe same applies to anyone who tells you how they identify. Their account of themselves is the only reliable one.\n\nIt is also worth noticing that bisexual people are often less likely to come out at all, partly because of this kind of rereading."
+  },
+  {
+   "title": "Outing someone by accident",
+   "body": "When a colleague or friend has told you about their partner, it can be easy to forget that they may not have told everyone. Mentioning a man's husband to a client, a new colleague or a relative who has not been told takes a decision that belongs to him and makes it for him, in front of people he may have had good reasons to keep it from. It happens most often in passing, in a perfectly friendly sentence: \"How's Mark? Are you two still going to Spain?\" In some families, workplaces and countries, the consequences can be serious. If someone has told you about a same-sex partner, do not assume that everyone else knows. In new company, follow their lead and let them mention it first. If you are not sure, ask privately: \"Is it fine to mention Mark at the client dinner, or would you rather I didn't?\"\n\nA good habit is to ask once, early, who knows, and then follow that answer every time.\n\nThe same care applies online: tagging someone in a photo with their partner can tell people they have not told."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Is it ever all right to ask someone whether they are gay?",
+   "a": "Very rarely, and almost never as a way of satisfying curiosity. The question puts the person on the spot and takes away their choice about when and how to tell you, as Ian discovered at the dinner table. If you are close to someone and you sense that they want to talk, you can usually create an opening without asking the question directly: show warmth towards queer people in what you say and do, use neutral language and make it clear that you would not change how you treat anyone. If someone wants you to know, they will tell you. If there is a genuine practical reason to know, such as arranging accommodation for a partner at a work event, ask about the practical thing instead: \"Would you like to bring anyone?\"\n\nIf you are a manager, the same applies to every invitation: let people tell you who they would like to bring.\n\nAnd if you have already asked, and they said no, believe them, and do not ask again.\n\nA simple rule: be the kind of person someone would want to tell, and leave the timing to them."
+  },
+  {
+   "q": "How can I show that I am a safe person to come out to?",
+   "a": "Mostly through what you do when nobody is coming out. React to same-sex couples, on the street or on screen, exactly as you would to anyone. Use neutral words such as partner until you are told otherwise. Do not speculate about anyone's orientation, and do not laugh along when others do. Interrupt jokes and slurs quietly, as Matt did with a plain \"Leave it\", and as Martina did in the changing room. When someone mentions a same-sex partner, respond with ordinary interest, without surprise or gushing. People who are deciding whether to tell you are usually watching for exactly these things, often for a long time, and they will have learned a great deal about you before you know they were watching.\n\nSmall signals matter. A rainbow lanyard means little on its own; how you react to the next joke means a great deal.\n\nIf someone does come out to you, keep it to yourself unless they tell you otherwise. Their trust is the reward for everything above."
+  },
+  {
+   "q": "What should I do if a man shows interest in me and I am not interested?",
+   "a": "Say no clearly and kindly, as you would to anyone. A man who asks you out, flirts or holds your gaze has done nothing wrong, and the chapter on attraction in Part III applies here unchanged: interest is not an insult, and the only reliable answer to it is a clear one. Something like Jordan's reply works well: \"That's kind of you, but I'm straight. I'm happy to stay friends.\" Avoid recoiling, laughing, telling others about it or treating the man differently afterwards, all of which can be humiliating and, for a gay man in a hostile setting, frightening. If someone continues after a clear no, that is a different matter, and the same advice applies as with any unwanted attention: say it again plainly, move away and get help if you need it.\n\nIt also helps to remember that asking took some courage. A kind no respects that.\n\nIf you are a gay man and the interest is from a straight woman, the same kind, clear answer applies.\n\nAnd if the man is a colleague, keep working with him exactly as before. A kind no should not change anything else."
+  },
+  {
+   "q": "I think my teenager might be gay. Should I ask?",
+   "a": "It is usually better not to. A direct question, however warm, can feel like being watched and put on the spot, and many young people say they want to tell their parents in their own time, in their own words. Instead, make it obvious that it would be safe to tell you, without saying so in a way that points at them. React warmly to queer people in the news and on television, use neutral language about relationships, challenge jokes and slurs in the family, and keep the general message clear: that you love them whoever they are. Respect their privacy and their friendships. If they do tell you, the most important thing is the first few seconds: thank them, keep your face and voice warm and steady, and do not ask a string of questions straight away.\n\nIf they never tell you, that is their choice too, and the love you show them still counts.\n\nIf you need support yourself, there are organisations for parents of queer young people that can help you think it through.\n\nAnd keep loving them out loud in ordinary ways. That is the message they most need to hear, whatever they eventually tell you."
+  },
+  {
+   "q": "Isn't gaydar just a kind of pattern recognition?",
+   "a": "It feels like one, but the research suggests that most of what it recognises is stereotypes. Johnson and colleagues found that observers relied heavily on gender stereotypes, such as a sway of the hips, when judging orientation from how people walked. Cox and colleagues found that apparent accuracy from faces could be explained by differences in the photographs, and that telling people gaydar was real made them more willing to stereotype. And because only a small share of people are gay, even a modest accuracy in the laboratory turns into mostly wrong guesses in real life, the false positive paradox described in this chapter. A habit that is wrong most of the time, and that can out or harm people when it is right, is not a skill worth having.\n\nIt is also worth noticing how often the stereotypes behind gaydar are the same ones used to bully boys who do not fit.\n\nIt also helps to notice when you feel certain about someone. Certainty is usually the stereotype talking.\n\nAnd the cost of a wrong guess falls on the person guessed about, never on the person guessing."
+  },
+  {
+   "q": "What if I have already made a guess or a joke I regret?",
+   "a": "Stop doing it, and do not make the person comfort you about it. If the joke or guess was about someone who heard it, a short, private apology can help: \"I'm sorry about what I said. It wasn't OK, and I won't do it again.\" Do not use the apology as an opportunity to ask about their orientation, and do not make a long speech about how bad you feel, which puts them in the position of reassuring you. If the joke was among friends or colleagues, the most useful thing you can do now is to interrupt the next one, as Gareth eventually did. Most people have joined in with something like this at some point. What matters is what you do the next time it starts.\n\nIf you are a parent, the same applies to jokes at home: children remember who laughed.\n\nIt also helps to notice whether the people around you still laugh at the same jokes after you have stopped."
   }
  ],
  "watch": [
