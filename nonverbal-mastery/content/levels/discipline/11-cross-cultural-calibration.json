@@ -81,6 +81,13 @@
    "doCaption": "Reading him against his colleagues here: ordinary.",
    "dontCaption": "Reading a quiet colleague by your home baseline: cold.",
    "annotation": "Culture sets the range of normal. Compare people with each other in the setting, then look for change in the person."
+  },
+  {
+   "doPoseId": "p_greet_bow_light",
+   "dontPoseId": "p_greet_bow_formal",
+   "doCaption": "Returning the greeting you were given, at its depth",
+   "dontCaption": "Performing the deepest version of a custom you have read about",
+   "annotation": "Follow local customs as a guest, not as a performance. Let your host set the form."
   }
  ],
  "caseStudy": "Daniel, thirty-nine, a project lead from Chicago, moves to his company's office in Helsinki for two years. In his first fortnight he reads the room as he would at home. Several colleagues leave long pauses before answering, show little on their faces when he presents, and rarely interrupt. He concludes that his ideas are not landing and that the team resents an outsider. His ledger, which he keeps separately for the new office, fills with confident predictions of objections that never come.\n\nHe lowers his confidence by a band and spends the next three weeks describing rather than predicting. He writes a local baseline: how long the silences usually last, who speaks first, how disagreement sounds when it comes. He finds that it comes directly and briefly, usually after the pause rather than as an interruption.\n\nHe also finds an informant. Aino, a colleague who spent six years in Toronto, tells him that in this office a long pause after a question usually means someone is thinking about it seriously. She adds that it varies: the younger engineers are quicker to jump in, and the sales team are different again.\n\nThen Daniel overcorrects. He decides that silence here means nothing, and stops noticing it. A month later Mikko, who is usually the liveliest person in the room and the first to joke, sits through a whole meeting about the reallocation of projects without a word. Daniel's new rule says silence is normal. His individual baseline for Mikko says this is a large change.\n\nHe trusts the individual baseline and asks Mikko for a coffee. Mikko tells him that the reallocation takes him off the project he started, and that nobody asked him. Daniel arranges for him to stay on as an adviser. In his journal he writes a single line: *the office sets the range; Mikko sets the baseline.*",
@@ -99,6 +106,11 @@
     "Mark the ones you had assumed were simply how people are.",
     "Ask someone from a different background to mark where their default differs from yours.",
     "Write down the two differences most likely to cause you to misread someone."
+   ],
+   "variations": [
+    "Repeat the drill for the setting you spend most time in now, such as your workplace, and compare it with your childhood defaults.",
+    "Ask two people from different backgrounds to mark your defaults, and compare where they each see you as unusual.",
+    "Write down one misreading from your journal that one of your defaults probably caused, and what it would have taken to avoid it."
    ]
   },
   {
@@ -110,6 +122,11 @@
     "Compare the people you watch with each other, not with people at home.",
     "Write the range you observed for each dimension under the heading local baseline.",
     "Repeat on at least three days before you begin to make predictions in this setting."
+   ],
+   "variations": [
+    "Build a local baseline for a setting within your own country that you rarely enter, such as a different kind of workplace or community event.",
+    "Ask an informant to read your local baseline notes and tell you which observations surprise them.",
+    "Repeat the baseline a month later and note which of your first observations held up and which changed."
    ]
   },
   {
@@ -121,6 +138,11 @@
     "Ask each, and follow it with a question about variation, such as whether it would differ for someone older or from elsewhere.",
     "Write down the answers as close to their words as you can.",
     "Ask a second informant the same questions within a fortnight and note where the two differ."
+   ],
+   "variations": [
+    "Ask your informant how you come across in their setting, and which of your habits might be misread.",
+    "Interview an informant about a setting you think you already know well, and note anything that surprises you.",
+    "Ask a question about variation by age or region for every behaviour you discuss, and record the answers separately."
    ]
   },
   {
@@ -132,6 +154,11 @@
     "Compare the two curves band by band.",
     "Where the cross-cultural curve shows overconfidence, drop your stated confidence by one band for that kind of prediction.",
     "Write the adjustment and a date to check it again at the front of your ledger."
+   ],
+   "variations": [
+    "Separate your cross-cultural predictions further, by setting, and see whether your overconfidence is the same in each.",
+    "Check whether your cross-cultural misses lean in one direction, such as reading people as colder or more hostile than they were.",
+    "Compare your cross-cultural curve after three months with your first one, and note which bands have moved."
    ]
   },
   {
@@ -143,6 +170,11 @@
     "Mark any you should avoid or check in settings you expect to visit.",
     "Choose a neutral alternative for each marked gesture, such as words or an open hand.",
     "Practise the alternatives in front of a mirror until they feel natural."
+   ],
+   "variations": [
+    "Ask an informant which of your everyday gestures they noticed when they first met you, and what they thought they meant.",
+    "Watch a recorded conversation from a setting you do not know with the sound off, and list the gestures you could not interpret.",
+    "Spend a day using words instead of your three most common gestures, and note whether anyone responds differently."
    ]
   }
  ],
@@ -224,6 +256,45 @@
    "explain": "A list is a starting point that varies within countries and goes out of date. Watching neutral moments, comparing people with each other and finding an informant gives you a baseline for the setting you are actually in.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Akechi and colleagues find in 2013 when they showed faces with direct and averted gaze to participants in Japan and Finland?",
+   "options": [
+    "Both groups rated faces making eye contact as warmer and more approachable than faces looking away",
+    "Japanese participants rated faces making eye contact as angrier and less approachable than Finns did",
+    "Finnish participants rated faces looking away as more honest than faces making direct eye contact",
+    "Neither group noticed any difference between the faces making eye contact and those looking away"
+   ],
+   "answer": 1,
+   "explain": "Japanese participants rated faces making eye contact as angrier, less approachable and more unpleasant than Finnish participants did. A reader who carries the Western rule that steady eye contact signals honesty can read respect as evasion, and come across as confrontational.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Masuda and colleagues find in 2008 when Japanese and American participants judged the emotion of a central figure in a cartoon?",
+   "options": [
+    "American participants were more influenced than Japanese ones by the faces of the surrounding figures",
+    "Neither group took any notice of the faces around the central figure when they made their judgments",
+    "Both groups ignored the central figure and rated only the faces of the people standing around it",
+    "Japanese participants' judgments of the central figure were more influenced by the faces around it"
+   ],
+   "answer": 3,
+   "explain": "The same face, read in two places, was read with different amounts of the room included. Rules about how much context to use in reading a face are learned, like other display rules.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A colleague says the ring made with thumb and forefinger means OK everywhere. What did Morris and his colleagues find in their 1979 survey?",
+   "options": [
+    "It meant good in some places, zero or worthless in others, and an obscene insult in others still",
+    "It meant OK everywhere they asked, which is why it is used as a universal sign in airports and hotels",
+    "It meant nothing at all in most of the forty locations, so people simply ignored it when they saw it",
+    "It was used only by divers and pilots, and almost no ordinary people anywhere recognised its meaning"
+   ],
+   "answer": 0,
+   "explain": "Gestures like this are emblems, local vocabulary rather than universal signals. Any gesture you make without thinking is a word in your own language, and you should not assume it means the same thing elsewhere.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +323,110 @@
    "work": "Mapping expressive differences around the world: The relationship between emotional display rules and individualism versus collectivism",
    "author": "David Matsumoto, Seung Hee Yoo, Johnny Fontaine and colleagues",
    "note": "Journal of Cross-Cultural Psychology 39(1), 2008. Display rules surveyed in thirty-two countries."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The volunteer teacher and the lowered gaze",
+   "scene": "Ruth, sixty-one, a retired secondary teacher, volunteers twice a week at an English class for adults who have recently arrived in the country. Most of her students are women, but one of the most regular is Yusuf, fifty-four, who was an accountant before he left his home country. He works hard and his written English is good.\n\nWhen Ruth corrects his pronunciation in front of the class, Yusuf looks down at the table and stays looking down until she moves on. He never meets her eye during a correction. After a few weeks Ruth begins to read this as sullenness, perhaps resentment at being corrected by a woman, and she starts correcting him less, which she tells herself is tact.\n\nAnother volunteer, Kemal, who interprets for the class and grew up in the same region as Yusuf, notices the change and asks her about it. Ruth explains. Kemal tells her that where he and Yusuf grew up, many men of Yusuf's generation were taught to lower their eyes when an older person or a teacher corrects them, as a sign of respect, and that looking up would feel to Yusuf like answering back. He adds that it varies a good deal: his own children look teachers in the eye without a second thought, and so do several of the younger students in the class.\n\nRuth had taught for thirty years in a school where she regularly told pupils, *Look at me when I'm talking to you*, and had never thought of the instruction as local.",
+   "misread": "Ruth read Yusuf's lowered gaze through her own classroom's ruler, where looking down during a correction meant sulking. She then built a story about resentment on top of it, and adjusted her teaching to the story, so that Yusuf received less of the help he had come for.\n\nShe also read her own decision to correct him less as sensitivity, when it was a quiet withdrawal of teaching based on a story she had never checked.",
+   "betterRead": "This is the Akechi finding in a single classroom: eye contact and its absence carry different meanings in different settings, and a reader who brings the home rule will read respect as evasion. Kemal was a good informant in the way the chapter describes. He explained a behaviour, not a people, and he volunteered the variation within his own community. Ruth's next step was the individual baseline. She noticed that Yusuf looked at her readily in conversation before and after class, and laughed easily with the other students, which made sullenness an unlikely reading. She went back to correcting him as she did everyone else. A month later he asked her, in careful English, whether she could correct him more.\n\nRuth also asked Kemal whether there was anything about her own behaviour in class that the students might find hard to read.\n\nKemal's point about variation mattered as much as his explanation. Ruth had nearly swapped one rule for another, *looking down means respect*, and the younger students would have broken it the next week."
+  },
+  {
+   "title": "The sales director with a printed guide",
+   "scene": "Mark, fifty, is preparing for his first sales visit to a country he has never been to. The night before he flies, he reads an online guide to doing business there, and prints the page of body language tips. It says that people there rarely say no directly, that a smile can hide disagreement, that silence often means refusal, and that you should never show the soles of your feet.\n\nAt the first meeting his host, Mrs Okafor, a procurement director in her forties, listens to his proposal, asks three precise questions about delivery times, and then says, smiling, *No. That price does not work for us. If you can do better, call me next week.*\n\nMark, remembering the guide, reads the smile as the real message and the no as politeness. He keeps the meeting going for another forty minutes, presenting the same price in different ways, waiting for her to come round. She looks at her watch twice, then stands, shakes his hand warmly and thanks him for coming.\n\nHe flies home convinced that the meeting went well, and is surprised when she does not take his calls. A colleague who knows her says that Mrs Okafor is famous for her bluntness, which she learned during ten years working in Rotterdam.\n\nIn the taxi back to his hotel, he underlines the line in the guide about smiles, pleased that it had been so accurate.",
+   "misread": "Mark read Mrs Okafor through a printed list instead of through her own behaviour. The guide told him that a smile hides a no; her words told him a smile came with one. He believed the list over the person, and read her clear refusal as an opening.\n\nHe also read her two glances at her watch, and her warm handshake as she ended the meeting, through the same list, as signs that she was keen to continue the conversation another time.",
+   "betterRead": "The chapter's warning about catalogue thinking is exactly this. Lists go out of date, vary within countries, and tempt you to read hidden meanings where the person has been direct. Culture sets the range; the person sets the baseline. A national average said little about a procurement director with her own career and her own style, and her own words were the best evidence in the room. The cheapest test would have been to take her at her word and ask: *If I can come back with a better price, what would it need to be?* On his next visit Mark left the printout at home. He watched how she behaved in the first minutes, asked directly what she needed, and when she said no again, believed her.\n\nHe also wrote to Mrs Okafor, thanked her for her time and asked whether he could send a revised price. She replied the same day."
+  },
+  {
+   "title": "The start-up recruit in the quiet firm",
+   "scene": "Tom, twenty-eight, spent five years at a fast-growing software start-up where people showed enthusiasm loudly. Good ideas were greeted with whoops in the stand-up meeting, managers wrote *Love this!!* on proposals, and a flat response meant a dead idea. He has just joined a long-established engineering firm as a product manager.\n\nIn his first month he presents three proposals to his new manager, Gillian, fifty-six. Each time she listens, nods slowly, asks one or two questions, and says something like *That seems sensible. Let's see what the team think.* Her face barely moves. Tom reads each response as polite rejection. By the third, he has started to wonder whether he made a mistake in taking the job, and tells a friend that his manager does not rate him.\n\nAt his one-month review, Gillian tells him that his proposals have been the best thing to happen to the department in a year, that two of them are already being costed, and that she has mentioned him to the director. Tom is astonished. He asks her, carefully, why she did not say so at the time. She looks puzzled and says that she did.\n\nIn the same month, two of his old colleagues message him to ask how the new job is going, and he tells both of them that he is not sure it is working out.",
+   "misread": "Tom read Gillian's calm, low-key responses through the display rules of his old workplace, where excitement was the currency of approval and calm meant indifference. In her setting, calm approval was approval.\n\nHe also read his own anxiety in the meetings as information about Gillian's view, when it came from the gap between two sets of rules.\n\nAnd he read his friend's sympathy, when he complained, as confirmation, though the friend knew nothing about Gillian at all.",
+   "betterRead": "Display rules are not only national. Workplaces, professions and generations have their own, and Jeanne Tsai's work on ideal affect gives a name to the difference Tom ran into: some settings value calm, low-arousal good feelings, and others value excitement. *That seems sensible* in Gillian's mouth was strong praise. Tom's fix was to build a local baseline for the new firm as he would for a new country. He watched how Gillian and others responded to ideas they plainly liked, such as a colleague's plan that was adopted the same week, and found that it sounded just like what she had said to him. He also stopped reading his own discomfort as information about her.\n\nHe also told Gillian, at the end of the review, how he had read her responses, which made her laugh and then change how she gave feedback to him."
+  },
+  {
+   "title": "The manager who decided they could not be read",
+   "scene": "Graham, fifty-five, manages an engineering team split between his own office and a partner office in another country, which he visits four times a year. On his first visit he misread a quiet meeting badly, assuming that the team opposed a plan they in fact supported, and was embarrassed when it came out. Since then he has decided that he simply cannot read people there, and that it would be presumptuous to try. On calls with the partner team he looks at his notes, listens to the words and leaves it at that. He tells himself this is cultural humility.\n\nWei, thirty-two, is one of the partner office's strongest engineers. For two years she has been one of the most talkative people on the calls: she jokes with the British team, asks questions and argues when she disagrees. Over the past six weeks she has said almost nothing. Her camera, which used to be on, has been off for the last four calls.\n\nGraham does not notice. A colleague in his own office, Priya, does. She mentions to Graham that Wei seems to have gone quiet, and asks whether he knows why.\n\nGraham had kept a careful ledger for his own office for a year. He had stopped keeping one for the partner office after the first visit.\n\nOn the most recent call, when the British team asked for volunteers to review a design, Wei's name was not among them, for the first time anyone could remember.",
+   "misread": "Graham read his withdrawal from reading as humility. It worked as avoidance: by deciding that nobody in the partner office could be read, he stopped watching the one thing that works in any setting, the change in an individual against her own baseline.\n\nHe had also read his first misreading as proof that the partner office was unreadable, rather than as one miss in a setting where he had no baseline yet.",
+   "betterRead": "The chapter names this failure: withdrawal looks like humility and works like avoidance. Cultural humility means expecting to be wrong and asking, not ceasing to notice. Graham did not need to know anything about the partner office's norms to see that Wei had changed. Her baseline, built over two years of calls, was talkative, questioning and on camera, and she had moved far from it. Priya's question was the prompt he needed. He asked Wei for a private call, said that she had seemed quieter lately and asked how things were going. Wei told him that her role had been restructured locally in a way that cut her out of design decisions, and that she was thinking of leaving.\n\nGraham started keeping a ledger for the partner office again, beginning with descriptions rather than predictions.\n\nGraham also told Priya that she had been right to ask, and that he had been calling avoidance humility for two years."
+  }
+ ],
+ "workedReading": {
+  "title": "Lunch with a louder family",
+  "scene": "Sam, twenty-nine, grew up in a small, quiet family in a village, where meals were calm and voices were rarely raised. His partner, Becky, is one of six siblings in a large, loud family, and Sam has been invited to his first Sunday lunch with all of them, including Becky's grandfather, who is eighty-four. Sam has been working through this book and decides to treat the lunch as a new setting, using the chapter's method. He also decides that he will not take notes, read anyone aloud or treat the family as practice material. He will simply notice, and write a few lines in his journal afterwards.\n\nBecky has warned him that her family can be a lot, and has promised to rescue him if he looks lost.\n\nHe knows his own family's quiet has its own rules, and that Becky found his parents' silences hard to read the first time she met them.",
+  "steps": [
+   {
+    "label": "Name the home ruler",
+    "text": "On the drive there, Sam asks himself what his own family would make of a typical lunch at Becky's, from what she has told him. The answer is uncomfortable: raised voices would mean a row, interruptions would mean rudeness, and someone who said nothing would be in a sulk. He reminds himself that this is his ruler, made in his parents' kitchen, and that it is very likely to be wrong in this one. He resolves to lower his confidence in any reading by a band and to describe rather than conclude for the first hour.\n\nHe also reminds himself that he is the unfamiliar one, and that his own quietness will be read through their ruler."
+   },
+   {
+    "label": "Describe, don't predict",
+    "text": "For the first hour he simply notices. Everyone talks loudly and fast. People interrupt constantly, and nobody seems to mind. Two of Becky's brothers argue fiercely about football, almost shouting, and then one of them passes the other the potatoes with a grin. People touch a great deal: hands on shoulders, a hug at every arrival. Silences almost never last more than a second. Sam notices the urge, several times, to read tension, and lets it pass.\n\nHe notices, too, that his own silences are being filled within a second by someone else, which he finds restful rather than rude.\n\nHe writes none of this down at the table. He simply lets each observation sit, as a description, without a verdict attached."
+   },
+   {
+    "label": "Compare them with each other",
+    "text": "Instead of comparing the family with his own, he compares them with each other. The football argument is louder than anything at his parents' table, but no louder than the argument Becky's aunt and mother have about a holiday, which ends in laughter. The volume is the range here, not a signal. Becky's youngest sister is quieter than the rest, but she interrupts as freely as anyone when she has something to say. Becky's father is the loudest of all. Within this family, loud is ordinary.\n\nHe also notices that nobody looks offended when interrupted, and that interruptions here seem to show interest rather than disrespect."
+   },
+   {
+    "label": "Find the grandfather's baseline",
+    "text": "The one person who worries Sam is Becky's grandfather, who has hardly said a word at the table and has not looked at Sam once. Sam's home ruler offers disapproval. But Sam remembers that an hour earlier, in the garden, the grandfather had talked to him for ten minutes about his tomatoes, cheerfully and at length. That is a baseline, and the table is a change from it. Sam looks for a rival. At the table, the noise is overwhelming, and he notices that the grandfather wears hearing aids.\n\nHe also notices that the grandfather's hearing aids whistle once when the noise is loudest, which makes the rival reading stronger."
+   },
+   {
+    "label": "Ask the informant",
+    "text": "After the main course, washing up with Becky, Sam asks her quietly whether her grandfather is always this quiet at lunch. Becky says that he is, now, and that it started a couple of years ago, when his hearing got worse. He finds the noise impossible, she says, and gives up trying to follow. She adds that her grandfather had asked her earlier whether Sam was the one who knew about gardening, and had seemed pleased. Sam realises that the reading his ruler offered, disapproval, would have been exactly wrong.\n\nHe thanks Becky and does not mention that he had nearly read her grandfather as hostile. That reading was his, and it can stay in the journal."
+   },
+   {
+    "label": "Test it gently",
+    "text": "Over pudding, Sam moves to the chair next to the grandfather, at the quieter end of the table, and asks him, clearly and facing him, how he gets his tomatoes to ripen so early. The grandfather turns to him at once and talks for a quarter of an hour, smiling, with his hand on Sam's arm for part of it. Becky's mother catches Becky's eye across the table and raises her eyebrows. Sam is not sure what that means, and decides not to guess.\n\nHe also notices that the noise at the table drops slightly while the two of them talk, as if the family were listening."
+   },
+   {
+    "label": "What went in the journal",
+    "text": "That night Sam writes a few lines. *Local baseline at Becky's: loud, fast, constant interrupting, lots of touch. Arguments end in laughter. Silence is rare and means little at the table. Grandfather: talkative one to one, silent in the noise, probably hearing. My ruler said row, rudeness and disapproval. All three wrong.* He adds one more line: *Ask Becky what her mum's eyebrows meant.* Becky tells him, a week later, that it meant her mother approved.\n\nThe journal entry is about the family's norms and his own ruler, not about any of them as individuals, and he does not show it to anyone."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Using culture to explain away a change",
+   "body": "Once you know something about a setting's norms, it becomes tempting to file every surprise under culture. A colleague in an overseas office goes quiet, and you think: they are often quiet there. A neighbour from a different background seems withdrawn, and you think: perhaps that is normal for them. Sometimes it is. But culture explains the range, not the change. A person who has been lively for two years and goes quiet has moved against their own baseline, and the culture they share with their colleagues did not change at the same moment. Using culture to explain a change is a quiet way of not asking, and it falls hardest on the people you are least familiar with, whose distress then goes unnoticed for longest. When an individual changes, treat it as you would anywhere: as a change, worth a gentle question.\n\nA useful check: if you would ask a colleague from home about the same change, ask this one too.\n\nIt also protects you from a subtler error: treating a person's ordinary behaviour as cultural when it is simply who they are, which is a way of seeing their background before you see them."
+  },
+  {
+   "title": "Asking one person to speak for a whole people",
+   "body": "A colleague from another country, or a friend with a background you do not share, can be a valuable informant. They can also become an unwilling one. Being asked again and again to explain *your people*, to say what everyone from somewhere thinks or does, is tiring, and it puts the person in an impossible position, since nobody can speak for millions of others. It also invites the stereotype the chapter warns against, because the easiest answer to a question about a people is a generalisation. Ask about specific behaviour you have seen, ask about variation, and ask only people who have offered to help or whose role it is. Use more than one informant, and offer the same help about your own background in return. Thank them, and do not make them the office's permanent explainer.\n\nRemember, too, that informants are people with their own positions and agendas. An informant's account of their culture is evidence, not the final word."
+  },
+  {
+   "title": "Forgetting that you are the unfamiliar one",
+   "body": "In a new setting you are reading people through a ruler made elsewhere, and they are reading you through theirs. Your volume, your eye contact, your distance and your gestures all carry meanings you did not intend. A reader who concentrates on decoding others can forget that he is producing signals that are being decoded too, often less charitably than he decodes them. A man used to steady eye contact may come across as confrontational; one used to standing close may seem pushy; one used to animated gestures may seem agitated. Part of a local baseline is noticing how people respond to you: who steps back, who looks away, who goes quiet when you raise your voice. Adjust modestly, as a guest would, and ask an informant how you come across.\n\nYou will often find that people in the new setting are making the same allowances for you that you are learning to make for them.\n\nYou might also ask a colleague at home how you seem when you return from abroad. Changes you have made without noticing can tell you which local norms you have absorbed."
+  },
+  {
+   "title": "Reading the timing in an interpreted conversation",
+   "body": "When a conversation runs through an interpreter, its timing is scrambled. The other person reacts to your words only after the interpreter has spoken them, so their face responds several seconds late and to the interpreter's phrasing rather than yours. Long pauses are built into the rhythm. A reader who applies the usual rules about the timing of a change will see hesitation where there is only translation, and will read a delayed smile as forced. Watch the other person's reactions against the interpreter's words, not your own, and treat pauses as part of the process. Look at the interpreter too: their own reactions can tell you whether a phrase has landed awkwardly. Most of all, ask more explicit questions than you normally would, because the channels you usually rely on are partly blocked.\n\nIf you can, meet the interpreter beforehand and ask them about anything you should know about the other person's style.\n\nRemember that the interpreter is choosing words for you. A reaction to a phrase you did not use is information about the translation, not about the person."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Isn't it a form of stereotyping to learn about cultural norms at all?",
+   "a": "It becomes stereotyping when you apply an average to an individual. Learning that a setting tends towards longer silences or more reserved faces is useful if you use it to widen your idea of what normal looks like, so that you do not read ordinary behaviour there as a signal. It becomes harmful when you use it to predict how a particular person will behave, or to explain away what they do. The chapter's rule is the safeguard: culture sets the range, the person sets the baseline. Hold cultural knowledge as a set of possibilities, check it against the person in front of you and against informants, and drop it the moment the person's own behaviour tells you something different.\n\nIf you notice yourself saying *they* about a whole people, stop and ask whether you mean the setting or a person.\n\nA good test is whether you would be comfortable having your cultural knowledge read aloud to the person it is about. If it sounds like a description of a range, it probably helps; if it sounds like a verdict, it does not."
+  },
+  {
+   "q": "How can I tell whether a difference I notice is cultural or personal?",
+   "a": "Compare the person with others in the same setting, not with people at home. If most people in a meeting leave long pauses before answering, a long pause from one of them is probably the setting's norm. If one person behaves very differently from everyone around them, the difference is more likely to be personal. Time helps too: a behaviour that is consistent across weeks and situations is part of the person's baseline, whatever its source. Informants can tell you whether something is common where they come from, and two informants who disagree tell you that it varies. In practice the distinction matters less than it seems, because either way the useful question is what is normal for this person, and whether it has changed.\n\nPersonality varies within every culture, so a quiet person in a talkative setting is not necessarily reserved by upbringing; they may simply be quiet."
+  },
+  {
+   "q": "What if I am the one from a minority background, and people at work keep misreading me?",
+   "a": "It is not your job to fix other people's calibration, and it is tiring to be misread. But some things can help. You can name your own norms where it is useful, briefly and without apology: *When I go quiet in meetings, it usually means I'm thinking it through.* An ally who knows you well can say the same on your behalf. You can also ask directly when you suspect a misreading has happened, as you would with anyone. And notice that you probably already hold two rulers, one from home and one from work, which is an advantage in reading people that most of your colleagues do not have. If misreadings start to affect how you are treated or assessed, raise it with your manager or HR, as a matter of fairness rather than of manners.\n\nYou might also find it useful to keep your own journal of misreadings by others, as data rather than grievance. Patterns in it can help you decide when to name your norms and when to let something pass.\n\nMost of all, do not let other people's misreadings persuade you that your own behaviour is wrong. Different rules are not worse ones."
+  },
+  {
+   "q": "Should I copy local customs, such as greetings, when I visit somewhere new?",
+   "a": "Follow them as a guest, modestly, after you have watched how they are done. Let your hosts lead: return the greeting you are given, at the depth and in the form you are given it, rather than performing the most elaborate version you have read about. Many hosts will greet a visitor in the visitor's own way to make them comfortable, and it is gracious to accept that. If you are unsure, ask someone. Getting a custom slightly wrong with good intentions is rarely a problem; performing it as a show, or copying it to seem like an insider, usually is. The chapter's failure list includes performance for this reason: following a custom is respect, but putting it on display makes it about you.\n\nWhen you get it wrong, a smile and a simple apology are usually all that is needed.\n\nIt is also worth asking what your hosts would expect from you, which may be your own customs rather than theirs."
+  },
+  {
+   "q": "How long does it take to build a reliable baseline in a new setting?",
+   "a": "Longer than most people expect. The chapter suggests about two weeks of description before you start making predictions, and even then your calibration in the new setting is a new curve that starts flat. Expect it to take several months of scored predictions before your confidence there is worth as much as it is at home, and keep those predictions in a separate ledger so that you can see the curve develop. Individual baselines take time too: you need to see a person across several situations before you know what is normal for them. Some settings never feel as readable as home, and that is fine. Lower confidence, more questions and more help from informants are a sound way to work for as long as you need them.\n\nKeep in mind that you are calibrating to a setting, not a country. Each new workplace or community has its own range, even within one place."
+  },
+  {
+   "q": "Does any of this apply to people from my own country?",
+   "a": "Very much so. Region, class, generation, profession, faith, workplace and family all have their own display rules and baselines, and the differences between them can be as large as those between countries. A manager from one part of a country can misread a team from another for years, and a person who moves from a start-up to a long-established firm meets a new set of rules about how to show approval. Families have their own norms too, as anyone who has spent Christmas with a partner's family knows. The method is the same everywhere: notice that you have brought a ruler, describe before you conclude, compare people with each other rather than with home, and ask someone who knows.\n\nThe advantage is that informants are much easier to find at home, and much more likely to share your language for describing what you are seeing.\n\nThe advantage of practising at home is that misreadings are easier to discover and cheaper to correct."
   }
  ],
  "watch": [
