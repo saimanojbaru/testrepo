@@ -80,6 +80,13 @@
    "doCaption": "Breaking it because you can say why this case defeats its reason.",
    "dontCaption": "Breaking a rule because it is inconvenient.",
    "annotation": "A rule may be broken when you can name its reason and why the case defeats it. The ethical floor never breaks."
+  },
+  {
+   "doPoseId": "p_pair_work_together",
+   "dontPoseId": "p_pair_face_to_face",
+   "doCaption": "Doing the practical thing beside him",
+   "dontCaption": "Steering him to talk about it, face to face",
+   "annotation": "Side by side, with something to do with their hands, many people find it easier to say a little about what is hard."
   }
  ],
  "caseStudy": "Gareth, fifty-eight, has been a funeral director for thirty years. His rules are simple and he has taught them to every new member of staff: be present, be quiet, never read the mourners, never approach anyone uninvited.\n\nAt a funeral in November the widower laughs loudly, twice, during the eulogy. One of Gareth's younger staff moves towards him, ready to guide him out. Gareth stops her with a hand. He is surprised, and he knows that surprise means his picture is wrong. So he slows down and watches more widely. The widow's sister is smiling. So are the grandchildren. The minister pauses and says, warmly, that Derek had asked for exactly this: no solemn faces, and the story about the caravan. The laughter is the offer, and the room has accepted it. Gareth lets it be.\n\nAfter the service, at the back of the hall, he sees the dead man's son standing alone. He is perhaps twenty, very still, and shaking, with his car keys in his hand. He has not spoken to anyone. Gareth's rule says do not approach. He asks himself why the rule exists, to protect people from intrusion when they need to be left alone, and whether this case defeats it. The keys and the shaking say this young man is about to drive, and may not be safe to.\n\nSo he breaks the rule, and says what he is doing. *I don't know what you need, and you can tell me to go away. I didn't want you to be on your own. Will you sit for a minute and have a cup of tea before you drive?* The young man sits. After a while he says he cannot remember the way home. Gareth finds his cousin, who drives him.\n\nThat evening Gareth writes the exception in the notebook he keeps for new staff, with the rule, the reason, and why this case defeated it.",
@@ -98,6 +105,11 @@
     "Mark any rule whose reason you could not write, and go back to the chapter it came from.",
     "For five of the rules, write one case in which the reason would not apply.",
     "For each of those cases, write what you would do instead, and mark any that would cross the ethical floor."
+   ],
+   "variations": [
+    "Ask a friend to choose five of your rules and say why they think each exists, then compare their reasons with yours.",
+    "For each rule, write the earliest moment in your journal when you would have broken it if you had known what you know now.",
+    "Repeat the drill with rules you were taught at work, and see how many of their reasons you can state."
    ]
   },
   {
@@ -109,6 +121,11 @@
     "Note where the imagined conversation snags, and change your opening to avoid the snag.",
     "After each conversation, write whether the snag you foresaw appeared.",
     "Score your simulations in the ledger like any other prediction."
+   ],
+   "variations": [
+    "Simulate two versions before each conversation, the one you hope for and the one you fear, and note which was closer.",
+    "Run a simulation for a conversation with someone you know very well and for a stranger, and compare how often each snags.",
+    "Ask the other person afterwards, where it is natural, what they had expected you to say, and compare it with your simulation."
    ]
   },
   {
@@ -120,6 +137,11 @@
     "Note what you did next: forced the surprise into your old reading, or slowed down and looked again.",
     "Where you found out more later, note which response served you better.",
     "At the end of the week, write one sentence about how you usually respond to surprise."
+   ],
+   "variations": [
+    "Add a column for your body's response to each surprise, such as a jolt in the chest or a flash of irritation, and look for a pattern.",
+    "Log surprises from films and television as well as life, and see whether you respond to them differently.",
+    "At the end of a second week, compare the two weeks and note whether you are forcing fewer surprises into old readings."
    ]
   },
   {
@@ -131,6 +153,11 @@
     "Ask your friend to introduce an unexpected emotional turn, such as sudden bad news, without warning you.",
     "Respond to what they offer rather than to what you had planned.",
     "Talk afterwards about the moments when you blocked an offer, and what you could have done instead."
+   ],
+   "variations": [
+    "Repeat the exercise with the roles reversed, so that you are the one who introduces the unexpected turn.",
+    "Try a version in which neither of you may speak, and offers must be made only with posture, gesture and movement.",
+    "Run it in a setting closer to your work, such as a customer or a colleague, and note which of your work habits block offers."
    ]
   },
   {
@@ -142,6 +169,11 @@
     "List which of your rules would hold and which might need to break, with the reason in each case.",
     "Write the sentence you would use to say that you do not know what is needed.",
     "Say it aloud three times, and write down what you would do in the first minute."
+   ],
+   "variations": [
+    "Rehearse a case with a friend playing the other person, and ask them afterwards which of your first-minute actions helped.",
+    "Choose a case that involves a child or an older person, and note which rules change and why.",
+    "Read the relevant chapter of this book after you have written your plan, and note what you would now add or remove."
    ]
   }
  ],
@@ -223,6 +255,45 @@
    "explain": "You can say why the rule exists and why this case defeats it: he may be about to drive when he is not safe to. Breaking it openly, with a simple offer he can refuse, respects both his grief and his safety.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Paul Berliner's study of jazz musicians show about improvisation?",
+   "options": [
+    "That good improvisers invent everything on the spot, and avoid learning other musicians' phrases",
+    "That improvisation is a gift some musicians are born with, and practice does little to develop it",
+    "That improvising musicians spend years absorbing a vocabulary, which lets them respond to the others",
+    "That most jazz solos are written out in advance and only made to sound as if they were improvised"
+   ],
+   "answer": 2,
+   "explain": "Improvisation rests on a large store of absorbed material, built by listening, copying and practising. For a reader of people, the absorbed vocabulary of baselines, clusters and the ledger is what lets you hear the other person's offer.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "A month after his wife moved out, you visit a friend who wants only to fix his bike, and changes the subject every time you ask how he is. What fits this chapter?",
+   "options": [
+    "Pick up a spanner and help with the bike, and let him say what he wants to, when he is ready",
+    "Insist on talking about his feelings, since avoiding them now will only make things worse later",
+    "Leave, since he has made it clear that he does not want your company or your help at all",
+    "Tell him plainly that he is in denial, so that he understands why you have come round to see him"
+   ],
+   "answer": 0,
+   "explain": "Everything the other person does is an offer. Fixing the bike is a way of being together without having to talk face to face, and side by side, with something to do, many people find it easier to say what is hard.",
+   "isMisconceptionTest": false,
+   "isScenario": true
+  },
+  {
+   "q": "Someone says that admitting you do not know makes you look weak and less competent. What did Leary and colleagues find in 2017?",
+   "options": [
+    "That people high in intellectual humility were seen as weak by others, and were trusted much less as a result",
+    "That intellectual humility made no measurable difference to how people judged arguments",
+    "That intellectually humble people simply knew less than everyone else, which is why they admitted it so often",
+    "That people higher in it told strong arguments from weak ones better and judged mind-changers less harshly"
+   ],
+   "answer": 3,
+   "explain": "Intellectual humility is an accurate sense of where your knowledge ends, which is what calibration trains. Saying that you do not know makes the other person the authority on their own situation and lets others follow your improvisation.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +322,110 @@
    "work": "Thinking in Jazz: The Infinite Art of Improvisation",
    "author": "Paul F. Berliner",
    "note": "University of Chicago Press, 1994. How improvisers build the vocabulary that lets them respond in the moment."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The teacher whose pupil laughed at bad news",
+   "scene": "Amira, thirty-four, teaches a Year 9 class. On a Monday morning the head of year asks her to tell the class that their friend Leon was in a serious car accident at the weekend, that he is in hospital and is expected to recover, and that the school will share news when it can. Amira prepares what she will say, and says it gently.\n\nAs she finishes, Kyle, fourteen, at the back of the room, laughs: a short, loud burst that he tries to stop and cannot. Several pupils turn to stare at him. Amira feels a flash of anger. Her rule, built over ten years, is that disrespect in the classroom is dealt with at once and in front of the class, because letting it go teaches everyone that it is allowed. She tells Kyle that his behaviour is disgusting and sends him to wait outside.\n\nAt break she finds him sitting on the floor in the corridor, white-faced. He tells her that Leon is his best friend, that they were meant to be in the car together, and that he does not know why he laughed. He has been laughing at things all weekend and cannot make it stop.\n\nAmira sits down on the floor next to him.\n\nSeveral of the class had been laughing nervously at small things all morning, she realises later, and she had told two of them to settle down.\n\nThe head of year had warned her that some of Leon's friends might take the news badly. She had pictured tears, not laughter.",
+   "misread": "Amira read Kyle's laugh through her strongest classroom rule, as disrespect, without noticing that it surprised her. The surprise was the signal that her picture was wrong, and she forced it back into the old reading instead.\n\nShe also read the class's stares at Kyle as agreement with her judgement, when most of them were frightened by the laugh and by the news together.",
+   "betterRead": "Laughter at terrible news is not unusual, and it often comes from shock rather than contempt. But Amira did not need to know that to read the moment better. She needed to notice the surprise. A laugh from a pupil who is not normally cruel, at news about his own friend, does not fit the pattern her rule was built for, and an unexpected behaviour is the moment to slow down and watch more widely. The rule's reason, that open disrespect should not be allowed to stand, was defeated by a case she had not yet understood. A quiet *Kyle, are you all right? Come and see me in a minute* would have kept the room safe and left the reading open.\n\nAmira later apologised to Kyle, with his parents present, and wrote the exception into her own notes.\n\nThe rule itself survived. What changed was that Amira added a line to her notes: when a behaviour surprises you, find out what it is before you decide what it means."
+  },
+  {
+   "title": "The interviewer who stuck to the script",
+   "scene": "Jane, fifty, chairs interview panels for a housing charity and is proud of how fair they are. Every candidate is asked the same questions in the same order, and the panel does not chat or go off script, because that is how bias creeps in.\n\nThe fourth candidate of the day, Bronwen, forty-two, is applying for a support worker role. She answers the first questions well. When Jane asks her, as she asks everyone, to explain the two-year gap in her employment history, Bronwen says that her husband was ill and died, and that she cared for him. Then she starts to cry, and cannot stop.\n\nJane waits a moment, then moves on to the next question, about handling a difficult tenant, in the same even voice. Bronwen tries to answer through her tears and loses her thread. The panel's scores for that question are low. Jane asks the remaining questions in order. At the end she thanks Bronwen and tells her they will be in touch.\n\nAfterwards one of the other panel members, Tom, says that he felt terrible. Jane says she did too, but that pausing for one candidate and not for others would have been unfair.\n\nJane had once chaired a panel that was later criticised for favouring a candidate the members liked, and she had built her rules carefully after it.",
+   "misread": "Jane read her rule as requiring her to carry on, because the rule was about treating everyone identically. She read sticking to the script as fairness, when in that moment it was producing a score that measured grief rather than ability.\n\nShe also read her own discomfort as a sign that she was being properly impartial, as if fairness should always feel bad.",
+   "betterRead": "The rule test has two parts. Why does the rule exist? To make sure every candidate is judged on the same questions, without the panel's feelings tilting the result. Does this case defeat that reason? Pausing would not have changed the questions or how answers were scored. It would only have let the candidate answer them, which is what the rule was for. A better response was within the rule's spirit: *Let's take a few minutes. There's water here, and there's no hurry.* If Bronwen could not continue, the panel could offer to finish another day. Jane wrote to Bronwen the next morning and offered her a second interview, which Bronwen accepted.\n\nBronwen was appointed. She told Jane later that the second interview had been the first time anyone had asked her about her caring without flinching."
+  },
+  {
+   "title": "The friend who blocked the offer",
+   "scene": "Leo, thirty-three, drives over to see his friend Matt, thirty-four, a month after Matt's wife moved out. Leo has read the chapters on grief and on friendship, and has a plan: get Matt to open up. He arrives with beer and a speech prepared about how it is all right not to be all right.\n\nMatt meets him at the door with oil on his hands and says he is fixing the gears on his bike. Leo says the bike can wait and that he wants to know how Matt really is. Matt says he is fine, and goes back to the bike. Leo follows him into the garage and asks how he is sleeping. Matt says fine. Leo asks whether he has talked to anyone. Matt says he is talking to Leo, isn't he, and turns the bike upside down.\n\nFor an hour Leo keeps steering back to feelings, and Matt keeps steering back to the bike. Leo leaves feeling that Matt has shut him out, and tells his partner that Matt is in denial.\n\nTwo days later Matt's brother texts Leo to say that Matt had told him Leo came round and that it was nice of him, but that he had just wanted some help with the bike.\n\nLeo had been through a divorce himself three years earlier, and remembered wanting someone to make him talk about it. He had assumed Matt would want the same.",
+   "misread": "Leo read Matt's bike as avoidance, a block to the conversation that mattered. Matt was offering the only kind of conversation he could manage that day, and Leo blocked the offer to carry on with his own plan.\n\nHe also read his own experience as Matt's, and his own plan as what Matt needed, without checking either.\n\nAnd he read *I'm talking to you, aren't I?* as a brush-off, when it was close to the most Matt could say that day.",
+   "betterRead": "Keith Johnstone's discipline for improvisers applies: everything the other person does is an offer, and the good improviser accepts it and builds on it rather than blocking it to pursue his own idea. A man fixing a bike a month after his wife left is offering a way to be together without having to talk face to face. Leo's better move was to pick up a spanner. Side by side, with something to do with their hands, many people find it far easier to say a little about what is hard, and they say it when they are ready. A week later Leo went back, helped with the brakes, and said nothing about feelings. Halfway through, Matt said he had not been sleeping much.\n\nLeo told his partner afterwards that the hardest part was not asking, and that he had never felt so useful."
+  },
+  {
+   "title": "The father who said he did not know",
+   "scene": "Paul, forty-four, has spent a year working through this book, and he reads his daughter Ellie, fourteen, well. He knows her baselines, her silences, the way she goes quiet when she is worried about school and loud when she is happy.\n\nOne evening Ellie comes home from her music lesson and does something he has never seen. She laughs and cries at the same time, sits on the stairs, and when he asks what is wrong she says *nothing*, and laughs again, and wipes her eyes. Paul runs through everything he knows and none of it fits. Her baseline offers no match. His recognition offers nothing at all. He tries to imagine what would happen if he asked her straight out what had happened, and he cannot picture her answer.\n\nPaul notices that he cannot simulate the next minute, and remembers what that means. He sits down on the stair below her and says, *I don't know what's going on, and you don't have to tell me now. I'm here, and I'm not going anywhere.*\n\nAfter a few minutes Ellie shows him an email on her phone. She has been offered a place at a specialist music school two hundred miles away, which she applied for without telling anyone in case she failed.\n\nEllie had practised for the audition at her friend's house for two months, saying she was doing homework.",
+   "misread": "Paul could have read the tears as distress and the laughter as covering it, and pressed her for the problem. That reading would have forced a surprise into an old pattern, and missed that she was overwhelmed by something she wanted and was afraid of.\n\nThe old reading would also have told him what to do: find the problem and fix it, which is what he always did when she cried.",
+   "betterRead": "When recognition offers nothing and simulation cannot tell you what will happen next, you are in a situation your experience does not cover, and that is the moment to slow down rather than act. Saying *I don't know* did what Leary's work on intellectual humility suggests it can. It told Ellie that he was not reading her from behind certainty, and it made her the authority on her own situation, which she was. They talked until midnight about whether she should go: joy and fear in the same evening, and both of them real. In the end she went, and came home every other weekend.\n\nPaul wrote in his journal that night that the most useful thing he had said in a year was that he did not know.\n\nHe also noticed that his reading of her had not been wrong, exactly: she was distressed. It was only that distress was half of it, and he could not have known which half mattered without asking."
+  }
+ ],
+ "workedReading": {
+  "title": "A stranger in tears on the train",
+  "scene": "Nisha, thirty-seven, is on her evening train home when the man sitting opposite her, in his sixties and wearing a suit, takes a phone call, listens for a minute, says *thank you* and hangs up. Then he begins to cry, silently, staring out of the window, with his phone still in his hand. The carriage is half full. Nobody says anything. Nisha's protocol says that in public she reads situations rather than individuals, and that she does not approach strangers uninvited. Neither rule seems to fit what is happening in front of her. She has eleven minutes until her stop.\n\nShe does not know him and will almost certainly never see him again, which makes every rule she has feel both more and less important.\n\nShe has read about this kind of moment in the chapter and has never met one.",
+  "steps": [
+   {
+    "label": "Notice the recognition",
+    "text": "Her recognition arrives at once, as a single impression: bad news, grief or shock, and a man trying not to be seen. She notes it as a first guess, not a conclusion, because her ledger has almost nothing in it about strangers on trains. She also notices her own body: a tightening in her chest and an urge to look away, which is what everyone else in the carriage seems to be doing.\n\nShe does not stare. She looks at him once, long enough to see the phone and the tears, and then looks at the window too.\n\nShe also notices that her recognition comes with an urge to fix things, and decides that fixing is not her job here."
+   },
+   {
+    "label": "Run it forward",
+    "text": "She imagines the next thirty seconds. *If I lean across and ask whether he's all right, in front of everyone, he'll be embarrassed and say he's fine, and turn further to the window.* That snag tells her to change the opening. *If I hold out a tissue without saying anything, he can take it or not, and nobody needs to look.* That version runs more smoothly, which makes her a little suspicious of it, but it asks almost nothing of him.\n\nShe also imagines doing nothing, and that version runs smoothly too. She notices that it is the one she would choose if she were only protecting herself."
+   },
+   {
+    "label": "Check the rule's reason",
+    "text": "She asks herself why her rule about strangers exists: to avoid intruding on people who have not invited her attention, and to avoid treating them as material. Does this case defeat it? Partly. The man has not invited anything. But he is alone and distressed, and a small offer that he can ignore respects his choice better than nothing does. The ethical floor is untouched. She decides that a tissue and one sentence are within the reason for the rule.\n\nShe also decides that if he does not take the tissues, she will put them on the seat beside him and leave it at that.\n\nShe is also clear about where the rule stops: she will not ask what happened, and if he turns away, she will leave him be."
+   },
+   {
+    "label": "Make a small offer",
+    "text": "She holds out a packet of tissues. He looks at it, then at her, and takes one. She says quietly, *I'm getting off in a few stops, but I'm here if you want anything.* He nods and wipes his eyes. For a minute nothing happens. Then he says that his wife has been in hospital for a week, and that the call was from the ward. She is stable, he says, but they do not know what happens next, and he has not told their children yet.\n\nShe does not ask questions. She lets him say as much as he wants to and no more.\n\nThe carriage is quiet around them. A woman across the aisle catches Nisha's eye briefly and looks away again, kindly."
+   },
+   {
+    "label": "Accept what he offers",
+    "text": "Nisha does not ask about the illness. After a pause, the man starts talking about their garden: his wife's roses, which he has been watering every evening, badly, he says. Nisha treats it as the offer it is and asks about the roses. He tells her about a climbing rose his wife planted when they moved in, thirty years ago. He almost laughs. Nisha listens. She does not give advice or try to make him feel better.\n\nShe notices that the garden is where he wants to be, and that talking about the roses lets him talk about his wife without talking about the hospital.\n\nWhen he stops talking, she lets the silence sit. He seems more comfortable in it than he was before."
+   },
+   {
+    "label": "Say what she doesn't know",
+    "text": "At the stop before hers, she says, *I don't know what would help, but is there anyone you can ring tonight, so you're not on your own with it?* He says his son, and that he will. Nisha has also been watching, quietly, for any sign that he might be at risk, such as talk of not wanting to go on, which would have changed everything, and has seen none. She says goodbye and gets off.\n\nIf she had seen signs of risk, she would have asked him directly and stayed, and missed her stop. That was part of her plan from the start."
+   },
+   {
+    "label": "Write the exception",
+    "text": "That evening she writes a journal entry, as Gareth does for his staff: the rule, *in public, don't approach strangers uninvited*; its reason, *to avoid intrusion and treating people as material*; why this case partly defeated it, *alone, distressed, and the offer could be ignored*; and what happened. She adds a line to her protocol's public variant: *a small offer that can be ignored is allowed.*\n\nShe also notes that her recognition, bad news and grief, was roughly right, and that what she did with it mattered much more than whether it was right.\n\nShe also writes down how she felt afterwards, shaky and unsure whether she had done the right thing, because that too will be useful next time."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Trusting quick recognition in a new kind of situation",
+   "body": "Recognition feels the same whether it rests on hundreds of scored readings or on none. In a familiar setting, the instant sense that a colleague is cornered or a friend is not fine may be worth trusting, because your ledger says it usually is. In a setting you have never scored, such as a stranger's crisis, an unfamiliar culture or a kind of grief you have never met, the same instant sense arrives with the same confidence and very little behind it. Klein's commanders could trust their recognition because they had seen hundreds of fires with clear feedback. Ask, when an impression arrives quickly, whether you have ever been scored in this kind of situation. If not, treat it as a first guess, act on it only in ways that are safe if it is wrong, and look harder for the moment it fails.\n\nIt may help to keep a short list at the front of your journal of the kinds of situations your ledger has scored, so that you can see at a glance when you are outside them."
+  },
+  {
+   "title": "Simulating only the version you want",
+   "body": "Mental simulation is only useful if it can snag. When you imagine a conversation going exactly as you hope, with the other person responding to your opening just as you planned, the simulation has told you about your wishes rather than about them. This is especially common when you are keen to help, as Leo was with Matt, or when you have rehearsed a speech. A useful check is to simulate at least two versions: the one you hope for and the one you fear, and then ask which is more like what has happened before with this person. If your simulations never snag, build them from your ledger rather than your hopes: what did this person actually do the last three times someone tried this?\n\nThe fear version is useful even if it is unlikely, because it tells you what to watch for in the first seconds.\n\nAnother check is to simulate from the other person's point of view: what would they hope you will say, and what would they dread?"
+  },
+  {
+   "title": "Explaining the improvisation at length",
+   "body": "Saying what you are doing when you depart from what people expect is important, because people follow an improvisation they understand. But the explanation should be a sentence, not a speech. In a moment that needs action, a long account of your reasoning takes attention from the person who needs it and can sound like self-justification. *I'm going to sit with him for a bit before we call anyone* is enough. *I'm stopping the meeting for five minutes* is enough. The full reasoning belongs afterwards, in the journal entry and, if needed, in a conversation with the people who were there. Dodge's tragedy at Mann Gulch was that he had no time for even one sentence. Most of the time you will have exactly enough for one.\n\nIf people need more explanation in the moment, they will ask. Answer briefly and go back to the person.\n\nA related failure is to say nothing at all, out of a fear of sounding unsure. One plain sentence is almost always better than silence."
+  },
+  {
+   "title": "Accepting an offer that causes harm",
+   "body": "Treating what the other person does as an offer is a discipline for staying with them, not a rule that you must go along with anything. If a friend's offer is to drive home after drinking, the improvisation is to take his keys and find another way, kindly. If someone in distress talks about ending their life, the offer you accept is the conversation, not the plan: ask directly about suicide, stay with them and help them reach support, as chapter 2.13 sets out. If someone wants you to help them do something that would hurt another person, the ethical floor holds. Accept the person and their way of being in the moment. Decline anything that would harm them or someone else, and say so plainly.\n\nImprovisation lives inside the ethical floor, never above it.\n\nThe test is whether accepting the offer would leave the person, or anyone else, worse off. If it would, the offer you accept is the person, not the plan."
+  }
+ ],
+ "questions": [
+  {
+   "q": "How can I tell whether I am adapting well or simply trusting my instincts again?",
+   "a": "Three checks help. First, can you say why each of your rules exists? The rule reasons drill is a test of that, and an adaptive reader can answer most of it without looking anything up. Second, how do you respond to surprise? Your surprise log will show whether you usually slow down or force the surprise into your old reading. Third, do you write the exceptions down? An adaptive reader who breaks a rule can explain why afterwards, in a sentence, and records it. Someone simply trusting instinct breaks rules without noticing, rarely writes anything down, and feels certain throughout. If your ledger has stopped being kept, that alone tells you which you are doing.\n\nA fourth check is simply to ask an honest mirror whether you have become more or less careful with people since you started this book.\n\nA fifth check is how you feel when you are shown to be wrong. An adaptive reader is interested; someone trusting instinct is usually annoyed."
+  },
+  {
+   "q": "Isn't accepting someone's offer just telling them what they want to hear?",
+   "a": "No. Accepting an offer means taking what the other person is doing or saying as the starting point, rather than overriding it with your plan. It does not mean agreeing with their claims or pretending. If a grieving man tells a funny story, accepting the offer means listening and laughing, not agreeing that he is coping well. If a colleague in crisis wants to do something practical, accepting it means doing the practical thing beside her, not telling her that she is right not to talk about it. You can still be honest, still ask, and still decline anything harmful. What you give up is the urge to steer the person back to the conversation you had prepared.\n\nThe practical test is whether the person feels more heard after you have spoken. If they feel steered, you have blocked; if they feel flattered, you have stopped being honest.\n\nIt also helps to remember that offers include silences, a change of subject and a refusal. Accepting a refusal is often the most respectful thing you can do."
+  },
+  {
+   "q": "What should I do if I improvise and it goes badly wrong?",
+   "a": "What you would do after any mistake with a person. Apologise plainly and without excuses, if an apology is owed. Repair what you can, which often means asking the person what would help now. Then write it up honestly: what you expected, what surprised you, what you did, and why it went wrong. Most improvisations that respect the person and stay above the ethical floor can be recovered from, even when they misfire. A small offer that was not wanted is easily withdrawn. The ones that cannot be undone are those that cross the floor, such as manipulation or a diagnosis made from someone's body, which is one reason the floor never moves.\n\nIt is also worth asking yourself, honestly, whether doing nothing would have been better. Sometimes it would, and that too is worth knowing.\n\nWrite down, too, what the other person did that told you it had gone wrong, so that you can catch it sooner next time."
+  },
+  {
+   "q": "Can I practise improvising with people when nothing real is at stake?",
+   "a": "Yes, and you should, because it is much harder to learn for the first time when something real is at stake. The drills in this chapter are a start, especially accepting the offer with a friend and rehearsing a novel case. An improvisation class, of the kind many theatres and community centres run, is excellent practice in listening and building on offers, and most people find it more enjoyable than they expect. You can also practise on recordings: pause a film or a documentary at a moment the characters did not expect, and ask what you would have done, then see what happened. Score those predictions too.\n\nIf you take a class, notice which of your habits block offers most often, and add them to your stress signature or your protocol.\n\nPractise with people you trust, and keep the stakes low, so that a misfire is a lesson rather than an injury."
+  },
+  {
+   "q": "How do I explain to the people I work with when I break one of our own rules?",
+   "a": "At the time, in one sentence: what you are doing, and if possible why. *I'm going to talk to him on his own before we go any further.* Later, when things are calm, explain more fully, using the two-part test: why the rule exists, and why this case defeated that reason. Invite people to challenge it. If they think you were wrong, they may be right, and the conversation will improve the rule either way. Then write the exception down where others can see it, as Gareth does for his staff, so that the next person who meets the same situation knows it has happened before and what was done.\n\nThe aim is not to defend the decision but to share what you learned, so that the team's rules grow from real cases.\n\nOver a year, a team's written exceptions become one of its most valuable records, because they hold the cases that no rule foresaw."
+  },
+  {
+   "q": "Is there a point at which I should stop using the method altogether?",
+   "a": "Not altogether, but it changes. Over time, the six steps stop being steps and become the way you see, so you are using the method without running it. That is the point of this chapter. The parts that should never stop are the checks that keep you honest: a ledger, even a light one, so that your recognition stays calibrated; the habit of noticing surprise; and the ethical floor. What should stop, at the right times, is reading people at all. The last chapter, on the quiet body, is about that: when to take the skill off duty, so that you can simply be with the people you have spent this book learning to see.\n\nBy then, the method will mostly show itself in what you do not do: the reading you do not announce, the question you ask instead, and the moment you let pass.\n\nIt will also show in what you notice, which will be more than before, and in how lightly you hold it."
   }
  ],
  "watch": [
