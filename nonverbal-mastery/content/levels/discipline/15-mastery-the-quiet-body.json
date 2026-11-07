@@ -80,6 +80,13 @@
    "doCaption": "Meeting him as if for the first time.",
    "dontCaption": "I know him. Nothing new to see.",
    "annotation": "In the expert's mind there are few possibilities. Hold even your oldest baselines as hypotheses."
+  },
+  {
+   "doPoseId": "p_older_pair_walk",
+   "dontPoseId": "p_older_pair_seated_across",
+   "doCaption": "Walking together, asking something new",
+   "dontCaption": "I know her. Nothing new to see.",
+   "annotation": "The baselines we check least are often the ones that have moved most. A new question on a familiar walk can show you someone you had stopped seeing."
   }
  ],
  "caseStudy": "Peter, sixty-one, has worked through this book slowly over two years, journal and ledger and all. He is now a good reader of people, and he knows it. When his son Jamie, thirty-four, rings to say that his marriage is over and asks whether he can stay for a few days, Peter feels the old pull at once: to watch closely, to work out what really happened, to ask the questions that would get to the bottom of it.\n\nHe decides not to. On the first evening Jamie arrives with one bag and the look of someone who has not slept. Peter notices everything: the hands that will not settle, the phone checked and turned face down, the way Jamie sits on the edge of the sofa as if he might leave. He says nothing about any of it. He makes tea, puts the football on, and sits at the other end of the sofa.\n\nThe next morning they take the dog out along the river, side by side, mostly in silence. Peter asks one question, whether Jamie wants to talk or would rather not, and accepts the answer, which is *not yet*. He settles his own breathing on the walk, because he can feel his worry rising, and he does not want Jamie to have to carry it too.\n\nOn the third evening, in the car on the way back from buying fish and chips, with both of them looking at the road, Jamie starts to talk. He talks for an hour, parked outside the house, with the food going cold. Peter mostly listens.\n\nBefore Jamie leaves on Sunday, he says, at the door, *You're easier to be around than you used to be, Dad.* Peter does not write anything in his journal that night. He sits in the garden for a while instead.",
@@ -98,6 +105,11 @@
     "Ask fewer questions than usual, and let at least two silences last longer than is comfortable for you.",
     "Afterwards, ask them whether anything about the conversation felt different.",
     "Write down what they said, and what you noticed without trying to."
+   ],
+   "variations": [
+    "Try the drill with someone you find harder to be with, and note whether soft attention changes how they respond to you.",
+    "Try it on a walk side by side, where looking at each other is optional, and compare it with the same conversation sitting down.",
+    "Try a version in which you ask no questions at all, and only respond to what the other person offers."
    ]
   },
   {
@@ -109,6 +121,11 @@
     "Listen without explaining or defending, and thank them.",
     "Write down the specific behaviours they named.",
     "Choose one to change for a month, and ask them again at the end of it."
+   ],
+   "variations": [
+    "Ask a third person who knows you in a different setting, such as a neighbour or a teammate, and compare their answer with the first two.",
+    "Ask the same two people again after six months, without reminding them of what they said before.",
+    "Ask a child or teenager in your family, gently and only if they would like to answer, what it feels like when you ask them questions."
    ]
   },
   {
@@ -120,6 +137,11 @@
     "Drop your shoulders, loosen your jaw, and set down in your mind whatever you were carrying from the last place.",
     "Walk in, and notice how the people inside respond in the first few minutes.",
     "Repeat every day for a week and note any pattern."
+   ],
+   "variations": [
+    "Do the drill before work as well as before coming home, and note whether your first conversation of the day changes.",
+    "Ask someone you live with, after a week, whether they noticed any difference in how you arrived, without telling them what you did.",
+    "On a day when you skip the drill, note how the first few minutes at home go, and compare them with the days you do it."
    ]
   },
   {
@@ -131,6 +153,11 @@
     "In your next conversation with them, set the list aside and listen as if you had just met.",
     "Ask them one open question you have never asked before.",
     "Afterwards, write one thing you learned that was not on the list."
+   ],
+   "variations": [
+    "Do the drill with a friend you have known since childhood, and note which items on your list are out of date.",
+    "Ask the person the same open question a month later, and see whether the answer has changed.",
+    "Do the drill on yourself: write five things you are sure you know about yourself, and ask someone close whether they are still true."
    ]
   },
   {
@@ -142,6 +169,11 @@
     "When you notice yourself starting to read someone, let the reading go and return to what you were doing.",
     "At the end of the day, spend ten minutes writing what you noticed anyway, without trying.",
     "Write how the day felt, and how the people around you seemed."
+   ],
+   "variations": [
+    "Extend the drill to a whole weekend, and note whether the people around you seem different by the end of it.",
+    "Choose a day with a high-stakes conversation in it, keep the rest of the day off duty, and note whether the conversation goes differently.",
+    "At the end of an off-duty day, write down one thing you noticed about someone that you would have missed if you had been reading deliberately."
    ]
   }
  ],
@@ -223,6 +255,45 @@
    "explain": "They are honest mirrors telling you that the skill has turned into scrutiny. The response is to change the attention itself, not to explain it or hide it.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "In Schnall and colleagues' 2008 study, how did people judge a hill when a friend was standing beside them?",
+   "options": [
+    "As steeper, because they felt self-conscious about climbing it in front of someone they knew",
+    "As less steep, and less steep still the longer they had known the friend standing there",
+    "Exactly as steep as when they were alone, since friends made no difference to what they saw",
+    "As steeper when the friend was new and less steep only when the friend was a family member"
+   ],
+   "answer": 1,
+   "explain": "A trusted person nearby made the hill look easier, and the effect grew with the length of the friendship. It fits social baseline theory: the brain treats trusted people as a resource, and closeness is part of what makes that work.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Levenson and Gottman find in 1983 when they measured the bodily signals of married couples discussing a problem?",
+   "options": [
+    "That the partners' bodies responded independently, with no link between one and the other",
+    "That the happiest couples showed the strongest linkage, with their bodies calm together",
+    "That the partners' physiology rose and fell together, most strongly in the unhappiest couples",
+    "That only the partner who raised the problem showed any change in heart rate or skin conductance"
+   ],
+   "answer": 2,
+   "explain": "The partners' heart rates and other signals moved together, and the linkage was strongest in unhappy couples, whose bodies were locked together in distress. Your state is part of the environment of every conversation you have.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Someone says that listening well just makes people feel nice, without changing anything about what they think. What did Itzchakov, Kluger and Castro find in 2017?",
+   "options": [
+    "That good listening made speakers less socially anxious and better able to see contradictions in their own views",
+    "That good listening made no difference to speakers, who said and thought exactly the same things either way",
+    "That speakers with an attentive listener became more extreme in their views and less willing to consider others",
+    "That speakers disliked attentive listeners, because they felt watched and evaluated throughout the whole conversation"
+   ],
+   "answer": 0,
+   "explain": "Being listened to by someone attentive, understanding and non-judgmental made people more honest with themselves. Presence lets people say more, which is why it shows more than scrutiny does.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +322,110 @@
    "work": "Zen Mind, Beginner's Mind",
    "author": "Shunryu Suzuki",
    "note": "Weatherhill, 1970. Short talks on keeping the mind open after long practice."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The studio head whose attention was a weight",
+   "scene": "Fiona, forty-nine, runs a design studio of twelve people, and over two years of practice she has become a very good reader. She can tell which designer is stuck before they say so, which client meeting is going wrong, and which junior is about to hand in their notice. She is proud of it, and her ledger justifies the pride.\n\nBut the studio is quieter than it used to be. In one-to-ones, people sit very straight and choose their words carefully. Problems reach her late, when they are already large. A designer she rates highly tells a colleague that a meeting with Fiona feels like an exam she has not revised for.\n\nFiona does the footprint check from this chapter, with two people she trusts: her business partner and her longest-serving designer. Both say the same thing, in different words. When she listens, she watches. Her eyes stay on their faces, she pauses after they speak as if waiting to see what they will do next, and she asks one more question than they expect. Her designer says, kindly, that it feels like being worked out.\n\nFiona is shaken. She had thought of her attention as a form of care.\n\nShe also notices that she has started to dread the one-to-ones herself, though she has never said so.\n\nHer business partner adds that Fiona does it at the Friday drinks too, which is when people least expect to be assessed.",
+   "misread": "Fiona read her close watching as care, and her staff's careful answers as professionalism. They were reacting to being evaluated: managing their faces and choosing their words because they could feel themselves being read.\n\nShe also read the quieter studio as a more focused one, when people had simply stopped thinking aloud in front of her.\n\nAnd she read the studio's silence about problems as a sign that there were fewer of them.",
+   "betterRead": "Dickerson and Kemeny found that being evaluated by others, with no way to control the outcome, is among the most powerful stressors there is. A skilled reader who watches too closely delivers a small dose of it in every conversation, and then sees the stress it produced. Fiona changed one behaviour for a month, as the drill suggests. She let her gaze rest and move away in one-to-ones, asked fewer questions, and let silences last without waiting for a reaction. She also said plainly to the team that she had been told she could be intense, and was working on it. By the end of the month, the designer who had felt worked out brought her a problem with a client on the day it started, while it was still small.\n\nShe also kept her ledger, and noticed that her readings of the team were no less accurate than before. She simply made fewer of them out loud.\n\nHer business partner said afterwards that the studio felt like it used to, years ago, before Fiona became so good at reading everyone."
+  },
+  {
+   "title": "The grandmother at the bedside",
+   "scene": "Owen, nineteen, is in hospital with a badly broken leg after coming off his motorbike. He will recover, but he faces two operations and months of rehabilitation, and he has lost his place on an apprenticeship that started next week. His mother, Karen, forty-six, sits by his bed every evening. She is frightened, and it shows. She asks him how he is feeling every few minutes, watches his face for signs of pain or low mood, and asks whether he is really all right when he says he is. Owen gives shorter and shorter answers and turns towards the window.\n\nOn Thursday his grandmother, Margaret, seventy-two, comes instead. She brings a newspaper and a flask. She sits beside the bed, not facing him, and does the crossword out loud, asking him the clues she cannot get. She holds his hand for a while when he dozes off. She says very little about the accident.\n\nAfter an hour, with the crossword half done, Owen tells her that he is frightened he will not walk properly again, and that he cannot say it to his mother because she is frightened enough already.\n\nKaren has barely slept since the accident, and has been reading about leg injuries on her phone at three in the morning.\n\nThe nurses have noticed that Owen eats more and sleeps better on the evenings his grandmother comes, though nobody has said so to Karen.",
+   "misread": "Karen read Owen's short answers and turned head as him shutting her out, and asked more. Her questions and close watching added to the load he was carrying, and her own fear filled the room, so that he had to manage hers as well as his own.\n\nShe also read her own fear as watchfulness, as if worrying hard enough would keep him safe.",
+   "betterRead": "Margaret did very little, and it was the right very little. She sat beside rather than opposite him, gave him something to do with his attention, and brought a settled state rather than a frightened one. Hatfield and her colleagues' work on emotional contagion suggests that states spread in conversation, and Karen's fear was spreading to her son. Coan's work suggests that a trusted presence nearby makes threat easier to bear. Margaret's presence asked nothing of Owen, which is why he could tell her. Later, she told Karen gently what Owen was worried about, with his permission, and suggested that the crossword might be worth trying.\n\nOwen asked for his grandmother again the next evening.\n\nKaren tried it the next evening, with a puzzle book, and found it hard to stop asking questions. By the weekend it was easier, and Owen had started asking her the clues. Her own fear did not go away, but she stopped bringing all of it into the room, and talked to her sister about it on the phone instead."
+  },
+  {
+   "title": "The husband who knew his wife",
+   "scene": "Alan, sixty-three, has been married to Sue for thirty-five years and would say, if asked, that he knows her better than anyone alive. He has read this book with interest, and finds that most of it confirms what he already knew about her. When Sue goes quiet in the evenings, as she has done a lot this spring, he knows she is tired. When she spends time on the computer, he knows she is looking at holidays, which she always does in the spring.\n\nWorking on the beginner's mind drill, he writes down five things he is sure of about how Sue is and what she feels. It takes him two minutes. Then, on their Sunday walk, he sets the list aside and asks her a question he has never asked: *What have you been thinking about lately that you haven't told me?*\n\nSue stops walking. After a while she says that she has been looking at a course, a two-year part-time degree in garden design, and that she has not mentioned it because she thought he would think it was silly at their age. She has been quiet in the evenings because she has been reading about it, and she has been on the computer looking at the application.\n\nHe realises, walking home, that he cannot remember the last time he asked her a question whose answer he did not already expect.",
+   "misread": "Alan read Sue's quietness and her time on the computer through baselines he had stopped checking years ago. *I know her* had ended his reading, and he had been reading a woman of ten years earlier.\n\nHe also read her not telling him as a sign that there was nothing to tell, when she had simply stopped expecting him to ask.",
+   "betterRead": "Suzuki's line fits exactly: in the beginner's mind there are many possibilities, but in the expert's there are few. Thirty-five years of marriage had made Alan an expert in Sue, and expertise had narrowed what he could see. The drill did not require any skill he lacked. It required him to set aside what he was sure of, for long enough to ask an open question and listen to the answer. People change all the time, including the ones closest to us, and the baselines we check least are often the ones that have moved most. Alan told Sue that he did not think it was silly at all. She started the course in September.\n\nHe added a line to his journal: *ask Sue one new question a month.*\n\nHe also noticed, over the following weeks, that he was more interested in Sue than he had been for years, which he had not expected. Not knowing her, it turned out, was more interesting than knowing her."
+  },
+  {
+   "title": "The volunteer who performed calm",
+   "scene": "Rhys, thirty-five, volunteers two evenings a week at a community workshop where men, mostly older and many of them living alone, come to make and mend things together. He has read this chapter and wants to be the steady, quiet presence it describes. So he practises. He keeps his gaze soft, speaks slowly, asks few questions, sits beside people rather than across from them, and allows long silences.\n\nAfter a few weeks he notices that the men talk to him less than they used to. One of the regulars, Dennis, seventy-eight, who used to chat to him about football, now answers in single words. One evening, after Rhys has sat beside him in silence for several minutes, Dennis puts down his chisel and says, not unkindly, *Are you all right, son? You've gone a bit odd. Like one of those counsellors.*\n\nRhys laughs, embarrassed, and says he is fine. Driving home, he realises that he has spent a month trying to look present, and that he has hardly asked Dennis about anything.\n\nOn the drive home he also remembers that Dennis had once told him his wife used to sit with him in the shed while he worked, and that he missed the chat more than anything.\n\nRhys has also started to feel tired after the workshop evenings in a way he never used to, as if being present were hard work.",
+   "misread": "Rhys read stillness, a soft gaze and long silences as presence, and practised them as a technique. The men read them as something odd and professional, a man being careful with them rather than simply with them.\n\nHe also read Dennis's single-word answers as a sign that Dennis needed more space, and gave him even more of it.\n\nDennis, for his part, read the change as a sign that something was wrong with Rhys.",
+   "betterRead": "This is the chapter's first failure: performing calm, which people sense at once and which is scrutiny in a quieter costume. The elements of presence are what attention tends to look like when it is for the other person, but copied as a technique they lose that. Presence is not a manner. It is interest in the other person without needing anything back. The next week Rhys asked Dennis about the cabinet he was making, and then about the football, and laughed at his jokes, and let himself be ordinary. Dennis told him the cabinet was for his granddaughter, and that he had not made anything for anyone in years.\n\nRhys said afterwards that being ordinary was much harder than being still.\n\nThe workshop evenings stopped tiring him. He realised that presence had been exhausting only because he had been performing it. Being interested in someone takes much less effort than looking interested."
+  }
+ ],
+ "workedReading": {
+  "title": "Coming home to a hard evening",
+  "scene": "Bea, thirty-nine, is a paramedic, and her shift has been a bad one: a long call that ended badly and a row with a colleague. Her daughter, Lily, fifteen, had her mock exam results today, and from a text at lunchtime, *maths was bad*, Bea knows that at least one of them went wrong. As she pulls up outside the house, she feels the shift sitting in her chest and her worry about Lily on top of it. She has read this chapter, and has been doing the settle-first drill for a fortnight. She decides that tonight she will use it properly.\n\nShe knows that Lily, like her, goes quiet and hides when something has gone badly, and that questions at the door make it worse.\n\nShe also knows that she has very little left to give tonight, and that whatever she gives needs to be simple.",
+  "steps": [
+   {
+    "label": "Stop outside the door",
+    "text": "She sits in the car for a minute before going in. She takes three slow breaths out, each longer than the breath in. She drops her shoulders, which she finds are almost at her ears, and loosens her jaw. She says to herself, silently, that the shift is over and that whatever she is carrying from it can wait until later, when she can talk to someone at work about it. She is not trying to feel fine. She is trying not to carry the shift into Lily's evening.\n\nShe also checks her own signature, which tonight is a tight stomach and clenched hands on the steering wheel, and lets her hands rest in her lap for the last breath.\n\nShe also reminds herself that she cannot make Lily feel better by being calm. She can only avoid making things heavier."
+   },
+   {
+    "label": "Notice without reading",
+    "text": "Inside, Lily is on the sofa with her headphones on and her school bag still by the door. Bea notices a great deal: the bag dropped rather than put away, the hood up, the phone held but not looked at, the way Lily glances up and then quickly back down. She lets all of it register without turning it into a reading, and without saying any of it. She does not need to work out how Lily feels. Lily will tell her, or not.\n\nShe notices, too, the urge to say *you look upset*, and recognises it as the reading she has learned to hold.\n\nShe also notices her own urge to check Lily's face for how bad it is, and lets her gaze go to the kettle instead."
+   },
+   {
+    "label": "Choose presence over questions",
+    "text": "The pull is to sit down opposite her and ask how the results went, how she feels, what happened in maths. Bea runs it forward in her head and sees Lily say *fine* and go upstairs. Instead she says hello, asks whether Lily is hungry, and starts making cheese on toast, which is what they both eat when a day has been rubbish. Then she sits at the other end of the sofa with her own plate, not facing Lily, and turns on a programme they both like.\n\nShe does not ask about the results at all. If Lily wants to tell her, she will.\n\nIt is a small thing to have chosen, and she has learned that the small things are what people remember."
+   },
+   {
+    "label": "Let the silence last",
+    "text": "For twenty minutes nobody says much. Lily takes her headphones off halfway through the first episode. Bea notices her own urge to fill the quiet with questions, and lets it pass. She also notices that her own breathing has settled further, and that Lily's shoulders have come down a little from where they were. She does not know whether one caused the other, and does not need to.\n\nAt one point Lily laughs at the programme, and Bea laughs too, and it is the first ordinary moment either of them has had all day.\n\nShe knows the research on contagion would say her settled breath might help, and she also knows that it would be a mistake to think of it as a technique tonight. It is just her, sitting down."
+   },
+   {
+    "label": "Accept the offer",
+    "text": "At the end of the episode Lily says, without looking at her, *I failed maths.* Bea says, *That's rubbish. I'm sorry.* She does not ask how badly, or why, or what the teacher said, and she does not reassure her that it is only a mock. Lily says she does not want to talk about it. Bea says that is fine, and asks whether she wants another episode. Lily says yes, and moves along the sofa so that their feet are touching.\n\nShe notices that the feet touching is the clearest thing Lily has said all evening, and does not mention it.\n\nBea's instinct, as a paramedic, is to assess: how bad, what next, what can be done. She notices the instinct, and puts it down with the plate."
+   },
+   {
+    "label": "When she does talk",
+    "text": "Later, while Bea is washing up, Lily comes into the kitchen and starts talking: about the questions she could not do, about a friend who got a high grade and went on about it, about being afraid she is stupid. Bea dries her hands and leans against the counter beside her and listens. She asks one question, what would help with maths, and Lily says maybe the lunchtime club. Bea says she thinks that is a good idea.\n\nShe does not tell Lily that she had guessed from the text, or that she had noticed the bag by the door. Those readings can stay hers.\n\nShe also does not mention her own day. There will be time for that, and tonight belongs to Lily."
+   },
+   {
+    "label": "What she did not write",
+    "text": "That night Bea does not write anything about Lily in her journal. She has noticed a great deal, and none of it needs recording. She does write a few lines about her shift, which she will take to a colleague the next day. Before she goes to bed, she notices that the evening she had dreaded has turned into one of the better ones in months, and that the most useful thing she did was the minute in the car.\n\nShe writes one more line, for herself only: *the minute in the car.* It is the only part of the evening she wants to remember to do again.\n\nIn the morning, before school, Lily hugs her at the door, which she has not done for months. Bea does not remark on it."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Saving presence for the people who are struggling",
+   "body": "It is easy to treat presence as something for crises: you settle yourself, soften your gaze and sit beside someone when they are grieving or frightened, and on ordinary days go back to distraction or quiet assessment. But the people who come to you in a crisis are usually the ones who have found you easy to be around on ordinary days. Schnall's hill looked less steep beside a friend, and less steep still the longer the friendship had lasted. Trust builds in unremarkable evenings, school runs and walks, long before it is needed. A partner who only gets your full attention when something has gone wrong learns that something has to go wrong to get it. Give the ordinary days some of the same quality of attention, without scrutiny, and the hard days will find you already trusted.\n\nOrdinary attention does not need to be intense. It needs to be there, and to be for the person rather than for what you can learn from them.\n\nIt also works the other way. Someone who has had your easy company on a hundred ordinary days will notice the first evening it is missing, and may ask you what is wrong."
+  },
+  {
+   "title": "Taking the skill off duty by picking up your phone",
+   "body": "Being off duty means not reading people deliberately. It does not mean not being there. A reader who has learned to put the method down can slip, without noticing, into putting the person down as well: half-listening, checking a phone, answering from somewhere else. That is not presence; it is absence, and the people around you will feel it just as clearly as scrutiny. The quiet body is attention without evaluation, not attention elsewhere. Off duty, you still notice what you notice, and you still respond to it as a person rather than a reader. Put the phone away for the conversations that matter, and for some that seem not to. The difference between a parent who is present and one who is merely in the room is usually visible to the child within seconds.\n\nA useful rule is that when someone starts to tell you something that matters to them, the phone goes face down, out of reach.\n\nOff duty, the skill rests. You do not."
+  },
+  {
+   "title": "Announcing your restraint",
+   "body": "A subtle failure is to tell people what you noticed and did not say. *I could see you were upset at dinner, but I didn't want to say anything.* *I noticed you'd been crying, so I left you alone.* It feels like a gift of tact. It is a reading announced after the fact, and it tells the person that they were being watched after all, which undoes the restraint. If what you noticed needs a response, give it at the time, with a question or an offer: *Do you want some company?* If it does not, let it go. The point of holding a reading is that the person never has to know you made it. A restraint you report is no longer a restraint; it is scrutiny with good manners, and people sense the difference.\n\nIf you later need to mention it, for example because you are worried, ask a question rather than reporting a reading: *Is everything all right? You seemed quiet the other night.*\n\nIt also helps to remember that people often know when they have been noticed, and are grateful when nothing is said. Silence can be the kindest form of acknowledgement."
+  },
+  {
+   "title": "Waiting to be told you have changed",
+   "body": "After a long stretch of practice it is natural to want someone to notice. You have softened your gaze, settled your breath and learned to stay, and you would like it to show. But waiting for recognition brings evaluation back into the room, only now it runs the other way: you are reading people for signs that they appreciate your new manner. They will feel that too. Peter's son said, unprompted, that his father was easier to be around, and the sentence meant something because Peter had not been fishing for it. Let the changes be for the people around you rather than for your own record. If you want to know whether they are working, the footprint check is the honest way to ask, once in a while.\n\nThe changes will show, over time, in the things people bring you. That is the only recognition worth having.\n\nThere is a quieter reward too, which is that you will enjoy people more. Attention that does not have to evaluate has more room to be interested."
+  }
+ ],
+ "questions": [
+  {
+   "q": "Doesn't presence over scrutiny mean I should stop noticing when someone needs help?",
+   "a": "No. Presence includes noticing; it simply does not press. You will still see the friend who has gone quiet, the colleague who is struggling, the child who is not himself, and you should. What changes is how you respond. Instead of studying them or announcing what you see, you make it easy for them to come to you: you stay nearby, offer something practical, ask an open question and accept the answer. If you are worried that someone may be at risk of harm, presence is not enough. Ask directly, including about suicide if that is your worry, stay with them, and help them reach support, as chapter 2.13 describes. Gentleness never means looking away.\n\nPresence is what makes asking possible. People who feel at ease with you are far more likely to answer honestly when you do.\n\nIt may help to remember that most people who are struggling do not want to be studied, and very much want to be noticed. Presence is how you do the second without the first."
+  },
+  {
+   "q": "How can I tell whether people feel at ease with me?",
+   "a": "Watch what they do rather than what they say. People who are at ease with you tend to bring you problems early, while they are still small. They tell you things they have not told others. They relax rather than brace when you come into the room, and their faces and answers do not become more managed in your presence. Children talk to you without being asked. If you see the opposite, careful answers, late problems, managed faces, it is worth checking. The footprint check is the direct way: ask two people you trust whether they ever feel watched or assessed by you, and listen without defending yourself. It takes courage, and it tells you more than any amount of self-observation.\n\nAsk again from time to time, because people's ease with you changes, and so do you.\n\nNotice too whether people sit beside you or across from you when they have a choice. It is a small sign, and an honest one."
+  },
+  {
+   "q": "I am naturally an intense person. Can I really change how my attention feels to other people?",
+   "a": "Partly, and that part is worth having. The behaviours that make attention feel heavy are fairly specific: a gaze that holds on, questions that keep coming, pauses that wait for a reaction, a body squared up to the other person. Each of those can be changed with practice, one at a time, and people usually notice within weeks. Some intensity is simply who you are, and that is fine. It can help to say so to the people you work or live with: *I can be a bit intense. If it feels like I'm grilling you, tell me.* Saying it gives them permission to tell you, which is the most useful feedback you will get.\n\nIntensity also has its uses. In a crisis, focused attention can be exactly what someone needs. The skill is knowing when to turn it down.\n\nChange one behaviour at a time, as the footprint check suggests, so that you can tell which one made the difference."
+  },
+  {
+   "q": "What should I do with my journal and ledger now that I have reached the end of the book?",
+   "a": "Keep them, lightly. You no longer need to record every reading. A monthly calibration check, a handful of scored predictions in settings that matter to you, keeps your recognition honest, because confidence drifts when it is not tested. A quarterly review of your protocol, as the protocol chapter suggests, keeps it fitting your life. The journal can become what it probably always should have been: a place for the moments that surprised you or that you handled badly, rather than a log of everything you saw. If you want a break from all of it, take one, and come back with a short check to see where you stand. The ledger will wait.\n\nMany readers find that, after a while, they enjoy the ledger more, because it has become a check rather than a chore.\n\nAnd if your practice has changed how people around you respond, write that down too. It is the only part of the ledger that measures what this chapter is about."
+  },
+  {
+   "q": "Is it wrong to read my own family at all?",
+   "a": "It is not wrong to notice. You cannot stop yourself seeing that your partner is tired or your son is worried, and you should not try. What goes wrong is treating your family as material: studying them, announcing your readings, practising on them, or keeping notes about them. Let what you notice shape how you are with them, quietly, rather than what you say about them. Notice that your daughter is low, and make her favourite tea rather than telling her she looks low. Keep the method's tools for yourself at home, your stress signature, your breath, your beginner's mind, and let the reading of others stay mostly off duty.\n\nIf a family member asks you to stop noticing something, respect it, even if you think you can help. Their home is theirs too.\n\nThe test is simple: would they mind, if they knew what you were thinking about them? If the answer is yes, keep it to yourself and let it go."
+  },
+  {
+   "q": "How do I keep a beginner's mind with someone I see every single day?",
+   "a": "Small, deliberate habits help. Ask questions you have never asked, rather than the usual ones about their day: what they have been thinking about, what they would do with a free year, what they have changed their mind about recently. Notice when they surprise you, and treat the surprise as interesting rather than as noise. Every few months, take the beginner's mind drill seriously and write down what you are sure of about them, then set it aside and listen. Spend time together somewhere new, where neither of you has fixed habits. And remember that they are changing whether you see it or not.\n\nIt also helps to tell them what you have noticed about yourself, and ask what they have noticed about you. Beginner's mind runs both ways.\n\nSometimes the most useful question is simply *what's new with you?*, asked as if you really did not know. Usually you do not."
   }
  ],
  "watch": [
