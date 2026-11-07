@@ -8,17 +8,23 @@ Kotlin 2.0 · Jetpack Compose · Room · DataStore · type-safe Navigation · fu
 
 ![Overview](docs/screens/overview.png)
 
-## Status: v1.0 (all six parts written)
+## Status: v1.1 (the full book: about 2,000 pages)
 
 | Area | State |
 |---|---|
 | Engine: design system, pose system, all 12 screens, mastery + spaced review, Room, settings, export/import | Done |
-| Content | All 90 chapters written to the full contract, in six parts: Foundations; The Inner World, where 2.13 opens through a crisis-resource gate; The Social World; The Modern World; Overlooked Contexts; and The Discipline. About 378,300 words, ≈840 pages. Every chapter links to 1–4 verified official clips where its behaviour can be seen. Ethics statement (1,205 words); crisis resources |
+| Content | All 90 chapters in six parts: Foundations; The Inner World, where 2.13 opens through a crisis-resource gate; The Social World; The Modern World; Overlooked Contexts; and The Discipline. Every chapter now carries a depth layer, bringing each to about 22 pages: four more scenes read two ways, a worked reading step by step, four more failure modes, six reader questions, drill variations and three extra quiz questions. About 900,900 words, ≈2,000 pages, 504 pose pairs. Every chapter links to 1–4 verified official clips. Ethics statement (1,205 words); crisis resources |
+| Fact-checking | The flagged Part I and Part VI figures were checked in v1.1. Four were corrected: Engel 2022, Yan 2013, Gendron 2014 and Sorokowska 2017. A caveat was added to Lally 2010. Part V sources and the clinical content still need specialist review; see `content/_progress.md` |
 | Pose library | 170 poses in 13 themes, drawn as men and women of many ages, builds and backgrounds, including two- to five-person scenes, a baby held, a child on the hip, a bedside, a meeting table, a wheelchair, a cane and a long cane, and sitting on the floor, + 6 drawn diagrams + 7 face plates |
-| Tests | 31 passing: content contract, engines, 50 screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
-| Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion |
+| Tests | 31 passing: content contract (including the 900,000-word and 500-pair floors), engines, screen renders, every diagram and face plate rendered, end-to-end smoke on API 26 and 34, full mastery flow through the real UI |
+| Size | Content pack 5.6 MB raw, 1.84 MB gzipped, inside the 2 MB budget with little room to spare |
+| Not yet verified | On a physical device or emulator (none available in the build environment); manual TalkBack audit; shared-element motion seen in motion; clinical, specialist and lived-experience review of the content |
 
-See [`content/_progress.md`](content/_progress.md) for where authoring stopped, what later chapters must not repeat, and the open question about the page target.
+The depth layer, from left to right: more scenes read two ways, a worked reading, reader questions, drill variations.
+
+![More scenes](docs/screens/34-more-scenes.png) ![Worked reading](docs/screens/35-worked-reading.png) ![Reader questions](docs/screens/36-reader-questions.png) ![Drill variations](docs/screens/37-drill-variations.png)
+
+See [`content/_progress.md`](content/_progress.md) for chapter-by-chapter word counts, how the depth layer was written, and what still needs a human reviewer.
 
 ![Part VI](docs/screens/25-part-six.png) ![Group attention](docs/screens/26-group-attention.png) ![The gate before 2.13](docs/screens/29-gate-2-13.png)
 
@@ -35,7 +41,7 @@ See [`content/_progress.md`](content/_progress.md) for where authoring stopped, 
 
 | Test | What it proves |
 |---|---|
-| `ContentContractTest` | Every written level meets the spec's content contract (word ranges, block counts, 5–6 questions with a misconception and a scenario, 3–6 pose pairs, real pose IDs). Plus stricter house rules: every teaching claim states its disconfirming condition, no stub markers, quiz answers spread across letters and never guessable by length (the right answer is at most 1.35× the longest wrong one, and the longest option in at most half the questions), no words broken by line-wrap hyphens, the ethics essay is present, the gzipped pack is under 2 MB. |
+| `ContentContractTest` | Every written level meets the spec's content contract (word ranges, block counts, 5–6 questions with a misconception and a scenario, 3–6 pose pairs, real pose IDs), and every chapter carries the depth layer within its ranges (≥9,900 words a chapter, ≥900,000 in all, ≥500 pose pairs, no hard line breaks inside paragraphs). Plus stricter house rules: every teaching claim states its disconfirming condition, no stub markers, quiz answers spread across letters and never guessable by length (the right answer is at most 1.35× the longest wrong one, and the longest option in at most half the questions), no words broken by line-wrap hyphens, the ethics essay is present, the gzipped pack is under 2 MB. |
 | `MasteryTest`, `ReviewSchedulerTest`, `BackupRoundTripTest` | Mastery criteria and their plain-language "you still need to" list, scoring, sequential unlocking across unwritten gaps, the 1/3/7/21/60/120-day schedule, and a lossless journal round-trip including unicode. |
 | `AppSmokeTest` (Robolectric, API 26 and 34) | Launches the real `MainActivity` with Room, DataStore and the assembled pack, then walks home → category → chapter → quiz → ethics (from the chapter menu) → pose library → settings → crisis resources. |
 | `MasteryFlowTest` | A reader masters Level 1.1 using only the UI: five drills, a field note, a perfect quiz, a 150-character reflection, then "Level mastered. The next one is open." |

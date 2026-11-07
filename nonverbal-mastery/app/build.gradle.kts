@@ -18,8 +18,8 @@ android {
         applicationId = "com.nonverbal.mastery"
         minSdk = 26
         targetSdk = 34
-        versionCode = 9
-        versionName = "1.0.0"
+        versionCode = 10
+        versionName = "1.1.0"
         vectorDrawables { useSupportLibrary = true }
     }
 

@@ -257,10 +257,16 @@ class ContentContractTest {
 
         val levels = pack.categories.flatMap { it.levels }
         val totalWords = levels.sumOf { levelWordCount(it) }
+        // v1.1: the whole book carries the depth layer, about 22 pages a chapter and 2,000 pages in all.
+        val shallow = levels.filter { it.moreCases.isEmpty() }.map { c.reference(it) }
+        assertTrue("every chapter must carry the depth layer; missing: $shallow", shallow.isEmpty() && levels.size >= 90)
+        assertTrue("the book must reach 900,000 words, about 2,000 pages (is $totalWords)", totalWords >= 900_000)
+        val pairs = levels.sumOf { it.poseGallery.size }
+        assertTrue("the book should carry about 500 pose pairs (has $pairs)", pairs >= 500)
         println("CONTENT REPORT")
         levels.forEach { println("  ${c.reference(it)} ${it.title}: ${levelWordCount(it)} words, ~${pagesFor(levelWordCount(it))} pages, tier ${it.tier}") }
         println("  levels written: ${levels.size} / ${c.plannedTotal}")
-        println("  words: $totalWords  pages: ~${pagesFor(totalWords)}  poses: ${pack.poses.size}")
+        println("  words: $totalWords  pages: ~${pagesFor(totalWords)}  poses: ${pack.poses.size}  pose pairs: $pairs")
         println("  pack: ${bytes.size} bytes raw, $gz bytes gzipped")
         println("  tiers: " + Tier.entries.joinToString { t -> "$t=${levels.count { it.tier == t }}" })
     }

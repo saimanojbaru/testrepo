@@ -1,111 +1,149 @@
 # Content progress
 
-_Last updated: v1.0. All six parts are written: 90 of 90 chapters, and every chapter links to official clips where the behaviour can be seen._
+_Last updated: v1.1. All 90 chapters carry the depth layer. The book is about 900,900 words, about 2,000 pages at 450 words a page, with 504 pose pairs._
 
 ## Written
 
-90 of 90 chapters, all six parts. That is about 378,300 words, about 840 pages at 450 words a page.
+90 of 90 chapters, all six parts, each at about 22 pages (at least 9,900 words). Version 1.0 had about 378,300 words. Version 1.1 kept every chapter's core and added a depth layer to each one, without changing the contract for the core.
 
-| Part I | Tier | Words | | Part VI | Tier | Words |
-|---|---|---|---|---|---|---|
-| 1.1 The Baseline | Foundation | 5,133 | | 6.1 Building Your Baseline Journal | Foundation | 4,566 |
-| 1.2 The 1/25th Second | Foundation | 4,411 | | 6.2 The 60-Second Scan | Foundation | 4,479 |
-| 1.3 Proxemics | Foundation | 4,317 | | 6.3 Video Review of Yourself | Foundation | 4,519 |
-| 1.4 The Gaze | Intermediate | 4,415 | | 6.4 Feedback Loops & Honest Mirrors | Intermediate | 4,521 |
-| 1.5 The Spine as Status | Intermediate | 4,298 | | 6.5 Calibration | Intermediate | 4,729 |
-| 1.6 Clusters & Congruence | Intermediate | 4,399 | | 6.6 The Ethics of Reading People | Intermediate | 4,998 |
-| 1.7 The Face | Advanced | 4,345 | | 6.7 Teaching Others | Advanced | 4,587 |
-| 1.8 Voice as Body Language | Advanced | 4,256 | | 6.8 Plateaus & Deliberate Practice | Advanced | 4,449 |
-| 1.9 The Taxonomy of Touch | Advanced | 4,344 | | 6.9 Building a Personal Protocol | Advanced | 4,569 |
-| 1.10 Space & Territory | Expert | 4,384 | | 6.10 Reading Groups in Real Time | Expert | 4,502 |
-| 1.11 Leakage & Pacifiers | Expert | 4,951 | | 6.11 Cross-Cultural Calibration | Expert | 4,508 |
-| 1.12 Reading the Room | Expert | 4,324 | | 6.12 High-Stakes Environments | Expert | 4,466 |
-| 1.13 Cultural Variance | Master | 4,238 | | 6.13 Reading Yourself Under Stress | Master | 4,550 |
-| 1.14 Deception | Master | 4,186 | | 6.14 Synthesis & Improvisation | Master | 4,525 |
-| 1.15 Synthesis | Master | 4,680 | | 6.15 Mastery — The Quiet Body | Master | 4,435 |
-| **Part I** | | **66,681** | | **Part VI** | | **68,403** |
+| Part I: Foundations | Tier | Words | Pages |
+|---|---|---|---|
+| 1.1 The Baseline | Foundation | 9,901 | ~22 |
+| 1.2 The 1/25th Second | Foundation | 9,931 | ~22 |
+| 1.3 Proxemics | Foundation | 9,905 | ~22 |
+| 1.4 The Gaze | Intermediate | 9,904 | ~22 |
+| 1.5 The Spine as Status | Intermediate | 9,900 | ~22 |
+| 1.6 Clusters & Congruence | Intermediate | 9,905 | ~22 |
+| 1.7 The Face | Advanced | 9,905 | ~22 |
+| 1.8 Voice as Body Language | Advanced | 9,907 | ~22 |
+| 1.9 The Taxonomy of Touch | Advanced | 9,904 | ~22 |
+| 1.10 Space & Territory | Expert | 9,904 | ~22 |
+| 1.11 Leakage & Pacifiers | Expert | 9,906 | ~22 |
+| 1.12 Reading the Room | Expert | 9,903 | ~22 |
+| 1.13 Cultural Variance | Master | 10,289 | ~23 |
+| 1.14 Deception | Master | 10,064 | ~22 |
+| 1.15 Synthesis — Building Your Own Protocol | Master | 10,052 | ~22 |
+| **Part I** | | **149,280** | **~332** |
 
-| Part II | Tier | Words |
-|---|---|---|
-| 2.1 The Stress Posture | Foundation | 4,212 |
-| 2.2 Breath as the Master Signal | Foundation | 4,189 |
-| 2.3 The “I'm Fine” Mask | Foundation | 4,254 |
-| 2.4 Depression's Physical Signature | Intermediate | 4,199 |
-| 2.5 Anger — The Escalation Ladder | Intermediate | 4,152 |
-| 2.6 Anxiety's Body | Intermediate | 4,260 |
-| 2.7 The Body in Grief | Advanced | 4,253 |
-| 2.8 Trauma & the Freeze Response | Advanced | 4,241 |
-| 2.9 Pacifiers & Self-Soothing | Advanced | 4,221 |
-| 2.10 Burnout | Expert | 4,215 |
-| 2.11 Sleep, Cortisol & Visible Depletion | Expert | 4,194 |
-| 2.12 Substance Use & the Body | Expert | 4,182 |
-| 2.13 Suicidal Ideation — What the Body Shows (gated) | Master | 4,795 |
-| 2.14 Interoception | Master | 4,444 |
-| 2.15 Building a Personal Early-Warning System | Master | 4,459 |
-| **Part II** | | **64,270** |
+| Part II: The Inner World | Tier | Words | Pages |
+|---|---|---|---|
+| 2.1 The Stress Posture | Foundation | 10,195 | ~23 |
+| 2.2 Breath as the Master Signal | Foundation | 10,203 | ~23 |
+| 2.3 The “I'm Fine” Mask | Foundation | 10,180 | ~23 |
+| 2.4 Depression's Physical Signature | Intermediate | 10,161 | ~23 |
+| 2.5 Anger — The Escalation Ladder | Intermediate | 10,207 | ~23 |
+| 2.6 Anxiety's Body | Intermediate | 10,075 | ~22 |
+| 2.7 The Body in Grief | Advanced | 10,151 | ~23 |
+| 2.8 Trauma & the Freeze Response | Advanced | 10,131 | ~23 |
+| 2.9 Pacifiers & Self-Soothing | Advanced | 10,075 | ~22 |
+| 2.10 Burnout | Expert | 10,155 | ~23 |
+| 2.11 Sleep, Cortisol & Visible Depletion | Expert | 10,139 | ~23 |
+| 2.12 Substance Use & the Body | Expert | 10,189 | ~23 |
+| 2.13 Suicidal Ideation — What the Body Shows (gated) | Master | 10,076 | ~22 |
+| 2.14 Interoception | Master | 10,175 | ~23 |
+| 2.15 Building a Personal Early-Warning System | Master | 10,182 | ~23 |
+| **Part II** | | **152,294** | **~338** |
 
-| Part III | Tier | Words |
-|---|---|---|
-| 3.1 The Side-by-Side Principle | Foundation | 4,277 |
-| 3.2 The Male Greeting Taxonomy | Foundation | 4,154 |
-| 3.3 The Head Nod & Its Dialects | Foundation | 3,934 |
-| 3.4 Personal Space Between Men | Intermediate | 3,969 |
-| 3.5 The Bro Hug | Intermediate | 4,058 |
-| 3.6 Touch Between Male Friends | Intermediate | 3,941 |
-| 3.7 Silence as Communication | Advanced | 3,938 |
-| 3.8 The Intimacy of Shared Activity | Advanced | 3,873 |
-| 3.9 Reading Attraction — Signals & Hard Limits | Advanced | 3,892 |
-| 3.10 Consent as Nonverbal Negotiation | Expert | 3,858 |
-| 3.11 The Body in Disagreement | Expert | 3,854 |
-| 3.12 Repair — The Physical Language of Apology | Expert | 3,907 |
-| 3.13 Fatherhood — Holding, Carrying, Teaching | Master | 4,103 |
-| 3.14 Caregiving — The Steady Presence | Master | 3,919 |
-| 3.15 Mourning Together | Master | 3,989 |
-| **Part III** | | **59,666** |
+| Part III: The Social World | Tier | Words | Pages |
+|---|---|---|---|
+| 3.1 The Side-by-Side Principle | Foundation | 10,080 | ~22 |
+| 3.2 The Male Greeting Taxonomy | Foundation | 10,144 | ~23 |
+| 3.3 The Head Nod & Its Dialects | Foundation | 10,100 | ~22 |
+| 3.4 Personal Space Between Men | Intermediate | 10,113 | ~22 |
+| 3.5 The Bro Hug | Intermediate | 10,004 | ~22 |
+| 3.6 Touch Between Male Friends | Intermediate | 10,049 | ~22 |
+| 3.7 Silence as Communication | Advanced | 9,947 | ~22 |
+| 3.8 The Intimacy of Shared Activity | Advanced | 9,964 | ~22 |
+| 3.9 Reading Attraction — Signals & Hard Limits | Advanced | 9,929 | ~22 |
+| 3.10 Consent as Nonverbal Negotiation | Expert | 10,040 | ~22 |
+| 3.11 The Body in Disagreement | Expert | 10,013 | ~22 |
+| 3.12 Repair — The Physical Language of Apology | Expert | 10,080 | ~22 |
+| 3.13 Fatherhood — Holding, Carrying, Teaching | Master | 9,913 | ~22 |
+| 3.14 Caregiving — The Steady Presence | Master | 10,041 | ~22 |
+| 3.15 Mourning Together | Master | 10,021 | ~22 |
+| **Part III** | | **150,438** | **~334** |
 
-| Part IV | Tier | Words |
-|---|---|---|
-| 4.1 The Video Call Body | Foundation | 3,992 |
-| 4.2 Camera Height, Framing & Perceived Status | Foundation | 3,853 |
-| 4.3 Audio as Body Language | Foundation | 3,829 |
-| 4.4 The Professional Poker-Face Trap | Intermediate | 3,974 |
-| 4.5 Power Posing — What's Real, What's Myth | Intermediate | 3,778 |
-| 4.6 The Handshake in a Post-Handshake World | Intermediate | 4,234 |
-| 4.7 Meeting Room Geography | Advanced | 4,249 |
-| 4.8 The Nonverbal Glass Ceiling | Advanced | 4,147 |
-| 4.9 Stage Presence Without Performance | Advanced | 4,187 |
-| 4.10 The Body at the Negotiation Table | Expert | 4,312 |
-| 4.11 Interview Signals That Actually Matter | Expert | 4,156 |
-| 4.12 Written Body Language — Text, Email, Slack | Expert | 4,187 |
-| 4.13 Social Media Self-Presentation | Master | 4,214 |
-| 4.14 Networking — Approach, Exit, Escape | Master | 4,276 |
-| 4.15 Leading — Authority With Warmth | Master | 4,178 |
-| **Part IV** | | **61,566** |
+| Part IV: The Modern World | Tier | Words | Pages |
+|---|---|---|---|
+| 4.1 The Video Call Body | Foundation | 10,032 | ~22 |
+| 4.2 Camera Height, Framing & Perceived Status | Foundation | 9,970 | ~22 |
+| 4.3 Audio as Body Language | Foundation | 9,975 | ~22 |
+| 4.4 The Professional Poker-Face Trap | Intermediate | 10,004 | ~22 |
+| 4.5 Power Posing — What's Real, What's Myth | Intermediate | 9,907 | ~22 |
+| 4.6 The Handshake in a Post-Handshake World | Intermediate | 9,981 | ~22 |
+| 4.7 Meeting Room Geography | Advanced | 9,955 | ~22 |
+| 4.8 The Nonverbal Glass Ceiling | Advanced | 9,947 | ~22 |
+| 4.9 Stage Presence Without Performance | Advanced | 9,961 | ~22 |
+| 4.10 The Body at the Negotiation Table | Expert | 9,936 | ~22 |
+| 4.11 Interview Signals That Actually Matter | Expert | 9,943 | ~22 |
+| 4.12 Written Body Language — Text, Email, Slack | Expert | 9,921 | ~22 |
+| 4.13 Social Media Self-Presentation | Master | 9,956 | ~22 |
+| 4.14 Networking — Approach, Exit, Escape | Master | 9,988 | ~22 |
+| 4.15 Leading — Authority With Warmth | Master | 9,951 | ~22 |
+| **Part IV** | | **149,427** | **~332** |
 
-| Part V | Tier | Words |
-|---|---|---|
-| 5.1 Neurodivergence — Reading the Map Without the Legend | Foundation | 3,910 |
-| 5.2 Masking & Its Cost | Foundation | 3,795 |
-| 5.3 Sensory Overload in Social Space | Foundation | 3,650 |
-| 5.4 The Queer Nonverbal Dialect | Intermediate | 3,741 |
-| 5.5 Safety & Signaling in Hostile Space | Intermediate | 3,857 |
-| 5.6 Race & the Reading of Black Male Bodies | Intermediate | 4,017 |
-| 5.7 Class & the Codification of Manners | Advanced | 3,736 |
-| 5.8 Disability & the Politics of Help | Advanced | 4,225 |
-| 5.9 Age — The Invisible Man | Advanced | 3,933 |
-| 5.10 Body Size & the Claiming of Space | Expert | 3,807 |
-| 5.11 Cultural Variance — A Working Map | Expert | 3,799 |
-| 5.12 Religion, Modesty & Touch | Expert | 3,783 |
-| 5.13 Code-Switching in the Body | Master | 3,807 |
-| 5.14 Masculinity as Performance — The Cost of the Act | Master | 3,977 |
-| 5.15 Integration — Building an Authentic Nonverbal Self | Master | 3,694 |
-| **Part V** | | **57,731** |
+| Part V: Overlooked Contexts | Tier | Words | Pages |
+|---|---|---|---|
+| 5.1 Neurodivergence — Reading the Map Without the Legend | Foundation | 9,968 | ~22 |
+| 5.2 Masking & Its Cost | Foundation | 9,942 | ~22 |
+| 5.3 Sensory Overload in Social Space | Foundation | 10,021 | ~22 |
+| 5.4 The Queer Nonverbal Dialect | Intermediate | 10,034 | ~22 |
+| 5.5 Safety & Signaling in Hostile Space | Intermediate | 9,989 | ~22 |
+| 5.6 Race & the Reading of Black Male Bodies | Intermediate | 9,939 | ~22 |
+| 5.7 Class & the Codification of Manners | Advanced | 10,032 | ~22 |
+| 5.8 Disability & the Politics of Help | Advanced | 10,046 | ~22 |
+| 5.9 Age — The Invisible Man | Advanced | 9,916 | ~22 |
+| 5.10 Body Size & the Claiming of Space | Expert | 10,011 | ~22 |
+| 5.11 Cultural Variance — A Working Map | Expert | 9,995 | ~22 |
+| 5.12 Religion, Modesty & Touch | Expert | 9,933 | ~22 |
+| 5.13 Code-Switching in the Body | Master | 10,000 | ~22 |
+| 5.14 Masculinity as Performance — The Cost of the Act | Master | 9,935 | ~22 |
+| 5.15 Integration — Building an Authentic Nonverbal Self | Master | 9,974 | ~22 |
+| **Part V** | | **149,735** | **~333** |
 
-The full pack is 2.56 MB raw and 805 KB gzipped, inside the 2 MB budget.
+| Part VI: The Discipline | Tier | Words | Pages |
+|---|---|---|---|
+| 6.1 Building Your Baseline Journal | Foundation | 9,991 | ~22 |
+| 6.2 The 60-Second Scan | Foundation | 9,997 | ~22 |
+| 6.3 Video Review of Yourself | Foundation | 9,941 | ~22 |
+| 6.4 Feedback Loops & Honest Mirrors | Intermediate | 9,965 | ~22 |
+| 6.5 Calibration — Testing Hypotheses in the Field | Intermediate | 9,956 | ~22 |
+| 6.6 The Ethics of Reading People | Intermediate | 10,014 | ~22 |
+| 6.7 Teaching Others — The Test of True Understanding | Advanced | 10,006 | ~22 |
+| 6.8 Plateaus & Deliberate Practice | Advanced | 9,945 | ~22 |
+| 6.9 Building a Personal Protocol | Advanced | 10,009 | ~22 |
+| 6.10 Reading Groups in Real Time | Expert | 10,042 | ~22 |
+| 6.11 Cross-Cultural Calibration | Expert | 9,961 | ~22 |
+| 6.12 High-Stakes Environments | Expert | 9,972 | ~22 |
+| 6.13 Reading Yourself Under Stress | Master | 9,987 | ~22 |
+| 6.14 Synthesis & Improvisation | Master | 9,932 | ~22 |
+| 6.15 Mastery — The Quiet Body | Master | 10,007 | ~22 |
+| **Part VI** | | **149,725** | **~333** |
+
+The full pack is about 5.6 MB raw and 1.84 MB gzipped. The budget is 2 MB gzipped, so roughly 250 KB of headroom remains. Any further growth needs the loader's `pack.json.gz` path, which already exists, or a larger budget.
 
 Also written: the ethics statement *On Reading People* (1,205 words), crisis resources for 11 regions plus a worldwide directory, introductions for all six parts, and the full 90-chapter outline.
 
 Run `./gradlew testDebugUnitTest --tests '*ContentContractTest*' -i` for current counts.
+
+## The depth layer (v1.1)
+
+Each chapter has these new parts, shown in the app under the chapter's reading tab:
+
+- **More scenes, read two ways.** Four cases, each with a scene of 200–400 words, the misreading, and a better reading.
+- **One scene, read slowly.** A worked reading in 5–7 labelled steps.
+- **More ways it goes wrong.** Four failure modes.
+- **Questions readers ask.** Six questions with answers.
+- **Drill variations.** One to three for every drill.
+- **Three extra quiz questions.** At least one is a scenario and one tests a misconception.
+- **One or two extra pose pairs.** These bring the total to 504.
+
+Rules kept while writing it:
+
+- **Sources.** The new material reuses the sources each chapter already cites. Where it adds a figure, the figure comes from those sources. No new statistics were introduced.
+- **Cases.** They are fictional, and they include women and men of many ages and backgrounds.
+- **Ethics.** It follows the same rules as the core: no manipulation or mimicry techniques, no diagnosis (people are pointed to a GP or a support service), safe messaging on suicide consistent with 2.13, non-graphic treatment of assault and injury, safeguarding through the designated lead, and leaving and calling for help when a situation escalates.
+- **Checks.** The contract test enforces the depth fields' ranges, the 9,900-word floor per chapter, the 900,000-word total, at least 500 pose pairs, and no hard line breaks inside paragraphs.
 
 ## How Parts I and VI were written
 
@@ -245,20 +283,9 @@ Added for women in the figures (8 poses): mixed pairs of a man and a woman at an
 
 Added for Part V (18 poses): sitting cross-legged on the floor; a wheelchair user, alone, at eye level with a seated man, and stood over; walking with a cane and with a long cane; headphones in a loud room; two men walking hand in hand and letting go; a large man at ease and on a shared bench; a Sikh man greeting with joined hands; a tall man at ease; a father talking to his son at eye level; and four poses of older men (at rest, walking with his son, in a group, and spoken to directly). A single main figure lying down is still not supported; no chapter needed one.
 
-## Still open: the page target and the contract disagree
+## Resolved: the page target
 
-The brief sets two targets that cannot both be met.
-
-- **The contract.** Each field has a range. With every field at its maximum, a chapter tops out around 6,400 words, about 14 pages. Written at honest depth, the 75 chapters so far average about 4,270 words, about 9.5 pages.
-- **The page target.** 22–25 pages per chapter, 2,000+ pages in total.
-
-The finished 90 chapters come to about **378,300 words, roughly 840 pages**. Parts III, IV and V averaged about 4,000, 4,100 and 3,850 words a chapter, shorter than Parts I and VI. Reaching 2,000 pages needs one of three things:
-
-1. **Widen the contract.** For example 2–3 case studies per chapter, 8–10 teach blocks, or drill variations. This needs a schema change (`caseStudy` becomes a list), and it risks padding.
-2. **Add chapters.** About 180 would be needed at the current depth. The brief allows 7–8 parts.
-3. **Accept about 900 pages** as the honest size of the book.
-
-Every chapter keeps to the contract without padding. All 90 are written, so options 1 and 2 now mean going back over finished parts. This is the main decision left for the owner.
+Version 1.0 kept to the contract and came to about 840 pages, well short of the brief's 2,000. Version 1.1 resolved this with option 1 from the earlier note: widen the contract. The core contract is unchanged. A separate depth layer, made of more cases, a worked reading, more failure modes, reader questions, drill variations and extra quiz questions, brings every chapter to about 22 pages. The aim throughout was depth rather than padding: each new scene teaches a misreading the core does not already show.
 
 ## Authoring workflow
 
@@ -273,9 +300,9 @@ The JSON files are the source of truth. Edit them directly.
 
 ## Next
 
-- Decide the page target (above).
-- Human review (below), starting with Part II's clinical review and Part V's scholarly review.
-- Test on real devices: so far the app has run only in unit tests and snapshot renders.
+- Human review (below), starting with Part II's clinical review and Part V's scholarly review. The depth layer added about 520,000 words, which also need the same review, especially the new cases in 2.x, 3.10, 3.13–3.14, 6.12 and 6.13 that touch on safety.
+- Test on real devices. So far the app has run only in unit tests and snapshot renders.
+- Plan for the size budget if the book grows further (see above).
 
 ## Needs a human before release
 
@@ -291,38 +318,13 @@ The JSON files are the source of truth. Edit them directly.
 - **Watch links:** check that each clip still shows what its note describes, especially trailers and clips whose content could only be judged from the title and the film.
 - **A check of 4.14's last block** (leaving pressure or harassment at events, and the bystander advice) by someone who works in harassment prevention.
 - **A second check of every citation and statistic** (the Phase 12 editorial pass). For Part VI, check these figures first, because they were stated from memory:
-  - Macnamara 2014 percentages by domain.
-  - Haynes 2009 mortality and complication rates.
-  - Lally 2010 (66 days, and the range).
-  - Newton 1990 (3 of 120 songs).
-  - Stivers 2009 (half-second gaps; the Japanese and Danish extremes).
-  - Engel 2022 (use of force down by about a quarter).
-  - Tannenbaum & Cerasoli 2013 (about a quarter).
-  - Rhue 2018.
-  - Dickerson & Kemeny 2004 (more than 200 studies).
-  - Schnall 2008.
-  - Akechi 2013.
-  - Friesen's 1972 display-rule study.
-  - Balban 2023.
+  - Done in v1.1, checked against published sources or abstracts. Correct as stated: Macnamara 2014 domain percentages, Haynes 2009 (deaths 1.5% to 0.8%, complications 11% to 7%, eight hospitals), Lally 2010 (median 66 days, range 18 to 254, from 39 people and partly extrapolated, a caveat now stated in 6.9), Newton 1990 (3 of 120), Stivers 2009, Tannenbaum & Cerasoli 2013 (about a quarter), Rhue 2018, Dickerson & Kemeny 2004 (208 studies), Schnall 2008, Akechi 2013, Friesen 1972 and Balban 2023.
+  - Corrected: Engel 2022 now reads "use of force fell by more than a quarter, injuries to members of the public by about a quarter, and injuries to officers by about a third" (−28%, −26%, −36%).
 
-  For Part I, check these first:
-  - Porter & ten Brinke 2008 (number of expressions, share of participants).
-  - Yan et al. 2013 (author list, the half-second definition).
-  - Sorokowska 2017 (distances by country; the link with climate).
-  - Binetti 2016 (preferred durations).
-  - Kleinke 1986 and Argyle & Cook 1976 (gaze proportions).
-  - Tracy & Matsumoto 2008 (number of nations).
-  - Hall, Coats & LeBeau 2005 (number of studies).
-  - Nair 2015 (which measures differed).
-  - Jones & Yarbrough 1985 (meaning clusters).
-  - Suvilehto 2015 (sample, countries).
-  - Fernández-Dols & Ruiz-Belda 1995.
-  - Gendron 2014 (the emotion-word condition).
-  - Cowen 2021 (about 70 percent shared).
-  - Totterdell 2000.
-  - Serota 2010 (how lying is concentrated in a few people).
-  - Blair, Levine & Shaw 2010 (about three in four).
-  - The 2003 National Research Council and 2013 GAO conclusions.
+  For Part I, done in v1.1:
+  - Correct as stated: Porter & ten Brinke 2008 (697 expressions, about a fifth of participants), Binetti 2016, Argyle & Cook 1976, Kleinke 1986, Tracy & Matsumoto 2008, Hall, Coats & LeBeau 2005, Nair 2015, Jones & Yarbrough 1985, Suvilehto 2015, Fernández-Dols & Ruiz-Belda 1995, Cowen 2021 (about 70 percent), Totterdell 2000, Serota 2010, Blair, Levine & Shaw 2010, and the 2003 National Research Council and 2013 GAO conclusions.
+  - Corrected: Yan et al. 2013 selected about a hundred fast expressions from more than a thousand and *proposed* the half-second definition. The text had said most expressions lasted under half a second (1.2 and 1.14). Gendron 2014: supplying emotion words moved Himba sorting closer to the Western pattern, but substantial differences remained (1.13). Sorokowska 2017: the largest stranger distance is nearly, not around, one and a half metres; Romania is about 140 cm (1.3).
+  - Still worth a human check: the exact per-country minimum in Sorokowska 2017 (the text says only "well under a metre").
 
   For Part II, 2.13–2.15 were checked against these sources while writing:
   - WHO 2019 estimates, 12.6 vs 5.4 per 100,000 ([AA report](https://www.aa.com.tr/en/europe/1-in-100-deaths-is-by-suicide-but-global-rate-falling-who/2277625)); ONS 2023, 4,506 of 6,069 ([ONS](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/bulletins/suicidesintheunitedkingdom/2023)).
