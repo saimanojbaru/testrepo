@@ -80,6 +80,13 @@
    "doCaption": "Ten minutes to debrief while it is still fresh.",
    "dontCaption": "Straight from the crisis to the next thing.",
    "annotation": "A debrief within hours catches what the narrowed attention missed, before memory replaces it with a story."
+  },
+  {
+   "doPoseId": "p_pair_work_together",
+   "dontPoseId": "p_stand_hands_hips",
+   "doCaption": "One talks, one watches, both briefed",
+   "dontCaption": "Going in alone, trying to talk and watch at once",
+   "annotation": "Talking under pressure takes most of your attention. A briefed watcher sees the edges of the room that the talker cannot."
   }
  ],
  "caseStudy": "Kwame, forty-seven, is a duty manager at a busy railway station. On a Friday evening a man starts shouting at a ticket barrier, slamming his palm on the glass. Two of Kwame's staff begin to move towards him, and the people nearby step back.\n\nKwame stops his colleague Ade and gives a ten-second pre-brief. *I'll talk. You watch his hands and the people around him. If you see anything I should know, touch your ear.* He names his expectation to himself, a fight, and a rival, someone in trouble.\n\nHe approaches at an angle, stops a couple of metres away, keeps his hands open at his sides, and speaks more quietly than the man is shouting. *I'm Kwame, I run the station tonight. Tell me what's happened.* The man shouts that the barrier will not take his ticket. Kwame is watching the man's hands, which are still slapping the glass. Ade touches his ear.\n\nKwame glances where Ade is looking. By a pillar stands a girl of about eight with a small rucksack, crying. The man keeps glancing at her. Kwame had not seen her at all. *Is she with you?* he asks. The man's shoulders drop. She is his daughter. He is meant to hand her over to her mother at the other end of the line, the custody arrangement is strict, and his ticket is for the wrong day.\n\nKwame lets them through and phones ahead to the other station. The whole thing takes six minutes.\n\nAfterwards he and Ade run a short debrief in the office. What did they expect? A fight. What happened? A frightened father. What did Kwame miss? The girl, because his attention had narrowed to the hands. What will they do next time? Exactly the same split, because the watcher saw what the talker could not.",
@@ -98,6 +105,11 @@
     "Mark the reasons that are about you rather than the other person.",
     "Turn each marked reason into a plan, and each thing you might miss into a sign to watch for.",
     "Compress the result to three lines: what you expect, the rival you will watch for, and the one thing you must not do."
+   ],
+   "variations": [
+    "Run the premortem for a conversation that has already happened, and compare your list with what actually went wrong.",
+    "Ask a trusted friend to add three reasons to your list that you did not think of, without seeing your three lines first.",
+    "Run a premortem for a conversation you expect to go well, and see whether it finds anything you would otherwise have missed."
    ]
   },
   {
@@ -109,6 +121,11 @@
     "Silently name three things you see at the edges.",
     "Within an hour, write down everything you can remember about the edges of the scene.",
     "Compare it with a similar note from a calm situation, and record the difference."
+   ],
+   "variations": [
+    "Repeat the drill in a crowded place, such as a busy station, and see how much of the edges you can name while moving.",
+    "Do the edge check at the start of a tense meeting as well as at its tensest moment, and compare what you saw each time.",
+    "Ask a colleague who was present to write down what they noticed at the edges, and compare it with your own note."
    ]
   },
   {
@@ -120,6 +137,11 @@
     "During the meeting, the talker pauses at least once to check for the signal.",
     "Afterwards, the watcher reports what they saw that the talker missed.",
     "Swap roles at the next suitable meeting and compare what each of you noticed."
+   ],
+   "variations": [
+    "Try the split on a recorded interview first, with one of you watching only the interviewer and the other only the guest.",
+    "Change what the watcher looks for at each meeting, and record which brief produced the most useful report.",
+    "Agree a second signal that means something urgent, and practise both signals before a meeting where they might be needed."
    ]
   },
   {
@@ -131,6 +153,11 @@
     "Ask your friend which of your behaviours made them calmer and which made them angrier.",
     "Run it again with your friend raising the intensity slightly.",
     "Write down the one physical habit that was hardest to hold, and practise it alone for five minutes."
+   ],
+   "variations": [
+    "Rehearse the scenario sitting down, as you might at a desk or counter, and notice which elements are harder to use from a chair.",
+    "Rehearse leaving: at a pre-agreed moment, say your prepared sentence and step away, and practise it until it feels natural.",
+    "Record the rehearsal on your phone and watch it back with the sound off, noting every movement that might read as a challenge."
    ]
   },
   {
@@ -142,6 +169,11 @@
     "Answer: why was there a difference, including where your attention was and what you missed.",
     "Note whether your questions or your body may have shaped the behaviour you saw.",
     "Write one specific thing you will do differently next time."
+   ],
+   "variations": [
+    "Run the review for a high-stakes situation that went well, and look for any luck you might otherwise have called skill.",
+    "Ask someone who was present to answer the four questions separately, then compare your answers with theirs.",
+    "Keep a running list of the one thing you will do differently from each review, and read it before the next hard conversation."
    ]
   }
  ],
@@ -223,6 +255,45 @@
    "explain": "Splitting talking from watching keeps someone's attention wide, and an angled stance, open hands and a lower voice refuse to join the escalation. If you see a weapon or things get worse, get to safety and call for help.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Findley and Scott describe in 2006 about investigators who settled early on a suspect in cases that ended in wrongful convictions?",
+   "options": [
+    "That they deliberately invented evidence against suspects they disliked, knowing that it was false",
+    "That they were careless, and simply failed to collect the evidence that would eventually have cleared the suspect",
+    "That they were usually right, and the convictions were overturned on technical points of procedure",
+    "That they noticed the evidence that fitted, explained away the rest and stopped looking, without bad faith"
+   ],
+   "answer": 3,
+   "explain": "Tunnel vision does not require bad faith. It is what attention does under pressure once it has a target, which is why naming a rival before the stakes rise matters so much.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "What did Tannenbaum and Cerasoli find in 2013 when they combined studies of debriefs?",
+   "options": [
+    "That debriefs made no measurable difference to performance, though most people said that they enjoyed them",
+    "That teams and individuals who debriefed improved their performance by about a quarter on average",
+    "That debriefs helped only in simulations, and made no difference to real teams doing real work",
+    "That debriefs worked only when they were run by outside experts with expensive video equipment"
+   ],
+   "answer": 1,
+   "explain": "The improvement held for real teams as well as in simulations, and did not depend on expensive equipment. A short, blameless review within hours of an event is one of the cheapest ways to get better at high-stakes work.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Someone says de-escalation training is soft and makes officers less safe. What did Engel and colleagues find in Louisville in 2022?",
+   "options": [
+    "That injuries to officers rose sharply, because the training made them slower to protect themselves",
+    "That the training changed nothing, since use of force and injuries stayed exactly where they had been",
+    "That use of force fell by more than a quarter, and injuries to officers fell by about a third",
+    "That the training was abandoned after a few weeks, before anyone could measure what it had done"
+   ],
+   "answer": 2,
+   "explain": "After the training, use of force fell by more than a quarter, injuries to members of the public by about a quarter, and injuries to officers by about a third. Lowering the temperature made the situations safer for everyone in them, including the people trained.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -251,6 +322,110 @@
    "work": "Do team and individual debriefs enhance performance? A meta-analysis",
    "author": "Scott I. Tannenbaum and Christopher P. Cerasoli",
    "note": "Human Factors 55(1), 2013. The evidence that structured debriefs improve performance."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The mother who went in with a verdict",
+   "scene": "Lisa, forty-six, has been worried about her son Jamie, sixteen, for a month. He has been staying in his room, keeping his phone face down, snapping at his sister, and twice she has heard him up at three in the morning. On Tuesday she finds that he has deleted the messages app from the family tablet he usually uses. A friend at work, whose nephew got into trouble, says it sounds like drugs.\n\nThat evening Lisa waits for Jamie in the kitchen. When he comes in she says, *I know what's going on. I want the truth.* Jamie stops in the doorway. His face goes red, he crosses his arms, and he says he does not know what she is talking about. Lisa asks who he is buying from. Jamie says she is mad. Lisa asks why, if he has nothing to hide, he has deleted his messages. Jamie shouts that she never trusts him, goes upstairs and slams the door.\n\nLisa sits at the table shaking, now more certain than before. An innocent boy, she thinks, would not have reacted like that.\n\nTwo weeks later Jamie's form tutor rings. Another pupil has reported that a group from Jamie's year has been sending him abusive messages every night for over a month, and that he had deleted the app so that his little sister would not see them.\n\nJamie's sister, eleven, had heard everything from the landing. She did not come down to dinner.",
+   "misread": "Lisa read Jamie's red face, crossed arms and anger as the defensiveness of guilt. She had gone in with a verdict, and her questions presumed it, which pushed him into exactly the defensiveness she then took as proof.\n\nShe also read her friend's story about a nephew as evidence about her own son, which gave her expectation a borrowed certainty before she had spoken to him.",
+   "betterRead": "This is the Kassin, Goldstein and Savitsky pattern in a kitchen. Interrogators who expected guilt asked guilt-presuming questions, pressed harder, and produced defensive behaviour in innocent people, which observers then read as guilt. A boy accused of something he has not done reacts much as a guilty one would. A premortem would have helped: *It is an hour from now and the conversation went badly. Why?* Because I accused him, because I was wrong, because he was hiding something else. The better opening was a question an innocent person could answer calmly: *You've seemed really unhappy lately, and I'm worried. Is something going on?*\n\nWhen Lisa finally asked that question, after the form tutor's call, Jamie cried, and told her everything. The school dealt with the group, and Lisa apologised for the kitchen.\n\nThe question would not have stopped Jamie being upset. It would have left room for the true answer, instead of a fight about the wrong one."
+  },
+  {
+   "title": "The store detective's tunnel",
+   "scene": "Gary, fifty, has worked as a store detective in a large department store for twelve years. On a Saturday afternoon two teenage boys in hooded tops come into the electronics section, and Gary's attention locks on. He has seen boys like this steal headphones before. He follows them at a distance, watching their hands and their pockets as they pick up boxes, put them down and laugh at something on a phone.\n\nFor twenty minutes he watches nothing else. The boys handle several boxes and put each one back. Gary is certain they are waiting for their moment.\n\nAt the end of the afternoon the stock count shows that six pairs of expensive headphones have gone from the very display Gary was standing near. The store's cameras show a well-dressed man in his forties, carrying a large shopping bag from another shop, filling it from the display while Gary stood five metres away, facing the other direction, watching the boys.\n\nThe boys left without buying anything. On the camera footage, one of them can be seen asking an assistant about a pair of headphones, checking the price on his phone and leaving with his friend.\n\nGary's report for the afternoon describes the boys in detail, with times and movements, and does not mention the man at all.\n\nGary is good at his job. In twelve years he has caught more shoplifters than anyone else in the store, which is part of why he trusts the feeling.",
+   "misread": "Gary read two teenagers in hoods as thieves before they had done anything, and his attention narrowed to the threat he expected. Everything outside that beam, including the actual theft happening beside him, went unseen.\n\nHe also read his own long experience as protection against error, when it was what gave the expectation its force.\n\nAnd he read the boys putting every box back as patience, the kind of detail that would have counted against his reading if he had been looking for one.",
+   "betterRead": "Narrowing has a direction: towards whatever you already believe is the threat. Findley and Scott described the same pattern in criminal investigations, and Gary's afternoon is the same thing at small scale. He noticed every movement that fitted, explained away the boys putting everything back as waiting, and stopped looking anywhere else. Naming the expectation and a rival would have given his attention two targets instead of one, and the store's practice changed after that afternoon. Detectives now work in pairs on busy days, one following any suspicion and the other keeping the wider floor in view.\n\nGary also started writing down, at the start of each shift, one expectation he held and one rival, which he found embarrassing at first and useful within a week.\n\nWhen the store manager asked him what had happened, Gary said, to his credit, that he had been watching the wrong people for the wrong reasons."
+  },
+  {
+   "title": "The founder who negotiated alone",
+   "scene": "Rebecca, forty-one, is selling the software company she started ten years ago. The first full negotiating session with the buyer is in a hotel meeting room: Rebecca on one side, and on the other the buyer's chief executive, its finance director and a lawyer. Her co-founder, Ian, offered to come, but Rebecca decided that she knows the numbers best and that two people on her side might look nervous.\n\nFor three hours she talks almost without a break: answering questions, defending the valuation, explaining the growth figures. She watches the chief executive, who is friendly and seems keen. She leaves feeling that the session went well and that a deal is close.\n\nThe buyer's next offer is twenty percent lower than the one discussed in the room. Their email cites concerns about customer contracts that Rebecca does not remember being raised. When she rings the chief executive, he says the finance director had raised them several times.\n\nRebecca goes back through her notes. She has three pages on what the chief executive said and almost nothing on the finance director, who, she now remembers vaguely, sat slightly apart and spoke quietly.\n\nIan had suggested a simple split before the session, him watching and her talking, and she had said it was not that kind of meeting.\n\nIn the taxi afterwards she rings Ian and tells him it could not have gone better.",
+   "misread": "Rebecca read the session through the person she was talking to, and read his friendliness as the buyer's position. Talking for three hours under high stakes left her with no attention for the quieter person who was raising the concerns that would shape the offer.\n\nShe also read her own fluency in the room, three hours of confident answers, as a sign that the session was going her way.",
+   "betterRead": "It is very hard to talk and watch at the same time when the stakes are high, which is why professions that work under pressure split the two jobs. For the next session Rebecca brought Ian, and they agreed in advance who would talk and who would watch: Ian would watch the finance director and the lawyer, and touch his pen when either reacted to something Rebecca said. Twice in the first hour he touched it, both times at questions about contract terms. Rebecca stopped and asked the finance director directly what concerned her. They spent an hour on it, and the final price came back most of the way.\n\nRebecca said afterwards that the hardest part was letting Ian sit there and say nothing, which felt like wasting him. It was the most useful thing he did all year."
+  },
+  {
+   "title": "The pharmacist who stepped back",
+   "scene": "Siobhan, thirty-three, runs a small community pharmacy. Late one afternoon a man in his thirties comes to the counter for a prescription that has not yet arrived from the surgery. He is angry and loud from the start. Siobhan does what she has practised: she stands at an angle, keeps her hands open and still on the counter, lowers her voice, and says she can see this is a real problem and she will ring the surgery now.\n\nFor a minute it seems to help. Then the man's voice rises again. He starts to swear, leans across the counter, and sweeps a display of leaflets onto the floor. Siobhan's assistant, Joy, nineteen, is standing behind him by the shelves, frozen.\n\nSiobhan feels a strong pull to keep trying: to find the sentence that will bring him down, to stay calm and in control, to not be the pharmacist who called the police over a prescription.\n\nInstead she says, steadily, *I'm going to step into the back and ring the surgery,* and she signals to Joy to come round the counter. They go into the back room together and Siobhan locks the door and calls the police. The man leaves before they arrive.\n\nAfterwards, in the back room, Siobhan's hands shake so much that she has to put the phone on the desk to dial.",
+   "misread": "Siobhan's first impulse read the situation as one she should still be able to manage with the right words. The pull to stay and keep trying was a reading of her role, not of the danger, which was rising despite everything she had done.\n\nJoy read her own freezing, afterwards, as a sign that she was no good at the job, which was not true and needed saying.",
+   "betterRead": "The elements of de-escalation are ways of making a situation less dangerous for everyone, not techniques for winning. They do not replace judgment about safety, and when a situation is getting worse despite your efforts, the right action is to get yourself and others to safety and call for help. Siobhan read the escalation correctly: a voice rising again after calming, physical damage, a colleague in the line of it. Leaving was the reading, not a failure of it. The debrief the next morning was blameless. Joy said she had frozen because she did not know what she was meant to do, and they agreed a simple plan for next time: a word that means *go to the back now*.\n\nSiobhan also reported the incident to her area manager and asked for de-escalation training for the whole team, including what to do when it does not work.\n\nJoy said, months later, that the most useful thing Siobhan had told her was that leaving is part of the job."
+  }
+ ],
+ "workedReading": {
+  "title": "A difficult family meeting, start to finish",
+  "scene": "Helen, fifty-two, manages a care home. Mrs Reid, eighty-eight, one of the residents, fell in her room on Sunday night and was taken to hospital with a broken wrist. Her son, Daniel, has demanded a meeting, and his email is furious: he says the home is understaffed and negligent, and that he is making a formal complaint. The meeting is on Wednesday. Daniel will come with his sister, Claire, whom Helen has met once. Helen has decided to run the whole sequence from this chapter: a premortem, a pre-brief, a divided watch, and an after-action review. Her deputy, Sunita, forty, will sit in.\n\nShe has also read Mrs Reid's care notes for the past six months, so that she knows the facts before she has to think under pressure.\n\nHelen knows her own habit under pressure, which is to explain and defend, and she has planned the meeting around it.",
+  "steps": [
+   {
+    "label": "Run the premortem",
+    "text": "On Tuesday afternoon Helen writes at the top of a page: *It is Wednesday at four and the meeting went badly. Why?* She lists every reason she can think of. I got defensive about staffing. I talked over Daniel. I treated it as a complaint to manage rather than a frightened son. I missed what Claire thought. I promised something I cannot deliver. I did not find out what they actually want. Then she marks the reasons that are about her. All but one are.\n\nThe one reason that is not about her is Daniel's anger. She notes that it is the only one she cannot change, and the one she would have spent most time on if she had not done the exercise."
+   },
+   {
+    "label": "Three-line pre-brief",
+    "text": "She compresses the premortem into three lines and learns them. *I expect: anger at me, and a demand for someone to be blamed. The rival I'll watch for: fear and guilt, about their mother and about not visiting. The one thing I must not do: defend the staffing before I have heard them out.* She also writes down what she knows about the fall, in order, so that she does not have to work it out under pressure.\n\nShe also decides what she can and cannot offer, so that she will not promise anything in the room that she has not thought through."
+   },
+   {
+    "label": "Brief the watcher",
+    "text": "On Wednesday morning she briefs Sunita. *I'll talk. You watch Claire, and Daniel's hands. If either of them reacts strongly to something I say, or if Claire looks as if she wants to speak, put your pen down on the table.* She also asks Sunita to note anything she sees outside what Helen is attending to, and to say nothing in the meeting unless Helen asks her a direct question.\n\nShe also tells Sunita that if the meeting becomes abusive, she will end it, and that Sunita should take Claire out first if that happens.\n\nSunita asks what she should do if she sees something Helen ought to know urgently. They agree that she will say Helen's name, which in that room will be enough."
+   },
+   {
+    "label": "Open with a question",
+    "text": "When they arrive, Helen sits at the corner of the table rather than across it, and before saying anything about the fall, she asks Daniel how his mother is. He starts angry, as she expected: the staffing, the negligence, the complaint. Helen listens without interrupting, keeps her voice low and slow, and says she can see how frightening Sunday night must have been. Daniel's voice drops a little. Then he says, quietly, that he only found out at seven the next morning.\n\nThat sentence changes the meeting. The anger, Helen realises, is partly about the hours he did not know, lying awake afterwards.\n\nHelen lets the silence after that sentence sit. She does not fill it with an explanation, which is what she would usually do."
+   },
+   {
+    "label": "The signal from the watcher",
+    "text": "At that point Sunita puts her pen down. Helen glances at Claire, whom she had barely looked at. Claire is holding a folder on her lap and has been nodding at every point about staffing. Helen asks her directly: *Claire, is there something you'd like to add?* Claire opens the folder. It holds a list, dated over six months, of small things she has noticed on visits: a call bell out of reach, a cold cup of tea, her mother's glasses left on the windowsill. She had never raised them because she did not want to make a fuss.\n\nHelen thanks Claire, says she should have been told about these things directly, and asks whether she may take a copy of the list."
+   },
+   {
+    "label": "After-action: four questions",
+    "text": "That afternoon Helen and Sunita run the review. What was supposed to happen? A meeting that heard the family out and agreed next steps. What happened? Mostly that, with a written list of concerns that changed the meeting. Why the difference? Helen's attention had narrowed to Daniel, the person she expected to be the problem. Sunita saw Claire. What will they do differently? Use the same split in every family meeting about an incident, and ask families for written concerns at every review.\n\nThey also note the thing Helen nearly did: defend the staffing levels in her first answer. The pre-brief line stopped her."
+   },
+   {
+    "label": "What changed afterwards",
+    "text": "Helen also writes down the part of the review that was about her own reading. She had expected anger and seen it; the rival she had named, fear and guilt, was also there, in Daniel's dropped voice when he mentioned seven in the morning. The family's complaint was withdrawn a month later, after the home changed its night-time procedure for informing families. Claire now emails Helen directly whenever she notices something.\n\nShe also shares the review, without names, with the other managers in her group, so that the split becomes standard practice.\n\nSunita's note from the meeting has one line Helen had not seen: Daniel touched his mother's photograph on the wall as he left."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Running a premortem only on the other person",
+   "body": "A premortem is easy to do badly. Asked why a hard conversation went wrong, most people list the other person's failings: he lost his temper, she lied, they would not listen. Those reasons may be true, but they give you nothing to do, and they confirm the expectation you went in with. The useful reasons are the ones about you: I assumed, I talked too much, I missed what was happening at the edges, I defended myself before I had heard them out. Mark those, and turn each into a plan. If your list contains no reasons about yourself, do it again and force yourself to write three. The premortem's power comes from imagining the failure as certain, and the failure you can most affect is your own. It is also the one your narrowed attention will be least able to see on the day.\n\nA useful check is to show your list to someone who knows you and ask which reason they think is most likely. It is usually one you wrote last, or one you did not write at all."
+  },
+  {
+   "title": "A watcher with no brief",
+   "body": "Bringing a colleague to a hard meeting helps only if they know what their job is. A watcher with no brief tends to watch whatever you are watching, usually the person who is talking, and so sees the same narrow slice you do. Or they join in, adding a second voice and taking their own attention away from watching. Or they see something important and have no way of telling you. Before the meeting, tell the watcher specifically whom or what to watch, which may be a quiet person, someone's hands or the door. Agree a discreet signal and a moment when you will check for it. Agree too whether they may speak, and when. A brief takes two minutes and turns a second person in the room from company into a second pair of eyes.\n\nThe watcher's notes are also the best material for the debrief, but only if the watcher knew what to look for.\n\nWhen you are the watcher, resist the urge to help by joining in. Your silence is what makes your attention available."
+  },
+  {
+   "title": "Telling someone to calm down",
+   "body": "Almost everyone who is angry or frightened has been told to calm down, and almost nobody has calmed down because of it. The phrase tells the person that their reaction is the problem, and that you are in charge of how they feel. It tends to raise the temperature rather than lower it. The same is true of a soothing, sing-song voice, which people under stress hear as condescension. De-escalation is mostly something you do with your own body and voice, not something you instruct the other person to do. Lower your own voice rather than asking them to lower theirs. Slow your own speech. Acknowledge the problem plainly: *I can see this has gone badly wrong for you.* Calm spreads when it is shown, not when it is demanded.\n\nIf you notice yourself about to say the phrase, take a breath and say what you can see instead.\n\nThe same goes for *there's no need to shout*, *let's all be reasonable* and *I understand how you feel* said before you have heard them. Each tells the person how to feel, rather than showing them that you have listened."
+  },
+  {
+   "title": "Treating the debrief as a verdict on a person",
+   "body": "After a high-stakes situation goes badly, a debrief can easily turn into a hunt for whoever made the mistake. The person who froze, the one who said the wrong thing, the one who did not spot the danger: each becomes the explanation, and everyone else relaxes. A debrief run that way teaches people to hide what they missed, which is exactly the information it exists to find. Keep the four questions about the situation and the process, not the person: where was attention, what was outside it, what would have helped us see it. When someone did freeze or miss something, the useful question is what would have made it easier to do otherwise, such as a clearer plan, a signal or practice. Siobhan's debrief with Joy produced a code word, not a reprimand.\n\nA blameless debrief is not one in which nothing is anyone's fault. It is one in which the aim is learning rather than punishment, so that people tell the truth about what they missed.\n\nLeaders can make this easier by going first: saying what they missed, plainly, at the start of the review."
+  }
+ ],
+ "questions": [
+  {
+   "q": "What should I do if I am alone with someone who is getting angrier, and nobody is around to help?",
+   "a": "Put safety first. Keep a clear route to the door, and do not stand between the other person and their own way out either, since someone who feels trapped is more dangerous. Keep your distance, or step back if they step forward. Use few words, a low voice and open, still hands, as the chapter describes. Do not argue the point, and do not try to win. If the situation is getting worse despite your efforts, leave, and call the emergency services as soon as you are safe. Your belongings, your shop's stock and your pride do not matter. A reading that it is time to go is a good reading, and acting on it early is better than acting on it late.\n\nAfterwards, write down what happened and report it if it took place at work. Being frightened by someone is worth reporting even when nobody was hurt.\n\nIf you work somewhere that this could happen, such as a shop, a reception or a clinic, ask your employer what the plan is before you need it: where to go, how to call for help, and who else should know."
+  },
+  {
+   "q": "How can I avoid going in with a verdict when the evidence really does look bad?",
+   "a": "Hold the evidence, but do not open with it. Start by asking for the other person's account, with a question an innocent person could answer calmly: *Can you talk me through what happened on Thursday?* Listen to the whole answer before you mention what you know. Then put your evidence plainly and ask about it, rather than presenting it as a trap. Before the conversation, run a premortem with one specific question: *If I turn out to be wrong about this, what would the true story be?* Writing that story down gives your attention a second target. The evidence may still turn out to mean what you thought. But you will have heard the alternative, and the person will have had a fair chance to give it.\n\nIt also helps to have someone else look at the evidence before the conversation, someone with no stake in it, and ask them what else it could mean.\n\nAnd remember that being wrong in private, before the conversation, costs nothing, while being wrong in the room can cost the other person a great deal."
+  },
+  {
+   "q": "Is it ever right to confront someone directly about something serious, such as a worry that they might harm themselves?",
+   "a": "Asking directly is not the same as confronting. If you are worried that someone may be thinking about suicide, the right thing is to ask them, calmly and plainly: *Are you thinking about killing yourself?* Asking does not put the idea in someone's head, and it often brings relief. Listen without arguing or panicking, stay with them if they are at risk, and help them connect with support, such as a GP, a crisis line or, if they are in immediate danger, the emergency services. This app's crisis resources list where to turn, and chapter 2.13 covers this in depth. What this chapter warns against is going in with a verdict about someone's behaviour. Going in with care and a direct question is the opposite.\n\nIf the person is a child or a vulnerable adult and you are worried about their safety, also follow your workplace's safeguarding route and report to the designated lead, rather than investigating yourself.\n\nIf you are not sure what to say, saying that you are worried and asking how they are is already a good start."
+  },
+  {
+   "q": "How do I run a debrief when I was on my own and there was nobody to do it with?",
+   "a": "Use your journal and the four questions, in writing, within a few hours. What was supposed to happen? What actually happened? Why was there a difference? What will I do differently next time? Add the reader's questions: where was my attention, what was outside it, did my own questions or body shape what I saw? Writing forces more honesty than thinking, because a vague answer looks vague on the page. It also helps to tell one trusted person the story briefly, and ask them what they would have noticed. If the situation was frightening, write the facts first and the feelings after, and be kind to yourself in both. A solo debrief is less complete than a shared one, and far better than none.\n\nOver time, a series of solo reviews will show you patterns in where your attention goes under pressure, which is the most useful thing a debrief can teach."
+  },
+  {
+   "q": "Do the de-escalation elements work on the phone or on a video call?",
+   "a": "Partly. On the phone, your voice is the whole of your body, so the voice elements matter even more: lower, slower, fewer words, and a slow breath out before you speak. Silence is harder to read on a phone, so acknowledge what you hear more explicitly than you would in person. On a video call, open and still hands help if they are in view, and sitting back slightly from the camera looks less confrontational than leaning in. Dividing the talking from the watching still works on calls: a colleague can listen, with the other person's knowledge where that is appropriate, and pass you notes. What does not work remotely is distance, so if a call becomes abusive, ending it is the equivalent of stepping back.\n\nWhatever the medium, the de-escalation elements are for safety, not for winning the call.\n\nIf you have to make a difficult call regularly, practise it on the phone with a friend, because the voice elements are harder to hear in yourself than to feel."
+  },
+  {
+   "q": "What if I freeze completely in a high-stakes moment?",
+   "a": "Freezing is common, and it is not a character flaw. Under sudden threat, many people's bodies stop before they act, and the moment can feel much longer than it is. The best preparation is a single physical act and a prepared sentence, rehearsed in advance, which are still available when thinking is not: a slow breath out, a step back, and something like *Give me a moment.* Rehearsal helps more than resolution, which is why the de-escalation rehearsal drill exists. If you froze once, debrief it gently, as Siobhan did with Joy, and agree what would make it easier next time, such as a code word, a clear role or a plan to leave.\n\nIt is also worth knowing that freezing often passes within seconds. A plan for those first seconds is enough.\n\nIf freezing happens often, or stays with you long after the event, it is worth talking to your GP or to an occupational health service, who can help."
   }
  ],
  "watch": [
