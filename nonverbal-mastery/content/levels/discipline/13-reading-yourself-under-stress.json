@@ -81,6 +81,13 @@
    "doCaption": "Saying: let me think about that and come back to you.",
    "dontCaption": "Deciding about him at the peak of the signature.",
    "annotation": "Readings made under stress lean towards threat. Hold them more loosely, and recheck them once you have settled."
+  },
+  {
+   "doPoseId": "p_breath_low",
+   "dontPoseId": "p_stand_freeze",
+   "doCaption": "Checking the stillness against the pulse",
+   "dontCaption": "Going very still, and calling it calm",
+   "annotation": "A quiet stress signature is still a stressed lens. Calm and controlled are not the same thing."
   }
  ],
  "caseStudy": "Nathan, thirty-six, is a senior engineer who leads design reviews at a software company. He is good at the work and dreaded in the reviews. When his own designs are criticised, he reads colleagues as hostile and snaps. Two people have asked to move teams.\n\nAfter the video review chapter he records, with everyone's agreement, two of his own reviews. Watching them is unpleasant. He maps his signature from the recordings and from his partner, who has seen it at home for years. First his jaw sets and he stops blinking. Then his breathing moves high into his chest. Then he starts typing on his laptop, though he is not writing anything. Then his speech speeds up and he begins to interrupt. By the time he hears himself interrupting, it is too late.\n\nHe chooses the jaw as his trigger. When it sets, he names the feeling silently. To his surprise, the word that fits is almost always *ashamed*, not *angry*. He follows it with one long breath out and a reappraisal: *this is my body getting ready; use it to listen*. And he has a sentence ready for when he cannot answer calmly: *Let me look at that properly and come back to you this afternoon.*\n\nIn March, in a review of a design he is proud of, Rosa, the most senior architect, frowns hard at his diagram and says nothing for a long time. He feels his jaw set. The old reading arrives at once: contempt. He names it, ashamed, breathes out, and asks, *What are you seeing?*\n\nRosa says there is a race condition in the cache, and she has been tracing it. Then she says the rest of the design is the best she has reviewed this year.\n\nThat night Nathan checks his ledger. Of ten readings of a colleague as hostile that he made with his signature running, eight were wrong.",
@@ -99,6 +106,11 @@
     "Check the lists against any video of yourself or an honest friend's account, and correct them.",
     "Mark the earliest sign that appears in at least two of the three.",
     "Write your signature as a short sequence, earliest first, at the front of your journal."
+   ],
+   "variations": [
+    "Map your signature separately for anger, fear and shame, using different journal entries, and compare the earliest sign in each.",
+    "Ask two people who know you in different settings, such as work and home, to describe your signature, and compare their accounts.",
+    "Repeat the map after three months and note whether your earliest sign has changed now that you watch for it."
    ]
   },
   {
@@ -110,6 +122,11 @@
     "Write both numbers down side by side.",
     "Repeat for a week, including at least one tense moment.",
     "At the end of the week, note where your ratings matched the measures and where they did not."
+   ],
+   "variations": [
+    "Add a fourth check each day immediately after a stressful moment, and compare it with your three ordinary checks.",
+    "Rate a friend's arousal at the same time as your own in a shared situation, then compare both ratings with what you each report.",
+    "Do the check in the situation where people say you seem most calm, and see whether the pulse agrees."
    ]
   },
   {
@@ -121,6 +138,11 @@
     "Notice whether its intensity changes in the next half minute.",
     "Log each label and the situation.",
     "At the end of the week, write which labels recur and whether any surprised you."
+   ],
+   "variations": [
+    "Add five more words to your list each week, and notice whether the extra words fit moments that the first ten did not.",
+    "At the end of each day, label the strongest feeling you had, and write down what your reading of the other person was at the time.",
+    "Try labelling silently during a film or a television drama, naming what you feel as a scene unfolds."
    ]
   },
   {
@@ -132,6 +154,11 @@
     "Continue for five minutes, letting the count lengthen if it is comfortable.",
     "Repeat once a day for a fortnight, at a time when nothing is at stake.",
     "Then use a single long exhalation before answering in your next three tense conversations, and note what happened."
+   ],
+   "variations": [
+    "Try the exercise standing up, as you would be in a corridor before a meeting, and check that it stays invisible to anyone watching.",
+    "Use the long exhale on the walk to a difficult conversation, and note whether you arrive in a different state.",
+    "Ask someone to watch you take a single long breath out in conversation and tell you whether they could see it."
    ]
   },
   {
@@ -143,6 +170,11 @@
     "Look especially at readings of hostility, contempt or rejection.",
     "Write a rule based on any gap you find, such as holding stressed readings at one band less confidence.",
     "Write your sentence for postponing a response, and practise saying it aloud."
+   ],
+   "variations": [
+    "Add a third tag for readings made when you were tired, and compare its curve with the other two.",
+    "Review the stressed readings of hostility from the past month, and rewrite each as behaviour without the verdict.",
+    "Ask an honest mirror to tell you, after a tense meeting, whether your reading of someone matched what they saw."
    ]
   }
  ],
@@ -224,6 +256,45 @@
    "explain": "Stress biases readings towards threat, especially when the evidence is ambiguous, but it does not make them always wrong. Holding the reading loosely, postponing action and rechecking it calm is the correction.",
    "isMisconceptionTest": false,
    "isScenario": true
+  },
+  {
+   "q": "What did Kircanski, Lieberman and Craske find in 2012 about people afraid of spiders who described their feelings out loud as they approached one?",
+   "options": [
+    "They showed more physiological arousal a week later than those who had tried to distract themselves",
+    "They showed less physiological arousal when they faced the spider again a week later",
+    "They refused to approach the spider at all once they had started to describe their feelings",
+    "They lost their fear entirely and never felt anxious about spiders again for the rest of the study"
+   ],
+   "answer": 1,
+   "explain": "Describing feelings out loud while facing the feared thing reduced physiological arousal a week later, compared with other strategies. Putting a feeling into words seems to change it, which is the point of the silent label.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Before a presentation, what did Alison Wood Brooks find people should tell themselves?",
+   "options": [
+    "That they were calm, because a calm mind performs better than an excited one under any pressure",
+    "That they were anxious, because admitting the feeling openly helps the body to settle down",
+    "That they were excited, which helped them perform better than saying calm or anxious",
+    "Nothing at all, because any words said to yourself before a performance make the arousal worse"
+   ],
+   "answer": 2,
+   "explain": "Saying *I am excited* helped people sing, speak and do arithmetic in front of others better than *I am calm* or *I am anxious*. The same arousal can be read as threat or readiness, and the reading shapes what follows.",
+   "isMisconceptionTest": false,
+   "isScenario": false
+  },
+  {
+   "q": "Someone says that men simply feel less than women, which is why they are worse at noticing their own stress. What does the chapter say?",
+   "options": [
+    "That men have fewer feelings by nature, and that no amount of practice will ever change how much they can notice",
+    "That men and women score exactly the same on every measure, so there is nothing at all to explain",
+    "That women are always worse at noticing stress, because they are taught to hide their feelings more",
+    "That men on average score somewhat higher on difficulty naming feelings, a modest difference that is partly learned"
+   ],
+   "answer": 3,
+   "explain": "Levant argued that many boys are taught to stop noticing and naming feelings that seem soft. The average difference is modest and varies enormously between individuals, and a habit that was learned can be relearned.",
+   "isMisconceptionTest": true,
+   "isScenario": false
   }
  ],
  "reflection": {
@@ -252,6 +323,110 @@
    "work": "Brief structured respiration practices enhance mood and reduce physiological arousal",
    "author": "Melis Yilmaz Balban, Eric Neri, Manuela M. Kogon and colleagues",
    "note": "Cell Reports Medicine 4(1), 2023. A small randomised comparison of breathing practices and mindfulness meditation."
+  }
+ ],
+ "moreCases": [
+  {
+   "title": "The business manager who went still",
+   "scene": "Grace, forty-four, is the business manager of a large primary school, and her colleagues think of her as unflappable. In budget meetings, when the numbers are bad and the head teacher, Mr Collins, is frustrated, she goes very still, speaks briefly and evenly, and keeps her eyes on her papers. Afterwards people tell her they do not know how she stays so calm. Grace believes them. She has always thought of herself as someone who does not get stressed.\n\nWorking through this chapter, she does the body report check for a week. Three times a day she rates her arousal and then takes her pulse. In ordinary moments the two agree. In the budget meeting on Thursday she rates herself at three out of ten, calm, and her pulse, taken under the table while Mr Collins talks, is over a hundred.\n\nLooking back through her journal, she finds something else. Almost every time she has written that Mr Collins was dismissive of her, it was in one of these meetings. When she asks her deputy, who sits beside her in them, what she looks like, he says that she holds her pen very tightly, that she stops nodding, and that her answers get shorter and shorter.\n\nShe also notices that she sleeps badly on the night after each budget meeting, which she had always put down to the late finish.",
+   "misread": "Grace read her own stillness as calm, and so did everyone else. It was her stress signature. And because she did not know she was stressed, she did not know that her readings of Mr Collins as dismissive were being made through a stressed lens.\n\nHer colleagues read her stillness as calm because she had learned, years ago, to keep her face and voice even when things were hard, and nobody had looked below the face.",
+   "betterRead": "This is Garfinkel's distinction in one person: confidence in reading your own body and accuracy in reading it can come apart. Grace's felt sense was a reading made with an imperfect instrument, and her pulse was the calibration. Her signature ran in an order she could now learn: stillness, a tight grip on the pen, no more nodding, shorter answers. She chose the grip as her trigger, because she could feel it. When it came, she named the feeling silently, breathed out slowly, and held any reading of Mr Collins at one band less confidence until she had checked it after the meeting. Most of the dismissiveness softened on review into a head teacher worried about money.\n\nShe also told Mr Collins, at a quiet moment, that she found the budget meetings hard. He said he did too.\n\nThe pulse check became a habit for her in hard meetings, a quiet hand under the table, and within a month she could feel the grip starting before she saw it."
+  },
+  {
+   "title": "The father whose anger turned out to be shame",
+   "scene": "Ravi, thirty-nine, goes to his son's parents' evening alone because his wife is working late. Arjun, twelve, has always done well at school. His maths teacher, Ms Lowe, tells Ravi kindly that Arjun has been falling behind this term, has missed three homeworks and seems distracted in lessons. She suggests they work together on a plan.\n\nRavi feels heat in his face before she has finished. He hears himself say that Arjun has never had a problem before, and asks whether the class is being taught properly. Ms Lowe answers calmly. Ravi reads her calm as condescension and her suggestion of a plan as a judgement on his parenting. He says he will deal with it at home, stands up before the appointment has finished, and leaves.\n\nIn the car park he sits in his car for ten minutes. He thinks he is angry with Ms Lowe. Then he remembers the silent label from this chapter and goes through the list of words in his journal: irritated, cornered, embarrassed, ashamed. *Ashamed* fits, and it fits so well that he says it aloud in the empty car. He has been working long hours since the spring and has barely looked at Arjun's homework in months.\n\nArjun had told him, a few weeks earlier, that he was finding maths hard. Ravi, busy, had said he would look at it at the weekend.",
+   "misread": "Ravi read Ms Lowe as condescending and judging him. The threat he was reading in her was the judgement he feared from himself. What he had called anger began, in his body, as shame.\n\nHe also read the speed of his own reaction as proof that he was right, as if a feeling that arrived so fast must have been about something real in her.\n\nAnd he read Ms Lowe's offer of a plan as an accusation, when it was the help he needed.",
+   "betterRead": "Naming a feeling precisely changes it, and it can also change your reading of the other person. Kashdan and his colleagues found that people who tell their negative feelings apart cope better under stress, and are less likely to lash out when hurt. *Angry with the teacher* pointed Ravi at a fight. *Ashamed* pointed him at the actual problem, which was at home and partly his. The next morning he emailed Ms Lowe, apologised for leaving and asked whether they could arrange another appointment. At the second meeting, with his wife, they agreed a plan. Ravi also started checking homework with Arjun on Sunday evenings, which Arjun complained about and, his mother noticed, seemed to like.\n\nHe kept the list of words in his wallet for a month.\n\nHe also told Ms Lowe, at the second meeting, that he had read her wrongly. She said parents often did at first, and that she had not taken it personally."
+  },
+  {
+   "title": "The presenter who kept telling herself to calm down",
+   "scene": "Olivia, thirty-one, is presenting a proposal to her company's board for the first time. In the lift on the way up her heart is racing and her hands are cold. She tells herself to calm down. In the room, waiting to begin, she tells herself again. It makes no difference. If anything, the racing gets worse, and she starts to worry that the board will see how nervous she is.\n\nAs she presents, she watches the faces round the table. Most of them are neutral: still, attentive, unsmiling. One director, an older man, sits with his arms folded and his eyes half closed. Olivia reads boredom and disapproval everywhere. She speeds up, skips two slides and finishes five minutes early. In the questions she answers defensively.\n\nHer manager, who was in the room, tells her afterwards that the board liked the proposal and asked for a costed version. The director with folded arms, she says, always sits like that, and asked the most interested question of the meeting.\n\nOlivia is relieved and also puzzled. She had been certain that the room was against her. She had read every face as hostile, and almost every reading had been wrong.\n\nShe had spent the evening before rehearsing the slides, and none of it preparing for the feeling in the lift.",
+   "misread": "Olivia read her racing heart as a problem to be fought, and the fight made it worse. She then read the board through that state: neutral faces as bored, folded arms as disapproval. Stress made every ambiguous face look like a threat.\n\nShe also read her manager's presence in the room as one more judge, rather than as the one person there who wanted her to succeed.",
+   "betterRead": "Two lines of research fit her afternoon. Jamieson and colleagues found that people who reappraised their arousal as the body preparing to perform showed a healthier cardiovascular response, and Brooks found that saying *I am excited* helped people perform better in front of others than saying *I am calm*. Forgas's finding about mood and ambiguous information explains the faces. For her next presentation Olivia stopped telling herself to calm down. In the lift she said, *This is my body getting ready.* Before starting she took one long breath out. And she reminded herself that a board listening hard looks exactly like a board that is bored.\n\nThe board approved the costed version a month later. She remembers the second presentation much less clearly than the first, which she takes as a good sign.\n\nShe also asked her manager to give her an honest account of the room after each presentation for a while, so that she could calibrate her readings of boards against someone else's."
+  },
+  {
+   "title": "The lettings agent who reappraised a warning",
+   "scene": "Callum, twenty-seven, works for a lettings agency and has been practising the reappraisal technique from this chapter before viewings, which make him nervous. One winter evening he shows a flat on the top floor of a quiet building to a man who booked by phone. From the moment they meet, something feels wrong to Callum. The man stands too close in the lift, asks whether anyone else is in the building, and does not look at the flat at all. He watches Callum instead, and positions himself between Callum and the door.\n\nCallum's heart is pounding and his mouth is dry. He tells himself, as he has practised, that this is his body getting ready and that the arousal can help him perform. He carries on with the viewing, talking about the kitchen. The man asks whether Callum has the keys to the other flats.\n\nThe agency has a lone-worker policy: a colleague is told the address and expected time, and a code phrase on the phone means *call the police now*. Callum has never used it and feels foolish thinking about it. He keeps talking about the kitchen.\n\nThe man says he works nights and that this is the only time he can view. He has not asked a single question about the rent.",
+   "misread": "Callum read his own pounding heart as nerves to be reframed, because that is what he had been practising. The arousal was reading the situation more accurately than his thoughts were: a man asking who else was in the building and placing himself between Callum and the exit.\n\nHe also read his own unease as unprofessional, and was more afraid of looking foolish than of what the man might do.",
+   "betterRead": "Reappraisal is for the ordinary arousal of performance, not for danger. The chapter says it plainly: if the arousal is telling you to leave, leave. Callum's body was responding to real signals, several of them, and the right reading was the simplest one. In the end he took out his phone, said he needed to check the time of his next appointment, and rang his colleague with the code phrase. Then he said he had been called back to the office, walked past the man to the door and went straight down the stairs to the street. The police found nothing they could act on, and the agency changed its rules so that first viewings in empty buildings are done in pairs.\n\nHis manager told him that using the code phrase was exactly what it was for, and that she would rather have a hundred false alarms than one real one."
+  }
+ ],
+ "workedReading": {
+  "title": "Mapping a signature from a recording",
+  "scene": "Marek, forty-five, is a project manager at a construction firm. His company records its client video calls, with everyone's agreement, for its own records. Last week a client criticised a third delay on a project, and Marek knows the call went badly: he became short with the client and had to apologise by email afterwards. He decides to use the recording to map his stress signature, following the drill. He watches it alone, at home, with a notebook and a rule that he will describe only what he can see and hear, not what he was feeling or thinking at the time.\n\nHe has never watched himself on a recording before, and expects to find it uncomfortable. He does.\n\nHis aim is not to judge the man on the screen but to learn the order in which his own body announces trouble.",
+  "steps": [
+   {
+    "label": "Choose the right minutes",
+    "text": "He finds the moment in the recording when the client mentions the third delay, at about fourteen minutes, and decides to watch from two minutes before it to five minutes after. The two minutes before give him a baseline for himself on this call: relaxed posture, hands on the desk, a normal blink rate, and answers in full sentences at an ordinary pace. He writes those down first, so that he has something to compare with.\n\nHe also notes that the call is on a screen, so his gaze and posture are those of a man looking at a camera rather than at a person, which will be true of every recording he uses."
+   },
+   {
+    "label": "Watch with the sound off",
+    "text": "He watches the seven minutes with the sound off first, so that his memory of what was said does not tell him what to see. He notices things he had no idea of. Within a few seconds of the client starting to speak about the delay, his right hand leaves the desk and picks up a pen. A few seconds later he stops blinking for long stretches. Then his shoulders rise and stay up.\n\nHe also notices that his face stays fairly even throughout. Without the sound, a stranger might have thought he was calm.\n\nHe makes a note to watch the same minutes again a week later, to see whether he notices anything new once the call is less raw."
+   },
+   {
+    "label": "Second by second",
+    "text": "He goes through it again, pausing every few seconds and writing the time of each change. Pen in hand at about fourteen minutes and three seconds. Long gaps between blinks from about fourteen minutes five. Shoulders up from fourteen minutes eight. Breathing visibly faster and higher from about fourteen minutes fifteen. Then, with the sound back on, his speech speeds up at fourteen minutes twenty, and at fourteen minutes forty he interrupts the client for the first time.\n\nWriting the times makes the sequence obvious in a way that watching never did. The whole thing, from pen to interruption, took under a minute."
+   },
+   {
+    "label": "Find the earliest sign",
+    "text": "The earliest sign is the hand picking up the pen, about forty seconds before the first interruption. It is away from the face, which fits the chapter's point that the face is what people learn to manage. Marek realises that he had always thought the first sign of his temper was his voice rising, which in this recording comes almost last. By the time he could hear it, he had been stressed for half a minute.\n\nHe also notes that the client said nothing especially harsh in those forty seconds. The signature was running on the word *third*.\n\nIt also makes sense of something he had never understood: why apologising afterwards always felt like apologising for something that had happened before he knew he was angry."
+   },
+   {
+    "label": "Check with an honest mirror",
+    "text": "He asks his wife, who has seen him wound up at home for fifteen years, what she notices first. She says, without hesitating, that he picks something up: his phone, the car keys, a spoon. Then he goes quiet, and then he gets sharp. Her account matches the recording in its order, and it adds one thing the recording could not show: at home, before he picks anything up, he often sighs.\n\nHe finds it slightly unnerving that she has known his signature for years and he has not, and says so. She laughs and says she assumed he knew."
+   },
+   {
+    "label": "Write the sequence",
+    "text": "He writes his signature at the front of his journal, earliest first: *Sigh (sometimes). Hand picks something up. Blinking stops. Shoulders up. Breath high and fast. Speech speeds up. Interrupt.* Under it he writes his trigger, the hand reaching for an object, and his plan: when it happens, put the object down, name the feeling silently and take one long breath out before saying anything.\n\nHe keeps the sequence short so that he can recall it in a meeting, and puts the trigger in bold.\n\nHe also writes, under the plan, the word his wife uses when she sees him pick something up at home, so that they can share the trigger."
+   },
+   {
+    "label": "Test it in the week",
+    "text": "Over the next week the trigger fires four times that he notices: twice in meetings, once on the phone to a supplier and once at home when his daughter tells him the car has a flat tyre. He catches it early three times. The fourth time, on the phone, he notices only when he hears himself interrupting. In all four the word that fits is *cornered*, not *angry*, which he writes down and underlines.\n\nOn the phone, he realises, there was no object nearby to pick up, so his trigger had nothing to show itself in. He adds a second trigger for calls: the moment he stands up from his chair."
+   }
+  ]
+ },
+ "moreFailures": [
+  {
+   "title": "Mistaking a quiet signature for calm",
+   "body": "Not every stress signature is loud. Some people go very still, speak less, keep their faces even and their voices flat. Others, and often the people themselves, read this as calm, sometimes for years. A quiet signature is just as much a stressed lens as a loud one, and it can be more dangerous, because neither you nor anyone else knows to correct for it. If people often tell you that you seem unflappable in situations that feel difficult, check. Do the body report check in those situations and compare your rating with your pulse. Ask someone who sits near you what they see. Look for the small signs that quiet signatures usually have: a tight grip, stopped nodding, shortening answers, a fixed gaze on papers or a screen. Calm and controlled are not the same thing.\n\nQuiet signatures are especially common in people who learned early that showing distress was unsafe or unwelcome, and they deserve the same care as loud ones.\n\nIf you have a quiet signature, the long breath and the silent label still work. The difference is that you will need outside evidence to know when to use them, at least at first."
+  },
+  {
+   "title": "Labelling aloud at the wrong moment",
+   "body": "The silent label is meant to be silent. Saying your feeling aloud can help in the right setting, with a partner, a close friend or a counsellor, or when naming it would genuinely help the conversation. In a tense meeting or a negotiation, announcing *I'm feeling cornered* can derail everything, hand the other person a weapon, or make the room about your feelings when it needs to be about the problem. Most of the benefit of labelling seems to come from finding the word, not from being heard to say it. So name it to yourself first. Then decide, separately and calmly, whether saying something about your state would help. Often a plain, practical version works better than the feeling word: *I want to answer that properly, so give me a moment.*\n\nThe same caution applies to labelling other people's feelings aloud, which is rarely welcome in a tense moment and usually sounds like a diagnosis.\n\nThere are also settings in which naming a feeling aloud is part of the work, such as some team debriefs, and there the rule is simply to say it plainly and briefly."
+  },
+  {
+   "title": "Breathing so that everyone can hear",
+   "body": "A long breath out helps you. A loud one can wreck the conversation. A big audible sigh in the middle of someone else's sentence is one of the clearest signs of exasperation or contempt that a body can make, and the other person will read it that way whatever you meant. The same goes for a visible, deliberate breathing exercise in front of someone who is upset with you, which can look like you are managing them rather than listening. Keep the in-the-moment breath invisible: in through the nose, out slowly and quietly through slightly parted lips or the nose, with the shoulders still. Practise it in front of a mirror until you cannot see it yourself. Save the fuller exercises for times when nobody is watching, such as the walk to the meeting or the minute after it.\n\nIf you do sigh by accident, a short, honest repair helps: *Sorry, that wasn't at you. Long day.*"
+  },
+  {
+   "title": "Treating your signature as the other person's fault",
+   "body": "When your signature fires, it is very easy to read its cause as the person in front of you: *you're winding me up*, *he makes me so angry*, *she always does this to me*. Sometimes the other person has genuinely done something provoking. But your signature is information about you first: what you are afraid of, what you are ashamed of, what you are tired of. Ravi's shame at parents' evening had been building for months before Ms Lowe said a word. Treating the signature as the other person's doing turns your own state into evidence against them, which is the stressed lens at its worst. Read it the other way round. Ask what the feeling says about your situation before you ask what it says about them.\n\nThis does not mean that you should accept bad behaviour from others. It means you should know which part of the heat is yours before you decide what to do about theirs.\n\nIt also helps to remember that the other person has a signature of their own, running at the same time, and that two stressed lenses facing each other make most of the misreadings in a hard conversation."
+  }
+ ],
+ "questions": [
+  {
+   "q": "I honestly cannot tell what I am feeling most of the time. Where should I start?",
+   "a": "Start with the body, not with words. You do not need to know what you feel to notice what your body does: your shoulders rising, your hands looking for something, your breath climbing. Use outside evidence, such as a recording of yourself or an honest friend's account, because your own sense of your state may be the least reliable source at first. Then, when you notice a sign, try a word from a written list rather than searching your mind for one. Many people find that recognising the right word on a list is much easier than producing it. This is common, and it can improve with practice. If you find it persistently hard, or feel numb or low much of the time, Part II's chapters and a conversation with your GP are the right next step.\n\nIt may also help to notice feelings in other people's stories first, such as in a film or a novel, which is easier than noticing your own and builds the same vocabulary.\n\nBe patient with yourself. A habit of not noticing built over decades does not disappear in a month, and every sign you catch is progress."
+  },
+  {
+   "q": "Is it unhealthy to keep telling myself that stress is excitement?",
+   "a": "Not for the ordinary arousal of performance, such as a presentation, an interview, a match or a hard conversation you have chosen to have. That is where reappraisal has the best evidence, and where reading a racing heart as readiness tends to help. It is unhelpful in three other situations. The first is danger, when the arousal is a warning to act on rather than reframe. The second is long-running stress, such as overwork, money worries or caring for someone, where reframing the feeling is no substitute for changing the situation or getting support. The third is when reappraisal becomes a way of never hearing what your body is telling you. Use it for the moment, not for your life.\n\nA useful question to ask yourself is whether the situation will be over in an hour. If it will, reappraisal fits. If it will not, you probably need something more than a reframe.\n\nIf you notice that you are reappraising the same stress every day for weeks, treat that as information too. It may be time to change something or to ask for help."
+  },
+  {
+   "q": "My stress signature shows up far more at home with my partner than it does at work. Why would that be?",
+   "a": "There are several likely reasons, and none of them is unusual. At work you may be managing your signature harder, so that it shows less while still running. At home, with someone you trust, you let your guard down, and the signature appears in full. You are also more tired at home, at the end of the day, and tired attention catches the early signs less well. And the people closest to you are the ones whose reactions matter most to you, so small things can carry more weight. The tools are the same, and home is a good place to practise them. Tell your partner what your signature is, agree a word or a sentence that means *I need a few minutes*, and make sure you come back when you have had them.\n\nIt is also worth noticing whether the signature at home is the same as at work, or a different one, since some people find that their home signature is louder and their work one quieter."
+  },
+  {
+   "q": "Is it a good idea to tell other people what my stress signature is?",
+   "a": "Often, yes, with people you trust. A partner, a close colleague or a friend who knows your signature can tell you when they see it, which catches the early signs you miss. It also helps them read you correctly. A colleague who knows that you go quiet and grip your pen when you are under pressure will not read your silence as disapproval. Keep it practical: *If you see me start typing in a meeting when I'm not writing anything, I'm probably wound up.* You do not need to tell everyone, and you should not use it as an excuse for behaviour that hurts people. Knowing your signature is a responsibility as well as an explanation.\n\nIt can also help teams. A team in which people know each other's signatures is often better at noticing when someone is under strain.\n\nTelling people also tends to make the signature easier to catch, because once others know it, you start to watch for it too."
+  },
+  {
+   "q": "What should I do when the conversation cannot be postponed, and I have to respond while the signature is running?",
+   "a": "Slow it down inside the conversation instead. Take one long, quiet breath out before you speak. Name the feeling silently. Ask a question rather than giving an answer, which buys a few seconds and often gives you information you need. Hold any reading of the other person at a band less confidence than it feels, and say less than you want to. Decide only what genuinely has to be decided now, and say plainly that you will follow up on the rest: *I can agree to this part today. I'll come back to you on the rest by Friday.* Afterwards, when you are calm, review whatever you decided and correct it if you need to.\n\nIf this happens often in one kind of situation, add a plan for it to your protocol, so that you have the sentence ready before you need it."
+  },
+  {
+   "q": "What if paying attention to my breathing makes me feel more anxious rather than less?",
+   "a": "That happens to some people, and it is worth taking seriously. Focusing on the breath can make some people more aware of sensations that worry them, and counting breaths can feel like a test. If that is your experience, stop the exercise. Try a lighter version: let the out-breath be a little longer than the in-breath without counting or controlling it. Or use a different anchor altogether, such as the feeling of your feet on the floor or your hands resting on a table. The evidence for any one breathing technique is modest, and none of them is required. If you experience panic attacks or anxiety that interferes with daily life, talk to your GP, who can help you find the right support.\n\nRemember that this chapter's breathing advice is about a single quiet breath in a tense moment, not about a practice you must do.\n\nWhat matters is having something you can do in the moment that brings you back to the room. For some people that is the breath, and for others it is not."
   }
  ],
  "watch": [
